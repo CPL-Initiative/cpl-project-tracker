@@ -1,0 +1,1363 @@
+{
+ "college": "Reedley College",
+ "catalog_url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3100",
+ "platform": "curriqunet",
+ "catalog_year": "2026-2027",
+ "programs": 213,
+ "with_closed_list": 200,
+ "started": "2026-11-20T15:11:28Z",
+ "curriqunet": {
+  "catalog": 23,
+  "view_prefix": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/",
+  "errors": [],
+  "sections": [
+   "Certificate and Degree Requirements",
+   "Degree and Certificate Programs"
+  ],
+  "nodes_read": 44,
+  "calls": 89,
+  "entries": 214,
+  "stopped_at_cap": false,
+  "same_title_entries": 0,
+  "entries_read": 214,
+  "twin_ids": {},
+  "failed_calls": 0
+ },
+ "pages_read": 214,
+ "pages_listed": 214,
+ "pages_answered": 214,
+ "listing_failed": 0,
+ "banner_h1": null,
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 182,
+   "hits": 174,
+   "recall": 0.956,
+   "false": 0,
+   "false_off_own": 1,
+   "false_no_claims": 1,
+   "shared": 9,
+   "false_matches": [
+    {
+     "control_number": "35948",
+     "title": "Nursing Assistant Training",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "page": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3535/3382",
+     "h1": "Nursing Assistant Training, Certificate in"
+    }
+   ],
+   "no_claims_matches": [
+    {
+     "control_number": "35948",
+     "title": "Nursing Assistant Training",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "page": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3535/3382",
+     "h1": "Nursing Assistant Training, Certificate in"
+    }
+   ],
+   "searches": false,
+   "catalog_list": null
+  },
+  "programs": 13,
+  "by_result": {
+   "not_searched": 13
+  },
+  "found": 0,
+  "found_active": 0,
+  "found_pages": 0,
+  "found_programs": [],
+  "other_programs": [
+   {
+    "control_number": "01762",
+    "title": "Mechanized Agriculture",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 174 of 182 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "01790",
+    "title": "Criminology-Law Enforcement",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 174 of 182 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "09428",
+    "title": "Accounting",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 174 of 182 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "09438",
+    "title": "Criminology-Corrections",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 174 of 182 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "13802",
+    "title": "Business Intern",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 174 of 182 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "22685",
+    "title": "Environmental Horticulture",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 174 of 182 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "22686",
+    "title": "Mechanized Agriculture",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 174 of 182 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "22687",
+    "title": "Accounting",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 174 of 182 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "22697",
+    "title": "Criminology-Law Enforcement",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 174 of 182 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "22698",
+    "title": "Criminology-Corrections",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 174 of 182 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "31664",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 174 of 182 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "35919",
+    "title": "Manufacturing 1",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 174 of 182 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "45205",
+    "title": "California General Education Transfer Curriculum (CalGETC)",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 174 of 182 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
+ "loads": 304,
+ "seconds": 1543.2,
+ "found": 194,
+ "by_method": {
+  "no_closed_list": 13,
+  "not_found": 4,
+  "page_claimed": 2,
+  "sitemap_page": 194
+ },
+ "shared_pages": {
+  "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3507/3216": [
+   "01757",
+   "33596"
+  ],
+  "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3531/3350": [
+   "19364",
+   "46450"
+  ],
+  "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3286": [
+   "32018",
+   "41854"
+  ],
+  "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3531/3352": [
+   "33687",
+   "46449"
+  ],
+  "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3287": [
+   "43229",
+   "44449"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "30465",
+   "title": "Early Childhood Education: Assistant Teacher",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3519/3274",
+    "label": {
+     "award": 0,
+     "title": 0.6
+    },
+    "field": "innerText",
+    "coverage": 0.8,
+    "body": 0.8,
+    "content": 0.8,
+    "net": 4,
+    "listed": 5,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 4319,
+     "content": 4319,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "43050",
+   "title": "Health Care Interpreter",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3527/3329",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3849,
+     "content": 3849,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "43594",
+   "title": "Leadership Development",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3529/3339",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3875,
+     "content": 3875,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "43595",
+   "title": "Student Success",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "20762",
+   "title": "Early Childhood Education: Teacher",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3519/3271",
+    "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3519/3275"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "45755",
+   "title": "Computer Science",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3511/3408",
+    "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3539/3405",
+    "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3281",
+    "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3514/3253",
+    "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3282",
+    "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3279",
+    "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3283",
+    "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3285",
+    "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3539/3406",
+    "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3280",
+    "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3284",
+    "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3286"
+   ],
+   "status": "Active"
+  }
+ ],
+ "page_challenged": [],
+ "coverage_bands": {
+  "0.5-0.8": 11,
+  "0.8-1.0": 28,
+  "1.0": 155
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/reedley",
+  "kept": 171,
+  "kept_moved": 0,
+  "programs": 23,
+  "list": [
+   {
+    "control_number": "01767",
+    "title": "Computer Science",
+    "award": "A.S. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3514/3253",
+    "coverage": 1.0,
+    "was_url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3514/3253",
+    "was_coverage": 0.846,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "01787",
+    "title": "Physical Science",
+    "award": "A.S. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3539/3406",
+    "coverage": 1.0,
+    "was_url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3539/3406",
+    "was_coverage": 0.818,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "12324",
+    "title": "Forest Surveying Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3526/3313",
+    "coverage": 1.0,
+    "was_url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3526/3313",
+    "was_coverage": 0.95,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "15572",
+    "title": "Liberal Studies",
+    "award": "A.A. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3519/3345",
+    "coverage": 0.893,
+    "was_url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3519/3345",
+    "was_coverage": 0.821,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "30760",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3532/3358",
+    "coverage": 1.0,
+    "was_url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3532/3358",
+    "was_coverage": 0.75,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "32018",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3286",
+    "coverage": 1.0,
+    "was_url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3539/3406",
+    "was_coverage": 0.5,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "33395",
+    "title": "Agriculture Business",
+    "award": "A.S. T Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3505/3206",
+    "coverage": 1.0,
+    "was_url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3505/3206",
+    "was_coverage": 0.941,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "33546",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3512/3383",
+    "coverage": 1.0,
+    "was_url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3512/3383",
+    "was_coverage": 0.867,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "33583",
+    "title": "Chemistry",
+    "award": "A.S. T Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3539/3405",
+    "coverage": 1.0,
+    "was_url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3539/3405",
+    "was_coverage": 0.75,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "35745",
+    "title": "Elementary Teacher Education",
+    "award": "A.A- T Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3519/3276",
+    "coverage": 0.88,
+    "was_url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3519/3276",
+    "was_coverage": 0.8,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "38594",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3537/3399",
+    "coverage": 0.977,
+    "was_url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3537/3399",
+    "was_coverage": 0.932,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41053",
+    "title": "Literature",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3521/3293",
+    "coverage": 1.0,
+    "was_url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3521/3293",
+    "was_coverage": 0.857,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41199",
+    "title": "Environmental Science",
+    "award": "A.S. T Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3511/3408",
+    "coverage": 1.0,
+    "was_url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3511/3408",
+    "was_coverage": 0.923,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41848",
+    "title": "Engineering: Civil",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3280",
+    "coverage": 1.0,
+    "was_url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3280",
+    "was_coverage": 0.9,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41849",
+    "title": "Engineering: Civil",
+    "award": "A.S. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3279",
+    "coverage": 1.0,
+    "was_url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3279",
+    "was_coverage": 0.9,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41850",
+    "title": "Engineering: Computer",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3282",
+    "coverage": 1.0,
+    "was_url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3282",
+    "was_coverage": 0.889,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41852",
+    "title": "Engineering: Electrical",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3284",
+    "coverage": 1.0,
+    "was_url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3284",
+    "was_coverage": 0.867,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41853",
+    "title": "Engineering: Computer",
+    "award": "A.S. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3281",
+    "coverage": 1.0,
+    "was_url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3281",
+    "was_coverage": 0.889,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41854",
+    "title": "Engineering: Mechanical, Aerospace, and Manufacturing",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3286",
+    "coverage": 1.0,
+    "was_url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3286",
+    "was_coverage": 0.875,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41855",
+    "title": "Engineering: Electrical",
+    "award": "A.S. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3283",
+    "coverage": 1.0,
+    "was_url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3283",
+    "was_coverage": 0.867,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41856",
+    "title": "Engineering: Mechanical, Aerospace, and Manufacturing",
+    "award": "A.S. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3285",
+    "coverage": 1.0,
+    "was_url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3285",
+    "was_coverage": 0.875,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "42456",
+    "title": "Forestry Technician-Fire Suppression",
+    "award": "Noncredit program",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3526/3317",
+    "coverage": 0.833,
+    "was_url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3526/3317",
+    "was_coverage": 0.667,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "43229",
+    "title": "Engineering: Land Surveying",
+    "award": "A.S. Degree",
+    "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3287",
+    "coverage": 1.0,
+    "was_url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3287",
+    "was_coverage": 0.857,
+    "was_method": "sitemap_page"
+   }
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
+ },
+ "fingerprints": {
+  "01756": {
+   "sha256": "e79f8fec61653ef15c82c6907edbea41f01b15cd1f4d219b94d74c15fed91601",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3505/3209"
+  },
+  "01757": {
+   "sha256": "8d9726be9d18d02ac10bd7b0d4c64e6deebc871e4e501ea7554e53d1cd583559",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3507/3216"
+  },
+  "01758": {
+   "sha256": "82941ea12d9cc2ecf096983e1e4d2ac5059396642b79d1894164df646db2d4e4",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3540/3416"
+  },
+  "01759": {
+   "sha256": "805c63a44253fe5ccda2ef0b90f15ffa0a78b4bb1e20279a65bf881feae469a1",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3523/3300"
+  },
+  "01763": {
+   "sha256": "94195600d51b7b7a9a9c140909ace4a1d7539c328c42aeb75958a9a2f607b777",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3511/3232"
+  },
+  "01766": {
+   "sha256": "37b849008d30b9c964e48edbe30056657064a79518de01263231eea2d6292841",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3536/3385"
+  },
+  "01767": {
+   "sha256": "a49c1dd4fe9d62e5da5bebe09e841327ab60d0880c3539840648ed9432db8d82",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3514/3253"
+  },
+  "01768": {
+   "sha256": "5567c0c9a5e7d56a3d2886301b63366b0246e0ebb2839d84c47c9577778683e5",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3538/3403"
+  },
+  "01770": {
+   "sha256": "cffadcec62cd5f840a32c4121ee009d0ccf8dd33fc9fd81e40b0a6f6fc9b88ab",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3509/3224"
+  },
+  "01771": {
+   "sha256": "998bf16c1cc3576f89cf32b5ddbe6be8782a2b8e68aa1216e25452970bc453ba",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3510/3229"
+  },
+  "01773": {
+   "sha256": "63414c0989d26692d38676587f95996bd8a175db668c0c2edfe7479dae760f33",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3531/3349"
+  },
+  "01774": {
+   "sha256": "9d5e250f1433276869e1e9dc399415fbe2506e02d1beda4c12a37689a681b754",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3531/3356"
+  },
+  "01775": {
+   "sha256": "efe321ec603aa8d1c11ac071a761d7604d3bcffa35d00082bfd284631e835f4e",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3524/3306"
+  },
+  "01776": {
+   "sha256": "644126a9ce582049109e3fb91c2f7c6c7c7c588372bf141d4ab5bd43dcb2a86d",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3534/3375"
+  },
+  "01779": {
+   "sha256": "eb068699db9433e26da613afd80da679d65e78d475b6a07f482c9c37fb5e5c7d",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3517/3264"
+  },
+  "01782": {
+   "sha256": "53ef2a4b18eacda2c7ee1e9990444f878b83f2ffc4161a1fac2f14535e9d21c6",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3519/3272"
+  },
+  "01787": {
+   "sha256": "dfecdefbd1da6f122d2c84b75209c27207ddf1504ecd3b45def6730c01d2a064",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3539/3406"
+  },
+  "01791": {
+   "sha256": "8db46a6c4fd6746e1b7079192e9a01e63fb656da155e169a70ad1b6f219daf8d",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3541/3423"
+  },
+  "09436": {
+   "sha256": "03e8f69059b22ffe94e829ab33d4d5262c413cdcc39475489fee7dcbf790723a",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3534/3376"
+  },
+  "12324": {
+   "sha256": "7c3b895b5202ef23d572462782329f7e4ae4921f9c6f32ef53775dc357b80303",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3526/3313"
+  },
+  "12325": {
+   "sha256": "f4a0ecb33fa3a9862484d008b350a85205d2e3e6e2fb326dd60e57f39cdd9ff1",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3526/3321"
+  },
+  "12326": {
+   "sha256": "9580343c88999d320b58e1234e04b5acc877cb20d287a1b1005f91682f7864a1",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3526/3315"
+  },
+  "12662": {
+   "sha256": "ae2b42f322dd089e62d76cf2896fc2981b4d7d2fd401ba8df8939b234de0b128",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3508/3220"
+  },
+  "12663": {
+   "sha256": "e4aae9ca7b427187b0e151c7e5fe02da87369cbf56d47b6b48f94207bef43424",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3508/3219"
+  },
+  "13809": {
+   "sha256": "011898b6fb65c4dedf27508b0cab82821848b2674cefe093173cb6f2c2518a42",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3536/3395"
+  },
+  "14984": {
+   "sha256": "2ffceb88bed42372a925355c86cde5fd5c2a3092a6c067bed0e8f814ffded607",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3529/3332"
+  },
+  "14995": {
+   "sha256": "9845d4a219f97476134aaade04af0c85a5d47adb0b5583f6dfccf2bdeb405d59",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3529/3335"
+  },
+  "14996": {
+   "sha256": "aa8cdf201b2897bd1ad64c19739483eff5b12f6f454a66d9ef55d7878817d0e3",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3529/3340"
+  },
+  "15047": {
+   "sha256": "e8e0817d7ee69305fdfb1d72a76c214c31a8c8ddb64961a5dbda4de593f303c9",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3536/3393"
+  },
+  "15572": {
+   "sha256": "f26f67d79e36ffbf1c5ce649e4c795c72448609a9faf1d9afa9009b31c7555e8",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3519/3345"
+  },
+  "16564": {
+   "sha256": "3d852ff0244eb9f031e4717498a7de064f07077aa16a895b993cc3f7574f1886",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3519/3271"
+  },
+  "16565": {
+   "sha256": "9523ef4a5bbc3e2793c4295c997c9a81e176436305ea2c3a1e6c43d6c5205486",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3519/3275"
+  },
+  "18622": {
+   "sha256": "237ff351dfb1fc79321c695384c68e3d619620979b84625cd81f37ea9c8b9292",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3530/3343"
+  },
+  "18623": {
+   "sha256": "26df1a2bf325ff4bfc058b7b43b77274b5510f76b4a9ecf793e2fa3d96f2472a",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3530/3344"
+  },
+  "18957": {
+   "sha256": "4e203ae514d19db4ebecdb3b8e8360307f7c14ed45eaabb4ddf098f1f360e141",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3536/3386"
+  },
+  "18990": {
+   "sha256": "9d5e250f1433276869e1e9dc399415fbe2506e02d1beda4c12a37689a681b754",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3531/3355"
+  },
+  "19364": {
+   "sha256": "f7d994799f17a8526ec856b43f174d885bd4f02fb4d95c4c26aaf9822cc7be09",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3531/3350"
+  },
+  "19456": {
+   "sha256": "f50cb9d330275af4a0a2829d1c8d77d33af8e897909258a372961210e1a1223a",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3540/3415"
+  },
+  "19457": {
+   "sha256": "da167a60a3751af9420fcfdfde0f910c6b1b5a24738b55239e054dc60f2554b4",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3540/3414"
+  },
+  "19458": {
+   "sha256": "39990ac66ad8a47b4959b06a6664f254cd471a6c174c701d9950533bdaf84735",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3540/3418"
+  },
+  "19459": {
+   "sha256": "6452f8359e45b9422a7d79a63ef3af2459c80148e51eab185071ac20a1d5e743",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3540/3410"
+  },
+  "19512": {
+   "sha256": "70b981b9a2bb1c33d69dbbc64ecb3003df2325127bf2907fc24d8f60dacb699c",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3536/3390"
+  },
+  "19513": {
+   "sha256": "c9bcb5e123f6a71f99ffd067b5214ee47ad867683ef08ec7d5b97d988efa2c76",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3536/3389"
+  },
+  "19817": {
+   "sha256": "a398b1f95972d7c6758f7761f6459b056df405bf9cd6f1fb3ced2441a0a54267",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3505/3204"
+  },
+  "19818": {
+   "sha256": "fae2aad56d451454f354b738aeda45af0aa2f446a0a0f650f4002401f468c8c9",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3505/3203"
+  },
+  "22688": {
+   "sha256": "a26fa968fa004255790be6aea969b8280dd935f0ba55433d3183629a483ace7e",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3512/3236"
+  },
+  "22690": {
+   "sha256": "81365b13f94b52b2de8ab536f7a32af20e08563a32dd80ef4529b40fba48f3b8",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3529/3338"
+  },
+  "22693": {
+   "sha256": "d3221ed1e358ab4922d8f56e77b224d285487380814445a4a610daaf65dff7f3",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3509/3225"
+  },
+  "22694": {
+   "sha256": "998bf16c1cc3576f89cf32b5ddbe6be8782a2b8e68aa1216e25452970bc453ba",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3510/3147"
+  },
+  "22696": {
+   "sha256": "6d4c9f06e4544b17809f6174f50dd92670fc9ede768a799b4aa96fc49d1a1968",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3517/3265"
+  },
+  "30431": {
+   "sha256": "6ee460adebe1f39409063286f873a9e147cf26b8bb898ddb446a94949bca6952",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3512/3239"
+  },
+  "30432": {
+   "sha256": "67ef8b3ce8d617b141c943b0907c73fc5def77843b7bc92e35cfd504ab16d145",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3512/3241"
+  },
+  "30433": {
+   "sha256": "6c9d9ed7b8c106c659e6451174f3bec169b4690048016c29ca5cc7c5fc54c1c2",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3512/3242"
+  },
+  "30434": {
+   "sha256": "0071400073b5f189ef99f35b61ccacb08806457faddaff2700d6e8079b47bd05",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3512/3243"
+  },
+  "30437": {
+   "sha256": "ed9a039967f6b6f3b43d56d97caaa766032cd19acfc1900ae93b1fa49ca732db",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3512/3238"
+  },
+  "30442": {
+   "sha256": "f676671be97bb10957576fe33001fc306c7e60eac3afad45f6fd8dd33e5140fd",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3512/3240"
+  },
+  "30464": {
+   "sha256": "831d15b99b9a33ff8ed9e1c14b1f17592933a9477316292d0f2b692e2b923e9d",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3519/3277"
+  },
+  "30760": {
+   "sha256": "dc15077b162b672d55e8ffa8c18d8fba13a916030a274f4e6588880facb17efb",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3532/3358"
+  },
+  "30831": {
+   "sha256": "5d9b2c46b73ba789f9c92a6b5474f55f46eb98be8a2196c936185fe3f5292010",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3541/3422"
+  },
+  "31509": {
+   "sha256": "f8d0ebcacc03f3dcac85175e19dc99924a5a7563a7d12c038b913fdb992c0960",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3513/3249"
+  },
+  "31663": {
+   "sha256": "be8e1bae3efb1d7e3a307688814538849f812a887f275fb12bea0fa19ff3b3aa",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3519/3274"
+  },
+  "31671": {
+   "sha256": "691b8a8a1c4b3e163579e2284021328866a7603c62407cb02ee913a285787a25",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3533/3362"
+  },
+  "31672": {
+   "sha256": "a08780afbe515216130f6f507d26714101f02735ace8af794690b51dded4bf56",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3533/3363"
+  },
+  "31677": {
+   "sha256": "dd804f8130fa5c62b836c283be2d43bd4b93cf4f5ddf68b4e38905f9a83c17f2",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3529/3333"
+  },
+  "31748": {
+   "sha256": "9fb9bf5d7f4e79f7ffe9e680e7137aa8acc38001b30711cc1e45cd13b0547fb9",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3521/3292"
+  },
+  "31880": {
+   "sha256": "ecabfb720e691acef271adc6f82479a6f8d17594f5518c4411952ad535eb7506",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3540/3417"
+  },
+  "32018": {
+   "sha256": "bd426bdb0c33efb823bfb49eeb3a826a13beed98a64d7f8a107549b81e6d084a",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3286"
+  },
+  "32695": {
+   "sha256": "f0972e47dd35c7169aceb44ab1f53e90e33adc0e3cea20c8439dca6cf1fbc0aa",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3538/3402"
+  },
+  "32827": {
+   "sha256": "ae2676b1bb9911e10274920f5c46e56470a3785ba6c1f2869dfcaea7dc5c3dd5",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3508/3222"
+  },
+  "32858": {
+   "sha256": "0b182e2aa64ed7287f1efbd769aac1ebc2ba3357b43efc1427a511980d9bc3c6",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3541/3635"
+  },
+  "33249": {
+   "sha256": "fa95ffc2a1ede7be8957f66ab2471dbff10ae2680ab31b3770f7121df49fa00d",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3513/3250"
+  },
+  "33395": {
+   "sha256": "85f33b74832d5c680f17dbbef53d084a1502de1c49be9c368021d23ae21cf65b",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3505/3206"
+  },
+  "33530": {
+   "sha256": "476e66575b70fa2811d2eb25a8c928db353cd3b17eb7fbadf73ebd68e51e45f8",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3531/3353"
+  },
+  "33546": {
+   "sha256": "bd117cc84f4f74ee71c6884a9ad3d6deec52d47e2db2f6ba0269dfb6b4f4ab49",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3512/3383"
+  },
+  "33583": {
+   "sha256": "cbfd23ec6cc736ae3868ecd8466aa59f1c6001a68ca9c74e3c2592f00ead1a8d",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3539/3405"
+  },
+  "33596": {
+   "sha256": "8d9726be9d18d02ac10bd7b0d4c64e6deebc871e4e501ea7554e53d1cd583559",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3507/3216"
+  },
+  "33626": {
+   "sha256": "7d6914a81bba94fa748e8bf87aad15ca6043e91a686935e3d67cac5a1e5e3364",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3508/3221"
+  },
+  "33687": {
+   "sha256": "c7bf290c3a63a02bdf719a833f7db94a582f40a08c307c1895d6ed56bc1e5a0e",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3531/3352"
+  },
+  "33830": {
+   "sha256": "2f1e333fb6c7c69ed1d01eb184fa019c4bbb940051e6441be4b2851cbe66f556",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3540/3413"
+  },
+  "33833": {
+   "sha256": "c2404a75d72634bef9212fdc38ca0b7718d6422bb575a1fd772dcdf6bb3cc876",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3511/3233"
+  },
+  "35010": {
+   "sha256": "29984991ae3bd43fdfb1d8f9e1a59aeeaa216a6b8c52eae0971eb23ae1e067e6",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3507/3215"
+  },
+  "35047": {
+   "sha256": "3645c17917829d1a01f1fe308105d9f234c5a87f84ddc0597e8c2c39df5f0ff3",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3525/3308"
+  },
+  "35122": {
+   "sha256": "ccdec59a8b8b0489724bb938ef3db4c7c547b508aae09333a8c176e8d9a7bd95",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3526/3314"
+  },
+  "35123": {
+   "sha256": "43d90e473e52340242827c27a20edd5c465c3483f3ae1f2b60494851f603377e",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3526/3320"
+  },
+  "35194": {
+   "sha256": "19d55fc57cc9b0177de35e2aa9aa1857cec7b72c6dc2ed7e62015944d6f493d1",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3533/3360"
+  },
+  "35265": {
+   "sha256": "f67d620d03371aba96513849d42b677656608e217ddc423a8a518ee1b85ccf75",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3533/3370"
+  },
+  "35266": {
+   "sha256": "19d55fc57cc9b0177de35e2aa9aa1857cec7b72c6dc2ed7e62015944d6f493d1",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3533/3361"
+  },
+  "35299": {
+   "sha256": "85ffa4137708b0b0cb7f2bfd3e4fc9b2236bca3fe58cb182690cdbd71319de15",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3507/3217"
+  },
+  "35732": {
+   "sha256": "a3584d8d2a40377251e0d1a81d3198a1604b19b162f7a2e3d0aba516d86c0d9c",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3541/3421"
+  },
+  "35745": {
+   "sha256": "6d88cc9b57eef1eca7aa20154c2eeec623eaf03e00eee8658f3c8f902b1e2e3a",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3519/3276"
+  },
+  "35942": {
+   "sha256": "248782671d9dc4072a6114e89c0c0c8d4e3d98153c1da746674963d231edf227",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3505/3141"
+  },
+  "35948": {
+   "sha256": "088551d4bb758801ff066ef09154392021cc0dbe13132b070563fa4a3d61fe17",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3535/3381"
+  },
+  "36490": {
+   "sha256": "d0918f2a295e09dbeebd0b1a323069926cd971a53e4dde3538e74f272216e480",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3540/3411"
+  },
+  "36491": {
+   "sha256": "51ccc4224872ddf7454b1865a5e73b0428457f8abf367a640acac3c6b4a58da7",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3540/3412"
+  },
+  "37072": {
+   "sha256": "7c910828c9b4b7f02b5a50a2ac20c059549c320e03bdd5528623ab836b7126e4",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3533/3369"
+  },
+  "37096": {
+   "sha256": "80d56d6f51648a99122151b6af425f6948adade52390b99e63a5fcdf9c7493bf",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3533/3368"
+  },
+  "37097": {
+   "sha256": "45d60812321dd4c9aa434b1b1b83df5b07a2048ebc19775d4b9efbbb2417f3bf",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3533/3366"
+  },
+  "37098": {
+   "sha256": "150ab2cb414f987ed385cd44c5a470fca73e04bb1a2290c56f6aae57f108ed7b",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3533/3367"
+  },
+  "37125": {
+   "sha256": "fcb75b9dea22cbc9c281f038da2f170ab076b41460a8cba59a6e4c8d65a7d8d1",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3512/3244"
+  },
+  "37866": {
+   "sha256": "49ee9c6ae562549cb9753fdf5afff4066c3636a8ebd25ae6a5548832a2118c87",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3506/3212"
+  },
+  "37878": {
+   "sha256": "49ee9c6ae562549cb9753fdf5afff4066c3636a8ebd25ae6a5548832a2118c87",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3506/3211"
+  },
+  "37998": {
+   "sha256": "43ee973de1da54527f88ea9719945f190e5b1150af7832354cdc9fb1cba0e4bc",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3541/3424"
+  },
+  "38061": {
+   "sha256": "91d79c846fe864aba6716b97554720f463cc928adc1386cd4ed8aa8b4d4050ef",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3534/3374"
+  },
+  "38062": {
+   "sha256": "9a6dbe4a8d05ea41038c816f09eda718b52eda660744ad72bd868a63c502655a",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3534/3372"
+  },
+  "38063": {
+   "sha256": "efeb284dc9cd280eacba13347e3af7db39e164bd7925b87a4f2b0a89b40628dc",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3534/3378"
+  },
+  "38064": {
+   "sha256": "95ee6202560088dce4c90bae2273cd4306a5d4118af69aa98e8fb9fe976eb154",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3534/3379"
+  },
+  "38074": {
+   "sha256": "d23e309b613225806e997e01ef677d9bd9e093955dff7bfadcc54ea5045d0352",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3534/3373"
+  },
+  "38350": {
+   "sha256": "b49e89746202ffade2a0f2d638209e9fddeb185e966ede2f5106a119302db24f",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3534/3377"
+  },
+  "38594": {
+   "sha256": "add7073c33667a2420b048645da70f659a48a40a148b798d592be79c0acf4697",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3537/3399"
+  },
+  "38739": {
+   "sha256": "91f7c2a8a5b8a78edc1c9b217192090bd1c52c09f92fb3b1dc7659f2adec0ccf",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3512/3235"
+  },
+  "39778": {
+   "sha256": "0df9f14873ba23537d7ee583c410eb6eee427358bb1da1228bfb934fa16b7b9f",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3542/3426"
+  },
+  "39951": {
+   "sha256": "9420cb5e85755832113f590f1850a7a78e35060792128bd67b789cec1bfef237",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3522/3295"
+  },
+  "39952": {
+   "sha256": "9a4ba228a67b4cf1573f0fc218bfad8cef8c0bf37159947cc36dbfc9b8908fbd",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3522/3297"
+  },
+  "39953": {
+   "sha256": "7ef3cf232a6d94a0c0983530f7ab0f74f53a6f9c80346b098e76a23ee64f1eb4",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3522/3296"
+  },
+  "40022": {
+   "sha256": "e6caa02c8146183f703bacae1c0144142c1aea8b2befda1d31bb29d876d072ba",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3526/3325"
+  },
+  "40068": {
+   "sha256": "6e2915058f160816e5456e48b1c3e9cec5960389241f57def58ec320a976394a",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3542/3427"
+  },
+  "40162": {
+   "sha256": "45dfd7c0412a8cbb0a24394b4b0212103e4af379f3dd1120e88b1b7bb4e5313a",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3526/3323"
+  },
+  "40300": {
+   "sha256": "f935533ad6a2d7144f455a6a749ee36cd8a5f57ac37e75d11cfbdc000888ca84",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3526/3316"
+  },
+  "40450": {
+   "sha256": "452a1d861bca894c767b68582f0e818386ac7524bf35df99d4eb71988d8635cf",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3526/3319"
+  },
+  "40758": {
+   "sha256": "16e27e4fcc2ac8508f28c05d75167097b30079ceddb38337a853ee87d842dc0a",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3537/3398"
+  },
+  "41046": {
+   "sha256": "181c192eb31e4a57083a01bf8c52486f36df41362d0e543929f3b2cd4a5b4158",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3521/3291"
+  },
+  "41051": {
+   "sha256": "1eb6dc539a409b5e9b4f27e95227170af50068578eda40fb0b366cc43acbd81a",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3512/3237"
+  },
+  "41053": {
+   "sha256": "d52a2b54302819145a1439870952375c345d3a951ff34869e55e0b8207b91d8e",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3521/3293"
+  },
+  "41199": {
+   "sha256": "7bd23199913518e64fa03a80c5964dbcc0face5b0a4eef684ae5da6ba476a5f2",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3511/3408"
+  },
+  "41474": {
+   "sha256": "68a54c48e656b39140bf5c9f31337dc3391687cd9b11a5fdc304bf24950b888e",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3526/3326"
+  },
+  "41594": {
+   "sha256": "ea65a97105f0f1ba83ba6510ef787139ce5fd23ebc5dc75de2dc6b766fdd0c66",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3522/3298"
+  },
+  "41848": {
+   "sha256": "67e13dcc22e41b9e963c637bd905dd18e0f15ab48c03161cc412b2a517e1e8a9",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3280"
+  },
+  "41849": {
+   "sha256": "0f2a9c012b0ae837e2473aabf2c87900848c9f5076e774f1522d874dc1090496",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3279"
+  },
+  "41850": {
+   "sha256": "a8363a21cf6a0dffe0318ef8e105a56c7f2606974a46648da71d80d3d8f5d195",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3282"
+  },
+  "41852": {
+   "sha256": "b60b6a26a87392fa2c3b7baa9af5b42c8c558779764aaed8a8a7e8dbdd25fdb8",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3284"
+  },
+  "41853": {
+   "sha256": "a8363a21cf6a0dffe0318ef8e105a56c7f2606974a46648da71d80d3d8f5d195",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3281"
+  },
+  "41854": {
+   "sha256": "f472464cbfc057a81918a97267bcbd1f3dd3aec0d0580cd46c07061b6f5f9a3c",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3286"
+  },
+  "41855": {
+   "sha256": "b60b6a26a87392fa2c3b7baa9af5b42c8c558779764aaed8a8a7e8dbdd25fdb8",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3283"
+  },
+  "41856": {
+   "sha256": "f472464cbfc057a81918a97267bcbd1f3dd3aec0d0580cd46c07061b6f5f9a3c",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3285"
+  },
+  "42230": {
+   "sha256": "379e201eed8efcadcf27bb77758d339e78dbb8a6cde098aacd7111f36260fb8a",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3536/3387"
+  },
+  "42231": {
+   "sha256": "3556b46935efd9a7ddf5b06d52a565822602c7dda0ca7b3c1918964d67102362",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3536/3388"
+  },
+  "42233": {
+   "sha256": "4b3f97f7d78c031fe64d5d78548e0f5bcd433bc6ef5d86631632d3436de7fc2e",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3529/3337"
+  },
+  "42236": {
+   "sha256": "77048724529e49f3ad311fd986fb9dba3f74050f87c69b94a7a3fb2bee459799",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3536/3391"
+  },
+  "42237": {
+   "sha256": "c83b6094ccb6060b07a7a63ffcd1d0e2fb2f6a385e09d14304e1e3998a2dced4",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3529/3341"
+  },
+  "42244": {
+   "sha256": "d5aac5286f2888a1a71cb7cba57ff68fec0fbf643ab8d02ef635e602f1ba20a3",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3529/3334"
+  },
+  "42245": {
+   "sha256": "a5ad36162ddd04ccd9565cceb7437de8685b305b3b55e644a44cee5fea86fa73",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3529/3339"
+  },
+  "42246": {
+   "sha256": "9a59df56903ca0507006ad98625c83516ce8292bb98e27f89960726e28e6dbc4",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3536/3394"
+  },
+  "42247": {
+   "sha256": "528d1b1fb028614f8b2c6cdaa6240fbe9383c283b685302a7b9c798bb37ca169",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3536/3396"
+  },
+  "42303": {
+   "sha256": "bfde84af3560020988b04ed65173c5410db31e1ddd38f3a1add3336127d63e8a",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3536/3392"
+  },
+  "42305": {
+   "sha256": "d8e83dd2ad2604f263ce70071e80de59fa477dab6e6223fb34624013f2b29c82",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3505/3202"
+  },
+  "42350": {
+   "sha256": "702f261c7bcc295eae4e1cbc430ea392b60a63b5f3bb3907e0a98281336a1d69",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3512/3148"
+  },
+  "42456": {
+   "sha256": "136b049fd8f07c0e7699bf45bfbd47c410cf73f7a59a5d9c4514055fa28a5a17",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3526/3317"
+  },
+  "42457": {
+   "sha256": "d5576cde71f8d0e75eb111abf89ea83946c53bc19bcba1b550472cc8b267b444",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3526/3324"
+  },
+  "42471": {
+   "sha256": "c7a184d505efb5d40731f5898e8cfc9cbdf668c8702aaa30578ddb1396384ec4",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3526/3322"
+  },
+  "42472": {
+   "sha256": "e9407dc15a386e9b5b786ea97534ac58474dd46ad40a89d58d4f9d26177be2fb",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3529/3336"
+  },
+  "42540": {
+   "sha256": "f1349a4b8ff5f2d77fd5e6771d96a2e9925af9f4508e1f3ccd41afe157fde026",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3510/3146"
+  },
+  "42542": {
+   "sha256": "7aedbf979c158f80390616c8a245a966a104b5aaeece5a680548d7b516c52446",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3531/3347"
+  },
+  "42543": {
+   "sha256": "cdddbf9a4e197edf29ce131d08637aa598c2bdf272bc4cbd85b7835be36f2b3a",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3531/3348"
+  },
+  "42544": {
+   "sha256": "ce904cc3d425d3cb2b6dee7158e3615e9f45c44fabe7cbaa3e126bf026701a85",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3531/3354"
+  },
+  "42552": {
+   "sha256": "6ea7c367befd54361780889bcc5081d67c95e45e867d8a1f4887bc028f5491a1",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3510/3227"
+  },
+  "42553": {
+   "sha256": "f026541fe512af3f4be7cbd10bd54d188a792e34960cd554767e03109d5108ab",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3510/3228"
+  },
+  "42583": {
+   "sha256": "60e3f57b94941bdd0def93d17a7870b152b353c1a81f2fdc45cebaa50e56c328",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3505/3205"
+  },
+  "42993": {
+   "sha256": "3be332b4c7887f0113e539dd00d61eac06a7fdb29f90df6732018b8cbf5b923c",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3513/3251"
+  },
+  "43229": {
+   "sha256": "e956074feda786f25d74ae37d56b6c51b02d8e39aace0d9d0e635746e6df5168",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3287"
+  },
+  "43326": {
+   "sha256": "eed3f28ac02e6e1ebda2bc163a53eb98c1057f71c754bbefe693b2c415336b23",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3512/3247"
+  },
+  "43446": {
+   "sha256": "a5df8419420c7685b5f6c07813079c57546551438fca1ae6ac2df483d88c6f65",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3634/3157"
+  },
+  "43488": {
+   "sha256": "ebed51840ce6736125de9033628998afcee514e59c73e25c9bff0d47cafb6e3e",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3289"
+  },
+  "43491": {
+   "sha256": "af6654febbaaf08519b378fa0731f0c5212bdb3fc70145487b973bd84877067f",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3288"
+  },
+  "43508": {
+   "sha256": "4d10fc9cc082f7dcd6c65f877332ccd61f0fe9b79e9628e2d0cea169f94126a5",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3526/3318"
+  },
+  "43744": {
+   "sha256": "aead69a45cde6dfc4cf1b3d3bf9f53d8c036c0f0a1aa70a44dd0fd1823e37471",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3505/3208"
+  },
+  "43906": {
+   "sha256": "73894194565622c201d9f0957812d5159c43587cf7ddda6ef351f048fd8b26e3",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3505/3207"
+  },
+  "44041": {
+   "sha256": "17a98d672b8e4b38d5b4ad964bf5a7c493f76d19b15e5716fcaf425d01980039",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3710/3713"
+  },
+  "44046": {
+   "sha256": "6f8dff5d52f10d1390bd8805f93e74ee55426f196f00306dd7f73f2c65485f90",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3710/3712"
+  },
+  "44192": {
+   "sha256": "526f2fd4a4a494af295f0ca96f91d911b76c6a1e16761517a05107ae68703577",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3536/3144"
+  },
+  "44193": {
+   "sha256": "5584032ed36b3a7e4c1781bb0e0a5042dc74c84f3dabe2bec5771e3abed19fb8",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3536/3145"
+  },
+  "44425": {
+   "sha256": "1ca8ae5c577f7d388520b04cc7a6b5a54c569f9282cf5fe13b6a8ec7e8bcbf8c",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3634/3694"
+  },
+  "44449": {
+   "sha256": "7091b493bd18118f8e14037f7e732bbd1460aebd3f5d62709b3259f3a417b706",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3287"
+  },
+  "45071": {
+   "sha256": "62810d8064b5994ec1492628faa058b462a35e9550d5b2e02a0165c9d81ac1c5",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3529/3643"
+  },
+  "45154": {
+   "sha256": "d11edc6ed133e6c0d84d9cf3c8c07be0db7c11247c5d261e4a89f25c63160441",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3519/3270"
+  },
+  "45164": {
+   "sha256": "8353f20df581ede40306ab84db5fceb299355166e373e1924e1a23616bdef6c4",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3529/3303"
+  },
+  "45165": {
+   "sha256": "c22c75d7692a6fb47a3b648dfd4be074b622c3b14ae67caf63557850f6dac813",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3529/3304"
+  },
+  "45408": {
+   "sha256": "862d719fcb877d3af2dd80fdc8ecb6df0d2e6cec2f9a0eab2556750530021b62",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3529/3142"
+  },
+  "45409": {
+   "sha256": "b3c563e76b6ddf67d9a82b6080ba720ee9d2d16e22025778842870b078388bdd",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3529/3143"
+  },
+  "45660": {
+   "sha256": "38938b6e95a907b24f243a3503d028c4cf1a04c4c8cbeefc1cc492d2b4e29953",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3514/3254"
+  },
+  "45723": {
+   "sha256": "429281af5e4333318dd13a73e243ddb03d33087d8c3ca0382f810405b9555dfc",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3644/3646"
+  },
+  "45843": {
+   "sha256": "f2cd5c01ad4a3f1bb84f4dd4477054fc9f170d693e34d082f6c512f753c2b211",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3526/3642"
+  },
+  "45929": {
+   "sha256": "eb6164190192ab0be9d1ce024606c374ee8259d7de96cf1fba97e55e4f489f3f",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3516/3648"
+  },
+  "45942": {
+   "sha256": "540ea7f17b31c78f9e325a9109c0c3bb7148963e11f57e5657e87ffc2a1bd037",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3541/3662"
+  },
+  "45992": {
+   "sha256": "30cada5b77eb3935f890e28e22192354b940d63f0642589a5b5bf9f0c7e7c93f",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3541/3661"
+  },
+  "46036": {
+   "sha256": "b9cda2a1e9b1aefc823b52bdea90dc9d9fc64c36e221dbb1a40877a3460a6e22",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3649/3655"
+  },
+  "46037": {
+   "sha256": "cf9144c8b019a9c35832c132cd536369c318b5ed9e3f3cce93aec8eacd3cbf57",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3649/3654"
+  },
+  "46038": {
+   "sha256": "4d8049de872711cde39b2749d51d69b42e0cdb7e03790fbfa685c4808ce568de",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3649/3653"
+  },
+  "46224": {
+   "sha256": "4227c596dff41c635532f5911438e14c4f39b680dc48c1523a9b554053660f3a",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3649/3651"
+  },
+  "46382": {
+   "sha256": "c4ed39340b0d308971bc4ef5ffc1f805b46b52f5c3bb03d59438040c8f2774e8",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3649/3652"
+  },
+  "46383": {
+   "sha256": "3ad7711945855a980290881081715c17f20c266f3f57dd9a9da78d1112e39137",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3531/3659"
+  },
+  "46435": {
+   "sha256": "1e3ad06bc1b75f94fcfbc246762fd1c4be677b03752ce2a5167598032469f91a",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3649/3657"
+  },
+  "46436": {
+   "sha256": "1e3ad06bc1b75f94fcfbc246762fd1c4be677b03752ce2a5167598032469f91a",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3649/3656"
+  },
+  "46449": {
+   "sha256": "c7bf290c3a63a02bdf719a833f7db94a582f40a08c307c1895d6ed56bc1e5a0e",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3531/3352"
+  },
+  "46450": {
+   "sha256": "96878957bb171d7257f072e84827987f0ec11a80388d7237a82fedb324760e3e",
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3531/3350"
+  }
+ },
+ "run": "44760632634"
+}
