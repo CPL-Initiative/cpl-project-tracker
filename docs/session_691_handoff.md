@@ -47,6 +47,17 @@ records feed no M-ID card, so the two program workers run beside `ccsf` as the s
   Jacinto, Orange Coast and Southwestern. A free page read first; paid extraction only for programs whose own page is
   found.
 
+**Split changes during the run.**
+- Worker `pages` finished at 14:1xZ, and its six colleges are released.
+- Lane 2's worker `piles` started at about 14:15Z on Berkeley City and Glendale only.
+- At 14:35Z, Sam's go of Nov 20, 6:26 AM PT (relayed by COBIx on #3584, comment 7042043701: *"read these catalogs with
+  a plain, browser-like page read in tonight's collection wave"*) started worker `catalogs` on NOCE first, then
+  Southwestern, Cerritos, Long Beach City, Monterey Peninsula, Clovis, Los Angeles Valley, Los Angeles City, Los
+  Angeles Southwest, Los Angeles Harbor, East Los Angeles, West Los Angeles, Los Angeles Trade-Tech, Pierce, Los
+  Angeles Mission and El Camino.
+- `reread` released North Orange Continuing Education, Los Angeles Trade Technical, Los Angeles Southwest and West
+  Los Angeles to it.
+
 **Lane 2, the cheap piles (one worker, free rule work; starts after lane 1's workers sign off).** S689's carry-overs
 #3593 (Berkeley City's Cal-GETC 34, then Berkeley City's reread) and #3597 (the shared no-ending address), the minor
 findings of #3586, #3590 and #3594, and the spend file's `updated`, in the night's one follow-up PR (item 2a of
