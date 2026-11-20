@@ -569,3 +569,7 @@ Four S678 and S679 paragraphs as they stood, verbatim (the two drafts merged; th
 ## INDEX update history, moved (S689 checkpoint)
 
 - 2026-11-18 (S682 SkyVireo, the CPL Queue routine's 14:12Z firing, light checkpoint): S681's stand-down held; First Light's 77 painting drops in #3511 for Sam's merge, the 13 story photos held on the hero photo rule; the sierra-page-redesign lane compacted under 20,000 bytes. Handoff 683.
+
+## INDEX update history, moved (S690 checkpoint)
+
+- 2026-11-18 (S683 SkyDipper, Sam's daytime code session, full checkpoint): #3520 (the CER run rebuilds the Side by side views), #3519 (course flags, never deletes), #3513 (rules G and M and their apply), #3515 (exhibits blocker rules 1 and 2), #3517 (Commons plain words, the nightly click-through), #3514 (the reader's page checks); #3516, #3518, #3482 and #3293 parked as issues #3522 to #3525; `scripts/cobix_watch.sh`; the cer-procedures and commons lanes compacted under 20,000 bytes. A daytime section in handoff 683.
