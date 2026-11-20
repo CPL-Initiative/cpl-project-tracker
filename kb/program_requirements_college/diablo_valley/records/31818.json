@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 7105,
-    "output_tokens": 2361,
+    "output_tokens": 2230,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2361,
+  "output_tokens": 2230,
   "output_tokens_details": {
-   "thinking_tokens": 873
+   "thinking_tokens": 764
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07564,
- "ms": 18894,
- "seconds": 19.3,
+ "cost_usd": 0.07302,
+ "ms": 18256,
+ "seconds": 18.5,
  "parts": null,
  "error": null,
  "score": {
@@ -289,22 +289,22 @@
   "missing_explained": [
    {
     "code": "ECON 220",
-    "why": "not in the text; catalog lists ECON C2002 Principles of Macroeconomics instead (likely renumbered)"
+    "why": "not in the text; catalog lists ECON C2002 Principles of Macroeconomics instead (likely common-course renumbering)"
    },
    {
     "code": "ECON 221",
-    "why": "not in the text; catalog lists ECON C2001 Principles of Microeconomics instead (likely renumbered)"
+    "why": "not in the text; catalog lists ECON C2001 Principles of Microeconomics instead (likely common-course renumbering)"
    }
   ],
   "notes": [
-   "Catalog prints codes without spaces (e.g. 'JRNAL110'); recorded with a space between subject and number.",
-   "The catalog text begins mid-sentence ('nce writer, advertising copy writer, editor and photojournalist'); the first career (likely 'freelance writer' or similar) is cut off and was not recorded.",
-   "The page states 'Complete 60 CSU-transferable units' as a general ADT requirement; read as boilerplate, so degree_total left null. No Cal-GETC unit total printed.",
-   "LIST B prints 'Select two (6 units)' with 'Complete the following number of credits: 6'; recorded as choose_units 6. Choosing STAT C1000 (4 units) would exceed 6.",
-   "ECON C2001 and ECON C2002 are printed as an 'or' pair in LIST B; recorded as one entry with alternative. Both are catalog additions (closed list has ECON 220/221).",
-   "Outcomes are printed for the program; recorded for this A.A.-T award."
+   "Catalog prints codes without a space (e.g., JRNAL110, STATC1000); recorded with a space between subject and number.",
+   "The career list is cut off at the start of the text: the first item reads 'nce writer' (probably 'freelance writer'); it was not recorded because the full title is not printed, and earlier careers may also have been cut off.",
+   "The page's '60 CSU-transferable units' bullet is the standard ADT requirement, not a printed total for this award, so degree_total stays null. The Cal-GETC pattern is named, but no GE units are printed.",
+   "LIST B with 'BUS 240 or STAT C1000 (4)': choosing STAT C1000 may give more than 6 units in the list.",
+   "ECON C2001 and ECON C2002 are not in the closed list. They appear to replace closed-list ECON 221 and ECON 220.",
+   "JRNAL 130 Digital Media Reporting is not in the closed list."
   ]
  },
- "extracted_run": 43691943622,
- "read_run": "43379378196"
+ "extracted_run": "44745889555",
+ "catalog_year": "2026-2027"
 }

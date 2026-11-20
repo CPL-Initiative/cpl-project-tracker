@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7314,
+  "input_tokens": 7347,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7314,
-    "output_tokens": 2377,
+    "input_tokens": 7347,
+    "output_tokens": 3118,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2377,
+  "output_tokens": 3118,
   "output_tokens_details": {
-   "thinking_tokens": 703
+   "thinking_tokens": 1177
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0768,
- "ms": 19731,
- "seconds": 20.2,
+ "cost_usd": 0.09175,
+ "ms": 26085,
+ "seconds": 26.3,
  "parts": null,
  "error": null,
  "score": {
@@ -160,7 +160,7 @@
   },
   "blocks": [
    {
-    "name": "major requirements",
+    "name": "major requirements:",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -170,28 +170,28 @@
     },
     "courses": [
      {
-      "code": "BIOL130",
+      "code": "BIOL 130",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 131",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 120",
       "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "BIOL131",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CHEM120",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CHEM121",
+      "code": "CHEM 121",
       "units": 5,
       "units_max": null,
       "alternatives": [],
@@ -200,7 +200,7 @@
     ]
    },
    {
-    "name": "plus at least 4 units from",
+    "name": "plus at least 4 units from:",
     "rule": "choose_units",
     "minimum": 4,
     "option_group": null,
@@ -210,14 +210,14 @@
     },
     "courses": [
      {
-      "code": "MATH182",
+      "code": "MATH 182",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "MATH192",
+      "code": "MATH 192",
       "units": 5,
       "units_max": null,
       "alternatives": [],
@@ -226,24 +226,24 @@
     ]
    },
    {
-    "name": "plus at least 8 units from (PHYS 120/121 sequence)",
+    "name": "plus at least 8 units from: (PHYS 120 / PHYS 121)",
     "rule": "all",
     "minimum": null,
     "option_group": "Physics sequence",
     "stated": {
-     "min": null,
-     "max": null
+     "min": 8,
+     "max": 8
     },
     "courses": [
      {
-      "code": "PHYS120",
+      "code": "PHYS 120",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "PHYS121",
+      "code": "PHYS 121",
       "units": 4,
       "units_max": null,
       "alternatives": [],
@@ -252,24 +252,24 @@
     ]
    },
    {
-    "name": "plus at least 8 units from (PHYS 130/230 sequence)",
+    "name": "plus at least 8 units from: (PHYS 130 / PHYS 230)",
     "rule": "all",
     "minimum": null,
     "option_group": "Physics sequence",
     "stated": {
-     "min": null,
-     "max": null
+     "min": 8,
+     "max": 8
     },
     "courses": [
      {
-      "code": "PHYS130",
+      "code": "PHYS 130",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "PHYS230",
+      "code": "PHYS 230",
       "units": 4,
       "units_max": null,
       "alternatives": [],
@@ -278,7 +278,7 @@
     ]
    },
    {
-    "name": "plus at least 3 units from",
+    "name": "plus at least 3 units from:",
     "rule": "choose_units",
     "minimum": 3,
     "option_group": null,
@@ -288,35 +288,35 @@
     },
     "courses": [
      {
-      "code": "BIOL119",
+      "code": "BIOL 119",
       "units": 4,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": true
      },
      {
-      "code": "BIOL146",
+      "code": "BIOL 146",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 226",
       "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHEM226",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "PSYCC1000",
+      "code": "PSYC C1000",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "STATC1000",
+      "code": "STAT C1000",
       "units": 4,
       "units_max": null,
       "alternatives": [],
@@ -326,15 +326,34 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [],
+  "missing_explained": [
+   {
+    "code": "BIOSC 119",
+    "why": "catalog prints this course as BIOL 119 (same title)"
+   },
+   {
+    "code": "BIOSC 130",
+    "why": "catalog prints this course as BIOL 130 (same title)"
+   },
+   {
+    "code": "BIOSC 131",
+    "why": "catalog prints this course as BIOL 131 (same title)"
+   },
+   {
+    "code": "BIOSC 146",
+    "why": "catalog prints this course as BIOL 146 (same title)"
+   }
+  ],
   "notes": [
-   "The catalog prints biology courses with subject BIOL (BIOL119, BIOL130, BIOL131, BIOL146) while the closed list uses BIOSC with the same numbers and titles; these were matched as the same courses (catalog_addition false). Reviewer should confirm.",
-   "The physics requirement is printed as 'plus at least 8 units from (Total 8)' with PHYS120 + PHYS121 'or' PHYS130 + PHYS230; recorded as two sequence blocks in option_group 'Physics sequence'. The printed total of 8 applies to whichever sequence is chosen.",
-   "The 60-unit sentence is generic for associate degrees and was not recorded as a degree total. GE units are not printed.",
-   "The page allows the CSU GE for STEM or IGETC for STEM patterns (also referred to as CSUGE/IGETC).",
-   "The text begins mid-sentence ('d to transfer.'), so part of the program description may be cut off; no careers are named in the visible text."
+   "The catalog prints biology courses with prefix BIOL (e.g., BIOL130) while the state closed list uses BIOSC; titles and units match, so BIOL 119/130/131/146 appear to be the same courses as BIOSC 119/130/131/146. Recorded literally as catalog additions; reviewer should confirm the prefix mapping.",
+   "Codes are printed without spaces (e.g., BIOL130, PSYCC1000); recorded with a space between subject and number.",
+   "The physics requirement 'plus at least 8 units from:' lists PHYS 120 and PHYS 121, then 'or', then PHYS 130 and PHYS 230; read as a choice between two 8-unit sequences, recorded as two blocks in option_group 'Physics sequence'.",
+   "Major total printed as 'Biology for Transfer (Total 35)'; block totals 20 + 4 + 8 + 3 = 35.",
+   "The 60-unit mention is a generic associate degree statement, not recorded as degree_total. GE pattern units not printed.",
+   "The text begins mid-sentence (cut off); the outcomes list appears under a program-level 'Program Learning Outcomes' heading and is recorded for this award.",
+   "No careers are named in the text."
   ]
  },
- "extracted_run": 43691943622,
- "read_run": 43609976980
+ "extracted_run": "44745889555",
+ "catalog_year": "2026-2027"
 }

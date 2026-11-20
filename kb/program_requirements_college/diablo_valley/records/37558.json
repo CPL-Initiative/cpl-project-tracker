@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7642,
+  "input_tokens": 7730,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7642,
-    "output_tokens": 2972,
+    "input_tokens": 7730,
+    "output_tokens": 3080,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2972,
+  "output_tokens": 3080,
   "output_tokens_details": {
-   "thinking_tokens": 874
+   "thinking_tokens": 1019
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09001,
- "ms": 23518,
- "seconds": 24.6,
+ "cost_usd": 0.09252,
+ "ms": 24281,
+ "seconds": 24.7,
  "parts": null,
  "error": null,
  "score": {
@@ -167,7 +167,7 @@
   },
   "blocks": [
    {
-    "name": "major requirements",
+    "name": "Complete all of the following major requirements",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -177,12 +177,12 @@
     },
     "courses": [
      {
-      "code": "BIOL 170",
+      "code": "BIOL170",
       "units": 3,
       "units_max": null,
       "alternatives": [
        {
-        "code": "BIOL 171",
+        "code": "BIOL171",
         "units": 4,
         "catalog_addition": true
        }
@@ -190,19 +190,19 @@
       "catalog_addition": false
      },
      {
-      "code": "ECON C2001",
+      "code": "ECONC2001",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": true
      },
      {
-      "code": "MATH 182",
+      "code": "MATH182",
       "units": 4,
       "units_max": null,
       "alternatives": [
        {
-        "code": "MATH 192",
+        "code": "MATH192",
         "units": 5,
         "catalog_addition": false
        }
@@ -222,21 +222,21 @@
     },
     "courses": [
      {
-      "code": "BIOL 130",
+      "code": "BIOL130",
       "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "BIOL 131",
+      "code": "BIOL131",
       "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHEM 120",
+      "code": "CHEM120",
       "units": 5,
       "units_max": null,
       "alternatives": [],
@@ -255,21 +255,21 @@
     },
     "courses": [
      {
-      "code": "BIOL 130",
+      "code": "BIOL130",
       "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHEM 120",
+      "code": "CHEM120",
       "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHEM 121",
+      "code": "CHEM121",
       "units": 5,
       "units_max": null,
       "alternatives": [],
@@ -288,14 +288,14 @@
     },
     "courses": [
      {
-      "code": "GEOL 120",
+      "code": "GEOL120",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "GEOL 122",
+      "code": "GEOL122",
       "units": 1,
       "units_max": null,
       "alternatives": [],
@@ -314,14 +314,14 @@
     },
     "courses": [
      {
-      "code": "GEOG 120",
+      "code": "GEOG120",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "GEOG 121",
+      "code": "GEOG121",
       "units": 1,
       "units_max": null,
       "alternatives": [],
@@ -340,21 +340,21 @@
     },
     "courses": [
      {
-      "code": "BUS 240",
+      "code": "BUS240",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "PSYC 214",
+      "code": "PSYC214",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "STAT C1000",
+      "code": "STATC1000",
       "units": 4,
       "units_max": null,
       "alternatives": [],
@@ -366,21 +366,21 @@
     "name": "Physics Option I",
     "rule": "all",
     "minimum": null,
-    "option_group": "Physics",
+    "option_group": "Physics Option",
     "stated": {
      "min": 8,
      "max": 8
     },
     "courses": [
      {
-      "code": "PHYS 120",
+      "code": "PHYS120",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "PHYS 121",
+      "code": "PHYS121",
       "units": 4,
       "units_max": null,
       "alternatives": [],
@@ -392,21 +392,21 @@
     "name": "Physics Option II",
     "rule": "all",
     "minimum": null,
-    "option_group": "Physics",
+    "option_group": "Physics Option",
     "stated": {
      "min": 8,
      "max": 8
     },
     "courses": [
      {
-      "code": "PHYS 130",
+      "code": "PHYS130",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "PHYS 230",
+      "code": "PHYS230",
       "units": 4,
       "units_max": null,
       "alternatives": [],
@@ -416,17 +416,21 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [],
+  "missing_explained": [
+   {
+    "code": "ECON 221",
+    "why": "not in the text; catalog prints ECONC2001 Principles of Microeconomics in its place"
+   }
+  ],
   "notes": [
-   "The catalog prints subject BIOL where the closed list has BIOSC (BIOL 130/131/170 vs BIOSC 130/131/170, same numbers and titles); treated as the same courses with catalog_addition false. Reviewer should confirm.",
-   "The catalog prints ECON C2001 (Principles of Microeconomics) where the closed list has ECON 221 with the same title; treated as the renumbered (common course numbering) same course with catalog_addition false. Reviewer should confirm.",
-   "BIOL 171, MATH 182, BUS 240 and PSYC 214 are not in the closed list and are recorded as catalog additions.",
-   "The first block is printed as 'Complete the following number of credits: 10-12' but consists of three required choices (BIOL 170 or 171; ECON C2001; MATH 182 or 192), so it is recorded as 'all' with alternatives.",
-   "Option 1/Option 2 (15 units), Geology/Geography (4 units) and Physics Option I/II (8 units) are each choices of one whole block, recorded with shared option_group names.",
-   "GE pattern: the page names Cal-GETC; it also says students with 2024-2025 catalog rights may use CSU GE for STEM or IGETC for STEM. The page prints no GE units and no degree total; total_units 40-43 is the major total as printed.",
-   "Program learning outcomes are printed for the program as a whole; recorded for this award."
+   "The catalog prints BIOL170, BIOL130 and BIOL131 where the closed list has BIOSC 170, BIOSC 130 and BIOSC 131 (same numbers and titles); treated as the same courses (subject renamed), so catalog_addition is false. Reviewer should confirm.",
+   "ECONC2001 (Principles of Microeconomics, common course number) appears to replace closed-list ECON 221; recorded as a catalog addition.",
+   "Catalog text begins mid-sentence (truncated); the general statement 'Complete a minimum of 18 units in the major' is a generic ADT requirement, not this major's total. Major total recorded from 'Environmental Science for Transfer (Total 40 - 43)'.",
+   "The Program Learning Outcomes heading is printed without a lead-in sentence; outcomes copied as printed, starting with lowercase letters.",
+   "GE pattern named as Cal-GETC; text also notes students with 2024-2025 catalog rights may use CSU GE for STEM or IGETC for STEM. No GE unit total or degree total printed.",
+   "Option 1 and Option 2 both include BIOL130 and CHEM120; each option recorded as its own block."
   ]
  },
- "extracted_run": 43691943622,
- "read_run": 43609976980
+ "extracted_run": "44745889555",
+ "catalog_year": "2026-2027"
 }
