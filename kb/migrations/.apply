@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-20_commons_handover_note.sql
-name=commons_handover_note
+file=kb/migrations/2026-11-20_s693_handover_note_memory_rows.sql
+name=s693_handover_note_memory_rows
