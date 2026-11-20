@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-19T16:53:24Z",
+ "written_at": "2026-11-20T06:24:18Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 14986,
+     "n": 15044,
      "of": 20282,
      "words": "complete at 118 colleges",
      "open": "#program-requirements/list"
@@ -34,14 +34,14 @@
    ],
    "issues": [
     {
-     "n": 2310,
+     "n": 2231,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
      "open": "#program-requirements/list/fail"
     },
     {
-     "n": 2986,
+     "n": 3007,
      "words": "active programs with no record yet",
      "owner": "the harvest",
      "carry": "routine",
@@ -70,17 +70,17 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-11-19T12:15:47Z",
+    "at": "2026-11-19T14:12:35Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 14986,
-    "failing": 2310,
-    "unread": 2986,
-    "records": 18927,
+    "complete": 15044,
+    "failing": 2231,
+    "unread": 3007,
+    "records": 18896,
     "colleges": 118,
-    "outside_active": 1631,
+    "outside_active": 1621,
     "confirmed": 32,
     "confirmed_complete": 28
    },
@@ -105,14 +105,14 @@
    "status_file": "kb/status/exhibit.json",
    "pair": [
     {
-     "n": 3112,
-     "of": 6186,
-     "words": "titles carry a review stamp (1,503 a person's, 1,609 a cohort's), counting 44 titles MAP carries with no entry yet; 2,919 credentials, 2,475 of 3,245 records stamped",
+     "n": 3156,
+     "of": 6215,
+     "words": "titles carry a review stamp (1,539 a person's, 1,617 a cohort's), counting 29 titles MAP carries with no entry yet; 2,936 credentials, 2,515 of 3,285 records stamped",
      "open": "#exhibits/list"
     },
     {
-     "n": 1503,
-     "of": 6186,
+     "n": 1539,
+     "of": 6215,
      "words": "confirmed by a person",
      "open": "#exhibits/list",
      "error": null
@@ -173,23 +173,23 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-19T16:53:08Z",
+    "at": "2026-11-20T06:19:51Z",
     "every_hours": 24
    },
    "facts": {
-    "titles": 6142,
-    "backlog": 44,
-    "stamped": 3112,
-    "person": 1503,
-    "cohort": 1609,
-    "credentials": 2919,
-    "confirmed": 1503,
-    "records": 3245,
-    "records_stamped": 2475,
+    "titles": 6186,
+    "backlog": 29,
+    "stamped": 3156,
+    "person": 1539,
+    "cohort": 1617,
+    "credentials": 2936,
+    "confirmed": 1539,
+    "records": 3285,
+    "records_stamped": 2515,
     "saved_at": "2026-11-19T16:53:08Z",
-    "fold_at": "2026-11-19T06:18:45Z",
-    "map_titles": 5374,
-    "unclassified": 44,
+    "fold_at": "2026-11-20T06:19:51Z",
+    "map_titles": 5403,
+    "unclassified": 29,
     "left_map": 812,
     "below_80": 1117,
     "below_60": 235,
@@ -300,7 +300,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-19T06:21:17+00:00",
+    "at": "2026-11-20T06:22:40+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -351,15 +351,15 @@
    "status_file": "kb/status/cr.json",
    "pair": [
     {
-     "n": 461,
+     "n": 491,
      "of": 2344,
-     "words": "wordings resolve to a settled reference (411 by a rung 1 to 4 rule, 50 more by a curator); 5,930 of 9,377 articulations; the curator count holds the decisions saved through Sep 20, 2026, and decisions saved on the tab since then join it once they are copied here",
+     "words": "wordings resolve to a settled reference (411 by a rung 1 to 4 rule, 80 more by a curator); 6,143 of 9,377 articulations; the curator count holds the decisions saved through Nov 19, 2026, and decisions saved on the tab since then join it once they are copied here",
      "open": "#cr-reference/list"
     },
     {
-     "n": 97,
+     "n": 139,
      "of": 2344,
-     "words": "confirmed by a person, 97 of them settled",
+     "words": "confirmed by a person, 139 of them settled",
      "open": "#cr-reference/list",
      "error": null
     }
@@ -371,18 +371,11 @@
    ],
    "issues": [
     {
-     "n": 1883,
+     "n": 1853,
      "words": "wordings no rule places and no curator has decided, where a curator judges across groups",
      "owner": "a curator",
      "carry": "no_procedure",
      "open": "#cr-reference/open"
-    },
-    {
-     "n": 36,
-     "words": "groups an official number reaches whose title shares no word with the wordings, held for a check",
-     "owner": "a curator",
-     "carry": "unsure",
-     "open": "#cr-reference/names"
     }
    ],
    "procedures": [
@@ -405,44 +398,44 @@
     "by_rule": 156,
     "rung_5": 1933,
     "rows": 9377,
-    "decided": 30,
-    "decisions_through": "Sep 20, 2026",
+    "decided": 66,
+    "decisions_through": "Nov 19, 2026",
     "live_rows": 0,
     "verdicts": 51,
     "reached": 1184,
-    "receipts": 1,
+    "receipts": 2,
     "wordings": 2344,
-    "settled": 461,
-    "settled_rows": 5930,
+    "settled": 491,
+    "settled_rows": 6143,
     "rule_wordings": 411,
     "rule_rows": 4885,
     "rule_groups": 226,
-    "curator_wordings": 97,
-    "curator_only": 50,
-    "confirmed": 97,
-    "confirmed_settled": 97,
-    "curator_only_rows": 1045,
-    "unsettled": 1883,
-    "unsettled_rows": 3447,
+    "curator_wordings": 139,
+    "curator_only": 80,
+    "confirmed": 139,
+    "confirmed_settled": 139,
+    "curator_only_rows": 1258,
+    "unsettled": 1853,
+    "unsettled_rows": 3234,
     "head": {
      "50": {
-      "settled": 47,
+      "settled": 48,
       "of": 50,
       "rows": 4642
      },
      "100": {
-      "settled": 77,
+      "settled": 79,
       "of": 100,
       "rows": 5511
      },
      "250": {
-      "settled": 153,
+      "settled": 162,
       "of": 250,
       "rows": 6510
      }
     },
-    "awaiting_look": 138,
-    "names_to_check": 36,
+    "awaiting_look": 135,
+    "names_to_check": 0,
     "held_by_screen": 0,
     "named_by_range": 88,
     "named_noncredit": 7,
@@ -524,7 +517,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-19T06:18:43Z",
+    "at": "2026-11-20T06:19:47Z",
     "every_hours": 24
    },
    "facts": {
@@ -537,7 +530,7 @@
     "modal": 0,
     "shared": [],
     "missed_alignment": 0,
-    "scanned_at": "2026-11-19",
+    "scanned_at": "2026-11-20",
     "procedures_on": 6
    },
    "sources": [
@@ -708,7 +701,7 @@
      {
       "ref": "cr",
       "title": "Common CR Reference",
-      "n": 1883,
+      "n": 1853,
       "words": "wordings no rule places and no curator has decided, where a curator judges across groups",
       "owner": "a curator",
       "open": "#cr-reference/open"
@@ -733,14 +726,6 @@
       "words": "common courses (cards) whose catalog description reads as another discipline than the one they carry (Kinesiology)",
       "owner": "Sam (rule on each and say why; a reason marked for similar cards becomes a procedure)",
       "open": "#coci-lookup/list/doubt"
-     },
-     {
-      "ref": "cr",
-      "title": "Common CR Reference",
-      "n": 36,
-      "words": "groups an official number reaches whose title shares no word with the wordings, held for a check",
-      "owner": "a curator",
-      "open": "#cr-reference/names"
      }
     ]
    },
@@ -791,7 +776,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 2310,
+    "n": 2231,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"
@@ -799,7 +784,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 2986,
+    "n": 3007,
     "words": "active programs with no record yet",
     "owner": "the harvest",
     "open": "#program-requirements/list/unread"
@@ -823,12 +808,23 @@
   ],
   "stalled": [
    {
+    "ref": "requirements",
+    "title": "Program Requirements",
+    "kind": "not_shrinking",
+    "n": 3007,
+    "was": 2800,
+    "since": "2026-11-13",
+    "words": "active programs with no record yet",
+    "owner": "the harvest",
+    "open": "#program-requirements/list/unread"
+   },
+   {
     "ref": "exhibit",
     "title": "Common Exhibit Reference",
     "kind": "not_shrinking",
     "n": 546,
-    "was": 366,
-    "since": "2026-11-12",
+    "was": 374,
+    "since": "2026-11-13",
     "words": "credentials with no Common SUBJ (466 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
     "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
     "open": "#exhibits/list/nosubj"
@@ -843,12 +839,12 @@
     {
      "name": "classifier",
      "placed": 967,
-     "untouched": 883,
+     "untouched": 891,
      "kept": 4,
      "renamed": 53,
      "moved": 0,
      "by_procedure": 19,
-     "left": 8,
+     "left": 0,
      "looked": 57
     },
     {
@@ -931,12 +927,12 @@
    ],
    "total": {
     "placed": 1479,
-    "untouched": 1338,
+    "untouched": 1346,
     "kept": 23,
     "renamed": 86,
     "moved": 0,
     "by_procedure": 24,
-    "left": 8,
+    "left": 0,
     "looked": 109
    }
   },
@@ -974,26 +970,26 @@
     {
      "name": "rung 1",
      "placed": 113,
-     "untouched": 104,
-     "kept": 0,
+     "untouched": 101,
+     "kept": 3,
      "renamed": 0,
      "moved": 0,
      "by_procedure": 0,
      "left": 0,
      "widened": 9,
-     "looked": 9
+     "looked": 12
     },
     {
      "name": "rung 2",
      "placed": 26,
-     "untouched": 15,
-     "kept": 0,
+     "untouched": 12,
+     "kept": 3,
      "renamed": 0,
      "moved": 0,
      "by_procedure": 0,
      "left": 0,
      "widened": 11,
-     "looked": 11
+     "looked": 14
     },
     {
      "name": "rung 3",
@@ -1022,30 +1018,19 @@
    ],
    "total": {
     "placed": 226,
-    "untouched": 206,
-    "kept": 0,
+    "untouched": 200,
+    "kept": 6,
     "renamed": 0,
     "moved": 0,
     "by_procedure": 0,
     "left": 0,
     "widened": 20,
-    "looked": 20
+    "looked": 26
    }
   }
  ],
  "docket": [],
  "batches": [
-  {
-   "kind": "decision",
-   "project": "exhibit",
-   "n": 1,
-   "title": "Eight titles that join two whole names with a slash: write and, or keep the slash?",
-   "teaches": "Your rule of Nov 18 writes a slash between words as and. These eight put a slash between two whole names, so the rename left them as printed for you to name. Seven are credential titles: DSST A History of the Vietnam War / Civil War and Reconstruction; Wall and Column Forms / Cutting and Burning (Carpentry); Video Gaming 1 / Computer Programming and Game Design; Standards and Training for Corrections (STC) / Board of Parole Hearings; Metal Building Erection 1 / Foreman Training; Nursing Skills / Clinical Simulation Laboratory Advanced; Water Treatment Operator Grade T3 / Distribution Grade D3. The eighth is a course on the re-point list that needs a new title: Emergency Medical Responder (EMR) / Healthcare Provider CPR.",
-   "open": null,
-   "todo_id": "slash-whole-name-titles-s679",
-   "chosen": "They stay as printed.",
-   "stop": "It stands unless you change it."
-  },
   {
    "kind": "job",
    "ref": "requirements",
@@ -1068,14 +1053,13 @@
   }
  ],
  "next_batch": {
-  "kind": "decision",
-  "project": "exhibit",
-  "n": 1,
-  "title": "Eight titles that join two whole names with a slash: write and, or keep the slash?",
-  "teaches": "Your rule of Nov 18 writes a slash between words as and. These eight put a slash between two whole names, so the rename left them as printed for you to name. Seven are credential titles: DSST A History of the Vietnam War / Civil War and Reconstruction; Wall and Column Forms / Cutting and Burning (Carpentry); Video Gaming 1 / Computer Programming and Game Design; Standards and Training for Corrections (STC) / Board of Parole Hearings; Metal Building Erection 1 / Foreman Training; Nursing Skills / Clinical Simulation Laboratory Advanced; Water Treatment Operator Grade T3 / Distribution Grade D3. The eighth is a course on the re-point list that needs a new title: Emergency Medical Responder (EMR) / Healthcare Provider CPR.",
-  "open": null,
-  "todo_id": "slash-whole-name-titles-s679",
-  "chosen": "They stay as printed.",
-  "stop": "It stands unless you change it."
+  "kind": "job",
+  "ref": "requirements",
+  "n": 6,
+  "title": "Program Requirements",
+  "words": "colleges whose sites block automated reading: find their catalog or course outlines (345 local courses, 12 still taught)",
+  "teaches": "Sam (file it in kb/hand_filed_catalogs/outlines)",
+  "open": "#commons/data",
+  "reason": "no_procedure"
  }
 }
