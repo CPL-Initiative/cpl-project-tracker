@@ -1,3 +1,3 @@
 catalog=mt_san_antonio
-trial=12
-run=2026-11-20T06:24Z
+parts=5
+run=2026-11-20T07:31Z full read on the results-block reader (S689)

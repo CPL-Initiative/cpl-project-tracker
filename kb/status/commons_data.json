@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-20T07:23:13Z",
+ "written_at": "2026-11-20T07:31:28Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -8323,9 +8323,9 @@
    "cost_usd": 22.47,
    "passed_at_read": 359,
    "slo_queue": {
-    "state": "none",
-    "why": "its CourseLeaf course entries print no SLOs",
-    "on": "2026-10-14"
+    "state": "parser",
+    "why": "its CourseLeaf course entries print no SLOs (S387); its SLO site prints a course's SLOs in a course results block. The text reader filed the site's course listing as SLOs on 12 of 12 trial pages; the results-block reader in #3586 parses the hand count 12 of 12 (24 SLOs on 6 pages, 6 pages print the block empty, PHO 09 confirmed on its filed page). A full read on that reader is running; the load waits on it and the standing test",
+    "on": "2026-11-20"
    },
    "scout": null,
    "spot_check": null,
