@@ -561,3 +561,7 @@ Four S678 and S679 paragraphs as they stood, verbatim (the two drafts merged; th
 ## INDEX update history, moved (S687 checkpoint)
 
 - 2026-11-18 (S680 SkyPhoebe, the CPL Queue routine's conductor night for collection only, full checkpoint): #3495 and #3498 (display receipts and old row audit reports out of the tree into the private bucket `cpl-receipts`), #3490 (the repo size guard), #3491 (9 discontinued programs out of the gap census), #3496 (units rules A1, A4, A5, 56 records rescored live), #3497 (75 named gaps), #3502 (no blind paid rereads), #3503 (the Spend line's tags), #3504 (the outcomes wave, 2,452 rows at four colleges); the new repo-size lane; the KB note `methodology-chain-prs-when-every-merge-conflicts-a-generated-file`. Handoff 681.
+
+## INDEX update history, moved (S688 checkpoint)
+
+- 2026-11-18 (S681 SkyGrebe, the CPL Queue routine's second conductor firing of the night, full checkpoint): the stop rule fired on Chabot's outline load (1,013 objectives filed as SLOs, rolled back); #3507 (the first display build through the bucket path, 18,209 rows), Allan Hancock and Santiago Canyon outlines (2,270 rows), Lassen's five records, all in the wave #3509; #3497's 99-row and #3508's 13-row plans reviewed, not applied; the KB note `methodology-a-self-check-must-see-what-the-rule-writes`. Handoff 682.

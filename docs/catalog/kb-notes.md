@@ -562,7 +562,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Re-keying a shared DB from a committed re-mint alias map](../kb-notes/playbook-rekey-shared-db-from-alias-map.md) | playbook | published | 2026-06-15 | 2026-06-15 |
 | [Resume a long multi-agent workflow across task death, model swaps, and spend caps](../kb-notes/playbook-resume-long-workflow-across-failures.md) | playbook | published | 2026-07-12 |  |
 | [Resuming a frozen session — check main before rebuilding its in-flight work](../kb-notes/playbook-resume-frozen-session-check-main-first.md) | playbook | published | 2026-06-02 | 2026-06-02 |
-| [Runner-as-proxy for an external API the agent sandbox can't reach](../kb-notes/playbook-runner-as-external-api-proxy.md) | playbook | published | 2026-06-19 | 2026-06-28 |
+| [Runner-as-proxy for an external API the agent sandbox can't reach](../kb-notes/playbook-runner-as-external-api-proxy.md) | playbook | published | 2026-06-19 | 2026-11-20 |
 | [Ship a new table before its privilege close, when the database tool holds the close](../kb-notes/playbook-ship-a-table-before-its-privilege-close.md) | playbook | published | 2026-10-04 | 2026-10-04 |
 | [Soft-delete a daily-generated entity via an overlay table + collapsed section](../kb-notes/playbook-soft-delete-generated-entity-via-overlay.md) | playbook | published | 2026-06-29 | 2026-06-29 |
 | [Test a database function locally with PGlite before it goes live](../kb-notes/playbook-test-a-database-function-locally-with-pglite.md) | playbook | published | 2026-10-13 | 2026-10-25 |

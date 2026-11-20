@@ -10746,7 +10746,8 @@
       "tools/art_categories.json",
       "tools/art_extra_files.json",
       "tools/source_cpl_stories.mjs",
-      ".github/workflows/cpl-stories.yml"
+      ".github/workflows/cpl-stories.yml",
+      "tools/first_light_verify.json"
      ],
      "path": "docs/kb-notes/playbook-runner-as-external-api-proxy.md",
      "status": "published",
@@ -10759,7 +10760,7 @@
      ],
      "title": "Runner-as-proxy for an external API the agent sandbox can't reach",
      "type": "playbook",
-     "updated": "2026-06-28"
+     "updated": "2026-11-20"
     },
     {
      "created": "2026-10-04",
@@ -16628,7 +16629,7 @@
      ],
      "title": "Program requirements harvest \u2014 lane state",
      "type": null,
-     "updated": "2026-11-19"
+     "updated": "2026-11-20"
     },
     {
      "created": "2026-08-28",
@@ -16770,7 +16771,7 @@
      ],
      "title": "The Commons \u2014 one tracking system for the common references, and a Commons dash \u2014 lane state",
      "type": null,
-     "updated": "2026-11-19"
+     "updated": "2026-11-20"
     },
     {
      "created": "2026-08-28",
@@ -17296,8 +17297,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 647,
+   "count": 648,
    "docs": [
+    {
+     "created": "2026-11-20",
+     "governs": [],
+     "n": 689,
+     "path": "docs/session_689_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 689 handoff (from SkyLinnet, S688)",
+     "type": null,
+     "updated": "2026-11-20"
+    },
     {
      "created": "2026-11-19",
      "governs": [],
@@ -28128,5 +28143,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1526
+ "total": 1527
 }
