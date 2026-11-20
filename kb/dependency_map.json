@@ -4,9 +4,9 @@
   "supabase_tables": 118,
   "rpcs": 65,
   "edge_functions": 15,
-  "file_datasets": 1085,
-  "external_services": 195,
-  "consumers": 634,
+  "file_datasets": 1092,
+  "external_services": 196,
+  "consumers": 635,
   "workflows": 75,
   "data_js_files": 71,
   "tabs": 41
@@ -385,7 +385,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 629
+     "line": 634
     },
     {
      "id": "module:scripts/check_memory_briefing_layout.js",
@@ -466,6 +466,18 @@
      "direction": "read",
      "how": "url",
      "line": 2639
+    }
+   ],
+   "main_committers": []
+  },
+  "external:[^": {
+   "consumers": [
+    {
+     "id": "script:scripts/library_check.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 163
     }
    ],
    "main_committers": []
@@ -2145,6 +2157,13 @@
      "pages": [
       "kb-portal/index.html"
      ]
+    },
+    {
+     "id": "script:scripts/library_check.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 397
     }
    ],
    "main_committers": []
@@ -3102,7 +3121,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2470,
+     "line": 2513,
      "tabs": [
       "library"
      ]
@@ -6775,7 +6794,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3790,
+     "line": 3833,
      "tabs": [
       "library"
      ]
@@ -9458,6 +9477,20 @@
      "line": 29
     },
     {
+     "id": "script:scripts/library_check.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 101
+    },
+    {
+     "id": "script:scripts/library_check.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 575
+    },
+    {
      "id": "script:scripts/library_page.py",
      "kind": "script",
      "direction": "write",
@@ -9556,7 +9589,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3081,
+     "line": 3124,
      "tabs": [
       "library"
      ]
@@ -9572,7 +9605,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2463,
+     "line": 2506,
      "tabs": [
       "library"
      ]
@@ -19087,6 +19120,19 @@
     "workflow:daily-dashboard.yml"
    ]
   },
+  "file:kb/receipts/library_checks": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "workflow:library-publish.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": false,
+   "main_committers": [
+    "workflow:library-publish.yml"
+   ]
+  },
   "file:kb/receipts/library_publish": {
    "consumers": [],
    "producers": [
@@ -22685,6 +22731,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:library/*/accessibility": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "workflow:library-publish.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": false,
+   "main_committers": [
+    "workflow:library-publish.yml"
+   ]
+  },
   "file:library/*/img": {
    "consumers": [],
    "producers": [
@@ -22941,13 +23000,26 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2699,
+     "line": 2742,
      "tabs": [
       "library"
      ]
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:list.json": {
+   "consumers": [
+    {
+     "id": "workflow:library-publish.yml",
+     "kind": "workflow",
+     "direction": "read",
+     "how": "yaml",
+     "line": 180
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:live_metrics.json": {
@@ -24163,7 +24235,7 @@
      "kind": "workflow",
      "direction": "read",
      "how": "yaml",
-     "line": 66
+     "line": 74
     }
    ],
    "served": false,
@@ -24529,6 +24601,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:scripts/a11y.js": {
+   "consumers": [
+    {
+     "id": "script:scripts/library_check.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 388
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:scripts/catalog_framing.py": {
    "consumers": [
     {
@@ -24718,6 +24803,13 @@
      "line": 0
     },
     {
+     "id": "workflow:library-publish.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
      "id": "workflow:program-course-fetch.yml",
      "kind": "workflow",
      "direction": "run",
@@ -24781,6 +24873,32 @@
    "consumers": [
     {
      "id": "workflow:k10-disclosure-check.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:scripts/library_check.config.js": {
+   "consumers": [
+    {
+     "id": "script:scripts/library_check.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 388
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:scripts/library_check.py": {
+   "consumers": [
+    {
+     "id": "workflow:library-publish.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -25050,7 +25168,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4488,
+     "line": 4531,
      "tabs": [
       "library"
      ]
@@ -27632,6 +27750,19 @@
    "main_committers": []
   },
   "file:tests/legacy_anchor_duplicates_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/library_check_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -32699,7 +32830,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1635,
+     "line": 1678,
      "tabs": [
       "library"
      ]
@@ -32776,7 +32907,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1433,
+     "line": 1476,
      "tabs": [
       "library"
      ]
@@ -36665,6 +36796,7 @@
     "tests/second_reader_test.py",
     "tests/library_file_test.py",
     "tests/library_publish_test.py",
+    "tests/library_check_test.py",
     "tests/program_source_census_test.py",
     "tests/program_requirements_pilot_test.py",
     "tests/course_id_route_test.py",
@@ -36936,12 +37068,18 @@
     "41 */3 * * *"
    ],
    "scripts": [
-    "scripts/library_publish.py"
+    "scripts/library_publish.py",
+    "scripts/library_check.py",
+    "scripts/install_browser.sh"
    ],
    "adds": [
     "library/*/index.html",
     "kb/receipts/library_publish/",
-    "library/*/img/"
+    "library/*/img/",
+    "library/*/index.html",
+    "kb/receipts/library_checks/",
+    "library/*/accessibility/",
+    "kb/receipts/library_checks/"
    ],
    "push": "main",
    "deploys": [],
@@ -37829,6 +37967,7 @@
  ],
  "stale_risk": [
   "cpl_pathways_ccr_data.js rebuilt by kb/_build_cpl_pathway_ccr.py under daily-dashboard.yml but not in its commit list",
+  "index.html rebuilt by scripts/library_check.py under library-publish.yml but not in its commit list",
   "index.html rebuilt by scripts/library_publish.py under library-publish.yml but not in its commit list",
   "kb/credentials.json rebuilt by kb/_match_cos_authority.py under cos-authority-sync.yml but not in its commit list"
  ],

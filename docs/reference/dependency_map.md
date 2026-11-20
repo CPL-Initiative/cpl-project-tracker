@@ -39,7 +39,7 @@ closes the PR path only; THIS lane stays open by design.
 | `docket-process.yml` | `33 5 * * *` | main | `kb/` |
 | `esl-sheet-apply.yml` | dispatch-only | main | — |
 | `funding-config-edit-apply.yml` | dispatch-only | main | — |
-| `library-publish.yml` | `41 */3 * * *` | main | `library/*/index.html`, `kb/receipts/library_publish/`, `library/*/img/` |
+| `library-publish.yml` | `41 */3 * * *` | main | `library/*/index.html`, `kb/receipts/library_publish/`, `library/*/img/`, `kb/receipts/library_checks/`, `library/*/accessibility/` |
 | `moc-crosswalk-sync.yml` | `17 8 5 * *` | main (cron checkout) | `kb/reference/moc_crosswalk.json` |
 | `overmerge-apply.yml` | dispatch-only | main | `kb/coci_minted_courses.json`, `kb/coci_minted_singletons.json`, `kb/coci_minted_memberships.json`, `kb/coci_articulations.json`, `kb/coci_unified_courses.json`, `kb/coci_curation.json`, `kb/overmerge_out/`, `kb/overmerge_apply/`, `kb/row_audit/` |
 | `phase-1e-apply.yml` | dispatch-only | main | `kb/coci_minted_courses.json`, `kb/coci_minted_singletons.json`, `kb/coci_minted_memberships.json`, `kb/coci_articulations.json`, `kb/coci_unified_courses.json`, `kb/coci_curation.json`, `kb/discipline_canonical_subj4.json`, `kb/subj4_dryrun/`, `kb/subj4_apply/`, `kb/row_audit/` |
@@ -524,7 +524,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `generate_reports.js` | scripts: `excel_to_dashboard.py` · workflows: `daily-dashboard.yml` | — |
 | `governance.js` | pages: `CPL_Dashboard.html` | — |
 | `gr_priorities.js` | pages: `CPL_Dashboard.html` | — |
-| `index.html` | scripts: `excel_to_dashboard.py`, `kb/_glyph_sweep.py`, `nudges/build_nudges.py`, `prototype/check_contrast.py`, `raci/_seed_team_members.py`, `scripts/build_exhibits_list_preview.py`, `scripts/library_publish.py`, `scripts/ui_pass.py` | scripts: `scripts/library_page.py`, `scripts/library_publish.py` · committed by: `daily-dashboard.yml` |
+| `index.html` | scripts: `excel_to_dashboard.py`, `kb/_glyph_sweep.py`, `nudges/build_nudges.py`, `prototype/check_contrast.py`, `raci/_seed_team_members.py`, `scripts/build_exhibits_list_preview.py`, `scripts/library_check.py`, `scripts/library_publish.py`, `scripts/ui_pass.py` | scripts: `scripts/library_check.py`, `scripts/library_page.py`, `scripts/library_publish.py` · committed by: `daily-dashboard.yml` |
 | `index.json` | pages: `tools/first_light_gallery/gallery.html` | — |
 | `index_*.json` | scripts: `scripts/next_slo_colleges.py` | — |
 | `issuer_resolution.js` | pages: `CPL_Dashboard.html` | — |
@@ -859,6 +859,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/receipts/cr_reference_decisions_<date>_s280.json` | scripts: `kb/_build_decision_sheet_demo.py` | — |
 | `kb/receipts/jev_ccr_title_rung_<date>_s282.json` | scripts: `kb/_build_ccr_title_rung_sheet.py` | — |
 | `kb/receipts/left_map_apply_*.json` | none found | committed by: `daily-dashboard.yml` |
+| `kb/receipts/library_checks` | none found | committed by: `library-publish.yml` |
 | `kb/receipts/library_publish` | none found | committed by: `library-publish.yml` |
 | `kb/receipts/migration_s652_honors_two_row_delete_43607926526.json` | scripts: `kb/_honors_followups_s652.py` | — |
 | `kb/reclustering_s648_out/2026-11-13/honors_worklist.json` | scripts: `kb/_reclustering_s649.py` | scripts: `kb/_reclustering_s648_dryrun.py` |
@@ -987,6 +988,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kpi_history.json` | scripts: `excel_to_dashboard.py` | committed by: `daily-dashboard.yml` |
 | `kpi_reorder.js` | pages: `CPL_Dashboard.html` | — |
 | `library.js` | pages: `CPL_Dashboard.html` | — |
+| `library/*/accessibility` | none found | committed by: `library-publish.yml` |
 | `library/*/img` | none found | committed by: `library-publish.yml` |
 | `library/*/index.html` | none found | committed by: `library-publish.yml` |
 | `library/adopt/adopt.js` | pages: `library/adopt/index.html` | — |
@@ -1001,6 +1003,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `library/photos/hero_photos.json` | tabs: `first-light` | — |
 | `library/public_library.js` | pages: `library/index.html` | — |
 | `library_remediate.js` | tabs: `library` | — |
+| `list.json` | workflows: `library-publish.yml` | — |
 | `live_metrics.json` | tabs: `college-briefing`, `cpl-pathways` · pages: `fact-sheet/index.html`, `library/cpl-initiative-overview/index.html` · scripts: `excel_to_dashboard.py`, `veteran-sprint-map/extract_military.py` · `edgefn:cpl-chat` | committed by: `daily-dashboard.yml` |
 | `live_metrics_new.json` | workflows: `daily-dashboard.yml` | — |
 | `map/probe_users_schema.py` | workflows: `map-users-schema-probe.yml` | — |
@@ -1083,6 +1086,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `reviewer_signin.js` | pages: `CPL_Dashboard.html`, `prototype/ccr_atlas_v1.html`, `prototype/skyview.html` · scripts: `kb/_commons_data_live.py` | — |
 | `roadmap_archive*.md` | scripts: `kb/_consolidation_loss_audit.py` | — |
 | `rolled_back_*.json` | scripts: `kb/_cer_decision_apply.py` | — |
+| `scripts/a11y.js` | scripts: `scripts/library_check.py` | — |
 | `scripts/catalog_framing.py` | workflows: `catalog-framing.yml` | — |
 | `scripts/commons_clickthrough.js` | workflows: `commons-clickthrough.yml` | — |
 | `scripts/commons_clickthrough.json` | modules: `scripts/commons_clickthrough.js` | — |
@@ -1091,8 +1095,10 @@ collapse to one `<date>` family so writer and reader edges join.
 | `scripts/daily_gate.sh` | workflows: `daily-dashboard.yml` | — |
 | `scripts/fetch_gallery_thumbs.py` | workflows: `first-light-gallery-thumbs.yml` | — |
 | `scripts/fetch_sierra_art.py` | workflows: `sierra-art-fetch.yml` | — |
-| `scripts/install_browser.sh` | workflows: `catalog-framing.yml`, `college-page-read.yml`, `commons-clickthrough.yml`, `course-outcomes-read.yml`, `course-outline-census.yml`, `course-outline-index.yml`, `cpl-stories.yml`, `first-light-apply.yml`, `program-course-fetch.yml`, `program-requirements-college.yml`, `program-requirements-pilot.yml`, `program-requirements-wave.yml`, `program-sequence-ppm.yml`, `program-source-census.yml`, `second-reader.yml`, `typesafe-smoke.yml` | — |
+| `scripts/install_browser.sh` | workflows: `catalog-framing.yml`, `college-page-read.yml`, `commons-clickthrough.yml`, `course-outcomes-read.yml`, `course-outline-census.yml`, `course-outline-index.yml`, `cpl-stories.yml`, `first-light-apply.yml`, `library-publish.yml`, `program-course-fetch.yml`, `program-requirements-college.yml`, `program-requirements-pilot.yml`, `program-requirements-wave.yml`, `program-sequence-ppm.yml`, `program-source-census.yml`, `second-reader.yml`, `typesafe-smoke.yml` | — |
 | `scripts/k10_disclosure_check.py` | workflows: `k10-disclosure-check.yml` | — |
+| `scripts/library_check.config.js` | scripts: `scripts/library_check.py` | — |
+| `scripts/library_check.py` | workflows: `library-publish.yml` | — |
 | `scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/draft.html` | scripts: `scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/write_receipt.py` | scripts: `scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/build.mjs` |
 | `scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/library` | scripts: `scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/build.mjs` | — |
 | `scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/main.html` | scripts: `scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/build.mjs` | — |
@@ -1271,6 +1277,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/kpi_history_write_test.py` | workflows: `js-tests.yml` | — |
 | `tests/left_map_build_test.py` | workflows: `js-tests.yml` | — |
 | `tests/legacy_anchor_duplicates_test.py` | workflows: `js-tests.yml` | — |
+| `tests/library_check_test.py` | workflows: `js-tests.yml` | — |
 | `tests/library_file_test.py` | workflows: `js-tests.yml` | — |
 | `tests/library_publish_test.py` | workflows: `js-tests.yml` | — |
 | `tests/library_publishing_sql_proof.py` | workflows: `js-tests.yml` | — |
@@ -1413,6 +1420,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `127.0.0.1:` | modules: `prototype/check_ccr_atlas.js`, `prototype/check_skyview_sweep.js`, `scripts/a11y.js`, `scripts/check_memory_briefing_layout.js`, `scripts/commons_clickthrough.js`, `scripts/commons_data_values_check.js`, `scripts/tab_review_sheet/capture.js`, `scripts/tab_review_sheet/tab.js` · scripts: `prototype/mockup_harness/capture.mjs`, `prototype/mockup_harness/capture_model_words.mjs`, `prototype/mockup_harness/capture_mycpl.mjs` |
 | `127.0.0.1:9333` | scripts: `prototype/funding_video/render.mjs` |
 | `<host>` | scripts: `kb/_program_requirements_college.py` |
+| `[^` | scripts: `scripts/library_check.py` |
 | `[a-z0-9]+` | workflows: `sierra-ask.yml` |
 | `alameda.edu` | tabs: `map-queue`, `map-users` |
 | `api-prod.elumenapp.com` | scripts: `kb/_course_outcomes_read.py`, `kb/_program_requirements_college.py` |
@@ -1464,7 +1472,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `fonts.gstatic.com` | scripts: `kb/_build_college_offering_crosswalk.py`, `kb/_write_oc_medical_assistant_html.py`, `kb/_write_openclassrooms_html.py`, `prototype/mockup_harness/assemble.py`, `prototype/mockup_harness/assemble_model_words.py`, `prototype/mockup_harness/assemble_mycpl.py` |
 | `foothill.edu` | tabs: `map-queue`, `map-users` |
 | `futurohealth.org` | tabs: `map-queue`, `map-users` |
-| `github.com` | pages: `kb-portal/index.html` |
+| `github.com` | pages: `kb-portal/index.html` · scripts: `scripts/library_check.py` |
 | `github.com/CPL-Initiative/cpl-knowledge-base` | pages: `kb-portal/index.html` |
 | `github.com/CPL-Initiative/cpl-project-tracker` | tabs: `canonical-subj4`, `commons`, `cr-reference`, `credential-reference`, `exhibits`, `governance`, `program-requirements`, `unified-courses` · modules: `commons_eta_clock.js`, `commons_front.js` · scripts: `prototype/ironworker_video/build.py`, `prototype/noncredit_video/build.py` |
 | `github.com/CPL-Initiative/cpl-project-tracker)` | scripts: `kb/_csr_quarterly_probe.py` |
@@ -1609,6 +1617,7 @@ Tracked artifacts a main-committing workflow REBUILDS but never commits —
 the committed copy silently drifts from what the cron computed:
 
 - cpl_pathways_ccr_data.js rebuilt by kb/_build_cpl_pathway_ccr.py under daily-dashboard.yml but not in its commit list
+- index.html rebuilt by scripts/library_check.py under library-publish.yml but not in its commit list
 - index.html rebuilt by scripts/library_publish.py under library-publish.yml but not in its commit list
 - kb/credentials.json rebuilt by kb/_match_cos_authority.py under cos-authority-sync.yml but not in its commit list
 
@@ -1632,5 +1641,5 @@ check these BY HAND before trusting an absence:
 - `kb/_row_audit_prune.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 118 Supabase tables · 65 RPCs · 15 edge functions · 1085 file
-datasets · 195 external services · 634 consumers · 75 workflows · 41 tabs.
+Coverage: 118 Supabase tables · 65 RPCs · 15 edge functions · 1092 file
+datasets · 196 external services · 635 consumers · 75 workflows · 41 tabs.
