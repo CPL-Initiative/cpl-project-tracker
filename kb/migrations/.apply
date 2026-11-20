@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-20_library_check_after_page_change.sql
-name=library_check_after_page_change
+file=kb/migrations/2026-11-20_s688_library_part2_memory_rows.sql
+name=s688_library_part2_memory_rows
