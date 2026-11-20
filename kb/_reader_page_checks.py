@@ -110,16 +110,35 @@ TOKEN = re.compile(r"[a-z0-9]+")
 # pypdf keeps a PDF's typographic ligatures, so a line can print "Certiﬁcate" with U+FB01, and no award pattern reads
 # it. Santa Rosa Junior's 2026-2027 catalog heads each certificate "298 CS Web and Mobile Full-Stack (Certiﬁcate of
 # Achievement)", and on 2026-11-19 rule A refused 34 programs there, 31 of them certificates (run 44477690021; S689).
-# Solano's text prints the scorer's stand-in glyphs with a space after each ("AccounƟ ng CerƟ ﬁ cate"; S644), so the
-# fold is the scorer's own table and pattern (kb/_program_requirements_score.py _LIGATURES, _LIGATURE_SPACED: a glyph
-# and the one space after it), imported, never copied. Every test below reads a line folded; the fold works line by
-# line and keeps the line count, so heading_at's offsets stay the page's own.
+# Solano's text is set in a stand-in font: Ɵ for ti, Ʃ for tt, Ō for ft, and a space after every glyph, real ligatures
+# too ("AccounƟ ng CerƟ ﬁ cate", "Oﬃ ce"; S644). The fold reads the scorer's own table (kb/_program_requirements_score.py
+# _LIGATURES and _LIGATURE_SPACED), imported, never copied. It drops the space after a glyph only in text that shows the
+# stand-in font (stand_in_style), so "Staﬀ Development" keeps its space elsewhere, and it reads Ō as ft only there,
+# since Ō is a letter in any other text (the S689 follow-up; COBIx on #3587). Every test below reads a line folded; the
+# fold works line by line and keeps the line count, so heading_at's offsets stay the page's own.
 from _program_requirements_score import _LIGATURE_SPACED, _LIGATURES  # noqa: E402
 
+STAND_INS = "\u019f\u01a9"     # Ɵ Ʃ: the stand-in font's glyphs, never a catalog's letters
+STAND_IN_LETTER = "\u014c"      # Ō: the stand-in font's ft, and a letter in any other text
+_STAND_STYLE = re.compile("[%s] |(?<=[^\\W\\d_])%s " % (STAND_INS, STAND_IN_LETTER))
+_GLYPH_PLAIN = re.compile("[%s]" % "".join(k for k in _LIGATURES if k != STAND_IN_LETTER))
 
-def fold(text: str | None) -> str:
-    """The text with each ligature or stand-in glyph spelled out, and the space the PDF prints after it dropped."""
-    return _LIGATURE_SPACED.sub(lambda m: _LIGATURES[m.group(1)], text or "")
+
+def stand_in_style(text: str | None) -> bool:
+    """Whether the text shows the stand-in font: one of its glyphs with the space the PDF prints after it."""
+    return bool(_STAND_STYLE.search(text or ""))
+
+
+def fold(text: str | None, spaced: bool | None = None) -> str:
+    """The text with each ligature spelled out. In the stand-in font's text (spaced; read from the text when None) every
+    glyph is spelled out and the one space after it dropped, as the scorer reads it; elsewhere each glyph but Ō is
+    spelled out and every space stays."""
+    t = text or ""
+    if spaced is None:
+        spaced = stand_in_style(t)
+    if spaced:
+        return _LIGATURE_SPACED.sub(lambda m: _LIGATURES[m.group(1)], t)
+    return _GLYPH_PLAIN.sub(lambda m: _LIGATURES[m.group(0)], t)
 
 
 # "science" and "arts" are filler only inside an award's phrase ("Associate in Science"), which _sister_words reads as
@@ -203,6 +222,7 @@ def refused_filed(folder: str) -> set[str]:
     descriptions (pages 561 to 578 and 643 for its business and ESL certificates; run 44687776552), Santa Rosa
     Junior's 34 and Ohlone's 7 to the pages they had (runs 44687780496, 44687785539)."""
     out: set[str] = set()
+    plain: set[str] = set()     # refusals filed beside the plain picker's own named heading, from either file
     for name in ("capture.json", "capture_preview.json"):
         try:
             with open(os.path.join(folder, name), encoding="utf-8") as fh:
@@ -211,9 +231,11 @@ def refused_filed(folder: str) -> set[str]:
             continue
         for r in (d.get("not_found") or []) if isinstance(d, dict) else []:
             near = (r.get("near_miss") or {}) if isinstance(r, dict) else {}
-            if not isinstance(near, dict) or not r.get("control_number") or near.get("plain_named"):
+            if not isinstance(near, dict) or not r.get("control_number"):
                 continue
-            if near.get("rule") in ("A", "D") or near.get("page_checks"):
+            if near.get("plain_named"):
+                plain.add(str(r["control_number"]))
+            elif near.get("rule") in ("A", "D") or near.get("page_checks"):
                 out.add(str(r["control_number"]))
     try:
         with open(os.path.join(folder, "reread_keep_better.json"), encoding="utf-8") as fh:
@@ -224,7 +246,9 @@ def refused_filed(folder: str) -> set[str]:
         for r in (run or {}).get("dropped_by_filing") or []:
             if isinstance(r, dict) and r.get("control_number") and not r.get("filed_passes_live"):
                 out.add(str(r["control_number"]))
-    return out
+    # plain_named leaves the program out wherever else it is listed, keep-the-better's dropped list included (COBIx on
+    # #3587, 7033947220: Ohlone 33319 and 46035 sit in both, and stayed marked).
+    return out - plain
 
 
 def refused_standing(folder: str) -> set[str]:
@@ -370,7 +394,8 @@ def heading_line(lines: list[str], title: str | None, award: str | None) -> int:
     words = title_words(title)
     if not words:
         return -1
-    lines = [fold(x) for x in lines]
+    spaced = stand_in_style("\n".join(x or "" for x in lines))
+    lines = [fold(x, spaced) for x in lines]
     arx = award_pattern(award)
     kind = P.award_kind(award)
     reach = COA_REACH if arx is AWARD_WORDS["coa"] else HEADING_REACH
