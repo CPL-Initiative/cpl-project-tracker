@@ -1,0 +1,1039 @@
+{
+ "college": "San Jose City College",
+ "catalog_url": "https://catalog.sjcc.edu/",
+ "platform": "courseleaf",
+ "catalog_year": "2026-2027",
+ "programs": 125,
+ "with_closed_list": 90,
+ "started": "2026-11-20T15:43:40Z",
+ "scope": null,
+ "sitemap": {
+  "url": "https://catalog.sjcc.edu/sitemap.xml",
+  "status": 200,
+  "listed": 379,
+  "nested": 0,
+  "program_pages": 218,
+  "refused": null,
+  "errors": null,
+  "failed": null,
+  "challenged": null
+ },
+ "listing_failed": 0,
+ "pages_read": 214,
+ "pages_listed": 226,
+ "pages_answered": 214,
+ "child_pages": 8,
+ "banner_h1": null,
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 77,
+   "hits": 51,
+   "recall": 0.662,
+   "false": 0,
+   "false_off_own": 2,
+   "false_no_claims": 2,
+   "shared": 4,
+   "false_matches": [
+    {
+     "control_number": "38726",
+     "title": "History",
+     "award": "A.A- T Degree",
+     "page": "https://catalog.sjcc.edu/degrees-certificates/history/",
+     "h1": "History"
+    },
+    {
+     "control_number": "41533",
+     "title": "Graphic Design",
+     "award": "A.A. Degree",
+     "page": "https://catalog.sjcc.edu/degrees-certificates/graphic-design/",
+     "h1": "Graphic Design"
+    }
+   ],
+   "no_claims_matches": [
+    {
+     "control_number": "38726",
+     "title": "History",
+     "award": "A.A- T Degree",
+     "page": "https://catalog.sjcc.edu/degrees-certificates/history/",
+     "h1": "History"
+    },
+    {
+     "control_number": "41533",
+     "title": "Graphic Design",
+     "award": "A.A. Degree",
+     "page": "https://catalog.sjcc.edu/degrees-certificates/graphic-design/",
+     "h1": "Graphic Design"
+    }
+   ],
+   "searches": false,
+   "catalog_list": null
+  },
+  "programs": 35,
+  "by_result": {
+   "not_searched": 35
+  },
+  "found": 0,
+  "found_active": 0,
+  "found_pages": 0,
+  "found_programs": [],
+  "other_programs": [
+   {
+    "control_number": "06200",
+    "title": "Air Conditioning & Refrigeration",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "06209",
+    "title": "Machine Technology",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "06231",
+    "title": "Early Childhood Education",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "08855",
+    "title": "CIS Programming 3",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "08863",
+    "title": "Alcohol & Drug Studies",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "10595",
+    "title": "CIS Network Administration: General Networking 2",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "10834",
+    "title": "CIS Programming 2",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "10837",
+    "title": "Entry Level Machinist",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "10838",
+    "title": "CNC Machine Operator",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "11679",
+    "title": "Web Developer 3",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "11849",
+    "title": "Web Developer 2",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "13661",
+    "title": "Business Management 3",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "13662",
+    "title": "Business Management 2",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "13664",
+    "title": "Entrepreneurship 3",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "13665",
+    "title": "Entrepreneurship 2",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "13667",
+    "title": "Marketing 3",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "13668",
+    "title": "Marketing 2",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "14892",
+    "title": "CIS Network Administration: Microsoft Networks MCSE 2",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "14893",
+    "title": "CIS Network Administration: MCSA Level 2",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "14894",
+    "title": "CIS Network Administration: UNIX Networks 2",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "14895",
+    "title": "CIS Network Administration: CISCO Networks CCNA 2",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "15113",
+    "title": "Facilities Maintenance Technology",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "18920",
+    "title": "Air Conditioning & Refrigeration",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "18985",
+    "title": "Esthetics 2",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "22221",
+    "title": "Business Management 3",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "22222",
+    "title": "Entrepreneurship 3",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "22223",
+    "title": "Marketing 3",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "22228",
+    "title": "CIS Programming 3",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "22233",
+    "title": "CIS Network Administration: UNIX Networks",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "22234",
+    "title": "CIS Network Administration: Microsoft Networks MCSE 2",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "22235",
+    "title": "Web Developer 3",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "22236",
+    "title": "Facilities Maintenance Technology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "22238",
+    "title": "Machine Technology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "22989",
+    "title": "Administration of Justice : Judicial Administration",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "31087",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 51 of 77 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
+ "loads": 237,
+ "seconds": 1169.2,
+ "found": 83,
+ "by_method": {
+  "link_search": 2,
+  "no_closed_list": 35,
+  "not_found": 7,
+  "sitemap_page": 81
+ },
+ "shared_pages": {
+  "https://catalog.sjcc.edu/degrees-certificates/art/art-associate-science/": [
+   "06210",
+   "12546"
+  ],
+  "https://catalog.sjcc.edu/degrees-certificates/early-childhood-education/early-childhood-education-master-teacher-certificate-achievement/": [
+   "35033",
+   "35034"
+  ],
+  "https://catalog.sjcc.edu/": [
+   "43327",
+   "43328"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "06188",
+   "title": "Real Estate",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/business/real-estate-associate-science/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.2,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 1,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 1 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 6199,
+     "content": 37960,
+     "tabs": 1309
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      445
+     ],
+     [
+      "Requirements",
+      1289
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "18738",
+   "title": "Residential Carpentry Technology",
+   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/construction-technology/residential-carpentry-technology-certificate-achievement-level-1/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.25,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 1,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 1 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5021,
+     "content": 36114,
+     "tabs": 278
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      501
+     ],
+     [
+      "Requirements",
+      258
+     ]
+    ],
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "22225",
+   "title": "Real Estate",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/business/real-estate-certificate-achievement-level-2/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.333,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 1,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 1 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 6049,
+     "content": 37187,
+     "tabs": 685
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      445
+     ],
+     [
+      "Requirements",
+      665
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "40875",
+   "title": "Business and Data Analytics",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/computer-applications/business-data-analytics-certificate-achievement-level-1/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4798,
+     "content": 36089,
+     "tabs": 302
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      462
+     ],
+     [
+      "Requirements",
+      282
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "42654",
+   "title": "User Experience and Interaction Design",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/digital-media-arts/user-experience-interaction-design-certificate-achievement/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5503,
+     "content": 37105,
+     "tabs": 378
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      889
+     ],
+     [
+      "Requirements",
+      358
+     ]
+    ]
+   },
+   "status": "Approved"
+  },
+  {
+   "control_number": "44384",
+   "title": "Motion Graphic Design",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/digital-media-arts/motion-graphic-design-certificate-ofachievement-level-2/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4960,
+     "content": 36299,
+     "tabs": 355
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      652
+     ],
+     [
+      "Requirements",
+      335
+     ]
+    ]
+   },
+   "status": "Approved"
+  },
+  {
+   "control_number": "46067",
+   "title": "Legal Studies",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/alcohol-drug-studies/alcohol-and-drug-studies-certificate-of-achievement-level-3/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 6264,
+     "content": 37906,
+     "tabs": 730
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      739
+     ],
+     [
+      "Requirements",
+      710
+     ]
+    ],
+    "page_checks": true
+   },
+   "status": "Approved"
+  }
+ ],
+ "page_claimed": [],
+ "page_challenged": [],
+ "coverage_bands": {
+  "0.5-0.8": 11,
+  "0.8-1.0": 35,
+  "1.0": 37
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/san_jose_city",
+  "kept": 79,
+  "kept_moved": 0,
+  "programs": 4,
+  "list": [
+   {
+    "control_number": "18449",
+    "title": "Liberal Arts: Arts & Humanities",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/counseling/liberal-arts-arts-humanities-associate-arts/",
+    "coverage": 0.951,
+    "was_url": "https://catalog.sjcc.edu/degrees-certificates/counseling/liberal-arts-arts-humanities-associate-arts/",
+    "was_coverage": 0.937,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "22239",
+    "title": "Dental Assisting",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/dental-assisting/dental-assisting-certificate-achievement-level-3/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.sjcc.edu/degrees-certificates/dental-assisting/dental-assisting-certificate-achievement-level-3/",
+    "was_coverage": 0.5,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41533",
+    "title": "Graphic Design",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/digital-media-arts/graphic-design-associate-arts/",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "45796",
+    "title": "Cal-GETC",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.sjcc.edu/graduation-certificate-general-education-requirements/cal-getc/",
+    "coverage": 0.994,
+    "was_url": "https://catalog.sjcc.edu/graduation-certificate-general-education-requirements/cal-getc/",
+    "was_coverage": 0.981,
+    "was_method": "sitemap_page"
+   }
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
+ },
+ "fingerprints": {
+  "06185": {
+   "sha256": "cb040ffadcf6039baab2c1e3f2076576c36c6fc97a21fd078d6fc6cbf5fcad36",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/accounting/accounting-associate-science/"
+  },
+  "06202": {
+   "sha256": "6a3529a575e9fad6727a6fe89e45b4230715a912a014ed19598c97491d701c9b",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/construction-technology/construction-technology-associate-science/"
+  },
+  "06210": {
+   "sha256": "4a3699303bb2a100e00bd5b6219b6f4e3380a18a16c7cc2282f6bf3f01bf259e",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/art/art-associate-science/"
+  },
+  "06218": {
+   "sha256": "73929adae22a121e69fc03e58d12cdbf18e4850a110f11caf9f3af3b7171eb70",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/dental-assisting/dental-assisting-associate-science/"
+  },
+  "06230": {
+   "sha256": "410f15b4bcc5d4aa7ea08313d1dd035a779565558aeb80c537009530622fd6e7",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/administration-justice/administration-justice-associate-science/"
+  },
+  "06236": {
+   "sha256": "8731412b4022268137c668169b44e9bc446fddaf1444eb2f188a07a82ee1ef0d",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/cosmetology/cosmetology-associate-science/"
+  },
+  "08859": {
+   "sha256": "df28278090a6725be60af1bc5cc26727fe727268b551412d76036ff618bd5323",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/construction-technology/residential-maintenance-certificate-achievement-level-2/"
+  },
+  "10540": {
+   "sha256": "eec42fbc6b2f93930ad32d93e0ba47c2eaa0b158ce4d645ba7ca23334cdf7555",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/alcohol-drug-studies/alcohol-drug-studies-associate-arts/"
+  },
+  "10541": {
+   "sha256": "dba1fbbdb818b365e91d70fb8f0d63c3a4fc560daa827b08eb8f1209e8ad6ddd",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/construction-technology/construction-technology-associate-arts/"
+  },
+  "12546": {
+   "sha256": "4a3699303bb2a100e00bd5b6219b6f4e3380a18a16c7cc2282f6bf3f01bf259e",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/art/art-associate-science/"
+  },
+  "13569": {
+   "sha256": "554d7758671d6ae379845dda40e90b8b4c722739678252e4683894a4aa3c63bc",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/art/art-associate-arts/"
+  },
+  "16370": {
+   "sha256": "59a419af237c9845b4b7484fd53e95e18dd78ce5bf6b62e399b015fc6701f580",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/chemistry/chemistry-associate-arts/"
+  },
+  "18390": {
+   "sha256": "45f70b0cab521e3dca8dff786d33df0c0b059d0921e255c63f265cda803a2f6c",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/laser-technology/laser-technology-certificate-achievement-level-1/"
+  },
+  "18449": {
+   "sha256": "63dc7d744790e01aa600bffd128f886171c65d2652e0a5c27aec7e2a1f6c97c8",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/counseling/liberal-arts-arts-humanities-associate-arts/"
+  },
+  "18450": {
+   "sha256": "d7ced1ddfd8536145714104695d87e3e991a3913c1ebace11ad77793d2ba71c6",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/counseling/liberal-arts-scientific-inquiry-quantitative-reasoning-associate-arts/"
+  },
+  "18451": {
+   "sha256": "14b62cca11d87bdfbc81f43ee72fabe560a5ad39bf9f5cf623294214a597edfa",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/counseling/liberal-arts-social-behavioral-sciences-associate-arts/"
+  },
+  "18921": {
+   "sha256": "ce3745b0ac4691bde86b21905efec10ca36f029b35f0389aed1972afc634685b",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/air-conditioning-refrigeration-technology/air-conditioning-refrigeration-technology-certificate-achievement-level-3/"
+  },
+  "22220": {
+   "sha256": "ce04b441f5eb89a39cacbac71c00dcba355c74ba06765b373ec2d3c9ad6a25d9",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/accounting/accounting-certificate-achievement/"
+  },
+  "22232": {
+   "sha256": "d78310ea6e959ef61a7ce3b833c90091fe9103807fe57b512a6ddd06ad1763ba",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/computer-information-systems/cis-general-networking-certificate-achievement-level-1/"
+  },
+  "22237": {
+   "sha256": "48956847dbaadb5f9de3425a4873efceb44ba0535f9376054d828e4fb162487c",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/construction-technology/construction-technology-certificate-achievement-level-3/"
+  },
+  "22239": {
+   "sha256": "eeca96bf48fb6c43446e990495a76cf188b93cc018a8a09b283413a5783970c2",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/dental-assisting/dental-assisting-certificate-achievement-level-3/"
+  },
+  "22241": {
+   "sha256": "552ef343b97eba22b7ec8fd884f9bf253c126f8277a2372e93ea8d1a0a4b93a3",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/alcohol-drug-studies/alcohol-and-drug-studies-certificate-of-achievement-level-3/"
+  },
+  "22242": {
+   "sha256": "ab1b04dd8619a6353ee4b7e0a7cce069374f544b43d700d1dfc20ddc409d4f00",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/cosmetology/cosmetology-certificate-achievement-level-3/"
+  },
+  "22991": {
+   "sha256": "d200da3e5d7d79f518613abb859662947b19084048bc7a20dce1fe4622bf22dc",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/administration-justice/administration-justice-judicial-administration-certificate-achievement-judicial-administration/"
+  },
+  "22992": {
+   "sha256": "2dfe2f04d8e1df3c777fa493779b79eab3088a65a07614eeb4ff9f40462973d7",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/administration-justice/administration-justice-judicial-administration-certificate-achievement-court-management/"
+  },
+  "22993": {
+   "sha256": "cc111bb803f79b0dab6d04f2f7186366738bed9a520ff01d7a95a314df9a640a",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/administration-justice/administration-justice-judicial-administration-certificate-achievement-supervision-lead/"
+  },
+  "22994": {
+   "sha256": "c910038021e8f6146731563675860eab0d26c50d3817b26e3f4a6a8c5a2a605c",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/administration-justice/administration-justice-judicial-administration-certificate-achievement-court-operations/"
+  },
+  "30403": {
+   "sha256": "b6f9eb23814130892e466dbcb81d328635f3b7adfdb9796e0a4e62b9833f49cd",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/medical-assisting/medical-assisting-administrative-associate-science/"
+  },
+  "30443": {
+   "sha256": "a6a342874f1b4a8a1d0c2eadb4766a8fd10ab5c129a36b91108ffe92d2133922",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/medical-assisting/medical-assisting-administrative-certificate-achievement-level-3/"
+  },
+  "32078": {
+   "sha256": "dee17c873850567cc21dfff3bef190ed88e28cc66caa04ad88e4404ff0f51614",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/medical-assisting/medical-assisting-clinical-associate-science/"
+  },
+  "32214": {
+   "sha256": "0b491e770847a950733269ec223aa1a0857085c8097f5b0a432414f153bf030b",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/medical-assisting/medical-assisting-clinical-certificate-achievement-level-3/"
+  },
+  "32260": {
+   "sha256": "92c51168a3ebd5b496da6487fe83ce71d6195842b6359ee27d2c785c53c99a93",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/kinesiology/kinesiology-associate-arts-transfer/"
+  },
+  "32304": {
+   "sha256": "b9303efa4b254fe79d60f4ad8f84a0350a4f7024a7881dc8fdd40d3d4e8f6754",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/psychology/psychology---associate-in-arts-for-transfer/"
+  },
+  "32554": {
+   "sha256": "10515abc7bcc8e74ef423507e3595e1a4666aaf65ad71370ad927cb7586ab605",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/communication-studies/communication-studies-certificate-achievement-level-1/"
+  },
+  "32759": {
+   "sha256": "5bbfe3258cef85083bf13ff2cb85e4c47346f8b51d93893ff6c2c09870a0049f",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/economics/economics-associate-arts-transfer/"
+  },
+  "33073": {
+   "sha256": "c17700e78fb219594c76dbc46699f5c080d64713fbd91b0c3bce72ffb017554c",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/art/studio-arts-associate-arts-transfer/"
+  },
+  "33766": {
+   "sha256": "07d075c11181cfa095d02206ae022aa2135b236978d08bfeb87b08f9ef058a1d",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/dance/dance-teaching-certificate-achievement-level-1/"
+  },
+  "33857": {
+   "sha256": "f9f1ee5f4e8dc779953cbb3505b7c9ee21850e6d066df98c64d6296285406176",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/dance/dance-associate-arts/"
+  },
+  "35032": {
+   "sha256": "0f05789ceb2f7570feb8d07496028e9ef577c5dd78f83e5e741b1909b416225c",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/early-childhood-education/early-childhood-education-inclusion-specialist-certificate-achievement/"
+  },
+  "35033": {
+   "sha256": "99a1cd2583ee90a6fd113f121964db67a0a7513ff5d0e2cbc8b6dc001973972a",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/early-childhood-education/early-childhood-education-master-teacher-certificate-achievement/"
+  },
+  "35034": {
+   "sha256": "2a181614911f9dd930ce50e09cfafa86ba7f26d9e762a06ef78c56d2b7856c3a",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/early-childhood-education/early-childhood-education-master-teacher-certificate-achievement/"
+  },
+  "35398": {
+   "sha256": "cc166fbb78f2d7ce5d5df5cdce2702e9d1ed8ed75b8c04f15a2374cbd69e8b49",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/sociology/sociology-associate-arts-transfer/"
+  },
+  "35591": {
+   "sha256": "e6665b179612a8db3ad13853421080ffe5d74832c4b0c05ebccc29dd90cceeab",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/medical-assisting/patient-navigator-certificate-of-achievement-level-1/"
+  },
+  "35596": {
+   "sha256": "d8e069cb401faf3210ab6381b923a48c97d79d7c4a9bd607cdd1760f11faeba9",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/political-science/political-science-associate-arts-transfer/"
+  },
+  "35835": {
+   "sha256": "4281c319deca3a43d0528ff9d1e9d4160aebfa0306356217f761606c28245710",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/geography/geography-associate-arts-transfer/"
+  },
+  "36245": {
+   "sha256": "89a6747eabf8a93f5c5b244836e6342e0d15aaa108d264e5c760ef36b4db5cf0",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/global-studies/global-studies-associate-arts-transfer/"
+  },
+  "36415": {
+   "sha256": "ecd5a776487cf72b278756e311520ca8361cad7191ca88ab908d02a9c1273439",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/journalism/journalism-associate-arts-transfer/"
+  },
+  "36929": {
+   "sha256": "c60fa6de9b672352e33557396e9b6835677b733e9d2444d1b307942cdf39179c",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/english-as-a-second-language/english-as-a-second-language-certificate-competency/"
+  },
+  "37492": {
+   "sha256": "8675bac4bcc5206c12cb84bece8ddb612c15b5d10bf398198d47ce4cba90e947",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/medical-assisting/medical-career-preparation---certificate-completion-noncredit/"
+  },
+  "37604": {
+   "sha256": "3b6725fd56292175d7d3fe6e0a9cf4ce3c899a0d43e27f84eda4762d23e72c42",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/spanish/spanish-associate-arts-transfer/"
+  },
+  "38113": {
+   "sha256": "1c7a96fa10f1569714967b91db083e448f70ec09196663b9717269dc0ab90f91",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/theatrearts/theatre-arts-associate-in-arts-for-transfer/"
+  },
+  "38152": {
+   "sha256": "4f82e6fc98c9cb84033c1392e15837dbbe0a9f12c26fa9f735efd5a1af77c027",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/global-studies/certificate-achievement-level1/"
+  },
+  "38426": {
+   "sha256": "9a01af779c06f03dc12c00b987cd1cd454481bc7449533f6374e0f35da92e4ff",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/psychology/child-and-adolescent-development-associate-arts-for-transfer/"
+  },
+  "38463": {
+   "sha256": "b170ee6a339cd6cb24b9ecfde77dde469f2b20bfaf66e7ff7556aabd3673da9d",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/computer-information-systems/emerging-tech-entrepreneurship-level-1/"
+  },
+  "38485": {
+   "sha256": "be09a5ed65c500ecef7cd1532dd4873a371f63891e299d524a5f0119e65d71ad",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/family-consumer-studies/nutrition-dietetics-associate-science-transfer/"
+  },
+  "38498": {
+   "sha256": "d25281609cb0d2631160c1ce86f87de224de7b062e766a3ce808cfccbe2ba5bc",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/computer-information-systems/emerging-tech-entrepreneurship-level-2/"
+  },
+  "38499": {
+   "sha256": "4100db6b0cb8718caf22fc2b9a98b53e60b80df045163ea210d7b8c41255a695",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/administration-justice/law-public-policy-society-associate-arts-transfer/"
+  },
+  "38726": {
+   "sha256": "b76a80ad1db96651009852001562cbce256b332f7a3fd8521442214f3f92d322",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/history-associate-arts-transfer/"
+  },
+  "39247": {
+   "sha256": "5ae7a44e74620f62820153f4a392b21c601d8b211a95690c7f7689b5ba67d0b7",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/biology/biology-associate-science-transfer/"
+  },
+  "39391": {
+   "sha256": "35bebda4f66ebf5be06520ac15dc020f10b96b9486f802fb41a52601f3fe5311",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/kinesiology/kinesiology-certificate-achievement-level-2/"
+  },
+  "40370": {
+   "sha256": "f706220ecf0d75d4c1460775e3c825ff51b9ef189ddb3a7528534d17408976c4",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/computer-information-systems/google-it-support-professional-certificate-achievement-level-1/"
+  },
+  "40372": {
+   "sha256": "4a375d180d9fdefe0864b8df510e6c03ab78591212058cf8a2c1f93f6f34caf3",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/medical-assisting/community-health-worker-certificate-completion-noncredit/"
+  },
+  "41473": {
+   "sha256": "24382456f9e9bf8560898d5e6cd6d144d169b682ef0eac592f99b379433e1204",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/business/business-administration-2.0-associate-science-transfer/"
+  },
+  "41533": {
+   "sha256": "3f6b06388ad2caa2857b7e8758d382eb78f4b8f6dbf1f4c9d287aa7366476e2f",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/digital-media-arts/graphic-design-associate-arts/"
+  },
+  "41629": {
+   "sha256": "8f0684e5748f16131192dda76f2b4a6f207ae12bdd5d1fdba566098f99bd8c86",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/environmental-science/environmental-science-associate-science-transfer/"
+  },
+  "41847": {
+   "sha256": "35d05b68051b38ccdb6108407bfa97cb6c1fcf47a8dc4244aa89e424c74f813f",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/music/music-technology-recording-arts-certificate-achievement-level-2/"
+  },
+  "42242": {
+   "sha256": "ff3dc33390be3b662de32dc9fe21a85eb850e2902d59d426038402b9302dbf57",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/engineering/engineering-associate-arts/"
+  },
+  "42529": {
+   "sha256": "3fc5b7588a4098bd1eda144331607ef8c20f8b7af8732db50507fec5f611e9f1",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/computer-science/computer-science-associate-science-transfer/"
+  },
+  "42682": {
+   "sha256": "79e8e6204ff50b22c588b5dce990d6da9450a8674a9c07ae156d4bfd4989b4e2",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/digital-media-arts/user-experience-interaction-design-associate-science/"
+  },
+  "43279": {
+   "sha256": "7d63e766e1535e7af13b5a7e1669e7d3fb5bac20b6e82a349b3f9eb80f6b4149",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/art/art-history-associate-arts-transfer/"
+  },
+  "43327": {
+   "sha256": "d48de3e657a87919623ca0f77d43e775914be13a4952dccc8cc5e676f508b8b7",
+   "url": "https://catalog.sjcc.edu/"
+  },
+  "43328": {
+   "sha256": "d48de3e657a87919623ca0f77d43e775914be13a4952dccc8cc5e676f508b8b7",
+   "url": "https://catalog.sjcc.edu/"
+  },
+  "43633": {
+   "sha256": "fae552c6e16fcf7fb03d64d6f9220fd4521330936ea3f350d51bdb1a5caae2e6",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/communication-studies/communication-studies2-associate-arts-transfer/"
+  },
+  "44010": {
+   "sha256": "2d187b0868662e128032c1014f13e67e6d7179e74264acd1dbfb13079328914a",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/computer-applications/project-management-certificate-achievement-level-1/"
+  },
+  "44122": {
+   "sha256": "55b86a8e3205770d995ef00df9c20a257ee5c61aa138f1ced0dedc77bacbe501",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/health-sciences/health-sciences-associate-arts/"
+  },
+  "44123": {
+   "sha256": "3b35410ea7ac41614f920ee45dcdf35f634203863bc97507049507b08127b44a",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/health-sciences/health-sciences-certificate-achievement-level-2/"
+  },
+  "44388": {
+   "sha256": "c8e7eaee295e467bb7a8c132b5d6854022a33333a234ecde4d16ce010dc58a98",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/digital-media-arts/motion-graphic-design-associate20in20science/"
+  },
+  "44596": {
+   "sha256": "b2b5256566d61fbd828e0d22e40fdc01c4ef7869f8065ee4c0d9837addd3b091",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/biology/public-health-science-associate-science-transfer/"
+  },
+  "44925": {
+   "sha256": "35d74d6be03c9f1995b5e0d6f5c66b1e015cce40fa090d3ec6d19157ad5a898a",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/ironworking/ironworking-certificate-achievelment-level-1index.html"
+  },
+  "45796": {
+   "sha256": "0ba3cd29506f9b17aafe22f5c2b6bce40fd11c2110ec0f49de89c6aba47d8444",
+   "url": "https://catalog.sjcc.edu/graduation-certificate-general-education-requirements/cal-getc/"
+  },
+  "45984": {
+   "sha256": "81aa0925bf933e03ec971f4f0166c9bb0f795ede3af92c34ecef95df2d3f1d8c",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/computer-information-systems/information-systems-security-cybersecurity-certificate-of-achievement-level-1/"
+  },
+  "46293": {
+   "sha256": "d6c897b7e96012648d75e09c1716e14cedc07bb4eb5c8ba9cff5fbf530470cd5",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/computer-information-systems/cis-computer-programming-associate-science/"
+  },
+  "46579": {
+   "sha256": "dbd78b1533bd34a3c2b1ebf73391da786a4662e1c67f594fd419c17b532f73fb",
+   "url": "https://catalog.sjcc.edu/degrees-certificates/mathematics/"
+  }
+ },
+ "run": "44766007221"
+}
