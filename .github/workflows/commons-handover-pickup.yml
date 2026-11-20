@@ -68,7 +68,7 @@ jobs:
         if: steps.waits.outputs.go == '1'
         run: |
           pip install --quiet playwright pypdf
-          python3 -m playwright install --with-deps chromium
+          bash scripts/install_browser.sh
 
       - name: Look at each hand-over and answer on its row
         if: steps.waits.outputs.go == '1'
