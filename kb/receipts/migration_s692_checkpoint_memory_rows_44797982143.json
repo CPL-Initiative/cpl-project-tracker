@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-20_s692_checkpoint_memory_rows.sql",
+ "name": "s692_checkpoint_memory_rows",
+ "version": "20261120190113",
+ "sha256": "599f7eb212f1802d4ca804b0a8a8f22b256075e202b2d6678cc3167cf29906f9",
+ "run": "44797982143",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"slug\":\"m-handover-slice-1-merged-2026-11-20\",\"kind\":\"milestone\",\"status\":\"proposed\",\"summary_len\":379},{\"slug\":\"p-lints-stops-at-first-failure-2026-11-20\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":343},{\"slug\":\"p-new-script-and-browser-install-lints-2026-11-20\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":352},{\"slug\":\"p-receipt-commit-moves-head-no-ci-2026-11-20\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":368}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
