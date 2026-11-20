@@ -886,12 +886,12 @@
    "estimate_usd": 288.0
   },
   "2026-11-20": {
-   "usd": 79.01,
-   "sessions": 1,
+   "usd": 217.27,
+   "sessions": 2,
    "not_available": 0,
    "tags": {
-    "collection": 4.69,
-    "infrastructure": 74.32
+    "collection": 141.69,
+    "infrastructure": 75.58
    },
    "untagged_usd": 0.0
   }
