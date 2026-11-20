@@ -12,6 +12,7 @@ import gzip
 import importlib.util
 import json
 import os
+import re
 import tempfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -135,10 +136,20 @@ with tempfile.TemporaryDirectory() as tmp:
     os.makedirs(folder)
     cut = {**row, "code": "BIO 1", "text_cut": True}
     rows = [row, cut] + [{**row, "code": "X %d" % i} for i in range(10)]
-    json.dump({"rows": rows}, open(os.path.join(folder, "read.json"), "w"))
-    eye = {"trial": "7", "pages": {r["code"]: {"slo": 2, "objective": 0, "by": "fixture"} for r in rows}}
+    fp = read.parser_fingerprint()
+
+    def trial(rows_, parser=fp):
+        json.dump({"parser_fingerprint": parser, "rows": rows_}, open(os.path.join(folder, "read.json"), "w"))
+
+    def counts(rows_, slo=2, src="the page's SLO section in trial 7's log, by eye"):
+        eye_ = {"trial": "7", "pages": {r["code"]: {"slo": slo, "objective": 0, "by": "fixture", "from": src,
+                                                    "at": "2026-11-20T13:00:00Z"} for r in rows_}}
+        json.dump(eye_, open(path, "w"))
+        return eye_
+
     path = os.path.join(tmp, "recall.json")
-    json.dump(eye, open(path, "w"))
+    trial(rows)
+    eye = counts(rows)
     rc = read.rows_recall(path, tmp)
     check("5 the count matches each row's parsed outcomes and objectives", rc["right"] == 11 and rc["pages"] == 12,
           rc)
@@ -147,8 +158,50 @@ with tempfile.TemporaryDirectory() as tmp:
     check("5 11 of 12 passes the 90% gate", rc["ok"])
     eye["pages"]["X 1"]["slo"] = 3
     json.dump(eye, open(path, "w"))
-    check("5 10 of 12 fails it", not read.rows_recall(path, tmp)["ok"])
+    check("5 GUARD: a page count that differs from the parse fails it (10 of 12)", not read.rows_recall(path, tmp)["ok"])
     check("5 no recall file: the count is 0 of 0 and fails", not read.rows_recall(os.path.join(tmp, "none.json"))["ok"])
+    # The second reader's fake trials on #3601: each opened the first gate.
+    empty = [{**row, "code": "E %d" % i, "outcomes": [], "shape": "none", "fingerprint": None} for i in range(12)]
+    trial(empty)
+    counts(empty, slo=0)
+    rc = read.rows_recall(path, tmp)
+    check("5 GUARD: a trial of 12 empty rows is refused, though every count matches", not rc["ok"]
+          and "0 of 12 pages" in (rc["why"] or ""), rc["why"])
+    refused = [{**row, "code": "R %d" % i, "status": 403, "outcomes": [], "shape": "none"} for i in range(12)]
+    trial(refused)
+    counts(refused, slo=0)
+    rc = read.rows_recall(path, tmp)
+    check("5 GUARD: a trial of 12 rows refused with 403 is refused, each row counted wrong", not rc["ok"]
+          and rc["right"] == 0 and all(w[2] == "status 403" for w in rc["wrong"]), rc)
+    good = [{**row, "code": "G %d" % i} for i in range(12)]
+    trial(good, parser="an older parser")
+    counts(good)
+    rc = read.rows_recall(path, tmp)
+    check("5 GUARD: a trial another parser filed is refused", not rc["ok"] and "filed by parser" in rc["why"], rc["why"])
+    trial(good)
+    check("5 the same trial under the current parser passes", read.rows_recall(path, tmp)["ok"])
+    counts(good, src="row")
+    rc = read.rows_recall(path, tmp)
+    check("5 GUARD: counts read off the trial's own rows name no source and fail", not rc["ok"] and rc["right"] == 0, rc)
+    keep = read.STOP
+    read.STOP = re.compile(keep.pattern.replace("contents?", "content"), keep.flags)
+    moved = read.parser_fingerprint()
+    read.STOP = keep
+    check("5 the fingerprint moves when a parser pattern moves, and is steady otherwise",
+          moved != fp and read.parser_fingerprint() == fp)
+
+# 6. The excerpt a person counts from: the SLO section as printed, cut by its two headings, never the page.
+ex = read.slo_excerpt(TEXT)
+check("6 the excerpt is the section between STUDENT LEARNING OUTCOMES and CONTENTS",
+      ex == ["Upon completion of this course, a student will be able to:",
+             "1. Identify and evaluate academic and student support services.",
+             "2. Analyze the behavior of diverse groups and individuals."], ex)
+check("6 GUARD: the excerpt and its log lines carry no staff name",
+      STAFF not in json.dumps(ex) and STAFF not in read.excerpt_log("AAPS 100", ex))
+check("6 GUARD: with no CONTENTS heading in reach nothing is printed",
+      read.slo_excerpt(TEXT.replace("CONTENTS\n", "")) is None
+      and STAFF not in read.excerpt_log("AAPS 100", read.slo_excerpt(TEXT.replace("CONTENTS\n", ""))))
+check("6 report 28 is recorded as printing no objectives", not read.prints_objectives(REPORT))
 
 index = os.path.join(ROOT, "kb", "course_outline_index", "index_44696736058.json")
 rc = read.rows_recall(read.CCSF_RECALL)
