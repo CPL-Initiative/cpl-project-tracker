@@ -618,8 +618,12 @@ def elumen_outcomes_from_html(page_html: str) -> dict | None:
 # Outcome(s)</h3><ol><li>...). The text reader does not take that heading.
 CCCD_SLO_HEAD = re.compile(r"^course level student learning outcomes?(?:\(s\))?:?$", re.I)
 # A sub-heading a CourseLeaf outline prints as the list's first item. Golden West prints "Course outcomes:" there
-# (S665: 3 live SLO rows had filed it as outcome 1), so it is the lead, never an outcome.
-CCCD_SUBHEAD = re.compile(r"^course (?:learning )?outcomes?:$", re.I)
+# (S665: 3 live SLO rows had filed it as outcome 1), so it is the lead, never an outcome. Most of its pages print it
+# with no colon, "Course Outcomes" (one "Couse Outcomes"), and some print an ILOs block above it, "ILOs" and the
+# institutional outcomes the course maps to: read 41399075269 filed the line in 476 of 568 SLO rows, 4 of them after
+# an ILOs block and ACCT G163 twice (f-golden-west-474-header-rows-s689). The course's outcomes are the items after
+# the last such line.
+CCCD_SUBHEAD = re.compile(r"^cour?se (?:learning )?outcomes?:?$", re.I)
 
 
 def cccd_outcomes_from_html(page_html: str) -> dict | None:
@@ -637,7 +641,10 @@ def cccd_outcomes_from_html(page_html: str) -> dict | None:
                 items = [MARKER.sub("", _ws(li.text(skip=("ol", "ul"))), count=1).strip()
                          for li in k.kids if not isinstance(li, str) and li.tag == "li"]
                 items = [x for x in items if x]
-                lead = items.pop(0) if items and CCCD_SUBHEAD.match(items[0]) else None
+                heads = [i for i, x in enumerate(items) if CCCD_SUBHEAD.match(x)]
+                lead = items[heads[-1]] if heads else None
+                if heads:
+                    items = items[heads[-1] + 1:]
                 if items:
                     return {"shape": "list" if len(items) > 1 else "paragraph",
                             "heading": _ws(head.text()), "lead": lead, "outcomes": items,

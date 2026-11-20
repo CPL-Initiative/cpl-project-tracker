@@ -277,6 +277,40 @@ check("7 GUARD: the load never takes a read queue.json's never_load names, and a
       none_left == [] and [os.path.basename(x) for x in newer] == ["read_44695707507_p1of5.json"]
       and {"44695707506", "44535960153"} <= set(committed), (none_left, newer, sorted(committed)))
 
+# 8. Golden West's CourseLeaf outline (S690; f-golden-west-474-header-rows-s689): read 41399075269 filed the list's
+# "Course Outcomes" sub-heading, printed with no colon, as outcome 1 in 476 of 568 SLO rows, and 4 rows also carry an
+# ILOs block above it. The course's outcomes are the items after the last sub-heading.
+def gwc(items):
+    lis = "".join("<li>%s</li>" % x for x in items)
+    return ("<html><body><div><h3>Course Level Student Learning Outcome(s)</h3><ol>%s</ol>"
+            "<h3>Course Objectives</h3></div></body></html>" % lis)
+
+
+plain = read.cccd_outcomes_from_html(gwc(["Course Outcomes", "Prepare a budget.", "Read a ledger."]))
+check("8 Golden West's 'Course Outcomes' with no colon is the lead, never outcome 1",
+      plain["lead"] == "Course Outcomes" and plain["outcomes"] == ["Prepare a budget.", "Read a ledger."], plain)
+ilos = read.cccd_outcomes_from_html(gwc(["ILOs", "iSLO 2. Broad Knowledge - Demonstrate an understanding",
+                                         "Course Outcomes", "Perform jazz combinations.", "Move rhythmically."]))
+check("8 an ILOs block above the sub-heading stays out of the course's outcomes (DANC G125)",
+      ilos["outcomes"] == ["Perform jazz combinations.", "Move rhythmically."] and ilos["lead"] == "Course Outcomes",
+      ilos)
+twice = read.cccd_outcomes_from_html(gwc(["Course Outcomes", "Course Outcomes", "Prepare a profit and loss statement."]))
+check("8 a sub-heading printed twice (ACCT G163) leaves one outcome, a paragraph",
+      twice["outcomes"] == ["Prepare a profit and loss statement."] and twice["shape"] == "paragraph", twice)
+typo = read.cccd_outcomes_from_html(gwc(["Couse Outcomes", "Apply the binomial theorem.", "Relate induction."]))
+check("8 the misspelled 'Couse Outcomes' is the sub-heading too", typo["lead"] == "Couse Outcomes", typo)
+colon = read.cccd_outcomes_from_html(gwc(["Course outcomes:", "Write a program.", "Test a program."]))
+real = read.cccd_outcomes_from_html(gwc(["Perform a solo with course outcomes in mind:", "Play scales."]))
+check("8 S665's 'Course outcomes:' still reads as the lead; an outcome that only mentions them stays an outcome",
+      colon["lead"] == "Course outcomes:" and real["lead"] is None and len(real["outcomes"]) == 2, (colon, real))
+gw = []
+for p in sorted(glob.glob(os.path.join(ROOT, "kb", "course_outcomes", "cccd", "read_41399075269_p*of2.json"))):
+    gw += json.load(open(p))["rows"]
+after = [read.cccd_outcomes_from_html(gwc(r["outcomes"])) for r in gw if r.get("parsed_from") == "html" and r["outcomes"]]
+check("8 replayed over read 41399075269's 568 HTML rows: no outcome left that is the sub-heading, none emptied",
+      len(after) == 568 and all(a and not any(read.CCCD_SUBHEAD.match(x) for x in a["outcomes"]) for a in after),
+      len(after))
+
 failed = [r for r in results if not r[1]]
 for name, ok, why in results:
     print("  %s %s%s" % ("ok  " if ok else "FAIL", name, "" if ok else "  -- %s" % (why,)))
