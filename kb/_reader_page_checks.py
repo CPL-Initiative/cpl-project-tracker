@@ -30,7 +30,8 @@ choose the page by the heading:
           discontinued-program check (a prior-year read confirms or clears it).
 
 SCOPE. The rules apply only to a program whose committed record places none of its listed courses
-(S.places_none on records/<cn>.json), and never to a general-education pattern program (its page is a pattern
+(S.places_none on records/<cn>.json), or that a committed capture refused by a rule while no committed record has
+placed its courses since (refused_filed, S689: the refusal's filing drops the failing record), and never to a general-education pattern program (its page is a pattern
 page by definition). Every other program reads exactly as before: a record that places courses keeps the
 picker that placed them. Programs share pages, so a marked program could move an unmarked one; it never does:
 assign() gives every unmarked program the page it gets with no program marked, and a marked program claims an
@@ -106,6 +107,21 @@ AWARD_TOKENS = {"degree", "certificate", "achievement", "accomplishment", "compl
                 "competency", "proficiency", "transfer", "as", "aa", "ast", "aat", "ba", "bs", "bachelor",
                 "baccalaureate", "noncredit", "cert", "coa", "ca"}
 TOKEN = re.compile(r"[a-z0-9]+")
+# pypdf keeps a PDF's typographic ligatures, so a line can print "Certiﬁcate" with U+FB01, and no award pattern reads
+# it. Santa Rosa Junior's 2026-2027 catalog heads each certificate "298 CS Web and Mobile Full-Stack (Certiﬁcate of
+# Achievement)", and on 2026-11-19 rule A refused 34 programs there, 31 of them certificates (run 44477690021; S689).
+# Solano's text prints the scorer's stand-in glyphs with a space after each ("AccounƟ ng CerƟ ﬁ cate"; S644), so the
+# fold is the scorer's own table and pattern (kb/_program_requirements_score.py _LIGATURES, _LIGATURE_SPACED: a glyph
+# and the one space after it), imported, never copied. Every test below reads a line folded; the fold works line by
+# line and keeps the line count, so heading_at's offsets stay the page's own.
+from _program_requirements_score import _LIGATURE_SPACED, _LIGATURES  # noqa: E402
+
+
+def fold(text: str | None) -> str:
+    """The text with each ligature or stand-in glyph spelled out, and the space the PDF prints after it dropped."""
+    return _LIGATURE_SPACED.sub(lambda m: _LIGATURES[m.group(1)], text or "")
+
+
 # "science" and "arts" are filler only inside an award's phrase ("Associate in Science"), which _sister_words reads as
 # one award word: "Public Health Science Associate in Science" prints Public Health Science, and "History Associate
 # in Arts" never prints Art History. "Associate" alone is no award and no filler ("Associate Teacher Certificate").
@@ -149,10 +165,78 @@ def places_none_filed(folder: str) -> set[str]:
     return out
 
 
+def placing_filed(folder: str) -> set[str]:
+    """The control numbers whose committed record carries a score that places at least one listed course. An error
+    record (no score) or a record placing none is not one: neither clears a refusal (S689 review, finding 5)."""
+    from _program_requirements_score import places_none
+    out: set[str] = set()
+    rec_dir = os.path.join(folder, "records")
+    for name in sorted(os.listdir(rec_dir)) if os.path.isdir(rec_dir) else []:
+        if not name.endswith(".json"):
+            continue
+        try:
+            with open(os.path.join(rec_dir, name), encoding="utf-8") as fh:
+                rec = json.load(fh)
+        except (OSError, ValueError):
+            continue
+        score = rec.get("score") if isinstance(rec, dict) else None
+        if isinstance(score, dict) and not rec.get("error") and not places_none(score) \
+                and ((score.get("coverage") or {}).get("placed") or 0) > 0:
+            out.add(str(rec.get("control_number") or name[:-5]))
+    return out
+
+
+def refused_filed(folder: str) -> set[str]:
+    """The control numbers the rules refused, from the committed files: each not_found of a committed capture or
+    capture-only preview (folder/capture.json, capture_preview.json) whose near_miss names rule A (B's refusal reads
+    as A) or rule D, or says the rules read the program (page_checks, filed for every not_found of a marked program
+    since S689, whichever branch of the reader filed it); and each record keep-the-better lists as dropped by a
+    filing while it failed (reread_keep_better.json, runs.<run>.dropped_by_filing). A refusal filed beside the plain
+    picker's own named heading (near_miss.plain_named) is left out: that page prints the program's title and award
+    as the picker reads them, so the rules' refusal is the one in doubt (S689 review, finding 1: Ohlone 33319 on
+    p.46 and 46035 on p.96, run 44687785539).
+
+    WHY (S689). A program the rules refuse gets no page, so the filing drops its failing record (keep_no_read keeps
+    passing ones only). With no record left, places_none_filed() no longer names it, the next capture leaves it
+    unmarked, and the plain picker hands it the page the rules refused, by its codes alone. Fresh captures on
+    2026-11-20 showed it at three colleges: City College of San Francisco's 40 refused programs went back to course
+    descriptions (pages 561 to 578 and 643 for its business and ESL certificates; run 44687776552), Santa Rosa
+    Junior's 34 and Ohlone's 7 to the pages they had (runs 44687780496, 44687785539)."""
+    out: set[str] = set()
+    for name in ("capture.json", "capture_preview.json"):
+        try:
+            with open(os.path.join(folder, name), encoding="utf-8") as fh:
+                d = json.load(fh) or {}
+        except (OSError, ValueError):
+            continue
+        for r in (d.get("not_found") or []) if isinstance(d, dict) else []:
+            near = (r.get("near_miss") or {}) if isinstance(r, dict) else {}
+            if not isinstance(near, dict) or not r.get("control_number") or near.get("plain_named"):
+                continue
+            if near.get("rule") in ("A", "D") or near.get("page_checks"):
+                out.add(str(r["control_number"]))
+    try:
+        with open(os.path.join(folder, "reread_keep_better.json"), encoding="utf-8") as fh:
+            kb = json.load(fh) or {}
+    except (OSError, ValueError):
+        kb = {}
+    for run in (kb.get("runs") or {}).values() if isinstance(kb, dict) else []:
+        for r in (run or {}).get("dropped_by_filing") or []:
+            if isinstance(r, dict) and r.get("control_number") and not r.get("filed_passes_live"):
+                out.add(str(r["control_number"]))
+    return out
+
+
+def refused_standing(folder: str) -> set[str]:
+    """The refusals that still stand: refused_filed() less each program a committed record now places courses for."""
+    return refused_filed(folder) - placing_filed(folder)
+
+
 def mark(programs: list[dict], folder: str) -> int:
-    """Mark each program the rules read (MARK): its committed record places none, and it is no general-education
-    pattern program. Returns how many were marked."""
-    scope = places_none_filed(folder)
+    """Mark each program the rules read (MARK): its committed record places none, or a committed read refused it and
+    no committed record has placed its courses since (refused_standing); and it is no general-education pattern
+    program. Returns how many were marked."""
+    scope = places_none_filed(folder) | refused_standing(folder)
     n = 0
     for p in programs:
         p[MARK] = bool(p.get("closed_list")) and p.get("control_number") in scope and not _ge_title(p.get("title"))
@@ -286,6 +370,7 @@ def heading_line(lines: list[str], title: str | None, award: str | None) -> int:
     words = title_words(title)
     if not words:
         return -1
+    lines = [fold(x) for x in lines]
     arx = award_pattern(award)
     kind = P.award_kind(award)
     reach = COA_REACH if arx is AWARD_WORDS["coa"] else HEADING_REACH
@@ -357,7 +442,7 @@ def title_printed(pages: list[str], title: str | None) -> bool:
         return True     # a title with no words to look for is never called unprinted
     tlen, level = len(title or ""), _level(title)
     for txt in pages:
-        low = (txt or "").lower()
+        low = fold(txt).lower()
         if not all(w in low for w in words):
             continue
         lines = [ln for ln in low.split("\n") if ln.strip()]
@@ -388,7 +473,7 @@ def pdf_page(pages: list[str], program: dict, year: str | None = None) -> dict:
     title, award = program.get("title"), program.get("award")
     found, refused_b, furn = [], 0, None
     for i, txt in enumerate(pages):
-        low = (txt or "").lower()
+        low = fold(txt).lower()
         if not words or not all(w in low for w in words):
             continue
         if furn is None:

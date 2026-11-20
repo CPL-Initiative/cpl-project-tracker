@@ -79,6 +79,16 @@ LOC = re.compile(r"<loc>\s*([^<\s]+)\s*</loc>", re.I)
 MAX_CURRICULUM_PAGES = 3
 MAX_HOSTS = 3
 
+# A college's outline host that its own pages do not lead the census to, with one public outline as the start, so
+# the census reads that outline (S689). City College of San Francisco's www.ccsf.edu answered 403 behind Cloudflare
+# (census run 38305389870, none_found); its CurricUNET host answers anonymous requests, and AAPS 100's report 28
+# prints STUDENT LEARNING OUTCOMES (COBIx on #3533, comment 7015803401, checked 2026-11-19).
+COR_SEEDS = {
+    "City College of San Francisco": (
+        "https://ccsf.curricunet.com/DynamicReports/AllFieldsReportByEntity/15634?entityType=Course&reportId=28",
+        "COBIx on #3533, comment 7015803401"),
+}
+
 
 def system_of(url: str) -> str | None:
     """The course outline system an address points into, if any."""
@@ -213,6 +223,9 @@ def cor_one(reader, reg: dict) -> dict:
     for seed in (reg.get("catalog_url"), reg.get("cms_public_view")):
         if seed and system_of(seed):
             found.setdefault(host_key(seed), {"system": system_of(seed), "url": seed, "from": "registry"})
+    seed, why = COR_SEEDS.get(college, (None, None))
+    if seed:
+        found.setdefault(host_key(seed), {"system": system_of(seed), "url": seed, "from": why})
 
     queue = []
     for seed, why in ((home, "homepage"), (reg.get("catalog_url"), "catalog")):
@@ -415,11 +428,16 @@ def outline_of(reader, college: str, system: str, url: str, page: dict) -> dict:
     p = urllib.parse.urlparse(url)
     if system == "curriqunet" and p.path.strip("/"):
         start, first = "%s://%s/" % (p.scheme or "https", p.netloc), None
+    elif "/DynamicReports/" in p.path:
+        # One course's outline report (a COR_SEEDS start): its whole text, where the SLOs sit past 6,000 characters.
+        start, first = url, None
     else:
         start, first = url, page
     got = probe_one(reader, college, system, start, "census", follow=1, first=first)
-    best = next((x for x in got["pages"] if x.get("slo")), None) or \
-        next((x for x in got["pages"] if x.get("outline_fields", 0) >= 3), None)
+    # A page the start led to first; the start itself last, when it is the outline (a COR_SEEDS report).
+    seen = got["pages"] + ([got["start"]] if got["start"].get("access") == "public" else [])
+    best = next((x for x in seen if x.get("slo")), None) or \
+        next((x for x in seen if x.get("outline_fields", 0) >= 3), None)
     return {"verdict": got["verdict"], "start": start,
             "url": (best or {}).get("final_url") or (best or {}).get("url"),
             "slo": ((best or {}).get("slo") or "")[:300] or None}

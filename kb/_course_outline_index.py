@@ -55,6 +55,7 @@ import json
 import os
 import re
 import sys
+import urllib.parse
 from datetime import datetime, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -193,8 +194,40 @@ DROP_HEADERS = {"cookie", "user-agent", "host", "content-length", "origin", "ref
                 "accept-encoding"}
 
 
+# A host whose search answers anonymous requests, read with the search body and report address a person checked
+# rather than with what the dashboard posts (S689). City College of San Francisco runs Governet's older CurricUNET on
+# ccsf.curricunet.com, where the Turnstile check guards only the Request Access form; the search takes a JSON body
+# (client 57, course entity type 150), answers 250 rows a page and fails at 1,000, and returns 13,572 course records,
+# 1,975 of them Active. Of the Active ones, 1,951 list public report 28, which prints STUDENT LEARNING OUTCOMES, and
+# the 24 INTI courses list only report 124 (COBIx on #3533, comment 7015803401, checked 2026-11-19).
+KNOWN_SEARCH = {
+    "ccsf.curricunet.com": {
+        "source": "COBIx on #3533, comment 7015803401 (2026-11-19)",
+        "body": {"options": {"pagesize": 250, "page": 0, "titleFilter": "", "entityTypeId": 1, "filterScope": 0,
+                             "sortAscendingFlag": True, "sortDirection": 1, "clientEntityTypeId": 150,
+                             "clientEntitySubTypeId": None, "filters": {"sql": None}, "clientIds": [57],
+                             "DisplayColumns": [], "filterByUser": False, "sortColumns": [], "campusIds": []}},
+        "form": "DynamicReports/AllFieldsReportByEntity/{course_id}?entityType=Course&reportId={report_id}",
+        "report_ids": [28],
+    },
+}
+JSON_SEARCH_HEADERS = {"content-type": "application/json; charset=utf-8", "x-requested-with": "XMLHttpRequest"}
+
+
+def known_search(url: str) -> dict | None:
+    """The checked search record for the host an address names, or None."""
+    return KNOWN_SEARCH.get(urllib.parse.urlparse(url or "").netloc.lower())
+
+
 def with_page(post: str, size: int, page: int) -> str:
-    """The captured NewSearch body with this page's size and number."""
+    """The captured NewSearch body with this page's size and number: a form body, or a JSON body's options."""
+    try:
+        body = json.loads(post or "")
+    except ValueError:
+        body = None
+    if isinstance(body, dict) and isinstance(body.get("options"), dict):
+        body["options"].update(pagesize=size, page=page)
+        return json.dumps(body)
     parts = []
     for kv in (post or "").split("&"):
         k = kv.split("=", 1)[0]
@@ -255,20 +288,24 @@ def is_comparison(rep: dict) -> bool:
 REPORT_TITLE = r"outline"
 
 
-def reads(rep: dict, title: str = REPORT_TITLE) -> bool:
+def reads(rep: dict, title: str = REPORT_TITLE, ids=None) -> bool:
+    """Whether the index reads this report: by its id where a checked record names the ids (KNOWN_SEARCH), else
+    by its title."""
+    if ids:
+        return rep.get("Id") in ids and not is_comparison(rep)
     return bool(re.search(title, rep.get("Title") or "", re.I)) and not is_comparison(rep)
 
 
-def outline_reports(row: dict, base: str, form: str = LEGACY_FORM, title: str = REPORT_TITLE) -> list[str]:
-    """The row's report addresses: each MetaReport whose title names the report to read."""
+def outline_reports(row: dict, base: str, form: str = LEGACY_FORM, title: str = REPORT_TITLE, ids=None) -> list[str]:
+    """The row's report addresses: each MetaReport whose title (or id) names the report to read."""
     out = []
     for rep in row.get("MetaReports") or []:
-        if reads(rep, title):
+        if reads(rep, title, ids):
             out.append(base + form.format(course_id=row.get("CourseId"), report_id=rep.get("Id")))
     return out
 
 
-def report_titles(rows: list[dict], title: str = REPORT_TITLE) -> list[dict]:
+def report_titles(rows: list[dict], title: str = REPORT_TITLE, ids=None) -> list[dict]:
     """Every MetaReport the search returned, by id and title, with how many rows carry it
     and whether the index reads it, so a run shows which report it chose and why."""
     seen = {}
@@ -278,12 +315,12 @@ def report_titles(rows: list[dict], title: str = REPORT_TITLE) -> list[dict]:
             if key not in seen:
                 seen[key] = {"id": rep.get("Id"), "title": rep.get("Title"), "rows": 0,
                              "comparison": is_comparison(rep),
-                             "read": reads(rep, title)}
+                             "read": reads(rep, title, ids)}
             seen[key]["rows"] += 1
     return sorted(seen.values(), key=lambda x: -x["rows"])
 
 
-def build_index(rows: list[dict], base: str, form: str = LEGACY_FORM, title: str = REPORT_TITLE) -> dict:
+def build_index(rows: list[dict], base: str, form: str = LEGACY_FORM, title: str = REPORT_TITLE, ids=None) -> dict:
     """norm_code -> the active outline rows for it."""
     index = {}
     for row in rows:
@@ -294,8 +331,18 @@ def build_index(rows: list[dict], base: str, form: str = LEGACY_FORM, title: str
             continue
         index.setdefault(code, []).append({
             "course_id": row.get("CourseId"), "title": row.get("Title"),
-            "proposal_type": row.get("ProposalTypeTitle"), "reports": outline_reports(row, base, form, title)})
+            "proposal_type": row.get("ProposalTypeTitle"), "reports": outline_reports(row, base, form, title, ids)})
     return index
+
+
+def known_request(url: str) -> dict | None:
+    """The search request a KNOWN_SEARCH host is read with: its own NewSearch address, the checked JSON body."""
+    rec = known_search(url)
+    if not rec:
+        return None
+    p = urllib.parse.urlparse(url)
+    return {"url": "%s://%s/Search/NewSearch" % (p.scheme or "https", p.netloc), "post": json.dumps(rec["body"]),
+            "headers": dict(JSON_SEARCH_HEADERS)}
 
 
 def search_all(reader, url: str, delay_ms: int) -> dict:
@@ -315,6 +362,11 @@ def search_all(reader, url: str, delay_ms: int) -> dict:
         out["outline_links"] = reader.page.evaluate(OUTLINE_LINKS_JS) or []
     except Exception:
         out["outline_links"] = []
+    known = known_request(url)
+    if known:
+        # The checked request replaces what the page posted, if anything (KNOWN_SEARCH); still sent from the page.
+        out["search_from"] = known_search(url)["source"]
+        captured = known
     if not captured:
         out["error"] = "the page made no NewSearch request"
         return out
@@ -346,9 +398,13 @@ def search_all(reader, url: str, delay_ms: int) -> dict:
 def write_index(url: str, searched: dict, wanted: dict, loads: int, title: str = REPORT_TITLE) -> int:
     base = url if url.endswith("/") else url + "/"
     rows = searched.pop("rows", [])
+    rec = known_search(url) or {}
     learned = report_form(searched.get("outline_links"), rows, base)
-    form = learned or LEGACY_FORM
-    index = build_index(rows, base, form, title)
+    form = rec.get("form") or learned or LEGACY_FORM
+    form_from = ("the checked record (%s)" % rec["source"] if rec.get("form") else
+                 "the page's own outline links" if learned else "RCCD's default")
+    ids = rec.get("report_ids")
+    index = build_index(rows, base, form, title, ids)
     union = set().union(*wanted.values()) if wanted else set()
     with_report = {c for c, v in index.items() if any(x["reports"] for x in v)}
     coverage = {slug: {"courses": len(codes), "with_outline": sum(1 for c in codes if c in with_report)}
@@ -356,8 +412,8 @@ def write_index(url: str, searched: dict, wanted: dict, loads: int, title: str =
     run = os.environ.get("GITHUB_RUN_ID", "local")
     out = {"run": run, "at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "url": url,
            "search": searched, "loads": loads,
-           "report_form": form, "report_form_from": "the page's own outline links" if learned else "RCCD's default",
-           "report_title": title, "report_titles": report_titles(rows, title),
+           "report_form": form, "report_form_from": form_from,
+           "report_title": title, "report_ids": ids, "report_titles": report_titles(rows, title, ids),
            "sample_row": {k: (rows[0] if rows else {}).get(k) for k in
                           ("CourseId", "SubjectCode", "CourseNumber", "StatusTitle", "ProposalTypeTitle", "MetaReports")},
            "active_codes": len(index), "active_with_report": len(with_report),
