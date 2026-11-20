@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8705,
-    "output_tokens": 3839,
+    "output_tokens": 4498,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,41 +30,40 @@
     "model": null
    }
   ],
-  "output_tokens": 3839,
+  "output_tokens": 4498,
   "output_tokens_details": {
-   "thinking_tokens": 801
+   "thinking_tokens": 1422
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.1116,
- "ms": 27954,
- "seconds": 28.1,
+ "cost_usd": 0.12478,
+ "ms": 50745,
+ "seconds": 51.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 40,
+   "placed": 39,
    "listed": 40,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.975,
+   "missing": [
+    "ENGL1B"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "ENGLC1002",
-     "listed": "ENGL1B",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "ENGLC1002"
+   ],
+   "flagged": [
+    "ENGLC1002"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -121,7 +120,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": "IGETC or CSU General Education - Breadth",
+   "ge_pattern": "IGETC or CSU GE-Breadth",
    "degree_total": {
     "min": null,
     "max": null
@@ -146,7 +145,7 @@
   },
   "blocks": [
    {
-    "name": "Required Core",
+    "name": "Required Core (Select )",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -171,7 +170,7 @@
     ]
    },
    {
-    "name": "Required Core - Select one course",
+    "name": "Select one course",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -262,7 +261,7 @@
     ]
    },
    {
-    "name": "List C - Select one. Any course articulated as lower division preparation in the Philosophy major at a CSU.",
+    "name": "List C - Select one. Any course articulated as lower division preparation in the Philosophy major at a CSU. Courses already used to meet requirements above may not be used to meet the List C requirement.",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -527,19 +526,19 @@
   "missing_explained": [
    {
     "code": "ENGL 1B",
-    "why": "not in the text; the catalog lists ENGL C1002 Introduction to Literature instead, likely its renumbered successor"
+    "why": "not in the text; catalog lists ENGL C1002 (Introduction to Literature) instead"
    }
   ],
   "notes": [
-   "The catalog prints 'Required Core (Select ) 6.0' as PHIL 4 or PHIL 6 (3 units) AND one of PHIL 1, PHIL 1C, PHIL 1CH (3 units); recorded as two blocks.",
-   "Honors twins (PHIL 1CH, ENGL C1002H, HIST C1002H) are printed as separate rows in the catalog; recorded as alternatives of their non-honors courses.",
-   "List A also allows any core course not already used; List B may include any List A course not used; List C excludes courses already used above and allows any course articulated as lower-division preparation for the CSU Philosophy major.",
-   "The 60-unit figure is the generic ADT requirement, not recorded as degree_total; ge_pattern is IGETC or CSU GE-Breadth with no GE units printed.",
-   "ENGL C1002 is not in the closed list (catalog_addition true); the closed list's ENGL 1B does not appear.",
-   "Source URL refers to the 2025-2026 MCC catalog while the requested catalog year is 2026-2027; reviewer should confirm.",
-   "The learning outcomes are printed once for this award and recorded."
+   "The catalog prints 6.0 for 'Required Core (Select )' as a whole, then 3.0 for the PHIL 4 or PHIL 6 choice; the nested 'Select one course' (PHIL 1, PHIL 1C or PHIL 1CH, 3.0) is recorded as its own block, so the core's 6.0 spans the first two blocks.",
+   "List A also allows any course from the core not already used; List B may include any course not used from List A. These additional paths are not recorded as courses in those blocks.",
+   "List C excludes courses already used to meet requirements above.",
+   "Honors twins (ENGL C1002H, HIST C1002H, PHIL 1CH) are recorded as alternatives though the catalog lists them as separate rows.",
+   "ENGL C1002 is not in the closed list (catalog_addition true); the closed list's ENGL 1B does not appear in the text.",
+   "The 60-unit, 18-unit major minimum sentence is the general ADT requirement, not recorded as a degree total; total_units is the printed 'Total : 18.0- 20.0'.",
+   "Source URL references the 2025-2026 catalog while the program record is for catalog year 2026-2027; reviewer should verify the year.",
+   "No careers named in the text."
   ]
  },
- "extracted_run": "44692816081",
- "catalog_year": "2026-2027"
+ "extracted_run": "38935148408"
 }
