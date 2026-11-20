@@ -10,7 +10,8 @@ those keys alone and keeps two measured series beside them, so the file gains a 
   it. A run is never priced twice, and a later free rescore never zeroes it. A summary from before S647 carries
   `cost_usd` alone, for the run that filed every record, and that figure stands for the run.
 - `sessions`: the sessions' own figures from their handoffs' `Spend:` lines, by the UTC day each session ended
-  (kb/_build_session_spend.py, reused rather than restated).
+  (kb/_build_session_spend.py, reused rather than restated). A day whose sessions include an estimate (a line priced
+  from token counts) carries `estimate_usd`, those sessions' dollars; a day with none has no such key.
 
 The ledger begins with the runs the committed summaries hold today (2026-11-17). Runs that an earlier read overwrote
 before then are not in it. `runner_since` says so, and the page says it too.
@@ -87,7 +88,14 @@ def sessions_by_day(root):
         sys.path.insert(0, here)
     import _build_session_spend as S  # noqa: E402  (the one parser of the Spend: line)
     built = S.build(root)
-    return {day: v for day, v in built["by_day"].items() if day}
+    days = {day: dict(v) for day, v in built["by_day"].items() if day}
+    # The dollars of a day's sessions whose Spend: line is an estimate, so an estimated day never reads as measured
+    # (COBIx on #3545). Absent on a day with none, so a measured day keeps its old shape.
+    for s in built["sessions"]:
+        if s.get("estimate") and s.get("available") and s.get("day") in days:
+            d = days[s["day"]]
+            d["estimate_usd"] = round(d.get("estimate_usd", 0.0) + s["usd"], 2)
+    return days
 
 
 def build(root, current, today):

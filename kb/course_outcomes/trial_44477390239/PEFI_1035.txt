@@ -1,0 +1,50 @@
+Physical Fitness Lab
+PEFI 1035:
+
+1.0 Units
+
+Print Course
+
+        
+
+This course is designed to provide students with the principles and methodologies necessary to developing and maintaining personal fitness. The concepts of physical fitness: cardiorespiratory fitness, muscular strength and endurance, flexibility, and body composition will be examined. Fitness assessments will be used to examine fitness levels and develop a fitness plan. Risk factors for cardiovascular disease will also be examined. Participation in a weekly fitness program is required. 
+
+
+    
+Toggle  
+Overview
+Requisites:
+None
+Transferable:
+
+Transferable to both UC and CSU
+
+Toggle  
+Learning Outcomes
+SLO:
+Demonstrate knowledge of the principles and concepts of physical fitness.
+Indentify the potential risks as well as benefits associated with physical activity.
+Toggle  
+Units and Hours
+Default Profile
+Minimum Credit Units
+
+1.0
+
+Maximum Credit Units
+
+1.0
+
+Total Course In-Class (Contact) Hours
+
+54.0
+
+Weekly Student Hours
+In Class
+Lecture Hours
+0.0
+Lab Hours
+3.0
+Activity Hours
+0.0
+Register Now Contact Us

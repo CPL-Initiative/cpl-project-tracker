@@ -17,7 +17,9 @@ What it joins, all committed files:
                                       per credential, what each college articulated (its credit
                                       recommendations and units) and the exhibits in MAP
   unified_courses_members.js          the colleges holding a course of the aligned identity, and
-                                      those courses (a could-adopt chip opens them)
+                                      those courses (a could-adopt chip opens them); each local course's
+                                      identity, and how many colleges hold each identity
+  unified_courses_data.js             the C-ID, CCN and M-ID titles in each card's subject area (Same subject)
   statewide_prescriptive.js           the colleges that already teach a course mapped to a credential's
                                       M-ID identity, and the courses (over-merged identities withheld):
                                       Exhibit Adoption's could-adopt since Sam's ruling of 2026-09-24
@@ -48,8 +50,8 @@ colleges hold a course of the aligned identity, else teach a course mapped to th
 (the prescriptive layer), else none are named.
 
 Runs nightly at the end of cer-procedures.yml and daily from daily-dashboard.yml. Writes
-kb/exhibits_review.json and kb/exhibits_review_courses.json (the Review queue) and
-kb/exhibits_adoption.json (the credential panel's "Who could adopt it?", Exhibit Adoption's
+kb/exhibits_review.json, kb/exhibits_review_courses.json and kb/exhibits_review_subjects.json (the
+Review queue and its Same subject lists) and kb/exhibits_adoption.json (the credential panel's "Who could adopt it?", Exhibit Adoption's
 per-credential view folded into the Exhibits tab), which exhibits.js reads.
 
 Usage, from the repo root:
@@ -74,6 +76,7 @@ import title_in_use  # noqa: E402
 SCHEMA = 1
 OUT = "kb/exhibits_review.json"
 COURSES_OUT = "kb/exhibits_review_courses.json"
+SUBJECTS_OUT = "kb/exhibits_review_subjects.json"
 ADOPTION_OUT = "kb/exhibits_adoption.json"
 TEACHES = "teaches:"   # the courses file's key for a credential's prescriptive courses
 
@@ -450,14 +453,102 @@ def course_index(members):
     one source the tab's Course details panel reads (unified_courses_members.js)."""
     names = [norm_college(clean_college(n)) for n in members.get("colleges") or []]
     out = {}
-    for rows in (members.get("members") or {}).values():
+    for ident, rows in (members.get("members") or {}).items():
         for r in rows or []:
             c = r.get("c")
             if c is None or c >= len(names) or not r.get("n"):
                 continue
             out.setdefault((names[c], _code_key(r["n"])), {"code": r["n"].strip(), "title": (r.get("t") or "").strip(),
-                                                           "units": r.get("u"), "cn": r.get("cn") or ""})
+                                                           "units": r.get("u"), "cn": r.get("cn") or "",
+                                                           "ident": ident, "top": r.get("p") or ""})
     return out
+
+
+# ── Same subject (Sam, 3:16 PM PT 2026-11-18, relayed by COBIx on #3358): the Related titles panel showed three
+# titles for Las Positas's Emerald High School exhibit behind ECE 64, and the widely used ECE titles were a tab away.
+# Each card names the subject of its main local course (the one with the most units, the first on a tie), and
+# kb/exhibits_review_subjects.json lists every C-ID, CCN and M-ID title in that subject with how many colleges hold
+# it, from the identities map. The subject is the course identity's own SUBJ4 and the discipline its identities
+# carry: the identities whose SUBJ4 is one of that discipline's, and those whose discipline was set by a signal other
+# than TOP. A TOP-inferred discipline never votes (Rule 7, TOP is a last-in-line signal). Only when the identity's
+# SUBJ4 has no identity in Unified Courses does the course's TOP code stand in, as a search aid, under the key
+# "TOP nnnn". The tab ranks the list against the card; the file ranks nothing and applies nothing.
+TOP_DSRC = {"top_code", "top_division"}
+SUBJECT_ROW_CAP = 600   # titles kept per subject; the file says how many in all
+
+
+def _prefix(ident):
+    return (ident or "").split(" ", 1)[0].upper()
+
+
+def subject_index(data, members):
+    """The identities map read once: SUBJ4 -> rows, SUBJ4 -> its discipline (the modal discipline of its identities,
+    TOP-inferred ones held out), and identity -> how many colleges hold it."""
+    by_prefix, votes = {}, {}
+    for r in (data or {}).get("rows") or []:
+        p = _prefix(r.get("id"))
+        if not p or not r.get("title"):
+            continue
+        by_prefix.setdefault(p, []).append(r)
+        if r.get("disc") and r.get("dsrc") not in TOP_DSRC:
+            votes.setdefault(p, {}).setdefault(r["disc"], 0)
+            votes[p][r["disc"]] += 1
+    disc = {p: sorted(v.items(), key=lambda kv: (-kv[1], kv[0]))[0][0] for p, v in votes.items()}
+    colleges = {i: len({m.get("c") for m in rows or [] if m.get("c") is not None})
+                for i, rows in ((members or {}).get("members") or {}).items()}
+    return {"by_prefix": by_prefix, "disc": disc, "colleges": colleges}
+
+
+def subject_key(course, sidx):
+    """The subject a local course sits in: its identity's SUBJ4 when Unified Courses holds that SUBJ4, else its TOP
+    code's four digits (a search aid), else ""."""
+    p = _prefix((course or {}).get("ident"))
+    if p and p in sidx["by_prefix"]:
+        return p
+    top = re.sub(r"[^0-9]", "", (course or {}).get("top") or "")[:4]
+    return "TOP " + top if len(top) == 4 else ""
+
+
+def _units(r):
+    lo, hi = r.get("umin"), r.get("umax")
+    if lo is None and hi is None:
+        lo = hi = r.get("units")
+    return lo, hi
+
+
+def subject_rows(key, sidx):
+    """{disc, rows: [[id, title, colleges, units low, units high, system]], total} for one subject key, the most
+    colleges first."""
+    if key.startswith("TOP "):
+        four = key[4:]
+        rows = [r for rs in sidx["by_prefix"].values() for r in rs
+                if re.sub(r"[^0-9]", "", str(r.get("top") or ""))[:4] == four]
+        disc = ""
+    else:
+        disc = sidx["disc"].get(key, "")
+        prefixes = {p for p, d in sidx["disc"].items() if disc and d == disc} | {key}
+        rows = [r for p in sorted(prefixes) for r in sidx["by_prefix"].get(p, [])]
+        if disc:
+            rows += [r for p, rs in sidx["by_prefix"].items() if p not in prefixes for r in rs
+                     if r.get("disc") == disc and r.get("dsrc") not in TOP_DSRC]
+    seen, out = set(), []
+    for r in rows:
+        if r["id"] in seen:
+            continue
+        seen.add(r["id"])
+        lo, hi = _units(r)
+        out.append([r["id"], r["title"].strip(), sidx["colleges"].get(r["id"], 0), lo, hi, r.get("id_system") or "M-ID"])
+    out.sort(key=lambda x: (-x[2], x[1].lower(), x[0]))
+    return {"disc": disc, "total": len(out), "rows": out[:SUBJECT_ROW_CAP]}
+
+
+def main_course(courses):
+    """The index of the local course a card's subject comes from: the most units, the first on a tie."""
+    best = -1
+    for i, c in enumerate(courses or []):
+        if best < 0 or (c[3] or 0) > (courses[best][3] or 0):
+            best = i
+    return best
 
 
 def _code_key(code):
@@ -963,7 +1054,9 @@ def build(root, live=None):
     shared_on_file = shared_titles(creds, index, credential_issuers(tags_on_file, [c.get("issuer") for c in
                                                                                   catalog.get("credentials") or []]))
     cindex, descs = course_index(members), coci_descriptions(root)
-    items, courses = [], {}
+    data_path = os.path.join(root, "unified_courses_data.js")
+    sidx = subject_index(load_js(data_path) if os.path.exists(data_path) else {}, members)
+    items, courses, subjects = [], {}, {}
     for n in needs:
         raw = n.get("raw_title") or ""
         if not raw:
@@ -1039,6 +1132,15 @@ def build(root, live=None):
             rec["courses_key"] = key
         if mine:
             rec["local_courses"] = mine
+            at_main = main_course(mine)
+            skey = subject_key(cindex.get((norm_college(mine[at_main][0]), _code_key(mine[at_main][1]))), sidx)
+            # Keyed by the discipline's name, so two SUBJ4s of one discipline (CDEV, ECE) share one list.
+            name = sidx["disc"].get(skey) or skey
+            if skey and name not in subjects:
+                subjects[name] = subject_rows(skey, sidx)
+            if skey and subjects[name]["rows"]:
+                rec["subject"] = name
+                rec["subject_course"] = at_main
         conf = (n.get("proposal") or {}).get("confidence")
         if isinstance(conf, (int, float)):
             rec["confidence"] = conf
@@ -1097,6 +1199,13 @@ def build(root, live=None):
     course_file = {"schema": SCHEMA, "colleges": names,
                    "courses": {i: {str(at[c]): rows for c, rows in sorted(by.items())}
                                for i, by in sorted(courses.items())}}
+    subject_file = {"schema": SCHEMA,
+                    "_about": "The Same subject list beside each Review card (kb/_build_exhibits_review.py): every C-ID, "
+                              "CCN and M-ID title in the subject of the card's main local course, as [id, title, colleges, "
+                              "units low, units high, system], the most colleges first, keyed by the discipline's name (or the SUBJ4, or "
+                              "\"TOP nnnn\" when only the course's TOP code places it). A card names its key in `subject` and "
+                              "the course it came from in `subject_course`.",
+                    "subjects": {k: v for k, v in sorted(subjects.items()) if v["rows"]}}
     review = credential_aliases.review_list(root)
     titled = sum(1 for c in cards if c.get("unified_title"))
     waiting = sum(1 for c in cards if not c.get("unified_title")
@@ -1135,7 +1244,7 @@ def build(root, live=None):
                         | {(s.get("site") or "").strip() for ss in site_lists.values() for s in ss
                            if isinstance(s, dict)} - {""}, key=str.lower),
         "held": items,
-    }, course_file, adoption
+    }, course_file, adoption, subject_file
 
 
 def dump(data, list_key):
@@ -1193,19 +1302,21 @@ def main(argv=None):
     ap.add_argument("--live", action="store_true",
                     help="read the saved title assignments from kb_curation (anon, read only); else the overlay decides")
     a = ap.parse_args(argv)
-    data, course_file, adoption = build(a.root, live_assignments(a.live))
+    data, course_file, adoption, subject_file = build(a.root, live_assignments(a.live))
     out = a.out or os.path.join(a.root, OUT)
     courses_out = os.path.join(os.path.dirname(out), os.path.basename(COURSES_OUT))
     adoption_out = os.path.join(os.path.dirname(out), os.path.basename(ADOPTION_OUT))
+    subjects_out = os.path.join(os.path.dirname(out), os.path.basename(SUBJECTS_OUT))
     outputs = [(out, data, "held", "written_at"), (courses_out, course_file, "courses", None),
-               (adoption_out, adoption, "credentials", "written_at")]
+               (subjects_out, subject_file, "subjects", None), (adoption_out, adoption, "credentials", "written_at")]
     # In the daily the overlay was synced minutes ago, so a refusal there could only be wrong (a clear synced on
     # purpose); the guard stays for cer-procedures.yml, which syncs no overlay, and for local builds.
     why = "" if a.overlay_fresh else stale_assignments(prior_file(out), data)
     if why:
-        # The Review file and its courses stay as committed; the adoption view reads no decision and still rebuilds.
+        # The Review file, its courses and its subjects stay as committed; the adoption view reads no decision and still
+        # rebuilds.
         print("::warning title=Exhibits review not rebuilt::" + why)
-        outputs = outputs[2:]
+        outputs = outputs[3:]
     wrote = [p for p, d, k, st in outputs if write_if_changed(p, d, k, st)]
     if not a.quiet:
         print("exhibits review: %d held | steps %s | aligned %d | adoption %d credentials | %s"

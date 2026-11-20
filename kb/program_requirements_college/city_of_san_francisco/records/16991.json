@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Italian",
  "award": "A.A. Degree",
- "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=176",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=175",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7724,
+  "input_tokens": 7918,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7724,
-    "output_tokens": 2392,
+    "input_tokens": 7918,
+    "output_tokens": 2201,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2392,
+  "output_tokens": 2201,
   "output_tokens_details": {
-   "thinking_tokens": 929
+   "thinking_tokens": 769
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07874,
- "ms": 20392,
- "seconds": 20.8,
+ "cost_usd": 0.07569,
+ "ms": 18175,
+ "seconds": 18.3,
  "parts": null,
  "error": null,
  "score": {
@@ -109,7 +109,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Italian – Associate of Arts (heading not in supplied text; section begins mid-description on page 176)",
+   "section_heading": "Italian – AA Degree",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -142,10 +142,10 @@
     "name": "Choose a first-level option: ITAL 1",
     "rule": "all",
     "minimum": null,
-    "option_group": "first-level option",
+    "option_group": "First-level option",
     "stated": {
-     "min": 5,
-     "max": 5
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -161,7 +161,7 @@
     "name": "Choose a first-level option: Both of the following",
     "rule": "all",
     "minimum": null,
-    "option_group": "first-level option",
+    "option_group": "First-level option",
     "stated": {
      "min": 6,
      "max": 6
@@ -187,10 +187,10 @@
     "name": "Choose a second-level option: ITAL 2",
     "rule": "all",
     "minimum": null,
-    "option_group": "second-level option",
+    "option_group": "Second-level option",
     "stated": {
-     "min": 5,
-     "max": 5
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -206,7 +206,7 @@
     "name": "Choose a second-level option: Both of the following",
     "rule": "all",
     "minimum": null,
-    "option_group": "second-level option",
+    "option_group": "Second-level option",
     "stated": {
      "min": 6,
      "max": 6
@@ -298,12 +298,29 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The A.A. section heading is cut off above page 176 in the supplied text; the section is identified as the one preceding 'Italian – Certificate of Achievement'.",
-   "The first-level option, second-level option and ITAL 3A/3B blocks are all nested under an outer 'Choose 15 units from the following (Units 15.0)'. Those three groups sum to 16-18 units, so it is ambiguous whether all three are strictly required or a 15-unit subset suffices (e.g., ITAL 1A+1B, ITAL 2A+2B and ITAL 3A = 15). Recorded as three required groups; reviewer should check.",
-   "ITAL 1A is printed in the catalog but not in the closed list; marked catalog_addition.",
-   "The catalog titles ITAL 3A 'Intermediate Italian' while the closed list titles it 'Continuation of Intermediate Italian'.",
-   "Certificate of Achievement section (page 177, 16 units, separate outcomes) was ignored."
+   "The first-level option (printed 5.0-6.0), second-level option (printed 5.0-6.0) and ITAL 3A/3B (6.0) sit under a wrapper 'Choose 15 units from the following Units 15.0'; completing all three yields 16-18 units, more than 15, so the wrapper reads as a minimum. Recorded as option-group blocks plus a required ITAL 3A/3B block; reviewer should check.",
+   "Each level's option is recorded as two blocks sharing an option_group: the single 5-unit course, or both 3-unit courses (catalog prints 'Both of the following: 6.0').",
+   "ITAL 1A is not in the closed list; recorded as catalog_addition.",
+   "Catalog titles ITAL 3A 'Intermediate Italian'; the closed list titles it 'Continuation of Intermediate Italian'.",
+   "The page mentions general education requirements but names no GE pattern or degree total.",
+   "The Certificate of Achievement section that follows (Total 16.0) was not used."
   ]
  },
- "extracted_run": "39047128472"
+ "extracted_run": "44474797786",
+ "catalog_year": "2026-2027",
+ "source_sha": "ee3148db36c51833",
+ "source_codes": [
+  "ITAL1",
+  "ITAL10A",
+  "ITAL10B",
+  "ITAL11A",
+  "ITAL11B",
+  "ITAL1B",
+  "ITAL2",
+  "ITAL2A",
+  "ITAL2B",
+  "ITAL3A",
+  "ITAL3B"
+ ],
+ "source_coverage": 1.0
 }

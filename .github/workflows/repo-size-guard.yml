@@ -19,9 +19,10 @@ on:
     - cron: '23 15 * * 1'   # Mondays 15:23 UTC (7:23 AM PT), away from the dashboard's 3-cron ladder
   workflow_dispatch:
 
+# One run per ref: a new push to a pull request cancels the run still measuring the old head.
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
-  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: read
@@ -30,22 +31,33 @@ jobs:
   size:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
+    # The run takes under a minute. Before the one-fetch fix each size run held a runner about 6 hours (COBIx,
+    # 2026-11-19); a hang now ends here.
+    timeout-minutes: 10
     steps:
-      # Every blob at depth 1 (the disk total reads each file's size from git objects), but only scripts/ on
-      # disk: the guard never reads the working tree.
+      # Only scripts/ on disk: the guard never reads the working tree. A sparse checkout is a blob:none partial
+      # clone, so the guard fetches the blobs whose sizes it reads in one fetch (prefetch_missing in the script),
+      # never one lazy fetch per blob.
       - uses: actions/checkout@v7
         with:
           sparse-checkout: scripts
       - name: Size check
         env:
-          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          EVENT_BASE: ${{ github.event.pull_request.base.sha }}
         run: |
+          # The base is the merge commit's first parent: the exact main the PR was merged onto. The event's
+          # base.sha can sit a day or more behind on an older PR (#3511: afc29292 under a merge onto 5a7a6f24),
+          # which counts every main commit since as the PR's own growth. The event value stays as the fallback.
+          BASE_SHA=$(git cat-file -p HEAD | awk '/^parent /{print $2; exit}')
+          [ -n "$BASE_SHA" ] || BASE_SHA="$EVENT_BASE"
+          echo "comparing with $BASE_SHA (event base: $EVENT_BASE)"
           git fetch --no-tags --depth=1 origin "$BASE_SHA"
           python3 scripts/repo_size_guard.py --base "$BASE_SHA"
 
   weekly:
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v7
         with:

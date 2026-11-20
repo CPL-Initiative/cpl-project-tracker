@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Biology",
  "award": "A.S. T Degree",
- "source_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=158",
+ "source_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=157",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8694,
+  "input_tokens": 9196,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8694,
-    "output_tokens": 1679,
+    "input_tokens": 9196,
+    "output_tokens": 1683,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,45 +30,47 @@
     "model": null
    }
   ],
-  "output_tokens": 1679,
+  "output_tokens": 1683,
   "output_tokens_details": {
-   "thinking_tokens": 485
+   "thinking_tokens": 420
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06836,
- "ms": 15213,
- "seconds": 15.7,
+ "cost_usd": 0.07044,
+ "ms": 13777,
+ "seconds": 14.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 8,
+   "placed": 9,
    "listed": 14,
-   "share": 0.571,
+   "share": 0.643,
    "missing": [
     "BIOL10",
     "BIOL10L",
     "BIOL2",
     "BIOL3",
-    "BIOL5",
-    "MATH5A"
+    "BIOL5"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MATH5A",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "MATHC2210"
-   ],
-   "flagged": [
-    "MATHC2210"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -90,13 +92,13 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -114,7 +116,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Required Core Courses: (Biology A.S.-T section; its heading is on the preceding page and not in the text)",
+   "section_heading": "ASSOCIATE IN SCIENCE IN BIOLOGY FOR TRANSFER DEGREE (MAJOR #C.6101.AS-T)",
    "measure": "units",
    "total_units": {
     "min": 33,
@@ -125,7 +127,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
     "min": null,
     "max": null
@@ -135,7 +137,11 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Demonstrate basic knowledge of comparative anatomy and comparative physiology.",
+    "Demonstrate basic microscopic techniques required for all Biology fields.",
+    "Critically evaluate scientific research."
+   ],
    "careers": []
   },
   "blocks": [
@@ -275,15 +281,30 @@
    },
    {
     "code": "MATH 5A",
-    "why": "not in the text; the catalog lists MATH C2210 Calculus I in its place"
+    "why": "not in the text; catalog lists MATH C2210 (Calculus I: Early Transcendentals) instead"
    }
   ],
   "notes": [
-   "The excerpt starts on page 158 midway through the Biology A.S.-T section; its heading, description, program learning outcomes, careers and transfer-degree requirements (60 units, GE pattern) are on the preceding page and not in the text, so outcomes, careers, ge_pattern and degree_total are left empty/null.",
-   "The physics requirement is printed as 'PHYS 2A and PHYS 2B or PHYS 4A and PHYS 4B'; recorded as two sequence blocks in one option group.",
-   "Total Units: 33 = BIOL 11A/11B (10) + CHEM 1A/1B (10) + MATH C2210 (5) + one physics sequence (8), so all List A courses are read as required.",
-   "Text after 'Total Units: 33' belongs to the Environmental Science AS-T and Business Administration AS-T sections and was not used."
+   "List A prints the physics courses as 'PHYS 2A and PHYS 2B or PHYS 4A and PHYS 4B'; recorded as two sequence blocks in one option_group.",
+   "Printed total of 33 units is consistent with BIOL 11A/11B (10) + CHEM 1A/1B (10) + MATH C2210 (5) + one physics sequence (8).",
+   "The '60 semester units' statement is the generic transfer-degree requirement, not recorded as degree_total.",
+   "MATH C2210 is not on the closed list (likely replaces MATH 5A); recorded as catalog addition.",
+   "Text names pre-medicine, pre-dentistry and pre-veterinarian degrees as pathways; these are degrees, not careers, so careers left empty."
   ]
  },
- "extracted_run": "39006155986"
+ "extracted_run": "44522071814",
+ "catalog_year": "2026-2027",
+ "source_sha": "abe1d22cadce4cb0",
+ "source_codes": [
+  "BIOL11A",
+  "BIOL11B",
+  "CHEM1A",
+  "CHEM1B",
+  "MATH5A",
+  "PHYS2A",
+  "PHYS2B",
+  "PHYS4A",
+  "PHYS4B"
+ ],
+ "source_coverage": 0.643
 }

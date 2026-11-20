@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-19_s683n_cpl_memory_rows.sql",
+ "name": "s683n_cpl_memory_rows",
+ "version": "20261119103529",
+ "sha256": "38b19b8cafee829415b66bb9a138f7919340fa53ba89b7a965f342894704b907",
+ "run": "44506909495",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"slug\":\"d-a4-apply-with-pathways-reader-s683\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":316},{\"slug\":\"d-conductor-model-as-configured-s683\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":282},{\"slug\":\"d-desert-skipped-s683\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":222},{\"slug\":\"d-lane-workers-dispatch-reread-load-s683\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":259},{\"slug\":\"d-note-pair-off-s683\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":277},{\"slug\":\"d-reread-keep-the-better-s683\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":365},{\"slug\":\"d-reread-then-load-s683\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":258},{\"slug\":\"d-slimming-to-plain-session-s683\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":285},{\"slug\":\"d-trigger-branches-no-pr-s683\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":244},{\"slug\":\"f-hand-fetched-colleges-read-fine-s683\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":303},{\"slug\":\"f-reread-replaces-labeled-rows-s683\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":253},{\"slug\":\"m-a4-14-applied-s683\",\"kind\":\"milestone\",\"status\":\"proposed\",\"summary_len\":199},{\"slug\":\"m-chabot-loaded-both-kinds-s683\",\"kind\":\"milestone\",\"status\":\"proposed\",\"summary_len\":257},{\"slug\":\"m-named-gaps-99-applied-s683\",\"kind\":\"milestone\",\"status\":\"proposed\",\"summary_len\":173},{\"slug\":\"m-reread-wave-15-colleges-s683\",\"kind\":\"milestone\",\"status\":\"proposed\",\"summary_len\":349},{\"slug\":\"p-ci-cancel-agent-denied-s683\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":192},{\"slug\":\"p-execute-sql-stalled-s683\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":298},{\"slug\":\"p-fixture-by-rule-vanishes-s683\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":310},{\"slug\":\"p-runner-pool-starves-migrate-s683\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":292}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

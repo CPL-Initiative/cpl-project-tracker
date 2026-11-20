@@ -2,21 +2,21 @@
  "college": "City College of San Francisco",
  "programs": 417,
  "with_closed_list": 371,
- "found": 349,
- "extracted": 349,
+ "found": 309,
+ "extracted": 309,
  "errors": 0,
- "passed_machine_checks": 257,
+ "passed_machine_checks": 276,
  "failed": {
-  "coverage": 62,
-  "invented": 8,
-  "arithmetic": 63,
+  "coverage": 9,
+  "invented": 7,
+  "arithmetic": 24,
   "repeated": 1,
   "outcomes": 1
  },
- "cost_usd_run": 0.0,
- "cost_usd_filed": 23.72,
- "cost_per_program": 0.068,
- "extract_calls": null,
+ "cost_usd_run": 5.16,
+ "cost_usd_filed": 22.04,
+ "cost_per_program": 0.0713,
+ "extract_calls": 62,
  "extract_failed": [],
  "not_found": [
   {
@@ -26,7 +26,8 @@
    "near_miss": {
     "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=132",
     "coverage": 0.2
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "05447",
@@ -35,25 +36,104 @@
    "near_miss": {
     "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=149",
     "coverage": 0.462
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "05467",
    "title": "Avionics-Maintenance Technology",
    "award": "A.S. Degree",
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
   },
   {
    "control_number": "05468",
    "title": "Airframe Maintenance Technology",
    "award": "A.S. Degree",
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
   },
   {
    "control_number": "05469",
    "title": "Aircraft Powerplant Maintenance Technology",
    "award": "A.S. Degree",
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "05503",
+   "title": "Paralegal/Legal Studies",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "09175",
+   "title": "Computer Accounting",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "09178",
+   "title": "Data Journalism",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=86",
+    "coverage": 0.333
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "10974",
+   "title": "Paralegal/Legal Studies",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "11817",
+   "title": "Multimedia Studies: Performance Arts",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "17842",
+   "title": "Office Technology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "17952",
+   "title": "Liberal Arts and Sciences Emphasis in Arts and Humanities",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=106",
+    "coverage": 0.0
+   },
+   "status": "Active"
   },
   {
    "control_number": "17954",
@@ -62,7 +142,19 @@
    "near_miss": {
     "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=208",
     "coverage": 0.219
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "19445",
+   "title": "Databases for Developers",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
   },
   {
    "control_number": "22721",
@@ -71,76 +163,342 @@
    "near_miss": {
     "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=132",
     "coverage": 0.143
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "22725",
    "title": "Airframe-Maintenance Technology",
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
   },
   {
    "control_number": "22726",
    "title": "Aircraft Powerplant Maintenance Technology",
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
   },
   {
    "control_number": "24012",
    "title": "Intermediate VESL for Printing  Workers",
    "award": null,
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "24120",
+   "title": "Administrative Assistant",
+   "award": null,
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
   },
   {
    "control_number": "24252",
    "title": "Beginning VESL for the Hospitality Industry",
    "award": null,
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "24259",
+   "title": "Construction Administrative Assistant",
+   "award": null,
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "24260",
+   "title": "Business Information Worker (BIW)",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "24263",
+   "title": "Microsoft Office Specialist",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
   },
   {
    "control_number": "24276",
    "title": "ESL/ABE for Automotive Technology",
    "award": null,
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "24299",
+   "title": "Clerical Accounting",
+   "award": null,
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "24304",
+   "title": "Clerical Support Specialist",
+   "award": null,
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "24331",
+   "title": "Beginning VESL for Janitorial Workers",
+   "award": null,
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
   },
   {
    "control_number": "24338",
    "title": "Beginning VESL Communication",
    "award": "Noncredit program",
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "24393",
+   "title": "Computerized Accounting",
+   "award": null,
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
   },
   {
    "control_number": "24424",
    "title": "Intermediate VESL for Transit Operators",
    "award": null,
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "24449",
+   "title": "Computer Applications for Business",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
   },
   {
    "control_number": "24456",
    "title": "Textile and Fabric Design",
    "award": null,
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "30539",
+   "title": "Business Office Support Skills, Phase II",
+   "award": null,
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "30687",
+   "title": "Introduction to Child Development Careers",
+   "award": null,
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
   },
   {
    "control_number": "30907",
    "title": "High Intermediate ESL for Health Professionals",
    "award": "Noncredit program",
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
   },
   {
-   "control_number": "32868",
-   "title": "Business Administration",
-   "award": "A.S. T Degree",
+   "control_number": "31074",
+   "title": "Digital Literacy and Core Skills",
+   "award": "Noncredit program",
    "near_miss": {
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=143",
-    "coverage": 0.455
-   }
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "31413",
+   "title": "PowerPoint Specialist",
+   "award": null,
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "31414",
+   "title": "Office Receptionist",
+   "award": null,
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "31602",
+   "title": "CCSF High School Diploma",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "35709",
+   "title": "Broadcast Motion Graphics",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "36284",
+   "title": "Cloud-Based Electronic Communication",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "36386",
+   "title": "ESL Beginning Low Conversation",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "rule B then A: the pages printing the program's title with its award are course descriptions or general-education pages",
+    "rule": "A",
+    "refused_b": 1
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "36672",
+   "title": "QuickBooks & Spreadsheets for Accounting",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
   },
   {
    "control_number": "36821",
    "title": "Website Development for E-Business",
    "award": "Noncredit program",
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "36964",
+   "title": "ESL Beginning High Oral Communication Skills",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "36980",
+   "title": "Medisoft for Business",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "37160",
+   "title": "AV Technologist",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "37561",
+   "title": "Accounting Assistant & Core Skills",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "37601",
+   "title": "iPhone App Programming",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
   },
   {
    "control_number": "37776",
@@ -149,22 +507,125 @@
    "near_miss": {
     "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=215",
     "coverage": 0.048
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "38563",
    "title": "Cloud-Based Accounting Systems",
    "award": "Noncredit program",
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
   },
   {
-   "control_number": "41638",
-   "title": "Business Administration 2.0",
-   "award": "A.S. T Degree",
+   "control_number": "40168",
+   "title": "Entrepreneurship and Innovation in Broadcast Media",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=143",
-    "coverage": 0.4
-   }
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "40171",
+   "title": "Technical Theater Production - Costume and Makeup",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "40177",
+   "title": "Entrepreneurship in Visual Media Design",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "40407",
+   "title": "Technical Theater Production - Stagecraft",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "40435",
+   "title": "Human Resources Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "40590",
+   "title": "Human Resources Management",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "40705",
+   "title": "Build Automation for DevOps & QA",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "40706",
+   "title": "Database Administration",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "41353",
+   "title": "Entrepreneurship and Innovation in Journalism",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "42318",
+   "title": "ESL Intermediate High Oral Communication Skills",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
   },
   {
    "control_number": "45768",
@@ -173,8 +634,9 @@
    "near_miss": {
     "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=390",
     "coverage": 0.129
-   }
+   },
+   "status": "Active"
   }
  ],
- "run": "43693267535"
+ "run": "44474797786"
 }

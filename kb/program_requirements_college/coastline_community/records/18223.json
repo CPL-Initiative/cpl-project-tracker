@@ -60,19 +60,19 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    13.0,
+    18.0,
     18.0
    ],
    "stated": [
     18.0,
     18.0
    ],
-   "why": [
-    "the blocks sum to 13.0-18.0; the catalog states 18.0-18.0"
-   ]
+   "against": "program",
+   "why": [],
+   "rescored": "A4 a blank alternative takes its row's units (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358)"
   },
   "repeated": {
    "codes": [],
@@ -93,7 +93,7 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -134,13 +134,17 @@
       "alternatives": [
        {
         "code": "SPAN C180A",
-        "units": null,
-        "catalog_addition": false
+        "units": 2.5,
+        "catalog_addition": false,
+        "units_max": null,
+        "together": "SPAN C180A + SPAN C180B"
        },
        {
         "code": "SPAN C180B",
-        "units": null,
-        "catalog_addition": false
+        "units": 2.5,
+        "catalog_addition": false,
+        "units_max": null,
+        "together": "SPAN C180A + SPAN C180B"
        }
       ],
       "catalog_addition": false
@@ -152,13 +156,17 @@
       "alternatives": [
        {
         "code": "SPAN C185A",
-        "units": null,
-        "catalog_addition": false
+        "units": 2.5,
+        "catalog_addition": false,
+        "units_max": null,
+        "together": "SPAN C185A + SPAN C185B"
        },
        {
         "code": "SPAN C185B",
-        "units": null,
-        "catalog_addition": false
+        "units": 2.5,
+        "catalog_addition": false,
+        "units_max": null,
+        "together": "SPAN C185A + SPAN C185B"
        }
       ],
       "catalog_addition": false
@@ -189,5 +197,21 @@
    "Program Learning Outcomes are printed on the A.A. degree page itself."
   ]
  },
- "extracted_run": "38445051060"
+ "extracted_run": "38445051060",
+ "reconciled": [
+  {
+   "rule": "A4",
+   "code": "SPAN C180A + SPAN C180B",
+   "together": "state",
+   "words": "SPAN C180A and SPAN C180B together replace SPAN C180: each carries its own units from the state's course file (2.5, 2.5; 5 in all)",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "SPAN C185A + SPAN C185B",
+   "together": "state",
+   "words": "SPAN C185A and SPAN C185B together replace SPAN C185: each carries its own units from the state's course file (2.5, 2.5; 5 in all)",
+   "statewide": "units_rules_A4"
+  }
+ ]
 }

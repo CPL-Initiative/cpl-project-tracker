@@ -2,75 +2,167 @@
  "college": "Evergreen Valley College",
  "catalog_url": "https://catalog.evc.edu/",
  "platform": "courseleaf",
- "catalog_year": "2025-2026",
+ "catalog_year": "2026-2027",
  "programs": 93,
  "with_closed_list": 92,
- "started": "2026-10-15T14:10:30Z",
+ "started": "2026-11-19T11:59:06Z",
  "scope": null,
  "sitemap": {
   "url": "https://catalog.evc.edu/sitemap.xml",
   "status": 200,
-  "listed": 293,
+  "listed": 299,
   "nested": 0,
-  "program_pages": 145,
+  "program_pages": 157,
   "refused": null,
-  "errors": null
+  "errors": null,
+  "failed": null,
+  "challenged": null
  },
- "pages_read": 285,
- "child_pages": 140,
- "banner_h1": "College Catalog",
- "loads": 149,
- "seconds": 725.5,
- "found": 86,
+ "listing_failed": 0,
+ "pages_read": 157,
+ "pages_listed": 157,
+ "pages_answered": 157,
+ "child_pages": 0,
+ "banner_h1": null,
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 86,
+   "hits": 81,
+   "recall": 0.942,
+   "false": 0,
+   "false_off_own": 1,
+   "false_no_claims": 1,
+   "shared": 2,
+   "false_matches": [
+    {
+     "control_number": "21189",
+     "title": "Office Assistant",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "page": "https://catalog.evc.edu/degrees-certificates/business-information-systems/office-assistant-certificate-achievement/",
+     "h1": "Office Assistant - Certificate of Achievement"
+    }
+   ],
+   "no_claims_matches": [
+    {
+     "control_number": "21189",
+     "title": "Office Assistant",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "page": "https://catalog.evc.edu/degrees-certificates/business-information-systems/office-assistant-certificate-achievement/",
+     "h1": "Office Assistant - Certificate of Achievement"
+    }
+   ],
+   "searches": false,
+   "catalog_list": null
+  },
+  "programs": 1,
+  "by_result": {
+   "not_searched": 1
+  },
+  "found": 0,
+  "found_active": 0,
+  "found_pages": 0,
+  "found_programs": [],
+  "other_programs": [
+   {
+    "control_number": "06156",
+    "title": "BIS: General Business",
+    "award": "A.S. Degree",
+    "status": "Active - Teachout Only",
+    "result": "not_searched",
+    "why": "the matcher found 81 of 86 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
+ "loads": 160,
+ "seconds": 761.1,
+ "found": 88,
  "by_method": {
   "no_closed_list": 1,
-  "not_found": 3,
-  "page_claimed": 3,
-  "sitemap_page": 86
+  "not_found": 2,
+  "page_claimed": 2,
+  "sitemap_page": 88
  },
  "shared_pages": {
-  "https://catalog.evc.edu/graduation-transfer-general-education/general-education-requirements-associate-arts-associate-science/": [
-   "06175",
-   "07516",
-   "30351"
-  ],
-  "https://catalog.evc.edu/degrees-certificates/business-information-systems/medical-assistant-front-office-certificate-achievement/": [
-   "21189",
-   "30854"
-  ],
-  "https://catalog.evc.edu/graduation-transfer-general-education/identification-numbering-system-c-id/": [
-   "30919",
-   "44496"
-  ],
-  "https://catalog.evc.edu/degrees-certificates/mathematics/mathematics-associate-science-transfer/": [
+  "https://catalog.evc.edu/degrees-certificates/mathematics/mathematics-2.0-associate-science-transfer/": [
    "30980",
    "46457"
   ]
  },
  "not_found": [
   {
-   "control_number": "45783",
-   "title": "Generative AI Entrepreneurship Program",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "control_number": "07516",
+   "title": "Engineering",
+   "award": "A.S. Degree",
    "near_miss": {
-    "why": "no page read names the program"
-   }
+    "url": "https://catalog.evc.edu/degrees-certificates/engineering/biomedical-and-biological-engineering-certificate-achievement/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.769,
+    "body": 0.0,
+    "content": 0.154,
+    "net": 10,
+    "listed": 13,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 4424,
+     "content": 17864,
+     "tabs": 1189
+    },
+    "tab_panels": [
+     [
+      "Print Options\n(Opens Modal)",
+      234
+     ],
+     [
+      "LEARNING OUTCOMES",
+      385
+     ],
+     [
+      "REQUIRED COURSES",
+      1165
+     ]
+    ]
+   },
+   "status": "Active - Teachout Only"
   },
   {
-   "control_number": "45784",
-   "title": "Generative AI Application Development Program",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "control_number": "30668",
+   "title": "Building Information Modeling",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
    "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "46250",
-   "title": "Pathway to Citizenship",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
+    "url": "https://catalog.evc.edu/degrees-certificates/building-information-modeling/building-information-modeling-bim-certificate-achievement/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1491,
+     "content": 14063,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Print Options\n(Opens Modal)",
+      234
+     ]
+    ]
+   },
+   "status": "Active"
   }
  ],
  "page_claimed": [
@@ -79,744 +171,383 @@
    "title": "IGETC",
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "pages": [
-    "https://catalog.evc.edu/graduation-transfer-general-education/general-education-requirements-associate-arts-associate-science/",
-    "https://catalog.evc.edu/graduation-transfer-general-education/general-education-requirements-associate-arts-associate-science/",
     "https://catalog.evc.edu/graduation-transfer-general-education/california-general-education-transfer-curriculum/",
-    "https://catalog.evc.edu/graduation-transfer-general-education/california-general-education-transfer-curriculum/",
-    "https://catalog.evc.edu/graduation-transfer-general-education/identification-numbering-system-c-id/",
-    "https://catalog.evc.edu/graduation-transfer-general-education/identification-numbering-system-c-id/"
-   ]
+    "https://catalog.evc.edu/graduation-transfer-general-education/general-education-requirements-associate-arts-associate-science/"
+   ],
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "36492",
    "title": "CSU GE-Breadth",
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "pages": [
-    "https://catalog.evc.edu/graduation-transfer-general-education/general-education-requirements-associate-arts-associate-science/",
-    "https://catalog.evc.edu/graduation-transfer-general-education/general-education-requirements-associate-arts-associate-science/",
     "https://catalog.evc.edu/graduation-transfer-general-education/california-general-education-transfer-curriculum/",
-    "https://catalog.evc.edu/graduation-transfer-general-education/california-general-education-transfer-curriculum/"
-   ]
-  },
-  {
-   "control_number": "40353",
-   "title": "Community Service Officer",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "pages": [
-    "https://catalog.evc.edu/graduation-transfer-general-education/identification-numbering-system-c-id/",
-    "https://catalog.evc.edu/graduation-transfer-general-education/identification-numbering-system-c-id/"
-   ]
+    "https://catalog.evc.edu/graduation-transfer-general-education/general-education-requirements-associate-arts-associate-science/"
+   ],
+   "status": "Active - Teachout Only"
   }
  ],
+ "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 11,
-  "0.8-1.0": 18,
-  "1.0": 57
+  "0.5-0.8": 2,
+  "0.8-1.0": 3,
+  "1.0": 83
  },
  "would_extract": {
-  "against": null,
-  "kept": 0,
-  "programs": 86,
+  "against": "kb/program_requirements_college/evergreen_valley",
+  "kept": 51,
+  "kept_moved": 0,
+  "programs": 33,
   "list": [
    {
     "control_number": "06154",
     "title": "Business Administration",
     "award": "A.A. Degree",
     "url": "https://catalog.evc.edu/degrees-certificates/business/business-administration-associate-arts/",
-    "coverage": 0.727,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06155",
-    "title": "Accounting",
-    "award": "A.S. Degree",
-    "url": "https://catalog.evc.edu/degrees-certificates/accounting/accounting-associate-science/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06159",
-    "title": "Automotive Technology, Drivetrain & Chassis",
-    "award": "A.S. Degree",
-    "url": "https://catalog.evc.edu/degrees-certificates/automotive-technology/auto-drivetrain-chassis-associate-science/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06160",
-    "title": "CADD Technology (Computer Aided Design & Drafting)",
-    "award": "A.S. Degree",
-    "url": "https://catalog.evc.edu/degrees-certificates/computer-aided-design-drafting/cadd-computer-aided-drafting-design-cadd-associate-science/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06165",
-    "title": "Nursing",
-    "award": "A.S. Degree",
-    "url": "https://catalog.evc.edu/degrees-certificates/nursing/nursing-associate-in-science/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://catalog.evc.edu/degrees-certificates/business/business-administration-associate-arts/",
+    "was_coverage": 0.727,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "06175",
     "title": "Administration of Justice",
     "award": "A.A. Degree",
-    "url": "https://catalog.evc.edu/graduation-transfer-general-education/general-education-requirements-associate-arts-associate-science/",
-    "coverage": 0.658,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06181",
-    "title": "Paralegal Studies",
-    "award": "A.S. Degree",
-    "url": "https://catalog.evc.edu/degrees-certificates/legal-assistant/paralegal-studies-associate-science/",
+    "url": "https://catalog.evc.edu/degrees-certificates/administration-justice/administration-justice-associate-arts/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07516",
-    "title": "Engineering",
-    "award": "A.S. Degree",
-    "url": "https://catalog.evc.edu/graduation-transfer-general-education/general-education-requirements-associate-arts-associate-science/",
-    "coverage": 0.615,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10051",
-    "title": "Paralegal Studies",
-    "award": "A.A. Degree",
-    "url": "https://catalog.evc.edu/degrees-certificates/legal-assistant/paralegal-studies-associate-arts/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://catalog.evc.edu/graduation-transfer-general-education/general-education-requirements-associate-arts-associate-science/",
+    "was_coverage": 0.658,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "10385",
     "title": "Office Administration: Management",
     "award": "A.S. Degree",
     "url": "https://catalog.evc.edu/degrees-certificates/business-information-systems/office-administration-management-associate-science/",
-    "coverage": 0.957,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10387",
-    "title": "Automotive Electrical-Engine Performance",
-    "award": "A.S. Degree",
-    "url": "https://catalog.evc.edu/degrees-certificates/automotive-technology/auto-electrical-engine-performance-associate-science/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "12133",
-    "title": "American Honda",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.evc.edu/degrees-certificates/automotive-technology/american-honda-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "13549",
-    "title": "Chemistry",
-    "award": "A.A. Degree",
-    "url": "https://catalog.evc.edu/degrees-certificates/chemistry/chemistry-associate-arts/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "13684",
-    "title": "Automotive Foundational Skills",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.evc.edu/degrees-certificates/automotive-technology/automotive-foundational-skills-certificate-of-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "14149",
-    "title": "Paralegal Studies",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.evc.edu/degrees-certificates/legal-assistant/paralegal-studies-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18692",
-    "title": "General Studies with Emphasis in Astronomy",
-    "award": "A.A. Degree",
-    "url": "https://catalog.evc.edu/degrees-certificates/physical-science/general-studies-emphasis-astronomy-associate-arts/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18693",
-    "title": "General Studies: Health Science",
-    "award": "A.A. Degree",
-    "url": "https://catalog.evc.edu/degrees-certificates/biology/general-studies-emphasis-health-science-associate-arts/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18695",
-    "title": "General Studies: Natural Science",
-    "award": "A.A. Degree",
-    "url": "https://catalog.evc.edu/degrees-certificates/biology/general-studies-emphasis-natural-science-associate-arts/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18696",
-    "title": "General Studies: Emphasis in Sociology",
-    "award": "A.A. Degree",
-    "url": "https://catalog.evc.edu/degrees-certificates/sociology/general-studies-emphasis-sociology-associate-arts/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18991",
-    "title": "Biology",
-    "award": "A.A. Degree",
-    "url": "https://catalog.evc.edu/degrees-certificates/biology/biology-associate-arts/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://catalog.evc.edu/degrees-certificates/business-information-systems/office-administration-management-associate-science/",
+    "was_coverage": 0.957,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "19957",
     "title": "General Studies with Emphasis in Women and Gender Studies",
     "award": "A.A. Degree",
     "url": "https://catalog.evc.edu/degrees-certificates/womens-studies/general-studies-associate-arts-emphasis-women-gender-studies-associate-arts/",
-    "coverage": 0.909,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21185",
-    "title": "Bookkeeping",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.evc.edu/degrees-certificates/accounting/bookkeeping-certificate-achievement/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://catalog.evc.edu/degrees-certificates/womens-studies/general-studies-associate-arts-emphasis-women-gender-studies-associate-arts/",
+    "was_coverage": 0.909,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "21189",
     "title": "Office Assistant",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.evc.edu/degrees-certificates/business-information-systems/medical-assistant-front-office-certificate-achievement/",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21190",
-    "title": "Automotive Technology, Drivetrain & Chassis",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.evc.edu/degrees-certificates/automotive-technology/auto-drivetrain-chassis-certificate-achievement/",
+    "url": "https://catalog.evc.edu/degrees-certificates/business-information-systems/bis-business-information-specialist-certificate-achievement/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21191",
-    "title": "Automotive Technology, Electrical-Engine Performance",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.evc.edu/degrees-certificates/automotive-technology/auto-electrical-engine-performance-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://catalog.evc.edu/degrees-certificates/business-information-systems/medical-assistant-front-office-certificate-achievement/",
+    "was_coverage": 0.5,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "30351",
     "title": "Administration of Justice",
     "award": "A.S. Degree",
-    "url": "https://catalog.evc.edu/graduation-transfer-general-education/general-education-requirements-associate-arts-associate-science/",
-    "coverage": 0.6,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30571",
-    "title": "Spanish Translation and Interpreting",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.evc.edu/degrees-certificates/world-languages/spanish-translation-interpreting-certificate-achievement/",
+    "url": "https://catalog.evc.edu/degrees-certificates/administration-justice/administration-justice-associate-science/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30668",
-    "title": "Building Information Modeling",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://catalog.evc.edu/degrees-certificates/building-information-modeling/building-information-modeling-bim-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30854",
-    "title": "Medical Assistant-Front Office",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://catalog.evc.edu/degrees-certificates/business-information-systems/medical-assistant-front-office-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://catalog.evc.edu/graduation-transfer-general-education/general-education-requirements-associate-arts-associate-science/",
+    "was_coverage": 0.6,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "30919",
     "title": "Administration of Justice",
     "award": "A.S. T Degree",
-    "url": "https://catalog.evc.edu/graduation-transfer-general-education/identification-numbering-system-c-id/",
-    "coverage": 0.929,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "url": "https://catalog.evc.edu/degrees-certificates/administration-justice/administration-justice-associate-science-transfer/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.evc.edu/graduation-transfer-general-education/identification-numbering-system-c-id/",
+    "was_coverage": 0.929,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "30946",
     "title": "History",
     "award": "A.A- T Degree",
     "url": "https://catalog.evc.edu/degrees-certificates/history/history-associate-arts-transfer/",
-    "coverage": 0.824,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30980",
-    "title": "Mathematics",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.evc.edu/degrees-certificates/mathematics/mathematics-associate-science-transfer/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://catalog.evc.edu/degrees-certificates/history/history-associate-arts-transfer/",
+    "was_coverage": 0.824,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "31559",
     "title": "Entrepreneurship",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://catalog.evc.edu/degrees-certificates/business/entrepreneurship---certificate-of-achievement/",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "coverage": 1.0,
+    "was_url": "https://catalog.evc.edu/degrees-certificates/business/entrepreneurship---certificate-of-achievement/",
+    "was_coverage": 0.9,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "31718",
     "title": "Psychology",
     "award": "A.A- T Degree",
     "url": "https://catalog.evc.edu/degrees-certificates/psychology/psychology-associate-arts-transfer/",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "coverage": 1.0,
+    "was_url": "https://catalog.evc.edu/degrees-certificates/psychology/psychology-associate-arts-transfer/",
+    "was_coverage": 0.833,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "32715",
     "title": "Physics",
     "award": "A.S. T Degree",
-    "url": "https://catalog.evc.edu/degrees-certificates/physics/physics-associate-science-transfer/",
+    "url": "https://catalog.evc.edu/degrees-certificates/physics/physics-2.0-associate-science-transfer/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://catalog.evc.edu/degrees-certificates/physics/physics-associate-science-transfer/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "33062",
     "title": "English",
     "award": "A.A- T Degree",
     "url": "https://catalog.evc.edu/degrees-certificates/english/english-associate-arts-transfer/",
-    "coverage": 0.941,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35478",
-    "title": "Biology",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.evc.edu/degrees-certificates/biology/biology-associate-science-transfer/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://catalog.evc.edu/degrees-certificates/english/english-associate-arts-transfer/",
+    "was_coverage": 0.941,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "35621",
     "title": "Music",
     "award": "A.A- T Degree",
     "url": "https://catalog.evc.edu/degrees-certificates/music/music-associate-arts-transfer/",
-    "coverage": 0.933,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "coverage": 1.0,
+    "was_url": "https://catalog.evc.edu/degrees-certificates/music/music-associate-arts-transfer/",
+    "was_coverage": 0.933,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "35854",
     "title": "Economics",
     "award": "A.A- T Degree",
     "url": "https://catalog.evc.edu/degrees-certificates/economics/economics-associate-in-arts-for-transfer/",
-    "coverage": 0.867,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35890",
-    "title": "Child and Adolescent Development",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.evc.edu/degrees-certificates/family-consumer-studies/child-and-adolescent-development---associate-in-arts-for-transfer/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://catalog.evc.edu/degrees-certificates/economics/economics-associate-in-arts-for-transfer/",
+    "was_coverage": 0.867,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "36067",
     "title": "Studio Arts",
     "award": "A.A- T Degree",
     "url": "https://catalog.evc.edu/degrees-certificates/art/studio-arts-associate-in-arts-for-transfer/",
-    "coverage": 0.882,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36204",
-    "title": "Kinesiology",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.evc.edu/degrees-certificates/kinesiology/kinesiology-associate-in-arts-for-transfer/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36932",
-    "title": "Anthropology",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.evc.edu/degrees-certificates/anthropology/anthropology-associate-arts-transfer/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://catalog.evc.edu/degrees-certificates/art/studio-arts-associate-in-arts-for-transfer/",
+    "was_coverage": 0.882,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "36954",
     "title": "Studio Arts",
     "award": "A.A. Degree",
     "url": "https://catalog.evc.edu/degrees-certificates/art/studio-arts-associate-in-arts/",
-    "coverage": 0.938,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "coverage": 0.969,
+    "was_url": "https://catalog.evc.edu/degrees-certificates/art/studio-arts-associate-in-arts/",
+    "was_coverage": 0.938,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "38331",
     "title": "Nutrition and Dietetics",
     "award": "A.S. T Degree",
     "url": "https://catalog.evc.edu/degrees-certificates/family-consumer-studies/nutrition-dietetics-associate-science-transfer/",
-    "coverage": 0.882,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "coverage": 1.0,
+    "was_url": "https://catalog.evc.edu/degrees-certificates/family-consumer-studies/nutrition-dietetics-associate-science-transfer/",
+    "was_coverage": 0.882,
+    "was_method": "sitemap_page"
    },
    {
-    "control_number": "38958",
-    "title": "Foundational Chemistry",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.evc.edu/degrees-certificates/chemistry/foundational-chemistry-certificate-of-achievement/",
+    "control_number": "40353",
+    "title": "Community Service Officer",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.evc.edu/degrees-certificates/administration-justice/community-service-officer-certificate-achievement/",
     "coverage": 0.5,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39129",
-    "title": "Social Justice Studies - Asian American Studies",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.evc.edu/degrees-certificates/ethnic-studies/social-justice-studies-asian-american-studies-associate-in-arts-for-transfer/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39155",
-    "title": "Chemistry",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.evc.edu/degrees-certificates/chemistry/chemistry-associate-in-science-for-transfer/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39157",
-    "title": "Social Justice Studies - African American Studies",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.evc.edu/degrees-certificates/ethnic-studies/social-justice-studies-african-american-studies-associate-in-arts-for-transfer/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39402",
-    "title": "Social Justice Studies - Chicano Studies",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.evc.edu/degrees-certificates/ethnic-studies/social-justice-studies-chicano-studies-associate-in-arts-for-transfer/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39416",
-    "title": "Social Justice Studies - Ethnic Studies",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.evc.edu/degrees-certificates/ethnic-studies/social-justice-studies-ethnic-studies-associate-in-arts-for-transfer/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39432",
-    "title": "Dance",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.evc.edu/degrees-certificates/dance/dance-certificate-of-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40027",
-    "title": "Electric Vehicle Service (Tesla Start)",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.evc.edu/degrees-certificates/automotive-technology/electric-vehicle-service-tesla-start-certificate-of-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40038",
-    "title": "Advanced Manufacturing Level I",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.evc.edu/degrees-certificates/manufacturing-technology/advanced-manufacturing-level-i-certificate-of-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40354",
-    "title": "Automotive Hybrid and Electric Vehicle Service",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.evc.edu/degrees-certificates/automotive-technology/automotive-hybrid-electric-vehicle-service-certificate-of-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40373",
-    "title": "Behavioral Intake and Assessment",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.evc.edu/degrees-certificates/psychology/behavioral-intake-assessment-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40692",
-    "title": "Online Teaching and Educational Technology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.evc.edu/degrees-certificates/education-instruction-technology/online-teaching-educational-technology-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40755",
-    "title": "Social Justice Studies-Gender Studies",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.evc.edu/degrees-certificates/womens-studies/social-justice-studies-gender-studies-associate-arts-transfer/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
     "control_number": "40843",
     "title": "Advanced Taxation",
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
     "url": "https://catalog.evc.edu/degrees-certificates/accounting/advanced-taxation-certificate-achievement/",
-    "coverage": 0.75,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40874",
-    "title": "Computer Programming",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.evc.edu/degrees-certificates/computer-information-technology/computer-programming-certificate-achievement/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41063",
-    "title": "Water and Wastewater Technology",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.evc.edu/degrees-certificates/water-wastewater-technology/water-wastewater-technology-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41146",
-    "title": "Computer Science",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.evc.edu/degrees-certificates/computer-science/computer-science-associate-science-transfer/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://catalog.evc.edu/degrees-certificates/accounting/advanced-taxation-certificate-achievement/",
+    "was_coverage": 0.75,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "41627",
     "title": "Business Administration 2.0",
     "award": "A.S. T Degree",
     "url": "https://catalog.evc.edu/degrees-certificates/business/business-administration-2.0-associate-science-transfer/",
-    "coverage": 0.75,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42282",
-    "title": "Vietnamese Translation & Interpreting",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.evc.edu/degrees-certificates/world-languages/vietnamese-translation-interpreting-certificate-achievement/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://catalog.evc.edu/degrees-certificates/business/business-administration-2.0-associate-science-transfer/",
+    "was_coverage": 0.75,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "43161",
     "title": "Communication Studies 2.0",
     "award": "A.A- T Degree",
     "url": "https://catalog.evc.edu/degrees-certificates/communication-studies/communication-studies-2.0-associate-arts-transfer/",
-    "coverage": 0.917,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43162",
-    "title": "Theatre Arts",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.evc.edu/degrees-certificates/theatre-arts/theatre-arts-associate-arts-transfer/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://catalog.evc.edu/degrees-certificates/communication-studies/communication-studies-2.0-associate-arts-transfer/",
+    "was_coverage": 0.917,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "43163",
     "title": "Philosophy",
     "award": "A.A- T Degree",
     "url": "https://catalog.evc.edu/degrees-certificates/philosophy/philosophy-associate-arts-transfer/",
-    "coverage": 0.929,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43641",
-    "title": "Low-Intermediate - Noncredit ESL",
-    "award": "Noncredit program",
-    "url": "https://catalog.evc.edu/degrees-certificates/english-as-a-second-language/low-intermediate-noncredit-esl-certificate-competency/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43678",
-    "title": "Community Advocacy and Engagement",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.evc.edu/degrees-certificates/sociology/community-advocacy-and-engagement-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://catalog.evc.edu/degrees-certificates/philosophy/philosophy-associate-arts-transfer/",
+    "was_coverage": 0.929,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "43796",
     "title": "Political Science",
     "award": "A.A- T Degree",
     "url": "https://catalog.evc.edu/degrees-certificates/political-science/political-science-associate-arts-transfer/",
-    "coverage": 0.867,
+    "coverage": 1.0,
+    "was_url": "https://catalog.evc.edu/degrees-certificates/political-science/political-science-associate-arts-transfer/",
+    "was_coverage": 0.867,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "44496",
+    "title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.evc.edu/degrees-certificates/administration-justice/law-public-policy-society-associate-arts-transfer/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.evc.edu/graduation-transfer-general-education/identification-numbering-system-c-id/",
+    "was_coverage": 0.879,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "45025",
+    "title": "California General Education Transfer Curriculum (Cal-GETC)",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.evc.edu/graduation-transfer-general-education/california-general-education-transfer-curriculum/",
+    "coverage": 0.993,
+    "was_url": "https://catalog.evc.edu/graduation-transfer-general-education/california-general-education-transfer-curriculum/",
+    "was_coverage": 0.94,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "45783",
+    "title": "Generative AI Entrepreneurship Program",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.evc.edu/degrees-certificates/artificial-intelligence/generative-ai-entrepreneurship-program-certificate-achievement/",
+    "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "45784",
+    "title": "Generative AI Application Development Program",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.evc.edu/degrees-certificates/artificial-intelligence/generative-ai-application-development-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "46137",
+    "title": "LGBTQ+ Studies",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.evc.edu/degrees-certificates/womens-studies/lgbtq-studies-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.evc.edu/degrees-certificates/ethnic-studies/",
+    "was_coverage": 0.562,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "46171",
+    "title": "Professional and Workplace Communication",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.evc.edu/degrees-certificates/communication-studies/professional-workplace-communication-certification-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.evc.edu/degrees-certificates/communication-studies/",
+    "was_coverage": 0.5,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "46218",
+    "title": "Biomedical and Biological Engineering",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.evc.edu/degrees-certificates/engineering/biomedical-and-biological-engineering-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.evc.edu/degrees-certificates/engineering/engineering-associate-arts/",
+    "was_coverage": 0.857,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "46219",
+    "title": "Chemical and Materials Engineering",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.evc.edu/degrees-certificates/engineering/chemical-and-materials-engineering-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.evc.edu/degrees-certificates/engineering/",
+    "was_coverage": 0.737,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "46250",
+    "title": "Pathway to Citizenship",
+    "award": "Noncredit program",
+    "url": "https://catalog.evc.edu/degrees-certificates/english-as-a-second-language/pathway-to-citizenship-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "46262",
+    "title": "Adult Education",
+    "award": "Noncredit program",
+    "url": "https://catalog.evc.edu/degrees-certificates/education-instruction-technology/adult-education-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.evc.edu/degrees-certificates/education-instruction-technology/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   }
+  ],
+  "held_worse_window": [
+   {
+    "control_number": "30980",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.evc.edu/degrees-certificates/mathematics/mathematics-2.0-associate-science-transfer/",
+    "coverage": 0.833,
+    "was_coverage": 1.0
+   }
+  ],
+  "held_no_gain": [
+   {
+    "control_number": "43641",
+    "title": "Low-Intermediate - Noncredit ESL",
+    "award": "Noncredit program",
+    "url": "https://catalog.evc.edu/degrees-certificates/english-as-a-second-language/low-intermediate-noncredit-esl-certificate-competency/",
+    "coverage": 1.0,
+    "was_coverage": 1.0
    },
    {
     "control_number": "43797",
@@ -824,161 +555,374 @@
     "award": "Noncredit program",
     "url": "https://catalog.evc.edu/degrees-certificates/english-as-a-second-language/intermediate-noncredit-esl-certificate-competency/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44496",
-    "title": "Law, Public Policy, and Society",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.evc.edu/graduation-transfer-general-education/identification-numbering-system-c-id/",
-    "coverage": 0.879,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45025",
-    "title": "California General Education Transfer Curriculum (Cal-GETC)",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.evc.edu/graduation-transfer-general-education/california-general-education-transfer-curriculum/",
-    "coverage": 0.94,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45225",
-    "title": "Engineering Fundamentals 1",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.evc.edu/degrees-certificates/engineering/engineering-fundamentals-1-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45226",
-    "title": "Engineering Fundamentals 2",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.evc.edu/degrees-certificates/engineering/engineering-fundamentals-2-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45227",
-    "title": "Mechanical Engineering",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.evc.edu/degrees-certificates/engineering/mechanical-engineering-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45231",
-    "title": "Civil Engineering",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.evc.edu/degrees-certificates/engineering/civil-engineering-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45232",
-    "title": "Electrical Engineering",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.evc.edu/degrees-certificates/engineering/electrical-engineering-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45233",
-    "title": "Computer Engineering",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.evc.edu/degrees-certificates/engineering/computer-engineering-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45496",
-    "title": "Business Communications and Marketing Specialist",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.evc.edu/degrees-certificates/business-information-systems/business-communications-and-marketing-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46137",
-    "title": "LGBTQ+ Studies",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.evc.edu/degrees-certificates/ethnic-studies/",
-    "coverage": 0.562,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46171",
-    "title": "Professional and Workplace Communication",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.evc.edu/degrees-certificates/communication-studies/",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46218",
-    "title": "Biomedical and Biological Engineering",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.evc.edu/degrees-certificates/engineering/engineering-associate-arts/",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46219",
-    "title": "Chemical and Materials Engineering",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.evc.edu/degrees-certificates/engineering/",
-    "coverage": 0.737,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46262",
-    "title": "Adult Education",
-    "award": "Noncredit program",
-    "url": "https://catalog.evc.edu/degrees-certificates/education-instruction-technology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 1.0
    },
    {
     "control_number": "46457",
     "title": "Mathematics 2.0",
     "award": "A.S. T Degree",
-    "url": "https://catalog.evc.edu/degrees-certificates/mathematics/mathematics-associate-science-transfer/",
+    "url": "https://catalog.evc.edu/degrees-certificates/mathematics/mathematics-2.0-associate-science-transfer/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 1.0
    }
-  ]
+  ],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
  },
- "run": "38748875071"
+ "fingerprints": {
+  "06154": {
+   "sha256": "5eee2279be9cd1c614acbf0a7d84d09e9fb1a235b20d185fae031228b4985cbe",
+   "url": "https://catalog.evc.edu/degrees-certificates/business/business-administration-associate-arts/"
+  },
+  "06155": {
+   "sha256": "516c211f227668a8a7279ce08edc65d92d89a8181c2465834da35eff10378e75",
+   "url": "https://catalog.evc.edu/degrees-certificates/accounting/accounting-associate-science/"
+  },
+  "06159": {
+   "sha256": "65ccedddc78ed32685d101a7549e68ac1414de9a3824258b4b2dd3d6d7eff15f",
+   "url": "https://catalog.evc.edu/degrees-certificates/automotive-technology/auto-drivetrain-chassis-associate-science/"
+  },
+  "06160": {
+   "sha256": "52ea69646096b6974b5b9a2728ba3bd7af1917af6629a60062871d4ff64ce03d",
+   "url": "https://catalog.evc.edu/degrees-certificates/computer-aided-design-drafting/cadd-computer-aided-drafting-design-cadd-associate-science/"
+  },
+  "06165": {
+   "sha256": "599b3991f6c50087331c749b96d2e186cf3cb2d169ef7b033d4fe3d7e9d38fc9",
+   "url": "https://catalog.evc.edu/degrees-certificates/nursing/nursing-associate-in-science/"
+  },
+  "06175": {
+   "sha256": "a4353aa3c95aeac60a8a03b2ed0d098bebe72bdcd4b8179839b60a0969ab7e3f",
+   "url": "https://catalog.evc.edu/degrees-certificates/administration-justice/administration-justice-associate-arts/"
+  },
+  "06181": {
+   "sha256": "ea544ad66c2f5d5f7eb109d983122dc76da56e92d21d8b6223d2082f0f52d001",
+   "url": "https://catalog.evc.edu/degrees-certificates/legal-assistant/paralegal-studies-associate-science/"
+  },
+  "10051": {
+   "sha256": "7d6b5f11c616ab02ad257c3bcb2b706ab686af324baf9ead68fbdbace52363d6",
+   "url": "https://catalog.evc.edu/degrees-certificates/legal-assistant/paralegal-studies-associate-arts/"
+  },
+  "10385": {
+   "sha256": "611b47fd9ff80b95c5063403065ff8d560deaa7e16cf49a7e7b99e21f773d546",
+   "url": "https://catalog.evc.edu/degrees-certificates/business-information-systems/office-administration-management-associate-science/"
+  },
+  "10387": {
+   "sha256": "ded739c7e9fecf2514158354830680086ee91da77822ebb6b978c4166ef65346",
+   "url": "https://catalog.evc.edu/degrees-certificates/automotive-technology/auto-electrical-engine-performance-associate-science/"
+  },
+  "12133": {
+   "sha256": "90f21601116ef14bb4936c3c1e21f9a6435511c31fa83320f179869fefa84ef9",
+   "url": "https://catalog.evc.edu/degrees-certificates/automotive-technology/american-honda-certificate-achievement/"
+  },
+  "13549": {
+   "sha256": "adf811159a235818e6cd5fbc241a57adb350511cfc74e79f67d238fb7687ca9d",
+   "url": "https://catalog.evc.edu/degrees-certificates/chemistry/chemistry-associate-arts/"
+  },
+  "13684": {
+   "sha256": "dc88dab8fdaaf87926fd88ff3b9a3d6203526fa0486cebb3a431f43fcfc847d9",
+   "url": "https://catalog.evc.edu/degrees-certificates/automotive-technology/automotive-foundational-skills-certificate-of-achievement/"
+  },
+  "14149": {
+   "sha256": "dcfb80f6171b5715df043c1fc5b1192d3dac2a135b2d154152f00a3f9be6bbd9",
+   "url": "https://catalog.evc.edu/degrees-certificates/legal-assistant/paralegal-studies-certificate-achievement/"
+  },
+  "18692": {
+   "sha256": "1c6c400062189dd7f6e3f1ec6676bb23720e532b64d35a9f688515eb03929577",
+   "url": "https://catalog.evc.edu/degrees-certificates/physical-science/general-studies-emphasis-astronomy-associate-arts/"
+  },
+  "18693": {
+   "sha256": "8a473f9c7d5843df4f9c86659d203902bf3dc368bab8dc6542e8be7919fff4f6",
+   "url": "https://catalog.evc.edu/degrees-certificates/biology/general-studies-emphasis-health-science-associate-arts/"
+  },
+  "18695": {
+   "sha256": "ba508784d9a14dec96e9779f5c06464252041cfb77d9ec130a6e739683b16aca",
+   "url": "https://catalog.evc.edu/degrees-certificates/biology/general-studies-emphasis-natural-science-associate-arts/"
+  },
+  "18696": {
+   "sha256": "aaa2dbc19abcd3121118e8f4d190ea53a3abde161f6c152f33c5afd624ab62ff",
+   "url": "https://catalog.evc.edu/degrees-certificates/sociology/general-studies-emphasis-sociology-associate-arts/"
+  },
+  "18991": {
+   "sha256": "214da32c6c307f341ba152394d323d9b8c15103c1e66273844f005d795754719",
+   "url": "https://catalog.evc.edu/degrees-certificates/biology/biology-associate-arts/"
+  },
+  "19957": {
+   "sha256": "4d22b578b142508c899bbb8f99d59543bd18e9f1ca41d841ff0e6af53e8706bc",
+   "url": "https://catalog.evc.edu/degrees-certificates/womens-studies/general-studies-associate-arts-emphasis-women-gender-studies-associate-arts/"
+  },
+  "21185": {
+   "sha256": "42352f062c589fa8b831a53a6dfe62cdd238c66fc6e01c2bb91d2d6183ecd1b3",
+   "url": "https://catalog.evc.edu/degrees-certificates/accounting/bookkeeping-certificate-achievement/"
+  },
+  "21189": {
+   "sha256": "91f5c9c5d75e93cd2f6aaa464871182c62f18ca63982d30cb2a35995cd3c6c53",
+   "url": "https://catalog.evc.edu/degrees-certificates/business-information-systems/bis-business-information-specialist-certificate-achievement/"
+  },
+  "21190": {
+   "sha256": "cb33407b039e172e4de34cb7f866869d760bd4bc8e43dbe67f50b960a0d8f0d6",
+   "url": "https://catalog.evc.edu/degrees-certificates/automotive-technology/auto-drivetrain-chassis-certificate-achievement/"
+  },
+  "21191": {
+   "sha256": "f9ee6c9d1e4174b4ebba80b8729cfe68e6a22f9654936229a27df43cf84400ca",
+   "url": "https://catalog.evc.edu/degrees-certificates/automotive-technology/auto-electrical-engine-performance-certificate-achievement/"
+  },
+  "30351": {
+   "sha256": "3fadf40f2e80202dff3c48eff4acb60e3dbfefc64a8ef9a3348aeb000ca76f15",
+   "url": "https://catalog.evc.edu/degrees-certificates/administration-justice/administration-justice-associate-science/"
+  },
+  "30571": {
+   "sha256": "a7ff8c11adb58d7784e78bb5c53213e641f35fb50315c60695ab23ecabdda269",
+   "url": "https://catalog.evc.edu/degrees-certificates/world-languages/spanish-translation-interpreting-certificate-achievement/"
+  },
+  "30854": {
+   "sha256": "7a272076b186b746c7b6c7bedc1de5db6bdc1ecc976c040139ecf06335f848f6",
+   "url": "https://catalog.evc.edu/degrees-certificates/business-information-systems/medical-assistant-front-office-certificate-achievement/"
+  },
+  "30919": {
+   "sha256": "7cb09fb5872c9fafaa93f56cf1c235b61ff88ff1fd9fe47af5f5d94cd69ce5a3",
+   "url": "https://catalog.evc.edu/degrees-certificates/administration-justice/administration-justice-associate-science-transfer/"
+  },
+  "30946": {
+   "sha256": "f3a59acedfe4d2594bf62bf988b7738caa900b7c93b7207c48f5b9c647f0bc43",
+   "url": "https://catalog.evc.edu/degrees-certificates/history/history-associate-arts-transfer/"
+  },
+  "30980": {
+   "sha256": "7b19b3f3a66ec0d45aa1ac0520185d405ab91b5d2c85004171893112eed9c58b",
+   "url": "https://catalog.evc.edu/degrees-certificates/mathematics/mathematics-2.0-associate-science-transfer/"
+  },
+  "31559": {
+   "sha256": "5c2db5370afe8fb26062efed9456551092252b93427db237261f4af84a14a545",
+   "url": "https://catalog.evc.edu/degrees-certificates/business/entrepreneurship---certificate-of-achievement/"
+  },
+  "31718": {
+   "sha256": "24f5db97da7ce1c5bc57a5b10ddc92f5951ce149d00ee03306c56b8a2c873d38",
+   "url": "https://catalog.evc.edu/degrees-certificates/psychology/psychology-associate-arts-transfer/"
+  },
+  "32715": {
+   "sha256": "de226b3fce475749f901dfa90846ff553dec4038b3ded593a5ff569d994d6cd6",
+   "url": "https://catalog.evc.edu/degrees-certificates/physics/physics-2.0-associate-science-transfer/"
+  },
+  "33062": {
+   "sha256": "9180628ff9ab43eea94fc95bd78dda7b1752bbd9a0e97affe61a6751148fa8fc",
+   "url": "https://catalog.evc.edu/degrees-certificates/english/english-associate-arts-transfer/"
+  },
+  "35478": {
+   "sha256": "2335e685349bac9b1c9d82fd9dfd12b5a4da1dea2945ee1ae42147a61a416321",
+   "url": "https://catalog.evc.edu/degrees-certificates/biology/biology-associate-science-transfer/"
+  },
+  "35621": {
+   "sha256": "ab0e014d91cc85e7ded6674ceec7be3c30ea879642292b98f6f8034f58709800",
+   "url": "https://catalog.evc.edu/degrees-certificates/music/music-associate-arts-transfer/"
+  },
+  "35854": {
+   "sha256": "5b835c6299ee9c2519e6aee9f80720163bede9b75ed5ad9a80b317b2c04f2a9e",
+   "url": "https://catalog.evc.edu/degrees-certificates/economics/economics-associate-in-arts-for-transfer/"
+  },
+  "35890": {
+   "sha256": "d6bd0a2e6af03f0671bee2f888fac071874107f1f085a6e1597a341d45cbae7d",
+   "url": "https://catalog.evc.edu/degrees-certificates/family-consumer-studies/child-and-adolescent-development---associate-in-arts-for-transfer/"
+  },
+  "36067": {
+   "sha256": "1519ec616c8ccb0bb07b109c68ca1d6bc4579efe5857bf718a10821949a35d76",
+   "url": "https://catalog.evc.edu/degrees-certificates/art/studio-arts-associate-in-arts-for-transfer/"
+  },
+  "36204": {
+   "sha256": "217a489019c80a66ead84131ac67190d8839f23c75dd01466733a38c97fecb7f",
+   "url": "https://catalog.evc.edu/degrees-certificates/kinesiology/kinesiology-associate-in-arts-for-transfer/"
+  },
+  "36932": {
+   "sha256": "3453a4cea8a7947d556d3ae1a58ef8c7267afb060ef3a91eb0ee0faeec896c6d",
+   "url": "https://catalog.evc.edu/degrees-certificates/anthropology/anthropology-associate-arts-transfer/"
+  },
+  "36954": {
+   "sha256": "d7a36cde3186327cc7ec77b4f040e8f21197fda6002cbeb743fea30e223569f6",
+   "url": "https://catalog.evc.edu/degrees-certificates/art/studio-arts-associate-in-arts/"
+  },
+  "38331": {
+   "sha256": "f14d205224fb94cbc78edf029cc94340a14e5ee630371c3a1615453264c5e8a5",
+   "url": "https://catalog.evc.edu/degrees-certificates/family-consumer-studies/nutrition-dietetics-associate-science-transfer/"
+  },
+  "38958": {
+   "sha256": "ec07d94441c16a1512d4c9dbae75c47f6242e43e19f3d66ce87cb817dd4bdc0f",
+   "url": "https://catalog.evc.edu/degrees-certificates/chemistry/foundational-chemistry-certificate-of-achievement/"
+  },
+  "39129": {
+   "sha256": "4e062a5e8cd4c0e8545d6939e9214b4be4025b47754107289b3c1ee6bbdebd99",
+   "url": "https://catalog.evc.edu/degrees-certificates/ethnic-studies/social-justice-studies-asian-american-studies-associate-in-arts-for-transfer/"
+  },
+  "39155": {
+   "sha256": "b0b3b63e0fd76c6abeee585cde35628cc1d7d36f76abbb2b9def91d9fed1d876",
+   "url": "https://catalog.evc.edu/degrees-certificates/chemistry/chemistry-associate-in-science-for-transfer/"
+  },
+  "39157": {
+   "sha256": "59ededf3fdaf853bd43cf3b265ef877b10dd6eaa1ab4b6e20a889843fc3feeca",
+   "url": "https://catalog.evc.edu/degrees-certificates/ethnic-studies/social-justice-studies-african-american-studies-associate-in-arts-for-transfer/"
+  },
+  "39402": {
+   "sha256": "1b30d87a0dc5597c592cdb3007ed065045b9a728abadfcac36859eb9a73e7cda",
+   "url": "https://catalog.evc.edu/degrees-certificates/ethnic-studies/social-justice-studies-chicano-studies-associate-in-arts-for-transfer/"
+  },
+  "39416": {
+   "sha256": "d14f0ac8c0d626fba59b4c5957a6246df8dc507cc003160e291af5260a73ce6e",
+   "url": "https://catalog.evc.edu/degrees-certificates/ethnic-studies/social-justice-studies-ethnic-studies-associate-in-arts-for-transfer/"
+  },
+  "39432": {
+   "sha256": "f4fc23264ab4761c32640050eb98ef52a79ba58a4d6cadd86accdaba1022d281",
+   "url": "https://catalog.evc.edu/degrees-certificates/dance/dance-certificate-of-achievement/"
+  },
+  "40027": {
+   "sha256": "026bb1c7533c9790bb67ff553c72231c64ed1c37a10e7169f76eb850eb08b3be",
+   "url": "https://catalog.evc.edu/degrees-certificates/automotive-technology/electric-vehicle-service-tesla-start-certificate-of-achievement/"
+  },
+  "40038": {
+   "sha256": "4806986d9734be4b1865b71266873f75ae862452c592c61e0c4408d60d2fb741",
+   "url": "https://catalog.evc.edu/degrees-certificates/manufacturing-technology/advanced-manufacturing-level-i-certificate-of-achievement/"
+  },
+  "40353": {
+   "sha256": "852e6f0d48034b816138b880fb7624f1fce5a9ada11de831bf1189ba615d582e",
+   "url": "https://catalog.evc.edu/degrees-certificates/administration-justice/community-service-officer-certificate-achievement/"
+  },
+  "40354": {
+   "sha256": "7bdf77f2231ab3f6686628988aba876abf2d13f7473aa4d9b653a4091e3fa9d9",
+   "url": "https://catalog.evc.edu/degrees-certificates/automotive-technology/automotive-hybrid-electric-vehicle-service-certificate-of-achievement/"
+  },
+  "40373": {
+   "sha256": "f3b4be7ee1027717fa0a328db8bfeae9fce147d47ff227286bec5f1ba5b327b2",
+   "url": "https://catalog.evc.edu/degrees-certificates/psychology/behavioral-intake-assessment-certificate-achievement/"
+  },
+  "40692": {
+   "sha256": "37551cad9772620a60a92e95a38705e14d15e675b5fe370905df115e7167892a",
+   "url": "https://catalog.evc.edu/degrees-certificates/education-instruction-technology/online-teaching-educational-technology-certificate-achievement/"
+  },
+  "40755": {
+   "sha256": "ce2e3f27095d4eb8660e1a7a9d772dc3766e6142d89a2cd0143a257a12cc8276",
+   "url": "https://catalog.evc.edu/degrees-certificates/womens-studies/social-justice-studies-gender-studies-associate-arts-transfer/"
+  },
+  "40843": {
+   "sha256": "c807dae5cc48dd778df8663383caffd754cd6c927d5d55ec38f484926c231629",
+   "url": "https://catalog.evc.edu/degrees-certificates/accounting/advanced-taxation-certificate-achievement/"
+  },
+  "40874": {
+   "sha256": "6bddc3a5c6c10fe102f788c81294e1904eb45aa63237068199498911ada68426",
+   "url": "https://catalog.evc.edu/degrees-certificates/computer-information-technology/computer-programming-certificate-achievement/"
+  },
+  "41063": {
+   "sha256": "edfadf255fdc0c7d1ceadb288d043f83cb55214c01a19b54f69545be0a15e416",
+   "url": "https://catalog.evc.edu/degrees-certificates/water-wastewater-technology/water-wastewater-technology-certificate-achievement/"
+  },
+  "41146": {
+   "sha256": "0bfb050a3b043006caf5121d4a804bfe8037fea381263edf95b40ead7cc9ab88",
+   "url": "https://catalog.evc.edu/degrees-certificates/computer-science/computer-science-associate-science-transfer/"
+  },
+  "41627": {
+   "sha256": "e72960a22ccc9f9cd44f50483bd840de9b4055b09827f360657a5ab16377d920",
+   "url": "https://catalog.evc.edu/degrees-certificates/business/business-administration-2.0-associate-science-transfer/"
+  },
+  "42282": {
+   "sha256": "f7f1ab3b2c4bd0ec0a080cd3e90221bb3cb2fb9e62958bc240454731ec694122",
+   "url": "https://catalog.evc.edu/degrees-certificates/world-languages/vietnamese-translation-interpreting-certificate-achievement/"
+  },
+  "43161": {
+   "sha256": "2671b2a4878f31b97c1a75a4b148209cd00fc2c56ce51eba60dd8b04171830b8",
+   "url": "https://catalog.evc.edu/degrees-certificates/communication-studies/communication-studies-2.0-associate-arts-transfer/"
+  },
+  "43162": {
+   "sha256": "1a28e94acf6add30ae5cd35469e8c93c8f820f2fae2fc9bcb526dd104ef296a7",
+   "url": "https://catalog.evc.edu/degrees-certificates/theatre-arts/theatre-arts-associate-arts-transfer/"
+  },
+  "43163": {
+   "sha256": "a5877dc7137795b35570603f173dde7665630f051c3e5e71fbd7a9b19c899e7a",
+   "url": "https://catalog.evc.edu/degrees-certificates/philosophy/philosophy-associate-arts-transfer/"
+  },
+  "43641": {
+   "sha256": "4ffe4fd60d0e6d79ba49e94d5a6ba4ef019ad5daa1e2347909bcc299d2fb7e76",
+   "url": "https://catalog.evc.edu/degrees-certificates/english-as-a-second-language/low-intermediate-noncredit-esl-certificate-competency/"
+  },
+  "43678": {
+   "sha256": "961afe28d6c33912ea7525959bd114aba6c9fe32c5ed98ceae485a4174b17d48",
+   "url": "https://catalog.evc.edu/degrees-certificates/sociology/community-advocacy-and-engagement-certificate-achievement/"
+  },
+  "43796": {
+   "sha256": "c7c2183e44b3f901904a59b9430513e147c7f1078c9863da4f825b8659f15960",
+   "url": "https://catalog.evc.edu/degrees-certificates/political-science/political-science-associate-arts-transfer/"
+  },
+  "43797": {
+   "sha256": "91ed369e95c6bd958c93f3b2d4def7bcb0c37df30e82b3cf99f14249caa3ddf3",
+   "url": "https://catalog.evc.edu/degrees-certificates/english-as-a-second-language/intermediate-noncredit-esl-certificate-competency/"
+  },
+  "44496": {
+   "sha256": "6e0d3f9bbcfb937e68c2cddef5aa5ee1709a21690f516964a1d47fcbb18edd4e",
+   "url": "https://catalog.evc.edu/degrees-certificates/administration-justice/law-public-policy-society-associate-arts-transfer/"
+  },
+  "45025": {
+   "sha256": "0ae1bcfab5fd47c05cd81d7b9e325c2fde49c5f8e1e32e02508f9f0c63dbf940",
+   "url": "https://catalog.evc.edu/graduation-transfer-general-education/california-general-education-transfer-curriculum/"
+  },
+  "45225": {
+   "sha256": "09c4829464d783f6c5cc9cb0da9813be7a6a0cf88ad0bbc34ccdf2629b3bfb87",
+   "url": "https://catalog.evc.edu/degrees-certificates/engineering/engineering-fundamentals-1-certificate-achievement/"
+  },
+  "45226": {
+   "sha256": "d812112f0a974bd19278bbd2473c3eccdd2e6e7d0caa98542e7d408c826e7f59",
+   "url": "https://catalog.evc.edu/degrees-certificates/engineering/engineering-fundamentals-2-certificate-achievement/"
+  },
+  "45227": {
+   "sha256": "e27645ec4615b64a8f7bd47b285503385314b2dfa06cdfdbc6dac09a0037082f",
+   "url": "https://catalog.evc.edu/degrees-certificates/engineering/mechanical-engineering-certificate-achievement/"
+  },
+  "45231": {
+   "sha256": "7b7c26d3fa86a432e63c4dab45f46b43bd66c5eaa42c13906336ccdb07692042",
+   "url": "https://catalog.evc.edu/degrees-certificates/engineering/civil-engineering-certificate-achievement/"
+  },
+  "45232": {
+   "sha256": "69d4ff2a21ac0630e616793282fd69fda6d146a27fd66019eed6b0eb169c0371",
+   "url": "https://catalog.evc.edu/degrees-certificates/engineering/electrical-engineering-certificate-achievement/"
+  },
+  "45233": {
+   "sha256": "767c5024edf38a93593567b5ff4804bc7afe19c893aa9e17026d49f76ac30065",
+   "url": "https://catalog.evc.edu/degrees-certificates/engineering/computer-engineering-certificate-achievement/"
+  },
+  "45496": {
+   "sha256": "3e13a652d222c1013f6fd0af00e2e125cf68c1fb162e445c1784b83c62bfc7c5",
+   "url": "https://catalog.evc.edu/degrees-certificates/business-information-systems/business-communications-and-marketing-certificate-achievement/"
+  },
+  "45783": {
+   "sha256": "fcbbd25da2e32c4d6b4e81a02dc3a765a43aceab13e5bd73f85ba9e6c02243ff",
+   "url": "https://catalog.evc.edu/degrees-certificates/artificial-intelligence/generative-ai-entrepreneurship-program-certificate-achievement/"
+  },
+  "45784": {
+   "sha256": "4f634d8b77927d3b0d12e9fb675185c063a38397870e655eb89fa3cb115da17d",
+   "url": "https://catalog.evc.edu/degrees-certificates/artificial-intelligence/generative-ai-application-development-certificate-achievement/"
+  },
+  "46137": {
+   "sha256": "a683ecb4cbb8b37fa9f267014a22bcb739e661501ec02dbe1224ccc09d8bb0f1",
+   "url": "https://catalog.evc.edu/degrees-certificates/womens-studies/lgbtq-studies-certificate-achievement/"
+  },
+  "46171": {
+   "sha256": "e97b0727f9c13df385227a9df2b953bb9cd800f21df8195a7df6ab48f4135cee",
+   "url": "https://catalog.evc.edu/degrees-certificates/communication-studies/professional-workplace-communication-certification-achievement/"
+  },
+  "46218": {
+   "sha256": "2d9d01a86d52f007cca66aa308b863495eb9773320a8d8f7108bdce01df477c8",
+   "url": "https://catalog.evc.edu/degrees-certificates/engineering/biomedical-and-biological-engineering-certificate-achievement/"
+  },
+  "46219": {
+   "sha256": "e8dfc3328b76616ba68be0f16787b674a01f8df20baa15ec592e0e4cd787ba03",
+   "url": "https://catalog.evc.edu/degrees-certificates/engineering/chemical-and-materials-engineering-certificate-achievement/"
+  },
+  "46250": {
+   "sha256": "9aa31943030d176dba865fc27d41ae099c03056db462ecb7293139ae9d3e6225",
+   "url": "https://catalog.evc.edu/degrees-certificates/english-as-a-second-language/pathway-to-citizenship-certificate-competency/"
+  },
+  "46262": {
+   "sha256": "dbee8abd422fb0a656f174359ed07d8e11acaefb645365907b5cd29fb66307b7",
+   "url": "https://catalog.evc.edu/degrees-certificates/education-instruction-technology/adult-education-certificate-completion/"
+  },
+  "46457": {
+   "sha256": "7b19b3f3a66ec0d45aa1ac0520185d405ab91b5d2c85004171893112eed9c58b",
+   "url": "https://catalog.evc.edu/degrees-certificates/mathematics/mathematics-2.0-associate-science-transfer/"
+  }
+ },
+ "run": "44519542333"
 }

@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 11790,
-    "output_tokens": 2243,
+    "output_tokens": 2427,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,43 +30,46 @@
     "model": null
    }
   ],
-  "output_tokens": 2243,
+  "output_tokens": 2427,
   "output_tokens_details": {
-   "thinking_tokens": 714
+   "thinking_tokens": 834
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09202,
- "ms": 17886,
- "seconds": 18.4,
+ "cost_usd": 0.0957,
+ "ms": 20815,
+ "seconds": 21.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 15,
+   "placed": 17,
    "listed": 17,
-   "share": 0.882,
-   "missing": [
-    "MATH5A",
-    "MATH5B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MATH5A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2220",
+     "listed": "MATH5B",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "MATHC2210",
-    "MATHC2220"
-   ],
-   "flagged": [
-    "MATHC2210",
-    "MATHC2220"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -293,13 +296,33 @@
    }
   ],
   "notes": [
-   "The certificate prints 'Total Units: 42-26', which is not a valid range; recorded as 42-46, matching the identical A.S. degree section. Reviewer should verify.",
-   "Codes printed as 'ENGR 402', 'ENGR 52', 'CSCI 402', 'CHEM 1A3', 'CHEM 3A3' carry footnote superscripts; read as ENGR 40, ENGR 5, CSCI 40, CHEM 1A, CHEM 3A (confirmed by footnote 2 text).",
-   "The elective block requires that at least one of the four courses be a programming course (ENGR 40, ENGR 5 or CSCI 40), recorded as one entry with alternatives.",
-   "Footnote 1: some transfer institutions may require choosing more than 4 courses from the elective list.",
-   "Program learning outcomes are printed once under the ENGINEERING heading for all engineering programs; the certificate shares that list.",
-   "MATH C2210 and MATH C2220 are not in the closed list and are marked as catalog additions."
+   "The certificate section prints 'Total Units: 42-26', apparently a typo; recorded as 42-46, matching the identical A.S. degree section's 'Total Units: 42-46' and the printed course units. Reviewer should verify.",
+   "Codes printed as 'ENGR 402', 'ENGR 52', 'CSCI 402', 'CHEM 1A3', 'CHEM 3A3' carry footnote superscripts (2 and 3); recorded as ENGR 40, ENGR 5, CSCI 40, CHEM 1A, CHEM 3A, confirmed by footnote 2 text.",
+   "Within the choose-four list the student 'Must take one programming course' (ENGR 40 or ENGR 5 or CSCI 40), recorded as one entry with alternatives; CHEM 1A or CHEM 3A likewise one entry.",
+   "MATH C2210 and MATH C2220 (common course numbering calculus) are not in the closed list; marked as catalog additions.",
+   "Program Learning Outcomes are printed once for ENGINEERING as a whole at the top of the section; this certificate shares them and they are recorded here.",
+   "No careers are named; the description mentions only transfer preparation and engineering internship opportunities."
   ]
  },
- "extracted_run": "39006155986"
+ "extracted_run": "44522071814",
+ "catalog_year": "2026-2027",
+ "source_sha": "fcea12dfb49f8795",
+ "source_codes": [
+  "CSCI40",
+  "ENGR10",
+  "ENGR2",
+  "ENGR4",
+  "ENGR40",
+  "ENGR5",
+  "ENGR6",
+  "ENGR8",
+  "MATH17",
+  "MATH5A",
+  "MATH5B",
+  "MATH6",
+  "PHYS4A",
+  "PHYS4B",
+  "PHYS4C"
+ ],
+ "source_coverage": 0.882
 }

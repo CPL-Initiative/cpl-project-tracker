@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Child and Adolescent Development",
  "award": "A.A- T Degree",
- "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=385",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=188",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8239,
+  "input_tokens": 10179,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8239,
-    "output_tokens": 1176,
+    "input_tokens": 10179,
+    "output_tokens": 2118,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,42 +30,36 @@
     "model": null
    }
   ],
-  "output_tokens": 1176,
+  "output_tokens": 2118,
   "output_tokens_details": {
-   "thinking_tokens": 275
+   "thinking_tokens": 766
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05648,
- "ms": 14251,
- "seconds": 14.7,
+ "cost_usd": 0.08308,
+ "ms": 16176,
+ "seconds": 16.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 12,
    "listed": 12,
-   "share": 0.0,
-   "missing": [
-    "BIO11",
-    "BIO9",
-    "CDEV53",
-    "CDEV67",
-    "CDEV73",
-    "ECON5",
-    "LALS5",
-    "PSYC21",
-    "PSYC5",
-    "PSYCC1000",
-    "STAT1000E",
-    "STATC1000"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "STATC1000E",
+     "listed": "STAT1000E",
+     "matched_by": "course_id"
+    }
+   ],
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -74,34 +68,35 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    20.0,
+    22.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    20.0,
+    22.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 5,
    "courses": 0,
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 13,
    "not_verbatim": [],
    "pass": true
   },
@@ -111,22 +106,22 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Not found in the provided text",
+   "section_heading": "Child and Adolescent Development – AA-T Degree",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 20,
+    "max": 22
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
     "min": null,
     "max": null
@@ -136,66 +131,180 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Identify and compare the stages of human development and typical vs. atypical development from conception to emerging adulthood.",
+    "Apply statistical and research methodologies for comparing data on developmental outcomes and conditions.",
+    "Differentiate the impact of cultural, familial, community, and historical contexts on development",
+    "Plan developmentally appropriate differentiated instruction and curriculum based on observations, formative assessment, and needs of diverse learners.",
+    "Demonstrate effective oral and written communication skills in the discourse of the discipline."
+   ],
+   "careers": [
+    "teaching",
+    "counseling",
+    "teaching in pre-k and older grades",
+    "developmental research",
+    "public policy",
+    "social work",
+    "school psychology",
+    "family support",
+    "Special Education",
+    "STEM teaching",
+    "Bilingual teaching",
+    "Elementary teaching",
+    "para educator"
+   ]
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "Required Units",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 53",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose one course from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ECON 5",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 5",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LALS 5",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000E",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Choose 3 courses from the following",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "BIO 9",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIO 11",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 67",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 73",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "BIO 11",
-    "why": "not in the text; appears only in a preceding program's fragment (likely Psychology AA-T)"
-   },
-   {
-    "code": "BIO 9",
-    "why": "not in the text; appears only in a preceding program's fragment (likely Psychology AA-T)"
-   },
-   {
-    "code": "CDEV 53",
-    "why": "not in the text"
-   },
-   {
-    "code": "CDEV 67",
-    "why": "not in the text"
-   },
-   {
-    "code": "CDEV 73",
-    "why": "not in the text"
-   },
-   {
-    "code": "ECON 5",
-    "why": "not in the text; appears only in a preceding program's fragment (likely Psychology AA-T)"
-   },
-   {
-    "code": "LALS 5",
-    "why": "not in the text; appears only in other programs' sections (Psychology fragment, African American Studies AA-T)"
-   },
-   {
-    "code": "PSYC 21",
-    "why": "not in the text; appears only in a preceding program's fragment (likely Psychology AA-T)"
-   },
-   {
-    "code": "PSYC 5",
-    "why": "not in the text; appears only in a preceding program's fragment (likely Psychology AA-T)"
-   },
-   {
-    "code": "PSYC C1000",
-    "why": "not in the text; appears only in a preceding program's fragment (likely Psychology AA-T)"
-   },
-   {
     "code": "STAT 1000E",
-    "why": "not in the text"
-   },
-   {
-    "code": "STAT C1000",
-    "why": "not in the text; appears only in a preceding program's fragment (likely Psychology AA-T)"
+    "why": "not in the text as printed; catalog prints STAT C1000E (6 units), likely the same course"
    }
   ],
   "notes": [
-   "The provided text (catalog pages 385-386) does not contain the Child and Adolescent Development AA-T section. It holds the tail of an untitled program (required PSYC C1000, PSYC 1B, PSYC 2; Total 21.0 - apparently the Psychology AA-T) followed by Social Justice Studies: African American Studies AA-T and the start of Social Justice Studies: Ethnic Studies AA-T.",
-   "The untitled fragment shares several closed-list courses (PSYC C1000, PSYC 5, LALS 5, STAT C1000, ECON 5, BIO 9, BIO 11, PSYC 21) but lacks the CDEV courses and requires PSYC 1B and PSYC 2, so it was not recorded as this award.",
-   "Reviewer should locate the correct page for the Child and Adolescent Development AA-T in the 2026-27 CCSF catalog."
+   "The catalog prints STAT C1000E (6.0 units) while the closed list names STAT 1000E (6 units); recorded as printed with catalog_addition true. Reviewer should confirm they are the same course.",
+   "BIO 9 or BIO 11 is printed as 'One of the following: 4.0' inside the 'Choose 3 courses' list; recorded as one choice with BIO 11 as alternative.",
+   "The page states every AA-T requires 60 semester units including Cal-GETC; this generic sentence was not recorded as degree_total, and no Cal-GETC units are printed.",
+   "Careers taken from the program summary, including teaching areas named as pathways (Special Education, STEM teaching, Bilingual teaching, Elementary teaching) and 'para educator'."
   ]
  },
- "extracted_run": "39047128472"
+ "extracted_run": "44474797786",
+ "catalog_year": "2026-2027",
+ "source_sha": "5abecf89997ec306",
+ "source_codes": [
+  "BIO11",
+  "BIO9",
+  "CDEV53",
+  "CDEV67",
+  "CDEV73",
+  "ECON5",
+  "LALS5",
+  "PSYC21",
+  "PSYC5",
+  "PSYCC1000",
+  "STAT1000E",
+  "STATC1000"
+ ],
+ "source_coverage": 1.0
 }

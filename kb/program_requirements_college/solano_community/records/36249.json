@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Theatre Arts Technical",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=435",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=432",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12521,
+  "input_tokens": 11450,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12521,
-    "output_tokens": 2504,
+    "input_tokens": 11450,
+    "output_tokens": 2475,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2504,
+  "output_tokens": 2475,
   "output_tokens_details": {
-   "thinking_tokens": 904
+   "thinking_tokens": 802
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.10016,
- "ms": 19967,
- "seconds": 20.3,
+ "cost_usd": 0.0953,
+ "ms": 19786,
+ "seconds": 20.0,
  "parts": null,
  "error": null,
  "score": {
@@ -72,8 +72,7 @@
     31.5
    ],
    "against": "program",
-   "why": [],
-   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -90,7 +89,7 @@
    "pass": true
   },
   "careers": {
-   "count": 10,
+   "count": 9,
    "not_verbatim": [
     "Property Artisan",
     "Scenic Artist"
@@ -133,7 +132,6 @@
     "Integrate knowledge of theatre history and literature when constructing theatrical elements."
    ],
    "careers": [
-    "Community and Professional Theatre",
     "Scene Shop Technician",
     "Stage Electrician",
     "Property Artisan",
@@ -147,7 +145,7 @@
   },
   "blocks": [
    {
-    "name": "Required Core",
+    "name": "REQUIRED CORE",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -305,14 +303,35 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Catalog codes use zero-padded numbers (THEA 001, ART 006, DRFT 045) matched to closed-list codes THEA 1, ART 6, DRFT 45, THEA003 etc.; treated as the same courses, not catalog additions.",
-   "Technical Emphasis requires 3 semesters of THEA 047 and/or THEA 027 (courses may be repeated across semesters); recorded as choose_courses minimum 3 with the printed 6-7.5 units as stated.",
-   "Catalog prints THEA 148B as 'Costuming' and THEA 148C as 'Technical Theatre', the reverse of the titles in the state file; reviewer may verify.",
-   "ART 006 title misspelled 'Degign' in catalog; WELD 130 carries an unexplained asterisk.",
-   "Course descriptions following the program section (THEA 002, 005, 010, 013, 015, 024 series, etc.) were not read as requirements.",
-   "Outcome and career text normalized from PDF ligature artifacts (e.g., 'eﬀ ecƟ vely' read as 'effectively')."
+   "Technical Emphasis requires '3 semesters of THEA 047 and/or THEA 027' (6-7.5 units); recorded as choose_courses minimum 3, meaning three semesters of enrollment with repetition allowed, not three distinct courses.",
+   "Catalog prints zero-padded codes (THEA 001, THEA 003, THEA 006, THEA 020, ART 006, DRFT 045) that match closed-list THEA 1, THEA003, THEA 6, THEA 20, ART 6, DRFT 45; treated as the same courses.",
+   "In the certificate's List A the catalog prints THEA 148B as 'Costuming' and THEA 148C as 'Technical Theatre', the reverse of the closed list and of the A.A. section; codes recorded as printed.",
+   "ART 006 title printed as 'Degign Principles in 2-Dimensions' (typo). WELD 130 carries an asterisk with no explanation in the extracted text.",
+   "Careers taken from the certificate's program description; ligature artifacts (e.g., 'Property ArƟ san') normalized. Text also says the program prepares for an entry-level career in 'Community and Professional Theatre'.",
+   "Text also contains the A.A.-T and A.A. Theatre Arts sections; only the Certificate of Achievement section on catalog page 434 was used."
   ]
  },
- "extracted_run": 39037377728,
- "read_run": "39035226783"
+ "extracted_run": "44514080886",
+ "catalog_year": "2026-2027",
+ "source_sha": "e6c285de0a54bfa4",
+ "source_codes": [
+  "ART6",
+  "DRFT45",
+  "THEA1",
+  "THEA148B",
+  "THEA148C",
+  "THEA148D",
+  "THEA20",
+  "THEA21",
+  "THEA27",
+  "THEA3",
+  "THEA32A",
+  "THEA32B",
+  "THEA47",
+  "THEA6",
+  "THEA8",
+  "THEA9",
+  "WELD130"
+ ],
+ "source_coverage": 1.0
 }

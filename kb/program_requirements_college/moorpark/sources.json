@@ -55,7 +55,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "animal care and training, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 42,
@@ -90,7 +93,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "biological sciences, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -138,7 +144,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business administration, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 27,
@@ -186,7 +195,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "film, television, and media, associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 26,
@@ -232,7 +244,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "engineering, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 24,
@@ -293,11 +308,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "art, associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 39,
-  "text_chars": 4789
+  "text_chars": 4758
  },
  {
   "control_number": "06865",
@@ -309,7 +327,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 111 of 125 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "06871",
@@ -335,7 +357,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "nursing science, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -368,7 +393,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "philosophy, associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -399,7 +427,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "chemistry, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -435,7 +466,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "geology, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -468,7 +502,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "criminal justice, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -500,7 +537,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "child development, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -543,7 +583,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "anthropology, associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -587,7 +630,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "radiologic technology, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 22,
@@ -628,7 +674,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "biotechnology, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -670,7 +719,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "dance, associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -718,7 +770,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "child development, associate teacher certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 27,
@@ -753,7 +808,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "environmental studies, associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -786,7 +844,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "environmental science, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -834,7 +895,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "archaeology, associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 26,
@@ -867,7 +931,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "theatre arts: technical theatre, associate in arts",
+    "section_fit": 0.667
    }
   },
   "listed": 11,
@@ -903,7 +970,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "computer network systems engineering, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -940,7 +1010,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 0,
-    "title": 0.0
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 20,
@@ -970,7 +1043,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cnse: windows engineering, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -1000,7 +1076,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "biotechnology manufacturing operator, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -1016,7 +1095,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 111 of 125 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "18129",
@@ -1028,7 +1111,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "title_has_no_words"
+  }
  },
  {
   "control_number": "18367",
@@ -1040,7 +1127,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 111 of 125 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "18393",
@@ -1112,7 +1203,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 57,
@@ -1228,7 +1322,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 105,
@@ -1240,7 +1337,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.974,
+  "coverage": 0.983,
   "codes_found": [
    "ANSCM9",
    "ANTHM11",
@@ -1269,6 +1366,7 @@
    "CJM8",
    "COMMM12",
    "COMMM13",
+   "COMMM4",
    "COMMM6",
    "ECONC2001",
    "ECONC2002",
@@ -1363,7 +1461,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 116,
@@ -1572,11 +1673,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 188,
-  "text_chars": 10733
+  "text_chars": 10702
  },
  {
   "control_number": "22101",
@@ -1633,7 +1737,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "animal care and training, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 39,
@@ -1674,7 +1781,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "biotechnology, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -1722,7 +1832,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business administration, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 27,
@@ -1754,7 +1867,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "media arts, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -1792,7 +1908,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cnse: advanced network specialist, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -1824,7 +1943,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "theatre arts: technical theatre, certificate of achievement",
+    "section_fit": 0.667
    }
   },
   "listed": 10,
@@ -1854,7 +1976,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "theatre arts: acting, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -1892,7 +2017,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "theatre arts: directing, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -1928,7 +2056,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "photography, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -1960,7 +2091,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "child development, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -1993,7 +2127,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "exercise science, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -2028,7 +2165,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "exercise science: fitness specialist, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -2061,7 +2201,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "nuclear medicine, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -2090,7 +2233,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "ftma: film, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -2132,7 +2278,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "psychology, associate in arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -2173,7 +2322,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "sociology, associate in arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -2185,20 +2337,31 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.684,
+  "coverage": 0.974,
   "codes_found": [
    "BUSM140",
    "CHEMM1A",
    "CHEMM1AH",
    "CJM1",
+   "CJM10",
    "CJM11",
+   "CJM12",
    "CJM14",
+   "CJM15",
+   "CJM17",
+   "CJM18",
    "CJM1H",
    "CJM2",
    "CJM3",
    "CJM4",
+   "CJM40",
    "CJM41",
    "CJM5",
+   "CJM6",
+   "CJM7",
+   "CJM8",
+   "CJM9A",
+   "CJM9B",
    "GISM1",
    "POLSC1000",
    "POLSC1000H",
@@ -2215,17 +2378,20 @@
    "STATC1000H"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/moorpark/transfer-information/c-id/",
-   "title": "Course Identification Numbering System (C-ID) < Moorpark College",
+   "url": "https://catalog.vcccd.edu/moorpark/programs-courses/criminal-justice/administration-justice-ast/",
+   "title": "Administration of Justice, Associate in Science for Transfer < Moorpark College",
    "h1": "2026-2027\nAcademic Catalog",
-   "text_from": "innerText",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "administration of justice, associate in science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 38,
-  "text_chars": 8993
+  "text_chars": 5227
  },
  {
   "control_number": "31118",
@@ -2276,7 +2442,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "political science, associate in arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 33,
@@ -2354,11 +2523,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "kinesiology, associate in arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 58,
-  "text_chars": 5650
+  "text_chars": 5591
  },
  {
   "control_number": "31142",
@@ -2393,7 +2565,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "history, associate in arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -2424,7 +2599,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "early childhood education, associate in science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -2436,7 +2614,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.778,
+  "coverage": 0.833,
   "codes_found": [
    "COMMM10A",
    "COMMM12",
@@ -2450,6 +2628,7 @@
    "COMMM23",
    "COMMM25",
    "COMMM26",
+   "COMMM4",
    "COMMM5",
    "COMMM6"
   ],
@@ -2460,11 +2639,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies 2.0, associate in arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
-  "text_chars": 4331
+  "text_chars": 4533
  },
  {
   "control_number": "31617",
@@ -2493,7 +2675,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "mathematics 2.0, associate in science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -2527,7 +2712,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "geology, associate in science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -2562,7 +2750,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "theatre arts, associate in arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -2608,7 +2799,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "geography, associate in arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 26,
@@ -2653,7 +2847,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "studio arts, associate in arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 24,
@@ -2710,7 +2907,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "music, associate in arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 23,
@@ -2749,7 +2949,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "philosophy, associate in arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -2781,7 +2984,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "physics 2.0, associate in science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -2831,7 +3037,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "english, associate in arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 28,
@@ -2843,13 +3052,14 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.71,
+  "coverage": 0.742,
   "codes_found": [
    "ANTHM2",
    "ANTHM8",
    "ARTHC1100",
    "ARTHC1200",
    "COMMM12",
+   "COMMM4",
    "ENGLM30A",
    "ENGLM30B",
    "ETHSM1",
@@ -2875,7 +3085,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "spanish, associate in arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 31,
@@ -2920,7 +3133,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "economics, associate in arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 23,
@@ -2948,7 +3164,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "biomedical device manufacturing, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -2984,7 +3203,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "biology, associate in science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -3046,7 +3268,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "nutrition and dietetics, associate in science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 43,
@@ -3096,7 +3321,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "elementary teacher education: integrated programs, associate in arts for transfer",
+    "section_fit": 0.75
    }
   },
   "listed": 44,
@@ -3132,7 +3360,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "pre-allied health, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -3168,7 +3399,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "photography, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -3223,7 +3457,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "film, television, and electronic media, associate in science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 36,
@@ -3255,7 +3492,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cnse: technical support specialist, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -3289,7 +3529,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "game design, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -3327,7 +3570,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "game design, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -3358,7 +3604,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "music technology, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -3429,7 +3678,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "child and adolescent development, associate in arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 54,
@@ -3462,7 +3714,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "accounting ii, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -3510,7 +3765,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "asian studies, associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 26,
@@ -3543,7 +3801,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business administration 2.0, associate in science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -3587,7 +3848,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "environmental science, associate in science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 27,
@@ -3624,7 +3888,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "transitional kindergarten, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -3663,7 +3930,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "hospitality management, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -3691,7 +3961,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fundamentals of law, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -3714,7 +3987,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "engineering computer aided design and drafting: solidworks, certificate of achievement",
+    "section_fit": 0.833
    }
   },
   "listed": 1,
@@ -3738,7 +4014,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "english as a second language: academic, certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -3762,7 +4041,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "english as a second language: foundational, certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -3773,26 +4055,12 @@
   "title": "Developmental Math Bridge",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "MATHM905",
-   "MATHM905S",
-   "MATHM915",
-   "MATHM915S"
-  ],
-  "source": {
-   "url": "https://catalog.vcccd.edu/moorpark/programs-courses/noncredit-programs-courses/",
-   "title": "Noncredit Programs and Courses < Moorpark College",
-   "h1": "2026-2027\nAcademic Catalog",
-   "text_from": "innerText+tabs",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 4,
-  "text_chars": 6496
+  "text_chars": 0
  },
  {
   "control_number": "37575",
@@ -3800,7 +4068,7 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.875,
+  "coverage": 1.0,
   "codes_found": [
    "COMMM12",
    "COMMM13",
@@ -3808,6 +4076,7 @@
    "COMMM18",
    "COMMM19",
    "COMMM20",
+   "COMMM4",
    "COMMM6"
   ],
   "source": {
@@ -3817,7 +4086,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "organizational communication, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -3853,7 +4125,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "songwriting, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -3881,7 +4156,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "computer programming, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -3916,7 +4194,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "ftma: audio, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -3956,7 +4237,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "cybersecurity, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -3982,7 +4266,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cybersecurity administration, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -3993,75 +4280,24 @@
   "title": "UCTP Chemistry",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "CHEMM1A",
-   "CHEMM1AH",
-   "CHEMM1B",
-   "CHEMM7A",
-   "CHEMM7B",
-   "MATHC2210",
-   "MATHC2210H",
-   "MATHC2220",
-   "MATHM25C",
-   "MATHM35",
-   "PHYSM20A",
-   "PHYSM20AL",
-   "PHYSM20B",
-   "PHYSM20BL",
-   "PHYSM20C",
-   "PHYSM20CL"
-  ],
-  "source": {
-   "url": "https://catalog.vcccd.edu/moorpark/transfer-information/c-id/",
-   "title": "Course Identification Numbering System (C-ID) < Moorpark College",
-   "h1": "2026-2027\nAcademic Catalog",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 16,
-  "text_chars": 7722
+  "text_chars": 0
  },
  {
   "control_number": "39414",
   "title": "UCTP Physics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "CHEMM1A",
-   "CHEMM1AH",
-   "CHEMM1B",
-   "MATHC2210",
-   "MATHC2210H",
-   "MATHC2220",
-   "MATHM25C",
-   "MATHM31",
-   "MATHM35",
-   "PHYSM20A",
-   "PHYSM20AL",
-   "PHYSM20B",
-   "PHYSM20BL",
-   "PHYSM20C",
-   "PHYSM20CL"
-  ],
-  "source": {
-   "url": "https://catalog.vcccd.edu/moorpark/transfer-information/c-id/",
-   "title": "Course Identification Numbering System (C-ID) < Moorpark College",
-   "h1": "2026-2027\nAcademic Catalog",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 15,
-  "text_chars": 7722
+  "text_chars": 0
  },
  {
   "control_number": "39958",
@@ -4084,7 +4320,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "environmental engineering technology, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -4109,7 +4348,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "studio lighting, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -4136,7 +4378,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "web design, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -4168,7 +4413,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "ftma: directing, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -4200,7 +4448,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "ftma: editing, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -4247,7 +4498,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "global business, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 26,
@@ -4294,7 +4548,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "global business, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 26,
@@ -4318,7 +4575,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": "coa",
+    "section_line": "to earn a certificate of achievement in emergency medical technician (emt), students must complete 8 specified units below.",
+    "section_fit": 0.364
    }
   },
   "listed": 2,
@@ -4369,7 +4629,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": "adt",
+    "section_line": "a.   the california general education transfer curriculum (cal-getc) requirements. b.  the required coursework for the aa-t in social justice studies as listed in the moorpark college catalog.",
+    "section_fit": 0.235
    }
   },
   "listed": 31,
@@ -4403,7 +4666,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business information systems, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -4430,7 +4696,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cnse: windows administration, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -4471,7 +4740,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "engineering, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -4482,21 +4754,12 @@
   "title": "Solar Tech",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "link_search",
-  "coverage": 1.0,
-  "codes_found": [
-   "ENSCM901",
-   "ENSCM903"
-  ],
-  "source": {
-   "url": "https://catalog.vcccd.edu/moorpark/programs-courses/noncredit-programs-courses/",
-   "title": "Noncredit Programs and Courses < Moorpark College",
-   "h1": "2026-2027\nAcademic Catalog",
-   "text_from": "innerText+tabs",
-   "label": null
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 2,
-  "text_chars": 4694
+  "text_chars": 0
  },
  {
   "control_number": "40816",
@@ -4533,7 +4796,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "health sciences, associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -4557,7 +4823,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "technical theatre: audio production, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -4581,7 +4850,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "technical theatre: lighting for production, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -4622,7 +4894,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "data science, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -4657,7 +4932,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "electronics engineering technology, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -4691,7 +4969,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business administration 2.0, associate in science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -4718,7 +4999,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "vinyl cutting and printing level i, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -4745,7 +5029,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "screen printing for textiles level i, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -4772,7 +5059,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "laser cutting and engraving level i, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -4798,7 +5088,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cybersecurity penetration tester, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -4822,7 +5115,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "technical theatre: stage management, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -4885,11 +5181,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "dance arts, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 41,
-  "text_chars": 4900
+  "text_chars": 4841
  },
  {
   "control_number": "42292",
@@ -4921,7 +5220,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "environmental engineering technology, certificate of achievement mechatronics engineering technology",
+    "section_fit": 0.75
    }
   },
   "listed": 14,
@@ -4945,7 +5247,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "paramedic studies, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -5008,7 +5313,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "social work and human services, associate in arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 41,
@@ -5037,7 +5345,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "ui/ux design basics, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -5071,7 +5382,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "graphic design, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -5102,7 +5416,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "web design basics, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -5113,20 +5430,12 @@
   "title": "Digital Public Relations",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "link_search",
-  "coverage": 0.5,
-  "codes_found": [
-   "COMMM30"
-  ],
-  "source": {
-   "url": "https://catalog.vcccd.edu/moorpark/programs-courses/criminal-justice/law-public-policy-society-aat/",
-   "title": "Law, Public Policy, and Society, Associate in Arts for Transfer < Moorpark College",
-   "h1": "2026-2027\nAcademic Catalog",
-   "text_from": "innerText+tabs",
-   "label": null
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 2,
-  "text_chars": 4464
+  "text_chars": 0
  },
  {
   "control_number": "42647",
@@ -5148,7 +5457,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "landscape management, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -5174,7 +5486,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "design fundamentals, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -5212,7 +5527,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "film studies, associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -5224,7 +5542,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.906,
+  "coverage": 0.938,
   "codes_found": [
    "ANTHM2",
    "COMMC1000",
@@ -5242,6 +5560,7 @@
    "COMMM23",
    "COMMM25",
    "COMMM26",
+   "COMMM4",
    "COMMM5",
    "COMMM6",
    "ENGLC1001",
@@ -5263,11 +5582,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies 2.0, associate in arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 32,
-  "text_chars": 4619
+  "text_chars": 4634
  },
  {
   "control_number": "43055",
@@ -5301,7 +5623,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "computer science, associate in science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -5335,7 +5660,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "accounting, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -5364,7 +5692,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "ftma: television, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -5396,7 +5727,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "ftma: screenwriting, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -5421,7 +5755,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "accounting i, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -5446,7 +5783,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "taxation i, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -5501,7 +5841,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 33,
@@ -5517,7 +5860,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 111 of 125 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "44795",
@@ -5529,7 +5876,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 111 of 125 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "45352",
@@ -5537,7 +5888,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.921,
+  "coverage": 0.925,
   "codes_found": [
    "ANATM1",
    "ANPHM1",
@@ -5598,6 +5949,7 @@
    "COMMM12",
    "COMMM13",
    "COMMM26",
+   "COMMM4",
    "DANCM1",
    "DANCM1H",
    "DANCM3",
@@ -5791,7 +6143,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 0,
-    "title": 0.143
+    "title": 0.143,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 265,
@@ -5815,7 +6170,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "emergency medical services, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -5848,7 +6206,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "mathematics 2.0, associate in science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -5884,7 +6245,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "physics 2.0, associate in science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -5938,7 +6302,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "elementary teacher education: integrated programs, associate in arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 34,
@@ -5971,7 +6338,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "audio engineering i, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -5995,7 +6365,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "college student success, certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -6053,7 +6426,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "design, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 36,

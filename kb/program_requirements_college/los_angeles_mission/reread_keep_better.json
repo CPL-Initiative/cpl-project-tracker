@@ -1,0 +1,98 @@
+{
+ "college": "Los Angeles Mission College",
+ "run": "44475511939",
+ "written": "2026-11-19T07:45:43Z",
+ "rule": "own program first (a heading sharing a title word, heading_award_check); then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one unless its heading names another program (held for a person); a checked live row restores (d-reread-keep-the-better-s683)",
+ "checked": [],
+ "dispatch": [
+  {
+   "workflow": "program-requirements-college.yml",
+   "ref": "claude/harvest-wave-s683",
+   "inputs": {
+    "college": "Los Angeles Mission College",
+    "step": "reread",
+    "force": "44475511939"
+   },
+   "posts": 1,
+   "control_numbers": [
+    "44849"
+   ]
+  }
+ ],
+ "carried_runs": {},
+ "counts": {
+  "reread": 1,
+  "kept": 0,
+  "restored": 0,
+  "restored_filed_pass": 0,
+  "restored_not_own_program": 0,
+  "held_for_person": 0,
+  "new": 1,
+  "plain_reread_would_lose_pass": 0,
+  "kept_by_extraction_guard": 1,
+  "run_places_none_after": 1,
+  "folder_places_none_after": 2,
+  "records_after": 127,
+  "dropped_by_filing": 2,
+  "dropped_filed_passes": 0
+ },
+ "runs": {
+  "44475511939": {
+   "base": "origin/main",
+   "base_sha": "fa5a5c10591bb346cada33ff3f1a6befc7544bdd",
+   "decided": "2026-11-19T07:45:43Z",
+   "counts": {
+    "reread": 1,
+    "kept": 0,
+    "restored": 0,
+    "restored_filed_pass": 0,
+    "restored_not_own_program": 0,
+    "held_for_person": 0,
+    "new": 1,
+    "plain_reread_would_lose_pass": 0,
+    "kept_by_extraction_guard": 1,
+    "run_places_none_after": 1,
+    "folder_places_none_after": 2,
+    "records_after": 127,
+    "dropped_by_filing": 2,
+    "dropped_filed_passes": 0
+   },
+   "kept_by_extraction_guard": {
+    "43091": "passes_less"
+   },
+   "next_read_pays": [],
+   "dropped_by_filing": [
+    {
+     "control_number": "18463",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "39476",
+     "filed_passes_live": false
+    }
+   ],
+   "programs": [
+    {
+     "control_number": "44849",
+     "title": "Cal-GETC",
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "source_url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=220",
+     "filed_source_url": null,
+     "filed_run": null,
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 146,
+      "arithmetic": "incomplete"
+     },
+     "outcome": "new",
+     "why": "no filed record on origin/main"
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,591 @@
+{
+ "college": "Mendocino College",
+ "run": "44474793355",
+ "written": "2026-11-19T07:08:45Z",
+ "rule": "own program first (a heading sharing a title word, heading_award_check); then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one unless its heading names another program (held for a person); a checked live row restores (d-reread-keep-the-better-s683)",
+ "checked": [],
+ "dispatch": [
+  {
+   "workflow": "program-requirements-college.yml",
+   "ref": "claude/reread-wave-s683",
+   "inputs": {
+    "college": "Mendocino College",
+    "step": "reread",
+    "force": "44474793355"
+   },
+   "posts": 15,
+   "control_numbers": [
+    "03458",
+    "03461",
+    "16539",
+    "21969",
+    "30601",
+    "30677",
+    "31424",
+    "31425",
+    "31446",
+    "31959",
+    "32708",
+    "35168",
+    "41511",
+    "43158",
+    "43563"
+   ]
+  }
+ ],
+ "carried_runs": {},
+ "counts": {
+  "reread": 15,
+  "kept": 15,
+  "restored": 0,
+  "restored_filed_pass": 0,
+  "restored_not_own_program": 0,
+  "held_for_person": 0,
+  "new": 0,
+  "plain_reread_would_lose_pass": 0,
+  "kept_by_extraction_guard": 0,
+  "run_places_none_after": 1,
+  "folder_places_none_after": 7,
+  "records_after": 107,
+  "dropped_by_filing": 11,
+  "dropped_filed_passes": 0
+ },
+ "runs": {
+  "44474793355": {
+   "base": "origin/main",
+   "base_sha": "fa5a5c10591bb346cada33ff3f1a6befc7544bdd",
+   "decided": "2026-11-19T07:08:45Z",
+   "counts": {
+    "reread": 15,
+    "kept": 15,
+    "restored": 0,
+    "restored_filed_pass": 0,
+    "restored_not_own_program": 0,
+    "held_for_person": 0,
+    "new": 0,
+    "plain_reread_would_lose_pass": 0,
+    "kept_by_extraction_guard": 0,
+    "run_places_none_after": 1,
+    "folder_places_none_after": 7,
+    "records_after": 107,
+    "dropped_by_filing": 11,
+    "dropped_filed_passes": 0
+   },
+   "kept_by_extraction_guard": {},
+   "next_read_pays": [],
+   "dropped_by_filing": [
+    {
+     "control_number": "03442",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "03444",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "07783",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "10587",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "32077",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "33812",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "35224",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "38656",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "38659",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "43277",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "46569",
+     "filed_passes_live": false
+    }
+   ],
+   "programs": [
+    {
+     "control_number": "03458",
+     "title": "Ethnic Studies",
+     "award": "A.A. Degree",
+     "source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=156",
+     "filed_source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=79",
+     "filed_run": "39006339282",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.6,
+      "placed": 6,
+      "listed": 10,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 10,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "03461",
+     "title": "Psychology",
+     "award": "A.A. Degree",
+     "source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=203",
+     "filed_source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=79",
+     "filed_run": "39006339282",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 12,
+      "arithmetic": "incomplete"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 12,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "16539",
+     "title": "Registered Nurse",
+     "award": "A.S. Degree",
+     "source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=193",
+     "filed_source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=194",
+     "filed_run": "39006339282",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 32,
+      "listed": 32,
+      "arithmetic": "unequal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.531,
+      "placed": 17,
+      "listed": 32,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read covers more (share 1.0 against 0.531)"
+    },
+    {
+     "control_number": "21969",
+     "title": "Business-Management",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=121",
+     "filed_source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=117",
+     "filed_run": "39006339282",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 14,
+      "listed": 14,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 14,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "30601",
+     "title": "Sociology",
+     "award": "A.A- T Degree",
+     "source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=212",
+     "filed_source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=81",
+     "filed_run": "39006339282",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 10,
+      "listed": 10,
+      "arithmetic": "incomplete"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 10,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.coverage.pass and the filed record does not"
+    },
+    {
+     "control_number": "30677",
+     "title": "Mathematics",
+     "award": "A.S. T Degree",
+     "source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=183",
+     "filed_source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=78",
+     "filed_run": "39006339282",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.857,
+      "placed": 6,
+      "listed": 7,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 7,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "31424",
+     "title": "Business Administration",
+     "award": "A.S. T Degree",
+     "source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=114",
+     "filed_source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=114",
+     "filed_run": "39006339282",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.875,
+      "placed": 7,
+      "listed": 8,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.75,
+      "placed": 6,
+      "listed": 8,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read covers more (share 0.875 against 0.75)"
+    },
+    {
+     "control_number": "31425",
+     "title": "Political Science",
+     "award": "A.A- T Degree",
+     "source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=201",
+     "filed_source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=201",
+     "filed_run": "39006339282",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.688,
+      "placed": 11,
+      "listed": 16,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.625,
+      "placed": 10,
+      "listed": 16,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read covers more (share 0.688 against 0.625)"
+    },
+    {
+     "control_number": "31446",
+     "title": "Geology",
+     "award": "A.S. T Degree",
+     "source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=160",
+     "filed_source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=147",
+     "filed_run": "39006339282",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 8,
+      "listed": 8,
+      "arithmetic": "incomplete"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 8,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.coverage.pass and the filed record does not"
+    },
+    {
+     "control_number": "31959",
+     "title": "Liberal Arts and Sciences in Social Science",
+     "award": "A.A. Degree",
+     "source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=180",
+     "filed_source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=180",
+     "filed_run": "39006339282",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": false,
+      "share": 0.714,
+      "placed": 15,
+      "listed": 21,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": false,
+      "share": 0.667,
+      "placed": 14,
+      "listed": 21,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read covers more (share 0.714 against 0.667)"
+    },
+    {
+     "control_number": "32708",
+     "title": "Recording Arts and Technology",
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=191",
+     "filed_source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=189",
+     "filed_run": "39006339282",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 20,
+      "listed": 20,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 20,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "35168",
+     "title": "LVN to RN",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=197",
+     "filed_source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=195",
+     "filed_run": "39006339282",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 14,
+      "listed": 14,
+      "arithmetic": "unequal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 14,
+      "listed": 14,
+      "arithmetic": "unequal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "41511",
+     "title": "Business Administration 2.0",
+     "award": "A.S. T Degree",
+     "source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=114",
+     "filed_source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=114",
+     "filed_run": "39006339282",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 9,
+      "listed": 9,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.889,
+      "placed": 8,
+      "listed": 9,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read covers more (share 1.0 against 0.889)"
+    },
+    {
+     "control_number": "43158",
+     "title": "Intermediate ESL Preparation",
+     "award": "Noncredit program",
+     "source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=153",
+     "filed_source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=154",
+     "filed_run": "39006339282",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 6,
+      "listed": 6,
+      "arithmetic": "unequal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 6,
+      "listed": 6,
+      "arithmetic": "unequal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "43563",
+     "title": "Network Defense",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=136",
+     "filed_source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=131",
+     "filed_run": "39006339282",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.9,
+      "placed": 9,
+      "listed": 10,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 10,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    }
+   ]
+  }
+ }
+}

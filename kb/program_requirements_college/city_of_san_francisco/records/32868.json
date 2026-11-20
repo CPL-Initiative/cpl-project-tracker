@@ -1,0 +1,323 @@
+{
+ "college": "City College of San Francisco",
+ "control_number": "32868",
+ "shape": "adt",
+ "title": "Business Administration",
+ "award": "A.S. T Degree",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=131",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7585,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7585,
+    "output_tokens": 2218,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2218,
+  "output_tokens_details": {
+   "thinking_tokens": 817
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0747,
+ "ms": 18361,
+ "seconds": 18.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 11,
+   "share": 0.818,
+   "missing": [
+    "CNIT100",
+    "MABS60"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON3",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECON1",
+     "matched_by": "course_id"
+    }
+   ],
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "GNBS119",
+    "MATH75",
+    "STATC1000"
+   ],
+   "flagged": [
+    "GNBS119",
+    "MATH75",
+    "STATC1000"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    30.0,
+    30.0
+   ],
+   "stated": [
+    30.0,
+    30.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business Administration 2.0 – AS-T Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 30,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Examine the external forces that impact business decisions.",
+    "Analyze information and data to solve problems and make decisions.",
+    "Apply standards of professional practice and demonstrate awareness of ethical and social responsibilities in today's business environment.",
+    "Utilize business terms and concepts related to functional areas of business."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 22,
+     "max": 22
+    },
+    "courses": [
+     {
+      "code": "ACCT 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BSL 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GNBS 119",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Choose one course from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "MATH 75",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 100A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose one course from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "ECON 5",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LALS 5",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 5",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECON 1",
+    "why": "not in the text; catalog prints ECON C2002 Principles of Macroeconomics instead (likely common-course renumbering)"
+   },
+   {
+    "code": "ECON 3",
+    "why": "not in the text; catalog prints ECON C2001 Principles of Microeconomics instead (likely common-course renumbering)"
+   },
+   {
+    "code": "CNIT 100",
+    "why": "not in the text"
+   },
+   {
+    "code": "MABS 60",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The heading says AS-T Degree and the summary says Associate in Science for Transfer, but the Degree Requirements paragraph says 'Associate in Arts for Transfer'; likely a catalog typo.",
+   "The page states students must complete 60 semester units including Cal-GETC; recorded as a general degree requirement sentence, not a printed degree total, so degree_total is null. Reviewer may wish to check.",
+   "Major total 'Total: 30.0' recorded as total_units; 'Required Units 22.0' recorded as the stated total for the required-courses block.",
+   "ECON C2001, ECON C2002, GNBS 119, MATH 75 and STAT C1000 are not in the closed list and are marked as catalog additions.",
+   "The summary mentions 'various areas of business, such as accounting, management, finance, and marketing' as areas the academic foundation supports; these were not recorded as careers since they are described as areas of business rather than careers.",
+   "The Learning Outcomes list is printed under this program's section and recorded for this award."
+  ]
+ },
+ "extracted_run": "44474797786",
+ "catalog_year": "2026-2027",
+ "source_sha": "70df8f5ac56a64d2",
+ "source_codes": [
+  "ACCT1",
+  "ACCT2",
+  "BSL1",
+  "ECON1",
+  "ECON3",
+  "ECON5",
+  "LALS5",
+  "MATH100A",
+  "PSYC5"
+ ],
+ "source_coverage": 0.818
+}

@@ -2,19 +2,130 @@
  "college": "Moorpark College",
  "programs": 151,
  "with_closed_list": 145,
- "found": 144,
- "extracted": 144,
+ "found": 139,
+ "extracted": 139,
  "errors": 0,
- "passed_machine_checks": 100,
+ "passed_machine_checks": 124,
  "failed": {
-  "coverage": 10,
+  "coverage": 4,
   "invented": 1,
-  "arithmetic": 43,
+  "arithmetic": 14,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 10.4,
- "cost_per_program": 0.0723,
- "not_found": [],
- "run": "39600815599"
+ "cost_usd_run": 1.01,
+ "cost_usd_filed": 10.15,
+ "cost_per_program": 0.073,
+ "extract_calls": 7,
+ "extract_failed": [],
+ "not_found": [
+  {
+   "control_number": "37450",
+   "title": "Developmental Math Bridge",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "39413",
+   "title": "UCTP Chemistry",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/chemistry/chemistry-uctp/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.062,
+    "body": 0.0,
+    "content": 0.188,
+    "net": 3,
+    "listed": 16,
+    "why": "coarse net: the page's code tokens name 3 of 16 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5099,
+     "content": 121816,
+     "tabs": 1029
+    },
+    "tab_panels": [
+     [
+      "Print Options",
+      343
+     ],
+     [
+      "REQUIREMENTS",
+      12628
+     ],
+     [
+      "PROGRAM STUDENT LEARNING OUTCOMES",
+      622
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "39414",
+   "title": "UCTP Physics",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/chemistry/chemistry-uctp/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.133,
+    "net": 2,
+    "listed": 15,
+    "why": "coarse net: the page's code tokens name 2 of 15 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5099,
+     "content": 121816,
+     "tabs": 1029
+    },
+    "tab_panels": [
+     [
+      "Print Options",
+      343
+     ],
+     [
+      "REQUIREMENTS",
+      12628
+     ],
+     [
+      "PROGRAM STUDENT LEARNING OUTCOMES",
+      622
+     ]
+    ]
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "40636",
+   "title": "Solar Tech",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "42643",
+   "title": "Digital Public Relations",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  }
+ ],
+ "run": "44481524745"
 }

@@ -1,0 +1,61 @@
+Course Outline for Industrial Technology 62
+Advanced Manufacturing Operations
+Effective: Fall 2017
+SLO Rev: 11/14/2016
+Catalog Description:
+INDT 62 - Advanced Manufacturing Operations
+3.00 Units
+Advanced manufacturing operational processes, including lean manufactuing, statistical process control (SPC or"six-sigma"), and quality management systems (e.g. ISO 9000). Examination of the impact of Big Data on manufacturing operations.
+CB03: TOP Code 0956.00 - Manufacturing and Industrial Technology*
+Course Grading: Letter Grade Only
+Type	Units	Inside of Class Hours	Outside of Class Hours	Total Student Learning Hours
+Lecture	3.00	54.00	108.00	162.00
+Total	3.00	54.00	108.00	162.00
+Measurable Objectives:
+Upon completion of this course, the student should be able to:
+describe the elements of a lean manufacturing process;
+describe the benefits of implementing lean manufacturing;
+discuss the barriers to implementation of lean manufacturing in an established operation;
+compare a statistical process control quality system with a "pass/fail" quality control system;
+describe the elements of a quality management system, such as ISO 9000;
+define Big Data, and describe the deployment and impact of Big Data analysis on manufacturing operations.
+Course Content:
+The birth of lean
+Lean production systems
+Stability
+Standardized work
+Just-in-time production
+Jidoka
+Involvement
+Hoshin planning
+The culture of lean production
+Quality management systems
+Big Data in manufacturing
+Methods of Instruction:
+Case Study
+Field Trips
+Guest speakers
+Lecture/Discussion
+Online Assignments
+Textbook reading assignments
+Written assignments
+Distance Education
+Assignments and Methods of Evaluating Student Progress:
+1. Typical Assignments
+Compare and contrast the effects of JIT and Jidoka on a manufacturing operation.
+After a tour of a lean manufacturing facility, write a summary of your observations.
+2. Methods of Evaluating Student Progress
+Exams/Tests
+Final Examination or Project
+Group Projects
+Homework
+3. Student Learning Outcomes
+Upon the completion of this course, the student should be able to:
+The student will describe the key elements of a lean production system and the benefits of lean production.
+The student will describe the key concepts of statistical process control, and provide examples of how this is implemented in a manufacturing operation.
+The student will compare and contrast Big Data vs. traditional RDBMS and provide examples of how Big Data impacts a manufacturing operation.
+Textbooks (Typical):
+Textbook:
+Dennis, P. (2015). Lean Production Simplified (3rd). Productivity Press.
+Abbreviated Class Schedule Description:
+Advanced manufacturing operational processes, including lean manufactuing, statistical process control (SPC or"six-sigma"), and quality management systems (e.g. ISO 9000). Examination of the impact of Big Data on manufacturing operations.

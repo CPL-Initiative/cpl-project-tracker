@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Geographic Information Systems",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=231",
+ "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=82",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12003,
+  "input_tokens": 6806,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12003,
-    "output_tokens": 743,
+    "input_tokens": 6806,
+    "output_tokens": 1421,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,41 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 743,
+  "output_tokens": 1421,
   "output_tokens_details": {
-   "thinking_tokens": 159
+   "thinking_tokens": 417
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06287,
- "ms": 6553,
- "seconds": 6.9,
+ "cost_usd": 0.05564,
+ "ms": 12922,
+ "seconds": 13.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 11,
    "listed": 11,
-   "share": 0.0,
-   "missing": [
-    "GEOG25",
-    "GEOG33",
-    "GEOG36",
-    "GEOG37",
-    "GEOG38",
-    "GIS25",
-    "GIS33",
-    "GIS36",
-    "GIS37",
-    "GIS38",
-    "GIS40"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -73,49 +61,50 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    16.0,
+    16.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    16.0,
+    16.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Geographic Information Systems (GIS)",
+   "section_heading": "GEOGRAPHIC INFORMATION SYSTEMS Certificate of Achievement (STATE CODE 35019)",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 16,
+    "max": 16
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -132,59 +121,125 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Plan, organize, and present a GIS research project to solve a real-world problem.",
+    "Identify spatial relationships between varying sets of geospatial data layers.",
+    "Distinguish principles of advanced cartographic designs and GIS map productions.",
+    "Use a GPS unit to find locations and integrate GPS and GIS technologies successfully."
+   ],
+   "careers": [
+    "Geographic Information Systems",
+    "crime analysis",
+    "agriculture",
+    "business",
+    "marketing"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "GEOG 25",
-    "why": "Text gives only its course description (GEOG 025); no program requirements printed"
-   },
-   {
-    "code": "GEOG 33",
-    "why": "Text gives only its course description (GEOG 033); no program requirements printed"
-   },
-   {
-    "code": "GEOG 36",
-    "why": "Text gives only its course description (GEOG 036); no program requirements printed"
-   },
-   {
-    "code": "GEOG 37",
-    "why": "Text gives only its course description (GEOG 037); no program requirements printed"
-   },
-   {
-    "code": "GEOG 38",
-    "why": "Text gives only its course description (GEOG 038), cut off at the end; no program requirements printed"
-   },
-   {
-    "code": "GIS 25",
-    "why": "Text gives only its course description (GIS 025); no program requirements printed"
-   },
-   {
-    "code": "GIS 33",
-    "why": "Text gives only its course description (GIS 033); no program requirements printed"
-   },
-   {
-    "code": "GIS 36",
-    "why": "Text gives only its course description (GIS 036); no program requirements printed"
-   },
-   {
-    "code": "GIS 37",
-    "why": "Text gives only its course description (GIS 037); no program requirements printed"
-   },
-   {
-    "code": "GIS 38",
-    "why": "Text gives only its course description (GIS 038); no program requirements printed"
-   },
-   {
-    "code": "GIS 40",
-    "why": "Text gives only its course description (GIS 040); no program requirements printed"
+    "name": "CERTIFICATE - REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "GIS 025",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOG 025",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GIS 033",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOG 033",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GIS 036",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOG 036",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GIS 037",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOG 037",
+        "units": 2,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GIS 038",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOG 038",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GIS 040",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
-  "notes": []
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints cross-listed codes as 'GIS/GEOG 025' etc.; recorded GIS as the course and GEOG as its alternative. Catalog's zero-padded numbers (025, 033, ...) were matched to closed-list GIS 25/GEOG 25 etc., so catalog_addition is false.",
+   "Block stated total of 16 is taken from 'CERTIFICATE - TOTAL UNITS 16'.",
+   "Careers are read from the program description ('careers in Geographic Information Systems'; 'occupations, such as crime analysis, agriculture, business and marketing'); 'business and marketing' was split into two entries.",
+   "Asterisked courses (036, 038, 040) have prerequisites/corequisites per the catalog footnote."
+  ]
  },
- "extracted_run": 39018421038,
- "read_run": "39006383070"
+ "extracted_run": "44475498778",
+ "catalog_year": "2026-2027",
+ "source_sha": "eced3eaff775f258",
+ "source_codes": [
+  "GEOG25",
+  "GEOG33",
+  "GEOG36",
+  "GEOG37",
+  "GEOG38",
+  "GIS40"
+ ],
+ "source_coverage": 0.545
 }

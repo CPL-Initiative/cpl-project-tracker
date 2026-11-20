@@ -1,7 +1,7 @@
 ---
 title: "Repo size — what lives in the tree, what lives in the bucket, and the limits — lane state"
 created: 2026-11-18
-updated: 2026-11-18
+updated: 2026-11-19
 tags: [reference, roadmap-lane, repo-size, receipts, infrastructure]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -80,18 +80,28 @@ that fails when `main` grew more than 50 MB compressed in 7 days. Tests: `tests/
 - The table's prior build was `f0f1ee88c04f` (18,204 keys; 5 null), not `cdd185495ce4`; both receipts are in the bucket
   index, so the rollback (`step=display force="<receipt name> [<applied record>]"`) is reachable.
 
+**The base is the merge commit's first parent (#3559, `cf7f6ca0`, S686).** An older PR's event `base.sha` can sit a day
+behind `main` (#3511 measured from `afc29292` under a merge onto `5a7a6f24`: 1,490 files and 36.6 MB, the daily bot's
+6.8 MB row audit among them, read as the PR's own). Both guard steps now read the base from `HEAD`'s first parent, with
+the event value as the fallback, and log both.
+
 ## NEXT, in order
 
 1. **Part 5, the history rewrite: Sam's go.** Rule 5's one permitted main-history rewrite needs the cron paused, his
    explicit go and every open session told to re-clone. Waits on him; not on the standing sheet as a card.
 2. The spreadsheet export and the videos out of the tree; the PR that moves them lowers `TOTAL_CAP_MB` (1,500 MB, then
    1,000 after Phase 3).
-3. Cap the timed workflows' commits.
+3. Cap the timed workflows' commits (once a day), in a plain session (`d-slimming-to-plain-session-s683`: Sam's routine
+   prompt of 2026-11-17 keeps conductor runs to collection; S683 left this, 4 and 5 untouched).
 4. The session trim (Part 3A), with COBIx in a plain session: as written it assumes a session rooted at the repo, while
    ours root at the parent with three repos (the repo's own settings do not load; the environment's setup script
    installs the guards at the root), and a trimmed tree breaks `check_generated.sh` and the tests until the data
    folders are added back.
 5. `START_HERE.md` and the `CLAUDE.md` cut, after COBIx's rulings digest (the guard already warns past 600 and 2,000
-   words).
+   words), in a plain session: the cut moves doctrine every session loads.
 6. Worker worktrees under `.claude/worktrees/` take about 2.3 GB each (six took the disk from 27 GB free to 13 GB):
    remove a finished worker's worktree once its head is pushed (S681).
+7. **#3526 merged (`d-dependency-map-on-main-s683`):** one job on `main` (`dependency-map.yml`) rebuilds
+   `kb/dependency_map.json`, `docs/reference/dependency_map.md` and `cobi_admin_surface.js` after each merge; a PR does
+   not run `kb/_build_dependency_map.py` and leaves them as `main` has them. COBIx's two follow-ups: the suite shards
+   still read the committed map, and `check_generated.sh` should print its own line when the builder crashes (rc 2).

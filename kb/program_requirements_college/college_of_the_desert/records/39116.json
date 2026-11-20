@@ -73,7 +73,7 @@
    ],
    "against": "program",
    "why": [],
-   "rescored": "A4 a blank alternative takes its row's units (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358)"
+   "rescored": "A4 a blank alternative takes its row's units (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358); paired alternatives corrected (S681 second reader, A)"
   },
   "repeated": {
    "codes": [],
@@ -157,15 +157,17 @@
       "alternatives": [
        {
         "code": "FIRE 001A",
-        "units": 3,
+        "units": 1.5,
         "catalog_addition": false,
-        "units_max": null
+        "units_max": null,
+        "together": "FIRE 001A + FIRE 001B"
        },
        {
         "code": "FIRE 001B",
-        "units": 3,
+        "units": 1.5,
         "catalog_addition": false,
-        "units_max": null
+        "units_max": null,
+        "together": "FIRE 001A + FIRE 001B"
        }
       ],
       "catalog_addition": false
@@ -177,15 +179,17 @@
       "alternatives": [
        {
         "code": "EMR 080A",
-        "units": 3,
+        "units": 1.5,
         "catalog_addition": false,
-        "units_max": null
+        "units_max": null,
+        "together": "EMR 080A + EMR 080B"
        },
        {
         "code": "EMR 080B",
-        "units": 3,
+        "units": 1.5,
         "catalog_addition": false,
-        "units_max": null
+        "units_max": null,
+        "together": "EMR 080A + EMR 080B"
        }
       ],
       "catalog_addition": false
@@ -217,26 +221,16 @@
  "reconciled": [
   {
    "rule": "A4",
-   "code": "FIRE 001A",
-   "words": "FIRE 001A, printed as an alternative to FIRE 001 with no units, takes its row's 3 units",
+   "code": "FIRE 001A + FIRE 001B",
+   "together": "state",
+   "words": "FIRE 001A and FIRE 001B together replace FIRE 001: each carries its own units from the state's course file (1.5, 1.5; 3 in all)",
    "statewide": "units_rules_A4"
   },
   {
    "rule": "A4",
-   "code": "FIRE 001B",
-   "words": "FIRE 001B, printed as an alternative to FIRE 001 with no units, takes its row's 3 units",
-   "statewide": "units_rules_A4"
-  },
-  {
-   "rule": "A4",
-   "code": "EMR 080A",
-   "words": "EMR 080A, printed as an alternative to EMR 080 with no units, takes its row's 3 units",
-   "statewide": "units_rules_A4"
-  },
-  {
-   "rule": "A4",
-   "code": "EMR 080B",
-   "words": "EMR 080B, printed as an alternative to EMR 080 with no units, takes its row's 3 units",
+   "code": "EMR 080A + EMR 080B",
+   "together": "state",
+   "words": "EMR 080A and EMR 080B together replace EMR 080: each carries its own units from the state's course file (1.5, 1.5; 3 in all)",
    "statewide": "units_rules_A4"
   }
  ]

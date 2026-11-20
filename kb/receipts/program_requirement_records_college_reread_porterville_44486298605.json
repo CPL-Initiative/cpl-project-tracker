@@ -1,0 +1,167 @@
+{
+ "college": "Porterville College",
+ "reread_run": "44486298605",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "44477695238",
+ "at": "2026-11-19T08:36:29Z",
+ "posted": 4,
+ "batches": 1,
+ "skipped": [],
+ "error": null,
+ "replaced": 1,
+ "absent": 3,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "45626"
+ ],
+ "absent_keys": [
+  "30235",
+  "36704",
+  "42417"
+ ],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 1,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Porterville College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 44477695238;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "checks": {
+    "listed": 7,
+    "placed": 7,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "ENROLLMENT ELIGIBILITY - Prerequisite courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "HCRS P008",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "BIOL P052",
+          "units": 2,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "HCRS P009",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NURS P100",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "REQUIRED CORE COURSES",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "VNRS P070",
+        "units": 7.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "VNRS P071",
+        "units": 8.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "VNRS P072",
+        "units": 16.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "VNRS P073",
+        "units": 16.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "vocational nurses",
+      "Licensed Vocational Nurse"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Provide safe, therapeutic, patient-centered nursing care to diverse clients across the lifespan utilizing evidence-based practice in a variety of health care settings.",
+      "Exercise Clinical judgment to make patient-centered care decisions.",
+      "Participate in the quality improvement process to improve patient care outcomes.",
+      "Participate in teamwork and collaboration with members of the interdisciplinary team, the client, and the client’s support persons.",
+      "Use information ethics, professionalism management systems, and patient care technology to communicate and support safe client care.",
+      "Incorporate professionalism, leadership, management, legal, and ethical principles to guide practice as a Vocational Nurse."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "PROGRAMS OF STUDY",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=118",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39046786897,
+   "program_title": "Vocational Nursing",
+   "control_number": "45626"
+  }
+ ]
+}

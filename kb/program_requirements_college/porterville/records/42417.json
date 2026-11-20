@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Child Development Associate Teacher",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=84",
+ "source_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=106",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7918,
+  "input_tokens": 8009,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7918,
-    "output_tokens": 1193,
+    "input_tokens": 8009,
+    "output_tokens": 1971,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,37 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1193,
+  "output_tokens": 1971,
   "output_tokens_details": {
-   "thinking_tokens": 347
+   "thinking_tokens": 807
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05553,
- "ms": 10817,
- "seconds": 11.3,
+ "cost_usd": 0.07146,
+ "ms": 16745,
+ "seconds": 30.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 7,
    "listed": 7,
-   "share": 0.0,
-   "missing": [
-    "CDEVC1000",
-    "CHDVP117",
-    "CHDVP119",
-    "CHDVP122",
-    "CHDVP143",
-    "CHDVP144",
-    "PSYCP223"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -69,49 +61,50 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    18.0,
+    18.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "",
+   "section_heading": "Child Development Associate Teacher",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 18
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -128,48 +121,141 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Supporting Early Learning and Development",
+    "planning and guiding early learning and development",
+    "creating and maintaining program policies and practices",
+    "advancing the early childhood profession"
+   ],
+   "careers": [
+    "teacher",
+    "Preschool Teacher"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "CDEVC1000",
-    "why": "Associate Teacher Certificate section not in the text; named only in the A.A.-T section"
+    "name": "DSS1 Child, Growth and Development",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CDEV C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC P223",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CHDV P117",
-    "why": "Associate Teacher Certificate section not in the text; named only in the Child Development A.A. section"
+    "name": "DSS2 Child, Family and Community",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CHDV P122",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CHDV P119",
-    "why": "Associate Teacher Certificate section not in the text; named only in the Child Development A.A. section"
+    "name": "DSS3 Program and Curriculum",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CHDV P144",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV P143",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CHDV P122",
-    "why": "Associate Teacher Certificate section not in the text; named only in the A.A.-T and A.A. sections"
-   },
-   {
-    "code": "CHDV P143",
-    "why": "Associate Teacher Certificate section not in the text; named only in the Child Development A.A. section"
-   },
-   {
-    "code": "CHDV P144",
-    "why": "Associate Teacher Certificate section not in the text; named only in the Child Development A.A. section"
-   },
-   {
-    "code": "PSYC P223",
-    "why": "Associate Teacher Certificate section not in the text; named only in the A.A.-T section"
+    "name": "Support Courses",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CHDV P117",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV P119",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text (page 84) contains only the Associate in Arts in Child and Adolescent Development for Transfer section and the start of the Child Development Associate in Arts section. No section for the Associate Teacher Certificate of Achievement appears, so no blocks, totals, outcomes or careers were recorded; section_heading is left empty because no heading for this award is printed.",
-   "The Child Development A.A. description says students may earn an Associate Teacher Certificate, but its requirements are not printed in this excerpt; the certificate likely appears on a following page (e.g., page 85) and should be checked.",
-   "The Program Learning Outcomes printed are for the A.A. degree ('By the completion of the degree'), not stated as shared with this certificate, so they were not recorded.",
-   "The A.A. section lists permits (Associate Teacher, Teacher, Master Teacher, Site Supervisor); these belong to the degree description and were not recorded as careers for this certificate.",
-   "The A.A. core lists 'CHDV P223 - Child, Growth and Development', which may correspond to CDEV C1000/PSYC P223 in the closed list; reviewer should confirm when the certificate section is located."
+   "The catalog prints CDEV C1000; it is matched to closed-list code CDEVC1000 (same course, Child Growth and Development).",
+   "DSS1 lists two 3-unit courses under a 3-unit heading; read as choose 3 units (one of CDEV C1000 or PSYC P223). The catalog does not say 'or' explicitly, so a reviewer should confirm.",
+   "Support Courses says 'Select 6 additional units' but lists only two 3-unit courses, so both are effectively required.",
+   "Total of 18 units comes from 'Eighteen (18) total units required' (12 core + 6 support).",
+   "A stray 'DSS35' line appears between CHDV P144 and CHDV P143; read as a page artifact or DSS category label.",
+   "An experience requirement (3 hours per day for a minimum of 50 days within two years, labeled '(3 units)') is printed but has no course; not recorded as a block or in the total.",
+   "Program learning outcomes are printed as one semicolon-separated sentence; split into four entries at the semicolons. The same outcomes are also printed for the Child Development Teacher Permit certificate.",
+   "The section is marked 'Effective Summer 2022' in the 2026-2027 catalog.",
+   "The following section (Child Development Teacher Permit) was not read for this record."
   ]
  },
- "extracted_run": "39046786897"
+ "extracted_run": "44477695238",
+ "catalog_year": "2026-2027",
+ "source_sha": "9727035917cfa56a",
+ "source_codes": [
+  "CDEVC1000",
+  "CHDVP117",
+  "CHDVP119",
+  "CHDVP122",
+  "CHDVP143",
+  "CHDVP144",
+  "PSYCP223"
+ ],
+ "source_coverage": 1.0
 }

@@ -169,8 +169,8 @@ def faults(q, root=ROOT, parts=None):
         v = c.get("view")
         if v is not None:
             need(isinstance(v, dict) and isinstance(v.get("href"), str)
-                 and (v["href"].startswith("https://") or re.match(r"^#[A-Za-z0-9_.~-]+$", v["href"])),
-                 w + ".view.href must be an https address or a COBI tab's bare hash (#cpl-pathways)")
+                 and (v["href"].startswith("https://") or re.match(r"^#[A-Za-z0-9_.~/-]+$", v["href"])),
+                 w + ".view.href must be an https address or a COBI address (#cpl-pathways, #cr-reference/names)")
             text((v or {}).get("text") if isinstance(v, dict) else None, w + ".view.text")
         # Where Sam answers it (Sam, 2026-10-13, on his phone: "if there are open questions I
         # can address for any, add a link on those card to where I can answer those"). S380's

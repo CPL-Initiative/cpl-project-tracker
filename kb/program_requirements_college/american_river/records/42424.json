@@ -4,7 +4,7 @@
  "shape": "degree",
  "title": "Pre-Health Occupations",
  "award": "A.S. Degree",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=811",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=807",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 11788,
-    "output_tokens": 2021,
+    "output_tokens": 2440,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2021,
+  "output_tokens": 2440,
   "output_tokens_details": {
-   "thinking_tokens": 745
+   "thinking_tokens": 1045
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08757,
- "ms": 17403,
- "seconds": 17.9,
+ "cost_usd": 0.09595,
+ "ms": 21712,
+ "seconds": 22.2,
  "parts": null,
  "error": null,
  "score": {
@@ -89,7 +89,7 @@
    "pass": true
   },
   "careers": {
-   "count": 9,
+   "count": 10,
    "not_verbatim": [],
    "pass": true
   },
@@ -137,6 +137,7 @@
     "Medical Assisting",
     "Health Information Technology",
     "Nursing",
+    "nursing",
     "dental hygiene",
     "physical therapy assistant",
     "occupational therapy assistant",
@@ -288,11 +289,36 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The requirements table continues across a page break (pages 811-812); the STAT C1000 row on page 812 belongs to this degree.",
-   "STAT C1000 row prints a range of 3 - 4 units in the units column, though STAT C1000 itself is listed as (4); the 3 reflects the PSYC 330 alternative.",
-   "The degree requires the program plus Local GE or Cal-GETC and sufficient electives for at least 60 units; no degree total or GE units are printed for this award.",
-   "'Nursing' (description) and 'nursing' (Career Information) are recorded once."
+   "Ranges recorded on BIOL 440 (4-5), ENGL C1000 (3-4) and STAT C1000 (3-4) are the row-level unit ranges printed in the Units column covering the 'or' alternatives; the course's own parenthetical units are BIOL 440 (4), ENGL C1000 (3), STAT C1000 (4). Row values sum to the printed Total Units 37-40.",
+   "The requirements table continues across the page break from page 807 to page 808 (STAT C1000 row on page 808).",
+   "Degree completion text: required program plus Local GE or Cal-GETC plus sufficient electives for a total of at least 60 units; no degree total or GE units printed as this award's own figure, so degree_total and ge_units are null and electives_fill_degree is true.",
+   "The following sections (A.S. in Registered Nursing, LVN 30-unit option Certificate) belong to other awards and were not read."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "44535418752",
+ "catalog_year": "2026-2027",
+ "source_sha": "4fa0337a4d796cc6",
+ "source_codes": [
+  "ANTH310",
+  "ANTH481",
+  "BIOL430",
+  "BIOL431",
+  "BIOL440",
+  "BIOL442",
+  "CHEM305",
+  "CHEM309",
+  "COMM331",
+  "COMMC1000",
+  "ENGLC1000",
+  "ENGLC1000H",
+  "ESLW340",
+  "NUTRI300",
+  "PSYC330",
+  "PSYCC1000",
+  "PSYCC1000H",
+  "SOC300",
+  "STATC1000",
+  "STATC1000H"
+ ],
+ "source_coverage": 1.0
 }

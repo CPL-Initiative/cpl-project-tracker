@@ -51,7 +51,15 @@ const SRC = fs.readFileSync("first_light.js", "utf8");
   const monoRe = /\b(black[- ]and[- ]white|b&w|monochrome|grayscale|greyscale|sepia)\b/i;
   check("every B&W-described painting is flagged mono (reveal-skip)",
     ps.every((p) => !monoRe.test(p.alt) || p.mono === true));
-  check("manifest still carries lovely B&W (mono) entries", ps.some((p) => p.mono === true));
+  // Whether any B&W painting is in the rotation is the curator's call: the First Light tab's marks decide, and the
+  // Apply of 2026-11-17 dropped the four the rotation held (#3153). So the guard is the build's fidelity, never that
+  // some exist: every mono painting the selection ships reaches the manifest still flagged, and no other entry is.
+  const sel0 = JSON.parse(fs.readFileSync("tools/first_light_selection.json", "utf8"));
+  const shipped = (Array.isArray(sel0) ? sel0 : sel0.paintings)
+    .filter((e) => !["blurb", "setting", "alt"].some((k) => String(e[k] || "").indexOf("__needs_words__") !== -1));
+  const monoTitles = (list) => JSON.stringify(list.filter((e) => e.mono === true).map((e) => e.title).sort());
+  check("the manifest carries exactly the selection's B&W (mono) entries, each still flagged",
+    monoTitles(shipped) === monoTitles(ps));
   check("mono reveal-skip wired in CSS + fill()",
     /img\.cplfl-mono\{filter:none/.test(SRC) && SRC.includes('classList.add("cplfl-mono")'));
 }

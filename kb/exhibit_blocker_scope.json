@@ -1,0 +1,2167 @@
+{
+ "schema": "exhibit-blocker-scope/1",
+ "_about": "The pairs (MAP exhibit id + local title) the blocker round left for Sam under its top two causes, as COBIx measured them on 2026-11-17 (tracker at 145a7a88, the 16 November audit bake): cause 1 CERT-NO-NAME (121 pairs, #3480 Source 22) and cause 2 LEFT-REFERENCED (95 pairs, Source 24). The blocker round that chose them is not rebuildable here (Source 28), so this file is its scope, committed once. kb/exhibit_blocker_rules.py re-decides every pair against the committed records; snapshot_* is COBIx's outcome, kept so a difference shows. College names are institutions; no student or staff data.",
+ "source": "issue #3480, Sources 19, 21 to 24 (COBIx, 2026-11-17)",
+ "pairs": [
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICA-3A-1-001",
+   "local_title": "3D Animation",
+   "college": "Cabrillo College",
+   "snapshot_canonical": "3D Animation",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "3D Animation (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-A2A--1-001",
+   "local_title": "ADJU 217\tSubstance Abuse - Industry Certificate",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Substance Abuse",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Substance Abuse (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-A2T--1-001",
+   "local_title": "ADJU 222\tProfiling Terrorism - Industry Certificate",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Profiling Terrorism",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Profiling Terrorism (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-A3IC-1-001",
+   "local_title": "ADJU 310\tCommunications in Criminal Justice - Industry Certificate",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Communications in Criminal Justice",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Communications in Criminal Justice (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-A1IA-1-001",
+   "local_title": "AG 101\tLeadership in Agriculture B - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Leadership in Agriculture B",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Leadership in Agriculture B (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-A1TA-1-001",
+   "local_title": "AG 120\tIntroduction to Agriculture Education - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Introduction to Agriculture Education",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Introduction to Agriculture Education (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-A2TM-1-001",
+   "local_title": "AGM 200\tIntroduction to Mechanical Technology - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Introduction to Mechanical Technology",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Introduction to Mechanical Technology (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-A2W--1-001",
+   "local_title": "AGM 210\tAgricultural Welding - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Agricultural Welding",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Agricultural Welding (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-A2AW-1-001",
+   "local_title": "AGM 211\tAdvanced Agricultural Welding - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Advanced Agricultural Welding",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Advanced Agricultural Welding (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPMM-A2AA-1-001",
+   "local_title": "AGM 211 Advanced Agricultural Welding - Military",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Advanced Agricultural Welding",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Advanced Agricultural Welding (Military)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-A2SA-1-001",
+   "local_title": "AGM 214\tEquipment Service and Safety - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Equipment Service and Safety",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Equipment Service and Safety (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-A2OS-1-001",
+   "local_title": "AGM 216\tAgriculture Occupational Safety - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Agriculture Occupational Safety",
+   "snapshot_outcome": "to Sam",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-A2AD-1-001",
+   "local_title": "AGM 235\tIrrigation and Drainage",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Irrigation and Drainage",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Irrigation and Drainage (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-A2WP-1-001",
+   "local_title": "AGM 237\tIrrigation Wells, Pumps, and Drive Systems - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Irrigation Wells, Pumps, and Drive Systems",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Irrigation Wells, Pumps, and Drive Systems (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-A2EP-1-001",
+   "local_title": "AGM 241\tDiesel Engine Principles - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Diesel Engine Principles",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Diesel Engine Principles (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-A2-I-1-001",
+   "local_title": "AGM 262\tHydraulics/Pneumatics - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Hydraulics/Pneumatics",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Hydraulics/Pneumatics (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-A5FM-1-001",
+   "local_title": "AGM 50\tPreparation for Mechanical Technology - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Preparation for Mechanical Technology",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Preparation for Mechanical Technology (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-A2TA-1-001",
+   "local_title": "ANSC 200\tIntroduction to Animal Science - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Introduction to Animal Science",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Introduction to Animal Science (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-A2M--1-001",
+   "local_title": "ANSC 228\tDairy Management - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Dairy Management",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Dairy Management (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-A2S--1-001",
+   "local_title": "ANSC 230\tPoultry Science - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Poultry Science",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Poultry Science (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-A5TV-1-001",
+   "local_title": "ANSC 55\tIntroduction to Veterinary Technology - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Introduction to Veterinary Technology",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Introduction to Veterinary Technology (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-A3AS-1-001",
+   "local_title": "AUTEC 311\tBasic Automotive Systems - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Basic Automotive Systems",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Basic Automotive Systems (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-A6C-1-001",
+   "local_title": "AUTO 600 Completion",
+   "college": "Long Beach City College",
+   "snapshot_canonical": "Introduction to Automotive Technology",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Introduction to Automotive Technology (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-A6C-1-001",
+   "local_title": "AUTO 600 Completion ",
+   "college": "Long Beach City College",
+   "snapshot_canonical": "Introduction to Automotive Technology",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Introduction to Automotive Technology (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-AOJ6-1-001",
+   "local_title": "Administration of Justice 68-Industry Certification",
+   "college": "City College of San Francisco",
+   "snapshot_canonical": "Criminal Justice Report Writing",
+   "snapshot_outcome": "to Sam",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-A6C3-1-001",
+   "local_title": "Auto 603 Completion",
+   "college": "Long Beach City College",
+   "snapshot_canonical": "Automotive Brake Inspection",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Automotive Brake Inspection (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-A6C7-1-001",
+   "local_title": "Auto 614 Completion",
+   "college": "Long Beach City College",
+   "snapshot_canonical": "Automotive Wheel Alignment",
+   "snapshot_outcome": "to Sam",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-A6C10-1-001",
+   "local_title": "Auto 618 Completion",
+   "college": "Long Beach City College",
+   "snapshot_canonical": "Automotive Fuel Systems",
+   "snapshot_outcome": "to Sam",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-ASAI-1-001",
+   "local_title": "Automotive Service and Introduction Industry Certification",
+   "college": "Las Positas College",
+   "snapshot_canonical": "Automotive Service and Introduction",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Automotive Service and Introduction (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICA-BASD-1-001",
+   "local_title": "BIM and Sustainable Design Strategies I",
+   "college": "Cabrillo College",
+   "snapshot_canonical": "BIM and Sustainable Design Strategies 1",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "BIM and Sustainable Design Strategies 1 (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICN-BE((-1-002",
+   "local_title": "Basic Electronics (DC) (3-hours)",
+   "college": "Lemoore College",
+   "snapshot_canonical": "Basic DC Electronics",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Basic DC Electronics (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPSAA-CT-1-001",
+   "local_title": "Blueprint Reading Orientation, Basic",
+   "college": "Las Positas College",
+   "snapshot_canonical": "Blueprint Reading",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Blueprint Reading (Standardized Assessment)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-BCFF1-1-001",
+   "local_title": "Building Construction for Fire Protection",
+   "college": "Lake Tahoe Community College; Merced College",
+   "snapshot_canonical": "Building Construction for Fire Protection",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Building Construction for Fire Protection (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-BCFF-1-001",
+   "local_title": "Building Construction for Fire Protection 1 or 1A or 2C Certification",
+   "college": "Lake Tahoe Community College; Mendocino College; San Diego Miramar College",
+   "snapshot_canonical": "Building Construction for Fire Protection",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Building Construction for Fire Protection (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPSAP-C1C--1-001",
+   "local_title": "CHEM 142\tPre-General Chemistry - Advanced Placement",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Pre-General Chemistry",
+   "snapshot_outcome": "to Sam",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-C1C--1-001",
+   "local_title": "CHEM 142\tPre-General Chemistry - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Pre-General Chemistry",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Pre-General Chemistry (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPSAP-C1CC-1-001",
+   "local_title": "CHEM 143\tIntroductory College Chemistry - Advanced Placement",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Introduction to Chemistry",
+   "snapshot_outcome": "to Sam",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-C1CC-1-001",
+   "local_title": "CHEM 143\tIntroductory College Chemistry - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Introduction to Chemistry",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Introduction to Chemistry (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-CIAT-1-001",
+   "local_title": "CLDV-30 INFANT AND TODDLER DEVELOPMENT",
+   "college": "",
+   "snapshot_canonical": "Infant and Toddler Development",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Infant and Toddler Development (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-C3SF-1-001",
+   "local_title": "CMPET 311\tIT Support Fundamentals 1 - Industry Certificate",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "IT Support Fundamentals 1",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "IT Support Fundamentals 1 (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-C2P--1-001",
+   "local_title": "CMPGR 235\tBeginning Photoshop - Industry Certificate",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Photoshop Beginning",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Photoshop Beginning (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICA-CTCC6-1-001",
+   "local_title": "Carpenter’s Training Center CTCNC FA/C",
+   "college": "American River College",
+   "snapshot_canonical": "CPR for Carpenters Apprentices",
+   "snapshot_outcome": "to Sam",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-E2OF-1-001",
+   "local_title": "EHS 280\tPrinciples of Floral Art and Design - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Principles of Floral Art and Design",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Principles of Floral Art and Design (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-E2FD-1-001",
+   "local_title": "EHS 281\tAdvanced Floral Design - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Floral Design Advanced",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Floral Design Advanced (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-E2PA-1-001",
+   "local_title": "ELTEC 212\tDigital Principles and Circuits - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Digital Principles and Circuits",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Digital Principles and Circuits (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-E2DA-1-001",
+   "local_title": "ELTEC 221\tInstrumentation Devices and Systems - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Instrumentation Devices and Systems",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Instrumentation Devices and Systems (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-E2TP-1-001",
+   "local_title": "ELTEC 232\tIntroduction to Programmable Logic Controllers - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Introduction to Programmable Logic Controllers",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Introduction to Programmable Logic Controllers (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-E2TP1-1-001",
+   "local_title": "ELTEC 234\tIntroduction to PACs:Programmable Automation Controllers - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Introduction to PACS: Programmable Automation Controllers",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Introduction to PACS: Programmable Automation Controllers (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-E2T--1-001",
+   "local_title": "ELTEC 265\tTroubleshooting Techniques - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Troubleshooting Techniques",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Troubleshooting Techniques (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-E3S--1-001",
+   "local_title": "ELTEC 320\tElectrical Safety - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Electrical Safety",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Electrical Safety (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-E1C--1-001",
+   "local_title": "ENSCI 108\tEnvironmental Conservation - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Introduction to Environmental Science",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Introduction to Environmental Science (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-E1W--1-001",
+   "local_title": "ENSCI 110\tCalifornia Water - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "California Water",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "California Water (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-BCFF1-1-001",
+   "local_title": "FIRE 34 - Building Construction for Fire Protection",
+   "college": "Lake Tahoe Community College; Merced College",
+   "snapshot_canonical": "Building Construction for Fire Protection",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Building Construction for Fire Protection (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPPRI-FBAC-1-001",
+   "local_title": "FIRE-31 Fire Behavior and Combustion",
+   "college": "Cabrillo College; Lake Tahoe Community College; Merced College",
+   "snapshot_canonical": "Fire Behavior and Combustion",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Fire Behavior and Combustion (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-F3OE-1-001",
+   "local_title": "FTECH 301\tPrinciples of Emergency Services - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Principles of Emergency Services",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Principles of Emergency Services (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-F3PS-1-001",
+   "local_title": "FTECH 303\tFire Protection Systems - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Fire Protection Systems",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Fire Protection Systems (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-F3CF-1-001",
+   "local_title": "FTECH 304\tBuilding Construction for Fire Protection - Industry Certification",
+   "college": "Lake Tahoe Community College; Modesto Junior College",
+   "snapshot_canonical": "Building Construction for Fire Protection",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Building Construction for Fire Protection (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-F3BA-1-001",
+   "local_title": "FTECH 305\tFire Behavior and Combustion - Industry Certification",
+   "college": "Lake Tahoe Community College; Modesto Junior College",
+   "snapshot_canonical": "Fire Behavior and Combustion",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Fire Behavior and Combustion (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-F3ST-1-001",
+   "local_title": "FTECH 307\tFire Science Tactics & Strategy - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Fire Science Tactics & Strategy",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Fire Science Tactics & Strategy (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-F3SC-1-001",
+   "local_title": "FTECH 308\tFire Service Career Development/Promotions - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Fire Science Career Devopment Promotions",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Fire Science Career Devopment Promotions (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-F31A-1-001",
+   "local_title": "FTECH 317\tFirefighter 1 Academy Physical Training - Industry Certificate",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Firefighter 1 Academy Physical Training",
+   "snapshot_outcome": "to Sam",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-F3SI-1-001",
+   "local_title": "FTECH 321A\tFire Service In-Service Training/EMS - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Fire Service In-Service Training — EMS",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Fire Service In-Service Training — EMS (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-F3SI1-1-001",
+   "local_title": "FTECH 321B\tFire Service In-Service Training/EMS - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Fire Service In-Service Training — EMS",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Fire Service In-Service Training — EMS (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-F3SI2-1-001",
+   "local_title": "FTECH 321C\tFire Service In-Service Training/EMS",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Fire Service In-Service Training — EMS",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Fire Service In-Service Training — EMS (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-F3SI3-1-001",
+   "local_title": "FTECH 321X\tFire Service In-Service Training/EMS - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Fire Service In-Service Training — EMS",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Fire Service In-Service Training — EMS (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-F3SI4-1-001",
+   "local_title": "FTECH 322A\tFire Service In-Service Training/Special Operations - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Fire Service In-Service Training — Special Operations",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Fire Service In-Service Training — Special Operations (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-F3SI5-1-001",
+   "local_title": "FTECH 322B\tFire Service In-Service Training/Special Operations - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Fire Service In-Service Training — Special Operations",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Fire Service In-Service Training — Special Operations (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-F3SI6-1-001",
+   "local_title": "FTECH 322C\tFire Service In-Service Training/Special Operations",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Fire Service In-Service Training — Special Operations",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Fire Service In-Service Training — Special Operations (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-F3SI7-1-001",
+   "local_title": "FTECH 322X\tFire Service In-Service Training/Special Operations - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Fire Service In-Service Training — Special Operations",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Fire Service In-Service Training — Special Operations (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-F3SI19-1-001",
+   "local_title": "FTECH 323A\tFire Service In-Service Training/Command & Control - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Fire Service In-Service Training — Command & Control",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Fire Service In-Service Training — Command & Control (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-F3SI8-1-001",
+   "local_title": "FTECH 323B\tFire Service In-Service Training/Command & Control - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Fire Service In-Service Training — Command & Control",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Fire Service In-Service Training — Command & Control (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-F3SI9-1-001",
+   "local_title": "FTECH 323C\tFire Service In-Service Training/Command & Control - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Fire Service In-Service Training — Command & Control",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Fire Service In-Service Training — Command & Control (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-F3SI10-1-001",
+   "local_title": "FTECH 323X\tFire Service In-Service Training/Command & Control - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Fire Service In-Service Training — Command & Control",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Fire Service In-Service Training — Command & Control (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-F3SI11-1-001",
+   "local_title": "FTECH 324A\tFire Service In-Service Training/Administration - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Fire Service In-Service Training — Administration",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Fire Service In-Service Training — Administration (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-F3SI12-1-001",
+   "local_title": "FTECH 324B\tFire Service In-Service Training/Administration - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Fire Service In-Service Training — Administration",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Fire Service In-Service Training — Administration (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPOA-F3SI-1-001",
+   "local_title": "FTECH 324B\tFire Service In-Service Training/Administration - Internship/Apprenticeship",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Fire Service In-Service Training — Administration",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Fire Service In-Service Training — Administration (Other)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-F3-F-1-001",
+   "local_title": "FTECH 324B - Fire Service In-ServiceTraining  Administration",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Fire Service In-Service Training — Administration",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Fire Service In-Service Training — Administration (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-F3SI13-1-001",
+   "local_title": "FTECH 324C\tFire Service In-Service Training/Administration - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Fire Service In-Service Training — Administration",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Fire Service In-Service Training — Administration (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-F3SI14-1-001",
+   "local_title": "FTECH 324X\tFire Service In-Service Training/Administration - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Fire Service In-Service Training — Administration",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Fire Service In-Service Training — Administration (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-F3SI15-1-001",
+   "local_title": "FTECH 325A\tFire Service In-Service Training/Operations - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Fire Service In-Service Training — Operations",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Fire Service In-Service Training — Operations (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-F3SI16-1-001",
+   "local_title": "FTECH 325B\tFire Service In-Service Training/Operations - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Fire Service In-Service Training — Operations",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Fire Service In-Service Training — Operations (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-F3SI17-1-001",
+   "local_title": "FTECH 325C\tFire Service In-Service Training/Operations - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Fire Service In-Service Training — Operations",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Fire Service In-Service Training — Operations (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-F3SI18-1-001",
+   "local_title": "FTECH 325X\tFire Service In-Service Training/Operations - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Fire Service In-Service Training — Operations",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Fire Service In-Service Training — Operations (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPPRI-FBAC-1-001",
+   "local_title": "Fire Behavior and Combustion",
+   "college": "Cabrillo College; Lake Tahoe Community College; Merced College",
+   "snapshot_canonical": "Fire Behavior and Combustion",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Fire Behavior and Combustion (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-FAW(-1-001",
+   "local_title": "Flux-Cored Arc Welding (FCAW) Certification",
+   "college": "",
+   "snapshot_canonical": "Flux Cored Arc Welding (FCAW)",
+   "snapshot_outcome": "to Sam",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-GMIP-1-001",
+   "local_title": "Garde Manger: Intermediate Professional Culinary Cookery Graduate of NVC Cooking School",
+   "college": "Napa Valley College",
+   "snapshot_canonical": "Garde Manger — Intermediate Professional Culinary Cookery",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Garde Manger — Intermediate Professional Culinary Cookery (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-H1FA-1-001",
+   "local_title": "HE 100\tStandard First Aid/CPR/AED - Industry Certificate",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Standard First Aid/CPR/AED",
+   "snapshot_outcome": "to Sam",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-H1L--1-001",
+   "local_title": "HE 110\tHealthful Living - Industry Certificate",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Personal Health and Wellness",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Personal Health and Wellness (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-HS&S-1-001",
+   "local_title": "HUMSR-147\tField Studies & Seminar I - Industry Certificate",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Field Studies & Seminar 1",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Field Studies & Seminar 1 (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-HCC1-1-001",
+   "local_title": "Hospitality Cost Controls",
+   "college": "Moorpark College",
+   "snapshot_canonical": "Hospitality Cost Control",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Hospitality Cost Control (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-HS&G-1-001",
+   "local_title": "Hospitality Supervision & Guest Relations",
+   "college": "Moorpark College",
+   "snapshot_canonical": "Hospitality Supervision and Guest Relations",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Hospitality Supervision and Guest Relations (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICO-IITA-1-001",
+   "local_title": "IC- Introduction to Automotive Technology",
+   "college": "",
+   "snapshot_canonical": "Introduction to Automotive Technology",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Introduction to Automotive Technology (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-I0-N-1-001",
+   "local_title": "INSPEC 026 - Non-Structural Plan Review",
+   "college": "San Bernardino Valley College",
+   "snapshot_canonical": "Non-Structural Plan Review",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Non-Structural Plan Review (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-I0-C1-1-001",
+   "local_title": "INSPEC 028 - California Residential Code",
+   "college": "San Bernardino Valley College",
+   "snapshot_canonical": "California Residential Code",
+   "snapshot_outcome": "to Sam",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-I0-A1-1-001",
+   "local_title": "INSPEC 030 - Aspects of Building and Safety",
+   "college": "San Bernardino Valley College",
+   "snapshot_canonical": "Aspects of Building and Safety",
+   "snapshot_outcome": "to Sam",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-ITFA-1-001",
+   "local_title": "Introduction to Food and Beverage Management",
+   "college": "Moorpark College",
+   "snapshot_canonical": "Introduction to Food and Beverage Management",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Introduction to Food and Beverage Management (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-ITHM-1-001",
+   "local_title": "Introduction to Hotel Management",
+   "college": "Moorpark College",
+   "snapshot_canonical": "Introduction to Hotel Management",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Introduction to Hotel Management (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-L2TT-1-001",
+   "local_title": "LOGST 203\tIntroduction to Transportation Management - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Introduction to Transportation Management",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Introduction to Transportation Management (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPCXS-L2TW2-1-001",
+   "local_title": "LOGST 205\tIntroduction to Warehouse Management - Industry Certificate",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Introduction to Warehouse Management",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Introduction to Warehouse Management (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-L2TP-1-001",
+   "local_title": "LOGST 206\tIntroduction to Purchasing and Contracting - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Introduction to Purchasing and Contracting",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Introduction to Purchasing and Contracting (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-L2TC-1-001",
+   "local_title": "LOGST 207\tIntroduction to Customer Service - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Introduction to Customer Service",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Introduction to Customer Service (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-M1A--1-001",
+   "local_title": "MATH 111\tCollege Algebra - Industry Certificate",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "College Algebra",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "College Algebra (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPSAP-M1S--1-001",
+   "local_title": "MATH 128\tBusiness Statistics - Advanced Placement",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Business Statistics",
+   "snapshot_outcome": "to Sam",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-MNC--1-001",
+   "local_title": "Maternal/Newborn Nursing Care - LVN Certification",
+   "college": "Napa Valley College",
+   "snapshot_canonical": "Maternal/Newborn Nursing Care",
+   "snapshot_outcome": "to Sam",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPMM-N2NP-1-001",
+   "local_title": "NURSE 270 Nursing Process: Pharmacology - Military",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Nursing Process: Pharmacology",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Nursing Process: Pharmacology (Military)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPMM-N2NP1-1-001",
+   "local_title": "NURSE 271 Nursing Process: Fundamentals",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Nursing Process: Fundamentals",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Nursing Process: Fundamentals (Military)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPMM-N2NP2-1-001",
+   "local_title": "NURSE 272 Nursing Process: Geriatrics",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Nursing Process: Geriatrics",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Nursing Process: Geriatrics (Military)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-P1D--1-001",
+   "local_title": "PEC 164\tSelf Defense - Industry Certificate",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Self Defense",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Self Defense (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-R1RE-1-001",
+   "local_title": "REALES 1, Real Estate Principles",
+   "college": "",
+   "snapshot_canonical": "Real Estate Principles",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Real Estate Principles (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-R3RE-1-001",
+   "local_title": "REALES 3, Real Estate Practice",
+   "college": "",
+   "snapshot_canonical": "Real Estate Practice",
+   "snapshot_outcome": "to Sam",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-R3EP-1-001",
+   "local_title": "RLES 380\tReal Estate Principles - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Real Estate Principles",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Real Estate Principles (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-R3EP1-1-001",
+   "local_title": "RLES 381\tReal Estate Practice - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Real Estate Practice",
+   "snapshot_outcome": "to Sam",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-R3AO-1-001",
+   "local_title": "RLES 382\tLegal Aspects of Real Estate - Industry Certificate",
+   "college": "Modesto Junior College; West Los Angeles College",
+   "snapshot_canonical": "Legal Aspects of Real Estate",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Legal Aspects of Real Estate (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-R3\tE-1-001",
+   "local_title": "RLES 384 \tReal Estate Finance - Industry Certification",
+   "college": "Modesto Junior College; West Los Angeles College",
+   "snapshot_canonical": "Real Estate Finance",
+   "snapshot_outcome": "to Sam",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-RESE-1-001",
+   "local_title": "Real Estate Salesperson: Economics- Real Estate",
+   "college": "Moreno Valley College; Norco College; Riverside City College",
+   "snapshot_canonical": "Real Estate Economics",
+   "snapshot_outcome": "to Sam",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-RESL-1-001",
+   "local_title": "Real Estate Salesperson: Legal Aspects of Real Estate",
+   "college": "Moreno Valley College; Norco College; Riverside City College; West Los Angeles College",
+   "snapshot_canonical": "Legal Aspects of Real Estate",
+   "snapshot_outcome": "to Sam",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-RESR-1-001",
+   "local_title": "Real Estate Salesperson: Real Estate Finance",
+   "college": "Moreno Valley College; Norco College; Riverside City College; West Los Angeles College",
+   "snapshot_canonical": "Real Estate Finance",
+   "snapshot_outcome": "to Sam",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-S1FS-1-001",
+   "local_title": "SPAN 109\tSpanish for Spanish Speakers 1 - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Spanish for Heritage Speakers 1",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Spanish for Heritage Speakers 1 (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-S1FS1-1-001",
+   "local_title": "SPAN 110\tSpanish for Spanish Speakers 2 - Industry Certification",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Spanish for Heritage Speakers 2",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Spanish for Heritage Speakers 2 (Industry Certification)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPOO-S(1C-1-001",
+   "local_title": "Self-Defense (KIN 121 C)",
+   "college": "",
+   "snapshot_canonical": "Self Defense",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Self Defense (Other)"
+  },
+  {
+   "rule": "cert_twin",
+   "cause": "CERT-NO-NAME",
+   "exhibit_id": "MAPICI-W2&G-1-001",
+   "local_title": "WELD 200\tArc & Gas Welding - Industry Certificate",
+   "college": "Modesto Junior College",
+   "snapshot_canonical": "Arc & Gas Welding",
+   "snapshot_outcome": "repoint",
+   "snapshot_target": "Arc & Gas Welding (Industry Certification)"
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAS-ACBS1-1-001",
+   "local_title": "AP Calculus BC/AB Subscore (Score 3-5)",
+   "college": "Los Angeles Pierce College",
+   "snapshot_canonical": "AP Calculus AB",
+   "snapshot_outcome": "to Sam",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAS-AP(21-1-001",
+   "local_title": "AP Exam 2-D Art and Design (Score 3-5)",
+   "college": "Los Angeles Harbor College; Los Angeles Pierce College",
+   "snapshot_canonical": "AP 2-D Art and Design",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAS-A3AA-1-001",
+   "local_title": "AP Exam 3-D Art and Design (Score 3-5)",
+   "college": "Los Angeles Pierce College",
+   "snapshot_canonical": "AP 3-D Art and Design",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAS-AAH3-1-001",
+   "local_title": "AP Exam Art History (Score 3-5)",
+   "college": "Los Angeles Pierce College",
+   "snapshot_canonical": "AP Art History",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAS-AEAH1-1-001",
+   "local_title": "AP Exam Art History (Score 3-5)",
+   "college": "Los Angeles Mission College",
+   "snapshot_canonical": "AP Art History",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAH-AEB-1-001",
+   "local_title": "AP Exam Biology (Score 3-5)",
+   "college": "Los Angeles Mission College",
+   "snapshot_canonical": "AP Biology",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAS-AB6-1-001",
+   "local_title": "AP Exam Biology (Score 3-5)",
+   "college": "Los Angeles Pierce College",
+   "snapshot_canonical": "AP Biology",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAS-ACB2-1-001",
+   "local_title": "AP Exam Calculus BC (Score 3-5)",
+   "college": "Los Angeles Pierce College",
+   "snapshot_canonical": "AP Calculus BC",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAS-AECB4-1-001",
+   "local_title": "AP Exam Calculus BC/AB Sub-score (Score 3-5)",
+   "college": "",
+   "snapshot_canonical": "AP Calculus AB",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAS-AC4-1-001",
+   "local_title": "AP Exam Chemistry (Score 3-5)",
+   "college": "Los Angeles Pierce College",
+   "snapshot_canonical": "AP Chemistry",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAS-ACGA2-1-001",
+   "local_title": "AP Exam Comparative Government and Politics (Score 3-5)",
+   "college": "Los Angeles Pierce College",
+   "snapshot_canonical": "AP Comparative Government and Politics",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAS-AD-1-001",
+   "local_title": "AP Exam Drawing (Score 3-5)",
+   "college": "Los Angeles Pierce College",
+   "snapshot_canonical": "AP Drawing",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAS-AP(E-1-001",
+   "local_title": "AP Exam English Language and Composition (Score 3-5)",
+   "college": "Los Angeles Pierce College",
+   "snapshot_canonical": "AP English Language and Composition",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAS-AELA6-1-001",
+   "local_title": "AP Exam English Literature and Composition (Score 3-5)",
+   "college": "Los Angeles Pierce College",
+   "snapshot_canonical": "AP English Literature and Composition",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAS-AES3-1-001",
+   "local_title": "AP Exam Environmental Science (Score 3-5)",
+   "college": "Los Angeles Pierce College",
+   "snapshot_canonical": "AP Environmental Science",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAS-AP(E1-1-001",
+   "local_title": "AP Exam European History (Score 3-5)",
+   "college": "Los Angeles Pierce College",
+   "snapshot_canonical": "AP European History",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAS-AM5-1-001",
+   "local_title": "AP Exam Macroeconomics (Score 3-5)",
+   "college": "Los Angeles Pierce College",
+   "snapshot_canonical": "AP Macroeconomics",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAS-AP(M-1-001",
+   "local_title": "AP Exam Microeconomics (Score 3-5)",
+   "college": "Los Angeles Pierce College",
+   "snapshot_canonical": "AP Microeconomics",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAS-AEP11-1-001",
+   "local_title": "AP Exam Physics 1: Algebra-Based (Score of 3)",
+   "college": "Los Angeles Pierce College",
+   "snapshot_canonical": "AP Physics 1: Algebra-Based",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "",
+   "local_title": "AP Exam Physics 1: Algebra-Based Score of 4 or 5",
+   "college": "Los Angeles Pierce College",
+   "snapshot_canonical": "AP Physics 1: Algebra-Based",
+   "snapshot_outcome": "to Sam",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "",
+   "local_title": "AP Exam Physics 2: Algebra-Based (Score of 3)",
+   "college": "Los Angeles Pierce College",
+   "snapshot_canonical": "AP Physics 2: Algebra-Based",
+   "snapshot_outcome": "to Sam",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAS-AEP22-1-001",
+   "local_title": "AP Exam Physics 2: Algebra-Based Score of 4 or 5",
+   "college": "Los Angeles Pierce College",
+   "snapshot_canonical": "AP Physics 2: Algebra-Based",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAS-AEPC-1-001",
+   "local_title": "AP Exam Physics C: Electricity and Magnetism Score of 3",
+   "college": "Los Angeles Pierce College",
+   "snapshot_canonical": "AP Physics C: Electricity and Magnetism",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "",
+   "local_title": "AP Exam Physics C: Electricity and Magnetism Score of 4 or 5",
+   "college": "Los Angeles Pierce College",
+   "snapshot_canonical": "AP Physics C: Electricity and Magnetism",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAS-AEPC2-1-001",
+   "local_title": "AP Exam Physics C: Mechanics Score of 3",
+   "college": "Los Angeles Pierce College",
+   "snapshot_canonical": "AP Physics C: Mechanics",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAS-AEPC3-1-001",
+   "local_title": "AP Exam Physics C: Mechanics Score of 4 or 5",
+   "college": "Los Angeles Pierce College",
+   "snapshot_canonical": "AP Physics C: Mechanics",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAS-AESL1-1-001",
+   "local_title": "AP Exam Spanish Language and Culture Score of 3",
+   "college": "Los Angeles Pierce College",
+   "snapshot_canonical": "AP Spanish Language and Culture",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAS-AESL2-1-001",
+   "local_title": "AP Exam Spanish Language and Culture Score of 4 or 5",
+   "college": "Los Angeles Pierce College",
+   "snapshot_canonical": "AP Spanish Language and Culture",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAS-AESL3-1-001",
+   "local_title": "AP Exam Spanish Literature and Culture",
+   "college": "Los Angeles Pierce College",
+   "snapshot_canonical": "AP Spanish Literature and Culture",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAS-AS4-1-001",
+   "local_title": "AP Exam Statistics",
+   "college": "Los Angeles Pierce College",
+   "snapshot_canonical": "AP Statistics",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAS-AP(U1-1-001",
+   "local_title": "AP Exam United States Government and Politics",
+   "college": "Los Angeles Pierce College",
+   "snapshot_canonical": "AP United States Government and Politics",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAS-AP(U-1-001",
+   "local_title": "AP Exam United States History",
+   "college": "Los Angeles Pierce College",
+   "snapshot_canonical": "AP United States History",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAS-AEWH3-1-001",
+   "local_title": "AP Exam World History: Modern (Fall 2025 and after)",
+   "college": "Los Angeles Pierce College",
+   "snapshot_canonical": "AP World History: Modern",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAS-AP(W-1-001",
+   "local_title": "AP Exam World History: Modern (prior to Fall 2025)",
+   "college": "Los Angeles Pierce College",
+   "snapshot_canonical": "AP World History: Modern",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "",
+   "local_title": "AP U.S. Government and Politics - Score of 3 or higher - HISTORICAL Type 1",
+   "college": "",
+   "snapshot_canonical": "AP United States Government and Politics",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAS-AHUH-1-001",
+   "local_title": "AP: History U.S. History ",
+   "college": "",
+   "snapshot_canonical": "AP United States History",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPICI-A6C1-1-001",
+   "local_title": "AUTO 601 Completion ",
+   "college": "Long Beach City College",
+   "snapshot_canonical": "Automotive Lubrication Service",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPICI-A6C2-1-001",
+   "local_title": "AUTO 602 Completion ",
+   "college": "Long Beach City College",
+   "snapshot_canonical": "Automotive Tire Service",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPICA-ACAI-1-001",
+   "local_title": "Apprenticeship Carpentry, Acoustical Installer, AS",
+   "college": "Santiago Canyon College",
+   "snapshot_canonical": "Carpenters Apprenticeship — Acoustical Installer",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPICA-ACAI1-1-001",
+   "local_title": "Apprenticeship Carpentry, Acoustical Installer, CA",
+   "college": "Santiago Canyon College",
+   "snapshot_canonical": "Carpenters Apprenticeship — Acoustical Installer",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPICA-ACDF-1-001",
+   "local_title": "Apprenticeship Carpentry, Drywall Finisher, AS",
+   "college": "Santiago Canyon College",
+   "snapshot_canonical": "Carpenters Apprenticeship — Drywall Finisher",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPICA-ACDA-1-001",
+   "local_title": "Apprenticeship Carpentry, Drywall/Lather, AS",
+   "college": "Santiago Canyon College",
+   "snapshot_canonical": "Carpenters Apprenticeship — Drywall/Lather",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPICI-ACDC-1-001",
+   "local_title": "Apprenticeship Carpentry, Drywall/Lather, CA",
+   "college": "Santiago Canyon College",
+   "snapshot_canonical": "Carpenters Apprenticeship — Drywall/Lather",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPICA-ACMA-1-001",
+   "local_title": "Apprenticeship Carpentry, Millwrighting, AS",
+   "college": "Santiago Canyon College",
+   "snapshot_canonical": "Carpenters Apprenticeship — Millwright",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPICA-ACMC-1-001",
+   "local_title": "Apprenticeship Carpentry, Millwrighting, CA",
+   "college": "Santiago Canyon College",
+   "snapshot_canonical": "Carpenters Apprenticeship — Millwright",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPCXS-GA-1-001",
+   "local_title": "Automotive ",
+   "college": "Merced College",
+   "snapshot_canonical": "Introduction to Automotive Technology",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "",
+   "local_title": "Biocom Institute Technician Certification (BioTC) - This certification has no expiration",
+   "college": "",
+   "snapshot_canonical": "Biocom Institute Technician Certification (BioTC)",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAA-B1YC-1-001",
+   "local_title": "Boatworks 101 Yacht Craftsmanship Lab",
+   "college": "Las Positas College",
+   "snapshot_canonical": "Boatworks 101 — Yacht Craftsmanship Lab",
+   "snapshot_outcome": "to Sam",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAA-B1YP-1-001",
+   "local_title": "Boatworks 101 Yacht Propulsion Systems",
+   "college": "Las Positas College",
+   "snapshot_canonical": "Boatworks 101 — Yacht Propulsion Systems",
+   "snapshot_outcome": "to Sam",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "",
+   "local_title": "CAJON HIGH SCHOOL- Business Management and Entrepreneurship (BUS Mgmt & Entr IS266/IS267)",
+   "college": "Chaffey College",
+   "snapshot_canonical": "Business Management and Entrepreneurship",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAS-CEFA-1-001",
+   "local_title": "CLEP Exam Financial Accounting",
+   "college": "Clovis Community College",
+   "snapshot_canonical": "CLEP Financial Accounting",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAS-CEIS3-1-001",
+   "local_title": "CLEP Exam Information Systems and Computer Apps (Score of 50 or higher)",
+   "college": "Clovis Community College",
+   "snapshot_canonical": "CLEP Information Systems",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAS-CEIT-1-001",
+   "local_title": "CLEP Exam Introduction to Educational Psychology (Score of 50 or higher)",
+   "college": "Clovis Community College",
+   "snapshot_canonical": "CLEP Introduction to Educational Psychology",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAS-CEPO5-1-001",
+   "local_title": "CLEP Exam Principles of Management (Score of 50 or higher)",
+   "college": "Clovis Community College",
+   "snapshot_canonical": "CLEP Principles of Management",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAS-CEPO6-1-001",
+   "local_title": "CLEP Exam Principles of Marketing (Score of 50 or higher)",
+   "college": "Clovis Community College",
+   "snapshot_canonical": "CLEP Principles of Marketing",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPCXS-CA0-1-001",
+   "local_title": "CUL ART 041 ",
+   "college": "San Bernardino Valley College",
+   "snapshot_canonical": "Desserts and Pastries",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPCBES-1CA2-1-001",
+   "local_title": "CULART 250 CBE ",
+   "college": "San Bernardino Valley College",
+   "snapshot_canonical": "Wine, Beverage, and Food Pairing Concepts",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "",
+   "local_title": "Chaffey Joint Union - Rancho Cucamonga HS - Advanced Engineering Design II H 1&2",
+   "college": "Chaffey College",
+   "snapshot_canonical": "Engineering Design 2 Honors Advanced",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPCBEA-C2-1-001",
+   "local_title": "Cinema 24- Credit by Exam ",
+   "college": "City College of San Francisco",
+   "snapshot_canonical": "Basic Film Production",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "",
+   "local_title": "Colton-Redlands-Yucaipa ROP Anatomy and Physiology Honors",
+   "college": "Chaffey College",
+   "snapshot_canonical": "Anatomy and Physiology Honors",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAA-CSA-1-001",
+   "local_title": "Confined Space Awareness",
+   "college": "Las Positas College",
+   "snapshot_canonical": "Confined Space Awareness",
+   "snapshot_outcome": "to Sam",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPCXS-CBEE-1-001",
+   "local_title": "Credit by Exam ESL 120A Intermediate Grammar for Reading and Writing",
+   "college": "Las Positas College",
+   "snapshot_canonical": "ESL Grammar for Reading and Writing Intermediate",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPCXS-CBEE2-1-001",
+   "local_title": "Credit by Exam ESL 121A Intermediate Reading and Writing",
+   "college": "Las Positas College",
+   "snapshot_canonical": "ESL Reading and Writing Intermediate",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPCXS-CBEE4-1-001",
+   "local_title": "Credit by Exam ESL 130A Beginning Grammar for Reading and Writing",
+   "college": "Las Positas College",
+   "snapshot_canonical": "ESL Grammar for Reading and Writing Beginning",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPCXS-CBEE6-1-001",
+   "local_title": "Credit by Exam ESL 131A Beginning Reading and Writing",
+   "college": "Las Positas College",
+   "snapshot_canonical": "ESL Reading and Writing Beginning",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPCXS-CBEM2-1-001",
+   "local_title": "Credit by Exam MUS 10A Music Theory and Musicianship 3",
+   "college": "Las Positas College",
+   "snapshot_canonical": "Music Theory and Musicianship 3",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPCXS-CBEM3-1-001",
+   "local_title": "Credit by Exam MUS 21A Beginning Piano",
+   "college": "Las Positas College",
+   "snapshot_canonical": "Piano Beginning",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPCXS-CBEM5-1-001",
+   "local_title": "Credit by Exam MUS 21B Intermediate Piano",
+   "college": "Las Positas College",
+   "snapshot_canonical": "Piano Intermediate",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPPRA-CBPJ1-1-001",
+   "local_title": "Credit by Portfolio JAMS 23 Digital Storytelling",
+   "college": "Las Positas College",
+   "snapshot_canonical": "Digital Storytelling",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPPRA-CBPM-1-001",
+   "local_title": "Credit by Portfolio MUS 19 Music Composition",
+   "college": "Las Positas College",
+   "snapshot_canonical": "Music Composition",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPPRA-CBPM1-1-001",
+   "local_title": "Credit by Portfolio MUS 25 Teaching Beginning Piano",
+   "college": "Las Positas College",
+   "snapshot_canonical": "Teaching Beginning Piano",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPICA-F1C1-1-001",
+   "local_title": "Firefighter 1A Certification ",
+   "college": "Bakersfield College; Cabrillo College; Chabot College; Chaffey College; City College of San Francisco; College of the Sequoias; Columbia College; Glendale Community College; Lake Tahoe Community College; San Diego Miramar College; Sierra College",
+   "snapshot_canonical": "Firefighter 1A",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAA-FACA-1-001",
+   "local_title": "First Aid, CPR and AED",
+   "college": "Las Positas College",
+   "snapshot_canonical": "First Aid, CPR, and AED Certification",
+   "snapshot_outcome": "to Sam",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPCXS-G0-I1-1-001",
+   "local_title": "GEOG 037 - Introduction to Global Positioning Systems",
+   "college": "Los Angeles Pierce College",
+   "snapshot_canonical": "Introduction to Global Positioning Systems (GPS)",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPCXS-G0-I3-1-001",
+   "local_title": "GIS 037 - Introduction to Global Positioning Systems",
+   "college": "Los Angeles Pierce College",
+   "snapshot_canonical": "Introduction to Global Positioning Systems (GPS)",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPCXS-HSA--1-001",
+   "local_title": "HIGH SCHOOL ARTICULATION - CHAMPS HIGH SCHOOL: DANCETQ 141 Modern Dance techniques",
+   "college": "Los Angeles Pierce College",
+   "snapshot_canonical": "Modern Dance Techniques",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAS-IEC(-1-001",
+   "local_title": "IB Exam Chemistry (Score 5-7)",
+   "college": "Los Angeles Pierce College",
+   "snapshot_canonical": "IB Chemistry HL",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAS-IEPH3-1-001",
+   "local_title": "IB Exam Psychology HL (Score 5-7)",
+   "college": "Los Angeles Pierce College",
+   "snapshot_canonical": "IB Psychology HL",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "",
+   "local_title": "ISA Certified Arborist",
+   "college": "",
+   "snapshot_canonical": "ISA Certified Arborist",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPCXA-ITES-1-001",
+   "local_title": "Introduction to Energy Surveying",
+   "college": "",
+   "snapshot_canonical": "Introduction to Energy Surveying",
+   "snapshot_outcome": "to Sam",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "",
+   "local_title": "Quality Improvement Associate Certification/CQIA (American Society for Quality/ASQ) -  This certification has no expiration",
+   "college": "",
+   "snapshot_canonical": "Quality Improvement Associate Certification (CQIA)",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPCXH-RCHS-1-001",
+   "local_title": "RANCHO CUCUMONGA HIGH SCHOOL- Engineering Design II",
+   "college": "Chaffey College",
+   "snapshot_canonical": "Engineering Design 2",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAA-RAS-1-001",
+   "local_title": "Rigging and Signaling",
+   "college": "Las Positas College",
+   "snapshot_canonical": "Rigging and Signaling",
+   "snapshot_outcome": "to Sam",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPCXH-SBHS1-1-001",
+   "local_title": "SAN BERNARDINO HIGH SCHOOL- PLTW Intro to Engineering Design  IS414H/IS415H",
+   "college": "Chaffey College",
+   "snapshot_canonical": "PLTW Introduction to Engineering Design",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPCXH-SBHS-1-001",
+   "local_title": "SAN BERNARDINO HIGH SCHOOL- PLTW Principles of Engineering  IS416H/IS417H",
+   "college": "Chaffey College",
+   "snapshot_canonical": "PLTW Principles of Engineering",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPCXH-SGHS1-1-001",
+   "local_title": "SAN GORGONIO HIGH SCHOOL- PLTW Intro to Engineering Design  IS414H/IS415H",
+   "college": "Chaffey College",
+   "snapshot_canonical": "PLTW Introduction to Engineering Design",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPCXH-SGHS-1-001",
+   "local_title": "SAN GORGONIO HIGH SCHOOL- PLTW Principles of Engineering  IS416H/IS417H",
+   "college": "Chaffey College",
+   "snapshot_canonical": "PLTW Principles of Engineering",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAA-SC-1-001",
+   "local_title": "Safety Certification",
+   "college": "Las Positas College",
+   "snapshot_canonical": "Safety Certification",
+   "snapshot_outcome": "to Sam",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAA-TC-1-001",
+   "local_title": "Traffic Control",
+   "college": "Las Positas College",
+   "snapshot_canonical": "Traffic Control",
+   "snapshot_outcome": "to Sam",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPSAA-TCT-1-001",
+   "local_title": "Traffic Control Technician",
+   "college": "Las Positas College",
+   "snapshot_canonical": "Traffic Control Technician",
+   "snapshot_outcome": "to Sam",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPICA-UL3P10-1-001",
+   "local_title": "UA Local 342 Plumbers/Pipefitters SHME 150",
+   "college": "American River College",
+   "snapshot_canonical": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 150",
+   "snapshot_outcome": "to Sam",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPICA-UL3P10-1-001",
+   "local_title": "UA Local 342 Plumbers/Pipefitters SHME 151",
+   "college": "American River College",
+   "snapshot_canonical": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 151",
+   "snapshot_outcome": "to Sam",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPICA-UL3P10-1-001",
+   "local_title": "UA Local 342 Plumbers/Pipefitters SMTEC 141",
+   "college": "American River College",
+   "snapshot_canonical": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 141",
+   "snapshot_outcome": "to Sam",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPCXH-UUSD-1-001",
+   "local_title": "Upland Unified School District - Introduction to Engineering Design PLTW",
+   "college": "Chaffey College",
+   "snapshot_canonical": "PLTW Introduction to Engineering Design",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  },
+  {
+   "rule": "left_keep",
+   "cause": "LEFT-REFERENCED",
+   "exhibit_id": "MAPCXH-UUSD1-1-001",
+   "local_title": "Upland Unified School District - Principles of Engineering (PLTW)",
+   "college": "Chaffey College",
+   "snapshot_canonical": "PLTW Principles of Engineering",
+   "snapshot_outcome": "keep",
+   "snapshot_target": ""
+  }
+ ]
+}

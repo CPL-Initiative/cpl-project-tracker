@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-19_s681_prreq_units_rules_preread.sql",
+ "name": "s681_prreq_units_rules_preread",
+ "version": "20261119071118",
+ "sha256": "a5499048c885f4ad737eee0fe47c8b5464bb2383ebb5eb9526af2a6b435bb01d",
+ "run": "44473918412",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"json_build_object\":{\"checks_only\":null,\"full_row\":{\"listed\":14,\"on_run\":14,\"record_is_before\":14,\"checks_is_before\":14,\"both_before\":14,\"already_after\":0,\"checked_now\":0}}}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

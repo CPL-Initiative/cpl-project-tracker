@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7099,
+  "input_tokens": 7075,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7099,
-    "output_tokens": 1805,
+    "input_tokens": 7075,
+    "output_tokens": 1839,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,46 +30,51 @@
     "model": null
    }
   ],
-  "output_tokens": 1805,
+  "output_tokens": 1839,
   "output_tokens_details": {
-   "thinking_tokens": 665
+   "thinking_tokens": 596
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0645,
- "ms": 16783,
- "seconds": 17.4,
+ "cost_usd": 0.06508,
+ "ms": 15319,
+ "seconds": 15.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 9,
+   "placed": 11,
    "listed": 11,
-   "share": 0.818,
-   "missing": [
-    "MATH5A",
-    "MATH5B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MATH5A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2220",
+     "listed": "MATH5B",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 2,
    "codes": [
     "ECONC2001",
-    "ECONC2002",
-    "MATHC2210",
-    "MATHC2220"
+    "ECONC2002"
    ],
    "flagged": [
     "ECONC2001",
-    "ECONC2002",
-    "MATHC2210",
-    "MATHC2220"
+    "ECONC2002"
    ],
    "pass": true
   },
@@ -118,7 +123,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "ASSOCIATE IN ARTS IN ECONOMICS FOR TRANSFER DEGREE",
+   "section_heading": "ASSOCIATE IN ARTS IN ECONOMICS FOR TRANSFER DEGREE (MAJOR #C.7200.AA-T)",
    "measure": "units",
    "total_units": {
     "min": 21,
@@ -287,11 +292,28 @@
    }
   ],
   "notes": [
-   "List B also offers 'Any course from List A not already used' (3-5 units); those List A courses are not repeated in the List B block.",
-   "The 60 semester units sentence is the general transfer degree requirement, not printed as this award's total, so degree_total is null.",
-   "The description names fields of further study (business, education, social work, government policy), not careers, so careers is empty.",
-   "Cal-GETC is named but no GE unit figure is printed."
+   "List B also allows 'Any course from List A not already used' (3-5 units); those courses are not repeated in the List B block.",
+   "The 3-5 printed beside the List B 'Any course from List A' row was read as that row's units, not a block total, so List B stated is null.",
+   "The 60 semester units sentence is the generic transfer-degree requirement, not printed as this award's total, so degree_total is null.",
+   "The description says economics allows students to pursue studies in fields including business, education, social work, and government policy; these were read as fields of study rather than careers, so careers is empty. A reviewer may wish to check.",
+   "The text after the total begins a different program (Elementary Teacher Education AA-T) and was not read."
   ]
  },
- "extracted_run": "39006155986"
+ "extracted_run": "44522071814",
+ "catalog_year": "2026-2027",
+ "source_sha": "5a48c209b7c2db88",
+ "source_codes": [
+  "ACCTG4A",
+  "ACCTG4B",
+  "BA23",
+  "BA39",
+  "BA5",
+  "IS15",
+  "MATH17",
+  "MATH5A",
+  "MATH5B",
+  "MATH6",
+  "STATC1000"
+ ],
+ "source_coverage": 1.0
 }

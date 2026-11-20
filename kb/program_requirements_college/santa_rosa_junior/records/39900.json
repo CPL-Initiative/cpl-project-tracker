@@ -237,5 +237,6 @@
    "Outcome text had extraction artifacts ('\\n') at line ends, which were dropped; outcome punctuation (semicolons, 'and') kept as printed."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": "39006464249",
+ "catalog_year": "2026-2027"
 }

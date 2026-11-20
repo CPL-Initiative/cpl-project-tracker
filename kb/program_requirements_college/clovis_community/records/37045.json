@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 9135,
-    "output_tokens": 1866,
+    "output_tokens": 1879,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,43 +30,46 @@
     "model": null
    }
   ],
-  "output_tokens": 1866,
+  "output_tokens": 1879,
   "output_tokens_details": {
-   "thinking_tokens": 507
+   "thinking_tokens": 557
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07386,
- "ms": 14394,
- "seconds": 14.8,
+ "cost_usd": 0.07412,
+ "ms": 15664,
+ "seconds": 16.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 14,
+   "placed": 16,
    "listed": 16,
-   "share": 0.875,
-   "missing": [
-    "MATH5A",
-    "MATH5B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MATH5A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2220",
+     "listed": "MATH5B",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "MATHC2210",
-    "MATHC2220"
-   ],
-   "flagged": [
-    "MATHC2210",
-    "MATHC2220"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -275,21 +278,42 @@
   "missing_explained": [
    {
     "code": "MATH 5A",
-    "why": "not in the text; catalog prints MATH C2210 Calculus I instead"
+    "why": "not in the text; the A.S. section lists MATH C2210 Calculus I instead"
    },
    {
     "code": "MATH 5B",
-    "why": "not in the text; catalog prints MATH C2220 Calculus II instead"
+    "why": "not in the text; the A.S. section lists MATH C2220 Calculus II instead"
    }
   ],
   "notes": [
-   "The text at the top of page 127 (Select a minimum of four courses, 15-17 units, two programming courses, CHEM 1A or CHEM 3A, Total Units 44-46) belongs to a preceding program and was not used.",
-   "Codes printed as 'ENGR 402', 'ENGR 52', 'CSCI 402' carry footnote superscript 2; recorded as ENGR 40, ENGR 5, CSCI 40.",
-   "Choose block requires at least one programming course (ENGR 40 or ENGR 5 or CSCI 40), recorded as one entry with alternatives; footnote 1 notes some transfer institutions require more than four courses from this list.",
-   "MATH C2210 and MATH C2220 are not on the closed list; they appear to replace MATH 5A and MATH 5B (common course numbering).",
-   "No program learning outcomes are printed for this award; the GIS outcomes on page 128 belong to another program.",
-   "The Certificate of Achievement (C.3014.CA) prints identical requirements and total 42-46 but was not used."
+   "The catalog prints programming courses as 'ENGR 402', 'ENGR 52', 'CSCI 402'; the trailing 2 is footnote marker 2, read as ENGR 40, ENGR 5, CSCI 40.",
+   "The elective block requires at least one programming course ('Must take one programming course'); ENGR 40 / ENGR 5 / CSCI 40 are printed as OR rows and recorded as one choice with alternatives.",
+   "Footnote 1: some transfer institutions may require choosing more than 4 courses from the elective block.",
+   "The text before this section (page 127 top, with a 44-46 unit total, a two-programming-course rule and CHEM 3A) belongs to a different program and was not used.",
+   "The certificate of achievement (C.3014.CA) on page 128 prints the same requirements; it was not used.",
+   "No general education pattern, degree total or program learning outcomes are printed in the A.S. section."
   ]
  },
- "extracted_run": "39006155986"
+ "extracted_run": "44522071814",
+ "catalog_year": "2026-2027",
+ "source_sha": "0e6d1eb3eae2e693",
+ "source_codes": [
+  "CHEM1A",
+  "CSCI40",
+  "ENGR10",
+  "ENGR2",
+  "ENGR4",
+  "ENGR40",
+  "ENGR5",
+  "ENGR6",
+  "ENGR8",
+  "MATH17",
+  "MATH5A",
+  "MATH5B",
+  "MATH6",
+  "PHYS4A",
+  "PHYS4B",
+  "PHYS4C"
+ ],
+ "source_coverage": 1.0
 }

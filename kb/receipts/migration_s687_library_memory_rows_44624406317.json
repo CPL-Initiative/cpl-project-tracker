@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-19_s687_library_memory_rows.sql",
+ "name": "s687_library_memory_rows",
+ "version": "20261119220330",
+ "sha256": "3c9c3da65a12d33b8c1dd4257047b0f88e8aafc4e891fb9d661f51aee6c83fd0",
+ "run": "44624406317",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"rows\":4}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

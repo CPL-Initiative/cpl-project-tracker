@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-19_s685_second_pass_live_read_b.sql",
+ "name": "s685_second_pass_live_read_b",
+ "version": "20261119142114",
+ "sha256": "9e7980f7e55714b4edae3850aa4f4bc3921a81669f044e317c44d93d8cd00b1f",
+ "run": "44541439476",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"live_compare\":{\"at\":\"2026-11-19T14:21:14Z\",\"chk\":{\"West Los Angeles College\":[\"17111\",\"37050\",\"37839\",\"39618\"]},\"sum\":{\"Citrus College\":[173,175,173,0,0,0],\"Compton College\":[81,83,81,0,0,0],\"Ventura College\":[170,173,170,0,0,0],\"Moorpark College\":[135,139,135,0,0,0],\"El Camino College\":[121,126,121,0,0,0],\"Porterville College\":[79,79,79,0,0,0],\"East Los Angeles College\":[133,134,133,0,0,0],\"Evergreen Valley College\":[85,89,85,0,0,0],\"West Los Angeles College\":[201,202,197,0,4,0],\"Los Angeles Pierce College\":[186,188,186,0,0,0],\"City College of San Francisco\":[309,309,309,0,0,0],\"San Bernardino Valley College\":[205,220,205,0,0,0]},\"diff\":[[\"West Los Angeles College\",\"17111\",\"37171952080\",\"39536207109\"],[\"West Los Angeles College\",\"37050\",\"37171952080\",\"39536207109\"],[\"West Los Angeles College\",\"37839\",\"37171952080\",\"39536207109\"],[\"West Los Angeles College\",\"39618\",\"37171952080\",\"39536207109\"]],\"gone\":{\"Citrus College\":[\"11244\",\"45031\"],\"Compton College\":[\"38422\",\"43718\"],\"Ventura College\":[\"06947\",\"31298\",\"44186\"],\"Moorpark College\":[\"12383\",\"31117\",\"43405\",\"45352\"],\"El Camino College\":[\"19857\",\"19861\",\"19866\",\"38948\",\"43993\"],\"East Los Angeles College\":[\"45028\"],\"Evergreen Valley College\":[\"30919\",\"40353\",\"44496\",\"46262\"],\"West Los Angeles College\":[\"44945\"],\"Los Angeles Pierce College\":[\"19181\",\"45035\"],\"San Bernardino Valley College\":[\"04881\",\"09267\",\"19002\",\"22732\",\"22754\",\"22756\",\"22784\",\"22787\",\"22792\",\"22799\",\"22816\",\"22818\",\"22831\",\"32317\",\"41789\"]},\"extra\":[]}}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

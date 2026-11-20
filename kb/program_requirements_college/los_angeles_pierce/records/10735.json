@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Sculpture",
  "award": "A.A. Degree",
- "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=84",
+ "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=87",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11852,
+  "input_tokens": 9688,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11852,
-    "output_tokens": 707,
+    "input_tokens": 9688,
+    "output_tokens": 1605,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,42 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 707,
+  "output_tokens": 1605,
   "output_tokens_details": {
-   "thinking_tokens": 151
+   "thinking_tokens": 433
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06155,
- "ms": 6819,
- "seconds": 7.2,
+ "cost_usd": 0.07085,
+ "ms": 13360,
+ "seconds": 13.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 12,
    "listed": 12,
-   "share": 0.0,
-   "missing": [
-    "ART111",
-    "ART201",
-    "ART202",
-    "ART204",
-    "ART501",
-    "ART502",
-    "ART700",
-    "ART701",
-    "ART702",
-    "ART703",
-    "ARTHC1100",
-    "ARTHC1200"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -74,30 +61,31 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    36.0,
+    36.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    36.0,
+    36.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 5,
    "courses": 0,
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -111,22 +99,22 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Not found: the Sculpture A.A. section is not in the supplied text",
+   "section_heading": "SCULPTURE Associate of Arts Degree (STATE CODE 10735)",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 36,
+    "max": 36
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC (34 units) or LACCD GE (21 units)",
    "degree_total": {
     "min": null,
     "max": null
@@ -136,62 +124,139 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Articulate foundational knowledge of the history of art, inclusive of methods, media and cultural context.",
+    "Demonstrate functional level of drawing skills with varied media and subjects.",
+    "Demonstrate a working vocabulary articulating concepts as they relate to studio applications.",
+    "Demonstrate an understanding of three-dimensional design concepts, vocabulary, materials and processes through the construction of two and/or three-dimensional objects.",
+    "Demonstrate an understanding of sculpture concepts, vocabulary, materials and processes through the construction of three-dimensional objects."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ART 111",
-    "why": "Sculpture section not in the text; named only in other programs' sections"
-   },
-   {
-    "code": "ART 201",
-    "why": "Sculpture section not in the text; named only in other programs' sections"
-   },
-   {
-    "code": "ART 202",
-    "why": "Sculpture section not in the text; named only in other programs' sections"
-   },
-   {
-    "code": "ART 204",
-    "why": "Sculpture section not in the text; named only in other programs' sections"
-   },
-   {
-    "code": "ART 501",
-    "why": "Sculpture section not in the text; named only in other programs' sections"
-   },
-   {
-    "code": "ART 502",
-    "why": "Sculpture section not in the text; named only in other programs' sections"
-   },
-   {
-    "code": "ART 700",
-    "why": "Sculpture section not in the text; named only in other programs' sections"
-   },
-   {
-    "code": "ART 701",
-    "why": "not in the text"
-   },
-   {
-    "code": "ART 702",
-    "why": "not in the text"
-   },
-   {
-    "code": "ART 703",
-    "why": "not in the text"
-   },
-   {
-    "code": "ARTHC1100",
-    "why": "Sculpture section not in the text; printed as ARTH C1100 only in other programs' sections"
-   },
-   {
-    "code": "ARTHC1200",
-    "why": "Sculpture section not in the text; printed as ARTH C1200 only in other programs' sections"
+    "name": "MAJOR - REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ARTH C1100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH C1200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 202",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 204",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 501",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 502",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 700",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 701",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 702",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 703",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
-  "notes": []
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The award table lists two GE options: Cal-GETC (34 units) and LACCD GE (21 units); ge_units left null because the page prints two different GE unit figures, one per pattern.",
+   "Catalog codes 'ARTH C1100' and 'ARTH C1200' match closed-list entries ARTHC1100 and ARTHC1200 (spacing differs only).",
+   "Required course list spans the page break from page 87 to page 88; the 12 courses at 3 units each sum to the printed MAJOR - TOTAL UNITS of 36.",
+   "Hyphenated line breaks in outcomes (e.g., 'con-cepts', 'construc-tion', 'three-dimen-sional') were rejoined as single words.",
+   "Asterisks on course codes mark prerequisites/corequisites and were dropped from the codes."
+  ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": "44475498778",
+ "catalog_year": "2026-2027",
+ "source_sha": "9dc5a06c8f8840b9",
+ "source_codes": [
+  "ART111",
+  "ART201",
+  "ART202",
+  "ART204",
+  "ART501",
+  "ART502",
+  "ART700",
+  "ART701",
+  "ART702",
+  "ART703",
+  "ARTHC1100",
+  "ARTHC1200"
+ ],
+ "source_coverage": 1.0
 }

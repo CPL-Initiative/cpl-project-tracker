@@ -128,7 +128,21 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "no_units_read",
+    "label": "A required course carries no units as read, so the program's units cannot be added.",
+    "words": "the record carries no units for BIOL 260, BIOL 261, BIOL 265, CHEM 100 and 7 more, so the program's units cannot be added"
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 20,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

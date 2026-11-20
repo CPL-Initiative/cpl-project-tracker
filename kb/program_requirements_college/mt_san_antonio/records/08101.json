@@ -98,7 +98,21 @@
    "heading_without_outcomes": false,
    "pass": true
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "no_units_read",
+    "label": "A required course carries no units as read, so the program's units cannot be added.",
+    "words": "the record carries no units for ANIM 130, ANIM 132, ANIM 140, ANIM 146 and 9 more, so the program's units cannot be added"
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 20,
+   "course_list_match": 89,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Radiologic Technology",
  "award": "A.S. Degree",
- "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=356",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=197",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10254,
+  "input_tokens": 9974,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10254,
-    "output_tokens": 2940,
+    "input_tokens": 9974,
+    "output_tokens": 5361,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,99 +30,96 @@
     "model": null
    }
   ],
-  "output_tokens": 2940,
+  "output_tokens": 5361,
   "output_tokens_details": {
-   "thinking_tokens": 813
+   "thinking_tokens": 2098
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09982,
- "ms": 24038,
- "seconds": 24.5,
+ "cost_usd": 0.14712,
+ "ms": 42245,
+ "seconds": 43.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 30,
    "listed": 33,
-   "share": 0.0,
+   "share": 0.909,
    "missing": [
-    "ANAT1",
-    "ANAT58",
-    "COMM4",
-    "COMM7",
-    "COMMC1000",
     "COMMC1004",
-    "ENGLC1000",
-    "HIST21",
-    "HLC160",
-    "HUM6",
-    "MATH10",
     "MATH9",
-    "PHYZ1",
-    "PHYZ58",
-    "PSYC30",
-    "PSYC34",
-    "PSYC8",
-    "PSYCC1000",
-    "RADT100",
-    "RADT60",
-    "RADT64",
-    "RADT64L",
-    "RADT65",
-    "RADT66",
-    "RADT68",
-    "RADT69",
-    "RADT71A",
-    "RADT71B",
-    "RADT71C",
-    "RADT71E",
-    "RADT71F",
-    "RADT99",
-    "STATC1000"
+    "RADT99"
    ],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 12,
+   "codes": [
+    "COMM6",
+    "CS5",
+    "EMLS10",
+    "PSYC46",
+    "PSYC9",
+    "RADT61A",
+    "RADT61B",
+    "RADT61C",
+    "RADT63A",
+    "RADT63B",
+    "RADT71D",
+    "SOC30"
+   ],
+   "flagged": [
+    "COMM6",
+    "CS5",
+    "EMLS10",
+    "PSYC46",
+    "PSYC9",
+    "RADT61A",
+    "RADT61B",
+    "RADT61C",
+    "RADT63A",
+    "RADT63B",
+    "RADT71D",
+    "SOC30"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    97.0,
+    97.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    97.0,
+    97.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 8,
    "courses": 0,
-   "count": 0,
+   "count": 8,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
@@ -132,15 +129,15 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Not found: no Radiologic Technology A.S. Degree section in the text (text shows only Radiologic Technology (Certificate of Achievement))",
+   "section_heading": "Radiologic Technology (AS)",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 97,
+    "max": 97
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -157,152 +154,474 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Apply radiation safety measures;",
+    "Perform positioning skills with accuracy;",
+    "Analyze radiographic images;",
+    "Adapt to non-routine patients;",
+    "Demonstrate oral communication skills;",
+    "Practice written communication skills;",
+    "Demonstrate professional ethics; and",
+    "Practice professionalism in the medical environment."
+   ],
+   "careers": [
+    "radiologic technologist"
+   ]
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "Radiologic Technology Prerequisites",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CS 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HLC 160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RADT 100",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select any combination totaling at least 4.00 units from the following (English)",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ENGL C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMLS 10",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Select any combination totaling at least 3.00 units from the following (Anatomy)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ANAT 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANAT 58",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select any combination totaling at least 3.00 units from the following (Physiology)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "PHYZ 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYZ 58",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select any combination totaling at least 3.00 units from the following (Communication)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "COMM 7",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 6",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 21",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM 6",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 34",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 30",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Select any combination totaling at least 3.00 units from the following (Math/Statistics)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "MATH 10",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 9",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Select any combination totaling at least 3.00 units from the following (Psychology)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "PSYC C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 8",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 30",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 46",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Radiologic Technology Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "RADT 60",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RADT 61A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "RADT 61B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "RADT 61C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "RADT 63A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "RADT 63B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "RADT 64",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RADT 64L",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RADT 65",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RADT 66",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RADT 68",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RADT 69",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RADT 71A",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RADT 71B",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RADT 71C",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RADT 71D",
+      "units": 8.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "RADT 71E",
+      "units": 8.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RADT 71F",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "ANAT 1",
-    "why": "A.S. section not in the text; appears only in Certificate of Achievement prerequisites"
-   },
-   {
-    "code": "ANAT 58",
-    "why": "A.S. section not in the text; appears only in Certificate of Achievement prerequisites"
-   },
-   {
-    "code": "COMM 4",
-    "why": "A.S. section not in the text; appears only in Certificate of Achievement prerequisites"
-   },
-   {
-    "code": "COMM 7",
-    "why": "A.S. section not in the text; appears only in Certificate of Achievement prerequisites"
-   },
-   {
-    "code": "COMM C1000",
-    "why": "A.S. section not in the text; appears only in Certificate of Achievement prerequisites"
-   },
-   {
     "code": "COMM C1004",
-    "why": "A.S. section not in the text; not printed in the certificate section either (certificate prints COMM 6)"
-   },
-   {
-    "code": "ENGL C1000",
-    "why": "A.S. section not in the text; appears only in Certificate of Achievement prerequisites"
-   },
-   {
-    "code": "HIST 21",
-    "why": "A.S. section not in the text; appears only in Certificate of Achievement prerequisites"
-   },
-   {
-    "code": "HLC 160",
-    "why": "A.S. section not in the text; appears only in Certificate of Achievement prerequisites"
-   },
-   {
-    "code": "HUM 6",
-    "why": "A.S. section not in the text; appears only in Certificate of Achievement prerequisites"
-   },
-   {
-    "code": "MATH 10",
-    "why": "A.S. section not in the text; appears only in Certificate of Achievement prerequisites"
+    "why": "not printed; catalog lists COMM 6 Interpersonal Communication instead (likely same course, old number)"
    },
    {
     "code": "MATH 9",
-    "why": "not in the text"
-   },
-   {
-    "code": "PHYZ 1",
-    "why": "A.S. section not in the text; appears only in Certificate of Achievement prerequisites"
-   },
-   {
-    "code": "PHYZ 58",
-    "why": "A.S. section not in the text; appears only in Certificate of Achievement prerequisites"
-   },
-   {
-    "code": "PSYC 30",
-    "why": "A.S. section not in the text; appears only in Certificate of Achievement prerequisites"
-   },
-   {
-    "code": "PSYC 34",
-    "why": "A.S. section not in the text; appears only in Certificate of Achievement prerequisites"
-   },
-   {
-    "code": "PSYC 8",
-    "why": "A.S. section not in the text; appears only in Certificate of Achievement prerequisites"
-   },
-   {
-    "code": "PSYC C1000",
-    "why": "A.S. section not in the text; appears only in Certificate of Achievement prerequisites"
-   },
-   {
-    "code": "RADT 100",
-    "why": "A.S. section not in the text; appears only in Certificate of Achievement prerequisites"
-   },
-   {
-    "code": "RADT 64",
-    "why": "A.S. section not in the text; appears only in Certificate of Achievement requirements"
-   },
-   {
-    "code": "RADT 64L",
-    "why": "A.S. section not in the text; appears only in Certificate of Achievement requirements"
-   },
-   {
-    "code": "RADT 66",
-    "why": "A.S. section not in the text; appears only in Certificate of Achievement requirements"
-   },
-   {
-    "code": "RADT 68",
-    "why": "A.S. section not in the text; appears only in Certificate of Achievement requirements"
-   },
-   {
-    "code": "RADT 69",
-    "why": "A.S. section not in the text; appears only in Certificate of Achievement requirements"
-   },
-   {
-    "code": "RADT 71B",
-    "why": "A.S. section not in the text; appears only in Certificate of Achievement requirements"
-   },
-   {
-    "code": "RADT 71C",
-    "why": "A.S. section not in the text; appears only in Certificate of Achievement requirements"
-   },
-   {
-    "code": "RADT 71E",
-    "why": "A.S. section not in the text; appears only in Certificate of Achievement requirements"
-   },
-   {
-    "code": "RADT 71F",
-    "why": "A.S. section not in the text; appears only in Certificate of Achievement requirements"
+    "why": "not in the text; footnote says any higher level math course satisfies the math requirement"
    },
    {
     "code": "RADT 99",
     "why": "not in the text"
-   },
-   {
-    "code": "RADT60",
-    "why": "A.S. section not in the text; appears only in Certificate of Achievement requirements (as RADT 60)"
-   },
-   {
-    "code": "RADT65",
-    "why": "A.S. section not in the text; appears only in Certificate of Achievement requirements (as RADT 65)"
-   },
-   {
-    "code": "RADT71A",
-    "why": "A.S. section not in the text; appears only in Certificate of Achievement requirements (as RADT 71A)"
-   },
-   {
-    "code": "STAT C1000",
-    "why": "A.S. section not in the text; appears only in Certificate of Achievement prerequisites"
    }
   ],
   "notes": [
-   "The supplied text (pages 356-357) is the Radiologic Technology Certificate of Achievement section (running header 'Radiologic Technology (Certificate of Achievement)', certificate residence/scholarship rules), followed by the Residential Elect. Apprentice certificate. No A.S. Degree section appears, so no blocks, totals or outcomes were recorded for the A.S. award.",
-   "The certificate section prints prerequisites (CS 5, HLC 160, RADT 100, ENGL C1000 or EMLS 10, ANAT 1 or 58, PHYZ 1 or 58, and three 3-unit choice lists), a 'Radiologic Technology Requirements - complete 70.00 units' block (RADT 60, 61A, 61B, 61C, 63A, 63B, 64, 64L, 65, 66, 68, 69, 71A-71F) and 'Total Hours/Units 97'. A reviewer should check whether the A.S. Degree page uses the same requirements; the closed list closely matches these courses.",
-   "The certificate section prints eight Program Student Learning Outcomes; they were not recorded because they are printed under the certificate, not the A.S. Degree.",
-   "The certificate notes say the program prerequisites fulfill graduation requirements in areas A, B, C, D and G of the Option A General Education Pattern, implying an associate degree path, but no A.S. requirements are printed.",
-   "Retrieve the catalog page for the Radiologic Technology A.S. Degree (likely on an adjacent page, e.g. page 355) and re-extract."
+   "Courses in the choose blocks have no units printed beside them; only block totals are printed, so course units are null.",
+   "The catalog prints codes as 'ENGL 1000 (ENGL C1000)', 'COMM 1000 (COMM C1000)', 'STAT 1000 (STAT C1000)', 'PSYC 1000 (PSYC C1000)'; recorded with the C-ID style code in parentheses that matches the closed list.",
+   "Communication block rule: complete COMM 7 alone, OR one of COMM C1000 / COMM 6 / COMM 4 paired with one of HIST 21 / HUM 6 / PSYC 34 / SOC 30 (printed as 12 '&' pairs). Each course is listed once in the block.",
+   "COMM 6 recorded as catalog addition; closed list has COMM C1004 Interpersonal Communication, probably the same course renumbered.",
+   "RADT 60, RADT 65, RADT 71A appear in the closed list without a space (RADT60 etc.); treated as the same courses.",
+   "Math block footnote 1: any higher level math course will satisfy the requirement.",
+   "Total Hours/Units 97 is the printed major total (prerequisites plus RADT requirements; sums to 97).",
+   "The page includes generic ADT boilerplate (60 CSU-transferable units, Cal-GETC, 18 units in major) that does not fit this A.S. degree; not recorded as degree_total or ge_pattern. Program notes also mention 'Option A General Education Pattern' for prerequisites satisfying GE areas; GE pattern left null.",
+   "RADT 102 Mammography is mentioned only as an optional offering for interested students, not a requirement; not recorded.",
+   "Section continues across page break onto page 198 (header shows 'Religious Studies (AA)'); content belongs to Radiologic Technology until the Religious Studies heading."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": "44477690021",
+ "catalog_year": "2026-2027",
+ "source_sha": "18c7b207995735db",
+ "source_codes": [
+  "ANAT1",
+  "ANAT58",
+  "COMM4",
+  "COMM7",
+  "COMMC1000",
+  "ENGLC1000",
+  "HIST21",
+  "HLC160",
+  "HUM6",
+  "MATH10",
+  "PHYZ1",
+  "PHYZ58",
+  "PSYC30",
+  "PSYC34",
+  "PSYC8",
+  "PSYCC1000",
+  "RADT100",
+  "RADT60",
+  "RADT64",
+  "RADT64L",
+  "RADT65",
+  "RADT66",
+  "RADT68",
+  "RADT69",
+  "RADT71A",
+  "RADT71B",
+  "RADT71C",
+  "RADT71E",
+  "RADT71F",
+  "STATC1000"
+ ],
+ "source_coverage": 0.909
 }

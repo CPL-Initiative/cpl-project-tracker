@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 13380,
-    "output_tokens": 15883,
+    "output_tokens": 15564,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 15883,
+  "output_tokens": 15564,
   "output_tokens_details": {
-   "thinking_tokens": 3430
+   "thinking_tokens": 3290
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.37118,
- "ms": 109400,
- "seconds": 109.5,
+ "cost_usd": 0.3648,
+ "ms": 106228,
+ "seconds": 106.6,
  "parts": null,
  "error": null,
  "score": {
@@ -154,7 +154,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "COMPLETING YOUR CAREER AND ACADEMIC PATHWAY: GRADUATION REQUIREMENTS",
+   "section_heading": "Cal-GETC Certification",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -180,7 +180,7 @@
   },
   "blocks": [
    {
-    "name": "Area 1 (heading and earlier subareas cut off at page break)",
+    "name": "Area 1 (heading and earlier courses not in text)",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -2069,46 +2069,44 @@
   "missing_explained": [
    {
     "code": "ENGL C1000",
-    "why": "not in the text; Area 1 (English Communication) begins on the previous page, cut off"
+    "why": "Area 1 list begins before the text; not in the text"
    },
    {
     "code": "ENGL C1001",
-    "why": "not in the text; Area 1 begins on the previous page, cut off"
+    "why": "Area 1 list begins before the text; not in the text"
    },
    {
     "code": "ENGLISH 101Z",
-    "why": "not in the text; Area 1 begins on the previous page, cut off"
+    "why": "Area 1 list begins before the text; not in the text"
    },
    {
     "code": "E.S.L. 110",
-    "why": "not in the text; Area 1 begins on the previous page, cut off"
-   },
-   {
-    "code": "PHILOS 5",
-    "why": "not in the text; Area 1 begins on the previous page, cut off"
+    "why": "Area 1 list begins before the text; not in the text"
    },
    {
     "code": "COMM 105",
-    "why": "not in the text; Area 1 begins on the previous page, cut off"
+    "why": "Area 1 list begins before the text; not in the text"
+   },
+   {
+    "code": "PHILOS 5",
+    "why": "Area 1 list begins before the text; not in the text"
    }
   ],
   "notes": [
-   "The excerpt starts mid-pattern: Area 1 heading, its subareas (1A/1B) and their courses are on the previous page and not in the text; only the tail entry 'COMM C1000 (formerly COMM 101)' is visible, recorded as an Area 1 block of unknown rule.",
-   "Page header reads 'LA CC 2025-2026 COLLEGE CATALOG' although the requested catalog year is 2026-2027; verify the edition.",
-   "No total units for the Cal-GETC certificate is printed in the excerpt; total_units left null. Area totals (semester units) are recorded in each block's stated; Area 5 as a whole states 7 semester units (5A 3 + 5B 3 + 5C 1), and Area 3 states 6 (3A 3 + 3B 3).",
-   "Area 4 requires two courses from two different academic disciplines.",
-   "Area 5C lab-only courses (marked *: ASTRON 005, GEOG 015, GEOLOGY 006, 007, PHYSICS 014) require a corresponding lecture course from 5A/5B. Underlining that marks lecture-with-lab courses is lost in the text.",
-   "Units are not printed beside individual courses, so course units are null.",
-   "Codes are recorded as printed with leading zeros (e.g., BUS 015 = BUS 15, ARTH C1100 = ARTHC1100, HISTORY C1001 = HISTC1001, A S L 003 = ASL003) and treated as matching closed-list courses. 'POLS SCI 005' appears to be a misprint of POL SCI 5 and is treated as matching.",
-   "CINEMA 501 and PHOTO 501 are printed as the same course ('Same as'); recorded once with PHOTO 501 as alternative.",
-   "'formerly' codes (e.g., MATH 227, ARTHIST 110, HIST 011) are previous numbers, not alternatives, and are not recorded.",
-   "The US History, Constitution, and American Ideals groups (US1, US2/US3) are labeled optional (CSU graduation requirement only) and are not recorded as blocks; all their courses already appear in other areas (AFRO AM 004, 005, 007; CHICANO 007, 008; HISTORY 081, 082, C1001, C1002; POLS C1000).",
-   "The award is itself the Cal-GETC general education pattern, so its areas are recorded as blocks and ge_pattern is left null.",
-   "No program learning outcomes or careers are printed in the excerpt."
+   "The text begins mid-pattern: the Cal-GETC heading and most of Area 1 (1A English Composition, 1B Critical Thinking) are on the previous page and not in the text; only COMM C1000 is visible, recorded in a provisional Area 1 block as 'all'. Reviewer should check the full Area 1 list and its rules.",
+   "The page header reads 'LA CC 2025-2026 COLLEGE CATALOG' although the source is labeled the 2026-27 catalog.",
+   "No total units for the certificate are printed in the text; total_units left null. Stated block totals are the semester units printed (quarter units also printed). Area 5 as a whole states 7 semester or 9 quarter units across 5A and 5B (with 5C lab).",
+   "Area 4 requires two courses from two academic disciplines; Area 5 requires a lab in 5C, and lab-only courses marked * (ASTRON 005, GEOG 015, GEOLOGY 006, GEOLOGY 007, PHYSICS 014) must be paired with a corresponding lecture course from 5A/5B.",
+   "CINEMA 501 and PHOTO 501 are listed as the same course (cross-listed) in 3A; recorded once with PHOTO 501 as its alternative. CINEMA 018 appears in both 3A and 3B; HISTORY 006, 007, 086, 087, C1001, C1002 and several AFRO AM/CHICANO courses appear in more than one area.",
+   "Codes printed with leading zeros or different spacing (e.g., BUS 015, ARTH C1100, A S L 003, HISTORY C1001, POLS SCI 005) were matched to closed-list codes (BUS 15, ARTHC1100, ASL003, HISTC1001, POL SCI 5) and not flagged as catalog additions.",
+   "The US History, Constitution, and American Ideals section is marked optional (CSU graduation requirement only) and was not recorded as a block; all its courses are already placed in other areas.",
+   "ge_pattern left null because this award is the Cal-GETC pattern itself, not a degree naming a GE pattern.",
+   "No program learning outcomes or careers are printed in this text."
   ]
  },
- "extracted_run": "43212072618",
- "source_sha": "130456520d81dca2",
+ "extracted_run": "44511401763",
+ "catalog_year": "2026-2027",
+ "source_sha": "55639614571ce38c",
  "source_codes": [
   "AFROAM20",
   "AFROAM7",

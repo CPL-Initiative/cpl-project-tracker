@@ -51,10 +51,11 @@
     66
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "607467985da7e832"
   },
   "listed": 10,
-  "text_chars": 6694
+  "text_chars": 6691
  },
  {
   "control_number": "01249",
@@ -73,31 +74,12 @@
   "title": "Journalism",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.714,
-  "codes_found": [
-   "BA125",
-   "BRDC155",
-   "JOUR101A",
-   "JOUR155",
-   "JOUR172"
-  ],
-  "source": {
-   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=87",
-   "title": "148                                                                                                                     ",
-   "h1": "148                                                                                                                     ",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    87,
-    88,
-    89
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 7,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "01251",
@@ -161,7 +143,8 @@
     26
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "8c749adc2a0df7d1"
   },
   "listed": 18,
   "text_chars": 14882
@@ -213,10 +196,11 @@
     43
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "7c2d128462733915"
   },
   "listed": 16,
-  "text_chars": 6123
+  "text_chars": 6122
  },
  {
   "control_number": "01271",
@@ -244,19 +228,20 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=67",
-   "title": "128                                                                                                                     ",
-   "h1": "128                                                                                                                     ",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=66",
+   "title": "Associate in Science in Registered Nurse - Pre",
+   "h1": "Associate in Science in Registered Nurse - Pre",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    66,
     67,
     68,
-    69,
-    70
+    69
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "9150d271a239a01e"
   },
   "listed": 16,
   "text_chars": 16000
@@ -315,7 +300,8 @@
     71
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "d55bc6cd57959ba1"
   },
   "listed": 32,
   "text_chars": 16000
@@ -325,34 +311,12 @@
   "title": "Administration of Justice",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.5,
-  "codes_found": [
-   "AJ101",
-   "AJ102",
-   "AJ104",
-   "AJ106",
-   "AJ107",
-   "AJ117",
-   "AJ118",
-   "AJ131",
-   "PSYCC1000",
-   "SOC101"
-  ],
-  "source": {
-   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=6",
-   "title": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
-   "h1": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    6
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 20,
-  "text_chars": 5609
+  "text_chars": 0
  },
  {
   "control_number": "01286",
@@ -382,10 +346,11 @@
     29
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "c74d295bcf570e78"
   },
   "listed": 9,
-  "text_chars": 6676
+  "text_chars": 6672
  },
  {
   "control_number": "08336",
@@ -427,22 +392,109 @@
     61
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "05042d2e62a9a9aa"
   },
   "listed": 21,
-  "text_chars": 5748
+  "text_chars": 5746
  },
  {
   "control_number": "08524",
   "title": "Fine Arts",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART101",
+   "ART104A",
+   "ART104B",
+   "ART104C",
+   "ART106A",
+   "ART106B",
+   "ART107A",
+   "ART107B",
+   "ART108",
+   "ART111A",
+   "ART111B",
+   "ART116A",
+   "ART116B",
+   "ART121A",
+   "ART121B",
+   "ART127",
+   "ART133A",
+   "ART133B",
+   "ART133C",
+   "ART139A",
+   "ART139B",
+   "ART161A",
+   "ART161B",
+   "ARTH103C",
+   "ARTH103D",
+   "ARTH103E",
+   "ARTHC1100",
+   "ARTHC1200",
+   "MUS101",
+   "MUS102",
+   "MUS103",
+   "MUS104",
+   "MUS108",
+   "MUS110A",
+   "MUS110B",
+   "MUS110C",
+   "MUS110D",
+   "MUS111A",
+   "MUS111B",
+   "MUS111C",
+   "MUS111D",
+   "MUS121",
+   "MUS122",
+   "MUS123",
+   "MUS125",
+   "MUS160A",
+   "MUS160B",
+   "MUS160C",
+   "MUS160D",
+   "TD102",
+   "TD105",
+   "TD107",
+   "TD109",
+   "TD110",
+   "TD110L",
+   "TD141A",
+   "TD141B",
+   "TD142A",
+   "TD142B",
+   "TD142C",
+   "TD143A",
+   "TD143B",
+   "TD143C",
+   "TD144A",
+   "TD144B",
+   "TD148A",
+   "TD148B",
+   "TD150",
+   "TD155A",
+   "TD155B",
+   "TD156",
+   "TD161"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=37",
+   "title": "Associate in Arts in Fine Arts",
+   "h1": "Associate in Arts in Fine Arts",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    37,
+    38
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "d53c667794cf9064"
+  },
   "listed": 72,
-  "text_chars": 0
+  "text_chars": 11209
  },
  {
   "control_number": "10401",
@@ -489,10 +541,11 @@
     27
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "9a45414221239353"
   },
   "listed": 25,
-  "text_chars": 15332
+  "text_chars": 15330
  },
  {
   "control_number": "11810",
@@ -517,10 +570,11 @@
     75
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b68743902710ea8c"
   },
   "listed": 8,
-  "text_chars": 8238
+  "text_chars": 8236
  },
  {
   "control_number": "12148",
@@ -559,10 +613,11 @@
     59
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "f1f42f41fa31a3ff"
   },
   "listed": 18,
-  "text_chars": 7238
+  "text_chars": 7235
  },
  {
   "control_number": "12149",
@@ -586,8 +641,8 @@
   ],
   "source": {
    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=48",
-   "title": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
-   "h1": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "title": "certificate can also be used toward the Associate in Science in IT Service and",
+   "h1": "certificate can also be used toward the Associate in Science in IT Service and",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -595,10 +650,11 @@
     49
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "86bc3cb2b262dc8d"
   },
   "listed": 11,
-  "text_chars": 13501
+  "text_chars": 12313
  },
  {
   "control_number": "12549",
@@ -709,7 +765,8 @@
     34
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "6e8676efcdf73f94"
   },
   "listed": 16,
   "text_chars": 16000
@@ -733,19 +790,21 @@
    "PHYS121"
   ],
   "source": {
-   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=12",
-   "title": "Associate in Science in Biology",
-   "h1": "Associate in Science in Biology",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=11",
+   "title": "Associate in Science in Biology for Transfer (ADT)",
+   "h1": "Associate in Science in Biology for Transfer (ADT)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    11,
     12
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "ae577bd7e38e254e"
   },
   "listed": 9,
-  "text_chars": 3447
+  "text_chars": 9397
  },
  {
   "control_number": "14968",
@@ -790,7 +849,8 @@
     20
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "07d67a891956b4e5"
   },
   "listed": 24,
   "text_chars": 7146
@@ -903,20 +963,22 @@
    "MUS381"
   ],
   "source": {
-   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=55",
-   "title": "116                                                                                                                     ",
-   "h1": "116                                                                                                                     ",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=54",
+   "title": "Associate in Arts in Music for Transfer (ADT)",
+   "h1": "Associate in Arts in Music for Transfer (ADT)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    54,
     55,
     56
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "170352c4560125d3"
   },
   "listed": 37,
-  "text_chars": 15895
+  "text_chars": 16000
  },
  {
   "control_number": "15887",
@@ -959,10 +1021,11 @@
     11
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "34c819a67271802b"
   },
   "listed": 21,
-  "text_chars": 15456
+  "text_chars": 15453
  },
  {
   "control_number": "16631",
@@ -1031,10 +1094,11 @@
     32
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "37988df930dc8027"
   },
   "listed": 26,
-  "text_chars": 14375
+  "text_chars": 14373
  },
  {
   "control_number": "16763",
@@ -1092,10 +1156,11 @@
     16
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "e06f35c9c84c3f30"
   },
   "listed": 12,
-  "text_chars": 11891
+  "text_chars": 11888
  },
  {
   "control_number": "18034",
@@ -1141,31 +1206,85 @@
    "PHIL114"
   ],
   "source": {
-   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=52",
-   "title": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
-   "h1": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=51",
+   "title": "Associate in Arts in Liberal Arts: Humanities Emphasis",
+   "h1": "Associate in Arts in Liberal Arts: Humanities Emphasis",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    51,
     52
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "252d37df1c752a8e"
   },
   "listed": 34,
-  "text_chars": 7141
+  "text_chars": 9534
  },
  {
   "control_number": "18035",
   "title": "Liberal Arts: Language Emphasis",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARBC101A",
+   "ASL101",
+   "ASL102",
+   "ASL103",
+   "ASL104",
+   "ASL140",
+   "ASL142",
+   "ASL145",
+   "ASL150",
+   "ASL158",
+   "CHIN101A",
+   "CHIN101B",
+   "COMM134",
+   "DEAF311",
+   "DEAF312",
+   "DEAF330",
+   "ENGL104",
+   "ENGL107",
+   "ENGL111A",
+   "ENGL111B",
+   "ENGL112",
+   "ENGL113",
+   "ENGL114",
+   "ENGL115",
+   "ENGL118",
+   "ENGL120A",
+   "ENGL120B",
+   "ENGL127",
+   "ENGL129",
+   "ENGL130",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLC1002",
+   "FREN101A",
+   "JPNS101A",
+   "JPNS101B",
+   "SPAN101A",
+   "SPAN101B"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=52",
+   "title": "Associate in Arts in Liberal Arts: Language Emphasis",
+   "h1": "Associate in Arts in Liberal Arts: Language Emphasis",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    52,
+    53
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "9bf0dd7604bf30be"
+  },
   "listed": 38,
-  "text_chars": 0
+  "text_chars": 12307
  },
  {
   "control_number": "18036",
@@ -1210,10 +1329,11 @@
     51
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "3573cad730854ed0"
   },
   "listed": 24,
-  "text_chars": 8066
+  "text_chars": 8064
  },
  {
   "control_number": "18037",
@@ -1247,22 +1367,60 @@
     56
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "f4b895e1f55a78c4"
   },
   "listed": 13,
-  "text_chars": 4963
+  "text_chars": 4962
  },
  {
   "control_number": "18038",
   "title": "Natural Science: Physical Science",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASTR101A",
+   "ASTR101B",
+   "ASTR102",
+   "CHEM101A",
+   "CHEM101B",
+   "CHEM102",
+   "CHEM108",
+   "CHEM109",
+   "CHEM112B",
+   "GEOG101",
+   "GEOL101",
+   "GEOL102",
+   "GEOL103",
+   "GEOL103L",
+   "GEOL104",
+   "PHYS108",
+   "PHYS120",
+   "PHYS120A",
+   "PHYS121",
+   "PHYS121A",
+   "PHYS140",
+   "PHYS141",
+   "PHYS142"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=57",
+   "title": "Associate in Arts in Natural Science: Physical Science Emphasis",
+   "h1": "Associate in Arts in Natural Science: Physical Science Emphasis",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    57,
+    58
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "5e32b1c729b3ea88"
+  },
   "listed": 23,
-  "text_chars": 0
+  "text_chars": 9000
  },
  {
   "control_number": "18039",
@@ -1293,8 +1451,8 @@
   ],
   "source": {
    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=57",
-   "title": "118                                                                                                                     ",
-   "h1": "118                                                                                                                     ",
+   "title": "Associate in Arts in Natural Science:",
+   "h1": "Associate in Arts in Natural Science:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1304,7 +1462,8 @@
     60
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "00ecff957b649fd2"
   },
   "listed": 18,
   "text_chars": 16000
@@ -1407,7 +1566,8 @@
     73
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "c87b73409edc5c20"
   },
   "listed": 77,
   "text_chars": 16000
@@ -1442,10 +1602,11 @@
     36
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "66e5808b94c226bc"
   },
   "listed": 11,
-  "text_chars": 5642
+  "text_chars": 5640
  },
  {
   "control_number": "18761",
@@ -1500,7 +1661,8 @@
     16
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "6ded6da78448c96f"
   },
   "listed": 19,
   "text_chars": 16000
@@ -1539,21 +1701,21 @@
    "ENGL156"
   ],
   "source": {
-   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=13",
-   "title": "74                                                                                                                      ",
-   "h1": "74                                                                                                                      ",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=14",
+   "title": "Certificate of Achievement in Biotechnology:",
+   "h1": "Certificate of Achievement in Biotechnology:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    13,
     14,
     15
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "0ae331d993c1e3e1"
   },
   "listed": 12,
-  "text_chars": 16000
+  "text_chars": 9805
  },
  {
   "control_number": "18805",
@@ -1588,7 +1750,8 @@
     16
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "40a79a27cfafa2bc"
   },
   "listed": 12,
   "text_chars": 16000
@@ -1623,10 +1786,11 @@
     15
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "12c0655eb65afcb0"
   },
   "listed": 9,
-  "text_chars": 15299
+  "text_chars": 15297
  },
  {
   "control_number": "22192",
@@ -1667,18 +1831,19 @@
   ],
   "source": {
    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=66",
-   "title": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
-   "h1": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "title": "Certificate of Achievement in Real Estate Sales Agent/",
+   "h1": "Certificate of Achievement in Real Estate Sales Agent/",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     66
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "030431e439298ed1"
   },
   "listed": 5,
-  "text_chars": 7197
+  "text_chars": 4252
  },
  {
   "control_number": "22195",
@@ -1696,8 +1861,8 @@
   ],
   "source": {
    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=87",
-   "title": "Certificate of Accomplishment in Journalism",
-   "h1": "Certificate of Accomplishment in Journalism",
+   "title": "JOURNALISM",
+   "h1": "JOURNALISM",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1706,10 +1871,16 @@
     89
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 87,
+    "share": 0.714
+   },
+   "text_sha": "7e7b43aa4f788f4b"
   },
   "listed": 7,
-  "text_chars": 13884
+  "text_chars": 13895
  },
  {
   "control_number": "22196",
@@ -1751,10 +1922,11 @@
     27
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "66d03724e51384b4"
   },
   "listed": 8,
-  "text_chars": 11573
+  "text_chars": 11571
  },
  {
   "control_number": "22198",
@@ -1773,28 +1945,12 @@
   "title": "UNIX/Linux Systems Administrator",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.5,
-  "codes_found": [
-   "CNET108",
-   "CNET146",
-   "CNET147",
-   "CNET155A"
-  ],
-  "source": {
-   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=75",
-   "title": "136                                                                                                                     ",
-   "h1": "136                                                                                                                     ",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    75
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 8,
-  "text_chars": 8238
+  "text_chars": 0
  },
  {
   "control_number": "22202",
@@ -1823,10 +1979,11 @@
     59
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "929aaa1ea0bed5b1"
   },
   "listed": 7,
-  "text_chars": 10697
+  "text_chars": 10693
  },
  {
   "control_number": "22203",
@@ -1858,10 +2015,11 @@
     49
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "3a6355547044fac6"
   },
   "listed": 10,
-  "text_chars": 13006
+  "text_chars": 12998
  },
  {
   "control_number": "22204",
@@ -1897,19 +2055,21 @@
    "DEAF312"
   ],
   "source": {
-   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=8",
-   "title": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
-   "h1": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=7",
+   "title": "Certificate of Achievement in American Sign Language",
+   "h1": "Certificate of Achievement in American Sign Language",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    7,
     8
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "9642e836228f9e0b"
   },
   "listed": 12,
-  "text_chars": 7172
+  "text_chars": 8857
  },
  {
   "control_number": "22206",
@@ -1949,7 +2109,8 @@
     26
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "41af41badde5baf0"
   },
   "listed": 18,
   "text_chars": 11859
@@ -1971,8 +2132,8 @@
   ],
   "source": {
    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=33",
-   "title": "The Certificate of Achievement in Entertainment Design and Technology: Audio",
-   "h1": "The Certificate of Achievement in Entertainment Design and Technology: Audio",
+   "title": "Certificate of Achievement in Entertainment Design and",
+   "h1": "Certificate of Achievement in Entertainment Design and",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1980,10 +2141,11 @@
     34
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "7382eb17e5ed2a0e"
   },
   "listed": 6,
-  "text_chars": 12859
+  "text_chars": 12981
  },
  {
   "control_number": "22208",
@@ -2002,8 +2164,8 @@
   ],
   "source": {
    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=33",
-   "title": "94                                                                                                                      ",
-   "h1": "94                                                                                                                      ",
+   "title": "Certificate of Achievement in Entertainment Design and",
+   "h1": "Certificate of Achievement in Entertainment Design and",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2011,10 +2173,11 @@
     34
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "3a940fcd108c4988"
   },
   "listed": 6,
-  "text_chars": 13360
+  "text_chars": 10753
  },
  {
   "control_number": "22209",
@@ -2033,18 +2196,19 @@
   ],
   "source": {
    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=34",
-   "title": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
-   "h1": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "title": "Certificate of Achievement in Entertainment Design and",
+   "h1": "Certificate of Achievement in Entertainment Design and",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     34
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "7ead6418af6c2d59"
   },
   "listed": 6,
-  "text_chars": 6898
+  "text_chars": 5464
  },
  {
   "control_number": "22210",
@@ -2078,18 +2242,19 @@
   ],
   "source": {
    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=34",
-   "title": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
-   "h1": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "title": "Certificate of Achievement in Entertainment Design and",
+   "h1": "Certificate of Achievement in Entertainment Design and",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     34
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "1d93a5942091eb47"
   },
   "listed": 9,
-  "text_chars": 6898
+  "text_chars": 3143
  },
  {
   "control_number": "22212",
@@ -2109,19 +2274,21 @@
    "TD178"
   ],
   "source": {
-   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=34",
-   "title": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
-   "h1": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=33",
+   "title": "94                                                                                                                      ",
+   "h1": "94                                                                                                                      ",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    33,
     34
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "6e0715812ff881d8"
   },
   "listed": 8,
-  "text_chars": 6898
+  "text_chars": 13360
  },
  {
   "control_number": "22213",
@@ -2150,7 +2317,8 @@
     43
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "c35f6a582f22b699"
   },
   "listed": 8,
   "text_chars": 2255
@@ -2196,7 +2364,8 @@
     29
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "32dfc7b17bb924c1"
   },
   "listed": 9,
   "text_chars": 16000
@@ -2319,10 +2488,11 @@
     46
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "742c8675715a239e"
   },
   "listed": 98,
-  "text_chars": 15476
+  "text_chars": 15473
  },
  {
   "control_number": "30592",
@@ -2357,10 +2527,11 @@
     65
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "480f7cfa08eca34f"
   },
   "listed": 13,
-  "text_chars": 15458
+  "text_chars": 15455
  },
  {
   "control_number": "31779",
@@ -2404,10 +2575,11 @@
     50
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "29eabda6474178ac"
   },
   "listed": 23,
-  "text_chars": 5567
+  "text_chars": 5566
  },
  {
   "control_number": "32412",
@@ -2437,7 +2609,8 @@
     42
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "0649a7a1a11fef3d"
   },
   "listed": 7,
   "text_chars": 16000
@@ -2467,10 +2640,11 @@
     73
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "5b77a41e85afd991"
   },
   "listed": 6,
-  "text_chars": 7536
+  "text_chars": 7534
  },
  {
   "control_number": "32423",
@@ -2528,7 +2702,8 @@
     46
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "14c1978ceab757a5"
   },
   "listed": 23,
   "text_chars": 16000
@@ -2556,19 +2731,21 @@
    "TD170"
   ],
   "source": {
-   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=76",
-   "title": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
-   "h1": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=75",
+   "title": "THEATRE ARTS FOR TRANSFER",
+   "h1": "THEATRE ARTS FOR TRANSFER",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    75,
     76
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "7c4aa45dd8827e70"
   },
   "listed": 13,
-  "text_chars": 7482
+  "text_chars": 9414
  },
  {
   "control_number": "32584",
@@ -2586,20 +2763,26 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=15",
-   "title": "76                                                                                                                      ",
-   "h1": "76                                                                                                                      ",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=29",
+   "title": "ECONOMICS FOR TRANSFER",
+   "h1": "ECONOMICS FOR TRANSFER",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    15,
-    16
+    29,
+    30
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 29,
+    "share": 0.75
+   },
+   "text_sha": "669d3c1b2f9840ff"
   },
   "listed": 8,
-  "text_chars": 14919
+  "text_chars": 10230
  },
  {
   "control_number": "32585",
@@ -2626,10 +2809,11 @@
     60
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "6cd4c0a7d3a3589b"
   },
   "listed": 6,
-  "text_chars": 6093
+  "text_chars": 6091
  },
  {
   "control_number": "32697",
@@ -2653,20 +2837,22 @@
    "MUS356"
   ],
   "source": {
-   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=55",
-   "title": "116                                                                                                                     ",
-   "h1": "116                                                                                                                     ",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=54",
+   "title": "MUSIC FOR TRANSFER",
+   "h1": "MUSIC FOR TRANSFER",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    54,
     55,
     56
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "5e5d21b06bf0e2aa"
   },
   "listed": 12,
-  "text_chars": 15895
+  "text_chars": 16000
  },
  {
   "control_number": "32706",
@@ -2704,10 +2890,11 @@
     11
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "d2ff0d7e40730096"
   },
   "listed": 16,
-  "text_chars": 15934
+  "text_chars": 15931
  },
  {
   "control_number": "32761",
@@ -2737,10 +2924,11 @@
     29
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "a2bb8ff732eec43a"
   },
   "listed": 8,
-  "text_chars": 15808
+  "text_chars": 15798
  },
  {
   "control_number": "33318",
@@ -2768,7 +2956,8 @@
     24
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "c86b9d3281c0e6ee"
   },
   "listed": 6,
   "text_chars": 10048
@@ -2778,30 +2967,12 @@
   "title": "Information Technology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.5,
-  "codes_found": [
-   "CNET105",
-   "CNET108",
-   "CNET142",
-   "CNET146",
-   "CNET162",
-   "CNET170"
-  ],
-  "source": {
-   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=87",
-   "title": "Certificate of Accomplishment in Health Information Technology",
-   "h1": "Certificate of Accomplishment in Health Information Technology",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    87
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 12,
-  "text_chars": 5611
+  "text_chars": 0
  },
  {
   "control_number": "33320",
@@ -2839,10 +3010,11 @@
     75
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "2cd6d7622d58dd40"
   },
   "listed": 16,
-  "text_chars": 13076
+  "text_chars": 13073
  },
  {
   "control_number": "33547",
@@ -2873,7 +3045,8 @@
     23
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "7bdd77fcd6194600"
   },
   "listed": 8,
   "text_chars": 16000
@@ -2898,19 +3071,21 @@
    "SOC101"
   ],
   "source": {
-   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=6",
-   "title": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
-   "h1": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=5",
+   "title": "ADMINISTRATION OF JUSTICE FOR TRANSFER",
+   "h1": "ADMINISTRATION OF JUSTICE FOR TRANSFER",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    5,
     6
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "5ab1467f6cf25f8f"
   },
   "listed": 10,
-  "text_chars": 5609
+  "text_chars": 6854
  },
  {
   "control_number": "33643",
@@ -2950,7 +3125,8 @@
     49
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "fdb5a0946d6e84b2"
   },
   "listed": 17,
   "text_chars": 16000
@@ -2990,7 +3166,8 @@
     24
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "ff37a150dee332fe"
   },
   "listed": 16,
   "text_chars": 7024
@@ -3031,10 +3208,11 @@
     75
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "12eacb1c9f9cef78"
   },
   "listed": 17,
-  "text_chars": 7884
+  "text_chars": 7882
  },
  {
   "control_number": "35532",
@@ -3055,64 +3233,69 @@
    "PHYS141"
   ],
   "source": {
-   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=12",
-   "title": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
-   "h1": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=11",
+   "title": "BIOLOGY FOR TRANSFER",
+   "h1": "BIOLOGY FOR TRANSFER",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    11,
     12
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "27b06c77b03fa803"
   },
   "listed": 9,
-  "text_chars": 6895
+  "text_chars": 9419
  },
  {
   "control_number": "35542",
   "title": "Personal Development Studies",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COUN101",
+   "COUN102",
+   "COUN103",
+   "COUN110",
+   "COUN120",
+   "LS101",
+   "MATH156",
+   "PSYCC1000",
+   "SOC101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=59",
+   "title": "Certificate of Achievement in Personal Development Studies",
+   "h1": "Certificate of Achievement in Personal Development Studies",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    59,
+    60
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "72fd6797a2f1d0b9"
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 10537
  },
  {
   "control_number": "35797",
   "title": "Bioengineering",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.5,
-  "codes_found": [
-   "CHEM101A",
-   "CS102",
-   "ENGI101",
-   "ENGI111",
-   "ENGI115",
-   "MATH101A",
-   "PHYS140",
-   "STATC1000"
-  ],
-  "source": {
-   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=30",
-   "title": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
-   "h1": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    30,
-    31
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 16,
-  "text_chars": 12764
+  "text_chars": 0
  },
  {
   "control_number": "35933",
@@ -3144,10 +3327,11 @@
     15
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "dfd267cd61c1c3a3"
   },
   "listed": 11,
-  "text_chars": 6396
+  "text_chars": 6394
  },
  {
   "control_number": "36009",
@@ -3155,11 +3339,19 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.5,
+  "coverage": 1.0,
   "codes_found": [
+   "ART104A",
    "ART104B",
+   "ART104C",
+   "ART106A",
+   "ART106B",
+   "ART107A",
+   "ART111A",
    "ART116A",
    "ART121A",
+   "ART133A",
+   "ART139A",
    "ARTH103C",
    "ARTH103D",
    "ARTHC1100",
@@ -3167,21 +3359,26 @@
    "DAID103"
   ],
   "source": {
-   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=76",
-   "title": "for completion of the Associate in Arts in Studio Arts for Transfer.",
-   "h1": "for completion of the Associate in Arts in Studio Arts for Transfer.",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=73",
+   "title": "STUDIO ARTS FOR TRANSFER",
+   "h1": "STUDIO ARTS FOR TRANSFER",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    76,
-    77,
-    78
+    73,
+    74
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 73,
+    "share": 1.0
+   },
+   "text_sha": "97b2acbbbbfe642d"
   },
   "listed": 16,
-  "text_chars": 16000
+  "text_chars": 11144
  },
  {
   "control_number": "36016",
@@ -3226,10 +3423,11 @@
     32
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "37988df930dc8027"
   },
   "listed": 26,
-  "text_chars": 14375
+  "text_chars": 14373
  },
  {
   "control_number": "36031",
@@ -3263,19 +3461,21 @@
    "ENGLC1002"
   ],
   "source": {
-   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=32",
-   "title": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
-   "h1": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=31",
+   "title": "ENGLISH FOR TRANSFER",
+   "h1": "ENGLISH FOR TRANSFER",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    31,
     32
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "88741e2c076306cb"
   },
   "listed": 22,
-  "text_chars": 8875
+  "text_chars": 12409
  },
  {
   "control_number": "36062",
@@ -3309,10 +3509,11 @@
     73
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "42c2ae26bcb1e1a3"
   },
   "listed": 12,
-  "text_chars": 13789
+  "text_chars": 13784
  },
  {
   "control_number": "36096",
@@ -3345,7 +3546,8 @@
     8
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "aff29162fa7ab5dc"
   },
   "listed": 12,
   "text_chars": 5355
@@ -3378,10 +3580,11 @@
     9
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "af8e29e16c7a023c"
   },
   "listed": 9,
-  "text_chars": 7569
+  "text_chars": 7567
  },
  {
   "control_number": "36285",
@@ -3408,10 +3611,11 @@
     96
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "c09a78e9e1c941e0"
   },
   "listed": 6,
-  "text_chars": 3538
+  "text_chars": 3537
  },
  {
   "control_number": "36299",
@@ -3442,7 +3646,8 @@
     45
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "3d67588d71c3b7a4"
   },
   "listed": 7,
   "text_chars": 16000
@@ -3471,10 +3676,11 @@
     5
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "acdfd0d5c96bc65c"
   },
   "listed": 5,
-  "text_chars": 5573
+  "text_chars": 5572
  },
  {
   "control_number": "36523",
@@ -3505,7 +3711,8 @@
     45
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "43a3e5eb8cfcf2cf"
   },
   "listed": 7,
   "text_chars": 16000
@@ -3618,7 +3825,8 @@
     73
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "4d7a54e4bba7a75f"
   },
   "listed": 26,
   "text_chars": 16000
@@ -3678,10 +3886,11 @@
     36
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "dbbc9cd5928208f1"
   },
   "listed": 11,
-  "text_chars": 15036
+  "text_chars": 15033
  },
  {
   "control_number": "37692",
@@ -3710,7 +3919,8 @@
     42
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "dfa4a8afd0d6d607"
   },
   "listed": 6,
   "text_chars": 16000
@@ -3731,18 +3941,24 @@
   ],
   "source": {
    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=88",
-   "title": "Certificate of Accomplishment in Kinesiology: Sports Medicine",
-   "h1": "Certificate of Accomplishment in Kinesiology: Sports Medicine",
+   "title": "KINESIOLOGY: SPORTS MEDICINE",
+   "h1": "KINESIOLOGY: SPORTS MEDICINE",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     88
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 88,
+    "share": 0.833
+   },
+   "text_sha": "0ab0dee83ae473fd"
   },
   "listed": 6,
-  "text_chars": 5084
+  "text_chars": 5114
  },
  {
   "control_number": "37694",
@@ -3767,7 +3983,8 @@
     65
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "4c987f2e60d61d34"
   },
   "listed": 4,
   "text_chars": 1928
@@ -3798,7 +4015,8 @@
     9
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "04e7287914a92ce2"
   },
   "listed": 7,
   "text_chars": 2228
@@ -3839,10 +4057,11 @@
     40
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "2734a034b0b6c4cf"
   },
   "listed": 16,
-  "text_chars": 13838
+  "text_chars": 13836
  },
  {
   "control_number": "37937",
@@ -3874,7 +4093,8 @@
     65
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "06c853436a270a83"
   },
   "listed": 9,
   "text_chars": 16000
@@ -3896,25 +4116,12 @@
   "title": "Math Applications",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "pdf_pages",
-  "coverage": 0.5,
-  "codes_found": [
-   "MATH900A"
-  ],
-  "source": {
-   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=99",
-   "title": "160                                                                                                                     ",
-   "h1": "160                                                                                                                     ",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    99
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 2,
-  "text_chars": 5801
+  "text_chars": 0
  },
  {
   "control_number": "38496",
@@ -3981,7 +4188,8 @@
     76
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "8277926926a055f3"
   },
   "listed": 10,
   "text_chars": 2741
@@ -4017,8 +4225,8 @@
   ],
   "source": {
    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=39",
-   "title": "100                                                                                                                     ",
-   "h1": "100                                                                                                                     ",
+   "title": "Certificate of Achievement in Front End Development/User",
+   "h1": "Certificate of Achievement in Front End Development/User",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4026,10 +4234,11 @@
     40
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "f416e54b6ed0ee58"
   },
   "listed": 8,
-  "text_chars": 13838
+  "text_chars": 11981
  },
  {
   "control_number": "38975",
@@ -4067,10 +4276,11 @@
     96
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "6d984dfe4f7c3252"
   },
   "listed": 5,
-  "text_chars": 5145
+  "text_chars": 5144
  },
  {
   "control_number": "39343",
@@ -4108,10 +4318,11 @@
     50
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "28ff5a15d89b8663"
   },
   "listed": 24,
-  "text_chars": 8059
+  "text_chars": 8058
  },
  {
   "control_number": "39369",
@@ -4140,10 +4351,11 @@
     96
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "c09a78e9e1c941e0"
   },
   "listed": 8,
-  "text_chars": 3538
+  "text_chars": 3537
  },
  {
   "control_number": "39758",
@@ -4167,7 +4379,8 @@
     95
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "73d8ae47e066b069"
   },
   "listed": 3,
   "text_chars": 5594
@@ -4200,7 +4413,8 @@
     8
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "30f037baf78b3ffd"
   },
   "listed": 9,
   "text_chars": 2287
@@ -4223,8 +4437,8 @@
   ],
   "source": {
    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=77",
-   "title": "The Certificate of Achievement in Video, Animation, and Motion Graphics",
-   "h1": "The Certificate of Achievement in Video, Animation, and Motion Graphics",
+   "title": "Certificate of Achievement in Video, Animation, and",
+   "h1": "Certificate of Achievement in Video, Animation, and",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4232,10 +4446,11 @@
     78
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "a76adaaa8dd5b938"
   },
   "listed": 7,
-  "text_chars": 13705
+  "text_chars": 13821
  },
  {
   "control_number": "39827",
@@ -4262,7 +4477,8 @@
     95
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "b55cd29fc570ab3a"
   },
   "listed": 6,
   "text_chars": 2124
@@ -4299,10 +4515,11 @@
     31
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "8cdfdcf76d9ca634"
   },
   "listed": 12,
-  "text_chars": 12764
+  "text_chars": 12762
  },
  {
   "control_number": "40034",
@@ -4335,10 +4552,11 @@
     69
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "49d38c523432e496"
   },
   "listed": 12,
-  "text_chars": 7258
+  "text_chars": 7257
  },
  {
   "control_number": "40035",
@@ -4384,10 +4602,11 @@
     69
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "ff07bf25ea492b25"
   },
   "listed": 25,
-  "text_chars": 6656
+  "text_chars": 6655
  },
  {
   "control_number": "40314",
@@ -4414,10 +4633,11 @@
     23
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "a83917b9fdf6d198"
   },
   "listed": 5,
-  "text_chars": 10115
+  "text_chars": 10114
  },
  {
   "control_number": "40371",
@@ -4468,18 +4688,19 @@
   ],
   "source": {
    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=97",
-   "title": "158                                                                                                                     ",
-   "h1": "158                                                                                                                     ",
+   "title": "Certificate of Completion in Foundations for",
+   "h1": "Certificate of Completion in Foundations for",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     97
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "dd82351dbcf0e85c"
   },
   "listed": 2,
-  "text_chars": 6587
+  "text_chars": 1184
  },
  {
   "control_number": "41055",
@@ -4505,10 +4726,11 @@
     100
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "9e9f47ff3956691d"
   },
   "listed": 4,
-  "text_chars": 10910
+  "text_chars": 10908
  },
  {
   "control_number": "41056",
@@ -4535,10 +4757,11 @@
     100
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "c2207dbe2ab9662a"
   },
   "listed": 5,
-  "text_chars": 12560
+  "text_chars": 12558
  },
  {
   "control_number": "41057",
@@ -4554,18 +4777,19 @@
   ],
   "source": {
    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=95",
-   "title": "156                                                                                                                     ",
-   "h1": "156                                                                                                                     ",
+   "title": "Certificate of Competency in Development of Self-Concept for",
+   "h1": "Certificate of Competency in Development of Self-Concept for",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     95
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "9c984a380c1e9442"
   },
   "listed": 3,
-  "text_chars": 5949
+  "text_chars": 3606
  },
  {
   "control_number": "41112",
@@ -4591,7 +4815,8 @@
     93
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "663910de546dbbee"
   },
   "listed": 5,
   "text_chars": 1799
@@ -4613,18 +4838,19 @@
   ],
   "source": {
    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=100",
-   "title": "The noncredit User Experience (UX) and Interface Design Certificate of",
-   "h1": "The noncredit User Experience (UX) and Interface Design Certificate of",
+   "title": "Certificate of Completion in User Experience (UX) and",
+   "h1": "Certificate of Completion in User Experience (UX) and",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     100
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "b1e73b424036c735"
   },
   "listed": 6,
-  "text_chars": 5366
+  "text_chars": 5485
  },
  {
   "control_number": "41124",
@@ -4639,18 +4865,19 @@
   ],
   "source": {
    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=98",
-   "title": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
-   "h1": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "title": "Certificate of Completion in Introduction to Permaculture, Design,",
+   "h1": "Certificate of Completion in Introduction to Permaculture, Design,",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     98
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "af871988019bc368"
   },
   "listed": 2,
-  "text_chars": 6061
+  "text_chars": 1930
  },
  {
   "control_number": "41245",
@@ -4673,7 +4900,8 @@
     39
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "9b4c0c7c987f0cfa"
   },
   "listed": 2,
   "text_chars": 5324
@@ -4696,8 +4924,8 @@
   ],
   "source": {
    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=35",
-   "title": "The Certificate of Achievement in Environmental Science and Technology is",
-   "h1": "The Certificate of Achievement in Environmental Science and Technology is",
+   "title": "Certificate of Achievement in Environmental Science",
+   "h1": "Certificate of Achievement in Environmental Science",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4705,10 +4933,11 @@
     36
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "3e21aee23ae1a07d"
   },
   "listed": 7,
-  "text_chars": 14560
+  "text_chars": 14661
  },
  {
   "control_number": "41470",
@@ -4739,10 +4968,11 @@
     16
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "cbe5e36444653438"
   },
   "listed": 10,
-  "text_chars": 7688
+  "text_chars": 7687
  },
  {
   "control_number": "41658",
@@ -4768,7 +4998,8 @@
     17
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "0630ec6d79ca16d8"
   },
   "listed": 5,
   "text_chars": 6199
@@ -4802,7 +5033,8 @@
     17
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "839bc6f9b8c2592a"
   },
   "listed": 10,
   "text_chars": 5126
@@ -4837,10 +5069,11 @@
     36
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "2c32b83148e49880"
   },
   "listed": 10,
-  "text_chars": 14254
+  "text_chars": 14251
  },
  {
   "control_number": "41888",
@@ -4870,10 +5103,11 @@
     78
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "0f2cfd404de0a554"
   },
   "listed": 8,
-  "text_chars": 11549
+  "text_chars": 11547
  },
  {
   "control_number": "41938",
@@ -4924,18 +5158,19 @@
   ],
   "source": {
    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=99",
-   "title": "Certificate of Completion in Smart Manufacturing Technology",
-   "h1": "Certificate of Completion in Smart Manufacturing Technology",
+   "title": "Certificate of Completion in Multilingual Learners in",
+   "h1": "Certificate of Completion in Multilingual Learners in",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     99
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "3780ec3a7b6df116"
   },
   "listed": 2,
-  "text_chars": 2843
+  "text_chars": 5412
  },
  {
   "control_number": "42776",
@@ -4974,10 +5209,11 @@
     61
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "979aabe98d43ee71"
   },
   "listed": 6,
-  "text_chars": 7498
+  "text_chars": 7496
  },
  {
   "control_number": "42924",
@@ -4994,20 +5230,27 @@
    "CNET175"
   ],
   "source": {
-   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=47",
-   "title": "108                                                                                                                     ",
-   "h1": "108                                                                                                                     ",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=22",
+   "title": "CYBERSECURITY",
+   "h1": "CYBERSECURITY",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    47,
-    48
+    22,
+    23,
+    24
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 22,
+    "share": 1.0
+   },
+   "text_sha": "3cb31af2838e692c"
   },
   "listed": 5,
-  "text_chars": 15397
+  "text_chars": 15474
  },
  {
   "control_number": "43042",
@@ -5036,7 +5279,8 @@
     25
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "e902ce15c2f7a728"
   },
   "listed": 7,
   "text_chars": 10011
@@ -5074,10 +5318,11 @@
     78
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "8b31f7f9a7b96df9"
   },
   "listed": 13,
-  "text_chars": 14193
+  "text_chars": 14191
  },
  {
   "control_number": "43403",
@@ -5115,10 +5360,11 @@
     20
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "475aae8d571ce4b3"
   },
   "listed": 16,
-  "text_chars": 15038
+  "text_chars": 15037
  },
  {
   "control_number": "43778",
@@ -5144,19 +5390,20 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=67",
-   "title": "128                                                                                                                     ",
-   "h1": "128                                                                                                                     ",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=66",
+   "title": "Associate in Science in Registered Nurse - Pre",
+   "h1": "Associate in Science in Registered Nurse - Pre",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    66,
     67,
     68,
-    69,
-    70
+    69
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "9150d271a239a01e"
   },
   "listed": 14,
   "text_chars": 16000
@@ -5182,10 +5429,11 @@
     94
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "45909804e005b27a"
   },
   "listed": 2,
-  "text_chars": 5151
+  "text_chars": 5150
  },
  {
   "control_number": "44099",
@@ -5216,10 +5464,11 @@
     100
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "7d83a9bd9fd4a3b3"
   },
   "listed": 10,
-  "text_chars": 2810
+  "text_chars": 2809
  },
  {
   "control_number": "44254",
@@ -5263,7 +5512,8 @@
     78
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "5da42fcad4ccaed4"
   },
   "listed": 23,
   "text_chars": 5121
@@ -5303,7 +5553,8 @@
     8
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "964f71d8636184d2"
   },
   "listed": 15,
   "text_chars": 13545
@@ -5329,19 +5580,21 @@
    "DAID112"
   ],
   "source": {
-   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=37",
-   "title": "98                                                                                                                      ",
-   "h1": "98                                                                                                                      ",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=36",
+   "title": "The Associate in Science in Film, Television, and Electronic Media for Transfer",
+   "h1": "The Associate in Science in Film, Television, and Electronic Media for Transfer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    36,
     37
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "4ef50f072579450f"
   },
   "listed": 11,
-  "text_chars": 8129
+  "text_chars": 8768
  },
  {
   "control_number": "44852",
@@ -5364,7 +5617,8 @@
     93
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "06720981610e80fe"
   },
   "listed": 2,
   "text_chars": 5354
@@ -5393,7 +5647,8 @@
     94
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "a0f6961356be80aa"
   },
   "listed": 5,
   "text_chars": 2160
@@ -5427,10 +5682,11 @@
     65
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "193ff24abf82ea02"
   },
   "listed": 10,
-  "text_chars": 7868
+  "text_chars": 7866
  },
  {
   "control_number": "45891",
@@ -5452,20 +5708,23 @@
    "MATH101B"
   ],
   "source": {
-   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=22",
-   "title": "Associate in Science in Computer Science",
-   "h1": "Associate in Science in Computer Science",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=20",
+   "title": "Associate in Science in Computer and Software Engineering",
+   "h1": "Associate in Science in Computer and Software Engineering",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    20,
+    21,
     22,
     23
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "9c5a6bf5791ccd38"
   },
   "listed": 10,
-  "text_chars": 13325
+  "text_chars": 16000
  },
  {
   "control_number": "45892",
@@ -5501,7 +5760,8 @@
     24
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "9ea7526fc4aec198"
   },
   "listed": 14,
   "text_chars": 13302
@@ -5524,18 +5784,19 @@
   ],
   "source": {
    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=25",
-   "title": "The courses in the Deaf Education - Early Intervention Studies Certificate of",
-   "h1": "The courses in the Deaf Education - Early Intervention Studies Certificate of",
+   "title": "Certificate of Achievement in Deaf Education –",
+   "h1": "Certificate of Achievement in Deaf Education –",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     25
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "21882317a23d632f"
   },
   "listed": 7,
-  "text_chars": 7072
+  "text_chars": 7178
  },
  {
   "control_number": "45894",
@@ -5567,10 +5828,11 @@
     18
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "1c8542508cca7569"
   },
   "listed": 11,
-  "text_chars": 3724
+  "text_chars": 3723
  },
  {
   "control_number": "45895",
@@ -5594,18 +5856,20 @@
    "PHYS141"
   ],
   "source": {
-   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=21",
-   "title": "82                                                                                                                      ",
-   "h1": "82                                                                                                                      ",
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=20",
+   "title": "Associate in Science in Computer and Software Engineering",
+   "h1": "Associate in Science in Computer and Software Engineering",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    20,
     21,
     22,
     23
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "9c5a6bf5791ccd38"
   },
   "listed": 12,
   "text_chars": 16000
@@ -5641,10 +5905,11 @@
     31
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "c15b8ba75938adf0"
   },
   "listed": 11,
-  "text_chars": 9872
+  "text_chars": 9870
  },
  {
   "control_number": "45898",
@@ -5669,18 +5934,19 @@
   ],
   "source": {
    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=54",
-   "title": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
-   "h1": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "title": "Associate in Science in Mechanical, Aerospace,",
+   "h1": "Associate in Science in Mechanical, Aerospace,",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     54
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "36fc5e3add711b38"
   },
   "listed": 12,
-  "text_chars": 7528
+  "text_chars": 7001
  },
  {
   "control_number": "45900",
@@ -5720,10 +5986,11 @@
     5
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "fe843a799e462307"
   },
   "listed": 7,
-  "text_chars": 3596
+  "text_chars": 3595
  },
  {
   "control_number": "45933",
@@ -5750,10 +6017,11 @@
     27
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "2d882afe25fb6a5b"
   },
   "listed": 6,
-  "text_chars": 3254
+  "text_chars": 3253
  },
  {
   "control_number": "46032",
@@ -5781,7 +6049,8 @@
     93
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "4f0d306f9442b5b8"
   },
   "listed": 7,
   "text_chars": 4258
@@ -5799,18 +6068,19 @@
   ],
   "source": {
    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=98",
-   "title": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
-   "h1": "2026-2027 OHLONE COLLEGE CATALOG                                                                                        ",
+   "title": "Certificate of Completion in Internship Preparation for",
+   "h1": "Certificate of Completion in Internship Preparation for",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     98
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "d790844d1f377cef"
   },
   "listed": 2,
-  "text_chars": 6061
+  "text_chars": 3275
  },
  {
   "control_number": "46034",
@@ -5829,26 +6099,12 @@
   "title": "Esports Entrepreneurship and Live Production - Game Design",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "DAID922",
-   "DAID925"
-  ],
-  "source": {
-   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=95",
-   "title": "156                                                                                                                     ",
-   "h1": "156                                                                                                                     ",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    95
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 2,
-  "text_chars": 5949
+  "text_chars": 0
  },
  {
   "control_number": "46103",
@@ -5871,7 +6127,8 @@
     94
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "6b02c8090924d075"
   },
   "listed": 2,
   "text_chars": 3515
@@ -5896,7 +6153,8 @@
     98
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "42c06abeb9c13b06"
   },
   "listed": 1,
   "text_chars": 5558
@@ -5914,18 +6172,19 @@
   ],
   "source": {
    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=99",
-   "title": "160                                                                                                                     ",
-   "h1": "160                                                                                                                     ",
+   "title": "Certificate of Completion in Multilingual Learners in",
+   "h1": "Certificate of Completion in Multilingual Learners in",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     99
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "3780ec3a7b6df116"
   },
   "listed": 2,
-  "text_chars": 5801
+  "text_chars": 5412
  },
  {
   "control_number": "46265",
@@ -5958,10 +6217,11 @@
     63
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "b99a4ca52c8b9790"
   },
   "listed": 11,
-  "text_chars": 15872
+  "text_chars": 15866
  },
  {
   "control_number": "46267",
@@ -5992,9 +6252,10 @@
     54
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "04765ac395412b17"
   },
   "listed": 9,
-  "text_chars": 12787
+  "text_chars": 12785
  }
 ]

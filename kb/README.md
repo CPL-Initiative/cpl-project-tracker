@@ -1068,3 +1068,14 @@ the Jev decision sheet, 30 rows, verified member-by-member against the live tabl
 one file an entry, under `receipts/index/`. The 141 committed before S680 moved
 to the bucket. Re-apply, fetch and the size limits:
 [`docs/reference/lanes/repo-size.md`](../docs/reference/lanes/repo-size.md).
+
+## Course flags, the confidence apply and the exhibits blocker list (2026-11-18, S683 daytime)
+
+- `_flags.py`: the one reader of the course flags (merged, retired, inactive, not applicable): `load_flags()` and
+  `hidden_card_ids()`, each file stamped `_ids_current_through`. Built by `_build_retired_cards.py`,
+  `_build_inactive_cards.py` and `_build_not_applicable.py` (#3519). A flagged card keeps its record and leaves the counts.
+- `_ccr_confidence_apply.py`: rules G and M from `_ccr_confidence_score.py`, a dry run by default; `--apply --expect`
+  stamps `coci_minted_courses.json` with before-values in `ccr_confidence_out/<date>/receipt.json`; `--undo --rule G|M`;
+  `--worklist` lists the moves that wait on a re-mint (#3513).
+- `exhibit_blocker_rules.py` writes `exhibit_blocker_rules_list.json`, the pair rows `_cred_rename_apply.py --pairs`
+  takes; the apply refuses a stale list (#3515).

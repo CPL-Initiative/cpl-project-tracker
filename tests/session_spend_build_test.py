@@ -51,6 +51,17 @@ m = ss.parse_line("$9.00 (Claude Opus 5.5 $8.00, sonnet-4 $1.00); 2026-11-20T01:
 check("a two-word or hyphenated model name reads whole", m["models"] == {"Claude Opus 5.5": 8.0, "sonnet-4": 1.0}, m["models"])
 with tempfile.TemporaryDirectory() as tmp:
     os.makedirs(os.path.join(tmp, "docs"))
+    with open(os.path.join(tmp, "docs", "session_900_handoff.md"), "w", encoding="utf-8") as f:
+        f.write("# You are SkyNight (Session 900)\n\nSpend: not available; 2026-11-20T01:00Z to 2026-11-20T02:00Z.\n\n"
+                "## Daytime session, SkyDay (S900 daytime), 2026-11-20\n\n### What shipped\n\n"
+                "Spend: $40.00 (Opus 5.5 $40.00); curation $30.00, infrastructure $10.00; "
+                "2026-11-20T14:00Z to 2026-11-20T23:00Z.\n\n## Later heading\n\nSpend: $1.00; 2026-11-21T01:00Z to 2026-11-21T02:00Z.\n")
+    got = ss.build(tmp)["sessions"]
+    check("a daytime section's Spend line is session N daytime's; the file's first line stays session N-1's",
+          [(s["session"], s.get("daytime", False), s["usd"]) for s in got] == [(899, False, None), (900, True, 40.0)], got)
+    check("the daytime line keeps its tags", got[-1].get("tags") == {"curation": 30.0, "infrastructure": 10.0}, got[-1])
+with tempfile.TemporaryDirectory() as tmp:
+    os.makedirs(os.path.join(tmp, "docs"))
     with open(os.path.join(tmp, "docs", "session_800_handoff.md"), "w", encoding="utf-8") as f:
         f.write("Spending notes: $5 ; 2026-11-20T01:00Z to 2026-11-20T02:00Z\n"
                 "Spend: `" + ss.EXAMPLE + "`\n"
@@ -90,6 +101,16 @@ n = ss.parse_line("not available; collection $5.00; 2026-11-18T00:10Z to 2026-11
 check("a line with no readout carries no tags", n and not n["available"] and "tags" not in n, n)
 p = ss.parse_line("$9.00 (Collection 2 $9.00); 2026-11-18T00:10Z to 2026-11-18T03:20Z.")
 check("a model named like a tag is a model, never a tag", p and "tags" not in p and p["models"] == {"Collection 2": 9.0}, p)
+e = ss.parse_line("$167 (estimate from token counts at list prices, priced in handoff 682); "
+                  "2026-11-18T06:12Z to 2026-11-18T09:49Z.")
+check("an estimate priced from token counts says so, and reads its total", e and e["usd"] == 167.0
+      and e.get("estimate") is True and e["models"] == {} and "tags" not in e, e)
+check("a line read from a cost readout carries no estimate key", "estimate" not in o and "estimate" not in g, o)
+# "estimated" and "estimates" mark an estimate too; a bare \bestimate\b missed both (COBIx on #3545).
+for word in ("estimated", "estimates"):
+    lm = ss.LINE.match("Spend: $40 (%s from token counts); 2026-11-19T01:00Z to 2026-11-19T02:00Z." % word)
+    ew = ss.parse_line(lm.group(1)) if lm else None
+    check("a line that says %r is an estimate" % word, ew and ew["usd"] == 40.0 and ew.get("estimate") is True, ew)
 with tempfile.TemporaryDirectory() as t:
     os.makedirs(os.path.join(t, "docs"))
     with open(os.path.join(t, "docs", "session_900_handoff.md"), "w") as f:

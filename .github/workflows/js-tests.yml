@@ -230,12 +230,21 @@ jobs:
       - name: Repo size guard (file, list, disk total, compressed growth)
         if: github.event_name == 'pull_request'
         env:
-          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          EVENT_BASE: ${{ github.event.pull_request.base.sha }}
         run: |
+          # The base is the merge commit's first parent: the exact main the PR was merged onto. The event's
+          # base.sha can sit a day or more behind on an older PR (#3511: afc29292 under a merge onto 5a7a6f24),
+          # which counts every main commit since as the PR's own growth. The event value stays as the fallback.
+          BASE_SHA=$(git cat-file -p HEAD | awk '/^parent /{print $2; exit}')
+          [ -n "$BASE_SHA" ] || BASE_SHA="$EVENT_BASE"
+          echo "comparing with $BASE_SHA (event base: $EVENT_BASE)"
           git fetch --no-tags --depth=1 origin "$BASE_SHA"
           python3 scripts/repo_size_guard.py --base "$BASE_SHA"
       - name: Repo size guard tests (a temporary repo the test builds)
         run: python3 tests/repo_size_guard_test.py
+      # The COBIx watcher calls only `gh api -X GET search/issues` (S683, Sam's ask relayed on #3358).
+      - name: COBIx watcher calls only GitHub search
+        run: python3 tests/cobix_watch_test.py
       # First Light contrast lint (Session 49) — verifies the live :root in
       # both HTMLs matches the blessed spec (prototype v1.6) and measures AA
       # on worst-case backdrops. Pure-stdlib python; part of this same
@@ -268,6 +277,10 @@ jobs:
       # grants. Pure-stdlib python; same non-required check.
       - name: Supabase table-grant lint (new and recreated tables carry grants)
         run: python3 tests/supabase_table_grants_test.py
+      # The Library's Public Library gate in the database (#3560, second read of #3572): the committed migration and
+      # its rollback run against a throwaway Postgres the test starts itself (SKIP when no binaries are present).
+      - name: Library publishing model against Postgres (set_public refuses with no passing check)
+        run: python3 tests/library_publishing_sql_proof.py
       # The runner-applied migration (Sam, Open Asks Sheet 74 card 2, 2026-10-13):
       # only a committed .sql under chatbox/, kb/ or supabase/, a migration name the
       # ledger accepts, and a receipt naming the file's sha256. Pure-stdlib python.
@@ -404,14 +417,34 @@ jobs:
       # record, counts that sum to the universe, levers that count their members. Pure stdlib.
       - name: Harvest gap census (one cause per program, levers count their members)
         run: python3 tests/harvest_gap_census_test.py
+      # Named gaps (S680; Sam, 2026-11-17: collect with gaps noted and confidence scores): the gap and its
+      # scores, the census counting the row collected, the guarded SQL. Pure stdlib.
+      - name: Named gaps (collected with the gap named, scored, counted collected)
+        run: python3 tests/program_named_gaps_test.py
       # The units rules (S680; Commons Clarity's Part A on #3480): a correction lands exactly or the record
       # stays as filed; A11's named gaps; the collection lane's colleges left out. Pure stdlib.
       - name: Units rules A1, A4, A5, A6, A8 and A11 (self-check, exact sums, named gaps)
         run: python3 tests/program_requirements_units_rules_test.py
+      # The S683 cheap-piles lists (#3358 section 2): A5's wrong answers are the self-check's own, key for key, and
+      # each of the 33 held-out records names a committed record and a gap from GAPS or none. Pure stdlib.
+      - name: Cheap piles S683 (A5's misses by cause, the 33 held-out records)
+        run: python3 tests/program_requirements_cheap_piles_s683_test.py
       # Discontinued programs (S680; Sam, 2026-11-17 on #3480): a program's own catalog section marks it,
       # or a prior year prints it and this year does not; flagged out of the gap, never deleted. Pure stdlib.
       - name: Discontinued programs (own-section mark, out of the gap, the file is current)
         run: python3 tests/program_discontinued_test.py
+      # The reader's page checks (S683; #3480 Source 7, file set 1 on #3510): a program whose filed record places
+      # none reads only a page printing its own title with its award, never descriptions or a GE page. Pure stdlib.
+      - name: Reader page checks, rules A to D (own heading, page types, every tab, not printed)
+        run: python3 tests/reader_page_checks_test.py
+      # Rule A's self-recall (S683 second reader): over the committed site records that place courses, rule A finds
+      # the own page of at least 75% and accepts at most 30 sister programs' pages. Reads the committed records.
+      - name: Reader page checks, rule A self-recall (own pages found, sister pages refused)
+        run: python3 tests/reader_page_checks_recall_test.py
+      # S683: after a paid re-read, the filed record stays wherever the re-read is worse (a filed pass above all), put
+      # back byte for byte from the base, so step=reread leaves that row alone. Pure stdlib and a fixture git repo.
+      - name: Program re-read, keep the better record
+        run: python3 tests/program_reread_keep_better_test.py
       # Why a program has no closed list (S644): one reason per program, from the committed
       # Program Course File and program export. Pure stdlib.
       - name: Harvest no-closed-list diagnosis (one reason per program)
@@ -700,6 +733,14 @@ jobs:
       # keeps its issuer, otherwise additive; a lead and its confirmed siblings fold in one run; the undo puts it back.
       - name: Credential fold issuer precedence and undo
         run: python3 tests/cred_rename_fold_issuer_test.py
+      # The pair re-point (COBIx's item 6, #3464, S678): one (MAP exhibit id + local title) moves and nothing beside it,
+      # a tap-only row never applies, the undo restores, and the committed list's batch counts stay as measured.
+      - name: Exhibit pair re-point list and apply
+        run: python3 tests/exhibit_repoint_test.py
+      # The blocker round's rules 1 and 2 (COBIx, #3480, S683): the cert-based twin of a course title and the referenced
+      # leftover kept in place, as pair rows; the counts, the 3-college tests, the guard, and the undo.
+      - name: Exhibit blocker rules 1 and 2
+        run: python3 tests/exhibit_blocker_rules_test.py
       # The fold's issuer decision stored as one issuer_resolution row per target and enforced nightly (#3116): the
       # interleavings around decided_at, a failed insert, a nightly between a failed apply and its retry, a second fold,
       # apply-nightly-undo; and the resolver defined once in Python and once in JavaScript.
@@ -1315,16 +1356,40 @@ jobs:
           python3 kb/_build_docs_index.py --check
           test_group_end
       # Dependency map (Sam's ruling A, 2026-08-29) — the dataset→consumers
-      # artifact every session's cross-impact flag depends on. `--check` turns
-      # "somebody forgot to rebuild after adding a fetch()" into a red check
-      # (same shape as the docs index above); the test guards the content —
-      # each of its checks is a failure mode the build actually hit, verified
-      # by perturbation against the live artifact. Pure-stdlib python; same
-      # non-required check.
-      - name: Dependency map — content guards + drift check
+      # artifact every session's cross-impact flag depends on. Since Sam's rule of
+      # 2026-11-18 ("No dependency-map rebuild inside PRs. kb/dependency_map.json and
+      # docs/reference/dependency_map.md are rebuilt by one job on main after each
+      # merge."), dependency-map.yml rebuilds it on main and a PR leaves it as main
+      # has it, so a map behind this tree is a notice here, never a failure. The
+      # step rebuilds the map in the runner and runs every test that reads it
+      # against that build, so a PR that adds an edge is tested on its own edges
+      # (the Commons status step above has the same shape). A builder that fails
+      # (exit 2: a coverage floor or an inventory error) still fails the step. The
+      # committed files are restored at the end. Pure-stdlib python.
+      - name: Dependency map rebuilt from this tree, then every test that reads it
         run: |
+          source scripts/test_group.sh
+          pip install --quiet pyyaml
+          rc=0
+          python3 kb/_build_dependency_map.py --check > /dev/null 2>&1 || rc=$?
+          if [ "$rc" -eq 1 ]; then
+            if [ "${{ github.event_name }}" = "pull_request" ]; then
+              echo "::notice title=Dependency map behind this PR::The committed map differs from this tree. Expected: dependency-map.yml rebuilds it on main after the merge (Sam, 2026-11-18). Do not commit it in the PR."
+            else
+              echo "::warning title=Dependency map behind main::The committed map differs from this tree. dependency-map.yml rebuilds it after each push to main; dispatch it if this stays."
+            fi
+          elif [ "$rc" -ne 0 ]; then
+            echo "::error::kb/_build_dependency_map.py --check exited $rc (not a stale map: the builder failed)"
+            exit 1
+          fi
+          python3 kb/_build_dependency_map.py || { echo "::error::kb/_build_dependency_map.py failed on this tree"; exit 1; }
+          readers=$(grep -l 'dependency_map\.json' tests/*.test.js | sort || true)
+          [ -n "$readers" ] || { echo "::error::no *.test.js reads kb/dependency_map.json; the reader search is wrong"; exit 1; }
           python3 tests/dependency_map_test.py
-          python3 kb/_build_dependency_map.py --check
+          python3 tests/dependency_map_on_main_test.py
+          for f in $readers; do node "$f" > "$RUNNER_TEMP/depmap_reader.log" 2>&1 || { tail -40 "$RUNNER_TEMP/depmap_reader.log"; echo "::error::$f fails on the map rebuilt from this tree"; false; }; done
+          git checkout -- kb/dependency_map.json docs/reference/dependency_map.md
+          test_group_end
       # E gate guards (Session 210) — pins the skip/run boundary from both
       # sides, re-derives which test files read inert (docs-shaped) paths and
       # requires each to run in the skip branch above, and keeps the

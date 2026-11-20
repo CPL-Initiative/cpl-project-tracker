@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7816,
+  "input_tokens": 7808,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7816,
-    "output_tokens": 2986,
+    "input_tokens": 7808,
+    "output_tokens": 3478,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2986,
+  "output_tokens": 3478,
   "output_tokens_details": {
-   "thinking_tokens": 1013
+   "thinking_tokens": 1454
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09098,
- "ms": 23992,
- "seconds": 24.4,
+ "cost_usd": 0.10079,
+ "ms": 28568,
+ "seconds": 28.9,
  "parts": null,
  "error": null,
  "score": {
@@ -121,7 +121,7 @@
    "pass": true
   },
   "careers": {
-   "count": 4,
+   "count": 3,
    "not_verbatim": [],
    "pass": true
   },
@@ -167,7 +167,6 @@
    ],
    "careers": [
     "educators",
-    "before and after school programs",
     "instructional assistants",
     "elementary or middle school teacher"
    ]
@@ -179,8 +178,8 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": 41,
-     "max": 43
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -246,7 +245,7 @@
      {
       "code": "ENGL C1000",
       "units": 3,
-      "units_max": 4,
+      "units_max": null,
       "alternatives": [
        {
         "code": "ENGL C1000H",
@@ -264,7 +263,7 @@
      {
       "code": "ENGL 301",
       "units": 3,
-      "units_max": 4,
+      "units_max": null,
       "alternatives": [
        {
         "code": "ENGL C1001",
@@ -361,7 +360,7 @@
   "missing_explained": [
    {
     "code": "BIOL 303",
-    "why": "not in the text; catalog lists BIOL C1000 instead"
+    "why": "not in the text; catalog requires BIOL C1000 instead"
    },
    {
     "code": "ENGWR 301",
@@ -369,7 +368,7 @@
    },
    {
     "code": "ENGWR 303",
-    "why": "not in the text"
+    "why": "not in the text; catalog prints ENGL C1003 as an option"
    },
    {
     "code": "ENGWR 481",
@@ -377,22 +376,54 @@
    },
    {
     "code": "HIST 310",
-    "why": "not in the text; catalog lists HIST C1001 instead"
+    "why": "not in the text; catalog prints HIST C1001"
    },
    {
     "code": "HIST 483",
-    "why": "not in the text; catalog lists HIST C1001H instead"
+    "why": "not in the text; catalog prints HIST C1001H"
    }
   ],
   "notes": [
-   "The 3 - 4 unit ranges on the ENGL C1000 and ENGL 301 rows are printed for the row as a whole; the higher figure reflects 4-unit alternatives (ESLW 340, ENGL C1003, ESL 350). Recorded as units 3, units_max 4 on the lead course.",
-   "GEOL 305 and GEOL 306 are printed as one 4-unit row joined by 'and'; recorded as two required courses (3 + 1).",
-   "Catalog prints ENGL 301 and ENGL 481 where the closed list has ENGWR 301 and ENGWR 481; recorded as printed with catalog_addition true. Likely a renumbering; reviewer should check.",
-   "Degree text says the A.A. requires the program plus Local GE or Cal-GETC 'plus sufficient electives for a total of at least 60 units'; read as a minimum degree requirement, so degree_total left null and electives_fill_degree set true.",
-   "No GE unit figure is printed.",
-   "Careers 'before and after school programs' is a work setting named in Career Information; reviewer may decide whether to keep it."
+   "The ENGL C1000 row and the ENGL 301 row each print a row total of 3 - 4 units reflecting the options (ESLW 340, ENGL C1003, ESL 350 at 4 units); each course's own printed units are recorded instead of the row range.",
+   "GEOL 305 (3) and GEOL 306 (1) are printed as one 'and' row totaling 4 units; recorded as two required courses.",
+   "Catalog uses ENGL 301/ENGL 481/HIST C1001 codes while the closed list stores ENGWR 301/ENGWR 481/HIST 310/HIST 483; likely renumbered courses, recorded as catalog additions.",
+   "ENGED 320 is printed with title 'Tutoring Elementary Students in Reading', closed list title 'Service Learning: Tutoring Elementary Students in Reading'.",
+   "Degree text says the A.A. requires the major plus Local GE or Cal-GETC plus sufficient electives for a total of at least 60 units; no printed degree total or GE units recorded, electives_fill_degree set true.",
+   "Career 'before and after school programs' is named as a work setting and was not recorded as a career; reviewer may wish to add it.",
+   "Student Learning Outcomes are printed for this program (the only award in the section)."
   ]
  },
- "extracted_run": 43693265189,
- "read_run": "39047245752"
+ "extracted_run": "44535418752",
+ "catalog_year": "2026-2027",
+ "source_sha": "f8d7f99a19886b0a",
+ "source_codes": [
+  "BIOL303",
+  "COMM361",
+  "COMMC1000",
+  "ECE312",
+  "ECE350",
+  "ENGED305",
+  "ENGED320",
+  "ENGED324",
+  "ENGLC1000",
+  "ENGLC1000H",
+  "ENGLC1001",
+  "ENGLC1001H",
+  "ENGWR301",
+  "ENGWR303",
+  "ENGWR481",
+  "ESL350",
+  "ESLW340",
+  "GEOL305",
+  "GEOL306",
+  "HIST307",
+  "HIST308",
+  "HIST310",
+  "HIST483",
+  "MATH310",
+  "POLSC1000",
+  "POLSC1000H",
+  "PSYC372"
+ ],
+ "source_coverage": 1.0
 }

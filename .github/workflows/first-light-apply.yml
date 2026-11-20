@@ -14,7 +14,7 @@ name: First Light apply
 #          from the open pull request's branch. tools/first_light_apply.mjs reads the marks up to the look's id
 #          through the tab's own resolver and writes the selection, the hero list (each with applied_through_mark_id, the highest mark it
 #          consumed), the three views' copies of the list and the story photos (fetched here, as cpl-stories.yml
-#          does); the manifest builder runs. The one pull request from the branch first-light-apply is opened, or,
+#          does), and a receipt in tools/first_light_applies/ of every mark it consumed (#3561); the manifest builder runs. The one pull request from the branch first-light-apply is opened, or,
 #          while it is open, updated by a commit on its branch (so words a session wrote there stay) with the new
 #          summary appended to its description. js-tests.yml is dispatched on the branch, since a push with the
 #          built-in token starts no workflow and a dispatch does (COBIx finding 3, fix a). Each request row is
@@ -120,6 +120,7 @@ jobs:
             /tools/first_light_selection.json
             /tools/first_light_candidates.json
             /tools/first_light_gallery/index.json
+            /tools/first_light_applies/
       - uses: actions/setup-node@v7
         with:
           node-version: '20'
@@ -201,7 +202,7 @@ jobs:
           OPEN_URL: ${{ steps.open.outputs.url }}
         run: |
           set -euo pipefail
-          git add -A tools/first_light_selection.json first_light.js library/photos cpl_pathways.js library/index.html library/adopt/index.html
+          git add -A tools/first_light_selection.json tools/first_light_applies first_light.js library/photos cpl_pathways.js library/index.html library/adopt/index.html
           if git diff --cached --quiet; then echo "outcome=nothing" >> "$GITHUB_OUTPUT"; exit 0; fi
           git commit -q -m "First Light: apply the tab's marks (requests ${REQ_IDS:-none, by dispatch})" -m "Opened by first-light-apply.yml from first_light_marks. Sam merges; nothing auto-merges."
           auth="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)"

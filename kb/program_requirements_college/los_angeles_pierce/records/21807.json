@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "CAOT: General Administrative",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=102",
+ "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=103",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12009,
+  "input_tokens": 11833,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12009,
-    "output_tokens": 2324,
+    "input_tokens": 11833,
+    "output_tokens": 2407,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2324,
+  "output_tokens": 2407,
   "output_tokens_details": {
-   "thinking_tokens": 686
+   "thinking_tokens": 738
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09452,
- "ms": 17709,
- "seconds": 18.0,
+ "cost_usd": 0.09547,
+ "ms": 19213,
+ "seconds": 19.4,
  "parts": null,
  "error": null,
  "score": {
@@ -88,17 +88,11 @@
    "program": 5,
    "courses": 0,
    "count": 5,
-   "not_verbatim": [
-    "Demonstrate competence in the use of state-of-the-art business-related software to create documents, spreadsheets, presentations, databases, and financial records.",
-    "Compose and create business documents—such as letters, memos, e-mail messages, reports, graphs and charts—using correct grammar, spelling, punctuation, language style, and formats."
-   ],
-   "why": [
-    "not in the catalog text as printed: Demonstrate competence in the use of state-of-the-art business-related software ",
-    "not in the catalog text as printed: Compose and create business documents-such as letters, memos, e-mail messages, r"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 2,
@@ -108,11 +102,11 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "CAOT: GENERAL ADMINISTRATIVE Certificate of Achievement (STATE CODE 21807)",
+   "section_heading": "CAOT: General Administrative",
    "measure": "units",
    "total_units": {
     "min": 41,
@@ -274,7 +268,7 @@
     ]
    },
    {
-    "name": "Select 3 semester units from the following",
+    "name": "Select 3 semester units from the following:",
     "rule": "choose_units",
     "minimum": 3,
     "option_group": null,
@@ -324,12 +318,34 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Read the Certificate of Achievement section (state code 21807) on page 103; the A.A. section on page 102 prints the same course list and the same outcomes with a major total of 41.",
-   "The catalog prints codes with leading zeros (CAOT 002, ACCTG 001); these match closed-list codes CAOT 2, ACCTG 1, etc., so they are not marked as catalog additions.",
-   "CAOT 032 is marked with an asterisk referring to prerequisites/corequisites in the course description.",
-   "Block units sum to the printed total: 11 + 18 + 9 + 3 = 41.",
-   "Careers drawn from the program description ('qualify for intermediate office positions and lays the foundation for entry into office management positions'); the Gainful Employment section only refers to an external website."
+   "The program's title heading is cut off before page 103 in the extracted text; the section begins at '(STATE CODE 21807)'. section_heading is taken from the award table row 'CAOT: General Administrative Certificate'.",
+   "Catalog prints codes zero-padded (e.g., CAOT 002, ACCTG 001); these were matched to closed-list codes CAOT 2, ACCTG 1 etc. and not flagged as additions.",
+   "The section prints two headings 'CERTIFICATE - REQUIRED COURSES'; the first is a table header over 'ENTRY-LEVEL COURSES', the second heads the middle required list.",
+   "CAOT 032 is marked with * for prerequisites/corequisites.",
+   "Block units sum to 41 (11+18+9+3), matching the printed certificate total of 41.",
+   "Careers recorded from the program description ('intermediate office positions', 'office management positions'); the Gainful Employment section only refers to an external website."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": "44475498778",
+ "catalog_year": "2026-2027",
+ "source_sha": "e311eb34c68a15b4",
+ "source_codes": [
+  "ACCTG1",
+  "CAOT113",
+  "CAOT2",
+  "CAOT31",
+  "CAOT32",
+  "CAOT34",
+  "CAOT39",
+  "CAOT67",
+  "CAOT78",
+  "CAOT79",
+  "CAOT82",
+  "CAOT85",
+  "CAOT86",
+  "CAOT88",
+  "CAOT92",
+  "CAOT96"
+ ],
+ "source_coverage": 1.0
 }

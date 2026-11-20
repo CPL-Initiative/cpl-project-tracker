@@ -27,10 +27,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "faf4f827fb2fca0f"
+   "text_sha": "0b110c173bdfded9"
   },
   "listed": 6,
-  "text_chars": 11527
+  "text_chars": 11534
  },
  {
   "control_number": "06509",
@@ -71,10 +71,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "c7a9210c1276fd7a"
+   "text_sha": "405fc1a7aa8e8305"
   },
   "listed": 17,
-  "text_chars": 11181
+  "text_chars": 11184
  },
  {
   "control_number": "06510",
@@ -107,10 +107,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "931fd8fb6f9aa822"
+   "text_sha": "82e918195c05f81b"
   },
   "listed": 10,
-  "text_chars": 6361
+  "text_chars": 6364
  },
  {
   "control_number": "06512",
@@ -169,10 +169,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "f103bd2c8d43e8f1"
+   "text_sha": "ee0822276074aa9a"
   },
   "listed": 12,
-  "text_chars": 6396
+  "text_chars": 6400
  },
  {
   "control_number": "06516",
@@ -210,7 +210,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "9d99dac1209efe09"
+   "text_sha": "775a4ec81235e51b"
   },
   "listed": 16,
   "text_chars": 16000
@@ -238,10 +238,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "af48cf73b81af98f"
+   "text_sha": "fe416a91be8c1ba2"
   },
   "listed": 2,
-  "text_chars": 7822
+  "text_chars": 7827
  },
  {
   "control_number": "06518",
@@ -273,7 +273,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "6cdb2f832605033c"
+   "text_sha": "cf77b17727861167"
   },
   "listed": 9,
   "text_chars": 8607
@@ -322,7 +322,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "2256a68bf618ca37"
+   "text_sha": "feb4173f8bbe67d7"
   },
   "listed": 21,
   "text_chars": 16000
@@ -362,7 +362,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "a28adf3276942bf9"
+   "text_sha": "996358987fae4355"
   },
   "listed": 12,
   "text_chars": 16000
@@ -397,10 +397,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "02d0c10e42ca60aa"
+   "text_sha": "40294c6d8d3a1cd1"
   },
   "listed": 8,
-  "text_chars": 10299
+  "text_chars": 10304
  },
  {
   "control_number": "06525",
@@ -428,10 +428,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "92262e3e709f3583"
+   "text_sha": "2aaaad6a7a4d82d4"
   },
   "listed": 5,
-  "text_chars": 9205
+  "text_chars": 9208
  },
  {
   "control_number": "06526",
@@ -460,10 +460,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "cb80a66d77d85539"
+   "text_sha": "73f9423ac1faf4b1"
   },
   "listed": 5,
-  "text_chars": 8577
+  "text_chars": 8580
  },
  {
   "control_number": "06529",
@@ -494,10 +494,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "1db229d2f1d3c621"
+   "text_sha": "9eededfa42c911d2"
   },
   "listed": 8,
-  "text_chars": 7211
+  "text_chars": 7214
  },
  {
   "control_number": "06530",
@@ -550,7 +550,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "3fd2421273058894"
+   "text_sha": "6f9b23cf2d5982b1"
   },
   "listed": 24,
   "text_chars": 3222
@@ -606,7 +606,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "1aa95b01d5e5f6d1"
+   "text_sha": "77f941f15529a9b7"
   },
   "listed": 29,
   "text_chars": 16000
@@ -616,30 +616,12 @@
   "title": "Graphic Design & Illustration",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.5,
-  "codes_found": [
-   "ART14",
-   "ART15",
-   "ART4",
-   "ART6",
-   "ART7"
-  ],
-  "source": {
-   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=76",
-   "title": "75",
-   "h1": "75",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    76
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "df80acd08a662556"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 10,
-  "text_chars": 4655
+  "text_chars": 0
  },
  {
   "control_number": "06538",
@@ -684,10 +666,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "47540c44b6be6c21"
+   "text_sha": "4948f54a9028bbba"
   },
   "listed": 23,
-  "text_chars": 13542
+  "text_chars": 13548
  },
  {
   "control_number": "06539",
@@ -719,10 +701,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "62a1efcc57e69e32"
+   "text_sha": "34816fa44e5436fa"
   },
   "listed": 8,
-  "text_chars": 10686
+  "text_chars": 10690
  },
  {
   "control_number": "06541",
@@ -733,29 +715,32 @@
   "coverage": 0.833,
   "codes_found": [
    "SPAN1",
+   "SPAN101",
    "SPAN11",
    "SPAN2",
-   "SPAN3",
-   "SPAN4"
+   "SPAN3"
   ],
   "source": {
-   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=350",
-   "title": "Associate in Arts in Spanish for Transfer (ADT: A.A.-T)",
-   "h1": "Associate in Arts in Spanish for Transfer (ADT: A.A.-T)",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=340",
+   "title": "Spanish (AA-T)",
+   "h1": "Spanish (AA-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    350,
-    351,
-    352,
-    353
+    340,
+    341
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "853f2998c1be56a9"
+   "page_check": {
+    "rule": "A",
+    "page": 340,
+    "share": 0.833
+   },
+   "text_sha": "3904ab7b3b67a920"
   },
   "listed": 6,
-  "text_chars": 13246
+  "text_chars": 5033
  },
  {
   "control_number": "06542",
@@ -788,10 +773,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "dd24b97f2c948e13"
+   "text_sha": "16b269df70dc55bc"
   },
   "listed": 11,
-  "text_chars": 4086
+  "text_chars": 4085
  },
  {
   "control_number": "06545",
@@ -835,7 +820,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "492ccdbaefc7a06f"
+   "text_sha": "869ca16f4374feb7"
   },
   "listed": 19,
   "text_chars": 16000
@@ -883,10 +868,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "d90e16ecacc2066a"
+   "text_sha": "aaaa29e1e03b014f"
   },
   "listed": 22,
-  "text_chars": 8431
+  "text_chars": 8432
  },
  {
   "control_number": "06548",
@@ -912,10 +897,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "92b4b24a54e87d4c"
+   "text_sha": "e719b30f185c4ad2"
   },
   "listed": 2,
-  "text_chars": 9756
+  "text_chars": 9758
  },
  {
   "control_number": "06549",
@@ -954,10 +939,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "cd6d4ef28a53beb5"
+   "text_sha": "9bd69dcd1c33b137"
   },
   "listed": 15,
-  "text_chars": 15041
+  "text_chars": 15051
  },
  {
   "control_number": "06550",
@@ -993,7 +978,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "db7425517f20c294"
+   "text_sha": "8e49375c9b40f917"
   },
   "listed": 11,
   "text_chars": 16000
@@ -1032,7 +1017,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "db7425517f20c294"
+   "text_sha": "8e49375c9b40f917"
   },
   "listed": 11,
   "text_chars": 16000
@@ -1042,33 +1027,12 @@
   "title": "Early Childhood Education",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.727,
-  "codes_found": [
-   "CDEVC1000",
-   "CDFS50",
-   "CDFS53",
-   "CDFS54",
-   "CDFS62",
-   "CDFS63",
-   "CDFS64",
-   "CDFS65"
-  ],
-  "source": {
-   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=77",
-   "title": "76",
-   "h1": "76",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    77
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "6b91d7527469f7e1"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 11,
-  "text_chars": 4849
+  "text_chars": 0
  },
  {
   "control_number": "06553",
@@ -1101,10 +1065,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "0ef7158682af59a0"
+   "text_sha": "e09d35fd10122ad6"
   },
   "listed": 9,
-  "text_chars": 8655
+  "text_chars": 8663
  },
  {
   "control_number": "06555",
@@ -1143,8 +1107,8 @@
   ],
   "source": {
    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=275",
-   "title": "Students who complete the Ethnic Studies A.A. are well prepared to transfer to four-year universiƟ es as ethnic",
-   "h1": "Students who complete the Ethnic Studies A.A. are well prepared to transfer to four-year universiƟ es as ethnic",
+   "title": "Ethnic Studies",
+   "h1": "Ethnic Studies",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1155,10 +1119,15 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "131453bdc2b7ee31"
+   "page_check": {
+    "rule": "A",
+    "page": 275,
+    "share": 0.963
+   },
+   "text_sha": "e5c35e2ed54d7131"
   },
   "listed": 27,
-  "text_chars": 14203
+  "text_chars": 15152
  },
  {
   "control_number": "06559",
@@ -1182,10 +1151,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "37299733690962c4"
+   "text_sha": "778d3eb05cc09dbf"
   },
   "listed": 2,
-  "text_chars": 3706
+  "text_chars": 3707
  },
  {
   "control_number": "07790",
@@ -1227,10 +1196,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "3ec33f2429b98ef5"
+   "text_sha": "fcfba31059371372"
   },
   "listed": 19,
-  "text_chars": 7141
+  "text_chars": 7148
  },
  {
   "control_number": "07793",
@@ -1265,7 +1234,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "6ee0c2f60e57aa76"
+   "text_sha": "48e9d5856d5afb22"
   },
   "listed": 10,
   "text_chars": 16000
@@ -1299,10 +1268,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "8824d68690f7bdc2"
+   "text_sha": "599bd1b9f9cdd2be"
   },
   "listed": 8,
-  "text_chars": 7206
+  "text_chars": 7216
  },
  {
   "control_number": "07800",
@@ -1349,7 +1318,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "95621d96763fbf38"
+   "text_sha": "87e284de6eab257e"
   },
   "listed": 22,
   "text_chars": 16000
@@ -1384,10 +1353,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "79c8a876ab6540cc"
+   "text_sha": "ed07e2fc32fcf3a5"
   },
   "listed": 7,
-  "text_chars": 13443
+  "text_chars": 13444
  },
  {
   "control_number": "08337",
@@ -1426,10 +1395,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "c941dc2990d3b409"
+   "text_sha": "e02d6ab67d3a9067"
   },
   "listed": 16,
-  "text_chars": 10789
+  "text_chars": 10788
  },
  {
   "control_number": "10463",
@@ -1470,7 +1439,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "d97c94186d25180b"
+   "text_sha": "608ad41e67811dd3"
   },
   "listed": 23,
   "text_chars": 7506
@@ -1523,7 +1492,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "6ee0c2f60e57aa76"
+   "text_sha": "48e9d5856d5afb22"
   },
   "listed": 13,
   "text_chars": 16000
@@ -1560,37 +1529,22 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "227ab21fd2a1f1c3"
+   "text_sha": "6f622c17387ed949"
   },
   "listed": 11,
-  "text_chars": 8305
+  "text_chars": 8306
  },
  {
   "control_number": "18535",
   "title": "Interdisciplinary Studies: Science & Quantitative Reasoning",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "CHEM3",
-   "CHEM4"
-  ],
-  "source": {
-   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=155",
-   "title": "154",
-   "h1": "154",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    155
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "a6db65c37ab4cade"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 2,
-  "text_chars": 4413
+  "text_chars": 0
  },
  {
   "control_number": "18616",
@@ -1638,10 +1592,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "da84364942471b6e"
+   "text_sha": "3b08c13bff6d550d"
   },
   "listed": 12,
-  "text_chars": 5332
+  "text_chars": 5336
  },
  {
   "control_number": "19633",
@@ -1676,10 +1630,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "a475c0bb810d15f4"
+   "text_sha": "563d8a288e8bd3fd"
   },
   "listed": 10,
-  "text_chars": 13126
+  "text_chars": 13130
  },
  {
   "control_number": "20947",
@@ -1709,10 +1663,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "faf4f827fb2fca0f"
+   "text_sha": "0b110c173bdfded9"
   },
   "listed": 6,
-  "text_chars": 11527
+  "text_chars": 11534
  },
  {
   "control_number": "20953",
@@ -1745,10 +1699,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "931fd8fb6f9aa822"
+   "text_sha": "82e918195c05f81b"
   },
   "listed": 10,
-  "text_chars": 6361
+  "text_chars": 6364
  },
  {
   "control_number": "20955",
@@ -1789,10 +1743,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "196d5d5a2cf9da03"
+   "text_sha": "2e8ea46be7ae5c53"
   },
   "listed": 17,
-  "text_chars": 11820
+  "text_chars": 11824
  },
  {
   "control_number": "20956",
@@ -1825,10 +1779,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "6a2509b3c821fdb5"
+   "text_sha": "c32d18e511b3a850"
   },
   "listed": 8,
-  "text_chars": 13810
+  "text_chars": 13822
  },
  {
   "control_number": "20957",
@@ -1864,10 +1818,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "479f5cffc764f374"
+   "text_sha": "c0407b0bcae6166a"
   },
   "listed": 13,
-  "text_chars": 8102
+  "text_chars": 8110
  },
  {
   "control_number": "20958",
@@ -1900,10 +1854,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "0e9e1ca3b0c80159"
+   "text_sha": "e7b79f6724faf7de"
   },
   "listed": 8,
-  "text_chars": 12332
+  "text_chars": 12342
  },
  {
   "control_number": "20959",
@@ -1940,10 +1894,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "c1b017b23fc03bcd"
+   "text_sha": "3faf024940e6ef13"
   },
   "listed": 12,
-  "text_chars": 14108
+  "text_chars": 14124
  },
  {
   "control_number": "20960",
@@ -1978,10 +1932,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "e514506fea2ed111"
+   "text_sha": "e1a2d32b7628e972"
   },
   "listed": 12,
-  "text_chars": 7253
+  "text_chars": 7259
  },
  {
   "control_number": "20961",
@@ -2015,10 +1969,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "e6d3a72a1062f9ae"
+   "text_sha": "594724401bacd349"
   },
   "listed": 11,
-  "text_chars": 9056
+  "text_chars": 9058
  },
  {
   "control_number": "20962",
@@ -2046,10 +2000,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "91c052c1c6c07f56"
+   "text_sha": "020fd69d3d14909a"
   },
   "listed": 11,
-  "text_chars": 4400
+  "text_chars": 4404
  },
  {
   "control_number": "20966",
@@ -2084,7 +2038,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "6ee0c2f60e57aa76"
+   "text_sha": "48e9d5856d5afb22"
   },
   "listed": 10,
   "text_chars": 16000
@@ -2131,7 +2085,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "4f1b8ef48efc766d"
+   "text_sha": "8bd0a6f7951958c7"
   },
   "listed": 19,
   "text_chars": 16000
@@ -2167,7 +2121,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "6ee0c2f60e57aa76"
+   "text_sha": "48e9d5856d5afb22"
   },
   "listed": 8,
   "text_chars": 16000
@@ -2200,7 +2154,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "4d2e1f7fe720c8ee"
+   "text_sha": "22a7982c89af7e60"
   },
   "listed": 5,
   "text_chars": 16000
@@ -2235,10 +2189,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "02d0c10e42ca60aa"
+   "text_sha": "40294c6d8d3a1cd1"
   },
   "listed": 8,
-  "text_chars": 10299
+  "text_chars": 10304
  },
  {
   "control_number": "20974",
@@ -2266,10 +2220,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "92262e3e709f3583"
+   "text_sha": "2aaaad6a7a4d82d4"
   },
   "listed": 5,
-  "text_chars": 9205
+  "text_chars": 9208
  },
  {
   "control_number": "20975",
@@ -2298,10 +2252,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "02d0c10e42ca60aa"
+   "text_sha": "40294c6d8d3a1cd1"
   },
   "listed": 5,
-  "text_chars": 10299
+  "text_chars": 10304
  },
  {
   "control_number": "20977",
@@ -2338,10 +2292,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "eb000ed1b1aba06a"
+   "text_sha": "0a5dc105ba268c6e"
   },
   "listed": 12,
-  "text_chars": 14937
+  "text_chars": 14946
  },
  {
   "control_number": "20978",
@@ -2369,10 +2323,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "53e45ee65ccf814c"
+   "text_sha": "ddd68db3a1b003ac"
   },
   "listed": 5,
-  "text_chars": 8120
+  "text_chars": 8124
  },
  {
   "control_number": "20981",
@@ -2409,10 +2363,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "e879b646703d3978"
+   "text_sha": "8a9176ba70f9bdad"
   },
   "listed": 14,
-  "text_chars": 9164
+  "text_chars": 9170
  },
  {
   "control_number": "20982",
@@ -2456,7 +2410,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "95621d96763fbf38"
+   "text_sha": "87e284de6eab257e"
   },
   "listed": 19,
   "text_chars": 16000
@@ -2466,33 +2420,12 @@
   "title": "Early Childhood Education",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.667,
-  "codes_found": [
-   "CDEVC1000",
-   "CDFS50",
-   "CDFS53",
-   "CDFS54",
-   "CDFS62",
-   "CDFS63",
-   "CDFS64",
-   "CDFS65"
-  ],
-  "source": {
-   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=77",
-   "title": "76",
-   "h1": "76",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    77
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "6b91d7527469f7e1"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 12,
-  "text_chars": 4849
+  "text_chars": 0
  },
  {
   "control_number": "20989",
@@ -2522,10 +2455,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "033c7d44f3c6d00b"
+   "text_sha": "ea06188a4297ac52"
   },
   "listed": 7,
-  "text_chars": 6875
+  "text_chars": 6873
  },
  {
   "control_number": "20990",
@@ -2561,7 +2494,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "db7425517f20c294"
+   "text_sha": "8e49375c9b40f917"
   },
   "listed": 11,
   "text_chars": 16000
@@ -2600,7 +2533,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "db7425517f20c294"
+   "text_sha": "8e49375c9b40f917"
   },
   "listed": 11,
   "text_chars": 16000
@@ -2624,8 +2557,8 @@
   ],
   "source": {
    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=282",
-   "title": "CERTIFICATE OF ACHIEVEMENT",
-   "h1": "CERTIFICATE OF ACHIEVEMENT",
+   "title": "Fire Technology (AS)",
+   "h1": "Fire Technology (AS)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2636,10 +2569,15 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "5f12e7221942e3a3"
+   "page_check": {
+    "rule": "A",
+    "page": 282,
+    "share": 0.667
+   },
+   "text_sha": "c365922087e22f2e"
   },
   "listed": 9,
-  "text_chars": 10755
+  "text_chars": 10785
  },
  {
   "control_number": "30034",
@@ -2673,10 +2611,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "ae9089488eee2334"
+   "text_sha": "835e7a2c4a650900"
   },
   "listed": 10,
-  "text_chars": 12003
+  "text_chars": 12010
  },
  {
   "control_number": "30184",
@@ -2720,10 +2658,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "907442c82e2f5646"
+   "text_sha": "118affd3ec8117d6"
   },
   "listed": 19,
-  "text_chars": 14471
+  "text_chars": 14469
  },
  {
   "control_number": "30185",
@@ -2767,10 +2705,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "12c4a6e84b92e7b3"
+   "text_sha": "12fb924133bc8f19"
   },
   "listed": 19,
-  "text_chars": 15522
+  "text_chars": 15521
  },
  {
   "control_number": "30417",
@@ -2801,10 +2739,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "91c052c1c6c07f56"
+   "text_sha": "020fd69d3d14909a"
   },
   "listed": 9,
-  "text_chars": 4400
+  "text_chars": 4404
  },
  {
   "control_number": "30671",
@@ -2822,20 +2760,28 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=78",
-   "title": "77",
-   "h1": "77",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=336",
+   "title": "Mathematics",
+   "h1": "Mathematics",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    78
+    336,
+    337,
+    338,
+    339
    ],
    "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "481fbd8022083477"
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 336,
+    "share": 1.0
+   },
+   "text_sha": "c4ebe73eafc0ee2b"
   },
   "listed": 6,
-  "text_chars": 4188
+  "text_chars": 15982
  },
  {
   "control_number": "30678",
@@ -2869,10 +2815,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "af2115f28ef7aa0e"
+   "text_sha": "2a11abea945deb5c"
   },
   "listed": 9,
-  "text_chars": 9903
+  "text_chars": 9907
  },
  {
   "control_number": "31659",
@@ -2905,43 +2851,22 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "ce671fa854f5ee0d"
+   "text_sha": "a8dc9a9a9525f634"
   },
   "listed": 8,
-  "text_chars": 15172
+  "text_chars": 15175
  },
  {
   "control_number": "31761",
   "title": "Early Childhood Education",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "CDEVC1000",
-   "CDFS50",
-   "CDFS53",
-   "CDFS54",
-   "CDFS62",
-   "CDFS63",
-   "CDFS64",
-   "CDFS65"
-  ],
-  "source": {
-   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=77",
-   "title": "76",
-   "h1": "76",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    77
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "6b91d7527469f7e1"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 8,
-  "text_chars": 4849
+  "text_chars": 0
  },
  {
   "control_number": "32121",
@@ -2996,10 +2921,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "12022e13aca4849d"
+   "text_sha": "1001aa7bec3f7d7d"
   },
   "listed": 32,
-  "text_chars": 15824
+  "text_chars": 15825
  },
  {
   "control_number": "32126",
@@ -3043,10 +2968,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "4bb6a6080e68daa6"
+   "text_sha": "3f4e24217fa845d1"
   },
   "listed": 21,
-  "text_chars": 10054
+  "text_chars": 10053
  },
  {
   "control_number": "32475",
@@ -3064,20 +2989,28 @@
    "PHYS8"
   ],
   "source": {
-   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=145",
-   "title": "major in astronomy/astrophysics or double major in astronomy and physics to the university. Transfer level astronomy",
-   "h1": "major in astronomy/astrophysics or double major in astronomy and physics to the university. Transfer level astronomy",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=402",
+   "title": "Physics 2.0 (AS-T)",
+   "h1": "Physics 2.0 (AS-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    145
+    402,
+    403,
+    404,
+    405
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "f900798eacb6c6ab"
+   "page_check": {
+    "rule": "A",
+    "page": 402,
+    "share": 1.0
+   },
+   "text_sha": "9a2dcd9e35386cf6"
   },
   "listed": 6,
-  "text_chars": 3493
+  "text_chars": 13716
  },
  {
   "control_number": "32495",
@@ -3114,10 +3047,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "d95e9454f888c3e0"
+   "text_sha": "124a7f161122527b"
   },
   "listed": 12,
-  "text_chars": 12775
+  "text_chars": 12781
  },
  {
   "control_number": "32903",
@@ -3151,7 +3084,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "13dbc550345f881d"
+   "text_sha": "51e253bff44d8ac1"
   },
   "listed": 9,
   "text_chars": 16000
@@ -3195,10 +3128,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "c0afe961cb913632"
+   "text_sha": "ebfd693e8714a225"
   },
   "listed": 16,
-  "text_chars": 11367
+  "text_chars": 11374
  },
  {
   "control_number": "32918",
@@ -3275,7 +3208,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "26d154a3a8c11134"
+   "text_sha": "3232a387d747bcfe"
   },
   "listed": 52,
   "text_chars": 16000
@@ -3320,7 +3253,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "bbe4428298d08eb2"
+   "text_sha": "e88ac6e5e1ecae8c"
   },
   "listed": 17,
   "text_chars": 16000
@@ -3354,10 +3287,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "795558477b1ece19"
+   "text_sha": "db8f6dbed036c3c7"
   },
   "listed": 7,
-  "text_chars": 9099
+  "text_chars": 9102
  },
  {
   "control_number": "32937",
@@ -3393,10 +3326,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "a0de0a1a368d6c5f"
+   "text_sha": "e0736e8904f84901"
   },
   "listed": 11,
-  "text_chars": 12863
+  "text_chars": 12865
  },
  {
   "control_number": "32992",
@@ -3436,10 +3369,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "5950719b24031689"
+   "text_sha": "e0baf0003daf8e10"
   },
   "listed": 15,
-  "text_chars": 14473
+  "text_chars": 14474
  },
  {
   "control_number": "33291",
@@ -3471,44 +3404,22 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "853f2998c1be56a9"
+   "text_sha": "0a4e93deb187862d"
   },
   "listed": 7,
-  "text_chars": 13246
+  "text_chars": 13256
  },
  {
   "control_number": "33305",
   "title": "Business Administration",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
-  "coverage": 0.778,
-  "codes_found": [
-   "ACCT1",
-   "ACCT2",
-   "BUS18",
-   "BUS5",
-   "ECONC2001",
-   "ECONC2002",
-   "STATC1000"
-  ],
-  "source": {
-   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=76",
-   "title": "75",
-   "h1": "75",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    76,
-    77,
-    78
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "5000eaf097061943"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 9,
-  "text_chars": 13696
+  "text_chars": 0
  },
  {
   "control_number": "33373",
@@ -3548,10 +3459,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "94582b7a680e9260"
+   "text_sha": "e1040f5398318755"
   },
   "listed": 15,
-  "text_chars": 11875
+  "text_chars": 11876
  },
  {
   "control_number": "33378",
@@ -3585,10 +3496,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "5004b42113af9248"
+   "text_sha": "6c99ef1b0f244710"
   },
   "listed": 10,
-  "text_chars": 10395
+  "text_chars": 10402
  },
  {
   "control_number": "35213",
@@ -3638,10 +3549,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "9c4f9d4bf65d573f"
+   "text_sha": "750f94fc65cbe572"
   },
   "listed": 31,
-  "text_chars": 4332
+  "text_chars": 4333
  },
  {
   "control_number": "35259",
@@ -3667,10 +3578,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "868353e39806d721"
+   "text_sha": "6dc07bf84f1edfcc"
   },
   "listed": 4,
-  "text_chars": 2950
+  "text_chars": 2952
  },
  {
   "control_number": "35517",
@@ -3699,10 +3610,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "62c151e74b3730cf"
+   "text_sha": "848ab6763adb9037"
   },
   "listed": 4,
-  "text_chars": 14021
+  "text_chars": 14030
  },
  {
   "control_number": "35683",
@@ -3741,10 +3652,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "1015264c112ab4cd"
+   "text_sha": "cbe83f039883fb3b"
   },
   "listed": 15,
-  "text_chars": 11265
+  "text_chars": 11268
  },
  {
   "control_number": "35707",
@@ -3773,10 +3684,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "e7db2ce385d20abb"
+   "text_sha": "393bc8f53957b429"
   },
   "listed": 7,
-  "text_chars": 2595
+  "text_chars": 2597
  },
  {
   "control_number": "35747",
@@ -3806,7 +3717,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "4d2e1f7fe720c8ee"
+   "text_sha": "22a7982c89af7e60"
   },
   "listed": 5,
   "text_chars": 16000
@@ -3839,7 +3750,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "a28adf3276942bf9"
+   "text_sha": "996358987fae4355"
   },
   "listed": 5,
   "text_chars": 16000
@@ -3883,10 +3794,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "b0fbc86d1ff7cc78"
+   "text_sha": "76ecc8ee806af1b3"
   },
   "listed": 21,
-  "text_chars": 13079
+  "text_chars": 13076
  },
  {
   "control_number": "35982",
@@ -3918,10 +3829,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "622ae797469d0505"
+   "text_sha": "9c161a68a2a09a3d"
   },
   "listed": 9,
-  "text_chars": 6216
+  "text_chars": 6218
  },
  {
   "control_number": "36034",
@@ -3958,10 +3869,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "4d0588b73f5aed0c"
+   "text_sha": "6822e623ab687714"
   },
   "listed": 14,
-  "text_chars": 7186
+  "text_chars": 7185
  },
  {
   "control_number": "36249",
@@ -4003,10 +3914,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "a4963a8cbb83ca42"
+   "text_sha": "e6c285de0a54bfa4"
   },
   "listed": 17,
-  "text_chars": 14435
+  "text_chars": 14436
  },
  {
   "control_number": "36302",
@@ -4039,7 +3950,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "4c38491835ae1841"
+   "text_sha": "52a53c130fae8716"
   },
   "listed": 8,
   "text_chars": 16000
@@ -4066,10 +3977,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "4757ed7034718266"
+   "text_sha": "1f83ef94ad66de2d"
   },
   "listed": 3,
-  "text_chars": 985
+  "text_chars": 984
  },
  {
   "control_number": "36421",
@@ -4106,10 +4017,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "eb000ed1b1aba06a"
+   "text_sha": "0a5dc105ba268c6e"
   },
   "listed": 12,
-  "text_chars": 14937
+  "text_chars": 14946
  },
  {
   "control_number": "36428",
@@ -4143,10 +4054,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "ae9089488eee2334"
+   "text_sha": "835e7a2c4a650900"
   },
   "listed": 10,
-  "text_chars": 12003
+  "text_chars": 12010
  },
  {
   "control_number": "36455",
@@ -4181,10 +4092,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "2c41ae1b05eb109c"
+   "text_sha": "6dce6deea9355773"
   },
   "listed": 10,
-  "text_chars": 12820
+  "text_chars": 12825
  },
  {
   "control_number": "36457",
@@ -4219,10 +4130,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "c2471ff8516820c8"
+   "text_sha": "084edb29c97fbd2c"
   },
   "listed": 10,
-  "text_chars": 13664
+  "text_chars": 13670
  },
  {
   "control_number": "36511",
@@ -4256,10 +4167,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "81990b950325a321"
+   "text_sha": "1ed75b0f2dcf39a9"
   },
   "listed": 9,
-  "text_chars": 14175
+  "text_chars": 14181
  },
  {
   "control_number": "37103",
@@ -4296,10 +4207,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "9d41ea5f25d32d02"
+   "text_sha": "562fa9f8658298fd"
   },
   "listed": 13,
-  "text_chars": 6339
+  "text_chars": 6341
  },
  {
   "control_number": "37158",
@@ -4338,10 +4249,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "f444bb1abcbc2bc6"
+   "text_sha": "422d3356c7581791"
   },
   "listed": 23,
-  "text_chars": 6779
+  "text_chars": 6780
  },
  {
   "control_number": "37187",
@@ -4403,7 +4314,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "86f972aeea249dda"
+   "text_sha": "993f426eeb5786c0"
   },
   "listed": 37,
   "text_chars": 16000
@@ -4442,10 +4353,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "6fb4aa3b201658e5"
+   "text_sha": "204f4d2e17084675"
   },
   "listed": 13,
-  "text_chars": 9160
+  "text_chars": 9165
  },
  {
   "control_number": "37608",
@@ -4512,10 +4423,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "47397fe11f4bff25"
+   "text_sha": "850ae3d3bd6ddd89"
   },
   "listed": 18,
-  "text_chars": 13727
+  "text_chars": 13732
  },
  {
   "control_number": "38141",
@@ -4545,7 +4456,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "4c38491835ae1841"
+   "text_sha": "52a53c130fae8716"
   },
   "listed": 5,
   "text_chars": 16000
@@ -4578,7 +4489,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "f965b8602d4940c7"
+   "text_sha": "a01d1bd8b55369e4"
   },
   "listed": 5,
   "text_chars": 16000
@@ -4624,10 +4535,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "b310d43e37a6efe5"
+   "text_sha": "a79a8316decf82fa"
   },
   "listed": 20,
-  "text_chars": 8256
+  "text_chars": 8259
  },
  {
   "control_number": "38221",
@@ -4668,10 +4579,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "6e5a979c9f7eb67f"
+   "text_sha": "9b404e1c3aacd3bf"
   },
   "listed": 16,
-  "text_chars": 14271
+  "text_chars": 14279
  },
  {
   "control_number": "38229",
@@ -4712,10 +4623,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "6e5a979c9f7eb67f"
+   "text_sha": "9b404e1c3aacd3bf"
   },
   "listed": 16,
-  "text_chars": 14271
+  "text_chars": 14279
  },
  {
   "control_number": "38230",
@@ -4751,7 +4662,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "474ee2b4d9dc2fa4"
+   "text_sha": "7bff27e8b52d3946"
   },
   "listed": 11,
   "text_chars": 16000
@@ -4785,10 +4696,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "6e5a979c9f7eb67f"
+   "text_sha": "9b404e1c3aacd3bf"
   },
   "listed": 6,
-  "text_chars": 14271
+  "text_chars": 14279
  },
  {
   "control_number": "38404",
@@ -4820,10 +4731,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "684fcc7fcac1789d"
+   "text_sha": "f8f011f214cb4d9b"
   },
   "listed": 9,
-  "text_chars": 3636
+  "text_chars": 3635
  },
  {
   "control_number": "38591",
@@ -4858,10 +4769,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "9d29a2611a827343"
+   "text_sha": "277d118edd02c66f"
   },
   "listed": 10,
-  "text_chars": 13402
+  "text_chars": 13408
  },
  {
   "control_number": "38652",
@@ -4869,19 +4780,17 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.895,
+  "coverage": 0.789,
   "codes_found": [
-   "ARTH1",
-   "BIOLC1000",
    "CDEVC1000",
    "CDFS53",
    "CDFS62",
    "CDFS64",
-   "DANC4",
    "ENGLC1000",
+   "ENGLC1001",
    "ENGLC1003",
+   "GEOG4",
    "GEOL6",
-   "GEOL6L",
    "HIST2",
    "HISTC1001",
    "MATH55",
@@ -4890,21 +4799,22 @@
    "THEA6"
   ],
   "source": {
-   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=257",
-   "title": "256",
-   "h1": "256",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=77",
+   "title": "76",
+   "h1": "76",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    257,
-    258
+    77,
+    78,
+    79
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "683eca1796d1381e"
+   "text_sha": "ebf481a97770f191"
   },
   "listed": 19,
-  "text_chars": 6516
+  "text_chars": 11751
  },
  {
   "control_number": "39445",
@@ -4945,7 +4855,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "f1d44aaa3aa51a83"
+   "text_sha": "e99a733c7001b894"
   },
   "listed": 16,
   "text_chars": 16000
@@ -4979,7 +4889,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "8ab38b0bb5513984"
+   "text_sha": "99c025af680648f4"
   },
   "listed": 6,
   "text_chars": 16000
@@ -4989,35 +4899,12 @@
   "title": "Business Administration 2.0",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "ACCT1",
-   "ACCT2",
-   "BUS18",
-   "BUS5",
-   "ECONC2001",
-   "ECONC2002",
-   "MATH30",
-   "STATC1000"
-  ],
-  "source": {
-   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=76",
-   "title": "75",
-   "h1": "75",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    76,
-    77,
-    78
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "5000eaf097061943"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 8,
-  "text_chars": 13696
+  "text_chars": 0
  },
  {
   "control_number": "41524",
@@ -5045,10 +4932,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "822be0c32550271c"
+   "text_sha": "94dd93c290fe3f49"
   },
   "listed": 5,
-  "text_chars": 6806
+  "text_chars": 6814
  },
  {
   "control_number": "42041",
@@ -5096,10 +4983,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "c941dc2990d3b409"
+   "text_sha": "e02d6ab67d3a9067"
   },
   "listed": 25,
-  "text_chars": 10789
+  "text_chars": 10788
  },
  {
   "control_number": "42203",
@@ -5135,10 +5022,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "fc0be7f6464dbca5"
+   "text_sha": "53db19e495334831"
   },
   "listed": 11,
-  "text_chars": 14037
+  "text_chars": 14044
  },
  {
   "control_number": "42204",
@@ -5173,10 +5060,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "67f27880ebb010f8"
+   "text_sha": "aad5fea85525804b"
   },
   "listed": 10,
-  "text_chars": 14430
+  "text_chars": 14440
  },
  {
   "control_number": "42205",
@@ -5200,7 +5087,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "4600db21ba65ff02"
+   "text_sha": "69d1fec530fd254d"
   },
   "listed": 2,
   "text_chars": 1765
@@ -5228,10 +5115,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "bc09c58f3817e254"
+   "text_sha": "9a0b47d64b5d0674"
   },
   "listed": 3,
-  "text_chars": 2795
+  "text_chars": 2801
  },
  {
   "control_number": "42207",
@@ -5255,7 +5142,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "b3204a55dda54b2f"
+   "text_sha": "bd4c087717463e5a"
   },
   "listed": 2,
   "text_chars": 2383
@@ -5288,10 +5175,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "b253758d1e91ef67"
+   "text_sha": "2aca037339c4997d"
   },
   "listed": 7,
-  "text_chars": 4936
+  "text_chars": 4938
  },
  {
   "control_number": "42914",
@@ -5325,10 +5212,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "6532a9d1ac3c49e0"
+   "text_sha": "2d6da6565f037441"
   },
   "listed": 11,
-  "text_chars": 4563
+  "text_chars": 4565
  },
  {
   "control_number": "42947",
@@ -5380,10 +5267,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "d90e16ecacc2066a"
+   "text_sha": "aaaa29e1e03b014f"
   },
   "listed": 30,
-  "text_chars": 8431
+  "text_chars": 8432
  },
  {
   "control_number": "43134",
@@ -5430,10 +5317,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "47540c44b6be6c21"
+   "text_sha": "4948f54a9028bbba"
   },
   "listed": 22,
-  "text_chars": 13542
+  "text_chars": 13548
  },
  {
   "control_number": "43144",
@@ -5471,10 +5358,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "d4b35704b4d11902"
+   "text_sha": "526ba248cac9a4e8"
   },
   "listed": 15,
-  "text_chars": 11252
+  "text_chars": 11258
  },
  {
   "control_number": "43145",
@@ -5514,47 +5401,22 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "ce671fa854f5ee0d"
+   "text_sha": "a8dc9a9a9525f634"
   },
   "listed": 15,
-  "text_chars": 15172
+  "text_chars": 15175
  },
  {
   "control_number": "43166",
   "title": "UCTP Physics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
-  "coverage": 0.9,
-  "codes_found": [
-   "CHEM1",
-   "CHEM2",
-   "MATH22",
-   "MATH23",
-   "MATHC2210",
-   "MATHC2220",
-   "PHYS6",
-   "PHYS7",
-   "PHYS8"
-  ],
-  "source": {
-   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=189",
-   "title": "188",
-   "h1": "188",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    189,
-    190,
-    191,
-    192
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "4d6693013e5e9bd5"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 10,
-  "text_chars": 13884
+  "text_chars": 0
  },
  {
   "control_number": "43948",
@@ -5585,10 +5447,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "5f12e7221942e3a3"
+   "text_sha": "082aed04431111e9"
   },
   "listed": 6,
-  "text_chars": 10755
+  "text_chars": 10764
  },
  {
   "control_number": "43949",
@@ -5618,10 +5480,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "0ef7158682af59a0"
+   "text_sha": "e09d35fd10122ad6"
   },
   "listed": 6,
-  "text_chars": 8655
+  "text_chars": 8663
  },
  {
   "control_number": "44069",
@@ -5654,10 +5516,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "55abcf3672fae7c9"
+   "text_sha": "4756895049f3509e"
   },
   "listed": 8,
-  "text_chars": 12445
+  "text_chars": 12448
  },
  {
   "control_number": "44185",
@@ -5685,10 +5547,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "0bc20a4c0bd8a41a"
+   "text_sha": "06768082b6bbf49a"
   },
   "listed": 5,
-  "text_chars": 4587
+  "text_chars": 4594
  },
  {
   "control_number": "44365",
@@ -5722,10 +5584,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "0bc20a4c0bd8a41a"
+   "text_sha": "06768082b6bbf49a"
   },
   "listed": 11,
-  "text_chars": 4587
+  "text_chars": 4594
  },
  {
   "control_number": "44532",
@@ -5759,7 +5621,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "9d99dac1209efe09"
+   "text_sha": "775a4ec81235e51b"
   },
   "listed": 9,
   "text_chars": 16000
@@ -5796,7 +5658,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "9d99dac1209efe09"
+   "text_sha": "775a4ec81235e51b"
   },
   "listed": 9,
   "text_chars": 16000
@@ -5847,7 +5709,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "d9d8a5e9da0c338e"
+   "text_sha": "77169dff9da36950"
   },
   "listed": 23,
   "text_chars": 16000
@@ -5898,7 +5760,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "d9d8a5e9da0c338e"
+   "text_sha": "77169dff9da36950"
   },
   "listed": 23,
   "text_chars": 16000
@@ -5959,10 +5821,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "ed9e3aba23a40f14"
+   "text_sha": "95aad0b2d31d02f4"
   },
   "listed": 33,
-  "text_chars": 11670
+  "text_chars": 11674
  },
  {
   "control_number": "44832",
@@ -6011,10 +5873,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "5d7203bbb27119c1"
+   "text_sha": "d2219317f266f0db"
   },
   "listed": 26,
-  "text_chars": 8701
+  "text_chars": 8706
  },
  {
   "control_number": "44833",
@@ -6030,20 +5892,28 @@
    "JOUR61"
   ],
   "source": {
-   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=78",
-   "title": "77",
-   "h1": "77",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=306",
+   "title": "Journalism (AA-T)",
+   "h1": "Journalism (AA-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    78
+    306,
+    307,
+    308,
+    309
    ],
    "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "481fbd8022083477"
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 306,
+    "share": 1.0
+   },
+   "text_sha": "124a7f161122527b"
   },
   "listed": 4,
-  "text_chars": 4188
+  "text_chars": 12781
  },
  {
   "control_number": "44989",
@@ -6109,10 +5979,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "0e5ab76933bf249f"
+   "text_sha": "b715129ae9bf31f7"
   },
   "listed": 18,
-  "text_chars": 13268
+  "text_chars": 13271
  },
  {
   "control_number": "45915",
@@ -6163,10 +6033,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "73a0f67fb31e2a81"
+   "text_sha": "6ab67de900007e48"
   },
   "listed": 29,
-  "text_chars": 4119
+  "text_chars": 4120
  },
  {
   "control_number": "45917",
@@ -6198,10 +6068,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "c97ccc0235debf56"
+   "text_sha": "1273fbede2eb42cd"
   },
   "listed": 8,
-  "text_chars": 12127
+  "text_chars": 12132
  },
  {
   "control_number": "46127",
@@ -6211,28 +6081,33 @@
   "method": "pdf_pages",
   "coverage": 0.857,
   "codes_found": [
+   "CIS22",
    "MATH22",
    "MATH23",
    "MATH40",
    "MATHC2210",
-   "MATHC2220",
-   "PHYS6"
+   "MATHC2220"
   ],
   "source": {
-   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=78",
-   "title": "77",
-   "h1": "77",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=336",
+   "title": "Mathematics",
+   "h1": "Mathematics",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    78
+    336
    ],
    "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "481fbd8022083477"
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 336,
+    "share": 0.857
+   },
+   "text_sha": "863e91e59296cb85"
   },
   "listed": 7,
-  "text_chars": 4188
+  "text_chars": 2874
  },
  {
   "control_number": "46128",
@@ -6268,10 +6143,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "2890a30bcc0910d3"
+   "text_sha": "994168c2723377ee"
   },
   "listed": 11,
-  "text_chars": 10625
+  "text_chars": 10627
  },
  {
   "control_number": "46201",
@@ -6315,92 +6190,45 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "683eca1796d1381e"
+   "text_sha": "b10ea982463d136d"
   },
   "listed": 21,
-  "text_chars": 6516
+  "text_chars": 6518
  },
  {
   "control_number": "46370",
   "title": "Certified Nursing Assistant",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "NURS103",
-   "NURS111"
-  ],
-  "source": {
-   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=380",
-   "title": "379",
-   "h1": "379",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    380
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "b4b449dac83fcbc2"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 2,
-  "text_chars": 3964
+  "text_chars": 0
  },
  {
   "control_number": "46517",
   "title": "Home Health Aide",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "NURS103",
-   "NURS104",
-   "NURS111"
-  ],
-  "source": {
-   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=380",
-   "title": "379",
-   "h1": "379",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    380
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "b4b449dac83fcbc2"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 3,
-  "text_chars": 3964
+  "text_chars": 0
  },
  {
   "control_number": "46518",
   "title": "Home Health Aide",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "NURS503",
-   "NURS504",
-   "NURS511"
-  ],
-  "source": {
-   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=380",
-   "title": "379",
-   "h1": "379",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    380
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "b4b449dac83fcbc2"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 3,
-  "text_chars": 3964
+  "text_chars": 0
  }
 ]
