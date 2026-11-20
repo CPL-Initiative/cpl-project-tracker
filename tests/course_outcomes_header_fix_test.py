@@ -18,6 +18,7 @@ The failure modes these checks pin, each on the strings the filed reads printed:
 Pure-stdlib python.
 """
 import glob
+import gzip
 import importlib.util
 import json
 import os
@@ -41,6 +42,21 @@ def check(name, cond, why=""):
 
 def parse(text, report):
     return read.parse_page("", text, read.page_system(report), report)
+
+
+def filed_trial(run):
+    """Each filed page of a trial folder, parsed with the reader as it stands."""
+    folder = os.path.join(ROOT, "kb", "course_outcomes", "trial_%s" % run)
+    out = []
+    for row in json.load(open(os.path.join(folder, "read.json")))["rows"]:
+        stem = re.sub(r"[^A-Za-z0-9]+", "_", row["code"])
+        out.append(read.parse_page(gzip.open(os.path.join(folder, stem + ".html.gz"), "rt").read(),
+                                   open(os.path.join(folder, stem + ".txt")).read(),
+                                   read.page_system(row["report"]), row["report"]))
+    return out
+
+
+FRC_TRIAL = filed_trial("44534888428")
 
 
 # Feather River ADMJ 102, trial 44534888428, lines 47-60 of its filed text.
@@ -127,17 +143,29 @@ check("4 the record keys a report by host and reportId, and each entry names its
       read._OBJ_RECORD.report_key(FRC % 1826) == "frc.curriqunet.com/485" and read._OBJ_RECORD.report_key(None) is None
       and not read.prints_objectives(FRC % 1) and read.prints_objectives(PAL) and read.prints_objectives(None)
       and all(re.search(r"trial \d+", why) for why in rec.values()), sorted(rec))
-# GUARD: where a recorded report's trial folder is filed, none of its pages prints an objectives heading.
-heads = []
-for folder in sorted(glob.glob(os.path.join(ROOT, "kb", "course_outcomes", "trial_*"))):
-    d = json.load(open(os.path.join(folder, "read.json")))
-    for row in d["rows"]:
-        if read.prints_objectives(row.get("report")):
-            continue
-        txt = os.path.join(folder, re.sub(r"[^A-Za-z0-9]+", "_", row["code"]) + ".txt")
-        if os.path.exists(txt) and any(read.OBJ_TITLE.match(ln) for ln in open(txt).read().split("\n")):
-            heads.append((os.path.basename(folder), row["code"]))
+# GUARD: the trial each record names is filed in the tree, at least 12 of its pages are read, and none of them prints
+# an objectives heading (the second reader on #3586: a guard that reads no page passes on nothing).
+heads, read_pages = [], {}
+for key, why in rec.items():
+    for trial in re.findall(r"trial (\d+)", why):
+        folder = os.path.join(ROOT, "kb", "course_outcomes", "trial_" + trial)
+        d = json.load(open(os.path.join(folder, "read.json"))) if os.path.exists(folder) else {"rows": []}
+        for row in d["rows"]:
+            if read._OBJ_RECORD.report_key(row.get("report")) != key:
+                continue
+            txt = os.path.join(folder, re.sub(r"[^A-Za-z0-9]+", "_", row["code"]) + ".txt")
+            if not os.path.exists(txt):
+                continue
+            read_pages[key] = read_pages.get(key, 0) + 1
+            if any(read.OBJ_TITLE.match(ln) for ln in open(txt).read().split("\n")):
+                heads.append((trial, row["code"]))
+check("4 GUARD: each recorded report's named trial is filed, with at least 12 pages read",
+      set(read_pages) == set(rec) and all(n >= 12 for n in read_pages.values()), read_pages)
 check("4 GUARD: no filed trial page of a recorded report prints an objectives heading", not heads, heads[:4])
+check("4 the filed Feather River trial reparses to 68 SLOs and no objectives, the header on none of its 12 pages",
+      sum(len(g["outcomes"]) for g in FRC_TRIAL) == 68 and not any(g["objectives"] for g in FRC_TRIAL)
+      and not any("Learning Outcomes" in g["outcomes"] for g in FRC_TRIAL) and len(FRC_TRIAL) == 12,
+      [len(g["outcomes"]) for g in FRC_TRIAL])
 
 # Palomar ECON 100, trial 44536105509, lines 39-51.
 ECON_100 = """Student Learning Outcomes
