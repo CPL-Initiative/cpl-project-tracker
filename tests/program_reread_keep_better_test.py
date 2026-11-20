@@ -612,6 +612,30 @@ def test_second_pass_after_receipt(tmp):
           "a carried run with a kept record not live at it is not named")
 
 
+def test_shared_title(tmp):
+    """COBIx on #3557 (7011458372): a no-ending address counts as the program's own only when no other program at the
+    college with the same title words has another award kind. College of the Redwoods' Welding Technology certificate
+    (22673) on welding-technology-fall-2025, the A.S.'s (01821) page."""
+    url = "https://redwoods.elumenapp.com/catalog/2026-2027/program/welding-technology-fall-2025"
+    cert = {"control_number": "22673", "title": "Welding Technology",
+            "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units", "source_url": url}
+    sib = [{"control_number": "01821", "title": "Welding Technology", "award": "A.S. Degree"},
+           {"control_number": "22673", "title": "Welding Technology", "award": cert["award"]}]
+    check(K.page_is_own(cert, None) is not None, "without siblings the no-ending address passes, as on main")
+    note = {}
+    check(K.page_is_own(cert, None, note, sib) is None and note.get("shared_title") == ["01821"],
+          "two awards share the title: the address shows nothing and names the other: %r" % note)
+    check(K.page_is_own(dict(cert, control_number="01821", award="A.S. Degree"), None, {}, sib) is None,
+          "the A.S. on the shared address shows nothing by the address either")
+    same = [dict(sib[0], award=cert["award"], control_number="22674"), sib[1]]
+    check(K.page_is_own(cert, None, {}, same) is not None, "a sibling of the same award kind leaves the address")
+    other = [dict(sib[0], title="Welding Technology Advanced"), sib[1]]
+    check(K.page_is_own(cert, None, {}, other) is not None, "a sibling with other title words leaves the address")
+    src = {"source": {"url": url, "title": "Welding Technology - Certificate of Achievement | Catalog"}}
+    check((K.page_is_own(cert, src, {}, sib) or "").startswith("the capture's page title"),
+          "the row falls back to the capture's page title")
+
+
 def test_no_duplicate_row(tmp):
     """A program held for a person (no filed record) whose re-read is back in records/ at the run is decided again
     and listed once, never beside its earlier held entry."""
@@ -826,7 +850,7 @@ def main():
                test_live_runs_file, test_control_number_shape, test_ascii_runs, test_generic_heading_scorer,
                test_generic_heading, test_order, test_second_pass, test_matches_main, test_real_cases,
                test_address_cases, test_capture_names_another_award, test_second_pass_after_receipt,
-               test_no_duplicate_row, test_award_ending):
+               test_no_duplicate_row, test_award_ending, test_shared_title):
         tmp = tempfile.mkdtemp(prefix="keep_better_")
         try:
             fn(tmp)
