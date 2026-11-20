@@ -40,7 +40,9 @@ status files (step 12) and every apply are the conductor's.
   url it checked, so a Public press after a url move no longer relists on the old url's pass (COBIx on #3572).
   **#3581 `ac093582`** Library part 2, after a second reader's two rounds, a third-round design change (the pass line
   binds to the page's content hash) and four COBIx rounds; migrations applied from `claude/s688-library-part2-apply`
-  (never merges): `library_check_after_page_change`, then the part-2 memory rows (eight).
+  (never merges): `library_check_after_page_change` (run 44673522564), then the part-2 memory rows (eight, run
+  44673553384). A live read at 04:24Z found `page_changed_at` and its trigger, the eight rows (Sam's verified), 21
+  listed pieces unchanged and 0 check rows before the first real run.
 
 ## Read in order
 
