@@ -1,0 +1,2043 @@
+{
+ "what": "course_outcomes_load: course SLOs as printed, by college and course (Sheet 70 card 3)",
+ "host": "frc",
+ "load_run": "44700832207",
+ "reads": [
+  "kb/course_outcomes/frc/read_44695075698_p1of1.json"
+ ],
+ "kind": "all",
+ "held_back": 0,
+ "posted": 336,
+ "inserted": 336,
+ "kept": 0,
+ "skipped": 1,
+ "skipped_rows": [
+  {
+   "course_code": "ENVR 291",
+   "status": 200,
+   "shape": "none"
+  }
+ ],
+ "error": null,
+ "inserted_keys": [
+  {
+   "id": 38146,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ADMJ 102"
+  },
+  {
+   "id": 38147,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ADMJ 105"
+  },
+  {
+   "id": 38148,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ADMJ 106"
+  },
+  {
+   "id": 38149,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ADMJ 108"
+  },
+  {
+   "id": 38150,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ADMJ 112"
+  },
+  {
+   "id": 38151,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ADMJ 114"
+  },
+  {
+   "id": 38152,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ADMJ 116"
+  },
+  {
+   "id": 38153,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ADMJ 120"
+  },
+  {
+   "id": 38154,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ADMJ 125"
+  },
+  {
+   "id": 38155,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ADMJ 126"
+  },
+  {
+   "id": 38156,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ADMJ 152"
+  },
+  {
+   "id": 38157,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ADMJ 203"
+  },
+  {
+   "id": 38158,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ADMJ 204"
+  },
+  {
+   "id": 38159,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AG 299"
+  },
+  {
+   "id": 38160,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGAB 110"
+  },
+  {
+   "id": 38161,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGAB 112"
+  },
+  {
+   "id": 38162,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGAB 124"
+  },
+  {
+   "id": 38163,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGAB 128"
+  },
+  {
+   "id": 38164,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGAB 150"
+  },
+  {
+   "id": 38165,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGAB 188"
+  },
+  {
+   "id": 38166,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGAS 120"
+  },
+  {
+   "id": 38167,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGAS 125"
+  },
+  {
+   "id": 38168,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGAS 170"
+  },
+  {
+   "id": 38169,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGAS 171"
+  },
+  {
+   "id": 38170,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGAS 172"
+  },
+  {
+   "id": 38171,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGAS 266"
+  },
+  {
+   "id": 38172,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 102"
+  },
+  {
+   "id": 38173,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 103"
+  },
+  {
+   "id": 38174,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 104"
+  },
+  {
+   "id": 38175,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 106"
+  },
+  {
+   "id": 38176,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 115"
+  },
+  {
+   "id": 38177,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 116"
+  },
+  {
+   "id": 38178,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 117"
+  },
+  {
+   "id": 38179,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 118"
+  },
+  {
+   "id": 38180,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 123"
+  },
+  {
+   "id": 38181,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 124"
+  },
+  {
+   "id": 38182,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 135"
+  },
+  {
+   "id": 38183,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 136"
+  },
+  {
+   "id": 38184,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 137"
+  },
+  {
+   "id": 38185,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 138"
+  },
+  {
+   "id": 38186,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 140"
+  },
+  {
+   "id": 38187,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 141"
+  },
+  {
+   "id": 38188,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 151"
+  },
+  {
+   "id": 38189,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 152"
+  },
+  {
+   "id": 38190,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 180"
+  },
+  {
+   "id": 38191,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 181"
+  },
+  {
+   "id": 38192,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 182"
+  },
+  {
+   "id": 38193,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 186"
+  },
+  {
+   "id": 38194,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 204"
+  },
+  {
+   "id": 38195,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 205"
+  },
+  {
+   "id": 38196,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 206"
+  },
+  {
+   "id": 38197,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 207"
+  },
+  {
+   "id": 38198,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 210"
+  },
+  {
+   "id": 38199,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 211"
+  },
+  {
+   "id": 38200,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 212"
+  },
+  {
+   "id": 38201,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 214"
+  },
+  {
+   "id": 38202,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 215"
+  },
+  {
+   "id": 38203,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 216"
+  },
+  {
+   "id": 38204,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 217"
+  },
+  {
+   "id": 38205,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 225"
+  },
+  {
+   "id": 38206,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 226"
+  },
+  {
+   "id": 38207,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 227"
+  },
+  {
+   "id": 38208,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 251"
+  },
+  {
+   "id": 38209,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 252"
+  },
+  {
+   "id": 38210,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 296"
+  },
+  {
+   "id": 38211,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 297"
+  },
+  {
+   "id": 38212,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 298"
+  },
+  {
+   "id": 38213,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGEQ 299"
+  },
+  {
+   "id": 38214,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGMA 108"
+  },
+  {
+   "id": 38215,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGMA 116"
+  },
+  {
+   "id": 38216,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGMA 132"
+  },
+  {
+   "id": 38217,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGMA 140"
+  },
+  {
+   "id": 38218,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGMA 160"
+  },
+  {
+   "id": 38219,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGMA 184"
+  },
+  {
+   "id": 38220,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGPS 104"
+  },
+  {
+   "id": 38221,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "AGPS 210"
+  },
+  {
+   "id": 38222,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ANTH 100"
+  },
+  {
+   "id": 38223,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ANTH 103"
+  },
+  {
+   "id": 38224,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ANTH 106"
+  },
+  {
+   "id": 38225,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ANTH 120"
+  },
+  {
+   "id": 38226,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ANTH 120L"
+  },
+  {
+   "id": 38227,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ANTH 130"
+  },
+  {
+   "id": 38228,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ANTH 150"
+  },
+  {
+   "id": 38229,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ANTH 200"
+  },
+  {
+   "id": 38230,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ART 100"
+  },
+  {
+   "id": 38231,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ART 107"
+  },
+  {
+   "id": 38232,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ART 109"
+  },
+  {
+   "id": 38233,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ART 116"
+  },
+  {
+   "id": 38234,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ART 117"
+  },
+  {
+   "id": 38235,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ART 122"
+  },
+  {
+   "id": 38236,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ART 124"
+  },
+  {
+   "id": 38237,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ART 126"
+  },
+  {
+   "id": 38238,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ART 128"
+  },
+  {
+   "id": 38239,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ART 132"
+  },
+  {
+   "id": 38240,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ART 134"
+  },
+  {
+   "id": 38241,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ART 136"
+  },
+  {
+   "id": 38242,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ART 138"
+  },
+  {
+   "id": 38243,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ART 140"
+  },
+  {
+   "id": 38244,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ART 142"
+  },
+  {
+   "id": 38245,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ART 144"
+  },
+  {
+   "id": 38246,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ART 150"
+  },
+  {
+   "id": 38247,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ART 151"
+  },
+  {
+   "id": 38248,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ART 160"
+  },
+  {
+   "id": 38249,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ART 162"
+  },
+  {
+   "id": 38250,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ART 166"
+  },
+  {
+   "id": 38251,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ART 291"
+  },
+  {
+   "id": 38252,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ARTH C1100"
+  },
+  {
+   "id": 38253,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ARTH C1200"
+  },
+  {
+   "id": 38254,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "BIOL 100"
+  },
+  {
+   "id": 38255,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "BIOL 102"
+  },
+  {
+   "id": 38256,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "BIOL 104"
+  },
+  {
+   "id": 38257,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "BIOL 106"
+  },
+  {
+   "id": 38258,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "BIOL 110"
+  },
+  {
+   "id": 38259,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "BIOL 112"
+  },
+  {
+   "id": 38260,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "BIOL 120"
+  },
+  {
+   "id": 38261,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "BIOL 210"
+  },
+  {
+   "id": 38262,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "BIOL 264"
+  },
+  {
+   "id": 38263,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "BUS 100"
+  },
+  {
+   "id": 38264,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "BUS 102"
+  },
+  {
+   "id": 38265,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "BUS 104"
+  },
+  {
+   "id": 38266,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "BUS 111"
+  },
+  {
+   "id": 38267,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "BUS 115"
+  },
+  {
+   "id": 38268,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "BUS 116"
+  },
+  {
+   "id": 38269,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "BUS 118"
+  },
+  {
+   "id": 38270,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "BUS 130"
+  },
+  {
+   "id": 38271,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "BUS 131"
+  },
+  {
+   "id": 38272,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "BUS 140"
+  },
+  {
+   "id": 38273,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "BUS 170"
+  },
+  {
+   "id": 38274,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "BUS 171"
+  },
+  {
+   "id": 38275,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "CHEM 102"
+  },
+  {
+   "id": 38276,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "CHEM 104"
+  },
+  {
+   "id": 38277,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "CHEM 106"
+  },
+  {
+   "id": 38278,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "COMM C1000"
+  },
+  {
+   "id": 38279,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "CWEE 170"
+  },
+  {
+   "id": 38280,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ECE 150"
+  },
+  {
+   "id": 38281,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ECE 152"
+  },
+  {
+   "id": 38282,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ECE 153"
+  },
+  {
+   "id": 38283,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ECE 157"
+  },
+  {
+   "id": 38284,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ECE 158"
+  },
+  {
+   "id": 38285,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ECE 159"
+  },
+  {
+   "id": 38286,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ECE 160"
+  },
+  {
+   "id": 38287,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ECE 162"
+  },
+  {
+   "id": 38288,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ECON C2001"
+  },
+  {
+   "id": 38289,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ECON C2002"
+  },
+  {
+   "id": 38290,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "EDUC 200"
+  },
+  {
+   "id": 38291,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "EMT 120"
+  },
+  {
+   "id": 38292,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENGL 119"
+  },
+  {
+   "id": 38293,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENGL 128"
+  },
+  {
+   "id": 38294,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENGL 150"
+  },
+  {
+   "id": 38295,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENGL 170"
+  },
+  {
+   "id": 38296,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENGL 180"
+  },
+  {
+   "id": 38297,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENGL 245"
+  },
+  {
+   "id": 38298,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENGL 246"
+  },
+  {
+   "id": 38299,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENGL 252"
+  },
+  {
+   "id": 38300,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENGL 254"
+  },
+  {
+   "id": 38301,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENGL 256"
+  },
+  {
+   "id": 38302,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENGL 257"
+  },
+  {
+   "id": 38303,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENGL C1000"
+  },
+  {
+   "id": 38304,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENGL C1001"
+  },
+  {
+   "id": 38305,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENGL C1002"
+  },
+  {
+   "id": 38306,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENVR 039"
+  },
+  {
+   "id": 38307,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENVR 041"
+  },
+  {
+   "id": 38308,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENVR 042"
+  },
+  {
+   "id": 38309,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENVR 043"
+  },
+  {
+   "id": 38310,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENVR 044"
+  },
+  {
+   "id": 38311,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENVR 045"
+  },
+  {
+   "id": 38312,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENVR 049"
+  },
+  {
+   "id": 38313,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENVR 102"
+  },
+  {
+   "id": 38314,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENVR 103"
+  },
+  {
+   "id": 38315,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENVR 120"
+  },
+  {
+   "id": 38316,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENVR 125"
+  },
+  {
+   "id": 38317,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENVR 130"
+  },
+  {
+   "id": 38318,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENVR 131"
+  },
+  {
+   "id": 38319,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENVR 132"
+  },
+  {
+   "id": 38320,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENVR 133"
+  },
+  {
+   "id": 38321,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENVR 134"
+  },
+  {
+   "id": 38322,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENVR 135"
+  },
+  {
+   "id": 38323,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENVR 142"
+  },
+  {
+   "id": 38324,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENVR 142L"
+  },
+  {
+   "id": 38325,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENVR 160"
+  },
+  {
+   "id": 38326,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENVR 164"
+  },
+  {
+   "id": 38327,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENVR 180"
+  },
+  {
+   "id": 38328,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENVR 185"
+  },
+  {
+   "id": 38329,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENVR 201"
+  },
+  {
+   "id": 38330,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENVR 205"
+  },
+  {
+   "id": 38331,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENVR 210"
+  },
+  {
+   "id": 38332,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENVR 220"
+  },
+  {
+   "id": 38333,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENVR 230"
+  },
+  {
+   "id": 38334,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENVR 235"
+  },
+  {
+   "id": 38335,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENVR 240"
+  },
+  {
+   "id": 38336,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENVR 241"
+  },
+  {
+   "id": 38337,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENVR 250"
+  },
+  {
+   "id": 38338,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENVR 251"
+  },
+  {
+   "id": 38339,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENVR 264"
+  },
+  {
+   "id": 38340,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENVR 266"
+  },
+  {
+   "id": 38341,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ENVR 280"
+  },
+  {
+   "id": 38342,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ETHN 131"
+  },
+  {
+   "id": 38343,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ETHN 135"
+  },
+  {
+   "id": 38344,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ETHN 140"
+  },
+  {
+   "id": 38345,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ETHN 150"
+  },
+  {
+   "id": 38346,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "GEOG 102"
+  },
+  {
+   "id": 38347,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "GEOG 104"
+  },
+  {
+   "id": 38348,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "GEOG 125"
+  },
+  {
+   "id": 38349,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "GEOG 201"
+  },
+  {
+   "id": 38350,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "GEOL 102"
+  },
+  {
+   "id": 38351,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "GEOL 104"
+  },
+  {
+   "id": 38352,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "GEOL 120"
+  },
+  {
+   "id": 38353,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "HES 120"
+  },
+  {
+   "id": 38354,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "HES 127"
+  },
+  {
+   "id": 38355,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "HES 133"
+  },
+  {
+   "id": 38356,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "HES 170"
+  },
+  {
+   "id": 38357,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "HES 171"
+  },
+  {
+   "id": 38358,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "HES 183"
+  },
+  {
+   "id": 38359,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "HES 184"
+  },
+  {
+   "id": 38360,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "HIST 111"
+  },
+  {
+   "id": 38361,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "HIST 112"
+  },
+  {
+   "id": 38362,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "HIST 120"
+  },
+  {
+   "id": 38363,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "HIST 130"
+  },
+  {
+   "id": 38364,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "HIST 135"
+  },
+  {
+   "id": 38365,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "HIST 140"
+  },
+  {
+   "id": 38366,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "HIST 170"
+  },
+  {
+   "id": 38367,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "HIST 172"
+  },
+  {
+   "id": 38368,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "HIST C1001"
+  },
+  {
+   "id": 38369,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "HIST C1002"
+  },
+  {
+   "id": 38370,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "HUMN 100"
+  },
+  {
+   "id": 38371,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "HUMN 101"
+  },
+  {
+   "id": 38372,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "HUMN 110"
+  },
+  {
+   "id": 38373,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "HUMN 112"
+  },
+  {
+   "id": 38374,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "HUMN 128"
+  },
+  {
+   "id": 38375,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "HUMN 228"
+  },
+  {
+   "id": 38376,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ICT 091"
+  },
+  {
+   "id": 38377,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ICT 092"
+  },
+  {
+   "id": 38378,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ICT 101"
+  },
+  {
+   "id": 38379,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ICT 111"
+  },
+  {
+   "id": 38380,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ICT 131"
+  },
+  {
+   "id": 38381,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "MATH 110"
+  },
+  {
+   "id": 38382,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "MATH 114"
+  },
+  {
+   "id": 38383,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "MATH 150"
+  },
+  {
+   "id": 38384,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "MATH 222"
+  },
+  {
+   "id": 38385,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "MATH 224"
+  },
+  {
+   "id": 38386,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "MATH C2211"
+  },
+  {
+   "id": 38387,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "MATH C2221"
+  },
+  {
+   "id": 38388,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "MUS 101"
+  },
+  {
+   "id": 38389,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "MUS 150"
+  },
+  {
+   "id": 38390,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "NURS 080"
+  },
+  {
+   "id": 38391,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "NURS 100"
+  },
+  {
+   "id": 38392,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "NURS 111"
+  },
+  {
+   "id": 38393,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "NURS 112"
+  },
+  {
+   "id": 38394,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "NURS 114"
+  },
+  {
+   "id": 38395,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "NURS 118"
+  },
+  {
+   "id": 38396,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "NURS 120"
+  },
+  {
+   "id": 38397,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "NURS 122"
+  },
+  {
+   "id": 38398,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "NURS 124"
+  },
+  {
+   "id": 38399,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "NURS 126"
+  },
+  {
+   "id": 38400,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "NURS 202"
+  },
+  {
+   "id": 38401,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "NURS 204"
+  },
+  {
+   "id": 38402,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "NURS 212"
+  },
+  {
+   "id": 38403,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "NURS 214"
+  },
+  {
+   "id": 38404,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "NURS 216"
+  },
+  {
+   "id": 38405,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "NURS 222"
+  },
+  {
+   "id": 38406,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "NURS 224"
+  },
+  {
+   "id": 38407,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "NURS 225"
+  },
+  {
+   "id": 38408,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "NURS 230"
+  },
+  {
+   "id": 38409,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "NURS 232"
+  },
+  {
+   "id": 38410,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "NURS 234"
+  },
+  {
+   "id": 38411,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "NURS 235"
+  },
+  {
+   "id": 38412,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "NURS 237"
+  },
+  {
+   "id": 38413,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "NURS 239"
+  },
+  {
+   "id": 38414,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "NURS 240"
+  },
+  {
+   "id": 38415,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ORL 110"
+  },
+  {
+   "id": 38416,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ORL 116"
+  },
+  {
+   "id": 38417,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ORL 120"
+  },
+  {
+   "id": 38418,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ORL 130"
+  },
+  {
+   "id": 38419,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ORL 140"
+  },
+  {
+   "id": 38420,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ORL 142"
+  },
+  {
+   "id": 38421,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ORL 144"
+  },
+  {
+   "id": 38422,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ORL 150"
+  },
+  {
+   "id": 38423,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ORL 152"
+  },
+  {
+   "id": 38424,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ORL 154"
+  },
+  {
+   "id": 38425,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ORL 156"
+  },
+  {
+   "id": 38426,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ORL 158"
+  },
+  {
+   "id": 38427,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ORL 160"
+  },
+  {
+   "id": 38428,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ORL 161"
+  },
+  {
+   "id": 38429,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ORL 162"
+  },
+  {
+   "id": 38430,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ORL 166"
+  },
+  {
+   "id": 38431,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ORL 168"
+  },
+  {
+   "id": 38432,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ORL 170"
+  },
+  {
+   "id": 38433,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ORL 171"
+  },
+  {
+   "id": 38434,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ORL 172"
+  },
+  {
+   "id": 38435,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ORL 174"
+  },
+  {
+   "id": 38436,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ORL 180"
+  },
+  {
+   "id": 38437,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ORL 182"
+  },
+  {
+   "id": 38438,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ORL 188"
+  },
+  {
+   "id": 38439,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ORL 190"
+  },
+  {
+   "id": 38440,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ORL 192"
+  },
+  {
+   "id": 38441,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ORL 200"
+  },
+  {
+   "id": 38442,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ORL 280"
+  },
+  {
+   "id": 38443,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "ORL 291"
+  },
+  {
+   "id": 38444,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "PHIL 100"
+  },
+  {
+   "id": 38445,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "PHIL 102"
+  },
+  {
+   "id": 38446,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "PHIL 103"
+  },
+  {
+   "id": 38447,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "PHSC 120"
+  },
+  {
+   "id": 38448,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "PHSC 120L"
+  },
+  {
+   "id": 38449,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "PHYS 102"
+  },
+  {
+   "id": 38450,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "PHYS 104"
+  },
+  {
+   "id": 38451,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "PHYS 140"
+  },
+  {
+   "id": 38452,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "PHYS 202"
+  },
+  {
+   "id": 38453,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "PHYS 204"
+  },
+  {
+   "id": 38454,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "PHYS 206"
+  },
+  {
+   "id": 38455,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "POL 110"
+  },
+  {
+   "id": 38456,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "POL 120"
+  },
+  {
+   "id": 38457,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "POL 130"
+  },
+  {
+   "id": 38458,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "POL 140"
+  },
+  {
+   "id": 38459,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "POL 150"
+  },
+  {
+   "id": 38460,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "POL 160"
+  },
+  {
+   "id": 38461,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "POL 180"
+  },
+  {
+   "id": 38462,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "POLS C1000"
+  },
+  {
+   "id": 38463,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "PSY 152"
+  },
+  {
+   "id": 38464,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "PSYC C1000"
+  },
+  {
+   "id": 38465,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "SOC 100"
+  },
+  {
+   "id": 38466,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "SOC 125"
+  },
+  {
+   "id": 38467,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "SOC 140"
+  },
+  {
+   "id": 38468,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "SOC 150"
+  },
+  {
+   "id": 38469,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "SOC 160"
+  },
+  {
+   "id": 38470,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "SOCI C1000"
+  },
+  {
+   "id": 38471,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "SOJU 100"
+  },
+  {
+   "id": 38472,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "SOJU 130"
+  },
+  {
+   "id": 38473,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "SPAN 101"
+  },
+  {
+   "id": 38474,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "SPAN 102"
+  },
+  {
+   "id": 38475,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "SPAN 201"
+  },
+  {
+   "id": 38476,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "SWHS 110"
+  },
+  {
+   "id": 38477,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "SWHS 120"
+  },
+  {
+   "id": 38478,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "THEA 105"
+  },
+  {
+   "id": 38479,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "THEA 106"
+  },
+  {
+   "id": 38480,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "THEA 140"
+  },
+  {
+   "id": 38481,
+   "kind": "slo",
+   "college": "Feather River College",
+   "course_code": "THEA 142"
+  }
+ ],
+ "rollback": "delete from public.course_outcomes where id in (38146, 38147, 38148, 38149, 38150, 38151, 38152, 38153, 38154, 38155, 38156, 38157, 38158, 38159, 38160, 38161, 38162, 38163, 38164, 38165, 38166, 38167, 38168, 38169, 38170, 38171, 38172, 38173, 38174, 38175, 38176, 38177, 38178, 38179, 38180, 38181, 38182, 38183, 38184, 38185, 38186, 38187, 38188, 38189, 38190, 38191, 38192, 38193, 38194, 38195, 38196, 38197, 38198, 38199, 38200, 38201, 38202, 38203, 38204, 38205, 38206, 38207, 38208, 38209, 38210, 38211, 38212, 38213, 38214, 38215, 38216, 38217, 38218, 38219, 38220, 38221, 38222, 38223, 38224, 38225, 38226, 38227, 38228, 38229, 38230, 38231, 38232, 38233, 38234, 38235, 38236, 38237, 38238, 38239, 38240, 38241, 38242, 38243, 38244, 38245, 38246, 38247, 38248, 38249, 38250, 38251, 38252, 38253, 38254, 38255, 38256, 38257, 38258, 38259, 38260, 38261, 38262, 38263, 38264, 38265, 38266, 38267, 38268, 38269, 38270, 38271, 38272, 38273, 38274, 38275, 38276, 38277, 38278, 38279, 38280, 38281, 38282, 38283, 38284, 38285, 38286, 38287, 38288, 38289, 38290, 38291, 38292, 38293, 38294, 38295, 38296, 38297, 38298, 38299, 38300, 38301, 38302, 38303, 38304, 38305, 38306, 38307, 38308, 38309, 38310, 38311, 38312, 38313, 38314, 38315, 38316, 38317, 38318, 38319, 38320, 38321, 38322, 38323, 38324, 38325, 38326, 38327, 38328, 38329, 38330, 38331, 38332, 38333, 38334, 38335, 38336, 38337, 38338, 38339, 38340, 38341, 38342, 38343, 38344, 38345, 38346, 38347, 38348, 38349, 38350, 38351, 38352, 38353, 38354, 38355, 38356, 38357, 38358, 38359, 38360, 38361, 38362, 38363, 38364, 38365, 38366, 38367, 38368, 38369, 38370, 38371, 38372, 38373, 38374, 38375, 38376, 38377, 38378, 38379, 38380, 38381, 38382, 38383, 38384, 38385, 38386, 38387, 38388, 38389, 38390, 38391, 38392, 38393, 38394, 38395, 38396, 38397, 38398, 38399, 38400, 38401, 38402, 38403, 38404, 38405, 38406, 38407, 38408, 38409, 38410, 38411, 38412, 38413, 38414, 38415, 38416, 38417, 38418, 38419, 38420, 38421, 38422, 38423, 38424, 38425, 38426, 38427, 38428, 38429, 38430, 38431, 38432, 38433, 38434, 38435, 38436, 38437, 38438, 38439, 38440, 38441, 38442, 38443, 38444, 38445, 38446, 38447, 38448, 38449, 38450, 38451, 38452, 38453, 38454, 38455, 38456, 38457, 38458, 38459, 38460, 38461, 38462, 38463, 38464, 38465, 38466, 38467, 38468, 38469, 38470, 38471, 38472, 38473, 38474, 38475, 38476, 38477, 38478, 38479, 38480, 38481);",
+ "rollback_by_key_if_error": null,
+ "rollback_note": "rollback deletes the ids the responses named. rollback_by_key_if_error is filed only when error is set: a batch may have committed without its response. It takes every row of the sent kinds and (college, read_run) pairs, including any an earlier load of the same read inserted."
+}

@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-20T10:37:32Z",
+ "written_at": "2026-11-20T11:45:13Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -158,8 +158,8 @@
   "coe": "The regional labor market crosswalk is committed but not yet read per college here.",
   "loaded": "The load time is a column of the live program requirements table, which this file does not carry.",
   "owners": "The gap census names the change that would move each program, not who makes it; an owner joins each ask when the asks are filed with one.",
-  "slo": "Course SLO reads are committed for 19 hosts under kb/course_outcomes/<host>/, not yet read per college here; the SLO queue's state shows where the queue holds a college.",
-  "objectives": "Course objectives are committed for 13 hosts (ccc, cccd, chabot, craftonhills, cuesta, hancockcollege, laspositas, rccd, redwoods, sac, sdccd, shasta, siskiyous) under kb/course_outcomes/<host>/, not yet read per college here."
+  "slo": "Course SLO reads are committed for 22 hosts under kb/course_outcomes/<host>/, not yet read per college here; the SLO queue's state shows where the queue holds a college.",
+  "objectives": "Course objectives are committed for 14 hosts (ccc, cccd, chabot, craftonhills, cuesta, hancockcollege, laspositas, palomar, rccd, redwoods, sac, sdccd, shasta, siskiyous) under kb/course_outcomes/<host>/, not yet read per college here."
  },
  "statewide": {
   "colleges": 118,
@@ -177,7 +177,7 @@
   "spent_usd": 1209.3,
   "spent_runs": 163,
   "spent_since": "2026-11-17",
-  "slo_waiting": 13,
+  "slo_waiting": 10,
   "scouted": 11,
   "scout_barrier": 1,
   "spot_checked": 8,
@@ -4569,18 +4569,16 @@
     "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/feather_river.json",
-   "outcomes_file": null,
-   "outline_system": null,
+   "outcomes_file": "kb/status/commons_data_programs/feather_river.outcomes.json",
+   "outline_system": [
+    "curriqunet"
+   ],
    "objectives_printed": null,
    "read_at": "2026-11-17T13:17:16Z",
    "read_kind": "capture",
    "cost_usd": 3.1,
    "passed_at_read": 37,
-   "slo_queue": {
-    "state": "parser",
-    "why": "read 44535960153 filed 2,072 SLOs over 337 pages, 336 of them the \"Learning Outcomes\" table header, and ENVR 041's Lecture Topic Outline as 167 objectives. A full read files no pages, so it cannot be reparsed: it never loads (never_load). A new full read on the fixed reader is needed, then the standing test, then its load",
-    "on": "2026-11-20"
-   },
+   "slo_queue": null,
    "scout": null,
    "spot_check": null,
    "confidence": {
@@ -4622,7 +4620,13 @@
      "cost_usd": 3.1,
      "platform": "curriqunet"
     },
-    "slo_read": null,
+    "slo_read": {
+     "run": "44695075698",
+     "at": "2026-11-20T07:55:56Z",
+     "system": "curriqunet",
+     "source_kind": "course_outline",
+     "file": "kb/course_outcomes/frc/read_44695075698_p1of1.json"
+    },
     "plo_programs": 0,
     "ppm_member": null,
     "maps": {
@@ -8299,17 +8303,15 @@
    },
    "programs_file": "kb/status/commons_data_programs/mt_san_antonio.json",
    "outcomes_file": "kb/status/commons_data_programs/mt_san_antonio.outcomes.json",
-   "outline_system": null,
+   "outline_system": [
+    "other"
+   ],
    "objectives_printed": null,
    "read_at": "2026-10-23T02:51:00Z",
    "read_kind": "capture",
    "cost_usd": 22.47,
    "passed_at_read": 359,
-   "slo_queue": {
-    "state": "none",
-    "why": "its CourseLeaf course entries print no SLOs",
-    "on": "2026-10-14"
-   },
+   "slo_queue": null,
    "scout": null,
    "spot_check": null,
    "confidence": {
@@ -8352,7 +8354,13 @@
      "cost_usd": 22.47,
      "platform": "courseleaf"
     },
-    "slo_read": null,
+    "slo_read": {
+     "run": "44710704435",
+     "at": "2026-11-20T11:37:28Z",
+     "system": "other",
+     "source_kind": "course_outline",
+     "file": "kb/course_outcomes/mtsac/read_44710704435_p5of5.json"
+    },
     "plo_programs": 263,
     "ppm_member": null,
     "maps": {
@@ -9231,17 +9239,15 @@
    },
    "programs_file": "kb/status/commons_data_programs/palomar.json",
    "outcomes_file": "kb/status/commons_data_programs/palomar.outcomes.json",
-   "outline_system": null,
+   "outline_system": [
+    "curriqunet"
+   ],
    "objectives_printed": null,
    "read_at": "2026-11-07T12:19:04Z",
    "read_kind": "capture",
    "cost_usd": 18.75,
    "passed_at_read": 265,
-   "slo_queue": {
-    "state": "parser",
-    "why": "report 99 prints \"Specific Course Objectives\" right after \"Student Learning Outcomes\", and the reader filed the objectives and the \"Outcome\" and \"Objective\" table headers as SLOs on 12 of 12 pages (206 SLOs, 0 objectives; about 35 are SLOs); the reader needs that heading as an objectives heading before the full read (S681's Chabot failure)",
-    "on": "2026-11-19"
-   },
+   "slo_queue": null,
    "scout": null,
    "spot_check": null,
    "confidence": {
@@ -9284,7 +9290,13 @@
      "cost_usd": 18.75,
      "platform": "curriqunet"
     },
-    "slo_read": null,
+    "slo_read": {
+     "run": "44695267546",
+     "at": "2026-11-20T08:54:09Z",
+     "system": "curriqunet",
+     "source_kind": "course_outline",
+     "file": "kb/course_outcomes/palomar/read_44695267546_p4of4.json"
+    },
     "plo_programs": 258,
     "ppm_member": {
      "host": "programmap.palomar.edu",
