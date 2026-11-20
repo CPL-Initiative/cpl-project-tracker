@@ -1,0 +1,3178 @@
+{
+ "college": "Mt. San Antonio College",
+ "catalog_url": "https://catalog.mtsac.edu/",
+ "platform": "courseleaf",
+ "catalog_year": "2026-2027",
+ "programs": 469,
+ "with_closed_list": 428,
+ "started": "2026-11-20T12:37:45Z",
+ "scope": null,
+ "sitemap": {
+  "url": "https://catalog.mtsac.edu/sitemap.xml",
+  "status": 200,
+  "listed": 742,
+  "nested": 0,
+  "program_pages": 570,
+  "refused": null,
+  "errors": null,
+  "failed": null,
+  "challenged": null
+ },
+ "listing_failed": 0,
+ "pages_read": 569,
+ "pages_listed": 579,
+ "pages_answered": 569,
+ "child_pages": 9,
+ "banner_h1": null,
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 341,
+   "hits": 231,
+   "recall": 0.677,
+   "false": 0,
+   "false_off_own": 5,
+   "false_no_claims": 5,
+   "shared": 24,
+   "false_matches": [
+    {
+     "control_number": "24074",
+     "title": "Accounting - Payroll",
+     "award": "Noncredit program",
+     "page": "https://catalog.mtsac.edu/programs/programsaz/accounting/accounting-payroll-certificate/",
+     "h1": "Accounting - Payroll (Certificate E0505)"
+    },
+    {
+     "control_number": "24089",
+     "title": "Accounting - Bookkeeping",
+     "award": "Noncredit program",
+     "page": "https://catalog.mtsac.edu/programs/programsaz/accounting/accounting-bookkeeping-certificate/",
+     "h1": "Accounting - Bookkeeping (Certificate E0504)"
+    },
+    {
+     "control_number": "24162",
+     "title": "Electronic Assembly and Fabrication",
+     "award": "Noncredit program",
+     "page": "https://catalog.mtsac.edu/programs/programsaz/electronics/electronic-assembly-and-fabrication-certificate/",
+     "h1": "Electronic Assembly and Fabrication (Certificate E0929)"
+    },
+    {
+     "control_number": "39646",
+     "title": "Fashion Computer Aided Design",
+     "award": "Noncredit program",
+     "page": "https://catalog.mtsac.edu/programs/programsaz/fashion/fashion-computer-aided-design-certificate/",
+     "h1": "Fashion Computer-Aided Design (Certificate E0383)"
+    },
+    {
+     "control_number": "43753",
+     "title": "Manufacturing Foundation",
+     "award": "Noncredit program",
+     "page": "https://catalog.mtsac.edu/programs/programsaz/manufacturing-technology/manufacturing-foundation-certificate/",
+     "h1": "Manufacturing Foundation (Certificate E0421)"
+    }
+   ],
+   "no_claims_matches": [
+    {
+     "control_number": "24074",
+     "title": "Accounting - Payroll",
+     "award": "Noncredit program",
+     "page": "https://catalog.mtsac.edu/programs/programsaz/accounting/accounting-payroll-certificate/",
+     "h1": "Accounting - Payroll (Certificate E0505)"
+    },
+    {
+     "control_number": "24089",
+     "title": "Accounting - Bookkeeping",
+     "award": "Noncredit program",
+     "page": "https://catalog.mtsac.edu/programs/programsaz/accounting/accounting-bookkeeping-certificate/",
+     "h1": "Accounting - Bookkeeping (Certificate E0504)"
+    },
+    {
+     "control_number": "24162",
+     "title": "Electronic Assembly and Fabrication",
+     "award": "Noncredit program",
+     "page": "https://catalog.mtsac.edu/programs/programsaz/electronics/electronic-assembly-and-fabrication-certificate/",
+     "h1": "Electronic Assembly and Fabrication (Certificate E0929)"
+    },
+    {
+     "control_number": "39646",
+     "title": "Fashion Computer Aided Design",
+     "award": "Noncredit program",
+     "page": "https://catalog.mtsac.edu/programs/programsaz/fashion/fashion-computer-aided-design-certificate/",
+     "h1": "Fashion Computer-Aided Design (Certificate E0383)"
+    },
+    {
+     "control_number": "43753",
+     "title": "Manufacturing Foundation",
+     "award": "Noncredit program",
+     "page": "https://catalog.mtsac.edu/programs/programsaz/manufacturing-technology/manufacturing-foundation-certificate/",
+     "h1": "Manufacturing Foundation (Certificate E0421)"
+    }
+   ],
+   "searches": false,
+   "catalog_list": null
+  },
+  "programs": 41,
+  "by_result": {
+   "not_searched": 41
+  },
+  "found": 0,
+  "found_active": 0,
+  "found_pages": 0,
+  "found_programs": [],
+  "other_programs": [
+   {
+    "control_number": "03000",
+    "title": "General Business",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03003",
+    "title": "Business Management",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03005",
+    "title": "Marketing Management",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03011",
+    "title": "Computer - Database Management Systems",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03030",
+    "title": "Manufacturing Technology",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "08049",
+    "title": "Landscape Irrigation",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "08050",
+    "title": "Equipment Technology",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "08056",
+    "title": "Business Management - Level III",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "08068",
+    "title": "Computer Programmer: C++",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "08079",
+    "title": "Architectural Technology Concentration",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "11592",
+    "title": "Business Management - Level II",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "11594",
+    "title": "Small Business Management",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "11595",
+    "title": "Business: Small Business Mgmt - Level III",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "11596",
+    "title": "Business: Small Business Mgmt - Level II",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "11896",
+    "title": "Business: International - Level II",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "18233",
+    "title": "Liberal Arts and Sciences: Business",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "18744",
+    "title": "Public Works/Landscape Management",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "19893",
+    "title": "Photography Digital Technician",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "22156",
+    "title": "Marketing Management",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "24070",
+    "title": "Manufacturing Technology",
+    "award": null,
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "24106",
+    "title": "Medical Office Specialist",
+    "award": null,
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "24173",
+    "title": "Electronic Cabling and Wiring Technology Level 1",
+    "award": null,
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "24178",
+    "title": "SurfCAM",
+    "award": null,
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "24180",
+    "title": "Job Readiness Skills",
+    "award": null,
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "24223",
+    "title": "Licensed Welder",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "24251",
+    "title": "Parametric Solid Modeling",
+    "award": null,
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "24287",
+    "title": "Data Entry",
+    "award": null,
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "24288",
+    "title": "Desktop Publishing",
+    "award": null,
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "24370",
+    "title": "Electronic Cabling and Wiring Technology Level 2",
+    "award": null,
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "24379",
+    "title": "Welder with Concentration in Semiautomatic ARC Welding",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "24380",
+    "title": "Welder with Concentration in Gas tungsten ARC Welding",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "24402",
+    "title": "Computer Graphics Design/Photography",
+    "award": null,
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "24406",
+    "title": "Welder with Concentration in Automotive Welding, Cutting and Modification",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "30862",
+    "title": "Graphic Design Level II",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "36041",
+    "title": "Physical Therapy Aide",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "36873",
+    "title": "HSE Social Studies",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "36874",
+    "title": "HSE Science",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "37314",
+    "title": "Architecture Foundational Skills",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "41412",
+    "title": "California State University General Education (CSUGE) Completion",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "41413",
+    "title": "Intersegmental General Education Transfer Curriculum (IGETC) Completion",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "45046",
+    "title": "California General Education Transfer Curriculum (Cal-GETC)",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
+ "loads": 581,
+ "seconds": 3017.8,
+ "found": 386,
+ "by_method": {
+  "link_search": 15,
+  "no_closed_list": 41,
+  "not_found": 31,
+  "page_claimed": 11,
+  "sitemap_page": 371
+ },
+ "shared_pages": {
+  "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-computer-engineering-technology-certificate/": [
+   "08075",
+   "22176",
+   "41116"
+  ],
+  "https://catalog.mtsac.edu/programs/programsaz/child-development/child-development-administration-certificate/": [
+   "08098",
+   "39517"
+  ],
+  "https://catalog.mtsac.edu/programs/programsaz/computer-networking-technology/computer-networking-technology-certificate/": [
+   "12544",
+   "22172"
+  ],
+  "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/adult-basic-education/": [
+   "24058",
+   "30805",
+   "36870"
+  ],
+  "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-international-business/international-business--level-2/": [
+   "24107",
+   "24431"
+  ],
+  "https://catalog.mtsac.edu/programs/programsaz/communication/communication-studies2-transfer/": [
+   "30847",
+   "45123"
+  ],
+  "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-vocational-re-entry/": [
+   "36375",
+   "36803"
+  ],
+  "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/high-school-equivalency-ged/": [
+   "36843",
+   "36871"
+  ],
+  "https://catalog.mtsac.edu/programs/programsaz/graphic-design/graphic-design-level-2-generalist/": [
+   "38020",
+   "41228"
+  ],
+  "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/": [
+   "38082",
+   "38094",
+   "38097",
+   "42753",
+   "43747"
+  ],
+  "https://catalog.mtsac.edu/programs/programsaz/culinary-arts/baking-and-pastry-advanced-certificate/": [
+   "38084",
+   "43275"
+  ],
+  "https://catalog.mtsac.edu/programs/programsaz/printmaking-certificate/": [
+   "38766",
+   "46523"
+  ],
+  "https://catalog.mtsac.edu/programs/programsaz/physics-engineering/surveying-engineering-technology-certificate/": [
+   "42022",
+   "42359"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "14039",
+   "title": "Electronic Systems Technology - Level II",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/programsaz/architectural-technology-concentration/architectural-technology-concentration-level-ii-certificate/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3062,
+     "content": 49277,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Outcomes",
+      318
+     ]
+    ],
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "15574",
+   "title": "Radio Broadcasting On-the-Air",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/programsaz/radio-broadcasting/audio-media-degree/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.875,
+    "body": 0.875,
+    "content": 0.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2838,
+     "content": 48734,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Outcomes",
+      83
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "22151",
+   "title": "Landscape Equipment Technology",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "22161",
+   "title": "Radio Broadcasting: On-Air",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/programsaz/radio-broadcasting/audio-media-certificate/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.875,
+    "body": 0.875,
+    "content": 0.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2840,
+     "content": 48734,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Outcomes",
+      83
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "24056",
+   "title": "Health Care Interpreting",
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-health-careers/care-coordinator-level-1/",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2680,
+     "content": 47208,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "24075",
+   "title": "Sports Turf Management",
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/park-sports-turf-management/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4169,
+     "content": 50743,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Outcomes",
+      423
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "24088",
+   "title": "Landscape Irrigation",
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/landscape-irrigation-certificate/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2973,
+     "content": 49464,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Outcomes",
+      324
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "24111",
+   "title": "Landscape Equipment Technology",
+   "award": null,
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "24113",
+   "title": "Landscape and Park Maintenance",
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/landscape-park-maintenance-certificate/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2861,
+     "content": 49370,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Outcomes",
+      342
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "24215",
+   "title": "Tree Care and Maintenance",
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/tree-care-maintenance-certificate/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2867,
+     "content": 49349,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Outcomes",
+      313
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "24248",
+   "title": "Landscape Design and Construction",
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/landscape-construction-certificate/",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2862,
+     "content": 49460,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Outcomes",
+      430
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "24284",
+   "title": "Computer Systems Technology",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-computer-systems-technology/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3280,
+     "content": 50907,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      363
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "24342",
+   "title": "Interior Landscaping",
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/interior-landscaping-certificate/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2933,
+     "content": 49408,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Outcomes",
+      308
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "24374",
+   "title": "Park Management",
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2558,
+     "content": 47388,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "31598",
+   "title": "Adult High School Diploma",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/high-school-programs/secondaryeducationtext/",
+    "label": {
+     "award": 1,
+     "title": 0.75
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.0,
+    "net": 6,
+    "listed": 13,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 3741,
+     "content": 48044,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "36115",
+   "title": "Financial and Database Management",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-business-management-financial-systems/",
+    "label": {
+     "award": 1,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3625,
+     "content": 51509,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      591
+     ]
+    ],
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "39518",
+   "title": "iOS Programming",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/programsaz/computer-programming/cis-professional-certificate-in-c-programming/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.429,
+    "body": 0.429,
+    "content": 0.0,
+    "net": 3,
+    "listed": 7,
+    "why": "coverage 0.43 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 3871,
+     "content": 50269,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Outcomes",
+      286
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "40187",
+   "title": "Android Programming",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/programsaz/computer-programming/cis-professional-certificate-in-c-programming/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.143,
+    "body": 0.143,
+    "content": 0.0,
+    "net": 1,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 1 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3871,
+     "content": 50269,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Outcomes",
+      286
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "42726",
+   "title": "ESL Written Communication - Advanced Level",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
+   },
+   "status": "Approved"
+  },
+  {
+   "control_number": "42727",
+   "title": "ESL Written Communication - Intermediate Level",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
+   },
+   "status": "Approved"
+  },
+  {
+   "control_number": "42754",
+   "title": "ESL Oral Communication - Advanced Level",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
+   },
+   "status": "Approved"
+  },
+  {
+   "control_number": "42755",
+   "title": "ESL Written Communication - Beginning Level",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
+   },
+   "status": "Approved"
+  },
+  {
+   "control_number": "42756",
+   "title": "ESL Oral Communication - Beginning Level",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
+   },
+   "status": "Approved"
+  },
+  {
+   "control_number": "42757",
+   "title": "ESL Oral Communication - Intermediate Level",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
+   },
+   "status": "Approved"
+  },
+  {
+   "control_number": "42758",
+   "title": "ESL Written Communication - Literacy Level",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
+   },
+   "status": "Approved"
+  },
+  {
+   "control_number": "43729",
+   "title": "Engineering Topics",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-electronics/electronics-computer-engineering/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3216,
+     "content": 48595,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      846
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "43754",
+   "title": "Registered Behavior Technician",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-registered-behavior-technician/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.0,
+    "net": 1,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 1 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3484,
+     "content": 51350,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      556
+     ]
+    ]
+   },
+   "status": "Approved"
+  },
+  {
+   "control_number": "43777",
+   "title": "Digital Media Specialist",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "43999",
+   "title": "Regenerative Communities",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "44367",
+   "title": "Dietary Manager",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Approved"
+  },
+  {
+   "control_number": "45423",
+   "title": "Speech Language Pathology Assistant",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Approved"
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "03020",
+   "title": "Electronics: Industrial Systems",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "pages": [
+    "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-computer-engineering-technology-certificate/",
+    "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-technology-level-2-certificate/",
+    "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-and-computer-engineering-technology/",
+    "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-engineering-technology-as/",
+    "https://catalog.mtsac.edu/programs/programsaz/computer-networking-technology/computer-networking-technology/"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "12334",
+   "title": "Digital Systems Technology",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "pages": [
+    "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-computer-engineering-technology-certificate/",
+    "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-technology-level-2-certificate/",
+    "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-and-computer-engineering-technology/",
+    "https://catalog.mtsac.edu/programs/programsaz/computer-networking-technology/computer-networking-technology/",
+    "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-engineering-technology-as/"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "18241",
+   "title": "Associate of Arts in Liberal Arts and Sciences: Music",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.mtsac.edu/programs/programsaz/music/commercial-music-degree/"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "24400",
+   "title": "Certified Nursing and Acute Care Nursing Assistant",
+   "award": "Noncredit program",
+   "pages": [
+    "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-health-careers/certified-nursing-assistant/"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "33436",
+   "title": "Landscape Design -  Level II",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "pages": [
+    "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/park-sports-turf-management/",
+    "https://catalog.mtsac.edu/programs/programsaz/horticulture/ornamental-horticulture-degree/",
+    "https://catalog.mtsac.edu/programs/programsaz/animal-science/agricultural-science-and-technology-degree/"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "35611",
+   "title": "VESL Career Paths",
+   "award": "Noncredit program",
+   "pages": [
+    "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/"
+   ],
+   "status": "Approved"
+  },
+  {
+   "control_number": "37544",
+   "title": "HS English Competency",
+   "award": "Noncredit program",
+   "pages": [
+    "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/high-school-programs/",
+    "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/high-school-programs/secondaryeducationtext/"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "38942",
+   "title": "Exhibition Concept, Design, and Production",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.mtsac.edu/programs/programsaz/museum-and-art-gallery-exhibition-design-operation/museum-and-art-gallery-exhibition-design-operation-certificate/",
+    "https://catalog.mtsac.edu/programs/programsaz/fine-arts/aa-liberal-arts-sciences-emphasis-fine-arts/",
+    "https://catalog.mtsac.edu/programs/programsaz/art-history/aa-art-history-transfer/"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "40142",
+   "title": "CIS Professional in Excel and Acces",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.mtsac.edu/programs/programsaz/accounting/accounting-computerized-certificate/",
+    "https://catalog.mtsac.edu/programs/programsaz/administrative-assistant/administrative-assistant-level-iii-certificate/",
+    "https://catalog.mtsac.edu/programs/programsaz/computer-software/microcomputer-productivity-software/",
+    "https://catalog.mtsac.edu/programs/programsaz/computer-programming/programming-in-c/",
+    "https://catalog.mtsac.edu/programs/programsaz/administrative-assistant/administrative-assistant-degree/"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "42033",
+   "title": "College Readiness for Math and English",
+   "award": "Noncredit program",
+   "pages": [
+    "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/adult-basic-education/"
+   ],
+   "status": "Approved"
+  },
+  {
+   "control_number": "46551",
+   "title": "Spanish",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://catalog.mtsac.edu/programs/programsaz/social-justice/aa-social-justice-transfer/"
+   ],
+   "status": "Approved"
+  }
+ ],
+ "page_challenged": [],
+ "coverage_bands": {
+  "0.5-0.8": 5,
+  "0.8-1.0": 27,
+  "1.0": 354
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/mt_san_antonio",
+  "kept": 358,
+  "kept_moved": 0,
+  "programs": 28,
+  "list": [
+   {
+    "control_number": "03054",
+    "title": "Nursing - Registered Nursing (RN) Generic Option",
+    "award": "A.S. Degree",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/nursing/licensed-nursing-registered-nursing-rn-generic-option-degree/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/nursing/licensed-nursing-registered-nursing-rn-generic-option-degree/",
+    "was_coverage": 0.968,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "08086",
+    "title": "Nursing- Licensed Vocational Nurse (LVN) to Registered Nurse (RN) Option",
+    "award": "A.S. Degree",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/nursing/licensed-vocational-nurse-lvn-to-registered-nurse-rn-option-degree/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/nursing/licensed-vocational-nurse-lvn-to-registered-nurse-rn-option-degree/",
+    "was_coverage": 0.963,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "08087",
+    "title": "Nursing- Licensed Psychiatric Technician (LPT) to Registered Nurse (RN) Option",
+    "award": "A.S. Degree",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/nursing/nursing-licensed-psychiatric-technician-lpt-to-registered-nurse-rn-option-degree/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/nursing/nursing-licensed-psychiatric-technician-lpt-to-registered-nurse-rn-option-degree/",
+    "was_coverage": 0.962,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "10180",
+    "title": "Social and Behavioral Sciences",
+    "award": "A.A. Degree",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/social-behavioral-sciences/aa-liberal-arts-sciences-emphasis-social-behavioral-sciences/",
+    "coverage": 0.989,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/social-behavioral-sciences/aa-liberal-arts-sciences-emphasis-social-behavioral-sciences/",
+    "was_coverage": 0.903,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "18235",
+    "title": "Fine Arts",
+    "award": "A.A. Degree",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/fine-arts/aa-liberal-arts-sciences-emphasis-fine-arts/",
+    "coverage": 0.986,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/fine-arts/aa-liberal-arts-sciences-emphasis-fine-arts/",
+    "was_coverage": 0.957,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "18236",
+    "title": "Humanities",
+    "award": "A.A. Degree",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/humanities/aa-liberal-arts-sciences/",
+    "coverage": 0.988,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/humanities/aa-liberal-arts-sciences/",
+    "was_coverage": 0.81,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "18239",
+    "title": "Language Arts",
+    "award": "A.A. Degree",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/language-arts/aa-liberal-arts-sciences-emphasis-language-arts/",
+    "coverage": 0.988,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/language-arts/aa-liberal-arts-sciences-emphasis-language-arts/",
+    "was_coverage": 0.965,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "30847",
+    "title": "Communication Studies",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/communication/communication-studies2-transfer/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/communication/communication-studies2-transfer/",
+    "was_coverage": 0.939,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "31604",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/english/aa-english-for-transfer/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/english/aa-english-for-transfer/",
+    "was_coverage": 0.931,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "31607",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/art-history/aa-art-history-transfer/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/art-history/aa-art-history-transfer/",
+    "was_coverage": 0.711,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "31650",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/history/aa-history-for-transfer/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/history/aa-history-for-transfer/",
+    "was_coverage": 0.846,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "31773",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/political-science/aa-political-science-transfer/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/political-science/aa-political-science-transfer/",
+    "was_coverage": 0.871,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "32278",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/geography/aa-geography-for-transfer-degree/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/geography/aa-geography-for-transfer-degree/",
+    "was_coverage": 0.941,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "33391",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/studio-arts/aa-studio-arts-transfer/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/studio-arts/aa-studio-arts-transfer/",
+    "was_coverage": 0.708,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "33831",
+    "title": "Journalism",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/communication/as-journalism-transfer/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/communication/as-journalism-transfer/",
+    "was_coverage": 0.825,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "35116",
+    "title": "Environmental Studies",
+    "award": "A.A. Degree",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/environmental-studies/aa-liberal-arts-sciences-emphasis-environmental-studies/",
+    "coverage": 0.982,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/environmental-studies/aa-liberal-arts-sciences-emphasis-environmental-studies/",
+    "was_coverage": 0.909,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "35586",
+    "title": "Agriculture Plant Science",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/plant-science/plant-science-transfer/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/plant-science/plant-science-transfer/",
+    "was_coverage": 0.882,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "35796",
+    "title": "World Languages and Global Studies",
+    "award": "A.A. Degree",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/world-languages-global-studies/world-languages-global-studies-aa-degree/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/world-languages-global-studies/world-languages-global-studies-aa-degree/",
+    "was_coverage": 0.947,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "37603",
+    "title": "Hospitality Management",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/hospitality/hospitality-management/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/hospitality/hospitality-management/",
+    "was_coverage": 0.826,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "39842",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/anthropology/aa-anthropology-transfer/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/anthropology/aa-anthropology-transfer/",
+    "was_coverage": 0.87,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "39844",
+    "title": "Social Justice Studies: General",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/social-justice/aa-social-justice-transfer/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/social-justice/aa-social-justice-transfer/",
+    "was_coverage": 0.913,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41569",
+    "title": "Electronics Technology - Level 1",
+    "award": "Noncredit program",
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-electronics/electronics-technology-level-1/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-electronics/electronics-computer-engineering/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41993",
+    "title": "Public Health",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/public-health/public-health-tranfer/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/public-health/public-health-tranfer/",
+    "was_coverage": 0.953,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "42652",
+    "title": "Agriculture Animal Sciences",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/animal-science/agriculture-animal-science-degree/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/animal-science/agriculture-animal-science-degree/",
+    "was_coverage": 0.9,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "42657",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/business/business-administration2-transfer/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/business/business-administration2-transfer/",
+    "was_coverage": 0.75,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "42789",
+    "title": "Construction Management",
+    "award": "A.S. Degree",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/construction-management/construction-management-as-degree/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/construction-management/construction-management-as-degree/",
+    "was_coverage": 0.818,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "45123",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/communication/communication-studies2-transfer/",
+    "coverage": 0.973,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/communication/communication-studies2-transfer/",
+    "was_coverage": 0.919,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "46352",
+    "title": "Museum Studies and Art Gallery",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mtsac.edu/programs/programsaz/museum-and-art-gallery-exhibition-design-operation/museum-and-art-gallery-exhibition-design-operation-certificate/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mtsac.edu/programs/programsaz/museum-and-art-gallery-exhibition-design-operation/museum-and-art-gallery-exhibition-design-operation-certificate/",
+    "was_coverage": 0.6,
+    "was_method": "sitemap_page"
+   }
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
+ },
+ "fingerprints": {
+  "02990": {
+   "sha256": "a573e74e59f5d3db604967b28293be63f2af6063107c43570412c97160345a7a",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/animal-science/agricultural-science-and-technology-degree/"
+  },
+  "02994": {
+   "sha256": "12f8aa5873bf0005ff3337222375715c3b9478290a7adf3fe85a40ffd4117a9b",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/landscape-design-level-i/"
+  },
+  "02996": {
+   "sha256": "aa7c80c3e0c792fa6da545b09f2c0b4d6b50417960c7fd1283779e766890750a",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/park-sports-turf-management/"
+  },
+  "03001": {
+   "sha256": "efa2ee28bae8d962045ff99f7f64c8e197570604756dcce9d26019cc942988b5",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/accounting/accounting-degree/"
+  },
+  "03006": {
+   "sha256": "63f0ff76b08e02150bd215079d93534eef27c552ffe856b8a60ac82fbc77186a",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/real-estate/real-estate-degree/"
+  },
+  "03007": {
+   "sha256": "389334931adbf14da4d31b60e3cf68693112231abde1be0a1164e48ddcb41015",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/administrative-assistant/administrative-assistant-degree/"
+  },
+  "03014": {
+   "sha256": "226822cefff7dbc380235727e87f3ecf941c82452db4e460bdc7e802f22b08bd",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/sign-language-interpreting/sign-language-interpreting-degree/"
+  },
+  "03019": {
+   "sha256": "c40a5db6399cf2d4243de7aec98340f036fc54f846b463c47ef96d82c9d4024a",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-and-computer-engineering-technology/"
+  },
+  "03023": {
+   "sha256": "c1f3330be763b657282b8e53107d8ca73f2dc1fa7bd6685076d9c5ec9e26e22b",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/air-conditioning-refrigeration/air-conditioning-refrigeration-degree/"
+  },
+  "03024": {
+   "sha256": "29b914cda6139339dc04c587ea95b88b5650d1012f5e013e09a41dc9a100bebe",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/aviation-science/aviation-science/"
+  },
+  "03027": {
+   "sha256": "18ef9e992481cadfaa3f07019705c6a829f7be5af48f094ad1c96b57b6677600",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/aeronautics/commercial-flight/"
+  },
+  "03034": {
+   "sha256": "943fb43537a0ec2dcd06a47639b03c0bd395da3f8da5ba520459ed7570cdaad7",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/engineering-construction-tech/engineering-construction-tech-degree/"
+  },
+  "03047": {
+   "sha256": "5be2d3083ce69a64fc5d6fb8125216afd5e23d65940f8e77830a1de5d8eb3044",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/photography/photography-degree/"
+  },
+  "03054": {
+   "sha256": "cb75b460ed468321580483496a43bc4ec95722cc55b22c7a541c4c394b139e31",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/nursing/licensed-nursing-registered-nursing-rn-generic-option-degree/"
+  },
+  "03056": {
+   "sha256": "d1bbea8eda2d9a6be7d5cb7ebe4cca0c06bc64e3a30db77ca203f7db89df24ca",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/respiratory-therapy/respiratory-therapy-degree/"
+  },
+  "03057": {
+   "sha256": "cb08284efa94bd19bdc2cab1b9c214329a554f291dec0dfa95cc68f3092b34b8",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/radiologic-technology/radiologic-technology-degree/"
+  },
+  "03058": {
+   "sha256": "aecab28176e84ac859d6e22f843a75b1e586e11c88ca94dd7ff3de3555060c77",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/mental-health-technology-psychiatric-technician/mental-health-technology-psychiatric-technician-degree/"
+  },
+  "03059": {
+   "sha256": "5ac235f65f65ed903f4ffe5d39ae00b0083fdf2578e0d41cde19036725d486cd",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/emergency-medical/emergency-medical-services-degree/"
+  },
+  "03061": {
+   "sha256": "f000add02bfa4aac13312b89b084d2de1fe3eb4ac16101efe5c8d5d54a9753ab",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/interior-design/interior-design-kitchen-bath/"
+  },
+  "03064": {
+   "sha256": "2cbfc928056b0510da875e4ca31d7ae587b99ad78a587bea9fb6d462459d1be1",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/fashion/fashion-merchandising-degree/"
+  },
+  "03081": {
+   "sha256": "6c0cb671e87e185dad6565b1a549ca224ead759327155c163d80c8437070f29c",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/administration-justice/administration-of-justice-as-degree/"
+  },
+  "03083": {
+   "sha256": "1b53cdd3ff19916223d4a31f42ee444f44fb205a81476f7e21656e2f642ae901",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/child-development/child-development-degree/"
+  },
+  "03086": {
+   "sha256": "ba322f8ca369bb7e3b88e0df221f9eed77c06b686a2e32f3cd689f82efa9aa73",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/fire-officer-certification-technology/fire-technology-certificate/"
+  },
+  "08042": {
+   "sha256": "9653f835e71b5b70d38d3ba7b76f0a3a19a50b76b01e96169fced27e255534b6",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/animal-science/horse-ranch-management-degree/"
+  },
+  "08043": {
+   "sha256": "9929a166d0fccfb757c3795365714906d376536ad9c171345fd4c265a7d75444",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/animal-science/animal-science-degree/"
+  },
+  "08045": {
+   "sha256": "06d91e59103881f5edf29b5b849a59b56ea24fbade325d115603ad66f7fe1465",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/horticulture/ornamental-horticulture-degree/"
+  },
+  "08046": {
+   "sha256": "53073f4335c5f054860639c7e4ceaf142ee45c2111af1e64a1b0d224b80da8a6",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/interior-landscaping-certificate/"
+  },
+  "08047": {
+   "sha256": "f88f56186550a25b8c57c9dc7d590353fd223a6ec6e00d238a149be097f68874",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/landscape-park-maintenance-certificate/"
+  },
+  "08048": {
+   "sha256": "d6a0a8eb0d52986dd8edba6493ea9add9ec977efd2ec0b58f91ee73a4be5141b",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/horticulture/nursery-management-certificate/"
+  },
+  "08051": {
+   "sha256": "cb100a9b79895a792179bf9254608c73039e59e85da684bd329d1c43be83ae02",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/tree-care-maintenance-certificate/"
+  },
+  "08052": {
+   "sha256": "952e90ad04c108088e9abef3a7864ed85dc5d1265c460872772217c33d1351d1",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/sports-turf-management-certificate/"
+  },
+  "08053": {
+   "sha256": "0601fb335c78a0369c96498bfbf75841fb0f8842a264e9df5311f8e165ae4cdb",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/accounting/accounting-computerized-certificate/"
+  },
+  "08062": {
+   "sha256": "cc62b91eaa82d862a8a70d4d072cccdf22207d6e0822422e8e48e69f5b7769ff",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/administrative-assistant/administrative-assistant-level-ii-certificate/"
+  },
+  "08063": {
+   "sha256": "f2ccef36d0bd75ea2b84d9fb2caa1fa45ad84862411ff5ea8c592ec5d0d572db",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/administrative-assistant/administrative-assistant-level-iii-certificate/"
+  },
+  "08069": {
+   "sha256": "73321cf7e40fda44638f4c78f75107f3a576e7a5c50bf1a3d3dd135492c57621",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/computer-software/microcomputer-productivity-software/"
+  },
+  "08074": {
+   "sha256": "fd33b62d7ef1f1b45de3e86ec43aeecbe6efe1e8379ee8f267cd847e36698ff2",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-communications-certificate/"
+  },
+  "08075": {
+   "sha256": "7b77905a1d156d463d21d5b72363eecad14d1ef360fe67490d302cd780c5e909",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-computer-engineering-technology-certificate/"
+  },
+  "08078": {
+   "sha256": "d13356f63c6bd1b56340954885405a45043dbee771bc6de8130b686630298c8d",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/aircraft-maintenance-technology/airframe-aircraft-powerplant-maintenance-technology-evening/"
+  },
+  "08081": {
+   "sha256": "8bea6d333d346ab93b3ba72216b0b3f3e059637843d0fc9787e4f3d3bb3350d4",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/architectural-design-concentration/architectural-design-concentration-level-l-certificate/"
+  },
+  "08086": {
+   "sha256": "c3b0b4d37feb2196546b6266a756fb52e7a3711421615b307e01710cb77a8fa1",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/nursing/licensed-vocational-nurse-lvn-to-registered-nurse-rn-option-degree/"
+  },
+  "08087": {
+   "sha256": "1f49673667789216a92dde58b21e5477d5dbdb31e0addbc3153740e836b01bbb",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/nursing/nursing-licensed-psychiatric-technician-lpt-to-registered-nurse-rn-option-degree/"
+  },
+  "08089": {
+   "sha256": "827b5389ce1367be34e61fe023ab88e7821c78f4ba875ccee024ab9096ab812c",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/addiction-counseling/addiction-counseling-as-degree/"
+  },
+  "08093": {
+   "sha256": "dba5693d3ff8f16fbc5c1f34cc68e89046d151b1b814ed4fcbca8a36be578020",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/child-development/child-development-infant-toddler-care-teacher-certificate/"
+  },
+  "08094": {
+   "sha256": "eb5742648d34599a71f65893583e4ead1d66dbef0c399392c87154a2a0b5d9d4",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/child-development/child-development-school-age-child-certificate/"
+  },
+  "08095": {
+   "sha256": "98a42c2e1d5e5232fac1c8b56efa0fc5aa86b39793ad55462961e6d5433260d4",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/child-development/child-development-iii-certificate/"
+  },
+  "08098": {
+   "sha256": "194391477aa431f055198714a561e417761b70e53b060039e75a24474e2f5d6a",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/child-development/child-development-administration-certificate/"
+  },
+  "08099": {
+   "sha256": "1521a38814f8c21ca57576a9ef2621a911f5b50c294040e38f8459f5f73b25bd",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/child-development/child-development-early-childhood-teacher-certificate/"
+  },
+  "08101": {
+   "sha256": "30fa5f7cb55d0ef397aac06deb7a5e43003c8fa331c048f67efcf25401f11030",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/animation/animation-degree/"
+  },
+  "10180": {
+   "sha256": "195a6bcb742640b28f7611911028b53691a22be1bed23b64acde8a559d42fb84",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/social-behavioral-sciences/aa-liberal-arts-sciences-emphasis-social-behavioral-sciences/"
+  },
+  "11095": {
+   "sha256": "9e05bbcd691d26df982aa7682acc207465f7e20a152b5021383794777551b771",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/interior-design/interior-design-degree/"
+  },
+  "11111": {
+   "sha256": "aba3a27d3eae80a4e983eff446248221944c316606378c97543a1d085a9afa66",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/fire-officer-certification-technology/fire-technology-degree/"
+  },
+  "11120": {
+   "sha256": "6535d4520c574e202dbc1f6692be5f5bbf55852b83233181b8f59d28204b1988",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/radio-broadcasting/audio-media-degree/"
+  },
+  "11894": {
+   "sha256": "a5861534df7460bdd994305be3f9131147197b7c3e9f34d29064496ece9e8e43",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/business/international-business-degree/"
+  },
+  "12009": {
+   "sha256": "2a1f8bfb60f893887acf59521f4e3ab023f674436b558c10a7dfca1a22cdcf61",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/aircraft-maintenance-technology/airframe-maintenance-technology-day-certificate/"
+  },
+  "12010": {
+   "sha256": "d9a1324271e8e072487888011385de4dcf84015587dda9b062379f68d530178f",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/aircraft-maintenance-technology/aircraft-powerplant-maintenance-technology-day-certificate/"
+  },
+  "12073": {
+   "sha256": "73ba6677b44cb66ee2b4c95d4e37f3464be4005275dce71c7fdb4d3dd250e63e",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/animal-science/registered-veterinary-technology-degree/"
+  },
+  "12076": {
+   "sha256": "3263518a0add4a8ec25d709f53f4ff05f333bf960ef0d4ed47afb1d272f02f0b",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/architectural-technology-concentration/architectural-technology-concentration-level-i-certificate/"
+  },
+  "12077": {
+   "sha256": "68463528960aa97041c789b232d360403aa6cf752efbdbfd400a39242fc38cad",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/architectural-technology-concentration/architectural-technology-concentration-level-ii-certificate/"
+  },
+  "12146": {
+   "sha256": "fdec48c1db5daa5e791d79fed2add91c380c62e11a38e50596ebfaeabbfa22cf",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/histotechnology/histotechnician-training-degree/"
+  },
+  "12157": {
+   "sha256": "49f75b74fa0b9850ed34e5540086ce7614989698e9790b0619caadc63d6e4f92",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/business/human-resource-management-degree/"
+  },
+  "12158": {
+   "sha256": "20e9abb35e65755109d93a28267de79050664cf0c39e088ebe0ec5ab81948e7d",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/fashion/fashion-design-level-i-certificate/"
+  },
+  "12162": {
+   "sha256": "113c395269ae33ce5c8b4be9695f7c62502d4b16cdb16f5fb2f200ee18bbbf0c",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/business/business-human-resource-management-level-ii/"
+  },
+  "12164": {
+   "sha256": "2d4b57134a73eb22a087f230db5ee058f95074d1e0b43493ea03247de88bd452",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/fashion/fashion-design-technologies-degree/"
+  },
+  "12193": {
+   "sha256": "1e871100e64ef2a0477ef0274d0657047ed2b819a2145829b0fde6b063f84dbc",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/accounting/accounting-financial-planning-certificate/"
+  },
+  "12194": {
+   "sha256": "51557664f9221aff166e813e27c5418c48bc2312670f80aae59ee3f3842008b1",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/accounting/accounting-managerial-certificate/"
+  },
+  "12263": {
+   "sha256": "6a81d1d8d5be79fdeabcc84826d8942b4364094463cfc6e258c439b355f5d516",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/computer-networking-technology/computer-networking-technology/"
+  },
+  "12309": {
+   "sha256": "e77de662a799571ea5f64b1288f756d1e1d596891ad19f3e53b18fc69905484e",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/business/business-retail-management-degree/"
+  },
+  "12310": {
+   "sha256": "8d0611a38d1436e05cb6ce35792c95e1e439a7d2afe83f234aba3cd6578c15f3",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/business/business-retail-management-level-ii/"
+  },
+  "12344": {
+   "sha256": "b4a68c6ea88b7adef8ab7e51d8a178850b83a0308f8cd5301320b6d166307aed",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/hospitality/hospitality-restaurant-management-level-ii/"
+  },
+  "12345": {
+   "sha256": "97216d9d6a4f6779271ade6322f04aeee7b2f05e02ac7b37b110b6eaf1249eb8",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/hospitality/hospitality-restaurant-management/"
+  },
+  "12346": {
+   "sha256": "5c60670144de3f41add513c0b413550f29ac33de3560b39ddd389e69509c3732",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/hospitality/hospitality-hospitality-management-level-ii/"
+  },
+  "12544": {
+   "sha256": "83c380f295551901651d7abc5aa3af72d260f14539b2a194577b29efb0ba19a8",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/computer-networking-technology/computer-networking-technology-certificate/"
+  },
+  "12632": {
+   "sha256": "8664a7a299240fc07cf9093d37f39f262a43a1a9eca816ee05c1156eef550b25",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/animation/junior-animator-level-ii-certificate/"
+  },
+  "12633": {
+   "sha256": "2ffb81408082399de34096226424d57c1bb2d1a63cf36f81650564b8aef0eae7",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/animation/animation-game-interactive-multimedia-design-ii-certificate/"
+  },
+  "12653": {
+   "sha256": "0c13f04bb608dc067066cf29cbdd88a3b3ef6f46efe9c53bf71cc119056d62e7",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/television/television-production-degree/"
+  },
+  "13547": {
+   "sha256": "e3d6f0a22a55ee41a6ac6a6f09fd9af6322eb1e178ffc9539578fa235aa227fc",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/child-development/child-development-ii-certificate/"
+  },
+  "14115": {
+   "sha256": "4028e38594f9047da553dc05bfdc5d74ccc8fbe8d1d26959000587f47922ba5d",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/interior-design/interior-design-iii-certificate/"
+  },
+  "15228": {
+   "sha256": "0b5751ba1678f87dc355ef35e0c9c2fb29c4ab557a8073cf13663fbb0ab787cd",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/interior-design/interior-design-ii-certificate/"
+  },
+  "15398": {
+   "sha256": "144185eeb2bdb77fc346e5649b25bfc13dfa90657ec29ca4ee4aa8c5075cf0e0",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/child-development/educational-paraprofessional-instructional-assistant/"
+  },
+  "16430": {
+   "sha256": "a3cfca1bbcc81c0ede55b48fe8d9d8735f82f4c9e4abd7b442b60dda55658dc6",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/applied-laboratory-science/applied-laboratory-science-technology-alst-degree/"
+  },
+  "16544": {
+   "sha256": "b706639424c6526d3a90c9a0586c7ea2b08721d8b6af3d001487f5430b5a3f7e",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/computer-network-administration-and-security-management/cloud-network-cyber-security-management/"
+  },
+  "17592": {
+   "sha256": "ad9bcbff4843acde549d70031a3bc05804c1042569dd5cf4ce97a8225cbc5d9f",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/welding/welder-licensed-certificate/"
+  },
+  "17593": {
+   "sha256": "fe18288cfa01b8d00b527f4d18fad4ed96d4acd0026980e00d4fc252e06bdac5",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/welding/welder-automotive-welding-cutting-modification-certificate/"
+  },
+  "17594": {
+   "sha256": "cb14734cbd10043c6edbd7e149e1d4a8b1ae8d2d9a54d1164621960fed1a46c2",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/welding/welder-gas-tungsten-arc-welding-certificate/"
+  },
+  "17595": {
+   "sha256": "d7d694eda36d3610cf77b00cea82b8fec8e3b036c4dc26eceeeb5359bf82ee07",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/welding/welding-semiautomatic-arc-welding-certificate/"
+  },
+  "17787": {
+   "sha256": "7d620ed894a7a670038800e3a1b4918bc4a37d157b5e7ce70d0943f97e00a8e5",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/architectural-design-concentration/architectural-design-concentration-degree/"
+  },
+  "17853": {
+   "sha256": "34d5d6e5bbcfbdbade7ed2c68b82c53cbf41ee7a2b0cabc6d60a0848acff63df",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/architectural-design-concentration/architectural-design-concentration-level-ll-certificate/"
+  },
+  "17854": {
+   "sha256": "f67fcdf72cedb24b0d44f74a2f4be2898c4f08d38460e8f0bcdb1d0072565650",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/architectural-design-concentration/architectural-design-concentration-level-lll-certificate/"
+  },
+  "18234": {
+   "sha256": "c3f80c526f15a269ac2f9fc97ab64a2f0763dc309a2d23c2ef75fe6a9dd14585",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/communication/aa-liberal-arts-science-emphasis-communications/"
+  },
+  "18235": {
+   "sha256": "45c1389b019b3892fd2f11911502f870cef3b76a6de21a091d62f33d24c61ff7",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/fine-arts/aa-liberal-arts-sciences-emphasis-fine-arts/"
+  },
+  "18236": {
+   "sha256": "8e1ff627a0092729a5d9996962553069db42d057eeb812fbe29cc2bc60941dd5",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/humanities/aa-liberal-arts-sciences/"
+  },
+  "18237": {
+   "sha256": "6c5d9bee8f26a9afbb9330e25208e4d30161486465179f74a88e374fe8dcc856",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/computer-database-management-systems/information_technology_aa/"
+  },
+  "18238": {
+   "sha256": "22e5fff6df5ba2a9e9e115e49b567c93c3ea398f29cc43437427d72195b59c59",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/kinesiology-wellness/aa-liberal-arts-sciences-emphasis-kinesiology-wellness/"
+  },
+  "18239": {
+   "sha256": "b1508a152b2a4371fc77e95d97860ea2b006331f961c694c8ba0044c7b174544",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/language-arts/aa-liberal-arts-sciences-emphasis-language-arts/"
+  },
+  "18240": {
+   "sha256": "d8bd0fbc0e46f11dd3b4cd097571079acd785540aaae270e20fd2dbbb4b3ac4f",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/mathematics/aa-liberal-arts-sciences-emphasis-mathematics/"
+  },
+  "18242": {
+   "sha256": "7f7d950c4424232c63d2c611f91e76fcb30196b0d3738660aaf4da1df87c763b",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/natural-sciences/aa-liberal-arts-sciences-emphasis-natural-sciences/"
+  },
+  "19250": {
+   "sha256": "2d9861b6e719e118040b9f1d83c6980a60dd0ecaefef4ab491b56cf1e355ff8d",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/computer-programming/computer-programming/"
+  },
+  "22147": {
+   "sha256": "e24852ce84f00943969bf31ad73532f43b25e41d585e277901b34244a2646361",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/animal-science/pet-science-certificate/"
+  },
+  "22148": {
+   "sha256": "d00f62b0b2f4b24970827101d15caca4d13b2ce3f2d949d7661c9668aa9c84c5",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/animal-science/horse-ranch-management-level-ii-certificate/"
+  },
+  "22150": {
+   "sha256": "013f4fa94fd5d747658502022a2ce19a74ea1e1584543b9f242bccdca312e98f",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/park-management-certificate/"
+  },
+  "22152": {
+   "sha256": "7fa96b6acdfe5274deee24e18d54190872a6783f695fac183673ac4a2e6f8626",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/accounting/accounting-certificate/"
+  },
+  "22153": {
+   "sha256": "b77bb53cfb82e6ff63b61eb9a112dfa097aa34aa4eeb00b495ced46549ffd613",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/business/business-human-resource-management-level-iii/"
+  },
+  "22154": {
+   "sha256": "9cc60307a4b9ff8784e66fd158933575cffe706e28c535be41b831724bad37ec",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/business/business-retail-management-level-iii-certificate/"
+  },
+  "22155": {
+   "sha256": "d490333246187d618c530517d255400d0b1b8061ca2ec74abf49b9c80bb01719",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/business/business-international-level-iii-certificate/"
+  },
+  "22157": {
+   "sha256": "8c372c1046016dd05599748624cc2624369bdaa7adf69806840891e44e7b6851",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/real-estate/real-estate-broker-certificate/"
+  },
+  "22160": {
+   "sha256": "30f0e724442f9d6f8c40bf6dd63add19e621a30cf799251e70db7df14a7b751e",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/radio-broadcasting/audio-media-certificate/"
+  },
+  "22162": {
+   "sha256": "a6b36be064f15e53ce123fd61b3fe8a88804dc25f28fe4cb130c2b8a6f2b2d5c",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/television/film-and-television-production-certificate/"
+  },
+  "22167": {
+   "sha256": "39b634cc37dfcc83fa1eba97ef7890db35c8173b88eef2f4816f3a1caf2bbf85",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/computer-programming/programming-in-c/"
+  },
+  "22172": {
+   "sha256": "83c380f295551901651d7abc5aa3af72d260f14539b2a194577b29efb0ba19a8",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/computer-networking-technology/computer-networking-technology-certificate/"
+  },
+  "22175": {
+   "sha256": "e71791e325d7bba49e00817e46e5eb39bed11316c7faff5dd95926b5791a3e0b",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/sign-language-interpreting/sign-language-interpreting-certificate/"
+  },
+  "22176": {
+   "sha256": "602207c322143394b3de7bd46d33f403ea8f0442a00488bd3d5151532e8c7715",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-computer-engineering-technology-certificate/"
+  },
+  "22177": {
+   "sha256": "afe7d21bbae0132147d1b2e04593fae5df3166920e76d7cfab856ab687054cf1",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/air-conditioning-refrigeration/air-conditioning-refrigeration-certificate/"
+  },
+  "22179": {
+   "sha256": "5a18c6e0dd18cf49bf8e5ced9741dad4aab4a62ab93b5ed0abdc3431463a7a7e",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/manufacturing-technology/manufacturing-technology-certificate/"
+  },
+  "22180": {
+   "sha256": "f54d9864b3256342a598877e73f78ebb0ca5acdc549c14198b1c825a24709ce8",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/engineering-construction-tech/engineering-construction-tech-level-ii/"
+  },
+  "22181": {
+   "sha256": "a091018ad33e2c73d47e5737eeecbe9a56350b0f9f74f83da5477a73cd2659f2",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/photography/photography-level-ii/"
+  },
+  "22182": {
+   "sha256": "49acc694a5ad3f24049d2768c050289348a4e5281be9cb579208d45559b98011",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/mental-health-technology-psychiatric-technician/mental-health-technology-psychiatric-technician-certificate/"
+  },
+  "22183": {
+   "sha256": "5983a5c67302677d92852d5c3d590db0af0dd076462346dd3c40b7315c6bfd77",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/emergency-medical/emergency-medical-technician-paramedic-emt-p/"
+  },
+  "22184": {
+   "sha256": "0f32b16975b8f7fe6da4efd8212fd0646ff60e1fc57813f6e93e0a45d4494730",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/interior-design/interior-design-kitchen-and-bath-specialization-certificate/"
+  },
+  "22185": {
+   "sha256": "30c02e1a63e641a0a51fe0882ec05d103df851f0c127ba982a3a4ff4a87e61ea",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/fashion/fashion-design-level-ii-certificate/"
+  },
+  "22186": {
+   "sha256": "4ab99f8403b844ef6b3368cb4612c414ad390e5a0e501522c155eb0af3de8ebd",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/fashion/fashion-merchandising-level-ii-certificate/"
+  },
+  "22187": {
+   "sha256": "b847bcae2069d91f2731a7882eaa60b03b68f3724db508f4aa8861f19c6b1724",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/addiction-counseling/addiction-counseling-certificate/"
+  },
+  "22188": {
+   "sha256": "695410b209b64ea7148d5350277aedc013d10e9e63c83db50957dc74c58db7a2",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/administration-justice/administration-of-justice-certificate/"
+  },
+  "24034": {
+   "sha256": "adea20875376d30fc3e9a72e15137e6a4875a9f9dc8efdbdb246bb4e901f773b",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-small-business-management/small-business-management-level-2/"
+  },
+  "24035": {
+   "sha256": "042d4cb682be51f4140375af5ce6baca65d8beb6d24f4c3055c3d15f1ed4e0fb",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-small-business-management/small-business-management-level-1/"
+  },
+  "24057": {
+   "sha256": "ac32156fe9646b862ab4e5414784b0689b90b6e4165999dc8a8e9a1f0e348585",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-livestock-production-management/"
+  },
+  "24058": {
+   "sha256": "e0abbc3566170c9109a19bdb4232a7cab485fed8939425443675ae18d45094da",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/adult-basic-education/"
+  },
+  "24066": {
+   "sha256": "9c51215cfafa0786fa76e08d0fcf81356d0e866e26fac55bb0ee105046e5ec64",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-administrative-assistant-level-2/"
+  },
+  "24074": {
+   "sha256": "e8b8274a73898835743c6b3413a704f8d9cec8d4dc3afbcd4cde1377477fef74",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-accounting/accounting-payroll/"
+  },
+  "24089": {
+   "sha256": "2eebb8f495d7e55defb6354694d2d7f5252f868b3eef502b49c20000d26c8696",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-accounting/accounting-bookkeeping/"
+  },
+  "24107": {
+   "sha256": "94491d3abef993e8378dc5b3532f9c07be6e68159a6a9c841a13766aebe81951",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-international-business/international-business--level-2/"
+  },
+  "24108": {
+   "sha256": "67179975773674c67f37e0366f04aaea9dc835e95f59574c1667462218217f0a",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-business-management/business-management-i/"
+  },
+  "24110": {
+   "sha256": "1ffac0751015b8570fa1caad6f4f39fe00ad89c106570e0399dcbd9442ef36b2",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-business-management/business-management-ii/"
+  },
+  "24162": {
+   "sha256": "bad647173e272473196ff86d48671d47255f014d0085e98822a401a086c09235",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-electronics/electronic-assembly-fabrication/"
+  },
+  "24171": {
+   "sha256": "dec7d82d8b10d96555b382927ff72d0a3a5e861c7120cca406779ad1f8ceaea7",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-electronics/electronics-computer-engineering/"
+  },
+  "24172": {
+   "sha256": "95af4019ef755331b63d9a608c2aeaeb310bcce915dfb72a2ceb7fd20999e5c7",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-pet-science/"
+  },
+  "24209": {
+   "sha256": "0a8e2f4b16e735542c0aeaae0ccb82743f9a61fc46d52f5136fe9a04c0306d47",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-nursery-management/"
+  },
+  "24210": {
+   "sha256": "8f4aafbd18877bd2db6fbdf5fc536bc2ad2075999dd3da30e5a4d9400d98ec9b",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-electronics/electronics-communications/"
+  },
+  "24235": {
+   "sha256": "ff74ac479ca6384431c00124c35986910ba4c09960dd306181e114bcea84522c",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-small-business-management/small-business-management-level-3/"
+  },
+  "24242": {
+   "sha256": "88bfeaf131a070b779913bba113f3801a6a67796e415682893d12bf4d0c7593b",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-floral-design/"
+  },
+  "24245": {
+   "sha256": "c2f234cc225249fa2425c0e9ca0eee7b8f1a23839a99e32b2e613d0cee78a3e0",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-photography/"
+  },
+  "24246": {
+   "sha256": "09de3ee747350e15c784534f808329948843f0bf4c2ba9066f77c2cc33590e31",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-accounting/accounting-computerized/"
+  },
+  "24249": {
+   "sha256": "b946c4b599afcefd33c4dcf5962e6892b22d4e12d5fa607b2cf43fe8b72d7031",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-business-management/business-management-iii/"
+  },
+  "24320": {
+   "sha256": "c44bee83b5f8ca32187a1b4f4b84b4bb45a6ec80b92ceb59ea9c6250df5a3130",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-human-resource-management/"
+  },
+  "24340": {
+   "sha256": "2fc4f943218458bf83126fc56945651bc175cafc8ade41133471966225e778a5",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-horse-ranch-management/"
+  },
+  "24359": {
+   "sha256": "85488941d951010e5e56afabc450359b4ee47df6fe5c74552dc12238ed8dfbd3",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-retail-management/retail-management-level-2/"
+  },
+  "24373": {
+   "sha256": "7a5ea2ed59ad5bd066507f9ffdcf8298027ad367b54d9815fd85ee1b20acb843",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-welding/welding/"
+  },
+  "24383": {
+   "sha256": "4942ebf9fdfcaa399248f8c7faa48f663ea942fced4e6256828d84ed94345a1f",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-retail-management/retail-management-level-3/"
+  },
+  "24418": {
+   "sha256": "4e7429006deb30f68bcf46384c4b306bbd5e84954c8b7793c496b1d0cff735b0",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-retail-management/retail-management-level-1/"
+  },
+  "24431": {
+   "sha256": "94491d3abef993e8378dc5b3532f9c07be6e68159a6a9c841a13766aebe81951",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-international-business/international-business--level-2/"
+  },
+  "30317": {
+   "sha256": "35fa2acd55bbc6e6669f39b7e85092e6b53d69b4df797d4d2fd8ee9023e1dc6c",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/building-automation/building-automation-certificate/"
+  },
+  "30318": {
+   "sha256": "da735d44abd8e7d818292dfcd065f3dbe9d5a6d0b378c7a61f264af6d669a175",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/building-automation/building-automation-degree/"
+  },
+  "30537": {
+   "sha256": "afdc59231a3a02110ab9158b4f15ae4d42add6328b4a65919954fc580531ff9e",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/horticulture/integrated-pest-management-degree/"
+  },
+  "30541": {
+   "sha256": "60d515570cc9789a730c5bc21609467b9d5b78ab63996b87d260b4696052c2a5",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/paralegal-legal-assistant/paralegal-legal-assistant/"
+  },
+  "30545": {
+   "sha256": "4decda4134ec69d18f29f94cef6193cd0ac23bec66048822c1c819ce86dabe15",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/fashion/fashion-merchandising-level-i-certificate/"
+  },
+  "30762": {
+   "sha256": "6e4129b05d0bbe29935706c22d38657c6bb2344f2f61874f6adf97e4cde65498",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/psychology/aa-psychology-transfer/"
+  },
+  "30805": {
+   "sha256": "3b2c24150c3af094d81d1eda4ed1c8089cda40cf887ad509ddb5c14f3179f6f5",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/adult-basic-education/"
+  },
+  "30847": {
+   "sha256": "b4d2cd0552ae74ffaae3aa5526356c8e17f4b9b153aeb3892a3865c040351405",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/communication/communication-studies2-transfer/"
+  },
+  "30868": {
+   "sha256": "c4f43f39f512284b34f2c39e0623f6810a578dc0e327e3aefbe440713d02e703",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/consumer-relations/consumer-relations-certificate/"
+  },
+  "31012": {
+   "sha256": "b9bfc84e3af521a38ed27d5d217dd90144ee84217edd89c8115395091d6f55ce",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-interior-design/"
+  },
+  "31566": {
+   "sha256": "19bfc75d42cafd4760fe9169a3821f8834eae2aeb25b703a9ec2d6f56cd4d5a6",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/industrial-design-engineering/industrial-design-engineering-level-iii/"
+  },
+  "31568": {
+   "sha256": "0c741956ee0deae12a1b461d197caeb6aa2e58a740b9b9462451772e841dcb2b",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/industrial-design-engineering/industrial-design-engineering-level-ii/"
+  },
+  "31569": {
+   "sha256": "071e02833a37a447e636ee04af6b520064113638636ff4a81a4b630455d9cb41",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/industrial-design-engineering/industrial-design-engineering-level-i/"
+  },
+  "31604": {
+   "sha256": "13361bf62b69a9102750d5a10831eb69f45ffcb7931bf5e1805a7b053695f1e0",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/english/aa-english-for-transfer/"
+  },
+  "31607": {
+   "sha256": "99b2198a6d5010ea80b09c5279eaf0fa3232d6427ed5bbadaea90e528da24d8b",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/art-history/aa-art-history-transfer/"
+  },
+  "31635": {
+   "sha256": "58b9172d450488c20e04cde65c73c647702674aa58fb3d92ef172db9ba0a1804",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/industrial-design-engineering/industrial-design-engineering-degree/"
+  },
+  "31650": {
+   "sha256": "3637bd6534eff378064551de609add1da4e8ac3c28ada6098228c53ca74e473e",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/history/aa-history-for-transfer/"
+  },
+  "31668": {
+   "sha256": "9a16405ca9af0f03b993d366b16312af6994881e473f6f10c3ea180592bfe62e",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/mathematics/aa-mathematics-transfer/"
+  },
+  "31773": {
+   "sha256": "ce15cd7285b96cb5d7cee1010282db5a1d8ca670b01588b21c7c3027dd369294",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/political-science/aa-political-science-transfer/"
+  },
+  "31790": {
+   "sha256": "e8c72659055588f3aa068eab68cd3e5925c22fad03e5c22bc874bcc5b8500e35",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/theater-arts/aa-theater-arts-transfer/"
+  },
+  "31865": {
+   "sha256": "abc685818150c48cfbd708dd41597d16b41387f80ce3248be1f7697fa616e2a6",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/music/aa-music-transfer/"
+  },
+  "32278": {
+   "sha256": "79d725a82540c1711929307b564613dd8774b287bd7b56befdec91929e982ec1",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/geography/aa-geography-for-transfer-degree/"
+  },
+  "32338": {
+   "sha256": "d1eb6ae3066bc9960bccfea22e49287ecaa8711adb04ccfee35c238146143aeb",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/photography/photography-level-i/"
+  },
+  "32542": {
+   "sha256": "b99fbf4ce86989676192ce7c8bde57c38dd7da8907db218c4b4450b126bfbe61",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/administration-justice/as-administration-justice-transfer/"
+  },
+  "32892": {
+   "sha256": "01533d7d3a4a5735f66bb6a69a22a850f81e93ea693a7f18fcd66797f58d410f",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/kinesiology-wellness/dance-teacher-certificate/"
+  },
+  "33309": {
+   "sha256": "29ca37545a27bca387b7160b21e5c486919606fd85e8a81cc81ad40bc0b461db",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/landscape-construction-certificate/"
+  },
+  "33311": {
+   "sha256": "3855446a4e63750622ea1cd14fe04e63597099bb45e51350f743ef18fdbcc0ba",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/horticulture/horticulture-science-certificate/"
+  },
+  "33391": {
+   "sha256": "c0d04cc50317e18427b80ab2f6c2873c91da7faf4d4f2691dc5210da06ee1556",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/studio-arts/aa-studio-arts-transfer/"
+  },
+  "33703": {
+   "sha256": "aff17a8b1ebaab6916a8c502c65a019880fd88f8e1da4f9a759b983f046948c4",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-health-careers/personal-care-aide/"
+  },
+  "33831": {
+   "sha256": "7da7c19ad6600eab64b816ccf014bd03473981e06a8e320fbdb0555c544e47c1",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/communication/as-journalism-transfer/"
+  },
+  "33876": {
+   "sha256": "3b3c26ea7267e3cf6d13225f819489c04001939a89aa4b5ce50a31b40bb4a1c7",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/child-development/as-early-childhood-education-transfer/"
+  },
+  "35116": {
+   "sha256": "ad59a5c1bf507087d00b08a53d05f89daeb2e4720c6d3b96512d75e5b7775ce1",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/environmental-studies/aa-liberal-arts-sciences-emphasis-environmental-studies/"
+  },
+  "35351": {
+   "sha256": "b5d347d3e2d76d13d2fe5fc97cd7e6292314be3a0d00dd5e5eaf05cc15b261a7",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/photography/photography-video-production/"
+  },
+  "35534": {
+   "sha256": "4747be0066050f5655189920e115b1a7f811b7200b0fb5705d222f89bfbbc8d4",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/social-behavioral-sciences/sociology-transfer/"
+  },
+  "35586": {
+   "sha256": "35281ec3894a872ec5edd4f03a9a54030aad5e86c89e37793c8a0863baa42579",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/plant-science/plant-science-transfer/"
+  },
+  "35635": {
+   "sha256": "42934ad917435c1b588c874fb7a727592173228439ceb46c055e67cf8752d4ff",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/nutrition/nutrition-ditetics-transfer/"
+  },
+  "35718": {
+   "sha256": "ad4a5421472014ff0cf8c0b95ddc1882eea2776a821a157f1a3991f491fd777a",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/philosophy/philosophy-transfer/"
+  },
+  "35774": {
+   "sha256": "79e3af91b86f0017c03ae7f28af76f8ed4a7963bf5e02aac475a43e9cf378085",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/public-health/public-health-as-degree/"
+  },
+  "35796": {
+   "sha256": "57694d063d694cac1b87d2e9903127988067a92b946249cedf602d8d209b35c1",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/world-languages-global-studies/world-languages-global-studies-aa-degree/"
+  },
+  "35909": {
+   "sha256": "749fb2f401fa0c6f5d610227819325da658b1869c4c44b87de7065274b05bb6d",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-electronics/electronic_systems_technology_cabling_wiring/"
+  },
+  "36278": {
+   "sha256": "f4cd1ea3c55b2a9ddb32d2404247f107b2b585dd270abc56618146d4a139ec76",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-vocational-re-entry/basicexcelapplicationstext/"
+  },
+  "36375": {
+   "sha256": "8fed3109851a65f32893f613b41c2538af254dc96296844c0314e0e2663e69cc",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-vocational-re-entry/"
+  },
+  "36441": {
+   "sha256": "7d33e21e11b9923b329b0aa7403b168de20f1f9b44568cf438e3f9f620fc914d",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/television/video-engineering-certificate/"
+  },
+  "36560": {
+   "sha256": "b4a13178c8afb6c2040eb46a629f1fd631daefaddf494db8eb0afbc789248b21",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-vocational-re-entry/basiccomputerpresentationandpublicationtext/"
+  },
+  "36697": {
+   "sha256": "07c7113e261fe0c0757395836035ac2aac33792182ea29ec0c10b9603066f39a",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/television/film-television-electronic-media/"
+  },
+  "36743": {
+   "sha256": "1c8d296bcac1122762333568cd898f744348dca7e551f5a22c55f6e4efd668ba",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/high-school-programs/secondaryeducationtext/"
+  },
+  "36803": {
+   "sha256": "170b7071bada1a0839fc3c1c57950de51f5dc17d998bb1619b4fde68df9ce38b",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-vocational-re-entry/"
+  },
+  "36834": {
+   "sha256": "1ba956e976e1b050d2d352ee2accc91191b335261e6388b6bdbd49fcfbf2be8f",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-vocational-re-entry/officecomputerapplicationslevel2text/"
+  },
+  "36843": {
+   "sha256": "cb416a40690f8646dd34b923beefc0677b6916846f186935385f997efa4d3ee0",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/high-school-equivalency-ged/"
+  },
+  "36870": {
+   "sha256": "aa01080cc49d5c132d8b2438619d24a158855169eb5047137075eda30dd02d9a",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/adult-basic-education/"
+  },
+  "36871": {
+   "sha256": "316f65f7edd232db604d38f4caf2cced578c815b0adf1a91f04e193a7f3edf90",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/high-school-equivalency-ged/"
+  },
+  "36872": {
+   "sha256": "af18719946c3c0ca6f386c3c08ff1a5f0940a400d1fc6a397fd15607cd63f407",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-health-careers/certified-nursing-assistant/"
+  },
+  "36926": {
+   "sha256": "01e520ee751c583244c3ccc777f0509856546b6e0e5c9fae520c8705f64c2686",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/kinesiology-wellness/dance-aa/"
+  },
+  "36931": {
+   "sha256": "1eb6a71654047a1942f55a1899c56b904fb55ab2da24dcb93f24a18497874b65",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/culinary-arts/culinary-arts-management/"
+  },
+  "36941": {
+   "sha256": "f94d8660a4b6b4ec12c5d616b9385b5e9770061d0de39aeffa74ab9f119490da",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/business/supply-chain-management/"
+  },
+  "37023": {
+   "sha256": "008970aa431a61db1c1dfddd60e0097d678a0a006656e3ed51e75e9d94721201",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/photography/drone-camera-operator/"
+  },
+  "37041": {
+   "sha256": "ba405c1418c99a227e84e728ca007960f861c48b529d338f806066dc6444a7fa",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/music/audio-arts/"
+  },
+  "37042": {
+   "sha256": "fe8eb663a3355f543e2516c27f45aada1f050c62fc15d054d30a868f5b2ed07e",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/animation/virtual-reality-designer/"
+  },
+  "37052": {
+   "sha256": "d418bc5a0a3cb06220d865bb5736c0c55b448665e26c1f7885ff62c616d1727d",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/theater-arts/technical-theater/"
+  },
+  "37313": {
+   "sha256": "aaa60c3673c7ac08773d5e331701fa6babc5c50868b58249fb4e4dfb16eef5b6",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-architectural-design/architectural-design-concentration-level-1/"
+  },
+  "37437": {
+   "sha256": "db8728139c45d8a52b668197212f4761fc57d850aba2e8861d51018894aef67f",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/human-prosection/human-prosection-cert/"
+  },
+  "37443": {
+   "sha256": "783aed34ba4f5cf5334db756d053d603eb3fc72e7f22c2fbf6b5480c7fd66d00",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-appliance-repair/"
+  },
+  "37444": {
+   "sha256": "0a71e3e99cf287dd15ab1b611edac1e742967754997edc85429739c9cd947df9",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-general-office-skills/"
+  },
+  "37445": {
+   "sha256": "c484ace76327661d42f8cff3eecbbf3e4ff558a83cec0179b710858f35331ca3",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-manufacturing-electrical-systems/"
+  },
+  "37446": {
+   "sha256": "0777192ade439336bad122bfd5aac830e586d1051560d21884b32aa485b3d429",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-medical-secretary/"
+  },
+  "37598": {
+   "sha256": "4ef34dcd00f8e1501171ecfa12d35b17ade81b3a28c5bed09337c1e19ed809c4",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-welding/welding-basics/"
+  },
+  "37599": {
+   "sha256": "c7a538f8d5883f0d7959a2a5e61a295f58dc71e28e955de51120c91ee98359e1",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-trades-preapprenticeships/"
+  },
+  "37603": {
+   "sha256": "633db624f230705448f8a885080d9a710b8d8e5edb41415663b82b7c3e2ade0b",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/hospitality/hospitality-management/"
+  },
+  "37884": {
+   "sha256": "3d6224cddf18d4d4115f43ce5b180032deaf9457979b6be7350d533cb30938db",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/nutrition/nutrition-certificate/"
+  },
+  "37886": {
+   "sha256": "7bf1835348c20cda264e6e70edd222e7f2e1be8b1114a238e64f242a7477f61f",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/computer-database-management-systems/big-data-analytics/"
+  },
+  "37907": {
+   "sha256": "fb368af566d3a2e137b1b8911876aa4175bb89e3f78810118ceb217847cd60af",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/kinesiology-wellness/kinesiology-aa-t/"
+  },
+  "38020": {
+   "sha256": "1767dca2db0c70803bb8b971ed080e8d916144478c1535750d379cb0d8815a6e",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/graphic-design/graphic-design-level-2-generalist/"
+  },
+  "38082": {
+   "sha256": "771a30b14ee1155243063dd0b7b81e4547169d272939d09f04472419ebb874ea",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/"
+  },
+  "38083": {
+   "sha256": "5f3da6ef507af0d08ad0559efd30561c75165384d327213acfae4981cbec7b7b",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-health-careers/care-coordinator-level-1/"
+  },
+  "38084": {
+   "sha256": "f72f8ccb18edf0f9a5a15ba6afb708ef66aacf6a27fe4ec3c6f38ea39590da0d",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/culinary-arts/baking-and-pastry-advanced-certificate/"
+  },
+  "38085": {
+   "sha256": "db149379ec3f2a5bca82b1a91cf6e2c8651bff5826c4cc59ffd42da531508231",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/child-development/early-intervention/"
+  },
+  "38086": {
+   "sha256": "2e44aacc15f1fa7f7405011dd672f087b3363639622e65c4ec575fd3c88f6117",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/culinary-arts/culinary-cert-advanced/"
+  },
+  "38091": {
+   "sha256": "f1f3d46e508c15262b9cafb686c72a9d62b5e234e0603bc049d2fc9948bdbbee",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/culinary-arts/baking-pastry-as/"
+  },
+  "38094": {
+   "sha256": "771a30b14ee1155243063dd0b7b81e4547169d272939d09f04472419ebb874ea",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/"
+  },
+  "38095": {
+   "sha256": "bd9ef55d3a560c7854c164016faa44dc70d0868c72aacc7a45a46368ffde92aa",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-health-careers/sports-medicine/"
+  },
+  "38096": {
+   "sha256": "8fe41fa52117d561a85fa537618b4e91fccf3e25ac14916818ee8e10d8df1deb",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-health-careers/occupational-therapy-aide/"
+  },
+  "38097": {
+   "sha256": "771a30b14ee1155243063dd0b7b81e4547169d272939d09f04472419ebb874ea",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/"
+  },
+  "38102": {
+   "sha256": "6510a248e227734621919f44be5b79c3281ab15d09f102db8c3215de402e0d36",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-health-careers/surgical-technician/"
+  },
+  "38103": {
+   "sha256": "449189c601f0e7f53d58a599d9252422d28b5e334c260b486fad64705aab7ef6",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-hospitality/"
+  },
+  "38104": {
+   "sha256": "303d6a390fdc2cd956cad6284ce18202d28b103bbe686a2b76d146cd12061fa2",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-emergency-medical-technician/"
+  },
+  "38105": {
+   "sha256": "f862d882bd282609e457db8ef2f576ad546397ed54c160ad8e3f26af536a6947",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-solar-panel/"
+  },
+  "38106": {
+   "sha256": "5c077061b6232b2c3d2b22d2160c913c6e0985472437bc4d9494e7181d0c3b11",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-health-careers/care-coordinator-level-2/"
+  },
+  "38107": {
+   "sha256": "57602877446525a09a1471defa0fd31f685229a6dd9bc68f5d43d33ad06cc870",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-accounting/general-accounting/"
+  },
+  "38108": {
+   "sha256": "2f97b2f2257a2302d6c1bdd595e7f23ca2f1e7eb5a91b84b33980a132315d802",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-health-careers/medical-assistant/"
+  },
+  "38111": {
+   "sha256": "9d17d3d0bcd054f6f325121f1612c297cd6b6433e6b5d21c715d27ece6493af9",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-administrative-assistant-level-1/"
+  },
+  "38112": {
+   "sha256": "a6e6c6544456a4ac023afdc3e0c13fddb4ac79d43dec88e4b84c0cdd48eb3b13",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-accounting/payroll-tax-accounting/"
+  },
+  "38725": {
+   "sha256": "4985bb8fb82d9eb8c0026e37299cef137ab481d5c0a5daef2a3a42b371856f6f",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-vocational-re-entry/microenterprisetext/"
+  },
+  "38731": {
+   "sha256": "e6e1fa8297865b88988228a028dbec9fe0930764848b1572da47649f8e4d19e7",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/biology-as-degree/"
+  },
+  "38766": {
+   "sha256": "a104589c57f9f0388ce703173235a43be684ee1e28e75921b2738938223e842e",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/printmaking-certificate/"
+  },
+  "38783": {
+   "sha256": "444a69109526a66c5f4b24a7f9c163df29e4e126f0b191bfcca9e84ef03fade4",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-health-careers/college-readiness-healthcare-programs/"
+  },
+  "38833": {
+   "sha256": "06352b909b121b4c08f45dde30c7dbc6d2fdd62336cac3d18ac6e40d5888ccf4",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-fashion-design-level-1/"
+  },
+  "39212": {
+   "sha256": "bd4bf734457e50be127c8c8ff80e62818c4fbc3d7c619276367fe56a9bbc5b53",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/aviation-science/unmanned-aircraft-systems-as/"
+  },
+  "39411": {
+   "sha256": "e1760ce76fd69d22ce0b21966d63afc2dad010149acd1ea1acc8b6fd7b957edb",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/aviation-science/unmanned-aircraft-systems-certificate/"
+  },
+  "39517": {
+   "sha256": "9a8606621914ab8677e7bbebccab0b4d55051c740ac1e1edd75c5bb48a11dfc7",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/child-development/child-development-administration-certificate/"
+  },
+  "39646": {
+   "sha256": "e2811fcb31dffb6b8aba6de8a7b47afb019c4350f5823d357a11fd254ce46829",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-fashion-computer-aided-design/"
+  },
+  "39689": {
+   "sha256": "eb34d256ceabab66650410dc23bb4d7e703a72f282cf659138d2637817be4b61",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/computer-database-management-systems/introduction-computer-information-technology/"
+  },
+  "39709": {
+   "sha256": "c443b12954eaae73315beeb6f12948fea9282a26078352ba8e4a251da73681d8",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/kinesiology-wellness/pilates-professional-teacher-training-cadillac-chair-auxiliary-certificate/"
+  },
+  "39710": {
+   "sha256": "e2a53f3e2de7e7cb7f73294f133aa5bd07ccdb29fd712b8b302cce0819c8d5e4",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/kinesiology-wellness/pilates-professional-teacher-training-phase-i-mat-reformer-certificate/"
+  },
+  "39842": {
+   "sha256": "787af7626ec8366fa842e11126fe42c439e2109a188b51bb0689f7bd8631eaf0",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/anthropology/aa-anthropology-transfer/"
+  },
+  "39844": {
+   "sha256": "952e6eb207f9edb88a60473e54ccdb51b49b901f2b48885cef01bae0729e4048",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/social-justice/aa-social-justice-transfer/"
+  },
+  "39845": {
+   "sha256": "658af1925b1644342ca5bbf84b085bd5986299fc2174a5d4dc9e1cffebd9ef63",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/geology/as-geology-transfer/"
+  },
+  "40141": {
+   "sha256": "ee6ed4ba0e37d46540c52555d5a0775603753487e2a49d262a0ee12df76da3d7",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/computer-programming/cis-professional-certificate-java-programming/"
+  },
+  "40143": {
+   "sha256": "051589a6b8842b2df7a9d55b1c8ed6e1e45be237a1374de36c19d9238ca7082f",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/computer-software/cis-professional-certificate-linux/"
+  },
+  "40154": {
+   "sha256": "b993485d908a7ae206cd1b5ceac62a8893475d4df39b29dc86c4c8a4aacfb08a",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/fashion/fashion-historical-costuming/"
+  },
+  "40158": {
+   "sha256": "b66b14f18e899103f318832df3dffafd9ecd8b2efd58a3c08e1e6bdfa34a4e27",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/computer-network-administration-and-security-management/cis-professional-certificate-networking/"
+  },
+  "40159": {
+   "sha256": "e2360b74c65521cf0bc08e7337f33959234df8fd42706ae165868384c16219a6",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/computer-network-administration-and-security-management/cis-professional-certificate-telecommunications/"
+  },
+  "40160": {
+   "sha256": "4df3f51576a3b355d00f2539146d9ed29079764e266a31b6f3f755e09e8116f5",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/computer-database-management-systems/cis-professional-certificate-sql/"
+  },
+  "40180": {
+   "sha256": "99b7e1e073701d89487c3bf3eba2e2efe8aee9d56fd8049bd7701bb8e6f54393",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/computer-network-administration-and-security-management/cis-professional-certificate-network-security/"
+  },
+  "40184": {
+   "sha256": "54e2da5ee9d4ecd0c24c09c3a9280445fca3a05dc65260b62c34609789baefb2",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/computer-network-administration-and-security-management/cis-professional-certificate-information-operating-systems-security/"
+  },
+  "40185": {
+   "sha256": "cc157a238fe6a649d88203297b523e02fac13a6c6f14b2b03d5837fc2ba9630b",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/cis-cloud-computing-amazon-web-services/"
+  },
+  "40186": {
+   "sha256": "a122402fa1c7a16e16e245425ef8ceeca7e1ddc512994b598ea7a1af5d83f67a",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/computer-programming/cis-professional-certificate-web-programming/"
+  },
+  "40188": {
+   "sha256": "523a2f1925041c397b7893bd8a09a473a19929c8975602208dd87abbab5e4966",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/computer-programming/cis-professional-certificate-object-oriented-design-programming/"
+  },
+  "40254": {
+   "sha256": "4b115661a5aac8448fe270c9e075a9d4cf8615afe2c4a0ec58bafad6b151f33a",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-health-careers/contact-tracer/"
+  },
+  "40255": {
+   "sha256": "c90ac433b5bc10ae403478be365992f555b94372dea586f9bac91ea8f458f6d8",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-fashion-merchandising-level-1/"
+  },
+  "40274": {
+   "sha256": "9133b16621764c9aa49d2a10e701c36adb5b5d63ab3a539eab9c0a0fe3c6e15f",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/artificial-intelligence/artificial-intelligence-in-business-certificate/"
+  },
+  "40282": {
+   "sha256": "3ab5076521a99f5577f6a088e54b805a2827c621cf0bb764fa2d93a2b3ff3fcf",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/computed-tomography/computed-tomography-certificate/"
+  },
+  "40299": {
+   "sha256": "dcccc32c35007f10b56ededc9121b6501f7336c3708aad267c7b3a77a8961897",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/music/music-studies-level-i/"
+  },
+  "40525": {
+   "sha256": "0c09df5c647b0f82211f6f2d5e2f6c262cb6ca52a63f96506e209dbb89745472",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/fashion/fashion-retailing-fundamentals/"
+  },
+  "40567": {
+   "sha256": "9162f0f5b9fc85cfe15dcf88356a01b989cac466e9553f7ef621feb254fd98a0",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/computer-programming/cis-professional-certificate-python-programming/"
+  },
+  "40968": {
+   "sha256": "ed962f34ac445c2ebad07d948f4f04bb6efdc108c5f401b2a78271b1a11ea9be",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/geology/geotech-certificate/"
+  },
+  "41115": {
+   "sha256": "a00d9260c84b73ea52a8f3adca5267a3ea35aa58fe959fe6402d05164ec92cde",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/computer-networking-technology/computer-networking-technology-fundamentals/"
+  },
+  "41116": {
+   "sha256": "e2d250479f5faa466b6824a4256f4b7150b9c3c0743e33ae7b7b872ffdca0cc3",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-computer-engineering-technology-certificate/"
+  },
+  "41117": {
+   "sha256": "240977dac2dd13dca55ce2543f0568679b90570ef5f6b7b130a470f2e7a35873",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-technology-level-2-certificate/"
+  },
+  "41118": {
+   "sha256": "4346956bf112421b40f385e5ef0d1de19f5aa4d0b230dfa21df754c707576616",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-engineering-technology-as/"
+  },
+  "41168": {
+   "sha256": "dc2630ba3381223086be74b233c8ce7c6e465bdf0d6eb18180f80a5762ace361",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-health-careers/pharmacy-technician/"
+  },
+  "41228": {
+   "sha256": "1767dca2db0c70803bb8b971ed080e8d916144478c1535750d379cb0d8815a6e",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/graphic-design/graphic-design-level-2-generalist/"
+  },
+  "41229": {
+   "sha256": "2ae06b317cb0a5c2b7a690ed08919126e92bb8df03032d2966d6492aa1654019",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/graphic-design/graphic-design-level-2-motion-graphics/"
+  },
+  "41230": {
+   "sha256": "7504cc5fb40eb5eaa8b836cb1befbd4efad27ecaef7f01fd8e0fd12d9f9d7f81",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/graphic-design/graphic-design-level-2-web-design/"
+  },
+  "41235": {
+   "sha256": "ddc4cb6b283623ab032e7e175945692d72fd5a8af7900515392a2e9ee571ad19",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/graphic-design/graphic-design-level-2-marketing/"
+  },
+  "41543": {
+   "sha256": "01b551dd3dbe194fa51b09c00c367f1ec8b8a08f6052691ba54e55a4700236ea",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/physics-engineering/engineering-fundamentals/"
+  },
+  "41560": {
+   "sha256": "5eb9299f97e6dc3e373cbc166b8064146c105c1c0f52047fa1382e2b90032fa6",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/physics-engineering/engineering-emphasis-chemical-materials-engineering-applications-degree/"
+  },
+  "41561": {
+   "sha256": "bc9ac0ee3ee32c335d9f7775cd41df87e34b55a09920e8e32f0930be5bec2107",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/physics-engineering/engineering-emphasis-electrical-engineering-applications-degree/"
+  },
+  "41569": {
+   "sha256": "f11f8112c0021994c78d8b38bece41200b54f4161370e972efe199c17b6f7784",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-electronics/electronics-technology-level-1/"
+  },
+  "41570": {
+   "sha256": "e4d57adeb3af58188ae3e2db61e2e761bd3ece03b1836ef9670c127e112c4bd2",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-electronics/electronics-technology-level-2/"
+  },
+  "41601": {
+   "sha256": "cb30f86ab7513454ccd42154cff1647d212de31c389f3be2977e9a9899a3b343",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-computer-networking-technology-fundamentals/"
+  },
+  "41622": {
+   "sha256": "ed107743d6b9ca1a4c0f55c76e1cbbc37a1460282542abe160b2ac914613a488",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-computer-networking-technology-industry-certifications/"
+  },
+  "41644": {
+   "sha256": "3f19ed6b54e15f779037ee7ad74ec4262fe0bf86a2590a99bd318a2e481ab47c",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/physics-engineering/engineering-emphasis-electrical-engineering-applications-level-2/"
+  },
+  "41646": {
+   "sha256": "bddd222a5faaf04467fc575f8d6867295b7344cf8f5ff30f20cd79c109995b55",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/computer-database-management-systems/big-data-analytics-degree/"
+  },
+  "41656": {
+   "sha256": "7dce9b7f257adbeb023c52622a2c3479602ad5122fd01e9114a53fbefcfc2d7e",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/physics-engineering/engineering-emphasis-chemical-materials-engineering-applications-level-2/"
+  },
+  "41657": {
+   "sha256": "fdf5de78a31747e9b6a8b81b734f583ae74cae7a73ef9735981b3381f2e3ab27",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/physics-engineering/engineering-emphasis-mechanical-engineering-applications-level-2/"
+  },
+  "41660": {
+   "sha256": "ca11cbdcb03382658cdd1f70f319d74b2142c14c3963730b9433c0293468128a",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/physics-engineering/engineering-emphasis-civil-engineering-applications-level-1/"
+  },
+  "41661": {
+   "sha256": "68c2460b286aa43b7949ae477773aae7da59dfff348b5a65a453dfebf7e27c9e",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/physics-engineering/engineering-emphasis-software-engineering-applications-certificate-level-1/"
+  },
+  "41662": {
+   "sha256": "b5baff2aaee307908d3311d7e98c9cb22deff587d0e654e2b78759f6c94b2988",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/physics-engineering/engineering-emphasis-civil-engineering-applications-level-2/"
+  },
+  "41663": {
+   "sha256": "21377ef201e08e0003a425981082adb121eb44eef640488d5a429afdf80ba507",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/physics-engineering/engineering-emphasis-civil-engineering-applications-degree/"
+  },
+  "41664": {
+   "sha256": "17ece48aef63a5aac38dc1a9121cfbe6783350c58957d2d7a16f947df8431aa0",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/physics-engineering/engineering-emphasis-software-engineering-applications-certificate-level-2/"
+  },
+  "41665": {
+   "sha256": "2c977f8e2a200d198d9c3f6d59288fb35fe47867e98b015d20629f019ce13eaa",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/physics-engineering/engineering-emphasis-chemical-materials-engineering-applications-level-1/"
+  },
+  "41666": {
+   "sha256": "a7d730547c2730dd0138ec238fd00e57cdb39196f48aa22df7c3ce9fe2909f34",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/physics-engineering/engineering-emphasis-mechanical-engineering-applications-degree/"
+  },
+  "41667": {
+   "sha256": "702b3f005506386aee1957e68d145810e55d0debe4663df2a50842b7dafbddfb",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/physics-engineering/engineering-emphasis-mechanical-engineering-applications-level-1/"
+  },
+  "41668": {
+   "sha256": "ad934865425fedb15d8f97272911b3b3be439da7f5d117e7b97abd6e0a2e6476",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/physics-engineering/engineering-emphasis-electrical-engineering-applications-level-1/"
+  },
+  "41671": {
+   "sha256": "a2dbc5de3ac3a219917f5106bbc102e64985e41da6b9b3d1d137928b72cb1469",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/physics-engineering/engineering-emphasis-software-engineering-applications-degree/"
+  },
+  "41685": {
+   "sha256": "c339bb2dff1fda0f7cfd88c26fe5e43b3cde20c188b8378f8358be29808d0530",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/communication/forensics-competition-management/"
+  },
+  "41694": {
+   "sha256": "e2f325e0280a6b243631a307bf8c73c142a7851604662a2820e15ba388ea6a2d",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/artificial-intelligence/artificial-intelligence-for-business-as/"
+  },
+  "41807": {
+   "sha256": "6ba41da4f05ac0d4d86650e83b624b94070d2ebfeea69ba7bfb0e20282e9902a",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/computer-networking-technology/computer-networking-technology-industry-certification/"
+  },
+  "41812": {
+   "sha256": "37bfab12370db22ebb6017e62ea3b43da6bbbde93b0931be9af8d016422cc3ce",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/geography/geographic-information-systems-gis-degree/"
+  },
+  "41813": {
+   "sha256": "3d73147238b8888419b7f3915d49f3cf4cafc36d8a8332bb15c40ef09ef3b5f0",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/physics-engineering/sales-engineering-degree/"
+  },
+  "41815": {
+   "sha256": "42891770abddaf720a367eff34c7fdcdc9fa7d72a94d1c5bee4e528c614238d7",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/geography/geographic-information-systems-gis/"
+  },
+  "41903": {
+   "sha256": "f2707a312caefabb80b8110708fb0d7609b50e4d2114876fd54423461025d591",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/physics-engineering/technical-sales-certificate/"
+  },
+  "41993": {
+   "sha256": "9431c269d438890de0aefafaca16d499c3ccc13c68e905be72fc4ca66db430f9",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/public-health/public-health-tranfer/"
+  },
+  "41998": {
+   "sha256": "d426f01ff0928114ad35b51de23f80098a54bbc5efec6becac7281a8f9961d09",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/theater-arts/theater-performance/"
+  },
+  "42011": {
+   "sha256": "8ec9d49fa12ba93db52b9d31b1d1ecf48f22fa29381b64efc651492636d875d2",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/american-language/american-language-advance-proficiency-in-english-for-english-language-learners/"
+  },
+  "42019": {
+   "sha256": "bd270424663c5a544f2091350fc1c62e333c851f0c7e27e50c4387f834f16ce4",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/american-language/american-language-foundational-english-for-english-language-learners/"
+  },
+  "42021": {
+   "sha256": "3b581ed90864bdb6bf29cc44dcca608ee09d32461c9eae634f05e2ce4c952374",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/american-language/american-laguage-communication-for-english-language-learners/"
+  },
+  "42022": {
+   "sha256": "78793cdae6dd0e03214479215974cbf98ad1538f20086b68bb735baf369aafa5",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/physics-engineering/surveying-engineering-technology-certificate/"
+  },
+  "42212": {
+   "sha256": "0261b102174f52f89789724f65f036b278b5c8ead1320556407e5067f718c8fe",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-logistics/logistics-analyst/"
+  },
+  "42213": {
+   "sha256": "9c1f3b8b3356a1657cb9dbd74611da6cd73c9e5b1fa82bc984f613de2e1c4b90",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-logistics/logistics-operation-specialist/"
+  },
+  "42214": {
+   "sha256": "277c9cfde3a824e43b8bfd5fade1edc0757d8542dfb138b800034c199c49a57b",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-logistics/logistics-technician/"
+  },
+  "42265": {
+   "sha256": "1ecb79e672cc9b2168186177d4bc6564a1a6e49374b54ee341798724f1d4cfac",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/animal-science/horse-ranch-management-level-i-certificate/"
+  },
+  "42289": {
+   "sha256": "a5e9ee36ab6cf9f582d91a31b75680afb319cfd1f8e0d2e41f2bd377b120fc2d",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/animal-science/livestock-production-management-certificate/"
+  },
+  "42291": {
+   "sha256": "d10e0d90a7eb2593734683b9378cd337cbfd7b8a3f1b74b7b6d54cb40f4242f7",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/animal-science/animal-science-fundamentals/"
+  },
+  "42337": {
+   "sha256": "95ad7903bb9fafd87f577aa646ddcb59aa0b06fe29c415be81a2eeae269b078f",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/music/commercial-music-certificate/"
+  },
+  "42340": {
+   "sha256": "2a47eabb86a94d631522bcf8fe9d17025d6bad9bb85782719b81d3217e2fe35a",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/music/commercial-music-degree/"
+  },
+  "42359": {
+   "sha256": "78793cdae6dd0e03214479215974cbf98ad1538f20086b68bb735baf369aafa5",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/physics-engineering/surveying-engineering-technology-certificate/"
+  },
+  "42545": {
+   "sha256": "bdd059f1aea7433f62cb4f6d3a057ef12e261bdf4593aefaf3861bb268a7a6a1",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/business/social-media-marketing-certificate/"
+  },
+  "42652": {
+   "sha256": "07dab435e39c0c2abaf98a8a85f029048bbe4dbe4336bda8620d73d67375eff9",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/animal-science/agriculture-animal-science-degree/"
+  },
+  "42657": {
+   "sha256": "82605ad846f32c379a51d9fbfbd437e0ce13ac79ec40840b40145d5da3b8358f",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/business/business-administration2-transfer/"
+  },
+  "42732": {
+   "sha256": "3c24d88cede35d2a3d452acb4a6c171c5f309d49642eca29f569434177ef4c7d",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/construction-management/construction-management-level-i-certificate/"
+  },
+  "42753": {
+   "sha256": "88aacf732c684b509e8a7b60b91a0f69444c7d23fb0f85f867377254d2316f37",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/"
+  },
+  "42788": {
+   "sha256": "6331aba785142e0ca2a85d180c36331cf83389677c106f630c0dc7fa1a71d33f",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/construction-management/construction-management-level-ii-certificate/"
+  },
+  "42789": {
+   "sha256": "a8605b5533044d8007222c50f4dc59354931622c864e8646ff1c00b91f72e3da",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/construction-management/construction-management-as-degree/"
+  },
+  "42849": {
+   "sha256": "c907bccd4608c361943830b8ba2748527c5299da32fada9755d2b837088e9feb",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-social-media-marketing/"
+  },
+  "42876": {
+   "sha256": "2bcbbacba642d16811ea5fb0987162e9bf989765a739cb0753c3289149266bff",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/fire-officer-certification-technology/wildland-fire-technology-certificate/"
+  },
+  "42896": {
+   "sha256": "3afb82b784282be503f75d343316a35ef32c4a305832d0ea5bcfc81ab5fc505d",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-supply-chain-management/"
+  },
+  "42916": {
+   "sha256": "a913e57874fea2a3e33a87c4073de03d8d93e95b98123192cbb08ca1871032bc",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-health-careers/vocational-nursing/"
+  },
+  "42952": {
+   "sha256": "045143534e011d763717c07034108867546eb975e405df276a3ea4e86bde6a71",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/paralegal-legal-assistant/e-discovery-and-litigation-support/"
+  },
+  "43032": {
+   "sha256": "135c8ee4281523f10543fe5f5f148ca77390679642b3692747d54a06489418c6",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/fire-officer-certification-technology/wildland-fire-technology-degree/"
+  },
+  "43220": {
+   "sha256": "ef861915283e50b82090a8e9a12a432154f56d11ff6fc01170b4387ff64b12cb",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/horticulture/cannabis-level-i-certificate/"
+  },
+  "43261": {
+   "sha256": "2873c923a25b658b432f32328360c8812fffee0ea33531462fff5dc67dfe7957",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/horticulture/cannabis-level-ii-certificate/"
+  },
+  "43262": {
+   "sha256": "e878eecd13e6968920fcfa82c1feb82503d84c87a13be88fa6d8ee104ba54894",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/horticulture/cannabis-operations-as-degree/"
+  },
+  "43275": {
+   "sha256": "f72f8ccb18edf0f9a5a15ba6afb708ef66aacf6a27fe4ec3c6f38ea39590da0d",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/culinary-arts/baking-and-pastry-advanced-certificate/"
+  },
+  "43276": {
+   "sha256": "a6e318ce35151b4be8ad6416e045266c22f92d598cea4c251cbd6177d20b0c38",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/culinary-arts/culinary-arts-level-ii-certificate/"
+  },
+  "43373": {
+   "sha256": "a28072ae43258a76a88c94a55ac20f6fcb83ef073f535f7d7c0dd9d10f265da6",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/television/post-production-for-film-and-television-certificate/"
+  },
+  "43411": {
+   "sha256": "ad254cc2d85112916b8e755ebd50fc1a4635b9d83b0cd4126dfdda1d309f4a19",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/child-development/child-development-early-intervention-and-inclusion-as-degree/"
+  },
+  "43572": {
+   "sha256": "53e7d14b3908001faf71a1bf948112625ba09a6a64cc7cb369ebd79d4fd4f2f9",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/music/music-studies-level-ii-jazz/"
+  },
+  "43617": {
+   "sha256": "96ba7d679e3b9182424eb20503945db7eec74ffefb7bff93f377465388d50399",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/child-development/child-development-classroom-curriculum-certificate/"
+  },
+  "43623": {
+   "sha256": "d32612f4b16aac4068773fac27acfa15ad1a283a4b7e175365ff3aa3ce84bc93",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/real-estate/real-estate-sales-certificate/"
+  },
+  "43630": {
+   "sha256": "b0090056e4945b7f66786b3770c877da07674909a84d7562489783577c6e24a0",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-ownership-services-technician/"
+  },
+  "43670": {
+   "sha256": "1ed03d21af7345fce5f7a15e52b0c28d65230059ec9440d71f704918ba34c8c9",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/consumer-relations/consumer-affairs-accredited-financial-counselor-certificate/"
+  },
+  "43684": {
+   "sha256": "36eed807ce76af9ba12ccb23adddddc123f310c8bc3d94fc534d7e1c815aa1af",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/music/music-studies-level-ii-music-education/"
+  },
+  "43706": {
+   "sha256": "7a2ab551df8d7d45025b7ff34800705edc950b1949c164eb29c036440ea61eac",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/sign-language-interpreting/deaf_studies_certificate/"
+  },
+  "43709": {
+   "sha256": "5ffec1ff413d3aa78b2cc36469a0b37de3200939e42a7134a12d6430d703c585",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/sign-language-interpreting/deaf_studies_degree/"
+  },
+  "43714": {
+   "sha256": "78904c8f78290b2310234b1105c62428896bf225e6a9c3712eb60fe2e2e93a47",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/consumer-relations/consumer-affairs-degree/"
+  },
+  "43715": {
+   "sha256": "dd35a8661727f0f2ddda82c004059c96e02b6d6e9e14a64d57803e15b4f1ae1e",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/child-development/child-and-adolescent-development-transfer/"
+  },
+  "43747": {
+   "sha256": "771a30b14ee1155243063dd0b7b81e4547169d272939d09f04472419ebb874ea",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/"
+  },
+  "43751": {
+   "sha256": "14856fb3306c7946a265991709fef15a2ca8dca2e025d17d9cb75d327c5da2ae",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-criminal-justice/"
+  },
+  "43752": {
+   "sha256": "d68ed0e833e3e901c3fc70eaf1a1f447a2141c2e8bf43e109077d1f145c97bee",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-law-enforcement/"
+  },
+  "43753": {
+   "sha256": "4ca1dcc6720d6c20b61000618fc4b288579b5733e96974aa7d263b853924cfdd",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-manufacturing-foundation/"
+  },
+  "43853": {
+   "sha256": "8ed3e362e683155cd05556ce270b7d9df969594b8d8f624b6a5b73cc2ac9e45a",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/photography/social-media-content-creator-level-1-certificate/"
+  },
+  "44198": {
+   "sha256": "6424e2ae597d12850922dd087949fd46ee7e8a057413b168f16623e95a7d907f",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/photography/social-media-content-creator-level-2-certificate/"
+  },
+  "44262": {
+   "sha256": "b2df39b9dffd63baa3a4c433a5f1515ecd4077d7eb3584d3f937b719a1165d88",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-health-careers/phlebotomy-technician/"
+  },
+  "44263": {
+   "sha256": "25d8824a574bbed98e1728a56ffb059487e6a7c90fbfa82799496f696c812d4c",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-child-development/"
+  },
+  "44279": {
+   "sha256": "566ea7ad0051db40194aad5148d99110a6730629364cd1b1b604c298958d81c7",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-food-services/"
+  },
+  "44520": {
+   "sha256": "518600423a8d418946ca7c558d84a8f79751503b5071d8836e655f69ce0c5d7e",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/histotechnology/histotechnology-bachelors-degree/"
+  },
+  "44688": {
+   "sha256": "84acd470cb6fa8df6d87b266985fca7796840b47b8b230e480a31b3fab2eb681",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/air-conditioning-refrigeration/supermarket_refrigeration_degree/"
+  },
+  "44689": {
+   "sha256": "2cf3f1ed6301e17b95813d1a40b1fb173f9c78d0ff734a196312f747927ad65d",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/music/audio-arts-certificate-level-ii-certificate/"
+  },
+  "44690": {
+   "sha256": "af3eedb9c5d4178c1a450e2b5433cda8b5ebd0d2e2f5e0be07230dca7a544147",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/music/audio-arts-certificate-level-i-certificate/"
+  },
+  "44693": {
+   "sha256": "f5c470a4a99bc6c74d6ab27c0ee4503238ffcb17db21eaa490388d1d0547975f",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/paralegal-legal-assistant/paralegal-legal-assistant-certificate/"
+  },
+  "44694": {
+   "sha256": "25b0d2114282028d78c4b4e29b4ef06b7e8f88033c9df8d3a5b41c1b875cd974",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/illustration/illustration-level-2-entertainment-arts-emphasis-certificate/"
+  },
+  "44695": {
+   "sha256": "e9dffc0c88287e6622ceede68052cfa7172dd61ba0b8ec3037e303c904919484",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/illustration/illustration-level-2-narrative-illustration-emphasis-certificate/"
+  },
+  "44696": {
+   "sha256": "c676009569bdb13baaa076a54ba4f87e5f19e179231bda6cc740d3fa58ddadff",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/illustration/illustration-level-1-certificate/"
+  },
+  "44929": {
+   "sha256": "31465a324faccf7a54212553e4657db247581d9b0cbe73c47e1b81264c2c5fe4",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/interior-design/real-estate-styling-and-staging-certificate/"
+  },
+  "45109": {
+   "sha256": "5f4742bd72c289119d174785eeb428d637d53913b45c6a024e78f9ff87ed0c9a",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-cybersecurity-essentials/"
+  },
+  "45123": {
+   "sha256": "b4d2cd0552ae74ffaae3aa5526356c8e17f4b9b153aeb3892a3865c040351405",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/communication/communication-studies2-transfer/"
+  },
+  "45126": {
+   "sha256": "608aeb2c8a1c9d8095cec7f20a29a2db260b86fe4b1ac27ef5d7eda68006c12d",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-graphic-design-basics/"
+  },
+  "45453": {
+   "sha256": "105a22119ba685da4efa3df721442492903b56c67eb830a121a222c5402473aa",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/biology-ast-degree/"
+  },
+  "45828": {
+   "sha256": "b9331440696252af8a6d6dc4e7ec5cce629cd0c65dfa3a4e7cbf9a4a6afda898",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/librarytechnology/librarytechnology/"
+  },
+  "45976": {
+   "sha256": "fd415bc277d1d4a48202076c88e388127f405e8913ed80d8c24880e67e5143d6",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/music/music-studies-level-ii-performance/"
+  },
+  "46187": {
+   "sha256": "fec4e97a728705b168d14d95b9b13897a91bf5a4a597dd7e7d0a89b517c2a431",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/kinesiology-wellness/yoga/"
+  },
+  "46341": {
+   "sha256": "947076e002a4f46dc87f72934f29864aa427677f9ccc6923fb922b8dc1f607ae",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/sign-language-interpreting/american-sign-language-asl-certificate/"
+  },
+  "46344": {
+   "sha256": "21014f566f1d0669bceb76a879527289d9c52db404eec821cd8316479fdd3824",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/world-languages-global-studies/linguistics-degree/"
+  },
+  "46352": {
+   "sha256": "dd3e7ab2cdf0b8667751aaea0f60bca398d2e31d89b06730691806ee5fa2a93f",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/museum-and-art-gallery-exhibition-design-operation/museum-and-art-gallery-exhibition-design-operation-certificate/"
+  },
+  "46371": {
+   "sha256": "4650de591e5927058b266f1ca7fea5814d8d696122734523b57b65fe85b072ba",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-business-management-financial-systems/"
+  },
+  "46523": {
+   "sha256": "a104589c57f9f0388ce703173235a43be684ee1e28e75921b2738938223e842e",
+   "url": "https://catalog.mtsac.edu/programs/programsaz/printmaking-certificate/"
+  }
+ },
+ "run": "44737223855"
+}
