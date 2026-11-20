@@ -24,11 +24,11 @@
 },
 "curation":{
 "path":"kb/coci_curation.json",
-"sha256":"dd3bf8041b06e19e178624fe00067076151530570679d1cec7430040bab6d8ed"
+"sha256":"3092c02db15cfdda8079cca2819ed708e333f78783935f2f69676199e8151090"
 },
 "list_members":{
 "path":"unified_courses_members.js",
-"sha256":"2c438727403b7cf68ab19d31e3d72685467d5603183a26c2130cf1120502c97c"
+"sha256":"a68d7579ec3042bb765499c31e3d692f42a44f57be776602269f86b0605250a0"
 },
 "one_course_cards":{
 "path":"kb/coci_minted_singletons.json",

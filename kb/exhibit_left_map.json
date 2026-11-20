@@ -1,8 +1,8 @@
 {
  "schema": 1,
  "built_from": {
-  "audit": "2026-11-19T06:21:26+00:00",
-  "unified_titles": 6142
+  "audit": "2026-11-20T06:22:51+00:00",
+  "unified_titles": 6186
  },
  "rule": {
   "graded": [
@@ -6619,11 +6619,11 @@
    "used": false,
    "where": [],
    "twin": {
-    "title": "High School Articulation (Amador Valley)- Developmental Psychology of Children II",
-    "how": "a longer form of the same wording"
+    "title": "High School Articulation (Emerald)- Developmental Psychology of Children II",
+    "how": "already under the same title"
    },
    "reviewed": false,
-   "only_local": true
+   "only_local": false
   },
   "Human Anatomy & Physiology III": {
    "canonical": "Human Anatomy and Physiology 3",
@@ -11838,6 +11838,10 @@
    "type": "Credit By Exam",
    "group": "graded"
   },
+  "Artificial Light Photography": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
   "Arts of Africa, Oceania, and Indigenous North America": {
    "type": "Credit By Exam",
    "group": "graded"
@@ -13366,6 +13370,10 @@
    "type": "Credit By Exam",
    "group": "graded"
   },
+  "Cisco CCNA3/3 Enterprise Networking, Security, and Automation v7.0 (ENSA)": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
   "Cisco Certified Network Associate (CCNA)": {
    "type": "Credit By Exam, Industry Certification and Military (mixed)",
    "group": "mixed"
@@ -13465,6 +13473,10 @@
   "College and Matrix Algebra": {
    "type": "Credit By Exam",
    "group": "graded"
+  },
+  "Color Field Photography": {
+   "type": "CPL type not recorded",
+   "group": ""
   },
   "Combined Processes 1": {
    "type": "CPL type not recorded",
@@ -14078,6 +14090,10 @@
    "type": "CPL type not recorded",
    "group": ""
   },
+  "Cybersecurity: Ethical Hacking": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
   "DC and AC Circuit Analysis": {
    "type": "Portfolio Review",
    "group": "graded"
@@ -14410,6 +14426,10 @@
    "type": "Credit By Exam",
    "group": "graded"
   },
+  "Digital Imaging": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
   "Digital Imaging Fundamentals": {
    "type": "CPL type not recorded",
    "group": ""
@@ -14429,6 +14449,10 @@
   "Digital Photography Advanced": {
    "type": "Credit By Exam",
    "group": "graded"
+  },
+  "Digital Photography Intermediate": {
+   "type": "CPL type not recorded",
+   "group": ""
   },
   "Digital Photography in Law Enforcement": {
    "type": "CPL type not recorded",
@@ -17086,6 +17110,10 @@
    "type": "CPL type not recorded",
    "group": ""
   },
+  "Introduction to Athletic Training": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
   "Introduction to Athletic Training and Sports Medicine": {
    "type": "CPL type not recorded",
    "group": ""
@@ -17762,6 +17790,10 @@
    "type": "Credit By Exam",
    "group": "graded"
   },
+  "Introduction to Videography": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
   "Introduction to Visual Communication": {
    "type": "Credit By Exam",
    "group": "graded"
@@ -18117,6 +18149,10 @@
   "JST Military Training — Introduction to Programming": {
    "type": "Military",
    "group": "cert"
+  },
+  "Jazz Ensemble": {
+   "type": "CPL type not recorded",
+   "group": ""
   },
   "Jazz and Popular Music Guitar 1": {
    "type": "CPL type not recorded",
@@ -19318,6 +19354,10 @@
    "type": "Credit By Exam",
    "group": "graded"
   },
+  "Nursing Careers": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
   "Nursing Fundamentals": {
    "type": "CPL type not recorded",
    "group": ""
@@ -19898,6 +19938,10 @@
    "type": "Portfolio Review",
    "group": "graded"
   },
+  "Play: Materials and Environments": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
   "Plumbers and Pipefitters Welder Apprenticeship — Journeyperson": {
    "type": "CPL type not recorded",
    "group": ""
@@ -20391,6 +20435,10 @@
    "group": "cert"
   },
   "Red Hat Linux Administration I": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "Red Hat Linux System Administration 2": {
    "type": "CPL type not recorded",
    "group": ""
   },
@@ -21094,6 +21142,22 @@
    "type": "Other",
    "group": "cert"
   },
+  "Success in Advanced Medical/Surgical Nursing": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "Success in Fundamental Nursing": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "Success in Maternal Newborn and Pediatric Nursing": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "Success in Psychiatric Nursing": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
   "Supervision In Agriculture Equipment Operation": {
    "type": "Portfolio Review",
    "group": "graded"
@@ -21183,6 +21247,10 @@
    "group": ""
   },
   "Swimming 1": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "Switching, Routing, and Wireless Essentials CCNA (Cisco Networking Academy)": {
    "type": "CPL type not recorded",
    "group": ""
   },
