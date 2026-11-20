@@ -293,6 +293,7 @@ publish kb/cer_procedures.json
 publish kb/cer_procedures_out/latest.json
 publish kb/cid_claim_audit.json
 publish kb/coci_articulations.json
+publish kb/coci_closest_mid.json
 publish kb/coci_curation.json
 publish kb/coci_duplicate_control_numbers.json
 publish kb/coci_not_applicable.json

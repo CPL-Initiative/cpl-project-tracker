@@ -84,6 +84,10 @@
     ".cplcoci-chip.mid { color:var(--seal-blue-text,#002F6D); }",
     ".cplcoci-chip.cid { color: var(--hunter, #1d4d33); border-color: var(--hunter, #1d4d33); }",
     ".cplcoci-chip.ccn { color: var(--violet, #5b3d8f); border-color: var(--violet, #5b3d8f); }",
+    /* A recommendation is no identity: a dashed outline in the muted ink, so it never reads as one the course holds. */
+    ".cplcoci-chip.rec { color: var(--text-muted); border-color: var(--text-muted); border-style: dashed; background: transparent; }",
+    ".ccl-rec-list { margin:4px 0 8px; padding-left:20px; display:grid; gap:6px; font-size:.84rem; color: var(--text-body); }",
+    ".ccl-rec-list a { display:inline-block; min-height:24px; line-height:24px; }",
     // The Courses List's Title drawer: the catalog description, then the learning outcomes.
     ".cplcoci-dd { font-size:.8rem; color: var(--text-body); }",
     ".cplcoci-dd .lbl, .cplcoci-outs .lbl { font-weight:600; color: var(--text-strong); margin-right:6px; }",
@@ -303,6 +307,33 @@
       }, function (e) { KEPT.error = String(e && e.message || e); })
       .then(function () { KEPT.loading = false; LIST.memo = null; if (state.view === "courses" && KEPT.na) mountList(); });
   }
+  /* The closest common course for a course that needs an M-ID (Sam, 2026-11-20: "a new column with your recommended
+     closest mid ... to get a confidence score with the recommended mid with a link to open a sidebar to curate").
+     kb/coci_closest_mid.json is built by kb/_closest_mid.py: the first three common courses by title, subject, units
+     and catalog description, and a confidence that is the share right among courses with a known M-ID that scored
+     the same. Display only: nothing here saves. Read once a visit; until it arrives, or if it fails, the column is
+     blank. */
+  var CLOSEST = { f: null, error: null, loading: false };
+  function loadClosest() {
+    if (CLOSEST.f || CLOSEST.error || CLOSEST.loading) return;
+    CLOSEST.loading = true;
+    fetch("kb/coci_closest_mid.json", { cache: "no-store" })
+      .then(function (r) { if (!r.ok) throw new Error("kb/coci_closest_mid.json answered " + r.status); return r.json(); })
+      .then(function (F) { CLOSEST.f = { rows: F.rows || {}, bands: (F.measure && F.measure.bands) || [], at: F.identity_file || "" }; },
+        function (e) { CLOSEST.error = String(e && e.message || e); })
+      .then(function () { CLOSEST.loading = false; LIST.memo = null; if (state.view === "courses" && CLOSEST.f) mountList(); });
+  }
+  /* A pile row's recommendation: { mid, conf (0 to 1 or null), band, top: [[mid, score, same, of, catalog]] }, or null. */
+  function closestOf(row) {
+    if (!CLOSEST.f || row.mid || row.cid || row.ccn || row.kept) return null;
+    var e = CLOSEST.f.rows[row.ctrl];
+    return e && e[2] && e[2].length ? { mid: e[2][0][0], conf: e[0], band: e[1], top: e[2] } : null;
+  }
+  function pct(x) { return x == null ? "" : Math.round(x * 100) + "%"; }
+  function closestCell(r, mk) {
+    return r.rec ? [mk("span", { cls: "cplcoci-chip rec", title: "The closest common course, with the share right among courses with a known M-ID that scored the same" },
+      [r.rec.mid + ", " + pct(r.rec.conf)])] : null;
+  }
   /* The note a course carries when a flag keeps it out of the counts, and whether it is kept; "" when none. */
   function keptNote(college, ctrl, mid) {
     var K = KEPT.na;
@@ -361,7 +392,7 @@
      keystroke), with the filters' counts. */
   function listBuild() {
     var D = state.data, M = window.CPL_UC_MEMBERS || null, memo = LIST.memo;
-    if (memo && memo.D === D && memo.M === M && memo.K === KEPT.na) return memo;
+    if (memo && memo.D === D && memo.M === M && memo.K === KEPT.na && memo.R === CLOSEST.f) return memo;
     var X = identityIndex(M), colleges = (D.colleges || []).map(function (c) { return String(c || "").trim(); });
     var n = { "": 0, mid: 0, nomid: 0, cid: 0, ccn: 0, any: 0, C: 0, N: 0, E: 0, kept: 0 }, moved = 0, mids = {};
     var rows = D.rows.map(function (r, i) {
@@ -377,6 +408,7 @@
       var kn = keptNote(college, ctrl, row.mid);
       row.kept = !!(kn && kn.kept);
       row.note = kn ? kn.note : "";
+      row.rec = closestOf(row);
       row.hay = listFold([row.title, college, ctrl, subj, num, subj + " " + num, subj + num, row.top, cid, ccn, ids.join(" "), row.credit].join(" "));
       n[""]++;
       if (row.kept) n.kept++;
@@ -389,7 +421,7 @@
       if (row.was) moved++;
       return row;
     });
-    LIST.memo = { D: D, M: M, K: KEPT.na, X: X, rows: rows, counts: n, mids: Object.keys(mids).length, moved: moved,
+    LIST.memo = { D: D, M: M, K: KEPT.na, R: CLOSEST.f, X: X, rows: rows, counts: n, mids: Object.keys(mids).length, moved: moved,
       colleges: colleges.filter(function (c, i) { return colleges.indexOf(c) === i; }).length };
     return LIST.memo;
   }
@@ -412,6 +444,8 @@
       { h: "Transfer", w: 5, v: function (r) { return r.cid ? "Yes" : "No"; } },
       { h: "TOP", w: 9, v: function (r) { return r.top; } },
       { h: "Identities (M-ID, C-ID, CCN)", w: 14, v: function (r) { return r.ids; }, cell: idChips },
+      // Sorts by the confidence, so the surest recommendations come first.
+      { h: "Closest M-ID", w: 9, n: true, suffix: "%", v: function (r) { return r.rec && r.rec.conf != null ? Math.round(r.rec.conf * 100) : null; }, cell: closestCell },
       { h: "Control number", w: 7, v: function (r) { return r.ctrl; } }
     ]);
   }
@@ -1117,6 +1151,30 @@
     // Wrapped, as the sign-in fold is: the engine anchors the Title drawer before the panel's first direct-child <details>.
     return el("div", { "class": "ccl-sbs-outer" }, [d]);
   }
+  /* The panel's Closest common courses: the first three, why each, the measured confidence in words, and each one a
+     word away in SkyView, where a course joins a common course today. */
+  function closestPanel(r, h) {
+    var rec = r.rec, out = [];
+    if (!rec) {
+      if (CLOSEST.error) out.push(el("p", { "class": "cplcoci-meta" }, ["The closest common courses did not load (" + CLOSEST.error + ")."]));
+      else if (CLOSEST.f) out.push(el("p", { "class": "cplcoci-meta" }, ["No common course shares a word of this title, so none is recommended. It most likely needs a new M-ID."]));
+      return out;
+    }
+    var b = (CLOSEST.f.bands || [])[rec.band] || null;
+    out.push(h.heading("Closest common courses"));
+    out.push(el("ol", { "class": "ccl-rec-list" }, rec.top.map(function (t, i) {
+      var why = [];
+      if (t[2]) why.push(fmt(t[2]) + " of its " + fmt(t[3]) + (t[3] === 1 ? " local course carries" : " local courses carry") + " this same title");
+      else why.push("none of its " + fmt(t[3]) + (t[3] === 1 ? " local course" : " local courses") + " carries this same title");
+      if (t[4] != null) why.push("catalog descriptions overlap " + pct(t[4]));
+      return el("li", { "data-rec": t[0] }, [el("strong", null, [t[0]]), ": score " + Number(t[1]).toFixed(2) + (i ? "" : ", confidence " + pct(rec.conf)) + ". " + why.join("; ") + ". ",
+        skyLink(t[0], "Open " + t[0] + " in SkyView")]);
+    })));
+    if (b && b.n) out.push(el("p", { "class": "cplcoci-meta" }, ["How the confidence was measured: " + fmt(b.n) + " courses that hold an M-ID scored in this band when taken out of their own common course, and the first recommendation was their own M-ID for "
+      + fmt(b.right) + " of them (" + pct(rec.conf) + ")." + (rec.conf != null && rec.conf < 0.6 ? " A confidence this low most often means no common course fits and the course needs a new M-ID." : "")]));
+    out.push(el("p", { "class": "cplcoci-meta" }, ["A recommendation saves nothing. Assigning from this panel is being built; today a course joins a common course in SkyView."]));
+    return out;
+  }
   function listPanelBody(r, h) {
     var m = listBuild(), out = [];
     out.push(h.title(r.subj + " " + r.num + ", " + r.title));
@@ -1128,7 +1186,10 @@
       out.push(el("p", { "class": "cplcoci-meta" }, ["Today's identity file did not arrive, so the panel cannot say which common course holds this course."]));
     } else if (!r.mid) {
       if (r.cid || r.ccn) out.push(el("p", { "class": "cplcoci-meta" }, ["No M-ID is needed: this course carries " + [r.cid ? "C-ID " + r.cid : "", r.ccn ? "CCN " + r.ccn : ""].filter(Boolean).join(" and ") + ", which is its common identity."]));
-      else if (!r.kept) out.push(el("p", { "class": "cplcoci-meta" }, ["No M-ID: the Common Course Reference holds this course in no common course today. A course joins one in SkyView."]));
+      else if (!r.kept) {
+        out.push(el("p", { "class": "cplcoci-meta" }, ["No M-ID: the Common Course Reference holds this course in no common course today. A course joins one in SkyView."]));
+        closestPanel(r, h).forEach(function (n) { out.push(n); });
+      }
     } else {
       var members = listByMid(m).get(r.mid) || [], seenCol = {};
       members.forEach(function (x) { seenCol[x.college] = 1; });
@@ -1298,6 +1359,7 @@
     if (!node) return;
     clearNode(node);
     loadKept();
+    loadClosest();
     if (window.CPL_COMMONS_LIST && window.CPL_UC_MEMBERS) LIST.ready = true;
     if (listApi()) { LIST.engine.render(node); return; }
     var T = window.CPL_TABS;
