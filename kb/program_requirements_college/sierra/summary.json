@@ -2,27 +2,58 @@
  "college": "Sierra College",
  "programs": 190,
  "with_closed_list": 125,
- "found": 111,
- "extracted": 111,
+ "found": 105,
+ "extracted": 105,
  "errors": 0,
- "passed_machine_checks": 84,
+ "passed_machine_checks": 87,
  "failed": {
-  "coverage": 11,
+  "coverage": 4,
   "invented": 2,
-  "arithmetic": 25,
+  "arithmetic": 16,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 10.21,
- "cost_per_program": 0.092,
+ "cost_usd_run": 0.09,
+ "cost_usd_filed": 9.87,
+ "cost_per_program": 0.094,
+ "extract_calls": 1,
+ "extract_failed": [],
  "not_found": [
+  {
+   "control_number": "07964",
+   "title": "Computer Science: Management Information Systems",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "10827",
+   "title": "Computer Science: Management Information Systems",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
   {
    "control_number": "14578",
    "title": "Watershed Ecology",
    "award": "A.S. Degree",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "21523",
+   "title": "Accounting",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
   },
   {
    "control_number": "21575",
@@ -30,7 +61,8 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "37688",
@@ -38,8 +70,67 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "39208",
+   "title": "UCTP: Physics",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://catalog.sierracollege.edu/departments/physics/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.786,
+    "body": 0.0,
+    "content": 0.571,
+    "net": 11,
+    "listed": 14,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 2663,
+     "content": 20605,
+     "tabs": 13177
+    },
+    "tab_panels": [
+     [
+      "Degrees/Certificates",
+      3486
+     ],
+     [
+      "Courses",
+      9646
+     ],
+     [
+      "Student Learning Outcomes",
+      666
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "41803",
+   "title": "Web and Interaction Design",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "45200",
+   "title": "Welding Industry Training",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
   }
  ],
- "run": "39993005180"
+ "run": "44687646623"
 }

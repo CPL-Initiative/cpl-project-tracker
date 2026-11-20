@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Agricultural Mechanics",
  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
- "source_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1105/1212",
+ "source_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1105/1213",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6614,
+  "input_tokens": 6613,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6614,
-    "output_tokens": 1240,
+    "input_tokens": 6613,
+    "output_tokens": 1013,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,38 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1240,
+  "output_tokens": 1013,
   "output_tokens_details": {
-   "thinking_tokens": 469
+   "thinking_tokens": 0
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05126,
- "ms": 11952,
- "seconds": 12.4,
+ "cost_usd": 0.04671,
+ "ms": 8810,
+ "seconds": 8.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 8,
    "listed": 8,
-   "share": 0.0,
-   "missing": [
-    "IT30",
-    "MAG40",
-    "MAG41",
-    "MAG42",
-    "MAG43",
-    "MAG44",
-    "MFGT21",
-    "PLS11"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -70,30 +61,31 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    15.0,
+    18.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    15.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 6,
    "courses": 0,
-   "count": 0,
+   "count": 6,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -104,15 +96,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Certificate of Achievement section not present in text (only 'Agricultural Mechanics, Associate in Science - Major #M.8280.AS' is printed)",
+   "section_heading": "Agricultural Mechanics, Certificate of Achievement - Major #M.8280.CA",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 15,
+    "max": 18
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -129,51 +121,119 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Perform basic maintenance and repairs to agricultural electrical, mechanical, and hydraulic machines/equipment.",
+    "Demonstrate the ability to fabricate tools and small equipment.",
+    "Acquire skills necessary for entry level positions in the agricultural mechanics field.",
+    "Demonstrate the ability to safely and properly operate agricultural equipment.",
+    "Demonstrate the ability to construct agricultural projects using wood, metal and various types of plumbing materials such as metal, PVC, PE and concrete pipe.",
+    "Perform engine repairs to small gas and diesel engines."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "MAG 40",
-    "why": "named only in the A.S. section; certificate section not in text"
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "MAG 40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAG 41",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLS 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "MAG 41",
-    "why": "named only in the A.S. section; certificate section not in text"
+    "name": "Agriculture Mechanics Option",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Select one of the following options",
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "MAG 42",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAG 43",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAG 44",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "PLS 11",
-    "why": "named only in the A.S. section; certificate section not in text"
-   },
-   {
-    "code": "MAG 42",
-    "why": "named only in the A.S. section; certificate section not in text"
-   },
-   {
-    "code": "MAG 43",
-    "why": "named only in the A.S. section; certificate section not in text"
-   },
-   {
-    "code": "MAG 44",
-    "why": "named only in the A.S. section; certificate section not in text"
-   },
-   {
-    "code": "MFGT 21",
-    "why": "named only in the A.S. section; certificate section not in text"
-   },
-   {
-    "code": "IT 30",
-    "why": "named only in the A.S. section; certificate section not in text"
+    "name": "Agriculture Processing Mechanic Option",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Select one of the following options",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "MFGT 21",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IT 30",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The requested award is a Certificate of Achievement of 8 to fewer than 16 semester units, but the catalog text contains only the Agricultural Mechanics Associate in Science section (Major #M.8280.AS), whose major totals 18.0 units. The A.S. requirements cannot be the certificate's, so no blocks were recorded. A reviewer should locate the certificate's own section.",
-   "The A.S. section lists Required Core Courses (MAG 40, MAG 41, PLS 11; 9.0) and 'Select 9 units of electives' (MAG 42, MAG 43, MAG 44, MFGT 21, IT 30; 9.0), Total 18.0. The certificate may be a subset of this.",
-   "The six learning outcomes and the career mention ('agricultural mechanics instructors') are printed for the A.S. degree only, so they were not recorded for the certificate.",
-   "The source URL references the 2025-2026 catalog, while the requested catalog year is 2026-2027."
+   "The options heading 'Select one of the following options' prints 6.0-9.0 units for the choice as a whole.",
+   "PLS 11 is marked '( Historical )' in the catalog yet listed as a required core course.",
+   "The source URL is the 2025-2026 MCC catalog, while the requested catalog year is 2026-2027.",
+   "The text says the certificate leads to 'entry level positions within this industry' but names no specific career, so careers is empty."
   ]
  },
- "extracted_run": "38935148408"
+ "extracted_run": "44692816081",
+ "catalog_year": "2026-2027"
 }

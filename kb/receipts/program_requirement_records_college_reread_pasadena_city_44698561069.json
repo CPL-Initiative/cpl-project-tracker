@@ -1,0 +1,41 @@
+{
+ "college": "Pasadena City College",
+ "reread_run": "44698561069",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "44688457642",
+ "at": "2026-11-20T07:56:30Z",
+ "posted": 3,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "31599",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33404",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33699",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 0,
+ "absent": 3,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [],
+ "absent_keys": [
+  "03160",
+  "22651",
+  "31143"
+ ],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 3,
+ "rollback": null,
+ "before": []
+}

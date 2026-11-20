@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 7690,
-    "output_tokens": 2864,
+    "output_tokens": 2914,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,44 +30,50 @@
     "model": null
    }
   ],
-  "output_tokens": 2864,
+  "output_tokens": 2914,
   "output_tokens_details": {
-   "thinking_tokens": 1244
+   "thinking_tokens": 1255
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08804,
- "ms": 23416,
- "seconds": 23.9,
+ "cost_usd": 0.08904,
+ "ms": 23281,
+ "seconds": 23.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 12,
+   "placed": 14,
    "listed": 15,
-   "share": 0.8,
+   "share": 0.933,
    "missing": [
-    "ECON220",
-    "ECON221",
     "SPCH121I"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON221",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECON220",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 1,
    "codes": [
-    "ECONC2001",
-    "ECONC2002",
     "JRNAL158"
    ],
    "flagged": [
-    "ECONC2001",
-    "ECONC2002",
     "JRNAL158"
    ],
    "pass": true
@@ -338,13 +344,14 @@
    }
   ],
   "notes": [
-   "POLSC1000 is printed without a space; treated as closed-list POLS C1000 (American Government and Politics). Likewise ENGLC1001 = ENGL C1001 and STATC1000 = STAT C1000.",
-   "List B prints four courses followed by three 'Or one of the following' groups (STATC1000/SOCIO234, ECONC2002/ECONC2001, PHILO129/PHILO130). Each group was recorded as one List B choice with the other course as an alternative; reviewer should confirm whether a student may count two courses from the same group.",
-   "ECONC2002 and ECONC2001 are not in the closed list (closed list has ECON 220 and ECON 221); recorded as catalog additions.",
-   "Unit summary: Total Major Units 18-19, CalGETC 34, Double Count Units 9, Elective Units to reach 60 16-17, Total Overall Units 60-60.",
-   "The description text says 'to earn an AA-T in Kinesiology', apparently a copy error in the catalog.",
-   "Program Outcomes list is cut off: the third outcome ('Students will be able to produce (write, photograph, video...') is truncated and was not recorded; further outcomes may be missing."
+   "Catalog prints codes without spaces (e.g., JRNAL120, POLSC1000, ENGLC1001, STATC1000); matched to closed-list POLS C1000, ENGL C1001, STAT C1000 etc. POLSC1000 is read as POLS C1000.",
+   "List B: the 'Or one of the following' groups (STATC1000/SOCIO234, ECONC2002/ECONC2001, PHILO129/PHILO130) are recorded as single choices with alternatives, read as only one course from each group counting toward the two List B courses; reviewer should confirm.",
+   "ECONC2002 and ECONC2001 are not in the closed list (closed list has ECON 220 and ECON 221), recorded as catalog additions.",
+   "Unit summary: Total Major 18-19, CalGETC 34, Double Count Units 9, Elective Units to reach 60: 16-17, Total Overall 60-60. The 16-17 elective units recorded as degree_elective_units.",
+   "Requirements boilerplate says 'AA-T in Kinesiology' — apparent copy error in catalog text.",
+   "Program Outcomes list is cut off mid-sentence in the third outcome ('Students will be able to produce (write, photograph, video'); the truncated outcome was not recorded. Further outcomes may exist."
   ]
  },
- "extracted_run": "38979730323"
+ "extracted_run": "44687786167",
+ "catalog_year": "2026-2027"
 }

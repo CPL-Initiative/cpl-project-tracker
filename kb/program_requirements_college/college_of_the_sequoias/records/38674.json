@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Nutrition and Dietetics",
  "award": "A.S. T Degree",
- "source_url": "https://catalog.cos.edu//transfer-information-requirements/",
+ "source_url": "https://catalog.cos.edu/areas-study/culinary-nutrition/associate-science-nutrition-dietetics/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10162,
+  "input_tokens": 7255,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10162,
-    "output_tokens": 694,
+    "input_tokens": 7255,
+    "output_tokens": 1956,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,142 +30,245 @@
     "model": null
    }
   ],
-  "output_tokens": 694,
+  "output_tokens": 1956,
   "output_tokens_details": {
-   "thinking_tokens": 208
+   "thinking_tokens": 622
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.05453,
- "ms": 7298,
- "seconds": 7.6,
+ "cost_usd": 0.06814,
+ "ms": 15772,
+ "seconds": 18.8,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 7,
    "listed": 7,
-   "share": 0.0,
-   "missing": [
-    "BIOL30",
-    "BIOL31",
-    "BIOL40",
-    "CHEM1",
-    "NUTR18",
-    "PSYCC1000",
-    "STATC1000"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 2,
+   "codes": [
+    "NUTR107",
+    "NUTR20"
+   ],
+   "flagged": [
+    "NUTR107",
+    "NUTR20"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    73.0,
+    73.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    34.0,
+    34.0
+   ],
+   "why": [],
+   "overlap": true
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "California - General Education Transfer Curriculum Pattern (Cal-GETC)",
+   "section_heading": "Associate in Science in Nutrition and Dietetics for Transfer (AS-T)",
    "measure": "units",
    "total_units": {
     "min": null,
     "max": null
    },
-   "open_elective_units": null,
+   "open_elective_units": 12,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Physiological process such as digestions, absorption, transportation and metabolism of nutrients",
+    "Common food safety issues including causes and potential preventative solutions",
+    "Relationship between nutrition and lifestyle factors and chronic diseases such as cardiovascular disease and diabetes."
+   ],
+   "careers": [
+    "food technology and development",
+    "nutritionist",
+    "diet technician",
+    "diet counseling",
+    "Registered Dietitian Nutritionist"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "BIOL 30",
-    "why": "not in the text's program requirements; appears only as BIOL 030 in the Cal-GETC Area 5B list"
+    "name": "REQUIRED MAJOR COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "BIOL 040",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 001",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTR 018",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "BIOL 31",
-    "why": "not in the text's program requirements; appears only as BIOL 031 in the Cal-GETC Area 5B list"
+    "name": "RESTRICTED ELECTIVES - LIST A",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "BIOL 030",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 031",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "BIOL 40",
-    "why": "not in the text's program requirements; appears only as BIOL 040 in the Cal-GETC Area 5B list"
+    "name": "RESTRICTED ELECTIVES - LIST B",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CHEM 1",
-    "why": "not in the text's program requirements; appears only as CHEM 001 in the Cal-GETC Area 5A list"
-   },
-   {
-    "code": "NUTR 18",
-    "why": "not in the text"
-   },
-   {
-    "code": "PSYC C1000",
-    "why": "not in the text's program requirements; appears only in the Cal-GETC Area 4 list"
-   },
-   {
-    "code": "STAT C1000",
-    "why": "not in the text's program requirements; appears only in the Cal-GETC Area 2 list"
+    "name": "ELECTIVES (recommended)",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NUTR 020",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NUTR 107",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
    }
   ],
-  "notes": []
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes with leading zeros (BIOL 040, CHEM 001, NUTR 018, BIOL 030, BIOL 031); these were matched to closed-list BIOL 40, CHEM 1, NUTR 18, BIOL 30, BIOL 31 and not flagged as catalog additions.",
+   "TOTAL 60 is the whole-degree total including Cal-GETC (34); no separate major total is printed, so total_units is null.",
+   "ELECTIVES 12 units ('Select additional degree applicable courses numbered 1-199 to achieve 60 units') recorded as open_elective_units; NUTR 020 and NUTR 107 are only recommended as electives, no units printed.",
+   "Printed parts sum to 73 (34+15+8+4+12); the footnote says 13 units of asterisked courses (BIOL 040, CHEM 001) may be double counted in Cal-GETC, yielding 60.",
+   "Description mentions employment in hospital, school, skilled nursing facilities or other institutional food service or dietary departments; these were read as employment settings rather than careers and not recorded in careers.",
+   "Program Outcomes are printed for the program page as a whole and recorded for this AS-T."
+  ]
  },
- "extracted_run": "38748848139"
+ "extracted_run": "44688217584",
+ "catalog_year": "2026-2027"
 }

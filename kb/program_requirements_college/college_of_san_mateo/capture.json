@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 98,
  "with_closed_list": 64,
- "started": "2026-11-17T13:16:50Z",
+ "started": "2026-11-20T06:30:17Z",
  "scope": "/current/",
  "sitemap": {
   "url": "https://catalog.collegeofsanmateo.edu/sitemap.xml",
@@ -15,7 +15,8 @@
   "program_pages": 198,
   "refused": null,
   "errors": null,
-  "failed": null
+  "failed": null,
+  "challenged": null
  },
  "listing_failed": 0,
  "pages_read": 241,
@@ -25,13 +26,13 @@
  "banner_h1": null,
  "catalog_lookup": {
   "self_test": {
-   "tested": 50,
-   "hits": 45,
-   "recall": 0.9,
+   "tested": 51,
+   "hits": 46,
+   "recall": 0.902,
    "false": 0,
    "false_off_own": 0,
    "false_no_claims": 0,
-   "shared": 5,
+   "shared": 4,
    "false_matches": [],
    "no_claims_matches": [],
    "searches": true,
@@ -325,8 +326,8 @@
     "why": "its page went to closed-list 31255 (Physics)",
     "yield_held": {
      "holder": "31255",
-     "held": "unjudged",
-     "why": "its filed record was read from another page"
+     "held": "refused_passing",
+     "why": "its filed record passes live"
     },
     "url": "http://catalog.collegeofsanmateo.edu/current/programs/physics-as.php",
     "h1": " Physics Associate in Science Degree Program",
@@ -436,18 +437,18 @@
     "catalog_year": "2026-2027"
    }
   ],
-  "yield_unjudged": 1,
-  "yield_refused_passing": 1
+  "yield_unjudged": 0,
+  "yield_refused_passing": 2
  },
- "loads": 293,
- "seconds": 1425.5,
- "found": 60,
+ "loads": 294,
+ "seconds": 1397.0,
+ "found": 58,
  "by_method": {
-  "link_search": 4,
+  "link_search": 3,
   "no_closed_list": 34,
-  "not_found": 2,
+  "not_found": 4,
   "page_claimed": 2,
-  "sitemap_page": 56
+  "sitemap_page": 55
  },
  "shared_pages": {
   "http://catalog.collegeofsanmateo.edu/current/programs/biology-as-t.php": [
@@ -460,6 +461,33 @@
   ]
  },
  "not_found": [
+  {
+   "control_number": "30818",
+   "title": "Mathematics",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/mathematics-as-t.php",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 444,
+     "content": 2348,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
   {
    "control_number": "41970",
    "title": "International Business",
@@ -513,6 +541,33 @@
     "tab_panels": []
    },
    "status": "Active"
+  },
+  {
+   "control_number": "42137",
+   "title": "Business Analytics",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/business-analytics-ca.php",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.571,
+    "body": 0.571,
+    "content": 0.571,
+    "net": 1,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 1 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2735,
+     "content": 11508,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   }
  ],
  "page_claimed": [
@@ -537,77 +592,16 @@
  ],
  "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 12,
+  "0.5-0.8": 10,
   "0.8-1.0": 9,
   "1.0": 39
  },
  "would_extract": {
   "against": "kb/program_requirements_college/college_of_san_mateo",
-  "kept": 54,
+  "kept": 58,
   "kept_moved": 0,
-  "programs": 6,
-  "list": [
-   {
-    "control_number": "10926",
-    "title": "Addiction Studies",
-    "award": "A.A. Degree",
-    "url": "http://catalog.collegeofsanmateo.edu/current/programs/addiction-studies-aa.php",
-    "coverage": 0.714,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "30818",
-    "title": "Mathematics",
-    "award": "A.S. T Degree",
-    "url": "http://catalog.collegeofsanmateo.edu/current/programs/economics-aa-t.php",
-    "coverage": 0.571,
-    "was_url": "http://catalog.collegeofsanmateo.edu/current/programs/university-transfer-option-a-california-general-education-transfer-curriculum-cal-getc-ca.php",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "31255",
-    "title": "Physics",
-    "award": "A.S. T Degree",
-    "url": "http://catalog.collegeofsanmateo.edu/current/programs/physics-as.php",
-    "coverage": 1.0,
-    "was_url": "http://catalog.collegeofsanmateo.edu/current/programs/university-transfer-option-a-california-general-education-transfer-curriculum-cal-getc-ca.php",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "31269",
-    "title": "Psychology",
-    "award": "A.A- T Degree",
-    "url": "http://catalog.collegeofsanmateo.edu/current/programs/psychology-aa-t.php",
-    "coverage": 1.0,
-    "was_url": "http://catalog.collegeofsanmateo.edu/current/programs/psychology-aa-t.php",
-    "was_coverage": 0.923,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "45246",
-    "title": "Interdisciplinary Studies: Language Arts and Social Science",
-    "award": "A.A. Degree",
-    "url": "http://catalog.collegeofsanmateo.edu/current/programs/interdisciplinary-studies-language-arts-and-social-sciences-aa.php",
-    "coverage": 0.992,
-    "was_url": "http://catalog.collegeofsanmateo.edu/current/programs/interdisciplinary-studies-language-arts-and-social-sciences-aa.php",
-    "was_coverage": 0.967,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "45291",
-    "title": "Interdisciplinary Studies: Health and Wellness",
-    "award": "A.A. Degree",
-    "url": "http://catalog.collegeofsanmateo.edu/current/programs/interdisciplinary-studies-health-and-wellness-aa.php",
-    "coverage": 1.0,
-    "was_url": "http://catalog.collegeofsanmateo.edu/current/programs/interdisciplinary-studies-health-and-wellness-aa.php",
-    "was_coverage": 0.989,
-    "was_method": "sitemap_page"
-   }
-  ],
+  "programs": 0,
+  "list": [],
   "held_worse_window": [],
   "held_no_gain": [],
   "held_opens_on_list": [],
@@ -674,10 +668,6 @@
   "30817": {
    "sha256": "a970b4d0828735c88eadbbc5891f5b5efe01784107c472d8dd5dd11f3fa7abcd",
    "url": "http://catalog.collegeofsanmateo.edu/current/programs/sociology-aa-t.php"
-  },
-  "30818": {
-   "sha256": "8b44593023befe7e51802ec00877269a6dcb3189aff2cb3d6b69c27d4c41cece",
-   "url": "http://catalog.collegeofsanmateo.edu/current/programs/economics-aa-t.php"
   },
   "31224": {
    "sha256": "7eee06e23e0d395d281759a66d3b5e6edcb370fd09b2574c7dbc0d3e64503d00",
@@ -783,10 +773,6 @@
    "sha256": "df6ec66ca00ed82545fc65e86b9f809a0229d6a7c0e5fa24f3034c0420e46ee4",
    "url": "https://catalog.collegeofsanmateo.edu/current/programs/entrepreneurship-and-small-business-management-ca.php"
   },
-  "42137": {
-   "sha256": "5c7499221187b58e53684d5ed1f32f923887c66e91bc2dde1711656f0215f705",
-   "url": "https://catalog.collegeofsanmateo.edu/current/programs/business-analytics-as.php"
-  },
   "42139": {
    "sha256": "439a327e71dec413c579683b45fe108d3710ab5da62b88a24ca830841f62b54b",
    "url": "http://catalog.collegeofsanmateo.edu/current/programs/business-analytics-as.php"
@@ -856,5 +842,5 @@
    "url": "http://catalog.collegeofsanmateo.edu/current/programs/proficiency-in-english-for-academic-and-career-success-peacs-ca.php"
   }
  },
- "run": "44090902577"
+ "run": "44687781989"
 }

@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Mathematics",
  "award": "A.S. T Degree",
- "source_url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/liberal-arts-science-technology-engineering-and-mathematics-stem-fall-2026",
+ "source_url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/mathematics-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7820,
+  "input_tokens": 6939,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7820,
-    "output_tokens": 1183,
+    "input_tokens": 6939,
+    "output_tokens": 2045,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,38 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1183,
+  "output_tokens": 2045,
   "output_tokens_details": {
-   "thinking_tokens": 345
+   "thinking_tokens": 918
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05494,
- "ms": 10197,
- "seconds": 10.7,
+ "cost_usd": 0.06866,
+ "ms": 17641,
+ "seconds": 17.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 8,
    "listed": 8,
-   "share": 0.0,
-   "missing": [
-    "MATH185",
-    "MATH200",
-    "MATH290",
-    "MATH292",
-    "MATHC2210",
-    "MATHC2220",
-    "PHYS130",
-    "STATC1000"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -70,112 +61,208 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    21.0,
+    21.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    21.0,
+    22.0
+   ],
+   "against": "program",
+   "why": [],
+   "short_high": true,
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     62.0,
+     67.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 9,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "",
+   "section_heading": "Mathematics - Associate in Science Degree for Transfer",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 21,
+    "max": 22
    },
    "open_elective_units": null,
    "degree_elective_units": {
-    "min": null,
-    "max": null
+    "min": 7,
+    "max": 12
    },
-   "ge_pattern": null,
+   "ge_pattern": "CalGETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Demonstrate an increased appreciation for mathematics",
+    "Recognize and identify applications of mathematics to the world around us",
+    "Increase their ability to use mathematical reasoning to solve problems",
+    "Use symbolic, graphical, numerical, and written representations of mathematical ideas"
+   ],
+   "careers": [
+    "actuarial science",
+    "analytical research",
+    "computer programming and mathematical modeling",
+    "cryptography",
+    "education",
+    "engineering",
+    "the physical sciences",
+    "social science",
+    "computer science"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "MATH 185",
-    "why": "Mathematics A.S.-T section not in the text; listed only in the Liberal Arts: STEM Certificate of Achievement"
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 14,
+     "max": 14
+    },
+    "courses": [
+     {
+      "code": "MATHC2210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATHC2220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH290",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "MATH 200",
-    "why": "Mathematics A.S.-T section not in the text; listed only in the Liberal Arts: STEM Certificate of Achievement"
+    "name": "LIST A",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MATH292",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH200",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "MATH 290",
-    "why": "Mathematics A.S.-T section not in the text; listed only in the Liberal Arts: STEM Certificate of Achievement"
-   },
-   {
-    "code": "MATH 292",
-    "why": "Mathematics A.S.-T section not in the text; listed only in the Liberal Arts: STEM Certificate of Achievement"
-   },
-   {
-    "code": "MATH C2210",
-    "why": "Mathematics A.S.-T section not in the text; listed only in the Liberal Arts: STEM Certificate of Achievement"
-   },
-   {
-    "code": "MATH C2220",
-    "why": "Mathematics A.S.-T section not in the text; listed only in the Liberal Arts: STEM Certificate of Achievement"
-   },
-   {
-    "code": "PHYS 130",
-    "why": "Mathematics A.S.-T section not in the text; listed only in the Liberal Arts: STEM Certificate of Achievement"
-   },
-   {
-    "code": "STAT C1000",
-    "why": "Mathematics A.S.-T section not in the text; listed only in the Liberal Arts: STEM Certificate of Achievement"
+    "name": "LIST B",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MATH185",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS130",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STATC1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied catalog text (and source URL) is for the Liberal Arts: Science, Technology, Engineering and Mathematics (STEM) - Certificate of Achievement, not the Mathematics A.S.-T degree. No section for the Mathematics A.S.-T appears in the text, so no blocks, totals, outcomes or careers were recorded.",
-   "The STEM certificate section prints 'Select a minimum of 18 units' (Total Major Units 18-18), one program outcome, and 'Potential Careers: None'; none of this was attributed to the Mathematics A.S.-T.",
-   "Reviewer should locate the correct Mathematics A.S.-T page in the 2026-27 Contra Costa College catalog."
+   "The catalog rule is 'Select 7 units minimum from the Lists A and B below. At least 4 units must be from List A.' Recorded as List A minimum 4 and List B minimum 3; the remaining 3 units may also come from List A, so List B is not strictly required.",
+   "Unit Summary prints Total Major Units 21-22, CalGETC 34, Double Count Units 3-7, Elective Units to reach 60 of 7-12, and Total Overall Units 60-60. The 7-12 elective units are recorded as degree_elective_units.",
+   "The careers list combines the description ('Mathematicians work in a variety of fields including...' and 'required for careers in engineering, the physical sciences, social science, and computer science') with the Potential Careers heading. The Potential Careers heading repeats the first five fields.",
+   "Program outcomes are printed under 'Math - A.S.-T'.",
+   "The catalog prints MATH290 with the title 'Analytc Geometry&Calculus III'. It matches closed-list MATH 290."
   ]
  },
- "extracted_run": "38979730323"
+ "extracted_run": "44687786167",
+ "catalog_year": "2026-2027"
 }

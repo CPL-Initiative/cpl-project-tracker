@@ -278,7 +278,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 207 of 281 closed-list programs on their own page, 6 on another program's and 9 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "03198",
@@ -324,7 +328,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 207 of 281 closed-list programs on their own page, 6 on another program's and 9 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "03204",
@@ -957,7 +965,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 207 of 281 closed-list programs on their own page, 6 on another program's and 9 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "09146",
@@ -1276,7 +1288,7 @@
   "title": "Civil Design Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
+  "method": "not_found",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2218,7 +2230,7 @@
   "title": "Computer Information Technology: Office Technologies",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
+  "method": "not_found",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2459,7 +2471,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 207 of 281 closed-list programs on their own page, 6 on another program's and 9 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "24350",
@@ -2471,7 +2487,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 207 of 281 closed-list programs on their own page, 6 on another program's and 9 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "30036",
@@ -2519,7 +2539,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 207 of 281 closed-list programs on their own page, 6 on another program's and 9 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "30039",
@@ -2531,7 +2555,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 207 of 281 closed-list programs on their own page, 6 on another program's and 9 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "30287",
@@ -3566,21 +3594,20 @@
    "PHY213"
   ],
   "source": {
-   "url": "https://riohondo.curriqunet.com/Catalog/archive/13/iq/14979/16113/16233",
-   "title": "PHYSICS - Associate Degree for Transfer",
-   "h1": "PHYSICS - Associate Degree for Transfer",
+   "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24155",
+   "title": "PHYSICS 2.0 - Associate Degree for Transfer",
+   "h1": "PHYSICS 2.0 - Associate Degree for Transfer",
    "text_from": "innerText",
    "label": {
     "award": 1,
     "title": 1.0,
     "section": "adt",
-    "section_line": "in addition to the courses listed below, the following requirements must be met for completion of the as-t degree in physics:",
+    "section_line": "in addition to the courses listed below, the following requirements must be met for completion of the as-t degree in physics 2.0:",
     "section_fit": 0.091
    }
   },
   "listed": 7,
-  "text_chars": 6658,
-  "catalog_year": "2025-2026"
+  "text_chars": 9639
  },
  {
   "control_number": "32316",
@@ -5278,7 +5305,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 207 of 281 closed-list programs on their own page, 6 on another program's and 9 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "35821",
@@ -5290,7 +5321,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 207 of 281 closed-list programs on their own page, 6 on another program's and 9 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "35823",
@@ -5302,7 +5337,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 207 of 281 closed-list programs on their own page, 6 on another program's and 9 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "35824",
@@ -5314,7 +5353,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 207 of 281 closed-list programs on their own page, 6 on another program's and 9 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "35825",
@@ -5583,7 +5626,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 207 of 281 closed-list programs on their own page, 6 on another program's and 9 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "36385",
@@ -5595,7 +5642,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 207 of 281 closed-list programs on their own page, 6 on another program's and 9 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "36443",
@@ -6081,7 +6132,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 207 of 281 closed-list programs on their own page, 6 on another program's and 9 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "36734",
@@ -6273,7 +6328,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 207 of 281 closed-list programs on their own page, 6 on another program's and 9 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "36912",
@@ -6285,7 +6344,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 207 of 281 closed-list programs on their own page, 6 on another program's and 9 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "36930",
@@ -7070,7 +7133,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 207 of 281 closed-list programs on their own page, 6 on another program's and 9 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "37727",
@@ -9111,36 +9178,12 @@
   "title": "UCTP - Physics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.917,
-  "codes_found": [
-   "CHEM130",
-   "CHEM140",
-   "MATH190",
-   "MATH190H",
-   "MATH191",
-   "MATH250",
-   "MATH251",
-   "MATH270",
-   "PHY211",
-   "PHY212",
-   "PHY213"
-  ],
-  "source": {
-   "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24034/24043/22500",
-   "title": "CHEMISTRY UC TRANSFER PATHWAY  - Associate in Science",
-   "h1": "CHEMISTRY UC TRANSFER PATHWAY  - Associate in Science",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 12,
-  "text_chars": 12852
+  "text_chars": 0
  },
  {
   "control_number": "41974",
@@ -9259,7 +9302,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 207 of 281 closed-list programs on their own page, 6 on another program's and 9 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "42008",
@@ -9271,7 +9318,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 207 of 281 closed-list programs on their own page, 6 on another program's and 9 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "42028",
@@ -9463,12 +9514,33 @@
   "title": "Engineering Design Technology: Standards for Design",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCH101",
+   "CIV101",
+   "ENGT101",
+   "ENGT105",
+   "ENGT122",
+   "ENGT150",
+   "ENGT170",
+   "ENGT250"
+  ],
+  "source": {
+   "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24549",
+   "title": "ENGINEERING DESIGN TECHNOLOGY: STANDARDS FOR DESIGN - Certificate of Achievement",
+   "h1": "ENGINEERING DESIGN TECHNOLOGY: STANDARDS FOR DESIGN - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "engineering design technology: standards for design - certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 7685
  },
  {
   "control_number": "42615",
@@ -10528,7 +10600,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 207 of 281 closed-list programs on their own page, 6 on another program's and 9 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "45274",

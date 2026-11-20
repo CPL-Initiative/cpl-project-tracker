@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 190,
  "with_closed_list": 125,
- "started": "2026-10-23T17:14:18Z",
+ "started": "2026-11-20T06:25:58Z",
  "scope": null,
  "sitemap": {
   "url": "https://catalog.sierracollege.edu/sitemap.xml",
@@ -14,27 +14,580 @@
   "nested": 0,
   "program_pages": 0,
   "refused": null,
-  "errors": null
+  "errors": null,
+  "failed": null,
+  "challenged": null
  },
  "index_fallback": 57,
+ "index_failed": [],
+ "listing_failed": 0,
  "pages_read": 57,
+ "pages_listed": 57,
+ "pages_answered": 57,
  "child_pages": 0,
  "banner_h1": null,
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 19,
+   "hits": 0,
+   "recall": 0.0,
+   "false": 0,
+   "false_off_own": 0,
+   "false_no_claims": 0,
+   "shared": 42,
+   "false_matches": [],
+   "no_claims_matches": [],
+   "searches": false,
+   "catalog_list": null
+  },
+  "programs": 65,
+  "by_result": {
+   "not_searched": 65
+  },
+  "found": 0,
+  "found_active": 0,
+  "found_pages": 0,
+  "found_programs": [],
+  "other_programs": [
+   {
+    "control_number": "04265",
+    "title": "Sustainable Agriculture",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04269",
+    "title": "Biological Sciences",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04270",
+    "title": "General Business",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04272",
+    "title": "Management",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04273",
+    "title": "Marketing",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04274",
+    "title": "Real Estate",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04288",
+    "title": "Welding Technology",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04290",
+    "title": "Welding",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04292",
+    "title": "Music",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04294",
+    "title": "Registered Nursing",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04302",
+    "title": "Chemistry",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04303",
+    "title": "Geology",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04306",
+    "title": "Administration of Justice - Corrections",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04308",
+    "title": "Early Childhood Education",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04311",
+    "title": "Social and Behavioral Sciences",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "07974",
+    "title": "Drafting and Engineering Support: Architectural/Civil",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "09789",
+    "title": "Natural Science",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "09790",
+    "title": "Humanities: General",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "10509",
+    "title": "Drafting and Engineering Support: Mechanical/Civil",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "10794",
+    "title": "Accounting",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "10795",
+    "title": "Administration of Justice - Corrections",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "10806",
+    "title": "Applied Art and Design: Graphic Design",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "10807",
+    "title": "Applied Art and Design: Illustration",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "10808",
+    "title": "Applied Art and Design: Multimedia",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "10824",
+    "title": "Mechatronics Technology",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "10833",
+    "title": "Drafting and Engineering Support: Architectural/Civil",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "10836",
+    "title": "Drafting and Engineering Support: Mechanical/Civil",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "10839",
+    "title": "Early Childhood Education",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "10848",
+    "title": "Engineering",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "10855",
+    "title": "General Business",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "10857",
+    "title": "Management",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "10858",
+    "title": "Marketing",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "10859",
+    "title": "Mathematics",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "10861",
+    "title": "Music",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "10862",
+    "title": "Natural Science",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "10863",
+    "title": "Photography",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "10870",
+    "title": "Psychology",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "10878",
+    "title": "Real Estate",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "10879",
+    "title": "Recreation Management",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "10880",
+    "title": "Registered Nursing",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "10882",
+    "title": "Social and Behavioral Sciences",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "10897",
+    "title": "Welding Technology",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "12058",
+    "title": "Applied Art and Design: Illustration",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "12059",
+    "title": "Applied Art and Design: Multimedia",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "13871",
+    "title": "Philosophy",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "13939",
+    "title": "Women's Studies",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "15070",
+    "title": "Humanities: Diverse Perspectives",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "15562",
+    "title": "Mathematics",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "16096",
+    "title": "Recreation Management",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "16661",
+    "title": "Humanities: Asian Studies",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "16754",
+    "title": "Mechatronics Technology",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "17909",
+    "title": "Liberal Studies: Elementary Education",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "19205",
+    "title": "Theater Arts",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "19206",
+    "title": "Theater Arts",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "19207",
+    "title": "Civil Engineering Technology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "19208",
+    "title": "General Engineering Technology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "21527",
+    "title": "Real Estate",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "21545",
+    "title": "Computer Science - Web Programming",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "21586",
+    "title": "Applied Art and Design: Illustration",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "21589",
+    "title": "Applied Art and Design: Graphic Design",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "32726",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "35832",
+    "title": "Social Justice Studies",
+    "award": "A.A- T Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "37742",
+    "title": "Retail Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "37764",
+    "title": "Fire Academy",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "38923",
+    "title": "Reserve Peace Officer",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 19 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
  "loads": 59,
- "seconds": 293.1,
- "found": 111,
+ "seconds": 285.9,
+ "found": 105,
  "by_method": {
-  "link_search": 7,
+  "link_search": 3,
   "no_closed_list": 65,
-  "not_found": 3,
+  "not_found": 9,
   "page_claimed": 11,
-  "sitemap_page": 104
+  "sitemap_page": 102
  },
  "shared_pages": {
   "https://catalog.sierracollege.edu/departments/business/": [
    "04271",
    "21522",
-   "21523",
    "21524",
    "21525",
    "21526",
@@ -70,13 +623,6 @@
    "21608",
    "38757"
   ],
-  "https://catalog.sierracollege.edu/departments/computer-science/": [
-   "07964",
-   "10506",
-   "10825",
-   "10827",
-   "32722"
-  ],
   "https://catalog.sierracollege.edu/departments/photography/": [
    "07978",
    "21584",
@@ -87,8 +633,12 @@
    "08307",
    "38745",
    "38746",
-   "41575",
-   "41803"
+   "41575"
+  ],
+  "https://catalog.sierracollege.edu/departments/computer-science/": [
+   "10506",
+   "10825",
+   "32722"
   ],
   "https://catalog.sierracollege.edu/departments/deaf-studies/": [
    "15053",
@@ -167,12 +717,40 @@
  },
  "not_found": [
   {
+   "control_number": "07964",
+   "title": "Computer Science: Management Information Systems",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "10827",
+   "title": "Computer Science: Management Information Systems",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
    "control_number": "14578",
    "title": "Watershed Ecology",
    "award": "A.S. Degree",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "21523",
+   "title": "Accounting",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
   },
   {
    "control_number": "21575",
@@ -180,7 +758,8 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "37688",
@@ -188,7 +767,66 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "39208",
+   "title": "UCTP: Physics",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://catalog.sierracollege.edu/departments/physics/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.786,
+    "body": 0.0,
+    "content": 0.571,
+    "net": 11,
+    "listed": 14,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 2663,
+     "content": 20605,
+     "tabs": 13177
+    },
+    "tab_panels": [
+     [
+      "Degrees/Certificates",
+      3486
+     ],
+     [
+      "Courses",
+      9646
+     ],
+     [
+      "Student Learning Outcomes",
+      666
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "41803",
+   "title": "Web and Interaction Design",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "45200",
+   "title": "Welding Industry Training",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
   }
  ],
  "page_claimed": [
@@ -199,7 +837,8 @@
    "pages": [
     "https://catalog.sierracollege.edu/departments/infotech/",
     "https://catalog.sierracollege.edu/departments/business/"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "15307",
@@ -207,7 +846,8 @@
    "award": "A.S. Degree",
    "pages": [
     "https://catalog.sierracollege.edu/departments/business/"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "21521",
@@ -217,7 +857,8 @@
     "https://catalog.sierracollege.edu/departments/biological-sciences/",
     "https://catalog.sierracollege.edu/departments/environmental-studies-sustainability/",
     "https://catalog.sierracollege.edu/student-resources/general-education/associate-degree-requirements/"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "21533",
@@ -226,7 +867,8 @@
    "pages": [
     "https://catalog.sierracollege.edu/departments/applied-art-design/",
     "https://catalog.sierracollege.edu/departments/art/"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "21537",
@@ -235,7 +877,8 @@
    "pages": [
     "https://catalog.sierracollege.edu/departments/infotech/",
     "https://catalog.sierracollege.edu/departments/business/"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "21568",
@@ -244,7 +887,8 @@
    "pages": [
     "https://catalog.sierracollege.edu/departments/computer-science/",
     "https://catalog.sierracollege.edu/departments/mathematics/"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "21573",
@@ -252,7 +896,8 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "pages": [
     "https://catalog.sierracollege.edu/departments/buildingindustries/"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "31226",
@@ -269,7 +914,8 @@
     "https://catalog.sierracollege.edu/departments/economics/",
     "https://catalog.sierracollege.edu/departments/computer-science/",
     "https://catalog.sierracollege.edu/departments/earth-science/"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "32010",
@@ -286,7 +932,8 @@
     "https://catalog.sierracollege.edu/departments/computer-science/",
     "https://catalog.sierracollege.edu/departments/biological-sciences/",
     "https://catalog.sierracollege.edu/departments/mathematics/"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "38370",
@@ -295,7 +942,8 @@
    "pages": [
     "https://catalog.sierracollege.edu/departments/health-sciences/",
     "https://catalog.sierracollege.edu/student-resources/general-education/associate-degree-requirements/"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "38765",
@@ -303,40 +951,460 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "pages": [
     "https://catalog.sierracollege.edu/departments/fire-technology/"
-   ]
+   ],
+   "status": "Active"
   }
  ],
+ "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 5,
+  "0.5-0.8": 4,
   "0.8-1.0": 21,
-  "1.0": 85
+  "1.0": 80
  },
  "would_extract": {
   "against": "kb/program_requirements_college/sierra",
-  "kept": 109,
-  "programs": 2,
+  "kept": 104,
+  "kept_moved": 0,
+  "programs": 1,
   "list": [
    {
-    "control_number": "38991",
-    "title": "ESL Intermediate-High Writing and Reading Skills",
-    "award": "Noncredit program",
-    "url": "https://catalog.sierracollege.edu/departments/english-second-language/",
+    "control_number": "31260",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.sierracollege.edu/departments/human-development-family/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "44028",
-    "title": "ACE - Advanced ESL",
-    "award": "Noncredit program",
-    "url": "https://catalog.sierracollege.edu/departments/english-second-language/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
+    "was_url": "https://catalog.sierracollege.edu/student-resources/general-education/associate-degree-requirements/",
+    "was_coverage": 0.5,
+    "was_method": "sitemap_page"
    }
-  ]
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
  },
- "run": "39993005180"
+ "fingerprints": {
+  "04271": {
+   "sha256": "44180c0c6561fac48723f76b04c8ce32291422f50a8a59f94ff0418657c34d80",
+   "url": "https://catalog.sierracollege.edu/departments/business/"
+  },
+  "04279": {
+   "sha256": "d682011ecd16697b54d31bcfba7c9a1083fea021fa4c075240b55f92a2593592",
+   "url": "https://catalog.sierracollege.edu/departments/infotech/"
+  },
+  "04281": {
+   "sha256": "ea38319c55502c7f33f1ab6afe43b83295ac210a4ac9a4c491bf4948db1b4ff3",
+   "url": "https://catalog.sierracollege.edu/departments/engineering/"
+  },
+  "04291": {
+   "sha256": "e64da69c8a521d54b4fd91afe82ba01c4eb5658339a3090d24c1b1dfdcd18e27",
+   "url": "https://catalog.sierracollege.edu/departments/art/"
+  },
+  "04305": {
+   "sha256": "a5f80a24dcf05884a303776a85d067f55cfd3b1e91eb9bc8b6b49dfc579e9952",
+   "url": "https://catalog.sierracollege.edu/departments/administration-justice/"
+  },
+  "04310": {
+   "sha256": "8c7d14c21dd486e934d688ee15ea4bb112e7cfa94c303b09307b13560273d94d",
+   "url": "https://catalog.sierracollege.edu/departments/fire-technology/"
+  },
+  "07978": {
+   "sha256": "2901a3ef41e79cc2d7a8b3d05febd79b19c2dbbdd020ec63944988081b5a2f80",
+   "url": "https://catalog.sierracollege.edu/departments/photography/"
+  },
+  "07986": {
+   "sha256": "a5f80a24dcf05884a303776a85d067f55cfd3b1e91eb9bc8b6b49dfc579e9952",
+   "url": "https://catalog.sierracollege.edu/departments/administration-justice/"
+  },
+  "08307": {
+   "sha256": "572b9db574865aacb012657951b6608eca4702eb6c296c4c341242b1c3877ec9",
+   "url": "https://catalog.sierracollege.edu/departments/applied-art-design/"
+  },
+  "10506": {
+   "sha256": "3797284f53ad381194b25f27a6e67203832235b0e7cac017da48eb1f5ec0a14f",
+   "url": "https://catalog.sierracollege.edu/departments/computer-science/"
+  },
+  "10801": {
+   "sha256": "a5f80a24dcf05884a303776a85d067f55cfd3b1e91eb9bc8b6b49dfc579e9952",
+   "url": "https://catalog.sierracollege.edu/departments/administration-justice/"
+  },
+  "10803": {
+   "sha256": "a5f80a24dcf05884a303776a85d067f55cfd3b1e91eb9bc8b6b49dfc579e9952",
+   "url": "https://catalog.sierracollege.edu/departments/administration-justice/"
+  },
+  "10825": {
+   "sha256": "3797284f53ad381194b25f27a6e67203832235b0e7cac017da48eb1f5ec0a14f",
+   "url": "https://catalog.sierracollege.edu/departments/computer-science/"
+  },
+  "10854": {
+   "sha256": "8b9849a01cd8956e2cb34f9ffa0c81a9f02db3ce273c879b2ca3ad5df562c5d2",
+   "url": "https://catalog.sierracollege.edu/departments/fire-technology/"
+  },
+  "11965": {
+   "sha256": "d682011ecd16697b54d31bcfba7c9a1083fea021fa4c075240b55f92a2593592",
+   "url": "https://catalog.sierracollege.edu/departments/infotech/"
+  },
+  "15053": {
+   "sha256": "6dcdf11ffaad2ffcc4f413f310ab01593cc4ae5ca5bd5034357763296cd882a9",
+   "url": "https://catalog.sierracollege.edu/departments/deaf-studies/"
+  },
+  "16874": {
+   "sha256": "1f4c64d4e5b93447768e1be17e1788180a5d0acac588d6a37acde537b5322540",
+   "url": "https://catalog.sierracollege.edu/departments/physical-education/"
+  },
+  "17046": {
+   "sha256": "0f82f9b819affa6c525cfb2e5070f7fd59bfa6a2a5fb95a5cccc776dac8c5498",
+   "url": "https://catalog.sierracollege.edu/departments/psychology/"
+  },
+  "17979": {
+   "sha256": "f5be7d1c6cb26f23736a4126d5f78d2cab6fc7c11beaf8070b6686b0746e914b",
+   "url": "https://catalog.sierracollege.edu/departments/liberal-arts/"
+  },
+  "19209": {
+   "sha256": "6c7a3527cc3a79c75ce14f2bf1ecfaff153b8dcb13c93e52138147cb60f281ae",
+   "url": "https://catalog.sierracollege.edu/departments/environmental-studies-sustainability/"
+  },
+  "21515": {
+   "sha256": "27b2bcfce9c620c9937b2058a7914372d4314d262abd36e2b77119010375c4c5",
+   "url": "https://catalog.sierracollege.edu/departments/agriculture/"
+  },
+  "21522": {
+   "sha256": "44180c0c6561fac48723f76b04c8ce32291422f50a8a59f94ff0418657c34d80",
+   "url": "https://catalog.sierracollege.edu/departments/business/"
+  },
+  "21524": {
+   "sha256": "44180c0c6561fac48723f76b04c8ce32291422f50a8a59f94ff0418657c34d80",
+   "url": "https://catalog.sierracollege.edu/departments/business/"
+  },
+  "21525": {
+   "sha256": "44180c0c6561fac48723f76b04c8ce32291422f50a8a59f94ff0418657c34d80",
+   "url": "https://catalog.sierracollege.edu/departments/business/"
+  },
+  "21526": {
+   "sha256": "44180c0c6561fac48723f76b04c8ce32291422f50a8a59f94ff0418657c34d80",
+   "url": "https://catalog.sierracollege.edu/departments/business/"
+  },
+  "21529": {
+   "sha256": "d682011ecd16697b54d31bcfba7c9a1083fea021fa4c075240b55f92a2593592",
+   "url": "https://catalog.sierracollege.edu/departments/infotech/"
+  },
+  "21557": {
+   "sha256": "d682011ecd16697b54d31bcfba7c9a1083fea021fa4c075240b55f92a2593592",
+   "url": "https://catalog.sierracollege.edu/departments/infotech/"
+  },
+  "21569": {
+   "sha256": "6dcdf11ffaad2ffcc4f413f310ab01593cc4ae5ca5bd5034357763296cd882a9",
+   "url": "https://catalog.sierracollege.edu/departments/deaf-studies/"
+  },
+  "21570": {
+   "sha256": "cb25905bb04ab8a28380a8b6b49f7bad82c9d2261346b74abb39177c0ce9b0c6",
+   "url": "https://catalog.sierracollege.edu/departments/mechatronics/"
+  },
+  "21584": {
+   "sha256": "ffce5d6a884831c9adca8b43b759229a322f0de3bd3a666ac11fed6e52ffb8bc",
+   "url": "https://catalog.sierracollege.edu/departments/photography/"
+  },
+  "21608": {
+   "sha256": "4c2d1d2a64dc0e1d79fd48a2a060ddc0bd0decdd9d49393295487e0d514d37dc",
+   "url": "https://catalog.sierracollege.edu/departments/fire-technology/"
+  },
+  "30471": {
+   "sha256": "b883e8161f2e1638f9a9b8df7587ba59ed6f7561c54e6336498f7f3c19886dbf",
+   "url": "https://catalog.sierracollege.edu/departments/recreation-management/"
+  },
+  "30554": {
+   "sha256": "da300fa82d07c5cb01e28a69639a8e2baebcf06e65cf78ca08daf9fbb90dc15e",
+   "url": "https://catalog.sierracollege.edu/departments/psychology/"
+  },
+  "30557": {
+   "sha256": "2351b589ba3a0790589bc8b1b07f0fdbf2c004920c7e4e28f1a938d1c9304549",
+   "url": "https://catalog.sierracollege.edu/departments/sociology/"
+  },
+  "31176": {
+   "sha256": "f3133df5e1617e01d422d0a30dde5f70c82da9735688da140d850667c77d9c68",
+   "url": "https://catalog.sierracollege.edu/departments/political-science/"
+  },
+  "31258": {
+   "sha256": "470538dec4aaba26288bacaf0bf1ed8210ddf0d23d646816b349e65bc53f4b5c",
+   "url": "https://catalog.sierracollege.edu/departments/english/"
+  },
+  "31259": {
+   "sha256": "b1b480078919421912e6cba6f4351e364574da276139017bf56722eac5d1da35",
+   "url": "https://catalog.sierracollege.edu/departments/history/"
+  },
+  "31260": {
+   "sha256": "191801ab579a73e819c9413514f38060005451dacbd34b2bd10501f65607eade",
+   "url": "https://catalog.sierracollege.edu/departments/human-development-family/"
+  },
+  "31261": {
+   "sha256": "11f2d2fef17335438c9d2aa201d760268b188e1909ec6c7ef209e36024ba22d4",
+   "url": "https://catalog.sierracollege.edu/departments/earth-science/"
+  },
+  "31837": {
+   "sha256": "d08da2adeaac90a87c05ae9551cad327d4f4ab35684c082acc707779941c616b",
+   "url": "https://catalog.sierracollege.edu/departments/philosophy/"
+  },
+  "31922": {
+   "sha256": "ebcc9bd30e6702f5a2fd4624245fccb0b20d10339c4aa8ad1e3b11947c9b6086",
+   "url": "https://catalog.sierracollege.edu/departments/fashion/"
+  },
+  "31923": {
+   "sha256": "ebcc9bd30e6702f5a2fd4624245fccb0b20d10339c4aa8ad1e3b11947c9b6086",
+   "url": "https://catalog.sierracollege.edu/departments/fashion/"
+  },
+  "32007": {
+   "sha256": "e64da69c8a521d54b4fd91afe82ba01c4eb5658339a3090d24c1b1dfdcd18e27",
+   "url": "https://catalog.sierracollege.edu/departments/art/"
+  },
+  "32008": {
+   "sha256": "2c3a45df04936d1538cde4eefb510d60f05466e2a8500ccbaa45fb553149a8b6",
+   "url": "https://catalog.sierracollege.edu/departments/anthropology/"
+  },
+  "32011": {
+   "sha256": "a5f80a24dcf05884a303776a85d067f55cfd3b1e91eb9bc8b6b49dfc579e9952",
+   "url": "https://catalog.sierracollege.edu/departments/administration-justice/"
+  },
+  "32640": {
+   "sha256": "754822e3f7171abcfda3f42a121c6de3a9a8590021da79c85d52fceab281a580",
+   "url": "https://catalog.sierracollege.edu/departments/geography/"
+  },
+  "32653": {
+   "sha256": "6c4d690da7fade95406ddac0ccacce5698c23c945daacf44b5f7237f5d2323c5",
+   "url": "https://catalog.sierracollege.edu/departments/economics/"
+  },
+  "32722": {
+   "sha256": "7889378c30fb16ba101256f9d39d05a133c1f2e33ad7747ae27c048880505221",
+   "url": "https://catalog.sierracollege.edu/departments/computer-science/"
+  },
+  "32725": {
+   "sha256": "cafc8da9cc3af2cd95d712195e43a634ec2a017f43a1133ceaab200f147c51e4",
+   "url": "https://catalog.sierracollege.edu/departments/thea/"
+  },
+  "32728": {
+   "sha256": "4ddcb1e9c3962e4b027ff4604f706e2c3e0219e1ef714bcb218641e2466e4ba4",
+   "url": "https://catalog.sierracollege.edu/departments/communication-studies/"
+  },
+  "32752": {
+   "sha256": "75adc3cab9653c4d8677f50db5df93e89ddd35a3d689dc7bffcc1a2928be71b1",
+   "url": "https://catalog.sierracollege.edu/departments/lesbian-gay-bisexual-transgender-studies/"
+  },
+  "33224": {
+   "sha256": "723283552c2db9f0d171047d99d1cca5023f175de68bf22f639927be95124749",
+   "url": "https://catalog.sierracollege.edu/departments/buildingindustries/"
+  },
+  "33293": {
+   "sha256": "39f4500f05fd5eec77c5c269128605a8808545a30bb3b09fdcdccc1a536673d7",
+   "url": "https://catalog.sierracollege.edu/departments/music/"
+  },
+  "33637": {
+   "sha256": "119f336f713bb38713e086cf2ec54b6c35b9b024a4c679798d69884326c31bad",
+   "url": "https://catalog.sierracollege.edu/departments/chemistry/"
+  },
+  "33639": {
+   "sha256": "2f7bfbc51134bae97c2598195757b15ab17b3ad6ccdd760a22809c23608569e6",
+   "url": "https://catalog.sierracollege.edu/departments/biological-sciences/"
+  },
+  "33646": {
+   "sha256": "be9fa80370226878a721d447cb861dfa2cd51f5547aca1dce27927da2acc067b",
+   "url": "https://catalog.sierracollege.edu/departments/nutrition-food-science/"
+  },
+  "33752": {
+   "sha256": "7453a3f6c7d3aabe663191c6ccfda5a69ea65eb2ad57e810c80fb68ad380c450",
+   "url": "https://catalog.sierracollege.edu/departments/spanish/"
+  },
+  "35101": {
+   "sha256": "04f3268825302530a699b1f2f4449e3b8b872fee6d8426518a0bf94b6752c7bb",
+   "url": "https://catalog.sierracollege.edu/departments/health-sciences/"
+  },
+  "36307": {
+   "sha256": "3e396a2c01dfc6a3f17b27e26c8475a04d2d00530f83867bbad88344dc7fa4de",
+   "url": "https://catalog.sierracollege.edu/departments/photography/"
+  },
+  "36314": {
+   "sha256": "3e396a2c01dfc6a3f17b27e26c8475a04d2d00530f83867bbad88344dc7fa4de",
+   "url": "https://catalog.sierracollege.edu/departments/photography/"
+  },
+  "36718": {
+   "sha256": "b64faf9778e3bd3bfd83ec5ff4efd111a4c93efeae18cc0145f9e60586f94c10",
+   "url": "https://catalog.sierracollege.edu/departments/alh/"
+  },
+  "36719": {
+   "sha256": "c12cbf90e9dcfa3b24b8e34aa5442331a7906dbdcc35558bbbd51c5de60ee134",
+   "url": "https://catalog.sierracollege.edu/departments/alh/"
+  },
+  "36922": {
+   "sha256": "b64faf9778e3bd3bfd83ec5ff4efd111a4c93efeae18cc0145f9e60586f94c10",
+   "url": "https://catalog.sierracollege.edu/departments/alh/"
+  },
+  "36923": {
+   "sha256": "b64faf9778e3bd3bfd83ec5ff4efd111a4c93efeae18cc0145f9e60586f94c10",
+   "url": "https://catalog.sierracollege.edu/departments/alh/"
+  },
+  "37168": {
+   "sha256": "a4030350cc0bd665dd633364aeeebe8663a86d37cac9e0e1c2dc07bc1aa7c53d",
+   "url": "https://catalog.sierracollege.edu/departments/music/"
+  },
+  "37741": {
+   "sha256": "cf13439eb3161efdcf6c47c7e13ab5e536ad30e061d8bdf8bf42c3cd3a304d14",
+   "url": "https://catalog.sierracollege.edu/departments/fashion/"
+  },
+  "37810": {
+   "sha256": "6d3c03af2cb3a6a45bf2f9052153b3d3a08d54ee7c6067cd5779fb6d7281c046",
+   "url": "https://catalog.sierracollege.edu/departments/business/"
+  },
+  "38371": {
+   "sha256": "04f3268825302530a699b1f2f4449e3b8b872fee6d8426518a0bf94b6752c7bb",
+   "url": "https://catalog.sierracollege.edu/departments/health-sciences/"
+  },
+  "38372": {
+   "sha256": "9dc1cbdebcd2d655534f14ee2354cdafc05a4faba7897085c2f467c79081811d",
+   "url": "https://catalog.sierracollege.edu/departments/health-sciences/"
+  },
+  "38522": {
+   "sha256": "ab3773649f495e51c8922f9fdde19f60a37686ff568909b8f538df50336db738",
+   "url": "https://catalog.sierracollege.edu/departments/ethnic-studies/"
+  },
+  "38745": {
+   "sha256": "b14f05fc3cdc969596a554fcb226f653aefe68abee600c1060fd45f38f281ca5",
+   "url": "https://catalog.sierracollege.edu/departments/applied-art-design/"
+  },
+  "38746": {
+   "sha256": "b14f05fc3cdc969596a554fcb226f653aefe68abee600c1060fd45f38f281ca5",
+   "url": "https://catalog.sierracollege.edu/departments/applied-art-design/"
+  },
+  "38749": {
+   "sha256": "d56e54ff4401d9678e6e9cc9ef791e79dd534c72b42fc71576851f2782256cae",
+   "url": "https://catalog.sierracollege.edu/departments/buildingindustries/"
+  },
+  "38757": {
+   "sha256": "bb0220d49b2ca1a685d44ac1b86700c5af8de3c97255e4b01ed86323fdf387ae",
+   "url": "https://catalog.sierracollege.edu/departments/fire-technology/"
+  },
+  "38990": {
+   "sha256": "d624990f1490272e04e29066d75583d217cc4ddce7039a4538b33d39cb5c2cd9",
+   "url": "https://catalog.sierracollege.edu/departments/english-second-language/"
+  },
+  "38991": {
+   "sha256": "8bae3f4c44731a4992ed359976016928838072c43a5d9ddda6c0fbe7dde292f8",
+   "url": "https://catalog.sierracollege.edu/departments/english-second-language/"
+  },
+  "39209": {
+   "sha256": "119f336f713bb38713e086cf2ec54b6c35b9b024a4c679798d69884326c31bad",
+   "url": "https://catalog.sierracollege.edu/departments/chemistry/"
+  },
+  "39514": {
+   "sha256": "5291d50b62beb6b432bc91882e80a0b75942313bd1542d2e02a7bf650b0adf8c",
+   "url": "https://catalog.sierracollege.edu/departments/advanced-manufacturing/"
+  },
+  "39602": {
+   "sha256": "748fd87988518672c94691447e298a2755fdbe3f0dc17a915e3efe11a4db2d6d",
+   "url": "https://catalog.sierracollege.edu/departments/infotech/"
+  },
+  "39603": {
+   "sha256": "748fd87988518672c94691447e298a2755fdbe3f0dc17a915e3efe11a4db2d6d",
+   "url": "https://catalog.sierracollege.edu/departments/infotech/"
+  },
+  "39604": {
+   "sha256": "5291d50b62beb6b432bc91882e80a0b75942313bd1542d2e02a7bf650b0adf8c",
+   "url": "https://catalog.sierracollege.edu/departments/advanced-manufacturing/"
+  },
+  "39607": {
+   "sha256": "d682011ecd16697b54d31bcfba7c9a1083fea021fa4c075240b55f92a2593592",
+   "url": "https://catalog.sierracollege.edu/departments/infotech/"
+  },
+  "39657": {
+   "sha256": "d682011ecd16697b54d31bcfba7c9a1083fea021fa4c075240b55f92a2593592",
+   "url": "https://catalog.sierracollege.edu/departments/infotech/"
+  },
+  "40181": {
+   "sha256": "041eaad1ac555d7bf4028e5634fd7d20b58f72a3c6a8874a6a9017adc98b4c15",
+   "url": "https://catalog.sierracollege.edu/departments/environmental-studies-sustainability/"
+  },
+  "40717": {
+   "sha256": "add243d263a73e43e6e0bd90c068da1cd7337902982967c527d8698d0f781ac8",
+   "url": "https://catalog.sierracollege.edu/departments/environmental-studies-sustainability/"
+  },
+  "40822": {
+   "sha256": "dbcf7ec433146cfa92778b3bc8221fee6e20acb136ff278f56d4503cffa162f5",
+   "url": "https://catalog.sierracollege.edu/departments/automotive-technology/"
+  },
+  "41040": {
+   "sha256": "d3edb3979dc6b44eae43a6d98080f5da3d7e7389fdc306cc210b67446cf97b06",
+   "url": "https://catalog.sierracollege.edu/departments/business/"
+  },
+  "41575": {
+   "sha256": "b14f05fc3cdc969596a554fcb226f653aefe68abee600c1060fd45f38f281ca5",
+   "url": "https://catalog.sierracollege.edu/departments/applied-art-design/"
+  },
+  "42805": {
+   "sha256": "7c560b56795abdb4c2d85dbe077f2870a85a74ad63f361d8bdf972e190ee2663",
+   "url": "https://catalog.sierracollege.edu/departments/communication-studies/"
+  },
+  "43870": {
+   "sha256": "d682011ecd16697b54d31bcfba7c9a1083fea021fa4c075240b55f92a2593592",
+   "url": "https://catalog.sierracollege.edu/departments/infotech/"
+  },
+  "43871": {
+   "sha256": "d682011ecd16697b54d31bcfba7c9a1083fea021fa4c075240b55f92a2593592",
+   "url": "https://catalog.sierracollege.edu/departments/infotech/"
+  },
+  "44028": {
+   "sha256": "7af8623a2e745930b2b66f54f6a869fd37884148b634c67c0b84e52214561bd3",
+   "url": "https://catalog.sierracollege.edu/departments/english-second-language/"
+  },
+  "44605": {
+   "sha256": "aec5b15699d2fc8a32ebdab62e0430a53f8a81f536734e9d0c5d1238de002595",
+   "url": "https://catalog.sierracollege.edu/departments/alh/"
+  },
+  "44616": {
+   "sha256": "9dc1cbdebcd2d655534f14ee2354cdafc05a4faba7897085c2f467c79081811d",
+   "url": "https://catalog.sierracollege.edu/departments/health-sciences/"
+  },
+  "44673": {
+   "sha256": "f2595683b6d35f60439d8486c765cc282db14e6694e75bf8ddd1904da536dea1",
+   "url": "https://catalog.sierracollege.edu/departments/astronomy/"
+  },
+  "44981": {
+   "sha256": "3b21fc8cc12cbcb5c4bc993e4528cacbf8c585f3be73013ca3acc2e713a9aa43",
+   "url": "https://catalog.sierracollege.edu/departments/buildingindustries/"
+  },
+  "45004": {
+   "sha256": "d73895995b7bbe6568eb99178364ff1db15d5d8428d257a30e2d11564eee9c51",
+   "url": "https://catalog.sierracollege.edu/departments/recreation-management/"
+  },
+  "45624": {
+   "sha256": "f2da9e7a4b07519344d8c40b8dd836107c4ddfe84b587242659ac807f0f3bede",
+   "url": "https://catalog.sierracollege.edu/departments/education/"
+  },
+  "45800": {
+   "sha256": "81595af1dab21853694ff419539a1c585bfaf6bd4c419c53e89839f641377671",
+   "url": "https://catalog.sierracollege.edu/departments/ethnic-studies/"
+  },
+  "45833": {
+   "sha256": "cd8f75c5e2d0e688fcd4996417328043e2a869db951aeb8b3ae8fabaece31651",
+   "url": "https://catalog.sierracollege.edu/departments/mathematics/"
+  },
+  "45908": {
+   "sha256": "cd8f75c5e2d0e688fcd4996417328043e2a869db951aeb8b3ae8fabaece31651",
+   "url": "https://catalog.sierracollege.edu/departments/mathematics/"
+  },
+  "46006": {
+   "sha256": "3ecbda322293ec0b3b280b7f1d4ce8f8861b8b61e497dcd42af133728bada11a",
+   "url": "https://catalog.sierracollege.edu/departments/agriculture/"
+  },
+  "46007": {
+   "sha256": "3ecbda322293ec0b3b280b7f1d4ce8f8861b8b61e497dcd42af133728bada11a",
+   "url": "https://catalog.sierracollege.edu/departments/agriculture/"
+  },
+  "46074": {
+   "sha256": "b9ac55aeab16c137aa65041a972b956d2bc96fe9044204736e5b89658c04b864",
+   "url": "https://catalog.sierracollege.edu/departments/physics/"
+  },
+  "46286": {
+   "sha256": "a9ee535b5864b75674b335717b2f43fc982e902a60a79cf68aa2edb495c5e8de",
+   "url": "https://catalog.sierracollege.edu/departments/health-education/"
+  }
+ },
+ "run": "44687646623"
 }

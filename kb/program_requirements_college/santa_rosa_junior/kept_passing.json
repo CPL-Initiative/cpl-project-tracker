@@ -1,5 +1,5 @@
 {
- "run": "44477690021",
+ "run": "44701011374",
  "programs": [
   {
    "control_number": "13887",
@@ -7,7 +7,7 @@
    "award": "A.A. Degree",
    "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=206",
    "filed_source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=205",
-   "cost_usd": 0.0855,
+   "cost_usd": 0.08662,
    "usage": {
     "input_tokens": 8069,
     "cache_creation_input_tokens": 0,
@@ -19,7 +19,7 @@
     "iterations": [
      {
       "input_tokens": 8069,
-      "output_tokens": 2661,
+      "output_tokens": 2717,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -30,9 +30,9 @@
       "model": null
      }
     ],
-    "output_tokens": 2661,
+    "output_tokens": 2717,
     "output_tokens_details": {
-     "thinking_tokens": 749
+     "thinking_tokens": 728
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -196,7 +196,7 @@
    "award": "A.S. Degree",
    "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=191",
    "filed_source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=190",
-   "cost_usd": 0.09046,
+   "cost_usd": 0.0893,
    "usage": {
     "input_tokens": 9281,
     "cache_creation_input_tokens": 0,
@@ -208,7 +208,7 @@
     "iterations": [
      {
       "input_tokens": 9281,
-      "output_tokens": 2667,
+      "output_tokens": 2609,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -219,9 +219,9 @@
       "model": null
      }
     ],
-    "output_tokens": 2667,
+    "output_tokens": 2609,
     "output_tokens_details": {
-     "thinking_tokens": 1281
+     "thinking_tokens": 1577
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -372,12 +372,354 @@
    }
   },
   {
+   "control_number": "19598",
+   "title": "Kinesiology",
+   "award": "A.A. Degree",
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=168",
+   "filed_source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=166",
+   "cost_usd": 0.27133,
+   "usage": {
+    "input_tokens": 14803,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 14803,
+      "output_tokens": 10606,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 10606,
+    "output_tokens_details": {
+     "thinking_tokens": 2562
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "covers_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 97,
+     "listed": 155,
+     "share": 0.626,
+     "missing": [
+      "ATHL1",
+      "ATHL10",
+      "ATHL10L",
+      "ATHL11",
+      "ATHL11L",
+      "ATHL13",
+      "ATHL14",
+      "ATHL15L",
+      "ATHL17",
+      "ATHL17L",
+      "ATHL18",
+      "ATHL2",
+      "ATHL21",
+      "ATHL221L",
+      "ATHL222L",
+      "ATHL27",
+      "ATHL28",
+      "ATHL29L",
+      "ATHL3",
+      "ATHL30",
+      "ATHL31",
+      "ATHL31L",
+      "ATHL32",
+      "ATHL32L",
+      "ATHL33",
+      "ATHL34",
+      "ATHL37",
+      "ATHL38",
+      "ATHL41",
+      "ATHL41L",
+      "ATHL42",
+      "ATHL45",
+      "ATHL45L",
+      "ATHL8",
+      "ATHL9",
+      "CHEM60",
+      "FDNT10",
+      "KFIT151",
+      "KFIT63",
+      "KIN49",
+      "KIN5",
+      "KIN501",
+      "KIN502",
+      "KIN503",
+      "KIN504",
+      "KIN505",
+      "KIN62A",
+      "KIN62B",
+      "KIN62C",
+      "KIN62D",
+      "KIN80",
+      "KIN81",
+      "KIN82",
+      "KIN83",
+      "KINA13",
+      "KINA14",
+      "KINT63",
+      "LIR10"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "KINA102",
+       "listed": "KAQUA102",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": true
+    },
+    "invented": {
+     "count": 39,
+     "codes": [
+      "DANC101",
+      "DANC102",
+      "DANC111",
+      "DANC112",
+      "DANC113",
+      "DANC114",
+      "DANC131",
+      "DANC132",
+      "DANC134",
+      "DANC141",
+      "DANC142",
+      "DANC143",
+      "DANC144",
+      "DANC161",
+      "DANC162",
+      "DANC163",
+      "DANC164",
+      "DANC211",
+      "DANC212",
+      "DANC213",
+      "DANC214",
+      "DANC35",
+      "DANC371",
+      "DANC372",
+      "DANC881",
+      "DANC882",
+      "DANC883",
+      "DANC884",
+      "KIN1",
+      "KINC4",
+      "KINI791",
+      "KINI792",
+      "KINI793",
+      "PHYS20A",
+      "PHYS40",
+      "PSYC1000(PSYCC1000)",
+      "PSYC9",
+      "SOC1",
+      "STAT1000(STATC1000)"
+     ],
+     "flagged": [
+      "DANC101",
+      "DANC102",
+      "DANC111",
+      "DANC112",
+      "DANC113",
+      "DANC114",
+      "DANC131",
+      "DANC132",
+      "DANC134",
+      "DANC141",
+      "DANC142",
+      "DANC143",
+      "DANC144",
+      "DANC161",
+      "DANC162",
+      "DANC163",
+      "DANC164",
+      "DANC211",
+      "DANC212",
+      "DANC213",
+      "DANC214",
+      "DANC35",
+      "DANC371",
+      "DANC372",
+      "DANC881",
+      "DANC882",
+      "DANC883",
+      "DANC884",
+      "KIN1",
+      "KINC4",
+      "KINI791",
+      "KINI792",
+      "KINI793",
+      "PHYS20A",
+      "PHYS40",
+      "PSYC1000(PSYCC1000)",
+      "PSYC9",
+      "SOC1",
+      "STAT1000(STATC1000)"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      22.0,
+      22.0
+     ],
+     "stated": [
+      22.0,
+      22.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [
+      "KFIT32 in 'Area Courses'"
+     ],
+     "pass": false
+    },
+    "outcomes": {
+     "program": 4,
+     "courses": 0,
+     "count": 4,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 149,
+     "listed": 155,
+     "share": 0.961,
+     "missing": [
+      "KAQUA102",
+      "KIN501",
+      "KIN502",
+      "KIN503",
+      "KIN504",
+      "KIN505"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 14,
+     "codes": [
+      "ATHL46",
+      "KIN1",
+      "KIN10",
+      "KIN11",
+      "KIN2",
+      "KIN3",
+      "KIN4",
+      "KIN7",
+      "KIN8",
+      "KIN9",
+      "KINC4",
+      "KINI791",
+      "KINI792",
+      "KINI793"
+     ],
+     "flagged": [
+      "ATHL46",
+      "KIN1",
+      "KIN10",
+      "KIN11",
+      "KIN2",
+      "KIN3",
+      "KIN4",
+      "KIN7",
+      "KIN8",
+      "KIN9",
+      "KINC4",
+      "KINI791",
+      "KINI792",
+      "KINI793"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      32.0,
+      32.0
+     ],
+     "stated": [
+      32.0,
+      32.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [
+      "KFIT32 in 'Kinesiology Activity Elective Requirement'"
+     ],
+     "pass": false
+    },
+    "outcomes": {
+     "program": 4,
+     "courses": 0,
+     "count": 4,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": false
+   }
+  },
+  {
    "control_number": "30635",
    "title": "Theatre Arts",
    "award": "A.A. Degree",
    "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=213",
    "filed_source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=212",
-   "cost_usd": 0.10754,
+   "cost_usd": 0.09804,
    "usage": {
     "input_tokens": 9159,
     "cache_creation_input_tokens": 0,
@@ -389,7 +731,7 @@
     "iterations": [
      {
       "input_tokens": 9159,
-      "output_tokens": 3545,
+      "output_tokens": 3070,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -400,9 +742,9 @@
       "model": null
      }
     ],
-    "output_tokens": 3545,
+    "output_tokens": 3070,
     "output_tokens_details": {
-     "thinking_tokens": 1448
+     "thinking_tokens": 959
     },
     "service_tier": "standard",
     "inference_geo": "global",
