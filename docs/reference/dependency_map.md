@@ -1160,6 +1160,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/ccr_sky_payload_test.py` | workflows: `js-tests.yml` | — |
 | `tests/ccr_universe_members_test.py` | workflows: `js-tests.yml` | — |
 | `tests/ccr_universe_orbits_test.py` | workflows: `js-tests.yml` | — |
+| `tests/ccsf_curricunet_route_test.py` | workflows: `js-tests.yml` | — |
 | `tests/cdc_sharing_build_test.py` | workflows: `js-tests.yml` | — |
 | `tests/cer_classifier_rules_size_test.py` | workflows: `js-tests.yml` | — |
 | `tests/cer_decision_apply_retry_test.py` | workflows: `js-tests.yml` | — |
@@ -1442,6 +1443,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `canadacollege.edu` | tabs: `map-queue`, `map-users` |
 | `catalog.cccd.edu` | scripts: `kb/_course_outcomes_read.py` |
 | `catalog.example` | modules: `a11y.config.js` |
+| `ccsf.curricunet.com` | scripts: `kb/_course_outline_census.py` |
 | `cdn.jsdelivr.net` | tabs: `pipeline` |
 | `cdnjs.cloudflare.com` | scripts: `prototype/globe/build_globe.py` |
 | `chaffey.curriqunet.com` | scripts: `kb/_course_outline_census.py` |
@@ -1641,5 +1643,5 @@ check these BY HAND before trusting an absence:
 - `kb/_row_audit_prune.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 118 Supabase tables · 65 RPCs · 15 edge functions · 1092 file
-datasets · 196 external services · 635 consumers · 75 workflows · 41 tabs.
+Coverage: 118 Supabase tables · 65 RPCs · 15 edge functions · 1093 file
+datasets · 197 external services · 635 consumers · 75 workflows · 41 tabs.
