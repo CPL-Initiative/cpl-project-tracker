@@ -1,22 +1,14 @@
 {
- "_readme": "S690 catalogs worker, 2026-11-20, under Sam's go of 2026-11-20 6:26 AM PT (relayed by COBIx on #3584, comment 7042043701) and the plain session's ask (#3584, comment 7042398748): every course the 2026-27 catalog prints, for kb/hand_filed_catalogs/courses/. The college's own catalog PDF, which the program capture read from this address (run 44475503054, access ok); Sam's hand-fetched copy (COBIx's gist, the same page count) is printed by pdftotext -layout in two columns side by side, so this read takes the college's file through pypdf instead. Every page that names units or hours, line for line. No model call.",
+ "_readme": "S690 catalogs worker, 2026-11-20, under Sam's go of 2026-11-20 6:26 AM PT (relayed by COBIx on #3584, comment 7042043701) and the plain session's ask (#3584, comment 7042398748): every course the 2026-27 catalog prints, for kb/hand_filed_catalogs/courses/. The college's own catalog PDF, which the program capture read from this address (run 44475503054, access ok). The first course read (44763620806) printed only pages naming units or hours, and West Los Angeles's credit course pages (about 159 to 225) name neither, so this read prints every page from 155 to 230. No model call.",
  "college": "West Los Angeles College",
  "questions": {
   "courses": "Each course's code, title, units or hours, requisites and description."
  },
- "keywords": [
-  "\\bUnits?\\b",
-  "\\bUNITS?\\b",
-  "\\bHours?\\b"
- ],
+ "keywords": ["[A-Za-z]"],
  "pdf_page_cap": 1000,
  "pdf_unfolded": true,
+ "pdf_span": [155, 230],
  "pages": [
-  {
-   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf",
-   "answers": [
-    "courses"
-   ]
-  }
+  {"url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf", "answers": ["courses"]}
  ]
 }
