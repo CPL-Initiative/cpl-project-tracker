@@ -64,13 +64,15 @@ FULL_BODY_JS = cor.FULL_BODY_JS
 
 # The outline's own section headings: the outcomes end where the next one starts.
 STOP = re.compile(
-    r"^[ \t]*(course content|content|lecture content|lab(oratory)? content|(specific )?course objectives|objectives|"
+    r"^[ \t]*(course content|contents?|lecture content|lab(oratory)? content|(specific )?course objectives|objectives|"
     r"methods? of (instruction|evaluation)|instructional methods|assignments|out[- ]of[- ]class|"
     r"(representative |required )?text(book)?s?|instructional materials|other materials|supplies|"
     r"course description|catalog description|schedule description|requisites?|prerequisites?|corequisites?|"
     r"advisor(y|ies)|entrance skills|distance education|repeatability|grading|units|hours|"
     r"discipline|minimum qualifications|library|approvals?|effective|course outline)\b[^\n]{0,60}:?[ \t]*$",
     re.I | re.M)
+# City College of San Francisco's report 28 prints CONTENTS after its STUDENT LEARNING OUTCOMES (COBIx's read of AAPS
+# 100, #3533): the plural is a heading too, or every CCSF page files it as its last outcome (S690).
 # The SLO heading proper. RCCD prints Course Objectives first, under the same
 # lead-in ("Upon successful completion of the course, students should be able to
 # demonstrate the following activities:"), so the lead-in alone is no SLO heading
@@ -730,13 +732,219 @@ def page_html_of(reader, page: dict) -> str:
     return html_
 
 
+# The page's whole text as load_full reads it stops at this many characters (FULL_BODY_JS). A row says whether its
+# page reached either limit, so a trial shows whether it parsed what the full read will see (S690).
+TEXT_CAP = 80000
+
+# Outline hosts whose report pages name people (curriculum staff, originators), where a read files parsed outcomes
+# only: the course, each outcome and objective as parsed, and the report's address; never the page's text or HTML, in
+# a trial or a full read (d-ccsf-outline-trial-no-staff-names-s689). City College of San Francisco's report 28 names
+# its curriculum staff (second reader on #3586, S689).
+OUTCOMES_ONLY_HOSTS = {"ccsf.curricunet.com"}
+# The fields a row filed from such a host keeps. Each is the index's, the load's status, or a parsed field; the
+# page's title and any text the parser did not take as an outcome or objective stay out.
+OUTCOMES_ONLY_KEYS = (
+    "code", "title", "course_id", "report", "named_by", "status", "final_url", "access", "chars", "text_cut",
+    "html_chars", "html_cut", "offered_at", "shape", "heading", "lead", "outcomes", "maps_to", "groups",
+    "parsed_from", "why_none", "fingerprint", "objectives", "objectives_heading", "objectives_lead",
+    "objectives_fingerprint", "section_heads")
+# The page files a trial keeps elsewhere, for a person to read the parser against: never from such a host.
+PAGE_FILE_ENDS = (".txt", ".html.gz", ".html")
+
+
+def outcomes_only(url: str) -> bool:
+    """Whether a read of this report or host files parsed outcomes only."""
+    return urllib.parse.urlparse(url or "").netloc.lower() in OUTCOMES_ONLY_HOSTS
+
+
+def section_heads(text: str) -> list[str]:
+    """The section headings a page prints, in order, as the parser's own patterns name them: the heading words alone
+    (the outcomes' STOP list, the objectives heading, the SLO heading), never a line's other words. A person reads
+    the parse of an outcomes-only page against these: which sections the page prints, and where each block ended."""
+    out = []
+    for line in (text or "").split("\n"):
+        s = line.strip()
+        if not s:
+            continue
+        if OBJ_TITLE.match(s):
+            out.append(s.rstrip(":").strip().upper())
+            continue
+        m = SLO_TITLE.match(s)
+        if m:
+            out.append(HEAD_NUMBER.sub("", m.group(0)).strip().upper())
+            continue
+        m = STOP.match(s)
+        if m:
+            out.append(m.group(1).strip().upper())
+    return out
+
+
+def file_row(row: dict) -> dict:
+    """The row as a read files it: whole for most hosts, cut to OUTCOMES_ONLY_KEYS for an outcomes-only host."""
+    if not outcomes_only(row.get("report") or ""):
+        return row
+    return {k: row[k] for k in OUTCOMES_ONLY_KEYS if k in row}
+
+
 def read_one(reader, course: dict) -> dict:
     page = cor.load_full(reader, course["report"])
     body = page.get("body") or ""
-    got = parse_page(page_html_of(reader, page), body, page_system(course["report"]), course["report"])
-    return {**course, "status": page.get("status"), "final_url": page.get("final_url"),
-            "access": cor.access_of(page), "title_printed": (page.get("title") or "")[:160],
-            "chars": len(body), "offered_at": offered_at(body), **got}
+    html_ = page.get("html") or ""
+    parsed_html = page_html_of(reader, page)
+    got = parse_page(parsed_html, body, page_system(course["report"]), course["report"])
+    # html_chars is what the parser read; html_cut is true only when that is the Reader's copy cut at its cap (the
+    # browser's whole page could not be read in its place). CCSF's report 28 pages run past 400,000 characters of
+    # HTML around 5,000 to 15,000 of text (trial 44738175152), so the whole page stands in on every one.
+    row = {**course, "status": page.get("status"), "final_url": page.get("final_url"),
+           "access": cor.access_of(page), "title_printed": (page.get("title") or "")[:160],
+           "chars": len(body), "text_cut": len(body) >= TEXT_CAP, "html_chars": len(parsed_html),
+           "html_cut": len(html_) >= READER_HTML_CAP and len(parsed_html) <= len(html_),
+           "offered_at": offered_at(body), **got}
+    if outcomes_only(course["report"]):
+        row["section_heads"] = section_heads(body)
+    return file_row(row)
+
+
+def file_trial_page(reader, out_dir: str, course: dict) -> list[str]:
+    """A trial's copy of the page it read, for a person to read the parser against: its whole text and HTML, except
+    from an outcomes-only host, whose trial files the parsed row alone. Returns the files written."""
+    if outcomes_only(course.get("report") or ""):
+        return []
+    stem = re.sub(r"[^A-Za-z0-9]+", "_", course["code"])
+    txt, html_gz = os.path.join(out_dir, stem + ".txt"), os.path.join(out_dir, stem + ".html.gz")
+    with open(txt, "w") as f:
+        f.write(reader.page.evaluate(FULL_BODY_JS) or "")
+    with gzip.open(html_gz, "wt") as f:
+        f.write(reader.page.content())
+    return [txt, html_gz]
+
+
+def strip_page_files(root: str = OUT_DIR) -> list[str]:
+    """Each page file in a read folder whose read names an outcomes-only host, removed before the workflow keeps or
+    commits the folder; the paths removed. The guard behind file_trial_page, run by course-outcomes-read.yml."""
+    gone = []
+    for folder, _dirs, files in os.walk(root):
+        hosts = set()
+        for f in files:
+            if not (f.endswith(".json") and (f == "read.json" or f.startswith("read_"))):
+                continue
+            try:
+                d = json.load(open(os.path.join(folder, f)))
+            except (OSError, ValueError):
+                continue
+            hosts.add(d.get("host") or "")
+            hosts.update(r.get("report") or "" for r in d.get("rows") or [])
+        if not any(outcomes_only(h) for h in hosts):
+            continue
+        for f in sorted(files):
+            if f.endswith(PAGE_FILE_ENDS):
+                os.remove(os.path.join(folder, f))
+                gone.append(os.path.join(folder, f))
+    return gone
+
+
+# An outcomes-only host's self-recall count. Its trial files no pages, so the counts come from a reading of each page
+# that does not go through the parser: a person reads the page's SLO section as printed (slo_excerpt, which the trial
+# prints to its job log and never files) and records each count, where it came from and when. The gate compares them
+# with the trial's own rows, which read_one filed through the same Reader copy and caps as a full read
+# (p-reader-cap-hides-mtsac-results-s689), and refuses a trial filed by another parser than the current one, a row
+# that did not answer 200, a trial that parsed outcomes on fewer than half its pages, and a count with no source
+# (second reader on #3601, S690).
+CCSF_RECALL = os.path.join(HERE, "course_outcomes", "ccsf_recall.json")
+RECALL_BY_HOST = {"ccsf.curricunet.com": CCSF_RECALL}
+# The SLO section of a report 28 page, cut by its two printed headings alone, never by the parser's patterns.
+EXCERPT_FROM, EXCERPT_TO, EXCERPT_LINES = "STUDENT LEARNING OUTCOMES", "CONTENTS", 60
+
+
+def slo_excerpt(text: str) -> list[str] | None:
+    """The lines a page prints between its STUDENT LEARNING OUTCOMES heading and its CONTENTS heading, as printed;
+    None when either heading is missing or the section runs past EXCERPT_LINES, so nothing past the section is
+    shown. A person counts the outcomes in it by eye, apart from the parser."""
+    lines = [ln.rstrip() for ln in (text or "").split("\n")]
+    bare = [ln.strip().upper() for ln in lines]
+    if EXCERPT_FROM not in bare:
+        return None
+    start = bare.index(EXCERPT_FROM) + 1
+    end = next((i for i in range(start, min(len(bare), start + EXCERPT_LINES + 1)) if bare[i] == EXCERPT_TO), None)
+    return None if end is None else [ln for ln in lines[start:end] if ln.strip()]
+
+
+def excerpt_log(code: str, excerpt: list[str] | None) -> str:
+    """The excerpt as the trial's log prints it, one numbered line each, between two markers."""
+    if excerpt is None:
+        return "EXCERPT %s: no section between %s and %s within %d lines" % (code, EXCERPT_FROM, EXCERPT_TO,
+                                                                           EXCERPT_LINES)
+    return "\n".join(["EXCERPT %s BEGIN (%d lines)" % (code, len(excerpt))]
+                     + ["  %02d| %s" % (i, ln) for i, ln in enumerate(excerpt, 1)] + ["EXCERPT %s END" % code])
+
+
+# The code that turns a page into outcomes and objectives. Its fingerprint goes into every trial's head, and a
+# self-recall count passes only for a trial filed by the parser that would run the full read.
+PARSER_PARTS = ("parse_page", "_parse_outcomes", "outcomes_of", "_heads_section", "outcomes_from_html",
+                "groups_from_html", "elumen_outcomes_from_html", "cccd_outcomes_from_html", "mtsac_outcomes_from_html",
+                "objectives_block", "objectives_of", "objectives_from_html", "_obj_ends", "page_html_of", "read_one",
+                "file_row", "section_heads")
+PARSER_PATTERNS = ("STOP", "SLO_TITLE", "HEAD_NUMBER", "MARKER", "LEAD", "SLO_COLUMN_HEAD", "LEAD_ENDS", "OBJ_TITLE",
+                   "OBJ_LABEL", "OBJ_INLINE", "OBJ_STOP", "EL_SLO_HEAD", "CCCD_SLO_HEAD", "CCCD_SUBHEAD")
+
+
+def parser_fingerprint() -> str:
+    """md5 over the parser's functions' source, its patterns, and the reports recorded as printing no objectives."""
+    import inspect
+    g = globals()
+    parts = [inspect.getsource(g[n]) for n in PARSER_PARTS if n in g]
+    parts += ["%s=%r/%d" % (n, g[n].pattern, g[n].flags) for n in PARSER_PATTERNS if n in g]
+    parts.append(json.dumps(sorted(_OBJ_RECORD.REPORTS_WITHOUT_OBJECTIVES)))
+    return hashlib.md5("\n".join(parts).encode()).hexdigest()
+
+
+def rows_recall(path: str, out_dir: str = OUT_DIR) -> dict:
+    """Each counted trial row's {"slo": n, "objective": n}, read off the page apart from the parser, against the
+    outcomes and objectives the row filed. Wrong: a row not filed, not answering 200, reaching a cap, or with a count
+    that names no source. Not ok: a trial filed by another parser, or one that parsed outcomes on fewer than half
+    its pages, whatever the counts."""
+    def refuse(why, pages=0, right=0, wrong=()):
+        return {"pages": pages, "right": right, "wrong": list(wrong), "ok": False, "why": why}
+    if not os.path.exists(path):
+        return refuse("no counted rows filed yet")
+    want = json.load(open(path))
+    trial = os.path.join(out_dir, "trial_%s" % want["trial"], "read.json")
+    if not os.path.exists(trial):
+        return refuse("trial %s is not filed" % want["trial"])
+    filed = json.load(open(trial))
+    if filed.get("parser_fingerprint") != parser_fingerprint():
+        return refuse("trial %s was filed by parser %s; the current parser is %s: run the trial again and count it"
+                      % (want["trial"], filed.get("parser_fingerprint"), parser_fingerprint()))
+    rows = {r["code"]: r for r in filed["rows"]}
+    right, wrong = 0, []
+    for code, eye in sorted(want["pages"].items()):
+        count = {"slo": eye["slo"], "objective": eye["objective"]}
+        r = rows.get(code)
+        if r is None:
+            wrong.append((code, count, "row not filed"))
+        elif r.get("status") != 200:
+            wrong.append((code, count, "status %s" % r.get("status")))
+        elif r.get("text_cut") or r.get("html_cut"):
+            wrong.append((code, count, "page reached a cap"))
+        elif not eye.get("from") or not eye.get("at") or eye.get("from") == "row":
+            wrong.append((code, count, "the count names no source apart from the parser"))
+        else:
+            seen = {"slo": len(r.get("outcomes") or []) + sum(len(g.get("outcomes") or [])
+                                                              for g in r.get("groups") or []),
+                    "objective": len(r.get("objectives") or [])}
+            if seen == count:
+                right += 1
+            else:
+                wrong.append((code, count, seen))
+    pages = len(want["pages"])
+    parsed = sum(1 for r in filed["rows"] if r.get("status") == 200 and r.get("outcomes"))
+    if 2 * parsed < len(filed["rows"]):
+        return refuse("trial %s parsed outcomes on %d of %d pages" % (want["trial"], parsed, len(filed["rows"])),
+                      pages, right, wrong)
+    ok = pages >= MTSAC_RECALL_PAGES and right >= MTSAC_RECALL_SHARE * pages
+    return {"pages": pages, "right": right, "wrong": wrong, "ok": ok,
+            "why": None if ok else "%d of %d counted rows parse right; a full read needs %d%% of at least %d"
+            % (right, pages, int(MTSAC_RECALL_SHARE * 100), MTSAC_RECALL_PAGES)}
 
 
 def read_courses(reader, todo: list[dict], rows: list[dict], after=None) -> list[dict]:
@@ -808,7 +1016,12 @@ def main(argv=None) -> int:
     ap.add_argument("--of", type=int, default=1)
     ap.add_argument("--delay", type=int, default=int(os.environ.get("CENSUS_DELAY_MS", "3000")))
     ap.add_argument("--reparse", default="", help="a trial folder: parse its filed pages again, no load")
+    ap.add_argument("--strip-page-files", default="", help="a folder: remove page files from outcomes-only reads")
     a = ap.parse_args(argv)
+    if a.strip_page_files:
+        gone = strip_page_files(a.strip_page_files)
+        print("removed %d page file(s) from outcomes-only reads" % len(gone))
+        return 0
     if a.reparse:
         return reparse(a.reparse)
     if a.catalog == MTSAC_SLUG and not a.trial:
@@ -823,6 +1036,12 @@ def main(argv=None) -> int:
         index = json.load(open(a.index))
     else:
         ap.error("--index FILE or --catalog SLUG (or --reparse FOLDER)")
+    if outcomes_only(index["url"]) and not a.trial:
+        rc = rows_recall(RECALL_BY_HOST[urllib.parse.urlparse(index["url"]).netloc.lower()])
+        if not rc["ok"]:
+            raise SystemExit("%s: no full read before the self-recall count passes (%s). Run a trial, count its "
+                             "parsed rows by eye into the host's recall file, then python3 "
+                             "tests/ccsf_outcomes_only_test.py." % (index["url"], rc["why"]))
     courses = wanted_courses(index, [s for s in a.slugs.split(",") if s])
     if a.trial:
         todo = spread(courses, a.trial)
@@ -844,7 +1063,9 @@ def main(argv=None) -> int:
             "slugs": a.slugs, "part": a.part, "of": a.of, "wanted": len(courses), "slice": len(todo),
             # Both kinds in the one pass (Sam, 2026-11-13), and whether this system's page prints objectives.
             "collects": list(COR_COLLECTS),
-            "objectives_printed": (OBJECTIVES_BY_SYSTEM.get(page_system(index["url"]) or "") or {}).get("printed")}
+            "objectives_printed": (OBJECTIVES_BY_SYSTEM.get(page_system(index["url"]) or "") or {}).get("printed"),
+            # The parser that filed these rows; a self-recall count passes only for the current one.
+            "parser_fingerprint": parser_fingerprint()}
     rows: list[dict] = []
 
     def save(done: bool):
@@ -864,11 +1085,12 @@ def main(argv=None) -> int:
 
         def after(n, course, row):
             if a.trial:
-                stem = re.sub(r"[^A-Za-z0-9]+", "_", course["code"])
-                with open(os.path.join(out_dir, stem + ".txt"), "w") as f:
-                    f.write(reader.page.evaluate(FULL_BODY_JS) or "")
-                with gzip.open(os.path.join(out_dir, stem + ".html.gz"), "wt") as f:
-                    f.write(reader.page.content())
+                file_trial_page(reader, out_dir, course)
+                if outcomes_only(course["report"]):
+                    # The SLO section as printed, for a count by eye apart from the parser: in the job's log, never
+                    # in a filed page (S690).
+                    print(excerpt_log(course["code"], slo_excerpt(reader.page.evaluate(FULL_BODY_JS) or "")),
+                          flush=True)
             if n % SAVE_EVERY == 0:
                 save(False)
 
