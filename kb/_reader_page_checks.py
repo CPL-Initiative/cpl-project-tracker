@@ -30,7 +30,8 @@ choose the page by the heading:
           discontinued-program check (a prior-year read confirms or clears it).
 
 SCOPE. The rules apply only to a program whose committed record places none of its listed courses
-(S.places_none on records/<cn>.json), and never to a general-education pattern program (its page is a pattern
+(S.places_none on records/<cn>.json), or that a committed capture refused by a rule while no committed record has
+placed its courses since (refused_filed, S689: the refusal's filing drops the failing record), and never to a general-education pattern program (its page is a pattern
 page by definition). Every other program reads exactly as before: a record that places courses keeps the
 picker that placed them. Programs share pages, so a marked program could move an unmarked one; it never does:
 assign() gives every unmarked program the page it gets with no program marked, and a marked program claims an
@@ -106,6 +107,12 @@ AWARD_TOKENS = {"degree", "certificate", "achievement", "accomplishment", "compl
                 "competency", "proficiency", "transfer", "as", "aa", "ast", "aat", "ba", "bs", "bachelor",
                 "baccalaureate", "noncredit", "cert", "coa", "ca"}
 TOKEN = re.compile(r"[a-z0-9]+")
+# pypdf keeps a PDF's typographic ligatures, so a line can print "Certiﬁcate" with U+FB01, and no award pattern reads
+# it. Santa Rosa Junior's 2026-2027 catalog heads each certificate "298 CS Web and Mobile Full-Stack (Certiﬁcate of
+# Achievement)", and on 2026-11-19 rule A refused 34 programs there, 31 of them certificates (run 44477690021; S689). Every
+# test below reads a line with these folded; a fold keeps the line count, so heading_at's offsets stay the page's own.
+# The table is the reader's own PDF_LIGATURES (kb/_program_requirements_college.py, its award-title lists).
+LIGATURES = str.maketrans({"ﬀ": "ff", "ﬁ": "fi", "ﬂ": "fl", "ﬃ": "ffi", "ﬄ": "ffl"})
 # "science" and "arts" are filler only inside an award's phrase ("Associate in Science"), which _sister_words reads as
 # one award word: "Public Health Science Associate in Science" prints Public Health Science, and "History Associate
 # in Arts" never prints Art History. "Associate" alone is no award and no filler ("Associate Teacher Certificate").
@@ -149,10 +156,38 @@ def places_none_filed(folder: str) -> set[str]:
     return out
 
 
+def refused_filed(folder: str) -> set[str]:
+    """The control numbers a committed capture or capture-only preview (folder/capture.json, capture_preview.json)
+    filed under not_found by a rule: its near_miss names rule A (B's refusal reads as A) or rule D.
+
+    WHY (S689). A program the rules refuse gets no page, so the filing drops its failing record (keep_no_read keeps
+    passing ones only). With no record left, places_none_filed() no longer names it, the next capture leaves it
+    unmarked, and the plain picker hands it the page the rules refused, by its codes alone. Fresh captures on
+    2026-11-20 showed it at three colleges: City College of San Francisco's 40 refused programs went back to course
+    descriptions (pages 561 to 578 and 643 for its business and ESL certificates; run 44687776552), Santa Rosa
+    Junior's 34 and Ohlone's 7 to the pages they had (runs 44687780496, 44687785539). A refusal stands until a
+    record exists: mark() keeps such a program marked unless a committed record places its courses."""
+    out: set[str] = set()
+    for name in ("capture.json", "capture_preview.json"):
+        try:
+            with open(os.path.join(folder, name), encoding="utf-8") as fh:
+                d = json.load(fh) or {}
+        except (OSError, ValueError):
+            continue
+        for r in (d.get("not_found") or []) if isinstance(d, dict) else []:
+            if isinstance(r, dict) and (r.get("near_miss") or {}).get("rule") in ("A", "D") and r.get("control_number"):
+                out.add(str(r["control_number"]))
+    return out
+
+
 def mark(programs: list[dict], folder: str) -> int:
-    """Mark each program the rules read (MARK): its committed record places none, and it is no general-education
+    """Mark each program the rules read (MARK): its committed record places none, or a committed read refused it by
+    a rule and no committed record has placed its courses since (refused_filed); and it is no general-education
     pattern program. Returns how many were marked."""
-    scope = places_none_filed(folder)
+    rec_dir = os.path.join(folder, "records")
+    recorded = {n[:-5] for n in os.listdir(rec_dir) if n.endswith(".json")} if os.path.isdir(rec_dir) else set()
+    none = places_none_filed(folder)
+    scope = none | {cn for cn in refused_filed(folder) if cn not in recorded or cn in none}
     n = 0
     for p in programs:
         p[MARK] = bool(p.get("closed_list")) and p.get("control_number") in scope and not _ge_title(p.get("title"))
@@ -286,6 +321,7 @@ def heading_line(lines: list[str], title: str | None, award: str | None) -> int:
     words = title_words(title)
     if not words:
         return -1
+    lines = [(x or "").translate(LIGATURES) for x in lines]
     arx = award_pattern(award)
     kind = P.award_kind(award)
     reach = COA_REACH if arx is AWARD_WORDS["coa"] else HEADING_REACH
@@ -357,7 +393,7 @@ def title_printed(pages: list[str], title: str | None) -> bool:
         return True     # a title with no words to look for is never called unprinted
     tlen, level = len(title or ""), _level(title)
     for txt in pages:
-        low = (txt or "").lower()
+        low = (txt or "").translate(LIGATURES).lower()
         if not all(w in low for w in words):
             continue
         lines = [ln for ln in low.split("\n") if ln.strip()]
@@ -388,7 +424,7 @@ def pdf_page(pages: list[str], program: dict, year: str | None = None) -> dict:
     title, award = program.get("title"), program.get("award")
     found, refused_b, furn = [], 0, None
     for i, txt in enumerate(pages):
-        low = (txt or "").lower()
+        low = (txt or "").translate(LIGATURES).lower()
         if not words or not all(w in low for w in words):
             continue
         if furn is None:

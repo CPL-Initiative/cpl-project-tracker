@@ -21,7 +21,9 @@ its evidence (the committed files keep no catalog text, and today's session fetc
     every tab (rule C);
   * scope: only a program whose filed record places none is marked; a general-education pattern program never is;
     an unmarked program reads exactly as before, and CPL_READER_PAGE_CHECKS=0 turns the rules off;
-  * the discontinued-program check lists rule D's programs as candidates, never as flags.
+  * the discontinued-program check lists rule D's programs as candidates, never as flags;
+  * S689: rule A reads a heading printed with the fi ligature (Santa Rosa Junior's certificates), and a program a
+    committed capture refused by a rule stays marked until a committed record places its courses.
 
 Run from repo root: python3 tests/reader_page_checks_test.py
 """
@@ -358,6 +360,86 @@ check(re.search(r"\n      rule_d:\n        description: .*\n        required: fa
       "workflow: program-requirements-college.yml takes a rule_d input, empty by default")
 check("CPL_RULE_D_NOT_PRINTED: ${{ github.event.inputs.rule_d || vars.CPL_RULE_D_NOT_PRINTED || '0' }}" in wf,
       "workflow: the capture reads rule_d first, then the repository variable, else off")
+
+# ── S689: the fi ligature. Santa Rosa Junior's pypdf text prints "Certiﬁcate" (U+FB01) in every certificate heading ─
+# The heading line and the page openings are the filed text of capture-only run 44687780496 (capture_preview.json,
+# picks for pages 137 and 298); the course codes are the fixture's. On 2026-11-19 rule A refused CS Web and Mobile
+# Full-Stack 39418 ("no page prints the program's title with its award", run 44477690021) while page 298 printed it.
+SRJC_HEAD = "298 CS Web and Mobile Full-Stack (Certiﬁcate of Achievement)"
+FS = ["CS 50.11", "CS 50.12", "CS 50.13", "CS 50.14", "CS 55.11", "CS 55.13"]
+SRJC = ["SRJC 2026-2027 Catalog %d\n" % (i + 1) for i in range(300)]
+SRJC[136] += ("1. The California Intersegmental General Education Transfer Curriculum (Cal-GETC) Requirements.\n"
+              "2. A minimum of 18 semester units in a major or area of emphasis, as determined by the department.\n"
+              + "".join("%s Course %d 3\n" % (c, k) for k, c in enumerate(FS)))
+SRJC[297] = (SRJC_HEAD + "\nProgram Description\nThe Computer Studies: Web and Mobile Full-Stack Certiﬁcate of "
+             "Achievement prepares students to build web applications.\nRequired Courses\n"
+             + "".join("%s Course %d 3\n" % (c, k) for k, c in enumerate(FS)) + "Total Units 18\n")
+fs = prog("39418", "CS Web and Mobile Full-Stack",
+          "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units", FS)
+check("ﬁ" in SRJC_HEAD and RC.heading_line([SRJC_HEAD], fs["title"], fs["award"]) == 0,
+      "ligature: rule A reads the certificate heading SRJC prints with the fi ligature")
+check(RC.heading_line(["298 CS Web and Mobile Full-Stack (Certiﬁcate of Completion)"], fs["title"],
+                      fs["award"]) < 0,
+      "ligature: a folded noncredit 'Certificate of Completion' still never stands for a certificate of achievement")
+rule, best = run_pdf(fs, SRJC)
+check(rule["heading"] and rule["page_number"] == 298, "ligature: Full-Stack reads page 298, its own heading, got %r" % rule)
+check(best and best["pages"][0] == 298 and best["text"].split("\n")[1] == SRJC_HEAD and best["coverage"] == 1.0,
+      "ligature: the window opens on the heading line, as the page prints it, got %r" % (best and best["text"][:80]))
+check(RC.heading_line(["172  Mchtroncs:IndustrlMntnncTchncn (Certi\ufb01cate of Achievement)", "MATH\xa02 Calculus"],
+                      "Mchtroncs:IndustrlMntnncTchncn", fs["award"]) == 0,
+      "ligature: SRJC's header line as pypdf prints it (two spaces after the page number; run 44687780496 sample p172)")
+nc = prog("37254", "Adult Ed: Student Success Worker", "Noncredit program", FS)
+check(RC.heading_line(["223 Adult Ed: Student Success Worker (Certiﬁcate of Completion)"], nc["title"],
+                      nc["award"]) == 0, "ligature: a noncredit certificate heading reads through the fold")
+os.environ["CPL_RULE_D_NOT_PRINTED"] = "1"
+cna = prog("45001", "Certified Nursing Assistant", "Certificate of Achievement", ["NURS 1"])
+check(RC.title_printed(["Certiﬁed Nursing Assistant Program\n"], cna["title"]),
+      "ligature: rule D reads a title printed with a ligature as printed")
+os.environ.pop("CPL_RULE_D_NOT_PRINTED", None)
+
+# ── S689: a refusal stands. A refused program keeps the rules until a committed record places its courses ──────────
+# City College of San Francisco's 40 programs rule A refused on 2026-11-19 lost their failing records in that filing,
+# so the next capture (run 44687776552) left them unmarked and handed Microsoft Office Specialist 24263 and 17 more
+# the course descriptions on page 564 again. refused_filed() reads the refusal from the committed capture.
+tmp = tempfile.mkdtemp()
+try:
+    os.makedirs(os.path.join(tmp, "records"))
+    with open(os.path.join(tmp, "capture.json"), "w") as fh:
+        json.dump({"college": "City College of San Francisco", "run": "44474797786", "not_found": [
+            {"control_number": "24263", "near_miss": {"why": "rule B then A", "rule": "A", "refused_b": 1}},
+            {"control_number": "05440", "near_miss": {"url": "x.pdf#page=132", "coverage": 0.2}},
+            {"control_number": "19445", "near_miss": {"why": "rule A", "rule": "A", "refused_b": 0}},
+            {"control_number": "17952", "near_miss": {"why": "rule A", "rule": "A", "refused_b": 0}},
+            {"control_number": "18118", "near_miss": {"why": "rule A", "rule": "A", "refused_b": 0}}]}, fh)
+    with open(os.path.join(tmp, "capture_preview.json"), "w") as fh:
+        json.dump({"college": "City College of San Francisco", "run": "44600000000", "not_found": [
+            {"control_number": "09001", "near_miss": {"why": "rule D", "rule": "D", "refused_b": 0}}]}, fh)
+
+    def rec2(cn, placed):
+        with open(os.path.join(tmp, "records", cn + ".json"), "w") as fh:
+            json.dump({"control_number": cn, "score": {"coverage": {"listed": 4, "placed": placed}}}, fh)
+    rec2("19445", 3)     # refused once, then a record placed its courses: the plain picker keeps it
+    rec2("17952", 0)     # refused, and its record places none: marked either way
+    check(RC.refused_filed(tmp) == {"24263", "19445", "17952", "18118", "09001"},
+          "refusal: refused_filed reads rules A and D from the capture and the preview, got %r" % RC.refused_filed(tmp))
+    ps = [prog("24263", "Microsoft Office Specialist", "Noncredit program", BUS, None),
+          prog("05440", "Finance", "A.S. Degree", BUS, None),
+          prog("19445", "Databases for Developers", "Certificate of Achievement", BUS, None),
+          prog("17952", "Liberal Arts and Sciences Emphasis in Arts and Humanities", "A.A. Degree", BUS, None),
+          prog("18118", "IGETC", "Certificate of Achievement", BUS, None),
+          prog("09001", "Computer Accounting", "Certificate of Achievement", BUS, None),
+          prog("24264", "Office Receptionist", "Noncredit program", [], None)]
+    n = RC.mark(ps, tmp)
+    check([p[RC.MARK] for p in ps] == [True, False, False, True, False, True, False] and n == 3,
+          "refusal: a refused program with no record stays marked (24263, 09001); a low-coverage miss, a refused program "
+          "whose record now places courses, a GE pattern and a program with no closed list are not, got %r"
+          % [p[RC.MARK] for p in ps])
+    os.remove(os.path.join(tmp, "capture.json"))
+    os.remove(os.path.join(tmp, "capture_preview.json"))
+    ps = [prog("24263", "Microsoft Office Specialist", "Noncredit program", BUS, None)]
+    check(RC.mark(ps, tmp) == 0, "refusal: with no committed capture, mark() reads the records alone, as before")
+finally:
+    shutil.rmtree(tmp)
 
 for f in failures:
     print("FAIL:", f)
