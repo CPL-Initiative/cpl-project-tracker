@@ -69,3 +69,25 @@ posts, then `harvest-gap-census.yml` against 5,069, and the checkpoint.
 
 **Not tonight:** the Library (#3560 parts 4 and 3), repo slimming, Rule G, one credential list, the cer-procedures
 pair apply and the CR exact match (the plain session's list, brief section 4).
+
+## State at 15:48Z (a safety note; the checkpoint rewrites this file)
+
+**Merged:**
+- #3600 `9fc88a07` (13:01Z): the Library check line stays out of Sierra's reading text and out of new pieces. This turned `main` green, red since 653864b7. Not deployed: `cpl-chat-deploy.yml` for `cpl-chat` and `library-revise-draft` waits for a plain session.
+- #3601 `46f92c76` (13:48Z): City College of San Francisco's outlines are filed as parsed outcomes only. The recall gate counts from the trial's job-log excerpt (trial 44744884314, 12/12) under a parser fingerprint. Second reader, two rounds.
+
+**In flight:**
+- `ccsf`: City College of San Francisco's full outline read, run 44748015052 on `claude/s690-wave-ccsf`. Part 1 filed 709 pages and 2,904 SLOs (c7ce553d); part 2 is running. Then the standing test and the load (`.load`, `host=ccsf`).
+- `reread`: the reread plan's rows 46 to 73 on `claude/s690-wave-reread`.
+- `catalogs`: Sam's go of Nov 20, 6:26 AM PT.
+  - North Orange Continuing Education's 1,089 printed courses are filed (`kb/hand_filed_catalogs/courses/`) from runner page reads 44756513382 and 44757980757 (HTTP 200, no WAF check; the sandbox gets 202).
+  - Southwestern, Cerritos, Long Beach City, Monterey Peninsula, the LACCD PDFs and Sam's copies are in progress, on `claude/s690-wave-catalogs`.
+- `piles`: the night's one follow-up PR (`claude/s690-follow-up`), then Berkeley City and Glendale.
+
+**Done:** `pages`: Laney, Diablo Valley and Orange Coast posted and loaded, with 11 new, 69 replaced and 1 restored, $7.68 (on `claude/s690-wave-pages` bc01f3bd). Victor Valley, Mt. San Jacinto and Southwestern found no own page, so no paid read ran.
+
+**Stopped:**
+- Golden West's header correction, after two review rounds (`claude/s690-goldenwest-header` ae5be1d5, no PR). Its rollback depends on a 263 KB write result, and a load of the corrected filed reads before the write would double 476 rows.
+- City College of San Francisco's rule D prior-year read: `www.ccsf.edu` serves a Cloudflare 403. The catalog was asked of COBIx on #3358 (comment 7040201320).
+
+**Closed with pointers:** #3593 and #3597, which fold into the follow-up PR.
