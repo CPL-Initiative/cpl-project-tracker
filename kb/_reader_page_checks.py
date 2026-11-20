@@ -129,6 +129,22 @@ def stand_in_style(text: str | None) -> bool:
     return bool(_STAND_STYLE.search(text or ""))
 
 
+_STAND_GLYPH = re.compile("[%s] " % STAND_INS)
+
+
+def catalog_style(pages: list[str] | None) -> bool:
+    """Whether a catalog is set in the stand-in font: Ɵ or Ʃ with its trailing space on any page. A page of that
+    catalog whose only glyphs are real ligatures ("Oﬃ ce" on a Solano page with no Ɵ) then folds as the rest of it
+    does, so rule A's pre-filter, rule A and rule D read the page alike (COBIx on #3590, hunch 1). Only Ɵ and Ʃ decide
+    it, never Ō, which is a letter in other text ("TŌKYŌ "): one such word must not set a whole catalog's style."""
+    return any(_STAND_GLYPH.search(x or "") for x in pages or [])
+
+
+def page_style(text: str | None, catalog: bool = False) -> bool:
+    """A page's fold style: the catalog's stand-in font, or the page's own (stand_in_style)."""
+    return catalog or stand_in_style(text)
+
+
 def fold(text: str | None, spaced: bool | None = None) -> str:
     """The text with each ligature spelled out. In the stand-in font's text (spaced; read from the text when None) every
     glyph is spelled out and the one space after it dropped, as the scorer reads it; elsewhere each glyph but Ō is
@@ -221,22 +237,38 @@ def refused_filed(folder: str) -> set[str]:
     2026-11-20 showed it at three colleges: City College of San Francisco's 40 refused programs went back to course
     descriptions (pages 561 to 578 and 643 for its business and ESL certificates; run 44687776552), Santa Rosa
     Junior's 34 and Ohlone's 7 to the pages they had (runs 44687780496, 44687785539)."""
-    out: set[str] = set()
-    plain: set[str] = set()     # refusals filed beside the plain picker's own named heading, from either file
+    # A program both files list is decided by the newer run's file: a stale preview's plain_named never unmarks a
+    # program a later capture refused by rule A, nor the reverse (COBIx on #3590, hunch 2). Runs that tie, or a file
+    # with no run, decide together, as before: plain_named wins.
+    verdicts: dict[str, tuple[int, set]] = {}
     for name in ("capture.json", "capture_preview.json"):
         try:
             with open(os.path.join(folder, name), encoding="utf-8") as fh:
                 d = json.load(fh) or {}
         except (OSError, ValueError):
             continue
-        for r in (d.get("not_found") or []) if isinstance(d, dict) else []:
+        if not isinstance(d, dict):
+            continue
+        run = str(d.get("run") or "")
+        run_n = int(run) if run.isascii() and run.isdigit() else 0
+        for r in d.get("not_found") or []:
             near = (r.get("near_miss") or {}) if isinstance(r, dict) else {}
             if not isinstance(near, dict) or not r.get("control_number"):
                 continue
             if near.get("plain_named"):
-                plain.add(str(r["control_number"]))
+                kind = "plain"
             elif near.get("rule") in ("A", "D") or near.get("page_checks"):
-                out.add(str(r["control_number"]))
+                kind = "refused"
+            else:
+                continue
+            cn = str(r["control_number"])
+            seen = verdicts.get(cn)
+            if seen is None or run_n > seen[0]:
+                verdicts[cn] = (run_n, {kind})
+            elif run_n == seen[0]:
+                seen[1].add(kind)
+    out = {cn for cn, (_, kinds) in verdicts.items() if kinds == {"refused"}}
+    plain = {cn for cn, (_, kinds) in verdicts.items() if "plain" in kinds}
     try:
         with open(os.path.join(folder, "reread_keep_better.json"), encoding="utf-8") as fh:
             kb = json.load(fh) or {}
@@ -386,7 +418,7 @@ def _prints_title(line: str, words: list[str], title_len: int, toc_ok: bool = Fa
     return True
 
 
-def heading_line(lines: list[str], title: str | None, award: str | None) -> int:
+def heading_line(lines: list[str], title: str | None, award: str | None, catalog: bool = False) -> int:
     """Rule A: the index of the first line printing every title word, with no other program's words beside them,
     and the award within HEADING_REACH lines (a certificate's word within COA_REACH), or -1. A table-of-contents
     line, a page cross-reference or a breadcrumb never counts, and an A.S. or A.A. never reads a transfer degree's
@@ -394,7 +426,7 @@ def heading_line(lines: list[str], title: str | None, award: str | None) -> int:
     words = title_words(title)
     if not words:
         return -1
-    spaced = stand_in_style("\n".join(x or "" for x in lines))
+    spaced = page_style("\n".join(x or "" for x in lines), catalog)
     lines = [fold(x, spaced) for x in lines]
     arx = award_pattern(award)
     kind = P.award_kind(award)
@@ -437,7 +469,7 @@ def furniture(pages: list[str]) -> set[str]:
 
 
 def heading_at(text: str, title: str | None, award: str | None, next_text: str | None = None,
-               furn: set[str] | None = None) -> int:
+               furn: set[str] | None = None, catalog: bool = False) -> int:
     """heading_line() on a page's text: the character offset where the heading's line starts, or -1. With the next
     page's text, the award may print on that page's first lines (a heading at the foot of a page whose award line
     opens the next), read past the page's blank lines and the catalog's running header and footer (furn); the heading
@@ -453,7 +485,7 @@ def heading_at(text: str, title: str | None, award: str | None, next_text: str |
         while ahead and _furniture_key(ahead[0]) in furn:
             ahead.pop(0)  # nor does the next page's running header
         ahead = ahead[:HEADING_REACH]
-    i = heading_line(lines[:n] + ahead, title, award)
+    i = heading_line(lines[:n] + ahead, title, award, catalog)
     if i < 0 or i >= n:
         return -1
     return sum(len(x) + 1 for x in lines[:i])
@@ -466,8 +498,9 @@ def title_printed(pages: list[str], title: str | None) -> bool:
     if not words:
         return True     # a title with no words to look for is never called unprinted
     tlen, level = len(title or ""), _level(title)
+    cat = catalog_style(pages)
     for txt in pages:
-        low = fold(txt).lower()
+        low = fold(txt, page_style(txt, cat)).lower()
         if not all(w in low for w in words):
             continue
         lines = [ln for ln in low.split("\n") if ln.strip()]
@@ -497,13 +530,14 @@ def pdf_page(pages: list[str], program: dict, year: str | None = None) -> dict:
     words = title_words(program.get("title"))
     title, award = program.get("title"), program.get("award")
     found, refused_b, furn = [], 0, None
+    cat = catalog_style(pages)
     for i, txt in enumerate(pages):
-        low = fold(txt).lower()
+        low = fold(txt, page_style(txt, cat)).lower()
         if not words or not all(w in low for w in words):
             continue
         if furn is None:
             furn = furniture(pages)
-        at = heading_at(txt, title, award, pages[i + 1] if i + 1 < len(pages) else None, furn)
+        at = heading_at(txt, title, award, pages[i + 1] if i + 1 < len(pages) else None, furn, cat)
         if at < 0:
             continue
         if page_type(txt) != "other":

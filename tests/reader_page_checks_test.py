@@ -594,6 +594,23 @@ try:
     check(not ({"33319", "46035"} & after) and before - after == {"33319", "46035"},
           "follow-up 1: with plain_named filed, both leave the dropped list's marks too, and nothing else moves, got %r"
           % sorted(before - after))
+    # COBIx on #3590, hunch 2: the newer run's file decides. A stale preview (an older run than capture.json) whose
+    # plain_named refusal the capture's rule A refusal replaced leaves the program marked.
+    with open(os.path.join(td, "capture.json")) as fh:
+        cap_run = int(json.load(fh)["run"])
+    with open(os.path.join(td, "capture_preview.json")) as fh:
+        prev = json.load(fh)
+    prev["run"] = str(cap_run - 1)
+    with open(os.path.join(td, "capture_preview.json"), "w") as fh:
+        json.dump(prev, fh)
+    stale = RC.refused_standing(td)
+    check({"33319", "46035"} <= stale and stale == before,
+          "#3590 hunch 2: a preview older than the capture never unmarks the capture's refusal, got %r"
+          % sorted(before - stale))
+    prev["run"] = str(cap_run)
+    with open(os.path.join(td, "capture_preview.json"), "w") as fh:
+        json.dump(prev, fh)
+    check(not ({"33319", "46035"} & RC.refused_standing(td)), "#3590 hunch 2: one run in both files: plain_named wins")
 finally:
     shutil.rmtree(td)
 
@@ -650,6 +667,27 @@ check(RC.heading_line(["182 Business - Oﬃ ce Technolog y", "AdministraƟ ve As
       "fold: the stand-in style is read over the lines heading_line gets, so a line with no Ɵ of its own folds too")
 check(all(g in S._LIGATURES for g in RC.STAND_INS + RC.STAND_IN_LETTER),
       "fold: the stand-in glyphs are keys of the scorer's table, which stays the one table")
+
+# ── #3590 hunch 1 (COBIx, 7035366834): one stand-in style per catalog ───────────────────────────────────────────────
+# A Solano page whose only glyphs are real ligatures with the trailing space ("Oﬃ ce"), no Ɵ, Ʃ or in-word Ō on it,
+# in a catalog that prints Ɵ elsewhere: rule A's pre-filter, rule A and rule D must read it as the catalog's font.
+OT = ["BUS 101", "BUS 102", "BUS 120", "BUS 130"]
+sol = catalog(40, {
+    12: "AdministraƟ ve Assistant CerƟ ﬁ cate\nBUS 140 Records 3\n",
+    20: ("Oﬃ ce Technology Certiﬁ cate of Achievement\nRequired Courses\nBUS 101 Intro 3\nBUS 102 Law 3\n"
+         "BUS 120 Management 3\nBUS 130 Marketing 3\n"),
+})
+ot = prog("99001", "Office Technology", COA, OT)
+check(RC.catalog_style(sol) and not RC.stand_in_style(sol[19]),
+      "#3590 hunch 1: the catalog shows the stand-in font, page 20 alone does not")
+got = RC.pdf_page(sol, ot, "2026-2027")
+check(got.get("page_number") == 20, "#3590 hunch 1: rule A finds Office Technology on page 20, got %r" % got)
+check(RC.title_printed(sol, "Office Technology"), "#3590 hunch 1: rule D reads the title printed")
+plain_cat = [p.replace("AdministraƟ ve Assistant CerƟ ﬁ cate", "Administrative Assistant Certificate") for p in sol]
+check(not RC.catalog_style(plain_cat) and RC.fold("Staﬀ Development") == "Staff Development",
+      "#3590 hunch 1: a catalog with no Ɵ or Ʃ keeps the plain fold")
+check(not RC.catalog_style(["TŌKYŌ Exchange Program\n", "Staﬀ Development Certificate\n"]),
+      "#3590 minor: Ō never sets a catalog's style, so one romanized name cannot fold every page")
 
 for f in failures:
     print("FAIL:", f)

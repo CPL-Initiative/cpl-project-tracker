@@ -25,6 +25,10 @@ its handoff after that day's run: S678's $115.38 landed in handoff 679 at 00:53Z
 before the next one, so the file's Nov 17 entry kept S677's $5.44 alone. scripts/check_generated.sh now runs the
 sessions check, so the checkpoint PR that adds a `Spend:` line rebuilds the key in the same commit. The ledger keys
 stay the census job's: a collection PR rebuilding them would date its runs by the PR day and fight its siblings.
+
+WHY `updated` (S690, COBIx's brief of Nov 19 on #3358). The file's top-level `updated` said 2026-11-15 while the
+builder rewrote `sessions` every day, so a reader could not tell the measured keys were current. A write (either
+mode) sets it to the UTC day of the write. --check compares the measured keys alone, so it never fails on `updated`.
 """
 import argparse
 import glob
@@ -100,6 +104,7 @@ def sessions_by_day(root):
 
 def build(root, current, today):
     data = dict(current or {})
+    data["updated"] = today
     ledger = dict(data.get("runner_runs") or {})
     for run, row in scan(root, today).items():
         ledger.setdefault(run, row)   # first sight wins: a run is priced once, by its own read
@@ -118,10 +123,13 @@ def build(root, current, today):
     return data
 
 
-def build_sessions(root, current):
-    """The file with only `sessions` rebuilt from the handoffs; every other key as it stands."""
+def build_sessions(root, current, today=None):
+    """The file with only `sessions` rebuilt from the handoffs, and `updated` set to today when given; every other
+    key as it stands."""
     data = dict(current or {})
     data["sessions"] = sessions_by_day(root)
+    if today:
+        data["updated"] = today
     return data
 
 
@@ -143,7 +151,7 @@ def main(argv=None):
     path = os.path.join(a.root, OUT)
     cur = _load(path) or {}
     if a.sessions_only:
-        new = build_sessions(a.root, cur)
+        new = build_sessions(a.root, cur, None if a.check else today)
         if a.check:
             same = cur.get("sessions") == new["sessions"]
             print("model_spend_daily sessions are current" if same else
