@@ -1,0 +1,10 @@
+{
+  "check_id": "5ed081c2-64b8-4c73-b6d0-4c777a24f4ff",
+  "library_id": "5f5c9b8a-42bd-46ed-8df0-fb7a21f1bddd",
+  "version_key": "page",
+  "url": "https://cpl-initiative.github.io/cpl-project-tracker/library/college-collections-plan/",
+  "result": "pass",
+  "sha256": "200d75884cda866279d7bb79451e3b7f6834ce11e6fc3587c362be279e470200",
+  "report": "https://cpl-initiative.github.io/cpl-project-tracker/library/college-collections-plan/accessibility/20261120-121133Z.txt",
+  "_about": "The page this check saw: sha256 of library/college-collections-plan/index.html with the accessibility line taken out (scripts/library_check.py content_hash). The line prints this check's pass only while the page still has this hash."
+}

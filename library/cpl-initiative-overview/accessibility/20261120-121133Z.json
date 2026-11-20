@@ -1,0 +1,10 @@
+{
+  "check_id": "855f5439-ec96-4759-93cc-f017c521b05d",
+  "library_id": "1977d074-d910-4e7e-83cb-d1fbd75a8bb1",
+  "version_key": "version:1",
+  "url": "https://cpl-initiative.github.io/cpl-project-tracker/library/cpl-initiative-overview/",
+  "result": "pass",
+  "sha256": "c2da26477ee96d6dab8f1225e9a90094fbe9656b8eebec9fd151b0a52a650bab",
+  "report": "https://cpl-initiative.github.io/cpl-project-tracker/library/cpl-initiative-overview/accessibility/20261120-121133Z.txt",
+  "_about": "The page this check saw: sha256 of library/cpl-initiative-overview/index.html with the accessibility line taken out (scripts/library_check.py content_hash). The line prints this check's pass only while the page still has this hash."
+}

@@ -1,0 +1,89 @@
+{
+  "_about": "Library check receipt (scripts/library_check.py): the cpl_library_checks rows this run inserted and each listing's before-values, written before the listing's update. Roll back a listing by writing its before-values with the service key; roll back the rows with: delete from public.cpl_library_checks where created_by = '<created_by>' (the table's owner; no role may delete a check).",
+  "at": "2026-11-20T12:11:33.662472+00:00",
+  "created_by": "library-publish.yml run 44733588776 attempt 1",
+  "checks": [
+    {
+      "id": "d89b6059-a9f9-4fc4-b050-1ea798b6035e",
+      "library_id": "71931018-3c80-4879-a531-ede7cd62c837",
+      "version_key": "version:2",
+      "url": "https://cpl-initiative.github.io/cpl-project-tracker/library/adding-cpl-coordinator-noncredit-lead-to-map-mwauxci5/",
+      "result": "fail",
+      "findings": 8,
+      "checked_at": "2026-11-20T12:12:47.071901+00:00",
+      "report_url": "https://cpl-initiative.github.io/cpl-project-tracker/library/adding-cpl-coordinator-noncredit-lead-to-map-mwauxci5/accessibility/20261120-121133Z.txt"
+    },
+    {
+      "id": "b46cae01-cf52-47c7-b653-08dce7fa140a",
+      "library_id": "b6af6367-0f49-499d-9851-a82cc3e50608",
+      "version_key": "version:1",
+      "url": "https://cpl-initiative.github.io/cpl-project-tracker/library/cable-splicer-cpl-opportunities-mwmo31a1/",
+      "result": "pass",
+      "findings": 0,
+      "checked_at": "2026-11-20T12:12:47.071901+00:00",
+      "report_url": "https://cpl-initiative.github.io/cpl-project-tracker/library/cable-splicer-cpl-opportunities-mwmo31a1/accessibility/20261120-121133Z.txt"
+    },
+    {
+      "id": "5ed081c2-64b8-4c73-b6d0-4c777a24f4ff",
+      "library_id": "5f5c9b8a-42bd-46ed-8df0-fb7a21f1bddd",
+      "version_key": "page",
+      "url": "https://cpl-initiative.github.io/cpl-project-tracker/library/college-collections-plan/",
+      "result": "pass",
+      "findings": 0,
+      "checked_at": "2026-11-20T12:12:47.071901+00:00",
+      "report_url": "https://cpl-initiative.github.io/cpl-project-tracker/library/college-collections-plan/accessibility/20261120-121133Z.txt"
+    },
+    {
+      "id": "855f5439-ec96-4759-93cc-f017c521b05d",
+      "library_id": "1977d074-d910-4e7e-83cb-d1fbd75a8bb1",
+      "version_key": "version:1",
+      "url": "https://cpl-initiative.github.io/cpl-project-tracker/library/cpl-initiative-overview/",
+      "result": "pass",
+      "findings": 0,
+      "checked_at": "2026-11-20T12:12:47.071901+00:00",
+      "report_url": "https://cpl-initiative.github.io/cpl-project-tracker/library/cpl-initiative-overview/accessibility/20261120-121133Z.txt"
+    },
+    {
+      "id": "4cbe2b99-02d2-4d6c-a410-c8b9e9271f4c",
+      "library_id": "b5c7659f-b711-4eb0-9916-4daa3e0123db",
+      "version_key": "version:3",
+      "url": "https://cpl-initiative.github.io/cpl-project-tracker/library/dsp-credit-starting-points/",
+      "result": "pass",
+      "findings": 0,
+      "checked_at": "2026-11-20T12:12:47.071901+00:00",
+      "report_url": "https://cpl-initiative.github.io/cpl-project-tracker/library/dsp-credit-starting-points/accessibility/20261120-121133Z.txt"
+    },
+    {
+      "id": "acb27c57-c55a-49bd-add0-a5c5659e88be",
+      "library_id": "915ff7d5-80ce-45ad-bb95-d75510318ee0",
+      "version_key": "version:5",
+      "url": "https://cpl-initiative.github.io/cpl-project-tracker/library/ell-iet-cpl-starting-points/",
+      "result": "pass",
+      "findings": 0,
+      "checked_at": "2026-11-20T12:12:47.071901+00:00",
+      "report_url": "https://cpl-initiative.github.io/cpl-project-tracker/library/ell-iet-cpl-starting-points/accessibility/20261120-121133Z.txt"
+    },
+    {
+      "id": "3a1a6b5b-cc45-47bf-b85f-34c050a8b27a",
+      "library_id": "7ca43e3c-3188-468e-946a-802101e4fbe7",
+      "version_key": "version:1",
+      "url": "https://cpl-initiative.github.io/cpl-project-tracker/library/jst-how-to-obtain-and-upload-to-map-mwdq6m67/",
+      "result": "pass",
+      "findings": 0,
+      "checked_at": "2026-11-20T12:12:47.071901+00:00",
+      "report_url": "https://cpl-initiative.github.io/cpl-project-tracker/library/jst-how-to-obtain-and-upload-to-map-mwdq6m67/accessibility/20261120-121133Z.txt"
+    },
+    {
+      "id": "8d0f9c30-b2ee-4c4a-88b1-2d42ec3a0f6a",
+      "library_id": "5e29e1d3-b1fc-4340-a3d7-9378e2e4d8b9",
+      "version_key": "version:1",
+      "url": "https://cpl-initiative.github.io/cpl-project-tracker/library/noncredit-to-credit-how-noncredit-learning-can-result-in-cre-mw53clp5/",
+      "result": "pass",
+      "findings": 0,
+      "checked_at": "2026-11-20T12:12:47.071901+00:00",
+      "report_url": "https://cpl-initiative.github.io/cpl-project-tracker/library/noncredit-to-credit-how-noncredit-learning-can-result-in-cre-mw53clp5/accessibility/20261120-121133Z.txt"
+    }
+  ],
+  "listed": [],
+  "unlisted": []
+}
