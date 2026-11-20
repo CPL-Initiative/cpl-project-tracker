@@ -68,12 +68,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 6 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 597 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 598 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 95 | [`catalog/lessons.md`](catalog/lessons.md) |
-| Workstream docs | 106 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
+| Workstream docs | 107 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 77 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 650 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1531** | |
+| Session handoffs | 651 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1534** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -124,6 +124,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-20 (S690 SkyMerlin, the CPL Queue routine's 11:12Z firing, conductor from 12:13Z, full checkpoint): #3600 (the Library check line out of Sierra's reading text and out of new pieces; `main` green), #3601 (City College of San Francisco's outline reader files parsed outcomes only); City College of San Francisco's outlines loaded (1,416 rows); 17,341 printed catalog courses at 16 colleges under Sam's go of Nov 20 (#3604); 35 program records added and 129 replaced; the harvest and library lanes kept under 20,000 bytes (`library_lessons_archive_3.md`); the KB note `methodology-a-bot-wall-answers-each-network-on-its-own` and a recall-gate section in `methodology-a-test-must-not-take-its-rule-as-the-truth`. Handoff 691.
 - 2026-11-20 (the plain session SkyShrike, Sam's session on the Commons, full checkpoint): #3605 (the 12 still-taught courses filed, the outline hunt keeps a college only while it has one, Needs you names its groups); the Commons order mock locked by Sam; his rulings on no longer offered and hand it over in place; the first-pass M-ID census; KB note `methodology-check-the-saved-reads-before-calling-a-source-blocked`. Handoff 692.
 - 2026-11-20 (S689 SkyTern, the CPL Queue routine's 06:12Z conductor night, full checkpoint): #3589 (four high schools' issuer tags), #3588 (City College of San Francisco's CurricUNET outline route), #3587 and #3590 (the page checks fold PDF ligatures and keep a refusal marked), #3586 (the outline readers), #3591 (the wave: the reread plan's third ten and Santa Rosa Junior, 79 new and 43 replaced); display build 4c57fd250cce confirmed (18,459, #3598); the census at 5,069 left; 2,550 outline rows at Feather River and Palomar; the harvest lessons compacted into archive 7; the KB note `methodology-a-pdf-ligature-hides-a-heading-from-an-exact-match`. Handoff 690.
 - 2026-11-20 (S688 SkyLinnet, Sam's session, light checkpoint plus memory rows): S687's 15 memory rows applied (run 44639823760); #3500 (Cosumnes River pins), #3529 (flagged cards leave the confidence scorer), #3578 (First Light puts back a timestamp-only report), #3537 (Mt. San Antonio SLO reader), #3579 (rule D keeps an older read's marks); the bot-commit and skip-tag pitfalls; a section on commit-backs that skip CI in `playbook-runner-as-external-api-proxy`. Handoff 689.

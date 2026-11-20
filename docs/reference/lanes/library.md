@@ -22,137 +22,13 @@ CPLLibrary folder on the MAP team's SharePoint site; the repos keep only the sou
 Deploying, Live (only once the page's own address answers), or Failed with the function's reason (`not_configured`,
 `token_refused` named). Guard `tests/library_publish_now.test.js`.
 
-**BUILT in #3572, its three migrations applied (runs 44621258767, 44624282220, 44628207752): the publishing model, #3560 part 1 of 4
-(S687; Sam's decisions of Nov 19 via COBIx).** A new piece's ready draft has two buttons, exactly *Publish to Internal Library* and *Publish to Public
-Library*; no approval from Sam. Internal approves the draft; one press starts the publish run at once only for a
-signed-in reviewer (Publish now's holds and one status line), and a team-phrase press waits for the scheduled run
-(every three hours). Public shows *"This lists it in the Public Library, where anyone can find
-it."*, does the same, and keeps `cpl_library.publish_target = 'public'`; a piece already on its page lists at once
-through `cpl_library_set_public()` only with a passing check record for its page, and otherwise waits; a waiting
-piece whose page check passes offers the listing form again. The function itself refuses a listing without that pass
-(the service role exempt, unlisting unchanged), so the tab is not the only gate.
-The card then carries *In the Public Library*. List publicly is retired. Removing a piece from the Public Library
-leaves it in the Internal Library (a trigger resets `publish_target` on any unlisting). Template: a checkbox in Edit
-the record, a chip, a Templates filter (cleared at the next visit), templates first in the finder and at the head of
-a new draft. Details shows the check record under Sam's labels. Schema
-`kb/migrations/2026-11-19_library_publishing_model.sql` (`cpl_library_checks`, `cpl_library_division_settings`
-seeded with `cobi` and *WCAG 2.1 AA and Section 508*; columns `publish_target`, `template`, `division`); without it
-the tab publishes to the Internal Library and Public says the check record is not available yet. Guard
-`tests/library_publishing_model.test.js`, `tests/public_library.test.js`, and `tests/library_publishing_sql_proof.py`
-(the migration and its rollback against a throwaway Postgres, in `js-tests.yml`).
-- DECIDED (S687, `d-library-check-per-version-key-s687`): a check covers one version key: `draft:<draft id>` for a card draft ready or approved and not yet
-  published, `version:<version>` for the page, `page` for a page with no number. Listing reads the page's key alone
-  (second read of #3572), in the tab and in `cpl_library_set_public()`; the draft's key speaks only to a new piece's
-  Public confirmation. A draft's check never carries to the page, which is checked again once it is up.
-- DECIDED (S687): the rollback refuses while `cpl_library_checks` holds rows, since nothing else keeps them.
-- DECIDED (S687 conductor, on COBIx's #3572 comments 7022946691, 7023361983 and 7023581179;
-  `d-library-new-page-unlists-s687`): a listed piece leaves the Public Library when its `url` or its `version`
-  changes, always (S688 part 2 dropped the version exception, `d-library-check-after-page-change-s688`). It keeps `publish_target = 'public'` so part 2's run checks the new page and lists it again. Every writer, the service
-  role included, since unlisting is the safe direction. Until part 2 relists, this overrides Sam's "a Public Library
-  piece stays listed while redrafted, showing the last published version" (Nov 19, item 9; his to reverse): a draft
-  stays a draft and unlists nothing, and only a published new version or a new url does. Trigger
-  `cpl_library_unlist_new_page_trg`: `kb/migrations/2026-11-19_library_relist_on_new_version.sql` (applied, run
-  44624282220), its url rule `kb/migrations/2026-11-19_library_unlist_on_url_change.sql` (applied, run 44628207752; it also
-  corrects the memory row's summary with a guarded UPDATE).
-- DECIDED (S687, `d-library-internal-one-press-s687`): Publish to Internal Library approves a new piece and starts the
-  publish run in one press for a signed-in reviewer, through Publish now's holds; a team-phrase press waits for the
-  scheduled run.
-- DECIDED (S687, `d-library-3560-in-four-prs-s687`): #3560 lands in four PRs, one after another, since its asks share
-  `library.js`: 1 the two publish buttons, Template and the check gate (#3572); 2 the check run and the footer; 3 the
-  progress bar; 4 Publish all, Add existing, redraft and republish. Memory rows: run 44624406317.
-- Known limit (S688 part 2): what is left is the tab's and `cpl_library_set_public()`'s view between runs. A check
-  row names a version key, a url and a time, not the page's bytes, so from a content change at the same url and version
-  (a session's `scripts/library_page.py` rebuild, a hand commit, a page `--finish` left for the next run) until the next
-  run, a team press of Public can list the page on the earlier page's pass while its line reads Not yet certified. The
-  next run closes it: `--plan` sees the drift, `--check` takes a listed piece off before its new check, and only a pass
-  of the new content relists it. A content hash on the check row, matched against the served page, would close the gap
-  between runs.
-- DECIDED (S688 conductor, COBIx on #3572, 7023899407; `d-library-check-binds-url-s688`): a check binds to the url it
-  checked (`cpl_library_checks.url`). `cpl_library_set_public()` counts a pass only at the record's current url and
-  key, so the old url's pass never relists a moved piece. Old rows keep a null url, which
-  matches nothing. Part 2's check run must write `url` on every check row.
-  `kb/migrations/2026-11-19_library_check_binds_url.sql`, not yet applied.
-- DECIDED (S687): a new piece pressed to Public is never listed at the press (it has no page yet); part 2's check run
-  lists it once its page passes. Only the service role writes a check, so the tab never certifies a piece.
-- DECIDED (S687): Replace the public copy on a revision is unchanged until part 4 (redraft and republish).
+**LIVE: the publishing model and the check run (#3560 parts 1 and 2).** Part 1 (#3572, S687; three migrations applied, runs 44621258767, 44624282220, 44628207752): a new piece's ready draft offers *Publish to Internal Library* and *Publish to Public Library*, and a listing needs a passing check at the page's current version key and url (`cpl_library_set_public()` refuses one without it; the service role is exempt). Part 2 (#3577 `45af74fd` and #3581 `ac093582`, S688; applied from trigger branches, runs 44653210148 and 44673522564): after `--finish`, `library-publish.yml` checks each page it plans (`scripts/library_check.py`, `scripts/a11y.js`), writes one `cpl_library_checks` row per page with its receipt and a content-hash proof, lists a passing piece that holds a typed public summary, and stamps each page's accessibility line from the rows; a pass line prints only while the page on disk matches its proof. The first real run (2026-11-20 12:10Z, run 44733588776, success): 8 check rows, 7 pass and 1 fail. The 21 pieces listed before the checks stay listed as Not yet certified while their findings are fixed (RULED `r-library-legacy-listings-stay-sam-2026-11-19`). Known limit: between runs, a team press of Public can list a page changed at the same url and version on the earlier pass; the next run closes it. Every DECIDED line of parts 1 and 2, in the paragraphs as they stood ([`library_lessons_archive_3`](../../library_lessons_archive_3.md), *Moved from the lane (S690 checkpoint)*): `d-library-check-per-version-key-s687`, `d-library-new-page-unlists-s687`, `d-library-internal-one-press-s687`, `d-library-3560-in-four-prs-s687`, `d-library-check-binds-url-s688`, `d-library-check-run-on-publish-s688`, `d-library-legacy-listings-stay-s688`, `d-library-run-lists-by-guarded-update-s688`, `d-library-list-needs-typed-summary-s688`, `d-library-footer-from-check-s688`, `d-library-footer-binds-page-hash-s688`, `d-library-check-after-page-change-s688`, `d-library-tab-precheck-url-s688`. Guards: `tests/library_publishing_model.test.js`, `tests/public_library.test.js`, `tests/library_publishing_sql_proof.py`, `tests/library_check_test.py`, `tests/library_check_footer.test.js`.
 
-**BUILT, not yet run (#3560 part 2, S688; Sam's order of Nov 19 via COBIx, comment 7025524965): the check run, list
-on a pass, the footer line, and the tab's url-aware pre-check.** After `--finish` moves the records,
-`library-publish.yml` plans (`scripts/library_check.py --plan`), installs Node and Chromium only when a page needs
-checking, then `--check`: each page writes the line it will show on a pass, `scripts/a11y.js` checks it through
-`scripts/library_check.config.js` (Light at nine widths, Dark at two; geometry, paint and axe-core's WCAG 2.0 to 2.2 A
-and AA rules; `--json` gives one result per target), a plain-words report lands at
-`library/<slug>/accessibility/<time>.txt`, and one `cpl_library_checks` row per page goes in with the service key
-(record's current url and key, the division's standard and tool, pass or fail, findings, the report's Pages address,
-`created_by` = `library-publish.yml run <id> attempt <n>`, `checked_at` the database's). The receipt
-(`kb/receipts/library_checks/`) is written as soon as the rows are in, and every Library page's line is rewritten from
-the rows written. `--plan` also plans any page whose content on disk differs from its latest check's committed sha (or
-has no proof), and `--check` first takes a listed one off the Public Library when it has a passing check its page no
-longer matches (guarded, before-values in the receipt, `publish_target` put back to `public`). `--check` lists nothing: `--list` is its own step, after the checks commit is
-pushed and only when that push succeeded, reading the waiting passes from `check.json`; each listing's before-values
-join a listing receipt before its update, which a last commit carries, and one failed listing never stops the next (the
-step goes red at the end). A page whose version label the table's key check refuses
-is skipped with its reason in `check.json` and on the card, and the rest of the batch goes in. A second commit carries
-lines, reports and the receipt: whatever is on disk is what the receipt proves. Both push loops fail their step after
-three failed pushes, and Pages deploys though a check step failed. Schema
-`kb/migrations/2026-11-20_library_check_after_page_change.sql` (apply after `..._check_binds_url.sql`). Tests
-`tests/library_check_test.py`, `tests/library_check_footer.test.js`, `tests/library_publishing_model.test.js` (I),
-`tests/library_publishing_sql_proof.py`.
-- DECIDED (S688, `d-library-check-run-on-publish-s688`): the run checks every page it published and every piece waiting
-  on the Public Library, and every Library page whose content differs from its latest check's committed sha or has no
-  proof; a page whose check failed waits for new content, and the run never checks the same content twice. Only a page at its own Pages address (`library/<slug>/`) is checked; a piece
-  elsewhere (claude.ai, SharePoint) reads Not yet certified until it has a Pages copy.
-- RULED (Sam, Nov 19, 2026, 7:32 PM PT, relayed by COBIx on #3581,
-  [7029505105](https://github.com/CPL-Initiative/cpl-project-tracker/pull/3581#issuecomment-7029505105);
-  `r-library-legacy-listings-stay-sam-2026-11-19`, keeping `d-library-legacy-listings-stay-s688` as written): *"The 21
-  pieces listed today stay on the Public Library as "Not yet certified" while their findings are fixed. They are not
-  taken off when the first check fails."* A legacy listing, listed with no passing check at its current key and url,
-  stays listed whatever its checks find; a failed check shows its findings on the card for the team to fix. The
-  exception covers only those legacy listings: anything new, and any version or url change, still lists only on a pass.
-  From a piece's first pass on, the drift rule applies. The rule is `drift_unlists` in `scripts/library_check.py`.
-- DECIDED (S688, `d-library-run-lists-by-guarded-update-s688`): the run lists a passing piece whose `publish_target` is
-  `public` by writing the columns `cpl_library_set_public()` writes, as the service role (the guard trigger admits it),
-  guarded on the record as read and on the url and version checked. `set_public()` refuses the service key at its first
-  gate (no phrase, no reviewer email), and widening it would add a writer path. The pass must be no older than the
-  record's `page_changed_at`, as in `latest_check` and the tab.
-- DECIDED (S688 conductor, second read of #3581; `d-library-list-needs-typed-summary-s688`): the run lists only a piece
-  that already holds a `public_summary` a person typed; it never copies the internal summary or the title. Otherwise
-  the piece waits, and the card says *"Its accessibility check passed. The Public Library lists it once it has a public
-  summary: press Publish to Public Library and add one."*
-- DECIDED (S688, `d-library-footer-from-check-s688`): one marked line before the Ask Sierra script, from the latest
-  check at the page's key and url since its last change; none or a fail reads the division's Not yet certified. The run
-  stamps the pass line before it checks, so the page checked is the page served; a fail puts Not yet certified back.
-  `{report}` links "report"; the CPL Initiative's template has none, so its words "report linked" carry the link.
-  `library_publish.py --write` stamps Not yet certified (a copied line never speaks for a new page), and
-  `scripts/library_page.py` writes Not yet certified on every page it builds. Colors are the public header's tokens.
-- DECIDED (S688 conductor, third round on #3581; `d-library-footer-binds-page-hash-s688`, replacing the per-run hold
-  list): each check records `content_hash`, the sha256 of the page it checked with the accessibility line taken out, in
-  a committed JSON beside its report (`library/<slug>/accessibility/<time>.json`, with the check row's id, key and url).
-  The restamp prints a pass only when the record's latest check (current key and url, no earlier than
-  `page_changed_at`) has that proof and its sha equals the page on disk now; every other page, a rebuilt page or one
-  `--finish` left included, reads Not yet certified, in any later run too. An insert that errs reads back the rows that
-  landed by `created_by`, so they get their receipt, proof and line.
-- DECIDED (S688, `d-library-check-after-page-change-s688`): every version of a Pages piece shares one url, so the url
-  binding alone left a relabel open (v5 set back to "4", which passed). `cpl_library.page_changed_at`, stamped by a
-  trigger on any url or version change and held against a hand-set value, closes it: `set_public()` counts a pass only
-  at or after it, and a listed version change always unlists.
-- DECIDED (S688, `d-library-tab-precheck-url-s688`): `library.js` `latestCheck` reads the newest check per piece,
-  version key and url, no older than `page_changed_at`; a draft key reads the draft's newest. A waiting piece whose check
-  failed says so, with the findings count and The check report.
+**#3600 (S690, `9fc88a07`; DECIDED `d-main-red-check-line-stays-out-s690`): the check line stays out of the reading text and out of new pieces.** The first run stamped every page's line, the starter page's included (653864b7), so ELL IET's reading text passed Sierra's `LIBRARY_TEXT_MAX` (33,996 to 34,078 of 34,000 characters) and `buildNewPage` copied the starter's line into new pieces; `main` stayed red until the merge. `cpl-chat`'s `libraryPageText`, the drafter's `readingText` and the card's `sierraText` now skip the `cpl-library-check` block, and `buildNewPage` drops it (`sierra_library` 31, `library_revise_draft` 120, `library_qualify_draft` 40 and the footer's 11 pass, with `library_check_test`). **Not deployed:** `cpl-chat-deploy.yml` for `cpl-chat` and `library-revise-draft` waits for a plain session.
 
-**NEXT (#3560):** apply `2026-11-19_library_check_binds_url.sql`, then `2026-11-20_library_check_after_page_change.sql`
-and the part 2 memory rows; part 3, the progress bar; part 4, Publish all, Add existing, redraft and republish.
+**NEXT (#3560):** deploy #3600 (a plain session); read the failing piece's findings on its card; then part 4 (Publish all, Add existing, redraft and republish), then part 3 (the progress bar). A plain session's work; conductor runs stay on collection.
 
-✅ **The tab is built** (`library.js`, under *Sierra & Team Tools*; the side
-session beside S336, 2026-10-05). It reads `cpl_library` live behind the team
-phrase and seeds twelve real pieces across nine occasions
-(`kb/receipts/cpl_library_seed_2026-10-05.sql`, cohort
-`library-seed-skyshelf@bot`). Needs attention is computed from each record:
-**not filed** (no link anywhere a session can reach), **a public file with no
-audience set** (in the public tracker repo and Sam has not said who it is for),
-and **figures to refresh**. Add, File it, Edit and Retire write to the table;
-nothing deletes, and a trigger files every prior row in `cpl_library_history`.
-Schema: `kb/supabase_cpl_library.sql`. Test: `tests/library.test.js`.
+✅ **The tab is built** (`library.js`, under *Sierra & Team Tools*, 2026-10-05): it reads `cpl_library` live behind the team phrase; Add, File it, Edit and Retire write to the table, nothing deletes, and a trigger files every prior row in `cpl_library_history`. Schema `kb/supabase_cpl_library.sql`; test `tests/library.test.js`. The paragraph as it stood: [`library_lessons_archive_3`](../../library_lessons_archive_3.md), *Moved from the lane (S690 checkpoint)*.
 
 ✅ **A piece's link beside a file** (2026-11-09, #3000): moved verbatim to the lessons, *Moved from the lane (tender-fermi, 2026-11-10)*.
 
@@ -160,14 +36,7 @@ Schema: `kb/supabase_cpl_library.sql`. Test: `tests/library.test.js`.
 
 ✅ **Start a piece is built** (2026-10-06): moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S686 light checkpoint)*.
 
-✅ **The public library is built** (2026-10-20, DSP side session). One record and a switch, never a copy
-(*"Copy or move...to save space"*): **Publish to Public Library** (List publicly until #3560) on a record in the Library tab sets `public_listed` through
-`cpl_library_set_public()`; a trigger refuses the public columns any other way, and retiring a piece or narrowing its
-audience unlists it. `cpl_library_public()` (anon) returns the listed pieces' public fields only, to the page at
-`library/` and the Admin tab's **Public library** panel (Remove beside each). A Claude page also needs its claude.ai
-link set public, which the switch asks the lister to confirm. Schema `kb/supabase_cpl_library_public.sql`; test
-`tests/public_library.test.js`; `npm run a11y -- public-library public-library-dark` (the targets' names; a bare
-`library` is not one).
+✅ **The public library is built** (2026-10-20): one record and a switch, never a copy; `cpl_library_set_public()` lists, `cpl_library_public()` (anon) serves `library/` and the Admin tab's panel. Schema `kb/supabase_cpl_library_public.sql`; test `tests/public_library.test.js`; `npm run a11y -- public-library public-library-dark` (a bare `library` is not a target). The paragraph as it stood: [`library_lessons_archive_3`](../../library_lessons_archive_3.md), *Moved from the lane (S690 checkpoint)*.
 
 ✅ **The page in Malone's look (Sam, 2026-10-24, S467):** map.rccd.edu/CPL-AI's look, Light by default (dark only from
 the reader's own Dark click), eleven hero photos cycling with *Pause photos*; CLAUDE.md's First Light rule names it as its
@@ -176,13 +45,7 @@ one departure. The full record, his words and the photo list moved verbatim to
 
 ✅ **The team phrase lists publicly too** (Sam, 2026-10-23; `cpl_library_set_public()` takes `team_pass_ok()` or `is_allowed_reviewer()`): moved verbatim to the lessons, *Moved from the lane (SkyWhirlpool, 2026-11-11)*.
 
-✅ **Who a piece is made for (Sam's Open Asks Sheet 120, 2026-10-23; built S459):** `for_kind` (college, district,
-agency, vendor, co, other), `for_category` (Other's typed category) and `for_name` under one check; the tab filters on
-them and every form takes them, a college's name from MAP's `map_colleges`. **Make a visual** writes a college's CPL
-Opportunity record pair in one step, and opens Start a piece for any other entity, naming the agency template
-(`CPLBrain/04-projects/cpl-initiative/agency-visual/build.py`). The rulings, the build and the six asks as put to him
-are in `docs/library_lessons.md`, *Moved from the lane (S467)*, verbatim; Sam's 2026-10-05 rulings, his calls 7 to 9
-and the Drive filing history moved there with them.
+✅ **Who a piece is made for** (Sheet 120, built S459: `for_kind`, `for_category`, `for_name`; **Make a visual**): the paragraph as it stood, [`library_lessons_archive_3`](../../library_lessons_archive_3.md), *Moved from the lane (S690 checkpoint)*.
 
 ✅ **New pieces and the drafter's data (Sam with Ashley Mooney, 2026-11-18; #3527, #3532; DECIDED
 `d-library-duplicate-is-a-warning`, `d-library-start-drafts-and-reads-cobi-data`).** A duplicate is a warning with three
@@ -250,11 +113,7 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
   is the team's press once its check passes, linked from the funding dashboard's 75% JST condition.
 - **Publish now and one queue check (S642, S643, S648):** shipped and deployed; detail moved verbatim to
   [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S669)*.
-- **Pictures in a piece (Sam, 2026-11-11, #3095):** a PDF's pictures are cropped in the browser (`readPictures`),
-  saved in `cpl_library_pictures`, placed by the drafter through a marker (`pictures.mjs`), checked on the card (Cover
-  or crop, Leave it out; `regen.pictures_checked_by`), and written to `library/<slug>/img/` by `library_publish.py`. A
-  picture once published stays in the repo's history. A PowerPoint is saved as PDF first. Tests: `library_pictures`
-  (44). The full record: lessons, *Moved from the lane (SkyWhirlpool, 2026-11-11)*.
+- **Pictures in a piece (Sam, 2026-11-11, #3095):** `cpl_library_pictures`, placed by `pictures.mjs`, checked on the card, written to `library/<slug>/img/`; tests `library_pictures`. The record: [`library_lessons_archive_3`](../../library_lessons_archive_3.md), *Moved from the lane (S690 checkpoint)*.
 - **Owed to COBIx on the next Library change:** the `style=` entity pattern in either quote or unquoted
   (`apply_edits.mjs` RISKS, `library_publish.py` _RISKS); `tests/pages_size_guard.test.js` walking `kb/` minus
   `kb/receipts`; Leave it out on a published picture opens a request that replaces the public copy (the file stays
@@ -271,23 +130,7 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
   sources (public header, the agency visual, tabs; CPLBrain `0e4b1091`), and seven other public pages, `library/index.html`
   and `library/adopt/` took the header's lengths. Guard `tests/public_target_floor.test.js`. A new public page takes the
   header's lengths, never `24px`.
-- **The Veteran map and the Fact Sheet carry the public header (S653b).** The Veteran map (S651, #3294 `f0339e38`): built
-  in `build_selfcontained.py`, hidden under `?embed=1` so COBI's Military Partnerships iframe stays one column; since #3333
-  it embeds the 480px logos. Guard `tests/veteran_map_public_header.test.js`. The Fact Sheet (#3333 `908d9b8d`, read live
-  19:51Z 2026-11-14): in `fact-sheet/index.html`, between the skip link and the masthead; the masthead is a `div`, so the
-  page has one banner; nothing frames the page, so it has no embed case. Guard `tests/factsheet_public_header.test.js`.
-  **DECIDED:** the Fact Sheet shows one logo, the CPL Initiative's, in the header; the masthead's California Community
-  Colleges-only logo is out (Sam, in session S653b, 2026-11-14: "Don't need the ccc logo added to the top of fact
-  sheet. Leave masthead in." then "Confusion by me on masthead vs header. I just want the ccc Cpl back in and the ccc
-  only logo out"; then "Picture 2: CPL logo only"; `sam-fact-sheet-no-header-logo-2026-11-14`; #3342).
-  **DECIDED:** the header carries the page's controls, moved whole (same ids): map.rccd.edu, the snapshot chip, Collapse
-  all, Print or save; the masthead is the title. On paper the header prints its logo, the map link and the chip (Sam,
-  S653b, 2026-11-14: "2 is right. Can you move all the buttons and map website link and update chip all into the header
-  to clean up the title?"; `sam-fact-sheet-controls-into-header-2026-11-14`; #3342).
-  **NEXT (minor):** the vault's `header.html` has no `aria-current`, so the Fact Sheet's own "CPL Fact Sheet" link opens a
-  second copy; that test checks the links against the Veteran map's copy, not the vault's header; a theme choice
-  on a public page sets `cpl_theme` for the whole github.io origin, COBI included (the existing design). Records: lessons,
-  *Moved from the lane (S651 checkpoint)* and *(S653b)*.
+- **The Veteran map and the Fact Sheet carry the public header** (S653b; `sam-fact-sheet-no-header-logo-2026-11-14`, `sam-fact-sheet-controls-into-header-2026-11-14`; guards `tests/veteran_map_public_header.test.js`, `tests/factsheet_public_header.test.js`). **NEXT (minor):** the vault's `header.html` has no `aria-current`, so the Fact Sheet's own *CPL Fact Sheet* link opens a second copy, and that test checks the links against the Veteran map's copy. The bullet as it stood: [`library_lessons_archive_3`](../../library_lessons_archive_3.md), *Moved from the lane (S690 checkpoint)*.
 - Five shipped records (Revise from the card, S577; the Catalog in the Share menu, #2826; ELL IET Version 5 public; Version 5 in the library look and the dated public cards; the card's quick
   revise, #2824) moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (SkyLoop)*.
 - **The CPL Initiative overview** (`library/cpl-initiative-overview/`, record `cpl-initiative-overview`; Sam: *"publish the
@@ -323,14 +166,10 @@ The mockup as Sam left it (Version 20) is described verbatim in [`docs/library_l
 
 ✅ **③ Remediation in the browser (S509) and ④ ⑤ the contrast checks (S510, S511) are built.** Their summaries moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S653b, T9)*.
 
-
 ✅ **⑥ to ⑰ are built** (S512 to S576): `docs/library_lessons.md`, *Moved from the lane (S667 checkpoint)*.
 
-✅ **⑪ Revise and remediate from the one box (Sam, 2026-10-29; built by S520's side session).** The box finds a piece
-already here (by a label naming its kind, its link, a file named for it, or the card's Revise and remediate or Edit) and asks
-what to do with it; long instructions go whole into `sources`, and every rebuild is remediated. The record moved verbatim to
-[`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S520's side session)*.
+✅ **⑪ Revise and remediate from the one box** (Sam, 2026-10-29; S520's side session): the paragraph as it stood, [`library_lessons_archive_3`](../../library_lessons_archive_3.md), *Moved from the lane (S690 checkpoint)*.
 
 **The Chancellor's address** is on Pages with its film: lessons S531.
 
-**FILED (S661): the College Collections Plan** (Sam, in session: *"Make a Visual for the Moonshot plan and add it to the Library and call it 'College Collections Plan'"*): the #3111 v2 agreed final on one page at `library/college-collections-plan/` (source in the vault, `04-projects/cpl-initiative/college-collections-plan/`), record `college-collections-plan` (draft, seen by the team, not publicly listed; receipt `kb/receipts/library_college_collections_plan_s661_2026-11-15.sql`). The full College Collections ETA opens it in a new tab.
+**FILED (S661): the College Collections Plan** at `library/college-collections-plan/`, record `college-collections-plan` (draft, seen by the team, not publicly listed): the paragraph as it stood, [`library_lessons_archive_3`](../../library_lessons_archive_3.md), *Moved from the lane (S690 checkpoint)*.

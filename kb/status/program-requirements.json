@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-20T10:53:29Z",
-  "session": 689,
-  "moniker": "SkyTern",
+  "written_at": "2026-11-20T17:43:20Z",
+  "session": 690,
+  "moniker": "SkyMerlin",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_690_handoff.md",
+  "handoff": "docs/session_691_handoff.md",
   "next_step": {
-    "title": "The reread plan's fourth ten colleges, and free reads at Solano and Cañada",
-    "text": "The next session rereads the next ten colleges of the reread plan, Napa Valley to Butte, one run at a time at $40 per college per run, keeping the better of each filed record and its re-read. It also reads Solano's and Cañada's catalogs again for free, now that the page checks read headings printed with PDF ligatures, and pays only for programs whose own page is found."
+    "title": "Post the reread plan's second batch, and settle Golden West's correction",
+    "text": "The next session posts the extracts already paid for in the reread plan's second batch, Cuyamaca, Moreno Valley, Norco and Fullerton first, each through the keep-the-better check, a post and a load, and settles with COBIx how Golden West's 476 outline rows that hold a heading are corrected, so the correction can be undone row by row."
   },
   "calls": [
     {
@@ -337,6 +337,26 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-20T13:48:00Z",
+      "text": "City College of San Francisco's course outline reader now files only the parsed learning outcomes of each outline, never the whole page, and starts its full read only after a recall count taken by eye from a trial."
+    },
+    {
+      "at": "2026-11-20T14:05:14Z",
+      "text": "Laney, Diablo Valley and Orange Coast were read again where the census found their programs' own pages: 11 program records added, 69 replaced by a better read and 1 restored, for $7.68. Victor Valley, Mt. San Jacinto and Southwestern had no own page to read, so nothing was paid there."
+    },
+    {
+      "at": "2026-11-20T15:05:46Z",
+      "text": "Five colleges of the reread plan, Napa Valley, Cerro Coso, Santa Monica, San Diego College of Continuing Education and Mt. San Antonio, were read again, checked against what is live, posted and loaded: 24 program records added, 60 replaced by a better read and 5 restored, for $7.89. Three Napa Valley records wait for a person, and Butte waits for a fix because its catalog's page addresses changed."
+    },
+    {
+      "at": "2026-11-20T15:50:34Z",
+      "text": "The course lists printed in sixteen college catalogs were filed for the M-ID work: 17,341 courses, each with the code and title its catalog prints, read by the census reader with no extraction cost. North Orange Continuing Education, Southwestern, Cerritos, Long Beach City, Monterey Peninsula, the nine Los Angeles colleges and Clovis are marked for a nightly read."
+    },
+    {
+      "at": "2026-11-20T15:55:33Z",
+      "text": "City College of San Francisco's course outlines were loaded: 1,416 learning outcome rows from 1,417 outline pages, every page read in full. Its outline report prints no course objectives."
+    },
     {
       "at": "2026-11-20T08:19:00Z",
       "text": "The page checks now read a catalog heading printed with a PDF ligature or a stand-in letter, so a program whose heading prints Certificate that way is no longer refused its own page. A refused program stays marked until a record places its courses, so no later read pays for the refused page again."
@@ -796,7 +816,7 @@
     {
       "day": "2026-11-20",
       "active": 20282,
-      "complete": 15120,
+      "complete": 15163,
       "colleges": 118
     }
   ],
@@ -807,7 +827,7 @@
   },
   "harvest": {
     "day": "2026-11-20",
-    "gaps": 3449,
+    "gaps": 3479,
     "parts": {
       "links": {
         "catalog": [
@@ -828,21 +848,21 @@
         20282
       ],
       "coci": [
-        16979,
+        17019,
         20282
       ],
       "outcomes": {
         "slo": [
-          18309,
+          20538,
           88736
         ],
         "plo": [
-          16979,
+          17019,
           20282
         ]
       },
       "careers": [
-        15980,
+        16038,
         20282
       ]
     }

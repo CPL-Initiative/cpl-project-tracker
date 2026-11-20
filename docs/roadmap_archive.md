@@ -570,6 +570,7 @@ Four S678 and S679 paragraphs as they stood, verbatim (the two drafts merged; th
 
 - 2026-11-18 (S682 SkyVireo, the CPL Queue routine's 14:12Z firing, light checkpoint): S681's stand-down held; First Light's 77 painting drops in #3511 for Sam's merge, the 13 story photos held on the hero photo rule; the sierra-page-redesign lane compacted under 20,000 bytes. Handoff 683.
 
+## INDEX update history, moved (S690 checkpoint)
 ## Moved from lanes/commons.md (plain session, 2026-11-20)
 
 **Plain words in a Commons decision (S666).** **#3398 (draft):** Sam's Sheet 195 card 4 CVMA answer is written to `kb/status/exhibit.json` (the fix was already carried out), and a Commons decision batch now reads *We went with this: <default>. It stands unless you change it.* with a *Change it* link, the ask test's shape (`d-person-saved-never-returns-s666` and the [governance lane](governance-team-enablement.md)). **#3400 (draft):** `tests/plain_words_for_sam_test.py` (lints job) refuses COBIx's insider terms in open calls and Commons strings unless the sentence defines them; the Commons *receipt* lines are reworded. **NEXT:** gate and merge both on a green `test`; one writer of `kb/status/exhibit.json` is #3398.

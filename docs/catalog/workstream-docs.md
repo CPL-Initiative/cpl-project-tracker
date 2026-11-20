@@ -15,7 +15,7 @@ related:
 
 Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` that is not a lessons doc or a session handoff.
 
-106 document(s).
+107 document(s).
 
 | Title | File | Created | Updated |
 |---|---|---|---|
@@ -111,6 +111,7 @@ Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` t
 | [Team-phrase auth expansion — recommendation + execution plan](../team_phrase_expansion_plan.md) | `team_phrase_expansion_plan.md` | 2026-07-03 |  |
 | [The CPL clean-up worklist — what to fix, in what order, and who fixes it](../map_cleanup_worklist.md) | `map_cleanup_worklist.md` | 2026-08-19 | 2026-08-19 |
 | [The Library and its filer — lessons, archive 2 (2026-10-24 to 2026-10-29)](../library_lessons_archive_2.md) | `library_lessons_archive_2.md` | 2026-11-06 |  |
+| [The Library — lessons, archive 3 (the lane's text moved at the S690 checkpoint, 2026-11-20)](../library_lessons_archive_3.md) | `library_lessons_archive_3.md` | 2026-11-20 |  |
 | [The §55050 draft against the GR Priorities register — what to change on each side](../t5_55050_vs_gr_register.md) | `t5_55050_vs_gr_register.md` | 2026-08-26 | 2026-08-26 |
 | [Title 5 §55050 — redraft architecture against Ed. Code Article 9 (SB 135)](../t5_55050_redraft_scope.md) | `t5_55050_redraft_scope.md` | 2026-08-26 | 2026-08-26 |
 | [TOP-dethroning side-lane — continuation handoff](../top_dethroning_handoff.md) | `top_dethroning_handoff.md` | 2026-07-16 |  |
