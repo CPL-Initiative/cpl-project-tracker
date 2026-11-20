@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8125,
-    "output_tokens": 3521,
+    "output_tokens": 3541,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,52 +30,43 @@
     "model": null
    }
   ],
-  "output_tokens": 3521,
+  "output_tokens": 3541,
   "output_tokens_details": {
-   "thinking_tokens": 705
+   "thinking_tokens": 655
   },
   "service_tier": "standard",
-  "inference_geo": "global",
-  "speed": "standard"
+  "inference_geo": "global"
  },
- "cost_usd": 0.10292,
- "ms": 25468,
- "seconds": 26.4,
+ "cost_usd": 0.10332,
+ "ms": 27219,
+ "seconds": 27.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 14,
+   "placed": 12,
    "listed": 15,
-   "share": 0.933,
+   "share": 0.8,
    "missing": [
+    "ARTH105",
+    "ARTH106",
     "ARTH130"
    ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "ARTHC1100",
-     "listed": "ARTH105",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "ARTHC1200",
-     "listed": "ARTH106",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 20,
+   "count": 22,
    "codes": [
     "ARTH101",
     "ARTH110",
     "ARTH118",
     "ARTH145",
     "ARTH180",
+    "ARTHC1100",
+    "ARTHC1200",
     "ARTS101",
     "ARTS102",
     "ARTS105",
@@ -98,6 +89,8 @@
     "ARTH118",
     "ARTH145",
     "ARTH180",
+    "ARTHC1100",
+    "ARTHC1200",
     "ARTS101",
     "ARTS102",
     "ARTS105",
@@ -530,11 +523,11 @@
   "missing_explained": [
    {
     "code": "ARTH 105",
-    "why": "not in the text; the page lists ARTH-C1100 (Survey of Art from Prehistory to the Medieval Era), likely its C-ID successor"
+    "why": "not in the text; List A prints ARTH-C1100 (Survey of Art from Prehistory to the Medieval Era) instead, possibly a renumbering"
    },
    {
     "code": "ARTH 106",
-    "why": "not in the text; the page lists ARTH-C1200 (Survey of Art from the Renaissance to Contemporary), likely its C-ID successor"
+    "why": "not in the text; core prints ARTH-C1200 (Survey of Art from the Renaissance to Contemporary) instead, possibly a renumbering"
    },
    {
     "code": "ARTH 130",
@@ -542,13 +535,12 @@
    }
   ],
   "notes": [
-   "The program is named Studio Arts-Ceramics Emphasis, but the page is the general Studio Arts A.A. with no ceramics emphasis section; the requirements recorded are the general Studio Arts A.A. requirements. A reviewer should confirm whether a separate ceramics emphasis exists.",
-   "Units are not printed beside individual elective courses in Lists A, B, and C; only block totals (3, 9, 3) are printed.",
+   "The program is named 'Studio Arts-Ceramics Emphasis', but the catalog page is the general Studio Arts A.A. with no ceramics emphasis section; ceramics is mentioned only as an example concentration in the elective footnote. Reviewer should confirm this page corresponds to the ceramics-emphasis award.",
+   "The text begins mid-description; the page's program title heading is cut off, so section_heading uses the 'DEGREE REQUIREMENTS' heading.",
+   "Units are printed only for core courses; elective list courses have no units printed beside them, only block totals (3, 9, 3).",
    "The 60-unit associate degree sentence is a generic requirement, not recorded as degree_total.",
-   "The catalog text begins mid-sentence; the program description was cut off at the start.",
-   "Outcomes are printed once for the program as a whole; recorded for this award."
+   "Many current codes (ARTH-C1100, ARTH-C1200) are absent from the closed list, which instead holds ARTH 105/106; the state file may predate a C-ID renumbering."
   ]
  },
- "extracted_run": "44739981651",
- "catalog_year": "2026-2027"
+ "extracted_run": "38748853261"
 }

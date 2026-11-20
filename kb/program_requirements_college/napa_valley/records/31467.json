@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 7556,
-    "output_tokens": 2018,
+    "output_tokens": 1812,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,44 +30,40 @@
     "model": null
    }
   ],
-  "output_tokens": 2018,
+  "output_tokens": 1812,
   "output_tokens_details": {
-   "thinking_tokens": 569
+   "thinking_tokens": 433
   },
   "service_tier": "standard",
-  "inference_geo": "global",
-  "speed": "standard"
+  "inference_geo": "global"
  },
- "cost_usd": 0.07058,
- "ms": 16810,
- "seconds": 17.2,
+ "cost_usd": 0.06646,
+ "ms": 14727,
+ "seconds": 15.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 12,
+   "placed": 11,
    "listed": 12,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.917,
+   "missing": [
+    "SOCI120"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "SOCIC1000",
-     "listed": "SOCI120",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
+   "count": 2,
    "codes": [
-    "COMM124"
+    "COMM124",
+    "SOCIC1000"
    ],
    "flagged": [
-    "COMM124"
+    "COMM124",
+    "SOCIC1000"
    ],
    "pass": true
   },
@@ -154,7 +150,7 @@
   },
   "blocks": [
    {
-    "name": "Required Core Courses (6 units)",
+    "name": "Required Core Courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -180,7 +176,7 @@
     ]
    },
    {
-    "name": "Required Electives: List A (9 units)",
+    "name": "Required Electives: List A",
     "rule": "choose_courses",
     "minimum": 3,
     "option_group": null,
@@ -227,7 +223,7 @@
     ]
    },
    {
-    "name": "Required Electives: List B (3 units)",
+    "name": "Required Electives: List B",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -285,18 +281,17 @@
   "missing_explained": [
    {
     "code": "SOCI 120",
-    "why": "not in the text; List B prints SOCI-C1000 Introduction to Sociology instead"
+    "why": "not in the text; catalog lists SOCI-C1000 Introduction to Sociology instead (likely renumbered)"
    }
   ],
   "notes": [
-   "The catalog text begins mid-sentence and the program's own heading is not captured; section_heading uses the 'DEGREE REQUIREMENTS' heading printed over the course list.",
-   "Units are printed only for the core courses and the List A/List B block totals; individual elective course units are not printed beside the List A and List B courses, so they are null.",
-   "List B also allows 'Any LIST A course not already used.' Those List A courses are not repeated in the List B block.",
-   "The 60-unit figure is the generic ADT requirement ('no more than 60 semester CSU-transferable units'; 'must complete 60 CSU transferable semester units'), not recorded as a degree_total for this award.",
-   "Careers list taken from the CAREER OPPORTUNITIES section; 'linguistics, ethnic studies, or social work' are named as areas of further study, not careers, and were not recorded.",
-   "Catalog prints SOCI-C1000 where the closed list has SOCI 120; reviewer may wish to confirm these are the same course renumbered."
+   "The catalog text begins mid-sentence and the page title is not printed; section_heading uses the 'DEGREE REQUIREMENTS' heading.",
+   "List B also allows 'Any LIST A course not already used'; List A courses are not repeated in the List B block.",
+   "Units are not printed beside individual List A and List B courses (only block totals 9 and 3); closed list shows 3 units each.",
+   "The 60-unit figure is the generic ADT requirement, not recorded as degree_total; GE pattern is Cal-GETC with no units printed.",
+   "Career list taken from CAREER OPPORTUNITIES; 'linguistics, ethnic studies, or social work' are named as areas of further study, not recorded as careers.",
+   "SOCI-C1000 and COMM-124 are not in the closed list and are marked catalog additions."
   ]
  },
- "extracted_run": "44739981651",
- "catalog_year": "2026-2027"
+ "extracted_run": "38748853261"
 }
