@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 9063,
-    "output_tokens": 3667,
+    "output_tokens": 3511,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3667,
+  "output_tokens": 3511,
   "output_tokens_details": {
-   "thinking_tokens": 917
+   "thinking_tokens": 816
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.10959,
- "ms": 26613,
- "seconds": 26.9,
+ "cost_usd": 0.10647,
+ "ms": 26193,
+ "seconds": 26.5,
  "parts": null,
  "error": null,
  "score": {
@@ -158,7 +158,7 @@
   },
   "blocks": [
    {
-    "name": "Required Core 1: Introduction to Ethnic Studies (3 units)",
+    "name": "Required Core 1: Introduction to Ethnic Studies (3 units):",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -177,7 +177,7 @@
     ]
    },
    {
-    "name": "Required Core 2: Intersections of Race and Gender (3 units)",
+    "name": "Required Core 2: Intersections of Race and Gender (3 units):",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -212,7 +212,7 @@
     ]
    },
    {
-    "name": "Area 1: History or Government (3 units)",
+    "name": "Area 1: History or Government (3 units):",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -252,7 +252,7 @@
     ]
    },
    {
-    "name": "Area 2: Arts and Humanities (3 units)",
+    "name": "Area 2: Arts and Humanities (3 units):",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -306,7 +306,7 @@
     ]
    },
    {
-    "name": "Area 3: Social Science (6 units)",
+    "name": "Area 3: Social Science (6 units):",
     "rule": "choose_courses",
     "minimum": 2,
     "option_group": null,
@@ -503,14 +503,15 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Required Core 2 lists four cross-listed 'Women of Color' courses (AFRAM 035 same as ASAME 035, M/LAT 035, NATAM 035); recorded as one required course with the cross-listings as alternatives.",
-   "ASAME 002 appears in both Area 1 and Area 3; the catalog states courses used in one area cannot fulfill another area.",
-   "Catalog codes use leading zeros (e.g., ETHST 001, AFRAM 035) while the closed list stores them without (ETHST 1, AFRAM 35); treated as the same courses.",
-   "Many listed courses are marked '( Historical )' in the catalog (e.g., AFRAM 030, AFRAM 031, AFRAM 026, ASAME 010, ASAME 030, M/LAT 036, ETHST 030); reviewer may wish to verify they are still offered.",
-   "Page prints 'Electives to meet 60 units' with no unit figure; electives_fill_degree set true.",
-   "The sentence 'A minimum of 18 semester units ... in a major' is the generic ADT rule; total_units 18 comes from the printed 'Total Major Units: 18.00'.",
-   "Career text reads 'as well as working in higher education or graduate school'; recorded 'higher education' as a career field and omitted graduate school as not a career."
+   "Catalog prints codes zero-padded (e.g. ETHST 001, AFRAM 035); these were matched to the closed list's unpadded codes (ETHST 1, AFRAM 35) and not flagged as additions.",
+   "Required Core 2 lists the cross-listed Women of Color course four times (AFRAM/M/LAT/ASAME/NATAM 035) under a 3-unit heading; recorded as one required choice with the cross-listings as alternatives.",
+   "ASAME 002 appears in both Area 1 and Area 2... specifically in Area 1 and Area 3; the catalog states courses used in one area cannot fulfill another area's requirement.",
+   "Total Major Units 18, Cal-GETC Pattern 34, Total Units 60; electives fill to 60 with no units printed.",
+   "Several courses are marked '( Historical )' on the catalog page (e.g. AFRAM 030, AFRAM 031, AFRAM 026, ETHST 030); reviewer may check whether they are still offered.",
+   "Career line also mentions 'graduate school', which was not recorded as a career.",
+   "Page text includes embedded CSS, ignored."
   ]
  },
- "extracted_run": "38935141023"
+ "extracted_run": "44744386009",
+ "catalog_year": "2026-2027"
 }

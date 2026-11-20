@@ -1,0 +1,1779 @@
+{
+ "college": "Mt. San Jacinto College",
+ "catalog_url": "https://catalog.msjc.edu/",
+ "platform": "courseleaf",
+ "catalog_year": "2026-2027",
+ "programs": 174,
+ "with_closed_list": 152,
+ "started": "2026-11-20T13:08:27Z",
+ "scope": null,
+ "sitemap": {
+  "url": "https://catalog.msjc.edu/sitemap.xml",
+  "status": 200,
+  "listed": 427,
+  "nested": 0,
+  "program_pages": 218,
+  "refused": null,
+  "errors": null,
+  "failed": null,
+  "challenged": null
+ },
+ "listing_failed": 0,
+ "pages_read": 218,
+ "pages_listed": 218,
+ "pages_answered": 218,
+ "child_pages": 0,
+ "banner_h1": null,
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 105,
+   "hits": 98,
+   "recall": 0.933,
+   "false": 0,
+   "false_off_own": 0,
+   "false_no_claims": 0,
+   "shared": 8,
+   "false_matches": [],
+   "no_claims_matches": [],
+   "searches": true,
+   "catalog_list": null
+  },
+  "programs": 22,
+  "by_result": {
+   "not_matched": 22
+  },
+  "found": 0,
+  "found_active": 0,
+  "found_pages": 0,
+  "found_programs": [],
+  "other_programs": [
+   {
+    "control_number": "04414",
+    "title": "Vocational Nursing",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active - Teachout Only",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "04416",
+    "title": "Medical Assistant",
+    "award": "A.S. Degree",
+    "status": "Active - Teachout Only",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "04422",
+    "title": "Mathematics",
+    "award": "A.S. Degree",
+    "status": "Active - Teachout Only",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "04427",
+    "title": "Child Development and Education",
+    "award": "A.S. Degree",
+    "status": "Active - Teachout Only",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "08676",
+    "title": "Office Administration: Tech Prep",
+    "award": "A.S. Degree",
+    "status": "Active - Teachout Only",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "08678",
+    "title": "Microsoft Applications Specialist: Tech Prep",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "status": "Active - Teachout Only",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "08685",
+    "title": "Gerontology",
+    "award": "A.S. Degree",
+    "status": "Active - Teachout Only",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "10769",
+    "title": "Microsoft Applications Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "status": "Active - Teachout Only",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "17905",
+    "title": "Liberal Arts: Business & Technology",
+    "award": "A.A. Degree",
+    "status": "Active - Teachout Only",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "18793",
+    "title": "Communication Studies",
+    "award": "A.A. Degree",
+    "status": "Active - Teachout Only",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "19301",
+    "title": "Geography",
+    "award": "A.A. Degree",
+    "status": "Active - Teachout Only",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "20795",
+    "title": "English",
+    "award": "A.A. Degree",
+    "status": "Active - Teachout Only",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "22128",
+    "title": "CIS: General Track",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "status": "Active - Teachout Only",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "22132",
+    "title": "Advanced Audio Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "status": "Active - Teachout Only",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "22137",
+    "title": "Medical Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "status": "Active - Teachout Only",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "22138",
+    "title": "Diagnostic Medical Sonography",
+    "award": "Certificate of Achievement requiring 60+S/90+Q units",
+    "status": "Active - Teachout Only",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "22139",
+    "title": "Child Development and Education",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active - Teachout Only",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "22140",
+    "title": "Gerontology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "status": "Active - Teachout Only",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "22142",
+    "title": "Alcohol & Drug Studies",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active - Teachout Only",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "30314",
+    "title": "Anthropology",
+    "award": "A.A. Degree",
+    "status": "Active - Teachout Only",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "30315",
+    "title": "American Indian Studies",
+    "award": "A.A. Degree",
+    "status": "Active - Teachout Only",
+    "result": "not_matched",
+    "why": "its page went to closed-list 40367 (American Indian Studies)",
+    "url": "https://catalog.msjc.edu/instructional-programs/american-indian-studies/american-indian-studies-aa/",
+    "h1": "American Indian Studies, A.A.",
+    "awards": [
+     "aa"
+    ]
+   },
+   {
+    "control_number": "36274",
+    "title": "Foundations of Math",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
+ "loads": 222,
+ "seconds": 1073.7,
+ "found": 113,
+ "by_method": {
+  "no_closed_list": 22,
+  "not_found": 25,
+  "page_claimed": 14,
+  "sitemap_page": 113
+ },
+ "shared_pages": {
+  "https://catalog.msjc.edu/instructional-programs/nursing-registered-nursing/nursing-as/": [
+   "04413",
+   "43979"
+  ],
+  "https://catalog.msjc.edu/instructional-programs/dance/dance-aa/": [
+   "08680",
+   "38950"
+  ],
+  "https://catalog.msjc.edu/instructional-programs/business-business-administration/business-administration-ast/": [
+   "31140",
+   "41691"
+  ],
+  "https://catalog.msjc.edu/instructional-programs/communication-studies/communication-studies-aat/": [
+   "32120",
+   "43000"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "04404",
+   "title": "Music",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://catalog.msjc.edu/instructional-programs/music/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5063,
+     "content": 15721,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      591
+     ],
+     [
+      "Careers and Salaries",
+      1128
+     ]
+    ],
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "04405",
+   "title": "Theater Arts",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://catalog.msjc.edu/instructional-programs/liberal-arts/liberal-arts-mathematics-science-aa/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 0 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2262,
+     "content": 16690,
+     "tabs": 5092
+    },
+    "tab_panels": [
+     [
+      "Requirements",
+      5072
+     ],
+     [
+      "Career Exploration",
+      604
+     ]
+    ],
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "08688",
+   "title": "Alcohol & Drug Studies",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "08689",
+   "title": "Humanities",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "12877",
+   "title": "Horticulture",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "17904",
+   "title": "Liberal Arts: Arts, Humanities & Communications",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://catalog.msjc.edu/instructional-programs/liberal-arts/liberal-arts-mathematics-science-aa/",
+    "label": {
+     "award": 1,
+     "title": 0.6
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2262,
+     "content": 16690,
+     "tabs": 5092
+    },
+    "tab_panels": [
+     [
+      "Requirements",
+      5072
+     ],
+     [
+      "Career Exploration",
+      604
+     ]
+    ]
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "18192",
+   "title": "Horticulture",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "24030",
+   "title": "Light Duty Automotive Service",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "24376",
+   "title": "ESL Multi-level",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "24448",
+   "title": "ESL General",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.msjc.edu/degrees-certificates-curricula/general-education-option-a/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 26224,
+     "content": 32731,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "24450",
+   "title": "ABE-GED Preparation",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "32553",
+   "title": "Interpreter Preparation",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.msjc.edu/instructional-programs/fire-technology/fire-academy-preparation-ecc/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 0 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2238,
+     "content": 12529,
+     "tabs": 847
+    },
+    "tab_panels": [
+     [
+      "Program Map",
+      620
+     ],
+     [
+      "Requirements",
+      186
+     ],
+     [
+      "Career Exploration",
+      604
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "32823",
+   "title": "Interpreter Preparation",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.msjc.edu/instructional-programs/fire-technology/fire-academy-preparation-ecc/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 0 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2238,
+     "content": 12529,
+     "tabs": 847
+    },
+    "tab_panels": [
+     [
+      "Program Map",
+      620
+     ],
+     [
+      "Requirements",
+      186
+     ],
+     [
+      "Career Exploration",
+      604
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "35093",
+   "title": "ESL-Advanced",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "35829",
+   "title": "California Preschool Foundations and Framework",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "38818",
+   "title": "Construction Technology",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.msjc.edu/instructional-programs/automotive-transportation-technology/automotive-transportation-technology-certificate/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2547,
+     "content": 14522,
+     "tabs": 1264
+    },
+    "tab_panels": [
+     [
+      "Program Map",
+      845
+     ],
+     [
+      "Requirements",
+      378
+     ],
+     [
+      "Career Exploration",
+      1869
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "38819",
+   "title": "Culinary Arts",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.msjc.edu/instructional-programs/culinary-arts/culinary-arts--hospitality-certificate/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2418,
+     "content": 14372,
+     "tabs": 1276
+    },
+    "tab_panels": [
+     [
+      "Program Map",
+      848
+     ],
+     [
+      "Requirements",
+      387
+     ],
+     [
+      "Career Exploration",
+      1854
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "38820",
+   "title": "Digital Communication",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.msjc.edu/instructional-programs/creative-media/digital-media/digital-media-certificate/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1614,
+     "content": 15230,
+     "tabs": 3065
+    },
+    "tab_panels": [
+     [
+      "Program Map",
+      2252
+     ],
+     [
+      "Requirements",
+      772
+     ],
+     [
+      "Careers and Salaries",
+      1824
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "39949",
+   "title": "Health Careers",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.msjc.edu/instructional-programs/allied-health/medical-laboratory-assistant-certificate/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2824,
+     "content": 14499,
+     "tabs": 922
+    },
+    "tab_panels": [
+     [
+      "Program Map",
+      659
+     ],
+     [
+      "Requirements",
+      222
+     ],
+     [
+      "Careers and Salaries",
+      1853
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "40534",
+   "title": "Aviation Science",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.msjc.edu/instructional-programs/geospatial-information-science/geographic-information-science-as/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 0 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2479,
+     "content": 15563,
+     "tabs": 3668
+    },
+    "tab_panels": [
+     [
+      "Program Map",
+      2306
+     ],
+     [
+      "Requirements",
+      1321
+     ],
+     [
+      "Career Exploration",
+      604
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "40535",
+   "title": "Certified Flight Instructor",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "40549",
+   "title": "Commercial Pilot",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "43810",
+   "title": "Basic Principles and Occupational Skills for Early Childhood Educators",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "45049",
+   "title": "Medical Laboratory Technician, A.S.",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.msjc.edu/instructional-programs/allied-health/medical-laboratory-assistant-certificate/",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.222,
+    "body": 0.0,
+    "content": 0.222,
+    "net": 2,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 2 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2824,
+     "content": 14499,
+     "tabs": 922
+    },
+    "tab_panels": [
+     [
+      "Program Map",
+      659
+     ],
+     [
+      "Requirements",
+      222
+     ],
+     [
+      "Careers and Salaries",
+      1853
+     ]
+    ]
+   },
+   "status": "Approved"
+  },
+  {
+   "control_number": "45127",
+   "title": "Truck Driver Training and Occupational Skills",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "04392",
+   "title": "Business, Clerical",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.msjc.edu/instructional-programs/business-office-administration/office-administration-as/"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "08681",
+   "title": "Musical Theater",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.msjc.edu/degrees-certificates-curricula/c-id/msjc-cid--chart/"
+   ],
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "16038",
+   "title": "Business Clerical: Tech Prep",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.msjc.edu/instructional-programs/business-office-administration/office-administration-as/"
+   ],
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "16765",
+   "title": "Environmental Studies",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.msjc.edu/degrees-certificates-curricula/general-education-option-a/",
+    "https://catalog.msjc.edu/degrees-certificates-curricula/c-id/msjc-cid--chart/",
+    "https://catalog.msjc.edu/instructional-programs/liberal-arts/liberal-arts-mathematics-science-aa/"
+   ],
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "16774",
+   "title": "Advanced Audio Technology",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.msjc.edu/instructional-programs/creative-media/audio-production/audio-production-aa/"
+   ],
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "22125",
+   "title": "Office Administration Technician",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.msjc.edu/instructional-programs/business-business-administration/business-administration-certificate/"
+   ],
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "22126",
+   "title": "Office Administration: Tech Prep",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.msjc.edu/instructional-programs/business-business-administration/business-administration-certificate/"
+   ],
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "22135",
+   "title": "Musical Theater",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.msjc.edu/instructional-programs/dance/dance-certificate/"
+   ],
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "30449",
+   "title": "Mathematics",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.msjc.edu/instructional-programs/engineering-technology/engineering-as/",
+    "https://catalog.msjc.edu/instructional-programs/computer-information-systems/computer-information-systems-associates-degree/",
+    "https://catalog.msjc.edu/instructional-programs/mathematics/mathematics-ast/",
+    "https://catalog.msjc.edu/instructional-programs/liberal-arts/liberal-arts-mathematics-science-aa/",
+    "https://catalog.msjc.edu/degrees-certificates-curricula/c-id/msjc-cid--chart/",
+    "https://catalog.msjc.edu/instructional-programs/physics/physics-ast/",
+    "https://catalog.msjc.edu/degrees-certificates-curricula/general-education-option-a/",
+    "https://catalog.msjc.edu/instructional-programs/computer-information-systems/computer-science-as-t/",
+    "https://catalog.msjc.edu/instructional-programs/computer-information-systems/programming-certificate/"
+   ],
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "39068",
+   "title": "CSU GE-Breadth",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://catalog.msjc.edu/degrees-certificates-curricula/general-education-option-a/",
+    "https://catalog.msjc.edu/degrees-certificates-curricula/general-education-requirements-cal-getc/",
+    "https://catalog.msjc.edu/degrees-certificates-curricula/c-id/msjc-cid--chart/"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "39079",
+   "title": "Intersegmental GE Transfer Curriculum (IGETC)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://catalog.msjc.edu/degrees-certificates-curricula/general-education-option-a/",
+    "https://catalog.msjc.edu/degrees-certificates-curricula/general-education-requirements-cal-getc/",
+    "https://catalog.msjc.edu/degrees-certificates-curricula/c-id/msjc-cid--chart/"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "40010",
+   "title": "Chemistry",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://catalog.msjc.edu/instructional-programs/biology/biology-as-t/",
+    "https://catalog.msjc.edu/instructional-programs/environmental-studies/environmental-studies-ast/",
+    "https://catalog.msjc.edu/instructional-programs/geology/geology-a.s.-t/",
+    "https://catalog.msjc.edu/instructional-programs/computer-information-systems/computer-science-as-t/",
+    "https://catalog.msjc.edu/instructional-programs/mathematics/mathematics-ast/",
+    "https://catalog.msjc.edu/instructional-programs/physics/physics-ast/",
+    "https://catalog.msjc.edu/degrees-certificates-curricula/c-id/msjc-cid--chart/",
+    "https://catalog.msjc.edu/degrees-certificates-curricula/general-education-option-a/",
+    "https://catalog.msjc.edu/instructional-programs/liberal-arts/liberal-arts-mathematics-science-aa/",
+    "https://catalog.msjc.edu/instructional-programs/engineering-technology/engineering-as/"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "46231",
+   "title": "Administrative Professional",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.msjc.edu/instructional-programs/business-business-administration/business-administration-certificate/",
+    "https://catalog.msjc.edu/instructional-programs/business-business-administration/facilities-management-certificate/",
+    "https://catalog.msjc.edu/instructional-programs/management-supervision/management-supervision-certificate/",
+    "https://catalog.msjc.edu/instructional-programs/business-office-administration/office-administration-as/",
+    "https://catalog.msjc.edu/instructional-programs/management-supervision/management-supervision-as/"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "46232",
+   "title": "Culinary Arts & Hospitality",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.msjc.edu/instructional-programs/culinary-arts/culinary-arts--hospitality-certificate/"
+   ],
+   "status": "Active"
+  }
+ ],
+ "page_challenged": [],
+ "coverage_bands": {
+  "0.5-0.8": 3,
+  "0.8-1.0": 27,
+  "1.0": 83
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/mt_san_jacinto",
+  "kept": 82,
+  "kept_moved": 0,
+  "programs": 31,
+  "list": [
+   {
+    "control_number": "04388",
+    "title": "Business Administration",
+    "award": "A.S. Degree",
+    "url": "https://catalog.msjc.edu/instructional-programs/business-business-administration/business-administration-as/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.msjc.edu/instructional-programs/business-business-administration/business-administration-as/",
+    "was_coverage": 0.818,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "04389",
+    "title": "Small Business/Entrepreneurship",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.msjc.edu/instructional-programs/business-business-administration/small-business-entrepreneurship-certificate/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.msjc.edu/instructional-programs/business-business-administration/small-business-entrepreneurship-certificate/",
+    "was_coverage": 0.917,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "04390",
+    "title": "Management/Supervision",
+    "award": "A.S. Degree",
+    "url": "https://catalog.msjc.edu/instructional-programs/management-supervision/management-supervision-as/",
+    "coverage": 0.933,
+    "was_url": "https://catalog.msjc.edu/instructional-programs/management-supervision/management-supervision-as/",
+    "was_coverage": 0.867,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "04403",
+    "title": "Art",
+    "award": "A.A. Degree",
+    "url": "https://catalog.msjc.edu/instructional-programs/art-design/art-aa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.msjc.edu/instructional-programs/art-design/art-aa/",
+    "was_coverage": 0.929,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "04430",
+    "title": "Social/Behavioral Science",
+    "award": "A.A. Degree",
+    "url": "https://catalog.msjc.edu/instructional-programs/social-behavioral-sciences/social-behavioral-science-aa/",
+    "coverage": 0.967,
+    "was_url": "https://catalog.msjc.edu/instructional-programs/social-behavioral-sciences/social-behavioral-science-aa/",
+    "was_coverage": 0.945,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "16742",
+    "title": "Visual Design",
+    "award": "A.A. Degree",
+    "url": "https://catalog.msjc.edu/instructional-programs/art-design/visual-design-aa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.msjc.edu/instructional-programs/art-design/visual-design-aa/",
+    "was_coverage": 0.9,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "17906",
+    "title": "Liberal Arts: Mathematics & Science",
+    "award": "A.A. Degree",
+    "url": "https://catalog.msjc.edu/instructional-programs/liberal-arts/liberal-arts-mathematics-science-aa/",
+    "coverage": 0.986,
+    "was_url": "https://catalog.msjc.edu/instructional-programs/liberal-arts/liberal-arts-mathematics-science-aa/",
+    "was_coverage": 0.943,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "17907",
+    "title": "Liberal Arts: Social & Behavioral Sciences",
+    "award": "A.A. Degree",
+    "url": "https://catalog.msjc.edu/instructional-programs/liberal-arts/liberal-arts-social-behavioral-sciences-aa/",
+    "coverage": 0.991,
+    "was_url": "https://catalog.msjc.edu/instructional-programs/liberal-arts/liberal-arts-social-behavioral-sciences-aa/",
+    "was_coverage": 0.974,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "22122",
+    "title": "Business Administration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.msjc.edu/instructional-programs/business-business-administration/business-administration-certificate/",
+    "coverage": 0.957,
+    "was_url": "https://catalog.msjc.edu/instructional-programs/business-business-administration/business-administration-certificate/",
+    "was_coverage": 0.87,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "22123",
+    "title": "Management/Supervision",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.msjc.edu/instructional-programs/management-supervision/management-supervision-certificate/",
+    "coverage": 0.933,
+    "was_url": "https://catalog.msjc.edu/instructional-programs/management-supervision/management-supervision-certificate/",
+    "was_coverage": 0.867,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "30679",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.msjc.edu/instructional-programs/mathematics/mathematics-ast/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.msjc.edu/instructional-programs/mathematics/mathematics-ast/",
+    "was_coverage": 0.846,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "31140",
+    "title": "Business Administration",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.msjc.edu/instructional-programs/business-business-administration/business-administration-ast/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.msjc.edu/instructional-programs/business-business-administration/business-administration-ast/",
+    "was_coverage": 0.778,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "32472",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.msjc.edu/instructional-programs/psychology/psychology-aat/",
+    "coverage": 0.889,
+    "was_url": "https://catalog.msjc.edu/instructional-programs/psychology/psychology-aat/",
+    "was_coverage": 0.852,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "32481",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.msjc.edu/instructional-programs/art-design/studio-arts-aat/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.msjc.edu/instructional-programs/art-design/studio-arts-aat/",
+    "was_coverage": 0.895,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "32492",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.msjc.edu/instructional-programs/computer-information-systems/computer-science-as-t/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.msjc.edu/instructional-programs/computer-information-systems/computer-science-as-t/",
+    "was_coverage": 0.846,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "32494",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.msjc.edu/instructional-programs/art-design/art-history-aat/",
+    "coverage": 0.981,
+    "was_url": "https://catalog.msjc.edu/instructional-programs/art-design/art-history-aat/",
+    "was_coverage": 0.942,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "33297",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.msjc.edu/instructional-programs/economics/economics-aat/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.msjc.edu/instructional-programs/economics/economics-aat/",
+    "was_coverage": 0.789,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "35602",
+    "title": "Accounting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.msjc.edu/instructional-programs/business-business-administration/accounting-certificate/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.msjc.edu/instructional-programs/business-business-administration/accounting-certificate/",
+    "was_coverage": 0.889,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "36360",
+    "title": "Child and Adolescent Development",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.msjc.edu/instructional-programs/teacher-education-developmental-studies/child-adolescent-development-aat/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.msjc.edu/instructional-programs/teacher-education-developmental-studies/child-adolescent-development-aat/",
+    "was_coverage": 0.976,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "38019",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.msjc.edu/instructional-programs/physics/physics-ast/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.msjc.edu/instructional-programs/physics/physics-ast/",
+    "was_coverage": 0.833,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "38847",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.msjc.edu/instructional-programs/biology/biology-as-t/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.msjc.edu/instructional-programs/biology/biology-as-t/",
+    "was_coverage": 0.929,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "38881",
+    "title": "Environmental Science",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.msjc.edu/instructional-programs/environmental-studies/environmental-studies-ast/",
+    "coverage": 0.952,
+    "was_url": "https://catalog.msjc.edu/instructional-programs/environmental-studies/environmental-studies-ast/",
+    "was_coverage": 0.857,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "38903",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.msjc.edu/instructional-programs/geology/geology-a.s.-t/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.msjc.edu/instructional-programs/geology/geology-a.s.-t/",
+    "was_coverage": 0.714,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "39224",
+    "title": "Journalism",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.msjc.edu/instructional-programs/journalism/journalism-a.a.-t/",
+    "coverage": 0.958,
+    "was_url": "https://catalog.msjc.edu/instructional-programs/journalism/journalism-a.a.-t/",
+    "was_coverage": 0.875,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "39357",
+    "title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.msjc.edu/instructional-programs/law-public-policy-and-society/law-public-policy-and-society-a.a.-t/",
+    "coverage": 0.938,
+    "was_url": "https://catalog.msjc.edu/instructional-programs/law-public-policy-and-society/law-public-policy-and-society-a.a.-t/",
+    "was_coverage": 0.906,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "39455",
+    "title": "Public Health Science",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.msjc.edu/instructional-programs/public-health/public-health-a.s.-t/",
+    "coverage": 0.789,
+    "was_url": "https://catalog.msjc.edu/instructional-programs/public-health/public-health-a.s.-t/",
+    "was_coverage": 0.737,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "39466",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.msjc.edu/instructional-programs/nutrition-and-dietetics/nutrition-and-dietetics-a.s.-t/",
+    "coverage": 0.967,
+    "was_url": "https://catalog.msjc.edu/instructional-programs/nutrition-and-dietetics/nutrition-and-dietetics-a.s.-t/",
+    "was_coverage": 0.933,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "40368",
+    "title": "Puente Program Completion",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.msjc.edu/instructional-programs/puente-program/puente-program-completion-certificate/",
+    "coverage": 0.958,
+    "was_url": "https://catalog.msjc.edu/instructional-programs/puente-program/puente-program-completion-certificate/",
+    "was_coverage": 0.917,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41691",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.msjc.edu/instructional-programs/business-business-administration/business-administration-ast/",
+    "coverage": 0.944,
+    "was_url": "https://catalog.msjc.edu/instructional-programs/business-business-administration/business-administration-ast/",
+    "was_coverage": 0.778,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "44742",
+    "title": "Engineering",
+    "award": "A.S. Degree",
+    "url": "https://catalog.msjc.edu/instructional-programs/engineering-technology/engineering-as/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.msjc.edu/instructional-programs/engineering-technology/engineering-as/",
+    "was_coverage": 0.926,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "44847",
+    "title": "General Education Breadth, Cal-GETC",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.msjc.edu/degrees-certificates-curricula/general-education-requirements-cal-getc/",
+    "coverage": 0.951,
+    "was_url": "https://catalog.msjc.edu/degrees-certificates-curricula/general-education-requirements-cal-getc/",
+    "was_coverage": 0.926,
+    "was_method": "sitemap_page"
+   }
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
+ },
+ "fingerprints": {
+  "04388": {
+   "sha256": "36f5c750736754f073ec8440f39798f472507213d0662eb24e164f2caefa3bb5",
+   "url": "https://catalog.msjc.edu/instructional-programs/business-business-administration/business-administration-as/"
+  },
+  "04389": {
+   "sha256": "b0e7d6f6508a1903c8430f7e38491adc9b41830dbc681a87e5ae9c6b50ef30e8",
+   "url": "https://catalog.msjc.edu/instructional-programs/business-business-administration/small-business-entrepreneurship-certificate/"
+  },
+  "04390": {
+   "sha256": "bd66787a384a63b1eb9f32013c91b67e07f6224ab7369f4488593012f56d4b7e",
+   "url": "https://catalog.msjc.edu/instructional-programs/management-supervision/management-supervision-as/"
+  },
+  "04391": {
+   "sha256": "1f9325364c80d3641cbc788e323c42f59275521d70c5a3603ffbfefa783f61d3",
+   "url": "https://catalog.msjc.edu/instructional-programs/real-estate/real-estate-as/"
+  },
+  "04395": {
+   "sha256": "e07080b48842e1c71d0738b7e874967fe3503feddfe27d733a2865b62a59bbb2",
+   "url": "https://catalog.msjc.edu/instructional-programs/computer-information-systems/computer-information-systems-associates-degree/"
+  },
+  "04396": {
+   "sha256": "4ab769aee93cc699f01c437fbcd0ee894e4599807b3ce36530d52d7bc7456623",
+   "url": "https://catalog.msjc.edu/instructional-programs/kinesiology/physical-education-aa/"
+  },
+  "04400": {
+   "sha256": "7410ab346d9e5c44558439ef5ef25fa20b1cd5563bbc87d7fe94684d42893f0e",
+   "url": "https://catalog.msjc.edu/instructional-programs/automotive-transportation-technology/automotive-technology-as/"
+  },
+  "04402": {
+   "sha256": "211d43154e91b53b4d77c9d3c92643dabc88c16f1640e9ef0155ab39055fde12",
+   "url": "https://catalog.msjc.edu/instructional-programs/engineering-technology/engineering-drafting-technology-as/"
+  },
+  "04403": {
+   "sha256": "ceb143f78e2ab3e40279a081d1d3a2d604c155313d9a23fee4344d1daedd642b",
+   "url": "https://catalog.msjc.edu/instructional-programs/art-design/art-aa/"
+  },
+  "04407": {
+   "sha256": "36aa5f0f599004cbb196a63ef292314a70378520e49a9e2ed69eb0c347c87e73",
+   "url": "https://catalog.msjc.edu/instructional-programs/creative-media/digital-photography/photography-as/"
+  },
+  "04413": {
+   "sha256": "786bb414067783a95c3627e4e55dffe3b3a63d6ca01b626336b75c4c66769bb7",
+   "url": "https://catalog.msjc.edu/instructional-programs/nursing-registered-nursing/nursing-as/"
+  },
+  "04426": {
+   "sha256": "07483fda0234fbf0162fdc42cede02965a8644631628a478bb58164404c97c40",
+   "url": "https://catalog.msjc.edu/instructional-programs/administration-justice/administration-justice-as/"
+  },
+  "04429": {
+   "sha256": "b56ac2f6bc78f4811689219ab6a072bb6af5a3b7fc4b0b3d015a24e699ceab99",
+   "url": "https://catalog.msjc.edu/instructional-programs/fire-technology/fire-technology-as/"
+  },
+  "04430": {
+   "sha256": "e63881ffa8312f60146472a9702113f5b7f7f2ed4af72a499282dec0b0f91d9b",
+   "url": "https://catalog.msjc.edu/instructional-programs/social-behavioral-sciences/social-behavioral-science-aa/"
+  },
+  "08675": {
+   "sha256": "a2fbed1fbca6703672fd76679eee2f0c3a6e3a04d3e1ef135d3a65e4f4d8cc4e",
+   "url": "https://catalog.msjc.edu/instructional-programs/business-office-administration/office-administration-as/"
+  },
+  "08679": {
+   "sha256": "5109b94e8bd9c9ab6271ced7796e17eb34640cd55181245ece76a3483d2c1ab2",
+   "url": "https://catalog.msjc.edu/instructional-programs/theater-arts/technical-theater-as/"
+  },
+  "08680": {
+   "sha256": "a7aea1d473e90f19fdfc8e355c1c497675a423f59834c39e5bbac85b02964df7",
+   "url": "https://catalog.msjc.edu/instructional-programs/dance/dance-aa/"
+  },
+  "08682": {
+   "sha256": "333c05b819d8cc827dd9c598809170eec49348160eed45aef4738e376cc913e0",
+   "url": "https://catalog.msjc.edu/instructional-programs/creative-media/audio-production/audio-production-aa/"
+  },
+  "08686": {
+   "sha256": "b0aadbafe6f83a840da5a44d1b63cf3cff1ebabf26a995e88b091407d52a0560",
+   "url": "https://catalog.msjc.edu/instructional-programs/legal-studies/legal-studies-as/"
+  },
+  "08690": {
+   "sha256": "b7a51436e8492edc3a9e91bc17da1894901e139197240fe3570ec5342abc24ae",
+   "url": "https://catalog.msjc.edu/instructional-programs/science/science-as/"
+  },
+  "11474": {
+   "sha256": "357013a189841c6a9d3ebf2c3d00ccefdb19ec49942fd847764f02d602959eb7",
+   "url": "https://catalog.msjc.edu/instructional-programs/computer-information-systems/internet-authoring-certificate/"
+  },
+  "11475": {
+   "sha256": "d61f59605d6beab600b8d7f63ce8e2686b7c071581b82609f3617b9686231e1b",
+   "url": "https://catalog.msjc.edu/instructional-programs/computer-information-systems/networking-certificate/"
+  },
+  "11476": {
+   "sha256": "aafa01f98c020670a4293d1b4755ae18085fc330fa791a1ab263d6571a3a28c5",
+   "url": "https://catalog.msjc.edu/instructional-programs/computer-information-systems/programming-certificate/"
+  },
+  "12022": {
+   "sha256": "66e5fbbf7f338f843e00729ada9fadffdcb7808c770b04fb62b8f858c7248ac3",
+   "url": "https://catalog.msjc.edu/instructional-programs/creative-media/digital-media/digital-media-as/"
+  },
+  "12443": {
+   "sha256": "aa59fce8bcca2f9fc40cbdab9cae978ed398e12505a1c20b38b5f6472e055fb6",
+   "url": "https://catalog.msjc.edu/instructional-programs/geospatial-information-science/geographic-information-science-as/"
+  },
+  "14270": {
+   "sha256": "f3867c47cb33ca7169ae1577de9c55be125d8b0a58303dc170f09a5dd36bedc6",
+   "url": "https://catalog.msjc.edu/instructional-programs/water-technology/water-technology-as/"
+  },
+  "16742": {
+   "sha256": "05e97d97d07535ca4171496fc935d5c339367972d06e435be9cdf22292e6e5e4",
+   "url": "https://catalog.msjc.edu/instructional-programs/art-design/visual-design-aa/"
+  },
+  "16824": {
+   "sha256": "1e4ac93c3d37c2dfc3d59de34c6b8a3396bd7d0d1b23fcf60f61e528413e467f",
+   "url": "https://catalog.msjc.edu/instructional-programs/diagnostic-medical-sonography/diagnostic-medical-sonography-as/"
+  },
+  "17906": {
+   "sha256": "b8f3c090e02d77f37506240b51bc692475312492de6697427393ea35c26d25b7",
+   "url": "https://catalog.msjc.edu/instructional-programs/liberal-arts/liberal-arts-mathematics-science-aa/"
+  },
+  "17907": {
+   "sha256": "19bf4d9ad2f0352c755ffd72c68959b8d9239763d0223f0034411167b5c7e300",
+   "url": "https://catalog.msjc.edu/instructional-programs/liberal-arts/liberal-arts-social-behavioral-sciences-aa/"
+  },
+  "22122": {
+   "sha256": "41df13e3113698322cd5d39548d2713e171c1ff71db66e3790f07cd915cd4c33",
+   "url": "https://catalog.msjc.edu/instructional-programs/business-business-administration/business-administration-certificate/"
+  },
+  "22123": {
+   "sha256": "f852bebbd94b9dde20d37200bcd702502925b3055ddbe881f2d176cd3091e6e7",
+   "url": "https://catalog.msjc.edu/instructional-programs/management-supervision/management-supervision-certificate/"
+  },
+  "22124": {
+   "sha256": "5a6912b20eb3d9140517be3a89cd0ec17009e4086e593474728762d15cd85d46",
+   "url": "https://catalog.msjc.edu/instructional-programs/real-estate/real-estate-certificate/"
+  },
+  "22127": {
+   "sha256": "f80167ad45aef50b1ee753036669c2d17ece3fa3ff3f8d61da71ce5456cb6d63",
+   "url": "https://catalog.msjc.edu/instructional-programs/creative-media/digital-media/digital-media-certificate/"
+  },
+  "22129": {
+   "sha256": "fb9f1dafff4da6869c1b5c2b3659db260c97e3c3b5300e36ceca168ba78b5dc7",
+   "url": "https://catalog.msjc.edu/instructional-programs/automotive-transportation-technology/automotive-transportation-technology-certificate/"
+  },
+  "22130": {
+   "sha256": "94b81429c8f4b8f3773eda401ff4bc7de7da2dd23a8862f2f29a418483d22496",
+   "url": "https://catalog.msjc.edu/instructional-programs/engineering-technology/engineering-drafting-technology-certificate/"
+  },
+  "22131": {
+   "sha256": "0525e9c762c971f8a2fbfca398eab2677fdf7f841b3c68263cab21b959da4590",
+   "url": "https://catalog.msjc.edu/instructional-programs/water-technology/water-technology-certificate/"
+  },
+  "22133": {
+   "sha256": "e02740e7315016ac3c5e848b6b7df7eb877c04773e63d049474d5f20246cc16d",
+   "url": "https://catalog.msjc.edu/instructional-programs/creative-media/audio-production/audio-production-certificate/"
+  },
+  "22134": {
+   "sha256": "da079f51ace01548c58dab95074c789af0804bee7dd838b81e1a0b69d39b3152",
+   "url": "https://catalog.msjc.edu/instructional-programs/theater-arts/technical-theater-certificate/"
+  },
+  "22136": {
+   "sha256": "fa2e4948444d73c100ebda2b91d835a743ec2859fd76aa7ae5c5de4b800ff33f",
+   "url": "https://catalog.msjc.edu/instructional-programs/creative-media/digital-photography/photography-certificate/"
+  },
+  "22141": {
+   "sha256": "0b17813999a637c7681b64715807d10284849b80bdb096e44eb762a8118f1082",
+   "url": "https://catalog.msjc.edu/instructional-programs/legal-studies/legal-studies-certificate/"
+  },
+  "22143": {
+   "sha256": "60d71cedbcf454343f8f534031d1e87b8418a08812a007147be7f36e2d6184e8",
+   "url": "https://catalog.msjc.edu/instructional-programs/administration-justice/administration-justice-certificate/"
+  },
+  "22144": {
+   "sha256": "0d28826c305fd5d7c1938959308bdaa593de85238cfa02317c980059a7d7c06f",
+   "url": "https://catalog.msjc.edu/instructional-programs/fire-technology/fire-technology-certificate/"
+  },
+  "22145": {
+   "sha256": "157ccd1c13cd49f223b2168611d57e27569de66d0f45d60e88e338798a839224",
+   "url": "https://catalog.msjc.edu/instructional-programs/geospatial-information-science/geographic-information-science-certificate/"
+  },
+  "30494": {
+   "sha256": "e34d56cb312b2672b40fad96b44d9ea18bfe1d790bbe13bb75518139dd1d01b6",
+   "url": "https://catalog.msjc.edu/instructional-programs/teacher-education-developmental-studies/early-intervention-inclusion-as/"
+  },
+  "30495": {
+   "sha256": "78c4d49f7aacbd930b32448513730e6632ddf42af3411fe3e7ab4c9385ef56be",
+   "url": "https://catalog.msjc.edu/instructional-programs/teacher-education-developmental-studies/early-intervention-inclusion-certificate/"
+  },
+  "30679": {
+   "sha256": "9357d906ef3486e9114149d57823ce39bd9f6baf4686c98cb52a2556d7930e3a",
+   "url": "https://catalog.msjc.edu/instructional-programs/mathematics/mathematics-ast/"
+  },
+  "31140": {
+   "sha256": "f3dfef4ad1ea3f9bd51a76e7cff54a866a16ff66b5b0bb6b768babd10eed94cb",
+   "url": "https://catalog.msjc.edu/instructional-programs/business-business-administration/business-administration-ast/"
+  },
+  "31716": {
+   "sha256": "c81258fffb2a1e4428456c5dcf437b683155023e6ba74e2d0f8f2d88299b9b51",
+   "url": "https://catalog.msjc.edu/instructional-programs/teacher-education-developmental-studies/early-childhood-ast/"
+  },
+  "31798": {
+   "sha256": "dea10041601e7e1505cbeac3607b069a4a82889f0cbb654ef51d90a13a803add",
+   "url": "https://catalog.msjc.edu/instructional-programs/political-science/political-science-aat/"
+  },
+  "31853": {
+   "sha256": "ca5530f7294f4e4e338101ecefa8d46dba3385286d7f1f31ceb4ccfe82d21758",
+   "url": "https://catalog.msjc.edu/instructional-programs/anthropology/anthropology-aat/"
+  },
+  "31869": {
+   "sha256": "766bef722ecf98b3269f34bf3f06778705e7216aee912c74c0f4a6c5a6102905",
+   "url": "https://catalog.msjc.edu/instructional-programs/geography/geography-aat/"
+  },
+  "32119": {
+   "sha256": "04b6053223dcb94555d6e5d09d8caa0593598d6ba7cc63d3d60e9d2337cbb2ac",
+   "url": "https://catalog.msjc.edu/instructional-programs/english/english-aat/"
+  },
+  "32120": {
+   "sha256": "dda1351ead81187650508e3471628b6f6266977e0d73c2ee16980d2dcc699052",
+   "url": "https://catalog.msjc.edu/instructional-programs/communication-studies/communication-studies-aat/"
+  },
+  "32181": {
+   "sha256": "d21a49a677a6631afaf78958b519d4a72f626568ed9edff10f23281be951ebf5",
+   "url": "https://catalog.msjc.edu/instructional-programs/history/history-aat/"
+  },
+  "32397": {
+   "sha256": "ba0914fa1bb828b761117fcbabba6372796a5d9314288edb712cfd20dc0e58e9",
+   "url": "https://catalog.msjc.edu/instructional-programs/music/music-aat/"
+  },
+  "32418": {
+   "sha256": "00fe33d2b14244f5959fda447fe9f667bfaa9fa3d83d8b2c6cce7fe73ab87bdf",
+   "url": "https://catalog.msjc.edu/instructional-programs/philosophy/philosophy-aat/"
+  },
+  "32472": {
+   "sha256": "718c2fe76e5607920eb077e57e6dd52cd222117cfd5a523adc4a246837f5ab6e",
+   "url": "https://catalog.msjc.edu/instructional-programs/psychology/psychology-aat/"
+  },
+  "32473": {
+   "sha256": "63e264009850198f010e43c090057befb93a0c4a8d8846050f5fedf5155a4cf9",
+   "url": "https://catalog.msjc.edu/instructional-programs/administration-justice/administration-justice-ast/"
+  },
+  "32481": {
+   "sha256": "45665a934492d9537ac02aa8199ee212cba14baf4112ab57bb4aab377f5da70f",
+   "url": "https://catalog.msjc.edu/instructional-programs/art-design/studio-arts-aat/"
+  },
+  "32492": {
+   "sha256": "9dfee5c36039e8b79afa9f8712bb338d2bea24e2fc8738961f678770564db534",
+   "url": "https://catalog.msjc.edu/instructional-programs/computer-information-systems/computer-science-as-t/"
+  },
+  "32494": {
+   "sha256": "0c95fb492d2c5e022d0d279b8fd7c3e5cbbdc6a0008f6b218a8523a9b9a2bb77",
+   "url": "https://catalog.msjc.edu/instructional-programs/art-design/art-history-aat/"
+  },
+  "33297": {
+   "sha256": "5d7c33250f443d00c95357e0dfbc412734a61e36ff2075253c1818246f188c9b",
+   "url": "https://catalog.msjc.edu/instructional-programs/economics/economics-aat/"
+  },
+  "35043": {
+   "sha256": "b6e36175de44da4afd32a2312d9a067061821a4d277376405e86274940340af2",
+   "url": "https://catalog.msjc.edu/instructional-programs/engineering-technology/engineering-technologist-support-certificate/"
+  },
+  "35502": {
+   "sha256": "0916a60207f0e12f168e1b18801ca8117883bc1ea9254fbbfd5e10e5d1498f3a",
+   "url": "https://catalog.msjc.edu/instructional-programs/theater-arts/theatre-arts-aat/"
+  },
+  "35559": {
+   "sha256": "56fb6f7f963a4137eaf2d46f8a9b1a2b4d6fdd3ec9d14f4d3eba14d28550e03a",
+   "url": "https://catalog.msjc.edu/instructional-programs/creative-media/digital-media/film-television-electronic-media-ast/"
+  },
+  "35602": {
+   "sha256": "274f64ccfb5a30eecef5c232481b9f595fa899009b4ba84218e9517f217716e1",
+   "url": "https://catalog.msjc.edu/instructional-programs/business-business-administration/accounting-certificate/"
+  },
+  "35689": {
+   "sha256": "c0474c589525e796a75f8b5f0226c97b01eac68a88bf893f3a907fa040ac7e84",
+   "url": "https://catalog.msjc.edu/instructional-programs/kinesiology/kinesiology-aat/"
+  },
+  "36179": {
+   "sha256": "fbd1b8c110ec7199275e7a9914ffb34b7087d61f2c9bdffa5e325379b5a7bda3",
+   "url": "https://catalog.msjc.edu/instructional-programs/teacher-education-developmental-studies/teacher-certificate/"
+  },
+  "36220": {
+   "sha256": "30c34b43535e03053affbbeacea2b72bfbacddb88e1721fd88206be81d4ac158",
+   "url": "https://catalog.msjc.edu/instructional-programs/teacher-education-developmental-studies/associate-teacher-low-unit-certificate/"
+  },
+  "36229": {
+   "sha256": "0ebdac8774d4a49ac175b8a2c5c5f1893f4c39d7a3d337dbc3d080bbac8c13db",
+   "url": "https://catalog.msjc.edu/instructional-programs/teacher-education-developmental-studies/infant-toddler-teacher-low-unit-certificate/"
+  },
+  "36360": {
+   "sha256": "b6741cdf8992a5b8bbd149723a93ad71ba0d6ad9e7ac707d341e1672d22f7ef1",
+   "url": "https://catalog.msjc.edu/instructional-programs/teacher-education-developmental-studies/child-adolescent-development-aat/"
+  },
+  "38019": {
+   "sha256": "2b0a74497a866b16dd77d39b026bbdac7f86467de92bb678e5437fc82bfaad60",
+   "url": "https://catalog.msjc.edu/instructional-programs/physics/physics-ast/"
+  },
+  "38847": {
+   "sha256": "adf1600c167f6a6c95c1468df17284865c67fd86de53d5ae3b25c9e5bd672010",
+   "url": "https://catalog.msjc.edu/instructional-programs/biology/biology-as-t/"
+  },
+  "38881": {
+   "sha256": "9ee08229efd392282bd714f56104f96afd4e4bd5bceb0b9335e4900218a0bada",
+   "url": "https://catalog.msjc.edu/instructional-programs/environmental-studies/environmental-studies-ast/"
+  },
+  "38903": {
+   "sha256": "fc7a2d8a7024026e7e3b776654c51b88a27633a3ac9d0856b17e2966ec43353a",
+   "url": "https://catalog.msjc.edu/instructional-programs/geology/geology-a.s.-t/"
+  },
+  "38950": {
+   "sha256": "a7aea1d473e90f19fdfc8e355c1c497675a423f59834c39e5bbac85b02964df7",
+   "url": "https://catalog.msjc.edu/instructional-programs/dance/dance-aa/"
+  },
+  "39067": {
+   "sha256": "d28e9dfef87ddb41596f332258aaa4f061b15fe0e2591ad60ffb8330424d7c47",
+   "url": "https://catalog.msjc.edu/instructional-programs/dance/dance-certificate/"
+  },
+  "39080": {
+   "sha256": "a177f88e3963879cb9464b7490834e69f05987555e9909d7d9d6e06c6ec1a9d8",
+   "url": "https://catalog.msjc.edu/instructional-programs/honors-enrichment-program/honors-enrichment-program-completion-certificate/"
+  },
+  "39138": {
+   "sha256": "15f66c280c60fc43e9f188a62b4c34eca1a343f17ea4a7bc0ac9673f75567483",
+   "url": "https://catalog.msjc.edu/instructional-programs/world-languages/world-languages-a.a.-t-in-spanish/"
+  },
+  "39224": {
+   "sha256": "2ee281b2c2df8aca7b87199aa5e5d0c4d2862dc9e3289bd0f5554590a2023bcd",
+   "url": "https://catalog.msjc.edu/instructional-programs/journalism/journalism-a.a.-t/"
+  },
+  "39357": {
+   "sha256": "391252ed59f1ed60ed0a172cc01fc8d394bc391a5c4eaef2a9f8316f6f2788e1",
+   "url": "https://catalog.msjc.edu/instructional-programs/law-public-policy-and-society/law-public-policy-and-society-a.a.-t/"
+  },
+  "39455": {
+   "sha256": "0a0420523aa72e2700277bb44c52a27c7e7133bc3ffd9168bc7d78e34e30f0d5",
+   "url": "https://catalog.msjc.edu/instructional-programs/public-health/public-health-a.s.-t/"
+  },
+  "39466": {
+   "sha256": "66286725a7ab361672eba1887cc0ad4804a54750bd590352ed919811af340fcd",
+   "url": "https://catalog.msjc.edu/instructional-programs/nutrition-and-dietetics/nutrition-and-dietetics-a.s.-t/"
+  },
+  "39486": {
+   "sha256": "dc6a96e6c571a988f3f5e47e814b4739e08d58573d71dbb510f386c1bde9d073",
+   "url": "https://catalog.msjc.edu/instructional-programs/social-justice-studies/social-justice-studies-aa-t/"
+  },
+  "40054": {
+   "sha256": "ec94ddf10cb7fdb6092329cbb77f08f48d34c0190afdb97bc1c1438f68b6eab3",
+   "url": "https://catalog.msjc.edu/instructional-programs/sociology/sociology-aat/"
+  },
+  "40366": {
+   "sha256": "5010b4d99b7114307264e7d17bf38ec9446a1da5a5f7581d2173eee8ec9587c3",
+   "url": "https://catalog.msjc.edu/instructional-programs/medical-assisting/medical-assisting-clinical-certificate/"
+  },
+  "40367": {
+   "sha256": "659c8f93b7d952c245db9909b207ad8ba964a42db27bc888f9b0a4a32e536e02",
+   "url": "https://catalog.msjc.edu/instructional-programs/american-indian-studies/american-indian-studies-aa/"
+  },
+  "40368": {
+   "sha256": "980370a6bb112278563480affaa4e2e4e19276770f9491d9fe676f871d2c88a1",
+   "url": "https://catalog.msjc.edu/instructional-programs/puente-program/puente-program-completion-certificate/"
+  },
+  "40385": {
+   "sha256": "722a8f61a3ca5f81e90525ff64719f3f62cf018418e3a6d21d4058270ad22018",
+   "url": "https://catalog.msjc.edu/instructional-programs/medical-assisting/medical-assisting-administrative-certificate/"
+  },
+  "40386": {
+   "sha256": "c0624f54c72490d2498937ec898a5962fe35e6d93e6188e5a9698bf58b492d81",
+   "url": "https://catalog.msjc.edu/instructional-programs/medical-assisting/medical-assisting-administrative--clinical-as/"
+  },
+  "40550": {
+   "sha256": "89a4ec4585e79c59856a485b022ceeff40330b6c0a6e9deedd5cf008122331fa",
+   "url": "https://catalog.msjc.edu/instructional-programs/culinary-arts/culinary-arts--hospitality-certificate/"
+  },
+  "41691": {
+   "sha256": "f3dfef4ad1ea3f9bd51a76e7cff54a866a16ff66b5b0bb6b768babd10eed94cb",
+   "url": "https://catalog.msjc.edu/instructional-programs/business-business-administration/business-administration-ast/"
+  },
+  "41764": {
+   "sha256": "ae11d9246ff872957c7a34e49c5b66055f975f327f45a82b22b03e4f805f4eca",
+   "url": "https://catalog.msjc.edu/instructional-programs/administration-justice/crime-scene-investigation-certificate/"
+  },
+  "42375": {
+   "sha256": "ff3f9023da8c62f8fc7bf67bfa568e06ab3c582d2d73af1090592e9ce2bc9e46",
+   "url": "https://catalog.msjc.edu/instructional-programs/business-business-administration/facilities-management-certificate/"
+  },
+  "42469": {
+   "sha256": "d5b9174d06289d0936eb0b72df97be43f62585e256982c2619dd1a0df5350e13",
+   "url": "https://catalog.msjc.edu/instructional-programs/geospatial-information-science/drone-applications-in-geospatial-information-science-certificate/"
+  },
+  "42886": {
+   "sha256": "75981c74ef3ed810f34cc05c60c2541bccf604b3f030c0122daf4d2c570f5718",
+   "url": "https://catalog.msjc.edu/instructional-programs/logistics/logistics-analyst-certificate/"
+  },
+  "42922": {
+   "sha256": "91df19f22e06e6eb7f698374106195bbcb664c59415ff3932ac52815c599a595",
+   "url": "https://catalog.msjc.edu/instructional-programs/logistics/logistics-leadership-certificate/"
+  },
+  "42923": {
+   "sha256": "ca97b4c5488058ed21a02d9d1ab5f0127b4ac5ddd330e8ea6f0117aa0a082d5d",
+   "url": "https://catalog.msjc.edu/instructional-programs/logistics/logistics-operations-specialist-certificate/"
+  },
+  "43000": {
+   "sha256": "dda1351ead81187650508e3471628b6f6266977e0d73c2ee16980d2dcc699052",
+   "url": "https://catalog.msjc.edu/instructional-programs/communication-studies/communication-studies-aat/"
+  },
+  "43355": {
+   "sha256": "f20254cd073b201b125c46413e602c8f48b9072664644a1fdd787af3167af4ef",
+   "url": "https://catalog.msjc.edu/instructional-programs/logistics/logistics-for-entrepreneurs-certificate/"
+  },
+  "43825": {
+   "sha256": "50af061dca2b23a2107ca61e3025d09ec5295e29d5b4739f4724b436eb0b98e1",
+   "url": "https://catalog.msjc.edu/instructional-programs/creative-media/digital-media/game-development-certificate/"
+  },
+  "43826": {
+   "sha256": "27d2f017112d842ba524e8893e796f8b0386ebac25c68b54bb1c6ccb92f09d2e",
+   "url": "https://catalog.msjc.edu/instructional-programs/allied-health/medical-laboratory-assistant-certificate/"
+  },
+  "43979": {
+   "sha256": "4036a519cbddbc89672b3865281c9fb3c4da5f27ae27fb293934c68b298974ca",
+   "url": "https://catalog.msjc.edu/instructional-programs/nursing-registered-nursing/nursing-as/"
+  },
+  "44064": {
+   "sha256": "05566f6a3ec7921dacba58022ec893072f118543c6c553e6c99a0fc706dc10b6",
+   "url": "https://catalog.msjc.edu/instructional-programs/radiologic-technology/radiologic-technology-as/"
+  },
+  "44181": {
+   "sha256": "1bd7491510aa7cfd189c3fd244b09116d3d282f06c7e97fc55381192fdac6f76",
+   "url": "https://catalog.msjc.edu/instructional-programs/gerontology-aging-studies/gerontology-memory-care-certificate/"
+  },
+  "44182": {
+   "sha256": "f0dbdb789e0fc90a04ca2f0970a850663fe976543c3f360514c3179cf553cadc",
+   "url": "https://catalog.msjc.edu/instructional-programs/gerontology-aging-studies/gerontology-health-aging-technology-certificate/"
+  },
+  "44183": {
+   "sha256": "82795a6474c6f6355e94e9f2d96dbafa40d3f25b2dd1c138b847993f7d4ba16a",
+   "url": "https://catalog.msjc.edu/instructional-programs/gerontology-aging-studies/gerontology-caregiving-certificate/"
+  },
+  "44373": {
+   "sha256": "753532c162e4b7dfe03bae69fb63a8cfd139851947e2bb1b056a5cf3f4254cf9",
+   "url": "https://catalog.msjc.edu/instructional-programs/gerontology-aging-studies/gerontology-aging-studies-as/"
+  },
+  "44742": {
+   "sha256": "ef91c2654ca579681b3fb8cb45a5efcdf5217ce64400115fe2048db03c9c279e",
+   "url": "https://catalog.msjc.edu/instructional-programs/engineering-technology/engineering-as/"
+  },
+  "44847": {
+   "sha256": "dc72fff0093356de5f686d1a21aa55010c7617781c22c0b5d28a8648fb36ae40",
+   "url": "https://catalog.msjc.edu/degrees-certificates-curricula/general-education-requirements-cal-getc/"
+  },
+  "44938": {
+   "sha256": "3fceacb5ea9517c59ab2529c7522f266ee6707deeb18e4c396ee087bf089a3f3",
+   "url": "https://catalog.msjc.edu/instructional-programs/welding-technology/welding-technology-certificate/"
+  },
+  "45688": {
+   "sha256": "91614dbf970245dd94e48efe7304efba09c390746d17f64d4739013935bb4782",
+   "url": "https://catalog.msjc.edu/instructional-programs/computer-information-systems/cybersecurity-as/"
+  }
+ },
+ "run": "44741559244"
+}

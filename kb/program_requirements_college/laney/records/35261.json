@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 7886,
-    "output_tokens": 2665,
+    "output_tokens": 2913,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2665,
+  "output_tokens": 2913,
   "output_tokens_details": {
-   "thinking_tokens": 559
+   "thinking_tokens": 693
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08484,
- "ms": 20020,
- "seconds": 20.3,
+ "cost_usd": 0.0898,
+ "ms": 23074,
+ "seconds": 23.4,
  "parts": null,
  "error": null,
  "score": {
@@ -425,12 +425,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Catalog prints zero-padded codes (CIS 001, BUS 005, PHIL 010, COMM 020, etc.); these were matched to the closed list's unpadded codes (CIS 1, BUS 5, PHIL 10, COMM 20) and marked catalog_addition false.",
-   "COMM C1004, ECON 2, ENGL 5 and MATH 13 are not in the closed list and are marked catalog additions.",
-   "Several core courses (CIS 001, 005, 006, 061, 036A, 025) also appear in the electives list; presumably a course used for the core cannot also count as an elective.",
-   "Alternatives COMM 020, ECON 2, ENGL 5 and MATH 13 are printed without units.",
-   "Many courses are marked '( Historical )' in the catalog yet remain listed as options."
+   "Catalog prints codes with leading zeros (e.g., CIS 001, BNK/F 056); these were matched to closed-list codes without zeros (CIS 1, BNK/F 56) and not marked as catalog additions.",
+   "Core courses (CIS 001, 005, 006, 061, 036A, 025) also appear in the Electives list; presumably a course used for the core cannot also count as an elective, but the text does not say so.",
+   "Units for 'or' alternatives COMM 020, ECON 2, ENGL 5 and MATH 13 are not printed beside them in the text.",
+   "COMM C1004 is not in the closed list (closed list has COMM 20, printed here as its alternative).",
+   "Several listed courses are marked '( Historical )' in the catalog (e.g., CIS 025, CIS 027, CIS 036B, CIS 098, BUS 001A, BUS 001B, GRART 115); reviewer may verify availability.",
+   "Careers taken from the description ('careers as Systems Analysts, or as software developers with duties in analysis and design') and Career Opportunities ('career-enhancing skills for programmers, software engineers, and computer systems developers')."
   ]
  },
- "extracted_run": "38935141023"
+ "extracted_run": "44744386009",
+ "catalog_year": "2026-2027"
 }

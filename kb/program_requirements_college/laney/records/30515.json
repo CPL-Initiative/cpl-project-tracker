@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 7115,
-    "output_tokens": 1934,
+    "output_tokens": 1924,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1934,
+  "output_tokens": 1924,
   "output_tokens_details": {
-   "thinking_tokens": 640
+   "thinking_tokens": 634
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06714,
- "ms": 16004,
- "seconds": 16.3,
+ "cost_usd": 0.06694,
+ "ms": 15913,
+ "seconds": 16.2,
  "parts": null,
  "error": null,
  "score": {
@@ -281,11 +281,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Catalog prints codes zero-padded (ECT 028, ECT 021, ECT 012, ECT 027, ECT 022, ECT 036, ECT 035, ECT 025); these were matched to closed-list ECT 28, 21, 12, 27, 22, 36, 35, 25 and not marked as catalog additions.",
-   "Page prints 'Electives to meet 60 units 0.00' even though Total Major Units 28 + General Education 21 = 49, short of the printed Total Units 60; the 0.00 looks like a placeholder. Recorded electives_fill_degree true and no elective units; reviewer should check.",
-   "General education pattern is not named on the page (only 'General Education Requirements: 21.00'), so ge_pattern is null.",
-   "Careers taken from the program description ('BAS technicians and engineers') and the Career Opportunities paragraph; 'BAS technicians' appears in both and is listed once."
+   "Catalog prints codes with leading zeros (ECT 028, ECT 021, ECT 012, ECT 027, ECT 022, ECT 036, ECT 035, ECT 025); these were matched to closed-list ECT 28, 21, 12, 27, 22, 36, 35, 25 and are not marked as catalog additions.",
+   "Page prints 'Electives to meet 60 units 0.00' while Total Major Units 28 + General Education 21 = 49, short of the printed 60 total; the 0.00 appears to be a placeholder, so electives_fill_degree was set true. Reviewer should check.",
+   "General Education Requirements (21 units) does not name a GE pattern; ge_pattern left null (likely Laney local GE).",
+   "Careers taken from the program description and the Career Opportunities paragraph; 'BAS technicians and engineers' split into 'BAS technicians' and 'engineers'."
   ]
  },
- "extracted_run": "38935141023"
+ "extracted_run": "44744386009",
+ "catalog_year": "2026-2027"
 }

@@ -1,0 +1,394 @@
+{
+ "college": "Laney College",
+ "control_number": "09037",
+ "shape": "degree",
+ "title": "Chicanx and Latinx Studies",
+ "award": "A.A. Degree",
+ "source_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44211/44453",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8186,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8186,
+    "output_tokens": 2720,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2720,
+  "output_tokens_details": {
+   "thinking_tokens": 774
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08714,
+ "ms": 22338,
+ "seconds": 22.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 22,
+   "listed": 22,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     39.0,
+     39.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": [],
+    "fill": [
+     21.0,
+     21.0
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 11,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Chicanx and Latinx Studies - A.A. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 21,
+    "max": 21
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Research: Evaluate the development of the field of Chicax and Latinx Studies, utilizing research methodologies and scholarship within the field to produce research and community education.",
+    "Analysis: Effectively employ social science methodologies in the analysis of issues related to Chicanx and Latinx Studies.",
+    "History: Identify and describe the general history of Chicana/o and Latina/o people in the Americas."
+   ],
+   "careers": [
+    "Education",
+    "non-profit leadership",
+    "law",
+    "social services",
+    "public administration",
+    "community organizing",
+    "business",
+    "health",
+    "journalism",
+    "the arts",
+    "communications"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Required Courses (9 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "M/LAT 033",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "M/LAT 034",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "M/LAT 035",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "AFRAM 035",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ASAME 035",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "NATAM 035",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "M/LAT 031",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Arts and Humanities (min 3 units)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "M/LAT 030A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "M/LAT 030B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "M/LAT 032",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "AFRAM 018",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "M/LAT 036",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "M/LAT 037",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "History and Social Sciences (min 3 units)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "M/LAT 012",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "M/LAT 019",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "M/LAT 023",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "M/LAT 031",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "M/LAT 032",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "AFRAM 018",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "M/LAT 038",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Comparative Ethnic Studies (min 3 units)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ETHST 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHST 003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHST 014",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHST 030",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHST 050",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes zero-padded (e.g. M/LAT 033, ETHST 001, AFRAM 018); these match closed-list codes without leading zeros (M/LAT 33, ETHST 1, AFRAM 18), so catalog_addition is false.",
+   "Core third requirement: M/LAT 035 or cross-listed AFRAM/ASAME/NATAM 035, or M/LAT 031; footnote says M/LAT 35 is preferred.",
+   "Footnote: AFRAM 18 or M/LAT 32 can only be used for either History and Social Sciences OR Arts and Humanities, not both. M/LAT 031 also appears both as a core alternative and in History and Social Sciences; reviewer may check whether double-counting is allowed.",
+   "General Education Requirements printed as 21.00 units without naming a specific pattern (likely local GE); ge_pattern left null.",
+   "'Elective courses to meet 60' printed with no units; electives_fill_degree set true. Total Units 60.00 recorded as degree_total; Total Major Units 18.00 as total_units.",
+   "Outcome 1 printed with typo 'Chicax'; copied as printed."
+  ]
+ },
+ "extracted_run": "44744386009",
+ "catalog_year": "2026-2027"
+}

@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10011,
+  "input_tokens": 10012,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10011,
-    "output_tokens": 4173,
+    "input_tokens": 10012,
+    "output_tokens": 4346,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,53 +30,64 @@
     "model": null
    }
   ],
-  "output_tokens": 4173,
+  "output_tokens": 4346,
   "output_tokens_details": {
-   "thinking_tokens": 1071
+   "thinking_tokens": 1126
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.1235,
- "ms": 31503,
- "seconds": 31.8,
+ "cost_usd": 0.12697,
+ "ms": 33712,
+ "seconds": 34.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 47,
+   "placed": 51,
    "listed": 53,
-   "share": 0.887,
+   "share": 0.962,
    "missing": [
     "ARTA100",
-    "ARTA100H",
-    "HISTA170",
-    "HISTA170H",
-    "HISTA175",
-    "HISTA175H"
+    "ARTA100H"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "HISTC1001",
+     "listed": "HISTA170",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001H",
+     "listed": "HISTA170H",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002",
+     "listed": "HISTA175",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002H",
+     "listed": "HISTA175H",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 6,
+   "count": 2,
    "codes": [
     "ARTHC1100",
-    "ARTHC1100H",
-    "HISTC1001",
-    "HISTC1001H",
-    "HISTC1002",
-    "HISTC1002H"
+    "ARTHC1100H"
    ],
    "flagged": [
     "ARTHC1100",
-    "ARTHC1100H",
-    "HISTC1001",
-    "HISTC1001H",
-    "HISTC1002",
-    "HISTC1002H"
+    "ARTHC1100H"
    ],
    "pass": true
   },
@@ -579,41 +590,41 @@
   "missing_explained": [
    {
     "code": "ART A100",
-    "why": "not in the text; requirements list ARTH C1100 instead"
+    "why": "not in the text; catalog now lists ARTH C1100 (common course numbering) in its place"
    },
    {
     "code": "ART A100H",
-    "why": "not in the text; requirements list ARTH C1100H instead"
+    "why": "not in the text; catalog now lists ARTH C1100H in its place"
    },
    {
     "code": "HIST A170",
-    "why": "named only in a program sequence footnote; List C prints HIST C1001"
+    "why": "named only in a Program Sequence footnote, not in the requirements; replaced by HIST C1001"
    },
    {
     "code": "HIST A170H",
-    "why": "named only in a program sequence footnote; List C prints HIST C1001H"
+    "why": "named only in a Program Sequence footnote, not in the requirements; replaced by HIST C1001H"
    },
    {
     "code": "HIST A175",
-    "why": "named only in a program sequence footnote; List C prints HIST C1002"
+    "why": "named only in a Program Sequence footnote, not in the requirements; replaced by HIST C1002"
    },
    {
     "code": "HIST A175H",
-    "why": "named only in a program sequence footnote; List C prints HIST C1002H"
+    "why": "named only in a Program Sequence footnote, not in the requirements; replaced by HIST C1002H"
    }
   ],
   "notes": [
-   "The first required row prints ARTH C1100 or C1100H or ARTH C1200 or C1200H as one 3-unit choice, but the program sequence places both ARTH C1100/H and ARTH C1200/H in semester 1; reviewer should check whether both are meant to be required.",
-   "ARTH C1200/C1200H and PHOT A283 matched closed-list codes ARTHC1200/ARTHC1200H and PHOTA283 (spacing differs).",
-   "Units are printed only beside the first course of each 'or' row and beside List A courses; other units left null.",
-   "List C also allows any course from List A or B not already taken.",
-   "Cal-GETC printed as 'up to 34' units; recorded as 34.",
-   "Total Degree Units 60 printed; program sequence total prints 60-63. Transferable electives printed as 'Varies' to satisfy the unit requirement.",
-   "General requirement text 'minimum of 18-semester units in the major' is a generic ADT rule; total_units taken from the printed 'Total Major Units 18-20'.",
-   "POLS C1000/C1000H appear only in the program sequence as a GE/American Institutions course and are not placed in a block.",
-   "Outcomes printed under 'Program Learning Outcomes' on the overview tab for this degree."
+   "Closed-list codes ARTHC1200, ARTHC1200H and PHOTA283 were matched to catalog codes ARTH C1200, ARTH C1200H and PHOT A283 (spacing difference only), so they are not marked as catalog additions.",
+   "The first required row prints ARTH C1100 or C1100H or C1200 or C1200H as a single 3-unit choice; the Program Sequence tab, however, schedules both ARTH C1100 and ARTH C1200. Reviewer should check whether both surveys are intended to be required.",
+   "ART A102 row is printed as 'Survey of Modern and Contemporary Art History' with ART A108, A109, A109H as 'or' options; recorded as one required choice.",
+   "List C also allows any course from List A or List B not already taken.",
+   "Units are not printed beside individual List B and List C courses; only block totals (3-4 and 3-5) are printed.",
+   "Cal-GETC units are printed as 'up to 34'; recorded as 34 in ge_units.",
+   "Total Major Units 18-20 recorded as total_units; Total Degree Units 60 recorded as degree_total. Transferable electives 'as needed to satisfy unit requirement' with units 'Varies'.",
+   "Program Learning Outcomes are printed in the Overview for the program; recorded as this award's outcomes.",
+   "Program Sequence footnote 1 suggests HIST C1001/C1002 can double count for Cal-GETC Area 3B and List C."
   ]
  },
- "extracted_run": 43136182950,
- "read_run": "38670927724"
+ "extracted_run": "44747523200",
+ "catalog_year": "2026-2027"
 }

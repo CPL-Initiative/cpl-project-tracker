@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 11851,
-    "output_tokens": 6758,
+    "output_tokens": 6384,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 6758,
+  "output_tokens": 6384,
   "output_tokens_details": {
-   "thinking_tokens": 1605
+   "thinking_tokens": 1173
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.18256,
- "ms": 47265,
- "seconds": 47.5,
+ "cost_usd": 0.17508,
+ "ms": 46885,
+ "seconds": 47.7,
  "parts": null,
  "error": null,
  "score": {
@@ -903,15 +903,16 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The extracted text begins ' Sciences - A.A. Degree'; the heading appears truncated and is recorded as 'Social Sciences - A.A. Degree'.",
-   "Codes are printed with leading zeros (e.g. AFRAM 001) while the closed list uses AFRAM 1; these were treated as the same courses (catalog_addition false).",
-   "The table prints General Education Requirements 21.00 and 'Electives to meet 60 units' with no units; the description instead says 19 units of general education and 23 units of electives (and also 'an additional 42 units'). ge_units follows the table (21); degree_elective_units left null and electives_fill_degree set true. Reviewer should check this inconsistency.",
-   "Sub-headings by discipline print odd unit figures (e.g. AFRAM 3.00, ANTHR 6.00, ASAME 9.00, POSCI 9.00, PSYCH 6.00) that do not appear to be requirements; ignored. The rule requires courses from at least two discipline areas.",
-   "Cross-listed courses (AFRAM 018 = M/LAT 032; AFRAM/ASAME/M/LAT/NATAM 035; BIOL 027 = PSYCH 012; COMM 019 = JOURN 062) are each printed as separate rows and recorded separately; a student presumably may count only one of each cross-listed set.",
-   "Alternatives ECON 2, ECON 1, HIST 007A, HIST 007B, POSCI 1, PSYCH 1A are printed as older equivalents without units and are not in the closed list.",
-   "Career Opportunities section states the curriculum is for transfer rather than career preparation; no careers named.",
-   "The program learning outcomes are printed for the program and recorded for this A.A. degree."
+   "Section heading text begins truncated (' Sciences - A.A. Degree'); recorded as 'Social Sciences - A.A. Degree'.",
+   "Discipline sub-headings (AFRAM, ANTHR, ASAME, CULIN, ETHST, HLTED, M/LAT, POSCI, PSYCH) print unit figures (3.00, 6.00, 9.00) that do not match their course lists; they appear to be display artifacts and were not recorded as separate blocks. All courses recorded in the single 18-unit block; the rule requires courses from at least TWO discipline areas.",
+   "Cross-listed courses are printed separately and marked with asterisks: AFRAM 018 = M/LAT 032 (*); AFRAM 035 = ASAME 035 = M/LAT 035 = NATAM 035 (**); BIOL 027 = PSYCH 012 (***); COMM 019 = JOURN 062 (****). Each is recorded as printed; a student presumably earns credit for only one of each set.",
+   "Alternatives ECON 2, ECON 1, HIST 007A, HIST 007B, POSCI 1 and PSYCH 1A are printed without units and are not in the closed list.",
+   "Unit figures conflict: the table prints General Education Requirements 21.00 and 'Electives to meet 60 units' with no units (recorded ge_units 21, electives_fill_degree true), while the description says 19 units of general education and 23 units of electives (18+19+23=60). The description also says 'General Education pattern and elective courses for an additional 42 units'. Reviewer should check.",
+   "The GE pattern is not named (only 'the General Education pattern'/'General Education Requirements'); ge_pattern left null, likely Laney local GE.",
+   "Career Opportunities section names no careers; it states the curriculum is intended for transfer rather than career preparation.",
+   "Program learning outcomes are printed for this A.A. degree."
   ]
  },
- "extracted_run": "38935141023"
+ "extracted_run": "44744386009",
+ "catalog_year": "2026-2027"
 }

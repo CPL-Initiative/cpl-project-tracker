@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7317,
+  "input_tokens": 7957,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7317,
-    "output_tokens": 2168,
+    "input_tokens": 7957,
+    "output_tokens": 1945,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,73 +30,71 @@
     "model": null
    }
   ],
-  "output_tokens": 2168,
+  "output_tokens": 1945,
   "output_tokens_details": {
-   "thinking_tokens": 836
+   "thinking_tokens": 804
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.07263,
- "ms": 18798,
- "seconds": 19.2,
+ "cost_usd": 0.07073,
+ "ms": 17789,
+ "seconds": 22.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 8,
+   "placed": 10,
    "listed": 10,
-   "share": 0.8,
-   "missing": [
-    "ECONC2001",
-    "ECONC2002"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "ECONA170",
-    "ECONA175"
-   ],
-   "flagged": [
-    "ECONA170",
-    "ECONA175"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     24.0,
     25.0
    ],
    "stated": [
-    60.0,
-    60.0
+    24.0,
+    25.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the OCC AS GE pattern, but no units for it"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     24.0,
-     25.0
+     59.0,
+     61.0
     ],
     "stated": [
-     24.0,
-     25.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     18.0,
+     18.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     0.0,
+     1.0
+    ]
    }
   },
   "repeated": {
@@ -121,7 +119,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -133,8 +131,8 @@
    },
    "open_elective_units": null,
    "degree_elective_units": {
-    "min": null,
-    "max": null
+    "min": 17,
+    "max": 18
    },
    "ge_pattern": "OCC AS GE",
    "degree_total": {
@@ -142,8 +140,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 18
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -157,7 +155,7 @@
   },
   "blocks": [
    {
-    "name": "Program Sequence major courses (Plan of Study Grid)",
+    "name": "Required Courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -169,11 +167,31 @@
      {
       "code": "ACCT A100",
       "units": 3,
-      "units_max": null,
+      "units_max": 4,
       "alternatives": [
        {
         "code": "ACCT A101",
-        "units": 4,
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS A110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2002",
+        "units": null,
         "catalog_addition": false
        }
       ],
@@ -208,76 +226,34 @@
       "catalog_addition": false
      },
      {
-      "code": "BUS A110",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
       "code": "RE A150",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
-     {
-      "code": "ECON A170",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "ECON A175",
-        "units": 3,
-        "catalog_addition": true
-       }
-      ],
-      "catalog_addition": true
      }
     ]
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "ECON C2001",
-    "why": "not in the text; the sequence names ECON A170 (Principles of Microeconomics), likely an older/renumbered code"
-   },
-   {
-    "code": "ECON C2002",
-    "why": "not in the text; the sequence names ECON A175 (Principles of Macroeconomics), likely an older/renumbered code"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The REQUIREMENTS tab content is not in the captured text; the degree says to complete the Real Estate Certificate of Achievement plus A.S. graduation requirements. The block was read from the Program Sequence (Plan of Study Grid), which is a suggested curriculum map, not the formal requirements list; a reviewer should check against the certificate's requirements.",
-   "The grid prints ACCT A100 or ACCT A101 as 3-4 units combined; recorded A100 at 3 and A101 at 4 per closed list/titles.",
-   "ECON A170 or ECON A175 printed with 3 units; these codes differ from the closed list's ECON C2001/C2002 and are flagged as catalog additions.",
-   "Total Units 60 in the plan grid is recorded as degree_total. Degree-applicable electives are printed with units (3, 6, '9-4') and a footnote 'VARIES TO REACH MINIMUM 60 DEGREE APPLICABLE UNITS'; elective units were not recorded as open_elective_units because they vary and the 9-4 figure appears garbled.",
-   "No major total is printed in the captured text, so total_units is null.",
-   "GE pattern is OCC's local A.S. GE (areas 1A, 1B, 2, 3, 4, 5, 6); no GE unit total is printed. Footnote 1 says the ECON course meets OCC AS GE AREA 4.",
-   "The overview text refers to the 'Real Estate-Broker Certificate of Achievement'; the program learning outcomes are printed on this degree page and recorded for this award."
+   "The 3-4 range is printed once beside the row 'ACCT A100 or ACCT A101'; it likely reflects ACCT A100 (3) or ACCT A101 (4). Recorded as units 3, units_max 4 on ACCT A100; no separate units printed beside ACCT A101.",
+   "The 3 units for 'ECON C2001 or ECON C2002' are printed once for the pair; no separate units printed beside ECON C2002.",
+   "GE line reads 'General Education Breadth for OCC AS: 21 Units' but the units column prints 18.0 (footnote: double-counted units 3). Recorded ge_units as 18 as printed in the units column; Cal-GETC (up to 34 units) may be substituted.",
+   "Transferable electives line prints '18.0 - 17.0' units toward the 60-unit degree; recorded as degree_elective_units 17-18.",
+   "Overview text describes the Real Estate-Broker Certificate of Achievement and says to complete the Real Estate Certificate of Achievement plus AS graduation requirements; the Program Learning Outcomes appear on the A.S. degree page and are recorded for this award, though they may be shared with the certificate.",
+   "No careers named beyond 'entry-level real estate position' within an outcome; careers left empty."
   ]
  },
- "extracted_run": 43136182950,
+ "extracted_run": "44747523200",
+ "catalog_year": "2026-2027",
  "reconciled": [
-  {
-   "field": "total_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
-   "now": {
-    "min": 24,
-    "max": 25
-   },
-   "words": "Total Major Units\t24 - 25"
-  },
   {
    "field": "degree_total_minimum",
    "was": null,
    "now": true,
    "words": "Total Minimum Degree Units - OCC AS GE\t60"
   }
- ],
- "read_run": "38670927724"
+ ]
 }

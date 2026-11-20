@@ -31,7 +31,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "accounting - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -43,8 +46,11 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.7,
+  "coverage": 1.0,
   "codes_found": [
+   "BNK/F54",
+   "BNK/F55",
+   "BNK/F56",
    "BUS1A",
    "BUS20",
    "BUS202",
@@ -60,7 +66,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "banking and finance - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -71,12 +80,31 @@
   "title": "Management and Supervision",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS5",
+   "BUS56",
+   "M/SVN60",
+   "M/SVN61",
+   "M/SVN64",
+   "M/SVN82"
+  ],
+  "source": {
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44212/44436",
+   "title": "Management and Supervision - Certificate of Achievement",
+   "h1": "Management and Supervision - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "management and supervision - certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2097
  },
  {
   "control_number": "01148",
@@ -84,7 +112,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.875,
+  "coverage": 1.0,
   "codes_found": [
    "BUS10",
    "BUS1A",
@@ -92,7 +120,8 @@
    "BUS38",
    "BUS72",
    "BUS74",
-   "BUS75"
+   "BUS75",
+   "M/SVN60"
   ],
   "source": {
    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44176/44276",
@@ -101,7 +130,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "marketing and sales - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -129,7 +161,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -141,7 +176,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.923,
+  "coverage": 1.0,
   "codes_found": [
    "COMM19",
    "COMMC1000",
@@ -154,6 +189,7 @@
    "JOURN62",
    "JOURN69",
    "JOURN80",
+   "M/SVN82",
    "PHOTO20"
   ],
   "source": {
@@ -163,7 +199,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "journalism - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -187,8 +226,10 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.846,
+  "coverage": 1.0,
   "codes_found": [
+   "E/ET202",
+   "E/ET221",
    "ECT12",
    "ECT13",
    "ECT15",
@@ -208,7 +249,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "residential and light commercial hvac & r - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -239,7 +283,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "wood technology - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -278,7 +325,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "machine technology - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -323,7 +373,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "welding technology - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 23,
@@ -359,7 +412,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "construction management - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -424,7 +480,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "music - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 43,
@@ -457,7 +516,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "theatre arts - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -469,7 +531,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.732,
+  "coverage": 1.0,
   "codes_found": [
    "AFRAM1",
    "AFRAM11",
@@ -499,6 +561,17 @@
    "ETHST3",
    "ETHST30",
    "ETHST50",
+   "M/LAT23",
+   "M/LAT30A",
+   "M/LAT30B",
+   "M/LAT31",
+   "M/LAT32",
+   "M/LAT33",
+   "M/LAT34",
+   "M/LAT35",
+   "M/LAT36",
+   "M/LAT38",
+   "M/LAT39",
    "NATAM2",
    "NATAM35"
   ],
@@ -509,7 +582,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "ethnic studies - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 41,
@@ -546,7 +622,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "cosmetology - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -577,7 +656,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business administration - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -622,7 +704,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "applied graphic design/digital imaging - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -663,7 +748,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "architecture - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -706,7 +794,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "ceramics - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -755,7 +846,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "dance - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 27,
@@ -789,7 +883,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "baking and pastry - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -801,7 +898,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.95,
+  "coverage": 1.0,
   "codes_found": [
    "AFRAM1",
    "AFRAM11",
@@ -821,6 +918,7 @@
    "AFRAM5",
    "AFRAM8",
    "ASAME35",
+   "M/LAT35",
    "NATAM35"
   ],
   "source": {
@@ -830,7 +928,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "african american studies - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -841,12 +942,47 @@
   "title": "Chicanx and Latinx Studies",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AFRAM18",
+   "AFRAM35",
+   "ASAME35",
+   "ETHST1",
+   "ETHST14",
+   "ETHST3",
+   "ETHST30",
+   "ETHST50",
+   "M/LAT12",
+   "M/LAT19",
+   "M/LAT23",
+   "M/LAT30A",
+   "M/LAT30B",
+   "M/LAT31",
+   "M/LAT32",
+   "M/LAT33",
+   "M/LAT34",
+   "M/LAT35",
+   "M/LAT36",
+   "M/LAT37",
+   "M/LAT38",
+   "NATAM35"
+  ],
+  "source": {
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44211/44453",
+   "title": "Chicanx and Latinx Studies - A.A. Degree",
+   "h1": "Chicanx and Latinx Studies - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "chicanx and latinx studies - a.a. degree",
+    "section_fit": 1.0
+   }
+  },
   "listed": 22,
-  "text_chars": 0
+  "text_chars": 4651
  },
  {
   "control_number": "14774",
@@ -854,7 +990,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.941,
+  "coverage": 1.0,
   "codes_found": [
    "AFRAM35",
    "ASAME10",
@@ -871,6 +1007,7 @@
    "ETHST3",
    "ETHST30",
    "ETHST50",
+   "M/LAT35",
    "NATAM35"
   ],
   "source": {
@@ -880,7 +1017,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "asian and asian american studies - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -909,7 +1049,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "retail management - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -921,8 +1064,10 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.882,
+  "coverage": 1.0,
   "codes_found": [
+   "E/ET202",
+   "E/ET221",
    "ECT12",
    "ECT13",
    "ECT15",
@@ -946,7 +1091,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "commercial hvac systems - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -958,8 +1106,10 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.882,
+  "coverage": 1.0,
   "codes_found": [
+   "E/ET202",
+   "E/ET221",
    "ECT12",
    "ECT13",
    "ECT15",
@@ -983,7 +1133,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "commercial hvac systems - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -995,7 +1148,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.925,
+  "coverage": 0.981,
   "codes_found": [
    "AFRAM18",
    "AFRAM26",
@@ -1057,6 +1210,12 @@
    "JAPAN2A",
    "JAPAN50A",
    "JAPAN50B",
+   "M/LAT30A",
+   "M/LAT30B",
+   "M/LAT32",
+   "M/LAT36",
+   "M/LAT37",
+   "M/LAT38",
    "MUSIC10",
    "MUSIC100",
    "MUSIC101",
@@ -1103,7 +1262,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "humanities - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 106,
@@ -1171,7 +1333,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "language arts - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 46,
@@ -1183,7 +1348,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.908,
+  "coverage": 1.0,
   "codes_found": [
    "AFRAM1",
    "AFRAM11",
@@ -1248,6 +1413,15 @@
    "LABST10",
    "LABST13",
    "LABST21",
+   "M/LAT12",
+   "M/LAT19",
+   "M/LAT23",
+   "M/LAT31",
+   "M/LAT32",
+   "M/LAT33",
+   "M/LAT34",
+   "M/LAT35",
+   "M/LAT38",
    "NATAM1",
    "NATAM2",
    "NATAM35",
@@ -1282,7 +1456,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "social sciences - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 98,
@@ -1308,7 +1485,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "architecture design & drafting - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -1341,7 +1521,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "accounting - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -1353,8 +1536,11 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.667,
+  "coverage": 1.0,
   "codes_found": [
+   "BNK/F54",
+   "BNK/F55",
+   "BNK/F56",
    "BUS1A",
    "BUS20",
    "BUS202",
@@ -1369,7 +1555,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "banking and finance - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -1399,7 +1588,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business administration - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -1411,12 +1603,15 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.571,
+  "coverage": 1.0,
   "codes_found": [
    "BUS38",
    "BUS43B",
    "BUS5",
-   "BUS56"
+   "BUS56",
+   "M/SVN60",
+   "M/SVN61",
+   "M/SVN82"
   ],
   "source": {
    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44212/44435",
@@ -1425,7 +1620,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "management and supervision - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -1454,7 +1652,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "marketing and sales - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -1481,7 +1682,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business information systems - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -1517,8 +1721,9 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.889,
+  "coverage": 1.0,
   "codes_found": [
+   "E/ET202",
    "ECT12",
    "ECT13",
    "ECT17",
@@ -1535,7 +1740,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "residential and light commercial hvac & r - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -1565,7 +1773,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "advanced carpentry - certificate of achievement",
+    "section_fit": 0.5
    }
   },
   "listed": 8,
@@ -1596,7 +1807,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "wood technology - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -1641,7 +1855,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "welding technology - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 23,
@@ -1677,7 +1894,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "construction management - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -1715,7 +1935,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "photography - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -1748,7 +1971,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "applied graphic design/digital imaging - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -1782,7 +2008,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "baking and pastry - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -1819,7 +2048,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cosmetology - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -1831,8 +2063,10 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.833,
+  "coverage": 1.0,
   "codes_found": [
+   "E/ET202",
+   "E/ET221",
    "ECT12",
    "ECT21",
    "ECT213",
@@ -1851,7 +2085,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "building automation systems - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -1863,8 +2100,10 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.833,
+  "coverage": 1.0,
   "codes_found": [
+   "E/ET202",
+   "E/ET221",
    "ECT12",
    "ECT21",
    "ECT213",
@@ -1883,7 +2122,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "building automation systems - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -1894,12 +2136,36 @@
   "title": "Electrical Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "E/ET203",
+   "E/ET204",
+   "E/ET207A",
+   "E/ET207B",
+   "E/ET208",
+   "E/ET217",
+   "E/ET218",
+   "E/ET221",
+   "E/ET223",
+   "E/ET226",
+   "E/ET227"
+  ],
+  "source": {
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44190/44612",
+   "title": "Electrical Technology - A.S. Degree",
+   "h1": "Electrical Technology - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "electrical technology - a.s. degree",
+    "section_fit": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 2990
  },
  {
   "control_number": "31234",
@@ -1925,7 +2191,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "mathematics - as-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -1937,8 +2206,11 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.8,
+  "coverage": 1.0,
   "codes_found": [
+   "E/ET203",
+   "E/ET218",
+   "E/ET223",
    "MACH205",
    "MACH206",
    "MACH207",
@@ -1959,7 +2231,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "industrial maintenance - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -1970,12 +2245,36 @@
   "title": "Electrical Technology",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "E/ET203",
+   "E/ET204",
+   "E/ET207A",
+   "E/ET207B",
+   "E/ET208",
+   "E/ET217",
+   "E/ET218",
+   "E/ET221",
+   "E/ET223",
+   "E/ET226",
+   "E/ET227"
+  ],
+  "source": {
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44190/44613",
+   "title": "Electrical Technology - Certificate of Achievement",
+   "h1": "Electrical Technology - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "electrical technology - certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 2913
  },
  {
   "control_number": "32799",
@@ -2002,7 +2301,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "political science - aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -2029,7 +2331,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "translation and interpretation--spanish - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -2061,7 +2366,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "sociology  - aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -2095,7 +2403,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "psychology  - aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -2129,7 +2440,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "anthropology - aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -2166,7 +2480,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "studio arts - aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -2208,7 +2525,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "kinesiology - aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -2236,7 +2556,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "theatre arts - aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -2270,7 +2593,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "journalism - aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -2303,7 +2629,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "philosophy - aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -2348,7 +2677,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "music - aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 23,
@@ -2378,7 +2710,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "mathematics - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -2423,7 +2758,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "cis--computer programming - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 23,
@@ -2467,7 +2805,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "computer information science - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 22,
@@ -2510,7 +2851,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "computer programming with java - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -2553,7 +2897,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "computer programming with c++ - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -2595,7 +2942,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "database management with sql - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -2607,8 +2957,9 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.926,
+  "coverage": 1.0,
   "codes_found": [
+   "BNK/F56",
    "BUS10",
    "BUS1A",
    "BUS1B",
@@ -2632,6 +2983,7 @@
    "ECONC2001",
    "ENGLC1001",
    "GRART115",
+   "M/SVN82",
    "PHIL10",
    "STATC1000"
   ],
@@ -2642,7 +2994,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "computer systems analysis - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 27,
@@ -2669,7 +3024,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "bookkeeping - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -2681,7 +3039,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.929,
+  "coverage": 1.0,
   "codes_found": [
    "COMM2A",
    "ENGL10A",
@@ -2695,6 +3053,7 @@
    "ENGLC1001",
    "ENGLC1002",
    "JOURN21",
+   "M/LAT36",
    "THART2"
   ],
   "source": {
@@ -2704,7 +3063,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "english - aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -2745,7 +3107,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "science - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -2778,7 +3143,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "global studies - aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -2802,7 +3170,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "basic english - certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -2840,7 +3211,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "vocational english for speakers of other languages - certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -2852,7 +3226,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.75,
+  "coverage": 1.0,
   "codes_found": [
    "AFRAM1",
    "AFRAM11",
@@ -2881,6 +3255,16 @@
    "ETHST3",
    "ETHST30",
    "ETHST50",
+   "M/LAT12",
+   "M/LAT19",
+   "M/LAT23",
+   "M/LAT30A",
+   "M/LAT30B",
+   "M/LAT31",
+   "M/LAT33",
+   "M/LAT34",
+   "M/LAT35",
+   "M/LAT36",
    "NATAM1",
    "NATAM2",
    "NATAM35"
@@ -2892,7 +3276,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "social justice: ethnic studies - aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 40,
@@ -2951,7 +3338,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "advanced carpentry - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -2987,7 +3377,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "culinary arts and restaurant management - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -3023,7 +3416,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "culinary arts and restaurant management - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -3061,7 +3457,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "photography - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -3094,7 +3493,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "economics - aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -3122,7 +3524,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "physics - as-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -3134,7 +3539,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.952,
+  "coverage": 1.0,
   "codes_found": [
    "AFRAM1",
    "AFRAM11",
@@ -3155,6 +3560,7 @@
    "AFRAM8",
    "ASAME35",
    "ETHST1",
+   "M/LAT35",
    "NATAM35"
   ],
   "source": {
@@ -3164,7 +3570,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "social justice: african american studies - aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -3175,24 +3584,74 @@
   "title": "Solar Photovoltaic Professionals",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "E/ET203",
+   "E/ET207A",
+   "E/ET208",
+   "E/ET217",
+   "E/ET218",
+   "E/ET222",
+   "E/ET223"
+  ],
+  "source": {
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44190/44614",
+   "title": "Solar Photovoltaic Professionals - Certificate of Achievement",
+   "h1": "Solar Photovoltaic Professionals - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "solar photovoltaic professionals - certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 2019
  },
  {
   "control_number": "37484",
   "title": "Social Justice Studies: Chicanx and Latinx Studies",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AFRAM18",
+   "AFRAM35",
+   "ASAME35",
+   "ETHST1",
+   "M/LAT12",
+   "M/LAT19",
+   "M/LAT23",
+   "M/LAT30A",
+   "M/LAT30B",
+   "M/LAT31",
+   "M/LAT32",
+   "M/LAT33",
+   "M/LAT34",
+   "M/LAT35",
+   "M/LAT36",
+   "M/LAT37",
+   "NATAM35"
+  ],
+  "source": {
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44211/44454",
+   "title": "Social Justice: Chicanx and Latinx Studies  - AA-T Degree",
+   "h1": "Social Justice: Chicanx and Latinx Studies  - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "social justice: chicanx and latinx studies  - aa-t degree",
+    "section_fit": 1.0
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 4563
  },
  {
   "control_number": "37512",
@@ -3218,7 +3677,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "geography - aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -3230,9 +3692,14 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.688,
+  "coverage": 1.0,
   "codes_found": [
    "AFRAM18",
+   "M/LAT30A",
+   "M/LAT30B",
+   "M/LAT32",
+   "M/LAT34",
+   "M/LAT36",
    "SPAN1A",
    "SPAN1B",
    "SPAN22A",
@@ -3251,7 +3718,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "spanish - aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -3276,7 +3746,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "research skills  - certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -3306,7 +3779,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "entrepreneurship - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -3330,7 +3806,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.913,
+  "coverage": 1.0,
   "codes_found": [
    "AFRAM1",
    "AFRAM30",
@@ -3347,6 +3823,8 @@
    "HIST3B",
    "HISTC1001",
    "HISTC1002",
+   "M/LAT19",
+   "M/LAT34",
    "NATAM1",
    "POLSC1000",
    "POSCI2",
@@ -3361,7 +3839,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "history - aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 23,
@@ -3390,7 +3871,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "california green & sustainable building standards - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -3425,7 +3909,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "jazz - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -3490,7 +3977,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "music - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 43,
@@ -3525,7 +4015,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "advanced carpentry - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -3551,7 +4044,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "esol college ready skills - certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -3576,7 +4072,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "esol intermediate - certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -3602,7 +4101,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "esol high intermediate - certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -3627,7 +4129,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "esol high beginning - certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -3670,7 +4175,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "digital fabrication technology--wood technology - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -3695,7 +4203,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "advanced culinary techniques - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -3730,7 +4241,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "chinese - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -3767,7 +4281,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "chinese - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -3791,7 +4308,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "college preparation and orientation - certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -3819,7 +4339,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "culinary foundations - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -3862,7 +4385,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "jazz - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -3886,9 +4412,11 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.75,
+  "coverage": 1.0,
   "codes_found": [
    "LCI201A",
+   "M/LAT30A",
+   "M/LAT30B",
    "MUSIC53A",
    "SPAN33A",
    "SPAN53A",
@@ -3902,7 +4430,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "indigenous languages and cultures-mam - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -3927,7 +4458,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "esol advanced - certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -3956,7 +4490,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "digital newsgathering - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -3990,7 +4527,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "newswriting and reporting - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -4020,7 +4560,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business administration 2.0 - as-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -4062,7 +4605,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "chinese music - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -4092,7 +4638,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "chinese music - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -4138,7 +4687,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "digital fabrication technology - art - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -4165,7 +4717,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "communication studies - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -4190,7 +4745,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "professional lighting - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -4227,7 +4785,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "photographic foundations  - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -4263,7 +4824,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "engineering - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -4301,7 +4865,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "engineering – computer and electrical - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -4325,7 +4892,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "spanish for bilingual/heritage students - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -4350,7 +4920,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "advanced precision machining - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -4376,7 +4949,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cnc machining - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -4402,7 +4978,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "manual machining - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -4431,7 +5010,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "english for speakers of other languages: advanced - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -4471,7 +5053,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "english for speakers of other languages: intermediate - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -4483,8 +5068,9 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.875,
+  "coverage": 1.0,
   "codes_found": [
+   "E/ET202",
    "ECT12",
    "ECT13",
    "ECT15",
@@ -4500,7 +5086,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "refrigeration technology - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -4533,7 +5122,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.5,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -4561,7 +5153,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "english for speakers of other languages: high intermediate - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -4623,7 +5218,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "spanish language and culture - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -4650,7 +5248,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fundamentals of computer numerical control (cnc) manufacturing - certificate of achievement",
+    "section_fit": 0.833
    }
   },
   "listed": 5,
@@ -4675,7 +5276,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fundamentals of wood technology - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -4708,7 +5312,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "data science fundamentals - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -4733,7 +5340,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "esol entry level employment skills - certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -4745,7 +5355,7 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.9,
+  "coverage": 1.0,
   "codes_found": [
    "CONMT12",
    "CONMT14",
@@ -4755,7 +5365,8 @@
    "CONMT22",
    "CONMT3",
    "CONMT4",
-   "CONMT466H"
+   "CONMT466H",
+   "E/ET207A"
   ],
   "source": {
    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44182/44311",
@@ -4764,7 +5375,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "building codes and inspections - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -4798,7 +5412,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies 2,0 - aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -4826,7 +5443,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "modern dance teaching preparation and performance - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -4854,7 +5474,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "ballet dance teaching preparation and performance - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -4882,7 +5505,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "jazz dance teaching preparation and performance - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -4922,7 +5548,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "joyful movement life skills: comprehensive apparatus training - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -4954,7 +5583,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "world folkloric dance teaching preparation and performance - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -4990,7 +5622,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "data science - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -5019,7 +5654,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "joyful movement life skills: reformer training - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -5058,7 +5696,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "joyful movement life skills: mat training - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -5094,7 +5735,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "data analytics - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -5120,7 +5764,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "graphics in motion - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -5156,7 +5803,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "advanced japanese language and culture - certificate of achievement",
+    "section_fit": 0.75
    }
   },
   "listed": 2,
@@ -5182,7 +5832,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "advanced japanese language and culture - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -5211,7 +5864,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "hospitality management - as-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -5236,7 +5892,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "medical interpreting - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -5272,7 +5931,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "introductory spanish language and culture - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -5299,7 +5961,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "applied generative ai - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -5326,7 +5991,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "deep learning - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -5353,7 +6021,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "natural language processing - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -5384,7 +6055,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "computer programming and data fundamentals - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -5408,7 +6082,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "english for healthcare pathways - certificate of competency",
+    "section_fit": 0.667
    }
   },
   "listed": 2,
@@ -5441,7 +6118,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "introduction to digital fabrication - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
