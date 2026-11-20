@@ -1,7 +1,7 @@
 ---
 title: Runner-as-proxy for an external API the agent sandbox can't reach
 created: 2026-06-19
-updated: 2026-06-28
+updated: 2026-11-20
 tags: [playbook, ci, sourcing, sandbox, github-actions]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -18,6 +18,7 @@ artifacts:
   - tools/art_extra_files.json
   - tools/source_cpl_stories.mjs
   - .github/workflows/cpl-stories.yml
+  - tools/first_light_verify.json
 ---
 
 # Runner-as-proxy for an external API the agent sandbox can't reach
@@ -117,6 +118,24 @@ Two hard-won details:
 This is the same playbook (runner reaches what the sandbox can't, commits back),
 extended one rung: when the obstacle is bot-protection rather than an egress
 allowlist, swap the stdlib `fetch` for a headless browser on the same runner.
+
+### A commit-back that skips CI moves a PR head past its checked commit (S688)
+
+The commit-back pushes with the built-in token and the skip tag, and neither starts a workflow. On a PR branch the
+bot commit becomes the head, so the head has no `test` run. This repo gates every merge on `test` succeeding on the
+current head (doctrine, `branch_policy`), so the merge waits on a run that will never start. In S688 an update from
+`main` brought a changed `first_light.js` onto #3500 and #3529, `first-light-art.yml` ran on each branch, and each
+head became a commit that changed only `_generated` in `tools/first_light_verify.json`.
+
+- **Put back a report whose only change is its own timestamp** before the commit-back step (#3578): the workflow
+  compares the report with its stamp removed and commits only a real change.
+- **Until the producer is fixed, revert with a human push** that restores the exact tree `test` passed on, and let
+  `test` run on that head. Never merge past an absent `test`.
+- **Never quote the skip tag in a human commit message.** GitHub honors it anywhere in the head commit's message,
+  quoted or not: S688's first revert quoted the bot commit's subject and its push was skipped too. Call it the skip
+  tag.
+- **Read the head's commits after every update from `main`.** A PR that touches nothing of the workflow's still
+  starts it when the merge brings in a changed watched path.
 
 ## How we got here
 

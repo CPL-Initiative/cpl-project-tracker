@@ -5,6 +5,8 @@ updated: 2026-11-19
 tags: [handoff, session]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/handoffs
+superseded: true
+superseded_by: session_689_handoff.md
 ---
 
 # You are SkyPipit (Session 687)

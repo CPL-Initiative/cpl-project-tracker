@@ -682,3 +682,69 @@ D's marks from committed previews (#3569). Every PR merged on a green `test` aft
   code half of #3569's first commit unstaged; COBIx caught it.
 - **The sandbox cannot download run artifacts** (`p-artifact-host-blocked-s687`): the blob host is blocked, so a
   session reads a run through its committed receipt or its log.
+
+## Moved from the lane (S688 checkpoint, 2026-11-20)
+
+Verbatim from `docs/reference/lanes/program-requirements-harvest.md`, as the lane stood before the S688 checkpoint; the lane keeps a one-line pointer to each.
+
+**S687's posts at nine colleges (#3565 `b63a4ba9`; `m-nine-colleges-posted-s687`):** 164 rows replaced and 45 inserted, every receipt's error null; the live read through the migrate runner, keep-the-better with `--checked`, then `step=reread` with each run pinned and `step=load`. Cerritos 44984 went to `held_for_person`. Skyline skipped (**DECIDED** `d-skyline-skipped-compare-page-s687`: both candidates point at `_compare.new.programs.php`, a page comparing many programs). Feather River's full read and the Feather River and Palomar trials stay on their `claude/slo-*` branches (**DECIDED** `d-feather-palomar-trials-off-wave-s687`). Per college: lessons, *S687*.
+
+**Rule D (S687, #3569 `3cbf7012`; **DECIDED** `d-rule-d-from-committed-previews-s687`):** `kb/_program_discontinued.py` `committed_not_printed` reads rule D's marks from the committed capture files, each college's newest read by run only. Run at College of the Desert (8 not printed in the 2026-2027 catalog, 20 with no own page), City College of San Francisco (none in scope) and Santa Rosa Junior (2, no own page); `kb/status/program_discontinued.json` holds 9 flagged and 8 not printed, and a not-printed program is a candidate for a prior-year read (`CAPTURE_PRIOR`), never a flag. **FINDING** `f-rule-d-cannot-reach-dropped-records-s687`: rule D reads only committed records that place none, so programs whose files S683's filing dropped while their live rows stayed (CCSF's 20 no-page programs) are out of its reach. Runs and control numbers: lessons, *S687*.
+
+## S688 (SkyLinnet, Sam's session of 2026-11-19, started 23:40Z with handoff 688's opening line): the merge queue, five merged
+
+**What happened.** Sam pasted handoff 688's opening line and gave no other direction. The run applied S687's 15 memory
+rows, worked the merge queue to five squash merges on a green `test` (each thread read first), and merged a sixth at
+sign-off (#3577, the Library check that binds the url it checked). The COBIx watcher ran all session, re-armed every 30 minutes.
+
+**The memory apply (`m-s687-rows-applied-s688`).** supabase-migrate run 44639823760 from the trigger branch
+`claude/s688-memory-apply` (never merges) applied `kb/migrations/2026-11-19_s687_cpl_memory_rows.sql`; all 15 slugs
+returned. The receipt, `kb/migrations/receipts/migration_s687_cpl_memory_rows_44639823760.json`, is on that branch.
+
+**The merges (`m-s688-five-merged`).**
+- #3500 `31e039c4`: Cosumnes River's four local degrees pinned to their heading's page (04602 and 04614 stay as filed).
+  The paid read still waits on the named-programs-only `only` input #3500's body describes.
+- #3529 `3e3bb837`: flagged cards leave the confidence scorer and its apply. COBIx's point 4 there: after the update,
+  take `--expect` from the dry run's own count, never the 2859 the PR body printed.
+- #3578 `f6f67759`: `first-light-art.yml` puts back a report whose only change is `_generated`; its own run on the
+  branch made no commit-back.
+- #3537 `258a61d4`: the Mt. San Antonio SLO page reader. COBIx (comment 7026617916): an unfiled page in
+  `mtsac_recall.json` raised instead of counting; it now counts wrong as "page not filed" (test 9/9; COBIx verified in
+  7026674586). Next: a 12-page trial, counted by eye into `mtsac_recall.json`.
+- #3579 `ef16178c`: rule D's `committed_not_printed` walks a college's reads newest first, and an older read's mark
+  stands for control numbers no newer scoped read covered (`read_covers`); a read filed before fingerprints counts as
+  the whole college. `program_discontinued_test` 26/26; the status file is unchanged (9 flagged, 8 not printed).
+- Order (**DECIDED** `d-oldest-finished-among-finished-s688`): "the oldest finished first" was read as the oldest among
+  the PRs that are finished, so #3578 and #3579 merged while an older PR still waited on its tests.
+
+**The bot commits (`p-bot-commit-leaves-head-untested-s688`, `d-revert-stamp-commit-for-test-s688`).** On #3500 and
+#3529, the update from `main` carried #3571's `first_light.js`, so `first-light-art.yml` ran on the branch and committed
+a timestamp-only `tools/first_light_verify.json` with the skip tag onto the PR head. A commit pushed with the built-in
+token or the skip tag starts no workflow, so the head had no `test` run and the doctrine-level gate could not be met.
+Each was reverted by a human push that restored the exact tree `test` had passed on. #3578 removes the cause: the
+workflow puts back a report whose only change is its own stamp.
+
+**The skip tag in a human message (`p-skip-tag-in-commit-message-s688`).** The first revert message on #3500 quoted the
+bot commit's subject, tag and all, and GitHub skipped that push too: it honors the tag anywhere in the head commit's
+message, quoted or not. The commit was reworded and pushed with `--force-with-lease`. In a commit message, call it the
+skip tag.
+
+**The stash slip, again (`p-stash-unstaged-commit-s687`, a repeat).** On #3579 the code file was staged, then stashed
+and popped to prove the test fails without it; the pop restored it unstaged, and commit 49bdf050 carried only the test
+and the lane. The stop hook caught it and aeb4d529 added the code. S687 wrote this rule a day earlier. The rule as it
+reads is right; the failure is doing the stash at all once a file is staged. Prove a test fails without the fix in a
+scratch worktree or with `git show HEAD:<file>` into a scratch path, never by stashing the working tree after `git add`.
+
+**At sign-off.** #3577 merged at `45af74fd` (squash, `test` green on ec29c995; COBIx's #3572 comment 7023899407: after
+a url move, a Public press relisted on the old url's pass). SQL proof 69/69, `library_publishing_model` 60/60,
+`public_library` 138/138. Its two migrations were applying from the trigger branch `claude/s688-library-gate-apply`
+(never merges): `library_check_binds_url` (commit f3354f83), then `s688_library_memory_rows` (commit ea5bd537, row
+`d-library-check-binds-url-s688`). Its lane edit landed with the PR.
+
+**Lessons.**
+- **A commit-back that skips CI moves a PR head past its checked commit.** With `test` as a doctrine-level gate, that
+  blocks the merge rather than slipping past it, which is the gate working. Fix the producer so a no-change report makes
+  no commit; until then, revert to the tested tree with a human push.
+- **Never quote the skip tag in a human commit message.** Describe it in words.
+- **An update from `main` can start a branch-scoped workflow.** A PR that touches nothing of First Light's still runs
+  `first-light-art.yml` when the merge brings in a changed watched path; read the head's commits after every update.

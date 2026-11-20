@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-19T21:34:24Z",
-  "session": 687,
-  "moniker": "SkyPipit",
+  "written_at": "2026-11-20T01:23:36Z",
+  "session": 688,
+  "moniker": "SkyLinnet",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_688_handoff.md",
+  "handoff": "docs/session_689_handoff.md",
   "next_step": {
     "title": "A prior-year read for College of the Desert's eight, then the reread plan's third ten",
-    "text": "The next session reads the 2025-26 catalog for the eight College of the Desert programs the 2026-27 catalog no longer prints, so the discontinued check can flag or clear them, then rereads the plan's third ten colleges one dispatch at a time, and rebuilds what CPL Pathways and Sierra show after those posts."
+    "text": "The next session reads the 2025-26 catalog for the eight College of the Desert programs the 2026-27 catalog no longer prints, so the discontinued check can flag or clear them. Rule D now keeps an older read's mark for any program a newer, narrower read never looked at. Then it rereads the third ten colleges of the reread plan, one run at a time, at $40 per college per run."
   },
   "calls": [
     {
@@ -337,6 +337,14 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-20T00:21:30Z",
+      "text": "Cosumnes River's four local degrees now read from the page that prints their heading."
+    },
+    {
+      "at": "2026-11-20T01:12:40Z",
+      "text": "Rule D keeps an older read's not-printed mark for a program that a newer, narrower read never covered, so the prior-year read's candidate list holds steady. College of the Desert's eight stand."
+    },
     {
       "at": "2026-11-19T18:07:00Z",
       "text": "Rereads posted and loaded at nine colleges, American River to MiraCosta: 164 program records replaced by a better read and 45 added, after a live read of every row they touched."
@@ -752,6 +760,12 @@
       "active": 20282,
       "complete": 15044,
       "colleges": 118
+    },
+    {
+      "day": "2026-11-20",
+      "active": 20282,
+      "complete": 15044,
+      "colleges": 118
     }
   ],
   "next_run": {
@@ -760,7 +774,7 @@
     "at": "2026-11-20T06:12:00Z"
   },
   "harvest": {
-    "day": "2026-11-19",
+    "day": "2026-11-20",
     "gaps": 3443,
     "parts": {
       "links": {
