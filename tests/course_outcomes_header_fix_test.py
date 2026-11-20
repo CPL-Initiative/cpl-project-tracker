@@ -13,6 +13,8 @@ The failure modes these checks pin, each on the strings the filed reads printed:
 - Palomar's report 99 prints "Specific Course Objectives" right after the SLOs, with "Outcome" and "Objective" column
   headers, and trial 44536105509 filed the objectives and both headers as SLOs on 12 of 12 pages (206 SLOs, 0
   objectives).
+- Mt. San Antonio's SLO page prints a course's SLOs in a course results block, and trial 44687943107 filed the site's
+  course listing (19 lines) as the SLOs of all 12 pages; 6 of them print the block empty.
 Pure-stdlib python.
 """
 import glob
@@ -162,6 +164,36 @@ check("5 Palomar: 'Specific Course Objectives' heads the objectives, the 'Object
       got["objectives_heading"] == "Specific Course Objectives" and len(got["objectives"]) == 4
       and got["objectives_lead"] == "Upon successful completion of the course, the student will be able to:"
       and got["objectives"][-1] == "Evaluate the cost and benefits of global trade", got["objectives"])
+
+# Mt. San Antonio, trial 44687943107: the course results block (BUSR 40 as filed, and ECON 17's empty block), beside
+# the site's course listing its text prints under the page's own "Student Learning Outcomes" title.
+LISTING = """Student Learning Outcomes
+Search Program/Discipline
+Search Course
+Search Courses
+Co-Occurring Disorders (AD 6)
+Abnormal Psychology (PSYC 19)
+Addiction: Prevention, Intervention, and Recovery (AD 3)
+"""
+WRAP = ('<html><body><div class="discip_container"><h1>Student Learning Outcomes</h1>%s<div class="show-for-small-only '
+        'courseDsplyBtn" style="display:block;"><span class="button"><a href="#panel2">Start a new search</a></span>'
+        '</div></div></body></html>')
+BUSR_40 = WRAP % ('<a id="slo_course_results"></a><strong>Course Name:</strong> Landlord - Tenant Law<br><strong>Course '
+                  'Number:</strong> BUSR 40<br><strong>Outcomes:</strong> <ul><li>Students completing PLGL 40 - Landlord '
+                  '- Tenant Law will be able to identify and define what constitutes a habitable residential dwelling as '
+                  'well as understanding the legal ramifications to the parties in a non-habitable tenancy situation.</li>'
+                  '<li>Students completing PLGL 40 - Landlord - Tenant Law will be able to draft a residential tenancy '
+                  'agreement.</li></ul>')
+ECON_17 = WRAP % '<a id="slo_course_results"></a>'
+got = read.parse_page(BUSR_40, LISTING, "other")
+check("6 Mt. San Antonio: the SLOs are the list under Outcomes: in the course results block, each as printed",
+      len(got["outcomes"]) == 2 and got["outcomes"][1] == "Students completing PLGL 40 - Landlord - Tenant Law will be "
+      "able to draft a residential tenancy agreement." and got["parsed_from"] == "html", got["outcomes"])
+got = read.parse_page(ECON_17, LISTING, "other")
+check("6 Mt. San Antonio: an empty course results block files no SLOs, never the course listing (19 per page before)",
+      got["outcomes"] == [] and got["shape"] == "none" and got["objectives"] == [], got["outcomes"][:2])
+check("6 a page with no course results block goes to the readers it went to before",
+      read.mtsac_outcomes_from_html("<html><body><h3>Student Learning Outcomes</h3></body></html>") is None)
 
 failed = [r for r in results if not r[1]]
 for name, ok, why in results:

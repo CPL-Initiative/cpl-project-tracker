@@ -646,6 +646,41 @@ def cccd_outcomes_from_html(page_html: str) -> dict | None:
     return None
 
 
+# Mt. San Antonio's SLO page prints the course it was asked for after an anchor, <a id="slo_course_results">: Course
+# Name, Course Number, then "Outcomes:" and a list, each item an SLO as printed. Its text also carries the site's
+# course listing under the page's own "Student Learning Outcomes" title, which the text reader filed as 19 SLOs on
+# every page of trial 44687943107 (S689). A page whose block is empty prints no SLOs for that course (6 of those 12).
+MTSAC_RESULTS = "slo_course_results"
+
+
+def mtsac_outcomes_from_html(page_html: str) -> dict | None:
+    """The list under Outcomes: in Mt. San Antonio's course results block; an empty result when the block prints
+    none, so the text reader never reads the course listing; None when the page has no such block."""
+    if MTSAC_RESULTS not in (page_html or ""):
+        return None
+    tree = _Tree()
+    tree.feed(page_html)
+    anchor = next(iter(tree.root.find(lambda n: n.tag == "a" and n.attrs.get("id") == MTSAC_RESULTS)), None)
+    if anchor is None:
+        return None
+    sibs = anchor.parent.kids
+    items, seen_head = [], False
+    for k in sibs[sibs.index(anchor) + 1:]:
+        if isinstance(k, str):
+            continue
+        if k.tag == "div":
+            break
+        if k.tag == "strong" and _ws(k.text()).rstrip(":").lower() == "outcomes":
+            seen_head = True
+        elif seen_head and k.tag in ("ul", "ol"):
+            items = [_ws(li.text(skip=("ol", "ul"))) for li in k.kids if not isinstance(li, str) and li.tag == "li"]
+            break
+    items = [x for x in items if x]
+    return {"shape": "list" if len(items) > 1 else ("paragraph" if items else "none"),
+            "heading": "Outcomes" if items else None, "lead": None, "outcomes": items, "maps_to": None,
+            "parsed_from": "html"}
+
+
 def parse_page(page_html: str, text: str, system: str | None = None, report: str | None = None) -> dict:
     """The outcomes a page prints (_parse_outcomes) and, beside them, its course objectives (Sam, 2026-11-02)."""
     return {**_parse_outcomes(page_html, text, system), **objectives_block(page_html, text, report)}
@@ -654,7 +689,10 @@ def parse_page(page_html: str, text: str, system: str | None = None, report: str
 def _parse_outcomes(page_html: str, text: str, system: str | None = None) -> dict:
     """The outcomes a page prints: each college's group (SDCCD's All Fields report), else
     the SLO area of an integrated outline (RCCD), else an eLumen course page's block,
-    else the text reader."""
+    else the text reader. Mt. San Antonio's course results block comes first wherever it prints."""
+    got = mtsac_outcomes_from_html(page_html)
+    if got is not None:
+        return {**got, "fingerprint": fingerprint(got["outcomes"]) if got["outcomes"] else None}
     if system in ("elumen", "courseleaf"):
         own = elumen_outcomes_from_html if system == "elumen" else cccd_outcomes_from_html
         got = own(page_html) or outcomes_of(text)
