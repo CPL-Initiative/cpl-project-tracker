@@ -565,3 +565,7 @@ Four S678 and S679 paragraphs as they stood, verbatim (the two drafts merged; th
 ## INDEX update history, moved (S688 checkpoint)
 
 - 2026-11-18 (S681 SkyGrebe, the CPL Queue routine's second conductor firing of the night, full checkpoint): the stop rule fired on Chabot's outline load (1,013 objectives filed as SLOs, rolled back); #3507 (the first display build through the bucket path, 18,209 rows), Allan Hancock and Santiago Canyon outlines (2,270 rows), Lassen's five records, all in the wave #3509; #3497's 99-row and #3508's 13-row plans reviewed, not applied; the KB note `methodology-a-self-check-must-see-what-the-rule-writes`. Handoff 682.
+
+## INDEX update history, moved (S689 checkpoint)
+
+- 2026-11-18 (S682 SkyVireo, the CPL Queue routine's 14:12Z firing, light checkpoint): S681's stand-down held; First Light's 77 painting drops in #3511 for Sam's merge, the 13 story photos held on the hero photo rule; the sierra-page-redesign lane compacted under 20,000 bytes. Handoff 683.

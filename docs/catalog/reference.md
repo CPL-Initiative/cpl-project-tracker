@@ -69,7 +69,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Branch policy — the full record (CLAUDE.md offload)](../reference/branch_policy.md) | — | `branch_policy.md` | 2026-08-28 | 2026-08-28 |
 | [COBIx on pull requests: the review loop without Sam in the middle](../reference/cobix_pr_loop.md) | — | `cobix_pr_loop.md` |  |  |
 | [College Data Collection: the data dictionary and data-sharing classes](../reference/cdc_data_dictionary.md) | — | `cdc_data_dictionary.md` | 2026-11-14 | 2026-11-15 |
-| [Conductor mode — how a session runs workers, COBIx and the merge gate](../reference/conductor_mode.md) | — | `conductor_mode.md` | 2026-11-11 | 2026-11-19 |
+| [Conductor mode — how a session runs workers, COBIx and the merge gate](../reference/conductor_mode.md) | — | `conductor_mode.md` | 2026-11-11 | 2026-11-20 |
 | [Context-pressure hook — install and mechanics](../reference/context_pressure_hook.md) | — | `context_pressure_hook.md` | 2026-08-29 |  |
 | [Data dictionary: every Commons data dashboard dataset, its owner, procedure and planned improvement](../reference/data_dictionary.md) | — | `data_dictionary.md` | 2026-11-13 | 2026-11-13 |
 | [Data sources: the register of datasets that could fill a Commons gap](../reference/data_sources.md) | — | `data_sources.md` | 2026-11-04 | 2026-11-13 |

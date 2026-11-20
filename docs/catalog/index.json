@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 595,
+   "count": 596,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3117,6 +3117,25 @@
      "title": "A path filter compares pushes, not branches",
      "type": "methodology",
      "updated": "2026-10-11"
+    },
+    {
+     "created": "2026-11-20",
+     "governs": [
+      "kb/_reader_page_checks.py",
+      "kb/_program_requirements_score.py",
+      "tests/reader_page_checks_test.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-pdf-ligature-hides-a-heading-from-an-exact-match.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "program-requirements",
+      "catalog-harvest",
+      "pdf"
+     ],
+     "title": "A PDF ligature hides a heading from an exact match",
+     "type": "methodology",
+     "updated": "2026-11-20"
     },
     {
      "created": "2026-11-02",
@@ -15373,7 +15392,7 @@
      ],
      "title": "Program requirements harvest lessons \u2014 archive 7 (S655 onward)",
      "type": null,
-     "updated": "2026-11-19"
+     "updated": "2026-11-20"
     },
     {
      "created": "2026-11-12",
@@ -16884,7 +16903,7 @@
      ],
      "title": "Conductor mode \u2014 how a session runs workers, COBIx and the merge gate",
      "type": null,
-     "updated": "2026-11-19"
+     "updated": "2026-11-20"
     },
     {
      "created": "2026-08-29",
@@ -17297,8 +17316,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 648,
+   "count": 649,
    "docs": [
+    {
+     "created": "2026-11-20",
+     "governs": [],
+     "n": 690,
+     "path": "docs/session_690_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 690 handoff (from SkyTern, S689)",
+     "type": null,
+     "updated": "2026-11-20"
+    },
     {
      "created": "2026-11-20",
      "governs": [],
@@ -28143,5 +28176,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1527
+ "total": 1529
 }
