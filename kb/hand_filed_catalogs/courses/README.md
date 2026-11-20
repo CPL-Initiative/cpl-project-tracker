@@ -44,6 +44,13 @@ joins on `code`. The plain session and COBIx wire them in.
   Sept 10 addendum is not in the file).
 - `los_angeles_southwest.json`: Los Angeles Southwest 2026-2027, 724 courses from the college's catalog PDF (run
   44762233563).
+- `los_angeles_mission.json`: Los Angeles Mission 2026-2027, 798 courses from the college's catalog PDF (run 44763620806).
+- `los_angeles_pierce.json`: Los Angeles Pierce 2026-2027, 414 courses from the college's catalog PDF (run 44763620806).
+- `los_angeles_trade_technical.json`: Los Angeles Trade-Tech 2026-2027, 1,099 courses from the college's catalog PDF,
+  pages 238 on (run 44763620806).
+
+These four were read from the colleges' own PDFs, which the program capture already reads. Sam's hand-fetched copies
+(COBIx's gists) print two columns side by side (`pdftotext -layout`), which this parse does not split.
 
 A PDF college's rows come from the page read's pypdf text (plan keys `pdf_unfolded`, `pdf_page_cap`). Each file names
 its heading and units patterns (`parse`) and how many units lines no heading claimed (`units_lines_unclaimed`, an upper
