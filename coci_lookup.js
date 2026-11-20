@@ -277,13 +277,18 @@
    * The table has no Edit, no flag, no find and replace; the panel's common course card holds the edits (ccCard).
    * A course moves between M-IDs in SkyView. */
   var LIST = { engine: null, loading: false, failed: null, memo: null, cols: null };
-  var LIST_FILTERS = [["", "All"], ["mid", "Has an M-ID"], ["nomid", "No M-ID"], ["cid", "Has a C-ID"], ["ccn", "Has a CCN"],
-    ["any", "Has any identity"], ["none", "No identity"], ["C", "Credit"], ["N", "Noncredit"], ["E", "Noncredit enhanced"],
+  /* Needs an M-ID (Sam, 2026-11-20, working the Commons' needs-attention list: the No M-ID pile "includes courses with
+     cid and ccn, which don't need a mid"): the one gap pile is a course with no M-ID, no C-ID and no CCN. It was two
+     words, "No M-ID" (which counted a C-ID or CCN course as a gap) and "No identity" (the same pile without them); the
+     second folded into the first, and the address #coci-lookup/list/none still opens it (LIST_ALIAS). */
+  var LIST_FILTERS = [["", "All"], ["mid", "Has an M-ID"], ["nomid", "Needs an M-ID"], ["cid", "Has a C-ID"], ["ccn", "Has a CCN"],
+    ["any", "Has any identity"], ["C", "Credit"], ["N", "Noncredit"], ["E", "Noncredit enhanced"],
     ["kept", "Kept, not counted"]];
+  var LIST_ALIAS = { none: "nomid" };
   /* Kept, not counted (Sam, 2026-11-17: "flag the record, never delete it; take flagged records out of counts, waiting
      piles, to-dos and fetch plans"): kb/coci_not_applicable.json names the courses with no common course that are
      independent study, internships or a bare number, and the common courses every one of whose courses is. Those
-     courses stay on the List, findable, with the file's note; "No M-ID" and "No identity" leave them out, and "Kept, not
+     courses stay on the List, findable, with the file's note; "Needs an M-ID" leaves them out, and "Kept, not
      counted" shows them. A card a person ruled on stays counted, and its note says so (kb/_flags.py). Read once a visit;
      until it arrives, or if it fails, the List counts as before. */
   var KEPT = { na: null, error: null, loading: false };
@@ -358,7 +363,7 @@
     var D = state.data, M = window.CPL_UC_MEMBERS || null, memo = LIST.memo;
     if (memo && memo.D === D && memo.M === M && memo.K === KEPT.na) return memo;
     var X = identityIndex(M), colleges = (D.colleges || []).map(function (c) { return String(c || "").trim(); });
-    var n = { "": 0, mid: 0, nomid: 0, cid: 0, ccn: 0, any: 0, none: 0, C: 0, N: 0, E: 0, kept: 0 }, moved = 0, mids = {};
+    var n = { "": 0, mid: 0, nomid: 0, cid: 0, ccn: 0, any: 0, C: 0, N: 0, E: 0, kept: 0 }, moved = 0, mids = {};
     var rows = D.rows.map(function (r, i) {
       var college = colleges[r[ROW.COLLEGE]] || "", ctrl = String(r[ROW.CTRL] || ""), subj = String(r[ROW.SUBJ] || ""), num = String(r[ROW.NUM] || "");
       // A course in two M-IDs bands under the larger (the most local courses), then the first A to Z.
@@ -375,11 +380,11 @@
       row.hay = listFold([row.title, college, ctrl, subj, num, subj + " " + num, subj + num, row.top, cid, ccn, ids.join(" "), row.credit].join(" "));
       n[""]++;
       if (row.kept) n.kept++;
-      if (row.mid) n.mid++; else if (!row.kept) n.nomid++;
+      if (row.mid) n.mid++;
       ids.forEach(function (id) { mids[id] = 1; });
       if (cid) n.cid++;
       if (ccn) n.ccn++;
-      if (row.mid || cid || ccn) n.any++; else if (!row.kept) n.none++;
+      if (row.mid || cid || ccn) n.any++; else if (!row.kept) n.nomid++;
       if (n[code] != null) n[code]++;
       if (row.was) moved++;
       return row;
@@ -643,19 +648,19 @@
     }).catch(function (e) { CC.busy = false; CC.said[c.id] = "Not saved: " + ((e && e.message) || "the network failed") + "."; ccRedraw(); });
   }
   /* On purpose (COBIx on #3519, finding 4): the "Has ..." filters say what a record carries, so a kept record still
-     appears under its M-ID, C-ID or CCN and stays findable. "No M-ID" and "No identity" are gap piles, work waiting to
-     be done, and the flag rule takes kept records out of waiting piles, so they leave both. */
+     appears under its M-ID, C-ID or CCN and stays findable. "Needs an M-ID" is the gap pile, work waiting to be done:
+     a course with no M-ID, no C-ID and no CCN. The flag rule takes kept records out of waiting piles, so they leave
+     it; a course that carries a C-ID or a CCN needs no M-ID, so it was never in it (Sam, 2026-11-20). */
   function listFilterPass(r, L) {
     var f = L.f;
     if (!f) return true;
     if (isJob(f)) return jobPass(r, f);
     if (f === "mid") return !!r.mid;
-    if (f === "nomid") return !r.mid && !r.kept;
+    if (f === "nomid") return !(r.mid || r.cid || r.ccn) && !r.kept;
     if (f === "kept") return !!r.kept;
     if (f === "cid") return !!r.cid;
     if (f === "ccn") return !!r.ccn;
     if (f === "any") return !!(r.mid || r.cid || r.ccn);
-    if (f === "none") return !(r.mid || r.cid || r.ccn) && !r.kept;
     return r.code === f;
   }
   /* The line over the List and its folded cards (the List norms, The List is the workspace, norm 1; Exhibits, CR,
@@ -1122,7 +1127,8 @@
     if (!m.X) {
       out.push(el("p", { "class": "cplcoci-meta" }, ["Today's identity file did not arrive, so the panel cannot say which common course holds this course."]));
     } else if (!r.mid) {
-      if (!r.kept) out.push(el("p", { "class": "cplcoci-meta" }, ["No M-ID: the Common Course Reference holds this course in no common course today. A course joins one in SkyView."]));
+      if (r.cid || r.ccn) out.push(el("p", { "class": "cplcoci-meta" }, ["No M-ID is needed: this course carries " + [r.cid ? "C-ID " + r.cid : "", r.ccn ? "CCN " + r.ccn : ""].filter(Boolean).join(" and ") + ", which is its common identity."]));
+      else if (!r.kept) out.push(el("p", { "class": "cplcoci-meta" }, ["No M-ID: the Common Course Reference holds this course in no common course today. A course joins one in SkyView."]));
     } else {
       var members = listByMid(m).get(r.mid) || [], seenCol = {};
       members.forEach(function (x) { seenCol[x.college] = 1; });
@@ -1259,6 +1265,8 @@
       // The side panel (the List norms, The List is the workspace; Sam, 2026-11-03): a course's title opens it beside
       // the table, with its common course's local courses, SkyView one word away and the rest folded.
       panel: { label: function (r) { return "Course: " + r.subj + " " + r.num + ", " + r.college; }, body: listPanelBody },
+      // The title reads as the link it is (Sam, 2026-11-20: "need links to sidebar"): underlined at rest.
+      titleLink: true,
       bands: { key: function (r) { return r.mid; }, by: "M-ID", label: "Bands by M-ID", none: "Not in a group",
         name: function (id, members) { var t = bandTitle(members); return id + (t ? ", " + t : ""); },
         facts: function (id, members) { return bandFacts(members); },
@@ -1269,7 +1277,7 @@
       // in order of priority for me to act on ... categorize the ones that need action and the others that are just
       // convenient filters"). No filter's meaning moves.
       filterGroups: [{ label: "To do", ids: ["doubt", "stray", "nodesc", "units", "seedless"] },
-        { label: "Browse", ids: ["", "mid", "nomid", "cid", "ccn", "any", "none", "C", "N", "E", "kept"] }],
+        { label: "Browse", ids: ["", "mid", "nomid", "cid", "ccn", "any", "C", "N", "E", "kept"] }],
       // The job filters count by the engine's own pass once their file is read; until then they show no count.
       uncounted: function (id) { return isJob(id) && !jobReady(id); },
       // Which unit the counts are in (#3510 B2; Commons Clarity, #3447 item 6c): local courses here, common courses on
@@ -1712,6 +1720,7 @@
      on a later arrival after its reset, and on a hash change while the tab is open. */
   function routeList() {
     var parts = String(location.hash || "").replace(/^#/, "").split("/");
+    if (parts[0] === TAB && parts[1] === "list" && parts[2] && LIST_ALIAS[parts[2]]) parts[2] = LIST_ALIAS[parts[2]];
     if (parts[0] !== TAB || parts[1] !== "list" || !parts[2] || !LIST_FILTERS.some(function (f) { return f[0] === parts[2]; })) return false;
     state.view = "courses";
     var L0 = listState(); L0.f = parts[2]; L0.q = ""; L0.limit = null; L0.panel = null;

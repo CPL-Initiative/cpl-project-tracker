@@ -151,11 +151,13 @@ function input(w, node, v) { node.value = v; node.dispatchEvent(new w.Event("inp
   check("the filter words carry their counts", fgroups.join("|") === "To do|Browse" &&
     // S574: the Commons' jobs, uncounted until their file is read (commons_jobs_filtered guards them).
     fwords.join(" | ") === "Discipline in doubt | On a stray identity code | No catalog description | A unit anomaly | Discipline no seed has touched"
-    + " | All (9) | Has an M-ID (6) | No M-ID (3) | Has a C-ID (2) | Has a CCN (1) | Has any identity (6) | No identity (3) | Credit (7) | Noncredit (1) | Noncredit enhanced (1)"
+    + " | All (9) | Has an M-ID (6) | Needs an M-ID (3) | Has a C-ID (2) | Has a CCN (1) | Has any identity (6) | Credit (7) | Noncredit (1) | Noncredit enhanced (1)"
     + " | Kept, not counted (0)", fwords.join(" | "));
-  word(d, /^No identity \(3\)$/).click();
-  check("No identity narrows to the three courses with none", titles(d).join("|") === "Conversation|English Fundamentals|Rigging");
-  check("the current filter is marked, not a button", txt(d.querySelector("." + P + "filters [aria-current]")) === "No identity (3)");
+  // Sam, 2026-11-20: the No M-ID pile "includes courses with cid and ccn, which don't need a mid". One gap pile now.
+  check("no chip says No M-ID or No identity", !fwords.some((x) => /^No M-ID|^No identity/.test(x)), fwords.join(" | "));
+  word(d, /^Needs an M-ID \(3\)$/).click();
+  check("Needs an M-ID narrows to the three courses with no M-ID, C-ID or CCN", titles(d).join("|") === "Conversation|English Fundamentals|Rigging");
+  check("the current filter is marked, not a button", txt(d.querySelector("." + P + "filters [aria-current]")) === "Needs an M-ID (3)");
   word(d, /^All \(9\)$/).click();
   input(t.w, d.getElementById(P + "find"), "rio composition");
   check("the finder waits for the typing to stop (160 ms, as COCI Lookup's finder did)", dataRows(d).length === 9);

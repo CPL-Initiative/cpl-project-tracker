@@ -1255,6 +1255,7 @@
       }
       if (col === 0 && S.panel) {
         var on = L.panel === K(r);
+        if (S.titleLink) b.className += " " + P + "tlink";
         b.setAttribute("aria-expanded", on ? "true" : "false");
         b.setAttribute("aria-controls", P + "panel");
         b.setAttribute("aria-label", (text || "none") + ", " + (on ? "close its panel" : "open its panel"));
@@ -1407,6 +1408,8 @@
         p + "nowrap " + p + "open{white-space:nowrap}",
         p + "open:hover," + p + "open:focus-visible{text-decoration:underline;text-decoration-color:var(--accent-link);text-underline-offset:2px}",
         p + "open[aria-expanded='true']{font-weight:600}",
+        /* titleLink: a title that opens the row's side panel is underlined at rest, as a control is (Sam, 2026-10-09). */
+        p + "tlink{color:var(--accent-link);text-decoration:underline;text-underline-offset:2px}",
         p + "sel td{background:var(--surface-opaque)}",
         p + "cur td{background:var(--surface-opaque);box-shadow:inset 0 2px 0 var(--accent-link),inset 0 -2px 0 var(--accent-link)}",
         p + "cur td:first-child{box-shadow:inset 4px 0 0 var(--accent-link),inset 0 2px 0 var(--accent-link),inset 0 -2px 0 var(--accent-link)}",

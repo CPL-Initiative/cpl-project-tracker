@@ -182,7 +182,7 @@ const rowByTitle = (doc, t) => visibleRows(doc).find((tr) => txt(cellOf(doc, tr,
   wordBtn(doc, /^Has a CCN \(1\)$/).click();
   check("identity: has-CCN isolates the ENGL row",
     rowTitles(doc).length === 1 && rowTitles(doc)[0] === "College Composition");
-  wordBtn(doc, /^No identity \(2\)$/).click();
+  wordBtn(doc, /^Needs an M-ID \(2\)$/).click();
   check("identity: no-identity isolates the ESL + Rio Hondo rows",
     visibleRows(doc).length === 2);
   wordBtn(doc, /^Has an M-ID \(2\)$/).click();
