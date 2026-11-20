@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-20_s692_checkpoint_memory_rows.sql
-name=s692_checkpoint_memory_rows
+file=kb/migrations/2026-11-20_commons_handover_note.sql
+name=commons_handover_note
