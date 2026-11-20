@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 6935,
-    "output_tokens": 1416,
+    "output_tokens": 1508,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1416,
+  "output_tokens": 1508,
   "output_tokens_details": {
-   "thinking_tokens": 435
+   "thinking_tokens": 483
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05606,
- "ms": 11679,
- "seconds": 12.0,
+ "cost_usd": 0.0579,
+ "ms": 12925,
+ "seconds": 13.2,
  "parts": null,
  "error": null,
  "score": {
@@ -223,10 +223,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints codes with leading zeros (e.g., CONMT 012, CONMT 004); these were matched to the closed-list codes without zeros (CONMT 12, CONMT 4, etc.) and treated as the same courses, not catalog additions.",
-   "CONMT 015 is printed with an OR option of E/ET 207A; recorded as one entry with an alternative. The printed core total of 28.00 matches counting this choice once.",
-   "Careers combine the program description and the Career Opportunities paragraph; 'building and planning' and 'licensed contractors' appear in both and are listed once."
+   "The catalog prints course numbers with leading zeros (e.g., CONMT 012, CONMT 004); these were matched to the closed-list codes without leading zeros (CONMT 12, CONMT 4, etc.) and not treated as catalog additions.",
+   "CONMT 015 and E/ET 207A are printed as an OR pair; recorded as one entry with E/ET 207A as the alternative.",
+   "Careers drawn from both the program description and the Career Opportunities paragraph; duplicates ('building and planning', 'licensed contractors') listed once. The general phrase 'a variety of construction industry careers' was not recorded as a career.",
+   "Printed block total and Total Units both 28.00, which matches the sum of listed courses."
   ]
  },
- "extracted_run": "38935141023"
+ "extracted_run": "44744386009",
+ "catalog_year": "2026-2027"
 }

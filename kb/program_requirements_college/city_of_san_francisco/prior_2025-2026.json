@@ -1,0 +1,301 @@
+{
+ "college": "City College of San Francisco",
+ "catalog_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf",
+ "platform": "pdf",
+ "catalog_year": "2025-2026",
+ "programs": 7,
+ "with_closed_list": 7,
+ "started": "2026-11-20T16:54:29Z",
+ "prior": {
+  "start": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf",
+  "catalog_year": "2025-2026",
+  "only": [
+   "19445",
+   "37601",
+   "40168",
+   "40177",
+   "40705",
+   "40706",
+   "41353"
+  ],
+  "format": "pdf"
+ },
+ "procedure_step": {
+  "start": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf",
+  "file": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf"
+ },
+ "pdf": {
+  "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf",
+  "access": "ok",
+  "status": 200,
+  "bytes": 9036393,
+  "pages_total": 528,
+  "error": null,
+  "chars_total": 2777157,
+  "pypdf_accepted": 7,
+  "sample": [
+   "p159: 'Business 147\\nCity College of San Francisco 2025–2026 Catalog\\nLearning Outcomes\\nUpon completion of this program, students will be able to:\\n• Use the functions and roles of management to achieve organiza-\\ntional success.\\n• Apply theories of b'",
+   "p317: 'Health Care Technology 305\\nCity College of San Francisco 2025–2026 Catalog\\nEmployment opportunities for trained health information technicians \\ncontinue to increase with emphasis on data quality and integrity, man-\\nagement of electronic hea'"
+  ],
+  "extractor": "pypdf",
+  "numbers_after": {
+   "after": 0,
+   "before": 0,
+   "after_mode": false,
+   "gated": false,
+   "read": "heading"
+  },
+  "picks": [
+   {
+    "control_number": "19445",
+    "pages": [
+     228,
+     229,
+     230,
+     231
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 228] The Certificate of Achievement in Databases for Developers includes instruction and practice in database fundamentals and interacting with databases using both SQL queries and procedural program- ming. It is"
+   },
+   {
+    "control_number": "37601",
+    "pages": [
+     229,
+     230,
+     231,
+     232
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 229] Courses Required for the Certificate of Achievement in iPhone App Programming Course .........................................Units Required CS 212 iPhone Programming ........................4.0 Choose one co"
+   },
+   {
+    "control_number": "40168",
+    "pages": [
+     150,
+     151,
+     152,
+     153
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 150] 138 Br oadcast Electronic Media Arts City College of San Francisco 2025–2026 Catalog • Analyze the marketing environment to identify entrepreneurial opportunities and areas for growth and development. • Devel"
+   },
+   {
+    "control_number": "40177",
+    "pages": [
+     468,
+     469,
+     470,
+     471
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 468] Courses Required for the Certificate of Achievement in Entrepreneurship in Visual Media Design Course .........................................Units Required VMD 102 Design Thinking ........................."
+   },
+   {
+    "control_number": "40705",
+    "pages": [
+     226,
+     227,
+     228,
+     229
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 226] Courses Required for the Certificate of Achievement in Build Automation for DevOps & QA Course .........................................Units Required CS 160A Introduction to Unix/Linux .................2.0 C"
+   },
+   {
+    "control_number": "40706",
+    "pages": [
+     228,
+     229,
+     230,
+     231
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 228] Courses Required for the Certificate of Achievement in Database Administration Course .........................................Units Required CS 150A Introduction to SQL Databases and NoSQL ...3.0 CS 155P MyS"
+   },
+   {
+    "control_number": "41353",
+    "pages": [
+     353,
+     354
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 353] Journalism 341 City College of San Francisco 2025–2026 Catalog The minimum time for completion of this certificate is 2 semesters. Completion time will vary based on student preparation and number of classes"
+   }
+  ],
+  "unproven": []
+ },
+ "loads": 1,
+ "pages_listed": 1,
+ "pages_answered": 1,
+ "seconds": 30.6,
+ "found": 7,
+ "by_method": {
+  "pdf_pages": 7
+ },
+ "shared_pages": {
+  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=228": [
+   "19445",
+   "40706"
+  ]
+ },
+ "not_found": [],
+ "page_claimed": [],
+ "page_challenged": [],
+ "coverage_bands": {
+  "0.5-0.8": 0,
+  "0.8-1.0": 0,
+  "1.0": 7
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/city_of_san_francisco",
+  "kept": 0,
+  "kept_moved": 0,
+  "programs": 7,
+  "list": [
+   {
+    "control_number": "19445",
+    "title": "Databases for Developers",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=228",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "37601",
+    "title": "iPhone App Programming",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=229",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "40168",
+    "title": "Entrepreneurship and Innovation in Broadcast Media",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=150",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "40177",
+    "title": "Entrepreneurship in Visual Media Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=468",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "40705",
+    "title": "Build Automation for DevOps & QA",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=226",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "40706",
+    "title": "Database Administration",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=228",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "41353",
+    "title": "Entrepreneurship and Innovation in Journalism",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=353",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   }
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
+ },
+ "fingerprints": {
+  "19445": {
+   "sha256": "2fca4f1b0542dfbe6f45160955f53058ffd2c0694b98c3d3ec7ebc139a4727be",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=228"
+  },
+  "37601": {
+   "sha256": "7693cb7fe6c6a13359781d8dc237626d692cf36e47e0b138ad6f54c82c9bd76c",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=229"
+  },
+  "40168": {
+   "sha256": "1fb9a324ede558dbcaa7a32dc0bbb5b8a0c57ee00c5a9edd1351a9c25a64411c",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=150"
+  },
+  "40177": {
+   "sha256": "f7a1a9008d1d17b1b8fc338d8c0802ef3bc7efd15987888e750ede02f02217a6",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=468"
+  },
+  "40705": {
+   "sha256": "949b579378bcff03f056205007fcbba99fdd3cacf2c052dd10d1a917d51d6089",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=226"
+  },
+  "40706": {
+   "sha256": "241c648e88d2ad8d4a868fcaf8233cceabf506080013a54b8b8e3252612d08cd",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=228"
+  },
+  "41353": {
+   "sha256": "a5386243190d2fa22b12d2b2c9adeb81211817427ef73f652b31bacb48083014",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=353"
+  }
+ },
+ "run": "44777882954",
+ "filed": [
+  "19445",
+  "37601",
+  "40168",
+  "40177",
+  "40705",
+  "40706",
+  "41353"
+ ],
+ "kept": []
+}

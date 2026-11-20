@@ -1,0 +1,910 @@
+{
+ "_readme": "S690 catalogs worker, 2026-11-20, under Sam's go of 2026-11-20 6:26 AM PT (relayed by COBIx on #3584, comment 7042043701) and the plain session's ask (#3584, comment 7042398748): every subject page the 2026-27 course-descriptions index lists (index read 44764187505), each line for line through the capture view, for kb/hand_filed_catalogs/courses/. An address is the index's own link where the read showed it, else the subject code in lower case, CourseLeaf's form. No model call.",
+ "college": "Long Beach City College",
+ "questions": {
+  "courses": "Each course's code, title, units or hours, requisites and description, line for line."
+ },
+ "keywords": [
+  "\\bUnits?\\b",
+  "\\bHours?\\b"
+ ],
+ "capture_lines": 8000,
+ "pages": [
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/cor/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/acctg/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/atcmhs/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/adjus/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/admt/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/ah/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/asl/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/anat/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/anth/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/anthr/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/archt/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/art/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/arth/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/ai/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/astr/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/auto/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/bake/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/bio/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/biol/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/bcom/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/gbus/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/ibus/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/law/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/mgmt/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/mktg/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/chem/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/cdece/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/cdev/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/cdfdc/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/cdll/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/cdpe/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/cdsed/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/comm/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/cosa/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/cosk/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/cosn/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/cosp/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/coss/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/cose/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/cosw/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/cisco/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/cad/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/cs/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/const/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/couns/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/cular/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/dance/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/dsgn/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/dmi/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/dma/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/econ/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/educ/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/edev/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/elect/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/emt/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/engr/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/etec/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/engl/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/esl/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/esllc/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/ewrc/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/envrs/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/ethst/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/fash/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/film/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/fsa/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/fire/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/flo/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/ft/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/fs/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/geog/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/pgeog/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/geol/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/glst/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/hled/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/hist/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/hsa/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/hort/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/human/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/journ/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/kina/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/king/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/kinia/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/kinpf/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/kinpp/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/learn/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/lib/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/ling/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/math/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/ma/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/mtfab/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/money/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/cmusic/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/music/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/vn/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/adn/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/nutr/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/osha/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/phil/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/phot/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/phys/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/physi/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/pols/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/polsc/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/psyc/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/psych/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/pubad/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/ph/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/read/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/real/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/socsc/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/soci/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/socio/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/sw/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/stat/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/teas/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/tv/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/tart/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/weld/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/chin/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/fren/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/ger/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/ital/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/japan/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/khmer/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/span/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/pcc/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/lac/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  }
+ ]
+}

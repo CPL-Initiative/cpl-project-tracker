@@ -5,27 +5,56 @@
  "found": 214,
  "extracted": 214,
  "errors": 0,
- "passed_machine_checks": 199,
+ "passed_machine_checks": 200,
  "failed": {
-  "coverage": 4,
+  "coverage": 3,
   "invented": 2,
-  "arithmetic": 12,
+  "arithmetic": 11,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd_run": 0.0,
- "cost_usd_filed": 13.85,
- "cost_per_program": 0.0647,
- "extract_calls": null,
+ "cost_usd_run": 2.62,
+ "cost_usd_filed": 13.92,
+ "cost_per_program": 0.065,
+ "extract_calls": 30,
  "extract_failed": [],
  "not_found": [
+  {
+   "control_number": "08013",
+   "title": "Restaurant Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-management-and-leadership-studies-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2007,
+     "content": 2007,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
+  },
   {
    "control_number": "18369",
    "title": "CSU General Education Breadth",
    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "31489",
@@ -33,7 +62,8 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "31507",
@@ -41,33 +71,8 @@
    "award": "A.S. Degree",
    "near_miss": {
     "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "35567",
-   "title": "Elementary Teacher Education",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/associate-in-art-in-elementary-teacher-education-integrated-programs-for-transfer-fall-2026",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.458,
-    "body": 0.458,
-    "content": 0.458,
-    "net": 11,
-    "listed": 24,
-    "why": "coverage 0.46 in innerText, below 0.50",
-    "error": null,
-    "chars": {
-     "body": 4199,
-     "content": 4199,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "38506",
@@ -75,7 +80,8 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "39371",
@@ -83,7 +89,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "39730",
@@ -91,7 +98,8 @@
    "award": "A.S. Degree",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "43481",
@@ -99,7 +107,8 @@
    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "43757",
@@ -125,7 +134,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "45039",
@@ -133,7 +143,8 @@
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "46431",
@@ -141,8 +152,9 @@
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   }
  ],
- "run": "43691943622"
+ "run": "44745889555"
 }

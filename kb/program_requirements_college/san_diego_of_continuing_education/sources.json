@@ -36,18 +36,19 @@
   ],
   "source": {
    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=45",
-   "title": "Automotive",
-   "h1": "Automotive",
+   "title": "Certificate of Completion:",
+   "h1": "Certificate of Completion:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     45
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "c44ffc1d4262d3ee"
   },
   "listed": 2,
-  "text_chars": 3336
+  "text_chars": 2229
  },
  {
   "control_number": "24082",
@@ -102,27 +103,12 @@
   "title": "Network Security Specialist Certificate Program",
   "award": null,
   "shape": "other",
-  "method": "pdf_pages",
-  "coverage": 0.6,
-  "codes_found": [
-   "COMP600",
-   "COMP601",
-   "COMP602"
-  ],
-  "source": {
-   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=74",
-   "title": "Information Technology",
-   "h1": "Information Technology",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    74
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 5,
-  "text_chars": 4166
+  "text_chars": 0
  },
  {
   "control_number": "24124",
@@ -161,8 +147,8 @@
   ],
   "source": {
    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=67",
-   "title": "Healthcare Careers",
-   "h1": "Healthcare Careers",
+   "title": "Certificate of Completion:",
+   "h1": "Certificate of Completion:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -170,10 +156,11 @@
     68
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "e61b164b4d4c6271"
   },
   "listed": 2,
-  "text_chars": 8743
+  "text_chars": 7446
  },
  {
   "control_number": "24148",
@@ -197,7 +184,8 @@
     74
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "9e818a17652e5801"
   },
   "listed": 3,
   "text_chars": 4166
@@ -243,28 +231,12 @@
   "title": "Child Development 1",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "pdf_pages",
-  "coverage": 0.75,
-  "codes_found": [
-   "HMDV675",
-   "HMDV678",
-   "HMDV699"
-  ],
-  "source": {
-   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=118",
-   "title": "",
-   "h1": "",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    118,
-    119
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 4,
-  "text_chars": 8341
+  "text_chars": 0
  },
  {
   "control_number": "24237",
@@ -289,7 +261,8 @@
     54
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b28dbec0149d817f"
   },
   "listed": 4,
   "text_chars": 4468
@@ -299,28 +272,12 @@
   "title": "Child Development 2 Program",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "pdf_pages",
-  "coverage": 0.75,
-  "codes_found": [
-   "HMDV675",
-   "HMDV678",
-   "HMDV699"
-  ],
-  "source": {
-   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=118",
-   "title": "",
-   "h1": "",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    118,
-    119
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 4,
-  "text_chars": 8341
+  "text_chars": 0
  },
  {
   "control_number": "24240",
@@ -355,7 +312,8 @@
     43
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "d4687dd50b329a19"
   },
   "listed": 2,
   "text_chars": 3025
@@ -409,7 +367,8 @@
     72
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "cdbf5dd9f8d21f1d"
   },
   "listed": 6,
   "text_chars": 2264
@@ -419,26 +378,12 @@
   "title": "Network Systems Specialist Program",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "pdf_pages",
-  "coverage": 0.5,
-  "codes_found": [
-   "COMP608"
-  ],
-  "source": {
-   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=76",
-   "title": "Information Technology",
-   "h1": "Information Technology",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    76,
-    77
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 2,
-  "text_chars": 8433
+  "text_chars": 0
  },
  {
   "control_number": "24308",
@@ -469,31 +414,12 @@
   "title": "Front Desk/Office Assistant Program",
   "award": null,
   "shape": "other",
-  "method": "pdf_pages",
-  "coverage": 0.6,
-  "codes_found": [
-   "OFSY527",
-   "OFSY541",
-   "OFSY555",
-   "OFSY575",
-   "OFSY580",
-   "OFSY596"
-  ],
-  "source": {
-   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=131",
-   "title": "",
-   "h1": "",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    131,
-    132
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 10,
-  "text_chars": 8329
+  "text_chars": 0
  },
  {
   "control_number": "24316",
@@ -552,7 +478,8 @@
     44
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e162c97b09a09277"
   },
   "listed": 2,
   "text_chars": 2364
@@ -579,7 +506,8 @@
     45
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "1227248887e48560"
   },
   "listed": 3,
   "text_chars": 3336
@@ -667,7 +595,8 @@
     71
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "6182509c838462b2"
   },
   "listed": 28,
   "text_chars": 6920
@@ -718,7 +647,8 @@
     63
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "2a141d1657f63087"
   },
   "listed": 3,
   "text_chars": 3026
@@ -745,7 +675,8 @@
     65
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "0bfaf1934d24d07c"
   },
   "listed": 3,
   "text_chars": 3808
@@ -773,7 +704,8 @@
     63
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "98e501ade3580a4c"
   },
   "listed": 3,
   "text_chars": 6010
@@ -799,7 +731,8 @@
     44
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e162c97b09a09277"
   },
   "listed": 2,
   "text_chars": 2364
@@ -816,19 +749,25 @@
    "ELRN452"
   ],
   "source": {
-   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=25",
-   "title": "San Diego College of Continuing eDuCation • 2026-2027          25",
-   "h1": "San Diego College of Continuing eDuCation • 2026-2027          25",
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=78",
+   "title": "Electronic Technician Program",
+   "h1": "Electronic Technician Program",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    25
+    78
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 78,
+    "share": 1.0
+   },
+   "text_sha": "c9d510c358a96d0d"
   },
   "listed": 2,
-  "text_chars": 2017
+  "text_chars": 2875
  },
  {
   "control_number": "31483",
@@ -843,18 +782,19 @@
   ],
   "source": {
    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=80",
-   "title": "Skilled & Technical Trades",
-   "h1": "Skilled & Technical Trades",
+   "title": "Certificate of Completion:",
+   "h1": "Certificate of Completion:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     80
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "404e12da65581643"
   },
   "listed": 2,
-  "text_chars": 4916
+  "text_chars": 1501
  },
  {
   "control_number": "31484",
@@ -878,10 +818,11 @@
     79
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "9bad469cab53a1db"
   },
   "listed": 2,
-  "text_chars": 7395
+  "text_chars": 7392
  },
  {
   "control_number": "31485",
@@ -908,18 +849,19 @@
   ],
   "source": {
    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=79",
-   "title": "Skilled & Technical Trades",
-   "h1": "Skilled & Technical Trades",
+   "title": "Certificate of Completion:",
+   "h1": "Certificate of Completion:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     79
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "c1c02d546d0e8725"
   },
   "listed": 2,
-  "text_chars": 4288
+  "text_chars": 4112
  },
  {
   "control_number": "31487",
@@ -942,7 +884,8 @@
     80
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "186a97e2156cd02f"
   },
   "listed": 2,
   "text_chars": 4916
@@ -969,7 +912,8 @@
     49
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "fcc1db3c02d4cfe2"
   },
   "listed": 2,
   "text_chars": 7378
@@ -987,18 +931,19 @@
   ],
   "source": {
    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=59",
-   "title": "Digital Media & Programming",
-   "h1": "Digital Media & Programming",
+   "title": "Certificate of Completion:",
+   "h1": "Certificate of Completion:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     59
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "90c35e58f0cf9dd2"
   },
   "listed": 2,
-  "text_chars": 4060
+  "text_chars": 3609
  },
  {
   "control_number": "33136",
@@ -1015,18 +960,19 @@
   ],
   "source": {
    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=59",
-   "title": "Digital Media & Programming",
-   "h1": "Digital Media & Programming",
+   "title": "Certificate of Completion:",
+   "h1": "Certificate of Completion:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     59
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "e91162106be6c910"
   },
   "listed": 4,
-  "text_chars": 4060
+  "text_chars": 2362
  },
  {
   "control_number": "33403",
@@ -1041,18 +987,19 @@
   ],
   "source": {
    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=76",
-   "title": "Information Technology",
-   "h1": "Information Technology",
+   "title": "Certificate of Completion:",
+   "h1": "Certificate of Completion:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     76
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "e8186213c3a538e0"
   },
   "listed": 2,
-  "text_chars": 4190
+  "text_chars": 1090
  },
  {
   "control_number": "33749",
@@ -1071,25 +1018,12 @@
   "title": "Server Essentials Program",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "pdf_pages",
-  "coverage": 0.5,
-  "codes_found": [
-   "COMP641"
-  ],
-  "source": {
-   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=76",
-   "title": "Information Technology",
-   "h1": "Information Technology",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    76
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 2,
-  "text_chars": 4190
+  "text_chars": 0
  },
  {
   "control_number": "33783",
@@ -1104,8 +1038,8 @@
   ],
   "source": {
    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=76",
-   "title": "Information Technology",
-   "h1": "Information Technology",
+   "title": "Certificate of Completion:",
+   "h1": "Certificate of Completion:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1113,10 +1047,11 @@
     77
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "3962195f588e6a53"
   },
   "listed": 4,
-  "text_chars": 8433
+  "text_chars": 8344
  },
  {
   "control_number": "33867",
@@ -1131,18 +1066,19 @@
   ],
   "source": {
    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=77",
-   "title": "Information Technology",
-   "h1": "Information Technology",
+   "title": "Certificate of Completion:",
+   "h1": "Certificate of Completion:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     77
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "e0899975b3b6f08a"
   },
   "listed": 4,
-  "text_chars": 4241
+  "text_chars": 4152
  },
  {
   "control_number": "33869",
@@ -1166,7 +1102,8 @@
     77
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "20c9fc845f56162a"
   },
   "listed": 2,
   "text_chars": 8433
@@ -1229,7 +1166,8 @@
     49
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "8135c16166184fe0"
   },
   "listed": 3,
   "text_chars": 3828
@@ -1239,25 +1177,12 @@
   "title": "Windows System Administration",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "pdf_pages",
-  "coverage": 0.5,
-  "codes_found": [
-   "COMP640"
-  ],
-  "source": {
-   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=76",
-   "title": "Information Technology",
-   "h1": "Information Technology",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    76
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 2,
-  "text_chars": 4190
+  "text_chars": 0
  },
  {
   "control_number": "35141",
@@ -1300,27 +1225,12 @@
   "title": "Office Assistant II",
   "award": null,
   "shape": "other",
-  "method": "pdf_pages",
-  "coverage": 0.6,
-  "codes_found": [
-   "OFSY505",
-   "OFSY506",
-   "OFSY575"
-  ],
-  "source": {
-   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=47",
-   "title": "Business, Accounting and Entrepreneurship",
-   "h1": "Business, Accounting and Entrepreneurship",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    47
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 5,
-  "text_chars": 4016
+  "text_chars": 0
  },
  {
   "control_number": "35839",
@@ -1354,7 +1264,8 @@
     45
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "1227248887e48560"
   },
   "listed": 1,
   "text_chars": 3336
@@ -1393,7 +1304,8 @@
     46
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "bbee8fd20ac43ff3"
   },
   "listed": 3,
   "text_chars": 3525
@@ -1420,7 +1332,8 @@
     47
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "3dd645480977a987"
   },
   "listed": 3,
   "text_chars": 4016
@@ -1447,7 +1360,8 @@
     47
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "3dd645480977a987"
   },
   "listed": 3,
   "text_chars": 4016
@@ -1473,7 +1387,8 @@
     64
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "20ca2e0f67043495"
   },
   "listed": 2,
   "text_chars": 3981
@@ -1499,7 +1414,8 @@
     65
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "0bfaf1934d24d07c"
   },
   "listed": 2,
   "text_chars": 3808
@@ -1518,18 +1434,19 @@
   ],
   "source": {
    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=75",
-   "title": "Information Technology",
-   "h1": "Information Technology",
+   "title": "Certificate of Completion:",
+   "h1": "Certificate of Completion:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     75
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "0aa3bb7655865a9e"
   },
   "listed": 3,
-  "text_chars": 4235
+  "text_chars": 2554
  },
  {
   "control_number": "36896",
@@ -1544,18 +1461,19 @@
   ],
   "source": {
    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=75",
-   "title": "Information Technology",
-   "h1": "Information Technology",
+   "title": "Certificate of Completion:",
+   "h1": "Certificate of Completion:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     75
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "bc1d4b3b2e20327c"
   },
   "listed": 2,
-  "text_chars": 4235
+  "text_chars": 1093
  },
  {
   "control_number": "37546",
@@ -1578,7 +1496,8 @@
     65
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "0bfaf1934d24d07c"
   },
   "listed": 2,
   "text_chars": 3808
@@ -1604,7 +1523,8 @@
     65
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "0bfaf1934d24d07c"
   },
   "listed": 2,
   "text_chars": 3808
@@ -1622,18 +1542,19 @@
   ],
   "source": {
    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=66",
-   "title": "Healthcare Careers",
-   "h1": "Healthcare Careers",
+   "title": "Certificate of Completion:",
+   "h1": "Certificate of Completion:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     66
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "724a140d2d1077ea"
   },
   "listed": 2,
-  "text_chars": 3889
+  "text_chars": 1423
  },
  {
   "control_number": "38411",
@@ -1647,19 +1568,26 @@
    "COMM661"
   ],
   "source": {
-   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=27",
-   "title": "San Diego College of Continuing eDuCation • 2026-2027          27",
-   "h1": "San Diego College of Continuing eDuCation • 2026-2027          27",
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=57",
+   "title": "Visual and Vector Design",
+   "h1": "Visual and Vector Design",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    27
+    57,
+    58
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 57,
+    "share": 1.0
+   },
+   "text_sha": "43d37ad3bce083fd"
   },
   "listed": 2,
-  "text_chars": 1815
+  "text_chars": 5347
  },
  {
   "control_number": "38412",
@@ -1675,19 +1603,25 @@
    "COMM663"
   ],
   "source": {
-   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=27",
-   "title": "San Diego College of Continuing eDuCation • 2026-2027          27",
-   "h1": "San Diego College of Continuing eDuCation • 2026-2027          27",
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=58",
+   "title": "Digital Design",
+   "h1": "Digital Design",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    27
+    58
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 58,
+    "share": 1.0
+   },
+   "text_sha": "b2e6b80a48ad39b5"
   },
   "listed": 4,
-  "text_chars": 1815
+  "text_chars": 2689
  },
  {
   "control_number": "38413",
@@ -1722,7 +1656,8 @@
     68
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "db57d1aaa458e86c"
   },
   "listed": 2,
   "text_chars": 4558
@@ -1748,7 +1683,8 @@
     68
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "db57d1aaa458e86c"
   },
   "listed": 2,
   "text_chars": 4558
@@ -1766,8 +1702,8 @@
   ],
   "source": {
    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=67",
-   "title": "Healthcare Careers",
-   "h1": "Healthcare Careers",
+   "title": "Certificate of Completion:",
+   "h1": "Certificate of Completion:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1775,10 +1711,11 @@
     68
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "9cfdf870187f3407"
   },
   "listed": 2,
-  "text_chars": 8743
+  "text_chars": 6173
  },
  {
   "control_number": "38720",
@@ -1801,7 +1738,8 @@
     65
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "0bfaf1934d24d07c"
   },
   "listed": 2,
   "text_chars": 3808
@@ -1819,18 +1757,19 @@
   ],
   "source": {
    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=61",
-   "title": "Digital Media & Programming",
-   "h1": "Digital Media & Programming",
+   "title": "Certificate of Completion:",
+   "h1": "Certificate of Completion:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     61
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "8c958df70cd22bd9"
   },
   "listed": 2,
-  "text_chars": 3861
+  "text_chars": 1810
  },
  {
   "control_number": "39187",
@@ -1853,7 +1792,8 @@
     58
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e8fe49f23d3bf2db"
   },
   "listed": 2,
   "text_chars": 4230
@@ -1879,7 +1819,8 @@
     69
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "462f82340d5e705b"
   },
   "listed": 2,
   "text_chars": 4129
@@ -1896,47 +1837,33 @@
    "COMP672"
   ],
   "source": {
-   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=73",
-   "title": "Information Technology",
-   "h1": "Information Technology",
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=74",
+   "title": "Certificate of Completion:",
+   "h1": "Certificate of Completion:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    73,
     74,
     75
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "7b49d665a2c43b46"
   },
   "listed": 2,
-  "text_chars": 11881
+  "text_chars": 8314
  },
  {
   "control_number": "39774",
   "title": "Motion and Video Production",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "COMM667",
-   "COMM668"
-  ],
-  "source": {
-   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=27",
-   "title": "San Diego College of Continuing eDuCation • 2026-2027          27",
-   "h1": "San Diego College of Continuing eDuCation • 2026-2027          27",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    27
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 2,
-  "text_chars": 1815
+  "text_chars": 0
  },
  {
   "control_number": "39924",
@@ -1961,7 +1888,8 @@
     52
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "6dc4ea5802f1308c"
   },
   "listed": 2,
   "text_chars": 10565
@@ -1980,8 +1908,8 @@
   ],
   "source": {
    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=50",
-   "title": "Child Development",
-   "h1": "Child Development",
+   "title": "Certificate of Completion:",
+   "h1": "Certificate of Completion:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1990,10 +1918,11 @@
     52
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "4d7ce4a2f5a6a2cd"
   },
   "listed": 3,
-  "text_chars": 10565
+  "text_chars": 9137
  },
  {
   "control_number": "39926",
@@ -2008,18 +1937,19 @@
   ],
   "source": {
    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=50",
-   "title": "Child Development",
-   "h1": "Child Development",
+   "title": "Certificate of Completion:",
+   "h1": "Certificate of Completion:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     50
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "fa356c4e48a6cc1c"
   },
   "listed": 2,
-  "text_chars": 3833
+  "text_chars": 1488
  },
  {
   "control_number": "39927",
@@ -2033,19 +1963,26 @@
    "HMDV591"
   ],
   "source": {
-   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=26",
-   "title": "26          San Diego College of Continuing eDuCation •2026-2027",
-   "h1": "26          San Diego College of Continuing eDuCation •2026-2027",
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=50",
+   "title": "Early Learner Enrichment",
+   "h1": "Early Learner Enrichment",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    26
+    50,
+    51
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 50,
+    "share": 1.0
+   },
+   "text_sha": "d60b7bf044dd337a"
   },
   "listed": 2,
-  "text_chars": 1984
+  "text_chars": 4562
  },
  {
   "control_number": "39928",
@@ -2068,7 +2005,8 @@
     51
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "c7fe392bebae31db"
   },
   "listed": 2,
   "text_chars": 4162
@@ -2094,7 +2032,8 @@
     51
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "c7fe392bebae31db"
   },
   "listed": 2,
   "text_chars": 4162
@@ -2113,8 +2052,8 @@
   ],
   "source": {
    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=51",
-   "title": "Child Development",
-   "h1": "Child Development",
+   "title": "Certificate of Completion:",
+   "h1": "Certificate of Completion:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2122,10 +2061,11 @@
     52
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "f102ebc1ee9bf466"
   },
   "listed": 3,
-  "text_chars": 6730
+  "text_chars": 5944
  },
  {
   "control_number": "39936",
@@ -2147,7 +2087,8 @@
     62
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "7d19fab3838db5a1"
   },
   "listed": 1,
   "text_chars": 2982
@@ -2164,19 +2105,25 @@
    "FDNT662"
   ],
   "source": {
-   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=29",
-   "title": "San Diego College of Continuing eDuCation • 2026-2027          29",
-   "h1": "San Diego College of Continuing eDuCation • 2026-2027          29",
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=71",
+   "title": "Baking and Pastry Arts I",
+   "h1": "Baking and Pastry Arts I",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    29
+    71
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 71,
+    "share": 1.0
+   },
+   "text_sha": "c78c6d95812855fb"
   },
   "listed": 2,
-  "text_chars": 1979
+  "text_chars": 2145
  },
  {
   "control_number": "40119",
@@ -2190,19 +2137,26 @@
    "FDNT664"
   ],
   "source": {
-   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=29",
-   "title": "San Diego College of Continuing eDuCation • 2026-2027          29",
-   "h1": "San Diego College of Continuing eDuCation • 2026-2027          29",
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=71",
+   "title": "Baking and Pastry Arts II",
+   "h1": "Baking and Pastry Arts II",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    29
+    71,
+    72
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 71,
+    "share": 1.0
+   },
+   "text_sha": "d6bff383c80b7dc5"
   },
   "listed": 2,
-  "text_chars": 1979
+  "text_chars": 3305
  },
  {
   "control_number": "40120",
@@ -2216,19 +2170,21 @@
    "FDNT619"
   ],
   "source": {
-   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=73",
-   "title": "Information Technology",
-   "h1": "Information Technology",
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=72",
+   "title": "Certificate of Completion:",
+   "h1": "Certificate of Completion:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    72,
     73
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "0daa861c27f0e8ea"
   },
   "listed": 2,
-  "text_chars": 3476
+  "text_chars": 3744
  },
  {
   "control_number": "40123",
@@ -2251,7 +2207,8 @@
     73
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "32fdfcbe502c98d1"
   },
   "listed": 2,
   "text_chars": 3476
@@ -2277,7 +2234,8 @@
     64
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "20ca2e0f67043495"
   },
   "listed": 2,
   "text_chars": 3981
@@ -2303,7 +2261,8 @@
     63
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "2a141d1657f63087"
   },
   "listed": 2,
   "text_chars": 3026
@@ -2329,7 +2288,8 @@
     66
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e084acfb7ecc9be6"
   },
   "listed": 2,
   "text_chars": 3889
@@ -2355,7 +2315,8 @@
     63
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "2a141d1657f63087"
   },
   "listed": 2,
   "text_chars": 3026
@@ -2382,7 +2343,8 @@
     70
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "1abfe89319b7fd0f"
   },
   "listed": 3,
   "text_chars": 3677
@@ -2411,7 +2373,8 @@
     70
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "1abfe89319b7fd0f"
   },
   "listed": 5,
   "text_chars": 3677
@@ -2429,19 +2392,27 @@
    "BUSN623"
   ],
   "source": {
-   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=90",
-   "title": "",
-   "h1": "",
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=47",
+   "title": "The Advanced Project Management Program,",
+   "h1": "The Advanced Project Management Program,",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    90
+    47,
+    48,
+    49
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 47,
+    "share": 1.0
+   },
+   "text_sha": "4da23baa495f78bd"
   },
   "listed": 3,
-  "text_chars": 4278
+  "text_chars": 8946
  },
  {
   "control_number": "40517",
@@ -2464,10 +2435,11 @@
     53
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "1322b5e88808a167"
   },
   "listed": 4,
-  "text_chars": 3785
+  "text_chars": 3784
  },
  {
   "control_number": "40532",
@@ -2475,25 +2447,30 @@
   "award": "Noncredit program",
   "shape": "noncredit",
   "method": "pdf_pages",
-  "coverage": 1.0,
+  "coverage": 0.5,
   "codes_found": [
-   "ESLA427A",
-   "ESLA427B"
+   "ESLA427A"
   ],
   "source": {
-   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=113",
-   "title": "",
-   "h1": "",
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=66",
+   "title": "Healthcare Careers",
+   "h1": "Healthcare Careers",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    113
+    66
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 66,
+    "share": 0.5
+   },
+   "text_sha": "e084acfb7ecc9be6"
   },
   "listed": 2,
-  "text_chars": 4426
+  "text_chars": 3889
  },
  {
   "control_number": "41451",
@@ -2516,7 +2493,8 @@
     60
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "cfa1339d75d1802e"
   },
   "listed": 2,
   "text_chars": 3672
@@ -2543,7 +2521,8 @@
     71
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "6182509c838462b2"
   },
   "listed": 2,
   "text_chars": 6920
@@ -2569,10 +2548,11 @@
     53
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "1322b5e88808a167"
   },
   "listed": 2,
-  "text_chars": 3785
+  "text_chars": 3784
  },
  {
   "control_number": "41623",
@@ -2595,7 +2575,8 @@
     52
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "402381a352236761"
   },
   "listed": 2,
   "text_chars": 2566
@@ -2614,19 +2595,21 @@
    "COMP693"
   ],
   "source": {
-   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=60",
-   "title": "Digital Media & Programming",
-   "h1": "Digital Media & Programming",
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=59",
+   "title": "Certificate of Completion:",
+   "h1": "Certificate of Completion:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    59,
     60
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "6b90ee21c1f3eeed"
   },
   "listed": 4,
-  "text_chars": 3672
+  "text_chars": 4689
  },
  {
   "control_number": "42016",
@@ -2650,7 +2633,8 @@
     65
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "af6f88b16c10adb8"
   },
   "listed": 2,
   "text_chars": 7791
@@ -2668,18 +2652,19 @@
   ],
   "source": {
    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=48",
-   "title": "Business, Accounting and Entrepreneurship",
-   "h1": "Business, Accounting and Entrepreneurship",
+   "title": "Certificate of Completion:",
+   "h1": "Certificate of Completion:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     48
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "7a8b50f9efd1e168"
   },
   "listed": 2,
-  "text_chars": 3548
+  "text_chars": 2496
  },
  {
   "control_number": "42360",
@@ -2702,7 +2687,8 @@
     67
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "aec82c2ac0326b48"
   },
   "listed": 2,
   "text_chars": 4183
@@ -2719,19 +2705,26 @@
    "HMDV571B"
   ],
   "source": {
-   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=120",
-   "title": "",
-   "h1": "",
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=51",
+   "title": "Instructional Aide",
+   "h1": "Instructional Aide",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    120
+    51,
+    52
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 51,
+    "share": 1.0
+   },
+   "text_sha": "d9113b2e9af3bc16"
   },
   "listed": 2,
-  "text_chars": 4237
+  "text_chars": 3081
  },
  {
   "control_number": "42646",
@@ -2746,19 +2739,21 @@
    "COMM652"
   ],
   "source": {
-   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=59",
-   "title": "Digital Media & Programming",
-   "h1": "Digital Media & Programming",
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=58",
+   "title": "Certificate of Completion:",
+   "h1": "Certificate of Completion:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    58,
     59
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "432978c02a63bcbb"
   },
   "listed": 3,
-  "text_chars": 4060
+  "text_chars": 5417
  },
  {
   "control_number": "44332",
@@ -2782,7 +2777,8 @@
     55
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "2bc7b06686d8258b"
   },
   "listed": 3,
   "text_chars": 4029
@@ -2808,7 +2804,8 @@
     56
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "87193a1dc9fd049c"
   },
   "listed": 2,
   "text_chars": 3960
@@ -2834,7 +2831,8 @@
     55
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "2bc7b06686d8258b"
   },
   "listed": 2,
   "text_chars": 4029
@@ -2861,7 +2859,8 @@
     56
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "87193a1dc9fd049c"
   },
   "listed": 3,
   "text_chars": 3960
@@ -2878,19 +2877,25 @@
    "CLTX512"
   ],
   "source": {
-   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=29",
-   "title": "San Diego College of Continuing eDuCation • 2026-2027          29",
-   "h1": "San Diego College of Continuing eDuCation • 2026-2027          29",
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=56",
+   "title": "The Sewn Product Construction Essentials",
+   "h1": "The Sewn Product Construction Essentials",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    29
+    56
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 56,
+    "share": 1.0
+   },
+   "text_sha": "06fb864e6926fcda"
   },
   "listed": 2,
-  "text_chars": 1979
+  "text_chars": 1120
  },
  {
   "control_number": "44337",
@@ -2913,7 +2918,8 @@
     54
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b28dbec0149d817f"
   },
   "listed": 2,
   "text_chars": 4468
@@ -2931,18 +2937,19 @@
   ],
   "source": {
    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=55",
-   "title": "Clothing & Textiles",
-   "h1": "Clothing & Textiles",
+   "title": "Certificate of Completion:",
+   "h1": "Certificate of Completion:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     55
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "929a7a80f50c47a8"
   },
   "listed": 2,
-  "text_chars": 4029
+  "text_chars": 2569
  },
  {
   "control_number": "44339",
@@ -2965,7 +2972,8 @@
     54
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b28dbec0149d817f"
   },
   "listed": 2,
   "text_chars": 4468
@@ -2992,10 +3000,11 @@
     57
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "a3178a7133126bfe"
   },
   "listed": 3,
-  "text_chars": 3077
+  "text_chars": 3076
  },
  {
   "control_number": "45374",
@@ -3018,7 +3027,8 @@
     64
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "20ca2e0f67043495"
   },
   "listed": 2,
   "text_chars": 3981
@@ -3044,7 +3054,8 @@
     48
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "082281d6446b0191"
   },
   "listed": 2,
   "text_chars": 3548
@@ -3070,7 +3081,8 @@
     61
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "0aba9b047f3d5417"
   },
   "listed": 2,
   "text_chars": 3861
@@ -3098,7 +3110,8 @@
     75
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "93efcef1b09709bf"
   },
   "listed": 3,
   "text_chars": 8403
@@ -3124,7 +3137,8 @@
     60
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "cfa1339d75d1802e"
   },
   "listed": 2,
   "text_chars": 3672
@@ -3151,7 +3165,8 @@
     75
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "faa0b039a6f58828"
   },
   "listed": 3,
   "text_chars": 4235
@@ -3168,19 +3183,21 @@
    "OFSY532"
   ],
   "source": {
-   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=49",
-   "title": "Business, Accounting and Entrepreneurship",
-   "h1": "Business, Accounting and Entrepreneurship",
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=48",
+   "title": "Certificate of Completion:",
+   "h1": "Certificate of Completion:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    48,
     49
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "fec17c20ffa9e890"
   },
   "listed": 2,
-  "text_chars": 3828
+  "text_chars": 5069
  },
  {
   "control_number": "46209",
@@ -3196,18 +3213,19 @@
   ],
   "source": {
    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=53",
-   "title": "Clothing & Textiles",
-   "h1": "Clothing & Textiles",
+   "title": "Certificate of Completion:",
+   "h1": "Certificate of Completion:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     53
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "59e4c9eb2b23ce0a"
   },
   "listed": 3,
-  "text_chars": 3785
+  "text_chars": 3470
  },
  {
   "control_number": "46210",
@@ -3222,18 +3240,19 @@
   ],
   "source": {
    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=57",
-   "title": "Digital Media & Programming",
-   "h1": "Digital Media & Programming",
+   "title": "Certificate of Completion:",
+   "h1": "Certificate of Completion:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     57
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "a52bd54f7802ae4a"
   },
   "listed": 2,
-  "text_chars": 3077
+  "text_chars": 2982
  },
  {
   "control_number": "46211",
@@ -3259,7 +3278,8 @@
     75
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "d68d19a317201077"
   },
   "listed": 3,
   "text_chars": 11881
@@ -3277,18 +3297,19 @@
   ],
   "source": {
    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=81",
-   "title": "Skilled & Technical Trades",
-   "h1": "Skilled & Technical Trades",
+   "title": "Certificate of Completion:",
+   "h1": "Certificate of Completion:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     81
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "d7c9975f70146d88"
   },
   "listed": 2,
-  "text_chars": 1319
+  "text_chars": 1226
  },
  {
   "control_number": "46213",
@@ -3303,18 +3324,19 @@
   ],
   "source": {
    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=69",
-   "title": "High School Diploma, High School Equivalency & Basic Skills",
-   "h1": "High School Diploma, High School Equivalency & Basic Skills",
+   "title": "Certificate of Completion:",
+   "h1": "Certificate of Completion:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     69
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "3c627773f26a1735"
   },
   "listed": 2,
-  "text_chars": 4129
+  "text_chars": 4003
  },
  {
   "control_number": "46214",
@@ -3329,17 +3351,18 @@
   ],
   "source": {
    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=68",
-   "title": "Healthcare Careers",
-   "h1": "Healthcare Careers",
+   "title": "Certificate of Completion:",
+   "h1": "Certificate of Completion:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     68
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "52587e4c1ff1674c"
   },
   "listed": 2,
-  "text_chars": 4558
+  "text_chars": 1150
  }
 ]

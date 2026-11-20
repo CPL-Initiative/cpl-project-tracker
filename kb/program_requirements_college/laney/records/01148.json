@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 6619,
-    "output_tokens": 1541,
+    "output_tokens": 1423,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1541,
+  "output_tokens": 1423,
   "output_tokens_details": {
-   "thinking_tokens": 492
+   "thinking_tokens": 443
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0573,
- "ms": 12450,
- "seconds": 12.8,
+ "cost_usd": 0.05494,
+ "ms": 12146,
+ "seconds": 19.5,
  "parts": null,
  "error": null,
  "score": {
@@ -133,7 +133,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Laney College General Education (Associate Degree Requirements)",
    "degree_total": {
     "min": 60,
     "max": 60
@@ -150,11 +150,11 @@
    ],
    "careers": [
     "merchandising",
-    "professional sales",
-    "customer service representatives",
+    "sales and customer service",
     "planning and promotions",
     "advertising and public relations",
-    "sales and customer service"
+    "professional sales",
+    "customer service representatives"
    ]
   },
   "blocks": [
@@ -230,12 +230,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Catalog prints codes with leading zeros (BUS 002, BUS 010, BUS 038, BUS 072, BUS 074, BUS 075, M/SVN 060); these were matched to closed-list BUS 2, BUS 10, BUS 38, BUS 72, BUS 74, BUS 75, M/SVN 60 and not marked as catalog additions.",
-   "Several core courses are labeled '( Historical )' in the catalog (BUS 001A, BUS 002, BUS 010, BUS 038); reviewer may want to confirm they remain current for 2026-2027.",
-   "General Education Requirements printed as 21.00 units with reference to the Associate Degree Requirements tab; no named GE pattern is printed, so ge_pattern is null.",
-   "'Electives to meet 60 units' printed with no unit figure; electives_fill_degree set true. Total Units 60.00 recorded as degree_total; Total Major Units 26.00 as total_units.",
-   "The career list combines the description ('merchandising, sales and customer service, planning and promotions, advertising and public relations') and the Career Opportunities sentence; duplicates were listed once."
+   "Catalog prints zero-padded codes (BUS 002, BUS 010, BUS 038, BUS 072, BUS 074, BUS 075, M/SVN 060) that match closed-list BUS 2, BUS 10, BUS 38, BUS 72, BUS 74, BUS 75, M/SVN 60; treated as the same courses, not catalog additions.",
+   "Several core courses are marked '( Historical )' in the catalog (BUS 001A, BUS 002, BUS 010, BUS 038); reviewer may want to confirm they are still offered.",
+   "GE pattern is not named explicitly; page says 'General Education Requirements: 21.00' and refers to the Associate Degree Requirements tab.",
+   "'Electives to meet 60 units:' prints no unit value; electives_fill_degree set true, units not computed.",
+   "The page includes stray CSS text, ignored."
   ]
  },
- "extracted_run": "38935141023"
+ "extracted_run": "44744386009",
+ "catalog_year": "2026-2027"
 }

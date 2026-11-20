@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 6640,
-    "output_tokens": 1612,
+    "output_tokens": 1482,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1612,
+  "output_tokens": 1482,
   "output_tokens_details": {
-   "thinking_tokens": 407
+   "thinking_tokens": 430
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0588,
- "ms": 13756,
- "seconds": 14.0,
+ "cost_usd": 0.0562,
+ "ms": 12452,
+ "seconds": 12.6,
  "parts": null,
  "error": null,
  "score": {
@@ -166,7 +166,7 @@
     },
     "courses": [
      {
-      "code": "BIOL120",
+      "code": "BIOL 120",
       "units": 5,
       "units_max": null,
       "alternatives": [],
@@ -185,14 +185,14 @@
     },
     "courses": [
      {
-      "code": "BIOL119",
+      "code": "BIOL 119",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "BIOL146",
+      "code": "BIOL 146",
       "units": 5,
       "units_max": null,
       "alternatives": [],
@@ -211,28 +211,28 @@
     },
     "courses": [
      {
-      "code": "CHEM107",
+      "code": "CHEM 107",
       "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHEM108",
+      "code": "CHEM 108",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHEM109",
+      "code": "CHEM 109",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CHEM120",
+      "code": "CHEM 120",
       "units": 5,
       "units_max": null,
       "alternatives": [],
@@ -245,24 +245,23 @@
   "missing_explained": [
    {
     "code": "BIOSC 119",
-    "why": "not in the text under this code; catalog prints BIOL119 with the same title (Fundamentals of Microbiology), likely a subject rename"
+    "why": "catalog prints BIOL119 (same title) instead; recorded as BIOL 119"
    },
    {
     "code": "BIOSC 120",
-    "why": "not in the text under this code; catalog prints BIOL120 with the same title (Introduction to Human Anatomy and Physiology), likely a subject rename"
+    "why": "catalog prints BIOL120 (same title) instead; recorded as BIOL 120"
    },
    {
     "code": "BIOSC 146",
-    "why": "not in the text under this code; catalog prints BIOL146 with the same title (Principles of Microbiology), likely a subject rename"
+    "why": "catalog prints BIOL146 (same title) instead; recorded as BIOL 146"
    }
   ],
   "notes": [
-   "The catalog prints biology courses as BIOL119, BIOL120, BIOL146, while the closed list has BIOSC 119, BIOSC 120, BIOSC 146 with identical titles and units; recorded as printed with catalog_addition true. Reviewer should confirm these are the same courses under a renamed subject.",
-   "Course codes are printed without a space (e.g., CHEM107); CHEM codes treated as matching closed-list CHEM 107/108/109/120.",
-   "Both elective blocks are printed with the same heading 'plus at least 4 units from:'; the first holds microbiology courses, the second chemistry courses.",
-   "Award field in the request is truncated ('12 to fewer than 18 semester(or 18 to fewer than 27'); the catalog states 13 units total."
+   "Catalog prints codes without spaces (BIOL120, CHEM107); spaces added between subject and number.",
+   "Catalog uses subject BIOL where the closed list has BIOSC for courses 119, 120 and 146 with identical titles; likely a subject-code rename. BIOL codes marked as catalog additions; reviewer should confirm.",
+   "Outcomes are printed under a 'Program Learning Outcomes' heading on the certificate page."
   ]
  },
- "extracted_run": 43691943622,
- "read_run": 43609976980
+ "extracted_run": "44745889555",
+ "catalog_year": "2026-2027"
 }

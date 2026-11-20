@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8233,
-    "output_tokens": 3232,
+    "output_tokens": 3037,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,39 +30,41 @@
     "model": null
    }
   ],
-  "output_tokens": 3232,
+  "output_tokens": 3037,
   "output_tokens_details": {
-   "thinking_tokens": 975
+   "thinking_tokens": 800
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.09757,
- "ms": 24893,
- "seconds": 26.1,
+ "cost_usd": 0.09367,
+ "ms": 22890,
+ "seconds": 23.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 27,
+   "placed": 28,
    "listed": 28,
-   "share": 0.964,
-   "missing": [
-    "SOCI120"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "SOCIC1000",
+     "listed": "SOCI120",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "SOCIC1000"
-   ],
-   "flagged": [
-    "SOCIC1000"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -141,7 +143,7 @@
   },
   "blocks": [
    {
-    "name": "Required Courses (10 units)",
+    "name": "Required Courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -174,7 +176,7 @@
     ]
    },
    {
-    "name": "Required Electives: List A (3 units)",
+    "name": "Required Electives: List A",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -200,7 +202,7 @@
     ]
    },
    {
-    "name": "Required Electives: List B (3-5 units)",
+    "name": "Required Electives: List B",
     "rule": "choose_units",
     "minimum": 3,
     "option_group": null,
@@ -254,7 +256,7 @@
     ]
    },
    {
-    "name": "Restricted Electives: List C (3 units)",
+    "name": "Restricted Electives: List C",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -389,18 +391,20 @@
   "missing_explained": [
    {
     "code": "SOCI 120",
-    "why": "not in the text; catalog lists SOCI-C1000 Introduction to Sociology in List C instead"
+    "why": "not in the text; catalog lists SOCI-C1000 Introduction to Sociology instead (likely the C-ID renumbering)"
    }
   ],
   "notes": [
-   "Text begins mid-description; the program's own title heading is cut off, so section_heading uses the printed 'DEGREE REQUIREMENTS' heading.",
-   "Units are printed only as block totals in the elective lists, not beside each course; course units left null there.",
-   "List B: 'Select one or two courses from the following or any course from List A not already used' (3-5 units); recorded as choose_units 3. GEOL-110 and GEOL-111 are printed as a paired entry (GEOL-110 & GEOL-111) to be taken together; recorded as two entries.",
-   "List C heading says '(3 units)' but the row total prints 3-4; stated recorded as 3-4. List C also allows any unused course from List A or B.",
-   "The 60-unit statements are generic ADT requirements, not printed as this award's degree total; degree_total left null. Cal-GETC units not printed.",
-   "The description mentions 'a broad range of public and private sector employment' but names no specific career; careers left empty.",
-   "ETHS-112 is titled 'Introduction to Africana Studies' in the catalog vs 'African American Studies' in the closed list; ANTH-120 titled 'with Lab'."
+   "The text begins mid-description; no program heading is printed, so section_heading uses the 'DEGREE REQUIREMENTS' heading.",
+   "Units are printed only for the Required Courses; elective list courses print no units beside them, so their units are null.",
+   "List B: 'Select one or two courses from the following or any course from List A not already used' (3-5 units); recorded as choose_units 3. Any unused List A course may also satisfy List B.",
+   "GEOL-110 & GEOL-111 are printed as a single paired option in List B (taken together); recorded as two entries.",
+   "List C heading says '(3 units)' but the select line prints '3-4'; stated recorded as 3-4. Any unused List A or B course may also satisfy List C.",
+   "ETHS-112 is titled 'Introduction to Africana Studies' in the catalog vs 'African American Studies' in the closed list.",
+   "The 60-unit statements are generic ADT requirements, not printed as this award's total; degree_total left null. Cal-GETC units not printed.",
+   "Description mentions preparing students for 'a broad range of public and private sector employment'; no specific careers named, so careers left empty."
   ]
  },
- "extracted_run": "38748853261"
+ "extracted_run": "44739981651",
+ "catalog_year": "2026-2027"
 }

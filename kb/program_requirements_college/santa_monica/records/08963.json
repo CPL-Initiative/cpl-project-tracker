@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Marketing",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=102",
+ "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=105",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12207,
+  "input_tokens": 10438,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12207,
-    "output_tokens": 1339,
+    "input_tokens": 10438,
+    "output_tokens": 2036,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,47 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1339,
+  "output_tokens": 2036,
   "output_tokens_details": {
-   "thinking_tokens": 219
+   "thinking_tokens": 748
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07561,
- "ms": 11739,
- "seconds": 12.1,
+ "cost_usd": 0.08247,
+ "ms": 17510,
+ "seconds": 23.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 17,
    "listed": 17,
-   "share": 0.0,
-   "missing": [
-    "BUS1",
-    "BUS20",
-    "BUS22",
-    "BUS23",
-    "BUS26",
-    "BUS28",
-    "BUS29",
-    "BUS32",
-    "BUS34A",
-    "BUS34B",
-    "BUS35",
-    "BUS37",
-    "BUS52",
-    "BUS59",
-    "BUS60",
-    "CIS70",
-    "JOURN43"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -79,31 +61,36 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    18.0,
+    18.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 1,
    "courses": 0,
-   "count": 0,
-   "not_verbatim": [],
-   "why": [],
+   "count": 1,
+   "not_verbatim": [
+    "Upon completion of the program, students will demonstrate coherent and comprehensive analyses of business issues; identify and resolve ethical dilemmas in the domestic and global business environments; and develop an effective marketing strategy that includes a target audience and all elements of the marketing mix."
+   ],
+   "why": [
+    "not in the catalog text as printed: Upon completion of the program, students will demonstrate coherent and comprehen"
+   ],
    "heading_printed": true,
-   "heading_without_outcomes": true,
-   "pass": true
+   "heading_without_outcomes": false,
+   "pass": false
   },
   "careers": {
    "count": 0,
@@ -117,11 +104,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "(not found: no Marketing, Certificate of Achievement section in the provided text)",
+   "section_heading": "Marketing, Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 18
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -138,86 +125,185 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Upon completion of the program, students will demonstrate coherent and comprehensive analyses of business issues; identify and resolve ethical dilemmas in the domestic and global business environments; and develop an effective marketing strategy that includes a target audience and all elements of the marketing mix."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "BUS 1",
-    "why": "Marketing certificate section not in the text; appears only in other programs' sections"
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "BUS 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "BUS 20",
-    "why": "Marketing certificate section not in the text; appears only in the Business program's Marketing elective list and the Entrepreneurship certificate"
-   },
-   {
-    "code": "BUS 22",
-    "why": "Marketing certificate section not in the text; appears only in the Business program's elective list"
-   },
-   {
-    "code": "BUS 23",
-    "why": "Marketing certificate section not in the text; appears only in other programs' sections"
-   },
-   {
-    "code": "BUS 26",
-    "why": "Marketing certificate section not in the text; appears only in the Business program's elective list"
-   },
-   {
-    "code": "BUS 28",
-    "why": "Marketing certificate section not in the text; appears only in the Business program's elective list"
-   },
-   {
-    "code": "BUS 29",
-    "why": "Marketing certificate section not in the text; appears only in the Business program's elective list"
-   },
-   {
-    "code": "BUS 32",
-    "why": "Marketing certificate section not in the text; appears only in other programs' sections"
-   },
-   {
-    "code": "BUS 34A",
-    "why": "Marketing certificate section not in the text; appears only in other programs' sections"
-   },
-   {
-    "code": "BUS 34B",
-    "why": "Marketing certificate section not in the text; appears only in other programs' sections"
-   },
-   {
-    "code": "BUS 35",
-    "why": "Marketing certificate section not in the text; appears only in other programs' sections"
-   },
-   {
-    "code": "BUS 37",
-    "why": "Marketing certificate section not in the text; appears only in the Business program's elective list"
-   },
-   {
-    "code": "BUS 52",
-    "why": "Marketing certificate section not in the text; appears only in other programs' sections"
-   },
-   {
-    "code": "BUS 59",
-    "why": "Marketing certificate section not in the text; appears only in other programs' sections"
-   },
-   {
-    "code": "BUS 60",
-    "why": "Marketing certificate section not in the text; appears only in other programs' sections"
-   },
-   {
-    "code": "CIS 70",
-    "why": "Marketing certificate section not in the text; appears only in other programs' sections"
-   },
-   {
-    "code": "JOURN 43",
-    "why": "Marketing certificate section not in the text; appears only in the Business program's elective list"
+    "name": "Select 4 or more courses from the following",
+    "rule": "choose_units",
+    "minimum": 12,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "BUS 22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 23",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 26",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 28",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 29",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "JOURN 43",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 32",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 34A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 34B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CIS 70",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 35",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 37",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 52",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 59",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 60",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The provided catalog text (pages 102-104) contains the tail of a Business program (with a Marketing elective focus area), and the Digital Marketing, Entry Level Business Information Assistant, Entrepreneurship, Human Resources Management, Insurance Professional, Insurance Specialist and International Business certificates, but no section headed for the Marketing Certificate of Achievement. No requirements were recorded to avoid reading another program's section.",
-   "The 'Marketing' list on page 102 is an elective focus area within the preceding Business program (Area of Emphasis 24 units), not the Marketing certificate; it was not used.",
-   "Reviewer should locate the Marketing, Certificate of Achievement section elsewhere in the 2026-2027 SMC catalog PDF (likely on another page) and re-extract."
+   "The elective block reads 'Select 4 or more courses from the following: (12 units minimum)'; recorded as choose_units 12, but the catalog also requires at least 4 courses (BUS 60 is only 1 unit, so both conditions matter).",
+   "The catalog prints BUS 29 and JOURN 43 as separate rows marked 'same as' each other, and likewise BUS 34B and CIS 70; each cross-listed pair is recorded as one entry with the other as an alternative, since they count as the same choice.",
+   "The outcome is recorded as the full printed sentence including its opening words 'Upon completion of the program, students will', because the lead-in is part of the single outcome sentence.",
+   "The Marketing section spans the page break between catalog pages 105 and 106; the program learning outcome continues across that break.",
+   "No careers are named in the Marketing section."
   ]
  },
- "extracted_run": "39567439681"
+ "extracted_run": "44739378155",
+ "catalog_year": "2026-2027",
+ "source_sha": "ae75680c23bc3360",
+ "source_codes": [
+  "BUS1",
+  "BUS20",
+  "BUS22",
+  "BUS23",
+  "BUS26",
+  "BUS28",
+  "BUS29",
+  "BUS32",
+  "BUS34A",
+  "BUS34B",
+  "BUS35",
+  "BUS37",
+  "BUS52",
+  "BUS59",
+  "BUS60",
+  "CIS70",
+  "JOURN43"
+ ],
+ "source_coverage": 1.0
 }

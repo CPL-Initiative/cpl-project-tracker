@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 7105,
-    "output_tokens": 1457,
+    "output_tokens": 1584,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1457,
+  "output_tokens": 1584,
   "output_tokens_details": {
-   "thinking_tokens": 272
+   "thinking_tokens": 370
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05756,
- "ms": 20872,
- "seconds": 21.2,
+ "cost_usd": 0.0601,
+ "ms": 13381,
+ "seconds": 13.9,
  "parts": null,
  "error": null,
  "score": {
@@ -259,10 +259,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints zero-padded codes (ECT 028, ECT 021, ECT 012, ECT 027, ECT 022, ECT 036, ECT 035, ECT 025); these were matched to closed-list codes ECT 28, ECT 21, ECT 12, ECT 27, ECT 22, ECT 36, ECT 35, ECT 25 and are not treated as catalog additions.",
-   "Courses are printed in a semester sequence; each semester is recorded as a block of required courses.",
-   "Careers were drawn from both the program description and the Career Opportunities paragraph; 'BAS technicians' appears in both and is listed once."
+   "The catalog prints ECT course numbers with leading zeros (ECT 028, ECT 021, ECT 012, ECT 027, ECT 022, ECT 036, ECT 035, ECT 025); these were matched to closed-list codes ECT 28, ECT 21, ECT 12, ECT 27, ECT 22, ECT 36, ECT 35, ECT 25 and not flagged as catalog additions.",
+   "Requirements are printed as a semester sequence; each semester is recorded as an 'all' block with its printed total.",
+   "Careers were taken from the program description and the Career Opportunities paragraph; 'engineers' appears in 'BAS technicians and engineers'.",
+   "The first outcome is printed without a closing period."
   ]
  },
- "extracted_run": "38935141023"
+ "extracted_run": "44744386009",
+ "catalog_year": "2026-2027"
 }

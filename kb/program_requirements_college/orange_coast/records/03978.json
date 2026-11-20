@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9125,
+  "input_tokens": 9128,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9125,
-    "output_tokens": 3242,
+    "input_tokens": 9128,
+    "output_tokens": 3068,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,50 +30,37 @@
     "model": null
    }
   ],
-  "output_tokens": 3242,
+  "output_tokens": 3068,
   "output_tokens_details": {
-   "thinking_tokens": 955
+   "thinking_tokens": 919
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.10134,
- "ms": 25884,
- "seconds": 26.9,
+ "cost_usd": 0.09787,
+ "ms": 25095,
+ "seconds": 26.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 22,
+   "placed": 26,
    "listed": 26,
-   "share": 0.846,
-   "missing": [
-    "ECONC2001",
-    "ECONC2001H",
-    "ECONC2002",
-    "ECONC2002H"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 5,
+   "count": 1,
    "codes": [
-    "APTA130",
-    "ECONA170",
-    "ECONA170H",
-    "ECONA175",
-    "ECONA175H"
+    "APTA130"
    ],
    "flagged": [
-    "APTA130",
-    "ECONA170",
-    "ECONA170H",
-    "ECONA175",
-    "ECONA175H"
+    "APTA130"
    ],
    "pass": true
   },
@@ -151,7 +138,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": "OCC AS GE",
+   "ge_pattern": "OCC AS General Education",
    "degree_total": {
     "min": 60,
     "max": 60
@@ -235,21 +222,21 @@
     "courses": [
      {
       "code": "APT A134",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "APT A138",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "APT A139",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -268,21 +255,21 @@
     "courses": [
      {
       "code": "APT A110",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "APT A115",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "APT A145",
-      "units": 3,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -403,66 +390,50 @@
       "catalog_addition": false
      },
      {
-      "code": "ECON A170",
+      "code": "ECON C2001",
       "units": null,
       "units_max": null,
       "alternatives": [
        {
-        "code": "ECON A170H",
+        "code": "ECON C2001H",
         "units": null,
-        "catalog_addition": true
+        "catalog_addition": false
        }
       ],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
-      "code": "ECON A175",
+      "code": "ECON C2002",
       "units": null,
       "units_max": null,
       "alternatives": [
        {
-        "code": "ECON A175H",
+        "code": "ECON C2002H",
         "units": null,
-        "catalog_addition": true
+        "catalog_addition": false
        }
       ],
-      "catalog_addition": true
+      "catalog_addition": false
      }
     ]
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "ECON C2001",
-    "why": "not in the text; catalog lists ECON A170 (Principles of Microeconomics) instead"
-   },
-   {
-    "code": "ECON C2001H",
-    "why": "not in the text; catalog lists ECON A170H instead"
-   },
-   {
-    "code": "ECON C2002",
-    "why": "not in the text; catalog lists ECON A175 (Principles of Macroeconomics) instead"
-   },
-   {
-    "code": "ECON C2002H",
-    "why": "not in the text; catalog lists ECON A175H instead"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The requirements table prints no units beside track courses; the 3 units recorded for Track 1 and Track 2 courses come from the Program Sequence grid for this award. Restricted elective courses have no printed units and are left null.",
-   "'Select a Track: 9' recorded as stated 9 on each track block.",
-   "Restricted electives: 'courses used above may not fulfill elective units' — APT A110, A115, A145 count only once if used in Track 2.",
-   "GE is printed as 'OCC AS General Education up to 21'; not a fixed figure, so ge_units left null. Cal-GETC pattern (up to 34 units) may be substituted.",
-   "Degree total 60 is 'Total Minimum Degree Units - OCC AS GE'; transferable electives 'as needed' with units 'varies'.",
-   "Catalog prints ECON A170/A170H/A175/A175H, which are not in the closed list; the closed list's ECON C2001/C2002 (Common Course Numbering) are likely the same courses renumbered—reviewer should check.",
-   "APT A130 is not in the closed list; recorded as catalog addition.",
-   "Careers taken from the program learning outcome text naming non-flying capacities.",
-   "Program sequence lists 'OCC AS GE AREA B' in Track 2, apparently a typo."
+   "The text prints no award heading; section_heading uses the requirements tab label. The text begins mid-page (flight eligibility/cost information).",
+   "APT A130 Private Pilot Aviation Ground School (5 units) is required but not in the closed list; recorded as catalog addition.",
+   "Units are not printed beside track or restricted elective courses; units left null. 'Select a Track: 9' recorded as stated 9 on each track block.",
+   "Restricted Electives: 'courses used above may not fulfill elective units' (e.g., APT A110, A115, A145 used in Track 2 cannot also count as electives).",
+   "APT A145 is printed with title 'Airline Transport Pilot Ground'.",
+   "GE is printed as 'OCC AS General Education ... up to 21'; ge_units left null since only an upper bound is printed. Footnote: Cal-GETC pattern (up to 34 units) may be substituted; some major units may also meet GE.",
+   "'Transferable electives as needed to satisfy unit requirements – varies' read as electives_fill_degree true; Total Minimum Degree Units 60 recorded as degree_total.",
+   "Program sequence maps print Total Units 60-62 for each track; not used as the degree total.",
+   "Program learning outcomes are printed for the program page and recorded for this A.S. degree; careers taken from the second outcome's list of non-flying capacities."
   ]
  },
- "extracted_run": "39726645292",
+ "extracted_run": "44747523200",
+ "catalog_year": "2026-2027",
  "reconciled": [
   {
    "field": "degree_total_minimum",

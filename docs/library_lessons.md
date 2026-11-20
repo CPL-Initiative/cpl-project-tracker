@@ -46,6 +46,9 @@ The sections from S468 (2026-10-24) to S509 (2026-10-29) moved verbatim to
 *S509 and S510 (2026-10-29: the build to Version 20, the lane's S510 move, a deck's contrast) moved verbatim to
 [`library_lessons_archive_2.md`](library_lessons_archive_2.md) at the S683 Library side job's checkpoint.*
 
+*The lane's publishing-model and check-run paragraphs (parts 1 and 2 of #3560, S687 and S688) and six shipped records
+moved verbatim to [`library_lessons_archive_3.md`](library_lessons_archive_3.md) at the S690 checkpoint.*
+
 ## A Word document's contrast (S511 SkyBilberry, 2026-10-29)
 
 - **Word writes the resolved hex in `w:color`'s `val` beside a `themeColor`**, so `val` wins when it is a hex; the theme

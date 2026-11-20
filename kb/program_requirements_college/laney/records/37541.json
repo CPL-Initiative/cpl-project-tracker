@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 7604,
-    "output_tokens": 2769,
+    "output_tokens": 2689,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2769,
+  "output_tokens": 2689,
   "output_tokens_details": {
-   "thinking_tokens": 1082
+   "thinking_tokens": 967
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0858,
- "ms": 22948,
- "seconds": 23.2,
+ "cost_usd": 0.0842,
+ "ms": 21081,
+ "seconds": 21.2,
  "parts": null,
  "error": null,
  "score": {
@@ -320,14 +320,15 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The section heading is cut off in the text (starts with 'ree'); the heading was taken from the description's name of the degree.",
-   "Core Requirements prints a total of 20.00 units. Its AND/OR rows are read as SPAN 001A + SPAN 001B (no experience) OR SPAN 022A + SPAN 022B (heritage/bilingual), plus SPAN 002A + SPAN 002B required on both paths. This reading fits the 20-unit core and the 23-25 major total, but the grouping is ambiguous and should be checked.",
-   "The table also prints an 'OR 0.00-20.00' row inside the core; it was not recorded as a block total.",
-   "SPAN 033A is printed as 'Beginning Nauatl Language and Culture'; the closed list title is 'Beginning Conversational Nauatl'.",
-   "The catalog marks M/LAT 030B and M/LAT 036 as Historical. M/LAT 32 is preferred over its same-as course AFRAM 018.",
-   "Catalog codes with leading zeros (SPAN 040, M/LAT 032, AFRAM 018) were matched to the closed-list codes SPAN 40, M/LAT 32 and AFRAM 18.",
-   "Degree total 60.00 is printed, with Cal-GETC 34.00 and 'Electives to meet 60 units', for which no units are printed."
+   "The catalog prints 'Core Requirements 20.00' over SPAN 001A AND SPAN 001B OR SPAN 022A AND SPAN 022B AND SPAN 002A AND SPAN 002B. Read as: choose SPAN 001A+001B or SPAN 022A+022B, plus SPAN 002A+002B required (20 units either way). The printed 20-unit core total spans all three blocks, so stated is left null on each; reviewer should confirm whether heritage speakers also take SPAN 002A/002B.",
+   "The text begins truncated ('ree'); section heading taken from the degree name in the description.",
+   "Catalog codes printed with leading zeros (SPAN 040, M/LAT 032, M/LAT 034, M/LAT 036, AFRAM 018) were matched to closed-list SPAN 40, M/LAT 32, M/LAT 34, M/LAT 36, AFRAM 18.",
+   "M/LAT 032 and AFRAM 018 are cross-listed; catalog notes M/LAT 32 is preferred.",
+   "SPAN 033A is titled 'Beginning Nauatl Language and Culture' in the catalog vs 'Beginning Conversational Nauatl' in the state file.",
+   "M/LAT 030B and M/LAT 036 are marked Historical in the catalog.",
+   "Degree total 60 units with Cal-GETC 34 and 'Electives to meet 60 units' with no elective units printed."
   ]
  },
- "extracted_run": "38935141023"
+ "extracted_run": "44744386009",
+ "catalog_year": "2026-2027"
 }

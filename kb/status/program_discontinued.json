@@ -8,12 +8,13 @@
   "Santiago Canyon College"
  ],
  "left_out_held": 0,
- "flagged": 9,
+ "flagged": 16,
  "by_how": {
-  "prior_year_only": 9
+  "prior_year_only": 16
  },
  "by_college": {
   "Butte College": 2,
+  "City College of San Francisco": 7,
   "Gavilan College": 2,
   "Rio Hondo College": 1,
   "Riverside City College": 2,
@@ -38,6 +39,69 @@
    "how": "prior_year_only",
    "source_line": "The 2026-2027 catalog does not print it; the 2025-2026 catalog does (prior-year read, run 43969449378).",
    "source": "kb/program_requirements_college/butte/prior_2025-2026.json"
+  },
+  {
+   "college": "City College of San Francisco",
+   "control_number": "19445",
+   "title": "Databases for Developers",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "how": "prior_year_only",
+   "source_line": "The 2026-2027 catalog does not print it; the 2025-2026 catalog does (prior-year read, run 44777882954).",
+   "source": "kb/program_requirements_college/city_of_san_francisco/prior_2025-2026.json"
+  },
+  {
+   "college": "City College of San Francisco",
+   "control_number": "37601",
+   "title": "iPhone App Programming",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "how": "prior_year_only",
+   "source_line": "The 2026-2027 catalog does not print it; the 2025-2026 catalog does (prior-year read, run 44777882954).",
+   "source": "kb/program_requirements_college/city_of_san_francisco/prior_2025-2026.json"
+  },
+  {
+   "college": "City College of San Francisco",
+   "control_number": "40168",
+   "title": "Entrepreneurship and Innovation in Broadcast Media",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "how": "prior_year_only",
+   "source_line": "The 2026-2027 catalog does not print it; the 2025-2026 catalog does (prior-year read, run 44777882954).",
+   "source": "kb/program_requirements_college/city_of_san_francisco/prior_2025-2026.json"
+  },
+  {
+   "college": "City College of San Francisco",
+   "control_number": "40177",
+   "title": "Entrepreneurship in Visual Media Design",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "how": "prior_year_only",
+   "source_line": "The 2026-2027 catalog does not print it; the 2025-2026 catalog does (prior-year read, run 44777882954).",
+   "source": "kb/program_requirements_college/city_of_san_francisco/prior_2025-2026.json"
+  },
+  {
+   "college": "City College of San Francisco",
+   "control_number": "40705",
+   "title": "Build Automation for DevOps & QA",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "how": "prior_year_only",
+   "source_line": "The 2026-2027 catalog does not print it; the 2025-2026 catalog does (prior-year read, run 44777882954).",
+   "source": "kb/program_requirements_college/city_of_san_francisco/prior_2025-2026.json"
+  },
+  {
+   "college": "City College of San Francisco",
+   "control_number": "40706",
+   "title": "Database Administration",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "how": "prior_year_only",
+   "source_line": "The 2026-2027 catalog does not print it; the 2025-2026 catalog does (prior-year read, run 44777882954).",
+   "source": "kb/program_requirements_college/city_of_san_francisco/prior_2025-2026.json"
+  },
+  {
+   "college": "City College of San Francisco",
+   "control_number": "41353",
+   "title": "Entrepreneurship and Innovation in Journalism",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "how": "prior_year_only",
+   "source_line": "The 2026-2027 catalog does not print it; the 2025-2026 catalog does (prior-year read, run 44777882954).",
+   "source": "kb/program_requirements_college/city_of_san_francisco/prior_2025-2026.json"
   },
   {
    "college": "Gavilan College",
@@ -118,15 +182,6 @@
    "control_number": "11817",
    "title": "Multimedia Studies: Performance Arts",
    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "gap": "not printed in the 2026-2027 catalog",
-   "read": "capture_preview.json run 44699726074",
-   "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"
-  },
-  {
-   "college": "City College of San Francisco",
-   "control_number": "19445",
-   "title": "Databases for Developers",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "gap": "not printed in the 2026-2027 catalog",
    "read": "capture_preview.json run 44699726074",
    "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"
@@ -277,24 +332,6 @@
   },
   {
    "college": "City College of San Francisco",
-   "control_number": "37601",
-   "title": "iPhone App Programming",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "gap": "not printed in the 2026-2027 catalog",
-   "read": "capture_preview.json run 44699726074",
-   "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"
-  },
-  {
-   "college": "City College of San Francisco",
-   "control_number": "40168",
-   "title": "Entrepreneurship and Innovation in Broadcast Media",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "gap": "not printed in the 2026-2027 catalog",
-   "read": "capture_preview.json run 44699726074",
-   "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"
-  },
-  {
-   "college": "City College of San Francisco",
    "control_number": "40171",
    "title": "Technical Theater Production - Costume and Makeup",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
@@ -304,44 +341,8 @@
   },
   {
    "college": "City College of San Francisco",
-   "control_number": "40177",
-   "title": "Entrepreneurship in Visual Media Design",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "gap": "not printed in the 2026-2027 catalog",
-   "read": "capture_preview.json run 44699726074",
-   "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"
-  },
-  {
-   "college": "City College of San Francisco",
    "control_number": "40407",
    "title": "Technical Theater Production - Stagecraft",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "gap": "not printed in the 2026-2027 catalog",
-   "read": "capture_preview.json run 44699726074",
-   "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"
-  },
-  {
-   "college": "City College of San Francisco",
-   "control_number": "40705",
-   "title": "Build Automation for DevOps & QA",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "gap": "not printed in the 2026-2027 catalog",
-   "read": "capture_preview.json run 44699726074",
-   "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"
-  },
-  {
-   "college": "City College of San Francisco",
-   "control_number": "40706",
-   "title": "Database Administration",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "gap": "not printed in the 2026-2027 catalog",
-   "read": "capture_preview.json run 44699726074",
-   "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"
-  },
-  {
-   "college": "City College of San Francisco",
-   "control_number": "41353",
-   "title": "Entrepreneurship and Innovation in Journalism",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "gap": "not printed in the 2026-2027 catalog",
    "read": "capture_preview.json run 44699726074",

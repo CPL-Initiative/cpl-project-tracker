@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8477,
+  "input_tokens": 8556,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8477,
-    "output_tokens": 2934,
+    "input_tokens": 8556,
+    "output_tokens": 3299,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,48 +30,56 @@
     "model": null
    }
   ],
-  "output_tokens": 2934,
+  "output_tokens": 3299,
   "output_tokens_details": {
-   "thinking_tokens": 1046
+   "thinking_tokens": 1306
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.09259,
- "ms": 23640,
- "seconds": 24.0,
+ "cost_usd": 0.1002,
+ "ms": 28175,
+ "seconds": 29.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 19,
+   "placed": 23,
    "listed": 23,
-   "share": 0.826,
-   "missing": [
-    "HISTA170",
-    "HISTA170H",
-    "HISTA175",
-    "HISTA175H"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "HISTC1001",
+     "listed": "HISTA170",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001H",
+     "listed": "HISTA170H",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002",
+     "listed": "HISTA175",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002H",
+     "listed": "HISTA175H",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 4,
-   "codes": [
-    "HISTC1001",
-    "HISTC1001H",
-    "HISTC1002",
-    "HISTC1002H"
-   ],
-   "flagged": [
-    "HISTC1001",
-    "HISTC1001H",
-    "HISTC1002",
-    "HISTC1002H"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -125,7 +133,7 @@
    "pass": true
   },
   "careers": {
-   "count": 5,
+   "count": 7,
    "not_verbatim": [],
    "pass": true
   },
@@ -162,6 +170,8 @@
     "Students will demonstrate through historically-based research essays the ability to comprehend, analyze, and synthesize information from a variety of primary and secondary sources"
    ],
    "careers": [
+    "teach",
+    "historical research",
     "the museum field",
     "data analysis",
     "the criminial justice system",
@@ -210,8 +220,8 @@
    },
    {
     "name": "List A - Six (6) units",
-    "rule": "choose_units",
-    "minimum": 6,
+    "rule": "all",
+    "minimum": null,
     "option_group": null,
     "stated": {
      "min": 6,
@@ -370,31 +380,33 @@
   "missing_explained": [
    {
     "code": "HIST A170",
-    "why": "not in the text; requirement now printed as HIST C1001"
+    "why": "not in the text; catalog requires HIST C1001 instead"
    },
    {
     "code": "HIST A170H",
-    "why": "not in the text; requirement now printed as HIST C1001H"
+    "why": "not in the text; catalog requires HIST C1001/C1001H instead"
    },
    {
     "code": "HIST A175",
-    "why": "not in the text; requirement now printed as HIST C1002"
+    "why": "not in the text; catalog requires HIST C1002 instead"
    },
    {
     "code": "HIST A175H",
-    "why": "not in the text; requirement now printed as HIST C1002H"
+    "why": "not in the text; catalog requires HIST C1002/C1002H instead"
    }
   ],
   "notes": [
-   "HIST C1001/C1001H and HIST C1002/C1002H (common course numbering) are not in the closed list; they appear to replace HIST A170/A170H and HIST A175/A175H.",
-   "List A requires 6 units: one course from World History 1/Western Civilization 1 (A161, A161H, A180, A180H) and one from World History 2/Western Civilization 2 (A162, A162H, A185, A185H); recorded as two entries with alternatives.",
-   "List B Area 1 may also be satisfied by any List A course not yet taken; List B Area 2 by any course not yet taken from List A or List B Area 1.",
-   "Units are printed only beside the required-course rows and list totals; individual list courses have no printed units, so units are null.",
-   "Cal-GETC is printed as 'up to 34' units; recorded as 34.",
-   "Transferable electives 'as needed to satisfy unit requirement' with units 'Varies'; electives_fill_degree set true.",
-   "The Program Sequence tab's POLS C1000/C1000H is a Cal-GETC Area 4 / American Institutions course, not part of the major; not placed in a block.",
-   "Program Learning Outcomes are printed for the History program page and recorded for this AA-T."
+   "Section heading taken from the REQUIREMENTS tab; the page's own award title is not printed in the extracted text.",
+   "HIST C1001, C1001H, C1002, C1002H are the new common-course numbers and are absent from the closed list (which still names HIST A170/A170H/A175/A175H); recorded as catalog additions.",
+   "List A prints 6 units for two rows each with 'or' alternatives (A161/A161H/A180/A180H and A162/A162H/A185/A185H); read as one course from each row, both required. Per-course units are not printed in List A or List B.",
+   "List B Area 1 also accepts any List A course not yet taken; List B Area 2 also accepts any course not yet taken from List A or List B Area 1.",
+   "Cal-GETC units printed as 'up to 34'; recorded as 34. Footnote says some major units may also meet GE requirements.",
+   "Transferable electives printed as 'Varies' to reach 60 units; electives_fill_degree set true.",
+   "The 'Minimum of 18-semester units in the major' sentence is a general ADT rule; the 18 recorded in total_units comes from the printed 'Total Major Units 18'.",
+   "Program sequence (Cal-GETC map) lists POLS C1000/C1000H for the American Institutions requirement; this is GE/graduation, not a major block, and was not recorded.",
+   "Careers drawn from the program description: bachelor's applications (teach, historical research, museum field) and career fields; 'criminial' copied as misspelled."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": "44747523200",
+ "catalog_year": "2026-2027"
 }

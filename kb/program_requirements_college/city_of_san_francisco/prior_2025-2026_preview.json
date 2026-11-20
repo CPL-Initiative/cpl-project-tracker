@@ -1,0 +1,862 @@
+{
+ "college": "City College of San Francisco",
+ "catalog_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf",
+ "platform": "pdf",
+ "catalog_year": "2025-2026",
+ "programs": 27,
+ "with_closed_list": 27,
+ "started": "2026-11-20T16:51:01Z",
+ "prior": {
+  "start": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf",
+  "catalog_year": "2025-2026",
+  "only": [
+   "09175",
+   "11817",
+   "19445",
+   "24259",
+   "24260",
+   "24299",
+   "24304",
+   "24331",
+   "24393",
+   "30539",
+   "30687",
+   "31074",
+   "31413",
+   "31414",
+   "35709",
+   "36284",
+   "36672",
+   "36980",
+   "37561",
+   "37601",
+   "40168",
+   "40171",
+   "40177",
+   "40407",
+   "40705",
+   "40706",
+   "41353"
+  ],
+  "format": "pdf"
+ },
+ "procedure_step": {
+  "start": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf",
+  "file": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf"
+ },
+ "pdf": {
+  "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf",
+  "access": "ok",
+  "status": 200,
+  "bytes": 9036393,
+  "pages_total": 528,
+  "error": null,
+  "chars_total": 2777157,
+  "pypdf_accepted": 27,
+  "sample": [
+   "p159: 'Business 147\\nCity College of San Francisco 2025–2026 Catalog\\nLearning Outcomes\\nUpon completion of this program, students will be able to:\\n• Use the functions and roles of management to achieve organiza-\\ntional success.\\n• Apply theories of b'",
+   "p317: 'Health Care Technology 305\\nCity College of San Francisco 2025–2026 Catalog\\nEmployment opportunities for trained health information technicians \\ncontinue to increase with emphasis on data quality and integrity, man-\\nagement of electronic hea'"
+  ],
+  "extractor": "pypdf",
+  "numbers_after": {
+   "after": 0,
+   "before": 0,
+   "after_mode": false,
+   "gated": false,
+   "read": "heading"
+  },
+  "picks": [
+   {
+    "control_number": "09175",
+    "pages": [
+     163,
+     164,
+     165
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 163] Business 151 City College of San Francisco 2025–2026 Catalog Business english Credit, Degree Applicable Courses: BOSS 4510. Business Communications (45 hrs) Recommended Prep: BOSS 4500 or ESLN 3800 A lecture-l"
+   },
+   {
+    "control_number": "11817",
+    "pages": [
+     433
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 433] Photography 421 City College of San Francisco 2025–2026 Catalog darkroom printing. Emphasis on creating portfolios within the context of contemporary art, contemporary media, and photo history. The departmen"
+   },
+   {
+    "control_number": "19445",
+    "pages": [
+     228,
+     229,
+     230,
+     231
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 228] The Certificate of Achievement in Databases for Developers includes instruction and practice in database fundamentals and interacting with databases using both SQL queries and procedural program- ming. It is"
+   },
+   {
+    "control_number": "24259",
+    "pages": [
+     165
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 165] Business 153 City College of San Francisco 2025–2026 Catalog organizing, billing, payments, sales, marketing, and mobile e-busi- ness applications. CSU MABS 413. E-Commerce Apps for Entrepreneurial Business (3"
+   },
+   {
+    "control_number": "24260",
+    "pages": [
+     166
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.667,
+    "opens": "[page 166] 154 Business City College of San Francisco 2025–2026 Catalog COMP 9921. Introduction to Internet and Email for Business (45 hrs) Recommended Prep: ESLN 3700 or TRST 2322 Introductory course on internet and ema"
+   },
+   {
+    "control_number": "24299",
+    "pages": [
+     165,
+     166
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 165] Business 153 City College of San Francisco 2025–2026 Catalog organizing, billing, payments, sales, marketing, and mobile e-busi- ness applications. CSU MABS 413. E-Commerce Apps for Entrepreneurial Business (3"
+   },
+   {
+    "control_number": "24304",
+    "pages": [
+     165
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 165] Business 153 City College of San Francisco 2025–2026 Catalog organizing, billing, payments, sales, marketing, and mobile e-busi- ness applications. CSU MABS 413. E-Commerce Apps for Entrepreneurial Business (3"
+   },
+   {
+    "control_number": "24331",
+    "pages": [
+     292
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.5,
+    "opens": "[page 292] 280 English as a S econd Language City College of San Francisco 2025–2026 Catalog of short written texts for a variety of purposes. Individual work on lan- guage structures and forms according to need. Offered"
+   },
+   {
+    "control_number": "24393",
+    "pages": [
+     166
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 166] 154 Business City College of San Francisco 2025–2026 Catalog COMP 9921. Introduction to Internet and Email for Business (45 hrs) Recommended Prep: ESLN 3700 or TRST 2322 Introductory course on internet and ema"
+   },
+   {
+    "control_number": "30539",
+    "pages": [
+     166
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.75,
+    "opens": "[page 166] 154 Business City College of San Francisco 2025–2026 Catalog COMP 9921. Introduction to Internet and Email for Business (45 hrs) Recommended Prep: ESLN 3700 or TRST 2322 Introductory course on internet and ema"
+   },
+   {
+    "control_number": "30687",
+    "pages": [
+     186
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 186] 174 Child D evelopment and Family Studies City College of San Francisco 2025–2026 Catalog create an inclusive learning environment; and become aware of com- munity resources. CSU CDEV 124. Individualized Educa"
+   },
+   {
+    "control_number": "31074",
+    "pages": [
+     166
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 166] 154 Business City College of San Francisco 2025–2026 Catalog COMP 9921. Introduction to Internet and Email for Business (45 hrs) Recommended Prep: ESLN 3700 or TRST 2322 Introductory course on internet and ema"
+   },
+   {
+    "control_number": "31413",
+    "pages": [
+     166
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.75,
+    "opens": "[page 166] 154 Business City College of San Francisco 2025–2026 Catalog COMP 9921. Introduction to Internet and Email for Business (45 hrs) Recommended Prep: ESLN 3700 or TRST 2322 Introductory course on internet and ema"
+   },
+   {
+    "control_number": "31414",
+    "pages": [
+     166
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.75,
+    "opens": "[page 166] 154 Business City College of San Francisco 2025–2026 Catalog COMP 9921. Introduction to Internet and Email for Business (45 hrs) Recommended Prep: ESLN 3700 or TRST 2322 Introductory course on internet and ema"
+   },
+   {
+    "control_number": "35709",
+    "pages": [
+     154,
+     155
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 154] 142 Br oadcast Electronic Media Arts City College of San Francisco 2025–2026 Catalog BCST 144A. Video Editing Premiere Pro - Introduction (3) Lec-52.5, Lab-20, field trips Prereq: BCST 119 or demonstration of "
+   },
+   {
+    "control_number": "36284",
+    "pages": [
+     166
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 166] 154 Business City College of San Francisco 2025–2026 Catalog COMP 9921. Introduction to Internet and Email for Business (45 hrs) Recommended Prep: ESLN 3700 or TRST 2322 Introductory course on internet and ema"
+   },
+   {
+    "control_number": "36672",
+    "pages": [
+     165,
+     166
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 165] Business 153 City College of San Francisco 2025–2026 Catalog organizing, billing, payments, sales, marketing, and mobile e-busi- ness applications. CSU MABS 413. E-Commerce Apps for Entrepreneurial Business (3"
+   },
+   {
+    "control_number": "36980",
+    "pages": [
+     165
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 165] Business 153 City College of San Francisco 2025–2026 Catalog organizing, billing, payments, sales, marketing, and mobile e-busi- ness applications. CSU MABS 413. E-Commerce Apps for Entrepreneurial Business (3"
+   },
+   {
+    "control_number": "37561",
+    "pages": [
+     165,
+     166
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 165] Business 153 City College of San Francisco 2025–2026 Catalog organizing, billing, payments, sales, marketing, and mobile e-busi- ness applications. CSU MABS 413. E-Commerce Apps for Entrepreneurial Business (3"
+   },
+   {
+    "control_number": "37601",
+    "pages": [
+     229,
+     230,
+     231,
+     232
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 229] Courses Required for the Certificate of Achievement in iPhone App Programming Course .........................................Units Required CS 212 iPhone Programming ........................4.0 Choose one co"
+   },
+   {
+    "control_number": "40168",
+    "pages": [
+     150,
+     151,
+     152,
+     153
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 150] 138 Br oadcast Electronic Media Arts City College of San Francisco 2025–2026 Catalog • Analyze the marketing environment to identify entrepreneurial opportunities and areas for growth and development. • Devel"
+   },
+   {
+    "control_number": "40171",
+    "pages": [
+     457,
+     458,
+     459
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.667,
+    "opens": "[page 457] Theatre Arts 445 City College of San Francisco 2025–2026 Catalog viewings and discussions of comedic performances and literature tracing its development from the mimes of ancient Greece through Shakespeare, "
+   },
+   {
+    "control_number": "40177",
+    "pages": [
+     468,
+     469,
+     470,
+     471
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 468] Courses Required for the Certificate of Achievement in Entrepreneurship in Visual Media Design Course .........................................Units Required VMD 102 Design Thinking ........................."
+   },
+   {
+    "control_number": "40407",
+    "pages": [
+     457,
+     458,
+     459
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.833,
+    "opens": "[page 457] Theatre Arts 445 City College of San Francisco 2025–2026 Catalog viewings and discussions of comedic performances and literature tracing its development from the mimes of ancient Greece through Shakespeare, "
+   },
+   {
+    "control_number": "40705",
+    "pages": [
+     226,
+     227,
+     228,
+     229
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 226] Courses Required for the Certificate of Achievement in Build Automation for DevOps & QA Course .........................................Units Required CS 160A Introduction to Unix/Linux .................2.0 C"
+   },
+   {
+    "control_number": "40706",
+    "pages": [
+     228,
+     229,
+     230,
+     231
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 228] Courses Required for the Certificate of Achievement in Database Administration Course .........................................Units Required CS 150A Introduction to SQL Databases and NoSQL ...3.0 CS 155P MyS"
+   },
+   {
+    "control_number": "41353",
+    "pages": [
+     353,
+     354
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 353] Journalism 341 City College of San Francisco 2025–2026 Catalog The minimum time for completion of this certificate is 2 semesters. Completion time will vary based on student preparation and number of classes"
+   }
+  ],
+  "unproven": []
+ },
+ "loads": 1,
+ "pages_listed": 1,
+ "pages_answered": 1,
+ "seconds": 48.5,
+ "found": 27,
+ "by_method": {
+  "pdf_pages": 27
+ },
+ "shared_pages": {
+  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=228": [
+   "19445",
+   "40706"
+  ],
+  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=165": [
+   "24259",
+   "24299",
+   "24304",
+   "36672",
+   "36980",
+   "37561"
+  ],
+  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=166": [
+   "24260",
+   "24393",
+   "30539",
+   "31074",
+   "31413",
+   "31414",
+   "36284"
+  ],
+  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=457": [
+   "40171",
+   "40407"
+  ]
+ },
+ "not_found": [],
+ "page_claimed": [],
+ "page_challenged": [],
+ "coverage_bands": {
+  "0.5-0.8": 8,
+  "0.8-1.0": 1,
+  "1.0": 18
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/city_of_san_francisco",
+  "kept": 0,
+  "kept_moved": 0,
+  "programs": 27,
+  "list": [
+   {
+    "control_number": "09175",
+    "title": "Computer Accounting",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=163",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "11817",
+    "title": "Multimedia Studies: Performance Arts",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=433",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "19445",
+    "title": "Databases for Developers",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=228",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "24259",
+    "title": "Construction Administrative Assistant",
+    "award": null,
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=165",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "24260",
+    "title": "Business Information Worker (BIW)",
+    "award": "Noncredit program",
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=166",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "24299",
+    "title": "Clerical Accounting",
+    "award": null,
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=165",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "24304",
+    "title": "Clerical Support Specialist",
+    "award": null,
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=165",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "24331",
+    "title": "Beginning VESL for Janitorial Workers",
+    "award": null,
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=292",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "24393",
+    "title": "Computerized Accounting",
+    "award": null,
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=166",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "30539",
+    "title": "Business Office Support Skills, Phase II",
+    "award": null,
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=166",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "30687",
+    "title": "Introduction to Child Development Careers",
+    "award": null,
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=186",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "31074",
+    "title": "Digital Literacy and Core Skills",
+    "award": "Noncredit program",
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=166",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "31413",
+    "title": "PowerPoint Specialist",
+    "award": null,
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=166",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "31414",
+    "title": "Office Receptionist",
+    "award": null,
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=166",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "35709",
+    "title": "Broadcast Motion Graphics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=154",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "36284",
+    "title": "Cloud-Based Electronic Communication",
+    "award": "Noncredit program",
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=166",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "36672",
+    "title": "QuickBooks & Spreadsheets for Accounting",
+    "award": "Noncredit program",
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=165",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "36980",
+    "title": "Medisoft for Business",
+    "award": "Noncredit program",
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=165",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "37561",
+    "title": "Accounting Assistant & Core Skills",
+    "award": "Noncredit program",
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=165",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "37601",
+    "title": "iPhone App Programming",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=229",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "40168",
+    "title": "Entrepreneurship and Innovation in Broadcast Media",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=150",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "40171",
+    "title": "Technical Theater Production - Costume and Makeup",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=457",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "40177",
+    "title": "Entrepreneurship in Visual Media Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=468",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "40407",
+    "title": "Technical Theater Production - Stagecraft",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=457",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "40705",
+    "title": "Build Automation for DevOps & QA",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=226",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "40706",
+    "title": "Database Administration",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=228",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "41353",
+    "title": "Entrepreneurship and Innovation in Journalism",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=353",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   }
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
+ },
+ "fingerprints": {
+  "09175": {
+   "sha256": "727848a65daff820c9fb64864c35486da93d28bf1fd63aca645c78467b3b925f",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=163"
+  },
+  "11817": {
+   "sha256": "9006e1d6ae89dc2050afcfff17f34c7359a4a91e0f443484c44bf960cc7727ce",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=433"
+  },
+  "19445": {
+   "sha256": "2fca4f1b0542dfbe6f45160955f53058ffd2c0694b98c3d3ec7ebc139a4727be",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=228"
+  },
+  "24259": {
+   "sha256": "62f5b84c4add5abb49c2956218bc5526f52840469a9355e9d1bf079811dedc67",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=165"
+  },
+  "24260": {
+   "sha256": "abf7ef7e63a7e19c28c9cb153f296d73946d50a6288032d66464d13bad292aef",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=166"
+  },
+  "24299": {
+   "sha256": "72a8d0f7784e76deb35c3409480fc2b862c21ddbde1fd29031168a937e0c83c6",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=165"
+  },
+  "24304": {
+   "sha256": "62f5b84c4add5abb49c2956218bc5526f52840469a9355e9d1bf079811dedc67",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=165"
+  },
+  "24331": {
+   "sha256": "b5b5bdc51a91ec055418a4f02fd6618770ff059ef8eb54ea1719539d4dd87122",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=292"
+  },
+  "24393": {
+   "sha256": "abf7ef7e63a7e19c28c9cb153f296d73946d50a6288032d66464d13bad292aef",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=166"
+  },
+  "30539": {
+   "sha256": "abf7ef7e63a7e19c28c9cb153f296d73946d50a6288032d66464d13bad292aef",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=166"
+  },
+  "30687": {
+   "sha256": "395285f7b0d6a9c575c16eba116654d9b1f10cfe822388bfd234b45652dda3aa",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=186"
+  },
+  "31074": {
+   "sha256": "abf7ef7e63a7e19c28c9cb153f296d73946d50a6288032d66464d13bad292aef",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=166"
+  },
+  "31413": {
+   "sha256": "abf7ef7e63a7e19c28c9cb153f296d73946d50a6288032d66464d13bad292aef",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=166"
+  },
+  "31414": {
+   "sha256": "abf7ef7e63a7e19c28c9cb153f296d73946d50a6288032d66464d13bad292aef",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=166"
+  },
+  "35709": {
+   "sha256": "1001865d4837af912c708bf72ceca5844a7471afd308d3d3b099b6105ee69eb1",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=154"
+  },
+  "36284": {
+   "sha256": "abf7ef7e63a7e19c28c9cb153f296d73946d50a6288032d66464d13bad292aef",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=166"
+  },
+  "36672": {
+   "sha256": "72a8d0f7784e76deb35c3409480fc2b862c21ddbde1fd29031168a937e0c83c6",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=165"
+  },
+  "36980": {
+   "sha256": "62f5b84c4add5abb49c2956218bc5526f52840469a9355e9d1bf079811dedc67",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=165"
+  },
+  "37561": {
+   "sha256": "72a8d0f7784e76deb35c3409480fc2b862c21ddbde1fd29031168a937e0c83c6",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=165"
+  },
+  "37601": {
+   "sha256": "7693cb7fe6c6a13359781d8dc237626d692cf36e47e0b138ad6f54c82c9bd76c",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=229"
+  },
+  "40168": {
+   "sha256": "1fb9a324ede558dbcaa7a32dc0bbb5b8a0c57ee00c5a9edd1351a9c25a64411c",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=150"
+  },
+  "40171": {
+   "sha256": "db60b561879edaf891db1e8a26378c41495d0e6e0b2830af24c49efaafe86d72",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=457"
+  },
+  "40177": {
+   "sha256": "f7a1a9008d1d17b1b8fc338d8c0802ef3bc7efd15987888e750ede02f02217a6",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=468"
+  },
+  "40407": {
+   "sha256": "db60b561879edaf891db1e8a26378c41495d0e6e0b2830af24c49efaafe86d72",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=457"
+  },
+  "40705": {
+   "sha256": "949b579378bcff03f056205007fcbba99fdd3cacf2c052dd10d1a917d51d6089",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=226"
+  },
+  "40706": {
+   "sha256": "241c648e88d2ad8d4a868fcaf8233cceabf506080013a54b8b8e3252612d08cd",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=228"
+  },
+  "41353": {
+   "sha256": "a5386243190d2fa22b12d2b2c9adeb81211817427ef73f652b31bacb48083014",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=353"
+  }
+ },
+ "run": "44777204746"
+}

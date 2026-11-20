@@ -712,3 +712,149 @@ round at about 10:30Z); #3595 carries the outline files and #3598 the display pa
   and a reader fix, in the cheap piles or the next session.
 - **Copper Mountain's catalog moved** to `cmccd.curriqunet.com` (`f-copper-mountain-catalog-moved-s689`); its registry
   row changes by a plan or the weekly census apply (Sundays). Cosumnes River's `only` input does not exist yet.
+
+## Moved from the lane (S690 checkpoint, 2026-11-20)
+
+Verbatim from `docs/reference/lanes/program-requirements-harvest.md`, as the lane stood before the S690 checkpoint (relative links re-pointed to this folder); the lane keeps the current text.
+
+**Older rulings and notes** (Sheets 23, 25, 26, 29, 32, 33, 50 and 77; the sequence pass; CSU LA later): lessons, the S335, S336, S353, S387, S394 and S422 compactions.
+
+**Measured (2026-10-03):** the Program Course File names every course a program lists (the closed list each record is checked against) but marks none required. Detail: lessons archive, S334.
+
+✅ **Sheets 38, 39 and 42's rulings, the Progress view (S343, #1900, its status file written at step 12) and the older NEXT** (Schedule+ for Spring 2027, the film, the addenda reading agent, SkyView ROEP): lessons, *Moved from the lane (S653 checkpoint)*.
+
+🔨 **Phase 2, a college at a time:** the load, the display and the $40 go: lessons archive 4, *Moved from the lane (S648, Glendale loaded)*.
+
+**Standing decisions of S640 and S641, throughput (S644-S647) and the gap census** (`d-passes-live-stays-equal-only-s644` stands): lessons archive 4, *Moved from the lane (S648 checkpoint)*.
+
+**Display build `4c57fd250cce` is live, confirmed by its closing count** (S689, #3598; 18,459 programs; one college first, Barstow 68 of 68, run 44718082566; the gate 44718607626; the whole build 44718939233, 18,391 written and 68 current, no errors; the closing count 44719715170; `m-display-build-live-s689`). The confirming read pages by key, never by offset (#3564 `bc0bf6ee`; **DECIDED** `d-display-keyset-confirm-s687`). The gap census of 2026-11-20 (run 44719996895, `main` fb454129): 5,069 left of 20,282, passing 15,120; `places_none` 396 to 309 (`m-census-5069-s689`).
+
+**Standing from S645 to S648** (the #3193 rescore, the PDF reader, Desert, Glendale, district profiles): lessons, *Moved from the lane (S680 checkpoint)*.
+
+**Standing from S648 to S651** (Cal-GETC 34, #3244; Sheet 195's rulings; Cosumnes River, #3288; Lassen, #3291; Sam's `sam-three-colleges-rules-first-2026-11-13` and `sam-noncredit-total-hours-2026-11-13`): every DECIDED slug and pitfall, lessons, *Moved from the lane (S652 final refresh)*.
+
+**Catalog-first collection (Sam's go, 2026-11-14; `sam-catalog-first-collection-2026-11-14`, `d-catalog-first-slice-order-s652`):** the paragraph as it stood, lessons, *Moved from the lane (S681 checkpoint)*.
+
+**Slice C, prefix aliases (#3301), and the course-id route (#3312, S653):** `d-prefix-alias-evidence-rule-s652`, `d-crsid-seven-retire-ten-stay-s653` and **PITFALL** `p-mis-codes-carry-record-id-suffix-s652` stand. The paragraph as it stood: lessons, *Moved from the lane (S681 checkpoint)*.
+
+**The course-id rescore at six colleges (#3352, S655)** is done, display build `58b763170559` live: lessons, *Moved from the lane (S668 checkpoint)*.
+
+**A GE-pattern page has one owner (#3324, S654):** every DECIDED slug and the paragraph as it stood, lessons, *Moved from the lane (S670 checkpoint)*.
+
+**Slice A, the no-closed-list lookup (#3300; `ncl_lookup`, default 1) and the page yield (#3408, S668; `d-ncl-page-yield-s668`)** stand; **PITFALL** `p-new-matcher-needs-self-recall-test-s652`; **PROCEDURE** `p-yield-holder-live-row-after-filing-s668`. The paragraph as it stood: lessons, *Moved from the lane (S680 checkpoint)*.
+
+**Slice B** (the completeness base counts catalog-listed Active programs; #3414's `NCL_EXTRACT`, default off; `d-no-list-record-scored-without-state-list-s668`, `d-named-course-minimum-one-s667`): the paragraph as it stood, lessons, *Moved from the lane (S681 checkpoint)*.
+
+**The passing dry run (#3293 closed and parked as issue #3525, branch kept; nothing applied; `d-passing-dry-run-held-for-cobix-s651` stands):** a plain session decides from the issue without COBIx (NEXT (6)). The paragraph as it stood: lessons, *Moved from the lane (S680 checkpoint)*.
+
+**The display's gaps as structured fields** ([`reference/roep_display_structured_fields_design`](reference/roep_display_structured_fields_design.md), #3296): the paragraph as it stood, `docs/program_requirements_harvest_lessons.md`, *Moved from the lane (S667 checkpoint)*; the structured-fields migration's step 1 is NEXT (6).
+
+**The reader's page checks (#3514, #3587, #3590) and the reread waves.** Rules A to C check the pages a record placing no courses was read from (`CPL_READER_PAGE_CHECKS`, on); rule D is off unless the dispatch input `rule_d` sets it. Since S689 rules A and D read a line with PDF ligatures and the scorer's stand-in glyphs folded (`fold`: the scorer's `_LIGATURES` and `_LIGATURE_SPACED`, imported, never copied; [`methodology-a-pdf-ligature-hides-a-heading-from-an-exact-match`](kb-notes/methodology-a-pdf-ligature-hides-a-heading-from-an-exact-match.md)), and a program a rule refuses stays marked until a committed record places its courses (`refused_filed`; a refusal beside the plain picker's own named heading, `plain_named`, is left out): 263 programs at 35 colleges on `main`. `stage_sources` holds a staged page the rules did not accept, so a refused program is paid for only through a fresh capture and extract, never `sources_from` (**PITFALL** `p-sources-from-repays-refused-pages-s689`). Plan `kb/program_requirements_reread_plan_s683.json`: 444 records at 73 colleges; the third ten posted and loaded in S689 (`m-reread-third-ten-s689`); its per-college ceilings price only the aim rows, and the stop is $40 per college per run (**DECIDED** `d-reads-stop-is-forty-dollars-s685`). Earlier waves and #3547's guard: lessons, *Moved from the lane (S685 checkpoint)*. **Keep-the-better** (#3553, `main` 95f85b1e): a generic CourseLeaf heading passes the own-program test only on the program's own page (`page_is_own`); a live run equal to this run is `posted`; a failing re-read whose live row holds this run goes to a person (the rule as it stood: lessons, *Moved from the lane (S687 checkpoint)*). #3557 (`995d7c41`: a stripped award ending passes only when `slug_awards` names the program's award kind; `award_tail` on the decision row) and #3558 (`741129e5`: with `live_runs`, a run is named whenever a kept or new record is not live at it) are on `main`. **FINDING** `f-reread-drops-files-live-rows-stay-s684` stands.
+
+**NEXT, in order:** (0) The RCCD pilot (#3438, S671; `d-rccd-pilot-no-blind-force-s671`) stands: never force a re-extraction blind, read the failing pages for free first. (1) Read a PR's whole thread before its merge or any apply of a file it carries (`p-apply-before-thread-read-s685`); revert a timestamp-only bot commit on a PR head so `test` runs (`d-revert-stamp-commit-for-test-s688`). (2) **S689's carry-overs, one follow-up PR after the next wave** (Sam, 2026-11-20, `r-collection-first-sam-2026-11-20`): #3597 (with `main` merged a keep-the-better test fails: #3594's `-ca` answers before the title; accept either evidence) and #3593 (Berkeley City: a second free reconcile, `--calgetc-review` with `--restore`, a self-recall of the next-line reading, then the reread), with the minor findings of #3586 (comment 7035679771), #3590 (7035366834) and #3594 folded in. #3592, #3594, #3596 and #3598 merged. (3) **The reread plan's fourth ten** (rows 46 to 55): Napa Valley, North Orange Continuing Education, Saddleback, Cerro Coso, Mt. San Antonio, Santa Monica, San Diego College of Continuing Education, Bakersfield, Berkeley City (after #3593) and Butte; $40 per college per run, one pending run per concurrency group (`p-read-dispatches-share-group-s687`). (4) **The page checks' lever** (`f-ligature-refusals-s689`): the fold changes rule A only where the filed PDF text prints ligatures or stand-in glyphs, at Cañada, College of the Desert, Santa Rosa Junior and Solano. A free capture at Solano (11 marked) and Cañada (3), then a paid read only where the program's own page is found. Santa Rosa Junior's 12 with no own page and 13898 (a known wrong page) stay as filed; 37014 is held. COBIx's three non-blocking points on #3590 (comment 7035366834) wait for a plain session. (5) **Rule D's prior-year reads** after #3592: City College of San Francisco's 27 not printed; College of the Desert's 8 keep their gap (`f-desert-prior-catalog-behind-robots-s689`). (6) **The display** is done for tonight (above): the next build after the next posts, then the census against 5,069. (7) **Copper Mountain's catalog moved** to `cmccd.curriqunet.com` (`f-copper-mountain-catalog-moved-s689`): its registry row changes by a plan or Sunday's census apply. Cosumnes River's paid read waits on the named-programs-only `only` input. (8) **Cheap piles:** lever 4 (the noncredit hours total, 68; no PR: 19 print no total, 16 one end, 13 short, 12 sum to zero, 5 over, 3 a term ratio); levers 5, 9, 10 and 15 need free page reads first; the six free captures' leftovers (lessons, *S689*); the narrower A5; the `no_units_printed` wording; the six `NOTE_PAIR_ON` records; #3508's finding 4; Sierra's reader of `together`. Los Medanos stays parked (no electives sentence). (9) **Outline readers** (step 11, [`scheduled_sessions`](reference/scheduled_sessions.md)): Mt. San Antonio is loaded (load 44729553938, 1,073 SLO rows); City College of San Francisco's trial files parsed outcomes only (`d-ccsf-outline-trial-no-staff-names-s689`; index 44696736058: 1,417 of 1,469 wanted have an outline); Golden West's 474 header rows (`f-golden-west-474-header-rows-s689`): a guarded update with before-values, and the reader fix; COBIx's three points on #3586 (comment 7035679771); the index search at San Diego College of Continuing Education and Rio Hondo (`search_all` presses Search when no NewSearch request arrives); Peralta (one code holds up to four colleges' records); Saddleback and Irvine Valley (status words other than *Active*); the standing test in `course-outcomes-load.yml`; the staff-names question to a plain session with COBIx (`q-trial-pages-file-staff-names-s689`). (10) Lassen: the structured-fields migration's step 1, Lassen first; 31297, 35106 and 41912 held. (11) #3293, parked as issue #3525: decide in a plain session. (12) #3502's reader changes, cheapest first, with the two changed-page records. (13) Ruling 3's self-recall run (`CPL_GE_AREA_SLOT_FILL=1`), then a PR sets the default on. (14) The `NCL_EXTRACT` switch after the Commons sidecars hold `no_state_list` records back; then #3414's refusal probe. (15) The teach-out rule (#3491), after a runner capture. (16) Los Medanos's and Los Angeles Valley's program rules, with a person. (17) Confirm the harvest card shows #3465's `spent_usd`. **For a person:** Los Angeles Harbor 44947 (held, S689); Cerritos 44984 (S687); West Los Angeles 38677; Los Angeles Mission 44849 (no live row); Los Angeles City 32832 (live run 39006380342, `main` files 43212072618); Ventura 45355 and Shasta 18153 (S684). Older lists: lessons, S653, S666, *Moved from the lane (S684 checkpoint)* to *(S689 checkpoint)*.
+
+🔨 **The catalog sweep (S394-S414):** its standing rules: lessons, *Moved from the lane (S648)*.
+
+**Grok (waits on billing), the light index, flags:** lessons archive 5, *Moved from the lane (S645)*.
+
+## S690 (SkyMerlin, the CPL Queue routine's 11:12Z firing, conductor from 12:13Z, 2026-11-20): City College of San Francisco's outlines, 17,341 printed courses, the fourth ten
+
+**What happened.** The 11:12Z firing found S689 live on #3584 and stood down in one line (11:13Z). At 11:45Z the
+account holder answered *"keep going"* in the session, so it waited for S689's sign-off push (handoff 690, about
+12:13Z), declared on draft #3599 and took the queue as S690, the same pattern as
+`d-firing-waits-for-sign-off-then-takes-queue-s685`. A plain session with Sam ran beside it (the Commons fixes, the
+M-ID census, the hunt file, `checkpoint.md`; the split is on #3584, comment 7039601326). A read-only count over the
+committed files at 12:22Z (49,558 live cards, singletons included) ranked lane 1 by the M-ID cards each fix would
+unblock (`d-mid-ranking-orders-lane-1-s690`): City College of San Francisco's outlines first (2,065 cards improved,
+1,020 completed, 1,401 given their first text), the one outline fill runnable that night; the next six (American
+River, Southwestern, Glendale, Santa Barbara City, Fullerton, College of the Canyons) have no public outline system
+or are blocked, and no committed pipeline fills a missing course description. The plain session's census counts on
+another base (15,720 cards); the Commons uses its figures. Workers: `ccsf`, `reread` and `pages`, then `piles` (the
+follow-up PR) and `catalogs` (Sam's go of 6:26 AM PT), then `display`. Merged, each on a green `test` after its
+thread was read: #3600 `9fc88a07` (13:01Z) and #3601 `46f92c76` (13:48Z); S689 merged its #3584 (`bcc3f8a8`) at about
+13:49Z. The wave PR #3604 (`claude/s690-wave`) was open at the checkpoint.
+
+**The numbers.**
+- **Program records: 35 new, 129 replaced by a better reread, 6 restored, 3 held for a person**
+  (`m-reread-and-pages-posts-s690`). The pages levers ($7.68): Laney 6 new and 26 replaced (extract 44744386009,
+  $2.50; reread 44749644504; load 44749904888); Diablo Valley 1 and 27, 18885 restored (44745889555, $2.62;
+  44749651187; 44749910559); Orange Coast 4 inserted and 16 replaced (44747523200, $2.56; 44749656796; 44749916015).
+  Victor Valley 0 of 26, Mt. San Jacinto 0 of 24 and Southwestern 0 of 24 own pages, so no paid read. Live reads
+  44747782378, 44748800216, 44749036108. The reread plan's rows 46 to 55 but Berkeley City ($7.89): Napa Valley 6 and
+  24, 3 restored, 3 held (19126, 31158, 36528 in `napa_valley/held_for_person/`; 44739981651, $2.66; 44745380855;
+  44745678890); Cerro Coso 4 and 6 (44737711062, $0.82; 44745386733; 44745684280); Santa Monica 5 and 0 (44739378155,
+  $0.47; load 44745875952); San Diego College of Continuing Education 8 and 5 (44739577102, $0.69; 44745499130;
+  44745881355); Mt. San Antonio 1 and 25, 08086 and 31650 restored because a person had checked their live rows
+  (44744647809, $3.25; 44759483220; 44759691077). Saddleback and Bakersfield had nothing to pay. Live reads
+  44744830810, 44759070274.
+- **Outline rows: 1,416** (`m-ccsf-outlines-loaded-s690`). City College of San Francisco's read 44748015052: 1,417
+  pages in two parts, 2,904 and 2,900 SLOs, every page 200, none cut; standing test 26 of 26; load 44767903173, ids
+  41769 to 43184, receipt `kb/receipts/course_outcomes_ccsf_44767903173.json`, no objectives (report 28 prints none);
+  live count 1,416 confirmed by the conductor.
+- **Printed catalog courses: 17,341 at 16 colleges** (`m-printed-catalog-courses-s690`; Sam's go,
+  `r-plain-page-read-blocked-catalogs-sam-2026-11-20`), read on the runner by the census Reader for $0:
+  `kb/hand_filed_catalogs/courses/<slug>.json.gz` (gzip -9n, 3.9 MB from 29.6 MB, `d-course-rows-gzipped-s690`) with
+  `index.json` and a README. North Orange Continuing Education 1,089 (48 subjects, HLTH 167 and PARN 170 among them;
+  runs 44756513382, 44757980757), Southwestern 1,692 (44759854547), Cerritos 1,656 (44767159068), Long Beach City
+  1,595 (44765123063), Monterey Peninsula 1,137 (44765198579), Clovis 473, Los Angeles City 1,123 and Los Angeles
+  Valley 939 (44759950664), East Los Angeles 1,676, Los Angeles Harbor 765 and Los Angeles Southwest 724
+  (44762233563), Los Angeles Mission 798, Pierce 414 and Los Angeles Trade-Technical 1,099 (44763620806), West Los
+  Angeles 719 (44764775167 and 44763620806), El Camino 1,442 (Sam's copy, 44762315427; its two addenda not read). The
+  other four of Sam's copies print two columns, so those colleges were read from their own PDFs. North Orange's
+  program capture (44758918611) found nothing to pay. The Reader's plan now caps `capture_lines`, `pdf_page_cap` and
+  `pdf_unfolded`, with a test; draft #3603 closed into #3604.
+
+**Stopped or carried over.**
+- **City College of San Francisco's rule D prior-year read** of its 27 not printed (`f-ccsf-prior-catalog-refused-s690`):
+  `www.ccsf.edu` serves a Cloudflare 403, and the guessed 2025-26 PDF answers 404 (free preview 44738618128). Asked of
+  COBIx on #3358 (comment 7040201320); trigger branch `claude/s690-ccsf-prior` left.
+- **Golden West's 474 header rows** (`f-golden-west-474-header-rows-s689`): the reader fix and the plan sit on
+  `claude/s690-goldenwest-header` (ae5be1d5, no PR). The second reader's verdict after two rounds was do not apply
+  (`d-golden-west-stops-after-two-rounds-s690`): (1) the write returns one 263 KB value and the rollback depends on it
+  alone; the fix returns each id with an after-fingerprint, joined to the paged before-values. (2) If the corrected
+  filed reads merge before the write, a `golden_west` load inserts 486 rows, 476 of them beside a live header; so the
+  write goes before the merge, and its rollback reverts the read correction. The count is 476
+  (`f-golden-west-476-header-rows-s690`): THEA G210 *Course Outcome* and MUS G111 *Couse Outcomes* are headers too.
+  The same shape sits at Coastline (ANTH G190, id 7204), and four Golden West rows open with *Course Objectives* (ELL
+  G015N, ART G145, AUTO G004N, ELL G025N). For COBIx and the next session.
+- **Batch 2 of the reread plan** (rows 56 to 73) extracted on read branches only, not posted: Cuyamaca ($2.30),
+  Moreno Valley, Norco and Fullerton; College of the Canyons' and San Jose City's extracts and San Diego City's and
+  San Diego Mesa's previews were running at hand-back. The gate failed at Merced (40072 lost its page), Reedley and
+  Sacramento City (8 programs outside the aim list on new pages); nothing was aimed at Chaffey, Mission, Cypress or
+  San Joaquin Delta. Solano and Cañada were untouched; Los Angeles Trade-Technical, Los Angeles Southwest and West Los
+  Angeles went to the catalogs read.
+- **The follow-up PR** (`claude/s690-follow-up`): #3593 and #3597 closed with pointers for the three-PR cap (comments
+  7039647197 and 7039648134; `d-carryovers-closed-for-cap-s690`) and fold into it with the minor findings of #3586
+  (COBIx, 7035679771), #3590 (7035366834), #3594 and #3601 (the gate checks no host; the fingerprint misses `_ws`,
+  `READER_HTML_CAP` and `SLO_HEADING`), the spend file's top-level `updated`, Berkeley City's reconcile and review and
+  Glendale's wording measure (no writes). In progress at the checkpoint.
+
+**Lessons.**
+- **A recall gate whose hand counts equal the parser's own count checks nothing**
+  (`p-recall-gate-counts-parser-output-s690`). #3601's first round was BLOCKING: the gate's hand counts equalled
+  `len(parser outcomes)`, and it opened on an empty or 403 trial, since nothing equals nothing. Round two took the
+  counts by eye from the trial's job-log SLO excerpt (trial 44744884314, job 136319047157, 12 of 12), bound them to the
+  parser's fingerprint (`d5cef493`), and refuses a non-200 page, a page cut at the Reader's cap, an unsourced count and a
+  fingerprint mismatch. The note: [`methodology-a-test-must-not-take-its-rule-as-the-truth`](kb-notes/methodology-a-test-must-not-take-its-rule-as-the-truth.md), *A recall gate on outline pages*.
+- **The runner and the session get different answers from one WAF host** (`f-waf-answers-runner-and-session-apart-s690`).
+  The runner got HTTP 200 at `catalog.nocccd.edu` and the four CourseLeaf hosts; the sandbox and the plain session's
+  cloud browser got 202 with an AWS WAF check. The committed captures already showed the reader at 200 there (North
+  Orange run 43342034608, Southwestern 44529722751; the plain session on #3584, comment 7042730508), and COBIx
+  confirmed the route (comment 7042639554). The note:
+  [`methodology-a-bot-wall-answers-each-network-on-its-own`](kb-notes/methodology-a-bot-wall-answers-each-network-on-its-own.md).
+- **The Library's first check run turned `main` red** (#3600, `d-main-red-check-line-stays-out-s690`). Run 44733588776
+  stamped every page's accessibility line, the starter page's included (653864b7): ELL IET's reading text went from
+  33,996 to 34,078 characters, past Sierra's `LIBRARY_TEXT_MAX` of 34,000 (`sierra_library` (5) and
+  `library_revise_draft` E1 failed), and `buildNewPage` copied the starter's line into new pieces
+  (`library_qualify_draft` (1), twice). The reading text now skips the `cpl-library-check` block, and new pieces drop it.
+- **A page address that changes case and slashes reads as a new page** (`f-butte-page-addresses-changed-case-s690`).
+  Butte's every address moved (`Catalog//iq` to `catalog/iq`), so `unchanged()` would have sent 163 unchanged programs
+  to a paid read, about $18, for one aim program. Compare normalized addresses in `unchanged()` and `held()`.
+- **Same-page calls at the reread gate** (`d-reread-gate-same-page-calls-s690`): a page one PDF page off, an address
+  that differs only by a double slash, and a new edition of the same catalog (College of the Canyons' v2 to v3) count
+  as the same page when each moved page's coverage is equal or higher.
+- **Two findings for the next Orange Coast and Diablo Valley work.** Orange Coast's 109 live rows hold run 38670927724
+  where `main` files 39726645292 (`f-orange-coast-live-rows-older-run-s690`). Shared pathway pages claim 34 programs at
+  Orange Coast and Diablo Valley (`o-shared-pages-claim-34-programs-s690`): a possible reader lever, unmeasured.
+- **North Orange stays on the outline hunt** (`d-noce-stays-on-outline-hunt-s690`): its catalog reads, but its SLOs sit
+  behind CurricUNET; the worker's hunt record was not filed, since the hunt file is the plain session's.

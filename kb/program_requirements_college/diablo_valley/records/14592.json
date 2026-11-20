@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 7893,
-    "output_tokens": 3263,
+    "output_tokens": 3233,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3263,
+  "output_tokens": 3233,
   "output_tokens_details": {
-   "thinking_tokens": 929
+   "thinking_tokens": 749
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09683,
- "ms": 26025,
- "seconds": 26.4,
+ "cost_usd": 0.09623,
+ "ms": 25008,
+ "seconds": 25.7,
  "parts": null,
  "error": null,
  "score": {
@@ -194,84 +194,84 @@
     },
     "courses": [
      {
-      "code": "KINES100",
+      "code": "KINES 100",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KINES234",
+      "code": "KINES 234",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KINES240",
+      "code": "KINES 240",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "KINES242",
+      "code": "KINES 242",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KINES246",
+      "code": "KINES 246",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "KINES248",
+      "code": "KINES 248",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KINES250",
+      "code": "KINES 250",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KINES252",
+      "code": "KINES 252",
       "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KINES254",
+      "code": "KINES 254",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KINES255",
+      "code": "KINES 255",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "NUTRI120",
+      "code": "NUTRI 120",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "PH230",
+      "code": "PH 230",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -280,7 +280,7 @@
     ]
    },
    {
-    "name": "plus at least 3 units from",
+    "name": "plus at least 3 units from:",
     "rule": "choose_units",
     "minimum": 3,
     "option_group": null,
@@ -290,49 +290,49 @@
     },
     "courses": [
      {
-      "code": "BIOL116",
+      "code": "BIOL 116",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "BIOL117",
+      "code": "BIOL 117",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "BIOL120",
+      "code": "BIOL 120",
       "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "BIOL139",
+      "code": "BIOL 139",
       "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "BIOL140",
+      "code": "BIOL 140",
       "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "BIOLC1000",
+      "code": "BIOLC 1000",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "BIOLC1001",
+      "code": "BIOLC 1001",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -341,7 +341,7 @@
     ]
    },
    {
-    "name": "plus at least 2 units from",
+    "name": "plus at least 2 units from:",
     "rule": "choose_units",
     "minimum": 2,
     "option_group": null,
@@ -351,42 +351,42 @@
     },
     "courses": [
      {
-      "code": "KNACT146A",
+      "code": "KNACT 146A",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT146B",
+      "code": "KNACT 146B",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT146C",
+      "code": "KNACT 146C",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT146D",
+      "code": "KNACT 146D",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT148A",
+      "code": "KNACT 148A",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT148B",
+      "code": "KNACT 148B",
       "units": 1,
       "units_max": null,
       "alternatives": [],
@@ -395,7 +395,7 @@
     ]
    },
    {
-    "name": "plus at least 2 units from",
+    "name": "plus at least 2 units from:",
     "rule": "choose_units",
     "minimum": 2,
     "option_group": null,
@@ -405,56 +405,56 @@
     },
     "courses": [
      {
-      "code": "KNACT110A",
+      "code": "KNACT 110A",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT110B",
+      "code": "KNACT 110B",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "KNACT110C",
+      "code": "KNACT 110C",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT120",
+      "code": "KNACT 120",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT122A",
+      "code": "KNACT 122A",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT124A",
+      "code": "KNACT 124A",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT124B",
+      "code": "KNACT 124B",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT140",
+      "code": "KNACT 140",
       "units": 1,
       "units_max": null,
       "alternatives": [],
@@ -467,40 +467,42 @@
   "missing_explained": [
    {
     "code": "BIOSC 101",
-    "why": "not in the text"
+    "why": "not in the text; catalog lists BIOLC 1001 Introduction to Biology instead"
    },
    {
     "code": "BIOSC 102",
-    "why": "not in the text"
+    "why": "not in the text; catalog lists BIOLC 1000 Introduction to Biology with Lab instead"
    },
    {
     "code": "BIOSC 116",
-    "why": "not in the text; catalog prints BIOL116 (likely subject renamed BIOSC to BIOL)"
+    "why": "catalog prints it under subject BIOL (BIOL 116)"
    },
    {
     "code": "BIOSC 117",
-    "why": "not in the text; catalog prints BIOL117 (likely subject renamed)"
+    "why": "catalog prints it under subject BIOL (BIOL 117)"
    },
    {
     "code": "BIOSC 120",
-    "why": "not in the text; catalog prints BIOL120 (likely subject renamed)"
+    "why": "catalog prints it under subject BIOL (BIOL 120)"
    },
    {
     "code": "BIOSC 139",
-    "why": "not in the text; catalog prints BIOL139 (likely subject renamed)"
+    "why": "catalog prints it under subject BIOL (BIOL 139)"
    },
    {
     "code": "BIOSC 140",
-    "why": "not in the text; catalog prints BIOL140 (likely subject renamed)"
+    "why": "catalog prints it under subject BIOL (BIOL 140)"
    }
   ],
   "notes": [
-   "The biology block lists BIOL codes while the closed list stores BIOSC codes with matching numbers and titles; recorded as catalog additions, but they are likely the same courses under a renamed subject. BIOLC1000/BIOLC1001 may correspond to BIOSC 102/101.",
-   "The catalog prints a program total of 39.5 units and a major-requirements block total of 32.5; no degree total including general education is printed.",
-   "The page requires completing 'all general education requirements as listed in the catalog' for this local A.S. but names no specific GE pattern; ge_pattern left null.",
-   "Titles printed for KINES252 ('Group Personal Training') and PH230 ('Advanced First Aid/EMR/CPR and Basic Life Support') differ slightly from the closed list titles."
+   "Catalog prints codes without a space (e.g., KINES100, BIOLC1000); recorded with a space between subject and number.",
+   "The catalog's biology courses use subject BIOL/BIOLC while the closed list uses BIOSC; BIOL 116/117/120/139/140 appear to be the same courses as BIOSC 116/117/120/139/140 (same titles and units) but are flagged as catalog additions because the codes differ. BIOLC 1000/1001 may replace BIOSC 102/101.",
+   "Total 39.5 = core 32.5 + 3 + 2 + 2.",
+   "General education pattern is not named; text only says to complete all general education requirements as listed in the catalog (A.S. Degree Local). No degree total printed.",
+   "KINES 252 title in catalog is 'Professional Aspects of Group Personal Training' vs closed list 'Group Fitness Training'; PH 230 title also differs slightly.",
+   "Careers drawn from the program description ('a career in the fitness industry', 'personal trainer and/or group exercise instructor')."
   ]
  },
- "extracted_run": 43691943622,
- "read_run": 43609976980
+ "extracted_run": "44745889555",
+ "catalog_year": "2026-2027"
 }

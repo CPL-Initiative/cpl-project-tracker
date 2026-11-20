@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 6870,
-    "output_tokens": 1209,
+    "output_tokens": 1340,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1209,
+  "output_tokens": 1340,
   "output_tokens_details": {
-   "thinking_tokens": 270
+   "thinking_tokens": 367
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05166,
- "ms": 14834,
- "seconds": 15.2,
+ "cost_usd": 0.05428,
+ "ms": 11637,
+ "seconds": 11.8,
  "parts": null,
  "error": null,
  "score": {
@@ -223,10 +223,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Catalog prints ECT 013, ECT 012, ECT 017, ECT 018 with leading zeros; treated as the closed-list ECT 13, ECT 12, ECT 17, ECT 18 (not catalog additions).",
-   "WELD 215A is printed at 0.75 units; the state file stores 0.8.",
-   "Career entries read from the description and the Career Opportunities line ('HVACR technicians, installers in the construction or service divisions')."
+   "Catalog prints ECT codes with leading zeros (ECT 013, ECT 012, ECT 017, ECT 018); treated as the closed-list courses ECT 13, ECT 12, ECT 17, ECT 18.",
+   "WELD 215A is printed with 0.75 units in the catalog; the state file stores 0.8.",
+   "Award title says 16-30 semester units; catalog total 17.25 is consistent.",
+   "Career entry 'installers' is printed as 'installers in the construction or service divisions'; the qualifier may apply to both listed careers."
   ]
  },
- "extracted_run": "38935141023"
+ "extracted_run": "44744386009",
+ "catalog_year": "2026-2027"
 }

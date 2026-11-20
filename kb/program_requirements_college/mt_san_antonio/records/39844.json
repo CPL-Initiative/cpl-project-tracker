@@ -5,11 +5,11 @@
  "title": "Social Justice Studies: General",
  "award": "A.A- T Degree",
  "source_url": "https://catalog.mtsac.edu/programs/programsaz/social-justice/aa-social-justice-transfer/",
- "record_shape": 3,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10548,
+  "input_tokens": 12161,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10548,
-    "output_tokens": 9687,
+    "input_tokens": 12161,
+    "output_tokens": 9507,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,60 +30,80 @@
     "model": null
    }
   ],
-  "output_tokens": 9687,
+  "output_tokens": 9507,
   "output_tokens_details": {
-   "thinking_tokens": 3008
+   "thinking_tokens": 2979
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.23593,
- "ms": 69271,
- "seconds": 69.6,
+ "cost_usd": 0.23878,
+ "ms": 67694,
+ "seconds": 68.0,
+ "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 84,
+   "placed": 92,
    "listed": 92,
-   "share": 0.913,
-   "missing": [
-    "AHIS11",
-    "AHIS12",
-    "AHIS12H",
-    "AHIS9",
-    "HIST7",
-    "HIST7H",
-    "HIST8",
-    "HIST8H"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ARTH11",
+     "listed": "AHIS11",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTH12",
+     "listed": "AHIS12",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTH12H",
+     "listed": "AHIS12H",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTH9",
+     "listed": "AHIS9",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001",
+     "listed": "HIST7",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001H",
+     "listed": "HIST7H",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002",
+     "listed": "HIST8",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002H",
+     "listed": "HIST8H",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 10,
+   "count": 2,
    "codes": [
-    "ARTH11",
-    "ARTH12",
-    "ARTH12H",
-    "ARTH9",
     "HIST18",
-    "HISTC1001",
-    "HISTC1001H",
-    "HISTC1002",
-    "HISTC1002H",
     "SOC36"
    ],
    "flagged": [
-    "ARTH11",
-    "ARTH12",
-    "ARTH12H",
-    "ARTH9",
     "HIST18",
-    "HISTC1001",
-    "HISTC1001H",
-    "HISTC1002",
-    "HISTC1002H",
     "SOC36"
    ],
    "pass": true
@@ -99,7 +119,31 @@
     18.0,
     22.0
    ],
-   "why": []
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     52.0,
+     56.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "transfer": true,
+    "fill": [
+     4.0,
+     8.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -115,6 +159,14 @@
    "heading_without_outcomes": true,
    "pass": true
   },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
   "pass": true
  },
  "record": {
@@ -126,8 +178,22 @@
     "max": 22
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": "Cal-GETC",
-   "outcomes": []
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
   },
   "blocks": [
    {
@@ -1088,48 +1154,48 @@
   "missing_explained": [
    {
     "code": "AHIS 9",
-    "why": "catalog prints ARTH 9 instead (recorded as catalog addition)"
+    "why": "catalog prints it as ARTH 9 (recorded as catalog addition)"
    },
    {
     "code": "AHIS 11",
-    "why": "catalog prints ARTH 11 instead (recorded as catalog addition)"
+    "why": "catalog prints it as ARTH 11 (recorded as catalog addition)"
    },
    {
     "code": "AHIS 12",
-    "why": "catalog prints ARTH 12 instead (recorded as catalog addition)"
+    "why": "catalog prints it as ARTH 12 (recorded as catalog addition)"
    },
    {
     "code": "AHIS 12H",
-    "why": "catalog prints ARTH 12H instead (recorded as catalog addition)"
+    "why": "catalog prints it as ARTH 12H (recorded as catalog addition)"
    },
    {
     "code": "HIST 7",
-    "why": "not in the text; catalog lists HIST C1001 in Area 1"
+    "why": "not in the text; catalog lists HIST C1001 in its place"
    },
    {
     "code": "HIST 7H",
-    "why": "not in the text; catalog lists HIST C1001H in Area 1"
+    "why": "not in the text; catalog lists HIST C1001H in its place"
    },
    {
     "code": "HIST 8",
-    "why": "not in the text; catalog lists HIST C1002 in Area 1"
+    "why": "not in the text; catalog lists HIST C1002 in its place"
    },
    {
     "code": "HIST 8H",
-    "why": "not in the text; catalog lists HIST C1002H in Area 1"
+    "why": "not in the text; catalog lists HIST C1002H in its place"
    }
   ],
   "notes": [
-   "The 'Core Courses 9-10' total covers both the two required core choices and the 'choose one course' list; it is recorded on the Core Courses block only.",
-   "The third core course may be any course from its list 'or any course not already selected from the core courses' (i.e., an unused SOC 20/20H/110/40/40H/130).",
-   "List A: 'Choose three courses from at least two of the following areas' (9-12 units). Recorded as one block with each course listed once. Area membership: Area 1 History or Government (HIST C1001/C1001H, HIST C1002/C1002H, HIST 1, 9, 10/10H, 11/11H, 18, 19, 30, 31, 35, 36, 40, 44, POLS C1000/C1000H, POLS 9, 25, 35); Area 2 Arts and Humanities (ARTH 9, ARTH 11/11H, ARTH 12/12H, LIT 3, 11B, 15, MUS 14A, PHIL 5/5H, PHIL 15/15H, SIGN 202, THTR 10); Area 3 Social Science (ANTH 5/5H, COMM 7/7H, NF 28, PSYC C1000/C1000H, PSYC 15, SOC 1/1H, SOC 2/2H, SOC 5/5H); Area 4 Quantitative Reasoning and Research Methods (ECON 17 or PSYC 10 or SOC 23 or STAT C1000 or STAT C1000H; PSYC 3/3H; SOC 12) - only one course from Area 4 may be used; Area 5 Major Preparation (same list as the core 'choose one' list). Courses appearing in more than one area (HIST 9, 30, 31, 35, 40, POLS 9, 25, 35, MUS 14A, COMM 7, NF 28, SOC 1) are listed once.",
-   "Units are printed beside only ARTH 9 (3) and ECON 17 (3); all other units are null as not printed.",
-   "Closed list stores HIST31, ECON17 and ARTH11H without spaces; catalog prints HIST 31, ECON 17, ARTH 11H and these were treated as matching (catalog_addition false). Reviewer should confirm.",
-   "Catalog uses ARTH prefix where the closed list uses AHIS (9, 11, 12, 12H); ARTH 9, 11, 12, 12H recorded as catalog additions.",
-   "Catalog lists HIST C1001/C1001H and HIST C1002/C1002H (closed list has HIST 7/7H, 8/8H); recorded as catalog additions. HIST 18 and SOC 36 also not in closed list.",
-   "Outcomes tab prints a 'Program Learning Outcomes' heading with only a link to review SLOs; no outcomes are printed, so outcomes are empty.",
-   "Degree total is 60 units with Cal-GETC 34 units; major total 18-22 recorded."
+   "The 'Core Courses 9-10' total covers both the required SOC 20/SOC 40 rows and the following 'Choose one course' list; it is recorded on the Core Courses block.",
+   "The core 'choose one' list also allows 'any course not already selected from the core courses' (e.g., SOC 20H/SOC 110 or SOC 40H/SOC 130 not used for the core rows).",
+   "List A requires three courses from at least two areas; the five areas are merged into one block with each course listed once. Area 1 (History or Government): HIST C1001/C1001H, HIST C1002/C1002H, HIST 1, 9, 10/10H, 11/11H, 18, 19, 30, 31, 35, 36, 40, 44, POLS C1000/C1000H, POLS 9, 25, 35. Area 2 (Arts and Humanities): ARTH 9, ARTH 11/11H, ARTH 12/12H, LIT 3, 11B, 15, MUS 14A, PHIL 5/5H, PHIL 15/15H, SIGN 202, THTR 10. Area 3 (Social Science): ANTH 5/5H, COMM 7/7H, NF 28, PSYC C1000/C1000H, PSYC 15, SOC 1/1H, SOC 2/2H, SOC 5/5H. Area 4 (Quantitative Reasoning and Research Methods; only one course from Area 4 may be used): ECON 17 or PSYC 10 or SOC 23 or STAT C1000/C1000H, PSYC 3/3H, SOC 12. Area 5 (Major Preparation): same list as the core 'choose one' list (several courses also appear in Areas 1-3).",
+   "HIST 31, ECON 17 and ARTH 11H matched to closed-list entries HIST31, ECON17 and ARTH11H despite spacing differences.",
+   "Units are printed beside only ARTH 9 (3) and ECON 17 (3); other course units left null.",
+   "Degree total 60 and Cal-GETC 34 as printed; footnote says courses may be double-counted for the major and Cal-GETC.",
+   "The Outcomes tab prints a 'Program Learning Outcomes' heading with only a link to review SLOs; no outcomes are printed, so outcomes are empty.",
+   "No careers named in the text."
   ]
  },
- "extracted_run": "38059865531"
+ "extracted_run": "44744647809",
+ "catalog_year": "2026-2027"
 }

@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8801,
+  "input_tokens": 8802,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8801,
-    "output_tokens": 2533,
+    "input_tokens": 8802,
+    "output_tokens": 2767,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,39 +30,41 @@
     "model": null
    }
   ],
-  "output_tokens": 2533,
+  "output_tokens": 2767,
   "output_tokens_details": {
-   "thinking_tokens": 780
+   "thinking_tokens": 892
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.08586,
- "ms": 20757,
- "seconds": 21.1,
+ "cost_usd": 0.09055,
+ "ms": 23182,
+ "seconds": 23.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 21,
+   "placed": 22,
    "listed": 22,
-   "share": 0.955,
-   "missing": [
-    "ENGLA101H"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ENGLC1003H",
+     "listed": "ENGLA101H",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "ENGLC1003H"
-   ],
-   "flagged": [
-    "ENGLC1003H"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -353,15 +355,17 @@
    }
   ],
   "notes": [
-   "List A also allows a Core course not yet taken (e.g., PHIL A120 or PHIL A155 if not used in Required Courses); List B allows courses from List A not used; List C allows courses from List A or B not yet taken. These cross-list paths are not duplicated in blocks.",
-   "Units are printed only on the first row of each Required Courses pair and as block totals for Lists A-C; individual list courses carry no printed units.",
-   "ge_units recorded from the printed column value 25.0 - 31.0; the row label reads 'Cal-GETC Education Breadth: 34 Units', with footnote noting 3 - 9 units double count between major and GE.",
-   "Transferable electives printed as '17.0 - 10.0' (reversed range); recorded as degree_elective_units 10-17.",
-   "Closed list stores 'ENGLC1001H' without a space; treated as matching catalog's ENGL C1001H.",
-   "ENGL C1003H is not in the closed list (catalog addition).",
-   "Program Sequence tab lists HIST C1001/C1001H/C1002/C1002H and POLS C1000/C1000H as American Institutions/GE courses; not placed in blocks. Sequence total 60-61 is a sample plan, not the degree total.",
-   "Outcomes are listed under a general 'Program Outcomes' heading on the program page and apply to this AA-T."
+   "Units are printed only beside the first row of the two required-course groups and as block totals for Lists A-C; individual course units in Lists A-C are not printed, so they are null.",
+   "List A also allows any Core course not yet taken (e.g., PHIL A120 or PHIL A155 if not used for the required courses); List B allows any course not used in List A; List C allows any List A or B course not yet taken. These cross-list paths are not recorded as separate entries.",
+   "ENGL C1001H is matched to the closed-list entry 'ENGLC1001H' (no space); ENGL C1003H is not in the closed list and is marked as a catalog addition.",
+   "Closed list spells PHIL A125 as 'History of Ancient Philosphy'; catalog prints 'History of Ancient Philosophy'.",
+   "Cal-GETC line reads 'Cal-GETC Education Breadth: 34 Units 1 25.0 - 31.0'; ge_units records 25-31, the figure counted toward the 60-unit total after double counting (footnote: 3-9 units double count). The pattern itself is stated as 34 units.",
+   "Transferable electives line prints '17.0 - 10.0' units; recorded as degree_elective_units 10-17.",
+   "The 60-unit total and the 18-unit major minimum in the general ADT requirements list are generic; the page also prints 'Total Degree Units 60' for this award, recorded as degree_total.",
+   "HIST C1001/C1001H/C1002/C1002H and POLS C1000/C1000H appear only in the Program Sequence plan (American Institutions/GE) and are not placed in blocks.",
+   "Program Learning Outcomes are printed once for the program; this AA-T is the only award on the page and shares them."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": "44747523200",
+ "catalog_year": "2026-2027"
 }

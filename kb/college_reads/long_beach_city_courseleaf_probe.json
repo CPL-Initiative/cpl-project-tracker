@@ -1,0 +1,20 @@
+{
+ "_readme": "S690 catalogs worker, 2026-11-20, under the conductor's order of 2026-11-20 (#3584, comment 7042523337): one plain request per CourseLeaf host before any course page is read. The census Reader asks for robots.txt first with a plain request (no browser) and stops at a WAF's challenge header (x-amzn-waf-action), so a challenged host is named and never loaded; the only page this plan names is robots.txt itself. No retry, no model call.",
+ "college": "Long Beach City College",
+ "questions": {
+  "plain_request": "Whether the host answers a plain request with 200 and content, or with 202 and a WAF check."
+ },
+ "keywords": [
+  "Disallow",
+  "Allow",
+  "User-agent"
+ ],
+ "pages": [
+  {
+   "url": "https://lbcc-public.courseleaf.com/robots.txt",
+   "answers": [
+    "plain_request"
+   ]
+  }
+ ]
+}

@@ -197,6 +197,38 @@ at the top of each piece of work so Sam can change the dial before it runs.
 - A tool trial (a repo, a library, a service) gets one line in [`reference/stack_scouting`](stack_scouting.md): candidate,
   measured cost, result, kept or dropped. COBIx scans every other Monday (#3306).
 
+## What went wrong in S690, and what worked
+
+The CPL Queue routine's 11:12Z firing of 2026-11-20 (SkyMerlin). It found S689 live on #3584 and stood down in one
+line; told *"keep going"* at 11:45Z, it waited for S689's sign-off push (about 12:13Z), declared on draft #3599 and took
+the queue (`d-firing-waits-for-sign-off-then-takes-queue-s685`). A plain session with Sam ran beside it on a file split
+posted on #3584 (comment 7039601326). No `list_sessions`, `get_trigger`, `get_session` or `set_session_tags` in this
+session.
+
+- **Workers handed back within six minutes of starting while their own runs were in flight**
+  (`p-workers-hand-back-on-background-wait-s690`). Each said its brief told it to. A `SendMessage` resumed them. A
+  worker's brief says: wait on your own runs with a background check, and hand back only when they finish.
+- **A recall gate that checked nothing, caught in round one** (`p-recall-gate-counts-parser-output-s690`). #3601's
+  hand counts equalled the parser's own count, and the gate opened on an empty or 403 trial. Round two counted the
+  trial's SLOs by eye from its job log and bound the count to the parser's fingerprint; the full read and load followed.
+- **The runner and the session see different WAF answers** (`f-waf-answers-runner-and-session-apart-s690`). The plain
+  session's sandbox got 202 and an AWS WAF check where the runner got 200; the committed captures already held the
+  reader's 200s. Cite the reader's capture, never a session's probe
+  ([`methodology-a-bot-wall-answers-each-network-on-its-own`](../kb-notes/methodology-a-bot-wall-answers-each-network-on-its-own.md)).
+- **`main` was red from a Library run, and the fix went first** (#3600, `d-main-red-check-line-stays-out-s690`): the
+  check run's line pushed a page past Sierra's text limit and into new pieces, failing every PR's `test`. A fix that
+  blocks the wave goes ahead of it (`r-collection-first-sam-2026-11-20`).
+- **Closing the carry-overs held the cap** (`d-carryovers-closed-for-cap-s690`): #3593 and #3597 closed with
+  pointers and fold into the night's one follow-up PR.
+- **A review stopped at two rounds** (`d-golden-west-stops-after-two-rounds-s690`): Golden West's correction left its
+  plan on a branch with the reader's two points for COBIx and the next session, per the routine's rule.
+- **The order came from the M-ID count** (`d-mid-ranking-orders-lane-1-s690`): a read-only count over the committed
+  files put City College of San Francisco's outlines first (2,065 cards improved); 1,416 outline rows loaded.
+- **The clock guard caught a guessed time** (13:06Z written where the clock said 12:59Z); the merge-read guard ran on
+  each merge.
+- **`get_workflow_job` on the lint jobs returns about 230 steps:** costly in context. Gate a PR through the `pr-gate`
+  agent instead.
+
 ## What went wrong in S689, and what worked
 
 The CPL Queue routine's 06:12Z firing of 2026-11-20 (SkyTern, started 06:13Z), collection only under Sam's routine

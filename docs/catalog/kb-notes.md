@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-598 document(s).
+599 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -41,6 +41,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [\"Not signed in\" and \"only these people\" cannot both hold](../kb-notes/methodology-not-signed-in-and-only-these-people-cannot-both-hold.md) | methodology | published | 2026-09-08 | 2026-09-08 |
 | [A ban is only as wide as the files it opens](../kb-notes/methodology-a-ban-is-only-as-wide-as-the-files-it-opens.md) | methodology | published | 2026-09-15 | 2026-09-24 |
 | [A blocked path hides every defect behind it — budget for a chain, not a fix](../kb-notes/methodology-a-blocked-path-hides-the-defects-behind-it.md) | methodology | published | 2026-08-24 | 2026-08-24 |
+| [A bot wall answers each network on its own, so the reader's own capture is the record of access](../kb-notes/methodology-a-bot-wall-answers-each-network-on-its-own.md) | methodology | published | 2026-11-20 | 2026-11-20 |
 | [A bound is tested by value, not by the model's clamp count](../kb-notes/methodology-a-bound-is-tested-by-value-not-by-the-clamp-count.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [A bug report is evidence, not diagnosis — and the control that kills your favorite hypothesis](../kb-notes/methodology-a-bug-report-is-evidence-not-diagnosis.md) | methodology | published | 2026-09-07 | 2026-09-08 |
 | [A bulk delete's receipt reads the rows outside the session's context](../kb-notes/methodology-a-bulk-delete-receipt-reads-the-rows-outside-the-context.md) | methodology | published | 2026-10-23 | 2026-10-23 |
@@ -266,7 +267,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A target at exactly the minimum size fails at fractional zoom](../kb-notes/methodology-a-target-at-exactly-the-minimum-fails-at-fractional-zoom.md) | methodology | published | 2026-11-12 | 2026-11-12 |
 | [A team-curated Supabase table needs team_pass_ok() on UPDATE too, not just SELECT + INSERT](../kb-notes/methodology-team-curated-table-needs-update-rls.md) | methodology | published | 2026-07-26 | 2026-07-26 |
 | [A test file is a memory budget, and the process boundary is the only allocator](../kb-notes/methodology-a-test-file-is-a-memory-budget.md) | methodology | published | 2026-08-20 | 2026-08-20 |
-| [A test must not take its own rule as the truth](../kb-notes/methodology-a-test-must-not-take-its-rule-as-the-truth.md) | methodology | published | 2026-11-14 | 2026-11-14 |
+| [A test must not take its own rule as the truth](../kb-notes/methodology-a-test-must-not-take-its-rule-as-the-truth.md) | methodology | published | 2026-11-14 | 2026-11-20 |
 | [A test must report a missing thing, not dereference it](../kb-notes/methodology-a-test-must-report-a-missing-thing-not-dereference-it.md) | methodology | published | 2026-08-25 | 2026-08-25 |
 | [A test that only fails under load is racing a timer the product owns](../kb-notes/methodology-a-test-that-only-fails-under-load-is-racing-a-timer.md) | methodology | published | 2026-09-06 | 2026-09-06 |
 | [A test that pins a figure from a regenerated artifact fails on a data refresh, not on a defect](../kb-notes/methodology-a-test-that-pins-a-generated-figure-fails-on-a-data-refresh.md) | methodology | published | 2026-09-17 | 2026-11-12 |

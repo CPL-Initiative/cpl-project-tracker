@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10032,
+  "input_tokens": 10222,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10032,
-    "output_tokens": 7814,
+    "input_tokens": 10222,
+    "output_tokens": 8186,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 7814,
+  "output_tokens": 8186,
   "output_tokens_details": {
-   "thinking_tokens": 1771
+   "thinking_tokens": 2173
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.19641,
- "ms": 55756,
- "seconds": 56.0,
+ "cost_usd": 0.20461,
+ "ms": 60359,
+ "seconds": 60.8,
  "parts": null,
  "error": null,
  "score": {
@@ -211,7 +211,7 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "pass": true
   },
@@ -236,7 +236,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": "DVC General Education (Option 1), IGETC (Option 2) or CSUGE (Option 3)",
+   "ge_pattern": "DVC General Education (Option 1), IGETC (Option 2), or CSUGE (Option 3)",
    "degree_total": {
     "min": null,
     "max": null
@@ -253,11 +253,17 @@
     "critically evaluate scientific information in various formats.",
     "understand the relationship between humans and the physical and/or life sciences."
    ],
-   "careers": []
+   "careers": [
+    "elementary education (multi subject)",
+    "secondary education (single subject)",
+    "journalism",
+    "liberal arts",
+    "environmental sciences"
+   ]
   },
   "blocks": [
    {
-    "name": "required biological science core: at least 4 units from the following biological science courses with a laboratory",
+    "name": "required biological science core: at least 4 units from the following biological science courses with a laboratory:",
     "rule": "choose_units",
     "minimum": 4,
     "option_group": null,
@@ -267,7 +273,7 @@
     },
     "courses": [
      {
-      "code": "BIOL C1000",
+      "code": "BIOLC 1000",
       "units": 4,
       "units_max": null,
       "alternatives": [],
@@ -498,7 +504,7 @@
     ]
    },
    {
-    "name": "plus 8-10 units from the following if not used above",
+    "name": "plus 8-10 units from the following if not used above:",
     "rule": "choose_units",
     "minimum": 8,
     "option_group": null,
@@ -529,14 +535,14 @@
       "catalog_addition": false
      },
      {
-      "code": "BIOL C1001",
+      "code": "BIOLC 1001",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "BIOL C1000",
+      "code": "BIOLC 1000",
       "units": 4,
       "units_max": null,
       "alternatives": [],
@@ -1018,67 +1024,67 @@
   "missing_explained": [
    {
     "code": "BIOSC 101",
-    "why": "not in the text; likely replaced by BIOL C1001 (Introduction to Biology)"
+    "why": "not in the text; catalog prints BIOLC 1001 Introduction to Biology (3), likely its renumbered successor"
    },
    {
     "code": "BIOSC 102",
-    "why": "not in the text; likely replaced by BIOL C1000 (Introduction to Biology with Lab)"
+    "why": "not in the text; catalog prints BIOLC 1000 Introduction to Biology with Lab (4), likely its renumbered successor"
    },
    {
     "code": "BIOSC 116",
-    "why": "catalog prints it as BIOL 116 (same title), recorded as catalog addition"
+    "why": "catalog prints it under subject BIOL as BIOL 116"
    },
    {
     "code": "BIOSC 117",
-    "why": "catalog prints it as BIOL 117 (same title), recorded as catalog addition"
+    "why": "catalog prints it under subject BIOL as BIOL 117"
    },
    {
     "code": "BIOSC 119",
-    "why": "catalog prints it as BIOL 119 (same title), recorded as catalog addition"
+    "why": "catalog prints it under subject BIOL as BIOL 119"
    },
    {
     "code": "BIOSC 120",
-    "why": "catalog prints it as BIOL 120 (same title), recorded as catalog addition"
+    "why": "catalog prints it under subject BIOL as BIOL 120"
    },
    {
     "code": "BIOSC 126",
-    "why": "catalog prints it as BIOL 126 (same title), recorded as catalog addition"
+    "why": "catalog prints it under subject BIOL as BIOL 126"
    },
    {
     "code": "BIOSC 130",
-    "why": "catalog prints it as BIOL 130 (same title), recorded as catalog addition"
+    "why": "catalog prints it under subject BIOL as BIOL 130"
    },
    {
     "code": "BIOSC 131",
-    "why": "catalog prints it as BIOL 131 (same title), recorded as catalog addition"
+    "why": "catalog prints it under subject BIOL as BIOL 131"
    },
    {
     "code": "BIOSC 139",
-    "why": "catalog prints it as BIOL 139 (same title), recorded as catalog addition"
+    "why": "catalog prints it under subject BIOL as BIOL 139"
    },
    {
     "code": "BIOSC 140",
-    "why": "catalog prints it as BIOL 140 (same title), recorded as catalog addition"
+    "why": "catalog prints it under subject BIOL as BIOL 140"
    },
    {
     "code": "BIOSC 146",
-    "why": "catalog prints it as BIOL 146 (same title), recorded as catalog addition"
+    "why": "catalog prints it under subject BIOL as BIOL 146"
    },
    {
     "code": "BIOSC 161",
-    "why": "catalog prints it as BIOL 161 (same title), recorded as catalog addition"
+    "why": "catalog prints it under subject BIOL as BIOL 161"
    },
    {
     "code": "BIOSC 162",
-    "why": "catalog prints it as BIOL 162 (same title), recorded as catalog addition"
+    "why": "catalog prints it under subject BIOL as BIOL 162"
    },
    {
     "code": "BIOSC 170",
-    "why": "catalog prints it as BIOL 170 (same title), recorded as catalog addition"
+    "why": "catalog prints it under subject BIOL as BIOL 170"
    },
    {
     "code": "BIOSC 171",
-    "why": "catalog prints it as BIOL 171 (same title), recorded as catalog addition"
+    "why": "catalog prints it under subject BIOL as BIOL 171"
    },
    {
     "code": "PHYS 111",
@@ -1086,15 +1092,15 @@
    }
   ],
   "notes": [
-   "The catalog prints biology courses under subject BIOL (e.g. BIOL117) while the closed list uses BIOSC; titles match, so these appear to be a subject rename. They are recorded as catalog additions; a reviewer should confirm the mapping.",
-   "BIOL C1000 and BIOL C1001 (printed BIOLC1000/BIOLC1001) are common-course-numbered courses not in the closed list; they appear to replace BIOSC 102 and BIOSC 101.",
-   "Section prints '(Total 16 - 18)' but the narrative says 'Students will select a minimum of 18 units total'; total_units recorded as printed 16-18.",
-   "In the physical science core, lecture/lab pairs are printed with 'and' (ASTRO 110 and ASTRO 130; ASTRO 120 and ASTRO 130; GEOG 120 and GEOG 121; GEOG 140 and GEOG 141; GEOL 120 and GEOL 122; GEOL 121 and GEOL 124) meaning they must be taken together to count; each course is listed once and ASTRO 130 serves both astronomy pairs.",
-   "The third block says 'if not used above': courses used in the core blocks cannot count again.",
-   "Degree total and GE units are not printed; GE may be met by DVC GE (Option 1), IGETC (Option 2) or CSUGE (Option 3).",
-   "Program learning outcomes are printed once for the program (Natural Science) and recorded for this A.S. award; text begins mid-sentence ('ences students who intend...'), so earlier description may be cut off."
+   "The section header prints '(Total 16 - 18)' while the major requirements sentence says students select a minimum of 18 units total (4 + 4 + 8-10 = 16-18 printed block totals). total_units recorded as printed (16-18); reviewer should check the discrepancy with the 18-unit minimum.",
+   "The catalog prints biology courses under subject BIOL (e.g., BIOL117) while the closed list uses BIOSC with identical numbers and titles; these were recorded as printed with catalog_addition true and the BIOSC codes listed in missing_explained. BIOLC 1000/1001 (Cal common course numbering) appear to replace BIOSC 102/101.",
+   "In the physical science core, several options are printed as lecture+lab pairs that together make the 4 units: ASTRO 110 and ASTRO 130, ASTRO 120 and ASTRO 130, GEOG 120 and GEOG 121, GEOG 140 and GEOG 141, GEOL 120 and GEOL 122, GEOL 121 and GEOL 124. Each course is listed once in the block; ASTRO 130 pairs with either ASTRO 110 or ASTRO 120.",
+   "The elective block says 'if not used above', so courses used for the biological or physical science core cannot double count.",
+   "Program learning outcomes are printed once for the program page; recorded for this A.S. degree.",
+   "GE: page names DVC General Education Option 1, IGETC Option 2, or CSUGE Option 3; no GE units or degree total printed.",
+   "Page text begins mid-sentence (cut off at the start of the description)."
   ]
  },
- "extracted_run": 43691943622,
- "read_run": 43609976980
+ "extracted_run": "44745889555",
+ "catalog_year": "2026-2027"
 }

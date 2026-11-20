@@ -1,0 +1,665 @@
+{
+ "_readme": "S690 catalogs worker, 2026-11-20, under Sam's go of 2026-11-20 6:26 AM PT (relayed by COBIx on #3584, comment 7042043701) and the plain session's ask (#3584, comment 7042398748): every subject page the 2026-27 course-descriptions index lists (index read 44765198579), each line for line through the capture view, for kb/hand_filed_catalogs/courses/. An address is the index's own link where the read showed it, else the subject code in lower case, CourseLeaf's form. No model call.",
+ "college": "Cerritos College",
+ "questions": {
+  "courses": "Each course's code, title, units or hours, requisites and description, line for line."
+ },
+ "keywords": [
+  "\\bUnits?\\b",
+  "\\bHours?\\b"
+ ],
+ "capture_lines": 8000,
+ "pages": [
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/aclr/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/acct/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/aj/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/afrs/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/asl/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/a_p/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/anth/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/arch/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/art/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/arth/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/asam/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/adn/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/astr/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/ath/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/ab/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/auto/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/biol/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/btec/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/bot/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/ba/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/bcot/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/chem/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/cs/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/cd/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/cdec/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/cdit/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/cdse/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/chin/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/comm/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/cis/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/cos/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/coun/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/ca/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/danc/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/da/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/dh/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/esci/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/econ/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/edel/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/edt/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/elap/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/engr/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/engt/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/et/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/engl/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/emls/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/envs/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/ethn/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/iwap/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/film/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/fin/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/fren/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/geog/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/geol/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/germ/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/hed/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/ho/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/hist/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/hum/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/japn/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/jams/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/kin/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/kor/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/law/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/libr/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/mtt/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/ma/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/micr/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/mus/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/nais/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/npd/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/nrsg/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/phar/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/phil/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/phot/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/pex/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/ps/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/pta/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/phys/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/pols/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/psyc/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/read/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/re/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/swhs/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/span/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/slp/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/th/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/vcs/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/weld/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/wgs/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/wmt/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/zool/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/ccn/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  }
+ ]
+}
