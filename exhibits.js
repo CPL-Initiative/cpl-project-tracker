@@ -254,8 +254,9 @@
     rel: { data: null, error: null, idx: [], by: {}, all: null, plans: null, act: null, folded: {} },
     // Same subject: the subjects file, read once on the first card that names a subject, and the card showing all.
     ss: { data: null, error: null, loading: null, all: null },
-    // Course details beside a Review card (Sam, 2026-11-12): the card it is open on, and the files read for it.
-    cd: { open: null, ready: false, loading: null, err: "", byId: {}, byCourse: {}, topmap: {} },
+    // The files a title's details read beside a Review card (Sam, 2026-11-12 and 2026-11-21), read once.
+    cd: { ready: false, loading: null, err: "", byId: {}, byCourse: {}, topmap: {}, byTitle: {}, members: {}, colleges: [], recs: null },
+    det: {},   /* the titles whose details are open beside a Review card, by key; a visit's, never stored */
     rb: { drafts: {}, skip: {}, done: {}, ask: false, busy: false, students: null, studentsWord: "" },
     // The Commons' row and its run log, read fresh each visit (commonsFresh()).
     cm: null
@@ -1136,7 +1137,8 @@
   }
   function ssLabel(r) {
     var n = r[2] || 0;
-    return r[1] + " (" + (SS_SYS[r[5]] || r[5] || "M-ID") + " " + r[0] + ") (" + fmt(n) + (n === 1 ? " college)" : " colleges)");
+    // Sam, 2026-11-21: the figure says what it counts, the colleges teaching the course.
+    return r[1] + " (" + (SS_SYS[r[5]] || r[5] || "M-ID") + " " + r[0] + ") (" + fmt(n) + (n === 1 ? " college teaches the course)" : " colleges teach the course)");
   }
   /* The Same subject section for a Review card, or null when the card names no subject. */
   function sameSubject(o, redraw) {
@@ -1166,9 +1168,11 @@
     var showAll = ss.all === o.key, list = showAll ? ranked : ranked.slice(0, SS_MAX);
     var ul = el("ol", { cls: "exh-ss-list", id: "exh-ss-list" });
     list.forEach(function (x) {
-      var r = x.r, label = ssLabel(r), li = el("li", null, [el("span", { cls: "exh-ss-t", text: label })]);
+      var r = x.r, label = ssLabel(r), dk = "c:" + r[0];
+      var li = el("li", null, [detailButton(label, dk, "exh-ss-t", redraw)]);
       if (r[1] === o.title.value.trim()) li.appendChild(el("span", { cls: "exh-muted exh-small", text: "This is the proposed title." }));
       else li.appendChild(word("Use this title", function () { o.use({ t: r[1] }); redraw(); }, { cls: "exh-w exh-small", "aria-label": "Use this title: " + label }));
+      if (state.det[dk]) li.appendChild(detailBox(label, dk, function () { return courseTitleDetails(r); }, redraw));
       ul.appendChild(li);
     });
     sec.appendChild(ul);
@@ -1186,14 +1190,20 @@
   /* The side panel. o.title and o.issuer are the card's boxes; o.use(row) fills them. The list follows the title as
      it is edited. */
   function relatedPanel(o) {
-    var box = el("aside", { cls: "exh-rel", "aria-label": "Related titles" }, [el("h4", { cls: "exh-q exh-small", text: "Related titles" })]);
+    // A Review card's two panels (Sam, 2026-11-21): the related course titles sit in Course details, and this panel is
+    // Exhibits, the related exhibit titles. Another look's card keeps the one panel, Related titles.
+    var name = o.card ? "Exhibits" : "Related titles";
+    var box = el("aside", { cls: "exh-rel" + (o.card ? " exh-xp" : ""), "aria-label": name }, [el("h4", { cls: "exh-q exh-small", text: name })]);
     var body = el("div", { cls: "exh-rel-body" });
     box.appendChild(body);
     function draw() {
       while (body.firstChild) body.removeChild(body.firstChild);
-      // Same subject leads; today's same-issuer and shared-words titles follow (Sam, 2026-11-18).
-      var ssec = sameSubject(o, draw);
-      if (ssec) body.appendChild(ssec);
+      if (o.card && o.ssHost) {
+        // Same subject, the related course titles, draws in the Course details panel and follows the title too.
+        while (o.ssHost.firstChild) o.ssHost.removeChild(o.ssHost.firstChild);
+        var ssec = sameSubject(o, draw);
+        if (ssec) o.ssHost.appendChild(ssec);
+      }
       if (!state.rel.data) {
         body.appendChild(el("p", { cls: "exh-muted exh-small", text: state.rel.error
           ? "The titles in the reference could not be read (" + state.rel.error + ")." : "Reading the titles in the reference…" }));
@@ -1201,8 +1211,8 @@
       }
       var got = relatedFor(o.title.value.trim(), o.raw, o.issuer.value.trim() || o.issuer0, o.skip);
       body.appendChild(el("p", { cls: "exh-muted exh-small", text: got.family
-        ? "Canonical titles for " + got.family + (got.code ? " " + got.code : "") + " certifications. Fold this card into one, or keep the proposed title."
-        : "Canonical titles with the same issuer or the same words. Fold this card into one, or keep the proposed title." }));
+        ? "Canonical titles for " + got.family + (got.code ? " " + got.code : "") + " certifications. Use one for this card, or keep the proposed title."
+        : "Canonical titles with the same issuer or the same words. Use one for this card, or keep the proposed title." }));
       if (!got.rows.length) { body.appendChild(el("p", { cls: "exh-empty exh-small", text: "No title in the reference is close to this one." })); return; }
       // Review's panel names the statewide or most-used title and sorts it first (Sam, 2026-11-12).
       var mark = o.actions ? relAligned(got, o.title.value, o.issuer.value.trim() || o.issuer0) : null, all = got.rows;
@@ -1220,27 +1230,35 @@
         }
         var r = x.o, pend = renamePending(r.t);
         var rf = famOf(r.t);
-        var meta = [r.issuer || "No issuer named", fmt(r.locals) + " local title" + (r.locals === 1 ? "" : "s"),
-          r.proposed ? "Proposed, not in the reference yet" : "In the reference"].concat(rf ? ["Family: " + rf.name] : []).join(" · ");
+        var sw = o.actions && relStatewide(r.t);
+        // An Exhibits row names its colleges, issuer and statewide status (Sam, 2026-11-21).
+        var meta = [r.issuer || "No issuer named"].concat(o.card ? [fmt(r.adopted) + (r.adopted === 1 ? " college articulates it" : " colleges articulate it")] : [])
+          .concat([fmt(r.locals) + " local title" + (r.locals === 1 ? "" : "s"),
+            r.proposed ? "Proposed, not in the reference yet" : "In the reference"]).concat(o.card && !sw ? ["Not statewide"] : []).concat(rf ? ["Family: " + rf.name] : []).join(" · ");
         var why = act ? relWhyNot(r.t, act) : null, can = act && why === "";
-        var head = el("b", { cls: "exh-rel-t", text: r.t });
+        var dk = "x:" + r.t;
+        var head = o.card ? detailButton(r.t, dk, "exh-rel-t", draw) : el("b", { cls: "exh-rel-t", text: r.t });
         if (can) {
           var cb = el("input", { type: "checkbox", id: "exh-rel-cb-" + relIdOf(r.t), cls: "exh-rel-cb" });
           cb.checked = !!act.checked[r.t];
           cb.addEventListener("change", function () { if (cb.checked) act.checked[r.t] = true; else delete act.checked[r.t]; act.note = ""; });
-          head = el("label", { cls: "exh-rel-pick", "for": cb.id }, [cb, head]);
+          // The title is a control of its own on a Review card, so the checkbox carries its name and sits beside it.
+          if (o.card) { cb.setAttribute("aria-label", "Check " + r.t); head = el("span", { cls: "exh-rel-pick" }, [cb, head]); }
+          else head = el("label", { cls: "exh-rel-pick", "for": cb.id }, [cb, head]);
         }
         var li = el("li", null, [head]);
         var marks = [];
-        if (o.actions && relStatewide(r.t)) marks.push("Statewide exhibit");
+        if (sw) marks.push("Statewide exhibit");
         if (mark && mark.kind === "popular" && mark.o === r) marks.push("Most used");
         if (marks.length) li.appendChild(el("span", { cls: "exh-rel-mark exh-small", text: marks.join(" · ") }));
+        var dup = o.card ? possibleDuplicate(o.title.value.trim(), r.t) : null;
+        if (dup) li.appendChild(el("span", { cls: "exh-rel-dup exh-small", text: dupWords(dup) }));
         li.appendChild(el("span", { cls: "exh-muted exh-small", text: meta }));
         var pn = pathsNode(r.paths, r.issuer);
         if (pn) li.appendChild(pn);
         if (pend) li.appendChild(el("span", { cls: "exh-rel-pend exh-small", text: "Rename pending" + (pend.to ? ": " + pend.to : "") }));
         if (act && state.rel.folded[r.t]) li.appendChild(el("span", { cls: "exh-rel-pend exh-small",
-          text: "Saved this visit: folds into " + state.rel.folded[r.t] + ". The daily dry run pairs them, and a reviewed apply merges the records." }));
+          text: "Saved this visit: combines into " + state.rel.folded[r.t] + ". The daily dry run pairs them, and a reviewed apply merges the records." }));
         else if (act && r.t === act.target) li.appendChild(el("span", { cls: "exh-muted exh-small", text: "The checked titles change to this one." }));
         else if (why) li.appendChild(el("span", { cls: "exh-rel-why exh-small", text: why }));
         if (r.t === o.title.value.trim()) li.appendChild(el("span", { cls: "exh-muted exh-small", text: "This is the proposed title." }));
@@ -1249,6 +1267,7 @@
         // the same confirmation and the same rows as the checked titles.
         if (can && act.ok) li.appendChild(word("Change to " + act.target, function () { relAsk(act, [r.t]); }, { cls: "exh-w exh-small",
           "aria-label": "Change " + r.t + " to " + act.target }));
+        if (o.card && state.det[dk]) li.appendChild(detailBox(r.t, dk, function () { return exhibitTitleDetails(r); }, draw));
         ul.appendChild(li);
       });
       if (got.rows.length > REL_MAX) {
@@ -1262,8 +1281,232 @@
     return box;
   }
   function withRelated(cardEl, o) {
+    // Two panels beside a Review card, shown together with no switch between them (Sam, 2026-11-21).
     var side = o.top ? el("div", { cls: "exh-side" }, [o.top, relatedPanel(o)]) : relatedPanel(o);
-    return el("div", { cls: "exh-with-rel" }, [cardEl, side]);
+    return el("div", { cls: "exh-with-rel" + (o.top ? " exh-two" : "") }, [cardEl, side]);
+  }
+
+  /* ── A title's details, opened in place (Sam, 2026-11-21) ──
+     "Clicking any title in either panel opens its details (colleges, units, COCI description, credit recommendations,
+     exhibits) without leaving the card." A title in the Course details panel or the Exhibits panel is a button; its
+     details open under its own row and the card stays as it is. They read the files Course details already reads
+     (statewide_data.js, unified_courses_members.js and the COCI description shard), once, on the first title opened.
+     Use this title stays beside each title. */
+  function detailId(key) { return "exh-det-" + relIdOf(key); }
+  function detailButton(text, key, cls, redraw) {
+    var open = !!state.det[key];
+    return word(text, function () {
+      if (state.det[key]) delete state.det[key]; else state.det[key] = true;
+      redraw();
+      var b = document.getElementById(detailId(key) + "-b");
+      if (b) b.focus();
+    }, { cls: "exh-w exh-det-t " + cls, id: detailId(key) + "-b", "aria-expanded": open ? "true" : "false", "aria-controls": open ? detailId(key) : null });
+  }
+  function detailBox(text, key, build, redraw) {
+    var box = el("div", { cls: "exh-det exh-small", id: detailId(key), role: "group", "aria-label": "Details: " + text });
+    var cd = state.cd;
+    if (!cd.ready) {
+      box.appendChild(el("p", { cls: "exh-muted", role: "status", text: "Reading the details…" }));
+      loadCourseDetails().then(function () {
+        if (!state.det[key]) return;
+        // The redraw rebuilds the title's button, so focus goes back to it when it was there.
+        var id = detailId(key) + "-b", had = document.activeElement && document.activeElement.id === id;
+        redraw();
+        var b = had && document.getElementById(id);
+        if (b) b.focus();
+      });
+      return box;
+    }
+    if (cd.err) box.appendChild(el("p", { cls: "exh-muted", text: "Part of the data could not be read: " + cd.err + "." }));
+    build().forEach(function (n) { if (n) box.appendChild(n); });
+    return box;
+  }
+  function detailFacts(pairs) {
+    var dl = el("dl", { cls: "exh-cd-facts" });
+    pairs.forEach(function (p) { if (p[1]) { dl.appendChild(el("dt", { text: p[0] })); dl.appendChild(el("dd", null, [].concat(p[1]))); } });
+    return dl;
+  }
+  var DET_MAX = 8;
+  function detailMore(list, max, one, many) { return list.length > max ? " and " + fmt(list.length - max) + " more " + (list.length - max === 1 ? one : many) : ""; }
+  /* Every credit recommendation an exhibit carries for a course, by college and course code: built once. */
+  function detailRecs() {
+    var cd = state.cd;
+    if (cd.recs) return cd.recs;
+    var out = {}, seen = {};
+    Object.keys(cd.byId).forEach(function (id) {
+      var e = cd.byId[id];
+      if (seen[e.exhibit_id]) return;
+      seen[e.exhibit_id] = 1;
+      var recs = e.credit_recs || [], idx = e.adopter_rec_idx || {};
+      Object.keys(idx).forEach(function (name) {
+        (idx[name] || []).forEach(function (i) {
+          var r = recs[i];
+          if (!r || !r.course) return;
+          var k = cdName(name) + "|" + cdNorm(r.course);
+          var ids = e.exhibit_ids && e.exhibit_ids.length ? e.exhibit_ids : [e.exhibit_id];
+          (out[k] || (out[k] = [])).push({ title: e.unified_title || e.title, id: ids[0] + (ids.length > 1 ? " and " + (ids.length - 1) + " more" : ""), credit: r.credit || "" });
+        });
+      });
+    });
+    cd.recs = out;
+    return out;
+  }
+  /* One of the card's own courses: r = [college, code, title, units, control number, credit recommendation, description].
+     Its TOP code, M-ID and control number come from the course file, and the exhibits that award credit for it from
+     the exhibit file (the facts the earlier full Course details panel held). */
+  function localCourseDetails(r) {
+    var cd = state.cd, k = cdName(college(r[0])) + "|" + cdNorm(r[1]), c = cd.byCourse[k];
+    var found = detailRecs()[k] || [], titles = [], ts = {};
+    found.forEach(function (x) { if (!ts[x.title]) { ts[x.title] = 1; titles.push(x.title + " (" + x.id + ")"); } });
+    var out = [detailFacts([
+      ["TOP", c && c.p ? c.p + (cd.topmap[c.p] ? ", " + cd.topmap[c.p] : "") : ""],
+      ["M-ID", c ? c.mids.join(", ") : ""],
+      ["Control number", (c && c.cn) || r[4] || ""],
+      ["Exhibits", titles.length ? titles.slice(0, DET_MAX).join("; ") + detailMore(titles, DET_MAX, "exhibit", "exhibits") : "No exhibit on file awards credit for this course."]])];
+    if (!c) out.push(el("p", { cls: "exh-muted", text: "This course is not in the course data COBI reads, so its TOP code and M-ID are not listed." }));
+    return out;
+  }
+  /* A course title in Same subject: r = [id, title, colleges, units low, units high, system]. */
+  function courseTitleDetails(r) {
+    var cd = state.cd, mem = (cd.members[r[0]] || []).filter(function (m) { return m && m.n; });
+    var units = r[3] == null ? "" : r[3] === r[4] || r[4] == null ? String(r[3]) : r[3] + " to " + r[4];
+    var out = [];
+    if (!mem.length) {
+      out.push(detailFacts([["Colleges", r[2] ? fmt(r[2]) + (r[2] === 1 ? " college teaches the course" : " colleges teach the course") : ""], ["Units", units]]));
+      out.push(el("p", { cls: "exh-muted", text: "The colleges' own courses under " + r[0] + " are not in the course data COBI reads, so its description, credit recommendations and exhibits are not listed here." }));
+      return out;
+    }
+    var who = mem.map(function (m) { return (cd.colleges[m.c] || "A college") + " (" + m.n + ")"; });
+    var recs = detailRecs(), found = [], seen = {};
+    mem.forEach(function (m) {
+      (recs[cdName(cd.colleges[m.c]) + "|" + cdNorm(m.n)] || []).forEach(function (x) {
+        var k = x.title + "|" + x.credit;
+        if (!seen[k]) { seen[k] = 1; found.push(x); }
+      });
+    });
+    var titles = [], ts = {};
+    found.forEach(function (x) { if (!ts[x.title]) { ts[x.title] = 1; titles.push(x.title + " (" + x.id + ")"); } });
+    var credits = [], cs = {};
+    found.forEach(function (x) { if (x.credit && !cs[x.credit]) { cs[x.credit] = 1; credits.push(x.credit); } });
+    var desc = el("span", { text: "" }), first = mem.filter(function (m) { return m.cn; })[0];
+    out.push(detailFacts([
+      ["Colleges", fmt(mem.length) + ": " + who.slice(0, 12).join("; ") + detailMore(who, 12, "college", "colleges")],
+      ["Units", units],
+      ["COCI description", first ? desc : "No COCI description on file."],
+      ["Credit recommendations", credits.length ? credits.slice(0, DET_MAX).join("; ") + detailMore(credits, DET_MAX, "recommendation", "recommendations") : "No exhibit on file awards credit for this course."],
+      ["Exhibits", titles.length ? titles.slice(0, DET_MAX).join("; ") + detailMore(titles, DET_MAX, "exhibit", "exhibits") : "None on file."]]));
+    if (first) {
+      var key = /^[A-Za-z]/.test(first.n) ? first.n.charAt(0).toUpperCase() : "0";
+      var from = " (" + (cd.colleges[first.c] || "a college") + ", " + first.n + ")";
+      var put = function () { var d = window.CPL_COCI_DESC && window.CPL_COCI_DESC[key]; desc.textContent = d && d[first.cn] ? d[first.cn] + from : (d ? "No COCI description on file." : ""); };
+      if (window.CPL_COCI_DESC && window.CPL_COCI_DESC[key]) put();
+      else if (window.CPL_TABS && typeof window.CPL_TABS.loadScript === "function") {
+        desc.textContent = "Reading the COCI description…";
+        window.CPL_TABS.loadScript("coci_lookup_desc_" + key + ".js", null, put);
+      }
+    }
+    return out;
+  }
+  /* An exhibit title in the Exhibits panel: r is the related title's row (t, issuer, locals, adopted, proposed). */
+  function exhibitTitleDetails(r) {
+    var es = state.cd.byTitle[r.t] || [], out = [];
+    if (!es.length) {
+      out.push(el("p", { cls: "exh-muted", text: r.proposed ? "This title is proposed, so no exhibit sits under it yet."
+        : "No exhibit record is on file under this title in the data COBI reads." }));
+      return out;
+    }
+    var colleges = [], seen = {}, credits = [], cs = {}, recN = 0, courses = {}, units = [];
+    es.forEach(function (e) {
+      (e.adopter_names || []).forEach(function (n) { if (!seen[n]) { seen[n] = 1; colleges.push(n); } });
+      (e.credit_recs || []).forEach(function (c) {
+        recN++;
+        if (c.course) courses[cdNorm(c.course)] = 1;
+        if (c.credit && !cs[c.credit]) { cs[c.credit] = 1; credits.push(c.credit); }
+      });
+      if (typeof e.peer_units_median === "number" && e.peer_units_median > 0) units.push(e.peer_units_median);
+    });
+    colleges.sort(lowerCmp);
+    var recs = es.reduce(function (a, e) { return a.concat(e.exhibit_records || [{ id: e.exhibit_id, title: e.title }]); }, []);
+    var ex = el("span", null, []);
+    recs.slice(0, DET_MAX).forEach(function (x, i) {
+      if (i) ex.appendChild(document.createTextNode("; "));
+      ex.appendChild(document.createTextNode((x.title || r.t) + ", "));
+      ex.appendChild(el("a", { href: mapUrl(x.id), target: "_blank", rel: "noopener", text: x.id, "aria-label": "Open " + x.id + " in MAP, in a new tab" }));
+    });
+    if (recs.length > DET_MAX) ex.appendChild(document.createTextNode(detailMore(recs, DET_MAX, "exhibit", "exhibits")));
+    out.push(detailFacts([
+      ["Colleges", colleges.length ? fmt(colleges.length) + ": " + colleges.slice(0, 12).join("; ") + detailMore(colleges, 12, "college", "colleges") : "No college articulates it yet."],
+      ["Issuer", r.issuer || "No issuer named"],
+      ["Statewide", relStatewide(r.t) ? "A statewide exhibit" : "Not statewide"],
+      ["Units", units.length ? "A college awards " + fmt(Math.max.apply(null, units)) + " units at the median" : ""],
+      ["Credit recommendations", credits.length ? fmt(recN) + " on " + fmt(Object.keys(courses).length) + (Object.keys(courses).length === 1 ? " course: " : " courses: ")
+        + credits.slice(0, DET_MAX).join("; ") + detailMore(credits, DET_MAX, "recommendation", "recommendations") : "None on file."],
+      ["Exhibits", recs.length ? ex : ""]]));
+    return out;
+  }
+
+  /* ── Possible duplicate (Sam, 2026-11-21) ──
+     "'Possible duplicate' note when titles match on known aliases (CDF = CAL FIRE), e.g. MAPICI-CWFA-1-001 Fire CDF
+     Academy. Flag only; never merge." Two titles are flagged when they name one agency by two of its known names, or
+     read the same once each known name is written one way. The note is words on the card and on the Exhibits row;
+     nothing is saved, checked or merged by it. A new agency joins KNOWN_ALIASES with every name it is written under. */
+  var KNOWN_ALIASES = [
+    { name: "CAL FIRE", was: "CDF", forms: [["CDF", /(?:^|[^A-Za-z])CDF(?![A-Za-z])/], ["CAL FIRE", /(?:^|[^A-Za-z])Cal\s?Fire(?![A-Za-z])/i],
+      ["California Department of Forestry", /California Department of Forestry(?:\s+and\s+Fire\s+Protection)?/i]] }
+  ];
+  function aliasRead(title) {
+    var t = String(title || ""), hits = {};
+    KNOWN_ALIASES.forEach(function (a, i) {
+      a.forms.forEach(function (f) {
+        if (!f[1].test(t)) return;
+        if (!hits[a.name]) hits[a.name] = f[0];
+        t = t.replace(new RegExp(f[1].source, f[1].flags + (f[1].flags.indexOf("g") < 0 ? "g" : "")), " ~" + i + "~ ");
+      });
+    });
+    return { hits: hits, key: (t.toLowerCase().match(/~\d+~|[a-z0-9]+/g) || []).sort().join(" ") };
+  }
+  function possibleDuplicate(a, b) {
+    if (!a || !b || a === b) return null;
+    var A = aliasRead(a), B = aliasRead(b), found = null;
+    Object.keys(A.hits).forEach(function (name) {
+      if (found || !B.hits[name]) return;
+      if (A.hits[name] !== B.hits[name] || A.key === B.key) found = { name: name, a: A.hits[name], b: B.hits[name] };
+    });
+    return found;
+  }
+  function dupWords(d) {
+    return "Possible duplicate: " + (d.a === d.b ? "both name " + d.name : d.a + " and " + d.b + " are one agency") + ". A flag only; nothing is merged.";
+  }
+  /* The titles in the reference, or proposed, that a card's title may duplicate. */
+  function duplicatesOf(title) {
+    return (state.rel.idx || []).filter(function (o) { return possibleDuplicate(title, o.t); });
+  }
+
+  /* ── The chips at the top of a Review card (Sam, 2026-11-21) ──
+     Cert-based or Course-based says which panel to read first. It follows kb/_build_exhibits_review.py
+     course_title_fits (Sam's rule of 2026-11-12): a course's title names the exhibit only when every exhibit behind the
+     local title is credit by exam and carries at most one credit recommendation, or the college is the issuer; the
+     path is read from the MAP id, as kb/exhibit_paths.py reads it. */
+  var EXH_ID_PATH = /^(?:MAP|CPL)(IC|CX|Cx|CBE|SA|PR|MM|O)/;
+  var EXH_PATH_KEY = { IC: "ic", CX: "cx", Cx: "cx", CBE: "cx", SA: "sa", PR: "pr", MM: "other", O: "other" };
+  var EXH_PATH_WORDS = { ic: "industry certification", cx: "credit by exam", pr: "portfolio", sa: "exam score", other: "another path" };
+  function idPath(id) { var m = EXH_ID_PATH.exec(id || ""); return m ? EXH_PATH_KEY[m[1]] : ""; }
+  function cardBasis(h, issuer) {
+    var paths = {}, recs = {};
+    (h.ids || []).forEach(function (id) { var k = idPath(id); if (k) paths[k] = 1; });
+    (h.local_courses || []).forEach(function (r) { if (r && r[5]) recs[r[1] + "|" + r[5]] = 1; });
+    var keys = Object.keys(paths).sort(), n = Object.keys(recs).length;
+    var type = keys.map(function (k) { return EXH_PATH_WORDS[k]; }).join(" and ");
+    var cbe = keys.length === 1 && keys[0] === "cx";
+    var course = !h.course_title_set_aside && (!keys.length || (cbe && n <= 1) || String(issuer || "").trim() === LOCAL_ISSUER);
+    return { cert: !course, type: type };
+  }
+  function basisChip(b) {
+    var label = b.cert ? "Cert-based" : "Course-based";
+    var tip = (b.type ? "CPL type: " + b.type + ". " : "") + (b.cert
+      ? "The title is the official name of the certification, license or training program. Read the Exhibits panel first."
+      : "One course stands behind the exhibit, so the course's title can name it. Read the Course details panel first.");
+    return el("span", { cls: "exh-chip exh-chip-key", id: "exh-chip-basis", tabindex: "0", "data-tip": tip, "aria-label": label + ". " + tip }, [label]);
   }
 
   /* ── The statewide or most-used title, and related titles changed from the panel (Sam, 2026-11-12) ──
@@ -1276,13 +1519,13 @@
      reference's own statewide flag stands in when that list did not load), the most local titles, then the most
      colleges, leading. With none statewide, the most used title is named only when it has at least POPULAR_MIN local
      titles and more than every other related title (a tie names none).
-     The change: a reference title folds into another reference title with the two rows the rename batch writes for a
+     The change: a reference title combines into another reference title with the two rows the rename batch writes for a
      fold (renameRows: unified_title_override and unified_title_merge_confirm, both naming the target, on the title's
      _CREDENTIAL_REVIEW:: key, under the signed-in reviewer), posted by postRows. The daily dry run pairs them and the
      reviewed rename apply merges the records; the old title stays a search alias (kb/credential_aliases.py). Before
      the apply, the List's Edit back to the title's own name clears the rename (the override saved as "", which the dry
      run skips); after it, kb/_cred_rename_undo.py on the apply's receipt. Nothing is checked by default, and a title
-     inside a ruled plan, the rename batch, a saved rename or fold, or one other titles wait to fold into, has no
+     inside a ruled plan, the rename batch, a saved rename or fold, or one other titles wait to combine into, has no
      checkbox and says why; the saved rows are read live before the confirmation is offered and again at the save. */
   var DRYRUN_ALIAS_URL = "kb/cred_rename_dryrun/alias_map.json";
   var POPULAR_MIN = 3;
@@ -1297,7 +1540,7 @@
           block(e.old, "In a ruled plan (" + (e.plan_id || "a decision sheet") + ") that renames it to " + e["new"] + ".");
           block(e["new"], "A ruled plan (" + (e.plan_id || "a decision sheet") + ") renames another title to it.");
         });
-        [["renames", "renamed"], ["merges", "folded"]].forEach(function (p) {
+        [["renames", "renamed"], ["merges", "combined"]].forEach(function (p) {
           var m = (d && d[p[0]]) || {};
           Object.keys(m).forEach(function (old) {
             block(old, "Saved to be " + p[1] + " into " + m[old] + "; the rename apply carries it.");
@@ -1305,7 +1548,7 @@
           });
         });
         ((d && d.held_family) || []).concat((d && d.held_emptied) || []).forEach(function (e) {
-          block(e.old, "Saved to fold into " + e.target + "; the rename run holds it (" + String(e.why || "").replace(/^held:\s*/, "") + ").");
+          block(e.old, "Saved to combine into " + e.target + "; the rename run holds it (" + String(e.why || "").replace(/^held:\s*/, "") + ").");
         });
         state.rel.plans = { blocked: b, at: d && d._generated_at };
       })
@@ -1442,7 +1685,7 @@
     var want = opts.slice().sort(), k = want.join("\u0001");
     if (a.liveKey !== k) { a.liveKey = k; a.live = null; relLiveLoad(want).then(function (live) { if (a.liveKey === k) { a.live = live; redraw(); } }); }
     a.targetWhy = !opts.length ? "No related title is in the reference, so nothing can take the others in."
-      : !a.target ? "Choose the title the checked ones fold into." : relTargetWhyNot(a.target, a);
+      : !a.target ? "Choose the title the checked ones change to." : relTargetWhyNot(a.target, a);
     a.ok = !a.targetWhy;
     return a;
   }
@@ -1495,14 +1738,14 @@
     if (!live) return "Reading its saved rows…";
     if (live.error) return "Its saved rows could not be read (" + live.error + "), so it cannot be changed here.";
     var v = live.override[t];
-    if (v && v !== t) return v === a.target && live.merge[t] === a.target ? "Already saved to fold into " + a.target + "."
+    if (v && v !== t) return v === a.target && live.merge[t] === a.target ? "Already saved to combine into " + a.target + "."
       : "Already saved to be renamed " + v + "; the rename apply carries it.";
     // A merge confirm alone, naming another title, is a saved word too: it stays until a person settles it.
     var m = live.merge[t];
-    if (m && m !== t && m !== a.target) return "A saved merge confirm folds it into " + m + ", with no rename beside it. It stays until a person "
+    if (m && m !== t && m !== a.target) return "A saved merge confirm combines it into " + m + ", with no rename beside it. It stays until a person "
       + "clears it: in the List, Edit its title to " + m + " and Save, then Edit it back and Save; the second save clears both rows.";
     var n = Object.keys(live.into[t] || {}).length;
-    if (n) return fmt(n) + (n === 1 ? " title is" : " titles are") + " saved to fold into it, so it stays until they land.";
+    if (n) return fmt(n) + (n === 1 ? " title is" : " titles are") + " saved to combine into it, so it stays until they land.";
     return "";
   }
   function relTargetWhyNot(t, a, live) {
@@ -1515,7 +1758,7 @@
     var v = live.override[t];
     if (v && v !== t) return t + " is itself saved to be renamed " + v + "; choose that title.";
     var m = live.merge[t];
-    if (m && m !== t) return t + " is itself saved to fold into " + m + "; choose that title.";
+    if (m && m !== t) return t + " is itself saved to combine into " + m + "; choose that title.";
     if (famOf(t)) return t + " is a family member; its family's batch names it.";
     if (renamePending(t)) return t + " waits in the rename batch; decide it there first.";
     return "";
@@ -1550,10 +1793,10 @@
       var n = a.ask.length, locals = a.ask.reduce(function (s, t) { return s + relLocalsOf(t); }, 0);
       var box = el("div", { cls: "exh-rel-confirm", role: "group", "aria-labelledby": "exh-rel-ask-h" });
       box.appendChild(el("p", { id: "exh-rel-ask-h", tabindex: "-1", role: "status", "aria-live": "polite", cls: "exh-strong exh-small",
-        text: fmt(n) + (n === 1 ? " title, " : " titles, ") + fmt(locals) + " local title" + (locals === 1 ? "" : "s") + ", will fold into " + a.target + "." }));
+        text: fmt(n) + (n === 1 ? " title, " : " titles, ") + fmt(locals) + " local title" + (locals === 1 ? "" : "s") + ", will combine into " + a.target + "." }));
       box.appendChild(el("ul", { cls: "exh-small exh-rel-asklist" }, a.ask.map(function (t) {
         var k = relLocalsOf(t);
-        return el("li", { text: t + ", " + fmt(k) + " local title" + (k === 1 ? "" : "s") + ": folds into " + a.target + "; its name stays a search alias." });
+        return el("li", { text: t + ", " + fmt(k) + " local title" + (k === 1 ? "" : "s") + ": combines into " + a.target + "; its name stays a search alias." });
       })));
       box.appendChild(el("p", { cls: "exh-muted exh-small", text: "The daily dry run pairs them and a reviewed rename apply merges the records. "
         + "Nothing a college or a student sees changes until then." }));
@@ -1593,7 +1836,7 @@
         listApply({ ut: t }, [[FIELD_CRED_TITLE, to], [FIELD_MERGE_CONFIRM, to]]);
       });
       a.busy = false; a.ask = null;
-      a.note = "Saved: " + fmt(titles.length) + (titles.length === 1 ? " title folds" : " titles fold") + " into " + land
+      a.note = "Saved: " + fmt(titles.length) + (titles.length === 1 ? " title combines" : " titles combine") + " into " + land
         + (land !== target ? ", where " + target + "'s saved rename lands" : "") + ". The daily dry run pairs them and a reviewed rename apply merges the records; each old title stays a search alias. They are in the List's Changed this visit.";
       render(); relFocus("exh-rel-note");
     }).catch(function (e) {
@@ -2356,105 +2599,14 @@
           });
         });
       }
+      var byTitle = {};
+      ((S && S.exhibits) || []).forEach(function (e) { var t = e.unified_title || e.title; if (t) (byTitle[t] || (byTitle[t] = [])).push(e); });
+      cd.byTitle = byTitle; cd.members = (M && M.members) || {}; cd.colleges = (M && M.colleges) || []; cd.recs = null;
       cd.byId = byId; cd.byCourse = byCourse; cd.topmap = (M && M.topmap) || {};
       cd.err = !S ? "the exhibit file (statewide_data.js) did not load" : !M ? "the course file (unified_courses_members.js) did not load" : "";
       cd.ready = true; cd.loading = null;
     });
     return cd.loading;
-  }
-  /* The courses behind a card's exhibits: [{ college, code, credit, course|null }]. */
-  function courseDetailsFor(h) {
-    var cd = state.cd, out = [], seen = {};
-    var artNames = (h.art || []).map(college);
-    (h.ids || []).forEach(function (id) {
-      var e = cd.byId[id];
-      if (!e) return;
-      var recs = e.credit_recs || [], idx = e.adopter_rec_idx || {};
-      var who = Object.keys(idx).length ? Object.keys(idx) : (e.adopter_names && e.adopter_names.length ? e.adopter_names : artNames);
-      who.forEach(function (name) {
-        var mine = idx[name] ? idx[name].map(function (i) { return recs[i]; }) : recs;
-        mine.forEach(function (r) {
-          if (!r || !r.course) return;
-          var key = cdName(name) + "|" + cdNorm(r.course);
-          if (seen[key]) return;
-          seen[key] = 1;
-          out.push({ college: name, code: r.course, credit: r.credit || "", id: id, course: cd.byCourse[key] || null });
-        });
-      });
-    });
-    return out;
-  }
-  function closeCourseDetails() {
-    state.cd.open = null;
-    render();
-    var b = document.getElementById("exh-cd-btn");
-    if (b) b.focus();
-  }
-  function openCourseDetails(h) {
-    state.cd.open = h.raw;
-    render();
-    var p = document.getElementById("exh-cd-h");
-    if (p) p.focus();
-    if (!state.cd.ready) loadCourseDetails().then(function () {
-      if (state.cd.open !== h.raw) return;
-      render();
-      var q = document.getElementById("exh-cd-h");
-      if (q) q.focus();
-    });
-  }
-  function courseDetailsPanel(h) {
-    var cd = state.cd;
-    var box = el("aside", { cls: "exh-rel exh-cd", id: "exh-cd", "aria-label": "Course details" });
-    box.addEventListener("keydown", function (e) { if (e.key === "Escape") { e.preventDefault(); closeCourseDetails(); } });
-    box.appendChild(el("div", { cls: "exh-cd-head" }, [
-      el("h4", { cls: "exh-q exh-small", id: "exh-cd-h", tabindex: "-1", text: "Course details" }),
-      word("Close", closeCourseDetails, { cls: "exh-w exh-small", "aria-label": "Close course details and show Related titles" })]));
-    var body = el("div", { cls: "exh-rel-body" });
-    box.appendChild(body);
-    if (!cd.ready) { body.appendChild(el("p", { cls: "exh-muted exh-small", role: "status", text: "Reading the courses…" })); return box; }
-    if (cd.err) body.appendChild(el("p", { cls: "exh-muted exh-small", text: "Part of the course data could not be read: " + cd.err + "." }));
-    var rows = courseDetailsFor(h);
-    if (!rows.length) {
-      var at = shortList((h.art || []).map(college).filter(Boolean));
-      body.appendChild(el("p", { cls: "exh-empty exh-small", text: "No course is on file for this exhibit" + (at ? " at " + at : "")
-        + " in the data COBI reads. Open it in MAP to see its courses." }));
-    }
-    rows.forEach(function (r) {
-      var c = r.course;
-      var sec = el("section", { cls: "exh-cd-course", "aria-label": r.code + " at " + r.college });
-      sec.appendChild(el("p", { cls: "exh-muted exh-small", text: r.college + " · " + r.code }));
-      if (c) {
-        sec.appendChild(el("b", { cls: "exh-rel-t exh-cd-title", text: (c.t || "").trim() || "No title on file" }));
-        var facts = el("dl", { cls: "exh-cd-facts exh-small" });
-        function fact(k, v) { if (v) { facts.appendChild(el("dt", { text: k })); facts.appendChild(el("dd", { text: v })); } }
-        fact("Units", c.u ? String(c.u) : "Noncredit");
-        fact("TOP", c.p ? c.p + (cd.topmap[c.p] ? ", " + cd.topmap[c.p] : "") : "");
-        fact("M-ID", c.mids.join(", "));
-        fact("Control number", c.cn || "");
-        fact("Credit recommendation", r.credit);
-        sec.appendChild(facts);
-        var desc = el("p", { cls: "exh-small exh-cd-desc" });
-        sec.appendChild(desc);
-        if (c.cn) {
-          var key = /^[A-Za-z]/.test(c.n) ? c.n.charAt(0).toUpperCase() : "0";
-          var put = function () { var d = window.CPL_COCI_DESC && window.CPL_COCI_DESC[key]; desc.textContent = d && d[c.cn] ? d[c.cn] : (d ? "No catalog description on file." : ""); };
-          if (window.CPL_COCI_DESC && window.CPL_COCI_DESC[key]) put();
-          else if (window.CPL_TABS && typeof window.CPL_TABS.loadScript === "function") {
-            desc.textContent = "Reading the catalog description…";
-            window.CPL_TABS.loadScript("coci_lookup_desc_" + key + ".js", null, put);
-          }
-        }
-      } else {
-        sec.appendChild(el("p", { cls: "exh-small", text: "This course is not in the course data COBI reads (unified_courses_members.js)." }));
-        if (r.credit) sec.appendChild(el("p", { cls: "exh-small", text: "Credit recommendation: " + r.credit }));
-      }
-      sec.appendChild(el("p", { cls: "exh-small" }, [el("a", { href: mapUrl(r.id), target: "_blank", rel: "noopener", text: r.id + " in MAP" })]));
-      body.appendChild(sec);
-    });
-    if (!rows.length && h.ids && h.ids.length) {
-      body.appendChild(el("p", { cls: "exh-small" }, [el("a", { href: mapUrl(h.ids[0]), target: "_blank", rel: "noopener", text: h.ids[0] + " in MAP" })]));
-    }
-    return box;
   }
   /* Course details above Words in common (Sam, 4:57 AM PT 2026-11-13, #3223): "the course details link is very helpful but
      should have the details listed in a section above Words in common on sidebar. the local course title has been the
@@ -2464,26 +2616,34 @@
      mapid links open to the sidebar ... so the user is not taken out of the tab to get lost?"): each is named here from
      what COBI holds, with Open in MAP, a new tab, for the rest (COBIx: a native summary first, no frame of MAP's page). */
   var THIN_DESC = 80;
-  function courseSummary(h) {
+  function courseSummary(h, ssHost) {
     var rows = h.local_courses || [];
-    var box = el("section", { cls: "exh-rel exh-cdsum", "aria-labelledby": "exh-cdsum-h" });
+    // The Course details panel (Sam, 2026-11-21): the card's own courses, then the related course titles (ssHost).
+    var box = el("aside", { cls: "exh-rel exh-cdsum", "aria-labelledby": "exh-cdsum-h" });
     box.appendChild(el("h4", { cls: "exh-q exh-small", id: "exh-cdsum-h", text: "Course details" }));
     if (!rows.length) box.appendChild(el("p", { cls: "exh-muted exh-small", text: "No local course is on file for this exhibit in the data COBI reads." }));
+    // Each of the card's courses redraws alone, so opening one's details leaves the card and its boxes as they are.
     rows.forEach(function (r) {
       var units = r[3] ? r[3] + (r[3] === 1 ? " unit" : " units") : "Noncredit";
       var sec = el("div", { cls: "exh-cd-course" });
-      sec.appendChild(el("b", { cls: "exh-rel-t exh-cd-title", text: r[2] || "No course title on file" }));
-      sec.appendChild(el("p", { cls: "exh-muted exh-small", text: [college(r[0]), r[1], units].filter(Boolean).join(" · ") }));
-      if (r[5]) sec.appendChild(el("p", { cls: "exh-small", text: "Credit recommendation: " + r[5] }));
-      var d = r[6] || "";
-      if (!d) sec.appendChild(el("p", { cls: "exh-muted exh-small", text: "No COCI description on file." }));
-      else {
-        sec.appendChild(el("p", { cls: "exh-small exh-cd-desc", text: "COCI description: " + d }));
-        // #3219: a COCI description is often unreliable for a noncredit course, and a thin one settles nothing.
-        if (!r[3] || d.length < THIN_DESC) sec.appendChild(el("p", { cls: "exh-muted exh-small exh-cd-lead", text: !r[3]
-          ? "Read it as a lead only: COCI descriptions of noncredit courses are often out of date or copied from another course."
-          : "Read it as a lead only: the description is too short to settle the title." }));
+      var dk = "l:" + r[0] + "|" + r[1], name = r[2] || "No course title on file";
+      function draw() {
+        while (sec.firstChild) sec.removeChild(sec.firstChild);
+        sec.appendChild(detailButton(name, dk, "exh-rel-t exh-cd-title", draw));
+        sec.appendChild(el("p", { cls: "exh-muted exh-small", text: [college(r[0]), r[1], units].filter(Boolean).join(" · ") }));
+        if (r[5]) sec.appendChild(el("p", { cls: "exh-small", text: "Credit recommendation: " + r[5] }));
+        var d = r[6] || "";
+        if (!d) sec.appendChild(el("p", { cls: "exh-muted exh-small", text: "No COCI description on file." }));
+        else {
+          sec.appendChild(el("p", { cls: "exh-small exh-cd-desc", text: "COCI description: " + d }));
+          // #3219: a COCI description is often unreliable for a noncredit course, and a thin one settles nothing.
+          if (!r[3] || d.length < THIN_DESC) sec.appendChild(el("p", { cls: "exh-muted exh-small exh-cd-lead", text: !r[3]
+            ? "Read it as a lead only: COCI descriptions of noncredit courses are often out of date or copied from another course."
+            : "Read it as a lead only: the description is too short to settle the title." }));
+        }
+        if (state.det[dk]) sec.appendChild(detailBox(name, dk, function () { return localCourseDetails(r); }, draw));
       }
+      draw();
       box.appendChild(sec);
     });
     if (h.ids && h.ids.length) {
@@ -2495,6 +2655,7 @@
       if (h.ids.length > 3) m.appendChild(el("p", { cls: "exh-muted exh-small", text: "and " + (h.ids.length - 3) + " more exhibits" }));
       box.appendChild(m);
     }
+    if (ssHost) box.appendChild(ssHost);
     return box;
   }
   function studentsLine(h) {
@@ -2511,20 +2672,64 @@
 
   function card(h, list) {
     var c = el("section", { cls: "exh-card", "aria-label": "Review one title" });
-    var chip = el("span", { cls: "exh-chip", tabindex: "0", "data-tip": TIPS[h.step] || "",
+    var chip = el("span", { cls: "exh-chip", id: "exh-chip-step", tabindex: "0", "data-tip": TIPS[h.step] || "",
       "aria-label": "CER step: " + h.step + ". " + (TIPS[h.step] || "") }, ["CER step: " + h.step]);
-    var row = el("div", { cls: "exh-chiprow" }, [chip]);
+    // The chips every Review card opens with (Sam, 2026-11-21): the basis first, then Statewide and the CPL-AI
+    // recommendation where they hold for the title in the box.
+    var basis = cardBasis(h, h.issuer);
+    var swChip = el("span", { cls: "exh-chip exh-chip-key", id: "exh-chip-sw", tabindex: "0",
+      "data-tip": "A statewide exhibit carries this title.", "aria-label": "Statewide. A statewide exhibit carries this title." }, ["Statewide"]);
+    var caiChip = el("span", { cls: "exh-chip exh-chip-key", id: "exh-chip-cai", tabindex: "0" }, ["CPL-AI recommendation"]);
+    var row = el("div", { cls: "exh-chiprow" }, [basisChip(basis), swChip, caiChip, chip]);
     if (h.saved) row.appendChild(el("span", { cls: "exh-muted exh-small", text: "Saved earlier as “" + h.saved + "”" }));
     c.appendChild(row);
+    if (!CPJ.data && !CPJ.loading && !CPJ.error) listCplAiLoad().then(function () { if (state.view === "review" && CPJ.data) render(); });
 
     var canon = el("div", { cls: "exh-canon" });
     canon.appendChild(el("label", { cls: "exh-muted exh-small", "for": "exh-title",
       text: "Canonical title, from " + (h.from || "the classifier") + " (edit it here)" }));
     // An edit outlives a re-render (opening a chip, showing more colleges) until the title is decided.
     var draft = state.drafts[h.raw] || {};
-    var title = el("input", { cls: "exh-edit", id: "exh-title", type: "text", autocomplete: "off" });
+    // The title wraps and the box grows to hold it (Sam, 2026-11-21); a title is one line of text, so Enter adds none.
+    var title = el("textarea", { cls: "exh-edit", id: "exh-title", rows: "1", autocomplete: "off", spellcheck: "true" });
     title.value = draft.title != null ? draft.title : (h.title || "");
+    function fitTitle() { title.style.height = "auto"; if (title.scrollHeight) title.style.height = title.scrollHeight + "px"; }
+    title.addEventListener("keydown", function (e) { if (e.key === "Enter") e.preventDefault(); });
+    title.addEventListener("input", function () {
+      if (/[\r\n]/.test(title.value)) title.value = title.value.replace(/\s*[\r\n]+\s*/g, " ");
+      fitTitle();
+    });
     canon.appendChild(title);
+    (window.requestAnimationFrame || setTimeout)(fitTitle);
+    function drawChips() {
+      var t = title.value.trim(), cs = listCplAi({ ut: t });
+      swChip.hidden = !relStatewide(t);
+      caiChip.hidden = !cs.length;
+      if (cs.length) {
+        var full = cs.map(cplAiSentence).join("; ") + ".";
+        caiChip.setAttribute("data-tip", full);
+        caiChip.setAttribute("aria-label", "CPL-AI recommendation. " + full);
+      }
+    }
+    title.addEventListener("input", drawChips);
+    drawChips();
+    // The course title the industry certification rule of November 12 set aside, in one line.
+    var aside = h.course_title_set_aside;
+    if (aside && aside.title) canon.appendChild(el("p", { cls: "exh-small exh-set-aside", id: "exh-set-aside",
+      text: "Course title set aside: " + aside.title + (aside.basis ? " (" + aside.basis + ")" : "") + ". "
+        + (/credit recommendations?$/.test(aside.why || "") ? "The exhibit carries " + aside.why : "The exhibit is by " + (aside.why || "a path other than credit by exam"))
+        + ", so it takes the credential's official name (the industry certification rule of November 12)." }));
+    // Possible duplicate (Sam, 2026-11-21): a flag in words, following the title; nothing merges.
+    var dupLine = el("p", { cls: "exh-small exh-dup", id: "exh-dup" });
+    function drawDup() {
+      var ds = duplicatesOf(title.value.trim());
+      dupLine.hidden = !ds.length;
+      dupLine.textContent = ds.length ? "Possible duplicate of " + ds.slice(0, 3).map(function (o) { return o.t; }).join("; ")
+        + detailMore(ds, 3, "title", "titles") + ": " + dupWords(possibleDuplicate(title.value.trim(), ds[0].t)).replace(/^Possible duplicate: /, "") : "";
+    }
+    title.addEventListener("input", drawDup);
+    drawDup();
+    canon.appendChild(dupLine);
     // How well the proposed name is sourced, in words beside it (kb/_build_exhibits_review.py name_source; the S648
     // conductor's d-official-name-source-confidence-s648). It never holds a proposal back; anything unknown reads limited.
     var nameSrc = nameSourceLine(h);
@@ -2631,28 +2836,27 @@
     c.appendChild(el("p", { cls: "exh-why", text: studentsLine(h) + " · " + h.why }));
     if (h.ids && h.ids.length) {
       var src = el("p", { cls: "exh-small" }, ["Source: "]);
-      var inSide = state.cd.open !== h.raw;
       h.ids.slice(0, 3).forEach(function (id, k) {
         if (k) src.appendChild(document.createTextNode(", "));
         // Sam, 2026-11-13 (#3223): the id opens its summary in the side panel; Open in MAP there leaves the tab.
-        src.appendChild(inSide ? word(id, function () { var m = document.getElementById("exh-cdsum-map"); if (m) m.focus(); },
-          { cls: "exh-w exh-small", "aria-controls": "exh-cdsum-map", "aria-label": id + ", shown in the side panel" })
-          : el("a", { href: mapUrl(id), target: "_blank", rel: "noopener", text: id + " in MAP" }));
+        src.appendChild(word(id, function () { var m = document.getElementById("exh-cdsum-map"); if (m) m.focus(); },
+          { cls: "exh-w exh-small", "aria-controls": "exh-cdsum-map", "aria-label": id + ", shown in the side panel" }));
       });
       if (h.ids.length > 3) src.appendChild(document.createTextNode(" and " + (h.ids.length - 3) + " more"));
-      var cdOpen = state.cd.open === h.raw;
-      src.appendChild(document.createTextNode(" · "));
-      var cdBtn = word("Course details", function () { if (state.cd.open === h.raw) closeCourseDetails(); else openCourseDetails(h); },
-        { cls: "exh-w exh-small", id: "exh-cd-btn", "aria-expanded": cdOpen ? "true" : "false", "aria-controls": cdOpen ? "exh-cd" : null });
-      cdBtn.addEventListener("keydown", function (e) { if (e.key === "Escape" && state.cd.open === h.raw) { e.preventDefault(); closeCourseDetails(); } });
-      src.appendChild(cdBtn);
+      // Course details and Exhibits both show beside the card, so the line carries no switch (Sam, 2026-11-21).
       c.appendChild(src);
       // Side by side, read-only: each MAP exhibit behind the card with the proposed name and the official source.
       var sbsBody = el("div", { cls: "exh-sbs-body" }, exhSbsBody(h.ids.map(function (id) { return { id: id, title: h.raw }; }),
         "The MAP exhibits behind " + h.raw + ", side by side", h.title || ""));
       var sbsD = el("details", { cls: "exh-sbs", id: "exh-sbs" }, [el("summary", { text: "Side by side: each exhibit's local title, proposed name, official source and CPL type" }), sbsBody]);
-      if (EXH_SBS.open[h.raw]) { sbsD.open = true; exhSbsLoad(render); }
-      sbsD.addEventListener("toggle", function () { EXH_SBS.open[h.raw] = sbsD.open; if (sbsD.open) exhSbsLoad(render); });
+      // Side by side opens expanded (Sam, 2026-11-21); a card a person closed stays closed for the visit.
+      // A read that failed is not asked for again on every redraw; closing and opening it asks once more.
+      if (EXH_SBS.open[h.raw] !== false) { sbsD.open = true; if (!EXH_SBS.failed) exhSbsLoad(render); }
+      sbsD.addEventListener("toggle", function () {
+        var was = EXH_SBS.open[h.raw];
+        EXH_SBS.open[h.raw] = sbsD.open;
+        if (sbsD.open && (was === false || !EXH_SBS.failed)) exhSbsLoad(render);
+      });
       c.appendChild(sbsD);
     }
 
@@ -2725,9 +2929,9 @@
       el("span", { text: (state.cur + 1) + " of " + fmt(list.length) + (state.filter ? " in " + state.filter : "")
         + (state.students ? " · most students first" : " · most colleges first") }),
       el("span", { text: next ? "Next: " + next.raw + ", " + shortList(whoBuilt(next)) : "" })]));
-    if (state.cd.open === h.raw) return el("div", { cls: "exh-with-rel" }, [c, courseDetailsPanel(h)]);
-    return withRelated(c, { key: "r:" + h.raw, title: title, issuer: issuer, issuer0: h.issuer, raw: h.raw, skip: [], actions: true, top: courseSummary(h), card: h,
-      use: function (r) { useRow(r); drawAlign(); } });
+    var ssHost = el("div", { cls: "exh-ss-host" });
+    return withRelated(c, { key: "r:" + h.raw, title: title, issuer: issuer, issuer0: h.issuer, raw: h.raw, skip: [], actions: true, top: courseSummary(h, ssHost), card: h,
+      ssHost: ssHost, use: function (r) { useRow(r); drawAlign(); drawChips(); drawDup(); fitTitle(); } });
     function useRow(r) {
       title.value = r.t;
       // The title's own issuer comes with it, as if picked.
@@ -5648,6 +5852,28 @@
     ".exh-canon { display:grid; gap:6px; min-width:0; }",
     ".exh-canon p { margin:0; }",
     ".exh-edit { font-family:var(--f-display, Georgia, serif); font-size:clamp(1.3rem, 2.8vw, 1.8rem); font-weight:700; color:var(--seal-blue-text); background:var(--surface-subtle); border:1px solid var(--border-strong); border-radius:6px; padding:4px 8px; width:100%; min-width:0; box-sizing:border-box; }",
+    /* The canonical title wraps and grows to fit (Sam, 2026-11-21): the script sets its height to its text. */
+    "textarea.exh-edit { display:block; resize:none; overflow:hidden; line-height:1.25; overflow-wrap:anywhere; min-height:2.2em; }",
+    /* Exhibits runs the full width of the window, as the Commons and CPL Pathways do (Sam, 2026-11-21). */
+    "#tab-exhibits .main-container { max-width:none; padding-left:clamp(16px, 2vw, 32px); padding-right:clamp(16px, 2vw, 32px); }",
+    ".exh-chip-key { color:var(--seal-blue-text); border-color:var(--seal-blue-text); background:var(--surface); }",
+    ".exh-chip[hidden] { display:none; }",
+    ".exh-set-aside, .exh-dup { color:var(--text-body); overflow-wrap:anywhere; }",
+    ".exh-dup, .exh-rel-dup { border-left:3px solid var(--seal-blue-text); padding-left:8px; }",
+    ".exh-dup[hidden] { display:none; }",
+    ".exh-rel-dup { color:var(--text-body); }",
+    ".exh-det-t { text-align:left; font-weight:600; color:var(--text-strong); overflow-wrap:anywhere; }",
+    ".exh-det { display:grid; gap:6px; justify-self:stretch; background:var(--surface-subtle); border:1px solid var(--border); border-radius:6px; padding:8px 10px; min-width:0; color:var(--text-body); }",
+    ".exh-det p { margin:0; overflow-wrap:anywhere; }",
+    ".exh-ss-host { display:grid; gap:8px; min-width:0; }",
+    ".exh-card { grid-template-columns:minmax(0, 1fr); }",
+    ".exh-sbs, .exh-sbs-body { min-width:0; }",
+    ".exh-cdsum, .exh-xp { align-content:start; }",
+    ".exh-two > .exh-side { align-items:start; }",
+    ".exh-det .exh-cd-facts { grid-template-columns:minmax(0, 1fr); }",
+    ".exh-det .exh-cd-facts dt { font-weight:600; margin-top:4px; }",
+    ".exh-ss-host:empty { display:none; }",
+    "span.exh-rel-pick { display:flex; gap:6px; align-items:flex-start; min-width:0; }",
     ".exh-inbox { display:flex; align-items:center; gap:6px; background:var(--surface-subtle); border:1px solid var(--border-strong); border-radius:6px; padding:3px 8px; min-width:0; font-size:.9rem; }",
     ".exh-inbox.exh-read { border-style:dashed; flex-wrap:wrap; }",
     ".exh-grow { flex:1 1 auto; min-width:0; overflow-wrap:anywhere; }",
@@ -5737,6 +5963,8 @@
     /* Related titles: beside the card at desktop widths, under it on a narrow screen. */
     ".exh-with-rel { display:grid; grid-template-columns:minmax(0, 1fr); gap:16px; align-items:start; min-width:0; }",
     "@media (min-width: 980px) { .exh-with-rel { grid-template-columns:minmax(0, 1fr) minmax(260px, 30%); } }",
+    /* A Review card's two panels sit beside each other where the window has the room, and stack below that. */
+    "@media (min-width: 1400px) { .exh-with-rel.exh-two { grid-template-columns:minmax(0, 1fr) minmax(0, 1.15fr); } .exh-two > .exh-side { grid-template-columns:minmax(0, 1fr) minmax(0, 1fr); } }",
     ".exh-rel { background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:clamp(12px, 2vw, 18px); display:grid; gap:10px; min-width:0; }",
     ".exh-rel-body { display:grid; gap:8px; min-width:0; }",
     ".exh-rel-body p { margin:0; }",
@@ -5770,9 +5998,6 @@
     ".exh-rel-asklist { margin:0; padding-left:1.1em; display:grid; gap:2px; overflow-wrap:anywhere; }",
     ".exh-align { margin:0; color:var(--text-body); overflow-wrap:anywhere; }",
     ".exh-align[hidden] { display:none; }",
-    ".exh-cd-head { display:flex; justify-content:space-between; align-items:baseline; gap:8px; flex-wrap:wrap; }",
-    ".exh-cd-head h4 { margin:0; }",
-    ".exh-cd-head h4:focus-visible { outline:2px solid var(--seal-blue); outline-offset:2px; }",
     ".exh-cd-course { display:grid; gap:4px; padding-bottom:8px; border-bottom:1px solid var(--border); min-width:0; }",
     ".exh-cd-course p { margin:0; overflow-wrap:anywhere; }",
     ".exh-cd-facts { display:grid; grid-template-columns:max-content minmax(0, 1fr); gap:2px 10px; margin:0; }",
@@ -5818,7 +6043,7 @@
     state.view = "review"; state.rlOpen = false;
     state.sw.rule = ""; state.sw.cur = 0; state.sw.bulkAsk = false; state.sw.batchMode = false; state.sw.batch = null;
     state.ls = null; state.qLens = "";
-    state.rb.ask = false; state.rel.all = null; state.rel.act = null; state.rel.folded = {};
+    state.rb.ask = false; state.rel.all = null; state.rel.act = null; state.rel.folded = {}; state.det = {};
     if (!state.cm || state.cm.done) state.cm = null;   /* the Commons' figures are read again each visit, as the Commons reads them */
     routeFromHash();
     rereadReview();
@@ -5920,7 +6145,7 @@
     loadRules: loadRules, _requestRows: requestRows, _requestState: requestState, _sendRequest: sendRequest,
     _switchRequest: switchRequest, _dryRunLines: dryRunLines, _listCsv: listCsv, _listRows: listRows,
     _progressSpec: progressSpec, _credCounts: credCounts, loadCommons: loadCommons,
-    _listCplAi: listCplAi, _listCplAiLoad: listCplAiLoad,
+    _listCplAi: listCplAi, _listCplAiLoad: listCplAiLoad, _possibleDuplicate: possibleDuplicate, _cardBasis: cardBasis,
     loadRelated: loadRelated, _relatedFor: relatedFor, _relAligned: relAligned, _relWhyNot: relWhyNot, _POPULAR_MIN: POPULAR_MIN,
     _STATEWIDE_LEAD: STATEWIDE_LEAD, _REL_STOP: REL_STOP, _LOCAL_ISSUER: LOCAL_ISSUER, _relInUse: relInUse, _levelKey: levelKey, _aseOf: aseOf, _renamePlan: renamePlan, _renameRows: renameRows, _nameSourceLine: nameSourceLine, _nameSourceLevel: nameSourceLevel, _seriesLine: seriesLine,
     _renameCount: renameCount, _akaOf: akaOf, _appliedTo: listAppliedTo, _famOf: famOf, _listStatus: listStatus, loadRenameStudents: loadRenameStudents
