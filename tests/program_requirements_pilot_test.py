@@ -86,6 +86,26 @@ REFUSE = [
 MATCH += [("HORT 001 F", "HORT 001 F · Principles of Horticulture I"),
           ("HORT 001 F", "HORT 1F Principles of Horticulture I"),
           ("ACCT 101A F", "ACCT 101AF Financial Accounting")]
+# A dot between a subject's letters (S691): College of the Canyons' noncredit NC.BUS 204, printed NC.BUS-204 in its
+# 2026-27 catalog (pdf p.316). Before, the code had no parts, its pattern named the letters NCBUS alone with no dot,
+# and no page named any course of its 101 noncredit programs. The number still binds, and a trailing dot still
+# leaves a code without parts (E.S.L. 1, MUS. 1 read as before).
+MATCH += [("NC.BUS 204", "NC.BUS-204 INTERMEDIATE ACCOUNTING · 45.00 – 60.00 hours"),
+          ("NC.BCSK 100", "NC.BCSK-100 GED PREPARATION"),
+          ("NC.BUS 204", "NC.BUS 204 Intermediate Accounting"),
+          ("NC.BUS 204", "NCBUS 204 Intermediate Accounting"),
+          ("H.EC 113", "H.EC 113 Nutrition")]
+REFUSE += [("NC.BUS 204", "NC.BUS-2041 Something"),
+           ("NC.BUS 204", "NC.BUS-204L Laboratory"),
+           ("NC.BUS 204", "NC.BUS-203 COST ACCOUNTING"),
+           ("NC.BUS 204", "BUS-204 Intermediate Accounting")]
+check(P.code_parts("NC.BUS 204") is not None, "NC.BUS 204 has a subject and a number")
+check(P.code_parts("E.S.L. 1") is None and P.code_parts("MUS. 1") is None,
+      "a trailing dot still leaves a code without parts (unchanged, S691)")
+check(P.code_parts("BUS 204") == ("B[\\s\\-/]?U[\\s\\-/]?S", "0*2 ?0 ?4"), "a code with no dot reads as before")
+check(P.coverage(P.find_codes("NC.BUS-203 COST ACCOUNTING · NC.BUS-204 INTERMEDIATE ACCOUNTING",
+                              [{"code": "NC.BUS 203"}, {"code": "NC.BUS 204"}]),
+                 [{"code": "NC.BUS 203"}, {"code": "NC.BUS 204"}]) == 1.0, "Canyons' two accounting courses found")
 for code, text in MATCH:
     check(P.code_pattern(code).search(text), "%r must be found in %r" % (code, text))
 for code, text in REFUSE:
