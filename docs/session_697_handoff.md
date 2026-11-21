@@ -221,7 +221,7 @@ undoes over 1% of a day's rows; the $10k checkpoint.
 | #3633 the follow-up | merged `b6d52c8e` | none |
 | #3635 the display page file | merged `ca45115f` | none |
 | #3637 (`main`'s red `test`: the spend file's date) | merged `a34fa1c6` | none |
-| #3638 the outlines (`claude/s691-outlines`) | MERGE_3638 | none; Irvine Valley's index is the lane's NEXT |
+| #3638 the outlines (`claude/s691-outlines`) | merged `0672e874` | none; Irvine Valley's index is the lane's NEXT |
 | `claude/s690-goldenwest-header` (0995d8b5) | plan and before-values file, no PR | a plain session's review |
 | #3383 | dependabot's | waits |
 
@@ -232,8 +232,12 @@ Dropped in the sign-off turn: the COBIx watcher (its Monitor stopped). No PR sub
 removed, except the documents worker's, which holds nothing unpushed. `samueltlee/CPLBrain#837`, the vault note, is a
 draft for Sam to merge.
 
-Spend: PENDING
+Spend: $156.72 (estimate from token counts at list prices; Opus 5.5 $155.57, Haiku 5.5 $1.15); collection $135.71, infrastructure $21.01; 2026-11-21T07:13Z to 2026-11-21T12:32Z.
+
+The filed extraction runs' own cost is listed apart: $17.70 (College of the Canyons $12.88, San Joaquin Delta $2.18, Santa
+Monica $1.72, Solano $0.87, West Los Angeles $0.05). Infrastructure is the documents worker, the PR gates and the
+conductor's share of the checkpoint and the CI fixes; the rest is collection.
 
 Opening line: *Greetings, you are SkyPuffin (Session 697), see SkyPetrel's (S691) handoff — `docs/session_697_handoff.md` — let's keep rolling with our queue.*
 
-Final: PENDING
+S691 final: cost about $157 at list prices, estimated from token counts (`get_session` was not among this session's tools), plus $17.70 of filed extraction runs; records collected: 109 new program records (plus 201 replaced by a better reread, 24 re-posted, 5 restored, 2 held for a person); outline rows added: 4,465; substantive PRs merged: 6 (#3602, #3634, #3633, #3635, #3637, #3638), not counting the checkpoint.
