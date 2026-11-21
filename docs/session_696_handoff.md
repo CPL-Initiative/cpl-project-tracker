@@ -52,10 +52,12 @@ lane's NEXT ([`repo-size`](reference/lanes/repo-size.md), as #3629 leaves it).
 
 ## Priority work, in order
 
-1. **Confirm the daily build after #3630** ended in success and that the pile reads 1,819.
-2. **#3629:** merge on its gates, dispatch `receipt-slim.yml` with `mode=dry-run`, then `mode=apply`, and read back the
-   summary (139 applied records stored and removed, every dated row audit report removed, the gate passing). Then
-   slimming item 3 (batch `dependency-map.yml` to at most hourly), `START_HERE.md` and the `CLAUDE.md` cut.
+1. **Done at sign-off, nothing to confirm:** the daily build after #3630 succeeded (run 44864091313), the pile reads 1,819 and
+   `LSKL M9004` is in the published member list.
+2. **Repo slimming, the rest:** items 1 and 2 ran (#3629, `receipt-slim.yml` run 44867993793, commit `05383647`): 139 applied
+   records and every dated row audit report are in `cpl-receipts`, each with a pointer; `kb/receipts` and `kb/row_audit` hold
+   54 MB, down from about 271. Next: item 3 (batch `dependency-map.yml` to at most hourly), `START_HERE.md`, the `CLAUDE.md`
+   cut, and removing `receipt-slim.yml` once nothing is left for it (the repo-size lane).
 3. **The 168 other tutoring titles:** 76 that name a subject go to Assign under `LSKL M9004` (a dry run and a second
    read first); 70 that prepare tutors become a later LSKL mint; 22 for a person.
 4. **Held codes:** saving a person's code decision from `#commons/subjects/held` (1,341 courses, 416 codes, 678 pairs;
@@ -115,22 +117,23 @@ restores yesterday's file and lets the publish go on.
 
 ## Ledger and let go
 
-Checked with the GitHub tools at 2026-11-21 03:51Z; the conductor updates this table at sign-off.
+Final at sign-off, 2026-11-21 05:00Z.
 
 | PR or branch | State | Next |
 |---|---|---|
 | #3624, #3625, #3627, #3626 | merged (`99e9c3ee`, `6ff93f80`, `385e04c8`, `2db49276`) | none |
-| #3629 (repo slimming 1, 2) | open (head `62dbb73d`), second read running | priority 2 |
-| #3630 (`LSKL M9004`) | open (head `57bc5b03`) | merge, dispatch `daily-dashboard.yml`, priority 1 |
-| this checkpoint (`claude/s695-checkpoint`) | open, draft | merge at sign-off if `test` is green |
+| #3630 (`LSKL M9004`) | merged (`00b191e0`); daily build 44864091313 succeeded | priority 3 |
+| #3629 (repo slimming 1, 2) | merged (`958b433a`) after one fix round and two lints fixes; dry run 44867595760, apply 44867993793 | priority 2 |
+| this checkpoint (#3631) | merged at sign-off | none |
+| `samueltlee/CPLBrain#836` (session note, wiki touch) | open, draft | Sam's to merge, as #835 |
 | #3602 | the conductor routine's | leave |
 | #3383 | dependabot's | waits |
 
-The session drops its PR watches at sign-off; it holds no scheduled check-in and no artifact watch. The COBIx watcher
-stopped at its two-hour limit and was not restarted. The 14 memory rows wait for the conductor to add their file to
-`kb/migrations/.apply`.
+The session dropped its PR watches at sign-off; it holds no scheduled check-in and no artifact watch. The COBIx watcher
+stopped at its two-hour limit and was not restarted: restart it, and read its output at every wake. The 14 memory rows are
+applied (run 44863705419, `kb/receipts/migration_s695_checkpoint_memory_rows_44863705419.json`).
 
-Spend: not available; 2026-11-21T01:22Z to 2026-11-21T04:15Z.
+Spend: not available; 2026-11-21T01:22Z to 2026-11-21T05:00Z.
 
 The work was curation (the mint and its floor) and infrastructure (the daily build steps, repo slimming).
 
