@@ -1027,12 +1027,44 @@
   "title": "Early Childhood Education",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDEVC1000",
+   "CDFS50",
+   "CDFS53",
+   "CDFS54",
+   "CDFS62",
+   "CDFS63",
+   "CDFS64",
+   "CDFS65",
+   "CDFS66",
+   "CDFS77",
+   "CDFS78"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=195",
+   "title": "The Associate in Science in Early Childhood EducaƟ on",
+   "h1": "The Associate in Science in Early Childhood EducaƟ on",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    195,
+    196,
+    197,
+    198
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 195,
+    "share": 1.0
+   },
+   "text_sha": "67ebc04f2e0fea54"
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 10194
  },
  {
   "control_number": "06553",
@@ -1107,8 +1139,8 @@
   ],
   "source": {
    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=275",
-   "title": "Ethnic Studies",
-   "h1": "Ethnic Studies",
+   "title": "Students who complete the Ethnic Studies A.A. are well prepared to transfer to four-year universiƟ es as ethnic",
+   "h1": "Students who complete the Ethnic Studies A.A. are well prepared to transfer to four-year universiƟ es as ethnic",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1119,15 +1151,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "page_check": {
-    "rule": "A",
-    "page": 275,
-    "share": 0.963
-   },
-   "text_sha": "e5c35e2ed54d7131"
+   "text_sha": "59d1ebff71429e89"
   },
   "listed": 27,
-  "text_chars": 15152
+  "text_chars": 14207
  },
  {
   "control_number": "06559",
@@ -2420,12 +2447,45 @@
   "title": "Early Childhood Education",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDEVC1000",
+   "CDFS50",
+   "CDFS53",
+   "CDFS54",
+   "CDFS62",
+   "CDFS63",
+   "CDFS64",
+   "CDFS65",
+   "CDFS66",
+   "CDFS77",
+   "CDFS78",
+   "NUTR54"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=196",
+   "title": "Early Childhood EducaƟ on",
+   "h1": "Early Childhood EducaƟ on",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    196,
+    197,
+    198,
+    199
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 196,
+    "share": 1.0
+   },
+   "text_sha": "a60d71be121b13fc"
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 14431
  },
  {
   "control_number": "20989",
@@ -2556,13 +2616,12 @@
    "FIRE56"
   ],
   "source": {
-   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=282",
-   "title": "Fire Technology (AS)",
-   "h1": "Fire Technology (AS)",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=283",
+   "title": "Fire Technology",
+   "h1": "Fire Technology",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    282,
     283,
     284,
     285
@@ -2571,13 +2630,13 @@
    "heading_named": true,
    "page_check": {
     "rule": "A",
-    "page": 282,
-    "share": 0.667
+    "page": 283,
+    "share": 0.889
    },
-   "text_sha": "c365922087e22f2e"
+   "text_sha": "86d81e52a30a167a"
   },
   "listed": 9,
-  "text_chars": 10785
+  "text_chars": 9960
  },
  {
   "control_number": "30034",
@@ -2760,28 +2819,20 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=336",
-   "title": "Mathematics",
-   "h1": "Mathematics",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=78",
+   "title": "77",
+   "h1": "77",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    336,
-    337,
-    338,
-    339
+    78
    ],
    "extractor": "pypdf",
-   "heading_named": true,
-   "page_check": {
-    "rule": "A",
-    "page": 336,
-    "share": 1.0
-   },
-   "text_sha": "c4ebe73eafc0ee2b"
+   "heading_named": false,
+   "text_sha": "1f1775946da07758"
   },
   "listed": 6,
-  "text_chars": 15982
+  "text_chars": 4099
  },
  {
   "control_number": "30678",
@@ -2861,12 +2912,41 @@
   "title": "Early Childhood Education",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDEVC1000",
+   "CDFS50",
+   "CDFS53",
+   "CDFS54",
+   "CDFS62",
+   "CDFS63",
+   "CDFS64",
+   "CDFS65"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=195",
+   "title": "Associate in Science in Early Childhood EducaƟ on for Transfer (ADT: A.S.-T)",
+   "h1": "Associate in Science in Early Childhood EducaƟ on for Transfer (ADT: A.S.-T)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    195,
+    196,
+    197,
+    198
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 195,
+    "share": 1.0
+   },
+   "text_sha": "9ff23005b23f9257"
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 13989
  },
  {
   "control_number": "32121",
@@ -2989,28 +3069,20 @@
    "PHYS8"
   ],
   "source": {
-   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=402",
-   "title": "Physics 2.0 (AS-T)",
-   "h1": "Physics 2.0 (AS-T)",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=145",
+   "title": "major in astronomy/astrophysics or double major in astronomy and physics to the university. Transfer level astronomy",
+   "h1": "major in astronomy/astrophysics or double major in astronomy and physics to the university. Transfer level astronomy",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    402,
-    403,
-    404,
-    405
+    145
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "page_check": {
-    "rule": "A",
-    "page": 402,
-    "share": 1.0
-   },
-   "text_sha": "9a2dcd9e35386cf6"
+   "text_sha": "128ea888bb78030a"
   },
   "listed": 6,
-  "text_chars": 13716
+  "text_chars": 3493
  },
  {
   "control_number": "32495",
@@ -3414,12 +3486,41 @@
   "title": "Business Administration",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1",
+   "ACCT2",
+   "BUS18",
+   "BUS5",
+   "CIS1",
+   "CIS50",
+   "ECONC2001",
+   "ECONC2002",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=171",
+   "title": "Associate in Science in Business AdministraƟ on 2.0 for Transfer (ADT: A.S.-T)",
+   "h1": "Associate in Science in Business AdministraƟ on 2.0 for Transfer (ADT: A.S.-T)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    171,
+    172,
+    173
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 171,
+    "share": 1.0
+   },
+   "text_sha": "4418d0154bbb5b10"
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 10491
  },
  {
   "control_number": "33373",
@@ -4899,12 +5000,41 @@
   "title": "Business Administration 2.0",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1",
+   "ACCT2",
+   "BUS18",
+   "BUS5",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH30",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=170",
+   "title": "Business AdministraƟ on 2.0 (AS-T)",
+   "h1": "Business AdministraƟ on 2.0 (AS-T)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    170,
+    171,
+    172,
+    173
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 170,
+    "share": 1.0
+   },
+   "text_sha": "f8dd4b8590d318df"
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 11810
  },
  {
   "control_number": "41524",
@@ -5892,28 +6022,20 @@
    "JOUR61"
   ],
   "source": {
-   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=306",
-   "title": "Journalism (AA-T)",
-   "h1": "Journalism (AA-T)",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=78",
+   "title": "77",
+   "h1": "77",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    306,
-    307,
-    308,
-    309
+    78
    ],
    "extractor": "pypdf",
-   "heading_named": true,
-   "page_check": {
-    "rule": "A",
-    "page": 306,
-    "share": 1.0
-   },
-   "text_sha": "124a7f161122527b"
+   "heading_named": false,
+   "text_sha": "1f1775946da07758"
   },
   "listed": 4,
-  "text_chars": 12781
+  "text_chars": 4099
  },
  {
   "control_number": "44989",
@@ -6081,33 +6203,28 @@
   "method": "pdf_pages",
   "coverage": 0.857,
   "codes_found": [
-   "CIS22",
    "MATH22",
    "MATH23",
    "MATH40",
    "MATHC2210",
-   "MATHC2220"
+   "MATHC2220",
+   "PHYS6"
   ],
   "source": {
-   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=336",
-   "title": "Mathematics",
-   "h1": "Mathematics",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=78",
+   "title": "77",
+   "h1": "77",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    336
+    78
    ],
    "extractor": "pypdf",
-   "heading_named": true,
-   "page_check": {
-    "rule": "A",
-    "page": 336,
-    "share": 0.857
-   },
-   "text_sha": "863e91e59296cb85"
+   "heading_named": false,
+   "text_sha": "1f1775946da07758"
   },
   "listed": 7,
-  "text_chars": 2874
+  "text_chars": 4099
  },
  {
   "control_number": "46128",
