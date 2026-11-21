@@ -458,42 +458,61 @@ SUBJECT_CONTEXT_BEFORE_MAX = 12
 
 
 def subject_context(pages: list[str], heading: str, before: int = SUBJECT_CONTEXT_BEFORE,
-                    start_page: int = 1) -> list[dict]:
+                    start_page: int = 1, units: str | None = None, units_inline: str | None = None,
+                    within: int = 3) -> list[dict]:
     """For each subject code, the lines printed above its first course (S698, #3655).
 
     A filed catalog keeps each course from its heading line down, so the subject heading above a subject's
     first course ("ACCOUNTING", "Mathematics (MATH & STAT)") was never kept. `heading` is the file's own
     course-heading pattern with a `subj` group. The first course of each code is taken in page order from
     `start_page` (1-based); the non-empty lines above it, up to `before` and never past the course before
-    it, are returned as printed. One entry per code: {subj, page, line, before}."""
+    it, are returned as printed. One entry per code: {subj, page, line, before}.
+
+    `units` and `units_inline` are the file's own units patterns. Where a plan names either, a heading line
+    is a course only when it carries its units (units_inline) or a units line follows within `within` lines,
+    as the filed parse reads it; a code named in a degree table or an honors list ahead of the course
+    descriptions then opens no subject."""
     rx = re.compile(heading)
+    ux = re.compile(units) if units else None
+    ix = re.compile(units_inline) if units_inline else None
     before = max(1, min(int(before or SUBJECT_CONTEXT_BEFORE), SUBJECT_CONTEXT_BEFORE_MAX))
-    seen: dict = {}
-    out: list[dict] = []
-    tail: list[str] = []          # the non-empty lines since the last course heading, across pages
+    lines: list[tuple[int, str]] = []
     for i, text in enumerate(pages or []):
         if i + 1 < int(start_page or 1):
             continue
         for raw in (text or "").splitlines():
             line = " ".join(raw.split())
-            if not line:
-                continue
-            m = rx.match(line)
-            if not m:
-                tail.append(line)
-                tail = tail[-SUBJECT_CONTEXT_BEFORE_MAX:]
-                continue
-            subj = " ".join((m.group("subj") or "").split())
-            if subj and subj not in seen:
-                seen[subj] = True
-                out.append({"subj": subj, "page": i + 1, "line": line, "before": tail[-before:]})
-            tail = []
+            if line:
+                lines.append((i + 1, line))
+
+    def is_course(k: int) -> bool:
+        if not (ux or ix):
+            return True
+        if ix and ix.search(lines[k][1]):
+            return True
+        return bool(ux) and any(ux.search(lines[n][1]) for n in range(k + 1, min(len(lines), k + 1 + max(1, int(within or 3)))))
+
+    seen: dict = {}
+    out: list[dict] = []
+    tail: list[str] = []          # the non-empty lines since the last course heading, across pages
+    for k, (page, line) in enumerate(lines):
+        m = rx.match(line)
+        if not m or not is_course(k):
+            tail.append(line)
+            tail = tail[-SUBJECT_CONTEXT_BEFORE_MAX:]
+            continue
+        subj = " ".join((m.group("subj") or "").split())
+        if subj and subj not in seen:
+            seen[subj] = True
+            out.append({"subj": subj, "page": page, "line": line, "before": tail[-before:]})
+        tail = []
     return out
 
 
 def print_subject_context(pages: list[str], spec: dict) -> None:
     got = subject_context(pages, spec["heading"], spec.get("before") or SUBJECT_CONTEXT_BEFORE,
-                          spec.get("start_page") or 1)
+                          spec.get("start_page") or 1, units=spec.get("units"),
+                          units_inline=spec.get("units_inline"), within=spec.get("within") or 3)
     print("--- subject context: the lines above each subject's first course (%d subjects) ---" % len(got))
     for g in got:
         print("[subject %s · page %d]" % (g["subj"], g["page"]))

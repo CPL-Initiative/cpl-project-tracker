@@ -11,7 +11,9 @@
  "subject_context": {
   "heading": "^(?P<subj>[A-Z][A-Z &.]{0,11}?) (?P<num>[A-Z]?\\d{1,4}[A-Za-z]{0,4}(?:-\\d)?) [-–] (?P<title>.+)$",
   "before": 4,
-  "start_page": 1
+  "start_page": 1,
+  "units": "^(\\d+(?:\\.\\d+)?(?:\\s*-\\s*\\d+(?:\\.\\d+)?)?) units?\\b",
+  "within": 4
  },
  "pages": [
   {

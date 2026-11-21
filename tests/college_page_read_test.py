@@ -174,6 +174,13 @@ check(sc[1]["before"][0] != "ACCTG 002 INTRODUCTORY ACCOUNTING II" and "ACCTG 00
 check(sc[2]["before"] == ["Mathematics (MATH & STAT)"], "a later course of a code already seen resets the lines (%s)" % sc[2]["before"])
 check(cpr.subject_context(PAGES, HEAD, start_page=3)[0]["subj"] == "ADM JUS", "start_page skips the front of the catalog")
 check(len(cpr.subject_context(PAGES, HEAD, before=99)[0]["before"]) <= cpr.SUBJECT_CONTEXT_BEFORE_MAX, "the lines kept are capped")
+front = ["Honors list\nACCTG 001 INTRODUCTORY ACCOUNTING I\nMATH 105 ARITHMETIC\nmore front matter"] + PAGES
+check(cpr.subject_context(front, HEAD)[0]["before"] == ["Honors list"], "with no units pattern the first mention opens the subject")
+uc = cpr.subject_context(front, HEAD, units=r"^\d+ UNITS?$", within=2)
+check([g["subj"] for g in uc] == ["ACCTG", "ADM JUS"] and uc[0]["page"] == 3 and uc[0]["before"][-2:] == ["ACCOUNTING", "(See also Business)"],
+      "with the file's units pattern a code named ahead of the course descriptions opens no subject (%s)" % uc)
+check([g["subj"] for g in cpr.subject_context(["Math\nMATH 105 ARITHMETIC (3) UC:CSU\n"], r"^(?P<subj>[A-Z]+) (?P<num>\d{3}) (?P<title>.*)$",
+                                              units_inline=r"\(\d+\)")] == ["MATH"], "units carried on the heading line count")
 check(cpr.subject_context([], HEAD) == [] and cpr.subject_context([""], HEAD) == [], "an empty catalog gives nothing")
 buf = io.StringIO()
 with contextlib.redirect_stdout(buf):
