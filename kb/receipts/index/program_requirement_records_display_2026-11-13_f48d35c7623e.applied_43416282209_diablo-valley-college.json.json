@@ -1,0 +1,17 @@
+{
+ "name": "program_requirement_records_display_2026-11-13_f48d35c7623e.applied_43416282209_diablo-valley-college.json",
+ "kind": "display_applied",
+ "bucket": "cpl-receipts",
+ "object": "display/applied/program_requirement_records_display_2026-11-13_f48d35c7623e.applied_43416282209_diablo-valley-college.json.gz",
+ "build": "f48d35c7623e",
+ "built": "2026-11-13",
+ "bytes": 1816,
+ "sha256": "7a7ee729447b47f6176d115e33680e0f21b28331b4de4392be2f8f954968615a",
+ "rows": 213,
+ "stored_at": "2026-11-21T04:53:06Z",
+ "run": "44867993793",
+ "gzip": true,
+ "repo_sha256": "b3377c6db568a1efb4af0e1590dffead129e0868c71ecf2d63666a47ab8d4153",
+ "repo_bytes": 16296,
+ "repo_blob": "53983d2145f5533e9404588fe2e957241ebd1ea0"
+}

@@ -1,0 +1,17 @@
+{
+ "name": "program_requirement_records_display_2026-11-13_3361e3aa5b7d.applied_44600185371_imperial-valley-college.json",
+ "kind": "display_applied",
+ "bucket": "cpl-receipts",
+ "object": "display/applied/program_requirement_records_display_2026-11-13_3361e3aa5b7d.applied_44600185371_imperial-valley-college.json.gz",
+ "build": "3361e3aa5b7d",
+ "built": "2026-11-13",
+ "bytes": 1452,
+ "sha256": "ae7c6264553af42aed6c084cacbf59e09c31a48a990c550bb9493206a15b186e",
+ "rows": 125,
+ "stored_at": "2026-11-21T04:52:46Z",
+ "run": "44867993793",
+ "gzip": true,
+ "repo_sha256": "ec35141f130403411756656edc18fc9b2f2cb9319823c13d77e21d8492a03eec",
+ "repo_bytes": 12162,
+ "repo_blob": "4959ce056ba2bac7bdd9334c55664b21ac39ae6a"
+}

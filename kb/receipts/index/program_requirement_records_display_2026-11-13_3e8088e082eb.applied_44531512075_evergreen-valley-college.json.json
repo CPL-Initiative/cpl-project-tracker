@@ -1,0 +1,17 @@
+{
+ "name": "program_requirement_records_display_2026-11-13_3e8088e082eb.applied_44531512075_evergreen-valley-college.json",
+ "kind": "display_applied",
+ "bucket": "cpl-receipts",
+ "object": "display/applied/program_requirement_records_display_2026-11-13_3e8088e082eb.applied_44531512075_evergreen-valley-college.json.gz",
+ "build": "3e8088e082eb",
+ "built": "2026-11-13",
+ "bytes": 1254,
+ "sha256": "dae9ce597dd480c34f827e652760b0042cfa8eade23e1e168a7e9a8bc93ac6cf",
+ "rows": 85,
+ "stored_at": "2026-11-21T04:52:50Z",
+ "run": "44867993793",
+ "gzip": true,
+ "repo_sha256": "4a8118841aa750a00b4239b156b0f469da4e275b8a3be8d94121b354f5b14b8b",
+ "repo_bytes": 8691,
+ "repo_blob": "021b4f2359f6035fbe2566ad628dd1b4462df2b8"
+}
