@@ -153,5 +153,9 @@ try:
 finally:
     shutil.rmtree(root)
 
+check("a parenthetical that repeats a code of the college is dropped; one that does not stays",
+      lst.without_code("Biology (BIOLOGY)", {"BIOLOGY"}) == "Biology" and lst.without_code("History (Hist/History)", {"HIST", "HISTORY"}) == "History"
+      and lst.without_code("English (CCN) (Engl)", {"ENGL"}) == "English" and lst.without_code("Basic Skills (Noncredit)", {"BSICSKL"}) == "Basic Skills (Noncredit)")
+check("a heading that was only its code is no heading", lst.without_code("(THEATER)", {"THEATER"}) is None)
 print(("FAILED " + str(len(FAILS))) if FAILS else "all passed")
 sys.exit(1 if FAILS else 0)

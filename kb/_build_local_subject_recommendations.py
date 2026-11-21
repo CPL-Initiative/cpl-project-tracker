@@ -25,7 +25,8 @@ when it equals the catalog's heading after folding case, "&" and punctuation, or
 (Welding and Welding Technology). Each source is split into the conditions it can be in (all agree, mixed, ...)
 and each condition takes the level its measured share earns: High at 90% right or more, Medium at 60%, Low
 below. A condition measured on fewer than 20 codes reads Low. Program titles are capped at Medium. A second
-source that agrees lifts the level one step; one that disagrees is shown beside it and the row reads Low.
+source that agrees lifts the level one step; one that disagrees is shown beside it and the row reads Low, and
+among differing titles one the code's letters run through (COOP ED through Cooperative Education) is put first.
 
 THE COMMON CODE. For a row with no common code the script recommends one from, in order: the title (the local
 or recommended title, or a part of it set off by a slash or a comma, names an MQ discipline in
@@ -84,6 +85,13 @@ def same(a, b):
         return True
     ta, tb = set(a.split()) - {"and", "of", "the"}, set(b.split()) - {"and", "of", "the"}
     return bool(ta) and bool(tb) and (ta <= tb or tb <= ta)
+
+
+def fits(code, title):
+    """The code's letters run in order through the title (COOP ED through Cooperative Education)."""
+    it = iter(re.sub(r"[^a-z]", "", (title or "").lower()))
+    letters = re.sub(r"[^a-z]", "", code.lower())
+    return bool(letters) and all(ch in it for ch in letters)
 
 
 def college_key(s):
@@ -301,6 +309,9 @@ def recommend_title(data, table, row):
                     "also": [], "search": search}
         return None
     ranked.sort(key=lambda x: (-x[0], -x[1], x[2]))
+    if not all(same(r[3], ranked[0][3]) for r in ranked) and not fits(row["code"], ranked[0][3]):
+        # The sources differ: one whose title the code's letters run through goes ahead of one they do not.
+        ranked.sort(key=lambda x: (not fits(row["code"], x[3]), -x[0], -x[1], x[2]))
     lvl, _, src, t, cond, ev = ranked[0]
     agree = [r for r in ranked[1:] if same(r[3], t)]
     differ = [r for r in ranked[1:] if not same(r[3], t)]

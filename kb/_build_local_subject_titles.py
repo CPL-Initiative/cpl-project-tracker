@@ -59,7 +59,7 @@ CREDIT_AT, CREDIT = 6, "C"
 RULE = ("A catalog's subject code and the state list's are the same code when they are equal after trimming and "
         "upper-casing; nothing looser. A college is the same college when its names are equal after lower-casing and "
         "folding every run of other characters to one space (Los Angeles Trade-Technical College is Los Angeles Trade "
-        "Technical College). A local subject title is the catalog's subject heading, saved in Title Case: the name its "
+        "Technical College). A local subject title is the catalog's subject heading, saved in Title Case, less a parenthetical that only repeats a subject code: the name its "
         "course pages carry, else the heading filed from the catalog's index or from the lines above the subject's first "
         "course (kb/hand_filed_catalogs/subjects/). A code the catalog's index lists is in the catalog whether or not "
         "its page's courses are filed. A row with no title says why (title_state): not_read where the catalog was not "
@@ -77,6 +77,21 @@ def college_key(s):
 
 def map_key(s):
     return re.sub(r"[^A-Z0-9]", "", code_key(s))
+
+
+def without_code(name, codes):
+    """A heading less the parenthetical that repeats a subject code: "Biology (BIOLOGY)" is Biology, "History
+    (HIST/HISTORY)" is History, "English (CCN) (ENGL)" is English (S700). A parenthetical that is not a code of the
+    college stays ("Basic Skills (Noncredit)"). A heading that was only its code is no heading: None."""
+    if not name:
+        return name
+
+    def drop(m):
+        parts = [map_key(p) for p in re.split(r"[/,]", m.group(1))]
+        return " " if parts and all(p and (p in codes or p == "CCN") for p in parts) else m.group(0)
+
+    out = re.sub(r"\s+", " ", re.sub(r"\(([^()]*)\)", drop, name)).strip(" ,-–")
+    return out or None
 
 
 def read_json(root, rel):
@@ -161,6 +176,7 @@ def build(root=ROOT):
         filed = (subj or {}).get("by") or {}
         listed = {k for k, r in filed.items() if r.get("rule") == "index"}     # the codes the catalog's index lists
         out = []
+        college_codes = {map_key(x) for x in set(cat) | set(st) | listed}
         for k in sorted(set(cat) | set(st) | listed):
             e = cat.get(k)
             in_catalog = bool(e) or k in listed
@@ -171,7 +187,9 @@ def build(root=ROOT):
             h = filed.get(k)
             if not name and h and h.get("heading"):
                 name, source = h["heading"], "index" if h.get("rule") == "index" else "heading above the first course"
-            name = title_case(name)
+            name = title_case(without_code(name, college_codes))
+            if not name:
+                source = None
             side = "both" if (in_catalog and k in st) else ("catalog" if in_catalog else "state")
             if name:
                 state_ = "catalog"

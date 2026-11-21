@@ -10,29 +10,29 @@
     "level": "Medium"
    },
    "most courses agree": {
-    "right": 521,
-    "asked": 586,
-    "share": 0.889,
+    "right": 523,
+    "asked": 584,
+    "share": 0.896,
     "level": "Medium"
    }
   },
   "district": {
    "all agree": {
-    "right": 478,
+    "right": 479,
     "asked": 486,
-    "share": 0.984,
+    "share": 0.986,
     "level": "High"
    },
    "mixed": {
-    "right": 132,
-    "asked": 153,
-    "share": 0.863,
+    "right": 131,
+    "asked": 149,
+    "share": 0.879,
     "level": "Medium"
    },
    "one college": {
-    "right": 42,
-    "asked": 44,
-    "share": 0.955,
+    "right": 44,
+    "asked": 46,
+    "share": 0.957,
     "level": "High"
    }
   },
@@ -59,8 +59,8 @@
   "program_titles": {
    "one or mixed": {
     "right": 199,
-    "asked": 338,
-    "share": 0.589,
+    "asked": 336,
+    "share": 0.592,
     "level": "Low"
    },
    "several agree": {
@@ -183,14 +183,14 @@
  "web_searches_filed": 0,
  "totals": {
   "common_high": 166,
-  "common_low": 16,
-  "common_medium": 409,
-  "common_none": 129,
+  "common_low": 13,
+  "common_medium": 411,
+  "common_none": 130,
   "no_common": 720,
-  "no_title": 247,
+  "no_title": 250,
   "on_hold": 48,
-  "title_high": 105,
-  "title_low": 61,
+  "title_high": 109,
+  "title_low": 60,
   "title_medium": 37,
   "title_none": 44
  },
@@ -957,16 +957,11 @@
     {
      "code": "E.S.L.",
      "title": {
-      "title": null,
-      "level": "Low",
-      "from": "course_joins",
-      "why": "course joins: 10 of 15 joined courses (most courses agree). Another source reads differently.",
-      "also": [
-       {
-        "title": "English as a Second Language",
-        "from": "district"
-       }
-      ]
+      "title": "English as a Second Language",
+      "level": "High",
+      "from": "district",
+      "why": "district: 2 of 2 colleges in the district (all agree). course joins agrees.",
+      "also": []
      }
     },
     {
@@ -1550,14 +1545,14 @@
     {
      "code": "DART",
      "title": {
-      "title": "Business",
+      "title": "Digital Art and Design",
       "level": "Low",
-      "from": "course_joins",
-      "why": "course joins: 1 of 1 joined courses (few or mixed). Another source reads differently.",
+      "from": "program_titles",
+      "why": "program titles: 1 of 6 programs (one or mixed). Another source reads differently.",
       "also": [
        {
-        "title": "Digital Art and Design",
-        "from": "program_titles"
+        "title": "Business",
+        "from": "course_joins"
        }
       ]
      }
@@ -2450,6 +2445,21 @@
      }
     },
     {
+     "code": "E.S.L.",
+     "title": {
+      "title": "English as a Second Language",
+      "level": "Low",
+      "from": "district",
+      "why": "district: 2 of 2 colleges in the district (all agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "ESL Milestone - Language Arts, Oral Communication",
+        "from": "program_titles"
+       }
+      ]
+     }
+    },
+    {
      "code": "EARTH",
      "common": {
       "code": "GEOL",
@@ -2845,8 +2855,8 @@
      "title": {
       "title": "English as a Second Language",
       "level": "High",
-      "from": "course_joins",
-      "why": "course joins: 3 of 5 joined courses (most courses agree). district agrees.",
+      "from": "district",
+      "why": "district: 2 of 2 colleges in the district (all agree). course joins agrees.",
       "also": []
      }
     },
@@ -2894,15 +2904,10 @@
      "code": "ESL",
      "title": {
       "title": "English as a Second Language",
-      "level": "Low",
+      "level": "High",
       "from": "other_colleges",
-      "why": "other colleges: 2 of 2 other colleges (all agree). Another source reads differently.",
-      "also": [
-       {
-        "title": null,
-        "from": "course_joins"
-       }
-      ]
+      "why": "other colleges: 2 of 2 other colleges (all agree). course joins agrees.",
+      "also": []
      }
     },
     {
@@ -3028,7 +3033,7 @@
     {
      "code": "NRS HCA",
      "title": {
-      "title": "Nursing Health Care Ancillaries (Nrs Hca)",
+      "title": "Nursing Health Care Ancillaries",
       "level": "Low",
       "from": "district",
       "why": "district: 1 of 1 colleges in the district (one college). Another source reads differently.",
@@ -3355,16 +3360,11 @@
     {
      "code": "E.S.L.",
      "title": {
-      "title": null,
-      "level": "Low",
-      "from": "course_joins",
-      "why": "course joins: 6 of 8 joined courses (most courses agree). Another source reads differently.",
-      "also": [
-       {
-        "title": "English as a Second Language",
-        "from": "district"
-       }
-      ]
+      "title": "English as a Second Language",
+      "level": "High",
+      "from": "district",
+      "why": "district: 2 of 2 colleges in the district (all agree). course joins agrees.",
+      "also": []
      }
     },
     {
@@ -3679,7 +3679,7 @@
     {
      "code": "NRS HCA",
      "title": {
-      "title": "Nursing Health Care Ancillaries (Nrs Hca)",
+      "title": "Nursing Health Care Ancillaries",
       "level": "Low",
       "from": "district",
       "why": "district: 1 of 1 colleges in the district (one college). Another source reads differently.",
@@ -3745,7 +3745,7 @@
     {
      "code": "PHRMCTK",
      "title": {
-      "title": "Pharmacy Technician (Phrmctk)",
+      "title": "Pharmacy Technician",
       "level": "High",
       "from": "district",
       "why": "district: 1 of 1 colleges in the district (one college). course joins, program titles agrees.",
@@ -4618,7 +4618,7 @@
       "title": "English as a Second Language",
       "level": "High",
       "from": "district",
-      "why": "district: 2 of 3 colleges in the district (mixed). course joins agrees.",
+      "why": "district: 2 of 2 colleges in the district (all agree). course joins agrees.",
       "also": []
      }
     },
@@ -4667,14 +4667,14 @@
     {
      "code": "ENG",
      "title": {
-      "title": "Law",
+      "title": "English",
       "level": "Low",
-      "from": "course_joins",
-      "why": "course joins: 4 of 4 joined courses (most courses agree). Another source reads differently.",
+      "from": "sibling",
+      "why": "sibling: code ENGL at the same college (one letter apart). Another source reads differently.",
       "also": [
        {
-        "title": "English",
-        "from": "sibling"
+        "title": "Law",
+        "from": "course_joins"
        }
       ]
      }
@@ -4712,7 +4712,7 @@
     {
      "code": "FAM & CS",
      "title": {
-      "title": "Family and Consumer Studies (Fam & Cs)",
+      "title": "Family and Consumer Studies",
       "level": "High",
       "from": "district",
       "why": "district: 1 of 1 colleges in the district (one college).",
@@ -4856,7 +4856,7 @@
     {
      "code": "NRS HCA",
      "title": {
-      "title": "Nursing Health Care Ancillaries (Nrs Hca)",
+      "title": "Nursing Health Care Ancillaries",
       "level": "Low",
       "from": "district",
       "why": "district: 1 of 1 colleges in the district (one college). Another source reads differently.",
@@ -5204,18 +5204,18 @@
     {
      "code": "CAOT",
      "title": {
-      "title": "Technologies",
+      "title": "Comp App & Office Tech: Office Assistant-Clerical",
       "level": "Low",
-      "from": "district",
-      "why": "district: 2 of 7 colleges in the district (mixed). Another source reads differently.",
+      "from": "program_titles",
+      "why": "program titles: 2 of 4 programs (several agree). Another source reads differently.",
       "also": [
+       {
+        "title": "Technologies",
+        "from": "district"
+       },
        {
         "title": "Computer Applications and Office",
         "from": "course_joins"
-       },
-       {
-        "title": "Comp App & Office Tech: Office Assistant-Clerical",
-        "from": "program_titles"
        }
       ]
      }
@@ -5333,23 +5333,23 @@
     {
      "code": "CRPNTRY",
      "title": {
-      "title": "Art",
+      "title": "Carpentry",
       "level": "Low",
-      "from": "course_joins",
-      "why": "course joins: 1 of 1 joined courses (few or mixed). Another source reads differently.",
+      "from": "program_titles",
+      "why": "program titles: 2 of 5 programs (several agree). Another source reads differently.",
       "also": [
        {
-        "title": "Carpentry",
-        "from": "program_titles"
+        "title": "Art",
+        "from": "course_joins"
        }
       ]
      },
      "common": {
-      "code": "ARTS",
-      "discipline": "Art",
+      "code": "CARP",
+      "discipline": "Carpentry",
       "level": "Low",
       "from": "title",
-      "why": "The title names the discipline Art."
+      "why": "The title names the discipline Carpentry."
      }
     },
     {
@@ -5434,7 +5434,7 @@
     {
      "code": "EGD TEK",
      "title": {
-      "title": "Engineering Graphics & Design (Egd Tek)",
+      "title": "Engineering Graphics & Design",
       "level": "High",
       "from": "district",
       "why": "district: 5 of 6 colleges in the district (mixed). course joins agrees.",
@@ -5725,23 +5725,23 @@
     {
      "code": "MSCNC",
      "title": {
-      "title": "Art",
+      "title": "Machine Shop: CNC",
       "level": "Low",
-      "from": "course_joins",
-      "why": "course joins: 2 of 2 joined courses (few or mixed). Another source reads differently.",
+      "from": "program_titles",
+      "why": "program titles: 1 of 1 programs (one or mixed). Another source reads differently.",
       "also": [
        {
-        "title": "Machine Shop: CNC",
-        "from": "program_titles"
+        "title": "Art",
+        "from": "course_joins"
        }
       ]
      },
      "common": {
-      "code": "ARTS",
-      "discipline": "Art",
-      "level": "Low",
-      "from": "title",
-      "why": "The title names the discipline Art."
+      "code": "MACH",
+      "discipline": "Machine Tool Technology",
+      "level": "Medium",
+      "from": "own_courses",
+      "why": "20 of 23 of its courses with an M-ID sit under MACH."
      }
     },
     {
@@ -6061,23 +6061,23 @@
     {
      "code": "WELDG/E",
      "title": {
-      "title": "Art",
+      "title": "Welding, Gas and Electric",
       "level": "Low",
-      "from": "course_joins",
-      "why": "course joins: 4 of 7 joined courses (few or mixed). Another source reads differently.",
+      "from": "program_titles",
+      "why": "program titles: 2 of 4 programs (several agree). Another source reads differently.",
       "also": [
        {
-        "title": "Welding, Gas and Electric",
-        "from": "program_titles"
+        "title": "Art",
+        "from": "course_joins"
        }
       ]
      },
      "common": {
-      "code": "ARTS",
-      "discipline": "Art",
+      "code": "WELD",
+      "discipline": "Welding",
       "level": "Low",
       "from": "title",
-      "why": "The title names the discipline Art."
+      "why": "The title names the discipline Welding."
      }
     }
    ]
@@ -6248,23 +6248,23 @@
     {
      "code": "COOP ED",
      "title": {
-      "title": "Law",
+      "title": "Cooperative Education",
       "level": "Low",
-      "from": "course_joins",
-      "why": "course joins: 3 of 3 joined courses (most courses agree). Another source reads differently.",
+      "from": "district",
+      "why": "district: 3 of 5 colleges in the district (mixed). Another source reads differently.",
       "also": [
        {
-        "title": "Cooperative Education",
-        "from": "district"
+        "title": "Law",
+        "from": "course_joins"
        }
       ]
      },
      "common": {
-      "code": "LEGL",
-      "discipline": "Law",
-      "level": "Low",
-      "from": "title",
-      "why": "The title names the discipline Law."
+      "code": "WEXP",
+      "discipline": "Work Experience Instructors",
+      "level": "Medium",
+      "from": "own_courses",
+      "why": "3 of 3 of its courses with an M-ID sit under WEXP."
      }
     },
     {
@@ -6349,15 +6349,11 @@
     {
      "code": "E.S.L.",
      "title": {
-      "title": null,
+      "title": "English as a Second Language",
       "level": "Low",
-      "from": "course_joins",
-      "why": "course joins: 10 of 14 joined courses (most courses agree). Another source reads differently.",
+      "from": "district",
+      "why": "district: 2 of 2 colleges in the district (all agree). Another source reads differently.",
       "also": [
-       {
-        "title": "English as a Second Language",
-        "from": "district"
-       },
        {
         "title": "ESL Milestone - Pathway to Language Arts / Spoken Communication",
         "from": "program_titles"
@@ -6368,7 +6364,7 @@
     {
      "code": "EGD TEK",
      "title": {
-      "title": "Engineering Graphics & Design (Egd Tek)",
+      "title": "Engineering Graphics & Design",
       "level": "High",
       "from": "district",
       "why": "district: 5 of 6 colleges in the district (mixed). course joins agrees.",
@@ -7678,6 +7674,13 @@
     },
     {
      "code": "AVIATEK",
+     "title": {
+      "title": "Aircraft Power Plant Technician",
+      "level": "Low",
+      "from": "program_titles",
+      "why": "program titles: 1 of 3 programs (one or mixed).",
+      "also": []
+     },
      "common": {
       "code": "AVIA",
       "discipline": "Aviation",
@@ -7917,23 +7920,16 @@
     {
      "code": "FLM PRD",
      "title": {
-      "title": "Law",
+      "title": "Film & TV Production Crafts",
       "level": "Low",
-      "from": "course_joins",
-      "why": "course joins: 2 of 3 joined courses (most courses agree). Another source reads differently.",
+      "from": "program_titles",
+      "why": "program titles: 1 of 2 programs (one or mixed). Another source reads differently.",
       "also": [
        {
-        "title": "Film & TV Production Crafts",
-        "from": "program_titles"
+        "title": "Law",
+        "from": "course_joins"
        }
       ]
-     },
-     "common": {
-      "code": "LEGL",
-      "discipline": "Law",
-      "level": "Low",
-      "from": "title",
-      "why": "The title names the discipline Law."
      }
     },
     {
@@ -8053,7 +8049,7 @@
     {
      "code": "NRS HCA",
      "title": {
-      "title": "Nursing Health Care Ancillaries (Nrs Hca)",
+      "title": "Nursing Health Care Ancillaries",
       "level": "Low",
       "from": "district",
       "why": "district: 1 of 1 colleges in the district (one college). Another source reads differently.",
@@ -8134,6 +8130,13 @@
     },
     {
      "code": "THEATER",
+     "title": {
+      "title": "Theater",
+      "level": "High",
+      "from": "course_joins",
+      "why": "course joins: 3 of 3 joined courses (most courses agree). district agrees.",
+      "also": []
+     },
      "common": {
       "code": "THTR",
       "discipline": "Drama/Theater Arts",
