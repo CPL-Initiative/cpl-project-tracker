@@ -96,9 +96,11 @@ MARKER = re.compile(r"^[ \t]*(?:\(?\d{1,2}[.)]|\(?[a-zA-Z][.)]|[\u2022\u25cf\u25
 # Rio Hondo prints "The Student Will Be Able To:" above every objectives list (trial 44884988614's log, 12 of 12; S691):
 # the article is part of the lead-in, never an objective of its own.
 # Saddleback's Course Outline (201) opens its SLOs with "Students completing this course satisfactorily will be able
-# to:" (trial 44889396093 filed it as the first outcome on 12 of 12 pages; S691).
+# to:" (trial 44889396093 filed it as the first outcome on 12 of 12 pages) and its objectives with "Students
+# participating in this class will:" (trial 44889837642, 12 of 12, counted by eye; S691).
 LEAD = re.compile(r"(upon (the )?(successful )?completion|at the conclusion of|(?:the )?students? (will|should) be able|"
-                  r"students? completing (this|the) course\b|by the end of)[^\n]*", re.I)
+                  r"students? completing (this|the) course\b|students? participating in (this|the) (class|course)\b|"
+                  r"by the end of)[^\n]*", re.I)
 # The column header a report's SLO table prints above its rows, a line of its own that is never an outcome (S689).
 # Feather River's report 485 prints "Learning Outcomes" under its Student Learning Outcomes heading (read 44535960153
 # filed it as 336 of its 2,072 SLOs, one per page); Palomar's report 99 prints "Outcome" (trial 44536105509, 12 of 12).
