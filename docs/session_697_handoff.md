@@ -98,8 +98,8 @@ and the page fixes. The two Library briefs requested on 2026-11-12 stay a plain 
 - Worker `piles` did #3602's update, then ran out of context in its second task; `piles2` and `piles3` finished lane 2
   (`p-one-concern-per-worker-context-s691`).
 - `reread` handed College of the Canyons and the wave branch to `canyons`.
-- `outlines` handed its full reads to `outlines2`: Saddleback, then Rio Hondo, still running at this checkpoint, its
-  counts PENDING.
+- `outlines` handed its full reads to `outlines2`: Saddleback, then Rio Hondo, both loaded before the checkpoint
+  merged (#3638).
 - `display` ran the build after the wave merged.
 - Four checkouts ran at once (`d-four-checkouts-on-measured-disk-s691`).
 
@@ -126,7 +126,13 @@ and the page fixes. The two Library briefs requested on 2026-11-12 stay a plain 
 
 - **Program records: 109 new, 201 replaced by a better reread, 24 re-posted, 5 restored, 2 held for a person**
   (College of the Canyons 43388, West Los Angeles 46261). Extraction runs: $17.70. Run ids: lessons, *S691*.
-- **Outline rows: PENDING** (`outlines2`).
+- **Outline rows: 4,465** (#3638). Saddleback 2,581 (1,280 SLO rows holding 4,749 SLOs, 1,301 objective rows holding
+  10,617 objectives; read 44892658073, 1,301 pages; load 44900668650, ids 43185 to 45765) and Rio Hondo 1,884 (945 SLO
+  rows holding 3,697 SLOs, 939 objective rows holding 6,271 objectives; read 44893126504, 946 pages, HOND 045 left
+  unread; load 44900763784, ids 45766 to 47649). Every page answered 200, none cut or refused, all on parser
+  `2629a09a`; recall gates 12 of 12 (trials 44890274600, 44890279483). Two stray lines loaded as printed, for a
+  session's cleanup: Saddleback ARCH 10's SLO "#1" and Rio Hondo THTR 231's "Lab Outline:" heading lines.
+- **CRE: 6,100** (109 new records at 15 each, plus 4,465 outline rows).
 
 Read in order: this file; the NEXT of [`program-requirements-harvest`](reference/lanes/program-requirements-harvest.md);
 `docs/program_requirements_harvest_lessons.md`, *S691*; `docs/reference/conductor_mode.md`, *What went wrong in S691*;
@@ -214,14 +220,17 @@ undoes over 1% of a day's rows; the $10k checkpoint.
 | #3634 the wave | merged `f46f65e7` | none |
 | #3633 the follow-up | merged `b6d52c8e` | none |
 | #3635 the display page file | merged `ca45115f` | none |
-| `outlines2`'s branch (Saddleback, Rio Hondo) | running at the checkpoint | its PR: second reader, `test`, merge, load |
+| #3637 (`main`'s red `test`: the spend file's date) | merged `a34fa1c6` | none |
+| #3638 the outlines (`claude/s691-outlines`) | MERGE_3638 | none; Irvine Valley's index is the lane's NEXT |
 | `claude/s690-goldenwest-header` (0995d8b5) | plan and before-values file, no PR | a plain session's review |
 | #3383 | dependabot's | waits |
 
 ## Let go
 
-PENDING: the conductor names, at sign-off, each PR subscription, scheduled check-in and artifact watch it drops, the
-COBIx watcher among them.
+Dropped in the sign-off turn: the COBIx watcher (its Monitor stopped). No PR subscription was held (each PR was gated by
+`pr-gate` reads), no check-in is scheduled, and no artifact is watched. Every worker is finished and its checkout
+removed, except the documents worker's, which holds nothing unpushed. `samueltlee/CPLBrain#837`, the vault note, is a
+draft for Sam to merge.
 
 Spend: PENDING
 
