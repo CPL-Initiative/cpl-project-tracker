@@ -662,7 +662,8 @@
     var theBox = box(subject, {
       apiHeading: "h3",   /* under the panel's h2 */
       apis: [{ which: "catalog", dataset: "catalog", saved: apiSaved(SUMMARY.rows, "catalog") }, { which: "course_outline", dataset: "course_outlines", saved: apiSaved(SUMMARY.rows, "course_outlines") }],
-      onChange: function () { drawHave(SUMMARY.rows); }
+      /* The page that opened the pane redraws what the hand-over changed (College Data Collection's to-do, item 11). */
+      onChange: function () { drawHave(SUMMARY.rows); if (H && typeof H.onChange === "function") H.onChange(); }
     });
     /* The counts arrive after the pane draws: the lines follow, and an API box whose procedure is saved says so. */
     if (!SUMMARY.rows) summary().then(function (rows) {
