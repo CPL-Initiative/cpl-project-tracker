@@ -1661,7 +1661,25 @@
      }
     }
    ],
-   "steps": []
+   "steps": [
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {
+      "min": 34,
+      "max": 34
+     },
+     "awards": "transfer",
+     "only_with": [
+      "ge_pattern",
+      "degree_total"
+     ],
+     "pattern": "Cal-?\\s?GETC",
+     "source": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=213",
+     "source_words": "This pattern of general education requires a minimum of 34 semester units to be completed.",
+     "why": "S691 (worker piles2), lever 2 (ge_units_steps): the 2026-27 catalog's Cal-GETC Certificate of Achievement page (PDF p.213) prints 'This pattern of general education requires a minimum of 34 semester units to be completed' and 'Students must complete a minimum of 34 units, which are distributed among six subject areas' (college-page-read run 44883047940). The three transfer degrees naming Cal-GETC with no units (32080, 33652, 46300) take it, only where the record names its pattern and degree total (d-calgetc-34-per-college-evidence-s648). Reversible by deleting this step."
+    }
+   ]
   },
   "Crafton Hills College": {
    "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints SOCI n where the state's Program Course File lists SOC n, the same number and title in every case kb/_prefix_alias_census.py could title (SOCI for SOC, 4 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
