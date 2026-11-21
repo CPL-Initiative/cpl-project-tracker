@@ -89,6 +89,7 @@ withhold kb/reference/blocked_catalog_hunt.json
 # The bulk COCI program and program-course dumps program-course-fetch.yml commits; no page reads them.
 withhold kb/reference/coci_program_*.csv
 withhold kb/reference/subject_code_decisions_cerritos_2026-11-21.json
+withhold kb/reference/subject_web_searches.json
 # The harvest's scout files and heading-agreement snapshot (S645, review of #3201).
 withhold kb/harvest_scouting
 withhold kb/status/harvest_heading_agreement.json
