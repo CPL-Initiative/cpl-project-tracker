@@ -294,6 +294,26 @@ def keep_row(row: dict, status: str = STATUS_KEEP, client: str = "") -> bool:
     return True
 
 
+def row_code(row: dict) -> str | None:
+    """The row's course code: its subject and number, or the row's own full code where that is the same subject and
+    number with a suffix the number field leaves off. Saddleback's search returns CourseNumber "1" for both ACCT 1A
+    and ACCT 1B (index run 44882665427: 95 codes held two or three courses), and its Code field carries the suffix.
+    A host whose Code is the subject and number again keys as before."""
+    base = norm_code("%s %s" % (row.get("SubjectCode") or "", row.get("CourseNumber") or ""))
+    if not base:
+        return None
+    subj, num = base.split(" ", 1)
+    for cand in (row.get("Code"), "%s %s" % (row.get("district-subject") or "", row.get("district-coursenumber") or "")):
+        c = norm_code(cand if isinstance(cand, str) else "")
+        if not c or c == base:
+            continue
+        csubj, cnum = c.split(" ", 1)
+        n, cn = num.lstrip("0"), cnum.lstrip("0")
+        if csubj == subj and cn.startswith(n) and len(cn) > len(n) and cn[len(n)].isalpha():
+            return c
+    return base
+
+
 def row_census(rows: list[dict]) -> dict:
     """What a search returned, counted so a run shows the host's own words: each status, each client label, the two
     together, and the field names one row carries. Counts and field names only, never a row's people fields."""
@@ -302,7 +322,12 @@ def row_census(rows: list[dict]) -> dict:
     client = Counter(client_of(r) for r in rows)
     both = Counter("%s | %s" % (client_of(r), (r.get("StatusTitle") or "").strip()) for r in rows)
     return {"status_titles": dict(status.most_common()), "client_labels": dict(client.most_common(20)),
-            "client_status": dict(both.most_common(60)), "row_fields": sorted(rows[0]) if rows else []}
+            "client_status": dict(both.most_common(60)), "row_fields": sorted(rows[0]) if rows else [],
+            # Up to 12 rows whose full code keys them past their subject and number (row_code), as the search
+            # returned them: course codes only.
+            "code_from_field": [[r.get("SubjectCode"), r.get("CourseNumber"), row_code(r)] for r in rows
+                                if row_code(r) and row_code(r) != norm_code("%s %s" % (r.get("SubjectCode") or "",
+                                                                                      r.get("CourseNumber") or ""))][:12]}
 
 
 # RCCD's form (discovery run 38312406074); a host whose own links say otherwise wins.
@@ -384,7 +409,7 @@ def build_index(rows: list[dict], base: str, form: str = LEGACY_FORM, title: str
     for row in rows:
         if not keep_row(row, status, client):
             continue
-        code = norm_code("%s %s" % (row.get("SubjectCode") or "", row.get("CourseNumber") or ""))
+        code = row_code(row)
         if not code:
             continue
         index.setdefault(code, []).append({
