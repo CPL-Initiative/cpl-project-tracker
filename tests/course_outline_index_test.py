@@ -261,6 +261,47 @@ wf = open(os.path.join(ROOT, ".github", "workflows", "course-outline-index.yml")
 check("7 the index workflow passes the .run's status= and client= lines to the index",
       "s/^status=//p" in wf and "--status" in wf and "s/^client=//p" in wf and "--client" in wf)
 
+# 8. S697: Irvine Valley's index on Saddleback's host, with the host's own labels (index run 44887971233 counted
+# "Saddleback College" and "Irvine Valley College" in ClientTitle, and the statuses Active (Fully Approved), Archive,
+# Obsolete and Approved). Irvine Valley's .run names the status, client and report patterns below.
+IVC_STATUS, IVC_CLIENT, IVC_REPORT = r"Active \(Fully Approved\)", r"^Irvine Valley College$", \
+    r"^Official Course Outline of Record$"
+ivc_rows = [
+    {"CourseId": 41001, "SubjectCode": "ACCT", "CourseNumber": "1A", "StatusTitle": "Active (Fully Approved)",
+     "ClientTitle": "Irvine Valley College", "ProposalTypeTitle": "Course Modification",
+     "MetaReports": [{"Id": 198, "Title": "Official Course Outline of Record", "ClientId": 3},
+                     {"Id": 310, "Title": "Course Outcome Report", "ClientId": 3}]},
+    {"CourseId": 41002, "SubjectCode": "ACCT", "CourseNumber": "1A", "StatusTitle": "Archive",
+     "ClientTitle": "Irvine Valley College", "ProposalTypeTitle": "Course Modification",
+     "MetaReports": [{"Id": 198, "Title": "Official Course Outline of Record", "ClientId": 3}]},
+    {"CourseId": 41003, "SubjectCode": "BIO", "CourseNumber": "1", "StatusTitle": "Obsolete",
+     "ClientTitle": "Irvine Valley College", "ProposalTypeTitle": "New Course",
+     "MetaReports": [{"Id": 198, "Title": "Official Course Outline of Record", "ClientId": 3}]},
+    {"CourseId": 21001, "SubjectCode": "ACCT", "CourseNumber": "1A", "StatusTitle": "Active (Fully Approved)",
+     "ClientTitle": "Saddleback College", "ProposalTypeTitle": "Saddleback - Course Modification",
+     "MetaReports": [{"Id": 201, "Title": "Course Outline", "ClientId": 2}]},
+    {"CourseId": 21002, "SubjectCode": "MATH", "CourseNumber": "3", "StatusTitle": "Active (Fully Approved)",
+     "ClientTitle": "Saddleback College", "ProposalTypeTitle": "Saddleback - New Course",
+     "MetaReports": [{"Id": 201, "Title": "Course Outline", "ClientId": 2}]},
+]
+ivc_idx = idx.build_index(ivc_rows, base_s, idx.LEGACY_FORM, IVC_REPORT, None, IVC_STATUS, IVC_CLIENT)
+check("8 GUARD: Irvine Valley's client filter keeps only Irvine Valley's rows on the shared host: no Saddleback row "
+      "passes (MATH 3 is Saddleback's alone, ACCT 1A keeps 41001 and never 21001)",
+      sorted(ivc_idx) == ["ACCT 1A"] and [e["course_id"] for e in ivc_idx["ACCT 1A"]] == [41001], ivc_idx)
+check("8 GUARD: Irvine Valley's status words keep a current outline and drop a retired one (Archive, Obsolete)",
+      idx.keep_row(ivc_rows[0], IVC_STATUS, IVC_CLIENT) and not idx.keep_row(ivc_rows[1], IVC_STATUS, IVC_CLIENT)
+      and not idx.keep_row(ivc_rows[2], IVC_STATUS, IVC_CLIENT)
+      and not idx.keep_row(dict(ivc_rows[0], StatusTitle="Active"), IVC_STATUS, IVC_CLIENT))
+check("8 Irvine Valley's report pattern reads its Official Course Outline of Record (198) alone, never its Course "
+      "Outcome Report (310) or Saddleback's Course Outline (201)",
+      [u.rsplit("=", 1)[1] for u in ivc_idx["ACCT 1A"][0]["reports"]] == ["198"]
+      and not idx.reads({"Id": 201, "Title": "Course Outline"}, IVC_REPORT), ivc_idx)
+check("8 Saddleback's own filter on the same rows keeps its two and none of Irvine Valley's",
+      sorted(idx.build_index(ivc_rows, base_s, idx.LEGACY_FORM, idx.REPORT_TITLE, None, IVC_STATUS,
+                             r"^Saddleback College$")) == ["ACCT 1A", "MATH 3"]
+      and [e["course_id"] for e in idx.build_index(ivc_rows, base_s, idx.LEGACY_FORM, idx.REPORT_TITLE, None,
+                                                   IVC_STATUS, r"^Saddleback College$")["ACCT 1A"]] == [21001])
+
 passed = sum(1 for _, ok, _ in results if ok)
 for name, ok, why in results:
     print(("  ok   " if ok else "  FAIL ") + name + ("" if ok or not why else " — " + str(why)))

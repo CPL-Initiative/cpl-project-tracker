@@ -289,8 +289,8 @@ for host in ("saddleback.curriqunet.com", "riohondo.curriqunet.com"):
     check("6 %s's excerpt log of a page that names its staff names none of them" % host,
           STAFF not in read.excerpt_log("X 1", read.slo_excerpt(TEXT, host), host)
           and STAFF not in read.probe_log("X 1", TEXT))
-    check("6 GUARD: %s has no recall file yet, so a full read is refused" % host,
-          host not in read.RECALL_BY_HOST or os.path.exists(read.RECALL_BY_HOST[host]))
+    check("6 GUARD: each recall file %s records exists or its gate refuses, so a full read is refused" % host,
+          all(os.path.exists(p) or not read.rows_recall(p)["ok"] for h, p in read.recall_files() if h == host))
 check("6 City College of San Francisco's excerpt is unchanged by the host argument",
       read.slo_excerpt(TEXT) == read.slo_excerpt(TEXT, "ccsf.curricunet.com") is not None)
 RIO = ("Outline w/SLO\nI. Cover\nOriginator: " + STAFF + "\nV. Course Objectives\nThe Student Will Be Able To:\nRecord transactions.\n"
@@ -335,6 +335,56 @@ check("6 GUARD: Saddleback's count never opens a read for Irvine Valley on the s
       "refused",
       not read.recall_for("saddleback.curriqunet.com", "irvine_valley")["ok"]
       and not read.recall_for("sdccd.curriqunet.com", "san_diego_of_continuing_education")["ok"])
+# S697: Irvine Valley's outlines sit on Saddleback's host, printed by its Official Course Outline of Record (198). Each
+# college's count is keyed by its slug on the shared host, and a count opens a read for its own college alone.
+sbh_host = "saddleback.curriqunet.com"
+check("6 the shared host resolves each college to its own recall file",
+      read.recall_path(sbh_host, "saddleback") == read.SADDLEBACK_RECALL
+      and read.recall_path(sbh_host, "irvine_valley") == read.IRVINE_VALLEY_RECALL
+      and read.recall_path(sbh_host, "saddleback,irvine_valley") is None
+      and read.recall_path(rio, "rio_hondo") == read.RIO_HONDO_RECALL)
+_rbh = dict(read.RECALL_BY_HOST)
+try:
+    read.RECALL_BY_HOST[sbh_host] = {"irvine_valley": read.SADDLEBACK_RECALL}
+    sb_for_ivc = read.recall_for(sbh_host, "irvine_valley")
+finally:
+    read.RECALL_BY_HOST.clear()
+    read.RECALL_BY_HOST.update(_rbh)
+with tempfile.TemporaryDirectory() as tmp:
+    # An Irvine Valley count that points at Saddleback's trial (its pages, its counts), stamped with the current parser.
+    sbw = json.load(open(read.SADDLEBACK_RECALL))
+    ivc_path = os.path.join(tmp, "irvine_valley_recall.json")
+    json.dump(dict(sbw, slugs="irvine_valley"), open(ivc_path, "w"))
+    strial = json.load(open(os.path.join(read.OUT_DIR, "trial_%s" % sbw["trial"], "read.json")))
+    os.makedirs(os.path.join(tmp, "trial_%s" % sbw["trial"]))
+    json.dump(dict(strial, parser_fingerprint=read.parser_fingerprint()),
+              open(os.path.join(tmp, "trial_%s" % sbw["trial"], "read.json"), "w"))
+    ivc_on_sb_trial = read.rows_recall(ivc_path, tmp, host=sbh_host)
+    sb_ok_there = read.rows_recall(read.SADDLEBACK_RECALL, tmp, host=sbh_host)
+    _rbh = dict(read.RECALL_BY_HOST)
+    try:
+        read.RECALL_BY_HOST[sbh_host] = {"saddleback": ivc_path}
+        ivc_for_sb = read.recall_for(sbh_host, "saddleback")
+    finally:
+        read.RECALL_BY_HOST.clear()
+        read.RECALL_BY_HOST.update(_rbh)
+check("6 GUARD: recall_for refuses Saddleback's recall file for an Irvine Valley read and Irvine Valley's for a "
+      "Saddleback read, whatever file the table names",
+      not sb_for_ivc["ok"] and "counts saddleback" in sb_for_ivc["why"]
+      and not ivc_for_sb["ok"] and "counts irvine_valley" in ivc_for_sb["why"], (sb_for_ivc, ivc_for_sb))
+check("6 GUARD: an Irvine Valley count over Saddleback's trial fails the gate (the trial read another college's "
+      "pages), while Saddleback's own count over the same trial passes",
+      not ivc_on_sb_trial["ok"] and "saddleback's pages" in (ivc_on_sb_trial["why"] or "") and sb_ok_there["ok"],
+      (ivc_on_sb_trial, sb_ok_there))
+_u = "https://%s/DynamicReports/AllFieldsReportByEntity/1?entityType=Course&reportId=%s"
+check("6 a Saddleback page (201) keeps its host's heading pairs; an Irvine Valley page (198) on the same host is keyed "
+      "by its report, so Saddleback's pairs never cut its excerpt; other hosts are keyed by host",
+      read.excerpt_key(_u % (sbh_host, "201")) == sbh_host
+      and read.excerpt_pairs(read.excerpt_key(_u % (sbh_host, "201"))) == read.excerpt_pairs(sbh_host) != []
+      and read.excerpt_key(_u % (sbh_host, "198")) == sbh_host + "/198"
+      and read.excerpt_pairs(sbh_host + "/198") != read.excerpt_pairs(sbh_host)
+      and read.excerpt_key(_u % (rio, "358")) == rio
+      and read.excerpt_key(_u % ("ccsf.curricunet.com", "28")) == "ccsf.curricunet.com")
 with tempfile.TemporaryDirectory() as tmp:
     want = json.load(open(read.RIO_HONDO_RECALL))
     bad = dict(want, pages=dict(want["pages"]))
