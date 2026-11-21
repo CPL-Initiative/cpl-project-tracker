@@ -93,8 +93,10 @@ ROMAN_HEAD = re.compile(r"^[ \t]*[IVX]{1,4}\.[ \t]+[A-Z]")
 MARKER = re.compile(r"^[ \t]*(?:\(?\d{1,2}[.)]|\(?[a-zA-Z][.)]|[\u2022\u25cf\u25aa\u00b7\-\u2013*])[ \t]+")
 # The lead-in a college prints between the heading and the list. Las Positas prints "Upon the completion of this
 # course, the student should be able to:" (S664: 505 live SLO rows had filed it as their first outcome).
-LEAD = re.compile(r"(upon (the )?(successful )?completion|at the conclusion of|students? (will|should) be able|by the end of)[^\n]*",
-                  re.I)
+# Rio Hondo prints "The Student Will Be Able To:" above every objectives list (trial 44884988614's log, 12 of 12; S691):
+# the article is part of the lead-in, never an objective of its own.
+LEAD = re.compile(r"(upon (the )?(successful )?completion|at the conclusion of|(?:the )?students? (will|should) be able|"
+                  r"by the end of)[^\n]*", re.I)
 # The column header a report's SLO table prints above its rows, a line of its own that is never an outcome (S689).
 # Feather River's report 485 prints "Learning Outcomes" under its Student Learning Outcomes heading (read 44535960153
 # filed it as 336 of its 2,072 SLOs, one per page); Palomar's report 99 prints "Outcome" (trial 44536105509, 12 of 12).
