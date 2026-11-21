@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-21_s691_piles2_smc_live_read.sql",
+ "name": "s691_piles2_smc_live_read",
+ "version": "20261121082025",
+ "sha256": "ea7f7071a221edf4fdf3be6c9592e911a053c952c602b0e2dfb0f91102263a92",
+ "run": "44884307068",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"live_compare\":{\"at\":\"2026-11-21T08:20:26Z\",\"chk\":{},\"sum\":{\"Santa Monica College\":[230,230,229,0,1,0]},\"diff\":[[\"Santa Monica College\",\"43767\",\"37548804006\",\"39567439681\"]],\"gone\":{},\"extra\":[]}}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
