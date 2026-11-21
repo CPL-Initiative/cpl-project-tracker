@@ -434,6 +434,11 @@ jobs:
       # nothing over a record; run 43384599013 filed 121 stubs in a database outage. Pure stdlib.
       - name: Program requirements extraction halts on an outage (503, 401)
         run: python3 tests/program_requirements_extract_halt_test.py
+      # S697: a run that is no whole read files nothing (Santa Monica's timed-out read dropped 46 records); the
+      # pricing honors the reread gate's same-page calls (Canyons' v2 to v3); only= reads the named programs
+      # alone; Butte's Catalog//iq to catalog/iq is one page. Pure stdlib.
+      - name: Program requirements reader fixes (timed-out filing, same page, only=, Butte)
+        run: python3 tests/program_requirements_reader_fixes_s697_test.py
       # S653: a fragment a catalog includes (Skyline's programs/_program-headers/) is never a page; the measure
       # over the committed captures' URLs, none of them a claimed page. Pure stdlib.
       - name: Program requirements fragment paths are no pages

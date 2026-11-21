@@ -5910,18 +5910,34 @@ def has_record(path: str) -> bool:
         return False
 
 
-def filed_from(path: str, src: dict) -> bool:
+def filed_from(path: str, src: dict, prev: dict | None = None) -> bool:
     """A filed record extracted from the page the source reads. A reconcile run
     files its fresh sources beside the records it did not move, so sources.json
     can name a page a record was never read from, and unchanged() then keeps it:
-    127 filed records stood so (Los Angeles City 69, Pierce 43, Santa Rosa 11; S411)."""
+    127 filed records stood so (Los Angeles City 69, Pierce 43, Santa Rosa 11; S411).
+    The page is the reread gate's (same_page, d-reread-gate-same-page-calls-s690): until S697 the address was
+    compared as written, so College of the Canyons' 103 records filed from its Catalog v2 were priced as new pages
+    once the catalog moved to v3 (pricing run 44886119075; f-would-extract-relists-same-page-s691). A page the
+    gate calls the same, at another address than the record's, also needs the gate's coverage half: the share the
+    record was extracted from (its source_coverage, else prev's coverage where prev, the filed sources.json entry,
+    names the record's own page: names_page) and the new window's share equal or higher. With neither share known
+    nothing proves the record was read from that page, which is S411's case, and the program goes to the model."""
     try:
         with open(path) as fh:
             rec = json.load(fh)
     except (OSError, ValueError):
         return False
-    return (isinstance(rec.get("record"), dict) and rec.get("source_url") == (src.get("source") or {}).get("url")
-            and same_text(rec, src))
+    url = (src.get("source") or {}).get("url")
+    if not isinstance(rec.get("record"), dict) or not same_text(rec, src):
+        return False
+    if rec.get("source_url") == url:
+        return True
+    if not same_page(rec.get("source_url"), url):
+        return False
+    was = rec.get("source_coverage")
+    if was is None and prev and names_page((prev.get("source") or {}).get("url"), rec.get("source_url")):
+        was = prev.get("coverage")
+    return was is not None and (src.get("coverage") or 0) >= was
 
 
 def same_text(rec: dict, src: dict) -> bool:
@@ -6042,7 +6058,8 @@ def moved_unchanged(path: str, src: dict) -> bool:
     model for $12.99, 132 of them with the same codes and coverage). The proof is the record's own
     fingerprint, filed when it was extracted (source_sha): the same text with the page marks and
     running headers set aside, the same listed codes found and the same coverage. A record extracted
-    before the fingerprint has none and goes to the model, as every moved record did before."""
+    before the fingerprint has none and goes to the model, as every moved record did before. The file is the
+    reread gate's (same_file): a new edition of the same catalog is the same file (S697)."""
     try:
         with open(path) as fh:
             rec = json.load(fh)
@@ -6051,7 +6068,7 @@ def moved_unchanged(path: str, src: dict) -> bool:
     b = src.get("source") or {}
     a_url, b_url = rec.get("source_url") or "", b.get("url") or ""
     return (isinstance(rec.get("record"), dict) and bool(rec.get("source_sha")) and a_url != b_url
-            and same_address(a_url.split("#")[0], b_url.split("#")[0])
+            and same_file(a_url, b_url)
             and rec.get("source_sha") == b.get("text_sha")
             and rec.get("source_codes") == src.get("codes_found")
             and rec.get("source_coverage") == src.get("coverage"))
@@ -6072,7 +6089,9 @@ def unchanged(prev: dict | None, src: dict) -> bool:
     (visible or hidden), naming the same courses, so the filed record still
     stands and the model need not be asked again."""
     a, b = ((prev or {}).get("source") or {}), (src.get("source") or {})
-    return bool(prev) and a.get("url") == b.get("url") and a.get("text_from") == b.get("text_from") \
+    # The page is the reread gate's (same_page): Butte's every address moved from Catalog//iq to catalog/iq
+    # (f-butte-page-addresses-changed-case-s690), and 163 unchanged programs read as moved.
+    return bool(prev) and same_page(a.get("url"), b.get("url")) and a.get("text_from") == b.get("text_from") \
         and prev.get("coverage") == src.get("coverage") and prev.get("codes_found") == src.get("codes_found")
 
 
@@ -6100,7 +6119,7 @@ def held(path: str, prev: dict | None, src: dict) -> dict | None:
     if not isinstance(rec.get("record"), dict) or not passes_live(rec.get("score")):
         return None
     was = rec.get("source_coverage")
-    if was is None and prev and (prev.get("source") or {}).get("url") == rec.get("source_url"):
+    if was is None and prev and names_page((prev.get("source") or {}).get("url"), rec.get("source_url")):
         was = prev.get("coverage")
     if was is None:
         return None
@@ -6113,12 +6132,67 @@ def held(path: str, prev: dict | None, src: dict) -> dict | None:
     return None
 
 
-def would_extract(college: str, recs: list[dict], folder: str | None = None) -> dict:
+def only_named(tokens: str | None) -> set[str]:
+    """The control numbers a comma-separated only= names (the read step's named-programs-only input, S697)."""
+    return {t.strip() for t in (tokens or "").split(",") if t.strip()}
+
+
+def only_refused(out_dir: str, only: set[str] | None) -> list[str]:
+    """Each control number only= names that the capture cannot send, with why: one the capture holds no
+    source for, and one whose source has no text (#3500's refusal). Empty when only= is empty."""
+    srcs = {}
+    for path in glob.glob(os.path.join(out_dir, "sources", "*.json")):
+        try:
+            with open(path) as fh:
+                src = json.load(fh)
+        except (OSError, ValueError):
+            continue
+        if isinstance(src, dict) and src.get("control_number"):
+            srcs[str(src["control_number"])] = src
+    out = []
+    for cn in sorted(only or ()):
+        if cn not in srcs:
+            out.append("%s is not in the capture" % cn)
+        elif not srcs[cn].get("text"):
+            out.append("%s has no text in the capture (%s)" % (cn, srcs[cn].get("method")))
+    return out
+
+
+NOT_NAMED = "not_named_%d.json"
+
+
+def keep_not_named(out_dir: str, keep_from: str | None, only: set[str], shard: int = 0) -> list[str]:
+    """Every program only= does not name, in this capture or filed under keep_from, set back to its filed record
+    byte for byte (or to none, where none is filed), whatever the keep tests above wrote for it, and listed in
+    not_named_<shard>.json for file_run, which keeps its earlier sources.json entry. Returns the list."""
+    import shutil
+    cns = {os.path.splitext(os.path.basename(p))[0] for p in glob.glob(os.path.join(out_dir, "sources", "*.json"))}
+    if keep_from:
+        cns |= {os.path.splitext(os.path.basename(p))[0]
+                for p in glob.glob(os.path.join(keep_from, "records", "*.json"))}
+    names = sorted(cn for cn in cns if cn not in only)
+    os.makedirs(os.path.join(out_dir, "records"), exist_ok=True)
+    for cn in names:
+        dst = os.path.join(out_dir, "records", cn + ".json")
+        src = os.path.join(keep_from or "", "records", cn + ".json")
+        if keep_from and os.path.isfile(src):
+            shutil.copyfile(src, dst)
+        elif os.path.exists(dst):
+            os.remove(dst)
+    _write(os.path.join(out_dir, NOT_NAMED % shard), {"only": sorted(only), "programs": names})
+    return names
+
+
+def would_extract(college: str, recs: list[dict], folder: str | None = None, only: set[str] | None = None) -> dict:
     """What an extraction after this capture would send to the model, against
     the read filed for the college: each source that reaches the extraction's
     bar and is new or moved (unchanged() is the test the extraction applies).
     A capture-only run files this in its preview, so Sam's go on an extraction
-    names its programs and its cost before a model call is made."""
+    names its programs and its cost before a model call is made.
+    only (the read step's only=, passed as ONLY; S697): the list holds only the programs only= names, and every
+    other program that would go is listed under not_named, so it stays visible and is priced at nothing."""
+    if only is None:
+        only = only_named(os.environ.get("ONLY"))
     folder = folder or os.path.join(COLLEGE_DIR, slug_of(college))
     prev: dict = {}
     if os.path.isfile(os.path.join(folder, "sources.json")):
@@ -6132,7 +6206,7 @@ def would_extract(college: str, recs: list[dict], folder: str | None = None) -> 
             continue
         cn = r["control_number"]
         path = os.path.join(folder, "records", cn + ".json")
-        if (filed_from(path, r) and unchanged(prev.get(cn), r)) or moved_unchanged(path, r):
+        if (filed_from(path, r, prev.get(cn)) and unchanged(prev.get(cn), r)) or moved_unchanged(path, r):
             kept += 1
             moved += moved_unchanged(path, r)
             continue
@@ -6147,8 +6221,11 @@ def would_extract(college: str, recs: list[dict], folder: str | None = None) -> 
                     "url": (r.get("source") or {}).get("url"), "coverage": r.get("coverage"),
                     "was_url": (was.get("source") or {}).get("url"), "was_coverage": was.get("coverage"),
                     "was_method": was.get("method")})
+    not_named = [e for e in out if only and e["control_number"] not in only]
+    out = [e for e in out if not only or e["control_number"] in only]
     return {"against": os.path.relpath(folder, os.path.dirname(HERE)) if prev else None,
             "kept": kept, "kept_moved": moved, "programs": len(out), "list": out, **holds,
+            **({"only": sorted(only), "not_named": not_named} if only else {}),
             # The force a capture is run with, where the step passes it (FORCE): forced numbers leave
             # refused_passing for forced_unbound; the filing adds the extraction's own list (file_run).
             "refused_passing": refused_passing(folder, recs, force_named(os.environ.get("FORCE"))),
@@ -6542,7 +6619,7 @@ HALT_WAIT_S = 20   # the pause before the one retry of a call the function answe
 
 def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: int = 6,
             keep_from: str | None = None, force: set[str] | None = None,
-            ceiling_usd: float | None = None, halt_wait_s: float = HALT_WAIT_S) -> int:
+            ceiling_usd: float | None = None, halt_wait_s: float = HALT_WAIT_S, only: set[str] | None = None) -> int:
     """Send each source that needs a model call, score it and write its record under out_dir.
     ceiling_usd (the workflows set it to $40; None, the default, is no ceiling) is the spend meter's
     (kb/_spend_meter.py, S654): before each post it reserves the program's estimate (the college's rate x the
@@ -6557,13 +6634,22 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
     A call the function answers 503 (its caller check could not reach the database) or 401 (the key
     refused) is tried once more after halt_wait_s; answered so again, it halts the read the same way
     (S647, Sheet 190 card 6): nothing more is sent, no record is written for it, the halt is written to
-    extract_halt_<shard>.json, and the step returns HALT_EXIT."""
+    extract_halt_<shard>.json, and the step returns HALT_EXIT.
+    only (the read step's only=, S697; #3500): only the named programs go to the model. Every other program,
+    in the capture or filed, keeps its filed record byte for byte (none, where none is filed), is listed in
+    not_named_<shard>.json, and file_run keeps its sources.json entry, so the filing stands as before for it. A
+    name the capture holds no source for, or whose source has no text, refuses the step (only_refused)."""
     import _program_requirements_extract as X
     import _program_requirements_reconcile as R
     key = os.environ.get("SUPABASE_SERVICE_KEY")
     if not key:
         print("SUPABASE_SERVICE_KEY is not set; the Edge Function takes only the service key.")
         return 2
+    if only:
+        bad = only_refused(out_dir, only)
+        if bad:
+            print("::error::only= names programs this capture cannot send: %s; nothing is extracted" % "; ".join(bad))
+            return 2
     sources, refused = [], []
     for path in sorted(glob.glob(os.path.join(out_dir, "sources", "*.json"))):
         with open(path) as fh:
@@ -6606,7 +6692,8 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
         for src in sources:
             path = os.path.join(keep_from, "records", src["control_number"] + ".json")
             if (src["control_number"] not in (force or ())
-                    and unchanged(prev.get(src["control_number"]), src) and filed_from(path, src)):
+                    and unchanged(prev.get(src["control_number"]), src)
+                    and filed_from(path, src, prev.get(src["control_number"]))):
                 with open(path) as fh:
                     _write(os.path.join(out_dir, "records", src["control_number"] + ".json"), json.load(fh))
                 kept += 1
@@ -6681,6 +6768,13 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
               "extract, %d of them forced" % (kept, moved, len(holds), len(fresh),
                                              sum(1 for x in fresh if x["control_number"] in (force or ()))),
               flush=True)
+    if only:
+        skipped = [s["control_number"] for s in sources if s["control_number"] not in only]
+        sources = [s for s in sources if s["control_number"] in only]
+        if shard == 0:
+            not_named = keep_not_named(out_dir, keep_from, only)
+            print("only=%s: %d programs sent at most; %d others keep their filed record as filed (%d of them would "
+                  "have gone)" % (",".join(sorted(only)), len(sources), len(not_named), len(skipped)), flush=True)
     mine = shard_of(sources, shard, shards)
     print("extraction, shard %d of %d: %d of %d sources, %d at a time"
           % (shard + 1, shards, len(mine), len(sources), workers), flush=True)
@@ -6886,6 +6980,8 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
         # check-extract reads to end the job red (extract_failed_run).
         _write(os.path.join(out_dir, "extract_account_%d.json" % shard),
                {"run": run_id, "shard": shard, "calls": calls[0],
+                # every program this shard was to send: file_run refuses a run that ended short of them (read_short)
+                "sent": sorted(s["control_number"] for s in mine),
                 "failed": sorted(failed, key=lambda x: x["control_number"]),
                 # what the spend meter counted toward the hard stop: priced usage, worst cases, $0 refusals
                 "meter_charge_usd": round(meter.spent, 5)})
@@ -7049,6 +7145,57 @@ def same_address(a: str, b: str) -> bool:
         p = urllib.parse.urlparse(u or "")
         return (p.netloc.lower(), re.sub(r"/{2,}", "/", p.path).lower().rstrip("/"), p.query)
     return bool(a) and bool(b) and norm(a) == norm(b)
+
+
+# An edition named in a catalog file's name: 2026-27-Catalog-v2-508.pdf and 2026-27-Catalog-v3-508.pdf are two
+# editions of one catalog (College of the Canyons, S690).
+EDITION_TOKEN = re.compile(r"(?i)(?<![a-z0-9])v(?:er(?:sion)?)?[-_]?\d+(?![a-z0-9])")
+PDF_PAGE_FRAGMENT = re.compile(r"(?:^|[&;])page=(\d+)")
+
+
+def _edition_blind(url: str) -> str:
+    """The address with any edition token in its last path segment set to one spelling."""
+    p = urllib.parse.urlparse(url or "")
+    head, _, seg = p.path.rpartition("/")
+    return urllib.parse.urlunparse(p._replace(path=head + "/" + EDITION_TOKEN.sub("v#", seg), fragment=""))
+
+
+def same_file(a: str, b: str) -> bool:
+    """Two addresses of one catalog file: one page's address in two spellings (same_address), or two editions
+    of the same catalog whose file names differ only in the edition token (v2, v3). Fragments are set aside."""
+    a, b = (a or "").split("#")[0], (b or "").split("#")[0]
+    return same_address(a, b) or same_address(_edition_blind(a), _edition_blind(b))
+
+
+def pdf_page_of(url: str | None) -> int | None:
+    """The PDF page an address's fragment names (#page=107), or None."""
+    m = PDF_PAGE_FRAGMENT.search(urllib.parse.urlparse(url or "").fragment)
+    return int(m.group(1)) if m else None
+
+
+def names_page(a: str | None, b: str | None) -> bool:
+    """Two addresses naming one page with no page offset: equal, or one file (same_file) and the same PDF page.
+    The test for whether a filed sources.json entry names the page a record was read from (S411)."""
+    if a == b:
+        return bool(a)
+    return bool(a) and bool(b) and same_file(a, b) and pdf_page_of(a) == pdf_page_of(b)
+
+
+def same_page(a: str | None, b: str | None) -> bool:
+    """The reread gate's same-page calls (d-reread-gate-same-page-calls-s690), the one place they are written:
+    an address that differs only by letter case or a doubled slash (same_address; Butte's Catalog//iq against
+    catalog/iq), a new edition of the same catalog (same_file; College of the Canyons' v2 against v3), and a PDF
+    page one page off (#page=129 against #page=130) are one page. The gate's coverage half (the moved page's
+    coverage equal or higher) is the caller's: unchanged() asks equal coverage and codes, filed_from() no lower.
+    Two equal strings are one page, as before."""
+    if a == b:
+        return True
+    if not a or not b or not same_file(a, b):
+        return False
+    pa, pb = pdf_page_of(a), pdf_page_of(b)
+    if pa is None or pb is None:
+        return pa is None and pb is None
+    return abs(pa - pb) <= 1
 
 
 def own_heading_kept(src: dict, filed: dict) -> bool:
@@ -7415,6 +7562,49 @@ def file_prior(dest: str, out_dir: str, report: dict) -> int:
     return 0
 
 
+def read_short(out_dir: str, report: dict) -> str | None:
+    """Why a run is no whole read and must not file, or None (f-timed-out-read-still-files-s691, S697):
+      * a PDF catalog that gave no page (the download timed out, was refused or never started), while the
+        capture named programs: every program then reads as not found, and filing drops each record that does
+        not pass (Santa Monica's run 44883500729: read ETIMEDOUT, 46 records dropped);
+      * an extraction run (out/records present) whose capture read no program's text at all, the same loss on a
+        catalog of pages;
+      * an extraction that ended short: a program its account lists as sent that came back with no record and
+        is neither a failed call nor one the hard stop or a halt held (not_sent_<shard>.json)."""
+    pdf = report.get("pdf")
+    if isinstance(pdf, dict) and not pdf.get("pages_total") and (report.get("programs") or 0):
+        return "the catalog PDF %s gave no page (%s%s)" % (
+            pdf.get("url"), pdf.get("access") or "no answer", ": %s" % str(pdf["error"])[:160] if pdf.get("error") else "")
+    if not os.path.isdir(os.path.join(out_dir, "records")):
+        return None
+    srcs = []
+    for path in glob.glob(os.path.join(out_dir, "sources", "*.json")):
+        try:
+            with open(path) as fh:
+                srcs.append(json.load(fh))
+        except (OSError, ValueError):
+            continue
+    if srcs and report.get("with_closed_list") and not any(isinstance(s, dict) and s.get("text") for s in srcs):
+        return "the capture read no program's text (%d programs, %d with a course list)" % (
+            len(srcs), report.get("with_closed_list"))
+    held_back: set[str] = set()
+    for path in glob.glob(os.path.join(out_dir, "not_sent_*.json")):
+        with open(path) as fh:
+            held_back.update(json.load(fh).get("programs") or [])
+    acct = extract_accounts(out_dir)
+    held_back.update(x["control_number"] for x in acct["failed"])
+    sent: list[str] = []
+    for path in sorted(glob.glob(os.path.join(out_dir, "extract_account_*.json"))):
+        with open(path) as fh:
+            sent.extend(json.load(fh).get("sent") or [])
+    missing = [cn for cn in sent if cn not in held_back
+               and not os.path.isfile(os.path.join(out_dir, "records", cn + ".json"))]
+    if missing:
+        return "the extraction ended short: %d of the %d programs sent came back with no record (first: %s)" % (
+            len(missing), len(sent), missing[0])
+    return None
+
+
 def file_run(college: str, out_dir: str, run_id: str | None) -> int:
     """Copy the run's records and account into the repository. A run that
     extracted replaces the records, sources and summary together, so the three
@@ -7442,6 +7632,13 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
         we["refused_passing"] = [e for e in we.get("refused_passing") or [] if e["control_number"] not in fu]
     if report.get("prior"):
         return file_prior(dest, out_dir, report)
+    short = read_short(out_dir, report)
+    if short:
+        # f-timed-out-read-still-files-s691: Santa Monica's read 44883500729 timed out on its catalog PDF, every
+        # program read as not found, and this step filed the run: 46 records left the branch (reverted, 6ba61a4c).
+        print("::error::%s: this run is no whole read, so nothing is filed and the records under %s stay as "
+              "they are. Run the read again." % (short, os.path.relpath(dest, os.path.dirname(HERE))))
+        return 1
     if not os.path.isdir(os.path.join(out_dir, "records")):
         os.makedirs(dest, exist_ok=True)
         _write(os.path.join(dest, "capture_preview.json"), report)
@@ -7475,6 +7672,10 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
     # stays the one that record was read from, and the next run sends it again.
     acct = extract_accounts(out_dir)
     not_sent.update(x["control_number"] for x in acct["failed"])
+    # A program only= did not name kept its filed record as filed (keep_not_named), so its entry stays too (S697).
+    for path in glob.glob(os.path.join(out_dir, "not_named_*.json")):
+        with open(path) as fh:
+            not_sent.update(json.load(fh).get("programs") or [])
     kept_unbound: set[str] = set()
     for path in glob.glob(os.path.join(out_dir, "kept_unbound_*.json")):
         with open(path) as fh:
@@ -7518,6 +7719,13 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
         with open(os.path.join(dest, "sources.json")) as fh:
             prev = {x["control_number"]: x for x in json.load(fh)}
     index.extend(prev[cn] for cn in sorted(rk) if cn not in have and cn in prev)
+    # A filed program only= did not name, with no source in this capture, keeps its entry too (S697).
+    nn: set[str] = set()
+    for path in glob.glob(os.path.join(out_dir, "not_named_*.json")):
+        with open(path) as fh:
+            nn.update(json.load(fh).get("programs") or [])
+    have = {e.get("control_number") for e in index}
+    index.extend(prev[cn] for cn in sorted(nn) if cn not in have and cn in prev)
     _write(os.path.join(dest, "sources.json"), index)
     _write(os.path.join(dest, "capture.json"), report)
     # The programs whose read failed where the filed record passed, for a person (kept_passing).
@@ -7839,6 +8047,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--force", default="", help="control numbers to extract again though their page is "
                                                 "unchanged, comma-separated; 'incomplete' names every filed "
                                                 "record whose arithmetic is incomplete")
+    ap.add_argument("--only", default="", help="extract only: the control numbers to send, comma-separated; every "
+                                               "other program keeps its filed record as filed (S697)")
     ap.add_argument("--run", default=os.environ.get("GITHUB_RUN_ID"))
     ap.add_argument("--ceiling-usd", default=os.environ.get("EXTRACT_CEILING_USD", ""),
                     help="extract only: stop sending programs once the run's actual cost reaches this (the wave "
@@ -7893,8 +8103,14 @@ def main(argv: list[str] | None = None) -> int:
             return 0
         keep = None if args.fresh else os.path.join(COLLEGE_DIR, slug_of(args.college))
         force = forced(keep, args.force) if keep and args.force else None
+        only = only_named(args.only)
+        if only and force and force - only:
+            print("::error::force= names %s, which only= does not; name each forced program in only= too"
+                  % ",".join(sorted(force - only)))
+            return 2
         ceiling = float(args.ceiling_usd) if str(args.ceiling_usd or "").strip() else None
-        return extract(args.out, args.shard, args.shards, args.run, args.workers, keep, force, ceiling)
+        return extract(args.out, args.shard, args.shards, args.run, args.workers, keep, force, ceiling,
+                       only=only or None)
     return file_run(args.college, args.out, args.run)
 
 
