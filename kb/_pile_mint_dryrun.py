@@ -399,19 +399,19 @@ def staged_plan_ids(kb_dir=HERE):
     kb/alias_chain.py's ALIAS_MAPS, so reserved_alias_ids does not see them (the second reader's finding 6)."""
     ids = set()
 
-    def walk(x):
+    def collect_new_ids(x):
         if isinstance(x, dict):
             for k, v in x.items():
                 if k == "new_id" and isinstance(v, str):
                     ids.add(v)
                 else:
-                    walk(v)
+                    collect_new_ids(v)
         elif isinstance(x, list):
             for v in x:
-                walk(v)
+                collect_new_ids(v)
     for pat in STAGED_PLANS:
         for f in sorted(glob.glob(os.path.join(kb_dir, pat))):
-            walk(_load(f))
+            collect_new_ids(_load(f))
     return ids
 
 
