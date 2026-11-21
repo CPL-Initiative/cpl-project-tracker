@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 16481,
-    "output_tokens": 14554,
+    "output_tokens": 14262,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,40 +30,48 @@
     "model": null
    }
   ],
-  "output_tokens": 14554,
+  "output_tokens": 14262,
   "output_tokens_details": {
-   "thinking_tokens": 3436
+   "thinking_tokens": 3026
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.357,
- "ms": 100904,
- "seconds": 101.2,
+ "cost_usd": 0.35116,
+ "ms": 97727,
+ "seconds": 98.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 155,
+   "placed": 157,
    "listed": 158,
-   "share": 0.981,
+   "share": 0.994,
    "missing": [
-    "AJ13",
-    "ART91",
-    "ART92"
+    "AJ13"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ARTHC1100",
+     "listed": "ART91",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTHC1200",
+     "listed": "ART92",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 30,
+   "count": 28,
    "codes": [
     "AJ16",
-    "ARTHC1100",
-    "ARTHC1200",
     "CHEM12B",
     "CHEM15H",
     "COMMC1000H",
@@ -94,8 +102,6 @@
    ],
    "flagged": [
     "AJ16",
-    "ARTHC1100",
-    "ARTHC1200",
     "CHEM12B",
     "CHEM15H",
     "COMMC1000H",
@@ -194,8 +200,8 @@
   "blocks": [
    {
     "name": "1A: English Communication",
-    "rule": "choose_courses",
-    "minimum": 1,
+    "rule": "all",
+    "minimum": null,
     "option_group": null,
     "stated": {
      "min": null,
@@ -213,8 +219,8 @@
    },
    {
     "name": "1C: Critical Thinking and Composition",
-    "rule": "choose_courses",
-    "minimum": 1,
+    "rule": "all",
+    "minimum": null,
     "option_group": null,
     "stated": {
      "min": null,
@@ -232,8 +238,8 @@
    },
    {
     "name": "1C: Oral Communication",
-    "rule": "choose_courses",
-    "minimum": 1,
+    "rule": "all",
+    "minimum": null,
     "option_group": null,
     "stated": {
      "min": null,
@@ -2017,17 +2023,19 @@
    }
   ],
   "notes": [
-   "This award is the Cal-GETC general education pattern itself, so its areas are recorded as blocks; ge_pattern left null because the award is the pattern rather than a degree that names one.",
-   "total_units 34 is from 'Minimum Cal-GETC Units 34'. The 60-unit figure is the minimum for an ADT, not this certificate, so degree_total is null.",
-   "Catalog prints zero-padded codes (e.g., BUS 060, MATH 020, ART 090) where the closed list has BUS 60, MATH 20, ART 90; treated as the same courses (catalog_addition false).",
-   "Area minimums: Area 1 minimum 9 units (one course each from 1A, 1B, 1C); Area 3 minimum 6 units (one from 3A, one from 3B); Area 5 minimum 7 units (one physical, one biological, at least one with lab). These area totals are not recorded on the subarea blocks.",
-   "Catalog labels the critical thinking subarea '1C: Critical Thinking and Composition' (likely should be 1B); recorded as printed.",
-   "5C: Science Laboratory overlaps 5A/5B; it expresses the requirement that at least one of the two Area 5 courses include a lab, not an additional course. ASTRO 010L, GEOL 010L, GEOL 015L satisfy the lab only with their companion lecture course.",
-   "Area 4 requires two courses from two different disciplines (or an interdisciplinary sequence).",
-   "Courses listed in multiple areas may be applied to only one area (except 5C).",
-   "Optional CSU U.S. History, Constitution, and American Ideals options are stated as not required and are not recorded; that section is cut off at the end of the text.",
-   "No program outcomes or careers are printed in the text."
+   "The award is the Cal-GETC pattern itself, so its area courses are recorded as blocks; ge_pattern left null because this is not a degree naming a separate GE pattern.",
+   "total_units 34 is taken from 'Minimum Cal-GETC Units 34'. The 60-unit figure applies to ADTs, not this certificate, so degree_total is null.",
+   "Area 1 prints 'Minimum 9 units required – one course each from subareas: 1A, 1B, and 1C', but the catalog labels the critical thinking subarea '1C' rather than '1B'. Names are recorded as printed.",
+   "Area 3 prints 'Minimum 6 units' for two courses (one from 3A, one from 3B). Area 5 prints 'Minimum 7 units' for two courses (one Physical, one Biological). These area totals are not placed on the subarea blocks.",
+   "5C (Science Laboratory) overlaps 5A/5B: at least one of the two Area 5 courses must come from 5C. It is recorded as its own choose-1 block, not as an additional course.",
+   "Footnote 1: ASTRO 010, GEOL 010 and GEOL 015 meet the lab requirement only with their companion labs (ASTRO 010L, GEOL 010L, GEOL 015L).",
+   "Area 4 requires two courses from two different disciplines (or an interdisciplinary sequence). Courses may apply to only one area except as permitted in 5C.",
+   "Catalog codes use leading zeros (e.g., BUS 060, MATH 020), whereas the closed list uses BUS 60, MATH 20. These were matched as the same courses. ETH 011 is titled 'Ethnic Images in Film' in the catalog versus 'Ethnic Film: Reel Studies' in the state file.",
+   "The optional CSU U.S. History, Constitution and American Ideals options (Options 1-5) are stated as not required and are not recorded as blocks. The text is cut off mid-list in Option 5.",
+   "Additional ADT requirements (GPA, residence, 60 units) apply to ADTs, not this certificate.",
+   "No program learning outcomes or careers are printed."
   ]
  },
- "extracted_run": "43357106423"
+ "extracted_run": "44769778910",
+ "catalog_year": "2026-2027"
 }

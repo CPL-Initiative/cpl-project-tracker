@@ -24,6 +24,68 @@
   "printed_total": "a heading's range whose low end is a test-out, beside a printed total that is its top (Moreno Valley 38758, S674): pattern's lo, hi and total; the record's total_units becomes the total only where it holds exactly lo-hi, the page prints the step's requires words, total equals hi, and the record's blocks are all rule-all with fixed stated figures summing to the total. The one step that replaces a filled figure"
  },
  "colleges": {
+  "College of the Canyons": {
+   "prefix_aliases": {
+    "PSYC": "PSYCH",
+    "POLS": "POLISC",
+    "COMM": "COMS"
+   },
+   "prefix_aliases_cited": [
+    {
+     "session": "S691",
+     "date": "2026-11-21",
+     "catalog_sources": [
+      "college_page_read"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-21_canyons/measure.json",
+     "printed": "PSYC",
+     "file": "PSYCH",
+     "evidence": 15,
+     "source": "S691, 2026-11-21: 15 courses of the same number and title, the catalog's printed code and title (college page read 44882193771, the 2026-27 catalog v3; the titles sit in that run's artifact and job log, not in a committed file, and on committed files kb/_prefix_alias_census.py's build() holds the pair: no catalog title for any of its 15 numbers) against the COCI course list's; no number naming two different courses at the college. The file lists PSYC C1000 and C1000H itself, which the scorer never renames.",
+     "examples": [
+      "PSYC-102 = PSYCH 102, Physiological Psychology",
+      "PSYC-109 = PSYCH 109, Social Psychology",
+      "PSYC-240 = PSYCH 240, Abnormal Psychology"
+     ]
+    },
+    {
+     "session": "S691",
+     "date": "2026-11-21",
+     "catalog_sources": [
+      "college_page_read"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-21_canyons/measure.json",
+     "printed": "POLS",
+     "file": "POLISC",
+     "evidence": 6,
+     "source": "S691, 2026-11-21: 6 courses of the same number and title (college page read 44882193771, the 2026-27 catalog v3; the titles sit in that run's artifact and job log, not in a committed file, and on committed files kb/_prefix_alias_census.py's build() holds the pair: no catalog title for any of its 6 numbers); no number naming two different courses. The catalog prints POLS-270 as International Relations, the file's title, and on one page as International Politics.",
+     "examples": [
+      "POLS-200 = POLISC 200, Introduction to Political Science",
+      "POLS-210 = POLISC 210, Model United Nations",
+      "POLS-230 = POLISC 230, Political Theory"
+     ]
+    },
+    {
+     "session": "S691",
+     "date": "2026-11-21",
+     "catalog_sources": [
+      "college_page_read"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-21_canyons/measure.json",
+     "printed": "COMM",
+     "file": "COMS",
+     "evidence": 12,
+     "source": "S691, 2026-11-21: 12 courses of the same number and title (college page read 44882193771, the 2026-27 catalog v3; the titles sit in that run's artifact and job log, not in a committed file, and on committed files kb/_prefix_alias_census.py's build() holds the pair: fewer than 3 titled numbers, 2 of its 11); no number naming two different courses. COMM-001 to 003 are noncredit courses with no file course of that code.",
+     "examples": [
+      "COMM-100 = COMS 100, Process of Communication",
+      "COMM-120 = COMS 120, Small Group Communication",
+      "COMM-246 = COMS 246, Interpersonal Communication"
+     ]
+    }
+   ],
+   "steps": [],
+   "why": "S691 (the S691 conductor's reread worker, 2026-11-21), census lever 8: the 2026-27 catalog prints PSYC, POLS and COMM where the state's file lists PSYCH, POLISC and COMS. The 2026-11-14 prefix-alias census held the three pairs for want of a catalog-side title in committed files; the catalog's own requirement lists supply it (college page read 44882193771). Measured over the 156 records filed on claude/s691-reread (the census's _measure_college): coverage fails 25 to 7, passing 120 to 135, no pass turned to a fail."
+  },
   "Cerro Coso Community College": {
    "why": "S648, d-calgetc-34-per-college-evidence-s648. Cerro Coso's catalog prints its own Cal-GETC figure: the pattern page (PDF p.65, printed p.57) heads 'California General Education Transfer Curriculum (Cal-GETC) (35 Units)', the heading the readings of 01980 and 38705 filed from that page, and the program pages name the pattern as 'OPTION B Cal-GETC'. The printed figure wins over the statewide 34 (Sam, Sheet 187 card 5), so a transfer degree naming Cal-GETC with no units read takes 35 from that page, only where the record names its pattern and degree total. Reversible by deleting this entry.",
    "steps": [
@@ -875,6 +937,16 @@
      "before": "Required\\s+C\\s*ourses|Coursework\\s+required|\\bSelect\\s",
      "read": "college-page-read 40690480267 (kb/college_reads/glendale_program_totals.json)",
      "why": "S524 SkyCranberry, 2026-10-30. Glendale's program pages print no 'Total Units' line; the description paragraph states the total in prose before the course list: 'Students must complete all required core courses for a total of 19 - 21 units' (Biotechnology Research Lab Assistant, pdf page 92), 'must complete all the required courses for a minimum of 9 units' (Social Media Marketing I, page 113), 'The student must complete all CORE courses totaling 17-18 units' (Tax Preparer, page 113; college-page-read 40690480267). 41 filed records name no total (live read 2026-10-30). The step reads only the words ahead of the program's first list ('Required Courses', 'Coursework required', 'Select'), because a program printing no total runs on into the next program's paragraph on the same page (Restaurant Management, then Social Media Marketing I's 'minimum of 9 units'). S525 SkyTayberry: the words run from the record's own heading (section_heading) to its first list; read from the top of the page, all 8 of S524's fills took the first program's total (page read 41025920825) and were rolled back."
+    },
+    {
+     "kind": "set",
+     "field": "degree_total_minimum",
+     "value": true,
+     "only_with": "degree_total",
+     "pattern": "Minimum\\s+Required\\s+Units\\s+for\\s+Degree\\s*\\(\\s*with\\s+GE\\s*\\)\\s*:?\\s*60(?:\\.0+)?\\b",
+     "read": "free reconcile 44763682085 on claude/s690-piles-glendale (6297bdd5), after page read 44751552964",
+     "source_words": "Minimum Required Units for Degree (with GE) 60",
+     "why": "S690 (worker piles), census lever 5. Glendale's program pages print 'Minimum Required Units for Degree (with GE) 60' beside the major's own 'Minimum/Maximum Required Units/Hours for Major' (02547, Architectural Drafting & Design A.S.: major 33, degree 60). The 60 counts the major, general education and electives: a floor the electives make up, as at Redwoods, Cerritos and Orange Coast. The free reconcile touched 57 records: the 15 that passed on main still pass, 30 of the lever's 64 now pass (28 with the major's own arithmetic equal on main, 02602 and 02603 with a short high end under Sam's ruling of 2026-11-17), 12 still fail, none goes from pass to fail."
     }
    ]
   },
@@ -1280,6 +1352,12 @@
   },
   "Berkeley City College": {
    "why": "S639 harvest side session, 2026-11-12. Berkeley City College passed 35 of 89 live rows. 14 local A.A. and A.S. degrees read unequal against the degree's total: each page prints one combined line under the major, as the capture reads it, 'Major Requirements 30 / General Education and Electives 30 / Total Units 60' (American Sign Language A.A. 01101; Fundamentals of Data Science A.S. 45941 prints 'General Education and Elective Units 20-24'; college page read 43138963119, kb/college_reads/berkeley_city_ge_pages.json), and the reading kept no general education figure, since the line is general education and electives together. The catalog's own Associate Degree Requirements tab (node 41811, college page read 43140339800, kb/college_reads/berkeley_city_ge_guides.json) gives both missing words for a local degree: 'If you are a candidate for the Associate degree (AA or AS), you must complete at least 60 units which include courses in a major, general education, and electives, as necessary. You must complete at least 18 units in general education', and 'Note: When the units from general education and the major do not total 60 units, you must complete any degree-applicable course(s), referred to as electives, until you obtain the total of 60 units.' So two steps, on local degrees only: ge_units 18 and electives_fill_degree, keyed on the combined line. The combined figure itself is never read as general education. The electives step runs first and only on a record with no general education figure, so a record the reading gave one keeps it and takes neither step. 16645 (Multimedia Arts - Animation and Game Design A.A.) holds the combined line's 21 as its general education units, by its own note; a curator should read that figure. Reconcile run 43141644775 measured 35 to 47 of 89 on fresh text, none that passed fails: 12 of the 14 read equal; 18597's page was not among the fresh capture's (no fresh text, so it stands as filed), and 37936's major and degree now read equal while its outcomes and careers checks fail on the fresh page's text; 09073, 43214 and 46221 take both steps and still fail their own majors. That run also gave 16645 the electives flag, and its filed record is restored, since the entry now holds the electives step off a record with a figure. The 21 transfer degrees wait: the catalog's Cal-GETC tab (node 41802, the same read) prints the pattern's areas with no units and no total, so no figure rests on Berkeley City's own words. Session call, recorded as a decision draft; reversible by deleting this entry.",
+   "statewide_cal_getc": {
+    "evidence": "https://bcc.curriqunet.com/catalog/view//iq/40736/41800/41802 (the catalog's 'California General Education Transfer Curriculum (Cal-GETC)' tab under Transfer Information, list 41800; read with its _getPage, https://bcc.curriqunet.com/Catalog/_getPage?catalogId=10327&id=41802, by college page read run 43140339800, plan kb/college_reads/berkeley_city_ge_guides.json, S639): the tab prints the pattern's areas with no units and no total, as this entry's why records ('the catalog's Cal-GETC tab (node 41802, the same read) prints the pattern's areas with no units and no total, so no figure rests on Berkeley City's own words'). The transfer degrees name Cal-GETC beside 'Total Units 60' and print one combined 'General Education (Cal-GETC) and Elective Courses N' line (English AA-T 31138: 'Major Requirements 22', 'General Education (Cal-GETC) and Elective Courses 38', 'Total Units 60', by its reading's own note), which no GE figure rests on either. So the catalog names Cal-GETC and prints no figure for it, the shape Sam's Sheet 187 card 5 ('Use 34 statewide', 2026-11-13) fills under d-calgetc-34-per-college-evidence-s648. S689, the cheap-piles worker: the 21 transfer degrees S639 left waiting take the statewide 34 through the rule's record, section and sum gates; the reconcile run's fresh text runs the section gates.",
+    "checked": "2026-11-20",
+    "combined_line": "General Education (Cal-GETC) and Elective Courses 38 (English AA-T 31138, between 'Major Requirements 22' and 'Total Units 60'): one figure for general education and electives together, the degree's remainder after the major, read as no Cal-GETC figure only where major plus it is the degree total and it is at least 34 (calgetc_combined)",
+    "hold": {}
+   },
    "awards": "associate",
    "steps": [
     {
@@ -1661,7 +1739,25 @@
      }
     }
    ],
-   "steps": []
+   "steps": [
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {
+      "min": 34,
+      "max": 34
+     },
+     "awards": "transfer",
+     "only_with": [
+      "ge_pattern",
+      "degree_total"
+     ],
+     "pattern": "Cal-?\\s?GETC",
+     "source": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=213",
+     "source_words": "This pattern of general education requires a minimum of 34 semester units to be completed.",
+     "why": "S691 (worker piles2), lever 2 (ge_units_steps): the 2026-27 catalog's Cal-GETC Certificate of Achievement page (PDF p.213) prints 'This pattern of general education requires a minimum of 34 semester units to be completed' and 'Students must complete a minimum of 34 units, which are distributed among six subject areas' (college-page-read run 44883047940). The three transfer degrees naming Cal-GETC with no units (32080, 33652, 46300) take it, only where the record names its pattern and degree total (d-calgetc-34-per-college-evidence-s648). Reversible by deleting this step."
+    }
+   ]
   },
   "Crafton Hills College": {
    "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints SOCI n where the state's Program Course File lists SOC n, the same number and title in every case kb/_prefix_alias_census.py could title (SOCI for SOC, 4 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
@@ -1886,6 +1982,68 @@
      "why": "S672 SkyWren, 2026-11-17: Music Performance certificate 38628 read 11.5 against 17.5 because the page prints 'Take MUS-39 three times over three semesters.' and the row 'MUS-39 \u00b7 Applied Music I \u00b7 3.00' three times under 'Units: 9.50' (college page read 44045355408), and the reading keeps one row. With MUS-39 three times the required list sums to 9.5 and the blocks to the page's 'Total: 17.50'."
     }
    ]
+  },
+  "Santa Monica College": {
+   "why": "S691 (worker piles2), the harvest lane's NEXT (11), Santa Monica's reconcile_steps lever: the records pinned here name no total because the reader handed them the page after their heading, and the heading page prints the program's total as 'Area of Emphasis: (N units)'. No step: the pins alone. Reversible by deleting this entry.",
+   "steps": [],
+   "pdf_pages": {
+    "03256": {
+     "page": 82,
+     "words": "Accounting, Associate Degree",
+     "evidence": "Accounting A.S. 03256: main files it from PDF p.83 (source_url #page=83, capture run 39567439681), and its notes say the section heading prints on the page before. College-page-read run 44883047940 prints 'Accounting, Associate Degree' on PDF p.82, with the section's 'Area of Emphasis' total under it."
+    },
+    "03272": {
+     "page": 171,
+     "words": "Music, Associate Degree",
+     "evidence": "Music A.A. 03272: main files it from PDF p.172 (source_url #page=172, capture run 39567439681), and its notes say the section heading prints on the page before. College-page-read run 44883047940 prints 'Music, Associate Degree' on PDF p.171, with the section's 'Area of Emphasis' total under it."
+    },
+    "03274": {
+     "page": 123,
+     "words": "Dance, Associate Degree",
+     "evidence": "Dance A.A. 03274: main files it from PDF p.124 (source_url #page=124, capture run 39567439681), and its notes say the section heading prints on the page before. College-page-read run 44881390798 prints 'Dance, Associate Degree' on PDF p.123, with the section's 'Area of Emphasis' total under it."
+    },
+    "08970": {
+     "page": 115,
+     "words": "Computer Programming, Associate Degree",
+     "evidence": "Computer Programming A.S. 08970: main files it from PDF p.116 (source_url #page=116, capture run 39567439681), and its notes say the section heading prints on the page before. College-page-read run 44881390798 prints 'Computer Programming, Associate Degree' on PDF p.115, with the section's 'Area of Emphasis' total under it."
+    },
+    "21007": {
+     "page": 115,
+     "words": "Computer Programming, Associate Degree",
+     "evidence": "Computer Programming certificate 21007: main files it from PDF p.116 (source_url #page=116, capture run 39567439681), and its notes say the section heading prints on the page before. College-page-read run 44881390798 prints 'Computer Programming, Associate Degree' on PDF p.115, with the section's 'Area of Emphasis' total under it."
+    },
+    "19299": {
+     "page": 142,
+     "words": "Ethnic Studies, Associate Degree or",
+     "evidence": "Ethnic Studies certificate 19299: main files it from PDF p.143 (source_url #page=143, capture run 39567439681), and its notes say the section heading prints on the page before. College-page-read run 44881390798 prints 'Ethnic Studies, Associate Degree or' on PDF p.142, with the section's 'Area of Emphasis' total under it."
+    },
+    "19300": {
+     "page": 142,
+     "words": "Ethnic Studies, Associate Degree or",
+     "evidence": "Ethnic Studies A.A. 19300: main files it from PDF p.143 (source_url #page=143, capture run 39567439681), and its notes say the section heading prints on the page before. College-page-read run 44881390798 prints 'Ethnic Studies, Associate Degree or' on PDF p.142, with the section's 'Area of Emphasis' total under it."
+    },
+    "30899": {
+     "page": 188,
+     "words": "Public Policy, Associate Degree or",
+     "evidence": "Public Policy A.A. 30899: main files it from PDF p.189 (source_url #page=189, capture run 39567439681), and its notes say the section heading prints on the page before. College-page-read run 44881390798 prints 'Public Policy, Associate Degree or' on PDF p.188, with the section's 'Area of Emphasis' total under it."
+    },
+    "31231": {
+     "page": 151,
+     "words": "Global Studies, Associate Degree or",
+     "evidence": "Global Studies A.A. 31231: main files it from PDF p.152 (source_url #page=152, capture run 39567439681), and its notes say the section heading prints on the page before. College-page-read run 44883047940 prints 'Global Studies, Associate Degree or' on PDF p.151, with the section's 'Area of Emphasis' total under it."
+    },
+    "39651": {
+     "page": 111,
+     "words": "Business Information Worker 2, Associate",
+     "evidence": "Business Information Worker 2 certificate 39651: main files it from PDF p.112 (source_url #page=112, capture run 39567439681), and its notes say the section heading prints on the page before. College-page-read run 44881390798 prints 'Business Information Worker 2, Associate' on PDF p.111, with the section's 'Area of Emphasis' total under it."
+    },
+    "45928": {
+     "page": 136,
+     "words": "English, Associate Degree for Transfer",
+     "evidence": "English AA-T 45928: main files it from PDF p.137 (source_url #page=137, capture run 39567439681), and its notes say the section heading prints on the page before. College-page-read run 44881390798 prints 'English, Associate Degree for Transfer' on PDF p.136, with the section's 'Area of Emphasis' total under it."
+    }
+   },
+   "pdf_pages_why": "S691: each program is read from the page its section opens on, named here with the words it opens on there (college-page-read runs 44881390798 and 44883047940), never found by a pattern over the catalog's text (S650, Cosumnes River). A pin binds only while the catalog prints the words and every title word on that page; otherwise the program gets no fresh text and its filed record stands."
   }
  }
 }

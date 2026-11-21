@@ -31,13 +31,16 @@
    "SPAN120"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/landscape-technology-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/landscape-technology-as-cert-achievement/",
    "title": "Landscape Technology Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "landscape technology associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 22,
@@ -63,13 +66,16 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/stem/biological-sciences/biological-sciences-as/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/stem/biological-sciences/biological-sciences-as/",
    "title": "Biological Sciences Associate in Science | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "biological sciences associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -95,13 +101,16 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business/business-administration-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/business/business/business-administration-as-cert-achievement/",
    "title": "Business Administration Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business administration associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -127,13 +136,16 @@
    "CIS110"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/accounting/accounting-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/business/accounting/accounting-as-cert-achievement/",
    "title": "Accounting Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "accounting associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -168,13 +180,16 @@
    "ECONC2002"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/management-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/business/management-as-cert-achievement/",
    "title": "Management Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "management associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -202,13 +217,16 @@
    "RE250"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/real-estate/real-estate-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/business/real-estate/real-estate-as-cert-achievement/",
    "title": "Real Estate Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "real estate associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -267,13 +285,16 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/health-science/kinesiology/exercise-science-as/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/health-science/kinesiology/exercise-science-as/",
    "title": "Exercise Science Associate in Science | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "exercise science associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 44,
@@ -303,13 +324,16 @@
    "SURV218"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/stem/engineering/civil-engineering-as/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/stem/engineering/civil-engineering-as/",
    "title": "Civil Engineering Associate in Science | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "civil engineering associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -365,13 +389,16 @@
    "AUTO99"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-as-cert-achievement/",
    "title": "Automotive Technology Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "automotive technology associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 40,
@@ -410,13 +437,16 @@
    "SURV240"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/surveying/surveying-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/surveying/surveying-as-cert-achievement/",
    "title": "Surveying Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "surveying associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -428,33 +458,33 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.8,
+  "coverage": 0.6,
   "codes_found": [
-   "CD106",
-   "CD123",
+   "CD126",
    "CD127",
+   "CD128",
    "CD129",
-   "CD130",
    "CD131",
-   "CD132",
-   "CD133",
    "CD134",
    "CD141",
-   "CD153",
+   "CD210",
    "CDEVC1000"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//grossmont/associate-degree-programs-certificates/social-behavioral-sciences/child-development-master-teacher-as-cert-achievement/",
-   "title": "Child Development Master Teacher Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/child-development/early-childhood-intervention-certificate-specialization/",
+   "title": "Early Childhood Intervention Certificate of Specialization | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
-    "award": 1,
-    "title": 0.0
+    "award": 0,
+    "title": 0.0,
+    "section": "as",
+    "section_line": "preschool children associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
-  "text_chars": 4427
+  "text_chars": 3366
  },
  {
   "control_number": "05062",
@@ -497,13 +527,16 @@
    "SOC114"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/language-communication/english/english-aa-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/language-communication/english/english-aa-cert-achievement/",
    "title": "English Associate in Arts and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "english associate in arts and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 31,
@@ -529,13 +562,16 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/stem/mathematics/mathematics-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/stem/mathematics/mathematics-as-cert-achievement/",
    "title": "Mathematics Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "mathematics associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -578,13 +614,16 @@
    "PARA251"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/paralegal-studies-as/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/business/paralegal-studies-as/",
    "title": "Paralegal Studies Associate in Science | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "paralegal studies associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 27,
@@ -615,13 +654,16 @@
    "SPAN120"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/environmental-health-safety-management/environmental-management-as/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/environmental-health-safety-management/environmental-management-as/",
    "title": "Environmental Management Associate in Science | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "environmental management associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -653,13 +695,16 @@
    "SPAN120"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/golf-course-sports-turf-management-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/golf-course-sports-turf-management-as-cert-achievement/",
    "title": "Golf Course and Sports Turf Management Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "golf course and sports turf management associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -691,13 +736,16 @@
    "SPAN120"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/irrigation-technology-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/irrigation-technology-as-cert-achievement/",
    "title": "Irrigation Technology Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "irrigation technology associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -729,13 +777,16 @@
    "SPAN120"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/nursery-technology-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/nursery-technology-as-cert-achievement/",
    "title": "Nursery Technology Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "nursery technology associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -767,13 +818,16 @@
    "OH290"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/floral-design-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/floral-design-as-cert-achievement/",
    "title": "Floral Design Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "floral design associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -811,13 +865,16 @@
    "BUS176"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business-office-technology/business-office-technology-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/business/business-office-technology/business-office-technology-as-cert-achievement/",
    "title": "Business Office Technology Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business office technology associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 22,
@@ -842,13 +899,16 @@
    "BUS176"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/accounting/bookkeeping-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/business/accounting/bookkeeping-cert-achievement/",
    "title": "Bookkeeping Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "bookkeeping certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -873,13 +933,16 @@
    "RE201"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/real-estate/brokers-license-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/business/real-estate/brokers-license-cert-achievement/",
    "title": "Broker's License Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "broker's license certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -935,13 +998,16 @@
    "AUTO215"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-ford-asset-as/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-ford-asset-as/",
    "title": "Automotive Technology – Ford ASSET Associate in Science | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "automotive technology – ford asset associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 40,
@@ -975,13 +1041,16 @@
    "SPAN120"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/environmental-health-safety-management/occupational-safety-health-management-as/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/environmental-health-safety-management/occupational-safety-health-management-as/",
    "title": "Occupational Safety and Health (OSH) Management Associate in Science | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "occupational safety and health (osh) management associate in science",
+    "section_fit": 0.8
    }
   },
   "listed": 19,
@@ -1006,13 +1075,16 @@
    "PHYC203"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/stem/chemistry-as/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/stem/chemistry-as/",
    "title": "Chemistry Associate in Science | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "chemistry associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -1044,13 +1116,16 @@
    "BUS176"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business/entrepreneurship-small-business-management-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/business/business/entrepreneurship-small-business-management-as-cert-achievement/",
    "title": "Entrepreneurship-Small Business Management Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "entrepreneurship-​small business management associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -1085,13 +1160,16 @@
    "GD230"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/visual-performing-arts/graphic-design/graphic-design-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/visual-performing-arts/graphic-design/graphic-design-as-cert-achievement/",
    "title": "Graphic Design Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "graphic design associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -1148,13 +1226,16 @@
    "THTR110"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/elementary-education/elementary-education-aa/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/elementary-education/elementary-education-aa/",
    "title": "Elementary Education Associate in Arts | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "elementary education associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 42,
@@ -1186,13 +1267,16 @@
    "ARTHC1200"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/visual-performing-arts/art/art-drawing-painting-printmaking-aa/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/visual-performing-arts/art/art-drawing-painting-printmaking-aa/",
    "title": "Art–Drawing, Painting, and Printmaking Associate in Arts | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "art–drawing, painting, and printmaking associate in arts",
+    "section_fit": 0.75
    }
   },
   "listed": 25,
@@ -1216,13 +1300,16 @@
    "PHYC203"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/stem/physics/physics-as/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/stem/physics/physics-as/",
    "title": "Physics Associate in Science | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "physics associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -1271,13 +1358,16 @@
    "POSC166"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/culture-people-ideas/history/history-aa/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/culture-people-ideas/history/history-aa/",
    "title": "History Associate in Arts | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "history associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 33,
@@ -1289,31 +1379,32 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.625,
+  "coverage": 0.5,
   "codes_found": [
-   "CD106",
-   "CD123",
+   "CD124",
+   "CD126",
    "CD127",
+   "CD128",
    "CD129",
    "CD131",
-   "CD132",
-   "CD134",
-   "CD141",
-   "CD153",
+   "CD143",
    "CDEVC1000"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//grossmont/associate-degree-programs-certificates/social-behavioral-sciences/child-development-master-teacher-as-cert-achievement/",
-   "title": "Child Development Master Teacher Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/child-development/administration-certificate-specialization/",
+   "title": "Administration Certificate of Specialization | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
-    "award": 1,
-    "title": 0.0
+    "award": 0,
+    "title": 0.0,
+    "section": "as",
+    "section_line": "infants and toddlers associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
-  "text_chars": 4427
+  "text_chars": 3345
  },
  {
   "control_number": "10421",
@@ -1360,13 +1451,16 @@
    "AUTO286T"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-engine-performance-smog-technician-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-engine-performance-smog-technician-as-cert-achievement/",
    "title": "Automotive Technology Engine Performance and Smog Technician Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive technology engine performance and smog technician associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 35,
@@ -1407,13 +1501,16 @@
    "AUTO264T"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-drivetrain-specialist-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-drivetrain-specialist-as-cert-achievement/",
    "title": "Automotive Technology Drivetrain Specialist Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive technology drivetrain specialist associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
@@ -1454,13 +1551,16 @@
    "AUTO212"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-chassis-specialist-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-chassis-specialist-as-cert-achievement/",
    "title": "Automotive Technology Chassis Specialist Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive technology associate in science and certificate of achievement automotive technology chassis specialist associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
@@ -1516,13 +1616,16 @@
    "AUTO214"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-general-motors-asep-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-general-motors-asep-as-cert-achievement/",
    "title": "Automotive Technology – General Motors ASEP Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "automotive technology – general motors asep associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 40,
@@ -1560,13 +1663,16 @@
    "GD230"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/visual-performing-arts/art/art-visual-communication-design-aa/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/visual-performing-arts/art/art-visual-communication-design-aa/",
    "title": "Art–Visual Communication Design Associate in Arts | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "art–visual communication design associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 22,
@@ -1602,13 +1708,16 @@
    "SPAN120"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/arboriculture-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/arboriculture-as-cert-achievement/",
    "title": "Arboriculture Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "arboriculture associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -1641,13 +1750,16 @@
    "OH290"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/landscape-architecture-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/landscape-architecture-as-cert-achievement/",
    "title": "Landscape Architecture Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "landscape architecture associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -1681,13 +1793,16 @@
    "GD222"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/computer-information-science/web-development-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/computer-information-science/web-development-as-cert-achievement/",
    "title": "Web Development Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "web development associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -1713,13 +1828,16 @@
    "SPAN251"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/language-communication/spanish/spanish-asa-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/language-communication/spanish/spanish-asa-cert-achievement/",
    "title": "Spanish Associate in Arts and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "spanish associate in arts and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -1765,13 +1883,16 @@
    "BUS128"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business-office-technology/executive-assistant-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/business/business-office-technology/executive-assistant-as-cert-achievement/",
    "title": "Executive Assistant Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business office technology associate in science and certificate of achievement executive assistant associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 30,
@@ -1822,13 +1943,16 @@
    "BUS128"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business-office-technology/administrative-assistant-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/business/business-office-technology/administrative-assistant-as-cert-achievement/",
    "title": "Administrative Assistant Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "administrative assistant associate in science and certificate of achievement business office technology associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 35,
@@ -1869,13 +1993,16 @@
    "CWS290"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/water-treatment-plant-operations-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/water-treatment-plant-operations-as-cert-achievement/",
    "title": "Water Treatment Plant Operations Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "water treatment plant operations associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
@@ -1917,13 +2044,16 @@
    "CWS290"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/wastewater-treatment-operations-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/wastewater-treatment-operations-as-cert-achievement/",
    "title": "Wastewater Treatment Operations Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "wastewater treatment operations associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 26,
@@ -1951,13 +2081,16 @@
    "ECONC2002"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business/business-general-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/business/business/business-general-as-cert-achievement/",
    "title": "Business–General Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business–general associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -2000,13 +2133,16 @@
    "CWS290"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/backflow-cross-connection-control-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/backflow-cross-connection-control-as-cert-achievement/",
    "title": "Backflow & Cross-Connection Control Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "backflow &​ cross-​connection control associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -2047,13 +2183,16 @@
    "CWS290"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/water-distribution-operations-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/water-distribution-operations-as-cert-achievement/",
    "title": "Water Distribution Operations Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "water distribution operations associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
@@ -2094,13 +2233,16 @@
    "CWS290"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/wastewater-collection-systems-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/wastewater-collection-systems-as-cert-achievement/",
    "title": "Wastewater Collection Systems Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "wastewater collection systems associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
@@ -2126,13 +2268,16 @@
    "EHSM250"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/environmental-health-safety-management/occupational-safety-health-technician-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/environmental-health-safety-management/occupational-safety-health-technician-cert-achievement/",
    "title": "Occupational Safety and Health (OSH) Technician Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "laboratory occupational safety and health technician certificate of achievement",
+    "section_fit": 0.8
    }
   },
   "listed": 10,
@@ -2154,13 +2299,16 @@
    "EHSM250"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/environmental-health-safety-management/environmental-technician-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/environmental-health-safety-management/environmental-technician-cert-achievement/",
    "title": "Environmental Technician Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "environmental technician certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -2211,13 +2359,16 @@
    "MUS295A"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/visual-performing-arts/music/music-education-aa/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/visual-performing-arts/music/music-education-aa/",
    "title": "Music Education Associate in Arts | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "music education associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 35,
@@ -2249,13 +2400,16 @@
    "PHYC202"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/stem/engineering/electrical-computer-engineering-as/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/stem/engineering/electrical-computer-engineering-as/",
    "title": "Electrical and Computer Engineering Associate in Science | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "electrical and computer engineering associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -2284,13 +2438,16 @@
    "PHYC202"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/stem/engineering/mechanical-aerospace-engineering-as/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/stem/engineering/mechanical-aerospace-engineering-as/",
    "title": "Mechanical and Aerospace Engineering Associate in Science | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "mechanical and aerospace engineering associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -2313,13 +2470,16 @@
    "COMMC1004"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/language-communication/communication/communication-aa/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/language-communication/communication/communication-aa/",
    "title": "Communication Associate in Arts | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "communication associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -2345,13 +2505,16 @@
    "SW110"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/social-work/social-work-aa/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/social-work/social-work-aa/",
    "title": "Social Work Associate in Arts | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "social work associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -2362,189 +2525,12 @@
   "title": "CSU General Education Breadth",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 0.839,
-  "codes_found": [
-   "ANTH120",
-   "ANTH140",
-   "ANTHC1001",
-   "ARBC120",
-   "ARBC121",
-   "ARBC122",
-   "ARBC123",
-   "ARBC220",
-   "ARBC221",
-   "ARBC250",
-   "ARBC251",
-   "ART100",
-   "ART120",
-   "ART143",
-   "ART145",
-   "ART146",
-   "ARTHC1100",
-   "ARTHC1200",
-   "ASL120",
-   "ASL121",
-   "ASL140",
-   "ASL220",
-   "ASL221",
-   "ASTRC1001",
-   "ASTRC1001L",
-   "BIO112",
-   "BIO141",
-   "BIO141L",
-   "BIO152",
-   "BIO230",
-   "BIO240",
-   "CD115",
-   "CD131",
-   "CD145",
-   "CDEVC1000",
-   "CHEM102",
-   "CHEM120",
-   "CHEM141",
-   "CHEM142",
-   "CHEM231",
-   "CHEM232",
-   "COMM110",
-   "COMM124",
-   "COMM137",
-   "COMM145",
-   "COMMC1000",
-   "COMMC1004",
-   "COUN120",
-   "ECON110",
-   "ECONC2001",
-   "ECONC2002",
-   "ENGL201",
-   "ENGL217",
-   "ENGL221",
-   "ENGL222",
-   "ENGL231",
-   "ENGL232",
-   "ENGL236",
-   "ENGL238",
-   "ENGL271",
-   "ENGLC1000",
-   "ENGLC1001",
-   "ENGLC1002",
-   "ETHN107",
-   "ETHN114",
-   "ETHN130",
-   "ETHN131",
-   "ETHN236",
-   "ETHN238",
-   "GEOG106",
-   "GEOG120",
-   "GEOG121",
-   "GEOG130",
-   "GEOL104",
-   "GEOL110",
-   "GEOL111",
-   "HED120",
-   "HED201",
-   "HIST100",
-   "HIST101",
-   "HIST105",
-   "HIST106",
-   "HIST107",
-   "HIST114",
-   "HIST115",
-   "HIST118",
-   "HIST119",
-   "HIST122",
-   "HIST123",
-   "HIST124",
-   "HIST130",
-   "HIST131",
-   "HIST148",
-   "HIST180",
-   "HIST181",
-   "HISTC1001",
-   "HISTC1002",
-   "HUM110",
-   "HUM140",
-   "MATH120",
-   "MATH125",
-   "MATH126",
-   "MATH170",
-   "MATH175",
-   "MATH176",
-   "MATH178",
-   "MATH245",
-   "MATH281",
-   "MATH284",
-   "MATH285",
-   "MATHC2210",
-   "MATHC2220",
-   "MUS110",
-   "MUS111",
-   "MUS115",
-   "MUS116",
-   "MUS117",
-   "MUS123",
-   "NUTR155",
-   "NUTR158",
-   "NUTR255",
-   "OCEA112",
-   "OCEA113",
-   "PHIL110",
-   "PHIL115",
-   "PHIL117",
-   "PHIL125",
-   "PHIL130",
-   "PHIL140",
-   "PHYC110",
-   "PHYC130",
-   "PHYC131",
-   "PHYC201",
-   "PHYC202",
-   "PHYC203",
-   "POLSC1000",
-   "POSC120",
-   "POSC124",
-   "POSC130",
-   "POSC140",
-   "PSY125",
-   "PSY134",
-   "PSY138",
-   "PSY140",
-   "PSY150",
-   "PSY170",
-   "PSY211",
-   "PSY215",
-   "PSY220",
-   "PSYCC1000",
-   "RELG120",
-   "RELG170",
-   "SOC125",
-   "SOC130",
-   "SOC140",
-   "SOC150",
-   "SOCIC1000",
-   "SPAN120",
-   "SPAN121",
-   "SPAN141",
-   "SPAN145",
-   "SPAN220",
-   "SPAN221",
-   "SPAN250",
-   "SPAN251",
-   "STATC1000",
-   "THTR110"
-  ],
-  "source": {
-   "url": "https://catalog.gcccd.edu//grossmont/general-education-transfer/",
-   "title": "Degree Requirements, General Education & Transfer Information | Grossmont-Cuyamaca Community College District Academic Catalog",
-   "h1": "Academic Catalog",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.5
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 199,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "18335",
@@ -2613,13 +2599,16 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/general-studies-business-technology/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/business/general-studies-business-technology/",
    "title": "General Studies: Business and Technology | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "general studies: business and technology management associate in science and certificate of achievement",
+    "section_fit": 0.8
    }
   },
   "listed": 45,
@@ -2684,13 +2673,16 @@
    "SPAN251"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/language-communication/general-studies-communication-language-arts/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/language-communication/general-studies-communication-language-arts/",
    "title": "General Studies: Communication and Language Arts | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 49,
@@ -2816,13 +2808,16 @@
    "THTR110"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/culture-people-ideas/general-studies-humanities-fine-arts/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/culture-people-ideas/general-studies-humanities-fine-arts/",
    "title": "General Studies: Humanities and Fine Arts | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "ethnic studies associate in arts general studies: humanities and fine arts",
+    "section_fit": 0.833
    }
   },
   "listed": 110,
@@ -2911,13 +2906,16 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/stem/general-studies-science-mathematics/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/stem/general-studies-science-mathematics/",
    "title": "General Studies: Science and Mathematics | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 74,
@@ -2929,30 +2927,42 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.67,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH120",
    "ANTH140",
+   "ARBC145",
+   "BIO134",
    "CD115",
    "CD131",
    "CD145",
    "CDEVC1000",
+   "COMM110",
    "COMM124",
    "COUN120",
+   "COUN140",
    "ECON110",
    "ECONC2001",
    "ECONC2002",
+   "ES121",
    "ETHN107",
    "ETHN114",
+   "ETHN120",
    "ETHN128",
    "ETHN130",
    "ETHN131",
    "ETHN145",
    "GEND116",
+   "GEND117",
+   "GEND119",
    "GEOG106",
+   "GEOG122",
    "GEOG130",
    "HED120",
    "HED201",
+   "HED203",
+   "HED204",
+   "HED251",
    "HIST100",
    "HIST101",
    "HIST105",
@@ -2963,13 +2973,24 @@
    "HIST122",
    "HIST123",
    "HIST124",
+   "HIST128",
+   "HIST129",
    "HIST130",
    "HIST131",
    "HIST148",
    "HIST180",
    "HIST181",
+   "HIST275",
+   "HIST276",
+   "HIST277",
    "HISTC1001",
    "HISTC1002",
+   "KUMY128",
+   "KUMY129",
+   "KUMY150",
+   "KUMY160",
+   "KUMY166",
+   "KUMY170",
    "NUTR158",
    "POLSC1000",
    "POSC120",
@@ -2980,6 +3001,11 @@
    "POSC147",
    "POSC148",
    "POSC150",
+   "POSC165",
+   "POSC166",
+   "POSC170",
+   "PSY119",
+   "PSY121",
    "PSY125",
    "PSY132",
    "PSY134",
@@ -2987,28 +3013,35 @@
    "PSY140",
    "PSY150",
    "PSY170",
+   "PSY201",
    "PSY211",
    "PSY220",
    "PSYCC1000",
+   "SOC114",
    "SOC125",
    "SOC130",
+   "SOC138",
    "SOC140",
    "SOC150",
    "SOCIC1000",
-   "SPAN145"
+   "SPAN145",
+   "SW170"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//grossmont/associate-degree-programs-certificates/social-behavioral-sciences/university-studies-social-behavioral-sciences-aa/",
-   "title": "University Studies - Social and Behavioral Sciences (AA) | Grossmont-Cuyamaca Community College District Academic Catalog",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/general-studies-social-behavioral-sciences/",
+   "title": "General Studies: Social and Behavioral Sciences | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
-    "award": 1,
-    "title": 0.8
+    "award": 0,
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "ethnic studies associate in arts general studies: social and behavioral sciences",
+    "section_fit": 0.833
    }
   },
   "listed": 97,
-  "text_chars": 8232
+  "text_chars": 7047
  },
  {
   "control_number": "18632",
@@ -3049,13 +3082,16 @@
    "NUTR255"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/health-science/general-studies-lifelong-health-well-being-self-development/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/health-science/general-studies-lifelong-health-well-being-self-development/",
    "title": "General Studies: Lifelong Health, Well-Being and Self-Development | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 29,
@@ -3067,29 +3103,36 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.667,
+  "coverage": 1.0,
   "codes_found": [
+   "BUS110",
    "BUS120",
    "BUS121",
    "BUS125",
    "BUS128",
+   "CIS110",
+   "ECON110",
    "ECONC2001",
    "ECONC2002",
    "MATH178",
+   "MATHC2210",
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//grossmont/associate-degree-programs-certificates/business/business-administration-as-cert-achievement/",
-   "title": "Business Administration Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/business/university-studies-business-economics/",
+   "title": "University Studies: Business and Economics | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
-    "award": 1,
-    "title": 0.25
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
-  "text_chars": 3333
+  "text_chars": 3098
  },
  {
   "control_number": "18634",
@@ -3097,18 +3140,25 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.63,
+  "coverage": 1.0,
   "codes_found": [
+   "ARAM120",
+   "ARAM121",
+   "ARAM220",
    "ARBC120",
    "ARBC121",
    "ARBC122",
    "ARBC123",
    "ARBC220",
    "ARBC221",
+   "ARBC254",
+   "ARBC256",
    "ASL120",
    "ASL121",
    "ASL220",
    "ASL221",
+   "BUS128",
+   "COMM110",
    "COMM123",
    "COMM124",
    "COMM137",
@@ -3116,12 +3166,22 @@
    "COMMC1000",
    "COMMC1004",
    "ENGL126",
+   "ENGL201",
+   "ENGL202",
    "ENGL221",
    "ENGL222",
    "ENGL231",
    "ENGL232",
+   "ENGL236",
+   "ENGL238",
+   "ENGL271",
    "ENGLC1001",
    "ENGLC1002",
+   "ETHN236",
+   "ETHN238",
+   "KUMY120",
+   "KUMY121",
+   "KUMY220",
    "SPAN120",
    "SPAN121",
    "SPAN220",
@@ -3130,17 +3190,20 @@
    "SPAN251"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//grossmont/associate-degree-programs-certificates/language-communication/university-studies-communication-language-arts-aa/",
-   "title": "University Studies - Communication and Language Arts (AA) | Grossmont-Cuyamaca Community College District Academic Catalog",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/language-communication/university-studies-communication-language-arts/",
+   "title": "University Studies: Communication and Language Arts | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
-    "award": 1,
-    "title": 1.0
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 46,
-  "text_chars": 5548
+  "text_chars": 4456
  },
  {
   "control_number": "18635",
@@ -3148,14 +3211,21 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.698,
+  "coverage": 1.0,
   "codes_found": [
+   "ARAM120",
+   "ARAM121",
+   "ARAM220",
    "ARBC120",
    "ARBC121",
    "ARBC122",
    "ARBC123",
+   "ARBC130",
+   "ARBC145",
    "ARBC220",
    "ARBC221",
+   "ARBC254",
+   "ARBC256",
    "ART100",
    "ART104",
    "ART119",
@@ -3167,8 +3237,13 @@
    "ART143",
    "ART145",
    "ART146",
+   "ART151",
+   "ART184",
    "ART210",
    "ART211",
+   "ART241",
+   "ART242",
+   "ART243",
    "ARTHC1100",
    "ARTHC1200",
    "ASL120",
@@ -3177,6 +3252,7 @@
    "ASL220",
    "ASL221",
    "ENGL201",
+   "ENGL202",
    "ENGL217",
    "ENGL221",
    "ENGL222",
@@ -3185,14 +3261,30 @@
    "ENGL236",
    "ENGL238",
    "ENGL271",
+   "ENGLC1002",
    "ETHN236",
    "ETHN238",
    "HIST100",
    "HIST101",
    "HIST105",
    "HIST106",
+   "HIST114",
+   "HIST115",
+   "HIST157",
    "HUM110",
+   "HUM111",
+   "HUM115",
+   "HUM116",
+   "HUM117",
+   "HUM118",
    "HUM140",
+   "HUM155",
+   "KUMY116",
+   "KUMY117",
+   "KUMY118",
+   "KUMY120",
+   "KUMY121",
+   "KUMY220",
    "MUS110",
    "MUS111",
    "MUS115",
@@ -3219,17 +3311,20 @@
    "THTR110"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//grossmont/associate-degree-programs-certificates/humanities/university-studies-humanities-fine-arts-aa/",
-   "title": "University Studies - Humanities and Fine Arts (AA) | Grossmont-Cuyamaca Community College District Academic Catalog",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/culture-people-ideas/university-studies-humanities-fine-arts/",
+   "title": "University Studies: Humanities and Fine Arts | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
-    "award": 1,
-    "title": 1.0
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 96,
-  "text_chars": 13222
+  "text_chars": 6270
  },
  {
   "control_number": "18636",
@@ -3237,28 +3332,43 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.727,
+  "coverage": 1.0,
   "codes_found": [
    "ANTHC1001",
    "ASTRC1001",
    "ASTRC1001L",
+   "BIO122",
+   "BIO133",
+   "BIO134",
+   "BIO135",
    "BIO140",
    "BIO141",
    "BIO141L",
    "BIO152",
    "BIO230",
    "BIO240",
+   "BIO251",
+   "BIOLC1001",
    "CHEM102",
    "CHEM120",
    "CHEM141",
    "CHEM142",
    "CHEM231",
    "CHEM232",
+   "CS119",
+   "CS119L",
+   "CS181",
+   "CS182",
+   "CS281",
+   "CS282",
    "GEOG120",
    "GEOG121",
    "GEOL104",
    "GEOL110",
    "GEOL111",
+   "KUMY133",
+   "KUMY134",
+   "KUMY135",
    "MATH170",
    "MATH175",
    "MATH176",
@@ -3281,17 +3391,20 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//grossmont/associate-degree-programs-certificates/stem/university-studies-mathematics-natural-science-computer-science-as/",
-   "title": "University Studies - Mathematics and Natural Science and Computer Science (AS) | Grossmont-Cuyamaca Community College District Academic Catalog",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/stem/university-studies-science-mathematics/",
+   "title": "University Studies: Science and Mathematics | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
-    "award": 1,
-    "title": 1.0
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 55,
-  "text_chars": 6437
+  "text_chars": 4839
  },
  {
   "control_number": "18637",
@@ -3299,30 +3412,40 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.696,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH120",
    "ANTH140",
+   "BIO134",
    "CD115",
    "CD131",
    "CD145",
    "CDEVC1000",
+   "COMM110",
    "COMM124",
    "COUN120",
+   "COUN140",
    "ECON110",
    "ECONC2001",
    "ECONC2002",
+   "ES121",
    "ETHN107",
    "ETHN114",
+   "ETHN120",
    "ETHN128",
    "ETHN130",
    "ETHN131",
    "ETHN145",
    "GEND116",
+   "GEND117",
+   "GEND119",
    "GEOG106",
    "GEOG130",
    "HED120",
    "HED201",
+   "HED203",
+   "HED204",
+   "HED251",
    "HIST100",
    "HIST101",
    "HIST105",
@@ -3333,13 +3456,24 @@
    "HIST122",
    "HIST123",
    "HIST124",
+   "HIST128",
+   "HIST129",
    "HIST130",
    "HIST131",
    "HIST148",
    "HIST180",
    "HIST181",
+   "HIST275",
+   "HIST276",
+   "HIST277",
    "HISTC1001",
    "HISTC1002",
+   "KUMY128",
+   "KUMY129",
+   "KUMY150",
+   "KUMY160",
+   "KUMY166",
+   "KUMY170",
    "POLSC1000",
    "POSC120",
    "POSC124",
@@ -3349,6 +3483,10 @@
    "POSC147",
    "POSC148",
    "POSC150",
+   "POSC165",
+   "POSC166",
+   "POSC170",
+   "PSY119",
    "PSY125",
    "PSY132",
    "PSY134",
@@ -3356,28 +3494,34 @@
    "PSY140",
    "PSY150",
    "PSY170",
+   "PSY201",
    "PSY211",
    "PSY220",
    "PSYCC1000",
+   "SOC114",
    "SOC125",
    "SOC130",
+   "SOC138",
    "SOC140",
    "SOC150",
    "SOCIC1000",
    "SPAN145"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//grossmont/associate-degree-programs-certificates/social-behavioral-sciences/university-studies-social-behavioral-sciences-aa/",
-   "title": "University Studies - Social and Behavioral Sciences (AA) | Grossmont-Cuyamaca Community College District Academic Catalog",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/university-studies-social-behavioral-sciences/",
+   "title": "University Studies: Social and Behavioral Sciences | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
-    "award": 1,
-    "title": 0.8
+    "award": 0,
+    "title": 0.8,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 92,
-  "text_chars": 8232
+  "text_chars": 6880
  },
  {
   "control_number": "18779",
@@ -3423,13 +3567,16 @@
    "MUS291"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/visual-performing-arts/music/music-industry-studies-aa/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/visual-performing-arts/music/music-industry-studies-aa/",
    "title": "Music Industry Studies Associate in Arts | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "music industry studies associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 34,
@@ -3464,13 +3611,16 @@
    "SPAN120"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/arboriculture-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/arboriculture-as-cert-achievement/",
    "title": "Arboriculture Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "arboriculture associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -3502,13 +3652,16 @@
    "SPAN120"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/irrigation-technology-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/irrigation-technology-as-cert-achievement/",
    "title": "Irrigation Technology Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "irrigation technology associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -3541,13 +3694,16 @@
    "OH290"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/landscape-architecture-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/landscape-architecture-as-cert-achievement/",
    "title": "Landscape Architecture Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "landscape architecture associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -3585,13 +3741,16 @@
    "SPAN120"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/landscape-technology-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/landscape-technology-as-cert-achievement/",
    "title": "Landscape Technology Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "landscape technology associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 22,
@@ -3623,13 +3782,16 @@
    "OH290"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/floral-design-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/floral-design-as-cert-achievement/",
    "title": "Floral Design Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "floral design associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -3661,13 +3823,16 @@
    "SPAN120"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/nursery-technology-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/nursery-technology-as-cert-achievement/",
    "title": "Nursery Technology Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "nursery technology associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -3699,13 +3864,16 @@
    "SPAN120"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/golf-course-sports-turf-management-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/golf-course-sports-turf-management-as-cert-achievement/",
    "title": "Golf Course and Sports Turf Management Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "golf course and sports turf management associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -3733,13 +3901,16 @@
    "ECONC2002"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business/business-general-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/business/business/business-general-as-cert-achievement/",
    "title": "Business–General Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business–general associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -3765,13 +3936,16 @@
    "CIS110"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/accounting/accounting-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/business/accounting/accounting-as-cert-achievement/",
    "title": "Accounting Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "accounting associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -3797,13 +3971,16 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business/business-administration-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/business/business/business-administration-as-cert-achievement/",
    "title": "Business Administration Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business administration associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -3838,13 +4015,16 @@
    "ECONC2002"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/management-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/business/management-as-cert-achievement/",
    "title": "Management Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "management associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -3876,13 +4056,16 @@
    "BUS176"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business/entrepreneurship-small-business-management-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/business/business/entrepreneurship-small-business-management-as-cert-achievement/",
    "title": "Entrepreneurship-Small Business Management Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "entrepreneurship-​small business management associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -3910,13 +4093,16 @@
    "RE250"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/real-estate/real-estate-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/business/real-estate/real-estate-as-cert-achievement/",
    "title": "Real Estate Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "real estate associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -3954,13 +4140,16 @@
    "BUS176"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business-office-technology/business-office-technology-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/business/business-office-technology/business-office-technology-as-cert-achievement/",
    "title": "Business Office Technology Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business office technology associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 22,
@@ -4011,13 +4200,16 @@
    "BUS128"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business-office-technology/administrative-assistant-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/business/business-office-technology/administrative-assistant-as-cert-achievement/",
    "title": "Administrative Assistant Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "administrative assistant associate in science and certificate of achievement business office technology associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 35,
@@ -4058,13 +4250,16 @@
    "BUS128"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business-office-technology/executive-assistant-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/business/business-office-technology/executive-assistant-as-cert-achievement/",
    "title": "Executive Assistant Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business office technology associate in science and certificate of achievement executive assistant associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 28,
@@ -4098,13 +4293,16 @@
    "GD222"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/computer-information-science/web-development-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/computer-information-science/web-development-as-cert-achievement/",
    "title": "Web Development Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "web development associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -4160,13 +4358,16 @@
    "AUTO99"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-as-cert-achievement/",
    "title": "Automotive Technology Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive technology associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 40,
@@ -4192,13 +4393,16 @@
    "SURV127"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/cadd-technology/cadd-technology-building-design-industry-as-coa/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/cadd-technology/cadd-technology-building-design-industry-as-coa/",
    "title": "CADD Technology: Building Design Industry Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cadd technology: building design industry associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -4227,13 +4431,16 @@
    "SURV127"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/cadd-technology/cadd-technology-manufacturing-industry-as-coa/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/cadd-technology/cadd-technology-manufacturing-industry-as-coa/",
    "title": "CADD Technology: Manufacturing Industry Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cadd technology: manufacturing industry associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -4260,13 +4467,16 @@
    "SURV240"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/surveying/surveying-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/surveying/surveying-as-cert-achievement/",
    "title": "Surveying Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "surveying associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -4297,13 +4507,16 @@
    "CWS290"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/backflow-cross-connection-control-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/backflow-cross-connection-control-as-cert-achievement/",
    "title": "Backflow & Cross-Connection Control Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "backflow &​ cross-​connection control associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -4344,13 +4557,16 @@
    "CWS290"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/wastewater-collection-systems-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/wastewater-collection-systems-as-cert-achievement/",
    "title": "Wastewater Collection Systems Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "wastewater collection systems associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
@@ -4392,13 +4608,16 @@
    "CWS290"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/wastewater-treatment-operations-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/wastewater-treatment-operations-as-cert-achievement/",
    "title": "Wastewater Treatment Operations Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "wastewater treatment operations associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 26,
@@ -4439,13 +4658,16 @@
    "CWS290"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/water-distribution-operations-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/water-distribution-operations-as-cert-achievement/",
    "title": "Water Distribution Operations Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "water distribution operations associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
@@ -4486,13 +4708,16 @@
    "CWS290"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/water-treatment-plant-operations-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/water-treatment-plant-operations-as-cert-achievement/",
    "title": "Water Treatment Plant Operations Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "water treatment plant operations associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
@@ -4527,13 +4752,16 @@
    "GD230"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/visual-performing-arts/graphic-design/graphic-design-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/visual-performing-arts/graphic-design/graphic-design-as-cert-achievement/",
    "title": "Graphic Design Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "graphic design associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -4559,13 +4787,16 @@
    "SPAN251"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/language-communication/spanish/spanish-asa-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/language-communication/spanish/spanish-asa-cert-achievement/",
    "title": "Spanish Associate in Arts and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "spanish associate in arts and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -4596,13 +4827,16 @@
    "CDEVC1000"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/child-development/preschool-children-as-coa/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/child-development/preschool-children-as-coa/",
    "title": "Preschool Children Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "preschool children associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -4634,13 +4868,16 @@
    "CDEVC1000"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/child-development/infants-toddlers-as-coa/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/child-development/infants-toddlers-as-coa/",
    "title": "Infants and Toddlers Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "infants and toddlers associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -4687,13 +4924,16 @@
    "SOC114"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/language-communication/english/english-aa-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/language-communication/english/english-aa-cert-achievement/",
    "title": "English Associate in Arts and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "english associate in arts and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 31,
@@ -4719,13 +4959,16 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/stem/mathematics/mathematics-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/stem/mathematics/mathematics-as-cert-achievement/",
    "title": "Mathematics Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "mathematics associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -4759,13 +5002,16 @@
    "OH290"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/sustainable-urban-landscapes-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/sustainable-urban-landscapes-as-cert-achievement/",
    "title": "Sustainable Urban Landscapes Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "sustainable urban landscapes associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -4799,13 +5045,16 @@
    "OH290"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/sustainable-urban-landscapes-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/sustainable-urban-landscapes-as-cert-achievement/",
    "title": "Sustainable Urban Landscapes Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "sustainable urban landscapes associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -4835,13 +5084,16 @@
    "PSYCC1000"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/psychology/psychology-transfer-aa-t/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/psychology/psychology-transfer-aa-t/",
    "title": "Psychology for Transfer (AA-T) | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "psychology› psychology for transfer (aa-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 14,
@@ -4870,13 +5122,16 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/sociology-transfer-aa-t/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/sociology-transfer-aa-t/",
    "title": "Sociology for Transfer (AA-T) | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "sociology for transfer (aa-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 13,
@@ -4899,13 +5154,16 @@
    "ENGLC1001"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/language-communication/communication/communication-studies-2-transfer-aa-t/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/language-communication/communication/communication-studies-2-transfer-aa-t/",
    "title": "Communication Studies 2.0 for Transfer (AA-T) | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication› communication studies 2.0 for transfer (aa-t)",
+    "section_fit": 0.667
    }
   },
   "listed": 11,
@@ -4942,13 +5200,16 @@
    "OH290"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/water-resources-management-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/water-resources-management-as-cert-achievement/",
    "title": "Water Resources Management Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "water resources management associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -4972,13 +5233,16 @@
    "ASL221"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/language-communication/american-sign-language/american-sign-language-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/language-communication/american-sign-language/american-sign-language-cert-achievement/",
    "title": "American Sign Language Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "american sign language associate in arts american sign language certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -5015,13 +5279,16 @@
    "OH290"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/water-resources-management-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/water-resources-management-as-cert-achievement/",
    "title": "Water Resources Management Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "water resources management associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -5056,13 +5323,16 @@
    "CS119L"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/computer-information-science/enterprise-networking-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/computer-information-science/enterprise-networking-as-cert-achievement/",
    "title": "Networking, Security and System Administration - Enterprise Networking Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "networking, security and system administration -​ enterprise networking associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -5097,13 +5367,16 @@
    "CS119L"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/computer-information-science/enterprise-networking-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/computer-information-science/enterprise-networking-as-cert-achievement/",
    "title": "Networking, Security and System Administration - Enterprise Networking Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "networking, security and system administration -​ enterprise networking associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -5151,13 +5424,16 @@
    "POSC166"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/culture-people-ideas/history/history-aa-t/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/culture-people-ideas/history/history-aa-t/",
    "title": "History for Transfer (AA-T) | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "history› history for transfer (aa-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 32,
@@ -5186,13 +5462,16 @@
    "POSC180"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/political-science-transfer-aa-t/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/political-science-transfer-aa-t/",
    "title": "Political Science for Transfer (AA-T) | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "political science for transfer (aa-t)",
+    "section_fit": 0.667
    }
   },
   "listed": 13,
@@ -5223,13 +5502,16 @@
    "ARTHC1200"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/visual-performing-arts/art/studio-arts-transfer-aa-t/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/visual-performing-arts/art/studio-arts-transfer-aa-t/",
    "title": "Studio Arts for Transfer (AA-T) | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "studio arts for transfer (aa-t)",
+    "section_fit": 0.667
    }
   },
   "listed": 15,
@@ -5267,13 +5549,16 @@
    "SPAN221"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/language-communication/english/english-transfer-aa-t/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/language-communication/english/english-transfer-aa-t/",
    "title": "English for Transfer (AA-T) | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "english› english for transfer (aa-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 23,
@@ -5297,13 +5582,16 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business/business-administration-2-transfer-as-t/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/business/business/business-administration-2-transfer-as-t/",
    "title": "Business Administration 2.0 for Transfer (AS-T) | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business› business administration 2.0 for transfer (as-t)",
+    "section_fit": 0.667
    }
   },
   "listed": 9,
@@ -5328,13 +5616,16 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/stem/mathematics/mathematics-transfer-as-t/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/stem/mathematics/mathematics-transfer-as-t/",
    "title": "Mathematics for Transfer (AS-T) | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "mathematics› mathematics for transfer (as-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 9,
@@ -5356,17 +5647,20 @@
    "PHYC203"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/stem/physics/physics-2-transfer-as-t/",
-   "title": "Physics 2.0 for Transfer (AS-T) | Grossmont-Cuyamaca Community College District Academic Catalog",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/stem/physics/physics-transfer-as-t/",
+   "title": "Physics for Transfer (AS-T) | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "physics› physics for transfer (as-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 6,
-  "text_chars": 3512
+  "text_chars": 3106
  },
  {
   "control_number": "32384",
@@ -5395,13 +5689,16 @@
    "MUS291"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/visual-performing-arts/music/music-transfer-aa-t/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/visual-performing-arts/music/music-transfer-aa-t/",
    "title": "Music for Transfer (AA-T) | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "music› music for transfer (aa-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 17,
@@ -5425,13 +5722,16 @@
    "CDEVC1000"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/child-development/early-childhood-education-transfer-as-t/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/child-development/early-childhood-education-transfer-as-t/",
    "title": "Early Childhood Education for Transfer (AS-T) | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "early childhood education for transfer (as-t)",
+    "section_fit": 0.75
    }
   },
   "listed": 8,
@@ -5456,13 +5756,16 @@
    "RELG120"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/culture-people-ideas/philosophy-transfer-aa-t/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/culture-people-ideas/philosophy-transfer-aa-t/",
    "title": "Philosophy for Transfer (AA-T) | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "philosophy for transfer (aa-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 9,
@@ -5498,13 +5801,16 @@
    "THTR110"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/elementary-education/elementary-teacher-education-transfer-aa-t/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/elementary-education/elementary-teacher-education-transfer-aa-t/",
    "title": "Elementary Teacher Education for Transfer (AA-T) | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "elementary education› elementary teacher education for transfer (aa-t)",
+    "section_fit": 0.75
    }
   },
   "listed": 20,
@@ -5531,13 +5837,16 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/health-science/biological-sciences-pre-allied-health-as/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/health-science/biological-sciences-pre-allied-health-as/",
    "title": "Biological Sciences: Pre-Allied Health Associate in Science | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "biological sciences: pre-​allied health associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -5563,13 +5872,16 @@
    "SPAN251"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/language-communication/spanish/spanish-transfer-aa-t/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/language-communication/spanish/spanish-transfer-aa-t/",
    "title": "Spanish for Transfer (AA-T) | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "spanish› spanish for transfer (aa-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 10,
@@ -5602,13 +5914,16 @@
    "HUM116"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/visual-performing-arts/art/art-history-transfer-aa-t/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/visual-performing-arts/art/art-history-transfer-aa-t/",
    "title": "Art History for Transfer (AA-T) | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "art› art history for transfer (aa-t)",
+    "section_fit": 0.667
    }
   },
   "listed": 17,
@@ -5638,13 +5953,16 @@
    "BOT180"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/language-communication/arabic-studies-aa-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/language-communication/arabic-studies-aa-cert-achievement/",
    "title": "Arabic Studies Associate in Arts and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "arabic studies associate in arts and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -5669,13 +5987,16 @@
    "ET110"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/computer-science/mechatronics-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/computer-science/mechatronics-cert-achievement/",
    "title": "Mechatronics Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "mechatronics certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -5705,13 +6026,16 @@
    "BOT180"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/language-communication/arabic-studies-aa-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/language-communication/arabic-studies-aa-cert-achievement/",
    "title": "Arabic Studies Associate in Arts and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "arabic studies associate in arts and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -5751,13 +6075,16 @@
    "SW170"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/culture-people-ideas/kumeyaay-studies/kumeyaay-studies-aa/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/culture-people-ideas/kumeyaay-studies/kumeyaay-studies-aa/",
    "title": "Kumeyaay Studies Associate in Arts | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "kumeyaay studies associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 24,
@@ -5790,13 +6117,16 @@
    "POSC166"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/culture-people-ideas/kumeyaay-studies/kumeyaay-studies-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/culture-people-ideas/kumeyaay-studies/kumeyaay-studies-cert-achievement/",
    "title": "Kumeyaay Studies Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "kumeyaay studies associate in arts kumeyaay studies certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -5820,13 +6150,16 @@
    "CIS110"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business-office-technology/business-information-worker-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/business/business-office-technology/business-information-worker-cert-achievement/",
    "title": "Business Information Worker Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business information worker certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -5862,13 +6195,16 @@
    "CS119L"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/computer-information-science/enterprise-system-administration-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/computer-information-science/enterprise-system-administration-as-cert-achievement/",
    "title": "Networking, Security and System Administration - Enterprise System Administration Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "networking, security and system administration -​ enterprise networking associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -5892,13 +6228,16 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/stem/biological-sciences/biology-transfer-as-t/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/stem/biological-sciences/biology-transfer-as-t/",
    "title": "Biology for Transfer (AS-T) | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "biology for transfer (as-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 8,
@@ -5927,13 +6266,16 @@
    "CS119L"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/computer-information-science/enterprise-system-administration-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/computer-information-science/enterprise-system-administration-as-cert-achievement/",
    "title": "Networking, Security and System Administration - Enterprise System Administration Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "networking, security and system administration -​ enterprise networking associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -5956,13 +6298,16 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/child-development/child-adolescent-development-aa-t/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/child-development/child-adolescent-development-aa-t/",
    "title": "Child and Adolescent Development for Transfer (AA-T) | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "child development› child and adolescent development for transfer (aa-t)",
+    "section_fit": 0.75
    }
   },
   "listed": 7,
@@ -5988,13 +6333,16 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/health-science/public-health-transfer-as-t/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/health-science/public-health-transfer-as-t/",
    "title": "Public Health for Transfer (AS-T) | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -6018,13 +6366,16 @@
    "ASL221"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/language-communication/american-sign-language/american-sign-language-aa/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/language-communication/american-sign-language/american-sign-language-aa/",
    "title": "American Sign Language Associate in Arts | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "american sign language associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -6050,13 +6401,16 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/economics-transfer-aa-t/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/business/economics-transfer-aa-t/",
    "title": "Economics for Transfer (AA-T) | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "economics for transfer (aa-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 10,
@@ -6085,13 +6439,16 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/anthropology-transfer-aa-t/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/anthropology-transfer-aa-t/",
    "title": "Anthropology for Transfer (AA-T) | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "anthropology for transfer (aa-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 13,
@@ -6133,13 +6490,16 @@
    "AUTO99"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-ascca-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-ascca-as-cert-achievement/",
    "title": "Automotive Technology – Automotive Service Councils of California ASCCA Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "automotive technology – automotive service councils of california ascca associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 26,
@@ -6150,37 +6510,12 @@
   "title": "Environmental Science",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "BIO112",
-   "BIO230",
-   "BIO240",
-   "CHEM141",
-   "CHEM142",
-   "ECONC2001",
-   "GEOG120",
-   "GEOG121",
-   "GEOL110",
-   "GEOL111",
-   "MATH178",
-   "MATHC2210",
-   "PHYC130",
-   "PHYC131",
-   "STATC1000"
-  ],
-  "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/degree-requirements-transfer-information/",
-   "title": "Degree Requirements and Transfer Information | Grossmont-Cuyamaca Community College District Academic Catalog",
-   "h1": "Academic Catalog",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 15,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "39282",
@@ -6204,13 +6539,16 @@
    "PHYC203"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/stem/biological-sciences/marine-biology-as/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/stem/biological-sciences/marine-biology-as/",
    "title": "Marine Biology Associate in Science | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "marine biology associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -6236,13 +6574,16 @@
    "PHYC201"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/computer-science/computer-science-transfer-as-t/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/computer-science/computer-science-transfer-as-t/",
    "title": "Computer Science for Transfer (AS-T) | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "computer science› computer science for transfer (as-t)",
+    "section_fit": 0.667
    }
   },
   "listed": 10,
@@ -6272,13 +6613,16 @@
    "AUTO212"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-service-management-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-service-management-as-cert-achievement/",
    "title": "Automotive Technology Service Management Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "automotive technology service management associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -6308,13 +6652,16 @@
    "AUTO212"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-service-management-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-service-management-as-cert-achievement/",
    "title": "Automotive Technology Service Management Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive technology service management associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -6355,13 +6702,16 @@
    "AUTO212"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-chassis-specialist-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-chassis-specialist-as-cert-achievement/",
    "title": "Automotive Technology Chassis Specialist Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "automotive technology associate in science and certificate of achievement automotive technology chassis specialist associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
@@ -6403,13 +6753,16 @@
    "AUTO99"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-ascca-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-ascca-as-cert-achievement/",
    "title": "Automotive Technology – Automotive Service Councils of California ASCCA Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive technology – automotive service councils of california ascca associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 26,
@@ -6449,13 +6802,16 @@
    "SOC114"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/ethnic-studies-aa/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/ethnic-studies-aa/",
    "title": "Ethnic Studies Associate in Arts | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "ethnic studies associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 24,
@@ -6509,13 +6865,16 @@
    "ET110"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-electronics-electric-vehicle-specialist-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-electronics-electric-vehicle-specialist-as-cert-achievement/",
    "title": "Automotive Technology Electronics and Electric Vehicle Specialist Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive technology electronics and electric vehicle specialist associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 38,
@@ -6566,13 +6925,16 @@
    "AUTO286T"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-engine-performance-smog-technician-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-engine-performance-smog-technician-as-cert-achievement/",
    "title": "Automotive Technology Engine Performance and Smog Technician Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "automotive technology engine performance and smog technician associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 35,
@@ -6613,13 +6975,16 @@
    "AUTO212"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-engine-repair-specialist-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-engine-repair-specialist-as-cert-achievement/",
    "title": "Automotive Technology Engine Repair Specialist Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "automotive technology engine repair specialist associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
@@ -6660,13 +7025,16 @@
    "AUTO212"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-engine-repair-specialist-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-engine-repair-specialist-as-cert-achievement/",
    "title": "Automotive Technology Engine Repair Specialist Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive technology engine repair specialist associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
@@ -6722,13 +7090,16 @@
    "AUTO214"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-general-motors-asep-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-general-motors-asep-as-cert-achievement/",
    "title": "Automotive Technology – General Motors ASEP Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive technology – general motors asep associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 40,
@@ -6769,13 +7140,16 @@
    "AUTO264T"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-drivetrain-specialist-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-drivetrain-specialist-as-cert-achievement/",
    "title": "Automotive Technology Drivetrain Specialist Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "automotive technology drivetrain specialist associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
@@ -6829,13 +7203,16 @@
    "ET110"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-electronics-electric-vehicle-specialist-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-electronics-electric-vehicle-specialist-as-cert-achievement/",
    "title": "Automotive Technology Electronics and Electric Vehicle Specialist Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "automotive technology electronics and electric vehicle specialist associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 38,
@@ -6861,13 +7238,16 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business/business-administration-2-transfer-as-t/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/business/business/business-administration-2-transfer-as-t/",
    "title": "Business Administration 2.0 for Transfer (AS-T) | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business› business administration 2.0 for transfer (as-t)",
+    "section_fit": 0.667
    }
   },
   "listed": 10,
@@ -6910,13 +7290,16 @@
    "CWS290"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/advanced-water-treatment-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/advanced-water-treatment-as-cert-achievement/",
    "title": "Advanced Water Treatment Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "advanced water treatment associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 27,
@@ -6959,13 +7342,16 @@
    "CWS290"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/advanced-water-treatment-as-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/advanced-water-treatment-as-cert-achievement/",
    "title": "Advanced Water Treatment Associate in Science and Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "advanced water treatment associate in science and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 27,
@@ -6987,13 +7373,16 @@
    "EHSM250"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/environmental-health-safety-management/laboratory-occupational-safety-and-health-technician-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/environmental-health-safety-management/laboratory-occupational-safety-and-health-technician-cert-achievement/",
    "title": "Laboratory Occupational Safety and Health Technician Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "laboratory occupational safety and health technician certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -7015,13 +7404,16 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/psychology/behavioral-training-coa/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/psychology/behavioral-training-coa/",
    "title": "Behavioral Training Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "behavioral training certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -7045,13 +7437,16 @@
    "ENGLC1001"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/language-communication/communication/communication-studies-2-transfer-aa-t/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/language-communication/communication/communication-studies-2-transfer-aa-t/",
    "title": "Communication Studies 2.0 for Transfer (AA-T) | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication› communication studies 2.0 for transfer (aa-t)",
+    "section_fit": 0.667
    }
   },
   "listed": 8,
@@ -7079,13 +7474,16 @@
    "SW130"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/social-work/human-services-coa/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/social-work/human-services-coa/",
    "title": "Human Services Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "human services certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -7113,13 +7511,16 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/health-science/public-health-transfer-as-t/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/health-science/public-health-transfer-as-t/",
    "title": "Public Health for Transfer (AS-T) | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "public health for transfer (as-t)",
+    "section_fit": 0.667
    }
   },
   "listed": 12,
@@ -7153,13 +7554,16 @@
    "GD225"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/visual-performing-arts/art/art-animation-aa/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/visual-performing-arts/art/art-animation-aa/",
    "title": "Art–Animation Associate in Arts | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "art–animation associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -7193,13 +7597,16 @@
    "GD225"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/visual-performing-arts/art/art-illustration-design-digital-arts-aa/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/visual-performing-arts/art/art-illustration-design-digital-arts-aa/",
    "title": "Art–Illustration, Design, and Digital Arts Associate in Arts | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "art–illustration, design, and digital arts associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -7234,13 +7641,16 @@
    "ARTHC1200"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/visual-performing-arts/art/art-drawing-painting-printmaking-aa/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/visual-performing-arts/art/art-drawing-painting-printmaking-aa/",
    "title": "Art–Drawing, Painting, and Printmaking Associate in Arts | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "art–drawing, painting, and printmaking associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -7271,13 +7681,16 @@
    "SW110"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/pre-academic-career-pathways/esl/esl-pathway-behavioral-social-sciences-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/pre-academic-career-pathways/esl/esl-pathway-behavioral-social-sciences-cert-achievement/",
    "title": "ESL Pathway Behavioral and Social Sciences Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "esl pathway behavioral and social sciences certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -7315,13 +7728,16 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/pre-academic-career-pathways/esl/esl-pathway-business-professional-studies-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/pre-academic-career-pathways/esl/esl-pathway-business-professional-studies-cert-achievement/",
    "title": "ESL Pathway Business and Professional Studies Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "esl pathway business and professional studies certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 22,
@@ -7352,13 +7768,16 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/pre-academic-career-pathways/esl/esl-pathway-culture-people-ideas-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/pre-academic-career-pathways/esl/esl-pathway-culture-people-ideas-cert-achievement/",
    "title": "ESL Pathway Culture, People, and Ideas Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "esl pathway culture, people, and ideas certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -7393,13 +7812,16 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/pre-academic-career-pathways/esl/esl-pathway-environmental-applied-technology-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/pre-academic-career-pathways/esl/esl-pathway-environmental-applied-technology-cert-achievement/",
    "title": "ESL Pathway Environmental and Applied Technology Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "esl pathway environmental and applied technology certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -7425,13 +7847,16 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/pre-academic-career-pathways/esl/esl-pathway-health-sciences-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/pre-academic-career-pathways/esl/esl-pathway-health-sciences-cert-achievement/",
    "title": "ESL Pathway Health Sciences Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "esl pathway health sciences certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -7459,13 +7884,16 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/pre-academic-career-pathways/esl/esl-pathway-language-communication-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/pre-academic-career-pathways/esl/esl-pathway-language-communication-cert-achievement/",
    "title": "ESL Pathway Language and Communication Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "esl pathway language and communication certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -7496,13 +7924,16 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/pre-academic-career-pathways/esl/esl-pathway-stem-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/pre-academic-career-pathways/esl/esl-pathway-stem-cert-achievement/",
    "title": "ESL Pathway STEM Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "esl pathway stem certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -7530,13 +7961,16 @@
    "THTR110"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/pre-academic-career-pathways/esl/esl-pathway-visual-performing-arts-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/pre-academic-career-pathways/esl/esl-pathway-visual-performing-arts-cert-achievement/",
    "title": "ESL Pathway Visual and Performing Arts Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "esl pathway visual and performing arts certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -7559,13 +7993,16 @@
    "MUS273"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/visual-performing-arts/music/music-education-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/visual-performing-arts/music/music-education-cert-achievement/",
    "title": "Music Education Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "music education associate in arts music education certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -7610,13 +8047,16 @@
    "AUTO99"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-maintenance-light-repair-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-maintenance-light-repair-cert-achievement/",
    "title": "Automotive Technology – Maintenance and Light Repair Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive technology – maintenance and light repair certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -7651,13 +8091,16 @@
    "THTR110"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/elementary-education/elementary-teacher-education-transfer-integrated-programs-aa-t/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/elementary-education/elementary-teacher-education-transfer-integrated-programs-aa-t/",
    "title": "Elementary Teacher Education for Transfer: Integrated Programs (AA-T) | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "elementary education› elementary teacher education: integrated programs for transfer (aa-t)",
+    "section_fit": 0.8
    }
   },
   "listed": 19,
@@ -7680,13 +8123,16 @@
    "OH290"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/floral-design-operations-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/floral-design-operations-cert-achievement/",
    "title": "Floral Design Operations Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "floral design associate in science and certificate of achievement floral design operations certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -7721,13 +8167,16 @@
    "ETHN238"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/language-communication/english/creative-writing-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/language-communication/english/creative-writing-cert-achievement/",
    "title": "Creative Writing Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "creative writing certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -7750,13 +8199,16 @@
    "OH235"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/landscape-design-cert-achievement/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/landscape-design-cert-achievement/",
    "title": "Landscape Design Certificate of Achievement | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "landscape design certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -7780,13 +8232,16 @@
    "PHYC201"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/stem/mathematics/mathematics-2-transfer-as-t/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/stem/mathematics/mathematics-2-transfer-as-t/",
    "title": "Mathematics 2.0 for Transfer (AS-T) | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "mathematics› mathematics 2.0 for transfer (as-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 8,
@@ -7812,13 +8267,16 @@
    "PHYC203"
   ],
   "source": {
-   "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/stem/physics/physics-2-transfer-as-t/",
+   "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/stem/physics/physics-2-transfer-as-t/",
    "title": "Physics 2.0 for Transfer (AS-T) | Grossmont-Cuyamaca Community College District Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "physics› physics 2.0 for transfer (as-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 10,

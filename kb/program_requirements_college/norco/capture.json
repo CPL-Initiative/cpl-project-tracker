@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 161,
  "with_closed_list": 150,
- "started": "2026-11-17T10:21:06Z",
+ "started": "2026-11-20T15:39:00Z",
  "curriqunet": {
   "catalog": 116,
   "view_prefix": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/",
@@ -304,9 +304,9 @@
  "banner_h1": null,
  "catalog_lookup": {
   "self_test": {
-   "tested": 68,
+   "tested": 67,
    "hits": 31,
-   "recall": 0.456,
+   "recall": 0.463,
    "false": 1,
    "false_off_own": 2,
    "false_no_claims": 2,
@@ -367,7 +367,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 31 of 68 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 31 of 67 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "30097",
@@ -375,7 +375,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 31 of 68 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 31 of 67 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "30100",
@@ -383,7 +383,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 31 of 68 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 31 of 67 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "30101",
@@ -391,7 +391,7 @@
     "award": "A.A. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 31 of 68 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 31 of 67 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "30111",
@@ -399,7 +399,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 31 of 68 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 31 of 67 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "30112",
@@ -415,7 +415,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 31 of 68 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 31 of 67 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "38743",
@@ -423,7 +423,7 @@
     "award": "Noncredit program",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 31 of 68 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 31 of 67 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "38816",
@@ -431,7 +431,7 @@
     "award": "Noncredit program",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 31 of 68 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 31 of 67 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "40293",
@@ -439,7 +439,7 @@
     "award": "Noncredit program",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 31 of 68 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 31 of 67 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "42716",
@@ -447,7 +447,7 @@
     "award": "Noncredit program",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 31 of 68 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 31 of 67 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
    }
   ],
   "yields": [],
@@ -455,13 +455,13 @@
   "yield_refused_passing": 0
  },
  "loads": 197,
- "seconds": 920.2,
- "found": 148,
+ "seconds": 911.1,
+ "found": 147,
  "by_method": {
   "no_closed_list": 11,
-  "not_found": 1,
+  "not_found": 2,
   "page_claimed": 1,
-  "sitemap_page": 148
+  "sitemap_page": 147
  },
  "shared_pages": {
   "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5145": [
@@ -617,6 +617,34 @@
  },
  "not_found": [
   {
+   "control_number": "30056",
+   "title": "Business Administration: General Business Concentration",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5145",
+    "label": {
+     "award": 1,
+     "title": 0.8
+    },
+    "field": "innerText",
+    "coverage": 0.556,
+    "body": 0.556,
+    "content": 0.556,
+    "net": 10,
+    "listed": 18,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 3380,
+     "content": 3380,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
    "control_number": "31317",
    "title": "Game Art: Environments and Vehicles",
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
@@ -658,13 +686,13 @@
  ],
  "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 4,
+  "0.5-0.8": 3,
   "0.8-1.0": 9,
   "1.0": 135
  },
  "would_extract": {
   "against": "kb/program_requirements_college/norco",
-  "kept": 146,
+  "kept": 145,
   "kept_moved": 0,
   "programs": 2,
   "list": [
@@ -699,10 +727,6 @@
   "30055": {
    "sha256": "6a1d625302edd5d84cb2bedd6b5f5ffae146dcf5b3bfeafe0d3eac17e0eb099d",
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5146"
-  },
-  "30056": {
-   "sha256": "b6e8cd85817a383ce6af03dc15044afe846a64e54642987e465811ad68d11fba",
-   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5569/5273"
   },
   "30057": {
    "sha256": "5c886c7da8ba0d0e0a2c1541cbb04102dc56ca4c8a3d3bf3571d0a0ccd8cf6d3",
@@ -1289,5 +1313,5 @@
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/6342"
   }
  },
- "run": "44063769303"
+ "run": "44765224865"
 }

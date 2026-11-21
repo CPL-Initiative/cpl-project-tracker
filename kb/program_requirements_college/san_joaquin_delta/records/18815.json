@@ -5,11 +5,11 @@
  "title": "Interdisciplinary Studies - Mathematics and Science Option",
  "award": "A.S. Degree",
  "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3168&print",
- "record_shape": 5,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9032,
+  "input_tokens": 9335,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9032,
-    "output_tokens": 6067,
+    "input_tokens": 9335,
+    "output_tokens": 6402,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 6067,
+  "output_tokens": 6402,
   "output_tokens_details": {
-   "thinking_tokens": 1597
+   "thinking_tokens": 1936
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.15747,
- "ms": 43253,
- "seconds": 43.6,
+ "cost_usd": 0.16538,
+ "ms": 45890,
+ "seconds": 46.7,
  "parts": null,
  "error": null,
  "score": {
@@ -180,7 +181,7 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
@@ -198,6 +199,10 @@
     "max": 18
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": "San Joaquin Delta College Associate Degree General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
    "degree_total": {
     "min": 60,
@@ -214,7 +219,9 @@
     "Compare and contrast conflicting viewpoints from the perspective of two or more disciplines.",
     "Integrate and utilize knowledge from multiple disciplines to solve problems."
    ],
-   "careers": [],
+   "careers": [
+    "health sciences field"
+   ],
    "degree_total_minimum": true
   },
   "blocks": [
@@ -840,18 +847,19 @@
    }
   ],
   "notes": [
-   "Catalog prints ANTH 2, ANTH 2L and ANTH 10; the closed list has ANTHR 2, ANTHR 2L and ANTHR 10 with matching titles and units. Recorded as catalog prints with catalog_addition false; reviewer should confirm the subject prefix match.",
-   "BIOL/PSYC 30 Human Sexuality is printed twice (as BIOL/PSYC 30 and PSYC/BIOL 30); recorded once as BIOL 30 with PSYC 30 as alternative.",
-   "Area A requires a minimum of 4 units including one laboratory course; the lab requirement is not captured in the block structure.",
-   "Area C: 11 units may be selected from the Area C list or from courses in Area A or B; only Area C's own list is recorded in that block.",
-   "Total of 18 units is 'Minimum Area of Emphasis Units Required: 18'; degree total 60 is 'Minimum Degree Units Required: 60'.",
-   "ge_units holds the two alternative GE patterns: local pattern 27 units (min) and Cal-GETC 34 units (max).",
-   "Several catalog titles differ from the closed list (e.g., BIOL 1 Cell and Molecular Biology vs Molecular and Genomic Biology; BIOL 11 Human Biology; GEOG 2 Human Geography) and units differ for BIOL 22, ENGR 2, ENGR 4; catalog units recorded.",
-   "Description mentions students interested in the 'health sciences field' or STEM disciplines; not recorded as careers since no career or occupation is named."
+   "Catalog prints ANTH 2, ANTH 2L, ANTH 10; closed list stores them as ANTHR 2, ANTHR 2L, ANTHR 10. Treated as the same courses (catalog_addition false); reviewer should confirm the subject abbreviation difference.",
+   "Area A requires a minimum of 4 units including one laboratory course.",
+   "Area C: 11 units may be chosen from the Area C list or from courses in Area A or B; Area A/B courses not duplicated in the Area C block.",
+   "BIOL 30 and PSYC 30 (Human Sexuality) are cross-listed and printed twice in Area A (as BIOL/PSYC 30 and PSYC/BIOL 30); recorded once with PSYC 30 as alternative.",
+   "Several closed-list unit values differ from catalog (e.g., BIOL 22 4.5, ENGR 2 3.5, ENGR 4 4.5); catalog units recorded.",
+   "Total of 18 is printed as 'Minimum Area of Emphasis Units Required: 18'; 'Minimum Degree Units Required: 60' recorded as degree_total.",
+   "GE: student completes one of two patterns — SJDC Associate Degree GE (27 units) or Cal-GETC (34 units); ge_units recorded as range 27-34 spanning the two options.",
+   "No elective units are stated; the page does not say electives fill the remainder of the 60 units.",
+   "Career entry 'health sciences field' taken from the program description ('student interested in the health sciences field'); STEM disciplines mentioned as a foundation, not recorded as a career."
   ]
  },
- "extracted_run": 39217405432,
- "read_run": 39128562020,
+ "extracted_run": "44883860902",
+ "catalog_year": "2026-2027",
  "reconciled": [
   {
    "field": "degree_total_minimum",

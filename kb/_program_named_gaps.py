@@ -97,9 +97,12 @@ GAPS = {
     "catalog_figures_differ": ("The catalog's own figures do not add up: each list matches its printed figure, and "
                                "the lists sum past the program's printed total."),
     "noncredit_names_only": "Noncredit certificate: the catalog names it but prints no course list.",
+    # S691: the catalog's section prints its lists' figures and no program total, read from the page itself and
+    # listed in kb/program_total_not_printed.json (Santa Monica's Pilates and Yoga certificates).
+    "total_not_printed": "The catalog prints no total for this program, so its units cannot be checked against one.",
 }
 ARITH_SCORE = {"major_total_differs": 30, "no_units_printed": 40, "no_units_read": 20, "no_hours_read": 20,
-               "catalog_figures_differ": 50}
+               "catalog_figures_differ": 50, "total_not_printed": 40}
 MAJOR_NOT_EXACT = "the major does not match the catalog's major total exactly"
 NO_UNITS_WHY = re.compile(r"^a required course in '.*' has no units$")
 PRINTED_NO_UNITS = re.compile(r"\b(?:no|without)\s+units\b|\bunits?\s+(?:are\s+|is\s+)?not\s+(?:printed|listed|given)\b"
@@ -322,7 +325,33 @@ def no_units_printed(filed: dict) -> str | None:
 # courses whose units the record holds (matcher_recall), so it fails its own self-check. Its records take
 # no_units_read, the gap that claims only what the record shows.
 NO_UNITS_PRINTED_ON = False
-RECORD_RULES = (("major_total_differs", major_total_differs),) + (
+TOTAL_NOT_PRINTED = os.path.join(HERE, "program_total_not_printed.json")
+NO_TOTAL_WHY = "the record names no total"
+
+
+def total_not_printed_list(path: str = TOTAL_NOT_PRINTED) -> dict:
+    """{(college, control number): entry} from the committed file: pages a session read, never a pattern."""
+    try:
+        with open(path, encoding="utf-8") as fh:
+            data = json.load(fh)
+    except FileNotFoundError:
+        return {}
+    return {(college, str(cn)): e for college, rows in (data.get("colleges") or {}).items() for cn, e in rows.items()}
+
+
+def total_not_printed(filed: dict, listed: dict | None = None) -> str | None:
+    """A listed program whose only arithmetic reason is that it names no total: the catalog prints none (S691)."""
+    listed = total_not_printed_list() if listed is None else listed
+    e = listed.get((filed.get("college"), str(filed.get("control_number"))))
+    sc = filed.get("score") or {}
+    a = sc.get("arithmetic") or {}
+    if not e or a.get("pass") or a.get("status") != "incomplete" or a.get("why") != [NO_TOTAL_WHY] \
+            or not collectable(sc):
+        return None
+    return "the catalog prints no program total (PDF p.%s; college-page-read run %s)" % (e.get("page"), e.get("run"))
+
+
+RECORD_RULES = (("major_total_differs", major_total_differs), ("total_not_printed", total_not_printed)) + (
     (("no_units_printed", no_units_printed),) if NO_UNITS_PRINTED_ON else ()) + (("no_units_read", no_units_read),)
 
 
@@ -394,6 +423,10 @@ def held_answer(filed: dict) -> str | None:
     m = a.get("major")
     if isinstance(m, dict) and m.get("pass") is False and R.awards_match("local", filed.get("award")):
         return "major_total_differs"
+    if ((filed.get("college"), str(filed.get("control_number"))) in total_not_printed_list()
+            and a.get("status") == "incomplete" and a.get("why") == [NO_TOTAL_WHY]):
+        # The page itself, read and listed in kb/program_total_not_printed.json, is the held answer (S691).
+        return "total_not_printed"
     why = [w for w in a.get("why") or [] if w != "the record names no total"]
     if (a.get("status") == "incomplete" and why and all(w.endswith(" has no units") for w in why)
             and (filed.get("college"), str(filed.get("control_number"))) not in HELD_INCOMPLETE):

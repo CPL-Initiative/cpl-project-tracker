@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Video Game Animation",
  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
- "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=205",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=206",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12004,
+  "input_tokens": 12239,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12004,
-    "output_tokens": 1560,
+    "input_tokens": 12239,
+    "output_tokens": 1627,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1560,
+  "output_tokens": 1627,
   "output_tokens_details": {
-   "thinking_tokens": 543
+   "thinking_tokens": 576
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07922,
- "ms": 12102,
- "seconds": 12.4,
+ "cost_usd": 0.0815,
+ "ms": 12423,
+ "seconds": 12.7,
  "parts": null,
  "error": null,
  "score": {
@@ -266,14 +266,26 @@
   "missing_explained": [
    {
     "code": "MEA 106",
-    "why": "not in the Video Game Animation certificate section; named only in other programs' elective lists"
+    "why": "not in the Video Game Animation section; listed only in a preceding program's elective list on page 206"
    }
   ],
   "notes": [
-   "The 'Units Required: 24.5' is recorded as both total_units and the stated total of the required block; the required courses sum to 24.5 with one of MEA-221/MEA-232.",
-   "The certificate's requirements continue across the page break from page 206 to 207; MEA-221 OR MEA-232, MEA-295 and CAWT-074 are on page 207.",
-   "Career entry taken from the description 'prepare students to enter the video game animation industry'."
+   "The requirement list continues across the page break from page 206 to page 207; MEA-221 OR MEA-232 and the remaining courses on page 207 were read as part of this certificate. Listed courses sum to 24.5, matching 'Units Required: 24.5'.",
+   "Career entry 'video game animation industry' is taken from the description 'prepare students to enter the video game animation industry'; reviewer may judge whether it counts as a career field.",
+   "The Award title in the request is truncated; the section read is the Certificate of Achievement: Video Game Animation."
   ]
  },
- "extracted_run": "39006378829"
+ "extracted_run": "44886816990",
+ "catalog_year": "2026-2027",
+ "source_sha": "d0d31f635e334724",
+ "source_codes": [
+  "CMPSCI236",
+  "MEA106",
+  "MEA109",
+  "MEA131",
+  "MEA218",
+  "MEA231",
+  "MEA232"
+ ],
+ "source_coverage": 1.0
 }

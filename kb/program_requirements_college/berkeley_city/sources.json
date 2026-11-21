@@ -1030,10 +1030,11 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.875,
+  "coverage": 1.0,
   "codes_found": [
    "ENGL17A",
    "ENGL17B",
+   "ENGL1B",
    "ENGL50",
    "ENGL85A",
    "ENGL85B",
@@ -1112,20 +1113,20 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
-   "title": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
-   "h1": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
+   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40071",
+   "title": "Political Science - AA-T Degree",
+   "h1": "Political Science - AA-T Degree",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "political science - aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
-  "text_chars": 9035
+  "text_chars": 2654
  },
  {
   "control_number": "33181",
@@ -1174,7 +1175,7 @@
    }
   },
   "listed": 12,
-  "text_chars": 2802
+  "text_chars": 2794
  },
  {
   "control_number": "33774",
@@ -1571,12 +1572,34 @@
   "title": "Studio Arts",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART2",
+   "ART20",
+   "ART22",
+   "ART3",
+   "ART4",
+   "ART46",
+   "ART47",
+   "ART50",
+   "MMART3"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39976",
+   "title": "Studio Arts - AA-T Degree",
+   "h1": "Studio Arts - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "studio arts - aa-t degree",
+    "section_fit": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 2586
  },
  {
   "control_number": "37851",
@@ -1584,13 +1607,15 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.846,
+  "coverage": 1.0,
   "codes_found": [
    "ART13",
    "ART16",
    "ART182",
+   "ART2",
    "ART20",
    "ART22",
+   "ART3",
    "ART4",
    "ART46",
    "ART47",
@@ -2010,12 +2035,13 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.917,
+  "coverage": 1.0,
   "codes_found": [
    "ANTHR3",
    "PSYCC1000",
    "PSYCH6",
    "SOC1",
+   "SOC120",
    "SOC13",
    "SOC18",
    "SOC2",
@@ -2025,20 +2051,20 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
-   "title": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
-   "h1": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
+   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40073",
+   "title": "Sociology - AA-T Degree",
+   "h1": "Sociology - AA-T Degree",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "sociology - aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
-  "text_chars": 9485
+  "text_chars": 2719
  },
  {
   "control_number": "39856",
@@ -2085,9 +2111,12 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.667,
+  "coverage": 1.0,
   "codes_found": [
+   "SPAN1A",
    "SPAN1B",
+   "SPAN22A",
+   "SPAN22B",
    "SPAN2A",
    "SPAN2B",
    "SPAN38",
@@ -2095,20 +2124,20 @@
    "SPAN40"
   ],
   "source": {
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
-   "title": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
-   "h1": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
+   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40036",
+   "title": "Spanish - AA-T Degree",
+   "h1": "Spanish - AA-T Degree",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "spanish - aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 4248
+  "text_chars": 2603
  },
  {
   "control_number": "41766",
@@ -2149,10 +2178,11 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.889,
+  "coverage": 1.0,
   "codes_found": [
    "HUMAN30B",
    "PHIL1",
+   "PHIL11",
    "PHIL2",
    "PHIL20A",
    "PHIL20B",
@@ -2161,20 +2191,20 @@
    "WS35"
   ],
   "source": {
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
-   "title": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
-   "h1": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
+   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39975",
+   "title": "Philosophy - AA-T Degree",
+   "h1": "Philosophy - AA-T Degree",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "philosophy - aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 5089
+  "text_chars": 2574
  },
  {
   "control_number": "41778",
@@ -2245,7 +2275,7 @@
    }
   },
   "listed": 15,
-  "text_chars": 3288
+  "text_chars": 3285
  },
  {
   "control_number": "41795",
@@ -2253,31 +2283,32 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.875,
+  "coverage": 1.0,
   "codes_found": [
    "BIOL10",
    "PSYCC1000",
    "PSYCH21",
+   "PSYCH28",
    "PSYCH6",
    "PSYCH61",
    "SOC1",
    "STATC1000"
   ],
   "source": {
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
-   "title": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
-   "h1": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
+   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40072",
+   "title": "Psychology - AA-T Degree",
+   "h1": "Psychology - AA-T Degree",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "psychology - aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
-  "text_chars": 11803
+  "text_chars": 2560
  },
  {
   "control_number": "41796",
@@ -2540,16 +2571,18 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.846,
+  "coverage": 1.0,
   "codes_found": [
    "ANTHR3",
    "COMM10",
    "COMM19",
+   "COMM20",
    "COMM3",
    "COMM4",
    "COMM5",
    "COMM6",
    "COMMC1000",
+   "ENGL1B",
    "MM/VI17",
    "PSYCC1000",
    "SOC1"

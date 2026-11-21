@@ -716,8 +716,9 @@ def _parse_outcomes(page_html: str, text: str, system: str | None = None, report
 
 # The Reader keeps 400,000 characters of a page's HTML. Mt. San Antonio's SLO page prints its course results block
 # past 671,000 (trial 44687943107), so full read 44695707506 parsed the text instead and filed the site's course
-# listing on every page (S689). A page cut at that length is parsed from the browser's whole HTML.
-READER_HTML_CAP = 400000
+# listing on every page (S689). A page cut at that length is parsed from the browser's whole HTML. The number is the
+# Reader's own, imported (COBIx on #3586, point 3).
+READER_HTML_CAP = cor.census.HTML_CAP
 
 
 def page_html_of(reader, page: dict) -> str:
@@ -800,6 +801,12 @@ def read_one(reader, course: dict) -> dict:
            "chars": len(body), "text_cut": len(body) >= TEXT_CAP, "html_chars": len(parsed_html),
            "html_cut": len(html_) >= READER_HTML_CAP and len(parsed_html) <= len(html_),
            "offered_at": offered_at(body), **got}
+    # A page parsed from the Reader's cut copy (the browser's whole page could not be read) that finds nothing says
+    # so: "none" means the page prints no outcomes, which a cut copy cannot show (COBIx on #3586, point 1). The load
+    # posts only list and paragraph rows, so it lists this one among its skips.
+    if row["html_cut"] and not row.get("outcomes") and not row.get("groups"):
+        row.update(shape="cut", fingerprint=None,
+                   why_none="the page's HTML reached the Reader's cap and the whole page could not be read")
     if outcomes_only(course["report"]):
         row["section_heads"] = section_heads(body)
     return file_row(row)
@@ -880,7 +887,7 @@ def excerpt_log(code: str, excerpt: list[str] | None) -> str:
 
 # The code that turns a page into outcomes and objectives. Its fingerprint goes into every trial's head, and a
 # self-recall count passes only for a trial filed by the parser that would run the full read.
-PARSER_PARTS = ("parse_page", "_parse_outcomes", "outcomes_of", "_heads_section", "outcomes_from_html",
+PARSER_PARTS = ("_ws", "parse_page", "_parse_outcomes", "outcomes_of", "_heads_section", "outcomes_from_html",
                 "groups_from_html", "elumen_outcomes_from_html", "cccd_outcomes_from_html", "mtsac_outcomes_from_html",
                 "objectives_block", "objectives_of", "objectives_from_html", "_obj_ends", "page_html_of", "read_one",
                 "file_row", "section_heads")
@@ -889,20 +896,27 @@ PARSER_PATTERNS = ("STOP", "SLO_TITLE", "HEAD_NUMBER", "MARKER", "LEAD", "SLO_CO
 
 
 def parser_fingerprint() -> str:
-    """md5 over the parser's functions' source, its patterns, and the reports recorded as printing no objectives."""
+    """md5 over the parser's functions' source (_ws among them), its patterns, the census's SLO_HEADING that
+    _heads_section reads, the Reader's HTML cap page_html_of reads, and the reports recorded as printing no
+    objectives (#3601's second reader: each reaches a parse, so a change to one is another parser)."""
     import inspect
     g = globals()
     parts = [inspect.getsource(g[n]) for n in PARSER_PARTS if n in g]
     parts += ["%s=%r/%d" % (n, g[n].pattern, g[n].flags) for n in PARSER_PATTERNS if n in g]
+    parts.append("cor.SLO_HEADING=%r/%d" % (cor.SLO_HEADING.pattern, cor.SLO_HEADING.flags))
+    parts.append("READER_HTML_CAP=%d" % READER_HTML_CAP)
     parts.append(json.dumps(sorted(_OBJ_RECORD.REPORTS_WITHOUT_OBJECTIVES)))
     return hashlib.md5("\n".join(parts).encode()).hexdigest()
 
 
-def rows_recall(path: str, out_dir: str = OUT_DIR) -> dict:
+def rows_recall(path: str, out_dir: str = OUT_DIR, host: str | None = None) -> dict:
     """Each counted trial row's {"slo": n, "objective": n}, read off the page apart from the parser, against the
-    outcomes and objectives the row filed. Wrong: a row not filed, not answering 200, reaching a cap, or with a count
-    that names no source. Not ok: a trial filed by another parser, or one that parsed outcomes on fewer than half
-    its pages, whatever the counts."""
+    outcomes and objectives the row filed. Wrong: a row not filed, read from a host other than the gate's, not
+    answering 200, reaching a cap, or with a count that names no source. Not ok: a trial filed by another parser, or
+    one that parsed outcomes on fewer than half its pages, whatever the counts. host: the gate's host; by default the
+    one RECALL_BY_HOST names for path, so a trial of another host's pages never passes this host's gate (#3601)."""
+    if host is None:
+        host = next((h for h, p in RECALL_BY_HOST.items() if os.path.abspath(p) == os.path.abspath(path)), None)
     def refuse(why, pages=0, right=0, wrong=()):
         return {"pages": pages, "right": right, "wrong": list(wrong), "ok": False, "why": why}
     if not os.path.exists(path):
@@ -922,6 +936,9 @@ def rows_recall(path: str, out_dir: str = OUT_DIR) -> dict:
         r = rows.get(code)
         if r is None:
             wrong.append((code, count, "row not filed"))
+        elif host and urllib.parse.urlparse(r.get("report") or "").netloc.lower() != host:
+            wrong.append((code, count, "read from %s, not %s"
+                          % (urllib.parse.urlparse(r.get("report") or "").netloc.lower() or "no host", host)))
         elif r.get("status") != 200:
             wrong.append((code, count, "status %s" % r.get("status")))
         elif r.get("text_cut") or r.get("html_cut"):

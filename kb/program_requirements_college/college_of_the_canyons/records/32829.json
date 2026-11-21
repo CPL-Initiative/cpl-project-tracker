@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "History",
  "award": "A.A- T Degree",
- "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=167",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=166",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12439,
+  "input_tokens": 12296,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12439,
-    "output_tokens": 2622,
+    "input_tokens": 12296,
+    "output_tokens": 3288,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,73 +30,64 @@
     "model": null
    }
   ],
-  "output_tokens": 2622,
+  "output_tokens": 3288,
   "output_tokens_details": {
-   "thinking_tokens": 1057
+   "thinking_tokens": 1353
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.1022,
- "ms": 23070,
- "seconds": 23.4,
+ "cost_usd": 0.11494,
+ "ms": 26964,
+ "seconds": 27.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 22,
    "listed": 24,
-   "share": 0.0,
+   "share": 0.917,
    "missing": [
-    "ANTHRO103",
-    "ANTHRO103H",
-    "ECON170",
-    "ECON170H",
-    "HIST101",
-    "HIST101H",
-    "HIST102",
     "HIST112",
-    "HIST112H",
-    "HIST120",
-    "HIST120H",
-    "HIST130",
-    "HIST161",
-    "HIST191",
-    "HIST192",
-    "HIST193",
-    "HIST210",
-    "HIST212",
-    "HIST240",
-    "HIST243",
-    "HISTC1001",
-    "HISTC1001H",
-    "POLSC1000",
-    "POLSC1000H"
+    "HIST112H"
    ],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 5,
+   "codes": [
+    "HIST116",
+    "HIST117",
+    "HIST230",
+    "HISTC1002",
+    "HISTC1002H"
+   ],
+   "flagged": [
+    "HIST116",
+    "HIST117",
+    "HIST230",
+    "HISTC1002",
+    "HISTC1002H"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    18.0,
+    18.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -123,22 +114,22 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "HISTORY",
+   "section_heading": "History",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 18
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "CalGETC",
    "degree_total": {
     "min": null,
     "max": null
@@ -151,112 +142,286 @@
    "outcomes": [],
    "careers": []
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HIST-C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST-C1001H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST-C1002H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Plus six units from the following",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HIST-101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST-101H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-161",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Plus three units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HIST-120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST-120H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-191",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-192",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-193",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-212",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-240",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-243",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Plus three units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ANTHRO-103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTHRO-103H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON-170",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON-170H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-116",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST-117",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST-130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-230",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS-C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS-C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "POLS C1000",
-    "why": "Appears only as a trailing line at the top of page 167, apparently the end of the A.A-T list whose heading and rule are on the previous page, which is not in the text"
-   },
-   {
-    "code": "POLS C1000H",
-    "why": "Appears only as a trailing line at the top of page 167, apparently the end of the A.A-T list whose heading and rule are on the previous page, which is not in the text"
-   },
-   {
-    "code": "HIST 101",
-    "why": "Named only in the Associate in Arts Degree: History section; A.A-T requirements not in text"
-   },
-   {
-    "code": "HIST 101H",
-    "why": "Named only in the Associate in Arts Degree: History section; A.A-T requirements not in text"
-   },
-   {
-    "code": "HIST 102",
-    "why": "Named only in the Associate in Arts Degree: History section; A.A-T requirements not in text"
-   },
-   {
-    "code": "HIST C1001",
-    "why": "Named only in the Associate in Arts Degree: History section; A.A-T requirements not in text"
-   },
-   {
-    "code": "HIST C1001H",
-    "why": "Named only in the Associate in Arts Degree: History section; A.A-T requirements not in text"
-   },
-   {
-    "code": "HIST 191",
-    "why": "Named only in the Associate in Arts Degree: History section; A.A-T requirements not in text"
-   },
-   {
-    "code": "HIST 192",
-    "why": "Named only in the Associate in Arts Degree: History section; A.A-T requirements not in text"
-   },
-   {
-    "code": "HIST 240",
-    "why": "Named only in the Associate in Arts Degree: History section; A.A-T requirements not in text"
-   },
-   {
-    "code": "ECON 170",
-    "why": "Named only in the Associate in Arts Degree: History section; A.A-T requirements not in text"
-   },
-   {
-    "code": "ECON 170H",
-    "why": "Named only in the Associate in Arts Degree: History section; A.A-T requirements not in text"
-   },
-   {
-    "code": "HIST 120",
-    "why": "Named only in the Associate in Arts Degree: History section; A.A-T requirements not in text"
-   },
-   {
-    "code": "HIST 120H",
-    "why": "Named only in the Associate in Arts Degree: History section; A.A-T requirements not in text"
-   },
-   {
-    "code": "HIST 161",
-    "why": "Named only in the Associate in Arts Degree: History section; A.A-T requirements not in text"
-   },
-   {
-    "code": "HIST 193",
-    "why": "Named only in the Associate in Arts Degree: History section; A.A-T requirements not in text"
-   },
-   {
-    "code": "HIST 210",
-    "why": "Named only in the Associate in Arts Degree: History section; A.A-T requirements not in text"
-   },
-   {
-    "code": "HIST 212",
-    "why": "Named only in the Associate in Arts Degree: History section; A.A-T requirements not in text"
-   },
-   {
-    "code": "HIST 243",
-    "why": "Named only in the Associate in Arts Degree: History section; A.A-T requirements not in text"
-   },
-   {
-    "code": "HIST 130",
-    "why": "Only a course description in the text; not in any requirements section shown"
-   },
-   {
     "code": "HIST 112",
-    "why": "Not in the text except as 'Formerly HIST-112' in the HIST C1002 description"
+    "why": "catalog prints the renumbered HIST-C1002 (course description says 'Formerly HIST-112'), recorded as a catalog addition"
    },
    {
     "code": "HIST 112H",
-    "why": "Not in the text except as 'Formerly HIST-112H' in the HIST C1002H description"
-   },
-   {
-    "code": "ANTHRO 103",
-    "why": "Not in the text"
-   },
-   {
-    "code": "ANTHRO 103H",
-    "why": "Not in the text"
+    "why": "catalog prints the renumbered HIST-C1002H (course description says 'Formerly HIST-112H'), recorded as a catalog addition"
    }
   ],
   "notes": [
-   "The excerpt begins at page 167 partway through the History program pages. The A.A-T (Associate in Arts for Transfer) History section, including its heading, requirement lists, totals and any outcomes, appears to be on page 166 or earlier, which is not in the text.",
-   "The only possible A.A-T content visible is the top of page 167: 'POLS-C1000 American Government and Politics 3.0' and 'POLS-C1000H American Government and Politics - Honors 3.0', printed just before the Associate in Arts Degree: History heading. These are likely the tail of an A.A-T list, but the list's name and rule are not shown, so they were not placed in a block.",
-   "The text that follows is the Associate in Arts Degree: History section (non-transfer A.A., Units Required: 18, with its own Degree Student Learning Outcome). It is a different award, so it was not recorded here.",
-   "A reviewer should fetch the preceding page(s) of the 2026-27 catalog to capture the A.A-T requirements."
+   "The AA-T section has no award-specific heading in the extracted text; it follows the page heading 'History' and the SB 1440 transfer-degree description. The section ends after POLS-C1000H on page 167, where 'Associate in Arts Degree: History' (a different award) begins.",
+   "The 'Plus six units from the following' list prints 'HIST-101 OR HIST-101H', 'HIST-161', 'AND HIST-102'. This likely means one of HIST-101/101H/HIST-161 plus HIST-102, but the layout is ambiguous. It is recorded as a choose-6-units block; the pairing rule should be checked.",
+   "HIST-120H is printed as its own row, without 'OR', in the first three-unit list; it is recorded as the honors alternative of HIST-120.",
+   "The 60-unit/CalGETC sentence is the generic requirement for all associate degrees for transfer, so no degree_total or ge_units is recorded. ge_pattern is set to CalGETC from that sentence.",
+   "No program learning outcomes are printed for the AA-T. The 'Degree Student Learning Outcome' on page 167 belongs to the separate Associate in Arts Degree: History and was not recorded.",
+   "The course descriptions list the US History courses as 'HIST C1000' and 'HIST C1000H' in their headings, while the requirements and the closed list use HIST-C1001/C1001H; this looks like a catalog typo in the headings."
   ]
  },
- "extracted_run": "39006378829"
+ "extracted_run": "44769429877",
+ "catalog_year": "2026-2027",
+ "source_sha": "875fc262a8dcf95c",
+ "source_codes": [
+  "ANTHRO103",
+  "ANTHRO103H",
+  "ECON170",
+  "ECON170H",
+  "HIST101",
+  "HIST101H",
+  "HIST102",
+  "HIST112",
+  "HIST112H",
+  "HIST120",
+  "HIST120H",
+  "HIST130",
+  "HIST161",
+  "HIST191",
+  "HIST192",
+  "HIST193",
+  "HIST210",
+  "HIST212",
+  "HIST240",
+  "HIST243",
+  "HISTC1001",
+  "HISTC1001H",
+  "POLSC1000",
+  "POLSC1000H"
+ ],
+ "source_coverage": 1.0
 }

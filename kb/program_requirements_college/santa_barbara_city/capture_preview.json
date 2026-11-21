@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 319,
  "with_closed_list": 287,
- "started": "2026-11-20T06:27:28Z",
+ "started": "2026-11-21T07:31:13Z",
  "scope": null,
  "sitemap": {
   "url": "https://catalog.sbcc.edu/sitemap.xml",
@@ -353,15 +353,14 @@
   "yield_unjudged": 0,
   "yield_refused_passing": 0
  },
- "loads": 377,
- "seconds": 1851.0,
- "found": 256,
+ "loads": 378,
+ "seconds": 1802.6,
+ "found": 251,
  "by_method": {
-  "link_search": 4,
   "no_closed_list": 32,
-  "not_found": 16,
+  "not_found": 21,
   "page_claimed": 15,
-  "sitemap_page": 252
+  "sitemap_page": 251
  },
  "shared_pages": {
   "https://catalog.sbcc.edu/academic-departments/culinary-arts-hotel-management/culinary-arts-professional-as/": [
@@ -383,10 +382,6 @@
   "https://catalog.sbcc.edu/sel/career-skills/basic-mac-software-skills-certificate-completion/": [
    "31464",
    "36907"
-  ],
-  "https://catalog.sbcc.edu/academic-departments/adult-high-school-ged/": [
-   "36970",
-   "36971"
   ]
  },
  "not_found": [
@@ -591,6 +586,39 @@
    "status": "Active"
   },
   {
+   "control_number": "31417",
+   "title": "Basic Office Software Skills",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.sbcc.edu/sel/career-skills/basic-mac-software-skills-certificate-completion/",
+    "label": {
+     "award": 1,
+     "title": 0.75
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1615,
+     "content": 17207,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      485
+     ]
+    ],
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
    "control_number": "31493",
    "title": "Computer Hardware Fundamentals",
    "award": null,
@@ -619,6 +647,39 @@
       347
      ]
     ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "32513",
+   "title": "ESL 4 Intermediate High",
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.sbcc.edu/sel/esl-noncredit/esl-intermediate-grammar-composition-certificate-competency/",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1356,
+     "content": 12425,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      264
+     ]
+    ],
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -683,6 +744,36 @@
       314
      ]
     ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "36970",
+   "title": "Secondary Education/Bi-lingual/Biliterate GED Preparation",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "36971",
+   "title": "Secondary Education/GED Preparation",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "38315",
+   "title": "ADHS: Adult High School Diploma",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -881,66 +972,15 @@
  "page_challenged": [],
  "coverage_bands": {
   "0.5-0.8": 7,
-  "0.8-1.0": 61,
-  "1.0": 188
+  "0.8-1.0": 60,
+  "1.0": 184
  },
  "would_extract": {
   "against": "kb/program_requirements_college/santa_barbara_city",
   "kept": 249,
   "kept_moved": 0,
-  "programs": 5,
-  "list": [
-   {
-    "control_number": "31417",
-    "title": "Basic Office Software Skills",
-    "award": "Noncredit program",
-    "url": "https://catalog.sbcc.edu/sel/career-skills/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "32513",
-    "title": "ESL 4 Intermediate High",
-    "award": null,
-    "url": "https://catalog.sbcc.edu/degrees-certificates-awards/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "36970",
-    "title": "Secondary Education/Bi-lingual/Biliterate GED Preparation",
-    "award": "Noncredit program",
-    "url": "https://catalog.sbcc.edu/academic-departments/adult-high-school-ged/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "36971",
-    "title": "Secondary Education/GED Preparation",
-    "award": "Noncredit program",
-    "url": "https://catalog.sbcc.edu/academic-departments/adult-high-school-ged/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "38315",
-    "title": "ADHS: Adult High School Diploma",
-    "award": "Noncredit program",
-    "url": "https://catalog.sbcc.edu/sel/ahs-ged/",
-    "coverage": 0.979,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   }
-  ],
+  "programs": 0,
+  "list": [],
   "held_worse_window": [
    {
     "control_number": "32629",
@@ -1418,10 +1458,6 @@
    "sha256": "692f6cef17a667e790f7c8e716e3f4d4e27ec56923859a966e1a3d6731fd5fdc",
    "url": "https://catalog.sbcc.edu/sel/career-skills/digital-design-basics-certificate-completion/"
   },
-  "31417": {
-   "sha256": "066cf8d6fbe7a8ca5c74a8ea22ce6a5f0ee00b389a3936165beaf96297ba4f6b",
-   "url": "https://catalog.sbcc.edu/sel/career-skills/"
-  },
   "31450": {
    "sha256": "bf48ac4faaa779a3bdc528a8a5dca260e7bc118dd9f26049d25f29b6845e20a1",
    "url": "https://catalog.sbcc.edu/sel/career-skills/basic-internet-skills-certificate-completion/"
@@ -1441,10 +1477,6 @@
   "32450": {
    "sha256": "f6dbec3edb6a693b20a11d4a697e4d5e783a3cc4bd316e86af0ebc0068e500b5",
    "url": "https://catalog.sbcc.edu/academic-departments/theatre-arts/theatre-arts-aat/"
-  },
-  "32513": {
-   "sha256": "5835711ff98fe98e441145cb35ff3e49cb0af0f9ebab1a9ef052fcaa6770ef92",
-   "url": "https://catalog.sbcc.edu/degrees-certificates-awards/"
   },
   "32603": {
    "sha256": "c118daad52a0e02552bb41da4bea2aeaa300dd91c30cdd4df8d79dc7dcbf37dc",
@@ -1678,14 +1710,6 @@
    "sha256": "eb0df43a64e8b56b87cd17905d6c912f5cb6517834b06ed4f7d1b4031a86f5c5",
    "url": "https://catalog.sbcc.edu/sel/career-skills/green-gardener-certificate-completion/"
   },
-  "36970": {
-   "sha256": "ed621f2dfea16d532be4b5604f5046912f2d72bcd39d0ac22f386a6a92362f46",
-   "url": "https://catalog.sbcc.edu/academic-departments/adult-high-school-ged/"
-  },
-  "36971": {
-   "sha256": "acf85e443b6ef4ab2e72254078450e44755f3a4e68a737d27f06ae25009bd3fa",
-   "url": "https://catalog.sbcc.edu/academic-departments/adult-high-school-ged/"
-  },
   "37183": {
    "sha256": "2ff43837d201a4ad9fd8f637c84d556aa8f073a64ddace9b9e22805e1f4d0625",
    "url": "https://catalog.sbcc.edu/sel/esl-noncredit/esl-vocational-healthcare-certificate-competency/"
@@ -1729,10 +1753,6 @@
   "38190": {
    "sha256": "7656848fe30db175cf52918cb9d70380ce18db1c86f5f14f35f8fc5ceb9c269c",
    "url": "https://catalog.sbcc.edu/academic-departments/theatre-arts/technical-production-certificate/"
-  },
-  "38315": {
-   "sha256": "c9f99b85aa24e7349d0d4010af12e3f25f18c0dd029ac2b9e5934fab7c2887e2",
-   "url": "https://catalog.sbcc.edu/sel/ahs-ged/"
   },
   "38526": {
    "sha256": "e4493e2a6d46e427e66c9a9ecef79c3c01da7ef34613b1dd1e04a0c4020d0c08",
@@ -1991,5 +2011,5 @@
    "url": "https://catalog.sbcc.edu/academic-departments/modern-languages/spanish-for-non-heritage-speakers-certificate-achievement/"
   }
  },
- "run": "44687793666"
+ "run": "44880536599"
 }

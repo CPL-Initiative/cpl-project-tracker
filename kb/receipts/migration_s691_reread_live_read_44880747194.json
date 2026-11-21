@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-21_s691_reread_live_read.sql",
+ "name": "s691_reread_live_read",
+ "version": "20261121073413",
+ "sha256": "236c0d4b1e8d1fd80b8f26a8cebd2dc5b4008dfed6c96ec423be10de4e75f2d8",
+ "run": "44880747194",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"live_compare\":{\"at\":\"2026-11-21T07:34:13Z\",\"chk\":{},\"sum\":{\"Norco College\":[147,148,147,0,0,0],\"Cuyamaca College\":[179,182,179,0,0,0],\"Fullerton College\":[311,313,311,0,0,0],\"Moreno Valley College\":[139,140,139,0,0,0],\"San Jose City College\":[77,84,77,0,0,0],\"College of the Canyons\":[148,160,148,0,0,0]},\"diff\":[],\"gone\":{\"Norco College\":[\"30056\"],\"Cuyamaca College\":[\"10418\",\"18334\",\"39205\"],\"Fullerton College\":[\"17369\",\"18750\"],\"Moreno Valley College\":[\"30152\"],\"San Jose City College\":[\"18738\",\"22239\",\"43327\",\"43328\",\"46067\",\"46293\",\"46579\"],\"College of the Canyons\":[\"15477\",\"18021\",\"30297\",\"30837\",\"30838\",\"31354\",\"31356\",\"32829\",\"37868\",\"43377\",\"43918\",\"45550\"]},\"extra\":[]}}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

@@ -1,0 +1,24 @@
+{
+ "_readme": "S691 (worker piles2), lever 2 (ge_units_steps): 8 Mendocino transfer degrees name Cal-GETC (UCTP-TMC for STEM at 41091) and no general education units. A set step takes a figure only from the college's own printed words (d-calgetc-34-per-college-evidence-s648), so this read looks for the page printing Cal-GETC's units. No model call.",
+ "college": "Mendocino College",
+ "questions": {
+  "ge_units": "Whether and where the 2026-27 catalog prints Cal-GETC's (or the UC TMC for STEM pattern's) unit figure."
+ },
+ "keywords": [
+  "Cal-?\\s?GETC[^.\\n]{0,120}?\\(?\\b3[2-9]\\s*(?:semester\\s+)?units?",
+  "\\b3[2-9]\\s*(?:semester\\s+)?units?[^.\\n]{0,120}?Cal-?\\s?GETC",
+  "General\\s+Education\\s+Transfer\\s+Curriculum[^.\\n]{0,80}?\\b3[2-9]",
+  "UCTP[^.\\n]{0,80}?units",
+  "TMC\\s+for\\s+STEM[^.\\n]{0,80}?units"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "ge_units"
+   ],
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf"
+  }
+ ],
+ "pdf_after": 0,
+ "pdf_page_cap": 6
+}

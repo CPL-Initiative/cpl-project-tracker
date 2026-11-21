@@ -88,6 +88,10 @@ SPACED_CAMPUS = re.compile(r"^(.*\d[0-9A-Z.\-]*) ([A-Z])$")
 CODE_END = r"(?![0-9A-Za-z]|[.\-]\d)"
 # Between a subject's letters: a space, a hyphen, or the slash Glendale's CS/IS carries (S408).
 SUBJ_JOIN = r"[\s\-/]?"
+# Where the stored code prints a dot between two of its subject's letters (NC.BUS 204), the page may print it,
+# or a space or hyphen in its place (S691, code_parts).
+SUBJ_JOIN_DOT = r"[\s\-/.]?"
+INNER_DOT = re.compile(r"(?<=[A-Z&])\.(?=[A-Z&])")
 # A number in a run that lists one subject's courses after it ("ACCTG 101, 102; BUSAD 101, 106,
 # 120; CS/IS 100 or 101", Glendale's 2025-2026 PDF), and what may stand between two of them.
 RUN_TOKEN = r"C?\d(?: ?\d){0,3}(?:\.\d{1,2})?[A-Z]{0,2}"
@@ -136,10 +140,17 @@ def code_parts(code: str) -> tuple[str, str] | None:
     raw = re.sub(r"\s+", " ", (code or "").upper().strip())
     if SPACED_CAMPUS.match(raw):
         return None
-    m = CODE_PARTS.match(raw)
+    # A dot between two letters of the subject (College of the Canyons' noncredit NC.BUS 204, which its
+    # catalog prints NC.BUS-204; S691). Before, such a code had no parts and its pattern named the
+    # subject's letters alone with no dot between them, so no page named any of the course list and 101
+    # noncredit programs read no page. The dot is read where the stored code prints one, as a join;
+    # a code with no inner dot reads exactly as before, and a trailing dot (MUS. 1, E.S.L. 1) still
+    # leaves the code without parts.
+    m = CODE_PARTS.match(INNER_DOT.sub("", raw))
     if not m:
         return None
     subj = re.sub(r"[^A-Z&]", "", m.group(1))
+    dotted = {len(re.sub(r"[^A-Z&]", "", raw[:d.start()])) for d in INNER_DOT.finditer(raw)}
     n = NUM_PARTS.match(m.group(2))
     if not n:
         num_re = re.escape(m.group(2))
@@ -153,7 +164,8 @@ def code_parts(code: str) -> tuple[str, str] | None:
         elif sep == "-":
             num_re += r"[\s\-]?" + frac
         num_re += suffix
-    return SUBJ_JOIN.join(re.escape(ch) for ch in subj), num_re
+    return "".join((SUBJ_JOIN_DOT if i in dotted else SUBJ_JOIN) + re.escape(ch) if i else re.escape(ch)
+                   for i, ch in enumerate(subj)), num_re
 
 
 def run_numbers(text: str, subj: str) -> list[tuple[str, int]]:

@@ -310,6 +310,23 @@ check("(13) every live college is a crosswalk college", set(LV["colleges"]) <= {
 check("(13) the overall bar is basis live, with the live read time, and only for colleges the live read holds",
       OV["basis"] == "live" and OV["read_at"] == LV["read_at"] and set(OV["colleges"]) == set(LV["colleges"]))
 check("(13) no college row mixes in a live figure", not any(k in c for c in C for k in ("live", "overall")))
+import math  # noqa: E402
+_ov = [v["value"] for v in OV["colleges"].values()]
+check("(13) the statewide mean is the math.fsum mean of the college values, so Python 3.11 and 3.12 build the same figure",
+      OV["statewide"]["mean"] == (round(math.fsum(_ov) / len(_ov), 4) if _ov else None) and OV["statewide"]["colleges"] == len(_ov),
+      (OV["statewide"], len(_ov)))
+_src = open(os.path.join(ROOT, "kb", "_build_commons_data_status.py"), encoding="utf-8").read()
+check("(13) the builder takes the overall mean with math.fsum", 'math.fsum(vals) / len(vals)' in _src and "round(sum(vals) / len(vals)" not in _src)
+_costed = [c for c in C if c["harvested"] and c["cost_usd"] is not None and c["passed_at_read"]]
+check("(13) the statewide cost is the math.fsum sum of the college costs", S["cost_usd"] == round(math.fsum(c["cost_usd"] for c in _costed), 2),
+      (S["cost_usd"], len(_costed)))
+_runs = (json.load(open(os.path.join(ROOT, "kb/reference/model_spend_daily.json"), encoding="utf-8")).get("runner_runs") or {}
+         if os.path.isfile(os.path.join(ROOT, "kb/reference/model_spend_daily.json")) else {})
+check("(13) the statewide spend is the math.fsum sum of the ledger's runs", not _runs or S.get("spent_usd") == round(math.fsum(r.get("usd") or 0 for r in _runs.values()), 2),
+      (S.get("spent_usd"), len(_runs)))
+check("(13) the builder adds cost and spend with math.fsum, never sum()",
+      'round(math.fsum(c["cost_usd"] for c in costed), 2)' in _src and 'round(math.fsum(r.get("usd") or 0 for r in runs.values()), 2)' in _src
+      and 'round(sum(c["cost_usd"]' not in _src and 'round(sum(r.get("usd")' not in _src)
 
 # (14) each cause's programs (S649, COBIx's item 1 on #3229): one sidecar per college with programs still to pass.
 # A pinned fixture first: one college, four programs, each cause and each source of a catalog page.

@@ -1,0 +1,29 @@
+{
+ "_readme": "S691 (worker piles2), the second free read behind Santa Monica's reconcile_steps lever. Read 44881390798 showed eight records whose section heading and its 'Area of Emphasis: (N units)' line print on the PDF page before the page the reader handed over (Dance 03274 p.123, Computer Programming 08970 and 21007 p.115, Ethnic Studies 19299 and 19300 p.142, Public Policy 30899 p.188, English 45928 p.136, Business Information Worker 2 39651 p.111). Five more carry the same note and were not on those pages: Accounting 03256 (filed p.83), Music 03272 (p.172), Registered Nursing 03281 and LVN to ADN 10345 (p.175), Global Studies 31231 (p.152). This read prints their heading pages and the page after, so a pin names the words the section opens on. No model call.",
+ "college": "Santa Monica College",
+ "questions": {
+  "total_words": "Where a Santa Monica program prints its heading and 'Area of Emphasis: (N units)', and whether that page is the one before the reader's page."
+ },
+ "keywords": [
+  "Accounting,?\\s+Associate",
+  "Music,?\\s+Associate",
+  "Registered\\s+Nursing,?\\s+Associate",
+  "Career\\s+Ladder",
+  "Global\\s+Studies,?\\s+Associate"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "total_words"
+   ],
+   "url": "https://catalog.smc.edu/current/catalog.pdf"
+  }
+ ],
+ "pdf_span": [
+  78,
+  180
+ ],
+ "pdf_after": 1,
+ "pdf_page_cap": 14,
+ "pdf_unfolded": true
+}

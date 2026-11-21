@@ -221,22 +221,38 @@ def refused_filed(folder: str) -> set[str]:
     2026-11-20 showed it at three colleges: City College of San Francisco's 40 refused programs went back to course
     descriptions (pages 561 to 578 and 643 for its business and ESL certificates; run 44687776552), Santa Rosa
     Junior's 34 and Ohlone's 7 to the pages they had (runs 44687780496, 44687785539)."""
-    out: set[str] = set()
-    plain: set[str] = set()     # refusals filed beside the plain picker's own named heading, from either file
+    # A program both files list is decided by the newer run's file: a stale preview's plain_named never unmarks a
+    # program a later capture refused by rule A, nor the reverse (COBIx on #3590, hunch 2). Runs that tie, or a file
+    # with no run, decide together, as before: plain_named wins.
+    verdicts: dict[str, tuple[int, set]] = {}
     for name in ("capture.json", "capture_preview.json"):
         try:
             with open(os.path.join(folder, name), encoding="utf-8") as fh:
                 d = json.load(fh) or {}
         except (OSError, ValueError):
             continue
-        for r in (d.get("not_found") or []) if isinstance(d, dict) else []:
+        if not isinstance(d, dict):
+            continue
+        run = str(d.get("run") or "")
+        run_n = int(run) if run.isascii() and run.isdigit() else 0
+        for r in d.get("not_found") or []:
             near = (r.get("near_miss") or {}) if isinstance(r, dict) else {}
             if not isinstance(near, dict) or not r.get("control_number"):
                 continue
             if near.get("plain_named"):
-                plain.add(str(r["control_number"]))
+                kind = "plain"
             elif near.get("rule") in ("A", "D") or near.get("page_checks"):
-                out.add(str(r["control_number"]))
+                kind = "refused"
+            else:
+                continue
+            cn = str(r["control_number"])
+            seen = verdicts.get(cn)
+            if seen is None or run_n > seen[0]:
+                verdicts[cn] = (run_n, {kind})
+            elif run_n == seen[0]:
+                seen[1].add(kind)
+    out = {cn for cn, (_, kinds) in verdicts.items() if kinds == {"refused"}}
+    plain = {cn for cn, (_, kinds) in verdicts.items() if "plain" in kinds}
     try:
         with open(os.path.join(folder, "reread_keep_better.json"), encoding="utf-8") as fh:
             kb = json.load(fh) or {}

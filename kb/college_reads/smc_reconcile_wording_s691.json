@@ -1,0 +1,38 @@
+{
+ "_readme": "S691 (worker piles), the gap census of 2026-11-20 23:24Z lists 43 Santa Monica programs under reconcile_steps (a correction rule from the catalog's own wording, then a rescore). 15 records name no total and their notes say the section opens on the page before the one the reader handed over (Pilates 45811 to 45815, Dance 03274, Ethnic Studies 19299 and 19300, Computer Programming 08970 and 21007, Public Policy 30899); 19 sum past or short of the stated total (the transfer degrees 32792, 33270, 33271, 33827, 35284, 36265, 37452; Cosmetology 03302 and 21026). This read prints each program's heading page and the page after it, so the session sees the words the total is printed in before it writes a step. No model call.",
+ "college": "Santa Monica College",
+ "questions": {
+  "total_words": "Where and in what words a Santa Monica program prints its total units, and whether the heading page holds it.",
+  "transfer_totals": "How a transfer degree's page prints its major total beside lists that choose courses."
+ },
+ "keywords": [
+  "Pilates\\s+Comprehensive\\s+Teacher\\s+Training",
+  "Yoga\\s+Teacher\\s+Training",
+  "Dance,?\\s+Associate",
+  "Ethnic\\s+Studies,?\\s+(?:Associate|Certificate)",
+  "Computer\\s+Programming,?\\s+Associate",
+  "Public\\s+Policy,?\\s+Associate",
+  "Introduction\\s+to\\s+Engineering,?\\s+Certificate",
+  "Business\\s+Information\\s+Worker\\s+2",
+  "Psychology,?\\s+Associate\\s+Degree\\s+for\\s+Transfer",
+  "Economics,?\\s+Associate\\s+Degree\\s+for\\s+Transfer",
+  "Kinesiology,?\\s+Associate\\s+Degree\\s+for\\s+Transfer",
+  "Cosmetology,?\\s+Associate"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "total_words",
+    "transfer_totals"
+   ],
+   "url": "https://catalog.smc.edu/current/catalog.pdf"
+  }
+ ],
+ "pdf_span": [
+  80,
+  205
+ ],
+ "pdf_after": 1,
+ "pdf_page_cap": 40,
+ "pdf_unfolded": true
+}

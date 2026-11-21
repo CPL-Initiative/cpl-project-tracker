@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Pharmacy Technology",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=247",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=247",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9659,
+  "input_tokens": 8739,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9659,
-    "output_tokens": 1273,
+    "input_tokens": 8739,
+    "output_tokens": 1302,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1273,
+  "output_tokens": 1302,
   "output_tokens_details": {
-   "thinking_tokens": 377
+   "thinking_tokens": 393
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0641,
- "ms": 10664,
- "seconds": 10.9,
+ "cost_usd": 0.061,
+ "ms": 10990,
+ "seconds": 11.1,
  "parts": null,
  "error": null,
  "score": {
@@ -100,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Associate in Science Degree and Certificate of Achievement: Pharmacy Technology",
+   "section_heading": "Certificate of Achievement: Pharmacy Technology",
    "measure": "units",
    "total_units": {
     "min": 18.5,
@@ -201,13 +201,26 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints one section and one requirements list shared by the A.S. degree and the Certificate of Achievement; this record reads that shared list for the certificate.",
-   "The single outcome is printed as a 'Degree and Certificate Student Learning Outcome', shared by both awards.",
-   "PHRMTEC-108 is printed at 3.0 units in the requirements and course description; the state file stores 2.5. Recorded as printed.",
-   "The printed courses sum to the stated 18.5 units.",
-   "The requirements list ends with 'Continued on the next page.', but the next page holds only course descriptions; no further requirements appear in the text. A reviewer may wish to confirm nothing was cut off.",
-   "The career is taken from 'entry-level pharmacy technician positions' in the program description."
+   "The outcome is printed under the heading 'Degree and Certificate Student Learning Outcome'. It is shared program-wide, and this certificate uses it.",
+   "The catalog prints PHRMTEC-108 at 3.0 units, both in the requirements and in the course description. The state file stores 2.5 units. The catalog value was recorded.",
+   "The listed courses sum to 18.5 units, which matches 'Units Required: 18.5'.",
+   "The career entry is drawn from 'prepares students for entry-level pharmacy technician positions in various pharmacy settings.'",
+   "'Continued on the next page' follows the requirements list. The next page holds only course descriptions, and no further requirements appear.",
+   "The catalog prints codes with a hyphen (PHRMTEC-101). These match the closed-list codes PHRMTEC 101 and the others."
   ]
  },
- "extracted_run": "39006378829"
+ "extracted_run": "44886816990",
+ "catalog_year": "2026-2027",
+ "source_sha": "34e79502ee167034",
+ "source_codes": [
+  "PHRMTEC101",
+  "PHRMTEC102",
+  "PHRMTEC103",
+  "PHRMTEC104",
+  "PHRMTEC104L",
+  "PHRMTEC106",
+  "PHRMTEC106L",
+  "PHRMTEC108"
+ ],
+ "source_coverage": 1.0
 }

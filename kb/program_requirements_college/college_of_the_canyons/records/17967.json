@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Architectural Drafting & Technology",
  "award": "A.S. Degree",
- "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=72",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=72",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12263,
+  "input_tokens": 12264,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12263,
-    "output_tokens": 2515,
+    "input_tokens": 12264,
+    "output_tokens": 2439,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2515,
+  "output_tokens": 2439,
   "output_tokens_details": {
-   "thinking_tokens": 786
+   "thinking_tokens": 773
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09935,
- "ms": 19416,
- "seconds": 19.6,
+ "cost_usd": 0.09784,
+ "ms": 18709,
+ "seconds": 18.9,
  "parts": null,
  "error": null,
  "score": {
@@ -336,18 +336,43 @@
   "missing_explained": [
    {
     "code": "ID 207",
-    "why": "Catalog prints Residential Design as ARCHT-207 in the recommended electives; recorded as printed (ARCHT-207), so ID 207 itself is not placed."
+    "why": "not in the text; the A.S. recommended electives print 'ARCHT-207 Residential Design' instead, possibly the same course under a different subject"
    }
   ],
   "notes": [
-   "The top of page 72 (CONST-103, MATH, PHYSIC, upper division GE, WE-486ARCH) is the tail of a preceding program section (likely a bachelor's degree) and was not read for this award.",
-   "Core 21 units + 15 elective units = 36, matching 'Units Required: 36'.",
-   "ARCHT-084 is printed with 3.0 units; the state file stores ARCHT 84 at 2 units. The course description also lists 3.00 units.",
-   "Recommended elective 'ARCHT-207 Residential Design' likely corresponds to closed-list ID 207 Residential Design; reviewer should check whether ARCHT-207 is a misprint for ID-207.",
-   "ARCHT-190 is titled 'Design II – Space Planning' in the catalog vs 'Design II - Design Process' in the state file; ARCHT-260 is titled '3-D CAD for Modeling/Animation' vs '3-D Modeling/Rendering...' in the state file.",
-   "ARCHT-230 Structures I is not in the closed list (catalog addition).",
-   "The recommended electives list continues across the page break from page 72 to page 73."
+   "The text before the A.S. heading on page 72 (CONST-103, MATH, PHYSIC, upper division GE, WE-486ARCH) belongs to a different award (apparently a baccalaureate program) and was not read.",
+   "The recommended electives list continues across the page break from page 72 to page 73 (ARCHT-260, ID-102, ID-104, ARCHT-207).",
+   "ARCHT-084 is printed at 3.0 units; the closed list stores 2 units.",
+   "ARCHT-207 Residential Design is not in the closed list; the closed list has ID 207 Residential Design. Check whether this is a catalog typo.",
+   "Catalog titles differ from the closed list for ARCHT-190 ('Design II – Space Planning') and ARCHT-260 ('3-D CAD for Modeling/Animation').",
+   "ARCHT-230 Structures I is not in the closed list and is marked as a catalog addition.",
+   "The page prints no degree total and no general education pattern for this award."
   ]
  },
- "extracted_run": "39006378829"
+ "extracted_run": "44886816990",
+ "catalog_year": "2026-2027",
+ "source_sha": "f304ef1fd7e26854",
+ "source_codes": [
+  "ARCHT100",
+  "ARCHT110",
+  "ARCHT114",
+  "ARCHT115",
+  "ARCHT120",
+  "ARCHT140",
+  "ARCHT160",
+  "ARCHT180",
+  "ARCHT190",
+  "ARCHT200A",
+  "ARCHT200B",
+  "ARCHT220",
+  "ARCHT240",
+  "ARCHT260",
+  "ARCHT270",
+  "ARCHT280",
+  "ARCHT290",
+  "ARCHT84",
+  "ID102",
+  "ID104"
+ ],
+ "source_coverage": 0.952
 }

@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Computer Programming",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=116",
+ "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=115",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10088,
+  "input_tokens": 11897,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10088,
-    "output_tokens": 3909,
+    "input_tokens": 11897,
+    "output_tokens": 4356,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3909,
+  "output_tokens": 4356,
   "output_tokens_details": {
-   "thinking_tokens": 1194
+   "thinking_tokens": 1647
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.11853,
- "ms": 31617,
- "seconds": 31.9,
+ "cost_usd": 0.13471,
+ "ms": 33779,
+ "seconds": 34.2,
  "parts": null,
  "error": null,
  "score": {
@@ -55,12 +55,13 @@
    "pass": true
   },
   "invented": {
-   "count": 16,
+   "count": 17,
    "codes": [
     "CS15",
     "CS19",
     "CS20A",
     "CS20B",
+    "CS3",
     "CS40",
     "CS50",
     "CS52",
@@ -79,6 +80,7 @@
     "CS19",
     "CS20A",
     "CS20B",
+    "CS3",
     "CS40",
     "CS50",
     "CS52",
@@ -96,15 +98,18 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    15.0,
-    20.0
+    18.0,
+    23.0
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    27.0,
+    27.0
+   ],
+   "against": "program",
    "why": [
-    "the record names no total"
+    "the blocks sum to 18.0-23.0; the catalog states 27.0-27.0"
    ]
   },
   "repeated": {
@@ -112,17 +117,17 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
@@ -133,11 +138,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "Computer Programming, Associate Degree or Certificate of Achievement (heading not in the extracted text; section continues from the previous page)",
+   "section_heading": "Computer Programming, Associate Degree or Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 27,
+    "max": 27
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -154,20 +159,33 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "students will design, code, test, and debug computer programs.",
+    "Students will understand and use the Internet and web, application software, the components of the system unit, input, output, storage, operating systems and utility programs, communications and networks, database management, information systems development, and project management.",
+    "Students will also explain the social implications of technological development, and understand the capabilities of current-day computers and the possibilities for the future."
+   ],
+   "careers": [
+    "computer programmer"
+   ]
   },
   "blocks": [
    {
-    "name": "Required Core Courses (continued from previous page; heading cut off)",
+    "name": "Required Core Courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 15,
+     "max": 15
     },
     "courses": [
+     {
+      "code": "CS 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
      {
       "code": "CS 40",
       "units": 3,
@@ -198,7 +216,7 @@
     ]
    },
    {
-    "name": "MATH 4, College Algebra for STEM Majors or One of the following",
+    "name": "MATH 4 or One of the following",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -325,7 +343,7 @@
     "name": "GROUP 1",
     "rule": "all",
     "minimum": null,
-    "option_group": "Concentration groups (select 2)",
+    "option_group": "Concentration",
     "stated": {
      "min": null,
      "max": null
@@ -351,7 +369,7 @@
     "name": "GROUP 2",
     "rule": "all",
     "minimum": null,
-    "option_group": "Concentration groups (select 2)",
+    "option_group": "Concentration",
     "stated": {
      "min": null,
      "max": null
@@ -370,7 +388,7 @@
     "name": "GROUP 2: One course from the following",
     "rule": "choose_courses",
     "minimum": 1,
-    "option_group": "Concentration groups (select 2)",
+    "option_group": "Concentration",
     "stated": {
      "min": 3,
      "max": 3
@@ -417,7 +435,7 @@
     "name": "GROUP 3",
     "rule": "all",
     "minimum": null,
-    "option_group": "Concentration groups (select 2)",
+    "option_group": "Concentration",
     "stated": {
      "min": null,
      "max": null
@@ -443,7 +461,7 @@
     "name": "GROUP 4",
     "rule": "all",
     "minimum": null,
-    "option_group": "Concentration groups (select 2)",
+    "option_group": "Concentration",
     "stated": {
      "min": null,
      "max": null
@@ -462,7 +480,7 @@
     "name": "GROUP 4: One course from the following",
     "rule": "choose_courses",
     "minimum": 1,
-    "option_group": "Concentration groups (select 2)",
+    "option_group": "Concentration",
     "stated": {
      "min": 3,
      "max": 3
@@ -488,7 +506,7 @@
     "name": "GROUP 5",
     "rule": "all",
     "minimum": null,
-    "option_group": "Concentration groups (select 2)",
+    "option_group": "Concentration",
     "stated": {
      "min": null,
      "max": null
@@ -507,7 +525,7 @@
     "name": "GROUP 5: One course from the following",
     "rule": "choose_courses",
     "minimum": 1,
-    "option_group": "Concentration groups (select 2)",
+    "option_group": "Concentration",
     "stated": {
      "min": 3,
      "max": 3
@@ -533,13 +551,37 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The extracted text begins mid-section: the Computer Programming heading, description, program learning outcomes, Area of Emphasis total and the start of the Required Core Courses list are on the previous page and not in the text. total_units, outcomes and careers are therefore empty/null; reviewer should check page 115.",
-   "The section is assumed to be the shared Associate Degree / Certificate of Achievement requirements for Computer Programming; the heading could not be confirmed from the text.",
-   "Required Concentration Courses: 'Select 2 of the following groups: (12 units)'. Students complete two of the five groups, not one; all group blocks share option_group 'Concentration groups (select 2)'. Groups 2, 4 and 5 each consist of a required course block plus a 'One course from the following' block; both blocks of a group belong together.",
-   "MATH requirement: MATH 4 (4 units) or one of MATH 2, 3, 7, 8, 10, 11, 13, 15, 21, 26, 28, 29, 41, STAT C1000 (formerly MATH 54), PHILOS 9 (3-5 units); recorded as one choose-1 block. Units for the list courses are not printed beside them.",
-   "Web Developer section prints CS 82 as 'ASPEN.NET Programming in C#' (likely typo); not part of this award.",
-   "Text after Group 5 belongs to other programs (Computer Science, Database Applications Developer, Web Developer, Applied Artificial Intelligence, Blockchain Developer, Data Analyst) and was not read for this record."
+   "The section covers both the Associate Degree and the Certificate of Achievement; the Area of Emphasis (27 units) and the Program Learning Outcomes are shared by both awards and recorded here for the certificate.",
+   "The printed 'Required Core Courses: (15 units)' covers CS 3, CS 40/CS 80, CS 50, CS 60 (12 units) plus the math requirement (3-5 units); the math choice is recorded as its own block, so the core block's stated 15 includes it.",
+   "Math requirement: 'MATH 4 (4) or One of the following: (3-5 units)'; units are not printed beside the individual codes in the list, so they are null. STAT C1000 is printed as '(formerly MATH 54)'.",
+   "Required Concentration Courses: the student selects 2 of the 5 groups (12 units), not 1; all group blocks share option_group 'Concentration'. Groups 2, 4 and 5 each consist of one required course plus a choice of one course, recorded as two blocks per group (e.g. 'GROUP 2' and 'GROUP 2: One course from the following') that together form one group.",
+   "Program Learning Outcomes are printed as one paragraph; recorded as its three sentences, with the lead-in 'Upon completion of the program,' omitted from the first."
   ]
  },
- "extracted_run": "39567439681"
+ "extracted_run": "44885033145",
+ "catalog_year": "2026-2027",
+ "source_sha": "94fc73085a3497a4",
+ "source_codes": [
+  "CS51",
+  "CS82",
+  "CS83",
+  "CS83R",
+  "MATH10",
+  "MATH11",
+  "MATH13",
+  "MATH15",
+  "MATH2",
+  "MATH21",
+  "MATH26",
+  "MATH28",
+  "MATH29",
+  "MATH3",
+  "MATH4",
+  "MATH41",
+  "MATH7",
+  "MATH8",
+  "PHILOS9",
+  "STATC1000"
+ ],
+ "source_coverage": 1.0
 }

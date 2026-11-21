@@ -1,0 +1,13 @@
+{
+ "_what": "Programs whose catalog section prints no program total, each read by a person or session from the page itself (never found by a pattern over free text). kb/_program_named_gaps.py names the gap total_not_printed on a listed record whose only arithmetic reason is that it names no total, and the self-recall reads this file as the held answer. A record not listed here never takes the gap. Remove an entry to withdraw it.",
+ "colleges": {
+  "Santa Monica College": {
+   "45811": {"page": 162, "words": "Pilates Comprehensive Teacher Training, Certificate of Achievement", "evidence": "PDF pp.162-163 print the section's lists with their own figures (Required Core Courses: (6 units), Required Mat Courses: (3 units), Required Reformer Courses: (3 units), Required Apparatus Courses: (3 units)) and no 'Area of Emphasis' or other program total (college-page-read run 44881390798).", "run": "44881390798"},
+   "45812": {"page": 163, "words": "Yoga Teacher Training – 200 Hour, Certificate of Achievement", "evidence": "PDF p.163 prints Required Core Courses: (9 units) and a KIN PE 58 list, and no 'Area of Emphasis' or other program total (college-page-read run 44881390798).", "run": "44881390798"},
+   "45813": {"page": 163, "words": "Pilates Mat Teacher Training, Certificate of", "evidence": "PDF p.163 prints Required Core Courses: (6 units) and Required Mat Courses: (3 units), and no 'Area of Emphasis' or other program total (college-page-read run 44881390798).", "run": "44881390798"},
+   "45814": {"page": 162, "words": "Pilates Apparatus Teacher Training, Certificate of Achievement", "evidence": "PDF p.162 prints Required Core Courses: (6 units), Required Mat Courses: (3 units) and Required Apparatus Courses: (3 units), and no 'Area of Emphasis' or other program total (college-page-read run 44881390798).", "run": "44881390798"},
+   "45815": {"page": 163, "words": "Pilates Reformer Teacher Training, Certificate of Achievement", "evidence": "PDF p.163 prints Required Core Courses: (6 units), Required Mat Courses: (3 units) and Required Reformer Courses: (3 units), and no 'Area of Emphasis' or other program total (college-page-read run 44881390798).", "run": "44881390798"},
+   "37885": {"page": 135, "words": "Introduction to Engineering, Certificate of Achievement", "evidence": "PDF pp.135-136 print Required Mathematics Course: (5 units), Required Physics Course: (5 units), Required Engineering Course: (2 units) and Elective Engineering Course: (3 units), and no 'Area of Emphasis' or other program total (college-page-read run 44881390798).", "run": "44881390798"}
+  }
+ }
+}

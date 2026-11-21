@@ -1,7 +1,7 @@
 {
  "college": "Santa Monica College",
- "run": "44739378155",
- "written": "2026-11-20T13:32:50Z",
+ "run": "44885033145",
+ "written": "2026-11-21T08:36:25Z",
  "rule": "a checked live row restores, or is held where the base files none; then own program (a heading sharing a title word, or a generic heading on a page the address or the capture shows is the program's own; then heading_award_check), where a failing re-read is restored, or held where the base files none or the live row already holds this run; then a live row holding this run keeps its record and names no dispatch; then a supplied live run other than the filed record's is held for a person; then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one (d-reread-keep-the-better-s683; COBIx on #3544 and #3547)",
  "checked": [],
  "live_runs": {
@@ -24,6 +24,7 @@
   "03284": "39567439681",
   "03302": "39567439681",
   "08962": "39567439681",
+  "08963": "44739378155",
   "08964": "39567439681",
   "08965": "39567439681",
   "08966": "39567439681",
@@ -48,6 +49,7 @@
   "19428": "39567439681",
   "19429": "39567439681",
   "19430": "39567439681",
+  "19605": "44739378155",
   "19701": "39567439681",
   "19702": "39567439681",
   "19954": "39567439681",
@@ -69,6 +71,7 @@
   "21016": "39567439681",
   "21019": "39567439681",
   "21020": "39567439681",
+  "21026": "44739378155",
   "30202": "39567439681",
   "30296": "39567439681",
   "30309": "39567439681",
@@ -91,6 +94,7 @@
   "32382": "39567439681",
   "32753": "39567439681",
   "32792": "39567439681",
+  "33000": "44739378155",
   "33255": "39567439681",
   "33269": "39567439681",
   "33270": "39567439681",
@@ -225,57 +229,85 @@
   "45928": "39567439681",
   "45952": "39567439681",
   "46135": "39567439681",
+  "46189": "44739378155",
   "46191": "39567439681",
   "46310": "39567439681",
   "46448": "39567439681",
   "46469": "39567439681",
   "46470": "39567439681"
  },
- "live_read_at": "2026-11-20T13:31:46Z",
+ "load_skips": [
+  {
+   "control_number": "45012",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
  "dispatch": [
   {
    "workflow": "program-requirements-college.yml",
-   "ref": "claude/s690-wave-reread",
+   "ref": "claude/s691-piles",
    "inputs": {
     "college": "Santa Monica College",
-    "step": "load"
+    "step": "reread",
+    "force": "44885033145"
    },
-   "posts": 5,
+   "posts": 12,
    "control_numbers": [
-    "08963",
-    "19605",
-    "21026",
-    "33000",
-    "46189"
+    "03256",
+    "03272",
+    "03274",
+    "08970",
+    "19299",
+    "19300",
+    "21007",
+    "30899",
+    "31231",
+    "39651",
+    "45012",
+    "45928"
    ],
-   "needs_load": [
-    "08963",
-    "19605",
-    "21026",
-    "33000",
-    "46189"
+   "not_live_at_run": [
+    "03256",
+    "03272",
+    "03274",
+    "08970",
+    "19299",
+    "19300",
+    "21007",
+    "30899",
+    "31231",
+    "39651",
+    "45928"
    ]
   }
  ],
- "carried_runs": {},
+ "carried_runs": {
+  "44739378155": [
+   "08963",
+   "19605",
+   "21026",
+   "33000",
+   "46189"
+  ]
+ },
  "counts": {
-  "reread": 5,
-  "kept": 5,
-  "restored": 0,
+  "reread": 13,
+  "kept": 11,
+  "restored": 1,
   "restored_filed_pass": 0,
   "restored_not_own_program": 0,
   "held_for_person": 0,
   "held_checked": 0,
   "held_live_run": 0,
-  "new": 0,
+  "new": 1,
   "already_live": 0,
   "kept_on_own_page": 0,
   "plain_reread_would_lose_pass": 0,
-  "kept_by_extraction_guard": 0,
-  "run_places_none_after": 0,
-  "folder_places_none_after": 0,
-  "records_after": 230,
-  "dropped_by_filing": 9,
+  "kept_by_extraction_guard": 1,
+  "run_places_none_after": 1,
+  "folder_places_none_after": 1,
+  "records_after": 231,
+  "dropped_by_filing": 0,
   "dropped_filed_passes": 0
  },
  "runs": {
@@ -503,6 +535,446 @@
      "plain_reread_loses_pass": false,
      "outcome": "kept",
      "why": "the re-read holds score.coverage.pass and the filed record does not"
+    }
+   ]
+  },
+  "44885033145": {
+   "base": "origin/main",
+   "base_sha": "1f70b59b44e97418fd572450fb05f524f889c33e",
+   "decided": "2026-11-21T08:36:25Z",
+   "counts": {
+    "reread": 13,
+    "kept": 11,
+    "restored": 1,
+    "restored_filed_pass": 0,
+    "restored_not_own_program": 0,
+    "held_for_person": 0,
+    "held_checked": 0,
+    "held_live_run": 0,
+    "new": 1,
+    "already_live": 0,
+    "kept_on_own_page": 0,
+    "plain_reread_would_lose_pass": 0,
+    "kept_by_extraction_guard": 1,
+    "run_places_none_after": 1,
+    "folder_places_none_after": 1,
+    "records_after": 231,
+    "dropped_by_filing": 0,
+    "dropped_filed_passes": 0
+   },
+   "kept_by_extraction_guard": {
+    "19605": "passes_less"
+   },
+   "next_read_pays": [
+    "21026"
+   ],
+   "dropped_by_filing": [],
+   "programs": [
+    {
+     "control_number": "03256",
+     "title": "Accounting",
+     "award": "A.S. Degree",
+     "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=82",
+     "filed_source_url": "https://catalog.smc.edu/current/catalog.pdf#page=83",
+     "filed_run": "39567439681",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 26,
+      "listed": 26,
+      "arithmetic": "incomplete"
+     },
+     "live_run": "39567439681",
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.538,
+      "placed": 14,
+      "listed": 26,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read covers more (share 1.0 against 0.538)"
+    },
+    {
+     "control_number": "03272",
+     "title": "Music",
+     "award": "A.A. Degree",
+     "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=171",
+     "filed_source_url": "https://catalog.smc.edu/current/catalog.pdf#page=172",
+     "filed_run": "39567439681",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 58,
+      "listed": 58,
+      "arithmetic": "incomplete"
+     },
+     "live_run": "39567439681",
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.707,
+      "placed": 41,
+      "listed": 58,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read covers more (share 1.0 against 0.707)"
+    },
+    {
+     "control_number": "03274",
+     "title": "Dance",
+     "award": "A.A. Degree",
+     "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=123",
+     "filed_source_url": "https://catalog.smc.edu/current/catalog.pdf#page=124",
+     "filed_run": "39567439681",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.981,
+      "placed": 53,
+      "listed": 54,
+      "arithmetic": "equal"
+     },
+     "live_run": "39567439681",
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.759,
+      "placed": 41,
+      "listed": 54,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "08970",
+     "title": "Computer Programming",
+     "award": "A.S. Degree",
+     "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=115",
+     "filed_source_url": "https://catalog.smc.edu/current/catalog.pdf#page=116",
+     "filed_run": "39567439681",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 37,
+      "listed": 37,
+      "arithmetic": "unequal"
+     },
+     "live_run": "39567439681",
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.973,
+      "placed": 36,
+      "listed": 37,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read covers more (share 1.0 against 0.973)"
+    },
+    {
+     "control_number": "19299",
+     "title": "Ethnic Studies",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=142",
+     "filed_source_url": "https://catalog.smc.edu/current/catalog.pdf#page=143",
+     "filed_run": "39567439681",
+     "reread": {
+      "pass": false,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 24,
+      "listed": 24,
+      "arithmetic": "equal"
+     },
+     "live_run": "39567439681",
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.958,
+      "placed": 23,
+      "listed": 24,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds passes_live and the filed record does not"
+    },
+    {
+     "control_number": "19300",
+     "title": "Ethnic Studies",
+     "award": "A.A. Degree",
+     "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=142",
+     "filed_source_url": "https://catalog.smc.edu/current/catalog.pdf#page=143",
+     "filed_run": "39567439681",
+     "reread": {
+      "pass": false,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 24,
+      "listed": 24,
+      "arithmetic": "equal"
+     },
+     "live_run": "39567439681",
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.958,
+      "placed": 23,
+      "listed": 24,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds passes_live and the filed record does not"
+    },
+    {
+     "control_number": "21007",
+     "title": "Computer Programming",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=115",
+     "filed_source_url": "https://catalog.smc.edu/current/catalog.pdf#page=116",
+     "filed_run": "39567439681",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 20,
+      "listed": 20,
+      "arithmetic": "unequal"
+     },
+     "live_run": "39567439681",
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 20,
+      "listed": 20,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read's arithmetic reads unequal, the filed record's incomplete"
+    },
+    {
+     "control_number": "21026",
+     "title": "Cosmetology",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=122",
+     "filed_source_url": "https://catalog.smc.edu/current/catalog.pdf#page=121",
+     "filed_run": "44739378155",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 27,
+      "arithmetic": "incomplete"
+     },
+     "live_run": "44739378155",
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.963,
+      "placed": 26,
+      "listed": 27,
+      "arithmetic": "unequal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "restored",
+     "why": "the filed record holds score.coverage.pass and the re-read does not",
+     "next_read_held": null
+    },
+    {
+     "control_number": "30899",
+     "title": "Public Policy",
+     "award": "A.A. Degree",
+     "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=188",
+     "filed_source_url": "https://catalog.smc.edu/current/catalog.pdf#page=189",
+     "filed_run": "39567439681",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 67,
+      "listed": 67,
+      "arithmetic": "equal"
+     },
+     "live_run": "39567439681",
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.985,
+      "placed": 66,
+      "listed": 67,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "31231",
+     "title": "Global Studies",
+     "award": "A.A. Degree",
+     "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=151",
+     "filed_source_url": "https://catalog.smc.edu/current/catalog.pdf#page=152",
+     "filed_run": "39567439681",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 89,
+      "listed": 89,
+      "arithmetic": "equal"
+     },
+     "live_run": "39567439681",
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.843,
+      "placed": 75,
+      "listed": 89,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "39651",
+     "title": "Business Information Worker 2",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=111",
+     "filed_source_url": "https://catalog.smc.edu/current/catalog.pdf#page=112",
+     "filed_run": "39567439681",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 8,
+      "listed": 8,
+      "arithmetic": "equal"
+     },
+     "live_run": "39567439681",
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.625,
+      "placed": 5,
+      "listed": 8,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "45012",
+     "title": "Biotechnology",
+     "award": "A.S. Degree",
+     "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=99",
+     "filed_source_url": null,
+     "filed_run": null,
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 13,
+      "arithmetic": "unequal"
+     },
+     "live_run": null,
+     "outcome": "new",
+     "why": "no filed record on origin/main"
+    },
+    {
+     "control_number": "45928",
+     "title": "English",
+     "award": "A.A- T Degree",
+     "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=136",
+     "filed_source_url": "https://catalog.smc.edu/current/catalog.pdf#page=137",
+     "filed_run": "39567439681",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.976,
+      "placed": 41,
+      "listed": 42,
+      "arithmetic": "equal"
+     },
+     "live_run": "39567439681",
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.548,
+      "placed": 23,
+      "listed": 42,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
     }
    ]
   }

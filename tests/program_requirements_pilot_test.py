@@ -86,6 +86,26 @@ REFUSE = [
 MATCH += [("HORT 001 F", "HORT 001 F · Principles of Horticulture I"),
           ("HORT 001 F", "HORT 1F Principles of Horticulture I"),
           ("ACCT 101A F", "ACCT 101AF Financial Accounting")]
+# A dot between a subject's letters (S691): College of the Canyons' noncredit NC.BUS 204, printed NC.BUS-204 in its
+# 2026-27 catalog (pdf p.316). Before, the code had no parts, its pattern named the letters NCBUS alone with no dot,
+# and no page named any course of its 101 noncredit programs. The number still binds, and a trailing dot still
+# leaves a code without parts (E.S.L. 1, MUS. 1 read as before).
+MATCH += [("NC.BUS 204", "NC.BUS-204 INTERMEDIATE ACCOUNTING · 45.00 – 60.00 hours"),
+          ("NC.BCSK 100", "NC.BCSK-100 GED PREPARATION"),
+          ("NC.BUS 204", "NC.BUS 204 Intermediate Accounting"),
+          ("NC.BUS 204", "NCBUS 204 Intermediate Accounting"),
+          ("H.EC 113", "H.EC 113 Nutrition")]
+REFUSE += [("NC.BUS 204", "NC.BUS-2041 Something"),
+           ("NC.BUS 204", "NC.BUS-204L Laboratory"),
+           ("NC.BUS 204", "NC.BUS-203 COST ACCOUNTING"),
+           ("NC.BUS 204", "BUS-204 Intermediate Accounting")]
+check(P.code_parts("NC.BUS 204") is not None, "NC.BUS 204 has a subject and a number")
+check(P.code_parts("E.S.L. 1") is None and P.code_parts("MUS. 1") is None,
+      "a trailing dot still leaves a code without parts (unchanged, S691)")
+check(P.code_parts("BUS 204") == ("B[\\s\\-/]?U[\\s\\-/]?S", "0*2 ?0 ?4"), "a code with no dot reads as before")
+check(P.coverage(P.find_codes("NC.BUS-203 COST ACCOUNTING · NC.BUS-204 INTERMEDIATE ACCOUNTING",
+                              [{"code": "NC.BUS 203"}, {"code": "NC.BUS 204"}]),
+                 [{"code": "NC.BUS 203"}, {"code": "NC.BUS 204"}]) == 1.0, "Canyons' two accounting courses found")
 for code, text in MATCH:
     check(P.code_pattern(code).search(text), "%r must be found in %r" % (code, text))
 for code, text in REFUSE:
@@ -2137,8 +2157,23 @@ check(not S.score(soc, [{"code": "SOCI 2", "units": 3}], "x", "A.A. Degree", MER
 RCC_CONF = RC.load_steps().get("Riverside City College") or {}
 check(not RC.prefix_aliases("Riverside City College")
       and [c.get("retired", {}).get("session") for c in RCC_CONF.get("prefix_aliases_cited") or []] == ["S653"]
-      and not (RC.prefix_aliases("College of the Canyons") or {}),
-      "Riverside City's HIST for HIS is retired to the course-id route, its evidence kept; College of the Canyons stays held")
+      and RC.prefix_aliases("College of the Canyons") == {"PSYC": "PSYCH", "POLS": "POLISC", "COMM": "COMS"},
+      "Riverside City's HIST for HIS is retired to the course-id route, its evidence kept; College of the Canyons "
+      "holds the three pairs S652 held for want of a catalog title, now cited from its catalog (S691)")
+# Canyons' pairs (S691): each cited from the catalog's printed code and title (college page read 44882193771), at
+# least three agreeing courses and none disagreeing (kb/program_requirements_reconcile_out/
+# prefix_aliases_2026-11-21_canyons/measure.json: 15, 6 and 12 agree; the 120 records passing before still pass).
+_coc = (RC.load_steps().get("College of the Canyons") or {}).get("prefix_aliases_cited") or []
+check(sorted((c["printed"], c["file"]) for c in _coc) == [("COMM", "COMS"), ("POLS", "POLISC"), ("PSYC", "PSYCH")]
+      and all(c.get("evidence", 0) >= 3 and c.get("session") == "S691" for c in _coc),
+      "Canyons' three pairs each carry at least three agreeing courses")
+_coc_rec = {"program": {"total_units": {"min": 3, "max": 3}, "measure": "units"},
+            "blocks": [{"name": "Required", "rule": "all", "courses": [{"code": "POLS-230", "units": 3}]}]}
+_coc_steps = RC.prefix_aliases("College of the Canyons")
+check(not S.score(_coc_rec, [{"code": "POLISC 230", "units": 3}], "x", "A.A. Degree", _coc_steps)["coverage"]["missing"],
+      "Canyons' printed POLS-230 reads as the listed POLISC 230")
+check(S.score(_coc_rec, [{"code": "POLS C1000", "units": 3}], "x", "A.A. Degree", _coc_steps)["coverage"]["missing"]
+      == ["POLSC1000"], "and never as a course the file lists under POLS itself")
 # Los Angeles Valley (S533): "COMPLETE 4 COURSES FROM THE FOLLOWING: (COURSES MAY BE REPEATED)" read with the count and
 # not the repeat (Music 02962). The repeat step takes a minimum equal to n; another figure stays the reading's.
 mus = {"program": {"total_units": {"min": 33, "max": 35}, "measure": "units"},

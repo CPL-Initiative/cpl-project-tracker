@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-21_s691_pages_live_read_b.sql",
+ "name": "s691_pages_live_read_b",
+ "version": "20261121083344",
+ "sha256": "86a3e85cb8466367c33e387c1c39521b811b1f3a71e643c3f83e3b69ca1838cd",
+ "run": "44885370943",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"live_read_b\":{\"at\":\"2026-11-21T08:33:45Z\",\"live\":{\"Solano Community College\":{\"30671\":\"44514080886,false\",\"30678\":\"44514080886,false\",\"32121\":\"44514080886,false\",\"32126\":\"44514080886,false\",\"32495\":\"44514080886,false\",\"32917\":\"44514080886,false\",\"32918\":\"44514080886,false\",\"32919\":\"44514080886,false\",\"32927\":\"44514080886,false\",\"32937\":\"44514080886,false\",\"32992\":\"44514080886,false\",\"33373\":\"44514080886,false\",\"35808\":\"44514080886,false\",\"36249\":\"44514080886,false\",\"36511\":\"44514080886,false\",\"37103\":\"44514080886,false\",\"43948\":\"44514080886,false\",\"44069\":\"44514080886,false\",\"44820\":\"44514080886,false\",\"44833\":\"44514080886,false\",\"46127\":\"44514080886,false\",\"46128\":\"44514080886,false\",\"06535\":\"44514080886,false\",\"07808\":\"44514080886,false\"},\"West Los Angeles College\":{\"38677\":\"44475503054,false\"}}}}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Land Surveying",
  "award": "A.S. Degree",
- "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=189",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=189",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9141,
+  "input_tokens": 9140,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9141,
-    "output_tokens": 1480,
+    "input_tokens": 9140,
+    "output_tokens": 1405,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1480,
+  "output_tokens": 1405,
   "output_tokens_details": {
-   "thinking_tokens": 525
+   "thinking_tokens": 472
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06616,
- "ms": 11912,
- "seconds": 12.2,
+ "cost_usd": 0.06466,
+ "ms": 11018,
+ "seconds": 11.3,
  "parts": null,
  "error": null,
  "score": {
@@ -144,8 +144,8 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 27,
+     "max": 28
     },
     "courses": [
      {
@@ -231,14 +231,31 @@
   "missing_explained": [
    {
     "code": "GIS 101",
-    "why": "not in the text"
+    "why": "not in the text; requirements list continues on a page not included"
    }
   ],
   "notes": [
-   "The A.S. Degree and Certificate of Achievement share one section, one requirements list ('Units Required: 27 - 28') and one student learning outcome ('Degree and Certificate Student Learning Outcome'); recorded for the A.S.",
-   "The requirements list ends with 'Continued on the next page.', but the following page in the text shows only course descriptions; no continuation of the list appears. The listed courses sum to 27-28 units (23 + MATH-102 4 or MATH-102X 5), matching the stated total, so the list appears complete, but a reviewer should confirm GIS 101 is not part of the requirements.",
-   "The page prints no general education pattern or degree total for the A.S."
+   "The requirements list ends with 'Continued on the next page.' and the continuation is not in the text; further courses (possibly GIS 101, e.g. as recommended or elective) may be missing. The listed courses already sum to the stated 27-28 units.",
+   "The single student learning outcome is printed as a shared 'Degree and Certificate Student Learning Outcome'; recorded for the A.S. degree.",
+   "The section covers both the A.S. degree and the Certificate of Achievement with one requirements list.",
+   "No general education pattern or degree total is printed in the provided text."
   ]
  },
- "extracted_run": "39006378829"
+ "extracted_run": "44886816990",
+ "catalog_year": "2026-2027",
+ "source_sha": "479072919e050234",
+ "source_codes": [
+  "MATH102",
+  "MATH102X",
+  "SURV101A",
+  "SURV101L",
+  "SURV102A",
+  "SURV102L",
+  "SURV103",
+  "SURV104",
+  "SURV110",
+  "SURV260",
+  "SURV265"
+ ],
+ "source_coverage": 0.917
 }

@@ -594,6 +594,23 @@ try:
     check(not ({"33319", "46035"} & after) and before - after == {"33319", "46035"},
           "follow-up 1: with plain_named filed, both leave the dropped list's marks too, and nothing else moves, got %r"
           % sorted(before - after))
+    # COBIx on #3590, hunch 2: the newer run's file decides. A stale preview (an older run than capture.json) whose
+    # plain_named refusal the capture's rule A refusal replaced leaves the program marked.
+    with open(os.path.join(td, "capture.json")) as fh:
+        cap_run = int(json.load(fh)["run"])
+    with open(os.path.join(td, "capture_preview.json")) as fh:
+        prev = json.load(fh)
+    prev["run"] = str(cap_run - 1)
+    with open(os.path.join(td, "capture_preview.json"), "w") as fh:
+        json.dump(prev, fh)
+    stale = RC.refused_standing(td)
+    check({"33319", "46035"} <= stale and stale == before,
+          "#3590 hunch 2: a preview older than the capture never unmarks the capture's refusal, got %r"
+          % sorted(before - stale))
+    prev["run"] = str(cap_run)
+    with open(os.path.join(td, "capture_preview.json"), "w") as fh:
+        json.dump(prev, fh)
+    check(not ({"33319", "46035"} & RC.refused_standing(td)), "#3590 hunch 2: one run in both files: plain_named wins")
 finally:
     shutil.rmtree(td)
 

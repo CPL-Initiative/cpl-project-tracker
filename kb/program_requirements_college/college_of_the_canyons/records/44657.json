@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Public Health",
  "award": "A.S. T Degree",
- "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=164",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=163",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11183,
+  "input_tokens": 11626,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11183,
-    "output_tokens": 2873,
+    "input_tokens": 11626,
+    "output_tokens": 3388,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,44 +30,41 @@
     "model": null
    }
   ],
-  "output_tokens": 2873,
+  "output_tokens": 3388,
   "output_tokens_details": {
-   "thinking_tokens": 809
+   "thinking_tokens": 1350
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.10219,
- "ms": 23946,
- "seconds": 24.2,
+ "cost_usd": 0.11426,
+ "ms": 27862,
+ "seconds": 28.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 27,
+   "placed": 28,
    "listed": 30,
-   "share": 0.9,
+   "share": 0.933,
    "missing": [
     "ANTHRO103",
-    "ANTHRO103H",
-    "PSYCH104"
+    "ANTHRO103H"
    ],
    "unexplained": [
     "ANTHRO103",
-    "ANTHRO103H",
-    "PSYCH104"
+    "ANTHRO103H"
    ],
    "none_placed": false,
    "pass": false
   },
   "invented": {
-   "count": 3,
+   "count": 2,
    "codes": [
     "ANTRHO103",
-    "ANTRHO103H",
-    "PSYC104"
+    "ANTRHO103H"
    ],
    "flagged": [],
    "pass": false
@@ -115,7 +112,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "HEALTH SCIENCE (A.S.-T in Public Health; degree heading not in the extracted text)",
+   "section_heading": "Associate in Science for Transfer Degree: Public Health",
    "measure": "units",
    "total_units": {
     "min": 24,
@@ -126,7 +123,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "CalGETC",
    "degree_total": {
     "min": null,
     "max": null
@@ -197,7 +194,7 @@
     ]
    },
    {
-    "name": "Plus one course from the following (statistics)",
+    "name": "Plus one course from the following:",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -243,7 +240,7 @@
     ]
    },
    {
-    "name": "Plus one course from the following (biology)",
+    "name": "Plus one course from the following:",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -288,7 +285,7 @@
     ]
    },
    {
-    "name": "Plus one course from the following (anatomy, physiology, microbiology, chemistry)",
+    "name": "Plus one course from the following:",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -347,7 +344,7 @@
     ]
    },
    {
-    "name": "Plus one course from the following (social sciences / health)",
+    "name": "Plus one course from the following:",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -422,14 +419,50 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The extracted text begins mid-section on page 164; the degree's own heading and the ADT preamble (including any CalGETC / 60-unit statement) are on the preceding page and not in the text, so ge_pattern and degree_total are left null.",
-   "Catalog prints 'PSYC-104'; matched to closed-list PSYCH 104 (Statistics for the Behavioral Sciences) as a typo, not marked as an addition.",
-   "Catalog prints 'ANTRHO-103' and 'ANTRHO-103H'; matched to closed-list ANTHRO 103/103H as a typo, not marked as additions.",
-   "BIOSCI-221 is printed with 4.0 units in the requirements list; the state file stores 5 units.",
-   "HLHSCI-243 is printed as 'Women and Health' in the list (course description: Women's Health).",
-   "STAT-C1000E (5 units) recorded as a separate choice rather than an alternative of STAT-C1000 since it is a distinct course with different units.",
-   "Career entry 'public health careers' is taken from the degree student learning outcome; no separate careers section is printed."
+   "Catalog prints 'PSYC-104 Statistics for the Behavioral Sciences'; treated as the closed-list PSYCH 104 (subject misprint), not a catalog addition.",
+   "Catalog prints 'ANTRHO-103' and 'ANTRHO-103H'; treated as closed-list ANTHRO 103/103H (subject misspelling).",
+   "BIOSCI-221 is printed at 4.0 units in the requirements list; the state file stores 5 units. Recorded the printed 4.",
+   "HLHSCI-243 is printed as 'Women and Health' in the list; closed list title is 'Women's Health'.",
+   "The 60-unit / CalGETC statement is the generic ADT requirement, not printed as this award's total; degree_total left null and no GE units printed.",
+   "Honors twins recorded as alternatives; STAT-C1000E recorded as a separate choice (different units).",
+   "Career entry 'public health careers' taken from the Degree Student Learning Outcome sentence; no separate careers section is printed.",
+   "The block for HLHSCI-100 and HLHSCI-140 has no printed name; named 'Program Requirements' after the section heading."
   ]
  },
- "extracted_run": "39006378829"
+ "extracted_run": 44887850515,
+ "catalog_year": "2026-2027",
+ "source_sha": "6dce4c74e63ccad0",
+ "source_codes": [
+  "ANTHRO103",
+  "ANTHRO103H",
+  "BIOSCI100",
+  "BIOSCI100H",
+  "BIOSCI101",
+  "BIOSCI107",
+  "BIOSCI107H",
+  "BIOSCI201",
+  "BIOSCI202",
+  "BIOSCI221",
+  "CHEM151",
+  "CHEM151H",
+  "CHEM201",
+  "CHEM201H",
+  "GEOGRPH102",
+  "HLHSCI100",
+  "HLHSCI101",
+  "HLHSCI113",
+  "HLHSCI140",
+  "HLHSCI243",
+  "PSYCC1000",
+  "PSYCC1000H",
+  "SOCI101",
+  "SOCI101H",
+  "SOCI110",
+  "SOCI137",
+  "STATC1000",
+  "STATC1000E",
+  "STATC1000H"
+ ],
+ "source_coverage": 0.967,
+ "read_run": "44769429877"
 }

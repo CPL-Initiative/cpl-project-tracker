@@ -5,16 +5,19 @@
  "found": 203,
  "extracted": 203,
  "errors": 0,
- "passed_machine_checks": 200,
+ "passed_machine_checks": 201,
  "failed": {
-  "coverage": 1,
+  "coverage": 0,
   "invented": 0,
-  "arithmetic": 3,
+  "arithmetic": 2,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 13.42,
+ "cost_usd_run": 2.18,
+ "cost_usd_filed": 13.42,
  "cost_per_program": 0.0661,
+ "extract_calls": 19,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "05584",
@@ -36,11 +39,12 @@
     "error": null,
     "chars": {
      "body": 4167,
-     "content": 37951,
+     "content": 38038,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "07276",
@@ -62,11 +66,12 @@
     "error": null,
     "chars": {
      "body": 2229,
-     "content": 36065,
+     "content": 36152,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "07303",
@@ -88,11 +93,12 @@
     "error": null,
     "chars": {
      "body": 1793,
-     "content": 35595,
+     "content": 35682,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "07445",
@@ -114,11 +120,12 @@
     "error": null,
     "chars": {
      "body": 2958,
-     "content": 36759,
+     "content": 36846,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "10257",
@@ -140,11 +147,12 @@
     "error": null,
     "chars": {
      "body": 3447,
-     "content": 37249,
+     "content": 37336,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "14594",
@@ -166,11 +174,12 @@
     "error": null,
     "chars": {
      "body": 2623,
-     "content": 36414,
+     "content": 36501,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "14595",
@@ -192,11 +201,12 @@
     "error": null,
     "chars": {
      "body": 2187,
-     "content": 35991,
+     "content": 36078,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "14597",
@@ -218,11 +228,12 @@
     "error": null,
     "chars": {
      "body": 2278,
-     "content": 36073,
+     "content": 36160,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "14598",
@@ -244,11 +255,12 @@
     "error": null,
     "chars": {
      "body": 2281,
-     "content": 36077,
+     "content": 36164,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "14599",
@@ -270,11 +282,12 @@
     "error": null,
     "chars": {
      "body": 2255,
-     "content": 36051,
+     "content": 36138,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "14773",
@@ -296,11 +309,12 @@
     "error": null,
     "chars": {
      "body": 2626,
-     "content": 36418,
+     "content": 36505,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "19694",
@@ -322,11 +336,12 @@
     "error": null,
     "chars": {
      "body": 4176,
-     "content": 37997,
+     "content": 38084,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "19742",
@@ -348,11 +363,40 @@
     "error": null,
     "chars": {
      "body": 2575,
-     "content": 36372,
+     "content": 36459,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "19752",
+   "title": "Spanish Language",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3221&print",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.4,
+    "body": 0.4,
+    "content": 0.0,
+    "net": 2,
+    "listed": 5,
+    "why": "coverage 0.40 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 2815,
+     "content": 36690,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Active"
   },
   {
    "control_number": "22245",
@@ -374,11 +418,12 @@
     "error": null,
     "chars": {
      "body": 2180,
-     "content": 35982,
+     "content": 36069,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "32820",
@@ -400,11 +445,12 @@
     "error": null,
     "chars": {
      "body": 3677,
-     "content": 37481,
+     "content": 37568,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "37611",
@@ -426,11 +472,12 @@
     "error": null,
     "chars": {
      "body": 2888,
-     "content": 36690,
+     "content": 36777,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "42524",
@@ -452,11 +499,12 @@
     "error": null,
     "chars": {
      "body": 2827,
-     "content": 36629,
+     "content": 36716,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "43462",
@@ -478,11 +526,12 @@
     "error": null,
     "chars": {
      "body": 2160,
-     "content": 35974,
+     "content": 36061,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "43463",
@@ -504,11 +553,12 @@
     "error": null,
     "chars": {
      "body": 2076,
-     "content": 35886,
+     "content": 35973,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "43492",
@@ -530,11 +580,12 @@
     "error": null,
     "chars": {
      "body": 1596,
-     "content": 35407,
+     "content": 35494,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "45193",
@@ -556,11 +607,12 @@
     "error": null,
     "chars": {
      "body": 1821,
-     "content": 35628,
+     "content": 35715,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "45194",
@@ -582,11 +634,12 @@
     "error": null,
     "chars": {
      "body": 1295,
-     "content": 35105,
+     "content": 35192,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "45195",
@@ -608,38 +661,13 @@
     "error": null,
     "chars": {
      "body": 1585,
-     "content": 35396,
+     "content": 35483,
      "tabs": 0
     },
     "tab_panels": []
-   }
-  },
-  {
-   "control_number": "45583",
-   "title": "Public Safety Dispatcher",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3402&print",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 2,
-    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1651,
-     "content": 35461,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
+   },
+   "status": "Active"
   }
  ],
- "run": "40523400149"
+ "run": "44883860902"
 }

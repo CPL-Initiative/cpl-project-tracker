@@ -2,23 +2,51 @@
  "college": "Norco College",
  "programs": 161,
  "with_closed_list": 150,
- "found": 148,
- "extracted": 148,
+ "found": 147,
+ "extracted": 147,
  "errors": 0,
- "passed_machine_checks": 132,
+ "passed_machine_checks": 133,
  "failed": {
-  "coverage": 1,
+  "coverage": 0,
   "invented": 1,
-  "arithmetic": 15,
+  "arithmetic": 13,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd_run": 0.0,
- "cost_usd_filed": 10.12,
- "cost_per_program": 0.0684,
- "extract_calls": null,
+ "cost_usd_run": 0.29,
+ "cost_usd_filed": 10.08,
+ "cost_per_program": 0.0685,
+ "extract_calls": 2,
  "extract_failed": [],
  "not_found": [
+  {
+   "control_number": "30056",
+   "title": "Business Administration: General Business Concentration",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5145",
+    "label": {
+     "award": 1,
+     "title": 0.8
+    },
+    "field": "innerText",
+    "coverage": 0.556,
+    "body": 0.556,
+    "content": 0.556,
+    "net": 10,
+    "listed": 18,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 3380,
+     "content": 3380,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Active"
+  },
   {
    "control_number": "31317",
    "title": "Game Art: Environments and Vehicles",
@@ -47,5 +75,5 @@
    "status": "Active"
   }
  ],
- "run": "44063769303"
+ "run": "44765224865"
 }
