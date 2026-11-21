@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-21T10:11:04Z",
+ "written_at": "2026-11-21T12:07:29Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -158,8 +158,8 @@
   "coe": "The regional labor market crosswalk is committed but not yet read per college here.",
   "loaded": "The load time is a column of the live program requirements table, which this file does not carry.",
   "owners": "The gap census names the change that would move each program, not who makes it; an owner joins each ask when the asks are filed with one.",
-  "slo": "Course SLO reads are committed for 23 hosts under kb/course_outcomes/<host>/, not yet read per college here; the SLO queue's state shows where the queue holds a college.",
-  "objectives": "Course objectives are committed for 14 hosts (ccc, cccd, chabot, craftonhills, cuesta, hancockcollege, laspositas, palomar, rccd, redwoods, sac, sdccd, shasta, siskiyous) under kb/course_outcomes/<host>/, not yet read per college here."
+  "slo": "Course SLO reads are committed for 25 hosts under kb/course_outcomes/<host>/, not yet read per college here; the SLO queue's state shows where the queue holds a college.",
+  "objectives": "Course objectives are committed for 16 hosts (ccc, cccd, chabot, craftonhills, cuesta, hancockcollege, laspositas, palomar, rccd, redwoods, riohondo, sac, saddleback, sdccd, shasta, siskiyous) under kb/course_outcomes/<host>/, not yet read per college here."
  },
  "statewide": {
   "colleges": 118,
@@ -9661,8 +9661,10 @@
     "at": "2026-11-21 10:10Z"
    },
    "programs_file": "kb/status/commons_data_programs/rio_hondo.json",
-   "outcomes_file": null,
-   "outline_system": null,
+   "outcomes_file": "kb/status/commons_data_programs/rio_hondo.outcomes.json",
+   "outline_system": [
+    "curriqunet"
+   ],
    "objectives_printed": null,
    "read_at": "2026-11-20T07:09:20Z",
    "read_kind": "capture",
@@ -9711,7 +9713,13 @@
      "cost_usd": 18.55,
      "platform": "curriqunet"
     },
-    "slo_read": null,
+    "slo_read": {
+     "run": "44893126504",
+     "at": "2026-11-21T11:20:39Z",
+     "system": "curriqunet",
+     "source_kind": "course_outline",
+     "file": "kb/course_outcomes/riohondo/read_44893126504_p2of2.json"
+    },
     "plo_programs": 0,
     "ppm_member": null,
     "maps": {
@@ -9973,7 +9981,9 @@
    },
    "programs_file": "kb/status/commons_data_programs/saddleback.json",
    "outcomes_file": "kb/status/commons_data_programs/saddleback.outcomes.json",
-   "outline_system": null,
+   "outline_system": [
+    "curriqunet"
+   ],
    "objectives_printed": null,
    "read_at": "2026-10-16T03:03:07Z",
    "read_kind": "capture",
@@ -10023,7 +10033,13 @@
      "cost_usd": 25.88,
      "platform": "curriqunet"
     },
-    "slo_read": null,
+    "slo_read": {
+     "run": "44892658073",
+     "at": "2026-11-21T11:43:05Z",
+     "system": "curriqunet",
+     "source_kind": "course_outline",
+     "file": "kb/course_outcomes/saddleback/read_44892658073_p2of2.json"
+    },
     "plo_programs": 311,
     "ppm_member": {
      "host": "learningpathways.saddleback.edu",
