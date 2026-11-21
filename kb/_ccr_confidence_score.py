@@ -254,7 +254,20 @@ class Inputs:
                     self.trusted[cid] = (rec["discipline"], rec.get("common_title") or "", rec)
                 elif rec.get("discipline_source") == "description_and_top" and rec.get("discipline"):
                     self.anchor_cards[cid] = (rec["discipline"], rec.get("common_title") or "", rec)
+                elif pile_mint_anchor(rec):
+                    # A pile mint is a session's mint no person confirmed: never trusted, never in the population
+                    # this scorer decides (it carries a source). Placed through the subject map on an ordinary title,
+                    # its title may teach rule W's anchors beside the seed cards two signals confirmed; a shell
+                    # title (practicum, tutoring...) names a format and teaches nothing.
+                    self.anchor_cards[cid] = (rec["discipline"], rec.get("common_title") or "", rec)
         self.anchor_cards.update(self.trusted)
+
+
+def pile_mint_anchor(rec):
+    """A pile mint (`discipline_source` "pile_mint", kb/_pile_mint_apply.py) placed through the subject map on an
+    ordinary title: an anchor card for rule W, never a trusted card. A shell title (`pile_mint_shell`) never is."""
+    return (rec.get("discipline_source") == "pile_mint" and rec.get("pile_mint_route") == "subject_map"
+            and not rec.get("pile_mint_shell") and bool(rec.get("discipline")))
 
 
 def fpr_pairs(precedent, leave_out=None):

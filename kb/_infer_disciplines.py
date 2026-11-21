@@ -36,7 +36,9 @@ and run again. Blanks fill; this script's own prior fills RE-INFER (lexicon
 refinements propagate) and RETRACT when they no longer re-derive (lexicon
 removals propagate too — Session 45; a retracted row blanks so the later
 passes / curation re-fill it from per-row evidence). Manual/seed disciplines
-and other passes' fills are never touched.
+and other passes' fills are never touched, and neither is a pile mint
+(`discipline_source` "pile_mint", kb/_pile_mint_apply.py), which placed its
+SUBJ4 and discipline together on a measured route.
 
 After editing subject_map, run kb/_audit_subject_map.py first: it flags
 COLLEGE-HOMONYM subject codes (the same code naming different departments at
@@ -52,15 +54,22 @@ from collections import Counter
 from datetime import date
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+# The discipline_source a pile mint writes (kb/_pile_mint_dryrun.py DISCIPLINE_SOURCE): this pass leaves it as written.
+PILE_MINT_SOURCE = "pile_mint"
+
+
+def _kb():
+    """kb/, or the UC_KB_DIR seam (a test's fixture tree)."""
+    return os.environ.get("UC_KB_DIR") or HERE
 
 
 def load(name):
-    with open(os.path.join(HERE, name), encoding="utf-8") as f:
+    with open(os.path.join(_kb(), name), encoding="utf-8") as f:
         return json.load(f)
 
 
 def dump(name, obj):
-    with open(os.path.join(HERE, name), "w", encoding="utf-8") as f:
+    with open(os.path.join(_kb(), name), "w", encoding="utf-8") as f:
         json.dump(obj, f, ensure_ascii=False)
         f.write("\n")
 
@@ -147,6 +156,12 @@ def main():
         # lexicon refinements propagate; fill blanks.
         if has and not ai:
             return False
+        # A pile mint (kb/_pile_mint_dryrun.py / _pile_mint_apply.py) placed its SUBJ4 and discipline together on a
+        # measured route; re-deriving it here would blank or rewrite it (the S695 second reader simulated 485 of 572
+        # records blanked, 18 rewritten) and let the TOP passes fill the blanks. Left as written.
+        if has and ai == PILE_MINT_SOURCE:
+            stats["skip_pile_mint"] += 1
+            return False
         disc, source, c = infer([s for s in subjects if s], title, colleges)
         if not disc:
             if has and ai in ("subject_map", "title_keyword"):
@@ -223,6 +238,7 @@ def main():
     print(f"  still blank           : {stats['still_blank']}")
     print(f"  skipped (reviewed)    : {stats['skip_reviewed']}")
     print(f"  skipped (curated)     : {stats['skip_curated']}")
+    print(f"  left as written (pile mint): {stats['skip_pile_mint']}")
     print("  top disciplines assigned:")
     for d, n in by_disc.most_common(15):
         print(f"    {n:5}  {d}")
