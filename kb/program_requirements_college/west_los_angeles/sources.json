@@ -2454,26 +2454,23 @@
    "CHDEV7"
   ],
   "source": {
-   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=97",
-   "title": "The Associate in Science in Early Childhood Education for",
-   "h1": "The Associate in Science in Early Childhood Education for",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=78",
+   "title": "associate in science transfer degree in Early Childhood",
+   "h1": "associate in science transfer degree in Early Childhood",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    97,
-    98
+    78,
+    79,
+    80,
+    81
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "page_check": {
-    "rule": "A",
-    "page": 97,
-    "share": 1.0
-   },
-   "text_sha": "ad33d535b8f720ea"
+   "text_sha": "3dc9ee9f14640c82"
   },
   "listed": 6,
-  "text_chars": 5441
+  "text_chars": 16000
  },
  {
   "control_number": "32972",
@@ -7150,12 +7147,11 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 1.0,
+  "coverage": 0.9,
   "codes_found": [
    "NRSHCA81A",
    "NRSHCA81B",
    "NRSHCA81C",
-   "NRSHCA81D",
    "NRSHCA82A",
    "NRSHCA82B",
    "NRSHCA82C",
@@ -7164,26 +7160,20 @@
    "NRSHCA83C"
   ],
   "source": {
-   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=134",
-   "title": "LICENSED VOCATIONAL NURSING",
-   "h1": "LICENSED VOCATIONAL NURSING",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=209",
+   "title": "CREDIT COURSE LISTINGS & DESCRIPTIONS",
+   "h1": "CREDIT COURSE LISTINGS & DESCRIPTIONS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    134,
-    135
+    209
    ],
    "extractor": "pypdf",
-   "heading_named": true,
-   "page_check": {
-    "rule": "A",
-    "page": 134,
-    "share": 1.0
-   },
-   "text_sha": "0de04bc790a02452"
+   "heading_named": false,
+   "text_sha": "bacfed35eefb1297"
   },
   "listed": 10,
-  "text_chars": 5240
+  "text_chars": 5319
  },
  {
   "control_number": "45719",
@@ -7388,12 +7378,26 @@
   "title": "Spanish for the Workplace Fundamentals",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "VOCED945CE"
+  ],
+  "source": {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=266",
+   "title": "NONCREDIT PROGRAMS & COURSES",
+   "h1": "NONCREDIT PROGRAMS & COURSES",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    266
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "92ce9fc1201c1a78"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 4578
  },
  {
   "control_number": "46438",

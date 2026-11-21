@@ -4,7 +4,7 @@
  "shape": "degree",
  "title": "New Media Journalism",
  "award": "A.A. Degree",
- "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=205",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=205",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 12586,
-    "output_tokens": 3432,
+    "output_tokens": 3586,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3432,
+  "output_tokens": 3586,
   "output_tokens_details": {
-   "thinking_tokens": 832
+   "thinking_tokens": 1015
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.11898,
- "ms": 25345,
- "seconds": 25.6,
+ "cost_usd": 0.12206,
+ "ms": 26819,
+ "seconds": 37.8,
  "parts": null,
  "error": null,
  "score": {
@@ -496,28 +496,66 @@
   "missing_explained": [
    {
     "code": "MEA 114",
-    "why": "catalog prints Digital Sound Editing as MUSIC-114 in this section; recorded as catalog addition"
+    "why": "catalog prints MUSIC-114 Digital Sound Editing instead in this section"
    },
    {
     "code": "MEA 155",
-    "why": "catalog prints Introduction to Audio Production only as MUSIC-155 in this section"
+    "why": "catalog prints MUSIC-155 Introduction to Audio Production instead"
    },
    {
     "code": "MEA 159",
-    "why": "catalog prints Music Production for Film/TV/New Media as MUSIC-159; recorded as catalog addition"
+    "why": "catalog prints MUSIC-159 instead in this section"
    },
    {
     "code": "MEA 255",
-    "why": "catalog prints Soundtrack Production as MUSIC-255 in this section; MEA-255 appears only in the Sound Arts section"
+    "why": "catalog prints MUSIC-255 in this section; MEA-255 named only in the Sound Arts section"
    }
   ],
   "notes": [
-   "The Fundamental Skills heading carries a parenthetical: 'in addition to the requirements below, complete 3 additional units from MEA department for 18 units'. The six listed courses already total 18 units, so the meaning of this extra 3 units is ambiguous; it was not recorded as a separate block or as open electives. Reviewer should check.",
-   "Listed blocks sum to 27 units (18+3+2+1+3), matching 'Units Required: 27'.",
-   "MEA-100, MEA-111, MEA-112 and MEA-120 appear both in earlier blocks and in the final elective list, which says 'not already taken above'.",
-   "MEA-135 is printed as 'Character Animation' and MEA-265 as 'Studio Production' in this section, while the closed list titles them 'Computer Animation and Special Effects' and 'Animation Production'.",
-   "No careers are named in the section."
+   "The Fundamental Skills heading says 'in addition to the requirements below, complete 3 additional units from MEA department for 18 units'; the six listed courses already total 18 units, so this parenthetical is ambiguous. Blocks sum to 18+3+2+1+3 = 27, matching Units Required: 27; no separate 3-unit MEA elective was recorded.",
+   "MEA-100, MEA-111, MEA-112 and MEA-120 appear both in earlier blocks and in the final elective list; the final list says 'not already taken above'.",
+   "Catalog titles differ from the state file for MEA-135 ('Character Animation' vs 'Computer Animation and Special Effects') and MEA-265 ('Studio Production' vs 'Animation Production'); codes match so they are not marked as additions.",
+   "WE-186MEA is printed as 0.05 – 4.0 units with a minimum of one unit required."
   ]
  },
- "extracted_run": "39006378829"
+ "extracted_run": "44886816990",
+ "catalog_year": "2026-2027",
+ "source_sha": "9a5a6d5c587b0782",
+ "source_codes": [
+  "COMMC1000",
+  "COMMC1000H",
+  "MEA100",
+  "MEA101",
+  "MEA102",
+  "MEA106",
+  "MEA108",
+  "MEA109",
+  "MEA110",
+  "MEA111",
+  "MEA112",
+  "MEA116",
+  "MEA118",
+  "MEA120",
+  "MEA125",
+  "MEA131",
+  "MEA135",
+  "MEA180",
+  "MEA210",
+  "MEA218",
+  "MEA225",
+  "MEA230",
+  "MEA231",
+  "MEA232",
+  "MEA233",
+  "MEA235",
+  "MEA255",
+  "MEA261",
+  "MEA265",
+  "MEA280",
+  "MEA295",
+  "MUSIC155",
+  "PHOTO215",
+  "WE186MEA"
+ ],
+ "source_coverage": 0.919
 }

@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Fire Technology : Pre-Service",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=152",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=152",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11212,
+  "input_tokens": 10855,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11212,
-    "output_tokens": 1736,
+    "input_tokens": 10855,
+    "output_tokens": 1668,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1736,
+  "output_tokens": 1668,
   "output_tokens_details": {
-   "thinking_tokens": 445
+   "thinking_tokens": 426
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07957,
- "ms": 14522,
- "seconds": 14.9,
+ "cost_usd": 0.07678,
+ "ms": 12975,
+ "seconds": 13.1,
  "parts": null,
  "error": null,
  "score": {
@@ -135,7 +135,7 @@
     "Students will be able to demonstrate proficiency in the core skills and knowledge of fire organization, fire prevention, fire equipment and systems, building construction for fire protection, fire behavior and combustion and emergency medical technician."
    ],
    "careers": [
-    "the fire service"
+    "fire service"
    ]
   },
   "blocks": [
@@ -272,12 +272,28 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Read only the Certificate of Achievement: Fire Technology - Pre-Service section; the A.S. degree (32.5 units, with six required elective units) and the Fire Academy certificate are separate sections.",
-   "Required courses sum to 26.5 units, matching 'Units Required: 26.5'. The electives are printed as 'Recommended electives' for the certificate and do not count toward the total.",
-   "Career 'the fire service' comes from the shared degree/certificate program description printed under the A.S. heading ('prepares students for careers in the fire service, either public or private').",
-   "FIRETC-101 is printed as 'Principles of Emergency Services' in the catalog, while the closed list title is 'Fire Protection Organization'; FIRETC-125 is printed as 'Firefighting Tactics and Strategy' in the requirements list.",
-   "The HLHSCI 151 waiver sentence in the shared description refers to a course not listed in either requirements list; EMS-101/101L/102 appear to be the EMT courses."
+   "Read only the Certificate of Achievement: Fire Technology - Pre-Service section (Units Required: 26.5); the degree section (32.5 units, six elective units required) and the Fire Academy certificate were not recorded.",
+   "Required courses sum to 26.5 units, matching the stated total.",
+   "The career 'fire service' comes from the shared degree/certificate description ('prepares students for careers in the fire service, either public or private').",
+   "The shared description says HLHSCI 151 (EMT) may be waived with prior EMT training and replaced by two additional elective courses, but HLHSCI 151 does not appear in the certificate's course list (EMS-101/101L/102 appear instead); reviewer may wish to check.",
+   "Catalog prints FIRETC-101 as 'Principles of Emergency Services', which differs from the state file title 'Fire Protection Organization'."
   ]
  },
- "extracted_run": "39006378829"
+ "extracted_run": "44886816990",
+ "catalog_year": "2026-2027",
+ "source_sha": "41af9da23a82a2cb",
+ "source_codes": [
+  "FIRETC101",
+  "FIRETC102",
+  "FIRETC103",
+  "FIRETC104",
+  "FIRETC105",
+  "FIRETC106",
+  "FIRETC109",
+  "FIRETC110",
+  "FIRETC120",
+  "FIRETC123",
+  "FIRETC125"
+ ],
+ "source_coverage": 1.0
 }

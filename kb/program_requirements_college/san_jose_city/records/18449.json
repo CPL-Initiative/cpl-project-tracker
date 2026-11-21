@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 13950,
-    "output_tokens": 11162,
+    "output_tokens": 10900,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,28 +30,26 @@
     "model": null
    }
   ],
-  "output_tokens": 11162,
+  "output_tokens": 10900,
   "output_tokens_details": {
-   "thinking_tokens": 2959
+   "thinking_tokens": 2746
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.27904,
- "ms": 78836,
- "seconds": 79.3,
+ "cost_usd": 0.2738,
+ "ms": 75686,
+ "seconds": 76.4,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 134,
+   "placed": 136,
    "listed": 143,
-   "share": 0.937,
+   "share": 0.951,
    "missing": [
-    "ART91",
-    "ART92",
     "COMPUTERGRAP",
     "DANCE23",
     "DMA1",
@@ -62,20 +60,28 @@
    ],
    "unexplained": [
     "COMPUTERGRAP",
-    "SL10A",
-    "SL10B",
     "THEATREARTST"
    ],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ARTHC1100",
+     "listed": "ART91",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTHC1200",
+     "listed": "ART92",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": false
   },
   "invented": {
-   "count": 31,
+   "count": 29,
    "codes": [
     "ART76",
     "ART98",
-    "ARTHC1100",
-    "ARTHC1200",
     "CGID1",
     "CGID11",
     "CGID12",
@@ -107,8 +113,6 @@
    "flagged": [
     "ART76",
     "ART98",
-    "ARTHC1100",
-    "ARTHC1200",
     "CGID1",
     "CGID21",
     "ETH27",
@@ -128,7 +132,7 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "unequal",
+   "status": "incomplete",
    "computed": [
     6.0,
     6.0
@@ -139,28 +143,8 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 6.0-6.0; the catalog states 18.0-18.0"
-   ],
-   "degree": {
-    "pass": false,
-    "status": "unequal",
-    "computed": [
-     48.0,
-     48.0
-    ],
-    "stated": [
-     60.0,
-     60.0
-    ],
-    "against": "degree",
-    "ge": [
-     34.0,
-     34.0
-    ],
-    "why": [
-     "the blocks and general education sum to 48.0-48.0; the catalog prints 60.0-60.0 for the degree"
-    ]
-   }
+    "'NON-THEORY-BASED/SKILLS-BASED COURSES (Not GE Certified and 12 Units Maximum)' chooses units but names no minimum"
+   ]
   },
   "repeated": {
    "codes": [],
@@ -762,7 +746,7 @@
    {
     "name": "NON-THEORY-BASED/SKILLS-BASED COURSES (Not GE Certified and 12 Units Maximum)",
     "rule": "choose_units",
-    "minimum": 0,
+    "minimum": null,
     "option_group": null,
     "stated": {
      "min": null,
@@ -1399,39 +1383,48 @@
   "missing_explained": [
    {
     "code": "ART 91",
-    "why": "not in the text; catalog lists ARTH C1100 (Survey of Art From Prehistory to the Medieval Era) instead"
+    "why": "not in text; catalog lists ARTH C1100 (Survey of Art From Prehistory to the Medieval Era) instead"
    },
    {
     "code": "ART 92",
-    "why": "not in the text; catalog lists ARTH C1200 (Survey of Art From the Renaissance to Contemporary) instead"
+    "why": "not in text; catalog lists ARTH C1200 (Survey of Art From the Renaissance to Contemporary) instead"
    },
    {
     "code": "DMA 1",
-    "why": "not in the text under this code; catalog prints CGID 001 Introduction to Digital Media Arts (same title), recorded as an addition"
+    "why": "not in text under this code; catalog lists CGID 001 Introduction to Digital Media Arts (likely renumbered)"
    },
    {
     "code": "ComputerGrap Visual Development",
-    "why": "not in the text by this title; possibly CGID 021 Concept Art, recorded as an addition"
+    "why": "not in text by this title; possibly CGID 021 Concept Art"
    },
    {
     "code": "DANCE 23",
-    "why": "not in the text (only DANCE 023B and 023C listed)"
+    "why": "not in text (only DANCE 023B and 023C listed)"
    },
    {
     "code": "ETH 18",
-    "why": "not in the text"
+    "why": "not in text"
+   },
+   {
+    "code": "SL 010A",
+    "why": "not in text"
+   },
+   {
+    "code": "SL 010B",
+    "why": "not in text"
    }
   ],
   "notes": [
-   "Major rule: complete 18 units from the lists, at least 6 units from Theory-based courses; Non-Theory-based/Skills-based courses count for at most 12 units. Recorded the theory block as choose_units minimum 6 and the skills block as choose_units minimum 0 (12-unit maximum); total_units 18 is the overall requirement.",
-   "Catalog codes with leading zeros (e.g., ART 090, ENGL 010) were matched to closed-list codes without them (ART 90, ENGL 10).",
-   "Closed-list entries with code 'ComputerGrap' (no number) were matched by title to the CGID courses printed (e.g., CGID 003 Typography = Introduction to Typography and Business Branding; CGID 004 Web Design = Fundamentals of Web Design; CGID 011 Design Thinking = Design Thinking and Digital Storytelling); 'TheatreArtsT Technical Theatre in Production' matched to THEAT 033. Reviewer should confirm.",
-   "AA Degree Requirements table: Major 18, General Education Requirements 34, Degree Applicable Electives 8, Total 60. The GE pattern is not named on the page, so ge_pattern is null. The 8 elective units are outside the major and recorded in degree_elective_units.",
-   "The page also requires two courses for the U.S. History, Constitution, and American Ideals Requirement (US-1, US-2, US-3); no units printed.",
-   "Catalog prints DANCE 006 at 1 unit; the state file stores 1.5. Catalog title of ART 026 (Intermediate Drawing) differs from the closed list (Representational Drawing and Perspective); MUSIC 099 title differs (Introduction to Music Theory vs Introductory Music).",
-   "Outcomes come from the page's single program learning outcomes tab for this degree.",
-   "Footer shows '© 2021 SJECCD'; catalog year of the page content not otherwise confirmed as 2026-2027."
+   "Major rule: 'Complete 18 units from courses listed below: (At least 6 of the 18 units must be from Theory-based courses)'. Theory-based block recorded as choose_units minimum 6; the Non-Theory-based/Skills-based block allows at most 12 units, so its minimum is recorded as null. The combined 18 units is the major total.",
+   "AA Degree Requirements table: Major 18, General Education Requirements 34, Degree Applicable Electives 8, Total 60. The GE pattern is not named on the page, so ge_pattern is null.",
+   "Page also requires two courses for the U.S. History, Constitution, and American Ideals Requirement (US-1, US-2, US-3); no units printed.",
+   "Closed-list 'ComputerGrap' entries (code truncated) were matched to CGID courses by title: CGID 002, 003, 004, 005, 006, 007, 011, 012, 013, 022, 023, 025 treated as in the closed list. CGID 001 (vs DMA 1) and CGID 021 Concept Art (vs Visual Development) flagged as additions; reviewer should confirm.",
+   "THEAT 033 Technical Theatre in Production matched to closed-list 'TheatreArtsT Technical Theatre in Production'.",
+   "DANCE 006 printed at 1 unit; state file stores 1.5. ETH 011 printed as 'Ethnic Images in Film' vs state 'Ethnic Film: Reel Studies'. ART 026 printed as 'Intermediate Drawing' vs state 'Representational Drawing and Perspective'.",
+   "Honors alternatives ETH 027H and MUSIC 083H print no units of their own.",
+   "Outcomes are printed on the program's outcomes tab for this degree."
   ]
  },
- "extracted_run": "43357106423"
+ "extracted_run": "44769778910",
+ "catalog_year": "2026-2027"
 }

@@ -352,5 +352,6 @@
    "Catalog prints codes with a hyphen (CWS-100); these match closed-list codes (CWS 100), so catalog_addition is false."
   ]
  },
- "extracted_run": "38748833332"
+ "extracted_run": "38748833332",
+ "catalog_year": "2026-2027"
 }

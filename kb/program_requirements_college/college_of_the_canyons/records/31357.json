@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Philosophy",
  "award": "A.A. Degree",
- "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=250",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=249",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9507,
+  "input_tokens": 10845,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9507,
-    "output_tokens": 2189,
+    "input_tokens": 10845,
+    "output_tokens": 2700,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,28 +30,26 @@
     "model": null
    }
   ],
-  "output_tokens": 2189,
+  "output_tokens": 2700,
   "output_tokens_details": {
-   "thinking_tokens": 608
+   "thinking_tokens": 671
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08181,
- "ms": 18558,
- "seconds": 18.8,
+ "cost_usd": 0.09738,
+ "ms": 22054,
+ "seconds": 22.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 14,
+   "placed": 15,
    "listed": 15,
-   "share": 0.933,
-   "missing": [
-    "PHILOS101"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
@@ -63,29 +61,30 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     21.0,
     21.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    21.0,
+    21.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 1,
    "courses": 0,
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -100,15 +99,15 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "PHILOSOPHY",
+   "section_heading": "Associate in Arts Degree: Philosophy",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 21,
+    "max": 21
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -125,12 +124,14 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Students will be able to critically engage with the world of ideas, both historical and contemporary, enabling them to interpret and understand their place in the world as citizens and active participants in the expression of human culture and values."
+   ],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Required core (start of list cut off at page break)",
+    "name": "Program Requirements",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -140,16 +141,22 @@
     },
     "courses": [
      {
-      "code": "PHILOS-101H",
+      "code": "PHILOS-101",
       "units": 3,
       "units_max": null,
-      "alternatives": [],
+      "alternatives": [
+       {
+        "code": "PHILOS-101H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
       "catalog_addition": false
      }
     ]
    },
    {
-    "name": "Plus three units from the following (argument/logic)",
+    "name": "Plus three units from the following",
     "rule": "choose_units",
     "minimum": 3,
     "option_group": null,
@@ -182,7 +189,7 @@
     ]
    },
    {
-    "name": "Plus three units from the following (ethics)",
+    "name": "Plus three units from the following",
     "rule": "choose_units",
     "minimum": 3,
     "option_group": null,
@@ -208,7 +215,7 @@
     ]
    },
    {
-    "name": "Plus three units from the following (history of philosophy)",
+    "name": "Plus three units from the following",
     "rule": "choose_units",
     "minimum": 3,
     "option_group": null,
@@ -234,7 +241,7 @@
     ]
    },
    {
-    "name": "Plus three units from the following (religion)",
+    "name": "Plus three units from the following",
     "rule": "choose_units",
     "minimum": 3,
     "option_group": null,
@@ -267,7 +274,7 @@
     ]
    },
    {
-    "name": "Plus three units from the following (20th century / social-political / environmental)",
+    "name": "Plus three units from the following",
     "rule": "choose_units",
     "minimum": 3,
     "option_group": null,
@@ -308,24 +315,131 @@
      "min": 3,
      "max": 3
     },
-    "courses": []
+    "courses": [
+     {
+      "code": "PHILOS-106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILOS-206",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILOS-230",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILOS-120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILOS-240",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILOS-110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILOS-111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILOS-102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILOS-220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILOS-225",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILOS-112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILOS-130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILOS-250",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "PHILOS 101",
-    "why": "The requirement list begins mid-section with 'OR PHILOS-101H'. The preceding line, likely PHILOS-101, is on the previous page and is not in the text. PHILOS 101 appears only in the course descriptions."
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The excerpt starts mid-way through the requirements list at a page break. The program heading, award name (A.A. vs A.A.-T), description, total units, outcomes and careers, along with the course paired with PHILOS-101H by 'OR', are on page 249 and not in the text. The section could not be confirmed as the A.A. degree rather than another Philosophy award.",
-   "The first block likely is 'PHILOS-101 or PHILOS-101H'. Only PHILOS-101H is visible, so it is recorded alone and PHILOS 101 is listed as missing.",
-   "The last block ('three additional units from any of the above courses that have not yet been taken') draws on all courses listed in the preceding blocks. Its courses are left empty to avoid listing them twice.",
-   "The section prints no total units, so none was computed.",
-   "PHILOS 450 appears only in the course descriptions, as an upper-division bachelor's course. It is not part of this program's requirements and is not recorded.",
-   "The catalog prints PHILOS-206 as 'Critical Reasoning and Analytic Writing' in the requirement list."
+   "Read only the 'Associate in Arts Degree: Philosophy' section; the AA-T section printed above it (18 units) was ignored.",
+   "The A.A. requirements continue across a page break (pages 249-250); the list appears complete and sums to the stated 21 units.",
+   "The final block ('three additional units from any of the above courses that have not yet been taken') was recorded with the courses from the five choice lists; PHILOS-101/101H were left out since they form a single required choice (honors twin), but literally 'any of the above' could include whichever of the pair was not taken. Reviewer should check.",
+   "Each 'Plus three units from the following' heading was read as a 3-unit choice (one course); no printed block total, so stated is null.",
+   "The degree student learning outcome printed for the A.A. is identical to the one printed for the AA-T.",
+   "No general education pattern or degree total is printed in the A.A. section."
   ]
  },
- "extracted_run": "39006378829"
+ "extracted_run": "44769429877",
+ "catalog_year": "2026-2027",
+ "source_sha": "0e57733f13ef4714",
+ "source_codes": [
+  "PHILOS101",
+  "PHILOS101H",
+  "PHILOS102",
+  "PHILOS106",
+  "PHILOS110",
+  "PHILOS111",
+  "PHILOS112",
+  "PHILOS120",
+  "PHILOS130",
+  "PHILOS206",
+  "PHILOS220",
+  "PHILOS225",
+  "PHILOS230",
+  "PHILOS240",
+  "PHILOS250"
+ ],
+ "source_coverage": 1.0
 }

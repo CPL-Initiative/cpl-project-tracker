@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Sociology",
  "award": "A.A. Degree",
- "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=293",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=292",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12590,
+  "input_tokens": 12286,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12590,
-    "output_tokens": 2458,
+    "input_tokens": 12286,
+    "output_tokens": 2998,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,41 +30,35 @@
     "model": null
    }
   ],
-  "output_tokens": 2458,
+  "output_tokens": 2998,
   "output_tokens_details": {
-   "thinking_tokens": 738
+   "thinking_tokens": 1152
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09952,
- "ms": 20230,
- "seconds": 20.6,
+ "cost_usd": 0.1091,
+ "ms": 25097,
+ "seconds": 25.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 24,
+   "placed": 25,
    "listed": 25,
-   "share": 0.96,
-   "missing": [
-    "PSYCH104"
-   ],
-   "unexplained": [
-    "PSYCH104"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "PSYC104"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -95,7 +89,7 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 6,
    "not_verbatim": [],
    "pass": true
   },
@@ -105,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -133,11 +127,18 @@
    "outcomes": [
     "Students will be able to analyze a social issue using sociological concepts."
    ],
-   "careers": []
+   "careers": [
+    "education",
+    "law",
+    "medicine",
+    "government",
+    "administration of justice",
+    "organizations"
+   ]
   },
   "blocks": [
    {
-    "name": "SOCI-101 or SOCI-101H",
+    "name": "Program Requirements",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -360,13 +361,44 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Recorded only the 'Associate in Arts Degree: Sociology' section on catalog page 292 (PDF page 294); the preceding sections (an untitled transfer degree ending on page 291 and the AA-T in Social Justice Studies) were ignored.",
-   "The catalog prints PSYC-104; the closed list stores it as PSYCH 104. Treated as the same course (catalog_addition false); reviewer may confirm the subject prefix.",
-   "The first two blocks are unnamed in the catalog; names were taken from the printed lead-ins ('OR', 'Plus the following').",
-   "The statistics block is printed as an OR chain under 'Plus one course from the following'; recorded as choose 1 course.",
-   "Catalog titles differ slightly from the closed list (e.g., SOCI-107 'Introduction to Chicana/o Studies' vs 'Culture'; SOCI-230 'Sociology of Sexuality'; STAT-C1000 'Introductory Statistics').",
-   "The program outcome printed in this section is identical to the one printed for the preceding transfer degree section on page 291."
+   "Read only the 'Associate in Arts Degree: Sociology' section (page 294); the AA-T Sociology and AA-T Social Justice Studies sections on the same pages were ignored.",
+   "Catalog prints 'PSYC-104 Statistics for the Behavioral Sciences'; matched to closed-list PSYCH 104 (same title and units) despite the different subject abbreviation, so catalog_addition is false. Reviewer may confirm.",
+   "The statistics courses are printed as an OR chain under 'Plus one course from the following'; recorded as a choose-one block.",
+   "Catalog titles differ slightly from closed list for SOCI-107 ('Chicana/o Studies' vs 'Culture'), SOCI-230 ('Sexuality' vs 'Sexualities') and STAT-C1000 ('Introductory' vs 'Introduction to'); codes match.",
+   "The degree student learning outcome printed for the A.A. is identical to the one printed for the AA-T in Sociology.",
+   "Careers taken from the Sociology program introduction (top of page 292, partly cut off), which lists areas the knowledge transfers to: education, law, medicine, government, administration of justice, and organizations; this intro appears to be shared by the department's programs. Reviewer should confirm these count as career fields.",
+   "No general education pattern, degree total, or elective units are printed in the A.A. section; total_units 25-26 is the printed 'Units Required'."
   ]
  },
- "extracted_run": "39006378829"
+ "extracted_run": 44887850515,
+ "catalog_year": "2026-2027",
+ "source_sha": "a0bdbeb5e0da61cc",
+ "source_codes": [
+  "SOCI101",
+  "SOCI101H",
+  "SOCI102",
+  "SOCI103",
+  "SOCI103H",
+  "SOCI105",
+  "SOCI106",
+  "SOCI107",
+  "SOCI108",
+  "SOCI110",
+  "SOCI130",
+  "SOCI137",
+  "SOCI200",
+  "SOCI200H",
+  "SOCI205",
+  "SOCI207",
+  "SOCI208",
+  "SOCI210",
+  "SOCI230",
+  "SOCI233",
+  "SOCI250",
+  "STATC1000",
+  "STATC1000E",
+  "STATC1000H"
+ ],
+ "source_coverage": 0.96,
+ "read_run": "44769429877"
 }
