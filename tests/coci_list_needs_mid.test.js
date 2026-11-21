@@ -144,7 +144,7 @@ function panel(d) { return d.getElementById(P + "panel"); }
   check("(6) each of the closest is one word from SkyView, and signed out the panel offers no save (tests/coci_list_assign.test.js guards the save)",
     panel(d).querySelectorAll(".ccl-rec-list li a[href*='skyview.html#outline/']").length === 2 && !panel(d).querySelector("[data-assign]")
       && /Assigning saves one row under your name/.test(pn));
-  check("(6) no control in the panel assigns the course or mints an M-ID (the save waits on the build change)", !Array.from(panel(d).querySelectorAll("button")).some((b) => /assign|propose/i.test(txt(b))));
+  check("(6) signed out, no control in the panel assigns the course or mints an M-ID", !Array.from(panel(d).querySelectorAll("button")).some((b) => /assign|propose/i.test(txt(b))));
   titleCell(tutor, d).querySelector("button").click(); await sleep(20);
   check("(6) ⭐ no strong match says so, offers a new M-ID, and still lists the closest for reference",
     /No strong match\. Propose a new M-ID\. The closest are listed for reference\. Of 1,687 courses .* 297 \(18%\) had their own M-ID come first\./.test(txt(panel(d))) && /LRNA M9001: none of its 1 local course carries this same title\./.test(txt(panel(d))), txt(panel(d)).slice(0, 600));

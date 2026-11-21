@@ -364,63 +364,100 @@
      course and leaves the common course's own row as it stands (#3618). Take it back deletes the row. The rows are read
      live, a page at a time, so a course reads as assigned the moment it is saved and nobody assigns it twice; who
      assigned it is read with a reviewer's token alone (COBIx on #2948). Nothing is kept in the browser. */
-  var ASSIGN = { rows: null, loading: false, busy: false, said: {} };
+  var ASSIGN = { rows: null, loading: false, busy: false, said: {}, failed: "" };
   function assignKey(ctrl) { return String(ctrl || "").trim().toUpperCase(); }
   function assignedOf(ctrl) { return (ASSIGN.rows && ASSIGN.rows[assignKey(ctrl)]) || null; }
+  // The state list gives some courses no control number (blank, or the word NULL); such a course has no key to save under.
+  function noControlNumber(ctrl) { return !assignKey(ctrl) || /^(NULL|N\/A|NA|NONE)$/.test(assignKey(ctrl)); }
+  function assignRow(x, token) { return { to: String(x.value || ""), at: String(x.reviewed_at || "").slice(0, 10), who: token ? x.reviewer_email : null }; }
+  /* The read is all or nothing (second read of the control, 2026-11-21): a page that fails leaves the assignments
+     unknown, ASSIGN.rows stays null, and the panel offers no Assign and says so. A read that passed a failed page off
+     as "none assigned" would invite a save over another reviewer's row. A signed-in read renews the token first. */
   function loadAssigned() {
-    var sess = ccSession(), token = sess && sess.access_token, by = {}, PAGE = 1000;
+    var by = {}, PAGE = 1000;
     ASSIGN.loading = true;
-    function page(from) {
+    function page(from, token) {
       return fetch(REST + "/kb_curation?select=course_id,value,reviewed_at" + (token ? ",reviewer_email" : "") + "&field=eq.merge_into" +
         "&course_id=like." + encodeURIComponent("CN:") + "%25&order=course_id.asc",
         { headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + (token || SUPABASE_ANON), "Range-Unit": "items", Range: from + "-" + (from + PAGE - 1) } })
-        .then(function (res) { return res.ok ? res.json() : []; })
+        .then(function (res) { if (!res.ok) throw new Error("the service answered " + res.status); return res.json(); })
         .then(function (rows) {
-          (rows || []).forEach(function (x) {
-            by[assignKey(String(x.course_id || "").slice(3))] = { to: String(x.value || ""), at: String(x.reviewed_at || "").slice(0, 10), who: token ? x.reviewer_email : null };
-          });
-          return rows && rows.length === PAGE ? page(from + PAGE) : null;
+          if (!Array.isArray(rows)) throw new Error("the service sent no list");
+          rows.forEach(function (x) { by[assignKey(String(x.course_id || "").slice(3))] = assignRow(x, token); });
+          return rows.length === PAGE ? page(from + PAGE, token) : null;
         });
     }
     var first;
-    try { first = page(0); } catch (e) { first = Promise.reject(e); }
-    return first.then(function () { ASSIGN.rows = by; }, function () { ASSIGN.rows = ASSIGN.rows || {}; })
+    try { first = (ccSession() ? ccFresh() : Promise.resolve(null)).then(function (sess) { return page(0, sess && sess.access_token); }); }
+    catch (e) { first = Promise.reject(e); }
+    return first.then(function () { ASSIGN.rows = by; ASSIGN.failed = ""; },
+      function (e) { ASSIGN.rows = null; ASSIGN.failed = String(e && e.message || e || "no answer from the service"); })
       .then(function () { ASSIGN.loading = false; LIST.memo = null; });
   }
   // A sign-in or sign-out reads the rows again, so who assigned shows or hides and the controls follow.
-  window.addEventListener("cpl-session-changed", function () { if (ASSIGN.rows) loadAssigned().then(ccRedraw); });
+  window.addEventListener("cpl-session-changed", function () { if (ASSIGN.rows || ASSIGN.failed) loadAssigned().then(ccRedraw); });
+  function assignRetry() { if (!ASSIGN.loading) loadAssigned().then(function () { if (state.view === "courses") mountList(); }); }
+  /* The save never replaces a row (second read, 2026-11-21). It first reads that one key with the reviewer's renewed
+     token and stops if a row stands; then it inserts with resolution=ignore-duplicates, so a row another reviewer saved
+     in between is left alone and the answer comes back empty. A person changes an assignment by taking it back first. */
   function assignSave(r, target) {
     if (ASSIGN.busy) return;
     ASSIGN.busy = true; ASSIGN.said[r.ctrl] = "Saving…"; ccRedraw();
+    var key = "CN:" + r.ctrl, one = REST + "/kb_curation?select=course_id,value,reviewed_at,reviewer_email&field=eq.merge_into&course_id=eq." + encodeURIComponent(key);
+    function done(words) { ASSIGN.busy = false; ASSIGN.said[r.ctrl] = words; LIST.memo = null; ccRedraw(); }
+    function stands(x, sess) {
+      ASSIGN.rows = ASSIGN.rows || {}; ASSIGN.rows[assignKey(r.ctrl)] = assignRow(x, sess.access_token);
+      done("Nothing was saved: " + (x.reviewer_email || "a reviewer") + " already assigned this course to " + x.value + ". Take it back first to change it.");
+    }
     ccFresh().then(function (sess) {
-      if (!sess) { ASSIGN.busy = false; ASSIGN.said[r.ctrl] = "Your sign-in has ended. Sign in again, then assign."; ccRedraw(); return null; }
-      return fetch(REST + "/kb_curation", { method: "POST", headers: ccHeaders(sess),
-        body: JSON.stringify([{ course_id: "CN:" + r.ctrl, field: "merge_into", value: target, reviewer_email: sess.email }]) })
-        .then(function (res) {
-          ASSIGN.busy = false;
-          if (!res.ok) { ASSIGN.said[r.ctrl] = "The save did not land (the service answered " + res.status + "). Nothing changed."; ccRedraw(); return; }
-          ASSIGN.rows = ASSIGN.rows || {};
-          ASSIGN.rows[assignKey(r.ctrl)] = { to: target, at: new Date().toISOString().slice(0, 10), who: sess.email };
-          ASSIGN.said[r.ctrl] = ""; LIST.memo = null; ccRedraw();
+      if (!sess) { done("Your sign-in has ended. Sign in again, then assign."); return null; }
+      var auth = { apikey: SUPABASE_ANON, Authorization: "Bearer " + sess.access_token };
+      return fetch(one, { headers: auth }).then(function (res) { if (!res.ok) throw new Error("the service answered " + res.status); return res.json(); })
+        .then(function (rows) {
+          if (!Array.isArray(rows)) throw new Error("the service sent no list");
+          if (rows.length) { stands(rows[0], sess); return null; }
+          return fetch(REST + "/kb_curation", { method: "POST",
+            headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + sess.access_token, "Content-Type": "application/json", Prefer: "resolution=ignore-duplicates,return=representation" },
+            body: JSON.stringify([{ course_id: key, field: "merge_into", value: target, reviewer_email: sess.email }]) })
+            .then(function (res) {
+              if (!res.ok) { done("The save did not land (the service answered " + res.status + "). Nothing changed."); return null; }
+              return res.json().then(function (saved) {
+                if (Array.isArray(saved) && !saved.length) {  // another reviewer's row arrived first and stands
+                  return fetch(one, { headers: auth }).then(function (r2) { return r2.ok ? r2.json() : []; })
+                    .then(function (now) { if (now && now.length) stands(now[0], sess); else done("The save did not land: a row for this course already stood. Nothing changed."); });
+                }
+                ASSIGN.rows = ASSIGN.rows || {};
+                ASSIGN.rows[assignKey(r.ctrl)] = { to: target, at: new Date().toISOString().slice(0, 10), who: sess.email };
+                done("");
+              });
+            });
         });
-    }).catch(function () { ASSIGN.busy = false; ASSIGN.said[r.ctrl] = "The save did not land (no answer from the service). Nothing changed."; ccRedraw(); });
+    }).catch(function (e) { done("The save did not land (" + String(e && e.message || "no answer from the service") + "). Nothing changed."); });
   }
+  /* Take it back removes the row this page showed and no other: the DELETE names the course, the field and the value,
+     and asks for what it removed. If another reviewer re-pointed the row since, nothing is removed and the page reads
+     the rows again. */
   function assignUndo(r) {
     var was = assignedOf(r.ctrl);
     if (ASSIGN.busy || !was) return;
     ASSIGN.busy = true; ASSIGN.said[r.ctrl] = "Taking it back…"; ccRedraw();
+    function done(words) { ASSIGN.busy = false; ASSIGN.said[r.ctrl] = words; LIST.memo = null; ccRedraw(); }
     ccFresh().then(function (sess) {
-      if (!sess) { ASSIGN.busy = false; ASSIGN.said[r.ctrl] = "Your sign-in has ended. Sign in again, then take it back."; ccRedraw(); return null; }
-      return fetch(REST + "/kb_curation?course_id=eq." + encodeURIComponent("CN:" + r.ctrl) + "&field=eq.merge_into",
-        { method: "DELETE", headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + sess.access_token, Prefer: "return=minimal" } })
+      if (!sess) { done("Your sign-in has ended. Sign in again, then take it back."); return null; }
+      return fetch(REST + "/kb_curation?course_id=eq." + encodeURIComponent("CN:" + r.ctrl) + "&field=eq.merge_into&value=eq." + encodeURIComponent(was.to),
+        { method: "DELETE", headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + sess.access_token, Prefer: "return=representation" } })
         .then(function (res) {
-          ASSIGN.busy = false;
-          if (!res.ok) { ASSIGN.said[r.ctrl] = "It was not taken back (the service answered " + res.status + "). The assignment stands."; ccRedraw(); return; }
-          delete ASSIGN.rows[assignKey(r.ctrl)];
-          ASSIGN.said[r.ctrl] = "Taken back: the assignment to " + was.to + " is removed." + (r.mid ? " The course leaves " + r.mid + " at the next daily build." : "");
-          LIST.memo = null; ccRedraw();
+          if (!res.ok) { done("It was not taken back (the service answered " + res.status + "). The assignment stands."); return null; }
+          return res.json().then(function (gone) {
+            if (Array.isArray(gone) && !gone.length) {
+              ASSIGN.busy = false; ASSIGN.said[r.ctrl] = "Nothing was removed: the assignment changed since this page read it. Reading it again.";
+              return loadAssigned().then(ccRedraw);
+            }
+            delete ASSIGN.rows[assignKey(r.ctrl)];
+            done("Taken back: the assignment to " + was.to + " is removed." + (r.mid ? " The course leaves " + r.mid + " at the next daily build." : ""));
+          });
         });
-    }).catch(function () { ASSIGN.busy = false; ASSIGN.said[r.ctrl] = "It was not taken back (no answer from the service). The assignment stands."; ccRedraw(); });
+    }).catch(function () { done("It was not taken back (no answer from the service). The assignment stands."); });
   }
   /* The sign-in fold a panel section offers a signed-out reviewer (the common course's card has its own). Wrapped, as
      that one is: the engine anchors the Title drawer before the panel's first direct-child <details>. */
@@ -1287,7 +1324,8 @@
       (lv.key === "possible" ? " Check it before joining; a new M-ID may fit better." : lv.key === "none" && rec.top.length ? " The closest are listed for reference." : "") + measured]));
     // Assign (a reviewer's save): offered when nothing stands for the course yet, its control number names one course,
     // and the common course is in today's identity file.
-    var sess = ccSession(), X = listBuild().X, stands = assignedOf(r.ctrl), can = !!sess && !stands && r.named === 1;
+    var sess = ccSession(), X = listBuild().X, stands = assignedOf(r.ctrl), known = !!ASSIGN.rows, noKey = noControlNumber(r.ctrl);
+    var can = !!sess && known && !stands && !noKey && r.named === 1;
     function listed(id) { return !!(X && X.size.has(id)); }
     function assignWord(id) {
       return h.word(ASSIGN.busy ? "Saving…" : "Assign to " + id, function () { assignSave(r, id); },
@@ -1305,7 +1343,12 @@
       return el("li", { "data-rec": t[0] }, kids);
     })));
     assignedLine(r, h, sess).forEach(function (n) { out.push(n); });
-    if (r.named > 1) out.push(el("p", { "class": "cplcoci-meta", "data-assign-blocked": "shared" }, ["This control number names " + fmt(r.named) +
+    if (!known) out.push(el("p", { "class": "ccl-cc-said", role: "status", "data-assign-blocked": "unread" }, [
+      (ASSIGN.loading ? "Reading which courses are already assigned…" : "The list of assigned courses did not load (" + (ASSIGN.failed || "no answer from the service") +
+        "), so this panel cannot tell whether a reviewer already assigned this course, and it offers no Assign. ")].concat(
+      ASSIGN.loading ? [] : [h.word("Read it again", assignRetry, { "aria-label": "Read the assigned courses again" })])));
+    else if (noKey) out.push(el("p", { "class": "cplcoci-meta", "data-assign-blocked": "nokey" }, ["The state's course list gives this course no control number, so there is no key to save an assignment under. It cannot be assigned here."]));
+    else if (r.named > 1) out.push(el("p", { "class": "cplcoci-meta", "data-assign-blocked": "shared" }, ["This control number names " + fmt(r.named) +
       " courses in the state's course list, so a save could not say which one. It cannot be assigned until the college's record is corrected."]));
     else if (can) {
       // Another common course, by its id: checked against today's identity file before anything is saved.
@@ -1513,7 +1556,7 @@
     clearNode(node);
     loadKept();
     loadClosest();
-    if (!ASSIGN.rows && !ASSIGN.loading) loadAssigned().then(function () { if (state.view === "courses") mountList(); });
+    if (!ASSIGN.rows && !ASSIGN.loading && !ASSIGN.failed) loadAssigned().then(function () { if (state.view === "courses") mountList(); });
     if (window.CPL_COMMONS_LIST && window.CPL_UC_MEMBERS) LIST.ready = true;
     if (listApi()) { LIST.engine.render(node); return; }
     var T = window.CPL_TABS;
