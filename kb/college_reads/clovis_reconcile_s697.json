@@ -1,0 +1,31 @@
+{
+ "_readme": "S697 (worker piles2), Clovis's reconcile_steps lever (26). The 2026-2027 catalog PDF's program pages for the records whose blocks sum unequal to the printed total and whose notes say the printed total and the listed courses disagree: Medical Office Administration 37352 (p.141), Information Systems -- Networking 33493 (p.132), Data Science 44551 (p.112), Music AA-T 42706 (p.175), Political Science AA-T 35209 (p.181), Occupational Therapy Assistant 39539 (pp.144-145) and Nutrition and Dietetics AS-T 43015 (p.176). Each heading is matched in capitals, so a body line naming the subject does not spend the cap. The page after each is printed, for a list that runs on. No model call.",
+ "college": "Clovis Community College",
+ "questions": {
+  "total_words": "Where and in what words each program prints its total, its lists and their figures."
+ },
+ "keywords": [
+  "(?-i:MEDICAL OFFICE ADMINISTRATION)",
+  "(?-i:NETWORKING)",
+  "(?-i:DATA SCIENCE)",
+  "(?-i:MUSIC)",
+  "(?-i:POLITICAL SCIENCE)",
+  "(?-i:OCCUPATIONAL THERAPY)",
+  "(?-i:NUTRITION)"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "total_words"
+   ],
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf"
+  }
+ ],
+ "pdf_span": [
+  108,
+  183
+ ],
+ "pdf_after": 1,
+ "pdf_page_cap": 24,
+ "pdf_unfolded": true
+}

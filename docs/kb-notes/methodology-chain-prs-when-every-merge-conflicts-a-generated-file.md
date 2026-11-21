@@ -1,7 +1,7 @@
 ---
 title: When every merge conflicts a generated file, land the work as one wave pull request, not a chain
 created: 2026-11-18
-updated: 2026-11-18
+updated: 2026-11-21
 tags: [methodology, merging, generated-files, ci, conductor]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -14,6 +14,8 @@ artifacts:
   - kb/_build_dependency_map.py
   - scripts/check_generated.sh
   - kb/migrations/.apply
+  - kb/_build_commons_status.py
+  - kb/_build_commons_data_status.py
 ---
 
 # When every merge conflicts a generated file, land the work as one wave pull request, not a chain
@@ -49,6 +51,24 @@ merges in series at about 11 minutes each; on S680's night (2026-11-18) the runn
 4. **The checkpoint lands last**, after merging `main` with the wave on it, so it carries every generated file at its
    final state.
 5. **Confirm each landing by `git log origin/main`**, never by the merged flag alone (`d-stack-top-retarget-s655`).
+
+## Two records pull requests, one set of Commons files (S697, 2026-11-21)
+
+Every pull request that changes program records also rebuilds the Commons files: `kb/status/commons.json`
+(`kb/_build_commons_status.py`) and `kb/status/commons_data.json` with its college sidecars
+(`kb/_build_commons_data_status.py`). Two such pull requests open on one night conflict on those files the moment
+the first merges, as they did in S697.
+
+1. **Merge one, then merge `main` into the next, take `main`'s side of each conflicted Commons file, and rerun both
+   builders** under Python 3.12, CI's version
+   ([`methodology-a-generated-file-is-built-with-the-runners-python`](methodology-a-generated-file-is-built-with-the-runners-python.md)).
+   A hand-merged hunk of a generated file is never right; the builder's output from the merged inputs is
+   (`p-commons-files-conflict-between-prs-s697`).
+2. **`scripts/check_generated.sh` does not run either Commons builder**, so its last line can read current while the
+   Commons files are stale. After a records change, run the builders and their tests,
+   `tests/commons_status_build_test.py` and `tests/commons_data_status_build_test.py`; in S697 the second test found
+   `commons_data.json` and the college sidecars stale where `check_generated.sh` had passed
+   (`p-check-generated-misses-commons-data-s697`).
 
 ## When it does not apply
 

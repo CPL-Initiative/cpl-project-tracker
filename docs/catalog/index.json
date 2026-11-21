@@ -9989,7 +9989,9 @@
      "governs": [
       "kb/_build_dependency_map.py",
       "scripts/check_generated.sh",
-      "kb/migrations/.apply"
+      "kb/migrations/.apply",
+      "kb/_build_commons_status.py",
+      "kb/_build_commons_data_status.py"
      ],
      "path": "docs/kb-notes/methodology-chain-prs-when-every-merge-conflicts-a-generated-file.md",
      "status": "published",
@@ -10002,7 +10004,7 @@
      ],
      "title": "When every merge conflicts a generated file, land the work as one wave pull request, not a chain",
      "type": "methodology",
-     "updated": "2026-11-18"
+     "updated": "2026-11-21"
     },
     {
      "created": "2026-08-28",
@@ -17277,7 +17279,7 @@
      ],
      "title": "Sam's rulings \u2014 one place to look up what he has ruled, in his words",
      "type": null,
-     "updated": "2026-11-20"
+     "updated": "2026-11-21"
     },
     {
      "created": "2026-10-04",
@@ -17292,7 +17294,7 @@
      ],
      "title": "Scheduled sessions \u2014 what a session started by Sam's routine does",
      "type": null,
-     "updated": "2026-11-19"
+     "updated": "2026-11-21"
     },
     {
      "created": "2026-09-09",
@@ -17408,8 +17410,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 657,
+   "count": 658,
    "docs": [
+    {
+     "created": "2026-11-21",
+     "governs": [],
+     "n": 699,
+     "path": "docs/session_699_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 699 handoff (from SkyPuffin, S697, the CPL Queue routine's 13:12Z firing of 2026-11-21)",
+     "type": null,
+     "updated": "2026-11-21"
+    },
     {
      "created": "2026-11-21",
      "governs": [],
@@ -28380,5 +28396,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1542
+ "total": 1543
 }

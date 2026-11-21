@@ -4,7 +4,7 @@
   "supabase_tables": 119,
   "rpcs": 68,
   "edge_functions": 16,
-  "file_datasets": 1125,
+  "file_datasets": 1129,
   "external_services": 197,
   "consumers": 646,
   "workflows": 77,
@@ -8977,7 +8977,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7015
+     "line": 7024
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -8997,7 +8997,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7091
+     "line": 7100
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -15271,6 +15271,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/course_outcomes/irvine_valley_recall.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_course_outcomes_read.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 913
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/course_outcomes/mtsac_recall.json": {
    "consumers": [
     {
@@ -15352,7 +15365,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1147
+     "line": 1225
     }
    ],
    "served": false,
@@ -16229,7 +16242,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1048
+     "line": 1050
     }
    ],
    "served": false,
@@ -16847,7 +16860,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1199
+     "line": 1201
     },
     {
      "id": "script:kb/_docket_rulings.py",
@@ -17858,7 +17871,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1140
+     "line": 1142
     },
     {
      "id": "script:kb/_build_exhibits_related.py",
@@ -18909,7 +18922,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7815
+     "line": 7874
     }
    ],
    "served": true,
@@ -19177,7 +19190,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 634
+     "line": 685
     },
     {
      "id": "script:kb/_program_requirements_cheap_piles_s683.py",
@@ -19201,6 +19214,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/program_total_differs.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_named_gaps.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 371
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/program_total_not_printed.json": {
    "consumers": [
     {
@@ -19208,7 +19234,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 330
+     "line": 339
     }
    ],
    "served": false,
@@ -21598,7 +21624,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 860
+     "line": 862
     }
    ],
    "producers": [
@@ -21955,14 +21981,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 87
+     "line": 93
     },
     {
      "id": "script:kb/_program_named_gaps.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 87
+     "line": 93
     }
    ],
    "served": false,
@@ -23124,7 +23150,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7486
+     "line": 7507
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -23794,7 +23820,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7698
+     "line": 7744
     }
    ],
    "served": false,
@@ -23807,7 +23833,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7053
+     "line": 7062
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -23944,7 +23970,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 644
+     "line": 695
     }
    ],
    "served": false,
@@ -24829,7 +24855,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 87
+     "line": 139
     }
    ],
    "served": false,
@@ -29004,6 +29030,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/program_requirements_follow_up_s697_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/program_requirements_fragment_path_test.py": {
    "consumers": [
     {
@@ -29096,6 +29135,19 @@
    "main_committers": []
   },
   "file:tests/program_requirements_rulings_2026_11_17_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_requirements_same_page_recall_s697_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -31674,7 +31726,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 40
+     "line": 41
     }
    ],
    "main_committers": []
@@ -32350,7 +32402,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 7789
+     "line": 7848
     }
    ],
    "main_committers": []
@@ -32362,7 +32414,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 7906
+     "line": 7965
     }
    ],
    "main_committers": []
@@ -37698,6 +37750,8 @@
     "tests/program_requirements_year_renumbers_test.py",
     "tests/program_requirements_extract_halt_test.py",
     "tests/program_requirements_reader_fixes_s697_test.py",
+    "tests/program_requirements_follow_up_s697_test.py",
+    "tests/program_requirements_same_page_recall_s697_test.py",
     "tests/program_requirements_fragment_path_test.py",
     "tests/program_requirements_wave_test.py",
     "tests/program_requirements_extraction_gate_test.py",
@@ -38853,6 +38907,7 @@
   "kb/program_requirements_cheap_piles_s683.json",
   "kb/program_requirements_reread_plan_s680.json",
   "kb/program_requirements_reread_plan_s683.json",
+  "kb/program_total_differs.json",
   "kb/program_total_not_printed.json",
   "kb/promotions.json",
   "kb/receipts",

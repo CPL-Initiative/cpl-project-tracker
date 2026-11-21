@@ -1646,6 +1646,7 @@ print("Cosumnes River's six local degrees, pinned to the heading's page (S680; c
 # them, with the log's folded short lines broken again; the closed lists are the filed records' own (placed and
 # missing). On it the plain picker takes the late page, as the filing did; the pin opens on the heading's page,
 # names at least as many listed courses, and starts the text at the heading wherever the page allows the cut.
+# S697's named-programs read 44917314201 filed each from the pin's own page, so the filed record now names it.
 _s6_text = open(os.path.join(ROOT, "tests", "fixtures", "cosumnes_seven_pages.txt")).read()
 _s6_parts = _re.split(r"^\[pdf page (\d+)\]\n", _s6_text, flags=_re.M)
 _s6_fx = {int(_s6_parts[i]): _s6_parts[i + 1] for i in range(1, len(_s6_parts), 2)}
@@ -1657,8 +1658,8 @@ for _cn, _own in _CR_S680.items():
     _head, _why = C.pdf_pinned_heading(_s6_pages, _p, _cr_all_pins[_cn])
     _got = C.pdf_best("https://x.edu/c.pdf", _s6_pages, _p, _p["closed_list"], "pypdf", _head) if _head else None
     _filed = as_read(os.path.join(_CR_DIR, "records", _cn + ".json"))["source_url"]
-    check("%s: the plain picker takes p.%d, the late page the filed record names" % (_cn, _own + 1),
-          _plain["pages"][0] == _own + 1 and _filed.endswith("#page=%d" % (_own + 1)))
+    check("%s: the plain picker takes p.%d, the late page; the filed record (S697) names the pin's p.%d"
+          % (_cn, _own + 1, _own), _plain["pages"][0] == _own + 1 and _filed.endswith("#page=%d" % _own))
     check("%s: the pin binds p.%d, its window runs on to p.%d and names at least as many listed courses" % (_cn, _own, _own + 1),
           _why is None and _got["pages"][:2] == [_own, _own + 1] and _got["coverage"] >= _plain["coverage"])
     check("%s: the pin's words are not on the late page, so the pin cannot bind there" % _cn,
@@ -1926,6 +1927,40 @@ check("Glendale: the floor waits for a record that holds the degree total (only_
 check("Glendale: the floor step is Glendale's alone among the colleges that print this field's words",
       [c for c, v in R.load_steps().items() if isinstance(v, dict) and any(
           "with\\s+GE" in (st.get("pattern") or "") for st in v.get("steps") or [])] == ["Glendale Community College"])
+
+# S697 (piles2): Glendale's Addiction Studies Counseling 02570 prints its 1-unit internship as "AD ST 50 · Alcohol and Drug
+# Studies Internship · 2 x 1" (college-page-read 44914829120), and the repeat step counts it twice: 38 to the printed 39.
+_ad = json.load(open(os.path.join(ROOT, "kb", "program_requirements_college", "glendale_community", "records",
+                                  "02570.json")))["record"]
+for _b in _ad["blocks"]:
+    for _c in _b["courses"]:
+        _c.pop("times", None)  # the step reads the record as the extraction filed it
+_ad_page = ("Field Placement/Internship · AD ST 152 · Internship I · 3 · AD ST 153 · Internship II · 3 · AD ST 50 · "
+            "Alcohol and Drug Studies Internship · 2 x 1 · TOTAL UNITS REQUIRED · 39")
+check("Glendale 02570: as filed, the blocks sum to 38 against the printed 39",
+      S.program_units(_ad, {})[0] == (38.0, 38.0) and _ad["program"]["total_units"] == {"min": 39, "max": 39})
+_ad_new, _ad_notes = R.reconcile(copy.deepcopy(_ad), _ad_page, "Glendale Community College", "A.S. Degree",
+                                 control_number="02570")
+check("Glendale 02570: '2 x 1' gives AD ST 50 times 2, and the blocks sum to the printed 39",
+      [(c["code"], c.get("times")) for b in _ad_new["blocks"] for c in b["courses"] if c.get("times")]
+      == [("AD ST 50", 2)] and S.program_units(_ad_new, {})[0] == (39.0, 39.0)
+      and any(n["field"] == "times" and "2 x 1" in n["words"] for n in _ad_notes))
+# The certificate 36155 prints the same line, and its reading already gave AD ST 50 2 units: free reconcile 44915445658,
+# run before the pattern named one enrollment's figure (each), counted it twice (39 to 41). The step now leaves it.
+_ad_c = json.load(open(os.path.join(ROOT, "kb", "program_requirements_college", "glendale_community", "records",
+                                    "36155.json")))["record"]
+check("Glendale 36155: the certificate as filed sums to its printed 39, with AD ST 50 read as 2 units",
+      S.program_units(_ad_c, {})[0] == (39.0, 39.0)
+      and [c.get("units") for b in _ad_c["blocks"] for c in b["courses"] if c["code"] == "AD ST 50"] == [2])
+_ad_c_new, _ad_c_notes = R.reconcile(copy.deepcopy(_ad_c), _ad_page, "Glendale Community College",
+                                     "Certificate of Achievement", control_number="36155")
+check("Glendale 36155: '2 x 1' leaves an AD ST 50 the reading gave 2 units (each), and the sum stays 39",
+      not any(c.get("times") for b in _ad_c_new["blocks"] for c in b["courses"])
+      and S.program_units(_ad_c_new, {})[0] == (39.0, 39.0) and not any(n["field"] == "times" for n in _ad_c_notes))
+check("Glendale 02570: a page printing AD ST 50 with its plain units counts it once",
+      not any(c.get("times") for b in R.reconcile(copy.deepcopy(_ad), _ad_page.replace("2 x 1", "1"),
+                                                  "Glendale Community College", "A.S. Degree")[0]["blocks"]
+              for c in b["courses"]))
 
 failed = [n for n, ok in results if not ok]
 for n, ok in results:
