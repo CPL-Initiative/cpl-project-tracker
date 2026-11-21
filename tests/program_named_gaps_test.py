@@ -567,9 +567,9 @@ check(_again["moved"] == [] and not _again["recall"]["wrong"],
 # and only while the record reads those two figures exactly; the held answer is the file's alone, so a record that
 # misread a list fails the self-recall instead of taking the gap.
 _td = NG.total_differs_list()
-check(_td and all(e.get("page") and e.get("run") and e.get("words") and e.get("evidence")
+check(_td and all((e.get("page") or e.get("where")) and e.get("run") and e.get("words") and e.get("evidence")
                   and NG._differs(e) for e in _td.values()),
-      "every listed program carries its page, run, words and evidence, and two figures that differ")
+      "every listed program carries its page (or where on a site), run, words and evidence, and two figures that differ")
 _td_sc = {"arithmetic": {"pass": False, "status": "unequal", "against": "program", "computed": [19.0, 19.0],
                          "stated": [16.0, 16.0]}, "coverage": {"pass": True}, "invented": {"pass": True}}
 _td_rec = {"college": "Clovis Community College", "control_number": "42234", "score": _td_sc}
@@ -598,6 +598,17 @@ for (_c, _cn), _e in _td.items():
     check([g.get("gap") for g in _f["score"].get("gaps") or []] == ["total_differs"]
           and _f["score"]["confidence"]["unit_arithmetic"] == 50,
           "%s %s: the record files the gap and unit arithmetic 50" % (_c, _cn))
+with open(os.path.join(ROOT, "kb", "receipts", "program_requirement_records_named_gaps_2026-11-21_s697p2.json"),
+          encoding="utf-8") as _fh:
+    _p2 = _json.load(_fh)
+_p2_keys = {(r["college"], str(r["control_number"])) for r in _p2["records"]}
+check(_p2["only_gaps"] == ["total_differs"] and _p2_keys == set(_td) and not _p2["recall"]["wrong"]
+      and all(r["after_image"]["checks"].get("gaps") == ["total_differs"]
+              and not (r["before_image"]["checks"] or {}).get("gaps") for r in _p2["records"]),
+      "the s697p2 plan moves exactly the listed programs to total_differs, and none filed a gap before")
+with open(os.path.join(ROOT, "kb", "migrations", "2026-11-21_s697p2_prreq_named_gaps_apply.sql"), encoding="utf-8") as _fh:
+    _p2_cns = set(re.findall(r"^\s*\(\d+, '([^']+)', '(\d{5})', \d+,", _fh.read(), re.M))
+check(_p2_cns == _p2_keys, "the s697p2 guarded UPDATE names exactly the plan's rows (%d)" % len(_p2_cns))
 check(_again["recall"]["by_answer"].get("total_differs") == len(_td),
       "the self-recall holds every listed program as total_differs (%s of %d)"
       % (_again["recall"]["by_answer"].get("total_differs"), len(_td)))

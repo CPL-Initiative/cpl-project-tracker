@@ -1944,6 +1944,18 @@ check("Glendale 02570: '2 x 1' gives AD ST 50 times 2, and the blocks sum to the
       [(c["code"], c.get("times")) for b in _ad_new["blocks"] for c in b["courses"] if c.get("times")]
       == [("AD ST 50", 2)] and S.program_units(_ad_new, {})[0] == (39.0, 39.0)
       and any(n["field"] == "times" and "2 x 1" in n["words"] for n in _ad_notes))
+# The certificate 36155 prints the same line, and its reading already gave AD ST 50 2 units: free reconcile 44915445658,
+# run before the pattern named one enrollment's figure (each), counted it twice (39 to 41). The step now leaves it.
+_ad_c = json.load(open(os.path.join(ROOT, "kb", "program_requirements_college", "glendale_community", "records",
+                                    "36155.json")))["record"]
+check("Glendale 36155: the certificate as filed sums to its printed 39, with AD ST 50 read as 2 units",
+      S.program_units(_ad_c, {})[0] == (39.0, 39.0)
+      and [c.get("units") for b in _ad_c["blocks"] for c in b["courses"] if c["code"] == "AD ST 50"] == [2])
+_ad_c_new, _ad_c_notes = R.reconcile(copy.deepcopy(_ad_c), _ad_page, "Glendale Community College",
+                                     "Certificate of Achievement", control_number="36155")
+check("Glendale 36155: '2 x 1' leaves an AD ST 50 the reading gave 2 units (each), and the sum stays 39",
+      not any(c.get("times") for b in _ad_c_new["blocks"] for c in b["courses"])
+      and S.program_units(_ad_c_new, {})[0] == (39.0, 39.0) and not any(n["field"] == "times" for n in _ad_c_notes))
 check("Glendale 02570: a page printing AD ST 50 with its plain units counts it once",
       not any(c.get("times") for b in R.reconcile(copy.deepcopy(_ad), _ad_page.replace("2 x 1", "1"),
                                                   "Glendale Community College", "A.S. Degree")[0]["blocks"]
