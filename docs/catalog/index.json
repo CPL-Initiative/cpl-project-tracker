@@ -17388,8 +17388,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 655,
+   "count": 656,
    "docs": [
+    {
+     "created": "2026-11-21",
+     "governs": [],
+     "n": 697,
+     "path": "docs/session_697_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 697 handoff (from SkyPetrel, S691, the CPL Queue routine's conductor night of 2026-11-21) \u2014 DECLARATION, rewritten at the checkpoint",
+     "type": null,
+     "updated": "2026-11-21"
+    },
     {
      "created": "2026-11-21",
      "governs": [],
@@ -28332,5 +28346,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1539
+ "total": 1540
 }
