@@ -1,0 +1,17 @@
+{
+ "name": "program_requirement_records_display_2026-11-13_e35ae1722a56.applied_44890523187_college-of-the-canyons.json",
+ "kind": "display_applied",
+ "bucket": "cpl-receipts",
+ "object": "display/applied/program_requirement_records_display_2026-11-13_e35ae1722a56.applied_44890523187_college-of-the-canyons.json.gz",
+ "build": "e35ae1722a56",
+ "built": "2026-11-13",
+ "bytes": 2295,
+ "sha256": "53f37b0ecb7fe5fc445fbd2b45f1d88702b6951c0db3147aa94787efc9462276",
+ "rows": 246,
+ "stored_at": "2026-11-21T09:40:49Z",
+ "run": "44890523187",
+ "gzip": true,
+ "repo_sha256": "e863bd4c10ee5f3345442c4ac1f8dae2a343f8ce9de573a9f17f1e9dbbee1a47",
+ "repo_bytes": 21241,
+ "repo_blob": "a16749cdc0b2533c194ae3e4bf675e84003632d8"
+}
