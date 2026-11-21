@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-21T07:28:51Z",
+ "written_at": "2026-11-21T07:51:13Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -17707,7 +17707,7 @@
   "rule": "the average of three parts: catalog source, program requirements passing, and the mean of course student learning outcomes (SLOs) and program learning outcomes (PLOs), from the nightly database count; a part not read yet counts as zero",
   "flag": "shareable",
   "statewide": {
-   "mean": 0.6544,
+   "mean": 0.6543,
    "colleges": 118
   },
   "colleges": {
