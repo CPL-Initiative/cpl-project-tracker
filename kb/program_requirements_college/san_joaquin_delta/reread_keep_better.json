@@ -1,0 +1,751 @@
+{
+ "college": "San Joaquin Delta College",
+ "run": "44883860902",
+ "written": "2026-11-21T08:28:36Z",
+ "rule": "a checked live row restores, or is held where the base files none; then own program (a heading sharing a title word, or a generic heading on a page the address or the capture shows is the program's own; then heading_award_check), where a failing re-read is restored, or held where the base files none or the live row already holds this run; then a live row holding this run keeps its record and names no dispatch; then a supplied live run other than the filed record's is held for a person; then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one (d-reread-keep-the-better-s683; COBIx on #3544 and #3547)",
+ "checked": [],
+ "live_runs": {
+  "13976": "39217405432",
+  "17506": "39217405432",
+  "18586": "39217405432",
+  "18815": "39217405432",
+  "31692": "39217405432",
+  "32341": "39217405432",
+  "32913": "39217405432",
+  "36535": "39217405432",
+  "36747": "39217405432",
+  "37638": "39217405432",
+  "40824": "39217405432",
+  "40902": "39217405432",
+  "40903": "39217405432",
+  "40904": "39217405432",
+  "44322": "39217405432",
+  "44860": "39217405432",
+  "44912": "39217405432",
+  "45621": "40498068817"
+ },
+ "live_read_at": "2026-11-21T08:25:10Z",
+ "dispatch": [
+  {
+   "workflow": "program-requirements-college.yml",
+   "ref": "claude/s691-pages-san_joaquin_delta",
+   "inputs": {
+    "college": "San Joaquin Delta College",
+    "step": "reread",
+    "force": "44883860902"
+   },
+   "posts": 19,
+   "control_numbers": [
+    "13976",
+    "17506",
+    "18586",
+    "18815",
+    "31692",
+    "32341",
+    "32913",
+    "36535",
+    "36747",
+    "37638",
+    "40824",
+    "40902",
+    "40903",
+    "40904",
+    "44322",
+    "44860",
+    "44912",
+    "45583",
+    "45621"
+   ],
+   "not_live_at_run": [
+    "13976",
+    "17506",
+    "18586",
+    "18815",
+    "31692",
+    "32341",
+    "32913",
+    "36535",
+    "36747",
+    "37638",
+    "40824",
+    "40902",
+    "40903",
+    "40904",
+    "44322",
+    "44860",
+    "44912",
+    "45621"
+   ]
+  },
+  {
+   "workflow": "program-requirements-college.yml",
+   "ref": "claude/s691-pages-san_joaquin_delta",
+   "inputs": {
+    "college": "San Joaquin Delta College",
+    "step": "load"
+   },
+   "posts": 1,
+   "control_numbers": [
+    "45583"
+   ],
+   "needs_load": [
+    "45583"
+   ]
+  }
+ ],
+ "carried_runs": {},
+ "counts": {
+  "reread": 19,
+  "kept": 18,
+  "restored": 0,
+  "restored_filed_pass": 0,
+  "restored_not_own_program": 0,
+  "held_for_person": 0,
+  "held_checked": 0,
+  "held_live_run": 0,
+  "new": 1,
+  "already_live": 0,
+  "kept_on_own_page": 0,
+  "plain_reread_would_lose_pass": 0,
+  "kept_by_extraction_guard": 0,
+  "run_places_none_after": 0,
+  "folder_places_none_after": 0,
+  "records_after": 203,
+  "dropped_by_filing": 1,
+  "dropped_filed_passes": 0
+ },
+ "runs": {
+  "44883860902": {
+   "base": "origin/main",
+   "base_sha": "1f70b59b44e97418fd572450fb05f524f889c33e",
+   "decided": "2026-11-21T08:28:36Z",
+   "counts": {
+    "reread": 19,
+    "kept": 18,
+    "restored": 0,
+    "restored_filed_pass": 0,
+    "restored_not_own_program": 0,
+    "held_for_person": 0,
+    "held_checked": 0,
+    "held_live_run": 0,
+    "new": 1,
+    "already_live": 0,
+    "kept_on_own_page": 0,
+    "plain_reread_would_lose_pass": 0,
+    "kept_by_extraction_guard": 0,
+    "run_places_none_after": 0,
+    "folder_places_none_after": 0,
+    "records_after": 203,
+    "dropped_by_filing": 1,
+    "dropped_filed_passes": 0
+   },
+   "kept_by_extraction_guard": {},
+   "next_read_pays": [],
+   "dropped_by_filing": [
+    {
+     "control_number": "19752",
+     "filed_passes_live": false
+    }
+   ],
+   "programs": [
+    {
+     "control_number": "13976",
+     "title": "International Business",
+     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+     "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3282&print",
+     "filed_source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3282&print",
+     "filed_run": 39217405432,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 7,
+      "listed": 7,
+      "arithmetic": "equal"
+     },
+     "live_run": "39217405432",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 7,
+      "listed": 7,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "17506",
+     "title": "American Sign Language",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3223&print",
+     "filed_source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3223&print",
+     "filed_run": 39217405432,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 10,
+      "listed": 10,
+      "arithmetic": "equal"
+     },
+     "live_run": "39217405432",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 10,
+      "listed": 10,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "18586",
+     "title": "Interdisciplinary Studies - Arts, Humanities, and Social Sciences Option",
+     "award": "A.A. Degree",
+     "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3346&print",
+     "filed_source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3346&print",
+     "filed_run": 39217405432,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.848,
+      "placed": 117,
+      "listed": 138,
+      "arithmetic": "equal"
+     },
+     "live_run": "39217405432",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.841,
+      "placed": 116,
+      "listed": 138,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read covers more (share 0.848 against 0.841)"
+    },
+    {
+     "control_number": "18815",
+     "title": "Interdisciplinary Studies - Mathematics and Science Option",
+     "award": "A.S. Degree",
+     "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3168&print",
+     "filed_source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3168&print",
+     "filed_run": 39217405432,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.962,
+      "placed": 50,
+      "listed": 52,
+      "arithmetic": "equal"
+     },
+     "live_run": "39217405432",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.962,
+      "placed": 50,
+      "listed": 52,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "31692",
+     "title": "Studio Arts",
+     "award": "A.A- T Degree",
+     "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3239&print",
+     "filed_source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3239&print",
+     "filed_run": 39217405432,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 10,
+      "listed": 10,
+      "arithmetic": "equal"
+     },
+     "live_run": "39217405432",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 10,
+      "listed": 10,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "32341",
+     "title": "English",
+     "award": "A.A- T Degree",
+     "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3219&print",
+     "filed_source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3219&print",
+     "filed_run": 39217405432,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 15,
+      "listed": 15,
+      "arithmetic": "equal"
+     },
+     "live_run": "39217405432",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.933,
+      "placed": 14,
+      "listed": 15,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read covers more (share 1.0 against 0.933)"
+    },
+    {
+     "control_number": "32913",
+     "title": "Anthropology",
+     "award": "A.A- T Degree",
+     "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3197&print",
+     "filed_source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3197&print",
+     "filed_run": 39217405432,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.909,
+      "placed": 10,
+      "listed": 11,
+      "arithmetic": "equal"
+     },
+     "live_run": "39217405432",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.909,
+      "placed": 10,
+      "listed": 11,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "36535",
+     "title": "Pre-Law Studies",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3339&print",
+     "filed_source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3339&print",
+     "filed_run": 39217405432,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.867,
+      "placed": 13,
+      "listed": 15,
+      "arithmetic": "equal"
+     },
+     "live_run": "39217405432",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.8,
+      "placed": 12,
+      "listed": 15,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read covers more (share 0.867 against 0.8)"
+    },
+    {
+     "control_number": "36747",
+     "title": "Law, Public Policy, and Society",
+     "award": "A.A- T Degree",
+     "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3338&print",
+     "filed_source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3338&print",
+     "filed_run": 39217405432,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.86,
+      "placed": 37,
+      "listed": 43,
+      "arithmetic": "equal"
+     },
+     "live_run": "39217405432",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.86,
+      "placed": 37,
+      "listed": 43,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "37638",
+     "title": "Social Justice Studies",
+     "award": "A.A- T Degree",
+     "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3357&print",
+     "filed_source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3357&print",
+     "filed_run": 39217405432,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.959,
+      "placed": 47,
+      "listed": 49,
+      "arithmetic": "equal"
+     },
+     "live_run": "39217405432",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.959,
+      "placed": 47,
+      "listed": 49,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "40824",
+     "title": "World Languages and Global Studies",
+     "award": "A.A. Degree",
+     "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3363&print",
+     "filed_source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3363&print",
+     "filed_run": 39217405432,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.912,
+      "placed": 52,
+      "listed": 57,
+      "arithmetic": "equal"
+     },
+     "live_run": "39217405432",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.912,
+      "placed": 52,
+      "listed": 57,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "40902",
+     "title": "Winery Sales and Marketing",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3372&print",
+     "filed_source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3372&print",
+     "filed_run": 39217405432,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.867,
+      "placed": 13,
+      "listed": 15,
+      "arithmetic": "equal"
+     },
+     "live_run": "39217405432",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.867,
+      "placed": 13,
+      "listed": 15,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "40903",
+     "title": "Winery Event Coordinator",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3370&print",
+     "filed_source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3370&print",
+     "filed_run": 39217405432,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 12,
+      "listed": 12,
+      "arithmetic": "equal"
+     },
+     "live_run": "39217405432",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 12,
+      "listed": 12,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "40904",
+     "title": "Winery Tasting Room Associate",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3371&print",
+     "filed_source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3371&print",
+     "filed_run": 39217405432,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 9,
+      "listed": 9,
+      "arithmetic": "equal"
+     },
+     "live_run": "39217405432",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 9,
+      "listed": 9,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "44322",
+     "title": "Communication Studies 2.0",
+     "award": "A.A- T Degree",
+     "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3384&print",
+     "filed_source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3384&print",
+     "filed_run": 39217405432,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 16,
+      "listed": 16,
+      "arithmetic": "equal"
+     },
+     "live_run": "39217405432",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.938,
+      "placed": 15,
+      "listed": 16,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read covers more (share 1.0 against 0.938)"
+    },
+    {
+     "control_number": "44860",
+     "title": "Creative Writing",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3390&print",
+     "filed_source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3390&print",
+     "filed_run": 39217405432,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 25,
+      "listed": 25,
+      "arithmetic": "equal"
+     },
+     "live_run": "39217405432",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.96,
+      "placed": 24,
+      "listed": 25,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read covers more (share 1.0 against 0.96)"
+    },
+    {
+     "control_number": "44912",
+     "title": "Modern Policing",
+     "award": "A.S. Degree",
+     "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3386&print",
+     "filed_source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3386&print",
+     "filed_run": 39217405432,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 22,
+      "listed": 22,
+      "arithmetic": "equal"
+     },
+     "live_run": "39217405432",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 22,
+      "listed": 22,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "45583",
+     "title": "Public Safety Dispatcher",
+     "award": "Noncredit program",
+     "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3402&print",
+     "filed_source_url": null,
+     "filed_run": null,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 2,
+      "listed": 2,
+      "arithmetic": "equal"
+     },
+     "live_run": null,
+     "outcome": "new",
+     "why": "no filed record on origin/main"
+    },
+    {
+     "control_number": "45621",
+     "title": "California General Education Transfer Curriculum (Cal-GETC)",
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3403&print",
+     "filed_source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3403&print",
+     "filed_run": 40498068817,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.944,
+      "placed": 152,
+      "listed": 161,
+      "arithmetic": "equal"
+     },
+     "live_run": "40498068817",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.938,
+      "placed": 151,
+      "listed": 161,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read covers more (share 0.944 against 0.938)"
+    }
+   ]
+  }
+ }
+}
