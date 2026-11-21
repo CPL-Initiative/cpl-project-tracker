@@ -1,0 +1,850 @@
+{
+ "_what": "College of the Canyons' prefix aliases PSYC=PSYCH, POLS=POLISC, COMM=COMS (kb/program_requirements_reconcile.json, S691, census lever 8), measured over the 156 records claude/s691-reread files at 1310b555 with the census's own _measure_college (kb/_prefix_alias_census.py): before is no alias at the college, after is the three. The evidence is the 2026-27 catalog v3's printed code and title (college page read 44882193771) against the COCI course list's (coci_lookup_data.js). Written by the S691 reread worker; nothing applied.",
+ "evidence": {
+  "COMM=COMS": {
+   "agree": 12,
+   "disagree": 0,
+   "no_file_course": [
+    "COMM-001",
+    "COMM-002",
+    "COMM-003"
+   ],
+   "rows": [
+    {
+     "agree": null,
+     "file": null,
+     "file_title": null,
+     "printed": "COMM-001",
+     "printed_titles": [
+      "STRATEGIES AND TACTICS",
+      "Strategies and Tactics of Public"
+     ]
+    },
+    {
+     "agree": null,
+     "file": null,
+     "file_title": null,
+     "printed": "COMM-002",
+     "printed_titles": [
+      "PUBLIC SPEAKING FOR",
+      "Public Speaking for Social Media"
+     ]
+    },
+    {
+     "agree": null,
+     "file": null,
+     "file_title": null,
+     "printed": "COMM-003",
+     "printed_titles": [
+      "PUBLIC SPEAKING FOR",
+      "Public Speaking for Interviews"
+     ]
+    },
+    {
+     "agree": true,
+     "file": "COMS 100",
+     "file_title": "Process of Communication",
+     "printed": "COMM-100",
+     "printed_titles": [
+      "Process of Communication"
+     ]
+    },
+    {
+     "agree": true,
+     "file": "COMS 120",
+     "file_title": "Small Group Communication",
+     "printed": "COMM-120",
+     "printed_titles": [
+      "Small Group Communication"
+     ]
+    },
+    {
+     "agree": true,
+     "file": "COMS 150",
+     "file_title": "Oral Interpretation",
+     "printed": "COMM-150",
+     "printed_titles": [
+      "Oral Interpretation"
+     ]
+    },
+    {
+     "agree": true,
+     "file": "COMS 190",
+     "file_title": "Forensics",
+     "printed": "COMM-190",
+     "printed_titles": [
+      "Forensics"
+     ]
+    },
+    {
+     "agree": true,
+     "file": "COMS 200",
+     "file_title": "Communication and New Media",
+     "printed": "COMM-200",
+     "printed_titles": [
+      "Communication and New Media"
+     ]
+    },
+    {
+     "agree": true,
+     "file": "COMS 225",
+     "file_title": "Strategies of Argumentation",
+     "printed": "COMM-225",
+     "printed_titles": [
+      "Strategies of Argumentation"
+     ]
+    },
+    {
+     "agree": true,
+     "file": "COMS 227",
+     "file_title": "Introduction to Rhetorical Criticism",
+     "printed": "COMM-227",
+     "printed_titles": [
+      "Introduction to Rhetorical",
+      "Introduction to Rhetorical Criticism"
+     ]
+    },
+    {
+     "agree": true,
+     "file": "COMS 235",
+     "file_title": "Communication of Aging, Health, and Society",
+     "printed": "COMM-235",
+     "printed_titles": [
+      "Communication of Aging,",
+      "Intergeneration Communication"
+     ]
+    },
+    {
+     "agree": true,
+     "file": "COMS 246",
+     "file_title": "Interpersonal Communication",
+     "printed": "COMM-246",
+     "printed_titles": [
+      "Interpersonal Communication"
+     ]
+    },
+    {
+     "agree": true,
+     "file": "COMS 256",
+     "file_title": "Intercultural Communication",
+     "printed": "COMM-256",
+     "printed_titles": [
+      "Intercultural Communication",
+      "Interpersonal Communication"
+     ]
+    },
+    {
+     "agree": true,
+     "file": "COMS 260",
+     "file_title": "Communication and Gender",
+     "printed": "COMM-260",
+     "printed_titles": [
+      "Communication and Gender"
+     ]
+    },
+    {
+     "agree": true,
+     "file": "COMS 270",
+     "file_title": "Communication and Leadership",
+     "printed": "COMM-270",
+     "printed_titles": [
+      "Communication and Leadership"
+     ]
+    }
+   ]
+  },
+  "POLS=POLISC": {
+   "agree": 6,
+   "disagree": 0,
+   "no_file_course": [],
+   "rows": [
+    {
+     "agree": true,
+     "file": "POLISC 200",
+     "file_title": "Introduction to Political Science",
+     "printed": "POLS-200",
+     "printed_titles": [
+      "Introduction to Political Science"
+     ]
+    },
+    {
+     "agree": true,
+     "file": "POLISC 210",
+     "file_title": "Model United Nations",
+     "printed": "POLS-210",
+     "printed_titles": [
+      "Model United Nations"
+     ]
+    },
+    {
+     "agree": true,
+     "file": "POLISC 230",
+     "file_title": "Political Theory",
+     "printed": "POLS-230",
+     "printed_titles": [
+      "Political Theory"
+     ]
+    },
+    {
+     "agree": true,
+     "file": "POLISC 250",
+     "file_title": "Comparative Government and Politics",
+     "printed": "POLS-250",
+     "printed_titles": [
+      "Comparative Government",
+      "Comparative Government and"
+     ]
+    },
+    {
+     "agree": true,
+     "file": "POLISC 270",
+     "file_title": "International Relations",
+     "printed": "POLS-270",
+     "printed_titles": [
+      "International Politics",
+      "International Relations"
+     ]
+    },
+    {
+     "agree": true,
+     "file": "POLISC 290",
+     "file_title": "Ethnic and Gender Politics",
+     "printed": "POLS-290",
+     "printed_titles": [
+      "Ethics and Gender Politics",
+      "Ethnic and Gender Politics"
+     ]
+    }
+   ]
+  },
+  "PSYC=PSYCH": {
+   "agree": 15,
+   "disagree": 0,
+   "no_file_course": [
+    "PSYC-272"
+   ],
+   "rows": [
+    {
+     "agree": true,
+     "file": "PSYCH 102",
+     "file_title": "Physiological Psychology",
+     "printed": "PSYC-102",
+     "printed_titles": [
+      "Physiological Psychology"
+     ]
+    },
+    {
+     "agree": true,
+     "file": "PSYCH 103",
+     "file_title": "Introduction to Behavioral Research",
+     "printed": "PSYC-103",
+     "printed_titles": [
+      "Introduction to Behavioral"
+     ]
+    },
+    {
+     "agree": true,
+     "file": "PSYCH 104",
+     "file_title": "Statistics for the Behavioral Sciences",
+     "printed": "PSYC-104",
+     "printed_titles": [
+      "Statistics for the Behavioral"
+     ]
+    },
+    {
+     "agree": true,
+     "file": "PSYCH 105",
+     "file_title": "Personal Growth and Adjustment",
+     "printed": "PSYC-105",
+     "printed_titles": [
+      "Personal Growth and Adjustment"
+     ]
+    },
+    {
+     "agree": true,
+     "file": "PSYCH 109",
+     "file_title": "Social Psychology",
+     "printed": "PSYC-109",
+     "printed_titles": [
+      "Social Psychology"
+     ]
+    },
+    {
+     "agree": true,
+     "file": "PSYCH 110",
+     "file_title": "Psychology as a Major and Profession",
+     "printed": "PSYC-110",
+     "printed_titles": [
+      "Psychology as a Major and"
+     ]
+    },
+    {
+     "agree": true,
+     "file": "PSYCH 126",
+     "file_title": "Cognitive Psychology",
+     "printed": "PSYC-126",
+     "printed_titles": [
+      "Cognitive Psychology"
+     ]
+    },
+    {
+     "agree": true,
+     "file": "PSYCH 167",
+     "file_title": "Introduction to Multicultural Psychology",
+     "printed": "PSYC-167",
+     "printed_titles": [
+      "Introduction to Multicultural"
+     ]
+    },
+    {
+     "agree": true,
+     "file": "PSYCH 172",
+     "file_title": "Developmental Psychology",
+     "printed": "PSYC-172",
+     "printed_titles": [
+      "Developmental Psychology"
+     ]
+    },
+    {
+     "agree": true,
+     "file": "PSYCH 172H",
+     "file_title": "Developmental Psychology-Honors",
+     "printed": "PSYC-172H",
+     "printed_titles": [
+      "Developmental Psychology",
+      "Developmental Psychology -",
+      "Developmental Psychology \u2013"
+     ]
+    },
+    {
+     "agree": true,
+     "file": "PSYCH 180",
+     "file_title": "Positive Psychology",
+     "printed": "PSYC-180",
+     "printed_titles": [
+      "Positive Psychology"
+     ]
+    },
+    {
+     "agree": true,
+     "file": "PSYCH 225",
+     "file_title": "Psychology of Learning and Behavior",
+     "printed": "PSYC-225",
+     "printed_titles": [
+      "Psychology of Learning and"
+     ]
+    },
+    {
+     "agree": true,
+     "file": "PSYCH 230",
+     "file_title": "Human Sexuality",
+     "printed": "PSYC-230",
+     "printed_titles": [
+      "Human Sexuality"
+     ]
+    },
+    {
+     "agree": true,
+     "file": "PSYCH 235",
+     "file_title": "Psychology of Gender Roles",
+     "printed": "PSYC-235",
+     "printed_titles": [
+      "Psychology of Gender Roles"
+     ]
+    },
+    {
+     "agree": true,
+     "file": "PSYCH 240",
+     "file_title": "Abnormal Psychology",
+     "printed": "PSYC-240",
+     "printed_titles": [
+      "Abnormal Psychology"
+     ]
+    },
+    {
+     "agree": null,
+     "file": null,
+     "file_title": null,
+     "printed": "PSYC-272",
+     "printed_titles": [
+      "Adult Development and Aging"
+     ]
+    }
+   ]
+  }
+ },
+ "lever_8": {
+  "coverage_newly_pass": [
+   "10318",
+   "16978",
+   "17974",
+   "18979",
+   "30836",
+   "32389",
+   "32723",
+   "33581",
+   "36117",
+   "37448",
+   "37648",
+   "37953",
+   "38552",
+   "40041",
+   "41713",
+   "45528"
+  ],
+  "members": 37,
+  "newly_pass": [
+   "10318",
+   "16978",
+   "17974",
+   "18979",
+   "30836",
+   "32389",
+   "32723",
+   "33581",
+   "36117",
+   "37448",
+   "37953",
+   "38552",
+   "40041",
+   "41713"
+  ]
+ },
+ "measure": {
+  "arithmetic_may_move": [],
+  "coverage_fails_after": 7,
+  "coverage_fails_before": 25,
+  "coverage_newly_pass": [
+   "10318",
+   "16978",
+   "17974",
+   "18021",
+   "18979",
+   "30836",
+   "30838",
+   "32389",
+   "32723",
+   "33581",
+   "36117",
+   "37448",
+   "37648",
+   "37953",
+   "38552",
+   "40041",
+   "41713",
+   "45528"
+  ],
+  "live_coverage_fails": 0,
+  "live_coverage_newly_pass": [],
+  "live_newly_pass_tab": [],
+  "newly_pass": [
+   {
+    "record": "10318",
+    "renamed": [
+     [
+      "PSYC172",
+      "PSYCH172"
+     ],
+     [
+      "PSYC172H",
+      "PSYCH172H"
+     ],
+     [
+      "POLS230",
+      "POLISC230"
+     ],
+     [
+      "POLS250",
+      "POLISC250"
+     ]
+    ]
+   },
+   {
+    "record": "16978",
+    "renamed": [
+     [
+      "PSYC172",
+      "PSYCH172"
+     ],
+     [
+      "PSYC172H",
+      "PSYCH172H"
+     ],
+     [
+      "PSYC180",
+      "PSYCH180"
+     ]
+    ]
+   },
+   {
+    "record": "17974",
+    "renamed": [
+     [
+      "COMM246",
+      "COMS246"
+     ],
+     [
+      "COMM256",
+      "COMS256"
+     ],
+     [
+      "POLS230",
+      "POLISC230"
+     ],
+     [
+      "POLS250",
+      "POLISC250"
+     ]
+    ]
+   },
+   {
+    "record": "18979",
+    "renamed": [
+     [
+      "PSYC104",
+      "PSYCH104"
+     ]
+    ]
+   },
+   {
+    "record": "30836",
+    "renamed": [
+     [
+      "PSYC104",
+      "PSYCH104"
+     ],
+     [
+      "PSYC109",
+      "PSYCH109"
+     ],
+     [
+      "PSYC109",
+      "PSYCH109"
+     ]
+    ]
+   },
+   {
+    "record": "30838",
+    "renamed": [
+     [
+      "PSYC102",
+      "PSYCH102"
+     ],
+     [
+      "PSYC103",
+      "PSYCH103"
+     ],
+     [
+      "PSYC104",
+      "PSYCH104"
+     ],
+     [
+      "PSYC109",
+      "PSYCH109"
+     ]
+    ]
+   },
+   {
+    "record": "32389",
+    "renamed": [
+     [
+      "POLS230",
+      "POLISC230"
+     ],
+     [
+      "POLS250",
+      "POLISC250"
+     ],
+     [
+      "POLS270",
+      "POLISC270"
+     ],
+     [
+      "POLS200",
+      "POLISC200"
+     ]
+    ]
+   },
+   {
+    "record": "32723",
+    "renamed": [
+     [
+      "PSYC104",
+      "PSYCH104"
+     ]
+    ]
+   },
+   {
+    "record": "33581",
+    "renamed": [
+     [
+      "COMM225",
+      "COMS225"
+     ]
+    ]
+   },
+   {
+    "record": "36117",
+    "renamed": [
+     [
+      "PSYC104",
+      "PSYCH104"
+     ],
+     [
+      "COMM260",
+      "COMS260"
+     ],
+     [
+      "PSYC235",
+      "PSYCH235"
+     ],
+     [
+      "POLS290",
+      "POLISC290"
+     ]
+    ]
+   },
+   {
+    "record": "37448",
+    "renamed": [
+     [
+      "POLS250",
+      "POLISC250"
+     ],
+     [
+      "POLS270",
+      "POLISC270"
+     ]
+    ]
+   },
+   {
+    "record": "37953",
+    "renamed": [
+     [
+      "PSYC104",
+      "PSYCH104"
+     ],
+     [
+      "PSYC103",
+      "PSYCH103"
+     ]
+    ]
+   },
+   {
+    "record": "38552",
+    "renamed": [
+     [
+      "PSYC172",
+      "PSYCH172"
+     ],
+     [
+      "PSYC172H",
+      "PSYCH172H"
+     ]
+    ]
+   },
+   {
+    "record": "40041",
+    "renamed": [
+     [
+      "COMM225",
+      "COMS225"
+     ],
+     [
+      "PSYC104",
+      "PSYCH104"
+     ],
+     [
+      "COMM227",
+      "COMS227"
+     ]
+    ]
+   },
+   {
+    "record": "41713",
+    "renamed": [
+     [
+      "PSYC104",
+      "PSYCH104"
+     ]
+    ]
+   }
+  ],
+  "other_direction": [
+   {
+    "kind": "passing_record_renamed",
+    "record": "30297",
+    "renamed": [
+     [
+      "COMM150",
+      "COMS150",
+      3
+     ],
+     [
+      "COMM190",
+      "COMS190",
+      1
+     ],
+     [
+      "COMM225",
+      "COMS225",
+      3
+     ],
+     [
+      "COMM227",
+      "COMS227",
+      3
+     ],
+     [
+      "COMM235",
+      "COMS235",
+      3
+     ],
+     [
+      "COMM246",
+      "COMS246",
+      3
+     ],
+     [
+      "COMM256",
+      "COMS256",
+      3
+     ],
+     [
+      "COMM260",
+      "COMS260",
+      3
+     ],
+     [
+      "COMM270",
+      "COMS270",
+      3
+     ]
+    ]
+   },
+   {
+    "kind": "passing_record_renamed",
+    "record": "36570",
+    "renamed": [
+     [
+      "POLS230",
+      "POLISC230",
+      3
+     ],
+     [
+      "POLS270",
+      "POLISC270",
+      3
+     ]
+    ]
+   },
+   {
+    "kind": "passing_record_renamed",
+    "record": "42861",
+    "renamed": [
+     [
+      "COMM246",
+      "COMS246",
+      3
+     ],
+     [
+      "COMM100",
+      "COMS100",
+      3
+     ],
+     [
+      "COMM120",
+      "COMS120",
+      3
+     ],
+     [
+      "COMM150",
+      "COMS150",
+      3
+     ],
+     [
+      "COMM190",
+      "COMS190",
+      1
+     ],
+     [
+      "COMM225",
+      "COMS225",
+      3
+     ],
+     [
+      "COMM227",
+      "COMS227",
+      3
+     ],
+     [
+      "COMM256",
+      "COMS256",
+      3
+     ],
+     [
+      "COMM260",
+      "COMS260",
+      3
+     ],
+     [
+      "COMM235",
+      "COMS235",
+      3
+     ],
+     [
+      "COMM270",
+      "COMS270",
+      3
+     ]
+    ]
+   },
+   {
+    "kind": "passing_record_renamed",
+    "record": "43271",
+    "renamed": [
+     [
+      "COMM225",
+      "COMS225",
+      3
+     ],
+     [
+      "PSYC104",
+      "PSYCH104",
+      4
+     ],
+     [
+      "COMM235",
+      "COMS235",
+      3
+     ],
+     [
+      "COMM256",
+      "COMS256",
+      3
+     ],
+     [
+      "COMM260",
+      "COMS260",
+      3
+     ]
+    ]
+   }
+  ],
+  "pass_after": 135,
+  "pass_before": 120,
+  "reconstruction_mismatch": 0,
+  "records": 156,
+  "renamed_without_units": [],
+  "tab_after": 136,
+  "tab_before": 120
+ },
+ "page_read_run": "44882193771",
+ "records_ref": "origin/claude/s691-reread (1310b555)",
+ "self_recall": {
+  "right": 120,
+  "what": "every record passing before (its answer held) is read again under the aliases",
+  "wrong": 0,
+  "wrong_records": []
+ }
+}
