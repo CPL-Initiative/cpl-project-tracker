@@ -33,6 +33,11 @@ RECORD RULES (a filed record exists, so the program is collected with the gap):
                        self-recall, matcher_recall.)
   no_hours_read        no_units_read on a program measured in hours (record.program.measure "hours"): its courses
                        carry hours, not units (COBIx's finding 1 on #3497). Unit arithmetic scores 20.
+  total_not_printed    a program kb/program_total_not_printed.json lists, read from its page: the catalog prints no
+                       program total, the record's one arithmetic reason (S691). Unit arithmetic scores 40.
+  total_differs        a program kb/program_total_differs.json lists with its page's two figures, the total it prints
+                       and what its own printed units add to, which differ; the record must read both exactly (S697,
+                       Clovis's Elementary Teacher Level 2: 19 against 16). Unit arithmetic scores 50.
 
 PLANNED GAPS (S681, from #3502's committed plan, kb/program_requirements_reread_plan_s680.json):
   catalog_figures_differ  every list matches its printed figure and the lists sum past the program's printed total
@@ -57,6 +62,7 @@ THE COLLECTION LANE'S COLLEGES are left out: COLLECTION_LANE_S680 in kb/collecti
                                                     # the corrected values, B #3502's records, C units rule A5's five)
     python3 kb/_program_named_gaps.py --gap total_not_printed --tag s697   # S697: one gap's records alone, the
                                                     # label file untouched
+    python3 kb/_program_named_gaps.py --gap total_differs --tag s697p2    # S697 piles2: the same for total_differs
     python3 kb/_program_named_gaps.py --wave --college NAME ... --checked LIVE.json --tag s684
                                                     # S684: a re-read wave's records take their gap again (A the
                                                     # record rules, B #3502's plan), only at the wave's runs
@@ -102,9 +108,12 @@ GAPS = {
     # S691: the catalog's section prints its lists' figures and no program total, read from the page itself and
     # listed in kb/program_total_not_printed.json (Santa Monica's Pilates and Yoga certificates).
     "total_not_printed": "The catalog prints no total for this program, so its units cannot be checked against one.",
+    # S697: the page prints a program total its own printed figures do not add to, read from the page itself and
+    # listed with both figures in kb/program_total_differs.json (Clovis's Elementary Teacher Level 2: 19 against 16).
+    "total_differs": "The catalog prints a total for this program that its own printed units do not add to.",
 }
 ARITH_SCORE = {"major_total_differs": 30, "no_units_printed": 40, "no_units_read": 20, "no_hours_read": 20,
-               "catalog_figures_differ": 50, "total_not_printed": 40}
+               "catalog_figures_differ": 50, "total_not_printed": 40, "total_differs": 50}
 MAJOR_NOT_EXACT = "the major does not match the catalog's major total exactly"
 NO_UNITS_WHY = re.compile(r"^a required course in '.*' has no units$")
 PRINTED_NO_UNITS = re.compile(r"\b(?:no|without)\s+units\b|\bunits?\s+(?:are\s+|is\s+)?not\s+(?:printed|listed|given)\b"
@@ -353,7 +362,44 @@ def total_not_printed(filed: dict, listed: dict | None = None) -> str | None:
     return "the catalog prints no program total (PDF p.%s; college-page-read run %s)" % (e.get("page"), e.get("run"))
 
 
-RECORD_RULES = (("major_total_differs", major_total_differs), ("total_not_printed", total_not_printed)) + (
+# S697: a program whose page prints a total its own printed figures do not add to (Clovis's Elementary Teacher Level 2
+# 42234: six courses printed at 3, 4, 3, 3, 3 and 3 units under "Total Units: 16"). A session reads the page and files
+# both figures as the page prints them (kb/program_total_differs.json): printed_total, the program's own total, and
+# printed_sum, what the page's own units add to. The held answer is the file's: a listed program whose two figures
+# differ. The rule asks one thing more, that the record read both figures as the page prints them, so a record that
+# misread a list keeps failing without a gap (and the self-recall counts it wrong).
+TOTAL_DIFFERS = os.path.join(HERE, "program_total_differs.json")
+
+
+def total_differs_list(path: str = TOTAL_DIFFERS) -> dict:
+    """{(college, control number): entry} from the committed file: pages a session read, never a pattern."""
+    return total_not_printed_list(path)
+
+
+def _differs(e: dict) -> bool:
+    pt, ps = _pair(e.get("printed_total")), _pair(e.get("printed_sum"))
+    return bool(pt and ps and (abs(pt[0] - ps[0]) > FIG_EPS or abs(pt[1] - ps[1]) > FIG_EPS))
+
+
+def total_differs(filed: dict, listed: dict | None = None) -> str | None:
+    """A listed program whose page's own figures disagree, read by the record exactly as the page prints them."""
+    listed = total_differs_list() if listed is None else listed
+    e = listed.get((filed.get("college"), str(filed.get("control_number"))))
+    sc = filed.get("score") or {}
+    a = sc.get("arithmetic") or {}
+    if not e or not _differs(e) or a.get("pass") or a.get("status") != "unequal" or a.get("against") != "program" \
+            or not collectable(sc):
+        return None
+    comp, st = _pair(a.get("computed")), _pair(a.get("stated"))
+    pt, ps = _pair(e["printed_total"]), _pair(e["printed_sum"])
+    if comp is None or st is None or any(abs(x - y) > FIG_EPS for x, y in zip(comp + st, ps + pt)):
+        return None
+    return "the catalog prints a total of %s, and its own figures add to %s (%s; college-page-read run %s)" % (
+        S._fig(*pt), S._fig(*ps), e.get("where") or "PDF p.%s" % e.get("page"), e.get("run"))
+
+
+RECORD_RULES = (("major_total_differs", major_total_differs), ("total_not_printed", total_not_printed),
+                ("total_differs", total_differs)) + (
     (("no_units_printed", no_units_printed),) if NO_UNITS_PRINTED_ON else ()) + (("no_units_read", no_units_read),)
 
 
@@ -429,6 +475,11 @@ def held_answer(filed: dict) -> str | None:
             and a.get("status") == "incomplete" and a.get("why") == [NO_TOTAL_WHY]):
         # The page itself, read and listed in kb/program_total_not_printed.json, is the held answer (S691).
         return "total_not_printed"
+    e = total_differs_list().get((filed.get("college"), str(filed.get("control_number"))))
+    if e and _differs(e) and a.get("status") == "unequal":
+        # The page itself, read and listed in kb/program_total_differs.json with both of its figures, is the held
+        # answer (S697); whether the record read those figures is the rule's question, not the answer's.
+        return "total_differs"
     why = [w for w in a.get("why") or [] if w != "the record names no total"]
     if (a.get("status") == "incomplete" and why and all(w.endswith(" has no units") for w in why)
             and (filed.get("college"), str(filed.get("control_number"))) not in HELD_INCOMPLETE):

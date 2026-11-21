@@ -947,6 +947,14 @@
      "read": "free reconcile 44763682085 on claude/s690-piles-glendale (6297bdd5), after page read 44751552964",
      "source_words": "Minimum Required Units for Degree (with GE) 60",
      "why": "S690 (worker piles), census lever 5. Glendale's program pages print 'Minimum Required Units for Degree (with GE) 60' beside the major's own 'Minimum/Maximum Required Units/Hours for Major' (02547, Architectural Drafting & Design A.S.: major 33, degree 60). The 60 counts the major, general education and electives: a floor the electives make up, as at Redwoods, Cerritos and Orange Coast. The free reconcile touched 57 records: the 15 that passed on main still pass, 30 of the lever's 64 now pass (28 with the major's own arithmetic equal on main, 02602 and 02603 with a short high end under Sam's ruling of 2026-11-17), 12 still fail, none goes from pass to fail."
+    },
+    {
+     "kind": "repeat",
+     "field": "times",
+     "pattern": "(?P<code>AD\\s*ST\\s*50)\\W+Alcohol\\s+and\\s+Drug\\s+Studies\\s+Internship\\W+(?P<n>2)\\s*x\\s*1\\b",
+     "read": "college-page-read 44914829120 on claude/s697-piles2 (kb/college_reads/glendale_reconcile_s697.json)",
+     "source_words": "AD ST 50 · Alcohol and Drug Studies Internship · 2 x 1 · TOTAL UNITS REQUIRED · 39",
+     "why": "S697 (worker piles2), the reconcile_steps lever. Addiction Studies Counseling A.S. 02570 reads 38 against 39 because its page prints the 1-unit internship AD ST 50 as '2 x 1', taken twice, and the record keeps it once (its note: 'the printed total of 39 only adds up when AD ST 50 counts as 2 units'). The step gives that course times 2 where the page prints the code, its title and '2 x 1' together, so no other program moves."
     }
    ]
   },

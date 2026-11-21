@@ -1,0 +1,170 @@
+{
+ "_what": "Programs whose catalog section prints a total that its own printed figures do not add to, each read by a session from the page itself (never found by a pattern over free text). printed_total is the program total as printed; printed_sum is what the page's own units add to (each required course's printed units, and each list's printed figure where the page prints one). kb/_program_named_gaps.py names the gap total_differs on a listed record whose arithmetic is unequal and whose computed and stated figures are exactly printed_sum and printed_total, and the self-recall reads this file alone as the held answer. A record not listed here never takes the gap. Remove an entry to withdraw it.",
+ "colleges": {
+  "Clovis Community College": {
+   "42234": {
+    "page": 122,
+    "where": "PDF pp.121-122",
+    "printed_total": [
+     16,
+     16
+    ],
+    "printed_sum": [
+     19,
+     19
+    ],
+    "words": "Completion of 16 semester units of certificate applicable courses ... Total Units: 16",
+    "evidence": "Elementary Teacher Level 2 (Major #C.589B.CA): PDF p.121 prints the heading and p.122 the list, LING 11 (3), GEOL 9 (4), ENGL C1001 or C1001H or PHIL 2 or COMM 25 (3), GEOG 6 (3), MATH 10B (3) and HIST 20 (3), 19 units, under 'Completion of 16 semester units' and 'Total Units: 16' (college-page-read run 44883047940). Level 1 and Level 3 on the same pages add to their printed 19 and 20.",
+    "run": "44883047940"
+   },
+   "33431": {
+    "page": 104,
+    "where": "PDF pp.104-105",
+    "printed_total": [
+     18,
+     18
+    ],
+    "printed_sum": [
+     11,
+     11
+    ],
+    "words": "Required Core Courses: Select a minimum of 8 units ... Restricted Elective Courses: Select a minimum of 3 units ... Total Units: 18",
+    "evidence": "Life Science A.S. (MAJOR #C.6102.AS): PDF p.104 prints 'Required Core Courses: Select a minimum of 8 units' and p.105 'Restricted Elective Courses: Select a minimum of 3 units' and 'Total Units: 18'; the page names no other list and no words for the remaining 7 units (college-page-read run 44883047940).",
+    "run": "44883047940"
+   },
+   "37352": {
+    "page": 141,
+    "where": "PDF p.141",
+    "printed_total": [
+     24,
+     25
+    ],
+    "printed_sum": [
+     21,
+     22
+    ],
+    "words": "Required Core Courses ... Total Units: 24-25",
+    "evidence": "Medical Office Administration (MAJOR #C.4502.CA): PDF p.141 prints BIOL 5 (4) or COMM 10 (3), HCA 5 (3), IS 15 (3), HCA 103 (4), HCA 104 (4), OT 10 (3) and OT 17 (1), 21-22 units, under 'Total Units: 24-25', and no other list (college-page-read run 44914829120).",
+    "run": "44914829120"
+   },
+   "44551": {
+    "page": 113,
+    "where": "PDF pp.112-113",
+    "printed_total": [
+     20,
+     21
+    ],
+    "printed_sum": [
+     24,
+     25
+    ],
+    "words": "Select an additional 12-13 courses ... Total Units for the Major: 20-21",
+    "evidence": "Data Science (Major #C.6921.AS): PDF p.113 prints Required Core Courses CSCI 40 (4), CSCI 41 (4) and DATA 8 (4), 12 units, then 'Select an additional 12-13 courses', 24-25 units together, under 'Total Units for the Major: 20-21' (college-page-read run 44914829120).",
+    "run": "44914829120"
+   },
+   "33493": {
+    "page": 132,
+    "where": "PDF p.132",
+    "printed_total": [
+     31,
+     34.5
+    ],
+    "printed_sum": [
+     29.5,
+     33
+    ],
+    "words": "Required Core Courses ... Select one course ... Total Units: 31-34.5",
+    "evidence": "Information Systems Networking Option (Major #C.693B.AS): PDF p.132 prints BA 5 (3), BA 10 (3), IS 13 (1.5) or IS 50A (3), IS 15 (3), IS 16 (1.5), IS 18 (1.5), IS 40A (3), IS 62 (4), IS 63 (3) and IS 64 (3), 26.5-28 units, and one of BA 39 (3), MATH C2210 (5), MATH 103 (5) or STAT 7 (4), 29.5-33 together, under 'Total Units: 31-34.5' (college-page-read run 44914829120).",
+    "run": "44914829120"
+   },
+   "42706": {
+    "page": 175,
+    "where": "PDF p.175",
+    "printed_total": [
+     21,
+     21
+    ],
+    "printed_sum": [
+     17,
+     18
+    ],
+    "words": "Required Core Courses ... List A: Select 3-4 units from the following courses ... Total Units: 21",
+    "evidence": "Music AA-T: PDF p.175 prints Required Core Courses MUS 1A (3), MUS 1B (3), MUS 2A (3), MUS 7A, 7B and 7C (1 each) and MUS 23 or MUS 31 (2), 14 units, and 'List A: Select 3-4 units', 17-18 together, then 'Total Units: 21' with no other list between (college-page-read run 44914829120).",
+    "run": "44914829120"
+   },
+   "35209": {
+    "page": 181,
+    "where": "PDF p.181",
+    "printed_total": [
+     18,
+     19
+    ],
+    "printed_sum": [
+     21,
+     22
+    ],
+    "words": "Required Core Courses: Select one course ... LIST A: Select three courses ... LIST B: Select three courses ... Total Units: 18-19",
+    "evidence": "Political Science AA-T: PDF p.181 prints POLS C1000 or C1000H (3), 'LIST A: Select three courses' of POLS 3, 5 and 24 (3 each) and STAT C1000 or BA 23 (4), and 'LIST B: Select three courses' of 3-unit courses or any List A course not already used (3-4), so the one 4-unit course counts once: 21-22 units under 'Total Units: 18-19' (college-page-read run 44914829120).",
+    "run": "44914829120"
+   }
+  },
+  "Glendale Community College": {
+   "12574": {
+    "where": "the Coursedog page FITS-C, completion requirements",
+    "printed_total": [
+     18,
+     23
+    ],
+    "printed_sum": [
+     21,
+     26
+    ],
+    "words": "TOTAL UNITS REQUIRED · 18-23",
+    "evidence": "Fitness Specialist certificate: the page prints REQUIRED COURSES FOR MAJOR/CERTIFICATE HLTH 102 (3), KIN 151 (4), KIN 155 (3), KIN 156 (4), KIN 167 (1.5) and KIN 168 (1.5), 17 units, CHOOSE ONE OF THE FOLLOWING of courses at 2 or 3 units, and CHOOSE TWO OF THE FOLLOWING of courses at 1, 1.5 or 1-3 units, 21-26 units together, under 'Minimum Required Units/Hours for Major 18', 'Maximum ... 23' and 'TOTAL UNITS REQUIRED 18-23' (college-page-read run 44914829120).",
+    "run": "44914829120"
+   },
+   "39905": {
+    "where": "the Coursedog page FITS-AS, completion requirements",
+    "printed_total": [
+     18,
+     23
+    ],
+    "printed_sum": [
+     21,
+     26
+    ],
+    "words": "TOTAL UNITS REQUIRED · 18-23",
+    "evidence": "Fitness Specialist A.S.: the page prints REQUIRED COURSES FOR MAJOR/CERTIFICATE HLTH 102 (3), KIN 151 (4), KIN 155 (3), KIN 156 (4), KIN 167 (1.5) and KIN 168 (1.5), 17 units, CHOOSE ONE OF THE FOLLOWING of courses at 2 or 3 units, and CHOOSE TWO OF THE FOLLOWING of courses at 1, 1.5 or 1-3 units, 21-26 units together, under 'Minimum Required Units/Hours for Major 18', 'Maximum ... 23' and 'TOTAL UNITS REQUIRED 18-23' (college-page-read run 44914829120).",
+    "run": "44914829120"
+   },
+   "19566": {
+    "where": "the Coursedog page MRKTII-C, completion requirements",
+    "printed_total": [
+     18,
+     18
+    ],
+    "printed_sum": [
+     15,
+     15
+    ],
+    "words": "TOTAL UNITS REQUIRED · 18",
+    "evidence": "Marketing II certificate: the page prints REQUIRED COURSES FOR CERTIFICATE BUSAD 101, BUSAD 162, BUSAD 166 and BUSAD 163 or BUSAD 165 (3 each), 12 units, and CHOOSE ONE OF THE FOLLOWING of 3-unit courses, 15 units together, under 'Minimum Required Units/Hours for Major 18' and 'TOTAL UNITS REQUIRED 18' (college-page-read run 44914829120).",
+    "run": "44914829120"
+   },
+   "12570": {
+    "where": "the Coursedog page TF-C, completion requirements",
+    "printed_total": [
+     19,
+     19
+    ],
+    "printed_sum": [
+     20,
+     20
+    ],
+    "words": "TOTAL UNITS REQUIRED · 19",
+    "evidence": "Tax Fundamentals (the state's Tax Preparer) certificate: the page prints REQUIRED COURSES FOR CERTIFICATE ACCTG 101 (5), ACCTG 130, 150, 160, 165 and 175 (3 each), 20 units, under 'Minimum Required Units/Hours for Major 19' and 'TOTAL UNITS REQUIRED 19' (college-page-read run 44914829120).",
+    "run": "44914829120"
+   }
+  }
+ }
+}
