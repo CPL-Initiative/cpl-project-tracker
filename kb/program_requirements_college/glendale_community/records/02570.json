@@ -61,26 +61,24 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    38.0,
-    38.0
+    39.0,
+    39.0
    ],
    "stated": [
     39.0,
     39.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 38.0-38.0; the catalog states 39.0-39.0"
-   ],
+   "why": [],
    "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     38.0,
-     38.0
+     39.0,
+     39.0
     ],
     "stated": [
      60.0,
@@ -91,8 +89,8 @@
     "why": [],
     "minimum": true,
     "fill": [
-     22.0,
-     22.0
+     21.0,
+     21.0
     ]
    }
   },
@@ -118,7 +116,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -307,7 +305,8 @@
       "units": 1,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": false,
+      "times": 2
      }
     ]
    }
@@ -322,14 +321,16 @@
    "No careers named in the extracted text."
   ]
  },
- "extracted_run": 44763682085,
+ "extracted_run": 44915445658,
  "reconciled": [
   {
-   "field": "degree_total_minimum",
+   "field": "times",
    "was": null,
-   "now": true,
-   "words": "Minimum Required Units for Degree (with GE)\n60"
+   "now": {
+    "AD ST 50": 2
+   },
+   "words": "AD ST 50\n\n\t\n\nAlcohol and Drug Studies Internship\n\n\t\n\n2 x 1"
   }
  ],
- "read_run": "43415972509"
+ "read_run": 44763682085
 }

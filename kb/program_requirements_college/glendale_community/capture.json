@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 317,
  "with_closed_list": 267,
- "started": "2026-11-20T15:29:44Z",
+ "started": "2026-11-21T14:45:01Z",
  "route": "site (a Coursedog catalog reads from its site; a PDF procedure step is set aside unless route=pdf)",
  "coursedog": {
   "root": "https://catalog.glendale.edu",
@@ -1850,7 +1850,7 @@
   "yield_refused_passing": 0
  },
  "loads": 520,
- "seconds": 4517.3,
+ "seconds": 4365.1,
  "found": 242,
  "by_method": {
   "no_closed_list": 50,
@@ -4079,5 +4079,5 @@
    "url": "https://catalog.glendale.edu/programs/ENTG-C/completion-requirements-zaZdl"
   }
  },
- "run": "44763682085"
+ "run": "44915445658"
 }
