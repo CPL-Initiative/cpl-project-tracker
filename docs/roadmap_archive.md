@@ -676,3 +676,7 @@ Moved verbatim at the S694 checkpoint, to keep the lane under its size limit. Bo
 ## INDEX update history, moved (S694 checkpoint, 2026-11-21)
 
 - 2026-11-19 (S685 SkyTowhee, the CPL Queue routine's 12:12Z conductor firing, full checkpoint): S684's wave and checkpoint landed (#3550, #3545); #3552 (the outline helper reads each college's newest census row), #3553 (keep-the-better: a generic heading on the program's own page, 43 verified flips) and #3556 (display build 3e8088e082eb, confirmed by a closing live count); the census at 5,203 left; handoff 686, the S685 lessons and conductor sections.
+
+## INDEX update history, moved (S691 checkpoint, 2026-11-21)
+
+- 2026-11-20 (S688 SkyLinnet, Sam's session, light checkpoint plus memory rows): S687's 15 memory rows applied (run 44639823760); #3500 (Cosumnes River pins), #3529 (flagged cards leave the confidence scorer), #3578 (First Light puts back a timestamp-only report), #3537 (Mt. San Antonio SLO reader), #3579 (rule D keeps an older read's marks); the bot-commit and skip-tag pitfalls; a section on commit-backs that skip CI in `playbook-runner-as-external-api-proxy`. Handoff 689.

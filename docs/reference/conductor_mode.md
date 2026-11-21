@@ -1,7 +1,7 @@
 ---
 title: Conductor mode — how a session runs workers, COBIx and the merge gate
 date: 2026-11-11
-updated: 2026-11-20
+updated: 2026-11-21
 status: retired
 tags: [reference, conductor, retired, governance-team-enablement, scheduled-sessions]
 kb-status: internal
@@ -196,6 +196,35 @@ at the top of each piece of work so Sam can change the dial before it runs.
   at a scheduled check-in instead (S653: context went from 16% to 73% in 100 minutes on notices).
 - A tool trial (a repo, a library, a service) gets one line in [`reference/stack_scouting`](stack_scouting.md): candidate,
   measured cost, result, kept or dropped. COBIx scans every other Monday (#3306).
+
+## What went wrong in S691, and what worked
+
+The CPL Queue routine's collection night of 2026-11-21 (SkyPetrel, first command 07:13Z; S694, a plain session, also
+signed as SkyPetrel, so this run carries its number). No session was live at the start; it declared on draft #3632 at
+07:20Z. No `list_sessions`, `get_trigger`, `get_session` or `set_session_tags` in this session.
+
+- **A worker ran out of context in its second task** (`p-one-concern-per-worker-context-s691`). `piles` did #3602's
+  update, then started the cheap piles and stopped; `piles2` and `piles3` finished lane 2. One concern per worker; the
+  next concern goes to a fresh one.
+- **A generated file built on the sandbox's Python failed CI** (`f-py312-sum-rounds-differently-s691`).
+  `kb/status/commons_data.json` from Python 3.11 differed from CI's 3.12 build in one rounded mean. Build with
+  `/usr/bin/python3.12` and run `check_generated.sh` with a `python3` that is 3.12 first on PATH
+  (`d-generated-files-built-with-runner-python-s691`; #3633 moved the sums to `math.fsum`).
+- **`main` went red from the census commit** (c1700e76; run 44893759916): a test pinned the spend file's `updated`, which the census's full build has moved since #3602. A data commit on `main` can turn `test` red with no PR open; read `main`'s own run after each census. The checkpoint branch carries the fix as its own commit.
+- **The clock guard refused a guessed time** (`p-clock-guard-guessed-time-s691`): 08:20Z written at 08:17Z. Read
+  `date -u` before writing any time.
+- **Worktrees share one `.git`** (`p-shared-git-shallow-lock-s691`): a depth fetch in one checkout holds the shallow
+  lock for all. Confirm a merge with `git ls-remote`, and never delete the lock.
+- **The Actions log host is blocked from the sandbox** (`p-actions-log-host-blocked-s691`): read a job's tail with
+  `get_job_logs`.
+- **A permission refusal was not routed around:** the check refused piles2's `--calgetc-apply` dry run twice (City
+  College of San Francisco's Cal-GETC step); the step waits for a plain session.
+- **Four checkouts on measured disk** (`d-four-checkouts-on-measured-disk-s691`): 1.5 GB each with 58 GB free, above
+  S653's three.
+- **What worked:** a free pricing run before paying caught College of the Canyons' doubled estimate; second readers
+  caught three real defects; `pr-gate` kept CI reads small; the declaration PR was refreshed within each half hour;
+  #3635 merged on a clean state without a second update from `main`, its files disjoint from #3633's
+  (`d-merge-on-clean-when-files-disjoint-s691`).
 
 ## What went wrong in S690, and what worked
 

@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-20T17:43:20Z",
-  "session": 690,
-  "moniker": "SkyMerlin",
+  "written_at": "2026-11-21T10:41:21Z",
+  "session": 691,
+  "moniker": "SkyPetrel",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_691_handoff.md",
+  "handoff": "docs/session_697_handoff.md",
   "next_step": {
-    "title": "Post the reread plan's second batch, and settle Golden West's correction",
-    "text": "The next session posts the extracts already paid for in the reread plan's second batch, Cuyamaca, Moreno Valley, Norco and Fullerton first, each through the keep-the-better check, a post and a load, and settles with COBIx how Golden West's 476 outline rows that hold a heading are corrected, so the correction can be undone row by row."
+    "title": "Land the Saddleback and Rio Hondo outline reads, then fix two reader faults",
+    "text": "The next session lands the outline reads started tonight at Saddleback and Rio Hondo, the two colleges whose outlines improve the most common course cards, and before the next paid college read it stops a timed-out read from filing and has the pricing step treat a new edition of the same catalog as the same page."
   },
   "calls": [
     {
@@ -337,6 +337,26 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-21T10:19:02Z",
+      "text": "What CPL Pathways and Sierra show was rebuilt once with the night's records: 18,609 program statements under one build, College of the Canyons first, with no errors. 32 rows stay at older builds, the same 32 as the night before, and Santa Monica's eleven reread programs wait for the next build."
+    },
+    {
+      "at": "2026-11-21T10:11:11Z",
+      "text": "The harvest gap census counts 4,875 programs still to collect, down from 4,982, with 15,314 of 20,282 passing."
+    },
+    {
+      "at": "2026-11-21T10:05:46Z",
+      "text": "Santa Monica's eleven programs were read again from their pinned catalog pages: 11 records replaced by a better read, 7 of them now passing, for $1.72, after a read that timed out and dropped 46 records was undone. City College of San Francisco's 20 programs missing from its 2026-27 catalog stay unnamed: its 2025-26 catalog printed 7 of the 27, and the rule that would have named the rest was dropped."
+    },
+    {
+      "at": "2026-11-21T09:33:41Z",
+      "text": "The night's wave merged: the reread plan's last colleges, Cuyamaca to College of the Canyons; College of the Canyons' noncredit programs, whose course codes carry a dot, and its catalog's own subject prefixes; San Joaquin Delta and Solano. With Santa Monica's reread, the night added 109 program records, replaced 201 with a better read, posted 24 again, restored 5 and held 2 for a person, for $17.70 of extraction. Ohlone, Santa Barbara City, Mt. San Antonio and Fresno City had no program pages of their own to read, so nothing was paid there."
+    },
+    {
+      "at": "2026-11-21T08:12:53Z",
+      "text": "The follow-up from the night before merged (PR 3602), filing Berkeley City's and Glendale's reread records; its summary file was rebuilt with the Python version the checks run."
+    },
     {
       "at": "2026-11-20T13:48:00Z",
       "text": "City College of San Francisco's course outline reader now files only the parsed learning outcomes of each outline, never the whole page, and starts its full read only after a recall count taken by eye from a trial."

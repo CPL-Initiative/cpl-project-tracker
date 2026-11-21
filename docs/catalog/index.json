@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 599,
+   "count": 600,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1968,6 +1968,26 @@
      "title": "A generated file accepts your edit, and that is what makes it dangerous",
      "type": "methodology",
      "updated": "2026-09-18"
+    },
+    {
+     "created": "2026-11-21",
+     "governs": [
+      "kb/_build_commons_data_status.py",
+      "scripts/check_generated.sh",
+      ".github/workflows/js-tests.yml"
+     ],
+     "path": "docs/kb-notes/methodology-a-generated-file-is-built-with-the-runners-python.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "generated-files",
+      "ci",
+      "python",
+      "commons"
+     ],
+     "title": "A generated file is built with the runner's Python, because float sums round differently across versions",
+     "type": "methodology",
+     "updated": "2026-11-21"
     },
     {
      "created": "2026-09-05",
@@ -15450,7 +15470,7 @@
      ],
      "title": "Program requirements harvest lessons \u2014 archive 7 (S655 onward)",
      "type": null,
-     "updated": "2026-11-20"
+     "updated": "2026-11-21"
     },
     {
      "created": "2026-11-12",
@@ -16720,7 +16740,7 @@
      ],
      "title": "Program requirements harvest \u2014 lane state",
      "type": null,
-     "updated": "2026-11-20"
+     "updated": "2026-11-21"
     },
     {
      "created": "2026-08-28",
@@ -16975,7 +16995,7 @@
      ],
      "title": "Conductor mode \u2014 how a session runs workers, COBIx and the merge gate",
      "type": null,
-     "updated": "2026-11-20"
+     "updated": "2026-11-21"
     },
     {
      "created": "2026-08-29",
@@ -17400,7 +17420,7 @@
       "handoff",
       "session"
      ],
-     "title": "Session 697 handoff (from SkyPetrel, S691, the CPL Queue routine's conductor night of 2026-11-21) \u2014 DECLARATION, rewritten at the checkpoint",
+     "title": "Session 697 handoff (from SkyPetrel, S691, the CPL Queue routine's collection night of 2026-11-21)",
      "type": null,
      "updated": "2026-11-21"
     },
@@ -28346,5 +28366,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1540
+ "total": 1541
 }
