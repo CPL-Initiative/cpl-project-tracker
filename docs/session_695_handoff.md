@@ -121,13 +121,15 @@ Open at the time the documents were written; the conductor updates this table at
 | #3618 | merged (`810a9b50`) | none |
 | #3619 | merged (`e04e155d`) | none |
 | #3621 | merged (`ab0ed744`) | the plan's second read (priority 2) |
-| #3620 (the Subjects card) | open, CI running | merge on green |
-| #3622 (the Assign control) | open, CI running | merge on green |
+| #3620 (the Subjects card) | merged (`56bd50e0`) | the builder in the daily build (priority 7) |
+| #3622 (the Assign control) | merged (`b05a9921`), after a CI failure on the reviewer-email guard and its fix | none |
 | this checkpoint (`claude/s694-checkpoint`) | open, draft | merge at sign-off if `test` is green |
-| `daily-dashboard.yml` | not dispatched when written | dispatch once after #3622 |
+| `daily-dashboard.yml` | dispatched on `main` at 2026-11-21 01:00Z, after #3622 | confirm it ended in success and that the pile reads 2,493 |
 
 The session drops its PR watches at sign-off; it holds no scheduled check-in and no artifact watch. The COBIx watcher
-ends with the session.
+stopped at its two-hour background limit at about 00:41Z, having seen no COBIx comment since 21:30Z; restart it.
+The 18 memory rows are applied (run 44845357911, `kb/receipts/migration_s694_checkpoint_memory_rows_44845357911.json`).
+The vault's session note and wiki touch are `samueltlee/CPLBrain#835`.
 
 Spend: not available; 2026-11-20T22:40Z to 2026-11-21T01:00Z.
 
