@@ -1,0 +1,42 @@
+{
+ "_readme": "S700, 2026-11-21, #3655: the subject pages the course-descriptions index links (kb/hand_filed_catalogs/subjects/long_beach_city.json, each address the index's own link) whose courses kb/hand_filed_catalogs/courses/long_beach_city.json.gz does not hold, because the first read guessed the address from the lower-case code. Each page line for line through the capture view. No model call. Part 1: the first read (run 44961387532) printed more lines than a session can read back, so the pages are read again in parts.",
+ "college": "Long Beach City College",
+ "questions": {
+  "courses": "Each course's code, title, units or hours, requisites and description, line for line."
+ },
+ "keywords": [
+  "\\bUnits?\\b",
+  "\\bHours?\\b"
+ ],
+ "capture_lines": 8000,
+ "pages": [
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/design/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/ged-hset/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/psy_ts/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/social-work/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  }
+ ]
+}
