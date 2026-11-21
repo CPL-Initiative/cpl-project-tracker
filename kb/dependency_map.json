@@ -4,9 +4,9 @@
   "supabase_tables": 119,
   "rpcs": 68,
   "edge_functions": 16,
-  "file_datasets": 1107,
+  "file_datasets": 1108,
   "external_services": 197,
-  "consumers": 641,
+  "consumers": 642,
   "workflows": 76,
   "data_js_files": 71,
   "tabs": 41
@@ -6123,6 +6123,13 @@
      "line": 133
     },
     {
+     "id": "script:kb/_pile_mint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 559
+    },
+    {
      "id": "script:kb/_prefix_alias_census.py",
      "kind": "script",
      "direction": "read",
@@ -6185,6 +6192,13 @@
      "direction": "read",
      "how": "literal",
      "line": 215
+    },
+    {
+     "id": "script:kb/_pile_mint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 562
     }
    ],
    "served": false,
@@ -12534,6 +12548,13 @@
      "direction": "read",
      "how": "literal",
      "line": 63
+    },
+    {
+     "id": "script:kb/_pile_mint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 568
     }
    ],
    "producers": [
@@ -14599,6 +14620,13 @@
      "direction": "read",
      "how": "literal",
      "line": 65
+    },
+    {
+     "id": "script:kb/_pile_mint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 571
     }
    ],
    "producers": [
@@ -28399,6 +28427,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/pile_mint_dryrun_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/plain_words_for_sam_test.py": {
    "consumers": [
     {
@@ -30589,6 +30630,13 @@
      "direction": "read",
      "how": "literal",
      "line": 356
+    },
+    {
+     "id": "script:kb/_pile_mint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 560
     },
     {
      "id": "script:kb/_program_requirements_units_rules.py",
@@ -37372,6 +37420,7 @@
     "tests/authority_recode_apply_test.py",
     "tests/zband_retire_apply_test.py",
     "tests/uc_cur_promote_test.py",
+    "tests/pile_mint_dryrun_test.py",
     "tests/occupation_matcher_stemming_test.py",
     "tests/identities_rekey_test.py",
     "tests/identities_rebuild_test.py",
