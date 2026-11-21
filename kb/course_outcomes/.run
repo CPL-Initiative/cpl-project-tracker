@@ -1,4 +1,4 @@
 index=kb/course_outline_index/index_44882239715.json
 slugs=rio_hondo
-trial=12
-run=2026-11-21 S691 Rio Hondo trial 8 (parser 2629a09a, for the gate)
+parts=2
+run=2026-11-21 S691 Rio Hondo full read, 946 courses, HOND 045 left unread (parser 2629a09a, gate 44890279483), dispatched 10:10Z
