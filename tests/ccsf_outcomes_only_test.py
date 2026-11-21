@@ -276,6 +276,21 @@ for host in ("saddleback.curriqunet.com", "riohondo.curriqunet.com"):
           host not in read.RECALL_BY_HOST or os.path.exists(read.RECALL_BY_HOST[host]))
 check("6 City College of San Francisco's excerpt is unchanged by the host argument",
       read.slo_excerpt(TEXT) == read.slo_excerpt(TEXT, "ccsf.curricunet.com") is not None)
+RIO = ("Outline w/SLO\nI. Cover\nOriginator: " + STAFF + "\nV. Course Objectives\nRecord transactions.\n"
+       "Prepare statements.\nVI. Methods of Instruction:\nLecture\nIX. Student Learning Outcome\n"
+       "1. Prepare a balance sheet.\n2. Explain accrual accounting.\nX. Texts/Instructional Materials:\n" + STAFF + "\n")
+rio = "riohondo.curriqunet.com"
+check("6 Rio Hondo's excerpts: IX. Student Learning Outcome to X. Texts, V. Course Objectives to VI. Methods; no "
+      "person's line in either",
+      read.slo_excerpt(RIO, rio) == ["1. Prepare a balance sheet.", "2. Explain accrual accounting."]
+      and read.objectives_excerpt(RIO, rio) == ["Record transactions.", "Prepare statements."]
+      and STAFF not in read.excerpt_log("X 1", read.slo_excerpt(RIO, rio), rio)
+      and read.objectives_excerpt(RIO, "ccsf.curricunet.com") is None)
+got_rio = read.parse_page("", RIO, read.page_system("https://%s/x" % rio), "https://%s/x?reportId=358" % rio)
+check("6 the parser reads Rio Hondo's Roman-numbered sections: 2 SLOs and 2 objectives, the headings without numerals",
+      got_rio["outcomes"] == ["Prepare a balance sheet.", "Explain accrual accounting."]
+      and got_rio["objectives"] == ["Record transactions.", "Prepare statements."]
+      and got_rio["heading"] == "Student Learning Outcome" and got_rio["objectives_heading"] == "Course Objectives", got_rio)
 probe = read.probe_log("X 1", TEXT)
 check("6 a host with no heading pair logs only the lines that name outcomes or objectives, never a person's line",
       STAFF not in probe and "STUDENT LEARNING OUTCOMES" in probe
