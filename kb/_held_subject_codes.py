@@ -27,11 +27,18 @@ memory by kb/_pile_mint_dryrun.py's own compute_plan from the committed files; t
 module's functions over the same inputs. Writes kb/status/held_subject_codes.json. The only date written is the
 plan's own (today's, when the plan is computed in memory). A rerun on the same inputs writes the same bytes.
 
-  python3 kb/_held_subject_codes.py [--plan PATH] [--out PATH]
+THE DAILY RUN (scripts/daily_build.sh, after the closest M-ID and the local subject titles; S695). The plan is computed
+in memory, so the run writes nothing under kb/pile_mint_out/. The file stores a fingerprint of what decides the list:
+the document less its _sources, whose plan date and identity-file stamp move every run. The builder reads the dry run's
+inputs through its load_inputs, so the fingerprint is taken over the list it produces, never over those files' bytes.
+With --if-changed a run whose fingerprint matches the file's leaves the file untouched.
+
+  python3 kb/_held_subject_codes.py [--plan PATH] [--out PATH] [--if-changed]
 """
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -227,10 +234,53 @@ def dump(doc):
     return json.dumps(doc, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n"
 
 
+def fingerprint(doc):
+    """sha256 over what decides the list: the document less _sources (the plan's date and the identity file's stamp
+    move every run while no held course moves) and less this field. Keys sorted, so a stable order."""
+    body = {k: v for k, v in (doc or {}).items() if k not in ("_sources", "fingerprint")}
+    return hashlib.sha256(dump(body).encode("utf-8")).hexdigest()
+
+
+def held_of(plan):
+    """The plan's held list and floors, or an exit when the plan no longer has that shape: a renamed key must stop the
+    build, never write an empty list over yesterday's file."""
+    held = (plan.get("held") or {}).get("no_route_gives_a_subj4")
+    thresholds = (plan.get("self_recall") or {}).get("thresholds")
+    if not isinstance(held, list) or not isinstance(thresholds, dict):
+        raise SystemExit("ABORT: the pile mint plan has no held.no_route_gives_a_subj4 list or no "
+                         "self_recall.thresholds; kb/_pile_mint_dryrun.py changed its shape. Nothing written.")
+    need = ("college", "control_number", "subject", "title")
+    bad = [r for r in held if not isinstance(r, dict) or any(k not in r for k in need)]
+    if bad:
+        raise SystemExit(f"ABORT: {len(bad)} held rows lack one of {', '.join(need)}; nothing written.")
+    return held, thresholds
+
+
+def write_if_changed(doc, out, if_changed=False):
+    """Stamp the fingerprint and write; with if_changed, leave a file whose content fingerprints the same untouched
+    (its fingerprint recomputed from its content, so a file written before the field existed compares too). True when
+    written."""
+    fp = fingerprint(doc)
+    doc["fingerprint"] = fp
+    if if_changed and os.path.exists(out):
+        try:
+            with open(out, encoding="utf-8") as f:
+                was = fingerprint(json.load(f))
+        except (OSError, ValueError):
+            was = None
+        if was == fp:
+            print(f"[held_subject_codes] the list is unchanged (fingerprint {fp[:12]}); {out} left as built")
+            return False
+    with open(out, "w", encoding="utf-8") as f:
+        f.write(dump(doc))
+    return True
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--plan", default=None, help="a plan.json kb/_pile_mint_dryrun.py wrote; default: computed in memory")
     ap.add_argument("--out", default=os.path.join(ROOT, OUT))
+    ap.add_argument("--if-changed", action="store_true", help="leave the file untouched when the list did not change")
     a = ap.parse_args(argv)
     import _pile_mint_dryrun as pm  # noqa: E402  (load_inputs, compute_plan, holders, own_subj4, vote_tables)
     inp = pm.load_inputs()
@@ -241,8 +291,7 @@ def main(argv=None):
     else:
         plan = pm.compute_plan(inp, pm.date.today().isoformat())
         plan_from = "computed in memory by kb/_pile_mint_dryrun.py compute_plan"
-    held = (plan.get("held") or {}).get("no_route_gives_a_subj4") or []
-    thresholds = (plan.get("self_recall") or {}).get("thresholds") or {}
+    held, thresholds = held_of(plan)
     col, state = vote_tables(inp, pm)
     with open(os.path.join(ROOT, TITLES), encoding="utf-8") as f:
         titles_doc = json.load(f)
@@ -251,8 +300,8 @@ def main(argv=None):
                "course_list": (plan.get("inputs") or {}).get("course_list"),
                "printed_names": TITLES, "subject_map": "kb/reference/subject_discipline_map.json"}
     doc = build(held, thresholds, col, state, inp["disc_map"], titles_doc, short_max=pm.SUBJ_SHORT, sources=sources)
-    with open(a.out, "w", encoding="utf-8") as f:
-        f.write(dump(doc))
+    if not write_if_changed(doc, a.out, a.if_changed):
+        return 0
     t = doc["totals"]
     print(f"[held_subject_codes] {t['held']} held courses, {t['codes']} codes, {t['pairs']} college-and-code pairs; "
           f"the top 20 codes release {t['top_20_release']}")

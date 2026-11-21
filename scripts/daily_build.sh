@@ -312,6 +312,24 @@ step "Build the closest M-ID for the Needs an M-ID pile" <<'STEP'
 python3 kb/_closest_mid.py --if-changed || { git checkout -- kb/coci_closest_mid.json 2>/dev/null || true; echo "::warning title=Closest M-ID not rebuilt::kb/_closest_mid.py failed; the Courses List reads yesterday's kb/coci_closest_mid.json."; }
 STEP
 
+# ── The Commons Subjects card: local subject titles, then the codes the pile mint holds on (S695, 2026-11-21) ──
+# kb/status/local_subject_titles.json: each college's local subject codes, its printed catalog beside the state list
+# (coci_lookup_data.js), with the common subject code from the subject map. Read by the Subjects card and by the held
+# list below. --if-changed: no write when its fingerprint (the content less _sources, whose state list stamp moves
+# on its own) matches (~1 s). Display only, so a failure warns and yesterday's file stands.
+step "Build the Subjects card's local subject titles" <<'STEP'
+python3 kb/_build_local_subject_titles.py --if-changed || { git checkout -- kb/status/local_subject_titles.json 2>/dev/null || true; echo "::warning title=Local subject titles not rebuilt::kb/_build_local_subject_titles.py failed; the Commons Subjects card reads yesterday's kb/status/local_subject_titles.json."; }
+STEP
+
+# kb/status/held_subject_codes.json (#commons/subjects/held): the pile mint dry run's held list, computed in memory
+# (nothing is written under kb/pile_mint_out/), grouped by local subject code. After the closest M-ID
+# (kb/coci_closest_mid.json), the course flags, the identity file and the titles above, all of which the dry run
+# reads. --if-changed: no write when the list's fingerprint (the content less _sources, whose plan date moves daily)
+# matches (~7 s). Display only, so a failure warns and yesterday's file stands.
+step "Build the codes the pile mint holds on" <<'STEP'
+python3 kb/_held_subject_codes.py --if-changed || { git checkout -- kb/status/held_subject_codes.json 2>/dev/null || true; echo "::warning title=Held subject codes not rebuilt::kb/_held_subject_codes.py failed; #commons/subjects/held reads yesterday's kb/status/held_subject_codes.json."; }
+STEP
+
 # ── Step 4b: Re-run row Trust-Card auditor ────────────────────
 # Read-only over kb/coci_*.json; writes kb/row_audit/{latest.json,
 # <date>.md} that the UCL "⚠ hinky" badge consumes. See CLAUDE.md §11.

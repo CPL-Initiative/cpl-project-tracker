@@ -94,7 +94,13 @@ try:
     try:
         lst.main([])
         check("(6) --check passes on what it wrote", lst.main(["--check"]) == 0)
-        open(os.path.join(root, lst.OUT), "a").write(" ")
+        p = os.path.join(root, lst.OUT)
+        d = json.load(open(p))
+        d["_sources"]["state_list_built_at"] = "2026-12-01"
+        open(p, "w").write(lst.dump(d))
+        check("(6) --check passes when only the state list's stamp moved", lst.main(["--check"]) == 0)
+        d["colleges"][0]["rows"][0][1] = "Changed"
+        open(p, "w").write(lst.dump(d))
         check("(6) --check fails on a changed file", lst.main(["--check"]) == 1)
     finally:
         lst.ROOT = lst_root

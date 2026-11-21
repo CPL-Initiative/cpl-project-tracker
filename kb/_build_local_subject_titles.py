@@ -20,10 +20,17 @@ Rule 7). Nothing is written to any table.
 
 Deterministic: no clock is read. A rerun on the same inputs writes the same bytes.
 
-  python3 kb/_build_local_subject_titles.py           write the file
-  python3 kb/_build_local_subject_titles.py --check   exit 1 if the committed file is behind its inputs
+THE DAILY RUN (scripts/daily_build.sh, after the closest M-ID; S695). The file stores a fingerprint of what decides it:
+the document less its _sources, whose state_list_built_at is the state list's own stamp and moves whenever that list is
+rebuilt, whether or not a subject code moved. With --if-changed a run whose fingerprint matches the file's leaves the
+file untouched; --check compares the same fingerprint.
+
+  python3 kb/_build_local_subject_titles.py                write the file
+  python3 kb/_build_local_subject_titles.py --if-changed   the daily run: write only when the content changed
+  python3 kb/_build_local_subject_titles.py --check        exit 1 if the committed file is behind its inputs
 """
 import gzip
+import hashlib
 import json
 import os
 import re
@@ -151,15 +158,36 @@ def dump(obj):
     return json.dumps(obj, ensure_ascii=False, separators=(",", ":"), sort_keys=False) + "\n"
 
 
+def fingerprint(doc):
+    """sha256 over what decides the file: the document less _sources (the state list's _built_at stamp) and less this
+    field. Keys sorted, so a stable order."""
+    body = {k: v for k, v in (doc or {}).items() if k not in ("_sources", "fingerprint")}
+    return hashlib.sha256(json.dumps(body, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")).hexdigest()
+
+
+def committed_fingerprint(path):
+    """The fingerprint of the file on disk, recomputed from its content (a file written before the field existed
+    compares too), or None."""
+    try:
+        with open(path, encoding="utf-8") as f:
+            return fingerprint(json.load(f))
+    except (OSError, ValueError):
+        return None
+
+
 def main(argv):
-    text = dump(build())
+    doc = build(ROOT)
+    fp = doc["fingerprint"] = fingerprint(doc)
+    text = dump(doc)
     path = os.path.join(ROOT, OUT)
     if "--check" in argv:
-        cur = open(path, encoding="utf-8").read() if os.path.exists(path) else ""
-        if cur != text:
+        if committed_fingerprint(path) != fp:
             print(OUT + " is behind its inputs: run python3 kb/_build_local_subject_titles.py")
             return 1
         print(OUT + " is current")
+        return 0
+    if "--if-changed" in argv and committed_fingerprint(path) == fp:
+        print("%s: the content is unchanged (fingerprint %s); left as built" % (OUT, fp[:12]))
         return 0
     with open(path, "w", encoding="utf-8") as f:
         f.write(text)
