@@ -1,5 +1,7 @@
-run=2026-11-11
+run=2026-11-21-s691-a
 discover=
-index=https://shasta.curriqunet.com/
-slugs=shasta
-report=
+index=https://sdccd.curriqunet.com/
+slugs=san_diego_of_continuing_education
+report=^All Fields$
+status=
+client=
