@@ -960,7 +960,7 @@ async function seedExhibitsReviewCard(page, theme) {
     pending: {}, batches: [], waiting: [], families: {} }) }));
   await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "exhibits/held") location.hash = "exhibits/held"; });
   if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
-  await page.waitForFunction(() => document.querySelector("#exhibits-root section.exh-cdsum .exh-cd-title"), null, { timeout: 60000 });
+  await page.waitForFunction(() => document.querySelector("#exhibits-root aside.exh-cdsum .exh-cd-title"), null, { timeout: 60000 });
   await page.evaluate(() => {
     try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
     const x = document.querySelector(".cplfl-overlay.open #cplfl-close");

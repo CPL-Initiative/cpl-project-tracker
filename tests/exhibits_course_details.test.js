@@ -1,13 +1,12 @@
 // Course details beside a Review card (Sam, 2026-11-12: "need to see the course details for abt 133 so i can decide
 // what the best title should be. i suspect the ag and business tech title is just their area title and not the course
 // title for which they are giving cs credit--add a link to course details that opens in sidebar view").
-// Guarded here:
-//   (1) the Review card's Source line carries a Course details control, a word in a <button>;
-//   (2) pressing it puts the course's own title (from unified_courses_members.js, by college and code from the
-//       exhibit's credit recommendation in statewide_data.js) in the side panel, in Related titles' place, distinct
-//       from the canonical title, with its units, TOP, M-ID, credit recommendation and catalog description;
-//   (3) a course the data does not hold says so, and still names the college, the code and the MAP link;
-//   (4) Close and Escape give Related titles back and return focus to the control.
+// Guarded here, as the card stands since 2026-11-21 (Sam: Course details and Exhibits show together, no switch):
+//   (1) the Course details panel lists the card's course beside the Exhibits panel, without a press;
+//   (2) the course's title is a button that opens its TOP, M-ID and control number under it (from
+//       unified_courses_members.js, by college and code), the panels and the card staying as they are;
+//   (3) a card with no course on file says so, and still names its MAP exhibit;
+//   (4) a noncredit course's COCI description is marked a lead.
 // Run from repo root: `node tests/exhibits_course_details.test.js` (or `npm test`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -21,7 +20,7 @@ function txt(el) {
   return parts.join(" ").replace(/\s+/g, " ").trim();
 }
 const src = fs.readFileSync("exhibits.js", "utf8");
-check("the panel's CSS names no raw hex color", !/#[0-9a-fA-F]{3,8}\b/.test(src.slice(src.indexOf('".exh-cd-head'), src.indexOf('".exh-cd-desc'))));
+check("the panel's CSS names no raw hex color", !/#[0-9a-fA-F]{3,8}\b/.test(src.slice(src.indexOf('".exh-cd-course'), src.indexOf('".exh-cd-desc'))));
 
 const CCC = "California Community Colleges";
 const REVIEW = { schema: 1, written_at: "2026-11-12T07:50:00Z", sources: { procedures_run: "2026-11-12T07:47:00Z" },
@@ -87,16 +86,15 @@ function esc(w, target) { target.dispatchEvent(new w.KeyboardEvent("keydown", { 
   let t = load();
   await t.M.boot(); await settle();
   check("the ABT 133 card is the one on screen", t.d.getElementById("exh-title").value === "Agricultural Business and Technology (ABT 133)");
-  let btn = t.d.getElementById("exh-cd-btn");
-  check("the Review card's Source line carries a Course details button, in words",
-    btn && btn.tagName === "BUTTON" && txt(btn) === "Course details" && /^Source:/.test(txt(btn.parentNode))
-    && !!btn.closest("section.exh-card") && btn.getAttribute("aria-expanded") === "false");
-  check("Related titles shows beside the card before it is pressed", !!aside(t.d, "Related titles") && !aside(t.d, "Course details"));
+  // Sam, 2026-11-21: Course details and Exhibits show together, with no switch between them, so the Source line's
+  // Course details button and the panel it swapped in are gone; the course's title opens the rest of its facts in place.
+  check("the Source line carries no Course details switch", !t.d.getElementById("exh-cd-btn")
+    && !Array.from(t.d.querySelectorAll(".exh-card button")).some(function (b) { return txt(b) === "Course details"; }));
   // #3223 (Sam, 4:57 AM PT 2026-11-13): "the course details link is very helpful but should have the details listed in a
   // section above Words in common on sidebar. the local course title has been the most helpful thing for me to see".
-  const sum = t.d.querySelector("section.exh-cdsum"), side = sum && sum.parentNode;
-  check("the side panel lists Course details above Related titles, without a press and without reading the big files",
-    sum && side.className === "exh-side" && side.children[0] === sum && side.children[1] === aside(t.d, "Related titles")
+  const sum = t.d.querySelector("aside.exh-cdsum"), side = sum && sum.parentNode;
+  check("the side lists Course details beside Exhibits, without a press and without reading the big files",
+    sum && side.className === "exh-side" && side.children[0] === sum && side.children[1] === aside(t.d, "Exhibits")
     && txt(sum.querySelector("h4")) === "Course details" && !t.loaded.some(function (u) { return /statewide_data|unified_courses_members/.test(u); }));
   check("it leads with the local course title, then the college, the code and the units, the credit line and the COCI description",
     txt(sum.querySelector(".exh-cd-title")) === "Facility Management for Food Safety"
@@ -108,48 +106,30 @@ function esc(w, target) { target.dispatchEvent(new w.KeyboardEvent("keydown", { 
     && !!Array.from(t.d.querySelectorAll(".exh-card p.exh-small button")).find(function (b) { return txt(b) === "MAPCXI-CBEC2-1-001"
       && b.getAttribute("aria-controls") === "exh-cdsum-map"; }));
   // The Fact Sheet's statewide list (47 KB) is read at boot: the card names the statewide exhibit from it (S642).
-  check("nothing large is read until it is pressed", t.loaded.filter(function (n) { return n !== "fact-sheet/statewide_recs.js"; }).length === 0);
+  check("nothing large is read until a title is pressed", t.loaded.filter(function (n) { return n !== "fact-sheet/statewide_recs.js"; }).length === 0);
 
+  let btn = sum.querySelector("button.exh-cd-title");
+  check("the course's title is a button, closed", btn && btn.getAttribute("aria-expanded") === "false");
   btn.click(); await settle();
-  let p = aside(t.d, "Course details");
-  check("pressing it opens Course details in the side panel, in Related titles' place",
-    p && !aside(t.d, "Related titles") && p.parentNode.className === "exh-with-rel" && !!p.parentNode.querySelector("section.exh-card"));
-  const title = p && p.querySelector(".exh-cd-title");
-  check("the panel shows the course's own title, distinct from the canonical title",
-    txt(title) === "Facility Management for Food Safety" && txt(title) !== t.d.getElementById("exh-title").value);
-  check("with the college and the code", /Hartnell College · ABT 133/.test(txt(p)));
-  check("its units, TOP, M-ID and control number",
-    /Units 1\.5/.test(txt(p)) && /TOP 0113\.00, Food Processing and Related Technologies/.test(txt(p))
-    && /M-ID AGRI M1085/.test(txt(p)) && /CCC000519246/.test(txt(p)));
+  btn = t.d.querySelector("aside.exh-cdsum button.exh-cd-title");
+  let p = t.d.getElementById(btn.getAttribute("aria-controls"));
+  check("pressing it opens the course's facts under it, with both panels still beside the card",
+    p && btn.getAttribute("aria-expanded") === "true" && !!aside(t.d, "Exhibits") && t.d.querySelector("aside.exh-cdsum").contains(p));
+  check("its TOP, M-ID and control number",
+    /TOP 0113\.00, Food Processing and Related Technologies/.test(txt(p))
+    && /M-ID AGRI M1085/.test(txt(p)) && /CCC000519246/.test(txt(p)), txt(p));
   check("another college's course with the same M-ID is not shown as this one", !/FSAP 133/.test(txt(p)));
-  check("the exhibit's credit recommendation", /Credit recommendation 1\.5 hours in Facility Management for Food Safety/.test(txt(p)));
-  check("the catalog description", /Covers food safety issues/.test(txt(p)));
-  check("and the MAP link", !!Array.from(p.querySelectorAll("a")).find(function (a) { return txt(a) === "MAPCXI-CBEC2-1-001 in MAP"; }));
-  check("focus moves to the panel", t.d.activeElement === t.d.getElementById("exh-cd-h"));
-  check("the control says it is open", t.d.getElementById("exh-cd-btn").getAttribute("aria-expanded") === "true"
-    && t.d.getElementById("exh-cd-btn").getAttribute("aria-controls") === "exh-cd");
+  check("focus stays on the title's button", t.d.activeElement === btn);
+  btn.click(); await settle();
+  check("pressing it again closes them", t.d.querySelector("aside.exh-cdsum button.exh-cd-title").getAttribute("aria-expanded") === "false"
+    && !t.d.querySelector("aside.exh-cdsum .exh-det"));
 
-  const close = Array.from(p.querySelectorAll("button")).find(function (b) { return txt(b) === "Close"; });
-  check("the panel has a Close word", !!close);
-  close.click(); await settle();
-  check("Close gives Related titles back", !!aside(t.d, "Related titles") && !aside(t.d, "Course details"));
-  check("and returns focus to the control", t.d.activeElement === t.d.getElementById("exh-cd-btn"));
-
-  t.d.getElementById("exh-cd-btn").click(); await settle();
-  p = aside(t.d, "Course details");
-  esc(t.w, p.querySelector("h4"));
-  await settle();
-  check("Escape closes it too, and returns focus", !!aside(t.d, "Related titles") && !aside(t.d, "Course details")
-    && t.d.activeElement === t.d.getElementById("exh-cd-btn"));
-
-  // A course the data does not hold.
+  // A card the Review file names no course for.
   Array.from(t.d.querySelectorAll(".exh-acts button")).find(function (b) { return txt(b) === "Skip"; }).click(); await settle();
   check("the next card is the welding one", t.d.getElementById("exh-title").value === "Welding 1");
-  t.d.getElementById("exh-cd-btn").click(); await settle();
-  p = aside(t.d, "Course details");
-  check("a course not in the data says so in plain words", /not in the course data COBI reads/.test(txt(p)));
-  check("and still names the college, the code and the MAP link", /Norco College · WELD 99/.test(txt(p))
-    && !!Array.from(p.querySelectorAll("a")).find(function (a) { return txt(a) === "MAPCXI-WELD-1-001 in MAP"; }));
+  check("a card with no course on file says so in plain words, and still names its MAP exhibit",
+    /No local course is on file for this exhibit/.test(txt(t.d.querySelector("aside.exh-cdsum")))
+    && /MAPCXI-WELD-1-001/.test(txt(t.d.querySelector("aside.exh-cdsum .exh-cdsum-map"))));
 
   // #3219 via #3223: a noncredit course's COCI description is marked a lead, never shown as settled.
   REVIEW.held.unshift({ raw: "Noncredit Course for ESL 501", step: "Wording check", why: "the classifier's title has a course code left in",
@@ -158,7 +138,7 @@ function esc(w, target) { target.dispatchEvent(new w.KeyboardEvent("keydown", { 
     local_courses: [[1, "ESL 501", "Beginning Literacy", 0, "CCC9", "", "Develops beginning reading and writing."]] });
   t = load();
   await t.M.boot(); await settle();
-  const nc = t.d.querySelector("section.exh-cdsum");
+  const nc = t.d.querySelector("aside.exh-cdsum");
   check("a noncredit course reads Noncredit, and its COCI description is marked a lead only",
     nc && /Norco College · ESL 501 · Noncredit/.test(txt(nc)) && /Read it as a lead only: COCI descriptions of noncredit courses/.test(txt(nc.querySelector(".exh-cd-lead"))));
   REVIEW.held.shift();
