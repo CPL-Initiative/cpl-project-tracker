@@ -6,8 +6,8 @@
   "edge_functions": 16,
   "file_datasets": 1120,
   "external_services": 197,
-  "consumers": 645,
-  "workflows": 76,
+  "consumers": 646,
+  "workflows": 77,
   "data_js_files": 71,
   "tabs": 41
  },
@@ -4849,8 +4849,16 @@
      "line": 59
     }
    ],
+   "producers": [
+    {
+     "by": "workflow:receipt-slim.yml",
+     "how": "commit-to-main"
+    }
+   ],
    "served": false,
-   "main_committers": []
+   "main_committers": [
+    "workflow:receipt-slim.yml"
+   ]
   },
   "file:/tmp/metrics_status": {
    "consumers": [
@@ -5300,6 +5308,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:a display_applied entry names <receipt stem>.applied_<run>.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_receipt_store.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 282
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:a row_audit entry names row_audit_<date>.md": {
    "consumers": [
     {
@@ -5307,7 +5328,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 246
+     "line": 257
     }
    ],
    "served": false,
@@ -7709,7 +7730,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 120
+     "line": 122
     }
    ],
    "producers": [
@@ -11301,6 +11322,13 @@
      "direction": "run",
      "how": "yaml",
      "line": 0
+    },
+    {
+     "id": "workflow:receipt-slim.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
     }
    ],
    "served": false,
@@ -11350,6 +11378,13 @@
    "consumers": [
     {
      "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:receipt-slim.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -19385,12 +19420,18 @@
      "how": "commit"
     },
     {
+     "by": "workflow:receipt-slim.yml",
+     "how": "commit-to-main"
+    },
+    {
      "by": "workflow:supabase-migrate.yml",
      "how": "commit"
     }
    ],
    "served": false,
-   "main_committers": []
+   "main_committers": [
+    "workflow:receipt-slim.yml"
+   ]
   },
   "file:kb/receipts/cr_reference_decisions_*.json": {
    "consumers": [
@@ -21220,31 +21261,13 @@
    "consumers": [],
    "producers": [
     {
-     "by": "workflow:overmerge-apply.yml",
-     "how": "commit-to-main"
-    },
-    {
-     "by": "workflow:phase-1e-apply.yml",
+     "by": "workflow:receipt-slim.yml",
      "how": "commit-to-main"
     }
    ],
    "served": false,
    "main_committers": [
-    "workflow:overmerge-apply.yml",
-    "workflow:phase-1e-apply.yml"
-   ]
-  },
-  "file:kb/row_audit/*.md": {
-   "consumers": [],
-   "producers": [
-    {
-     "by": "workflow:daily-dashboard.yml",
-     "how": "commit-to-main"
-    }
-   ],
-   "served": false,
-   "main_committers": [
-    "workflow:daily-dashboard.yml"
+    "workflow:receipt-slim.yml"
    ]
   },
   "file:kb/row_audit/latest.json": {
@@ -21295,11 +21318,21 @@
     {
      "by": "workflow:daily-dashboard.yml",
      "how": "commit-to-main"
+    },
+    {
+     "by": "workflow:overmerge-apply.yml",
+     "how": "commit-to-main"
+    },
+    {
+     "by": "workflow:phase-1e-apply.yml",
+     "how": "commit-to-main"
     }
    ],
    "served": true,
    "main_committers": [
-    "workflow:daily-dashboard.yml"
+    "workflow:daily-dashboard.yml",
+    "workflow:overmerge-apply.yml",
+    "workflow:phase-1e-apply.yml"
    ]
   },
   "file:kb/side_by_side.json": {
@@ -29128,6 +29161,13 @@
      "direction": "run",
      "how": "yaml",
      "line": 0
+    },
+    {
+     "id": "workflow:receipt-slim.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
     }
    ],
    "served": false,
@@ -32590,7 +32630,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 347
+     "line": 497
     }
    ],
    "main_committers": []
@@ -37302,7 +37342,6 @@
     "unified_courses_aligned.js",
     "credential_reference_data.js",
     "kb/row_audit/latest.json",
-    "kb/row_audit/*.md",
     "kb/coci_retired_cards.json",
     "kb/coci_inactive_cards.json",
     "kb/coci_not_applicable.json",
@@ -37969,7 +38008,7 @@
     "kb/coci_curation.json",
     "kb/overmerge_out/",
     "kb/overmerge_apply/",
-    "kb/row_audit/"
+    "kb/row_audit/latest.json"
    ],
    "push": "main",
    "deploys": [],
@@ -38012,7 +38051,7 @@
     "kb/discipline_canonical_subj4.json",
     "kb/subj4_dryrun/",
     "kb/subj4_apply/",
-    "kb/row_audit/"
+    "kb/row_audit/latest.json"
    ],
    "push": "main",
    "deploys": [],
@@ -38176,6 +38215,24 @@
     "kb/projects_validation.md",
     "kb/projects_seed_plan.md",
     "kb/projects_seed_out/"
+   ],
+   "push": "main",
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
+  "receipt-slim.yml": {
+   "name": "Receipt slim",
+   "crons": [],
+   "scripts": [
+    "kb/_receipt_store.py",
+    "kb/_row_audit_prune.py",
+    "tests/receipt_move_gate_test.py"
+   ],
+   "adds": [
+    "kb/receipts",
+    "kb/row_audit",
+    ".github/repo_size_exceptions.txt"
    ],
    "push": "main",
    "deploys": [],

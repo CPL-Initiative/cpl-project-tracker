@@ -1,0 +1,17 @@
+{
+ "name": "program_requirement_records_display_2026-11-13_ac082e9d96dc.applied_44773599660_laney-college.json",
+ "kind": "display_applied",
+ "bucket": "cpl-receipts",
+ "object": "display/applied/program_requirement_records_display_2026-11-13_ac082e9d96dc.applied_44773599660_laney-college.json.gz",
+ "build": "ac082e9d96dc",
+ "built": "2026-11-13",
+ "bytes": 1624,
+ "sha256": "4f627dc6414b7ce57e244cdbcc799316b1ea290cb7fe9083c935b1c6d61f6fe7",
+ "rows": 156,
+ "stored_at": "2026-11-21T04:53:00Z",
+ "run": "44867993793",
+ "gzip": true,
+ "repo_sha256": "a1cd6aa3de9a202b3f14010200c6da03bf514810acd58479b16acc2e37376a23",
+ "repo_bytes": 11696,
+ "repo_blob": "ff2f1961a90ad3d2d74ae1a3c59bdea1dc57d646"
+}

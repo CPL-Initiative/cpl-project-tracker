@@ -44,6 +44,8 @@ Usage (runner, from the repo root, with SUPABASE_SERVICE_KEY):
       refused unless its sha256 is the entry's
   python3 kb/_receipt_store.py check
       check every index entry's shape (no network)
+  python3 kb/_receipt_store.py store-applied [PATH ...] [--tracked] [--dry-run]
+      store display applied records (S695) and remove each once the bucket reads it back
 
 The next worker (moving the existing receipts out) calls store_file() for each
 committed receipt with kind, build and built from its name (DISPLAY_NAME), then
@@ -81,6 +83,10 @@ KINDS = {
     "program_requirement_records_display_dated": (
         "display/dated/", r"^program_requirement_records_display_\d{4}-\d{2}-\d{2}\.sql(\.gz)?$"),
     "row_audit": ("row_audit/", r"^row_audit_\d{4}-\d{2}-\d{2}\.md$"),  # S680, #3476 step 5 (kb/_row_audit_prune.py)
+    # S695 (#3476 item 1): the display apply's applied records, the display rollback (store_applied below).
+    # The name keeps it out of kind_of(), which answers for the display receipts alone.
+    "display_applied": ("display/applied/", r"^program_requirement_records_display_\d{4}-\d{2}-\d{2}_[0-9a-f]{12}"
+                                            r"\.applied_[0-9A-Za-z_-]+\.json$"),
 }
 # ---- end of the kinds
 # ---- The kinds a run may hand out as an artifact (COBIx on #3495, 2026-11-18). The repository is public, so
@@ -94,6 +100,9 @@ PUBLIC_SAFE = {
     "program_requirement_records_display_dated": "the same display facts, from a build before S332 named it",
     # A row audit report is already public: every one was committed to this public repository (S680).
     "row_audit": "a row Trust-Card report about courses and M-IDs, already published in this public repository",
+    # An applied record names program keys (college, control number) and display builds, and no person column;
+    # all 139 committed before S695 were published in this public repository.
+    "display_applied": "a display apply's plan and rollback: program keys and build ids, already published here",
 }
 # ---- end of the public-safe kinds
 # A display build's full receipt; a delta (…_delta.sql.gz) never stands for a build.
@@ -227,11 +236,13 @@ def entry_problems(e: dict) -> list:
         out.append("stored as it is, the repo file's sha256 and size are the object's")
     if kind == ROW_AUDIT_KIND:
         out.extend(row_audit_problems(e))
+    if kind == APPLIED_KIND:
+        out.extend(applied_problems(e))
     return out
 
 
 # ── Kind: row_audit (S680, #3476 Part 4 step 5) ─────────────────────────────────
-# A dated row Trust-Card report, kb/row_audit/<date>.md, older than the newest 14.
+# A dated row Trust-Card report, kb/row_audit/<date>.md, past the newest one (S695; 14 until then).
 # kb/_row_audit_prune.py stores it as row_audit_<date>.md (the prefix keeps its index
 # file, kb/receipts/index/row_audit_<date>.md.json, apart from any other kind's dated
 # name), at row_audit/row_audit_<date>.md in the bucket. `built` is the report's date,
@@ -247,6 +258,145 @@ def row_audit_problems(e: dict) -> list:
     if e.get("built") != m.group(1) or e.get("build") is not None:
         return ["a row_audit entry's built is the name's date and its build is null"]
     return []
+
+
+# ── Kind: display_applied (S695, #3476 item 1) ──────────────────────────────────
+# The applied record kb/_program_requirements_display_apply.py files beside a display build
+# (<receipt stem>.applied_<run>[_<attempt>][_<college>].json): each planned row's before-build,
+# which IS the display rollback (Rule 10 a2). 139 of them were 124.7 MB of the tree. From S695
+# the display job stores the one it writes (store_applied) and commits its index entry instead,
+# and receipt-slim.yml moved the committed ones once. A record leaves the tree only after the
+# bucket reads back its bytes and the entry names the file's git blob and sha256; one that does
+# not stays, and is committed as before. It is stored gzipped at display/applied/<name>.gz, so
+# `gzip` and the repo_* fields are always present. `built` and `build` come from the name; `rows`
+# is the record's planned count. A reader (the rollback's --only-keys-from) takes it through
+# local_or_stored(), which fetches it to a temporary folder, never into the tree.
+APPLIED_KIND = "display_applied"
+APPLIED_NAME = re.compile(r"^program_requirement_records_display_(\d{4}-\d{2}-\d{2})_([0-9a-f]{12})"
+                          r"\.applied_[0-9A-Za-z_-]+\.json$")
+
+
+def applied_problems(e: dict) -> list:
+    m = APPLIED_NAME.match(str(e.get("name") or ""))
+    if not m:
+        return ["a display_applied entry names <receipt stem>.applied_<run>.json"]
+    out = []
+    if (e.get("built"), e.get("build")) != (m.group(1), m.group(2)):
+        out.append("a display_applied entry's built and build are the name's date and build")
+    if e.get("gzip") is not True or "repo_blob" not in e:
+        out.append("a display_applied entry is stored gzipped and names the repo file's sha256, size and blob")
+    return out
+
+
+def local_or_stored(path: str, storage=None, *, index_path: str | None = None, log=print) -> str:
+    """The path of a file a reader needs: `path` itself when it is on disk, else the stored copy
+    its index entry (by file name) names, fetched to a temporary folder and checked against that
+    entry's sha256 and repo_sha256. Raises SystemExit, never returns an empty answer, when the file
+    is neither on disk nor indexed, when no storage is at hand, or when the read fails or differs."""
+    if os.path.exists(path):
+        return path
+    name = os.path.basename(path)
+    entry = read_entry(name, index_path)
+    if entry is None:
+        raise SystemExit("REFUSING: %s is not on disk and kb/receipts/index/ names no stored copy of it" % path)
+    if storage is None:
+        raise SystemExit("REFUSING: %s left the tree for %s/%s; only a runner with SUPABASE_SERVICE_KEY reads it "
+                         "(step=fetch force=%s hands it to a session)" % (path, BUCKET, entry["object"], name))
+    import tempfile
+    out = tempfile.mkdtemp(prefix="stored_")
+    return fetch(name, storage, out=out, index_path=index_path, log=log)
+
+
+def tracked_applied(listing: str) -> list[dict]:
+    """The applied records in `git ls-tree -r [-l] <tree> -- kb/receipts/` output, directly under
+    kb/receipts/: [{path, name, blob, size}] (size with -l, else None)."""
+    out = []
+    for line in listing.splitlines():
+        if "\t" not in line:
+            continue
+        meta, path = line.split("\t", 1)
+        parts = meta.split()
+        if len(parts) < 3 or parts[1] != "blob" or not path.startswith("kb/receipts/"):
+            continue
+        name = path[len("kb/receipts/"):]
+        if "/" in name or not APPLIED_NAME.match(name):
+            continue
+        size = int(parts[3]) if len(parts) > 3 and parts[3].isdigit() else None
+        out.append({"path": path, "name": name, "blob": parts[2], "size": size})
+    return out
+
+
+def _applied_rows(raw: bytes) -> int:
+    try:
+        n = json.loads(raw.decode("utf-8")).get("planned")
+        return n if isinstance(n, int) and n >= 0 else 0
+    except Exception:
+        return 0
+
+
+def _holds(entry: dict, storage, blob: str, sha: str) -> str:
+    """'' when the entry names this file (blob and sha256) and the bucket reads back its bytes;
+    else the reason it does not."""
+    if entry.get("repo_blob") != blob or entry.get("repo_sha256") != sha:
+        return "the index entry names other bytes (blob %s, the file's is %s)" % (entry.get("repo_blob"), blob)
+    try:
+        stored = storage.get(entry["object"])
+    except Exception as exc:
+        return "%s/%s did not read back (%s)" % (BUCKET, entry["object"], _first(exc))
+    if sha256_bytes(stored) != entry["sha256"]:
+        return "%s/%s reads with sha256 %s, the index names %s" % (BUCKET, entry["object"], sha256_bytes(stored),
+                                                                  entry["sha256"])
+    try:
+        file_bytes(entry, stored)
+    except (SystemExit, Exception) as exc:
+        return _first(exc)
+    return ""
+
+
+def store_applied(paths: list, storage, *, run: str | None = None, index_path: str | None = None,
+                  remove: bool = True, log=print) -> dict:
+    """Store each applied record (gzipped, read back, entry filed with its git blob) and, with
+    `remove`, delete the file only once the bucket reads back bytes that unpack to the file's
+    sha256 and its entry names the file's blob. Returns {"removed": [...], "stored": [...],
+    "stayed": {name: reason}}; a record that stays is untouched. Never raises for one file."""
+    out = {"removed": [], "stored": [], "stayed": {}}
+    for path in paths:
+        name = os.path.basename(path)
+        try:
+            if not APPLIED_NAME.match(name):
+                out["stayed"][name] = "not an applied record's name"
+                continue
+            if storage is None:
+                out["stayed"][name] = "no SUPABASE_SERVICE_KEY, so no upload"
+                continue
+            with open(path, "rb") as fh:
+                raw = fh.read()
+            blob, sha = git_blob(raw), sha256_bytes(raw)
+            entry = read_entry(name, index_path)
+            if entry is None or entry.get("repo_blob") != blob:
+                m = APPLIED_NAME.match(name)
+                entry = store_file(path, kind=APPLIED_KIND, build=m.group(2), built=m.group(1),
+                                   rows=_applied_rows(raw), storage=storage, run=run, index_path=index_path,
+                                   repo_blob=blob, gzip_store=True, log=lambda *_: None)
+                out["stored"].append(name)
+            entry = read_entry(name, index_path) or {}
+            why = _holds(entry, storage, blob, sha)
+            if why:
+                out["stayed"][name] = why
+                continue
+            if remove:
+                os.remove(path)
+                out["removed"].append(name)
+        except (SystemExit, Exception) as exc:
+            out["stayed"][name] = _first(exc)
+    try:
+        log("applied records: %d stored, %d removed from the tree (each read back with its sha256), %d stayed"
+            % (len(out["stored"]), len(out["removed"]), len(out["stayed"])))
+        for name, why in sorted(out["stayed"].items())[:20]:
+            log("  stays: %s: %s" % (name, why))
+    except Exception:
+        pass
+    return out
 
 
 def entry_path(name: str, folder: str | None = None) -> str:
@@ -425,7 +575,8 @@ def store_file(path: str, *, kind: str, build: str | None, built: str | None, ro
     if was is not None and was["sha256"] != sha:
         replaced.append({"object": was["object"], "sha256": was["sha256"], "seen_in": "index"})
     how, other = _put_and_check(storage, obj, data, sha)
-    if other:
+    if other and not any(r["object"] == obj and r["sha256"] == other for r in replaced):
+        # S695: the index's object and the bucket's are often the same one; name it once.
         replaced.append({"object": obj, "sha256": other, "seen_in": "bucket"})
     if replaced and not supersede:
         raise SystemExit("REFUSING: %s is held by other bytes (%s); they are kept. To store these bytes "
@@ -547,7 +698,29 @@ def main(argv: list[str] | None = None) -> int:
                     help="the file becomes a run artifact anyone signed in can download: refused unless its "
                          "kind is in PUBLIC_SAFE")
     sub.add_parser("check", help="check every index entry's shape")
+    sa = sub.add_parser("store-applied", help="store applied records and remove each from the tree once the "
+                                              "bucket reads it back (exit 1 when any stays)")
+    sa.add_argument("paths", nargs="*", help="applied record files (the display job passes the run's own)")
+    sa.add_argument("--tracked", action="store_true", help="every applied record git tracks at HEAD (the move)")
+    sa.add_argument("--dry-run", action="store_true", help="count them; no network, nothing removed")
     args = ap.parse_args(argv)
+    if args.cmd == "store-applied":
+        paths = list(args.paths)
+        if args.tracked:
+            import subprocess
+            listing = subprocess.run(["git", "ls-tree", "-r", "-l", "HEAD", "--", "kb/receipts/"], cwd=ROOT,
+                                     check=True, capture_output=True, text=True).stdout
+            items = tracked_applied(listing)
+            paths += [os.path.join(ROOT, it["path"]) for it in items]
+            print("%d applied records tracked at HEAD, %.1f MB" % (len(items), sum(it["size"] or 0 for it in items) / 1e6))
+        if args.dry_run:
+            return 0
+        if not paths:
+            print("no applied record to store")
+            return 0
+        key = os.environ.get("SUPABASE_SERVICE_KEY")
+        res = store_applied(paths, Storage(key) if key else None, run=os.environ.get("GITHUB_RUN_ID"))
+        return 1 if res["stayed"] else 0
     if args.cmd == "check":
         idx = load_index()
         bad = [(e.get("name"), p) for e in idx.get("receipts", []) for p in entry_problems(e)]

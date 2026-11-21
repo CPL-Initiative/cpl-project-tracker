@@ -20,7 +20,7 @@
 export const GROUP = [
   "cer-decision-apply.yml", "cred-rename-apply.yml", "credential-family-apply.yml", "daily-dashboard.yml",
   "docket-process.yml", "esl-sheet-apply.yml", "library-publish.yml", "overmerge-apply.yml", "phase-1e-apply.yml",
-  "projects-seed-apply.yml", "workplan-goals-seed-apply.yml",
+  "projects-seed-apply.yml", "receipt-slim.yml", "workplan-goals-seed-apply.yml",
 ];
 // Those whose group sits on a job, so a run of theirs can be in progress while the grouped job waits.
 export const JOB_LEVEL = ["cer-decision-apply.yml", "cred-rename-apply.yml", "daily-dashboard.yml"];

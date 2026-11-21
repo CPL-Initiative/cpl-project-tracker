@@ -1,0 +1,17 @@
+{
+ "name": "program_requirement_records_display_2026-11-13_a83667f9fa0d.applied_43586782908_lassen-college.json",
+ "kind": "display_applied",
+ "bucket": "cpl-receipts",
+ "object": "display/applied/program_requirement_records_display_2026-11-13_a83667f9fa0d.applied_43586782908_lassen-college.json.gz",
+ "build": "a83667f9fa0d",
+ "built": "2026-11-13",
+ "bytes": 880,
+ "sha256": "22c311174a7622183d3ce032e8a01aea746c2aa32ad39371d093ad6b77e46fb2",
+ "rows": 59,
+ "stored_at": "2026-11-21T04:53:00Z",
+ "run": "44867993793",
+ "gzip": true,
+ "repo_sha256": "0d39e4d30cfa2be995ec5a633c5f545ff2c1c7647f29367494d7bea8f8d3dfe0",
+ "repo_bytes": 4893,
+ "repo_blob": "d759ca86052a416bfaf3a5d1a1ac942362cb42d3"
+}

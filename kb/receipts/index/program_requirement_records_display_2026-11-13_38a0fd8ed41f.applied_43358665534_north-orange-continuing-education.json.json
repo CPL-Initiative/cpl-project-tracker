@@ -1,0 +1,17 @@
+{
+ "name": "program_requirement_records_display_2026-11-13_38a0fd8ed41f.applied_43358665534_north-orange-continuing-education.json",
+ "kind": "display_applied",
+ "bucket": "cpl-receipts",
+ "object": "display/applied/program_requirement_records_display_2026-11-13_38a0fd8ed41f.applied_43358665534_north-orange-continuing-education.json.gz",
+ "build": "38a0fd8ed41f",
+ "built": "2026-11-13",
+ "bytes": 944,
+ "sha256": "ef8444dfa206e8039534b128205ef45bb93e74bf6e4e48b5e395e07ba0b97bb9",
+ "rows": 78,
+ "stored_at": "2026-11-21T04:52:48Z",
+ "run": "44867993793",
+ "gzip": true,
+ "repo_sha256": "4c77c7da59201d5b2f66df1b972e63d2909813b9a7ef48f37f83064403c311fc",
+ "repo_bytes": 8322,
+ "repo_blob": "c340d43e790e88785c26d03f7de48bb0f8cd7985"
+}

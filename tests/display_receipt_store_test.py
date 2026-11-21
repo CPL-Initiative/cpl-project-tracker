@@ -374,6 +374,41 @@ try:
         check(code == 0 and len(rows) == 1 and "control_number=eq.02201" in rows[0] and rec3["statements"] == 1
               and rec3["receipt_sha256"] == S.sha256_bytes(data),
               "--receipt with --only-keys-from writes that stored receipt to the record's keys alone")
+        # S695: a record moved to display/applied/ (only its pointer left) is read through the pointer, and a
+        # pointer whose stored bytes cannot be read refuses the rollback before any table read.
+        moved = os.path.join(folder, "program_requirement_records_display_2026-11-13_%s.applied_7.json" % BUILD)
+        json.dump({"planned": 1, "rollback": {"to_null": [], "reapply": {BUILD: ["Cerritos College|02201"]}}},
+                  open(moved, "w"))
+        res = S.store_applied([moved], bucket, index_path=index, log=lambda *_: None)
+        check(res["removed"] == [os.path.basename(moved)] and not os.path.exists(moved),
+              "the applied record left the tree for its pointer")
+        rows.clear()
+        calls.clear()
+        code = A.main(["--apply", "--run", "5", "--attempt", "1", "--receipt", NAME, "--only-keys-from", moved],
+                      request=table, sleep=lambda s: None, fetch=bucket.get)
+        check(code == 0 and len(rows) == 1 and "control_number=eq.02201" in rows[0] and not os.path.exists(moved),
+              "the rollback reads a moved applied record through its pointer, and leaves no copy in kb/receipts")
+        calls.clear()
+
+        # The receipt object reads; only display/applied/ is unreachable, so the refusal is local_or_stored's.
+        def down(obj):
+            if obj.startswith("display/applied/"):
+                raise OSError("connection refused")
+            return bucket.get(obj)
+        seen, real = [], S.local_or_stored
+
+        def spy(*a, **k):
+            seen.append(a[0])
+            return real(*a, **k)
+        S.local_or_stored = spy
+        try:
+            code = A.main(["--apply", "--run", "6", "--attempt", "1", "--receipt", NAME, "--only-keys-from", moved],
+                          request=table, sleep=lambda s: None, fetch=down)
+        finally:
+            S.local_or_stored = real
+        check(code == 1 and seen == [moved] and not calls,
+              "an unreachable store for the applied record refuses the rollback in local_or_stored, before any table "
+              "read")
         check(A.main(["--apply", "--run", "4", "--only-keys-from", record], request=table, sleep=lambda s: None,
                       fetch=bucket.get) == 1, "--only-keys-from without --receipt is refused")
         check(A.main(["--apply", "--run", "4", "--receipt", "program_requirement_records_display_2026-01-01_"
@@ -468,7 +503,8 @@ fj = wf[wf.index("\n  fetch:\n"):]
 check("--for-artifact" in fj and "retention-days: 1\n" in fj and fj.count("retention-days") == 1,
       "the fetch artifact is a public-safe kind only, kept one day")
 dj = wf[wf.index("\n  display:\n"):wf.index("\n  fetch:\n")]
-check(re.findall(r"path: (.*)", dj) == ["kb/receipts/*${{ github.run_id }}*"],
+check(re.findall(r"path: (.*)", dj) == ["kb/receipts/*${{ github.run_id }}*",
+                                        "kb/receipts/index/*${{ github.run_id }}*"],  # S695: the record's pointer
       "the display job's artifact holds only files carrying the run id (the applied records), never the built "
       "receipt, whose name carries its date and build")
 check("step == 'fetch'" in fj and "kb/_receipt_store.py fetch" in fj and "upload-artifact" in fj

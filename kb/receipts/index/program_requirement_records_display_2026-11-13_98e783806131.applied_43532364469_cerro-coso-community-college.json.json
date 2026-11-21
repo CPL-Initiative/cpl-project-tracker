@@ -1,0 +1,17 @@
+{
+ "name": "program_requirement_records_display_2026-11-13_98e783806131.applied_43532364469_cerro-coso-community-college.json",
+ "kind": "display_applied",
+ "bucket": "cpl-receipts",
+ "object": "display/applied/program_requirement_records_display_2026-11-13_98e783806131.applied_43532364469_cerro-coso-community-college.json.gz",
+ "build": "98e783806131",
+ "built": "2026-11-13",
+ "bytes": 847,
+ "sha256": "4196ff15417357539a112eb452ac4f6242e17af9df5c69492ef1db6cc0c22347",
+ "rows": 52,
+ "stored_at": "2026-11-21T04:52:59Z",
+ "run": "44867993793",
+ "gzip": true,
+ "repo_sha256": "2d236062a985b0471bf9e52a22585255718f7df6ffb866fa2b5aeee5d1f154cc",
+ "repo_bytes": 5873,
+ "repo_blob": "be69fbafa4ea16e7f84ccf9c7877bb1d06c45c1b"
+}
