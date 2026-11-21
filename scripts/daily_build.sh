@@ -303,6 +303,15 @@ python3 kb/_build_inactive_cards.py || echo "::warning title=Course flags::kb/_b
 python3 kb/_build_not_applicable.py || echo "::warning title=Course flags::kb/_build_not_applicable.py failed; the prior file stands."
 STEP
 
+# ── The Courses List's closest M-ID and its exhibit links (S694, Sam and COBIx, 2026-11-20) ──
+# kb/coci_closest_mid.json: the closest M-ID for each course in the Needs an M-ID pile and the exhibit
+# links each one carries, which order the pile. After the pipeline (unified_courses_members.js) and the
+# course flags (kb/coci_not_applicable.json). --if-changed: no rebuild when no input changed (~22 s when
+# one did). Display only, so a failure warns and yesterday's file stands.
+step "Build the closest M-ID for the Needs an M-ID pile" <<'STEP'
+python3 kb/_closest_mid.py --if-changed || { git checkout -- kb/coci_closest_mid.json 2>/dev/null || true; echo "::warning title=Closest M-ID not rebuilt::kb/_closest_mid.py failed; the Courses List reads yesterday's kb/coci_closest_mid.json."; }
+STEP
+
 # ── Step 4b: Re-run row Trust-Card auditor ────────────────────
 # Read-only over kb/coci_*.json; writes kb/row_audit/{latest.json,
 # <date>.md} that the UCL "⚠ hinky" badge consumes. See CLAUDE.md §11.

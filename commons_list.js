@@ -51,6 +51,11 @@
 //                      on; on: false starts them off. The AI sort, when on, wins. Members count every row, filtered or not.
 //   cols()[i].cell(r, el): the nodes a cell shows in place of its text (the Courses List's identity chips); v(r) still
 //                      sorts, filters and names the cell to a screen reader.
+//   cols()[i].sortBy(r): a numeric column's sort value where it differs from v(r), which still shows, filters and
+//                      downloads (the Courses List's Closest M-ID sorts by exhibit links and shows a level).
+//   sortFor(L)         The sort levels the List opens on for its state (the Courses List's Needs an M-ID pile opens on
+//                      the exhibits each closest M-ID would unlock), until a person presses a header or Clear the sort;
+//                      their choice then holds for the visit. Null or [] keeps L.sort.
 //   findWords          true: the finder keeps a row holding every word typed, in any order ("american river engl"),
 //                      not only the phrase. hayFolded: true when hay(r) is already folded (listFold), so it is not again.
 //   fixedRows          true when rows() hands back the same rows all visit (a read-only List) and filterPass reads only
@@ -217,7 +222,7 @@
       var n = rows.length, i, out, sc = isTitle ? null : (listCols()[ci] || listCols()[0]);
       if (sc && sc.n) {
         var nul = new Uint8Array(n), num = new Float64Array(n);
-        for (i = 0; i < n; i++) { var x = sc.v(rows[i]); if (x == null) nul[i] = 1; else num[i] = +x || 0; }
+        for (i = 0; i < n; i++) { var x = sc.sortBy ? sc.sortBy(rows[i]) : sc.v(rows[i]); if (x == null) nul[i] = 1; else num[i] = +x || 0; }
         out = { n: true, nul: nul, num: num };
       } else {
         var vals = [];
@@ -350,9 +355,14 @@
       if (S.filterUnit) fl.appendChild(el("span", { cls: CL.small + " " + P + "funit", "data-unit": "", text: typeof S.filterUnit === "function" ? S.filterUnit() : S.filterUnit }));
       return fl;
     }
+    /* The sort in force: the spec's opening order for this state (sortFor) until a person picks one (L.sortMine). */
+    function sortLevels(L) {
+      var d = !L.sortMine && S.sortFor ? S.sortFor(L) : null;
+      return d && d.length ? d : L.sort.length ? L.sort : [{ col: 0, dir: 1 }];
+    }
     function listRows() {
       var L = listState(), q = listFold(L.q.trim());
-      var levels = L.sort.length ? L.sort : [{ col: 0, dir: 1 }];
+      var levels = sortLevels(L);
       var gi = G && L.ai && L.aiData && L.aiData.order ? (L.gi = listGroupIndex()) : null;
       var bi = !gi && bandsOn() ? bandIndex() : null;
       var all = S.rows() || [], cols = listCols(), cfs = [];
@@ -708,12 +718,14 @@
       var headRow = el("tr", null, [el("th", { scope: "col", cls: P + "box" }, [allBox])]
         .concat(S.flag ? [el("th", { scope: "col", cls: P + "box", text: "Flag" })] : [])
         .concat(EDIT_LEAD ? [el("th", { scope: "col" }, [el("span", { cls: CL.vh, text: "Edit" })])] : []).concat(C.map(function (c, i) {
-        var lvIdx = -1; L.sort.forEach(function (x, k) { if (x.col === i) lvIdx = k; });
-        var on = lvIdx > -1, up = on && L.sort[lvIdx].dir > 0;
+        var lvs = sortLevels(L), lvIdx = -1; lvs.forEach(function (x, k) { if (x.col === i) lvIdx = k; });
+        var on = lvIdx > -1, up = on && lvs[lvIdx].dir > 0;
         var b = el("button", { type: "button", cls: P + "sort", title: "Press to sort by this column; Shift and press to sort within the sort already set" },
-          [c.h + (!on ? "" : (L.sort.length > 1 ? " (" + (lvIdx + 1) + ")" : "") + (c.n ? (up ? ", low to high" : ", high to low") : (up ? ", A to Z" : ", Z to A")))]);
+          [c.h + (!on ? "" : (lvs.length > 1 ? " (" + (lvIdx + 1) + ")" : "") + (c.n ? (up ? ", low to high" : ", high to low") : (up ? ", A to Z" : ", Z to A")))]);
         b.addEventListener("click", function (e) {
           L.ai = false;
+          // A press makes the sort the person's own: it starts from the sort on screen and holds for the visit.
+          L.sort = JSON.parse(JSON.stringify(lvs)); L.sortMine = true;
           if (e.shiftKey) {
             if (on) L.sort[lvIdx].dir = -L.sort[lvIdx].dir; else L.sort.push({ col: i, dir: 1 });
           } else L.sort = [{ col: i, dir: on && L.sort.length === 1 ? -L.sort[0].dir : 1 }];
@@ -819,14 +831,14 @@
         el("span", { cls: CL.note + " " + CL.small, id: P + "cellnote", role: "status", text: L.cellNote || "", hidden: L.cellNote ? null : "" }),
         el("span", { cls: CL.muted + " " + CL.small, id: P + "sortline", text: aiOn && G.sortLine
           ? G.sortLine(L)
-          : (bi ? "In bands by " + (S.bands.by || "group") + "; inside each, sorted by " : "Sorted by ") + L.sort.map(function (x) {
+          : (bi ? "In bands by " + (S.bands.by || "group") + "; inside each, sorted by " : "Sorted by ") + sortLevels(L).map(function (x) {
           var c = listCols()[x.col]; return c.h + (c.n ? (x.dir > 0 ? ", low to high" : ", high to low") : (x.dir > 0 ? ", A to Z" : ", Z to A")); }).join(", then ")
           + ". Shift and press a header to add a level." }),
         G ? word("AI sort", listAiToggle, { id: P + "ai", "aria-pressed": aiOn ? "true" : "false" }) : null,
         S.bands ? word(S.bands.label || "Bands", function () {
           L.bands = !bandsOn(); L.limit = LIST_LIMIT; redrawList(); var b = document.getElementById(P + "bands"); if (b) b.focus();
         }, { id: P + "bands", "aria-pressed": bandsOn() ? "true" : "false" }) : null,
-        aiOn || L.sort.length > 1 || L.sort[0].col !== 0 || L.sort[0].dir !== 1 ? word("Clear the sort", function () { L.ai = false; L.sort = [{ col: 0, dir: 1 }]; redrawList(); }) : null,
+        aiOn || sortLevels(L).length > 1 || sortLevels(L)[0].col !== 0 || sortLevels(L)[0].dir !== 1 ? word("Clear the sort", function () { L.ai = false; L.sort = [{ col: 0, dir: 1 }]; L.sortMine = true; redrawList(); }) : null,
         hasCellEdit() ? word("Edit every row", function () { L.editAll = !L.editAll; redrawList(); var b = document.getElementById(P + "editall"); if (b) b.focus(); },
           { id: P + "editall", "aria-pressed": L.editAll ? "true" : "false" }) : null,
         word("Clear the selection", function () { L.sel = {}; redrawList(); }), wrapBtn,

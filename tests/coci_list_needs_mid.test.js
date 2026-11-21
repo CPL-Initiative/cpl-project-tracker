@@ -15,7 +15,12 @@
 //       score ... with a link to open a sidebar to curate"; and COBIx's note he relayed: three levels in place of a raw
 //       score, and "Propose new M-ID" when a course has no strong match): the column shows the M-ID with its level in
 //       words, the panel says how the level was measured and why each of the closest is close, a course with a C-ID
-//       or CCN never gets one, and nothing in the panel saves.
+//       or CCN never gets one, and nothing in the panel saves;
+//   (7) ⭐ the pile opens in the order the exhibit titles need (COBIx, relayed by Sam, 2026-11-20: "sort the pile by how
+//       many exhibits each M-ID would unlock, so Group Communication, with 67 links, comes first"): a strong or possible
+//       match with more exhibit links above one with fewer, a strong match before a possible one at the same count, a
+//       No strong match row below them all however linked its candidate, the count in words beside the M-ID, a header
+//       press the person's own sort, and the fixture's links map in the shape kb/_closest_mid.py writes.
 // Run from repo root: `npm test` (or `node tests/coci_list_needs_mid.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -53,10 +58,10 @@ function tab(hash, opts) {
   const dom = new JSDOM('<!doctype html><html><head></head><body><div class="main-container"><div id="coci-lookup-root">Loading…</div></div></body></html>',
     { url: "https://example.org/" + (hash || "#coci-lookup"), runScripts: "dangerously" });
   const w = dom.window;
-  w.CPL_COCI_LOOKUP = JSON.parse(JSON.stringify(LOOKUP));
+  w.CPL_COCI_LOOKUP = JSON.parse(JSON.stringify(opts.lookup || LOOKUP));
   w.fetch = function (url) {
     if (/coci_closest_mid\.json/.test(String(url))) return opts.noClosest ? Promise.resolve({ ok: false, status: 404, json: () => Promise.resolve({}) })
-      : Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve(JSON.parse(JSON.stringify(CLOSEST))) });
+      : Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve(JSON.parse(JSON.stringify(opts.closest || CLOSEST))) });
     return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve([]) });
   };
   w.CPL_TABS = { loadScript: function (s, name, cb) {
@@ -162,6 +167,57 @@ function panel(d) { return d.getElementById(P + "panel"); }
   check("(6) ⭐ the measure is filed with its counts, and the top bands were right nine times in ten",
     F.measure.sampled >= 5000 && F.measure.bands.length === 7 && F.measure.bands.every((b) => b.right <= b.n) && F.measure.bands.slice(5).every((b) => b.n >= 300 && b.confidence >= 0.9),
     JSON.stringify(F.measure.bands.slice(5)));
+
+  // ── (7) the pile's order: the exhibits each closest M-ID would unlock ──
+  // A fixture, never the live worklist (p-test-tied-to-a-live-worklist-2026-11-20). Six pile courses; the links map
+  // is the builder's: M-ID -> exhibit links, only M-IDs a row names, only those with a link.
+  const PILE = { _built_at: "2026-11-20", colleges: ["Citrus College", "Hartnell College"], rows: [
+    [0, "P1", "SPCH", "10", "Aardvark Studies", 3, "C", "", "", "", ""],
+    [0, "P2", "SPCH", "20", "Argumentation", 3, "C", "", "", "", ""],
+    [1, "P3", "SPCH", "30", "Debate", 3, "C", "", "", "", ""],
+    [1, "P4", "SPCH", "40", "Group Communication", 3, "C", "", "", "", ""],
+    [0, "P5", "SPCH", "50", "Interpersonal Communication", 3, "C", "", "", "", ""],
+    [1, "P6", "SPCH", "60", "Persuasion", 3, "C", "", "", "", ""]] };
+  const PILE_CLOSEST = { identity_file: "2026-11-20 06:20", measure: CLOSEST.measure,
+    rows: { P1: [0.124, 1, [["COMM M1037", 0.41, 0, 6, null]]], P2: [0.946, 5, [["COMM M1040", 0.8, 3, 5, null]]],
+      P3: [0.379, 3, [["COMM M1041", 0.6, 1, 4, null]]], P4: [0.379, 3, [["COMM M1037", 0.62, 2, 6, null], ["COMM M1041", 0.5, 0, 4, null]]],
+      P5: [0.924, 6, [["COMM M1042", 0.9, 4, 4, null]]], P6: [0.495, 4, [["COMM M1043", 0.7, 1, 2, null]]] },
+    links: { "COMM M1037": 67, "COMM M1040": 5, "COMM M1041": 5, "COMM M1043": 1 } };
+  t = tab("#coci-lookup/list/nomid", { lookup: PILE, closest: PILE_CLOSEST }); await sleep(60);
+  d = t.d;
+  const order = () => dataRows(d).map((tr) => txt(titleCell(tr, d)));
+  const want = ["Group Communication", "Argumentation", "Debate", "Persuasion", "Interpersonal Communication", "Aardvark Studies"];
+  check("(7) ⭐ the pile opens most-linked first: Group Communication's 67 above five, strong before possible at five, one, none, then No strong match",
+    order().join("|") === want.join("|"), order().join("|"));
+  check("(7) ⭐ a No strong match row sorts below every match, though its candidate carries 67 links",
+    order().indexOf("Aardvark Studies") === order().length - 1);
+  const pr = {}; dataRows(d).forEach((tr) => { pr[txt(titleCell(tr, d))] = txt(closestCol(tr)); });
+  check("(7) ⭐ the count reads in words beside the M-ID, singular for one, nothing when zero or no strong match",
+    pr["Group Communication"] === "COMM M1037, possible match, 67 exhibit links" && pr["Argumentation"] === "COMM M1040, strong match, 5 exhibit links"
+      && pr["Persuasion"] === "COMM M1043, possible match, 1 exhibit link" && pr["Interpersonal Communication"] === "COMM M1042, strong match"
+      && pr["Aardvark Studies"] === "Propose a new M-ID", JSON.stringify(pr));
+  check("(7) the figure is plain text: no COBI view lists an M-ID's exhibits, so it opens nothing",
+    dataRows(d).every((tr) => !closestCol(tr).querySelector("a") && Array.from(closestCol(tr).querySelectorAll(".cplcoci-chip.rec")).every((c) => !c.children.length)));
+  check("(7) the sort line says the pile is sorted by the Closest M-ID, high to low",
+    /sorted by Closest M-ID, high to low/.test(txt(d.getElementById(P + "sortline"))), txt(d.getElementById(P + "sortline")));
+  titleCell(dataRows(d).find((tr) => txt(titleCell(tr, d)) === "Group Communication"), d).querySelector("button").click(); await sleep(20);
+  check("(7) the panel gives each candidate's links too", /COMM M1037: 2 of its 6 local courses carry this same title; 67 exhibit links point to it\./.test(txt(panel(d))), txt(panel(d)).slice(0, 500));
+  Array.from(d.querySelectorAll("." + P + "sort")).find((b) => /^Title/.test(txt(b))).click(); await sleep(20);
+  check("(7) ⭐ a person's header press wins for the visit: Title sorts the pile A to Z",
+    order().join("|") === want.slice().sort().join("|"), order().join("|"));
+  word(d, /^All \(6\)$/).click(); await sleep(20); word(d, /^Needs an M-ID \(6\)$/).click(); await sleep(20);
+  check("(7) and it holds when the person comes back to the pile in the same visit", order().join("|") === want.slice().sort().join("|"), order().join("|"));
+  t = tab("#coci-lookup/courses", { lookup: PILE, closest: PILE_CLOSEST }); await sleep(60);
+  d = t.d;
+  check("(7) outside the pile the List keeps its title order", order().join("|") === want.slice().sort().join("|"), order().join("|"));
+  // The fixture's links map is the builder's shape: the committed file names links per recommended M-ID.
+  const lk = F.links || {}, named = new Set([].concat(...Object.values(F.rows).map((r) => r[2].map((x) => x[0]))));
+  check("(7) ⭐ the committed file's links are M-ID -> a positive count, only for M-IDs a row recommends, and its shape says so",
+    Object.keys(lk).length > 0 && Object.entries(lk).every(([m, n]) => named.has(m) && Number.isInteger(n) && n > 0)
+      && /links: M-ID: exhibit links/.test(F.row_shape) && F.links_moved_by_alias_chain === 0 && /^[0-9a-f]{64}$/.test(F.fingerprint || ""),
+    Object.keys(lk).length + " " + F.row_shape);
+  check("(7) the fixture uses the same shape", Object.entries(PILE_CLOSEST.links).every(([m, n]) => Number.isInteger(n) && n > 0
+    && Object.values(PILE_CLOSEST.rows).some((r) => r[2].some((x) => x[0] === m))));
 
   const bad = results.filter((r) => !r[1]);
   results.forEach((r) => console.log((r[1] ? "  ✓ " : "  ✗ ") + r[0] + (r[1] || !r[2] ? "" : "\n      " + String(r[2]).slice(0, 400))));
