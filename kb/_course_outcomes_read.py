@@ -590,6 +590,15 @@ def variant_mix(entries: list[dict]) -> bool:
     return kinds == {True, False}
 
 
+def folded_pair(entries: list[dict], suffixes: set[str]) -> bool:
+    """Whether one code stands for two courses that norm_code folded together: the records print two codes under it
+    (record_code_suffixes) and the index holds two courses with reports under it. Rio Hondo's records name HOND 045 and
+    HOND 045-1, the index's HOND 045 holds courses 7012 and 7013, and no honors or lab word tells them apart (S691's
+    second reader), so the read would file one course's outline for both. Such a code is left unread."""
+    ids = {e.get("course_id") for e in entries if e.get("reports")}
+    return len(ids) >= 2 and len(suffixes) >= 2
+
+
 def wanted_courses(index: dict, slugs: list[str]) -> list[dict]:
     """Each course the loaded records name that has an outline report, once, with the
     colleges (by slug) whose records name it."""
@@ -597,11 +606,12 @@ def wanted_courses(index: dict, slugs: list[str]) -> list[dict]:
     for slug, codes in index_mod.record_codes(slugs).items():
         for c in codes:
             by_code.setdefault(c, []).append(slug)
+    suffixes = index_mod.record_code_suffixes(slugs)
     out = []
     for code in sorted(by_code):
         entries = index["index"].get(code) or []
         reports = [r for e in entries for r in e.get("reports") or []]
-        if reports and variant_mix(entries):
+        if reports and (variant_mix(entries) or folded_pair(entries, suffixes.get(code) or set())):
             continue
         if reports:
             out.append({"code": code, "title": entries[0].get("title"), "course_id": entries[0].get("course_id"),
