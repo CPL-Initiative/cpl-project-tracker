@@ -60,9 +60,10 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
   check("(1) Courses and M-IDs follows it", curate && curate.querySelectorAll(".cmf-card")[1].getAttribute("data-key") === "courses");
   const links = Array.from(first.querySelectorAll(".cmf-body a"));
   const by = (t) => links.find((l) => txt(l).indexOf(t) >= 0);
-  check("(2) ⭐ the drafted titles open the subjects list", by("3 titles drafted") && by("3 titles drafted").getAttribute("href") === "#commons/subjects");
+  check("(2) ⭐ the drafted titles open the subjects list", by("3 local titles") && by("3 local titles").getAttribute("href") === "#commons/subjects");
   check("(2) ⭐ the colleges open the subjects list", by("1 of 2 colleges") && by("1 of 2 colleges").getAttribute("href") === "#commons/subjects");
-  check("(2) the one-sided codes open the curator's list", by("3 codes only one side prints") && by("3 codes only one side prints").getAttribute("href") === "#commons/subjects/disagree");
+  check("(2) the codes with no title open their list, each reason counted", by("3 codes with no title") && by("3 codes with no title").getAttribute("href") === "#commons/subjects/disagree"
+    && /\(1 not in catalog, 2 not read yet, 0 blocked\)/.test(txt(first)));
   check("(2) Step a's figure opens the Common Subjects Reference", links.some((l) => l.getAttribute("href") === "#canonical-subj4" && /disciplines settled/.test(txt(l))));
   check("(2) the card names an owner on each step", /Owner: a curator/.test(txt(first)) && /Owner: the Courses bot/.test(txt(first)));
   check("the card's link row opens the list", Array.from(first.querySelectorAll(".cmf-links a")).some((l) => l.getAttribute("href") === "#commons/subjects"));
@@ -84,7 +85,14 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
   check("(4) a college that prints names reads its count", txt(d.querySelector('tr[data-college="alpha"]').children[2]) === "3");
   check("(4) every code is listed", d.querySelectorAll(".csb-codes tbody tr").length === 6);
   const zzz = d.querySelector('.csb-codes tr[data-code="ZZZ"]'), math = d.querySelector('.csb-codes tr[data-code="MATH"]');
-  check("(4) each code says who prints it", txt(zzz.children[5]) === "Catalog only" && txt(math.children[5]) === "State list only");
+  check("(4) each code says who prints it", txt(zzz.children[5]) === "Catalog only" && txt(math.children[5]) === "COCI only");
+  const heads = Array.from(d.querySelectorAll(".csb-codes thead th")).map(txt);
+  check("(7) the labels: Local Title and Source, and no label says print", heads.join(" | ") === "College | Local code | Local Title | Common subject code | Courses | Source"
+    && !/print/i.test(Array.from(d.querySelectorAll(".csb-table thead th")).map(txt).join(" ")));
+  const chip = math.children[2].querySelector(".csb-chip");
+  check("(7) ⭐ a code in COCI and nowhere in the catalog carries the Not in catalog chip, a note a screen reader reads",
+    chip && txt(chip) === "Not in catalog" && chip.getAttribute("role") === "note" && /waits on a title from a person/.test(chip.getAttribute("aria-label")));
+  check("(7) a titled row carries no chip", !d.querySelector('.csb-codes tr[data-code="ENGL"] .csb-chip'));
   check("(4) the common code shows where the maps give one, blank where not", txt(d.querySelector('.csb-codes tr[data-code="ENGL"]').children[3]) === "ENGL" && txt(zzz.children[3]) === "");
   check("(4) the rule is on the page", /trimming and upper-casing/.test(txt(d.querySelector(".csb-foot"))));
 
@@ -98,17 +106,23 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
   await x.M.boot(); await settle();
   d = x.d;
   check("(4) ⭐ #commons/subjects/<slug> opens that college", txt(d.getElementById("csb-h")) === "Subjects at Beta College" && d.querySelectorAll(".csb-codes tbody tr").length === 2);
-  check("(4) its titles read TBA, and the page says why", Array.from(d.querySelectorAll(".csb-codes tbody tr")).every((r) => txt(r.children[2]) === "TBA") && /prints the code alone/.test(txt(d.querySelector(".csb-note"))));
+  check("(4) its titles read TBA, and the page says why", Array.from(d.querySelectorAll(".csb-codes tbody tr")).every((r) => /^Not read yet/.test(txt(r.children[2])) && txt(r.children[5]) === "Not read yet") && /No subject heading is read for this catalog yet/.test(txt(d.querySelector(".csb-note"))));
+  check("(7) a line near the code in the catalog shows under the chip, never as the title", /A line near it in the catalog: Engineering and Design/.test(txt(d.querySelector('.csb-codes tr[data-code="ENG"]').children[2])));
+  check("(7) ⭐ on a college's own list its name is plain words, never a link to the page it is on",
+    !d.querySelector('.csb-table a[href="#commons/subjects/beta"]') && /Beta College/.test(txt(d.querySelector(".csb-codes tbody tr").children[0])));
 
   x = load("#commons/subjects/disagree");
   await x.M.boot(); await settle();
   d = x.d;
   const sides = Array.from(d.querySelectorAll(".csb-codes tbody tr")).map((r) => r.getAttribute("data-side"));
-  check("(4) the curator's list holds only the one-sided codes", sides.length === 3 && sides.every((s) => s !== "both"));
+  const states = Array.from(d.querySelectorAll(".csb-codes tbody tr")).map((r) => r.getAttribute("data-title-state"));
+  check("(7) ⭐ the list holds every code with no title, in or out of the catalog, a person's rows first",
+    sides.length === 3 && states.join(",") === "not_in_catalog,not_read,not_read" && sides.indexOf("both") >= 0, states.join(",") + " / " + sides.join(","));
+  check("(7) its heading says what it lists", txt(d.getElementById("csb-h")) === "Subject codes with no title");
 
   x = load("#commons/subjects/nowhere");
   await x.M.boot(); await settle();
-  check("(4) an unknown college says so and shows every college", /No college with a printed catalog is named nowhere/.test(txt(x.d.querySelector(".csb-note"))) && x.d.querySelectorAll(".csb-codes tbody tr").length === 6);
+  check("(4) an unknown college says so and shows every college", /No college with a catalog on file is named nowhere/.test(txt(x.d.querySelector(".csb-note"))) && x.d.querySelectorAll(".csb-codes tbody tr").length === 6);
 
   /* (6) the tables */
   d = x.d;

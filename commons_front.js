@@ -291,7 +291,10 @@
       /* Step b (S694): the local subject titles the Courses bot drafted from the printed catalogs; null reads TBA. */
       localTitles: LS && LS.totals ? { colleges: LS.totals.colleges, named: LS.totals.named, collegesNamed: LS.totals.colleges_named,
         codes: LS.totals.catalog_codes, oneSided: (LS.totals.catalog_only || 0) + (LS.totals.state_only || 0),
-        catalogOnly: LS.totals.catalog_only, stateOnly: LS.totals.state_only, courses: LS.totals.courses } : null,
+        catalogOnly: LS.totals.catalog_only, stateOnly: LS.totals.state_only, courses: LS.totals.courses,
+        notInCatalog: LS.totals.not_in_catalog || 0, notRead: LS.totals.not_read || 0, blocked: LS.totals.blocked || 0,
+        untitled: LS.totals.not_in_catalog == null ? (LS.totals.codes || 0) - (LS.totals.named || 0)
+          : (LS.totals.not_in_catalog || 0) + (LS.totals.not_read || 0) + (LS.totals.blocked || 0) } : null,
       /* Step a's queue (S695): the local subject codes the pile mint holds on, and the held courses they release. */
       heldCodes: HS && HS.totals ? { held: HS.totals.held, codes: HS.totals.codes, pairs: HS.totals.pairs } : null,
       building: { skillsCreds: (facts("skills").with_issuer_skills != null ? facts("skills").with_issuer_skills : cred.with_issuer_skills),
@@ -971,15 +974,15 @@
           p(HC ? [a("#commons/subjects/held", fmt(HC.held) + " courses the M-ID mint holds"), " wait on " + fmt(HC.codes) + " local subject codes with no common subject code. Deciding one code releases every course under it."]
             : ["The courses the M-ID mint holds for want of a common subject code: TBA."]),
           p([el("strong", { text: "Step b, local subject title: " }),
-            LT ? a("#commons/subjects", fmt(LT.named) + " titles drafted") : "TBA",
+            LT ? a("#commons/subjects", fmt(LT.named) + " local titles") : "TBA",
             LT ? " at " : "", LT ? a("#commons/subjects", fmt(LT.collegesNamed) + " of " + fmt(LT.colleges) + " colleges") : "",
-            LT ? " with a printed catalog. Owner: the Courses bot drafts each title from the catalog’s subject heading; a curator settles the " : "",
-            LT ? a("#commons/subjects/disagree", fmt(LT.oneSided) + " codes only one side prints") : "",
-            LT ? "." : ""]),
+            LT ? " with a catalog on file. Owner: the Courses bot takes each title from the catalog’s subject heading; a person settles the " : "",
+            LT ? a("#commons/subjects/disagree", fmt(LT.untitled) + " codes with no title") : "",
+            LT ? " (" + fmt(LT.notInCatalog) + " not in catalog, " + fmt(LT.notRead) + " not read yet, " + fmt(LT.blocked) + " blocked)." : ""]),
           p(["Step c, the M-ID, is the Courses and M-IDs card."])],
         method: [p([(sOf ? fmt(S.of) + " is the number of disciplines in the Common Subjects Reference; " + fmt(S.settled) + " have a settled common subject code. " : "")
-          + (LT ? "The local titles come from the " + fmt(LT.colleges) + " printed catalogs filed so far (" + fmt(LT.courses) + " courses, " + fmt(LT.codes) + " subject codes). Where a catalog prints a subject heading, that heading is the draft title; where it prints the code alone, the title reads TBA. "
-            + "Each catalog’s codes are compared with the state course list’s codes for the same college, exactly, after trimming spaces and setting upper case: " + fmt(LT.catalogOnly) + " codes only the catalog prints and " + fmt(LT.stateOnly) + " only the state list carries. Those are the curator’s list. "
+          + (LT ? "The local titles come from the " + fmt(LT.colleges) + " catalogs filed so far (" + fmt(LT.courses) + " courses, " + fmt(LT.codes) + " subject codes). A title is the catalog’s own subject heading, saved in Title Case. A code with no title says why: not in catalog (the catalog was read and gives it no heading, so it waits on a person), not read yet (Sky reads it again), or blocked (the college’s site refused our reader). "
+            + "Each catalog’s codes are compared with the state course list’s codes for the same college, exactly, after trimming spaces and setting upper case: " + fmt(LT.catalogOnly) + " codes are in the catalog only and " + fmt(LT.stateOnly) + " in COCI only. "
             + "The common subject code beside a local code comes from the subject map and each discipline’s settled code, never from a TOP code."
             : "The local subject titles file has not been read, so Step b reads TBA.")])],
         links: [["Open the subjects list", "#commons/subjects"], ["Codes the mint holds on", "#commons/subjects/held"], ["Common Subjects Reference", "#canonical-subj4"]] }),
