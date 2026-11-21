@@ -46,6 +46,7 @@ import copy
 import hashlib
 import json
 import os
+import re
 import sys
 from collections import Counter
 from datetime import datetime, timezone
@@ -143,8 +144,10 @@ def check_live_shape(live, now, max_age_hours):
         if not all(isinstance(v, str) for v in live[key]):
             raise Stop(f"a live {key} entry is not an id")
     read_at = live.get("read_at")
-    if not isinstance(read_at, str) or not read_at:
-        raise Stop(f"the live rows carry no readable read_at ({read_at!r})")
+    # a full timestamp: a date, a time and a zone (Postgres now() as JSON); a bare date says nothing of freshness
+    if not isinstance(read_at, str) or not re.match(r"^\d{4}-\d{2}-\d{2}[T ]\d{2}:\d{2}(:\d{2}(\.\d+)?)?"
+                                                     r"(Z|[+-]\d{2}(:?\d{2})?)$", read_at.strip()):
+        raise Stop(f"the live rows carry no full read_at with a time and a zone ({read_at!r})")
     try:
         t = datetime.fromisoformat(read_at.replace("Z", "+00:00"))
         if t.tzinfo is None:
@@ -305,16 +308,18 @@ def _edited(now_rec, then_rec):
     return sorted(k for k in keys if now_rec.get(k) != then_rec.get(k))
 
 
-def rollback(receipt, kdir, expect, write, now, live=None, max_age_hours=6.0):
+def rollback(receipt, kdir, expect, write, now, live=None, max_age_hours=6.0, live_given=None):
     """Deletes exactly the receipt's keys. Stops on a wrong --expect; on a write, without a fresh live read, or when a
     live kb_curation row is keyed on a receipt id or merges into one; when a receipt row was edited since the apply
     beyond the build's own fields. Reads each file in its found format and writes it back in that format."""
+    # a --live file holding JSON null is a given read of the wrong shape: it stops, as on the write path
+    live_given = live is not None if live_given is None else live_given
     ids = receipt["ids"]
     all_ids = list(ids["courses"]) + list(ids["singletons"])
     n = len(all_ids)
     if write and expect != n:
         raise Stop(f"--expect {expect} does not match the receipt's {n} ids")
-    if write or live is not None:
+    if write or live_given:
         check_live_shape(live, now, max_age_hours)
         keyed = sorted(set(live["id_rows"]) & set(all_ids))
         into = sorted(set(live["merge_targets"]) & set(all_ids))
@@ -400,7 +405,7 @@ def main(argv=None):
                 print(live_sql(id_list=list(receipt["ids"]["courses"]) + list(receipt["ids"]["singletons"])))
                 return 0
             out = rollback(receipt, kdir, a.expect, a.apply, now, dry._load(a.live) if a.live else None,
-                           a.max_age_hours)
+                           a.max_age_hours, live_given=bool(a.live))
             print(f"[pile_mint_apply] rollback {'WRITTEN' if out['written'] else 'DRY'}: {out}")
             broken = out["written"] and out["files_as_the_apply_left_them"] and not all(out["round_trip"].values())
             return 1 if broken else 0

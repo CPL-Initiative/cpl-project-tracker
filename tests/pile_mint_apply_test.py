@@ -165,6 +165,10 @@ check("a rollback with a wrong --expect stops", "--expect" in (stops(
     lambda: ap.rollback(receipt, d, n - 1, True, NOW, live())) or ""))
 check("a rollback write without a live read stops", "no live" in (stops(
     lambda: ap.rollback(receipt, d, n, True, NOW)) or ""))
+check("a dry rollback whose --live file holds JSON null stops, as the write does", "no live" in (stops(
+    lambda: ap.rollback(receipt, d, n, False, NOW, None, live_given=True)) or ""))
+check("a live read from Postgres now() (microseconds, +00:00) reads", ap.check_live_shape(
+    live(read_at=(NOW - timedelta(minutes=5)).strftime("%Y-%m-%dT%H:%M:%S.123456+00:00")), NOW, 6.0) is None)
 rid = receipt["ids"]["courses"][0]
 check("a rollback stops when a live kb_curation row is keyed on a receipt id, naming it", ("rows keyed on ['" + rid)
       in (stops(lambda: ap.rollback(receipt, d, n, True, NOW, live(id_rows=[rid]))) or ""))
@@ -240,6 +244,8 @@ bad = {"cn_rows missing": {k: v for k, v in live().items() if k != "cn_rows"},
        "cn_rows entry not a row": live(cn_rows=["CN:P1"]), "merge_targets entry not an id": live(merge_targets=[7]),
        "read_at missing": {k: v for k, v in live().items() if k != "read_at"}, "read_at null": live(read_at=None),
        "a list": [live()], "a string": "rows"}
+bad["read_at a bare date"] = live(read_at="2026-11-21")
+bad["read_at with no zone"] = live(read_at="2026-11-21T01:50:00")
 for name, payload in bad.items():
     try:
         ap.check_live(frozen, payload, NOW, 6.0)
@@ -270,6 +276,24 @@ check("another minter's allocator (the authority recode) never keeps or gap-fill
 bk = zdry.Buckets(set(), shared)
 check("the re-mint allocator (Buckets) skips them too",
       bk.next_corr("ABCD", "1", "x") == "ABCD M1002" and bk.next_stand("ABCD", "1", "x") == "ABCD M10AB")
+import _overmerge_dryrun as omd  # noqa: E402  (its own copy of the loader, and its allocator)
+os.environ["PILE_MINT_RESERVED"] = rf
+try:
+    om_res = omd.load_id_reservations()
+finally:
+    os.environ.pop("PILE_MINT_RESERVED")
+grp = lambda: {"norm_title": "x", "div": 0}
+corr_g, sing_g = grp(), grp()
+omd.allocate_fresh({("ABCD", "1"): [(corr_g, "m1")]}, {("ABCD", "1"): [(sing_g, "m2")]}, {}, {}, om_res)
+check("the overmerge dry run's own loader reads the reservation file, and its allocator skips both ids",
+      1 in om_res[("ABCD", "1")] and corr_g["new_id"] == "ABCD M1002" and sing_g["new_id"] == "ABCD M10AB")
+import glob as _glob  # noqa: E402
+copies = sorted(os.path.basename(f) for f in _glob.glob(os.path.join(ROOT, "kb", "*.py"))
+                if "def load_id_reservations" in open(f, encoding="utf-8").read())
+check("every copy of load_id_reservations reads the reservation file (the shared one, or through it)",
+      all("pile_reserved_ids" in open(os.path.join(ROOT, "kb", f), encoding="utf-8").read()
+          or "_subj4_dryrun.py" in open(os.path.join(ROOT, "kb", f), encoding="utf-8").read() for f in copies)
+      and "_overmerge_dryrun.py" in copies)
 
 # ── the SELECT ──
 sql = ap.live_sql(frozen)

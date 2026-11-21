@@ -154,6 +154,11 @@ with open(gp, "w", encoding="utf-8") as f:
     json.dump({"totals": {"held": 943}}, f)
 check("(9) a fall from 943 to 3 stops the write with a warning", "943 to 3" in (hsc.fall_guard(3, gp) or ""))
 check("(9) a flag naming the fall as expected lets it through", hsc.fall_guard(3, gp, expect_fall=True) is None)
+bp = gp + ".bad"
+with open(bp, "w", encoding="utf-8") as f:
+    f.write("{not json")
+check("(9) an unreadable committed file stops the write (the fall cannot be measured)",
+      "cannot be read" in (hsc.fall_guard(1341, bp) or "") and hsc.fall_guard(1341, bp, expect_fall=True) is None)
 check("(9) a fall of half or less, a rise, or no committed file goes ahead",
       hsc.fall_guard(472, gp) is None and hsc.fall_guard(1341, gp) is None
       and hsc.fall_guard(3, gp + ".absent") is None)

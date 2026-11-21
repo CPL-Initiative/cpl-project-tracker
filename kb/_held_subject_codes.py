@@ -76,8 +76,9 @@ def fall_guard(new_held, committed_path, expect_fall=False):
     try:
         with open(committed_path, encoding="utf-8") as f:
             was = int(((json.load(f).get("totals") or {}).get("held")) or 0)
-    except (OSError, ValueError, TypeError):
-        return None
+    except (OSError, ValueError, TypeError, AttributeError) as e:
+        return (f"the committed {committed_path} cannot be read ({type(e).__name__}), so the fall cannot be "
+                "measured. Nothing written. Pass --expect-fall to write anyway.")
     if was and new_held < was * (1 - FALL_LIMIT):
         return (f"the held count falls from {was} to {new_held}, more than half; the plan's held lists may have "
                 "changed meaning. Nothing written. Pass --expect-fall when the fall is expected.")
