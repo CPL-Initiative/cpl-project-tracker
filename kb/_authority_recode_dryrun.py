@@ -396,7 +396,8 @@ class Allocator:
         self.gapfilled = []
 
     def free(self, key):
-        return key not in self.used and key not in self.taken
+        # ("*", "ids"): the full ids a rolled-back pile mint returned (load_id_reservations), never handed out again
+        return key not in self.used and key not in self.taken and key not in self.reservations.get(("*", "ids"), ())
 
     def place(self, old_id, new_prefix, prefer_keep=True, reason=""):
         prefix, letter, band, tail, kind = parse_id(old_id)

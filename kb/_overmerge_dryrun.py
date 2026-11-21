@@ -427,7 +427,58 @@ def load_id_reservations():
                 continue
             reservations[(subj, band)].add(int(seq2))
 
+    # Ids a rolled-back pile mint returned (kb/pile_mint_reserved.json): the shared loader's own rule, so this copy
+    # never reissues one (kb/_subj4_dryrun.py add_reserved_ids; S695).
+    import _subj4_dryrun
+    _subj4_dryrun.add_reserved_ids(reservations, _subj4_dryrun.pile_reserved_ids())
+
     return dict(reservations)
+
+
+def allocate_fresh(fresh_corr_buckets, fresh_sing_buckets, existing_corr_seqs, existing_sing_suffixes,
+                   id_reservations):
+    """Give each fresh group its new id in place (g["new_id"]); -> (overflow_corr, overflow_sing). A corroborated id
+    skips existing seqs, kept-id seqs and the reserved numbers; a stand-alone id skips existing suffixes and the
+    reserved codes a rolled-back pile mint returned (strings in the same (SUBJ4, band) set)."""
+    overflow_corr = []
+    overflow_sing = []
+
+    # Corroborated fresh ids: `<SUBJ4> M<band><seq:03d>`, seq 1-based, skipping
+    # existing untouched seqs + kept-id seqs + CCN/C-ID reservations.
+    for (s4, band), entries in fresh_corr_buckets.items():
+        entries.sort(key=lambda e: (e[0]["norm_title"], e[1], e[0]["div"]))
+        reserved = set(existing_corr_seqs.get((s4, band), set()))
+        reserved |= set(id_reservations.get((s4, band), set()))
+        seq = 1
+        for g, _mid in entries:
+            while seq in reserved:
+                seq += 1
+            if seq > 999:
+                overflow_corr.append((f"{s4} M{band}*", seq))
+                g["new_id"] = None
+            else:
+                g["new_id"] = f"{s4} M{band}{seq:03d}"
+                reserved.add(seq)
+                seq += 1
+
+    # Standalone fresh ids: `<SUBJ4> M<band><d><LL>`, skipping existing suffixes and reserved codes.
+    for (s4, band), entries in fresh_sing_buckets.items():
+        entries.sort(key=lambda e: (e[0]["norm_title"], e[1], e[0]["div"]))
+        reserved_suffixes = set(existing_sing_suffixes.get((s4, band), set()))
+        reserved_suffixes |= {x for x in id_reservations.get((s4, band), set()) if isinstance(x, str)}
+        idx = 0
+        for g, _mid in entries:
+            while standalone_code(idx) in reserved_suffixes:
+                idx += 1
+            if idx >= 10 * 26 * 26:
+                overflow_sing.append((f"{s4} M{band}*", idx))
+                g["new_id"] = None
+                idx += 1
+                continue
+            g["new_id"] = f"{s4} M{band}{standalone_code(idx)}"
+            reserved_suffixes.add(standalone_code(idx))
+            idx += 1
+    return overflow_corr, overflow_sing
 
 
 def main():
@@ -907,43 +958,8 @@ def main():
         elif parsed and re.match(r"^\d[A-Z]{2}$", parsed[2]):
             existing_sing_suffixes[(parsed[0], parsed[1])].add(parsed[2])
 
-    overflow_corr = []
-    overflow_sing = []
-
-    # Corroborated fresh ids: `<SUBJ4> M<band><seq:03d>`, seq 1-based, skipping
-    # existing untouched seqs + kept-id seqs + CCN/C-ID reservations.
-    for (s4, band), entries in fresh_corr_buckets.items():
-        entries.sort(key=lambda e: (e[0]["norm_title"], e[1], e[0]["div"]))
-        reserved = set(existing_corr_seqs.get((s4, band), set()))
-        reserved |= set(id_reservations.get((s4, band), set()))
-        seq = 1
-        for g, _mid in entries:
-            while seq in reserved:
-                seq += 1
-            if seq > 999:
-                overflow_corr.append((f"{s4} M{band}*", seq))
-                g["new_id"] = None
-            else:
-                g["new_id"] = f"{s4} M{band}{seq:03d}"
-                reserved.add(seq)
-                seq += 1
-
-    # Standalone fresh ids: `<SUBJ4> M<band><d><LL>`, skipping existing suffixes.
-    for (s4, band), entries in fresh_sing_buckets.items():
-        entries.sort(key=lambda e: (e[0]["norm_title"], e[1], e[0]["div"]))
-        reserved_suffixes = set(existing_sing_suffixes.get((s4, band), set()))
-        idx = 0
-        for g, _mid in entries:
-            while standalone_code(idx) in reserved_suffixes:
-                idx += 1
-            if idx >= 10 * 26 * 26:
-                overflow_sing.append((f"{s4} M{band}*", idx))
-                g["new_id"] = None
-                idx += 1
-                continue
-            g["new_id"] = f"{s4} M{band}{standalone_code(idx)}"
-            reserved_suffixes.add(standalone_code(idx))
-            idx += 1
+    overflow_corr, overflow_sing = allocate_fresh(fresh_corr_buckets, fresh_sing_buckets, existing_corr_seqs,
+                                                  existing_sing_suffixes, id_reservations)
 
     # ── Pass 3: collision detection ──────────────────────────────────────────
     # A new id must not equal (i) any id that SURVIVES the apply — every existing

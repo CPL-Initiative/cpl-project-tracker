@@ -196,7 +196,8 @@ class Buckets:
         idx = 0
         while idx < 10 * 26 * 26:
             code = standalone_code(idx)
-            if code not in self.stand[b]:
+            # a code a rolled-back mint returned is reserved too (load_id_reservations, kb/pile_mint_reserved.json)
+            if code not in self.stand[b] and code not in self.reservations.get(b, ()):
                 self.stand[b].add(code)
                 self.added[b] += 1
                 return f"{subj} M{band}{code}"

@@ -10,7 +10,10 @@ WHAT THIS GUARDS (each a way the ranked list would mislead the person deciding c
       code of two characters or fewer gets no statewide vote;
   (6) the printed name joins from the Subjects card's file by college and code, and near entries come from the map;
   (7) the builder holds the same invariants on the committed plan's held list (kb/pile_mint_out/*/plan.json) and on
-      the committed kb/status/held_subject_codes.json, and two runs write the same bytes.
+      the committed kb/status/held_subject_codes.json, and two runs write the same bytes;
+  (8) held_of reads every held reason a code decision bears on (no route, route (i) under its floor, a shell title
+      with no convention), carries the reason on each course, and leaves a ruled kind's title out;
+  (9) a held count that falls by more than half against the committed file stops the write, unless a flag names it.
 
 Run from repo root: python3 tests/held_subject_codes_test.py
 """
@@ -52,8 +55,8 @@ def invariants(doc, n_held, label):
           and doc["totals"]["top_20_release"] == sum(c["held"] for c in codes[:20]))
 
 
-def row(college, cn, subj, title, why="no route reaches its floor"):
-    return {"college": college, "control_number": cn, "subject": subj, "title": title, "why": why}
+def row(college, cn, subj, title, why="no route reaches its floor", reason="no_route_gives_a_subj4"):
+    return {"college": college, "control_number": cn, "subject": subj, "title": title, "why": why, "reason": reason}
 
 
 HELD = [
@@ -110,10 +113,64 @@ plans = sorted(glob.glob(os.path.join(ROOT, "kb", "pile_mint_out", "*", "plan.js
 if plans:
     with open(plans[-1], encoding="utf-8") as f:
         plan = json.load(f)
-    held = plan["held"]["no_route_gives_a_subj4"]
+    ruled = tuple(k for r in plan.get("ruled_kinds") or [] for k in r.get("kinds") or [])
+    held = hsc.held_of(plan, ruled)[0]
     invariants(hsc.build(held, plan["self_recall"]["thresholds"], {}, {}, {}, {}), len(held), "committed plan")
-    check("(7) the committed plan's held list matches its own measure",
-          len(held) == plan["measures"]["held"]["no_route_gives_a_subj4"])
+    check("(7) the committed plan's held list matches its own measures, reason by reason",
+          all(sum(1 for h in held if h["reason"] == k) <= plan["measures"]["held"].get(k, 0) for k in hsc.HELD_REASONS)
+          and len(held) == sum(plan["measures"]["held"].get(k, 0) for k in hsc.HELD_REASONS)
+          - sum(1 for h in plan["held"].get("shell_title_no_convention", []) if h.get("kind") in ruled))
+# (8) held_of: every reason a code decision bears on, the reason on each course, a ruled kind left out
+PLAN = {"held": {
+    "no_route_gives_a_subj4": [row("Alpha College", "N1", "ZZZ", "Mystery Course")],
+    "route_i_below_its_floor": [dict(row("Alpha College", "N2", "BIOL", "Ecology Basics"), subj4="BIOL", holders=20,
+                                     right=10)],
+    "shell_title_no_convention": [dict(row("Beta College", "N3", "BIOL", "Biology Practicum"), kind="practicum"),
+                                  dict(row("Beta College", "N4", "TUTR", "Supervised Tutoring Lab"),
+                                       kind="supervised tutoring")],
+    "duplicate_of_an_existing_m_id_held_for_assign": [row("Gamma College", "N5", "MATH", "Trigonometry")],
+    "ruled_kind_title_names_more_than_the_kind": [row("Gamma College", "N6", "TUTR", "Supervised Tutoring in Math")]}}
+PLAN["self_recall"] = {"thresholds": FLOORS}
+h8 = hsc.held_of(PLAN, ("supervised tutoring", "tutoring"))[0]
+check("(8) held_of reads no route, route (i) under its floor and a shell title with no convention",
+      sorted(h["control_number"] for h in h8) == ["N1", "N2", "N3"])
+check("(8) each course carries its reason", {h["control_number"]: h["reason"] for h in h8}
+      == {"N1": "no_route_gives_a_subj4", "N2": "route_i_below_its_floor", "N3": "shell_title_no_convention"})
+check("(8) a ruled kind's title and a course held for Assign are never a code decision's",
+      not {"N4", "N5", "N6"} & {h["control_number"] for h in h8})
+d8 = hsc.build(h8, FLOORS, {}, {}, {}, {})
+b8 = {c["key"]: c for c in d8["codes"]}
+check("(8) the code and the totals count by reason, and each college row lists its courses' reasons",
+      b8["BIOL"]["by_reason"] == {"route_i_below_its_floor": 1, "shell_title_no_convention": 1}
+      and d8["totals"]["by_reason"] == {"no_route_gives_a_subj4": 1, "route_i_below_its_floor": 1,
+                                        "shell_title_no_convention": 1}
+      and all(len(x["reasons"]) == len(x["control_numbers"]) for c in d8["codes"] for x in c["colleges"]))
+check("(8) route (i)'s reading travels as the note", any("route (i) reads BIOL" in k for k in b8["BIOL"]["subject_map"]["notes"]))
+
+# (9) the fall guard
+import tempfile  # noqa: E402
+gp = os.path.join(tempfile.mkdtemp(), "held.json")
+with open(gp, "w", encoding="utf-8") as f:
+    json.dump({"totals": {"held": 943}}, f)
+check("(9) a fall from 943 to 3 stops the write with a warning", "943 to 3" in (hsc.fall_guard(3, gp) or ""))
+check("(9) a flag naming the fall as expected lets it through", hsc.fall_guard(3, gp, expect_fall=True) is None)
+bp = gp + ".bad"
+with open(bp, "w", encoding="utf-8") as f:
+    f.write("{not json")
+check("(9) an unreadable committed file stops the write (the fall cannot be measured)",
+      "cannot be read" in (hsc.fall_guard(1341, bp) or "") and hsc.fall_guard(1341, bp, expect_fall=True) is None)
+check("(9) a fall of half or less, a rise, or no committed file goes ahead",
+      hsc.fall_guard(472, gp) is None and hsc.fall_guard(1341, gp) is None
+      and hsc.fall_guard(3, gp + ".absent") is None)
+try:
+    hsc.held_of(PLAN, ("supervised tutoring", "tutoring"), committed=gp)
+    stopped = False
+except SystemExit as e:
+    stopped = "943 to 3" in str(e)
+check("(9) held_of stops the build on the fall, naming the counts", stopped)
+check("(9) held_of with expect_fall reads the three courses",
+      len(hsc.held_of(PLAN, ("supervised tutoring", "tutoring"), committed=gp, expect_fall=True)[0]) == 3)
+
 committed = os.path.join(ROOT, hsc.OUT)
 if os.path.exists(committed):
     with open(committed, encoding="utf-8") as f:
