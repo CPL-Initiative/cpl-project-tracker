@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-21_s694_checkpoint_memory_rows.sql",
+ "name": "s694_checkpoint_memory_rows",
+ "version": "20261121004148",
+ "sha256": "0a52d8e935d51fca71aade0ec8115368a5ff675f11de4c7b85a661480278353f",
+ "run": "44845357911",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"slug\":\"d-assign-first-slice-existing-only-2026-11-20\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":253},{\"slug\":\"d-assign-never-replaces-a-row-2026-11-21\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":336},{\"slug\":\"d-joined-course-keeps-the-mid-row-2026-11-20\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":342},{\"slug\":\"d-links-count-through-folds-2026-11-20\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":298},{\"slug\":\"d-pile-mint-first-wave-scope-2026-11-20\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":317},{\"slug\":\"d-topics-not-applicable-2026-11-20\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":248},{\"slug\":\"f-assign-build-dryrun-measured-2026-11-20\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":393},{\"slug\":\"f-exhibit-links-through-folds-2026-11-20\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":387},{\"slug\":\"f-pile-is-generic-shell-titles-2026-11-20\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":311},{\"slug\":\"f-pile-mint-plan-measured-2026-11-21\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":369},{\"slug\":\"f-subjects-card-measured-2026-11-21\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":343},{\"slug\":\"m-assign-build-and-pile-links-merged-2026-11-21\",\"kind\":\"milestone\",\"status\":\"proposed\",\"summary_len\":322},{\"slug\":\"m-subjects-card-and-assign-control-2026-11-21\",\"kind\":\"milestone\",\"status\":\"proposed\",\"summary_len\":280},{\"slug\":\"p-failed-read-is-not-empty-2026-11-21\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":297},{\"slug\":\"p-fingerprint-raw-bytes-daily-stamps-2026-11-20\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":259},{\"slug\":\"p-four-suites-four-cores-2026-11-21\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":170},{\"slug\":\"p-kill-check-parent-and-start-2026-11-21\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":206},{\"slug\":\"p-stacked-branch-after-squash-2026-11-21\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":230}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
