@@ -138,6 +138,7 @@ import datetime as dt
 import glob
 import importlib.util
 import json
+import math
 import os
 import re
 import sys
@@ -1166,7 +1167,9 @@ def overall_block(live: dict) -> dict:
         val = (parts["catalog"] + parts["requirements"] + (parts["slos"] + parts["plos"]) / 2) / 3
         out["colleges"][str(cid)] = {"value": round(val, 4), "parts": parts}
     vals = [v["value"] for v in out["colleges"].values()]
-    out["statewide"] = {"mean": round(sum(vals) / len(vals), 4) if vals else None, "colleges": len(vals)}
+    # math.fsum, not sum(): Python 3.12 compensates sum() over floats and 3.11 does not, so one mean rounded
+    # 0.6544 here and 0.6543 in CI (#3602). fsum is exact on both, so the file builds the same everywhere.
+    out["statewide"] = {"mean": round(math.fsum(vals) / len(vals), 4) if vals else None, "colleges": len(vals)}
     return out
 
 

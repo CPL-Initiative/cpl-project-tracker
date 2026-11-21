@@ -310,6 +310,13 @@ check("(13) every live college is a crosswalk college", set(LV["colleges"]) <= {
 check("(13) the overall bar is basis live, with the live read time, and only for colleges the live read holds",
       OV["basis"] == "live" and OV["read_at"] == LV["read_at"] and set(OV["colleges"]) == set(LV["colleges"]))
 check("(13) no college row mixes in a live figure", not any(k in c for c in C for k in ("live", "overall")))
+import math  # noqa: E402
+_ov = [v["value"] for v in OV["colleges"].values()]
+check("(13) the statewide mean is the math.fsum mean of the college values, so Python 3.11 and 3.12 build the same figure",
+      OV["statewide"]["mean"] == (round(math.fsum(_ov) / len(_ov), 4) if _ov else None) and OV["statewide"]["colleges"] == len(_ov),
+      (OV["statewide"], len(_ov)))
+_src = open(os.path.join(ROOT, "kb", "_build_commons_data_status.py"), encoding="utf-8").read()
+check("(13) the builder takes the overall mean with math.fsum", 'math.fsum(vals) / len(vals)' in _src and "round(sum(vals) / len(vals)" not in _src)
 
 # (14) each cause's programs (S649, COBIx's item 1 on #3229): one sidecar per college with programs still to pass.
 # A pinned fixture first: one college, four programs, each cause and each source of a catalog page.
