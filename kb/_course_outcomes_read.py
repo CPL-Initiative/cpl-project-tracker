@@ -875,7 +875,8 @@ def strip_page_files(root: str = OUT_DIR) -> list[str]:
 # that did not answer 200, a trial that parsed outcomes on fewer than half its pages, and a count with no source
 # (second reader on #3601, S690).
 CCSF_RECALL = os.path.join(HERE, "course_outcomes", "ccsf_recall.json")
-RECALL_BY_HOST = {"ccsf.curricunet.com": CCSF_RECALL}
+RIO_HONDO_RECALL = os.path.join(HERE, "course_outcomes", "rio_hondo_recall.json")
+RECALL_BY_HOST = {"ccsf.curricunet.com": CCSF_RECALL, "riohondo.curriqunet.com": RIO_HONDO_RECALL}
 # The SLO section of a report 28 page, cut by its two printed headings alone, never by the parser's patterns.
 EXCERPT_FROM, EXCERPT_TO, EXCERPT_LINES = "STUDENT LEARNING OUTCOMES", "CONTENTS", 60
 # Each outcomes-only host's two printed headings around its SLO section, as a person read them off the host's own

@@ -302,6 +302,19 @@ check("6 after a lead-in, a line that opens 'Students will be able to' and state
       read.objectives_of(EGSS)["objectives"] == ["Students will be able to analyze concepts of ethnic studies.",
                                                  "Students will be able to apply theory to critical events."]
       and read.objectives_of(two_leads)["objectives"] == ["Interpret results."], read.objectives_of(EGSS))
+rc_rio = read.rows_recall(read.RIO_HONDO_RECALL)
+check("6 Rio Hondo's self-recall count passes: 12 of 12 pages, SLOs and objectives counted by eye from trial "
+      "44886389239's log, bound to its parser", rc_rio["ok"] and rc_rio["right"] == 12 and rc_rio["pages"] == 12, rc_rio)
+with tempfile.TemporaryDirectory() as tmp:
+    want = json.load(open(read.RIO_HONDO_RECALL))
+    bad = dict(want, pages=dict(want["pages"]))
+    bad["pages"]["EGSS 110"] = dict(bad["pages"]["EGSS 110"], objective=0)
+    bad["pages"]["ACCT 100"] = dict(bad["pages"]["ACCT 100"], **{"from": "row"})
+    path = os.path.join(tmp, "r.json")
+    json.dump(bad, open(path, "w"))
+    rc_bad = read.rows_recall(path)
+check("6 GUARD: a Rio Hondo count changed or sourced from the row fails the gate (2 wrong of 12)",
+      not rc_bad["ok"] and rc_bad["right"] == 10 and len(rc_bad["wrong"]) == 2, rc_bad)
 probe = read.probe_log("X 1", TEXT)
 check("6 a host with no heading pair logs only the lines that name outcomes or objectives, never a person's line",
       STAFF not in probe and "STUDENT LEARNING OUTCOMES" in probe
