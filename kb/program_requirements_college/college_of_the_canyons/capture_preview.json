@@ -3908,208 +3908,538 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/college_of_the_canyons",
-  "kept": 0,
+  "kept": 52,
   "kept_moved": 0,
-  "programs": 145,
+  "programs": 196,
   "list": [
    {
-    "control_number": "02277",
-    "title": "Computer Science",
+    "control_number": "02275",
+    "title": "Administrative Assistant",
     "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=113",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=107",
     "coverage": 1.0,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=114",
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=107",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "02291",
-    "title": "Nursing: Registered Nurse",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=233",
-    "coverage": 1.0,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=233",
-    "was_coverage": 0.941,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "10302",
-    "title": "Interior Design",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=173",
-    "coverage": 0.969,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=174",
-    "was_coverage": 0.969,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "10312",
-    "title": "Restaurant Management",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=171",
-    "coverage": 1.0,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=171",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "10318",
-    "title": "Social Science",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=291",
-    "coverage": 0.778,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=291",
-    "was_coverage": 0.75,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "12409",
-    "title": "Accounting",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=92",
-    "coverage": 1.0,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=92",
-    "was_coverage": 0.818,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "14648",
-    "title": "Computer Animation",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=203",
-    "coverage": 0.941,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=204",
-    "was_coverage": 0.941,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "14705",
-    "title": "Photography",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=252",
-    "coverage": 1.0,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=252",
-    "was_coverage": 0.9,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "15476",
-    "title": "Sound Arts",
+    "control_number": "02276",
+    "title": "New Media Journalism",
     "award": "A.A. Degree",
     "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=205",
-    "coverage": 0.914,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=206",
-    "was_coverage": 0.914,
+    "coverage": 0.919,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=205",
+    "was_coverage": 0.919,
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "15477",
-    "title": "Filmmaking",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=204",
-    "coverage": 0.914,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=205",
-    "was_coverage": 0.914,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "16962",
-    "title": "Automotive Technology",
+    "control_number": "02279",
+    "title": "Engineering",
     "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=84",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=138",
     "coverage": 1.0,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=84",
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=138",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "16978",
-    "title": "Recreation Management",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=286",
-    "coverage": 0.875,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=286",
-    "was_coverage": 0.875,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "17974",
-    "title": "Liberal Arts and Sciences: Social and Behavioral Sciences Emphasis",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=195",
-    "coverage": 0.661,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=195",
-    "was_coverage": 0.627,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "17975",
-    "title": "Liberal Arts and Sciences: Humanities Emphasis",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=193",
-    "coverage": 0.967,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=193",
-    "was_coverage": 0.934,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "18021",
-    "title": "Psychology",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=264",
-    "coverage": 0.95,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=265",
-    "was_coverage": 0.95,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "18919",
-    "title": "Automotive Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=83",
+    "control_number": "02284",
+    "title": "Architectural Drafting",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=73",
     "coverage": 1.0,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=84",
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=73",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "18947",
-    "title": "Accounting",
+    "control_number": "02285",
+    "title": "Welding Technology",
+    "award": "A.S. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=305",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=305",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "02286",
+    "title": "Art",
+    "award": "A.A. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=78",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=78",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "02288",
+    "title": "French",
+    "award": "A.A. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=214",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=214",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "02290",
+    "title": "Spanish",
+    "award": "A.A. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=216",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=216",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "02294",
+    "title": "English",
+    "award": "A.A. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=141",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=141",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "02297",
+    "title": "Mathematics",
+    "award": "A.S. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=199",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=199",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "02302",
+    "title": "Administration of Justice",
+    "award": "A.S. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=65",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=65",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "02305",
+    "title": "History",
+    "award": "A.A. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=167",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=167",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "02309",
+    "title": "Hospitality Management",
+    "award": "A.S. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=170",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=170",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "07287",
+    "title": "Biological Sciences",
+    "award": "A.S. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=88",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=88",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "10297",
+    "title": "Human Resources Management",
+    "award": "A.S. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=93",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=93",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "10298",
+    "title": "Computer Applications",
+    "award": "A.S. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=107",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=107",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "10307",
+    "title": "Early Childhood Education - Preschool",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=92",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=130",
     "coverage": 1.0,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=92",
-    "was_coverage": 0.818,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=130",
+    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "18979",
-    "title": "Sociology",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=292",
-    "coverage": 0.96,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=293",
-    "was_coverage": 0.96,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "19386",
-    "title": "Interior Design",
+    "control_number": "10308",
+    "title": "Early Childhood Education – Supervision & Administration of Children's Programs",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=174",
-    "coverage": 0.957,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=174",
-    "was_coverage": 0.957,
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=131",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=131",
+    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "30297",
-    "title": "Communication Studies",
+    "control_number": "10309",
+    "title": "Early Childhood Education - Infant/Toddler",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=130",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=130",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "10310",
+    "title": "Early Childhood Education - School-Age",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=130",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=130",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "10311",
+    "title": "Early Childhood Education - Special Education",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=130",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=130",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "10564",
+    "title": "Fire Technology: Pre-Service",
+    "award": "A.S. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=152",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=152",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "10924",
+    "title": "Water Systems Technology",
+    "award": "A.S. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=303",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=303",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "12120",
+    "title": "Network Technology",
+    "award": "A.S. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=229",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=229",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "14647",
+    "title": "Animation Production",
     "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=104",
-    "coverage": 0.923,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=105",
-    "was_coverage": 0.923,
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=203",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=203",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "14706",
+    "title": "Commercial Photography",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=252",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=252",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "15316",
+    "title": "Interior Decorating – Home Staging and Visual Merchandising",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=175",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=175",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "16623",
+    "title": "Video Game Animation",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=206",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=206",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "16656",
+    "title": "Graphic and Multimedia Design",
+    "award": "A.A. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=162",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=162",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "16690",
+    "title": "Paralegal Studies",
+    "award": "A.A. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=242",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=242",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "16834",
+    "title": "American Sign Language Interpreting",
+    "award": "A.A. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=288",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=288",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "16961",
+    "title": "Culinary Arts",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=120",
+    "coverage": 0.938,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=120",
+    "was_coverage": 0.938,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "17030",
+    "title": "Construction Management",
+    "award": "A.S. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=116",
+    "coverage": 0.722,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=116",
+    "was_coverage": 0.722,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "17031",
+    "title": "Land Surveying",
+    "award": "A.S. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=189",
+    "coverage": 0.917,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=189",
+    "was_coverage": 0.917,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "17569",
+    "title": "Building Inspection",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=116",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=116",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "17747",
+    "title": "Theatre",
+    "award": "A.A. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=298",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=298",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "17748",
+    "title": "Theatre - Performance",
+    "award": "A.A. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=298",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=298",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "17967",
+    "title": "Architectural Drafting & Technology",
+    "award": "A.S. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=72",
+    "coverage": 0.952,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=72",
+    "was_coverage": 0.952,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "17973",
+    "title": "Liberal Arts and Sciences: Mathematics and Science Emphasis",
+    "award": "A.A. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=194",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=194",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "18948",
+    "title": "Animation Production",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=203",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=203",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "18949",
+    "title": "Computer Animation",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=204",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=204",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "18950",
+    "title": "Construction Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=116",
+    "coverage": 0.722,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=116",
+    "was_coverage": 0.722,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "18951",
+    "title": "Land Surveying",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=189",
+    "coverage": 0.917,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=189",
+    "was_coverage": 0.917,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "18993",
+    "title": "Water Systems Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=303",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=303",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "20447",
+    "title": "Human Resources Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=93",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=93",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "20451",
+    "title": "Administrative Assistant",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=107",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=107",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "20452",
+    "title": "Computer Applications",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=106",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=106",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "20458",
+    "title": "Network Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=228",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=228",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "20460",
+    "title": "Welding Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=305",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=305",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "20463",
+    "title": "Graphic and Multimedia Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=162",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=162",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "20465",
+    "title": "Administration of Justice",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=66",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=66",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "20466",
+    "title": "Fire Technology : Pre-Service",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=152",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=152",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "30293",
+    "title": "Medical Laboratory Technician",
+    "award": "A.S. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=210",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=210",
+    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
@@ -4143,113 +4473,73 @@
     "was_method": "not_found"
    },
    {
-    "control_number": "30836",
-    "title": "Sociology",
+    "control_number": "31733",
+    "title": "Geography",
     "award": "A.A- T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=292",
-    "coverage": 0.923,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=293",
-    "was_coverage": 0.923,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "30838",
-    "title": "Psychology",
-    "award": "A.A- T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=263",
-    "coverage": 0.95,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=265",
-    "was_coverage": 0.95,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "31354",
-    "title": "Theatre Arts",
-    "award": "A.A- T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=297",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=155",
     "coverage": 1.0,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=298",
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=155",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "31357",
+    "control_number": "32656",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=129",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=129",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "32696",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=159",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=159",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "32704",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=113",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=113",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "32727",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=79",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=79",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "32817",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=65",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=65",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "32895",
     "title": "Philosophy",
-    "award": "A.A. Degree",
+    "award": "A.A- T Degree",
     "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=249",
     "coverage": 1.0,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=250",
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=249",
     "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "32389",
-    "title": "Political Science",
-    "award": "A.A- T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=261",
-    "coverage": 1.0,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=262",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "32723",
-    "title": "Kinesiology",
-    "award": "A.A- T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=178",
-    "coverage": 0.933,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=178",
-    "was_coverage": 0.933,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "32815",
-    "title": "Spanish",
-    "award": "A.A- T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=216",
-    "coverage": 1.0,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=217",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "32829",
-    "title": "History",
-    "award": "A.A- T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=166",
-    "coverage": 1.0,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=167",
-    "was_coverage": 0.917,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "32896",
-    "title": "English",
-    "award": "A.A- T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=141",
-    "coverage": 0.963,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=142",
-    "was_coverage": 0.963,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "33581",
-    "title": "Journalism",
-    "award": "A.A- T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=202",
-    "coverage": 0.929,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=202",
-    "was_coverage": 0.857,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "33814",
-    "title": "Sustainable Design and Development",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=73",
-    "coverage": 0.96,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=74",
-    "was_coverage": 0.96,
     "was_method": "pdf_pages"
    },
    {
@@ -4263,13 +4553,63 @@
     "was_method": "not_found"
    },
    {
-    "control_number": "36117",
-    "title": "Social Justice Studies",
-    "award": "A.A- T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=293",
-    "coverage": 0.778,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=293",
-    "was_coverage": 0.778,
+    "control_number": "35653",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=87",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=87",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "36092",
+    "title": "Culinary Arts",
+    "award": "A.A. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=120",
+    "coverage": 0.938,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=120",
+    "was_coverage": 0.938,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "36124",
+    "title": "Web Development",
+    "award": "A.S. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=107",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=107",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "36125",
+    "title": "Web Development",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=108",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=108",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "36156",
+    "title": "Web Publishing and Design",
+    "award": "A.S. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=108",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=108",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "36163",
+    "title": "Web Publishing and Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=109",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=109",
+    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
@@ -4283,16 +4623,6 @@
     "was_method": "not_found"
    },
    {
-    "control_number": "36570",
-    "title": "Environmental Studies",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=149",
-    "coverage": 0.929,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=149",
-    "was_coverage": 0.857,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "36619",
     "title": "Spanish for Healthcare Workers",
     "award": "Noncredit program",
@@ -4303,23 +4633,13 @@
     "was_method": "not_found"
    },
    {
-    "control_number": "36648",
-    "title": "Environmental Science",
-    "award": "A.S. T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=148",
-    "coverage": 1.0,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=148",
-    "was_coverage": 0.947,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "36793",
-    "title": "Hospitality Management",
-    "award": "A.S. T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=170",
-    "coverage": 1.0,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=170",
-    "was_coverage": 0.909,
+    "control_number": "36794",
+    "title": "Music",
+    "award": "A.A- T Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=219",
+    "coverage": 0.875,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=219",
+    "was_coverage": 0.875,
     "was_method": "pdf_pages"
    },
    {
@@ -4353,13 +4673,43 @@
     "was_method": "not_found"
    },
    {
-    "control_number": "37448",
-    "title": "Global Studies",
-    "award": "A.A- T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=160",
-    "coverage": 0.889,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=161",
-    "was_coverage": 0.611,
+    "control_number": "36984",
+    "title": "Technical Theatre",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=299",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=299",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "36993",
+    "title": "Technical Theatre",
+    "award": "A.A. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=299",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=299",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "36998",
+    "title": "Construction Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=116",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=116",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "37004",
+    "title": "Construction Technology",
+    "award": "A.S. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=116",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=116",
+    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
@@ -4371,36 +4721,6 @@
     "was_url": null,
     "was_coverage": 0.0,
     "was_method": "not_found"
-   },
-   {
-    "control_number": "37648",
-    "title": "Global Competencies",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=161",
-    "coverage": 0.912,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=161",
-    "was_coverage": 0.853,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "37867",
-    "title": "Economics",
-    "award": "A.A- T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=134",
-    "coverage": 1.0,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=135",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "37953",
-    "title": "Anthropology",
-    "award": "A.A- T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=69",
-    "coverage": 0.895,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=69",
-    "was_coverage": 0.895,
-    "was_method": "pdf_pages"
    },
    {
     "control_number": "37994",
@@ -4503,16 +4823,6 @@
     "was_method": "not_found"
    },
    {
-    "control_number": "38552",
-    "title": "Liberal Arts and Sciences: Health Science Emphasis",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=193",
-    "coverage": 0.895,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=193",
-    "was_coverage": 0.895,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "38685",
     "title": "Digital Publishing for the Office",
     "award": "Noncredit program",
@@ -4613,26 +4923,6 @@
     "was_method": "not_found"
    },
    {
-    "control_number": "40041",
-    "title": "Cal-LAW Scholar",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=245",
-    "coverage": 0.815,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=245",
-    "was_coverage": 0.815,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "40090",
-    "title": "Applied GIS and Spatial Studies",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=156",
-    "coverage": 0.951,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=156",
-    "was_coverage": 0.951,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "40224",
     "title": "English as a Second Language (ESL) for College Preparation II",
     "award": "Noncredit program",
@@ -4683,22 +4973,152 @@
     "was_method": "not_found"
    },
    {
-    "control_number": "40383",
-    "title": "Advanced Diagnosis and Performance",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=84",
+    "control_number": "40362",
+    "title": "Metal Fabrication",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=306",
+    "coverage": 0.857,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=306",
+    "was_coverage": 0.857,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "40364",
+    "title": "Semi-Automatic Welding",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=306",
     "coverage": 1.0,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=84",
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=306",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "40384",
-    "title": "Advanced Diagnosis and Performance",
+    "control_number": "40387",
+    "title": "Paralegal Studies",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=242",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=242",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "40388",
+    "title": "Architectural Computer Aided Drafting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=73",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=73",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "40389",
+    "title": "Engine Repair",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=84",
     "coverage": 1.0,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=84",
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=84",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "40411",
+    "title": "Quick Service Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=84",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=84",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "40415",
+    "title": "Transmission Service Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=84",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=84",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "40417",
+    "title": "Wine and Beer Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=310",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=310",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "40418",
+    "title": "Gas Tungsten Arc Welding",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=305",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=305",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "40419",
+    "title": "Robotic Welding Automation",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=306",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=306",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "40420",
+    "title": "Structural Steel Welding",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=306",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=306",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "40486",
+    "title": "Interior Design – Set Decorator for TV and Film",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=175",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=175",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "40494",
+    "title": "Medical Office Administrative Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=109",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=109",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "40631",
+    "title": "Law Enforcement Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=191",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=191",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "40666",
+    "title": "Law Enforcement Technology",
+    "award": "A.S. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=191",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=191",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -4733,16 +5153,6 @@
     "was_method": "not_found"
    },
    {
-    "control_number": "41576",
-    "title": "Music",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=219",
-    "coverage": 0.733,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=220",
-    "was_coverage": 0.733,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "41598",
     "title": "Real Estate",
     "award": "Noncredit program",
@@ -4773,16 +5183,6 @@
     "was_method": "not_found"
    },
    {
-    "control_number": "41713",
-    "title": "Business Administration 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=92",
-    "coverage": 0.929,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=92",
-    "was_coverage": 0.786,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "42067",
     "title": "Emerging Leaders",
     "award": "Noncredit program",
@@ -4791,6 +5191,26 @@
     "was_url": null,
     "was_coverage": 0.0,
     "was_method": "not_found"
+   },
+   {
+    "control_number": "42191",
+    "title": "Electronic Music",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=221",
+    "coverage": 0.9,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=221",
+    "was_coverage": 0.9,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "42193",
+    "title": "Music Composition",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=221",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=221",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "42217",
@@ -4863,6 +5283,16 @@
     "was_method": "not_found"
    },
    {
+    "control_number": "42670",
+    "title": "Cybersecurity",
+    "award": "A.S. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=123",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=123",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
     "control_number": "42674",
     "title": "Certified Paralegal Exam Test Preparation",
     "award": "Noncredit program",
@@ -4871,6 +5301,36 @@
     "was_url": null,
     "was_coverage": 0.0,
     "was_method": "not_found"
+   },
+   {
+    "control_number": "42737",
+    "title": "Tooling and Milling",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=196",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=196",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "42843",
+    "title": "Clinical Laboratory Scientist Program",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=101",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=101",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "42861",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=104",
+    "coverage": 0.958,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=104",
+    "was_coverage": 0.958,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "42930",
@@ -4913,16 +5373,6 @@
     "was_method": "not_found"
    },
    {
-    "control_number": "43271",
-    "title": "Law, Public Policy, and Society",
-    "award": "A.A- T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=242",
-    "coverage": 0.7,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
     "control_number": "43310",
     "title": "Crime and Intelligence Analysis",
     "award": "Noncredit program",
@@ -4958,9 +5408,9 @@
     "award": "Noncredit program",
     "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=353",
     "coverage": 1.0,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=352",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
     "control_number": "43386",
@@ -5003,13 +5453,13 @@
     "was_method": "not_found"
    },
    {
-    "control_number": "43549",
-    "title": "Commercial Music",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=220",
-    "coverage": 0.818,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=220",
-    "was_coverage": 0.818,
+    "control_number": "43392",
+    "title": "Commercial Photography",
+    "award": "A.A. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=252",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=252",
+    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
@@ -5038,7 +5488,7 @@
     "award": "Noncredit program",
     "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=352",
     "coverage": 1.0,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=352",
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=352",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -5051,6 +5501,16 @@
     "was_url": null,
     "was_coverage": 0.0,
     "was_method": "not_found"
+   },
+   {
+    "control_number": "43916",
+    "title": "American Sign Language – Deaf Studies",
+    "award": "A.A. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=288",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=288",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "44078",
@@ -5113,16 +5573,6 @@
     "was_method": "not_found"
    },
    {
-    "control_number": "44260",
-    "title": "Building Performance",
-    "award": "Baccalaureate of Science (B.S.) Degree.",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=71",
-    "coverage": 0.976,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=71",
-    "was_coverage": 0.976,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "44273",
     "title": "Wilderness Leadership",
     "award": "Noncredit program",
@@ -5131,6 +5581,16 @@
     "was_url": null,
     "was_coverage": 0.0,
     "was_method": "not_found"
+   },
+   {
+    "control_number": "44285",
+    "title": "Dance",
+    "award": "A.A. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=124",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=124",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "44310",
@@ -5151,6 +5611,46 @@
     "was_url": null,
     "was_coverage": 0.0,
     "was_method": "not_found"
+   },
+   {
+    "control_number": "44382",
+    "title": "Baking and Pastry",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=121",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=121",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "44414",
+    "title": "Pharmacy Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=247",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=247",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "44447",
+    "title": "Physical Therapist Assistant",
+    "award": "A.S. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=255",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=255",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "44458",
+    "title": "Pharmacy Technology",
+    "award": "A.S. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=247",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=247",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "44478",
@@ -5223,16 +5723,6 @@
     "was_method": "not_found"
    },
    {
-    "control_number": "44657",
-    "title": "Public Health",
-    "award": "A.S. T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=163",
-    "coverage": 0.967,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=164",
-    "was_coverage": 0.967,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "44804",
     "title": "Fundamental Skills in Diagnostic Medical Sonography",
     "award": "Noncredit program",
@@ -5283,6 +5773,16 @@
     "was_method": "not_found"
    },
    {
+    "control_number": "45077",
+    "title": "Occupational Therapy Assistant",
+    "award": "A.S. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=237",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=237",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
     "control_number": "45148",
     "title": "NCEES Fundamentals of Surveying (FS) Exam Test Preparation",
     "award": "Noncredit program",
@@ -5293,14 +5793,24 @@
     "was_method": "not_found"
    },
    {
-    "control_number": "45284",
-    "title": "CalGETC",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=242",
-    "coverage": 0.905,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "control_number": "45180",
+    "title": "Diagnostic Medical Sonography",
+    "award": "A.S. Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=126",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=126",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "45268",
+    "title": "Sustainable Resources, Energy Management, and Environmental Ethics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=150",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=150",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "45340",
@@ -5323,16 +5833,6 @@
     "was_method": "not_found"
    },
    {
-    "control_number": "45528",
-    "title": "Modern Policing",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=66",
-    "coverage": 0.878,
-    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=66",
-    "was_coverage": 0.854,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "45610",
     "title": "Essential Skills for Microsoft Windows and Keyboarding",
     "award": "Noncredit program",
@@ -5353,6 +5853,16 @@
     "was_method": "not_found"
    },
    {
+    "control_number": "45756",
+    "title": "UCTP Chemistry",
+    "award": "A.S. T Degree",
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=97",
+    "coverage": 1.0,
+    "was_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=97",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
     "control_number": "45876",
     "title": "Mock Trial",
     "award": "Noncredit program",
@@ -5364,832 +5874,7 @@
    }
   ],
   "held_worse_window": [],
-  "held_no_gain": [
-   {
-    "control_number": "02275",
-    "title": "Administrative Assistant",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=107",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "02276",
-    "title": "New Media Journalism",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=205",
-    "coverage": 0.919,
-    "was_coverage": 0.919
-   },
-   {
-    "control_number": "02279",
-    "title": "Engineering",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=138",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "02284",
-    "title": "Architectural Drafting",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=73",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "02285",
-    "title": "Welding Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=305",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "02286",
-    "title": "Art",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=78",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "02288",
-    "title": "French",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=214",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "02290",
-    "title": "Spanish",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=216",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "02294",
-    "title": "English",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=141",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "02297",
-    "title": "Mathematics",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=199",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "02302",
-    "title": "Administration of Justice",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=65",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "02305",
-    "title": "History",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=167",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "02309",
-    "title": "Hospitality Management",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=170",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "07287",
-    "title": "Biological Sciences",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=88",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "10297",
-    "title": "Human Resources Management",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=93",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "10298",
-    "title": "Computer Applications",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=107",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "10307",
-    "title": "Early Childhood Education - Preschool",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=130",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "10308",
-    "title": "Early Childhood Education – Supervision & Administration of Children's Programs",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=131",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "10309",
-    "title": "Early Childhood Education - Infant/Toddler",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=130",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "10310",
-    "title": "Early Childhood Education - School-Age",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=130",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "10311",
-    "title": "Early Childhood Education - Special Education",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=130",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "10564",
-    "title": "Fire Technology: Pre-Service",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=152",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "10924",
-    "title": "Water Systems Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=303",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "12120",
-    "title": "Network Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=229",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "14647",
-    "title": "Animation Production",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=203",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "14706",
-    "title": "Commercial Photography",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=252",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "15316",
-    "title": "Interior Decorating – Home Staging and Visual Merchandising",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=175",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "16623",
-    "title": "Video Game Animation",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=206",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "16656",
-    "title": "Graphic and Multimedia Design",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=162",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "16690",
-    "title": "Paralegal Studies",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=242",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "16834",
-    "title": "American Sign Language Interpreting",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=288",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "16961",
-    "title": "Culinary Arts",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=120",
-    "coverage": 0.938,
-    "was_coverage": 0.938
-   },
-   {
-    "control_number": "17030",
-    "title": "Construction Management",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=116",
-    "coverage": 0.722,
-    "was_coverage": 0.722
-   },
-   {
-    "control_number": "17031",
-    "title": "Land Surveying",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=189",
-    "coverage": 0.917,
-    "was_coverage": 0.917
-   },
-   {
-    "control_number": "17569",
-    "title": "Building Inspection",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=116",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "17747",
-    "title": "Theatre",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=298",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "17748",
-    "title": "Theatre - Performance",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=298",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "17967",
-    "title": "Architectural Drafting & Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=72",
-    "coverage": 0.952,
-    "was_coverage": 0.952
-   },
-   {
-    "control_number": "17973",
-    "title": "Liberal Arts and Sciences: Mathematics and Science Emphasis",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=194",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "18948",
-    "title": "Animation Production",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=203",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "18949",
-    "title": "Computer Animation",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=204",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "18950",
-    "title": "Construction Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=116",
-    "coverage": 0.722,
-    "was_coverage": 0.722
-   },
-   {
-    "control_number": "18951",
-    "title": "Land Surveying",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=189",
-    "coverage": 0.917,
-    "was_coverage": 0.917
-   },
-   {
-    "control_number": "18993",
-    "title": "Water Systems Technology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=303",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "20447",
-    "title": "Human Resources Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=93",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "20451",
-    "title": "Administrative Assistant",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=107",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "20452",
-    "title": "Computer Applications",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=106",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "20458",
-    "title": "Network Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=228",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "20460",
-    "title": "Welding Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=305",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "20463",
-    "title": "Graphic and Multimedia Design",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=162",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "20465",
-    "title": "Administration of Justice",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=66",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "20466",
-    "title": "Fire Technology : Pre-Service",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=152",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "30293",
-    "title": "Medical Laboratory Technician",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=210",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "31733",
-    "title": "Geography",
-    "award": "A.A- T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=155",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "32656",
-    "title": "Early Childhood Education",
-    "award": "A.S. T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=129",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "32696",
-    "title": "Geology",
-    "award": "A.S. T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=159",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "32704",
-    "title": "Computer Science",
-    "award": "A.S. T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=113",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "32727",
-    "title": "Studio Arts",
-    "award": "A.A- T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=79",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "32817",
-    "title": "Administration of Justice",
-    "award": "A.S. T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=65",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "32895",
-    "title": "Philosophy",
-    "award": "A.A- T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=249",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "35653",
-    "title": "Biology",
-    "award": "A.S. T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=87",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "36092",
-    "title": "Culinary Arts",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=120",
-    "coverage": 0.938,
-    "was_coverage": 0.938
-   },
-   {
-    "control_number": "36124",
-    "title": "Web Development",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=107",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "36125",
-    "title": "Web Development",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=108",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "36156",
-    "title": "Web Publishing and Design",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=108",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "36163",
-    "title": "Web Publishing and Design",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=109",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "36794",
-    "title": "Music",
-    "award": "A.A- T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=219",
-    "coverage": 0.875,
-    "was_coverage": 0.875
-   },
-   {
-    "control_number": "36984",
-    "title": "Technical Theatre",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=299",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "36993",
-    "title": "Technical Theatre",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=299",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "36998",
-    "title": "Construction Technology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=116",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "37004",
-    "title": "Construction Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=116",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "40362",
-    "title": "Metal Fabrication",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=306",
-    "coverage": 0.857,
-    "was_coverage": 0.857
-   },
-   {
-    "control_number": "40364",
-    "title": "Semi-Automatic Welding",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=306",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "40387",
-    "title": "Paralegal Studies",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=242",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "40388",
-    "title": "Architectural Computer Aided Drafting",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=73",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "40389",
-    "title": "Engine Repair",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=84",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "40411",
-    "title": "Quick Service Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=84",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "40415",
-    "title": "Transmission Service Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=84",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "40417",
-    "title": "Wine and Beer Studies",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=310",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "40418",
-    "title": "Gas Tungsten Arc Welding",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=305",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "40419",
-    "title": "Robotic Welding Automation",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=306",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "40420",
-    "title": "Structural Steel Welding",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=306",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "40486",
-    "title": "Interior Design – Set Decorator for TV and Film",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=175",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "40494",
-    "title": "Medical Office Administrative Assistant",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=109",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "40631",
-    "title": "Law Enforcement Technology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=191",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "40666",
-    "title": "Law Enforcement Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=191",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "42191",
-    "title": "Electronic Music",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=221",
-    "coverage": 0.9,
-    "was_coverage": 0.9
-   },
-   {
-    "control_number": "42193",
-    "title": "Music Composition",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=221",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "42670",
-    "title": "Cybersecurity",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=123",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "42737",
-    "title": "Tooling and Milling",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=196",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "42843",
-    "title": "Clinical Laboratory Scientist Program",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=101",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "42861",
-    "title": "Communication Studies 2.0",
-    "award": "A.A- T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=104",
-    "coverage": 0.958,
-    "was_coverage": 0.958
-   },
-   {
-    "control_number": "43392",
-    "title": "Commercial Photography",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=252",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "43916",
-    "title": "American Sign Language – Deaf Studies",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=288",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "44285",
-    "title": "Dance",
-    "award": "A.A. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=124",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "44382",
-    "title": "Baking and Pastry",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=121",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "44414",
-    "title": "Pharmacy Technology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=247",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "44447",
-    "title": "Physical Therapist Assistant",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=255",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "44458",
-    "title": "Pharmacy Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=247",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "45077",
-    "title": "Occupational Therapy Assistant",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=237",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "45180",
-    "title": "Diagnostic Medical Sonography",
-    "award": "A.S. Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=126",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "45268",
-    "title": "Sustainable Resources, Energy Management, and Environmental Ethics",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=150",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "45756",
-    "title": "UCTP Chemistry",
-    "award": "A.S. T Degree",
-    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=97",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   }
-  ],
+  "held_no_gain": [],
   "held_opens_on_list": [],
   "refused_passing": [],
   "forced_unbound": []
@@ -7188,5 +6873,10 @@
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=357"
   }
  },
- "run": "44881873546"
+ "staged_from": {
+  "run": "44881873546",
+  "proof": "text sha256 of 248 programs",
+  "pages_loaded": 0
+ },
+ "run": "44886119075"
 }
