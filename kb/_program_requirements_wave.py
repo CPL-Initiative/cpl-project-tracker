@@ -308,7 +308,8 @@ def price_main(args) -> int:
     if only:
         got["only"] = sorted(only)
         got["only_priced"] = sorted((listed & only) | forced)
-        got["not_named"] = sorted(listed - only)
+        # The capture narrows its list itself when it read ONLY (would_extract's not_named); either way they show.
+        got["not_named"] = sorted((listed - only) | {str(x.get("control_number")) for x in would.get("not_named") or []})
     refused = None
     if only_bad:
         refused = "only= refused: " + "; ".join(only_bad)
