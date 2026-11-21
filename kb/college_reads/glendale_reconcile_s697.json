@@ -1,0 +1,22 @@
+{
+ "_readme": "S697 (worker piles2), Glendale's reconcile_steps lever (33). The 2026-2027 Coursedog completion-requirements pages of the filed records whose blocks sum unequal to the printed total and whose notes say the page's own figures disagree or print a repeat: Addiction Studies Counseling 02570 (AD ST 50 printed '2 x 1'), Fitness Specialist 12574 and 39905 (18-23 against 21-26), Marketing II 19566 (18 against 15), Tax Preparer 12570 (19 against 20), and French Language 36711 (the list a student takes only 'If 20 units have not been reached'). No model call.",
+ "college": "Glendale Community College",
+ "questions": {
+  "total_words": "Where and in what words each program prints its total, its lists and the units beside each course."
+ },
+ "keywords": [
+  "TOTAL\\s+UNITS",
+  "Required\\s+Units",
+  "2\\s*x\\s*1",
+  "CHOOSE",
+  "If\\s+20\\s+units"
+ ],
+ "pages": [
+  {"answers": ["total_words"], "url": "https://catalog.glendale.edu/programs/ASC-AS/completion-requirements-zaZdl"},
+  {"answers": ["total_words"], "url": "https://catalog.glendale.edu/programs/FITS-C/completion-requirements-zaZdl"},
+  {"answers": ["total_words"], "url": "https://catalog.glendale.edu/programs/FITS-AS/completion-requirements-zaZdl"},
+  {"answers": ["total_words"], "url": "https://catalog.glendale.edu/programs/MRKTII-C/completion-requirements-zaZdl"},
+  {"answers": ["total_words"], "url": "https://catalog.glendale.edu/programs/TF-C/completion-requirements-zaZdl"},
+  {"answers": ["total_words"], "url": "https://catalog.glendale.edu/programs/FRENL%20-%20AA/completion-requirements-zaZdl"}
+ ]
+}
