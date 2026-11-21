@@ -31,15 +31,23 @@ memory by kb/_pile_mint_dryrun.py's own compute_plan from the committed files; t
 module's functions over the same inputs. Writes kb/status/held_subject_codes.json. The only date written is the
 plan's own (today's, when the plan is computed in memory). A rerun on the same inputs writes the same bytes.
 
-GUARD. A held count that falls by more than half against the committed file stops the write with a warning (a plan
-whose held reasons were renamed would otherwise publish a near-empty list without a word), unless --expect-fall names
-the fall as expected.
+THE DAILY RUN (scripts/daily_build.sh, after the closest M-ID and the local subject titles; S695). The plan is computed
+in memory, so the run writes nothing under kb/pile_mint_out/. The file stores a fingerprint of what decides the list:
+the document less its _sources, whose plan date and identity-file stamp move every run. The builder reads the dry run's
+inputs through its load_inputs, so the fingerprint is taken over the list it produces, never over those files' bytes.
+With --if-changed a run whose fingerprint matches the file's leaves the file untouched.
 
-  python3 kb/_held_subject_codes.py [--plan PATH] [--out PATH] [--expect-fall]
+GUARD (held_of). A plan with none of the held reasons, a held reason that is not a list, or a row missing a field
+stops the build. A held count that falls by more than half against the committed file stops the write with a warning
+(a plan whose held lists changed meaning would otherwise publish a near-empty list without a word), unless
+--expect-fall names the fall as expected.
+
+  python3 kb/_held_subject_codes.py [--plan PATH] [--out PATH] [--if-changed] [--expect-fall]
 """
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -58,18 +66,6 @@ ROUTE_NAMES = {"ii": "college_subject_code", "iii": "statewide_subject_code"}
 # The plan's held reasons a decided common subject code for the course's local subject would help release.
 HELD_REASONS = ("no_route_gives_a_subj4", "route_i_below_its_floor", "shell_title_no_convention")
 FALL_LIMIT = 0.5
-
-
-def held_of(plan, ruled_kinds=()):
-    """The plan's held courses a code decision bears on, each with its `reason` (one of HELD_REASONS). A shell title
-    of a ruled kind is left out: the ruling, never a code decision, places it."""
-    out = []
-    for reason in HELD_REASONS:
-        for r in (plan.get("held") or {}).get(reason) or []:
-            if reason == "shell_title_no_convention" and r.get("kind") in ruled_kinds:
-                continue
-            out.append(dict(r, reason=reason))
-    return out
 
 
 def fall_guard(new_held, committed_path, expect_fall=False):
@@ -277,10 +273,67 @@ def dump(doc):
     return json.dumps(doc, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n"
 
 
+def fingerprint(doc):
+    """sha256 over what decides the list: the document less _sources (the plan's date and the identity file's stamp
+    move every run while no held course moves) and less this field. Keys sorted, so a stable order."""
+    body = {k: v for k, v in (doc or {}).items() if k not in ("_sources", "fingerprint")}
+    return hashlib.sha256(dump(body).encode("utf-8")).hexdigest()
+
+
+def held_of(plan, ruled_kinds=(), committed=None, expect_fall=False):
+    """(held rows, floors). The held courses a code decision bears on, each with its `reason` (one of HELD_REASONS); a
+    shell title of a ruled kind is left out, since the ruling places it. Exits when the plan no longer has that shape
+    (a renamed key must stop the build, never write an empty list over yesterday's file), and when the count falls by
+    more than half against the committed file without expect_fall."""
+    lists = (plan.get("held") or {})
+    thresholds = (plan.get("self_recall") or {}).get("thresholds")
+    present = [k for k in HELD_REASONS if k in lists]
+    if not present or not isinstance(thresholds, dict) or any(not isinstance(lists[k], list) for k in present):
+        raise SystemExit("ABORT: the pile mint plan has none of the held lists " + ", ".join(HELD_REASONS)
+                         + " (or one is not a list), or no self_recall.thresholds; kb/_pile_mint_dryrun.py changed "
+                         "its shape. Nothing written.")
+    held = []
+    for reason in present:
+        for r in lists[reason]:
+            if reason == "shell_title_no_convention" and isinstance(r, dict) and r.get("kind") in ruled_kinds:
+                continue
+            held.append(dict(r, reason=reason) if isinstance(r, dict) else r)
+    need = ("college", "control_number", "subject", "title")
+    bad = [r for r in held if not isinstance(r, dict) or any(k not in r for k in need)]
+    if bad:
+        raise SystemExit(f"ABORT: {len(bad)} held rows lack one of {', '.join(need)}; nothing written.")
+    if committed:
+        warn = fall_guard(len(held), committed, expect_fall)
+        if warn:
+            raise SystemExit("[held_subject_codes] WARNING: " + warn)
+    return held, thresholds
+
+
+def write_if_changed(doc, out, if_changed=False):
+    """Stamp the fingerprint and write; with if_changed, leave a file whose content fingerprints the same untouched
+    (its fingerprint recomputed from its content, so a file written before the field existed compares too). True when
+    written."""
+    fp = fingerprint(doc)
+    doc["fingerprint"] = fp
+    if if_changed and os.path.exists(out):
+        try:
+            with open(out, encoding="utf-8") as f:
+                was = fingerprint(json.load(f))
+        except (OSError, ValueError):
+            was = None
+        if was == fp:
+            print(f"[held_subject_codes] the list is unchanged (fingerprint {fp[:12]}); {out} left as built")
+            return False
+    with open(out, "w", encoding="utf-8") as f:
+        f.write(dump(doc))
+    return True
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--plan", default=None, help="a plan.json kb/_pile_mint_dryrun.py wrote; default: computed in memory")
     ap.add_argument("--out", default=os.path.join(ROOT, OUT))
+    ap.add_argument("--if-changed", action="store_true", help="leave the file untouched when the list did not change")
     ap.add_argument("--expect-fall", action="store_true", help="the held count may fall by more than half")
     a = ap.parse_args(argv)
     import _pile_mint_dryrun as pm  # noqa: E402  (load_inputs, compute_plan, holders, own_subj4, vote_tables)
@@ -292,8 +345,8 @@ def main(argv=None):
     else:
         plan = pm.compute_plan(inp, pm.date.today().isoformat())
         plan_from = "computed in memory by kb/_pile_mint_dryrun.py compute_plan"
-    held = held_of(plan, tuple(getattr(pm, "RULED_BY_KIND", {})))
-    thresholds = (plan.get("self_recall") or {}).get("thresholds") or {}
+    held, thresholds = held_of(plan, tuple(getattr(pm, "RULED_BY_KIND", {})), committed=a.out,
+                               expect_fall=a.expect_fall)
     col, state = vote_tables(inp, pm)
     with open(os.path.join(ROOT, TITLES), encoding="utf-8") as f:
         titles_doc = json.load(f)
@@ -302,12 +355,8 @@ def main(argv=None):
                "course_list": (plan.get("inputs") or {}).get("course_list"),
                "printed_names": TITLES, "subject_map": "kb/reference/subject_discipline_map.json"}
     doc = build(held, thresholds, col, state, inp["disc_map"], titles_doc, short_max=pm.SUBJ_SHORT, sources=sources)
-    warn = fall_guard(doc["totals"]["held"], a.out, a.expect_fall)
-    if warn:
-        print("[held_subject_codes] WARNING: " + warn)
-        return 1
-    with open(a.out, "w", encoding="utf-8") as f:
-        f.write(dump(doc))
+    if not write_if_changed(doc, a.out, a.if_changed):
+        return 0
     t = doc["totals"]
     print(f"[held_subject_codes] {t['held']} held courses, {t['codes']} codes, {t['pairs']} college-and-code pairs; "
           f"the top 20 codes release {t['top_20_release']}")

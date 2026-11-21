@@ -114,7 +114,7 @@ if plans:
     with open(plans[-1], encoding="utf-8") as f:
         plan = json.load(f)
     ruled = tuple(k for r in plan.get("ruled_kinds") or [] for k in r.get("kinds") or [])
-    held = hsc.held_of(plan, ruled)
+    held = hsc.held_of(plan, ruled)[0]
     invariants(hsc.build(held, plan["self_recall"]["thresholds"], {}, {}, {}, {}), len(held), "committed plan")
     check("(7) the committed plan's held list matches its own measures, reason by reason",
           all(sum(1 for h in held if h["reason"] == k) <= plan["measures"]["held"].get(k, 0) for k in hsc.HELD_REASONS)
@@ -130,7 +130,8 @@ PLAN = {"held": {
                                        kind="supervised tutoring")],
     "duplicate_of_an_existing_m_id_held_for_assign": [row("Gamma College", "N5", "MATH", "Trigonometry")],
     "ruled_kind_title_names_more_than_the_kind": [row("Gamma College", "N6", "TUTR", "Supervised Tutoring in Math")]}}
-h8 = hsc.held_of(PLAN, ("supervised tutoring", "tutoring"))
+PLAN["self_recall"] = {"thresholds": FLOORS}
+h8 = hsc.held_of(PLAN, ("supervised tutoring", "tutoring"))[0]
 check("(8) held_of reads no route, route (i) under its floor and a shell title with no convention",
       sorted(h["control_number"] for h in h8) == ["N1", "N2", "N3"])
 check("(8) each course carries its reason", {h["control_number"]: h["reason"] for h in h8}
@@ -156,6 +157,14 @@ check("(9) a flag naming the fall as expected lets it through", hsc.fall_guard(3
 check("(9) a fall of half or less, a rise, or no committed file goes ahead",
       hsc.fall_guard(472, gp) is None and hsc.fall_guard(1341, gp) is None
       and hsc.fall_guard(3, gp + ".absent") is None)
+try:
+    hsc.held_of(PLAN, ("supervised tutoring", "tutoring"), committed=gp)
+    stopped = False
+except SystemExit as e:
+    stopped = "943 to 3" in str(e)
+check("(9) held_of stops the build on the fall, naming the counts", stopped)
+check("(9) held_of with expect_fall reads the three courses",
+      len(hsc.held_of(PLAN, ("supervised tutoring", "tutoring"), committed=gp, expect_fall=True)[0]) == 3)
 
 committed = os.path.join(ROOT, hsc.OUT)
 if os.path.exists(committed):
