@@ -699,3 +699,7 @@ Moved from docs/INDEX.md's update history (S507):
 - 2026-11-01 (Exhibits tab build, SkyInkberry): IB on the AP pattern, brand-family's `ib` lane and the reference fold, 49 IB credentials into 24 with one issuer name (#2632); Open Asks Sheet 150 (the IB fold carried out, CLEP's names held); the CER lane trimmed under its budget.
 
 - 2026-11-01 (Sam's session, SkyBlatusoff S541): the Exhibits List grew live from its preview (find by place, find and replace, AI sort with suggested folds and Re-point, Edit every row, Basis, phone resize, #2649-#2651); the exhibit-to-cert link, ASE first (#2652); the credential harvest moved into the CPL queue as step 10 (#2653); the statewide flag's 84-of-152 finding in the authoritative-signal note
+
+## Moved from docs/INDEX.md Update history (S695, 2026-11-21)
+
+- 2026-11-19 (S687 SkyPipit, Sam's session, full checkpoint): #3565 (the S685 and S687 wave: nine colleges' reread posted, 164 replaced and 45 inserted), #3564 (the display's confirming read pages by key), #3567 (display build 3361e3aa5b7d confirmed on its own read; census 5,145 left), #3569 (rule D from committed previews), #3570 (Commons Needs you); new KB note `methodology-a-confirming-read-pages-by-key-never-by-offset`; harvest and Commons lessons compacted to their archives.

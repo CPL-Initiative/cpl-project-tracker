@@ -2975,11 +2975,13 @@
       "methodology",
       "program-requirements",
       "catalog-harvest",
-      "matching"
+      "matching",
+      "m-id",
+      "mint"
      ],
      "title": "A new matcher is gated by a self-recall test on records whose answer is already held",
      "type": "methodology",
-     "updated": "2026-11-14"
+     "updated": "2026-11-21"
     },
     {
      "created": "2026-08-13",
@@ -17386,8 +17388,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 654,
+   "count": 655,
    "docs": [
+    {
+     "created": "2026-11-21",
+     "governs": [],
+     "n": 696,
+     "path": "docs/session_696_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 696 handoff (from SkyShearwater, the plain session of 2026-11-21 that set the mint's floor and minted the first pile record)",
+     "type": null,
+     "updated": "2026-11-21"
+    },
     {
      "created": "2026-11-21",
      "governs": [],
@@ -28316,5 +28332,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1538
+ "total": 1539
 }

@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 694,
-  "moniker": "SkyPetrel",
+  "session": 695,
+  "moniker": "SkyShearwater",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_695_handoff.md",
+  "handoff": "docs/session_696_handoff.md",
   "calls": [
     {
       "title": "Confirm Kinesiology's 627 where the descriptions and TOP both agree?",
@@ -103,13 +103,25 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-21T00:34:45Z",
+  "written_at": "2026-11-21T03:53:25Z",
   "project": "course",
   "next_step": {
-    "title": "Mint the courses the pile plan names",
-    "text": "A dry run plans the mint for the Needs an M-ID pile: 58 catalog records holding 140 courses and 514 stand-alone records, with 944 courses held because no route gives them a common subject code. Next, a second read of the plan, then the apply under the re-mint playbook."
+    "title": "Assign the other tutoring titles under LSKL M9004",
+    "text": "The first pile-minted record, LSKL M9004 Supervised Tutoring, holds 90 noncredit courses at 80 colleges. Of the 168 other tutoring titles, 76 name a subject and go to Assign under it after a dry run and a second read; 70 prepare tutors and wait for a later mint."
   },
   "changes": [
+    {
+      "at": "2026-11-21T03:45:00Z",
+      "text": "The first record of the pile mint is applied: LSKL M9004 Supervised Tutoring, 90 noncredit courses at 80 colleges, insert only, with a receipt that undoes it."
+    },
+    {
+      "at": "2026-11-21T03:10:00Z",
+      "text": "The pile mint now mints only where a route is right 98 times in 100 on courses whose answer is already held. Under that rule it plans nothing on its own; the 572-record plan was not applied."
+    },
+    {
+      "at": "2026-11-21T02:00:00Z",
+      "text": "Special and selected topics are flagged not applicable, as independent study is: 584 courses left the Needs an M-ID pile, which read 1,909."
+    },
     {
       "at": "2026-11-21T00:28:00Z",
       "text": "A dry run planned the mint for the Needs an M-ID pile and applied nothing: 572 records planned, 944 courses held for want of a common subject code, 4 held for Assign as duplicates of an M-ID."
