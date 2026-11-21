@@ -719,6 +719,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/course_outcomes` | none found | committed by: `course-outcomes-read.yml` |
 | `kb/course_outcomes/*/read_*.json` | scripts: `kb/_build_commons_status.py` | — |
 | `kb/course_outcomes/ccsf_recall.json` | scripts: `kb/_course_outcomes_read.py` | — |
+| `kb/course_outcomes/irvine_valley_recall.json` | scripts: `kb/_course_outcomes_read.py` | — |
 | `kb/course_outcomes/mtsac_recall.json` | scripts: `kb/_course_outcomes_read.py` | — |
 | `kb/course_outcomes/queue.json` | scripts: `kb/_build_commons_data_status.py` | — |
 | `kb/course_outcomes/rio_hondo_recall.json` | scripts: `kb/_course_outcomes_read.py` | — |
@@ -1684,5 +1685,5 @@ check these BY HAND before trusting an absence:
 - `kb/_row_audit_prune.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 119 Supabase tables · 68 RPCs · 16 edge functions · 1127 file
+Coverage: 119 Supabase tables · 68 RPCs · 16 edge functions · 1128 file
 datasets · 197 external services · 646 consumers · 77 workflows · 41 tabs.
