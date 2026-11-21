@@ -1294,3 +1294,20 @@ And item (5a), verbatim:
 And from the redesign section, verbatim:
 
 The AP fold (Sheet 149 card 1) applied on 2026-10-31; its receipts are in the lessons doc.
+
+## 2026-11-21, the Review card's two panels (#3643)
+
+Sam's eight asks, in his words: `cpl_memory` `r-exhibits-review-card-sam-2026-11-21`. What the build taught:
+
+- **The Review file carries no basis field**, so the Cert-based or Course-based chip mirrors
+  `kb/_build_exhibits_review.py` `course_title_fits` in `exhibits.js`, reading the path from the MAP id. Two copies of
+  one rule; the builder writing the field would retire the copy.
+- **A section opened by default must remember a failed read.** Side by side, opened on every draw, asked for its file
+  again each time the read failed, and the card redrew without end. It asks again only when a person closes and
+  reopens it.
+- **A title that is a button cannot sit inside a checkbox's label.** On a Review card the checkbox carries its own
+  name and sits beside the title.
+- **Possible duplicate matches names, not words.** Sam's own pair (the 219-hour CAL FIRE training and Fire CDF
+  Academy) shares no word but the agency, so the rule is two known names of one agency. It flags and never merges.
+- **The card says combine.** About 40 strings elsewhere on the tab still say fold.
+

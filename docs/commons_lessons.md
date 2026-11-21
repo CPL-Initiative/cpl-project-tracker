@@ -598,3 +598,18 @@ day), the M-ID work, then Library part 4.
 
 **Found, not fixed.** The state course list (`coci_lookup_data.js`) was built 2026-07-09 from a COCI export of 2026-05-21
 and no workflow rebuilds it. 481 catalog rows' committed `cte` differs from a fresh stamp, older than this session.
+
+## 2026-11-21, the front page's clarity pass (#3646)
+
+Sam's asks: `r-commons-page-clarity-sam-2026-11-21`, `r-commons-cdc-card-sam-2026-11-21`,
+`r-back-to-commons-cdc-collapse-sam-2026-11-21`.
+
+- **A list built nightly cannot show a save made today.** Course Outline Fixes read `blocked_hunt`; a live hand-over
+  added a line and the course stayed listed (`f-commons-finished-items-stayed-listed-2026-11-21`). The three lists now
+  redraw from the live hand-over counts.
+- **The file's denominator wins over the asked one.** Sam wrote 73 colleges; the collected-catalog file counts 118, so
+  the card says 118 and the difference went to him as a question.
+- **A figure with no committed source reads TBA**: the Credentials line and the course-outline ETA.
+- **College Data Collection had three unwired updates**: its to-do ignored live hand-overs, a college pane's change
+  never redrew it, and a return to the tab re-read nothing.
+
