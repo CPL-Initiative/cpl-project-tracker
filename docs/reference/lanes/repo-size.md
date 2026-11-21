@@ -132,6 +132,6 @@ the event value as the fallback, and log both.
    remove a finished worker's worktree once its head is pushed (S681).
 7. **#3526 merged (`d-dependency-map-on-main-s683`):** one job on `main` (`dependency-map.yml`) rebuilds
    `kb/dependency_map.json`, `docs/reference/dependency_map.md` and `cobi_admin_surface.js` once an hour on a timer
-   (S698, #3476's cap on timed commits: a rebuild per merge wrote 17 map commits in two days); a PR does
+   (S698, #3476's cap on timed commits: a rebuild per merge wrote 17 map commits in two days; `d-dependency-map-hourly-s698`); a PR does
    not run `kb/_build_dependency_map.py` and leaves them as `main` has them. COBIx's two follow-ups: the suite shards
    still read the committed map, and `check_generated.sh` should print its own line when the builder crashes (rc 2).
