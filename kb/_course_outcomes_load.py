@@ -66,6 +66,32 @@ def untitled_groups(host: str, row: dict) -> bool:
     return rid in UNTITLED_GROUPS.get(host, set()) and bool(groups) and not any(g.get("group") for g in groups)
 
 
+# A filed SLO or objective with no letter in it is no outcome: report 198's pages that print no Outcome Text entry
+# file the summary table's "123" (12 of Irvine Valley's 866 SLO rows, read 44913397609), and Saddleback's ARCH 10 a
+# "#1" (S691). The load drops such a line, and a row left with none, and counts both (DROPPED, logged per load); the
+# filed read stays as read, so no parser change and no recall gate moves (the conductor, S697).
+LETTER = re.compile(r"[^\W\d_]")
+DROPPED = {"lines": 0, "rows": 0}
+
+
+def no_letterless(block: dict) -> dict | None:
+    """The block with every line that holds no letter dropped (its maps_to entries with it) and its fingerprint and
+    shape taken from what is left; the block itself when none drops; None when no line is left."""
+    items = block.get("outcomes") or []
+    keep = [i for i, o in enumerate(items) if LETTER.search(o or "")]
+    if len(keep) == len(items):
+        return block
+    DROPPED["lines"] += len(items) - len(keep)
+    if not keep:
+        return None
+    outs = [items[i] for i in keep]
+    maps = block.get("maps_to")
+    if isinstance(maps, list) and len(maps) == len(items):
+        maps = [maps[i] for i in keep]
+    return {**block, "outcomes": outs, "maps_to": maps, "fingerprint": fingerprint(outs),
+            "shape": "list" if len(outs) > 1 else "paragraph"}
+
+
 def shared_folder_problem(host: str, slugs: list[str]) -> str | None:
     """Why a load names too few colleges: a host folder holding complete reads of two or more college sets
     (Saddleback's and Irvine Valley's under saddleback, the Coast district's under cccd) loads only with slugs=, or
@@ -192,8 +218,16 @@ def rows_from(paths: list[str], host: str = "") -> tuple[list[dict], list[dict]]
     for the college its title names."""
     names: dict[str, str] = {}
     rows, skipped, seen = [], [], set()
+    DROPPED.update(lines=0, rows=0)
 
     def add(college, r, block, d, kind="slo"):
+        block = no_letterless(block)
+        if block is None:
+            # Every line the page filed here holds no letter: nothing to load, and the row says why.
+            DROPPED["rows"] += 1
+            skipped.append({"course_code": r.get("code"), "status": r.get("status"), "shape": "none", "kind": kind,
+                            "college": college, "why": "every filed line holds no letter (a bare number)"})
+            return
         key = (college, r["code"], r["report"], kind, block["fingerprint"])
         if key in seen:
             return
@@ -366,6 +400,7 @@ def main(argv=None) -> int:
     print("reads: %d; rows: %d (%s); skipped courses: %d; kind %s, held back %d"
           % (len(paths), len(rows), ", ".join("%s %d" % kv for kv in sorted(colleges.items())), len(skipped),
              a.kind, held_back))
+    print("dropped as holding no letter: %d line(s); %d row(s) left with none" % (DROPPED["lines"], DROPPED["rows"]))
     if a.dry:
         return 0
     key = os.environ.get("SUPABASE_SERVICE_KEY")
