@@ -4,7 +4,7 @@
   "supabase_tables": 119,
   "rpcs": 68,
   "edge_functions": 16,
-  "file_datasets": 1120,
+  "file_datasets": 1121,
   "external_services": 197,
   "consumers": 646,
   "workflows": 77,
@@ -3658,7 +3658,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 171
+     "line": 172
     }
    ],
    "main_committers": []
@@ -8356,7 +8356,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 258
+     "line": 259
     }
    ],
    "served": false,
@@ -8369,7 +8369,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 941
+     "line": 943
     }
    ],
    "served": false,
@@ -15291,7 +15291,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 151
+     "line": 152
     }
    ],
    "served": true,
@@ -18062,7 +18062,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 152
+     "line": 153
     }
    ],
    "served": false,
@@ -19012,7 +19012,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 592
+     "line": 594
     }
    ],
    "served": false,
@@ -19090,7 +19090,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 482
+     "line": 484
     },
     {
      "id": "script:kb/_course_id_rescore_estimate.py",
@@ -19151,7 +19151,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 597
+     "line": 630
     },
     {
      "id": "script:kb/_program_requirements_cheap_piles_s683.py",
@@ -19170,6 +19170,19 @@
     {
      "by": "workflow:program-requirements-wave.yml",
      "how": "commit"
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/program_total_not_printed.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_named_gaps.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 328
     }
    ],
    "served": false,
@@ -20170,7 +20183,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 593
+     "line": 595
     },
     {
      "id": "script:kb/_build_course_top_consensus.py",
@@ -20761,7 +20774,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 327
+     "line": 328
     },
     {
      "id": "script:kb/_build_spend_daily.py",
@@ -21395,7 +21408,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 153
+     "line": 154
     }
    ],
    "served": false,
@@ -21408,7 +21421,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 155
+     "line": 156
     }
    ],
    "served": true,
@@ -21546,7 +21559,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 146
+     "line": 147
     }
    ],
    "served": true,
@@ -21623,7 +21636,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 147
+     "line": 148
     },
     {
      "id": "script:kb/_harvest_gap_census.py",
@@ -23892,7 +23905,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 607
+     "line": 640
     }
    ],
    "served": false,
@@ -24750,7 +24763,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 528
+     "line": 530
     },
     {
      "id": "script:kb/_build_commons_status.py",
@@ -29869,7 +29882,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 593
+     "line": 595
     }
    ],
    "served": false,
@@ -38779,6 +38792,7 @@
   "kb/program_requirements_cheap_piles_s683.json",
   "kb/program_requirements_reread_plan_s680.json",
   "kb/program_requirements_reread_plan_s683.json",
+  "kb/program_total_not_printed.json",
   "kb/promotions.json",
   "kb/receipts",
   "kb/reference/*.xlsx",
