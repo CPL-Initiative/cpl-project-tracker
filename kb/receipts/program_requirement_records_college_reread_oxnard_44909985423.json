@@ -1,0 +1,184 @@
+{
+ "college": "Oxnard College",
+ "reread_run": "44909985423",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "39612119359",
+ "at": "2026-11-21T13:40:32Z",
+ "posted": 57,
+ "batches": 3,
+ "skipped": [
+  {
+   "control_number": "38036",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "42422",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 1,
+ "absent": 0,
+ "held": 0,
+ "kept": 56,
+ "carried": 0,
+ "replaced_keys": [
+  "22472"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [
+  "06913",
+  "06915",
+  "06916",
+  "06925",
+  "06938",
+  "09546",
+  "09552",
+  "12627",
+  "17622",
+  "22456",
+  "22458",
+  "22459",
+  "22465",
+  "22466",
+  "22470",
+  "22471",
+  "32087",
+  "32092",
+  "32109",
+  "32110",
+  "32111",
+  "32718",
+  "33666",
+  "33928",
+  "33938",
+  "35214",
+  "35226",
+  "37414",
+  "37419",
+  "37639",
+  "37827",
+  "39935",
+  "40062",
+  "40172",
+  "40173",
+  "40278",
+  "40341",
+  "40342",
+  "40343",
+  "40344",
+  "40766",
+  "41280",
+  "44428",
+  "44437",
+  "44438",
+  "45215",
+  "45303",
+  "45489",
+  "45578",
+  "45642",
+  "45646",
+  "45830",
+  "46402",
+  "46576",
+  "46585",
+  "46586"
+ ],
+ "carried_keys": [],
+ "machine_pass": 53,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Oxnard College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 39612119359;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "checks": {
+    "listed": 12,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Certificate courses (named in overview)",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "FT R170",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "EMT R169",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FT R151",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "Fire Fighter"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Define and identify the organization structure, culture, and expectations of entry level firefighting personnel.",
+      "Demonstrate the ability to communicate effectively through a variety of methods.",
+      "Demonstrate the knowledge and use of firefighting equipment specific to the given task.",
+      "Demonstrate their knowledge of tactics and strategies and incident command through the selection and implementation of firefighting methods.",
+      "Recognize and assess fire fighter hazards inherent to the profession.",
+      "Appropriately manage patient care relating to illness and injury in the prehospital setting.",
+      "Identify the roles and responsibilities of the fire service.",
+      "Recognize the characteristics of fire behavior."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Fire Fighter I/II Academy, Certificate of Achievement",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/fire-technology/fire-fighter-i-ii-academy-coa/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38842203500,
+   "program_title": "Fire Technology",
+   "control_number": "22472"
+  }
+ ]
+}
