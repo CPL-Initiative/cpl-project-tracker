@@ -517,6 +517,52 @@ check(NG.total_not_printed(dict(_tnp_rec, score=dict(_tnp_sc, arithmetic={"pass"
       "a listed record with another arithmetic reason takes no total_not_printed")
 check(NG.ARITH_SCORE["total_not_printed"] == 40 and "total_not_printed" in NG.GAPS, "the gap has its sentence and score")
 
+# S697: the gap applied (--gap total_not_printed --tag s697). The records that file it, the plan's rows and the
+# self-recall's held answers are one set, the list's six, and none of them prints a program total.
+import glob as _glob  # noqa: E402
+import json as _json  # noqa: E402
+_s697_p = os.path.join(ROOT, "kb", "receipts", "program_requirement_records_named_gaps_2026-11-21_s697.json")
+with open(_s697_p, encoding="utf-8") as _fh:
+    _s697 = _json.load(_fh)
+_filed_tnp, _held_tnp, _tnp_files = set(), set(), {}
+for _p in sorted(_glob.glob(os.path.join(NG.COLLEGE_DIR, "*", "records", "*.json"))):
+    with open(_p, encoding="utf-8") as _fh:
+        _f = _json.load(_fh)
+    _k = (_f.get("college"), str(_f.get("control_number")))
+    if any(g.get("gap") == "total_not_printed" for g in (_f.get("score") or {}).get("gaps") or []):
+        _filed_tnp.add(_k)
+        _tnp_files[_k] = _f
+    if isinstance(_f.get("score"), dict) and NG.held_answer(_f) == "total_not_printed":
+        _held_tnp.add(_k)
+_plan_tnp = {(r["college"], str(r["control_number"])) for r in _s697["records"]}
+check(_filed_tnp == _plan_tnp == _held_tnp == set(_tnp) and len(_plan_tnp) == 6,
+      "the applied gap names exactly the self-recall's six (filed %d, plan %d, held %d)"
+      % (len(_filed_tnp), len(_plan_tnp), len(_held_tnp)))
+check(_s697["only_gaps"] == ["total_not_printed"] and _s697["by_gap"] == {"total_not_printed": 6}
+      and {r["gap"] for r in _s697["records"]} == {"total_not_printed"}, "the S697 plan moves total_not_printed alone")
+
+
+def _prints_total(f):
+    a = (f.get("score") or {}).get("arithmetic") or {}
+    tu = ((f.get("record") or {}).get("program") or {}).get("total_units") or {}
+    return a.get("stated") is not None or a.get("why") != [NG.NO_TOTAL_WHY] or tu.get("min") is not None \
+        or tu.get("max") is not None
+
+
+check(not any(_prints_total(f) for f in _tnp_files.values()),
+      "no record taking total_not_printed reads a printed total")
+for _r in _s697["records"]:
+    check(_r["after_image"]["checks"].get("gaps") == ["total_not_printed"]
+          and _r["before_image"]["record"] is not None and not (_r["before_image"]["checks"] or {}).get("gaps"),
+          "%s %s: the live row gains the gap and nothing else names one before" % (_r["college"], _r["control_number"]))
+_apply_p = os.path.join(ROOT, "kb", "migrations", "2026-11-21_s697_prreq_named_gaps_apply.sql")
+with open(_apply_p, encoding="utf-8") as _fh:
+    _apply_cns = set(re.findall(r"^\s*\(\d+, '([^']+)', '(\d{5})', \d+,", _fh.read(), re.M))
+check(_apply_cns == _plan_tnp, "the guarded UPDATE names exactly the plan's rows (%d)" % len(_apply_cns))
+_again = NG.run(write=False, gaps=("total_not_printed",))
+check(_again["moved"] == [] and not _again["recall"]["wrong"],
+      "a second pass with the gap filter moves nothing (the six already file it) and the recall stays right")
+
 if failures:
     for m in failures:
         print("FAIL:", m)
