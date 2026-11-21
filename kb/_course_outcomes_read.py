@@ -874,7 +874,12 @@ RECALL_BY_HOST = {"ccsf.curricunet.com": CCSF_RECALL}
 EXCERPT_FROM, EXCERPT_TO, EXCERPT_LINES = "STUDENT LEARNING OUTCOMES", "CONTENTS", 60
 # Each outcomes-only host's two printed headings around its SLO section, as a person read them off the host's own
 # first trial (its filed section_heads). A host not listed here logs no excerpt until its pair is recorded (S691).
-EXCERPT_BY_HOST = {"ccsf.curricunet.com": (EXCERPT_FROM, EXCERPT_TO)}
+EXCERPT_BY_HOST = {"ccsf.curricunet.com": (EXCERPT_FROM, EXCERPT_TO),
+                   # Rio Hondo's Outline w/SLO (358, 359): trial 44884579875's log, 12 of 12 pages (S691).
+                   "riohondo.curriqunet.com": ("IX. Student Learning Outcome", "X. Texts/Instructional Materials:")}
+# The same for a host whose pages print objectives, so the count by eye covers both kinds the gate compares.
+OBJECTIVES_EXCERPT_BY_HOST = {
+    "riohondo.curriqunet.com": ("V. Course Objectives", ("VI. Methods of Instruction:", "VI. Methods of Instruction"))}
 
 
 def slo_excerpt(text: str, host: str = "ccsf.curricunet.com") -> list[str] | None:
@@ -882,9 +887,19 @@ def slo_excerpt(text: str, host: str = "ccsf.curricunet.com") -> list[str] | Non
     City College of San Francisco's STUDENT LEARNING OUTCOMES and CONTENTS), as printed; None when the host has no
     pair, either heading is missing or the section runs past EXCERPT_LINES, so nothing past the section is shown. A
     person counts the outcomes in it by eye, apart from the parser."""
+    return _excerpt(text, excerpt_pairs(host))
+
+
+def objectives_excerpt(text: str, host: str) -> list[str] | None:
+    """The page's objectives section between the host's recorded headings (OBJECTIVES_EXCERPT_BY_HOST), as printed;
+    None when the host has none recorded or the page prints neither heading."""
+    return _excerpt(text, excerpt_pairs(host, OBJECTIVES_EXCERPT_BY_HOST))
+
+
+def _excerpt(text: str, pairs: list) -> list[str] | None:
     lines = [ln.rstrip() for ln in (text or "").split("\n")]
     bare = [ln.strip().upper() for ln in lines]
-    for first, after in excerpt_pairs(host):
+    for first, after in pairs:
         if first not in bare:
             continue
         start = bare.index(first) + 1
@@ -893,10 +908,11 @@ def slo_excerpt(text: str, host: str = "ccsf.curricunet.com") -> list[str] | Non
     return None
 
 
-def excerpt_pairs(host: str) -> list[tuple[str, tuple[str, ...]]]:
+def excerpt_pairs(host: str, table: dict | None = None) -> list[tuple[str, tuple[str, ...]]]:
     """The host's recorded heading pairs, each (the SLO heading, the headings that may follow it), upper case: one
-    pair or a list of them in EXCERPT_BY_HOST, the first whose SLO heading the page prints deciding."""
-    got = EXCERPT_BY_HOST.get((host or "").lower())
+    pair or a list of them in EXCERPT_BY_HOST (or the table given), the first whose heading the page prints
+    deciding."""
+    got = (EXCERPT_BY_HOST if table is None else table).get((host or "").lower())
     if not got:
         return []
     pairs = [got] if isinstance(got[0], str) else list(got)
@@ -1155,6 +1171,9 @@ def main(argv=None) -> int:
                     text = reader.page.evaluate(FULL_BODY_JS) or ""
                     if excerpt_pairs(where):
                         print(excerpt_log(course["code"], slo_excerpt(text, where), where), flush=True)
+                        if excerpt_pairs(where, OBJECTIVES_EXCERPT_BY_HOST):
+                            got = objectives_excerpt(text, where)
+                            print(excerpt_log(course["code"] + " objectives", got, where), flush=True)
                     else:
                         # No heading pair recorded yet: where the page names outcomes or objectives, so a person can
                         # record the pair (S691). Those lines only, never the page.
