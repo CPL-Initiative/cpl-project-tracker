@@ -83,9 +83,10 @@ LIST = {"generated_at": "fixture", "colleges": COLLEGES, "members": {
     "ARTS M1007": [m(0, "CCC70", "Ceramics"), m(1, "CCC71", "Ceramics I")],
 }}
 CREDREF = {"unified_titles": []}
-# The state's course list: every course above, plus five with no card.
+# The state's course list: every course above, plus six with no card. Special and selected topics are not
+# applicable since S695 (d-topics-not-applicable-2026-11-20); "Topics in History" is a fixed course and stays a gap.
 NO_CARD = [("AB 389", "na"), ("French 1", "gap"), ("Internship in Music", "na"),
-           ("Medical Assisting Externship", "gap"), ("Selected Topics in Art", "gap")]
+           ("Medical Assisting Externship", "gap"), ("Selected Topics in Art", "na"), ("Topics in History", "gap")]
 COCI_ROWS = [[0, "CCC1", "ART", "1", "Drawing I"], [1, "CCC2", "ART", "2", "Drawing"],
              [0, "CCC50", "ART", "99", "Independent Study in Art"], [1, "CCC51", "ART", "98", "Directed Study: Art"],
              [0, "CCC60", "ART", "99", "Independent Study in Art"], [1, "CCC61", "ART", "10", "Studio Projects"],
@@ -164,8 +165,8 @@ with tempfile.TemporaryDirectory() as tmp:
               (got == "not_applicable") == (want == "na"))
     with open(os.path.join(tmp, F.FILES["not_applicable"])) as f:
         na = json.load(f)
-    check("2. the gap count splits 2 not applicable from 3 real gaps",
-          na["counts"]["courses"] == 2 and na["counts"]["real_gaps"] == 3 and na["counts"]["courses_with_no_card"] == 5)
+    check("2. the gap count splits 3 not applicable from 3 real gaps",
+          na["counts"]["courses"] == 3 and na["counts"]["real_gaps"] == 3 and na["counts"]["courses_with_no_card"] == 6)
 
     # A person's review is final: the machine flag adds its note and the card stays counted.
     check("person: the reviewed emptied card carries the inactive flag", flags.kinds("ARTS M1008") == ["inactive"])

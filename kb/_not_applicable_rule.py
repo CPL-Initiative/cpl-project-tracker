@@ -22,6 +22,15 @@ The rule, in full:
                  education or experience, co-op.
     not flagged: "externship" (a required clinical placement in health programs), international, internet, internal.
 
+  Special or selected topics ("topics", S695, 2026-11-20; session decision d-topics-not-applicable-2026-11-20):
+    flagged:     "special topic(s)", "selected topic(s)", "spec topic" and "sel topic", any case. A topics course's
+                 content changes each term, so it is never one common course.
+    not flagged: "Topics in History", "Current Topics", "Advanced Topics", "Seminar Topics": a fixed course with
+                 the word in its title. Measured 2026-11-21 over the state's course list: 587 titles match, 584 of
+                 them on the Needs an M-ID pile; widening to "select", "open" or "variable" topics adds none there.
+    asked only for a course (kind_of(..., topics=True)): a common course whose courses are all topics courses
+    holds an M-ID, and the builder leaves a course that holds any identity, or that a person curated, as it is.
+
   Code-only listing ("code_only"):
     the whole title is a course code in capitals ("AB 389", "PHOTO 171", "ACCTG211"); its letters are at most six,
     or they are a subject code COCI uses somewhere (so "PHYSICS 1" counts). Mixed case ("French 1") and capitalized
@@ -34,9 +43,9 @@ courses is; a card's own title never decides it (ETHS M1171 is titled "Individua
 import re
 import sys
 
-RULE_VERSION = "2026-11-18.2"
+RULE_VERSION = "2026-11-21.1"
 
-KINDS = ("independent", "internship", "code_only")
+KINDS = ("independent", "internship", "topics", "code_only")
 
 _STUDY_OBJ = r"(?:stud(?:y|ies)|research|readings?|projects?|problems?)"
 _INDEPENDENT = [
@@ -53,6 +62,8 @@ _INTERNSHIP = [
     re.compile(r"\bcooperative\s+(?:work\s+)?(?:education|experience)\b", re.I),
     re.compile(r"\bco-?op\b", re.I),
 ]
+# Special or selected topics: kb/_pile_mint_dryrun.py's TOPICS_RE, measured both ways before it gated anything.
+_TOPICS = re.compile(r"\b(?:special|selected|spec|sel)\s+topic", re.I)
 # A course code and nothing else: letters (with an optional second letter group, "WLD T"), then a number with an
 # optional letter suffix. Capitals only; the case test is done on the raw title.
 _CODE_ONLY = re.compile(r"^\s*([A-Z]{1,8}(?:[ /&-]?[A-Z]{1,4})?)\s*[-.]?\s*(\d{1,4}[A-Z]{0,3}(?:\.\d{1,2})?)\s*$")
@@ -62,10 +73,11 @@ def _norm_code(s):
     return re.sub(r"[^A-Z0-9]", "", str(s or "").upper())
 
 
-def kind_of(title, subject_codes=frozenset()):
+def kind_of(title, subject_codes=frozenset(), topics=False):
     """The not-applicable kind of one local course title, or None for a course that may be shared.
 
-    `subject_codes` is the set of COCI subject codes, normalized to capitals and digits ("PHYSICS", "WLDT")."""
+    `subject_codes` is the set of COCI subject codes, normalized to capitals and digits ("PHYSICS", "WLDT").
+    `topics` asks the special-topics test too; the builder asks it for a course on no common course only."""
     t = str(title or "").strip()
     if not t:
         return None
@@ -73,6 +85,8 @@ def kind_of(title, subject_codes=frozenset()):
         return "independent"
     if any(p.search(t) for p in _INTERNSHIP):
         return "internship"
+    if topics and _TOPICS.search(t):
+        return "topics"
     m = _CODE_ONLY.match(t)
     if m and t == t.upper():
         letters = re.sub(r"[^A-Z]", "", m.group(1))
@@ -111,18 +125,32 @@ CHECKS = [
     ("GEOMETRY 2", None),
     ("French 1", None),
 ]
+# The topics checks, asked with topics=True. Independent study keeps its kind when a title carries both.
+TOPICS_CHECKS = [
+    ("Special Topics in Art", "topics"),
+    ("SELECTED TOPICS IN FRENCH", "topics"),
+    ("Welding Technology Special Topic", "topics"),
+    ("Phys Special Topic", "topics"),
+    ("Special Topics: Independent Study", "independent"),
+    ("Topics in History", None),
+    ("Current Topics in Nursing", None),
+    ("SEMINAR TOPICS II, ADVANCED INSTRUMENTATION", None),
+]
 CHECK_SUBJECT_CODES = frozenset({"AB", "ACCTG", "PHYSICS", "PHOTO", "FREN", "MATH"})
 
 
 def self_check():
     """The misses among CHECKS, as (title, expected, got); empty when the rule holds."""
-    return [(t, want, kind_of(t, CHECK_SUBJECT_CODES)) for t, want in CHECKS
-            if kind_of(t, CHECK_SUBJECT_CODES) != want]
+    return ([(t, want, kind_of(t, CHECK_SUBJECT_CODES)) for t, want in CHECKS
+             if kind_of(t, CHECK_SUBJECT_CODES) != want]
+            + [(t, want, kind_of(t, CHECK_SUBJECT_CODES, topics=True)) for t, want in TOPICS_CHECKS
+               if kind_of(t, CHECK_SUBJECT_CODES, topics=True) != want])
 
 
 if __name__ == "__main__":
     misses = self_check()
     for t, want, got in misses:
         print("MISS %r: expected %s, got %s" % (t, want, got))
-    print("PASS: %d fixed checks" % len(CHECKS) if not misses else "FAIL: %d of %d" % (len(misses), len(CHECKS)))
+    n = len(CHECKS) + len(TOPICS_CHECKS)
+    print("PASS: %d fixed checks" % n if not misses else "FAIL: %d of %d" % (len(misses), n))
     sys.exit(1 if misses else 0)

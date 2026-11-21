@@ -9,7 +9,8 @@
 "_course_notes":{
 "code_only":"Not applicable: the state's course list gives this course a number but no title. Kept for the record; nothing to do.",
 "independent":"Not applicable: independent or directed study. Courses like this are set up one student at a time, so they aren't shared across colleges. Kept for the record; nothing to do.",
-"internship":"Not applicable: an internship or work experience. Courses like this are set up one student at a time, so they aren't shared across colleges. Kept for the record; nothing to do."
+"internship":"Not applicable: an internship or work experience. Courses like this are set up one student at a time, so they aren't shared across colleges. Kept for the record; nothing to do.",
+"topics":"Not applicable: special or selected topics. What a course like this teaches changes from term to term, so it isn't one course shared across colleges. Kept for the record; nothing to do."
 },
 "_courses_shape":"college|control number -> [kind, title as the state's course list prints it]",
 "_ids_current_through":"kb/anchor_rekey_out/2026-11-08/alias_map.json",
@@ -37,7 +38,7 @@
 },
 "_person_note":"A person reviewed this shared course{on}, and their ruling stands, so it stays in the counts. The machine's note reads: {note}",
 "_rule":"kb/_not_applicable_rule.py",
-"_rule_version":"2026-11-18.2",
+"_rule_version":"2026-11-21.1",
 "cards":{
 "ARTS M10JJ":{
 "courses":1,
@@ -1160,14 +1161,16 @@
 "independent":59,
 "internship":11
 },
-"courses":5700,
+"courses":6284,
 "courses_by_kind":{
 "code_only":1475,
 "independent":3428,
-"internship":797
+"internship":797,
+"topics":584
 },
 "courses_with_no_card":8229,
-"real_gaps":2529
+"real_gaps":1945,
+"topics_left_with_identity_or_curated":0
 },
 "courses":{
 "Allan Hancock College|CCC000000069":[
@@ -1629,6 +1632,10 @@
 "Allan Hancock College|CCC000068047":[
 "code_only",
 "FT 379"
+],
+"Allan Hancock College|CCC000069335":[
+"topics",
+"Special Topics in  Automotive Technology"
 ],
 "Allan Hancock College|CCC000069438":[
 "code_only",
@@ -6098,6 +6105,18 @@
 "internship",
 "Income Tax Preparation Internship"
 ],
+"Allan Hancock College|CCC000551902":[
+"topics",
+"Special Topics in Dance Forms"
+],
+"Allan Hancock College|CCC000572315":[
+"topics",
+"Special Topics in Political Science"
+],
+"Allan Hancock College|CCC000593831":[
+"topics",
+"Special Topics in Film"
+],
 "Allan Hancock College|CCC000608608":[
 "code_only",
 "LE  424"
@@ -6109,6 +6128,10 @@
 "Allan Hancock College|CCC000630537":[
 "internship",
 "Paramedic Field Internship"
+],
+"Allan Hancock College|CCC000639210":[
+"topics",
+"Special Topics in Physical Education"
 ],
 "Allan Hancock College|CCC000649440":[
 "internship",
@@ -6842,6 +6865,10 @@
 "independent",
 "Special Studies I"
 ],
+"Cabrillo College|CCC000515969":[
+"topics",
+"The Language of Film for Seniors:  Special Topics in Film"
+],
 "Cabrillo College|CCC000535645":[
 "independent",
 "Special Studies I"
@@ -7394,6 +7421,10 @@
 "independent",
 "Directed Studies"
 ],
+"Cerritos College|CCC000391995":[
+"topics",
+"Special Topics in Database"
+],
 "Cerritos College|CCC000392948":[
 "independent",
 "DIRECTED STUDIES"
@@ -7421,6 +7452,10 @@
 "Cerritos College|CCC000397601":[
 "independent",
 "DIRECTED STUDIES"
+],
+"Cerritos College|CCC000397745":[
+"topics",
+"SPECIAL TOPICS IN SW DVPMT"
 ],
 "Cerritos College|CCC000398104":[
 "independent",
@@ -7453,6 +7488,10 @@
 "Cerritos College|CCC000400919":[
 "independent",
 "Directed Studies"
+],
+"Cerritos College|CCC000401083":[
+"topics",
+"SPECIAL TOPICS IN BIOLOGY"
 ],
 "Cerritos College|CCC000401189":[
 "independent",
@@ -7546,6 +7585,10 @@
 "independent",
 "DIRECTED STUDIES"
 ],
+"Cerritos College|CCC000418555":[
+"topics",
+"Special Topics In Chem"
+],
 "Cerritos College|CCC000419770":[
 "independent",
 "Directed Studies"
@@ -7594,6 +7637,10 @@
 "independent",
 "Directed Studies"
 ],
+"Cerritos College|CCC000424688":[
+"topics",
+"Special Topics In History"
+],
 "Cerritos College|CCC000424969":[
 "independent",
 "DIRECTED STUDIES"
@@ -7602,6 +7649,10 @@
 "independent",
 "Directed Studies"
 ],
+"Cerritos College|CCC000425568":[
+"topics",
+"Special Topics: Remounting a Production"
+],
 "Cerritos College|CCC000426070":[
 "independent",
 "DIRECTED STUDIES"
@@ -7609,6 +7660,10 @@
 "Cerritos College|CCC000437739":[
 "independent",
 "DIRECTED STUDIES"
+],
+"Cerritos College|CCC000445136":[
+"topics",
+"SPECIAL TOPICS IN NETWORKING"
 ],
 "Cerritos College|CCC000453004":[
 "independent",
@@ -7645,6 +7700,30 @@
 "Cerritos College|CCC000453115":[
 "independent",
 "Directed Studies"
+],
+"Cerritos College|CCC000453125":[
+"topics",
+"SPECIAL TOPICS IN SECURITY"
+],
+"Cerritos College|CCC000453126":[
+"topics",
+"SPECIAL TOPICS IN SECURITY"
+],
+"Cerritos College|CCC000453127":[
+"topics",
+"SPECIAL TOPICS IN SOFTWARE DEVELOPMENT"
+],
+"Cerritos College|CCC000453129":[
+"topics",
+"SPECIAL TOPICS IN SOFTWARE DEVELOPMENT"
+],
+"Cerritos College|CCC000453133":[
+"topics",
+"SPECIAL TOPICS IN DATABASE"
+],
+"Cerritos College|CCC000453134":[
+"topics",
+"SPECIAL TOPICS IN DATABASE"
 ],
 "Cerritos College|CCC000453162":[
 "independent",
@@ -7722,6 +7801,14 @@
 "independent",
 "Directed Studies"
 ],
+"Cerritos College|CCC000572374":[
+"topics",
+"Special Topics in Visual and Cultural Studies"
+],
+"Cerritos College|CCC000572376":[
+"topics",
+"Special Topics in Visual and Cultural Studies"
+],
 "Cerritos College|CCC000582812":[
 "independent",
 "Production - Special Projects"
@@ -7753,6 +7840,14 @@
 "Cerritos College|CCC000659425":[
 "independent",
 "DIRECTED STUDIES"
+],
+"Cerro Coso Community College|CCC000511794":[
+"topics",
+"Special Topics in Administration of Justice"
+],
+"Cerro Coso Community College|CCC000511795":[
+"topics",
+"Special Topics in Administration of Justice"
 ],
 "Cerro Coso Community College|CCC000611058":[
 "independent",
@@ -7813,6 +7908,10 @@
 "Chaffey College|CCC000423978":[
 "internship",
 "Internships in Computer Information Systems"
+],
+"Chaffey College|CCC000425680":[
+"topics",
+"Special Topics Laboratory: Biology"
 ],
 "Chaffey College|CCC000426137":[
 "internship",
@@ -7885,6 +7984,18 @@
 "Chaffey College|CCC000618292":[
 "independent",
 "Independent Study: Gerontology"
+],
+"Chaffey College|CCC000631920":[
+"topics",
+"Special Topics: Biology"
+],
+"Chaffey College|CCC000631921":[
+"topics",
+"Special Topics: Biology"
+],
+"Chaffey College|CCC000631922":[
+"topics",
+"Special Topics: Biology"
 ],
 "Chaffey College|CCC000639482":[
 "independent",
@@ -7974,6 +8085,30 @@
 "code_only",
 "MTRK 699C"
 ],
+"Citrus College|CCC000512085":[
+"topics",
+"Special Topics: Auto Tech"
+],
+"Citrus College|CCC000516616":[
+"topics",
+"Special Topics:  Auto Tech"
+],
+"Citrus College|CCC000516617":[
+"topics",
+"Special Topics:  Auto Tech"
+],
+"Citrus College|CCC000516618":[
+"topics",
+"Special Topics:  Auto Tech"
+],
+"Citrus College|CCC000516620":[
+"topics",
+"Special Topics:  Auto Tech"
+],
+"Citrus College|CCC000516622":[
+"topics",
+"Special Topics:  Auto Tech"
+],
 "Citrus College|CCC000535624":[
 "independent",
 "Theatre Practicum/Special Projects I - Physical Life"
@@ -7981,6 +8116,14 @@
 "Citrus College|CCC000535625":[
 "independent",
 "Theatre Practicum/Special Projects II - Storytelling"
+],
+"Citrus College|CCC000567908":[
+"topics",
+"Special Topics:  Automotive Technoloy"
+],
+"Citrus College|CCC000567909":[
+"topics",
+"Special Topics:  Automotive Technology"
 ],
 "Citrus College|CCC000612584":[
 "internship",
@@ -8001,6 +8144,10 @@
 "City College of San Francisco|CCC000358131":[
 "internship",
 "College Internship"
+],
+"City College of San Francisco|CCC000361208":[
+"topics",
+"Selected Topics in Journalism"
 ],
 "City College of San Francisco|CCC000364121":[
 "independent",
@@ -8046,9 +8193,21 @@
 "internship",
 "Introductory Stem Cell Internship Support"
 ],
+"City College of San Francisco|CCC000547839":[
+"topics",
+"Printmaking Special Topics"
+],
 "City College of San Francisco|CCC000552331":[
 "internship",
 "Advanced Stem Cell Internship Support"
+],
+"City College of San Francisco|CCC000553163":[
+"topics",
+"Watercolor Special Topics"
+],
+"City College of San Francisco|CCC000556072":[
+"topics",
+"Figure Drawing Special Topics"
 ],
 "City College of San Francisco|CCC000575377":[
 "independent",
@@ -8270,9 +8429,21 @@
 "independent",
 "DIRECTED STUDY"
 ],
+"College of Marin|CCC000347636":[
+"topics",
+"SELECTED TOPICS"
+],
+"College of Marin|CCC000347930":[
+"topics",
+"SELECTED TOPICS"
+],
 "College of Marin|CCC000348027":[
 "independent",
 "DIRECTED STUDY"
+],
+"College of Marin|CCC000348126":[
+"topics",
+"SELECTED TOPICS"
 ],
 "College of Marin|CCC000348498":[
 "independent",
@@ -8286,9 +8457,17 @@
 "independent",
 "DIRECTED STUDY"
 ],
+"College of Marin|CCC000348957":[
+"topics",
+"SELECTED TOPICS"
+],
 "College of Marin|CCC000349238":[
 "independent",
 "DIRECTED STUDY"
+],
+"College of Marin|CCC000349407":[
+"topics",
+"SELECTED TOPICS"
 ],
 "College of Marin|CCC000349448":[
 "independent",
@@ -8306,6 +8485,10 @@
 "independent",
 "Directed Study"
 ],
+"College of Marin|CCC000350429":[
+"topics",
+"Selected Topics"
+],
 "College of Marin|CCC000350506":[
 "independent",
 "DIRECTED STUDY"
@@ -8321,6 +8504,10 @@
 "College of Marin|CCC000351349":[
 "independent",
 "DIRECTED STUDY"
+],
+"College of Marin|CCC000351518":[
+"topics",
+"SELECTED TOPICS"
 ],
 "College of Marin|CCC000351569":[
 "independent",
@@ -8358,6 +8545,10 @@
 "independent",
 "DIRECTED STUDY"
 ],
+"College of Marin|CCC000353528":[
+"topics",
+"SELECTED TOPICS"
+],
 "College of Marin|CCC000354109":[
 "independent",
 "DIRECTED STUDY"
@@ -8373,6 +8564,10 @@
 "College of Marin|CCC000355283":[
 "independent",
 "DIRECTED STUDY"
+],
+"College of Marin|CCC000355380":[
+"topics",
+"SELECTED TOPICS"
 ],
 "College of Marin|CCC000355563":[
 "independent",
@@ -8393,6 +8588,10 @@
 "College of Marin|CCC000356429":[
 "independent",
 "Directed Study"
+],
+"College of Marin|CCC000356766":[
+"topics",
+"SELECTED TOPICS"
 ],
 "College of Marin|CCC000356973":[
 "independent",
@@ -8429,6 +8628,10 @@
 "College of Marin|CCC000357984":[
 "independent",
 "DIRECTED STUDY"
+],
+"College of Marin|CCC000358614":[
+"topics",
+"SELECTED TOPICS"
 ],
 "College of Marin|CCC000358638":[
 "independent",
@@ -8470,6 +8673,10 @@
 "independent",
 "DIRECTED STUDY"
 ],
+"College of Marin|CCC000360332":[
+"topics",
+"SELECTED TOPICS"
+],
 "College of Marin|CCC000360381":[
 "independent",
 "DIRECTED STUDY"
@@ -8490,9 +8697,17 @@
 "independent",
 "DIRECTED STUDY"
 ],
+"College of Marin|CCC000362110":[
+"topics",
+"SELECTED TOPICS"
+],
 "College of Marin|CCC000362115":[
 "independent",
 "DIRECTED STUDY"
+],
+"College of Marin|CCC000362611":[
+"topics",
+"SELECTED TOPICS"
 ],
 "College of Marin|CCC000362668":[
 "independent",
@@ -8554,6 +8769,10 @@
 "independent",
 "Directed Study"
 ],
+"College of Marin|CCC000366584":[
+"topics",
+"SELECTED TOPICS"
+],
 "College of Marin|CCC000366679":[
 "independent",
 "Directed Study A"
@@ -8578,6 +8797,10 @@
 "independent",
 "DIRECTED STUDY"
 ],
+"College of Marin|CCC000367768":[
+"topics",
+"SELECTED TOPICS"
+],
 "College of Marin|CCC000367868":[
 "independent",
 "DIRECTED STUDY"
@@ -8589,6 +8812,10 @@
 "College of Marin|CCC000368089":[
 "independent",
 "DIRECTED STUDY"
+],
+"College of Marin|CCC000368415":[
+"topics",
+"SELECTED TOPICS"
 ],
 "College of Marin|CCC000369270":[
 "independent",
@@ -8653,6 +8880,10 @@
 "College of Marin|CCC000373397":[
 "independent",
 "DIRECTED STUDY"
+],
+"College of Marin|CCC000373679":[
+"topics",
+"SELECTED TOPICS"
 ],
 "College of Marin|CCC000373742":[
 "independent",
@@ -8742,6 +8973,10 @@
 "independent",
 "DIRECTED STUDY"
 ],
+"College of Marin|CCC000379057":[
+"topics",
+"SELECTED TOPICS"
+],
 "College of Marin|CCC000379597":[
 "independent",
 "Independent Study C"
@@ -8766,9 +9001,17 @@
 "independent",
 "DIRECTED STUDY"
 ],
+"College of Marin|CCC000380564":[
+"topics",
+"SELECTED TOPICS"
+],
 "College of Marin|CCC000380939":[
 "independent",
 "Directed Study"
+],
+"College of Marin|CCC000380959":[
+"topics",
+"SELECTED TOPICS"
 ],
 "College of Marin|CCC000381321":[
 "independent",
@@ -8806,9 +9049,17 @@
 "independent",
 "DIRECTED STUDY"
 ],
+"College of Marin|CCC000382340":[
+"topics",
+"SELECTED TOPICS"
+],
 "College of Marin|CCC000382526":[
 "independent",
 "DIRECTED STUDY"
+],
+"College of Marin|CCC000382540":[
+"topics",
+"SELECTED TOPICS"
 ],
 "College of Marin|CCC000382661":[
 "independent",
@@ -9106,6 +9357,10 @@
 "independent",
 "SPECIAL PROJECTS"
 ],
+"College of San Mateo|CCC000348717":[
+"topics",
+"Special Topics in Art"
+],
 "College of San Mateo|CCC000348779":[
 "independent",
 "Special Projects"
@@ -9161,6 +9416,14 @@
 "College of the Desert|CCC000614828":[
 "internship",
 "Clinical Specialty II Internship"
+],
+"College of the Desert|CCC000655596":[
+"topics",
+"Special Topics in Computing"
+],
+"College of the Desert|CCC000656765":[
+"topics",
+"Special Topics"
 ],
 "College of the Desert|CCC000657350":[
 "internship",
@@ -9834,6 +10097,14 @@
 "independent",
 "Special Problems in Biology"
 ],
+"Crafton Hills College|CCC000426397":[
+"topics",
+"Selected Topics in Fire Technology"
+],
+"Crafton Hills College|CCC000426693":[
+"topics",
+"SELECTED TOPICS IN FIRE TECHNOLOGY"
+],
 "Crafton Hills College|CCC000426726":[
 "independent",
 "Special Problems in Microbiology"
@@ -9842,9 +10113,25 @@
 "independent",
 "SPECIAL PROBLEMS IN MICROBIOLOGY"
 ],
+"Crafton Hills College|CCC000427290":[
+"topics",
+"Selected Topics in Fire Technology"
+],
+"Crafton Hills College|CCC000427319":[
+"topics",
+"Selected Topics in Fire Technology"
+],
+"Crafton Hills College|CCC000427693":[
+"topics",
+"Selected Topics in Fire Technology"
+],
 "Crafton Hills College|CCC000427999":[
 "independent",
 "SPECIAL PROBLEMS IN MICROBIOLOGY"
+],
+"Crafton Hills College|CCC000428404":[
+"topics",
+"SELECTED TOPICS IN FIRE TECHNOLOGY"
 ],
 "Crafton Hills College|CCC000428977":[
 "independent",
@@ -9866,9 +10153,37 @@
 "independent",
 "SPECIAL PROBLEMS IN MICROBIOLOGY"
 ],
+"Crafton Hills College|CCC000430727":[
+"topics",
+"Selected Topics in Fire Technology"
+],
+"Crafton Hills College|CCC000430766":[
+"topics",
+"Selected Topics in Fire Technology"
+],
+"Crafton Hills College|CCC000430925":[
+"topics",
+"Selected Topics in Fire Technology"
+],
+"Crafton Hills College|CCC000432234":[
+"topics",
+"Selected Topics in Fire Technology"
+],
+"Crafton Hills College|CCC000432791":[
+"topics",
+"Selected Topics in Fire Technology"
+],
+"Crafton Hills College|CCC000433296":[
+"topics",
+"Selected Topics in Fire Technology"
+],
 "Crafton Hills College|CCC000433588":[
 "independent",
 "Special Problems in Biology"
+],
+"Crafton Hills College|CCC000433628":[
+"topics",
+"Selected Topics in Fire Technology"
 ],
 "Crafton Hills College|CCC000433746":[
 "independent",
@@ -9897,6 +10212,38 @@
 "Crafton Hills College|CCC000435195":[
 "independent",
 "Special Problems in Biology"
+],
+"Crafton Hills College|CCC000435307":[
+"topics",
+"SELECTED TOPICS IN FIRE TECHNOLOGY"
+],
+"Crafton Hills College|CCC000500420":[
+"topics",
+"Selected Topics in Computer Information Systems"
+],
+"Crafton Hills College|CCC000500439":[
+"topics",
+"Selected Topics in Emergency Medical Services - Outdoor Emergency Ca"
+],
+"Crafton Hills College|CCC000500440":[
+"topics",
+"Selected Topics in Emergency Medical Services - Outdoor Emergency Ca"
+],
+"Crafton Hills College|CCC000500441":[
+"topics",
+"Selected Topics in Emergency Medical Services - Outdoor Emergency Ca"
+],
+"Crafton Hills College|CCC000500468":[
+"topics",
+"Selected Topics in Fire Technology"
+],
+"Crafton Hills College|CCC000500491":[
+"topics",
+"Selected Topics in Fire Technology"
+],
+"Crafton Hills College|CCC000500496":[
+"topics",
+"Selected Topics in Fire Technology"
 ],
 "Crafton Hills College|CCC000500523":[
 "independent",
@@ -10010,6 +10357,10 @@
 "independent",
 "INDEPENDENT STUDIES: POLITICAL SCIENCE"
 ],
+"Cuesta College|CCC000034823":[
+"topics",
+"Kinesiology Activities Special Topic"
+],
 "Cuesta College|CCC000088370":[
 "independent",
 "INDEPENDENT STUDIES: DRAMA"
@@ -10062,9 +10413,97 @@
 "independent",
 "INDEPENDENT STUDIES: ATHLETICS"
 ],
+"Cuesta College|CCC000444807":[
+"topics",
+"Arch Special Topic"
+],
+"Cuesta College|CCC000444809":[
+"topics",
+"Art Special Topic"
+],
+"Cuesta College|CCC000444822":[
+"topics",
+"Chemistry Special Topic"
+],
+"Cuesta College|CCC000444838":[
+"topics",
+"CONSTRUCTION TECHNOLOGY SPECIAL TOPIC"
+],
+"Cuesta College|CCC000444877":[
+"topics",
+"ENGL Special Topics"
+],
+"Cuesta College|CCC000444884":[
+"topics",
+"FRENCH SPECIAL TOPIC"
+],
+"Cuesta College|CCC000444885":[
+"topics",
+"GEOL Special Topic"
+],
+"Cuesta College|CCC000444886":[
+"topics",
+"GERMAN SPECIAL TOPIC"
+],
+"Cuesta College|CCC000444887":[
+"topics",
+"HEALTH SCIENCE SPECIAL TOPIC"
+],
+"Cuesta College|CCC000444896":[
+"topics",
+"JOUR Special Topic"
+],
+"Cuesta College|CCC000444904":[
+"topics",
+"Math Special Topic"
+],
+"Cuesta College|CCC000444909":[
+"topics",
+"Music Special Topic"
+],
+"Cuesta College|CCC000444914":[
+"topics",
+"Nutr Special Topic"
+],
+"Cuesta College|CCC000444920":[
+"topics",
+"ATHLETICS SPECIAL TOPIC"
+],
+"Cuesta College|CCC000444921":[
+"topics",
+"Phys Special Topic"
+],
+"Cuesta College|CCC000444922":[
+"topics",
+"PSYCHIATRIC TECHNICIAN SPECIAL TOPIC"
+],
+"Cuesta College|CCC000444925":[
+"topics",
+"SPANISH SPECIAL TOPIC"
+],
+"Cuesta College|CCC000444926":[
+"topics",
+"COMMUNICATION STUDIES SPECIAL TOPIC"
+],
+"Cuesta College|CCC000459237":[
+"topics",
+"ASTR Special Topic"
+],
 "Cuesta College|CCC000459239":[
 "independent",
 "Independent Studies"
+],
+"Cuesta College|CCC000552201":[
+"topics",
+"KINESIOLOGY THEORY SPECIAL TOPICS"
+],
+"Cuesta College|CCC000562729":[
+"topics",
+"TUTOR TRAINING: SELECTED TOPICS"
+],
+"Cuesta College|CCC000563003":[
+"topics",
+"Meteorology Theory Special Topics"
 ],
 "Cuesta College|CCC000567088":[
 "internship",
@@ -10082,6 +10521,14 @@
 "internship",
 "PARALEGAL INTERNSHIP"
 ],
+"Cuesta College|CCC000567353":[
+"topics",
+"Criminal Justice Special Topic"
+],
+"Cuesta College|CCC000567355":[
+"topics",
+"Legal Special Topic"
+],
 "Cuesta College|CCC000567374":[
 "independent",
 "Independent Studies: Computer & Informational Science"
@@ -10090,9 +10537,17 @@
 "independent",
 "INDEPENDENT STUDIES: HUMAN DEVELOPMENT/HUMAN SERVICES"
 ],
+"Cuesta College|CCC000567391":[
+"topics",
+"Computer Information Systems Special Topic"
+],
 "Cuesta College|CCC000567424":[
 "independent",
 "INDEPENDENT STUDIES: AMERICAN SIGN LANGUAGE"
+],
+"Cuesta College|CCC000567427":[
+"topics",
+"Engineering Special Topic"
 ],
 "Cuesta College|CCC000567451":[
 "independent",
@@ -10106,9 +10561,41 @@
 "independent",
 "Independent Studies: Engineering"
 ],
+"Cuesta College|CCC000567459":[
+"topics",
+"Welding Technology Special Topic"
+],
+"Cuesta College|CCC000567843":[
+"topics",
+"Nursing Special Topic"
+],
+"Cuesta College|CCC000567846":[
+"topics",
+"LVN Special Topic"
+],
+"Cuesta College|CCC000568578":[
+"topics",
+"ECONOMICS SPECIAL TOPIC"
+],
 "Cuesta College|CCC000568579":[
 "independent",
 "INDEPENDENT STUDIES: ECONOMICS"
+],
+"Cuesta College|CCC000568580":[
+"topics",
+"ASHS SPECIAL TOPIC"
+],
+"Cuesta College|CCC000568720":[
+"topics",
+"Nursing Assistant Special Topic"
+],
+"Cuesta College|CCC000568721":[
+"topics",
+"Medical Assisting Special Topic"
+],
+"Cuesta College|CCC000568726":[
+"topics",
+"FILM, TELEVISION AND ELECTRONIC MEDIA SPECIAL TOPIC"
 ],
 "Cuesta College|CCC000579256":[
 "internship",
@@ -10117,6 +10604,22 @@
 "Cuesta College|CCC000579257":[
 "internship",
 "BEGINNING STUDENT INTERNSHIP"
+],
+"Cuesta College|CCC000581693":[
+"topics",
+"TUTOR TRAINING: SELECTED TOPICS"
+],
+"Cuesta College|CCC000598939":[
+"topics",
+"ATCH Special Topic"
+],
+"Cuesta College|CCC000598940":[
+"topics",
+"Bus Special Topic"
+],
+"Cuesta College|CCC000598945":[
+"topics",
+"EMERGENCY MEDICAL SERVICES SPECIAL TOPIC"
 ],
 "Cuesta College|CCC000598997":[
 "internship",
@@ -10194,6 +10697,10 @@
 "independent",
 "Dance Independent Study"
 ],
+"Cypress College|CCC000187324":[
+"topics",
+"Selected Topics in Nursing and Alied Health"
+],
 "Cypress College|CCC000195120":[
 "independent",
 "Spanish Independent Study"
@@ -10233,6 +10740,10 @@
 "Cypress College|CCC000272368":[
 "independent",
 "Economics Independent Study"
+],
+"Cypress College|CCC000286539":[
+"topics",
+"Selected Topics for NURS 297 C"
 ],
 "Cypress College|CCC000294210":[
 "independent",
@@ -10330,9 +10841,21 @@
 "internship",
 "Clinical Internship II"
 ],
+"Cypress College|CCC000554772":[
+"topics",
+"Selected Topics III"
+],
 "Cypress College|CCC000554781":[
 "internship",
 "Clinical Internship III"
+],
+"Cypress College|CCC000554828":[
+"topics",
+"Selected Topics II"
+],
+"Cypress College|CCC000556580":[
+"topics",
+"Selected Topics I"
 ],
 "Cypress College|CCC000557773":[
 "independent",
@@ -10390,9 +10913,25 @@
 "internship",
 "T-TEN Automotive Internship II"
 ],
+"Cypress College|CCC000618120":[
+"topics",
+"Selected Topics in Nursing III"
+],
+"Cypress College|CCC000618121":[
+"topics",
+"Selected Topics in Nursing I"
+],
+"Cypress College|CCC000618122":[
+"topics",
+"Selected Topics in Nursing II"
+],
 "Cypress College|CCC000621140":[
 "internship",
 "Internship"
+],
+"Cypress College|CCC000631475":[
+"topics",
+"Selected Topics in Psychiatric Technology"
 ],
 "Cypress College|CCC000631854":[
 "internship",
@@ -10466,13 +11005,29 @@
 "independent",
 "Special Projects in Music"
 ],
+"De Anza College|CCC000123700":[
+"topics",
+"Special Topics in Communication Studies"
+],
 "De Anza College|CCC000129362":[
 "independent",
 "Special Projects in Music"
 ],
+"De Anza College|CCC000132641":[
+"topics",
+"Special Topics in Literature"
+],
+"De Anza College|CCC000146920":[
+"topics",
+"Special Topics in Communication Studies"
+],
 "De Anza College|CCC000149724":[
 "independent",
 "Special Projects in Nursing"
+],
+"De Anza College|CCC000154574":[
+"topics",
+"Special Topics in Communication Studies"
 ],
 "De Anza College|CCC000164692":[
 "independent",
@@ -10489,6 +11044,10 @@
 "De Anza College|CCC000196262":[
 "independent",
 "Special Projects in Intercultural Studies"
+],
+"De Anza College|CCC000202106":[
+"topics",
+"Special Topics: Significant Californians"
 ],
 "De Anza College|CCC000202424":[
 "independent",
@@ -10521,6 +11080,10 @@
 "De Anza College|CCC000265410":[
 "internship",
 "Administration of Justice Internship"
+],
+"De Anza College|CCC000267948":[
+"topics",
+"Special Topics in Communication Studies"
 ],
 "De Anza College|CCC000272230":[
 "internship",
@@ -10562,9 +11125,17 @@
 "independent",
 "Special Projects in Learning Assistance"
 ],
+"De Anza College|CCC000363748":[
+"topics",
+"Special Topics in Literature"
+],
 "De Anza College|CCC000370453":[
 "independent",
 "Special Projects in Engineering"
+],
+"De Anza College|CCC000378837":[
+"topics",
+"Special Topics in Literature"
 ],
 "De Anza College|CCC000381539":[
 "independent",
@@ -10581,6 +11152,10 @@
 "De Anza College|CCC000440005":[
 "independent",
 "Special Projects in Child Development"
+],
+"De Anza College|CCC000440084":[
+"topics",
+"Special Topics in Literature"
 ],
 "De Anza College|CCC000452109":[
 "independent",
@@ -10613,6 +11188,10 @@
 "De Anza College|CCC000511512":[
 "independent",
 "Special Projects in Nursing"
+],
+"De Anza College|CCC000513774":[
+"topics",
+"Special Topics in Journalism"
 ],
 "De Anza College|CCC000517779":[
 "independent",
@@ -10649,6 +11228,14 @@
 "De Anza College|CCC000519337":[
 "independent",
 "Special Projects in Health Technology"
+],
+"De Anza College|CCC000525040":[
+"topics",
+"Special Topics in Film Studies"
+],
+"De Anza College|CCC000532431":[
+"topics",
+"Special Topics in Journalism"
 ],
 "De Anza College|CCC000544482":[
 "independent",
@@ -10697,6 +11284,18 @@
 "De Anza College|CCC000545349":[
 "independent",
 "Special Projects In Manufacturing and CNC/NIMS Level 3"
+],
+"De Anza College|CCC000546472":[
+"topics",
+"Special Topics in Counseling"
+],
+"De Anza College|CCC000546473":[
+"topics",
+"Special Topics in Counseling"
+],
+"De Anza College|CCC000546474":[
+"topics",
+"Special Topics in Counseling"
 ],
 "De Anza College|CCC000549543":[
 "independent",
@@ -10793,6 +11392,14 @@
 "De Anza College|CCC000568410":[
 "internship",
 "Political Science Internship"
+],
+"De Anza College|CCC000573668":[
+"topics",
+"Special Topics: Industry Professionals and Practices"
+],
+"De Anza College|CCC000576776":[
+"topics",
+"Special Topics in Film Studies"
 ],
 "De Anza College|CCC000577080":[
 "independent",
@@ -11362,6 +11969,14 @@
 "independent",
 "DIRECTED STUDY - BROADCASTING"
 ],
+"East Los Angeles College|CCC000548677":[
+"topics",
+"Special Topics in Dance II"
+],
+"East Los Angeles College|CCC000548678":[
+"topics",
+"Special Topics in Dance I"
+],
 "East Los Angeles College|CCC000568626":[
 "independent",
 "Directed Study - Japanese"
@@ -11870,6 +12485,10 @@
 "independent",
 "DIRECTED STUDY - ADMJ"
 ],
+"Feather River College|CCC000441411":[
+"topics",
+"SELECTED TOPICS EQUINE STUDIES"
+],
 "Feather River College|CCC000508904":[
 "independent",
 "Directed Study - Business"
@@ -11886,6 +12505,14 @@
 "code_only",
 "ORL192"
 ],
+"Feather River College|CCC000517563":[
+"topics",
+"SPECIAL TOPICS IN ECE"
+],
+"Feather River College|CCC000517570":[
+"topics",
+"SPECIAL TOPICS IN ORL"
+],
 "Feather River College|CCC000549684":[
 "independent",
 "DIRECTED STUDY IN HES"
@@ -11898,6 +12525,14 @@
 "independent",
 "Special Projects in Equine Studies- Behavior and Training"
 ],
+"Feather River College|CCC000576671":[
+"topics",
+"SPECIAL TOPICS IN ENVR STUDIES"
+],
+"Feather River College|CCC000577143":[
+"topics",
+"Selected Topics in Pre-Algebra"
+],
 "Feather River College|CCC000632269":[
 "independent",
 "Special Projects in Agriculture"
@@ -11906,9 +12541,25 @@
 "independent",
 "DIRECTED STUDY - ART"
 ],
+"Feather River College|CCC000632773":[
+"topics",
+"Special Topics in Culinary Arts"
+],
+"Feather River College|CCC000633273":[
+"topics",
+"Special Topics in Agriculture"
+],
 "Feather River College|CCC000641561":[
 "internship",
 "Internship in Ecosystem Restoration and Applied Fire Management"
+],
+"Feather River College|CCC000641610":[
+"topics",
+"Advanced Special Topics in Environmental Studies"
+],
+"Feather River College|CCC000643837":[
+"topics",
+"Special Topics In STEM"
 ],
 "Feather River College|CCC000645803":[
 "independent",
@@ -11929,6 +12580,14 @@
 "Feather River College|CCC000648810":[
 "independent",
 "Directed Study - Agriculture"
+],
+"Feather River College|CCC000651500":[
+"topics",
+"Introduction to Special Topics in Environmental Studies"
+],
+"Feather River College|CCC000651505":[
+"topics",
+"Leadership in Special Topics in Environmental Studies"
 ],
 "Folsom Lake College|CCC000009472":[
 "independent",
@@ -12690,6 +13349,26 @@
 "independent",
 "INDEPENDENT STUDY IN CHEMISTRY"
 ],
+"Foothill College|CCC000628856":[
+"topics",
+"SPECIAL TOPICS IN COMPUTER SCIENCE"
+],
+"Foothill College|CCC000628857":[
+"topics",
+"SPECIAL TOPICS IN COMPUTER SCIENCE"
+],
+"Foothill College|CCC000628858":[
+"topics",
+"SPECIAL TOPICS IN COMPUTER SCIENCE"
+],
+"Foothill College|CCC000628859":[
+"topics",
+"SPECIAL TOPICS IN COMPUTER SCIENCE"
+],
+"Foothill College|CCC000634573":[
+"topics",
+"SPECIAL TOPICS"
+],
 "Foothill College|CCC000649472":[
 "independent",
 "INDEPENDENT STUDY IN HISTORY"
@@ -13034,9 +13713,17 @@
 "independent",
 "INDEPENDENT STUDY"
 ],
+"Gavilan College|CCC000127987":[
+"topics",
+"SPECIAL TOPICS"
+],
 "Gavilan College|CCC000197251":[
 "independent",
 "INDEPENDENT STUDY"
+],
+"Gavilan College|CCC000202858":[
+"topics",
+"SPECIAL TOPICS"
 ],
 "Gavilan College|CCC000224091":[
 "independent",
@@ -13045,6 +13732,10 @@
 "Gavilan College|CCC000252758":[
 "independent",
 "Independent Study"
+],
+"Gavilan College|CCC000284596":[
+"topics",
+"SPECIAL TOPICS"
 ],
 "Gavilan College|CCC000302834":[
 "independent",
@@ -13094,6 +13785,10 @@
 "independent",
 "Directed Study Laboratory in Transfer Level Math"
 ],
+"Glendale Community College|CCC000140751":[
+"topics",
+"BUSAD SPECIAL TOPICS"
+],
 "Glendale Community College|CCC000229634":[
 "internship",
 "INTERNSHIP I"
@@ -13118,6 +13813,10 @@
 "internship",
 "INTERNSHIP II"
 ],
+"Glendale Community College|CCC000317244":[
+"topics",
+"AT SPECIAL TOPICS"
+],
 "Glendale Community College|CCC000323067":[
 "code_only",
 "OBT  131"
@@ -13125,6 +13824,10 @@
 "Glendale Community College|CCC000342077":[
 "internship",
 "Photography Internship"
+],
+"Glendale Community College|CCC000342145":[
+"topics",
+"BIOL SPECIAL TOPICS"
 ],
 "Glendale Community College|CCC000342500":[
 "internship",
@@ -13138,9 +13841,21 @@
 "internship",
 "DANCE INTERNSHIP"
 ],
+"Glendale Community College|CCC000343266":[
+"topics",
+"GEOL SPECIAL TOPICS"
+],
+"Glendale Community College|CCC000344287":[
+"topics",
+"CHEM SPECIAL TOPICS"
+],
 "Glendale Community College|CCC000344857":[
 "internship",
 "ECT INTERNSHIP"
+],
+"Glendale Community College|CCC000344909":[
+"topics",
+"CAM SPECIAL TOPICS"
 ],
 "Glendale Community College|CCC000345086":[
 "internship",
@@ -13174,6 +13889,10 @@
 "independent",
 "Computer Science/ Information Systems Independent Study"
 ],
+"Glendale Community College|CCC000392746":[
+"topics",
+"NS SPECIAL TOPICS"
+],
 "Glendale Community College|CCC000394181":[
 "independent",
 "ECT INDEPENDENT STUDY"
@@ -13193,6 +13912,14 @@
 "Glendale Community College|CCC000396620":[
 "independent",
 "HIER INDEPENDENT STUDY"
+],
+"Glendale Community College|CCC000399750":[
+"topics",
+"HIST SPECIAL TOPICS"
+],
+"Glendale Community College|CCC000401423":[
+"topics",
+"POL S SPECIAL TOPICS"
 ],
 "Glendale Community College|CCC000402092":[
 "independent",
@@ -13226,13 +13953,33 @@
 "independent",
 "GERM INDEPENDENT STUDY"
 ],
+"Glendale Community College|CCC000407063":[
+"topics",
+"GEOG SPECIAL TOPICS"
+],
+"Glendale Community College|CCC000408037":[
+"topics",
+"CS/IS SPECIAL TOPICS"
+],
 "Glendale Community College|CCC000409740":[
 "independent",
 "English Independent Study"
 ],
+"Glendale Community College|CCC000410139":[
+"topics",
+"CABOT SPECIAL TOPICS"
+],
+"Glendale Community College|CCC000410537":[
+"topics",
+"ECT SPECIAL TOPICS"
+],
 "Glendale Community College|CCC000410736":[
 "independent",
 "Biology Independent Study"
+],
+"Glendale Community College|CCC000411615":[
+"topics",
+"CHLDV SPECIAL TOPICS"
 ],
 "Glendale Community College|CCC000412195":[
 "internship",
@@ -13310,6 +14057,14 @@
 "internship",
 "Political Science Internship"
 ],
+"Glendale Community College|CCC000445985":[
+"topics",
+"ARCH SPECIAL TOPICS"
+],
+"Glendale Community College|CCC000446007":[
+"topics",
+"ST DV SPECIAL TOPICS"
+],
 "Glendale Community College|CCC000446499":[
 "code_only",
 "PARED056"
@@ -13325,6 +14080,10 @@
 "Glendale Community College|CCC000457119":[
 "internship",
 "Psychology Internship"
+],
+"Glendale Community College|CCC000499756":[
+"topics",
+"HRM SPECIAL TOPICS"
 ],
 "Glendale Community College|CCC000502131":[
 "code_only",
@@ -13466,6 +14225,10 @@
 "code_only",
 "NS   207"
 ],
+"Glendale Community College|CCC000502238":[
+"topics",
+"RE SPECIAL TOPICS"
+],
 "Glendale Community College|CCC000502239":[
 "code_only",
 "RE   260"
@@ -13498,9 +14261,21 @@
 "code_only",
 "ENGL 173"
 ],
+"Glendale Community College|CCC000509623":[
+"topics",
+"CULIN SPECIAL TOPICS"
+],
+"Glendale Community College|CCC000509625":[
+"topics",
+"ENGR SPECIAL TOPICS"
+],
 "Glendale Community College|CCC000509627":[
 "code_only",
 "HLTH 111"
+],
+"Glendale Community College|CCC000511001":[
+"topics",
+"SOC S SPECIAL TOPICS"
 ],
 "Glendale Community College|CCC000517444":[
 "independent",
@@ -13650,9 +14425,17 @@
 "internship",
 "Management Internship"
 ],
+"Grossmont College|CCC000002020":[
+"topics",
+"SELECTED TOPICS IN GEOG"
+],
 "Grossmont College|CCC000005558":[
 "independent",
 "SPECIAL STUDIES IN PSY"
+],
+"Grossmont College|CCC000007821":[
+"topics",
+"SELECTED TOPICS IN FREN"
 ],
 "Grossmont College|CCC000012414":[
 "independent",
@@ -13682,6 +14465,10 @@
 "internship",
 "Forensic Public Service Internship"
 ],
+"Grossmont College|CCC000022521":[
+"topics",
+"SELECTED TOPICS IN IDS"
+],
 "Grossmont College|CCC000023753":[
 "internship",
 "Internship in Political Science"
@@ -13710,6 +14497,10 @@
 "internship",
 "Management Internship"
 ],
+"Grossmont College|CCC000033385":[
+"topics",
+"SELECTED TOPICS IN BIO"
+],
 "Grossmont College|CCC000050489":[
 "internship",
 "Accounting Internship"
@@ -13726,13 +14517,25 @@
 "independent",
 "SPECIAL STUDIES IN DANC"
 ],
+"Grossmont College|CCC000060853":[
+"topics",
+"SELECTED TOPICS IN PSY"
+],
 "Grossmont College|CCC000063966":[
 "internship",
 "Management Internship"
 ],
+"Grossmont College|CCC000066978":[
+"topics",
+"SELECTED TOPICS IN THTR"
+],
 "Grossmont College|CCC000067456":[
 "internship",
 "JOURNALISM INTERNSHIP"
+],
+"Grossmont College|CCC000069921":[
+"topics",
+"SELECTED TOPICS IN ECON"
 ],
 "Grossmont College|CCC000071302":[
 "independent",
@@ -13766,6 +14569,14 @@
 "internship",
 "Journalism Internship"
 ],
+"Grossmont College|CCC000082056":[
+"topics",
+"SELECTED TOPICS IN SPAN"
+],
+"Grossmont College|CCC000082171":[
+"topics",
+"Selected Topics in Exercise Science"
+],
 "Grossmont College|CCC000082269":[
 "internship",
 "Accounting Internship"
@@ -13773,6 +14584,14 @@
 "Grossmont College|CCC000082801":[
 "independent",
 "SPECIAL STUDIES IN HESC"
+],
+"Grossmont College|CCC000082910":[
+"topics",
+"SELECTED TOPICS IN OCEA"
+],
+"Grossmont College|CCC000083392":[
+"topics",
+"SELECTED TOPICS IN ASL"
 ],
 "Grossmont College|CCC000099275":[
 "internship",
@@ -13790,6 +14609,10 @@
 "independent",
 "SPECIAL STUDIES IN ENGL"
 ],
+"Grossmont College|CCC000129400":[
+"topics",
+"SELECTED TOPICS IN JAPN"
+],
 "Grossmont College|CCC000129835":[
 "internship",
 "INTERNSHIP IN ECONOMICS"
@@ -13798,13 +14621,33 @@
 "internship",
 "Internship in International Business"
 ],
+"Grossmont College|CCC000132581":[
+"topics",
+"SELECTED TOPICS IN NURS"
+],
+"Grossmont College|CCC000134112":[
+"topics",
+"SELECTED TOPICS IN GEOL"
+],
+"Grossmont College|CCC000136803":[
+"topics",
+"SELECTED TOPICS IN PHYC"
+],
 "Grossmont College|CCC000142194":[
 "independent",
 "SPECIAL STUDIES IN HIST"
 ],
+"Grossmont College|CCC000146843":[
+"topics",
+"SELECTED TOPICS IN CCS"
+],
 "Grossmont College|CCC000147954":[
 "independent",
 "SPECIAL STUDIES IN BUS"
+],
+"Grossmont College|CCC000156455":[
+"topics",
+"SELECTED TOPICS IN SOC"
 ],
 "Grossmont College|CCC000162749":[
 "internship",
@@ -13830,17 +14673,53 @@
 "independent",
 "SPECIAL STUDIES IN CSIS"
 ],
+"Grossmont College|CCC000176578":[
+"topics",
+"SELECTED TOPICS IN DANC"
+],
 "Grossmont College|CCC000182246":[
 "independent",
 "SPECIAL STUDIES IN HUM"
+],
+"Grossmont College|CCC000182998":[
+"topics",
+"Selected Topics in Business Office Tech"
 ],
 "Grossmont College|CCC000189612":[
 "independent",
 "SPECIAL STUDIES IN PSC"
 ],
+"Grossmont College|CCC000191344":[
+"topics",
+"SELECTED TOPICS IN POSC"
+],
+"Grossmont College|CCC000192133":[
+"topics",
+"SELECTED TOPICS IN PDSS"
+],
+"Grossmont College|CCC000192749":[
+"topics",
+"SELECTED TOPICS IN PHIL"
+],
+"Grossmont College|CCC000194381":[
+"topics",
+"SELECTED TOPICS IN GERM"
+],
+"Grossmont College|CCC000196536":[
+"topics",
+"SELECTED TOPICS IN MATH"
+],
 "Grossmont College|CCC000199476":[
 "internship",
 "Internship in Political Science"
+],
+"Grossmont College|CCC000199957":[
+"topics",
+"SELECTED TOPICS IN RUSS"
+],
+"Grossmont College|CCC000202876":[
+"topics",
+"SELECTED TOPICS IN HESC"
 ],
 "Grossmont College|CCC000204465":[
 "internship",
@@ -13861,6 +14740,14 @@
 "Grossmont College|CCC000237573":[
 "independent",
 "SPECIAL STUDIES IN PHYC"
+],
+"Grossmont College|CCC000237659":[
+"topics",
+"SELECTED TOPICS IN HUM"
+],
+"Grossmont College|CCC000240441":[
+"topics",
+"SELECTED TOPICS IN COMM"
 ],
 "Grossmont College|CCC000248082":[
 "independent",
@@ -13894,9 +14781,17 @@
 "independent",
 "SPECIAL STUDIES IN ANTH"
 ],
+"Grossmont College|CCC000269978":[
+"topics",
+"SELECTED TOPICS IN FSM"
+],
 "Grossmont College|CCC000273618":[
 "independent",
 "SPECIAL STUDIES IN FS"
+],
+"Grossmont College|CCC000274376":[
+"topics",
+"SELECTED TOPICS IN ENGL"
 ],
 "Grossmont College|CCC000276147":[
 "independent",
@@ -13913,6 +14808,14 @@
 "Grossmont College|CCC000288325":[
 "independent",
 "Special Studies/Projects in Geography"
+],
+"Grossmont College|CCC000288329":[
+"topics",
+"SELECTED TOPICS IN HIST"
+],
+"Grossmont College|CCC000290155":[
+"topics",
+"SELECTED TOPICS IN ED"
 ],
 "Grossmont College|CCC000292817":[
 "internship",
@@ -13938,9 +14841,17 @@
 "internship",
 "MANAGEMENT INTERNSHIP"
 ],
+"Grossmont College|CCC000315821":[
+"topics",
+"Selected Topics in Art"
+],
 "Grossmont College|CCC000319666":[
 "independent",
 "Special Studies/Projects in Biology Special Studies/Projects in Biol"
+],
+"Grossmont College|CCC000322350":[
+"topics",
+"SELECTED TOPICS IN CHEM"
 ],
 "Grossmont College|CCC000325567":[
 "internship",
@@ -13953,6 +14864,10 @@
 "Grossmont College|CCC000327887":[
 "internship",
 "ACCOUNTING INTERNSHIP"
+],
+"Grossmont College|CCC000328113":[
+"topics",
+"SELECTED TOPICS IN FS"
 ],
 "Grossmont College|CCC000333670":[
 "internship",
@@ -13970,13 +14885,41 @@
 "internship",
 "Media Internship 3"
 ],
+"Grossmont College|CCC000347830":[
+"topics",
+"SELECTED TOPICS IN RESP"
+],
+"Grossmont College|CCC000356838":[
+"topics",
+"SELECTED TOPICS IN AOJ"
+],
 "Grossmont College|CCC000360168":[
 "independent",
 "Special Studies/Projects in BOT"
 ],
+"Grossmont College|CCC000360375":[
+"topics",
+"Selected Topics in Music"
+],
+"Grossmont College|CCC000362331":[
+"topics",
+"Selected Topics in Business"
+],
 "Grossmont College|CCC000362840":[
 "internship",
 "Media Internship 2"
+],
+"Grossmont College|CCC000366321":[
+"topics",
+"Selected Topics in Child Development"
+],
+"Grossmont College|CCC000376804":[
+"topics",
+"Select Topics-English As Second Language Selected Topics in English"
+],
+"Grossmont College|CCC000379203":[
+"topics",
+"SELECTED TOPICS IN PDC"
 ],
 "Grossmont College|CCC000379225":[
 "internship",
@@ -14046,6 +14989,10 @@
 "code_only",
 "PDC 195D"
 ],
+"Grossmont College|CCC000501231":[
+"topics",
+"Selected Topics in Photo"
+],
 "Grossmont College|CCC000501545":[
 "code_only",
 "PHYC198"
@@ -14061,6 +15008,22 @@
 "Grossmont College|CCC000502130":[
 "independent",
 "Special Studies/Projects - Culinary Arts"
+],
+"Grossmont College|CCC000504112":[
+"topics",
+"Selected Topics in Art"
+],
+"Grossmont College|CCC000504114":[
+"topics",
+"Selected Topics in Child Development"
+],
+"Grossmont College|CCC000504118":[
+"topics",
+"Selected Topics in Exercise Science"
+],
+"Grossmont College|CCC000504119":[
+"topics",
+"Select Topics-English As Second Language Selected Topics in English"
 ],
 "Grossmont College|CCC000504120":[
 "code_only",
@@ -14078,9 +15041,41 @@
 "code_only",
 "GEOG175"
 ],
+"Grossmont College|CCC000504128":[
+"topics",
+"Selected Topics in Media Communications"
+],
+"Grossmont College|CCC000504129":[
+"topics",
+"Selected Topics in Music"
+],
+"Grossmont College|CCC000504132":[
+"topics",
+"Selected Topics in Political Science"
+],
+"Grossmont College|CCC000504133":[
+"topics",
+"Selected Topics in Respiratory Therapy"
+],
+"Grossmont College|CCC000508574":[
+"topics",
+"Selected Topics in BOT"
+],
+"Grossmont College|CCC000508576":[
+"topics",
+"Selected Topics in PDSS"
+],
 "Grossmont College|CCC000509297":[
 "code_only",
 "ART 299A"
+],
+"Grossmont College|CCC000509298":[
+"topics",
+"Selected Topics in Biology"
+],
+"Grossmont College|CCC000509299":[
+"topics",
+"Selected Topics in Photography"
 ],
 "Grossmont College|CCC000512788":[
 "code_only",
@@ -14089,6 +15084,10 @@
 "Grossmont College|CCC000512789":[
 "code_only",
 "BOT 230"
+],
+"Grossmont College|CCC000512802":[
+"topics",
+"Selected Topics in Math"
 ],
 "Grossmont College|CCC000516518":[
 "code_only",
@@ -14125,6 +15124,14 @@
 "Irvine Valley College|CCC000543300":[
 "internship",
 "FITNESS SPECIALIST INTERNSHIP"
+],
+"Irvine Valley College|CCC000591012":[
+"topics",
+"SPECIAL TOPICS IN STAGE MANAGEMENT"
+],
+"Irvine Valley College|CCC000658633":[
+"topics",
+"Special Topics in Design and Production"
 ],
 "Lake Tahoe Community College|CCC000346172":[
 "independent",
@@ -14165,6 +15172,10 @@
 "Lake Tahoe Community College|CCC000357733":[
 "independent",
 "Special Projects"
+],
+"Lake Tahoe Community College|CCC000359923":[
+"topics",
+"Special Topic: American Sign Language Classifiers"
 ],
 "Lake Tahoe Community College|CCC000360107":[
 "independent",
@@ -14242,6 +15253,10 @@
 "independent",
 "Special Projects"
 ],
+"Lake Tahoe Community College|CCC000377399":[
+"topics",
+"Special Topic: Sign Language Voicing/Interpreting"
+],
 "Lake Tahoe Community College|CCC000379069":[
 "independent",
 "Special Projects"
@@ -14282,6 +15297,54 @@
 "independent",
 "Special Projects"
 ],
+"Lake Tahoe Community College|CCC000531004":[
+"topics",
+"Special Topics: Understanding the EIPA"
+],
+"Lake Tahoe Community College|CCC000531005":[
+"topics",
+"Special Topics: Interpreting Code of Ethics"
+],
+"Lake Tahoe Community College|CCC000536244":[
+"topics",
+"Special Topics: Catering for the Culinary Arts Profession"
+],
+"Lake Tahoe Community College|CCC000536566":[
+"topics",
+"Special Topics: The Great Ideas of Buddhism, Part I"
+],
+"Lake Tahoe Community College|CCC000536567":[
+"topics",
+"Special Topics: The Great Ideas of Buddhism, Part II"
+],
+"Lake Tahoe Community College|CCC000536568":[
+"topics",
+"Special Topics: The Great Ideas of Buddhism, Part III"
+],
+"Lake Tahoe Community College|CCC000545770":[
+"topics",
+"Special Topics: Ethics in Law Enforcement"
+],
+"Lake Tahoe Community College|CCC000548132":[
+"topics",
+"Special Topics: Embracing Diversity at the Workplace: Focus on LGBT"
+],
+"Lake Tahoe Community College|CCC000549052":[
+"topics",
+"Special Topics: Law Enforcement Report Writing"
+],
+"Lake Tahoe Community College|CCC000549951":[
+"topics",
+"Special Topics: Portrait Painting"
+],
+"Lake Tahoe Community College|CCC000554196":[
+"topics",
+"Special Topics: The Anthropology of the Unexplained"
+],
+"Lake Tahoe Community College|CCC000564918":[
+"topics",
+"Special Topics: Introduction to Social Event Catering"
+],
 "Lake Tahoe Community College|CCC000568819":[
 "independent",
 "Special Projects"
@@ -14310,21 +15373,301 @@
 "independent",
 "Special Projects"
 ],
+"Lake Tahoe Community College|CCC000578057":[
+"topics",
+"Special Topics: ISSI: The Film \"Volver,\" A Return to the Past"
+],
 "Lake Tahoe Community College|CCC000584829":[
 "independent",
 "Special Projects"
+],
+"Lake Tahoe Community College|CCC000587401":[
+"topics",
+"Special Topics: ISSI : Grammar Focus: Intermediate Levels"
+],
+"Lake Tahoe Community College|CCC000587402":[
+"topics",
+"Special topics: ISSI: Grammar Focus: Advanced Levels"
 ],
 "Lake Tahoe Community College|CCC000591366":[
 "independent",
 "Special Project"
 ],
+"Lake Tahoe Community College|CCC000596330":[
+"topics",
+"Special Topics: Wellness and Health for the Older Adult"
+],
+"Lake Tahoe Community College|CCC000597046":[
+"topics",
+"Special Topics: Special Weapons and Tactics (SWAT), Basic"
+],
+"Lake Tahoe Community College|CCC000599268":[
+"topics",
+"Special Topics: The Grand Canyon"
+],
+"Lake Tahoe Community College|CCC000601946":[
+"topics",
+"Special Topics: ISSI: Civil Art and Uncivil War: Spain 1936-39"
+],
+"Lake Tahoe Community College|CCC000603128":[
+"topics",
+"Special Topics: Advanced Geographic Information Systems"
+],
+"Lake Tahoe Community College|CCC000603841":[
+"topics",
+"Special Topics: A Brief Geologic History of the Tahoe Basin"
+],
+"Lake Tahoe Community College|CCC000604204":[
+"topics",
+"Special Topics: Food and Beverage Management"
+],
+"Lake Tahoe Community College|CCC000604459":[
+"topics",
+"Special Topics: Using Smartphone Apps for Scientific Data Collection"
+],
+"Lake Tahoe Community College|CCC000605614":[
+"topics",
+"Special Topics: College Success for Lake Tahoe College Promise Students"
+],
+"Lake Tahoe Community College|CCC000605616":[
+"topics",
+"Special Topics: College Success for Lake Tahoe College Promise Students"
+],
+"Lake Tahoe Community College|CCC000608266":[
+"topics",
+"Special Topics: ISSI: The Film: ArrÃƒÂ¡ncame la vida"
+],
+"Lake Tahoe Community College|CCC000608468":[
+"topics",
+"Special Topics: AIARE Instructor Training Course"
+],
+"Lake Tahoe Community College|CCC000608775":[
+"topics",
+"Special Topics: Wilderness and Outdoor Equipment Design"
+],
+"Lake Tahoe Community College|CCC000608776":[
+"topics",
+"Special Topics: Peak Performance: Mental Skills Training for Outdoor Leaders"
+],
+"Lake Tahoe Community College|CCC000611666":[
+"topics",
+"Special Topics: Guest Services Boot Camp"
+],
+"Lake Tahoe Community College|CCC000613211":[
+"topics",
+"Special Topics: ISSI: Intermediate Grammar in Depth"
+],
+"Lake Tahoe Community College|CCC000614887":[
+"topics",
+"Special Topics: ISSI: The Latin American Short Story (El cuento Latinoamericano)"
+],
 "Lake Tahoe Community College|CCC000616487":[
 "independent",
 "Special Project"
 ],
+"Lake Tahoe Community College|CCC000619086":[
+"topics",
+"Special Topics: AIARE Course Leader Training"
+],
+"Lake Tahoe Community College|CCC000619622":[
+"topics",
+"Special Topics: Hand Drumming for the Older Adult"
+],
+"Lake Tahoe Community College|CCC000619789":[
+"topics",
+"Special Topics: Food Sanitation: ServSafe Essentials (NC9)"
+],
+"Lake Tahoe Community College|CCC000619984":[
+"topics",
+"Special Topics: Firefighter I Certification Testing (Lake Tahoe Basin/Area)"
+],
+"Lake Tahoe Community College|CCC000622062":[
+"topics",
+"Special Topics: Offseason Training - Soccer"
+],
+"Lake Tahoe Community College|CCC000622917":[
+"topics",
+"Special Topics: ISSI: Applied Grammar through Latin American Literature"
+],
+"Lake Tahoe Community College|CCC000624226":[
+"topics",
+"Special Topics: ISSI: High Superior: Through the Lens of the Feminine: Literary Works Across Spain and Latin America"
+],
+"Lake Tahoe Community College|CCC000624434":[
+"topics",
+"Special Topics: The Anthropology of Music and Sound"
+],
+"Lake Tahoe Community College|CCC000631684":[
+"topics",
+"Special Topics: California Dental Practice Act"
+],
+"Lake Tahoe Community College|CCC000631687":[
+"topics",
+"Special Topics: Support Course for Statistics"
+],
+"Lake Tahoe Community College|CCC000631836":[
+"topics",
+"Special Topics: AIARE Rescue (Snowshoe)"
+],
+"Lake Tahoe Community College|CCC000631837":[
+"topics",
+"Special Topics: AIARE 1 (Snowshoe)"
+],
 "Lake Tahoe Community College|CCC000632701":[
 "independent",
 "Special Projects"
+],
+"Lake Tahoe Community College|CCC000632717":[
+"topics",
+"Special Topics: Healthy Lifestyle Choices"
+],
+"Lake Tahoe Community College|CCC000633641":[
+"topics",
+"Special Topics: Radiation Safety"
+],
+"Lake Tahoe Community College|CCC000637305":[
+"topics",
+"Special Topics: Outdoor Emergency Care Update"
+],
+"Lake Tahoe Community College|CCC000637961":[
+"topics",
+"Special Topic: Technical Rope Rescue"
+],
+"Lake Tahoe Community College|CCC000638045":[
+"topics",
+"Special Topics: Concurrent Support Course for MAT 105"
+],
+"Lake Tahoe Community College|CCC000638632":[
+"topics",
+"Special Topics: Developmental Skills - Digital Literacy"
+],
+"Lake Tahoe Community College|CCC000638633":[
+"topics",
+"Special Topics: ISSI: High Superior: Latin American and Spanish Art History"
+],
+"Lake Tahoe Community College|CCC000639499":[
+"topics",
+"Special Topics: Concurrent Support Course for MAT103A - NC"
+],
+"Lake Tahoe Community College|CCC000639500":[
+"topics",
+"Special Topics: Concurrent Support Course for MAT 105 - NC"
+],
+"Lake Tahoe Community College|CCC000639647":[
+"topics",
+"Special Topics: Sports Techniques and Conditioning - Women's Soccer (Winter)"
+],
+"Lake Tahoe Community College|CCC000639648":[
+"topics",
+"Special Topics: Sports Techniques and Conditioning - Men's Soccer (Spring)"
+],
+"Lake Tahoe Community College|CCC000639649":[
+"topics",
+"Special Topics: Sports Technique and Conditioning - Women's Soccer (Spring)"
+],
+"Lake Tahoe Community College|CCC000639828":[
+"topics",
+"Special Topics: Musical Theatre Rehearsal and Performance - NC"
+],
+"Lake Tahoe Community College|CCC000639829":[
+"topics",
+"Special Topics: Play Rehearsal and Performance - NC"
+],
+"Lake Tahoe Community College|CCC000639830":[
+"topics",
+"Special Topics: Technical Theatre: Stage Production - NC"
+],
+"Lake Tahoe Community College|CCC000643940":[
+"topics",
+"Special Topics: AMGA Single Pitch Instructor"
+],
+"Lake Tahoe Community College|CCC000643941":[
+"topics",
+"Special Topics: AMGA Single Pitch Instructor Assessment"
+],
+"Lake Tahoe Community College|CCC000644103":[
+"topics",
+"Special Topics: Beginning Audio Editing"
+],
+"Lake Tahoe Community College|CCC000647530":[
+"topics",
+"Special Topics: Supervisor Course for Law Enforcement"
+],
+"Lake Tahoe Community College|CCC000647992":[
+"topics",
+"Special Topics: Fire Officer 4C: Emergency Services Management"
+],
+"Lake Tahoe Community College|CCC000648775":[
+"topics",
+"Special Topics: Field Experience: Summer"
+],
+"Lake Tahoe Community College|CCC000648776":[
+"topics",
+"Special Topics: Rock Climbing: Beginning"
+],
+"Lake Tahoe Community College|CCC000648777":[
+"topics",
+"Special Topics: Rock Climbing: Sport Lead"
+],
+"Lake Tahoe Community College|CCC000648778":[
+"topics",
+"Special Topics: Rock Climbing: Traditional Lead"
+],
+"Lake Tahoe Community College|CCC000648779":[
+"topics",
+"Special Topics: Rock Climbing: Multi-Pitch Systems"
+],
+"Lake Tahoe Community College|CCC000648780":[
+"topics",
+"Special Topics: Partner Rescue: Base Site"
+],
+"Lake Tahoe Community College|CCC000648781":[
+"topics",
+"Special Topics: Partner Rescue: Top Site"
+],
+"Lake Tahoe Community College|CCC000648782":[
+"topics",
+"Special Topics: Partner Rescue: Multi-Pitch"
+],
+"Lake Tahoe Community College|CCC000653144":[
+"topics",
+"Special Topics: Healthy Lifestyle Choices"
+],
+"Lake Tahoe Community College|CCC000653208":[
+"topics",
+"Special Topics: Fire Officer 4A: Human Resource Management"
+],
+"Lake Tahoe Community College|CCC000653209":[
+"topics",
+"Special Topics: Fire Officer 4B: Community Leadership and Strategic Planning"
+],
+"Lake Tahoe Community College|CCC000653211":[
+"topics",
+"Special Topics: Avalanche PRO 1"
+],
+"Lake Tahoe Community College|CCC000655475":[
+"topics",
+"Special Topics: Firefighter 1 Certification (CAPSTONE) Testing (NC)"
+],
+"Lake Tahoe Community College|CCC000655812":[
+"topics",
+"Special Topics: ISSI: Grammar Through Short Films I (Int-HInt)"
+],
+"Lake Tahoe Community College|CCC000655813":[
+"topics",
+"Special Topics: ISSI: Grammar Through Short Films II (Adv-Sup)"
+],
+"Lake Tahoe Community College|CCC000655814":[
+"topics",
+"Special Topics: ISSI: The Power of Perfect Pronunciation in Spanish I (Int-HInt)"
+],
+"Lake Tahoe Community College|CCC000655815":[
+"topics",
+"Special Topics: ISSI: The Power of Perfect Pronunciation in Spanish II (Adv-Sup)"
+],
+"Lake Tahoe Community College|CCC000658591":[
+"topics",
+"Special Topics: EMT Refresher (24 Hours) - NC"
 ],
 "Laney College|CCC000345409":[
 "independent",
@@ -14701,6 +16044,10 @@
 "Long Beach City College|CCC000586725":[
 "independent",
 "Special Studies"
+],
+"Long Beach City College|CCC000586892":[
+"topics",
+"Special Topics in Health Care Dietetics"
 ],
 "Long Beach City College|CCC000627503":[
 "independent",
@@ -15386,6 +16733,14 @@
 "independent",
 "Directed Study - Broadcasting"
 ],
+"Los Angeles Pierce College|CCC000555907":[
+"topics",
+"Special Topics in Dance II"
+],
+"Los Angeles Pierce College|CCC000555908":[
+"topics",
+"Special Topics in Dance I"
+],
 "Los Angeles Pierce College|CCC000572981":[
 "independent",
 "Directed Study - Media Arts"
@@ -16050,6 +17405,10 @@
 "internship",
 "Field Studies Seminar Ã¢â‚¬â€œ Internship"
 ],
+"Mendocino College|CCC000375009":[
+"topics",
+"Special Topics in History"
+],
 "Mendocino College|CCC000523492":[
 "internship",
 "Political Science Internship"
@@ -16134,6 +17493,14 @@
 "independent",
 "Independent Study"
 ],
+"Mendocino College|CCC000643942":[
+"topics",
+"Special Topics in Woodworking: Introduction to Furniture Design"
+],
+"Mendocino College|CCC000658664":[
+"topics",
+"Special Topics in Woodworking: Introduction to Relief Carving"
+],
 "Merced College|CCC000369321":[
 "independent",
 "Independent Study in Photography"
@@ -16158,6 +17525,14 @@
 "independent",
 "Independent Study in Communication"
 ],
+"Merritt College|CCC000346413":[
+"topics",
+"SELECTED TOPICS IN ENVIRONMENTALIS"
+],
+"Merritt College|CCC000347912":[
+"topics",
+"SELECTED TOPICS IN ENVIRONMENTALIS"
+],
 "Merritt College|CCC000348079":[
 "independent",
 "Independent Study in Biology"
@@ -16169,6 +17544,10 @@
 "Merritt College|CCC000350386":[
 "independent",
 "Independent Study in Philosophy"
+],
+"Merritt College|CCC000350895":[
+"topics",
+"SELECTED TOPICS IN ENVIRONMENTALIS"
 ],
 "Merritt College|CCC000352413":[
 "independent",
@@ -16182,13 +17561,29 @@
 "independent",
 "Independent Study in Physics"
 ],
+"Merritt College|CCC000354387":[
+"topics",
+"SELECTED TOPICS IN ENVIRONMENTALIS"
+],
+"Merritt College|CCC000354786":[
+"topics",
+"SELECTED TOPICS IN ENVIRONMENTAL STUDIES"
+],
 "Merritt College|CCC000354867":[
 "independent",
 "Independent Study in Mexican and Latin-American Studies"
 ],
+"Merritt College|CCC000357443":[
+"topics",
+"SELECTED TOPICS IN ENVIRONMENTALIS"
+],
 "Merritt College|CCC000359949":[
 "independent",
 "Independent Study in Sociology"
+],
+"Merritt College|CCC000360226":[
+"topics",
+"SELECTED TOPICS IN ENVIRONMENTALIS"
 ],
 "Merritt College|CCC000360339":[
 "independent",
@@ -16202,9 +17597,21 @@
 "internship",
 "SEMINAR IN PARALEGAL STUDIES INTERNSHIP"
 ],
+"Merritt College|CCC000363215":[
+"topics",
+"SELECTED TOPICS IN ENVIRONMENTALIS"
+],
+"Merritt College|CCC000363360":[
+"topics",
+"SELECTED TOPICS IN FIRE SCIENCE"
+],
 "Merritt College|CCC000365630":[
 "independent",
 "Independent Study in Landscape Horticulture"
+],
+"Merritt College|CCC000366115":[
+"topics",
+"SELECTED TOPICS IN ENVIRONMENTALIS"
 ],
 "Merritt College|CCC000367043":[
 "independent",
@@ -16213,6 +17620,14 @@
 "Merritt College|CCC000368583":[
 "independent",
 "Independent Study in Psychology"
+],
+"Merritt College|CCC000368942":[
+"topics",
+"SELECTED TOPICS IN ENVIRONMENTALIS"
+],
+"Merritt College|CCC000369139":[
+"topics",
+"SELECTED TOPICS IN ENVIRONMENTALIS"
 ],
 "Merritt College|CCC000370120":[
 "independent",
@@ -16234,17 +17649,57 @@
 "independent",
 "Independent Study in Computer Information Systems"
 ],
+"Merritt College|CCC000372024":[
+"topics",
+"SELECTED TOPICS IN ENVIRONMENTALIS"
+],
 "Merritt College|CCC000372337":[
 "independent",
 "Independent Study in English"
+],
+"Merritt College|CCC000372396":[
+"topics",
+"SELECTED TOPICS IN ENVIRONMENTALIS"
 ],
 "Merritt College|CCC000373539":[
 "independent",
 "Independent Study in History"
 ],
+"Merritt College|CCC000373825":[
+"topics",
+"SELECTED TOPICS IN FIRE SCIENCE"
+],
+"Merritt College|CCC000374725":[
+"topics",
+"SELECTED TOPICS IN ENVIRONMENTALIS"
+],
+"Merritt College|CCC000375312":[
+"topics",
+"SELECTED TOPICS IN ENVIRONMENTALIS"
+],
+"Merritt College|CCC000376775":[
+"topics",
+"SELECTED TOPICS IN FIRE SCIENCE"
+],
 "Merritt College|CCC000376826":[
 "independent",
 "Independent Study in Paralegal Studies"
+],
+"Merritt College|CCC000377714":[
+"topics",
+"SELECTED TOPICS IN ENVIRONMENTALIS"
+],
+"Merritt College|CCC000378071":[
+"topics",
+"SELECTED TOPICS IN ENVIRONMENTALIS"
+],
+"Merritt College|CCC000379740":[
+"topics",
+"SELECTED TOPICS IN ENVIRONMENTALIS"
+],
+"Merritt College|CCC000380913":[
+"topics",
+"SELECTED TOPICS IN ENVIRONMENTALIS"
 ],
 "Merritt College|CCC000381768":[
 "independent",
@@ -16526,6 +17981,10 @@
 "internship",
 "Fire Prevention Internship Course 4"
 ],
+"Mission College|CCC000638222":[
+"topics",
+"Selected Topics and Activities In Communication - Series 2"
+],
 "Modesto Junior College|CCC000161249":[
 "internship",
 "Workplace Preparation and Internship"
@@ -16549,6 +18008,18 @@
 "Modesto Junior College|CCC000562404":[
 "internship",
 "Political Internship"
+],
+"Modesto Junior College|CCC000568776":[
+"topics",
+"Humanities Special Topics Place and Identity"
+],
+"Modesto Junior College|CCC000568777":[
+"topics",
+"Humanities Special Topics: Nature and Civilization"
+],
+"Modesto Junior College|CCC000569999":[
+"topics",
+"Humanities Special Topics: Social Justice"
 ],
 "Modesto Junior College|CCC000595659":[
 "internship",
@@ -16622,6 +18093,10 @@
 "independent",
 "Independent Study"
 ],
+"Monterey Peninsula College|CCC000254591":[
+"topics",
+"Special Topics in Music"
+],
 "Monterey Peninsula College|CCC000290350":[
 "independent",
 "Independent Study"
@@ -16657,6 +18132,10 @@
 "Monterey Peninsula College|CCC000622700":[
 "independent",
 "Independent Study"
+],
+"Monterey Peninsula College|CCC000654393":[
+"topics",
+"Special Topics - Adapted Dance"
 ],
 "Moorpark College|CCC000426826":[
 "independent",
@@ -17046,9 +18525,29 @@
 "internship",
 "Paramedic Field Internship"
 ],
+"Moreno Valley College|CCC000570702":[
+"topics",
+"Special Topics in ESL: Mastering Academic Vocabulary"
+],
+"Moreno Valley College|CCC000597016":[
+"topics",
+"Special Topics in Biology"
+],
 "Moreno Valley College|CCC000620301":[
 "independent",
 "Special Studies in Literature"
+],
+"Moreno Valley College|CCC000630844":[
+"topics",
+"Special Topics in Sociology"
+],
+"Moreno Valley College|CCC000634322":[
+"topics",
+"Special Topics in ESL: Punctuation of Phrases and Clauses"
+],
+"Moreno Valley College|CCC000634323":[
+"topics",
+"Special Topics in English as a Second Language: Articles and Prepositions"
 ],
 "Mt. San Antonio College|CCC000394267":[
 "independent",
@@ -17105,6 +18604,10 @@
 "Mt. San Antonio College|CCC000524090":[
 "independent",
 "Special Projects: Figure Drawing"
+],
+"Mt. San Antonio College|CCC000524135":[
+"topics",
+"Special Topics in Field Geology"
 ],
 "Mt. San Antonio College|CCC000524669":[
 "independent",
@@ -17498,6 +19001,10 @@
 "independent",
 "Independent Study in Theater Arts"
 ],
+"Norco College|CCC000519742":[
+"topics",
+"Special Topics in ESL: Verb Tense Review"
+],
 "Norco College|CCC000520006":[
 "independent",
 "Play Practicum-Special Projects Laboratory I"
@@ -17506,9 +19013,41 @@
 "independent",
 "Play Practicum-Special Projects Lab II"
 ],
+"Norco College|CCC000570703":[
+"topics",
+"Special Topics in ESL: Mastering Academic Vocabulary"
+],
 "Norco College|CCC000620670":[
 "independent",
 "Special Studies in Literature"
+],
+"Norco College|CCC000627776":[
+"topics",
+"Special Topics in Sociology"
+],
+"Norco College|CCC000639285":[
+"topics",
+"Special Topics in English as a Second Language: Punctuation of Phrases and Clauses"
+],
+"Norco College|CCC000639286":[
+"topics",
+"Special Topics in English as a Second Language: Articles and Prepositions"
+],
+"Norco College|CCC000655103":[
+"topics",
+"Special Topics in English as a Second Language: Punctuation of Phrases and Clauses"
+],
+"Norco College|CCC000655104":[
+"topics",
+"Special Topics in English as a Second Language: Articles and Prepositions"
+],
+"Norco College|CCC000655105":[
+"topics",
+"Special Topics in ESL: Mastering Academic Vocabulary"
+],
+"Norco College|CCC000656920":[
+"topics",
+"Special Topics in ESL: Verb Tense Review"
 ],
 "North Orange Continuing Education Credit|CCC000393641":[
 "independent",
@@ -18134,6 +19673,14 @@
 "independent",
 "Special Projects"
 ],
+"Ohlone College|CCC000544403":[
+"topics",
+"Selected Topic: Natural History of Baja California"
+],
+"Ohlone College|CCC000546877":[
+"topics",
+"Selected Topic:  International Nursing"
+],
 "Ohlone College|CCC000551037":[
 "independent",
 "Special Projects"
@@ -18145,6 +19692,10 @@
 "Ohlone College|CCC000557205":[
 "internship",
 "Broadcast Internships II"
+],
+"Ohlone College|CCC000570592":[
+"topics",
+"Selected Topic Tropical Environment and Culture"
 ],
 "Ohlone College|CCC000573984":[
 "independent",
@@ -19466,6 +21017,22 @@
 "independent",
 "Directed Study"
 ],
+"Orange Coast College|CCC000628437":[
+"topics",
+"Special Topics in Science - Lunar Exploration"
+],
+"Orange Coast College|CCC000628438":[
+"topics",
+"Special Topics in Science - Exploring Mars"
+],
+"Orange Coast College|CCC000628439":[
+"topics",
+"Special Topics in Science - Exploring Ocean Worlds of the Outer Solar System"
+],
+"Orange Coast College|CCC000631141":[
+"topics",
+"Special Topics in Marine Science"
+],
 "Orange Coast College|CCC000637897":[
 "internship",
 "Polysomnography Internship"
@@ -19485,6 +21052,10 @@
 "Orange Coast College|CCC000649755":[
 "internship",
 "Clinical Internship"
+],
+"Orange Coast College|CCC000651108":[
+"topics",
+"Special Topics in Environmental Science/Ecology"
 ],
 "Orange Coast College|CCC000651866":[
 "independent",
@@ -19557,6 +21128,18 @@
 "Oxnard College|CCC000635210":[
 "independent",
 "Directed Studies in Microbiology Related Topics"
+],
+"Palo Verde College|CCC000384241":[
+"topics",
+"Selected Topics in Theatre Arts"
+],
+"Palo Verde College|CCC000555323":[
+"topics",
+"Selected Topics in Music"
+],
+"Palo Verde College|CCC000568933":[
+"topics",
+"Selected Topics in Psychology"
 ],
 "Palomar College|CCC000040017":[
 "independent",
@@ -19638,6 +21221,14 @@
 "independent",
 "DIRECTED STUDY IN ART"
 ],
+"Palomar College|CCC000338424":[
+"topics",
+"SPECIAL TOPICS IN CONTEMPORARY PSYCHOLOGY"
+],
+"Palomar College|CCC000343606":[
+"topics",
+"SPECIAL TOPICS IN SOCIOLOGY"
+],
 "Palomar College|CCC000468970":[
 "independent",
 "DIRECTED STUDY IN AMERICAN INDIAN STUDIES"
@@ -19682,6 +21273,10 @@
 "internship",
 "INTERNSHIP"
 ],
+"Palomar College|CCC000649196":[
+"topics",
+"Special Topics in Prehospital Healthcare"
+],
 "Palomar College|CCC000651943":[
 "independent",
 "DIRECTED STUDY IN MATHEMATICS"
@@ -19698,9 +21293,21 @@
 "internship",
 "Radio Production Internship"
 ],
+"Pasadena City College|CCC000384762":[
+"topics",
+"Special Topics in Child Development-Health and Safety"
+],
+"Pasadena City College|CCC000387537":[
+"topics",
+"Special Topics in Child Development-Working with Parents"
+],
 "Pasadena City College|CCC000388459":[
 "independent",
 "Independent Study"
+],
+"Pasadena City College|CCC000390133":[
+"topics",
+"Special Topics in Child Development-Environment"
 ],
 "Pasadena City College|CCC000391234":[
 "independent",
@@ -19737,6 +21344,10 @@
 "Pasadena City College|CCC000399659":[
 "independent",
 "Independent Study"
+],
+"Pasadena City College|CCC000399866":[
+"topics",
+"Special Topics in Child Development-Curriculum"
 ],
 "Pasadena City College|CCC000400483":[
 "independent",
@@ -19814,6 +21425,10 @@
 "independent",
 "Independent Study"
 ],
+"Pasadena City College|CCC000417758":[
+"topics",
+"Special Topics in Child Development-Discipline"
+],
 "Pasadena City College|CCC000420745":[
 "internship",
 "Biological Technology - Laboratory Internship"
@@ -19841,6 +21456,18 @@
 "Pasadena City College|CCC000424927":[
 "internship",
 "Broadcast News/Administration Internship"
+],
+"Pasadena City College|CCC000445586":[
+"topics",
+"Special Topics in Child Development - The Young Child"
+],
+"Pasadena City College|CCC000445587":[
+"topics",
+"Special Topics in Child Development-Multicultural Issues"
+],
+"Pasadena City College|CCC000445588":[
+"topics",
+"Special Topics in Child Development-Administration"
 ],
 "Pasadena City College|CCC000445790":[
 "independent",
@@ -20146,6 +21773,10 @@
 "independent",
 "Directed Study: Biophysics and Biophysics Research II"
 ],
+"Rio Hondo College|CCC000630888":[
+"topics",
+"Special Topics in Transportation"
+],
 "Rio Hondo College|CCC000634201":[
 "independent",
 "Directed Studies: American Sign Language"
@@ -20178,6 +21809,10 @@
 "independent",
 "Special Studies in Creative Writing"
 ],
+"Riverside City College|CCC000288106":[
+"topics",
+"Special Topics in ESL: Verb Tense Review"
+],
 "Riverside City College|CCC000295164":[
 "internship",
 "INTERNSHIP PROJECT"
@@ -20205,6 +21840,42 @@
 "Riverside City College|CCC000550597":[
 "internship",
 "Internship in Pilates Education and Teaching"
+],
+"Riverside City College|CCC000551169":[
+"topics",
+"Special Topics in English as a Second Language: Punctuation of Phrases and Clauses"
+],
+"Riverside City College|CCC000560902":[
+"topics",
+"Special Topics in Biology"
+],
+"Riverside City College|CCC000570707":[
+"topics",
+"Special Topics in ESL: Mastering Academic Vocabulary"
+],
+"Riverside City College|CCC000632679":[
+"topics",
+"Special Topics in Sociology"
+],
+"Riverside City College|CCC000656596":[
+"topics",
+"Special Topics in ESL: Verb Tense Review"
+],
+"Riverside City College|CCC000656597":[
+"topics",
+"Special Topics in English as a Second Language: Punctuation of Phrases and Clauses"
+],
+"Riverside City College|CCC000656598":[
+"topics",
+"Special Topics in English as a Second Language: Articles and Prepositions"
+],
+"Riverside City College|CCC000656599":[
+"topics",
+"Special Topics in ESL: Mastering Academic Vocabulary"
+],
+"Riverside City College|CCC000657610":[
+"topics",
+"Special Topics in English as a Second Language: Articles and Prepositions"
 ],
 "Sacramento City College|CCC000132614":[
 "independent",
@@ -20373,6 +22044,10 @@
 "San Bernardino Valley College|CCC000562237":[
 "independent",
 "Special Problems in Computer Science I"
+],
+"San Bernardino Valley College|CCC000578643":[
+"topics",
+"Special Topics in Theatre"
 ],
 "San Bernardino Valley College|CCC000580949":[
 "independent",
@@ -20606,6 +22281,14 @@
 "independent",
 "Independent Study"
 ],
+"San Diego City College|CCC000620443":[
+"topics",
+"Special Topics in Sports Theory and Training I"
+],
+"San Diego City College|CCC000620444":[
+"topics",
+"Special Topics in Sports Theory and Training II"
+],
 "San Diego City College|CCC000624829":[
 "independent",
 "Independent Study"
@@ -20634,9 +22317,25 @@
 "independent",
 "INDEPENDENT STUDY"
 ],
+"San Diego College of Continuing Education Credit|CCC000247470":[
+"topics",
+"CONSUMER ED-SPECIAL TOPICS"
+],
+"San Diego College of Continuing Education Credit|CCC000630154":[
+"topics",
+"Web Developement Special Topics"
+],
 "San Diego College of Continuing Education|CCC000167990":[
 "independent",
 "INDEPENDENT STUDY"
+],
+"San Diego College of Continuing Education|CCC000247470":[
+"topics",
+"CONSUMER ED-SPECIAL TOPICS"
+],
+"San Diego College of Continuing Education|CCC000630154":[
+"topics",
+"Web Developement Special Topics"
 ],
 "San Diego Mesa College|CCC000002408":[
 "independent",
@@ -20810,6 +22509,14 @@
 "independent",
 "Independent Study"
 ],
+"San Diego Mesa College|CCC000620441":[
+"topics",
+"Special Topics in Sports Theory and Training I"
+],
+"San Diego Mesa College|CCC000620442":[
+"topics",
+"Special Topics in Sports Theory and Training II"
+],
 "San Diego Mesa College|CCC000652834":[
 "independent",
 "Independent Study"
@@ -20870,6 +22577,62 @@
 "independent",
 "Independent Study"
 ],
+"San Diego Miramar College|CCC000546443":[
+"topics",
+"Special Topics in Firefighting Tactics"
+],
+"San Diego Miramar College|CCC000546444":[
+"topics",
+"Special Topics in Open Water Lifeguarding"
+],
+"San Diego Miramar College|CCC000559909":[
+"topics",
+"Special Topics in Fire Management"
+],
+"San Diego Miramar College|CCC000562848":[
+"topics",
+"Special Topics in Fire Management"
+],
+"San Diego Miramar College|CCC000564129":[
+"topics",
+"Special Topics in Open Water Lifeguarding"
+],
+"San Diego Miramar College|CCC000564130":[
+"topics",
+"Special Topics in Firefighting Tactics"
+],
+"San Diego Miramar College|CCC000564131":[
+"topics",
+"Special Topics in Hazardous Materials"
+],
+"San Diego Miramar College|CCC000564132":[
+"topics",
+"Special Topics in Hazardous Materials"
+],
+"San Diego Miramar College|CCC000572602":[
+"topics",
+"Special Topics in Instructor Development"
+],
+"San Diego Miramar College|CCC000576483":[
+"topics",
+"Special Topics in Field Tactics"
+],
+"San Diego Miramar College|CCC000577005":[
+"topics",
+"Special Topics in Law Enforcement Policy and Procedure"
+],
+"San Diego Miramar College|CCC000577006":[
+"topics",
+"Special Topics in Instructor Development"
+],
+"San Diego Miramar College|CCC000577007":[
+"topics",
+"Special Topics in Field Tactics"
+],
+"San Diego Miramar College|CCC000577008":[
+"topics",
+"Special Topics in Law Enforcement Policy and Procedure"
+],
 "San Diego Miramar College|CCC000587050":[
 "independent",
 "Independent Study"
@@ -20897,6 +22660,26 @@
 "San Diego Miramar College|CCC000612894":[
 "independent",
 "Independent Study"
+],
+"San Diego Miramar College|CCC000620469":[
+"topics",
+"Special Topics in Sports Theory and Training I"
+],
+"San Diego Miramar College|CCC000620470":[
+"topics",
+"Special Topics in Sports Theory and Training II"
+],
+"San Diego Miramar College|CCC000624443":[
+"topics",
+"Special Topics in Open Water Lifeguarding"
+],
+"San Diego Miramar College|CCC000624444":[
+"topics",
+"Special Topics in Open Water Lifeguarding"
+],
+"San Diego Miramar College|CCC000649677":[
+"topics",
+"Special Topics in Exercise and Fitness Theory and Training"
 ],
 "San Joaquin Delta College|CCC000346068":[
 "internship",
@@ -20930,9 +22713,21 @@
 "code_only",
 "ART     005"
 ],
+"San Joaquin Delta College|CCC000451587":[
+"topics",
+"Selected Topics:  Communication Studies"
+],
+"San Joaquin Delta College|CCC000451595":[
+"topics",
+"Selected Topics: Dance"
+],
 "San Joaquin Delta College|CCC000451602":[
 "code_only",
 "DIESL   075"
+],
+"San Joaquin Delta College|CCC000451603":[
+"topics",
+"Selected Topics: Drama"
 ],
 "San Joaquin Delta College|CCC000451609":[
 "code_only",
@@ -20941,6 +22736,14 @@
 "San Joaquin Delta College|CCC000451612":[
 "code_only",
 "ELEC    040"
+],
+"San Joaquin Delta College|CCC000451616":[
+"topics",
+"Selected Topics: Electrical Technology"
+],
+"San Joaquin Delta College|CCC000451621":[
+"topics",
+"Selected Topics: English"
 ],
 "San Joaquin Delta College|CCC000451622":[
 "code_only",
@@ -20966,6 +22769,10 @@
 "code_only",
 "PSYCH   015"
 ],
+"San Joaquin Delta College|CCC000455004":[
+"topics",
+"Selected Topics:  Health Science"
+],
 "San Joaquin Delta College|CCC000580657":[
 "internship",
 "PE Theory Internship"
@@ -20986,13 +22793,61 @@
 "internship",
 "Internship: Government"
 ],
+"San Joaquin Delta College|CCC000605830":[
+"topics",
+"Selected Topics: Hybrid / Electric Vehicle Technology"
+],
+"San Joaquin Delta College|CCC000612554":[
+"topics",
+"Selected Topics: Administration of Justice"
+],
+"San Joaquin Delta College|CCC000612556":[
+"topics",
+"Selected Topics: Education"
+],
+"San Joaquin Delta College|CCC000612557":[
+"topics",
+"Selected Topics: French"
+],
+"San Joaquin Delta College|CCC000612576":[
+"topics",
+"Selected Topics: English as a Second Language"
+],
+"San Joaquin Delta College|CCC000612612":[
+"topics",
+"Selected Topics in Guidance"
+],
+"San Joaquin Delta College|CCC000612614":[
+"topics",
+"Selected Topics: Machine Tool Technology"
+],
+"San Joaquin Delta College|CCC000612615":[
+"topics",
+"Selected Topics: Machine Tool Technology"
+],
+"San Joaquin Delta College|CCC000613093":[
+"topics",
+"Selected Topics: Health Education"
+],
 "San Joaquin Delta College|CCC000618754":[
 "internship",
 "Internship: Paralegal/Legal Assistant Program"
 ],
+"San Joaquin Delta College|CCC000622637":[
+"topics",
+"Selected Topics in Projection for the Stage"
+],
+"San Joaquin Delta College|CCC000622638":[
+"topics",
+"Selected Topics in Stage Props"
+],
 "San Joaquin Delta College|CCC000622639":[
 "internship",
 "Internship: Industrial Technology"
+],
+"San Joaquin Delta College|CCC000625032":[
+"topics",
+"Selected Topics: Administration of Justice"
 ],
 "San Joaquin Delta College|CCC000625312":[
 "internship",
@@ -21017,6 +22872,22 @@
 "San Joaquin Delta College|CCC000633461":[
 "internship",
 "Internship: Media"
+],
+"San Joaquin Delta College|CCC000645729":[
+"topics",
+"Selected Topics: Law"
+],
+"San Joaquin Delta College|CCC000645730":[
+"topics",
+"Selected Topics: Law"
+],
+"San Joaquin Delta College|CCC000645779":[
+"topics",
+"Selected Topics in Engineering Technology"
+],
+"San Joaquin Delta College|CCC000645780":[
+"topics",
+"Selected Topics in Engineering Technology"
 ],
 "San Joaquin Delta College|CCC000651170":[
 "independent",
@@ -21742,6 +23613,10 @@
 "independent",
 "Independent Studies In Women's, Gender and Sexuality Studies"
 ],
+"Santa Monica College|CCC000418050":[
+"topics",
+"Advanced Accounting: Special Topics"
+],
 "Santa Monica College|CCC000418097":[
 "independent",
 "Independent Studies in Cosmetology"
@@ -21829,6 +23704,10 @@
 "Santa Monica College|CCC000438220":[
 "internship",
 "Marketing Internship"
+],
+"Santa Monica College|CCC000438242":[
+"topics",
+"Fundamentals of Choreography: Special Topics"
 ],
 "Santa Monica College|CCC000438243":[
 "independent",
@@ -22298,6 +24177,10 @@
 "independent",
 "Independent Studies in Korean"
 ],
+"Santa Monica College|CCC000653648":[
+"topics",
+"Special Topics in Film Studies"
+],
 "Santa Rosa Junior College|CCC000010265":[
 "independent",
 "Independent Study in Physics"
@@ -22446,6 +24329,10 @@
 "independent",
 "Independent Study in Communication Studies"
 ],
+"Santa Rosa Junior College|CCC000605666":[
+"topics",
+"Special Topics in Global Cuisine"
+],
 "Santa Rosa Junior College|CCC000612627":[
 "internship",
 "Internship Practicum"
@@ -22498,6 +24385,10 @@
 "independent",
 "History Independent Study"
 ],
+"Shasta College|CCC000359084":[
+"topics",
+"Selected Topics in Environmental Horticulture: Pruning"
+],
 "Shasta College|CCC000526706":[
 "independent",
 "Independent Study/Accounting"
@@ -22546,6 +24437,10 @@
 "internship",
 "Internship in Biological Sciences"
 ],
+"Sierra College|CCC000052001":[
+"topics",
+"Selected Topics in Music"
+],
 "Sierra College|CCC000054120":[
 "independent",
 "Independent Study"
@@ -22578,9 +24473,17 @@
 "internship",
 "Internship in Fashion"
 ],
+"Sierra College|CCC000128638":[
+"topics",
+"Selected Topics in Literature"
+],
 "Sierra College|CCC000132506":[
 "independent",
 "Independent Study"
+],
+"Sierra College|CCC000132589":[
+"topics",
+"Selected Topics in Film Studies"
 ],
 "Sierra College|CCC000157022":[
 "independent",
@@ -22874,17 +24777,89 @@
 "internship",
 "Internship in Human Development and Family"
 ],
+"Sierra College|CCC000644859":[
+"topics",
+"Selected Topics in Women and Gender Studies"
+],
+"Skyline College|CCC000345715":[
+"topics",
+"Selected Topics in ECE"
+],
+"Skyline College|CCC000345876":[
+"topics",
+"Selected Topics in SURG"
+],
+"Skyline College|CCC000348777":[
+"topics",
+"SELECTED TOPICS IN HOME ECON"
+],
+"Skyline College|CCC000349052":[
+"topics",
+"SELECTED TOPICS: HOME ECON"
+],
 "Skyline College|CCC000351877":[
 "independent",
 "SPECIAL PROJECTS: H.R."
+],
+"Skyline College|CCC000355266":[
+"topics",
+"Special Topics in Art"
+],
+"Skyline College|CCC000356308":[
+"topics",
+"Selected Topics in RPTH"
+],
+"Skyline College|CCC000361869":[
+"topics",
+"Selected Topics in Automotive"
+],
+"Skyline College|CCC000364219":[
+"topics",
+"SELECTED TOPICS:  GEOLOGY"
 ],
 "Skyline College|CCC000367345":[
 "independent",
 "INDEPENDENT STUDY - GERO"
 ],
+"Skyline College|CCC000369908":[
+"topics",
+"Selected Topics in Business"
+],
+"Skyline College|CCC000370584":[
+"topics",
+"SELECTED TOPICS"
+],
+"Skyline College|CCC000374149":[
+"topics",
+"SELECTED TOPICS - REAL ESTATE"
+],
+"Skyline College|CCC000374796":[
+"topics",
+"SPECIAL TOPICS; ADMJ"
+],
+"Skyline College|CCC000376299":[
+"topics",
+"SPECIAL TOPICS"
+],
+"Skyline College|CCC000382648":[
+"topics",
+"SELECTED TOPICS"
+],
+"Skyline College|CCC000461064":[
+"topics",
+"Selected Topics in Biology"
+],
+"Skyline College|CCC000511714":[
+"topics",
+"Selected Topics in ENVS"
+],
 "Skyline College|CCC000521092":[
 "code_only",
 "ENVS400"
+],
+"Skyline College|CCC000526542":[
+"topics",
+"Practicum in Early Childhood Education: Special Topics"
 ],
 "Skyline College|CCC000554963":[
 "independent",
@@ -22954,6 +24929,10 @@
 "independent",
 "Independent Study in Surgical Technology"
 ],
+"Skyline College|CCC000659141":[
+"topics",
+"Special Topics in Political Science"
+],
 "Solano Community College|CCC000431735":[
 "independent",
 "FAA Special Projects-Airframe Enhancement"
@@ -22965,6 +24944,30 @@
 "Solano Community College|CCC000512706":[
 "independent",
 "FAA Special Projects - Powerplant Enhancement"
+],
+"Solano Community College|CCC000591294":[
+"topics",
+"Special Topics - Smog Check Level I"
+],
+"Solano Community College|CCC000591295":[
+"topics",
+"Special Topics - Smog Check Level II"
+],
+"Solano Community College|CCC000623651":[
+"topics",
+"Special Topics in Theatre: For Actors"
+],
+"Solano Community College|CCC000623652":[
+"topics",
+"Special Topics in Theatre: Technical Theatre"
+],
+"Solano Community College|CCC000623653":[
+"topics",
+"Special Topics in Theatre: Costuming"
+],
+"Solano Community College|CCC000623654":[
+"topics",
+"Special Topics in Theatre: Management and Direction"
 ],
 "Southwestern College|CCC000007289":[
 "independent",
@@ -23178,9 +25181,37 @@
 "independent",
 "INDEPENDENT STUDY"
 ],
+"Southwestern College|CCC000445239":[
+"topics",
+"SELECTED TOPICS IN AFRICAN-AMERICAN STUDIES"
+],
+"Southwestern College|CCC000445241":[
+"topics",
+"SELECTED TOPICS IN ART"
+],
+"Southwestern College|CCC000445243":[
+"topics",
+"SELECTED TOPICS IN ASIAN-AMERICAN STUDIES"
+],
 "Southwestern College|CCC000445251":[
 "code_only",
 "CIS-203"
+],
+"Southwestern College|CCC000445257":[
+"topics",
+"SELECTED TOPICS IN CIS"
+],
+"Southwestern College|CCC000445259":[
+"topics",
+"SELECTED TOPICS IN COMMUNICATION"
+],
+"Southwestern College|CCC000445261":[
+"topics",
+"SELECTED TOPICS IN DANCE"
+],
+"Southwestern College|CCC000445264":[
+"topics",
+"SELECTED TOPICS IN ECONOMICS"
 ],
 "Southwestern College|CCC000445265":[
 "independent",
@@ -23206,17 +25237,129 @@
 "code_only",
 "ELEC-274"
 ],
+"Southwestern College|CCC000445272":[
+"topics",
+"SELECTED TOPICS IN ELECTRONICS"
+],
+"Southwestern College|CCC000445276":[
+"topics",
+"SELECTED TOPICS IN HISTORY"
+],
+"Southwestern College|CCC000445278":[
+"topics",
+"SELECTED TOPICS IN JOURNALISM"
+],
+"Southwestern College|CCC000445281":[
+"topics",
+"SELECTED TOPICS IN LEGAL ASSISTANT"
+],
+"Southwestern College|CCC000445289":[
+"topics",
+"SELECTED TOPICS IN MUSIC"
+],
+"Southwestern College|CCC000445292":[
+"topics",
+"SELECTED TOPICS IN PSYCHOLOGY"
+],
+"Southwestern College|CCC000445293":[
+"topics",
+"SELECTED TOPICS IN REAL ESTATE"
+],
 "Southwestern College|CCC000445294":[
 "independent",
 "INDEPENDENT STUDY"
+],
+"Southwestern College|CCC000445295":[
+"topics",
+"SELECTED TOPICS IN SOCIOLOGY"
+],
+"Southwestern College|CCC000445296":[
+"topics",
+"SELECTED TOPICS IN TRAVEL AND TOURISM"
+],
+"Southwestern College|CCC000445297":[
+"topics",
+"SELECTED TOPICS IN THEATRE"
+],
+"Southwestern College|CCC000445418":[
+"topics",
+"SELECTED TOPICS IN HUMANITIES"
+],
+"Southwestern College|CCC000445422":[
+"topics",
+"SELECTED TOPICS IN PERSONAL DEVELOPMENT"
+],
+"Southwestern College|CCC000445913":[
+"topics",
+"SELECTED TOPICS IN ACCOUNTING"
+],
+"Southwestern College|CCC000445916":[
+"topics",
+"SELECTED TOPICS IN ANTHROPOLOGY"
+],
+"Southwestern College|CCC000445923":[
+"topics",
+"SELECTED TOPICS IN BUSINESS"
+],
+"Southwestern College|CCC000445944":[
+"topics",
+"SELECTED TOPICS IN LIBRARY"
 ],
 "Southwestern College|CCC000445945":[
 "independent",
 "INDEPENDENT STUDY"
 ],
+"Southwestern College|CCC000445950":[
+"topics",
+"SELECTED TOPICS IN PHILOSOPHY"
+],
+"Southwestern College|CCC000445951":[
+"topics",
+"SELECTED TOPICS IN POLITICAL SCIENCE"
+],
+"Southwestern College|CCC000457527":[
+"topics",
+"SELECTED TOPICS IN LANDSCAPE AND NURSERY TECHNOLOGY"
+],
+"Southwestern College|CCC000457528":[
+"topics",
+"SELECTED TOPICS IN MEXICAN-AMERICAN STUDIES"
+],
+"Southwestern College|CCC000457742":[
+"topics",
+"SELECTED TOPICS IN NURSING"
+],
+"Southwestern College|CCC000457743":[
+"topics",
+"SELECTED TOPICS IN ADMINISTRATION OF JUSTICE"
+],
+"Southwestern College|CCC000457744":[
+"topics",
+"SELECTED TOPICS IN ARCHITECTURAL TECHNOLOGY"
+],
 "Southwestern College|CCC000457745":[
 "independent",
 "INDEPENDENT STUDY"
+],
+"Southwestern College|CCC000457746":[
+"topics",
+"SELECTED TOPICS IN ASTRONOMY"
+],
+"Southwestern College|CCC000457747":[
+"topics",
+"SELECTED TOPICS IN AUTOMOTIVE TECHNOLOGY"
+],
+"Southwestern College|CCC000457748":[
+"topics",
+"SELECTED TOPICS IN BIOLOGY"
+],
+"Southwestern College|CCC000457749":[
+"topics",
+"SELECTED TOPICS IN CHILD DEVELOPMENT"
+],
+"Southwestern College|CCC000457750":[
+"topics",
+"SELECTED TOPICS CHINESE"
 ],
 "Southwestern College|CCC000457751":[
 "independent",
@@ -23230,25 +25373,85 @@
 "independent",
 "INDEPENDENT STUDY"
 ],
+"Southwestern College|CCC000457755":[
+"topics",
+"SELECTED TOPICS IN EMERGENCY MEDICAL TECHNOLOGY"
+],
 "Southwestern College|CCC000457756":[
 "independent",
 "INDEPENDENT STUDY"
+],
+"Southwestern College|CCC000457757":[
+"topics",
+"SELECTED TOPICS IN ENGLISH"
+],
+"Southwestern College|CCC000457758":[
+"topics",
+"SELECTED TOPICS IN ENGINEERING"
+],
+"Southwestern College|CCC000457759":[
+"topics",
+"SELECTED TOPICS IN EXERCISE SCIENCE"
+],
+"Southwestern College|CCC000457761":[
+"topics",
+"SELECTED TOPICS IN FARSI"
 ],
 "Southwestern College|CCC000457762":[
 "independent",
 "INDEPENDENT STUDY"
 ],
+"Southwestern College|CCC000457763":[
+"topics",
+"SELECTED TOPICS IN FRENCH"
+],
+"Southwestern College|CCC000457764":[
+"topics",
+"SELECTED TOPICS IN FIRE SCIENCE"
+],
+"Southwestern College|CCC000457766":[
+"topics",
+"SELECTED TOPICS IN GEOGRAPHY"
+],
+"Southwestern College|CCC000457767":[
+"topics",
+"SELECTED TOPICS IN GEOLOGY"
+],
+"Southwestern College|CCC000457768":[
+"topics",
+"SELECTED TOPICS IN HEALTH"
+],
+"Southwestern College|CCC000457769":[
+"topics",
+"SELECTED TOPICS IN ITALIAN"
+],
 "Southwestern College|CCC000457770":[
 "independent",
 "INDEPENDENT STUDY"
+],
+"Southwestern College|CCC000457771":[
+"topics",
+"SELECTED TOPICS IN JAPANESE"
 ],
 "Southwestern College|CCC000457772":[
 "independent",
 "INDEPENDENT STUDY"
 ],
+"Southwestern College|CCC000457773":[
+"topics",
+"SELECTED TOPICS IN LANDSCAPE ARCHITECTURE"
+],
 "Southwestern College|CCC000457774":[
 "independent",
 "INDEPENDENT STUDY"
+],
+"Southwestern College|CCC000457775":[
+"topics",
+"SELECTED TOPICS IN LEARNING SKILLS"
+],
+"Southwestern College|CCC000457776":[
+"topics",
+"SELECTED TOPICS IN MATHEMATICS"
 ],
 "Southwestern College|CCC000457779":[
 "code_only",
@@ -23262,25 +25465,61 @@
 "code_only",
 "NC-96"
 ],
+"Southwestern College|CCC000457829":[
+"topics",
+"SELECTED TOPICS IN NURSING"
+],
+"Southwestern College|CCC000457830":[
+"topics",
+"SELECTED TOPICS IN PHYSICAL SCIENCE"
+],
 "Southwestern College|CCC000457831":[
 "independent",
 "INDEPENDENT STUDY"
+],
+"Southwestern College|CCC000457832":[
+"topics",
+"SELECTED TOPICS IN PHYSICS"
 ],
 "Southwestern College|CCC000457833":[
 "independent",
 "INDEPENDENT STUDY"
 ],
+"Southwestern College|CCC000457834":[
+"topics",
+"SELECTED TOPICS IN PILIPINO"
+],
 "Southwestern College|CCC000457835":[
 "independent",
 "INDEPENDENT STUDY"
+],
+"Southwestern College|CCC000457836":[
+"topics",
+"SELECTED TOPICS IN PORTUGUESE"
 ],
 "Southwestern College|CCC000457837":[
 "independent",
 "INDEPENDENT STUDY"
 ],
+"Southwestern College|CCC000457838":[
+"topics",
+"SELECTED TOPICS IN RECREATION"
+],
 "Southwestern College|CCC000457839":[
 "independent",
 "INDEPENDENT STUDY"
+],
+"Southwestern College|CCC000457840":[
+"topics",
+"SELECTED TOPICS IN SPANISH"
+],
+"Southwestern College|CCC000457841":[
+"topics",
+"SELECTED TOPICS IN SURGICAL TECHNOLOGY"
+],
+"Southwestern College|CCC000457842":[
+"topics",
+"SELECTED TOPICS IN VOCATIONAL NURSING"
 ],
 "Southwestern College|CCC000457843":[
 "independent",
@@ -23330,6 +25569,14 @@
 "code_only",
 "ESL-59B"
 ],
+"Southwestern College|CCC000525617":[
+"topics",
+"Special Topics in Photography"
+],
+"Southwestern College|CCC000525622":[
+"topics",
+"Special Topics in Photography Laboratory"
+],
 "Southwestern College|CCC000529243":[
 "internship",
 "GIS Internship"
@@ -23345,6 +25592,18 @@
 "Southwestern College|CCC000613038":[
 "independent",
 "INDEPENDENT STUDY"
+],
+"Southwestern College|CCC000613129":[
+"topics",
+"Selected Topics in Construction Inspection"
+],
+"Southwestern College|CCC000613415":[
+"topics",
+"Selected Topics in ESL"
+],
+"Southwestern College|CCC000619264":[
+"topics",
+"Selected Topics Environmental and Hazardous Materials"
 ],
 "Southwestern College|CCC000629000":[
 "internship",
@@ -23486,6 +25745,22 @@
 "internship",
 "Paramedic Field Internship"
 ],
+"Victor Valley College|CCC000019873":[
+"topics",
+"SPECIAL TOPICS"
+],
+"Victor Valley College|CCC000043596":[
+"topics",
+"SPECIAL TOPICS"
+],
+"Victor Valley College|CCC000045195":[
+"topics",
+"SPECIAL TOPICS"
+],
+"Victor Valley College|CCC000066384":[
+"topics",
+"SPECIAL TOPICS"
+],
 "Victor Valley College|CCC000119469":[
 "independent",
 "INDEPENDENT STUDY"
@@ -23498,9 +25773,17 @@
 "independent",
 "INDEPENDENT STUDY"
 ],
+"Victor Valley College|CCC000151737":[
+"topics",
+"SPECIAL TOPICS - LITHIC TECH WS"
+],
 "Victor Valley College|CCC000159968":[
 "independent",
 "INDEPENDENT STUDY"
+],
+"Victor Valley College|CCC000180315":[
+"topics",
+"SPECIAL TOPICS"
 ],
 "Victor Valley College|CCC000218115":[
 "independent",
@@ -23518,6 +25801,14 @@
 "internship",
 "Coop Ed Restaurant Management"
 ],
+"Victor Valley College|CCC000255749":[
+"topics",
+"SPECIAL TOPICS"
+],
+"Victor Valley College|CCC000266617":[
+"topics",
+"SPECIAL TOPICS"
+],
 "Victor Valley College|CCC000281923":[
 "independent",
 "INDEPENDENT STUDY"
@@ -23525,6 +25816,10 @@
 "Victor Valley College|CCC000288313":[
 "internship",
 "Coop Ed Physical Science"
+],
+"Victor Valley College|CCC000313371":[
+"topics",
+"SPECIAL TOPICS"
 ],
 "Victor Valley College|CCC000322539":[
 "independent",
@@ -23562,6 +25857,10 @@
 "independent",
 "INDEPENDENT STUDY"
 ],
+"Victor Valley College|CCC000513143":[
+"topics",
+"Special Topics"
+],
 "Victor Valley College|CCC000517795":[
 "independent",
 "Independent Study"
@@ -23586,6 +25885,14 @@
 "independent",
 "Independent Study Honors-Third Semester"
 ],
+"Victor Valley College|CCC000576787":[
+"topics",
+"Special Topics"
+],
+"Victor Valley College|CCC000583210":[
+"topics",
+"SPECIAL TOPIC"
+],
 "Victor Valley College|CCC000584849":[
 "internship",
 "Manufacturing Internship"
@@ -23593,6 +25900,10 @@
 "Victor Valley College|CCC000584850":[
 "independent",
 "Independent Study"
+],
+"Victor Valley College|CCC000586592":[
+"topics",
+"Special Topics"
 ],
 "Victor Valley College|CCC000595324":[
 "independent",
@@ -23602,13 +25913,29 @@
 "internship",
 "Coop Ed Welding"
 ],
+"Victor Valley College|CCC000607323":[
+"topics",
+"Special Topics"
+],
+"Victor Valley College|CCC000609137":[
+"topics",
+"SPECIAL TOPICS ART"
+],
 "Victor Valley College|CCC000609138":[
 "independent",
 "INDEPENDENT STUDY"
 ],
+"Victor Valley College|CCC000611161":[
+"topics",
+"Special Topics"
+],
 "Victor Valley College|CCC000617732":[
 "independent",
 "Independent Study"
+],
+"Victor Valley College|CCC000624733":[
+"topics",
+"Special Topics"
 ],
 "Victor Valley College|CCC000635390":[
 "code_only",
@@ -23617,6 +25944,10 @@
 "Victor Valley College|CCC000637542":[
 "independent",
 "Independent Study"
+],
+"Victor Valley College|CCC000639384":[
+"topics",
+"SPECIAL TOPICS"
 ],
 "Victor Valley College|CCC000639526":[
 "independent",
@@ -23633,6 +25964,10 @@
 "Victor Valley College|CCC000658158":[
 "internship",
 "Paramedic Capstone Internship Orientation"
+],
+"Victor Valley College|CCC000660135":[
+"topics",
+"Special Topics Theatre Arts"
 ],
 "West Los Angeles College|CCC000065126":[
 "independent",
@@ -23729,6 +26064,10 @@
 "West Valley College|CCC000604281":[
 "internship",
 "Administration of Justice Internship"
+],
+"West Valley College|CCC000605274":[
+"topics",
+"Special Topics in Psychology"
 ],
 "West Valley College|CCC000608960":[
 "internship",
