@@ -628,7 +628,9 @@ def keep_better(folder: str, base: str = "origin/main", run: str | None = None, 
         with open(os.path.join(folder, "kept_passing.json")) as fh:
             kp = json.load(fh)
         if str(kp.get("run")) == run:
-            kept_passing = {e["control_number"]: e.get("reason") for e in kp.get("programs") or []}
+            # An entry an only= filing carried over from an earlier run names that run (S697); it is not this one's.
+            kept_passing = {e["control_number"]: e.get("reason") for e in kp.get("programs") or []
+                            if str(e.get("run") or run) == run}
     except (OSError, ValueError):
         pass
     # Records main files that this filing dropped (the capture found no page for a failing one): reread never
