@@ -40,14 +40,15 @@ on every item, milestones and parts, a run log. The list as it stood: [`docs/roa
 
 ## Status
 
-**LIVE (#3554, `5a7a6f24`; #3533, Sam's go Nov 19): the CPL Commons front page.** `commons_front.js` draws the bare `#commons`: the header and Sam's lede, the Projected Completion Date
-widget (Program records done from the 7-day pace; Curation done reads Not dated yet), 30 daily bars rebuilt from the live files, Needs you, eight cards in Collect / Curate / Connect (fold keys
-in `cplCommons.fold.v1`), the Building, More collection detail and scorecard lines. College Data Collection moved to
+**LIVE (#3554, `5a7a6f24`; #3533, Sam's go Nov 19): the CPL Commons front page.** `commons_front.js` draws the bare `#commons`: the header and Sam's lede, the Phase 1 Dates widget and its daily chart, Needs you, the cards in Collect / Curate / Connect and the Plan (fold keys
+in `cplCommons.fold.v1`; their current shape is the clarity paragraph below), the Building, More collection detail and scorecard lines. College Data Collection moved to
 `#collect` (`tabs.js` folds it into this tab and rewrites every old `#commons/data...` address); the earlier first view
 stays at `#commons/details` under `cplCommons.detailsOrder.v1` / `detailsFold.v1`.
 Figures with no source on main sit in `ASKED`, each named. **NEXT:** the open data questions
 on the ask (the 6-college status file against 0 blocked, the kinesiology rulings, the readable-course count, a COCI-only
 recount); the generators' `#commons/data` links to `#collect`. Guard `tests/commons_front.test.js`. **DECIDED** `d-commons-front-page-routes-3554`, `d-commons-front-card-layout-3554`.
+
+**LIVE (PR "Commons page clarity", Sam's eleven asks of 2026-11-21 in session): the front page reads clearer.** Needs you is at most 12 ranked links (wave blockers first, then by the count each frees, the figure in the line); a link about one college opens its row on College Data Collection, every other link jumps to its card on the page. A finished item leaves Course Outline Fixes, Catalog Fixes and Term Reports Needed on the live hand-over counts, each head carrying a green *Handed over: N* chip; the answered list is gone from Needs you. The widget shows *Data Collection Phase 1 ETA* (program records, 7-day pace) and *Data Curation Phase 1 ETA* (`kb/status/commons_history.json`: what a day settled plus what a procedure set aside in bulk), each estimated or TBA below 5 counted days. Credentials and Credit Recommendations moved under Curate; the Plan card carries Phases 1 to 3 from the College Collections Plan; *...(more)* replaced Counting Method; a line chart replaced the bars; a College Data Collection card counts each dataset through CDC's own filters (`#collect/catalogs_done` and the rest, `#collect/fix_<lever>`). College Data Collection and every Commons view carry *Back to CPL Commons*; CDC has *Collapse all but the college rows*; its to-do takes the live hand-over counts. Guards `tests/commons_page_clarity.test.js`, `tests/commons_way_back.test.js`. **DECIDED** (this PR): a day's curation counts bulk set-asides and ignores arrivals; term reports leave once as many are handed over as are wanted (the counts carry no term). **NEXT:** a per-college credential count for the CDC card's third line; the readable-course count so SLOs and objectives join the collection date; a term on each term-report hand-over.
 
 **LIVE: Needs you, one path per item, a way back, live saves (#3570 `c2ef4ce1`, S687):** the paragraph as it stood, [`docs/roadmap_archive.md`](../../roadmap_archive.md), *Moved from lanes/commons.md (plain session, 2026-11-20)*. Guard `tests/commons_needs_you.test.js`. **DECIDED** `d-commons-needs-you-ranking-s687`.
 

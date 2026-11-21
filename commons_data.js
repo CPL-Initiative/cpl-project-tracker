@@ -132,8 +132,49 @@
        counts on the statewide line add up to every college (COBIx, 18:26Z on #3316). */
     maps_published: { word: "Program maps: published, not yet committed", test: function (c, M) { return mapState(M || VIEW.M, c) === "held" && !(((c.collection || {}).maps || {}).held > 0); } },
     maps_none: { word: "Program maps: none found when looked for", test: function (c, M) { return mapState(M || VIEW.M, c) === "none"; } },
-    maps_unknown: { word: "Program maps: not looked for yet", test: function (c, M) { return mapState(M || VIEW.M, c) === "unknown"; } }
+    maps_unknown: { word: "Program maps: not looked for yet", test: function (c, M) { return mapState(M || VIEW.M, c) === "unknown"; } },
+    /* The CPL Commons front page's College Data Collection card (Sam, 2026-11-21, item 8): each count opens this list
+       filtered to the colleges it counts, through these words. One predicate a word, so the card and the list agree. */
+    catalogs_done: { word: "Catalogs: every program passing", test: function (c, M) { return catalogState(M || VIEW.M, c) === "done"; } },
+    catalogs_progress: { word: "Catalogs: programs still to pass", test: function (c, M) { return catalogState(M || VIEW.M, c) === "progress"; } },
+    catalogs_stuck: { word: "Catalogs: waiting on a person or a fix", test: function (c, M) { return catalogState(M || VIEW.M, c) === "stuck"; } },
+    outlines_done: { word: "Course outlines: SLOs and objectives on every course", test: function (c, M) { return outlineState(M || VIEW.M, c) === "done"; } },
+    outlines_progress: { word: "Course outlines: in progress", test: function (c, M) { return outlineState(M || VIEW.M, c) === "progress"; } },
+    outlines_stuck: { word: "Course outlines: waiting on a person or a fix", test: function (c, M) { return outlineState(M || VIEW.M, c) === "stuck"; } }
   };
+  /* A college's catalog state: done when every program in its count passes; stuck when no catalog is collected or the
+     scout found the catalog blocked (the fix is the scout's challenge); otherwise in progress. */
+  function catalogState(M, c) {
+    if (!c) return "";
+    if (!c.harvested || (c.scout && c.scout.recommendation === "blocked")) return "stuck";
+    var P = prOf(c);
+    return P.gap === 0 ? "done" : "progress";
+  }
+  /* A college's course outline state, from the database count: done when SLOs and objectives sit on every course in
+     its Active programs; stuck when its SLO read has nothing to read or is paused (the file's own reason is the fix). */
+  function outlineState(M, c) {
+    if (!c) return "";
+    var q = c.slo_queue;
+    if (q && (q.state === "none" || q.state === "held")) return "stuck";
+    var lv = liveOf(M, c), pc = (lv && lv.program_courses) || {}, oc = (lv && lv.outcomes) || {};
+    if (pc.active_courses > 0 && oc.slo_courses_on_active >= pc.active_courses && oc.objective_courses_on_active >= pc.active_courses) return "done";
+    return "progress";
+  }
+  /* The fix a stuck college waits on, in the file's own words. */
+  function stuckFix(c, dataset) {
+    /* The reason's first clause: the panel holds the rest. */
+    if (dataset === "outlines") return c.slo_queue && c.slo_queue.why ? String(c.slo_queue.why).split(/[;:(]/)[0].trim() : "";
+    if (!c.harvested) return "no catalog collected yet";
+    return c.scout && c.scout.challenge ? "a " + words(c.scout.challenge) + " blocks our reader at the catalog" : "";
+  }
+  /* A fix word (fix_<lever key>): the colleges a fix in the rule's lever list reaches (Sam's item 8 top line). */
+  function filterOf(k) {
+    if (own(FILTERS, k)) return FILTERS[k];
+    var m = /^fix_([a-z_]+)$/.exec(String(k || "")), L = m && (((VIEW.M || {}).rule || {}).levers || {});
+    if (!m || !L || !own(L, m[1])) return null;
+    var key = m[1];
+    return { word: "Colleges this fix reaches: " + L[key].what, test: function (c) { return (leversOf(c)[key] || 0) > 0; } };
+  }
   /* A college's program-maps state, the one rule the statewide line and the Program pathway maps card share (the card
      reads it through its helpers): held when the mapper member list names the college, the registry holds a map source
      or a map is committed; none when the registry's reader looked and found none; otherwise unknown. */
@@ -178,7 +219,7 @@
       blocked: data.blocked_hunt && typeof data.blocked_hunt === "object" ? data.blocked_hunt : null };
   }
   function listFor(M, filter) {
-    var f = FILTERS[filter] || FILTERS.all;
+    var f = filterOf(filter) || FILTERS.all;
     return M.colleges.filter(function (c) { return f.test(c, M); });
   }
 
@@ -1209,7 +1250,7 @@
   function handoverPane(M, c) {
     var HO = window.CPL_HANDOVER, title = "Hand over course outlines";
     if (HO && typeof HO.collegePane === "function") {
-      try { return HO.collegePane(M, c, { datasets: datasets }); }
+      try { return HO.collegePane(M, c, { datasets: datasets, onChange: refreshTodo }); }
       catch (e) { return { title: title, kids: [tba("This pane could not be drawn.")] }; }
     }
     if (window.CPL_TABS && window.CPL_TABS.loadScript && !handoverPane.asked) {
@@ -1406,8 +1447,45 @@
     var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(v || ""));
     return m ? ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][Number(m[2]) - 1] + " " + Number(m[3]) + ", " + m[1] : String(v || "");
   }
+  /* Item 11 (Sam, 2026-11-21: "make sure everything on cdc is wired correctly to update as needed"): the live
+     hand-over counts (commons_handover.js summary(), counts only) take a still-taught course a person handed over off
+     the to-do at once, as the front page does; one our reader could not read, or that met a bot check, still waits. */
+  function liveDone() {
+    var H = window.CPL_HANDOVER, rows = H && H._state && H._state.summary && H._state.summary.rows, out = {};
+    (rows || []).forEach(function (r) {
+      if (r && r.subject_kind === "course" && r.status !== "could_not_read" && r.status !== "bot_check") out[(r.college || "") + "|" + (r.course_code || "")] = true;
+    });
+    return out;
+  }
+  /* The to-do drawn again in place from the file and the live counts: after a hand-over, on a return to the tab. */
+  function refreshTodo() {
+    if (!VIEW.root || !VIEW.M) return;
+    var old = VIEW.root.querySelector("#cdd-blocked");
+    if (!old || !old.parentNode) return;
+    var nu = blockedTodo(VIEW.M);
+    if (nu) old.parentNode.replaceChild(nu, old);
+  }
+  function liveRefresh(force) {
+    var H = window.CPL_HANDOVER;
+    if (!H || typeof H.summary !== "function" || !onData()) return;
+    H.summary(!!force).then(refreshTodo, function () {});
+  }
+  window.addEventListener("cpl-tab-activated", function (e) { if (e && e.detail && e.detail.tab === "commons") liveRefresh(true); });
+  document.addEventListener("visibilitychange", function () { if (document.visibilityState === "visible") liveRefresh(true); });
   function blockedTodo(M) {
-    var b = M.blocked;
+    var b0 = M.blocked, done = liveDone(), b = b0;
+    if (b0 && Array.isArray(b0.colleges) && Array.isArray(b0.courses) && Object.keys(done).length) {
+      /* A copy with the live hand-overs off the still-taught lists; the file's own block is never changed. A college
+         with none left reads as filed. */
+      var gone = 0;
+      b = Object.assign({}, b0, { colleges: b0.colleges.map(function (c) {
+        if (!c.hunted || c.filed) return c;
+        var left = (c.still_taught || []).filter(function (x) { if (done[c.college + "|" + x.course]) { gone++; return false; } return true; });
+        return Object.assign({}, c, { still_taught: left, filed: !left.length });
+      }) });
+      b.still_taught_open = Math.max(0, (b0.still_taught_open || 0) - gone);
+      b.open = b.colleges.filter(function (c) { return c.hunted && !c.filed; }).length;
+    }
     /* A course a person answered is off the to-do and stays on this page (S693; the second read of pull request 3613 found the
        page saying no college is on the list while 12 answered courses sat in the file). */
     var answered = b && Array.isArray(b.colleges) ? b.colleges.filter(function (c) { return (c.answered || []).length; }) : [];
@@ -1573,7 +1651,7 @@
   /* Leaving the data view by any path (another tab, #commons, #commons/ase, browser Back from an open panel) releases
      the page: commons.js draws another view into the root without telling this module. */
   function onData() { return /^#?(?:commons\/(?:data|collect)|collect)(\/|$)/.test(String(location.hash || "")); }   /* the old #commons/data too: tabs.js rewrites it, a bare load may not */
-  function leave() { if (!onData()) { S.panel = null; S.cause = null; S.pane = null; releasePage(); } }
+  function leave() { if (!onData()) { S.panel = null; S.cause = null; S.pane = null; S.rowsOnly = false; releasePage(); } }
   window.addEventListener("cpl-tab-activated", leave);
   window.addEventListener("hashchange", leave);
   function panelShell() {
@@ -1701,7 +1779,7 @@
     S.pane = R.pane && (pcol ? PANE_OK(M, pcol, R.pane) : !R.college && PANE_OK(M, null, R.pane)) ? R.pane : null;
     if (R.pane && !S.pane) fixCause = true;
     if (pcol && S.pane && (S.pane.k === "slos" || S.pane.k === "plos")) loadOutcomes(pcol);
-    var rf = own(FILTER_ALIAS, R.filter) ? FILTER_ALIAS[R.filter] : R.filter, f = own(FILTERS, rf) ? rf : "all";
+    var rf = own(FILTER_ALIAS, R.filter) ? FILTER_ALIAS[R.filter] : R.filter, f = filterOf(rf) ? rf : "all";
     /* A filter word the page does not know is repaired in the address, never kept. */
     var fixFilter = (!R.view && R.filter && R.filter !== "all" && f === "all") || !!R.junk;
     /* A card sets its own order (card: true) and the order lasts only while its card's list shows: on a filter change
@@ -1731,6 +1809,21 @@
         : "Every college and continuing-education campus: what we have collected for it, how complete it is, how confident we are in it, and what is in the way." })
     ]));
     wrap.appendChild(viewNav());
+    /* Collapse all but the college rows (Sam, 2026-11-21, item 10): one word at the top that closes every section
+       above and around the list (the band, the figures, the to-do, the notes) and keeps the rows and their filter
+       controls. It lasts the visit (S.rowsOnly) and is never stored. */
+    if (!S.view) {
+      var only = el("button", { type: "button", cls: "cmn-word cdd-rowsonly", id: "cdd-rowsonly", "aria-expanded": S.rowsOnly ? "false" : "true",
+        text: S.rowsOnly ? "Expand all" : "Collapse all but the college rows" });
+      only.addEventListener("click", function () {
+        S.rowsOnly = !S.rowsOnly;
+        wrap.classList.toggle("cdd-rows-only", S.rowsOnly);
+        only.textContent = S.rowsOnly ? "Expand all" : "Collapse all but the college rows";
+        only.setAttribute("aria-expanded", S.rowsOnly ? "false" : "true");
+      });
+      wrap.appendChild(el("p", { cls: "cdd-rowsonly-line" }, [only]));
+      if (S.rowsOnly) wrap.classList.add("cdd-rows-only");
+    }
     if (S.view) {
       wrap.appendChild(S.view === "districts" ? districtsView(M) : S.view === "slos" ? slosView(M) : S.view === "dictionary" ? dictionaryView(M) : S.view === "apis" ? apisView(M)
         : S.view === "outlines-blocked" ? blockedTodo(M) || tba("No college is on the blocked list in the committed file.")
@@ -1738,6 +1831,7 @@
       var vpage = el("div", { cls: "cmn-page" }, [wrap, panelShell()]);
       root.appendChild(vpage);
       drawPanel(VIEW.now);   // no college on a view: the panel stays hidden and the page live, unless a source is open
+      if (S.view === "outlines-blocked") liveRefresh(false);
       if (fixCause || fixFilter) setAddress();
       return vpage;
     }
@@ -1841,7 +1935,7 @@
         if (String(S.open) === String(c.id)) body.appendChild(detail(M, c, VIEW.now));
       });
       if (!L.length) body.appendChild(el("tr", null, [el("td", { colspan: String(COLUMNS.length), text: "No college matches." })]));
-      shown.textContent = "Showing " + fmt(L.length) + " of " + fmt(M.colleges.length) + (S.filter !== "all" ? ": " + FILTERS[S.filter].word : "")
+      shown.textContent = "Showing " + fmt(L.length) + " of " + fmt(M.colleges.length) + (S.filter !== "all" ? ": " + filterOf(S.filter).word : "")
         + (S.platform ? (S.filter !== "all" ? "; " : ": ") + "catalog platform " + platformWord(S.platform) : "")
         + (S.district ? (S.filter !== "all" || S.platform ? "; " : ": ") + districtName(M, S.district) : "");
       /* Set only when the words change, so typing in the search never re-announces the order. */
@@ -1859,6 +1953,7 @@
     var page = el("div", { cls: "cmn-page" }, [wrap, panelShell()]);   // the panel beside the wrapper, which stays live while it is open (#3310)
     root.appendChild(page);
     drawPanel(VIEW.now);
+    liveRefresh(false);   // the to-do takes the live hand-over counts (item 11)
     if (fixCause || fixFilter) setAddress();
     return page;
   }
@@ -2227,6 +2322,8 @@
     ".cdd-label { font-weight:700; color:var(--cmn-heading); }",
     ".cdd-q { font:inherit; min-height:32px; flex:1 1 14rem; min-width:0; max-width:28rem; padding:4px 8px; border:1px solid var(--cmn-muted); border-radius:6px; background:var(--cmn-surface); color:var(--cmn-ink); }",
     ".cdd-q:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:2px; }",
+    ".cdd-rowsonly-line { margin:0; }",
+    ".cdd-rows-only > :not(.cdd-trail):not(.cmn-top):not(.cdd-views):not(.cdd-rowsonly-line):not(.cdd-list) { display:none; }",
     ".cdd-shown { margin:0; color:var(--cmn-muted); font-size:.9rem; font-variant-numeric:tabular-nums; }",
     ".cdd-sortline { margin:0; color:var(--cmn-ink-2); font-size:.9rem; max-width:var(--cpl-measure,none); }",
     ".cdd-wrap { container:cddlist / inline-size; overflow-x:auto; background:var(--cmn-surface); border:1px solid var(--cmn-line); border-radius:12px; }",
@@ -2391,7 +2488,7 @@
   window.CPL_COMMONS_DATA = {
     boot: boot, render: render, model: model, listFor: listFor, tiles: tiles, address: address, pick: pick, load: load, age: age,
     datasets: datasets, gaps: gaps, asks: asks, apiCount: apiCount, parseRouteViews: VIEWS, go: go, slugOf: slugOf, parseRoute: parseRoute, openPanel: openPanel, closePanel: closePanel, PW: PW,
-    FILE: FILE, FILTERS: FILTERS, COLUMNS: COLUMNS, CSS: CSS, _state: S,
-    _reset: function () { cache = null; VIEW.M = null; S.filter = "all"; S.view = ""; S.platform = ""; S.district = ""; S.q = ""; S.sort = null; S.open = null; S.panel = null; S.cause = null; S.pane = null; S.pw = PW.start; PROGS = {}; OUTS = {}; DRILL = {}; DOPEN = {}; }
+    FILE: FILE, FILTERS: FILTERS, filterOf: filterOf, catalogState: catalogState, outlineState: outlineState, stuckFix: stuckFix, leversOf: leversOf, COLUMNS: COLUMNS, CSS: CSS, _state: S,
+    _reset: function () { cache = null; VIEW.M = null; S.filter = "all"; S.view = ""; S.platform = ""; S.district = ""; S.q = ""; S.sort = null; S.open = null; S.panel = null; S.cause = null; S.pane = null; S.rowsOnly = false; S.pw = PW.start; PROGS = {}; OUTS = {}; DRILL = {}; DOPEN = {}; }
   };
 })();

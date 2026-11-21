@@ -69,10 +69,10 @@ const fmt = (n) => Number(n).toLocaleString("en-US");
   check("Sam's lede, exactly", /^Workspace to collect, curate, and connect common datasets: catalogs with program and course requirements, PLOs, SLOs, objectives, and attributes; CPL credentials and exhibits with credit recommendations and skills; and connections to the related datasets and platforms needed to clarify paths, in one integrated statewide view\.$/.test(txt(d.querySelector(".cmf .cmn-lede"))));
   const order = Array.from(d.querySelectorAll(".cmf > *")).map((n) => n.className.split(" ")[0]);
   check("top to bottom: header, the widget, Needs you, the groups, Building, More collection detail, the scorecard line",
-    order.join(",") === "cmn-top,cmf-eta,cmf-needs,cmf-groups,cmf-line,cmf-line,cmf-line");
+    order.join(",") === "cmn-top,cmf-eta,cmf-needs,cmf-groups,cmf-planrow,cmf-line,cmf-line,cmf-line");
   check("no Pierce and no transcribed units on the page", !/Pierce|transcribed/i.test(txt(d.querySelector(".cmf"))));
   const keys = Array.from(d.querySelectorAll(".cmf-card")).map((c) => c.getAttribute("data-key"));
-  check("⭐ nine cards with their fold keys, in Collect / Curate / Connect order (Subjects first in Curate, S694)", keys.join(",") === "colleges,programs,courses-data,subjects,courses,exhibit,credentials,cr,interconnect");
+  check("⭐ eleven cards with their fold keys, in Collect / Curate / Connect order, then the Plan (Sam, 2026-11-21, items 4, 5 and 8)", keys.join(",") === "colleges,programs,courses-data,cdc,subjects,courses,exhibit,credentials,cr,interconnect,plan");
   check("the groups are Collect, Curate and Connect", Array.from(d.querySelectorAll(".cmf-group-h")).map(txt).join(",") === "Collect,Curate,Connect");
   check("the Courses data card carries id courses-data", d.getElementById("courses-data") && d.getElementById("courses-data").getAttribute("data-key") === "courses-data");
   const labels = Array.from(d.querySelectorAll(".cmf h2, .cmf h3, .cmf h4, .cmf summary, .cmf button, .cmf-links a")).map(txt);
@@ -81,7 +81,7 @@ const fmt = (n) => Number(n).toLocaleString("en-US");
   check("the Credit Recommendations card links to #cr-reference and does not embed it", d.querySelector('.cmf-card[data-key="cr"] .cmf-links a[href="#cr-reference"]') && !d.querySelector("#tab-commons script[src*=cr_reference]"));
   check("Name-check groups is linked once, in the link row", Array.from(d.querySelectorAll('a[href="#cr-reference/names"]')).length === 1);
   check("Interconnectivity keeps an empty, reserved link row", d.querySelector('.cmf-card[data-key="interconnect"] .cmf-links') && !d.querySelector('.cmf-card[data-key="interconnect"] .cmf-links a'));
-  check("the Backfill fix links to its issue, not the doubt list", /issues\/3447$/.test((d.querySelector('.cmf-card[data-key="courses"] .cmf-method a[href*="3447"]') || {}).href || ""));
+  check("the Backfill fix links to its issue, not the doubt list", /issues\/3447$/.test((d.querySelector('.cmf-card[data-key="courses"] .cmf-more-body a[href*="3447"]') || {}).href || ""));
 
   // (1) one model, figures agree
   const PR = FILES["kb/status/program-requirements.json"].headline.filter((r) => typeof r.complete === "number");
@@ -89,31 +89,25 @@ const fmt = (n) => Number(n).toLocaleString("en-US");
   const at = (n) => { for (let i = 0; i < 8; i++) { const r = PR.find((h) => dnum(h.day) === n - i); if (r) return r.complete; } return null; };
   const pace = (at(lastN) - at(lastN - 7)) / 7, left = last.active - x.F.ASKED.cociOnly - last.complete;
   const want = longDate(lastN + Math.ceil(left / pace));
-  check("⭐ the projected date is the 7-day pace rule on the committed series (" + want + ")", txt(d.querySelector(".cmf-date-v")) === want);
+  check("⭐ the Data Collection Phase 1 date is the 7-day pace rule on the committed series (" + want + "), labeled estimated", txt(d.querySelector(".cmf-date-v")) === want + " estimated");
   const pair = fmt(last.complete) + " of " + fmt(last.active);
-  check("⭐ S490: the widget's status line and the Programs card show the same pair", txt(d.querySelector(".cmf-status")).indexOf(pair) === 0
+  check("⭐ S490: the widget's notes and the Programs card show the same pair", txt(d.querySelector(".cmf-date .cmf-more-body")).indexOf(pair + " Active programs are complete") >= 0
     && txt(d.querySelector('.cmf-card[data-key="programs"] .cmf-big')) === pair);
   /* COBIx's review of #3554: one "left to finish" on the page, the target's (active minus the COCI-only programs minus complete). */
   check("S490: the Colleges card's programs left to finish is the same target-based figure the date uses", txt(d.querySelector('.cmf-card[data-key="colleges"] .cmf-body')).indexOf("about " + fmt(left) + " Active programs in current catalogs left") >= 0
-    && txt(d.querySelector('.cmf-card[data-key="programs"] .cmf-method')).indexOf("leaves about " + fmt(left)) >= 0);
+    && txt(d.querySelector('.cmf-card[data-key="programs"] .cmf-more-body')).indexOf("leaves about " + fmt(left)) >= 0);
   check("no link opens #credentials, which is no route", !d.querySelector('a[href="#credentials"]') && d.querySelector('.cmf-card[data-key="credentials"] .cmf-links a[href="#exhibits/list"]'));
-  check("the status line says only program records have a projected date", /so only program records have a projected date\.$/.test(txt(d.querySelector(".cmf-status"))));
+  check("the Data Collection line says program records set its date", /^Set by program records:/.test(txt(d.querySelector(".cmf-date .cmf-date-n"))));
   check("the curator owner trails the held titles' line, never a paragraph of its own", !Array.from(d.querySelectorAll(".cmf-need p")).some((p) => txt(p) === "· a curator") && /held for a person.*· a curator$/.test(txt(Array.from(d.querySelectorAll(".cmf-need p")).find((p) => /held for a person/.test(txt(p))))));
   check("no card carries a fixed tall minimum in the CSS", !/\.cmf-card \{[^}]*min-height:\s*44rem/.test(SRC));
-  check("Curation done reads Not dated yet with the paused reason on the first screen",
-    /Not dated yet/.test(txt(d.querySelectorAll(".cmf-date")[1])) && /Human curation of credit-recommendation wordings is paused/.test(txt(d.querySelectorAll(".cmf-date")[1])));
-  check("the older 2,344 wordings phrase appears once, in Curation's Calculation Method", (txt(d.querySelector(".cmf")).match(/older 2,344 wordings set/g) || []).length === 1
-    && /older 2,344 wordings set/.test(txt(d.querySelectorAll(".cmf-date .cmf-method")[1])));
+  check("the Data Curation line reads an estimated date or TBA, never Not dated yet", /^(\w+ \d+, \d{4} estimated|TBA)$/.test(txt(d.querySelectorAll(".cmf-date-v")[1])) && !/Not dated yet/.test(txt(d.querySelector(".cmf-eta"))));
 
-  // (2) the bars
+  // (2) the daily chart's table
   const rows = Array.from(d.querySelectorAll(".cmf-table tbody tr"));
   check("⭐ thirty daily rows ending on the last headline day", rows.length === 30 && txt(rows[29].querySelector("th")) === new Date(lastN * 86400000).toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "UTC" }));
-  check("each program bar is the day's rise in complete", txt(rows[29].querySelectorAll("td")[0]) === fmt(Math.max(0, at(lastN) - at(lastN - 1))));
-  const skills = FILES["kb/reference/industry_credential_skills.json"].credentials;
-  const sum = rows.reduce((a, r) => { const m = /^([\d,]+) skills/.exec(txt(r.querySelectorAll("td")[1])); return a + (m ? +m[1].replace(/,/g, "") : 0); }, 0);
-  const inWindow = skills.filter((c) => c.harvested_on && dnum(c.harvested_on) > lastN - 30 && dnum(c.harvested_on) <= lastN).reduce((a, c) => a + (c.skills || []).length, 0);
-  check("the skills bars sum to the skills harvested in the window (" + inWindow + ")", sum === inWindow);
-  check("the legend carries SLOs and objectives with no daily counts yet", /Course SLOs \(no daily counts yet\)/.test(txt(d.querySelector(".cmf-legend"))) && /Course objectives \(no daily counts yet\)/.test(txt(d.querySelector(".cmf-legend"))));
+  const byDay = {}; PR.forEach((h) => { byDay[dnum(h.day)] = h.complete; });
+  const rise = byDay[lastN] != null && byDay[lastN - 1] != null ? fmt(Math.max(0, byDay[lastN] - byDay[lastN - 1])) : "no count";
+  check("each day's program records is the day's rise in complete", txt(rows[29].querySelectorAll("td")[0]) === rise);
 
   // (4) the fold
   const all = d.getElementById("cmf-all");
@@ -122,7 +116,7 @@ const fmt = (n) => Number(n).toLocaleString("en-US");
   check("⭐ one card folded: the key holds it, the card shows only its title and number", x.store["cplCommons.fold.v1"] === '["cr"]'
     && d.querySelector('.cmf-card[data-key="cr"]').classList.contains("cmf-folded") && txt(d.querySelector('.cmf-card[data-key="cr"] .cmf-fold')) === "Expand");
   all.click();
-  check("Collapse all folds every card and the word reads Expand all", JSON.parse(x.store["cplCommons.fold.v1"]).length === 9 && txt(all) === "Expand all");
+  check("Collapse all folds every card and the word reads Expand all", JSON.parse(x.store["cplCommons.fold.v1"]).length === 11 && txt(all) === "Expand all");
   all.click();
   check("Expand all opens every card and stores []", x.store["cplCommons.fold.v1"] === "[]" && txt(all) === "Collapse all");
 

@@ -1054,7 +1054,10 @@
     /* The hand-over module before the page draws, so each course and college in Needs you is a link; if it fails to
        load, the page draws without it. */
     return need("commons_program_records.js", "CPL_PROGRAM_RECORDS").then(function () { return need("commons_front.js", "CPL_COMMONS_FRONT"); })
-      .then(function () { return need("commons_handover.js", "CPL_HANDOVER"); }).then(go);
+      .then(function () { return need("commons_handover.js", "CPL_HANDOVER"); })
+      /* College Data Collection's own filters, so the front page's College Data Collection card counts exactly the
+         lists its links open (Sam, 2026-11-21, item 8); without it the card reads TBA. */
+      .then(function () { return need("commons_data.js", "CPL_COMMONS_DATA"); }).then(go);
   }
   window.addEventListener("cpl-tab-activated", function (e) { if (e && e.detail && e.detail.tab !== "commons") away = true; });
   function arrive() {
@@ -1360,6 +1363,9 @@
     }
     root.textContent = "Reading the Commons…";
     arrive();
+    /* The way back (Sam, 2026-11-21, item 9): commons_front.js places "Back to CPL Commons" on College Data Collection
+       and every Commons view, so it loads on any arrival, not only the front page's. */
+    need("commons_front.js", "CPL_COMMONS_FRONT").then(function () { if (window.CPL_COMMONS_FRONT && CPL_COMMONS_FRONT.placeBack) CPL_COMMONS_FRONT.placeBack(); });
     if (ASE.on) return showAse(root);
     if (DATA.on) return showData(root);
     if (SUBJ.on) return showSubjects(root);

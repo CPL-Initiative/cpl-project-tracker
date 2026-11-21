@@ -3870,6 +3870,19 @@ module.exports = {
       await page.setViewportSize({ width: 1440, height: 900 });
       await page.waitForTimeout(150);
       /* The page beside the panel stays live: a real click on another course's name replaces the panel's course. */
+      /* A course a person finished leaves Needs you at once (Sam, 2026-11-21, item 2), so with every course answered no
+         other name is on the page: the panel's own Next then stands in for it. */
+      const none = await page.evaluate(() => !Array.from(document.querySelectorAll(".cmf-needs a[data-course]")).some((l) => l.getAttribute("data-course") !== "CCC000400628"));
+      if (none) {
+        await page.click("#cho-next");
+        await page.waitForTimeout(200);
+        const stepped = await page.evaluate(() => ({ h: document.getElementById("cho-panel-h").textContent, hash: location.hash }));
+        out.push({ name: "with no other course on the to-do, Next opens the next course in the panel", ok: stepped.hash !== "#commons/course/CCC000400628" && /^#commons\/course\/CCC\d+$/.test(stepped.hash), detail: JSON.stringify(stepped) });
+        await page.keyboard.press("Escape");
+        const shut = await page.evaluate(() => ({ hidden: document.getElementById("cho-panel").hasAttribute("hidden"), hash: location.hash }));
+        out.push({ name: "Escape closes the course's panel and puts the address back", ok: shut.hidden && shut.hash === "#commons", detail: JSON.stringify(shut) });
+        return out;
+      }
       const other = await page.evaluate(() => {
         const a = Array.from(document.querySelectorAll(".cmf-needs a[data-course]")).find((l) => l.getAttribute("data-course") !== "CCC000400628");
         a.scrollIntoView({ block: "center" });
