@@ -251,15 +251,31 @@ check("6 GUARD: with no CONTENTS heading in reach nothing is printed",
       and STAFF not in read.excerpt_log("AAPS 100", read.slo_excerpt(TEXT.replace("CONTENTS\n", ""))))
 check("6 report 28 is recorded as printing no objectives", not read.prints_objectives(REPORT))
 
+def gate_stale(path):
+    """Why a recall gate is stale, or None: its trial was filed by a parser other than the current one. A stale gate
+    is named as stale, never failed: the reader refuses the full read on its own (S691's second reader)."""
+    want = json.load(open(path))
+    trial = os.path.join(read.OUT_DIR, "trial_%s" % want["trial"], "read.json")
+    if not os.path.exists(trial):
+        return None
+    fp = json.load(open(trial)).get("parser_fingerprint")
+    return None if fp == read.parser_fingerprint() else "trial %s filed by parser %s" % (want["trial"], (fp or "?")[:8])
+
+
 index = os.path.join(ROOT, "kb", "course_outline_index", "index_44696736058.json")
 rc = read.rows_recall(read.CCSF_RECALL)
+ccsf_stale = gate_stale(read.CCSF_RECALL)
+if ccsf_stale:
+    print("note City College of San Francisco's gate is stale (%s): a reread needs a new trial, an eye recount of its "
+          "excerpt log into ccsf_recall.json, then the read" % ccsf_stale)
 if not rc["ok"]:
     try:
         read.main(["--index", index, "--slugs", "city_of_san_francisco", "--part", "1", "--of", "1"])
         refused = False
     except SystemExit as exc:
         refused = "self-recall" in str(exc)
-    check("5 GUARD: with CCSF's count short, a full read refuses before it loads a page", refused)
+    check("5 GUARD: with CCSF's count short%s, a full read refuses before it loads a page"
+          % (" (its gate is stale: %s)" % ccsf_stale if ccsf_stale else ""), refused)
 else:
     check("5 CCSF's self-recall count passes, so a full read may run", rc["ok"], rc)
 
@@ -303,11 +319,18 @@ check("6 after a lead-in, a line that opens 'Students will be able to' and state
       read.objectives_of(EGSS)["objectives"] == ["Students will be able to analyze concepts of ethnic studies.",
                                                  "Students will be able to apply theory to critical events."]
       and read.objectives_of(two_leads)["objectives"] == ["Interpret results."], read.objectives_of(EGSS))
-rc_rio = read.recall_for(rio, "rio_hondo")
-rc_sb = read.recall_for("saddleback.curriqunet.com", "saddleback")
-check("6 Rio Hondo's and Saddleback's self-recall counts pass: 12 of 12 pages each, SLOs and objectives counted by eye "
-      "from trials 44890279483 and 44890274600's logs, bound to their parser",
-      rc_rio["ok"] and rc_rio["right"] == 12 and rc_sb["ok"] and rc_sb["right"] == 12, (rc_rio, rc_sb))
+for name, host, slug, path in (("Rio Hondo", rio, "rio_hondo", read.RIO_HONDO_RECALL),
+                               ("Saddleback", "saddleback.curriqunet.com", "saddleback", read.SADDLEBACK_RECALL)):
+    rc = read.recall_for(host, slug)
+    why = gate_stale(path)
+    if why:
+        # A parser change stales every gate it touches; the gate then refuses a full read, which is its job. A reread
+        # needs a new trial, an eye recount of its excerpt log into the recall file, then the read (S691).
+        check("6 %s's gate is stale (%s): a full read there refuses until a new trial is counted by eye" % (name, why),
+              not rc["ok"] and "filed by parser" in (rc["why"] or ""), rc)
+    else:
+        check("6 %s's self-recall count passes: 12 of 12 pages, SLOs and objectives counted by eye from its trial's "
+              "log, bound to the current parser" % name, rc["ok"] and rc["right"] == 12, rc)
 check("6 GUARD: Saddleback's count never opens a read for Irvine Valley on the same host, and a host with no file is "
       "refused",
       not read.recall_for("saddleback.curriqunet.com", "irvine_valley")["ok"]
@@ -319,7 +342,13 @@ with tempfile.TemporaryDirectory() as tmp:
     bad["pages"]["ACCT 100"] = dict(bad["pages"]["ACCT 100"], **{"from": "row"})
     path = os.path.join(tmp, "r.json")
     json.dump(bad, open(path, "w"))
-    rc_bad = read.rows_recall(path)
+    # The trial's own rows, stamped with the current parser, so this guard tests the counts whether or not a parser
+    # change has staled the committed gate.
+    trial = json.load(open(os.path.join(read.OUT_DIR, "trial_%s" % want["trial"], "read.json")))
+    os.makedirs(os.path.join(tmp, "trial_%s" % want["trial"]))
+    json.dump(dict(trial, parser_fingerprint=read.parser_fingerprint()),
+              open(os.path.join(tmp, "trial_%s" % want["trial"], "read.json"), "w"))
+    rc_bad = read.rows_recall(path, tmp, host=rio)
 check("6 GUARD: a Rio Hondo count changed or sourced from the row fails the gate (2 wrong of 12)",
       not rc_bad["ok"] and rc_bad["right"] == 10 and len(rc_bad["wrong"]) == 2, rc_bad)
 mix = [{"course_id": 29363, "title": "Introduction to Public Speaking", "reports": ["u1"]},
