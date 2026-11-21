@@ -869,6 +869,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/program_requirements_reconcile_out/course_id_rescore_2026-11-15/estimate.json` | scripts: `kb/_course_id_rescore_estimate.py` | scripts: `kb/_course_id_rescore_estimate.py` |
 | `kb/program_requirements_reread_plan_s680.json` | scripts: `kb/_program_named_gaps.py`, `kb/_program_requirements_cheap_piles_s683.py` | — |
 | `kb/program_requirements_wave` | none found | committed by: `program-requirements-wave.yml` |
+| `kb/program_total_differs.json` | scripts: `kb/_program_named_gaps.py` | — |
 | `kb/program_total_not_printed.json` | scripts: `kb/_program_named_gaps.py` | — |
 | `kb/project_lifecycle.json` | scripts: `kb/_load_projects.py` | scripts: `kb/_load_projects.py` · committed by: `daily-dashboard.yml` |
 | `kb/projects_seed_out` | none found | committed by: `projects-seed-apply.yml` |
@@ -1685,5 +1686,5 @@ check these BY HAND before trusting an absence:
 - `kb/_row_audit_prune.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 119 Supabase tables · 68 RPCs · 16 edge functions · 1128 file
+Coverage: 119 Supabase tables · 68 RPCs · 16 edge functions · 1129 file
 datasets · 197 external services · 646 consumers · 77 workflows · 41 tabs.

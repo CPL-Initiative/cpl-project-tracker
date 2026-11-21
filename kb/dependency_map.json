@@ -4,7 +4,7 @@
   "supabase_tables": 119,
   "rpcs": 68,
   "edge_functions": 16,
-  "file_datasets": 1128,
+  "file_datasets": 1129,
   "external_services": 197,
   "consumers": 646,
   "workflows": 77,
@@ -19190,7 +19190,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 634
+     "line": 685
     },
     {
      "id": "script:kb/_program_requirements_cheap_piles_s683.py",
@@ -19214,6 +19214,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/program_total_differs.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_named_gaps.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 371
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/program_total_not_printed.json": {
    "consumers": [
     {
@@ -19221,7 +19234,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 330
+     "line": 339
     }
    ],
    "served": false,
@@ -21968,14 +21981,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 87
+     "line": 93
     },
     {
      "id": "script:kb/_program_named_gaps.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 87
+     "line": 93
     }
    ],
    "served": false,
@@ -23957,7 +23970,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 644
+     "line": 695
     }
    ],
    "served": false,
@@ -38894,6 +38907,7 @@
   "kb/program_requirements_cheap_piles_s683.json",
   "kb/program_requirements_reread_plan_s680.json",
   "kb/program_requirements_reread_plan_s683.json",
+  "kb/program_total_differs.json",
   "kb/program_total_not_printed.json",
   "kb/promotions.json",
   "kb/receipts",
