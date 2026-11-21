@@ -1207,6 +1207,16 @@ jobs:
       - name: Merge-chain flattening lint (excel_to_dashboard.py)
         run: |
           python3 tests/merge_chain_flatten_test.py
+      # Assign from the panel (S694): a course from outside the identity file,
+      # assigned to a common course, must list under it, leave that common
+      # course's row as it stood, and give a newly minted course its subject,
+      # credit status and TOP; and no course the identity file holds may hide
+      # behind a same-title twin. Runs the export twice through its UC_KB_DIR /
+      # UC_OUT_DIR seam (about a minute). Imports the generator (openpyxl,
+      # installed at the top). Same non-required check.
+      - name: Assign from the panel, the export (excel_to_dashboard.py)
+        run: |
+          python3 tests/assign_from_panel_build_test.py
       # Units never split an identity (Sam, 2026-09-27). The M-ID Units bake
       # read the minted memberships alone, so 2,358 merged rows printed "—" or
       # one figure over members that differ; it now reads the members the row
