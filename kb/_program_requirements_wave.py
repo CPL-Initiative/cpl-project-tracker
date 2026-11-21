@@ -289,16 +289,35 @@ def price_main(args) -> int:
     # A read dispatched with force= extracts those programs again though their pages are unchanged, beyond the
     # capture's would_extract: each forced number not already on that list is priced too (an upper bound).
     listed = {str(x.get("control_number")) for x in would.get("list") or []}
-    forced = C.forced(os.path.join(C.COLLEGE_DIR, slug), getattr(args, "force", "") or "") - listed
-    got = price((would.get("programs") or 0) + len(forced), cpp, parse_limit(args.limit_usd),
+    forced_all = C.forced(os.path.join(C.COLLEGE_DIR, slug), getattr(args, "force", "") or "")
+    forced = forced_all - listed
+    # only= (S697): the named programs alone are priced, whatever the capture listed, and a name the capture cannot
+    # send, or a forced number it does not name, refuses the price; the limit and the hard stop stand as for any read.
+    only = C.only_named(getattr(args, "only", "") or "")
+    n_would = would.get("programs") or 0
+    only_bad: list[str] = []
+    if only:
+        n_would = len(listed & only)
+        only_bad = C.only_refused(args.out, only) + ["force= names %s, which only= does not" % cn
+                                                     for cn in sorted(forced_all - only)]
+        forced &= only
+    got = price(n_would + len(forced), cpp, parse_limit(args.limit_usd),
                 extract, None if fresh else pages, nothing_goes=fresh)
     got["forced_priced"] = len(forced)
     got.update(cost_per_program_from=cpp_from, pages=pages)
+    if only:
+        got["only"] = sorted(only)
+        got["only_priced"] = sorted((listed & only) | forced)
+        # The capture narrows its list itself when it read ONLY (would_extract's not_named); either way they show.
+        got["not_named"] = sorted((listed - only) | {str(x.get("control_number")) for x in would.get("not_named") or []})
     refused = None
+    if only_bad:
+        refused = "only= refused: " + "; ".join(only_bad)
+        got.update(go=False, why=refused)
     try:
         # Only a run that would send something is held to one attempt: a re-run that sends nothing pays
         # nothing, and refusing it would lose its capture's filing (S653 review).
-        if got["would_extract"] > 0:
+        if got["would_extract"] > 0 and not refused:
             check_attempt(extract, args.attempt)
     except Refused as exc:
         refused = str(exc)
@@ -308,6 +327,11 @@ def price_main(args) -> int:
     C._write(args.write, provisional_row(args.college, slug, args.run, got))
     print("%s: estimate $%.2f for %d programs at $%.4f each with the %.2f margin; %s"
           % (args.college, got["price_usd"], got["would_extract"], got["cost_per_program"], got["margin"], got["why"]))
+    if only:
+        stay = sorted(only - set(got["only_priced"]))
+        print("only=: priced %s; %d other programs that moved are not named and keep their filed records%s"
+              % (",".join(got["only_priced"]) or "none", len(got["not_named"]),
+                 "; named with nothing to send (unchanged or held), so not priced: " + ",".join(stay) if stay else ""))
     if extract and not got["go"] and not got["within_limit"]:
         print("::error::%s: the estimate $%.2f is over the $%.0f limit; nothing is extracted"
               % (args.college, got["price_usd"], got["limit_usd"]))
@@ -634,6 +658,7 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--fresh", default="0", help="price: 1 for a fresh college read: its pages never hold it, "
                     "and with nothing new to read it goes, free")
     ap.add_argument("--force", default="", help="price: the read's force=, whose programs extract again")
+    ap.add_argument("--only", default="", help="price: the read's only=, the programs it names alone are priced (S697)")
     ap.add_argument("--wave", default="")
     ap.add_argument("--ref", default=os.environ.get("GITHUB_REF_NAME", ""))
     ap.add_argument("--out", default="out")

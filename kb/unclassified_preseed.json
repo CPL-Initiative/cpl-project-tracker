@@ -1,10 +1,10 @@
 {
  "_about": "Pre-fills for the CER's unclassified titles, written each night by kb/_cer_procedures.py from the procedures in kb/cer_procedures.json and the classifier. credential_reference.js pre-fills each row. A pre-fill no reason holds is also saved to kb_curation under its procedure's cohort (Open Asks Sheet 94 card 2, 2026-10-18); a held one waits for the curator's Save. Rows with a saved assignment are never here.",
- "_generated_at": "2026-11-20T16:27:00Z",
- "_queue_count": 29,
+ "_generated_at": "2026-11-21T15:42:53Z",
+ "_queue_count": 53,
  "_counts": {
-  "staged": 29,
-  "needs_you": 16,
+  "staged": 52,
+  "needs_you": 38,
   "not_yet_asked": 0
  },
  "_residual": [],
@@ -36,71 +36,6 @@
     "issuer-issues-the-card"
    ]
   },
-  "Credit by Exam CIS100-Practical PC & Career Technologies": {
-   "title": "Practical PC & Career Technologies",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.85,
-   "note": "Local course title; no CCN or C-ID was identifiable.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "mechanism-collapses"
-   ]
-  },
-  "Credit by Exam CIS104-Microcomputer Application Software": {
-   "title": "Microcomputer Application Software",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.85,
-   "note": "Local course title; no CCN or C-ID was identifiable.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "mechanism-collapses"
-   ]
-  },
-  "Credit by Exam CIS210-Introduction to Computer Networking": {
-   "title": "Introduction to Computer Networking",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.9,
-   "note": "",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "brand-family"
-   ]
-  },
-  "Credit by Exam HIST001-Introduction to Western Civilization I": {
-   "title": "Introduction to Western Civilization 1",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.85,
-   "note": "Local course title, with the Roman numeral changed to an Arabic one.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "arabic-level-numerals"
-   ]
-  },
-  "Credit by Exam HIST002-Introduction to Western Civilization II": {
-   "title": "Introduction to Western Civilization 2",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.85,
-   "note": "Local course title, with the Roman numeral changed to an Arabic one.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "arabic-level-numerals"
-   ]
-  },
   "Credit by Exam HISTC1001-United States History Since 1877": {
    "title": "United States History to 1877",
    "issuer": "California Community Colleges",
@@ -113,17 +48,212 @@
     "Rule 5c"
    ]
   },
-  "Credit by Exam HISTC1002-United States History Since 1865": {
-   "title": "United States History since 1865",
+  "DRAFT 21: Mechanical Design I CX": {
+   "title": "Mechanical Design I",
    "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for DRAFT 21; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "ESLN 309A": {
+   "title": "ESL - Foundations",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for ESLN 309A; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "ESLN 310A": {
+   "title": "ESL - Comprehensive I",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for ESLN 310A; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "ESLN 310E": {
+   "title": "ESL - Comprehensive V",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for ESLN 310E; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "GERO 400: Principles of Caregiving: Older Adults, and Their Care CX": {
+   "title": "Principles of Caregiving: Older Adults and Their Care",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for GERO 400; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "GERO 455: Resources and Services for Older Adults CX": {
+   "title": "Resources and Services for Older Adults",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for GERO 455; issuer = CCC.",
+   "procedure": "course-identity"
+  },
+  "High School Articulation ( Tri Valley ROP)- Developmental Psychology of Children I": {
+   "title": "Developmental Psychology of Children 1",
+   "issuer": "Tri-Valley Regional Occupational Program (ROP)",
    "via": "classifier",
-   "confidence": 0.85,
-   "note": "Title anchored to CCN HIST C1002.",
+   "confidence": 0.8,
+   "note": "Set aside the cx hint, which kept the school and used CCC as issuer. Stripped the ROP name and joined the existing house title, whose Amador Valley and Dublin issuers are Tri-Valley schools. The ROP becomes issuer and trainer.",
    "procedure": "classifier",
    "rests_on": [
-    "course-identity",
-    "Rule 5c"
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "arabic-level-numerals",
+    "brand-family"
+   ],
+   "trainer": "Tri-Valley Regional Occupational Program (ROP)"
+  },
+  "High School Articulation ( Tri Valley ROP)- Developmental Psychology of Children II": {
+   "title": "Principles & Practices of Teaching Young Children",
+   "issuer": "Tri-Valley Regional Occupational Program",
+   "via": "school",
+   "confidence": 1.0,
+   "note": "Sheet 147 card 2: the aligned course (ECE 50 at Las Positas College) names it, C-ID ECE 120; the school issues it.",
+   "procedure": "high-school-rop",
+   "rests_on": [
+    "high-school-rop"
    ]
+  },
+  "High School Articulation ( Tri Valley ROP)- Economics of Business Ownership": {
+   "title": "Economics of Business Ownership",
+   "issuer": "Tri-Valley Regional Occupational Program (ROP)",
+   "via": "classifier",
+   "confidence": 0.75,
+   "note": "Set aside the cx hint. Stripped the ROP name; the aligned Las Positas course title is unverified, so the title is the ROP course content. The ROP is issuer and trainer.",
+   "procedure": "classifier",
+   "rests_on": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f"
+   ],
+   "trainer": "Tri-Valley Regional Occupational Program (ROP)"
+  },
+  "High School Articulation ( Tri Valley ROP)- Emergency Medical Response": {
+   "title": "Emergency Medical Responder",
+   "issuer": "Tri-Valley Regional Occupational Program",
+   "via": "school",
+   "confidence": 1.0,
+   "note": "Sheet 147 card 2: the aligned course (EMS 30 at Las Positas College) names it, M-ID EMST M1056; the school issues it.",
+   "procedure": "high-school-rop",
+   "rests_on": [
+    "high-school-rop"
+   ]
+  },
+  "High School Articulation ( Tri Valley ROP)- Integrated Marketing Communications": {
+   "title": "Introduction to Marketing",
+   "issuer": "Tri-Valley Regional Occupational Program",
+   "via": "school",
+   "confidence": 1.0,
+   "note": "Sheet 147 card 2: the aligned course (MKTG 50 at Las Positas College) names it, M-ID BUSI M1370; the school issues it.",
+   "procedure": "high-school-rop",
+   "rests_on": [
+    "high-school-rop"
+   ]
+  },
+  "High School Articulation ( Tri Valley ROP)- Introduction to Athletic Training": {
+   "title": "Introduction to Athletic Training and Sports Medicine",
+   "issuer": "Tri-Valley Regional Occupational Program",
+   "via": "school",
+   "confidence": 1.0,
+   "note": "Sheet 147 card 2: the aligned course (KIN 17 at Las Positas College) names it, the college's own title for KIN 17; the school issues it.",
+   "procedure": "high-school-rop",
+   "rests_on": [
+    "high-school-rop"
+   ]
+  },
+  "High School Articulation ( Tri Valley ROP)- Introduction to Health Careers": {
+   "title": "Orientation to Health Care",
+   "issuer": "Tri-Valley Regional Occupational Program",
+   "via": "school",
+   "confidence": 1.0,
+   "note": "Sheet 147 card 2: the aligned course (BIO 55 at Las Positas College) names it, the college's own title for BIO 55; the school issues it.",
+   "procedure": "high-school-rop",
+   "rests_on": [
+    "high-school-rop"
+   ]
+  },
+  "High School Articulation ( Tri Valley ROP)- Medical Occupations": {
+   "title": "Medical Terminology",
+   "issuer": "Tri-Valley Regional Occupational Program",
+   "via": "school",
+   "confidence": 1.0,
+   "note": "Sheet 147 card 2: the aligned course (EMS 62 at Las Positas College) names it, C-ID HIT 103 X; the school issues it.",
+   "procedure": "high-school-rop",
+   "rests_on": [
+    "high-school-rop"
+   ]
+  },
+  "High School Articulation ( Tri Valley ROP)- Nursing Careers": {
+   "title": "Nursing Careers",
+   "issuer": "Tri-Valley Regional Occupational Program (ROP)",
+   "via": "classifier",
+   "confidence": 0.8,
+   "note": "Set aside the cx hint. Joined the existing Nursing Careers house title held by Emerald and Foothill HS, both Tri-Valley schools. The ROP is issuer and trainer.",
+   "procedure": "classifier",
+   "rests_on": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "brand-family"
+   ],
+   "trainer": "Tri-Valley Regional Occupational Program (ROP)"
+  },
+  "High School Articulation ( Tri Valley ROP)- Sports and Entertainment Marketing": {
+   "title": "Introduction to Marketing",
+   "issuer": "Tri-Valley Regional Occupational Program",
+   "via": "school",
+   "confidence": 1.0,
+   "note": "Sheet 147 card 2: the aligned course (MKTG 50 at Las Positas College) names it, M-ID BUSI M1370; the school issues it.",
+   "procedure": "high-school-rop",
+   "rests_on": [
+    "high-school-rop"
+   ]
+  },
+  "High School Articulation (Benicia High School)- Dance 1": {
+   "title": "Introduction to Dance",
+   "issuer": "Benicia High School",
+   "via": "school",
+   "confidence": 1.0,
+   "note": "Sheet 147 card 2: the aligned course (DANC 1 at Las Positas College) names it, M-ID DANC M1290; the school issues it.",
+   "procedure": "high-school-rop",
+   "rests_on": [
+    "high-school-rop"
+   ]
+  },
+  "High School Articulation (Benicia High School)- Dance 2": {
+   "title": "Beginning/Intermediate Jazz Dance",
+   "issuer": "Benicia High School",
+   "via": "school",
+   "confidence": 1.0,
+   "note": "Sheet 147 card 2: the aligned course (DANC 2B at Las Positas College) names it, M-ID DANC M1476; the school issues it.",
+   "procedure": "high-school-rop",
+   "rests_on": [
+    "high-school-rop"
+   ]
+  },
+  "High School Articulation (Benicia High School)- Dance 3": {
+   "title": "Dance 3",
+   "issuer": "Benicia High School",
+   "via": "classifier",
+   "confidence": 0.7,
+   "note": "Set aside the cx hint. Stripped the school name; the aligned Las Positas dance course title is unverified.",
+   "procedure": "classifier",
+   "rests_on": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "arabic-level-numerals"
+   ],
+   "trainer": "Benicia High School"
   },
   "High School Articulation (Livermore)- Developmental Psychology of Children II": {
    "title": "Principles & Practices of Teaching Young Children",
@@ -256,77 +386,201 @@
     "high-school-rop"
    ]
   },
-  "High School Articulation (Tracy)- Fire Service": {
-   "title": "Fire Service Conditioning & Physical Agility Development",
-   "issuer": "Tracy High School",
+  "High School Articulation (Monte Vista)- Introduction to Music Theory and Performance": {
+   "title": "Music Theory I",
+   "issuer": "Monte Vista High School",
    "via": "school",
    "confidence": 1.0,
-   "note": "Sheet 147 card 2: the aligned course (FST 7 at Las Positas College) names it, M-ID KINE M1466; the school issues it.",
+   "note": "Sheet 147 card 2: the aligned course (MUS 8A at Las Positas College) names it, C-ID MUS 120; the school issues it.",
    "procedure": "high-school-rop",
    "rests_on": [
     "high-school-rop"
    ]
   },
-  "ISACA Certified Info Security Manager (CISM)": {
-   "title": "Certified Information Security Manager (CISM)",
-   "issuer": "Information Systems Audit and Control Association (ISACA)",
+  "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (AJ 54)": {
+   "title": "Administration of Justice (AJ 54)",
+   "issuer": "Tri-Valley Regional Occupational Program (ROP)",
    "via": "classifier",
-   "confidence": 0.93,
-   "note": "",
+   "confidence": 0.45,
+   "note": "Hint set aside because it kept the school name, the mechanism and the code. The ROP is the issuer and trainer. The title is the code fallback until a lookup in the COCI course list finds the Las Positas AJ 54 course title (CCN, then C-ID, then local title).",
    "procedure": "classifier",
    "rests_on": [
-    "Rule 6",
-    "issuer-issues-the-card"
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "Rule 5c"
+   ],
+   "trainer": "Tri-Valley Regional Occupational Program (ROP)"
+  },
+  "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (AJ 60)": {
+   "title": "Concepts of Criminal Law",
+   "issuer": "Tri-Valley Regional Occupational Program",
+   "via": "school",
+   "confidence": 1.0,
+   "note": "Sheet 147 card 2: the aligned course (AJ 60 at Las Positas College) names it, C-ID AJ 120; the school issues it.",
+   "procedure": "high-school-rop",
+   "rests_on": [
+    "high-school-rop"
    ]
   },
-  "ISACA Certified Info Systems Auditor (CISA)": {
-   "title": "Certified Information Systems Auditor (CISA)",
-   "issuer": "Information Systems Audit and Control Association (ISACA)",
+  "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (AJ 68)": {
+   "title": "Administration of Justice (AJ 68)",
+   "issuer": "Tri-Valley Regional Occupational Program (ROP)",
    "via": "classifier",
-   "confidence": 0.93,
-   "note": "",
+   "confidence": 0.45,
+   "note": "Hint set aside because it was a verbatim raw title. The ROP is the issuer and trainer. The title is the code fallback pending a COCI lookup of the Las Positas AJ 68 course.",
    "procedure": "classifier",
    "rests_on": [
-    "Rule 6",
-    "issuer-issues-the-card"
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "Rule 5c"
+   ],
+   "trainer": "Tri-Valley Regional Occupational Program (ROP)"
+  },
+  "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (AJ 70)": {
+   "title": "Community and the Justice System",
+   "issuer": "Tri-Valley Regional Occupational Program",
+   "via": "school",
+   "confidence": 1.0,
+   "note": "Sheet 147 card 2: the aligned course (AJ 70 at Las Positas College) names it, C-ID AJ 160; the school issues it.",
+   "procedure": "high-school-rop",
+   "rests_on": [
+    "high-school-rop"
    ]
   },
-  "Microsoft Office Specialist (MOS) Associate": {
-   "title": "Microsoft Office Specialist — Associate",
-   "issuer": "Microsoft",
+  "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (FST 7)": {
+   "title": "Fire Service Technology (FST 7)",
+   "issuer": "Tri-Valley Regional Occupational Program (ROP)",
    "via": "classifier",
-   "confidence": 0.88,
-   "note": "The MOS Associate level is a distinct credential, so it stays split from the generic and Expert titles and uses the house dash form.",
+   "confidence": 0.4,
+   "note": "Hint set aside because it was a verbatim raw title. The ROP is the issuer and trainer. The title is the code fallback pending a COCI lookup of the Las Positas FST 7 course aligned to the Criminal Justice Academy.",
    "procedure": "classifier",
    "rests_on": [
-    "brand-family",
-    "Rule 4"
-   ]
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "Rule 5c"
+   ],
+   "trainer": "Tri-Valley Regional Occupational Program (ROP)"
   },
-  "Microsoft Office Specialist (MOS) Expert": {
-   "title": "Microsoft Office Specialist — Expert",
-   "issuer": "Microsoft",
+  "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (KIN GBW 1)": {
+   "title": "Kinesiology (KIN GBW 1)",
+   "issuer": "Tri-Valley Regional Occupational Program (ROP)",
    "via": "classifier",
-   "confidence": 0.88,
-   "note": "The MOS Expert level is a distinct credential, kept separate from Associate and from the per-app Expert titles.",
+   "confidence": 0.4,
+   "note": "Hint set aside because it was a verbatim raw title. The ROP is the issuer and trainer. The title is the code fallback pending a COCI lookup of the Las Positas KIN GBW 1 course title (likely a fitness or body-weight course).",
    "procedure": "classifier",
    "rests_on": [
-    "brand-family",
-    "Rule 4"
-   ]
-  },
-  "Portfolio Review CIS100-Practical PC & Career Technologies": {
-   "title": "Practical PC and Career Technologies",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.85,
-   "note": "The mechanism and course code are stripped, leaving the college's own course title.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
     "Rule 5c",
-    "mechanism-collapses"
+    "arabic-level-numerals"
+   ],
+   "trainer": "Tri-Valley Regional Occupational Program (ROP)"
+  },
+  "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (KIN GBW 2)": {
+   "title": "Kinesiology (KIN GBW 2)",
+   "issuer": "Tri-Valley Regional Occupational Program (ROP)",
+   "via": "classifier",
+   "confidence": 0.4,
+   "note": "Hint set aside because it was a verbatim raw title. The ROP is the issuer and trainer. The title is the code fallback pending a COCI lookup of the Las Positas KIN GBW 2 course.",
+   "procedure": "classifier",
+   "rests_on": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "Rule 5c",
+    "arabic-level-numerals"
+   ],
+   "trainer": "Tri-Valley Regional Occupational Program (ROP)"
+  },
+  "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (KIN GBW 3)": {
+   "title": "Kinesiology (KIN GBW 3)",
+   "issuer": "Tri-Valley Regional Occupational Program (ROP)",
+   "via": "classifier",
+   "confidence": 0.4,
+   "note": "Hint set aside because it was a verbatim raw title. The ROP is the issuer and trainer. The title is the code fallback pending a COCI lookup of the Las Positas KIN GBW 3 course.",
+   "procedure": "classifier",
+   "rests_on": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "Rule 5c",
+    "arabic-level-numerals"
+   ],
+   "trainer": "Tri-Valley Regional Occupational Program (ROP)"
+  },
+  "High School Articulation (Tri Valley ROP)- Criminal Justice/CSI": {
+   "title": "Criminal Investigation",
+   "issuer": "Tri-Valley Regional Occupational Program",
+   "via": "school",
+   "confidence": 1.0,
+   "note": "Sheet 147 card 2: the aligned course (AJ 63 at Las Positas College) names it, C-ID AJ 140; the school issues it.",
+   "procedure": "high-school-rop",
+   "rests_on": [
+    "high-school-rop"
    ]
+  },
+  "High School Articulation (Tri Valley ROP)- Criminal Justice/Crime Scene Investigation": {
+   "title": "Introduction to Criminal Justice",
+   "issuer": "Tri-Valley Regional Occupational Program",
+   "via": "school",
+   "confidence": 1.0,
+   "note": "Sheet 147 card 2: the aligned course (AJ 50 at Las Positas College) names it, C-ID AJ 110; the school issues it.",
+   "procedure": "high-school-rop",
+   "rests_on": [
+    "high-school-rop"
+   ]
+  },
+  "IB Exam - Economics": {
+   "title": "IB Economics HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "confidence": 0.95,
+   "via": "ib",
+   "note": "IB's own Diploma Programme subject and level, read from the title.",
+   "procedure": "brand-family"
+  },
+  "IB Exam - Mathematics: Analysis & Approaches": {
+   "title": "IB Mathematics: Analysis and Approaches HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "confidence": 0.95,
+   "via": "ib",
+   "note": "IB's own Diploma Programme subject and level, read from the title.",
+   "procedure": "brand-family"
+  },
+  "IB Exam - Psychology": {
+   "title": "IB Psychology HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "confidence": 0.95,
+   "via": "ib",
+   "note": "IB's own Diploma Programme subject and level, read from the title.",
+   "procedure": "brand-family"
+  },
+  "IB Exam: Mathematics: Applications and Interpretations": {
+   "title": "IB Mathematics: Applications and Interpretation HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "confidence": 0.95,
+   "via": "ib",
+   "note": "IB's own Diploma Programme subject and level, read from the title.",
+   "procedure": "brand-family"
+  },
+  "IB Exam: Social and Cultural Anthropology": {
+   "title": "IB Social and Cultural Anthropology HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "confidence": 0.95,
+   "via": "ib",
+   "note": "IB's own Diploma Programme subject and level, read from the title.",
+   "procedure": "brand-family"
+  },
+  "PHOTO 7: Beginning Digital Photography (CX)": {
+   "title": "Digital Photography Beginning",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for PHOTO 7; issuer = CCC.",
+   "procedure": "course-identity"
   },
   "Portfolio Review CIS101-Introduction to Computers and Their Uses": {
    "title": "Introduction to Computers and Their Uses",
@@ -338,18 +592,6 @@
    "rests_on": [
     "course-identity",
     "join-when-likely-one",
-    "Rule 5c"
-   ]
-  },
-  "Portfolio Review CIS104-Microcomputer Application Software": {
-   "title": "Microcomputer Application Software",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.85,
-   "note": "The mechanism and course code are stripped, leaving the local course title.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
     "Rule 5c"
    ]
   },

@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-21T04:10:43Z",
+ "written_at": "2026-11-21T16:15:40Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 15161,
+     "n": 15322,
      "of": 20282,
      "words": "complete at 118 colleges",
      "open": "#program-requirements/list"
@@ -34,14 +34,14 @@
    ],
    "issues": [
     {
-     "n": 2091,
+     "n": 2023,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
      "open": "#program-requirements/list/fail"
     },
     {
-     "n": 3030,
+     "n": 2937,
      "words": "active programs with no record yet",
      "owner": "the harvest",
      "carry": "routine",
@@ -63,17 +63,17 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-11-20T13:29:43Z",
+    "at": "2026-11-21T14:58:59Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 15161,
-    "failing": 2091,
-    "unread": 3030,
-    "records": 18860,
+    "complete": 15322,
+    "failing": 2023,
+    "unread": 2937,
+    "records": 18951,
     "colleges": 118,
-    "outside_active": 1608,
+    "outside_active": 1606,
     "confirmed": 32,
     "confirmed_complete": 28
    },
@@ -118,15 +118,15 @@
    ],
    "issues": [
     {
-     "n": 16,
+     "n": 38,
      "words": "titles held for a person",
-     "owner": "a curator (a merge would join two issuers 9, the classifier is unsure 7)",
+     "owner": "a curator (a merge would join two issuers 20, the classifier is unsure 17, the classifier's title has a course code left in 1)",
      "carry": "unsure",
      "open": "#exhibits/held",
      "error": null
     },
     {
-     "n": 563,
+     "n": 574,
      "words": "credentials with no Common SUBJ (467 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
      "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
      "carry": "routine",
@@ -166,7 +166,7 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-20T21:48:17Z",
+    "at": "2026-11-21T15:42:56Z",
     "every_hours": 24
    },
    "facts": {
@@ -179,14 +179,14 @@
     "confirmed": 1539,
     "records": 3301,
     "records_stamped": 2531,
-    "saved_at": "2026-11-20T16:27:02Z",
+    "saved_at": "2026-11-21T15:42:56Z",
     "fold_at": "2026-11-20T21:48:17Z",
     "map_titles": 5440,
     "unclassified": 53,
     "left_map": 812,
     "below_80": 1117,
     "below_60": 235,
-    "no_subject": 563,
+    "no_subject": 574,
     "review_list": 12,
     "returned_unacknowledged": 0
    },
@@ -383,7 +383,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-19T06:22:43Z",
+    "at": "2026-11-21T00:12:53-08:00",
     "every_hours": null
    },
    "facts": {
@@ -584,9 +584,9 @@
    ],
    "pair": [
     {
-     "n": 78635,
+     "n": 89735,
      "of": null,
-     "words": "outcomes read from 20,562 courses at 28 colleges",
+     "words": "outcomes read from 25,313 courses at 34 colleges",
      "open": "#coci-lookup"
     }
    ],
@@ -594,8 +594,8 @@
     "read from the public outline"
    ],
    "facts": {
-    "outcomes": 78635,
-    "courses": 20562,
+    "outcomes": 89735,
+    "courses": 25313,
     "colleges": [
      "allan_hancock",
      "cabrillo",
@@ -611,6 +611,7 @@
      "diablo_valley",
      "feather_river",
      "golden_west",
+     "irvine_valley",
      "lake_tahoe_community",
      "las_positas",
      "los_medanos",
@@ -621,16 +622,21 @@
      "norco",
      "orange_coast",
      "palomar",
+     "rio_hondo",
      "riverside_city",
+     "saddleback",
+     "san_diego_city",
+     "san_diego_mesa",
+     "san_diego_miramar",
      "santa_ana",
      "santiago_canyon",
      "shasta"
     ],
-    "reads": 72
+    "reads": 78
    },
    "machine": {
     "what": "the last outline read",
-    "at": "2026-11-20T15:50:52Z",
+    "at": "2026-11-21T15:32:09Z",
     "every_hours": null
    },
    "sources": [
@@ -703,9 +709,9 @@
      {
       "ref": "exhibit",
       "title": "Common Exhibit Reference",
-      "n": 16,
+      "n": 38,
       "words": "titles held for a person",
-      "owner": "a curator (a merge would join two issuers 9, the classifier is unsure 7)",
+      "owner": "a curator (a merge would join two issuers 20, the classifier is unsure 17, the classifier's title has a course code left in 1)",
       "open": "#exhibits/held"
      },
      {
@@ -765,7 +771,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 2091,
+    "n": 2023,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"
@@ -773,7 +779,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 3030,
+    "n": 2937,
     "words": "active programs with no record yet",
     "owner": "the harvest",
     "open": "#program-requirements/list/unread"
@@ -781,7 +787,7 @@
    {
     "ref": "exhibit",
     "title": "Common Exhibit Reference",
-    "n": 563,
+    "n": 574,
     "words": "credentials with no Common SUBJ (467 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
     "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
     "open": "#exhibits/list/nosubj"
@@ -800,7 +806,7 @@
     "ref": "requirements",
     "title": "Program Requirements",
     "kind": "not_shrinking",
-    "n": 3030,
+    "n": 2937,
     "was": 2820,
     "since": "2026-11-14",
     "words": "active programs with no record yet",
@@ -811,7 +817,7 @@
     "ref": "exhibit",
     "title": "Common Exhibit Reference",
     "kind": "not_shrinking",
-    "n": 563,
+    "n": 574,
     "was": 499,
     "since": "2026-11-14",
     "words": "credentials with no Common SUBJ (467 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
@@ -838,35 +844,35 @@
     },
     {
      "name": "brand-family",
-     "placed": 244,
+     "placed": 249,
      "untouched": 237,
      "kept": 0,
      "renamed": 2,
      "moved": 0,
      "by_procedure": 5,
-     "left": 0,
+     "left": 5,
      "looked": 2
     },
     {
      "name": "course-identity",
-     "placed": 194,
+     "placed": 201,
      "untouched": 168,
      "kept": 0,
      "renamed": 26,
      "moved": 0,
      "by_procedure": 0,
-     "left": 0,
+     "left": 7,
      "looked": 26
     },
     {
      "name": "high-school-rop",
-     "placed": 63,
+     "placed": 66,
      "untouched": 39,
      "kept": 19,
      "renamed": 5,
      "moved": 0,
      "by_procedure": 0,
-     "left": 0,
+     "left": 3,
      "looked": 24
     },
     {
@@ -915,13 +921,13 @@
     }
    ],
    "total": {
-    "placed": 1492,
+    "placed": 1507,
     "untouched": 1359,
     "kept": 23,
     "renamed": 86,
     "moved": 0,
     "by_procedure": 24,
-    "left": 0,
+    "left": 15,
     "looked": 109
    }
   },

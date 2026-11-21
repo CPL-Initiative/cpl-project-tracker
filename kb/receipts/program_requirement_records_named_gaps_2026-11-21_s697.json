@@ -1,0 +1,1082 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30)",
+ "gaps": {
+  "major_total_differs": "major total differs from catalog",
+  "no_units_printed": "The catalog prints no units for at least one required course.",
+  "no_units_read": "A required course carries no units as read, so the program's units cannot be added.",
+  "no_hours_read": "A required course carries no hours as read, so the program's hours cannot be added.",
+  "catalog_figures_differ": "The catalog's own figures do not add up: each list matches its printed figure, and the lists sum past the program's printed total.",
+  "noncredit_names_only": "Noncredit certificate: the catalog names it but prints no course list.",
+  "total_not_printed": "The catalog prints no total for this program, so its units cannot be checked against one."
+ },
+ "at": "2026-11-21T13:23:08Z",
+ "held_colleges": [
+  "Lassen College",
+  "Cosumnes River College",
+  "Allan Hancock College",
+  "Chabot College",
+  "Santiago Canyon College"
+ ],
+ "only_gaps": [
+  "total_not_printed"
+ ],
+ "collected": 6,
+ "by_gap": {
+  "total_not_printed": 6
+ },
+ "recall": {
+  "held": 1844,
+  "right": 1844,
+  "wrong": 0,
+  "by_answer": {
+   "none": 1758,
+   "no_hours_read": 56,
+   "no_units_read": 24,
+   "total_not_printed": 6
+  },
+  "wrong_keys": []
+ },
+ "matcher_recall": {
+  "noncredit": {
+   "held": 22141,
+   "right": 22141,
+   "wrong": 0,
+   "missed": 0
+  },
+  "printed_no_units": {
+   "held": 102527,
+   "right": 101872,
+   "wrong": 655
+  }
+ },
+ "records": [
+  {
+   "college": "Santa Monica College",
+   "control_number": "37885",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "extracted_run": "39567439681",
+   "gap": "total_not_printed",
+   "words": "the catalog prints no program total (PDF p.135; college-page-read run 44881390798)",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "path": "kb/program_requirements_college/santa_monica/records/37885.json",
+   "before_image": {
+    "program_title": "Introduction to Engineering",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=135",
+    "measure": "units",
+    "total_min": null,
+    "total_max": null,
+    "record": {
+     "program": {
+      "section_heading": "Introduction to Engineering, Certificate of Achievement",
+      "measure": "units",
+      "total_units": {
+       "min": null,
+       "max": null
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Upon completion of the program, students will demonstrate basic knowledge of engineering principles of design and analysis, and exhibit effective communication skills and ethical behavior as shown through their written work, teamwork, and lab work."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Mathematics Course",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 5,
+        "max": 5
+       },
+       "courses": [
+        {
+         "code": "MATH 7",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Physics Course",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 5,
+        "max": 5
+       },
+       "courses": [
+        {
+         "code": "PHYSCS 21",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Engineering Course",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 2,
+        "max": 2
+       },
+       "courses": [
+        {
+         "code": "ENGR 1",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Elective Engineering Course",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "ENGR 11",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGR 12",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ENGR 16",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGR 21",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 6,
+     "listed": 6
+    },
+    "extracted_run": "39567439681"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 6,
+     "listed": 6,
+     "gaps": [
+      "total_not_printed"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 1
+  },
+  {
+   "college": "Santa Monica College",
+   "control_number": "45811",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "extracted_run": "39567439681",
+   "gap": "total_not_printed",
+   "words": "the catalog prints no program total (PDF p.162; college-page-read run 44881390798)",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "path": "kb/program_requirements_college/santa_monica/records/45811.json",
+   "before_image": {
+    "program_title": "Pilates Comprehensive Teacher Training",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=163",
+    "measure": "units",
+    "total_min": null,
+    "total_max": null,
+    "record": {
+     "program": {
+      "section_heading": "Pilates Comprehensive Teacher Training, Certificate of Achievement",
+      "measure": "units",
+      "total_units": {
+       "min": null,
+       "max": null
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "demonstrate all Comprehensive Teaching Skills and be ready to instruct others in all aspects on the various Comprehensive Pilates Equipment, including Mat Work.",
+       "Create Comprehensive Pilates sequences for individuals and groups, including mat work and all the various equipment.",
+       "Effectively utilize Mat, Reformer, and Apparatus equipment for instruction."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Core Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 6,
+        "max": 6
+       },
+       "courses": [
+        {
+         "code": "PRO CR 90",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PRO CR 91",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Mat Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "PRO CR 92",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PRO CR 93",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Reformer Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "PRO CR 94",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PRO CR 95",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Apparatus Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "PRO CR 96",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PRO CR 97",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 8,
+     "listed": 8
+    },
+    "extracted_run": "39567439681"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 8,
+     "listed": 8,
+     "gaps": [
+      "total_not_printed"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 2
+  },
+  {
+   "college": "Santa Monica College",
+   "control_number": "45812",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "extracted_run": "39567439681",
+   "gap": "total_not_printed",
+   "words": "the catalog prints no program total (PDF p.163; college-page-read run 44881390798)",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "path": "kb/program_requirements_college/santa_monica/records/45812.json",
+   "before_image": {
+    "program_title": "Yoga Teacher Training - 200 Hour",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=163",
+    "measure": "units",
+    "total_min": null,
+    "total_max": null,
+    "record": {
+     "program": {
+      "section_heading": "Yoga Teacher Training – 200 Hour, Certificate of Achievement",
+      "measure": "units",
+      "total_units": {
+       "min": null,
+       "max": null
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "create and teach an intelligently sequenced yoga class employing a teaching methodology, effective communication, proper demonstrations, effective cueing, and appropriate progression and regression of poses for beginning level yoga classes for participants of various ability levels.",
+       "Demonstrate the ability to analyze proper body alignment and administer appropriate physical adjustments to enhance safety to ensure an experience that is safe, productive and enjoyable.",
+       "Register with Yoga Alliance as a registered yoga teacher (RYT-200).",
+       "Demonstrate the ability to modify your yoga class to student(s) with a health obstacle or physical limitation by selecting postures and pranayama that can be beneficial for that student, and by using progressions and regressions effectively.",
+       "Create an effective business strategy for oneself including your personal brand and/or identifying one’s niche and if appropriate leveraging social media."
+      ],
+      "careers": [
+       "Yoga teachers"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required Core Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 9,
+        "max": 9
+       },
+       "courses": [
+        {
+         "code": "PRO CR 70",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PRO CR 71",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PRO CR 72",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PRO CR 73",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Select 1 course from the following",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 1,
+        "max": 1
+       },
+       "courses": [
+        {
+         "code": "KIN PE 58A",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "KIN PE 58B",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "KIN PE 58C",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "KIN PE 58D",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 8,
+     "listed": 8
+    },
+    "extracted_run": "39567439681"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 8,
+     "listed": 8,
+     "gaps": [
+      "total_not_printed"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 3
+  },
+  {
+   "college": "Santa Monica College",
+   "control_number": "45813",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "extracted_run": "39567439681",
+   "gap": "total_not_printed",
+   "words": "the catalog prints no program total (PDF p.163; college-page-read run 44881390798)",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "path": "kb/program_requirements_college/santa_monica/records/45813.json",
+   "before_image": {
+    "program_title": "Pilates Mat Teacher Training",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=163",
+    "measure": "units",
+    "total_min": null,
+    "total_max": null,
+    "record": {
+     "program": {
+      "section_heading": "Pilates Mat Teacher Training, Certificate of Achievement",
+      "measure": "units",
+      "total_units": {
+       "min": null,
+       "max": null
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "demonstrate Mat Work Teaching Skills.",
+       "Create Pilates sequences for individuals and groups.",
+       "Apply Mat Work principles for instruction."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Core Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 6,
+        "max": 6
+       },
+       "courses": [
+        {
+         "code": "PRO CR 90",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PRO CR 91",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Mat Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "PRO CR 92",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PRO CR 93",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 4,
+     "listed": 4
+    },
+    "extracted_run": "39567439681"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 4,
+     "listed": 4,
+     "gaps": [
+      "total_not_printed"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 4
+  },
+  {
+   "college": "Santa Monica College",
+   "control_number": "45814",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "extracted_run": "39567439681",
+   "gap": "total_not_printed",
+   "words": "the catalog prints no program total (PDF p.162; college-page-read run 44881390798)",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "path": "kb/program_requirements_college/santa_monica/records/45814.json",
+   "before_image": {
+    "program_title": "Pilates Apparatus Teacher Training",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=162",
+    "measure": "units",
+    "total_min": null,
+    "total_max": null,
+    "record": {
+     "program": {
+      "section_heading": "Pilates Apparatus Teacher Training, Certificate of Achievement",
+      "measure": "units",
+      "total_units": {
+       "min": null,
+       "max": null
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "students will demonstrate Apparatus Teaching Skills and be ready to instruct others on various Pilates Apparatus.",
+       "Create Pilates Apparatus sequences for individuals and groups, including all the various equipment.",
+       "Effectively utilize various Apparatus equipment for instruction."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Core Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 6,
+        "max": 6
+       },
+       "courses": [
+        {
+         "code": "PRO CR 90",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PRO CR 91",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Mat Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "PRO CR 92",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PRO CR 93",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Apparatus Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "PRO CR 96",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PRO CR 97",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 6,
+     "listed": 6
+    },
+    "extracted_run": "39567439681"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 6,
+     "listed": 6,
+     "gaps": [
+      "total_not_printed"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 5
+  },
+  {
+   "college": "Santa Monica College",
+   "control_number": "45815",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "extracted_run": "39567439681",
+   "gap": "total_not_printed",
+   "words": "the catalog prints no program total (PDF p.163; college-page-read run 44881390798)",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "path": "kb/program_requirements_college/santa_monica/records/45815.json",
+   "before_image": {
+    "program_title": "Pilates Reformer Teacher Training",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=163",
+    "measure": "units",
+    "total_min": null,
+    "total_max": null,
+    "record": {
+     "program": {
+      "section_heading": "Pilates Reformer Teacher Training Certificate",
+      "measure": "units",
+      "total_units": {
+       "min": null,
+       "max": null
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "demonstrate Pilates reformer teaching skills and techniques.",
+       "Create sequences for individuals and groups training on the Pilates Reformer.",
+       "Integrate Reformer principles and modifications for students of various levels."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Core Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 6,
+        "max": 6
+       },
+       "courses": [
+        {
+         "code": "PRO CR 90",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PRO CR 91",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Mat Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "PRO CR 92",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PRO CR 93",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Reformer Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "PRO CR 94",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PRO CR 95",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 6,
+     "listed": 6
+    },
+    "extracted_run": "39567439681"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 6,
+     "listed": 6,
+     "gaps": [
+      "total_not_printed"
+     ],
+     "confidence": {
+      "unit_arithmetic": 40,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 6
+  }
+ ],
+ "decided": "The 6 records count as collected with the gap named (the S680 conductor, on Sam's rule of 2026-11-17: never drop a record for failing; collect it with gaps noted and scores).",
+ "representation": "checks.gaps (a list of gap names, keys of gaps) and checks.confidence (five scores 0-100) added to program_requirement_records.checks; checks.arithmetic unchanged",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Santa Monica College', '37885', 39567439681, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 7\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Mathematics Course\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":5,\"min\":5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSCS 21\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Physics Course\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":5,\"min\":5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR 1\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Engineering Course\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":2,\"min\":2}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGR 12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR 16\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR 21\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Elective Engineering Course\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Upon completion of the program, students will demonstrate basic knowledge of engineering principles of design and analysis, and exhibit effective communication skills and ethical behavior as shown through their written work, teamwork, and lab work.\"],\"section_heading\":\"Introduction to Engineering, Certificate of Achievement\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":6,\"placed\":6}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"total_not_printed\"],\"invented\":true,\"listed\":6,\"placed\":6}'::jsonb),\n  (2, 'Santa Monica College', '45811', 39567439681, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 90\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 91\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 92\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 93\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Mat Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 94\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 95\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Reformer Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 96\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 97\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Apparatus Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"demonstrate all Comprehensive Teaching Skills and be ready to instruct others in all aspects on the various Comprehensive Pilates Equipment, including Mat Work.\",\"Create Comprehensive Pilates sequences for individuals and groups, including mat work and all the various equipment.\",\"Effectively utilize Mat, Reformer, and Apparatus equipment for instruction.\"],\"section_heading\":\"Pilates Comprehensive Teacher Training, Certificate of Achievement\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"total_not_printed\"],\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb),\n  (3, 'Santa Monica College', '45812', 39567439681, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 70\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 71\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 72\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 73\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":9,\"min\":9}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN PE 58A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN PE 58B\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN PE 58C\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN PE 58D\",\"units\":1,\"units_max\":null}],\"minimum\":1,\"name\":\"Select 1 course from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":1,\"min\":1}}],\"program\":{\"careers\":[\"Yoga teachers\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"create and teach an intelligently sequenced yoga class employing a teaching methodology, effective communication, proper demonstrations, effective cueing, and appropriate progression and regression of poses for beginning level yoga classes for participants of various ability levels.\",\"Demonstrate the ability to analyze proper body alignment and administer appropriate physical adjustments to enhance safety to ensure an experience that is safe, productive and enjoyable.\",\"Register with Yoga Alliance as a registered yoga teacher (RYT-200).\",\"Demonstrate the ability to modify your yoga class to student(s) with a health obstacle or physical limitation by selecting postures and pranayama that can be beneficial for that student, and by using progressions and regressions effectively.\",\"Create an effective business strategy for oneself including your personal brand and/or identifying one’s niche and if appropriate leveraging social media.\"],\"section_heading\":\"Yoga Teacher Training – 200 Hour, Certificate of Achievement\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"total_not_printed\"],\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb),\n  (4, 'Santa Monica College', '45813', 39567439681, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 90\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 91\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 92\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 93\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Mat Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"demonstrate Mat Work Teaching Skills.\",\"Create Pilates sequences for individuals and groups.\",\"Apply Mat Work principles for instruction.\"],\"section_heading\":\"Pilates Mat Teacher Training, Certificate of Achievement\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":4,\"placed\":4}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"total_not_printed\"],\"invented\":true,\"listed\":4,\"placed\":4}'::jsonb),\n  (5, 'Santa Monica College', '45814', 39567439681, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 90\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 91\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 92\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 93\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Mat Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 96\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 97\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Apparatus Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"students will demonstrate Apparatus Teaching Skills and be ready to instruct others on various Pilates Apparatus.\",\"Create Pilates Apparatus sequences for individuals and groups, including all the various equipment.\",\"Effectively utilize various Apparatus equipment for instruction.\"],\"section_heading\":\"Pilates Apparatus Teacher Training, Certificate of Achievement\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":6,\"placed\":6}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"total_not_printed\"],\"invented\":true,\"listed\":6,\"placed\":6}'::jsonb),\n  (6, 'Santa Monica College', '45815', 39567439681, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 90\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 91\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 92\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 93\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Mat Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 94\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 95\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Reformer Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"demonstrate Pilates reformer teaching skills and techniques.\",\"Create sequences for individuals and groups training on the Pilates Reformer.\",\"Integrate Reformer principles and modifications for students of various levels.\"],\"section_heading\":\"Pilates Reformer Teacher Training Certificate\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":6,\"placed\":6}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"total_not_printed\"],\"invented\":true,\"listed\":6,\"placed\":6}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Santa Monica College', '37885', 39567439681, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 7\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Mathematics Course\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":5,\"min\":5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSCS 21\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Physics Course\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":5,\"min\":5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR 1\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Engineering Course\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":2,\"min\":2}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGR 12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR 16\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR 21\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Elective Engineering Course\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Upon completion of the program, students will demonstrate basic knowledge of engineering principles of design and analysis, and exhibit effective communication skills and ethical behavior as shown through their written work, teamwork, and lab work.\"],\"section_heading\":\"Introduction to Engineering, Certificate of Achievement\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":6,\"placed\":6}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"total_not_printed\"],\"invented\":true,\"listed\":6,\"placed\":6}'::jsonb),\n  (2, 'Santa Monica College', '45811', 39567439681, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 90\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 91\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 92\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 93\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Mat Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 94\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 95\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Reformer Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 96\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 97\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Apparatus Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"demonstrate all Comprehensive Teaching Skills and be ready to instruct others in all aspects on the various Comprehensive Pilates Equipment, including Mat Work.\",\"Create Comprehensive Pilates sequences for individuals and groups, including mat work and all the various equipment.\",\"Effectively utilize Mat, Reformer, and Apparatus equipment for instruction.\"],\"section_heading\":\"Pilates Comprehensive Teacher Training, Certificate of Achievement\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"total_not_printed\"],\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb),\n  (3, 'Santa Monica College', '45812', 39567439681, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 70\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 71\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 72\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 73\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":9,\"min\":9}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN PE 58A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN PE 58B\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN PE 58C\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN PE 58D\",\"units\":1,\"units_max\":null}],\"minimum\":1,\"name\":\"Select 1 course from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":1,\"min\":1}}],\"program\":{\"careers\":[\"Yoga teachers\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"create and teach an intelligently sequenced yoga class employing a teaching methodology, effective communication, proper demonstrations, effective cueing, and appropriate progression and regression of poses for beginning level yoga classes for participants of various ability levels.\",\"Demonstrate the ability to analyze proper body alignment and administer appropriate physical adjustments to enhance safety to ensure an experience that is safe, productive and enjoyable.\",\"Register with Yoga Alliance as a registered yoga teacher (RYT-200).\",\"Demonstrate the ability to modify your yoga class to student(s) with a health obstacle or physical limitation by selecting postures and pranayama that can be beneficial for that student, and by using progressions and regressions effectively.\",\"Create an effective business strategy for oneself including your personal brand and/or identifying one’s niche and if appropriate leveraging social media.\"],\"section_heading\":\"Yoga Teacher Training – 200 Hour, Certificate of Achievement\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"total_not_printed\"],\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb),\n  (4, 'Santa Monica College', '45813', 39567439681, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 90\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 91\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 92\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 93\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Mat Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"demonstrate Mat Work Teaching Skills.\",\"Create Pilates sequences for individuals and groups.\",\"Apply Mat Work principles for instruction.\"],\"section_heading\":\"Pilates Mat Teacher Training, Certificate of Achievement\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":4,\"placed\":4}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"total_not_printed\"],\"invented\":true,\"listed\":4,\"placed\":4}'::jsonb),\n  (5, 'Santa Monica College', '45814', 39567439681, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 90\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 91\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 92\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 93\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Mat Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 96\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 97\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Apparatus Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"students will demonstrate Apparatus Teaching Skills and be ready to instruct others on various Pilates Apparatus.\",\"Create Pilates Apparatus sequences for individuals and groups, including all the various equipment.\",\"Effectively utilize various Apparatus equipment for instruction.\"],\"section_heading\":\"Pilates Apparatus Teacher Training, Certificate of Achievement\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":6,\"placed\":6}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"total_not_printed\"],\"invented\":true,\"listed\":6,\"placed\":6}'::jsonb),\n  (6, 'Santa Monica College', '45815', 39567439681, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 90\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 91\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 92\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 93\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Mat Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 94\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 95\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Reformer Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"demonstrate Pilates reformer teaching skills and techniques.\",\"Create sequences for individuals and groups training on the Pilates Reformer.\",\"Integrate Reformer principles and modifications for students of various levels.\"],\"section_heading\":\"Pilates Reformer Teacher Training Certificate\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":6,\"placed\":6}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"total_not_printed\"],\"invented\":true,\"listed\":6,\"placed\":6}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\ne(expect) as (values (6)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s680 named-gaps guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Santa Monica College', '37885', 39567439681, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 7\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Mathematics Course\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":5,\"min\":5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHYSCS 21\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Physics Course\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":5,\"min\":5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR 1\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Engineering Course\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":2,\"min\":2}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ENGR 12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR 16\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENGR 21\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Elective Engineering Course\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Upon completion of the program, students will demonstrate basic knowledge of engineering principles of design and analysis, and exhibit effective communication skills and ethical behavior as shown through their written work, teamwork, and lab work.\"],\"section_heading\":\"Introduction to Engineering, Certificate of Achievement\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":6,\"placed\":6}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"total_not_printed\"],\"invented\":true,\"listed\":6,\"placed\":6}'::jsonb),\n  (2, 'Santa Monica College', '45811', 39567439681, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 90\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 91\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 92\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 93\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Mat Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 94\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 95\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Reformer Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 96\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 97\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Apparatus Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"demonstrate all Comprehensive Teaching Skills and be ready to instruct others in all aspects on the various Comprehensive Pilates Equipment, including Mat Work.\",\"Create Comprehensive Pilates sequences for individuals and groups, including mat work and all the various equipment.\",\"Effectively utilize Mat, Reformer, and Apparatus equipment for instruction.\"],\"section_heading\":\"Pilates Comprehensive Teacher Training, Certificate of Achievement\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"total_not_printed\"],\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb),\n  (3, 'Santa Monica College', '45812', 39567439681, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 70\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 71\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 72\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 73\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":9,\"min\":9}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN PE 58A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN PE 58B\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN PE 58C\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN PE 58D\",\"units\":1,\"units_max\":null}],\"minimum\":1,\"name\":\"Select 1 course from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":1,\"min\":1}}],\"program\":{\"careers\":[\"Yoga teachers\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"create and teach an intelligently sequenced yoga class employing a teaching methodology, effective communication, proper demonstrations, effective cueing, and appropriate progression and regression of poses for beginning level yoga classes for participants of various ability levels.\",\"Demonstrate the ability to analyze proper body alignment and administer appropriate physical adjustments to enhance safety to ensure an experience that is safe, productive and enjoyable.\",\"Register with Yoga Alliance as a registered yoga teacher (RYT-200).\",\"Demonstrate the ability to modify your yoga class to student(s) with a health obstacle or physical limitation by selecting postures and pranayama that can be beneficial for that student, and by using progressions and regressions effectively.\",\"Create an effective business strategy for oneself including your personal brand and/or identifying one’s niche and if appropriate leveraging social media.\"],\"section_heading\":\"Yoga Teacher Training – 200 Hour, Certificate of Achievement\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"total_not_printed\"],\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb),\n  (4, 'Santa Monica College', '45813', 39567439681, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 90\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 91\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 92\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 93\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Mat Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"demonstrate Mat Work Teaching Skills.\",\"Create Pilates sequences for individuals and groups.\",\"Apply Mat Work principles for instruction.\"],\"section_heading\":\"Pilates Mat Teacher Training, Certificate of Achievement\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":4,\"placed\":4}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"total_not_printed\"],\"invented\":true,\"listed\":4,\"placed\":4}'::jsonb),\n  (5, 'Santa Monica College', '45814', 39567439681, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 90\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 91\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 92\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 93\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Mat Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 96\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 97\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Apparatus Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"students will demonstrate Apparatus Teaching Skills and be ready to instruct others on various Pilates Apparatus.\",\"Create Pilates Apparatus sequences for individuals and groups, including all the various equipment.\",\"Effectively utilize various Apparatus equipment for instruction.\"],\"section_heading\":\"Pilates Apparatus Teacher Training, Certificate of Achievement\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":6,\"placed\":6}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"total_not_printed\"],\"invented\":true,\"listed\":6,\"placed\":6}'::jsonb),\n  (6, 'Santa Monica College', '45815', 39567439681, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 90\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 91\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 92\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 93\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Mat Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 94\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PRO CR 95\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Reformer Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"demonstrate Pilates reformer teaching skills and techniques.\",\"Create sequences for individuals and groups training on the Pilates Reformer.\",\"Integrate Reformer principles and modifications for students of various levels.\"],\"section_heading\":\"Pilates Reformer Teacher Training Certificate\",\"total_units\":{\"max\":null,\"min\":null}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":6,\"placed\":6}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":40},\"coverage\":true,\"gaps\":[\"total_not_printed\"],\"invented\":true,\"listed\":6,\"placed\":6}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (6)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s680 named-gaps rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;",
+ "applied": {
+  "at": "2026-11-21T13:37Z",
+  "by": "SkyPuffin (S697), the conductor, one execute_sql call",
+  "returned": 6,
+  "keys": [
+   "37885",
+   "45811",
+   "45812",
+   "45813",
+   "45814",
+   "45815"
+  ],
+  "form": "the apply's compact equivalent: checks set to before_checks plus the plan's confidence and gaps (equal to the plan's after_checks on all six), guarded on college, control number, extracted_run 39567439681, before_checks and no person's check, aborting unless 6",
+  "confirmed": "live read 2026-11-21T13:39:20Z: all six hold gaps [total_not_printed] and confidence",
+  "rollback_applies": "kb/migrations/2026-11-21_s697_prreq_named_gaps_rollback.sql unchanged (it guards on after_checks)"
+ }
+}

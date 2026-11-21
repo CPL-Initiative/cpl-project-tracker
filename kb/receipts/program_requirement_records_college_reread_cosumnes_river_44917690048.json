@@ -1,0 +1,1168 @@
+{
+ "college": "Cosumnes River College",
+ "reread_run": "44917690048",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "44917314201",
+ "at": "2026-11-21T15:10:12Z",
+ "posted": 11,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "07302",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "07315",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "07320",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "11330",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "11336",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "11348",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "12741",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "20147",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "20193",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "20204",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "20227",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35072",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35097",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35350",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35354",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35358",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35360",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35361",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35362",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35363",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35364",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35367",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35374",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35408",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35742",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37285",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37842",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39131",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 4,
+ "absent": 7,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "04607",
+  "07305",
+  "11319",
+  "11338"
+ ],
+ "absent_keys": [
+  "04586",
+  "04633",
+  "33053",
+  "35336",
+  "35359",
+  "35412",
+  "36447"
+ ],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 10,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Cosumnes River College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 44917314201;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 17,
+    "placed": 11,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Program (table continues from previous page)",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "AMT 314",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AMT 316",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AMT 322",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AMT 324",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AMT 326",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AMT 330",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AMT 332",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "A minimum of 5 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 5,
+       "min": 5
+      },
+      "courses": [
+       {
+        "code": "AMT 301",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AMT 306",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AMT 498",
+        "units": 0.5,
+        "units_max": 4,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 5,
+      "option_group": null
+     },
+     {
+      "name": "A minimum of 3 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "AMT 321",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AMT 328",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "AMT 340",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "Auto Technician",
+      "Auto/Truck Specialist",
+      "Automotive Microcomputer Programmer & Operator",
+      "Field Service/Sales Representative",
+      "Inventory Controls Manager",
+      "Tune-up & Electrical Specialist"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Understand the fundamental purpose, components, and operation of major automotive systems to include gasoline engines, automatic transmissions and transaxles, manual transmissions, drivetrains, and axles, suspension and steering systems, brake systems, electrical and electronic systems, heating and air conditioning systems, and engine performance systems.",
+      "Understand the proper use of tools, equipment, and publications used for automotive diagnosis and repair.",
+      "Understand typical automotive shop hierarchy, structure, and standard procedures.",
+      "Prepare and write repair orders to include: customer information, vehicle identifying information, customer concerns, related service history, cause, and correction.",
+      "Diagnose engine mechanical concerns, conduct diagnostic testing procedures, and perform the procedures and techniques involved in typical engine repairs and overhauls.",
+      "Demonstrate the ability to diagnose, service, and repair automatic transmissions and transaxles.",
+      "Demonstrate the ability to diagnose and repair manual transmissions, transaxles, and drive train concerns.",
+      "Demonstrate the ability to diagnose and repair automotive suspension and steering concerns.",
+      "Demonstrate the ability to diagnose and repair automotive brake systems.",
+      "Demonstrate the ability to diagnose and repair automotive electrical and electronic concerns.",
+      "Demonstrate the ability to diagnose and repair automotive heating, ventilation, and air conditioning (HVAC) system concerns.",
+      "Demonstrate the ability to diagnose, service, and repair gasoline engine performance systems and their components.",
+      "Verify the outcome of the repair through a test drive analysis or system self-test."
+     ],
+     "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+     "total_units": {
+      "max": 43,
+      "min": 43
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Automotive Mechanics Technology Associate in Science (A.S.) degree (heading not in the supplied text; the requirements table begins mid-list on page 180)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 43,
+   "total_min": 43,
+   "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=180",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39047009824,
+   "program_title": "Automotive Mechanics Technology",
+   "control_number": "04607"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 13,
+    "placed": 11,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Degree Requirements (required courses)",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BIT 112",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIT 120",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIT 121",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIT 140",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CMT 310",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "A minimum of 18 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 18,
+       "min": 18
+      },
+      "courses": [
+       {
+        "code": "BIT 102",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIT 104",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIT 106",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIT 130",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIT 141",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIT 150",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIT 154",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 18,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "Building Inspector",
+      "Plan Checker",
+      "Construction Supervisor",
+      "Foreman",
+      "Construction Management",
+      "Government Building Official"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Interpret the model building codes: Interpret the model building codes and summarize the origins and evolution of building codes in this country. Identify the origin and organization of the model building codes. Interpret code requirements for plans, permits and inspections. Diagnose code compliance with a minimum of 80% accuracy, congruent with industry certification. (PSLO 1)",
+      "Analyze a set of construction drawings to determine completeness/code compliance: Analyze a set of construction drawings to determine completeness and code compliance. Develop a thorough understanding of the organization and purpose of construction drawings. Recognize deficiencies in a set of construction drawings submitted for plan review. (PSLO 2)",
+      "Develop skills and competencies: Develop skills and competencies for effective and competitive workforce performance. (PSLO 3)",
+      "Apply specific and measurable career and /or workforce learning objectives: Apply specific and measurable career and/ or workforce learning objective through classroom study and independent assignments. (PSLO 4)",
+      "Ensure that the program is consistent with the college SLO’s: Ensure that the program is consistent with the college SLO’s and is providing the students and community with a valuable and meaningful service. (PSLO 5)"
+     ],
+     "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+     "total_units": {
+      "max": 39,
+      "min": 39
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Building Inspection Technology A.S. Degree (heading not in extracted text; section begins on page 212)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 39,
+   "total_min": 39,
+   "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=213",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39047009824,
+   "program_title": "Building Inspection Technology",
+   "control_number": "07305"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 43,
+    "placed": 40,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "B (physical science list; heading cut off before page 206)",
+      "rule": "choose_units",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CHEM 421",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 300",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 301",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL 300",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL 301",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL 305",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL 306",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL 310",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL 311",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGR 304",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "PHYS 350",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 360",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 370",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 380",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 411",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 421",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 431",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     },
+     {
+      "name": "Additional Science Courses",
+      "rule": "choose_units",
+      "stated": {
+       "max": 11,
+       "min": 11
+      },
+      "courses": [
+       {
+        "code": "ANTH 300",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ANTH 480",
+          "units": 3,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANTH 301",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ANTH 482",
+          "units": 1,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ASTR C1001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ASTR C1001L",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL C1001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BIOL C1001L",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BIOL 342",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 350",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 352",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 400",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 410",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 420",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 430",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 431",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 440",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 300",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 305",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 306",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 309",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 400",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 401",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 420",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 421",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGR 304",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "GEOG 300",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 301",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 305",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 306",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL 300",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL 301",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL 305",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL 306",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL 310",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL 311",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL 330",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL 390",
+        "units": 1,
+        "units_max": 4,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "PHYS 310",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 350",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 360",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 370",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 380",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 411",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 421",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 431",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 11,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "explain the core perspectives of the scientific method and apply it to at least one scientific discipline.",
+      "solve introductory problems of a conceptual and/or numerical nature of at least one scientific discipline.",
+      "accurately apply the basic vocabulary and concepts of at least one scientific discipline verbally and in writing.",
+      "recognize the use and misuse of scientific concepts in society including politics and the media."
+     ],
+     "ge_pattern": "local CRC General Education Requirement",
+     "total_units": {
+      "max": 18,
+      "min": 18
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "General Science Associate in Science (A.S.) degree (heading not in the extracted text; name taken from the closing paragraph)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 18,
+   "total_min": 18,
+   "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=206",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39047009824,
+   "program_title": "Science, General",
+   "control_number": "11319"
+  },
+  {
+   "award": "A.A. Degree",
+   "checks": {
+    "listed": 13,
+    "placed": 6,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Degree Requirements",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ART 301",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ART 338",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Art History Electives",
+      "rule": "choose_units",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ARTH C1100",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 309",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 311",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 312",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 332",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "Painter",
+      "Sculptor",
+      "Ceramist",
+      "Art Instructor",
+      "Illustrator",
+      "Printmaker",
+      "Digital Publishing Specialist",
+      "Graphic Designer",
+      "Gallery Director",
+      "Curator",
+      "Graphic Artist",
+      "Digital Artist"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "demonstrate physical skills/dexterity within a discipline.",
+      "manage the ability to discuss works of art publicly.",
+      "structure an historical, geographical and chronological context of art.",
+      "investigate self-analysis and external analysis techniques through the activity of \"critique\".",
+      "formulate a conceptual framework for the future by applying analytical skills.",
+      "choose and apply a variety of informational resources for research."
+     ],
+     "ge_pattern": "local CRC General Education Requirement",
+     "total_units": {
+      "max": 24,
+      "min": 24
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "A.A. in Art - Design (heading not in excerpt; section identified by 'The Art - Design Associate in Arts (A.A.) degree')",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 24,
+   "total_min": 24,
+   "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=169",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39047009824,
+   "program_title": "Art - Design",
+   "control_number": "11338"
+  }
+ ]
+}

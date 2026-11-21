@@ -1,0 +1,447 @@
+{
+ "college": "Imperial Valley College",
+ "reread_run": "44909982199",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "39691376155",
+ "at": "2026-11-21T13:40:26Z",
+ "posted": 41,
+ "batches": 2,
+ "skipped": [],
+ "error": null,
+ "replaced": 2,
+ "absent": 0,
+ "held": 0,
+ "kept": 39,
+ "carried": 0,
+ "replaced_keys": [
+  "21473",
+  "33272"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [
+  "01893",
+  "10943",
+  "15735",
+  "16782",
+  "19712",
+  "21460",
+  "21466",
+  "21467",
+  "21468",
+  "21469",
+  "21470",
+  "21471",
+  "21472",
+  "21475",
+  "21480",
+  "21481",
+  "21482",
+  "21483",
+  "30183",
+  "30275",
+  "30362",
+  "30807",
+  "30808",
+  "30809",
+  "30810",
+  "31278",
+  "36071",
+  "38184",
+  "38185",
+  "38186",
+  "41181",
+  "41182",
+  "42238",
+  "42287",
+  "42535",
+  "43102",
+  "43284",
+  "43909",
+  "45382"
+ ],
+ "carried_keys": [],
+ "machine_pass": 41,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Imperial Valley College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 39691376155;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "checks": {
+    "listed": 11,
+    "placed": 7,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": 25,
+       "min": 25
+      },
+      "courses": [
+       {
+        "code": "AU T 125",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AU T 130",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AU T 155",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AU T 160",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AU T 180",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AU T 210",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AU T 220",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "Automotive technicians"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Demonstrate the necessary skills to pass ASE exams."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 25,
+      "min": 25
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "AUTOMOTIVE TECHNOLOGY: MAINTENANCE AND BASIC REPAIR (CERTIFICATE)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 25,
+   "total_min": 25,
+   "source_url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8615",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38935136329,
+   "program_title": "Automotive Technology",
+   "control_number": "21473"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 27,
+    "placed": 16,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": 25,
+       "min": 23
+      },
+      "courses": [
+       {
+        "code": "EDUC 200",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENGL 105",
+          "units": 5,
+          "catalog_addition": false
+         },
+         {
+          "code": "ESL 108",
+          "units": 5,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "POLS 110",
+          "units": 4,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST C1001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CDEV C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BIOL C1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select one from either HIST 100 or ENGL C1002 or ENGL",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "HIST 100",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ENGL 210",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "List A: Select one course",
+      "rule": "all",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "GEOL 110",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHSC 110",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List B: Select one course",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "MUS 102",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THEA 100",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "List C: (0-12 additional units) any courses not selected above",
+      "rule": "choose_units",
+      "stated": {
+       "max": 12,
+       "min": 0
+      },
+      "courses": [
+       {
+        "code": "MATH 110",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ES 211",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHIC 141",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH 112",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 114",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUS 100",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 0,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Students will understand the historical context of elementary education, including its relationship to contemporary society and culture.",
+      "Students will develop a comprehensive professional portfolio for the teaching profession."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 46,
+      "min": 44
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "ELEMENTARY TEACHER EDUCATION - INTEGRATED PROGRAMS FOR TRANSFER (MAJOR - A.A.-T)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 46,
+   "total_min": 44,
+   "source_url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8322",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38935136329,
+   "program_title": "Elementary Teacher Education",
+   "control_number": "33272"
+  }
+ ]
+}

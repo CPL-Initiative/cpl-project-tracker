@@ -105,6 +105,105 @@ def _():
     assert rows == [] and skipped[0]["group"] == "Continuing Education" and "no college" in skipped[0]["why"], skipped
 
 
+IVC_TRIAL = os.path.join(ROOT, "kb", "course_outcomes", "trial_44910471774", "read.json")
+
+
+@check("Irvine Valley's report 198 files each SLO as an untitled entry: the load joins a page's entries, in order, into "
+       "one SLO row for Irvine Valley College, its objectives beside it, and no row for Saddleback (S697)")
+def _():
+    trial = json.load(open(IVC_TRIAL))["rows"]
+    rows, skipped = load.rows_from([IVC_TRIAL], "saddleback")
+    assert not skipped, skipped
+    assert {r["college"] for r in rows} == {"Irvine Valley College"}, {r["college"] for r in rows}
+    slo = {r["course_code"]: r for r in rows if r["kind"] == "slo"}
+    obj = {r["course_code"]: r for r in rows if r["kind"] == "objective"}
+    assert len(slo) == len(obj) == len(trial) == 12, (len(slo), len(obj))
+    for t in trial:
+        want = [o for g in t["groups"] for o in g["outcomes"]]
+        assert slo[t["code"]]["outcomes"] == want and slo[t["code"]]["fingerprint"] == load.fingerprint(want), t["code"]
+        assert obj[t["code"]]["outcomes"] == t["objectives"], t["code"]
+
+
+@check("GUARD: untitled entries join only at a host UNTITLED_GROUPS names; at SDCCD they skip, never guessed (S697)")
+def _():
+    rows, skipped = load.rows_from([IVC_TRIAL], "sdccd")
+    assert rows == [] and skipped and all("no college" in s["why"] for s in skipped), (rows[:1], skipped[:1])
+    d = json.load(open(SD_TRIAL))
+    assert not any(load.untitled_groups("saddleback", r) for r in d["rows"] if any(g.get("group") for g in r.get("groups") or []))
+
+
+@check("GUARD: untitled entries join only for the report UNTITLED_GROUPS names (198); the same rows printed by "
+       "another report on the folder are skipped (second reader on #3642)")
+def _():
+    trial = json.load(open(IVC_TRIAL))
+    assert all(load.untitled_groups("saddleback", r) for r in trial["rows"])
+    moved = [dict(r, report=r["report"].replace("reportId=198", "reportId=201")) for r in trial["rows"]]
+    assert not any(load.untitled_groups("saddleback", r) for r in moved)
+
+
+@check("GUARD: a load from a folder holding two colleges' reads refuses without slugs=, so its receipt's key-scoped "
+       "rollback never names the other college's rows (Saddleback's and Irvine Valley's under saddleback; #3642)")
+def _():
+    import shutil
+    import tempfile
+    saved = load.OUT_DIR
+    tmp = tempfile.mkdtemp()
+    try:
+        os.makedirs(os.path.join(tmp, "saddleback"))
+        base = json.load(open(IVC_TRIAL))
+        for run, slugs in (("101", "saddleback"), ("102", "irvine_valley")):
+            json.dump(dict(base, run=run, slugs=slugs, part=1, of=1, complete=True),
+                      open(os.path.join(tmp, "saddleback", "read_%s_p1of1.json" % run), "w"))
+        load.OUT_DIR = tmp
+        why = load.shared_folder_problem("saddleback", [])
+        assert why and "slugs=" in why and "irvine_valley" in why and "saddleback" in why, why
+        assert load.shared_folder_problem("saddleback", ["irvine_valley"]) is None
+        assert load.main(["--host", "saddleback", "--dry"]) == 2
+        assert load.main(["--host", "saddleback", "--dry", "--slugs", "irvine_valley"]) == 0
+        os.remove(os.path.join(tmp, "saddleback", "read_101_p1of1.json"))
+        assert load.shared_folder_problem("saddleback", []) is None
+    finally:
+        load.OUT_DIR = saved
+        shutil.rmtree(tmp)
+
+
+IVC_READ = sorted(__import__("glob").glob(os.path.join(ROOT, "kb", "course_outcomes", "saddleback",
+                                                       "read_44913397609_p*of2.json")))
+
+
+@check("GUARD: a filed line with no letter (report 198's '123', a bare '1') never loads: Irvine Valley's 12 rows "
+       "that filed one, HLTH 7 and KNES 64 load no SLO row, the other 10 lose only those lines (S697)")
+def _():
+    filed = {}
+    for p in IVC_READ:
+        for r in json.load(open(p))["rows"]:
+            items = (r.get("outcomes") or []) + [o for g in r.get("groups") or [] for o in g.get("outcomes") or []]
+            if any(not re.search(r"[^\W\d_]", o) for o in items):
+                filed[r["code"]] = items
+    assert len(filed) == 12, sorted(filed)
+    rows, skipped = load.rows_from(IVC_READ, "saddleback")
+    slo = {r["course_code"]: r for r in rows if r["kind"] == "slo"}
+    only_junk = {c for c, items in filed.items() if all(not re.search(r"[^\W\d_]", o) for o in items)}
+    assert only_junk == {"HLTH 7", "KNES 64"}, only_junk
+    assert not only_junk & set(slo) and only_junk <= {s["course_code"] for s in skipped if "no letter" in s.get("why", "")}
+    for code in set(filed) - only_junk:
+        want = [o for o in filed[code] if re.search(r"[^\W\d_]", o)]
+        assert slo[code]["outcomes"] == want and slo[code]["fingerprint"] == load.fingerprint(want), code
+    assert load.DROPPED == {"lines": 15, "rows": 2}, load.DROPPED
+    assert all(re.search(r"[^\W\d_]", o) for r in rows for o in r["outcomes"])
+
+
+@check("an outcome that opens with a number ('1. Analyze ...') loads whole; '#1', '.', '•' and '123' drop")
+def _():
+    block = {"outcomes": ["1. Analyze a balance sheet.", "#1", "2) Explain accruals.", ".", "•", "123"],
+             "maps_to": [["a"], [], ["b"], [], [], []], "fingerprint": "x", "shape": "list"}
+    got = load.no_letterless(block)
+    assert got["outcomes"] == ["1. Analyze a balance sheet.", "2) Explain accruals."], got
+    assert got["maps_to"] == [["a"], ["b"]] and got["fingerprint"] == load.fingerprint(got["outcomes"])
+    whole = {"outcomes": ["1. Analyze a balance sheet."], "fingerprint": "f", "shape": "paragraph"}
+    assert load.no_letterless(whole) is whole and load.no_letterless({"outcomes": ["1", "#2"]}) is None
+
+
 @check("a filed row whose fingerprint does not match its outcomes stops the load")
 def _():
     import tempfile

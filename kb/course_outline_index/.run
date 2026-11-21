@@ -1,5 +1,7 @@
-run=2026-11-11
+run=2026-11-21T13:23Z S697 Irvine Valley index
 discover=
-index=https://shasta.curriqunet.com/
-slugs=shasta
-report=
+index=https://saddleback.curriqunet.com/
+slugs=irvine_valley
+report=^Official Course Outline of Record$
+status=Active \(Fully Approved\)
+client=^Irvine Valley College$
