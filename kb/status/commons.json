@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-21T02:20:26Z",
+ "written_at": "2026-11-21T04:10:43Z",
  "rows": [
   {
    "key": "requirements",
@@ -225,13 +225,13 @@
    "pair": [
     {
      "n": 4006,
-     "of": 15911,
-     "words": "cards the auditor scores 0.85 or better; 9,697 at needs review, 2,208 at needs repair, 0 not ready",
+     "of": 15912,
+     "words": "cards the auditor scores 0.85 or better; 9,698 at needs review, 2,208 at needs repair, 0 not ready",
      "open": "#coci-lookup/courses"
     },
     {
      "n": 288,
-     "of": 15911,
+     "of": 15912,
      "words": "confirmed by a person, 145 of them ready; a person also confirmed 350 cards now kept for the record and left out of the counts (350 merged)",
      "open": "#coci-lookup/courses",
      "error": null
@@ -293,13 +293,13 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-21T02:19:03+00:00",
+    "at": "2026-11-21T04:09:14+00:00",
     "every_hours": 24
    },
    "facts": {
-    "total": 15911,
+    "total": 15912,
     "ready": 4006,
-    "needs_review": 9697,
+    "needs_review": 9698,
     "needs_repair": 2208,
     "not_ready": 0,
     "cap": 0.79,
@@ -510,7 +510,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-21T02:16:27Z",
+    "at": "2026-11-21T04:06:34Z",
     "every_hours": 24
    },
    "facts": {
