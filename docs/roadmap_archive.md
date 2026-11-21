@@ -680,3 +680,7 @@ Moved verbatim at the S694 checkpoint, to keep the lane under its size limit. Bo
 ## INDEX update history, moved (S691 checkpoint, 2026-11-21)
 
 - 2026-11-20 (S688 SkyLinnet, Sam's session, light checkpoint plus memory rows): S687's 15 memory rows applied (run 44639823760); #3500 (Cosumnes River pins), #3529 (flagged cards leave the confidence scorer), #3578 (First Light puts back a timestamp-only report), #3537 (Mt. San Antonio SLO reader), #3579 (rule D keeps an older read's marks); the bot-commit and skip-tag pitfalls; a section on commit-backs that skip CI in `playbook-runner-as-external-api-proxy`. Handoff 689.
+
+## INDEX update history, moved (S697 checkpoint, 2026-11-21)
+
+- 2026-11-20 (S689 SkyTern, the CPL Queue routine's 06:12Z conductor night, full checkpoint): #3589 (four high schools' issuer tags), #3588 (City College of San Francisco's CurricUNET outline route), #3587 and #3590 (the page checks fold PDF ligatures and keep a refusal marked), #3586 (the outline readers), #3591 (the wave: the reread plan's third ten and Santa Rosa Junior, 79 new and 43 replaced); display build 4c57fd250cce confirmed (18,459, #3598); the census at 5,069 left; 2,550 outline rows at Feather River and Palomar; the harvest lessons compacted into archive 7; the KB note `methodology-a-pdf-ligature-hides-a-heading-from-an-exact-match`. Handoff 690.
