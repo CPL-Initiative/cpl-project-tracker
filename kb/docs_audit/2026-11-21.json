@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1556,
-    "bytes": 16829603,
+    "bytes": 16867871,
     "over_budget": 3,
     "handoff_max": 698,
     "always_loaded_files": 1,
@@ -26,45 +26,43 @@
       },
       "other": {
         "files": 164,
-        "bytes": 5618627,
+        "bytes": 5625352,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 12211,
+        "bytes": 12380,
         "over": 0
       },
       "lessons": {
         "files": 87,
-        "bytes": 2841640,
+        "bytes": 2859801,
         "over": 1
       },
       "kb_note": {
         "files": 602,
-        "bytes": 2936803,
+        "bytes": 2938218,
         "over": 0
       },
       "roadmap_lane": {
         "files": 44,
-        "bytes": 543235,
+        "bytes": 542806,
         "over": 0
       },
       "handoff": {
         "files": 657,
-        "bytes": 4814453,
+        "bytes": 4826680,
         "over": 0
       }
     },
     "by_rule": {
       "oversized_doc": 3,
       "kb_note_dialect": 1,
-      "vault_heavy_path": 77,
-      "checkpoint_overdue": 1,
-      "handoff_drops_active_lane": 1
+      "vault_heavy_path": 77
     },
     "vault": {
-      "files": 29214,
-      "bytes": 1553085832,
+      "files": 29216,
+      "bytes": 1553143550,
       "heavy_bytes": 1211695572,
       "heavy_share": 0.78,
       "ignore_filters": [
@@ -968,31 +966,6 @@
         "kind": "file"
       },
       "message": "2,038,305 B single file inside the vault"
-    },
-    {
-      "rule": "checkpoint_overdue",
-      "fixable": false,
-      "path": "docs/session_698_handoff.md",
-      "detail": {
-        "commits_since": 14,
-        "budget": 6,
-        "handoff": "session_698_handoff.md"
-      },
-      "message": "14 commit(s) have landed since `docs/session_698_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
-    },
-    {
-      "rule": "handoff_drops_active_lane",
-      "fixable": false,
-      "path": "docs/session_698_handoff.md",
-      "detail": {
-        "lanes": [
-          "commons",
-          "program-requirements-harvest",
-          "repo-size"
-        ],
-        "days": 7
-      },
-      "message": "`docs/session_698_handoff.md` never names 3 lane(s) worked in the last 7 days that still carry a NEXT: commons, program-requirements-harvest, repo-size. Build the open work from each lane's NEXT line, or say in the handoff why the lane waits (name it by slug). Copying the last handoff's list is how five firings found an empty queue (S583)."
     }
   ]
 }

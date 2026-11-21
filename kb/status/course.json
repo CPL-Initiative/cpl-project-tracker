@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 695,
-  "moniker": "SkyShearwater",
-  "run": "Sam's session",
+  "session": 697,
+  "moniker": "SkyPuffin",
+  "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_696_handoff.md",
+  "handoff": "docs/session_698_handoff.md",
   "calls": [
     {
       "title": "Confirm Kinesiology's 627 where the descriptions and TOP both agree?",
@@ -106,10 +106,14 @@
   "written_at": "2026-11-21T03:53:25Z",
   "project": "course",
   "next_step": {
-    "title": "Assign the other tutoring titles under LSKL M9004",
-    "text": "The first pile-minted record, LSKL M9004 Supervised Tutoring, holds 90 noncredit courses at 80 colleges. Of the 168 other tutoring titles, 76 name a subject and go to Assign under it after a dry run and a second read; 70 prepare tutors and wait for a later mint."
+    "title": "Read San Diego College of Continuing Education's course outlines",
+    "text": "Irvine Valley's outlines are loaded. The next outline read is San Diego College of Continuing Education's index search, whose outlines would fill 191 common course cards, then Peralta's."
   },
   "changes": [
+    {
+      "at": "2026-11-21T16:41:00Z",
+      "text": "Irvine Valley's course outlines were read and loaded: learning outcomes for 864 courses (2,639 in all) and objectives for 868 courses (6,695 in all), from 868 outline pages, every one read."
+    },
     {
       "at": "2026-11-21T03:45:00Z",
       "text": "The first record of the pile mint is applied: LSKL M9004 Supervised Tutoring, 90 noncredit courses at 80 colleges, insert only, with a receipt that undoes it."

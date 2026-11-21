@@ -2,14 +2,14 @@
   "schema": 1,
   "project": "program-requirements",
   "written_at": "2026-11-21T10:41:21Z",
-  "session": 691,
-  "moniker": "SkyPetrel",
+  "session": 697,
+  "moniker": "SkyPuffin",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_697_handoff.md",
+  "handoff": "docs/session_698_handoff.md",
   "next_step": {
-    "title": "Land the Saddleback and Rio Hondo outline reads, then fix two reader faults",
-    "text": "The next session lands the outline reads started tonight at Saddleback and Rio Hondo, the two colleges whose outlines improve the most common course cards, and before the next paid college read it stops a timed-out read from filing and has the pricing step treat a new edition of the same catalog as the same page."
+    "title": "Read San Diego College of Continuing Education's course outlines",
+    "text": "The next session lands tonight's display build and the gap census against 4,875, then searches San Diego College of Continuing Education's outline index, whose outlines would fill 191 common course cards, and runs the night's one follow-up of four reader checks."
   },
   "calls": [
     {
@@ -337,6 +337,22 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-21T16:38:00Z",
+      "text": "Ten programs at Clovis and Glendale whose printed units do not reach the total their catalog prints are filed with that named gap, so each counts as collected, and Glendale's 02570 now passes after a repeat step and a reread."
+    },
+    {
+      "at": "2026-11-21T15:11:00Z",
+      "text": "Cosumnes River's 14 named programs were read for $1.16: 10 pass, 4 live records were replaced by a better read and 7 were added. Three of the other four need their own catalog page and one a page pinned past a page break."
+    },
+    {
+      "at": "2026-11-21T13:41:00Z",
+      "text": "Free rereads at Orange Coast, Hartnell, Imperial Valley and Oxnard put the better record in place: Orange Coast's 109 live rows now hold its newer read, and the nine programs the rereads named pass."
+    },
+    {
+      "at": "2026-11-21T13:37:00Z",
+      "text": "Six Santa Monica programs whose catalog prints no program total are filed with that named gap, so each counts as collected."
+    },
     {
       "at": "2026-11-21T10:19:02Z",
       "text": "What CPL Pathways and Sierra show was rebuilt once with the night's records: 18,609 program statements under one build, College of the Canyons first, with no errors. 32 rows stay at older builds, the same 32 as the night before, and Santa Monica's eleven reread programs wait for the next build."
