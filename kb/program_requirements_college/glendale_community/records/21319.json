@@ -98,8 +98,8 @@
    "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_printed": false,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -230,5 +230,6 @@
    "The block total of 30 is taken from 'TOTAL UNITS REQUIRED 30'. It matches the 'Minimum/Maximum Required Units/Hours for Major' value of 30."
   ]
  },
- "extracted_run": "43415972509"
+ "extracted_run": 44763682085,
+ "read_run": "43415972509"
 }

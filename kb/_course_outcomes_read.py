@@ -80,9 +80,15 @@ STOP = re.compile(
 # Chabot's All Fields report (347) numbers it as a field of its Assignments section, "3. Student Learning
 # Outcomes", after its "Measurable Objectives:" section; without the number the old rule fell back to the lead-in and
 # filed Chabot's objectives as its SLOs (full read 44264136885, all 1,013 rows; S681).
-SLO_TITLE = re.compile(r"^[ \t]*(?:\d{1,2}[.)][ \t]+)?(student|course) learning outcomes?\b", re.I | re.M)
-# The number a heading carries in front of it (Chabot's "3. "), never part of the heading as filed.
-HEAD_NUMBER = re.compile(r"^[ \t]*\d{1,2}[.)][ \t]+")
+# Rio Hondo's Outline w/SLO report (358, 359) numbers its sections in Roman numerals: "V. Course Objectives" and
+# "IX. Student Learning Outcome" (trial 44883156016's log, 12 of 12 pages; S691).
+SLO_TITLE = re.compile(r"^[ \t]*(?:(?:\d{1,2}[.)]|[IVX]{1,4}\.)[ \t]+)?(student|course) learning outcomes?\b",
+                       re.I | re.M)
+# The number a heading carries in front of it (Chabot's "3. ", Rio Hondo's "IX. "), never part of the heading as filed.
+HEAD_NUMBER = re.compile(r"^[ \t]*(?:\d{1,2}[.)]|[IVX]{1,4}\.)[ \t]+")
+# A section heading numbered in Roman numerals (upper case only). A section whose own heading carries one ends at the
+# next one, whatever its words (Rio Hondo, S691); a section headed otherwise never reads this rule.
+ROMAN_HEAD = re.compile(r"^[ \t]*[IVX]{1,4}\.[ \t]+[A-Z]")
 # A list marker the outline prints before an outcome: 1. 1) a. a) • - – *
 MARKER = re.compile(r"^[ \t]*(?:\(?\d{1,2}[.)]|\(?[a-zA-Z][.)]|[\u2022\u25cf\u25aa\u00b7\-\u2013*])[ \t]+")
 # The lead-in a college prints between the heading and the list. Las Positas prints "Upon the completion of this
@@ -303,6 +309,7 @@ def outcomes_of(text: str) -> dict:
     start = text.rfind("\n", 0, m.start()) + 1
     lines = text[start:].split("\n")
     heading = HEAD_NUMBER.sub("", lines[0].strip(), count=1)
+    roman = bool(ROMAN_HEAD.match(lines[0]))
     lead, items = None, []
     lm = LEAD.search(heading)
     if lm:
@@ -312,7 +319,7 @@ def outcomes_of(text: str) -> dict:
         s = line.strip()
         if not s:
             continue
-        if STOP.match(s) or (SLO_TITLE.match(s) and items):
+        if STOP.match(s) or (SLO_TITLE.match(s) and items) or (roman and ROMAN_HEAD.match(s)):
             break
         if SLO_COLUMN_HEAD.match(s):
             continue
@@ -332,7 +339,8 @@ def outcomes_of(text: str) -> dict:
 # report "STUDENT LEARNING OBJECTIVES:" and its All Fields report "Student Learning Objectives" with a field label
 # "Objective Text" before each item. Chabot's All Fields report (347) prints "Measurable Objectives:" (S681). Palomar's
 # report 99 prints "Specific Course Objectives" right after its SLOs, then an "Objective" column header (S689).
-OBJ_TITLE = re.compile(r"^[ \t]*(course|specific course|student learning|learning|performance|measurable)? ?objectives"
+OBJ_TITLE = re.compile(r"^[ \t]*(?:[IVX]{1,4}\.[ \t]+)?(course|specific course|student learning|learning|performance|"
+                       r"measurable)? ?objectives"
                        r"[ \t]*:?[ \t]*$", re.I)
 # A field label a report prints before each item, never an objective itself.
 OBJ_LABEL = re.compile(r"^(objective text|objective)$", re.I)
@@ -372,11 +380,12 @@ def objectives_of(text: str) -> dict:
         if not OBJ_TITLE.match(line):
             continue
         lead, items = None, []
+        roman = bool(ROMAN_HEAD.match(line))
         for raw in lines[i + 1:i + 200]:
             s = raw.strip()
             if not s or OBJ_LABEL.match(s):
                 continue
-            if _obj_ends(s):
+            if _obj_ends(s) or (roman and ROMAN_HEAD.match(s)):
                 break
             if not items and LEAD.match(s):
                 lead = lead or s
@@ -389,7 +398,7 @@ def objectives_of(text: str) -> dict:
             # methods and content lines between (trial 42573515439, S616): the labeled lines are the objectives.
             items = [x for x in inline if x]
         if items:
-            return {"objectives": items, "objectives_heading": line.strip().rstrip(":").strip(),
+            return {"objectives": items, "objectives_heading": HEAD_NUMBER.sub("", line.strip(), count=1).rstrip(":").strip(),
                     "objectives_lead": lead, "objectives_fingerprint": fingerprint(items)}
     return {"objectives": [], "objectives_heading": None, "objectives_lead": None, "objectives_fingerprint": None}
 
@@ -716,8 +725,9 @@ def _parse_outcomes(page_html: str, text: str, system: str | None = None, report
 
 # The Reader keeps 400,000 characters of a page's HTML. Mt. San Antonio's SLO page prints its course results block
 # past 671,000 (trial 44687943107), so full read 44695707506 parsed the text instead and filed the site's course
-# listing on every page (S689). A page cut at that length is parsed from the browser's whole HTML.
-READER_HTML_CAP = 400000
+# listing on every page (S689). A page cut at that length is parsed from the browser's whole HTML. The number is the
+# Reader's own, imported (COBIx on #3586, point 3).
+READER_HTML_CAP = cor.census.HTML_CAP
 
 
 def page_html_of(reader, page: dict) -> str:
@@ -802,6 +812,12 @@ def read_one(reader, course: dict) -> dict:
            "chars": len(body), "text_cut": len(body) >= TEXT_CAP, "html_chars": len(parsed_html),
            "html_cut": len(html_) >= READER_HTML_CAP and len(parsed_html) <= len(html_),
            "offered_at": offered_at(body), **got}
+    # A page parsed from the Reader's cut copy (the browser's whole page could not be read) that finds nothing says
+    # so: "none" means the page prints no outcomes, which a cut copy cannot show (COBIx on #3586, point 1). The load
+    # posts only list and paragraph rows, so it lists this one among its skips.
+    if row["html_cut"] and not row.get("outcomes") and not row.get("groups"):
+        row.update(shape="cut", fingerprint=None,
+                   why_none="the page's HTML reached the Reader's cap and the whole page could not be read")
     if outcomes_only(course["report"]):
         row["section_heads"] = section_heads(body)
     return file_row(row)
@@ -866,53 +882,85 @@ def slo_excerpt(text: str, host: str = "ccsf.curricunet.com") -> list[str] | Non
     City College of San Francisco's STUDENT LEARNING OUTCOMES and CONTENTS), as printed; None when the host has no
     pair, either heading is missing or the section runs past EXCERPT_LINES, so nothing past the section is shown. A
     person counts the outcomes in it by eye, apart from the parser."""
-    pair = EXCERPT_BY_HOST.get((host or "").lower())
-    if not pair:
-        return None
-    first, after = pair
     lines = [ln.rstrip() for ln in (text or "").split("\n")]
     bare = [ln.strip().upper() for ln in lines]
-    if first not in bare:
-        return None
-    start = bare.index(first) + 1
-    end = next((i for i in range(start, min(len(bare), start + EXCERPT_LINES + 1)) if bare[i] == after), None)
-    return None if end is None else [ln for ln in lines[start:end] if ln.strip()]
+    for first, after in excerpt_pairs(host):
+        if first not in bare:
+            continue
+        start = bare.index(first) + 1
+        end = next((i for i in range(start, min(len(bare), start + EXCERPT_LINES + 1)) if bare[i] in after), None)
+        return None if end is None else [ln for ln in lines[start:end] if ln.strip()]
+    return None
+
+
+def excerpt_pairs(host: str) -> list[tuple[str, tuple[str, ...]]]:
+    """The host's recorded heading pairs, each (the SLO heading, the headings that may follow it), upper case: one
+    pair or a list of them in EXCERPT_BY_HOST, the first whose SLO heading the page prints deciding."""
+    got = EXCERPT_BY_HOST.get((host or "").lower())
+    if not got:
+        return []
+    pairs = [got] if isinstance(got[0], str) else list(got)
+    return [(a.upper(), tuple(x.upper() for x in ([b] if isinstance(b, str) else b))) for a, b in pairs]
+
+
+# The words an SLO or objectives heading carries. A page from an outcomes-only host with no heading pair recorded
+# prints only its lines that carry one of them, each cut at PROBE_CHARS, to the trial's log (S691).
+PROBE = re.compile(r"outcome|\bslos?\b|objective", re.I)
+PROBE_CHARS, PROBE_MAX = 160, 40
+
+
+def probe_log(code: str, text: str) -> str:
+    """The page's lines that name outcomes or objectives, and its Roman-numbered section headings (ROMAN_HEAD),
+    numbered by their line in the page, and the page's line count; nothing else from the page."""
+    lines = (text or "").split("\n")
+    hits = [(i, ln.strip()[:PROBE_CHARS]) for i, ln in enumerate(lines, 1)
+            if PROBE.search(ln) or ROMAN_HEAD.match(ln)][:PROBE_MAX]
+    return "\n".join(["PROBE %s BEGIN (%d of %d lines)" % (code, len(hits), len(lines))]
+                     + ["  %04d| %s" % (i, ln) for i, ln in hits] + ["PROBE %s END" % code])
 
 
 def excerpt_log(code: str, excerpt: list[str] | None, host: str = "ccsf.curricunet.com") -> str:
     """The excerpt as the trial's log prints it, one numbered line each, between two markers."""
     if excerpt is None:
-        first, after = EXCERPT_BY_HOST.get((host or "").lower(), ("(no heading pair recorded for this host)", "-"))
-        return "EXCERPT %s: no section between %s and %s within %d lines" % (code, first, after, EXCERPT_LINES)
+        pairs = excerpt_pairs(host) or [("(no heading pair recorded for this host)", ("-",))]
+        return "EXCERPT %s: no section between %s within %d lines" % (
+            code, " or ".join("%s and %s" % (a, "/".join(b)) for a, b in pairs), EXCERPT_LINES)
     return "\n".join(["EXCERPT %s BEGIN (%d lines)" % (code, len(excerpt))]
                      + ["  %02d| %s" % (i, ln) for i, ln in enumerate(excerpt, 1)] + ["EXCERPT %s END" % code])
 
 
 # The code that turns a page into outcomes and objectives. Its fingerprint goes into every trial's head, and a
 # self-recall count passes only for a trial filed by the parser that would run the full read.
-PARSER_PARTS = ("parse_page", "_parse_outcomes", "outcomes_of", "_heads_section", "outcomes_from_html",
+PARSER_PARTS = ("_ws", "parse_page", "_parse_outcomes", "outcomes_of", "_heads_section", "outcomes_from_html",
                 "groups_from_html", "elumen_outcomes_from_html", "cccd_outcomes_from_html", "mtsac_outcomes_from_html",
                 "objectives_block", "objectives_of", "objectives_from_html", "_obj_ends", "page_html_of", "read_one",
                 "file_row", "section_heads")
-PARSER_PATTERNS = ("STOP", "SLO_TITLE", "HEAD_NUMBER", "MARKER", "LEAD", "SLO_COLUMN_HEAD", "LEAD_ENDS", "OBJ_TITLE",
+PARSER_PATTERNS = ("STOP", "SLO_TITLE", "HEAD_NUMBER", "ROMAN_HEAD", "MARKER", "LEAD", "SLO_COLUMN_HEAD", "LEAD_ENDS", "OBJ_TITLE",
                    "OBJ_LABEL", "OBJ_INLINE", "OBJ_STOP", "EL_SLO_HEAD", "CCCD_SLO_HEAD", "CCCD_SUBHEAD")
 
 
 def parser_fingerprint() -> str:
-    """md5 over the parser's functions' source, its patterns, and the reports recorded as printing no objectives."""
+    """md5 over the parser's functions' source (_ws among them), its patterns, the census's SLO_HEADING that
+    _heads_section reads, the Reader's HTML cap page_html_of reads, and the reports recorded as printing no
+    objectives (#3601's second reader: each reaches a parse, so a change to one is another parser)."""
     import inspect
     g = globals()
     parts = [inspect.getsource(g[n]) for n in PARSER_PARTS if n in g]
     parts += ["%s=%r/%d" % (n, g[n].pattern, g[n].flags) for n in PARSER_PATTERNS if n in g]
+    parts.append("cor.SLO_HEADING=%r/%d" % (cor.SLO_HEADING.pattern, cor.SLO_HEADING.flags))
+    parts.append("READER_HTML_CAP=%d" % READER_HTML_CAP)
     parts.append(json.dumps(sorted(_OBJ_RECORD.REPORTS_WITHOUT_OBJECTIVES)))
     return hashlib.md5("\n".join(parts).encode()).hexdigest()
 
 
-def rows_recall(path: str, out_dir: str = OUT_DIR) -> dict:
+def rows_recall(path: str, out_dir: str = OUT_DIR, host: str | None = None) -> dict:
     """Each counted trial row's {"slo": n, "objective": n}, read off the page apart from the parser, against the
-    outcomes and objectives the row filed. Wrong: a row not filed, not answering 200, reaching a cap, or with a count
-    that names no source. Not ok: a trial filed by another parser, or one that parsed outcomes on fewer than half
-    its pages, whatever the counts."""
+    outcomes and objectives the row filed. Wrong: a row not filed, read from a host other than the gate's, not
+    answering 200, reaching a cap, or with a count that names no source. Not ok: a trial filed by another parser, or
+    one that parsed outcomes on fewer than half its pages, whatever the counts. host: the gate's host; by default the
+    one RECALL_BY_HOST names for path, so a trial of another host's pages never passes this host's gate (#3601)."""
+    if host is None:
+        host = next((h for h, p in RECALL_BY_HOST.items() if os.path.abspath(p) == os.path.abspath(path)), None)
     def refuse(why, pages=0, right=0, wrong=()):
         return {"pages": pages, "right": right, "wrong": list(wrong), "ok": False, "why": why}
     if not os.path.exists(path):
@@ -932,6 +980,9 @@ def rows_recall(path: str, out_dir: str = OUT_DIR) -> dict:
         r = rows.get(code)
         if r is None:
             wrong.append((code, count, "row not filed"))
+        elif host and urllib.parse.urlparse(r.get("report") or "").netloc.lower() != host:
+            wrong.append((code, count, "read from %s, not %s"
+                          % (urllib.parse.urlparse(r.get("report") or "").netloc.lower() or "no host", host)))
         elif r.get("status") != 200:
             wrong.append((code, count, "status %s" % r.get("status")))
         elif r.get("text_cut") or r.get("html_cut"):
@@ -1101,8 +1152,13 @@ def main(argv=None) -> int:
                     # The SLO section as printed, for a count by eye apart from the parser: in the job's log, never
                     # in a filed page (S690).
                     where = urllib.parse.urlparse(course["report"]).netloc.lower()
-                    print(excerpt_log(course["code"], slo_excerpt(reader.page.evaluate(FULL_BODY_JS) or "", where),
-                                      where), flush=True)
+                    text = reader.page.evaluate(FULL_BODY_JS) or ""
+                    if excerpt_pairs(where):
+                        print(excerpt_log(course["code"], slo_excerpt(text, where), where), flush=True)
+                    else:
+                        # No heading pair recorded yet: where the page names outcomes or objectives, so a person can
+                        # record the pair (S691). Those lines only, never the page.
+                        print(probe_log(course["code"], text), flush=True)
             if n % SAVE_EVERY == 0:
                 save(False)
 

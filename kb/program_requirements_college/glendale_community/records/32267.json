@@ -105,7 +105,7 @@
     "against": "degree",
     "ge": null,
     "why": [],
-    "transfer": true,
+    "minimum": true,
     "fill": [
      29.0,
      29.0
@@ -160,7 +160,8 @@
    },
    "electives_fill_degree": false,
    "outcomes": [],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -264,5 +265,14 @@
    "The program is titled 'Business Administration 2.0' in the catalog."
   ]
  },
- "extracted_run": "43415972509"
+ "extracted_run": 44763682085,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Required Units for Degree (with GE)\n60"
+  }
+ ],
+ "read_run": "43415972509"
 }

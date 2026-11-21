@@ -175,7 +175,8 @@ def _page(url: str | None) -> str:
     return urllib.parse.urlunsplit((p.scheme.lower(), p.netloc.lower(), p.path.rstrip("/"), p.query, ""))
 
 
-def page_is_own(rec: dict, source: dict | None = None, note: dict | None = None) -> str | None:
+def page_is_own(rec: dict, source: dict | None = None, note: dict | None = None,
+                siblings: list | None = None) -> str | None:
     """What the committed files show of the page the re-read was read from being the program's own, or None.
     A text shows it when it names every word of the program's title (the pilot's title_tokens) and the scorer's
     heading_award_check, read over that text, finds no other award. The texts, in order:
@@ -202,7 +203,12 @@ def page_is_own(rec: dict, source: dict | None = None, note: dict | None = None)
     Welding Technology A.S. (College of the Redwoods 01821) passed on welding-technology-ca-fall-2025, the
     certificate's page. Where an ending was stripped and slug_awards names nothing, or not the program's kind, the
     address shows nothing; an address with no award ending is read as before. note, when given, gets the stripped
-    ending as note["award_tail"] ("" when none), which keep_better writes on the decision row."""
+    ending as note["award_tail"] ("" when none), which keep_better writes on the decision row.
+    An address with no award ending shows nothing where another program at the college (siblings: the capture's
+    sources.json entries, {control_number, title, award}) has the same title words and another award kind (COBIx on
+    #3557, 7011458372): two awards share the title, so the bare address cannot say whose page it is (College of the
+    Redwoods' Welding Technology certificate passed on welding-technology-fall-2025, the A.S.'s page). The row then
+    falls back to the capture's page title or h1; note["shared_title"] names the other programs."""
     import urllib.parse
     import _program_requirements_college as C
     from _program_requirements_pilot import award_kind
@@ -229,6 +235,15 @@ def page_is_own(rec: dict, source: dict | None = None, note: dict | None = None)
     # ending stripped, an address that names no award still passes (COBIx on #3553, finding 1).
     award_named = award_kind(rec.get("award")) in awards if bare != named else \
         (not awards or award_kind(rec.get("award")) in awards)
+    kind = award_kind(rec.get("award"))
+    shared = sorted(str(x.get("control_number")) for x in siblings or []
+                    if str(x.get("control_number")) != str(rec.get("control_number"))
+                    and page_words(x.get("title")) == want and award_kind(x.get("award")) != kind)
+    shared_kinds = {award_kind(x.get("award")) for x in siblings or [] if str(x.get("control_number")) in shared}
+    if shared and note is not None:
+        note["shared_title"] = shared
+    if award_named and bare == named and not awards and shared:
+        award_named = False
     if named and page_words(named) == want and award_ok(re.sub(r"[-_]+", " ", bare)) and award_named:
         return "the address's last segment %r names the program" % slug[:80]
     src = (source or {}).get("source") if isinstance((source or {}).get("source"), dict) else {}
@@ -241,6 +256,11 @@ def page_is_own(rec: dict, source: dict | None = None, note: dict | None = None)
         return "the capture's window heading names the program (sources.json heading_named)"
     for key, text in texts:
         words = page_words(text)
+        # Two awards share the title: a page title or h1 that prints only the title words cannot say whose page it
+        # is either (Redwoods' "Welding Technology" over the A.S.'s page), so it must print the program's award
+        # (award_kinds_in; S689 review, round 1).
+        if shared and not prints_award(text, kind, shared_kinds):
+            continue
         if text and want <= words and ("2.0" in want) == ("2.0" in words):
             return "the capture's %s %r names the program" % ("page title" if key == "title" else key, text[:80])
     return None
@@ -256,6 +276,34 @@ AWARD_TAIL = re.compile(
     r"|completion|competency|proficiency|specialization|noncredit|non-credit|coa|coc|cocn|ca|nc))+$")
 
 
+# A page title's award words the reader's award_kinds_in does not read (S689 second reader on #3597): a bare
+# "Certificate" or "Cert" ("Real Estate Salesperson Cert", Antelope Valley 13260; "NUTRITION AND FOODS (CERTIFICATE)")
+# names the certificate class, and "A.S," is A.S. with a comma for its period.
+CLASS_WORDS = (("certificate", re.compile(r"\bcert(?:ificate)?s?\b", re.I)), ("degree", re.compile(r"\bdegrees?\b", re.I)))
+AWARD_COMMA = re.compile(r"\b(A)\.\s?([AS]),")
+
+
+def prints_award(text: str | None, kind: str, other_kinds: set) -> bool:
+    """Whether a page title or h1 prints the program's award where other programs with its title words hold
+    other_kinds. The text is folded first (the scorer's ligature table: "Certiﬁcate"), "A.S," reads as "A.S.", and
+    the reader's award_kinds_in decides when it names an award. A text that names none but a class word (a bare
+    "Certificate", "Cert", "Degree") prints the program's award only when the class holds the program's kind and
+    none of other_kinds, since only then does the word tell the programs apart; an award the pilot's award_kind
+    reads as "other" (no COCI award) takes no class word."""
+    import _program_requirements_college as C
+    from _program_requirements_score import _LIGATURES
+    t = "".join(_LIGATURES.get(c, c) for c in text or "")
+    t = AWARD_COMMA.sub(r"\1.\2.", t)
+    kinds = C.award_kinds_in(t)
+    if kinds:
+        return kind in kinds
+    for cls, pat in CLASS_WORDS:
+        if kind != "other" and pat.search(t):
+            held = C.NCL_CLASS[cls]
+            return kind in held and not (set(other_kinds) & held)
+    return False
+
+
 def page_words(text: str | None) -> set[str]:
     """A name's words for comparing a page with a title: the pilot's STOP words out, a single letter out, and a
     version number kept, 2 and 2.0 alike ("communication-2-studies", "Communication Studies 2.0")."""
@@ -269,7 +317,8 @@ def page_words(text: str | None) -> set[str]:
     return out
 
 
-def own_program_why(rec: dict, source: dict | None = None, note: dict | None = None) -> tuple[str | None, str | None]:
+def own_program_why(rec: dict, source: dict | None = None, note: dict | None = None,
+                    siblings: list | None = None) -> tuple[str | None, str | None]:
     """(why the re-read does not hold its own program or None, the page evidence that let a generic heading pass or
     None). The heading must share a word with the title (the pilot's title_tokens). A heading that shares none and
     carries no word that could name a program (the scorer's heading_content_words: "REQUIREMENTS", "Course List",
@@ -289,7 +338,7 @@ def own_program_why(rec: dict, source: dict | None = None, note: dict | None = N
         if heading_content_words(heading):
             return ("the re-read's heading %r shares no word with the title %r" % (heading[:80], rec.get("title")),
                     None)
-        evidence = page_is_own(rec, source, note)
+        evidence = page_is_own(rec, source, note, siblings)
         if not evidence:
             return ("the re-read's heading %r is generic (it names no program), and nothing in the committed files "
                     "shows its page %s is the program's own" % (heading[:80], (rec.get("source_url") or "")[:120]),
@@ -478,6 +527,8 @@ def keep_better(folder: str, base: str = "origin/main", run: str | None = None, 
             runs = json.load(fh).get("runs") or {}
     earlier = {e["control_number"]: e for e in (runs.get(run) or {}).get("programs") or []}
     sources = read_sources(folder)
+    # The college's programs, for a no-ending address two awards share (page_is_own; COBIx on #3557).
+    siblings = list(sources.values())
     rows, college = [], None
     for path in sorted(glob.glob(os.path.join(folder, "records", "*.json"))):
         with open(path, "rb") as fh:
@@ -500,13 +551,15 @@ def keep_better(folder: str, base: str = "origin/main", run: str | None = None, 
                "source_url": rec.get("source_url"), "filed_source_url": (filed or {}).get("source_url"),
                "filed_run": (filed or {}).get("extracted_run"), "reread": brief(new_score)}
         note: dict = {}
-        not_own, own_page = own_program_why(rec, sources.get(str(cn)), note)
+        not_own, own_page = own_program_why(rec, sources.get(str(cn)), note, siblings)
         if own_page:
             row["own_page"] = own_page
         # A generic heading consulted the address: its stripped award ending ("" for none), so a later reader can
         # list every row kept on address evidence whose address carried one (COBIx on #3553, finding 2).
         if "award_tail" in note:
             row["award_tail"] = note["award_tail"]
+        if note.get("shared_title"):
+            row["shared_title"] = note["shared_title"]
         live = None if live_runs is None else live_runs.get(str(cn))
         live = None if live is None else str(live)
         if live_runs is not None:

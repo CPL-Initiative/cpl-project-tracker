@@ -613,6 +613,67 @@ def test_second_pass_after_receipt(tmp):
           "a carried run with a kept record not live at it is not named")
 
 
+def test_shared_title(tmp):
+    """COBIx on #3557 (7011458372): a no-ending address counts as the program's own only when no other program at the
+    college with the same title words has another award kind. College of the Redwoods' Welding Technology certificate
+    (22673) on welding-technology-fall-2025, the A.S.'s (01821) page."""
+    url = "https://redwoods.elumenapp.com/catalog/2026-2027/program/welding-technology-fall-2025"
+    cert = {"control_number": "22673", "title": "Welding Technology",
+            "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units", "source_url": url}
+    sib = [{"control_number": "01821", "title": "Welding Technology", "award": "A.S. Degree"},
+           {"control_number": "22673", "title": "Welding Technology", "award": cert["award"]}]
+    check(K.page_is_own(cert, None) is not None, "without siblings the no-ending address passes, as on main")
+    note = {}
+    check(K.page_is_own(cert, None, note, sib) is None and note.get("shared_title") == ["01821"],
+          "two awards share the title: the address shows nothing and names the other: %r" % note)
+    check(K.page_is_own(dict(cert, control_number="01821", award="A.S. Degree"), None, {}, sib) is None,
+          "the A.S. on the shared address shows nothing by the address either")
+    same = [dict(sib[0], award=cert["award"], control_number="22674"), sib[1]]
+    check(K.page_is_own(cert, None, {}, same) is not None, "a sibling of the same award kind leaves the address")
+    other = [dict(sib[0], title="Welding Technology Advanced"), sib[1]]
+    check(K.page_is_own(cert, None, {}, other) is not None, "a sibling with other title words leaves the address")
+    # The capture's own entries, as kb/program_requirements_college/college_of_the_redwoods/sources.json files them:
+    # 01821's page titles itself "Welding Technology", 22673's "Welding Technology CA".
+    as_src = {"control_number": "01821", "source": {"url": url, "title": "Welding Technology", "h1": "Welding Technology"}}
+    ca_url = url.replace("technology-fall", "technology-ca-fall")
+    ca_src = {"control_number": "22673",
+              "source": {"url": ca_url, "title": "Welding Technology CA", "h1": "Welding Technology CA"}}
+    check(K.page_is_own(cert, as_src, {}, sib) is None,
+          "the certificate on the A.S.'s page with its real capture entry: the bare title shows nothing")
+    check(K.page_is_own(cert, as_src, {}) is not None, "without siblings the bare title passes, as before")
+    rec22673 = dict(cert, record={"program": {"section_heading": "REQUIREMENTS"}})
+    why, _ = K.own_program_why(rec22673, as_src, {}, sib)
+    check(why and "generic" in why, "own_program_why sets the certificate on the A.S.'s page aside: %r" % why)
+    # Either evidence shows it: #3594's slug_awards reads the -ca ending, so the address answers before the title is
+    # read; without that ending the title's "CA" answers (S689 round 2, comment 7038199226).
+    own = K.page_is_own(dict(cert, source_url=ca_url), ca_src, {}, sib) or ""
+    check(own.startswith("the address's last segment") or own.startswith("the capture's page title"),
+          "the certificate on its own page: the -ca address or the title printing CA shows it: %r" % own)
+    plain_url = url.replace("technology-fall", "technology-own-fall")
+    own = K.page_is_own(dict(cert, source_url=plain_url), {"control_number": "22673", "source": dict(
+        ca_src["source"], url=plain_url)}, {}, sib) or ""
+    check(own.startswith("the capture's page title"), "with no ending the title's CA shows it: %r" % own)
+
+
+def test_prints_award(tmp):
+    """The S689 second reader on #3597: award_kinds_in misses "Cert", a bare "Certificate", "A.S," and the fi
+    ligature, so a title two awards share lost all evidence on a page title that prints the award (Antelope Valley
+    13260, "Real Estate Salesperson Cert")."""
+    deg = {"as"}
+    check(K.prints_award("Real Estate Salesperson Cert", "coa", deg), "Cert against an A.S. prints the certificate")
+    check(K.prints_award("NUTRITION AND FOODS (CERTIFICATE)", "coa", deg), "a bare CERTIFICATE in capitals")
+    check(K.prints_award("Welding Certiﬁcate of Achievement", "coa", deg), "the fi ligature folds")
+    check(K.prints_award("Welding, A.S, Degree", "as", {"coa"}), "A.S, reads as A.S.")
+    check(not K.prints_award("Welding Certificate", "coa", {"noncredit"}),
+          "a bare Certificate cannot part a certificate from a noncredit certificate")
+    check(not K.prints_award("Welding Certificate", "as", {"coa"}), "a bare Certificate is never the A.S.'s")
+    check(not K.prints_award("Welding Certificate", "other", {"as"}), "no COCI award takes no class word")
+    check(not K.prints_award("Welding Technology", "coa", deg), "the title words alone print no award")
+    check(not K.prints_award("Welding A.S. Degree", "coa", deg), "a named award decides: the A.S. is not the CA")
+    check(not K.prints_award("Certified Welder", "coa", deg), "Certified is not Cert")
+    check(K.prints_award("Welding Technology CA", "coa", deg), "the reader's own CA still reads")
+
+
 def test_needs_load(tmp):
     """COBIx on #3558 (7011565769): with live_runs, a kept or new record with no live row is listed as needs_load on a
     step=load dispatch and never names a reread alone (the reread function replaces rows and inserts none); a record
@@ -908,7 +969,7 @@ def main():
                test_live_runs_file, test_control_number_shape, test_ascii_runs, test_generic_heading_scorer,
                test_generic_heading, test_order, test_second_pass, test_matches_main, test_real_cases,
                test_address_cases, test_capture_names_another_award, test_second_pass_after_receipt,
-               test_no_duplicate_row, test_award_ending, test_needs_load):
+               test_no_duplicate_row, test_award_ending, test_shared_title, test_prints_award, test_needs_load):
         tmp = tempfile.mkdtemp(prefix="keep_better_")
         try:
             fn(tmp)
