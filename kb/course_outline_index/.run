@@ -1,7 +1,7 @@
-run=2026-11-21-s691-e
+run=2026-11-21-s691-c
 discover=
-index=https://saddleback.curriqunet.com/
-slugs=saddleback
-report=^Course Outline$
-status=Active \(Fully Approved\)
-client=^Saddleback College$
+index=https://riohondo.curriqunet.com/
+slugs=rio_hondo
+report=^Outline w/SLO$
+status=
+client=

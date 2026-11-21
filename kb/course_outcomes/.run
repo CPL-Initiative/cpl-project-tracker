@@ -1,4 +1,4 @@
-index=kb/course_outline_index/index_44887971233.json
-slugs=saddleback
+index=kb/course_outline_index/index_44882239715.json
+slugs=rio_hondo
 parts=2
-run=2026-11-21 S691 Saddleback full read (parser 2629a09a, gate 44890274600), dispatched 10:04Z
+run=2026-11-21 S691 Rio Hondo full read, 946 courses, HOND 045 left unread (parser 2629a09a, gate 44890279483), dispatched 10:10Z
