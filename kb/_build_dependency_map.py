@@ -1445,7 +1445,7 @@ def render_md(p: dict) -> str:
     L.append("# Dependency map — who consumes what")
     L.append("")
     L.append("**GENERATED — do not hand-edit.** Rebuild: `python3 kb/_build_dependency_map.py`")
-    L.append("(`dependency-map.yml` runs it on `main` after each merge; PRs do not commit it). Full edge list with")
+    L.append("(`dependency-map.yml` runs it on `main` once an hour; PRs do not commit it). Full edge list with")
     L.append("file:line evidence: [`kb/dependency_map.json`](../../kb/dependency_map.json).")
     L.append("")
     L.append("This answers the cross-impact question CLAUDE.md orders every session to ask:")

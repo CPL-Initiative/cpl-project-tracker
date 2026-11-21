@@ -23,10 +23,10 @@ report() {
 run "docs index + catalogs"   "python3 kb/_build_docs_index.py --check"
 # The dependency map is a report line, never a failure (Sam, 2026-11-18: "No dependency-map rebuild inside PRs.
 # kb/dependency_map.json and docs/reference/dependency_map.md are rebuilt by one job on main after each merge.").
-# .github/workflows/dependency-map.yml rebuilds it, with cobi_admin_surface.js, after each push to main. A PR
+# .github/workflows/dependency-map.yml rebuilds it, with cobi_admin_surface.js, once an hour (S698). A PR
 # leaves both map files as main has them; do not run the builder or commit its output.
 report "dependency map"       "python3 kb/_build_dependency_map.py --check" \
-  "behind this tree (notice only: the main job rebuilds it after the merge; do not commit it)"
+  "behind this tree (notice only: the main job rebuilds it within the hour; do not commit it)"
 run "re-mint blast radius"    "python3 kb/_build_remint_blast_radius.py --check"
 run "docs corpus lint"        "python3 tests/docs_audit_test.py"
 run "docs index builder"      "python3 tests/docs_index_build_test.py"

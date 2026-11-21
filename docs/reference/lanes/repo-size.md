@@ -131,6 +131,7 @@ the event value as the fallback, and log both.
 6. Worker worktrees under `.claude/worktrees/` take about 2.3 GB each (six took the disk from 27 GB free to 13 GB):
    remove a finished worker's worktree once its head is pushed (S681).
 7. **#3526 merged (`d-dependency-map-on-main-s683`):** one job on `main` (`dependency-map.yml`) rebuilds
-   `kb/dependency_map.json`, `docs/reference/dependency_map.md` and `cobi_admin_surface.js` after each merge; a PR does
+   `kb/dependency_map.json`, `docs/reference/dependency_map.md` and `cobi_admin_surface.js` once an hour on a timer
+   (S698, #3476's cap on timed commits: a rebuild per merge wrote 17 map commits in two days); a PR does
    not run `kb/_build_dependency_map.py` and leaves them as `main` has them. COBIx's two follow-ups: the suite shards
    still read the committed map, and `check_generated.sh` should print its own line when the builder crashes (rc 2).
