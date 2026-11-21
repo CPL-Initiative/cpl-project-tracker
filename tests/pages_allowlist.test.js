@@ -192,6 +192,7 @@ const DYNAMIC = {
   "cred-rename-apply.yml": "stages $RECEIPT, the apply's receipt folder under the withheld kb/receipts",
   "overmerge-apply.yml": "stages the split kb/row_audit/ whole: its dated .md are withheld by pattern, latest.json published",
   "phase-1e-apply.yml": "stages the split kb/row_audit/ whole: its dated .md are withheld by pattern, latest.json published",
+  "receipt-slim.yml": "stages the split kb/row_audit/ whole for its dated .md removals (withheld by pattern), and kb/receipts (withheld); a step refuses any staged change but those removals, index entries and the exceptions list",
 };
 const wfDir = ".github/workflows";
 const sources = fs.readdirSync(wfDir).filter((f) => /\.ya?ml$/.test(f)).map((f) => [f, fs.readFileSync(path.join(wfDir, f), "utf8")]);

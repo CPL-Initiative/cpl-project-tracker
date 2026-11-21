@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""kb/_row_audit_prune.py: the newest 14 row audit reports stay, older ones leave only once indexed (#3476 step 5).
+"""kb/_row_audit_prune.py: every dated row audit report goes to the bucket (the newest 14 stayed until S695), each leaving only once indexed (#3476 step 5).
 
 Guards the failure modes: a report removed with no stored, read-back copy; latest.json or a recent report
 removed; a store failure that fails the daily dashboard run.
@@ -69,19 +69,19 @@ def quiet(fn, *a, **k):
         return fn(*a, log=lambda *_: None, **k)
 
 
-# 1. The newest 14 and latest.json stay; the six older go, each with a sound entry and the bucket's copy.
+# 1. latest.json stays; all 20 dated reports go, each with a sound entry and the bucket's copy.
 folder, index = fixture(20)
 store = FakeStore()
 res = quiet(P.prune, folder, storage=store, index_path=index)
 left = sorted(os.listdir(folder))
-check("the prune keeps exactly the newest 14 dated reports, latest.json and the undated file",
-      left == sorted(days(20)[6:] + ["latest.json", "notes.md"]), left)
-check("the six older reports are removed", sorted(res["removed"]) == days(20)[:6] and not res["stayed"], res)
+check("the prune keeps latest.json and the undated file, and no dated report",
+      P.KEEP == 0 and left == ["latest.json", "notes.md"], left)
+check("all 20 reports are removed", sorted(res["removed"]) == days(20) and not res["stayed"], res)
 entries = RS.load_index(index)["receipts"]
 check("each removed report has a sound row_audit entry at row_audit/row_audit_<date>.md",
-      len(entries) == 6 and all(not RS.entry_problems(e) and e["object"] == "row_audit/" + e["name"]
+      len(entries) == 20 and all(not RS.entry_problems(e) and e["object"] == "row_audit/" + e["name"]
                                 and e["kind"] == "row_audit" for e in entries), entries[:1])
-check("the bucket holds each removed report's bytes", len(store.objects) == 6
+check("the bucket holds each removed report's bytes", len(store.objects) == 20
       and all(RS.sha256_bytes(store.objects[e["object"]]) == e["sha256"] for e in entries))
 
 # 2. A store failure removes nothing: the upload, the read-back, or a read-back with other bytes.
@@ -90,7 +90,7 @@ for label, kw in (("the upload fails", {"fail_put": True}), ("the read-back fail
     folder, index = fixture(20)
     res = quiet(P.prune, folder, storage=FakeStore(**kw), index_path=index)
     check("nothing is removed when %s" % label,
-          len(os.listdir(folder)) == 22 and not res["removed"] and len(res["stayed"]) == 6
+          len(os.listdir(folder)) == 22 and not res["removed"] and len(res["stayed"]) == 20
           and not RS.load_index(index)["receipts"], res)
 
 # 3. Nothing without an index entry is removed; an entry with a matching sha256 is enough on its own.
@@ -100,18 +100,37 @@ check("with no key and no entries, nothing is removed", len(os.listdir(folder)) 
 quiet(P.prune, os.path.join(*os.path.split(fixture(20)[0])), storage=FakeStore(), index_path=index)  # files entries
 res = quiet(P.prune, folder, storage=None, index_path=index)
 check("a report whose entry names its sha256 is removed with no upload",
-      sorted(res["removed"]) == days(20)[:6], res)
+      sorted(res["removed"]) == days(20), res)
 folder, _ = fixture(20)
 with open(os.path.join(folder, days(20)[0]), "a") as f:
     f.write("edited\n")
 res = quiet(P.prune, folder, storage=None, index_path=index)
 check("a report whose entry names other bytes stays", days(20)[0] in os.listdir(folder)
-      and days(20)[0] in res["stayed"] and len(res["removed"]) == 5, res)
+      and days(20)[0] in res["stayed"] and len(res["removed"]) == 19, res)
+
+# 3b. The day's report rewritten by a second run the same day is stored again beside the first (S695, KEEP 0):
+#     the entry lists what it supersedes, the old object stays in the bucket, and the file leaves.
+folder, index = fixture(3)
+store = FakeStore()
+quiet(P.prune, folder, storage=store, index_path=index)
+newest = days(3)[-1]
+with open(os.path.join(folder, newest), "w") as f:
+    f.write("# report rewritten\n")
+res = quiet(P.prune, folder, storage=store, index_path=index)
+e = RS.read_entry("row_audit_" + newest, index)
+check("the newest report rewritten the same day supersedes its entry and leaves the tree",
+      res["removed"] == [newest] and not os.path.exists(os.path.join(folder, newest)) and e.get("supersedes")
+      and not RS.entry_problems(e) and len(store.objects) == 4, (res, e))
+folder, _ = fixture(3)
+with open(os.path.join(folder, days(3)[0]), "a") as f:
+    f.write("edited\n")
+res = quiet(P.prune, folder, storage=store, index_path=index)
+check("an older report whose bytes changed still stays", days(3)[0] in res["stayed"], res)
 
 # 4. The daily run's limits: at most --max-store uploads, and an entry for each.
 folder, index = fixture(20)
 res = quiet(P.prune, folder, storage=FakeStore(), index_path=index, max_store=2)
-check("--max-store 2 uploads two and leaves the rest in place", len(res["removed"]) == 2 and len(res["stayed"]) == 4
+check("--max-store 2 uploads two and leaves the rest in place", len(res["removed"]) == 2 and len(res["stayed"]) == 18
       and len(os.listdir(folder)) == 20, res)
 
 # 5. The exit code: 0 on a store failure without --strict, 1 with it.
@@ -129,7 +148,7 @@ if env_key is not None:
 # 6. The daily build's own block, run through its `step` wrapper against a bucket that refuses every call:
 #    the block exits 0, so the daily run's exit code is unchanged, and every report stays.
 src = open(os.path.join(ROOT, "scripts", "daily_build.sh"), encoding="utf-8").read()
-start = src.index('step "Keep the newest 14 row audit reports" SUPABASE_SERVICE_KEY <<\'STEP\'\n')
+start = src.index('step "Store the row audit reports" SUPABASE_SERVICE_KEY <<\'STEP\'\n')
 block = src[start:src.index("\nSTEP\n", start) + len("\nSTEP\n")]
 check("the daily build runs the prune after the auditor writes the day's report",
       src.index("python3 kb/_row_audit.py") < start and "|| echo" in block, block)
@@ -203,8 +222,11 @@ check("git ignores a fetched report in kb/receipts/ and still tracks its index e
 
 # 7. The daily commit stages the removals and the entries; the index check accepts the new kind.
 wf = open(os.path.join(ROOT, ".github", "workflows", "daily-dashboard.yml"), encoding="utf-8").read()
-check("the daily commit stages removed reports and their entries by quoted pathspec",
-      "git add -A -- 'kb/row_audit/*.md' 'kb/receipts/index/row_audit_*.json'" in wf)
+check("the daily commit stages removed reports and their entries by quoted pathspec, in separate commands so a "
+      "day with no report still stages its entries",
+      "git add -A -- 'kb/row_audit/*.md' 2>/dev/null || true" in wf
+      and "git add -A -- 'kb/receipts/index/row_audit_*.json' 2>/dev/null || true" in wf
+      and "kb/row_audit/*.md \\\n" not in wf)
 bad = dict(entries[0], name="2026-10-01.md", object="row_audit/2026-10-01.md")
 check("an entry not named row_audit_<date>.md is refused", RS.entry_problems(bad))
 check("an entry whose built is not its name's date is refused", RS.entry_problems(dict(entries[0], built="2020-01-01")))

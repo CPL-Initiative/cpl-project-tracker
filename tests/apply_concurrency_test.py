@@ -64,6 +64,8 @@ MEMBERS = {
     "cer-decision-apply.yml", "cred-rename-apply.yml", "credential-family-apply.yml", "daily-dashboard.yml",
     "docket-process.yml", "esl-sheet-apply.yml", "library-publish.yml", "overmerge-apply.yml",
     "phase-1e-apply.yml", "projects-seed-apply.yml", "workplan-goals-seed-apply.yml",
+    # S695 (#3476 items 1 and 2): the one-time move of the applied records and row audit reports commits to main.
+    "receipt-slim.yml",
 }
 
 results = []
@@ -211,7 +213,7 @@ SECRETS_BY_STEP = {
     "Build the Exhibits List's Outcomes match hints": ["SUPABASE_SERVICE_KEY"],
     "Build the catalog's skills-to-outcomes analysis": ["SUPABASE_SERVICE_KEY"],
     "Sync CPL Pathways' confirmed records": ["SUPABASE_SERVICE_KEY"],
-    "Keep the newest 14 row audit reports": ["SUPABASE_SERVICE_KEY"],   # S680, #3476: stores old reports in cpl-receipts
+    "Store the row audit reports": ["SUPABASE_SERVICE_KEY"],   # S680, #3476: stores the reports in cpl-receipts (S695)
 }
 ALL_SECRETS = ["MAP_API_KEY", "MAP_API_AUTH_HEADER", "MAP_API_AUTH_SCHEME", "CPL_SCRAPE_SECRET", "SUPABASE_SERVICE_KEY"]
 calls = [s for s in ud_steps if "daily_build.sh" in str(s.get("run", ""))]

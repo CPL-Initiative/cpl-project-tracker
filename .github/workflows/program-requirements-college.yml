@@ -65,11 +65,14 @@ name: Program requirements, one college
 #   page's), stores it in the private cpl-receipts bucket, and names it with its
 #   sha256 in kb/receipts/index/<name>.json (one file an entry), in that order
 #   and before the apply; a failed step stops the job before the apply. The commit
-#   holds the index entry and the applied record only. force= on a display:
+#   holds the index entries only: from S695 the applied record is stored at
+#   cpl-receipts/display/applied/ and named in kb/receipts/index/ too, and is
+#   committed itself only when the store fails. force= on a display:
 #   "supersede" stores a rebuilt receipt beside other bytes already under its
 #   name; "<receipt name> [<applied record>]" re-applies that stored receipt
 #   instead of the page's build, limited to the keys the applied record sends
-#   back to it: the display rollback (docs/reference/data_write_rollback.md).
+#   back to it (a stored record is fetched through its index entry): the display
+#   rollback (docs/reference/data_write_rollback.md).
 #
 # fetch (a dispatch with step=fetch and force=<receipt name>, never a push): reads
 #   a stored receipt from cpl-receipts, checked against its index sha256, and
@@ -430,6 +433,19 @@ jobs:
           path: kb/receipts/*${{ github.run_id }}*
           if-no-files-found: ignore
           retention-days: 90
+      # S695 (#3476 item 1): the applied record goes to cpl-receipts (display/applied/) and only its index entry
+      # is committed. The file leaves the runner's tree only after the bucket reads back its bytes; when the store
+      # fails the record stays and the next step commits it as before, so the rollback is never lost.
+      - name: Store this run's applied record in cpl-receipts
+        if: always()
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: |
+          shopt -s nullglob
+          files=(kb/receipts/program_requirement_records_display_*.applied_${GITHUB_RUN_ID}*.json)
+          if [ ${#files[@]} -eq 0 ]; then echo "no applied record"; exit 0; fi
+          python3 kb/_receipt_store.py store-applied "${files[@]}" \
+            || echo "::warning title=Applied record committed::cpl-receipts did not take the applied record; it is committed to the tree instead."
       - name: Commit the applied record to the branch that ran it
         if: always()
         # The message names a scoped run's college, so git log tells it from a whole-build run.
