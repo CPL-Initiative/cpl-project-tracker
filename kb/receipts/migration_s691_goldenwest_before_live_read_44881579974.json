@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-21_s691_goldenwest_before_live_read.sql",
+ "name": "s691_goldenwest_before_live_read",
+ "version": "20261121074507",
+ "sha256": "e0cd4718e1841b02d89da4cd5f73a7003d2970ea778ca44f2344adb0d53eeacf",
+ "run": "44881579974",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"json_build_object\":{\"at\":\"2026-11-21T07:45:08Z\",\"listed\":476,\"rows\":476,\"guard_ok\":476,\"differ\":[],\"missing\":[],\"checksum\":\"cb441aa17605cc3827460f2e207587bb\",\"after_taken\":0,\"total_gw_slo\":568}}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
