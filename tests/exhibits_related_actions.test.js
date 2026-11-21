@@ -121,7 +121,7 @@ function load(opts) {
 function tick() { return new Promise(function (r) { setTimeout(r, 0); }); }
 async function settle() { for (let i = 0; i < 12; i++) await tick(); }
 async function boot(opts) { const t = load(opts); await t.M.boot(); await settle(); return t; }
-function panel(d) { return d.querySelector("aside.exh-rel"); }
+function panel(d) { return d.querySelector("aside.exh-rel:not(.exh-cdsum)"); }
 function titles(d) { return Array.from(panel(d).querySelectorAll(".exh-rel-t")).map(txt); }
 function item(d, title) { return Array.from(panel(d).querySelectorAll(".exh-rel-list li")).find(function (li) { return txt(li.querySelector(".exh-rel-t")) === title; }); }
 function byText(root, sel, t) { return Array.from(root.querySelectorAll(sel)).find(function (b) { return txt(b) === t; }); }
@@ -151,7 +151,9 @@ async function tickBox(t, title) { const c = cb(t.d, title); c.checked = true; c
   await showAll(t);
   const boxes = Array.from(panel(d).querySelectorAll("input[type=checkbox]"));
   check("nothing is checked by default", boxes.length > 0 && boxes.every(function (b) { return !b.checked; }));
-  check("each checkbox has a label naming its title", boxes.every(function (b) { const l = d.querySelector("label[for='" + b.id + "']"); return l && txt(l).length > 0; }));
+  check("each checkbox has a label naming its title", boxes.every(function (b) {
+    // On a Review card the title beside the box is a button (it opens the title's details), so the box carries the name itself.
+    const l = d.querySelector("label[for='" + b.id + "']"); return (l && txt(l).length > 0) || /^Check \S/.test(b.getAttribute("aria-label") || ""); }));
   check("the titles that can change have a checkbox", ["Firefighter 1 Academy", "Firefighter 1 Academy Physical Training", "Firefighter 1 Academy — Advanced",
     "Firefighter I Academy", "Firefighter 1A"].every(function (x) { return !!cb(d, x); }));
   check("the target and a proposed title have none", !cb(d, "Firefighter 1") && !cb(d, "Firefighter Academy")
@@ -159,7 +161,7 @@ async function tickBox(t, title) { const c = cb(t.d, title); c.checked = true; c
   check("a title in a ruled plan has no checkbox and says why", !cb(d, "Firefighter Ruled Academy")
     && /In a ruled plan \(plan-x\) that renames it to Firefighter 2\./.test(txt(item(d, "Firefighter Ruled Academy"))));
   check("a pending merge target has no checkbox and says why", !cb(d, "Firefighter Pending Academy")
-    && /1 title is saved to fold into it, so it stays until they land\./.test(txt(item(d, "Firefighter Pending Academy"))));
+    && /1 title is saved to combine into it, so it stays until they land\./.test(txt(item(d, "Firefighter Pending Academy"))));
   check("a title saved to be renamed has no checkbox and says why", !cb(d, "Firefighter Saved Academy")
     && /Already saved to be renamed Firefighter 2/.test(txt(item(d, "Firefighter Saved Academy"))));
   check("a held title offers no Change to control either", !Array.from(item(d, "Firefighter Ruled Academy").querySelectorAll("button")).some(function (b) { return /^Change to/.test(txt(b)); }));
@@ -171,9 +173,9 @@ async function tickBox(t, title) { const c = cb(t.d, title); c.checked = true; c
   for (const x of ["Firefighter 1 Academy", "Firefighter 1 Academy Physical Training", "Firefighter I Academy"]) await tickBox(t, x);
   byText(panel(d), "button", "Change the checked titles to Firefighter 1").click(); await settle();
   const ask = d.getElementById("exh-rel-ask-h");
-  check("the confirmation says how many titles, how many local titles, and the target", ask && txt(ask) === "3 titles, 4 local titles, will fold into Firefighter 1.", txt(ask));
-  check("it lists each title with what will happen", /Firefighter 1 Academy, 2 local titles: folds into Firefighter 1; its name stays a search alias\./.test(txt(ask.parentNode))
-    && /Firefighter I Academy, 1 local title: folds into Firefighter 1/.test(txt(ask.parentNode)));
+  check("the confirmation says how many titles, how many local titles, and the target", ask && txt(ask) === "3 titles, 4 local titles, will combine into Firefighter 1.", txt(ask));
+  check("it lists each title with what will happen", /Firefighter 1 Academy, 2 local titles: combines into Firefighter 1; its name stays a search alias\./.test(txt(ask.parentNode))
+    && /Firefighter I Academy, 1 local title: combines into Firefighter 1/.test(txt(ask.parentNode)));
   check("the confirmation is inside the panel, announced, and takes focus", !!ask.closest("aside.exh-rel") && ask.getAttribute("aria-live") === "polite"
     && d.activeElement === ask);
   check("nothing saves before the confirmation is answered", posts(t).length === 0);
@@ -201,9 +203,9 @@ async function tickBox(t, title) { const c = cb(t.d, title); c.checked = true; c
   check("no local title's assignment and no new row kind is written", rows.every(function (r) { return ["unified_title_override", "unified_title_merge_confirm"].indexOf(r.field) >= 0; }));
   await showAll(t);
   check("the panel shows the save at once: the saved titles say so and lose their checkbox",
-    saved.every(function (x) { return !cb(d, x) && /Saved this visit: folds into Firefighter 1\./.test(txt(item(d, x))); }), txt(panel(d)));
+    saved.every(function (x) { return !cb(d, x) && /Saved this visit: combines into Firefighter 1\./.test(txt(item(d, x))); }), txt(panel(d)));
   check("the note says what happens next, and focus stays in the panel",
-    /Saved: 3 titles fold into Firefighter 1\. The daily dry run pairs them/.test(txt(d.getElementById("exh-rel-note"))) && !!d.activeElement.closest("aside.exh-rel"));
+    /Saved: 3 titles combine into Firefighter 1\. The daily dry run pairs them/.test(txt(d.getElementById("exh-rel-note"))) && !!d.activeElement.closest("aside.exh-rel"));
   check("the saved titles join the List's Changed this visit", saved.every(function (x) { return t.M._state.ls && t.M._state.ls.changed.indexOf(x) >= 0; })
     && t.M._state.cs.overlay["Firefighter 1 Academy"].title === "Firefighter 1" && t.M._state.cs.overlay["Firefighter 1 Academy"].merge === "Firefighter 1");
 
@@ -221,7 +223,7 @@ async function tickBox(t, title) { const c = cb(t.d, title); c.checked = true; c
   const one = byText(item(t.d, "Firefighter 1A"), "button", "Change to Firefighter 1");
   check("an eligible row has its own Change to control, named for the row", one && one.getAttribute("aria-label") === "Change Firefighter 1A to Firefighter 1");
   one.click(); await settle();
-  check("it asks with the same confirmation, for that one row", txt(t.d.getElementById("exh-rel-ask-h")) === "1 title, 2 local titles, will fold into Firefighter 1." && posts(t).length === 0);
+  check("it asks with the same confirmation, for that one row", txt(t.d.getElementById("exh-rel-ask-h")) === "1 title, 2 local titles, will combine into Firefighter 1." && posts(t).length === 0);
   byText(panel(t.d), "button", "Save").click(); await settle();
   let r1 = rowsOf(t);
   check("and saves the same two rows for that title alone", r1.length === 2 && r1.every(function (r) { return r.course_id === "_CREDENTIAL_REVIEW::Firefighter 1A" && r.value === "Firefighter 1"; })
@@ -242,7 +244,7 @@ async function tickBox(t, title) { const c = cb(t.d, title); c.checked = true; c
   t.opts.lateBlock = "Firefighter 1 Academy";
   byText(panel(t.d), "button", "Save").click(); await settle();
   check("a title another row now folds into is caught at the save, and nothing is written",
-    posts(t).length === 0 && /Nothing was saved: Firefighter 1 Academy: 1 title is saved to fold into it/.test(txt(t.d.getElementById("exh-rel-note"))));
+    posts(t).length === 0 && /Nothing was saved: Firefighter 1 Academy: 1 title is saved to combine into it/.test(txt(t.d.getElementById("exh-rel-note"))));
 
   // ── signed out ──
   t = await boot({ signedOut: true });
@@ -333,13 +335,13 @@ async function tickBox(t, title) { const c = cb(t.d, title); c.checked = true; c
   check("a cycle on the target (it folds into a title it would take in) is held",
     /Firefighter 1 is itself saved to be renamed Firefighter 1 Academy/.test(txt(panel(t.d))) && !byText(panel(t.d), "button", "Change the checked titles to Firefighter 1"));
   t = await boot({ liveOwn: [{ course_id: "_CREDENTIAL_REVIEW::Firefighter 1", field: "unified_title_merge_confirm", value: "Firefighter 1A" }] });
-  check("a lone merge confirm on the target is held too", /Firefighter 1 is itself saved to fold into Firefighter 1A/.test(txt(panel(t.d))));
+  check("a lone merge confirm on the target is held too", /Firefighter 1 is itself saved to combine into Firefighter 1A/.test(txt(panel(t.d))));
 
   // ── a lone merge confirm on a candidate ──
   t = await boot({ liveOwn: [{ course_id: "_CREDENTIAL_REVIEW::Firefighter I Academy", field: "unified_title_merge_confirm", value: "Firefighter 2" }] });
   await showAll(t);
   check("a candidate whose lone merge confirm names another title has no checkbox and says why",
-    !cb(t.d, "Firefighter I Academy") && /A saved merge confirm folds it into Firefighter 2/.test(txt(item(t.d, "Firefighter I Academy"))));
+    !cb(t.d, "Firefighter I Academy") && /A saved merge confirm combines it into Firefighter 2/.test(txt(item(t.d, "Firefighter I Academy"))));
 
   // ── a failed live read at the save writes nothing ──
   t = await boot();
@@ -393,7 +395,7 @@ async function tickBox(t, title) { const c = cb(t.d, title); c.checked = true; c
   t = await boot({ store: store, credref: credref });
   await showAll(t);
   check("before the undo, the fold's target is held by the fold", !cb(t.d, "Firefighter 1A")
-    && /1 title is saved to fold into it/.test(txt(item(t.d, "Firefighter 1A"))) && /Already saved to be renamed Firefighter 1A/.test(txt(item(t.d, "Firefighter I Academy"))));
+    && /1 title is saved to combine into it/.test(txt(item(t.d, "Firefighter 1A"))) && /Already saved to be renamed Firefighter 1A/.test(txt(item(t.d, "Firefighter I Academy"))));
   t.w.location.hash = "#exhibits/list"; t.M._routeFromHash(); t.M.render(); await settle(); await settle();
   const row = Array.from(t.d.querySelectorAll(".exh-l-table tbody tr")).find(function (tr) { return /folds Firefighter I Academy into this credential/.test(txt(tr)); });
   const eb = row && Array.from(row.querySelectorAll("button")).find(function (b) { return txt(b) === "Edit"; });
@@ -435,7 +437,7 @@ async function tickBox(t, title) { const c = cb(t.d, title); c.checked = true; c
     r9.length === 2 && r9.every(function (r) { return r.course_id === "_CREDENTIAL_REVIEW::Firefighter 1 Academy" && r.value === "Firefighter 2"; })
     && r9.some(function (r) { return r.field === "unified_title_merge_confirm"; }) && !r9.some(function (r) { return r.field === "cpl_type_group_override"; }), JSON.stringify(r9));
   check("its note names the landing title and where it came from",
-    /folds into Firefighter 2, where Firefighter 1's saved rename lands\./.test(txt(t.d.getElementById("exh-rel-note"))), txt(t.d.getElementById("exh-rel-note")));
+    /combines into Firefighter 2, where Firefighter 1's saved rename lands\./.test(txt(t.d.getElementById("exh-rel-note"))), txt(t.d.getElementById("exh-rel-note")));
   t = await saveInto({ types: T9 });
   r9 = rowsOf(t);
   check("with no saved rename, a cert-based title into graded Firefighter 1 is blocked on the first press, with nothing written",

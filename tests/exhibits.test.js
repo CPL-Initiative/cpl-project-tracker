@@ -270,8 +270,8 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
     && /no one needs to act/.test(stepTile(t.d, "Saved, waiting for the nightly fold").getAttribute("data-tip")));
   check("without students the builder's order stands", current(t.d) === JUV);
   check("the footer says most colleges first", /1 of 4 · most colleges first/.test(txt(t.d.querySelector(".exh-foot"))));
-  check("the CER step chip names the step, with its hover", /CER step: Conflict with the reference/.test(txt(t.d.querySelector(".exh-chip")))
-    && /never overwrites a person's decision/.test(t.d.querySelector(".exh-chip").getAttribute("data-tip")));
+  check("the CER step chip names the step, with its hover", /CER step: Conflict with the reference/.test(txt(t.d.getElementById("exh-chip-step")))
+    && /never overwrites a person's decision/.test(t.d.getElementById("exh-chip-step").getAttribute("data-tip")));
   check("an older file's broad could-adopt list never shows (Rule 7; Sam, 2026-09-24)", /Could adopt \(0\)/.test(txt(t.d.querySelector(".exh-colleges")))
     && !Array.from(t.d.querySelectorAll(".exh-colleges .exh-cchip")).some(function (b) { return txt(b) === "Chabot"; }));
   check("the conflict shows the title saved earlier", /Saved earlier as “Juvenile Justice Procedures”/.test(txt(t.d.querySelector(".exh-card"))));
