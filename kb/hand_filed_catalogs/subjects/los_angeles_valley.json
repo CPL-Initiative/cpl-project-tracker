@@ -1,0 +1,1218 @@
+{
+ "_what": "The subject heading Los Angeles Valley College's catalog prints above each subject's first course, read for the local subject titles (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_subject_headings.py from a headings read; `heading` is saved in Title Case (Sam, 2026-11-21) with `heading_printed` as the catalog prints it; `above` holds the lines as printed, `rule` how the heading was taken (named, caps, fits or none), and `code_fits` whether the code's letters run in order through the heading, a second signal that decides nothing.",
+ "college": "Los Angeles Valley College",
+ "run": "44948529916",
+ "source": [
+  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf"
+ ],
+ "subjects": 67,
+ "with_heading": 31,
+ "rows": [
+  {
+   "code": "ACCTG",
+   "heading": "Accounting",
+   "heading_printed": "ACCOUNTING",
+   "rule": "named",
+   "codes": [
+    "ACCTG"
+   ],
+   "candidate": null,
+   "page": 168,
+   "above": [
+    "course-numbering",
+    "166 Los Angeles Valley College | General Catalog | 2026-2027",
+    "COURSE DESCRIPTIONS",
+    "ACCOUNTING (ACCTG)"
+   ],
+   "first_course": "ACCTG 001 Introductory Accounting I"
+  },
+  {
+   "code": "ADM JUS",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "ADM JUS"
+   ],
+   "candidate": null,
+   "page": 168,
+   "above": [
+    "theories of crime, punishment, rehabilitation,",
+    "ethics, education and training for professionals",
+    "in the justice system.",
+    "C-ID: AJ 110"
+   ],
+   "first_course": "ADM JUS 002 Concepts of Criminal Law"
+  },
+  {
+   "code": "ARC",
+   "heading": "Architecture",
+   "heading_printed": "ARCHITECTURE",
+   "rule": "named",
+   "codes": [
+    "ARC"
+   ],
+   "candidate": null,
+   "page": 171,
+   "above": [
+    "ADMISSION. THESE UNITS SHOULD NOT BE",
+    "USED TOWARD CALCULATION OF THE MINIMUM",
+    "60 UNITS NEEDED FOR ADMISSION TO THE UC.",
+    "ARCHITECTURE (ARC)"
+   ],
+   "first_course": "ARC 172 Architectural Drawing I (3)"
+  },
+  {
+   "code": "ART",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "page": 172,
+   "above": [
+    "will be examined in their historical and cultural",
+    "contexts. Historical influences of Classical art",
+    "and culture on Europe and America will be",
+    "evaluated."
+   ],
+   "first_course": "ART 103 Art Appreciation I (3) UC:CSU"
+  },
+  {
+   "code": "ASTRON",
+   "heading": "Astronomy (Astron)",
+   "heading_printed": "ASTRONOMY (ASTRON)",
+   "rule": "caps",
+   "codes": [
+    "ASTRON"
+   ],
+   "candidate": null,
+   "page": 175,
+   "above": [
+    "Koreans, Filipinos, Vietnamese, Cambodian,",
+    "Hmong, Laotian, among others.",
+    "ASTRONOMY",
+    "(ASTRON)"
+   ],
+   "first_course": "ASTRON 001 Elementary Astronomy (3)"
+  },
+  {
+   "code": "BIOLOGY",
+   "heading": "Biology",
+   "heading_printed": "BIOLOGY",
+   "rule": "named",
+   "codes": [
+    "BIOLOGY"
+   ],
+   "candidate": null,
+   "page": 175,
+   "above": [
+    "this class will study the methods used by",
+    "astronomers to determine the nature of the",
+    "universe.",
+    "BIOLOGY (BIOLOGY)"
+   ],
+   "first_course": "BIOLOGY 003 Introduction to Biology"
+  },
+  {
+   "code": "BOTH FRENCH",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "BOTH FRENCH"
+   ],
+   "candidate": "Students May Not Earn Credit for",
+   "page": 208,
+   "above": [
+    "worlds. Basic computer knowledge is required",
+    "for online activities. French 21 and 22 together",
+    "are equivalent to French 1.",
+    "STUDENTS MAY NOT EARN CREDIT FOR"
+   ],
+   "first_course": "BOTH FRENCH 001 AND FRENCH 021/022"
+  },
+  {
+   "code": "BRDCSTG",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "BRDCSTG"
+   ],
+   "candidate": null,
+   "page": 177,
+   "above": [
+    "changes in what constitutes a ‘broadcast.’",
+    "A-Z List of Course Subjects with Page Numbers: 20",
+    "Los Angeles Valley College | General Catalog | 2026-2027 175",
+    "COURSE DESCRIPTIONS"
+   ],
+   "first_course": "BRDCSTG 003 Voice and Diction (3)"
+  },
+  {
+   "code": "BUS",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": "Education, Finance, International Business,",
+   "page": 179,
+   "above": [
+    "For Business, see also Accounting, Cooperative",
+    "Education, Finance, International Business,",
+    "Law, Management, Marketing, Paralegal, and",
+    "Real Estate."
+   ],
+   "first_course": "BUS 001 Introduction to Business (3)"
+  },
+  {
+   "code": "CAOT",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "CAOT"
+   ],
+   "candidate": null,
+   "page": 188,
+   "above": [
+    "This course emphasizes speed and accuracy",
+    "building on the keyboard using corrective",
+    "drills, exercises, timed writings, and diagnostic",
+    "computer keyboarding software."
+   ],
+   "first_course": "CAOT 031 Business English (3) CSU"
+  },
+  {
+   "code": "CH DEV",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "CH DEV"
+   ],
+   "candidate": null,
+   "page": 182,
+   "above": [
+    "mathematics, physical sciences, art and",
+    "creativity, movement, health and safety, social",
+    "and emotional learning.",
+    "C-ID: ECE 130"
+   ],
+   "first_course": "CH DEV 010 Health, Safety and Nutrition"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "CHEMISTRY",
+   "rule": "named",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "page": 180,
+   "above": [
+    "STUDENTS SHALL BE ENROLLED IN AT",
+    "LEAST ONE ADDITIONAL COURSE IN A U.S.",
+    "REGIONALLY ACCREDITED INSTITUTION.",
+    "CHEMISTRY (CHEM)"
+   ],
+   "first_course": "CHEM 051 Fundamentals of Chemistry I"
+  },
+  {
+   "code": "CHICANO",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "CHICANO"
+   ],
+   "candidate": null,
+   "page": 181,
+   "above": [
+    "American Labor Movement, Chicano Movement,",
+    "and the Post Civil Rights Era. Intended for",
+    "students interested in Chicano and Ethnic",
+    "Studies or other social issues."
+   ],
+   "first_course": "CHICANO 037 Chicano Literature (3)"
+  },
+  {
+   "code": "CINEMA",
+   "heading": "Cinema",
+   "heading_printed": "CINEMA",
+   "rule": "named",
+   "codes": [
+    "CINEMA"
+   ],
+   "candidate": null,
+   "page": 184,
+   "above": [
+    "LEAST ONE ADDITIONAL COURSE IN A U.S.",
+    "REGIONALLY ACCREDITED INSTITUTION.",
+    "CINEMA (CINEMA)",
+    "(Please also see Animation and Media Arts)"
+   ],
+   "first_course": "CINEMA 101 Beginning Film Production"
+  },
+  {
+   "code": "CIS",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "CIS"
+   ],
+   "candidate": null,
+   "page": 190,
+   "above": [
+    "of this course is extensive lab work in the class.",
+    "THIS COURSE REPLACED CO SCI 834 IN",
+    "SPRING 2020. STUDENTS MAY NOT RECEIVE",
+    "CREDIT FOR BOTH CO SCI 834 AND CIS 112."
+   ],
+   "first_course": "CIS 113 Intermediate Linux (3) CSU"
+  },
+  {
+   "code": "COMM",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "page": 187,
+   "above": [
+    "and processes. Students critically analyze",
+    "communication messages and their channels,",
+    "and the skills necessary to communicate",
+    "competently in various contexts."
+   ],
+   "first_course": "COMM 102 Oral Communication II (3)"
+  },
+  {
+   "code": "COUNSEL",
+   "heading": "Counseling (Counsel)",
+   "heading_printed": "COUNSELING (COUNSEL)",
+   "rule": "caps",
+   "codes": [
+    "COUNSEL"
+   ],
+   "candidate": null,
+   "page": 194,
+   "above": [
+    "additional course in a U.S. regionally accredited",
+    "institution.",
+    "COUNSELING",
+    "(COUNSEL)"
+   ],
+   "first_course": "COUNSEL 001 Introduction to College"
+  },
+  {
+   "code": "CS",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "CS"
+   ],
+   "candidate": null,
+   "page": 192,
+   "above": [
+    "software construction process.",
+    "THIS COURSE REPLACED CO SCI 802 IN",
+    "SPRING 2020. STUDENTS MAY NOT RECEIVE",
+    "CREDIT FOR BOTH CO SCI 802 AND CS 101."
+   ],
+   "first_course": "CS 111 Programming in Visual Basic"
+  },
+  {
+   "code": "DANCEST",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "DANCEST"
+   ],
+   "candidate": null,
+   "page": 195,
+   "above": [
+    "the Dance Family group and have enrollment",
+    "limitations. The group code appears under",
+    "the course title. See page 281 for more",
+    "information."
+   ],
+   "first_course": "DANCEST 301 Choreography I (1)"
+  },
+  {
+   "code": "DANCETQ",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "DANCETQ"
+   ],
+   "candidate": null,
+   "page": 196,
+   "above": [
+    "the Dance Family group and have enrollment",
+    "limitations. The group code appears under",
+    "the course title. See page 281 for more",
+    "information."
+   ],
+   "first_course": "DANCETQ 111 Ballet Techniques I (1)"
+  },
+  {
+   "code": "DNCESPC",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "DNCESPC"
+   ],
+   "candidate": null,
+   "page": 195,
+   "above": [
+    "Street dance techniques. Technical aspects",
+    "will be emphasized, with a focus on individual",
+    "expression and style. Instruction will include",
+    "historical chronology and context."
+   ],
+   "first_course": "DNCESPC 331 Tap Dance Techniques I"
+  },
+  {
+   "code": "EGT",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "EGT"
+   ],
+   "candidate": null,
+   "page": 201,
+   "above": [
+    "The course also reviews extensively the role of",
+    "local, state, and federal government agencies,",
+    "insurances and bonds within the construction",
+    "industry."
+   ],
+   "first_course": "EGT 103 Code and Zoning Regulations"
+  },
+  {
+   "code": "ELECTRN",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "ELECTRN"
+   ],
+   "candidate": null,
+   "page": 199,
+   "above": [
+    "lecture. Data are gathered from series-parallel,",
+    "tuned and untuned circuits, and transformers.",
+    "Extensive use is made of signal generators,",
+    "digital multimeters and the oscilloscope."
+   ],
+   "first_course": "ELECTRN 020 Electronic Circuits I (4)"
+  },
+  {
+   "code": "ENG GEN",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "ENG GEN"
+   ],
+   "candidate": null,
+   "page": 201,
+   "above": [
+    "analysis, and data structures. Examples and",
+    "assignments in the course are drawn from",
+    "practical applications in engineering, physics,",
+    "and mathematics."
+   ],
+   "first_course": "ENG GEN 131 Statics (3) UC:CSU"
+  },
+  {
+   "code": "ENGLISH",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "ENGLISH"
+   ],
+   "candidate": null,
+   "page": 201,
+   "above": [
+    "strategies developed in ENGL C1000 Academic",
+    "Reading and Writing (or C-ID ENGL 100) or",
+    "similar first-year college writing course.",
+    "C-ID: ENGL 105"
+   ],
+   "first_course": "ENGLISH 072 English Bridge (1) NDA"
+  },
+  {
+   "code": "ESL NC",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "ESL NC"
+   ],
+   "candidate": null,
+   "page": 262,
+   "above": [
+    "more complex pronunciation skills for better oral",
+    "communication as well as developing rhythm,",
+    "stress, and intonation patterns of English",
+    "conversation."
+   ],
+   "first_course": "ESL NC 050CE Beginning Conversation"
+  },
+  {
+   "code": "ESLCVCS",
+   "heading": "ESL Civics",
+   "heading_printed": "ESL CIVICS",
+   "rule": "named",
+   "codes": [
+    "ESLCVCS"
+   ],
+   "candidate": null,
+   "page": 263,
+   "above": [
+    "A-Z List of Course Subjects with Page Numbers: 20",
+    "Los Angeles Valley College | General Catalog | 2026-2027 261",
+    "COURSE DESCRIPTIONS",
+    "ESL CIVICS (ESLCVCS)"
+   ],
+   "first_course": "ESLCVCS 010CE ESL and Civics I (0)"
+  },
+  {
+   "code": "FINANCE",
+   "heading": "Finance",
+   "heading_printed": "FINANCE",
+   "rule": "named",
+   "codes": [
+    "FINANCE"
+   ],
+   "candidate": null,
+   "page": 206,
+   "above": [
+    "contribute to a sustainable world. This course",
+    "partially satisfies the Social and Behavioral",
+    "Sciences requirement for General Education.",
+    "FINANCE (FINANCE)"
+   ],
+   "first_course": "FINANCE 002 Investments (3) CSU"
+  },
+  {
+   "code": "FIRETEK",
+   "heading": "Fire Technology (Firetek)",
+   "heading_printed": "FIRE TECHNOLOGY (FIRETEK)",
+   "rule": "caps",
+   "codes": [
+    "FIRETEK"
+   ],
+   "candidate": null,
+   "page": 206,
+   "above": [
+    "LEAST ONE ADDITIONAL COURSE IN A U.S.",
+    "REGIONALLY ACCREDITED INSTITUTION.",
+    "FIRE TECHNOLOGY",
+    "(FIRETEK)"
+   ],
+   "first_course": "FIRETEK 027 Wildland Firefighter (4)"
+  },
+  {
+   "code": "FRENCH",
+   "heading": "French",
+   "heading_printed": "FRENCH",
+   "rule": "named",
+   "codes": [
+    "FRENCH"
+   ],
+   "candidate": null,
+   "page": 207,
+   "above": [
+    "STUDENTS SHALL BE ENROLLED IN AT",
+    "LEAST ONE ADDITIONAL COURSE IN A U.S.",
+    "REGIONALLY ACCREDITED INSTITUTION.",
+    "FRENCH (FRENCH)"
+   ],
+   "first_course": "FRENCH 001 Elementary French I (5)"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "GEOGRAPHY",
+   "rule": "named",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "page": 209,
+   "above": [
+    "ADMISSION. THESE UNITS SHOULD NOT BE",
+    "USED TOWARD CALCULATION OF THE MINIMUM",
+    "60 UNITS NEEDED FOR ADMISSION TO THE UC.",
+    "GEOGRAPHY (GEOG)"
+   ],
+   "first_course": "GEOG 001 Physical Geography (3)"
+  },
+  {
+   "code": "GEOLOGY",
+   "heading": "Geology",
+   "heading_printed": "GEOLOGY",
+   "rule": "named",
+   "codes": [
+    "GEOLOGY"
+   ],
+   "candidate": null,
+   "page": 210,
+   "above": [
+    "A-Z List of Course Subjects with Page Numbers: 20",
+    "208 Los Angeles Valley College | General Catalog | 2026-2027",
+    "COURSE DESCRIPTIONS",
+    "GEOLOGY (GEOLOGY)"
+   ],
+   "first_course": "GEOLOGY 001 Physical Geology (3)"
+  },
+  {
+   "code": "GERMAN",
+   "heading": "German",
+   "heading_printed": "GERMAN",
+   "rule": "named",
+   "codes": [
+    "GERMAN"
+   ],
+   "candidate": null,
+   "page": 210,
+   "above": [
+    "COURSE.",
+    "STUDENTS MAY NOT EARN CREDIT IN BOTH",
+    "GEOLOGY 010 AND ENV SCI 007.",
+    "GERMAN (GERMAN)"
+   ],
+   "first_course": "GERMAN 001 Elementary German I (5)"
+  },
+  {
+   "code": "HEALTH",
+   "heading": "Health",
+   "heading_printed": "HEALTH",
+   "rule": "named",
+   "codes": [
+    "HEALTH"
+   ],
+   "candidate": null,
+   "page": 212,
+   "above": [
+    "A-Z List of Course Subjects with Page Numbers: 20",
+    "210 Los Angeles Valley College | General Catalog | 2026-2027",
+    "COURSE DESCRIPTIONS",
+    "HEALTH (HEALTH)"
+   ],
+   "first_course": "HEALTH 002 Health and Fitness (3)"
+  },
+  {
+   "code": "HEBREW",
+   "heading": "Hebrew",
+   "heading_printed": "HEBREW",
+   "rule": "named",
+   "codes": [
+    "HEBREW"
+   ],
+   "candidate": null,
+   "page": 212,
+   "above": [
+    "programming; environmental health and safety;",
+    "global health; and health care policy and",
+    "management.",
+    "HEBREW (HEBREW)"
+   ],
+   "first_course": "HEBREW 001 Elementary Hebrew I (5)"
+  },
+  {
+   "code": "HISTORY",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "HISTORY"
+   ],
+   "candidate": null,
+   "page": 213,
+   "above": [
+    "of the 20th century. This course emphasizes the",
+    "influence of Western Civilization on American",
+    "culture.",
+    "C-ID: HIST 180"
+   ],
+   "first_course": "HISTORY 005 History of the Americas I"
+  },
+  {
+   "code": "INTBUS",
+   "heading": "Business",
+   "heading_printed": "BUSINESS",
+   "rule": "named",
+   "codes": [
+    "INTBUS"
+   ],
+   "candidate": null,
+   "page": 214,
+   "above": [
+    "212 Los Angeles Valley College | General Catalog | 2026-2027",
+    "COURSE DESCRIPTIONS",
+    "INTERNATIONAL",
+    "BUSINESS (INTBUS)"
+   ],
+   "first_course": "INTBUS 001 International Trade (3) CSU"
+  },
+  {
+   "code": "ITALIAN",
+   "heading": "Italian",
+   "heading_printed": "ITALIAN",
+   "rule": "named",
+   "codes": [
+    "ITALIAN"
+   ],
+   "candidate": null,
+   "page": 214,
+   "above": [
+    "collection and communications. The basic",
+    "principles and practices of world trade are",
+    "studied.",
+    "ITALIAN (ITALIAN)"
+   ],
+   "first_course": "ITALIAN 001 Elementary Italian I (5)"
+  },
+  {
+   "code": "JOURNAL",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "JOURNAL"
+   ],
+   "candidate": null,
+   "page": 215,
+   "above": [
+    "to writing style and standards of the profession",
+    "are emphasized. Students will focus on deadline",
+    "writing various news and other types of stories.",
+    "C-ID JOUR 110"
+   ],
+   "first_course": "JOURNAL 105 Mass Communications"
+  },
+  {
+   "code": "KIN",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "KIN"
+   ],
+   "candidate": null,
+   "page": 216,
+   "above": [
+    "Activity, 2 hours.",
+    "This course allows the student to pursue",
+    "directed study in kinesiology on a contract basis",
+    "under the supervising instructor."
+   ],
+   "first_course": "KIN 009 Kinesiology - Combined Skills"
+  },
+  {
+   "code": "KIN MAJ",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "KIN MAJ"
+   ],
+   "candidate": null,
+   "page": 223,
+   "above": [
+    "professional training for cardiac rehabilitation,",
+    "gerokinesiology, physical therapy, public health",
+    "and policy, medicine and research.",
+    "C-ID: KIN 100"
+   ],
+   "first_course": "KIN MAJ 101 First Aid and CPR (3)"
+  },
+  {
+   "code": "LAW",
+   "heading": "Law",
+   "heading_printed": "LAW",
+   "rule": "named",
+   "codes": [
+    "LAW"
+   ],
+   "candidate": null,
+   "page": 223,
+   "above": [
+    "student will acquire experience and advanced",
+    "techniques in the prevention, recognition,",
+    "evaluation, and management of athletic injuries.",
+    "LAW (LAW)"
+   ],
+   "first_course": "LAW 001 Business Law I (3) UC:CSU"
+  },
+  {
+   "code": "LIB SCI",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "LIB SCI"
+   ],
+   "candidate": null,
+   "page": 224,
+   "above": [
+    "learners. Through multiple online platforms and",
+    "advanced online search strategies, students",
+    "learn to locate, evaluate, and communicate",
+    "information responsibly and ethically."
+   ],
+   "first_course": "LIB SCI 101 College Research Skills (1)"
+  },
+  {
+   "code": "MARKET",
+   "heading": "Marketing (Market)",
+   "heading_printed": "MARKETING (MARKET)",
+   "rule": "caps",
+   "codes": [
+    "MARKET"
+   ],
+   "candidate": null,
+   "page": 225,
+   "above": [
+    "LEAST ONE ADDITIONAL COURSE IN A U.S.",
+    "REGIONALLY ACCREDITED INSTITUTION.",
+    "MARKETING",
+    "(MARKET)"
+   ],
+   "first_course": "MARKET 001 Principles of Selling (3)"
+  },
+  {
+   "code": "MATH",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "page": 227,
+   "above": [
+    "relevance of the statistical findings. Students",
+    "apply methods and processes to applications",
+    "using data from a broad range of disciplines.",
+    "This course has embedded support."
+   ],
+   "first_course": "MATH 100 Mathematics Workshop (1)"
+  },
+  {
+   "code": "MEDIART",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "MEDIART"
+   ],
+   "candidate": null,
+   "page": 230,
+   "above": [
+    "capture. Cutting edge hardware and software,",
+    "computer graphics, immersive technology, real-",
+    "time rendering, game engines, and practical",
+    "filmmaking are explored."
+   ],
+   "first_course": "MEDIART 110 Digital Film Sound (3)"
+  },
+  {
+   "code": "MGMT",
+   "heading": "Management (Mgmt)",
+   "heading_printed": "MANAGEMENT (MGMT)",
+   "rule": "caps",
+   "codes": [
+    "MGMT"
+   ],
+   "candidate": null,
+   "page": 225,
+   "above": [
+    "Los Angeles Valley College | General Catalog | 2026-2027 223",
+    "COURSE DESCRIPTIONS",
+    "MANAGEMENT",
+    "(MGMT)"
+   ],
+   "first_course": "MGMT 001 Principles of Management"
+  },
+  {
+   "code": "MICRO",
+   "heading": "Microbiology (Micro)",
+   "heading_printed": "MICROBIOLOGY (MICRO)",
+   "rule": "caps",
+   "codes": [
+    "MICRO"
+   ],
+   "candidate": null,
+   "page": 232,
+   "above": [
+    "230 Los Angeles Valley College | General Catalog | 2026-2027",
+    "COURSE DESCRIPTIONS",
+    "MICROBIOLOGY",
+    "(MICRO)"
+   ],
+   "first_course": "MICRO 020 General Microbiology (4)"
+  },
+  {
+   "code": "MSCNC",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "MSCNC"
+   ],
+   "candidate": "Inspection Measuring Instruments and",
+   "page": 224,
+   "above": [
+    "including geometric dimensioning and",
+    "tolerancing and true position is stressed.",
+    "Inspection measuring instruments and",
+    "processes are covered."
+   ],
+   "first_course": "MSCNC 184 Inspection Procedures (3)"
+  },
+  {
+   "code": "MUSIC",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "MUSIC"
+   ],
+   "candidate": null,
+   "page": 232,
+   "above": [
+    "Some courses in Music are part of the Music",
+    "Family group and have enrollment limitations.",
+    "The group code appears under the course title.",
+    "See page 281 for more information."
+   ],
+   "first_course": "MUSIC 101 Fundamentals of Music (3)"
+  },
+  {
+   "code": "NRSCE",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "NRSCE"
+   ],
+   "candidate": null,
+   "page": 237,
+   "above": [
+    "clinical skills is experienced through seminars,",
+    "labs, and/or clinical settings. Upon completion,",
+    "students will provide safe nursing care",
+    "incorporating the concepts identified."
+   ],
+   "first_course": "NRSCE 002 Health Care Participant (3.5)"
+  },
+  {
+   "code": "NUM CON",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "NUM CON"
+   ],
+   "candidate": null,
+   "page": 237,
+   "above": [
+    "CAD/CAM. Introduces computer-assisted NC",
+    "part programming languages. Emphasizes",
+    "writing and running CNC Lathe programs",
+    "machining metal parts."
+   ],
+   "first_course": "NUM CON 022 Adv Manual CNC Mill &"
+  },
+  {
+   "code": "OLD ADL",
+   "heading": "Older Adults (Old Adl)",
+   "heading_printed": "OLDER ADULTS (OLD ADL)",
+   "rule": "caps",
+   "codes": [
+    "OLD ADL"
+   ],
+   "candidate": null,
+   "page": 263,
+   "above": [
+    "medical technician, certified nursing assistant, or",
+    "medical front office staff.",
+    "OLDER ADULTS (OLD",
+    "ADL)"
+   ],
+   "first_course": "OLD ADL 060CE Senior Topics (0)"
+  },
+  {
+   "code": "PALEGAL",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "PALEGAL"
+   ],
+   "candidate": null,
+   "page": 240,
+   "above": [
+    "until the final settlement/resolution of the civil",
+    "case. Areas of civil law applications will include",
+    "Tort law, Family Law, Personal Injury Law,",
+    "Probate Law, and the Law of Contract."
+   ],
+   "first_course": "PALEGAL 012 Tort Law (3)"
+  },
+  {
+   "code": "PHILOS",
+   "heading": "Philosophy (Philos)",
+   "heading_printed": "PHILOSOPHY (PHILOS)",
+   "rule": "caps",
+   "codes": [
+    "PHILOS"
+   ],
+   "candidate": null,
+   "page": 241,
+   "above": [
+    "Los Angeles Valley College | General Catalog | 2026-2027 239",
+    "COURSE DESCRIPTIONS",
+    "PHILOSOPHY",
+    "(PHILOS)"
+   ],
+   "first_course": "PHILOS 001 Introduction to Philosophy"
+  },
+  {
+   "code": "PHOTO",
+   "heading": "Photography (Photo)",
+   "heading_printed": "PHOTOGRAPHY (PHOTO)",
+   "rule": "caps",
+   "codes": [
+    "PHOTO"
+   ],
+   "candidate": null,
+   "page": 242,
+   "above": [
+    "240 Los Angeles Valley College | General Catalog | 2026-2027",
+    "COURSE DESCRIPTIONS",
+    "PHOTOGRAPHY",
+    "(PHOTO)"
+   ],
+   "first_course": "PHOTO 010 Beginning Photography (3)"
+  },
+  {
+   "code": "PHYS SC",
+   "heading": "Physical Science (Phys Sc)",
+   "heading_printed": "PHYSICAL SCIENCE (PHYS SC)",
+   "rule": "caps",
+   "codes": [
+    "PHYS SC"
+   ],
+   "candidate": null,
+   "page": 242,
+   "above": [
+    "LEAST ONE ADDITIONAL COURSE IN A U.S.",
+    "REGIONALLY ACCREDITED INSTITUTION.",
+    "PHYSICAL SCIENCE",
+    "(PHYS SC)"
+   ],
+   "first_course": "PHYS SC 001 Physical Science I (3)"
+  },
+  {
+   "code": "PHYSICS",
+   "heading": "Physics",
+   "heading_printed": "PHYSICS",
+   "rule": "named",
+   "codes": [
+    "PHYSICS"
+   ],
+   "candidate": null,
+   "page": 242,
+   "above": [
+    "concepts and how they help to understand the",
+    "physical environment and modern technology.",
+    "C-ID PHYS 140",
+    "PHYSICS (PHYSICS)"
+   ],
+   "first_course": "PHYSICS 005 Allied Health Physics (3)"
+  },
+  {
+   "code": "PSYCH",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "PSYCH"
+   ],
+   "candidate": null,
+   "page": 244,
+   "above": [
+    "environmental, social, and cultural influences;",
+    "their applications; and their research",
+    "foundations.",
+    "C-ID: PSY 110"
+   ],
+   "first_course": "PSYCH 002 Biological Psychology (3)"
+  },
+  {
+   "code": "REAL ES",
+   "heading": "Real Estate",
+   "heading_printed": "REAL ESTATE",
+   "rule": "named",
+   "codes": [
+    "REAL ES"
+   ],
+   "candidate": null,
+   "page": 246,
+   "above": [
+    "objectives, and approaches to counseling in",
+    "health, welfare, social service and rehabilitation",
+    "agencies will be discussed.",
+    "REAL ESTATE (REAL ES)"
+   ],
+   "first_course": "REAL ES 001 Real Estate Principles (3)"
+  },
+  {
+   "code": "RESP TH",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "RESP TH"
+   ],
+   "candidate": null,
+   "page": 247,
+   "above": [
+    "of Pediatrics). The acute treatment and clinical",
+    "assessment of the critical care neonatal and",
+    "pediatric are explained in detail and case",
+    "presentations are discussed."
+   ],
+   "first_course": "RESP TH 006 Respiratory Physiology"
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "SOCIOLOGY",
+   "rule": "named",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "page": 249,
+   "above": [
+    "STUDENTS SHALL BE ENROLLED IN AT",
+    "LEAST ONE ADDITIONAL COURSE IN A U.S.",
+    "REGIONALLY ACCREDITED INSTITUTION.",
+    "SOCIOLOGY (SOC)"
+   ],
+   "first_course": "SOC 001 Introduction to Sociology (3)"
+  },
+  {
+   "code": "SPANISH",
+   "heading": "Spanish",
+   "heading_printed": "SPANISH",
+   "rule": "named",
+   "codes": [
+    "SPANISH"
+   ],
+   "candidate": null,
+   "page": 252,
+   "above": [
+    "Certificate: 13-15",
+    "250 Los Angeles Valley College | General Catalog | 2026-2027",
+    "COURSE DESCRIPTIONS",
+    "SPANISH (SPANISH)"
+   ],
+   "first_course": "SPANISH 001 Elementary Spanish I (5)"
+  },
+  {
+   "code": "T & M",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "T & M"
+   ],
+   "candidate": null,
+   "page": 257,
+   "above": [
+    "drilling, and practical applications for cutting tool",
+    "design and fabrication. This course is the basis",
+    "for entry into many trade areas in the metal",
+    "machining industry."
+   ],
+   "first_course": "T & M 030 Machine Shop Practice I (3)"
+  },
+  {
+   "code": "THEATER",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "THEATER"
+   ],
+   "candidate": null,
+   "page": 254,
+   "above": [
+    "of the various creative artists such as the",
+    "director, actor, designers, and playwright and the",
+    "process of creating live performance.",
+    "C-ID: THTR 111"
+   ],
+   "first_course": "THEATER 110 History of World Theater I"
+  },
+  {
+   "code": "TUTOR",
+   "heading": "Assistance",
+   "heading_printed": "ASSISTANCE",
+   "rule": "named",
+   "codes": [
+    "TUTOR"
+   ],
+   "candidate": null,
+   "page": 264,
+   "above": [
+    "supports will be explored.",
+    "SUPERVISED",
+    "LEARNING",
+    "ASSISTANCE (TUTOR)"
+   ],
+   "first_course": "TUTOR 001T Supervised Tutoring (0)"
+  },
+  {
+   "code": "VOC ED",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "VOC ED"
+   ],
+   "candidate": null,
+   "page": 264,
+   "above": [
+    "best practices, and concepts such as learning",
+    "styles, effective communication, role modeling.",
+    "Course also covers important information such",
+    "as Title IX and student resources."
+   ],
+   "first_course": "VOC ED 089CE Advanced Tutor Training"
+  }
+ ]
+}

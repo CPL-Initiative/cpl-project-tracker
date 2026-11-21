@@ -1,0 +1,978 @@
+{
+ "_what": "The subjects Monterey Peninsula College's course-descriptions index lists: each subject's heading, its code or codes, and the address of its page, as the index links it (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_subject_headings.py --index; `heading` is saved in Title Case with `heading_printed` and the whole `label` as the index prints them. A subject's page is read at `address`, never at an address made from its code.",
+ "college": "Monterey Peninsula College",
+ "run": "44948295544",
+ "source": [
+  "https://catalog.mpc.edu/course-descriptions/"
+ ],
+ "subjects": 80,
+ "with_heading": 80,
+ "links_without_a_code": [
+  {
+   "label": "Course Grading, Numbering, and Requisites",
+   "address": "https://catalog.mpc.edu/course-descriptions/course-descriptions-numbering-requisites/"
+  }
+ ],
+ "rows": [
+  {
+   "code": "ADMJ",
+   "heading": "Administration of Justice",
+   "heading_printed": "Administration of Justice",
+   "rule": "index",
+   "codes": [
+    "ADMJ"
+   ],
+   "candidate": null,
+   "label": "Administration of Justice (ADMJ)",
+   "address": "https://catalog.mpc.edu/course-descriptions/admj/"
+  },
+  {
+   "code": "ADPE",
+   "heading": "Adapted Physical Education",
+   "heading_printed": "Adapted Physical Education",
+   "rule": "index",
+   "codes": [
+    "ADPE"
+   ],
+   "candidate": null,
+   "label": "Adapted Physical Education (ADPE)",
+   "address": "https://catalog.mpc.edu/course-descriptions/adpe/"
+  },
+  {
+   "code": "ANAT",
+   "heading": "Anatomy",
+   "heading_printed": "Anatomy",
+   "rule": "index",
+   "codes": [
+    "ANAT"
+   ],
+   "candidate": null,
+   "label": "Anatomy (ANAT)",
+   "address": "https://catalog.mpc.edu/course-descriptions/anat/"
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "label": "Anthropology (ANTH)",
+   "address": "https://catalog.mpc.edu/course-descriptions/anth/"
+  },
+  {
+   "code": "ARCE",
+   "heading": "Art - Ceramic Technology",
+   "heading_printed": "Art - Ceramic Technology",
+   "rule": "index",
+   "codes": [
+    "ARCE"
+   ],
+   "candidate": null,
+   "label": "Art - Ceramic Technology (ARCE)",
+   "address": "https://catalog.mpc.edu/course-descriptions/arce/"
+  },
+  {
+   "code": "ART",
+   "heading": "Art - Older Adult",
+   "heading_printed": "Art - Older Adult",
+   "rule": "index",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "label": "Art - Older Adult (ART)",
+   "address": "https://catalog.mpc.edu/course-descriptions/art/"
+  },
+  {
+   "code": "ARTB",
+   "heading": "Art - Basics",
+   "heading_printed": "Art - Basics",
+   "rule": "index",
+   "codes": [
+    "ARTB"
+   ],
+   "candidate": null,
+   "label": "Art - Basics (ARTB)",
+   "address": "https://catalog.mpc.edu/course-descriptions/artb/"
+  },
+  {
+   "code": "ARTD",
+   "heading": "Art - Dimensional",
+   "heading_printed": "Art - Dimensional",
+   "rule": "index",
+   "codes": [
+    "ARTD"
+   ],
+   "candidate": null,
+   "label": "Art - Dimensional (ARTD)",
+   "address": "https://catalog.mpc.edu/course-descriptions/artd/"
+  },
+  {
+   "code": "ARTG",
+   "heading": "Art - Graphics",
+   "heading_printed": "Art - Graphics",
+   "rule": "index",
+   "codes": [
+    "ARTG"
+   ],
+   "candidate": null,
+   "label": "Art - Graphics (ARTG)",
+   "address": "https://catalog.mpc.edu/course-descriptions/artg/"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art - History",
+   "heading_printed": "Art - History",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "label": "Art - History (ARTH)",
+   "address": "https://catalog.mpc.edu/course-descriptions/arth/"
+  },
+  {
+   "code": "ARTP",
+   "heading": "Art - Photography",
+   "heading_printed": "Art - Photography",
+   "rule": "index",
+   "codes": [
+    "ARTP"
+   ],
+   "candidate": null,
+   "label": "Art - Photography (ARTP)",
+   "address": "https://catalog.mpc.edu/course-descriptions/artp/"
+  },
+  {
+   "code": "ARTS",
+   "heading": "Art - Studio",
+   "heading_printed": "Art - Studio",
+   "rule": "index",
+   "codes": [
+    "ARTS"
+   ],
+   "candidate": null,
+   "label": "Art - Studio (ARTS)",
+   "address": "https://catalog.mpc.edu/course-descriptions/arts/"
+  },
+  {
+   "code": "ARTV",
+   "heading": "Art - Video",
+   "heading_printed": "Art - Video",
+   "rule": "index",
+   "codes": [
+    "ARTV"
+   ],
+   "candidate": null,
+   "label": "Art - Video (ARTV)",
+   "address": "https://catalog.mpc.edu/course-descriptions/artv/"
+  },
+  {
+   "code": "ASTR",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "ASTR"
+   ],
+   "candidate": null,
+   "label": "Astronomy (ASTR)",
+   "address": "https://catalog.mpc.edu/course-descriptions/astr/"
+  },
+  {
+   "code": "ATHL",
+   "heading": "Athletics",
+   "heading_printed": "Athletics",
+   "rule": "index",
+   "codes": [
+    "ATHL"
+   ],
+   "candidate": null,
+   "label": "Athletics (ATHL)",
+   "address": "https://catalog.mpc.edu/course-descriptions/athl/"
+  },
+  {
+   "code": "AUTO",
+   "heading": "Automotive Technology",
+   "heading_printed": "Automotive Technology",
+   "rule": "index",
+   "codes": [
+    "AUTO"
+   ],
+   "candidate": null,
+   "label": "Automotive Technology (AUTO)",
+   "address": "https://catalog.mpc.edu/course-descriptions/auto/"
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "label": "Biology (BIOL)",
+   "address": "https://catalog.mpc.edu/course-descriptions/biol/"
+  },
+  {
+   "code": "BUSC",
+   "heading": "Business Skills",
+   "heading_printed": "Business Skills",
+   "rule": "index",
+   "codes": [
+    "BUSC"
+   ],
+   "candidate": null,
+   "label": "Business Skills (BUSC)",
+   "address": "https://catalog.mpc.edu/course-descriptions/busc/"
+  },
+  {
+   "code": "BUSI",
+   "heading": "Business",
+   "heading_printed": "Business",
+   "rule": "index",
+   "codes": [
+    "BUSI"
+   ],
+   "candidate": null,
+   "label": "Business (BUSI)",
+   "address": "https://catalog.mpc.edu/course-descriptions/busi/"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "label": "Chemistry (CHEM)",
+   "address": "https://catalog.mpc.edu/course-descriptions/chem/"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "label": "Communication Studies (COMM) and Speech Communications (SPCH)",
+   "address": "https://catalog.mpc.edu/course-descriptions/comm/"
+  },
+  {
+   "code": "COUN",
+   "heading": "Counseling",
+   "heading_printed": "Counseling",
+   "rule": "index",
+   "codes": [
+    "COUN"
+   ],
+   "candidate": null,
+   "label": "Counseling (COUN)",
+   "address": "https://catalog.mpc.edu/course-descriptions/coun/"
+  },
+  {
+   "code": "CSCI",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "index",
+   "codes": [
+    "CSCI"
+   ],
+   "candidate": null,
+   "label": "Computer Science (CSCI)",
+   "address": "https://catalog.mpc.edu/course-descriptions/csci/"
+  },
+  {
+   "code": "CSIS",
+   "heading": "Computer Security and Information Systems",
+   "heading_printed": "Computer Security and Information Systems",
+   "rule": "index",
+   "codes": [
+    "CSIS"
+   ],
+   "candidate": null,
+   "label": "Computer Security and Information Systems (CSIS)",
+   "address": "https://catalog.mpc.edu/course-descriptions/csis/"
+  },
+  {
+   "code": "DANC",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "index",
+   "codes": [
+    "DANC"
+   ],
+   "candidate": null,
+   "label": "Dance (DANC)",
+   "address": "https://catalog.mpc.edu/course-descriptions/danc/"
+  },
+  {
+   "code": "DNTL",
+   "heading": "Dental Technology",
+   "heading_printed": "Dental Technology",
+   "rule": "index",
+   "codes": [
+    "DNTL"
+   ],
+   "candidate": null,
+   "label": "Dental Technology (DNTL)",
+   "address": "https://catalog.mpc.edu/course-descriptions/dntl/"
+  },
+  {
+   "code": "ECED",
+   "heading": "Early Childhood Education",
+   "heading_printed": "Early Childhood Education",
+   "rule": "index",
+   "codes": [
+    "ECED"
+   ],
+   "candidate": null,
+   "label": "Early Childhood Education (ECED)",
+   "address": "https://catalog.mpc.edu/course-descriptions/eced/"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "label": "Economics (ECON)",
+   "address": "https://catalog.mpc.edu/course-descriptions/econ/"
+  },
+  {
+   "code": "EDUC",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "index",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "label": "Education (EDUC)",
+   "address": "https://catalog.mpc.edu/course-descriptions/educ/"
+  },
+  {
+   "code": "EMMS",
+   "heading": "Emergency Medical Services",
+   "heading_printed": "Emergency Medical Services",
+   "rule": "index",
+   "codes": [
+    "EMMS"
+   ],
+   "candidate": null,
+   "label": "Emergency Medical Services (EMMS)",
+   "address": "https://catalog.mpc.edu/course-descriptions/emms/"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "label": "English (ENGL)",
+   "address": "https://catalog.mpc.edu/course-descriptions/engl/"
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "index",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "label": "Engineering (ENGR)",
+   "address": "https://catalog.mpc.edu/course-descriptions/engr/"
+  },
+  {
+   "code": "ENSL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English as a Second Language",
+   "rule": "index",
+   "codes": [
+    "ENSL"
+   ],
+   "candidate": null,
+   "label": "English as a Second Language (ENSL)",
+   "address": "https://catalog.mpc.edu/course-descriptions/ensl/"
+  },
+  {
+   "code": "ETNC",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ETNC"
+   ],
+   "candidate": null,
+   "label": "Ethnic Studies (ETNC)",
+   "address": "https://catalog.mpc.edu/course-descriptions/etnc/"
+  },
+  {
+   "code": "FASH",
+   "heading": "Fashion",
+   "heading_printed": "Fashion",
+   "rule": "index",
+   "codes": [
+    "FASH"
+   ],
+   "candidate": null,
+   "label": "Fashion (FASH)",
+   "address": "https://catalog.mpc.edu/course-descriptions/fash/"
+  },
+  {
+   "code": "FPTC",
+   "heading": "Fire Protection Technology",
+   "heading_printed": "Fire Protection Technology",
+   "rule": "index",
+   "codes": [
+    "FPTC"
+   ],
+   "candidate": null,
+   "label": "Fire Protection Technology (FPTC)",
+   "address": "https://catalog.mpc.edu/course-descriptions/fptc/"
+  },
+  {
+   "code": "FREN",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "index",
+   "codes": [
+    "FREN"
+   ],
+   "candidate": null,
+   "label": "French (FREN)",
+   "address": "https://catalog.mpc.edu/course-descriptions/fren/"
+  },
+  {
+   "code": "GENT",
+   "heading": "Gentrain",
+   "heading_printed": "Gentrain",
+   "rule": "index",
+   "codes": [
+    "GENT"
+   ],
+   "candidate": null,
+   "label": "Gentrain (GENT)",
+   "address": "https://catalog.mpc.edu/course-descriptions/gent/"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "label": "Geography (GEOG)",
+   "address": "https://catalog.mpc.edu/course-descriptions/geog/"
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "label": "Geology (GEOL)",
+   "address": "https://catalog.mpc.edu/course-descriptions/geol/"
+  },
+  {
+   "code": "GLST",
+   "heading": "Global Studies",
+   "heading_printed": "Global Studies",
+   "rule": "index",
+   "codes": [
+    "GLST"
+   ],
+   "candidate": null,
+   "label": "Global Studies (GLST)",
+   "address": "https://catalog.mpc.edu/course-descriptions/glst/"
+  },
+  {
+   "code": "GWOS",
+   "heading": "Gender and Women's Studies",
+   "heading_printed": "Gender and Women's Studies",
+   "rule": "index",
+   "codes": [
+    "GWOS"
+   ],
+   "candidate": null,
+   "label": "Gender and Women's Studies (GWOS)",
+   "address": "https://catalog.mpc.edu/course-descriptions/gwos/"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "label": "History (HIST)",
+   "address": "https://catalog.mpc.edu/course-descriptions/hist/"
+  },
+  {
+   "code": "HLTH",
+   "heading": "Health Education",
+   "heading_printed": "Health Education",
+   "rule": "index",
+   "codes": [
+    "HLTH"
+   ],
+   "candidate": null,
+   "label": "Health Education (HLTH)",
+   "address": "https://catalog.mpc.edu/course-descriptions/hlth/"
+  },
+  {
+   "code": "HORT",
+   "heading": "Horticulture",
+   "heading_printed": "Horticulture",
+   "rule": "index",
+   "codes": [
+    "HORT"
+   ],
+   "candidate": null,
+   "label": "Horticulture (HORT)",
+   "address": "https://catalog.mpc.edu/course-descriptions/hort/"
+  },
+  {
+   "code": "HOSP",
+   "heading": "Hospitality",
+   "heading_printed": "Hospitality",
+   "rule": "index",
+   "codes": [
+    "HOSP"
+   ],
+   "candidate": null,
+   "label": "Hospitality (HOSP)",
+   "address": "https://catalog.mpc.edu/course-descriptions/hosp/"
+  },
+  {
+   "code": "HUMA",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "index",
+   "codes": [
+    "HUMA"
+   ],
+   "candidate": null,
+   "label": "Humanities (HUMA)",
+   "address": "https://catalog.mpc.edu/course-descriptions/huma/"
+  },
+  {
+   "code": "HUMS",
+   "heading": "Human Services",
+   "heading_printed": "Human Services",
+   "rule": "index",
+   "codes": [
+    "HUMS"
+   ],
+   "candidate": null,
+   "label": "Human Services (HUMS)",
+   "address": "https://catalog.mpc.edu/course-descriptions/hums/"
+  },
+  {
+   "code": "INDS",
+   "heading": "Interdisciplinary Studies",
+   "heading_printed": "Interdisciplinary Studies",
+   "rule": "index",
+   "codes": [
+    "INDS"
+   ],
+   "candidate": null,
+   "label": "Interdisciplinary Studies (INDS)",
+   "address": "https://catalog.mpc.edu/course-descriptions/inds/"
+  },
+  {
+   "code": "JOUR",
+   "heading": "Journalism",
+   "heading_printed": "Journalism",
+   "rule": "index",
+   "codes": [
+    "JOUR"
+   ],
+   "candidate": null,
+   "label": "Journalism (JOUR)",
+   "address": "https://catalog.mpc.edu/course-descriptions/jour/"
+  },
+  {
+   "code": "JPNS",
+   "heading": "Japanese",
+   "heading_printed": "Japanese",
+   "rule": "index",
+   "codes": [
+    "JPNS"
+   ],
+   "candidate": null,
+   "label": "Japanese (JPNS)",
+   "address": "https://catalog.mpc.edu/course-descriptions/jpns/"
+  },
+  {
+   "code": "KINS",
+   "heading": "Kinesiology",
+   "heading_printed": "Kinesiology",
+   "rule": "index",
+   "codes": [
+    "KINS"
+   ],
+   "candidate": null,
+   "label": "Kinesiology (KINS)",
+   "address": "https://catalog.mpc.edu/course-descriptions/kins/"
+  },
+  {
+   "code": "LETP",
+   "heading": "Law Enforcement Training Program",
+   "heading_printed": "Law Enforcement Training Program",
+   "rule": "index",
+   "codes": [
+    "LETP"
+   ],
+   "candidate": null,
+   "label": "Law Enforcement Training Program (LETP)",
+   "address": "https://catalog.mpc.edu/course-descriptions/letp/"
+  },
+  {
+   "code": "LIBR",
+   "heading": "Library Science",
+   "heading_printed": "Library Science",
+   "rule": "index",
+   "codes": [
+    "LIBR"
+   ],
+   "candidate": null,
+   "label": "Library Science (LIBR)",
+   "address": "https://catalog.mpc.edu/course-descriptions/libr/"
+  },
+  {
+   "code": "LING",
+   "heading": "Linguistics",
+   "heading_printed": "Linguistics",
+   "rule": "index",
+   "codes": [
+    "LING"
+   ],
+   "candidate": null,
+   "label": "Linguistics (LING)",
+   "address": "https://catalog.mpc.edu/course-descriptions/ling/"
+  },
+  {
+   "code": "LNSK",
+   "heading": "Learning Skills",
+   "heading_printed": "Learning Skills",
+   "rule": "index",
+   "codes": [
+    "LNSK"
+   ],
+   "candidate": null,
+   "label": "Learning Skills (LNSK)",
+   "address": "https://catalog.mpc.edu/course-descriptions/lnsk/"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "label": "Mathematics (MATH) and Statistics (STAT)",
+   "address": "https://catalog.mpc.edu/course-descriptions/math/"
+  },
+  {
+   "code": "MEDA",
+   "heading": "Medical Assisting",
+   "heading_printed": "Medical Assisting",
+   "rule": "index",
+   "codes": [
+    "MEDA"
+   ],
+   "candidate": null,
+   "label": "Medical Assisting (MEDA)",
+   "address": "https://catalog.mpc.edu/course-descriptions/meda/"
+  },
+  {
+   "code": "MUSC",
+   "heading": "Commercial Music",
+   "heading_printed": "Commercial Music",
+   "rule": "index",
+   "codes": [
+    "MUSC"
+   ],
+   "candidate": null,
+   "label": "Commercial Music (MUSC)",
+   "address": "https://catalog.mpc.edu/course-descriptions/musc/"
+  },
+  {
+   "code": "MUSI",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "index",
+   "codes": [
+    "MUSI"
+   ],
+   "candidate": null,
+   "label": "Music (MUSI)",
+   "address": "https://catalog.mpc.edu/course-descriptions/musi/"
+  },
+  {
+   "code": "NURS",
+   "heading": "Nursing",
+   "heading_printed": "Nursing",
+   "rule": "index",
+   "codes": [
+    "NURS"
+   ],
+   "candidate": null,
+   "label": "Nursing (NURS)",
+   "address": "https://catalog.mpc.edu/course-descriptions/nurs/"
+  },
+  {
+   "code": "NUTF",
+   "heading": "Nutrition",
+   "heading_printed": "Nutrition",
+   "rule": "index",
+   "codes": [
+    "NUTF"
+   ],
+   "candidate": null,
+   "label": "Nutrition (NUTF)",
+   "address": "https://catalog.mpc.edu/course-descriptions/nutf/"
+  },
+  {
+   "code": "OCEN",
+   "heading": "Oceanography",
+   "heading_printed": "Oceanography",
+   "rule": "index",
+   "codes": [
+    "OCEN"
+   ],
+   "candidate": null,
+   "label": "Oceanography (OCEN)",
+   "address": "https://catalog.mpc.edu/course-descriptions/ocen/"
+  },
+  {
+   "code": "PFIT",
+   "heading": "Physical Fitness",
+   "heading_printed": "Physical Fitness",
+   "rule": "index",
+   "codes": [
+    "PFIT"
+   ],
+   "candidate": null,
+   "label": "Physical Fitness (PFIT)",
+   "address": "https://catalog.mpc.edu/course-descriptions/pfit/"
+  },
+  {
+   "code": "PHED",
+   "heading": "Physical Education",
+   "heading_printed": "Physical Education",
+   "rule": "index",
+   "codes": [
+    "PHED"
+   ],
+   "candidate": null,
+   "label": "Physical Education (PHED)",
+   "address": "https://catalog.mpc.edu/course-descriptions/phed/"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "label": "Philosophy (PHIL)",
+   "address": "https://catalog.mpc.edu/course-descriptions/phil/"
+  },
+  {
+   "code": "PHSO",
+   "heading": "Physiology",
+   "heading_printed": "Physiology",
+   "rule": "index",
+   "codes": [
+    "PHSO"
+   ],
+   "candidate": null,
+   "label": "Physiology (PHSO)",
+   "address": "https://catalog.mpc.edu/course-descriptions/phso/"
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "label": "Physics (PHYS)",
+   "address": "https://catalog.mpc.edu/course-descriptions/phys/"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "label": "Political Science (POLS)",
+   "address": "https://catalog.mpc.edu/course-descriptions/pols/"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "label": "Psychology (PSYC)",
+   "address": "https://catalog.mpc.edu/course-descriptions/psyc/"
+  },
+  {
+   "code": "REAL",
+   "heading": "Real Estate",
+   "heading_printed": "Real Estate",
+   "rule": "index",
+   "codes": [
+    "REAL"
+   ],
+   "candidate": null,
+   "label": "Real Estate (REAL)",
+   "address": "https://catalog.mpc.edu/course-descriptions/real/"
+  },
+  {
+   "code": "SIGN",
+   "heading": "American Sign Language",
+   "heading_printed": "American Sign Language",
+   "rule": "index",
+   "codes": [
+    "SIGN"
+   ],
+   "candidate": null,
+   "label": "American Sign Language (SIGN)",
+   "address": "https://catalog.mpc.edu/course-descriptions/sign/"
+  },
+  {
+   "code": "SOCI",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOCI"
+   ],
+   "candidate": null,
+   "label": "Sociology (SOCI)",
+   "address": "https://catalog.mpc.edu/course-descriptions/soci/"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "label": "Spanish (SPAN)",
+   "address": "https://catalog.mpc.edu/course-descriptions/span/"
+  },
+  {
+   "code": "SPCH",
+   "heading": "Speech Communications",
+   "heading_printed": "Speech Communications",
+   "rule": "index",
+   "codes": [
+    "SPCH"
+   ],
+   "candidate": null,
+   "label": "Communication Studies (COMM) and Speech Communications (SPCH)",
+   "address": "https://catalog.mpc.edu/course-descriptions/comm/"
+  },
+  {
+   "code": "SPCH",
+   "heading": "Speech Communications",
+   "heading_printed": "Speech Communications",
+   "rule": "index",
+   "codes": [
+    "SPCH"
+   ],
+   "candidate": null,
+   "label": "Speech Communications (SPCH)",
+   "address": "https://catalog.mpc.edu/course-descriptions/spch/"
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "label": "Mathematics (MATH) and Statistics (STAT)",
+   "address": "https://catalog.mpc.edu/course-descriptions/math/"
+  },
+  {
+   "code": "THEA",
+   "heading": "Theatre Arts",
+   "heading_printed": "Theatre Arts",
+   "rule": "index",
+   "codes": [
+    "THEA"
+   ],
+   "candidate": null,
+   "label": "Theatre Arts (THEA)",
+   "address": "https://catalog.mpc.edu/course-descriptions/thea/"
+  },
+  {
+   "code": "WORK",
+   "heading": "Work Experience",
+   "heading_printed": "Work Experience",
+   "rule": "index",
+   "codes": [
+    "WORK"
+   ],
+   "candidate": null,
+   "label": "Work Experience (WORK)",
+   "address": "https://catalog.mpc.edu/course-descriptions/coop/"
+  },
+  {
+   "code": "WRLD",
+   "heading": "World Civilizations",
+   "heading_printed": "World Civilizations",
+   "rule": "index",
+   "codes": [
+    "WRLD"
+   ],
+   "candidate": null,
+   "label": "World Civilizations (WRLD)",
+   "address": "https://catalog.mpc.edu/course-descriptions/wrld/"
+  }
+ ]
+}

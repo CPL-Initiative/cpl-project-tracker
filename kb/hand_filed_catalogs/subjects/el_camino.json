@@ -1,0 +1,1796 @@
+{
+ "_what": "The subject heading El Camino College's catalog prints above each subject's first course, read for the local subject titles (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_subject_headings.py from a headings read; `heading` is saved in Title Case (Sam, 2026-11-21) with `heading_printed` as the catalog prints it; `above` holds the lines as printed, `rule` how the heading was taken (named, caps, fits or none), and `code_fits` whether the code's letters run in order through the heading, a second signal that decides nothing.",
+ "college": "El Camino College",
+ "run": "44948526227",
+ "source": [
+  "https://gist.githubusercontent.com/cobi-cto/a30b98d33dcbf8070ca5b313eaa2bff5/raw/el-camino-2026-27-catalog-part-01-of-03.txt",
+  "https://gist.githubusercontent.com/cobi-cto/a30b98d33dcbf8070ca5b313eaa2bff5/raw/el-camino-2026-27-catalog-part-02-of-03.txt",
+  "https://gist.githubusercontent.com/cobi-cto/a30b98d33dcbf8070ca5b313eaa2bff5/raw/el-camino-2026-27-catalog-part-03-of-03.txt"
+ ],
+ "subjects": 99,
+ "with_heading": 82,
+ "rows": [
+  {
+   "code": "ACR",
+   "heading": "Air Conditioning and Refrigeration",
+   "heading_printed": "Air Conditioning and Refrigeration",
+   "rule": "fits",
+   "codes": [
+    "ACR"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "This high school level course covers successful methods for improving academic and career strategies and skills. It is a survey of educational and",
+    "occupational opportunities and requirements. Successful completion of this course will meet requirements for five Adult High School Diploma credits.",
+    "Note: This course is open entry/open exit.",
+    "Air Conditioning and Refrigeration"
+   ],
+   "first_course": "ACR 5 - Electrical Applications"
+  },
+  {
+   "code": "ACRP",
+   "heading": "Automotive Collision Repair/Painting",
+   "heading_printed": "Automotive Collision Repair/Painting",
+   "rule": "fits",
+   "codes": [
+    "ACRP"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "Note: *Transfer limitations apply. For eligibility requirements, go to www.elcamino.edu/admissions/credit.asp. *Note: Transfer limitations apply.",
+    "(formerly Astronomy 99abc)",
+    "El Camino College 2026-2027 Catalog Page 324 of 620",
+    "Automotive Collision Repair/Painting"
+   ],
+   "first_course": "ACRP 1A - Introduction to Automotive Collision Repair"
+  },
+  {
+   "code": "AHIS",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "fits",
+   "codes": [
+    "AHIS"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "This course is an introduction to non-toxic methods, materials, and techniques of screen printing. Emphasis is placed on single and multiple layer",
+    "printing, digital and non-digital applications as well as single and multicolor printing (CMYK) techniques. Use of various substrates such as paper, vinyl,",
+    "and fabric will also be covered.",
+    "Art History"
+   ],
+   "first_course": "AHIS 101 - Art and Visual Culture: A Global Perspective"
+  },
+  {
+   "code": "AHSD",
+   "heading": "Adult High School Diploma",
+   "heading_printed": "Adult High School Diploma",
+   "rule": "fits",
+   "codes": [
+    "AHSD"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "Departments) in this region. After the student has completed a law enforcement explorer application with one of the above police agencies, the student",
+    "will be prepared to enroll in this course.",
+    "El Camino College 2026-2027 Catalog Page 291 of 620",
+    "Adult High School Diploma"
+   ],
+   "first_course": "AHSD 500 - High School Fundamentals of English A"
+  },
+  {
+   "code": "AJ",
+   "heading": "Administration of Justice",
+   "heading_printed": "Administration of Justice",
+   "rule": "fits",
+   "codes": [
+    "AJ"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "proficiency equivalent to two years of high school instruction.",
+    "El Camino College 2026-2027 Catalog Page 285 of 620",
+    "Course Descriptions",
+    "Administration of Justice"
+   ],
+   "first_course": "AJ 10 - Introduction to Homeland Security"
+  },
+  {
+   "code": "ALH",
+   "heading": "Allied Health",
+   "heading_printed": "Allied Health",
+   "rule": "fits",
+   "codes": [
+    "ALH"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "Note: *Transfer limitations apply.",
+    "For eligibility requirements, go to www.elcamino.edu/admissions/credit.asp",
+    "(formerly Air Conditioning and Refrigeration 99abc)",
+    "Allied Health"
+   ],
+   "first_course": "ALH 500 - Personal Care Aide"
+  },
+  {
+   "code": "ANAT",
+   "heading": "Anatomy",
+   "heading_printed": "Anatomy",
+   "rule": "fits",
+   "codes": [
+    "ANAT"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "falls. Through gentle, guided exercises and practical instruction, students will strengthen muscles, improve coordination, and develop strategies to",
+    "prevent falls in everyday life. Topics include common fall risk factors, home safety, posture and gait improvement, and the safe use of assistive devices.",
+    "Emphasis is placed on promoting independence, wellness, and active aging in a supportive and inclusive environment.",
+    "Anatomy"
+   ],
+   "first_course": "ANAT 30 - Essentials of Anatomy and Physiology"
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "fits",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "reproductive system, genetic conditions and disorders, embryology and development. Laboratory investigations include models of the human body and",
+    "dissection of higher vertebrates, in addition to physiological experiments. The course is designed for science, health-related, pre-nursing (Bachelor of",
+    "Science in Nursing), and pre-professional majors.",
+    "Anthropology"
+   ],
+   "first_course": "ANTH 1 - Introduction to Biological Anthropology"
+  },
+  {
+   "code": "APHY",
+   "heading": "Anatomy and Physiology",
+   "heading_printed": "Anatomy and Physiology",
+   "rule": "fits",
+   "codes": [
+    "APHY"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "dissection of higher vertebrates are emphasized in laboratory. This course is designed for science, health-related, pre-nursing (Bachelor of Science in",
+    "nursing), and pre-professional majors.",
+    "Note: The maximum UC credit allowed for students completing ANAT 30, Anatomy 32, and PHYO 31 is two courses.",
+    "Anatomy and Physiology"
+   ],
+   "first_course": "APHY 34A - Anatomy and Physiology I"
+  },
+  {
+   "code": "ARCH",
+   "heading": "Architecture",
+   "heading_printed": "Architecture",
+   "rule": "fits",
+   "codes": [
+    "ARCH"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "design, as well as provide opportunities for the critique and interpretation of anthropological material.",
+    "Note: No background in Anthropology is required.",
+    "(formerly ANTH 20abcd and ANTH 20A)",
+    "Architecture"
+   ],
+   "first_course": "ARCH 95 - Cooperative Work Experience Education"
+  },
+  {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "fits",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "As the fourth course in the architectural design studio series, this course explores the relationship between design and build (construction and",
+    "fabrication), and between design and alternative materials.",
+    "(formerly Architecture 179)",
+    "Art"
+   ],
+   "first_course": "ART 96 - Cooperative Work Experience Education"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "section",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "This course surveys the foundations of Islamic art and visual culture globally (including the Middle East, North Africa, Europe, and Central, South, and",
+    "Southeast Asia), from the 7th to the 21st centuries CE. Key artworks are studied in relation to historical and cultural contexts that consider the effects of",
+    "shifting social, political, philosophical, and spiritual paradigms on the production of art. Additionally, the course will focus on the presentation and",
+    "collection of Islamic art in Western museums, and the influence of Islam on the intellectual and cultural life of the West."
+   ],
+   "first_course": "ARTH C1100 - Survey of Art from Prehistory to the Medieval Era"
+  },
+  {
+   "code": "ASL",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "ASL"
+   ],
+   "candidate": "Sign Language/Interpreter Training",
+   "page": 1,
+   "above": [
+    "This advanced course explores bipedal humanoid robotic applications, with an emphasis on humanoid robot kinematics, Zero Moment Point (ZMP) and",
+    "dynamics, biped walking, generation of whole-body motion patterns, and dynamic simulation. This course will serve as the final installment of the",
+    "robotics pathway.",
+    "Sign Language/Interpreter Training"
+   ],
+   "first_course": "ASL 111 - American Sign Language I"
+  },
+  {
+   "code": "ASTR",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "fits",
+   "codes": [
+    "ASTR"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "This course provides an overview of art and architecture from the Renaissance to the contemporary period with a focus on art from Europe. The course",
+    "will further consider global interactions involving this region.",
+    "El Camino College 2026-2027 Catalog Page 322 of 620",
+    "Astronomy"
+   ],
+   "first_course": "ASTR 12 - Astronomy Laboratory"
+  },
+  {
+   "code": "ATEC",
+   "heading": "Automotive Technology",
+   "heading_printed": "Automotive Technology",
+   "rule": "fits",
+   "codes": [
+    "ATEC"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "offerings. Regular conferences with the instructor are coordinated with assigned Automotive Collision Repair/Painting projects (54 hours per unit).",
+    "Note: *Transfer limitations apply. For eligibility requirements, go to www.elcamino.edu/admissions/credit.asp",
+    "(formerly Automotive Collision Repair/Painting 99abc)",
+    "Automotive Technology"
+   ],
+   "first_course": "ATEC 1 - Introduction to Automotive Service"
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "fits",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "hybrid and electric vehicles systems will be vital topics defined by the manufacture. Topics are to be administered according to the student's course of",
+    "study.",
+    "Note: Pass/no pass only.",
+    "Biology"
+   ],
+   "first_course": "BIOL 8 - Biology of Plants"
+  },
+  {
+   "code": "BSRC",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "BSRC"
+   ],
+   "candidate": "Respiratory Care",
+   "page": 1,
+   "above": [
+    "This course covers the history, practices, and philosophy of organized camp and camp counseling. Emphasis is placed on the camp counselor's role in",
+    "guidance and leadership, analysis of techniques of camp counseling, proper planning, and theory of camping. The operations of day and short-term",
+    "recreational camps and outdoor camps, as well as professional opportunities in the field are also examined.",
+    "Respiratory Care"
+   ],
+   "first_course": "BSRC 371 - Principles of Evidence Based Medicine"
+  },
+  {
+   "code": "BUS",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "the instructor are coordinated with assigned Business projects (54 hours per unit).",
+    "Note: Transfer limitations apply.",
+    "Note: *Transfer limitations apply. For eligibility requirements, go to www.elcamino.edu/admissions/credit.asp",
+    "(formerly Business 99abc)"
+   ],
+   "first_course": "BUS 101 - Introduction to Business"
+  },
+  {
+   "code": "C H",
+   "heading": "Contemporary Health",
+   "heading_printed": "Contemporary Health",
+   "rule": "fits",
+   "codes": [
+    "C H"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "and health principles. Topics include scope and application of the OSHA construction standards. Special emphasis is placed on those areas that are the",
+    "most hazardous, using OSHA standards as a guide. Upon successful course completion, students will receive an OSHA 30-Hour Construction Outreach",
+    "Training Completion Card.",
+    "Contemporary Health"
+   ],
+   "first_course": "C H 1 - Personal and Community Health Issues"
+  },
+  {
+   "code": "CADD",
+   "heading": "Computer Aided Design/Drafting",
+   "heading_printed": "Computer Aided Design/Drafting",
+   "rule": "fits",
+   "codes": [
+    "CADD"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "El Camino College 2026-2027 Catalog Page 364 of 620",
+    "direction for the preparation of National Forensics Association Lincoln-Douglas Debate and International Public Debate Association individual debate.",
+    "Students will be competing in intercollegiate forensics competition.",
+    "Computer Aided Design/Drafting"
+   ],
+   "first_course": "CADD 5 - Introduction to Mechanical Drafting"
+  },
+  {
+   "code": "CDEV",
+   "heading": "Child Development",
+   "heading_printed": "Child Development",
+   "rule": "fits",
+   "codes": [
+    "CDEV"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "El Camino College 2026-2027 Catalog Page 353 of 620",
+    "Note: *Transfer limitations apply. For eligibility requirements, go to www.elcamino.edu/admissions/credit.asp",
+    "(formerly Chemistry 99abc)",
+    "Child Development"
+   ],
+   "first_course": "CDEV 103 - Child Growth and Development"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "fits",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "as a dual-roster course.",
+    "Note: The content of BUS 565C, a noncredit course, is identical to the content of BUS 165C, a credit course. BUS 565C shall be offered with BUS 165C",
+    "as a dual-roster course.",
+    "Chemistry"
+   ],
+   "first_course": "CHEM 1A - General Chemistry I"
+  },
+  {
+   "code": "CHIN",
+   "heading": "Chinese",
+   "heading_printed": "Chinese",
+   "rule": "fits",
+   "codes": [
+    "CHIN"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "children. The topics covered include: child socialization within different contexts, the importance of play, adversities including trauma, homelessness and",
+    "poverty, connections to community resources and advocacy for children and parents. This course is intended for anyone interested in obtaining a basic",
+    "understanding of child development and the field of early childhood education.",
+    "Chinese"
+   ],
+   "first_course": "CHIN 1 - Elementary Chinese I"
+  },
+  {
+   "code": "CIS",
+   "heading": "Computer Information Systems",
+   "heading_printed": "Computer Information Systems",
+   "rule": "fits",
+   "codes": [
+    "CIS"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "Regular conferences with the instructor are coordinated with assigned Computer Aided Design/Drafting projects (54 hours per unit).",
+    "Note: *Transfer limitations apply. For eligibility requirements, go to www.elcamino.edu/admissions/credit.asp",
+    "(formerly Computer Aided Design/Drafting 99abc)",
+    "Computer Information Systems"
+   ],
+   "first_course": "CIS 2 - Office Applications"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "fits",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "with the instructor are coordinated with assigned Chinese education projects (54 hours per unit).",
+    "Note: *Transfer limitations apply. For eligibility requirements, go to www.elcamino.edu/admissions/credit.asp",
+    "(formerly Chinese 99abc)",
+    "Communication Studies"
+   ],
+   "first_course": "COMM C1000 - Introduction to Public Speaking"
+  },
+  {
+   "code": "COMS",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "section",
+   "codes": [
+    "COMS"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "research methods, examining issues historically and geographically, to understand the cultural and social frameworks that shape human behavior and",
+    "appreciate the varied contributions of different genders, ethnicities, and societies, fostering a global and comparative perspective. This honors course is",
+    "enriched through extensive reading, writing, and research assignments.",
+    "Note: Students may take either Communication Studies C1004 or Communication Studies C1004H. Duplicate credit will not be awarded."
+   ],
+   "first_course": "COMS 99 - Independent Study"
+  },
+  {
+   "code": "COSM",
+   "heading": "Cosmetology",
+   "heading_printed": "Cosmetology",
+   "rule": "fits",
+   "codes": [
+    "COSM"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "challenges women face, such as body image, abuse, nutrition and exercise, sexual and reproductive health, consumerism, and mental health.",
+    "Note: The maximum UC credit allowed for students completing Contemporary Health 5 and C H 1 is one course.",
+    "El Camino College 2026-2027 Catalog Page 385 of 620",
+    "Cosmetology"
+   ],
+   "first_course": "COSM 1 - Introduction to Cosmetology Procedures"
+  },
+  {
+   "code": "CSCI",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "fits",
+   "codes": [
+    "CSCI"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "This noncredit course is a review of the concepts and skills required to successfully pass the Amazon Web Services Cloud Practitioner certification",
+    "examination. The course adheres to the AWS Academy Cloud Foundations curriculum and provides a detailed overview of cloud concepts, AWS core",
+    "services, security, architecture, pricing, and support.",
+    "Computer Science"
+   ],
+   "first_course": "CSCI 1 - Problem Solving and Program Design Using C++"
+  },
+  {
+   "code": "CTEC",
+   "heading": "Construction Technology",
+   "heading_printed": "Construction Technology",
+   "rule": "fits",
+   "codes": [
+    "CTEC"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "conferences with the instructor are coordinated with assigned Computer Science projects (54 hours per unit).",
+    "Note: *Transfer limitations apply. For eligibility requirements, go to www.elcamino.edu/admissions/credit.asp",
+    "(formerly Computer Science 99abc)",
+    "Construction Technology"
+   ],
+   "first_course": "CTEC 95 - Cooperative Work Experience Education"
+  },
+  {
+   "code": "DANC",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "fits",
+   "codes": [
+    "DANC"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "with the instructor are coordinated with assigned Cosmetology projects (54 hours per unit).",
+    "Note: *Transfer limitations apply. For eligibility requirements, go to www.elcamino.edu/admissions/credit.asp",
+    "(formerly Cosmetology 99abc)",
+    "Dance"
+   ],
+   "first_course": "DANC 99 - Independent Study"
+  },
+  {
+   "code": "DART",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "DART"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "genre. Students participate in a live Musical Theatre Production to enhance performance skills that integrate singing, acting and dancing. Students will",
+    "have the opportunity to demonstrate and be ranked on their dancing, singing and acting skills as well as their insights into character development",
+    "through an adjudicated competition hosted annually by the Kennedy Center American College Theater Festival (KCACTF).",
+    "Digital Art and Design Technology"
+   ],
+   "first_course": "DART 95 - Cooperative Work Experience Education"
+  },
+  {
+   "code": "ECHT",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "ECHT"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "environment. This course is designed for students with disabilities and is open to all students.",
+    "Note: Letter grade or pass/no pass option. This course is appropriate for students with disabilities.",
+    "(formerly Educational Development 40)",
+    "Electronics and Computer Hardware Technology"
+   ],
+   "first_course": "ECHT 11 - Introduction to Electronics"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "fits",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "make the assets needed to create a final animation in 2D, 3D, or mixed asset workflows. Projects will focus on narrative, sound, dialog, acting, and",
+    "dynamic expressive elements to tell a compelling story. Students will develop a project from concept to production in a collaborative studio environment",
+    "to put 2D and 3D animation skills in action!",
+    "Economics"
+   ],
+   "first_course": "ECON C2001 - Principles of Microeconomics"
+  },
+  {
+   "code": "EDEV",
+   "heading": "Educational Development",
+   "heading_printed": "Educational Development",
+   "rule": "fits",
+   "codes": [
+    "EDEV"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "contemporary educational issues, California's content standards and frameworks, and teacher performance standards. Throughout the course, students",
+    "will contribute materials to their portfolios and will conduct a minimum of 45 hours of pre-approved, structured fieldwork that represents California's",
+    "diverse student population.",
+    "Educational Development"
+   ],
+   "first_course": "EDEV 10 - English Grammar for Deaf and Hard-of-Hearing Students"
+  },
+  {
+   "code": "EDUC",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "fits",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "finance are also discussed.",
+    "Note: Students will not receive UC credit for Economics 100 if taken after ECON 101 or ECON 102.",
+    "(formerly Economics 5)",
+    "Education"
+   ],
+   "first_course": "EDUC 101 - Introduction to the Field of Education"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "fits",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "teams to design and construct solutions to engineering problems. Emphasis will be placed on testing methods, project construction, project presentation,",
+    "and professional peer review.",
+    "Note: The two-course sequence ETEC 18A and 18B is the same as ETEC 18",
+    "English"
+   ],
+   "first_course": "ENGL C1000 - Academic Reading and Writing"
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "fits",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "Transfer CSU",
+    "This course is an introduction to industrial microprocessors as they relate to industrial and consumer equipment. Included are the fundamentals of",
+    "computer languages, use of software to simulate hardware, digital and analog interfacing, data storage, and troubleshooting.",
+    "Engineering"
+   ],
+   "first_course": "ENGR 1 - Introduction to Engineering"
+  },
+  {
+   "code": "ESL",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "writing assignments, including a required research paper.",
+    "This course, which is designed for English language learners, includes a fifth hour of instruction per week to help students strengthen the reading and",
+    "writing skills, as well as cultural knowledge, both of which are necessary for success in college-level courses.",
+    "El Camino College 2026-2027 Catalog Page 422 of 620"
+   ],
+   "first_course": "ESL 51A - Introduction to English in Conversation"
+  },
+  {
+   "code": "ESTU",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "fits",
+   "codes": [
+    "ESTU"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "prepare for the USCIS Citizenship Interview by practicing the USCIS Civics Questions, conversation strategies, and dictation. This course focuses on",
+    "writing paragraphs with complex sentences while refining accuracy in speaking, listening, and pronunciation.",
+    "Note: This is an open entry/open exit course.",
+    "Ethnic Studies"
+   ],
+   "first_course": "ESTU 1 - Introduction to Ethnic Studies"
+  },
+  {
+   "code": "ET",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "ET"
+   ],
+   "candidate": "Sustainable Design",
+   "page": 1,
+   "above": [
+    "presentations, speaking within a small group and interpersonal conversations, impromptu speaking and briefings will be covered.",
+    "Note: Supervision 109 is the same course as BUS 109.",
+    "(formerly SUPV 27)",
+    "Sustainable Design"
+   ],
+   "first_course": "ET 95 - Cooperative Work Experience Education"
+  },
+  {
+   "code": "ETEC",
+   "heading": "Engineering Technology",
+   "heading_printed": "Engineering Technology",
+   "rule": "fits",
+   "codes": [
+    "ETEC"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "This course is a study of stresses, strains and deformations associated with axial, torsional and flexural loading of bars, shafts and beams, as well as",
+    "pressure loading of thin-walled pressure vessels. The course also covers stress and strain transformation, Mohr's Circle, ductile and brittle failure",
+    "theories, and the buckling of columns. Statically indeterminate systems are also studied.",
+    "Engineering Technology"
+   ],
+   "first_course": "ETEC 10 - Principles of Engineering Technology"
+  },
+  {
+   "code": "FAID",
+   "heading": "First Aid",
+   "heading_printed": "First Aid",
+   "rule": "fits",
+   "codes": [
+    "FAID"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "Note: The content of Fire Tech 513A , a noncredit course, is identical to the content of Fire Tech 113A, a credit course. Fire Tech 513A shall be offered",
+    "with Fire Tech 113A as a dual-roster course.",
+    "El Camino College 2026-2027 Catalog Page 452 of 620",
+    "First Aid"
+   ],
+   "first_course": "FAID 1 - First Aid, Cardiopulmonary Resuscitation (CPR) and Basic Emergency Care"
+  },
+  {
+   "code": "FASH",
+   "heading": "Fashion",
+   "heading_printed": "Fashion",
+   "rule": "fits",
+   "codes": [
+    "FASH"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "in the United States implement academic inquiries and perspectives that highlight issues of race, nationality, class, gender, sexuality, community",
+    "building, Orientalism, transnationalism, culture, assimilation, and activism. Topics include, but are not limited to, the intersection of identity construction,",
+    "media analysis, anti-Asian violence, immigration policies, labor, gender and sexuality, and social justice and liberation movements.",
+    "Fashion"
+   ],
+   "first_course": "FASH 1 - Career Opportunities in Fashion"
+  },
+  {
+   "code": "FILM",
+   "heading": "Film/Video",
+   "heading_printed": "Film/Video",
+   "rule": "fits",
+   "codes": [
+    "FILM"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "In this noncredit course, students gain an understanding of personal, business and product branding. Through exposure to classic and contemporary",
+    "branding strategies, applications and case studies, students explore brand identity elements, positioning and leveraging, and brand equity. Students will",
+    "be taught how to create and implement an original brand plan.",
+    "Film/Video"
+   ],
+   "first_course": "FILM 95 - Cooperative Work Experience Education"
+  },
+  {
+   "code": "FREN",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "fits",
+   "codes": [
+    "FREN"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "Note: Certifying agencies charge an administrative fee for students who pass the exams and wish to receive certification. Obtaining certification",
+    "documentation from these agencies is optional. Students may be required to obtain proof of certification for other needs or outside agency requirements.",
+    "El Camino College is not a certifying agency.",
+    "French"
+   ],
+   "first_course": "FREN 1 - Elementary French I"
+  },
+  {
+   "code": "FTEC",
+   "heading": "Fire and Emergency Technology",
+   "heading_printed": "Fire and Emergency Technology",
+   "rule": "fits",
+   "codes": [
+    "FTEC"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "postproduction.",
+    "Note: Letter grade or pass/no pass option.",
+    "(formerly Film/Video 36)",
+    "Fire and Emergency Technology"
+   ],
+   "first_course": "FTEC 1 - Fire Protection Organization"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "fits",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "make the assets needed to create a final game. Projects will focus on mechanics, programming, narrative, sound, dialogue, animation, and art elements",
+    "to create a compelling play experience. Students will develop a project from pre-production to release in a collaborative studio environment to put game",
+    "production skills in action!",
+    "Geography"
+   ],
+   "first_course": "GEOG 1 - Physical Geography"
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "fits",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "with the instructor are coordinated with assigned Geography projects (54 hours per unit).",
+    "Note: *Transfer limitations apply. For eligibility requirements, go to www.elcamino.edu/admissions/credit.asp",
+    "(formerly Geography 99abc)",
+    "Geology"
+   ],
+   "first_course": "GEOL 1 - Physical Geology"
+  },
+  {
+   "code": "GERM",
+   "heading": "German",
+   "heading_printed": "German",
+   "rule": "fits",
+   "codes": [
+    "GERM"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "conferences with the instructor are coordinated with assigned Earth Science projects (54 hours per unit).",
+    "Note: *Transfer limitations apply. For eligibility requirements, go to www.elcamino.edu/admissions/credit.asp",
+    "(formerly Geology 99abc)",
+    "German"
+   ],
+   "first_course": "GERM 1 - Elementary German I"
+  },
+  {
+   "code": "GPM",
+   "heading": "Games and Playable Media",
+   "heading_printed": "Games and Playable Media",
+   "rule": "fits",
+   "codes": [
+    "GPM"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "conferences with the instructor are coordinated with assigned French education projects (54 hours per unit).",
+    "Note: ***Transfer limitations apply. For eligibility requirements, go to www.elcamino.edu/admissions/credit.asp",
+    "(formerly French 99abc)",
+    "Games and Playable Media"
+   ],
+   "first_course": "GPM 95 - Cooperative Work Experience Education"
+  },
+  {
+   "code": "HDEV",
+   "heading": "Human Development",
+   "heading_printed": "Human Development",
+   "rule": "fits",
+   "codes": [
+    "HDEV"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "El Camino College 2026-2027 Catalog Page 466 of 620",
+    "This course surveys the political, social, cultural, and economic history of Mexico from Pre-Columbian times to the present. Discussion of major epochs",
+    "of Mexican history will focus on the influence of various cultural groups in shaping modern Mexico.",
+    "Human Development"
+   ],
+   "first_course": "HDEV 101 - Orientation to College and Educational Planning"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "fits",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "exploring a broad array of themes literature, politics, pop culture, history, art history, music, and film.",
+    "Note: The prerequisite for this course is comparable to three years of high school German.",
+    "Note: The prerequisite for this course is comparable to three years of high school German.",
+    "History"
+   ],
+   "first_course": "HIST C1001 - United States History to 1877"
+  },
+  {
+   "code": "HUMA",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "fits",
+   "codes": [
+    "HUMA"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "biomedical, sociological (including race, ethnicity, and class), psychological, and anthropological. The values, experiences, and cultural contributions of",
+    "LGBTQ+ individuals will be identified, examined, and authenticated. The course emphasizes an affirming approach and is appropriate for students of",
+    "any sexual orientation and gender identity.",
+    "Humanities"
+   ],
+   "first_course": "HUMA 1 - An Introduction to the Humanities"
+  },
+  {
+   "code": "ITAL",
+   "heading": "Italian",
+   "heading_printed": "Italian",
+   "rule": "fits",
+   "codes": [
+    "ITAL"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "El Camino College 2026-2027 Catalog Page 469 of 620",
+    "This course is an introduction to the humanities through an historical, descriptive, interpretive, and critical study of film, drama, music, literature, painting,",
+    "sculpture, and architecture.",
+    "Italian"
+   ],
+   "first_course": "ITAL 1 - Elementary Italian I"
+  },
+  {
+   "code": "JAPA",
+   "heading": "Japanese",
+   "heading_printed": "Japanese",
+   "rule": "fits",
+   "codes": [
+    "JAPA"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "Transfer CSU, UC",
+    "This course provides an introduction to the cultural aspects of the Italian language through a study of geography, social institutions, literature, art,",
+    "architecture, and music. Topics include a comparison of Italian and other Western languages and cultures. This course is taught in English.",
+    "Japanese"
+   ],
+   "first_course": "JAPA 1 - Elementary Japanese I"
+  },
+  {
+   "code": "JOUR",
+   "heading": "Journalism",
+   "heading_printed": "Journalism",
+   "rule": "fits",
+   "codes": [
+    "JOUR"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "El Camino College 2026-2027 Catalog Page 472 of 620",
+    "Note: *Transfer limitations apply. For eligibility requirements, go to www.elcamino.edu/admissions/credit.asp",
+    "(formerly Japanese 99abc)",
+    "Journalism"
+   ],
+   "first_course": "JOUR 1 - News Writing and Reporting"
+  },
+  {
+   "code": "LAW",
+   "heading": "Law",
+   "heading_printed": "Law",
+   "rule": "fits",
+   "codes": [
+    "LAW"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "with the instructor are coordinated with assigned Journalism projects (54 hours per unit).",
+    "Note: *Transfer limitations apply. For eligibility requirements, go to www.elcamino.edu/admissions/credit.asp",
+    "(formerly Journalism 99abc)",
+    "Law"
+   ],
+   "first_course": "LAW 4 - Legal Environment of Business"
+  },
+  {
+   "code": "LGBT",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "LGBT"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "Noncredit",
+    "This noncredit, open entry/open exit course provides students with information, skills, and resources necessary for successful educational experiences.",
+    "Topics include orientation to college, college readiness, student responsibility in a diverse college setting, learning styles and lifelong learning, goal",
+    "setting for college and career, educational planning, study skills, time management, support networks, and college resources."
+   ],
+   "first_course": "LGBT 101 - Introduction to LGBTQ+ Studies"
+  },
+  {
+   "code": "LIBR",
+   "heading": "Library Information Science",
+   "heading_printed": "Library Information Science",
+   "rule": "fits",
+   "codes": [
+    "LIBR"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "abilities and career expectations.",
+    "Note: *Transfer limitations apply. The total units earned for Cooperative Work Experience Education may not exceed 16 units.",
+    "(formerly Law 95abcd)",
+    "Library Information Science"
+   ],
+   "first_course": "LIBR 100 - Research Skills in the Digital Age"
+  },
+  {
+   "code": "LING",
+   "heading": "Linguistics",
+   "heading_printed": "Linguistics",
+   "rule": "fits",
+   "codes": [
+    "LING"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "evaluation, validation, and citation of Internet sources. The class will culminate in an independent research investigation on a topic important to the",
+    "student.",
+    "(formerly LIBR 10)",
+    "Linguistics"
+   ],
+   "first_course": "LING 1A - Linguistics 1A: An Introduction to Language and Culture"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "fits",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "conferences with the instructor are coordinated with assigned Manufacturing Technology projects (54 hours per unit).",
+    "Note: *Transfer limitations apply. For eligibility requirements, go to www.elcamino.edu/admissions/credit.asp",
+    "(formerly Manufacturing Technology 99abc)",
+    "Mathematics"
+   ],
+   "first_course": "MATH 37 - Basic Accelerated Mathematics"
+  },
+  {
+   "code": "MEDT",
+   "heading": "Medical Terminology",
+   "heading_printed": "Medical Terminology",
+   "rule": "fits",
+   "codes": [
+    "MEDT"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "independent learners. Topics reviewed in this support course may include: concepts from arithmetic, pre-algebra, elementary and intermediate algebra,",
+    "and descriptive statistics that are needed to understand the basics of college-level statistics.",
+    "(formerly MATH 150S)",
+    "Medical Terminology"
+   ],
+   "first_course": "MEDT 1 - Medical Terminology"
+  },
+  {
+   "code": "MICR",
+   "heading": "Microbiology",
+   "heading_printed": "Microbiology",
+   "rule": "fits",
+   "codes": [
+    "MICR"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "This course provides study and practical application of a medical vocabulary system according to body systems. Students review the basic construction",
+    "of medical words, concentrating on word origins, root words, prefixes, and suffixes. Word structure, recognition, analysis, definition, spelling, and",
+    "pronunciation are presented in the context of medical terms for organs, diseases, symptoms, diagnostic tests, and medical surgical procedures.",
+    "Microbiology"
+   ],
+   "first_course": "MICR 33 - General Microbiology"
+  },
+  {
+   "code": "MTEC",
+   "heading": "Manufacturing Technology",
+   "heading_printed": "Manufacturing Technology",
+   "rule": "fits",
+   "codes": [
+    "MTEC"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "setups as applied in industry.",
+    "Note: Letter grade or pass/no pass option.",
+    "(formerly Machine Tool Technology 107abcd)",
+    "Manufacturing Technology"
+   ],
+   "first_course": "MTEC 99 - Independent Study"
+  },
+  {
+   "code": "MTT",
+   "heading": "Machine Tool Technology",
+   "heading_printed": "Machine Tool Technology",
+   "rule": "fits",
+   "codes": [
+    "MTT"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "their community of origin and cross-culturally). Emphasis is placed on an in-depth study of linguistic units larger than the sound, studied via morphology,",
+    "semantics, syntax, and pragmatics. In addition, this course explores community linguistic practices and cross-cultural communication as it relates to",
+    "cross -linguistics studies in morphology, semantics, syntax, and pragmatics.",
+    "Machine Tool Technology"
+   ],
+   "first_course": "MTT 2 - Manufacturing Print Reading"
+  },
+  {
+   "code": "MUSI",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "fits",
+   "codes": [
+    "MUSI"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "are performed by students to reinforce principles of microbiology discussed in lecture. This course is designed for students planning to pursue careers in",
+    "the health sciences or other life sciences.",
+    "El Camino College 2026-2027 Catalog Page 490 of 620",
+    "Music"
+   ],
+   "first_course": "MUSI 96 - Cooperative Work Experience Education"
+  },
+  {
+   "code": "NATE",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "NATE"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "Automotive Service Excellence (ASE) Auto Maintenance and Light Repair Test Area G1. The principles of brakes, steering, suspension, electrical,",
+    "heating and air conditioning are essential components in automotive practices and are vital topics in preparing students for the ASE G1 testing",
+    "requirements.",
+    "Note: This is the second of two courses required for ASE G1 Testing."
+   ],
+   "first_course": "NATE 3 - Automotive Manufactures Training 1"
+  },
+  {
+   "code": "NENG",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "NENG"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "This course provides students with supervised tutorial instruction on writing text with clarity and reading text with literal and critical understanding this",
+    "may include prewriting and pre-reading techniques, organization of text, development of arguments, relationships between parts of text, integration of",
+    "writing and reading for research and revision/editing for clarity and correctness.",
+    "Note: This course is repeatable and open for enrollment at registration and at any time during the semester."
+   ],
+   "first_course": "NENG 0100S - Noncredit Reading and Writing Support"
+  },
+  {
+   "code": "NESL",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "NESL"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "Noncredit",
+    "This is a supervised tutoring course that provides English as a Second Language students with the listening, speaking, reading, and writing skills",
+    "necessary for success on the specific assignments and assessments in the courses for which they seek tutorial support.",
+    "Note: This course is repeatable and open for enrollment at registration and at any time during the semester."
+   ],
+   "first_course": "NESL 02A - Grammar and Conversation Level I"
+  },
+  {
+   "code": "NURS",
+   "heading": "Nursing",
+   "heading_printed": "Nursing",
+   "rule": "fits",
+   "codes": [
+    "NURS"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "noncredit piano course is designed for older adults.",
+    "The content of MUSI 632, a noncredit course, is identical to the content of MUSI 232, a credit course. MUSI 632 shall be offered with MUSI 232 as a",
+    "dual roster course.",
+    "Nursing"
+   ],
+   "first_course": "NURS 143 - Introduction to Nursing"
+  },
+  {
+   "code": "NUTR",
+   "heading": "Nutrition Science",
+   "heading_printed": "Nutrition Science",
+   "rule": "fits",
+   "codes": [
+    "NUTR"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "making a smooth transition from the learner role to the entry-level registered nurses role in a realistic clinical setting. Opportunities to implement",
+    "leadership and management skills as well as decision-making and priority-setting utilizing legal and ethical principles will be provided.",
+    "Note: If there are no preceptorship opportunities available, the student will be working directly with the course clinical instructor.",
+    "Nutrition Science"
+   ],
+   "first_course": "NUTR 99 - Independent Study"
+  },
+  {
+   "code": "OCEA",
+   "heading": "Oceanography",
+   "heading_printed": "Oceanography",
+   "rule": "fits",
+   "codes": [
+    "OCEA"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "Asian American, and Latinx communities. The course also investigates how globalization and acculturation have transformed traditional cuisines and",
+    "contributed to contemporary American food habits. Emphasis is placed on understanding food access, nutrition disparities, and the role of cultural",
+    "competency in promoting health and social equity.",
+    "Oceanography"
+   ],
+   "first_course": "OCEA 10 - Introduction to Oceanography"
+  },
+  {
+   "code": "PAR",
+   "heading": "Parenting",
+   "heading_printed": "Parenting",
+   "rule": "fits",
+   "codes": [
+    "PAR"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "the law; basic legal concepts and legal terminology; and legal procedures of litigation, mediation, and other non-judicial settlements. Organization and",
+    "management of the law office will be included with an emphasis on ethics for the lawyer and the paralegal. Resumes, interviewing skills, and demeanor",
+    "in the law office will also be covered.",
+    "Parenting"
+   ],
+   "first_course": "PAR 500 - Positive Parenting/Caregiving"
+  },
+  {
+   "code": "PARA",
+   "heading": "Paralegal Studies",
+   "heading_printed": "Paralegal Studies",
+   "rule": "fits",
+   "codes": [
+    "PARA"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "of sea floor and coastline features; the spreading sea floor and drifting continents. This course is enriched through additional and more vigorous reading,",
+    "writing, and research assignments.",
+    "Note: Students may take either OCEA 10 or Oceanography 10H. Duplicate credit will not be awarded for OCEA 10 and Oceanography 10H.",
+    "Paralegal Studies"
+   ],
+   "first_course": "PARA 1 - Introduction to Paralegal Studies"
+  },
+  {
+   "code": "PASS",
+   "heading": "Pathways to Academic Success",
+   "heading_printed": "Pathways to Academic Success",
+   "rule": "fits",
+   "codes": [
+    "PASS"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "El Camino College 2026-2027 Catalog Page 512 of 620",
+    "student led discussions will be included throughout the course. Topics in the course include: parent/caregiver/child interactions, setting up activities,",
+    "play, communication, guidance and discipline.",
+    "Pathways to Academic Success"
+   ],
+   "first_course": "PASS 500 - Supervised Tutoring"
+  },
+  {
+   "code": "PE",
+   "heading": "Physical Education",
+   "heading_printed": "Physical Education",
+   "rule": "fits",
+   "codes": [
+    "PE"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "This is a course in creative photography with an emphasis on intermediate silver and non-silver-based photographic processes. Students will learn",
+    "techniques like applying non-silver photographic emulsions to unconventional surfaces and creating unique photographic books.",
+    "(formerly Photography 57)",
+    "Physical Education"
+   ],
+   "first_course": "PE 2A - Walking for Fitness"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "fits",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "teaching, including how to evaluate whether assessments accurately measure learning, yield consistent results, and promote equity for all students.",
+    "Faculty will leave with concrete strategies to design and refine assessments that are not only effective and efficient but also inclusive and aligned with",
+    "course learning outcomes.",
+    "Philosophy"
+   ],
+   "first_course": "PHIL 101 - Introduction to Philosophy"
+  },
+  {
+   "code": "PHOT",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "PHOT"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "with the instructor are coordinated with assigned Photography projects (54 hours per unit).",
+    "Note: Transfer limitations apply.",
+    "Note: For eligibility requirements, go to www.elcamino.edu/admissions/credit.asp",
+    "(formerly Photography 99abc)"
+   ],
+   "first_course": "PHOT 101 - Beginning Photography"
+  },
+  {
+   "code": "PHYO",
+   "heading": "Physiology",
+   "heading_printed": "Physiology",
+   "rule": "fits",
+   "codes": [
+    "PHYO"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "the instructor are coordinated with assigned Physics projects (54 hours per unit).",
+    "Note: *Transfer limitations apply. For eligibility requirements, go to www.elcamino.edu/admissions/credit.asp",
+    "(formerly Physics 99abc)",
+    "Physiology"
+   ],
+   "first_course": "PHYO 31 - Human Physiology"
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "fits",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "their own observations and laboratory experiments, students will develop concepts and construct models that can predict outcomes of experiments.",
+    "Note: Physical Sciences 25 is not designed for majors in physics, astronomy, or chemistry.",
+    "Note: Students will not receive UC credit for Physical Science 25 if taken after a college level chemistry or physics course.",
+    "Physics"
+   ],
+   "first_course": "PHYS 1A - Mechanics of Solids"
+  },
+  {
+   "code": "POLI",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "fits",
+   "codes": [
+    "POLI"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "excretory, reproductive, muscle, nervous and endocrine. In the laboratory, experiments are performed to demonstrate principles discussed in lecture.",
+    "This course is designed primarily for those majoring in the Health Sciences.",
+    "Note: The maximum UC credit allowed for students completing ANAT 32 and Physiology 31 is two courses.",
+    "Political Science"
+   ],
+   "first_course": "POLI 2 - Introduction to Comparative Politics"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "section",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "diplomacy are examined as alternative means of resolving conflict. This course is enriched through extensive, rigorous reading, writing, and research",
+    "assignments.",
+    "Note: Students may take either POLI 10 or Political Science 10H. Duplicate credit will not be awarded.",
+    "Some UC transferable courses have credit limitations. For details, see a counselor, the Transfer Center advisor, or the articulation officer."
+   ],
+   "first_course": "POLS C1000 - American Government and Politics"
+  },
+  {
+   "code": "PSCI",
+   "heading": "Physical Science",
+   "heading_printed": "Physical Science",
+   "rule": "fits",
+   "codes": [
+    "PSCI"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "for improved health and greater mind and body awareness.",
+    "Note: Some UC transferable courses have credit limitations. For details, see a counselor, the Transfer Center adviser, or the articulation officer.",
+    "(formerly Physical Education 409abcd)",
+    "Physical Science"
+   ],
+   "first_course": "PSCI 25 - Exploring Physical Sciences"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "fits",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "Note: Students may take either POLS C1000 or POLS C1000H. Duplicate credit will not be awarded for POLS C1000 and POLS C1000H.",
+    "(formerly POLI 1H)",
+    "El Camino College 2026-2027 Catalog Page 550 of 620",
+    "Psychology"
+   ],
+   "first_course": "PSYC C1000 - Introduction to Psychology"
+  },
+  {
+   "code": "RC",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "RC"
+   ],
+   "candidate": "Credit, Degree Applicable",
+   "page": 1,
+   "above": [
+    "3. Completion of the 39 required CSU-GE Transfer Pattern units (IGETC)",
+    "Credit, degree applicable",
+    "This course is an introduction to the purpose and application of disease management with emphasis on discharge planning, patient education, ethical",
+    "standards of practice, and disease management strategies and methods."
+   ],
+   "first_course": "RC 170 - Introduction to Respiratory Care Sciences and the Profession"
+  },
+  {
+   "code": "RE",
+   "heading": "Real Estate",
+   "heading_printed": "Real Estate",
+   "rule": "fits",
+   "codes": [
+    "RE"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "evaluation in the performance of radiologic procedures and patient assessment and care. Students perform independently with appropriate supervision",
+    "to assess their skills for employability. This course also reviews the entire radiologic technology curriculum, following the American Registry of",
+    "Radiologic Technologists (ARRT) examination outline, to prepare the students for State and National Certification examinations.",
+    "Real Estate"
+   ],
+   "first_course": "RE 11 - Real Estate Principles"
+  },
+  {
+   "code": "RECR",
+   "heading": "Recreation",
+   "heading_printed": "Recreation",
+   "rule": "fits",
+   "codes": [
+    "RECR"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "examination. The course will include a review of the key subjects covered in the college's real estate courses including advanced information regarding",
+    "practice of real estate with emphasis on real estate law, principles, practice, and other topics covered in the state licensure examination. Important",
+    "preparation for those intending to take the California real estate broker's license examination.",
+    "Recreation"
+   ],
+   "first_course": "RECR 207 - Introduction to Recreation"
+  },
+  {
+   "code": "ROBO",
+   "heading": "Robotics",
+   "heading_printed": "Robotics",
+   "rule": "fits",
+   "codes": [
+    "ROBO"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "transport; rapid response teams; distinguishing the various color codes within a hospital; disaster preparedness at the federal, state, and local levels;",
+    "and the requirements for disaster preparedness within the hospital.",
+    "El Camino College 2026-2027 Catalog Page 569 of 620",
+    "Robotics"
+   ],
+   "first_course": "ROBO 110 - Introduction to Robotics"
+  },
+  {
+   "code": "RTEC",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "RTEC"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "This course provides an introduction to Radiologic Technology as a profession including foundational skills necessary to prepare students planning to",
+    "enter the Radiologic Technology A.S. Degree Program. Course topics includes educational and career pathways for radiologic technologists, program",
+    "application procedures, radiographic and digital imaging equipment, principles of radiation production, exposure and quality, image processing, radiation",
+    "safety, patient care, medical malpractice, professional ethics, and introduction to radiographic examinations."
+   ],
+   "first_course": "RTEC 91 - Radiographic Pathology"
+  },
+  {
+   "code": "SLAN",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "SLAN"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "This course is a continuation of interpreting from English to American Sign Language and from American Sign Language to English. It provides",
+    "advanced knowledge and skills development in simultaneous and consecutive interpreting. Topics include continued study of discourse analysis,",
+    "cognitive skills development, ethical and cultural considerations and study of linguistic and cultural mediation for dynamic equivalency of the message in",
+    "both languages. Some out-of-classroom practicum hours will be required to successfully satisfy the course requirement."
+   ],
+   "first_course": "SLAN 500 - American Sign Language I"
+  },
+  {
+   "code": "SOCI",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "fits",
+   "codes": [
+    "SOCI"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "student learning, course design, curriculum, and content delivery methods can be modified to ensure equitable educational outcomes. Finally, it explores",
+    "how non-academic context frameworks such as social-emotional engagement and support system cultivation can contribute to closing equity gaps in",
+    "a learning environment.",
+    "Sociology"
+   ],
+   "first_course": "SOCI 101 - Introduction to Sociology"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "fits",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "medicine, the history of medical sociology, contemporary health care policies, the death care industry, and the relationship between patients and health",
+    "care professionals. Students will examine health care disparities perpetuated by social inequalities involving race/ethnicity, class, gender, sexuality, age,",
+    "and culture.",
+    "Spanish"
+   ],
+   "first_course": "SPAN 1 - Elementary Spanish I"
+  },
+  {
+   "code": "SSCI",
+   "heading": "Social Science",
+   "heading_printed": "Social Science",
+   "rule": "fits",
+   "codes": [
+    "SSCI"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "expressive and receptive language skills through the learning of basic vocabulary, grammatical structures, and cultural awareness. Designed for, but not",
+    "limited to parents, family, and community members.",
+    "Note: This course is open entry/open exit.",
+    "Social Science"
+   ],
+   "first_course": "SSCI 101 - Introduction to Social Sciences"
+  },
+  {
+   "code": "STAT",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": "Noncredit",
+   "page": 1,
+   "above": [
+    "0 units",
+    "0.22 hours lecture",
+    "Noncredit",
+    "This noncredit course is an introduction to the trigonometry of triangles, inverse trig functions, graphs, equations and identities."
+   ],
+   "first_course": "STAT C1000 - Introduction to Statistics"
+  },
+  {
+   "code": "SUPV",
+   "heading": "Supervision",
+   "heading_printed": "Supervision",
+   "rule": "fits",
+   "codes": [
+    "SUPV"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "the instructor are coordinated with assigned Spanish projects (54 hours per unit).",
+    "Note: *Transfer limitations apply. For eligibility requirements, go to www.elcamino.edu/admissions/credit.asp",
+    "(formerly Spanish 99abc)",
+    "Supervision"
+   ],
+   "first_course": "SUPV 109 - Oral Business Communications"
+  },
+  {
+   "code": "SUST",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "SUST"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "This course provides special advanced studies in a subject field of Environmental Technology not covered in the regular departmental listings. Regular",
+    "conferences with the instructor are coordinated with assigned Environmental Technology projects (54 hours per unit).",
+    "Note: Transfer limitations apply. For eligibility requirements, go to www.elcamino.edu/admissions/credit.asp",
+    "(formerly Environmental Technology 99abc)"
+   ],
+   "first_course": "SUST 100 - Sustainability in the Building Sector"
+  },
+  {
+   "code": "THEA",
+   "heading": "Theatre",
+   "heading_printed": "Theatre",
+   "rule": "fits",
+   "codes": [
+    "THEA"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "will also explore the role ecological factors have in shaping our built and natural environments. Topics such as resiliency, regeneration, habitat",
+    "restoration, and place-making will engage students in the practice of site analysis, mapping, diagramming, and master planning to represent design",
+    "solutions that address some of the most pressing ecological challenges we face today.",
+    "Theatre"
+   ],
+   "first_course": "THEA 95 - Cooperative Work Experience Education"
+  },
+  {
+   "code": "WELD",
+   "heading": "Welding",
+   "heading_printed": "Welding",
+   "rule": "fits",
+   "codes": [
+    "WELD"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "Emphasis is on dramatic analysis, memorization, movement, and discussion. This course meets the needs of many mature adults seeking to stay",
+    "mentally, physically, and socially fit.",
+    "Note: This course is open entry/open exit.",
+    "Welding"
+   ],
+   "first_course": "WELD 1A - Introduction to Multi-Process Welding"
+  },
+  {
+   "code": "WSTU",
+   "heading": "Women's Studies",
+   "heading_printed": "Women's Studies",
+   "rule": "fits",
+   "codes": [
+    "WSTU"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "the instructor are coordinated with assigned Welding projects (54 hours per unit).",
+    "Note: *Transfer limitations apply. For eligibility requirements, go to www.elcamino.edu/admissions/credit.asp",
+    "(formerly Welding 99abc)",
+    "Women's Studies"
+   ],
+   "first_course": "WSTU 1 - Introduction of Women's Studies"
+  }
+ ]
+}

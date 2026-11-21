@@ -63,6 +63,9 @@ check("prose is never a heading", F.take("HIST", ["of Europe with emphasis upon 
       and F.candidate(["of Europe with emphasis upon the rise of the nation state.", "European imperialism is also examined."]) is None)
 check("fits: the code's letters in order", F.fits("ACCTG", "ACCOUNTING") and F.fits("ADM JUS", "Administration of Justice") and not F.fits("PHYS SC", "PHYSICAL EDUCATION"))
 
+check("capitals that carry a number or a colon are no heading (a C-ID line, a replaced-course notice)",
+      F.take("THEATER", ["THEATER ARTS", "C-ID: THTR 111"])[0] == "THEATER ARTS" and not F.is_caps("THIS COURSE REPLACED CO SCI 834 IN"))
+
 print("the log")
 LOG = """college page read: Los Angeles Pierce College, 1 pages, 4.0 s between loads
 
@@ -85,7 +88,34 @@ url: https://www.lapc.edu/catalog.pdf
 {"n": 1}
 === COLLEGE PAGE READ JSON END ===
 """
+LOG += """college page read: Los Angeles Mission College, 1 pages, 4.0 s between loads
+url: https://www.lamc.edu/catalog.pdf
+--- subject context: the lines above each subject's first course (5 subjects) ---
+[subject ENGLISH · page 120]
+  | ENGLISH
+  | ARTS, HUMANITIES, AND COMMUNICATION
+  > ENGLISH 028 INTERMEDIATE READING AND COMPOSITION
+[subject ENGL · page 121]
+  | academic research.
+  > ENGL C1000 ACADEMIC READING AND WRITING
+[subject ARC · page 130]
+  | ARCHITECTURE
+  > ARC 110 INTRODUCTION TO ARCHITECTURE
+[subject ART · page 131]
+  | and model building.
+  > ART 201 DRAWING I
+[subject PHYS SC · page 140]
+  | PHYSICAL EDUCATION
+  > PHYS SC 001 PHYSICAL SCIENCE I
+"""
 files = F.build(LOG, 123)
+m = {r["code"]: r for r in files["los_angeles_mission"]["rows"]}
+check("a code that opens inside another subject's listing takes that listing's heading (ENGL among ENGLISH)",
+      m["ENGL"]["heading"] == "English" and m["ENGL"]["rule"] == "section" and m["ENGLISH"]["heading"] == "English")
+check("a short code is never read into the listing before it (ART is not Architecture)", m["ART"]["heading"] is None and m["ART"]["rule"] == "none")
+check("capitals the code does not run through are a candidate, never the title",
+      m["PHYS SC"]["heading"] is None and m["PHYS SC"]["candidate"] == "Physical Education")
+files = {"los_angeles_pierce": files["los_angeles_pierce"]}
 d = files.get("los_angeles_pierce") or {}
 rows = {r["code"]: r for r in d.get("rows") or []}
 check("one file per college, named by its slug, with its run and source", list(files) == ["los_angeles_pierce"] and d["run"] == "123" and d["source"] == ["https://www.lapc.edu/catalog.pdf"])

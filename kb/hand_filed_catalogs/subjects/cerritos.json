@@ -1,0 +1,1183 @@
+{
+ "_what": "The subjects Cerritos College's course-descriptions index lists: each subject's heading, its code or codes, and the address of its page, as the index links it (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_subject_headings.py --index; `heading` is saved in Title Case with `heading_printed` and the whole `label` as the index prints them. A subject's page is read at `address`, never at an address made from its code.",
+ "college": "Cerritos College",
+ "run": "44948295544",
+ "source": [
+  "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/"
+ ],
+ "subjects": 97,
+ "with_heading": 97,
+ "links_without_a_code": [],
+ "rows": [
+  {
+   "code": "A&P",
+   "heading": "Anatomy and Physiology",
+   "heading_printed": "Anatomy And Physiology",
+   "rule": "index",
+   "codes": [
+    "A&P"
+   ],
+   "candidate": null,
+   "label": "Anatomy And Physiology (A&P)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/a_p/"
+  },
+  {
+   "code": "AB",
+   "heading": "Automotive Collision Repair",
+   "heading_printed": "Automotive Collision Repair",
+   "rule": "index",
+   "codes": [
+    "AB"
+   ],
+   "candidate": null,
+   "label": "Automotive Collision Repair (AB)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/ab/"
+  },
+  {
+   "code": "ACCT",
+   "heading": "Accounting",
+   "heading_printed": "Accounting",
+   "rule": "index",
+   "codes": [
+    "ACCT"
+   ],
+   "candidate": null,
+   "label": "Accounting (ACCT)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/acct/"
+  },
+  {
+   "code": "ACLR",
+   "heading": "Access Learning",
+   "heading_printed": "Access Learning",
+   "rule": "index",
+   "codes": [
+    "ACLR"
+   ],
+   "candidate": null,
+   "label": "Access Learning (ACLR)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/aclr/"
+  },
+  {
+   "code": "ADN",
+   "heading": "Associates Degree in Nursing",
+   "heading_printed": "Associates Degree in Nursing",
+   "rule": "index",
+   "codes": [
+    "ADN"
+   ],
+   "candidate": null,
+   "label": "Associates Degree in Nursing (ADN)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/adn/"
+  },
+  {
+   "code": "AFRS",
+   "heading": "Africana Studies",
+   "heading_printed": "Africana Studies",
+   "rule": "index",
+   "codes": [
+    "AFRS"
+   ],
+   "candidate": null,
+   "label": "Africana Studies (AFRS)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/afrs/"
+  },
+  {
+   "code": "AJ",
+   "heading": "Administration of Justice",
+   "heading_printed": "Administration of Justice",
+   "rule": "index",
+   "codes": [
+    "AJ"
+   ],
+   "candidate": null,
+   "label": "Administration of Justice (AJ)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/aj/"
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "label": "Anthropology (ANTH)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/anth/"
+  },
+  {
+   "code": "ARCH",
+   "heading": "Architecture",
+   "heading_printed": "Architecture",
+   "rule": "index",
+   "codes": [
+    "ARCH"
+   ],
+   "candidate": null,
+   "label": "Architecture (ARCH)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/arch/"
+  },
+  {
+   "code": "ART",
+   "heading": "Art and Design",
+   "heading_printed": "Art and Design",
+   "rule": "index",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "label": "Art and Design (ART)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/art/"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "label": "Art History (ARTH)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/arth/"
+  },
+  {
+   "code": "ASAM",
+   "heading": "Asian American Studies",
+   "heading_printed": "Asian American Studies",
+   "rule": "index",
+   "codes": [
+    "ASAM"
+   ],
+   "candidate": null,
+   "label": "Asian American Studies (ASAM)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/asam/"
+  },
+  {
+   "code": "ASL",
+   "heading": "American Sign Language",
+   "heading_printed": "American Sign Language",
+   "rule": "index",
+   "codes": [
+    "ASL"
+   ],
+   "candidate": null,
+   "label": "American Sign Language (ASL)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/asl/"
+  },
+  {
+   "code": "ASTR",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "ASTR"
+   ],
+   "candidate": null,
+   "label": "Astronomy (ASTR)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/astr/"
+  },
+  {
+   "code": "ATH",
+   "heading": "Athletics",
+   "heading_printed": "Athletics",
+   "rule": "index",
+   "codes": [
+    "ATH"
+   ],
+   "candidate": null,
+   "label": "Athletics (ATH)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/ath/"
+  },
+  {
+   "code": "AUTO",
+   "heading": "Automotive Technology",
+   "heading_printed": "Automotive Technology",
+   "rule": "index",
+   "codes": [
+    "AUTO"
+   ],
+   "candidate": null,
+   "label": "Automotive Technology (AUTO)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/auto/"
+  },
+  {
+   "code": "BA",
+   "heading": "Business Administration",
+   "heading_printed": "Business Administration",
+   "rule": "index",
+   "codes": [
+    "BA"
+   ],
+   "candidate": null,
+   "label": "Business Administration (BA)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/ba/"
+  },
+  {
+   "code": "BCOT",
+   "heading": "Business Communications Office Technology",
+   "heading_printed": "Business Communications Office Technology",
+   "rule": "index",
+   "codes": [
+    "BCOT"
+   ],
+   "candidate": null,
+   "label": "Business Communications Office Technology (BCOT)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/bcot/"
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "label": "Biology (BIOL)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/biol/"
+  },
+  {
+   "code": "BOT",
+   "heading": "Botany",
+   "heading_printed": "Botany",
+   "rule": "index",
+   "codes": [
+    "BOT"
+   ],
+   "candidate": null,
+   "label": "Botany (BOT)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/bot/"
+  },
+  {
+   "code": "BTEC",
+   "heading": "Biotechnology",
+   "heading_printed": "Biotechnology",
+   "rule": "index",
+   "codes": [
+    "BTEC"
+   ],
+   "candidate": null,
+   "label": "Biotechnology (BTEC)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/btec/"
+  },
+  {
+   "code": "CA",
+   "heading": "Culinary Arts",
+   "heading_printed": "Culinary Arts",
+   "rule": "index",
+   "codes": [
+    "CA"
+   ],
+   "candidate": null,
+   "label": "Culinary Arts (CA)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/ca/"
+  },
+  {
+   "code": "CD",
+   "heading": "Child Development",
+   "heading_printed": "Child Development",
+   "rule": "index",
+   "codes": [
+    "CD",
+    "CDEV"
+   ],
+   "candidate": null,
+   "label": "Child Development (CD & CDEV)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/cd/"
+  },
+  {
+   "code": "CDEC",
+   "heading": "Child Development/Early Childhood",
+   "heading_printed": "Child Development/Early Childhood",
+   "rule": "index",
+   "codes": [
+    "CDEC"
+   ],
+   "candidate": null,
+   "label": "Child Development/Early Childhood (CDEC)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/cdec/"
+  },
+  {
+   "code": "CDEV",
+   "heading": "Child Development",
+   "heading_printed": "Child Development",
+   "rule": "index",
+   "codes": [
+    "CD",
+    "CDEV"
+   ],
+   "candidate": null,
+   "label": "Child Development (CD & CDEV)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/cd/"
+  },
+  {
+   "code": "CDIT",
+   "heading": "Child Development/Infant Toddler",
+   "heading_printed": "Child Development/Infant Toddler",
+   "rule": "index",
+   "codes": [
+    "CDIT"
+   ],
+   "candidate": null,
+   "label": "Child Development/Infant Toddler (CDIT)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/cdit/"
+  },
+  {
+   "code": "CDSE",
+   "heading": "Child Development/Special Education",
+   "heading_printed": "Child Development/Special Education",
+   "rule": "index",
+   "codes": [
+    "CDSE"
+   ],
+   "candidate": null,
+   "label": "Child Development/Special Education (CDSE)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/cdse/"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "label": "Chemistry (CHEM)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/chem/"
+  },
+  {
+   "code": "CHIN",
+   "heading": "Chinese",
+   "heading_printed": "Chinese",
+   "rule": "index",
+   "codes": [
+    "CHIN"
+   ],
+   "candidate": null,
+   "label": "Chinese (CHIN)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/chin/"
+  },
+  {
+   "code": "CIS",
+   "heading": "Computer and Information Sciences",
+   "heading_printed": "Computer And Information Sciences",
+   "rule": "index",
+   "codes": [
+    "CIS"
+   ],
+   "candidate": null,
+   "label": "Computer And Information Sciences (CIS)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/cis/"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "label": "Communication Studies (COMM)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/comm/"
+  },
+  {
+   "code": "COS",
+   "heading": "Cosmetology",
+   "heading_printed": "Cosmetology",
+   "rule": "index",
+   "codes": [
+    "COS"
+   ],
+   "candidate": null,
+   "label": "Cosmetology (COS)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/cos/"
+  },
+  {
+   "code": "COUN",
+   "heading": "Counseling",
+   "heading_printed": "Counseling",
+   "rule": "index",
+   "codes": [
+    "COUN"
+   ],
+   "candidate": null,
+   "label": "Counseling (COUN)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/coun/"
+  },
+  {
+   "code": "CS",
+   "heading": "Chicano Studies",
+   "heading_printed": "Chicano Studies",
+   "rule": "index",
+   "codes": [
+    "CS"
+   ],
+   "candidate": null,
+   "label": "Chicano Studies (CS)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/cs/"
+  },
+  {
+   "code": "DA",
+   "heading": "Dental Assisting",
+   "heading_printed": "Dental Assisting",
+   "rule": "index",
+   "codes": [
+    "DA"
+   ],
+   "candidate": null,
+   "label": "Dental Assisting (DA)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/da/"
+  },
+  {
+   "code": "DANC",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "index",
+   "codes": [
+    "DANC"
+   ],
+   "candidate": null,
+   "label": "Dance (DANC)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/danc/"
+  },
+  {
+   "code": "DH",
+   "heading": "Dental Hygiene",
+   "heading_printed": "Dental Hygiene",
+   "rule": "index",
+   "codes": [
+    "DH"
+   ],
+   "candidate": null,
+   "label": "Dental Hygiene (DH)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/dh/"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "label": "Economics (ECON)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/econ/"
+  },
+  {
+   "code": "EDEL",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "index",
+   "codes": [
+    "EDEL"
+   ],
+   "candidate": null,
+   "label": "Education (EDEL)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/edel/"
+  },
+  {
+   "code": "EDT",
+   "heading": "Educational Technology",
+   "heading_printed": "Educational Technology",
+   "rule": "index",
+   "codes": [
+    "EDT"
+   ],
+   "candidate": null,
+   "label": "Educational Technology (EDT)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/edt/"
+  },
+  {
+   "code": "ELAP",
+   "heading": "Electrical Apprenticeship",
+   "heading_printed": "Electrical Apprenticeship",
+   "rule": "index",
+   "codes": [
+    "ELAP"
+   ],
+   "candidate": null,
+   "label": "Electrical Apprenticeship (ELAP)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/elap/"
+  },
+  {
+   "code": "EMLS",
+   "heading": "English for Multilingual Students",
+   "heading_printed": "English for Multilingual Students",
+   "rule": "index",
+   "codes": [
+    "EMLS"
+   ],
+   "candidate": null,
+   "label": "English for Multilingual Students (EMLS)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/emls/"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "label": "English (ENGL)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/engl/"
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "index",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "label": "Engineering (ENGR)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/engr/"
+  },
+  {
+   "code": "ENGT",
+   "heading": "Engineering Design Technology",
+   "heading_printed": "Engineering Design Technology",
+   "rule": "index",
+   "codes": [
+    "ENGT"
+   ],
+   "candidate": null,
+   "label": "Engineering Design Technology (ENGT)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/engt/"
+  },
+  {
+   "code": "ENVS",
+   "heading": "Environmental Policy",
+   "heading_printed": "Environmental Policy",
+   "rule": "index",
+   "codes": [
+    "ENVS"
+   ],
+   "candidate": null,
+   "label": "Environmental Policy (ENVS)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/envs/"
+  },
+  {
+   "code": "ESCI",
+   "heading": "Earth Science",
+   "heading_printed": "Earth Science",
+   "rule": "index",
+   "codes": [
+    "ESCI"
+   ],
+   "candidate": null,
+   "label": "Earth Science (ESCI)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/esci/"
+  },
+  {
+   "code": "ET",
+   "heading": "Engineering Technology",
+   "heading_printed": "Engineering Technology",
+   "rule": "index",
+   "codes": [
+    "ET"
+   ],
+   "candidate": null,
+   "label": "Engineering Technology (ET)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/et/"
+  },
+  {
+   "code": "ETHN",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ETHN"
+   ],
+   "candidate": null,
+   "label": "Ethnic Studies (ETHN)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/ethn/"
+  },
+  {
+   "code": "FILM",
+   "heading": "Film",
+   "heading_printed": "Film",
+   "rule": "index",
+   "codes": [
+    "FILM"
+   ],
+   "candidate": null,
+   "label": "Film (FILM)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/film/"
+  },
+  {
+   "code": "FIN",
+   "heading": "Finance",
+   "heading_printed": "Finance",
+   "rule": "index",
+   "codes": [
+    "FIN"
+   ],
+   "candidate": null,
+   "label": "Finance (FIN)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/fin/"
+  },
+  {
+   "code": "FREN",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "index",
+   "codes": [
+    "FREN"
+   ],
+   "candidate": null,
+   "label": "French (FREN)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/fren/"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "label": "Geography (GEOG)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/geog/"
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "label": "Geology (GEOL)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/geol/"
+  },
+  {
+   "code": "GERM",
+   "heading": "German",
+   "heading_printed": "German",
+   "rule": "index",
+   "codes": [
+    "GERM"
+   ],
+   "candidate": null,
+   "label": "German (GERM)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/germ/"
+  },
+  {
+   "code": "HED",
+   "heading": "Health Education",
+   "heading_printed": "Health Education",
+   "rule": "index",
+   "codes": [
+    "HED"
+   ],
+   "candidate": null,
+   "label": "Health Education (HED)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/hed/"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "label": "History (HIST)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/hist/"
+  },
+  {
+   "code": "HO",
+   "heading": "Health Occupations",
+   "heading_printed": "Health Occupations",
+   "rule": "index",
+   "codes": [
+    "HO"
+   ],
+   "candidate": null,
+   "label": "Health Occupations (HO)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/ho/"
+  },
+  {
+   "code": "HUM",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "index",
+   "codes": [
+    "HUM"
+   ],
+   "candidate": null,
+   "label": "Humanities (HUM)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/hum/"
+  },
+  {
+   "code": "IWAP",
+   "heading": "Field Ironworkers",
+   "heading_printed": "Field Ironworkers",
+   "rule": "index",
+   "codes": [
+    "IWAP"
+   ],
+   "candidate": null,
+   "label": "Field Ironworkers (IWAP)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/iwap/"
+  },
+  {
+   "code": "JAMS",
+   "heading": "Journalism and Multimedia Studies",
+   "heading_printed": "Journalism and Multimedia Studies",
+   "rule": "index",
+   "codes": [
+    "JAMS"
+   ],
+   "candidate": null,
+   "label": "Journalism and Multimedia Studies (JAMS)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/jams/"
+  },
+  {
+   "code": "JAPN",
+   "heading": "Japanese",
+   "heading_printed": "Japanese",
+   "rule": "index",
+   "codes": [
+    "JAPN"
+   ],
+   "candidate": null,
+   "label": "Japanese (JAPN)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/japn/"
+  },
+  {
+   "code": "KIN",
+   "heading": "Kinesiology",
+   "heading_printed": "Kinesiology",
+   "rule": "index",
+   "codes": [
+    "KIN"
+   ],
+   "candidate": null,
+   "label": "Kinesiology (KIN)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/kin/"
+  },
+  {
+   "code": "KOR",
+   "heading": "Korean",
+   "heading_printed": "Korean",
+   "rule": "index",
+   "codes": [
+    "KOR"
+   ],
+   "candidate": null,
+   "label": "Korean (KOR)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/kor/"
+  },
+  {
+   "code": "LAW",
+   "heading": "Law",
+   "heading_printed": "Law",
+   "rule": "index",
+   "codes": [
+    "LAW"
+   ],
+   "candidate": null,
+   "label": "Law (LAW)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/law/"
+  },
+  {
+   "code": "LIBR",
+   "heading": "Library",
+   "heading_printed": "Library",
+   "rule": "index",
+   "codes": [
+    "LIBR"
+   ],
+   "candidate": null,
+   "label": "Library (LIBR)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/libr/"
+  },
+  {
+   "code": "MA",
+   "heading": "Medical Assistant",
+   "heading_printed": "Medical Assistant",
+   "rule": "index",
+   "codes": [
+    "MA"
+   ],
+   "candidate": null,
+   "label": "Medical Assistant (MA)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/ma/"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH",
+    "STAT"
+   ],
+   "candidate": null,
+   "label": "Mathematics (MATH & STAT)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/math/"
+  },
+  {
+   "code": "MICR",
+   "heading": "Microbiology",
+   "heading_printed": "Microbiology",
+   "rule": "index",
+   "codes": [
+    "MICR"
+   ],
+   "candidate": null,
+   "label": "Microbiology (MICR)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/micr/"
+  },
+  {
+   "code": "MTT",
+   "heading": "Machine Tool Technology",
+   "heading_printed": "Machine Tool Technology",
+   "rule": "index",
+   "codes": [
+    "MTT"
+   ],
+   "candidate": null,
+   "label": "Machine Tool Technology (MTT)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/mtt/"
+  },
+  {
+   "code": "MUS",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "index",
+   "codes": [
+    "MUS"
+   ],
+   "candidate": null,
+   "label": "Music (MUS)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/mus/"
+  },
+  {
+   "code": "NAIS",
+   "heading": "Native American and Indigenous Studies",
+   "heading_printed": "Native American and Indigenous Studies",
+   "rule": "index",
+   "codes": [
+    "NAIS"
+   ],
+   "candidate": null,
+   "label": "Native American and Indigenous Studies (NAIS)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/nais/"
+  },
+  {
+   "code": "NPD",
+   "heading": "New Product Development",
+   "heading_printed": "New Product Development",
+   "rule": "index",
+   "codes": [
+    "NPD"
+   ],
+   "candidate": null,
+   "label": "New Product Development (NPD)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/npd/"
+  },
+  {
+   "code": "NRSG",
+   "heading": "Nursing",
+   "heading_printed": "Nursing",
+   "rule": "index",
+   "codes": [
+    "NRSG"
+   ],
+   "candidate": null,
+   "label": "Nursing (NRSG)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/nrsg/"
+  },
+  {
+   "code": "PEX",
+   "heading": "Physical Education",
+   "heading_printed": "Physical Education",
+   "rule": "index",
+   "codes": [
+    "PEX"
+   ],
+   "candidate": null,
+   "label": "Physical Education (PEX)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/pex/"
+  },
+  {
+   "code": "PHAR",
+   "heading": "Pharmacy Technician",
+   "heading_printed": "Pharmacy Technician",
+   "rule": "index",
+   "codes": [
+    "PHAR"
+   ],
+   "candidate": null,
+   "label": "Pharmacy Technician (PHAR)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/phar/"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "label": "Philosophy (PHIL)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/phil/"
+  },
+  {
+   "code": "PHOT",
+   "heading": "Photography",
+   "heading_printed": "Photography",
+   "rule": "index",
+   "codes": [
+    "PHOT"
+   ],
+   "candidate": null,
+   "label": "Photography (PHOT)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/phot/"
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "label": "Physics (PHYS)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/phys/"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "label": "Political Science (POLS)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/pol/"
+  },
+  {
+   "code": "PS",
+   "heading": "Physical Science",
+   "heading_printed": "Physical Science",
+   "rule": "index",
+   "codes": [
+    "PS"
+   ],
+   "candidate": null,
+   "label": "Physical Science (PS)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/ps/"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "label": "Psychology (PSYC)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/psyc/"
+  },
+  {
+   "code": "PTA",
+   "heading": "Physical Therapist Assistant",
+   "heading_printed": "Physical Therapist Assistant",
+   "rule": "index",
+   "codes": [
+    "PTA"
+   ],
+   "candidate": null,
+   "label": "Physical Therapist Assistant (PTA)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/pta/"
+  },
+  {
+   "code": "RE",
+   "heading": "Real Estate",
+   "heading_printed": "Real Estate",
+   "rule": "index",
+   "codes": [
+    "RE"
+   ],
+   "candidate": null,
+   "label": "Real Estate (RE)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/re/"
+  },
+  {
+   "code": "READ",
+   "heading": "Reading",
+   "heading_printed": "Reading",
+   "rule": "index",
+   "codes": [
+    "READ"
+   ],
+   "candidate": null,
+   "label": "Reading (READ)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/read/"
+  },
+  {
+   "code": "SLP",
+   "heading": "Speech-Language Pathology",
+   "heading_printed": "Speech-Language Pathology",
+   "rule": "index",
+   "codes": [
+    "SLP"
+   ],
+   "candidate": null,
+   "label": "Speech-Language Pathology (SLP)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/slp/"
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOC",
+    "SOCI"
+   ],
+   "candidate": null,
+   "label": "Sociology (SOC & SOCI)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/soc/"
+  },
+  {
+   "code": "SOCI",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOC",
+    "SOCI"
+   ],
+   "candidate": null,
+   "label": "Sociology (SOC & SOCI)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/soc/"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "label": "Spanish (SPAN)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/span/"
+  },
+  {
+   "code": "STAT",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH",
+    "STAT"
+   ],
+   "candidate": null,
+   "label": "Mathematics (MATH & STAT)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/math/"
+  },
+  {
+   "code": "SWHS",
+   "heading": "Social Work and Human Services",
+   "heading_printed": "Social Work and Human Services",
+   "rule": "index",
+   "codes": [
+    "SWHS"
+   ],
+   "candidate": null,
+   "label": "Social Work and Human Services (SWHS)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/swhs/"
+  },
+  {
+   "code": "TH",
+   "heading": "Theatre Arts",
+   "heading_printed": "Theatre Arts",
+   "rule": "index",
+   "codes": [
+    "TH"
+   ],
+   "candidate": null,
+   "label": "Theatre Arts (TH)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/th/"
+  },
+  {
+   "code": "VCS",
+   "heading": "Visual & Cultural Studies",
+   "heading_printed": "Visual & Cultural Studies",
+   "rule": "index",
+   "codes": [
+    "VCS"
+   ],
+   "candidate": null,
+   "label": "Visual & Cultural Studies (VCS)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/vcs/"
+  },
+  {
+   "code": "WELD",
+   "heading": "Welding Technology",
+   "heading_printed": "Welding Technology",
+   "rule": "index",
+   "codes": [
+    "WELD"
+   ],
+   "candidate": null,
+   "label": "Welding Technology (WELD)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/weld/"
+  },
+  {
+   "code": "WGS",
+   "heading": "Women's and Gender Studies",
+   "heading_printed": "Women's and Gender Studies",
+   "rule": "index",
+   "codes": [
+    "WGS"
+   ],
+   "candidate": null,
+   "label": "Women's and Gender Studies (WGS)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/wgs/"
+  },
+  {
+   "code": "WMT",
+   "heading": "Woodworking Manufacturing Technologies",
+   "heading_printed": "Woodworking Manufacturing Technologies",
+   "rule": "index",
+   "codes": [
+    "WMT"
+   ],
+   "candidate": null,
+   "label": "Woodworking Manufacturing Technologies (WMT)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/wmt/"
+  },
+  {
+   "code": "ZOOL",
+   "heading": "Zoology",
+   "heading_printed": "Zoology",
+   "rule": "index",
+   "codes": [
+    "ZOOL"
+   ],
+   "candidate": null,
+   "label": "Zoology (ZOOL)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/zool/"
+  }
+ ]
+}

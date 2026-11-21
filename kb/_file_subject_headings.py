@@ -16,12 +16,18 @@ The heading is read by three rules, in order:
            LAW", or the department on a second line) gives the part ahead of the dash, or the first line.
   fits     a short line in mixed case with no code beside it ("Anatomy"), taken only when the code's letters
            run in order through it.
+  section  a code that opens inside another subject's listing (ENGL C1000 among ENGLISH) takes that listing's
+           heading when its letters run through it and it opens with the code's first three letters (four letters
+           or more: ART is not read into ARCHITECTURE).
   none     no line reads as a heading. `candidate` then holds the nearest short line, for a reviewer and
            the recommender; it is never a title by itself.
-`code_fits` says whether the code's letters run in order through the heading (ACCTG in ACCOUNTING). It is a
-second signal for a reviewer and decides nothing.
+A heading in capitals or mixed case is saved as the title only when the code's letters run in order through it
+(ACCTG in ACCOUNTING); otherwise it is kept as the `candidate`, A named heading carries its code and needs no such test.
 
-Usage: python3 kb/_file_subject_headings.py <job log with timestamps stripped> --run <run id> [--write]
+A college whose catalog is one page per subject lists them on an index, each label a heading with its code:
+`--index` files those, with each subject's own address.
+
+Usage: python3 kb/_file_subject_headings.py <job log with timestamps stripped> --run <run id> [--index] [--write]
        python3 kb/_file_subject_headings.py --check      (the committed files parse and name their runs)
 """
 import argparse
@@ -48,6 +54,11 @@ SLUGS = {
     "Los Angeles Valley College": "los_angeles_valley",
     "Los Angeles Southwest College": "los_angeles_southwest",
     "Los Angeles City College": "los_angeles_city",
+    "Cerritos College": "cerritos",
+    "Long Beach City College": "long_beach_city",
+    "Monterey Peninsula College": "monterey_peninsula",
+    "Southwestern College": "southwestern",
+    "North Orange Continuing Education": "north_orange_continuing_education",
 }
 # How a college prints a heading that carries its department.
 STYLE = {
@@ -67,7 +78,8 @@ def code_key(s):
 def is_caps(line):
     """A heading in capitals: mostly capital letters, no closing period, short, and not page furniture."""
     letters = [c for c in line if c.isalpha()]
-    if len(letters) < 3 or len(line) > 70 or line.rstrip().endswith((".", ":", ";")):
+    if len(letters) < 3 or len(line) > 70 or line.rstrip().endswith((".", ":", ";")) or re.search(r"[\d:]", line) \
+            or len(line.split()) > 8:
         return False
     if FURNITURE.match(line.strip()):
         return False
@@ -119,7 +131,7 @@ def take(subj, before, style=None):
                 and line[:1].upper() == code_key(subj)[:1] and line[:1].isupper():
             return line, "fits", [subj]
     k = len(lines) - 1
-    while k >= 0 and not is_caps(lines[k]) and (is_note(lines[k]) or FURNITURE.match(lines[k])):
+    while k >= 0 and not is_caps(lines[k]) and (is_note(lines[k]) or FURNITURE.match(lines[k]) or ":" in lines[k]):
         k -= 1
     if k < 0 or not is_caps(lines[k]):
         return None, "none", [subj]
@@ -174,11 +186,25 @@ def build(text, run):
             raise SystemExit("no slug for %r: add it to SLUGS" % c["college"])
         style = STYLE.get(slug)
         by = {}
+        section = None      # the last heading a rule took, in page order: the section the next courses sit in
         for s in c["subjects"]:
             heading, rule, codes = take(s["subj"], s["before"], style)
+            cand = None
+            if heading and rule != "named" and not fits(s["subj"], heading):
+                # Capitals above the course that the code's letters do not run through (a C-ID line, another
+                # subject's heading): kept for a reviewer, never saved as the title.
+                heading, rule, cand = None, "none", heading
+            if heading:
+                section = heading
+            elif section and len(code_key(s["subj"])) >= 4 and code_key(section).startswith(code_key(s["subj"])[:3]) \
+                    and fits(s["subj"], section):
+                # A code that opens inside another subject's listing (the common course numbers: ENGL C1000
+                # among ENGLISH) takes that listing's heading when its letters run through it.
+                heading, rule = section, "section"
+            if not heading:
+                cand = cand or candidate(s["before"])
             rec = {"code": s["subj"], "heading": title_case(heading), "heading_printed": heading, "rule": rule, "codes": codes,
-                   "code_fits": fits(s["subj"], heading) if heading else False,
-                   "candidate": None if heading else title_case(candidate(s["before"])),
+                   "candidate": None if heading else title_case(cand),
                    "page": s["page"], "above": s["before"], "first_course": s["line"]}
             old = by.get(code_key(s["subj"]))
             if old is None or (old["heading"] is None and heading):
@@ -197,6 +223,68 @@ def build(text, run):
     return files
 
 
+LABEL_PART = re.compile(r"(?P<name>[^()]+?)\s*\((?P<codes>[^()]+)\)(?:\s+and\s+|\s*$)")
+
+
+def index_entries(label):
+    """[(name, [codes])] from one index label. "Mathematics (MATH & STAT)" names two codes under one heading;
+    "Mathematics (MATH) and Statistics (STAT)" (Monterey Peninsula) is two headings on one page; an ampersand
+    or a slash inside a code (A&P, RA&T, ES/A) is part of the code. A label with no code gives nothing."""
+    label = " ".join(str(label or "").replace("\u200b", "").split())
+    out = []
+    for m in LABEL_PART.finditer(label):
+        codes = [c.strip() for c in re.split(r"\s+(?:&|or)\s+", m.group("codes")) if c.strip()]
+        if codes and all(re.match(r"^[A-Z0-9][A-Z0-9&/_. \-]{0,11}$", c) for c in codes):
+            out.append((m.group("name").strip(), codes))
+    return out
+
+
+def build_index(text, run):
+    """A college's subject headings from its course-descriptions index: each link's label and its address
+    (kb/_college_page_read.py prints "- <label> -> <address>" under the plan's links pattern)."""
+    files, cur = {}, None
+    for raw in text.splitlines():
+        m = re.match(r"^college page read: (.+?), \d+ pages", raw)
+        if m:
+            cur = {"college": m.group(1), "index": None, "links": []}
+            files[m.group(1)] = cur
+            continue
+        if cur is None:
+            continue
+        if raw.startswith("url: ") and cur["index"] is None:
+            cur["index"] = raw[5:].strip()
+        m = re.match(r"^- (.+) -> (https?://\S+)$", raw)
+        if m:
+            cur["links"].append((m.group(1), m.group(2)))
+    out = {}
+    for college, c in files.items():
+        slug = SLUGS.get(college)
+        if not slug:
+            raise SystemExit("no slug for %r: add it to SLUGS" % college)
+        rows, no_code = [], []
+        for label, href in c["links"]:
+            clean = " ".join(label.replace("\u200b", "").split())
+            got = index_entries(label)
+            if not got:
+                no_code.append({"label": clean, "address": href})
+            for name, codes in got:
+                for code in codes:
+                    rows.append({"code": code, "heading": title_case(name), "heading_printed": name, "rule": "index",
+                                 "codes": codes, "candidate": None, "label": clean, "address": href})
+        rows.sort(key=lambda r: r["code"])
+        out[slug] = {
+            "_what": "The subjects %s's course-descriptions index lists: each subject's heading, its code or codes, and "
+                     "the address of its page, as the index links it (Sam's rule on #3655: a local subject title comes "
+                     "only from the catalog's subject heading). Filed by kb/_file_subject_headings.py --index; `heading` "
+                     "is saved in Title Case with `heading_printed` and the whole `label` as the index prints them. A "
+                     "subject's page is read at `address`, never at an address made from its code." % college,
+            "college": college, "run": str(run), "source": [c["index"]] if c["index"] else [],
+            "subjects": len(rows), "with_heading": sum(1 for r in rows if r["heading"]),
+            "links_without_a_code": no_code, "rows": rows,
+        }
+    return out
+
+
 def dump(obj):
     return json.dumps(obj, indent=1, ensure_ascii=False) + "\n"
 
@@ -211,7 +299,7 @@ def check(root=ROOT):
         if d.get("with_heading") != sum(1 for r in rows if r.get("heading")):
             bad.append("%s: with_heading" % os.path.basename(path))
         for r in rows:
-            if r.get("rule") not in ("named", "caps", "fits", "none") or bool(r.get("heading")) != (r.get("rule") != "none"):
+            if r.get("rule") not in ("named", "caps", "fits", "section", "index", "none") or bool(r.get("heading")) != (r.get("rule") != "none"):
                 bad.append("%s: %s rule" % (os.path.basename(path), r.get("code")))
     return bad
 
@@ -220,6 +308,7 @@ def main(argv):
     ap = argparse.ArgumentParser()
     ap.add_argument("log", nargs="?")
     ap.add_argument("--run")
+    ap.add_argument("--index", action="store_true", help="the log is an index read: each link's label and address")
     ap.add_argument("--write", action="store_true")
     ap.add_argument("--check", action="store_true")
     a = ap.parse_args(argv)
@@ -231,13 +320,13 @@ def main(argv):
         return 1 if bad else 0
     if not a.log or not a.run:
         ap.error("a log and --run")
-    files = build(open(a.log, encoding="utf-8").read(), a.run)
+    files = (build_index if a.index else build)(open(a.log, encoding="utf-8").read(), a.run)
     for slug, d in sorted(files.items()):
         rules = {}
         for r in d["rows"]:
             rules[r["rule"]] = rules.get(r["rule"], 0) + 1
-        print("%-30s %3d subjects, %3d with a heading %s, %d where the code does not fit" % (
-            slug, d["subjects"], d["with_heading"], rules, sum(1 for r in d["rows"] if r["heading"] and not r["code_fits"])))
+        print("%-34s %3d subjects, %3d with a heading %s, %d more with a candidate" % (
+            slug, d["subjects"], d["with_heading"], rules, sum(1 for r in d["rows"] if not r["heading"] and r["candidate"])))
         if a.write:
             os.makedirs(os.path.join(ROOT, OUT), exist_ok=True)
             with open(os.path.join(ROOT, OUT, slug + ".json"), "w", encoding="utf-8") as f:
