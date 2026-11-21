@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Automotive Technology",
  "award": "A.S. Degree",
- "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=84",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=84",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12623,
+  "input_tokens": 12614,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12623,
-    "output_tokens": 2056,
+    "input_tokens": 12614,
+    "output_tokens": 2141,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2056,
+  "output_tokens": 2141,
   "output_tokens_details": {
-   "thinking_tokens": 893
+   "thinking_tokens": 961
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09161,
- "ms": 17226,
- "seconds": 17.5,
+ "cost_usd": 0.09328,
+ "ms": 18981,
+ "seconds": 19.4,
  "parts": null,
  "error": null,
  "score": {
@@ -138,7 +138,7 @@
   },
   "blocks": [
    {
-    "name": "Program Requirements (continued from previous page; heading not in text)",
+    "name": "Program Requirements (list continued from page 83; earlier courses not in the text)",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -206,48 +206,66 @@
   "missing_explained": [
    {
     "code": "AUTECH 110",
-    "why": "not in the visible part of this section; section begins on the previous page, not in text"
+    "why": "not in the text for this award; its section begins on page 83, which is not included (appears only in other awards' sections and course descriptions)"
    },
    {
     "code": "AUTECH 112",
-    "why": "not in the visible part of this section; section begins on the previous page, not in text"
+    "why": "not in the text for this award; section start on page 83 not included"
    },
    {
     "code": "AUTECH 113",
-    "why": "not in the visible part of this section; named only in Engine Repair certificate"
+    "why": "not in the text for this award; named only in the Engine Repair certificate section and course descriptions"
    },
    {
     "code": "AUTECH 114",
-    "why": "not in the visible part of this section; section begins on the previous page, not in text"
+    "why": "not in the text for this award; section start on page 83 not included"
    },
    {
     "code": "AUTECH 135",
-    "why": "not in the visible part of this section; named only in other awards' sections"
+    "why": "not in the text for this award; section start on page 83 not included"
    },
    {
     "code": "AUTECH 140",
-    "why": "not in the visible part of this section; only in course descriptions"
+    "why": "not in the text for this award; only in course descriptions; section start on page 83 not included"
    },
    {
     "code": "AUTECH 150",
-    "why": "not in the visible part of this section; named only in Quick Service Technician certificate"
+    "why": "not in the text for this award; named in Quick Service Technician certificate and course descriptions; section start on page 83 not included"
    },
    {
     "code": "AUTECH 170",
-    "why": "not in the visible part of this section; only in course descriptions"
+    "why": "not in the text for this award; only in course descriptions; section start on page 83 not included"
    },
    {
     "code": "AUTECH 180",
-    "why": "not in the visible part of this section; named only in other awards' sections"
+    "why": "not in the text for this award; section start on page 83 not included"
    }
   ],
   "notes": [
-   "The text begins mid-section at the top of page 84: the Automotive Technology A.S. heading, description, outcome, units required and the first required courses are on page 83, which is not in the supplied text. Only the tail of the requirements (AUTECH-185, one of AUTECH-120/130, and at least 1 unit of WE-186AUTO) is recorded; reviewer should check page 83.",
-   "The section heading recorded is the running page header 'AUTOMOTIVE TECHNOLOGY'; the award's own heading is not in the text. It is assumed the fragment at the top of page 84 belongs to the Automotive Technology A.S. (it precedes the Advanced Diagnosis and Performance section and matches the closed list).",
-   "The fragment's first block name is supplied by the reviewer; the catalog's block heading is on the previous page.",
-   "Total units, outcomes and careers for this award are not in the visible text, so they are left null/empty.",
-   "Units printed beside AUTECH-120 (3.0) differ from the state file (5)."
+   "The catalog text begins mid-section on page 84: the Automotive Technology A.S. Degree heading, description, outcomes, units required and the first part of its course list are on page 83, which is not in the text. Only the tail of the list (AUTECH-185, one of AUTECH-120/130, and WE-186AUTO) is visible; reviewer should check page 83.",
+   "section_heading uses the running page header 'AUTOMOTIVE TECHNOLOGY' because the award's own heading is not in the text.",
+   "The fragment is assumed to belong to the Automotive Technology A.S. because it immediately precedes the 'Associate in Science Degree and Certificate of Achievement: Advanced Diagnosis and Performance' section; that following section and the certificate sections were not recorded.",
+   "Catalog prints AUTECH-120 at 3.0 units; the state file stores 5.",
+   "No program total, outcomes or careers for this award appear in the visible text."
   ]
  },
- "extracted_run": "39006378829"
+ "extracted_run": "44769429877",
+ "catalog_year": "2026-2027",
+ "source_sha": "abc14d685ce764ca",
+ "source_codes": [
+  "AUTECH110",
+  "AUTECH112",
+  "AUTECH113",
+  "AUTECH114",
+  "AUTECH120",
+  "AUTECH130",
+  "AUTECH135",
+  "AUTECH140",
+  "AUTECH150",
+  "AUTECH170",
+  "AUTECH180",
+  "AUTECH185",
+  "WE186AUTO"
+ ],
+ "source_coverage": 1.0
 }

@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Global Studies",
  "award": "A.A- T Degree",
- "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=161",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=160",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7862,
+  "input_tokens": 8907,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7862,
-    "output_tokens": 2041,
+    "input_tokens": 8907,
+    "output_tokens": 2520,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,38 +30,26 @@
     "model": null
    }
   ],
-  "output_tokens": 2041,
+  "output_tokens": 2520,
   "output_tokens_details": {
-   "thinking_tokens": 803
+   "thinking_tokens": 1026
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07227,
- "ms": 17367,
- "seconds": 17.7,
+ "cost_usd": 0.08603,
+ "ms": 22170,
+ "seconds": 22.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 4,
+   "placed": 16,
    "listed": 18,
-   "share": 0.222,
+   "share": 0.889,
    "missing": [
-    "ANTHRO103",
-    "ANTHRO103H",
-    "ECON201",
-    "ECON202",
-    "ECONC2001H",
-    "ECONC2002H",
-    "ENGL273",
-    "ENGL274",
-    "GEOGRPH102",
-    "GEOGRPH104",
-    "GLST101",
-    "GLST102",
     "POLISC250",
     "POLISC270"
    ],
@@ -70,6 +58,18 @@
     "POLISC270"
    ],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON202",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECON201",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": false
   },
   "invented": {
@@ -82,32 +82,32 @@
    "pass": false
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    21.0,
+    29.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "'Language Area (heading not in text)' chooses courses but names no minimum",
-    "'Politics Area' chooses courses but names no minimum",
-    "the record names no total"
-   ]
+   "stated": [
+    21.0,
+    25.0
+   ],
+   "against": "program",
+   "why": [],
+   "meets": true
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 1,
    "courses": 0,
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -125,18 +125,18 @@
  },
  "record": {
   "program": {
-   "section_heading": "GLOBAL STUDIES",
+   "section_heading": "Associate in Arts for Transfer Degree: Global Studies",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 21,
+    "max": 25
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "CalGETC",
    "degree_total": {
     "min": null,
     "max": null
@@ -146,13 +146,15 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Students will be able to Identify major and emerging global issues and trends, and the definition of globalization."
+   ],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Language Area (heading not in text)",
-    "rule": "choose_courses",
+    "name": "Program Requirements",
+    "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
@@ -160,6 +162,99 @@
      "max": null
     },
     "courses": [
+     {
+      "code": "GLST-101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GLST-102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Take five courses from the following for a minimum of 15 units, at least one course from four of the following five sections",
+    "rule": "choose_courses",
+    "minimum": 5,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ANTHRO-103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTHRO-103H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON-C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON-C2001H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON-C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON-C2002H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOGRPH-102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOGRPH-104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL-273",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL-274",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
      {
       "code": "FRNCH-201",
       "units": 5,
@@ -187,19 +282,7 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Politics Area",
-    "rule": "choose_courses",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
+     },
      {
       "code": "POLS-250",
       "units": 3,
@@ -220,60 +303,43 @@
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "ANTHRO 103",
-    "why": "A.A-T portion not in text (earlier page); appears only in the Global Competencies certificate section"
-   },
-   {
-    "code": "ANTHRO 103H",
-    "why": "A.A-T portion not in text (earlier page); appears only in the Global Competencies certificate section"
-   },
-   {
     "code": "ECON 201",
-    "why": "not in the text"
+    "why": "not in the text; catalog prints ECON-C2002 Principles of Macroeconomics instead"
    },
    {
     "code": "ECON 202",
-    "why": "not in the text"
-   },
-   {
-    "code": "ECON C2001H",
-    "why": "not in the text"
-   },
-   {
-    "code": "ECON C2002H",
-    "why": "not in the text"
-   },
-   {
-    "code": "ENGL 273",
-    "why": "A.A-T portion not in text (earlier page); appears only in the certificate section"
-   },
-   {
-    "code": "ENGL 274",
-    "why": "not in the text"
-   },
-   {
-    "code": "GEOGRPH 102",
-    "why": "A.A-T portion not in text (earlier page); appears only in the certificate section"
-   },
-   {
-    "code": "GEOGRPH 104",
-    "why": "A.A-T portion not in text (earlier page); appears only in the certificate section"
-   },
-   {
-    "code": "GLST 101",
-    "why": "appears only as a course description; A.A-T core list on the previous page is not in the text"
-   },
-   {
-    "code": "GLST 102",
-    "why": "appears only as a course description; A.A-T core list on the previous page is not in the text"
+    "why": "not in the text; catalog prints ECON-C2001 Principles of Microeconomics instead"
    }
   ],
   "notes": [
-   "The text begins mid-way through the A.A-T requirements, which start on the previous catalog page (page 160) that is not included. The A.A-T heading, description, outcomes, careers, core courses (likely GLST 101/102), earlier areas, block rules, unit totals and GE pattern are not visible and should be checked against the full page.",
-   "Only the tail of the A.A-T list is visible: four language courses (area heading cut off) and the 'Politics Area'. Rule and minimum for these areas are not printed in the visible text; recorded as choose_courses with null minimum.",
-   "Catalog prints POLS-250 and POLS-270; these match closed-list POLISC 250 (Comparative Government and Politics) and POLISC 270 (International Relations) under a different subject abbreviation, so catalog_addition is set false. Reviewer should confirm.",
-   "The Certificate of Achievement: Global Competencies section (with its outcomes, careers and 18-unit requirement) belongs to a different award and was not recorded."
+   "The choose block also requires at least one course from four of the five areas (Culture and Society, Economic, Geography, Humanities, Politics) and a minimum of 15 units; the 15-unit minimum was not recorded as a printed block total.",
+   "The Humanities Area continues across the page break: FRNCH-201, FRNCH-202, SPAN-201, SPAN-202 printed at the top of page 161 were read as part of the Humanities Area.",
+   "Catalog prints POLS-250 and POLS-270; the closed list stores them as POLISC 250 and POLISC 270 (same numbers and titles), so they were treated as closed-list courses. Reviewer should confirm the subject abbreviation.",
+   "ECON-C2001 and ECON-C2002 are not in the closed list (closed list has ECON 201/202 and the C2001H/C2002H honors twins); they were marked as catalog additions.",
+   "The 60-unit requirement including CalGETC is a general statement for all associate degrees for transfer, not printed as this award's total, so degree_total is null.",
+   "The Certificate of Achievement: Global Competencies section (with its outcomes and careers) was not read for this record."
   ]
  },
- "extracted_run": "39006378829"
+ "extracted_run": "44769429877",
+ "catalog_year": "2026-2027",
+ "source_sha": "335971bba7ad5995",
+ "source_codes": [
+  "ANTHRO103",
+  "ANTHRO103H",
+  "ECON201",
+  "ECON202",
+  "ECONC2001H",
+  "ECONC2002H",
+  "ENGL273",
+  "ENGL274",
+  "FRNCH201",
+  "FRNCH202",
+  "GEOGRPH102",
+  "GEOGRPH104",
+  "GLST101",
+  "GLST102",
+  "SPAN201",
+  "SPAN202"
+ ],
+ "source_coverage": 0.889
 }

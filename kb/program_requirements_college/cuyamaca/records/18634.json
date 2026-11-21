@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "University Studies: Communication and Language Arts",
  "award": "A.A. Degree",
- "source_url": "https://catalog.gcccd.edu//grossmont/associate-degree-programs-certificates/language-communication/university-studies-communication-language-arts-aa/",
+ "source_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/language-communication/university-studies-communication-language-arts/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8770,
+  "input_tokens": 8340,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8770,
-    "output_tokens": 5057,
+    "input_tokens": 8340,
+    "output_tokens": 3604,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,58 +30,33 @@
     "model": null
    }
   ],
-  "output_tokens": 5057,
+  "output_tokens": 3604,
   "output_tokens_details": {
-   "thinking_tokens": 862
+   "thinking_tokens": 573
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.13622,
- "ms": 35406,
- "seconds": 36.0,
+ "cost_usd": 0.10544,
+ "ms": 26629,
+ "seconds": 27.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 29,
+   "placed": 46,
    "listed": 46,
-   "share": 0.63,
-   "missing": [
-    "ARAM120",
-    "ARAM121",
-    "ARAM220",
-    "ARBC254",
-    "ARBC256",
-    "BUS128",
-    "COMM110",
-    "ENGL201",
-    "ENGL202",
-    "ENGL236",
-    "ENGL238",
-    "ENGL271",
-    "ETHN236",
-    "ETHN238",
-    "KUMY120",
-    "KUMY121",
-    "KUMY220"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 46,
+   "count": 8,
    "codes": [
-    "ARBC148",
-    "ARBC250",
-    "ARBC251",
-    "ASL140",
-    "COMM126",
-    "COMM135",
-    "COMM136",
-    "COMM144",
     "ENGL130",
     "ENGL131",
     "ENGL132",
@@ -89,47 +64,9 @@
     "ENGL140",
     "ENGL141",
     "ENGL142",
-    "ENGL143",
-    "ENGL215",
-    "ENGL219",
-    "ETHN144",
-    "FREN120",
-    "FREN121",
-    "FREN220",
-    "FREN221",
-    "FREN250",
-    "FREN251",
-    "GERM120",
-    "GERM121",
-    "GERM220",
-    "GERM221",
-    "GERM250",
-    "GERM251",
-    "JAPN120",
-    "JAPN121",
-    "JAPN220",
-    "JAPN221",
-    "JAPN250",
-    "JAPN251",
-    "MCOM110",
-    "MCOM111",
-    "MCOM112",
-    "MCOM116",
-    "MCOM117",
-    "MCOM118",
-    "MCOM120",
-    "SPAN122",
-    "SPAN123"
+    "ENGL143"
    ],
    "flagged": [
-    "ARBC148",
-    "ARBC250",
-    "ARBC251",
-    "ASL140",
-    "COMM126",
-    "COMM135",
-    "COMM136",
-    "COMM144",
     "ENGL130",
     "ENGL131",
     "ENGL132",
@@ -137,37 +74,7 @@
     "ENGL140",
     "ENGL141",
     "ENGL142",
-    "ENGL143",
-    "ENGL215",
-    "ENGL219",
-    "ETHN144",
-    "FREN120",
-    "FREN121",
-    "FREN220",
-    "FREN221",
-    "FREN250",
-    "FREN251",
-    "GERM120",
-    "GERM121",
-    "GERM220",
-    "GERM221",
-    "GERM250",
-    "GERM251",
-    "JAPN120",
-    "JAPN121",
-    "JAPN220",
-    "JAPN221",
-    "JAPN250",
-    "JAPN251",
-    "MCOM110",
-    "MCOM111",
-    "MCOM112",
-    "MCOM116",
-    "MCOM117",
-    "MCOM118",
-    "MCOM120",
-    "SPAN122",
-    "SPAN123"
+    "ENGL143"
    ],
    "pass": true
   },
@@ -233,7 +140,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "University Studies - Communication and Language Arts (AA)",
+   "section_heading": "University Studies: Communication and Language Arts (Requirements)",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -255,9 +162,9 @@
    },
    "electives_fill_degree": false,
    "outcomes": [
-    "Demonstrate the ability to analyze information and write effectively.",
     "Organize thoughts and ideas in both oral and written format.",
-    "Communicate effectively with diverse audiences."
+    "Communicate effectively with diverse audiences in a variety of media and/or contexts.",
+    "Navigate norms related to communicating in diverse environments, including professional, intercultural, and/or specialized settings."
    ],
    "careers": []
   },
@@ -273,129 +180,60 @@
     },
     "courses": [
      {
+      "code": "BUS-128",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
       "code": "COMM-C1000",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "COMM-C1004",
-      "units": null,
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM-110",
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "COMM-123",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "COMM-124",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
-     {
-      "code": "COMM-126",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "COMM-135",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "COMM-136",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
      },
      {
       "code": "COMM-137",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
-     {
-      "code": "COMM-144",
-      "units": null,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "ETHN-144",
-        "units": null,
-        "catalog_addition": true
-       }
-      ],
-      "catalog_addition": true
      },
      {
       "code": "COMM-145",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
-     {
-      "code": "MCOM-110",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MCOM-111",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MCOM-112",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MCOM-116",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MCOM-117",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MCOM-118",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MCOM-120",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
      }
     ]
    },
@@ -410,400 +248,330 @@
     },
     "courses": [
      {
+      "code": "ARAM-120",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARAM-121",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARAM-220",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
       "code": "ARBC-120",
-      "units": null,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ARBC-121",
-      "units": null,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ARBC-122",
-      "units": null,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ARBC-123",
-      "units": null,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ARBC-148",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
       "code": "ARBC-220",
-      "units": null,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ARBC-221",
-      "units": null,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ARBC-250",
-      "units": null,
+      "code": "ARBC-254",
+      "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
-      "code": "ARBC-251",
-      "units": null,
+      "code": "ARBC-256",
+      "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "ASL-120",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ASL-121",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ASL-140",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
       "code": "ASL-220",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ASL-221",
-      "units": null,
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS-128",
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGL-C1001",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGL-C1002",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGL-126",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGL-130",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "ENGL-131",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "ENGL-132",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "ENGL-133",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "ENGL-140",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "ENGL-141",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "ENGL-142",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "ENGL-143",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "ENGL-215",
-      "units": null,
+      "code": "ENGL-201",
+      "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
-      "code": "ENGL-219",
-      "units": null,
+      "code": "ENGL-202",
+      "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "ENGL-221",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGL-222",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGL-231",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGL-232",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FREN-120",
-      "units": null,
+      "code": "ENGL-236",
+      "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
-      "code": "FREN-121",
-      "units": null,
+      "code": "ENGL-238",
+      "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
-      "code": "FREN-220",
-      "units": null,
+      "code": "ENGL-271",
+      "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
-      "code": "FREN-221",
-      "units": null,
+      "code": "ETHN-236",
+      "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
-      "code": "FREN-250",
-      "units": null,
+      "code": "ETHN-238",
+      "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
-      "code": "FREN-251",
-      "units": null,
+      "code": "KUMY-120",
+      "units": 4,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
-      "code": "GERM-120",
-      "units": null,
+      "code": "KUMY-121",
+      "units": 4,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
-      "code": "GERM-121",
-      "units": null,
+      "code": "KUMY-220",
+      "units": 4,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "GERM-220",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "GERM-221",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "GERM-250",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "GERM-251",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "JAPN-120",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "JAPN-121",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "JAPN-220",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "JAPN-221",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "JAPN-250",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "JAPN-251",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "SPAN-120",
-      "units": null,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SPAN-121",
-      "units": null,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "SPAN-122",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "SPAN-123",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
       "code": "SPAN-220",
-      "units": null,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SPAN-221",
-      "units": null,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SPAN-250",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SPAN-251",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -812,85 +580,17 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "ARAM 120",
-    "why": "not in the text"
-   },
-   {
-    "code": "ARAM 121",
-    "why": "not in the text"
-   },
-   {
-    "code": "ARAM 220",
-    "why": "not in the text"
-   },
-   {
-    "code": "ARBC 254",
-    "why": "not in the text"
-   },
-   {
-    "code": "ARBC 256",
-    "why": "not in the text"
-   },
-   {
-    "code": "BUS 128",
-    "why": "not in the text"
-   },
-   {
-    "code": "COMM 110",
-    "why": "not in the text"
-   },
-   {
-    "code": "ENGL 201",
-    "why": "not in the text"
-   },
-   {
-    "code": "ENGL 202",
-    "why": "not in the text"
-   },
-   {
-    "code": "ENGL 236",
-    "why": "not in the text"
-   },
-   {
-    "code": "ENGL 238",
-    "why": "not in the text"
-   },
-   {
-    "code": "ENGL 271",
-    "why": "not in the text"
-   },
-   {
-    "code": "ETHN 236",
-    "why": "not in the text"
-   },
-   {
-    "code": "ETHN 238",
-    "why": "not in the text"
-   },
-   {
-    "code": "KUMY 120",
-    "why": "not in the text"
-   },
-   {
-    "code": "KUMY 121",
-    "why": "not in the text"
-   },
-   {
-    "code": "KUMY 220",
-    "why": "not in the text"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The source URL and course list appear to be Grossmont College's page (path /grossmont/), not Cuyamaca College's; many closed-list courses (ARAM, KUMY, BUS 128, etc.) are absent and many listed courses (FREN, GERM, JAPN, MCOM) are not in the closed list. Reviewer should verify the correct Cuyamaca catalog page.",
-   "Rule: choose a minimum of 18 units total from the Communication and Language Arts lists, with at least 3 units or one course from each; the remaining units may come from either list. Recorded as two choose_units blocks with minimum 3 each; total_units 18 reflects the combined requirement.",
-   "No units are printed beside any course in the course lists; units left null.",
-   "COMM-144 and ETHN-144 are cross-listed (same title); recorded ETHN-144 as an alternative, per 'Cross-listed courses receive credit for only one course.'",
-   "degree_total 60 from 'Complete 60 Transferable Units'; ge_units 34 from 'Complete 34 units of transfer general education as required by Cal-GETC'. The page does not explicitly describe electives filling the remainder.",
-   "The page names baccalaureate majors (American Sign Language, communication, English, etc.) but no careers; careers left empty.",
-   "The trailing 'Certificate of Achievement' paragraph refers to a Cal-GETC certificate, not this A.A.; not recorded."
+   "Rule: choose a minimum of 18 units total; at least 3 units from Communication and at least 3 units from Language Arts; the remaining 12 units may come from either list. Recorded as two choose_units blocks (minimum 3 each) with total_units 18; the 12 flexible units are not a separate open elective.",
+   "BUS-128 is printed in both the Communication and Language Arts lists; recorded in each block.",
+   "ENGL-236/ETHN-236 and ENGL-238/ETHN-238 are cross-listed courses printed as separate rows; recorded separately as printed.",
+   "ENGL-130 through ENGL-133 and ENGL-140 through ENGL-143 are not in the closed list; marked catalog_addition.",
+   "Degree total recorded from 'Complete 60 transferable units'; GE from 'Complete 34 units of transfer general education as required for Cal-GETC'. The page implies remaining units toward 60 are transferable electives but does not state it as electives filling the degree, so electives_fill_degree left false.",
+   "The section heading is not printed in the extracted text beyond 'Communication / Language Arts'; heading taken from the program title.",
+   "The text names baccalaureate majors (communication, English, foreign language, literature, journalism, linguistics), not careers; careers left empty."
   ]
  },
- "extracted_run": "38748833332"
+ "extracted_run": "44752892297",
+ "catalog_year": "2026-2027"
 }

@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Music",
  "award": "A.A. Degree",
- "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=220",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=219",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12678,
+  "input_tokens": 12365,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12678,
-    "output_tokens": 4412,
+    "input_tokens": 12365,
+    "output_tokens": 4374,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 4412,
+  "output_tokens": 4374,
   "output_tokens_details": {
-   "thinking_tokens": 1104
+   "thinking_tokens": 1124
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.13895,
- "ms": 33274,
- "seconds": 33.6,
+ "cost_usd": 0.13694,
+ "ms": 32075,
+ "seconds": 32.3,
  "parts": null,
  "error": null,
  "score": {
@@ -153,7 +153,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "MUSIC",
+   "section_heading": "Associate in Arts Degree: Music",
    "measure": "units",
    "total_units": {
     "min": 26,
@@ -620,14 +620,42 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The excerpt prints no explicit 'Associate in Arts' heading; the degree requirements appear directly under the MUSIC program introduction on page 220 (likely the A.A. heading is above the excerpt). The section was read as the A.A. degree because it precedes the certificate sections and refers to 'Music majors' and 'Degree Student Learning Outcome'.",
-   "MUSIC-189 and MUSIC-190 are printed at 1.0 unit each but must each be taken 4 times for a total of 8 units; block stated recorded as 8.",
-   "Closed list codes MUSIC153, MUSIC162, MUSIC173, MUSIC176, MUSIC177, MUSIC187, MUSIC189, MUSIC190 are written without a space; matched to the catalog's MUSIC-153 etc. and not treated as catalog additions.",
-   "Ensemble courses printed at 1.25 units; state file stores 1.3. MUSIC-116 printed as 1.0-3.0 units; state stores 1.",
-   "Closed list titles MUSIC 104 as 'Musicianship Skills III'; catalog prints 'Musicianship Skills IV'. MUSIC 156/157 printed as 'Recording Techniques I/II' vs state 'Recording Studio Techniques'.",
-   "Core (12) + lessons/performance (8) + ensembles (4) + electives (2) = 26, matching the printed Units Required: 26.",
-   "Careers taken from the program introduction ('prepare performers, songwriters, electronic minded musicians, symphonic composers, pop and jazz enthusiasts'); 'pop and jazz enthusiasts' not recorded as a career."
+   "Read only the 'Associate in Arts Degree: Music' section (pages 219-220); the preceding AA-T in Music and the following certificates were ignored.",
+   "MUSIC-189 and MUSIC-190 are printed at 1.0 unit each but must each be taken 4 times for a total of eight units; block stated records the printed 8.",
+   "MUSIC-116 is printed with a range 1.0-3.0 units; MUSIC-153 is printed at 1.0 unit here (1.25 in the AA-T section).",
+   "Closed list codes are stored without hyphen/space (e.g., MUSIC153); treated as the same courses as the catalog's MUSIC-153 etc.",
+   "Closed list title for MUSIC 104 is 'Musicianship Skills III'; catalog prints 'Musicianship Skills IV'. MUSIC-156/157 printed as 'Recording Techniques I/II' vs closed list 'Recording Studio Techniques I/II'.",
+   "Component sums: 12 core + 8 applied + 4 ensemble + 2 elective = 26, matching 'Units Required: 26'.",
+   "Careers taken from the description sentence 'prepare performers, songwriters, electronic minded musicians, symphonic composers, pop and jazz enthusiasts'; 'pop and jazz enthusiasts' omitted as not a career; reviewer may check whether 'electronic minded musicians' should count.",
+   "No general education pattern or degree total is printed in this section."
   ]
  },
- "extracted_run": "39006378829"
+ "extracted_run": "44769429877",
+ "catalog_year": "2026-2027",
+ "source_sha": "2e719853dca340f6",
+ "source_codes": [
+  "MUSIC101",
+  "MUSIC102",
+  "MUSIC103",
+  "MUSIC104",
+  "MUSIC116",
+  "MUSIC120A",
+  "MUSIC120B",
+  "MUSIC131",
+  "MUSIC137A",
+  "MUSIC137B",
+  "MUSIC140",
+  "MUSIC141",
+  "MUSIC156",
+  "MUSIC157",
+  "MUSIC160",
+  "MUSIC161",
+  "MUSIC165",
+  "MUSIC175",
+  "MUSIC186",
+  "MUSIC188",
+  "MUSIC193A",
+  "MUSIC194A"
+ ],
+ "source_coverage": 0.733
 }

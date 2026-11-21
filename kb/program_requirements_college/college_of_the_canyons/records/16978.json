@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Recreation Management",
  "award": "A.A. Degree",
- "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=286",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=286",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9899,
+  "input_tokens": 9194,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9899,
-    "output_tokens": 2572,
+    "input_tokens": 9194,
+    "output_tokens": 2464,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2572,
+  "output_tokens": 2464,
   "output_tokens_details": {
-   "thinking_tokens": 836
+   "thinking_tokens": 725
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09104,
- "ms": 21329,
- "seconds": 21.6,
+ "cost_usd": 0.08606,
+ "ms": 19895,
+ "seconds": 20.0,
  "parts": null,
  "error": null,
  "score": {
@@ -374,13 +374,39 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Catalog prints PSYC-172, PSYC-172H and PSYC-180; closed list uses subject PSYCH. Treated as the same courses (catalog_addition false).",
-   "Catalog prints KPET-217; closed list has KPET217 with no units stored. Treated as the same course.",
+   "Catalog prints PSYC-172, PSYC-172H and PSYC-180 where the closed list has PSYCH 172, PSYCH 172H and PSYCH 180; treated as the same courses (not catalog additions).",
+   "Closed list stores KPET217 without a space or units; catalog prints KPET-217 at 3.0 units; treated as the same course.",
    "EMS-100 Emergency Medical Services Foundations is not in the closed list; recorded as a catalog addition.",
-   "Stated total 22.5-26.5 does not match the maximum possible from the listed courses (e.g., BUS-201 at 5 units, GEOGRPH-101 at 4 units, WE-186REC up to 4 units); recorded as printed.",
-   "Requirements list spans pages 286-287; it appears complete before the course descriptions begin.",
-   "Course titles in the catalog differ slightly from the closed list (e.g., 'Introduction to Hiking' vs 'Hiking', 'Environmental Biology')."
+   "The stated total 22.5-26.5 appears to count Work Experience at its 0.5-unit minimum (12 + 9-12 + 1-2 + 0.5); WE-186REC is printed as 0.5-4.0 units.",
+   "The requirements list continues across a page break (pages 286-287); the remainder of the list was read from page 287.",
+   "Careers taken from the program description: 'Recreational managers' and work in the 'recreation and leisure industry'."
   ]
  },
- "extracted_run": "39006378829"
+ "extracted_run": "44769429877",
+ "catalog_year": "2026-2027",
+ "source_sha": "fe7f49892763b01b",
+ "source_codes": [
+  "ANTHRO210",
+  "BIOSCI130",
+  "BUS201",
+  "ENVRMT101",
+  "GEOGRPH101",
+  "HOSP101",
+  "KPET217",
+  "PHILOS240",
+  "PHILOS250",
+  "REC101",
+  "REC102",
+  "REC103",
+  "REC104",
+  "REC105",
+  "REC120",
+  "REC121",
+  "REC122",
+  "REC123",
+  "REC124",
+  "SOCI233",
+  "WE186REC"
+ ],
+ "source_coverage": 0.875
 }

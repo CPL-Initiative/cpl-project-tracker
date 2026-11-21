@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Restaurant Management",
  "award": "A.S. Degree",
- "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=171",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=171",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9239,
+  "input_tokens": 8935,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9239,
-    "output_tokens": 1165,
+    "input_tokens": 8935,
+    "output_tokens": 1124,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1165,
+  "output_tokens": 1124,
   "output_tokens_details": {
-   "thinking_tokens": 409
+   "thinking_tokens": 312
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06026,
- "ms": 10033,
- "seconds": 10.5,
+ "cost_usd": 0.05822,
+ "ms": 10392,
+ "seconds": 14.2,
  "parts": null,
  "error": null,
  "score": {
@@ -218,10 +218,24 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog states 'Units Required: 18', but the listed required courses sum to 18 units before the minimum 2 units of WE-186HOSP, giving 20 units; reviewer should check the stated total.",
-   "No general education pattern or whole-degree total is printed in this section.",
-   "Career entry taken from the description sentence 'prepares students for a career in the restaurant industry.'"
+   "The page states 'Units Required: 18', but the seven required courses sum to 18 units and the degree also requires a minimum of 2 units of WE-186HOSP, which would give 20 units. The stated total is recorded as printed; a reviewer should check it.",
+   "No general education pattern or degree total is printed in this section.",
+   "The career entry 'restaurant industry' is taken from the description: 'prepares students for a career in the restaurant industry'.",
+   "The catalog prints 'W ork Experience Education' with a stray space; the code is WE-186HOSP."
   ]
  },
- "extracted_run": "39006378829"
+ "extracted_run": "44769429877",
+ "catalog_year": "2026-2027",
+ "source_sha": "ae3ca35828fd8f56",
+ "source_codes": [
+  "CULARTS110",
+  "CULARTS136",
+  "CULARTS150",
+  "HOSP101",
+  "HOSP104",
+  "HOSP220",
+  "HOSP245",
+  "WE186HOSP"
+ ],
+ "source_coverage": 1.0
 }

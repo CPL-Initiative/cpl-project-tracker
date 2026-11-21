@@ -33,7 +33,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business administration: general business concentration - certificate of achievement - nas524/c/nce524",
+    "section_fit": 0.667
    }
   },
   "listed": 18,
@@ -44,34 +47,12 @@
   "title": "Business Administration: General Business Concentration",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.667,
-  "codes_found": [
-   "ACC1A",
-   "BUS10",
-   "BUS18A",
-   "BUS20",
-   "BUS22",
-   "BUS24",
-   "BUS47",
-   "CAT3",
-   "CIS1A",
-   "CIS3",
-   "MAG47",
-   "MAG53"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5569/5273",
-   "title": "Business Administration: Management Concentration - Associate of Science Degree and Certificate of Achievement - NAS521 / NCE521",
-   "h1": "Business Administration: Management Concentration - Associate of Science Degree and Certificate of Achievement - NAS521 / NCE521",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.8
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 18,
-  "text_chars": 2906
+  "text_chars": 0
  },
  {
   "control_number": "30057",
@@ -107,7 +88,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business administration: accounting concentration - associate of science degree and certificate of achievement - nas523/c/nce523",
+    "section_fit": 0.667
    }
   },
   "listed": 22,
@@ -147,7 +131,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business administration: accounting concentration - associate of science degree and certificate of achievement - nas523/c/nce523",
+    "section_fit": 0.667
    }
   },
   "listed": 23,
@@ -185,7 +172,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business administration: management concentration - associate of science degree and certificate of achievement - nas521/c/nce521",
+    "section_fit": 0.667
    }
   },
   "listed": 16,
@@ -223,7 +213,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business administration: management concentration - associate of science degree and certificate of achievement - nas521/c/nce521",
+    "section_fit": 0.667
    }
   },
   "listed": 16,
@@ -263,11 +256,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "retail management/wafc (western association of food chains) - associate of science degree and certificate of achievement",
+    "section_fit": 0.429
    }
   },
   "listed": 18,
-  "text_chars": 3163
+  "text_chars": 2942
  },
  {
   "control_number": "30068",
@@ -302,11 +298,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "retail management/wafc (western association of food chains) - associate of science degree and certificate of achievement",
+    "section_fit": 0.429
    }
   },
   "listed": 17,
-  "text_chars": 3163
+  "text_chars": 2942
  },
  {
   "control_number": "30071",
@@ -341,7 +340,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business administration: logistics management concentration - associate of science degree and certificate of achievement - nas580/c/nce580",
+    "section_fit": 0.714
    }
   },
   "listed": 17,
@@ -380,7 +382,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business administration: logistics management concentration - associate of science degree and certificate of achievement - nas580/c/nce580",
+    "section_fit": 0.714
    }
   },
   "listed": 17,
@@ -409,7 +414,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business administration: logistics management concentration - associate of science degree and certificate of achievement - nas580/c/nce580",
+    "section_fit": 0.286
    }
   },
   "listed": 7,
@@ -438,7 +446,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business administration: logistics management concentration - associate of science degree and certificate of achievement - nas580/c/nce580",
+    "section_fit": 0.286
    }
   },
   "listed": 7,
@@ -476,7 +487,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business administration: real estate concentration - associate of science degree and certificate of achievement - nas527/c/nce527",
+    "section_fit": 0.714
    }
   },
   "listed": 16,
@@ -513,7 +527,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business administration: real estate concentration - associate of science degree and certificate of achievement - nas527/c/nce527",
+    "section_fit": 0.714
    }
   },
   "listed": 15,
@@ -546,7 +563,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "computer programming - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -579,7 +599,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "computer programming - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -616,7 +639,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "drafting technology - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -651,7 +677,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "industrial automation - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -684,7 +713,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "industrial automation - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -703,7 +735,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 31 of 68 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 31 of 67 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -719,7 +751,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 31 of 68 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 31 of 67 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -756,11 +788,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "early childhood education - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
-  "text_chars": 4036
+  "text_chars": 3690
  },
  {
   "control_number": "30099",
@@ -799,11 +834,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "early childhood education - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
-  "text_chars": 4036
+  "text_chars": 3690
  },
  {
   "control_number": "30100",
@@ -818,7 +856,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 31 of 68 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 31 of 67 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -834,7 +872,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 31 of 68 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 31 of 67 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -861,11 +899,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "administration of justice - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
-  "text_chars": 2092
+  "text_chars": 2004
  },
  {
   "control_number": "30103",
@@ -994,7 +1035,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "kinesiology, health and wellness - associate of arts degree - (aoe) naa498/c",
+    "section_fit": 0.6
    }
   },
   "listed": 111,
@@ -1024,11 +1068,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "administration of justice - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
-  "text_chars": 2092
+  "text_chars": 2004
  },
  {
   "control_number": "30105",
@@ -1208,7 +1255,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "communication, media & languages - associate of arts degree - (aoe) naa495/c",
+    "section_fit": 0.6
    }
   },
   "listed": 104,
@@ -2102,7 +2152,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 31 of 68 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 31 of 67 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -2145,11 +2195,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "graphic design - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 2636
+  "text_chars": 2630
  },
  {
   "control_number": "30585",
@@ -2189,11 +2242,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "sociology - associate in arts for transfer (adt)",
+    "section_fit": 0.5
    }
   },
   "listed": 22,
-  "text_chars": 3734
+  "text_chars": 3481
  },
  {
   "control_number": "30606",
@@ -2306,11 +2362,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "graphic design - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 2636
+  "text_chars": 2630
  },
  {
   "control_number": "31219",
@@ -2336,11 +2395,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "early childhood education - associate in science for transfer (adt)",
+    "section_fit": 0.75
    }
   },
   "listed": 8,
-  "text_chars": 3007
+  "text_chars": 2891
  },
  {
   "control_number": "31313",
@@ -2378,11 +2440,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.6
+    "title": 0.6,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 20,
-  "text_chars": 3034
+  "text_chars": 2814
  },
  {
   "control_number": "31316",
@@ -2409,7 +2474,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "game design  - associate of arts degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -2452,7 +2520,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "game design  - associate of science degree and certificate of achievement - nas2005/c/nce2005",
+    "section_fit": 0.5
    }
   },
   "listed": 9,
@@ -2494,11 +2565,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.6
+    "title": 0.6,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 20,
-  "text_chars": 3034
+  "text_chars": 2814
  },
  {
   "control_number": "31376",
@@ -2531,7 +2605,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "digital electronics - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -2560,7 +2637,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "computer numerical control programming - associate of science degree and certificate of achievement - nas655/c, nce655",
+    "section_fit": 0.667
    }
   },
   "listed": 12,
@@ -2590,7 +2670,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "computer numerical control programming - associate of science degree and certificate of achievement - nas655/c, nce655",
+    "section_fit": 0.667
    }
   },
   "listed": 13,
@@ -2627,7 +2710,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "digital electronics - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -2658,7 +2744,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "game programming - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -2689,7 +2778,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "game programming - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -2780,7 +2872,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "english - associate in arts for transfer (adt) - naa648 / naa649",
+    "section_fit": 0.25
    }
   },
   "listed": 27,
@@ -2823,11 +2918,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "spanish - associate in arts for transfer (adt)",
+    "section_fit": 0.5
    }
   },
   "listed": 21,
-  "text_chars": 3630
+  "text_chars": 3393
  },
  {
   "control_number": "32594",
@@ -2959,11 +3057,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "psychology - associate in arts for transfer (adt)",
+    "section_fit": 0.5
    }
   },
   "listed": 15,
-  "text_chars": 2509
+  "text_chars": 2344
  },
  {
   "control_number": "32631",
@@ -3003,11 +3104,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "anthropology - associate in arts for transfer (adt)",
+    "section_fit": 0.5
    }
   },
   "listed": 22,
-  "text_chars": 3581
+  "text_chars": 3339
  },
  {
   "control_number": "32821",
@@ -3022,7 +3126,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 31 of 68 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 31 of 67 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -3031,8 +3135,9 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.957,
+  "coverage": 1.0,
   "codes_found": [
+   "HIS2",
    "HIST1",
    "HUM10",
    "HUM10H",
@@ -3063,7 +3168,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "philosophy - associate in arts for transfer (adt)",
+    "section_fit": 0.5
    }
   },
   "listed": 23,
@@ -3160,7 +3268,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "supply chain automation - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
@@ -3206,7 +3317,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "supply chain automation - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 24,
@@ -3238,7 +3352,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "electrician apprenticeship - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -3280,7 +3397,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "electrician - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -3312,7 +3432,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "electrician apprenticeship - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -3353,7 +3476,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "electrician - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -3505,7 +3631,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "sound and communication systems installer apprenticeship  - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -3534,7 +3663,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "sound and communication systems installer apprenticeship  - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -3584,11 +3716,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "administration of justice - associate in science for transfer (adt) - nas642/nas643",
+    "section_fit": 0.4
    }
   },
   "listed": 28,
-  "text_chars": 4012
+  "text_chars": 3682
  },
  {
   "control_number": "35938",
@@ -3620,7 +3755,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "facility maintenance - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -3656,7 +3794,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "facility maintenance - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -3685,7 +3826,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business information worker - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -3714,7 +3858,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business information worker - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -3745,7 +3892,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -3785,11 +3935,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "child and adolescent development - associate in arts for transfer (adt)",
+    "section_fit": 0.75
    }
   },
   "listed": 18,
-  "text_chars": 4365
+  "text_chars": 4118
  },
  {
   "control_number": "37169",
@@ -3923,7 +4076,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "music - associate in arts for transfer (adt)",
+    "section_fit": 0.5
    }
   },
   "listed": 9,
@@ -3958,7 +4114,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "construction management - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -3992,7 +4151,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "construction management - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -4017,7 +4179,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "accounting basics for small business - certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -4036,7 +4201,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 31 of 68 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 31 of 67 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -4058,7 +4223,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "customer relations - certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -4082,7 +4250,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "sales techniques - certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -4109,7 +4280,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "social media for business - certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -4137,7 +4311,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.5,
+    "section": "noncredit",
+    "section_line": "enterprise communications - certificate of completion",
+    "section_fit": 0.5
    }
   },
   "listed": 6,
@@ -4163,7 +4340,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "emerging leaders - certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -4182,7 +4362,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 31 of 68 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 31 of 67 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -4205,7 +4385,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "workplace essentials - certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -4234,7 +4417,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "apprenticeship: manufacturing technician ii - associate of science degree and certificate of achievement",
+    "section_fit": 0.75
    }
   },
   "listed": 7,
@@ -4263,7 +4449,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "game development core - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -4294,7 +4483,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "game concept art - associate of arts degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -4325,7 +4517,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "3d game modeling and animation - associate of science degree and certificate of achievement - nas972/c/nce972",
+    "section_fit": 0.667
    }
   },
   "listed": 9,
@@ -4351,7 +4546,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "entrepreneurial essentials - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -4378,7 +4576,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "entrepreneurial foundations - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -4406,7 +4607,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "entrepreneurship and the team - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -4435,7 +4639,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "game development core - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -4466,7 +4673,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "game concept art - associate of science degree and certificate of achievement - nas971/c/nce971",
+    "section_fit": 0.6
    }
   },
   "listed": 9,
@@ -4497,7 +4707,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "3d game modeling and animation - associate of science degree and certificate of achievement - nas972/c/nce972",
+    "section_fit": 0.667
    }
   },
   "listed": 9,
@@ -4525,7 +4738,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "apprenticeship: manufacturing technician i - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -4555,7 +4771,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "apprenticeship: manufacturing technician ii - associate of science degree and certificate of achievement",
+    "section_fit": 0.75
    }
   },
   "listed": 8,
@@ -4592,7 +4811,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "drafting technology - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -4617,7 +4839,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "successful career transitions - certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -4645,7 +4870,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "non-credit entrepreneurship and the team - certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -4671,7 +4899,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "non-credit entrepreneurial essentials - certificate of completion - ncc8035",
+    "section_fit": 0.8
    }
   },
   "listed": 4,
@@ -4698,7 +4929,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "non-credit entrepreneurial foundations - certificate of completion - ncc8036",
+    "section_fit": 0.8
    }
   },
   "listed": 5,
@@ -4731,7 +4965,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "architectural graphics - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -4771,7 +5008,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "3d mechanical drafting - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -4790,7 +5030,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 31 of 68 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 31 of 67 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -4812,7 +5052,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "advanced american college english - certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -4840,7 +5083,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.5,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -4880,7 +5126,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "3d mechanical drafting - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -4912,7 +5161,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "architectural graphics - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -4937,7 +5189,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "family childcare provider - certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -5042,11 +5297,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "social justice studies - associate in arts for transfer (adt)",
+    "section_fit": 0.75
    }
   },
   "listed": 44,
-  "text_chars": 5077
+  "text_chars": 4531
  },
  {
   "control_number": "41774",
@@ -5071,7 +5329,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "crime scene investigation - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -5094,7 +5355,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit essential solidworks - certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 1,
@@ -5113,7 +5377,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 31 of 68 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 31 of 67 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -5133,7 +5397,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit essential cad - certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 1,
@@ -5156,7 +5423,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit essential revit - certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 1,
@@ -5180,7 +5450,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit essential 3d tour - certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -5225,11 +5498,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies 2.0 - associate in arts for transfer (adt)",
+    "section_fit": 0.667
    }
   },
   "listed": 23,
-  "text_chars": 3190
+  "text_chars": 2933
  },
  {
   "control_number": "42900",
@@ -5342,7 +5618,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "python programming - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -5383,7 +5662,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "apprenticeship carpentry, acoustical installer - associate of science degree and certificate of achievement -nas1051/c/nce1051",
+    "section_fit": 0.667
    }
   },
   "listed": 19,
@@ -5427,7 +5709,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "apprenticeship carpentry, concrete - associate of science degree and certificate of achievement - nas1052/c/nce1052",
+    "section_fit": 0.6
    }
   },
   "listed": 22,
@@ -5464,7 +5749,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "apprenticeship carpentry, drywall finisher - associate of science degree and certificate of achievement -nas1053/c/nce1053",
+    "section_fit": 0.667
    }
   },
   "listed": 15,
@@ -5515,7 +5803,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "apprenticeship carpentry, drywall/lather - associate of science degree and certificate of achievement -nas1054/c/nce1054",
+    "section_fit": 0.667
    }
   },
   "listed": 29,
@@ -5552,7 +5843,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "apprenticeship carpentry, finish carpentry - associate of science degree and certificate of achievement - nas1055/c /nce1055",
+    "section_fit": 0.6
    }
   },
   "listed": 15,
@@ -5591,7 +5885,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "apprenticeship carpentry, framing - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -5630,7 +5927,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "apprenticeship carpentry, tilt-up - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -5669,7 +5969,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "apprenticeship carpentry, framing - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -5707,7 +6010,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "apprenticeship carpentry, tilt-up - associate of science degree and certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -5790,7 +6096,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "entrepreneurship - associate of science degree - nas531/c",
+    "section_fit": 0.5
    }
   },
   "listed": 8,
@@ -5817,7 +6126,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "robotics specialist - certificate of achievement - nce1100",
+    "section_fit": 0.667
    }
   },
   "listed": 5,
@@ -5915,11 +6227,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "administration of justice: corrections - associate of science degree - nas1097/c",
+    "section_fit": 0.75
    }
   },
   "listed": 10,
-  "text_chars": 2945
+  "text_chars": 2835
  },
  {
   "control_number": "44880",
@@ -5942,7 +6257,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "administration of justice: corrections - certificate of achievement - nce1098",
+    "section_fit": 0.75
    }
   },
   "listed": 5,
@@ -6107,7 +6425,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "apprenticeship carpentry, concrete - associate of science degree and certificate of achievement - nas1052/c/nce1052",
+    "section_fit": 0.6
    }
   },
   "listed": 22,
@@ -6179,7 +6500,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "apprenticeship carpentry, acoustical installer - associate of science degree and certificate of achievement -nas1051/c/nce1051",
+    "section_fit": 0.667
    }
   },
   "listed": 19,
@@ -6230,7 +6554,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "apprenticeship carpentry, drywall/lather - associate of science degree and certificate of achievement -nas1054/c/nce1054",
+    "section_fit": 0.667
    }
   },
   "listed": 29,
@@ -6267,7 +6594,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "apprenticeship carpentry, finish carpentry - associate of science degree and certificate of achievement - nas1055/c /nce1055",
+    "section_fit": 0.6
    }
   },
   "listed": 15,
@@ -6304,7 +6634,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "apprenticeship carpentry, drywall finisher - associate of science degree and certificate of achievement -nas1053/c/nce1053",
+    "section_fit": 0.667
    }
   },
   "listed": 15,
@@ -6335,7 +6668,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "biomedical electronic equipment repair - certificate of achievement - nce1104",
+    "section_fit": 0.8
    }
   },
   "listed": 10,
@@ -6374,7 +6710,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "control systems specialist - certificate of achievement - nce1099",
+    "section_fit": 0.75
    }
   },
   "listed": 17,
@@ -6424,7 +6763,7 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.927,
+  "coverage": 1.0,
   "codes_found": [
    "ANT2",
    "ANT2H",
@@ -6473,6 +6812,14 @@
    "GEG1H",
    "GEG2",
    "GEG3",
+   "HIS16",
+   "HIS17",
+   "HIS18",
+   "HIS19",
+   "HIS2",
+   "HIS35",
+   "HIS42",
+   "HIS60",
    "HIST1",
    "HIST25",
    "HIST2H",
@@ -6536,10 +6883,13 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "global studies - certificate of achievement - nce1119",
+    "section_fit": 0.667
    }
   },
   "listed": 110,
-  "text_chars": 8239
+  "text_chars": 6917
  }
 ]

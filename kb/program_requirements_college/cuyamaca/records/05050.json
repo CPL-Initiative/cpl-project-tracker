@@ -239,5 +239,6 @@
    "Catalog prints codes with hyphens (BUS-120); they match the closed list codes (BUS 120), so none are catalog additions."
   ]
  },
- "extracted_run": "38748833332"
+ "extracted_run": "38748833332",
+ "catalog_year": "2026-2027"
 }

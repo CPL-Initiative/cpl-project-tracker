@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Computer Animation",
  "award": "A.A. Degree",
- "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=204",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=203",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11994,
+  "input_tokens": 11953,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11994,
-    "output_tokens": 2239,
+    "input_tokens": 11953,
+    "output_tokens": 2607,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,32 +30,27 @@
     "model": null
    }
   ],
-  "output_tokens": 2239,
+  "output_tokens": 2607,
   "output_tokens_details": {
-   "thinking_tokens": 785
+   "thinking_tokens": 841
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09276,
- "ms": 17576,
- "seconds": 17.8,
+ "cost_usd": 0.09995,
+ "ms": 19635,
+ "seconds": 19.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 11,
+   "placed": 16,
    "listed": 17,
-   "share": 0.647,
+   "share": 0.941,
    "missing": [
-    "CAWT74",
-    "GMD173",
-    "MEA114",
-    "MEA131",
-    "MEA135",
-    "MEA265"
+    "MEA114"
    ],
    "unexplained": [],
    "none_placed": false,
@@ -86,30 +81,31 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    17.0,
-    17.0
+    30.5,
+    30.5
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    30.5,
+    30.5
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 2,
    "courses": 0,
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -123,15 +119,15 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Associate in Arts Degree: Computer Animation (heading not in supplied text; section continues from previous page)",
+   "section_heading": "Associate in Arts Degree: Computer Animation",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 30.5,
+    "max": 30.5
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -148,10 +144,60 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Create portfolio-ready art work demonstrating their mastery of the fundamentals of computer animation and CGI scene creation.",
+    "Critique animation projects using industry standards."
+   ],
    "careers": []
   },
   "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MEA-131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MEA-135",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MEA-265",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAWT-074",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GMD-173",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
    {
     "name": "Plus a minimum of three units from the following",
     "rule": "choose_units",
@@ -348,31 +394,38 @@
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "CAWT 74",
-    "why": "named only in the Video Game Animation certificate section"
-   },
-   {
-    "code": "GMD 173",
-    "why": "not in the supplied degree text; named only in the certificate section (degree's opening required courses are on the previous page, not supplied)"
-   },
-   {
     "code": "MEA 114",
-    "why": "catalog prints this course as MUSIC-114 Digital Sound Editing, recorded under that code"
-   },
-   {
-    "code": "MEA 131",
-    "why": "not in the supplied degree text; likely in the degree's opening required list on the previous page"
-   },
-   {
-    "code": "MEA 135",
-    "why": "not in the supplied degree text; likely in the degree's opening required list on the previous page"
-   },
-   {
-    "code": "MEA 265",
-    "why": "not in the supplied degree text; named only as a recommended elective in the certificate (as Studio Production)"
+    "why": "not in the text; the section lists Digital Sound Editing as MUSIC-114 (recorded as catalog addition)"
    }
   ],
-  "notes": []
+  "notes": [
+   "The Computer Animation A.A. section prints no program description and names no careers.",
+   "MEA-135 is printed as 'Character Animation' while the closed list titles MEA 135 'Computer Animation and Special Effects'; MEA-265 is printed as 'Studio Production' while the closed list titles it 'Animation Production'.",
+   "Digital Sound Editing appears as MUSIC-114 in the catalog but as MEA 114 in the closed list; likely a renumbering.",
+   "PHOTO-150 title is cut off in the text ('Introduction to Cameras and').",
+   "Required block section continues across a page break (pages 203-204); block units sum to the stated 30.5 (13.5+3+6+6+2)."
+  ]
  },
- "extracted_run": "39006378829"
+ "extracted_run": "44769429877",
+ "catalog_year": "2026-2027",
+ "source_sha": "5ed0ba4aba87b558",
+ "source_codes": [
+  "CAWT74",
+  "GMD173",
+  "MEA100",
+  "MEA102",
+  "MEA106",
+  "MEA109",
+  "MEA116",
+  "MEA118",
+  "MEA131",
+  "MEA135",
+  "MEA218",
+  "MEA231",
+  "MEA235",
+  "MEA265",
+  "MEA295",
+  "WE186MEA"
+ ],
+ "source_coverage": 0.941
 }

@@ -1,0 +1,1026 @@
+{
+ "college": "College of the Canyons",
+ "control_number": "43271",
+ "shape": "adt",
+ "title": "Law, Public Policy, and Society",
+ "award": "A.A- T Degree",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=242",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 14169,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 14169,
+    "output_tokens": 7803,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 7803,
+  "output_tokens_details": {
+   "thinking_tokens": 2758
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.21274,
+ "ms": 58212,
+ "seconds": 58.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 45,
+   "listed": 100,
+   "share": 0.45,
+   "missing": [
+    "ANTHRO210",
+    "COMS225",
+    "COMS235",
+    "COMS256",
+    "COMS260",
+    "CWE189GNRL",
+    "ECON201",
+    "ECON202",
+    "ECONC2001H",
+    "ECONC2002H",
+    "GLST101",
+    "GLST102",
+    "HIST112",
+    "HIST112H",
+    "POLISC200",
+    "POLISC230",
+    "POLISC250",
+    "POLISC270",
+    "POLISC290",
+    "PSYCH104",
+    "PSYCH230",
+    "PSYCH235",
+    "PSYCH240",
+    "SOCI101",
+    "SOCI101H",
+    "SOCI103",
+    "SOCI103H",
+    "SOCI104",
+    "SOCI105",
+    "SOCI106",
+    "SOCI107",
+    "SOCI110",
+    "SOCI130",
+    "SOCI200",
+    "SOCI200H",
+    "SOCI205",
+    "SOCI207",
+    "SOCI208",
+    "SOCI210",
+    "SOCI233",
+    "WE186AUTO",
+    "WE186BUS",
+    "WE186CAWT",
+    "WE186CNST",
+    "WE186CULA",
+    "WE186ENVR",
+    "WE186GMD",
+    "WE186MEA",
+    "WE186MFGT",
+    "WE186NETW",
+    "WE186PHOT",
+    "WE186PLGL",
+    "WE186THTR",
+    "WE186WELD",
+    "WWE186ID"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "COMM120",
+     "listed": "COMS120",
+     "matched_by": "course_id"
+    }
+   ],
+   "pass": true
+  },
+  "invented": {
+   "count": 8,
+   "codes": [
+    "ANTRHO210",
+    "COMM225",
+    "COMM235",
+    "COMM256",
+    "COMM260",
+    "HISTC1002",
+    "HISTC1002H",
+    "PSYC104"
+   ],
+   "flagged": [
+    "ANTRHO210",
+    "COMM225",
+    "COMM235",
+    "COMM256",
+    "COMM260",
+    "HISTC1002",
+    "HISTC1002H",
+    "PSYC104"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    32.0,
+    33.0
+   ],
+   "stated": [
+    32.0,
+    33.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Arts for Transfer Degree: Law, Public Policy, and Society",
+   "measure": "units",
+   "total_units": {
+    "min": 32,
+    "max": 33
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "CalGETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will be able to analyze social science concepts and theories and examine diverse viewpoints within the context of modern society, law and/or public policy."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Critical Thinking",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COMM-225",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL-C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL-C1001H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILOS-206",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Ethics",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHILOS-120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Introduction to American Government",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "POLS-C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS-C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Oral Communications",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COMM-C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM-C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM-120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Quantitative Reasoning",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ECON-291",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC-104",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOCI-137",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT-C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT-C1000H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT-C1000E",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Understanding the Law",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ADMJUS-101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJUS-110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJUS-125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS-211",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PARLGL-101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "United States History",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HIST-C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST-C1001H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST-C1002H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Written Communication",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ENGL-C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL-C1000H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Take at least one course from at least two separate areas below for a minimum of 6 units",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ADMJUS-101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJUS-110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJUS-120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJUS-125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJUS-135",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJUS-185",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI-250",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS-211",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COUNS-142",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COUNS-150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTHRO-103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTHRO-103H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTRHO-210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS-126",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM-235",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM-256",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM-260",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOGRPH-102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-116",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-117",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST-120H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-161",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-191",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-192",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-193",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-243",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLHSCI-243",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMS 120",
+    "why": "catalog prints it as COMM-120 (recorded as addition)"
+   },
+   {
+    "code": "COMS 225",
+    "why": "catalog prints it as COMM-225 (recorded as addition)"
+   },
+   {
+    "code": "COMS 235",
+    "why": "catalog prints it as COMM-235 (recorded as addition)"
+   },
+   {
+    "code": "COMS 256",
+    "why": "catalog prints it as COMM-256 (recorded as addition)"
+   },
+   {
+    "code": "COMS 260",
+    "why": "catalog prints it as COMM-260 (recorded as addition)"
+   },
+   {
+    "code": "PSYCH 104",
+    "why": "catalog prints it as PSYC-104 (recorded as addition)"
+   },
+   {
+    "code": "ANTHRO 210",
+    "why": "catalog prints it with typo as ANTRHO-210 (recorded as addition)"
+   },
+   {
+    "code": "HIST 112",
+    "why": "not in the text; catalog lists HIST-C1002 instead"
+   },
+   {
+    "code": "HIST 112H",
+    "why": "not in the text; catalog lists HIST-C1002H instead"
+   },
+   {
+    "code": "ECON 201",
+    "why": "not in the text; excerpt cut off"
+   },
+   {
+    "code": "ECON 202",
+    "why": "not in the text; excerpt cut off"
+   },
+   {
+    "code": "ECON C2001H",
+    "why": "not in the text; excerpt cut off"
+   },
+   {
+    "code": "ECON C2002H",
+    "why": "not in the text; excerpt cut off"
+   },
+   {
+    "code": "GLST 101",
+    "why": "not in the text; excerpt cut off"
+   },
+   {
+    "code": "GLST 102",
+    "why": "not in the text; excerpt cut off"
+   },
+   {
+    "code": "POLISC 200",
+    "why": "not in the text; excerpt cut off"
+   },
+   {
+    "code": "POLISC 230",
+    "why": "not in the text; excerpt cut off"
+   },
+   {
+    "code": "POLISC 250",
+    "why": "not in the text; excerpt cut off"
+   },
+   {
+    "code": "POLISC 270",
+    "why": "not in the text; excerpt cut off"
+   },
+   {
+    "code": "POLISC 290",
+    "why": "not in the text; excerpt cut off"
+   },
+   {
+    "code": "PSYCH 230",
+    "why": "not in the text; excerpt cut off"
+   },
+   {
+    "code": "PSYCH 235",
+    "why": "not in the text; excerpt cut off"
+   },
+   {
+    "code": "PSYCH 240",
+    "why": "not in the text; excerpt cut off"
+   },
+   {
+    "code": "SOCI 101",
+    "why": "not in the text; excerpt cut off"
+   },
+   {
+    "code": "SOCI 101H",
+    "why": "not in the text; excerpt cut off"
+   },
+   {
+    "code": "SOCI 103",
+    "why": "not in the text; excerpt cut off"
+   },
+   {
+    "code": "SOCI 103H",
+    "why": "not in the text; excerpt cut off"
+   },
+   {
+    "code": "SOCI 104",
+    "why": "not in the text; excerpt cut off"
+   },
+   {
+    "code": "SOCI 105",
+    "why": "not in the text; excerpt cut off"
+   },
+   {
+    "code": "SOCI 106",
+    "why": "not in the text; excerpt cut off"
+   },
+   {
+    "code": "SOCI 107",
+    "why": "not in the text; excerpt cut off"
+   },
+   {
+    "code": "SOCI 110",
+    "why": "not in the text; excerpt cut off"
+   },
+   {
+    "code": "SOCI 130",
+    "why": "not in the text; excerpt cut off"
+   },
+   {
+    "code": "SOCI 200",
+    "why": "not in the text; excerpt cut off"
+   },
+   {
+    "code": "SOCI 200H",
+    "why": "not in the text; excerpt cut off"
+   },
+   {
+    "code": "SOCI 205",
+    "why": "not in the text; excerpt cut off"
+   },
+   {
+    "code": "SOCI 207",
+    "why": "not in the text; excerpt cut off"
+   },
+   {
+    "code": "SOCI 208",
+    "why": "not in the text; excerpt cut off"
+   },
+   {
+    "code": "SOCI 210",
+    "why": "not in the text; excerpt cut off"
+   },
+   {
+    "code": "SOCI 233",
+    "why": "not in the text; excerpt cut off"
+   },
+   {
+    "code": "CWE 189GNRL",
+    "why": "not in the text"
+   },
+   {
+    "code": "WE 186AUTO",
+    "why": "not in the text"
+   },
+   {
+    "code": "WE 186BUS",
+    "why": "not in the text"
+   },
+   {
+    "code": "WE 186CAWT",
+    "why": "not in the text"
+   },
+   {
+    "code": "WE 186CNST",
+    "why": "not in the text"
+   },
+   {
+    "code": "WE 186CULA",
+    "why": "not in the text"
+   },
+   {
+    "code": "WE 186ENVR",
+    "why": "not in the text"
+   },
+   {
+    "code": "WE 186GMD",
+    "why": "not in the text"
+   },
+   {
+    "code": "WE 186MEA",
+    "why": "not in the text"
+   },
+   {
+    "code": "WE 186MFGT",
+    "why": "not in the text"
+   },
+   {
+    "code": "WE 186NETW",
+    "why": "not in the text"
+   },
+   {
+    "code": "WE 186PHOT",
+    "why": "not in the text"
+   },
+   {
+    "code": "WE 186PLGL",
+    "why": "named only in the Paralegal Studies section"
+   },
+   {
+    "code": "WE 186THTR",
+    "why": "not in the text"
+   },
+   {
+    "code": "WE 186WELD",
+    "why": "not in the text"
+   },
+   {
+    "code": "WWE 186ID",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "Catalog text is cut off at the end of page 245 partway through the Diversity area of the second list (HLHSCI-243 has no units printed); further areas/courses (likely ECON, GLST, POLS, PSYC, SOCI) are missing.",
+   "The first 8 areas carry a combined printed total of 26-27 units ('Select one course from each of the 8 areas below for 26 – 27 units'); no per-area totals printed.",
+   "Second list rule: at least one course from at least two separate areas (Administration of Justice/Criminal Justice/Criminology, Business, College Success, Diversity, ...) for a minimum of 6 units; courses cannot have been used in the first 8 areas. Recorded as one choose_units block; the two-area constraint is described here.",
+   "Several codes printed differ from the closed list: COMM-120/225/235/256/260 vs COMS, PSYC-104 vs PSYCH 104, ANTRHO-210 (typo) vs ANTHRO 210, HIST-C1002/C1002H not in closed list (closed list has HIST 112/112H). Recorded as catalog additions; reviewer should check equivalence.",
+   "ge_pattern taken from the generic ADT description (CalGETC); no GE units or degree total printed for this award. The Paralegal Associate Degree GE page belongs to the Paralegal Studies degree, not this AA-T.",
+   "The 60-unit statement is the generic ADT requirement, not recorded as degree_total.",
+   "Catalog prints the degree title as 'Law, Society, and Public Policy' in one sentence."
+  ]
+ },
+ "extracted_run": "44769429877",
+ "catalog_year": "2026-2027",
+ "source_sha": "c9579365faed665f",
+ "source_codes": [
+  "ADMJUS101",
+  "ADMJUS110",
+  "ADMJUS120",
+  "ADMJUS125",
+  "ADMJUS135",
+  "ADMJUS185",
+  "ANTHRO103",
+  "ANTHRO103H",
+  "ANTHRO210",
+  "BUS126",
+  "BUS211",
+  "COMMC1000",
+  "COMMC1000H",
+  "COMS120",
+  "COUNS142",
+  "COUNS150",
+  "ECON201",
+  "ECON202",
+  "ECON291",
+  "ECONC2001H",
+  "ECONC2002H",
+  "ENGLC1000",
+  "ENGLC1000H",
+  "ENGLC1001",
+  "ENGLC1001H",
+  "GEOGRPH102",
+  "GLST101",
+  "GLST102",
+  "HIST116",
+  "HIST117",
+  "HIST120",
+  "HIST120H",
+  "HIST130",
+  "HIST161",
+  "HIST191",
+  "HIST192",
+  "HIST193",
+  "HIST210",
+  "HIST243",
+  "HISTC1001",
+  "HISTC1001H",
+  "HLHSCI243",
+  "PARLGL101",
+  "PHILOS120",
+  "PHILOS206",
+  "POLSC1000",
+  "POLSC1000H",
+  "SOCI101",
+  "SOCI101H",
+  "SOCI103",
+  "SOCI103H",
+  "SOCI104",
+  "SOCI105",
+  "SOCI106",
+  "SOCI107",
+  "SOCI110",
+  "SOCI130",
+  "SOCI137",
+  "SOCI200",
+  "SOCI200H",
+  "SOCI205",
+  "SOCI207",
+  "SOCI208",
+  "SOCI210",
+  "SOCI233",
+  "SOCI250",
+  "STATC1000",
+  "STATC1000E",
+  "STATC1000H",
+  "WE186PLGL"
+ ],
+ "source_coverage": 0.7
+}

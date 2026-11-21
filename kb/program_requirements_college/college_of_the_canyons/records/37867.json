@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Economics",
  "award": "A.A- T Degree",
- "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=135",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=134",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9262,
+  "input_tokens": 10357,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9262,
-    "output_tokens": 2178,
+    "input_tokens": 10357,
+    "output_tokens": 3646,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,33 +30,40 @@
     "model": null
    }
   ],
-  "output_tokens": 2178,
+  "output_tokens": 3646,
   "output_tokens_details": {
-   "thinking_tokens": 561
+   "thinking_tokens": 1250
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08061,
- "ms": 16503,
- "seconds": 16.8,
+ "cost_usd": 0.11435,
+ "ms": 28311,
+ "seconds": 28.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 14,
+   "placed": 18,
    "listed": 18,
-   "share": 0.778,
-   "missing": [
-    "ECON201",
-    "ECON202",
-    "ECONC2001H",
-    "ECONC2002H"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON202",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECON201",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
@@ -80,29 +87,31 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    15.0,
-    21.0
+    21.0,
+    27.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    21.0,
+    28.0
+   ],
+   "against": "program",
+   "why": [],
+   "short_high": true
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -117,22 +126,22 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "ECONOMICS",
+   "section_heading": "Associate in Arts for Transfer Degree: Economics",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 21,
+    "max": 28
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "CalGETC",
    "degree_total": {
     "min": null,
     "max": null
@@ -142,10 +151,53 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Students will be able to analyze and evaluate scarcity, the fundamental concept defining economics and be ready to transfer and complete successfully various upper-division academic-degrees, especially in economics, finance and business.",
+    "Students will be able to examine how limited-resources allocations occur throughout markets and government policies by applying and appraising the Classical and Keynesian principles to business fluctuations in terms of economic growth, changes on the average price level and labor employment.",
+    "Students will be able to compare and contrast the decision-making processes of consumers and firms, regarding scarcity, under different levels of competition in the product and resource markets. Students will distinguish and apply the qualifying assumptions of perfect competition, monopoly, monopolistic competition and oligopoly theories.",
+    "Students will be able to acquire the quantitative tools and the historical perspectives to advance awareness of the interdependence between government policies and positive economics."
+   ],
    "careers": []
   },
   "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ECON-C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON-C2001H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON-C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON-C2002H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
    {
     "name": "Plus one course from the following:",
     "rule": "choose_courses",
@@ -174,13 +226,7 @@
       "code": "STAT-C1000",
       "units": 4,
       "units_max": null,
-      "alternatives": [
-       {
-        "code": "STAT-C1000H",
-        "units": 4,
-        "catalog_addition": false
-       }
-      ],
+      "alternatives": [],
       "catalog_addition": false
      },
      {
@@ -189,6 +235,13 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
+     },
+     {
+      "code": "STAT-C1000H",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
      }
     ]
    },
@@ -342,13 +395,14 @@
       "code": "ECON-170",
       "units": 3,
       "units_max": null,
-      "alternatives": [
-       {
-        "code": "ECON-170H",
-        "units": 3,
-        "catalog_addition": false
-       }
-      ],
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON-170H",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
       "catalog_addition": false
      },
      {
@@ -386,22 +440,44 @@
   "missing_explained": [
    {
     "code": "ECON 201",
-    "why": "not in the text; former code of ECON C2002, likely core course on preceding page not provided"
+    "why": "not in the requirements; catalog now lists ECON-C2002 (course description says 'Formerly ECON-201')"
    },
    {
     "code": "ECON 202",
-    "why": "not in the text; former code of ECON C2001, likely core course on preceding page not provided"
-   },
-   {
-    "code": "ECON C2001H",
-    "why": "appears only in course descriptions; required core likely on preceding page not provided"
-   },
-   {
-    "code": "ECON C2002H",
-    "why": "appears only in course descriptions; required core likely on preceding page not provided"
+    "why": "not in the requirements; catalog now lists ECON-C2001 (course description says 'Formerly ECON-202')"
    }
   ],
-  "notes": []
+  "notes": [
+   "ECON-C2001 and ECON-C2002 are not in the closed list; the closed list carries their former codes ECON 202 and ECON 201, so these are likely renumbered equivalents.",
+   "The 60-unit figure and CalGETC appear only in the generic ADT description, so degree_total and ge_units are null; ge_pattern recorded as CalGETC from that text.",
+   "The last two elective lists overlap; the second requires a course not already used above. 'for three to five units' recorded as each block's stated total.",
+   "STAT-C1000 and STAT-C1000H are printed as separate rows in the list and recorded as separate entries rather than an honors pair.",
+   "ENGL-204 is printed as 'T echnical Report Writing' (spacing artifact).",
+   "Outcomes are printed under the heading 'Degree Student Learning Outcome'; hyphenated words broken across lines were joined as printed (e.g. 'academic-degrees', 'limited-resources')."
+  ]
  },
- "extracted_run": "39006378829"
+ "extracted_run": "44769429877",
+ "catalog_year": "2026-2027",
+ "source_sha": "574030a9e47f6f3c",
+ "source_codes": [
+  "BUS201",
+  "BUS202",
+  "CAWT101",
+  "CAWT116",
+  "CAWT140",
+  "ECON170",
+  "ECON170H",
+  "ECON201",
+  "ECON202",
+  "ECONC2001H",
+  "ECONC2002H",
+  "ENGL204",
+  "MATH211",
+  "MATH212",
+  "MATH213",
+  "MATH240",
+  "STATC1000",
+  "STATC1000H"
+ ],
+ "source_coverage": 1.0
 }

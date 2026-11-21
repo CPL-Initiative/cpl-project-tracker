@@ -4,7 +4,7 @@
  "shape": "certificate",
  "title": "Applied GIS and Spatial Studies",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=156",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=156",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 13055,
-    "output_tokens": 5884,
+    "output_tokens": 6113,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 5884,
+  "output_tokens": 6113,
   "output_tokens_details": {
-   "thinking_tokens": 1626
+   "thinking_tokens": 1828
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.1699,
- "ms": 43176,
- "seconds": 43.5,
+ "cost_usd": 0.17448,
+ "ms": 44034,
+ "seconds": 44.1,
  "parts": null,
  "error": null,
  "score": {
@@ -86,16 +86,14 @@
    "status": "equal",
    "computed": [
     19.0,
-    20.0
+    22.0
    ],
    "stated": [
     19.0,
     22.0
    ],
    "against": "program",
-   "why": [],
-   "short_high": true,
-   "rescored": "Sam's ruling of 2026-11-17, short high end"
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -217,8 +215,8 @@
     "minimum": 6,
     "option_group": "Focus area",
     "stated": {
-     "min": null,
-     "max": null
+     "min": 6,
+     "max": 8
     },
     "courses": [
      {
@@ -243,8 +241,8 @@
     "minimum": 6,
     "option_group": "Focus area",
     "stated": {
-     "min": null,
-     "max": null
+     "min": 6,
+     "max": 8
     },
     "courses": [
      {
@@ -295,8 +293,8 @@
     "minimum": 6,
     "option_group": "Focus area",
     "stated": {
-     "min": null,
-     "max": null
+     "min": 6,
+     "max": 8
     },
     "courses": [
      {
@@ -321,8 +319,8 @@
     "minimum": 6,
     "option_group": "Focus area",
     "stated": {
-     "min": null,
-     "max": null
+     "min": 6,
+     "max": 8
     },
     "courses": [
      {
@@ -367,8 +365,8 @@
     "minimum": 6,
     "option_group": "Focus area",
     "stated": {
-     "min": null,
-     "max": null
+     "min": 6,
+     "max": 8
     },
     "courses": [
      {
@@ -414,8 +412,8 @@
     "minimum": 6,
     "option_group": "Focus area",
     "stated": {
-     "min": null,
-     "max": null
+     "min": 6,
+     "max": 8
     },
     "courses": [
      {
@@ -447,8 +445,8 @@
     "minimum": 6,
     "option_group": "Focus area",
     "stated": {
-     "min": null,
-     "max": null
+     "min": 6,
+     "max": 8
     },
     "courses": [
      {
@@ -487,8 +485,8 @@
     "minimum": 6,
     "option_group": "Focus area",
     "stated": {
-     "min": null,
-     "max": null
+     "min": 6,
+     "max": 8
     },
     "courses": [
      {
@@ -541,8 +539,8 @@
     "minimum": 6,
     "option_group": "Focus area",
     "stated": {
-     "min": null,
-     "max": null
+     "min": 6,
+     "max": 8
     },
     "courses": [
      {
@@ -595,8 +593,8 @@
     "minimum": 6,
     "option_group": "Focus area",
     "stated": {
-     "min": null,
-     "max": null
+     "min": 6,
+     "max": 8
     },
     "courses": [
      {
@@ -635,8 +633,8 @@
     "minimum": 6,
     "option_group": "Focus area",
     "stated": {
-     "min": null,
-     "max": null
+     "min": 6,
+     "max": 8
     },
     "courses": [
      {
@@ -667,8 +665,8 @@
     "minimum": 6,
     "option_group": "Focus area",
     "stated": {
-     "min": null,
-     "max": null
+     "min": 6,
+     "max": 8
     },
     "courses": [
      {
@@ -693,8 +691,8 @@
     "minimum": 6,
     "option_group": "Focus area",
     "stated": {
-     "min": null,
-     "max": null
+     "min": 6,
+     "max": 8
     },
     "courses": [
      {
@@ -726,8 +724,8 @@
     "minimum": 6,
     "option_group": "Focus area",
     "stated": {
-     "min": null,
-     "max": null
+     "min": 6,
+     "max": 8
     },
     "courses": [
      {
@@ -784,16 +782,78 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog says 'Plus six to eight units from one of the following focus areas'; each focus area is recorded as a choose_units block with minimum 6 in option_group 'Focus area'. The 6-8 range applies to the choice as a whole, so no per-block stated total was recorded.",
-   "The four core courses are read as all required, with the statistics requirement satisfied by one of PSCYH-104, SOCI-137, STAT-C1000, STAT-C1000E or STAT-C1000H (OR rows).",
-   "'PSCYH-104' is printed as is and appears to be a typo for PSYCH 104 (Statistics for the Behavioral Sciences); it is treated as the closed-list course.",
-   "'ATNHRO-105' is printed as is and appears to be a typo for ANTHRO 105 (Introduction to Archaeology); it is treated as the closed-list course.",
-   "POLS-270 International Relations is treated as the closed-list POLISC 270 International Relations, since the title matches and only the subject abbreviation differs. A reviewer should confirm.",
-   "ENVRMT-101, GEOLOGY-111, OCEAN-119 and SOCI-250 are not in the closed list and are marked as catalog additions.",
-   "FIRETC-101 is printed as 'Principles of Emergency Services', while the closed list title is 'Fire Protection Organization'. ARCHT-120 is printed as 'Elements of Architectural Drafting' against the closed list's 'Architectural Design'. GEOLOGY-105 is printed as 'California Geology'.",
-   "The section continues across a page break from page 156 to page 157. The Anthropology focus spans the break, with ANTHRO-103 OR 103H split across the two pages.",
-   "The certificate prints a single Certificate Student Learning Outcome, which is recorded. The section names disciplines such as earth sciences, business and urban planning, but no careers, so careers is left empty."
+   "Focus areas: catalog says 'Plus six to eight units from one of the following focus areas'; each focus area recorded as a choose_units block (minimum 6, stated 6-8) in option_group 'Focus area'. The 6-8 range is printed once for the group, not per focus.",
+   "'PSCYH-104' is printed as such (typo); read as closed-list PSYCH 104 Statistics for the Behavioral Sciences (4 units) and marked catalog_addition false.",
+   "'ATNHRO-105' is printed as such (typo); read as closed-list ANTHRO 105 Introduction to Archaeology and marked catalog_addition false.",
+   "'POLS-270' International Relations is printed with subject POLS; read as closed-list POLISC 270 and marked catalog_addition false. Reviewer should confirm.",
+   "ENVRMT-101, GEOLOGY-111, OCEAN-119 (alternative to BIOSCI-119) and SOCI-250 are not in the closed list and are recorded as catalog additions.",
+   "Some focus areas (Administration of Justice, Architecture, Public Health Science) list only 6 units of courses, so all listed courses would be needed.",
+   "Some printed course titles differ from the closed list (e.g., ARCHT-120 'Elements of Architectural Drafting', FIRETC-101 'Principles of Emergency Services', GEOLOGY-105 'California Geology').",
+   "The description names disciplines (earth sciences, environmental sciences, social sciences, business, urban planning, public safety, health sciences) where spatial thinking applies, but not careers; careers left empty."
   ]
  },
- "extracted_run": "39006378829"
+ "extracted_run": "44769429877",
+ "catalog_year": "2026-2027",
+ "source_sha": "c9aebfbfadd79c9e",
+ "source_codes": [
+  "ADMJUS101",
+  "ADMJUS155",
+  "ANTHRO101",
+  "ANTHRO101H",
+  "ANTHRO103",
+  "ANTHRO103H",
+  "ANTHRO210",
+  "ARCHT120",
+  "ARCHT200A",
+  "BIOSCI106",
+  "BIOSCI106H",
+  "BIOSCI115",
+  "BIOSCI116",
+  "BIOSCI119",
+  "BIOSCI130",
+  "BUS100",
+  "BUS117A",
+  "BUS117B",
+  "BUS140",
+  "BUS141",
+  "ENVRMT103",
+  "ENVRMT104",
+  "FIRETC101",
+  "FIRETC102",
+  "FIRETC110",
+  "FIRETC123",
+  "GEOGRPH100",
+  "GEOGRPH101",
+  "GEOGRPH102",
+  "GEOGRPH103",
+  "GEOGRPH104",
+  "GEOGRPH105",
+  "GEOGRPH110",
+  "GEOLOGY100",
+  "GEOLOGY101",
+  "GEOLOGY102",
+  "GEOLOGY104",
+  "GEOLOGY105",
+  "GIS101",
+  "GIS102",
+  "GLST101",
+  "GLST102",
+  "HLHSCI100",
+  "HLHSCI140",
+  "OCEAN101",
+  "REAL100",
+  "REAL101",
+  "REAL120",
+  "SOCI101",
+  "SOCI101H",
+  "SOCI102",
+  "SOCI104",
+  "SOCI137",
+  "SOCI207",
+  "SOCI210",
+  "STATC1000",
+  "STATC1000E",
+  "STATC1000H"
+ ],
+ "source_coverage": 0.951
 }
