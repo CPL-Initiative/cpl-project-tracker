@@ -79,6 +79,10 @@ with self-recall, free runs only. Its two colleges were written here a minute af
   reached). #3645 failed lints on a test that pinned Cosumnes River's old pages; fixed (`3c85e208`), waiting on `test`.
 - 15:45Z: Irvine Valley's full read 44913397609 is filed on #3642 (868 pages, every one 200): 864 SLO rows (2,639
   SLOs) and 868 objective rows (6,695 objectives) once the load drops lines with no letter (23 lines statewide).
+- 16:13Z: #3645 merged (`c85bb975`); #3642 merged up with `main` again (`97c7019b`), waiting on `test`.
+- 16:12Z: `piles2`'s #3649 (a `total_differs` named gap on 11 records at Glendale and Clovis, Glendale 02570
+  rescored to pass) is with a second reader. 16:17Z: worker `display` builds the night's display, its first dispatch
+  not before 16:50Z.
 - 15:05Z: COBIx relayed two rulings of Sam's (#3358, comment 7064588752): a block is a block whoever clears it, and
   vault-note drafts merge on their own once their checks pass. Under the second, S691's vault note
   `samueltlee/CPLBrain#837` merged (`c9da8405`; no checks configured, no ruling in it).
