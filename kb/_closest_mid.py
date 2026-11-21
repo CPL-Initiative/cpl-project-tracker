@@ -36,10 +36,10 @@ is its baseline: no map is pending and no id moves (kb/_build_inactive_cards.py 
 then counts on the row that displays it today, through the daily build's folds (Folds); what reaches no row is filed
 as links_unreached with the reason.
 
-THE DAILY RUN (scripts/daily_build.sh, after the course flags). The file stores a fingerprint of what it read: the
-identity file without its generated_at, the course list and its descriptions, the not-applicable flags, the exhibit
-links, the alias chain, the fold files (Folds) and this script. With --if-changed a run whose fingerprint matches the file's leaves the file
-untouched. The sample is seeded, so a run on the same inputs writes the same bytes.
+THE DAILY RUN (scripts/daily_build.sh, after the course flags). The file stores a fingerprint of the content it
+reads (the members' courses, the course list and its descriptions, the not-applicable courses, the links' ids, the
+folds and merges) and of its code, never the files' bytes, which the daily pipeline restamps. With --if-changed a
+run whose fingerprint matches the file's leaves the file untouched. The sample is seeded, so a run on the same inputs writes the same bytes.
 
 Usage: python3 kb/_closest_mid.py            (writes kb/coci_closest_mid.json and prints the bands)
        python3 kb/_closest_mid.py --if-changed   (the daily run: nothing happens when no input changed)
@@ -193,31 +193,61 @@ class Index:
         return top[:KEEP]
 
 
-def input_paths(root: str) -> list[str]:
-    """What the build reads, repo-relative, in a fixed order: the fingerprint covers exactly these."""
-    descs = sorted(os.path.relpath(f, root).replace(os.sep, "/") for f in glob.glob(os.path.join(root, "coci_lookup_desc_*.js")))
-    return (["unified_courses_members.js", "coci_lookup_data.js"] + descs
-            + ["kb/coci_not_applicable.json", "kb/coci_articulations.json", "kb/alias_chain.py", "kb/_closest_mid.py"]
-            + [rel for rel in FOLD_FILES if os.path.exists(os.path.join(root, rel))])
-
-
 # The files that say where a stored id displays today (the daily build's folds), read only. Optional: a tree without
 # one folds nothing through it.
-FOLD_FILES = ["unified_courses_data.js", "unified_courses_standalone.js", "kb/coci_curation.json"]
 FOLD_VARS = {"unified_courses_data.js": "window.CPL_UNIFIED_COURSES", "unified_courses_standalone.js": "window.CPL_UC_STANDALONE"}
-# A daily restamp alone changes no recommendation: each file's first stamp is left out of the fingerprint.
-GENERATED_AT = re.compile(rb'"(?:generated_at|_synced_at)"\s*:\s*"[^"]*"')
+# The code the output depends on, fingerprinted as bytes.
+CODE = ["kb/_closest_mid.py", "kb/alias_chain.py", "kb/_build_remint_blast_radius.py"]
 
 
-def fingerprint(root: str, sample: int, seed: int) -> str:
-    """sha256 over the inputs' bytes and the run's settings. The identity file's generated_at is left out: the daily
-    pipeline restamps it every run, and a restamp alone changes no recommendation."""
-    h = hashlib.sha256(("sample=%d seed=%d\n" % (sample, seed)).encode())
-    for rel in input_paths(root):
+def read_inputs(root: str) -> dict:
+    """Everything the build reads, parsed once: the fingerprint and the build both take it from here."""
+    def js(rel, var):
+        return load_js(os.path.join(root, rel), var)
+
+    def jf(rel, default=None):
+        path = os.path.join(root, rel)
+        if not os.path.exists(path):
+            return default
+        with open(path, encoding="utf-8") as f:
+            return json.load(f)
+    descs = {}
+    for f in sorted(glob.glob(os.path.join(root, "coci_lookup_desc_*.js"))):
+        t = open(f, encoding="utf-8").read()
+        descs.update(json.loads(t[t.index("=", t.index('window.CPL_COCI_DESC["')) + 1:].strip().rstrip(";")))
+    fold_rows = []
+    for rel, var in FOLD_VARS.items():
+        if os.path.exists(os.path.join(root, rel)):
+            fold_rows += (js(rel, var) or {}).get("rows") or []
+    return {"L": js("coci_lookup_data.js", "window.CPL_COCI_LOOKUP"), "M": js("unified_courses_members.js", "window.CPL_UC_MEMBERS"),
+            "descs": descs, "na": (jf("kb/coci_not_applicable.json", {}) or {}).get("courses") or {},
+            "arts": jf("kb/coci_articulations.json", {}), "fold_rows": fold_rows,
+            "curation": (jf("kb/coci_curation.json", {}) or {}).get("curations") or {}}
+
+
+def fingerprint(root: str, inp: dict, sample: int, seed: int) -> str:
+    """sha256 over the content the build reads, in a stable order, never the files' bytes: the daily pipeline
+    restamps the identity file, moves counts in the fold files and rewrites kb/coci_not_applicable.json's _inputs
+    hashes every run, and none of that changes a recommendation."""
+    from _build_remint_blast_radius import APPLIED_MARKERS
+    L, M, arts = inp["L"], inp["M"], inp["arts"] or {}
+    colleges = [str(c or "").strip() for c in L.get("colleges") or []]
+    part = {
+        "settings": [sample, seed],
+        "course_list": [L.get("_built_at"), [[colleges[r[0]], r[1], r[2], r[3], r[4], r[5], r[8], r[9]] for r in L.get("rows") or []]],
+        "members": [[mid, [[r.get("cn"), r.get("t"), r.get("n"), r.get("u")] for r in rows]] for mid, rows in sorted((M.get("members") or {}).items())],
+        "descriptions": sorted(inp["descs"].items()),
+        "not_applicable": sorted(inp["na"]),
+        "links": [[k, bool(arts.get(k))] for k in APPLIED_MARKERS] + [(a or {}).get("course_id") for a in arts.get("articulations") or []],
+        "folds": sorted([r.get("id"), r.get("consolidated_from") or [], r.get("routed_from") or []] for r in inp["fold_rows"] if r and r.get("id")),
+        "merges": sorted([k, v.get("merge_into")] for k, v in inp["curation"].items() if isinstance(v, dict) and v.get("merge_into")),
+    }
+    h = hashlib.sha256()
+    for k in sorted(part):
+        h.update(k.encode() + b"\0" + hashlib.sha256(json.dumps(part[k], ensure_ascii=False, separators=(",", ":")).encode()).hexdigest().encode() + b"\n")
+    for rel in CODE:
         with open(os.path.join(root, rel), "rb") as f:
-            b = f.read()
-        b = GENERATED_AT.sub(b'"stamp":""', b, count=1)
-        h.update(rel.encode() + b"\0" + hashlib.sha256(b).hexdigest().encode() + b"\n")
+            h.update(rel.encode() + b"\0" + hashlib.sha256(f.read()).hexdigest().encode() + b"\n")
     return h.hexdigest()
 
 
@@ -250,14 +280,15 @@ def exhibit_links(articulations: dict, maps: list) -> tuple[Counter, int]:
 class Folds:
     """Where a stored id displays today, as the daily build folds it (the export's exhibit rollup counts a row's
     exhibits over [its id] + consolidated_from + merge_members, and articulations stay keyed on the original ids):
-      1. the id itself, when the identity file holds it;
+      1. the id itself, when the identity file holds it or a data file carries its row;
       2. else the row whose consolidated_from or routed_from lists it (unified_courses_data.js, the stand-alone file);
       3. else the curation overlay's merge_into pointers (kb/coci_curation.json) to the end of the chain, cycle-safe,
          and then 1 and 2 on where the chain ends.
     A read: nothing here re-keys kb/coci_articulations.json. The build's Honors hold (honors_of) is not applied."""
 
     def __init__(self, live, rows=(), curation=None):
-        self.live = set(live)
+        # displayed: an id the identity file holds, or one the data files carry a row for
+        self.live = set(live) | {(r or {}).get("id") for r in rows if (r or {}).get("id")}
         self.folded = {}
         for r in rows:
             for k in ("consolidated_from", "routed_from"):
@@ -324,7 +355,8 @@ def main(argv=None) -> int:
     a = ap.parse_args(argv)
     root = a.root
     a.out = a.out or os.path.join(root, "kb", "coci_closest_mid.json")
-    fp = fingerprint(root, a.sample, a.seed)
+    inp = read_inputs(root)
+    fp = fingerprint(root, inp, a.sample, a.seed)
     if a.if_changed and os.path.exists(a.out):
         try:
             with open(a.out, encoding="utf-8") as f:
@@ -335,22 +367,9 @@ def main(argv=None) -> int:
             print("inputs unchanged (fingerprint %s); %s left as built" % (fp[:12], os.path.relpath(a.out, root)))
             return 0
 
-    L = load_js(os.path.join(root, "coci_lookup_data.js"), "window.CPL_COCI_LOOKUP")
-    M = load_js(os.path.join(root, "unified_courses_members.js"), "window.CPL_UC_MEMBERS")
-    with open(os.path.join(root, "kb", "coci_articulations.json"), encoding="utf-8") as f:
-        arts = json.load(f)
+    L, M, arts, descs = inp["L"], inp["M"], inp["arts"], inp["descs"]
     links_ids, links_moved = exhibit_links(arts, link_maps(arts))
-    fold_rows = []
-    for rel, var in FOLD_VARS.items():
-        if os.path.exists(os.path.join(root, rel)):
-            fold_rows += (load_js(os.path.join(root, rel), var) or {}).get("rows") or []
-    cur_path = os.path.join(root, "kb", "coci_curation.json")
-    curation = (json.load(open(cur_path, encoding="utf-8")).get("curations") or {}) if os.path.exists(cur_path) else {}
-    links_all, links_lost, links_routes = fold_links(links_ids, Folds(M["members"], fold_rows, curation))
-    descs = {}
-    for f in sorted(glob.glob(os.path.join(root, "coci_lookup_desc_*.js"))):
-        s = open(f, encoding="utf-8").read()
-        descs.update(json.loads(s[s.index("=", s.index('window.CPL_COCI_DESC["')) + 1:].strip().rstrip(";")))
+    links_all, links_lost, links_routes = fold_links(links_ids, Folds(M["members"], inp["fold_rows"], inp["curation"]))
     members = M["members"]
     by_cn = defaultdict(list)
     for mid, rows in members.items():
@@ -397,7 +416,7 @@ def main(argv=None) -> int:
     # The pile.
     # The pile is the Courses List's Needs an M-ID: no M-ID, no C-ID, no CCN, and not kept out of the counts
     # (kb/coci_not_applicable.json: independent study, internships, a bare number; Sam, 2026-11-17).
-    na = json.load(open(os.path.join(root, "kb", "coci_not_applicable.json"), encoding="utf-8")).get("courses") or {}
+    na = inp["na"]
     pile = [c for c in courses if c["ctrl"] not in by_cn and not c["cid"] and not c["ccn"] and (c["college"] + "|" + c["ctrl"]) not in na]
     rows = {}
     for c in pile:

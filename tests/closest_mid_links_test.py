@@ -62,9 +62,14 @@ ARTS = dict(MARKERS, articulations=[{"course_id": "COMM M1037", "exhibit_id": "E
                # folded today: COMM M1036 into COMM M1037 (consolidated_from), SPCH M1002 into COMM M1040 (routed_from),
                # SPCH M1003 -> SPCH M1004 -> COMM M1037 (two merge_into hops)
                {"course_id": "COMM M1036", "exhibit_id": "E20"}, {"course_id": "SPCH M1002", "exhibit_id": "E21"},
-               {"course_id": "SPCH M1003", "exhibit_id": "E22"}])
-DATA = {"generated_at": "2026-11-20 06:20", "rows": [{"id": "COMM M1037", "consolidated_from": ["COMM M1036"]},
-                                                     {"id": "COMM M1040", "routed_from": ["SPCH M1002"]}]}
+               {"course_id": "SPCH M1003", "exhibit_id": "E22"},
+               # displayed by a data-file row the identity file does not hold (THES M1087 today): reached, not lost
+               {"course_id": "THES M1087", "exhibit_id": "E23"}])
+DATA = {"generated_at": "2026-11-20 06:20", "count_total": 76008, "rows": [
+    {"id": "COMM M1037", "consolidated_from": ["COMM M1036"], "potential": 4},
+    {"id": "COMM M1040", "routed_from": ["SPCH M1002"], "potential": 2}, {"id": "THES M1087", "potential": 0}]}
+# kb/coci_not_applicable.json in its daily shape: _inputs holds sha256 values of restamped files and moves every run.
+NA = {"_inputs": {"unified_courses_members.js": "a" * 64, "kb/coci_curation.json": "b" * 64}, "courses": {}}
 CURATION = {"_synced_at": "2026-11-20T06:00:00Z", "curations": {"SPCH M1003": {"merge_into": "SPCH M1004"},
                                                                 "SPCH M1004": {"merge_into": "COMM M1037"}}}
 
@@ -81,11 +86,11 @@ def tree():
     write_js(os.path.join(d, "coci_lookup_data.js"), "window.CPL_COCI_LOOKUP", LOOKUP)
     write_js(os.path.join(d, "coci_lookup_desc_A.js"), 'window.CPL_COCI_DESC["A"]', {"P1": "Small group communication."})
     write_js(os.path.join(d, "unified_courses_data.js"), "window.CPL_UNIFIED_COURSES", DATA)
-    for rel, obj in (("kb/coci_not_applicable.json", {"courses": {}}), ("kb/coci_articulations.json", ARTS),
+    for rel, obj in (("kb/coci_not_applicable.json", NA), ("kb/coci_articulations.json", ARTS),
                      ("kb/coci_curation.json", CURATION)):
         with open(os.path.join(d, rel), "w", encoding="utf-8") as f:
             json.dump(obj, f)
-    for rel in ("kb/alias_chain.py", "kb/_closest_mid.py"):  # the fingerprint covers the chain and the script
+    for rel in CM.CODE:  # the fingerprint covers the script, the chain and the era markers' module
         shutil.copy(os.path.join(ROOT, rel), os.path.join(d, rel))
     return d
 
@@ -111,7 +116,9 @@ try:
     check("(1) links count one per record on the row that displays it: COMM M1037 3 + 1 folded + 1 merged, COMM M1040 1 + 1 routed",
           F["links"].get("COMM M1037") == 5 and F["links"].get("COMM M1040") == 2, F["links"])
     check("(2b) ⭐ each fold route is counted: consolidated_from 1, routed_from 1, merge_into 1",
-          F["links_by_route"] == {"itself": 4, "consolidated_from": 1, "routed_from": 1, "merge_into": 1}, F["links_by_route"])
+          F["links_by_route"] == {"itself": 5, "consolidated_from": 1, "routed_from": 1, "merge_into": 1}, F["links_by_route"])
+    check("(2b) an id a data-file row displays is reached, though the identity file does not hold it",
+          not any(x[0] == "THES M1087" for x in F["links_unreached"]["first"]), F["links_unreached"])
     check("(1) only M-IDs a row recommends, each with a link: a linked M-ID no row names (ART M1001) is left out, and so is WELD M1109 with none",
           set(F["links"]) <= named and "ART M1001" not in F["links"] and "WELD M1109" not in F["links"], F["links"])
     check("(1) the file documents the map in row_shape and _what, and files the record that reaches no row with its reason",
@@ -159,6 +166,21 @@ try:
         json.dump(dict(CURATION, _synced_at="2026-11-21T06:00:00Z"), f)
     rc3, log3 = build(d, "--if-changed")
     check("(4) a restamped identity file, fold file and curation sync alone change nothing", rc3 == 0 and "inputs unchanged" in log3 and open(out, "rb").read() == before, log3[-300:])
+    # The daily noise the reader measured: only the not-applicable file's _inputs hashes and the data file's counts move.
+    with open(os.path.join(d, "kb", "coci_not_applicable.json"), "w", encoding="utf-8") as f:
+        json.dump(dict(NA, _inputs={"unified_courses_members.js": "c" * 64, "kb/coci_curation.json": "d" * 64}), f)
+    noisy = dict(DATA, count_total=76031, rows=[dict(r, potential=(r.get("potential") or 0) + 1) for r in DATA["rows"]])
+    write_js(os.path.join(d, "unified_courses_data.js"), "window.CPL_UNIFIED_COURSES", noisy)
+    rc3b, log3b = build(d, "--if-changed")
+    check("(4) ⭐ moved _inputs hashes and data-file counts alone change nothing: --if-changed skips",
+          rc3b == 0 and "inputs unchanged" in log3b and open(out, "rb").read() == before, log3b[-300:])
+    with open(os.path.join(d, "kb", "coci_not_applicable.json"), "w", encoding="utf-8") as f:
+        json.dump(dict(NA, courses={"Citrus College|P2": ["independent_study"]}), f)
+    rc3c, log3c = build(d, "--if-changed")
+    check("(4) a course newly kept out of the counts is an input change: the pile shrinks",
+          rc3c == 0 and "inputs unchanged" not in log3c and json.load(open(out, encoding="utf-8"))["pile"] == 2, log3c[-300:])
+    with open(os.path.join(d, "kb", "coci_not_applicable.json"), "w", encoding="utf-8") as f:
+        json.dump(NA, f)
     arts2 = dict(ARTS, articulations=ARTS["articulations"] + [{"course_id": "COMM M1040", "exhibit_id": "E12"}])
     with open(os.path.join(d, "kb", "coci_articulations.json"), "w", encoding="utf-8") as f:
         json.dump(arts2, f)
