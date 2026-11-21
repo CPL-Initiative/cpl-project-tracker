@@ -293,6 +293,15 @@ check("6 the parser reads Rio Hondo's Roman-numbered sections: 2 SLOs and 2 obje
       and got_rio["objectives"] == ["Record transactions.", "Prepare statements."]
       and got_rio["heading"] == "Student Learning Outcome" and got_rio["objectives_heading"] == "Course Objectives"
       and got_rio["objectives_lead"] == "The Student Will Be Able To:", got_rio)
+EGSS = ("V. Course Objectives\nThe Student Will Be Able To:\nStudents will be able to analyze concepts of ethnic studies.\n"
+        "Students will be able to apply theory to critical events.\nVI. Methods of Instruction:\n")
+two_leads = ("Course Objectives\nAt the conclusion of this course, the student should be able to:\n"
+             "Upon completion of the course, students will be able to:\nInterpret results.\nCourse Content\n")
+check("6 after a lead-in, a line that opens 'Students will be able to' and states the objective is an objective "
+      "(Rio Hondo EGSS 110, trial 44885957222); a second line that ends as a lead-in is still passed over (Santa Ana)",
+      read.objectives_of(EGSS)["objectives"] == ["Students will be able to analyze concepts of ethnic studies.",
+                                                 "Students will be able to apply theory to critical events."]
+      and read.objectives_of(two_leads)["objectives"] == ["Interpret results."], read.objectives_of(EGSS))
 probe = read.probe_log("X 1", TEXT)
 check("6 a host with no heading pair logs only the lines that name outcomes or objectives, never a person's line",
       STAFF not in probe and "STUDENT LEARNING OUTCOMES" in probe

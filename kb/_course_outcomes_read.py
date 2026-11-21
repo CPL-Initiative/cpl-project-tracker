@@ -389,7 +389,11 @@ def objectives_of(text: str) -> dict:
                 continue
             if _obj_ends(s) or (roman and ROMAN_HEAD.match(s)):
                 break
-            if not items and LEAD.match(s):
+            # Once a lead-in is taken, a further lead-in line is passed over only when it ends as a lead-in does
+            # (LEAD_ENDS; Santa Ana and SDCCD print two); one that goes on to state the objective is the first
+            # objective. Rio Hondo's EGSS 110 prints "The Student Will Be Able To:" and then five objectives that
+            # each open "Students will be able to ..." (trial 44885957222 filed none of them; S691).
+            if not items and LEAD.match(s) and (lead is None or LEAD_ENDS.search(s)):
                 lead = lead or s
                 continue
             items.append(MARKER.sub("", s, count=1).strip())

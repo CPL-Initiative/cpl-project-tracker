@@ -303,7 +303,8 @@ def row_code(row: dict) -> str | None:
     if not base:
         return None
     subj, num = base.split(" ", 1)
-    for cand in (row.get("Code"), "%s %s" % (row.get("district-subject") or "", row.get("district-coursenumber") or "")):
+    for cand in (row.get("Code"), "%s %s" % (row.get("district-subject") or "", row.get("district-coursenumber") or ""),
+                 row.get("PublicEntityTitle"), row.get("ProposalTitle")):
         c = norm_code(cand if isinstance(cand, str) else "")
         if not c or c == base:
             continue
@@ -314,7 +315,7 @@ def row_code(row: dict) -> str | None:
     return base
 
 
-def row_census(rows: list[dict]) -> dict:
+def row_census(rows: list[dict], kept: list[dict] | None = None) -> dict:
     """What a search returned, counted so a run shows the host's own words: each status, each client label, the two
     together, and the field names one row carries. Counts and field names only, never a row's people fields."""
     from collections import Counter
@@ -327,7 +328,26 @@ def row_census(rows: list[dict]) -> dict:
             # returned them: course codes only.
             "code_from_field": [[r.get("SubjectCode"), r.get("CourseNumber"), row_code(r)] for r in rows
                                 if row_code(r) and row_code(r) != norm_code("%s %s" % (r.get("SubjectCode") or "",
-                                                                                      r.get("CourseNumber") or ""))][:12]}
+                                                                                      r.get("CourseNumber") or ""))][:12],
+            # The code fields of the first rows that share one subject and number with another row, cut at 80
+            # characters each, so a run shows where a host prints a course's suffix. Code fields only.
+            "shared_code_fields": _shared_code_fields(rows if kept is None else kept)}
+
+
+CODE_FIELDS = ("SubjectCode", "CourseNumber", "Code", "district-subject", "district-coursenumber", "PublicEntityTitle")
+
+
+def _shared_code_fields(rows: list[dict], n: int = 8) -> list[dict]:
+    from collections import Counter
+    keys = Counter(norm_code("%s %s" % (r.get("SubjectCode") or "", r.get("CourseNumber") or "")) for r in rows)
+    out = []
+    for r in rows:
+        k = norm_code("%s %s" % (r.get("SubjectCode") or "", r.get("CourseNumber") or ""))
+        if k and keys[k] > 1 and row_code(r) == k:
+            out.append({f: str(r.get(f))[:80] for f in CODE_FIELDS if r.get(f) is not None})
+            if len(out) >= n:
+                break
+    return out
 
 
 # RCCD's form (discovery run 38312406074); a host whose own links say otherwise wins.
@@ -522,7 +542,7 @@ def write_index(url: str, searched: dict, wanted: dict, loads: int, title: str =
     run = os.environ.get("GITHUB_RUN_ID", "local")
     out = {"run": run, "at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "url": url,
            "search": searched, "loads": loads, "status_keep": status, "client": client or None,
-           "rows_seen": row_census(rows),
+           "rows_seen": row_census(rows, [r for r in rows if keep_row(r, status, client)]),
            "report_form": form, "report_form_from": form_from,
            "report_title": title, "report_ids": ids, "report_titles": report_titles(rows, title, ids),
            "sample_row": {k: (rows[0] if rows else {}).get(k) for k in
