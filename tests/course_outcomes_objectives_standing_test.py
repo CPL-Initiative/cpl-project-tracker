@@ -163,10 +163,30 @@ def newest_reads(out_dir=None):
                 if d.get("complete"):
                     slugs |= load._slug_set(d)
             for slug in sorted(slugs):
-                out[(host, slug)] = [json.load(open(p)) for p in load.read_files(host, [slug])]
+                # A college whose only complete read is in never_load has no loadable read: the load posts nothing
+                # for it, so the guards skip it rather than read docs[0] of an empty list (COBIx on #3586, point 2).
+                paths = load.read_files(host, [slug])
+                if paths:
+                    out[(host, slug)] = [json.load(open(p)) for p in paths]
     finally:
         load.OUT_DIR = saved
     return out
+
+
+@check("a college whose only complete read is never_load has no loadable read, and the guards skip it")
+def _():
+    tmp = tempfile.mkdtemp(prefix="never_load_")
+    try:
+        os.makedirs(os.path.join(tmp, "example.edu"))
+        head = {"run": 44535960153, "part": 1, "of": 1, "slugs": "feather_river", "complete": True,
+                "system": "elumen", "rows": [{"code": "ADMJ 102", "status": 200, "outcomes": ["x"]}]}
+        json.dump(head, open(os.path.join(tmp, "example.edu", "read_44535960153_p1of1.json"), "w"))
+        json.dump({"never_load": {"44535960153": "table headers as SLOs"}}, open(os.path.join(tmp, "queue.json"), "w"))
+        assert newest_reads(tmp) == {}, newest_reads(tmp)
+        os.remove(os.path.join(tmp, "queue.json"))
+        assert list(newest_reads(tmp)) == [("example.edu", "feather_river")], newest_reads(tmp)
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
 
 
 @check("GUARD: a filed read that holds SLOs files objectives too, or the reread plan names why none exist")

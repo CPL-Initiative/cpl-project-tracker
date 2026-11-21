@@ -243,6 +243,20 @@ check("7 the presses stop at PRESS_TRIES, and a page that never posts its search
 check("7 the press fills no field and answers no check: the script clicks one button labeled Search and nothing else",
       idx.PRESS_SEARCH_JS.count(".click()") == 1 and "value =" not in idx.PRESS_SEARCH_JS
       and "turnstile" not in idx.PRESS_SEARCH_JS.lower() and "captcha" not in idx.PRESS_SEARCH_JS.lower())
+rc = {"ACCT 1A": idx.row_code({"SubjectCode": "ACCT", "CourseNumber": "1", "Code": "ACCT 1A"}),
+      "ACCT 1": idx.row_code({"SubjectCode": "ACCT", "CourseNumber": "1", "Code": "ACCT 12"}),
+      "ACC 1A": idx.row_code({"SubjectCode": "ACC", "CourseNumber": "1A", "Code": "ACC-1A"}),
+      "ACCT 1AH": idx.row_code({"SubjectCode": "ACCT", "CourseNumber": "01", "Code": "ACCT 1AH"}),
+      "KIN A11": idx.row_code({"SubjectCode": "KIN", "CourseNumber": "A11", "Code": "BUS 1A"})}
+check("7 a row keys by its own full code only where that is its subject and number with a letter suffix (Saddleback's "
+      "ACCT 1A and 1B both return CourseNumber 1); another subject, another number or the same code keys as before",
+      all(k == v for k, v in rc.items()), rc)
+two = idx.build_index([{"CourseId": 1, "SubjectCode": "ACCT", "CourseNumber": "1", "Code": "ACCT 1A", "StatusTitle": "Active",
+                        "MetaReports": []},
+                       {"CourseId": 2, "SubjectCode": "ACCT", "CourseNumber": "1", "Code": "ACCT 1B", "StatusTitle": "Active",
+                        "MetaReports": []}], base_s)
+check("7 Saddleback's ACCT 1A and ACCT 1B are two index codes, never two courses under ACCT 1",
+      sorted(two) == ["ACCT 1A", "ACCT 1B"], sorted(two))
 wf = open(os.path.join(ROOT, ".github", "workflows", "course-outline-index.yml")).read()
 check("7 the index workflow passes the .run's status= and client= lines to the index",
       "s/^status=//p" in wf and "--status" in wf and "s/^client=//p" in wf and "--client" in wf)

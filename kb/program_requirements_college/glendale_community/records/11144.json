@@ -67,22 +67,19 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     29.0,
     31.0
    ],
    "stated": [
-    60.0,
-    60.0
+    29.0,
+    31.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the blocks and general education sum to 29.0-31.0; the catalog prints 60.0-60.0 for the degree"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
@@ -90,13 +87,18 @@
      31.0
     ],
     "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": null,
+    "why": [],
+    "minimum": true,
+    "fill": [
      29.0,
      31.0
-    ],
-    "against": "program",
-    "why": []
-   },
-   "note": "major matches; degree total short of 60, electives probably not listed"
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -120,7 +122,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -146,7 +148,8 @@
    },
    "electives_fill_degree": false,
    "outcomes": [],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -345,5 +348,14 @@
    "BUSAD 158 and ENTRE 103 share the title 'Run Your Own Business' and appear as alternatives in one choose-one block."
   ]
  },
- "extracted_run": "43415972509"
+ "extracted_run": 44763682085,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Required Units for Degree (with GE)\n60"
+  }
+ ],
+ "read_run": "43415972509"
 }
