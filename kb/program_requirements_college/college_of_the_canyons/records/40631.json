@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Law Enforcement Technology",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=191",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=191",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9360,
+  "input_tokens": 8706,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9360,
-    "output_tokens": 1573,
+    "input_tokens": 8706,
+    "output_tokens": 1237,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1573,
+  "output_tokens": 1237,
   "output_tokens_details": {
-   "thinking_tokens": 531
+   "thinking_tokens": 334
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0689,
- "ms": 13469,
- "seconds": 13.7,
+ "cost_usd": 0.05956,
+ "ms": 10456,
+ "seconds": 10.8,
  "parts": null,
  "error": null,
  "score": {
@@ -89,7 +89,7 @@
    "pass": true
   },
   "careers": {
-   "count": 2,
+   "count": 0,
    "not_verbatim": [],
    "pass": true
   },
@@ -100,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Associate in Science Degree and Certificate of Achievement: Law Enforcement Technology",
+   "section_heading": "Certificate of Achievement: Law Enforcement Technology",
    "measure": "units",
    "total_units": {
     "min": 24,
@@ -124,10 +124,7 @@
    "outcomes": [
     "Students will be able to demonstrate proficiency in the core skills and awareness of the legal and ethical considerations in the use of technology for law enforcement applications."
    ],
-   "careers": [
-    "in-service officers",
-    "investigators"
-   ]
+   "careers": []
   },
   "blocks": [
    {
@@ -235,12 +232,27 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The A.S. degree and Certificate of Achievement share one section, one requirements list (Units Required: 24) and one 'Degree and Certificate Student Learning Outcome'; recorded for the certificate.",
-   "The catalog prints codes with a hyphen (LETECH-101); these match closed-list LETECH 101 etc.",
-   "The program description recommends (not requires) ADMJUS-101 and ADMJUS-110 before enrolling, or equivalent experience; treated as recommended preparation rather than program courses, so not placed in a block.",
-   "Careers taken from 'Target occupations typical to this major include in-service officers and investigators working, or seeking to work, specialized technical investigative support assignments.' Security officers and private investigators in the NOTE refer to licensing, not this program's target occupations, so were not recorded."
+   "The outcome is printed under the heading 'Degree and Certificate Student Learning Outcome', so it is shared by the degree and the certificate; recorded for this certificate.",
+   "The requirements list prints LETECH-120 as 'Crime and Internet'; the course description and closed list title it 'Crime and the Internet'.",
+   "Total stated as 'Units Required: 24' (18 required units plus 6 elective units).",
+   "No careers are named in the certificate section."
   ]
  },
- "extracted_run": "39006378829",
- "catalog_year": "2026-2027"
+ "extracted_run": "44886816990",
+ "catalog_year": "2026-2027",
+ "source_sha": "f920d69b66fc22d0",
+ "source_codes": [
+  "LETECH101",
+  "LETECH110",
+  "LETECH120",
+  "LETECH130",
+  "LETECH140",
+  "LETECH150",
+  "LETECH160",
+  "LETECH170",
+  "LETECH180",
+  "LETECH190",
+  "LETECH195"
+ ],
+ "source_coverage": 1.0
 }

@@ -3340,36 +3340,87 @@
   "title": "ESL/Beginning Level",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCESL1A",
+   "NCESL1B",
+   "NCESL2A",
+   "NCESL2B"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=338",
+   "title": "Certificate of Competency: ESL/Beginning",
+   "h1": "Certificate of Competency: ESL/Beginning",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    338
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "1fb286cb388cf39f"
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 2061
  },
  {
   "control_number": "30367",
   "title": "ESL/Intermediate Level",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCESL3A",
+   "NCESL3B",
+   "NCESL4A",
+   "NCESL4B"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=338",
+   "title": "Certificate of Competency:",
+   "h1": "Certificate of Competency:",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    338
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "2b935282e1e47ba3"
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 1280
  },
  {
   "control_number": "30500",
   "title": "General Education Development Preparation",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCBCSK100",
+   "NCBCSK110",
+   "NCBCSK120"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=326",
+   "title": "Certificate of Completion: General",
+   "h1": "Certificate of Completion: General",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    326,
+    327
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "88c1bc7ac05caa12"
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 5638
  },
  {
   "control_number": "30836",
@@ -4224,12 +4275,32 @@
   "title": "Digital Office",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCCAWT10A",
+   "NCCAWT10B",
+   "NCCAWT10C",
+   "NCCAWT10D",
+   "NCCAWT10E"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=328",
+   "title": "Certificate of Completion: Digital Office",
+   "h1": "Certificate of Completion: Digital Office",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    328,
+    329,
+    330
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "9c84d89837734e1e"
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 9958
  },
  {
   "control_number": "35653",
@@ -4540,12 +4611,26 @@
   "title": "Residential Repair Technician",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "NCCONS100A"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=331",
+   "title": "Certificate of Completion: Residential",
+   "h1": "Certificate of Completion: Residential",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    331
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "59655db4d4e0ec29"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 3135
  },
  {
   "control_number": "36570",
@@ -4605,12 +4690,28 @@
   "title": "Spanish for Healthcare Workers",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCSPAN21",
+   "NCSPAN22"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=374",
+   "title": "Certificate of Completion: Spanish for",
+   "h1": "Certificate of Completion: Spanish for",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    374,
+    375
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "91c5223a3ab5655f"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 4170
  },
  {
   "control_number": "36648",
@@ -4744,36 +4845,86 @@
   "title": "Management Tool Box",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCCSKL7",
+   "NCCSKL8"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=321",
+   "title": "Certificate of Completion: Management",
+   "h1": "Certificate of Completion: Management",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    321,
+    322,
+    323,
+    324
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "6396a6b2399b0555"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 13945
  },
  {
   "control_number": "36889",
   "title": "Customer Relations",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCCSKL4",
+   "NCCSKL5",
+   "NCCSKL6"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=321",
+   "title": "Certificate of Completion: Customer",
+   "h1": "Certificate of Completion: Customer",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    321
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "99e87b4aa75953a1"
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 1177
  },
  {
   "control_number": "36890",
   "title": "Workplace Essentials",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCCSKL1",
+   "NCCSKL2",
+   "NCCSKL3"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=321",
+   "title": "Certificate of Completion: Workplace",
+   "h1": "Certificate of Completion: Workplace",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    321
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "d4d14d911bf1ee59"
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 2150
  },
  {
   "control_number": "36984",
@@ -4966,12 +5117,29 @@
   "title": "Master Gardener",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCVOC30",
+   "NCVOC31"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=378",
+   "title": "Certificate of Completion: Master Gardener",
+   "h1": "Certificate of Completion: Master Gardener",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    378,
+    379,
+    380
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "3ec33c187439f4b1"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 12568
  },
  {
   "control_number": "37648",
@@ -5135,12 +5303,28 @@
   "title": "Career Strategist",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCCSKL10",
+   "NCCSKL11",
+   "NCCSKL9"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=322",
+   "title": "Certificate of Completion: Career Strategist",
+   "h1": "Certificate of Completion: Career Strategist",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    322
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "bde4304a2df0361c"
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 4247
  },
  {
   "control_number": "37995",
@@ -5171,60 +5355,145 @@
   "title": "Certified Adobe Photoshop Technician",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCVOC21A",
+   "NCVOC21B",
+   "NCVOC21C"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=377",
+   "title": "Certificate of Completion: Certified Adobe",
+   "h1": "Certificate of Completion: Certified Adobe",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    377
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "efe3c699dac3fce3"
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 3029
  },
  {
   "control_number": "38278",
   "title": "Global Navigation Satellite System (GNSS)",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCSURV10",
+   "NCSURV15",
+   "NCSURV20",
+   "NCSURV25",
+   "NCSURV30",
+   "NCSURV35",
+   "NCSURV40",
+   "NCSURV45"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=345",
+   "title": "Certificate of Completion: Global",
+   "h1": "Certificate of Completion: Global",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    345,
+    346
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "0a212ed7e797799e"
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 6434
  },
  {
   "control_number": "38341",
   "title": "Gateway Human Resources Assistant",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCBUS1A",
+   "NCBUS1B",
+   "NCBUS1C"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=320",
+   "title": "Certificate of Completion: Gateway Human",
+   "h1": "Certificate of Completion: Gateway Human",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    320
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "bd919e8a74dcb745"
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 3391
  },
  {
   "control_number": "38342",
   "title": "Supervisor’s Roadmap",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCBUS2A",
+   "NCBUS2B"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=320",
+   "title": "Certificate of Completion: Supervisor’s",
+   "h1": "Certificate of Completion: Supervisor’s",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    320,
+    321
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "db0cb123272b1f8c"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 4797
  },
  {
   "control_number": "38343",
   "title": "Human Resources Professionals",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCBUS3A",
+   "NCBUS3B"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=320",
+   "title": "Certificate of Completion: Human",
+   "h1": "Certificate of Completion: Human",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    320
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "04d00895c04451e3"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 2273
  },
  {
   "control_number": "38344",
@@ -5243,48 +5512,113 @@
   "title": "Fundamentals of Communication",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCCSKL14",
+   "NCCSKL16",
+   "NCCSKL8"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=322",
+   "title": "Santa Clarita Community College District",
+   "h1": "Santa Clarita Community College District",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    322,
+    323,
+    324,
+    325
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "f9004e46cccebfb2"
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "38346",
   "title": "Mindful Co-worker",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCCSKL15",
+   "NCCSKL17",
+   "NCCSKL21"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=323",
+   "title": "Certificate of Completion: Mindful",
+   "h1": "Certificate of Completion: Mindful",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    323
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "f06b6b79c5faa223"
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 4485
  },
  {
   "control_number": "38347",
   "title": "Navigating Mental Health Issues in the Workplace",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "NCCSKL17"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=323",
+   "title": "Certificate of Completion: Navigating",
+   "h1": "Certificate of Completion: Navigating",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    323
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "68b61f095a1b1da6"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 3524
  },
  {
   "control_number": "38348",
   "title": "Survive and Thrive in the Workplace",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCCSKL18",
+   "NCCSKL19",
+   "NCCSKL20"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=323",
+   "title": "Certificate of Completion: Survive and",
+   "h1": "Certificate of Completion: Survive and",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    323
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "69dbcb3b9766dee5"
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 2342
  },
  {
   "control_number": "38408",
@@ -5348,72 +5682,170 @@
   "title": "Digital Publishing for the Office",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCCAWT11A",
+   "NCCAWT11B"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=328",
+   "title": "Certificate of Completion: Digital",
+   "h1": "Certificate of Completion: Digital",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    328,
+    329,
+    330
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "23344517744bbaef"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 8953
  },
  {
   "control_number": "38686",
   "title": "Digital Photographic Project Fundamentals",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCPHOT50",
+   "NCPHOT51",
+   "NCPHOT52",
+   "NCPHOT59",
+   "NCPHOT99"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=359",
+   "title": "Certificate of Completion: Digital",
+   "h1": "Certificate of Completion: Digital",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    359
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "c775534ba4a30c4c"
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 2778
  },
  {
   "control_number": "38688",
   "title": "English as a Second Language (ESL) for College Preparation I",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCESL60",
+   "NCESL61"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=339",
+   "title": "College of the Canyons",
+   "h1": "College of the Canyons",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    339
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "1c04472068253596"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 4139
  },
  {
   "control_number": "38769",
   "title": "Digital Photographic Camera and Composition Fundamentals",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCPHOT50",
+   "NCPHOT52",
+   "NCPHOT59"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=359",
+   "title": "College of the Canyons",
+   "h1": "College of the Canyons",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    359
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "f264d8fbe7ea7ecd"
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 4512
  },
  {
   "control_number": "38770",
   "title": "Digital Photographic Camera and Manual Exposure Fundamentals",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCPHOT50",
+   "NCPHOT51",
+   "NCPHOT59"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=359",
+   "title": "College of the Canyons",
+   "h1": "College of the Canyons",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    359
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "f264d8fbe7ea7ecd"
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 4512
  },
  {
   "control_number": "39046",
   "title": "College Success Toolkit",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCCGSL1",
+   "NCCGSL2",
+   "NCCGSL3"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=326",
+   "title": "Certificate of Competency: College",
+   "h1": "Certificate of Competency: College",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    326
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "1a1b04723c917804"
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 3506
  },
  {
   "control_number": "39047",
@@ -5432,48 +5864,114 @@
   "title": "Instructional Aide Training",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCEDUC3",
+   "NCEDUC4"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=334",
+   "title": "Certificate of Completion: Instructional",
+   "h1": "Certificate of Completion: Instructional",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    334,
+    335
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "0f5f9213e81882fc"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 5120
  },
  {
   "control_number": "39755",
   "title": "Essential Arithmetic Skills",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCMATH1",
+   "NCMATH2",
+   "NCMATH3"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=348",
+   "title": "Certificate of Competency: Essential",
+   "h1": "Certificate of Competency: Essential",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    348,
+    349
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "cfb23952240250e6"
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 8291
  },
  {
   "control_number": "39756",
   "title": "Essential Pre-Algebra Skills",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCMATH4",
+   "NCMATH5",
+   "NCMATH6"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=348",
+   "title": "Certificate of Competency: Essential Pre-",
+   "h1": "Certificate of Competency: Essential Pre-",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    348,
+    349
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "b240b46dd123df54"
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 7588
  },
  {
   "control_number": "39757",
   "title": "Essential Beginning Algebra Skills",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCMATH7",
+   "NCMATH8",
+   "NCMATH9"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=348",
+   "title": "Certificate of Competency: Essential",
+   "h1": "Certificate of Competency: Essential",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    348
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "542fea40f347f070"
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 2399
  },
  {
   "control_number": "39763",
@@ -5627,60 +6125,137 @@
   "title": "English as a Second Language (ESL) for College Preparation II",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCESL70",
+   "NCESL71"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=340",
+   "title": "Santa Clarita Community College District",
+   "h1": "Santa Clarita Community College District",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    340,
+    341
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "bce4b41104fe6774"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 8255
  },
  {
   "control_number": "40226",
   "title": "Fundamental Skills for Commercial Artists",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCART110",
+   "NCART200"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=319",
+   "title": "Certificate of Completion: Fundamental",
+   "h1": "Certificate of Completion: Fundamental",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    319
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "3129b676975071fb"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 1253
  },
  {
   "control_number": "40227",
   "title": "Business of Acting",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCTHTR60",
+   "NCTHTR61"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=376",
+   "title": "Certificate of Completion: Business of",
+   "h1": "Certificate of Completion: Business of",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    376,
+    377
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "78fe574c4d778731"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 7578
  },
  {
   "control_number": "40247",
   "title": "21st Century Career Skills",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCCSKL101",
+   "NCCSKL102"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=323",
+   "title": "Certificate of Completion: 21st Century",
+   "h1": "Certificate of Completion: 21st Century",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    323
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "1649348a102ac9fc"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 1438
  },
  {
   "control_number": "40248",
   "title": "Occupational Safety Health Administration (OSHA) Construction Certification",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCCONS101",
+   "NCCONS102"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=331",
+   "title": "College of the Canyons",
+   "h1": "College of the Canyons",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    331
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "832212a879563b35"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 3594
  },
  {
   "control_number": "40362",
@@ -6282,36 +6857,93 @@
   "title": "Teaching Foundation",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCEDUC100",
+   "NCEDUC101",
+   "NCEDUC102",
+   "NCEDUC103",
+   "NCEDUC104",
+   "NCEDUC105",
+   "NCEDUC111"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=335",
+   "title": "Certificate of Completion: Teaching",
+   "h1": "Certificate of Completion: Teaching",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    335,
+    336
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "6172d77cf3a769d1"
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 8196
  },
  {
   "control_number": "40908",
   "title": "Upgrade to Academic Success",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCCGSL1",
+   "NCCGSL2",
+   "NCCGSL3",
+   "NCCOUN15"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=332",
+   "title": "Certificate of Competency: Upgrade to",
+   "h1": "Certificate of Competency: Upgrade to",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    332
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "f32e2af5149ce563"
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 4039
  },
  {
   "control_number": "40912",
   "title": "Yoga Teacher Training",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCYOGA1",
+   "NCYOGA2",
+   "NCYOGA3",
+   "NCYOGA4",
+   "NCYOGA5"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=380",
+   "title": "Certificate of Completion: Yoga Teacher",
+   "h1": "Certificate of Completion: Yoga Teacher",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    380,
+    381
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "a73dced45956d69e"
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 5398
  },
  {
   "control_number": "41576",
@@ -6368,36 +7000,88 @@
   "title": "Real Estate",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCREAL100",
+   "NCREAL101",
+   "NCREAL105",
+   "NCREAL115",
+   "NCREAL120",
+   "NCREAL130"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=372",
+   "title": "Certificate of Completion: Real Estate",
+   "h1": "Certificate of Completion: Real Estate",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    372,
+    373
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "293ac0a2c29e8187"
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 6214
  },
  {
   "control_number": "41610",
   "title": "Project Management for Non-Project Managers",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCBUS10A",
+   "NCBUS10B"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=320",
+   "title": "Certificate of Completion: Project",
+   "h1": "Certificate of Completion: Project",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    320,
+    321
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "deaf8c907530eefc"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 5435
  },
  {
   "control_number": "41615",
   "title": "Baking Fundamentals",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.667,
+  "codes_found": [
+   "NCCUL2",
+   "NCCUL3"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=332",
+   "title": "Certificate of Completion: Baking",
+   "h1": "Certificate of Completion: Baking",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    332,
+    333
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "744f99706b6808ab"
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 4390
  },
  {
   "control_number": "41621",
@@ -6457,12 +7141,27 @@
   "title": "Emerging Leaders",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCCSKL22",
+   "NCCSKL23"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=322",
+   "title": "Certificate of Completion: Emerging",
+   "h1": "Certificate of Completion: Emerging",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    322
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "080cc0db8ecc1453"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 2323
  },
  {
   "control_number": "42191",
@@ -6548,36 +7247,82 @@
   "title": "English for the Workplace",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCVESL1",
+   "NCVESL2"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=340",
+   "title": "Certificate of Completion: English for the",
+   "h1": "Certificate of Completion: English for the",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    340,
+    341
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "13021c7f5a2e7b08"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 7877
  },
  {
   "control_number": "42218",
   "title": "Understanding Trauma in Children and Youth Training",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCVOC40",
+   "NCVOC41"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=378",
+   "title": "Certificate of Completion: Understanding",
+   "h1": "Certificate of Completion: Understanding",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    378
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "5a0128d4e5899123"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 1084
  },
  {
   "control_number": "42349",
   "title": "Therapeutic Rehabilitation Technician",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCKPET120"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=375",
+   "title": "Certificate of Completion: Therapeutic",
+   "h1": "Certificate of Completion: Therapeutic",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    375,
+    376
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "cd667c99ab324a6f"
+  },
   "listed": 1,
-  "text_chars": 0
+  "text_chars": 6121
  },
  {
   "control_number": "42509",
@@ -6596,48 +7341,110 @@
   "title": "Essential Intermediate Algebra Skills: Polynomials",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCMATH10",
+   "NCMATH11",
+   "NCMATH12"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=348",
+   "title": "Certificate of Competency: Essential",
+   "h1": "Certificate of Competency: Essential",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    348
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "07be114a3b64f233"
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 1638
  },
  {
   "control_number": "42548",
   "title": "Essential Intermediate Algebra Skills: Quadratics, Exponentials, and Logarithms",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCMATH16",
+   "NCMATH17"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=349",
+   "title": "College of the Canyons",
+   "h1": "College of the Canyons",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    349
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "92d7067887d3da5a"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 4487
  },
  {
   "control_number": "42549",
   "title": "Essential Intermediate Algebra Skills: Shapes and Patterns",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCMATH18",
+   "NCMATH19"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=349",
+   "title": "College of the Canyons",
+   "h1": "College of the Canyons",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    349
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "92d7067887d3da5a"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 4487
  },
  {
   "control_number": "42550",
   "title": "Essential Intermediate Algebra Skills: Functions and Rational Exponents",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCMATH13",
+   "NCMATH14",
+   "NCMATH15"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=348",
+   "title": "Santa Clarita Community College District",
+   "h1": "Santa Clarita Community College District",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    348
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "ee7708a3880c8d9f"
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 4245
  },
  {
   "control_number": "42670",
@@ -6680,12 +7487,28 @@
   "title": "Certified Paralegal Exam Test Preparation",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCPLGL1",
+   "NCPLGL2"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=356",
+   "title": "Certificate of Completion: Certified",
+   "h1": "Certificate of Completion: Certified",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    356,
+    357
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "f62fa5b728d945a6"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 5574
  },
  {
   "control_number": "42737",
@@ -6814,48 +7637,112 @@
   "title": "Medical Scribe",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCHLTH249",
+   "NCHLTH250"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=352",
+   "title": "SCHOOL OF PERSONAL AND PROFESSIONAL LEARNING - NONCREDIT",
+   "h1": "SCHOOL OF PERSONAL AND PROFESSIONAL LEARNING - NONCREDIT",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    352
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "68d94ff0f1b428b0"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 4481
  },
  {
   "control_number": "42935",
   "title": "Entrepreneurship",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCBUS117A",
+   "NCBUS117B"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=320",
+   "title": "Certificate of Completion:",
+   "h1": "Certificate of Completion:",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    320,
+    321
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "e86be611e4884344"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 8495
  },
  {
   "control_number": "42936",
   "title": "Personal Care Aide Training",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCHLTH1",
+   "NCHLTH10",
+   "NCHLTH11"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=357",
+   "title": "Certificate of Completion: Personal Care",
+   "h1": "Certificate of Completion: Personal Care",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    357,
+    358
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "de24cd0c7764ef48"
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 4884
  },
  {
   "control_number": "42937",
   "title": "Physical Fitness Preparation for Public Safety",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCVOC10",
+   "NCVOC11"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=378",
+   "title": "Certificate of Completion: Physical Fitness",
+   "h1": "Certificate of Completion: Physical Fitness",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    378,
+    379
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "b90ed53dd8c4383a"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 7199
  },
  {
   "control_number": "43271",
@@ -6960,48 +7847,130 @@
   "title": "Crime and Intelligence Analysis",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCCIAC101",
+   "NCCIAC102",
+   "NCCIAC103",
+   "NCCIAC104",
+   "NCCIAC105",
+   "NCCIAC106",
+   "NCCIAC107",
+   "NCCIAC108",
+   "NCCIAC109",
+   "NCCIAC110"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=316",
+   "title": "Certificate of Completion: Crime and",
+   "h1": "Certificate of Completion: Crime and",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    316,
+    317,
+    318
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "8b00c93561d8ad21"
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 9906
  },
  {
   "control_number": "43311",
   "title": "Welding Safety – Welding Lab Skills Enhancement",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCWELD1",
+   "NCWELD2"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=380",
+   "title": "Certificate of Completion: Welding Safety -",
+   "h1": "Certificate of Completion: Welding Safety -",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    380
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "e5d1d36305cb4c43"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 2711
  },
  {
   "control_number": "43312",
   "title": "Supporting and Empowering Veterans",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCCSKL17",
+   "NCCSKL21",
+   "NCCSKL4",
+   "NCVOC50"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=378",
+   "title": "Certificate of Completion: Supporting and",
+   "h1": "Certificate of Completion: Supporting and",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    378
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "cad1fd9a13126ea8"
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 2236
  },
  {
   "control_number": "43377",
   "title": "Nursing Success",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCNURS89",
+   "NCNURS92",
+   "NCNURS93",
+   "NCNURS94",
+   "NCNURS95",
+   "NCNURS96"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=353",
+   "title": "Certificate of Completion: Nursing Success",
+   "h1": "Certificate of Completion: Nursing Success",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    353,
+    354
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 353,
+    "share": 1.0
+   },
+   "text_sha": "d4df57019cc62250"
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 8189
  },
  {
   "control_number": "43385",
@@ -7020,48 +7989,111 @@
   "title": "Library and Internet Research Skills",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCBCSK1",
+   "NCBCSK2"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=326",
+   "title": "Certificate of Competency: Library and",
+   "h1": "Certificate of Competency: Library and",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    326,
+    327
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "f899635aa4fe3f7f"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 4943
  },
  {
   "control_number": "43388",
   "title": "Fundamentals of Public Communications",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCCSKL14"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=328",
+   "title": "Santa Clarita Community College District",
+   "h1": "Santa Clarita Community College District",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    328
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "5a1c07529d37b638"
+  },
   "listed": 1,
-  "text_chars": 0
+  "text_chars": 4325
  },
  {
   "control_number": "43389",
   "title": "Intermediate Conversational English",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCESL20",
+   "NCESL21"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=339",
+   "title": "Certificate of Competency: Intermediate",
+   "h1": "Certificate of Competency: Intermediate",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    339,
+    340
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "40e79a6fb0d14414"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 8067
  },
  {
   "control_number": "43390",
   "title": "Beginning Conversational English",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCESL10",
+   "NCESL11"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=338",
+   "title": "Certificate of Competency: Beginning",
+   "h1": "Certificate of Competency: Beginning",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    338,
+    339,
+    340
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "c7e98bc020a3412e"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 8925
  },
  {
   "control_number": "43392",
@@ -7147,24 +8179,58 @@
   "title": "Fundamental Teaching Skills for Higher Education",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCEDUC100",
+   "NCEDUC110"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=334",
+   "title": "Santa Clarita Community College District",
+   "h1": "Santa Clarita Community College District",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    334,
+    335,
+    336
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "dac578f768dd9940"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 12758
  },
  {
   "control_number": "43731",
   "title": "Model Making for Architecture and Interior Design",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCARCH50",
+   "NCARCH96",
+   "NCID50",
+   "NCID96"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=319",
+   "title": "Certificate of Completion: Model Making for",
+   "h1": "Certificate of Completion: Model Making for",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    319
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "716493102aa3bc1e"
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 3414
  },
  {
   "control_number": "43781",
@@ -7199,26 +8265,44 @@
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    352
+    352,
+    353,
+    354
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "c24b924095eadf97"
+   "text_sha": "565d7e35e049947a"
   },
   "listed": 5,
-  "text_chars": 1054
+  "text_chars": 9848
  },
  {
   "control_number": "43783",
   "title": "21st Century Teaching Practices",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCEDUC106",
+   "NCEDUC107",
+   "NCEDUC108"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=334",
+   "title": "Certificate of Completion: 21st Century",
+   "h1": "Certificate of Completion: 21st Century",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    334
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "fb0ec299c0729116"
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 3390
  },
  {
   "control_number": "43916",
@@ -7271,36 +8355,84 @@
   "title": "Generative AI for Academic and Career Success",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCBCSK3",
+   "NCBCSK4"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=327",
+   "title": "Certificate of Competency: Generative AI",
+   "h1": "Certificate of Competency: Generative AI",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    327
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "4d42cfc254400744"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 4032
  },
  {
   "control_number": "44100",
   "title": "Intermediate American Language and Culture",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCESL50",
+   "NCESL52",
+   "NCESL53"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=339",
+   "title": "Certificate of Competency: Intermediate",
+   "h1": "Certificate of Competency: Intermediate",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    339
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "cfbc7a4f6cf2f6ef"
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 3046
  },
  {
   "control_number": "44101",
   "title": "Advanced American Language and Culture",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCESL50",
+   "NCESL55",
+   "NCESL56",
+   "NCESL57"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=339",
+   "title": "Certificate of Competency: Advanced",
+   "h1": "Certificate of Competency: Advanced",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    339
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "a1285d35f0bc83e3"
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 2127
  },
  {
   "control_number": "44235",
@@ -7319,36 +8451,84 @@
   "title": "Essential Workforce Skills for Health Professions",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCCSKL24",
+   "NCHLTH11"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=322",
+   "title": "Certificate of Completion: Essential",
+   "h1": "Certificate of Completion: Essential",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    322
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "0268c6cd231aefb0"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 1615
  },
  {
   "control_number": "44237",
   "title": "Executive Functioning Skills",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCVOC1",
+   "NCVOC2"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=377",
+   "title": "Certificate of Completion: Executive",
+   "h1": "Certificate of Completion: Executive",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    377,
+    378,
+    379
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "2a58ae4366a07c20"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 9216
  },
  {
   "control_number": "44238",
   "title": "Keyboarding and Document Processing",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCCAWT10B",
+   "NCCAWT12A"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=329",
+   "title": "Certificate of Completion: Keyboarding and",
+   "h1": "Certificate of Completion: Keyboarding and",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    329,
+    330
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "5b3bba816f5b9cda"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 6792
  },
  {
   "control_number": "44260",
@@ -7424,12 +8604,27 @@
   "title": "Wilderness Leadership",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCHLTH1",
+   "NCREC100"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=373",
+   "title": "Certificate of Completion: Wilderness",
+   "h1": "Certificate of Completion: Wilderness",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    373
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "21f73cf419cd218f"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 1628
  },
  {
   "control_number": "44285",
@@ -7478,24 +8673,54 @@
   "title": "Spanish for Educators",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCSPAN41",
+   "NCSPAN42"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=375",
+   "title": "Certificate of Completion: Spanish for",
+   "h1": "Certificate of Completion: Spanish for",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    375
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "009d54fd66378ff3"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 3351
  },
  {
   "control_number": "44311",
   "title": "Essential Accounting Skills",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCBUS203",
+   "NCBUS204"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=316",
+   "title": "Certificate of Completion: Essential",
+   "h1": "Certificate of Completion: Essential",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    316
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "ac3ecd6832e499ba"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 4241
  },
  {
   "control_number": "44382",
@@ -7654,84 +8879,197 @@
   "title": "Drafting for the Entertainment Industry (Vectorworks)",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCTHTR25",
+   "NCTHTR26"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=376",
+   "title": "Certificate of Completion: Drafting for the",
+   "h1": "Certificate of Completion: Drafting for the",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    376,
+    377
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "e5864430b0f4626f"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 5963
  },
  {
   "control_number": "44479",
   "title": "Drafting for the Entertainment Industry (AutoCAD)",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCTHTR20",
+   "NCTHTR21"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=376",
+   "title": "Certificate of Completion: Drafting for the",
+   "h1": "Certificate of Completion: Drafting for the",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    376
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "36c155b78a3131cb"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 2449
  },
  {
   "control_number": "44480",
   "title": "Basic Computer Drafting for the Entertainment Industry",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCTHTR20",
+   "NCTHTR25"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=376",
+   "title": "Certificate of Completion: Basic Computer",
+   "h1": "Certificate of Completion: Basic Computer",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    376,
+    377
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "045b31e5cf45fb2f"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 8375
  },
  {
   "control_number": "44509",
   "title": "Commercial Printing",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCVOC13A",
+   "NCVOC13B"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=377",
+   "title": "Certificate of Completion: Commercial",
+   "h1": "Certificate of Completion: Commercial",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    377
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "79a2885e835d90f4"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 1633
  },
  {
   "control_number": "44635",
   "title": "Physical Therapist Assistant Essential Lab Skills",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCPTA80",
+   "NCPTA85",
+   "NCPTA90",
+   "NCPTA95",
+   "NCPTA97"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=360",
+   "title": "Certificate of Completion: Physical",
+   "h1": "Certificate of Completion: Physical",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    360,
+    361
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "1339ffadca6360cc"
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 6936
  },
  {
   "control_number": "44636",
   "title": "Math and Professional Skills for Healthcare Careers",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCHLTH1",
+   "NCHLTH11",
+   "NCHLTH12"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=343",
+   "title": "College of the Canyons",
+   "h1": "College of the Canyons",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    343
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "9bcc6461d341982b"
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 4916
  },
  {
   "control_number": "44637",
   "title": "QuickBooks Online",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCCAWT13A",
+   "NCCAWT13B"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=329",
+   "title": "Certificate of Completion: QuickBooks",
+   "h1": "Certificate of Completion: QuickBooks",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    329,
+    330
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "e102e924a0c5cfa0"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 6205
  },
  {
   "control_number": "44657",
@@ -7795,60 +9133,137 @@
   "title": "Fundamental Skills in Diagnostic Medical Sonography",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCDMS100",
+   "NCHLTH11"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=333",
+   "title": "Certificate of Completion: Fundamental",
+   "h1": "Certificate of Completion: Fundamental",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    333
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "80c3835acc6d230d"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 2740
  },
  {
   "control_number": "44811",
   "title": "Career Preparation for Occupational Therapy Assistants",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCHLTH11",
+   "NCOTA232"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=354",
+   "title": "Santa Clarita Community College District",
+   "h1": "Santa Clarita Community College District",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    354,
+    355
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "c8ef3dbe089a89d8"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 8335
  },
  {
   "control_number": "44812",
   "title": "Police Defensive Tactics and Arrest & Control",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCARCN1",
+   "NCARCN2"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=317",
+   "title": "Certificate of Completion: Police Defensive",
+   "h1": "Certificate of Completion: Police Defensive",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    317,
+    318
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "d3631bce110fa534"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 7036
  },
  {
   "control_number": "44813",
   "title": "Public Speaking for Interviews and the Workplace",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCCOMM3",
+   "NCCSKL14"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=328",
+   "title": "Certificate of Completion: Public Speaking",
+   "h1": "Certificate of Completion: Public Speaking",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    328
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "8907d14b0e8be7a6"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 3954
  },
  {
   "control_number": "44814",
   "title": "Public Speaking for Social Meida and the Workplace",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCCOMM2",
+   "NCCSKL14"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=328",
+   "title": "Santa Clarita Community College District",
+   "h1": "Santa Clarita Community College District",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    328
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "5a1c07529d37b638"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 4325
  },
  {
   "control_number": "45077",
@@ -7904,12 +9319,29 @@
   "title": "NCEES Fundamentals of Surveying (FS) Exam Test Preparation",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCSURV100A",
+   "NCSURV100B"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=345",
+   "title": "College of the Canyons",
+   "h1": "College of the Canyons",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    345,
+    346,
+    347
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "c69fd36734561754"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 12434
  },
  {
   "control_number": "45180",
@@ -8265,24 +9697,54 @@
   "title": "eSports and Interactive Media",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCESPR1",
+   "NCESPR2"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=342",
+   "title": "Certificate of Completion: eSports and",
+   "h1": "Certificate of Completion: eSports and",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    342
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "0741e109504bcb77"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 3637
  },
  {
   "control_number": "45341",
   "title": "Written Exam and Interview Workshop for Public Safety Entry & Promotion",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCADMJ199A",
+   "NCADMJ199B"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=317",
+   "title": "College of the Canyons 315",
+   "h1": "College of the Canyons 315",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    317
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "e4af23389648a4a1"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 4716
  },
  {
   "control_number": "45528",
@@ -8365,24 +9827,55 @@
   "title": "Essential Skills for Microsoft Windows and Keyboarding",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCCAWT10A"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=329",
+   "title": "Certificate of Completion: Essential Skills",
+   "h1": "Certificate of Completion: Essential Skills",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    329
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "079c874e1814f1f9"
+  },
   "listed": 1,
-  "text_chars": 0
+  "text_chars": 3396
  },
  {
   "control_number": "45704",
   "title": "CSU/UC Preparation",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCCGSL3",
+   "NCCGSL4",
+   "NCCOUN50",
+   "NCCOUN60"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=332",
+   "title": "Santa Clarita Community College District",
+   "h1": "Santa Clarita Community College District",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    332
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "00501f61f6eaa938"
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 4217
  },
  {
   "control_number": "45756",
@@ -8440,12 +9933,26 @@
   "title": "Mock Trial",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "NCCSKL14"
+  ],
+  "source": {
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=357",
+   "title": "SCHOOL OF PERSONAL AND PROFESSIONAL LEARNING - NONCREDIT",
+   "h1": "SCHOOL OF PERSONAL AND PROFESSIONAL LEARNING - NONCREDIT",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    357
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "833c82a92962e457"
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 4389
  },
  {
   "control_number": "45882",

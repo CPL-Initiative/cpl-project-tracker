@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Clinical Laboratory Scientist Program",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=101",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=101",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11563,
+  "input_tokens": 11562,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11563,
-    "output_tokens": 1334,
+    "input_tokens": 11562,
+    "output_tokens": 1411,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1334,
+  "output_tokens": 1411,
   "output_tokens_details": {
-   "thinking_tokens": 328
+   "thinking_tokens": 385
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07293,
- "ms": 10890,
- "seconds": 11.1,
+ "cost_usd": 0.07447,
+ "ms": 12145,
+ "seconds": 12.3,
  "parts": null,
  "error": null,
  "score": {
@@ -235,13 +235,26 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints 'Units Required: 36.5' for the certificate; the listed courses sum to 36.5.",
-   "CLS-212 (CLS Clinical Rotations II, 3 units) and CLS-213 (CLS Clinical Rotations III, 3 units) are required in the catalog but absent from the closed list; recorded as catalog additions.",
-   "The certificate prints a single 'Certificate Student Learning Outcome', recorded as the program outcome.",
-   "Career entry 'Clinical laboratory scientists' is taken from the program description's opening sentence; reviewer may confirm it counts as a named career.",
-   "The Communication Studies section that follows on page 103 belongs to another program and was not read."
+   "The section heading names the 'Lecture Program', but its requirement list includes the clinical rotation courses CLS-211, CLS-212 and CLS-213; all 12 listed courses sum to the stated 36.5 units.",
+   "CLS-212 and CLS-213 (3 units each) are in the catalog's requirement list but not in the closed list; recorded as catalog additions.",
+   "The 'Units Required: 36.5' figure was also recorded as the block's stated total because it is the only list under Program Requirements.",
+   "Careers entry taken from the program description ('Clinical laboratory scientists are integral members of the allied health care team'); the healthcare providers named (physicians, nurses, pharmacists) are recipients of lab information, not careers for this program, and were not recorded."
   ]
  },
- "extracted_run": "39006378829",
- "catalog_year": "2026-2027"
+ "extracted_run": "44886816990",
+ "catalog_year": "2026-2027",
+ "source_sha": "b118c0c87af53668",
+ "source_codes": [
+  "CLS200",
+  "CLS201",
+  "CLS202",
+  "CLS203",
+  "CLS204",
+  "CLS205",
+  "CLS206",
+  "CLS207",
+  "CLS208",
+  "CLS211"
+ ],
+ "source_coverage": 1.0
 }

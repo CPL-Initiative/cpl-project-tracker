@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Web Publishing and Design",
  "award": "A.S. Degree",
- "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=109",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=108",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12463,
+  "input_tokens": 12136,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12463,
-    "output_tokens": 2379,
+    "input_tokens": 12136,
+    "output_tokens": 2679,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2379,
+  "output_tokens": 2679,
   "output_tokens_details": {
-   "thinking_tokens": 533
+   "thinking_tokens": 882
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09743,
- "ms": 18713,
- "seconds": 19.0,
+ "cost_usd": 0.10212,
+ "ms": 20752,
+ "seconds": 20.9,
  "parts": null,
  "error": null,
  "score": {
@@ -89,7 +89,7 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "pass": true
   },
@@ -103,7 +103,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "COMPUTER APPLICATIONS AND WEB TECHNOLOGIES (A.S. Web Publishing and Design section continued from the preceding page; its own heading is not in the text)",
+   "section_heading": "Associate in Science Degree: Web Publishing and Design",
    "measure": "units",
    "total_units": {
     "min": 35.5,
@@ -127,7 +127,10 @@
    "outcomes": [
     "Students will be able to demonstrate proficiency in the core skills and knowledge required for employment in the web publishing and design industry."
    ],
-   "careers": []
+   "careers": [
+    "Front-end developers",
+    "web publishing and design"
+   ]
   },
   "blocks": [
    {
@@ -354,13 +357,46 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The degree section begins at the top of page 109; its heading and any program description or career statement are on the preceding page, which is not in the text. The section_heading records the printed running header instead.",
-   "CMPSCI-111L is printed with 3.0 units in the elective list, while the state file stores 1 unit. The printed value is recorded; a reviewer should check it.",
-   "Several printed titles differ from the closed list: GMD-177 'Web Page Design I' versus 'Web and Interactive Design', GMD-101 'Introduction to Visual Communication' versus 'Introduction to Graphic and Multimedia Design', and CAWT-074 'Introduction to Photoshop - Brief'. The codes match, so none is marked as a catalog addition.",
-   "The certificate section that follows mentions 'entry-level positions or career advancement opportunities in the field of web publishing and design'. It belongs to the Certificate of Achievement, so no careers are recorded for the A.S. degree.",
-   "The degree section prints no total for the whole degree with general education and names no GE pattern."
+   "The A.S. section's degree outcome is the same text as the Certificate of Achievement in Web Publishing and Design outcome; recorded from the 'Degree Student Learning Outcome' heading.",
+   "CMPSCI-111L is printed as 3.0 units in the A.S. elective list, while the closed list (and the Web Development certificate list on page 108) gives 1 unit; recorded as printed (3) — reviewer should check.",
+   "Required courses sum to 25.5 units; with the ten elective units this matches the printed 35.5.",
+   "The A.S. section prints titles that differ from the closed list for some courses (e.g., GMD-177 'Web Page Design I', GMD-101 'Introduction to Visual Communication'); codes match.",
+   "No GE pattern or degree total is printed for this award; only the major's 35.5 units.",
+   "Careers: 'Front-end developers' is named in the program description as the role the program prepares for; 'web publishing and design' is the named field for entry-level positions."
   ]
  },
- "extracted_run": "39006378829",
- "catalog_year": "2026-2027"
+ "extracted_run": "44886816990",
+ "catalog_year": "2026-2027",
+ "source_sha": "ab87976fdfad8c6b",
+ "source_codes": [
+  "BUS190",
+  "BUS192",
+  "CAWT115",
+  "CAWT116",
+  "CAWT160",
+  "CAWT161",
+  "CAWT170",
+  "CAWT171",
+  "CAWT173",
+  "CAWT174",
+  "CAWT74",
+  "CAWT76",
+  "CAWT82",
+  "CMPSCI111",
+  "CMPSCI111L",
+  "CMPSCI132",
+  "CMPSCI190",
+  "CMPSCI192",
+  "CMPSCI235",
+  "CMPSCI236",
+  "GMD101",
+  "GMD144",
+  "GMD145",
+  "GMD177",
+  "MEA109",
+  "MEA110",
+  "NETECH151",
+  "WE186CAWT"
+ ],
+ "source_coverage": 1.0
 }

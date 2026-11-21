@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Culinary Arts",
  "award": "A.A. Degree",
- "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=120",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=120",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11696,
+  "input_tokens": 10529,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11696,
-    "output_tokens": 1947,
+    "input_tokens": 10529,
+    "output_tokens": 1939,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1947,
+  "output_tokens": 1939,
   "output_tokens_details": {
-   "thinking_tokens": 603
+   "thinking_tokens": 594
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08572,
- "ms": 14822,
- "seconds": 15.1,
+ "cost_usd": 0.0809,
+ "ms": 15052,
+ "seconds": 15.2,
  "parts": null,
  "error": null,
  "score": {
@@ -134,7 +134,7 @@
     "Students will be able to demonstrate proficiency in the core skills and knowledge required for employment in the food industry."
    ],
    "careers": [
-    "culinary field"
+    "the culinary field"
    ]
   },
   "blocks": [
@@ -291,17 +291,36 @@
   "missing_explained": [
    {
     "code": "CULARTS 55",
-    "why": "not in the text; the catalog lists CULARTS-110 Culinary Safety and Sanitation (2.0) instead"
+    "why": "not in the text; the catalog lists CULARTS-110 Culinary Safety and Sanitation (2.0 units) instead"
    }
   ],
   "notes": [
-   "The section covers both the A.A. Degree and the Certificate of Achievement in Culinary Arts with one requirements list and one shared 'Degree and Certificate Student Learning Outcome'; recorded for the A.A.",
-   "CULARTS-110 Culinary Safety and Sanitation (2.0 units) is not on the closed list, which instead holds CULARTS 55 Culinary Safety and Sanitation (1 unit); possibly a renumbered course. Recorded as a catalog addition.",
-   "Catalog prints CULARTS-135 Catering at 4.0 units; the state file stores 3.",
-   "Requirements list continues across the page break from page 120 to page 121 (WE-186CULA block on page 121).",
-   "No general education pattern or degree total is printed in this section."
+   "The section covers both the A.A. degree and the Certificate of Achievement with one shared requirement list and one shared 'Degree and Certificate Student Learning Outcome'; recorded for the A.A.",
+   "The page prints no general education pattern or degree total for the A.A.; only the major's 'Units Required: 35.5 - 37'.",
+   "CULARTS-110 (Culinary Safety and Sanitation, 2.0 units) is not in the closed list; the closed list instead has CULARTS 55 with the same title at 1 unit.",
+   "CULARTS-135 Catering is printed at 4.0 units, while the state file stores 3.",
+   "The Work Experience requirement spans pages 120-121; WE-186CULA is printed with a 1.0-4.0 unit range."
   ]
  },
- "extracted_run": "39006378829",
- "catalog_year": "2026-2027"
+ "extracted_run": "44886816990",
+ "catalog_year": "2026-2027",
+ "source_sha": "737ab141e2234a2a",
+ "source_codes": [
+  "CULARTS121",
+  "CULARTS123",
+  "CULARTS125",
+  "CULARTS126",
+  "CULARTS127",
+  "CULARTS128",
+  "CULARTS132",
+  "CULARTS133",
+  "CULARTS134",
+  "CULARTS135",
+  "CULARTS136",
+  "CULARTS138",
+  "CULARTS150",
+  "CULARTS50",
+  "WE186CULA"
+ ],
+ "source_coverage": 0.938
 }

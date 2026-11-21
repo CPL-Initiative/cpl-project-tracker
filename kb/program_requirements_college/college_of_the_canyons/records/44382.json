@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Baking and Pastry",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=121",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=121",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9679,
+  "input_tokens": 9577,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9679,
-    "output_tokens": 1159,
+    "input_tokens": 9577,
+    "output_tokens": 1277,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1159,
+  "output_tokens": 1277,
   "output_tokens_details": {
-   "thinking_tokens": 298
+   "thinking_tokens": 421
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0619,
- "ms": 9567,
- "seconds": 9.9,
+ "cost_usd": 0.06385,
+ "ms": 10937,
+ "seconds": 11.1,
  "parts": null,
  "error": null,
  "score": {
@@ -225,12 +225,22 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The section heading says Certificate of Achievement, but the description text calls it the 'Culinary Arts Baking and Pastry Certificate of Specialization'; reviewer may want to confirm the award type.",
-   "The line 'Plus a minimum of one unit from the following: WE-186CULA' at the top of page 121 belongs to the preceding program and was not recorded.",
-   "Closed-list code 'CULARTS130' matched to catalog 'CULARTS-130' (Pastry Art).",
-   "Units Required: 16 equals the five 3-unit core courses plus the 1-unit minimum of WE-186BAKE."
+   "The program description calls this the 'Culinary Arts Baking and Pastry Certificate of Specialization', while the section heading is 'Certificate of Achievement: Baking and Pastry'; the award was read from the heading.",
+   "Closed-list code 'CULARTS130' (no space, units not stored) matched to the catalog's CULARTS-130 Pastry Art, 3.0 units.",
+   "The section's single 'Certificate Student Learning Outcome' was recorded as the program outcome.",
+   "The course descriptions that follow the requirements are from the department's course listing and were not read as requirements or outcomes."
   ]
  },
- "extracted_run": "39006378829",
- "catalog_year": "2026-2027"
+ "extracted_run": "44886816990",
+ "catalog_year": "2026-2027",
+ "source_sha": "ad14a3667b5e335b",
+ "source_codes": [
+  "CULARTS127",
+  "CULARTS128",
+  "CULARTS129",
+  "CULARTS130",
+  "CULARTS131",
+  "WE186BAKE"
+ ],
+ "source_coverage": 1.0
 }

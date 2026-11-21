@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Engine Repair",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=83",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=84",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12300,
+  "input_tokens": 11912,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12300,
-    "output_tokens": 902,
+    "input_tokens": 11912,
+    "output_tokens": 759,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 902,
+  "output_tokens": 759,
   "output_tokens_details": {
-   "thinking_tokens": 225
+   "thinking_tokens": 193
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06724,
- "ms": 8078,
- "seconds": 8.4,
+ "cost_usd": 0.06283,
+ "ms": 6566,
+ "seconds": 6.7,
  "parts": null,
  "error": null,
  "score": {
@@ -180,12 +180,19 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints AUTECH-180 at 4.0 units in the program list, while the state closed list stores 3 units; the listed courses sum to 17, matching 'Units Required: 17'.",
-   "The 'Units Required: 17' line is printed under the Programs Requirements heading; it is recorded both as total_units and as the block's stated total.",
-   "AUTECH 135's course description lists AUTECH-114 as a prerequisite, but AUTECH-114 is not among this certificate's requirements; a reviewer may want to check this.",
-   "The outcome is printed under 'Certificate Student Learning Outcome' for this certificate specifically."
+   "AUTECH-180 is printed at 4.0 units in the requirements list and in the course description, while the state file stores 3 units; the printed courses sum to the stated 17 units.",
+   "The block total of 17 is taken from 'Units Required: 17' for the certificate, which holds only this one required list."
   ]
  },
- "extracted_run": "39006378829",
- "catalog_year": "2026-2027"
+ "extracted_run": "44886816990",
+ "catalog_year": "2026-2027",
+ "source_sha": "a9540e30947d474d",
+ "source_codes": [
+  "AUTECH110",
+  "AUTECH112",
+  "AUTECH113",
+  "AUTECH135",
+  "AUTECH180"
+ ],
+ "source_coverage": 1.0
 }

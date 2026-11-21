@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Animation Production",
  "award": "A.A. Degree",
- "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=203",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=203",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11925,
+  "input_tokens": 11927,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11925,
-    "output_tokens": 2446,
+    "input_tokens": 11927,
+    "output_tokens": 2568,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2446,
+  "output_tokens": 2568,
   "output_tokens_details": {
-   "thinking_tokens": 1080
+   "thinking_tokens": 1098
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09662,
- "ms": 19029,
- "seconds": 19.2,
+ "cost_usd": 0.09907,
+ "ms": 20386,
+ "seconds": 20.5,
  "parts": null,
  "error": null,
  "score": {
@@ -97,7 +97,7 @@
    "pass": true
   },
   "careers": {
-   "count": 2,
+   "count": 3,
    "not_verbatim": [],
    "pass": true
   },
@@ -137,6 +137,7 @@
     "Critique animation projects using industry standards"
    ],
    "careers": [
+    "animation industry",
     "video game design",
     "television and motion picture production"
    ]
@@ -287,13 +288,14 @@
       "code": "MEA-295",
       "units": 2,
       "units_max": null,
-      "alternatives": [
-       {
-        "code": "WE-186MEA",
-        "units": 0.05,
-        "catalog_addition": false
-       }
-      ],
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WE-186MEA",
+      "units": 0.05,
+      "units_max": 4,
+      "alternatives": [],
       "catalog_addition": false
      }
     ]
@@ -321,13 +323,33 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "ART-125A OR ART-225A is read as one choice, with ART-225B separately required; this reading makes the required courses sum to the stated 30.5 units (22.5 + 6 + 2).",
-   "WE-186MEA is printed with a variable range of 0.05 – 4.0 units; the alternative records only the low end (0.05).",
-   "The catalog prints MEA-265 as 'Studio Production' (closed list: 'Animation Production') and MEA-233 as 'Advanced 2D Animation' (closed list: 'Advanced 2D Digital Animation'); codes match.",
-   "MEA-190, MEA-221 and THEATR-140 are not in the closed list and are marked as catalog additions.",
-   "No general education pattern or degree total is printed in this section."
+   "The ART rows print 'ART-125A OR ART-225A' followed by ART-225B with no connector. Read as (ART-125A or ART-225A) plus ART-225B required; this reading sums to the stated 30.5 units (16.5 core + 6 ART + 6 + 2). The alternative reading, ART-125A or the pair ART-225A and ART-225B, would not reach 30.5.",
+   "MEA-265 is printed as 'Studio Production' while the closed list titles it 'Animation Production'; treated as the same course.",
+   "CAWT-074 is printed with a leading zero; matched to closed-list CAWT 74.",
+   "MEA-295 and WE-186MEA are printed with 'OR' between them under 'Plus a minimum of two units'; recorded as a choose_units block of 2.",
+   "The page lists the Certificate of Achievement and the Computer Animation, Filmmaking, New Media Journalism and Sound Arts degrees after this section; only the A.A. Animation Production section was read."
   ]
  },
- "extracted_run": "39006378829",
- "catalog_year": "2026-2027"
+ "extracted_run": "44886816990",
+ "catalog_year": "2026-2027",
+ "source_sha": "76573ff92bb35613",
+ "source_codes": [
+  "ART125A",
+  "ART225A",
+  "ART225B",
+  "CAWT74",
+  "MEA100",
+  "MEA101",
+  "MEA102",
+  "MEA106",
+  "MEA109",
+  "MEA118",
+  "MEA232",
+  "MEA233",
+  "MEA261",
+  "MEA265",
+  "MEA295",
+  "WE186MEA"
+ ],
+ "source_coverage": 1.0
 }

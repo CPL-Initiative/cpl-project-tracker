@@ -1,0 +1,243 @@
+{
+ "college": "College of the Canyons",
+ "control_number": "43310",
+ "shape": "noncredit",
+ "title": "Crime and Intelligence Analysis",
+ "award": "Noncredit program",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=316",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9862,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9862,
+    "output_tokens": 1535,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1535,
+  "output_tokens_details": {
+   "thinking_tokens": 565
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07015,
+ "ms": 13461,
+ "seconds": 13.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    224.0,
+    224.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [
+    "Students will be able to demonstrate the skills and knowledge needed for entry level positions as crime and/or intelligence analysts."
+   ],
+   "why": [
+    "not in the catalog text as printed: Students will be able to demonstrate the skills and knowledge needed for entry l"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Completion: Crime and Intelligence Analysis",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will be able to demonstrate the skills and knowledge needed for entry level positions as crime and/or intelligence analysts."
+   ],
+   "careers": [
+    "crime and/or intelligence analysts"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NC.CIAC-101",
+      "units": 8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NC.CIAC-102",
+      "units": 24,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NC.CIAC-103",
+      "units": 32,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NC.CIAC-104",
+      "units": 20,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NC.CIAC-105",
+      "units": 28,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NC.CIAC-106",
+      "units": 16,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NC.CIAC-107",
+      "units": 32,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NC.CIAC-108",
+      "units": 32,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NC.CIAC-109",
+      "units": 16,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NC.CIAC-110",
+      "units": 16,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The requirements list prints 'Units Required: 0' and 0.0 units beside every course; the hours recorded for each course come from the course descriptions on page 318 (e.g., NC.CIAC-101 8.00 hours). No total hours for the certificate is printed, so total_units is null (the 'Units Required: 0' figure was not recorded as an hours total).",
+   "The requirements list titles NC.CIAC-110 'CIAC Capstone: Exam Presentation' while the course description and closed list title it 'Exam Preparation'.",
+   "Catalog codes are printed with a hyphen (NC.CIAC-101); they match the closed-list codes NC.CIAC 101 etc.",
+   "The outcome is printed under the heading 'Certificate Student Learning Outcome'; the line break in 'crime and/ or' was read as 'and/or'."
+  ]
+ },
+ "extracted_run": "44886816990",
+ "catalog_year": "2026-2027",
+ "source_sha": "8b00c93561d8ad21",
+ "source_codes": [
+  "NCCIAC101",
+  "NCCIAC102",
+  "NCCIAC103",
+  "NCCIAC104",
+  "NCCIAC105",
+  "NCCIAC106",
+  "NCCIAC107",
+  "NCCIAC108",
+  "NCCIAC109",
+  "NCCIAC110"
+ ],
+ "source_coverage": 1.0
+}
