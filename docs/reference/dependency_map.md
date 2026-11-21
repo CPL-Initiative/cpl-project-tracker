@@ -721,6 +721,8 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/course_outcomes/ccsf_recall.json` | scripts: `kb/_course_outcomes_read.py` | — |
 | `kb/course_outcomes/mtsac_recall.json` | scripts: `kb/_course_outcomes_read.py` | — |
 | `kb/course_outcomes/queue.json` | scripts: `kb/_build_commons_data_status.py` | — |
+| `kb/course_outcomes/rio_hondo_recall.json` | scripts: `kb/_course_outcomes_read.py` | — |
+| `kb/course_outcomes/saddleback_recall.json` | scripts: `kb/_course_outcomes_read.py` | — |
 | `kb/course_outline_census` | none found | committed by: `course-outline-census.yml` |
 | `kb/course_outline_index` | none found | committed by: `course-outline-index.yml` |
 | `kb/course_outline_index/index_<run>.json` | scripts: `kb/_course_outcomes_read.py` | — |
@@ -1217,7 +1219,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/course_id_route_test.py` | workflows: `js-tests.yml` | — |
 | `tests/course_outcomes_header_fix_test.py` | workflows: `js-tests.yml` | — |
 | `tests/course_outcomes_load_test.py` | workflows: `js-tests.yml` | — |
-| `tests/course_outcomes_objectives_standing_test.py` | workflows: `js-tests.yml` | — |
+| `tests/course_outcomes_objectives_standing_test.py` | workflows: `course-outcomes-load.yml`, `js-tests.yml` | — |
 | `tests/course_outcomes_read_test.py` | workflows: `js-tests.yml` | — |
 | `tests/course_outline_census_test.py` | workflows: `js-tests.yml` | — |
 | `tests/course_outline_index_test.py` | workflows: `js-tests.yml` | — |
@@ -1678,5 +1680,5 @@ check these BY HAND before trusting an absence:
 - `kb/_row_audit_prune.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 119 Supabase tables · 68 RPCs · 16 edge functions · 1121 file
+Coverage: 119 Supabase tables · 68 RPCs · 16 edge functions · 1123 file
 datasets · 197 external services · 646 consumers · 77 workflows · 41 tabs.

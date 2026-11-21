@@ -4,7 +4,7 @@
   "supabase_tables": 119,
   "rpcs": 68,
   "edge_functions": 16,
-  "file_datasets": 1121,
+  "file_datasets": 1123,
   "external_services": 197,
   "consumers": 646,
   "workflows": 77,
@@ -535,7 +535,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 446
+     "line": 466
     },
     {
      "id": "script:kb/_program_requirements_college.py",
@@ -869,7 +869,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 470
+     "line": 490
     }
    ],
    "main_committers": []
@@ -4196,7 +4196,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 493
+     "line": 513
     }
    ],
    "main_committers": []
@@ -15265,7 +15265,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 860
+     "line": 910
     }
    ],
    "served": true,
@@ -15278,7 +15278,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 495
+     "line": 515
     }
    ],
    "served": true,
@@ -15292,6 +15292,32 @@
      "direction": "read",
      "how": "literal",
      "line": 152
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/course_outcomes/rio_hondo_recall.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_course_outcomes_read.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 911
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/course_outcomes/saddleback_recall.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_course_outcomes_read.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 912
     }
    ],
    "served": true,
@@ -15326,7 +15352,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1027
+     "line": 1147
     }
    ],
    "served": false,
@@ -27171,6 +27197,13 @@
   "file:tests/course_outcomes_objectives_standing_test.py": {
    "consumers": [
     {
+     "id": "workflow:course-outcomes-load.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
      "id": "workflow:js-tests.yml",
      "kind": "workflow",
      "direction": "run",
@@ -36980,6 +37013,7 @@
    "name": "Course outcomes load",
    "crons": [],
    "scripts": [
+    "tests/course_outcomes_objectives_standing_test.py",
     "kb/_course_outcomes_load.py"
    ],
    "adds": [
