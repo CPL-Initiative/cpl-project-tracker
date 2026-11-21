@@ -1,5 +1,7 @@
-run=2026-11-11
+run=2026-11-21-s691-e
 discover=
-index=https://shasta.curriqunet.com/
-slugs=shasta
-report=
+index=https://saddleback.curriqunet.com/
+slugs=saddleback
+report=^Course Outline$
+status=Active \(Fully Approved\)
+client=^Saddleback College$
