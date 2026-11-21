@@ -113,6 +113,11 @@ ml = cpr.matching_links(links + [{"text": "Statewide Career Pathways", "href": "
 check([m["href"] for m in ml] == ["https://www.ironworkers433.org/", "https://www.example.org/pathways"],
       "links on any host are shown when they match, fragment dropped, in page order")
 check(cpr.matching_links(links, None) == [], "no pattern, nothing shown")
+many = [{"text": "Subject %d" % i, "href": "https://catalog.example.edu/course-descriptions/s%d/" % i} for i in range(130)]
+check(len(cpr.matching_links(many, r"/course-descriptions/")) == cpr.LINKS_SHOWN, "40 matching links print by default")
+check(len(cpr.matching_links(many, r"/course-descriptions/", cap=cpr.plan_cap({"links_cap": 300}, "links_cap", cpr.LINKS_SHOWN, cpr.LINKS_SHOWN_MAX))) == 130,
+      "a plan's links_cap prints every subject an index lists")
+check(cpr.plan_cap({"links_cap": 99999}, "links_cap", cpr.LINKS_SHOWN, cpr.LINKS_SHOWN_MAX) == cpr.LINKS_SHOWN_MAX, "links_cap has a ceiling")
 
 print("skipped_hosts")
 proc = {"hosts": [{"host": "hsarticulation.cerritos.edu", "access": "unreached", "note": "no DNS record"},

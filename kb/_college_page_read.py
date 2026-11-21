@@ -451,6 +451,8 @@ CAPTURE_LINES_MAX = 20000
 PDF_PAGE_CAP_MAX = 1000
 
 
+LINKS_SHOWN = 40               # matching links printed from one page
+LINKS_SHOWN_MAX = 400
 SUBJECT_CONTEXT_BEFORE = 5     # lines kept above a subject's first course
 SUBJECT_CONTEXT_BEFORE_MAX = 12
 
@@ -836,7 +838,10 @@ def main(argv: list[str] | None = None) -> int:
                 records.append(rec)
                 n = len(records)
                 if not parent:
-                    rec["links_shown"] = matching_links(rec.get("links"), target.get("links"))
+                    # "links_cap" (S698): a course-descriptions index lists 90 to 130 subjects, each with its own
+                    # address, and the first 40 left the rest to be guessed from the code (Cerritos /pols/, a 404).
+                    rec["links_shown"] = matching_links(rec.get("links"), target.get("links"),
+                                                        cap=plan_cap(target, "links_cap", LINKS_SHOWN, LINKS_SHOWN_MAX))
                     if target.get("forms"):
                         rec["forms_shown"] = rec.get("forms") or []
                     fol = follow_links(rec.get("links"), target.get("follow"),
