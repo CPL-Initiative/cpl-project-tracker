@@ -401,6 +401,59 @@ finally:
 check("6 a host may record several heading pairs; the first whose SLO heading the page prints decides",
       two == read.slo_excerpt(TEXT) and read.excerpt_pairs("nowhere.example") == [], two)
 
+# 7. The self-recall count for VARIANT_TITLE, variant_mix and row_code (S691's second reader, finding 2): every count in
+# kb/course_outcomes/variant_recall.json recomputed from the indexes it names.
+VR = json.load(open(os.path.join(ROOT, "kb", "course_outcomes", "variant_recall.json")))
+IDX = os.path.join(ROOT, "kb", "course_outline_index")
+counted = [n for n in VR["indexes"] if os.path.exists(os.path.join(IDX, n))]
+got_by, missing = {}, []
+for name in counted:
+    idx = json.load(open(os.path.join(IDX, name)))["index"]
+    shared = [c for c, es in sorted(idx.items()) if len({e.get("course_id") for e in es if e.get("reports")}) >= 2]
+    if shared:
+        got_by[name] = {"shared": len(shared), "variant": [c for c in shared if read.variant_mix(idx[c])]}
+    for code in (VR["by_index"].get(name) or {}).get("different") or {}:
+        if code not in shared or read.variant_mix(idx[code]):
+            missing.append((name, code))
+want_by = {k: {"shared": v["shared"], "variant": v["variant"]} for k, v in VR["by_index"].items()}
+check("7 every index the record counts is committed (%d), none of them a superseded build" % len(counted),
+      len(counted) == len(VR["indexes"]) == VR["indexes_read"] and not set(counted) & set(VR["superseded"])
+      and set(want_by) <= set(counted), (len(counted), VR["indexes_read"]))
+check("7 the honors-or-lab rule over %d indexes: %d shared codes, %d left unread, each a course and its honors or lab "
+      "version, none missed (the record's counts by eye)" % (VR["indexes_read"], VR["totals"]["shared"],
+                                                            VR["totals"]["variant"]),
+      got_by == want_by and sum(v["shared"] for v in got_by.values()) == VR["totals"]["shared"]
+      and sum(len(v["variant"]) for v in got_by.values()) == VR["totals"]["variant"],
+      [(k, got_by.get(k), want_by.get(k)) for k in set(got_by) | set(want_by) if got_by.get(k) != want_by.get(k)])
+check("7 the %d codes that hold different courses still read as retitles under the title rule (the gap the record "
+      "names: Chabot FT 1, Palomar NURS 118 and 217, three at Crafton Hills, Rio Hondo HOND 045)"
+      % VR["totals"]["different"], not missing and VR["totals"]["different"] == 7, missing)
+sbh = VR["saddleback_honors_codes"]
+sb_idx = json.load(open(os.path.join(IDX, sbh["index"])))["index"]
+hcodes = {c: es for c, es in sb_idx.items() if re.search(r"\d[A-Z]*H$", c.split(" ", 1)[1])
+          and any(e.get("reports") for e in es)}
+check("7 row_code: Saddleback's %d readable codes ending H each read Honors in every entry" % sbh["count"],
+      len(hcodes) == sbh["count"]
+      and all(re.search(r"honors", e.get("title") or "", re.I) for es in hcodes.values() for e in es),
+      len(hcodes))
+drops = {}
+for slug, name in (("saddleback", sbh["index"]), ("rio_hondo", "index_44882239715.json")):
+    index = json.load(open(os.path.join(IDX, name)))
+    kept = {c["code"] for c in read.wanted_courses(index, [slug])}
+    _vm, _fp = read.variant_mix, read.folded_pair
+    try:
+        read.variant_mix = lambda e: False
+        by_variant = {c["code"] for c in read.wanted_courses(index, [slug])} - kept
+        read.folded_pair = lambda e, s: False
+        every = {c["code"] for c in read.wanted_courses(index, [slug])}
+    finally:
+        read.variant_mix, read.folded_pair = _vm, _fp
+    drops[slug] = {"wanted": len(kept), "variant": sorted(by_variant), "folded": sorted(every - kept - by_variant)}
+check("7 no code Saddleback's or Rio Hondo's records want drops to the honors-or-lab rule; the folded-code rule drops "
+      "Rio Hondo's HOND 045 alone (Saddleback 1,301 wanted, Rio Hondo 946)",
+      drops == {"saddleback": {"wanted": 1301, "variant": [], "folded": []},
+                "rio_hondo": {"wanted": 946, "variant": [], "folded": ["HOND 045"]}}, drops)
+
 failed = [r for r in results if not r[1]]
 for name, ok, why in results:
     print(("ok   " if ok else "FAIL ") + name + ("" if ok else "  %s" % (why,)))
