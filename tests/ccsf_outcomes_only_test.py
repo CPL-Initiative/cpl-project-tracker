@@ -215,6 +215,20 @@ if not rc["ok"]:
 else:
     check("5 CCSF's self-recall count passes, so a full read may run", rc["ok"], rc)
 
+# 6. S691: Saddleback's and Irvine Valley's host and Rio Hondo's read outcomes only from their first trial, log no
+# excerpt until a person records the host's heading pair, and a full read there refuses with no recall file.
+for host in ("saddleback.curriqunet.com", "riohondo.curriqunet.com"):
+    url = "https://%s/DynamicReports/AllFieldsReportByEntity/1?entityType=Course&reportId=201" % host
+    check("6 %s files parsed outcomes only, its trial no page file" % host,
+          read.outcomes_only(url) and set(read.file_row({"code": "X 1", "report": url, "title_printed": STAFF,
+                                                          "outcomes": ["a"]})) <= set(read.OUTCOMES_ONLY_KEYS))
+    check("6 %s logs no excerpt until its heading pair is recorded, and the log names none of the page" % host,
+          read.slo_excerpt(TEXT, host) is None and STAFF not in read.excerpt_log("X 1", read.slo_excerpt(TEXT, host), host))
+    check("6 GUARD: %s has no recall file yet, so a full read is refused" % host,
+          host not in read.RECALL_BY_HOST or os.path.exists(read.RECALL_BY_HOST[host]))
+check("6 City College of San Francisco's excerpt is unchanged by the host argument",
+      read.slo_excerpt(TEXT) == read.slo_excerpt(TEXT, "ccsf.curricunet.com") is not None)
+
 failed = [r for r in results if not r[1]]
 for name, ok, why in results:
     print(("ok   " if ok else "FAIL ") + name + ("" if ok else "  %s" % (why,)))

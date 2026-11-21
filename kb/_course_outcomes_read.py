@@ -740,7 +740,9 @@ TEXT_CAP = 80000
 # only: the course, each outcome and objective as parsed, and the report's address; never the page's text or HTML, in
 # a trial or a full read (d-ccsf-outline-trial-no-staff-names-s689). City College of San Francisco's report 28 names
 # its curriculum staff (second reader on #3586, S689).
-OUTCOMES_ONLY_HOSTS = {"ccsf.curricunet.com"}
+# Saddleback's and Irvine Valley's host and Rio Hondo's (S691) are read the same way from their first trial: a
+# curriQunet report can name its originator, and no page from either has been filed to show otherwise.
+OUTCOMES_ONLY_HOSTS = {"ccsf.curricunet.com", "saddleback.curriqunet.com", "riohondo.curriqunet.com"}
 # The fields a row filed from such a host keeps. Each is the index's, the load's status, or a parsed field; the
 # page's title and any text the parser did not take as an outcome or objective stay out.
 OUTCOMES_ONLY_KEYS = (
@@ -854,26 +856,34 @@ CCSF_RECALL = os.path.join(HERE, "course_outcomes", "ccsf_recall.json")
 RECALL_BY_HOST = {"ccsf.curricunet.com": CCSF_RECALL}
 # The SLO section of a report 28 page, cut by its two printed headings alone, never by the parser's patterns.
 EXCERPT_FROM, EXCERPT_TO, EXCERPT_LINES = "STUDENT LEARNING OUTCOMES", "CONTENTS", 60
+# Each outcomes-only host's two printed headings around its SLO section, as a person read them off the host's own
+# first trial (its filed section_heads). A host not listed here logs no excerpt until its pair is recorded (S691).
+EXCERPT_BY_HOST = {"ccsf.curricunet.com": (EXCERPT_FROM, EXCERPT_TO)}
 
 
-def slo_excerpt(text: str) -> list[str] | None:
-    """The lines a page prints between its STUDENT LEARNING OUTCOMES heading and its CONTENTS heading, as printed;
-    None when either heading is missing or the section runs past EXCERPT_LINES, so nothing past the section is
-    shown. A person counts the outcomes in it by eye, apart from the parser."""
+def slo_excerpt(text: str, host: str = "ccsf.curricunet.com") -> list[str] | None:
+    """The lines a page prints between its SLO heading and the heading after it (the host's pair in EXCERPT_BY_HOST;
+    City College of San Francisco's STUDENT LEARNING OUTCOMES and CONTENTS), as printed; None when the host has no
+    pair, either heading is missing or the section runs past EXCERPT_LINES, so nothing past the section is shown. A
+    person counts the outcomes in it by eye, apart from the parser."""
+    pair = EXCERPT_BY_HOST.get((host or "").lower())
+    if not pair:
+        return None
+    first, after = pair
     lines = [ln.rstrip() for ln in (text or "").split("\n")]
     bare = [ln.strip().upper() for ln in lines]
-    if EXCERPT_FROM not in bare:
+    if first not in bare:
         return None
-    start = bare.index(EXCERPT_FROM) + 1
-    end = next((i for i in range(start, min(len(bare), start + EXCERPT_LINES + 1)) if bare[i] == EXCERPT_TO), None)
+    start = bare.index(first) + 1
+    end = next((i for i in range(start, min(len(bare), start + EXCERPT_LINES + 1)) if bare[i] == after), None)
     return None if end is None else [ln for ln in lines[start:end] if ln.strip()]
 
 
-def excerpt_log(code: str, excerpt: list[str] | None) -> str:
+def excerpt_log(code: str, excerpt: list[str] | None, host: str = "ccsf.curricunet.com") -> str:
     """The excerpt as the trial's log prints it, one numbered line each, between two markers."""
     if excerpt is None:
-        return "EXCERPT %s: no section between %s and %s within %d lines" % (code, EXCERPT_FROM, EXCERPT_TO,
-                                                                           EXCERPT_LINES)
+        first, after = EXCERPT_BY_HOST.get((host or "").lower(), ("(no heading pair recorded for this host)", "-"))
+        return "EXCERPT %s: no section between %s and %s within %d lines" % (code, first, after, EXCERPT_LINES)
     return "\n".join(["EXCERPT %s BEGIN (%d lines)" % (code, len(excerpt))]
                      + ["  %02d| %s" % (i, ln) for i, ln in enumerate(excerpt, 1)] + ["EXCERPT %s END" % code])
 
@@ -1037,7 +1047,8 @@ def main(argv=None) -> int:
     else:
         ap.error("--index FILE or --catalog SLUG (or --reparse FOLDER)")
     if outcomes_only(index["url"]) and not a.trial:
-        rc = rows_recall(RECALL_BY_HOST[urllib.parse.urlparse(index["url"]).netloc.lower()])
+        recall = RECALL_BY_HOST.get(urllib.parse.urlparse(index["url"]).netloc.lower())
+        rc = rows_recall(recall) if recall else {"ok": False, "why": "the host has no recall file recorded"}
         if not rc["ok"]:
             raise SystemExit("%s: no full read before the self-recall count passes (%s). Run a trial, count its "
                              "parsed rows by eye into the host's recall file, then python3 "
@@ -1089,8 +1100,9 @@ def main(argv=None) -> int:
                 if outcomes_only(course["report"]):
                     # The SLO section as printed, for a count by eye apart from the parser: in the job's log, never
                     # in a filed page (S690).
-                    print(excerpt_log(course["code"], slo_excerpt(reader.page.evaluate(FULL_BODY_JS) or "")),
-                          flush=True)
+                    where = urllib.parse.urlparse(course["report"]).netloc.lower()
+                    print(excerpt_log(course["code"], slo_excerpt(reader.page.evaluate(FULL_BODY_JS) or "", where),
+                                      where), flush=True)
             if n % SAVE_EVERY == 0:
                 save(False)
 

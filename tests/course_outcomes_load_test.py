@@ -183,6 +183,16 @@ def _():
     assert got == want, got
 
 
+@check("GUARD: the load workflow runs the standing test before the load step, so a red check posts nothing (S691)")
+def _():
+    wf = open(os.path.join(ROOT, ".github", "workflows", "course-outcomes-load.yml")).read()
+    test_at = wf.find("run: python3 tests/course_outcomes_objectives_standing_test.py")
+    load_at = wf.find("python3 kb/_course_outcomes_load.py")
+    assert 0 <= test_at < load_at, (test_at, load_at)
+    between = wf[test_at:load_at]
+    assert "continue-on-error" not in between and "|| true" not in between, "the standing test must stop the job"
+
+
 def main():
     failed = 0
     for i, (name, fn) in enumerate(checks, 1):

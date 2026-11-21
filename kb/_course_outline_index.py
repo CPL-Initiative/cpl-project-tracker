@@ -211,6 +211,22 @@ KNOWN_SEARCH = {
         "report_ids": [28],
     },
 }
+# The page's own Search button: a visible, enabled button (or submit input) whose whole label is "Search", the one
+# beside a Reset button where there are several. It presses that button and returns which one, or null when the page
+# has none; it fills no field and answers no check.
+PRESS_SEARCH_JS = """() => {
+  const label = e => (e.innerText || e.value || '').replace(/\\s+/g, ' ').trim();
+  const shown = e => !!(e.offsetWidth || e.offsetHeight || e.getClientRects().length);
+  const all = Array.from(document.querySelectorAll('button, input[type=submit], input[type=button]'));
+  const found = all.filter(e => shown(e) && !e.disabled && /^search$/i.test(label(e)));
+  if (!found.length) return null;
+  const nearReset = found.find(e => e.parentElement && Array.from(e.parentElement.querySelectorAll('button, input'))
+    .some(x => /^reset$/i.test(label(x))));
+  const b = nearReset || found[0];
+  b.click();
+  return {tag: b.tagName, id: b.id || null, cls: String(b.className || '').slice(0, 80), candidates: found.length,
+          beside_reset: !!nearReset};
+}"""
 JSON_SEARCH_HEADERS = {"content-type": "application/json; charset=utf-8", "x-requested-with": "XMLHttpRequest"}
 
 
@@ -239,13 +255,50 @@ def with_page(post: str, size: int, page: int) -> str:
     return "&".join(parts)
 
 
-def keep_row(row: dict) -> bool:
-    """An active course outline: Active status, not a distance education addendum."""
-    if (row.get("StatusTitle") or "") != "Active":
+# The status words a current outline carries. Every host indexed through S690 marks its current outline Active; a
+# host whose current outlines carry another word (Saddleback and Irvine Valley, index run 44473234614: 26,785 rows,
+# none kept) names its words in the .run's status= line, a pattern matched against the whole StatusTitle (S691).
+STATUS_KEEP = r"Active"
+# Which college's records a row is, where one host holds two or more colleges' outlines: the .run's client= line, a
+# pattern matched against the row's client label (client_of). Unset, every row is kept (S691).
+CLIENT_KEYS = ("ClientTitle", "ClientName", "Client", "CampusTitle")
+
+
+def client_of(row: dict) -> str:
+    """The row's client label: a client field where the search returns one, else the college prefix of its proposal
+    type (Saddleback's "Saddleback - New Course"), else the client id its outline reports carry."""
+    for k in CLIENT_KEYS:
+        v = row.get(k)
+        if isinstance(v, str) and v.strip():
+            return v.strip()
+    m = re.match(r"^\s*([^-]+?)\s+-\s+", row.get("ProposalTypeTitle") or "")
+    if m:
+        return m.group(1)
+    ids = sorted({str(r.get("ClientId")) for r in row.get("MetaReports") or [] if r.get("ClientId") is not None})
+    return "client " + ",".join(ids) if ids else ""
+
+
+def keep_row(row: dict, status: str = STATUS_KEEP, client: str = "") -> bool:
+    """A current course outline: a status the host's words name (Active unless the .run says otherwise), the college
+    the .run's client= names when it names one, and not a distance education addendum."""
+    if not re.fullmatch(status or STATUS_KEEP, (row.get("StatusTitle") or "").strip(), re.I):
+        return False
+    if client and not re.search(client, client_of(row), re.I):
         return False
     if re.search(r"distance education", row.get("ProposalTypeTitle") or "", re.I):
         return False
     return True
+
+
+def row_census(rows: list[dict]) -> dict:
+    """What a search returned, counted so a run shows the host's own words: each status, each client label, the two
+    together, and the field names one row carries. Counts and field names only, never a row's people fields."""
+    from collections import Counter
+    status = Counter((r.get("StatusTitle") or "").strip() for r in rows)
+    client = Counter(client_of(r) for r in rows)
+    both = Counter("%s | %s" % (client_of(r), (r.get("StatusTitle") or "").strip()) for r in rows)
+    return {"status_titles": dict(status.most_common()), "client_labels": dict(client.most_common(20)),
+            "client_status": dict(both.most_common(60)), "row_fields": sorted(rows[0]) if rows else []}
 
 
 # RCCD's form (discovery run 38312406074); a host whose own links say otherwise wins.
@@ -320,11 +373,12 @@ def report_titles(rows: list[dict], title: str = REPORT_TITLE, ids=None) -> list
     return sorted(seen.values(), key=lambda x: -x["rows"])
 
 
-def build_index(rows: list[dict], base: str, form: str = LEGACY_FORM, title: str = REPORT_TITLE, ids=None) -> dict:
-    """norm_code -> the active outline rows for it."""
+def build_index(rows: list[dict], base: str, form: str = LEGACY_FORM, title: str = REPORT_TITLE, ids=None,
+                status: str = STATUS_KEEP, client: str = "") -> dict:
+    """norm_code -> the current outline rows for it (keep_row: the host's status words, the .run's client)."""
     index = {}
     for row in rows:
-        if not keep_row(row):
+        if not keep_row(row, status, client):
             continue
         code = norm_code("%s %s" % (row.get("SubjectCode") or "", row.get("CourseNumber") or ""))
         if not code:
@@ -356,8 +410,21 @@ def search_all(reader, url: str, delay_ms: int) -> dict:
     reader.page.on("request", on_request)
     page = reader.load(url)
     reader.page.wait_for_timeout(3000)
+    pressed = None
+    if "url" not in captured and page.get("status") == 200 and not known_search(url):
+        # Rio Hondo's dashboard (discovery run 44508907581) and SDCCD's since S685 (index runs 44531933532 and
+        # 44536348461) load their search model and fields but post no NewSearch until a person presses Search. The
+        # index presses the page's own Search button once, as a person would, and captures what the page posts.
+        try:
+            pressed = reader.page.evaluate(PRESS_SEARCH_JS)
+            if pressed:
+                reader.page.wait_for_timeout(5000)
+        except Exception as e:  # a page that navigates or throws on the press keeps its "no NewSearch" error
+            pressed = {"error": str(e)[:200]}
     reader.page.remove_listener("request", on_request)
     out = {"url": url, "status": page.get("status"), "title": page.get("title")}
+    if pressed is not None:
+        out["pressed_search"] = pressed
     try:
         out["outline_links"] = reader.page.evaluate(OUTLINE_LINKS_JS) or []
     except Exception:
@@ -395,7 +462,8 @@ def search_all(reader, url: str, delay_ms: int) -> dict:
     return out
 
 
-def write_index(url: str, searched: dict, wanted: dict, loads: int, title: str = REPORT_TITLE) -> int:
+def write_index(url: str, searched: dict, wanted: dict, loads: int, title: str = REPORT_TITLE,
+                status: str = STATUS_KEEP, client: str = "") -> int:
     base = url if url.endswith("/") else url + "/"
     rows = searched.pop("rows", [])
     rec = known_search(url) or {}
@@ -404,14 +472,15 @@ def write_index(url: str, searched: dict, wanted: dict, loads: int, title: str =
     form_from = ("the checked record (%s)" % rec["source"] if rec.get("form") else
                  "the page's own outline links" if learned else "RCCD's default")
     ids = rec.get("report_ids")
-    index = build_index(rows, base, form, title, ids)
+    index = build_index(rows, base, form, title, ids, status, client)
     union = set().union(*wanted.values()) if wanted else set()
     with_report = {c for c, v in index.items() if any(x["reports"] for x in v)}
     coverage = {slug: {"courses": len(codes), "with_outline": sum(1 for c in codes if c in with_report)}
                 for slug, codes in wanted.items()}
     run = os.environ.get("GITHUB_RUN_ID", "local")
     out = {"run": run, "at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "url": url,
-           "search": searched, "loads": loads,
+           "search": searched, "loads": loads, "status_keep": status, "client": client or None,
+           "rows_seen": row_census(rows),
            "report_form": form, "report_form_from": form_from,
            "report_title": title, "report_ids": ids, "report_titles": report_titles(rows, title, ids),
            "sample_row": {k: (rows[0] if rows else {}).get(k) for k in
@@ -424,7 +493,8 @@ def write_index(url: str, searched: dict, wanted: dict, loads: int, title: str =
     with open(path, "w") as f:
         json.dump(out, f, indent=1)
     print(json.dumps({k: out[k] for k in ("active_codes", "active_with_report", "wanted_union",
-                                          "wanted_with_outline", "coverage", "report_form", "report_titles")}, indent=1))
+                                          "wanted_with_outline", "coverage", "report_form", "report_titles",
+                                          "status_keep", "client", "rows_seen")}, indent=1))
     print("search:", {k: v for k, v in searched.items()})
     print("wrote", os.path.relpath(path, os.path.dirname(HERE)))
     return 0
@@ -436,6 +506,8 @@ def main(argv=None) -> int:
     ap.add_argument("--index", default="")
     ap.add_argument("--slugs", default="riverside_city,moreno_valley,norco")
     ap.add_argument("--report", default=REPORT_TITLE, help="title pattern of the report that prints the SLOs")
+    ap.add_argument("--status", default=STATUS_KEEP, help="the status words a current outline carries (a pattern)")
+    ap.add_argument("--client", default="", help="the college a row must be, where one host holds several (a pattern)")
     ap.add_argument("--delay", type=int, default=int(os.environ.get("CENSUS_DELAY_MS", "3000")))
     a = ap.parse_args(argv)
     if not (a.discover or a.index):
@@ -457,7 +529,8 @@ def main(argv=None) -> int:
         browser.close()
 
     if a.index:
-        return write_index(a.index, searched, wanted, reader.loads, a.report or REPORT_TITLE)
+        return write_index(a.index, searched, wanted, reader.loads, a.report or REPORT_TITLE,
+                           a.status or STATUS_KEEP, a.client)
 
     run = os.environ.get("GITHUB_RUN_ID", "local")
     listed = {norm_code(r["row"]) for r in (found.get("rows_at_load") or {}).get("rows", [])} - {None}
