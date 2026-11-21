@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 256,
  "with_closed_list": 240,
- "started": "2026-11-20T12:53:10Z",
+ "started": "2026-11-21T08:29:39Z",
  "procedure_step": {
   "start": "https://catalog.smc.edu/current/index.php",
   "follow": "Download the Full Catalog",
@@ -34,6 +34,52 @@
    "gated": false,
    "read": "heading"
   },
+  "pinned": {
+   "03256": {
+    "page": 82,
+    "bound": true
+   },
+   "03272": {
+    "page": 171,
+    "bound": true
+   },
+   "03274": {
+    "page": 123,
+    "bound": true
+   },
+   "08970": {
+    "page": 115,
+    "bound": true
+   },
+   "19299": {
+    "page": 142,
+    "bound": true
+   },
+   "19300": {
+    "page": 142,
+    "bound": true
+   },
+   "21007": {
+    "page": 115,
+    "bound": true
+   },
+   "30899": {
+    "page": 188,
+    "bound": true
+   },
+   "31231": {
+    "page": 151,
+    "bound": true
+   },
+   "39651": {
+    "page": 111,
+    "bound": true
+   },
+   "45928": {
+    "page": 136,
+    "bound": true
+   }
+  },
   "picks": [
    {
     "control_number": "03255",
@@ -53,16 +99,18 @@
    {
     "control_number": "03256",
     "pages": [
+     82,
      83,
      84,
      85
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.885,
-    "opens": "[page 83] 82 SMC CATALOG 2026–2027 LIST B: Select a MAXIMUM of 7 units (if less than 12 units are completed from List A) ACCTG 6, Accounting Consolidations (3) ACCTG 7, Advanced Accounting: Special Topics (3) ACCTG 10A, "
+    "coverage": 1.0,
+    "opens": "[page 82] Accounting, Associate Degree This program is for bookkeepers and accounting clerks who want to advance to a higher professional level. Business owners can strengthen their businesses with best ethical practices",
+    "pinned": true
    },
    {
     "control_number": "03257",
@@ -146,6 +194,7 @@
    {
     "control_number": "03272",
     "pages": [
+     171,
      172,
      173
     ],
@@ -153,8 +202,9 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.707,
-    "opens": "[page 172] SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 171 MUSIC 36, History of Rock Music (3) MUSIC 37, Music in American Culture (3) MUSIC 39, History of Opera (3) MUSIC 40, Oper"
+    "coverage": 1.0,
+    "opens": "[page 171] Music, Associate Degree The Music Associate in Arts degree provides educational opportunities designed to meet the needs of students who wish to explore and expand their knowledge, performance skills and appre",
+    "pinned": true
    },
    {
     "control_number": "03273",
@@ -173,15 +223,17 @@
    {
     "control_number": "03274",
     "pages": [
+     123,
      124,
      125
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.963,
-    "opens": "[page 124] SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 123 DANCE 61, Fundamentals of Choreography: Composition 1 (2) Additional Electives: Select at least 2 units from the followin"
+    "coverage": 0.981,
+    "opens": "[page 123] Dance, Associate Degree Program Learning Outcomes: Upon completion of the program, students will develop an understanding and appreciation of the aesthetics inherent in the art of dance, as well as develop an ",
+    "pinned": true
    },
    {
     "control_number": "03275",
@@ -292,15 +344,17 @@
    {
     "control_number": "08963",
     "pages": [
-     105,
-     106
+     102,
+     103,
+     104,
+     105
     ],
     "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 105] 104 SMC CATALOG 2026–2027 BUS 55, Southern California's International Connections and Blue/ Ocean Economy (3) BUS 57, Introduction to Lean Six Sigma (3) BUS 81, Transportation Management (3) BUS 83, Operations"
+    "opens": "[page 102] SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 101 This program prepares students for careers in business. Students can personalize their academic or career path by selecti"
    },
    {
     "control_number": "08964",
@@ -361,17 +415,18 @@
    {
     "control_number": "08970",
     "pages": [
+     115,
      116,
      117,
-     118,
-     119
+     118
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 116] SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 115 ----- CS 40, Operating Systems (3) or CS 80, Internet Programming (3) ----- CS 50, C Programming (3) CS 60, Database Conc"
+    "opens": "[page 115] 114 SMC CATALOG 2026–2027 • Completion of the area of emphasis with a grade of C or higher in each course, or with a P if the course was taken on a Pass/No Pass basis, and the P is equal to a C or higher; • Co",
+    "pinned": true
    },
    {
     "control_number": "08977",
@@ -569,26 +624,30 @@
    {
     "control_number": "19299",
     "pages": [
+     142,
      143
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.958,
-    "opens": "[page 143] 142 SMC CATALOG 2026–2027 and either ETH ST 6, Introduction to Chicana/o/x and Latina/o/x Studies (3) or ETH ST 7, Introduction to African American and Black Studies (3) Required Elective: Select 1 course from"
+    "coverage": 1.0,
+    "opens": "[page 142] Ethnic Studies, Associate Degree or Certificate of Achievement Program Learning Outcomes: Upon completion of the program, students will be able to: analyze and articulate concepts such as race and racism, raci",
+    "pinned": true
    },
    {
     "control_number": "19300",
     "pages": [
+     142,
      143
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.958,
-    "opens": "[page 143] 142 SMC CATALOG 2026–2027 and either ETH ST 6, Introduction to Chicana/o/x and Latina/o/x Studies (3) or ETH ST 7, Introduction to African American and Black Studies (3) Required Elective: Select 1 course from"
+    "coverage": 1.0,
+    "opens": "[page 142] Ethnic Studies, Associate Degree or Certificate of Achievement Program Learning Outcomes: Upon completion of the program, students will be able to: analyze and articulate concepts such as race and racism, raci",
+    "pinned": true
    },
    {
     "control_number": "19428",
@@ -633,15 +692,17 @@
    {
     "control_number": "19605",
     "pages": [
-     105,
-     106
+     102,
+     103,
+     104,
+     105
     ],
-    "named": true,
+    "named": false,
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.7,
-    "opens": "[page 105] Logistics and Supply Chain Management, Associate Degree or Certificate of Achievement This program provides students the opportunity to develop skills in the growing field of logistics and supply chain managem"
+    "coverage": 0.95,
+    "opens": "[page 102] SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 101 This program prepares students for careers in business. Students can personalize their academic or career path by selecti"
    },
    {
     "control_number": "19701",
@@ -837,15 +898,17 @@
    {
     "control_number": "21007",
     "pages": [
+     115,
      116,
      117
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 116] SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 115 ----- CS 40, Operating Systems (3) or CS 80, Internet Programming (3) ----- CS 50, C Programming (3) CS 60, Database Conc"
+    "opens": "[page 115] 114 SMC CATALOG 2026–2027 • Completion of the area of emphasis with a grade of C or higher in each course, or with a P if the course was taken on a Pass/No Pass basis, and the P is equal to a C or higher; • Co",
+    "pinned": true
    },
    {
     "control_number": "21009",
@@ -932,15 +995,14 @@
    {
     "control_number": "21026",
     "pages": [
-     121,
      122
     ],
     "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 1.0,
-    "opens": "[page 121] Cosmetology, Associate Degree or Certificate of Achievement Program Learning Outcomes: Upon completion of the program, students will be able to demonstrate professional level skill in her cutting, hair colorin"
+    "coverage": 0.593,
+    "opens": "[page 122] SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 121 skin types and skin conditions. Students will be able to demonstrate knowledge of electrical modalities and chemical peel"
    },
    {
     "control_number": "30202",
@@ -1052,15 +1114,17 @@
    {
     "control_number": "30899",
     "pages": [
+     188,
      189,
      190
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.985,
-    "opens": "[page 189] 188 SMC CATALOG 2026–2027 POL SC 3, Introduction to Politics: Justice, Power and Agency (3) ----- POL SC 31, Introduction to Public Policy (3) POL SC 95, Experiential Learning (1) Critical Thinking and Communi"
+    "coverage": 1.0,
+    "opens": "[page 188] SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 187 LIST A: Select at least 1 of the following: (3 units minimum) BIOL 3, Fundamentals of Biology (4) PSYCH 2, Physiological ",
+    "pinned": true
    },
    {
     "control_number": "31095",
@@ -1105,14 +1169,16 @@
    {
     "control_number": "31231",
     "pages": [
+     151,
      152
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.843,
-    "opens": "[page 152] SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 151 ENVRN 7, Introduction to Environmental Studies (same as GEOG 7) (3) ENVRN 20, Environmental Ethics (same as PHILOS 20) (3"
+    "coverage": 1.0,
+    "opens": "[page 151] Global Studies, Associate Degree or Certificate of Achievement Program Learning Outcome: Upon completion of the program, students will possess an increased understanding of the world’s social, political, econo",
+    "pinned": true
    },
    {
     "control_number": "31314",
@@ -1239,15 +1305,14 @@
    {
     "control_number": "33000",
     "pages": [
-     200,
      201
     ],
     "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 1.0,
-    "opens": "[page 200] Technical Theatre, Associate Degree or Certificate of Achievement The Technical Theatre Program provides rigorous academic instruction, hands-on practical training, and experiential learning in several areas o"
+    "coverage": 0.778,
+    "opens": "[page 201] 200 SMC CATALOG 2026–2027 Theatre, Associate Degree The program provides instruction and training in the field of Theatre Arts. A comprehensive curriculum in acting, voice, movement, theatrical styles, theatre"
    },
    {
     "control_number": "33255",
@@ -1934,6 +1999,7 @@
    {
     "control_number": "39651",
     "pages": [
+     111,
      112,
      113
     ],
@@ -1941,8 +2007,9 @@
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.75,
-    "opens": "[page 112] SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 111 OFTECH 5, English Skills for the Office (3) ----- OFTECH 1, Keyboarding (3) or OFTECH 10, Skill Building on the Keyboard "
+    "coverage": 1.0,
+    "opens": "[page 111] Business Information Worker 2, Associate Degree and Certificate of Achievement The Business Information Worker 2 (BIW-2) program builds on the BIW I foundation. The program provides students with additional sk",
+    "pinned": true
    },
    {
     "control_number": "39671",
@@ -2729,6 +2796,19 @@
     "opens": "[page 172] Guitar, Certificate of Achievement The Guitar Certificate of Achievement can be awarded to students who complete 8 units of guitar classes and 4 units of collaborative performance on guitar. Up to 4 units of a"
    },
    {
+    "control_number": "45012",
+    "pages": [
+     99,
+     100
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.923,
+    "opens": "[page 99] dynamic sector. The stackable Biotechnology Certificate and AS Degree Program focusing on cell science and immunological testing will align academic offerings with industry needs and students will be trained in"
+   },
+   {
     "control_number": "45132",
     "pages": [
      106
@@ -2948,14 +3028,16 @@
    {
     "control_number": "45928",
     "pages": [
+     136,
      137
     ],
     "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.786,
-    "opens": "[page 137] 136 SMC CATALOG 2026–2027 ENGL 40, Asian Literature (3) ENGL 45, Asian Film, Literature, and Society (3) ENGL 50, Mythology (3) ENGL 58, Literature of Mexico (3) ENGL 71, Introduction to Creative Writing (3) L"
+    "coverage": 0.976,
+    "opens": "[page 136] English, Associate Degree for Transfer The Associate in Arts for Transfer degree in English (AA-T) prepares students for professional and transfer institution success. Beyond learning to navigate a constantly ",
+    "pinned": true
    },
    {
     "control_number": "45952",
@@ -3059,9 +3141,9 @@
    }
   ],
   "page_checks": {
-   "read": 13,
-   "own_page": 6,
-   "no_own_page": 7,
+   "read": 8,
+   "own_page": 2,
+   "no_own_page": 6,
    "not_printed": 0
   },
   "unproven": []
@@ -3069,12 +3151,12 @@
  "loads": 2,
  "pages_listed": 1,
  "pages_answered": 1,
- "seconds": 246.8,
- "found": 230,
+ "seconds": 286.5,
+ "found": 231,
  "by_method": {
   "no_closed_list": 16,
-  "not_found": 10,
-  "pdf_pages": 230
+  "not_found": 9,
+  "pdf_pages": 231
  },
  "shared_pages": {
   "https://catalog.smc.edu/current/catalog.pdf#page=101": [
@@ -3082,18 +3164,9 @@
    "31449",
    "41376"
   ],
-  "https://catalog.smc.edu/current/catalog.pdf#page=83": [
-   "03256",
-   "20994",
-   "30202",
-   "38858",
-   "43561"
-  ],
   "https://catalog.smc.edu/current/catalog.pdf#page=105": [
    "03257",
    "03258",
-   "08963",
-   "19605",
    "46135"
   ],
   "https://catalog.smc.edu/current/catalog.pdf#page=106": [
@@ -3104,26 +3177,17 @@
   ],
   "https://catalog.smc.edu/current/catalog.pdf#page=116": [
    "03265",
-   "08970",
    "16446",
    "21005",
-   "21007",
    "21012"
-  ],
-  "https://catalog.smc.edu/current/catalog.pdf#page=172": [
-   "03272",
-   "43655",
-   "43743",
-   "44720"
   ],
   "https://catalog.smc.edu/current/catalog.pdf#page=199": [
    "03273",
    "32792"
   ],
-  "https://catalog.smc.edu/current/catalog.pdf#page=124": [
+  "https://catalog.smc.edu/current/catalog.pdf#page=123": [
    "03274",
-   "42585",
-   "44528"
+   "37277"
   ],
   "https://catalog.smc.edu/current/catalog.pdf#page=182": [
    "03275",
@@ -3149,13 +3213,18 @@
   ],
   "https://catalog.smc.edu/current/catalog.pdf#page=121": [
    "03302",
-   "21026",
    "40812",
    "43767"
   ],
   "https://catalog.smc.edu/current/catalog.pdf#page=103": [
    "08962",
    "39964"
+  ],
+  "https://catalog.smc.edu/current/catalog.pdf#page=102": [
+   "08963",
+   "19605",
+   "41782",
+   "43769"
   ],
   "https://catalog.smc.edu/current/catalog.pdf#page=104": [
    "08964",
@@ -3173,6 +3242,11 @@
   "https://catalog.smc.edu/current/catalog.pdf#page=146": [
    "08968",
    "45597"
+  ],
+  "https://catalog.smc.edu/current/catalog.pdf#page=115": [
+   "08970",
+   "21007",
+   "41083"
   ],
   "https://catalog.smc.edu/current/catalog.pdf#page=129": [
    "08977",
@@ -3217,7 +3291,6 @@
    "16448",
    "21004",
    "37100",
-   "39651",
    "41790",
    "42173"
   ],
@@ -3229,7 +3302,7 @@
    "19297",
    "19298"
   ],
-  "https://catalog.smc.edu/current/catalog.pdf#page=143": [
+  "https://catalog.smc.edu/current/catalog.pdf#page=142": [
    "19299",
    "19300"
   ],
@@ -3241,10 +3314,25 @@
    "19955",
    "30586"
   ],
+  "https://catalog.smc.edu/current/catalog.pdf#page=83": [
+   "20994",
+   "30202",
+   "38858",
+   "43561"
+  ],
+  "https://catalog.smc.edu/current/catalog.pdf#page=122": [
+   "21026",
+   "40811",
+   "41800"
+  ],
   "https://catalog.smc.edu/current/catalog.pdf#page=179": [
    "30296",
    "37756",
    "43217"
+  ],
+  "https://catalog.smc.edu/current/catalog.pdf#page=188": [
+   "30855",
+   "30899"
   ],
   "https://catalog.smc.edu/current/catalog.pdf#page=197": [
    "30856",
@@ -3259,6 +3347,10 @@
   "https://catalog.smc.edu/current/catalog.pdf#page=161": [
    "31152",
    "31153"
+  ],
+  "https://catalog.smc.edu/current/catalog.pdf#page=151": [
+   "31231",
+   "31314"
   ],
   "https://catalog.smc.edu/current/catalog.pdf#page=127": [
    "31368",
@@ -3275,10 +3367,6 @@
    "32283",
    "43460",
    "45450"
-  ],
-  "https://catalog.smc.edu/current/catalog.pdf#page=200": [
-   "32753",
-   "33000"
   ],
   "https://catalog.smc.edu/current/catalog.pdf#page=145": [
    "33255",
@@ -3345,6 +3433,10 @@
    "39200",
    "41491"
   ],
+  "https://catalog.smc.edu/current/catalog.pdf#page=111": [
+   "39452",
+   "39651"
+  ],
   "https://catalog.smc.edu/current/catalog.pdf#page=91": [
    "39879",
    "46191"
@@ -3359,17 +3451,18 @@
    "40425",
    "40428"
   ],
-  "https://catalog.smc.edu/current/catalog.pdf#page=122": [
-   "40811",
-   "41800"
-  ],
-  "https://catalog.smc.edu/current/catalog.pdf#page=102": [
-   "41782",
-   "43769"
-  ],
   "https://catalog.smc.edu/current/catalog.pdf#page=147": [
    "42454",
    "45641"
+  ],
+  "https://catalog.smc.edu/current/catalog.pdf#page=124": [
+   "42585",
+   "44528"
+  ],
+  "https://catalog.smc.edu/current/catalog.pdf#page=172": [
+   "43655",
+   "43743",
+   "44720"
   ],
   "https://catalog.smc.edu/current/catalog.pdf#page=173": [
    "43914",
@@ -3378,10 +3471,6 @@
   "https://catalog.smc.edu/current/catalog.pdf#page=100": [
    "43977",
    "43982"
-  ],
-  "https://catalog.smc.edu/current/catalog.pdf#page=137": [
-   "44519",
-   "45928"
   ],
   "https://catalog.smc.edu/current/catalog.pdf#page=190": [
    "44634",
@@ -3505,87 +3594,182 @@
     "page_checks": true
    },
    "status": "Active"
-  },
-  {
-   "control_number": "45012",
-   "title": "Biotechnology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0,
-    "plain_named": true,
-    "page_checks": true
-   },
-   "status": "Active"
   }
  ],
  "page_claimed": [],
  "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 10,
-  "0.8-1.0": 25,
-  "1.0": 195
+  "0.5-0.8": 8,
+  "0.8-1.0": 23,
+  "1.0": 200
  },
  "would_extract": {
   "against": "kb/program_requirements_college/santa_monica",
-  "kept": 225,
+  "kept": 215,
   "kept_moved": 0,
-  "programs": 5,
+  "programs": 14,
   "list": [
    {
-    "control_number": "08963",
-    "title": "Marketing",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.smc.edu/current/catalog.pdf#page=105",
+    "control_number": "03256",
+    "title": "Accounting",
+    "award": "A.S. Degree",
+    "url": "https://catalog.smc.edu/current/catalog.pdf#page=82",
     "coverage": 1.0,
-    "was_url": "https://catalog.smc.edu/current/catalog.pdf#page=102",
+    "was_url": "https://catalog.smc.edu/current/catalog.pdf#page=83",
+    "was_coverage": 0.885,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "03272",
+    "title": "Music",
+    "award": "A.A. Degree",
+    "url": "https://catalog.smc.edu/current/catalog.pdf#page=171",
+    "coverage": 1.0,
+    "was_url": "https://catalog.smc.edu/current/catalog.pdf#page=172",
+    "was_coverage": 0.707,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "03274",
+    "title": "Dance",
+    "award": "A.A. Degree",
+    "url": "https://catalog.smc.edu/current/catalog.pdf#page=123",
+    "coverage": 0.981,
+    "was_url": "https://catalog.smc.edu/current/catalog.pdf#page=124",
+    "was_coverage": 0.963,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "08970",
+    "title": "Computer Programming",
+    "award": "A.S. Degree",
+    "url": "https://catalog.smc.edu/current/catalog.pdf#page=115",
+    "coverage": 1.0,
+    "was_url": "https://catalog.smc.edu/current/catalog.pdf#page=116",
     "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "19299",
+    "title": "Ethnic Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.smc.edu/current/catalog.pdf#page=142",
+    "coverage": 1.0,
+    "was_url": "https://catalog.smc.edu/current/catalog.pdf#page=143",
+    "was_coverage": 0.958,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "19300",
+    "title": "Ethnic Studies",
+    "award": "A.A. Degree",
+    "url": "https://catalog.smc.edu/current/catalog.pdf#page=142",
+    "coverage": 1.0,
+    "was_url": "https://catalog.smc.edu/current/catalog.pdf#page=143",
+    "was_coverage": 0.958,
     "was_method": "pdf_pages"
    },
    {
     "control_number": "19605",
     "title": "Logistics and Supply Chain Management",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.smc.edu/current/catalog.pdf#page=105",
-    "coverage": 0.7,
-    "was_url": "https://catalog.smc.edu/current/catalog.pdf#page=102",
-    "was_coverage": 0.95,
+    "url": "https://catalog.smc.edu/current/catalog.pdf#page=102",
+    "coverage": 0.95,
+    "was_url": "https://catalog.smc.edu/current/catalog.pdf#page=105",
+    "was_coverage": 0.7,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "21007",
+    "title": "Computer Programming",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.smc.edu/current/catalog.pdf#page=115",
+    "coverage": 1.0,
+    "was_url": "https://catalog.smc.edu/current/catalog.pdf#page=116",
+    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
     "control_number": "21026",
     "title": "Cosmetology",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.smc.edu/current/catalog.pdf#page=121",
-    "coverage": 1.0,
-    "was_url": "https://catalog.smc.edu/current/catalog.pdf#page=122",
-    "was_coverage": 0.593,
+    "url": "https://catalog.smc.edu/current/catalog.pdf#page=122",
+    "coverage": 0.593,
+    "was_url": "https://catalog.smc.edu/current/catalog.pdf#page=121",
+    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
+   {
+    "control_number": "30899",
+    "title": "Public Policy",
+    "award": "A.A. Degree",
+    "url": "https://catalog.smc.edu/current/catalog.pdf#page=188",
+    "coverage": 1.0,
+    "was_url": "https://catalog.smc.edu/current/catalog.pdf#page=189",
+    "was_coverage": 0.985,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "31231",
+    "title": "Global Studies",
+    "award": "A.A. Degree",
+    "url": "https://catalog.smc.edu/current/catalog.pdf#page=151",
+    "coverage": 1.0,
+    "was_url": "https://catalog.smc.edu/current/catalog.pdf#page=152",
+    "was_coverage": 0.843,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "39651",
+    "title": "Business Information Worker 2",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.smc.edu/current/catalog.pdf#page=111",
+    "coverage": 1.0,
+    "was_url": "https://catalog.smc.edu/current/catalog.pdf#page=112",
+    "was_coverage": 0.75,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "45012",
+    "title": "Biotechnology",
+    "award": "A.S. Degree",
+    "url": "https://catalog.smc.edu/current/catalog.pdf#page=99",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "45928",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.smc.edu/current/catalog.pdf#page=136",
+    "coverage": 0.976,
+    "was_url": "https://catalog.smc.edu/current/catalog.pdf#page=137",
+    "was_coverage": 0.786,
+    "was_method": "pdf_pages"
+   }
+  ],
+  "held_worse_window": [
    {
     "control_number": "33000",
     "title": "Technical Theatre",
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://catalog.smc.edu/current/catalog.pdf#page=200",
-    "coverage": 1.0,
-    "was_url": "https://catalog.smc.edu/current/catalog.pdf#page=201",
-    "was_coverage": 0.778,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "46189",
-    "title": "Sustainable Aquaculture Technology",
-    "award": "A.S. Degree",
-    "url": "https://catalog.smc.edu/current/catalog.pdf#page=89",
-    "coverage": 1.0,
-    "was_url": "https://catalog.smc.edu/current/catalog.pdf#page=89",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
+    "url": "https://catalog.smc.edu/current/catalog.pdf#page=201",
+    "coverage": 0.778,
+    "was_coverage": 1.0
    }
   ],
-  "held_worse_window": [],
-  "held_no_gain": [],
+  "held_no_gain": [
+   {
+    "control_number": "08963",
+    "title": "Marketing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.smc.edu/current/catalog.pdf#page=102",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   }
+  ],
   "held_opens_on_list": [],
   "refused_passing": [],
   "forced_unbound": []
@@ -3596,8 +3780,8 @@
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=101"
   },
   "03256": {
-   "sha256": "736f9c985dda6109d79fe0d7c13b3c17d7ef9933fd22beacd0e5ef27a84772f2",
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=83"
+   "sha256": "93ca7ac22a0a5124ac394aee92cfd60b6a2e163ac3fb4ebf420717e4f083eb43",
+   "url": "https://catalog.smc.edu/current/catalog.pdf#page=82"
   },
   "03257": {
    "sha256": "0fcd87bdd6b44a9a9d7f14b28d80f04a3f2fa5a10895929b8131f5036986857b",
@@ -3624,16 +3808,16 @@
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=93"
   },
   "03272": {
-   "sha256": "f71f803299f3483bfed5f0b1163522c1b52ec50bcad4eb4ad4ef5e6f9719edc0",
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=172"
+   "sha256": "7372ee9b51e52c08aafbd2992e54429367e21243a399e618062761b9c5795e56",
+   "url": "https://catalog.smc.edu/current/catalog.pdf#page=171"
   },
   "03273": {
    "sha256": "d21b60466fd8fb6801ef1ca1860b7c45ffa791dab6092b6fa8075f364cd51875",
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=199"
   },
   "03274": {
-   "sha256": "93e9038baec0ef360d9d287c1ee7898f8b874fea6958af0cc62244b2e404f48e",
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=124"
+   "sha256": "bcfc5313d7ab2fae910b172510fe798bedee4177fbf5b7828b8a4c5f9cbbffcd",
+   "url": "https://catalog.smc.edu/current/catalog.pdf#page=123"
   },
   "03275": {
    "sha256": "f4e5e39dac6a245eaeb235a50e61b8e3536395d36b0acf682f98aec2afddecf4",
@@ -3668,8 +3852,8 @@
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=103"
   },
   "08963": {
-   "sha256": "0fcd87bdd6b44a9a9d7f14b28d80f04a3f2fa5a10895929b8131f5036986857b",
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=105"
+   "sha256": "0ca972c41fc80303ce40e5fc4fd497eb27ad0632d2cf9980210cd2531d482f71",
+   "url": "https://catalog.smc.edu/current/catalog.pdf#page=102"
   },
   "08964": {
    "sha256": "22a140bd37ae1bf535402a72796e266e799077909dd835ac704795facf27c8ce",
@@ -3688,8 +3872,8 @@
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=146"
   },
   "08970": {
-   "sha256": "e4cc7f9fa5f27b9676442a81ea1e6f0c9b8611a497c114d8771b4ef8a7a8bf12",
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=116"
+   "sha256": "ef37431a3c238dc60b67df5b4be7fa72ae66f6050a281f28e052d8dcf308466a",
+   "url": "https://catalog.smc.edu/current/catalog.pdf#page=115"
   },
   "08977": {
    "sha256": "f840de5feb2e613551a6ccd2272c2c73577344d6c4739127302f9f2f1fbe3352",
@@ -3748,12 +3932,12 @@
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=141"
   },
   "19299": {
-   "sha256": "36c6e2ddb02e4534d240b52a9026927403b08c5486b58da3748869722e33c87c",
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=143"
+   "sha256": "af2949372189eca9c7ee3cd35b31a9bafbee2690769d62ba951b8c6a87859ffa",
+   "url": "https://catalog.smc.edu/current/catalog.pdf#page=142"
   },
   "19300": {
-   "sha256": "36c6e2ddb02e4534d240b52a9026927403b08c5486b58da3748869722e33c87c",
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=143"
+   "sha256": "af2949372189eca9c7ee3cd35b31a9bafbee2690769d62ba951b8c6a87859ffa",
+   "url": "https://catalog.smc.edu/current/catalog.pdf#page=142"
   },
   "19428": {
    "sha256": "1b5443412ff0af79cc9b7ad1a8105243f58d751427de7e157d19edc3043131ba",
@@ -3768,8 +3952,8 @@
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=104"
   },
   "19605": {
-   "sha256": "870a9a7f618bd4c1b2ad5e82718f276deea3acffb8e67d7fa8fc5c82463df537",
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=105"
+   "sha256": "0ca972c41fc80303ce40e5fc4fd497eb27ad0632d2cf9980210cd2531d482f71",
+   "url": "https://catalog.smc.edu/current/catalog.pdf#page=102"
   },
   "19701": {
    "sha256": "78c36ed4eff4abca04da22f536f9d90918296ba78e0e653578b2da418b70437b",
@@ -3828,8 +4012,8 @@
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=116"
   },
   "21007": {
-   "sha256": "c09662fc1f6d36eef152c85053d39c3ad46019d65cd9b0ef8c938e7ab187ef56",
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=116"
+   "sha256": "ef37431a3c238dc60b67df5b4be7fa72ae66f6050a281f28e052d8dcf308466a",
+   "url": "https://catalog.smc.edu/current/catalog.pdf#page=115"
   },
   "21009": {
    "sha256": "3ebe2fcfa05efe9b945855cfa06fbb71e7e86cbd65819cf9cc4df1a1ba9666d6",
@@ -3856,8 +4040,8 @@
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=130"
   },
   "21026": {
-   "sha256": "4985c2252b42a9eb65eb03bc5c6e08d3563ade59e794e84f2e183348fc387188",
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=121"
+   "sha256": "e1fcc87eba11be07c29342095c704e7d69a65ca70d8a8a8bed3eaab6fc89d51c",
+   "url": "https://catalog.smc.edu/current/catalog.pdf#page=122"
   },
   "30202": {
    "sha256": "4e03d091946b360259a971a18bf1ec4ff683f317a893fa1a25c2316f6a0e65ba",
@@ -3892,8 +4076,8 @@
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=197"
   },
   "30899": {
-   "sha256": "25556514fc15c9fc37d5567079bfdf1407183c8e35fd18484ffcebad3fcbba4b",
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=189"
+   "sha256": "b4a757820b76f15c90339de87d019fa08973b781ee1671b57ff5fe96e534df18",
+   "url": "https://catalog.smc.edu/current/catalog.pdf#page=188"
   },
   "31095": {
    "sha256": "d9491146bbc0f1a24250046c44c9a3d455b5cfae99fc53b22b6115a5642a512d",
@@ -3908,8 +4092,8 @@
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=161"
   },
   "31231": {
-   "sha256": "35d7d67830b1f666be4eebf5186aef3b8d64cfb5985b17dec5ff5d2b04ed0c36",
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=152"
+   "sha256": "06ec344fc4c9528b77d58d9d6f1060bee0e4832aa4d6bfffe78da7cf8d7a2fd5",
+   "url": "https://catalog.smc.edu/current/catalog.pdf#page=151"
   },
   "31314": {
    "sha256": "c694a18326c957bfb2af68aa5dfe46b0dcb47d56f10401fe0b6153e8f977ae16",
@@ -3948,8 +4132,8 @@
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=199"
   },
   "33000": {
-   "sha256": "d63f9e5f93d9bb4aa221cbaa0822813021e8081f10345e19b7fbf0ccc13ec023",
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=200"
+   "sha256": "6b1d15b2b1e10a6dbc245598fab0a5fd0977baaaba96b1e6cf94b0b81a6004c9",
+   "url": "https://catalog.smc.edu/current/catalog.pdf#page=201"
   },
   "33255": {
    "sha256": "2ea77818f83c7b9b385707da7925f61c933e7dce33d01994b49d9b0b20c630b4",
@@ -4160,8 +4344,8 @@
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=111"
   },
   "39651": {
-   "sha256": "e6d7d5fcc24bf55f0fa14fe3c9e89eb4ade09911773fa04428d396542d3f1614",
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=112"
+   "sha256": "d81c3241f2c87eef4b268df70839495c77e18a0bc51c281fee9bb3f65479277d",
+   "url": "https://catalog.smc.edu/current/catalog.pdf#page=111"
   },
   "39671": {
    "sha256": "6869347566b3debc75a2f9c070b1b3e071549c1a43b32d82d161d4c029b0e6c9",
@@ -4407,6 +4591,10 @@
    "sha256": "eae8cd6d745a2e2bec97ef0295a324daac748a147328b2ee517986e3db43fcc2",
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=172"
   },
+  "45012": {
+   "sha256": "f0ae61d34549fb549bb18b3be01fa32c3b14d5d4813c49a16d67e94071ba0dbe",
+   "url": "https://catalog.smc.edu/current/catalog.pdf#page=99"
+  },
   "45132": {
    "sha256": "402c6b54c19ef25aae2c2b867cd68c188c45d9ac93a1ccf966c75c74ecc4dba4",
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=106"
@@ -4476,8 +4664,8 @@
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=163"
   },
   "45928": {
-   "sha256": "8a753f617a0008ccc1c4204df89cce2cd754a2ef153b87f75b9b6bb1cf032bed",
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=137"
+   "sha256": "3667b9bca3d2ae9e5898b488cc7f566cf50922aab5fe9be121c3a62e9a4d9002",
+   "url": "https://catalog.smc.edu/current/catalog.pdf#page=136"
   },
   "45952": {
    "sha256": "ff8f7ad070e6a0d3fc435c244de71d238d41c9bc5da76503ac451a052ce2a729",
@@ -4512,5 +4700,5 @@
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=190"
   }
  },
- "run": "44739378155"
+ "run": "44885033145"
 }

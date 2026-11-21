@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Public Policy",
  "award": "A.A. Degree",
- "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=189",
+ "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=188",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11686,
+  "input_tokens": 13250,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11686,
-    "output_tokens": 5395,
+    "input_tokens": 13250,
+    "output_tokens": 6415,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,28 +30,26 @@
     "model": null
    }
   ],
-  "output_tokens": 5395,
+  "output_tokens": 6415,
   "output_tokens_details": {
-   "thinking_tokens": 1341
+   "thinking_tokens": 2055
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.15464,
- "ms": 39588,
- "seconds": 39.9,
+ "cost_usd": 0.1813,
+ "ms": 45364,
+ "seconds": 45.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 66,
+   "placed": 67,
    "listed": 67,
-   "share": 0.985,
-   "missing": [
-    "POLSC1000"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
@@ -69,30 +67,31 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     19.0,
     19.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    19.0,
+    19.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -106,22 +105,22 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Public Policy (heading not in the excerpt; text begins mid-section at top of page 189)",
+   "section_heading": "Public Policy, Associate Degree or Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 19,
+    "max": 19
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "SMC GE or Cal-GETC",
    "degree_total": {
     "min": null,
     "max": null
@@ -131,25 +130,35 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "demonstrate coherent and comprehensive analysis of the public policies affecting the lives of local, regional, and state citizens.",
+    "Exhibit the skills and resources necessary for participation in civic life.",
+    "Critically evaluate and analyze policy options, development, and practical implementation strategies."
+   ],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Required core (heading not in excerpt)",
+    "name": "Required Core Course",
     "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 7,
+     "max": 7
     },
     "courses": [
      {
-      "code": "POL SC 3",
+      "code": "POLS C1000",
       "units": 3,
       "units_max": null,
-      "alternatives": [],
+      "alternatives": [
+       {
+        "code": "POL SC 3",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
       "catalog_addition": false
      },
      {
@@ -287,7 +296,7 @@
     "name": "Arts and Cultural Affairs Track",
     "rule": "choose_courses",
     "minimum": 2,
-    "option_group": "Specialization track",
+    "option_group": "Specialization Areas",
     "stated": {
      "min": 6,
      "max": 6
@@ -376,7 +385,7 @@
     "name": "Educational Track",
     "rule": "choose_courses",
     "minimum": 2,
-    "option_group": "Specialization track",
+    "option_group": "Specialization Areas",
     "stated": {
      "min": 6,
      "max": 6
@@ -437,7 +446,7 @@
     "name": "Environmental Track",
     "rule": "choose_courses",
     "minimum": 2,
-    "option_group": "Specialization track",
+    "option_group": "Specialization Areas",
     "stated": {
      "min": 6,
      "max": 6
@@ -519,7 +528,7 @@
     "name": "Public Health Track",
     "rule": "choose_courses",
     "minimum": 2,
-    "option_group": "Specialization track",
+    "option_group": "Specialization Areas",
     "stated": {
      "min": 6,
      "max": 6
@@ -594,7 +603,7 @@
     "name": "Urban/Socioeconomic Track",
     "rule": "choose_courses",
     "minimum": 2,
-    "option_group": "Specialization track",
+    "option_group": "Specialization Areas",
     "stated": {
      "min": 6,
      "max": 6
@@ -729,20 +738,92 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "POLS C1000",
-    "why": "not in the text; likely on the preceding page cut off from the excerpt"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The excerpt begins mid-section at the top of page 189; the Public Policy heading, description, outcomes, careers, total units and the start of the required core are on the preceding page and not in the text. Section heading is inferred, not printed.",
-   "The first block (POL SC 3, POL SC 31, POL SC 95) has no visible heading or rule; recorded as 'all' but a reviewer should check against the previous page. A '-----' separator between POL SC 3 and POL SC 31 may mark a table break or an 'or' choice.",
-   "Specialization: 'Students are required to take 2 courses WITHIN one of the following five (5) tracks: (6 units)'; each track recorded as a choose-2 block in option_group 'Specialization track' with stated 6.",
-   "Cross-listed courses (e.g., ENVRN 7/GEOG 7, ENVRN 20/PHILOS 20, HEALTH 60/NURSNG 60, GEOG 8/URBAN 8) are printed as separate rows and recorded separately.",
-   "NUTR 7 matched to closed-list entry 'NUTR7'; SOCIOL 2s matched to closed-list 'SOCIOL 2S'.",
-   "No total units, degree total, GE pattern, outcomes or careers appear in the excerpt for this award."
+   "The section is shared: 'Public Policy, Associate Degree or Certificate of Achievement' prints one requirement list and one Program Learning Outcomes paragraph for both awards; recorded for the A.A. degree.",
+   "The outcomes are printed as one paragraph. The first outcome begins inside the lead-in sentence ('Upon completion of the program, students will demonstrate ...'). It is recorded from 'demonstrate' onward.",
+   "No total for the whole degree is printed for this award. The 60-unit sentence is the generic associate degree requirement. GE options are 'SMC GE or Cal-GETC'.",
+   "The 'or' between POLS C1000 and POL SC 3 in the Required Core Course spans a page break.",
+   "AREA A and AREA B fall under the heading 'Critical Thinking and Communication:'. Each is read as choosing 3 units (one course).",
+   "Specialization Areas: students take 2 courses within one of five tracks (6 units). The 6-unit total is printed once for the specialization area and is applied to each track block.",
+   "Cross-listed courses (ENVRN 20/PHILOS 20, ENVRN 22/POL SC 22, ENVRN 40/PSYCH 40, ENVRN 7/GEOG 7, HEALTH 60/NURSNG 60, GEOG 8/URBAN 8) are printed as separate rows and recorded separately.",
+   "Catalog typos: ENVRN 7 says 'same as ENVRN 7' and GEOG 8 says 'same as GEOG 8'.",
+   "Closed-list code 'NUTR7' is matched to the catalog's NUTR 7, and 'SOCIOL 2S' to the catalog's SOCIOL 2s.",
+   "Lists A-C at the top of page 188 belong to the preceding program and were not recorded.",
+   "The Career Opportunities bullet appears under Programs Offered, but no careers are named."
   ]
  },
- "extracted_run": "39567439681"
+ "extracted_run": "44885033145",
+ "catalog_year": "2026-2027",
+ "source_sha": "6c7462929fc983f5",
+ "source_codes": [
+  "ADJUS1",
+  "AHIS11",
+  "AHIS3",
+  "AHIS72",
+  "BIOL9",
+  "BUS32",
+  "COMMC1000",
+  "COMST37",
+  "DANCE2",
+  "DANCE5",
+  "ECE11",
+  "ECE19",
+  "ECE45",
+  "ECE64",
+  "ECON6",
+  "ECONC2001",
+  "ECONC2002",
+  "ENGL31",
+  "ENGLC1000",
+  "ENGLC1001",
+  "ENVRN20",
+  "ENVRN22",
+  "ENVRN40",
+  "ENVRN7",
+  "GEOG14",
+  "GEOG7",
+  "GEOG8",
+  "HEALTH10",
+  "HEALTH60",
+  "HEALTH70",
+  "HIST10",
+  "HIST47",
+  "JOURN1",
+  "LING1",
+  "MEDIA1",
+  "MEDIA10",
+  "MEDIA2",
+  "MUSIC30",
+  "MUSIC33",
+  "MUSIC36",
+  "MUSIC37",
+  "NURSNG60",
+  "NUTR1",
+  "NUTR7",
+  "PHILOS20",
+  "PHILOS7",
+  "POLSC1000",
+  "POLSC21",
+  "POLSC22",
+  "POLSC24",
+  "POLSC3",
+  "POLSC31",
+  "PSYCH11",
+  "PSYCH13",
+  "PSYCH40",
+  "PSYCH8",
+  "SOCIOL1",
+  "SOCIOL2",
+  "SOCIOL2S",
+  "SOCIOL30",
+  "SOCIOL31",
+  "SOCIOL32",
+  "SOCIOL34",
+  "THART2",
+  "THART5",
+  "URBAN8",
+  "WGS30"
+ ],
+ "source_coverage": 1.0
 }

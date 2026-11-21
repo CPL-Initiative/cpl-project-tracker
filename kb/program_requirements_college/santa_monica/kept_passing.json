@@ -1,0 +1,200 @@
+{
+ "run": "44885033145",
+ "programs": [
+  {
+   "control_number": "19605",
+   "title": "Logistics and Supply Chain Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=102",
+   "filed_source_url": "https://catalog.smc.edu/current/catalog.pdf#page=105",
+   "cost_usd": 0.07728,
+   "usage": {
+    "input_tokens": 12260,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 12260,
+      "output_tokens": 1412,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 1412,
+    "output_tokens_details": {
+     "thinking_tokens": 308
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 0,
+     "listed": 20,
+     "share": 0.0,
+     "missing": [
+      "ACCTG1",
+      "ACCTG21",
+      "BUS1",
+      "BUS32",
+      "BUS5",
+      "BUS50",
+      "BUS51",
+      "BUS52",
+      "BUS53",
+      "BUS57",
+      "BUS80",
+      "BUS81",
+      "BUS82",
+      "BUS83",
+      "BUS85",
+      "BUS86",
+      "BUS87",
+      "CIS1",
+      "CIS4",
+      "COMST37"
+     ],
+     "unexplained": [],
+     "none_placed": true,
+     "pass": false
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "incomplete",
+     "computed": [
+      0.0,
+      0.0
+     ],
+     "stated": null,
+     "against": null,
+     "why": [
+      "the record names no total"
+     ]
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 0,
+     "courses": 0,
+     "count": 0,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": true,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 10,
+     "listed": 20,
+     "share": 0.5,
+     "missing": [
+      "ACCTG1",
+      "ACCTG21",
+      "BUS5",
+      "BUS50",
+      "BUS51",
+      "BUS52",
+      "BUS53",
+      "CIS1",
+      "CIS4",
+      "COMST37"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 6,
+     "codes": [
+      "ACCTG31A",
+      "ACCTG31B",
+      "BUS55",
+      "BUS84",
+      "CIS30",
+      "CIS34"
+     ],
+     "flagged": [
+      "ACCTG31A",
+      "ACCTG31B",
+      "BUS55",
+      "BUS84",
+      "CIS30",
+      "CIS34"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      24.0,
+      25.0
+     ],
+     "stated": [
+      24.0,
+      24.0
+     ],
+     "against": "program",
+     "why": [],
+     "meets": true
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 1,
+     "courses": 0,
+     "count": 1,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 1,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": true
+   }
+  }
+ ]
+}
