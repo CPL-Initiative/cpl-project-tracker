@@ -206,7 +206,8 @@ Both are in `docs/reference/sam_rulings.md`, `docs/reference/conductor_mode.md` 
 `d-load-skips-places-none-s697`, `d-outline-load-strips-letterless-lines-s697`, `d-display-held-for-gaps-apply-s697`,
 `d-vault-note-merged-under-ruling-s697` and `d-ivc-load-receipt-rides-checkpoint-s697`. DECIDED lines: the harvest
 lane. Memory rows: `kb/migrations/2026-11-21_s697_cpl_memory_rows.sql` (22 rows: Sam's two rulings `verified`, 20
-`proposed`; rollback beside it), not pointed at by `.apply`; the conductor applies it with `execute_sql`.
+`proposed`; rollback beside it), pointed at by `.apply`: supabase-migrate run 44929041859 applied it from this branch's
+push at 17:16Z (receipt `kb/receipts/migration_s697_cpl_memory_rows_44929041859.json`, 22 rows back).
 
 ## Patterns that worked
 
