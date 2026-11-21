@@ -18,3 +18,9 @@ from public.cpl_memory m where m.slug in ('d-possible-duplicate-shares-a-word-s6
 
 select slug, kind, status, length(summary) as summary_len from public.cpl_memory
 where slug in ('d-possible-duplicate-shares-a-word-s698','d-term-reports-named-term-s698','d-dependency-map-hourly-s698','p-a11y-sweep-browser-dies-s698','m-page-followups-merged-s698') order by slug;
+
+-- Twelve more rows, applied later in the same session with execute_sql as Sam spoke (the Subjects page, #3655), each
+-- batch read back. Their text lives in cpl_memory; this file names them so the rollback beside it reaches them. Six
+-- carry Sam's words and landed verified with verified_by Sam (the r- slugs); six landed proposed.
+select slug, kind, status, verified_by from public.cpl_memory where author = 'SkyAuklet (S698)' and slug in ('r-subject-row-chip-sam-2026-11-21','r-program-titles-inform-subject-recommendation-sam-2026-11-21','r-subject-web-search-and-go-sam-2026-11-21','r-subject-titles-title-case-sam-2026-11-21','f-subject-headings-filed-s698','p-index-read-printed-40-links-s698','r-noncredit-disciplines-separate-in-mqs-sam-2026-11-21','f-subject-map-ignores-credit-band-s698','r-noncredit-hold-sam-2026-11-21','d-cerritos-30-held-answer-set-s698','d-subject-save-key-three-part-s698','f-noncredit-categories-s698') order by slug;
+
