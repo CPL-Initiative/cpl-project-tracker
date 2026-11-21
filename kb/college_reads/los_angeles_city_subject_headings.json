@@ -12,7 +12,9 @@
  "subject_context": {
   "heading": "^(?P<subj>[A-Z][A-Z &.]{0,11}?) (?P<num>[A-Z]?\\d{3,4}[A-Z]{0,3}(?:-\\d{1,2})?) [-–] (?P<title>.+)$",
   "before": 4,
-  "start_page": 200
+  "start_page": 200,
+  "units": "^(\\d+(?:\\.\\d+)?(?:\\s*-\\s*\\d+(?:\\.\\d+)?)?) Units?\\b",
+  "within": 4
  },
  "pages": [
   {
