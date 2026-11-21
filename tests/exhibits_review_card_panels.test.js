@@ -236,6 +236,6 @@ function chipsOf(d) { return Array.from(d.querySelectorAll(".exh-card .exh-chipr
 
   let failed = 0;
   results.forEach(function (r) { if (!r[1]) { failed++; console.log("FAIL " + r[0] + (r[2] ? "\n     " + r[2] : "")); } });
-  console.log((results.length - failed) + " of " + results.length + " checks passed (exhibits_review_card_panels)");
+  console.log((results.length - failed) + "/" + results.length + " checks passed");
   process.exit(failed ? 1 : 0);
 })().catch(function (e) { console.error(e); process.exit(1); });
