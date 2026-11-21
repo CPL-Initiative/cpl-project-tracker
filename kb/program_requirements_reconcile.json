@@ -1886,6 +1886,68 @@
      "why": "S672 SkyWren, 2026-11-17: Music Performance certificate 38628 read 11.5 against 17.5 because the page prints 'Take MUS-39 three times over three semesters.' and the row 'MUS-39 \u00b7 Applied Music I \u00b7 3.00' three times under 'Units: 9.50' (college page read 44045355408), and the reading keeps one row. With MUS-39 three times the required list sums to 9.5 and the blocks to the page's 'Total: 17.50'."
     }
    ]
+  },
+  "Santa Monica College": {
+   "why": "S691 (worker piles2), the harvest lane's NEXT (11), Santa Monica's reconcile_steps lever: the records pinned here name no total because the reader handed them the page after their heading, and the heading page prints the program's total as 'Area of Emphasis: (N units)'. No step: the pins alone. Reversible by deleting this entry.",
+   "steps": [],
+   "pdf_pages": {
+    "03256": {
+     "page": 82,
+     "words": "Accounting, Associate Degree",
+     "evidence": "Accounting A.S. 03256: main files it from PDF p.83 (source_url #page=83, capture run 39567439681), and its notes say the section heading prints on the page before. College-page-read run 44883047940 prints 'Accounting, Associate Degree' on PDF p.82, with the section's 'Area of Emphasis' total under it."
+    },
+    "03272": {
+     "page": 171,
+     "words": "Music, Associate Degree",
+     "evidence": "Music A.A. 03272: main files it from PDF p.172 (source_url #page=172, capture run 39567439681), and its notes say the section heading prints on the page before. College-page-read run 44883047940 prints 'Music, Associate Degree' on PDF p.171, with the section's 'Area of Emphasis' total under it."
+    },
+    "03274": {
+     "page": 123,
+     "words": "Dance, Associate Degree",
+     "evidence": "Dance A.A. 03274: main files it from PDF p.124 (source_url #page=124, capture run 39567439681), and its notes say the section heading prints on the page before. College-page-read run 44881390798 prints 'Dance, Associate Degree' on PDF p.123, with the section's 'Area of Emphasis' total under it."
+    },
+    "08970": {
+     "page": 115,
+     "words": "Computer Programming, Associate Degree",
+     "evidence": "Computer Programming A.S. 08970: main files it from PDF p.116 (source_url #page=116, capture run 39567439681), and its notes say the section heading prints on the page before. College-page-read run 44881390798 prints 'Computer Programming, Associate Degree' on PDF p.115, with the section's 'Area of Emphasis' total under it."
+    },
+    "21007": {
+     "page": 115,
+     "words": "Computer Programming, Associate Degree",
+     "evidence": "Computer Programming certificate 21007: main files it from PDF p.116 (source_url #page=116, capture run 39567439681), and its notes say the section heading prints on the page before. College-page-read run 44881390798 prints 'Computer Programming, Associate Degree' on PDF p.115, with the section's 'Area of Emphasis' total under it."
+    },
+    "19299": {
+     "page": 142,
+     "words": "Ethnic Studies, Associate Degree or",
+     "evidence": "Ethnic Studies certificate 19299: main files it from PDF p.143 (source_url #page=143, capture run 39567439681), and its notes say the section heading prints on the page before. College-page-read run 44881390798 prints 'Ethnic Studies, Associate Degree or' on PDF p.142, with the section's 'Area of Emphasis' total under it."
+    },
+    "19300": {
+     "page": 142,
+     "words": "Ethnic Studies, Associate Degree or",
+     "evidence": "Ethnic Studies A.A. 19300: main files it from PDF p.143 (source_url #page=143, capture run 39567439681), and its notes say the section heading prints on the page before. College-page-read run 44881390798 prints 'Ethnic Studies, Associate Degree or' on PDF p.142, with the section's 'Area of Emphasis' total under it."
+    },
+    "30899": {
+     "page": 188,
+     "words": "Public Policy, Associate Degree or",
+     "evidence": "Public Policy A.A. 30899: main files it from PDF p.189 (source_url #page=189, capture run 39567439681), and its notes say the section heading prints on the page before. College-page-read run 44881390798 prints 'Public Policy, Associate Degree or' on PDF p.188, with the section's 'Area of Emphasis' total under it."
+    },
+    "31231": {
+     "page": 151,
+     "words": "Global Studies, Associate Degree or",
+     "evidence": "Global Studies A.A. 31231: main files it from PDF p.152 (source_url #page=152, capture run 39567439681), and its notes say the section heading prints on the page before. College-page-read run 44883047940 prints 'Global Studies, Associate Degree or' on PDF p.151, with the section's 'Area of Emphasis' total under it."
+    },
+    "39651": {
+     "page": 111,
+     "words": "Business Information Worker 2, Associate",
+     "evidence": "Business Information Worker 2 certificate 39651: main files it from PDF p.112 (source_url #page=112, capture run 39567439681), and its notes say the section heading prints on the page before. College-page-read run 44881390798 prints 'Business Information Worker 2, Associate' on PDF p.111, with the section's 'Area of Emphasis' total under it."
+    },
+    "45928": {
+     "page": 136,
+     "words": "English, Associate Degree for Transfer",
+     "evidence": "English AA-T 45928: main files it from PDF p.137 (source_url #page=137, capture run 39567439681), and its notes say the section heading prints on the page before. College-page-read run 44881390798 prints 'English, Associate Degree for Transfer' on PDF p.136, with the section's 'Area of Emphasis' total under it."
+    }
+   },
+   "pdf_pages_why": "S691: each program is read from the page its section opens on, named here with the words it opens on there (college-page-read runs 44881390798 and 44883047940), never found by a pattern over the catalog's text (S650, Cosumnes River). A pin binds only while the catalog prints the words and every title word on that page; otherwise the program gets no fresh text and its filed record stands."
   }
  }
 }

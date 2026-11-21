@@ -1479,8 +1479,19 @@ check("each pinned page is the page the filed record was extracted from",
 # (tests/program_requirements_lassen_calgetc.test.js checks the words on the pages).
 _LS_DIR = os.path.join(ROOT, "kb", "program_requirements_college", "lassen")
 _ls_pins = (R.load_steps().get("Lassen College") or {}).get("pdf_pages") or {}
-check("no college but Cosumnes River and Lassen names pdf_pages",
-      sorted(k for k, v in R.load_steps().items() if v.get("pdf_pages")) == sorted([_CR, "Lassen College"]))
+check("no college but Cosumnes River, Lassen and Santa Monica names pdf_pages",
+      sorted(k for k, v in R.load_steps().items() if v.get("pdf_pages")) == sorted([_CR, "Lassen College", "Santa Monica College"]))
+# S691: Santa Monica pins eleven programs to the page their heading and 'Area of Emphasis' total print on, the page
+# before the one capture 39567439681 handed them (college-page-read runs 44881390798 and 44883047940). After the
+# re-read the filed record is read from the pin's page, so a pin names the filed page or the one after it.
+_SM_DIR = os.path.join(ROOT, "kb", "program_requirements_college", "santa_monica")
+_sm_pins = (R.load_steps().get("Santa Monica College") or {}).get("pdf_pages") or {}
+check("Santa Monica pins its eleven, each on the filed page or the one before, with words, evidence and a read run",
+      sorted(_sm_pins) == ["03256", "03272", "03274", "08970", "19299", "19300", "21007", "30899", "31231", "39651", "45928"]
+      and all(as_read(os.path.join(_SM_DIR, "records", cn + ".json"))["source_url"].rsplit("#page=", 1)[1]
+              in (str(v["page"]), str(v["page"] + 1)) and v["words"].strip()
+              and ("44881390798" in v["evidence"] or "44883047940" in v["evidence"]) for cn, v in _sm_pins.items())
+      and not (R.load_steps().get("Santa Monica College") or {}).get("steps"))
 check("each Lassen pin is the page its filed record was extracted from",
       sorted(_ls_pins) == ["31132", "33263", "33729", "33730", "42300"]
       and all(as_read(os.path.join(_LS_DIR, "records", cn + ".json"))["source_url"].endswith("#page=%d" % v["page"])
