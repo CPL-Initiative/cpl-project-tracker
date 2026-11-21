@@ -22,10 +22,13 @@ WHAT IT DOES, in order, and it stops at the first failure with nothing written:
      `cte` through kb/_join_cte_from_top.py's rule. TOP decides nothing here.
   6. Writes a receipt: the ids, the members of each, each file's sha256 and counts before and after.
 
-ROLLBACK. --rollback RECEIPT (dry by default; --apply --expect N, N = the receipt's ids) deletes exactly the
-receipt's keys, puts the counts back, and writes the ids to kb/pile_mint_reserved.json, which the dry run's allocator
-reads, so a returned id is never handed out again. When the files are as the apply left them, it checks the round trip
-returns each file's original bytes.
+ROLLBACK. --rollback RECEIPT (dry by default; --apply --expect N, N = the receipt's ids, and a fresh --live read of
+the receipt's ids) deletes exactly the receipt's keys, puts the counts back, and writes the ids to
+kb/pile_mint_reserved.json, which the shared reservation loader (kb/_subj4_dryrun.py load_id_reservations) reads for
+every minter, so a returned id is never handed out again. It stops when a live row is keyed on a receipt id or merges
+into one, and when a receipt row was edited beyond the fields the build's own passes fill. It reads each file in the
+format it finds (indent 2, or compact after kb/_infer_disciplines.py) and writes it back in that format. When the
+files are as the apply left them, it checks the round trip returns each file's original bytes.
 
 UC_KB_DIR names another directory for the three identity files and the reservation file (a scratch copy).
 
@@ -33,7 +36,8 @@ Usage (from repo root):
   python3 kb/_pile_mint_apply.py --plan kb/pile_mint_out/<date>_v2/plan.json --print-sql
   python3 kb/_pile_mint_apply.py --plan PLAN --live LIVE.json                       (dry: what it would write)
   python3 kb/_pile_mint_apply.py --plan PLAN --live LIVE.json --apply --expect N   [--receipt PATH]
-  python3 kb/_pile_mint_apply.py --rollback RECEIPT [--apply --expect N]
+  python3 kb/_pile_mint_apply.py --rollback RECEIPT --print-sql
+  python3 kb/_pile_mint_apply.py --rollback RECEIPT --live LIVE.json [--apply --expect N]
 """
 from __future__ import annotations
 
@@ -71,25 +75,32 @@ def sha256(path):
         return hashlib.sha256(f.read()).hexdigest()
 
 
-def serialize(doc):
-    """The identity files' own format (json.dump indent 2, ensure_ascii off, a closing newline)."""
-    return json.dumps(doc, indent=2, ensure_ascii=False) + "\n"
+# The formats the identity files are written in: indent 2 (kb/_join_cte_from_top.py, the seed) and compact
+# (kb/_infer_disciplines.py, _from_top, _from_desc dump with json.dump defaults). Each read finds the file's own and
+# each write keeps it, so untouched rows keep their bytes whichever pass wrote the file last.
+FORMATS = {"indent2": {"indent": 2, "ensure_ascii": False}, "compact": {"ensure_ascii": False}}
+
+
+def serialize(doc, fmt="indent2"):
+    return json.dumps(doc, **FORMATS[fmt]) + "\n"
 
 
 def read_doc(path):
+    """(doc, format). Stops when the file is in no known format: a write would rewrite rows it does not touch."""
     with open(path, encoding="utf-8") as f:
         raw = f.read()
     doc = json.loads(raw)
-    if serialize(doc) != raw:
-        raise Stop(f"{os.path.basename(path)} does not re-serialize to its own bytes; the apply would rewrite rows "
-                   "it does not touch")
-    return doc
+    for fmt in FORMATS:
+        if serialize(doc, fmt) == raw:
+            return doc, fmt
+    raise Stop(f"{os.path.basename(path)} is in no known format (indent 2 or compact); the write would rewrite rows "
+               "it does not touch")
 
 
-def write_doc(path, doc):
+def write_doc(path, doc, fmt="indent2"):
     tmp = path + ".tmp"
     with open(tmp, "w", encoding="utf-8") as f:
-        f.write(serialize(doc))
+        f.write(serialize(doc, fmt))
     os.replace(tmp, path)
 
 
@@ -116,11 +127,24 @@ def planned_cns(plan):
                   | {r["control_number"] for r in plan["planned"]["singletons"].values()})
 
 
-def check_live(plan, live, now, max_age_hours):
-    """live = {"read_at", "cn_rows": [{course_id, field, value, ...}], "merge_targets": [ids], "id_rows": [ids]}."""
+def check_live_shape(live, now, max_age_hours):
+    """live must be {"read_at": str, "cn_rows": [{course_id: str, ...}], "merge_targets": [str], "id_rows": [str]},
+    read within max_age_hours. Anything else is a Stop, never a pass and never a crash."""
     if live is None:
         raise Stop("no live kb_curation rows given (--live); run the SELECT --print-sql prints")
-    read_at = str(live.get("read_at") or "")
+    if not isinstance(live, dict):
+        raise Stop(f"the live rows are a {type(live).__name__}, not the SELECT's one JSON object")
+    for key in ("cn_rows", "merge_targets", "id_rows"):
+        if not isinstance(live.get(key), list):
+            raise Stop(f"the live rows carry no {key} list ({type(live.get(key)).__name__}); run the SELECT again")
+    if not all(isinstance(r, dict) and isinstance(r.get("course_id"), str) for r in live["cn_rows"]):
+        raise Stop("a live cn_rows entry is not a row with a course_id")
+    for key in ("merge_targets", "id_rows"):
+        if not all(isinstance(v, str) for v in live[key]):
+            raise Stop(f"a live {key} entry is not an id")
+    read_at = live.get("read_at")
+    if not isinstance(read_at, str) or not read_at:
+        raise Stop(f"the live rows carry no readable read_at ({read_at!r})")
     try:
         t = datetime.fromisoformat(read_at.replace("Z", "+00:00"))
         if t.tzinfo is None:
@@ -130,6 +154,10 @@ def check_live(plan, live, now, max_age_hours):
     age = (now - t).total_seconds() / 3600
     if age > max_age_hours or age < -0.05:
         raise Stop(f"the live rows were read {age:.1f} hours ago; read them again (limit {max_age_hours} hours)")
+
+
+def check_live(plan, live, now, max_age_hours):
+    check_live_shape(live, now, max_age_hours)
     ids, cns = set(planned_ids(plan)), set(planned_cns(plan))
     curated = sorted({r["course_id"][3:] for r in live.get("cn_rows") or [] if str(r.get("course_id", "")).startswith("CN:")}
                      & cns)
@@ -148,9 +176,11 @@ def check_closest(plan, inp):
     return m
 
 
-def live_sql(plan):
-    """The one SELECT, returning one JSON value, the conductor runs before an apply (Rule 10's fresh read)."""
-    ids = ", ".join("'" + i.replace("'", "''") + "'" for i in planned_ids(plan))
+def live_sql(plan=None, id_list=None):
+    """The one SELECT, returning one JSON value, the conductor runs before an apply or a rollback (Rule 10's fresh
+    read): the plan's ids, or a receipt's."""
+    id_list = id_list if id_list is not None else planned_ids(plan)
+    ids = ", ".join("'" + i.replace("'", "''") + "'" for i in id_list)
     return ("with ids(id) as (select unnest(array[" + ids + "]::text[]))\n"
             "select json_build_object(\n"
             "  'read_at', now(),\n"
@@ -203,7 +233,9 @@ def apply(frozen, inp, kdir, live, expect, write, now, max_age_hours=6.0, cte_ma
     if write and expect != n:
         raise Stop(f"--expect {expect} does not match the plan's {n} records")
     paths = {f: os.path.join(kdir, f) for f in dry.IDENTITY_FILES}
-    docs = {f: read_doc(p) for f, p in paths.items()}
+    read = {f: read_doc(p) for f, p in paths.items()}
+    docs = {f: v[0] for f, v in read.items()}
+    fmts = {f: v[1] for f, v in read.items()}
     before = {f: sha256(p) for f, p in paths.items()}
     cat, mem, sing = docs[COURSES], docs[MEMBERSHIPS], docs[SINGLETONS]
     courses, members, singles = stamped_records(frozen, inp, cte_map if cte_map is not None else cte.load_cte_map())
@@ -241,13 +273,14 @@ def apply(frozen, inp, kdir, live, expect, write, now, max_age_hours=6.0, cte_ma
                     **{k: [v["control_number"]] for k, v in sorted(singles.items())}},
         "counts": {"before": counts_before, "after": counts_after},
         "closest_after": closest["after"]["tally"],
-        "files": {f: {"before_sha256": before[f]} for f in dry.IDENTITY_FILES},
+        "files": {f: {"before_sha256": before[f], "format": fmts[f]} for f in dry.IDENTITY_FILES},
+        "records": {"courses": courses, "memberships": members, "singletons": singles},
         "written": False,
     }
     if not write:
         return receipt
     for f, p in paths.items():
-        write_doc(p, docs[f])
+        write_doc(p, docs[f], fmts[f])
     for f, p in paths.items():
         receipt["files"][f]["after_sha256"] = sha256(p)
     receipt["written"] = True
@@ -259,19 +292,61 @@ def apply(frozen, inp, kdir, live, expect, write, now, max_age_hours=6.0, cte_ma
     return receipt
 
 
-def rollback(receipt, kdir, expect, write, now):
+# Fields the build's own passes fill on a minted record after the apply (the CTE, TOP and credit joins): a change
+# there is the build's, and the rollback deletes the row regardless. A change anywhere else (a person's reviewed_at,
+# a discipline) is someone's work, and the rollback stops naming the row.
+BUILD_FILLED = {"cte", "top_code", "top_code_mixed", "top_code_distribution", "noncredit_category",
+                "noncredit_category_mixed", "noncredit_category_distribution", "credit_status", "credit_status_mixed",
+                "typical_units", "units"}
+
+
+def _edited(now_rec, then_rec):
+    keys = (set(now_rec) | set(then_rec)) - BUILD_FILLED
+    return sorted(k for k in keys if now_rec.get(k) != then_rec.get(k))
+
+
+def rollback(receipt, kdir, expect, write, now, live=None, max_age_hours=6.0):
+    """Deletes exactly the receipt's keys. Stops on a wrong --expect; on a write, without a fresh live read, or when a
+    live kb_curation row is keyed on a receipt id or merges into one; when a receipt row was edited since the apply
+    beyond the build's own fields. Reads each file in its found format and writes it back in that format."""
     ids = receipt["ids"]
-    n = len(ids["courses"]) + len(ids["singletons"])
+    all_ids = list(ids["courses"]) + list(ids["singletons"])
+    n = len(all_ids)
     if write and expect != n:
         raise Stop(f"--expect {expect} does not match the receipt's {n} ids")
+    if write or live is not None:
+        check_live_shape(live, now, max_age_hours)
+        keyed = sorted(set(live["id_rows"]) & set(all_ids))
+        into = sorted(set(live["merge_targets"]) & set(all_ids))
+        if keyed or into:
+            raise Stop(f"live curation names receipt ids: rows keyed on {keyed[:10]}, merges into {into[:10]}. A "
+                       "person's row wins; the rollback would orphan it.")
     paths = {f: os.path.join(kdir, f) for f in dry.IDENTITY_FILES}
     as_left = all(sha256(p) == (receipt["files"][f].get("after_sha256")) for f, p in paths.items())
-    docs = {f: read_doc(p) for f, p in paths.items()}
+    read = {f: read_doc(p) for f, p in paths.items()}
+    docs = {f: v[0] for f, v in read.items()}
+    fmts = {f: v[1] for f, v in read.items()}
     cat, mem, sing = docs[COURSES], docs[MEMBERSHIPS], docs[SINGLETONS]
     missing = sorted([k for k in ids["courses"] if k not in cat["courses"] or k not in mem["memberships"]]
                      + [k for k in ids["singletons"] if k not in sing["courses"]])
     if missing:
         raise Stop(f"receipt ids not in the identity files: {missing[:10]}")
+    wrote = receipt.get("records") or {}
+    edited = []
+    for k in ids["courses"]:
+        diff = _edited(cat["courses"][k], (wrote.get("courses") or {}).get(k, cat["courses"][k]))
+        if diff:
+            edited.append((k, diff))
+        then = [m.get("control_number") for m in (wrote.get("memberships") or {}).get(k, [])]
+        if then and [m.get("control_number") for m in mem["memberships"][k]] != then:
+            edited.append((k, ["members"]))
+    for k in ids["singletons"]:
+        diff = _edited(sing["courses"][k], (wrote.get("singletons") or {}).get(k, sing["courses"][k]))
+        if diff:
+            edited.append((k, diff))
+    if edited:
+        raise Stop("receipt rows edited since the apply, beyond the build's own fields: "
+                   + "; ".join(f"{k} ({', '.join(f)})" for k, f in edited[:10]))
     removed_members = 0
     for k in ids["courses"]:
         del cat["courses"][k]
@@ -286,17 +361,18 @@ def rollback(receipt, kdir, expect, write, now):
         mem["member_courses_total"] -= removed_members
     if isinstance(sing.get("count"), int):
         sing["count"] -= len(ids["singletons"])
-    out = {"ids": n, "files_as_the_apply_left_them": as_left, "written": False}
+    out = {"ids": n, "files_as_the_apply_left_them": as_left, "formats": fmts, "written": False}
     if not write:
         return out
     for f, p in paths.items():
-        write_doc(p, docs[f])
+        write_doc(p, docs[f], fmts[f])
     res_path = os.path.join(kdir, dry.RESERVED_FILE)
     res = dry._load(res_path) if os.path.exists(res_path) else {}
-    kept = sorted(set(res.get("ids") or []) | set(ids["courses"]) | set(ids["singletons"]))
+    kept = sorted(set(res.get("ids") or []) | set(all_ids))
     with open(res_path, "w", encoding="utf-8") as fh:
-        json.dump({"_what": ("Ids a rolled-back pile mint handed out (kb/_pile_mint_apply.py --rollback). The dry "
-                             "run's allocator reserves them, so an id once minted is never handed out again."),
+        json.dump({"_what": ("Ids a rolled-back pile mint handed out (kb/_pile_mint_apply.py --rollback). The shared "
+                             "reservation loader (kb/_subj4_dryrun.py load_id_reservations) reads this file, so no "
+                             "minter hands one out again."),
                    "updated_at": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "ids": kept}, fh, indent=2, ensure_ascii=False)
         fh.write("\n")
     out["round_trip"] = {f: sha256(p) == receipt["files"][f]["before_sha256"] for f, p in paths.items()}
@@ -319,7 +395,12 @@ def main(argv=None):
     now = datetime.now(timezone.utc)
     try:
         if a.rollback:
-            out = rollback(dry._load(a.rollback), kdir, a.expect, a.apply, now)
+            receipt = dry._load(a.rollback)
+            if a.print_sql:
+                print(live_sql(id_list=list(receipt["ids"]["courses"]) + list(receipt["ids"]["singletons"])))
+                return 0
+            out = rollback(receipt, kdir, a.expect, a.apply, now, dry._load(a.live) if a.live else None,
+                           a.max_age_hours)
             print(f"[pile_mint_apply] rollback {'WRITTEN' if out['written'] else 'DRY'}: {out}")
             broken = out["written"] and out["files_as_the_apply_left_them"] and not all(out["round_trip"].values())
             return 1 if broken else 0

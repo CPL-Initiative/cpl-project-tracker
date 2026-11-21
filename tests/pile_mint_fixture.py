@@ -42,6 +42,12 @@ def fixture(top=TOP):
         row(D, "S4", "MATH", "Math Practicum", top=top),                        # practicum: no convention
         row(B, "S5", "BIOL", "Biology Seminar", top=top),                       # seminar: one college's convention
         row(C, "S6", "BUS", "Work Experience", top=top),                        # one common course: Assign
+        # the ruled kind: tutoring under LSKL (d-tutoring-under-lskl-2026-11-21)
+        row(A, "T1", "TUTR", "Supervised Tutoring", credit="N", units=0, top=top),  # bare, noncredit: one record
+        row(B, "T2", "LRNA", "SUPERVISED TUTORING", credit="E", units=0, top=top),  # statewide with T1
+        row(C, "T3", "EDUC", "Supervised Tutoring", top=top),                      # bare, credit: its own band
+        row(D, "T4", "MATH", "Supervised Tutoring in Mathematics", credit="N", units=0, top=top),  # names a subject
+        row(D, "T5", "ENGL", "Tutoring", credit="N", units=0, top=top),            # twin of LSKL M90AA: Assign
         # the left-outs
         row(A, "P5", "MATH", "Special Topics in Math", top=top),
         row(A, "P6", "MATH", "Strong Match Course", top=top),
@@ -50,7 +56,9 @@ def fixture(top=TOP):
         row(A, "P10", "MATH", "Re-homed Course", top=top),
     ]
     members = {}
-    catalog = {"MATH M1001": {"common_title": "Trigonometry", "credit_status": "Credit", "discipline": "Mathematics"}}
+    catalog = {"MATH M1001": {"common_title": "Trigonometry", "credit_status": "Credit", "discipline": "Mathematics"},
+               "LSKL M9001": {"common_title": "Study Skills", "credit_status": "Noncredit"}}
+    singletons = {"LSKL M90AA": {"common_title": "Tutoring", "credit_status": "Noncredit", "control_number": "X1"}}
 
     def hold(ci, cn, subj, title, mid):
         rows.append(row(ci, cn, subj, title, top=top))
@@ -77,6 +85,7 @@ def fixture(top=TOP):
         "Environmental Studies": {"canonical_subj4": "ENVS"}, "Nursing": {"canonical_subj4": "NRSR"},
         "Work Experience Instructors": {"canonical_subj4": "WEXP"},
         "Interdisciplinary Studies": {"canonical_subj4": "IDST"},
+        "Learning Assistance or Learning Skills": {"canonical_subj4": "LSKL"},
         "Kinesiology": {"canonical_subj4": "KINE", "is_umbrella": True}}}
     L = {"colleges": COLLEGES, "rows": rows}
     return {
@@ -87,18 +96,19 @@ def fixture(top=TOP):
                                                      {"key": "none", "bands": [0, 1, 2]}]},
                               "rows": {"P6": [0.93, 5, [["MATH M1001", 0.9, 1, 2, None]]],
                                        "P8": [0.2, 1, [["MATH M1001", 0.3, 0, 2, None]]]}},
-        "catalog": catalog, "singletons": {},
+        "catalog": catalog, "singletons": singletons,
         "curations": {"MATH M1003": {"unified_title": "x"}, "CN:P10": {"merge_into": "MATH M1001"},
                       "X": {"merge_into": "MATH M1005"}},
         "identities": {}, "common": {}, "membership_keys": sorted(members), "membership_cns": [], "singleton_cns": [],
         "disc_map": {"MATH": "Mathematics", "ES": "Ethnic Studies", "KIN": "Kinesiology", "BIOL": "Biology"},
         "canon_map": {"Mathematics": "MATH", "Ethnic Studies": "ETHS", "Education": "EDUC", "Nursing": "NRSR",
                       "Biology": "BIOL", "Environmental Studies": "ENVS", "Work Experience Instructors": "WEXP",
-                      "Interdisciplinary Studies": "IDST"},
+                      "Interdisciplinary Studies": "IDST", "Learning Assistance or Learning Skills": "LSKL"},
         "canon_doc": canon_doc, "disc_aliases": {},
         "fl_doc": {"languages": {"Spanish": {"subj4": "SPAN", "subjects": ["SPAN"]}}, "residual_subj4": "FLNG"},
-        "reservations": {("MATH", "1"): {4}},
+        # MATH 004 by a C-ID; WEXP M10AA returned by a rolled-back mint (kb/_subj4_dryrun.py add_reserved_ids)
+        "reservations": {("MATH", "1"): {4}, ("WEXP", "1"): {"0AA"}, ("*", "ids"): {"WEXP M10AA"}},
         "alias_ids": ["MATH M1002", "MATH M90AA"],
-        "staged_ids": ["MATH M1006", "MATH M10AA"], "returned_ids": ["WEXP M10AA"],
+        "staged_ids": ["MATH M1006", "MATH M10AA"],
         "provenance": {"fixture": True},
     }

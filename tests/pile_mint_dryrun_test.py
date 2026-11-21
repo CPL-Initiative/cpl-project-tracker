@@ -11,6 +11,8 @@ second run writing different bytes; the TOP code moving any decision. Then the r
 leaves a pile mint as written (the second reader's finding 2), and kb/_row_audit.py and kb/_ccr_confidence_score.py
 read its source as a session mint (finding 3).
 
+The fixture is tests/pile_mint_fixture.py, shared with tests/pile_mint_apply_test.py.
+
 Run from repo root: python3 tests/pile_mint_dryrun_test.py
 """
 import copy
@@ -53,7 +55,8 @@ check("a credit catalog id skips the catalog key, alias id, curation key, reserv
       "(M1001-M1006)", cat_id == "MATH M1007")
 check("a stand-alone id skips the staged plan's MATH M10AA", by_cn["N2"]["id"] == "MATH M10AB")
 check("a noncredit stand-alone id skips the alias map's MATH M90AA", by_cn["P3"]["id"] == "MATH M90AB")
-check("a rolled-back id (kb/pile_mint_reserved.json, WEXP M10AA) is never handed out again",
+check("a rolled-back id (kb/pile_mint_reserved.json through the shared loader, WEXP M10AA) is never handed out "
+      "again",
       by_cn["S3"]["id"] == "WEXP M10AB")
 check("no planned id equals a staged plan's new_id", not (set(recs) & set(inp["staged_ids"]))
       and plan["validation"]["V8_no_planned_id_a_staged_plan_names"]["pass"])
@@ -90,8 +93,43 @@ check("a convention that is one common course holds the course for Assign with i
       held.get("S6") == "convention_is_one_common_course_held_for_assign"
       and held_row["S6"]["assign_to"] == "WEXP M1500")
 check("no shell title reaches route (i), (ii) or (iii)", all(
-    r["route"] == ["s"] for r in plan["plan_rows"] if r["shell"])
+    r["route"] in (["s"], ["r"]) for r in plan["plan_rows"] if r["shell"])
     and plan["validation"]["V9_a_shell_title_mints_only_under_its_convention"]["pass"])
+
+# ── the ruled kind: tutoring under LSKL ──
+check("the plan records the ruling's slug and grounds",
+      plan["ruled_kinds"][0]["ruling"] == "d-tutoring-under-lskl-2026-11-21" and plan["ruled_kinds"][0]["subj4"] == "LSKL")
+t1 = by_cn["T1"]
+check("a bare tutoring title mints under LSKL once statewide per band: T1 (TUTR, noncredit) and T2 (LRNA, "
+      "enhanced) are one record", t1 is by_cn["T2"] and t1["id"].startswith("LSKL M9") and t1["route"] == ["r"]
+      and recs[t1["id"]]["pile_mint_ruling"] == "d-tutoring-under-lskl-2026-11-21"
+      and recs[t1["id"]]["pile_mint_route"] == "ruled_kind" and recs[t1["id"]]["discipline_source"] == "pile_mint")
+check("the allocator continues LSKL's numbers past LSKL M9001", t1["id"] == "LSKL M9002")
+check("the credit Supervised Tutoring is its own band-1 record, never folded with the noncredit one",
+      by_cn["T3"] is not t1 and by_cn["T3"]["id"].startswith("LSKL M1"))
+check("a tutoring title that names a subject is held and listed by class",
+      held.get("T4") == "ruled_kind_title_names_more_than_the_kind"
+      and held_row["T4"]["title_class"] == "names a subject or center beside the kind"
+      and plan["ruled_kind_held_titles"]["courses"] == 1)
+check("a duplicate of an existing LSKL record (Tutoring, LSKL M90AA) is held for Assign",
+      held.get("T5") == "duplicate_of_an_existing_m_id_held_for_assign" and held_row["T5"]["assign_to"] == "LSKL M90AA")
+check("the ruled record is a shell, so no title bag reads it",
+      recs[t1["id"]]["pile_mint_shell"] == "supervised tutoring")
+
+
+# ── a TOP-decided discipline never names a convention's discipline (finding 5) ──
+def no_wexp(src):
+    f = fixture()
+    f["canon_doc"]["disciplines"].pop("Work Experience Instructors")
+    for mid in ("WEXP M1001", "WEXP M1002"):
+        f["catalog"][mid] = dict(f["catalog"][mid], discipline="Work Experience Instructors", discipline_source=src)
+    return {(c["kind"], c["band"]): c for c in pm.compute_plan(f, "2026-11-21")["shell_conventions"]}
+
+
+check("a convention takes no discipline from a TOP-sourced record (top_code, top_division) and is not accepted",
+      not no_wexp("top_code")[("internship", "1")]["accepted"]
+      and not no_wexp("top_division")[("internship", "1")]["accepted"])
+check("the same records with a subject-map discipline name it", no_wexp("subject_map")[("internship", "1")]["accepted"])
 
 # ── folds ──
 check("a punctuation pair folds: Pre-Algebra and Prealgebra are one record", by_cn["F1"] is by_cn["F2"]
@@ -128,12 +166,12 @@ check("a control number that names two courses stays out", left.get("P9") == "c_
 check("a course a CN: row re-homes stays out", left.get("P10") == "d_curation_re_homes_it")
 check("a twin of MATH M1001 (TRIGONOMETRY folds with Trigonometry) is held for Assign with that M-ID",
       held.get("P7") == "duplicate_of_an_existing_m_id_held_for_assign"
-      and plan["held_for_assign"][0]["existing"] == ["MATH M1001"])
+      and any(a["existing"] == ["MATH M1001"] for a in plan["held_for_assign"]))
 
 # ── validations and determinism ──
 check("every validation passes on the fixture", all(v["pass"] for v in plan["validation"].values()))
-check("V1: every wave course lands once (18 in the wave)", plan["validation"]["V1_every_wave_course_lands_once"]["pass"]
-      and plan["measures"]["wave"] == 18)
+check("V1: every wave course lands once (23 in the wave)", plan["validation"]["V1_every_wave_course_lands_once"]["pass"]
+      and plan["measures"]["wave"] == 23)
 again = pm.compute_plan(copy.deepcopy(inp), "2026-11-21")
 check("two runs write identical bytes", pm.dump(plan) == pm.dump(again))
 nursing = pm.compute_plan(fixture(top="1230.10: Registered Nursing"), "2026-11-21")
@@ -142,8 +180,9 @@ check("the plan carries no TOP code", all(r["top_code"] is None for r in recs.va
 
 # ── the Closest M-ID measure (design F) ──
 cmz = pm.closest_measure(plan, inp)
-check("the Closest measure ranks every held course before and after the planned records join",
-      sum(cmz["before"]["tally"].values()) == cmz["held"] == sum(cmz["after"]["tally"].values()))
+check("the Closest measure ranks the rest of the pile (held and left out) before and after the planned records join",
+      sum(cmz["before"]["tally"].values()) == cmz["ranked"] == sum(cmz["after"]["tally"].values())
+      and cmz["ranked"] == cmz["held"] + sum(len(v) for v in plan["left_out"].values()))
 check("no held course sees a planned shell-title record as its Strong first recommendation",
       cmz["after"]["strong_on_a_shell_title"] == 0)
 

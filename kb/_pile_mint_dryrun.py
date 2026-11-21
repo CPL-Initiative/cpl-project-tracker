@@ -19,6 +19,10 @@ holds for it.
 THE SUBJ4. Every route is measured on the identity-holding courses (a control number that names one course and sits
 in an M-ID's members), each course left out of its own measure, and decides only where it is right at least 98% of
 the time on that measure. The TOP code is read nowhere.
+  (r)   A ruled kind (RULED_KINDS: a shell kind a decision placed, with its slug and grounds) mints its bare title
+        under the ruled SUBJ4, one common course per (title, band) statewide; a title naming more than the kind is
+        held and listed by class. The first: d-tutoring-under-lskl-2026-11-21, Supervised Tutoring and Tutoring
+        under LSKL. It is no measured route, so it decides before (s).
   (s)   A generic-shell title (the seed's STOP_PATTERNS: practicum, tutoring, seminar, work experience...) or a
         code-only title takes the identity file's own convention for its kind and credit band: the SUBJ4 the
         identity-holding courses of that kind carry. The measure leaves out the course's whole college, so a kind
@@ -74,9 +78,12 @@ import _closest_mid as cm  # noqa: E402  (load_js, the pile's definition, the ra
 import _seed_coci_minted_mids as seed  # noqa: E402  (STOP_PATTERNS, CODE_RE, ntitle, discipline_for_modal, ...)
 import _zband_retire_dryrun as zdry  # noqa: E402  (Buckets, the id shapes, canonical_codes, reservations)
 import _uc_cur_promote as promote  # noqa: E402  (reserved_alias_ids: every alias map's old and new side)
+import _top_gate as top_gate  # noqa: E402  (is_top_sourced)
+import _subj4_dryrun as s4dry  # noqa: E402  (add_reserved_ids: the shared reservation loader's rule)
 
 OUT_DIR = os.environ.get("PILE_MINT_OUT") or os.path.join(HERE, "pile_mint_out")
-PLAN_TAG = "_v2"
+PLAN_TAG = "_v3"
+RESERVED_IDS = ("*", "ids")  # kb/_subj4_dryrun.py RESERVED_IDS: the full ids a rolled-back mint returned
 DISCIPLINE_SOURCE = "pile_mint"
 RESERVED_FILE = "pile_mint_reserved.json"
 STAGED_PLANS = ("overmerge_out/*/alias_map.json",)
@@ -93,8 +100,34 @@ SUPPORT_GRID = (1, 2, 3, 4, 5, 7, 10, 15, 20, 30, 50, 100, 200)
 SHARE_GRID = (0.5, 0.6, 0.67, 0.75, 0.8, 0.85, 0.9, 0.95, 1.0)
 SUPPORT_BUCKETS = ((1, 1), (2, 2), (3, 4), (5, 9), (10, 19), (20, 49), (50, 99), (100, 10 ** 9))
 SHARE_BUCKETS = ((0.0, 0.6), (0.6, 0.8), (0.8, 0.9), (0.9, 1.0), (1.0, 1.01))
-ROUTE_SOURCE = {"s": "shell_convention", "i": "subject_map", "ii": "college_subject_code",
+ROUTE_SOURCE = {"r": "ruled_kind", "s": "shell_convention", "i": "subject_map", "ii": "college_subject_code",
                 "iii": "statewide_subject_code"}
+# Ruled kinds: a shell kind a person or the conductor ruled onto a SUBJ4, kept apart from the measured conventions.
+# Only the bare title mints ("Supervised Tutoring", "Tutoring", in any punctuation and case); a title that names
+# more than the kind ("Supervised Tutoring in Mathematics", "Tutoring Methods") is held and listed by class.
+RULED_KINDS = [{
+    "ruling": "d-tutoring-under-lskl-2026-11-21",
+    "decided_by": "the S695 conductor, Sam's to revise",
+    "kinds": ["supervised tutoring", "tutoring"],
+    "bare": r"^(?:supervised )?tutoring$",
+    "subj4": "LSKL", "discipline": "Learning Assistance or Learning Skills",
+    "grounds": ("The MQ handbook's discipline 'Learning Assistance or Learning Skills Coordinators/Instructors, and "
+                "Tutoring Coordinators'; kb/discipline_canonical_subj4.json gives 'Learning Assistance or Learning "
+                "Skills' the Common SUBJ LSKL (curator_override)."),
+}]
+RULED_BY_KIND = {k: r for r in RULED_KINDS for k in r["kinds"]}
+TUTOR_PREP_RE = re.compile(r"\b(train|method|technique|theory|introduction|intro|fundamental|preparation|prep|"
+                           r"material|effective|principle|practicum|peer|leadership)")
+
+
+def ruled_title_class(title):
+    """Why a ruled kind's title is held: it names a subject beside the kind, it prepares tutors, or something else."""
+    nt = seed.ntitle(title)
+    if TUTOR_PREP_RE.search(nt):
+        return "prepares tutors (training, methods, peer tutoring)"
+    if re.match(r"^supervised tutoring\b", nt) or re.search(r"\btutoring (in|for|of)\b", nt) or nt.endswith(" tutoring"):
+        return "names a subject or center beside the kind"
+    return "other"
 CLASSIFIED_BY = ("kb/_pile_mint_dryrun.py: the Needs an M-ID pile minted as M-IDs (Sam, 2026-11-20: the M-IDs "
                  "first; Sam, 2026-09-03: everything that is not a C-ID or CCN is an M-ID)")
 SUBJ_SHORT = seed.SHORT_CODE_MAX
@@ -383,6 +416,8 @@ def staged_plan_ids(kb_dir=HERE):
 
 
 def rollback_reserved_ids(kb_dir=HERE):
+    """The ids kb/pile_mint_reserved.json holds; the shared loader (kb/_subj4_dryrun.py load_id_reservations) reads
+    the same file for every minter."""
     p = os.path.join(kb_dir, RESERVED_FILE)
     return set((_load(p).get("ids") or [])) if os.path.exists(p) else set()
 
@@ -486,7 +521,8 @@ def compute_plan(inp, today):
     record_disc = {}
     for doc in (inp["catalog"], inp["singletons"]):
         for mid, r in doc.items():
-            if isinstance(r, dict) and r.get("discipline"):
+            # a discipline TOP alone decided never names a convention's discipline (CLAUDE.md Rule 7)
+            if isinstance(r, dict) and r.get("discipline") and not top_gate.is_top_sourced(r):
                 record_disc[mid] = r["discipline"]
     conventions = shell_conventions(hlist, record_disc, s4_disc)
 
@@ -512,7 +548,19 @@ def compute_plan(inp, today):
         tag = {"college": c["college"], "control_number": c["ctrl"], "title": c["title"], "subject": c["subj"]}
         band = band_of(c["credit"])
         conf = None
-        if kind:
+        ruling = None
+        if kind in RULED_BY_KIND:
+            rk = RULED_BY_KIND[kind]
+            if not re.match(rk["bare"], seed.ntitle(c["title"])):
+                held["ruled_kind_title_names_more_than_the_kind"].append(
+                    dict(tag, kind=kind, band=band, ruling=rk["ruling"], title_class=ruled_title_class(c["title"])))
+                continue
+            d = s4_disc.get(rk["subj4"])
+            if d != rk["discipline"]:
+                held["ruled_kind_subj4_names_another_discipline"].append(dict(tag, kind=kind, subj4=rk["subj4"]))
+                continue
+            s4, route, ruling = rk["subj4"], "r", rk["ruling"]
+        elif kind:
             conv = conventions.get((kind, band))
             if not (conv and conv["accepted"]):
                 held["shell_title_no_convention"].append(dict(tag, kind=kind, band=band))
@@ -554,7 +602,7 @@ def compute_plan(inp, today):
             continue
         route_count[route] += 1
         placed.append(dict(c, subj4=s4, discipline=d, route=route, band=band, kind=kind, conf=conf,
-                           fk=fold_key(c["title"])))
+                           ruling=ruling, fk=fold_key(c["title"])))
 
     # ── grouping and the duplicate check ──
     existing = defaultdict(list)
@@ -584,7 +632,7 @@ def compute_plan(inp, today):
                             for k, fks in w_base.items() if len(fks) > 1), key=lambda x: (x["band"], x["titles"]))
 
     staged = set(inp.get("staged_ids") or ())
-    returned = set(inp.get("returned_ids") or ())
+    returned = set(inp["reservations"].get(RESERVED_IDS) or ())
     all_keys = (set(inp["catalog"]) | set(inp["singletons"]) | set(inp["curations"]) | set(members)
                 | set(inp["identities"]) | set(inp["common"]) | set(inp["alias_ids"]) | set(inp["membership_keys"])
                 | staged | returned
@@ -658,6 +706,8 @@ def compute_plan(inp, today):
             "subject_codes_at_floor": len(codes_at_floor), "subject_codes_answered": len(code_stats),
         },
         "shell_conventions": [conventions[k] for k in sorted(conventions, key=lambda k: (k[0], k[1]))],
+        "ruled_kinds": RULED_KINDS,
+        "ruled_kind_held_titles": _ruled_held(held),
         "supervised_tutoring": tut,
         "self_recall": {
             "how": ("Every ordinary-title identity-holding course (its control number names one course and one "
@@ -684,6 +734,16 @@ def compute_plan(inp, today):
         "held": {k: v for k, v in sorted(held.items())},
         "left_out": {k: v for k, v in sorted(left.items())},
     }
+
+
+def _ruled_held(held):
+    rows = held.get("ruled_kind_title_names_more_than_the_kind") or []
+    by = defaultdict(Counter)
+    for h in rows:
+        by[h["title_class"]][seed.ntitle(h["title"])] += 1
+    return {"courses": len(rows), "colleges": len({h["college"] for h in rows}),
+            "by_class": {k: {"courses": sum(v.values()), "titles": len(v), "first": v.most_common(12)}
+                         for k, v in sorted(by.items())}}
 
 
 def _tutoring(pile, wave, hlist, inp):
@@ -749,6 +809,9 @@ def _records(new_id, g, descs, today):
     prov = {"discipline_source": DISCIPLINE_SOURCE, "pile_mint_route": "+".join(routes), "pile_mint_shell": shell,
             "discipline_confidence": dconf, "discipline_inferred_at": today,
             "_pile_mint_from": "kb/pile_mint_out/" + plan_dir(today)}
+    rulings = sorted({p["ruling"] for p in g if p.get("ruling")})
+    if rulings:
+        prov["pile_mint_ruling"] = "+".join(rulings)
     if len(g) >= 2:
         rec = {
             "course_id": new_id, "id_system": "M-ID", "ccn_id": None, "c_id": None,
@@ -808,7 +871,7 @@ def _validate(wave, left, held, pc, pm, ps, inp, all_keys, buckets, staged, conv
     already = sorted(planned_cn & known_cn)
     recs = list(pc.items()) + list(ps.items())
     bad_shell = sorted(i for i, r in recs if r.get("pile_mint_shell")
-                       and r.get("pile_mint_route") != ROUTE_SOURCE["s"])
+                       and r.get("pile_mint_route") not in (ROUTE_SOURCE["s"], ROUTE_SOURCE["r"]))
     bad_source = sorted(i for i, r in recs if r.get("discipline_source") != DISCIPLINE_SOURCE)
     return {
         "V1_every_wave_course_lands_once": {"pass": once, "wave": len(wave_cn), "landed": sum(landed.values())},
@@ -825,15 +888,20 @@ def _validate(wave, left, held, pc, pm, ps, inp, all_keys, buckets, staged, conv
 
 
 def _reserved(i, reservations):
+    if i in (reservations.get(RESERVED_IDS) or ()):
+        return True
     m = zdry.M_CORR_RE.match(i)
     return bool(m and int(m.group(3)) in reservations.get((m.group(1), m.group(2)), set()))
 
 
 # ── the Closest M-ID measure (design F) ────────────────────────────────────
 def closest_measure(plan, inp):
-    """Each held course ranked by kb/_closest_mid.py's Index over the identity file with the planned records added
-    (their members as the course list prints them): how many first recommendations become a planned record, at which
-    level, and whether any is a shell title at the Strong level."""
+    """The rest of the pile (every held and left-out course) ranked by kb/_closest_mid.py's Index over the identity
+    file with the planned records added (their members as the course list prints them): how many first
+    recommendations become a planned record, at which level. `strong_on_a_shell_title` counts a Strong first
+    recommendation of a planned shell-title record, the apply's stop, less the right answers: a course of a ruled
+    kind left out of the wave (`Supervised Tutoring in Mathematics`) whose first recommendation is that kind's ruled
+    record, counted apart as `strong_on_its_own_ruled_kind`."""
     L = inp["L"]
     col_ix = {c: i for i, c in enumerate(str(x or "").strip() for x in L["colleges"])}
     by_ctrl = {c["ctrl"]: c for c in inp["courses"]}
@@ -848,29 +916,39 @@ def closest_measure(plan, inp):
             rows.append({"c": col_ix.get(c["college"]), "n": (c["subj"] + " " + c["num"]).strip(), "t": c["title"],
                          "u": c["units"], "cn": c["ctrl"]})
         members[mid] = rows
-    shell_of = {r["id"]: r.get("shell") for r in plan["plan_rows"]}
+    row_of = {r["id"]: r for r in plan["plan_rows"]}
+    ruled_kinds_of = {}
+    for mid, r in row_of.items():
+        if "r" in (r.get("route") or []) and r.get("shell") in RULED_BY_KIND:
+            ruled_kinds_of[mid] = set(RULED_BY_KIND[r["shell"]]["kinds"])
+    rest = [h for part in ("held", "left_out") for rows in (plan.get(part) or {}).values() for h in rows]
     level = lambda b: "strong" if b in (5, 6) else ("possible" if b in (3, 4) else "none")
     out = {}
     for name, mem in (("before", inp["members"]), ("after", members)):
         ix = cm.Index(mem, inp["descs"])
         tally = Counter()
         firsts = []
-        for rows in plan["held"].values():
-            for h in rows:
-                c = by_ctrl.get(h["control_number"])
-                top = ix.rank(c) if c else []
-                if not top:
-                    tally["no_candidate"] += 1
-                    continue
-                lv = level(cm.band_of(top[0]["score"]))
-                new = top[0]["mid"] in shell_of
-                tally[("new_record_" if new else "existing_") + lv] += 1
-                if new:
-                    firsts.append({"control_number": h["control_number"], "title": h["title"], "first": top[0]["mid"],
-                                   "level": lv, "score": round(top[0]["score"], 3),
-                                   "shell": shell_of[top[0]["mid"]]})
+        for h in rest:
+            c = by_ctrl.get(h["control_number"])
+            top = ix.rank(c) if c else []
+            if not top:
+                tally["no_candidate"] += 1
+                continue
+            lv = level(cm.band_of(top[0]["score"]))
+            first = top[0]["mid"]
+            new = first in row_of
+            tally[("new_record_" if new else "existing_") + lv] += 1
+            if new:
+                kind = shell_pattern(h["title"])
+                firsts.append({"control_number": h["control_number"], "title": h["title"], "first": first,
+                               "level": lv, "score": round(top[0]["score"], 3), "shell": row_of[first].get("shell"),
+                               "own_ruled_kind": kind in ruled_kinds_of.get(first, ())})
+        strong = [f for f in firsts if f["level"] == "strong"]
         out[name] = {"tally": dict(sorted(tally.items())), "first_is_a_new_record": firsts[:40],
-                     "strong_on_a_shell_title": sum(1 for f in firsts if f["level"] == "strong" and f["shell"])}
+                     "strong_on_its_own_ruled_kind": sum(1 for f in strong if f["own_ruled_kind"]),
+                     "strong_on_a_shell_title": sum(1 for f in strong if f["shell"] and not f["own_ruled_kind"]),
+                     "strong_others": [f for f in strong if not f["own_ruled_kind"]][:20]}
+    out["ranked"] = len(rest)
     out["held"] = sum(len(v) for v in plan["held"].values())
     out["held_sharing_an_exact_title_with_a_planned_record"] = _exact_title_overlap(plan, by_ctrl)
     return out
@@ -913,9 +991,10 @@ def load_inputs(kb_dir=None):
         "singleton_cns": [r.get("control_number") for r in sing_doc["courses"].values() if r.get("control_number")],
         "disc_aliases": _load(promote.ALIASES).get("aliases") or {},
         "disc_map": disc_map, "canon_map": seed.load_canonical_map(), "canon_doc": canon_doc,
-        "fl_doc": _load(zdry.FL_SPLIT), "reservations": zdry.load_id_reservations(),
+        "fl_doc": _load(zdry.FL_SPLIT),
+        "reservations": s4dry.add_reserved_ids(zdry.load_id_reservations(), rollback_reserved_ids(kb_dir)),
         "alias_ids": sorted(promote.reserved_alias_ids()),
-        "staged_ids": sorted(staged_plan_ids()), "returned_ids": sorted(rollback_reserved_ids(kb_dir)),
+        "staged_ids": sorted(staged_plan_ids()),
         "provenance": {
             "identity_file": "unified_courses_members.js generated_at " + str(M.get("generated_at")),
             "course_list": "coci_lookup_data.js _built_at " + str(L.get("_built_at")) + ", from "
