@@ -1,0 +1,17 @@
+{
+ "name": "program_requirement_records_display_2026-11-13_9d9244ee7496.applied_44925708471_santa-monica-college.json",
+ "kind": "display_applied",
+ "bucket": "cpl-receipts",
+ "object": "display/applied/program_requirement_records_display_2026-11-13_9d9244ee7496.applied_44925708471_santa-monica-college.json.gz",
+ "build": "9d9244ee7496",
+ "built": "2026-11-13",
+ "bytes": 2072,
+ "sha256": "91c2553ef7a720028b4fcde0ef3b981552262a8efd05a486943aa64b1b319c60",
+ "rows": 230,
+ "stored_at": "2026-11-21T16:41:14Z",
+ "run": "44925708471",
+ "gzip": true,
+ "repo_sha256": "6cc5e81ecd194f9103fbad95f2dc1a550b6cc740a23a89c7a5c1cf79b55ccf24",
+ "repo_bytes": 20019,
+ "repo_blob": "9af84d874c6ed0d0b7d9003d1e5d404797aebc2b"
+}
