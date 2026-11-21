@@ -1,7 +1,7 @@
 // commons_front.js — the CPL Commons front page: one page for the Commons, with the College Data Collection page
 // folded in (#3533; Sam's go, Nov 19, 2026, 2:49 AM PT, and "build the CPL Commons page now", 4:28 AM PT, relayed by
 // COBIx in #3533 comment 7006930860). Top to bottom: the header and Sam's lede, the Projected Completion Date widget
-// with its 30-day daily bars, Needs you, the eight cards in Collect / Curate / Connect, the Building line, the More
+// with its 30-day daily bars, Needs you, the nine cards in Collect / Curate / Connect, the Building line, the More
 // collection detail line and the scorecard line.
 //
 // What it reads (committed files the site already serves; it WRITES NOTHING but the fold, in this browser):
@@ -12,6 +12,9 @@
 //   kb/status/commons_data.json               statewide and live: colleges collected, the program bases, the
 //                                             course SLO and objective counts, the outline links.
 //   kb/reference/industry_credential_skills.json   harvested_on: the issuer-published skills collected per day.
+//   kb/status/local_subject_titles.json       the Subjects card's Step b: local subject titles drafted from the printed
+//                                             catalogs (kb/_build_local_subject_titles.py). Read on its own, so a
+//                                             missing file reads TBA and the rest of the page still draws.
 // A figure with no single committed source on main yet is in ASKED below, named with where it comes from, so the
 // page never invents one and a later source replaces it in one place. Every figure is read once into the model, and
 // every place on the page that shows it reads the model, so the page agrees with itself (S490).
@@ -29,8 +32,8 @@
   var DETAILS_ORDER_KEY = "cplCommons.detailsOrder.v1";
   var DETAILS_FOLD_KEY = "cplCommons.detailsFold.v1";
   var FILES = { program: "kb/status/program-requirements.json", data: "kb/status/commons_data.json",
-    skills: "kb/reference/industry_credential_skills.json" };
-  var KEYS = ["colleges", "programs", "courses-data", "courses", "exhibit", "credentials", "cr", "interconnect"];
+    skills: "kb/reference/industry_credential_skills.json", subjects: "kb/status/local_subject_titles.json" };
+  var KEYS = ["colleges", "programs", "courses-data", "subjects", "courses", "exhibit", "credentials", "cr", "interconnect"];
   var DAYS = 30;   /* the same window as the live College Collections ETA (commons_eta_clock.js, DAYS=30) */
   var REPO = "https://github.com/CPL-Initiative/cpl-project-tracker/issues/";
 
@@ -112,7 +115,7 @@
   }
 
   /* ── the model: every figure the page shows, read once ── */
-  function model(C, PR, D, K) {
+  function model(C, PR, D, K, LS) {
     var rows = {};
     ((C && C.rows) || []).concat((C && C.building) || []).forEach(function (r) { rows[r.key] = r; });
     function facts(k) { return (rows[k] && rows[k].facts) || {}; }
@@ -179,6 +182,10 @@
       held: { n: held.n, unsure: heldParts ? heldParts[1] : null, issuers: heldParts ? heldParts[2] : null, code: heldParts ? heldParts[3] : null },
       cr: { settled: cr.settled, wordings: cr.wordings, rule: cr.rule_wordings, curator: cr.curator_only, groups: cr.names_to_check },
       subjects: { settled: subj.settled, of: subj.disciplines },
+      /* Step b (S694): the local subject titles the Courses bot drafted from the printed catalogs; null reads TBA. */
+      localTitles: LS && LS.totals ? { colleges: LS.totals.colleges, named: LS.totals.named, collegesNamed: LS.totals.colleges_named,
+        codes: LS.totals.catalog_codes, oneSided: (LS.totals.catalog_only || 0) + (LS.totals.state_only || 0),
+        catalogOnly: LS.totals.catalog_only, stateOnly: LS.totals.state_only, courses: LS.totals.courses } : null,
       building: { skillsCreds: (facts("skills").with_issuer_skills != null ? facts("skills").with_issuer_skills : cred.with_issuer_skills),
         industry: cred.credentials, issuers: cred.issuers, outcomes: out.outcomes, outcomeCourses: out.courses,
         outcomeColleges: Array.isArray(out.colleges) ? out.colleges.length : out.colleges }
@@ -586,7 +593,28 @@
         links: [["Outlines blocked", "#collect/outlines-blocked"], ["Courses List", "#coci-lookup/courses"]] })
     ];
     var cardPct = pct(Cd.ready, Cd.total), exPct = pct(E.stamped, E.titles);
+    var S = M.subjects, LT = M.localTitles, sOf = !!S && S.of != null;
     var curate = [
+      /* Subjects (Sam, 2026-11-20: "don't we need a commons card for subjects to house the common subjects and local
+         subject titles we'll be establishing from catalog data?"): Steps a and b of his curation order, before the
+         M-ID (Step c, the next card). Each figure opens what it counts. */
+      card({ key: "subjects", title: "Subjects", pill: "In progress",
+        big: sOf ? fmt(S.settled) + " of " + fmt(S.of) : "TBA", rest: [" common subject codes settled"],
+        body: [p([el("strong", { text: "Step a, common subject code: " }), sOf ? a("#canonical-subj4", fmt(S.settled) + " of " + fmt(S.of) + " disciplines settled") : "TBA",
+            " in the Common Subjects Reference. Owner: a curator."]),
+          p([el("strong", { text: "Step b, local subject title: " }),
+            LT ? a("#commons/subjects", fmt(LT.named) + " titles drafted") : "TBA",
+            LT ? " at " : "", LT ? a("#commons/subjects", fmt(LT.collegesNamed) + " of " + fmt(LT.colleges) + " colleges") : "",
+            LT ? " with a printed catalog. Owner: the Courses bot drafts each title from the catalog’s subject heading; a curator settles the " : "",
+            LT ? a("#commons/subjects/disagree", fmt(LT.oneSided) + " codes only one side prints") : "",
+            LT ? "." : ""]),
+          p(["Step c, the M-ID, is the Courses and M-IDs card."])],
+        method: [p([(sOf ? fmt(S.of) + " is the number of disciplines in the Common Subjects Reference; " + fmt(S.settled) + " have a settled common subject code. " : "")
+          + (LT ? "The local titles come from the " + fmt(LT.colleges) + " printed catalogs filed so far (" + fmt(LT.courses) + " courses, " + fmt(LT.codes) + " subject codes). Where a catalog prints a subject heading, that heading is the draft title; where it prints the code alone, the title reads TBA. "
+            + "Each catalog’s codes are compared with the state course list’s codes for the same college, exactly, after trimming spaces and setting upper case: " + fmt(LT.catalogOnly) + " codes only the catalog prints and " + fmt(LT.stateOnly) + " only the state list carries. Those are the curator’s list. "
+            + "The common subject code beside a local code comes from the subject map and each discipline’s settled code, never from a TOP code."
+            : "The local subject titles file has not been read, so Step b reads TBA.")])],
+        links: [["Open the subjects list", "#commons/subjects"], ["Common Subjects Reference", "#canonical-subj4"]] }),
       card({ key: "courses", title: "Courses and M-IDs", pill: "In progress",
         big: fmt(Cd.ready) + " of " + fmt(Cd.total), rest: [" cards the automatic check scores as ready (0.85 or better)"],
         after: [meter(cardPct, fmt(Cd.ready) + " of " + fmt(Cd.total) + " ready, " + Math.round(cardPct) + " percent")],
@@ -751,8 +779,10 @@
 
   function boot(root, C, opts) {
     opts = opts || {};
-    return Promise.all([readJson(FILES.program), readJson(FILES.data), readJson(FILES.skills)]).then(function (r) {
-      var M = model(C, r[0], r[1], r[2]);
+    /* The local subject titles are their own read: a missing file reads TBA on the Subjects card, never a broken page. */
+    var titles = readJson(FILES.subjects).then(null, function () { return null; });
+    return Promise.all([readJson(FILES.program), readJson(FILES.data), readJson(FILES.skills), titles]).then(function (r) {
+      var M = model(C, r[0], r[1], r[2], r[3]);
       render(root, M, opts);
       wireHandover(M, opts);
       if (opts.focus === "needs") focusNeeds();
