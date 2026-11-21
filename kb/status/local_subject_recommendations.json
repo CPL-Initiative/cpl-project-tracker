@@ -180,19 +180,19 @@
    }
   }
  },
- "web_searches_filed": 0,
+ "web_searches_filed": 108,
  "totals": {
-  "common_high": 166,
-  "common_low": 13,
-  "common_medium": 411,
-  "common_none": 130,
+  "common_high": 175,
+  "common_low": 23,
+  "common_medium": 394,
+  "common_none": 128,
   "no_common": 720,
   "no_title": 250,
   "on_hold": 48,
-  "title_high": 109,
-  "title_low": 60,
-  "title_medium": 37,
-  "title_none": 44
+  "title_high": 119,
+  "title_low": 80,
+  "title_medium": 20,
+  "title_none": 31
  },
  "colleges": [
   {
@@ -344,8 +344,15 @@
       "title": "English as a Second Language",
       "level": "High",
       "from": "other_colleges",
-      "why": "other colleges: 2 of 2 other colleges (all agree).",
-      "also": []
+      "why": "other colleges: 2 of 2 other colleges (all agree). web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Cerritos College ESL pronunciation plus multilingual courses",
+       "searched_on": "2026-11-21",
+       "result_title": "English as a Second Language (ESL)/English for Multilingual Students (EMLS)",
+       "result_url": "https://www.cerritos.edu/esl/",
+       "where": "college site"
+      }
      }
     },
     {
@@ -464,8 +471,15 @@
       "title": "Political Science",
       "level": "High",
       "from": "course_joins",
-      "why": "course joins: 4 of 5 joined courses (most courses agree). sibling agrees.",
-      "also": []
+      "why": "course joins: 4 of 5 joined courses (most courses agree). sibling, web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Cerritos College POL California state local government courses",
+       "searched_on": "2026-11-21",
+       "result_title": "Political Science Course Descriptions",
+       "result_url": "https://www.cerritos.edu/political-science/course-descriptions.htm",
+       "where": "college site"
+      }
      }
     },
     {
@@ -529,8 +543,15 @@
       "title": "Anthropology",
       "level": "High",
       "from": "other_colleges",
-      "why": "other colleges: 8 of 8 other colleges (all agree). course joins agrees.",
-      "also": []
+      "why": "other colleges: 8 of 8 other colleges (all agree). course joins, web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Clovis Community College ANTHRO biological anthropology courses",
+       "searched_on": "2026-11-21",
+       "result_title": "anthropology aa t 25 26 ada",
+       "result_url": "https://www.cloviscollege.edu/academics/majors/assets/docs/major-sheets/2025-2026/associate-degrees-for-transfer/anthropology-aa-t-25-26-ada.pdf",
+       "where": "college site"
+      }
      }
     },
     {
@@ -547,15 +568,27 @@
      "code": "COTR",
      "title": {
       "title": "Law",
-      "level": "Medium",
+      "level": "Low",
       "from": "course_joins",
-      "why": "course joins: 1 of 1 joined courses (few or mixed).",
-      "also": []
+      "why": "course joins: 1 of 1 joined courses (few or mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "Cooperative Work Experience",
+        "from": "web_search"
+       }
+      ],
+      "search": {
+       "query": "Clovis Community College COTR cooperative work experience vocational courses",
+       "searched_on": "2026-11-21",
+       "result_title": "Academic Resources",
+       "result_url": "https://www.cloviscollege.edu/academics",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "LEGL",
       "discipline": "Law",
-      "level": "Medium",
+      "level": "Low",
       "from": "title",
       "why": "The title names the discipline Law."
      }
@@ -574,15 +607,27 @@
      "code": "DATA",
      "title": {
       "title": "Computer Science",
-      "level": "Medium",
+      "level": "Low",
       "from": "course_joins",
-      "why": "course joins: 1 of 1 joined courses (few or mixed).",
-      "also": []
+      "why": "course joins: 1 of 1 joined courses (few or mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "Data Science",
+        "from": "web_search"
+       }
+      ],
+      "search": {
+       "query": "Clovis Community College Data Science DATA \"Foundations of Data Science\" (cloviscollege.edu, scccd.edu only)",
+       "searched_on": "2026-11-21",
+       "result_title": "spring 2026",
+       "result_url": "https://www.cloviscollege.edu/_uploaded-files/_documents/class-schedule/2026-spring-class-schedule.pdf",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "COMP",
       "discipline": "Computer Science",
-      "level": "Medium",
+      "level": "Low",
       "from": "title",
       "why": "The title names the discipline Computer Science."
      }
@@ -599,6 +644,20 @@
     },
     {
      "code": "FSAP",
+     "title": {
+      "title": "Food Safety",
+      "level": "Low",
+      "from": "web_search",
+      "why": "A web search found it on the college's own site; no other source names a title.",
+      "also": [],
+      "search": {
+       "query": "Clovis Community College FSAP food safety courses",
+       "searched_on": "2026-11-21",
+       "result_title": "Food Safety",
+       "result_url": "https://www.cloviscollege.edu/academics/career-and-technical-education/food-safety.html",
+       "where": "college site"
+      }
+     },
      "common": {
       "code": "AGRI",
       "discipline": "Agriculture",
@@ -691,15 +750,27 @@
      "code": "MECH",
      "title": {
       "title": "Law",
-      "level": "Medium",
+      "level": "Low",
       "from": "course_joins",
-      "why": "course joins: 1 of 1 joined courses (few or mixed).",
-      "also": []
+      "why": "course joins: 1 of 1 joined courses (few or mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "Mechatronics/Industrial Automation",
+        "from": "web_search"
+       }
+      ],
+      "search": {
+       "query": "Clovis Community College MECH Mechatronics Industrial Automation courses",
+       "searched_on": "2026-11-21",
+       "result_title": "Mechatronics/Industrial Automation",
+       "result_url": "https://cloviscollege.edu/academics/majors/2021-2022-majors/mechatronics-industrial-automation-as.html",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "LEGL",
       "discipline": "Law",
-      "level": "Medium",
+      "level": "Low",
       "from": "title",
       "why": "The title names the discipline Law."
      }
@@ -740,8 +811,15 @@
       "title": "Political Science",
       "level": "High",
       "from": "other_colleges",
-      "why": "other colleges: 11 of 11 other colleges (all agree). course joins agrees.",
-      "also": []
+      "why": "other colleges: 11 of 11 other colleges (all agree). course joins, web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Clovis Community College POLS American Institutions courses",
+       "searched_on": "2026-11-21",
+       "result_title": "Why study Political Science at CCC?",
+       "result_url": "https://cloviscollege.edu/academics/guided-pathways/social-behavioral-sciences/political-science.html",
+       "where": "college site"
+      }
      }
     },
     {
@@ -750,12 +828,33 @@
       "title": "Psychology",
       "level": "High",
       "from": "course_joins",
-      "why": "course joins: 6 of 7 joined courses (most courses agree). other colleges agrees.",
-      "also": []
+      "why": "course joins: 6 of 7 joined courses (most courses agree). other colleges, web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Clovis Community College Psychology PSYC courses \"Abnormal Psychology\" (cloviscollege.edu, scccd.edu only)",
+       "searched_on": "2026-11-21",
+       "result_title": "Psychology - Clovis Community College",
+       "result_url": "https://www.cloviscollege.edu/academics/guided-pathways/social-behavioral-sciences/psychology.html",
+       "where": "college site"
+      }
      }
     },
     {
      "code": "REHT",
+     "title": {
+      "title": "Rehabilitation Aide",
+      "level": "Low",
+      "from": "web_search",
+      "why": "A web search found it on the college's own site; no other source names a title.",
+      "also": [],
+      "search": {
+       "query": "Clovis Community College REHT rehabilitation aide externship courses",
+       "searched_on": "2026-11-21",
+       "result_title": "Rehabilitation Aide",
+       "result_url": "https://cloviscollege.edu/academics/career-and-technical-education/rehabilitation-aide.html",
+       "where": "college site"
+      }
+     },
      "common": {
       "code": "HLTH",
       "discipline": "Health",
@@ -780,8 +879,15 @@
       "title": "Sociology",
       "level": "High",
       "from": "other_colleges",
-      "why": "other colleges: 11 of 11 other colleges (all agree). course joins agrees.",
-      "also": []
+      "why": "other colleges: 11 of 11 other colleges (all agree). course joins, web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Clovis Community College SOC introduction to sociology courses",
+       "searched_on": "2026-11-21",
+       "result_title": "American Sociological Association",
+       "result_url": "https://cloviscollege.edu/academics/guided-pathways/social-behavioral-sciences/sociology.html",
+       "where": "college site"
+      }
      }
     },
     {
@@ -901,7 +1007,14 @@
         "title": "Business Information Worker I",
         "from": "program_titles"
        }
-      ]
+      ],
+      "search": {
+       "query": "East Los Angeles College CAOT computer keyboarding courses",
+       "searched_on": "2026-11-21",
+       "result_title": "Computer Applications and Office Technologies (CAOT)",
+       "result_url": "https://elac.edu/academics/aos/CAOT",
+       "where": "college site"
+      }
      }
     },
     {
@@ -960,8 +1073,15 @@
       "title": "English as a Second Language",
       "level": "High",
       "from": "district",
-      "why": "district: 2 of 2 colleges in the district (all agree). course joins agrees.",
-      "also": []
+      "why": "district: 2 of 2 colleges in the district (all agree). course joins, web search agrees.",
+      "also": [],
+      "search": {
+       "query": "East Los Angeles College English as a Second Language E.S.L. credit courses (elac.edu only)",
+       "searched_on": "2026-11-21",
+       "result_title": "English As a Second Language (E.S.L.)",
+       "result_url": "https://www.elac.edu/academics/pathways/lc/english-dept/academic-esl",
+       "where": "college site"
+      }
      }
     },
     {
@@ -1020,8 +1140,15 @@
       "title": "English",
       "level": "High",
       "from": "other_colleges",
-      "why": "other colleges: 6 of 6 other colleges (all agree). course joins, district agrees.",
-      "also": []
+      "why": "other colleges: 6 of 6 other colleges (all agree). course joins, district, web search agrees.",
+      "also": [],
+      "search": {
+       "query": "East Los Angeles College English ENGL C1000 \"Academic Reading and Writing\" (elac.edu only)",
+       "searched_on": "2026-11-21",
+       "result_title": "English",
+       "result_url": "https://www.elac.edu/academics/pathways/lc/english-dept",
+       "where": "college site"
+      }
      }
     },
     {
@@ -1150,8 +1277,15 @@
       "title": "Kinesiology Athletics",
       "level": "High",
       "from": "course_joins",
-      "why": "course joins: 16 of 19 joined courses (most courses agree). district agrees.",
-      "also": []
+      "why": "course joins: 16 of 19 joined courses (most courses agree). district, web search agrees.",
+      "also": [],
+      "search": {
+       "query": "East Los Angeles College KIN ATH Intercollegiate Athletics courses",
+       "searched_on": "2026-11-21",
+       "result_title": "KINESIOLOGY ATHLETICS",
+       "result_url": "https://elac.edu/academics/aos/athletics",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "KINE",
@@ -1287,8 +1421,15 @@
       "title": "Political Science",
       "level": "High",
       "from": "other_colleges",
-      "why": "other colleges: 5 of 5 other colleges (all agree). course joins, district agrees.",
-      "also": []
+      "why": "other colleges: 5 of 5 other colleges (all agree). course joins, district, web search agrees.",
+      "also": [],
+      "search": {
+       "query": "East Los Angeles College Political Science POLS C1000 \"American Government and Politics\" (elac.edu only)",
+       "searched_on": "2026-11-21",
+       "result_title": "Common Course Numbering",
+       "result_url": "https://www.elac.edu/academics/common-course-numbering",
+       "where": "college site"
+      }
      }
     },
     {
@@ -1297,8 +1438,15 @@
       "title": "Psychology",
       "level": "High",
       "from": "other_colleges",
-      "why": "other colleges: 5 of 5 other colleges (all agree). course joins, district, sibling agrees.",
-      "also": []
+      "why": "other colleges: 5 of 5 other colleges (all agree). course joins, district, sibling, web search agrees.",
+      "also": [],
+      "search": {
+       "query": "East Los Angeles College elac.edu psychology department \"PSYC\" \"Introduction to Psychology\"",
+       "searched_on": "2026-11-21",
+       "result_title": "Psychology Department",
+       "result_url": "https://elac.edu/academics/aos/psychology",
+       "where": "college site"
+      }
      }
     },
     {
@@ -1343,7 +1491,14 @@
         "title": "Mathematics",
         "from": "other_colleges"
        }
-      ]
+      ],
+      "search": {
+       "query": "East Los Angeles College elac.edu statistics \"STAT\" \"Introduction to Statistics\" mathematics department",
+       "searched_on": "2026-11-21",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      }
     },
     {
@@ -1423,6 +1578,20 @@
     },
     {
      "code": "AS",
+     "title": {
+      "title": "Academic Strategies",
+      "level": "Low",
+      "from": "web_search",
+      "why": "A web search found it on the college's own site; no other source names a title.",
+      "also": [],
+      "search": {
+       "query": "El Camino College \"AS 1\" Individualized Academic Strategies academic strategies courses",
+       "searched_on": "2026-11-21",
+       "result_title": "FA14 Completed ACAD STR Alignment Grid",
+       "result_url": "https://www.elcamino.edu/academics/slo/docs/alignment_grids_by_division/huma/FA14_Completed_ACAD-STR_Alignment-Grid_2015-0211_withCEC-Courses.pdf",
+       "where": "college site"
+      }
+     },
      "common": {
       "code": "AGRI",
       "discipline": "Agriculture",
@@ -1467,15 +1636,22 @@
      "code": "BTEC",
      "title": {
       "title": "Biotechnology",
-      "level": "Medium",
+      "level": "High",
       "from": "other_colleges",
-      "why": "other colleges: 1 of 1 other colleges (one college).",
-      "also": []
+      "why": "other colleges: 1 of 1 other colleges (one college). web search agrees.",
+      "also": [],
+      "search": {
+       "query": "El Camino College BTEC Techniques of Biotechnology courses",
+       "searched_on": "2026-11-21",
+       "result_title": "www.elcamino.edu",
+       "result_url": "https://www.elcamino.edu/academics/areas-of-study/biotechnology.php",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "BIOT",
       "discipline": "Biotechnology",
-      "level": "Medium",
+      "level": "High",
       "from": "title",
       "why": "The title names the discipline Biotechnology."
      }
@@ -1506,13 +1682,37 @@
      }
     },
     {
+     "code": "CCE",
+     "title": {
+      "title": "Cooperative Career Education",
+      "level": "Low",
+      "from": "web_search",
+      "why": "A web search found it on the college's own site; no other source names a title.",
+      "also": [],
+      "search": {
+       "query": "El Camino College \"Cooperative Career Education\" CCE (elcamino.edu only)",
+       "searched_on": "2026-11-21",
+       "result_title": "El Camino College - Electronics & Computer Hardware Courses Offered",
+       "result_url": "https://www3.elcamino.edu/academics/indtech/electronics/courses.asp",
+       "where": "college site"
+      }
+     }
+    },
+    {
      "code": "CH",
      "title": {
       "title": "Contemporary Health",
-      "level": "Low",
+      "level": "Medium",
       "from": "sibling",
-      "why": "sibling: code C H at the same college (same letters).",
-      "also": []
+      "why": "sibling: code C H at the same college (same letters). web search agrees.",
+      "also": [],
+      "search": {
+       "query": "El Camino College CH Contemporary Women's Health courses",
+       "searched_on": "2026-11-21",
+       "result_title": "CH 5 COR Effective FALL 2020",
+       "result_url": "https://www.elcamino.edu/academic-senate/college-curriculum-committee/course-outlines-of-record/heal/docs/CH 5_COR_Effective FALL 2020.pdf",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "HLTH",
@@ -1561,10 +1761,17 @@
      "code": "E DEV",
      "title": {
       "title": "Educational Development",
-      "level": "Low",
+      "level": "Medium",
       "from": "sibling",
-      "why": "sibling: code EDEV at the same college (same letters).",
-      "also": []
+      "why": "sibling: code EDEV at the same college (same letters). web search agrees.",
+      "also": [],
+      "search": {
+       "query": "El Camino College E DEV hearing impaired deaf educational development courses",
+       "searched_on": "2026-11-21",
+       "result_title": "Educational Development Classes",
+       "result_url": "https://www.elcamino.edu/support/resources/src/service-areas/educational-development-classes.php",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "IDST",
@@ -1670,6 +1877,20 @@
     },
     {
      "code": "IT",
+     "title": {
+      "title": "Industry & Technology",
+      "level": "Low",
+      "from": "web_search",
+      "why": "A web search found a department or program label on the college's own site; no other source names a title.",
+      "also": [],
+      "search": {
+       "query": "El Camino College IT exploring careers industry technology courses",
+       "searched_on": "2026-11-21",
+       "result_title": "www.elcamino.edu",
+       "result_url": "https://www.elcamino.edu/support/careers/ITech%20Exploratory%20Courses.pdf",
+       "where": "college site"
+      }
+     },
      "common": {
       "code": "CSIS",
       "discipline": "Artificial Intelligence",
@@ -1854,15 +2075,27 @@
      "code": "THTRE",
      "title": {
       "title": "Communication Studies",
-      "level": "Medium",
+      "level": "Low",
       "from": "course_joins",
-      "why": "course joins: 1 of 2 joined courses (few or mixed).",
-      "also": []
+      "why": "course joins: 1 of 2 joined courses (few or mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "Theatre",
+        "from": "web_search"
+       }
+      ],
+      "search": {
+       "query": "El Camino College THTRE Advanced Acting courses",
+       "searched_on": "2026-11-21",
+       "result_title": "www.elcamino.edu",
+       "result_url": "https://www.elcamino.edu/academics/divisions/fine-arts/theatre.php",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "COMM",
       "discipline": "Communication Studies",
-      "level": "Medium",
+      "level": "Low",
       "from": "title",
       "why": "The title names the discipline Communication Studies."
      }
@@ -1930,6 +2163,23 @@
       "level": "Medium",
       "from": "own_courses",
       "why": "6 of 8 of its courses with an M-ID sit under DRAF."
+     }
+    },
+    {
+     "code": "CART",
+     "title": {
+      "title": "Creative Arts",
+      "level": "Low",
+      "from": "web_search",
+      "why": "A web search found it on the college's own site; no other source names a title.",
+      "also": [],
+      "search": {
+       "query": "Long Beach City College CART \"The Arts and Modern Man\" courses",
+       "searched_on": "2026-11-21",
+       "result_title": "Creative Arts (CART)",
+       "result_url": "https://lbcc-public.courseleaf.com/course-descriptions/cart",
+       "where": "catalog"
+      }
      }
     },
     {
@@ -2046,15 +2296,22 @@
      "code": "DRAFT",
      "title": {
       "title": "Drafting",
-      "level": "Medium",
+      "level": "High",
       "from": "other_colleges",
-      "why": "other colleges: 1 of 1 other colleges (one college).",
-      "also": []
+      "why": "other colleges: 1 of 1 other colleges (one college). web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Long Beach City College Drafting (DRAFT) courses \"Intermediate CATIA\" DRAFT 221 (lbcc.edu, lbcc-public.courseleaf.com only)",
+       "searched_on": "2026-11-21",
+       "result_title": "Lbcc",
+       "result_url": "https://apps.lbcc.edu/schedule/mobile/scheduledetail.cfm?campus=&descr=Drafting+and+Mechanical+Design+(DRAFT)&semester=FALL&straction=&subject=DRAFT&term=1585",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "DRAF",
       "discipline": "Drafting/CADD",
-      "level": "Medium",
+      "level": "High",
       "from": "title",
       "why": "The title names the discipline Drafting/CADD."
      }
@@ -2133,10 +2390,17 @@
      "code": "HS",
      "title": {
       "title": "Human Services",
-      "level": "Medium",
+      "level": "High",
       "from": "other_colleges",
-      "why": "other colleges: 1 of 1 other colleges (one college).",
-      "also": []
+      "why": "other colleges: 1 of 1 other colleges (one college). web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Long Beach City College HS human services work experience courses",
+       "searched_on": "2026-11-21",
+       "result_title": "13 14 human services curguide",
+       "result_url": "https://lbcc.edu/sites/main/files/file-attachments/13-14-human-services-curguide.pdf",
+       "where": "college site"
+      }
      }
     },
     {
@@ -2261,6 +2525,20 @@
     },
     {
      "code": "SHOWB",
+     "title": {
+      "title": "Show Business",
+      "level": "Low",
+      "from": "web_search",
+      "why": "A web search found it on the college's own site; no other source names a title.",
+      "also": [],
+      "search": {
+       "query": "Long Beach City College SHOWB Show Business Careers courses",
+       "searched_on": "2026-11-21",
+       "result_title": "Show Business (SHOWB)",
+       "result_url": "https://lbcc-public.courseleaf.com/course-descriptions/showb/",
+       "where": "catalog"
+      }
+     },
      "common": {
       "code": "THTR",
       "discipline": "Drama/Theater Arts",
@@ -2737,7 +3015,14 @@
       "level": "Medium",
       "from": "course_joins",
       "why": "course joins: 1 of 1 joined courses (few or mixed).",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "Los Angeles Harbor College \"American Sign Language I\" A S L 001 (lahc.edu only)",
+       "searched_on": "2026-11-21",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      }
     },
     {
@@ -2854,10 +3139,22 @@
      "code": "E.S.L.",
      "title": {
       "title": "English as a Second Language",
-      "level": "High",
+      "level": "Low",
       "from": "district",
-      "why": "district: 2 of 2 colleges in the district (all agree). course joins agrees.",
-      "also": []
+      "why": "district: 2 of 2 colleges in the district (all agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "ESL",
+        "from": "web_search"
+       }
+      ],
+      "search": {
+       "query": "Los Angeles Harbor College lahc.edu \"E.S.L.\" English as a Second Language department courses",
+       "searched_on": "2026-11-21",
+       "result_title": "Students and Teacher in Classroom",
+       "result_url": "https://lahc.edu/academics/aos/esl",
+       "where": "college site"
+      }
      }
     },
     {
@@ -2866,8 +3163,15 @@
       "title": "Economics",
       "level": "High",
       "from": "other_colleges",
-      "why": "other colleges: 6 of 6 other colleges (all agree). course joins, district agrees.",
-      "also": []
+      "why": "other colleges: 6 of 6 other colleges (all agree). course joins, district, web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Los Angeles Harbor College ECON principles of microeconomics courses",
+       "searched_on": "2026-11-21",
+       "result_title": "econ001assessmentform Sp15 completed",
+       "result_url": "https://lahc.edu/sites/lahc.edu/files/2022-08/econ001assessmentform_Sp15_completed.pdf",
+       "where": "college site"
+      }
      }
     },
     {
@@ -2907,7 +3211,14 @@
       "level": "High",
       "from": "other_colleges",
       "why": "other colleges: 2 of 2 other colleges (all agree). course joins agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "Los Angeles Harbor College English as a Second Language ESL courses (lahc.edu only)",
+       "searched_on": "2026-11-21",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      }
     },
     {
@@ -3041,8 +3352,19 @@
        {
         "title": "Associate Degree Nursing (Adn)",
         "from": "course_joins"
+       },
+       {
+        "title": "Cna/Chha",
+        "from": "web_search"
        }
-      ]
+      ],
+      "search": {
+       "query": "Los Angeles Harbor College NRS HCA nurse assistant training home health aide courses",
+       "searched_on": "2026-11-21",
+       "result_title": "Nursing Students Checking Heartbeat",
+       "result_url": "https://www.lahc.edu/academics/aos/cna-hha",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "HLTH",
@@ -3195,7 +3517,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 7 of 7 colleges in the district (all agree). course joins agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "Los Angeles Mission College lamission.edu \"ANATOMY 001\" life sciences anatomy physiology",
+       "searched_on": "2026-11-21",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "BIOL",
@@ -3687,8 +4016,19 @@
        {
         "title": "Associate Degree Nursing (Adn)",
         "from": "course_joins"
+       },
+       {
+        "title": "Cna-Hha",
+        "from": "web_search"
        }
-      ]
+      ],
+      "search": {
+       "query": "Los Angeles Mission College NRS HCA nurse assistant home health aide courses",
+       "searched_on": "2026-11-21",
+       "result_title": "CNA-HHA Courses/Certificate",
+       "result_url": "https://lamission.edu:443/academics/aos/nursing-assitant-hha",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "HLTH",
@@ -3729,10 +4069,17 @@
      "code": "PALEGAL",
      "title": {
       "title": "Paralegal",
-      "level": "Medium",
+      "level": "High",
       "from": "district",
-      "why": "district: 2 of 3 colleges in the district (mixed).",
-      "also": []
+      "why": "district: 2 of 3 colleges in the district (mixed). web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Los Angeles Mission College PALEGAL Translation and Interpreting courses",
+       "searched_on": "2026-11-21",
+       "result_title": "Paralegal Studies",
+       "result_url": "https://lamission.edu/Law/Paralegal-Studies.aspx",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "LEGL",
@@ -4012,8 +4359,15 @@
       "title": "Chemistry",
       "level": "High",
       "from": "other_colleges",
-      "why": "other colleges: 6 of 6 other colleges (all agree). course joins, district agrees.",
-      "also": []
+      "why": "other colleges: 6 of 6 other colleges (all agree). course joins, district, web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Los Angeles Pierce College CHEM general chemistry courses",
+       "searched_on": "2026-11-21",
+       "result_title": "Chemistry Course Offerings",
+       "result_url": "https://lapc.edu/academics/aos/chemistry",
+       "where": "college site"
+      }
      }
     },
     {
@@ -4274,7 +4628,14 @@
         "title": "English",
         "from": "course_joins"
        }
-      ]
+      ],
+      "search": {
+       "query": "Pierce College Learning Skills LRNSKIL \"English Fundamentals\" (lapc.edu, piercecollege.edu only)",
+       "searched_on": "2026-11-21",
+       "result_title": "$10 Visit us on the web Visit us on the web www.piercecollege.edu LO S A N G E",
+       "result_url": "https://www.lapc.edu/sites/lapc.edu/files/2022-08/LAPC_2021-2022_General_Catalog.pdf",
+       "where": "catalog"
+      }
      }
     },
     {
@@ -4429,7 +4790,14 @@
         "title": "Acting",
         "from": "program_titles"
        }
-      ]
+      ],
+      "search": {
+       "query": "Pierce College Theater courses \"Introduction to the Theater\" THEATER 100 (lapc.edu, piercecollege.edu only)",
+       "searched_on": "2026-11-21",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "THTR",
@@ -4465,6 +4833,30 @@
      }
     },
     {
+     "code": "ADM",
+     "title": {
+      "title": "Administration of Justice",
+      "level": "Low",
+      "from": "web_search",
+      "why": "A web search found it on the college's own site; no other source names a title.",
+      "also": [],
+      "search": {
+       "query": "Los Angeles Southwest College ADM Field Work administration of justice courses",
+       "searched_on": "2026-11-21",
+       "result_title": "Administration of Justice (AA)",
+       "result_url": "https://lasc.edu/academics/aos/administration-justice",
+       "where": "college site"
+      }
+     },
+     "common": {
+      "code": "CRIM",
+      "discipline": "Administration of Justice",
+      "level": "Low",
+      "from": "title",
+      "why": "The title names the discipline Administration of Justice."
+     }
+    },
+    {
      "code": "AFRO AM",
      "title": {
       "title": "African American Studies",
@@ -4487,8 +4879,15 @@
       "title": "Allied Health",
       "level": "High",
       "from": "district",
-      "why": "district: 1 of 1 colleges in the district (one college).",
-      "also": []
+      "why": "district: 1 of 1 colleges in the district (one college). web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Los Angeles Southwest College ALD HTH basic life support healthcare provider courses",
+       "searched_on": "2026-11-21",
+       "result_title": "Allied Health – Credit - CNA/HHA",
+       "result_url": "https://www.lasc.edu/academics/aos/nursing/cna-hha-careers",
+       "where": "college site"
+      }
      }
     },
     {
@@ -4505,15 +4904,22 @@
      "code": "ANTRHO",
      "title": {
       "title": "Anthropology",
-      "level": "Medium",
+      "level": "High",
       "from": "course_joins",
-      "why": "course joins: 1 of 1 joined courses (few or mixed).",
-      "also": []
+      "why": "course joins: 1 of 1 joined courses (few or mixed). web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Los Angeles Southwest College ANTRHO Human Language and Communication courses",
+       "searched_on": "2026-11-21",
+       "result_title": "Anthropology (AA)",
+       "result_url": "https://lasc.edu/academics/aos/anthropology",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "ANTH",
       "discipline": "Anthropology",
-      "level": "Medium",
+      "level": "High",
       "from": "title",
       "why": "The title names the discipline Anthropology."
      }
@@ -4552,15 +4958,22 @@
      "code": "CO SCI",
      "title": {
       "title": "Computer Science",
-      "level": "Medium",
+      "level": "High",
       "from": "course_joins",
-      "why": "course joins: 1 of 3 joined courses (few or mixed).",
-      "also": []
+      "why": "course joins: 1 of 3 joined courses (few or mixed). web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Los Angeles Southwest College lasc.edu \"CO SCI\" computer science information technology courses",
+       "searched_on": "2026-11-21",
+       "result_title": "Liberal Arts: Computer Science (AA)",
+       "result_url": "https://www.lasc.edu/academics/aos/la-cs",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "COMP",
       "discipline": "Computer Science",
-      "level": "Medium",
+      "level": "High",
       "from": "title",
       "why": "The title names the discipline Computer Science."
      }
@@ -4602,7 +5015,14 @@
       "level": "Medium",
       "from": "course_joins",
       "why": "course joins: 2 of 2 joined courses (few or mixed).",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "Los Angeles Southwest College lasc.edu \"Work Experience - General\" cooperative education directed study",
+       "searched_on": "2026-11-21",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "LEGL",
@@ -4618,8 +5038,15 @@
       "title": "English as a Second Language",
       "level": "High",
       "from": "district",
-      "why": "district: 2 of 2 colleges in the district (all agree). course joins agrees.",
-      "also": []
+      "why": "district: 2 of 2 colleges in the district (all agree). course joins, web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Los Angeles Southwest College E.S.L. Advanced ESL Composition courses",
+       "searched_on": "2026-11-21",
+       "result_title": "english as a second language 052",
+       "result_url": "https://lasc.edu/sites/lasc.edu/files/2022-07/english-as-a-second-language-052.pdf",
+       "where": "college site"
+      }
      }
     },
     {
@@ -4654,7 +5081,14 @@
         "title": "Computer Technology",
         "from": "course_joins"
        }
-      ]
+      ],
+      "search": {
+       "query": "Los Angeles Southwest College ELECTRN computer servicing courses",
+       "searched_on": "2026-11-21",
+       "result_title": "Electronics Technology (AS)",
+       "result_url": "https://lasc.edu/academics/aos/electronics-technology",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "ELET",
@@ -4675,8 +5109,19 @@
        {
         "title": "Law",
         "from": "course_joins"
+       },
+       {
+        "title": "Engineering",
+        "from": "web_search"
        }
-      ]
+      ],
+      "search": {
+       "query": "Los Angeles Southwest College Engineering General ENG GEN \"Electrical Circuits\" (lasc.edu only)",
+       "searched_on": "2026-11-21",
+       "result_title": "Engineering (Skill Certificate)",
+       "result_url": "https://www.lasc.edu/programs/divisions/Math-Science-Health-Kinesiology-Nursing/Science-Health-Kinesiology/engineering-sc",
+       "where": "college site"
+      }
      }
     },
     {
@@ -4736,7 +5181,14 @@
       "level": "Medium",
       "from": "course_joins",
       "why": "course joins: 8 of 8 joined courses (most courses agree).",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "Los Angeles Southwest College Fire Technology \"Fire Protection Organization\" (lasc.edu only)",
+       "searched_on": "2026-11-21",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "FIRE",
@@ -4820,15 +5272,22 @@
      "code": "MATHEMATICS",
      "title": {
       "title": "Mathematics",
-      "level": "Medium",
+      "level": "High",
       "from": "course_joins",
-      "why": "course joins: 5 of 5 joined courses (most courses agree).",
-      "also": []
+      "why": "course joins: 5 of 5 joined courses (most courses agree). web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Los Angeles Southwest College MATHEMATICS Statistics Pathway courses",
+       "searched_on": "2026-11-21",
+       "result_title": "Mathematics (AA)",
+       "result_url": "https://lasc.edu/academics/aos/math-aa",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "MATH",
       "discipline": "Mathematics",
-      "level": "Medium",
+      "level": "High",
       "from": "title",
       "why": "The title names the discipline Mathematics."
      }
@@ -4864,8 +5323,19 @@
        {
         "title": "Education",
         "from": "course_joins"
+       },
+       {
+        "title": "Allied Health - Cna/Hha",
+        "from": "web_search"
        }
-      ]
+      ],
+      "search": {
+       "query": "Los Angeles Southwest College NRS HCA certified nurse assistant home health aide courses",
+       "searched_on": "2026-11-21",
+       "result_title": "Allied Health – Credit - CNA/HHA",
+       "result_url": "https://www.lasc.edu/academics/aos/nursing/cna-hha-careers",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "HLTH",
@@ -4892,7 +5362,14 @@
       "level": "Medium",
       "from": "sibling",
       "why": "sibling: code OCEANO at the same college (one letter apart).",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "Los Angeles Southwest College lasc.edu oceanography \"OCEANO\" natural sciences",
+       "searched_on": "2026-11-21",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "PHSC",
@@ -4909,7 +5386,14 @@
       "level": "Medium",
       "from": "course_joins",
       "why": "course joins: 1 of 1 joined courses (few or mixed).",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "Los Angeles Southwest College Personal Development PERSDEV \"Introduction to College\" (lasc.edu only)",
+       "searched_on": "2026-11-21",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "COUN",
@@ -4926,7 +5410,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 6 of 6 colleges in the district (all agree). course joins, other colleges agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "Los Angeles Southwest College Photography PHOTO \"Beginning Photography\" (lasc.edu only)",
+       "searched_on": "2026-11-21",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      }
     },
     {
@@ -4966,7 +5457,14 @@
       "level": "Medium",
       "from": "sibling",
       "why": "sibling: code POLS at the same college (one letter apart).",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "Los Angeles Southwest College lasc.edu political science \"POL SCI\" courses area of study",
+       "searched_on": "2026-11-21",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      }
     },
     {
@@ -4983,15 +5481,22 @@
      "code": "POLI SCI",
      "title": {
       "title": "Political Science",
-      "level": "Medium",
+      "level": "High",
       "from": "course_joins",
-      "why": "course joins: 1 of 1 joined courses (few or mixed).",
-      "also": []
+      "why": "course joins: 1 of 1 joined courses (few or mixed). web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Los Angeles Southwest College Political Science POL SCI \"Introduction to Political Science\" (lasc.edu only)",
+       "searched_on": "2026-11-21",
+       "result_title": "Political Science",
+       "result_url": "https://www.lasc.edu/academics/aos/political-science",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "POLS",
       "discipline": "Political Science",
-      "level": "Medium",
+      "level": "High",
       "from": "title",
       "why": "The title names the discipline Political Science."
      }
@@ -5045,15 +5550,22 @@
      "code": "ADM",
      "title": {
       "title": "Administration of Justice",
-      "level": "Medium",
+      "level": "High",
       "from": "course_joins",
-      "why": "course joins: 4 of 6 joined courses (most courses agree).",
-      "also": []
+      "why": "course joins: 4 of 6 joined courses (most courses agree). web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Los Angeles Trade-Technical College Administration of Justice ADM JUS \"Legal Aspects of Evidence\" (lattc.edu only)",
+       "searched_on": "2026-11-21",
+       "result_title": "Your Future, Our Mission EDUCATE. EMPOWER. ELEVATE. Discover programs and",
+       "result_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf",
+       "where": "catalog"
+      }
      },
      "common": {
       "code": "CRIM",
       "discipline": "Administration of Justice",
-      "level": "Medium",
+      "level": "High",
       "from": "title",
       "why": "The title names the discipline Administration of Justice."
      }
@@ -5239,15 +5751,22 @@
      "code": "CLN",
      "title": {
       "title": "Culinary Arts",
-      "level": "Medium",
+      "level": "High",
       "from": "course_joins",
-      "why": "course joins: 2 of 3 joined courses (most courses agree).",
-      "also": []
+      "why": "course joins: 2 of 3 joined courses (most courses agree). web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Los Angeles Trade-Technical College CLN culinary arts orientation courses",
+       "searched_on": "2026-11-21",
+       "result_title": "www.lattc.edu",
+       "result_url": "https://www.lattc.edu/sites/lattc.edu/files/2023-02/Program%20Info%20Culinary%20Arts.pdf",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "CULN",
       "discipline": "Culinary Arts/Food Technology",
-      "level": "Medium",
+      "level": "High",
       "from": "title",
       "why": "The title names the discipline Culinary Arts/Food Technology."
      }
@@ -5300,15 +5819,27 @@
      "code": "COOP",
      "title": {
       "title": "Art",
-      "level": "Medium",
+      "level": "Low",
       "from": "course_joins",
-      "why": "course joins: 3 of 3 joined courses (most courses agree).",
-      "also": []
+      "why": "course joins: 3 of 3 joined courses (most courses agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "Cooperative Education",
+        "from": "web_search"
+       }
+      ],
+      "search": {
+       "query": "Los Angeles Trade-Technical College COOP work experience general cooperative education courses",
+       "searched_on": "2026-11-21",
+       "result_title": "Internships/Cood Ed FAQs",
+       "result_url": "https://lattc.edu/academics/internships/faqs",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "ARTS",
       "discipline": "Art",
-      "level": "Medium",
+      "level": "Low",
       "from": "title",
       "why": "The title names the discipline Art."
      }
@@ -5428,7 +5959,14 @@
       "level": "High",
       "from": "other_colleges",
       "why": "other colleges: 4 of 4 other colleges (all agree). course joins, district agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "Los Angeles Trade-Technical College lattc.edu education \"Introduction to Teaching\" \"Methods and Materials of Tutoring\"",
+       "searched_on": "2026-11-21",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      }
     },
     {
@@ -5497,7 +6035,14 @@
         "title": "English",
         "from": "sibling"
        }
-      ]
+      ],
+      "search": {
+       "query": "Los Angeles Trade-Technical College Engineering General ENG GEN \"Statics\" (lattc.edu only)",
+       "searched_on": "2026-11-21",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      }
     },
     {
@@ -5600,8 +6145,15 @@
       "title": "Journalism",
       "level": "High",
       "from": "district",
-      "why": "district: 6 of 6 colleges in the district (all agree). course joins agrees.",
-      "also": []
+      "why": "district: 6 of 6 colleges in the district (all agree). course joins, web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Los Angeles Trade-Technical College Journalism JOURNAL 101 \"Collecting and Writing News\" (lattc.edu only)",
+       "searched_on": "2026-11-21",
+       "result_title": "1 Los AngeLes TrAde-TechnicAL coLLege 2007-2008 generAL cATALog",
+       "result_url": "https://www.lattc.edu/sites/lattc.edu/files/2022-07/collage-catalog-2007-2008.pdf",
+       "where": "catalog"
+      }
      },
      "common": {
       "code": "JOUR",
@@ -5630,6 +6182,20 @@
     },
     {
      "code": "LABR",
+     "title": {
+      "title": "Labor Studies",
+      "level": "Low",
+      "from": "web_search",
+      "why": "A web search found it on the college's own site; no other source names a title.",
+      "also": [],
+      "search": {
+       "query": "Los Angeles Trade-Technical College LABR labor studies courses",
+       "searched_on": "2026-11-21",
+       "result_title": "Labor Studies",
+       "result_url": "https://www.lattc.edu/academics/aos/labor-studies",
+       "where": "college site"
+      }
+     },
      "common": {
       "code": "LABR",
       "discipline": "Industrial Relations",
@@ -5654,8 +6220,15 @@
       "title": "Library Science",
       "level": "High",
       "from": "district",
-      "why": "district: 7 of 7 colleges in the district (all agree). course joins agrees.",
-      "also": []
+      "why": "district: 7 of 7 colleges in the district (all agree). course joins, web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Los Angeles Trade-Technical College Library Science LIB SCI 101 \"College Research Skills\" (lattc.edu only)",
+       "searched_on": "2026-11-21",
+       "result_title": "Your Future, Our Mission EDUCATE. EMPOWER. ELEVATE. Discover programs and",
+       "result_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf",
+       "where": "catalog"
+      }
      },
      "common": {
       "code": "LIBR",
@@ -5815,6 +6388,30 @@
      }
     },
     {
+     "code": "PLUMGNG",
+     "title": {
+      "title": "Plumbing",
+      "level": "Low",
+      "from": "web_search",
+      "why": "A web search found it on the college's own site; no other source names a title.",
+      "also": [],
+      "search": {
+       "query": "Los Angeles Trade-Technical College PLUMGNG Working Drawing plumbing courses",
+       "searched_on": "2026-11-21",
+       "result_title": "www.lattc.edu",
+       "result_url": "https://www.lattc.edu/sites/lattc.edu/files/2022-08/Plumbing.pdf",
+       "where": "college site"
+      }
+     },
+     "common": {
+      "code": "PLMB",
+      "discipline": "Plumbing",
+      "level": "Low",
+      "from": "title",
+      "why": "The title names the discipline Plumbing."
+     }
+    },
+    {
      "code": "POL SCI",
      "common": {
       "code": "POLS",
@@ -5860,15 +6457,27 @@
      "code": "PUB",
      "title": {
       "title": "Journalism",
-      "level": "Medium",
+      "level": "Low",
       "from": "course_joins",
-      "why": "course joins: 1 of 2 joined courses (few or mixed).",
-      "also": []
+      "why": "course joins: 1 of 2 joined courses (few or mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "Marketing and Public Relations",
+        "from": "web_search"
+       }
+      ],
+      "search": {
+       "query": "Los Angeles Trade-Technical College PUB public relations techniques courses",
+       "searched_on": "2026-11-21",
+       "result_title": "marketing and public relations",
+       "result_url": "https://www.lattc.edu/sites/lattc.edu/files/2022-08/marketing_and_public_relations.pdf",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "JOUR",
       "discipline": "Journalism",
-      "level": "Medium",
+      "level": "Low",
       "from": "title",
       "why": "The title names the discipline Journalism."
      }
@@ -5879,8 +6488,15 @@
       "title": "Real Estate",
       "level": "High",
       "from": "other_colleges",
-      "why": "other colleges: 2 of 2 other colleges (all agree). course joins agrees.",
-      "also": []
+      "why": "other colleges: 2 of 2 other colleges (all agree). course joins, web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Los Angeles Trade-Technical College REAL real estate principles practices courses",
+       "searched_on": "2026-11-21",
+       "result_title": "Real Estate",
+       "result_url": "https://lattc.edu/academics/aos/real-estate",
+       "where": "college site"
+      }
      }
     },
     {
@@ -5894,8 +6510,19 @@
        {
         "title": "Heating, Ventilating, Air Conditioning & Refrigeration",
         "from": "program_titles"
+       },
+       {
+        "title": "Heating, Ventilating, Air Conditioning (HVAC) and Refrigeration",
+        "from": "web_search"
        }
-      ]
+      ],
+      "search": {
+       "query": "Los Angeles Trade-Technical College REF A/C air conditioning refrigeration courses",
+       "searched_on": "2026-11-21",
+       "result_title": "Heating, Ventilating, Air Conditioning (HVAC) and Refrigeration",
+       "result_url": "https://lattc.edu/academics/aos/heating-ventilating-air-conditioning-hvac",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "ARTS",
@@ -5946,15 +6573,27 @@
      "code": "ST",
      "title": {
       "title": "Surgical Technology",
-      "level": "Medium",
+      "level": "Low",
       "from": "other_colleges",
-      "why": "other colleges: 1 of 1 other colleges (one college).",
-      "also": []
+      "why": "other colleges: 1 of 1 other colleges (one college). Another source reads differently.",
+      "also": [
+       {
+        "title": "Street Maintenance Technology",
+        "from": "web_search"
+       }
+      ],
+      "search": {
+       "query": "Los Angeles Trade-Technical College ST Street Maintenance courses",
+       "searched_on": "2026-11-21",
+       "result_title": "Street Maintenance Technology",
+       "result_url": "https://lattc.edu/academics/aos/street-maintenance-technology",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "SURG",
       "discipline": "Surgical Technology",
-      "level": "Medium",
+      "level": "Low",
       "from": "title",
       "why": "The title names the discipline Surgical Technology."
      }
@@ -6005,15 +6644,27 @@
      "code": "SWM",
      "title": {
       "title": "Art",
-      "level": "Medium",
+      "level": "Low",
       "from": "course_joins",
-      "why": "course joins: 3 of 3 joined courses (most courses agree).",
-      "also": []
+      "why": "course joins: 3 of 3 joined courses (most courses agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "Solid Waste Management Technology",
+        "from": "web_search"
+       }
+      ],
+      "search": {
+       "query": "Los Angeles Trade-Technical College SWM Solid Waste Management courses",
+       "searched_on": "2026-11-21",
+       "result_title": "solid waste management technology",
+       "result_url": "https://www.lattc.edu/academics/aos/solid-waste-management-technology",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "ARTS",
       "discipline": "Art",
-      "level": "Medium",
+      "level": "Low",
       "from": "title",
       "why": "The title names the discipline Art."
      }
@@ -6070,7 +6721,14 @@
         "title": "Art",
         "from": "course_joins"
        }
-      ]
+      ],
+      "search": {
+       "query": "Los Angeles Trade-Technical College \"WELDG/E\" welding gas and electric",
+       "searched_on": "2026-11-21",
+       "result_title": "lattc.edu",
+       "result_url": "https://lattc.edu/academics/aos/welding",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "WELD",
@@ -6201,7 +6859,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 1 of 1 colleges in the district (one college).",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "Los Angeles Valley College lavc.edu \"CO INFO\" computer information systems Linux",
+       "searched_on": "2026-11-21",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "CSIS",
@@ -6215,15 +6880,22 @@
      "code": "CO SCI",
      "title": {
       "title": "Computer Science",
-      "level": "Medium",
+      "level": "High",
       "from": "course_joins",
-      "why": "course joins: 8 of 16 joined courses (few or mixed).",
-      "also": []
+      "why": "course joins: 8 of 16 joined courses (few or mixed). web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Los Angeles Valley College CO SCI introduction to computers courses",
+       "searched_on": "2026-11-21",
+       "result_title": "Computer Science (CS)",
+       "result_url": "https://lavc.edu/academics/aos/computer-science",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "COMP",
       "discipline": "Computer Science",
-      "level": "Medium",
+      "level": "High",
       "from": "title",
       "why": "The title names the discipline Computer Science."
      }
@@ -6257,7 +6929,14 @@
         "title": "Law",
         "from": "course_joins"
        }
-      ]
+      ],
+      "search": {
+       "query": "Los Angeles Valley College COOP ED Work Experience General courses",
+       "searched_on": "2026-11-21",
+       "result_title": "Students at Camous Garden",
+       "result_url": "https://lavc.edu/cooped",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "WEXP",
@@ -6321,6 +7000,20 @@
     },
     {
      "code": "DEV COM",
+     "title": {
+      "title": "Developmental Communications",
+      "level": "Low",
+      "from": "web_search",
+      "why": "A web search found it on the college's own site; no other source names a title.",
+      "also": [],
+      "search": {
+       "query": "Los Angeles Valley College lavc.edu \"DEV COM\" developmental communications reading",
+       "searched_on": "2026-11-21",
+       "result_title": "Welcome to The Reading Center",
+       "result_url": "https://lavc.edu/Psychology-Department/Reading-center.aspx",
+       "where": "college site"
+      }
+     },
      "common": {
       "code": "READ",
       "discipline": "Reading",
@@ -6358,7 +7051,14 @@
         "title": "ESL Milestone - Pathway to Language Arts / Spoken Communication",
         "from": "program_titles"
        }
-      ]
+      ],
+      "search": {
+       "query": "Los Angeles Valley College E.S.L. College ESL writing grammar courses",
+       "searched_on": "2026-11-21",
+       "result_title": "Credit English as a Second Language (ESL)",
+       "result_url": "https://www.lavc.edu/academics/aos/credit-english-as-a-second-language",
+       "where": "college site"
+      }
      }
     },
     {
@@ -6416,8 +7116,15 @@
       "title": "English",
       "level": "High",
       "from": "other_colleges",
-      "why": "other colleges: 6 of 6 other colleges (all agree). course joins, district agrees.",
-      "also": []
+      "why": "other colleges: 6 of 6 other colleges (all agree). course joins, district, web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Los Angeles Valley College English ENGL C1000 \"Academic Reading and Writing\" (lavc.edu only)",
+       "searched_on": "2026-11-21",
+       "result_title": "Common Course Numbering (AB 1111)",
+       "result_url": "https://www.lavc.edu/academics/common-course-numbering",
+       "where": "college site"
+      }
      }
     },
     {
@@ -6535,6 +7242,23 @@
       "from": "course_joins",
       "why": "course joins: 5 of 5 joined courses (most courses agree). district agrees.",
       "also": []
+     }
+    },
+    {
+     "code": "LGBTQ+",
+     "title": {
+      "title": "LGBTQ+ Studies",
+      "level": "Low",
+      "from": "web_search",
+      "why": "A web search found it on the college's own site; no other source names a title.",
+      "also": [],
+      "search": {
+       "query": "Los Angeles Valley College LGBTQ+ Introduction to Lesbian, Gay, Bisexual, Transgender, and Queer Studies courses",
+       "searched_on": "2026-11-21",
+       "result_title": "LGBTQ+ Studies",
+       "result_url": "https://www.lavc.edu/academics/aos/lgbtqplusstudies",
+       "where": "college site"
+      }
      }
     },
     {
@@ -6785,7 +7509,14 @@
       "level": "High",
       "from": "other_colleges",
       "why": "other colleges: 5 of 5 other colleges (all agree). course joins, district agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "Los Angeles Valley College lavc.edu political science \"POLS C1000\" American Government and Politics",
+       "searched_on": "2026-11-21",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      }
     },
     {
@@ -6794,8 +7525,15 @@
       "title": "Psychology",
       "level": "High",
       "from": "other_colleges",
-      "why": "other colleges: 5 of 5 other colleges (all agree). course joins, district agrees.",
-      "also": []
+      "why": "other colleges: 5 of 5 other colleges (all agree). course joins, district, web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Los Angeles Valley College PSYC Introduction to Psychology courses",
+       "searched_on": "2026-11-21",
+       "result_title": "Majoring in Psychology",
+       "result_url": "https://lavc.edu/Psychology-Department/Majors.aspx",
+       "where": "college site"
+      }
      }
     },
     {
@@ -6814,8 +7552,15 @@
       "title": "Recreation",
       "level": "High",
       "from": "district",
-      "why": "district: 1 of 1 colleges in the district (one college). other colleges agrees.",
-      "also": []
+      "why": "district: 1 of 1 colleges in the district (one college). other colleges, web search agrees.",
+      "also": [],
+      "search": {
+       "query": "Los Angeles Valley College Recreation RECR \"Field Work\" (lavc.edu only)",
+       "searched_on": "2026-11-21",
+       "result_title": "Los Angeles Valley College 2021-2022 Catalog",
+       "result_url": "https://www.lavc.edu/sites/lavc.edu/files/2022-08/catalog-fall-2021-2022.pdf",
+       "where": "catalog"
+      }
      },
      "common": {
       "code": "RECR",
@@ -7132,7 +7877,14 @@
       "level": "Medium",
       "from": "course_joins",
       "why": "course joins: 4 of 4 joined courses (most courses agree).",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "Southwestern College AMR \"Appliance Maintenance\" repair courses (swccd.edu only)",
+       "searched_on": "2026-11-21",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "LEGL",
@@ -7309,7 +8061,14 @@
       "level": "Medium",
       "from": "course_joins",
       "why": "course joins: 1 of 1 joined courses (few or mixed).",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "Southwestern College Chula Vista \"Work Measurement Techniques\" swccd",
+       "searched_on": "2026-11-21",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "CNST",
@@ -7436,7 +8195,14 @@
       "level": "Medium",
       "from": "course_joins",
       "why": "course joins: 1 of 1 joined courses (few or mixed).",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "Southwestern College PE/A physical education activity \"Cardiovascular Fitness\" (swccd.edu only)",
+       "searched_on": "2026-11-21",
+       "result_title": "Exercise Science/Activity (ES/A)",
+       "result_url": "https://catalog.swccd.edu/course-descriptions/es_a/",
+       "where": "none"
+      }
      },
      "common": {
       "code": "KINE",
@@ -7478,6 +8244,20 @@
     },
     {
      "code": "PIL",
+     "title": {
+      "title": "Filipino",
+      "level": "Low",
+      "from": "web_search",
+      "why": "A web search found it on the college's own site; no other source names a title.",
+      "also": [],
+      "search": {
+       "query": "Southwestern College PIL elementary Filipino Tagalog courses",
+       "searched_on": "2026-11-21",
+       "result_title": "catalog.swccd.edu",
+       "result_url": "https://catalog.swccd.edu/course-descriptions/fil/fil.pdf",
+       "where": "catalog"
+      }
+     },
      "common": {
       "code": "FLNG",
       "discipline": "Foreign Languages",
@@ -7538,7 +8318,14 @@
         "title": "Communication Studies",
         "from": "course_joins"
        }
-      ]
+      ],
+      "search": {
+       "query": "Southwestern College SPCH \"Voice and Articulation\" speech courses (swccd.edu only)",
+       "searched_on": "2026-11-21",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      }
     },
     {
@@ -7887,7 +8674,14 @@
         "title": "Nutrition",
         "from": "course_joins"
        }
-      ]
+      ],
+      "search": {
+       "query": "West Los Angeles College FAM &CS nutrition family consumer studies courses",
+       "searched_on": "2026-11-21",
+       "result_title": "Student at Graduation with Family",
+       "result_url": "https://www.wlac.edu/academics/aos/family-consumer-studies",
+       "where": "college site"
+      }
      },
      "common": {
       "code": "FCSH",
@@ -7991,7 +8785,14 @@
       "level": "High",
       "from": "district",
       "why": "district: 6 of 6 colleges in the district (all agree). course joins, other colleges agrees.",
-      "also": []
+      "also": [],
+      "search": {
+       "query": "West Los Angeles College Law courses LAW 003 \"Civil Rights and the Law\" (wlac.edu only)",
+       "searched_on": "2026-11-21",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      }
     },
     {
@@ -8058,7 +8859,14 @@
         "title": "Associate Degree Nursing (Adn)",
         "from": "course_joins"
        }
-      ]
+      ],
+      "search": {
+       "query": "West Los Angeles College NRS HCA \"Vocational Nursing\" courses (wlac.edu only)",
+       "searched_on": "2026-11-21",
+       "result_title": null,
+       "result_url": null,
+       "where": "none"
+      }
      },
      "common": {
       "code": "NRSR",

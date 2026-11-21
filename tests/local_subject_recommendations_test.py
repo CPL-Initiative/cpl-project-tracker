@@ -72,6 +72,15 @@ check("two builds write the same bytes", R.dump(doc) == R.dump(R.build(ROOT)))
 path = os.path.join(ROOT, R.OUT)
 check("the committed file is the one the daily build would write",
       os.path.exists(path) and open(path, encoding="utf-8").read() == R.dump(doc))
+sr = json.load(open(os.path.join(ROOT, R.SEARCHES), encoding="utf-8"))["searches"]
+check("every filed search names its query, its date and where its result sits",
+      all(x.get("query") and x.get("searched_on") and x.get("where") in ("catalog", "college site", "none") for x in sr))
+check("a title or a label is recorded only from the college's own site", all(x["where"] != "none" for x in sr if x.get("title") or x.get("label")))
+alone = [r["title"] for r in recs.values() if r.get("title", {}).get("from") == "web_search"]
+check("a search by itself never reads above Low (Sam: it lifts or lowers, a label is weaker evidence)", alone and all(t["level"] == "Low" for t in alone))
+labeled = {(x["college"], x["local_code"]) for x in sr if x.get("label") and not x.get("title")}
+check("a department label is kept and read: a row it alone names says it is a label",
+      labeled and all("label" in recs[k]["title"]["why"] for k in labeled if k in recs and recs[k].get("title", {}).get("from") == "web_search"))
 T = doc["totals"]
 check("the totals add up", T["no_title"] == sum(T.get(k, 0) for k in ("title_high", "title_medium", "title_low", "title_none")))
 

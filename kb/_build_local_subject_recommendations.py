@@ -18,7 +18,9 @@ THE SOURCES, each measured with the answer left out of its own vote:
   program_titles  a program at the same college whose required courses sit mostly under this code (Sam,
                   2026-11-21: program titles inform the recommendation and never set it; never High).
   web_search      a search a session ran and filed in kb/reference/subject_web_searches.json (Sam, 2026-11-21:
-                  for every Not in catalog row). It lifts or lowers a level and never gives a title by itself.
+                  for every Not in catalog row). It lifts or lowers a level; by itself it reads Low. A department
+                  or program label the search found is read the same way, as weaker evidence (Sam, 2026-11-21:
+                  "Dept labels can be helpful for our edge case recommendations").
 
 THE MEASURE. Every titled code is taken out and each source is asked for its title. A source's answer is right
 when it equals the catalog's heading after folding case, "&" and punctuation, or when one names the other whole
@@ -302,11 +304,21 @@ def recommend_title(data, table, row):
             m = {"level": "Low", "share": 0.0, "asked": 0}
         ranked.append((LEVELS.index(m["level"]), m["share"], src, t, cond, ev))
     search = data.searches.get((row["slug"], row["code"]))
+    # What the search found: the subject title a page of the college gives, else a department or program label
+    # (Sam, 2026-11-21: "Dept labels can be helpful for our edge case recommendations"). A label is weaker
+    # evidence: it is shown and it can agree or differ, and by itself it reads Low and says it is a label.
+    found = (search or {}).get("title") or (search or {}).get("label")
+    is_label = bool(search) and not search.get("title") and bool(search.get("label"))
+    brief = None
+    if search:
+        brief = {k: search.get(k) for k in ("query", "searched_on", "result_title", "result_url", "where")}
     if not ranked:
-        if search and search.get("title") and search.get("where") == "college site":
-            return {"title": title_case(search["title"]), "level": "Low", "from": "web_search",
-                    "why": "A web search found it on the college's own site; no other source names a title.",
-                    "also": [], "search": search}
+        if found and search.get("where") in ("college site", "catalog"):
+            return {"title": title_case(found), "level": "Low", "from": "web_search",
+                    "why": ("A web search found a department or program label on the college's own site; no other "
+                            "source names a title." if is_label else
+                            "A web search found it on the college's own site; no other source names a title."),
+                    "also": [], "search": brief}
         return None
     ranked.sort(key=lambda x: (-x[0], -x[1], x[2]))
     if not all(same(r[3], ranked[0][3]) for r in ranked) and not fits(row["code"], ranked[0][3]):
@@ -316,8 +328,8 @@ def recommend_title(data, table, row):
     agree = [r for r in ranked[1:] if same(r[3], t)]
     differ = [r for r in ranked[1:] if not same(r[3], t)]
     why = "%s: %s (%s)." % (src.replace("_", " "), ev, cond)
-    if search and search.get("title"):
-        (agree if same(search["title"], t) else differ).append((0, 0, "web_search", search["title"], "", ""))
+    if found:
+        (agree if same(found, t) else differ).append((0, 0, "web_search", found, "", ""))
     if differ:
         lvl = 0
         why += " Another source reads differently."
@@ -328,8 +340,8 @@ def recommend_title(data, table, row):
         why += " %s agrees." % ", ".join(sorted(set(a[2].replace("_", " ") for a in agree)))
     out = {"title": title_case(t), "level": LEVELS[lvl], "from": src, "why": why,
            "also": [{"title": title_case(r[3]), "from": r[2]} for r in differ]}
-    if search:
-        out["search"] = search
+    if brief:
+        out["search"] = brief
     return out
 
 
