@@ -76,22 +76,19 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     18.0,
     18.0
    ],
    "stated": [
-    60.0,
-    60.0
+    18.0,
+    18.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the blocks and general education sum to 18.0-18.0; the catalog prints 60.0-60.0 for the degree"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
@@ -99,13 +96,18 @@
      18.0
     ],
     "stated": [
-     18.0,
-     18.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
-   },
-   "note": "major matches; degree total short of 60, electives probably not listed"
+    "against": "degree",
+    "ge": null,
+    "why": [],
+    "minimum": true,
+    "fill": [
+     42.0,
+     42.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -129,7 +131,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -155,7 +157,8 @@
    },
    "electives_fill_degree": false,
    "outcomes": [],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -325,5 +328,14 @@
    "No careers named in the text."
   ]
  },
- "extracted_run": "43415972509"
+ "extracted_run": 44763682085,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Required Units for Degree (with GE)\n60"
+  }
+ ],
+ "read_run": "43415972509"
 }

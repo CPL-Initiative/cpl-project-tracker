@@ -91,7 +91,7 @@
     "against": "degree",
     "ge": null,
     "why": [],
-    "transfer": true,
+    "minimum": true,
     "fill": [
      35.0,
      36.0
@@ -146,7 +146,8 @@
    },
    "electives_fill_degree": false,
    "outcomes": [],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -320,5 +321,14 @@
    "A 'Program Learning Outcomes' tab appears in the page navigation, but no outcomes are printed in the provided text; outcomes left empty."
   ]
  },
- "extracted_run": "43415972509"
+ "extracted_run": 44763682085,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Required Units for Degree (with GE)\n60"
+  }
+ ],
+ "read_run": "43415972509"
 }
