@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 691,
-  "moniker": "SkyShrike",
+  "session": 694,
+  "moniker": "SkyPetrel",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_692_handoff.md",
+  "handoff": "docs/session_695_handoff.md",
   "calls": [
     {
       "title": "Two forestry courses still sit on AGRI under a parent on ENVR",
@@ -30,13 +30,17 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-20T17:00:19Z",
+  "written_at": "2026-11-21T00:34:46Z",
   "project": "subjects",
   "next_step": {
-    "title": "Draft each college's local subject titles",
-    "text": "The Courses bot owns curation step b: it drafts each local subject title from the state subject code and the catalog's subject heading, and a curator settles the ones that disagree. No view builds this step yet."
+    "title": "Give the held courses' local subject codes a common subject code",
+    "text": "The Subjects card on the Commons front lists each college's local subject codes beside the common subject codes. 753 of 1,625 codes get one from the existing files; the 944 courses the pile mint holds reduce to a list of local codes that still need one."
   },
   "changes": [
+    {
+      "at": "2026-11-21T00:30:00Z",
+      "text": "The Subjects card on the Commons front reads 16 colleges, 1,431 college-and-code pairs and 746 printed names; 753 of 1,625 codes get a common subject code from the existing files. Its builder is not in the daily build yet."
+    },
     {
       "at": "2026-11-20T17:00:00Z",
       "text": "Curation step b, the local subject title, has an owner: the Courses bot drafts each title and a curator settles the ones that disagree. Sam left the call to the session on Nov 20."

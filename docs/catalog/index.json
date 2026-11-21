@@ -13990,7 +13990,7 @@
      ],
      "title": "The Commons \u2014 lessons",
      "type": null,
-     "updated": "2026-11-20"
+     "updated": "2026-11-21"
     },
     {
      "created": "2026-11-14",
@@ -16391,7 +16391,7 @@
      ],
      "title": "Common Subjects Reference (CSR) \u2014 one Common SUBJ per MQ discipline \u2014 lane state",
      "type": null,
-     "updated": "2026-10-20"
+     "updated": "2026-11-21"
     },
     {
      "created": "2026-08-28",
@@ -16860,7 +16860,7 @@
      ],
      "title": "The Commons \u2014 one tracking system for the common references, and a Commons dash \u2014 lane state",
      "type": null,
-     "updated": "2026-11-20"
+     "updated": "2026-11-21"
     },
     {
      "created": "2026-08-28",
@@ -17386,8 +17386,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 653,
+   "count": 654,
    "docs": [
+    {
+     "created": "2026-11-21",
+     "governs": [],
+     "n": 695,
+     "path": "docs/session_695_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 695 handoff (from SkyPetrel, the plain session of 2026-11-20 to 21 that built Assign from the panel and planned the pile mint)",
+     "type": null,
+     "updated": "2026-11-21"
+    },
     {
      "created": "2026-11-20",
      "governs": [],
@@ -28302,5 +28316,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1537
+ "total": 1538
 }
