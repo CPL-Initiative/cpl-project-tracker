@@ -2157,8 +2157,23 @@ check(not S.score(soc, [{"code": "SOCI 2", "units": 3}], "x", "A.A. Degree", MER
 RCC_CONF = RC.load_steps().get("Riverside City College") or {}
 check(not RC.prefix_aliases("Riverside City College")
       and [c.get("retired", {}).get("session") for c in RCC_CONF.get("prefix_aliases_cited") or []] == ["S653"]
-      and not (RC.prefix_aliases("College of the Canyons") or {}),
-      "Riverside City's HIST for HIS is retired to the course-id route, its evidence kept; College of the Canyons stays held")
+      and RC.prefix_aliases("College of the Canyons") == {"PSYC": "PSYCH", "POLS": "POLISC", "COMM": "COMS"},
+      "Riverside City's HIST for HIS is retired to the course-id route, its evidence kept; College of the Canyons "
+      "holds the three pairs S652 held for want of a catalog title, now cited from its catalog (S691)")
+# Canyons' pairs (S691): each cited from the catalog's printed code and title (college page read 44882193771), at
+# least three agreeing courses and none disagreeing (kb/program_requirements_reconcile_out/
+# prefix_aliases_2026-11-21_canyons/measure.json: 15, 6 and 12 agree; the 120 records passing before still pass).
+_coc = (RC.load_steps().get("College of the Canyons") or {}).get("prefix_aliases_cited") or []
+check(sorted((c["printed"], c["file"]) for c in _coc) == [("COMM", "COMS"), ("POLS", "POLISC"), ("PSYC", "PSYCH")]
+      and all(c.get("evidence", 0) >= 3 and c.get("session") == "S691" for c in _coc),
+      "Canyons' three pairs each carry at least three agreeing courses")
+_coc_rec = {"program": {"total_units": {"min": 3, "max": 3}, "measure": "units"},
+            "blocks": [{"name": "Required", "rule": "all", "courses": [{"code": "POLS-230", "units": 3}]}]}
+_coc_steps = RC.prefix_aliases("College of the Canyons")
+check(not S.score(_coc_rec, [{"code": "POLISC 230", "units": 3}], "x", "A.A. Degree", _coc_steps)["coverage"]["missing"],
+      "Canyons' printed POLS-230 reads as the listed POLISC 230")
+check(S.score(_coc_rec, [{"code": "POLS C1000", "units": 3}], "x", "A.A. Degree", _coc_steps)["coverage"]["missing"]
+      == ["POLSC1000"], "and never as a course the file lists under POLS itself")
 # Los Angeles Valley (S533): "COMPLETE 4 COURSES FROM THE FOLLOWING: (COURSES MAY BE REPEATED)" read with the count and
 # not the repeat (Music 02962). The repeat step takes a minimum equal to n; another figure stays the reading's.
 mus = {"program": {"total_units": {"min": 33, "max": 35}, "measure": "units"},
