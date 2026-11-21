@@ -1,0 +1,479 @@
+{
+ "college": "Solano Community College",
+ "reread_run": "44885303079",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "44884569184",
+ "at": "2026-11-21T08:32:18Z",
+ "posted": 7,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "06541",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "20992",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 2,
+ "absent": 5,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "06555",
+  "38404"
+ ],
+ "absent_keys": [
+  "06552",
+  "20988",
+  "31761",
+  "33305",
+  "41377"
+ ],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 5,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Solano Community College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 44884569184;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "A.A. Degree",
+   "checks": {
+    "listed": 27,
+    "placed": 26,
+    "coverage": false,
+    "invented": false,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ETHN 001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A: (select two courses)",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "ANTH 024",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 033",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETHN 002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETHN 003",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 028",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 029",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 031",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 023",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     },
+     {
+      "name": "List B: Select four courses from List B or List A (may use any course(s) not used for List A)",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 12,
+       "min": 12
+      },
+      "courses": [
+       {
+        "code": "ARTH 035",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 036",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSC 045",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 4,
+      "option_group": null
+     },
+     {
+      "name": "List C: (select one course)",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ANTH 002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CDFS 053",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COUN 015",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FTV 011",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 037",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HSW 082",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HUMN 003",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSC 007",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSC 013",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS 005",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 007",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SJS 001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SJS 002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SJS 030",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THEA 013",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "DEI (diversity, equity, and inclusion) work",
+      "education",
+      "the arts",
+      "human services",
+      "public policy and administration",
+      "communications fields",
+      "journalism",
+      "media production",
+      "marketing"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Demonstrate understanding of the profound historical, political, social, cultural and economic contributions of racially marginalized groups in U.S. society.",
+      "Gain comparative knowledge of the unique experiences of Black/African American, Native American, U.S. Latinx, and Asian American Pacific Islander populations—how these experiences differ and overlap",
+      "Develop critical-thinking skills necessary to recognize and combat multiple forms of racism and intersecting forms of oppression including classism, sexism, xenophobia, homophobia and transphobia."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 24,
+      "min": 24
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Ethnic Studies Associate in Arts",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 24,
+   "total_min": 24,
+   "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=275",
+   "catalog_year": "2026-2027",
+   "extracted_run": 44514080886,
+   "program_title": "Ethnic Studies",
+   "control_number": "06555"
+  },
+  {
+   "award": "A.S. T Degree",
+   "checks": {
+    "listed": 9,
+    "placed": 9,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "REQUIRED COURSES",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CIS 020",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CIS 021",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CIS 022",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CIS 023",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH C2210",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH C2220",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 006",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Electives (select one course)",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "PHYS 007",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 001",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Analyze, document and construct a solution to a problem by applying appropriate computer science concepts and ideas.",
+      "Effectively communicate solution(s).",
+      "Demonstrate their ability to program in at least one programming language."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 30,
+      "min": 30
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Associate in Science in Computer Science for Transfer (ADT: A.S.-T)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 30,
+   "total_min": 30,
+   "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=217",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39037377728,
+   "program_title": "Computer Science",
+   "control_number": "38404"
+  }
+ ]
+}
