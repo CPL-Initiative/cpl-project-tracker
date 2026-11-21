@@ -289,8 +289,9 @@ for host in ("saddleback.curriqunet.com", "riohondo.curriqunet.com"):
     check("6 %s's excerpt log of a page that names its staff names none of them" % host,
           STAFF not in read.excerpt_log("X 1", read.slo_excerpt(TEXT, host), host)
           and STAFF not in read.probe_log("X 1", TEXT))
-    check("6 GUARD: each recall file %s records exists or its gate refuses, so a full read is refused" % host,
-          all(os.path.exists(p) or not read.rows_recall(p)["ok"] for h, p in read.recall_files() if h == host))
+    named = [p for h, p in read.recall_files() if h == host]
+    check("6 GUARD: every recall file %s records is committed (a missing file fails here)" % host,
+          named and all(os.path.exists(p) for p in named), [p for p in named if not os.path.exists(p)])
 check("6 City College of San Francisco's excerpt is unchanged by the host argument",
       read.slo_excerpt(TEXT) == read.slo_excerpt(TEXT, "ccsf.curricunet.com") is not None)
 RIO = ("Outline w/SLO\nI. Cover\nOriginator: " + STAFF + "\nV. Course Objectives\nThe Student Will Be Able To:\nRecord transactions.\n"
@@ -379,6 +380,27 @@ check("6 GUARD: an Irvine Valley count over Saddleback's trial fails the gate (t
       "pages), while Saddleback's own count over the same trial passes",
       not ivc_on_sb_trial["ok"] and "saddleback's pages" in (ivc_on_sb_trial["why"] or "") and sb_ok_there["ok"],
       (ivc_on_sb_trial, sb_ok_there))
+_ix = lambda n: json.load(open(os.path.join(ROOT, "kb", "course_outline_index", "index_%s.json" % n)))
+sb_index, ivc_index = _ix("44887971233"), _ix("44908824732")
+sb_as_ivc = read.recall_for(sbh_host, "irvine_valley", sb_index)
+ivc_as_sb = read.recall_for(sbh_host, "saddleback", ivc_index)
+check("6 GUARD: a read's index must keep the client its counted trial's index kept: Saddleback's index with "
+      "slugs=irvine_valley (report 201 pages as Irvine Valley's) and Irvine Valley's with slugs=saddleback are both "
+      "refused; each college's own index passes (second reader on #3642)",
+      not sb_as_ivc["ok"] and "client" in sb_as_ivc["why"] and not ivc_as_sb["ok"] and "client" in ivc_as_sb["why"]
+      and read.recall_for(sbh_host, "irvine_valley", ivc_index)["ok"]
+      and read.recall_for(sbh_host, "saddleback", sb_index)["ok"], (sb_as_ivc, ivc_as_sb))
+try:
+    read.main(["--index", os.path.join(ROOT, "kb", "course_outline_index", "index_44887971233.json"),
+               "--slugs", "irvine_valley", "--part", "1", "--of", "2"])
+    main_refused = ""
+except SystemExit as exc:
+    main_refused = str(exc)
+check("6 GUARD: the full read itself refuses Saddleback's index with slugs=irvine_valley before it loads a page",
+      "self-recall" in main_refused and "client" in main_refused, main_refused)
+_mv = dict(ivc_index, report_title="outline", report_ids=None)
+check("6 GUARD: a read's index whose report differs from the counted trial's is refused too",
+      "report_title" in (read.recall_for(sbh_host, "irvine_valley", _mv)["why"] or ""))
 _u = "https://%s/DynamicReports/AllFieldsReportByEntity/1?entityType=Course&reportId=%s"
 check("6 a Saddleback page (201) keeps its host's heading pairs; an Irvine Valley page (198) on the same host is keyed "
       "by its report, so Saddleback's pairs never cut its excerpt; other hosts are keyed by host",

@@ -132,6 +132,41 @@ def _():
     assert not any(load.untitled_groups("saddleback", r) for r in d["rows"] if any(g.get("group") for g in r.get("groups") or []))
 
 
+@check("GUARD: untitled entries join only for the report UNTITLED_GROUPS names (198); the same rows printed by "
+       "another report on the folder are skipped (second reader on #3642)")
+def _():
+    trial = json.load(open(IVC_TRIAL))
+    assert all(load.untitled_groups("saddleback", r) for r in trial["rows"])
+    moved = [dict(r, report=r["report"].replace("reportId=198", "reportId=201")) for r in trial["rows"]]
+    assert not any(load.untitled_groups("saddleback", r) for r in moved)
+
+
+@check("GUARD: a load from a folder holding two colleges' reads refuses without slugs=, so its receipt's key-scoped "
+       "rollback never names the other college's rows (Saddleback's and Irvine Valley's under saddleback; #3642)")
+def _():
+    import shutil
+    import tempfile
+    saved = load.OUT_DIR
+    tmp = tempfile.mkdtemp()
+    try:
+        os.makedirs(os.path.join(tmp, "saddleback"))
+        base = json.load(open(IVC_TRIAL))
+        for run, slugs in (("101", "saddleback"), ("102", "irvine_valley")):
+            json.dump(dict(base, run=run, slugs=slugs, part=1, of=1, complete=True),
+                      open(os.path.join(tmp, "saddleback", "read_%s_p1of1.json" % run), "w"))
+        load.OUT_DIR = tmp
+        why = load.shared_folder_problem("saddleback", [])
+        assert why and "slugs=" in why and "irvine_valley" in why and "saddleback" in why, why
+        assert load.shared_folder_problem("saddleback", ["irvine_valley"]) is None
+        assert load.main(["--host", "saddleback", "--dry"]) == 2
+        assert load.main(["--host", "saddleback", "--dry", "--slugs", "irvine_valley"]) == 0
+        os.remove(os.path.join(tmp, "saddleback", "read_101_p1of1.json"))
+        assert load.shared_folder_problem("saddleback", []) is None
+    finally:
+        load.OUT_DIR = saved
+        shutil.rmtree(tmp)
+
+
 @check("a filed row whose fingerprint does not match its outcomes stops the load")
 def _():
     import tempfile

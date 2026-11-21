@@ -30,6 +30,7 @@ import json
 import os
 import re
 import sys
+import urllib.parse
 import urllib.request
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -53,14 +54,27 @@ GROUPS = {"sdccd": {"City": "San Diego City College", "Mesa": "San Diego Mesa Co
 # order printed, into the one SLO block of the colleges whose records name the course, its objectives beside them.
 # Irvine Valley's Official Course Outline of Record (198) on Saddleback's host (trial 44910471774, 12 of 12; S697). A
 # page that carries one titled group keeps the GROUPS rule.
-UNTITLED_GROUPS = {"saddleback"}
+UNTITLED_GROUPS = {"saddleback": {"198"}}
 BATCH = 200
 
 
 def untitled_groups(host: str, row: dict) -> bool:
-    """Whether the load joins this row's groups into one block for the colleges its records name (UNTITLED_GROUPS)."""
+    """Whether the load joins this row's groups into one block for the colleges its records name: a report
+    UNTITLED_GROUPS names at this host folder, every group untitled."""
     groups = row.get("groups") or []
-    return host in UNTITLED_GROUPS and bool(groups) and not any(g.get("group") for g in groups)
+    rid = (urllib.parse.parse_qs(urllib.parse.urlparse(row.get("report") or "").query).get("reportId") or [""])[0]
+    return rid in UNTITLED_GROUPS.get(host, set()) and bool(groups) and not any(g.get("group") for g in groups)
+
+
+def shared_folder_problem(host: str, slugs: list[str]) -> str | None:
+    """Why a load names too few colleges: a host folder holding complete reads of two or more college sets
+    (Saddleback's and Irvine Valley's under saddleback, the Coast district's under cccd) loads only with slugs=, or
+    its receipt's key-scoped rollback would name every college's rows in the folder (second reader on #3642)."""
+    sets = {_slug_set(d) for _, d in _heads(host) if d.get("complete")}
+    if not slugs and len(sets) > 1:
+        return ("%s holds the reads of %s: name the college with slugs=" % (host, "; ".join(
+            sorted(",".join(sorted(s)) for s in sets))))
+    return None
 KINDS = ("all", "slo", "objective")
 
 
@@ -321,6 +335,10 @@ def main(argv=None) -> int:
     ap.add_argument("--slugs", default="", help="only the reads whose slugs name one of these (comma list)")
     a = ap.parse_args(argv)
     slugs = [x.strip() for x in a.slugs.split(",") if x.strip()]
+    shared = shared_folder_problem(a.host, slugs)
+    if shared:
+        print("load refused: %s" % shared)
+        return 2
     missing = unknown_slugs(a.host, slugs)
     if missing:
         print("--slugs names %s, which no complete read of %s names" % (", ".join(missing), a.host))

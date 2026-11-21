@@ -770,7 +770,9 @@ def building_outcomes(root):
         if isinstance(o, int):
             outcomes += o
         for r in d.get("rows") or []:
-            if isinstance(r, dict) and r.get("outcomes"):
+            # A page read as groups (SDCCD's colleges, Irvine Valley's untitled entries) files its outcomes there.
+            if isinstance(r, dict) and (r.get("outcomes") or any(isinstance(g, dict) and g.get("outcomes")
+                                                                 for g in r.get("groups") or [])):
                 courses += 1
                 for c in r.get("named_by") or []:
                     colleges.add(c)

@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-21T04:10:43Z",
+ "written_at": "2026-11-21T14:24:06Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 15161,
+     "n": 15312,
      "of": 20282,
      "words": "complete at 118 colleges",
      "open": "#program-requirements/list"
@@ -34,14 +34,14 @@
    ],
    "issues": [
     {
-     "n": 2091,
+     "n": 2033,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
      "open": "#program-requirements/list/fail"
     },
     {
-     "n": 3030,
+     "n": 2937,
      "words": "active programs with no record yet",
      "owner": "the harvest",
      "carry": "routine",
@@ -63,17 +63,17 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-11-20T13:29:43Z",
+    "at": "2026-11-21T09:05:44Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 15161,
-    "failing": 2091,
-    "unread": 3030,
-    "records": 18860,
+    "complete": 15312,
+    "failing": 2033,
+    "unread": 2937,
+    "records": 18951,
     "colleges": 118,
-    "outside_active": 1608,
+    "outside_active": 1606,
     "confirmed": 32,
     "confirmed_complete": 28
    },
@@ -383,7 +383,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-19T06:22:43Z",
+    "at": "2026-11-21T02:19:02-08:00",
     "every_hours": null
    },
    "facts": {
@@ -584,9 +584,9 @@
    ],
    "pair": [
     {
-     "n": 78635,
+     "n": 87081,
      "of": null,
-     "words": "outcomes read from 20,562 courses at 28 colleges",
+     "words": "outcomes read from 24,447 courses at 33 colleges",
      "open": "#coci-lookup"
     }
    ],
@@ -594,8 +594,8 @@
     "read from the public outline"
    ],
    "facts": {
-    "outcomes": 78635,
-    "courses": 20562,
+    "outcomes": 87081,
+    "courses": 24447,
     "colleges": [
      "allan_hancock",
      "cabrillo",
@@ -621,16 +621,21 @@
      "norco",
      "orange_coast",
      "palomar",
+     "rio_hondo",
      "riverside_city",
+     "saddleback",
+     "san_diego_city",
+     "san_diego_mesa",
+     "san_diego_miramar",
      "santa_ana",
      "santiago_canyon",
      "shasta"
     ],
-    "reads": 72
+    "reads": 76
    },
    "machine": {
     "what": "the last outline read",
-    "at": "2026-11-20T15:50:52Z",
+    "at": "2026-11-21T11:43:05Z",
     "every_hours": null
    },
    "sources": [
@@ -765,7 +770,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 2091,
+    "n": 2033,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"
@@ -773,7 +778,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 3030,
+    "n": 2937,
     "words": "active programs with no record yet",
     "owner": "the harvest",
     "open": "#program-requirements/list/unread"
@@ -800,7 +805,7 @@
     "ref": "requirements",
     "title": "Program Requirements",
     "kind": "not_shrinking",
-    "n": 3030,
+    "n": 2937,
     "was": 2820,
     "since": "2026-11-14",
     "words": "active programs with no record yet",

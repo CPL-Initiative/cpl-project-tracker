@@ -931,18 +931,43 @@ def recall_files() -> list[tuple[str, str]]:
     return [(h, p) for h, v in RECALL_BY_HOST.items() for p in (v.values() if isinstance(v, dict) else [v])]
 
 
-def recall_for(host: str, slugs: str) -> dict:
+def recall_for(host: str, slugs: str, index: dict | None = None) -> dict:
     """The self-recall gate for a full read at an outcomes-only host: rows_recall on the file recorded for the host
     and these colleges, refused when no file is recorded or the file's slugs name another college than the read's.
     Saddleback's host holds Irvine Valley's outlines too, printed by another report, so Saddleback's count never opens
-    a read for Irvine Valley, nor Irvine Valley's for Saddleback."""
+    a read for Irvine Valley, nor Irvine Valley's for Saddleback. index: the index the read would take; it must keep
+    the same client and report as the index the counted trial read, since a .run's slugs alone do not bind the pages
+    to the college (Saddleback's index with slugs=irvine_valley would read report 201 pages as Irvine Valley's;
+    second reader on #3642)."""
     recall = recall_path(host, slugs)
     if not recall:
         return {"ok": False, "why": "the host has no recall file recorded for %s" % slugs}
     want = json.load(open(recall)) if os.path.exists(recall) else {}
     if want.get("slugs") and want["slugs"] != slugs:
         return {"ok": False, "why": "the host's recall file counts %s, and this read is for %s" % (want["slugs"], slugs)}
+    if index is not None:
+        why = index_binding_problem(index, want.get("trial"))
+        if why:
+            return {"ok": False, "why": why}
     return rows_recall(recall, host=(host or "").lower())
+
+
+def index_binding_problem(index: dict, trial: str | None, out_dir: str = OUT_DIR) -> str | None:
+    """Why a read's index differs from the one the counted trial read: its client filter or its report (the title
+    pattern and the checked ids). None when they agree."""
+    path = os.path.join(out_dir, "trial_%s" % trial, "read.json")
+    if not trial or not os.path.exists(path):
+        return "the counted trial %s is not filed, so the read's index cannot be checked against it" % trial
+    named = json.load(open(path)).get("index") or ""
+    counted_path = os.path.join(os.path.dirname(HERE), named)
+    if not named.startswith("kb/course_outline_index/") or not os.path.exists(counted_path):
+        return "the counted trial %s names index %r, which is not committed" % (trial, named)
+    counted = json.load(open(counted_path))
+    for key in ("client", "report_title", "report_ids"):
+        if index.get(key) != counted.get(key):
+            return ("this read's index keeps %s %r, and the counted trial %s read an index that keeps %r (%s)"
+                    % (key, index.get(key), trial, counted.get(key), named))
+    return None
 # The SLO section of a report 28 page, cut by its two printed headings alone, never by the parser's patterns.
 EXCERPT_FROM, EXCERPT_TO, EXCERPT_LINES = "STUDENT LEARNING OUTCOMES", "CONTENTS", 60
 # Each outcomes-only host's two printed headings around its SLO section, as a person read them off the host's own
@@ -1227,7 +1252,7 @@ def main(argv=None) -> int:
     else:
         ap.error("--index FILE or --catalog SLUG (or --reparse FOLDER)")
     if outcomes_only(index["url"]) and not a.trial:
-        rc = recall_for(urllib.parse.urlparse(index["url"]).netloc.lower(), a.slugs)
+        rc = recall_for(urllib.parse.urlparse(index["url"]).netloc.lower(), a.slugs, index)
         if not rc["ok"]:
             raise SystemExit("%s: no full read before the self-recall count passes (%s). Run a trial, count its "
                              "parsed rows by eye into the host's recall file, then python3 "
