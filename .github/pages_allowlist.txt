@@ -455,6 +455,7 @@ publish kb/status/exhibit.json
 publish kb/status/harvest_gap_census.json
 publish kb/status/harvest_gap_census.md
 publish kb/status/harvest_no_closed_list.json
+publish kb/status/held_subject_codes.json
 publish kb/status/local_subject_titles.json
 publish kb/status/mid_outcomes_compare_2026-11-12.json
 publish kb/status/mid_outcomes_compare_2026-11-12.md
