@@ -613,3 +613,20 @@ Sam's asks: `r-commons-page-clarity-sam-2026-11-21`, `r-commons-cdc-card-sam-202
 - **College Data Collection had three unwired updates**: its to-do ignored live hand-overs, a college pane's change
   never redrew it, and a return to the tab re-read nothing.
 
+## S698 (SkyAuklet, Sam's plain session, 2026-11-21): the Subjects page under #3655
+
+- **A filed catalog kept no subject heading because its parse opened at the course line.** Six colleges held no
+  local title. A headings read that prints only the lines above each subject's first course, and an index read that
+  prints every link, titled 588 more codes from the catalogs themselves (746 to 1,334 of 1,629), with no
+  recommendation. Look for the missing thing in what was already read before building a way to guess it.
+- **Score a heading rule on the titles already held.** The filer was run on the 167 codes whose title three catalogs
+  already carried: 4 wrong on the first pass (a C-ID line read as a heading, ART read into Architecture), 0 after two
+  narrow rules. A heading is saved only when the code's letters run through it; the rest stay candidates.
+- **An address is read from the index, never made from the code.** Forty links printed, the rest were guessed:
+  Cerritos's Mathematics, Sociology and Political Science were never read.
+- **A noncredit code can be several disciplines.** Cerritos AED spans seven noncredit categories and Southwestern NC
+  nine, so a decision is keyed by college, code and band, and noncredit recommendations wait on the large noncredit
+  catalogs (Sam, 2026-11-21).
+- **A person's decisions made elsewhere are an answer set first.** Sam's 30 Cerritos common codes are held, the
+  procedure is scored against them, and his decision stands where it diverges.
+
