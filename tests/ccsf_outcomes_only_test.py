@@ -228,6 +228,19 @@ for host in ("saddleback.curriqunet.com", "riohondo.curriqunet.com"):
           host not in read.RECALL_BY_HOST or os.path.exists(read.RECALL_BY_HOST[host]))
 check("6 City College of San Francisco's excerpt is unchanged by the host argument",
       read.slo_excerpt(TEXT) == read.slo_excerpt(TEXT, "ccsf.curricunet.com") is not None)
+probe = read.probe_log("X 1", TEXT)
+check("6 a host with no heading pair logs only the lines that name outcomes or objectives, never a person's line",
+      STAFF not in probe and "STUDENT LEARNING OUTCOMES" in probe
+      and all(read.PROBE.search(ln.split("| ", 1)[1]) for ln in probe.split("\n")[1:-1]), probe)
+_saved = dict(read.EXCERPT_BY_HOST)
+read.EXCERPT_BY_HOST["x.example"] = [("Course Outcomes", ("Content", "Textbooks")), ("STUDENT LEARNING OUTCOMES", "CONTENTS")]
+try:
+    two = read.slo_excerpt(TEXT, "x.example")
+finally:
+    read.EXCERPT_BY_HOST.clear()
+    read.EXCERPT_BY_HOST.update(_saved)
+check("6 a host may record several heading pairs; the first whose SLO heading the page prints decides",
+      two == read.slo_excerpt(TEXT) and read.excerpt_pairs("nowhere.example") == [], two)
 
 failed = [r for r in results if not r[1]]
 for name, ok, why in results:
