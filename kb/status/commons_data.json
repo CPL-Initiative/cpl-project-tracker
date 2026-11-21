@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-21T13:33:03Z",
+ "written_at": "2026-11-21T15:40:31Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -5738,7 +5738,9 @@
    },
    "programs_file": "kb/status/commons_data_programs/irvine_valley.json",
    "outcomes_file": "kb/status/commons_data_programs/irvine_valley.outcomes.json",
-   "outline_system": null,
+   "outline_system": [
+    "curriqunet"
+   ],
    "objectives_printed": null,
    "read_at": "2026-10-21T03:38:56Z",
    "read_kind": "capture",
@@ -5786,7 +5788,13 @@
      "cost_usd": 11.02,
      "platform": "curriqunet"
     },
-    "slo_read": null,
+    "slo_read": {
+     "run": "44913397609",
+     "at": "2026-11-21T15:32:09Z",
+     "system": "curriqunet",
+     "source_kind": "course_outline",
+     "file": "kb/course_outcomes/saddleback/read_44913397609_p2of2.json"
+    },
     "plo_programs": 103,
     "ppm_member": null,
     "maps": {

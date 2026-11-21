@@ -30,6 +30,7 @@ import json
 import os
 import re
 import sys
+import urllib.parse
 import urllib.request
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -48,7 +49,32 @@ OFFERED_AT = {"rccd": {"RIV": "Riverside City College", "MOV": "Moreno Valley Co
 # title is not here is skipped with its reason, never guessed.
 GROUPS = {"sdccd": {"City": "San Diego City College", "Mesa": "San Diego Mesa College",
                     "Miramar": "San Diego Miramar College"}}
+# A host folder whose outline report prints each SLO as its own untitled entry in an All Fields-style list: the reader
+# files each entry as a group with no title (groups_from_html), and the load joins a page's untitled entries, in the
+# order printed, into the one SLO block of the colleges whose records name the course, its objectives beside them.
+# Irvine Valley's Official Course Outline of Record (198) on Saddleback's host (trial 44910471774, 12 of 12; S697). A
+# page that carries one titled group keeps the GROUPS rule.
+UNTITLED_GROUPS = {"saddleback": {"198"}}
 BATCH = 200
+
+
+def untitled_groups(host: str, row: dict) -> bool:
+    """Whether the load joins this row's groups into one block for the colleges its records name: a report
+    UNTITLED_GROUPS names at this host folder, every group untitled."""
+    groups = row.get("groups") or []
+    rid = (urllib.parse.parse_qs(urllib.parse.urlparse(row.get("report") or "").query).get("reportId") or [""])[0]
+    return rid in UNTITLED_GROUPS.get(host, set()) and bool(groups) and not any(g.get("group") for g in groups)
+
+
+def shared_folder_problem(host: str, slugs: list[str]) -> str | None:
+    """Why a load names too few colleges: a host folder holding complete reads of two or more college sets
+    (Saddleback's and Irvine Valley's under saddleback, the Coast district's under cccd) loads only with slugs=, or
+    its receipt's key-scoped rollback would name every college's rows in the folder (second reader on #3642)."""
+    sets = {_slug_set(d) for _, d in _heads(host) if d.get("complete")}
+    if not slugs and len(sets) > 1:
+        return ("%s holds the reads of %s: name the college with slugs=" % (host, "; ".join(
+            sorted(",".join(sorted(s)) for s in sets))))
+    return None
 KINDS = ("all", "slo", "objective")
 
 
@@ -195,6 +221,23 @@ def rows_from(paths: list[str], host: str = "") -> tuple[list[dict], list[dict]]
     for path in paths:
         d = json.load(open(path))
         for r in d["rows"]:
+            if r.get("status") == 200 and r.get("shape") == "groups" and untitled_groups(host, r):
+                for g in r["groups"]:
+                    if g.get("outcomes") and g.get("fingerprint") != fingerprint(g["outcomes"]):
+                        raise SystemExit("%s: the filed fingerprint does not match its outcomes" % r.get("code"))
+                items = [o for g in r["groups"] for o in g.get("outcomes") or []]
+                colleges = colleges_for(host, r, names)
+                add_objectives(colleges, r, d)
+                if not items:
+                    skipped.append({"course_code": r.get("code"), "status": r.get("status"), "shape": "groups",
+                                    "why": "no untitled entry printed an outcome"})
+                    continue
+                block = {"heading": r.get("heading") or "Student Learning Outcomes", "lead": None, "outcomes": items,
+                         "maps_to": None, "shape": "list" if len(items) > 1 else "paragraph",
+                         "fingerprint": fingerprint(items)}
+                for college in colleges:
+                    add(college, r, block, d)
+                continue
             if r.get("status") == 200 and r.get("objectives"):
                 if r.get("shape") == "groups":
                     # A district report prints one set of objectives for the course: each college whose group it names.
@@ -292,6 +335,10 @@ def main(argv=None) -> int:
     ap.add_argument("--slugs", default="", help="only the reads whose slugs name one of these (comma list)")
     a = ap.parse_args(argv)
     slugs = [x.strip() for x in a.slugs.split(",") if x.strip()]
+    shared = shared_folder_problem(a.host, slugs)
+    if shared:
+        print("load refused: %s" % shared)
+        return 2
     missing = unknown_slugs(a.host, slugs)
     if missing:
         print("--slugs names %s, which no complete read of %s names" % (", ".join(missing), a.host))
