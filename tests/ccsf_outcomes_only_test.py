@@ -270,8 +270,9 @@ for host in ("saddleback.curriqunet.com", "riohondo.curriqunet.com"):
     check("6 %s files parsed outcomes only, its trial no page file" % host,
           read.outcomes_only(url) and set(read.file_row({"code": "X 1", "report": url, "title_printed": STAFF,
                                                           "outcomes": ["a"]})) <= set(read.OUTCOMES_ONLY_KEYS))
-    check("6 %s logs no excerpt until its heading pair is recorded, and the log names none of the page" % host,
-          read.slo_excerpt(TEXT, host) is None and STAFF not in read.excerpt_log("X 1", read.slo_excerpt(TEXT, host), host))
+    check("6 %s's excerpt log of a page that names its staff names none of them" % host,
+          STAFF not in read.excerpt_log("X 1", read.slo_excerpt(TEXT, host), host)
+          and STAFF not in read.probe_log("X 1", TEXT))
     check("6 GUARD: %s has no recall file yet, so a full read is refused" % host,
           host not in read.RECALL_BY_HOST or os.path.exists(read.RECALL_BY_HOST[host]))
 check("6 City College of San Francisco's excerpt is unchanged by the host argument",
@@ -302,6 +303,43 @@ check("6 after a lead-in, a line that opens 'Students will be able to' and state
       read.objectives_of(EGSS)["objectives"] == ["Students will be able to analyze concepts of ethnic studies.",
                                                  "Students will be able to apply theory to critical events."]
       and read.objectives_of(two_leads)["objectives"] == ["Interpret results."], read.objectives_of(EGSS))
+rc_rio = read.rows_recall(read.RIO_HONDO_RECALL)
+check("6 Rio Hondo's self-recall count passes: 12 of 12 pages, SLOs and objectives counted by eye from trial "
+      "44886389239's log, bound to its parser", rc_rio["ok"] and rc_rio["right"] == 12 and rc_rio["pages"] == 12, rc_rio)
+with tempfile.TemporaryDirectory() as tmp:
+    want = json.load(open(read.RIO_HONDO_RECALL))
+    bad = dict(want, pages=dict(want["pages"]))
+    bad["pages"]["EGSS 110"] = dict(bad["pages"]["EGSS 110"], objective=0)
+    bad["pages"]["ACCT 100"] = dict(bad["pages"]["ACCT 100"], **{"from": "row"})
+    path = os.path.join(tmp, "r.json")
+    json.dump(bad, open(path, "w"))
+    rc_bad = read.rows_recall(path)
+check("6 GUARD: a Rio Hondo count changed or sourced from the row fails the gate (2 wrong of 12)",
+      not rc_bad["ok"] and rc_bad["right"] == 10 and len(rc_bad["wrong"]) == 2, rc_bad)
+mix = [{"course_id": 29363, "title": "Introduction to Public Speaking", "reports": ["u1"]},
+       {"course_id": 29364, "title": "Introduction to Public Speaking - Honors", "reports": ["u2"]}]
+retitled = [{"course_id": 8474, "title": "Foundations of Two-Dimensional Design", "reports": ["u1"]},
+            {"course_id": 11308, "title": "Two-Dimensional Design", "reports": ["u2"]}]
+check("6 a code that holds a course and its honors or lab version is left unread (Saddleback COMM 1000); retitled "
+      "versions of one course (Crafton Hills ART 120) and one course id are read",
+      read.variant_mix(mix) and not read.variant_mix(retitled) and not read.variant_mix(mix[:1])
+      and not read.variant_mix([dict(mix[0]), dict(mix[1], reports=[])]))
+SB = ("Course Content - Learning Objectives\nStudents completing this course satisfactorily will be able to:\n"
+      "Explain budgets.\nCompare investments.\nStudent Learning Outcomes\n"
+      "Students completing this course satisfactorily will be able to:\nCreate a budget.\nChoose an investment.\n"
+      "Course Content - Lecture\nOriginator: " + STAFF + "\n")
+sb = "saddleback.curriqunet.com"
+got_sb = read.parse_page("", SB, read.page_system("https://%s/x" % sb), "https://%s/x?reportId=201" % sb)
+check("6 Saddleback's Course Outline: its lead-in is the lead, never an outcome, and Course Content - Learning "
+      "Objectives heads its objectives (trial 44889396093)",
+      got_sb["outcomes"] == ["Create a budget.", "Choose an investment."]
+      and got_sb["lead"] == "Students completing this course satisfactorily will be able to:"
+      and got_sb["objectives"] == ["Explain budgets.", "Compare investments."], got_sb)
+check("6 Saddleback's excerpts end at the next Course Content heading and at Student Learning Outcomes, no person's line",
+      read.slo_excerpt(SB, sb) == ["Students completing this course satisfactorily will be able to:", "Create a budget.",
+                                   "Choose an investment."]
+      and read.objectives_excerpt(SB, sb)[-1] == "Compare investments."
+      and STAFF not in " ".join(read.slo_excerpt(SB, sb) + read.objectives_excerpt(SB, sb)))
 probe = read.probe_log("X 1", TEXT)
 check("6 a host with no heading pair logs only the lines that name outcomes or objectives, never a person's line",
       STAFF not in probe and "STUDENT LEARNING OUTCOMES" in probe
