@@ -389,7 +389,11 @@ def objectives_of(text: str) -> dict:
                 continue
             if _obj_ends(s) or (roman and ROMAN_HEAD.match(s)):
                 break
-            if not items and LEAD.match(s):
+            # Once a lead-in is taken, a further lead-in line is passed over only when it ends as a lead-in does
+            # (LEAD_ENDS; Santa Ana and SDCCD print two); one that goes on to state the objective is the first
+            # objective. Rio Hondo's EGSS 110 prints "The Student Will Be Able To:" and then five objectives that
+            # each open "Students will be able to ..." (trial 44885957222 filed none of them; S691).
+            if not items and LEAD.match(s) and (lead is None or LEAD_ENDS.search(s)):
                 lead = lead or s
                 continue
             items.append(MARKER.sub("", s, count=1).strip())
@@ -565,6 +569,22 @@ def page_system(url: str) -> str:
             or "other")
 
 
+# A course's honors or lab version, by its title. Saddleback's search gives a common course number and its honors or
+# lab version one subject and number (index run 44886092872: COMM 1000 holds Introduction to Public Speaking and its
+# Honors version, ANTH 1001 the course and its lab; 12 codes), so the read cannot tell which outline is the course's.
+VARIANT_TITLE = re.compile(r"\b(honors|lab(oratory)?)\b", re.I)
+
+
+def variant_mix(entries: list[dict]) -> bool:
+    """Whether one code's index entries are two courses, one titled as an honors or lab version and one not: such a
+    code is left unread rather than guessed. Retitled versions of one course (Crafton Hills' ART 120) are not."""
+    with_reports = [e for e in entries if e.get("reports")]
+    if len({e.get("course_id") for e in with_reports}) < 2:
+        return False
+    kinds = {bool(VARIANT_TITLE.search(e.get("title") or "")) for e in with_reports}
+    return kinds == {True, False}
+
+
 def wanted_courses(index: dict, slugs: list[str]) -> list[dict]:
     """Each course the loaded records name that has an outline report, once, with the
     colleges (by slug) whose records name it."""
@@ -576,6 +596,8 @@ def wanted_courses(index: dict, slugs: list[str]) -> list[dict]:
     for code in sorted(by_code):
         entries = index["index"].get(code) or []
         reports = [r for e in entries for r in e.get("reports") or []]
+        if reports and variant_mix(entries):
+            continue
         if reports:
             out.append({"code": code, "title": entries[0].get("title"), "course_id": entries[0].get("course_id"),
                         "report": reports[0], "named_by": sorted(by_code[code])})
@@ -871,7 +893,8 @@ def strip_page_files(root: str = OUT_DIR) -> list[str]:
 # that did not answer 200, a trial that parsed outcomes on fewer than half its pages, and a count with no source
 # (second reader on #3601, S690).
 CCSF_RECALL = os.path.join(HERE, "course_outcomes", "ccsf_recall.json")
-RECALL_BY_HOST = {"ccsf.curricunet.com": CCSF_RECALL}
+RIO_HONDO_RECALL = os.path.join(HERE, "course_outcomes", "rio_hondo_recall.json")
+RECALL_BY_HOST = {"ccsf.curricunet.com": CCSF_RECALL, "riohondo.curriqunet.com": RIO_HONDO_RECALL}
 # The SLO section of a report 28 page, cut by its two printed headings alone, never by the parser's patterns.
 EXCERPT_FROM, EXCERPT_TO, EXCERPT_LINES = "STUDENT LEARNING OUTCOMES", "CONTENTS", 60
 # Each outcomes-only host's two printed headings around its SLO section, as a person read them off the host's own
