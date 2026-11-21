@@ -50,6 +50,18 @@ lane has nothing in flight there (`d-lane-names-only-colleges-in-flight-s681`). 
 **The conductor's own:** the merges, the paid-run checks against the caps, the display build once after the posts,
 `harvest-gap-census.yml` against 4,875, and the checkpoint.
 
+**Split changes during the run.** Butte joins lane 1 only if `readerfix` carries its normalized-address compare
+(`f-butte-page-addresses-changed-case-s690`).
+
+## Progress (refreshed while the run works)
+
+- 13:37Z: the `total_not_printed` gap on Santa Monica 37885 and 45811 to 45815 (#3640's plan, guarded UPDATE, 6 of 6;
+  a live read confirmed each row's gap and confidence).
+- 13:39Z: the live read before the rereads found no live row better than `main`'s file and none newer. Orange Coast's
+  109 rows at 38670927724 give way to `main`'s 39726645292, which passes or ties on all 109.
+- 13:40Z: rereads dispatched on `claude/s697-piles`: Orange Coast, Hartnell, Imperial Valley, Oxnard. Cerritos 20504
+  waits: its run also holds 44984, held for a person.
+
 **Not tonight:** the plain session's list (handoff 696; brief section 4). Golden West's 476 header rows wait on a plain
 session's review. City College of San Francisco's Cal-GETC step stays a plain session's.
 
