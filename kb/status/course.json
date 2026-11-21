@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 693,
-  "moniker": "SkyKittiwake",
+  "session": 694,
+  "moniker": "SkyPetrel",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_694_handoff.md",
+  "handoff": "docs/session_695_handoff.md",
   "calls": [
     {
       "title": "Confirm Kinesiology's 627 where the descriptions and TOP both agree?",
@@ -103,13 +103,25 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-20T21:03:52Z",
+  "written_at": "2026-11-21T00:34:45Z",
   "project": "course",
   "next_step": {
-    "title": "Assign a course to an M-ID from its panel",
-    "text": "The Courses List now names the 2,508 courses that need an M-ID and suggests the closest one with a measured confidence. Next, teach the daily build to place a course that sits outside the identity file with its fields, dry-run it, take a second read, then add the control that assigns a course from its panel."
+    "title": "Mint the courses the pile plan names",
+    "text": "A dry run plans the mint for the Needs an M-ID pile: 58 catalog records holding 140 courses and 514 stand-alone records, with 944 courses held because no route gives them a common subject code. Next, a second read of the plan, then the apply under the re-mint playbook."
   },
   "changes": [
+    {
+      "at": "2026-11-21T00:28:00Z",
+      "text": "A dry run planned the mint for the Needs an M-ID pile and applied nothing: 572 records planned, 944 courses held for want of a common subject code, 4 held for Assign as duplicates of an M-ID."
+    },
+    {
+      "at": "2026-11-21T00:26:00Z",
+      "text": "The pile opens on the exhibit links of each course's closest M-ID, counted through the build's folds, and the closest M-ID file rebuilds in the daily build when an input changed."
+    },
+    {
+      "at": "2026-11-20T23:52:00Z",
+      "text": "The daily build places a course assigned from outside the identity file with its subject, credit status and TOP (0 of 12 to 12 of 12 in the dry run), and 15 courses the identity file already held now list under their M-IDs; the pile reads 2,493 after the next daily build."
+    },
     {
       "at": "2026-11-20T20:50:00Z",
       "text": "The Courses List's two gap lists are one, Needs an M-ID: 2,508 courses with no M-ID, no C-ID and no CCN. A Closest M-ID column suggests a common course for each, with a confidence measured on 6,000 known courses (a score of 0.75 or more was right 93% of the time); 82 of the 2,508 score that high, so most need new M-IDs."

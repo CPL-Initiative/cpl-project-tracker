@@ -1,7 +1,7 @@
 ---
 title: "The Commons — lessons"
 date: 2026-10-18
-updated: 2026-11-20
+updated: 2026-11-21
 tags: [lessons, commons, program-requirements, cer-procedures, skyview, common-cr-reference]
 artifacts:
   - commons_progress.js
@@ -536,3 +536,44 @@ Sam finished the list. They read a fixture now, and a Python check ties the fixt
 (run 44806543827), and the function now logs its reason. The privacy plugin refuses a Bash call that names the daily
 dashboard generator; read it with the Read tool. A worktree-isolated agent starts in the repo of the session's working
 directory, so a tracker worker is launched from the tracker.
+
+
+## S694 (SkyPetrel, Sam's plain session, 2026-11-20 to 21, conductor): Assign from the panel, the pile's links, the mint plan, the Subjects card
+
+**What shipped.** #3617 (`1f7135da`): the commons lane compacted, 24,934 to 18,475 bytes. #3618 (`810a9b50`): the
+build behind Assign from the panel, with its dry run and a second read. #3619 (`e04e155d`): the pile opens on exhibit
+links counted through the build's folds, and `kb/coci_closest_mid.json` rebuilds in the daily build when an input
+changed. #3621 (`ab0ed744`): the pile mint as a dry run; nothing applied. Open when these documents were written: #3620
+(the Subjects card, `#commons/subjects`) and #3622 (the Assign control in the Courses List panel).
+
+**Change the build before the control, and measure the change.** The dry run ran the build unchanged and changed: pile
+courses listing under their target went 70 of 82 to 82 of 82, and a minted course carrying subject, credit status and
+TOP 0 of 12 to 12 of 12. The change also moved today's output in three places, each read and kept: 15 courses the
+identity file already held now list under their M-IDs (member rows 134,485 to 134,500; the pile 2,508 to 2,493 at the
+next daily build), two units figures (AUTO M9004, CULN M1032), and FIRE M1219 back on its own row with 12 courses.
+
+**Why the pile exists.** 2,364 of its 2,508 courses carry a title the identity seed's `STOP_PATTERNS` set aside as a
+generic shell (special or selected topics 584, practicum 571, tutoring 266, field work and the like 240, seminar 222,
+apprenticeship 169); 119 a title `CODE_RE` read as code-only; 19 are ordinary. The pile is a byproduct of a rule, so a
+rule (topics flagged not applicable, as independent study is) clears more of it than any matcher.
+
+**Count links through the folds.** Of 4,591 records in `kb/coci_articulations.json`, 3,101 sit on a live id; 413 reach a
+row through `consolidated_from`, 12 through `routed_from`, 971 through `merge_into`; 91 records on 66 ids reach nothing.
+Group Communication's 67 sit on `COMM 140`, which no pile course names, so COBIx's example cannot come first; only 4
+pile courses are named by an exhibit directly.
+
+**The mint plan's hold is the subject code, and that is the Subjects card's job.** The wave is 1,602 courses: 58
+catalog records holding 140 courses and 514 stand-alone records planned, 944 held because no route gives a SUBJ4, 4
+held for Assign. The subject map disagrees with the identity file's SUBJ4 for 6,545 of 51,616 courses (13%), and two
+new `discipline_source` values would be misread by five consumers. The plan needs a second read before an apply is
+written.
+
+**A failed read is not an empty list.** The second reader's BLOCKING finding on #3622: a failed read of assigned courses
+passed as none assigned, where the write depends on it. Now a failed read offers no Assign.
+
+**A fingerprint over raw bytes never matches when inputs carry daily stamps.** The reader on #3619 found the rebuild
+would run every day; #3619 carries the fix.
+
+**Tooling.** The conductor killed a worker's `npm test` by process id, taking it for its own: check the parent and the
+start time before a kill. A branch stacked on a PR that squash-merges conflicts on every shared file: rebuild it as
+cherry-picks on `main`. Four test suites at once on four cores made every suite slow; run them one or two at a time.
