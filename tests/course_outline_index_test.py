@@ -168,9 +168,11 @@ check("7 a run counts what the search returned: each status, each client, the tw
 
 
 class _Page:
-    """A dashboard that posts NewSearch only when its Search button is pressed (Rio Hondo, run 44508907581)."""
-    def __init__(self, posts_on_load=False, has_button=True):
-        self.handler, self.posts_on_load, self.has_button, self.pressed = None, posts_on_load, has_button, 0
+    """A dashboard that posts NewSearch only when its Search button is pressed (Rio Hondo, run 44508907581). It has
+    `buttons` Search buttons, and only the one at `posts_at` (in the script's order) posts the search."""
+    def __init__(self, posts_on_load=False, buttons=2, posts_at=1):
+        self.handler, self.posts_on_load, self.buttons, self.posts_at = None, posts_on_load, buttons, posts_at
+        self.pressed = []
 
     def on(self, _ev, fn):
         self.handler = fn
@@ -181,19 +183,19 @@ class _Page:
     def wait_for_timeout(self, _ms):
         pass
 
-    def _post(self):
+    def _post(self, path="Search/NewSearch"):
         class R:
-            url, method, post_data, headers = base_s + "Search/NewSearch", "POST", "options%5Bpagesize%5D=25&options%5Bpage%5D=0", {"accept": "*/*"}
+            url, method, post_data, headers = base_s + path, "POST", "options%5Bpagesize%5D=25&options%5Bpage%5D=0", {"accept": "*/*"}
         if self.handler:
             self.handler(R())
 
     def evaluate(self, js, arg=None):
         if js == idx.PRESS_SEARCH_JS:
-            if not self.has_button:
+            if (arg or 0) >= self.buttons:
                 return None
-            self.pressed += 1
-            self._post()
-            return {"tag": "BUTTON", "beside_reset": True}
+            self.pressed.append(arg or 0)
+            self._post("Search/NewSearch" if arg == self.posts_at else "Search/GetSearchFields")
+            return {"n": arg or 0, "tag": "BUTTON", "beside_reset": arg == self.posts_at}
         if js == idx.OUTLINE_LINKS_JS:
             return []
         if js == idx.FETCH_JS:
@@ -221,16 +223,23 @@ try:
     got_q = idx.search_all(_Reader(quiet), base_s, 0)
     auto = _Page(posts_on_load=True)
     got_a = idx.search_all(_Reader(auto), base_s, 0)
-    none_ = _Page(has_button=False)
+    none_ = _Page(buttons=0)
     got_n = idx.search_all(_Reader(none_), base_s, 0)
+    never = _Page(buttons=5, posts_at=9)
+    got_v = idx.search_all(_Reader(never), base_s, 0)
 finally:
     idx.census.robots_allows = _orig
-check("7 a dashboard that posts no search on load gets its Search button pressed once, and its own request is replayed",
-      quiet.pressed == 1 and got_q.get("rows_read") == 1 and got_q.get("pressed_search", {}).get("tag") == "BUTTON"
-      and "error" not in got_q, got_q)
+check("7 a dashboard that posts no search on load gets its Search buttons pressed in turn until one posts it, and its "
+      "own request is replayed; each press records the paths the page posted",
+      quiet.pressed == [0, 1] and got_q.get("rows_read") == 1 and "error" not in got_q
+      and [p["posted"] for p in got_q.get("pressed_search", [])] == [["/Search/GetSearchFields"], ["/Search/NewSearch"]],
+      got_q)
 check("7 a dashboard that searches on load is never pressed; one with no Search button keeps the no-NewSearch error",
-      auto.pressed == 0 and "pressed_search" not in got_a and got_a.get("rows_read") == 1
-      and got_n.get("error") == "the page made no NewSearch request" and got_n.get("pressed_search") is None, (got_a, got_n))
+      auto.pressed == [] and "pressed_search" not in got_a and got_a.get("rows_read") == 1
+      and got_n.get("error") == "the page made no NewSearch request" and got_n.get("pressed_search") == [], (got_a, got_n))
+check("7 the presses stop at PRESS_TRIES, and a page that never posts its search keeps the no-NewSearch error",
+      never.pressed == list(range(idx.PRESS_TRIES)) and got_v.get("error") == "the page made no NewSearch request",
+      (never.pressed, got_v))
 check("7 the press fills no field and answers no check: the script clicks one button labeled Search and nothing else",
       idx.PRESS_SEARCH_JS.count(".click()") == 1 and "value =" not in idx.PRESS_SEARCH_JS
       and "turnstile" not in idx.PRESS_SEARCH_JS.lower() and "captcha" not in idx.PRESS_SEARCH_JS.lower())
