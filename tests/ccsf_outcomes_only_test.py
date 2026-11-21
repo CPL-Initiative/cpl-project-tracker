@@ -320,7 +320,9 @@ check("6 after a lead-in, a line that opens 'Students will be able to' and state
                                                  "Students will be able to apply theory to critical events."]
       and read.objectives_of(two_leads)["objectives"] == ["Interpret results."], read.objectives_of(EGSS))
 for name, host, slug, path in (("Rio Hondo", rio, "rio_hondo", read.RIO_HONDO_RECALL),
-                               ("Saddleback", "saddleback.curriqunet.com", "saddleback", read.SADDLEBACK_RECALL)):
+                               ("Saddleback", "saddleback.curriqunet.com", "saddleback", read.SADDLEBACK_RECALL),
+                               ("Irvine Valley", "saddleback.curriqunet.com", "irvine_valley",
+                                read.IRVINE_VALLEY_RECALL)):
     rc = read.recall_for(host, slug)
     why = gate_stale(path)
     if why:
@@ -333,7 +335,8 @@ for name, host, slug, path in (("Rio Hondo", rio, "rio_hondo", read.RIO_HONDO_RE
               "log, bound to the current parser" % name, rc["ok"] and rc["right"] == 12, rc)
 check("6 GUARD: Saddleback's count never opens a read for Irvine Valley on the same host, and a host with no file is "
       "refused",
-      not read.recall_for("saddleback.curriqunet.com", "irvine_valley")["ok"]
+      read.recall_path("saddleback.curriqunet.com", "irvine_valley") != read.SADDLEBACK_RECALL
+      and not read.recall_for("saddleback.curriqunet.com", "saddleback,irvine_valley")["ok"]
       and not read.recall_for("sdccd.curriqunet.com", "san_diego_of_continuing_education")["ok"])
 # S697: Irvine Valley's outlines sit on Saddleback's host, printed by its Official Course Outline of Record (198). Each
 # college's count is keyed by its slug on the shared host, and a count opens a read for its own college alone.

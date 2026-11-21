@@ -1125,7 +1125,9 @@ def rows_recall(path: str, out_dir: str = OUT_DIR, host: str | None = None) -> d
             else:
                 wrong.append((code, count, seen))
     pages = len(want["pages"])
-    parsed = sum(1 for r in filed["rows"] if r.get("status") == 200 and r.get("outcomes"))
+    # A page parsed as groups (SDCCD's colleges, Irvine Valley's untitled entries) files its outcomes in its groups.
+    parsed = sum(1 for r in filed["rows"] if r.get("status") == 200
+                 and (r.get("outcomes") or any(g.get("outcomes") for g in r.get("groups") or [])))
     if 2 * parsed < len(filed["rows"]):
         return refuse("trial %s parsed outcomes on %d of %d pages" % (want["trial"], parsed, len(filed["rows"])),
                       pages, right, wrong)
