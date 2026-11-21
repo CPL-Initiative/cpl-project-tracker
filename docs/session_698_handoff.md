@@ -60,7 +60,10 @@ lane has nothing in flight there (`d-lane-names-only-colleges-in-flight-s681`). 
 - 13:39Z: the live read before the rereads found no live row better than `main`'s file and none newer. Orange Coast's
   109 rows at 38670927724 give way to `main`'s 39726645292, which passes or ties on all 109.
 - 13:40Z: rereads dispatched on `claude/s697-piles`: Orange Coast, Hartnell, Imperial Valley, Oxnard. Cerritos 20504
-  waits: its run also holds 44984, held for a person.
+  waits: its run also holds 44984, held for a person. All four receipts landed by 13:41Z; a closing live read shows
+  the nine named programs on `main`'s runs and passing.
+- 14:04Z: #3640 ready, waiting on `test`. Irvine Valley's #3642 (index 44908824732: 1,199 current outlines; trial
+  44911142170, 12 of 12) waits on its second reader before the full read.
 
 **Not tonight:** the plain session's list (handoff 696; brief section 4). Golden West's 476 header rows wait on a plain
 session's review. City College of San Francisco's Cal-GETC step stays a plain session's.
