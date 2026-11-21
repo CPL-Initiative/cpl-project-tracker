@@ -1,0 +1,1239 @@
+{
+ "run": "44911142170",
+ "index": "kb/course_outline_index/index_44908824732.json",
+ "host": "https://saddleback.curriqunet.com/",
+ "system": "curriqunet",
+ "source_kind": "course_outline",
+ "slugs": "irvine_valley",
+ "part": 1,
+ "of": 1,
+ "wanted": 868,
+ "slice": 12,
+ "collects": [
+  "slo",
+  "objective"
+ ],
+ "objectives_printed": true,
+ "parser_fingerprint": "2629a09aeac9be1183829d0cea92009f",
+ "at": "2026-11-21T13:56:56Z",
+ "complete": true,
+ "summary": {
+  "read": 12,
+  "shapes": {
+   "groups": 12
+  },
+  "status_not_200": 0,
+  "outcomes": 43
+ },
+ "rows": [
+  {
+   "code": "ACCT 1A",
+   "title": "Financial Accounting",
+   "course_id": 26379,
+   "report": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/26379?entityType=Course&reportId=198",
+   "named_by": [
+    "irvine_valley"
+   ],
+   "status": 200,
+   "final_url": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/26379?entityType=Course&reportId=198",
+   "access": "public",
+   "chars": 18510,
+   "text_cut": false,
+   "html_chars": 702250,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "groups",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "groups": [
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Create a Balance Sheet for a Merchandise-based business using a Corporate form of organization with an accuracy of 70%."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "0fab315b07b073f50e6c8f6f7ddd95e3"
+    },
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Create a Balance Sheet for a Service-based business using a Corporate form of organization with an accuracy of 70%."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "3e04951f4aa221f4a3639b6230ce4f69"
+    },
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Create an Income Statement for a Merchandise-based business using a Corporate form of organization with an accuracy of 70%."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "006c386e07bc0454c3a8a245a12c6ff6"
+    },
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "create an Income Statement for a Service-based business using a Corporate form of organization with an accuracy of 70%."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "ee3b4add8058f676b7ca13ecba72f897"
+    }
+   ],
+   "parsed_from": "html",
+   "fingerprint": null,
+   "objectives": [
+    "Explain the nature and purpose of GAAP.",
+    "Explain and apply the components of the conceptual framework for financial accounting and reporting, including the qualitative characteristics of accounting information, the assumptions underlying accounting, the basic principles of financial accounting, and the constraints and limitations on accounting information.",
+    "Define and use accounting and business terminology.",
+    "Explain what a system is and how an accounting system is designed to satisfy the needs of specific businesses and users and summarize the purpose of journals and ledgers.",
+    "Apply transaction analysis, input transactions into the accounting system, process this input, and prepare and interpret the four basic financial statements.",
+    "Distinguish between cash basis and accrual basis accounting and their impact on the financial statements, including the revenue recognition and matching principles.",
+    "Explain the content, form, and purpose of the basic financial statements (including footnotes) and the annual report, and how they satisfy the information needs of investors, creditors, and other users.",
+    "Identify and illustrate how the principles of internal control are used to manage and control the firm's resources and minimize risk.",
+    "Explain the nature of current assets and related issues, including the measurement and reporting of cash and cash equivalents, receivables, bad debts, inventory and cost of goods sold.",
+    "Explain the valuation and reporting of current liabilities, estimated liabilities, and other contingencies.",
+    "Identify and illustrate issues relating to non-current asset acquisition, use, cost allocation, and disposal.",
+    "Distinguish between capital and revenue expenditures.",
+    "Identify and illustrate issues relating to long-term liabilities, including issuance, valuation, and retirement of debt,including the time value of money.",
+    "Identify and illustrate issues relating to stockholders' equity, including issuance, repurchase of capital stock, and dividends.",
+    "Explain the importance of operating, investing, and financing activities reported in the Statement of Cash Flows.",
+    "Interpret company activity, profitability, liquidity and solvency through selection and application of appropriate financial analysis tools.",
+    "Identify the ethical implications inherent in financial reporting and be able to apply strategies for addressing them."
+   ],
+   "objectives_heading": "Learning Objectives",
+   "objectives_lead": null,
+   "objectives_fingerprint": "8564755c278c7331b656df09261a8571",
+   "section_heads": [
+    "EFFECTIVE",
+    "METHODS OF INSTRUCTION",
+    "GRADING",
+    "REQUISITE",
+    "REQUISITE",
+    "REQUISITE",
+    "UNITS",
+    "UNITS",
+    "UNITS",
+    "GRADING",
+    "REPEATABILITY",
+    "LEARNING OBJECTIVES",
+    "CONTENT",
+    "ASSIGNMENTS",
+    "METHOD OF EVALUATION",
+    "STUDENT LEARNING OUTCOMES",
+    "STUDENT LEARNING OUTCOMES",
+    "REQUIRED TEXTS",
+    "TEXTBOOK"
+   ]
+  },
+  {
+   "code": "ARTH 1",
+   "title": "History of Photography",
+   "course_id": 26764,
+   "report": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/26764?entityType=Course&reportId=198",
+   "named_by": [
+    "irvine_valley"
+   ],
+   "status": 200,
+   "final_url": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/26764?entityType=Course&reportId=198",
+   "access": "public",
+   "chars": 10727,
+   "text_cut": false,
+   "html_chars": 684496,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "groups",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "groups": [
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "The student will develop the skill set that allows them to articulate observations as he/she reviews historical works of photographic art."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "7d339d4b1570200539d661a40b0a37f6"
+    },
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "The student will identify the historical timeline and cultural context for works of art."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "942d2e670b89189614245703bcb1144b"
+    },
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "The student will define and articulate appropriate art historical terminologies that are utilized in the analyses of works of art."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "84235de571f0312537129da8ce60429b"
+    }
+   ],
+   "parsed_from": "html",
+   "fingerprint": null,
+   "objectives": [
+    "Identify early technical processes and trends in the history of photography.",
+    "Recognize early portraiture styles and concepts.",
+    "Identify landscape and architectural photography from 1839-1925.",
+    "Discuss early documentary photography and the artists who used this style.",
+    "Differentiate between visual styles in the early phases of art photography.",
+    "Differentiate between the Pictorialist and Photo Secession movement.",
+    "Describe the evolution of the \"New Objectivity\" and the artists involved in the development of this new vision.",
+    "Identify trends in print media.",
+    "Examine contemporary movements and trends in the medium since 1950."
+   ],
+   "objectives_heading": "Learning Objectives",
+   "objectives_lead": null,
+   "objectives_fingerprint": "6ff5269a7b94460bb05480ebfb10bc3c",
+   "section_heads": [
+    "EFFECTIVE",
+    "METHODS OF INSTRUCTION",
+    "GRADING",
+    "UNITS",
+    "UNITS",
+    "UNITS",
+    "GRADING",
+    "REPEATABILITY",
+    "LEARNING OBJECTIVES",
+    "CONTENT",
+    "ASSIGNMENTS",
+    "METHOD OF EVALUATION",
+    "STUDENT LEARNING OUTCOMES",
+    "STUDENT LEARNING OUTCOMES",
+    "REQUIRED TEXTS",
+    "TEXTBOOK"
+   ]
+  },
+  {
+   "code": "CHEM 12A",
+   "title": "Organic Chemistry",
+   "course_id": 7036,
+   "report": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/7036?entityType=Course&reportId=198",
+   "named_by": [
+    "irvine_valley"
+   ],
+   "status": 200,
+   "final_url": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/7036?entityType=Course&reportId=198",
+   "access": "public",
+   "chars": 11602,
+   "text_cut": false,
+   "html_chars": 690186,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "groups",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "groups": [
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Students will be able to identify whether a stereocenter in a chiral molecule has the (R) or (S) configuration; and students will be able to identify whether a pair of structures represent enantiomers, diastereomers, meso compounds, or the same compound."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "3736e059341090d2bc62a05de811d3ab"
+    },
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Students will be able to predict the major and minor monohalogenated products in free radical halogenation reactions of alkanes."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "bb2962e3b50515382a5a5e0b8a5acce1"
+    },
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Students will be able to predict the major and minor products from SN1/SN2 and E1/E2 reaction. In the substitution reactions, they will be able to identify which products show inversion of configuration; and in elimination reactions, they will be able to predict whether the Zaitsev or Hofmann product predominates."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "4a53d43b3b6285fb91efc5ab1d26b414"
+    },
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Students will be able to predict the major and minor products from the various reactions of alcohols."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "8d92c4a55378addceda6165ca870dbc4"
+    },
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Students will be able to predict the major and minor products in electrophilic addition reactions of alkenes and alkynes."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "7fb97cfff8212f53b3c7abe76444a5cc"
+    }
+   ],
+   "parsed_from": "html",
+   "fingerprint": null,
+   "objectives": [
+    "Apply scientific concepts, principles, and laws in solving organic chemistry problems.",
+    "Predict the major and minor products of organic chemical reactions for each class of compounds.",
+    "Apply the mechanistic aspects of the reactions to the solution of organic chemistry problems.",
+    "Perform organic chemistry laboratory experiments using the major organic chemistry laboratory techniques.",
+    "Operate laboratory equipment and instruments, including glassware, infrared spectrophotometer and melting point tester, for chemical analyses.",
+    "Analyze and interpret results of laboratory experiments."
+   ],
+   "objectives_heading": "Learning Objectives",
+   "objectives_lead": null,
+   "objectives_fingerprint": "a4de3aaa90e0ffea069e1693e9094013",
+   "section_heads": [
+    "EFFECTIVE",
+    "METHODS OF INSTRUCTION",
+    "GRADING",
+    "REQUISITE",
+    "REQUISITE",
+    "REQUISITE",
+    "REQUISITE",
+    "UNITS",
+    "UNITS",
+    "UNITS",
+    "GRADING",
+    "REPEATABILITY",
+    "LEARNING OBJECTIVES",
+    "CONTENT",
+    "ASSIGNMENTS",
+    "METHOD OF EVALUATION",
+    "STUDENT LEARNING OUTCOMES",
+    "STUDENT LEARNING OUTCOMES",
+    "REQUIRED TEXTS",
+    "TEXTBOOK"
+   ]
+  },
+  {
+   "code": "CS 1",
+   "title": "Introduction to Computer Systems",
+   "course_id": 26436,
+   "report": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/26436?entityType=Course&reportId=198",
+   "named_by": [
+    "irvine_valley"
+   ],
+   "status": 200,
+   "final_url": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/26436?entityType=Course&reportId=198",
+   "access": "public",
+   "chars": 12594,
+   "text_cut": false,
+   "html_chars": 694469,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "groups",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "groups": [
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "SLO 1 Internet Terms - Students will understand Computer Science terms dealing with the Internet and Internet security."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "89306fda4d505e749604e2e464f3159c"
+    },
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Spreadsheets - Students will create Excel spreadsheets which include functions, charts, replication, and what-if analysis."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "d24b4c3b0dd19b40da245b5d36601a5d"
+    },
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Programming - Students will understand the concepts of the process of creating a computer program."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "dcbec53adf4ae566c0d8c3456faafcf6"
+    },
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Students will be able to understand what is the function of a database, and the terminology used in database."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "ed5d7eca99d84c08836e63d1467b5ea7"
+    }
+   ],
+   "parsed_from": "html",
+   "fingerprint": null,
+   "objectives": [
+    "Define terms unique to the field of Computer Science.",
+    "Describe the functions and uses of the hardware and software comprising a computer system.",
+    "Define terms dealing with the Internet and with Internet security.",
+    "Create, save, format, edit worksheets, use functions, create charts, incorporate web features, perform replication and what-if analysis using Excel.",
+    "Create, save, edit databases, create queries and reports using Access.",
+    "Create, save, format, edit, and add web features to Word and Powerpoint files.",
+    "Identify the different information systems and the system development and program development process for creating information systems.",
+    "Write and execute elementary programs using the Visual Basic programming language."
+   ],
+   "objectives_heading": "Learning Objectives",
+   "objectives_lead": null,
+   "objectives_fingerprint": "576a3582c70b563102f1c4ef9fcf4b7e",
+   "section_heads": [
+    "EFFECTIVE",
+    "METHODS OF INSTRUCTION",
+    "GRADING",
+    "UNITS",
+    "UNITS",
+    "UNITS",
+    "GRADING",
+    "REPEATABILITY",
+    "LEARNING OBJECTIVES",
+    "CONTENT",
+    "ASSIGNMENTS",
+    "METHOD OF EVALUATION",
+    "STUDENT LEARNING OUTCOMES",
+    "STUDENT LEARNING OUTCOMES",
+    "REQUIRED TEXTS",
+    "TEXTBOOK"
+   ]
+  },
+  {
+   "code": "ELEC 200",
+   "title": "OSHA Standards for Construction Safety",
+   "course_id": 30237,
+   "report": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/30237?entityType=Course&reportId=198",
+   "named_by": [
+    "irvine_valley"
+   ],
+   "status": 200,
+   "final_url": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/30237?entityType=Course&reportId=198",
+   "access": "public",
+   "chars": 11936,
+   "text_cut": false,
+   "html_chars": 685676,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "groups",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "groups": [
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "The student will demonstrate an understanding of abatement techniques for hazards found in construction, develop a LockOut/Tag Out procedure meeting OSHA minimum standards and compare the OSHA definitions of a Competent Person and a Responsible Person."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "6843829f723bf36c4a5b4068b1ab4da2"
+    },
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Explain the OSHA record keeping requirements, inspections and citations."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "301855c6adf559b65b1cccf0ea4e01e3"
+    },
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Analyze the common causes of accidents and fatalities in hazardous areas of construction based on OSHA standards 29 Code of Federal Regulations Part (29 CFR 1926)."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "3559a352dad07f1f06b53d8f03c94ee3"
+    }
+   ],
+   "parsed_from": "html",
+   "fingerprint": null,
+   "objectives": [
+    "Locate and describe OSHA Standards Code of Federal Regulations (CFR)section 1926.",
+    "Analyze the common causes of accidents and fatalities in hazardous areas of construction.",
+    "Evaluate abatement techniques for hazards found in construction.",
+    "Develop a Lock Out / Tag Out procedure meeting OSHA minimum standards.",
+    "Compare and contrast OSHA definitions of a Competent Person and a Responsible Person.",
+    "Differentiate the types of work covered under the term \"construction\".",
+    "Explain the OSHA record keeping requirements, inspections and citations."
+   ],
+   "objectives_heading": "Learning Objectives",
+   "objectives_lead": null,
+   "objectives_fingerprint": "6b4150e0744afd55c0543ad842e0e350",
+   "section_heads": [
+    "EFFECTIVE",
+    "METHODS OF INSTRUCTION",
+    "GRADING",
+    "UNITS",
+    "UNITS",
+    "UNITS",
+    "GRADING",
+    "REPEATABILITY",
+    "LEARNING OBJECTIVES",
+    "CONTENT",
+    "ASSIGNMENTS",
+    "METHOD OF EVALUATION",
+    "STUDENT LEARNING OUTCOMES",
+    "STUDENT LEARNING OUTCOMES",
+    "REQUIRED TEXTS",
+    "TEXTBOOK"
+   ]
+  },
+  {
+   "code": "ERTH 20",
+   "title": "Introduction to Earth Science",
+   "course_id": 23367,
+   "report": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/23367?entityType=Course&reportId=198",
+   "named_by": [
+    "irvine_valley"
+   ],
+   "status": 200,
+   "final_url": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/23367?entityType=Course&reportId=198",
+   "access": "public",
+   "chars": 15918,
+   "text_cut": false,
+   "html_chars": 703146,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "groups",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "groups": [
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "The student should be able to identify the types of lithospheric plate boundaries and their characteristics."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "6361f786b549a6369731cede579b99fa"
+    },
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "The student should be able to identify the common minerals that are found in the crust of the Earth."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "22d95ee31ba25de29ba2e9a5d59ab55f"
+    },
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "The student should be able to identify names and characteristics of the common rocks that make up the crust of the Earth."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "83c057bcfed822b0e9a849487f003a29"
+    }
+   ],
+   "parsed_from": "html",
+   "fingerprint": null,
+   "objectives": [
+    "Identify and describe the common minerals that form the crust of the Earth.",
+    "Identify and describe the common rocks that form the crust of the Earth.",
+    "Read and analyze a topographic map.",
+    "Describe and analyze the geologic processes that form, modify, and destroy the crust of the Earth.",
+    "Identify and analyze structural features of the Earth, including folds and faults.",
+    "Read and interpret geologic maps.",
+    "Evaluate how an earthquake is located.",
+    "Analyze and describe the common plate tectonic boundaries.",
+    "Analyze and describe stream erosion and deposition.",
+    "Evaluate oceanographic processes that affect shorelines.",
+    "Describe and evaluate ocean circulation.",
+    "Analyze and describe atmospheric conditions of deserts.",
+    "Describe and interpret meteorologic processes that affect continental and oceanic environments.",
+    "Read and interpret basic weather maps.",
+    "Classify basic cloud formations and conduct elementary weather forecasting.",
+    "List and analyze various ocean currents and explain their relationships to global climate conditions.",
+    "Analyze and evaluate global climates.",
+    "Explain the main points of the scientific method",
+    "Identify, describe, and sketch the solar system.",
+    "Explain the age of the Earth and identify the geologic time scale."
+   ],
+   "objectives_heading": "Learning Objectives",
+   "objectives_lead": null,
+   "objectives_fingerprint": "5f6f56f0f2168226e8779f57e7747a58",
+   "section_heads": [
+    "EFFECTIVE",
+    "METHODS OF INSTRUCTION",
+    "GRADING",
+    "UNITS",
+    "UNITS",
+    "UNITS",
+    "GRADING",
+    "REPEATABILITY",
+    "LEARNING OBJECTIVES",
+    "CONTENT",
+    "ASSIGNMENTS",
+    "METHOD OF EVALUATION",
+    "STUDENT LEARNING OUTCOMES",
+    "STUDENT LEARNING OUTCOMES",
+    "REQUIRED TEXTS",
+    "TEXTBOOK"
+   ]
+  },
+  {
+   "code": "FR 1",
+   "title": "Beginning French I",
+   "course_id": 24513,
+   "report": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/24513?entityType=Course&reportId=198",
+   "named_by": [
+    "irvine_valley"
+   ],
+   "status": 200,
+   "final_url": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/24513?entityType=Course&reportId=198",
+   "access": "public",
+   "chars": 8992,
+   "text_cut": false,
+   "html_chars": 685287,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "groups",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "groups": [
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Student will interpret native spoken French language based on topics listed in the Course Outline of Record (COR)."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "71a2aa0ae8f92c2362678a4a6b6021fc"
+    },
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Students will read and interpret written material in French of at least 2 paragraphs in length."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "cc57ed900846084e2f542cd8362aba22"
+    },
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Students will correctly identify course-pertinent vocabulary based on topics listed in the Course Outline of Record (COR)."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "428c21221a224020865edc633a963513"
+    }
+   ],
+   "parsed_from": "html",
+   "fingerprint": null,
+   "objectives": [
+    "Use appropriate vocabulary and apply appropriate grammar rules in formulating spoken French sentences at a beginning level.",
+    "Differentiate among different levels of speech (formal, informal, slang) in listening, speaking and writing.",
+    "Accurately respond at a beginning level to oral and written questions or passages related to course content.",
+    "Construct written sentences, with an increased beginning level of complexity, that illustrate appropriate use of vocabulary and grammatical structures dealing with course content.",
+    "Compare and contrast cultural features of France with those of the student's own native culture."
+   ],
+   "objectives_heading": "Learning Objectives",
+   "objectives_lead": null,
+   "objectives_fingerprint": "85bde600488b932a523b797388676ead",
+   "section_heads": [
+    "EFFECTIVE",
+    "METHODS OF INSTRUCTION",
+    "GRADING",
+    "UNITS",
+    "UNITS",
+    "UNITS",
+    "GRADING",
+    "REPEATABILITY",
+    "LEARNING OBJECTIVES",
+    "CONTENT",
+    "ASSIGNMENTS",
+    "METHOD OF EVALUATION",
+    "STUDENT LEARNING OUTCOMES",
+    "STUDENT LEARNING OUTCOMES",
+    "REQUIRED TEXTS",
+    "TEXTBOOK"
+   ]
+  },
+  {
+   "code": "HD 10",
+   "title": "Introduction to Elementary Teaching",
+   "course_id": 26577,
+   "report": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/26577?entityType=Course&reportId=198",
+   "named_by": [
+    "irvine_valley"
+   ],
+   "status": 200,
+   "final_url": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/26577?entityType=Course&reportId=198",
+   "access": "public",
+   "chars": 11094,
+   "text_cut": false,
+   "html_chars": 688512,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "groups",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "groups": [
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Summarize major theories of child development."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "3adf961af7d512dbb3c88001fffb477a"
+    },
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Describe the impact of multiple factors on development and wellbeing, including those related to biology, environment, and social interactions."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "baded5137e2be2bf911fadc24a00ab8e"
+    },
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Identify the typical progression of development across all domains."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "1c89b1c06dd4ceeb6487463d2c6614c1"
+    },
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Differentiate between characteristics of typical and atypical development."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "8a31b9016e85bc730adaa8b471ca7485"
+    },
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Use objective and ethical techniques and skills when observing, interviewing, describing, and evaluating the behaviors of children."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "6e97e94c7db8860ab9b585a5fb169e8b"
+    }
+   ],
+   "parsed_from": "html",
+   "fingerprint": null,
+   "objectives": [
+    "Explore the personal and professional view of teaching by reflecting upon why they want to become a teacher. Students will examine personal characteristics, assumptions and beliefs, subject matter knowledge and other facets of the field that could impact their development as a teacher.",
+    "Articulate the basic purposes of schooling and trace the history of their development.",
+    "Analyze the teaching profession and describe the multiple roles of teachers and other school personnel in meeting the diverse needs of students.",
+    "Demonstrate knowledge of professional standards, ethics, and professionalism in classroom and school visits.",
+    "Demonstrate an understanding of educational issues in a global context.",
+    "Demonstrate knowledge of the impact of diverse and cultural contexts on learning.",
+    "Analyze ecological challenges outside the classroom that impact student learning and identify school and community resources that address these challenges.",
+    "Demonstrate skill in implementing established protocols for visiting schools, classrooms and observations.",
+    "Relate course content to real classrooms through satisfactory completion of a minimum of 45 hours of approved fieldwork including structured assignments, observations, and reflections that demonstrate the observer’s ability to a. Recognize and describe examples of teaching events that implement some elements of the CSTP and TPEs; b.Observe the use of state adopted academic content and performance standards; c.Compare and contrast classroom environments; d.Recognize and describe individual differences among students and identify strategies and accommodations used to address these differences."
+   ],
+   "objectives_heading": "Learning Objectives",
+   "objectives_lead": null,
+   "objectives_fingerprint": "5ff162654c584ff8b26db780656967d8",
+   "section_heads": [
+    "EFFECTIVE",
+    "METHODS OF INSTRUCTION",
+    "GRADING",
+    "REQUISITE",
+    "REQUISITE",
+    "REQUISITE",
+    "UNITS",
+    "UNITS",
+    "UNITS",
+    "GRADING",
+    "REPEATABILITY",
+    "LEARNING OBJECTIVES",
+    "CONTENT",
+    "ASSIGNMENTS",
+    "METHOD OF EVALUATION",
+    "STUDENT LEARNING OUTCOMES",
+    "STUDENT LEARNING OUTCOMES",
+    "REQUIRED TEXTS",
+    "TEXTBOOK"
+   ]
+  },
+  {
+   "code": "IMA 191",
+   "title": "Portfolio Development",
+   "course_id": 27447,
+   "report": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/27447?entityType=Course&reportId=198",
+   "named_by": [
+    "irvine_valley"
+   ],
+   "status": 200,
+   "final_url": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/27447?entityType=Course&reportId=198",
+   "access": "public",
+   "chars": 11661,
+   "text_cut": false,
+   "html_chars": 699410,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "groups",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "groups": [
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Student demonstrates proficiency at scheduling 16 weeks of production on a chosen group project. Each week is labeled with a group goal and a group assignment. Appropriate number of product test weeks are assigned midway through the course. The final project has a completion date one week prior to the end of the semester. This is a living document due the third week of class, and reevaluated each week during the production of assets."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "78919f569be5cf2db3f2a9423c012219"
+    }
+   ],
+   "parsed_from": "html",
+   "fingerprint": null,
+   "objectives": [
+    "Assemble a diverse portfolio demonstrating proficiency in various media.",
+    "Address goals and develop strategies to improve success in the appropriate field.",
+    "Develop skills for public presentation of personal creative work.",
+    "Produce various types of industry standard portfolio formats.",
+    "Demonstrate the ability to prepare effective resume and cover letter.",
+    "Produce a timeline driven team project on deadline, demonstrating the ability to work on a team, professionalism, and problem solving skills."
+   ],
+   "objectives_heading": "Learning Objectives",
+   "objectives_lead": null,
+   "objectives_fingerprint": "3a03afbfabfe3a51ca03ea384f653f63",
+   "section_heads": [
+    "EFFECTIVE",
+    "METHODS OF INSTRUCTION",
+    "GRADING",
+    "REQUISITE",
+    "REQUISITE",
+    "UNITS",
+    "UNITS",
+    "UNITS",
+    "GRADING",
+    "REPEATABILITY",
+    "REPEATABILITY",
+    "LEARNING OBJECTIVES",
+    "CONTENT",
+    "ASSIGNMENTS",
+    "METHOD OF EVALUATION",
+    "STUDENT LEARNING OUTCOMES",
+    "STUDENT LEARNING OUTCOMES",
+    "REQUIRED TEXTS",
+    "TEXTBOOK"
+   ]
+  },
+  {
+   "code": "LIB 20",
+   "title": "Critical Thinking and Research Writing",
+   "course_id": 30357,
+   "report": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/30357?entityType=Course&reportId=198",
+   "named_by": [
+    "irvine_valley"
+   ],
+   "status": 200,
+   "final_url": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/30357?entityType=Course&reportId=198",
+   "access": "public",
+   "chars": 18332,
+   "text_cut": false,
+   "html_chars": 729105,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "groups",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "groups": [
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Compose a sustained, thesis-driven research paper demonstrating logical reasoning, rhetorical awareness, and technical proficiency."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "19668ae9424918243b116a5fd157553c"
+    },
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Practice ethical use of information by supporting statements and claims with parenthetical and bibliographic citations."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "da93bd88bc5a125ac89e10ceede499f2"
+    },
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Formulate and refine a research question appropriate to undergraduate scholarly inquiry that guides effective investigation."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "f6e2fce3ddb38f6c58d482153d2ad7b2"
+    },
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Critically evaluate and synthesize scholarly and technical sources for authority, methodology, and logical soundness."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "6dbaed2d7d84fd0fc08e38e64ea65606"
+    },
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Integrate quantitative, qualitative, and visual evidence into coherent, ethically documented writing that clearly communicates findings to a defined audience."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "0dedc3b24d1c6451c91f43bf26853ac6"
+    }
+   ],
+   "parsed_from": "html",
+   "fingerprint": null,
+   "objectives": [
+    "Apply critical and logical reasoning to locate, evaluate, and synthesize diverse information sources across disciplines, recognizing their rhetorical, cultural, and social contexts.",
+    "Compose thesis-driven academic writing that demonstrates analysis and synthesis of non-fiction sources through clear organization, effective syntax, and command of writing mechanics.",
+    "Demonstrate effective planning, drafting, revising, editing, and proofreading strategies by applying feedback to strengthen clarity, argumentation, and rhetorical effectiveness.",
+    "Read analytically and evaluate authors’ purpose, structure, and rhetorical strategies, including the use of diction, syntax, and tone to shape meaning and persuasion.",
+    "Demonstrate strategies for reflective, iterative research that sustains undergraduate inquiry while adapting to new insights and evolving evidence.",
+    "Apply rhetorical organization and compositional strategies (purpose, audience, tone, and appeals) to create clarity, coherence, and impact.",
+    "Understand intellectual property and the ownership of ideas in academic research and writing by demonstrating the ability to apply standard citation conventions to ethically attribute sources and establish academic credibility."
+   ],
+   "objectives_heading": "Learning Objectives",
+   "objectives_lead": null,
+   "objectives_fingerprint": "b81ba09ba34ce058a6b76d0d753f9051",
+   "section_heads": [
+    "EFFECTIVE",
+    "METHODS OF INSTRUCTION",
+    "GRADING",
+    "REQUISITE",
+    "REQUISITE",
+    "REQUISITE",
+    "REQUISITE",
+    "UNITS",
+    "UNITS",
+    "UNITS",
+    "GRADING",
+    "REPEATABILITY",
+    "REQUISITE",
+    "CONTENT",
+    "CONTENT",
+    "REQUISITE",
+    "CONTENT",
+    "CONTENT",
+    "LEARNING OBJECTIVES",
+    "CONTENT",
+    "ASSIGNMENTS",
+    "METHOD OF EVALUATION",
+    "STUDENT LEARNING OUTCOMES",
+    "REQUIRED TEXTS",
+    "TEXTBOOK"
+   ]
+  },
+  {
+   "code": "MS 20",
+   "title": "Introduction to Oceanography",
+   "course_id": 23324,
+   "report": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/23324?entityType=Course&reportId=198",
+   "named_by": [
+    "irvine_valley"
+   ],
+   "status": 200,
+   "final_url": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/23324?entityType=Course&reportId=198",
+   "access": "public",
+   "chars": 22753,
+   "text_cut": false,
+   "html_chars": 714985,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "groups",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "groups": [
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Students will identify the major global plate tectonic provinces and plate boundaries and correlate areas of earthquake and volcanic activity to plate boundaries."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "14def494d0fe485fbf81a7cca947b046"
+    },
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Describe the formation of the different types of oceanic sediment, and identify which are most common in the various physiographic zones."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "aa1dcac440ad56389f0b612e32f169dd"
+    },
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Describe the processes that alter sea surface salinity, temperature, and density in the oceans"
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "1f9a66932102a8747a858e662ea53649"
+    },
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Describe the components of Earth’s atmosphere and how the atmosphere is heated, including natural and anthropogenic climate processes that result in: changes to Earth’s heat balance, climate change, and changes to oceanographic processes."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "e886554a7397a3423653181d6b2cc071"
+    }
+   ],
+   "parsed_from": "html",
+   "fingerprint": null,
+   "objectives": [
+    "Describe and analyze the processes responsible for the formation of the earth, ocean basins, and atmosphere.",
+    "Identify the major global plate tectonic boundaries and correlate areas of earthquake and volcanic activity to those zones.",
+    "Describe the formation of the different types of oceanic sediment, and identify which are most common in the various physiographic zones.",
+    "Describe the processes that alter sea surface salinity, temperature, and density in the oceans.",
+    "Evaluate the physical conditions of the oceans (light, temperature, tidal ranges), and analyze how the conditions influence marine communities.",
+    "Describe basic meteorologic and weather processes, and analyze the current global atmospheric conditions.",
+    "Describe the formation of wind-generated gyres, and with this information interpret: the temperature condition of the surface ocean currents and subsequent climate patterns; and, the effects of gyre perturbations on thermohaline circulation.",
+    "Describe the formation of wind-waves, and compare their characteristics to other types of oceanic waves (tsunami, internal waves, tides).",
+    "Describe wave-generated longshore sediment transport processes along a coast, and with this information analyze: the likelihood of depositional or erosional coastal features forming in a specific area; the effects of manmade coastal stabilization structures on the longshore transport.",
+    "Demonstrate calculations and lab techniques necessary to appropriately analyze and interpret maps for: ocean geography, latitude/longitude plotting, bathymetric contouring and profiling, plate tectonic analysis, ocean current analysis, weather conditions, and coastal erosion processes.",
+    "Use identification charts and graphs to appropriately interpret and classify marine sediment, sedimentary rocks, marine organisms, and tide charts.",
+    "Participate in, and use the correct methodology to collect oceanographic data in the field and laboratory.",
+    "Analyze, interpret, and evaluate common oceanographic theories and principles."
+   ],
+   "objectives_heading": "Learning Objectives",
+   "objectives_lead": null,
+   "objectives_fingerprint": "6871b5b136f52b49e1f03789edb2cae4",
+   "section_heads": [
+    "EFFECTIVE",
+    "METHODS OF INSTRUCTION",
+    "GRADING",
+    "REQUISITE",
+    "REQUISITE",
+    "REQUISITE",
+    "UNITS",
+    "UNITS",
+    "UNITS",
+    "GRADING",
+    "REPEATABILITY",
+    "LEARNING OBJECTIVES",
+    "CONTENT",
+    "ASSIGNMENTS",
+    "METHOD OF EVALUATION",
+    "STUDENT LEARNING OUTCOMES",
+    "STUDENT LEARNING OUTCOMES",
+    "REQUIRED TEXTS",
+    "TEXTBOOK"
+   ]
+  },
+  {
+   "code": "PHYS 20",
+   "title": "Conceptual Physics",
+   "course_id": 23348,
+   "report": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/23348?entityType=Course&reportId=198",
+   "named_by": [
+    "irvine_valley"
+   ],
+   "status": 200,
+   "final_url": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/23348?entityType=Course&reportId=198",
+   "access": "public",
+   "chars": 14656,
+   "text_cut": false,
+   "html_chars": 701289,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "groups",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "groups": [
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Students will demonstrate an understanding of gravitation and apply Newton's laws of motion to objects moving in uniform circular motion, simple harmonic motion, and the orbital laws of Kepler."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "000837ca85b7cb4d1dc42b20234d915a"
+    },
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Students will demonstrate an understanding of the effects of forces on translational motion, projectile motion, and on equilibrium through the application of Newton's laws of motion."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "923c664e2cb9a18277891fcd51d5e758"
+    },
+    {
+     "group": null,
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Students will be able to differentiate between work, energy and power as they relate to mechanical systems and projectile motion."
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "2a93be27a4112f753e7e4ffb3edc0f0e"
+    }
+   ],
+   "parsed_from": "html",
+   "fingerprint": null,
+   "objectives": [
+    "Define physical quantities such as speed, acceleration, force, and work.",
+    "In clearly written statements, compare and contrast Aristotelian and Galilean ideas regarding the motion of falling objects.",
+    "Explain and demonstrate the use of measurement units within physics.",
+    "Match physical theories of and contributions to physics with the names of the persons responsible for them.",
+    "Add vector quantities using a graphical method.",
+    "Construct graphs to demonstrate the relationship of physical quantities.",
+    "Explain the consequences of the inverse square law to those physical phenomena that it describes.",
+    "Define momentum, kinetic energy, work, potential energy, voltage current, resistance, and other common quantities of physics.",
+    "Explain how conservation laws apply to various physical phenomena.",
+    "Explain how Newton's laws apply to selected everyday occurrences.",
+    "Explain reflection, refraction, diffraction, and interference in terms of wave model.",
+    "Interpret the results of various physical phenomena in the laboratory.",
+    "Explain various electrical phenomena by use of electrostatics principles.",
+    "Explain the operation of various electrical devices such as motors, generators, measuring devices, and appliances by using the principles of current electricity and magnetism.",
+    "Describe the physical properties of common atomic particles."
+   ],
+   "objectives_heading": "Learning Objectives",
+   "objectives_lead": null,
+   "objectives_fingerprint": "98061f1aa53146c9b518c02401cd213c",
+   "section_heads": [
+    "EFFECTIVE",
+    "METHODS OF INSTRUCTION",
+    "GRADING",
+    "UNITS",
+    "UNITS",
+    "UNITS",
+    "GRADING",
+    "REPEATABILITY",
+    "LEARNING OBJECTIVES",
+    "CONTENT",
+    "ASSIGNMENTS",
+    "METHOD OF EVALUATION",
+    "STUDENT LEARNING OUTCOMES",
+    "STUDENT LEARNING OUTCOMES",
+    "REQUIRED TEXTS",
+    "TEXTBOOK",
+    "TEXTBOOK"
+   ]
+  }
+ ]
+}
