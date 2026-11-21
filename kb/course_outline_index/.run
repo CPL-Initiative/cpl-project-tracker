@@ -1,7 +1,7 @@
-run=2026-11-21-s691-a
+run=2026-11-21-s691-b
 discover=
 index=https://saddleback.curriqunet.com/
-slugs=saddleback,irvine_valley
-report=
-status=
-client=
+slugs=saddleback
+report=^SLO Addendum$
+status=Active \(Fully Approved\)
+client=^Saddleback College$
