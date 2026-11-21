@@ -303,9 +303,15 @@ check("6 after a lead-in, a line that opens 'Students will be able to' and state
       read.objectives_of(EGSS)["objectives"] == ["Students will be able to analyze concepts of ethnic studies.",
                                                  "Students will be able to apply theory to critical events."]
       and read.objectives_of(two_leads)["objectives"] == ["Interpret results."], read.objectives_of(EGSS))
-rc_rio = read.rows_recall(read.RIO_HONDO_RECALL)
-check("6 Rio Hondo's self-recall count passes: 12 of 12 pages, SLOs and objectives counted by eye from trial "
-      "44886389239's log, bound to its parser", rc_rio["ok"] and rc_rio["right"] == 12 and rc_rio["pages"] == 12, rc_rio)
+rc_rio = read.recall_for(rio, "rio_hondo")
+rc_sb = read.recall_for("saddleback.curriqunet.com", "saddleback")
+check("6 Rio Hondo's and Saddleback's self-recall counts pass: 12 of 12 pages each, SLOs and objectives counted by eye "
+      "from trials 44890279483 and 44890274600's logs, bound to their parser",
+      rc_rio["ok"] and rc_rio["right"] == 12 and rc_sb["ok"] and rc_sb["right"] == 12, (rc_rio, rc_sb))
+check("6 GUARD: Saddleback's count never opens a read for Irvine Valley on the same host, and a host with no file is "
+      "refused",
+      not read.recall_for("saddleback.curriqunet.com", "irvine_valley")["ok"]
+      and not read.recall_for("sdccd.curriqunet.com", "san_diego_of_continuing_education")["ok"])
 with tempfile.TemporaryDirectory() as tmp:
     want = json.load(open(read.RIO_HONDO_RECALL))
     bad = dict(want, pages=dict(want["pages"]))
