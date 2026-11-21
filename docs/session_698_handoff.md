@@ -69,7 +69,8 @@ Rulings: `r-exhibits-review-card-sam-2026-11-21`, `r-commons-page-clarity-sam-20
 
 The session keeps its watches on #3643 and #3646 and one check-in (15:46Z) until Sam ends it; it holds no artifact watch.
 
-Spend: not available; 2026-11-21T14:25Z to 2026-11-21T15:45Z.
+
+Spend: left off this handoff. A `Spend:` line makes the daily spend file stale, and rebuilding that file writes under `kb/`, which this session may not touch; the next checkpoint with `kb/` in reach adds it (not available; 14:25Z to 15:45Z).
 
 The work was page building (two surfaces) by one conductor and one worker.
 
