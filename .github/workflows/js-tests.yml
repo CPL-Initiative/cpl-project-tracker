@@ -930,6 +930,13 @@ jobs:
       # materialized record, P0 twice and P1 drift. Pure-stdlib python, no network.
       - name: UC-CUR promotion guard (kb/_uc_cur_promote.py)
         run: python3 tests/uc_cur_promote_test.py
+      # The Needs an M-ID pile mint, dry run (Session 694) — an id ever minted is
+      # never handed out; a short subject code decides nothing alone; a course no
+      # accepted route reaches is held; credit and noncredit split; topics and
+      # Strong matches stay out; a twin of an existing M-ID is held for Assign;
+      # byte-identical reruns; the TOP code moves nothing. Fixtures only.
+      - name: Pile mint dry-run guard (kb/_pile_mint_dryrun.py)
+        run: python3 tests/pile_mint_dryrun_test.py
       # Occupation matcher stemming (Session 263) — stem() strips -er/-or, which
       # is right for `installers -> install` and wrong for `engineer -> engine`
       # and `actors -> act`: those land on a DIFFERENT word, and the coverage
