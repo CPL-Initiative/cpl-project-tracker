@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-21T09:01:21Z",
+ "written_at": "2026-11-21T09:11:55Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 16686,
-  "gap": 5649,
+  "passing": 16701,
+  "gap": 5634,
   "with_gap": 118,
-  "cost_usd": 1339.44,
-  "passed_at_read": 16174,
+  "cost_usd": 1339.36,
+  "passed_at_read": 16188,
   "cost_receipts": 118,
   "spent_usd": 1224.87,
   "spent_runs": 171,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16591,
-  "gap": 5649,
+  "passing": 16606,
+  "gap": 5634,
   "collected_with_gaps": 95,
   "discontinued": 0
  },
@@ -2511,14 +2511,14 @@
    "harvested": true,
    "slug": "college_of_the_canyons",
    "programs": 283,
-   "passing": 179,
-   "gap": 104,
+   "passing": 194,
+   "gap": 89,
    "causes": {
-    "found_not_extracted": 1,
+    "found_not_extracted": 2,
     "no_closed_list": 19,
-    "page_not_found": 16,
+    "page_not_found": 15,
     "places_none": 1,
-    "unknown_without_live": 67
+    "unknown_without_live": 52
    },
    "census_causes": {
     "coverage_fails": 22,
@@ -2543,10 +2543,10 @@
    "outcomes_file": "kb/status/commons_data_programs/college_of_the_canyons.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-21T07:49:16Z",
+   "read_at": "2026-11-21T09:05:44Z",
    "read_kind": "capture",
-   "cost_usd": 18.71,
-   "passed_at_read": 177,
+   "cost_usd": 18.63,
+   "passed_at_read": 191,
    "slo_queue": null,
    "scout": {
     "recommendation": "procedure_change",
@@ -2563,13 +2563,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 264,
-   "found": 248,
-   "extracted": 248,
+   "found": 249,
+   "extracted": 247,
    "errors": 0,
    "failed_checks": {
-    "coverage": 25,
-    "invented": 24,
-    "arithmetic": 48,
+    "coverage": 8,
+    "invented": 7,
+    "arithmetic": 47,
     "repeated": 1,
     "outcomes": 2
    },
@@ -2579,14 +2579,14 @@
    "capture_root": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 183.3,
-   "run": "44886816990",
+   "read_seconds": 187.9,
+   "run": "44887850515",
    "levers": {
-    "reconcile_steps": 35,
     "scorer_noncredit_hours": 32,
+    "reconcile_steps": 20,
     "program_course_file_check": 19,
-    "reader_page_search": 16,
-    "paid_read": 1,
+    "reader_page_search": 15,
+    "paid_read": 2,
     "reader_page_assignment": 1
    },
    "collection": {
@@ -2595,9 +2595,9 @@
      "models": {
       "claude-opus-5-5": 247
      },
-     "run": "44886816990",
-     "at": "2026-11-21T07:49:16Z",
-     "cost_usd": 18.71,
+     "run": "44887850515",
+     "at": "2026-11-21T09:05:44Z",
+     "cost_usd": 18.63,
      "platform": "pdf"
     },
     "slo_read": null,
