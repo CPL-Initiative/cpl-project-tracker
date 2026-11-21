@@ -1,19 +1,20 @@
 {
- "_readme": "Free page read for College of the Canyons' census lever 8 (S691, reread worker). The prefix-alias census (kb/_prefix_alias_census.py, plan of 2026-11-14) held the pairs PSYCH to PSYC, POLISC to POLS and COMS to COMM at Canyons for want of a catalog-side title in committed files: its filed records place PSYC, POLS and COMM where the state's file lists PSYCH, POLISC and COMS. This read prints the 2026-27 catalog v3's course description pages for those three subjects, so each pair can be cited by the code, title and units the catalog prints. One load; robots.txt first, the census user agent.",
+ "_readme": "Free page read for College of the Canyons' census lever 8 (S691, reread worker). The prefix-alias census (kb/_prefix_alias_census.py, plan of 2026-11-14) held the pairs PSYCH to PSYC, POLISC to POLS and COMS to COMM at Canyons for want of a catalog-side title in committed files: its filed records place PSYC, POLS and COMM where the state's file lists PSYCH, POLISC and COMS. This read prints the 2026-27 catalog v3's pages naming those three subjects (the first read, run 44882053192, found none in pp.343-432, so the catalog's requirement lists, which print each course's code, title and units, are the catalog side), so each pair can be cited by the code, title and units the catalog prints. One load; robots.txt first, the census user agent.",
  "college": "College of the Canyons",
  "questions": {
-  "catalog_titles": "The code, title and units the 2026-27 catalog prints for each PSYC, POLS and COMM course."
+  "catalog_titles": "The code, title and units the 2026-27 catalog prints for each PSYC, POLS and COMM course, wherever a page lists it."
  },
  "keywords": [
   "PSYC-\\d{3}",
   "POLS-\\d{3}",
   "COMM-\\d{3}"
  ],
- "pdf_span": [343, 432],
- "pdf_page_cap": 30,
+ "pdf_page_cap": 40,
  "pages": [
   {
-   "answers": ["catalog_titles"],
+   "answers": [
+    "catalog_titles"
+   ],
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf"
   }
  ]
