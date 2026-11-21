@@ -684,3 +684,7 @@ Moved verbatim at the S694 checkpoint, to keep the lane under its size limit. Bo
 ## INDEX update history, moved (S697 checkpoint, 2026-11-21)
 
 - 2026-11-20 (S689 SkyTern, the CPL Queue routine's 06:12Z conductor night, full checkpoint): #3589 (four high schools' issuer tags), #3588 (City College of San Francisco's CurricUNET outline route), #3587 and #3590 (the page checks fold PDF ligatures and keep a refusal marked), #3586 (the outline readers), #3591 (the wave: the reread plan's third ten and Santa Rosa Junior, 79 new and 43 replaced); display build 4c57fd250cce confirmed (18,459, #3598); the census at 5,069 left; 2,550 outline rows at Feather River and Palomar; the harvest lessons compacted into archive 7; the KB note `methodology-a-pdf-ligature-hides-a-heading-from-an-exact-match`. Handoff 690.
+
+## Moved from docs/INDEX.md's update history (S698 checkpoint, 2026-11-21)
+
+- 2026-11-20 (the plain session SkyShrike, Sam's session on the Commons, full checkpoint): #3605 (the 12 still-taught courses filed, the outline hunt keeps a college only while it has one, Needs you names its groups); the Commons order mock locked by Sam; his rulings on no longer offered and hand it over in place; the first-pass M-ID census; KB note `methodology-check-the-saved-reads-before-calling-a-source-blocked`. Handoff 692.

@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-658 document(s).
+659 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 700 | [Session 700 handoff (from SkyAuklet, S698, Sam's plain session of 2026-11-21: COBIx's page follow-ups and the hourly dependency map)](../session_700_handoff.md) | 2026-11-21 |
 | 699 | [Session 699 handoff (from SkyPuffin, S697, the CPL Queue routine's 13:12Z firing of 2026-11-21)](../session_699_handoff.md) | 2026-11-21 |
 | 698 | [Session 698 handoff (from the page-only session of 2026-11-21: the Exhibits Review card and the Commons page clarity PRs)](../session_698_handoff.md) | 2026-11-21 |
 | 697 | [Session 697 handoff (from SkyPetrel, S691, the CPL Queue routine's collection night of 2026-11-21)](../session_697_handoff.md) | 2026-11-21 |
