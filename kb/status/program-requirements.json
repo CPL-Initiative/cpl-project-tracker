@@ -1,12 +1,12 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-21T10:41:21Z",
+  "written_at": "2026-11-21T17:09:25Z",
   "session": 697,
   "moniker": "SkyPuffin",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_698_handoff.md",
+  "handoff": "docs/session_699_handoff.md",
   "next_step": {
     "title": "Read San Diego College of Continuing Education's course outlines",
     "text": "The next session lands tonight's display build and the gap census against 4,875, then searches San Diego College of Continuing Education's outline index, whose outlines would fill 191 common course cards, and runs the night's one follow-up of four reader checks."
@@ -854,6 +854,12 @@
       "active": 20282,
       "complete": 15163,
       "colleges": 118
+    },
+    {
+      "day": "2026-11-21",
+      "active": 20282,
+      "complete": 15334,
+      "colleges": 118
     }
   ],
   "next_run": {
@@ -862,8 +868,8 @@
     "at": "2026-11-20T06:12:00Z"
   },
   "harvest": {
-    "day": "2026-11-20",
-    "gaps": 3479,
+    "day": "2026-11-21",
+    "gaps": 3405,
     "parts": {
       "links": {
         "catalog": [
@@ -884,21 +890,21 @@
         20282
       ],
       "coci": [
-        17019,
+        17133,
         20282
       ],
       "outcomes": {
         "slo": [
-          20538,
+          22978,
           88736
         ],
         "plo": [
-          17019,
+          17133,
           20282
         ]
       },
       "careers": [
-        16038,
+        16155,
         20282
       ]
     }

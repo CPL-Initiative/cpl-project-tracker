@@ -4,7 +4,7 @@
   "moniker": "SkyPuffin",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_698_handoff.md",
+  "handoff": "docs/session_699_handoff.md",
   "calls": [
     {
       "title": "Confirm Kinesiology's 627 where the descriptions and TOP both agree?",
@@ -103,7 +103,7 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-21T03:53:25Z",
+  "written_at": "2026-11-21T17:09:29Z",
   "project": "course",
   "next_step": {
     "title": "Read San Diego College of Continuing Education's course outlines",

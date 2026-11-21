@@ -1,5 +1,5 @@
 ---
-title: "Session 698 handoff (from SkyPuffin, S697, the CPL Queue routine's 13:12Z firing of 2026-11-21)"
+title: "Session 699 handoff (from SkyPuffin, S697, the CPL Queue routine's 13:12Z firing of 2026-11-21)"
 created: 2026-11-21
 updated: 2026-11-21
 tags: [handoff, session]
@@ -7,10 +7,12 @@ kb-status: internal
 obsidian-folder: cpl-project-tracker/handoffs
 ---
 
-**Routing.** This handoff is the CPL Queue routine's. A plain session Sam opens follows `docs/session_696_handoff.md`
-(SkyFulmar, from SkyShearwater).
+**Routing.** This handoff is the CPL Queue routine's. A plain session Sam opens follows `docs/session_698_handoff.md`
+(the page-only session's, on #3648, once it merges; until then `docs/session_696_handoff.md`). **Numbered 699, not
+698:** Sam's page-only session of 14:25Z to 15:45Z, beside this run, wrote its own `docs/session_698_handoff.md` on
+#3648 and named its next session SkyAuklet, so this file took the next number and another moniker at the checkpoint.
 
-# You are SkyAuklet (Session 698)
+# You are SkyMurre (Session 699)
 
 From SkyPuffin (S697), the CPL Queue routine's 13:12Z firing of 2026-11-21, first command 13:13Z: a conductor run for
 collection only, under Sam's routine prompt of 2026-11-17 and the COBIx brief on #3358. A **full checkpoint** (lanes
@@ -36,11 +38,11 @@ surface changed), 7 (no M-ID pipeline move) and 9 (the UI pass is its own queue 
    wave only when it blocks it or would file wrong rows (`r-collection-first-sam-2026-11-20`). Collection serves the
    M-IDs, so its fixes are ranked by the M-ID cards they unblock (`r-collect-for-mids-work-order-sam-2026-11-20`).
 3. **Merge order:**
-   - **Merged tonight:** #3640, #3641, #3644, #3645, #3642.
-   - **First, #3649** (`piles2`, `claude/s697-piles2`; applied live, waiting on `test` at this checkpoint): `test`, one
-     update from `main`, then the merge.
-   - **Then #3650** (`display`, `claude/s697-display`; the whole build running at this checkpoint): the closing count,
-     the merge, then `harvest-gap-census.yml` on `main` against 4,875.
+   - **Merged tonight:** #3640, #3641, #3644, #3645, #3642, #3649, #3650.
+   - **Sam's page-only session's #3643, #3646 and #3648** (`claude/serene-cerf-17qjsj*`, 14:25Z to 15:45Z beside this
+     run): open for COBIx's review under Sam's rule for that session (*"never push to main or merge; open PRs ready
+     for COBIx review"*). The routine leaves them to that review and Sam's next plain session; #3648 carries
+     `docs/session_698_handoff.md`.
    - **This checkpoint #3639** (`claude/awesome-fermat-29w1g0`, carrying `claude/s697-ivc-load`'s trigger file and its
      two load receipts) merges at sign-off.
    - **Dependabot's #3383** waits.
@@ -111,12 +113,16 @@ session's review. City College of San Francisco's Cal-GETC step stays a plain se
   outlines; trial 44911142170, 12 of 12; full read 44913397609, 868 pages, every one 200). Load 44925768837 on
   `claude/s697-ivc-load`, confirmed live 16:41Z; the receipt push re-ran it (44926139513: 0 inserted, 1,732 kept).
 - **`samueltlee/CPLBrain#837` `c9da8405`:** S691's vault note, merged under Sam's ruling 2 below.
-- **In flight:** #3649 (`piles2`): the named gap `total_differs` (self-recall 1,843 right, 0 wrong), guarded UPDATE 10
+- **#3649 `bbb08dda`** (`piles2`): the named gap `total_differs` (self-recall 1,843 right, 0 wrong), guarded UPDATE 10
   of 10 at 16:38Z (Clovis 33493, 35209, 37352, 42234, 42706, 44551; Glendale 12570, 12574, 19566, 39905; Clovis 33431
   dropped by the second reader: floors over lists), and Glendale 02570 rescored with an `each` guard and reread live
-  (run 44915445658, passes); waiting on `test`. #3650 (`display`): build `9d9244ee7496` replacing `e35ae1722a56`
-  (18,616 records), Santa Monica first 44925708471 (230 of 230), the gate read 16:42:55Z (only Santa Monica's 230
-  moved), the whole build running.
+  (run 44915445658, passes).
+- **#3650 `ede8cdd4`** (`display`): build `9d9244ee7496` replacing `e35ae1722a56` (18,616 records): Santa Monica
+  first 44925708471 (230 of 230), the gate read 16:42:55Z (only Santa Monica's 230 moved), the whole build 44926123517
+  (18,386 of 18,386 written, 0 errors), the closing count 16:52:46Z (18,616 at the build; the same 32 at older builds;
+  0 null displays; 18,648 rows).
+- **The census** 44927819145 (17:06Z, `main` bbb08dda): 4,839 left of 20,282, passing 15,443 (from 4,875 and 15,407).
+  The headline pair at 17:09Z: 15,334 of 20,282 active programs pass the machine checks, at 118 colleges.
 
 ## Records collected and outline rows added
 
@@ -136,8 +142,8 @@ Read in order: this file; the NEXT of [`program-requirements-harvest`](reference
 ## Open work, from the lanes' NEXT lines
 
 1. **`program-requirements-harvest`** (outline fills first, program records second):
-   - Land #3649, then #3650 and its closing count, then the census against 4,875. Glendale 02570 and the ten
-     `total_differs` records wait for the display build after #3650.
+   - Glendale 02570 and the ten `total_differs` records wait for the next display build after the next posts; then
+     the census against 4,839.
    - **Outlines:** San Diego College of Continuing Education's index search (191 cards) first, then Peralta. Refresh
      City College of San Francisco's recall gate on `main` (8c95dee8 against the trial's d5cef493) before its next
      read. Golden West's 476 header rows stay a plain session's review.
@@ -178,8 +184,7 @@ Read in order: this file; the NEXT of [`program-requirements-harvest`](reference
 
 Nothing waits on Sam ([Open Asks Sheet 200](https://claude.ai/artifact/5ShC7pGgNuz9bJUhkdsc8Y), current). His two
 rulings of this morning, relayed by COBIx on #3358, are recorded below. Tonight's vault note
-(`samueltlee/CPLBrain#839`) quotes them as COBIx relayed them and changes none; it merges on its own once its checks
-pass.
+(`samueltlee/CPLBrain#839`) quotes them as COBIx relayed them and changes none; it merged on its own (`cc5fb6c6`).
 
 ## Decisions Sam made (relayed by COBIx on #3358, comment 7064588752, about 7:04 AM PT 2026-11-21)
 
@@ -242,21 +247,28 @@ $12 per new program or $0.50 per outline row; a rollback that undoes over 1% of 
 | #3645 Cosumnes River | merged `c85bb975` | none |
 | #3642 Irvine Valley's outlines | merged `0695b665` | none |
 | `claude/s697-ivc-load` | load 44925768837 (1,732 rows) and the re-run 44926139513 | rides #3639 |
-| #3649 the second piles (`claude/s697-piles2`) | applied 10 of 10; waiting on `test` | the merge, then the next display build |
-| #3650 the display (`claude/s697-display`) | the whole build running | the closing count, the merge, the census |
+| #3649 the second piles (`claude/s697-piles2`) | merged `bbb08dda` | its records in the next display build |
+| #3650 the display (`claude/s697-display`) | merged `ede8cdd4`; closing count 16:52:46Z | none |
+| #3643, #3646, #3648 (Sam's page-only session) | open for COBIx's review | that review and Sam's next plain session |
 | `samueltlee/CPLBrain#837` | merged `c9da8405` | none |
-| `samueltlee/CPLBrain#839` (tonight's vault note) | draft | merges on its own once its checks pass |
+| `samueltlee/CPLBrain#839` (tonight's vault note) | merged `cc5fb6c6` (ruling 2; it quotes his rulings and changes none) | none |
 | `claude/s690-goldenwest-header` (0995d8b5) | plan and before-values file, no PR | a plain session's review |
 | #3383 | dependabot's | waits |
 
 ## Let go
 
-Drop in the sign-off turn, and name each here as it goes: the COBIx watcher, if it runs. The brief's ledger names no PR
-subscription, scheduled check-in or artifact watch; the conductor confirms that at sign-off. Each worker's checkout is
-removed once its head is pushed; the documents worker's holds nothing unpushed.
+Dropped in the sign-off turn: the COBIx watcher (its Monitor stopped). No PR subscription was held (each PR was gated by
+`pr-gate` reads), no check-in is scheduled, and no artifact is watched. Every worker is finished; the checkouts of
+`display` and the documents worker are removed with this sign-off, each head pushed. `samueltlee/CPLBrain#839`, the
+vault note, merged on its own under his ruling 2 (`cc5fb6c6`). Sam's page-only session's #3643,
+#3646 and #3648 stay open for COBIx's review; this run did not touch them.
 
-Spend: PENDING
+Spend: $128.77 (estimate from token counts at list prices; Opus 5.5 $127.84, Haiku 5.5 $0.93); collection $100.21, infrastructure $28.56; 2026-11-21T13:13Z to 2026-11-21T17:12Z.
 
-Opening line: *Greetings, you are SkyAuklet (Session 698), see SkyPuffin's (S697) handoff — `docs/session_698_handoff.md` — let's keep rolling with our queue.*
+The filed extraction run's own cost is listed apart: $1.16 (Cosumnes River 44917314201). Infrastructure is the documents
+worker, the `pr-gate` reads, the follow-up PR and its second reader, and the conductor's share of the checkpoint and the
+CI fixes; the rest is collection.
 
-S697 final: PENDING
+Opening line: *Greetings, you are SkyMurre (Session 699), see SkyPuffin's (S697) handoff — `docs/session_699_handoff.md` — let's keep rolling with our queue.*
+
+S697 final: cost about $129 at list prices, estimated from token counts (`get_session` was not among this session's tools), plus $1.16 of filed extraction runs; records collected: 7 new program records (plus 119 replaced by a better reread, 20 of them newly passing, and 16 collected with a named gap); outline rows added: 1,732; substantive PRs merged: 7 (#3640, #3641, #3644, #3645, #3642, #3649, #3650), not counting the checkpoint.
