@@ -87,6 +87,7 @@
     "coci_list_assign.test.js": 36,
     "coci_list_needs_mid.test.js": 36,
     "coci_list_kept.test.js": 14,
+    "coci_list_topics.test.js": 7,
     "college_activity.test.js": 7,
     "college_activity_jst.test.js": 18,
     "college_briefing.test.js": 246,

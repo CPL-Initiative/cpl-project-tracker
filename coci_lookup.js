@@ -291,7 +291,8 @@
   var LIST_ALIAS = { none: "nomid" };
   /* Kept, not counted (Sam, 2026-11-17: "flag the record, never delete it; take flagged records out of counts, waiting
      piles, to-dos and fetch plans"): kb/coci_not_applicable.json names the courses with no common course that are
-     independent study, internships or a bare number, and the common courses every one of whose courses is. Those
+     independent study, internships, a bare number or (S695) special and selected topics, and the common courses
+     every one of whose courses is one of the first three. Those
      courses stay on the List, findable, with the file's note; "Needs an M-ID" leaves them out, and "Kept, not
      counted" shows them. A card a person ruled on stays counted, and its note says so (kb/_flags.py). Read once a visit;
      until it arrives, or if it fails, the List counts as before. */
