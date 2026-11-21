@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Structural Steel Welding",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=306",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=306",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12469,
+  "input_tokens": 12459,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12469,
-    "output_tokens": 1186,
+    "input_tokens": 12459,
+    "output_tokens": 1275,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1186,
+  "output_tokens": 1275,
   "output_tokens_details": {
-   "thinking_tokens": 406
+   "thinking_tokens": 471
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0736,
- "ms": 11843,
- "seconds": 12.1,
+ "cost_usd": 0.07534,
+ "ms": 11028,
+ "seconds": 11.2,
  "parts": null,
  "error": null,
  "score": {
@@ -208,10 +208,22 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The 'Required Electives' list prints no selection rule; it is recorded as 'all' because the stated total of 19.5 units equals the three required courses (7.5) plus all four listed electives (12). A reviewer should confirm whether all four are required.",
-   "The section continues across a page break (pages 306-307); WELD-101C and the Required Electives list appear on page 307.",
-   "Careers are the industries named in the description ('entry level employment into industries such as steel construction and maintenance & repair, and general fabrication')."
+   "The 'Required Electives' heading prints no selection rule or unit count. Recorded as 'all' because the stated total (19.5) equals the 7.5 core units plus all four listed electives (12 units); the same pattern holds for the sibling certificates on the page. A reviewer should confirm this is not a 'choose' rule.",
+   "The section starts at the bottom of page 306 and continues on page 307 (WELD-101C and the Required Electives list).",
+   "Careers are taken from the industries named in the description ('industries such as steel construction and maintenance & repair, and general fabrication')."
   ]
  },
- "extracted_run": "39006378829"
+ "extracted_run": "44886816990",
+ "catalog_year": "2026-2027",
+ "source_sha": "8081c20f83aca64b",
+ "source_codes": [
+  "WELD101A",
+  "WELD101B",
+  "WELD101C",
+  "WELD130",
+  "WELD131",
+  "WELD132",
+  "WELD133"
+ ],
+ "source_coverage": 1.0
 }

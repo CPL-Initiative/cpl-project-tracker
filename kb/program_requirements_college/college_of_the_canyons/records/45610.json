@@ -1,0 +1,180 @@
+{
+ "college": "College of the Canyons",
+ "control_number": "45610",
+ "shape": "noncredit",
+ "title": "Essential Skills for Microsoft Windows and Keyboarding",
+ "award": "Noncredit program",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=329",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7006,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7006,
+    "output_tokens": 1103,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1103,
+  "output_tokens_details": {
+   "thinking_tokens": 445
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05008,
+ "ms": 10086,
+ "seconds": 10.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 1,
+   "listed": 1,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "NCCAWT110"
+   ],
+   "flagged": [
+    "NCCAWT110"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "a required course in 'Program Requirements' has no units",
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Completion: Essential Skills for Microsoft Windows and Keyboarding",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Analyze and assess key elements of the Windows Operating System, correct keyboarding techniques, and word processing skills.",
+    "Utilize key components of the Microsoft Windows Operating System while using correct keyboarding techniques and word processing skills."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NC.CAWT-010A",
+      "units": 20,
+      "units_max": 24,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NC.CAWT-110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "This is a noncredit certificate, so the record is kept in hours. The requirements list prints 'Units Required: 0' and 0.0 units beside each course, but no total hours, so total_units is null.",
+   "The 20-24 hours for NC.CAWT-010A come from its course description (printed as NC.CAWT-10A, 20.00 - 24.00 hours) on the same page.",
+   "No hours appear in the text for NC.CAWT-110; its description may be on the next page ('Continued on the next page').",
+   "NC.CAWT-010A as printed is read as matching the closed-list course NC.CAWT 10A.",
+   "NC.CAWT-110 (Keyboarding & Document Processing) is not in the closed list, so it is marked as a catalog addition.",
+   "The page also prints the Keyboarding and Document Processing and QuickBooks Online certificates; these were not recorded."
+  ]
+ },
+ "extracted_run": "44886816990",
+ "catalog_year": "2026-2027",
+ "source_sha": "079c874e1814f1f9",
+ "source_codes": [
+  "NCCAWT10A"
+ ],
+ "source_coverage": 1.0
+}

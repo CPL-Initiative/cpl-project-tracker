@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Business Information Worker 2",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=112",
+ "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=111",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9815,
+  "input_tokens": 10867,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9815,
-    "output_tokens": 2368,
+    "input_tokens": 10867,
+    "output_tokens": 1323,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,102 +30,81 @@
     "model": null
    }
   ],
-  "output_tokens": 2368,
+  "output_tokens": 1323,
   "output_tokens_details": {
-   "thinking_tokens": 959
+   "thinking_tokens": 501
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08662,
- "ms": 20981,
- "seconds": 21.3,
+ "cost_usd": 0.06993,
+ "ms": 10545,
+ "seconds": 10.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 5,
+   "placed": 8,
    "listed": 8,
-   "share": 0.625,
-   "missing": [
-    "BUS35",
-    "CIS36M",
-    "OFTECH33"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 8,
-   "codes": [
-    "ACCTG1",
-    "ACCTG21",
-    "BUS34A",
-    "CIS50",
-    "CIS70",
-    "OFTECH1",
-    "OFTECH10",
-    "OFTECH5"
-   ],
-   "flagged": [
-    "ACCTG1",
-    "ACCTG21",
-    "BUS34A",
-    "CIS50",
-    "CIS70",
-    "OFTECH1",
-    "OFTECH10",
-    "OFTECH5"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    15.0,
-    15.0
+    18.0,
+    18.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 1,
    "courses": 0,
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Business Information Worker 2, Certificate of Achievement (heading not in the supplied text; section begins on the preceding catalog page)",
+   "section_heading": "Business Information Worker 2, Associate Degree and Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 18
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -142,8 +121,16 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "students will demonstrate proficiency in Microsoft Office applications, collaboration software, and QuickBooks; applying professional customer relationship and management techniques in a business environment; and employ interpersonal and critical thinking skills as well as problem solving."
+   ],
+   "careers": [
+    "office, business, and executive administrative support",
+    "office supervision/coordination",
+    "small business support",
+    "retail sales",
+    "customer service"
+   ]
   },
   "blocks": [
    {
@@ -152,120 +139,17 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 18,
+     "max": 18
     },
     "courses": [
      {
-      "code": "OFTECH 5",
+      "code": "BUS 35",
       "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "OFTECH 1",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "OFTECH 10",
-        "units": 3,
-        "catalog_addition": true
-       }
-      ],
-      "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "Track 1: Social Media Specialist",
-    "rule": "all",
-    "minimum": null,
-    "option_group": "Specialization track",
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
-     {
-      "code": "BUS 34A",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "CIS 50",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "CIS 70",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "Track 2: Office Finance Specialist",
-    "rule": "all",
-    "minimum": null,
-    "option_group": "Specialization track",
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
-     {
-      "code": "CIS 30",
-      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
-     {
-      "code": "ACCTG 1",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "ACCTG 21",
-        "units": 3,
-        "catalog_addition": true
-       }
-      ],
-      "catalog_addition": true
-     },
-     {
-      "code": "CIS 35A",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "CIS 35B",
-        "units": 3,
-        "catalog_addition": false
-       }
-      ],
-      "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Track 3: Microsoft Office Specialist",
-    "rule": "all",
-    "minimum": null,
-    "option_group": "Specialization track",
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
      {
       "code": "CIS 30",
       "units": 3,
@@ -281,8 +165,35 @@
       "catalog_addition": false
      },
      {
+      "code": "CIS 35A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CIS 35B",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 36M",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
       "code": "CIS 38",
       "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OFTECH 33",
+      "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -291,29 +202,25 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "BUS 35",
-    "why": "not in the supplied text; likely on the preceding page where this section begins"
-   },
-   {
-    "code": "CIS 36M",
-    "why": "named only in the Digital Publishing section; this section's earlier part is not in the text"
-   },
-   {
-    "code": "OFTECH 33",
-    "why": "not in the supplied text; likely on the preceding page where this section begins"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The supplied text starts on catalog page 111 mid-section: the heading, description, program learning outcomes, area-of-emphasis total and the start of the required course list for Business Information Worker 2 are on the preceding page and not included. Section identity is inferred from the BIW pathway and the closed list; a reviewer should check the previous page.",
-   "The 'Required Courses' block name is assumed; only its last two rows (OFTECH 5 and OFTECH 1 or OFTECH 10) are visible, so the block is incomplete.",
-   "The track choice prints '(9 units minimum)' for whichever specialization track is completed; it is not recorded as a stated total on each block.",
-   "Track 2 prints CIS 30 with blank units '( )'; units left null.",
-   "Track 2 prints ACCTG 1 as (3) units, while the QuickBooks Virtual Enterprise section prints ACCTG 1 as (5); recorded as printed here.",
-   "CIS 70 is printed as 'same as BUS 34B' (cross-listed); BUS 34B not recorded as a separate alternative.",
-   "No total units, outcomes or careers for this award appear in the supplied text."
+   "The section is shared by the Associate Degree and the Certificate of Achievement; the same 18-unit Area of Emphasis and the single program learning outcome paragraph are recorded for the certificate.",
+   "The program learning outcome is printed as one sentence; recorded as a single outcome with the lead-in 'Upon completion of the program,' removed.",
+   "Careers are read from the phrase 'such as office, business, and executive administrative support, office supervision/coordination, small business support, retail sales, and customer service'; the first item was kept as printed rather than split into three."
   ]
  },
- "extracted_run": "39567439681"
+ "extracted_run": "44885033145",
+ "catalog_year": "2026-2027",
+ "source_sha": "9b0cd103cdee8884",
+ "source_codes": [
+  "BUS35",
+  "CIS30",
+  "CIS32",
+  "CIS35A",
+  "CIS35B",
+  "CIS36M",
+  "CIS38",
+  "OFTECH33"
+ ],
+ "source_coverage": 1.0
 }

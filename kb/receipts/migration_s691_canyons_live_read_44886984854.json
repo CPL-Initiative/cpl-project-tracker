@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-21_s691_canyons_live_read.sql",
+ "name": "s691_canyons_live_read",
+ "version": "20261121085435",
+ "sha256": "17073ab4db85c7b3baf841630308848d58a61dbdb10cbf22ebb90952847a4602",
+ "run": "44886984854",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"live_compare\":{\"at\":\"2026-11-21T08:54:36Z\",\"chk\":{},\"sum\":{\"College of the Canyons\":[155,156,155,0,0,0]},\"diff\":[],\"gone\":{\"College of the Canyons\":[\"45284\"]},\"extra\":[]}}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

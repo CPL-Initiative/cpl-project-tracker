@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Water Systems Technology",
  "award": "A.S. Degree",
- "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=303",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=303",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9516,
+  "input_tokens": 9519,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9516,
-    "output_tokens": 1603,
+    "input_tokens": 9519,
+    "output_tokens": 1655,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1603,
+  "output_tokens": 1655,
   "output_tokens_details": {
-   "thinking_tokens": 424
+   "thinking_tokens": 445
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07012,
- "ms": 13666,
- "seconds": 13.9,
+ "cost_usd": 0.07118,
+ "ms": 13362,
+ "seconds": 13.5,
  "parts": null,
  "error": null,
  "score": {
@@ -89,7 +89,7 @@
    "pass": true
   },
   "careers": {
-   "count": 6,
+   "count": 8,
    "not_verbatim": [],
    "pass": true
   },
@@ -128,6 +128,8 @@
     "Students will be able to demonstrate proficiency in the core skills and knowledge required for employment in the water industry."
    ],
    "careers": [
+    "drinking water treatment and distribution",
+    "wastewater",
     "distribution operator",
     "water treatment plant operator",
     "water service representative",
@@ -185,10 +187,10 @@
     ]
    },
    {
-    "name": "Plus six units from the following: Water Distribution Operator sequence",
+    "name": "Plus six units from the following: Water Distribution Operator",
     "rule": "all",
     "minimum": null,
-    "option_group": "six units sequence",
+    "option_group": "six units",
     "stated": {
      "min": null,
      "max": null
@@ -211,10 +213,10 @@
     ]
    },
    {
-    "name": "Plus six units from the following: Water Treatment Plant Operation sequence",
+    "name": "Plus six units from the following: Water Treatment Plant Operation",
     "rule": "all",
     "minimum": null,
-    "option_group": "six units sequence",
+    "option_group": "six units",
     "stated": {
      "min": null,
      "max": null
@@ -237,10 +239,10 @@
     ]
    },
    {
-    "name": "Plus six units from the following: Wastewater Treatment and Disposal sequence",
+    "name": "Plus six units from the following: Wastewater Treatment and Disposal",
     "rule": "all",
     "minimum": null,
-    "option_group": "six units sequence",
+    "option_group": "six units",
     "stated": {
      "min": null,
      "max": null
@@ -266,11 +268,27 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The section covers both the A.S. Degree and the Certificate of Achievement with one shared requirement list and 'Units Required: 21'; recorded as the major total for the A.S.",
-   "The single 'Degree and Certificate Student Learning Outcome' is shared by the degree and certificate.",
-   "'Plus six units from the following:' lists three pairs (WATER-140/141, WATER-150/151, WATER-160/161) separated by OR; read as a choice of one two-course sequence (6 units). The 'six units' figure applies to the choice as a whole, so each sequence block's stated is left null. Reviewer may confirm the pairs are intended as sequences rather than any six units from the six courses.",
-   "No degree total (60 units) or general education pattern is printed in this section."
+   "The A.S. degree and Certificate of Achievement share one section, one requirements list (Units Required: 21) and one student learning outcome ('Degree and Certificate Student Learning Outcome'); recorded here for the A.S. degree.",
+   "'Plus six units from the following' lists three pairs separated by OR (140/141, 150/151, 160/161); read as a choice of one two-course sequence, each recorded as its own block in option_group 'six units'. Block names beyond the printed lead-in were supplied from the course titles for clarity; the catalog prints 6 units for the choice as a whole, not per block, so stated is null.",
+   "No GE pattern or degree total (e.g., 60 units) is printed in this section; degree_total and ge_pattern left null.",
+   "Codes recorded as printed in the requirements list (hyphenated, e.g., WATER-120)."
   ]
  },
- "extracted_run": "39006378829"
+ "extracted_run": "44886816990",
+ "catalog_year": "2026-2027",
+ "source_sha": "5b1b2bff4d10d9e8",
+ "source_codes": [
+  "WATER120",
+  "WATER130",
+  "WATER131",
+  "WATER132",
+  "WATER135",
+  "WATER140",
+  "WATER141",
+  "WATER150",
+  "WATER151",
+  "WATER160",
+  "WATER161"
+ ],
+ "source_coverage": 1.0
 }

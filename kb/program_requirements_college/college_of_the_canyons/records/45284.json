@@ -1,0 +1,1559 @@
+{
+ "college": "College of the Canyons",
+ "control_number": "45284",
+ "shape": "certificate",
+ "title": "CalGETC",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=242",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 36680,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "output_tokens": 12693,
+  "output_tokens_details": {
+   "thinking_tokens": 2417
+  }
+ },
+ "cost_usd": 0.40058,
+ "ms": 48479,
+ "seconds": 48.9,
+ "parts": 2,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 242,
+   "share": 0.0,
+   "missing": [
+    "ANTHRO101",
+    "ANTHRO101H",
+    "ANTHRO101L",
+    "ANTHRO103",
+    "ANTHRO103H",
+    "ANTHRO105",
+    "ANTHRO120",
+    "ANTHRO210",
+    "ANTHRO220",
+    "ARCHT114",
+    "ARCHT115",
+    "ART100",
+    "ART110",
+    "ART111",
+    "ART112",
+    "ART115",
+    "ART116",
+    "ASTRON100",
+    "ASTRON102",
+    "ASTRON104",
+    "BIOSCI100",
+    "BIOSCI100H",
+    "BIOSCI101",
+    "BIOSCI106",
+    "BIOSCI106H",
+    "BIOSCI107",
+    "BIOSCI107H",
+    "BIOSCI115",
+    "BIOSCI116",
+    "BIOSCI119",
+    "BIOSCI130",
+    "BIOSCI132",
+    "BIOSCI140",
+    "BIOSCI201",
+    "BIOSCI202",
+    "BIOSCI204",
+    "BIOSCI205",
+    "BIOSCI221",
+    "BIOSCI240",
+    "CCE200",
+    "CHEM100",
+    "CHEM151",
+    "CHEM151H",
+    "CHEM201",
+    "CHEM201H",
+    "CHEM202",
+    "CHEM255",
+    "CHEM256",
+    "CINEMA120",
+    "CINEMA121",
+    "CINEMA122",
+    "CINEMA123",
+    "CINEMA127",
+    "CINEMA129",
+    "CINEMA131",
+    "COMS100",
+    "COMS227",
+    "COMS256",
+    "DANCE100",
+    "ECE101",
+    "ECE102",
+    "ECON170",
+    "ECON170H",
+    "ECON201",
+    "ECON202",
+    "ECON291",
+    "ECONC2001H",
+    "ECONC2002H",
+    "ENGL135",
+    "ENGL200",
+    "ENGL250",
+    "ENGL251",
+    "ENGL260",
+    "ENGL261",
+    "ENGL262",
+    "ENGL263",
+    "ENGL264",
+    "ENGL270",
+    "ENGL271",
+    "ENGL272",
+    "ENGL273",
+    "ENGL274",
+    "ENGL275",
+    "ENGL280",
+    "ENGL281",
+    "ENGLC1000",
+    "ENGLC1000H",
+    "ENGLC1001",
+    "ENGLC1001H",
+    "ENGLC1002",
+    "ENGLC1003",
+    "ENVRMT101",
+    "ENVRMT103",
+    "ENVRMT104",
+    "ETHNST101",
+    "FRNCH201",
+    "FRNCH202",
+    "GEOGRPH100",
+    "GEOGRPH101",
+    "GEOGRPH102",
+    "GEOGRPH103",
+    "GEOGRPH104",
+    "GEOGRPH105",
+    "GEOLOGY100",
+    "GEOLOGY101",
+    "GEOLOGY102",
+    "GEOLOGY103",
+    "GEOLOGY104",
+    "GEOLOGY105",
+    "GEOLOGY110",
+    "GLST101",
+    "GLST102",
+    "GMD120",
+    "HIST101",
+    "HIST101H",
+    "HIST102",
+    "HIST112",
+    "HIST112H",
+    "HIST115",
+    "HIST116",
+    "HIST117",
+    "HIST120",
+    "HIST120H",
+    "HIST130",
+    "HIST161",
+    "HIST191",
+    "HIST192",
+    "HIST193",
+    "HIST210",
+    "HIST212",
+    "HIST240",
+    "HIST243",
+    "HISTC1001",
+    "HISTC1001H",
+    "HUMAN100",
+    "HUMAN115",
+    "HUMAN116",
+    "HUMAN150",
+    "ID114",
+    "ID115",
+    "LING101",
+    "MATH100",
+    "MATH103X",
+    "MATH104",
+    "MATH104X",
+    "MATH211",
+    "MATH211X",
+    "MATH212",
+    "MATH213",
+    "MATH214",
+    "MATH215",
+    "MATH240",
+    "MATH240X",
+    "MEA100",
+    "MEA101",
+    "MEA102",
+    "MUSIC100",
+    "MUSIC105",
+    "MUSIC106",
+    "MUSIC107",
+    "MUSIC108",
+    "MUSIC110",
+    "MUSIC112",
+    "OCEAN101",
+    "OCEAN119",
+    "PHILOS101",
+    "PHILOS101H",
+    "PHILOS102",
+    "PHILOS110",
+    "PHILOS111",
+    "PHILOS112",
+    "PHILOS120",
+    "PHILOS130",
+    "PHILOS206",
+    "PHILOS220",
+    "PHILOS225",
+    "PHILOS240",
+    "PHILOS250",
+    "PHOTO140",
+    "PHOTO150",
+    "PHYSCI101",
+    "PHYSIC101",
+    "PHYSIC102",
+    "PHYSIC110",
+    "PHYSIC111",
+    "PHYSIC210",
+    "PHYSIC211",
+    "PHYSIC220",
+    "PHYSIC221",
+    "PHYSIC222",
+    "POLISC200",
+    "POLISC230",
+    "POLISC250",
+    "POLISC270",
+    "POLISC290",
+    "POLSC1000",
+    "POLSC1000H",
+    "PSYCC1000",
+    "PSYCC1000H",
+    "PSYCH102",
+    "PSYCH104",
+    "PSYCH105",
+    "PSYCH109",
+    "PSYCH126",
+    "PSYCH172",
+    "PSYCH172H",
+    "PSYCH225",
+    "PSYCH230",
+    "PSYCH235",
+    "PSYCH240",
+    "SIGN110",
+    "SOCI101",
+    "SOCI101H",
+    "SOCI102",
+    "SOCI103",
+    "SOCI103H",
+    "SOCI104",
+    "SOCI105",
+    "SOCI106",
+    "SOCI107",
+    "SOCI108",
+    "SOCI110",
+    "SOCI130",
+    "SOCI137",
+    "SOCI200",
+    "SOCI200H",
+    "SOCI205",
+    "SOCI207",
+    "SOCI208",
+    "SOCI210",
+    "SOCI230",
+    "SOCI233",
+    "SOCI250",
+    "SPAN201",
+    "SPAN202",
+    "SPAN240",
+    "STATC1000",
+    "STATC1000E",
+    "STATC1000H",
+    "THEATR100",
+    "THEATR110",
+    "THEATR220"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "No CalGETC certificate section in the supplied text (pages hold PARALEGAL: Paralegal Studies A.A./Certificate, 2026 – 2027 PARALEGAL ASSOCIATE DEGREE GENERAL EDUCATION, and AA-T Law, Public Policy, and Society)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "POLS C1000",
+    "why": "no CalGETC section in text; named only in Paralegal and AA-T sections"
+   },
+   {
+    "code": "POLS C1000H",
+    "why": "no CalGETC section in text; named only in Paralegal and AA-T sections"
+   },
+   {
+    "code": "ENGL C1000",
+    "why": "no CalGETC section in text; named only in Paralegal GE list and AA-T"
+   },
+   {
+    "code": "ENGL C1000H",
+    "why": "no CalGETC section in text; named only in Paralegal GE list and AA-T"
+   },
+   {
+    "code": "ENGL C1001",
+    "why": "no CalGETC section in text; named only in Paralegal GE list and AA-T"
+   },
+   {
+    "code": "ENGL C1001H",
+    "why": "no CalGETC section in text; named only in Paralegal GE list and AA-T"
+   },
+   {
+    "code": "ENGL C1003",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "PHILOS 206",
+    "why": "no CalGETC section in text; named only in Paralegal GE list and AA-T"
+   },
+   {
+    "code": "SOCI 102",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "SOCI 108",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "MATH 100",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "MATH 103X",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "MATH 104",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "MATH 104X",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "MATH 211",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "MATH 211X",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "MATH 212",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "MATH 213",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "MATH 214",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "MATH 215",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "MATH 240",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "MATH 240X",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "no CalGETC section in text; named only in Paralegal GE list and AA-T"
+   },
+   {
+    "code": "STAT C1000E",
+    "why": "no CalGETC section in text; named only in Paralegal GE list and AA-T"
+   },
+   {
+    "code": "STAT C1000H",
+    "why": "no CalGETC section in text; named only in Paralegal GE list and AA-T"
+   },
+   {
+    "code": "ANTHRO 210",
+    "why": "no CalGETC section in text; named only in Paralegal GE list and AA-T"
+   },
+   {
+    "code": "ANTHRO 220",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "ARCHT 114",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "ARCHT 115",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "ART 100",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "ART 110",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "ART 115",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "ART 116",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "CINEMA 120",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "CINEMA 121",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "CINEMA 122",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "CINEMA 123",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "CINEMA 127",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "CINEMA 129",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "CINEMA 131",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "DANCE 100",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "ECON 170",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "ECON 170H",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "ENGL C1002",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "ENGL 135",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "ENGL 200",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "ENGL 250",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "ENGL 251",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "ENGL 260",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "ENGL 261",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "ENGL 262",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "ENGL 263",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "ENGL 264",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "ENGL 270",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "ENGL 271",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "ENGL 272",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "ENGL 273",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "ENGL 274",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "ENGL 275",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "ENGL 280",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "ENGL 281",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "FRNCH 201",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "FRNCH 202",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "GMD 120",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "HIST C1001",
+    "why": "no CalGETC section in text; named only in Paralegal GE list and AA-T"
+   },
+   {
+    "code": "HIST C1001H",
+    "why": "no CalGETC section in text; named only in Paralegal GE list and AA-T"
+   },
+   {
+    "code": "HIST 101",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "HIST 101H",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "HIST 102",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "HIST 115",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "HIST 116",
+    "why": "no CalGETC section in text; named only in Paralegal GE list and AA-T"
+   },
+   {
+    "code": "HIST 117",
+    "why": "no CalGETC section in text; named only in Paralegal GE list and AA-T"
+   },
+   {
+    "code": "HIST 120",
+    "why": "no CalGETC section in text; named only in Paralegal GE list and AA-T"
+   },
+   {
+    "code": "HIST 120H",
+    "why": "no CalGETC section in text; named only in Paralegal GE list and AA-T"
+   },
+   {
+    "code": "HIST 130",
+    "why": "no CalGETC section in text; named only in Paralegal GE list and AA-T"
+   },
+   {
+    "code": "HIST 161",
+    "why": "no CalGETC section in text; named only in Paralegal GE list and AA-T"
+   },
+   {
+    "code": "HIST 191",
+    "why": "no CalGETC section in text; named only in Paralegal GE list and AA-T"
+   },
+   {
+    "code": "HIST 192",
+    "why": "no CalGETC section in text; named only in Paralegal GE list and AA-T"
+   },
+   {
+    "code": "HIST 193",
+    "why": "no CalGETC section in text; named only in Paralegal GE list and AA-T"
+   },
+   {
+    "code": "HIST 210",
+    "why": "no CalGETC section in text; named only in Paralegal GE list and AA-T"
+   },
+   {
+    "code": "HIST 212",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "HIST 240",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "HIST 243",
+    "why": "no CalGETC section in text; named only in Paralegal GE list and AA-T"
+   },
+   {
+    "code": "HUMAN 100",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "HUMAN 115",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "HUMAN 116",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "HUMAN 150",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "ID 114",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "ID 115",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "LING 101",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "MEA 101",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "MEA 102",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "MUSIC 100",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "MUSIC 105",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "MUSIC 106",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "MUSIC 107",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "MUSIC 108",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "MUSIC 110",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "MUSIC 112",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "PHILOS 101",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "PHILOS 101H",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "PHILOS 102",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "PHILOS 110",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "PHILOS 111",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "PHILOS 112",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "PHILOS 120",
+    "why": "no CalGETC section in text; named only in Paralegal GE list and AA-T"
+   },
+   {
+    "code": "PHILOS 130",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "PHILOS 220",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "PHILOS 225",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "PHILOS 240",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "PHILOS 250",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "PHOTO 140",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "SIGN 110",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "SOCI 200",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "SOCI 200H",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "SPAN 201",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "SPAN 202",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "SPAN 240",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "THEATR 100",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "THEATR 110",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "THEATR 220",
+    "why": "no CalGETC section in text; named only in Paralegal GE list"
+   },
+   {
+    "code": "ANTHRO 103",
+    "why": "No CalGETC section in text; only in Paralegal local GE list and Law AA-T section"
+   },
+   {
+    "code": "ANTHRO 103H",
+    "why": "No CalGETC section in text; only in Paralegal local GE list and Law AA-T section"
+   },
+   {
+    "code": "ANTHRO 105",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "ANTHRO 120",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "CCE 200",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "ECE 101",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "ECE 102",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "ECON C2001H",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "ECON C2002H",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "ENVRMT 101",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "ETHNST 101",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "GEOGRPH 102",
+    "why": "No CalGETC section in text; only in Paralegal local GE list and Law AA-T section"
+   },
+   {
+    "code": "GEOGRPH 104",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "GEOGRPH 105",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "GLST 101",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "GLST 102",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "MEA 100",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "PSYC C1000H",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "SOCI 101",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "SOCI 101H",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "SOCI 103",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "SOCI 103H",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "SOCI 104",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "SOCI 105",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "SOCI 106",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "SOCI 107",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "SOCI 110",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "SOCI 130",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "SOCI 205",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "SOCI 207",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "SOCI 208",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "SOCI 210",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "SOCI 230",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "SOCI 233",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "SOCI 250",
+    "why": "No CalGETC section in text; only in Paralegal local GE list and Law AA-T section"
+   },
+   {
+    "code": "ANTHRO 101",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "ANTHRO 101H",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "ANTHRO 101L",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "ASTRON 100",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "ASTRON 102",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "ASTRON 104",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "BIOSCI 100",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "BIOSCI 100H",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "BIOSCI 101",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "BIOSCI 106",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "BIOSCI 106H",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "BIOSCI 107",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "BIOSCI 107H",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "BIOSCI 115",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "BIOSCI 116",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "BIOSCI 119",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "BIOSCI 130",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "BIOSCI 132",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "BIOSCI 140",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "BIOSCI 201",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "BIOSCI 202",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "BIOSCI 204",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "BIOSCI 205",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "BIOSCI 221",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "BIOSCI 240",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "CHEM 100",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "CHEM 151",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "CHEM 151H",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "CHEM 201",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "CHEM 201H",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "CHEM 202",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "CHEM 255",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "CHEM 256",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "ENVRMT 103",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "ENVRMT 104",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "GEOGRPH 100",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "GEOGRPH 101",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "GEOGRPH 103",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "GEOLOGY 100",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "GEOLOGY 101",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "GEOLOGY 102",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "GEOLOGY 103",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "GEOLOGY 104",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "GEOLOGY 105",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "GEOLOGY 110",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "OCEAN 101",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "OCEAN 119",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "PHYSCI 101",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "PHYSIC 101",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "PHYSIC 102",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "PHYSIC 110",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "PHYSIC 111",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "PHYSIC 210",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "PHYSIC 211",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "PHYSIC 220",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "PHYSIC 221",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "PHYSIC 222",
+    "why": "No CalGETC section in text; only in Paralegal local GE list"
+   },
+   {
+    "code": "ECON 291",
+    "why": "No CalGETC section in text; only in Law, Public Policy, and Society AA-T section"
+   },
+   {
+    "code": "SOCI 137",
+    "why": "No CalGETC section in text; only in Law, Public Policy, and Society AA-T section"
+   },
+   {
+    "code": "ART 111",
+    "why": "Not in the text"
+   },
+   {
+    "code": "ART 112",
+    "why": "Not in the text"
+   },
+   {
+    "code": "COMS 100",
+    "why": "Not in the text (text uses COMM codes)"
+   },
+   {
+    "code": "COMS 227",
+    "why": "Not in the text (text uses COMM codes)"
+   },
+   {
+    "code": "COMS 256",
+    "why": "Not in the text (text uses COMM codes)"
+   },
+   {
+    "code": "ECON 201",
+    "why": "Not in the text"
+   },
+   {
+    "code": "ECON 202",
+    "why": "Not in the text"
+   },
+   {
+    "code": "HIST 112",
+    "why": "Not in the text"
+   },
+   {
+    "code": "HIST 112H",
+    "why": "Not in the text"
+   },
+   {
+    "code": "PHOTO 150",
+    "why": "Not in the text"
+   },
+   {
+    "code": "POLISC 200",
+    "why": "Not in the text (text uses POLS codes)"
+   },
+   {
+    "code": "POLISC 230",
+    "why": "Not in the text (text uses POLS codes)"
+   },
+   {
+    "code": "POLISC 250",
+    "why": "Not in the text (text uses POLS codes)"
+   },
+   {
+    "code": "POLISC 270",
+    "why": "Not in the text (text uses POLS codes)"
+   },
+   {
+    "code": "POLISC 290",
+    "why": "Not in the text (text uses POLS codes)"
+   },
+   {
+    "code": "PSYCH 102",
+    "why": "Not in the text under this code (text uses PSYC codes)"
+   },
+   {
+    "code": "PSYCH 104",
+    "why": "Not in the text under this code; PSYC-104 appears only in Law AA-T section"
+   },
+   {
+    "code": "PSYCH 105",
+    "why": "Not in the text under this code (text uses PSYC codes)"
+   },
+   {
+    "code": "PSYCH 109",
+    "why": "Not in the text under this code (text uses PSYC codes)"
+   },
+   {
+    "code": "PSYCH 126",
+    "why": "Not in the text under this code (text uses PSYC codes)"
+   },
+   {
+    "code": "PSYCH 172",
+    "why": "Not in the text under this code (text uses PSYC codes)"
+   },
+   {
+    "code": "PSYCH 172H",
+    "why": "Not in the text under this code (text uses PSYC codes)"
+   },
+   {
+    "code": "PSYCH 225",
+    "why": "Not in the text under this code (text uses PSYC codes)"
+   },
+   {
+    "code": "PSYCH 230",
+    "why": "Not in the text under this code (text uses PSYC codes)"
+   },
+   {
+    "code": "PSYCH 235",
+    "why": "Not in the text under this code (text uses PSYC codes)"
+   },
+   {
+    "code": "PSYCH 240",
+    "why": "Not in the text under this code (text uses PSYC codes)"
+   }
+  ],
+  "notes": [
+   "The supplied text (PDF pages 242-245) covers the Paralegal program: the Paralegal Studies A.A./Certificate of Achievement, the local Paralegal Associate Degree General Education list, and the AA-T in Law, Public Policy, and Society. It contains no section for the CalGETC Certificate of Achievement, so no blocks, totals, outcomes or careers are recorded for this award.",
+   "The Paralegal GE list resembles a GE pattern but is the local GE for the Paralegal Studies degree and states that its courses may not be Cal-GETC approved; it was not read as the CalGETC certificate.",
+   "Reviewer should locate the CalGETC certificate page in the 2026-27 catalog; the #page=242 link appears to point to the wrong section.",
+   "Part 2: The supplied catalog text (PDF pages 242-245) contains no CalGETC Certificate of Achievement section; it prints the Paralegal Studies A.A./Certificate, the Paralegal Associate Degree local General Education pattern, and the AA-T in Law, Public Policy, and Society. The source link likely points to the wrong page; a reviewer should locate the CalGETC certificate section.",
+   "Part 2: No blocks recorded because no requirements for the named award are printed. The Paralegal local GE list is a different GE pattern and GE courses never go in blocks.",
+   "Part 2: No outcomes or careers for the CalGETC certificate appear in the text; outcomes printed belong to the Paralegal certificate and the Law AA-T and were not recorded.",
+   "Read in 2 parts, because one reply could not hold the whole record."
+  ]
+ },
+ "extracted_run": "44769429877",
+ "catalog_year": "2026-2027",
+ "source_sha": "c9579365faed665f",
+ "source_codes": [
+  "ANTHRO101",
+  "ANTHRO101H",
+  "ANTHRO101L",
+  "ANTHRO103",
+  "ANTHRO103H",
+  "ANTHRO105",
+  "ANTHRO120",
+  "ANTHRO210",
+  "ANTHRO220",
+  "ARCHT114",
+  "ARCHT115",
+  "ART100",
+  "ART110",
+  "ART115",
+  "ART116",
+  "ASTRON100",
+  "ASTRON102",
+  "ASTRON104",
+  "BIOSCI100",
+  "BIOSCI100H",
+  "BIOSCI101",
+  "BIOSCI106",
+  "BIOSCI106H",
+  "BIOSCI107",
+  "BIOSCI107H",
+  "BIOSCI115",
+  "BIOSCI116",
+  "BIOSCI119",
+  "BIOSCI130",
+  "BIOSCI132",
+  "BIOSCI140",
+  "BIOSCI201",
+  "BIOSCI202",
+  "BIOSCI204",
+  "BIOSCI205",
+  "BIOSCI221",
+  "BIOSCI240",
+  "CCE200",
+  "CHEM100",
+  "CHEM151",
+  "CHEM151H",
+  "CHEM201",
+  "CHEM201H",
+  "CHEM202",
+  "CHEM255",
+  "CHEM256",
+  "CINEMA120",
+  "CINEMA121",
+  "CINEMA122",
+  "CINEMA123",
+  "CINEMA127",
+  "CINEMA129",
+  "CINEMA131",
+  "COMS100",
+  "DANCE100",
+  "ECE101",
+  "ECE102",
+  "ECON170",
+  "ECON170H",
+  "ECON201",
+  "ECON202",
+  "ECON291",
+  "ECONC2001H",
+  "ECONC2002H",
+  "ENGL135",
+  "ENGL200",
+  "ENGL250",
+  "ENGL251",
+  "ENGL260",
+  "ENGL261",
+  "ENGL262",
+  "ENGL263",
+  "ENGL264",
+  "ENGL270",
+  "ENGL271",
+  "ENGL272",
+  "ENGL273",
+  "ENGL274",
+  "ENGL275",
+  "ENGL280",
+  "ENGL281",
+  "ENGLC1000",
+  "ENGLC1000H",
+  "ENGLC1001",
+  "ENGLC1001H",
+  "ENGLC1002",
+  "ENGLC1003",
+  "ENVRMT101",
+  "ENVRMT103",
+  "ENVRMT104",
+  "ETHNST101",
+  "FRNCH201",
+  "FRNCH202",
+  "GEOGRPH100",
+  "GEOGRPH101",
+  "GEOGRPH102",
+  "GEOGRPH103",
+  "GEOGRPH104",
+  "GEOGRPH105",
+  "GEOLOGY100",
+  "GEOLOGY101",
+  "GEOLOGY102",
+  "GEOLOGY103",
+  "GEOLOGY104",
+  "GEOLOGY105",
+  "GEOLOGY110",
+  "GLST101",
+  "GLST102",
+  "GMD120",
+  "HIST101",
+  "HIST101H",
+  "HIST102",
+  "HIST115",
+  "HIST116",
+  "HIST117",
+  "HIST120",
+  "HIST120H",
+  "HIST130",
+  "HIST161",
+  "HIST191",
+  "HIST192",
+  "HIST193",
+  "HIST210",
+  "HIST212",
+  "HIST240",
+  "HIST243",
+  "HISTC1001",
+  "HISTC1001H",
+  "HUMAN100",
+  "HUMAN115",
+  "HUMAN116",
+  "HUMAN150",
+  "ID114",
+  "ID115",
+  "LING101",
+  "MATH100",
+  "MATH103X",
+  "MATH104",
+  "MATH104X",
+  "MATH211",
+  "MATH211X",
+  "MATH212",
+  "MATH213",
+  "MATH214",
+  "MATH215",
+  "MATH240",
+  "MATH240X",
+  "MEA100",
+  "MEA101",
+  "MEA102",
+  "MUSIC100",
+  "MUSIC105",
+  "MUSIC106",
+  "MUSIC107",
+  "MUSIC108",
+  "MUSIC110",
+  "MUSIC112",
+  "OCEAN101",
+  "OCEAN119",
+  "PHILOS101",
+  "PHILOS101H",
+  "PHILOS102",
+  "PHILOS110",
+  "PHILOS111",
+  "PHILOS112",
+  "PHILOS120",
+  "PHILOS130",
+  "PHILOS206",
+  "PHILOS220",
+  "PHILOS225",
+  "PHILOS240",
+  "PHILOS250",
+  "PHOTO140",
+  "PHYSCI101",
+  "PHYSIC101",
+  "PHYSIC102",
+  "PHYSIC110",
+  "PHYSIC111",
+  "PHYSIC210",
+  "PHYSIC211",
+  "PHYSIC220",
+  "PHYSIC221",
+  "PHYSIC222",
+  "POLSC1000",
+  "POLSC1000H",
+  "PSYCC1000",
+  "PSYCC1000H",
+  "SIGN110",
+  "SOCI101",
+  "SOCI101H",
+  "SOCI102",
+  "SOCI103",
+  "SOCI103H",
+  "SOCI104",
+  "SOCI105",
+  "SOCI106",
+  "SOCI107",
+  "SOCI108",
+  "SOCI110",
+  "SOCI130",
+  "SOCI137",
+  "SOCI200",
+  "SOCI200H",
+  "SOCI205",
+  "SOCI207",
+  "SOCI208",
+  "SOCI210",
+  "SOCI230",
+  "SOCI233",
+  "SOCI250",
+  "SPAN201",
+  "SPAN202",
+  "SPAN240",
+  "STATC1000",
+  "STATC1000E",
+  "STATC1000H",
+  "THEATR100",
+  "THEATR110",
+  "THEATR220"
+ ],
+ "source_coverage": 0.905
+}

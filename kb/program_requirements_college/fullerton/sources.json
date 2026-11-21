@@ -28,7 +28,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "nursery management associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -67,7 +70,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "landscape management associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -96,7 +102,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -129,7 +138,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "architecture associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -160,7 +172,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "biology associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -176,7 +191,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 285 of 302 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "03823",
@@ -223,7 +242,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "business administration associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 29,
@@ -264,7 +286,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "accounting accounting associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -304,7 +329,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "marketing management marketing management associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -343,7 +371,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "real estate management associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -359,7 +390,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 285 of 302 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "03831",
@@ -403,7 +438,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "computer information systems computer information systems associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 26,
@@ -436,7 +474,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "physical education associate in arts degree physical education — fitness associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -476,7 +517,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "engineering engineering associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -515,7 +559,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "printing technology associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -555,7 +602,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "automotive technology associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -589,7 +639,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "construction technology associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -623,7 +676,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "industrial drafting industrial drafting associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -683,7 +739,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "manufacturing technology manufacturing technology associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 38,
@@ -712,7 +771,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "construction management associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -785,7 +847,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "art associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 51,
@@ -844,7 +909,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "music associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 44,
@@ -921,7 +989,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "theatre arts associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 63,
@@ -961,7 +1032,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "dance dance associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -994,7 +1068,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "advertising and graphic design associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -1068,7 +1145,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "foreign language foreign language associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 54,
@@ -1109,7 +1189,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "interior design associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -1138,7 +1221,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "fashion design associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -1182,7 +1268,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "nutrition and foods associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 22,
@@ -1245,7 +1334,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "english english associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 41,
@@ -1287,7 +1379,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "philosophy associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 23,
@@ -1334,7 +1429,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "religious studies associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 27,
@@ -1371,7 +1469,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "mathematics mathematics associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -1408,7 +1509,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "chemistry chemistry associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -1453,7 +1557,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "geology associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 23,
@@ -1491,7 +1598,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "psychology psychology associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -1502,12 +1612,40 @@
   "title": "Administration of Justice",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ100F",
+   "AJ110AF",
+   "AJ110BF",
+   "AJ135F",
+   "AJ140F",
+   "AJ151F",
+   "AJ220F",
+   "AJ222F",
+   "AJ223F",
+   "AJ226F",
+   "AJ230F",
+   "AJ252F",
+   "AJ276F",
+   "AJ278F",
+   "AJ279F"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/administration-justice/administration-justice-associate-science-degree/",
+   "title": "Administration of Justice Associate in Science Degree < Fullerton College",
+   "h1": "Administration of Justice Associate in Science Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "administration of justice administration of justice associate in science degree",
+    "section_fit": 1.0
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 4393
  },
  {
   "control_number": "03880",
@@ -1547,7 +1685,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "anthropology anthropology associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 22,
@@ -1593,7 +1734,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "ethnic studies associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
@@ -1639,7 +1783,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "economics economics associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 24,
@@ -1697,7 +1844,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "history history associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 36,
@@ -1730,7 +1880,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "geography associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -1756,7 +1909,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "cosmetology associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -1800,7 +1956,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business management associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 28,
@@ -1839,7 +1998,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "entrepreneurship associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -1885,7 +2047,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "international business management associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 24,
@@ -1901,7 +2066,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 285 of 302 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "08398",
@@ -1935,7 +2104,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "television and film associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -1970,7 +2142,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -2001,7 +2176,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "computer science computer science associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -2038,7 +2216,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.5,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -2078,7 +2259,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 18,
@@ -2114,7 +2298,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -2147,7 +2334,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -2180,7 +2370,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -2215,7 +2408,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -2244,7 +2440,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -2277,7 +2476,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -2307,7 +2509,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -2340,7 +2545,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "fashion merchandising associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -2380,7 +2588,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 18,
@@ -2409,7 +2620,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -2456,7 +2670,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "paralegal studies associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
@@ -2504,7 +2721,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "environmental sciences environmental sciences associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 26,
@@ -2538,7 +2758,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "astronomy associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -2580,7 +2803,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "latin american studies latin-​american studies associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -2626,7 +2852,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "cosmetology instructor associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
@@ -2664,7 +2893,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "ornamental horticulture associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -2707,7 +2939,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 21,
@@ -2748,7 +2983,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 19,
@@ -2797,7 +3035,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 27,
@@ -2844,7 +3085,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 37,
@@ -2874,7 +3118,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -2903,7 +3150,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -2933,7 +3183,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -2966,7 +3219,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -2998,7 +3254,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -3029,7 +3288,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -3068,7 +3330,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
@@ -3102,7 +3367,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -3130,7 +3398,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -3170,7 +3441,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 18,
@@ -3204,7 +3478,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -3242,7 +3519,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
@@ -3286,7 +3566,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 22,
@@ -3316,7 +3599,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "industrial technology industrial technology associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -3345,7 +3631,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "construction inspection associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -3385,7 +3674,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 19,
@@ -3413,7 +3705,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "textiles and clothing associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -3442,7 +3737,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -3477,7 +3775,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -3500,7 +3801,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 1,
@@ -3536,7 +3840,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "chicanx and latinx studies associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -3570,7 +3877,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "early childhood education associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -3599,7 +3909,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -3624,7 +3937,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "physical education associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -3732,7 +4048,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "interdisciplinary studies: emphasis in science and mathematics associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 88,
@@ -3931,7 +4250,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "interdisciplinary studies interdisciplinary studies: emphasis in arts and human expression associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 190,
@@ -4078,7 +4400,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "interdisciplinary studies: emphasis in social sciences associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 131,
@@ -4200,7 +4525,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "interdisciplinary studies: emphasis in social behavior and self-​development associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 108,
@@ -4243,7 +4571,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 21,
@@ -4294,7 +4625,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 31,
@@ -4323,7 +4657,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -4376,7 +4713,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 32,
@@ -4434,7 +4774,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 38,
@@ -4465,7 +4808,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -4516,7 +4862,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 30,
@@ -4543,7 +4892,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "pre-​nursing pre-​nursing associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -4572,7 +4924,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "child development and educational studies associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -4601,7 +4956,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "photography associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -4631,7 +4989,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -4687,7 +5048,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 34,
@@ -4728,7 +5092,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 20,
@@ -4772,7 +5139,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 23,
@@ -4803,7 +5173,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -4847,7 +5220,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 23,
@@ -4894,7 +5270,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 25,
@@ -4935,7 +5314,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 19,
@@ -4951,7 +5333,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 285 of 302 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "21260",
@@ -4986,7 +5372,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
@@ -5025,7 +5414,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
@@ -5059,7 +5451,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -5098,7 +5493,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 22,
@@ -5143,7 +5541,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 23,
@@ -5187,7 +5588,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 23,
@@ -5230,7 +5634,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 21,
@@ -5280,7 +5687,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 29,
@@ -5315,7 +5725,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -5353,7 +5766,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 16,
@@ -5387,7 +5803,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -5434,7 +5853,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 25,
@@ -5461,7 +5883,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -5499,7 +5924,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "mathematics associate in science degree mathematics associate in science degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 16,
@@ -5543,7 +5971,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "sociology associate in arts degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 24,
@@ -5582,7 +6013,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "psychology associate in arts degree psychology associate in arts degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 18,
@@ -5611,7 +6045,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -5649,7 +6086,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "studio arts associate in arts degree for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 16,
@@ -5706,7 +6146,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "history associate in arts degree history associate in arts degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 35,
@@ -5745,7 +6188,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "political science political science associate in arts degree for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 18,
@@ -5797,7 +6243,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "elementary teacher education associate in arts degree for transfer",
+    "section_fit": 0.75
    }
   },
   "listed": 32,
@@ -5808,12 +6257,42 @@
   "title": "Administration of Justice",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ100F",
+   "AJ110AF",
+   "AJ140F",
+   "AJ220F",
+   "AJ222F",
+   "AJ223F",
+   "AJ230F",
+   "AJ278F",
+   "PSY161F",
+   "PSY161HF",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC101F",
+   "SOC101HF",
+   "SOSC120F",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/administration-justice/administration-justice-associate-science-degree-transfer/",
+   "title": "Administration of Justice Associate in Science Degree for Transfer < Fullerton College",
+   "h1": "Administration of Justice Associate in Science Degree for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "administration of justice associate in science degree administration of justice associate in science degree for transfer",
+    "section_fit": 0.667
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 4393
  },
  {
   "control_number": "31529",
@@ -5849,7 +6328,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "art history associate in arts degree art history associate in arts degree for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 18,
@@ -5892,7 +6374,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "music associate in arts degree music associate in arts degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 27,
@@ -5955,11 +6440,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "english associate in arts degree english associate in arts degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 41,
-  "text_chars": 5897
+  "text_chars": 5955
  },
  {
   "control_number": "31648",
@@ -5987,7 +6475,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "theatre arts associate in arts degree theatre arts associate in arts degree for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 12,
@@ -6029,7 +6520,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "philosophy associate in arts degree philosophy associate in arts degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 22,
@@ -6063,7 +6557,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "geography associate in arts degree geography associate in arts degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 12,
@@ -6106,7 +6603,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "spanish spanish associate in arts degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 21,
@@ -6161,7 +6661,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "anthropology associate in arts degree anthropology associate in arts degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 34,
@@ -6196,7 +6699,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "earth science associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -6220,7 +6726,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -6260,7 +6769,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "nutrition and dietetics associate in science degree for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 18,
@@ -6298,7 +6810,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
@@ -6333,7 +6848,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -6364,7 +6882,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -6394,7 +6915,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "radio broadcasting associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -6425,7 +6949,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "radio broadcast news associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -6463,7 +6990,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -6493,7 +7023,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "early childhood education associate in arts degree early childhood education associate in science degree for transfer",
+    "section_fit": 0.75
    }
   },
   "listed": 8,
@@ -6522,7 +7055,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -6555,7 +7091,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -6594,7 +7133,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
@@ -6621,7 +7163,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -6656,7 +7201,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "film, television, and electronic media associate in science degree for transfer",
+    "section_fit": 0.8
    }
   },
   "listed": 13,
@@ -6700,7 +7248,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 23,
@@ -6726,7 +7277,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -6761,7 +7315,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -6794,7 +7351,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -6822,7 +7382,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -6864,7 +7427,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 21,
@@ -6905,7 +7471,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "journalism associate in arts degree journalism associate in arts degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 23,
@@ -6956,7 +7525,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "child and adolescent development associate in arts degree for transfer",
+    "section_fit": 0.75
    }
   },
   "listed": 29,
@@ -6987,7 +7559,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -7022,7 +7597,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -7095,7 +7673,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "kinesiology associate in arts degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 54,
@@ -7129,7 +7710,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "geology associate in science degree geology associate in science degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 12,
@@ -7166,7 +7750,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies communication studies associate in arts degree for transfer 2.0",
+    "section_fit": 0.667
    }
   },
   "listed": 15,
@@ -7212,7 +7799,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "economics associate in arts degree economics associate in arts degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 24,
@@ -7238,7 +7828,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -7267,7 +7860,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -7304,7 +7900,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -7339,7 +7938,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -7389,7 +7991,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 28,
@@ -7418,7 +8023,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -7444,7 +8052,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -7477,7 +8088,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -7511,7 +8125,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "biology associate in science degree biology associate in science degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 12,
@@ -7580,7 +8197,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "social justice studies: general associate in arts degree for transfer",
+    "section_fit": 0.8
    }
   },
   "listed": 47,
@@ -7621,7 +8241,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 19,
@@ -7656,7 +8279,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -7689,7 +8315,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -7717,7 +8346,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -7750,7 +8382,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -7775,7 +8410,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -7811,7 +8449,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -7844,7 +8485,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "autonomous systems development associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -7938,7 +8582,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "law, public policy and society associate in arts degree for transfer",
+    "section_fit": 0.8
    }
   },
   "listed": 81,
@@ -7979,7 +8626,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 19,
@@ -8007,7 +8657,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -8032,7 +8685,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -8069,7 +8725,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "africana studies associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -8102,7 +8761,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -8134,7 +8796,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -8185,7 +8850,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 30,
@@ -8212,7 +8880,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -8239,7 +8910,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -8271,7 +8945,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -8298,7 +8975,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -8332,7 +9012,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "american indian and indigenous studies associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -8366,7 +9049,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "asian/​pacific islander american studies associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -8393,7 +9079,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -8419,7 +9108,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -8455,7 +9147,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -8483,7 +9178,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -8510,7 +9208,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -8551,7 +9252,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 19,
@@ -8567,7 +9271,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 285 of 302 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "40649",
@@ -8589,7 +9297,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -8615,7 +9326,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -8631,7 +9345,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 285 of 302 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "40657",
@@ -8657,7 +9375,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -8692,7 +9413,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 16,
@@ -8725,7 +9449,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -8760,7 +9487,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -8793,7 +9523,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -8829,7 +9562,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -8869,7 +9605,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 18,
@@ -8913,7 +9652,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 22,
@@ -8944,7 +9686,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -8975,7 +9720,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -9005,7 +9753,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -9038,7 +9789,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "cyber security associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -9063,7 +9817,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -9100,7 +9857,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -9131,7 +9891,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -9170,7 +9933,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
@@ -9206,7 +9972,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 18,
@@ -9238,7 +10007,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -9275,7 +10047,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -9300,7 +10075,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -9334,7 +10112,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -9370,7 +10151,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 16,
@@ -9398,7 +10182,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -9435,7 +10222,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -9469,7 +10259,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -9517,7 +10310,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 30,
@@ -9549,7 +10345,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -9585,7 +10384,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -9628,7 +10430,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "art history museum studies associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -9662,7 +10467,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -9690,7 +10498,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "biology associate in arts degree biology associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -9726,7 +10537,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.5,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -9769,7 +10583,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 22,
@@ -9830,7 +10647,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "environmental sustainability associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 39,
@@ -9857,7 +10677,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "barbering associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -9895,7 +10718,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "art associate in arts degree art history associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -9927,7 +10753,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "cannabis studies associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -9984,7 +10813,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "global studies associate in arts degree for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 35,
@@ -10036,7 +10868,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 34,
@@ -10064,7 +10899,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -10102,7 +10940,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -10113,12 +10954,32 @@
   "title": "Crime Scene Investigation",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ151F",
+   "AJ222F",
+   "AJ223F",
+   "AJ230F",
+   "AJ92F",
+   "AJ93F",
+   "PHOT111F"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/administration-justice/crime-scene-investigation-skills-certificate/",
+   "title": "Crime Scene Investigation Certificate < Fullerton College",
+   "h1": "Crime Scene Investigation Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 3553
  },
  {
   "control_number": "42468",
@@ -10164,7 +11025,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 31,
@@ -10219,7 +11083,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "social justice studies social justice studies -​ ethnic studies associate in arts degree for transfer",
+    "section_fit": 0.8
    }
   },
   "listed": 33,
@@ -10250,7 +11117,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -10302,7 +11172,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 34,
@@ -10350,7 +11223,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "social justice studies -​ gender studies associate in arts degree for transfer",
+    "section_fit": 0.8
    }
   },
   "listed": 26,
@@ -10390,7 +11266,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business administration associate in arts degree business administration associate in science degree for transfer 2.0",
+    "section_fit": 0.667
    }
   },
   "listed": 18,
@@ -10417,7 +11296,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -10450,7 +11332,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -10496,7 +11381,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 26,
@@ -10521,7 +11409,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -10552,7 +11443,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -10583,7 +11477,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -10621,7 +11518,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
@@ -10657,7 +11557,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.5,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -10700,7 +11603,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 21,
@@ -10727,7 +11633,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "cosmetology associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -10754,7 +11663,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -10783,7 +11695,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "american sign language and deaf culture associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -10819,7 +11734,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "esl certificate of proficiency in academic english esl milestone certificate of achievement: pathway to transfer -​ written and oral communication",
+    "section_fit": 0.4
    }
   },
   "listed": 16,
@@ -10848,7 +11766,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "esl milestone certificate of achievement: pathway to transfer -​ written and oral communication",
+    "section_fit": 0.857
    }
   },
   "listed": 7,
@@ -10877,7 +11798,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -10903,7 +11827,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -10937,7 +11864,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -10976,7 +11906,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 18,
@@ -11001,7 +11934,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -11042,7 +11978,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 21,
@@ -11083,7 +12022,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 19,
@@ -11123,7 +12065,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -11156,7 +12101,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -11184,7 +12132,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -11220,7 +12171,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "meteorology associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -11264,7 +12218,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "oceanography associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 22,
@@ -11308,7 +12265,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 23,
@@ -11335,7 +12295,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -11365,7 +12328,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -11394,7 +12360,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -11421,7 +12390,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -11452,7 +12424,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -11494,7 +12469,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies communication studies associate in arts degree for transfer 2.0",
+    "section_fit": 0.667
    }
   },
   "listed": 20,
@@ -11519,7 +12497,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -11544,7 +12525,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -11591,7 +12575,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 31,
@@ -11663,7 +12650,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "theatre arts: acting and performance associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 56,
@@ -11738,7 +12728,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "technical theatre certificate theatre arts associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 60,
@@ -11787,7 +12780,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 29,
@@ -11833,7 +12829,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 25,
@@ -11861,7 +12860,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -11900,7 +12902,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 18,
@@ -11947,7 +12952,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "aging studies associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -11980,7 +12988,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "physics physics associate in science degree for transfer 2.0",
+    "section_fit": 0.5
    }
   },
   "listed": 11,
@@ -12021,7 +13032,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 20,
@@ -12063,7 +13077,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "artificial intelligence in business associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -12108,7 +13125,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -12138,7 +13158,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -12179,7 +13202,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -12210,7 +13236,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 16,
@@ -12261,7 +13290,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -12306,7 +13338,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -12338,7 +13373,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -12393,7 +13431,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 36,

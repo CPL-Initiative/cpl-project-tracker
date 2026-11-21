@@ -1,7 +1,7 @@
 {
  "_what": "Daily model spend by UTC day, pasted by hand from billing (no billing credentials live in the repo). api: Claude Console API totals. topups: Claude Code auto-reload top-ups on the day credit was bought, which can lag use by a day. notes: a word on a day. partial: a day not yet over when pasted.",
  "_source": "Sam, pasted in session S661, 2026-11-15 (the Commons ETA clock mock, #3360)",
- "updated": "2026-11-15",
+ "updated": "2026-11-21",
  "api": {
   "2026-10-17": 527.31,
   "2026-10-18": 68.63,
@@ -87,7 +87,8 @@
   "2026-11-16": 0.34,
   "2026-11-17": 7.87,
   "2026-11-19": 63.24,
-  "2026-11-20": 28.11
+  "2026-11-20": 31.95,
+  "2026-11-21": 4.82
  },
  "runner_runs": {
   "38322747831": {
@@ -944,6 +945,61 @@
    "college": "orange_coast",
    "usd": 2.56,
    "day": "2026-11-20"
+  },
+  "44752892297": {
+   "college": "cuyamaca",
+   "usd": 2.3,
+   "day": "2026-11-20"
+  },
+  "44762380826": {
+   "college": "fullerton",
+   "usd": 0.19,
+   "day": "2026-11-20"
+  },
+  "44763594152": {
+   "college": "moreno_valley",
+   "usd": 0.29,
+   "day": "2026-11-20"
+  },
+  "44763682085": {
+   "college": "glendale_community",
+   "usd": 0.0,
+   "day": "2026-11-20"
+  },
+  "44765224865": {
+   "college": "norco",
+   "usd": 0.29,
+   "day": "2026-11-20"
+  },
+  "44769778910": {
+   "college": "san_jose_city",
+   "usd": 0.77,
+   "day": "2026-11-20"
+  },
+  "44883860902": {
+   "college": "san_joaquin_delta",
+   "usd": 2.18,
+   "day": "2026-11-21"
+  },
+  "44883863572": {
+   "college": "west_los_angeles",
+   "usd": 0.05,
+   "day": "2026-11-21"
+  },
+  "44884569184": {
+   "college": "solano_community",
+   "usd": 0.87,
+   "day": "2026-11-21"
+  },
+  "44885033145": {
+   "college": "santa_monica",
+   "usd": 1.72,
+   "day": "2026-11-21"
+  },
+  "44887850515": {
+   "college": "college_of_the_canyons",
+   "usd": 0.0,
+   "day": "2026-11-21"
   }
  },
  "runner_since": "2026-11-17",
@@ -974,9 +1030,9 @@
    "sessions": 5,
    "not_available": 0,
    "tags": {
-    "curation": 136.0,
+    "collection": 256.0,
     "infrastructure": 109.9,
-    "collection": 256.0
+    "curation": 136.0
    },
    "untagged_usd": 0.0,
    "estimate_usd": 288.0

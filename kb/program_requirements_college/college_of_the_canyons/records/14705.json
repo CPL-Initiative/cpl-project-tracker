@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Photography",
  "award": "A.A. Degree",
- "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=252",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=252",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12374,
+  "input_tokens": 12354,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12374,
-    "output_tokens": 1832,
+    "input_tokens": 12354,
+    "output_tokens": 1814,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,43 +30,46 @@
     "model": null
    }
   ],
-  "output_tokens": 1832,
+  "output_tokens": 1814,
   "output_tokens_details": {
-   "thinking_tokens": 405
+   "thinking_tokens": 419
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08614,
- "ms": 14380,
- "seconds": 14.5,
+ "cost_usd": 0.0857,
+ "ms": 13946,
+ "seconds": 14.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 18,
+   "placed": 20,
    "listed": 20,
-   "share": 0.9,
-   "missing": [
-    "ART110",
-    "ART111"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ARTHC1100",
+     "listed": "ART110",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTHC1200",
+     "listed": "ART111",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "ARTHC1100",
-    "ARTHC1200"
-   ],
-   "flagged": [
-    "ARTHC1100",
-    "ARTHC1200"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -219,8 +222,8 @@
     "minimum": 6,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 6,
+     "max": 6
     },
     "courses": [
      {
@@ -307,19 +310,44 @@
   "missing_explained": [
    {
     "code": "ART 110",
-    "why": "not in the text; catalog lists ARTH-C1100 (Survey of Art from Prehistory to the Medieval Era) in its place"
+    "why": "not in the text; catalog prints ARTH-C1100 (Survey of Art from Prehistory to the Medieval Era) in its place"
    },
    {
     "code": "ART 111",
-    "why": "not in the text; catalog lists ARTH-C1200 (Survey of Art from the Renaissance to Contemporary) in its place"
+    "why": "not in the text; catalog prints ARTH-C1200 (Survey of Art from the Renaissance to Contemporary) in its place"
    }
   ],
   "notes": [
-   "ARTH-C1100 and ARTH-C1200 appear to be common-course-numbered replacements for closed-list ART 110 and ART 111; recorded as catalog additions.",
-   "The section's single outcome is printed under the heading 'Degree Student Learning Outcome'.",
-   "No careers are named in the A.A. Photography section; the career list belongs to the Commercial Photography A.A. and certificate sections, which were not read for this record.",
-   "Printed course title for PHOTO-150 ('Introduction to Cameras and Composition') differs slightly from the closed list title ('Cameras and Composition')."
+   "ARTH-C1100 and ARTH-C1200 appear to be Cal-GETC common course numbering replacements for closed-list ART 110 and ART 111; recorded as catalog additions.",
+   "The outcome is printed under the heading 'Degree Student Learning Outcome'.",
+   "The A.A. in Commercial Photography and Certificate of Achievement in Commercial Photography sections that follow were not read for this record.",
+   "No general education pattern or degree total is printed in this section."
   ]
  },
- "extracted_run": "39006378829"
+ "extracted_run": "44769429877",
+ "catalog_year": "2026-2027",
+ "source_sha": "054ba4e7ad1cae68",
+ "source_codes": [
+  "ART110",
+  "ART111",
+  "ART125A",
+  "ART140",
+  "ART141",
+  "PHOTO120",
+  "PHOTO140",
+  "PHOTO150",
+  "PHOTO155",
+  "PHOTO156",
+  "PHOTO157",
+  "PHOTO160",
+  "PHOTO177",
+  "PHOTO191",
+  "PHOTO192",
+  "PHOTO195",
+  "PHOTO201",
+  "PHOTO215",
+  "PHOTO220",
+  "PHOTO285"
+ ],
+ "source_coverage": 1.0
 }

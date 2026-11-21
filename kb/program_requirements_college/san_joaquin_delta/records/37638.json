@@ -5,11 +5,11 @@
  "title": "Social Justice Studies",
  "award": "A.A- T Degree",
  "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3357&print",
- "record_shape": 5,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8754,
+  "input_tokens": 9057,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8754,
-    "output_tokens": 5823,
+    "input_tokens": 9057,
+    "output_tokens": 5486,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 5823,
+  "output_tokens": 5486,
   "output_tokens_details": {
-   "thinking_tokens": 1936
+   "thinking_tokens": 1976
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.15148,
- "ms": 42603,
- "seconds": 42.9,
+ "cost_usd": 0.14595,
+ "ms": 45353,
+ "seconds": 45.5,
  "parts": null,
  "error": null,
  "score": {
@@ -146,14 +147,18 @@
  },
  "record": {
   "program": {
-   "section_heading": "Social Justice Studies, A.A- T Degree",
+   "section_heading": "Social Justice Studies A.A- T Degree",
    "measure": "units",
    "total_units": {
     "min": 18,
     "max": 18
    },
    "open_elective_units": null,
-   "ge_pattern": "Cal-GETC",
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "California General Education Transfer Curriculum (Cal-GETC)",
    "degree_total": {
     "min": 60,
     "max": 60
@@ -375,14 +380,14 @@
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": true
      },
      {
       "code": "ENGL 35",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": true
      },
      {
       "code": "ENGL 37",
@@ -556,7 +561,7 @@
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": true
      },
      {
       "code": "COMM 11",
@@ -634,6 +639,18 @@
   "course_outcomes": [],
   "missing_explained": [
    {
+    "code": "ART 2",
+    "why": "catalog prints this course as ARTH 2 (Art History of the Non-Western World); recorded under that code as a catalog addition"
+   },
+   {
+    "code": "ENG 35",
+    "why": "catalog prints this course as ENGL 35 (Chicano Literature); recorded under that code as a catalog addition"
+   },
+   {
+    "code": "COM ST 7",
+    "why": "catalog prints this course as COMM 7 (Intercultural Communication); recorded under that code as a catalog addition"
+   },
+   {
     "code": "CHIN 3",
     "why": "not in the text"
    },
@@ -642,20 +659,17 @@
     "why": "not in the text"
    }
   ],
-  "notes": [
-   "The catalog text is truncated at the top; the program heading is not printed in the excerpt, so section_heading is taken from the program title and award.",
-   "Restricted Electives: choose 3 courses from at least two of four areas (Area 1: History or Government; Area 2: Arts and Humanities; Area 3: Social Science; Area 4: Quantitative Reasoning), not taken as one of the Core courses, and only one course from Area 4 may be used. Recorded as one choose_courses block; Area 4 courses are STAT C1000, PSYC 2 and PSYC 4.",
-   "BIOL/PSYC 30 Human Sexuality is printed twice in Area 3 (as BIOL /PSYC 30 and PSYC /BIOL 30); recorded once as BIOL 30 with alternative PSYC 30.",
-   "Code variants treated as matches to the closed list: catalog ARTH 2 = closed-list ART 2, ENGL 35 = ENG 35, COMM 7 = COM ST 7, ANTH 1 = ANTH1, SPAN 5 = SPAN5 (same titles). Reviewer should confirm.",
-   "Catalog prints SPAN 6 as 3 units and SPAN 4A as 4 units, while the closed list stores 5 units for each; catalog units used.",
-   "GEOG 2 is titled Human Geography in the catalog but Cultural Geography in the closed list.",
-   "Minimum Degree Units Required: 60 recorded as degree_total; Cal-GETC 34 units as ge_units; Minimum Major Units Required: 18 as total_units.",
-   "Program Learning Outcomes are printed for the program; the A.A-T degree is the award of this section."
-  ]
+  "notes": []
  },
- "extracted_run": 39217405432,
- "read_run": 39128562020,
+ "extracted_run": "44883860902",
+ "catalog_year": "2026-2027",
  "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  },
   {
    "field": "total_units_minimum",
    "was": null,

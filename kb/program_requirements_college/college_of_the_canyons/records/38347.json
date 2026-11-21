@@ -1,0 +1,173 @@
+{
+ "college": "College of the Canyons",
+ "control_number": "38347",
+ "shape": "noncredit",
+ "title": "Navigating Mental Health Issues in the Workplace",
+ "award": "Noncredit program",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=323",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7047,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7047,
+    "output_tokens": 947,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 947,
+  "output_tokens_details": {
+   "thinking_tokens": 337
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04713,
+ "ms": 7602,
+ "seconds": 7.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": [
+    0.0,
+    0.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Completion: Navigating Mental Health Issues in the Workplace",
+   "measure": "units",
+   "total_units": {
+    "min": 0,
+    "max": 0
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will be able to identify and demonstrate empathetic strategies, good listening skills, and the appropriate Mental Health First Aid action plan for individuals who may be experiencing a mental health problem or crisis."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "NC.CSKL-013",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NC.CSKL-017",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate, but the catalog prints 'Units Required: 0' and 0.0 units per course and gives no hours for this certificate's courses, so measure is recorded as units with the printed zeros.",
+   "Catalog codes NC.CSKL-013 and NC.CSKL-017 match the closed-list entries NCCSKL013 and NC.CSKL 17; formatting differs only.",
+   "The 'Units Required: 0' figure is recorded as total_units and as the block's stated total; it is a printed zero, not a computed value.",
+   "Following sections (Survive and Thrive in the Workplace; 21st Century Career Skills) and the NC.CSKL-001 course description belong to other programs and were not read."
+  ]
+ },
+ "extracted_run": "44886816990",
+ "catalog_year": "2026-2027",
+ "source_sha": "68b61f095a1b1da6",
+ "source_codes": [
+  "NCCSKL17"
+ ],
+ "source_coverage": 0.5
+}

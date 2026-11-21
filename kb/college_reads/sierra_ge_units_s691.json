@@ -1,0 +1,26 @@
+{
+ "_readme": "S691 (worker piles2), lever 2: 3 Sierra transfer degrees (31259, 32008, 32640) name Cal-GETC with no units. This read prints two of their department pages to see the words the pattern is named in. No model call.",
+ "college": "Sierra College",
+ "questions": {
+  "ge_units": "Whether a Sierra transfer degree page prints Cal-GETC's unit figure."
+ },
+ "keywords": [
+  "Cal-?\\s?GETC",
+  "General\\s+Education\\s+Transfer",
+  "\\b3[2-9]\\s*units"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "ge_units"
+   ],
+   "url": "https://catalog.sierracollege.edu/departments/history/"
+  },
+  {
+   "answers": [
+    "ge_units"
+   ],
+   "url": "https://catalog.sierracollege.edu/departments/geography/"
+  }
+ ]
+}

@@ -105,7 +105,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.885,
+  "coverage": 1.0,
   "codes_found": [
    "ACCTG1",
    "ACCTG10A",
@@ -126,25 +126,29 @@
    "ACCTG6",
    "ACCTG7",
    "ACCTG9",
+   "BUS1",
    "BUS32",
    "BUS5",
+   "BUS62",
+   "CIS30",
    "CIS35A",
    "CIS35B"
   ],
   "source": {
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=83",
-   "title": "82 SMC CATALOG 2026–2027",
-   "h1": "82 SMC CATALOG 2026–2027",
+   "url": "https://catalog.smc.edu/current/catalog.pdf#page=82",
+   "title": "Accounting, Associate Degree",
+   "h1": "Accounting, Associate Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    82,
     83,
     84,
     85
    ],
    "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "eb77a64879209c9c"
+   "heading_named": true,
+   "text_sha": "99cb110451d6bad7"
   },
   "listed": 26,
   "text_chars": 16000
@@ -452,14 +456,28 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.707,
+  "coverage": 1.0,
   "codes_found": [
+   "MUSIC1",
+   "MUSIC10",
+   "MUSIC13",
+   "MUSIC2",
+   "MUSIC24",
+   "MUSIC29",
+   "MUSIC3",
+   "MUSIC30",
+   "MUSIC31",
+   "MUSIC32",
+   "MUSIC33",
    "MUSIC36",
    "MUSIC37",
    "MUSIC39",
+   "MUSIC4",
    "MUSIC40",
    "MUSIC42",
+   "MUSIC44",
    "MUSIC45",
+   "MUSIC5",
    "MUSIC50A",
    "MUSIC50B",
    "MUSIC52",
@@ -467,6 +485,7 @@
    "MUSIC55",
    "MUSIC57",
    "MUSIC59",
+   "MUSIC6",
    "MUSIC60A",
    "MUSIC60B",
    "MUSIC60C",
@@ -479,6 +498,7 @@
    "MUSIC65B",
    "MUSIC66",
    "MUSIC69D",
+   "MUSIC7",
    "MUSIC70A",
    "MUSIC70B",
    "MUSIC70C",
@@ -489,6 +509,7 @@
    "MUSIC74",
    "MUSIC77",
    "MUSIC79A",
+   "MUSIC8",
    "MUSIC84A",
    "MUSIC84B",
    "MUSIC87A",
@@ -497,21 +518,22 @@
    "MUSIC94"
   ],
   "source": {
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=172",
-   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 171",
-   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 171",
+   "url": "https://catalog.smc.edu/current/catalog.pdf#page=171",
+   "title": "Music, Associate Degree",
+   "h1": "Music, Associate Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    171,
     172,
     173
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "95654774c392752f"
+   "text_sha": "3b32fde48d3e95f3"
   },
   "listed": 58,
-  "text_chars": 11332
+  "text_chars": 16000
  },
  {
   "control_number": "03273",
@@ -569,7 +591,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.963,
+  "coverage": 0.981,
   "codes_found": [
    "DANCE10",
    "DANCE11",
@@ -616,6 +638,7 @@
    "DANCE57B",
    "DANCE59A",
    "DANCE6",
+   "DANCE60",
    "DANCE61",
    "DANCE62",
    "DANCE63",
@@ -625,21 +648,22 @@
    "ECE75"
   ],
   "source": {
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=124",
-   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 123",
-   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 123",
+   "url": "https://catalog.smc.edu/current/catalog.pdf#page=123",
+   "title": "Dance, Associate Degree",
+   "h1": "Dance, Associate Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    123,
     124,
     125
    ],
    "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "5f8f2340d68bb357"
+   "heading_named": true,
+   "text_sha": "fd9339db82382bcb"
   },
   "listed": 54,
-  "text_chars": 12065
+  "text_chars": 13325
  },
  {
   "control_number": "03275",
@@ -1075,26 +1099,23 @@
    "JOURN43"
   ],
   "source": {
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=105",
-   "title": "104 SMC CATALOG 2026–2027",
-   "h1": "104 SMC CATALOG 2026–2027",
+   "url": "https://catalog.smc.edu/current/catalog.pdf#page=102",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 101",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 101",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    105,
-    106
+    102,
+    103,
+    104,
+    105
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "page_check": {
-    "rule": "A",
-    "page": 105,
-    "share": 1.0
-   },
-   "text_sha": "ae75680c23bc3360"
+   "text_sha": "c1be460975e60d1f"
   },
   "listed": 17,
-  "text_chars": 12142
+  "text_chars": 16000
  },
  {
   "control_number": "08964",
@@ -1328,20 +1349,20 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=116",
-   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 115",
-   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 115",
+   "url": "https://catalog.smc.edu/current/catalog.pdf#page=115",
+   "title": "114 SMC CATALOG 2026–2027",
+   "h1": "114 SMC CATALOG 2026–2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    115,
     116,
     117,
-    118,
-    119
+    118
    ],
    "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "e6417c7bd69ea9a7"
+   "heading_named": true,
+   "text_sha": "94fc73085a3497a4"
   },
   "listed": 37,
   "text_chars": 16000
@@ -2040,7 +2061,7 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.958,
+  "coverage": 1.0,
   "codes_found": [
    "AHIS71",
    "ANTHRO2",
@@ -2051,6 +2072,7 @@
    "ENGL41",
    "ENGL53",
    "ENGL54",
+   "ETHST1",
    "ETHST6",
    "ETHST7",
    "FILM7",
@@ -2067,20 +2089,21 @@
    "SOCIOL34"
   ],
   "source": {
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=143",
-   "title": "142 SMC CATALOG 2026–2027",
-   "h1": "142 SMC CATALOG 2026–2027",
+   "url": "https://catalog.smc.edu/current/catalog.pdf#page=142",
+   "title": "Ethnic Studies, Associate Degree or",
+   "h1": "Ethnic Studies, Associate Degree or",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    142,
     143
    ],
    "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "2348c59963e1aa28"
+   "heading_named": true,
+   "text_sha": "68711bc76f353406"
   },
   "listed": 24,
-  "text_chars": 5449
+  "text_chars": 7290
  },
  {
   "control_number": "19300",
@@ -2088,7 +2111,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.958,
+  "coverage": 1.0,
   "codes_found": [
    "AHIS71",
    "ANTHRO2",
@@ -2099,6 +2122,7 @@
    "ENGL41",
    "ENGL53",
    "ENGL54",
+   "ETHST1",
    "ETHST6",
    "ETHST7",
    "FILM7",
@@ -2115,20 +2139,21 @@
    "SOCIOL34"
   ],
   "source": {
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=143",
-   "title": "142 SMC CATALOG 2026–2027",
-   "h1": "142 SMC CATALOG 2026–2027",
+   "url": "https://catalog.smc.edu/current/catalog.pdf#page=142",
+   "title": "Ethnic Studies, Associate Degree or",
+   "h1": "Ethnic Studies, Associate Degree or",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    142,
     143
    ],
    "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "2348c59963e1aa28"
+   "heading_named": true,
+   "text_sha": "68711bc76f353406"
   },
   "listed": 24,
-  "text_chars": 5449
+  "text_chars": 7290
  },
  {
   "control_number": "19428",
@@ -2253,13 +2278,17 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.7,
+  "coverage": 0.95,
   "codes_found": [
+   "ACCTG1",
+   "ACCTG21",
    "BUS1",
    "BUS32",
    "BUS5",
+   "BUS50",
    "BUS51",
    "BUS52",
+   "BUS53",
    "BUS57",
    "BUS80",
    "BUS81",
@@ -2268,29 +2297,27 @@
    "BUS85",
    "BUS86",
    "BUS87",
+   "CIS4",
    "COMST37"
   ],
   "source": {
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=105",
-   "title": "Logistics and Supply Chain Management,",
-   "h1": "Logistics and Supply Chain Management,",
+   "url": "https://catalog.smc.edu/current/catalog.pdf#page=102",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 101",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 101",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    105,
-    106
+    102,
+    103,
+    104,
+    105
    ],
    "extractor": "pypdf",
-   "heading_named": true,
-   "page_check": {
-    "rule": "A",
-    "page": 105,
-    "share": 0.7
-   },
-   "text_sha": "9400bb7908408066"
+   "heading_named": false,
+   "text_sha": "c1be460975e60d1f"
   },
   "listed": 20,
-  "text_chars": 10711
+  "text_chars": 16000
  },
  {
   "control_number": "19701",
@@ -3067,21 +3094,22 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=116",
-   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 115",
-   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 115",
+   "url": "https://catalog.smc.edu/current/catalog.pdf#page=115",
+   "title": "114 SMC CATALOG 2026–2027",
+   "h1": "114 SMC CATALOG 2026–2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    115,
     116,
     117
    ],
    "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "149c06b7e525d242"
+   "heading_named": true,
+   "text_sha": "94fc73085a3497a4"
   },
   "listed": 20,
-  "text_chars": 10560
+  "text_chars": 16000
  },
  {
   "control_number": "21009",
@@ -3359,30 +3387,19 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 1.0,
+  "coverage": 0.593,
   "codes_found": [
    "COSM10A",
    "COSM10B",
-   "COSM11A",
-   "COSM11B",
-   "COSM11C",
-   "COSM11D",
    "COSM16",
    "COSM18",
    "COSM20",
-   "COSM21A",
-   "COSM21B",
-   "COSM21C",
-   "COSM21E",
    "COSM26",
    "COSM28A",
    "COSM28B",
    "COSM30",
    "COSM36",
-   "COSM42",
    "COSM48B",
-   "COSM49C",
-   "COSM50C",
    "COSM64",
    "COSM95A",
    "COSM95B",
@@ -3390,26 +3407,20 @@
    "COSM95D"
   ],
   "source": {
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=121",
-   "title": "Cosmetology, Associate Degree or",
-   "h1": "Cosmetology, Associate Degree or",
+   "url": "https://catalog.smc.edu/current/catalog.pdf#page=122",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 121",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 121",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    121,
     122
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "page_check": {
-    "rule": "A",
-    "page": 121,
-    "share": 1.0
-   },
-   "text_sha": "1a7790c20eef1c9f"
+   "text_sha": "e10d38257f3dfd37"
   },
   "listed": 27,
-  "text_chars": 8615
+  "text_chars": 5619
  },
  {
   "control_number": "22828",
@@ -3922,7 +3933,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.985,
+  "coverage": 1.0,
   "codes_found": [
    "ADJUS1",
    "AHIS11",
@@ -3970,6 +3981,7 @@
    "NUTR7",
    "PHILOS20",
    "PHILOS7",
+   "POLSC1000",
    "POLSC21",
    "POLSC22",
    "POLSC24",
@@ -3992,21 +4004,22 @@
    "WGS30"
   ],
   "source": {
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=189",
-   "title": "188 SMC CATALOG 2026–2027",
-   "h1": "188 SMC CATALOG 2026–2027",
+   "url": "https://catalog.smc.edu/current/catalog.pdf#page=188",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 187",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 187",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    188,
     189,
     190
    ],
    "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "c0cb6e17a560946a"
+   "heading_named": true,
+   "text_sha": "6c7462929fc983f5"
   },
   "listed": 67,
-  "text_chars": 12156
+  "text_chars": 16000
  },
  {
   "control_number": "31006",
@@ -4389,7 +4402,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.843,
+  "coverage": 1.0,
   "codes_found": [
    "AHIS11",
    "AHIS15",
@@ -4399,11 +4412,19 @@
    "AHIS3",
    "AHIS5",
    "AHIS6",
+   "ANTHRO14",
+   "ANTHRO19",
+   "ANTHRO2",
+   "ANTHRO21",
+   "ANTHRO3",
+   "ANTHRO7",
+   "ASTRON6",
    "BUS50",
    "BUS52",
    "BUS53",
    "BUS54",
    "BUS55",
+   "COMST37",
    "DANCE20",
    "DANCE21A",
    "DANCE22B",
@@ -4412,6 +4433,7 @@
    "DANCE27",
    "DANCE29",
    "DANCE5",
+   "ECON5",
    "ECONC2001",
    "ECONC2002",
    "ENGL32",
@@ -4424,9 +4446,13 @@
    "ENVRN32",
    "ENVRN40",
    "ENVRN7",
+   "GEOG11",
    "GEOG2",
    "GEOG7",
    "GEOG8",
+   "GLOBAL10",
+   "GLOBAL11",
+   "GLOBAL5",
    "HIST19",
    "HIST2",
    "HIST21",
@@ -4458,6 +4484,7 @@
    "POLSC2",
    "POLSC22",
    "POLSC3",
+   "POLSC5",
    "POLSC51",
    "POLSC52",
    "POLSC7",
@@ -4468,20 +4495,21 @@
    "WGS20"
   ],
   "source": {
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=152",
-   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 151",
-   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 151",
+   "url": "https://catalog.smc.edu/current/catalog.pdf#page=151",
+   "title": "Global Studies, Associate Degree or",
+   "h1": "Global Studies, Associate Degree or",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    151,
     152
    ],
    "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "46108c86771750e2"
+   "heading_named": true,
+   "text_sha": "ea79cf48654ee15b"
   },
   "listed": 89,
-  "text_chars": 5885
+  "text_chars": 8244
  },
  {
   "control_number": "31314",
@@ -5039,39 +5067,31 @@
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 1.0,
+  "coverage": 0.778,
   "codes_found": [
-   "THART2",
    "THART20",
    "THART21",
    "THART23",
    "THART25",
-   "THART28B",
    "THART31",
    "THART32",
    "THART5"
   ],
   "source": {
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=200",
-   "title": "Technical Theatre, Associate Degree or",
-   "h1": "Technical Theatre, Associate Degree or",
+   "url": "https://catalog.smc.edu/current/catalog.pdf#page=201",
+   "title": "200 SMC CATALOG 2026–2027",
+   "h1": "200 SMC CATALOG 2026–2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    200,
     201
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "page_check": {
-    "rule": "A",
-    "page": 200,
-    "share": 1.0
-   },
-   "text_sha": "99b0333443d72ac3"
+   "text_sha": "2137b2203065e3f1"
   },
   "listed": 9,
-  "text_chars": 7847
+  "text_chars": 5490
  },
  {
   "control_number": "33255",
@@ -7148,31 +7168,34 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.75,
+  "coverage": 1.0,
   "codes_found": [
+   "BUS35",
    "CIS30",
    "CIS32",
    "CIS35A",
    "CIS35B",
    "CIS36M",
-   "CIS38"
+   "CIS38",
+   "OFTECH33"
   ],
   "source": {
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=112",
-   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 111",
-   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 111",
+   "url": "https://catalog.smc.edu/current/catalog.pdf#page=111",
+   "title": "Business Information Worker 2, Associate",
+   "h1": "Business Information Worker 2, Associate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    111,
     112,
     113
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "aaa9434283e9da31"
+   "text_sha": "9b0cd103cdee8884"
   },
   "listed": 8,
-  "text_chars": 10524
+  "text_chars": 13627
  },
  {
   "control_number": "39671",
@@ -9412,12 +9435,38 @@
   "title": "Biotechnology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.923,
+  "codes_found": [
+   "BIOL30",
+   "BIOL31",
+   "BIOL32",
+   "BIOL33",
+   "BIOL34",
+   "BIOL35",
+   "BIOL36",
+   "BIOL90B",
+   "CHEM11",
+   "ENGLC1000",
+   "ENGLC1001",
+   "MCRBIO1"
+  ],
+  "source": {
+   "url": "https://catalog.smc.edu/current/catalog.pdf#page=99",
+   "title": "dynamic sector. The stackable Biotechnology Certificate and AS Degree",
+   "h1": "dynamic sector. The stackable Biotechnology Certificate and AS Degree",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    99,
+    100
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "8dd5c5479ed21f09"
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 10593
  },
  {
   "control_number": "45094",
@@ -9987,13 +10036,19 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.786,
+  "coverage": 0.976,
   "codes_found": [
+   "ENGL10",
+   "ENGL14",
+   "ENGL15",
+   "ENGL17",
    "ENGL18",
    "ENGL26",
    "ENGL31",
+   "ENGL32",
    "ENGL34",
    "ENGL38",
+   "ENGL39",
    "ENGL40",
    "ENGL41",
    "ENGL45",
@@ -10020,24 +10075,27 @@
    "ENGL73",
    "ENGL74",
    "ENGL8",
+   "ENGL9",
+   "ENGLC1001",
    "HUM26",
    "RELST52"
   ],
   "source": {
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=137",
-   "title": "136 SMC CATALOG 2026–2027",
-   "h1": "136 SMC CATALOG 2026–2027",
+   "url": "https://catalog.smc.edu/current/catalog.pdf#page=136",
+   "title": "English, Associate Degree for Transfer",
+   "h1": "English, Associate Degree for Transfer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    136,
     137
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "9a021da4522535b5"
+   "text_sha": "f3d2f64486532d72"
   },
   "listed": 42,
-  "text_chars": 6148
+  "text_chars": 9217
  },
  {
   "control_number": "45952",

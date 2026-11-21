@@ -1,0 +1,230 @@
+{
+ "college": "Solano Community College",
+ "control_number": "41377",
+ "shape": "adt",
+ "title": "Business Administration 2.0",
+ "award": "A.S. T Degree",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=170",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10520,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10520,
+    "output_tokens": 1678,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1678,
+  "output_tokens_details": {
+   "thinking_tokens": 650
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07564,
+ "ms": 14724,
+ "seconds": 15.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    27.0,
+    27.0
+   ],
+   "stated": [
+    27.0,
+    27.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Science in Business Administration 2.0 for Transfer (ADT: A.S.-T)",
+   "measure": "units",
+   "total_units": {
+    "min": 27,
+    "max": 27
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Recognize and describe the importance of marketing, law, economics, accounting, business administration, finance, risk analysis, and personnel management in business and formulate hypotheses based on these concepts.",
+    "Analyze practical business problems and utilize research and critical thinking to evaluate and recommend alternative solutions.",
+    "Use appropriate computer software to create and or modify relevant business documents.",
+    "Apply accounting concepts and principles in making business decisions."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 27,
+     "max": 27
+    },
+    "courses": [
+     {
+      "code": "ACCT 001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 002",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 005",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 018",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 030",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Read only the AS-T section on catalog page 170 (PDF page 171); the Business, General and Insurance sections that follow belong to other awards.",
+   "Total 27 is from 'Required Major Total Units'.",
+   "The 60-unit figure appears only in the standard ADT requirement language ('Complete 60 semester units ... including Cal-GETC'), not as a printed total for this award, so degree_total is left null; no GE unit figure is printed.",
+   "The extracted text prints STAT C1000 as 'STAT C1 000' (PDF spacing artifact); recorded as STAT C1000, matching the code elsewhere on the page.",
+   "Outcome text contained PDF ligature artifacts (e.g. 'markeƟ ng', 'ﬁ nance', 'soŌ ware'); recorded with the ligatures read as the letters they represent ('marketing', 'finance', 'software'); wording otherwise unchanged, including 'create and or modify'.",
+   "No careers are named in this award's section."
+  ]
+ },
+ "extracted_run": "44884569184",
+ "catalog_year": "2026-2027",
+ "source_sha": "f8dd4b8590d318df",
+ "source_codes": [
+  "ACCT1",
+  "ACCT2",
+  "BUS18",
+  "BUS5",
+  "ECONC2001",
+  "ECONC2002",
+  "MATH30",
+  "STATC1000"
+ ],
+ "source_coverage": 1.0
+}

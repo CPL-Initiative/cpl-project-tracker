@@ -5,11 +5,11 @@
  "title": "California General Education Transfer Curriculum (Cal-GETC)",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
  "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3403&print",
- "record_shape": 5,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 15001,
+  "input_tokens": 15675,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 15001,
-    "output_tokens": 11875,
+    "input_tokens": 15675,
+    "output_tokens": 12500,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,31 +30,31 @@
     "model": null
    }
   ],
-  "output_tokens": 11875,
+  "output_tokens": 12500,
   "output_tokens_details": {
-   "thinking_tokens": 3138
+   "thinking_tokens": 3026
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.2975,
- "ms": 83324,
- "seconds": 83.8,
+ "cost_usd": 0.3127,
+ "ms": 87022,
+ "seconds": 87.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 151,
+   "placed": 152,
    "listed": 161,
-   "share": 0.938,
+   "share": 0.944,
    "missing": [
     "CIVIL3",
     "COMMDIS7",
     "DRAMA16B",
     "ECON3",
     "ECON5",
-    "ENGL1B",
     "ENGL62A",
     "HIST17A",
     "HIST17B",
@@ -62,33 +62,62 @@
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ENGLC1002",
+     "listed": "ENGL1B",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 10,
+   "count": 21,
    "codes": [
+    "AGBUS12",
+    "ART9",
     "COMM7",
     "ECONC2001",
     "ECONC2002",
     "ENGL35",
-    "ENGLC1002",
+    "FASHION8",
+    "FASHION9",
     "GEOL5A",
     "HISTC1001",
     "HISTC1002",
+    "MATH13EX",
+    "MATH1EX",
+    "MATH20EX",
+    "MATH38AEX",
+    "MATH38BEX",
+    "MATH40EX",
+    "POLSC1000H",
     "PSYC2",
-    "PSYC5"
+    "PSYC5",
+    "SOCIO5"
    ],
    "flagged": [
+    "AGBUS12",
+    "ART9",
     "COMM7",
     "ECONC2001",
     "ECONC2002",
     "ENGL35",
-    "ENGLC1002",
+    "FASHION8",
+    "FASHION9",
     "GEOL5A",
     "HISTC1001",
     "HISTC1002",
+    "MATH13EX",
+    "MATH1EX",
+    "MATH20EX",
+    "MATH38AEX",
+    "MATH38BEX",
+    "MATH40EX",
+    "POLSC1000H",
     "PSYC2",
-    "PSYC5"
+    "PSYC5",
+    "SOCIO5"
    ],
    "pass": true
   },
@@ -140,6 +169,10 @@
     "max": 34
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": null,
    "degree_total": {
     "min": null,
@@ -234,8 +267,8 @@
     "minimum": 3,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 3,
+     "max": 3
     },
     "courses": [
      {
@@ -258,6 +291,13 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
+     },
+     {
+      "code": "MATH 1EX",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
      },
      {
       "code": "MATH 2",
@@ -295,11 +335,25 @@
       "catalog_addition": false
      },
      {
+      "code": "MATH 13EX",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
       "code": "MATH 20",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
+     },
+     {
+      "code": "MATH 20EX",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
      },
      {
       "code": "MATH 37",
@@ -330,11 +384,32 @@
       "catalog_addition": false
      },
      {
+      "code": "MATH 38AEX",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 38BEX",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
       "code": "MATH 39",
       "units": 6,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
+     },
+     {
+      "code": "MATH 40EX",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
      },
      {
       "code": "PSYC 2",
@@ -388,21 +463,28 @@
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": true
      },
      {
       "code": "ARTH 2",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": true
      },
      {
       "code": "ARTH 3",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": true
+     },
+     {
+      "code": "ART 9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
      },
      {
       "code": "DANCE 29",
@@ -440,6 +522,13 @@
       "catalog_addition": false
      },
      {
+      "code": "FASHION 8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
       "code": "MUSIC 1",
       "units": 3,
       "units_max": null,
@@ -472,7 +561,7 @@
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": true
      },
      {
       "code": "ENGL 35",
@@ -592,6 +681,20 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FASHION 9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
      },
      {
       "code": "FREN 3",
@@ -852,10 +955,17 @@
     "minimum": 6,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 6,
+     "max": 6
     },
     "courses": [
+     {
+      "code": "AGBUS 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
      {
       "code": "ANTH 1",
       "units": 3,
@@ -868,7 +978,7 @@
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": true
      },
      {
       "code": "BIOL 30",
@@ -1006,7 +1116,13 @@
       "code": "POLS C1000",
       "units": 3,
       "units_max": null,
-      "alternatives": [],
+      "alternatives": [
+       {
+        "code": "POLS C1000H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
       "catalog_addition": false
      },
      {
@@ -1085,6 +1201,13 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
+     },
+     {
+      "code": "SOCIO 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
      },
      {
       "code": "SOCIO 17",
@@ -1292,14 +1415,14 @@
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": true
      },
      {
       "code": "ANTH 2L",
       "units": 1,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": true
      },
      {
       "code": "BIOL 1",
@@ -1413,8 +1536,8 @@
     "minimum": 3,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 3,
+     "max": 3
     },
     "courses": [
      {
@@ -1451,6 +1574,34 @@
   "course_outcomes": [],
   "missing_explained": [
    {
+    "code": "ANTHR 10",
+    "why": "catalog prints it as ANTH 10 (subject renamed); recorded under that code"
+   },
+   {
+    "code": "ANTHR 2",
+    "why": "catalog prints it as ANTH 2 (subject renamed); recorded under that code"
+   },
+   {
+    "code": "ANTHR 2L",
+    "why": "catalog prints it as ANTH 2L (subject renamed); recorded under that code"
+   },
+   {
+    "code": "ANTHR 4",
+    "why": "catalog prints it as ANTH 4 (subject renamed); recorded under that code"
+   },
+   {
+    "code": "ART 1C",
+    "why": "catalog prints it as ARTH 1C (subject renamed); recorded under that code"
+   },
+   {
+    "code": "ART 2",
+    "why": "catalog prints it as ARTH 2 (subject renamed); recorded under that code"
+   },
+   {
+    "code": "ART 3",
+    "why": "catalog prints it as ARTH 3 (subject renamed); recorded under that code"
+   },
+   {
     "code": "CIVIL 3",
     "why": "not in the text"
    },
@@ -1463,14 +1614,6 @@
     "why": "not in the text"
    },
    {
-    "code": "ECON 3",
-    "why": "not in the text; catalog lists ECON C2001 Principles of Microeconomics instead"
-   },
-   {
-    "code": "ECON 5",
-    "why": "not in the text; catalog lists ECON C2002 Principles of Macroeconomics instead"
-   },
-   {
     "code": "ENGL 1B",
     "why": "not in the text"
    },
@@ -1479,36 +1622,50 @@
     "why": "not in the text"
    },
    {
+    "code": "ECON 3",
+    "why": "not in the text; catalog lists ECON C2001 Principles of Microeconomics instead"
+   },
+   {
+    "code": "ECON 5",
+    "why": "not in the text; catalog lists ECON C2002 Principles of Macroeconomics instead"
+   },
+   {
     "code": "HIST 17A",
-    "why": "not in the text; catalog lists HIST C1001 instead"
+    "why": "not in the text; catalog lists HIST C1001 United States History to 1877 instead"
    },
    {
     "code": "HIST 17B",
-    "why": "not in the text; catalog lists HIST C1002 instead"
+    "why": "not in the text; catalog lists HIST C1002 United States History since 1865 instead"
    },
    {
     "code": "HUM 4",
-    "why": "not in the text; catalog lists ANTH 4 Introduction to Linguistics"
+    "why": "not in the text; Introduction to Linguistics printed only as ANTH 4"
    }
   ],
   "notes": [
-   "This certificate's requirements are the Cal-GETC pattern itself; its area courses are recorded as blocks and ge_pattern is left null because no separate GE pattern is layered on top of the award.",
-   "Closed-list codes matched to catalog codes printed with a different subject prefix or spacing (same number and title), recorded with catalog_addition false: ANTH1→ANTH 1, ANTHR 10→ANTH 10, ANTHR 2→ANTH 2, ANTHR 2L→ANTH 2L, ANTHR 4→ANTH 4, ART 1C→ARTH 1C, ART 2→ARTH 2, ART 3→ARTH 3, ARTHC1100→ARTH C1100, ARTHC1200→ARTH C1200, SPAN4A→SPAN 4A, SPAN6→SPAN 6. Reviewer should confirm.",
-   "Area 1 requires a minimum of 9 units with at least one course from each of 1A, 1B and 1C; recorded as three sub-blocks.",
-   "Area 3 requires a minimum of 6 units with at least one course each from 3A and 3B; the 3A and 3B blocks record the one-course rule, the 6-unit area minimum is not a separate block.",
+   "The award is the Cal-GETC pattern itself, so its area courses are recorded as blocks; ge_pattern left null because no separate GE pattern is named on top of the certificate.",
+   "total_units is 'Minimum Units Required: 34'.",
+   "Area 1 requires a minimum of 9 units with at least one course each from 1A, 1B and 1C; recorded as three sub-blocks.",
+   "Area 3 requires a minimum of 6 units with at least one course each from 3A and 3B; recorded as two sub-blocks.",
    "Area 4 requires courses from at least two disciplines.",
-   "Area 5 requires a minimum of 7 units with at least one course from 5A and one from 5B, and at least one lab course (marked * in the catalog; Area 5C has no separate course list).",
-   "Area 6 ETHNS 33-36 also appear in Area 4; per the catalog a course cannot satisfy more than one area.",
-   "++ MATH 38A, 38B and 39 combined: maximum credit 5 units. + marks courses whose UC transfer credit may be limited.",
-   "Catalog units differ from state file: SPAN 20 printed 3 (state 5), BIOL 31 printed 4.5 (state 4). Some titles differ (BIOL 1 Cell and Molecular Biology, BIOL 11 Human Biology, GEOG 2 Human Geography).",
-   "American Institutions options (HIST C1001/POLS C1000 combinations) are a CSU graduation requirement described as not part of Cal-GETC; not recorded as blocks.",
-   "Minimum Units Required: 34 recorded as total_units.",
-   "Text is cut off at the end in the Languages Other than English section, after the requirements."
+   "Area 5 requires a minimum of 7 units with at least one course each from 5A and 5B, and at least one lab course (marked * in the catalog) to satisfy 5C; 5C has no separate course list.",
+   "Courses listed in multiple areas (^: ENGL C1002, ETHNS 33-36, BIOL 30, PSYC 30) cannot be certified in more than one area; they are listed in each block where printed.",
+   "++ College Algebra/Precalculus courses (MATH 37, 37EX, 38A, 38AEX, 38B, 38BEX, 39, 40EX) limited to a single course with a maximum of 5 units (UC transfer credit limit).",
+   "The CSU American Institutions options (Option 1: HIST C1001 and one of HIST 27, 30B, 34, POLS C1000, 4; Option 2: POLS C1000 and one of HIST C1001, C1002, 27, 30A, 30B, 31, 34) are a recommended graduation requirement outside the Cal-GETC pattern and were not recorded as blocks.",
+   "Codes printed with a renamed subject (ARTH for ART, ANTH for ANTHR) or new C-ID numbers (ECON C2001/C2002, HIST C1001/C1002) were flagged as catalog additions; reviewer may treat them as the closed-list courses. Spacing differences (ARTHC1100, ARTHC1200, ANTH1, SPAN4A, SPAN6) were treated as matches.",
+   "SPAN 20 printed at 3 units (state file stores 5); BIOL 31 printed at 4.5 units (state file stores 4).",
+   "The single program learning outcome is printed for this certificate."
   ]
  },
- "extracted_run": 40498068817,
- "read_run": 39217405432,
+ "extracted_run": "44883860902",
+ "catalog_year": "2026-2027",
  "reconciled": [
+  {
+   "field": "total_units_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Units Required: 34"
+  },
   {
    "field": "blocks",
    "was": [
