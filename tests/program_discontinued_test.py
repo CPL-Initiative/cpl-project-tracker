@@ -146,55 +146,6 @@ try:
 finally:
     shutil.rmtree(tmp)
 
-# S691: a not-printed program the prior-year preview read and its extract did not file is printed in neither year. It
-# takes the named gap, never a flag; a program the prior year filed is flagged and never named; a program no preview
-# read, a preview with no extract beside it (College of the Desert's, behind robots.txt) and a refused preview are no
-# evidence.
-tmp = tempfile.mkdtemp()
-try:
-    base = os.path.join(tmp, "colleges")
-    for slug, college, access, with_ext in (("marin", "Marin College", "ok", True),
-                                            ("desert", "Desert College", "ok", False),
-                                            ("walled", "Walled College", "refused", True)):
-        os.makedirs(os.path.join(base, slug, "records"))
-        with open(os.path.join(base, slug, "capture_preview.json"), "w") as fh:
-            json.dump({"college": college, "catalog_year": "2026-2027", "run": "4", "fingerprints": {},
-                       "not_found": [{"control_number": c, "title": "T" + c, "near_miss": {"rule": "D"}}
-                                     for c in ("30001", "30002", "30003")]}, fh)
-        with open(os.path.join(base, slug, "prior_2025-2026_preview.json"), "w") as fh:
-            json.dump({"college": college, "catalog_year": "2025-2026", "run": "11", "pdf": {"access": access},
-                       "fingerprints": {c: {"sha256": "x"} for c in ("30001", "30002")},
-                       "would_extract": {"list": [{"control_number": "30001", "url": "https://x/c.pdf#page=9",
-                                                   "coverage": 0.5}]}}, fh)
-        if with_ext:
-            with open(os.path.join(base, slug, "prior_2025-2026.json"), "w") as fh:
-                json.dump({"college": college, "catalog_year": "2025-2026", "run": "12",
-                           "prior": {"catalog_year": "2025-2026", "only": ["30002"]}, "filed": ["30002"]}, fh)
-    out = D.build([], base=base)
-    np = {(r["college"], r["control_number"]): r for r in out["not_printed"]}
-    flags = {(f["college"], f["control_number"]) for f in out["flags"]}
-    named = {k for k, r in np.items() if r.get("named_gap") == D.NOT_PRINTED_GAP}
-    check(named == {("Marin College", "30001")}, "only the read-and-unfiled program is printed in neither year (%s)"
-          % sorted(named))
-    check("page=9" in np[("Marin College", "30001")]["prior_read"] and "run 12" in np[("Marin College", "30001")]["prior_read"],
-          "the named gap cites the prior year's best page and the extract that did not file it")
-    check(("Marin College", "30002") in flags and ("Marin College", "30002") not in np,
-          "the program the prior year filed is flagged, never named")
-    check(("Marin College", "30003") in np and ("Marin College", "30003") not in named,
-          "a program no prior-year preview read stays a plain not-printed candidate")
-    check(not any(k[0] in ("Desert College", "Walled College") for k in named),
-          "a preview with no extract beside it, or a refused one, names nothing")
-    check(out["not_printed_named"] == 1, "the file counts the named programs")
-    # The census shows the gap's words in place of a failure, only for a page not found.
-    col = {"college": "Marin College"}
-    check(G.named_gap(col, "30001", "page_not_found", "T30001", named) == (D.NOT_PRINTED_GAP, None),
-          "the census names a page-not-found program printed in neither year")
-    check(G.named_gap(col, "30001", "units_unequal", "T30001", named) is None,
-          "a program with another cause is not named by this gap")
-    check(D.NOT_PRINTED_GAP in G.NAMED_GAPS, "the census carries the gap's words")
-finally:
-    shutil.rmtree(tmp)
-
 # The committed file is what the builder writes from the committed files.
 check(D.main(["--check"]) == 0, "kb/status/program_discontinued.json is current")
 

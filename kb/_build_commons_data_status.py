@@ -329,7 +329,8 @@ def spent_block(root: str) -> dict:
     runs = d.get("runner_runs") or {}
     if not runs:
         return {}
-    return {"spent_usd": round(sum(r.get("usd") or 0 for r in runs.values()), 2), "spent_runs": len(runs),
+    # math.fsum, as in overall_block: a sum of floats rounds the same on Python 3.11 and 3.12 (#3602).
+    return {"spent_usd": round(math.fsum(r.get("usd") or 0 for r in runs.values()), 2), "spent_runs": len(runs),
             "spent_since": d.get("runner_since")}
 
 
@@ -1266,7 +1267,7 @@ def build(root: str, live_path: str | None = None, previous: dict | None = None,
         "harvested": len(hv), "unread": len(colleges) - len(hv),
         "programs": sum(c["programs"] for c in hv), "passing": sum(c["passing"] for c in hv),
         "gap": sum(c["gap"] for c in hv), "with_gap": sum(1 for c in hv if c["gap"]),
-        "cost_usd": round(sum(c["cost_usd"] for c in costed), 2),
+        "cost_usd": round(math.fsum(c["cost_usd"] for c in costed), 2),  # math.fsum: the same on 3.11 and 3.12
         "passed_at_read": sum(c["passed_at_read"] for c in costed), "cost_receipts": len(costed),
         **spent_block(root),
         "slo_waiting": len(slo), "scouted": len(scouts),

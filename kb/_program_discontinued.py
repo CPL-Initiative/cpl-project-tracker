@@ -31,11 +31,6 @@ flags it, and one that does not clears it. The list reads the committed capture 
 carry rule D's mark (committed_not_printed, S687: a capture-only preview with rule_d=1 is enough), and a runner
 capture's sources when one is handed over.
 
-NEITHER YEAR (S691). A not-printed program that the committed prior-year preview read but the prior-year extract
-beside it did not file (the page the reader matched is not the program's own) is printed in neither year: it takes
-the named gap not_printed_current_or_prior (prior_unfiled), never a flag, since the rule above needs a prior year
-that prints it. The census shows the gap's words in place of a failure (not_printed_named).
-
 Writes kb/status/program_discontinued.json. kb/_harvest_gap_census.py reads it and lists each flagged
 program beside the gap, out of it. Writes no table: git revert undoes the flag.
 
@@ -238,42 +233,6 @@ def committed_not_printed(base: str = COLLEGE_DIR) -> list[dict]:
     return out
 
 
-def prior_unfiled(base: str = COLLEGE_DIR) -> dict:
-    """{(college, cn): what the prior-year read found} for each program a committed prior-year preview read
-    (its text fingerprinted on some page) and the prior-year extract beside it did not file, because the page
-    the reader matched on is not the program's own (S691). Only a folder holding both files counts: a preview
-    alone (College of the Desert's, behind robots.txt) has made no own-page call, and a program no preview
-    fingerprinted was never read, so neither is evidence."""
-    out = {}
-    for prev_path in sorted(glob.glob(os.path.join(base, "*", "prior_*_preview.json"))):
-        ext_path = prev_path[: -len("_preview.json")] + ".json"
-        if not os.path.isfile(ext_path):
-            continue
-        with open(prev_path, encoding="utf-8") as fh:
-            prev = json.load(fh) or {}
-        with open(ext_path, encoding="utf-8") as fh:
-            ext = json.load(fh) or {}
-        if (prev.get("pdf") or {}).get("access") not in (None, "ok"):
-            continue
-        filed = {str(x.get("control_number") if isinstance(x, dict) else x) for x in (ext.get("filed") or [])}
-        best = {str(x.get("control_number")): x for x in (prev.get("would_extract") or {}).get("list") or []}
-        for cn in sorted(str(k) for k in (prev.get("fingerprints") or {})):
-            if cn in filed:
-                continue
-            b = best.get(cn) or {}
-            out[(prev.get("college"), cn)] = {
-                "year": prev.get("catalog_year"), "preview_run": prev.get("run"), "extract_run": ext.get("run"),
-                "best_page": b.get("url"), "coverage": b.get("coverage"),
-                "source": os.path.relpath(prev_path, ROOT)}
-    return out
-
-
-# The named gap a program takes when neither the current catalog nor the prior year's prints a page of its own for
-# it (S691): the discontinued rule needs a prior year that prints it, so this program is neither flagged nor read
-# again; the census shows the reason in place of a failure (NAMED_GAPS in kb/_harvest_gap_census.py).
-NOT_PRINTED_GAP = "not_printed_current_or_prior"
-
-
 def build(captures: list[str] = (), skip: tuple[str, ...] = (), base: str = COLLEGE_DIR) -> dict:
     flags, left_out = {}, 0
     for f in prior_year_flags(base) + [x for c in captures for x in capture_flags(c)]:
@@ -293,32 +252,13 @@ def build(captures: list[str] = (), skip: tuple[str, ...] = (), base: str = COLL
            "flags": rows}
     seen, listed = set(flags), set()
     out["not_printed"] = []
-    unfiled = prior_unfiled(base)
     for r in committed_not_printed(base) + [r for c in captures for r in capture_not_printed(c)]:
         k = (r["college"], r["control_number"])
         if held(r.get("college"), skip) or k in seen or k in listed:
             continue
         listed.add(k)
-        pr = unfiled.get(k)
-        if pr:
-            r = dict(r)
-            r["prior_read"] = ("the %s catalog prints no page of its own for it either: the prior-year preview (run %s) "
-                               "matched it at %s (coverage %s), and the extract (run %s) did not file that page"
-                               % (pr["year"], pr["preview_run"], pr["best_page"], pr["coverage"], pr["extract_run"]))
-            r["named_gap"] = NOT_PRINTED_GAP
-            r["next"] = "a named gap: no catalog read moves it; the college says whether it still offers it"
         out["not_printed"].append(r)
-    out["not_printed_named"] = sum(1 for r in out["not_printed"] if r.get("named_gap"))
     return out
-
-
-def not_printed_named(path: str = OUT) -> set:
-    """{(college, control_number)} the committed file names with NOT_PRINTED_GAP, or an empty set."""
-    if not os.path.isfile(path):
-        return set()
-    with open(path, encoding="utf-8") as fh:
-        d = json.load(fh)
-    return {(r["college"], str(r["control_number"])) for r in d.get("not_printed") or [] if r.get("named_gap")}
 
 
 def keys(path: str = OUT) -> dict:

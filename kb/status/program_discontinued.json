@@ -175,9 +175,7 @@
    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
    "gap": "not printed in the 2026-2027 catalog",
    "read": "capture_preview.json run 44699726074",
-   "next": "a named gap: no catalog read moves it; the college says whether it still offers it",
-   "prior_read": "the 2025-2026 catalog prints no page of its own for it either: the prior-year preview (run 44777204746) matched it at https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=163 (coverage 0.5), and the extract (run 44777882954) did not file that page",
-   "named_gap": "not_printed_current_or_prior"
+   "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"
   },
   {
    "college": "City College of San Francisco",
@@ -186,9 +184,7 @@
    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
    "gap": "not printed in the 2026-2027 catalog",
    "read": "capture_preview.json run 44699726074",
-   "next": "a named gap: no catalog read moves it; the college says whether it still offers it",
-   "prior_read": "the 2025-2026 catalog prints no page of its own for it either: the prior-year preview (run 44777204746) matched it at https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=433 (coverage 1.0), and the extract (run 44777882954) did not file that page",
-   "named_gap": "not_printed_current_or_prior"
+   "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"
   },
   {
    "college": "City College of San Francisco",
@@ -197,9 +193,7 @@
    "award": null,
    "gap": "not printed in the 2026-2027 catalog",
    "read": "capture_preview.json run 44699726074",
-   "next": "a named gap: no catalog read moves it; the college says whether it still offers it",
-   "prior_read": "the 2025-2026 catalog prints no page of its own for it either: the prior-year preview (run 44777204746) matched it at https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=165 (coverage 1.0), and the extract (run 44777882954) did not file that page",
-   "named_gap": "not_printed_current_or_prior"
+   "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"
   },
   {
    "college": "City College of San Francisco",
@@ -208,9 +202,7 @@
    "award": "Noncredit program",
    "gap": "not printed in the 2026-2027 catalog",
    "read": "capture_preview.json run 44699726074",
-   "next": "a named gap: no catalog read moves it; the college says whether it still offers it",
-   "prior_read": "the 2025-2026 catalog prints no page of its own for it either: the prior-year preview (run 44777204746) matched it at https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=166 (coverage 0.667), and the extract (run 44777882954) did not file that page",
-   "named_gap": "not_printed_current_or_prior"
+   "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"
   },
   {
    "college": "City College of San Francisco",
@@ -219,9 +211,7 @@
    "award": null,
    "gap": "not printed in the 2026-2027 catalog",
    "read": "capture_preview.json run 44699726074",
-   "next": "a named gap: no catalog read moves it; the college says whether it still offers it",
-   "prior_read": "the 2025-2026 catalog prints no page of its own for it either: the prior-year preview (run 44777204746) matched it at https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=165 (coverage 1.0), and the extract (run 44777882954) did not file that page",
-   "named_gap": "not_printed_current_or_prior"
+   "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"
   },
   {
    "college": "City College of San Francisco",
@@ -230,9 +220,7 @@
    "award": null,
    "gap": "not printed in the 2026-2027 catalog",
    "read": "capture_preview.json run 44699726074",
-   "next": "a named gap: no catalog read moves it; the college says whether it still offers it",
-   "prior_read": "the 2025-2026 catalog prints no page of its own for it either: the prior-year preview (run 44777204746) matched it at https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=165 (coverage 1.0), and the extract (run 44777882954) did not file that page",
-   "named_gap": "not_printed_current_or_prior"
+   "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"
   },
   {
    "college": "City College of San Francisco",
@@ -241,9 +229,7 @@
    "award": null,
    "gap": "not printed in the 2026-2027 catalog",
    "read": "capture_preview.json run 44699726074",
-   "next": "a named gap: no catalog read moves it; the college says whether it still offers it",
-   "prior_read": "the 2025-2026 catalog prints no page of its own for it either: the prior-year preview (run 44777204746) matched it at https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=292 (coverage 0.5), and the extract (run 44777882954) did not file that page",
-   "named_gap": "not_printed_current_or_prior"
+   "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"
   },
   {
    "college": "City College of San Francisco",
@@ -252,9 +238,7 @@
    "award": null,
    "gap": "not printed in the 2026-2027 catalog",
    "read": "capture_preview.json run 44699726074",
-   "next": "a named gap: no catalog read moves it; the college says whether it still offers it",
-   "prior_read": "the 2025-2026 catalog prints no page of its own for it either: the prior-year preview (run 44777204746) matched it at https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=166 (coverage 1.0), and the extract (run 44777882954) did not file that page",
-   "named_gap": "not_printed_current_or_prior"
+   "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"
   },
   {
    "college": "City College of San Francisco",
@@ -263,9 +247,7 @@
    "award": null,
    "gap": "not printed in the 2026-2027 catalog",
    "read": "capture_preview.json run 44699726074",
-   "next": "a named gap: no catalog read moves it; the college says whether it still offers it",
-   "prior_read": "the 2025-2026 catalog prints no page of its own for it either: the prior-year preview (run 44777204746) matched it at https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=166 (coverage 0.75), and the extract (run 44777882954) did not file that page",
-   "named_gap": "not_printed_current_or_prior"
+   "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"
   },
   {
    "college": "City College of San Francisco",
@@ -274,9 +256,7 @@
    "award": null,
    "gap": "not printed in the 2026-2027 catalog",
    "read": "capture_preview.json run 44699726074",
-   "next": "a named gap: no catalog read moves it; the college says whether it still offers it",
-   "prior_read": "the 2025-2026 catalog prints no page of its own for it either: the prior-year preview (run 44777204746) matched it at https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=186 (coverage 1.0), and the extract (run 44777882954) did not file that page",
-   "named_gap": "not_printed_current_or_prior"
+   "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"
   },
   {
    "college": "City College of San Francisco",
@@ -285,9 +265,7 @@
    "award": "Noncredit program",
    "gap": "not printed in the 2026-2027 catalog",
    "read": "capture_preview.json run 44699726074",
-   "next": "a named gap: no catalog read moves it; the college says whether it still offers it",
-   "prior_read": "the 2025-2026 catalog prints no page of its own for it either: the prior-year preview (run 44777204746) matched it at https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=166 (coverage 1.0), and the extract (run 44777882954) did not file that page",
-   "named_gap": "not_printed_current_or_prior"
+   "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"
   },
   {
    "college": "City College of San Francisco",
@@ -296,9 +274,7 @@
    "award": null,
    "gap": "not printed in the 2026-2027 catalog",
    "read": "capture_preview.json run 44699726074",
-   "next": "a named gap: no catalog read moves it; the college says whether it still offers it",
-   "prior_read": "the 2025-2026 catalog prints no page of its own for it either: the prior-year preview (run 44777204746) matched it at https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=166 (coverage 0.75), and the extract (run 44777882954) did not file that page",
-   "named_gap": "not_printed_current_or_prior"
+   "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"
   },
   {
    "college": "City College of San Francisco",
@@ -307,9 +283,7 @@
    "award": null,
    "gap": "not printed in the 2026-2027 catalog",
    "read": "capture_preview.json run 44699726074",
-   "next": "a named gap: no catalog read moves it; the college says whether it still offers it",
-   "prior_read": "the 2025-2026 catalog prints no page of its own for it either: the prior-year preview (run 44777204746) matched it at https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=166 (coverage 0.75), and the extract (run 44777882954) did not file that page",
-   "named_gap": "not_printed_current_or_prior"
+   "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"
   },
   {
    "college": "City College of San Francisco",
@@ -318,9 +292,7 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "gap": "not printed in the 2026-2027 catalog",
    "read": "capture_preview.json run 44699726074",
-   "next": "a named gap: no catalog read moves it; the college says whether it still offers it",
-   "prior_read": "the 2025-2026 catalog prints no page of its own for it either: the prior-year preview (run 44777204746) matched it at https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=154 (coverage 0.667), and the extract (run 44777882954) did not file that page",
-   "named_gap": "not_printed_current_or_prior"
+   "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"
   },
   {
    "college": "City College of San Francisco",
@@ -329,9 +301,7 @@
    "award": "Noncredit program",
    "gap": "not printed in the 2026-2027 catalog",
    "read": "capture_preview.json run 44699726074",
-   "next": "a named gap: no catalog read moves it; the college says whether it still offers it",
-   "prior_read": "the 2025-2026 catalog prints no page of its own for it either: the prior-year preview (run 44777204746) matched it at https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=166 (coverage 1.0), and the extract (run 44777882954) did not file that page",
-   "named_gap": "not_printed_current_or_prior"
+   "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"
   },
   {
    "college": "City College of San Francisco",
@@ -340,9 +310,7 @@
    "award": "Noncredit program",
    "gap": "not printed in the 2026-2027 catalog",
    "read": "capture_preview.json run 44699726074",
-   "next": "a named gap: no catalog read moves it; the college says whether it still offers it",
-   "prior_read": "the 2025-2026 catalog prints no page of its own for it either: the prior-year preview (run 44777204746) matched it at https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=165 (coverage 1.0), and the extract (run 44777882954) did not file that page",
-   "named_gap": "not_printed_current_or_prior"
+   "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"
   },
   {
    "college": "City College of San Francisco",
@@ -351,9 +319,7 @@
    "award": "Noncredit program",
    "gap": "not printed in the 2026-2027 catalog",
    "read": "capture_preview.json run 44699726074",
-   "next": "a named gap: no catalog read moves it; the college says whether it still offers it",
-   "prior_read": "the 2025-2026 catalog prints no page of its own for it either: the prior-year preview (run 44777204746) matched it at https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=165 (coverage 1.0), and the extract (run 44777882954) did not file that page",
-   "named_gap": "not_printed_current_or_prior"
+   "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"
   },
   {
    "college": "City College of San Francisco",
@@ -362,9 +328,7 @@
    "award": "Noncredit program",
    "gap": "not printed in the 2026-2027 catalog",
    "read": "capture_preview.json run 44699726074",
-   "next": "a named gap: no catalog read moves it; the college says whether it still offers it",
-   "prior_read": "the 2025-2026 catalog prints no page of its own for it either: the prior-year preview (run 44777204746) matched it at https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=165 (coverage 1.0), and the extract (run 44777882954) did not file that page",
-   "named_gap": "not_printed_current_or_prior"
+   "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"
   },
   {
    "college": "City College of San Francisco",
@@ -373,9 +337,7 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "gap": "not printed in the 2026-2027 catalog",
    "read": "capture_preview.json run 44699726074",
-   "next": "a named gap: no catalog read moves it; the college says whether it still offers it",
-   "prior_read": "the 2025-2026 catalog prints no page of its own for it either: the prior-year preview (run 44777204746) matched it at https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=457 (coverage 0.667), and the extract (run 44777882954) did not file that page",
-   "named_gap": "not_printed_current_or_prior"
+   "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"
   },
   {
    "college": "City College of San Francisco",
@@ -384,9 +346,7 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "gap": "not printed in the 2026-2027 catalog",
    "read": "capture_preview.json run 44699726074",
-   "next": "a named gap: no catalog read moves it; the college says whether it still offers it",
-   "prior_read": "the 2025-2026 catalog prints no page of its own for it either: the prior-year preview (run 44777204746) matched it at https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=457 (coverage 0.833), and the extract (run 44777882954) did not file that page",
-   "named_gap": "not_printed_current_or_prior"
+   "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"
   },
   {
    "college": "College of the Desert",
@@ -460,6 +420,5 @@
    "read": "capture_preview.json run 44596615241",
    "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"
   }
- ],
- "not_printed_named": 20
+ ]
 }
