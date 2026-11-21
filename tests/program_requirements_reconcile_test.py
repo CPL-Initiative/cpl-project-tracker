@@ -1646,6 +1646,7 @@ print("Cosumnes River's six local degrees, pinned to the heading's page (S680; c
 # them, with the log's folded short lines broken again; the closed lists are the filed records' own (placed and
 # missing). On it the plain picker takes the late page, as the filing did; the pin opens on the heading's page,
 # names at least as many listed courses, and starts the text at the heading wherever the page allows the cut.
+# S697's named-programs read 44917314201 filed each from the pin's own page, so the filed record now names it.
 _s6_text = open(os.path.join(ROOT, "tests", "fixtures", "cosumnes_seven_pages.txt")).read()
 _s6_parts = _re.split(r"^\[pdf page (\d+)\]\n", _s6_text, flags=_re.M)
 _s6_fx = {int(_s6_parts[i]): _s6_parts[i + 1] for i in range(1, len(_s6_parts), 2)}
@@ -1657,8 +1658,8 @@ for _cn, _own in _CR_S680.items():
     _head, _why = C.pdf_pinned_heading(_s6_pages, _p, _cr_all_pins[_cn])
     _got = C.pdf_best("https://x.edu/c.pdf", _s6_pages, _p, _p["closed_list"], "pypdf", _head) if _head else None
     _filed = as_read(os.path.join(_CR_DIR, "records", _cn + ".json"))["source_url"]
-    check("%s: the plain picker takes p.%d, the late page the filed record names" % (_cn, _own + 1),
-          _plain["pages"][0] == _own + 1 and _filed.endswith("#page=%d" % (_own + 1)))
+    check("%s: the plain picker takes p.%d, the late page; the filed record (S697) names the pin's p.%d"
+          % (_cn, _own + 1, _own), _plain["pages"][0] == _own + 1 and _filed.endswith("#page=%d" % _own))
     check("%s: the pin binds p.%d, its window runs on to p.%d and names at least as many listed courses" % (_cn, _own, _own + 1),
           _why is None and _got["pages"][:2] == [_own, _own + 1] and _got["coverage"] >= _plain["coverage"])
     check("%s: the pin's words are not on the late page, so the pin cannot bind there" % _cn,

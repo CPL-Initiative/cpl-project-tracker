@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Agriculture Business",
  "award": "A.S. Degree",
- "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=134",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=133",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8240,
+  "input_tokens": 10423,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8240,
-    "output_tokens": 1843,
+    "input_tokens": 10423,
+    "output_tokens": 1605,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,43 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1843,
+  "output_tokens": 1605,
   "output_tokens_details": {
-   "thinking_tokens": 662
+   "thinking_tokens": 511
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06982,
- "ms": 14858,
- "seconds": 15.3,
+ "cost_usd": 0.07379,
+ "ms": 12559,
+ "seconds": 15.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 13,
    "listed": 13,
-   "share": 0.0,
-   "missing": [
-    "ACCT301",
-    "AGB300",
-    "AGB310",
-    "AGB320",
-    "AGB321",
-    "AGB330",
-    "ANSC300",
-    "BUS340",
-    "COMMC1000",
-    "ECONC2002",
-    "HORT302",
-    "PLTS300",
-    "PLTS310"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -75,17 +61,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    37.0,
+    37.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    37.0,
+    37.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -112,15 +99,15 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Agriculture Business Associate in Science (A.S.) degree",
+   "section_heading": "A.S. in Agriculture Business",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 37,
+    "max": 37
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -156,69 +143,135 @@
     "Sales and Service"
    ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ACCT 301",
-    "why": "A.S. requirements table not in the excerpt; named only in the Certificate section"
-   },
-   {
-    "code": "AGB 300",
-    "why": "A.S. requirements table not in the excerpt; named only in the Certificate section"
-   },
-   {
-    "code": "AGB 310",
-    "why": "A.S. requirements table not in the excerpt; named only in the Certificate section"
-   },
-   {
-    "code": "AGB 320",
-    "why": "A.S. requirements table not in the excerpt; named only in the Certificate section"
-   },
-   {
-    "code": "AGB 321",
-    "why": "A.S. requirements table not in the excerpt; named only in the Certificate section"
-   },
-   {
-    "code": "AGB 330",
-    "why": "A.S. requirements table not in the excerpt; named only in the Certificate section"
-   },
-   {
-    "code": "ANSC 300",
-    "why": "A.S. requirements table not in the excerpt; named only in the Certificate section"
-   },
-   {
-    "code": "BUS 340",
-    "why": "A.S. requirements table not in the excerpt; named only in the Certificate section"
-   },
-   {
-    "code": "COMM C1000",
-    "why": "A.S. requirements table not in the excerpt; named only in the Certificate section"
-   },
-   {
-    "code": "ECON C2002",
-    "why": "A.S. requirements table not in the excerpt; named only in the Certificate section"
-   },
-   {
-    "code": "HORT 302",
-    "why": "A.S. requirements table not in the excerpt; named only in the Certificate section"
-   },
-   {
-    "code": "PLTS 300",
-    "why": "A.S. requirements table not in the excerpt; named only in the Certificate section"
-   },
-   {
-    "code": "PLTS 310",
-    "why": "A.S. requirements table not in the excerpt; named only in the Certificate section"
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AGB 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGB 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGB 320",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGB 321",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGB 330",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLTS 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HORT 302",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANSC 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLTS 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 301",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 340",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The excerpt begins mid-section with the A.S. degree's closing paragraph; the A.S. heading and its requirements table (likely on page 133) are not in the text, so no blocks or total_units are recorded for the degree. Reviewer should check the preceding page.",
-   "Section heading is taken from the degree sentence, as no A.S. heading is printed in the excerpt.",
-   "The degree sentence says 'plus sufficient electives for a total of at least 60 units'; read as the general 60-unit minimum, so degree_total is left null and electives_fill_degree set true.",
-   "Outcome list labels 'PSLO 1:' through 'PSLO 5:' were removed as list numbers.",
-   "The Certificate of Achievement (Agriculture Business Certificate, Total Units: 37) lists all closed-list courses, with PLTS 310 or HORT 302; its outcomes and requirements were not recorded because they belong to the certificate, not the A.S. degree."
+   "Read only the A.S. in Agriculture Business section (page 134); the AS-T section on page 133 and the Certificate of Achievement section are separate awards and were not used.",
+   "The A.S. text says the degree requires the required program plus Local GE or Cal-GETC 'plus sufficient electives for a total of at least 60 units'; recorded electives_fill_degree true and left degree_total null since no degree total is printed as a figure for this award beyond the general 60-unit minimum.",
+   "Outcome labels 'PSLO 1:' through 'PSLO 5:' were removed as list numbers; outcome text otherwise copied as printed."
   ]
  },
- "extracted_run": "39047009824"
+ "extracted_run": "44917314201",
+ "catalog_year": "2026-2027",
+ "source_sha": "f21bc32a3b20dabd",
+ "source_codes": [
+  "ACCT301",
+  "AGB300",
+  "AGB310",
+  "AGB320",
+  "AGB321",
+  "AGB330",
+  "ANSC300",
+  "BUS340",
+  "COMMC1000",
+  "ECONC2002",
+  "HORT302",
+  "PLTS300",
+  "PLTS310"
+ ],
+ "source_coverage": 1.0
 }

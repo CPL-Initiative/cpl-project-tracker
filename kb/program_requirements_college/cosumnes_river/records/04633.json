@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Social Work and Human Services",
  "award": "A.A. Degree",
- "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=583",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=581",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7332,
+  "input_tokens": 10384,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7332,
-    "output_tokens": 2333,
+    "input_tokens": 10384,
+    "output_tokens": 2108,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,40 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 2333,
+  "output_tokens": 2108,
   "output_tokens_details": {
-   "thinking_tokens": 1266
+   "thinking_tokens": 858
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07599,
- "ms": 21194,
- "seconds": 21.6,
+ "cost_usd": 0.0837,
+ "ms": 17271,
+ "seconds": 18.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 10,
    "listed": 10,
-   "share": 0.0,
-   "missing": [
-    "PSYC340",
-    "PSYCC1000",
-    "SOC321",
-    "SWHS300",
-    "SWHS302",
-    "SWHS350",
-    "SWHS360",
-    "SWHS364",
-    "SWHS367",
-    "SWHS498"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -72,34 +61,35 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    28.5,
+    32.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    28.5,
+    32.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 8,
    "courses": 0,
-   "count": 0,
+   "count": 8,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 7,
    "not_verbatim": [],
    "pass": true
   },
@@ -109,22 +99,22 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "(A.A. Degree section for Social Work and Human Services not found in the supplied text)",
+   "section_heading": "A.A. in Social Work and Human Services",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 28.5,
+    "max": 32
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "local CRC General Education Requirement",
    "degree_total": {
     "min": null,
     "max": null
@@ -133,60 +123,136 @@
     "min": null,
     "max": null
    },
-   "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Define the functions of social service delivery systems.",
+    "Analyze public policy issues, complexities and controversies affecting social service agencies and their clients.",
+    "Integrate different theoretical approaches in working with clients.",
+    "Identify the community resources used in assisting clients.",
+    "Appraise and apply the knowledge of existing California professional codes of ethics for the helping professions.",
+    "Describe the application of clients' rights in the social service delivery system.",
+    "Evaluate one's own values and attitudes as they apply to ethical decision making.",
+    "Demonstrate effective individual and group setting interpersonal and social skills in interactions with a demographically diverse population."
+   ],
+   "careers": [
+    "paraprofessionals",
+    "Peer Support Group Facilitator",
+    "Youth Group Home Worker",
+    "Family, Welfare, and Health Agencies Worker",
+    "Consumer Consultant",
+    "County or State Eligibility Worker",
+    "Conflict Containment Workers"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "PSYC 340",
-    "why": "appears only in the unheaded fragment at the top of page 583, which seems to belong to another program (chemical dependency outcomes); A.A. section not in text"
-   },
-   {
-    "code": "PSYC C1000",
-    "why": "appears only in the unheaded top fragment and in the Certificate section; A.A. section not in text"
-   },
-   {
-    "code": "SOC 321",
-    "why": "appears only in the unheaded top fragment and in the Certificate section; A.A. section not in text"
-   },
-   {
-    "code": "SWHS 300",
-    "why": "named only in the Certificate section; A.A. section not in text"
-   },
-   {
-    "code": "SWHS 302",
-    "why": "named only in the Certificate section; A.A. section not in text"
-   },
-   {
-    "code": "SWHS 350",
-    "why": "named only in the Certificate section; A.A. section not in text"
-   },
-   {
-    "code": "SWHS 360",
-    "why": "named only in the Certificate section; A.A. section not in text"
-   },
-   {
-    "code": "SWHS 364",
-    "why": "named only in the Certificate section; A.A. section not in text"
-   },
-   {
-    "code": "SWHS 367",
-    "why": "named only in the Certificate section; A.A. section not in text"
-   },
-   {
-    "code": "SWHS 498",
-    "why": "named only in the Certificate section; A.A. section not in text"
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 28.5,
+     "max": 32
+    },
+    "courses": [
+     {
+      "code": "SWHS 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SWHS 302",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SWHS 350",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SWHS 360",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SWHS 364",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SWHS 367",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SWHS 498",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 340",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 321",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text (page 583) contains no section headed for the Social Work and Human Services A.A. Degree. It holds (1) the tail of an unheaded program (PSYC C1000, PSYC 340, SOC 321; Total Units 37.5-41; footnote on HSER 498; outcomes about chemical dependency counseling; careers such as Substance Abuse Counselor) that appears to be a different program, and (2) a section headed 'Social Work and Human Services Certificate' with 'Certificate Requirements'. The A.A. Degree section likely continues on a following page; the record was left empty rather than reading another award's section.",
-   "The Certificate section's description begins 'The A.A. degree program in Social Work and Human Services provides...', but its heading and requirement table are labeled Certificate (SWHS 300, 302, 350, 360, 364, 367, SWHS 498 0.5-4, a minimum of 6 units from SOC 300, PSYC 320, SOC 321, PSYC C1000; Total Units 28.5-32). A reviewer should check whether the A.A. degree shares these requirements.",
-   "The closed list includes PSYC 340, which appears only in the unheaded fragment at the top of the page; the reviewer should verify whether that fragment is in fact the A.A. degree (its outcomes and careers concern chemical dependency/addiction counseling).",
-   "The Certificate section's Student Learning Outcomes list is cut off at the page break after 'PLO 1:Define the functions of social service delivery systems.'"
+   "SWHS 498 printed as '0.5 -41'; read as 0.5-4 units with footnote marker 1 (minimum of 120 internship hours).",
+   "The degree requirements table continues across the page break from page 581 to 582.",
+   "Degree text says 'plus sufficient electives to meet a 60-unit total'; recorded electives_fill_degree true but left degree_total null since 60 is the general associate degree minimum rather than a printed award total.",
+   "Outcome entries were printed with 'PLO 1:' through 'PLO 8:' labels, which were dropped as list numbers.",
+   "Catalog titles for SWHS 360 ('Techniques for Interviewing and Case Management Services') and SWHS 364 ('Advanced Techniques for Working with Groups') differ from the state file titles.",
+   "The page's top heading reads 'Social Work and Human Services Certificate', but the A.A. section was read; the separate certificate section has a different structure (6-unit choice list including SOC 300, PSYC 320) and was not used."
   ]
  },
- "extracted_run": "39047009824"
+ "extracted_run": "44917314201",
+ "catalog_year": "2026-2027",
+ "source_sha": "ce0b77115e393af9",
+ "source_codes": [
+  "PSYC340",
+  "PSYCC1000",
+  "SOC321",
+  "SWHS300",
+  "SWHS302",
+  "SWHS350",
+  "SWHS360",
+  "SWHS364",
+  "SWHS367",
+  "SWHS498"
+ ],
+ "source_coverage": 1.0
 }
