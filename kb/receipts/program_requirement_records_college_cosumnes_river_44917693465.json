@@ -323,5 +323,13 @@
   "46139",
   "46419"
  ],
- "rollback": "delete from public.program_requirement_records where college = 'Cosumnes River College' and checked = false and control_number in ('04586', '04633', '33053', '35336', '35359', '35412', '36447');"
+ "rollback": "delete from public.program_requirement_records where college = 'Cosumnes River College' and checked = false and control_number in ('04586', '04633', '33053', '35336', '35359', '35412', '36447');",
+ "confirmed": {
+  "at": "2026-11-21T15:11Z",
+  "by": "SkyPuffin (S697), the conductor, one execute_sql read",
+  "live_rows": 189,
+  "at_run_44917314201": 11,
+  "passing_at_run_44917314201": 10,
+  "note": "7 inserted (04586, 04633, 33053, 35336, 35359, 35412, 36447) and 4 replaced by the reread 44917690048 (04607, 07305, 11319, 11338); 28 committed records that place none of their listed courses were skipped by load_rows"
+ }
 }
