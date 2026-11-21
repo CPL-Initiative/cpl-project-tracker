@@ -111,7 +111,13 @@ gen = open(os.path.join(ROOT, "scripts/check_generated.sh")).read()
 check("scripts/check_generated.sh runs the sessions check", "_build_spend_daily.py --sessions-only --check" in gen)
 check("the committed file has a measured row for Nov 16 and Nov 17", "2026-11-16" in cur.get("sessions", {}) and "2026-11-17" in cur.get("sessions", {})
       and "2026-11-17" in cur.get("runner", {}), sorted(cur.get("runner", {}))[-3:])
-check("the committed file's billing rows are still the pasted ones", cur["api"]["2026-10-27"] == 2685.95 and cur["updated"] == "2026-11-15")
+check("the committed file's billing rows are still the pasted ones", cur["api"]["2026-10-27"] == 2685.95)
+# S691: since #3602 the census job's full build sets `updated` to the day it writes, so the committed file's day moves
+# with every census run on main (c1700e76 wrote 2026-11-21 and turned main's `test` red). Pin its shape and its floor,
+# the day the billing rows were pasted, never the day itself.
+check("the committed file's updated is a day no earlier than the paste (the census's full build moves it)",
+      isinstance(cur.get("updated"), str) and len(cur["updated"]) == 10 and cur["updated"] >= "2026-11-15",
+      cur.get("updated"))
 wf = open(os.path.join(ROOT, ".github/workflows/harvest-gap-census.yml")).read()
 check("the census job runs the builder on a daily schedule and commits the file",
       "cron: '47 17 * * *'" in wf and "python3 kb/_build_spend_daily.py" in wf and "kb/reference/model_spend_daily.json; do" in wf
