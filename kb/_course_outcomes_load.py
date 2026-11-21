@@ -48,7 +48,19 @@ OFFERED_AT = {"rccd": {"RIV": "Riverside City College", "MOV": "Moreno Valley Co
 # title is not here is skipped with its reason, never guessed.
 GROUPS = {"sdccd": {"City": "San Diego City College", "Mesa": "San Diego Mesa College",
                     "Miramar": "San Diego Miramar College"}}
+# A host folder whose outline report prints each SLO as its own untitled entry in an All Fields-style list: the reader
+# files each entry as a group with no title (groups_from_html), and the load joins a page's untitled entries, in the
+# order printed, into the one SLO block of the colleges whose records name the course, its objectives beside them.
+# Irvine Valley's Official Course Outline of Record (198) on Saddleback's host (trial 44910471774, 12 of 12; S697). A
+# page that carries one titled group keeps the GROUPS rule.
+UNTITLED_GROUPS = {"saddleback"}
 BATCH = 200
+
+
+def untitled_groups(host: str, row: dict) -> bool:
+    """Whether the load joins this row's groups into one block for the colleges its records name (UNTITLED_GROUPS)."""
+    groups = row.get("groups") or []
+    return host in UNTITLED_GROUPS and bool(groups) and not any(g.get("group") for g in groups)
 KINDS = ("all", "slo", "objective")
 
 
@@ -195,6 +207,23 @@ def rows_from(paths: list[str], host: str = "") -> tuple[list[dict], list[dict]]
     for path in paths:
         d = json.load(open(path))
         for r in d["rows"]:
+            if r.get("status") == 200 and r.get("shape") == "groups" and untitled_groups(host, r):
+                for g in r["groups"]:
+                    if g.get("outcomes") and g.get("fingerprint") != fingerprint(g["outcomes"]):
+                        raise SystemExit("%s: the filed fingerprint does not match its outcomes" % r.get("code"))
+                items = [o for g in r["groups"] for o in g.get("outcomes") or []]
+                colleges = colleges_for(host, r, names)
+                add_objectives(colleges, r, d)
+                if not items:
+                    skipped.append({"course_code": r.get("code"), "status": r.get("status"), "shape": "groups",
+                                    "why": "no untitled entry printed an outcome"})
+                    continue
+                block = {"heading": r.get("heading") or "Student Learning Outcomes", "lead": None, "outcomes": items,
+                         "maps_to": None, "shape": "list" if len(items) > 1 else "paragraph",
+                         "fingerprint": fingerprint(items)}
+                for college in colleges:
+                    add(college, r, block, d)
+                continue
             if r.get("status") == 200 and r.get("objectives"):
                 if r.get("shape") == "groups":
                     # A district report prints one set of objectives for the course: each college whose group it names.

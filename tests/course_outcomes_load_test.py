@@ -105,6 +105,33 @@ def _():
     assert rows == [] and skipped[0]["group"] == "Continuing Education" and "no college" in skipped[0]["why"], skipped
 
 
+IVC_TRIAL = os.path.join(ROOT, "kb", "course_outcomes", "trial_44910471774", "read.json")
+
+
+@check("Irvine Valley's report 198 files each SLO as an untitled entry: the load joins a page's entries, in order, into "
+       "one SLO row for Irvine Valley College, its objectives beside it, and no row for Saddleback (S697)")
+def _():
+    trial = json.load(open(IVC_TRIAL))["rows"]
+    rows, skipped = load.rows_from([IVC_TRIAL], "saddleback")
+    assert not skipped, skipped
+    assert {r["college"] for r in rows} == {"Irvine Valley College"}, {r["college"] for r in rows}
+    slo = {r["course_code"]: r for r in rows if r["kind"] == "slo"}
+    obj = {r["course_code"]: r for r in rows if r["kind"] == "objective"}
+    assert len(slo) == len(obj) == len(trial) == 12, (len(slo), len(obj))
+    for t in trial:
+        want = [o for g in t["groups"] for o in g["outcomes"]]
+        assert slo[t["code"]]["outcomes"] == want and slo[t["code"]]["fingerprint"] == load.fingerprint(want), t["code"]
+        assert obj[t["code"]]["outcomes"] == t["objectives"], t["code"]
+
+
+@check("GUARD: untitled entries join only at a host UNTITLED_GROUPS names; at SDCCD they skip, never guessed (S697)")
+def _():
+    rows, skipped = load.rows_from([IVC_TRIAL], "sdccd")
+    assert rows == [] and skipped and all("no college" in s["why"] for s in skipped), (rows[:1], skipped[:1])
+    d = json.load(open(SD_TRIAL))
+    assert not any(load.untitled_groups("saddleback", r) for r in d["rows"] if any(g.get("group") for g in r.get("groups") or []))
+
+
 @check("a filed row whose fingerprint does not match its outcomes stops the load")
 def _():
     import tempfile

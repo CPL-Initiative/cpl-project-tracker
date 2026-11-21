@@ -952,11 +952,20 @@ EXCERPT_BY_HOST = {"ccsf.curricunet.com": (EXCERPT_FROM, EXCERPT_TO),
                    "riohondo.curriqunet.com": ("IX. Student Learning Outcome", "X. Texts/Instructional Materials:"),
                    # Saddleback's Course Outline (201): its SLOs end where its next Course Content heading starts (a
                    # trailing * marks a heading matched by its opening words; trial 44889396093, S691).
-                   "saddleback.curriqunet.com": ("Student Learning Outcomes", "Course Content*")}
+                   "saddleback.curriqunet.com": ("Student Learning Outcomes", "Course Content*"),
+                   # Irvine Valley's Official Course Outline of Record (198) on the same host: its STUDENT LEARNING
+                   # OUTCOMES section ends at its Required Texts heading (trial 44910471774's section_heads, 12 of 12
+                   # pages; S697).
+                   "saddleback.curriqunet.com/198": ("Student Learning Outcomes", "Required Texts*")}
 # The same for a host whose pages print objectives, so the count by eye covers both kinds the gate compares.
 OBJECTIVES_EXCERPT_BY_HOST = {
     "riohondo.curriqunet.com": ("V. Course Objectives", ("VI. Methods of Instruction:", "VI. Methods of Instruction")),
-    "saddleback.curriqunet.com": ("Course Content - Learning Objectives", "Student Learning Outcomes")}
+    "saddleback.curriqunet.com": ("Course Content - Learning Objectives", "Student Learning Outcomes"),
+    # Irvine Valley's report 198: Learning Objectives, then its Content section (trial 44910471774, 12 of 12; S697).
+    "saddleback.curriqunet.com/198": ("Learning Objectives", "Content*")}
+# A key whose sections run longer than EXCERPT_LINES: report 198 prints each SLO as its own entry with its
+# institutional outcome map under it, and up to 20 objectives a page, a few lines each (trial 44910471774; S697).
+EXCERPT_LINES_BY_KEY = {"saddleback.curriqunet.com/198": 200}
 # Where one host prints two colleges' outlines through different reports, the report its host-keyed pairs were read
 # from. A page from another report there is keyed "<host>/<reportId>" and logs the probe until its own pair is
 # recorded under that key: Saddleback's pairs are its Course Outline's (201), never Irvine Valley's report (S697).
@@ -982,23 +991,24 @@ def slo_excerpt(text: str, host: str = "ccsf.curricunet.com") -> list[str] | Non
     City College of San Francisco's STUDENT LEARNING OUTCOMES and CONTENTS), as printed; None when the host has no
     pair, either heading is missing or the section runs past EXCERPT_LINES, so nothing past the section is shown. A
     person counts the outcomes in it by eye, apart from the parser."""
-    return _excerpt(text, excerpt_pairs(host))
+    return _excerpt(text, excerpt_pairs(host), EXCERPT_LINES_BY_KEY.get((host or "").lower(), EXCERPT_LINES))
 
 
 def objectives_excerpt(text: str, host: str) -> list[str] | None:
     """The page's objectives section between the host's recorded headings (OBJECTIVES_EXCERPT_BY_HOST), as printed;
     None when the host has none recorded or the page prints neither heading."""
-    return _excerpt(text, excerpt_pairs(host, OBJECTIVES_EXCERPT_BY_HOST))
+    return _excerpt(text, excerpt_pairs(host, OBJECTIVES_EXCERPT_BY_HOST),
+                    EXCERPT_LINES_BY_KEY.get((host or "").lower(), EXCERPT_LINES))
 
 
-def _excerpt(text: str, pairs: list) -> list[str] | None:
+def _excerpt(text: str, pairs: list, limit: int = EXCERPT_LINES) -> list[str] | None:
     lines = [ln.rstrip() for ln in (text or "").split("\n")]
     bare = [ln.strip().upper() for ln in lines]
     for first, after in pairs:
         if first not in bare:
             continue
         start = bare.index(first) + 1
-        end = next((i for i in range(start, min(len(bare), start + EXCERPT_LINES + 1))
+        end = next((i for i in range(start, min(len(bare), start + limit + 1))
                     if any(bare[i] == a or (a.endswith("*") and bare[i].startswith(a[:-1])) for a in after)), None)
         return None if end is None else [ln for ln in lines[start:end] if ln.strip()]
     return None
