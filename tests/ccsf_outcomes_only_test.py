@@ -315,6 +315,14 @@ with tempfile.TemporaryDirectory() as tmp:
     rc_bad = read.rows_recall(path)
 check("6 GUARD: a Rio Hondo count changed or sourced from the row fails the gate (2 wrong of 12)",
       not rc_bad["ok"] and rc_bad["right"] == 10 and len(rc_bad["wrong"]) == 2, rc_bad)
+mix = [{"course_id": 29363, "title": "Introduction to Public Speaking", "reports": ["u1"]},
+       {"course_id": 29364, "title": "Introduction to Public Speaking - Honors", "reports": ["u2"]}]
+retitled = [{"course_id": 8474, "title": "Foundations of Two-Dimensional Design", "reports": ["u1"]},
+            {"course_id": 11308, "title": "Two-Dimensional Design", "reports": ["u2"]}]
+check("6 a code that holds a course and its honors or lab version is left unread (Saddleback COMM 1000); retitled "
+      "versions of one course (Crafton Hills ART 120) and one course id are read",
+      read.variant_mix(mix) and not read.variant_mix(retitled) and not read.variant_mix(mix[:1])
+      and not read.variant_mix([dict(mix[0]), dict(mix[1], reports=[])]))
 probe = read.probe_log("X 1", TEXT)
 check("6 a host with no heading pair logs only the lines that name outcomes or objectives, never a person's line",
       STAFF not in probe and "STUDENT LEARNING OUTCOMES" in probe

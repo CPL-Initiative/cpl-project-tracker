@@ -569,6 +569,22 @@ def page_system(url: str) -> str:
             or "other")
 
 
+# A course's honors or lab version, by its title. Saddleback's search gives a common course number and its honors or
+# lab version one subject and number (index run 44886092872: COMM 1000 holds Introduction to Public Speaking and its
+# Honors version, ANTH 1001 the course and its lab; 12 codes), so the read cannot tell which outline is the course's.
+VARIANT_TITLE = re.compile(r"\b(honors|lab(oratory)?)\b", re.I)
+
+
+def variant_mix(entries: list[dict]) -> bool:
+    """Whether one code's index entries are two courses, one titled as an honors or lab version and one not: such a
+    code is left unread rather than guessed. Retitled versions of one course (Crafton Hills' ART 120) are not."""
+    with_reports = [e for e in entries if e.get("reports")]
+    if len({e.get("course_id") for e in with_reports}) < 2:
+        return False
+    kinds = {bool(VARIANT_TITLE.search(e.get("title") or "")) for e in with_reports}
+    return kinds == {True, False}
+
+
 def wanted_courses(index: dict, slugs: list[str]) -> list[dict]:
     """Each course the loaded records name that has an outline report, once, with the
     colleges (by slug) whose records name it."""
@@ -580,6 +596,8 @@ def wanted_courses(index: dict, slugs: list[str]) -> list[dict]:
     for code in sorted(by_code):
         entries = index["index"].get(code) or []
         reports = [r for e in entries for r in e.get("reports") or []]
+        if reports and variant_mix(entries):
+            continue
         if reports:
             out.append({"code": code, "title": entries[0].get("title"), "course_id": entries[0].get("course_id"),
                         "report": reports[0], "named_by": sorted(by_code[code])})
