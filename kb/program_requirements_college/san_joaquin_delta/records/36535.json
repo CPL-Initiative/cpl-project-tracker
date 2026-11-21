@@ -5,11 +5,11 @@
  "title": "Pre-Law Studies",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
  "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3339&print",
- "record_shape": 5,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7356,
+  "input_tokens": 7659,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7356,
-    "output_tokens": 3495,
+    "input_tokens": 7659,
+    "output_tokens": 3420,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,35 +30,42 @@
     "model": null
    }
   ],
-  "output_tokens": 3495,
+  "output_tokens": 3420,
   "output_tokens_details": {
-   "thinking_tokens": 876
+   "thinking_tokens": 823
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.09932,
- "ms": 25305,
- "seconds": 25.8,
+ "cost_usd": 0.09904,
+ "ms": 24709,
+ "seconds": 25.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 12,
+   "placed": 13,
    "listed": 15,
-   "share": 0.8,
+   "share": 0.867,
    "missing": [
-    "ENGL1B",
     "HIST17A",
     "HIST17B"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ENGLC1002",
+     "listed": "ENGL1B",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 21,
+   "count": 20,
    "codes": [
     "BUS68V",
     "BUS7",
@@ -69,7 +76,6 @@
     "COMM52",
     "COMM8",
     "ENGLC1000E",
-    "ENGLC1002",
     "HIST27",
     "HISTC1001",
     "HISTC1002",
@@ -92,7 +98,6 @@
     "COMM52",
     "COMM8",
     "ENGLC1000E",
-    "ENGLC1002",
     "HIST27",
     "HISTC1001",
     "HISTC1002",
@@ -148,13 +153,17 @@
  },
  "record": {
   "program": {
-   "section_heading": "Pre-Law Studies",
+   "section_heading": "Pre-Law Studies Certificate of Achievement (heading not in excerpt)",
    "measure": "units",
    "total_units": {
     "min": 21,
     "max": 21
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": null,
    "degree_total": {
     "min": null,
@@ -503,24 +512,23 @@
    },
    {
     "code": "HIST 17A",
-    "why": "not in the text; catalog prints HIST C1001 United States History to 1877"
+    "why": "not in the text; catalog prints HIST C1001 instead"
    },
    {
     "code": "HIST 17B",
-    "why": "not in the text; catalog prints HIST C1002 United States History since 1865"
+    "why": "not in the text; catalog prints HIST C1002 instead"
    }
   ],
   "notes": [
-   "The catalog text begins mid-description; the program heading is cut off, so section_heading uses the program title.",
-   "Area blocks are under the printed heading 'Restricted Electives'; block names combine it with the Area letter.",
-   "Each Area prints 'Complete 3 units selected from', recorded as choose_units 3 and stated 3; Core prints 'Complete 9 units'.",
-   "COMM 7 (Intercultural Communication) is marked a catalog addition because the closed list names COM ST 7; reviewer may treat them as the same course.",
-   "Total 'Minimum Units Required: 21' recorded as total_units.",
-   "All courses must be completed with a grade of 'C' or better."
+   "The excerpt begins mid-description; the section heading is not printed in the text, so the heading recorded is inferred from the program title.",
+   "Total is 'Minimum Units Required: 21' (Core 9 + Areas A-D 3 each).",
+   "COMM 7 (Intercultural Communication) appears to be the same course as closed-list COM ST 7 under a different code; recorded as catalog addition.",
+   "Areas A-D are listed under the heading 'Restricted Electives'.",
+   "COMM 52 and LAW 20 are variable 1-3 units; a student may need more than one course or a 3-unit enrollment to meet Area C."
   ]
  },
- "extracted_run": 39217405432,
- "read_run": 39116289105,
+ "extracted_run": "44883860902",
+ "catalog_year": "2026-2027",
  "reconciled": [
   {
    "field": "total_units_minimum",

@@ -443,7 +443,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3299&print",
+    "title": "Program: Heating and Air Conditioning - Refrigeration, AS - San Joaquin Delta College",
+    "h1": "Heating and Air Conditioning - Refrigeration, AS",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "05602",
@@ -1204,7 +1218,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3232&print",
+    "title": "Program: Graphic Arts, AA - San Joaquin Delta College",
+    "h1": "Graphic Arts, AA",
+    "awards": [
+     "aa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "07422",
@@ -2001,13 +2029,14 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.857,
+  "coverage": 1.0,
   "codes_found": [
    "BUS12",
    "BUS2",
    "BUS55",
    "BUS57",
    "BUS84",
+   "COMST7",
    "LAW25"
   ],
   "source": {
@@ -2132,7 +2161,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3300&print",
+    "title": "Program: Heavy Equipment Technician, AS - San Joaquin Delta College",
+    "h1": "Heavy Equipment Technician, AS",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "14290",
@@ -2428,8 +2471,9 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.9,
+  "coverage": 1.0,
   "codes_found": [
+   "COMST7",
    "ENGLC1000",
    "SL1",
    "SL2",
@@ -2466,7 +2510,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "17715",
@@ -2478,7 +2526,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "18025",
@@ -2522,12 +2574,15 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.761,
+  "coverage": 0.848,
   "codes_found": [
    "AJ21",
    "ANTH1",
+   "ANTHR10",
    "ART12",
+   "ART2",
    "ART20A",
+   "ART3",
    "ART33A",
    "ART33B",
    "ART33C",
@@ -2541,6 +2596,9 @@
    "BUS20",
    "COMM12",
    "COMM5",
+   "COMST52",
+   "COMST7",
+   "COMST8",
    "DRAMA10",
    "DRAMA15A",
    "DRAMA19B",
@@ -2559,6 +2617,12 @@
    "ECE31B",
    "EDUC10",
    "EDUC12",
+   "ENG35",
+   "ENG49A",
+   "ENG49B",
+   "ENG49C",
+   "ENG49D",
+   "ENGL1B",
    "ENGL37",
    "ENGL38",
    "ENGL42A",
@@ -2644,7 +2708,7 @@
    }
   },
   "listed": 138,
-  "text_chars": 12667
+  "text_chars": 12671
  },
  {
   "control_number": "18815",
@@ -2652,8 +2716,11 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.904,
+  "coverage": 0.962,
   "codes_found": [
+   "ANTHR10",
+   "ANTHR2",
+   "ANTHR2L",
    "ASCI10",
    "ASCI10L",
    "ASTRO1",
@@ -2728,7 +2795,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3301&print",
+    "title": "Program: Interdisciplinary Studies: Business Option, AA - San Joaquin Delta College",
+    "h1": "Interdisciplinary Studies: Business Option, AA",
+    "awards": [
+     "aa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "19688",
@@ -2776,7 +2857,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3257&print",
+    "title": "Program: Business, AS - San Joaquin Delta College",
+    "h1": "Business, AS",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "19692",
@@ -2788,7 +2883,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3306&print",
+    "title": "Program: Retail Management and Merchandising, AS - San Joaquin Delta College",
+    "h1": "Retail Management and Merchandising, AS",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "19693",
@@ -2800,7 +2909,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "19694",
@@ -2970,7 +3083,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3233&print",
+    "title": "Program: Interior Design, AA - San Joaquin Delta College",
+    "h1": "Interior Design, AA",
+    "awards": [
+     "aa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "19739",
@@ -2982,7 +3109,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3231&print",
+    "title": "Program: Fashion Merchandising, AS - San Joaquin Delta College",
+    "h1": "Fashion Merchandising, AS",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "19740",
@@ -2994,7 +3135,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3349&print",
+    "title": "Program: Early Childhood Education, AA - San Joaquin Delta College",
+    "h1": "Early Childhood Education, AA",
+    "awards": [
+     "aa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "19741",
@@ -3006,7 +3161,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3228&print",
+    "title": "Program: Culinary Arts, AA - San Joaquin Delta College",
+    "h1": "Culinary Arts, AA",
+    "awards": [
+     "aa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "19742",
@@ -3212,29 +3381,12 @@
   "title": "Spanish Language",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.8,
-  "codes_found": [
-   "HIST31",
-   "SPAN4A",
-   "SPAN5",
-   "SPAN6"
-  ],
-  "source": {
-   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3337&print",
-   "title": "Program: San Joaquin Delta College Associate Degree General Education Pattern - San Joaquin Delta College",
-   "h1": "San Joaquin Delta College Associate Degree General Education Pattern",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 5,
-  "text_chars": 13430
+  "text_chars": 0
  },
  {
   "control_number": "19799",
@@ -4219,9 +4371,10 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.9,
+  "coverage": 1.0,
   "codes_found": [
    "ART12",
+   "ART2",
    "ART20A",
    "ART33A",
    "ART33B",
@@ -4384,8 +4537,14 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.6,
+  "coverage": 1.0,
   "codes_found": [
+   "ENG35",
+   "ENG49A",
+   "ENG49B",
+   "ENG49C",
+   "ENG49D",
+   "ENGL1B",
    "ENGL37",
    "ENGL38",
    "ENGL42A",
@@ -4480,7 +4639,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3206&print",
+    "title": "Program: Political Science, AA-T - San Joaquin Delta College",
+    "h1": "Political Science, AA-T",
+    "awards": [
+     "adt"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "32549",
@@ -4539,8 +4712,9 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.818,
+  "coverage": 0.909,
   "codes_found": [
+   "ANTHR2L",
    "BIOL31",
    "GEOG2",
    "GEOL1A",
@@ -4686,7 +4860,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3165&print",
+    "title": "Program: Computer Science, AS-T - San Joaquin Delta College",
+    "h1": "Computer Science, AS-T",
+    "awards": [
+     "adt"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "33038",
@@ -4698,7 +4886,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3226&print",
+    "title": "Program: Art History, AA-T - San Joaquin Delta College",
+    "h1": "Art History, AA-T",
+    "awards": [
+     "adt"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "33039",
@@ -4758,7 +4960,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3237&print",
+    "title": "Program: Music, AA-T - San Joaquin Delta College",
+    "h1": "Music, AA-T",
+    "awards": [
+     "adt"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "33706",
@@ -5071,7 +5287,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3328&print",
+    "title": "Program: Electrical Technology - General Electrician Trainee Certificate of Achievement - San Joaquin Delta College",
+    "h1": "Electrical Technology - General Electrician Trainee Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "35074",
@@ -5570,11 +5800,13 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.733,
+  "coverage": 0.867,
   "codes_found": [
    "COMM12",
    "COMM5",
    "COMMC1000",
+   "COMST7",
+   "ENGL1B",
    "ENGLC1000",
    "ENGLC1001",
    "HIST30A",
@@ -5749,7 +5981,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.837,
+  "coverage": 0.86,
   "codes_found": [
    "AJ21",
    "AJ22",
@@ -5765,6 +5997,7 @@
    "BUS68V",
    "BUS8",
    "COMM5",
+   "COMST8",
    "ENGLC1000",
    "ENGLC1001",
    "GEOG2",
@@ -5924,12 +6157,15 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.898,
+  "coverage": 0.959,
   "codes_found": [
    "AJ21",
    "ANTH1",
+   "ART2",
    "BIOL30",
+   "COMST7",
    "ECE21",
+   "ENG35",
    "ENGL37",
    "ENGL43C",
    "GEOG2",
@@ -6236,13 +6472,16 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.842,
+  "coverage": 0.912,
   "codes_found": [
    "ANTH1",
+   "ANTHR4",
+   "ART2",
    "ART9",
    "ARTHC1100",
    "ARTHC1200",
    "BUS55",
+   "COMST7",
    "CULART16",
    "DANCE29",
    "DANCE32",
@@ -6251,6 +6490,7 @@
    "DANCE37A",
    "DANCE37B",
    "DANCE37C",
+   "ENG35",
    "ENGL43C",
    "ENGL43D",
    "ENGL62B",
@@ -6485,10 +6725,11 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.8,
+  "coverage": 0.867,
   "codes_found": [
    "BUS21",
    "BUS22",
+   "COMST8",
    "CULART30A",
    "CULART31",
    "CULART32",
@@ -6522,9 +6763,10 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.917,
+  "coverage": 1.0,
   "codes_found": [
    "BUS94F",
+   "COMST8",
    "CULART31",
    "CULART32",
    "CULART74",
@@ -6558,9 +6800,10 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.889,
+  "coverage": 1.0,
   "codes_found": [
    "BUS94F",
+   "COMST8",
    "CULART31",
    "CULART32",
    "CULART85",
@@ -6962,7 +7205,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.625,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH1",
    "COMM12",
@@ -6970,6 +7213,12 @@
    "COMM4",
    "COMM5",
    "COMMC1000",
+   "COMST2",
+   "COMST3",
+   "COMST52",
+   "COMST7",
+   "COMST8",
+   "ENGL1B",
    "ENGLC1001",
    "MCOM5",
    "PSYCC1000",
@@ -7111,10 +7360,16 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.76,
+  "coverage": 1.0,
   "codes_found": [
    "DMEDIA2",
    "DRAMA46",
+   "ENG35",
+   "ENG49A",
+   "ENG49B",
+   "ENG49C",
+   "ENG49D",
+   "ENGL1B",
    "ENGL37",
    "ENGL38",
    "ENGL42A",
@@ -7424,7 +7679,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.909,
+  "coverage": 1.0,
   "codes_found": [
    "AJ21",
    "AJ22",
@@ -7434,7 +7689,9 @@
    "AJ28",
    "AJ31",
    "AJ40",
+   "ART2",
    "COMMC1000",
+   "COMST7",
    "ECE26",
    "ENGLC1000",
    "ENGLC1000E",
@@ -7504,12 +7761,27 @@
   "title": "Public Safety Dispatcher",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ196A",
+   "AJ196B"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3402&print",
+   "title": "Program: Public Safety Dispatcher Certificate of Completion - San Joaquin Delta College",
+   "h1": "Public Safety Dispatcher Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "public safety dispatcher certificate of completion",
+    "section_fit": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 1651
  },
  {
   "control_number": "45621",
@@ -7517,9 +7789,16 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.894,
+  "coverage": 0.944,
   "codes_found": [
    "ANTH1",
+   "ANTHR10",
+   "ANTHR2",
+   "ANTHR2L",
+   "ANTHR4",
+   "ART1C",
+   "ART2",
+   "ART3",
    "ARTHC1100",
    "ARTHC1200",
    "ASTRO1",
@@ -7552,6 +7831,7 @@
    "DRAMA10",
    "DRAMA16A",
    "ECE21",
+   "ENGL1B",
    "ENGL30",
    "ENGL37",
    "ENGL38",
@@ -7678,7 +7958,7 @@
    }
   },
   "listed": 161,
-  "text_chars": 15268
+  "text_chars": 16000
  },
  {
   "control_number": "46020",
@@ -7982,7 +8262,7 @@
    }
   },
   "listed": 7,
-  "text_chars": 2167
+  "text_chars": 2168
  },
  {
   "control_number": "46410",
