@@ -87,7 +87,7 @@
     "against": "degree",
     "ge": null,
     "why": [],
-    "transfer": true,
+    "minimum": true,
     "fill": [
      25.0,
      28.0
@@ -142,7 +142,8 @@
    },
    "electives_fill_degree": false,
    "outcomes": [],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -277,5 +278,14 @@
    "Major total printed both as Minimum/Maximum Required Units for Major (32/35) and 'TOTAL UNITS REQUIRED 32-35'."
   ]
  },
- "extracted_run": "43415972509"
+ "extracted_run": 44763682085,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Required Units for Degree (with GE)\n60"
+  }
+ ],
+ "read_run": "43415972509"
 }

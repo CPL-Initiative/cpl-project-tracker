@@ -727,6 +727,8 @@ HEADING_JS = """() => { const h = document.querySelector('h1'); return h ? h.inn
 # The opening of the page's own words: a catalog often names its edition in a
 # banner rather than its title or h1.
 BODY_JS = """() => (document.body ? document.body.innerText : '').slice(0, 6000)"""
+# The Reader keeps this many characters of a page's HTML (the outline reader imports it: READER_HTML_CAP).
+HTML_CAP = 400000
 
 
 class Reader:
@@ -785,7 +787,7 @@ class Reader:
                 out["assets"] = self.page.evaluate(ASSETS_JS)
                 out["h1"] = self.page.evaluate(HEADING_JS) or ""
                 out["body"] = self.page.evaluate(BODY_JS) or ""
-                out["html"] = self.page.content()[:400000]
+                out["html"] = self.page.content()[:HTML_CAP]
             out["access"] = classify_access(status, out.get("title", ""))
         except Exception as exc:  # navigation error, timeout, download
             msg = str(exc).splitlines()[0][:200]

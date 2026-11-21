@@ -189,6 +189,54 @@ with tempfile.TemporaryDirectory() as tmp:
     read.STOP = keep
     check("5 the fingerprint moves when a parser pattern moves, and is steady otherwise",
           moved != fp and read.parser_fingerprint() == fp)
+    # #3601's second reader: _ws, READER_HTML_CAP and the census's SLO_HEADING each reach a parse.
+    keep_cap, keep_head = read.READER_HTML_CAP, read.cor.SLO_HEADING
+    read.READER_HTML_CAP = keep_cap + 1
+    by_cap = read.parser_fingerprint()
+    read.READER_HTML_CAP = keep_cap
+    read.cor.SLO_HEADING = re.compile(keep_head.pattern + "|NEVER PRINTED", keep_head.flags)
+    by_head = read.parser_fingerprint()
+    read.cor.SLO_HEADING = keep_head
+    check("5 the fingerprint moves with the Reader's HTML cap and the census's SLO heading, and names _ws",
+          by_cap != fp and by_head != fp and read.parser_fingerprint() == fp and "_ws" in read.PARSER_PARTS)
+    check("5 the Reader's cap is the census Reader's own number, imported",
+          read.READER_HTML_CAP == read.cor.census.HTML_CAP)
+    # #3601's second reader: the gate checks each counted row's host.
+    trial(good)
+    counts(good)
+    check("5 with no host named a tmp recall file reads every row", read.rows_recall(path, tmp)["ok"])
+    rc = read.rows_recall(path, tmp, host="rccd.curriqunet.com")
+    check("5 GUARD: rows read from another host than the gate's count wrong", not rc["ok"] and rc["right"] == 0
+          and all("read from ccsf.curricunet.com" in w[2] for w in rc["wrong"]), rc["wrong"][:1])
+    check("5 the gate's own host passes", read.rows_recall(path, tmp, host="ccsf.curricunet.com")["ok"])
+
+
+# 5b. A page parsed from the Reader's cut copy that finds nothing files "cut", never "none" (COBIx on #3586, point 1).
+class _Page:
+    def content(self):
+        raise RuntimeError("the browser lost the page")
+
+
+class _Reader:
+    page = _Page()
+
+
+keep_load = read.cor.load_full
+long_html = "<html><body>" + "x" * read.READER_HTML_CAP + "</body></html>"
+try:
+    read.cor.load_full = lambda reader, url: {"status": 200, "final_url": url, "body": "Course Outline\nUnits: 3\n",
+                                              "html": long_html[:read.READER_HTML_CAP], "title": "x"}
+    other = "https://rccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1?entityType=Course&reportId=4"
+    got = read.read_one(_Reader(), {"code": "ENG 1", "report": other})
+    check("5b GUARD: a cut page that parses nothing files shape cut, with why", got["shape"] == "cut"
+          and got["html_cut"] and "cap" in (got.get("why_none") or ""), {k: got.get(k) for k in ("shape", "why_none")})
+    read.cor.load_full = lambda reader, url: {"status": 200, "final_url": url, "body": "Course Outline\nUnits: 3\n",
+                                              "html": "<html><body>short</body></html>", "title": "x"}
+    got = read.read_one(_Reader(), {"code": "ENG 1", "report": other})
+    check("5b a page under the cap that parses nothing still files none", got["shape"] == "none"
+          and not got["html_cut"], got["shape"])
+finally:
+    read.cor.load_full = keep_load
 
 # 6. The excerpt a person counts from: the SLO section as printed, cut by its two headings, never the page.
 ex = read.slo_excerpt(TEXT)

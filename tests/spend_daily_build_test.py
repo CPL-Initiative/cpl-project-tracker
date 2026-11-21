@@ -41,7 +41,9 @@ with tempfile.TemporaryDirectory() as t:
     put(t, "docs/session_800_handoff.md", "Spend: $7.00 (Opus 5.5 $7.00); 2026-11-17T01:00Z to 2026-11-17T02:00Z.\n")
     billing = {"_what": "x", "api": {"2026-11-15": 1.99}, "topups": {"2026-11-14": [199.82]}, "updated": "2026-11-15"}
     d1 = sd.build(t, billing, "2026-11-17")
-    check("the pasted billing keys are untouched", d1["api"] == billing["api"] and d1["topups"] == billing["topups"] and d1["updated"] == "2026-11-15")
+    check("the pasted billing keys are untouched", d1["api"] == billing["api"] and d1["topups"] == billing["topups"])
+    check("a build sets updated to the day it writes (COBIx's brief of Nov 19 on #3358)", d1["updated"] == "2026-11-17",
+          d1["updated"])
     check("a run is dated by its own read's start, not the build day", d1["runner_runs"]["11"]["day"] == "2026-11-16", d1["runner_runs"])
     check("a pre-S647 summary's cost_usd stands for its run", d1["runner_runs"]["22"]["usd"] == 12.41)
     check("a free rescore is a $0 run, never the filed cost", d1["runner_runs"]["33"]["usd"] == 0.0)
@@ -53,7 +55,8 @@ with tempfile.TemporaryDirectory() as t:
     d2 = sd.build(t, d1, "2026-11-18")
     d3 = sd.build(t, d2, "2026-11-19")
     check("an overwritten run stays in the ledger; a new run is added once", set(d3["runner_runs"]) == {"11", "22", "33", "44"} and d3["runner"]["2026-11-18"] == 1.0)
-    check("a rebuild changes nothing", d3 == sd.build(t, d3, "2026-11-20"))
+    check("a rebuild changes nothing but the day it was written", {k: v for k, v in d3.items() if k != "updated"}
+          == {k: v for k, v in sd.build(t, d3, "2026-11-20").items() if k != "updated"})
     check("spent sums the ledger", sd.spent(d3) == (17.91, 4), sd.spent(d3))
 
 # S680: a handoff's Spend: line that lands after the day's census run still reaches the sessions key (S678's $115.38
@@ -93,8 +96,12 @@ with tempfile.TemporaryDirectory() as t:
         json.dump(first, f)
     check("--sessions-only --check is stale when a handoff's line is not in the file",
           sd.main(["--root", t, "--sessions-only", "--check"]) == 1)
-    sd.main(["--root", t, "--sessions-only"])
+    sd.main(["--root", t, "--sessions-only", "--today", "2026-11-20"])
     check("and current after the rebuild", sd.main(["--root", t, "--sessions-only", "--check"]) == 0)
+    with open(d) as f:
+        wrote = json.load(f)
+    check("--sessions-only leaves updated as it stands (only the census's full build sets it)",
+          wrote.get("updated") == first.get("updated"), wrote.get("updated"))
 
 # The committed file and its wiring.
 cur = json.load(open(os.path.join(ROOT, sd.OUT)))
