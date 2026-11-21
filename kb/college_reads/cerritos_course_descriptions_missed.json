@@ -1,0 +1,42 @@
+{
+ "_readme": "S700, 2026-11-21, #3655: the subject pages the course-descriptions index links (kb/hand_filed_catalogs/subjects/cerritos.json, each address the index's own link) whose courses kb/hand_filed_catalogs/courses/cerritos.json.gz does not hold, because the first read guessed the address from the lower-case code. Each page line for line through the capture view. No model call.",
+ "college": "Cerritos College",
+ "questions": {
+  "courses": "Each course's code, title, units or hours, requisites and description, line for line."
+ },
+ "keywords": [
+  "\\bUnits?\\b",
+  "\\bHours?\\b"
+ ],
+ "capture_lines": 8000,
+ "pages": [
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/a_p/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/math/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/pol/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/soc/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  }
+ ]
+}
