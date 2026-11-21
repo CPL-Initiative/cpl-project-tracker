@@ -15,11 +15,12 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-657 document(s).
+658 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
 | 699 | [Session 699 handoff (from SkyPuffin, S697, the CPL Queue routine's 13:12Z firing of 2026-11-21)](../session_699_handoff.md) | 2026-11-21 |
+| 698 | [Session 698 handoff (from the page-only session of 2026-11-21: the Exhibits Review card and the Commons page clarity PRs)](../session_698_handoff.md) | 2026-11-21 |
 | 697 | [Session 697 handoff (from SkyPetrel, S691, the CPL Queue routine's collection night of 2026-11-21)](../session_697_handoff.md) | 2026-11-21 |
 | 696 | [Session 696 handoff (from SkyShearwater, the plain session of 2026-11-21 that set the mint's floor and minted the first pile record)](../session_696_handoff.md) | 2026-11-21 |
 | 695 | [Session 695 handoff (from SkyPetrel, the plain session of 2026-11-20 to 21 that built Assign from the panel and planned the pile mint)](../session_695_handoff.md) | 2026-11-21 |

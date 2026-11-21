@@ -17410,7 +17410,7 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 657,
+   "count": 658,
    "docs": [
     {
      "created": "2026-11-21",
@@ -17423,6 +17423,20 @@
       "session"
      ],
      "title": "Session 699 handoff (from SkyPuffin, S697, the CPL Queue routine's 13:12Z firing of 2026-11-21)",
+     "type": null,
+     "updated": "2026-11-21"
+    },
+    {
+     "created": "2026-11-21",
+     "governs": [],
+     "n": 698,
+     "path": "docs/session_698_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 698 handoff (from the page-only session of 2026-11-21: the Exhibits Review card and the Commons page clarity PRs)",
      "type": null,
      "updated": "2026-11-21"
     },
@@ -28382,5 +28396,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1542
+ "total": 1543
 }
