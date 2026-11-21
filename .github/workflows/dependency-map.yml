@@ -1,15 +1,16 @@
 name: Dependency map
 
-# One job on main rebuilds the dependency map after each merge (Sam, 2026-11-18, relayed by COBIx on #3358,
+# One job on main rebuilds the dependency map, never a PR (Sam, 2026-11-18, relayed by COBIx on #3358,
 # rule 2): "No dependency-map rebuild inside PRs. kb/dependency_map.json and docs/reference/dependency_map.md
 # are rebuilt by one job on main after each merge. They cause most of today's conflicts."
 #
 # kb/_build_dependency_map.py reads the whole tracked tree (`git ls-files`), so every push to main can move the
-# map and the trigger takes every push. The paths-ignore keeps this job's own commit from starting it again; a
-# push made with the workflow token starts no run either. The daily cron pushes with that token too, so a cron
-# commit starts no rebuild; the map strips line numbers from the files the cron rewrites, and js-tests.yml's
-# runs on main warn when the map falls behind, which a dispatch of this workflow fixes. A failed run on main
-# opens an issue through workflow-failure-watch.yml.
+# map. The job runs on a timer, once an hour, and never on a push (S698, COBIx's slimming plan on #3476: a
+# rebuild after every merge wrote about 1 MB to main's history each time, 17 commits in two days). An hour's
+# merges land in one map commit; an hour with no change ends green with nothing to push. The map strips line
+# numbers from the files the daily cron rewrites, js-tests.yml's runs on main warn when the map falls behind,
+# and a dispatch of this workflow rebuilds it at once. A failed run on main opens an issue through
+# workflow-failure-watch.yml.
 #
 # The commit is small (the map files and the admin surface) and the push never forces main (Rule 5). A lost push rebases onto
 # the new main and rebuilds from it, so the map that lands matches the tree it lands on; when main already
@@ -25,12 +26,8 @@ name: Dependency map
 # that build, and reports staleness as a notice; scripts/check_generated.sh reports it the same way.
 
 on:
-  push:
-    branches: [main]
-    paths-ignore:
-      - kb/dependency_map.json
-      - docs/reference/dependency_map.md
-      - cobi_admin_surface.js
+  schedule:
+    - cron: '43 * * * *'
   workflow_dispatch:
 
 concurrency:

@@ -7,8 +7,8 @@ conflicts."
 
 Failure modes this file guards:
 
-1. THE JOB STOPS RUNNING ON MAIN, or runs twice at once. Pinned: dependency-map.yml runs on a push to main and on
-   dispatch, ignores its own files (so its commit cannot start it again), holds its own concurrency group with
+1. THE JOB STOPS RUNNING ON MAIN, runs twice at once, or goes back to a commit per merge. Pinned: dependency-map.yml
+   runs once an hour on a timer and on dispatch, never on a push (S698), holds its own concurrency group with
    cancel-in-progress false, and stays out of the daily-dashboard group.
 2. THE JOB FORCES MAIN (Rule 5) or loses a push. Pinned: no force flag anywhere in it; the push retries in a
    five-attempt loop that rebases onto the new main and rebuilds from it. The commit step itself runs here in a
@@ -52,10 +52,10 @@ check("dependency-map.yml exists", os.path.exists(JOB))
 doc = yaml.safe_load(read(JOB))
 text = read(JOB)
 on = doc.get("on", doc.get(True)) or {}
-push = on.get("push") or {}
-check("runs on a push to main", push.get("branches") == ["main"], push)
-check("ignores its own map files, so its commit cannot start it again",
-      all(p in (push.get("paths-ignore") or []) for p in MAP_FILES), push.get("paths-ignore"))
+crons = [str(c.get("cron", "")) for c in (on.get("schedule") or [])]
+check("runs on a timer, once an hour at a fixed minute (S698: an hour's merges land in one map commit)",
+      len(crons) == 1 and re.fullmatch(r"\d{1,2} \* \* \* \*", crons[0]) is not None, crons)
+check("never runs on a push, so a merge starts no rebuild and its own commit cannot start it again", "push" not in on, list(on))
 check("can be dispatched by hand", "workflow_dispatch" in on)
 conc = doc.get("concurrency") or {}
 check("holds a concurrency group of its own, runs queue (cancel-in-progress false)",

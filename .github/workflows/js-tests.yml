@@ -1458,9 +1458,9 @@ jobs:
           python3 kb/_build_dependency_map.py --check > /dev/null 2>&1 || rc=$?
           if [ "$rc" -eq 1 ]; then
             if [ "${{ github.event_name }}" = "pull_request" ]; then
-              echo "::notice title=Dependency map behind this PR::The committed map differs from this tree. Expected: dependency-map.yml rebuilds it on main after the merge (Sam, 2026-11-18). Do not commit it in the PR."
+              echo "::notice title=Dependency map behind this PR::The committed map differs from this tree. Expected: dependency-map.yml rebuilds it on main within the hour (Sam, 2026-11-18). Do not commit it in the PR."
             else
-              echo "::warning title=Dependency map behind main::The committed map differs from this tree. dependency-map.yml rebuilds it after each push to main; dispatch it if this stays."
+              echo "::warning title=Dependency map behind main::The committed map differs from this tree. dependency-map.yml rebuilds it once an hour; dispatch it to rebuild now."
             fi
           elif [ "$rc" -ne 0 ]; then
             echo "::error::kb/_build_dependency_map.py --check exited $rc (not a stale map: the builder failed)"
