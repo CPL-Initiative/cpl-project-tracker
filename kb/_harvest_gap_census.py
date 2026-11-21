@@ -120,6 +120,9 @@ NOT_GE_PATTERN_TITLE = re.compile(r"\bdiploma\b|\bGED\b|\bgeneral\s+education\s+
 NAMED_GAPS = {
     "ge_pattern_certificate": "General-education pattern certificate. It has no fixed course list by design.",
     "listed_twice": "The state lists this program twice. The other listing has the course list.",
+    # S691: rule D found no line of the current catalog printing it, and the prior-year read found no page of its
+    # own (kb/_program_discontinued.py, prior_unfiled); neither catalog supports a discontinued flag or a read.
+    D.NOT_PRINTED_GAP: "Neither this year's catalog nor last year's prints a page for this program.",
 }
 
 
@@ -127,14 +130,19 @@ def _title_key(t) -> str:
     return re.sub(r"[^a-z0-9]+", " ", str(t or "").lower()).strip()
 
 
-def named_gap(col: dict | None, cn: str, cause: str, title: str | None = None) -> tuple[str, str | None] | None:
+def named_gap(col: dict | None, cn: str, cause: str, title: str | None = None,
+              not_printed: set | None = None) -> tuple[str, str | None] | None:
     """(label, the other listing's control number or None), or None. Part 1: a general-education pattern
     certificate, by its title, among no closed list and page not found. Part 2: a program with no closed list
-    whose college lists the same title and award again under a newer control number that has a course list."""
+    whose college lists the same title and award again under a newer control number that has a course list.
+    Part 3 (S691): a page not found that neither the current catalog nor the prior year's prints
+    (not_printed: kb/_program_discontinued.py not_printed_named())."""
     col = col or {}
     if CL.held(col.get("college")):
         # The collection lane holds this college tonight (kb/collection_lane.py): no label from this lane.
         return None
+    if cause == "page_not_found" and (col.get("college"), cn) in (not_printed or set()):
+        return D.NOT_PRINTED_GAP, None
     title = title or (col.get("titles") or {}).get(cn)
     if (cause in ("no_closed_list", "page_not_found") and title and GE_PATTERN_TITLE.search(title)
             and not NOT_GE_PATTERN_TITLE.search(title)):
@@ -406,10 +414,11 @@ LEVER_WORDS = {
 
 def census(universe: list[dict], committed: dict, records: dict | None, registry: dict,
            closed_now: dict | None = None, parked: dict | None = None,
-           outside: dict | None = None, discontinued: dict | None = None) -> dict:
+           outside: dict | None = None, discontinued: dict | None = None, not_printed: set | None = None) -> dict:
     """universe: [{college, control_number}]; committed: read_committed(); records: {cn: live row} or
     None when there is no live read; registry: {college: catalog_url}; closed_now: {cn: bool};
-    discontinued: {(college, cn): flag} (kb/_program_discontinued.py keys()), each listed apart from the gap."""
+    discontinued: {(college, cn): flag} (kb/_program_discontinued.py keys()), each listed apart from the gap;
+    not_printed: {(college, cn)} printed in neither the current catalog nor the prior year's (not_printed_named())."""
     parked = PARKED if parked is None else parked
     live = records is not None
     by_slug = committed
@@ -442,7 +451,7 @@ def census(universe: list[dict], committed: dict, records: dict | None, registry
         cause, sub = assign({"control_number": cn, "college": prog["college"]}, col, rec, live, parked)
         lever, scope = lever_of(cause, sub, college, (closed_now or {}).get(cn) if closed_now is not None else None)
         row = {"college": college, "control_number": cn, "cause": cause, "sub": sub, "lever": lever, "scope": scope}
-        ng = named_gap(col, cn, cause, prog.get("title"))
+        ng = named_gap(col, cn, cause, prog.get("title"), not_printed)
         if ng:
             row["named_gap"], row["other_listing"] = ng
         gap.append(row)
@@ -665,7 +674,8 @@ def main(argv=None) -> int:
             os.makedirs(os.path.dirname(os.path.abspath(a.export)), exist_ok=True)
             with open(a.export, "w", encoding="utf-8") as fh:
                 json.dump(data, fh)
-    r = census(universe, committed, records, registry, closed_now, outside=outside, discontinued=D.keys())
+    r = census(universe, committed, records, registry, closed_now, outside=outside, discontinued=D.keys(),
+               not_printed=D.not_printed_named())
     r["written_at"] = when
     os.makedirs(os.path.dirname(a.json), exist_ok=True)
     with open(a.json, "w", encoding="utf-8") as fh:
