@@ -1,7 +1,7 @@
-run=2026-11-21-s691-d
+run=2026-11-21-s691-e
 discover=
 index=https://saddleback.curriqunet.com/
 slugs=saddleback
-report=^SLO Addendum$
+report=^Course Outline$
 status=Active \(Fully Approved\)
 client=^Saddleback College$
