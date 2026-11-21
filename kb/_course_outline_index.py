@@ -211,22 +211,26 @@ KNOWN_SEARCH = {
         "report_ids": [28],
     },
 }
-# The page's own Search button: a visible, enabled button (or submit input) whose whole label is "Search", the one
-# beside a Reset button where there are several. It presses that button and returns which one, or null when the page
-# has none; it fills no field and answers no check.
-PRESS_SEARCH_JS = """() => {
+# The page's own Search buttons: each visible, enabled button (or submit input) whose whole label is "Search", a
+# primary-styled one first, then one in the same form or row as a Reset button, then the rest in page order. Given n,
+# it presses the n-th and returns which one, or null when there is no n-th; it fills no field and answers no check.
+# Index run 44881165580 pressed Rio Hondo's first of two (btn-secondary), which posted no search (S691).
+PRESS_SEARCH_JS = """(n) => {
   const label = e => (e.innerText || e.value || '').replace(/\\s+/g, ' ').trim();
   const shown = e => !!(e.offsetWidth || e.offsetHeight || e.getClientRects().length);
   const all = Array.from(document.querySelectorAll('button, input[type=submit], input[type=button]'));
   const found = all.filter(e => shown(e) && !e.disabled && /^search$/i.test(label(e)));
-  if (!found.length) return null;
-  const nearReset = found.find(e => e.parentElement && Array.from(e.parentElement.querySelectorAll('button, input'))
-    .some(x => /^reset$/i.test(label(x))));
-  const b = nearReset || found[0];
+  const box = e => e.closest('form') || (e.parentElement && e.parentElement.parentElement) || e.parentElement;
+  const resetNear = e => !!box(e) && Array.from(box(e).querySelectorAll('button, input')).some(x => /^reset$/i.test(label(x)));
+  const rank = e => (/primary/i.test(String(e.className || '')) ? 0 : 2) + (resetNear(e) ? 0 : 1);
+  const order = found.map((e, i) => [rank(e), i, e]).sort((a, b) => a[0] - b[0] || a[1] - b[1]).map(x => x[2]);
+  const b = order[n || 0];
+  if (!b) return null;
   b.click();
-  return {tag: b.tagName, id: b.id || null, cls: String(b.className || '').slice(0, 80), candidates: found.length,
-          beside_reset: !!nearReset};
+  return {n: n || 0, tag: b.tagName, id: b.id || null, cls: String(b.className || '').slice(0, 80),
+          candidates: found.length, beside_reset: resetNear(b)};
 }"""
+PRESS_TRIES = 3
 JSON_SEARCH_HEADERS = {"content-type": "application/json; charset=utf-8", "x-requested-with": "XMLHttpRequest"}
 
 
@@ -402,10 +406,13 @@ def known_request(url: str) -> dict | None:
 def search_all(reader, url: str, delay_ms: int) -> dict:
     """Load the dashboard, capture its NewSearch request, page through every row."""
     captured = {}
+    posts = []  # the paths the page itself posts to on its own host, so a press that finds no search shows where
 
     def on_request(req):
         if "/Search/NewSearch" in req.url and req.method == "POST" and "url" not in captured:
             captured.update(url=req.url, post=req.post_data or "", headers=dict(req.headers))
+        if req.method == "POST" and urllib.parse.urlparse(req.url).netloc == urllib.parse.urlparse(url).netloc:
+            posts.append(urllib.parse.urlparse(req.url).path)
 
     reader.page.on("request", on_request)
     page = reader.load(url)
@@ -414,13 +421,23 @@ def search_all(reader, url: str, delay_ms: int) -> dict:
     if "url" not in captured and page.get("status") == 200 and not known_search(url):
         # Rio Hondo's dashboard (discovery run 44508907581) and SDCCD's since S685 (index runs 44531933532 and
         # 44536348461) load their search model and fields but post no NewSearch until a person presses Search. The
-        # index presses the page's own Search button once, as a person would, and captures what the page posts.
-        try:
-            pressed = reader.page.evaluate(PRESS_SEARCH_JS)
-            if pressed:
-                reader.page.wait_for_timeout(5000)
-        except Exception as e:  # a page that navigates or throws on the press keeps its "no NewSearch" error
-            pressed = {"error": str(e)[:200]}
+        # index presses the page's own Search buttons, one at a time as a person would, until the page posts its
+        # search, and captures what the page posts.
+        pressed = []
+        for n in range(PRESS_TRIES):
+            before = len(posts)
+            try:
+                got = reader.page.evaluate(PRESS_SEARCH_JS, n)
+            except Exception as e:  # a page that navigates or throws on the press keeps its "no NewSearch" error
+                pressed.append({"n": n, "error": str(e)[:200]})
+                break
+            if not got:
+                break
+            reader.page.wait_for_timeout(5000)
+            got["posted"] = sorted(set(posts[before:]))[:10]
+            pressed.append(got)
+            if "url" in captured:
+                break
     reader.page.remove_listener("request", on_request)
     out = {"url": url, "status": page.get("status"), "title": page.get("title")}
     if pressed is not None:
