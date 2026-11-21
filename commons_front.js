@@ -891,7 +891,7 @@
       + (Q.refs.length ? (refsLeft.length ? refsLeft.join(", ") + " to curate" : "every common reference curated") : "the references' remaining work TBA")
       + "; a remaining count of issuer-published skills is TBA.";
     var grid = el("div", { cls: "cmf-phases" }, [
-      phase("Phase 1, now", "What COBI collects itself", [
+      phase("Phase 1, now", "COBI's own collection", [
         ["Collected", "Catalog programs, course requirements and program learning outcomes; course SLOs and objectives from public course outlines; issuer-published credential skills; MAP exhibits and aggregates."],
         ["Curated", "The common references: exhibit titles, courses and their M-IDs, credit recommendations and subjects."],
         ["Connected", "MAP exhibits and aggregates, read nightly, and a saved copy of COCI."],
