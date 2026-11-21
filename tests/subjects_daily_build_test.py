@@ -127,7 +127,8 @@ finally:
 
 # ── (5) the plan's shape ──────────────────────────────────────────────────
 plan = {"held": {"no_route_gives_a_subj4": HELD}, "self_recall": {"thresholds": FLOORS}}
-check("(5) held: a plan of the expected shape reads", hsc.held_of(plan) == (HELD, FLOORS))
+check("(5) held: a plan of the expected shape reads, each row with its reason",
+      hsc.held_of(plan) == ([dict(r, reason="no_route_gives_a_subj4") for r in HELD], FLOORS))
 for label, bad in (("no held list", {"self_recall": {"thresholds": FLOORS}}),
                    ("a renamed held key", {"held": {"no_subj4": HELD}, "self_recall": {"thresholds": FLOORS}}),
                    ("no floors", {"held": {"no_route_gives_a_subj4": HELD}}),

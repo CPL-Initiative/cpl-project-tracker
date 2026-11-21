@@ -950,8 +950,19 @@ jobs:
       # accepted route reaches is held; credit and noncredit split; topics and
       # Strong matches stay out; a twin of an existing M-ID is held for Assign;
       # byte-identical reruns; the TOP code moves nothing. Fixtures only.
+      # Version 2 (Session 695): route (i) only at its per-code floor; a shell
+      # title only under the identity file's convention, measured one college
+      # out; punctuation folds, numerals never; staged-plan ids reserved; the
+      # pile_mint source left as written by kb/_infer_disciplines.py and read as
+      # a session mint by the auditor and the confidence scorer.
       - name: Pile mint dry-run guard (kb/_pile_mint_dryrun.py)
         run: python3 tests/pile_mint_dryrun_test.py
+      # The pile mint apply (Session 695): stops on a moved plan, a curated
+      # course, a merge target, a wrong --expect or a stale live read; untouched
+      # rows byte-identical; counts grow by the planned number; the rollback
+      # returns the original bytes and reserves the ids. Fixtures only.
+      - name: Pile mint apply guard (kb/_pile_mint_apply.py)
+        run: python3 tests/pile_mint_apply_test.py
       # Occupation matcher stemming (Session 263) — stem() strips -er/-or, which
       # is right for `installers -> install` and wrong for `engineer -> engine`
       # and `actors -> act`: those land on a DIFFERENT word, and the coverage

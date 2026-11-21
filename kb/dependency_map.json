@@ -4,7 +4,7 @@
   "supabase_tables": 119,
   "rpcs": 68,
   "edge_functions": 16,
-  "file_datasets": 1117,
+  "file_datasets": 1120,
   "external_services": 197,
   "consumers": 645,
   "workflows": 76,
@@ -4753,14 +4753,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 707
+     "line": 708
     },
     {
      "id": "script:kb/_zband_retire_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 374
+     "line": 375
     }
    ],
    "served": false,
@@ -6134,7 +6134,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 559
+     "line": 970
     },
     {
      "id": "script:kb/_prefix_alias_census.py",
@@ -6205,7 +6205,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 562
+     "line": 973
     }
    ],
    "served": false,
@@ -6329,7 +6329,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1801,
+     "line": 1802,
      "tabs": [
       "coci-lookup"
      ]
@@ -6856,7 +6856,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1589,
+     "line": 1590,
      "tabs": [
       "coci-lookup"
      ]
@@ -6959,7 +6959,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1677,
+     "line": 1678,
      "tabs": [
       "coci-lookup"
      ]
@@ -11719,7 +11719,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 666
+     "line": 667
     }
    ],
    "served": false,
@@ -11732,7 +11732,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 661
+     "line": 662
     }
    ],
    "served": false,
@@ -11745,7 +11745,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 671
+     "line": 672
     },
     {
      "id": "script:kb/_zband_retire_dryrun.py",
@@ -12603,7 +12603,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 568
+     "line": 980
     }
    ],
    "producers": [
@@ -12925,7 +12925,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 110
+     "line": 119
     },
     {
      "id": "script:kb/_infer_disciplines_from_desc.py",
@@ -13023,7 +13023,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1377
+     "line": 1397
     },
     {
      "id": "script:kb/_seed_authority_codes.py",
@@ -13439,7 +13439,7 @@
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 185
+     "line": 200
     },
     {
      "id": "script:kb/_infer_disciplines_from_desc.py",
@@ -13526,6 +13526,13 @@
      "line": 84
     },
     {
+     "id": "script:kb/_pile_mint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 90
+    },
+    {
      "id": "script:kb/_pols_remint.py",
      "kind": "script",
      "direction": "read",
@@ -13579,7 +13586,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1356
+     "line": 1376
     },
     {
      "id": "script:kb/_seed_authority_codes.py",
@@ -13948,7 +13955,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 180
+     "line": 195
     },
     {
      "id": "script:kb/_jev_adjudicate.py",
@@ -13991,6 +13998,13 @@
      "direction": "read",
      "how": "literal",
      "line": 86
+    },
+    {
+     "id": "script:kb/_pile_mint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 90
     },
     {
      "id": "script:kb/_pols_remint.py",
@@ -14046,7 +14060,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1412
+     "line": 1432
     },
     {
      "id": "script:kb/_seed_canonical_subj4.py",
@@ -14373,7 +14387,7 @@
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 206
+     "line": 221
     },
     {
      "id": "script:kb/_infer_disciplines_from_desc.py",
@@ -14460,6 +14474,13 @@
      "line": 85
     },
     {
+     "id": "script:kb/_pile_mint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 90
+    },
+    {
      "id": "script:kb/_pols_remint.py",
      "kind": "script",
      "direction": "read",
@@ -14513,7 +14534,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1357
+     "line": 1377
     },
     {
      "id": "script:kb/_seed_authority_codes.py",
@@ -14675,7 +14696,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 571
+     "line": 983
     }
    ],
    "producers": [
@@ -14759,7 +14780,7 @@
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 194
+     "line": 209
     },
     {
      "id": "script:kb/_infer_disciplines_from_desc.py",
@@ -15002,7 +15023,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1363
+     "line": 1383
     },
     {
      "id": "script:kb/_seed_coci_minted_mids.py",
@@ -16370,7 +16391,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 458
+     "line": 459
     }
    ],
    "served": true,
@@ -16731,7 +16752,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 69
+     "line": 78
     },
     {
      "id": "script:kb/_mq_title5_rename.py",
@@ -16752,7 +16773,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1382
+     "line": 1402
     }
    ],
    "served": false,
@@ -17892,7 +17913,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 49
+     "line": 51
     },
     {
      "id": "script:kb/_zband_retire_dryrun.py",
@@ -18562,7 +18583,7 @@
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 1311
+     "line": 1327
     }
    ],
    "served": false,
@@ -18575,7 +18596,7 @@
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 1261
+     "line": 1277
     }
    ],
    "served": false,
@@ -18625,6 +18646,19 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:kb/pile_mint_out/2026-11-21_v3/closest_measure.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_pile_mint_dryrun.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 1047
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:kb/plan.json": {
@@ -19728,7 +19762,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1373
+     "line": 1393
     },
     {
      "id": "script:kb/_seed_authority_codes.py",
@@ -19937,7 +19971,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1367
+     "line": 1387
     },
     {
      "id": "script:kb/_seed_authority_codes.py",
@@ -20741,7 +20775,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 73
+     "line": 82
     },
     {
      "id": "script:kb/_infer_disciplines_from_desc.py",
@@ -20958,7 +20992,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 301
+     "line": 357
     },
     {
      "id": "script:kb/_jev_next_steps.py",
@@ -21275,7 +21309,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1190,
+     "line": 1191,
      "tabs": [
       "coci-lookup"
      ]
@@ -21677,7 +21711,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 52
+     "line": 61
     }
    ],
    "producers": [
@@ -21715,7 +21749,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 53
+     "line": 62
     }
    ],
    "producers": [
@@ -21956,7 +21990,7 @@
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 622
+     "line": 655
     }
    ],
    "served": false,
@@ -22178,7 +22212,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1396
+     "line": 1416
     }
    ],
    "served": true,
@@ -22959,7 +22993,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 332
+     "line": 333
     }
    ],
    "served": false,
@@ -22972,7 +23006,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 336
+     "line": 337
     }
    ],
    "served": false,
@@ -23725,6 +23759,19 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:overmerge_out/*/alias_map.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_pile_mint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 89
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:package.json": {
@@ -28605,6 +28652,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/pile_mint_apply_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/pile_mint_dryrun_test.py": {
    "consumers": [
     {
@@ -30202,7 +30262,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 948,
+     "line": 949,
      "tabs": [
       "coci-lookup"
      ]
@@ -30646,7 +30706,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1590,
+     "line": 1591,
      "tabs": [
       "coci-lookup"
      ]
@@ -30827,7 +30887,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 560
+     "line": 971
     },
     {
      "id": "script:kb/_program_requirements_units_rules.py",
@@ -30848,7 +30908,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1436
+     "line": 1456
     },
     {
      "id": "script:kb/_subjects_list_recode.py",
@@ -37622,6 +37682,7 @@
     "tests/zband_retire_apply_test.py",
     "tests/uc_cur_promote_test.py",
     "tests/pile_mint_dryrun_test.py",
+    "tests/pile_mint_apply_test.py",
     "tests/occupation_matcher_stemming_test.py",
     "tests/identities_rekey_test.py",
     "tests/identities_rebuild_test.py",

@@ -6,10 +6,14 @@ the M-ID cards they unblock. Sam, 2026-11-20 (r-subjects-card-on-the-commons-sam
 commons card for subjects to house the common subjects and local subject titles we'll be establishing from catalog
 data?"
 
-The pile mint dry run (kb/_pile_mint_dryrun.py) holds a course under `held.no_route_gives_a_subj4` when no route gives
-it a SUBJ4 (a common four-letter subject code). Those courses share a much shorter list of local subject codes: once
-a person decides the common subject code for one local code, every held course under it can be minted. This tool
-groups the held list by local subject code (statewide, then by college) and writes, per code:
+The pile mint dry run (kb/_pile_mint_dryrun.py) holds a course a common four-letter subject code (SUBJ4) for its
+local subject would help release under three reasons (HELD_REASONS): no route gives it a SUBJ4
+(`no_route_gives_a_subj4`), the subject map's reading of its code is below route (i)'s floor
+(`route_i_below_its_floor`), or its title is a generic shell with no convention (`shell_title_no_convention`, a ruled
+kind's title left out: RULED_BY_KIND decides those). Those courses share a much shorter list of local subject codes:
+once a person decides the common subject code for one local code, the held courses under it can be minted. Each
+course carries its reason. This tool groups the held courses by local subject code (statewide, then by college) and
+writes, per code:
 
   - the colleges using it and the held courses each one releases (count, control numbers, up to 5 example titles);
   - the printed subject name, where kb/status/local_subject_titles.json (the Subjects card's file) holds one;
@@ -33,7 +37,12 @@ the document less its _sources, whose plan date and identity-file stamp move eve
 inputs through its load_inputs, so the fingerprint is taken over the list it produces, never over those files' bytes.
 With --if-changed a run whose fingerprint matches the file's leaves the file untouched.
 
-  python3 kb/_held_subject_codes.py [--plan PATH] [--out PATH] [--if-changed]
+GUARD (held_of). A plan with none of the held reasons, a held reason that is not a list, or a row missing a field
+stops the build. A held count that falls by more than half against the committed file stops the write with a warning
+(a plan whose held lists changed meaning would otherwise publish a near-empty list without a word), unless
+--expect-fall names the fall as expected.
+
+  python3 kb/_held_subject_codes.py [--plan PATH] [--out PATH] [--if-changed] [--expect-fall]
 """
 from __future__ import annotations
 
@@ -54,6 +63,26 @@ TITLES = os.path.join("kb", "status", "local_subject_titles.json")
 EXAMPLES = 5
 NEAR_MAX = 5
 ROUTE_NAMES = {"ii": "college_subject_code", "iii": "statewide_subject_code"}
+# The plan's held reasons a decided common subject code for the course's local subject would help release.
+HELD_REASONS = ("no_route_gives_a_subj4", "route_i_below_its_floor", "shell_title_no_convention")
+FALL_LIMIT = 0.5
+
+
+def fall_guard(new_held, committed_path, expect_fall=False):
+    """None when the write may go ahead, else the warning: the held count fell by more than half against the
+    committed file and no flag names the fall as expected."""
+    if expect_fall or not os.path.exists(committed_path):
+        return None
+    try:
+        with open(committed_path, encoding="utf-8") as f:
+            was = int(((json.load(f).get("totals") or {}).get("held")) or 0)
+    except (OSError, ValueError, TypeError, AttributeError) as e:
+        return (f"the committed {committed_path} cannot be read ({type(e).__name__}), so the fall cannot be "
+                "measured. Nothing written. Pass --expect-fall to write anyway.")
+    if was and new_held < was * (1 - FALL_LIMIT):
+        return (f"the held count falls from {was} to {new_held}, more than half; the plan's held lists may have "
+                "changed meaning. Nothing written. Pass --expect-fall when the fall is expected.")
+    return None
 
 
 def normsubj(s):
@@ -140,7 +169,7 @@ def printed_names(titles_doc):
 
 
 def build(held, thresholds, col, state, disc_map, titles_doc, short_max=2, sources=None):
-    """Pure. held: the plan's held.no_route_gives_a_subj4 rows. thresholds: {route name: floor or None}. col:
+    """Pure. held: held_of(plan), each row with its reason. thresholds: {route name: floor or None}. col:
     {(college, ns): Counter}. state: {ns: Counter}. Returns the document."""
     names = printed_names(titles_doc)
     by_code = defaultdict(lambda: defaultdict(list))
@@ -152,15 +181,23 @@ def build(held, thresholds, col, state, disc_map, titles_doc, short_max=2, sourc
         colleges = []
         whys = Counter()
         spell = Counter()
+        reasons = Counter()
         for college in sorted(by_col):
             rows = sorted(by_col[college], key=lambda r: (r["title"], r["control_number"]))
             for r in rows:
-                whys[r.get("why") or "no route reaches its floor"] += 1
+                reason = r.get("reason") or HELD_REASONS[0]
+                reasons[reason] += 1
+                if reason == "no_route_gives_a_subj4":
+                    whys[r.get("why") or "no route reaches its floor"] += 1
+                elif reason == "route_i_below_its_floor":
+                    whys[f"route (i) reads {r.get('subj4')}, right for {r.get('right')} of {r.get('holders')} "
+                         "holders, under its 98% floor"] += 1
                 spell[r["subject"]] += 1
             colleges.append({
                 "college": college, "held": len(rows),
                 "printed_name": names.get((college_key(college), ns)),
                 "control_numbers": [r["control_number"] for r in rows],
+                "reasons": [r.get("reason") or HELD_REASONS[0] for r in rows],
                 "_titles": [r["title"] for r in rows[:EXAMPLES]],
                 "college_vote": vote(col.get((college, ns)), f2),
             })
@@ -187,6 +224,7 @@ def build(held, thresholds, col, state, disc_map, titles_doc, short_max=2, sourc
         codes.append({
             "code": sorted(spell.items(), key=lambda kv: (-kv[1], kv[0]))[0][0], "key": ns,
             "spellings": sorted(spell), "held": held_n, "pairs": len(colleges), "colleges": colleges,
+            "by_reason": dict(sorted(reasons.items())),
             "printed_names": sorted({c["printed_name"] for c in colleges if c["printed_name"]}),
             "examples": examples,
             "subject_map": {"reads": disc_map.get(ns), "notes": dict(sorted(whys.items(), key=lambda kv: (-kv[1], kv[0])))},
@@ -196,8 +234,9 @@ def build(held, thresholds, col, state, disc_map, titles_doc, short_max=2, sourc
     ranked = [c["held"] for c in codes]
     pairs = sum(len(c["colleges"]) for c in codes)
     return {
-        "_what": ("The local subject codes the pile mint holds on (no route gives their courses a SUBJ4), ranked by "
-                  "the held courses a decided common subject code releases. Read-only; nothing here is a decision."),
+        "_what": ("The local subject codes the pile mint holds on (the held reasons a common subject code bears on: "
+                  "no route, route (i) under its floor, a shell title with no convention), ranked by the held "
+                  "courses a decided common subject code would help release. Read-only; nothing here is a decision."),
         "_rule": ("Codes are compared in the subject map's key form (upper case, letters and digits only), statewide; "
                   "each college under a code is listed with its own held courses. A suggestion is the vote's winner "
                   "with its votes and share; it missed the 98% self-recall floor, which is why the course is held, "
@@ -207,6 +246,7 @@ def build(held, thresholds, col, state, disc_map, titles_doc, short_max=2, sourc
         "_sources": sources or {},
         "floors": {"college_subject_code": f2, "statewide_subject_code": f3},
         "totals": {"held": sum(ranked), "codes": len(codes), "pairs": pairs,
+                   "by_reason": dict(sorted(Counter(r.get("reason") or HELD_REASONS[0] for r in held).items())),
                    "top_20_release": sum(ranked[:20]),
                    "with_suggestion": sum(1 for c in codes if c["suggestion"]),
                    "with_printed_name": sum(1 for c in codes if c["printed_names"])},
@@ -241,18 +281,32 @@ def fingerprint(doc):
     return hashlib.sha256(dump(body).encode("utf-8")).hexdigest()
 
 
-def held_of(plan):
-    """The plan's held list and floors, or an exit when the plan no longer has that shape: a renamed key must stop the
-    build, never write an empty list over yesterday's file."""
-    held = (plan.get("held") or {}).get("no_route_gives_a_subj4")
+def held_of(plan, ruled_kinds=(), committed=None, expect_fall=False):
+    """(held rows, floors). The held courses a code decision bears on, each with its `reason` (one of HELD_REASONS); a
+    shell title of a ruled kind is left out, since the ruling places it. Exits when the plan no longer has that shape
+    (a renamed key must stop the build, never write an empty list over yesterday's file), and when the count falls by
+    more than half against the committed file without expect_fall."""
+    lists = (plan.get("held") or {})
     thresholds = (plan.get("self_recall") or {}).get("thresholds")
-    if not isinstance(held, list) or not isinstance(thresholds, dict):
-        raise SystemExit("ABORT: the pile mint plan has no held.no_route_gives_a_subj4 list or no "
-                         "self_recall.thresholds; kb/_pile_mint_dryrun.py changed its shape. Nothing written.")
+    present = [k for k in HELD_REASONS if k in lists]
+    if not present or not isinstance(thresholds, dict) or any(not isinstance(lists[k], list) for k in present):
+        raise SystemExit("ABORT: the pile mint plan has none of the held lists " + ", ".join(HELD_REASONS)
+                         + " (or one is not a list), or no self_recall.thresholds; kb/_pile_mint_dryrun.py changed "
+                         "its shape. Nothing written.")
+    held = []
+    for reason in present:
+        for r in lists[reason]:
+            if reason == "shell_title_no_convention" and isinstance(r, dict) and r.get("kind") in ruled_kinds:
+                continue
+            held.append(dict(r, reason=reason) if isinstance(r, dict) else r)
     need = ("college", "control_number", "subject", "title")
     bad = [r for r in held if not isinstance(r, dict) or any(k not in r for k in need)]
     if bad:
         raise SystemExit(f"ABORT: {len(bad)} held rows lack one of {', '.join(need)}; nothing written.")
+    if committed:
+        warn = fall_guard(len(held), committed, expect_fall)
+        if warn:
+            raise SystemExit("[held_subject_codes] WARNING: " + warn)
     return held, thresholds
 
 
@@ -281,6 +335,7 @@ def main(argv=None):
     ap.add_argument("--plan", default=None, help="a plan.json kb/_pile_mint_dryrun.py wrote; default: computed in memory")
     ap.add_argument("--out", default=os.path.join(ROOT, OUT))
     ap.add_argument("--if-changed", action="store_true", help="leave the file untouched when the list did not change")
+    ap.add_argument("--expect-fall", action="store_true", help="the held count may fall by more than half")
     a = ap.parse_args(argv)
     import _pile_mint_dryrun as pm  # noqa: E402  (load_inputs, compute_plan, holders, own_subj4, vote_tables)
     inp = pm.load_inputs()
@@ -291,7 +346,8 @@ def main(argv=None):
     else:
         plan = pm.compute_plan(inp, pm.date.today().isoformat())
         plan_from = "computed in memory by kb/_pile_mint_dryrun.py compute_plan"
-    held, thresholds = held_of(plan)
+    held, thresholds = held_of(plan, tuple(getattr(pm, "RULED_BY_KIND", {})), committed=a.out,
+                               expect_fall=a.expect_fall)
     col, state = vote_tables(inp, pm)
     with open(os.path.join(ROOT, TITLES), encoding="utf-8") as f:
         titles_doc = json.load(f)

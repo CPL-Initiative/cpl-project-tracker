@@ -237,6 +237,7 @@ STATE_SCORE = {
     "inferred-high":         0.80,  # subject_map (curator-anchored subject code)
     "inferred-low":          0.60,  # title_keyword / description / top_code / top_division (heuristic)
     "machine-decided":       0.80,  # confidence_v1 / past_rulings_v1 / music_split_v1 (issue 3454): the scorer decided
+    "session-mint":          0.60,  # pile_mint (kb/_pile_mint_apply.py): a session's mint, no person confirmed
     "aggregated-varied":     0.40,  # members disagree; spread shown, no single value
     "seed-untouched":        0.30,  # original Phase B seed, never re-checked
     "off-scheme":            0.00,  # ID family doesn't follow CCN-aligned scheme
@@ -347,6 +348,13 @@ def _classify_mid_discipline(rec):
         return {"state": "machine-decided", "value": v, "source": src,
                 "confidence": rec.get("discipline_confidence"),
                 "rule": (rec.get("_confidence_from") or {}).get("rule")}
+    # The pile mint (kb/_pile_mint_dryrun.py, landed by kb/_pile_mint_apply.py): a session placed the SUBJ4 and the
+    # discipline together on a route measured at 98% (`pile_mint_route`). No person confirmed it and no second signal
+    # checked it, so it scores as a session's mint, below the curator-anchored subject map and the scorer's decisions,
+    # and it is never the untouched Phase B seed.
+    if src == "pile_mint":
+        return {"state": "session-mint", "value": v, "source": src,
+                "confidence": rec.get("discipline_confidence"), "route": rec.get("pile_mint_route")}
     if src in ("title_keyword", "description", "top_code", "top_division"):
         # TOP is faculty-entered in COCI with no data-entry gatekeeper, so it is
         # a last-in-line signal — never authoritative (see the TOP caveat in
@@ -913,9 +921,21 @@ def _classify_subject_collision(rec, disc_to_modal_subj4):
     return s4 != modal
 
 
+def _bag_anchor(rec):
+    """A row whose title may teach its discipline's bag: the subject map filled it, or a pile mint placed it through
+    the subject map on an ordinary title. A pile mint on a generic-shell title (`pile_mint_shell`: practicum,
+    tutoring, work experience...) never teaches a bag: its title names a format, not a field."""
+    src = rec.get("discipline_source")
+    if src == "subject_map":
+        return True
+    return src == "pile_mint" and rec.get("pile_mint_route") == "subject_map" and not rec.get("pile_mint_shell")
+
+
 def _build_disc_bag(courses, lex):
     """Per-discipline token bag, bootstrapped from subject_map-sourced rows
-    only (the trust anchor) + lexicon title_keywords + discipline-name tokens.
+    only (the trust anchor; `_bag_anchor`, which also admits a pile mint placed
+    through the subject map on an ordinary title) + lexicon title_keywords +
+    discipline-name tokens.
 
     Returns {discipline: set(tokens)}. Disciplines with no subject_map
     coverage and no lexicon entries still get a bag containing their own
@@ -923,7 +943,7 @@ def _build_disc_bag(courses, lex):
     """
     disc_titles = defaultdict(list)
     for cid, rec in courses.items():
-        if rec.get("discipline_source") != "subject_map":
+        if not _bag_anchor(rec):
             continue
         if (rec.get("corroboration_members") or 0) < 2:
             continue
