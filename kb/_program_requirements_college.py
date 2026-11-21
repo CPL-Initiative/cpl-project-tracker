@@ -6964,6 +6964,23 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
             sc and sc["coverage"]["share"], sc and sc["arithmetic"]["status"],
             row["cost_usd"], row["error"] or ""), flush=True)
 
+    def account(finished: bool) -> None:
+        # The calls this shard made and the ones that failed, which file_run lists in the summary and
+        # check-extract reads to end the job red (extract_failed_run).
+        _write(os.path.join(out_dir, "extract_account_%d.json" % shard),
+               {"run": run_id, "shard": shard, "calls": calls[0],
+                # every program this shard was to send: file_run refuses a run that ended short of them (read_short)
+                "sent": sorted(s["control_number"] for s in mine),
+                # False until the finally below writes the account again. A step killed in between (the wave's
+                # 345-minute timeout skips the finally) leaves the account unfinished, and file_run, which the
+                # wave runs under always(), files nothing for it (read_short; S697 second reader on #3641).
+                "finished": finished,
+                "failed": sorted(failed, key=lambda x: x["control_number"]),
+                # what the spend meter counted toward the hard stop: priced usage, worst cases, $0 refusals
+                "meter_charge_usd": round(meter.spent, 5)})
+
+    # Written before the first call, so the programs this shard is to send are on disk however the step ends.
+    account(False)
     # Each call waits on the model for about 15 s; six at once keep a college
     # inside one job, and the function answers each call on its own.
     from concurrent.futures import ThreadPoolExecutor
@@ -6989,15 +7006,7 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
                    sorted(kept_list, key=lambda x: x["control_number"]))
             print("kept_passing: %d filed records kept where the read passed less or covered less" % len(kept_list),
                   flush=True)
-        # The calls this shard made and the ones that failed, which file_run lists in the summary and
-        # check-extract reads to end the job red (extract_failed_run).
-        _write(os.path.join(out_dir, "extract_account_%d.json" % shard),
-               {"run": run_id, "shard": shard, "calls": calls[0],
-                # every program this shard was to send: file_run refuses a run that ended short of them (read_short)
-                "sent": sorted(s["control_number"] for s in mine),
-                "failed": sorted(failed, key=lambda x: x["control_number"]),
-                # what the spend meter counted toward the hard stop: priced usage, worst cases, $0 refusals
-                "meter_charge_usd": round(meter.spent, 5)})
+        account(True)
         if failed:
             print("extract_failed: %d of %d calls failed; the filed records stay" % (len(failed), calls[0]), flush=True)
     if halt:
@@ -7161,9 +7170,18 @@ def same_address(a: str, b: str) -> bool:
 
 
 # An edition named in a catalog file's name: 2026-27-Catalog-v2-508.pdf and 2026-27-Catalog-v3-508.pdf are two
-# editions of one catalog (College of the Canyons, S690).
-EDITION_TOKEN = re.compile(r"(?i)(?<![a-z0-9])v(?:er(?:sion)?)?[-_]?\d+(?![a-z0-9])")
+# editions of one catalog (College of the Canyons, S690). One or two digits: catalog_v2025.pdf and catalog_v2026.pdf
+# name two years' catalogs, never two editions of one (S697 second reader on #3641).
+EDITION_TOKEN = re.compile(r"(?i)(?<![a-z0-9])v(?:er(?:sion)?)?[-_]?\d{1,2}(?![a-z0-9])")
 PDF_PAGE_FRAGMENT = re.compile(r"(?:^|[&;])page=(\d+)")
+
+
+def named_fragment(url: str | None) -> str:
+    """The name an address's fragment gives, lowercased, or "": a fragment of viewer parameters (#page=107,
+    #page=12&zoom=100) names no part of the page, and one without them (#accounting-aa) names a program on it.
+    Two fragments that name different programs keep two pages apart (S697 second reader on #3641)."""
+    frag = urllib.parse.urlparse(url or "").fragment
+    return "" if not frag or "=" in frag else frag.lower()
 
 
 def _edition_blind(url: str) -> str:
@@ -7188,10 +7206,12 @@ def pdf_page_of(url: str | None) -> int | None:
 
 def names_page(a: str | None, b: str | None) -> bool:
     """Two addresses naming one page with no page offset: equal, or one file (same_file) and the same PDF page.
-    The test for whether a filed sources.json entry names the page a record was read from (S411)."""
+    The test for whether a filed sources.json entry names the page a record was read from (S411). A fragment
+    that names a program (named_fragment) must name the same one."""
     if a == b:
         return bool(a)
-    return bool(a) and bool(b) and same_file(a, b) and pdf_page_of(a) == pdf_page_of(b)
+    return (bool(a) and bool(b) and same_file(a, b) and pdf_page_of(a) == pdf_page_of(b)
+            and named_fragment(a) == named_fragment(b))
 
 
 def deliberate_page(source: dict | None) -> bool:
@@ -7209,10 +7229,11 @@ def same_page(a: str | None, b: str | None) -> bool:
     catalog/iq), a new edition of the same catalog (same_file; College of the Canyons' v2 against v3), and a PDF
     page one page off (#page=129 against #page=130) are one page. The gate's coverage half (the moved page's
     coverage equal or higher) is the caller's: unchanged() asks equal coverage and codes, filed_from() no lower.
-    Two equal strings are one page, as before."""
+    Two equal strings are one page, as before. Two fragments that name different programs on one page
+    (named_fragment: .../programs/#accounting-aa against .../programs/#biology-as) are two pages."""
     if a == b:
         return True
-    if not a or not b or not same_file(a, b):
+    if not a or not b or not same_file(a, b) or named_fragment(a) != named_fragment(b):
         return False
     pa, pb = pdf_page_of(a), pdf_page_of(b)
     if pa is None or pb is None:
@@ -7592,7 +7613,11 @@ def read_short(out_dir: str, report: dict) -> str | None:
       * an extraction run (out/records present) whose capture read no program's text at all, the same loss on a
         catalog of pages;
       * an extraction that ended short: a program its account lists as sent that came back with no record and
-        is neither a failed call nor one the hard stop or a halt held (not_sent_<shard>.json)."""
+        is neither a failed call nor one the hard stop or a halt held (not_sent_<shard>.json);
+      * an extraction that never finished: an account still marked finished false, or a price that let the
+        extraction go (wave_price.json) and no account at all. The wave files under always() after its 345-minute
+        timeout kills the extract step, which then never writes its account (S697 second reader on #3641).
+    A prior-year read is held to the same tests before file_prior files it."""
     pdf = report.get("pdf")
     if isinstance(pdf, dict) and not pdf.get("pages_total") and (report.get("programs") or 0):
         return "the catalog PDF %s gave no page (%s%s)" % (
@@ -7616,9 +7641,28 @@ def read_short(out_dir: str, report: dict) -> str | None:
     acct = extract_accounts(out_dir)
     held_back.update(x["control_number"] for x in acct["failed"])
     sent: list[str] = []
-    for path in sorted(glob.glob(os.path.join(out_dir, "extract_account_*.json"))):
+    unfinished: list[int] = []
+    accounts = sorted(glob.glob(os.path.join(out_dir, "extract_account_*.json")))
+    for path in accounts:
         with open(path) as fh:
-            sent.extend(json.load(fh).get("sent") or [])
+            a = json.load(fh)
+        sent.extend(a.get("sent") or [])
+        if a.get("finished") is False:
+            unfinished.append(a.get("shard"))
+    if unfinished:
+        # The account extract writes before its first call says finished false until its finally writes it again;
+        # a wave step the 345-minute timeout killed never gets there (S697 second reader on #3641).
+        return "the extraction never finished (shard %s's account is the one written before its first call; %d " \
+               "programs were to be sent)" % (",".join(str(x) for x in unfinished), len(sent))
+    try:
+        with open(os.path.join(out_dir, "wave_price.json")) as fh:
+            priced = json.load(fh)
+    except (OSError, ValueError):
+        priced = {}
+    if isinstance(priced, dict) and priced.get("go") is True and not accounts:
+        # The price let the extraction go and the extraction left no account: it stopped before its first call,
+        # and the records under out/ are what it had copied by then.
+        return "the extraction the price let go (%s programs) left no account" % priced.get("would_extract")
     missing = [cn for cn in sent if cn not in held_back
                and not os.path.isfile(os.path.join(out_dir, "records", cn + ".json"))]
     if missing:
@@ -7652,8 +7696,8 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
         we = report["would_extract"]
         we["forced_unbound"] = [fu[k] for k in sorted(fu)]
         we["refused_passing"] = [e for e in we.get("refused_passing") or [] if e["control_number"] not in fu]
-    if report.get("prior"):
-        return file_prior(dest, out_dir, report)
+    # A prior-year read is held to the same test (S697 second reader on #3641): a prior read whose PDF timed out
+    # took prior_2025-2026.json from filed ['1'] to [], and prior_year_flags then flagged both of its programs.
     short = read_short(out_dir, report)
     if short:
         # f-timed-out-read-still-files-s691: Santa Monica's read 44883500729 timed out on its catalog PDF, every
@@ -7661,6 +7705,8 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
         print("::error::%s: this run is no whole read, so nothing is filed and the records under %s stay as "
               "they are. Run the read again." % (short, os.path.relpath(dest, os.path.dirname(HERE))))
         return 1
+    if report.get("prior"):
+        return file_prior(dest, out_dir, report)
     if not os.path.isdir(os.path.join(out_dir, "records")):
         os.makedirs(dest, exist_ok=True)
         _write(os.path.join(dest, "capture_preview.json"), report)
@@ -7755,6 +7801,19 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
     for path in sorted(glob.glob(os.path.join(out_dir, "kept_passing_*.json"))):
         with open(path) as fh:
             kept.extend(json.load(fh))
+    if nn:
+        # A program only= did not name keeps its filed record as filed, so the earlier filing's kept_passing entry
+        # for it still describes that record: it stays, carrying the run that wrote it (S697 second reader on #3641).
+        try:
+            with open(os.path.join(dest, "kept_passing.json")) as fh:
+                earlier = json.load(fh)
+        except (OSError, ValueError):
+            earlier = {}
+        earlier = earlier if isinstance(earlier, dict) else {}
+        mine = {e.get("control_number") for e in kept}
+        kept.extend(dict(e, run=e.get("run") or earlier.get("run")) for e in earlier.get("programs") or []
+                    if e.get("control_number") in nn and e.get("control_number") not in mine)
+        kept.sort(key=lambda x: str(x.get("control_number")))
     if os.path.exists(os.path.join(dest, "kept_passing.json")):
         os.remove(os.path.join(dest, "kept_passing.json"))
     if kept:
