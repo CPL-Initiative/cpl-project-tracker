@@ -1,0 +1,320 @@
+{
+ "college": "Santa Monica College",
+ "control_number": "44004",
+ "shape": "certificate",
+ "title": "Aquaculture Technician I",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=90",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8413,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8413,
+    "output_tokens": 3433,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3433,
+  "output_tokens_details": {
+   "thinking_tokens": 1618
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10231,
+ "ms": 28829,
+ "seconds": 29.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 15,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "KINPE49D"
+   ],
+   "flagged": [
+    "KINPE49D"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    13.0,
+    17.0
+   ],
+   "stated": [
+    14.0,
+    19.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 13.0-17.0; the catalog states 14.0-19.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Aquaculture Technician I, Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 14,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "analyze and evaluate the history, ecology, and sustainability of local and global aquaculture systems. Special attention will be paid to indigenous and modern practices, environmental and human health impacts, as well as endangered species.",
+    "Create, design, construct, monitor, and maintain aquaculture systems for a variety of aquatic species.",
+    "Apply their understanding of SCUBA and/or First Aid / CPR knowledge to establish safe practices in their future career in aquaculture or a related field."
+   ],
+   "careers": [
+    "aquaculture industry"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "AQUA 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AQUA 2",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AQUA 88B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "AQUA 90A",
+        "units": 1,
+        "catalog_addition": false
+       },
+       {
+        "code": "AQUA 90B",
+        "units": 2,
+        "catalog_addition": false
+       },
+       {
+        "code": "AQUA 90C",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Aquaculture Focused Electives: BIOL 15",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Aquaculture Focused Electives",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL 15",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "GROUP 1",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": "Aquaculture Focused Electives",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL 9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 10",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 55",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "GROUP 1 (second group)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": "Aquaculture Focused Electives",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL 15N",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 31",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Scuba Diving/First Aid Course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "AQUA 10A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "KIN PE 49D",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HEALTH 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints the heading as 'Aquaculture Aquaculture Technician I, Certificate of Achievement'; the leading 'Aquaculture' appears to be a department label. The preceding section on the page (Area of Emphasis 22-27 units, with AQUA 3, 4, 5) belongs to another award and was not read.",
+   "Required Courses (8-10 units) = AQUA 1 + AQUA 2 + one of AQUA 88B / 90A / 90B / 90C, recorded as one entry with alternatives.",
+   "Aquaculture Focused Electives (4-6 units): the student completes either BIOL 15 alone, or two classes, one from each group. The second path requires BOTH group blocks (one course from each), not just one; all three blocks share the option_group. The 4-6 unit total applies to the whole elective area, so stated is left null on each block. 'It is highly recommended that students complete BIOL 15' is advice within a required choice, so it was not recorded as a recommended block.",
+   "The catalog labels both elective groups 'GROUP 1'; the second is presumably Group 2.",
+   "Scuba Diving/First Aid Course prints no 'select one' wording, but the 2-3 unit total implies one course. AQUA 10A is printed 'same as KIN PE 49D'; KIN PE 49D is recorded as a cross-listed alternative with no units printed beside it. Credit for prior learning/industry certification may substitute.",
+   "The first outcome is embedded in the lead-in 'Upon completion of the program, students will'; it is recorded from 'analyze', and the following sentence 'Special attention will be paid...' is kept with it as part of the same outcome.",
+   "Career field taken from the description ('including the aquaculture industry'); the text names no specific job titles."
+  ]
+ },
+ "extracted_run": "39567439681"
+}

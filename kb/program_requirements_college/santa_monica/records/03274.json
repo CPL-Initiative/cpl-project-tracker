@@ -1,0 +1,532 @@
+{
+ "college": "Santa Monica College",
+ "control_number": "03274",
+ "shape": "degree",
+ "title": "Dance",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=124",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11870,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11870,
+    "output_tokens": 4226,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4226,
+  "output_tokens_details": {
+   "thinking_tokens": 1189
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.132,
+ "ms": 33558,
+ "seconds": 33.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 41,
+   "listed": 54,
+   "share": 0.759,
+   "missing": [
+    "DANCE31B",
+    "DANCE33A",
+    "DANCE33B",
+    "DANCE34A",
+    "DANCE34B",
+    "DANCE43A",
+    "DANCE43B",
+    "DANCE44A",
+    "DANCE44B",
+    "DANCE5",
+    "DANCE55A",
+    "DANCE57A",
+    "DANCE60"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "DANCE77"
+   ],
+   "flagged": [
+    "DANCE77"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    4.0,
+    4.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Dance, Associate Degree (heading is on the preceding page; not in the supplied text)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Preceding requirement block (continued from page 123; name not in text)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DANCE 61",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Additional Electives",
+    "rule": "choose_units",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 2
+    },
+    "courses": [
+     {
+      "code": "DANCE 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 10",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 11",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 12",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 13",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 14",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 15",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 16",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 17",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 18",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 19A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 20",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 21A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 21B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 22A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 22B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 24",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 24B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 25",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 25B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 26A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 27",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 27B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 29",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 31A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 32A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 41A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 41B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 42A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 42B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 55B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 57B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 59A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 62",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 63",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 70",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 75",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECE 75",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 77",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DANCE 79",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "DANCE 5",
+    "why": "not in the visible A.A. section (likely on preceding page); appears only in Dance Teaching certificate section"
+   },
+   {
+    "code": "DANCE 31B",
+    "why": "not in the text; likely on the preceding page not supplied"
+   },
+   {
+    "code": "DANCE 33A",
+    "why": "not in the visible A.A. section; appears only in Dance Teaching certificate section"
+   },
+   {
+    "code": "DANCE 33B",
+    "why": "not in the visible A.A. section; appears only in Dance Teaching certificate section"
+   },
+   {
+    "code": "DANCE 34A",
+    "why": "not in the visible A.A. section; appears only in Dance Teaching certificate section"
+   },
+   {
+    "code": "DANCE 34B",
+    "why": "not in the visible A.A. section; appears only in Dance Teaching certificate section"
+   },
+   {
+    "code": "DANCE 43A",
+    "why": "not in the visible A.A. section; appears only in Dance Teaching certificate section"
+   },
+   {
+    "code": "DANCE 43B",
+    "why": "not in the visible A.A. section; appears only in Dance Teaching certificate section"
+   },
+   {
+    "code": "DANCE 44A",
+    "why": "not in the visible A.A. section; appears only in Dance Teaching certificate section"
+   },
+   {
+    "code": "DANCE 44B",
+    "why": "not in the visible A.A. section; appears only in Dance Teaching certificate section"
+   },
+   {
+    "code": "DANCE 55A",
+    "why": "not in the visible A.A. section; appears only in Commercial Dance certificate section"
+   },
+   {
+    "code": "DANCE 57A",
+    "why": "not in the visible A.A. section; appears only in Commercial Dance certificate section"
+   },
+   {
+    "code": "DANCE 60",
+    "why": "not in the text; likely on the preceding page not supplied"
+   }
+  ],
+  "notes": [
+   "The supplied text begins mid-section on catalog page 123/PDF page 124: the Dance Associate Degree heading, description, outcomes, total units, GE statement and earlier requirement blocks are on the preceding page and were not provided. Only the tail of the requirements is recorded.",
+   "The opening line 'DANCE 61, Fundamentals of Choreography: Composition 1 (2)' belongs to a block whose heading and rule are on the preceding page; recorded as a required ('all') block provisionally — reviewer should verify its actual rule and name.",
+   "It is assumed the text preceding 'Commercial Dance, Certificate of Achievement' belongs to the Dance A.A. degree; verify against the full page 123.",
+   "DANCE 75 and ECE 75 are printed as separate lines but are cross-listed ('same as'); recorded as one entry with ECE 75 as alternative.",
+   "DANCE 77 (Navigating Careers in Dance) is not in the closed list; recorded as a catalog addition.",
+   "Commercial Dance and Dance Teaching certificate sections (with their own outcomes and courses DANCE 90A, 90B, 23, 26B, 32B, ECE 2, PSYCH 11) were not used for this award.",
+   "The Associate Degree Requirements paragraph (SMC GE or Cal-GETC) shown belongs to the Digital Media section; ge_pattern left null since the Dance degree's own statement is not in the text."
+  ]
+ },
+ "extracted_run": "39567439681"
+}
