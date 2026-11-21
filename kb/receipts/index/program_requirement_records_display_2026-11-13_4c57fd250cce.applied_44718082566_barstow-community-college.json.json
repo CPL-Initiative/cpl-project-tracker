@@ -1,0 +1,17 @@
+{
+ "name": "program_requirement_records_display_2026-11-13_4c57fd250cce.applied_44718082566_barstow-community-college.json",
+ "kind": "display_applied",
+ "bucket": "cpl-receipts",
+ "object": "display/applied/program_requirement_records_display_2026-11-13_4c57fd250cce.applied_44718082566_barstow-community-college.json.gz",
+ "build": "4c57fd250cce",
+ "built": "2026-11-13",
+ "bytes": 1118,
+ "sha256": "52b6cc38f2628e57b014986a59a0111209af547cfbf0594143f0c2ac121e9e63",
+ "rows": 68,
+ "stored_at": "2026-11-21T04:52:52Z",
+ "run": "44867993793",
+ "gzip": true,
+ "repo_sha256": "6a01b284c20b3ca7602f0900c4cac300a1e4f43d82d24c8b85aac02fb8fcc356",
+ "repo_bytes": 7287,
+ "repo_blob": "c84721128ecdc3725d0bb8b29fb47fc1a64ff4f8"
+}

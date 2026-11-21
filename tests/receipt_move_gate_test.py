@@ -36,6 +36,7 @@ sys.path.insert(0, os.path.join(ROOT, "kb"))
 import _receipt_store as S  # noqa: E402
 import _receipt_move_display as M  # noqa: E402
 import _program_requirements_display_apply as A  # noqa: E402
+import _row_audit_prune as P  # noqa: E402
 
 passed = 0
 
@@ -195,11 +196,174 @@ finally:
     shutil.rmtree(tmp, ignore_errors=True)
 
 
+# ---- S695 (#3476 item 1): the applied records move to display/applied/, each removed only once it reads back.
+class Flaky(Bucket):
+    """A bucket whose reads fail (unreachable) or hand back other bytes (corrupt)."""
+
+    def __init__(self, unreachable=False, corrupt=False, refuse_put=False):
+        super().__init__()
+        self.unreachable, self.corrupt, self.refuse_put = unreachable, corrupt, refuse_put
+
+    def put(self, obj, data):
+        if self.refuse_put:
+            raise OSError("503 the store is down")
+        return super().put(obj, data)
+
+    def get(self, obj):
+        if self.unreachable:
+            raise OSError("connection refused")
+        data = super().get(obj)
+        return data + b"x" if self.corrupt else data
+
+
+def applied_fixture(n=3):
+    d = tempfile.mkdtemp()
+    rec, index = os.path.join(d, "kb", "receipts"), os.path.join(d, "kb", "receipts", "index")
+    os.makedirs(rec)
+    names = ["program_requirement_records_display_2026-11-13_cdd185495ce4.applied_4400000000%d.json" % i
+             for i in range(n - 1)]
+    names.append("program_requirement_records_display_2026-11-13_f48d35c7623e.applied_43415894285_2_santiago-"
+                 "canyon-college.json")
+    for i, nm in enumerate(names):
+        rb = {"planned": 2 + i, "build": nm.split("_")[5][:12],
+              "rollback": {"to_null": [], "reapply": {"f0f1ee88c04f": ["Cerritos College|0220%d" % i]}}}
+        open(os.path.join(rec, nm), "w").write(json.dumps(rb, indent=1) + "\n")
+    return d, rec, index, names
+
+
+d, rec, index, names = applied_fixture()
+try:
+    paths = [os.path.join(rec, n) for n in names]
+    raw = {n: open(p, "rb").read() for n, p in zip(names, paths)}
+    check(S.kind_of(names[0]) is None, "an applied record is not a display receipt kind (kind_of stays display-only)")
+    bucket = Bucket()
+    res = S.store_applied(paths, bucket, run="44500000001", index_path=index, log=lambda *_: None)
+    check(sorted(res["removed"]) == sorted(names) and not res["stayed"] and not any(os.path.exists(p) for p in paths),
+          "every applied record that reads back is stored and removed: %s" % res)
+    ents = {n: S.read_entry(n, index) for n in names}
+    check(all(e and S.entry_problems(e) == [] for e in ents.values()),
+          "every pointer is a sound display_applied entry: %s" % {n: S.entry_problems(e or {}) for n, e in ents.items()})
+    e0 = ents[names[0]]
+    check(e0["kind"] == "display_applied" and e0["object"] == "display/applied/" + names[0] + ".gz"
+          and e0["gzip"] is True and e0["repo_blob"] == S.git_blob(raw[names[0]])
+          and e0["repo_sha256"] == S.sha256_bytes(raw[names[0]]) and e0["repo_bytes"] == len(raw[names[0]])
+          and e0["build"] == "cdd185495ce4" and e0["built"] == "2026-11-13" and e0["rows"] == 2,
+          "the pointer names the object, the gzip, the repo file's blob, sha256 and size, the build and the rows")
+    check(S.entry_problems(dict(e0, build="ffffffffffff")) and S.entry_problems(dict(e0, name="x.applied_1.json")),
+          "a pointer whose build is not its name's, or whose name is not an applied record's, is refused")
+    check("display_applied" in S.PUBLIC_SAFE, "an applied record may be handed out by step=fetch")
+    # The round trip: the reader of a moved record finds it through the pointer, never in the tree.
+    gone_path = paths[0]
+    got = S.local_or_stored(gone_path, bucket, index_path=index, log=lambda *_: None)
+    check(got != gone_path and not got.startswith(rec) and open(got, "rb").read() == raw[names[0]],
+          "local_or_stored fetches a moved record through its pointer to a temporary folder, byte for byte")
+    for label, store in (("the store is unreachable", Flaky(unreachable=True)), ("no key", None)):
+        try:
+            S.local_or_stored(gone_path, store, index_path=index, log=lambda *_: None)
+            check(False, "a moved record's read refuses when %s" % label)
+        except SystemExit:
+            check(True, "a moved record's read refuses when %s" % label)
+    corrupt = Flaky(corrupt=True)
+    corrupt.objects = dict(bucket.objects)
+    try:
+        S.local_or_stored(gone_path, corrupt, index_path=index, log=lambda *_: None)
+        check(False, "a moved record whose stored bytes differ is refused")
+    except SystemExit:
+        check(True, "a moved record whose stored bytes differ is refused")
+    try:
+        S.local_or_stored(os.path.join(rec, "program_requirement_records_display_2026-11-13_cdd185495ce4.applied_9.json"),
+                          bucket, index_path=index)
+        check(False, "a record neither on disk nor indexed is refused, never read as empty")
+    except SystemExit:
+        check(True, "a record neither on disk nor indexed is refused, never read as empty")
+    # The rollback reader: --only-keys-from takes the moved record through its pointer.
+    check(open(S.local_or_stored(paths[1], bucket, index_path=index, log=lambda *_: None)).read()
+          == raw[names[1]].decode(), "a second moved record reads back the same way")
+finally:
+    shutil.rmtree(d, ignore_errors=True)
+
+# Nothing is removed when the store fails, differs or is unreachable; a re-run removes with no new upload.
+for label, kw in (("the upload fails", {"refuse_put": True}), ("the read-back is unreachable", {"unreachable": True}),
+                  ("the read-back's sha256 differs", {"corrupt": True})):
+    d, rec, index, names = applied_fixture()
+    try:
+        paths = [os.path.join(rec, n) for n in names]
+        res = S.store_applied(paths, Flaky(**kw), index_path=index, log=lambda *_: None)
+        check(not res["removed"] and len(res["stayed"]) == len(names) and all(os.path.exists(p) for p in paths),
+              "nothing is removed when %s: %s" % (label, res))
+    finally:
+        shutil.rmtree(d, ignore_errors=True)
+d, rec, index, names = applied_fixture()
+try:
+    paths = [os.path.join(rec, n) for n in names]
+    res = S.store_applied(paths, None, index_path=index, log=lambda *_: None)
+    check(not res["removed"] and all(os.path.exists(p) for p in paths), "without a key nothing is removed")
+    b = Bucket()
+    S.store_applied(paths[:1], b, index_path=index, remove=False, log=lambda *_: None)
+    b.puts.clear()
+    res = S.store_applied(paths[:1], b, index_path=index, log=lambda *_: None)
+    check(res["removed"] == names[:1] and not b.puts, "a record already stored is removed after a read-back, no upload")
+    open(paths[1], "a").write(" ")
+    S.store_applied(paths[1:2], b, index_path=index, remove=False, log=lambda *_: None)
+    open(paths[1], "a").write(" ")
+    res = S.store_applied(paths[1:2], b, index_path=index, log=lambda *_: None)
+    check(names[1] in res["stayed"] and os.path.exists(paths[1]),
+          "a record whose pointer names other bytes stays: %s" % res)
+    # The gate covers applied records too: one removed with no pointer fails.
+    listing = "\n".join("100644 blob %s %d\tkb/receipts/%s" % (S.git_blob(open(p, "rb").read()), 1, n)
+                        for n, p in zip(names, paths) if os.path.exists(p))
+    listing += "\n100644 blob %s 1\tkb/receipts/%s" % ("4" * 40, names[0].replace("44000000000", "44000000099"))
+    base = S.tracked_applied(listing)
+    check(len(base) == 3 and all(x["name"].endswith(".json") for x in base), "tracked_applied lists applied records")
+    check(any("no index entry" in x for x in M.gate(base, set(), index)), "an applied record removed unstored fails")
+finally:
+    shutil.rmtree(d, ignore_errors=True)
+
+
 # ---- the move ran once (run 44259862567, 2026-11-18) and its workflow and trigger are gone, so no branch can
 # start it again after the merge.
 check(not os.path.exists(os.path.join(ROOT, ".github", "workflows", "receipt-move.yml"))
       and not os.path.exists(os.path.join(ROOT, "kb", "receipts", ".move")),
       "the one-time move's workflow and trigger file are removed")
+
+
+# ---- S695: the row audit gate, on a fixture: a removal needs an entry with the blob's size and sha256.
+d = tempfile.mkdtemp()
+try:
+    rep = os.path.join(d, "2026-11-20.md")
+    open(rep, "wb").write(b"# report\n")
+    ix = os.path.join(d, "index")
+    stored_copy = os.path.join(d, "row_audit_2026-11-20.md")
+    shutil.copyfile(rep, stored_copy)
+    S.store_file(stored_copy, kind=S.ROW_AUDIT_KIND, build=None, built="2026-11-20", rows=1, storage=Bucket(),
+                 index_path=ix, log=lambda *_: None)
+    data = open(rep, "rb").read()
+    one = P.tracked_reports("100644 blob %s %d\tkb/row_audit/2026-11-20.md\n100644 blob %s 9\tkb/row_audit/latest.json"
+                            % (S.git_blob(data), len(data), "5" * 40))
+    check(len(one) == 1, "tracked_reports lists the dated report and not latest.json")
+    check(P.gate(one, set(), ix, read_blob=lambda b: data) == [], "a stored report's removal passes")
+    check(any("sha256" in x for x in P.gate(one, set(), ix, read_blob=lambda b: b"other")),
+          "a removal whose bytes are not the entry's fails")
+    check(any("bytes" in x for x in P.gate([dict(one[0], size=99)], set(), ix)), "a removal of another size fails")
+    check(any("no index entry" in x for x in P.gate([dict(one[0], path="kb/row_audit/2026-11-19.md",
+                                                          name="2026-11-19.md")], set(), ix)),
+          "a removal with no entry fails")
+finally:
+    shutil.rmtree(d, ignore_errors=True)
+
+
+# ---- S695: receipt-slim.yml stores before it removes, gates before it pushes, and stages nothing else.
+slim = open(os.path.join(ROOT, ".github", "workflows", "receipt-slim.yml"), encoding="utf-8").read()
+order = [slim.index(x) for x in ("store-applied --tracked |", "_row_audit_prune.py --keep 0 --strict",
+                                 "git add -A -- kb/receipts kb/row_audit", "git commit -q",
+                                 "RECEIPT_GATE_BASE=HEAD~1 python3 tests/receipt_move_gate_test.py",
+                                 "git push origin HEAD:main")]
+check(order == sorted(order) and "workflow_dispatch:" in slim and "push:" not in slim and "schedule:" not in slim
+      and "group: daily-dashboard" in slim and "fetch-depth: 2" in slim and "set -o pipefail" in slim,
+      "receipt-slim.yml is dispatch-only, in the apply group, and stores, stages, commits, gates and pushes in order")
+check("unexpected staged changes" in slim and "^D\tkb/receipts/program_requirement_records_display_" in slim,
+      "receipt-slim.yml refuses any staged change other than the two kinds' removals, entries and the list")
+check(slim.count("inputs.mode == 'apply'") == 3, "dry-run writes nothing: every writing step is apply-only")
 
 
 # ---- the live gate: this tree against the base branch's.
@@ -230,13 +394,26 @@ else:
             return None
         return subprocess.run(["git", "cat-file", "blob", blob], cwd=ROOT, capture_output=True).stdout
 
-    base_items = M.tracked(base_listing)
+    base_items = M.tracked(base_listing) + S.tracked_applied(base_listing)  # S695: applied records too
     problems = M.gate(base_items, head_paths, read_blob=read_blob)
     gone = sum(1 for x in base_items if x["path"] not in head_paths)
     for p in problems[:20]:
         print("  " + p)
-    check(not problems, "every display receipt this tree removed from %s is stored and indexed (%d removed, %d "
-          "problems)" % (base_ref, gone, len(problems)))
-    print("gate: %d display receipts on %s, %d removed here, each stored" % (len(base_items), base_ref, gone))
+    check(not problems, "every display receipt and applied record this tree removed from %s is stored and "
+          "indexed (%d removed, %d problems)" % (base_ref, gone, len(problems)))
+    print("gate: %d display receipts and applied records on %s, %d removed here, each stored"
+          % (len(base_items), base_ref, gone))
+    # S695: the dated row audit reports, by size (and sha256 where the blob is on disk).
+    # -l reads each blob's size, which a blob-less fetch would download one by one: CI reads names alone.
+    code, ra_base = g("ls-tree", "-r", *([] if promisor else ["-l"]), base_ref, "--", "kb/row_audit/")
+    check(code == 0, "the base tree %s lists kb/row_audit" % base_ref)
+    code, ra_head = g("ls-tree", "-r", "HEAD", "--", "kb/row_audit/")
+    ra_paths = {line.split("\t", 1)[1] for line in ra_head.splitlines() if "\t" in line}
+    ra_items = P.tracked_reports(ra_base)
+    ra_problems = P.gate(ra_items, ra_paths, read_blob=read_blob)
+    for p in ra_problems[:20]:
+        print("  " + p)
+    check(not ra_problems, "every row audit report this tree removed from %s is stored with its size and sha256 "
+          "(%d problems)" % (base_ref, len(ra_problems)))
 
 print("ok: receipt move gate pass (%d checks)" % passed)

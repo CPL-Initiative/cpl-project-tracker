@@ -1,7 +1,7 @@
 ---
 title: "Common Subjects Reference (CSR) — one Common SUBJ per MQ discipline — lane state"
 created: 2026-10-19
-updated: 2026-10-20
+updated: 2026-11-21
 tags: [reference, roadmap-lane, csr, commons, subjects, mq-disciplines]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -170,6 +170,8 @@ four known issues with owners, the procedures in force, and deep links into the 
 Their record moved verbatim to [`docs/common_subject_code_tab_lessons.md`](../../common_subject_code_tab_lessons.md), *Moved from the lane (S577)*.
 
 ## NEXT
+
+**The Subjects card (S694, #3620):** each college's local subject codes and printed names beside the common subject codes, on the Commons front at `#commons/subjects`; where it stands and its NEXT: [`commons`](commons.md).
 
 **DECIDED** `d-step-b-owner-courses-bot-2026-11-20` (the plain session of 2026-11-20, under Sam's delegation: *"want you to go with your recommendation"*): the Courses bot owns curation step b, the local subject title. It drafts each title from the state subject code and the catalog's subject heading, as COBIx suggested on #3584; a curator settles the ones that disagree. No view builds step b yet. His to revise.
 

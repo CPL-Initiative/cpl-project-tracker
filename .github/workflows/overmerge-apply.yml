@@ -102,7 +102,7 @@ jobs:
                   kb/coci_curation.json \
                   kb/overmerge_out/ \
                   kb/overmerge_apply/ \
-                  kb/row_audit/
+                  kb/row_audit/latest.json
           if git diff --cached --quiet; then
             echo "No changes to commit (apply was a no-op or re-ran on already-applied state)."
             exit 0

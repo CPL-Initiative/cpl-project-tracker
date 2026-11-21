@@ -5,11 +5,11 @@
  "title": "Fine Arts",
  "award": "A.A. Degree",
  "source_url": "https://catalog.mtsac.edu/programs/programsaz/fine-arts/aa-liberal-arts-sciences-emphasis-fine-arts/",
- "record_shape": 3,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9223,
+  "input_tokens": 10836,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9223,
-    "output_tokens": 7156,
+    "input_tokens": 10836,
+    "output_tokens": 6800,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,42 +30,51 @@
     "model": null
    }
   ],
-  "output_tokens": 7156,
+  "output_tokens": 6800,
   "output_tokens_details": {
-   "thinking_tokens": 1744
+   "thinking_tokens": 1455
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.18001,
- "ms": 78065,
- "seconds": 78.6,
+ "cost_usd": 0.17934,
+ "ms": 48300,
+ "seconds": 49.3,
+ "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 66,
+   "placed": 68,
    "listed": 69,
-   "share": 0.957,
+   "share": 0.986,
    "missing": [
-    "AHIS4",
-    "AHIS5",
     "ARTG21B"
    ],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ARTHC1100",
+     "listed": "AHIS4",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTHC1200",
+     "listed": "AHIS5",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 1,
    "codes": [
-    "ARTC210",
-    "ARTHC1100",
-    "ARTHC1200"
+    "ARTC210"
    ],
    "flagged": [
-    "ARTC210",
-    "ARTHC1100",
-    "ARTHC1200"
+    "ARTC210"
    ],
    "pass": true
   },
@@ -80,6 +89,7 @@
     36.0,
     36.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -96,6 +106,17 @@
    "heading_without_outcomes": false,
    "pass": true
   },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
   "pass": true
  },
  "record": {
@@ -107,7 +128,20 @@
     "max": 36
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Have completed the foundation courses of the major which are the aesthetic base needed for transfer into bachelors programs or independent work as an artist.",
     "Be able to apply critical thinking skills to original work.",
@@ -117,7 +151,8 @@
     "Be able to demonstrate in oral, written, and studio work familiarity with the history of western art.",
     "Be proficient in a variety of visual art techniques and tools using them to explore a range of subjects, media, styles, and formats.",
     "Create independent original work in the area of their focus demonstrating basic professional practices."
-   ]
+   ],
+   "careers": []
   },
   "blocks": [
    {
@@ -126,8 +161,8 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": 24,
-     "max": 24
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -204,7 +239,7 @@
     "name": "Ceramics",
     "rule": "choose_units",
     "minimum": 12,
-    "option_group": "art category",
+    "option_group": "Art category",
     "stated": {
      "min": 12,
      "max": 12
@@ -251,7 +286,7 @@
     "name": "Drawing",
     "rule": "choose_units",
     "minimum": 12,
-    "option_group": "art category",
+    "option_group": "Art category",
     "stated": {
      "min": 12,
      "max": 12
@@ -305,7 +340,7 @@
     "name": "Figure Drawing",
     "rule": "choose_units",
     "minimum": 12,
-    "option_group": "art category",
+    "option_group": "Art category",
     "stated": {
      "min": 12,
      "max": 12
@@ -380,7 +415,7 @@
     "name": "Portrait Studies",
     "rule": "choose_units",
     "minimum": 12,
-    "option_group": "art category",
+    "option_group": "Art category",
     "stated": {
      "min": 12,
      "max": 12
@@ -434,7 +469,7 @@
     "name": "Painting",
     "rule": "choose_units",
     "minimum": 12,
-    "option_group": "art category",
+    "option_group": "Art category",
     "stated": {
      "min": 12,
      "max": 12
@@ -481,7 +516,7 @@
     "name": "Printmaking",
     "rule": "choose_units",
     "minimum": 12,
-    "option_group": "art category",
+    "option_group": "Art category",
     "stated": {
      "min": 12,
      "max": 12
@@ -528,7 +563,7 @@
     "name": "Applied Printmaking",
     "rule": "choose_units",
     "minimum": 12,
-    "option_group": "art category",
+    "option_group": "Art category",
     "stated": {
      "min": 12,
      "max": 12
@@ -575,7 +610,7 @@
     "name": "Sculpture",
     "rule": "choose_units",
     "minimum": 12,
-    "option_group": "art category",
+    "option_group": "Art category",
     "stated": {
      "min": 12,
      "max": 12
@@ -643,7 +678,7 @@
     "name": "Sculpture Special Effects Makeup",
     "rule": "choose_units",
     "minimum": 12,
-    "option_group": "art category",
+    "option_group": "Art category",
     "stated": {
      "min": 12,
      "max": 12
@@ -697,7 +732,7 @@
     "name": "Gallery",
     "rule": "choose_units",
     "minimum": 12,
-    "option_group": "art category",
+    "option_group": "Art category",
     "stated": {
      "min": 12,
      "max": 12
@@ -737,7 +772,7 @@
     "name": "Graphic Design",
     "rule": "choose_units",
     "minimum": 12,
-    "option_group": "art category",
+    "option_group": "Art category",
     "stated": {
      "min": 12,
      "max": 12
@@ -798,7 +833,7 @@
     "name": "Illustration",
     "rule": "choose_units",
     "minimum": 12,
-    "option_group": "art category",
+    "option_group": "Art category",
     "stated": {
      "min": 12,
      "max": 12
@@ -865,7 +900,7 @@
     "name": "Photography",
     "rule": "choose_units",
     "minimum": 12,
-    "option_group": "art category",
+    "option_group": "Art category",
     "stated": {
      "min": 12,
      "max": 12
@@ -912,11 +947,11 @@
   "missing_explained": [
    {
     "code": "AHIS 4",
-    "why": "not in the text; art history requirement printed as ARTH C1100/C1100H"
+    "why": "not in the text; replaced by ARTH C1100"
    },
    {
     "code": "AHIS 5",
-    "why": "not in the text; art history requirement printed as ARTH C1200/C1200H"
+    "why": "not in the text; replaced by ARTH C1200"
    },
    {
     "code": "ARTG 21B",
@@ -924,16 +959,15 @@
    }
   ],
   "notes": [
-   "Breadcrumb places this page under Graphic Design; the section read is 'Fine Arts Emphasis (AA Degree A8983)' only; the Graphic Design certificates listed in the page navigation were not read.",
-   "Required Courses stated 24 is taken from the overview sentence 'foundation courses (24 units)', not from a block subtotal in the table.",
-   "The 12 units printed on 'Choose twelve units from one of the following art categories' is recorded as stated on each category block; the student completes 12 units from one category (option_group 'art category').",
-   "The catalog prints no units beside the courses in the art category lists, so their units are null.",
-   "Closed list stores 'ARTD20' without a space; matched to catalog's ARTD 20 (catalog_addition false).",
-   "Closed list stores 'ARTHC1100H' and 'ARTHC1200H'; matched to catalog's honors alternatives ARTH C1100H and ARTH C1200H. The non-honors ARTH C1100 and ARTH C1200 are not in the closed list and are marked catalog additions.",
+   "The category line 'Choose twelve units from one of the following art categories: 12' was read as a choice of one whole category; each category is a choose_units block of 12 in option_group 'Art category', and the printed 12 is recorded as each block's stated total.",
+   "Courses within the art categories print no units beside them, so their units are null.",
+   "Closed-list codes 'ARTD20', 'ARTHC1100H' and 'ARTHC1200H' were matched to the catalog's 'ARTD 20', 'ARTH C1100H' and 'ARTH C1200H' (spacing difference only). ARTH C1100 and ARTH C1200 (non-honors) are not in the closed list and are marked as catalog additions.",
    "ARTC 210 (Corporate Identity and Branding) in the Graphic Design category is not in the closed list.",
-   "Degree requires 'General Education coursework' but the text does not name a specific GE pattern; ge_pattern left null.",
-   "Program Learning Outcomes are printed on the page's outcomes tab for the program; recorded for this award. The trailing 'Review Student Learning Outcomes (SLOs) for this program.' is a link, not an outcome."
+   "The degree requires 'General Education coursework' but names no specific GE pattern and prints no degree total or GE units; ge_pattern left null.",
+   "Outcomes are taken from the page's outcomes tab, which prints one Program Learning Outcomes list for this program; recorded for this award.",
+   "Description states foundation courses are 24 units plus 12 category units; printed Total Units 36 recorded as total_units."
   ]
  },
- "extracted_run": "38064250199"
+ "extracted_run": "44744647809",
+ "catalog_year": "2026-2027"
 }

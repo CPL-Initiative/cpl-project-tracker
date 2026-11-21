@@ -46,6 +46,8 @@ ARTICULATIONS = os.path.join(HERE, "coci_articulations.json")
 UNIFIED_COURSES = os.path.join(HERE, "coci_unified_courses.json")
 CCN_REF = os.path.join(HERE, "reference", "ccn_courses.json")
 CID_REF = os.path.join(HERE, "reference", "cid_descriptors.json")
+# load_id_reservations' key for full ids a rolled-back pile mint returned (never a (SUBJ4, band) pair).
+RESERVED_IDS = ("*", "ids")
 FL_SPLIT = os.path.join(HERE, "foreign_language_subj4.json")
 # SUBJ4_DRYRUN_OUT redirects the artifacts (verification seam — the post-apply
 # chain re-runs this against the folded KB into /tmp to prove re_key == 0
@@ -170,7 +172,38 @@ def load_id_reservations():
             # Pad seq2 to seq3 with leading 0 (C-ID 110 → seq=010 in band=1).
             reservations[(subj, band)].add(int(seq2))
 
+    # Ids a rolled-back pile mint handed out (kb/_pile_mint_apply.py --rollback writes the file): an id once minted
+    # is never handed out again, by any minter. A corroborated id reserves its number in its (SUBJ4, band); a
+    # stand-alone id reserves its code (a string, e.g. "0AB") there; every full id sits under RESERVED_IDS for an
+    # allocator that keeps a number. Absent file, nothing changes.
+    add_reserved_ids(reservations, pile_reserved_ids())
+
     return dict(reservations)
+
+
+def add_reserved_ids(reservations, ids):
+    """Reserve full M-ids in a load_id_reservations dict (a defaultdict(set) or a plain dict)."""
+    for i in ids:
+        m = re.match(r"^([A-Z]{1,6}) M(\d)(\d{3})$", i)
+        if m:
+            reservations.setdefault((m.group(1), m.group(2)), set()).add(int(m.group(3)))
+        else:
+            m = re.match(r"^([A-Z]{1,6}) M(\d)(\d[A-Z]{2})$", i)
+            if not m:
+                continue
+            reservations.setdefault((m.group(1), m.group(2)), set()).add(m.group(3))
+        reservations.setdefault(RESERVED_IDS, set()).add(i)
+    return reservations
+
+
+def pile_reserved_ids():
+    """The ids in kb/pile_mint_reserved.json (PILE_MINT_RESERVED, or UC_KB_DIR's copy, names another file)."""
+    path = os.environ.get("PILE_MINT_RESERVED") or os.path.join(os.environ.get("UC_KB_DIR") or HERE,
+                                                               "pile_mint_reserved.json")
+    if not os.path.exists(path):
+        return []
+    with open(path, encoding="utf-8") as f:
+        return sorted(json.load(f).get("ids") or [])
 
 
 def parse_old(course_id: str):

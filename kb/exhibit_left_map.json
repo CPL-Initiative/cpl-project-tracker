@@ -1,8 +1,8 @@
 {
  "schema": 1,
  "built_from": {
-  "audit": "2026-11-20T06:22:51+00:00",
-  "unified_titles": 6186
+  "audit": "2026-11-21T04:09:20+00:00",
+  "unified_titles": 6199
  },
  "rule": {
   "graded": [
@@ -13278,6 +13278,14 @@
    "type": "Industry Certification",
    "group": "cert"
   },
+  "Certified Information Security Manager (CISM)": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "Certified Information Systems Auditor (CISA)": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
   "Certified Information Systems Security Professional (CISSP)": {
    "type": "CPL type not recorded",
    "group": ""
@@ -15646,6 +15654,10 @@
    "type": "Credit By Exam",
    "group": "graded"
   },
+  "Fire Service Conditioning & Physical Agility Development": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
   "Fire Service In-Service Training — Administration": {
    "type": "Credit By Exam, Portfolio Review, Industry Certification and Other (mixed)",
    "group": "mixed"
@@ -17830,6 +17842,14 @@
    "type": "Industry Certification",
    "group": "cert"
   },
+  "Introduction to Western Civilization 1": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "Introduction to Western Civilization 2": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
   "Introduction to Working Drawings, Construction Math and Fire Stop Installation": {
    "type": "Industry Certification",
    "group": "cert"
@@ -18754,6 +18774,10 @@
    "type": "Portfolio Review",
    "group": "graded"
   },
+  "Microcomputer Application Software": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
   "Microsoft Access Beginning": {
    "type": "Credit By Exam",
    "group": "graded"
@@ -18818,6 +18842,10 @@
    "type": "Industry Certification",
    "group": "cert"
   },
+  "Microsoft Office Specialist — Associate": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
   "Microsoft Office Specialist — Excel": {
    "type": "Credit By Exam, Industry Certification and Military (mixed)",
    "group": "mixed"
@@ -18831,6 +18859,10 @@
    "group": "cert"
   },
   "Microsoft Office Specialist — Excel or Excel Expert": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "Microsoft Office Specialist — Expert": {
    "type": "CPL type not recorded",
    "group": ""
   },
@@ -20015,6 +20047,14 @@
    "group": "cert"
   },
   "Powertrains: Modifications for Performance": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "Practical PC & Career Technologies": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "Practical PC and Career Technologies": {
    "type": "CPL type not recorded",
    "group": ""
   },
@@ -21817,6 +21857,10 @@
   "United States History from 1865": {
    "type": "Credit By Exam",
    "group": "graded"
+  },
+  "United States History since 1865": {
+   "type": "CPL type not recorded",
+   "group": ""
   },
   "Unity Certified Professional: Programmer": {
    "type": "CPL type not recorded",

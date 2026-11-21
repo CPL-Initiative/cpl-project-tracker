@@ -1,7 +1,7 @@
 ---
 title: "Repo size — what lives in the tree, what lives in the bucket, and the limits — lane state"
 created: 2026-11-18
-updated: 2026-11-19
+updated: 2026-11-21
 tags: [reference, roadmap-lane, repo-size, receipts, infrastructure]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -23,24 +23,35 @@ make sure we don't allow to go beyond a limit."* and *"As cto you can restructur
 
 ## What lives where
 
-- **The tree** keeps code, docs, the generated files the site serves, the applied records, and one small index entry per
-  stored file under `kb/receipts/index/` (one file an entry, so branches never conflict over the index).
+- **The tree** keeps code, docs, the generated files the site serves, and one small index entry per stored file under
+  `kb/receipts/index/` (one file an entry, so branches never conflict over the index). From S695 the display applied
+  records leave too (below); one stays in the tree only when its store fails.
 - **The private Supabase Storage bucket `cpl-receipts`** (created by `supabase-migrate.yml` run 44255184017,
   `kb/migrations/2026-11-18_s680_cpl_receipts_bucket.sql`) holds what left the tree: program display receipts under
-  `display/` and dated row Trust-Card reports under `row_audit/`. Live count, S680: 141 under `display/` (1,596.1 MB
+  `display/`, display applied records under `display/applied/` (S695) and dated row Trust-Card reports under
+  `row_audit/`. Live count, S680: 141 under `display/` (1,596.1 MB
   stored), 165 under `row_audit/` (982.5 MB stored). One store module, `kb/_receipt_store.py`; its `PUBLIC_SAFE` table
   names the kinds a run may hand out.
 - **Display receipts are never committed (#3495).** Git ignores `kb/receipts/program_requirement_records_display_*`.
   `step=display` on `program-requirements-college.yml` rebuilds the receipt on the runner, stores it, files its sha256
   index entry and only then applies it. Procedure: the [harvest lane](program-requirements-harvest.md), *No display
   receipt is committed*.
-- **Row audit reports (#3498, carrying #3501):** `kb/_row_audit_prune.py`, run by `scripts/daily_build.sh`, stores the
-  dated reports older than the newest 14 and removes them from the tree only once their index entry is written; it is
-  time-boxed and can never fail the daily run. `kb/row_audit/latest.json` stays committed.
+- **Display applied records (S695, #3476 item 1):** the display job's step *Store this run's applied record in
+  cpl-receipts* runs `kb/_receipt_store.py store-applied` on the run's record (kind `display_applied`, gzipped at
+  `display/applied/<name>.gz`, `PUBLIC_SAFE`). The file leaves the runner's tree only after the bucket reads back bytes
+  that unpack to its sha256 and its entry names its git blob; otherwise the record is committed as before.
+- **Row audit reports (#3498, carrying #3501; KEEP 0 from S695):** `kb/_row_audit_prune.py`, run by
+  `scripts/daily_build.sh`, stores every dated report, the day's own included, and removes each from the tree only once
+  its index entry is written; a same-day rewrite of the newest report is stored beside the first (`supersedes`). It is
+  time-boxed and can never fail the daily run. `kb/row_audit/latest.json` stays committed. The daily commit stages the
+  removals and the entries in two `git add` commands, because a pathspec that matches nothing fails its whole command.
 
 ## How a stored file comes back
 
 - Re-apply a stored display receipt (the rollback): `step=display force="<receipt name> [<applied record>]"`.
+- A rollback limited by a stored applied record names it by its old path,
+  `force="<receipt name> kb/receipts/<record name>"`: the apply finds the entry and fetches the record to a temporary
+  folder, checked by sha256 (`local_or_stored`), and refuses before any table read when the bucket cannot be read.
 - Fetch one for a session: `step=fetch force=<receipt name>` hands it over as a one-day run artifact, for the
   `PUBLIC_SAFE` kinds only. COBIx found that a fetch artifact on this public repo would publish a private-bucket
   receipt; the table was the fix, confirmed by COBIx at 07:38Z 2026-11-18.
@@ -85,8 +96,26 @@ behind `main` (#3511 measured from `afc29292` under a merge onto `5a7a6f24`: 1,4
 6.8 MB row audit among them, read as the PR's own). Both guard steps now read the base from `HEAD`'s first parent, with
 the event value as the fallback, and log both.
 
+## The applied records and the row audit reports (S695, 2026-11-21)
+
+- **Built** (branch `claude/s695-repo-slimming-receipts`): the `display_applied` kind, `store_applied`,
+  `local_or_stored` and `store-applied` in `kb/_receipt_store.py`; the display job stores its own record; the rollback
+  reads a stored record through its entry; KEEP 0 in the prune; the gate in `tests/receipt_move_gate_test.py` covers
+  applied records; `.github/workflows/receipt-slim.yml` (dispatch only, the `daily-dashboard` group) moves the
+  committed ones once. The move gate holds every removal to its entry: an applied record by its git blob and
+  sha256, a row audit report by its size and sha256 (`gate` in `kb/_row_audit_prune.py`); `receipt-slim.yml` runs it
+  on its own commit before the push. The undo is the bucket copy by its entry, or git history.
+- **Measured before the move:** 139 applied records, 124.7 MB; 14 dated row audit reports, 99.7 MB (7.1 MB each, the
+  newest three missing from the size guard's exceptions list, which the weekly listed-file check fails on).
+- **To finish:** after the merge, dispatch `receipt-slim.yml` with `mode=dry-run`, then `mode=apply`. The apply commits
+  the removals, their entries and the shrunk exceptions list to `main` in one commit, after the gate passes.
+
 ## NEXT, in order
 
+0. **Dispatch `receipt-slim.yml`** (`mode=apply`) once this lane's S695 PR merges, outside the daily cron windows
+   (06:17, 09:17 and 12:17 UTC; keep 30 minutes clear): it shares the `daily-dashboard` group, and a newer pending
+   run in a group cancels an older pending one. Then the workflow has nothing left to move and a later PR may remove
+   it.
 1. **Part 5, the history rewrite: Sam's go.** Rule 5's one permitted main-history rewrite needs the cron paused, his
    explicit go and every open session told to re-clone. Waits on him; not on the standing sheet as a card.
 2. The spreadsheet export and the videos out of the tree; the PR that moves them lowers `TOTAL_CAP_MB` (1,500 MB, then

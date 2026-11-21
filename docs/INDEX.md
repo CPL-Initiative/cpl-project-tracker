@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-11-20
+updated: 2026-11-21
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -68,12 +68,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 6 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 597 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 599 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 95 | [`catalog/lessons.md`](catalog/lessons.md) |
-| Workstream docs | 106 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
+| Workstream docs | 107 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 77 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 650 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1531** | |
+| Session handoffs | 655 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1539** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -124,11 +124,11 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-21 (S695 SkyShearwater, Sam's plain session on the Commons, conductor, full checkpoint): #3624 (special and selected topics flagged not applicable; the pile 2,493 to 1,909), #3625 (`#commons/subjects/held`), #3627 (both Subjects builders in the daily build), #3626 (the pile mint v3: a 98% floor per route, `discipline_source: pile_mint`, the apply); #3630 (`LSKL M9004`, the first pile-minted record) and #3629 (repo slimming items 1 and 2) open; the self-recall note gains a dated section on mint routes; `docs/commons_lessons.md` *S695*, three sections to its archive; 14 memory rows drafted in `kb/migrations/2026-11-21_s695_checkpoint_memory_rows.sql`; handoff 696 (SkyFulmar).
+- 2026-11-21 (S694 SkyPetrel, Sam's plain session on the Commons, conductor, full checkpoint): #3617 (the commons lane compacted), #3618 (the build for Assign from the panel, with its dry run), #3619 (the pile sorted by exhibit links through the folds; the closest M-ID file rebuilt daily), #3621 (the pile mint dry run, nothing applied); #3620 (the Subjects card) and #3622 (the Assign control) open when written. Handoff `docs/session_695_handoff.md` (SkyShearwater).
+- 2026-11-20 (S693 SkyKittiwake, Sam's plain session on the Commons, full checkpoint): #3610 (the hand-over takes a note and lists each drop; note migration and five memory rows applied through the runner), #3612 (Needs an M-ID, one gap pile of 2,508); #3613 (Sam's first hand-overs filed, 12 hunt courses answered) and #3614 (the Closest M-ID column, measured 93% right at 0.75 or more) open; seven of Sam's rulings in `sam_rulings`; 11 memory rows drafted; handoff 694.
+- 2026-11-20 (S692 SkyGannet, Sam's plain session on the Commons, full checkpoint): #3608 (hand it over in place, slice 1: `commons_handover.js`, the private bucket and the `commons_handover` table applied through the runner, the reader's pickup and the `handover-try-link` function, governance DR-35); the new note [`reference-commons-hand-over`](kb-notes/reference-commons-hand-over.md); a section on CI jobs added to `methodology-a-blocked-path-hides-the-defects-behind-it`; the checkpoint command's standing block carries Sam's work order; `handover-try-link`, `cpl-chat` and `library-revise-draft` deployed from main; handoff 693.
+- 2026-11-20 (S690 SkyMerlin, the CPL Queue routine's 11:12Z firing, conductor from 12:13Z, full checkpoint): #3600 (the Library check line out of Sierra's reading text and out of new pieces; `main` green), #3601 (City College of San Francisco's outline reader files parsed outcomes only); City College of San Francisco's outlines loaded (1,416 rows); 17,341 printed catalog courses at 16 colleges under Sam's go of Nov 20 (#3604); 35 program records added and 129 replaced; the harvest and library lanes kept under 20,000 bytes (`library_lessons_archive_3.md`); the KB note `methodology-a-bot-wall-answers-each-network-on-its-own` and a recall-gate section in `methodology-a-test-must-not-take-its-rule-as-the-truth`. Handoff 691.
 - 2026-11-20 (the plain session SkyShrike, Sam's session on the Commons, full checkpoint): #3605 (the 12 still-taught courses filed, the outline hunt keeps a college only while it has one, Needs you names its groups); the Commons order mock locked by Sam; his rulings on no longer offered and hand it over in place; the first-pass M-ID census; KB note `methodology-check-the-saved-reads-before-calling-a-source-blocked`. Handoff 692.
 - 2026-11-20 (S689 SkyTern, the CPL Queue routine's 06:12Z conductor night, full checkpoint): #3589 (four high schools' issuer tags), #3588 (City College of San Francisco's CurricUNET outline route), #3587 and #3590 (the page checks fold PDF ligatures and keep a refusal marked), #3586 (the outline readers), #3591 (the wave: the reread plan's third ten and Santa Rosa Junior, 79 new and 43 replaced); display build 4c57fd250cce confirmed (18,459, #3598); the census at 5,069 left; 2,550 outline rows at Feather River and Palomar; the harvest lessons compacted into archive 7; the KB note `methodology-a-pdf-ligature-hides-a-heading-from-an-exact-match`. Handoff 690.
 - 2026-11-20 (S688 SkyLinnet, Sam's session, light checkpoint plus memory rows): S687's 15 memory rows applied (run 44639823760); #3500 (Cosumnes River pins), #3529 (flagged cards leave the confidence scorer), #3578 (First Light puts back a timestamp-only report), #3537 (Mt. San Antonio SLO reader), #3579 (rule D keeps an older read's marks); the bot-commit and skip-tag pitfalls; a section on commit-backs that skip CI in `playbook-runner-as-external-api-proxy`. Handoff 689.
-- 2026-11-19 (S687 SkyPipit, Sam's session, full checkpoint): #3565 (the S685 and S687 wave: nine colleges' reread posted, 164 replaced and 45 inserted), #3564 (the display's confirming read pages by key), #3567 (display build 3361e3aa5b7d confirmed on its own read; census 5,145 left), #3569 (rule D from committed previews), #3570 (Commons Needs you); new KB note `methodology-a-confirming-read-pages-by-key-never-by-offset`; harvest and Commons lessons compacted to their archives.
-- 2026-11-19 (S685 SkyTowhee, the CPL Queue routine's 12:12Z conductor firing, full checkpoint): S684's wave and checkpoint landed (#3550, #3545); #3552 (the outline helper reads each college's newest census row), #3553 (keep-the-better: a generic heading on the program's own page, 43 verified flips) and #3556 (display build 3e8088e082eb, confirmed by a closing live count); the census at 5,203 left; handoff 686, the S685 lessons and conductor sections.
-- 2026-11-19 (S684 SkyVerdin, the CPL Queue routine's 10:12Z conductor firing, full checkpoint): `main` repaired and the S683 wave merged (#3544), with #3535 and #3528; #3547 (keep-the-better's guard: the checked list first, the `live_runs` hold, five-digit control numbers); #3548 (named gaps over the re-read records, 2 rows); the second reread batch at ten colleges; College of the Siskiyous' 366 outline rows; the display build held for one run in S685; KB note `adr-one-credential-list-exhibits-are-its-children`; handoff 685 for SkyTowhee.
-- 2026-11-19 (S683 SkyNuthatch, the CPL Queue routine's 06:12Z conductor night, full checkpoint): the Chabot stop cleared (#3497's 99 and #3508's 14 rows applied, Chabot's 2,026 outline rows loaded); the reread wave at 15 colleges (133 replaced, 72 inserted); #3536, #3538, #3542 in one wave; the program-requirements lessons compacted to archive 7; the KB note `methodology-a-reread-keeps-the-better-record`. Handoff 684.
-- 2026-11-19 (S683 Library side job with Ashley Mooney, light checkpoint): #3527 and #3532 (the Library duplicate check warns, Start drafts at once, the drafter reads COBI data with the under-10 rule; deployed twice); the library lane and lessons compacted under budget, S509 and S510 to `library_lessons_archive_2`. A section in handoff 683.

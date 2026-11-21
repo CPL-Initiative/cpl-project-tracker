@@ -1211,6 +1211,21 @@ async function seedCociList(page, theme) {
   await page.waitForTimeout(300);
 }
 
+// The CPL Commons' Subjects list (S694): opened by its address, as the Subjects card links to it.
+async function seedCommonsSubjects(page, theme) {
+  await page.evaluate(() => { if (!/^commons\/subjects/.test(location.hash.replace(/^#/, ""))) location.hash = "commons/subjects/cerritos"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForSelector("#commons-root .csb-foot", { state: "attached", timeout: 60000 });
+  /* The held codes read their own file after the list draws (S695): wait for the table, not the reading note. */
+  if (/subjects\/held/.test(await page.evaluate(() => location.hash))) await page.waitForSelector("#commons-root .csb-held", { state: "attached", timeout: 60000 });
+  await page.evaluate(() => {
+    try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+  });
+  await page.waitForTimeout(300);
+}
+
 // The CPL Commons' ASE slice (#3111): opened by its address, as the Commons' first view links to it. The keyboard and
 // reflow passes open the bare file, so the seed names the address itself.
 async function seedCommonsAse(page, theme) {
@@ -1272,6 +1287,36 @@ async function seedCommonsDataOpen(page, theme, what) {
     await page.waitForSelector("#cdd-panel:not([hidden])", { state: "attached", timeout: 10000 });
   }
   await page.waitForTimeout(200);
+}
+
+// Hand it over in place (Sam, 2026-11-20; commons_handover.js): one course's panel beside the CPL Commons front page
+// (#commons/course/<control number>), or a college's hand-over pane in College Data Collection. A hand-over needs a
+// reviewer's sign-in, so a signed-out sweep measures the sign-in line alone. For the drop box, the link, the pasted
+// data and the API procedure boxes the seed stands in a fresh session the way cpl_session.js answers (as the funding
+// curator's seed does) and lets the view draw again; no write can follow, since the sweep presses no control and
+// aborts the tab's reads and writes.
+async function seedHandover(page, theme, what, signedIn) {
+  const hash = what === "college" ? "collect/outlines-blocked/college/north-orange-continuing-education/handover" : "commons/course/CCC000400628";
+  await page.evaluate((h) => { if (location.hash.replace(/^#/, "") !== h) location.hash = h; }, hash);
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  const panel = what === "college" ? "#cdd-panel:not([hidden]) .cho-box" : "#cho-panel:not([hidden]) .cho-box";
+  await page.waitForSelector(panel, { state: "attached", timeout: 60000 });
+  await page.evaluate(() => {
+    try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+  });
+  if (signedIn) {
+    await page.evaluate(() => {
+      const s = { email: "seed@example.org", access_token: "seed", expires_at: Math.floor(Date.now() / 1000) + 3600 };
+      if (window.CPL_SESSION) { window.CPL_SESSION.get = () => s; window.CPL_SESSION.isFresh = () => true; }
+      window.dispatchEvent(new Event("cpl-session-changed"));
+    });
+    await page.waitForSelector(panel + " .cho-drop", { state: "attached", timeout: 60000 });
+    // Every part of the box open, so each field is measured: the pasted data, the note, and each API procedure box.
+    await page.evaluate(() => { document.querySelectorAll("details.cho-paste, details.cho-note, details.cho-api").forEach((d) => { d.open = true; }); });
+  }
+  await page.waitForTimeout(300);
 }
 
 // The Common Course Reference's Progress page (S559): COCI Lookup's Progress view, the Commons' opened page read
@@ -3711,6 +3756,24 @@ module.exports = {
     seed: (page) => seedCommonsAse(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
+  /* ── The CPL Commons' Subjects list (S694): Steps a and b, college by college ──
+     commons_subjects.js, opened from #commons/subjects; measured on one college and on the curator's list. */
+  "commons-subjects": {
+    file: "index.html",
+    title: "CPL Commons: the Subjects list",
+    routes: [{ hash: "commons/subjects/cerritos", name: "subjects-cerritos" }, { hash: "commons/subjects/disagree", name: "subjects-disagree" }, { hash: "commons/subjects/held", name: "subjects-held" }],
+    widths: [320, 390, 768, 1440],
+    seed: (page) => seedCommonsSubjects(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "commons-subjects-dark": {
+    file: "index.html",
+    title: "CPL Commons: the Subjects list, dark",
+    routes: [{ hash: "commons/subjects/cerritos", name: "subjects-cerritos-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedCommonsSubjects(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
   /* ── The Commons data dashboard, slice 1 (#3215): the statewide figures and the college list ──
      commons_data.js, opened from #collect; measured on the whole list and on one figure's filtered list. */
   "commons-data": {
@@ -3790,6 +3853,72 @@ module.exports = {
     routes: [{ hash: "collect/college/san-jose-city-college", name: "data-panel-dark" }],
     widths: [390, 1440],
     seed: (page) => seedCommonsDataOpen(page, "dark", "panel"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── Hand it over in place (Sam, 2026-11-20): a course's panel on the front page, a college's pane ──
+     commons_handover.js. Measured signed in (the drop box, the link, the pasted data, the API boxes) and signed out
+     (the sign-in line), light and dark, and the panel's keyboard: Escape closes it and the focus goes back to the
+     course that names it. */
+  "commons-handover": {
+    file: "index.html",
+    title: "CPL Commons: hand it over, one course's panel, signed in",
+    routes: [{ hash: "commons/course/CCC000400628", name: "handover-course" }],
+    widths: [320, 390, 768, 1440],
+    seed: (page) => seedHandover(page, "light", "course", true),
+    keyboard: async (page) => {
+      const out = [];
+      await page.setViewportSize({ width: 1440, height: 900 });
+      await page.waitForTimeout(150);
+      /* The page beside the panel stays live: a real click on another course's name replaces the panel's course. */
+      const other = await page.evaluate(() => {
+        const a = Array.from(document.querySelectorAll(".cmf-needs a[data-course]")).find((l) => l.getAttribute("data-course") !== "CCC000400628");
+        a.scrollIntoView({ block: "center" });
+        const r = a.getBoundingClientRect(), x = r.left + 3, y = r.top + r.height / 2, hit = document.elementFromPoint(x, y);
+        return { x: x, y: y, key: a.getAttribute("data-course"), code: a.textContent, lands: !!hit && (hit === a || a.contains(hit)) };
+      });
+      await page.mouse.click(other.x, other.y);
+      await page.waitForTimeout(200);
+      const swapped = await page.evaluate(() => ({ h: document.getElementById("cho-panel-h").textContent, hash: location.hash, inert: document.querySelectorAll("[inert]").length }));
+      out.push({ name: "with the panel open, a real click on another course's name opens that course", ok: other.lands && swapped.h.indexOf(other.code) === 0 && swapped.hash === "#commons/course/" + other.key && swapped.inert === 0,
+        detail: JSON.stringify({ lands: other.lands, course: other.code, now: swapped }) });
+      await page.keyboard.press("Escape");
+      const closed = await page.evaluate(() => ({ hidden: document.getElementById("cho-panel").hasAttribute("hidden"), hash: location.hash,
+        back: !!(document.activeElement && document.activeElement.matches && document.activeElement.matches(".cmf-needs a[data-course]")) }));
+      out.push({ name: "Escape closes the course's panel, puts the address back and returns the focus to the course's name", ok: closed.hidden && closed.back && closed.hash === "#commons", detail: JSON.stringify(closed) });
+      return out;
+    },
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "commons-handover-dark": {
+    file: "index.html",
+    title: "CPL Commons: hand it over, one course's panel, signed in, dark",
+    routes: [{ hash: "commons/course/CCC000400628", name: "handover-course-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedHandover(page, "dark", "course", true),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "commons-handover-signed-out": {
+    file: "index.html",
+    title: "CPL Commons: hand it over, one course's panel, signed out",
+    routes: [{ hash: "commons/course/CCC000400628", name: "handover-course-signed-out" }],
+    widths: [390, 1440],
+    seed: (page) => seedHandover(page, "light", "course", false),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "commons-handover-college": {
+    file: "index.html",
+    title: "CPL Commons: hand it over, a college's pane in College Data Collection, signed in",
+    routes: [{ hash: "collect/outlines-blocked/college/north-orange-continuing-education/handover", name: "handover-college" }],
+    widths: [320, 390, 768, 1440],
+    seed: (page) => seedHandover(page, "light", "college", true),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "commons-handover-college-dark": {
+    file: "index.html",
+    title: "CPL Commons: hand it over, a college's pane, signed in, dark",
+    routes: [{ hash: "collect/outlines-blocked/college/north-orange-continuing-education/handover", name: "handover-college-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedHandover(page, "dark", "college", true),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   /* ── The Commons data dashboard, slice 3 (#3215): the data dictionary and the API checklist, each its own view ── */

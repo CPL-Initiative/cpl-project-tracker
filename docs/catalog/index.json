@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 597,
+   "count": 599,
    "docs": [
     {
      "created": "2026-08-14",
@@ -526,7 +526,27 @@
      ],
      "title": "A blocked path hides every defect behind it \u2014 budget for a chain, not a fix",
      "type": "methodology",
-     "updated": "2026-08-24"
+     "updated": "2026-11-20"
+    },
+    {
+     "created": "2026-11-20",
+     "governs": [
+      "kb/_college_page_read.py",
+      ".github/workflows/college-page-read.yml"
+     ],
+     "path": "docs/kb-notes/methodology-a-bot-wall-answers-each-network-on-its-own.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "program-requirements-harvest",
+      "blocked-sources",
+      "catalog-harvest",
+      "sandbox",
+      "github-actions"
+     ],
+     "title": "A bot wall answers each network on its own, so the reader's own capture is the record of access",
+     "type": "methodology",
+     "updated": "2026-11-20"
     },
     {
      "created": "2026-08-28",
@@ -2955,11 +2975,13 @@
       "methodology",
       "program-requirements",
       "catalog-harvest",
-      "matching"
+      "matching",
+      "m-id",
+      "mint"
      ],
      "title": "A new matcher is gated by a self-recall test on records whose answer is already held",
      "type": "methodology",
-     "updated": "2026-11-14"
+     "updated": "2026-11-21"
     },
     {
      "created": "2026-08-13",
@@ -4879,7 +4901,7 @@
      ],
      "title": "A test must not take its own rule as the truth",
      "type": "methodology",
-     "updated": "2026-11-14"
+     "updated": "2026-11-20"
     },
     {
      "created": "2026-08-25",
@@ -11210,6 +11232,23 @@
      "updated": "2026-08-12"
     },
     {
+     "created": "2026-11-20",
+     "governs": [],
+     "path": "docs/kb-notes/reference-commons-hand-over.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "commons",
+      "hand-over",
+      "college-data-collection",
+      "supabase",
+      "privacy"
+     ],
+     "title": "Hand it over in place: the hand-over box, where it writes, and the reader's pickup",
+     "type": "reference",
+     "updated": "2026-11-20"
+    },
+    {
      "created": "2026-07-07",
      "governs": [
       "kb/_preseed_unclassified.py",
@@ -13953,7 +13992,7 @@
      ],
      "title": "The Commons \u2014 lessons",
      "type": null,
-     "updated": "2026-11-20"
+     "updated": "2026-11-21"
     },
     {
      "created": "2026-11-14",
@@ -14179,7 +14218,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 106,
+   "count": 107,
    "docs": [
     {
      "created": "2026-05-30",
@@ -15911,6 +15950,20 @@
      "updated": ""
     },
     {
+     "created": "2026-11-20",
+     "governs": [],
+     "path": "docs/library_lessons_archive_3.md",
+     "status": null,
+     "tags": [
+      "lessons",
+      "library",
+      "archive"
+     ],
+     "title": "The Library \u2014 lessons, archive 3 (the lane's text moved at the S690 checkpoint, 2026-11-20)",
+     "type": null,
+     "updated": ""
+    },
+    {
      "created": "2026-08-26",
      "governs": [
       "exports/20260826_T5_55050_Article9_Conformity_TrackedChanges_v2.docx"
@@ -16340,7 +16393,7 @@
      ],
      "title": "Common Subjects Reference (CSR) \u2014 one Common SUBJ per MQ discipline \u2014 lane state",
      "type": null,
-     "updated": "2026-10-20"
+     "updated": "2026-11-21"
     },
     {
      "created": "2026-08-28",
@@ -16696,7 +16749,7 @@
      ],
      "title": "Repo size \u2014 what lives in the tree, what lives in the bucket, and the limits \u2014 lane state",
      "type": null,
-     "updated": "2026-11-19"
+     "updated": "2026-11-21"
     },
     {
      "created": "2026-08-28",
@@ -16809,7 +16862,7 @@
      ],
      "title": "The Commons \u2014 one tracking system for the common references, and a Commons dash \u2014 lane state",
      "type": null,
-     "updated": "2026-11-20"
+     "updated": "2026-11-21"
     },
     {
      "created": "2026-08-28",
@@ -17335,8 +17388,64 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 650,
+   "count": 655,
    "docs": [
+    {
+     "created": "2026-11-21",
+     "governs": [],
+     "n": 696,
+     "path": "docs/session_696_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 696 handoff (from SkyShearwater, the plain session of 2026-11-21 that set the mint's floor and minted the first pile record)",
+     "type": null,
+     "updated": "2026-11-21"
+    },
+    {
+     "created": "2026-11-21",
+     "governs": [],
+     "n": 695,
+     "path": "docs/session_695_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 695 handoff (from SkyPetrel, the plain session of 2026-11-20 to 21 that built Assign from the panel and planned the pile mint)",
+     "type": null,
+     "updated": "2026-11-21"
+    },
+    {
+     "created": "2026-11-20",
+     "governs": [],
+     "n": 694,
+     "path": "docs/session_694_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 694 handoff (from SkyKittiwake, the plain session of 2026-11-20 that put the M-IDs first)",
+     "type": null,
+     "updated": "2026-11-20"
+    },
+    {
+     "created": "2026-11-20",
+     "governs": [],
+     "n": 693,
+     "path": "docs/session_693_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 693 handoff (from SkyGannet, the plain session of 2026-11-20 that built the hand-over)",
+     "type": null,
+     "updated": "2026-11-20"
+    },
     {
      "created": "2026-11-20",
      "governs": [],
@@ -17348,6 +17457,20 @@
       "session"
      ],
      "title": "Session 692 handoff (from SkyShrike, the plain session of 2026-11-20)",
+     "type": null,
+     "updated": "2026-11-20"
+    },
+    {
+     "created": "2026-11-20",
+     "governs": [],
+     "n": 691,
+     "path": "docs/session_691_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 691 handoff (from SkyMerlin, S690)",
      "type": null,
      "updated": "2026-11-20"
     },
@@ -28209,5 +28332,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1531
+ "total": 1539
 }

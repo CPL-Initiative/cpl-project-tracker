@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "Culinary Nutrition",
  "award": "Noncredit program",
- "source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=73",
+ "source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=72",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6983,
+  "input_tokens": 7076,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6983,
-    "output_tokens": 870,
+    "input_tokens": 7076,
+    "output_tokens": 835,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 870,
+  "output_tokens": 835,
   "output_tokens_details": {
-   "thinking_tokens": 400
+   "thinking_tokens": 343
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04533,
- "ms": 8411,
- "seconds": 8.7,
+ "cost_usd": 0.045,
+ "ms": 9020,
+ "seconds": 9.4,
  "parts": null,
  "error": null,
  "score": {
@@ -96,7 +96,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Culinary Nutrition",
+   "section_heading": "Certificate of Completion: Culinary Nutrition",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -119,7 +119,7 @@
    "electives_fill_degree": false,
    "outcomes": [],
    "careers": [
-    "personal or private chef"
+    "personal or private chef that specializes in dietary food plans"
    ]
   },
   "blocks": [
@@ -153,11 +153,19 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The text begins mid-description on page 73; the Culinary Nutrition heading and the start of its description are on the previous page and not in the text, so the section heading is assumed from the program title and the section is identified by its courses (FDNT 618, FDNT 619).",
-   "No hours or units are printed for the courses or the program total, so measure is left as 'units' and all unit fields are null even though this is a noncredit program.",
-   "The description also mentions 'starting their own cottage industry business' as an outcome path; it was not recorded as a career title.",
-   "No program learning outcomes are printed in the provided text; they may appear on the preceding page."
+   "This is a noncredit Certificate of Completion, but the catalog section prints no hours for the courses or for the program. Measure is left as 'units' and all unit and hour fields are null. The state file's 0 units are not used.",
+   "The section's description spans pages 72-73. The page 73 header reads 'Information Technology', but the Culinary Nutrition text continues there.",
+   "The description also mentions 'starting their own cottage industry business' as an outcome of completion. It is not recorded as a career title.",
+   "The catalog text prints no program learning outcomes for this award.",
+   "Text has the typo 'variety pf dishes', as printed."
   ]
  },
- "extracted_run": "39035224783"
+ "extracted_run": "44739577102",
+ "catalog_year": "2026-2027",
+ "source_sha": "0daa861c27f0e8ea",
+ "source_codes": [
+  "FDNT618",
+  "FDNT619"
+ ],
+ "source_coverage": 1.0
 }

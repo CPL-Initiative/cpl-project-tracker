@@ -281,6 +281,29 @@ jobs:
       # its rollback run against a throwaway Postgres the test starts itself (SKIP when no binaries are present).
       - name: Library publishing model against Postgres (set_public refuses with no passing check)
         run: python3 tests/library_publishing_sql_proof.py
+      # Hand it over in place (Sam, 2026-11-20): the hand-over table, its private bucket and its three functions run
+      # against the same throwaway Postgres. The anon key and a non-reviewer are shut out, the reviewer's name is
+      # stamped by the database, no API role reads a file back, and the rollback keeps handed-over rows.
+      - name: Commons hand-over against Postgres (the sign-in rule and the private store hold in the database)
+        run: python3 tests/commons_handover_sql_proof.py
+      # The hand-over's note (Sam, 2026-11-20: "there is no place for me to note that"): a fifth kind added over a
+      # table that holds rows. The note reaches the table only through commons_handover_add() under the reviewer's
+      # name, the four kinds are untouched, the public summary still has no column for its words, and the rollback
+      # keeps every note written.
+      - name: Commons hand-over note against Postgres (a fifth kind, guarded in the database)
+        run: python3 tests/commons_handover_note_sql_proof.py
+      # The S693 answer-as-filed write (a guarded UPDATE of 11 rows a person entered): it answers only the rows it
+      # names, only while each still stands as it was read, the receipt's result holds what each replaced, and the
+      # rollback puts it back.
+      - name: Commons hand-over, answered as filed, against Postgres (guarded, with before-values)
+        run: python3 tests/handover_mark_filed_sql_proof.py
+      # The reader's pickup for hand-overs (kb/_handover_pickup.py): a bot check is filed as one and the reader loads
+      # nothing more from that host, and what it found is counts and heading words, never a page's text or a name.
+      # pypdf reads the dropped PDFs the test builds.
+      - name: Commons hand-over pickup (bot checks, counts only, no names kept)
+        run: |
+          pip install --quiet pypdf
+          python3 tests/handover_pickup_test.py
       # The runner-applied migration (Sam, Open Asks Sheet 74 card 2, 2026-10-13):
       # only a committed .sql under chatbox/, kb/ or supabase/, a migration name the
       # ledger accepts, and a receipt naming the file's sha256. Pure-stdlib python.
@@ -288,6 +311,21 @@ jobs:
       # two-signal re-check sends to a person, and the store's active discipline. Pure stdlib.
       - name: Discipline in doubt (kb/_ccr_seed_recheck_dryrun.py --doubt)
         run: python3 tests/ccr_doubt_test.py
+      # The Commons' Subjects card (S694): local subject titles from the printed catalogs beside the state list,
+      # codes compared exactly, one-sided codes kept for the curator, byte-identical reruns. Pure stdlib.
+      - name: Local subject titles (kb/_build_local_subject_titles.py)
+        run: python3 tests/local_subject_titles_test.py
+      # The codes the pile mint holds on (S695): held courses summed, counted once each, ranked; a vote that missed its
+      # floor is a suggestion, never a decision. Pure stdlib.
+      - name: Held subject codes (kb/_held_subject_codes.py)
+        run: python3 tests/held_subject_codes_test.py
+      # The Subjects card's two files in the daily build (S695): both builders run after their inputs' steps with
+      # --if-changed, each fingerprint ignores its daily stamp, and a rerun on the same inputs writes nothing. Pure stdlib.
+      - name: Subjects card in the daily build (--if-changed fingerprints)
+        run: python3 tests/subjects_daily_build_test.py
+      # The Needs an M-ID pile's exhibit links and the daily rebuild (S694): the join, the alias chain, --if-changed, same bytes.
+      - name: Closest M-ID exhibit links (kb/_closest_mid.py)
+        run: python3 tests/closest_mid_links_test.py
       # Issue 3447: rulings fold into the overlay and stay final; a person's discipline row validates a merge target.
       - name: Rulings stick (kb/_apply_curation.py ruling fold, reseed curated guard)
         run: python3 tests/apply_curation_rulings_test.py
@@ -505,9 +543,9 @@ jobs:
       # whose sha256 kb/receipts/index/ names. Pure-stdlib python and git.
       - name: Display receipt store (index, bucket first, ignore rule, step order)
         run: python3 tests/display_receipt_store_test.py
-      # The row audit prune (S680, #3476 step 5): the newest 14 reports and latest.json stay, an older report
+      # The row audit prune (S680, #3476 step 5; KEEP 0 from S695): latest.json stays, a dated report
       # leaves only once its index entry names its sha256, and a store failure never fails the daily run.
-      - name: Row audit prune (newest 14 kept, indexed before removed, daily run unharmed)
+      - name: Row audit prune (latest.json kept, indexed before removed, daily run unharmed)
         run: python3 tests/row_audit_prune_test.py
       # The one-time move of the display receipts committed before S680 (#3476
       # Part 4 step 4): every display receipt main tracks that this tree removed
@@ -907,6 +945,24 @@ jobs:
       # materialized record, P0 twice and P1 drift. Pure-stdlib python, no network.
       - name: UC-CUR promotion guard (kb/_uc_cur_promote.py)
         run: python3 tests/uc_cur_promote_test.py
+      # The Needs an M-ID pile mint, dry run (Session 694) — an id ever minted is
+      # never handed out; a short subject code decides nothing alone; a course no
+      # accepted route reaches is held; credit and noncredit split; topics and
+      # Strong matches stay out; a twin of an existing M-ID is held for Assign;
+      # byte-identical reruns; the TOP code moves nothing. Fixtures only.
+      # Version 2 (Session 695): route (i) only at its per-code floor; a shell
+      # title only under the identity file's convention, measured one college
+      # out; punctuation folds, numerals never; staged-plan ids reserved; the
+      # pile_mint source left as written by kb/_infer_disciplines.py and read as
+      # a session mint by the auditor and the confidence scorer.
+      - name: Pile mint dry-run guard (kb/_pile_mint_dryrun.py)
+        run: python3 tests/pile_mint_dryrun_test.py
+      # The pile mint apply (Session 695): stops on a moved plan, a curated
+      # course, a merge target, a wrong --expect or a stale live read; untouched
+      # rows byte-identical; counts grow by the planned number; the rollback
+      # returns the original bytes and reserves the ids. Fixtures only.
+      - name: Pile mint apply guard (kb/_pile_mint_apply.py)
+        run: python3 tests/pile_mint_apply_test.py
       # Occupation matcher stemming (Session 263) — stem() strips -er/-or, which
       # is right for `installers -> install` and wrong for `engineer -> engine`
       # and `actors -> act`: those land on a DIFFERENT word, and the coverage
@@ -1181,6 +1237,16 @@ jobs:
       - name: Merge-chain flattening lint (excel_to_dashboard.py)
         run: |
           python3 tests/merge_chain_flatten_test.py
+      # Assign from the panel (S694): a course from outside the identity file,
+      # assigned to a common course, must list under it, leave that common
+      # course's row as it stood, and give a newly minted course its subject,
+      # credit status and TOP; and no course the identity file holds may hide
+      # behind a same-title twin. Runs the export twice through its UC_KB_DIR /
+      # UC_OUT_DIR seam (about a minute). Imports the generator (openpyxl,
+      # installed at the top). Same non-required check.
+      - name: Assign from the panel, the export (excel_to_dashboard.py)
+        run: |
+          python3 tests/assign_from_panel_build_test.py
       # Units never split an identity (Sam, 2026-09-27). The M-ID Units bake
       # read the minted memberships alone, so 2,358 merged rows printed "—" or
       # one figure over members that differ; it now reads the members the row
@@ -1609,6 +1675,7 @@ jobs:
           python3 tests/row_audit_top_source_score_test.py
           python3 tests/row_audit_zero_members_test.py
           python3 tests/coci_flags_test.py
+          python3 tests/coci_topics_not_applicable_test.py
           python3 kb/_not_applicable_rule.py
           test_group_end
       - name: Programs, pathways, veterans, MAP fetch, the custom report payload and repo hygiene

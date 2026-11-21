@@ -1,0 +1,395 @@
+{
+ "college": "Diablo Valley College",
+ "control_number": "35567",
+ "shape": "adt",
+ "title": "Elementary Teacher Education",
+ "award": "A.A- T Degree",
+ "source_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/associate-in-art-in-elementary-teacher-education-integrated-programs-for-transfer-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7458,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7458,
+    "output_tokens": 2905,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2905,
+  "output_tokens_details": {
+   "thinking_tokens": 1083
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08793,
+ "ms": 23862,
+ "seconds": 24.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 24,
+   "share": 0.542,
+   "missing": [
+    "COMM121",
+    "ENGL123",
+    "ENGLC1001",
+    "GEOG135",
+    "HIST122",
+    "MATH125",
+    "PHILO130",
+    "PHYS110",
+    "PHYS111",
+    "PSYC145",
+    "SOCIO122"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "BIOLC1000",
+     "listed": "BIOSC102",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001",
+     "listed": "HIST120",
+     "matched_by": "course_id"
+    }
+   ],
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "ARTHS100",
+    "ENGLC1002",
+    "PHYS112"
+   ],
+   "flagged": [
+    "ARTHS100",
+    "ENGLC1002",
+    "PHYS112"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    32.0,
+    36.0
+   ],
+   "stated": [
+    32.0,
+    37.0
+   ],
+   "against": "program",
+   "why": [],
+   "short_high": true
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Elementary Teacher Education: Integrated Programs",
+   "measure": "units",
+   "total_units": {
+    "min": 32,
+    "max": 37
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "analyze models and methods of effective teaching, especially in relation to the needs of educating a diverse student body.",
+    "examine the physical, cognitive/language, social-emotional milestones in school age children.",
+    "understand and analyze how concepts of English and language arts, social studies, visual and performing arts, science, and mathematics apply to teaching at an elementary level."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 25,
+     "max": 26
+    },
+    "courses": [
+     {
+      "code": "BIOL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 124",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDUC 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1002",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Select One (GEOL 130)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "List A",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "GEOL 130",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Select One (CHEM 108 and PHYS 112)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "List A",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHEM 108",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 112",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "List B: Select One",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ARTHS 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DANCE 201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSIC 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DRAMA 139",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BIOSC 102",
+    "why": "not in the text"
+   },
+   {
+    "code": "COMM 121",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL 123",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL C1001",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOG 135",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 120",
+    "why": "not in the text; catalog lists HIST C1001 instead"
+   },
+   {
+    "code": "HIST 122",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 125",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHILO 130",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYS 110",
+    "why": "not in the text; catalog lists PHYS 112 instead"
+   },
+   {
+    "code": "PHYS 111",
+    "why": "not in the text; catalog lists PHYS 112 instead"
+   },
+   {
+    "code": "PSYC 145",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOCIO 122",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "Catalog prints codes without a space between subject and number (e.g., 'BIOLC1000', 'GEOL130'); recorded with a space to match the closed-list format.",
+   "List A (Total 4-8, 'Select One') offers either GEOL 130 (4 units) or the pair CHEM 108 and PHYS 112 (8 units); recorded as two option blocks in option_group 'List A'. The printed 4-8 total applies to List A as a whole, so stated is left null on each option block.",
+   "Required Core prints Total 25-26, though listed courses sum to 25; HIST 180 or ENGL C1002 recorded as one entry with an alternative.",
+   "'Complete 60 CSU-transferable units' and 'minimum of 18 units in the major' are generic degree requirements, not recorded as degree_total or total_units; major total 32-37 is the printed total for 'Elementary Teacher Education: Integrated Programs'.",
+   "Cal-GETC is named but no GE unit figure is printed.",
+   "Program learning outcomes printed once for the program; the A.A.-T shares them.",
+   "No careers named in the text."
+  ]
+ },
+ "extracted_run": "44745889555",
+ "catalog_year": "2026-2027"
+}

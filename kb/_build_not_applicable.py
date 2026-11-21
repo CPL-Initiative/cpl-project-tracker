@@ -4,7 +4,10 @@ the Courses bot's ask, #3480 Source 13, item 4).
 
 The title rule is kb/_not_applicable_rule.py: independent or directed study, an internship or work experience, or a
 code-only listing. Such a course is set up one student at a time, or carries a number and no title, so it is never
-shared across colleges.
+shared across colleges. Special and selected topics join them for courses only (S695, session decision
+d-topics-not-applicable-2026-11-20): a topics course's content changes each term. Only a course on the Needs an M-ID
+pile takes the topics flag: one that carries a C-ID or CCN, or that a person curated (a CN: row in
+kb/coci_curation.json, which is how an Assign or a re-home is stored), is left as it is. A card never takes it.
 
   courses   every course in the state's course list (coci_lookup_data.js) that sits on no shared course in the
             Courses List's file (unified_courses_members.js), keyed "college|control number", whose title matches.
@@ -37,15 +40,22 @@ INPUTS = {
     "one_course_cards": "kb/coci_minted_singletons.json",
 }
 # coci_lookup_data.js row layout (coci_lookup.js ROW).
-COLLEGE, CTRL, SUBJ, NUM, TITLE = 0, 1, 2, 3, 4
+COLLEGE, CTRL, SUBJ, NUM, TITLE, CID, CCN = 0, 1, 2, 3, 4, 8, 9
+
+
+def person_curated(curation, cn):
+    """A course someone curated by its control number (the Assign and a re-home write CN:<control number>). Any such
+    row keeps the course off the topics flag: the course is on its way to the common course it names."""
+    return isinstance(curation.get("CN:" + str(cn or "").strip()), dict)
 
 
 def subject_codes(coci):
     return frozenset(re.sub(r"[^A-Z0-9]", "", str(r[SUBJ] or "").upper()) for r in coci.get("rows") or [])
 
 
-def build(coci, list_members, curation, universe=None):
-    """universe: the card ids that may carry the flag (F.card_universe); None allows every card on the List."""
+def build(coci, list_members, curation, universe=None, stats=None):
+    """universe: the card ids that may carry the flag (F.card_universe); None allows every card on the List.
+    stats: a dict that receives the counts beside the result (topics_left)."""
     codes = subject_codes(coci)
     names = [str(c or "").strip() for c in (list_members.get("colleges") or [])]
     members = list_members.get("members") or {}
@@ -64,6 +74,11 @@ def build(coci, list_members, curation, universe=None):
         if k in by_key or cn in by_cn:      # the List's join: college and control number, else control number alone
             continue
         kind = R.kind_of(r[TITLE], codes)
+        if not kind and R.kind_of(r[TITLE], codes, topics=True) == "topics":
+            if (len(r) > CCN and (r[CID] or r[CCN])) or person_curated(curation, cn):
+                gaps["topics_left"] += 1        # it holds an identity, or someone curated it: left as it is
+            else:
+                kind = "topics"
         if kind:
             courses[k] = [kind, str(r[TITLE] or "")]
         else:
@@ -81,6 +96,8 @@ def build(coci, list_members, curation, universe=None):
             cur = curation.get(cid) or {}
             if F.is_person(cur.get("reviewed_by")):
                 cards[cid]["person_reviewed"] = F._when(cur.get("reviewed_at")) or "undated"
+    if stats is not None:
+        stats["topics_left"] = gaps["topics_left"]
     return courses, cards, gaps["real_gap"]
 
 
@@ -91,7 +108,8 @@ def main(argv):
     curation = (F._read(ROOT, INPUTS["curation"]) or {}).get("curations") or {}
     universe = F.card_universe((F._read(ROOT, INPUTS["cards"]) or {}).get("courses") or {}, curation,
                                (F._read(ROOT, INPUTS["one_course_cards"]) or {}).get("courses") or {})
-    courses, cards, real_gaps = build(F.loadjs(p("coci_courses")), F.loadjs(p("list_members")), curation, universe)
+    stats = {}
+    courses, cards, real_gaps = build(F.loadjs(p("coci_courses")), F.loadjs(p("list_members")), curation, universe, stats)
     by_kind = Counter(v[0] for v in courses.values())
     payload = {
         "_about": "Not-applicable courses and cards, kept for the record and out of every count, waiting pile, to-do "
@@ -107,6 +125,7 @@ def main(argv):
         "_courses_shape": "college|control number -> [kind, title as the state's course list prints it]",
         "counts": {"courses": len(courses), "courses_by_kind": dict(sorted(by_kind.items())),
                    "courses_with_no_card": len(courses) + real_gaps, "real_gaps": real_gaps,
+                   "topics_left_with_identity_or_curated": stats["topics_left"],
                    "cards": len(cards), "cards_by_kind": dict(sorted(Counter(c["kind"] for c in cards.values()).items()))},
         "courses": courses,
         "cards": cards,

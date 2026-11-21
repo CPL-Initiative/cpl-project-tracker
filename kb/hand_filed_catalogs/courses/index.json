@@ -1,0 +1,231 @@
+{
+ "_what": "One row per college whose printed courses are filed here as <slug>.json.gz (gzip -9n). missed_upper_bound counts the units lines no course heading claimed in a PDF or text read (null for an HTML read, which reads every printed heading). sha256_uncompressed is the hash of the JSON inside the gzip.",
+ "colleges": [
+  {
+   "slug": "cerritos",
+   "file": "cerritos.json.gz",
+   "college": "Cerritos College",
+   "catalog_year": "2026-2027",
+   "source": "runner HTML",
+   "runs": [
+    "44767159068"
+   ],
+   "courses": 1656,
+   "missed_upper_bound": null,
+   "sha256_uncompressed": "46eeee9f1719b03edf26fd87907fa0f3d6cff93ad2d6e8372ae808e2f2923d19",
+   "read_at": "2026-11-20T15:50:34Z"
+  },
+  {
+   "slug": "clovis_community",
+   "file": "clovis_community.json.gz",
+   "college": "Clovis Community College",
+   "catalog_year": "2026-2027",
+   "source": "runner PDF",
+   "runs": [
+    "44759950664"
+   ],
+   "courses": 473,
+   "missed_upper_bound": 14,
+   "sha256_uncompressed": "0cfe33b256ba7c2d83954a4ac53383e7cdef1add1c029475e4bc1a1f7c0d25ae",
+   "read_at": "2026-11-20T15:07:34Z"
+  },
+  {
+   "slug": "east_los_angeles",
+   "file": "east_los_angeles.json.gz",
+   "college": "East Los Angeles College",
+   "catalog_year": "2026-2027",
+   "source": "runner PDF",
+   "runs": [
+    "44762233563"
+   ],
+   "courses": 1676,
+   "missed_upper_bound": 57,
+   "sha256_uncompressed": "44e609e3b61b10b7d5912fab664183e215b9e8f4f8292539a51824cef2450379",
+   "read_at": "2026-11-20T15:21:52Z"
+  },
+  {
+   "slug": "el_camino",
+   "file": "el_camino.json.gz",
+   "college": "El Camino College",
+   "catalog_year": "2026-2027",
+   "source": "Sam's hand-fetched copy (text gist)",
+   "runs": [
+    "44762315427"
+   ],
+   "courses": 1442,
+   "missed_upper_bound": 145,
+   "sha256_uncompressed": "3ad61847d654d78c3561c76a375ea731e44085d6c04d74976609bf69a5979321",
+   "read_at": "2026-11-20T15:21:45Z"
+  },
+  {
+   "slug": "long_beach_city",
+   "file": "long_beach_city.json.gz",
+   "college": "Long Beach City College",
+   "catalog_year": "2026-2027",
+   "source": "runner HTML",
+   "runs": [
+    "44765123063"
+   ],
+   "courses": 1595,
+   "missed_upper_bound": null,
+   "sha256_uncompressed": "50d672d38fc031fc267a39fd4d285041f33895bbceecfdb8d11fddbbcafb262c",
+   "read_at": "2026-11-20T15:38:25Z"
+  },
+  {
+   "slug": "los_angeles_city",
+   "file": "los_angeles_city.json.gz",
+   "college": "Los Angeles City College",
+   "catalog_year": "2026-2027",
+   "source": "runner PDF",
+   "runs": [
+    "44759950664"
+   ],
+   "courses": 1123,
+   "missed_upper_bound": 17,
+   "sha256_uncompressed": "0098b48bc3cb0ab5d71987282831417dc9ec6f484500a8f377898388785b658d",
+   "read_at": "2026-11-20T15:07:34Z"
+  },
+  {
+   "slug": "los_angeles_harbor",
+   "file": "los_angeles_harbor.json.gz",
+   "college": "Los Angeles Harbor College",
+   "catalog_year": "2026-2027",
+   "source": "runner PDF",
+   "runs": [
+    "44762233563"
+   ],
+   "courses": 765,
+   "missed_upper_bound": 43,
+   "sha256_uncompressed": "ba1592c5e1293d96465c449360a21f59a4b261ce36844cd90bd8162f5dee17fe",
+   "read_at": "2026-11-20T15:21:52Z"
+  },
+  {
+   "slug": "los_angeles_mission",
+   "file": "los_angeles_mission.json.gz",
+   "college": "Los Angeles Mission College",
+   "catalog_year": "2026-2027",
+   "source": "runner PDF",
+   "runs": [
+    "44763620806"
+   ],
+   "courses": 798,
+   "missed_upper_bound": 4,
+   "sha256_uncompressed": "e010c0541fa645728439d3fa698615aa74d09ff169a6061dbf866d553c8f7b4e",
+   "read_at": "2026-11-20T15:29:45Z"
+  },
+  {
+   "slug": "los_angeles_pierce",
+   "file": "los_angeles_pierce.json.gz",
+   "college": "Los Angeles Pierce College",
+   "catalog_year": "2026-2027",
+   "source": "runner PDF",
+   "runs": [
+    "44763620806"
+   ],
+   "courses": 414,
+   "missed_upper_bound": 12,
+   "sha256_uncompressed": "fccc46564f3030021db239ec8b26632a150b71a4d927272164a16249e09ee936",
+   "read_at": "2026-11-20T15:29:45Z"
+  },
+  {
+   "slug": "los_angeles_southwest",
+   "file": "los_angeles_southwest.json.gz",
+   "college": "Los Angeles Southwest College",
+   "catalog_year": "2026-2027",
+   "source": "runner PDF",
+   "runs": [
+    "44762233563"
+   ],
+   "courses": 724,
+   "missed_upper_bound": 9,
+   "sha256_uncompressed": "798c5f4f0a70a04e109375b4ed092ebd46b31a73dd33b68375ced4a460c05ca0",
+   "read_at": "2026-11-20T15:21:52Z"
+  },
+  {
+   "slug": "los_angeles_trade_technical",
+   "file": "los_angeles_trade_technical.json.gz",
+   "college": "Los Angeles Trade-Technical College",
+   "catalog_year": "2026-2027",
+   "source": "runner PDF",
+   "runs": [
+    "44763620806"
+   ],
+   "courses": 1099,
+   "missed_upper_bound": 8,
+   "sha256_uncompressed": "5d9b854fbe50f62d5226dba7c6fae984fc72aba1879023eee24090a958534c1a",
+   "read_at": "2026-11-20T15:29:45Z"
+  },
+  {
+   "slug": "los_angeles_valley",
+   "file": "los_angeles_valley.json.gz",
+   "college": "Los Angeles Valley College",
+   "catalog_year": "2026-2027",
+   "source": "runner PDF",
+   "runs": [
+    "44759950664"
+   ],
+   "courses": 939,
+   "missed_upper_bound": 22,
+   "sha256_uncompressed": "903e77dae6ff54e42b1edc3aa910d0fc5325785796aa424fd6f071c7aa768e43",
+   "read_at": "2026-11-20T15:07:34Z"
+  },
+  {
+   "slug": "monterey_peninsula",
+   "file": "monterey_peninsula.json.gz",
+   "college": "Monterey Peninsula College",
+   "catalog_year": "2026-2027",
+   "source": "runner HTML",
+   "runs": [
+    "44765198579"
+   ],
+   "courses": 1137,
+   "missed_upper_bound": null,
+   "sha256_uncompressed": "080425aa65fdc2abce72db2a79441d8ba842b3e56538da57e7951f96dce22a51",
+   "read_at": "2026-11-20T15:38:56Z"
+  },
+  {
+   "slug": "north_orange_continuing_education",
+   "file": "north_orange_continuing_education.json.gz",
+   "college": "North Orange Continuing Education",
+   "catalog_year": "2026-2027",
+   "source": "runner HTML",
+   "runs": [
+    "44756513382",
+    "44757980757"
+   ],
+   "courses": 1089,
+   "missed_upper_bound": null,
+   "sha256_uncompressed": "447561a8632fb1cfc8e69b5c805422209302a8d47b588bbcf9eb23de0f8d52a5",
+   "read_at": "2026-11-20T14:46:44Z"
+  },
+  {
+   "slug": "southwestern",
+   "file": "southwestern.json.gz",
+   "college": "Southwestern College",
+   "catalog_year": "2026-2027",
+   "source": "runner HTML",
+   "runs": [
+    "44759854547"
+   ],
+   "courses": 1692,
+   "missed_upper_bound": null,
+   "sha256_uncompressed": "9f6405d43cdbaf9711128745bdaf54cc9450e428f880c45c7130b44f0bb62371",
+   "read_at": "2026-11-20T15:06:53Z"
+  },
+  {
+   "slug": "west_los_angeles",
+   "file": "west_los_angeles.json.gz",
+   "college": "West Los Angeles College",
+   "catalog_year": "2026-2027",
+   "source": "runner PDF",
+   "runs": [
+    "44763620806",
+    "44764775167"
+   ],
+   "courses": 719,
+   "missed_upper_bound": 84,
+   "sha256_uncompressed": "212fcec1fa387c77a9e03f10b8bf2842cc8d4ff6ac0f47b56d660df80e23b81e",
+   "read_at": "2026-11-20T15:29:45Z"
+  }
+ ]
+}

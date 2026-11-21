@@ -49,6 +49,8 @@ UNRUN = {
         "needs a live Postgres (PGHOST/PGPORT); a session runs it before a guarded kb_curation apply",
     "statewide_catalog_build_test.py":
         "run by tests/sierra_statewide_catalog.test.js",
+    "pile_mint_fixture.py":
+        "run by tests/pile_mint_dryrun_test.py",
 }
 
 RUN_LINE = re.compile(r"\b(?:python3?|node)\s+(?:-\S+\s+)*tests/([\w.\-]+\.(?:py|js))\b")

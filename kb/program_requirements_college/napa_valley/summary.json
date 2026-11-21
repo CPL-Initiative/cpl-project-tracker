@@ -2,19 +2,22 @@
  "college": "Napa Valley College",
  "programs": 127,
  "with_closed_list": 111,
- "found": 98,
- "extracted": 98,
+ "found": 103,
+ "extracted": 103,
  "errors": 0,
- "passed_machine_checks": 83,
+ "passed_machine_checks": 91,
  "failed": {
-  "coverage": 4,
+  "coverage": 3,
   "invented": 0,
-  "arithmetic": 15,
+  "arithmetic": 12,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 6.36,
- "cost_per_program": 0.0649,
+ "cost_usd_run": 2.66,
+ "cost_usd_filed": 6.62,
+ "cost_per_program": 0.0642,
+ "extract_calls": 36,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "03685",
@@ -49,7 +52,36 @@
       508
      ]
     ]
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "03696",
+   "title": "Vocational Nursing",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.napavalley.edu//areas-of-study/nursing/nursing-as/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.667,
+    "body": 0.667,
+    "content": 0.0,
+    "net": 2,
+    "listed": 3,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 5314,
+     "content": 6816,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Active"
   },
   {
    "control_number": "19942",
@@ -84,7 +116,8 @@
       508
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "36505",
@@ -110,7 +143,36 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "36865",
+   "title": "Ethnic Studies",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://catalog.napavalley.edu//areas-of-study/ethnic-studies/ethnic-studies-aa/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.462,
+    "body": 0.462,
+    "content": 0.077,
+    "net": 6,
+    "listed": 13,
+    "why": "coverage 0.46 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 4740,
+     "content": 6215,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Active"
   },
   {
    "control_number": "37927",
@@ -118,7 +180,8 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "37928",
@@ -126,8 +189,9 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   }
  ],
- "run": "38748853261"
+ "run": "44739981651"
 }

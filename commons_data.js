@@ -424,7 +424,9 @@
      tab ... give the option to go to new tab from the sidebar"). Each is a word in the address after the college (or
      after a view): one that names an item takes it as the next word, a safe word (a control number, a key, a slug),
      never a URL, since the arrival splits the address on "/". */
-  var PANES = { catalog: 0, scout: 0, capture: 0, run: 0, pathways: 0, slos: 0, plos: 0, program: 1, source: 1, entry: 1 };
+  /* handover (Sam, 2026-11-20, "hand it over in place"): the college's own panel at the place to act, with the drop
+     box, Try the link and the API procedure boxes (commons_handover.js). */
+  var PANES = { catalog: 0, scout: 0, capture: 0, run: 0, pathways: 0, slos: 0, plos: 0, handover: 0, program: 1, source: 1, entry: 1 };
   function paneRoute(p) { return p ? "/" + p.k + (PANES[p.k] && p.a ? "/" + p.a : "") : ""; }
   function listRoute(filter, platform, district) {
     return (filter && filter !== "all" ? "/" + filter : "") + (platform ? "/platform/" + platform : "") + (district ? "/district/" + district : "");
@@ -1200,7 +1202,27 @@
     if (p.k === "capture") return !!c.harvested;
     if (p.k === "run") return !!actionsHref(c.run);
     if (p.k === "program") return !!(c.programs_file && p.a);
-    return true;   // pathways, slos, plos
+    return true;   // pathways, slos, plos, handover
+  }
+  /* The hand-over pane (d-college-opens-cdc-panel-2026-11-20: this panel, never a second one). commons_handover.js
+     draws it; the module loads the first time the pane opens, then the panel draws again. */
+  function handoverPane(M, c) {
+    var HO = window.CPL_HANDOVER, title = "Hand over course outlines";
+    if (HO && typeof HO.collegePane === "function") {
+      try { return HO.collegePane(M, c, { datasets: datasets }); }
+      catch (e) { return { title: title, kids: [tba("This pane could not be drawn.")] }; }
+    }
+    if (window.CPL_TABS && window.CPL_TABS.loadScript && !handoverPane.asked) {
+      handoverPane.asked = true;
+      window.CPL_TABS.loadScript("commons_handover.js", "CPL_HANDOVER", function () { if (S.pane && S.pane.k === "handover" && VIEW.panel) drawPanel(); });
+      return { title: title, kids: [el("p", { cls: "cdd-of", role: "status", text: "Opening the hand-over." })] };
+    }
+    return { title: title, kids: [tba("The hand-over (commons_handover.js) could not be loaded. Reload the tab to try again.")] };
+  }
+  /* The word that opens it, by the college's name as the hunt file gives it. */
+  function handoverWord(M, name, word) {
+    var c = M.colleges.filter(function (x) { return x.name === name; })[0];
+    return c ? paneWord(word, { k: "handover", a: "" }, c.id) : null;
   }
   function paneView(M, c, p) {
     if (extPane(p.k)) { try { return extPane(p.k)(M, extHost()); } catch (e) { return { title: "Not drawn", kids: [tba("This pane could not be drawn.")] }; } }
@@ -1273,6 +1295,7 @@
           r.url ? el("p", { cls: "cdd-of", text: "The capture matched this page to the program by its title and award. A match can be wrong; the new tab shows the page itself." }) : null].filter(Boolean) };
     }
     if (p.k === "slos" || p.k === "plos") return outcomesPane(M, c, p.k);
+    if (p.k === "handover") return handoverPane(M, c);
     return { title: "Not found", kids: [] };
   }
   function outcomesPane(M, c, k) {
@@ -1378,17 +1401,27 @@
   /* Sam's blocked-catalog hunt (S678, #3464 item 8: "Make sure those blocked catalogs and cors are on my cdc to do"; "To
      do should be on both cdc and commons"): the one to-do, from the same file the Commons' Waiting on a person list
      reads (kb/_blocked_catalogs.py). A college leaves it once its catalog or outlines are filed; none left, no block. */
+  /* A day written in words (Nov 20, 2026), as this page writes every date; "" when it is no day. */
+  function dayWords(v) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(v || ""));
+    return m ? ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][Number(m[2]) - 1] + " " + Number(m[3]) + ", " + m[1] : String(v || "");
+  }
   function blockedTodo(M) {
     var b = M.blocked;
-    if (!b || !Array.isArray(b.colleges) || !b.open) return null;
+    /* A course a person answered is off the to-do and stays on this page (S693; the second read of pull request 3613 found the
+       page saying no college is on the list while 12 answered courses sat in the file). */
+    var answered = b && Array.isArray(b.colleges) ? b.colleges.filter(function (c) { return (c.answered || []).length; }) : [];
+    if (!b || !Array.isArray(b.colleges) || (!b.open && !answered.length)) return null;
     /* Sam, 2026-11-20 (his work order): blocked outlines are a priority only for the courses still taught, and those
        are named here. Once the hunt file lists its courses, a college is on the to-do only while it has one. */
     var listed = Array.isArray(b.courses);
     var open = b.colleges.filter(function (c) { return !c.filed && (!listed || c.hunted); });
-    var aside = listed ? b.colleges.filter(function (c) { return !c.hunted; }) : [];
+    var aside = listed ? b.colleges.filter(function (c) { return !c.hunted && !(c.answered || []).length; }) : [];
     var sec = el("section", { cls: "cdd-psec cdd-todo", id: "cdd-blocked", "aria-labelledby": "cdd-blocked-h", "data-todo": "blocked-catalogs" });
-    sec.appendChild(el("h3", { id: "cdd-blocked-h", cls: "cdd-h3", text: "To do: " + (b.title || "Course Outline and Catalog Fixes Needed") }));
-    if (listed) {
+    sec.appendChild(el("h3", { id: "cdd-blocked-h", cls: "cdd-h3", text: (b.open ? "To do: " : "") + (b.title || "Course Outline and Catalog Fixes Needed") }));
+    if (!b.open) {
+      sec.appendChild(el("p", { cls: "cdd-src", "data-todo-none": "", text: "No still-taught course waits on an outline from a person." }));
+    } else if (listed) {
       sec.appendChild(el("p", { cls: "cdd-src", text: fmt(b.still_taught_open) + (b.still_taught_open === 1 ? " course still taught at " : " courses still taught at ")
         + fmt(open.length) + (open.length === 1 ? " college needs its course outline. " : " colleges need their course outline. ")
         + "The outline reader cannot reach these colleges' outlines, so a person fetches each one. Blocked outlines for courses no longer taught are set aside." }));
@@ -1398,7 +1431,7 @@
         + " local courses in all; " + (b.still_taught_total != null ? fmt(b.still_taught_total) + " of them are still taught, and only those are hunted. " : "")
         + "Send the PDF to COBIx in your Grok Bot chat." }));
     }
-    sec.appendChild(teamFiles("Where a session files it", b.file_in || "kb/hand_filed_catalogs/outlines"));
+    if (b.open) sec.appendChild(teamFiles("Where a session files it", b.file_in || "kb/hand_filed_catalogs/outlines"));
     var ul = el("ul", { cls: "cdd-todo-list" });
     open.forEach(function (c) {
       /* Sam, 2026-11-20: an outline or catalog address here is a link that opens in a new tab. It is his exception to
@@ -1410,9 +1443,26 @@
         return el("li", { "data-todo-course": x.control_number || null }, [x.course + ", " + x.title]);
       })));
       else kids.push(" " + fmt(c.local_courses) + " local courses, " + (c.reason || "the site blocks automated reading") + ".");
+      /* Hand it over in place (Sam, 2026-11-20): each college on the to-do opens its own panel at the place to act. */
+      var hw = handoverWord(M, c.college, "Hand over its outlines");
+      if (hw) kids.push(el("p", { cls: "cdd-of cdd-dsword" }, [hw]));
       ul.appendChild(el("li", { "data-todo-college": c.slug }, kids));
     });
-    sec.appendChild(ul);
+    if (open.length) sec.appendChild(ul);
+    if (answered.length) {
+      var nAns = answered.reduce(function (n, c) { return n + c.answered.length; }, 0);
+      sec.appendChild(el("p", { cls: "cdd-src", "data-todo-answered-h": "", text: "Answered by a person, and off the to-do: " + fmt(nAns) + (nAns === 1 ? " course at " : " courses at ")
+        + fmt(answered.length) + (answered.length === 1 ? " college. " : " colleges. ") + "Each course's outcomes are still missing until its outline is in hand." }));
+      sec.appendChild(el("ul", { cls: "cdd-todo-list", "data-todo-answered": "" }, answered.map(function (c) {
+        var kids = [el("strong", { text: c.college }), ".", el("ul", { cls: "cdd-todo-courses" }, c.answered.map(function (x) {
+          return el("li", { "data-todo-course": x.control_number || null }, [x.course + ", " + x.title + ": " + (x.what || "answered")
+            + ([x.by, x.on].filter(Boolean).length ? " (" + [x.by, dayWords(x.on)].filter(Boolean).join(", ") + ")" : "") + "."]);
+        }))];
+        var hw = handoverWord(M, c.college, "Hand over more for it");
+        if (hw) kids.push(el("p", { cls: "cdd-of cdd-dsword" }, [hw]));
+        return el("li", { "data-todo-college": c.slug }, kids);
+      })));
+    }
     if (aside.length) sec.appendChild(el("p", { cls: "cdd-src", "data-todo-aside": "", text: "No still-taught course waits at "
       + aside.map(function (c) { return c.college; }).join(aside.length === 2 ? " or " : ", ") + "." }));
     if (!listed) sec.appendChild(el("p", { cls: "cdd-src", text: "The course-by-course list, still-taught courses first: TBA until the hunt list is filed with the courses." }));
@@ -1470,6 +1520,8 @@
         kids = kids.concat(liveBits(d, now));
         if (d.parts) kids = kids.concat(parts(d, now, c));
         if (d.word) kids.push(el("p", { cls: "cdd-of cdd-dsword" }, [paneWord(d.word[0], d.word[1], c.id)]));
+        /* Hand it over in place (Sam, 2026-11-20): the place to act sits with the outlines it serves. */
+        if (d.key === "slo") kids.push(el("p", { cls: "cdd-of cdd-dsword", "data-handover-word": "" }, [paneWord("Hand over this college's course outlines, a link or an API", { k: "handover", a: "" }, c.id)]));
         if (d.src && d.held) kids.push(el("p", { cls: "cdd-src", text: "Source: " + d.src }));
         return el("div", { cls: "cdd-pds", "data-ds": d.key }, kids);
       })));

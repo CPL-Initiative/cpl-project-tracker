@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 7441,
-    "output_tokens": 2184,
+    "output_tokens": 2122,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2184,
+  "output_tokens": 2122,
   "output_tokens_details": {
-   "thinking_tokens": 666
+   "thinking_tokens": 657
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07344,
- "ms": 17378,
- "seconds": 17.8,
+ "cost_usd": 0.0722,
+ "ms": 17158,
+ "seconds": 17.6,
  "parts": null,
  "error": null,
  "score": {
@@ -323,13 +323,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Catalog prints codes with leading zeros (e.g., ASAME 020); matched to closed-list codes without zeros (ASAME 20), so not marked as catalog additions.",
-   "Block rules for Arts and Humanities, Social Sciences and History, and Comparative Courses are inferred from the unit headings (3, 6, 3 units) over longer lists; the catalog prints no explicit 'select' wording.",
-   "The page prints 'Electives Courses to meet 60' with 0.00 units, although 18 major + 21 GE = 39, leaving 21 units to reach 60; recorded electives_fill_degree true and no elective units. Reviewer should check.",
-   "GE section is printed only as 'General Education Requirements 21.00' with no named pattern; ge_pattern left null.",
-   "ETHST 030 is marked '( Historical )' in the catalog but still listed in the Comparative Courses block.",
-   "Career text also mentions 'graduate school', which was not recorded as a career."
+   "Catalog prints codes with zero padding (e.g., ASAME 020, ETHST 001); these match closed-list codes ASAME 20, ETHST 1, etc., so none are marked catalog additions.",
+   "The catalog prints 'Electives Courses to meet 60' with 0.00 units, while Total Major Units 18 plus General Education 21 equals 39 of the 60 total; electives_fill_degree set true and no elective units recorded. Reviewer should check.",
+   "The general education pattern is not named (only 'General Education Requirements 21.00'), so ge_pattern is null.",
+   "ETHST 030 is marked '( Historical )' in the catalog but still listed among Comparative Courses.",
+   "'working in higher education or graduate school' recorded as career field 'higher education'; graduate school not counted as a career."
   ]
  },
- "extracted_run": "38935141023"
+ "extracted_run": "44744386009",
+ "catalog_year": "2026-2027"
 }

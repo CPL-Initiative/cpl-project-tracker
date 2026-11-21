@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "Instructional Aide",
  "award": "Noncredit program",
- "source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=120",
+ "source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=51",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7214,
+  "input_tokens": 6719,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7214,
-    "output_tokens": 752,
+    "input_tokens": 6719,
+    "output_tokens": 908,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,32 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 752,
+  "output_tokens": 908,
   "output_tokens_details": {
-   "thinking_tokens": 271
+   "thinking_tokens": 394
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0439,
- "ms": 8268,
- "seconds": 8.4,
+ "cost_usd": 0.04504,
+ "ms": 9296,
+ "seconds": 9.4,
  "parts": null,
  "error": null,
  "score": {
   "measure": "hours",
   "coverage": {
-   "placed": 0,
+   "placed": 2,
    "listed": 2,
-   "share": 0.0,
-   "missing": [
-    "HMDV571A",
-    "HMDV571B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -88,18 +85,18 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Instruction Aide I HMDV 571A / Instruction Aide II HMDV 571B (course descriptions only; no program section in text)",
+   "section_heading": "Instructional Aide",
    "measure": "hours",
    "total_units": {
     "min": null,
@@ -121,26 +118,54 @@
    },
    "electives_fill_degree": false,
    "outcomes": [],
-   "careers": []
+   "careers": [
+    "instructional aide"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "HMDV 571A",
-    "why": "appears only as a course description; the text prints no program requirements placing it"
-   },
-   {
-    "code": "HMDV 571B",
-    "why": "appears only as a course description; the text prints no program requirements placing it"
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HMDV 571A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HMDV 571B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied catalog text (page 120) is part of the course description listings, not the Instructional Aide program section. It prints no program requirements, required-course list, total hours, outcomes or careers for the Instructional Aide program.",
-   "HMDV 571A (Instruction Aide I) and HMDV 571B (Instruction Aide II) are described on this page, with no hours printed. They are likely the program's two required courses, but the text does not state this, so no block was recorded.",
-   "A reviewer should locate the Instructional Aide program page elsewhere in the 2026-2027 CE catalog to confirm the requirements and total hours.",
-   "The measure is set to hours because this is a noncredit program; the text prints no hours."
+   "Noncredit program; measure set to hours, but the catalog prints no hours for the courses or for the program, so all hour fields are null.",
+   "The catalog prints the course titles as 'Instruction Aide I' and 'Instruction Aide II', while the state file has 'Instructional Aide I' and 'Instructional Aide II'.",
+   "The program section starts on page 51 and continues on page 52. The sections that follow on page 52 (Introduction to Child Care as a Career, School-Age Care and Leadership) belong to other programs and were not read.",
+   "The catalog prints no learning outcomes and no total for this program.",
+   "The description also mentions 'entry-level positions that support learning and independence for individuals with disabilities'. This was not recorded as a named career."
   ]
  },
- "extracted_run": "39035224783"
+ "extracted_run": "44739577102",
+ "catalog_year": "2026-2027",
+ "source_sha": "d9113b2e9af3bc16",
+ "source_codes": [
+  "HMDV571A",
+  "HMDV571B"
+ ],
+ "source_coverage": 1.0
 }

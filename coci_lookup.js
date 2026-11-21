@@ -84,6 +84,10 @@
     ".cplcoci-chip.mid { color:var(--seal-blue-text,#002F6D); }",
     ".cplcoci-chip.cid { color: var(--hunter, #1d4d33); border-color: var(--hunter, #1d4d33); }",
     ".cplcoci-chip.ccn { color: var(--violet, #5b3d8f); border-color: var(--violet, #5b3d8f); }",
+    /* A recommendation is no identity: a dashed outline in the muted ink, so it never reads as one the course holds. */
+    ".cplcoci-chip.rec { color: var(--text-muted); border-color: var(--text-muted); border-style: dashed; background: transparent; }",
+    ".ccl-rec-list { margin:4px 0 8px; padding-left:20px; display:grid; gap:6px; font-size:.84rem; color: var(--text-body); }",
+    ".ccl-rec-list a { display:inline-block; min-height:24px; line-height:24px; }",
     // The Courses List's Title drawer: the catalog description, then the learning outcomes.
     ".cplcoci-dd { font-size:.8rem; color: var(--text-body); }",
     ".cplcoci-dd .lbl, .cplcoci-outs .lbl { font-weight:600; color: var(--text-strong); margin-right:6px; }",
@@ -277,13 +281,19 @@
    * The table has no Edit, no flag, no find and replace; the panel's common course card holds the edits (ccCard).
    * A course moves between M-IDs in SkyView. */
   var LIST = { engine: null, loading: false, failed: null, memo: null, cols: null };
-  var LIST_FILTERS = [["", "All"], ["mid", "Has an M-ID"], ["nomid", "No M-ID"], ["cid", "Has a C-ID"], ["ccn", "Has a CCN"],
-    ["any", "Has any identity"], ["none", "No identity"], ["C", "Credit"], ["N", "Noncredit"], ["E", "Noncredit enhanced"],
+  /* Needs an M-ID (Sam, 2026-11-20, working the Commons' needs-attention list: the No M-ID pile "includes courses with
+     cid and ccn, which don't need a mid"): the one gap pile is a course with no M-ID, no C-ID and no CCN. It was two
+     words, "No M-ID" (which counted a C-ID or CCN course as a gap) and "No identity" (the same pile without them); the
+     second folded into the first, and the address #coci-lookup/list/none still opens it (LIST_ALIAS). */
+  var LIST_FILTERS = [["", "All"], ["mid", "Has an M-ID"], ["nomid", "Needs an M-ID"], ["cid", "Has a C-ID"], ["ccn", "Has a CCN"],
+    ["any", "Has any identity"], ["C", "Credit"], ["N", "Noncredit"], ["E", "Noncredit enhanced"],
     ["kept", "Kept, not counted"]];
+  var LIST_ALIAS = { none: "nomid" };
   /* Kept, not counted (Sam, 2026-11-17: "flag the record, never delete it; take flagged records out of counts, waiting
      piles, to-dos and fetch plans"): kb/coci_not_applicable.json names the courses with no common course that are
-     independent study, internships or a bare number, and the common courses every one of whose courses is. Those
-     courses stay on the List, findable, with the file's note; "No M-ID" and "No identity" leave them out, and "Kept, not
+     independent study, internships, a bare number or (S695) special and selected topics, and the common courses
+     every one of whose courses is one of the first three. Those
+     courses stay on the List, findable, with the file's note; "Needs an M-ID" leaves them out, and "Kept, not
      counted" shows them. A card a person ruled on stays counted, and its note says so (kb/_flags.py). Read once a visit;
      until it arrives, or if it fails, the List counts as before. */
   var KEPT = { na: null, error: null, loading: false };
@@ -297,6 +307,192 @@
           personNote: F._person_note || "" };
       }, function (e) { KEPT.error = String(e && e.message || e); })
       .then(function () { KEPT.loading = false; LIST.memo = null; if (state.view === "courses" && KEPT.na) mountList(); });
+  }
+  /* The closest common course for a course that needs an M-ID (Sam, 2026-11-20: "a new column with your recommended
+     closest mid ... to get a confidence score with the recommended mid with a link to open a sidebar to curate").
+     kb/coci_closest_mid.json is built by kb/_closest_mid.py: the first three common courses by title, subject, units
+     and catalog description, and a confidence that is the share right among courses with a known M-ID that scored
+     the same. Display only: nothing here saves. Read once a visit; until it arrives, or if it fails, the column is
+     blank. */
+  var CLOSEST = { f: null, error: null, loading: false };
+  function loadClosest() {
+    if (CLOSEST.f || CLOSEST.error || CLOSEST.loading) return;
+    CLOSEST.loading = true;
+    fetch("kb/coci_closest_mid.json", { cache: "no-store" })
+      .then(function (r) { if (!r.ok) throw new Error("kb/coci_closest_mid.json answered " + r.status); return r.json(); })
+      .then(function (F) { CLOSEST.f = { rows: F.rows || {}, levels: (F.measure && F.measure.levels) || [], links: F.links || {}, at: F.identity_file || "" }; },
+        function (e) { CLOSEST.error = String(e && e.message || e); })
+      .then(function () { CLOSEST.loading = false; LIST.memo = null; if (state.view === "courses" && CLOSEST.f) mountList(); });
+  }
+  /* A pile row's recommendation: { mid, level (the file's level: strong, possible or none), top: [[mid, score, same, of,
+     catalog]] }, or null for a row outside the pile. Three levels in words, never a raw score, and a course with no
+     strong match is offered a new M-ID (COBIx's note, relayed by Sam, 2026-11-20). A pile course with no candidate at
+     all sits at the last level with no closest course. */
+  /* links: the exhibit links of the first recommendation (kb/coci_closest_mid.json's links: records in
+     kb/coci_articulations.json on that M-ID), counted at a strong or possible match only. A course with no strong match
+     counts none from its candidate: that candidate is right about one time in five, and the course needs a new M-ID. */
+  function closestOf(row) {
+    if (!CLOSEST.f || row.mid || row.cid || row.ccn || row.kept) return null;
+    var e = CLOSEST.f.rows[row.ctrl], L = CLOSEST.f.levels, none = L[L.length - 1] || null;
+    if (!e || !e[2] || !e[2].length) return none ? { mid: "", level: none, top: [], links: 0 } : null;
+    var lv = L.filter(function (x) { return (x.bands || []).indexOf(e[1]) >= 0; })[0] || none;
+    return lv ? { mid: e[2][0][0], level: lv, top: e[2], links: lv.key === "none" ? 0 : linksOf(e[2][0][0]) } : null;
+  }
+  function linksOf(mid) { return (CLOSEST.f && +CLOSEST.f.links[mid]) || 0; }
+  function linkWords(n) { return n ? fmt(n) + (n === 1 ? " exhibit link" : " exhibit links") : ""; }
+  /* The pile's order (COBIx, relayed by Sam, 2026-11-20: "sort the pile by how many exhibits each M-ID would unlock"):
+     the links of a strong or possible match, most first, a strong match before a possible one at the same count, then
+     the title; a course with no strong match after them all, by title (a null sorts last either way). */
+  function pileRank(r) {
+    var rec = r.rec;
+    if (!rec || rec.level.key === "none" || r.assigned) return null;  // a course a reviewer assigned is settled: last
+    return rec.links * 2 + (rec.level.key === "strong" ? 1 : 0);
+  }
+  function pct(x) { return x == null ? "" : Math.round(x * 100) + "%"; }
+  function closestWords(rec) {
+    return rec.level.key === "none" ? "Propose a new M-ID" : rec.mid + ", " + (rec.level.key === "strong" ? "strong match" : "possible match")
+      + (rec.links ? ", " + linkWords(rec.links) : "");
+  }
+  function closestCell(r, mk) {
+    if (r.assigned && !r.mid) return [mk("span", { cls: "cplcoci-chip rec", title: "A reviewer assigned this course; the daily build lists it under that common course" },
+      ["Assigned to " + r.assigned.to + ", lists after the next build"])];
+    return r.rec ? [mk("span", { cls: "cplcoci-chip rec", title: "The closest common course and how sure the match is, measured on courses whose M-ID is known" },
+      [closestWords(r.rec)])] : null;
+  }
+  /* Assign from the panel (Sam, 2026-11-20, working the pile: "also need links to sidebar to take action on assigning
+     to a mid"). A signed-in reviewer joins a course in the pile to a common course: one kb_curation row, CN:<control
+     number> merge_into <id>, the row SkyView's re-home writes. The daily build lists the course under that common
+     course and leaves the common course's own row as it stands (#3618). Take it back deletes the row. The rows are read
+     live, a page at a time, so a course reads as assigned the moment it is saved and nobody assigns it twice; who
+     assigned it is read with a reviewer's token alone (COBIx on #2948). Nothing is kept in the browser. */
+  var ASSIGN = { rows: null, loading: false, busy: false, said: {}, failed: "" };
+  function assignKey(ctrl) { return String(ctrl || "").trim().toUpperCase(); }
+  function assignedOf(ctrl) { return (ASSIGN.rows && ASSIGN.rows[assignKey(ctrl)]) || null; }
+  // The state list gives some courses no control number (blank, or the word NULL); such a course has no key to save under.
+  function noControlNumber(ctrl) { return !assignKey(ctrl) || /^(NULL|N\/A|NA|NONE)$/.test(assignKey(ctrl)); }
+  // The columns a read asks for: the reviewer's email only with a reviewer's token (the anon key cannot read it, and a
+  // read that names it without one fails whole; tests/kb_curation_no_anon_email.test.js).
+  function assignSelect(token) { return "select=course_id,value,reviewed_at" + (token ? ",reviewer_email" : ""); }
+  function assignRow(x, token) { return { to: String(x.value || ""), at: String(x.reviewed_at || "").slice(0, 10), who: token ? x.reviewer_email : null }; }
+  /* The read is all or nothing (second read of the control, 2026-11-21): a page that fails leaves the assignments
+     unknown, ASSIGN.rows stays null, and the panel offers no Assign and says so. A read that passed a failed page off
+     as "none assigned" would invite a save over another reviewer's row. A signed-in read renews the token first. */
+  function loadAssigned() {
+    var by = {}, PAGE = 1000;
+    ASSIGN.loading = true;
+    function page(from, token) {
+      return fetch(REST + "/kb_curation?" + assignSelect(token) + "&field=eq.merge_into" +
+        "&course_id=like." + encodeURIComponent("CN:") + "%25&order=course_id.asc",
+        { headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + (token || SUPABASE_ANON), "Range-Unit": "items", Range: from + "-" + (from + PAGE - 1) } })
+        .then(function (res) { if (!res.ok) throw new Error("the service answered " + res.status); return res.json(); })
+        .then(function (rows) {
+          if (!Array.isArray(rows)) throw new Error("the service sent no list");
+          rows.forEach(function (x) { by[assignKey(String(x.course_id || "").slice(3))] = assignRow(x, token); });
+          return rows.length === PAGE ? page(from + PAGE, token) : null;
+        });
+    }
+    var first;
+    // COBIx on #2950: a token the server refuses reads again signed out (no email asked), so what stands still shows.
+    try {
+      first = (ccSession() ? ccFresh() : Promise.resolve(null)).then(function (sess) {
+        var token = sess && sess.access_token;
+        return page(0, token).catch(function (e) { if (!token) throw e; by = {}; return page(0, null); });
+      });
+    }
+    catch (e) { first = Promise.reject(e); }
+    return first.then(function () { ASSIGN.rows = by; ASSIGN.failed = ""; },
+      function (e) { ASSIGN.rows = null; ASSIGN.failed = String(e && e.message || e || "no answer from the service"); })
+      .then(function () { ASSIGN.loading = false; LIST.memo = null; });
+  }
+  // A sign-in or sign-out reads the rows again, so who assigned shows or hides and the controls follow.
+  window.addEventListener("cpl-session-changed", function () { if (ASSIGN.rows || ASSIGN.failed) loadAssigned().then(ccRedraw); });
+  function assignRetry() { if (!ASSIGN.loading) loadAssigned().then(function () { if (state.view === "courses") mountList(); }); }
+  /* The save never replaces a row (second read, 2026-11-21). It first reads that one key with the reviewer's renewed
+     token and stops if a row stands; then it inserts with resolution=ignore-duplicates, so a row another reviewer saved
+     in between is left alone and the answer comes back empty. A person changes an assignment by taking it back first. */
+  function assignSave(r, target) {
+    if (ASSIGN.busy) return;
+    ASSIGN.busy = true; ASSIGN.said[r.ctrl] = "Saving…"; ccRedraw();
+    var key = "CN:" + r.ctrl, one = function (token) { return REST + "/kb_curation?" + assignSelect(token) + "&field=eq.merge_into&course_id=eq." + encodeURIComponent(key); };
+    function done(words) { ASSIGN.busy = false; ASSIGN.said[r.ctrl] = words; LIST.memo = null; ccRedraw(); }
+    function stands(x, sess) {
+      ASSIGN.rows = ASSIGN.rows || {}; ASSIGN.rows[assignKey(r.ctrl)] = assignRow(x, sess.access_token);
+      done("Nothing was saved: " + (x.reviewer_email || "a reviewer") + " already assigned this course to " + x.value + ". Take it back first to change it.");
+    }
+    ccFresh().then(function (sess) {
+      if (!sess) { done("Your sign-in has ended. Sign in again, then assign."); return null; }
+      var auth = { apikey: SUPABASE_ANON, Authorization: "Bearer " + sess.access_token };
+      return fetch(one(sess.access_token), { headers: auth }).then(function (res) { if (!res.ok) throw new Error("the service answered " + res.status); return res.json(); })
+        .then(function (rows) {
+          if (!Array.isArray(rows)) throw new Error("the service sent no list");
+          if (rows.length) { stands(rows[0], sess); return null; }
+          return fetch(REST + "/kb_curation", { method: "POST",
+            headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + sess.access_token, "Content-Type": "application/json", Prefer: "resolution=ignore-duplicates,return=representation" },
+            body: JSON.stringify([{ course_id: key, field: "merge_into", value: target, reviewer_email: sess.email }]) })
+            .then(function (res) {
+              if (!res.ok) { done("The save did not land (the service answered " + res.status + "). Nothing changed."); return null; }
+              return res.json().then(function (saved) {
+                if (Array.isArray(saved) && !saved.length) {  // another reviewer's row arrived first and stands
+                  return fetch(one(sess.access_token), { headers: auth }).then(function (r2) { return r2.ok ? r2.json() : []; })
+                    .then(function (now) { if (now && now.length) stands(now[0], sess); else done("The save did not land: a row for this course already stood. Nothing changed."); });
+                }
+                ASSIGN.rows = ASSIGN.rows || {};
+                ASSIGN.rows[assignKey(r.ctrl)] = { to: target, at: new Date().toISOString().slice(0, 10), who: sess.email };
+                done("");
+              });
+            });
+        });
+    }).catch(function (e) { done("The save did not land (" + String(e && e.message || "no answer from the service") + "). Nothing changed."); });
+  }
+  /* Take it back removes the row this page showed and no other: the DELETE names the course, the field and the value,
+     and asks for what it removed. If another reviewer re-pointed the row since, nothing is removed and the page reads
+     the rows again. */
+  function assignUndo(r) {
+    var was = assignedOf(r.ctrl);
+    if (ASSIGN.busy || !was) return;
+    ASSIGN.busy = true; ASSIGN.said[r.ctrl] = "Taking it back…"; ccRedraw();
+    function done(words) { ASSIGN.busy = false; ASSIGN.said[r.ctrl] = words; LIST.memo = null; ccRedraw(); }
+    ccFresh().then(function (sess) {
+      if (!sess) { done("Your sign-in has ended. Sign in again, then take it back."); return null; }
+      return fetch(REST + "/kb_curation?course_id=eq." + encodeURIComponent("CN:" + r.ctrl) + "&field=eq.merge_into&value=eq." + encodeURIComponent(was.to),
+        { method: "DELETE", headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + sess.access_token, Prefer: "return=representation" } })
+        .then(function (res) {
+          if (!res.ok) { done("It was not taken back (the service answered " + res.status + "). The assignment stands."); return null; }
+          return res.json().then(function (gone) {
+            if (Array.isArray(gone) && !gone.length) {
+              ASSIGN.busy = false; ASSIGN.said[r.ctrl] = "Nothing was removed: the assignment changed since this page read it. Reading it again.";
+              return loadAssigned().then(ccRedraw);
+            }
+            delete ASSIGN.rows[assignKey(r.ctrl)];
+            done("Taken back: the assignment to " + was.to + " is removed." + (r.mid ? " The course leaves " + r.mid + " at the next daily build." : ""));
+          });
+        });
+    }).catch(function () { done("It was not taken back (no answer from the service). The assignment stands."); });
+  }
+  /* The sign-in fold a panel section offers a signed-out reviewer (the common course's card has its own). Wrapped, as
+     that one is: the engine anchors the Title drawer before the panel's first direct-child <details>. */
+  function assignSignIn() {
+    var mount = el("div", { "class": "ccl-cc-signin" });
+    var d = el("details", { "class": "ccl-cc-fold" }, [el("summary", null, ["Reviewers: sign in to assign this course to a common course"]), mount]);
+    d.addEventListener("toggle", function () {
+      if (!d.open || mount.childNodes.length) return;
+      var SI = window.CPL_REVIEWER_SIGNIN;
+      if (SI && typeof SI.mountInto === "function") SI.mountInto(mount, { title: "Sign in to assign courses",
+        blurb: "A reviewer signed in with the magic link assigns a course that needs an M-ID to a common course here.", returnTab: TAB });
+      else mount.appendChild(el("p", { "class": "cplcoci-meta" }, ["The sign-in box did not load here; sign in from the header, then come back."]));
+    });
+    return el("div", { "class": "ccl-cc-signin-wrap" }, [d]);
+  }
+  /* What stands for this course and the way to take it back: the line a pile course and a joined course both show. */
+  function assignedLine(r, h, sess) {
+    var A = assignedOf(r.ctrl), out = [];
+    if (A) out.push(el("p", { "class": "ccl-cc-said ccl-assigned", role: "status" }, [
+      "Assigned to " + A.to + (A.who && sess ? " by " + A.who : " by a reviewer") + (A.at ? " on " + A.at : "") + ". " +
+      (r.mid ? "" : "It lists under " + A.to + " after the next daily build. ")].concat(
+      sess ? [h.word(ASSIGN.busy ? "Working…" : "Take it back", function () { assignUndo(r); },
+        { "aria-label": "Take back the assignment of " + r.subj + " " + r.num + " to " + A.to })] : [])));
+    if (ASSIGN.said[r.ctrl]) out.push(el("p", { "class": "ccl-cc-said", role: "status" }, [ASSIGN.said[r.ctrl]]));
+    return out;
   }
   /* The note a course carries when a flag keeps it out of the counts, and whether it is kept; "" when none. */
   function keptNote(college, ctrl, mid) {
@@ -356,9 +552,12 @@
      keystroke), with the filters' counts. */
   function listBuild() {
     var D = state.data, M = window.CPL_UC_MEMBERS || null, memo = LIST.memo;
-    if (memo && memo.D === D && memo.M === M && memo.K === KEPT.na) return memo;
+    if (memo && memo.D === D && memo.M === M && memo.K === KEPT.na && memo.R === CLOSEST.f && memo.A === ASSIGN.rows) return memo;
     var X = identityIndex(M), colleges = (D.colleges || []).map(function (c) { return String(c || "").trim(); });
-    var n = { "": 0, mid: 0, nomid: 0, cid: 0, ccn: 0, any: 0, none: 0, C: 0, N: 0, E: 0, kept: 0 }, moved = 0, mids = {};
+    var n = { "": 0, mid: 0, nomid: 0, cid: 0, ccn: 0, any: 0, C: 0, N: 0, E: 0, kept: 0 }, moved = 0, mids = {};
+    // How many courses each control number names: a number naming two cannot be assigned (the save could not say which).
+    var named = {};
+    D.rows.forEach(function (r) { var k = assignKey(r[ROW.CTRL]); named[k] = (named[k] || 0) + 1; });
     var rows = D.rows.map(function (r, i) {
       var college = colleges[r[ROW.COLLEGE]] || "", ctrl = String(r[ROW.CTRL] || ""), subj = String(r[ROW.SUBJ] || ""), num = String(r[ROW.NUM] || "");
       // A course in two M-IDs bands under the larger (the most local courses), then the first A to Z.
@@ -372,19 +571,22 @@
       var kn = keptNote(college, ctrl, row.mid);
       row.kept = !!(kn && kn.kept);
       row.note = kn ? kn.note : "";
+      row.rec = closestOf(row);
+      row.assigned = assignedOf(ctrl);
+      row.named = named[assignKey(ctrl)] || 1;
       row.hay = listFold([row.title, college, ctrl, subj, num, subj + " " + num, subj + num, row.top, cid, ccn, ids.join(" "), row.credit].join(" "));
       n[""]++;
       if (row.kept) n.kept++;
-      if (row.mid) n.mid++; else if (!row.kept) n.nomid++;
+      if (row.mid) n.mid++;
       ids.forEach(function (id) { mids[id] = 1; });
       if (cid) n.cid++;
       if (ccn) n.ccn++;
-      if (row.mid || cid || ccn) n.any++; else if (!row.kept) n.none++;
+      if (row.mid || cid || ccn) n.any++; else if (!row.kept) n.nomid++;
       if (n[code] != null) n[code]++;
       if (row.was) moved++;
       return row;
     });
-    LIST.memo = { D: D, M: M, K: KEPT.na, X: X, rows: rows, counts: n, mids: Object.keys(mids).length, moved: moved,
+    LIST.memo = { D: D, M: M, K: KEPT.na, R: CLOSEST.f, A: ASSIGN.rows, X: X, rows: rows, counts: n, mids: Object.keys(mids).length, moved: moved,
       colleges: colleges.filter(function (c, i) { return colleges.indexOf(c) === i; }).length };
     return LIST.memo;
   }
@@ -407,6 +609,10 @@
       { h: "Transfer", w: 5, v: function (r) { return r.cid ? "Yes" : "No"; } },
       { h: "TOP", w: 9, v: function (r) { return r.top; } },
       { h: "Identities (M-ID, C-ID, CCN)", w: 14, v: function (r) { return r.ids; }, cell: idChips },
+      // Its value is the words the cell shows (a download carries them); it sorts by the exhibits the M-ID would unlock
+      // (pileRank). The level's measured share right is in the panel (second read of #3619: one column, one meaning).
+      { h: "Closest M-ID", w: 9, v: function (r) { return r.assigned && !r.mid ? "Assigned to " + r.assigned.to : r.rec ? closestWords(r.rec) : ""; },
+        sortBy: pileRank, cell: closestCell },
       { h: "Control number", w: 7, v: function (r) { return r.ctrl; } }
     ]);
   }
@@ -643,19 +849,19 @@
     }).catch(function (e) { CC.busy = false; CC.said[c.id] = "Not saved: " + ((e && e.message) || "the network failed") + "."; ccRedraw(); });
   }
   /* On purpose (COBIx on #3519, finding 4): the "Has ..." filters say what a record carries, so a kept record still
-     appears under its M-ID, C-ID or CCN and stays findable. "No M-ID" and "No identity" are gap piles, work waiting to
-     be done, and the flag rule takes kept records out of waiting piles, so they leave both. */
+     appears under its M-ID, C-ID or CCN and stays findable. "Needs an M-ID" is the gap pile, work waiting to be done:
+     a course with no M-ID, no C-ID and no CCN. The flag rule takes kept records out of waiting piles, so they leave
+     it; a course that carries a C-ID or a CCN needs no M-ID, so it was never in it (Sam, 2026-11-20). */
   function listFilterPass(r, L) {
     var f = L.f;
     if (!f) return true;
     if (isJob(f)) return jobPass(r, f);
     if (f === "mid") return !!r.mid;
-    if (f === "nomid") return !r.mid && !r.kept;
+    if (f === "nomid") return !(r.mid || r.cid || r.ccn) && !r.kept;
     if (f === "kept") return !!r.kept;
     if (f === "cid") return !!r.cid;
     if (f === "ccn") return !!r.ccn;
     if (f === "any") return !!(r.mid || r.cid || r.ccn);
-    if (f === "none") return !(r.mid || r.cid || r.ccn) && !r.kept;
     return r.code === f;
   }
   /* The line over the List and its folded cards (the List norms, The List is the workspace, norm 1; Exhibits, CR,
@@ -725,7 +931,8 @@
   var DSRC_WORDS = { top_code: "from its TOP code, a last-in-line signal that waits on a second signal or a person",
     top_division: "from its TOP division, a last-in-line signal that waits on a second signal or a person",
     subject_map: "from its subject code", subject_map_edge: "from its subject code", title_keyword: "from words in its title",
-    description: "from its catalog description", description_and_top: "from its seed, confirmed by its catalog description with its TOP code agreeing", coci_reference: "from COCI's reference", crossdisc_remint: "from a re-mint across disciplines" };
+    description: "from its catalog description", description_and_top: "from its seed, confirmed by its catalog description with its TOP code agreeing", coci_reference: "from COCI's reference", crossdisc_remint: "from a re-mint across disciplines",
+    pile_mint: "from the mint of the Needs an M-ID pile, which no person has confirmed" };
   function ccRedraw() { var api = listApi(); if (api && api.redraw) api.redraw(); }
   function ccLoad() {
     if (CC.byId || CC.loading || CC.failed) return;
@@ -1112,6 +1319,64 @@
     // Wrapped, as the sign-in fold is: the engine anchors the Title drawer before the panel's first direct-child <details>.
     return el("div", { "class": "ccl-sbs-outer" }, [d]);
   }
+  /* The panel's Closest common courses: the first three, why each, the measured confidence in words, each one a word
+     away in SkyView, and for a signed-in reviewer the word that assigns the course to it (assignSave). */
+  function closestPanel(r, h) {
+    var rec = r.rec, out = [];
+    if (!rec) {
+      if (CLOSEST.error) out.push(el("p", { "class": "cplcoci-meta" }, ["The closest common courses did not load (" + CLOSEST.error + ")."]));
+      return out;
+    }
+    var lv = rec.level, measured = lv.n ? " Of " + fmt(lv.n) + " courses with a known M-ID that scored at this level when taken out of their own common course, "
+      + fmt(lv.right) + " (" + pct(lv.share) + ") had their own M-ID come first." : "";
+    out.push(h.heading("Closest common courses"));
+    out.push(el("p", { "class": "cplcoci-meta", "data-rec-level": lv.key }, [
+      el("strong", null, [lv.key === "none" ? "No strong match. Propose a new M-ID." : lv.label + ": " + rec.mid + "."]),
+      (lv.key === "possible" ? " Check it before joining; a new M-ID may fit better." : lv.key === "none" && rec.top.length ? " The closest are listed for reference." : "") + measured]));
+    // Assign (a reviewer's save): offered when nothing stands for the course yet, its control number names one course,
+    // and the common course is in today's identity file.
+    var sess = ccSession(), X = listBuild().X, stands = assignedOf(r.ctrl), known = !!ASSIGN.rows, noKey = noControlNumber(r.ctrl);
+    var can = !!sess && known && !stands && !noKey && r.named === 1;
+    function listed(id) { return !!(X && X.size.has(id)); }
+    function assignWord(id) {
+      return h.word(ASSIGN.busy ? "Saving…" : "Assign to " + id, function () { assignSave(r, id); },
+        { "aria-label": "Assign " + r.subj + " " + r.num + " at " + r.college + " to " + id, "data-assign": id });
+    }
+    if (rec.top.length) out.push(el("ol", { "class": "ccl-rec-list" }, rec.top.map(function (t) {
+      var why = [];
+      if (t[2]) why.push(fmt(t[2]) + " of its " + fmt(t[3]) + (t[3] === 1 ? " local course carries" : " local courses carry") + " this same title");
+      else why.push("none of its " + fmt(t[3]) + (t[3] === 1 ? " local course" : " local courses") + " carries this same title");
+      if (t[4] != null) why.push("catalog descriptions overlap " + pct(t[4]));
+      if (linksOf(t[0])) why.push(linkWords(linksOf(t[0])) + " point to it");
+      var kids = [el("strong", null, [t[0]]), ": " + why.join("; ") + ". ", skyLink(t[0], "Open " + t[0] + " in SkyView")];
+      if (can && listed(t[0])) kids.push(" ", assignWord(t[0]));
+      else if (can) kids.push(" It is not in today's identity file, so it cannot be assigned here.");
+      return el("li", { "data-rec": t[0] }, kids);
+    })));
+    assignedLine(r, h, sess).forEach(function (n) { out.push(n); });
+    if (!known) out.push(el("p", { "class": "ccl-cc-said", role: "status", "data-assign-blocked": "unread" }, [
+      (ASSIGN.loading ? "Reading which courses are already assigned…" : "The list of assigned courses did not load (" + (ASSIGN.failed || "no answer from the service") +
+        "), so this panel cannot tell whether a reviewer already assigned this course, and it offers no Assign. ")].concat(
+      ASSIGN.loading ? [] : [h.word("Read it again", assignRetry, { "aria-label": "Read the assigned courses again" })])));
+    else if (noKey) out.push(el("p", { "class": "cplcoci-meta", "data-assign-blocked": "nokey" }, ["The state's course list gives this course no control number, so there is no key to save an assignment under. It cannot be assigned here."]));
+    else if (r.named > 1) out.push(el("p", { "class": "cplcoci-meta", "data-assign-blocked": "shared" }, ["This control number names " + fmt(r.named) +
+      " courses in the state's course list, so a save could not say which one. It cannot be assigned until the college's record is corrected."]));
+    else if (can) {
+      // Another common course, by its id: checked against today's identity file before anything is saved.
+      var inp = el("input", { type: "text", id: "ccl-assign-id", "class": "ccl-cc-in", autocomplete: "off", "aria-label": "Another common course's id, an M-ID, a C-ID or a CCN" });
+      out.push(el("p", { "class": "ccl-cc-edit ccl-assign-other" }, [el("label", { "for": "ccl-assign-id" }, ["Or another common course, by its id "]), inp, " ",
+        h.word("Assign to that one", function () {
+          var id = String(inp.value || "").trim().replace(/\s+/g, " ");
+          if (!id) { ASSIGN.said[r.ctrl] = "Type the common course's id first, such as AUTO M1036."; ccRedraw(); return; }
+          var hit = listed(id) ? id : listed(id.toUpperCase()) ? id.toUpperCase() : "";
+          if (!hit) { ASSIGN.said[r.ctrl] = "No common course " + id + " is in today's identity file. Nothing was saved."; ccRedraw(); return; }
+          assignSave(r, hit);
+        }, { "aria-label": "Assign " + r.subj + " " + r.num + " to the common course typed" })]));
+    } else if (!sess && !stands) out.push(assignSignIn());
+    out.push(el("p", { "class": "cplcoci-meta" }, ["Assigning saves one row under your name, and the daily build then lists the course under that common course; Take it back removes it. " +
+      "Proposing a new M-ID from this panel is being built: a plan to mint M-IDs for the courses with no strong match is in review."]));
+    return out;
+  }
   function listPanelBody(r, h) {
     var m = listBuild(), out = [];
     out.push(h.title(r.subj + " " + r.num + ", " + r.title));
@@ -1122,12 +1387,18 @@
     if (!m.X) {
       out.push(el("p", { "class": "cplcoci-meta" }, ["Today's identity file did not arrive, so the panel cannot say which common course holds this course."]));
     } else if (!r.mid) {
-      if (!r.kept) out.push(el("p", { "class": "cplcoci-meta" }, ["No M-ID: the Common Course Reference holds this course in no common course today. A course joins one in SkyView."]));
+      if (r.cid || r.ccn) out.push(el("p", { "class": "cplcoci-meta" }, ["No M-ID is needed: this course carries " + [r.cid ? "C-ID " + r.cid : "", r.ccn ? "CCN " + r.ccn : ""].filter(Boolean).join(" and ") + ", which is its common identity."]));
+      else if (!r.kept) {
+        out.push(el("p", { "class": "cplcoci-meta" }, ["No M-ID: the Common Course Reference holds this course in no common course today."]));
+        closestPanel(r, h).forEach(function (n) { out.push(n); });
+      }
     } else {
       var members = listByMid(m).get(r.mid) || [], seenCol = {};
       members.forEach(function (x) { seenCol[x.college] = 1; });
       var nCol = Object.keys(seenCol).length;
       out.push(h.heading("Its common course: " + r.mid));
+      // A course a reviewer assigned says so, with the way to take it back.
+      assignedLine(r, h, ccSession()).forEach(function (n) { out.push(n); });
       ccCard(r.mid, h).forEach(function (n) { out.push(n); });
       out.push(sbsFold(r.mid, members));
       out.push(el("p", { "class": "ccl-pn-acts ccl-pn-sky" }, [skyLink(r.mid, "Open " + r.mid + " in SkyView")]));
@@ -1253,12 +1524,17 @@
         file: "coci-courses-list", placeholder: "Find by title, college, code or M-ID",
         findLabel: "Find in the list" },
       state: listState, rows: function () { return listBuild().rows; }, cols: listCols,
+      // The Needs an M-ID pile opens on the exhibits each closest M-ID would unlock, most first (pileRank); a header
+      // press is the person's own sort for the visit. The figure stays plain text: no COBI view lists an M-ID's exhibits.
+      sortFor: function (L) { return L.f === "nomid" ? [{ col: listCols().map(function (c) { return c.h; }).indexOf("Closest M-ID"), dir: -1 }] : null; },
       key: function (r) { return r.ut; }, title: function (r) { return r.title; }, render: mountList,
       head: listHead, filterPass: listFilterPass, hay: function (r) { return r.hay; }, hayFolded: true, findWords: true,
       fixedRows: true, findDelay: 160, drawer: listDrawer,
       // The side panel (the List norms, The List is the workspace; Sam, 2026-11-03): a course's title opens it beside
       // the table, with its common course's local courses, SkyView one word away and the rest folded.
       panel: { label: function (r) { return "Course: " + r.subj + " " + r.num + ", " + r.college; }, body: listPanelBody },
+      // The title reads as the link it is (Sam, 2026-11-20: "need links to sidebar"): underlined at rest.
+      titleLink: true,
       bands: { key: function (r) { return r.mid; }, by: "M-ID", label: "Bands by M-ID", none: "Not in a group",
         name: function (id, members) { var t = bandTitle(members); return id + (t ? ", " + t : ""); },
         facts: function (id, members) { return bandFacts(members); },
@@ -1269,7 +1545,7 @@
       // in order of priority for me to act on ... categorize the ones that need action and the others that are just
       // convenient filters"). No filter's meaning moves.
       filterGroups: [{ label: "To do", ids: ["doubt", "stray", "nodesc", "units", "seedless"] },
-        { label: "Browse", ids: ["", "mid", "nomid", "cid", "ccn", "any", "none", "C", "N", "E", "kept"] }],
+        { label: "Browse", ids: ["", "mid", "nomid", "cid", "ccn", "any", "C", "N", "E", "kept"] }],
       // The job filters count by the engine's own pass once their file is read; until then they show no count.
       uncounted: function (id) { return isJob(id) && !jobReady(id); },
       // Which unit the counts are in (#3510 B2; Commons Clarity, #3447 item 6c): local courses here, common courses on
@@ -1290,6 +1566,8 @@
     if (!node) return;
     clearNode(node);
     loadKept();
+    loadClosest();
+    if (!ASSIGN.rows && !ASSIGN.loading && !ASSIGN.failed) loadAssigned().then(function () { if (state.view === "courses") mountList(); });
     if (window.CPL_COMMONS_LIST && window.CPL_UC_MEMBERS) LIST.ready = true;
     if (listApi()) { LIST.engine.render(node); return; }
     var T = window.CPL_TABS;
@@ -1712,6 +1990,7 @@
      on a later arrival after its reset, and on a hash change while the tab is open. */
   function routeList() {
     var parts = String(location.hash || "").replace(/^#/, "").split("/");
+    if (parts[0] === TAB && parts[1] === "list" && parts[2] && LIST_ALIAS[parts[2]]) parts[2] = LIST_ALIAS[parts[2]];
     if (parts[0] !== TAB || parts[1] !== "list" || !parts[2] || !LIST_FILTERS.some(function (f) { return f[0] === parts[2]; })) return false;
     state.view = "courses";
     var L0 = listState(); L0.f = parts[2]; L0.q = ""; L0.limit = null; L0.panel = null;

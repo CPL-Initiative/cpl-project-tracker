@@ -84,7 +84,10 @@
     "commons_data_sharing.test.js": 36,
     "commons_data_integrations.test.js": 26,
     "coci_list.test.js": 40,
+    "coci_list_assign.test.js": 36,
+    "coci_list_needs_mid.test.js": 36,
     "coci_list_kept.test.js": 14,
+    "coci_list_topics.test.js": 7,
     "college_activity.test.js": 7,
     "college_activity_jst.test.js": 18,
     "college_briefing.test.js": 246,
@@ -428,6 +431,8 @@
     "cdc_plain_words.test.js": 15,
     "commons_arrival.test.js": 7,
     "coci_list_doubt.test.js": 53,
-    "commons_needs_you.test.js": 55
+    "commons_needs_you.test.js": 55,
+    "commons_subjects.test.js": 27,
+    "commons_subjects_held.test.js": 24
   }
 }

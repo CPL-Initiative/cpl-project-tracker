@@ -2,20 +2,56 @@
  "college": "Mt. San Antonio College",
  "programs": 469,
  "with_closed_list": 428,
- "found": 397,
- "extracted": 397,
+ "found": 386,
+ "extracted": 386,
  "errors": 0,
- "passed_machine_checks": 359,
+ "passed_machine_checks": 363,
  "failed": {
-  "coverage": 9,
+  "coverage": 0,
   "invented": 0,
-  "arithmetic": 29,
+  "arithmetic": 23,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 22.47,
- "cost_per_program": 0.0566,
+ "cost_usd_run": 3.25,
+ "cost_usd_filed": 22.1,
+ "cost_per_program": 0.0573,
+ "extract_calls": 28,
+ "extract_failed": [],
  "not_found": [
+  {
+   "control_number": "14039",
+   "title": "Electronic Systems Technology - Level II",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/programsaz/architectural-technology-concentration/architectural-technology-concentration-level-ii-certificate/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3062,
+     "content": 49277,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Outcomes",
+      318
+     ]
+    ],
+    "page_checks": true
+   },
+   "status": "Active"
+  },
   {
    "control_number": "15574",
    "title": "Radio Broadcasting On-the-Air",
@@ -36,7 +72,7 @@
     "error": null,
     "chars": {
      "body": 2838,
-     "content": 48596,
+     "content": 48734,
      "tabs": 0
     },
     "tab_panels": [
@@ -45,7 +81,8 @@
       83
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "22151",
@@ -53,7 +90,8 @@
    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "22161",
@@ -75,7 +113,7 @@
     "error": null,
     "chars": {
      "body": 2840,
-     "content": 48596,
+     "content": 48734,
      "tabs": 0
     },
     "tab_panels": [
@@ -84,7 +122,8 @@
       83
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "24056",
@@ -106,11 +145,12 @@
     "error": null,
     "chars": {
      "body": 2680,
-     "content": 47070,
+     "content": 47208,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "24075",
@@ -132,7 +172,7 @@
     "error": null,
     "chars": {
      "body": 4169,
-     "content": 50605,
+     "content": 50743,
      "tabs": 0
     },
     "tab_panels": [
@@ -141,7 +181,8 @@
       423
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "24088",
@@ -163,7 +204,7 @@
     "error": null,
     "chars": {
      "body": 2973,
-     "content": 49326,
+     "content": 49464,
      "tabs": 0
     },
     "tab_panels": [
@@ -172,7 +213,8 @@
       324
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "24111",
@@ -180,7 +222,8 @@
    "award": null,
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "24113",
@@ -202,7 +245,7 @@
     "error": null,
     "chars": {
      "body": 2861,
-     "content": 49232,
+     "content": 49370,
      "tabs": 0
     },
     "tab_panels": [
@@ -211,7 +254,8 @@
       342
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "24215",
@@ -233,7 +277,7 @@
     "error": null,
     "chars": {
      "body": 2867,
-     "content": 49211,
+     "content": 49349,
      "tabs": 0
     },
     "tab_panels": [
@@ -242,7 +286,8 @@
       313
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "24248",
@@ -264,7 +309,7 @@
     "error": null,
     "chars": {
      "body": 2862,
-     "content": 49322,
+     "content": 49460,
      "tabs": 0
     },
     "tab_panels": [
@@ -273,7 +318,8 @@
       430
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "24284",
@@ -295,7 +341,7 @@
     "error": null,
     "chars": {
      "body": 3280,
-     "content": 50769,
+     "content": 50907,
      "tabs": 0
     },
     "tab_panels": [
@@ -304,7 +350,8 @@
       363
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "24342",
@@ -326,7 +373,7 @@
     "error": null,
     "chars": {
      "body": 2933,
-     "content": 49270,
+     "content": 49408,
      "tabs": 0
     },
     "tab_panels": [
@@ -335,7 +382,8 @@
       308
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "24374",
@@ -357,11 +405,73 @@
     "error": null,
     "chars": {
      "body": 2558,
-     "content": 47250,
+     "content": 47388,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "31598",
+   "title": "Adult High School Diploma",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/high-school-programs/secondaryeducationtext/",
+    "label": {
+     "award": 1,
+     "title": 0.75
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.0,
+    "net": 6,
+    "listed": 13,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 3741,
+     "content": 48044,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "36115",
+   "title": "Financial and Database Management",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-business-management-financial-systems/",
+    "label": {
+     "award": 1,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3625,
+     "content": 51509,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      591
+     ]
+    ],
+    "page_checks": true
+   },
+   "status": "Active"
   },
   {
    "control_number": "39518",
@@ -383,7 +493,7 @@
     "error": null,
     "chars": {
      "body": 3871,
-     "content": 50131,
+     "content": 50269,
      "tabs": 0
     },
     "tab_panels": [
@@ -392,7 +502,8 @@
       286
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "40187",
@@ -414,7 +525,7 @@
     "error": null,
     "chars": {
      "body": 3871,
-     "content": 50131,
+     "content": 50269,
      "tabs": 0
     },
     "tab_panels": [
@@ -423,7 +534,110 @@
       286
      ]
     ]
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "42726",
+   "title": "ESL Written Communication - Advanced Level",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
+   },
+   "status": "Approved"
+  },
+  {
+   "control_number": "42727",
+   "title": "ESL Written Communication - Intermediate Level",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
+   },
+   "status": "Approved"
+  },
+  {
+   "control_number": "42754",
+   "title": "ESL Oral Communication - Advanced Level",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
+   },
+   "status": "Approved"
+  },
+  {
+   "control_number": "42755",
+   "title": "ESL Written Communication - Beginning Level",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
+   },
+   "status": "Approved"
+  },
+  {
+   "control_number": "42756",
+   "title": "ESL Oral Communication - Beginning Level",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
+   },
+   "status": "Approved"
+  },
+  {
+   "control_number": "42757",
+   "title": "ESL Oral Communication - Intermediate Level",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
+   },
+   "status": "Approved"
+  },
+  {
+   "control_number": "42758",
+   "title": "ESL Written Communication - Literacy Level",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
+   },
+   "status": "Approved"
+  },
+  {
+   "control_number": "43729",
+   "title": "Engineering Topics",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-electronics/electronics-computer-engineering/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3216,
+     "content": 48595,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      846
+     ]
+    ]
+   },
+   "status": "Active"
   },
   {
    "control_number": "43754",
@@ -445,7 +659,7 @@
     "error": null,
     "chars": {
      "body": 3484,
-     "content": 51212,
+     "content": 51350,
      "tabs": 0
     },
     "tab_panels": [
@@ -454,7 +668,8 @@
       556
      ]
     ]
-   }
+   },
+   "status": "Approved"
   },
   {
    "control_number": "43777",
@@ -462,7 +677,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "43999",
@@ -470,7 +686,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "44367",
@@ -478,7 +695,8 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Approved"
   },
   {
    "control_number": "45423",
@@ -486,8 +704,9 @@
    "award": "A.S. Degree",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Approved"
   }
  ],
- "run": "39891607837"
+ "run": "44744647809"
 }

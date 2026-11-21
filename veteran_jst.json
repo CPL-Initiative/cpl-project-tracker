@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-11-20T06:19:30.040072+00:00",
+  "scraped_at": "2026-11-21T04:06:19.047554+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34565,
-    "jst": 32374,
+    "jst": 32382,
     "star_colleges": 70
   },
   "computed_star_colleges": 70,
@@ -72,12 +72,12 @@
     },
     "West Los Angeles College": {
       "vets": 147,
-      "jst": 158,
+      "jst": 159,
       "star": true
     },
     "Long Beach City College": {
       "vets": 880,
-      "jst": 886,
+      "jst": 887,
       "star": true
     },
     "De Anza College": {
@@ -137,7 +137,7 @@
     },
     "Santa Ana College": {
       "vets": 392,
-      "jst": 396,
+      "jst": 397,
       "star": true
     },
     "Mt. San Jacinto College": {
@@ -163,6 +163,11 @@
     "Santa Rosa Junior College": {
       "vets": 591,
       "jst": 448,
+      "star": true
+    },
+    "Irvine Valley College": {
+      "vets": 247,
+      "jst": 212,
       "star": true
     },
     "Sierra College": {
@@ -197,7 +202,7 @@
     },
     "Clovis Community College": {
       "vets": 135,
-      "jst": 200,
+      "jst": 201,
       "star": true
     },
     "Antelope Valley College": {
@@ -293,11 +298,6 @@
     "San Jose City College": {
       "vets": 153,
       "jst": 125,
-      "star": true
-    },
-    "Irvine Valley College": {
-      "vets": 247,
-      "jst": 212,
       "star": true
     },
     "Los Angeles Harbor College": {
@@ -490,14 +490,14 @@
       "jst": 132,
       "star": true
     },
+    "Sacramento City College": {
+      "vets": 233,
+      "jst": 124,
+      "star": false
+    },
     "Butte College": {
       "vets": 315,
       "jst": 123,
-      "star": false
-    },
-    "Sacramento City College": {
-      "vets": 233,
-      "jst": 121,
       "star": false
     },
     "Cuyamaca College": {
@@ -537,7 +537,7 @@
     },
     "Feather River College": {
       "vets": 12,
-      "jst": 11,
+      "jst": 12,
       "star": true
     },
     "Yuba College": {

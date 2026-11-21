@@ -1,0 +1,17 @@
+{
+ "name": "program_requirement_records_display_2026-11-13_f0f1ee88c04f.applied_44001779139_cerritos-college.json",
+ "kind": "display_applied",
+ "bucket": "cpl-receipts",
+ "object": "display/applied/program_requirement_records_display_2026-11-13_f0f1ee88c04f.applied_44001779139_cerritos-college.json.gz",
+ "build": "f0f1ee88c04f",
+ "built": "2026-11-13",
+ "bytes": 2402,
+ "sha256": "5a4a6f78336f85a02c4031471b06e45b08e844fe3b028ca5c7b69e0c283b72c5",
+ "rows": 302,
+ "stored_at": "2026-11-21T04:53:04Z",
+ "run": "44867993793",
+ "gzip": true,
+ "repo_sha256": "194a41fe14129b49b5e88b1acc5b681493d295b9be7f5883dad0ac2c163be06e",
+ "repo_bytes": 23116,
+ "repo_blob": "808cabd95dece8bfc321d467b65edb1bb3756fd9"
+}

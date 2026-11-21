@@ -1,0 +1,17 @@
+{
+ "name": "program_requirement_records_display_2026-11-13_13fe0e778bb5.applied_43418731809_san-jose-city-college.json",
+ "kind": "display_applied",
+ "bucket": "cpl-receipts",
+ "object": "display/applied/program_requirement_records_display_2026-11-13_13fe0e778bb5.applied_43418731809_san-jose-city-college.json.gz",
+ "build": "13fe0e778bb5",
+ "built": "2026-11-13",
+ "bytes": 1006,
+ "sha256": "c222c6a02025a093a22a5948560c574791775a587dd640a3c6d87e2959b80e6f",
+ "rows": 77,
+ "stored_at": "2026-11-21T04:52:42Z",
+ "run": "44867993793",
+ "gzip": true,
+ "repo_sha256": "8c60b7cd9164e9d6de56557f8aa4e3a92098a3880fdd0e658d04f6ea35acc5ff",
+ "repo_bytes": 6365,
+ "repo_blob": "e95519592b234d614b305cef8f2649616b20f202"
+}

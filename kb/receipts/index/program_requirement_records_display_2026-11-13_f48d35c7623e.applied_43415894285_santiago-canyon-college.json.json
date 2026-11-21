@@ -1,0 +1,17 @@
+{
+ "name": "program_requirement_records_display_2026-11-13_f48d35c7623e.applied_43415894285_santiago-canyon-college.json",
+ "kind": "display_applied",
+ "bucket": "cpl-receipts",
+ "object": "display/applied/program_requirement_records_display_2026-11-13_f48d35c7623e.applied_43415894285_santiago-canyon-college.json.gz",
+ "build": "f48d35c7623e",
+ "built": "2026-11-13",
+ "bytes": 1774,
+ "sha256": "5ac3af61f816adacb2bb7e244642d49a3d2f70c7718f0169ed3526a750634bbc",
+ "rows": 216,
+ "stored_at": "2026-11-21T04:53:06Z",
+ "run": "44867993793",
+ "gzip": true,
+ "repo_sha256": "392ae3e1cb2bcba3f2228fcb298dcacfe4d1b28b2f137b60fbfcdcf8de143c83",
+ "repo_bytes": 17381,
+ "repo_blob": "fce2af5ab4aedd5190eeb93a64e30821b9269c5c"
+}

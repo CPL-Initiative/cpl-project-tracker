@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-597 document(s).
+599 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -40,7 +40,8 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [The CPL merge lens — the student-repeat test (anchored to Title 5 §55050's "similar" standard)](../kb-notes/glossary-cpl-merge-lens-student-repeat-test.md) | glossary | published | 2026-07-13 | 2026-07-13 |
 | [\"Not signed in\" and \"only these people\" cannot both hold](../kb-notes/methodology-not-signed-in-and-only-these-people-cannot-both-hold.md) | methodology | published | 2026-09-08 | 2026-09-08 |
 | [A ban is only as wide as the files it opens](../kb-notes/methodology-a-ban-is-only-as-wide-as-the-files-it-opens.md) | methodology | published | 2026-09-15 | 2026-09-24 |
-| [A blocked path hides every defect behind it — budget for a chain, not a fix](../kb-notes/methodology-a-blocked-path-hides-the-defects-behind-it.md) | methodology | published | 2026-08-24 | 2026-08-24 |
+| [A blocked path hides every defect behind it — budget for a chain, not a fix](../kb-notes/methodology-a-blocked-path-hides-the-defects-behind-it.md) | methodology | published | 2026-08-24 | 2026-11-20 |
+| [A bot wall answers each network on its own, so the reader's own capture is the record of access](../kb-notes/methodology-a-bot-wall-answers-each-network-on-its-own.md) | methodology | published | 2026-11-20 | 2026-11-20 |
 | [A bound is tested by value, not by the model's clamp count](../kb-notes/methodology-a-bound-is-tested-by-value-not-by-the-clamp-count.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [A bug report is evidence, not diagnosis — and the control that kills your favorite hypothesis](../kb-notes/methodology-a-bug-report-is-evidence-not-diagnosis.md) | methodology | published | 2026-09-07 | 2026-09-08 |
 | [A bulk delete's receipt reads the rows outside the session's context](../kb-notes/methodology-a-bulk-delete-receipt-reads-the-rows-outside-the-context.md) | methodology | published | 2026-10-23 | 2026-10-23 |
@@ -166,7 +167,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A name a join keys on is a key, whatever the table calls it](../kb-notes/methodology-a-name-a-join-keys-on-is-a-key.md) | methodology | published | 2026-11-02 | 2026-11-02 |
 | [A negative result needs a positive control in the same run](../kb-notes/methodology-a-negative-result-needs-a-positive-control.md) | methodology | published | 2026-08-19 | 2026-08-19 |
 | [A new assertion must fail in the shape the grid counts — or the grid reads "0 failing" over a failed run](../kb-notes/methodology-a-new-assertion-must-fail-in-the-shape-the-grid-counts.md) | methodology | published | 2026-09-18 | 2026-09-18 |
-| [A new matcher is gated by a self-recall test on records whose answer is already held](../kb-notes/methodology-a-new-matcher-is-gated-by-a-self-recall-test.md) | methodology | published | 2026-11-14 | 2026-11-14 |
+| [A new matcher is gated by a self-recall test on records whose answer is already held](../kb-notes/methodology-a-new-matcher-is-gated-by-a-self-recall-test.md) | methodology | published | 2026-11-14 | 2026-11-21 |
 | [A normalization and the screens that judge it must see the same text](../kb-notes/methodology-a-normalisation-and-its-screens-must-see-the-same-text.md) | methodology | published | 2026-08-13 |  |
 | [A not-applicable score must be confirmed by the source](../kb-notes/methodology-a-not-applicable-score-must-be-confirmed-by-the-source.md) | methodology | published | 2026-10-04 | 2026-10-04 |
 | [A one-rule class must be checked against its own text](../kb-notes/methodology-a-one-rule-class-must-be-checked-against-its-own-text.md) | methodology | published | 2026-08-19 | 2026-08-19 |
@@ -266,7 +267,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A target at exactly the minimum size fails at fractional zoom](../kb-notes/methodology-a-target-at-exactly-the-minimum-fails-at-fractional-zoom.md) | methodology | published | 2026-11-12 | 2026-11-12 |
 | [A team-curated Supabase table needs team_pass_ok() on UPDATE too, not just SELECT + INSERT](../kb-notes/methodology-team-curated-table-needs-update-rls.md) | methodology | published | 2026-07-26 | 2026-07-26 |
 | [A test file is a memory budget, and the process boundary is the only allocator](../kb-notes/methodology-a-test-file-is-a-memory-budget.md) | methodology | published | 2026-08-20 | 2026-08-20 |
-| [A test must not take its own rule as the truth](../kb-notes/methodology-a-test-must-not-take-its-rule-as-the-truth.md) | methodology | published | 2026-11-14 | 2026-11-14 |
+| [A test must not take its own rule as the truth](../kb-notes/methodology-a-test-must-not-take-its-rule-as-the-truth.md) | methodology | published | 2026-11-14 | 2026-11-20 |
 | [A test must report a missing thing, not dereference it](../kb-notes/methodology-a-test-must-report-a-missing-thing-not-dereference-it.md) | methodology | published | 2026-08-25 | 2026-08-25 |
 | [A test that only fails under load is racing a timer the product owns](../kb-notes/methodology-a-test-that-only-fails-under-load-is-racing-a-timer.md) | methodology | published | 2026-09-06 | 2026-09-06 |
 | [A test that pins a figure from a regenerated artifact fails on a data refresh, not on a defect](../kb-notes/methodology-a-test-that-pins-a-generated-figure-fails-on-a-data-refresh.md) | methodology | published | 2026-09-17 | 2026-11-12 |
@@ -584,6 +585,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Excel dependency audit — what still touches CPL_Initiative_Project_List_v3.xlsx, and the fix queue](../kb-notes/excel-dependency-audit.md) | reference | published | 2026-06-01 | 2026-06-01 |
 | [Exhibit CRs Catalog — all 27 fields, measured](../kb-notes/reference-exhibit-crs-catalog-field-census.md) | reference | published | 2026-08-14 | 2026-08-14 |
 | [For "which colleges offer X", start at the course file, not the program file](../kb-notes/reference-course-level-mis-beats-program-level-coci.md) | reference | published | 2026-08-12 | 2026-08-12 |
+| [Hand it over in place: the hand-over box, where it writes, and the reader's pickup](../kb-notes/reference-commons-hand-over.md) | reference | internal | 2026-11-20 | 2026-11-20 |
 | [Issuing-agency authority sources for CER exhibit canonicalization](../kb-notes/reference-issuing-agency-authority-sources.md) | reference | published | 2026-07-07 |  |
 | [Postgres full-text search pitfalls on freehand credential titles](../kb-notes/reference-postgres-fts-pitfalls-for-credential-titles.md) | reference | published | 2026-08-06 | 2026-08-06 |
 | [Public-domain art sourcing for the dashboard (Adams, plein air, and the traps)](../kb-notes/reference-public-domain-art-sourcing.md) | reference | published | 2026-06-12 | 2026-06-12 |

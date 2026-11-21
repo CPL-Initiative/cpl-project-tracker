@@ -5,11 +5,11 @@
  "title": "Public Health",
  "award": "A.S. T Degree",
  "source_url": "https://catalog.mtsac.edu/programs/programsaz/public-health/public-health-tranfer/",
- "record_shape": 3,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9041,
+  "input_tokens": 10654,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9041,
-    "output_tokens": 5123,
+    "input_tokens": 10654,
+    "output_tokens": 4758,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,52 +30,63 @@
     "model": null
    }
   ],
-  "output_tokens": 5123,
+  "output_tokens": 4758,
   "output_tokens_details": {
-   "thinking_tokens": 1132
+   "thinking_tokens": 645
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.13862,
- "ms": 35920,
- "seconds": 36.4,
+ "cost_usd": 0.13778,
+ "ms": 34409,
+ "seconds": 34.6,
+ "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 81,
+   "placed": 85,
    "listed": 86,
-   "share": 0.942,
+   "share": 0.988,
    "missing": [
-    "BUSC1A",
-    "BUSC1AH",
-    "BUSC1B",
-    "BUSC1BH",
     "PSYC3H"
    ],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "BUSC1B",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2001H",
+     "listed": "BUSC1BH",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "BUSC1A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002H",
+     "listed": "BUSC1AH",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 4,
-   "codes": [
-    "ECONC2001",
-    "ECONC2001H",
-    "ECONC2002",
-    "ECONC2002H"
-   ],
-   "flagged": [
-    "ECONC2001",
-    "ECONC2001H",
-    "ECONC2002",
-    "ECONC2002H"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     23.0,
     25.0
@@ -84,9 +95,32 @@
     23.0,
     27.0
    ],
-   "why": [
-    "the blocks sum to 23.0-25.0; the catalog states 23.0-27.0"
-   ]
+   "against": "program",
+   "why": [],
+   "short_high": true,
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     57.0,
+     59.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "transfer": true,
+    "fill": [
+     1.0,
+     3.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -102,7 +136,15 @@
    "heading_without_outcomes": true,
    "pass": true
   },
-  "pass": false
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
  },
  "record": {
   "program": {
@@ -113,8 +155,22 @@
     "max": 27
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": "Cal-GETC",
-   "outcomes": []
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
   },
   "blocks": [
    {
@@ -734,7 +790,7 @@
   "missing_explained": [
    {
     "code": "BUSC 1A",
-    "why": "not in the text; List C names ECON C2002 (Principles of Macroeconomics) instead"
+    "why": "not in the text; List C names ECON C2002 instead"
    },
    {
     "code": "BUSC 1AH",
@@ -742,7 +798,7 @@
    },
    {
     "code": "BUSC 1B",
-    "why": "not in the text; List C names ECON C2001 (Principles of Microeconomics) instead"
+    "why": "not in the text; List C names ECON C2001 instead"
    },
    {
     "code": "BUSC 1BH",
@@ -750,19 +806,20 @@
    },
    {
     "code": "PSYC 3H",
-    "why": "catalog note says PSYC 3H removed from List C; not listed"
+    "why": "removed from List C per catalog correction note (9/21/2026)"
    }
   ],
   "notes": [
-   "The catalog prints no units beside individual courses (only block totals), so every course units field is null.",
-   "ECON 17 and KIN 3 are matched to closed-list entries ECON17 and KIN3 (spacing differs only).",
-   "ECON C2001, ECON C2001H, ECON C2002, ECON C2002H are not in the closed list; they appear to replace BUSC 1B/1BH/1A/1AH.",
-   "MICR 1 is titled 'Medical Microbiology' in the catalog but 'Principles of Microbiology' in the closed list.",
-   "List B is printed with a stated 3 units and a single choice: PUBH 25 or SOC 160.",
-   "Catalog includes an edit note dated 9/21/2026: local number corrected from S0857 to S1014; PSYC 3H removed from List C, students may request substitution for the honors course.",
+   "The catalog prints no units beside individual courses; only block totals (Core 13-14, List A 3-5, List B 3, List C 3) and Total Units for the Major 23-27 are printed.",
+   "ECON 17 and KIN 3 are matched to closed-list entries 'ECON17' and 'KIN3' (spacing difference only), so catalog_addition is false.",
+   "ECON C2001/C2001H and ECON C2002/C2002H appear in List C but are not in the closed list; the closed list instead carries BUSC 1A/1AH/1B/1BH (likely renumbered).",
+   "Catalog note: 'Corrected local number from S0857 to S1014. PSYC 3H removed from list C. Students can request substitution if they complete the honors course. 9/21/2026'.",
+   "Degree total 60 and Cal-GETC 34 are printed in the page's table; footnote says courses may be double-counted for the major and Cal-GETC.",
    "The Outcomes tab prints a 'Program Learning Outcomes' heading with only a link to review SLOs; no outcomes are printed, so outcomes are empty.",
-   "Total Units for the Major printed as 23-27; Cal-GETC 34; degree total 60."
+   "List C heading prints 'List C 3' and 'Choose one course from the following'; recorded as choose 1 course with stated 3.",
+   "MICR 1 is printed as 'Medical Microbiology' while the closed list titles it 'Principles of Microbiology'."
   ]
  },
- "extracted_run": "38059865531"
+ "extracted_run": "44744647809",
+ "catalog_year": "2026-2027"
 }

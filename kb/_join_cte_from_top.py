@@ -47,6 +47,19 @@ def load_cte_map():
     return {code: rec["cte"] for code, rec in data.get("codes", {}).items()}
 
 
+def cte_for(top_code, cte_map: dict):
+    """(cte, count key) for one record's TOP code: True/False from the manual, None with no code or one the manual
+    lacks. The one rule; kb/_pile_mint_apply.py stamps its new records through it."""
+    top = (top_code or "").strip()
+    if not top:
+        return None, "no_top_code"
+    if top in cte_map:
+        return bool(cte_map[top]), "cte" if cte_map[top] else "non_cte"
+    # TOP code is set but not in the manual — likely a niche/legacy
+    # code (e.g. 6000-series noncredit not in the 2023 manual).
+    return None, "top_unknown"
+
+
 def stamp_file(path: str, cte_map: dict, now_iso: str) -> dict:
     """Stamp cte on every row in `path`. Returns counts for the console summary."""
     with open(path, encoding="utf-8") as f:
@@ -54,19 +67,8 @@ def stamp_file(path: str, cte_map: dict, now_iso: str) -> dict:
     courses = blob.get("courses") or {}
     counts = Counter()
     for rec in courses.values():
-        top = (rec.get("top_code") or "").strip()
-        if not top:
-            rec["cte"] = None
-            counts["no_top_code"] += 1
-            continue
-        if top in cte_map:
-            rec["cte"] = bool(cte_map[top])
-            counts["cte" if rec["cte"] else "non_cte"] += 1
-        else:
-            # TOP code is set but not in the manual — likely a niche/legacy
-            # code (e.g. 6000-series noncredit not in the 2023 manual).
-            rec["cte"] = None
-            counts["top_unknown"] += 1
+        rec["cte"], kind = cte_for(rec.get("top_code"), cte_map)
+        counts[kind] += 1
     blob["_cte_stamped_at"] = now_iso
     blob["_cte_source"] = "kb/reference/top_categories.json (CCC 2023 TOP Manual, 7th Ed)"
     tmp = path + ".tmp"

@@ -2,19 +2,22 @@
  "college": "San Diego College of Continuing Education",
  "programs": 144,
  "with_closed_list": 120,
- "found": 109,
- "extracted": 109,
+ "found": 100,
+ "extracted": 100,
  "errors": 0,
- "passed_machine_checks": 89,
+ "passed_machine_checks": 96,
  "failed": {
-  "coverage": 19,
+  "coverage": 2,
   "invented": 0,
-  "arithmetic": 1,
+  "arithmetic": 2,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 4.95,
- "cost_per_program": 0.0454,
+ "cost_usd_run": 0.69,
+ "cost_usd_filed": 4.56,
+ "cost_per_program": 0.0456,
+ "extract_calls": 15,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "24067",
@@ -23,7 +26,8 @@
    "near_miss": {
     "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=46",
     "coverage": 0.25
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "24086",
@@ -32,7 +36,20 @@
    "near_miss": {
     "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=130",
     "coverage": 0.167
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "24101",
+   "title": "Network Security Specialist Certificate Program",
+   "award": null,
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Active"
   },
   {
    "control_number": "24124",
@@ -41,7 +58,8 @@
    "near_miss": {
     "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=25",
     "coverage": 0.429
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "24141",
@@ -50,50 +68,153 @@
    "near_miss": {
     "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=100",
     "coverage": 0.1
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "24204",
    "title": "Food Preparation for Health Care Professionals Program",
    "award": null,
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
   },
   {
    "control_number": "24206",
    "title": "General Educational Development Program",
    "award": "Noncredit program",
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "24236",
+   "title": "Child Development 1",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "24238",
+   "title": "Child Development 2 Program",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "24240",
    "title": "Appliance/Refrigeration/Air Conditioning Repair Program",
    "award": null,
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "24306",
+   "title": "Network Systems Specialist Program",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "24313",
+   "title": "Front Desk/Office Assistant Program",
+   "award": null,
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Active"
   },
   {
    "control_number": "24336",
    "title": "Professional Bakeshop Skills Program",
    "award": null,
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
   },
   {
    "control_number": "24337",
    "title": "Pre-Vocational English as a Second Language (VESL) Program",
    "award": "Noncredit program",
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "33750",
+   "title": "Server Essentials Program",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Active"
   },
   {
    "control_number": "33871",
    "title": "Culinary Arts and Sciences Program",
    "award": null,
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "35140",
+   "title": "Windows System Administration",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=73",
+    "coverage": 0.0,
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "35838",
+   "title": "Office Assistant II",
+   "award": null,
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Active"
   },
   {
    "control_number": "35965",
    "title": "Virtual Datacenter",
    "award": "Noncredit program",
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "39774",
+   "title": "Motion and Video Production",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Active"
   }
  ],
- "run": "39035224783"
+ "run": "44739577102"
 }

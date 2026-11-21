@@ -1,0 +1,17 @@
+{
+ "name": "program_requirement_records_display_2026-11-13_3604c0bfe9bb.applied_43490064130_grossmont-college.json",
+ "kind": "display_applied",
+ "bucket": "cpl-receipts",
+ "object": "display/applied/program_requirement_records_display_2026-11-13_3604c0bfe9bb.applied_43490064130_grossmont-college.json.gz",
+ "build": "3604c0bfe9bb",
+ "built": "2026-11-13",
+ "bytes": 1360,
+ "sha256": "0d44ee492985cf3723b67e78314568ea4725f4a9b655a6087da4178c28c83c61",
+ "rows": 140,
+ "stored_at": "2026-11-21T04:52:48Z",
+ "run": "44867993793",
+ "gzip": true,
+ "repo_sha256": "24f74aa8c788b012bc153da0f06ed494b0d23994756d63e4e37ef5ac4728e660",
+ "repo_bytes": 11409,
+ "repo_blob": "e5cc30323edc9a7bb906313308039e99333ffcb8"
+}

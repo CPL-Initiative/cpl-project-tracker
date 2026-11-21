@@ -5,11 +5,11 @@
  "title": "Museum Studies and Art Gallery",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
  "source_url": "https://catalog.mtsac.edu/programs/programsaz/museum-and-art-gallery-exhibition-design-operation/museum-and-art-gallery-exhibition-design-operation-certificate/",
- "record_shape": 3,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6392,
+  "input_tokens": 8005,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6392,
-    "output_tokens": 2803,
+    "input_tokens": 8005,
+    "output_tokens": 2728,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,52 +30,66 @@
     "model": null
    }
   ],
-  "output_tokens": 2803,
+  "output_tokens": 2728,
   "output_tokens_details": {
-   "thinking_tokens": 952
+   "thinking_tokens": 841
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.08163,
- "ms": 21651,
- "seconds": 22.0,
+ "cost_usd": 0.08658,
+ "ms": 21536,
+ "seconds": 21.8,
+ "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 9,
+   "placed": 15,
    "listed": 15,
-   "share": 0.6,
-   "missing": [
-    "AHIS11",
-    "AHIS13",
-    "AHIS5",
-    "AHIS6",
-    "AHIS7",
-    "AHIS9"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ARTH11",
+     "listed": "AHIS11",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTH13",
+     "listed": "AHIS13",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTH6",
+     "listed": "AHIS6",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTH7",
+     "listed": "AHIS7",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTH9",
+     "listed": "AHIS9",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTHC1200",
+     "listed": "AHIS5",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 6,
-   "codes": [
-    "ARTH11",
-    "ARTH13",
-    "ARTH6",
-    "ARTH7",
-    "ARTH9",
-    "ARTHC1200"
-   ],
-   "flagged": [
-    "ARTH11",
-    "ARTH13",
-    "ARTH6",
-    "ARTH7",
-    "ARTH9",
-    "ARTHC1200"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -89,6 +103,7 @@
     20.0,
     21.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -105,6 +120,14 @@
    "heading_without_outcomes": false,
    "pass": true
   },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
   "pass": true
  },
  "record": {
@@ -116,7 +139,20 @@
     "max": 21
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Identify various roles in the museum and gallery systems.",
     "Apply and analyze historic and contemporary art theory within museum and gallery systems.",
@@ -127,6 +163,13 @@
     "Analyze artwork, design, installation, fabrication, and concept, within the context of historic and contemporary theory.",
     "Apply design concepts, installation techniques, fabrication skills, and exhibition concept toward the production of a purposeful exhibition.",
     "Demonstrate networking and communication knowledge related to approaching and interacting with museum and art gallery professionals in relation to contemporary practice."
+   ],
+   "careers": [
+    "Assistant art handler",
+    "Gallery greeter",
+    "Entry-level administration",
+    "Exhibition reviewer for accessible sites",
+    "Assistant to a graphic designer"
    ]
   },
   "blocks": [
@@ -261,37 +304,38 @@
   "missing_explained": [
    {
     "code": "AHIS 5",
-    "why": "not in the text; catalog lists ARTH C1200 instead (likely renumbered)"
+    "why": "not in the text; catalog prints ARTH C1200 (Survey of Art from the Renaissance to Contemporary), likely its replacement"
    },
    {
     "code": "AHIS 6",
-    "why": "not in the text; catalog lists ARTH 6 instead (likely renumbered)"
+    "why": "not in the text under AHIS; catalog prints ARTH 6 History of Modern Art"
    },
    {
     "code": "AHIS 7",
-    "why": "not in the text; catalog lists ARTH 7 instead (likely renumbered)"
+    "why": "not in the text under AHIS; catalog prints ARTH 7 Global Contemporary Visual Culture"
    },
    {
     "code": "AHIS 9",
-    "why": "not in the text; catalog lists ARTH 9 instead (likely renumbered)"
+    "why": "not in the text under AHIS; catalog prints ARTH 9 History of Asian Art and Architecture"
    },
    {
     "code": "AHIS 11",
-    "why": "not in the text; catalog lists ARTH 11 instead (likely renumbered)"
+    "why": "not in the text under AHIS; catalog prints ARTH 11 History of African, Oceanic, and Native American Art"
    },
    {
     "code": "AHIS 13",
-    "why": "not in the text; catalog lists ARTH 13 instead (likely renumbered)"
+    "why": "not in the text under AHIS; catalog prints ARTH 13 World Art and Visual Culture"
    }
   ],
   "notes": [
-   "Program outcomes come from two lists on the page: the first six are printed in the Overview after 'Students who successfully complete the program will be able to:'; the last three are printed under the Outcomes tab heading 'Program Learning Outcomes'. Reviewer should confirm whether both lists should be retained.",
-   "ARTG 22A is a variable unit course; the catalog states 'A minimum of two units required' and prints 2-3.",
-   "The Required Electives block prints 6 units as its total but no units beside the individual ARTH courses; course units left null.",
-   "Closed list uses AHIS prefix (AHIS 5, 6, 7, 9, 11, 13) while the catalog prints ARTH (ARTH C1200, 6, 7, 9, 11, 13); these ARTH codes are marked catalog additions. AHIS 5 (History of Western Art: Renaissance Through Modern) appears to correspond to ARTH C1200 (Survey of Art from the Renaissance to Contemporary) under common course numbering.",
-   "Honors codes ARTH C1200H, ARTH 6H, ARTH 11H matched to closed-list entries ARTHC1200H, ARTH6H, ARTH11H despite spacing differences.",
-   "The page also references SLOs ('Review Student Learning Outcomes (SLOs) for this program.') via a link not included in the text."
+   "The catalog prints the art history electives under the ARTH subject while the closed list stores AHIS codes with identical titles; ARTH codes were recorded as catalog additions. A reviewer should confirm the AHIS-to-ARTH subject change.",
+   "ARTH 6H, ARTH 11H and ARTH C1200H matched the closed-list entries ARTH6H, ARTH11H and ARTHC1200H (spacing differences only).",
+   "Elective courses have no units printed beside them; units left null. The block 'Required Electives' prints 6 units.",
+   "ARTG 22A is a variable-unit course; the catalog says 'A minimum of two units required' and prints 2-3.",
+   "The page prints two outcome lists: six outcomes in the overview ('Students who successfully complete the program will be able to:') and three Program Learning Outcomes on the outcomes tab; both recorded in program.outcomes.",
+   "The program description also mentions 'entry-level occupations related to museum studies and art gallery'; only the specific job titles listed were recorded as careers."
   ]
  },
- "extracted_run": "38064250199"
+ "extracted_run": "44744647809",
+ "catalog_year": "2026-2027"
 }

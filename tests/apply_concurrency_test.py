@@ -64,6 +64,8 @@ MEMBERS = {
     "cer-decision-apply.yml", "cred-rename-apply.yml", "credential-family-apply.yml", "daily-dashboard.yml",
     "docket-process.yml", "esl-sheet-apply.yml", "library-publish.yml", "overmerge-apply.yml",
     "phase-1e-apply.yml", "projects-seed-apply.yml", "workplan-goals-seed-apply.yml",
+    # S695 (#3476 items 1 and 2): the one-time move of the applied records and row audit reports commits to main.
+    "receipt-slim.yml",
 }
 
 results = []
@@ -211,7 +213,7 @@ SECRETS_BY_STEP = {
     "Build the Exhibits List's Outcomes match hints": ["SUPABASE_SERVICE_KEY"],
     "Build the catalog's skills-to-outcomes analysis": ["SUPABASE_SERVICE_KEY"],
     "Sync CPL Pathways' confirmed records": ["SUPABASE_SERVICE_KEY"],
-    "Keep the newest 14 row audit reports": ["SUPABASE_SERVICE_KEY"],   # S680, #3476: stores old reports in cpl-receipts
+    "Store the row audit reports": ["SUPABASE_SERVICE_KEY"],   # S680, #3476: stores the reports in cpl-receipts (S695)
 }
 ALL_SECRETS = ["MAP_API_KEY", "MAP_API_AUTH_HEADER", "MAP_API_AUTH_SCHEME", "CPL_SCRAPE_SECRET", "SUPABASE_SERVICE_KEY"]
 calls = [s for s in ud_steps if "daily_build.sh" in str(s.get("run", ""))]
@@ -250,10 +252,11 @@ for ln in body_lines[start_i:]:
         stray.append(ln)
 check("build script: every command sits in a `step` block (none runs outside the secrets wrapper)",
       not stray and not inside, stray[:3])
-check("build script: 45 blocks (the 41 former steps less the shard upload, which runs after the push, "
+check("build script: 48 blocks (the 41 former steps less the shard upload, which runs after the push, "
       "plus the exhibit table refresh of 2026-11-12, the titles that have left MAP of S679, the side by side of S679, "
-      "the row audit prune of S680 and the course flags of S683)",
-      len(blocks) == 45 and blocks[0][0] == "Fetch CustomReport from MAP API"
+      "the row audit prune of S680, the course flags of S683, the closest M-ID of S694 and the Subjects card's two "
+      "files of S695)",
+      len(blocks) == 48 and blocks[0][0] == "Fetch CustomReport from MAP API"
       and blocks[-1][0] == "Copy dashboard to index.html", len(blocks))
 check("build script: each block takes exactly the secrets its step declared, and the rest none",
       {n: s for n, s in blocks if s} == SECRETS_BY_STEP, {n: s for n, s in blocks if s})

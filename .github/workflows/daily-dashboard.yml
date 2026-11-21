@@ -159,12 +159,21 @@ jobs:
                     unified_courses_suggestions.js \
                     unified_courses_aligned.js \
                     credential_reference_data.js \
-                    kb/row_audit/latest.json kb/row_audit/*.md \
+                    kb/row_audit/latest.json \
                     kb/coci_retired_cards.json kb/coci_inactive_cards.json kb/coci_not_applicable.json \
                     exports/unified_courses.xlsx
             # The reports the prune moved to the bucket leave with their index entries (#3476 step 5).
             # Quoted pathspecs, so git stages a tracked report's removal, which a shell glob cannot name.
-            git add -A -- 'kb/row_audit/*.md' 'kb/receipts/index/row_audit_*.json' 2>/dev/null || true
+            # Two commands (S695): from KEEP 0 a day can hold no report at all, and a pathspec that matches
+            # nothing fails its whole `git add`, which would leave the day's index entry unstaged.
+            git add -A -- 'kb/row_audit/*.md' 2>/dev/null || true
+            git add -A -- 'kb/receipts/index/row_audit_*.json' 2>/dev/null || true
+            # The Courses List's closest M-ID and exhibit links (kb/_closest_mid.py --if-changed, S694).
+            git add kb/coci_closest_mid.json 2>/dev/null || true
+            # The Commons Subjects card's two files (kb/_build_local_subject_titles.py and kb/_held_subject_codes.py,
+            # both --if-changed, S695).
+            git add kb/status/local_subject_titles.json 2>/dev/null || true
+            git add kb/status/held_subject_codes.json 2>/dev/null || true
             # CPL Pathways AUTHORITATIVE membership view (StarMora) — the program→
             # course join artifact the cards read; regenerated in Step 4a1b above.
             git add cpl_pathways_membership_data.js 2>/dev/null || true

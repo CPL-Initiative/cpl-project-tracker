@@ -15,7 +15,8 @@ The four sources:
   inactive        kb/coci_inactive_cards.json, built by kb/_build_inactive_cards.py (no college's course sits on the
                   card in the Courses List's file, and no exhibit points to it).
   not_applicable  kb/coci_not_applicable.json, built by kb/_build_not_applicable.py (independent or directed study,
-                  an internship or work experience, or a code-only listing; rule in kb/_not_applicable_rule.py).
+                  an internship or work experience, a code-only listing, or, for a course on no card, special or
+                  selected topics; rule in kb/_not_applicable_rule.py).
                   It holds courses with no card as well as cards.
 
 Order when two flags meet: retired, merged, inactive, not applicable. A record carries every note that applies and is
@@ -80,6 +81,8 @@ NA_COURSE_NOTES = {
                    "time, so they aren't shared across colleges. Kept for the record; nothing to do."),
     "code_only": ("Not applicable: the state's course list gives this course a number but no title. Kept for the "
                   "record; nothing to do."),
+    "topics": ("Not applicable: special or selected topics. What a course like this teaches changes from term to "
+               "term, so it isn't one course shared across colleges. Kept for the record; nothing to do."),
 }
 NA_CARD_NOTES = {
     "independent": ("Not applicable: every college's course on this shared course is independent or directed study. "

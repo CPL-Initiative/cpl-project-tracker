@@ -1,7 +1,7 @@
 ---
 title: "The Commons — lessons"
 date: 2026-10-18
-updated: 2026-11-20
+updated: 2026-11-21
 tags: [lessons, commons, program-requirements, cer-procedures, skyview, common-cr-reference]
 artifacts:
   - commons_progress.js
@@ -79,33 +79,9 @@ Moved verbatim to [`commons_lessons_archive.md`](commons_lessons_archive.md): *M
 
 Moved verbatim to [`commons_lessons_archive.md`](commons_lessons_archive.md): *SkyJujube, 2026-11-04: retiring the Common Course Reference tab (a side session)*; *Moved from the lane (SkyBeacon, 2026-11-06)*; *2026-11-06 — the first view, from Sam's recording (moved from the lane, S611)*; *The CCR tab's inventory (moved from the commons lane, S612, 2026-11-08)*; *Moved from the lane, 2026-11-09, SkyCigar*; *The Docket, steps 1 to 3, and the morning's security asks (SkyCigar, 2026-11-09)*; *Moved from the lane (S624, 2026-11-10; the lane stood at 1.43 times its budget): moved to the archive (S662 checkpoint compaction)*; *Moved from the lane (S639, 2026-11-11)*; *S641 (SkyOtter, the conductor, 2026-11-12): the ASE slice, read-only first*; *Moved from the lane (S642, 2026-11-12)*; *Moved from the lane (S644)*; *Moved from the lane (S647)*; *Moved from the lane (S647 afternoon)*.
 
-## S647 afternoon (SkyPipit, the conductor, 2026-11-13): the Commons data dashboard complete
+## 3 sections: moved to the archive (S695 checkpoint compaction)
 
-- Sam's go, about 14:30Z: *"looks like we have more room in t his session, can we complete the college data collection dash?"* Slice 2 (#3231), the data (#3232) and slice 3 (#3236) merged, each after COBIx's read and a review of three or four agents.
-- Every review found real faults after COBIx had cleared the PR: an inert leak on Back, two false TBA reasons, a session renewal replaying a stale college (slice 2); exception text that could carry the key into a committed file, a short read that could replace a good block, a false privacy sentence in the dictionary (the data). A claim about the data gets checked against a file: program outcomes ARE in committed records (`record.program.outcomes`, for example norco 40135), and both a worker's TBA reason and COBIx's note said otherwise until a reader opened one.
-- Three PRs that each regenerate the dependency map cost two extra sync rounds. Merge the first, then have the others merge `main` before their last test run.
-- The first live read (run 43456843640) matched the 12:37Z headline exactly on Active (20,282) and passing (14,525) by another route. Two figures do not reconcile yet: 88,736 courses on Active programs against 89,192 in the harvest row, and 13,293 SLO courses against 12,815. Neither is quoted outward until they do.
-- A feature with no source is a line under "Coming next" naming the source it waits on, never an empty panel (`d-commons-data-coming-next-s647`).
-
-## Moved from the lane (S648)
-
-Moved verbatim from the data dashboard's LIVE paragraph when #3229 renamed the view College Data Collection, to keep the lane under its budget:
-
-Sam's 2:53 AM PT words covered slice 1 (**DECIDED** `d-commons-data-slice1-on-relayed-go-s647`); his go for the rest, in session about 14:30Z: *"looks like we have more room in t his session, can we complete the college data collection dash?"* (`sam-complete-data-dash-2026-11-13`).
-
-**#3219** (Sam, 1:52 AM PT, verbatim: "coci does not have reliable course descriptions, especially for noncredit so we will need to add a procedure in our cor queue where we grab the slos and objectives to complete the description field when needed--this will really help with all those thousands of nc standalone courses we have in the system") is still open: a COR-queue step, not a go; Sam approves the PR.
-
-**DECIDED** `d-student-boundary-wording-s647`: the dictionary's first privacy sentence was false; it now reads "Student records stay in MAP; COBI keeps counts." and names the boundary (pseudonymous rows pass through the runner and sit in reviewer-gated `map_student_credit` until the summarize-then-delete plan retires it; both ADRs).
-
-## Moved from the lane (S648 checkpoint)
-
-Verbatim from the lane, 2026-11-13.
-
-**The first view opens on one batch (Sam's Commons rulings relayed on #2921, 2026-11-08, *"yes to all"*; S604).** *Your next batch* leads the page: Another look's open cards in Exhibits, six at most (`next_batch` in `kb/status/commons.json`, from `kb/exhibits_sweep.json`), with what the answers teach and when to stop; *Start* opens `#exhibits/another-look`, so the cards and their saves stay in Exhibits. Under it one line counts what people did with the procedures' work (placed, checked, moved elsewhere; *the rest are unchecked, not proven*), its word opening the trust table. The pools and the trust table start folded. A reference whose headline pair is all done reads *Complete* (Subjects, 147 of 147); its repair jobs stay in its issues. Kept from the house rules where COBIx's mock departs: controls are underlined words, no arrows, live data only.
-
-**The batch is capped (#2923, S604, COBIx's finding).** *Start* opens `#exhibits/another-look/batch`: the first six open cards, fixed for the visit, no bulk acceptance, a trail back to the Commons, and a stop screen after the last. Exhibits reconciles the nightly sweep with `kb_curation` saves written since it was built. **Exhibits queue-first (S611, #2933).** A Queue view leads the Exhibits views at `#exhibits/queue/<lens>`: six lenses in the ruled order, each a set of entry points into a list the tab already holds, counted from the set that list opens. A failed read or the classifier's errors show as Blocked on Sky. Review stays the default view; Park is named visit-only. **The panel's trail (S611, #2934):** the shared List's side panel opens on `CPL Commons / <List> / <filter> / <row>` (spec `trail` in `commons_list.js`), set on Exhibits, the CR Reference, Program Requirements and Subjects; the List's word, or the filter's when one is on, is the underlined return and keeps the filter and the row's place. **NEXT (#2921):** the CCR (below); Subjects' 93 stray codes stay with the curator. Sam's path still waits on his reaction to the mock.
-
-**DECIDED: every credential gets a Common SUBJ (SkyTamarind, S638, 2026-11-11, on Sam's in-session ask: *"add a check into that in our common plan and procedure so we can get those fill as automatically as possible"*).** Exhibits' List reads the subject as the Catalog does (M-ID and C-ID articulations, then a stored `subj_override`); its *No Common SUBJ* filter is where the Exhibit card's routine count opens. `kb/_exhibit_subject_fill.py`, a step in the nightly `cer-procedures.yml` (preview until a dispatch sets `subject_fill=on`), fills a blank from the credited courses (several colleges, then one, majority over half), else the issuer family (`kb/reference/issuer_family_subject.json`; ASE is automotive, Sam's MIL7 ruling), through the Common Subjects Reference; title words, TOP and CIP never decide; a family or cert link that disagrees with the courses holds the title. It writes `subj_override` and `subj_source` under `exhibit-subject-s638@bot`, insert-only, receipt first, `--undo` by cohort; a stored subject always wins. Governance DR-07 (the credential record's subject). The rest go to `kb/exhibit_subject_out/worklist.json` with a title-word suggestion for a later accept-all batch. Guards `tests/exhibit_subject_fill_test.py`, `tests/exhibits_list_subject.test.js`. First live run 21:41Z (run 43104720166): 747 filled, 362 left.
+Moved verbatim to [`commons_lessons_archive.md`](commons_lessons_archive.md): *S647 afternoon (SkyPipit, the conductor, 2026-11-13): the Commons data dashboard complete*; *Moved from the lane (S648)*; *Moved from the lane (S648 checkpoint)*.
 
 ## S648 (SkyTanager, the conductor, 2026-11-13): College Data Collection on Sam's words, the course key, the re-clustering plan
 
@@ -464,3 +440,161 @@ Orange Coast), so the registry is stale for those three.
   a script before applying.
 - **Unverified:** the Data Mart did not open from the session (a certificate error, then HTTP 503), and
   `kb/_fetch_program_course_files.py` has never succeeded, so whether it holds past term course files is unknown.
+
+## S692 (SkyGannet, Sam's plain session, 2026-11-20): hand it over in place, slice 1
+
+**What shipped (#3608, `5507826e`).** Sam's locked mock asked for a place to act on every name. `commons_handover.js`
+draws one box for every Commons dataset (a drop box, Try the link, pasted data, an API procedure); each still-taught
+course in Needs you opens a panel beside the front page at `#commons/course/<control number>`; each college opens
+College Data Collection's own panel on a new `handover` pane; *Term Reports Needed* carries the box. The schema
+(`kb/migrations/2026-11-20_commons_handover.sql`, runs 44789876384 and 44790191281) is a private bucket, a
+reviewer-read table and three functions; the reader's pickup (`kb/_handover_pickup.py`) answers each row. The whole
+description: [`reference-commons-hand-over`](kb-notes/reference-commons-hand-over.md).
+
+**The calls, each recorded (`d-handover-*-2026-11-20`).** A reviewer's own sign-in, never the team phrase, because
+Storage cannot check the phrase and a hand-over is filed under a name. Try the link starts the runner's reader
+through a function that fetches nothing, so one reader visits a college's site and its rules (robots.txt first, stop
+at a bot check) hold in one place. Slice 1 is the front door: filing a hand-over into `course_outcomes` or the
+registry is left to guarded steps, since each touches a shared reader or a table with one writer. A college's name
+goes to College Data Collection's panel rather than opening over the front page.
+
+**What the tests caught before a person could.**
+
+- The database proof (46 checks on a throwaway Postgres, with the live project's default privileges stood in) is what
+  shows the anon key shut out; the page test cannot.
+- The pickup's own test caught a header name read case-sensitively (`Content-Type` against `content-type`), which
+  would have dropped the content type from every API answer.
+- `npm run a11y` on a seeded signed-in view found a heading level skipped in the college's pane (h2 to h4). jsdom
+  has no opinion on that.
+
+**What CI taught, in the order it cost time.**
+
+1. A new script the page loads needs a `publish` line in `.github/pages_allowlist.txt`, or the deployed site never
+   serves it and the page draws without the feature.
+2. A workflow installs its browser through `scripts/install_browser.sh`, never its own line.
+3. `lints` stops at its first failure, so the second item hid behind the first for a full cycle. After a failure, run
+   the later steps locally as real scripts
+   ([`methodology-a-blocked-path-hides-the-defects-behind-it`](kb-notes/methodology-a-blocked-path-hides-the-defects-behind-it.md)).
+4. The migrate runner's receipt commit moves the PR's head and starts no CI (a push by the built-in token never
+   does). The head a session merges needs a commit of its own after the last receipt; here that was the note of the
+   two applies beside their rollbacks.
+
+**What was denied.** An ad-hoc browser script that stood in a reviewer session and answered Supabase calls was
+refused by the permission check. The sanctioned route is a seed in `a11y.config.js` (`seedHandover`, after
+`seedFundingCurator`) run with `npm run a11y -- <target> --shots DIR`
+(`p-fake-session-browser-script-denied-2026-11-20`).
+
+**Not yet shown.** No test here can show Supabase Storage taking a reviewer's upload on an INSERT policy alone; the
+local proof stands in for Storage. Sam's first real drop is the check, and it is first in the lane's NEXT.
+
+## S693 (SkyKittiwake, Sam's plain session, 2026-11-20): the hand-over's note, Needs an M-ID, the Closest M-ID
+
+**What shipped.** #3610 (`e0b90801`): every hand-over box takes a note, a signed-in reviewer sees each thing handed
+over by name, and Try the link names why the reader did not start. Open at this checkpoint: #3612 (the Courses List's
+No M-ID and No identity chips are one, Needs an M-ID, 2,508 courses; titles open the panel), #3613 (Sam's 8 pasted
+descriptions and the 4 Ohlone notes filed; the 12 hunt courses answered, with a guarded 11-row answer-as-filed write)
+and the Closest M-ID PR (`kb/_closest_mid.py`, `kb/coci_closest_mid.json`, a column and a panel section).
+
+**Sam worked the list himself, and his use found what the build missed.** A note had no place to go (BRDC 127A to
+127D, not in Ohlone's catalog); seven term report drops looked like one, because the box showed counts alone; the
+No M-ID list held courses a C-ID or CCN already identifies. Each became a fix the same hour. His seven sentences are
+rows in [`sam_rulings`](reference/sam_rulings.md).
+
+**Measure the recommender before you show its number.** The Closest M-ID's confidence is read off a held-out test:
+6,000 courses that hold an M-ID, each taken out of its own common course and ranked. A score of 0.75 or more was
+right for 2,266 of 2,438 (93%); below 0.65, under four in ten. On the pile, 82 of 2,508 score that high. So the pile
+is mostly new M-IDs to mint, and a join is the smaller part (`f-closest-mid-measured-2026-11-20`).
+
+**A test must not read a live worklist.** Three page tests read the live hunt block and would have failed the day
+Sam finished the list. They read a fixture now, and a Python check ties the fixture to the builder.
+
+**Tooling.** Try the link answered 503 three times with no reason logged; the session dispatched the pickup itself
+(run 44806543827), and the function now logs its reason. The privacy plugin refuses a Bash call that names the daily
+dashboard generator; read it with the Read tool. A worktree-isolated agent starts in the repo of the session's working
+directory, so a tracker worker is launched from the tracker.
+
+
+## S694 (SkyPetrel, Sam's plain session, 2026-11-20 to 21, conductor): Assign from the panel, the pile's links, the mint plan, the Subjects card
+
+**What shipped.** #3617 (`1f7135da`): the commons lane compacted, 24,934 to 18,475 bytes. #3618 (`810a9b50`): the
+build behind Assign from the panel, with its dry run and a second read. #3619 (`e04e155d`): the pile opens on exhibit
+links counted through the build's folds, and `kb/coci_closest_mid.json` rebuilds in the daily build when an input
+changed. #3621 (`ab0ed744`): the pile mint as a dry run; nothing applied. Open when these documents were written: #3620
+(the Subjects card, `#commons/subjects`) and #3622 (the Assign control in the Courses List panel).
+
+**Change the build before the control, and measure the change.** The dry run ran the build unchanged and changed: pile
+courses listing under their target went 70 of 82 to 82 of 82, and a minted course carrying subject, credit status and
+TOP 0 of 12 to 12 of 12. The change also moved today's output in three places, each read and kept: 15 courses the
+identity file already held now list under their M-IDs (member rows 134,485 to 134,500; the pile 2,508 to 2,493 at the
+next daily build), two units figures (AUTO M9004, CULN M1032), and FIRE M1219 back on its own row with 12 courses.
+
+**Why the pile exists.** 2,364 of its 2,508 courses carry a title the identity seed's `STOP_PATTERNS` set aside as a
+generic shell (special or selected topics 584, practicum 571, tutoring 266, field work and the like 240, seminar 222,
+apprenticeship 169); 119 a title `CODE_RE` read as code-only; 19 are ordinary. The pile is a byproduct of a rule, so a
+rule (topics flagged not applicable, as independent study is) clears more of it than any matcher.
+
+**Count links through the folds.** Of 4,591 records in `kb/coci_articulations.json`, 3,101 sit on a live id; 413 reach a
+row through `consolidated_from`, 12 through `routed_from`, 971 through `merge_into`; 91 records on 66 ids reach nothing.
+Group Communication's 67 sit on `COMM 140`, which no pile course names, so COBIx's example cannot come first; only 4
+pile courses are named by an exhibit directly.
+
+**The mint plan's hold is the subject code, and that is the Subjects card's job.** The wave is 1,602 courses: 58
+catalog records holding 140 courses and 514 stand-alone records planned, 944 held because no route gives a SUBJ4, 4
+held for Assign. The subject map disagrees with the identity file's SUBJ4 for 6,545 of 51,616 courses (13%), and two
+new `discipline_source` values would be misread by five consumers. The plan needs a second read before an apply is
+written.
+
+**A failed read is not an empty list.** The second reader's BLOCKING finding on #3622: a failed read of assigned courses
+passed as none assigned, where the write depends on it. Now a failed read offers no Assign.
+
+**A fingerprint over raw bytes never matches when inputs carry daily stamps.** The reader on #3619 found the rebuild
+would run every day; #3619 carries the fix.
+
+**Tooling.** The conductor killed a worker's `npm test` by process id, taking it for its own: check the parent and the
+start time before a kill. A branch stacked on a PR that squash-merges conflicts on every shared file: rebuild it as
+cherry-picks on `main`. Four test suites at once on four cores made every suite slow; run them one or two at a time.
+
+## S695 (SkyShearwater, Sam's plain session, 2026-11-21, conductor): the mint's floor, the first pile-minted record, the held codes
+
+**What shipped.** #3624 (`99e9c3ee`): special and selected topics flagged not applicable (587 titles statewide, 584 on
+the pile; 40 of 40 flagged titles read right); the pile went 2,493 to 1,909. #3625 (`6ff93f80`): `#commons/subjects/held`,
+the local subject codes the mint holds on. #3627 (`385e04c8`): both Subjects builders in the daily build. #3626
+(`2db49276`): the pile mint v3, its floor and its apply, after two second reads. Open when these documents were written:
+#3630 (the first record, `LSKL M9004` Supervised Tutoring, 90 noncredit courses at 80 colleges) and #3629 (repo slimming
+items 1 and 2).
+
+**A plan that passes every structural check can still give the wrong answer.** The 572-record plan passed seven
+validations of shape, and the one question it was never asked, whether its SUBJ4 was right, failed it. The subject map
+gives the right Common SUBJ for 45,079 of 51,624 identity-holding courses left out of their own vote (87.3%) and for 0 of
+883 generic-shell titles, where the identity file homes work experience, cooperative education and internship under
+WEXP. A mint route is a matcher and takes the same self-recall floor: the dry run now mints only where a route is right
+98 times in 100 on held answers (the subject map on 21 codes that pass it with 10 or more holders, 4,772 of 4,863; a
+shell kind the identity file homes, 2,151 right and 0 wrong with each holder's college left out; or a ruled kind). Under
+that rule the wave of 1,599 plans nothing on its own: 1,595 are shell titles with no convention (practicum 524, seminar
+157, apprenticeship 149, supervised tutoring 146, tutoring 112). KB note: the dated section in
+[`methodology-a-new-matcher-is-gated-by-a-self-recall-test`](kb-notes/methodology-a-new-matcher-is-gated-by-a-self-recall-test.md).
+
+**A new source value has readers.** `discipline_source: "subject_map"` would have been re-derived by
+`kb/_infer_disciplines.py` (485 of 572 blanked, 18 rewritten, then TOP fills the blanks), and `_row_audit` and
+`_ccr_confidence_score` misread it. The value is now `pile_mint`, with the route in `pile_mint_route`, and each of the
+three reads it as written (the auditor scores it a session mint). 97 shell-title records split one course across SUBJ4s
+(Supervised Tutoring across 9), which is why a generic kind mints as one common course per normalized title and band
+statewide. 158 planned ids equaled ids in the staged, never-run `kb/overmerge_out/2026-05-29/alias_map.json`; ids are
+now reserved in `kb/pile_mint_reserved.json`, which every minter's loader reads.
+
+**An undo that needs the file's own formatting breaks once a build step rewrites it.** Round one found the rollback
+failed after `_infer_disciplines` rewrote the minted file compact, a live read with missing fields passed as empty
+(S694's class again), the rollback read nothing live, and only one minter read the reservations; round two found the
+overmerge tool keeping its own copy of the loader. The review stopped at two rounds (COBIx's rule).
+
+**A daily consumer can shrink silently.** When the dry run joined the daily build, the held-codes list fell from 943
+courses to 3, because an upstream change altered what its lists meant; now it reads 1,341 courses, 416 codes, 678 pairs
+(OTA 27, CHIL 21, RT 21, KIN 20, CD 19). Read a downstream figure after an upstream rule changes.
+
+**A watcher whose output wakes no one is not watching.** The COBIx watcher flagged #3358's brief and issue #3628 at about
+02:32Z; the conductor read them at 03:23Z, since the watcher's output does not wake the session, and it stopped at its
+two-hour limit. The brief set the plain-session order: slimming items 1 to 3 (tree 1,747 MB of a 2,000 MB cap, +90 MB a
+day), the M-ID work, then Library part 4.
+
+**Found, not fixed.** The state course list (`coci_lookup_data.js`) was built 2026-07-09 from a COCI export of 2026-05-21
+and no workflow rebuilds it. 481 catalog rows' committed `cte` differs from a fresh stamp, older than this session.

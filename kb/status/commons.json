@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-20T16:28:36Z",
+ "written_at": "2026-11-21T04:10:43Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 15120,
+     "n": 15161,
      "of": 20282,
      "words": "complete at 118 colleges",
      "open": "#program-requirements/list"
@@ -34,25 +34,18 @@
    ],
    "issues": [
     {
-     "n": 2144,
+     "n": 2091,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
      "open": "#program-requirements/list/fail"
     },
     {
-     "n": 3018,
+     "n": 3030,
      "words": "active programs with no record yet",
      "owner": "the harvest",
      "carry": "routine",
      "open": "#program-requirements/list/unread"
-    },
-    {
-     "n": 4,
-     "words": "colleges where 12 still-taught courses need their course outline from a person",
-     "owner": "Sam (send the PDF to COBIx; a session files it in kb/hand_filed_catalogs/outlines)",
-     "carry": "no_procedure",
-     "open": "#commons/data"
     }
    ],
    "procedures": [
@@ -70,17 +63,17 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-11-20T08:15:45Z",
+    "at": "2026-11-20T13:29:43Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 15120,
-    "failing": 2144,
-    "unread": 3018,
-    "records": 18885,
+    "complete": 15161,
+    "failing": 2091,
+    "unread": 3030,
+    "records": 18860,
     "colleges": 118,
-    "outside_active": 1621,
+    "outside_active": 1608,
     "confirmed": 32,
     "confirmed_complete": 28
    },
@@ -105,14 +98,14 @@
    "status_file": "kb/status/exhibit.json",
    "pair": [
     {
-     "n": 3156,
-     "of": 6215,
-     "words": "titles carry a review stamp (1,539 a person's, 1,617 a cohort's), counting 29 titles MAP carries with no entry yet; 2,936 credentials, 2,515 of 3,285 records stamped",
+     "n": 3169,
+     "of": 6252,
+     "words": "titles carry a review stamp (1,539 a person's, 1,630 a cohort's), counting 53 titles MAP carries with no entry yet; 2,947 credentials, 2,531 of 3,301 records stamped",
      "open": "#exhibits/list"
     },
     {
      "n": 1539,
-     "of": 6215,
+     "of": 6252,
      "words": "confirmed by a person",
      "open": "#exhibits/list",
      "error": null
@@ -173,23 +166,23 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-20T16:27:02Z",
+    "at": "2026-11-20T21:48:17Z",
     "every_hours": 24
    },
    "facts": {
-    "titles": 6186,
-    "backlog": 29,
-    "stamped": 3156,
+    "titles": 6199,
+    "backlog": 53,
+    "stamped": 3169,
     "person": 1539,
-    "cohort": 1617,
-    "credentials": 2936,
+    "cohort": 1630,
+    "credentials": 2947,
     "confirmed": 1539,
-    "records": 3285,
-    "records_stamped": 2515,
+    "records": 3301,
+    "records_stamped": 2531,
     "saved_at": "2026-11-20T16:27:02Z",
-    "fold_at": "2026-11-20T06:19:51Z",
-    "map_titles": 5403,
-    "unclassified": 29,
+    "fold_at": "2026-11-20T21:48:17Z",
+    "map_titles": 5440,
+    "unclassified": 53,
     "left_map": 812,
     "below_80": 1117,
     "below_60": 235,
@@ -232,13 +225,13 @@
    "pair": [
     {
      "n": 4006,
-     "of": 15911,
-     "words": "cards the auditor scores 0.85 or better; 9,697 at needs review, 2,208 at needs repair, 0 not ready",
+     "of": 15912,
+     "words": "cards the auditor scores 0.85 or better; 9,698 at needs review, 2,208 at needs repair, 0 not ready",
      "open": "#coci-lookup/courses"
     },
     {
      "n": 288,
-     "of": 15911,
+     "of": 15912,
      "words": "confirmed by a person, 145 of them ready; a person also confirmed 350 cards now kept for the record and left out of the counts (350 merged)",
      "open": "#coci-lookup/courses",
      "error": null
@@ -300,13 +293,13 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-20T06:22:40+00:00",
+    "at": "2026-11-21T04:09:14+00:00",
     "every_hours": 24
    },
    "facts": {
-    "total": 15911,
+    "total": 15912,
     "ready": 4006,
-    "needs_review": 9697,
+    "needs_review": 9698,
     "needs_repair": 2208,
     "not_ready": 0,
     "cap": 0.79,
@@ -390,7 +383,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-19T11:06:51-08:00",
+    "at": "2026-11-19T06:22:43Z",
     "every_hours": null
    },
    "facts": {
@@ -517,7 +510,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-20T06:19:47Z",
+    "at": "2026-11-21T04:06:34Z",
     "every_hours": 24
    },
    "facts": {
@@ -530,7 +523,7 @@
     "modal": 0,
     "shared": [],
     "missed_alignment": 0,
-    "scanned_at": "2026-11-20",
+    "scanned_at": "2026-11-21",
     "procedures_on": 6
    },
    "sources": [
@@ -591,9 +584,9 @@
    ],
    "pair": [
     {
-     "n": 72831,
+     "n": 78635,
      "of": null,
-     "words": "outcomes read from 19,146 courses at 27 colleges",
+     "words": "outcomes read from 20,562 courses at 28 colleges",
      "open": "#coci-lookup"
     }
    ],
@@ -601,12 +594,13 @@
     "read from the public outline"
    ],
    "facts": {
-    "outcomes": 72831,
-    "courses": 19146,
+    "outcomes": 78635,
+    "courses": 20562,
     "colleges": [
      "allan_hancock",
      "cabrillo",
      "chabot",
+     "city_of_san_francisco",
      "coastline_community",
      "college_of_the_redwoods",
      "college_of_the_siskiyous",
@@ -632,11 +626,11 @@
      "santiago_canyon",
      "shasta"
     ],
-    "reads": 70
+    "reads": 72
    },
    "machine": {
     "what": "the last outline read",
-    "at": "2026-11-20T11:37:28Z",
+    "at": "2026-11-20T15:50:52Z",
     "every_hours": null
    },
    "sources": [
@@ -677,14 +671,6 @@
    {
     "key": "no_procedure",
     "items": [
-     {
-      "ref": "requirements",
-      "title": "Program Requirements",
-      "n": 4,
-      "words": "colleges where 12 still-taught courses need their course outline from a person",
-      "owner": "Sam (send the PDF to COBIx; a session files it in kb/hand_filed_catalogs/outlines)",
-      "open": "#commons/data"
-     },
      {
       "ref": "course",
       "title": "Common Course Reference",
@@ -779,7 +765,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 2144,
+    "n": 2091,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"
@@ -787,7 +773,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 3018,
+    "n": 3030,
     "words": "active programs with no record yet",
     "owner": "the harvest",
     "open": "#program-requirements/list/unread"
@@ -814,9 +800,9 @@
     "ref": "requirements",
     "title": "Program Requirements",
     "kind": "not_shrinking",
-    "n": 3018,
-    "was": 2800,
-    "since": "2026-11-13",
+    "n": 3030,
+    "was": 2820,
+    "since": "2026-11-14",
     "words": "active programs with no record yet",
     "owner": "the harvest",
     "open": "#program-requirements/list/unread"
@@ -826,8 +812,8 @@
     "title": "Common Exhibit Reference",
     "kind": "not_shrinking",
     "n": 563,
-    "was": 374,
-    "since": "2026-11-13",
+    "was": 499,
+    "since": "2026-11-14",
     "words": "credentials with no Common SUBJ (467 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
     "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
     "open": "#exhibits/list/nosubj"
@@ -842,12 +828,12 @@
     {
      "name": "classifier",
      "placed": 979,
-     "untouched": 891,
+     "untouched": 903,
      "kept": 4,
      "renamed": 53,
      "moved": 0,
      "by_procedure": 19,
-     "left": 12,
+     "left": 0,
      "looked": 57
     },
     {
@@ -875,12 +861,12 @@
     {
      "name": "high-school-rop",
      "placed": 63,
-     "untouched": 38,
+     "untouched": 39,
      "kept": 19,
      "renamed": 5,
      "moved": 0,
      "by_procedure": 0,
-     "left": 1,
+     "left": 0,
      "looked": 24
     },
     {
@@ -930,12 +916,12 @@
    ],
    "total": {
     "placed": 1492,
-    "untouched": 1346,
+    "untouched": 1359,
     "kept": 23,
     "renamed": 86,
     "moved": 0,
     "by_procedure": 24,
-    "left": 13,
+    "left": 0,
     "looked": 109
    }
   },
@@ -1035,14 +1021,26 @@
  "docket": [],
  "batches": [
   {
-   "kind": "job",
-   "ref": "requirements",
-   "n": 4,
-   "title": "Program Requirements",
-   "words": "colleges where 12 still-taught courses need their course outline from a person",
-   "teaches": "Sam (send the PDF to COBIx; a session files it in kb/hand_filed_catalogs/outlines)",
-   "open": "#commons/data",
-   "reason": "no_procedure"
+   "kind": "another-look",
+   "n": 1,
+   "of": 1,
+   "open": "#exhibits/another-look/batch",
+   "title": "Another look at 1 exhibit title",
+   "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
+   "stop": "The batch ends when its cards are decided.",
+   "rules": [
+    "fold"
+   ],
+   "cards": [
+    {
+     "id": "0b6d6a199c47",
+     "current": "Practical PC and Career Technologies",
+     "keys": [
+      "_UNCLASSIFIED::Portfolio Review CIS100-Practical PC & Career Technologies"
+     ]
+    }
+   ],
+   "at": "2026-11-20T21:51:04Z"
   },
   {
    "kind": "job",
@@ -1056,13 +1054,25 @@
   }
  ],
  "next_batch": {
-  "kind": "job",
-  "ref": "requirements",
-  "n": 4,
-  "title": "Program Requirements",
-  "words": "colleges where 12 still-taught courses need their course outline from a person",
-  "teaches": "Sam (send the PDF to COBIx; a session files it in kb/hand_filed_catalogs/outlines)",
-  "open": "#commons/data",
-  "reason": "no_procedure"
+  "kind": "another-look",
+  "n": 1,
+  "of": 1,
+  "open": "#exhibits/another-look/batch",
+  "title": "Another look at 1 exhibit title",
+  "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
+  "stop": "The batch ends when its cards are decided.",
+  "rules": [
+   "fold"
+  ],
+  "cards": [
+   {
+    "id": "0b6d6a199c47",
+    "current": "Practical PC and Career Technologies",
+    "keys": [
+     "_UNCLASSIFIED::Portfolio Review CIS100-Practical PC & Career Technologies"
+    ]
+   }
+  ],
+  "at": "2026-11-20T21:51:04Z"
  }
 }

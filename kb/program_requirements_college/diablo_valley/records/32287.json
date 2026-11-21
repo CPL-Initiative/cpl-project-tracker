@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8992,
-    "output_tokens": 4013,
+    "output_tokens": 4501,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 4013,
+  "output_tokens": 4501,
   "output_tokens_details": {
-   "thinking_tokens": 720
+   "thinking_tokens": 1159
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.11623,
- "ms": 29541,
- "seconds": 29.8,
+ "cost_usd": 0.12599,
+ "ms": 33738,
+ "seconds": 34.0,
  "parts": null,
  "error": null,
  "score": {
@@ -136,7 +136,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": "DVC General Education or Cal-GETC",
+   "ge_pattern": "Cal-GETC or DVC General Education",
    "degree_total": {
     "min": null,
     "max": null
@@ -170,63 +170,63 @@
     },
     "courses": [
      {
-      "code": "BUS240",
+      "code": "BUS 240",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ECONC2001",
+      "code": "ECON C2001",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "ECONC2002",
+      "code": "ECON C2002",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "KINES100",
+      "code": "KINES 100",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KINES220",
+      "code": "KINES 220",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KINES222",
+      "code": "KINES 222",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "KINES223",
+      "code": "KINES 223",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "KINES248",
+      "code": "KINES 248",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KINES249",
+      "code": "KINES 249",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -235,7 +235,7 @@
     ]
    },
    {
-    "name": "plus at least 2 units from:",
+    "name": "plus at least 2 units from",
     "rule": "choose_units",
     "minimum": 2,
     "option_group": null,
@@ -245,280 +245,280 @@
     },
     "courses": [
      {
-      "code": "KNACT100A",
+      "code": "KNACT 100A",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT100B",
+      "code": "KNACT 100B",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT102A",
+      "code": "KNACT 102A",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT102B",
+      "code": "KNACT 102B",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT110A",
+      "code": "KNACT 110A",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT110B",
+      "code": "KNACT 110B",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "KNACT110C",
+      "code": "KNACT 110C",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT120",
+      "code": "KNACT 120",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT122A",
+      "code": "KNACT 122A",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT122B",
+      "code": "KNACT 122B",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT124A",
+      "code": "KNACT 124A",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT124B",
+      "code": "KNACT 124B",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT130A",
+      "code": "KNACT 130A",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT130B",
+      "code": "KNACT 130B",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT132",
+      "code": "KNACT 132",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT140",
+      "code": "KNACT 140",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT146A",
+      "code": "KNACT 146A",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT146B",
+      "code": "KNACT 146B",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT146C",
+      "code": "KNACT 146C",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT146D",
+      "code": "KNACT 146D",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT148A",
+      "code": "KNACT 148A",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT148B",
+      "code": "KNACT 148B",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT164A",
+      "code": "KNACT 164A",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT164B",
+      "code": "KNACT 164B",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT166A",
+      "code": "KNACT 166A",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT166B",
+      "code": "KNACT 166B",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT170A",
+      "code": "KNACT 170A",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT170B",
+      "code": "KNACT 170B",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT174A",
+      "code": "KNACT 174A",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT174B",
+      "code": "KNACT 174B",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT176A",
+      "code": "KNACT 176A",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT176B",
+      "code": "KNACT 176B",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT178A",
+      "code": "KNACT 178A",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT178B",
+      "code": "KNACT 178B",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT182A",
+      "code": "KNACT 182A",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT182B",
+      "code": "KNACT 182B",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT182C",
+      "code": "KNACT 182C",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT195A",
+      "code": "KNACT 195A",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT195B",
+      "code": "KNACT 195B",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KNACT195C",
+      "code": "KNACT 195C",
       "units": 1,
       "units_max": null,
       "alternatives": [],
@@ -527,7 +527,7 @@
     ]
    },
    {
-    "name": "plus at least 6 units from:",
+    "name": "plus at least 6 units from",
     "rule": "choose_units",
     "minimum": 6,
     "option_group": null,
@@ -537,56 +537,56 @@
     },
     "courses": [
      {
-      "code": "BUS109",
+      "code": "BUS 109",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "BUS250",
+      "code": "BUS 250",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "BUS294",
+      "code": "BUS 294",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "BUSAC181",
+      "code": "BUSAC 181",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "BUSAC186",
+      "code": "BUSAC 186",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "BUSAC187",
+      "code": "BUSAC 187",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KINES210",
+      "code": "KINES 210",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "KINES246",
+      "code": "KINES 246",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -599,22 +599,22 @@
   "missing_explained": [
    {
     "code": "ECON 220",
-    "why": "not in the text; catalog lists ECONC2002 Principles of Macroeconomics instead (apparent renumbering)"
+    "why": "not in the text; catalog prints ECONC2002 Principles of Macroeconomics (common course numbering) instead"
    },
    {
     "code": "ECON 221",
-    "why": "not in the text; catalog lists ECONC2001 Principles of Microeconomics instead (apparent renumbering)"
+    "why": "not in the text; catalog prints ECONC2001 Principles of Microeconomics (common course numbering) instead"
    }
   ],
   "notes": [
-   "Codes are written as printed without spaces (e.g., BUS240 = closed-list BUS 240).",
-   "ECONC2001 and ECONC2002 appear to be the Common Course Numbering replacements for ECON 221 and ECON 220; marked as catalog additions.",
-   "KINES222, KINES223, KINES246 and KNACT110B are not in the closed list.",
-   "Several KNACT titles differ from the closed list (KNACT122A/B 'Body Sculpt' vs 'Exercise, Balance, and Mobility'; KNACT124A/B 'Hips, Thighs and Abs' vs 'Strength, Core, and More'; KNACT140 'Stationary Cycling' vs 'Indoor Cycling'); codes match.",
-   "Page states major total 35 (27 + 2 + 6); no degree total printed. GE: page advises Cal-GETC for transfer students and DVC General Education for others; no GE units printed.",
-   "Careers: only 'sports or recreation administrator' recorded; the listed businesses (intercollegiate athletics, fitness centers, etc.) are settings rather than careers."
+   "The catalog prints codes without a space (e.g. BUS240, ECONC2001); they are recorded with a space between subject and number (ECONC2001 recorded as ECON C2001).",
+   "ECON C2001/C2002 appear to be the common-course-numbered replacements for closed-list ECON 221/220; recorded as catalog additions.",
+   "Titles differ from the closed list for KNACT 122A/B (Body Sculpt vs. Exercise, Balance, and Mobility), KNACT 124A/B (Hips, Thighs and Abs vs. Strength, Core, and More) and KNACT 140 (Stationary vs. Indoor Cycling); codes match.",
+   "GE pattern: page recommends Cal-GETC for transfer students and DVC General Education for others; no GE units or degree total printed.",
+   "Major total 35 = 27 required + 2 KNACT units + 6 elective units.",
+   "Careers: the description names settings (intercollegiate athletics, interscholastic athletics, fitness centers, spas and wellness centers, recreational facilities) as businesses where the administrator works; only the job title is recorded."
   ]
  },
- "extracted_run": 43691943622,
- "read_run": "43379378196"
+ "extracted_run": "44745889555",
+ "catalog_year": "2026-2027"
 }

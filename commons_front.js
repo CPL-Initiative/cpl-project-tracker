@@ -1,7 +1,7 @@
 // commons_front.js — the CPL Commons front page: one page for the Commons, with the College Data Collection page
 // folded in (#3533; Sam's go, Nov 19, 2026, 2:49 AM PT, and "build the CPL Commons page now", 4:28 AM PT, relayed by
 // COBIx in #3533 comment 7006930860). Top to bottom: the header and Sam's lede, the Projected Completion Date widget
-// with its 30-day daily bars, Needs you, the eight cards in Collect / Curate / Connect, the Building line, the More
+// with its 30-day daily bars, Needs you, the nine cards in Collect / Curate / Connect, the Building line, the More
 // collection detail line and the scorecard line.
 //
 // What it reads (committed files the site already serves; it WRITES NOTHING but the fold, in this browser):
@@ -12,6 +12,9 @@
 //   kb/status/commons_data.json               statewide and live: colleges collected, the program bases, the
 //                                             course SLO and objective counts, the outline links.
 //   kb/reference/industry_credential_skills.json   harvested_on: the issuer-published skills collected per day.
+//   kb/status/local_subject_titles.json       the Subjects card's Step b: local subject titles drafted from the printed
+//                                             catalogs (kb/_build_local_subject_titles.py). Read on its own, so a
+//                                             missing file reads TBA and the rest of the page still draws.
 // A figure with no single committed source on main yet is in ASKED below, named with where it comes from, so the
 // page never invents one and a later source replaces it in one place. Every figure is read once into the model, and
 // every place on the page that shows it reads the model, so the page agrees with itself (S490).
@@ -29,8 +32,9 @@
   var DETAILS_ORDER_KEY = "cplCommons.detailsOrder.v1";
   var DETAILS_FOLD_KEY = "cplCommons.detailsFold.v1";
   var FILES = { program: "kb/status/program-requirements.json", data: "kb/status/commons_data.json",
-    skills: "kb/reference/industry_credential_skills.json" };
-  var KEYS = ["colleges", "programs", "courses-data", "courses", "exhibit", "credentials", "cr", "interconnect"];
+    skills: "kb/reference/industry_credential_skills.json", subjects: "kb/status/local_subject_titles.json",
+    held: "kb/status/held_subject_codes.json" };
+  var KEYS = ["colleges", "programs", "courses-data", "subjects", "courses", "exhibit", "credentials", "cr", "interconnect"];
   var DAYS = 30;   /* the same window as the live College Collections ETA (commons_eta_clock.js, DAYS=30) */
   var REPO = "https://github.com/CPL-Initiative/cpl-project-tracker/issues/";
 
@@ -112,7 +116,7 @@
   }
 
   /* ── the model: every figure the page shows, read once ── */
-  function model(C, PR, D, K) {
+  function model(C, PR, D, K, LS, HS) {
     var rows = {};
     ((C && C.rows) || []).concat((C && C.building) || []).forEach(function (r) { rows[r.key] = r; });
     function facts(k) { return (rows[k] && rows[k].facts) || {}; }
@@ -179,6 +183,12 @@
       held: { n: held.n, unsure: heldParts ? heldParts[1] : null, issuers: heldParts ? heldParts[2] : null, code: heldParts ? heldParts[3] : null },
       cr: { settled: cr.settled, wordings: cr.wordings, rule: cr.rule_wordings, curator: cr.curator_only, groups: cr.names_to_check },
       subjects: { settled: subj.settled, of: subj.disciplines },
+      /* Step b (S694): the local subject titles the Courses bot drafted from the printed catalogs; null reads TBA. */
+      localTitles: LS && LS.totals ? { colleges: LS.totals.colleges, named: LS.totals.named, collegesNamed: LS.totals.colleges_named,
+        codes: LS.totals.catalog_codes, oneSided: (LS.totals.catalog_only || 0) + (LS.totals.state_only || 0),
+        catalogOnly: LS.totals.catalog_only, stateOnly: LS.totals.state_only, courses: LS.totals.courses } : null,
+      /* Step a's queue (S695): the local subject codes the pile mint holds on, and the held courses they release. */
+      heldCodes: HS && HS.totals ? { held: HS.totals.held, codes: HS.totals.codes, pairs: HS.totals.pairs } : null,
       building: { skillsCreds: (facts("skills").with_issuer_skills != null ? facts("skills").with_issuer_skills : cred.with_issuer_skills),
         industry: cred.credentials, issuers: cred.issuers, outcomes: out.outcomes, outcomeCourses: out.courses,
         outcomeColleges: Array.isArray(out.colleges) ? out.colleges.length : out.colleges }
@@ -333,19 +343,100 @@
     return fmt(o.courses) + (o.courses === 1 ? " course still taught at " : " courses still taught at ") + fmt(o.colleges.length)
       + (o.colleges.length === 1 ? " college needs its course outline from a person." : " colleges need their course outline from a person.");
   }
+  /* Hand it over in place (Sam, 2026-11-20, his locked mock): each course opens beside this list at an address of its
+     own (#commons/course/<control number>), and each college opens College Data Collection's own panel at the place to
+     act. commons_handover.js draws both; without it the names stay plain words and the page reads as before. */
+  function HO() { return window.CPL_HANDOVER || null; }
+  function courseLinks(c, list) {
+    var H = HO(), out = [];
+    (list || c.still_taught || []).forEach(function (x, i) {
+      if (i) out.push(", ");
+      if (!H) { out.push(x.course); return; }
+      var row = { course: x.course, control_number: x.control_number, college_slug: c.slug };
+      out.push(el("a", { href: H.courseHref(row), "data-course": H.courseKey(row), text: x.course }));
+    });
+    return out;
+  }
   function outlineFixes(M) {
-    var o = huntOpen(M), out = [p([huntWords(M)])];
+    var o = huntOpen(M), out = [p([huntWords(M)])], H = HO();
     if (o && o.colleges.length) {
       out.push(el("ul", { cls: "cmf-need-list cmf-hunt" }, o.colleges.map(function (c) {
         return el("li", { "data-hunt-college": c.slug }, [
-          p([el("span", { cls: "cmf-need-t", text: c.college }), ": " + (c.still_taught || []).map(function (x) { return x.course; }).join(", ") + "."]),
+          p([H ? el("a", { cls: "cmf-need-t", href: H.collegeHref(c.college), "data-college-panel": c.slug, text: c.college }) : el("span", { cls: "cmf-need-t", text: c.college }), ": "]
+            .concat(courseLinks(c), ["."])),
+          p([], "cmf-standing"),
           c.catalog_url ? p([el("a", { cls: "cmf-out", href: c.catalog_url, target: "_blank", rel: "noopener", text: c.catalog_url })]) : null
         ].filter(Boolean));
       })));
+      if (H) out.push(p(["Choose a course to open it beside this list, then drop its outline, give a link to try, or paste the data. A college's name opens its own panel."]));
       out.push(p([el("strong", { text: "Send the PDF to COBIx in your Grok Bot chat." })]));
+    }
+    /* What a person answered, off the to-do and still in reach (S693; Sam worked all 12 on 2026-11-20): each college,
+       its courses by what was handed over, each name opening the course's panel. */
+    var ans = huntAnswered(M);
+    if (ans.length) {
+      out.push(p([el("strong", { text: "Answered by a person" }), ", and off this list. Each course's outcomes are still missing until its outline is in hand; an outline dropped in the course's panel adds them."], "cmf-answered-h"));
+      out.push(el("ul", { cls: "cmf-need-list cmf-hunt cmf-answered" }, ans.map(function (c) {
+        var kids = [el("span", { cls: "cmf-need-t", text: c.college }), ": "];
+        c.groups.forEach(function (g, i) {
+          if (i) kids.push(" ");
+          kids = kids.concat(courseLinks(c, g.courses), [". " + g.what + "."]);
+        });
+        return el("li", { "data-hunt-answered": c.slug }, [p(kids), p([], "cmf-standing")]);
+      })));
     }
     out.push(p([a("#collect/outlines-blocked", "Open the courses by college")], "cmf-need-links"));
     return out;
+  }
+  /* The colleges with an answered course, each with its courses grouped by what the person handed over. */
+  function huntAnswered(M) {
+    var h = M.hunt;
+    if (!h || !Array.isArray(h.colleges)) return [];
+    return h.colleges.filter(function (c) { return (c.answered || []).length; }).map(function (c) {
+      var groups = [], by = {};
+      c.answered.forEach(function (x) {
+        var w = x.what || "Answered";
+        if (!Object.prototype.hasOwnProperty.call(by, w)) { by[w] = { what: w, courses: [] }; groups.push(by[w]); }
+        by[w].courses.push(x);
+      });
+      return { slug: c.slug, college: c.college, groups: groups };
+    });
+  }
+  /* What has been handed over so far, beside each college (the public counts: no person, file name or address). */
+  function drawStanding(M) {
+    var H = HO(), o = huntOpen(M);
+    if (!H || !o) return;
+    H.summary().then(function (rows) {
+      var seen = {};
+      [["data-hunt-college", o.colleges], ["data-hunt-answered", huntAnswered(M)]].forEach(function (pair) {
+        pair[1].forEach(function (c) {
+          /* A college with courses on both lists says what was handed over once, beside its open courses. */
+          if (seen[c.slug]) return;
+          var li = document.querySelector(".cmf-hunt li[" + pair[0] + '="' + c.slug + '"]'), line = li && li.querySelector(".cmf-standing");
+          if (!line) return;
+          seen[c.slug] = true;
+          var said = H.standing(rows, { subject_kind: "college", college: c.college });
+          line.textContent = said.length ? "Handed over: " + said.join("; ") + "." : "";
+        });
+      });
+      var t = document.getElementById("cmf-term-standing");
+      if (t) { var ts = H.standing(rows, { subject_kind: "dataset", dataset: "term_reports" }); t.textContent = ts.length ? "Handed over: " + ts.join("; ") + "." : ""; }
+    });
+  }
+  /* Term Reports Needed (the mock's group; cpl_memory q-term-report-sources-2026-11-20): the set-aside for courses a
+     college no longer offers compares term course files, and three more are wanted. The same hand-over box takes one. */
+  function termReports(M) {
+    var H = HO();
+    if (!H) return null;
+    var hold = el("div", { cls: "cmf-term-box" });
+    var d = el("details", { cls: "cho-term", id: "cmf-term" }, [el("summary", { text: "Hand over a term report" }), hold]);
+    d.addEventListener("toggle", function () {
+      if (!d.open || hold.firstChild) return;
+      hold.appendChild(H.box({ subject_kind: "dataset", dataset: "term_reports" }, { apiHeading: "h5", apis: [{ which: "term_report", dataset: "term_reports" }], onChange: function () { drawStanding(M); } }));
+    });
+    return el("div", { cls: "cmf-need", id: "cmf-need-terms" }, [el("h4", { text: "Term Reports Needed" }),
+      p(["To set aside courses a college no longer offers, the Commons compares the term course files each college reported to the Chancellor's Office. Fall 2025 is on hand. Three more are wanted, newest first: Spring 2026, Spring 2025 and Fall 2024."]),
+      el("p", { cls: "cmf-standing", id: "cmf-term-standing" }), d]);
   }
 
   /* Needs you (#3566). Decisions waiting reads the decisions list commons.js hands in (decisions(): the same list the
@@ -383,8 +474,9 @@
         el("div", { cls: "cmf-need" }, [el("h4", { text: "Fixes owed to you" }),
           p(["Five common-course cards you already ruled on (shared course IDs " + ASKED.doubt.slice(0, -1).join(", ") + ", and " + ASKED.doubt[ASKED.doubt.length - 1] + ") still sit on the list of cards whose catalog description reads as another discipline, because your rulings have not been carried into that list yet. Sky owes that fix. Nothing for you to decide."])]),
         rows,
+        termReports(M),
         titles
-      ])
+      ].filter(Boolean))
     ]);
   }
   /* The held titles' line. L is the live read (heldLive): { held, saved: [{ raw, value }], open, at }; null while it
@@ -504,14 +596,37 @@
         links: [["Outlines blocked", "#collect/outlines-blocked"], ["Courses List", "#coci-lookup/courses"]] })
     ];
     var cardPct = pct(Cd.ready, Cd.total), exPct = pct(E.stamped, E.titles);
+    var S = M.subjects, LT = M.localTitles, HC = M.heldCodes, sOf = !!S && S.of != null;
     var curate = [
+      /* Subjects (Sam, 2026-11-20: "don't we need a commons card for subjects to house the common subjects and local
+         subject titles we'll be establishing from catalog data?"): Steps a and b of his curation order, before the
+         M-ID (Step c, the next card). Each figure opens what it counts. */
+      card({ key: "subjects", title: "Subjects", pill: "In progress",
+        big: sOf ? fmt(S.settled) + " of " + fmt(S.of) : "TBA", rest: [" common subject codes settled"],
+        body: [p([el("strong", { text: "Step a, common subject code: " }), sOf ? a("#canonical-subj4", fmt(S.settled) + " of " + fmt(S.of) + " disciplines settled") : "TBA",
+            " in the Common Subjects Reference. Owner: a curator."]),
+          p(HC ? [a("#commons/subjects/held", fmt(HC.held) + " courses the M-ID mint holds"), " wait on " + fmt(HC.codes) + " local subject codes with no common subject code. Deciding one code releases every course under it."]
+            : ["The courses the M-ID mint holds for want of a common subject code: TBA."]),
+          p([el("strong", { text: "Step b, local subject title: " }),
+            LT ? a("#commons/subjects", fmt(LT.named) + " titles drafted") : "TBA",
+            LT ? " at " : "", LT ? a("#commons/subjects", fmt(LT.collegesNamed) + " of " + fmt(LT.colleges) + " colleges") : "",
+            LT ? " with a printed catalog. Owner: the Courses bot drafts each title from the catalog’s subject heading; a curator settles the " : "",
+            LT ? a("#commons/subjects/disagree", fmt(LT.oneSided) + " codes only one side prints") : "",
+            LT ? "." : ""]),
+          p(["Step c, the M-ID, is the Courses and M-IDs card."])],
+        method: [p([(sOf ? fmt(S.of) + " is the number of disciplines in the Common Subjects Reference; " + fmt(S.settled) + " have a settled common subject code. " : "")
+          + (LT ? "The local titles come from the " + fmt(LT.colleges) + " printed catalogs filed so far (" + fmt(LT.courses) + " courses, " + fmt(LT.codes) + " subject codes). Where a catalog prints a subject heading, that heading is the draft title; where it prints the code alone, the title reads TBA. "
+            + "Each catalog’s codes are compared with the state course list’s codes for the same college, exactly, after trimming spaces and setting upper case: " + fmt(LT.catalogOnly) + " codes only the catalog prints and " + fmt(LT.stateOnly) + " only the state list carries. Those are the curator’s list. "
+            + "The common subject code beside a local code comes from the subject map and each discipline’s settled code, never from a TOP code."
+            : "The local subject titles file has not been read, so Step b reads TBA.")])],
+        links: [["Open the subjects list", "#commons/subjects"], ["Codes the mint holds on", "#commons/subjects/held"], ["Common Subjects Reference", "#canonical-subj4"]] }),
       card({ key: "courses", title: "Courses and M-IDs", pill: "In progress",
         big: fmt(Cd.ready) + " of " + fmt(Cd.total), rest: [" cards the automatic check scores as ready (0.85 or better)"],
         after: [meter(cardPct, fmt(Cd.ready) + " of " + fmt(Cd.total) + " ready, " + Math.round(cardPct) + " percent")],
         body: [p(["Local courses grouped into shared common courses, each with a shared course ID (an M-ID)."]),
-          p([el("strong", { text: "M-ID gap — not counted yet" }), " A once-through count of program courses with no shared course ID is not counted yet. Open the Courses list’s ", a("#coci-lookup/list/nomid", "No M-ID filter"), ". One known cause: " + fmt(ASKED.missingMembership) + " cards are missing from the published list of which local courses belong to each shared course (a membership fix)."])],
+          p([el("strong", { text: "M-ID gap — not counted yet" }), " A once-through count of program courses with no shared course ID is not counted yet. Open the Courses list’s ", a("#coci-lookup/list/nomid", "Needs an M-ID filter"), ". One known cause: " + fmt(ASKED.missingMembership) + " cards are missing from the published list of which local courses belong to each shared course (a membership fix)."])],
         method: [p(["Of the " + fmt(Cd.total) + " cards, " + fmt(Cd.review) + " need review, " + fmt(Cd.repair) + " need repair, and " + fmt(Cd.notReady) + " are not ready. " + fmt(Cd.confirmed) + " have been confirmed by a person, " + fmt(Cd.confirmedReady) + " of them ready. The " + fmt(Cd.ready) + " ready cards are those the automatic check scores 0.85 or better. The M-ID gap is a placeholder; it is not the older 2,362 of 8,912 figure, which this page does not show. Five cards you already ruled on are still in the discipline-in-doubt file — see the ", a(REPO + "3447", "Backfill fix"), "."])],
-        links: [["Open the Courses List", "#coci-lookup/courses"], ["No M-ID filter", "#coci-lookup/list/nomid"]] }),
+        links: [["Open the Courses List", "#coci-lookup/courses"], ["Needs an M-ID filter", "#coci-lookup/list/nomid"]] }),
       card({ key: "exhibit", title: "Exhibit titles", pill: "In progress",
         big: fmt(E.stamped) + " of " + fmt(E.titles), rest: [" local titles reviewed"],
         after: [meter(exPct, fmt(E.stamped) + " of " + fmt(E.titles) + " reviewed, " + Math.round(exPct) + " percent")],
@@ -669,10 +784,15 @@
 
   function boot(root, C, opts) {
     opts = opts || {};
-    return Promise.all([readJson(FILES.program), readJson(FILES.data), readJson(FILES.skills)]).then(function (r) {
-      var M = model(C, r[0], r[1], r[2]);
+    /* The local subject titles are their own read: a missing file reads TBA on the Subjects card, never a broken page. */
+    var titles = readJson(FILES.subjects).then(null, function () { return null; });
+    var heldCodes = readJson(FILES.held).then(null, function () { return null; });
+    return Promise.all([readJson(FILES.program), readJson(FILES.data), readJson(FILES.skills), titles, heldCodes]).then(function (r) {
+      var M = model(C, r[0], r[1], r[2], r[3], r[4]);
       render(root, M, opts);
+      wireHandover(M, opts);
       if (opts.focus === "needs") focusNeeds();
+      if (opts.course) openCourse(opts.course);
       /* The live read redraws only the held line; a failed read leaves the status file's line, named as of its time. */
       var live = heldLive().then(function (L) {
         var box = document.getElementById("cmf-held");
@@ -683,6 +803,37 @@
       return live.then(function () { return M; });
     });
   }
+  /* The course panel (#commons/course/<control number>). A press on a course opens it in place: the address follows
+     without a page move, and Close puts the address back. commons.js opens the course an arrival names and closes it
+     when the address leaves (browser Back). */
+  var COURSE = { noted: null };
+  function setCourseAddress(key) {
+    var h = key ? "#commons/course/" + encodeURIComponent(key) : "#commons";
+    try { if (window.history && history.replaceState && location.hash !== h) history.replaceState(null, "", h); } catch (e) { /* the panel still opens */ }
+    if (COURSE.noted) COURSE.noted(key || "");
+  }
+  function wireHandover(M, opts) {
+    var H = HO();
+    COURSE.noted = (opts && opts.onCourse) || null;
+    if (!H) return;
+    H.panel.set(H.coursesOf(M.hunt), { host: document.getElementById("tab-commons") || document.body, onAddress: setCourseAddress });
+    H.panel.onChange(function () { drawStanding(M); });
+    drawStanding(M);
+  }
+  function openCourse(key, from) {
+    var H = HO();
+    if (!H) return false;
+    var cur = H.panel.current();
+    if (cur && H.courseKey(cur) === String(key)) return true;   /* already open on it: what a person typed stays */
+    return H.panel.open(key, from || null);
+  }
+  function closeCourse() { var H = HO(); if (H && H.panel.isOpen()) H.panel.close(); }
+  document.addEventListener("click", function (e) {
+    var l = e.target && e.target.closest ? e.target.closest(".cmf-needs a[data-course]") : null;
+    if (!l || e.defaultPrevented || e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    if (openCourse(l.getAttribute("data-course"), l)) e.preventDefault();
+  });
+
   /* #commons/needs-you (#3566): the front page scrolled to Needs you, its heading focused. */
   function focusNeeds() {
     var h = document.getElementById("cmf-needs-h");
@@ -703,7 +854,7 @@
     var t = String(h || "").replace(/^#/, "").split("/")[0];
     return t === "collect" ? "commons" : t;
   }
-  function atFront(h) { return /^#?(commons\/?|commons\/needs-you(\/.*)?)?$/.test(String(h || "")); }
+  function atFront(h) { return /^#?(commons\/?|commons\/needs-you(\/.*)?|commons\/course\/.*)?$/.test(String(h || "")); }
   function placeBack() {
     var old = document.getElementById(BACK.id), h = location.hash || "", t = tabOf(h);
     if (BACK.tab && (t !== BACK.tab || atFront(h))) BACK.tab = null;
@@ -799,6 +950,8 @@
     ".cmf-need-list li { display:grid; gap:2px; min-width:0; overflow-wrap:anywhere; }",
     ".cmf-need-t { font-weight:600; }",
     ".cmf-held { display:grid; gap:4px; }",
+    ".cmf-need p.cmf-standing { color:var(--cmn-muted); font-size:.86rem; } .cmf-need p.cmf-standing:empty { display:none; }",
+    ".cmf-term-box { margin-top:4px; }",
     ".cmf-saved-list { margin:4px 0 0; padding-left:18px; color:var(--cmn-ink-2); font-size:.88rem; overflow-wrap:anywhere; }",
     "#cmf-needs-h:focus { outline:none; }",
     ".cmf a { color:var(--cmn-link); text-underline-offset:3px; }",
@@ -845,6 +998,6 @@
   }
 
   window.CPL_COMMONS_FRONT = { boot: boot, model: model, render: render, migrate: migrate, readFold: readFold, KEYS: KEYS,
-    focusNeeds: focusNeeds, heldLive: heldLive, drawHeld: drawHeld, placeBack: placeBack, markBack: markBack, BACK: BACK, LIVE: LIVE,
+    focusNeeds: focusNeeds, openCourse: openCourse, closeCourse: closeCourse, heldLive: heldLive, drawHeld: drawHeld, placeBack: placeBack, markBack: markBack, BACK: BACK, LIVE: LIVE,
     FOLD_KEY: FOLD_KEY, ORDER_KEY: ORDER_KEY, DETAILS_ORDER_KEY: DETAILS_ORDER_KEY, DETAILS_FOLD_KEY: DETAILS_FOLD_KEY, FILES: FILES, ASKED: ASKED };
 })();

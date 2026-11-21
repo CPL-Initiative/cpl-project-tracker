@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generated_at": "2026-11-19T06:22:00Z",
+ "generated_at": "2026-11-20T21:51:04Z",
  "generated_by": "kb/_sweep_exhibit_titles.py",
  "rules": [
   {
@@ -58,8 +58,36 @@
   "language": 0,
   "course-code": 0,
   "level": 0,
-  "fold": 0
+  "fold": 1
  },
- "local_titles": 0,
- "cards": []
+ "local_titles": 1,
+ "cards": [
+  {
+   "current": "Practical PC and Career Technologies",
+   "proposed": "Practical PC & Career Technologies",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "“Practical PC and Career Technologies” and “Practical PC & Career Technologies” differ only in spelling; “Practical PC & Career Technologies” has 1 local title"
+   ],
+   "locals": [
+    {
+     "raw": "Portfolio Review CIS100-Practical PC & Career Technologies",
+     "colleges": [
+      "Los Angeles Southwest College"
+     ],
+     "course": "CIS 100",
+     "credit": "1 hour in Practical PC and Career Technologies"
+    }
+   ],
+   "id": "0b6d6a199c47",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 1,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 1,
+   "moves_all": true
+  }
+ ]
 }

@@ -7,7 +7,7 @@
 //       committed series, recomputed here, never a stored date;
 //   (2) ⭐ the 30 daily bars rebuilt from the live files: thirty days ending on the last headline day, each
 //       program bar the day's rise in complete, each skills bar that day's harvested_on credentials;
-//   (3) the page in its order, the eight cards with their fold keys, the Courses data card's id, the labels plain
+//   (3) the page in its order, the nine cards with their fold keys, the Courses data card's id, the labels plain
 //       nouns (none opens on What, When, How or Why, none is a question);
 //   (4) ⭐ the fold: cplCommons.fold.v1 holds the collapsed keys ([] all expanded); Collapse all / Expand all reads
 //       right; the earlier view's order and fold move once to their own keys and cplCommons.order.v1 is removed;
@@ -72,7 +72,7 @@ const fmt = (n) => Number(n).toLocaleString("en-US");
     order.join(",") === "cmn-top,cmf-eta,cmf-needs,cmf-groups,cmf-line,cmf-line,cmf-line");
   check("no Pierce and no transcribed units on the page", !/Pierce|transcribed/i.test(txt(d.querySelector(".cmf"))));
   const keys = Array.from(d.querySelectorAll(".cmf-card")).map((c) => c.getAttribute("data-key"));
-  check("⭐ eight cards with their fold keys, in Collect / Curate / Connect order", keys.join(",") === "colleges,programs,courses-data,courses,exhibit,credentials,cr,interconnect");
+  check("⭐ nine cards with their fold keys, in Collect / Curate / Connect order (Subjects first in Curate, S694)", keys.join(",") === "colleges,programs,courses-data,subjects,courses,exhibit,credentials,cr,interconnect");
   check("the groups are Collect, Curate and Connect", Array.from(d.querySelectorAll(".cmf-group-h")).map(txt).join(",") === "Collect,Curate,Connect");
   check("the Courses data card carries id courses-data", d.getElementById("courses-data") && d.getElementById("courses-data").getAttribute("data-key") === "courses-data");
   const labels = Array.from(d.querySelectorAll(".cmf h2, .cmf h3, .cmf h4, .cmf summary, .cmf button, .cmf-links a")).map(txt);
@@ -122,7 +122,7 @@ const fmt = (n) => Number(n).toLocaleString("en-US");
   check("⭐ one card folded: the key holds it, the card shows only its title and number", x.store["cplCommons.fold.v1"] === '["cr"]'
     && d.querySelector('.cmf-card[data-key="cr"]').classList.contains("cmf-folded") && txt(d.querySelector('.cmf-card[data-key="cr"] .cmf-fold')) === "Expand");
   all.click();
-  check("Collapse all folds every card and the word reads Expand all", JSON.parse(x.store["cplCommons.fold.v1"]).length === 8 && txt(all) === "Expand all");
+  check("Collapse all folds every card and the word reads Expand all", JSON.parse(x.store["cplCommons.fold.v1"]).length === 9 && txt(all) === "Expand all");
   all.click();
   check("Expand all opens every card and stores []", x.store["cplCommons.fold.v1"] === "[]" && txt(all) === "Collapse all");
 

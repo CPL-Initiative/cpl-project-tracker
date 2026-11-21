@@ -1,8 +1,8 @@
 # Harvest heading agreement
 
-A dated snapshot of main at commit d449bb5dbf5c (2026-11-20; the newest capture it reads started 2026-11-20), written by `kb/_program_requirements_heading_agreement.py` from the files that commit holds. A dispatch of `harvest-gap-census.yml` rewrites it beside the gap census; nothing gates a PR on it, so it can trail the records. Each record's own heading against the program it is filed under (COCI title and award).
+A dated snapshot of main at commit 1f7135da469b (2026-11-20; the newest capture it reads started 2026-11-20), written by `kb/_program_requirements_heading_agreement.py` from the files that commit holds. A dispatch of `harvest-gap-census.yml` rewrites it beside the gap census; nothing gates a PR on it, so it can trail the records. Each record's own heading against the program it is filed under (COCI title and award).
 
-All colleges: 18893 records, 15226 agree, 286 disagree (168 of them pass on the committed files), 3381 cannot tell (337 say the heading is not in their text; 75 name an award and none of the program's title words, 70 of them passing, set aside).
+All colleges: 18867 records, 15257 agree, 280 disagree (168 of them pass on the committed files), 3330 cannot tell (306 say the heading is not in their text; 76 name an award and none of the program's title words, 70 of them passing, set aside).
 
 The heading check (a heading that names another award type and some of the program's title) would fail 136 records that pass on the committed files (passes_live), 31 of them a transfer degree and a local degree crossed. It is in no pass rule.
 
@@ -21,24 +21,23 @@ A suspect record has a heading that disagrees with its program, or was read from
 | Shasta College | main | 115 | 71 | 5 | 4 | 39 | 0 (0) | 5 (4) | none seen | no number line |
 | East Los Angeles College | main | 134 | 34 | 4 | 2 | 96 | 0 (0) | 4 (2) | Academic Plan 103 | under_heading |
 | Sacramento City College | main | 204 | 178 | 4 | 3 | 22 | 0 (0) | 4 (3) | none seen | no number line |
-| San Diego College of Continuing Education | main | 109 | 71 | 4 | 0 | 34 | 0 (0) | 4 (0) | none seen | no number line |
 | Lassen College | main | 64 | 57 | 3 | 1 | 4 | 0 (0) | 3 (1) | none seen | no number line |
 | Los Angeles Pierce College | main | 187 | 111 | 1 | 0 | 75 | 2 (2) | 3 (2) | State Code 129 | unclear |
 | Los Angeles Southwest College | main | 94 | 77 | 3 | 0 | 14 | 0 (0) | 3 (0) | none seen | no number line |
-| Santa Monica College | main | 239 | 196 | 3 | 0 | 40 | 0 (0) | 3 (0) | none seen | no number line |
-| City College of San Francisco | main | 309 | 259 | 2 | 2 | 48 | 0 (0) | 2 (2) | none seen | no number line |
+| Santa Monica College | main | 230 | 200 | 3 | 0 | 27 | 0 (0) | 3 (0) | none seen | no number line |
+| City College of San Francisco | main | 316 | 266 | 2 | 2 | 48 | 0 (0) | 2 (2) | none seen | no number line |
 | Clovis Community College | main | 109 | 88 | 2 | 1 | 19 | 0 (0) | 2 (1) | none seen | no number line |
 | Los Angeles Trade Technical College | main | 168 | 134 | 2 | 1 | 32 | 0 (0) | 2 (1) | none seen | no number line |
 | Ohlone College | main | 143 | 121 | 2 | 2 | 20 | 0 (0) | 2 (2) | none seen | no number line |
 | Porterville College | main | 79 | 45 | 2 | 1 | 32 | 0 (0) | 2 (1) | none seen | no number line |
 | American River College | main | 358 | 347 | 1 | 0 | 10 | 0 (0) | 1 (0) | none seen | no number line |
 | Calbright College Credit | main | 12 | 0 | 1 | 0 | 11 | 0 (0) | 1 (0) | none seen | no openings kept |
-| Cerro Coso Community College | main | 65 | 48 | 1 | 0 | 16 | 0 (0) | 1 (0) | none seen | no number line |
 | Cosumnes River College | main | 217 | 176 | 1 | 0 | 40 | 0 (0) | 1 (0) | none seen | no number line |
 | Los Angeles Valley College | main | 223 | 114 | 1 | 0 | 108 | 0 (0) | 1 (0) | State Code 130 | under_heading |
 | Solano Community College | main | 151 | 133 | 1 | 1 | 17 | 0 (0) | 1 (1) | none seen | no number line |
 | Barstow Community College | main | 68 | 63 | 0 | 0 | 5 | 0 (0) | 0 (0) | none seen | no number line |
 | Cañada College | main | 70 | 65 | 0 | 0 | 5 | 0 (0) | 0 (0) | none seen | no number line |
+| Cerro Coso Community College | main | 56 | 55 | 0 | 0 | 1 | 0 (0) | 0 (0) | none seen | no number line |
 | College of the Canyons | main | 160 | 113 | 0 | 0 | 47 | 0 (0) | 0 (0) | none seen | no openings kept |
 | Compton College | main | 83 | 63 | 0 | 0 | 20 | 0 (0) | 0 (0) | none seen | no number line |
 | Copper Mountain College | main | 48 | 44 | 0 | 0 | 4 | 0 (0) | 0 (0) | none seen | no number line |
@@ -46,6 +45,7 @@ A suspect record has a heading that disagrees with its program, or was read from
 | Los Angeles City College | main | 244 | 222 | 0 | 0 | 22 | 0 (0) | 0 (0) | Academic Plan 153, State Code 161 | at_heading |
 | Los Angeles Mission College | main | 127 | 24 | 0 | 0 | 103 | 0 (0) | 0 (0) | none seen | no number line |
 | Mendocino College | main | 107 | 99 | 0 | 0 | 8 | 0 (0) | 0 (0) | none seen | no number line |
+| San Diego College of Continuing Education | main | 100 | 76 | 0 | 0 | 24 | 0 (0) | 0 (0) | none seen | no number line |
 | Santiago Canyon College | main | 222 | 186 | 0 | 0 | 36 | 0 (0) | 0 (0) | none seen | no number line |
 | Woodland Community College | main | 65 | 63 | 0 | 0 | 2 | 0 (0) | 0 (0) | none seen | no number line |
 | Yuba College | main | 94 | 83 | 0 | 0 | 11 | 0 (0) | 0 (0) | none seen | no number line |

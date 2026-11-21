@@ -1,0 +1,80 @@
+name: Commons hand-over pickup
+
+# The reader's pickup for hand-overs (Sam, 2026-11-20, on the locked Commons order mock: "yes, build it!";
+# cpl_memory r-hand-over-in-place-sam-2026-11-20: "item or link and a try the link button").
+#
+# A signed-in reviewer hands over a file, a link, pasted data or an API procedure in a side panel on the CPL Commons
+# or College Data Collection (commons_handover.js); each is one row in commons_handover, waiting. This job reads the
+# waiting rows, visits each link once with the polite Reader, opens each file from the private bucket, and answers
+# on the row through commons_handover_mark() (kb/_handover_pickup.py). The page reads the answer back.
+#
+# It commits nothing and pushes nothing. A course outline can name faculty, so the file, its name and its text never
+# reach the repository or this log: the answer is a status, a short note, and counts.
+#
+# Triggers: nightly at 05:41 UTC; and on demand from the page's Try the link, through the handover-try-link Edge
+# Function, which checks the reviewer and dispatches this with a server-side token and the row's id (the browser
+# never holds a GitHub token). The named row is looked at first, then every other waiting one, so a dispatch that
+# GitHub drops behind a pending run loses nothing.
+#
+# The reader: CPLInitiativeCatalogCensus, robots.txt first, a delay before every load, and it stops at a bot check
+# (Sam, 2026-11-18, #3536). At most 25 rows a run.
+
+on:
+  schedule:
+    - cron: "41 5 * * *"
+  workflow_dispatch:
+    inputs:
+      id:
+        description: "A hand-over's id to look at first (empty: every waiting one, oldest first)"
+        required: false
+        default: ""
+
+concurrency:
+  group: commons-handover-pickup
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  pickup:
+    # live-counts holds SUPABASE_SERVICE_KEY and deploys from main only.
+    environment: live-counts
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v7
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: See what waits
+        id: waits
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          ROW_ID: ${{ inputs.id }}
+        run: |
+          set -euo pipefail
+          if [ -z "${SUPABASE_SERVICE_KEY:-}" ]; then echo "::error::SUPABASE_SERVICE_KEY is not set"; exit 1; fi
+          if [ -n "${ROW_ID:-}" ]; then python3 kb/_handover_pickup.py --dry --id "$ROW_ID" | tee waits.txt; else python3 kb/_handover_pickup.py --dry | tee waits.txt; fi
+          if grep -Eq '; [1-9][0-9]* for the reader to look at' waits.txt; then echo "go=1" >> "$GITHUB_OUTPUT"; else echo "go=0" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Install Playwright + Chromium and pypdf
+        if: steps.waits.outputs.go == '1'
+        run: |
+          pip install --quiet playwright pypdf
+          bash scripts/install_browser.sh
+
+      - name: Look at each hand-over and answer on its row
+        if: steps.waits.outputs.go == '1'
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          ROW_ID: ${{ inputs.id }}
+        run: |
+          set -euo pipefail
+          if [ -n "${ROW_ID:-}" ]; then python3 kb/_handover_pickup.py --id "$ROW_ID" | tee -a "$GITHUB_STEP_SUMMARY"; else python3 kb/_handover_pickup.py | tee -a "$GITHUB_STEP_SUMMARY"; fi

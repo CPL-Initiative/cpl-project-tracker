@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8168,
-    "output_tokens": 2812,
+    "output_tokens": 2664,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,39 +30,41 @@
     "model": null
    }
   ],
-  "output_tokens": 2812,
+  "output_tokens": 2664,
   "output_tokens_details": {
-   "thinking_tokens": 908
+   "thinking_tokens": 825
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.08891,
- "ms": 22082,
- "seconds": 22.7,
+ "cost_usd": 0.08595,
+ "ms": 20360,
+ "seconds": 20.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 24,
+   "placed": 25,
    "listed": 25,
-   "share": 0.96,
-   "missing": [
-    "SOCI120"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "SOCIC1000",
+     "listed": "SOCI120",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "SOCIC1000"
-   ],
-   "flagged": [
-    "SOCIC1000"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -146,7 +148,7 @@
   },
   "blocks": [
    {
-    "name": "Required Core Courses",
+    "name": "Required Core Courses (9 units)",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -353,19 +355,19 @@
   "missing_explained": [
    {
     "code": "SOCI 120",
-    "why": "not in the text; catalog lists SOCI-C1000 Introduction to Sociology instead (likely renumbered)"
+    "why": "not in the text; catalog lists SOCI-C1000 Introduction to Sociology instead (likely common course renumbering)"
    }
   ],
   "notes": [
-   "Catalog text begins mid-description; the program's own page title is not in the excerpt, so section_heading uses the printed 'DEGREE REQUIREMENTS' heading.",
-   "List A requires three courses 'from at least two of the following areas' (Area 1 History or Government; Area 2 Arts & Humanities; Area 3 Social Science; Area 4 Quantitative Reasoning and Research Methods); the area-distribution constraint is not captured by the block rule.",
-   "Courses in List A have no units printed beside them; the block total of 9 is printed.",
-   "ETHS-114 appears both as the alternative to SOCI-130 in the core and in List A Area 2.",
-   "HUMA/THEA-174 is printed as a cross-listed course; recorded as HUMA-174 with THEA-174 as alternative.",
-   "SOCI-C1000 is printed in Area 3 but is not in the closed list (closed list has SOCI 120 Introduction to Sociology); recorded as a catalog addition.",
-   "Units printed beside the 'or' alternatives ETHS-114 and ETHS-101 in the core are absent; recorded as null.",
-   "The 60-unit statements are generic ADT requirements, not printed as this award's total, so degree_total is null. Cal-GETC is named but no GE unit figure is printed."
+   "The catalog text begins mid-description; no program title heading is printed, so section_heading uses the requirements heading 'DEGREE REQUIREMENTS'.",
+   "List A requires three courses from at least two of four areas (Area 1: History or Government; Area 2: Arts & Humanities; Area 3: Social Science; Area 4: Quantitative Reasoning and Research Methods); recorded as one choose_courses block, the at-least-two-areas constraint is not captured structurally.",
+   "List A courses and core 'or' alternatives are printed without units beside them; units left null.",
+   "ETHS-114 appears both as an alternative to SOCI-130 in the core and in List A Area 2.",
+   "HUMA/THEA-174 recorded as HUMA-174 with THEA-174 as alternative.",
+   "SOCI-C1000 (Introduction to Sociology) is not on the closed list, which has SOCI 120 with the same title; flagged as catalog addition.",
+   "The 60-unit statement is the general ADT requirement, not recorded as degree_total; no Cal-GETC unit count printed."
   ]
  },
- "extracted_run": "38748853261"
+ "extracted_run": "44739981651",
+ "catalog_year": "2026-2027"
 }

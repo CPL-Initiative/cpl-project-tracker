@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 7031,
-    "output_tokens": 2234,
+    "output_tokens": 2225,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2234,
+  "output_tokens": 2225,
   "output_tokens_details": {
-   "thinking_tokens": 766
+   "thinking_tokens": 727
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0728,
- "ms": 17433,
- "seconds": 17.6,
+ "cost_usd": 0.07262,
+ "ms": 17412,
+ "seconds": 17.9,
  "parts": null,
  "error": null,
  "score": {
@@ -165,35 +165,35 @@
     },
     "courses": [
      {
-      "code": "GEOG125",
+      "code": "GEOG 125",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "GEOG126",
+      "code": "GEOG 126",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "GEOG129",
+      "code": "GEOG 129",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "GEOG160",
+      "code": "GEOG 160",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "GEOG162",
+      "code": "GEOG 162",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -212,28 +212,28 @@
     },
     "courses": [
      {
-      "code": "COMSC101",
+      "code": "COMSC 101",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "COMSC110",
+      "code": "COMSC 110",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "COMSC120",
+      "code": "COMSC 120",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "COMSC255",
+      "code": "COMSC 255",
       "units": 4,
       "units_max": null,
       "alternatives": [],
@@ -252,49 +252,49 @@
     },
     "courses": [
      {
-      "code": "BIOL126",
+      "code": "BIOL 126",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "BIOL170",
+      "code": "BIOL 170",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "ENGTC126",
+      "code": "ENGTC 126",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "GEOG120",
+      "code": "GEOG 120",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "GEOG124",
+      "code": "GEOG 124",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "GEOL120",
+      "code": "GEOL 120",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "WRKX170",
+      "code": "WRKX 170",
       "units": 1,
       "units_max": 4,
       "alternatives": [],
@@ -307,20 +307,21 @@
   "missing_explained": [
    {
     "code": "BIOSC 126",
-    "why": "not in the text under this code; catalog prints BIOL126 Ecology and Field Biology (same title, likely renamed subject prefix), recorded as a catalog addition"
+    "why": "catalog prints BIOL 126 (Ecology and Field Biology) instead; recorded as catalog addition, likely subject renamed"
    },
    {
     "code": "BIOSC 170",
-    "why": "not in the text under this code; catalog prints BIOL170 Environmental Science (same title, likely renamed subject prefix), recorded as a catalog addition"
+    "why": "catalog prints BIOL 170 (Environmental Science) instead; recorded as catalog addition, likely subject renamed"
    }
   ],
   "notes": [
-   "Catalog prints codes without a space (e.g., GEOG125); these were matched to closed-list codes with a space (GEOG 125).",
-   "BIOL126 and BIOL170 carry the same titles as closed-list BIOSC 126 and BIOSC 170; likely a subject prefix change. Marked catalog_addition true because the codes differ literally; reviewer should confirm.",
-   "WRKX170 Work Experience Education (1-4 units) is not in the closed list.",
-   "The description also names occupations that use GIS (planners, architects, foresters, geologists); only the job titles the program prepares students for were recorded as careers."
+   "Catalog prints codes without spaces (e.g. GEOG125); recorded with a space between subject and number.",
+   "BIOL 126 and BIOL 170 have the same titles as closed-list BIOSC 126 and BIOSC 170; reviewer should confirm the subject prefix change.",
+   "WRKX 170 Work Experience Education (1-4 units) is not in the closed list; recorded as catalog addition.",
+   "Block totals 15 + 6 + 6 = 27 match the printed certificate total of 27.",
+   "Description also mentions businesses, planners, architects, foresters, geologists as users of GIS; these were not recorded as careers since they describe who uses GIS rather than positions the program prepares for — reviewer may check."
   ]
  },
- "extracted_run": 43691943622,
- "read_run": 43609976980
+ "extracted_run": "44745889555",
+ "catalog_year": "2026-2027"
 }

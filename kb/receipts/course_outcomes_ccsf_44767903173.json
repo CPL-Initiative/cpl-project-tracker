@@ -1,0 +1,8524 @@
+{
+ "what": "course_outcomes_load: course SLOs as printed, by college and course (Sheet 70 card 3)",
+ "host": "ccsf",
+ "load_run": "44767903173",
+ "reads": [
+  "kb/course_outcomes/ccsf/read_44748015052_p1of2.json",
+  "kb/course_outcomes/ccsf/read_44748015052_p2of2.json"
+ ],
+ "kind": "all",
+ "held_back": 0,
+ "posted": 1416,
+ "inserted": 1416,
+ "kept": 0,
+ "skipped": 1,
+ "skipped_rows": [
+  {
+   "course_code": "ENGL 1B",
+   "status": 200,
+   "shape": "none"
+  }
+ ],
+ "error": null,
+ "inserted_keys": [
+  {
+   "id": 41769,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ACCT 1"
+  },
+  {
+   "id": 41770,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ADMJ 101"
+  },
+  {
+   "id": 41771,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ADMJ 51"
+  },
+  {
+   "id": 41772,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ADMJ 53"
+  },
+  {
+   "id": 41773,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ADMJ 55"
+  },
+  {
+   "id": 41774,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ADMJ 59"
+  },
+  {
+   "id": 41775,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ADMJ 63"
+  },
+  {
+   "id": 41776,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ADMJ 65"
+  },
+  {
+   "id": 41777,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ADMJ 67"
+  },
+  {
+   "id": 41778,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ADMJ 69"
+  },
+  {
+   "id": 41779,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ADMJ 71"
+  },
+  {
+   "id": 41780,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ADMJ 80"
+  },
+  {
+   "id": 41781,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ADMJ 83"
+  },
+  {
+   "id": 41782,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "AFAM 30"
+  },
+  {
+   "id": 41783,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "AFAM 42"
+  },
+  {
+   "id": 41784,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "AFAM 60"
+  },
+  {
+   "id": 41785,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "AMSL 1B"
+  },
+  {
+   "id": 41786,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ANTH 11"
+  },
+  {
+   "id": 41787,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ANTH 15"
+  },
+  {
+   "id": 41788,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ANTH 2"
+  },
+  {
+   "id": 41789,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ANTH 25"
+  },
+  {
+   "id": 41790,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ANTH 3C"
+  },
+  {
+   "id": 41791,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ANTH 50"
+  },
+  {
+   "id": 41792,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ARCH 100"
+  },
+  {
+   "id": 41793,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ARCH 102"
+  },
+  {
+   "id": 41794,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ARCH 120"
+  },
+  {
+   "id": 41795,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ARCH 160"
+  },
+  {
+   "id": 41796,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ARCH 214"
+  },
+  {
+   "id": 41797,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ARCH 22A"
+  },
+  {
+   "id": 41798,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ARCH 29A"
+  },
+  {
+   "id": 41799,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ARCH 31A"
+  },
+  {
+   "id": 41800,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ART 104"
+  },
+  {
+   "id": 41801,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ART 106"
+  },
+  {
+   "id": 41802,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ART 108"
+  },
+  {
+   "id": 41803,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ART 113"
+  },
+  {
+   "id": 41804,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ART 118"
+  },
+  {
+   "id": 41805,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ART 123V"
+  },
+  {
+   "id": 41806,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ART 125A"
+  },
+  {
+   "id": 41807,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ART 126"
+  },
+  {
+   "id": 41808,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ART 130B"
+  },
+  {
+   "id": 41809,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ART 132B"
+  },
+  {
+   "id": 41810,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ART 139"
+  },
+  {
+   "id": 41811,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ART 140B"
+  },
+  {
+   "id": 41812,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ART 146A"
+  },
+  {
+   "id": 41813,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ART 150A"
+  },
+  {
+   "id": 41814,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ART 160A"
+  },
+  {
+   "id": 41815,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ART 170A"
+  },
+  {
+   "id": 41816,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ART 180A"
+  },
+  {
+   "id": 41817,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ARTH C1200"
+  },
+  {
+   "id": 41818,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ASAM 10"
+  },
+  {
+   "id": 41819,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ASAM 22"
+  },
+  {
+   "id": 41820,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ASAM 27"
+  },
+  {
+   "id": 41821,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ASAM 35"
+  },
+  {
+   "id": 41822,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ASAM 42"
+  },
+  {
+   "id": 41823,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ASAM 61"
+  },
+  {
+   "id": 41824,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ASAM 8"
+  },
+  {
+   "id": 41825,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ASIA 15"
+  },
+  {
+   "id": 41826,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ASTR 1"
+  },
+  {
+   "id": 41827,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ASTR 17"
+  },
+  {
+   "id": 41828,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ASTR 19"
+  },
+  {
+   "id": 41829,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "AUTO 180"
+  },
+  {
+   "id": 41830,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "AUTO 201"
+  },
+  {
+   "id": 41831,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "AUTO 203"
+  },
+  {
+   "id": 41832,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "AUTO 205"
+  },
+  {
+   "id": 41833,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "AUTO 207"
+  },
+  {
+   "id": 41834,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "AUTO 50"
+  },
+  {
+   "id": 41835,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "AUTO 52"
+  },
+  {
+   "id": 41836,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "AUTO 54"
+  },
+  {
+   "id": 41837,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "AUTO 56"
+  },
+  {
+   "id": 41838,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "AUTO 59"
+  },
+  {
+   "id": 41839,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "AUTO 65"
+  },
+  {
+   "id": 41840,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BCST 100"
+  },
+  {
+   "id": 41841,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BCST 103"
+  },
+  {
+   "id": 41842,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BCST 115"
+  },
+  {
+   "id": 41843,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BCST 120"
+  },
+  {
+   "id": 41844,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BCST 124B"
+  },
+  {
+   "id": 41845,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BCST 125B"
+  },
+  {
+   "id": 41846,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BCST 127B"
+  },
+  {
+   "id": 41847,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BCST 135"
+  },
+  {
+   "id": 41848,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BCST 140"
+  },
+  {
+   "id": 41849,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BCST 144A"
+  },
+  {
+   "id": 41850,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BCST 146A"
+  },
+  {
+   "id": 41851,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BCST 148"
+  },
+  {
+   "id": 41852,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BCST 159"
+  },
+  {
+   "id": 41853,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BCST 165"
+  },
+  {
+   "id": 41854,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BIO 10"
+  },
+  {
+   "id": 41855,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BIO 100B"
+  },
+  {
+   "id": 41856,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BIO 108"
+  },
+  {
+   "id": 41857,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BIO 111"
+  },
+  {
+   "id": 41858,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BIO 114"
+  },
+  {
+   "id": 41859,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BIO 119"
+  },
+  {
+   "id": 41860,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BIO 120"
+  },
+  {
+   "id": 41861,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BIO 130"
+  },
+  {
+   "id": 41862,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BIO 134"
+  },
+  {
+   "id": 41863,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BIO 15"
+  },
+  {
+   "id": 41864,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BIO 20"
+  },
+  {
+   "id": 41865,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BIO 21B"
+  },
+  {
+   "id": 41866,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BIO 21D"
+  },
+  {
+   "id": 41867,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BIO 21F"
+  },
+  {
+   "id": 41868,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BIO 21M"
+  },
+  {
+   "id": 41869,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BIO 32"
+  },
+  {
+   "id": 41870,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BIO 40"
+  },
+  {
+   "id": 41871,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BIO 61"
+  },
+  {
+   "id": 41872,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BSL 1"
+  },
+  {
+   "id": 41873,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BTEC 115"
+  },
+  {
+   "id": 41874,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BTEC 12A"
+  },
+  {
+   "id": 41875,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BTEC 14B"
+  },
+  {
+   "id": 41876,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BTEC 20"
+  },
+  {
+   "id": 41877,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BTEC 21D"
+  },
+  {
+   "id": 41878,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BTEC 22"
+  },
+  {
+   "id": 41879,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BTEC 24"
+  },
+  {
+   "id": 41880,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BTEC 4"
+  },
+  {
+   "id": 41881,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BTEC 93"
+  },
+  {
+   "id": 41882,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CAD 181"
+  },
+  {
+   "id": 41883,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CAD 184"
+  },
+  {
+   "id": 41884,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CAD 190"
+  },
+  {
+   "id": 41885,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CAD 99B"
+  },
+  {
+   "id": 41886,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CAHS 10A"
+  },
+  {
+   "id": 41887,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CAHS 205"
+  },
+  {
+   "id": 41888,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CAHS 209"
+  },
+  {
+   "id": 41889,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CAHS 20B"
+  },
+  {
+   "id": 41890,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CAHS 222"
+  },
+  {
+   "id": 41891,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CAHS 30B"
+  },
+  {
+   "id": 41892,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CAHS 33"
+  },
+  {
+   "id": 41893,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CAHS 40W"
+  },
+  {
+   "id": 41894,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CAHS 43"
+  },
+  {
+   "id": 41895,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CAHS 53A"
+  },
+  {
+   "id": 41896,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CAHS 60G"
+  },
+  {
+   "id": 41897,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CAHS 60J"
+  },
+  {
+   "id": 41898,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CAHS 60M"
+  },
+  {
+   "id": 41899,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CAHS 60P"
+  },
+  {
+   "id": 41900,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 100"
+  },
+  {
+   "id": 41901,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 105"
+  },
+  {
+   "id": 41902,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 108"
+  },
+  {
+   "id": 41903,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 120"
+  },
+  {
+   "id": 41904,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 122"
+  },
+  {
+   "id": 41905,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 124"
+  },
+  {
+   "id": 41906,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 150"
+  },
+  {
+   "id": 41907,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 41C"
+  },
+  {
+   "id": 41908,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 41F"
+  },
+  {
+   "id": 41909,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 41H"
+  },
+  {
+   "id": 41910,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 41J"
+  },
+  {
+   "id": 41911,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 41M"
+  },
+  {
+   "id": 41912,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 41O"
+  },
+  {
+   "id": 41913,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 41S"
+  },
+  {
+   "id": 41914,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 41U"
+  },
+  {
+   "id": 41915,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 53"
+  },
+  {
+   "id": 41916,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 62"
+  },
+  {
+   "id": 41917,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 65"
+  },
+  {
+   "id": 41918,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 67"
+  },
+  {
+   "id": 41919,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 72A"
+  },
+  {
+   "id": 41920,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 73"
+  },
+  {
+   "id": 41921,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 76"
+  },
+  {
+   "id": 41922,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 78B"
+  },
+  {
+   "id": 41923,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 87"
+  },
+  {
+   "id": 41924,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 90"
+  },
+  {
+   "id": 41925,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 92"
+  },
+  {
+   "id": 41926,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 95"
+  },
+  {
+   "id": 41927,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 97"
+  },
+  {
+   "id": 41928,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 99"
+  },
+  {
+   "id": 41929,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CHEM 101B"
+  },
+  {
+   "id": 41930,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CHEM 212A"
+  },
+  {
+   "id": 41931,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CHEM 32"
+  },
+  {
+   "id": 41932,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CHIN 1"
+  },
+  {
+   "id": 41933,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CHIN 10B"
+  },
+  {
+   "id": 41934,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CHIN 10D"
+  },
+  {
+   "id": 41935,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CHIN 12C"
+  },
+  {
+   "id": 41936,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CHIN 14B"
+  },
+  {
+   "id": 41937,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CHIN 1A"
+  },
+  {
+   "id": 41938,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CHIN 2"
+  },
+  {
+   "id": 41939,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CHIN 2B"
+  },
+  {
+   "id": 41940,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CHIN 30A"
+  },
+  {
+   "id": 41941,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CHIN 31A"
+  },
+  {
+   "id": 41942,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CHIN 32"
+  },
+  {
+   "id": 41943,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CHIN 38"
+  },
+  {
+   "id": 41944,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CHIN 3B"
+  },
+  {
+   "id": 41945,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CHIN 4A"
+  },
+  {
+   "id": 41946,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CINE 126"
+  },
+  {
+   "id": 41947,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CINE 136"
+  },
+  {
+   "id": 41948,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CINE 18"
+  },
+  {
+   "id": 41949,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CINE 20A"
+  },
+  {
+   "id": 41950,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CINE 20C"
+  },
+  {
+   "id": 41951,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CINE 22"
+  },
+  {
+   "id": 41952,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CINE 23B"
+  },
+  {
+   "id": 41953,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CINE 24"
+  },
+  {
+   "id": 41954,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CINE 30"
+  },
+  {
+   "id": 41955,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CINE 56"
+  },
+  {
+   "id": 41956,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CINE 60"
+  },
+  {
+   "id": 41957,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CINE 72"
+  },
+  {
+   "id": 41958,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CINE 75A"
+  },
+  {
+   "id": 41959,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CINE 75C"
+  },
+  {
+   "id": 41960,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CM 10"
+  },
+  {
+   "id": 41961,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CM 110"
+  },
+  {
+   "id": 41962,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CM 240"
+  },
+  {
+   "id": 41963,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CM 248"
+  },
+  {
+   "id": 41964,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 100"
+  },
+  {
+   "id": 41965,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 102"
+  },
+  {
+   "id": 41966,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 103L"
+  },
+  {
+   "id": 41967,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 105"
+  },
+  {
+   "id": 41968,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 106"
+  },
+  {
+   "id": 41969,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 107"
+  },
+  {
+   "id": 41970,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 113"
+  },
+  {
+   "id": 41971,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 121"
+  },
+  {
+   "id": 41972,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 123"
+  },
+  {
+   "id": 41973,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 125"
+  },
+  {
+   "id": 41974,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 129S"
+  },
+  {
+   "id": 41975,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 131A"
+  },
+  {
+   "id": 41976,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 132"
+  },
+  {
+   "id": 41977,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 133"
+  },
+  {
+   "id": 41978,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 133I"
+  },
+  {
+   "id": 41979,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 134"
+  },
+  {
+   "id": 41980,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 170"
+  },
+  {
+   "id": 41981,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 195"
+  },
+  {
+   "id": 41982,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 198"
+  },
+  {
+   "id": 41983,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 202C"
+  },
+  {
+   "id": 41984,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 204C"
+  },
+  {
+   "id": 41985,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 216"
+  },
+  {
+   "id": 41986,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 401"
+  },
+  {
+   "id": 41987,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 416"
+  },
+  {
+   "id": 41988,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 418"
+  },
+  {
+   "id": 41989,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNST 100"
+  },
+  {
+   "id": 41990,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNST 107"
+  },
+  {
+   "id": 41991,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNST 109"
+  },
+  {
+   "id": 41992,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNST 112"
+  },
+  {
+   "id": 41993,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNST 114"
+  },
+  {
+   "id": 41994,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNST 118A"
+  },
+  {
+   "id": 41995,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNST 77"
+  },
+  {
+   "id": 41996,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "COMM 2"
+  },
+  {
+   "id": 41997,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "COMM 3"
+  },
+  {
+   "id": 41998,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "COMM 4"
+  },
+  {
+   "id": 41999,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "COMM 7"
+  },
+  {
+   "id": 42000,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "COMM C1000"
+  },
+  {
+   "id": 42001,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CS 110B"
+  },
+  {
+   "id": 42002,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CS 111B"
+  },
+  {
+   "id": 42003,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CS 131B"
+  },
+  {
+   "id": 42004,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CS 160A"
+  },
+  {
+   "id": 42005,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CS 195"
+  },
+  {
+   "id": 42006,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CS 211D"
+  },
+  {
+   "id": 42007,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CS 231"
+  },
+  {
+   "id": 42008,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CS 270"
+  },
+  {
+   "id": 42009,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CSST 9651"
+  },
+  {
+   "id": 42010,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CVT 110"
+  },
+  {
+   "id": 42011,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CVT 210A"
+  },
+  {
+   "id": 42012,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CVT 301"
+  },
+  {
+   "id": 42013,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CVT 310B"
+  },
+  {
+   "id": 42014,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CVT 410B"
+  },
+  {
+   "id": 42015,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 100B"
+  },
+  {
+   "id": 42016,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 102A"
+  },
+  {
+   "id": 42017,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 119A"
+  },
+  {
+   "id": 42018,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 119C"
+  },
+  {
+   "id": 42019,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 121B"
+  },
+  {
+   "id": 42020,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 123A"
+  },
+  {
+   "id": 42021,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 124A"
+  },
+  {
+   "id": 42022,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 124C"
+  },
+  {
+   "id": 42023,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 126B"
+  },
+  {
+   "id": 42024,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 127B"
+  },
+  {
+   "id": 42025,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 129B"
+  },
+  {
+   "id": 42026,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 129D"
+  },
+  {
+   "id": 42027,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 133A"
+  },
+  {
+   "id": 42028,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 133C"
+  },
+  {
+   "id": 42029,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 134A"
+  },
+  {
+   "id": 42030,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 134C"
+  },
+  {
+   "id": 42031,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 138A"
+  },
+  {
+   "id": 42032,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 138C"
+  },
+  {
+   "id": 42033,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 145A"
+  },
+  {
+   "id": 42034,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 146A"
+  },
+  {
+   "id": 42035,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 155A"
+  },
+  {
+   "id": 42036,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 155C"
+  },
+  {
+   "id": 42037,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 160B"
+  },
+  {
+   "id": 42038,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 161"
+  },
+  {
+   "id": 42039,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 172B"
+  },
+  {
+   "id": 42040,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 30"
+  },
+  {
+   "id": 42041,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 34B"
+  },
+  {
+   "id": 42042,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DENT 110A"
+  },
+  {
+   "id": 42043,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DENT 52"
+  },
+  {
+   "id": 42044,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DENT 54"
+  },
+  {
+   "id": 42045,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DENT 55B"
+  },
+  {
+   "id": 42046,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DENT 62"
+  },
+  {
+   "id": 42047,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DENT 70A"
+  },
+  {
+   "id": 42048,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DMI 100"
+  },
+  {
+   "id": 42049,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DMI 50A"
+  },
+  {
+   "id": 42050,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DMI 51A"
+  },
+  {
+   "id": 42051,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DMI 52"
+  },
+  {
+   "id": 42052,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DMI 56"
+  },
+  {
+   "id": 42053,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DMI 62"
+  },
+  {
+   "id": 42054,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DMI 64"
+  },
+  {
+   "id": 42055,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DMI 66"
+  },
+  {
+   "id": 42056,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DMI 69"
+  },
+  {
+   "id": 42057,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DMI 72"
+  },
+  {
+   "id": 42058,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ECGT 102"
+  },
+  {
+   "id": 42059,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ECGT 103B"
+  },
+  {
+   "id": 42060,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ECHO 201"
+  },
+  {
+   "id": 42061,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ECHO 401"
+  },
+  {
+   "id": 42062,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ECON 20"
+  },
+  {
+   "id": 42063,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ECON 25"
+  },
+  {
+   "id": 42064,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ECON 5"
+  },
+  {
+   "id": 42065,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ECON C2001"
+  },
+  {
+   "id": 42066,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ELEC 101"
+  },
+  {
+   "id": 42067,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ELEC 102B"
+  },
+  {
+   "id": 42068,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ELEC 103B"
+  },
+  {
+   "id": 42069,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ELEC 104B"
+  },
+  {
+   "id": 42070,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "EMT 12"
+  },
+  {
+   "id": 42071,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "EMT 99"
+  },
+  {
+   "id": 42072,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "EMTP 122"
+  },
+  {
+   "id": 42073,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "EMTP 124"
+  },
+  {
+   "id": 42074,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "EMTP 126"
+  },
+  {
+   "id": 42075,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "EMTP 128"
+  },
+  {
+   "id": 42076,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "EMTP 130A"
+  },
+  {
+   "id": 42077,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENGL 30B"
+  },
+  {
+   "id": 42078,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENGL 35B"
+  },
+  {
+   "id": 42079,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENGL 35D"
+  },
+  {
+   "id": 42080,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENGL 35H"
+  },
+  {
+   "id": 42081,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENGL 35M"
+  },
+  {
+   "id": 42082,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENGL 44A"
+  },
+  {
+   "id": 42083,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENGL 46A"
+  },
+  {
+   "id": 42084,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENGL 46C"
+  },
+  {
+   "id": 42085,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENGL 48K"
+  },
+  {
+   "id": 42086,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENGL 52"
+  },
+  {
+   "id": 42087,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENGL 57"
+  },
+  {
+   "id": 42088,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENGL 61"
+  },
+  {
+   "id": 42089,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENGL 63"
+  },
+  {
+   "id": 42090,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENGL C1001"
+  },
+  {
+   "id": 42091,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENGN 10A"
+  },
+  {
+   "id": 42092,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENGN 20"
+  },
+  {
+   "id": 42093,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENGN 24"
+  },
+  {
+   "id": 42094,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENRG 3"
+  },
+  {
+   "id": 42095,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENTR 101"
+  },
+  {
+   "id": 42096,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENTR 103"
+  },
+  {
+   "id": 42097,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENVS 31L"
+  },
+  {
+   "id": 42098,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENVS 91"
+  },
+  {
+   "id": 42099,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESL 188"
+  },
+  {
+   "id": 42100,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESL 78"
+  },
+  {
+   "id": 42101,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESL 85"
+  },
+  {
+   "id": 42102,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLA 3180"
+  },
+  {
+   "id": 42103,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 3015"
+  },
+  {
+   "id": 42104,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 3105"
+  },
+  {
+   "id": 42105,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 3200"
+  },
+  {
+   "id": 42106,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 3300"
+  },
+  {
+   "id": 42107,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 3340"
+  },
+  {
+   "id": 42108,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 3405"
+  },
+  {
+   "id": 42109,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 3505"
+  },
+  {
+   "id": 42110,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 3580"
+  },
+  {
+   "id": 42111,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 3605"
+  },
+  {
+   "id": 42112,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 3705"
+  },
+  {
+   "id": 42113,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 3800"
+  },
+  {
+   "id": 42114,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 3900"
+  },
+  {
+   "id": 42115,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 5150"
+  },
+  {
+   "id": 42116,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 5220"
+  },
+  {
+   "id": 42117,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 5350"
+  },
+  {
+   "id": 42118,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 5510"
+  },
+  {
+   "id": 42119,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 5550"
+  },
+  {
+   "id": 42120,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 5584"
+  },
+  {
+   "id": 42121,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 5775"
+  },
+  {
+   "id": 42122,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 6311"
+  },
+  {
+   "id": 42123,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 6403"
+  },
+  {
+   "id": 42124,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 6417"
+  },
+  {
+   "id": 42125,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 6603"
+  },
+  {
+   "id": 42126,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 6606"
+  },
+  {
+   "id": 42127,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 6623"
+  },
+  {
+   "id": 42128,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 6627"
+  },
+  {
+   "id": 42129,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ET 104"
+  },
+  {
+   "id": 42130,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ET 136A"
+  },
+  {
+   "id": 42131,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ET 139A"
+  },
+  {
+   "id": 42132,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ET 50"
+  },
+  {
+   "id": 42133,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FASH 112"
+  },
+  {
+   "id": 42134,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FASH 15A"
+  },
+  {
+   "id": 42135,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FASH 16"
+  },
+  {
+   "id": 42136,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FASH 23"
+  },
+  {
+   "id": 42137,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FASH 27"
+  },
+  {
+   "id": 42138,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FASH 35A"
+  },
+  {
+   "id": 42139,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FASH 36A"
+  },
+  {
+   "id": 42140,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FASH 37"
+  },
+  {
+   "id": 42141,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FASH 44"
+  },
+  {
+   "id": 42142,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FASH 49"
+  },
+  {
+   "id": 42143,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FASH 53"
+  },
+  {
+   "id": 42144,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FASH 55"
+  },
+  {
+   "id": 42145,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FASH 57"
+  },
+  {
+   "id": 42146,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FASH 61"
+  },
+  {
+   "id": 42147,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FASH 63"
+  },
+  {
+   "id": 42148,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FASH 67B"
+  },
+  {
+   "id": 42149,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FREN 1"
+  },
+  {
+   "id": 42150,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FREN 1B"
+  },
+  {
+   "id": 42151,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FREN 22"
+  },
+  {
+   "id": 42152,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FREN 2A"
+  },
+  {
+   "id": 42153,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FREN 3"
+  },
+  {
+   "id": 42154,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FREN 3B"
+  },
+  {
+   "id": 42155,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FREN 42"
+  },
+  {
+   "id": 42156,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "GEOG 1"
+  },
+  {
+   "id": 42157,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "GEOG 111"
+  },
+  {
+   "id": 42158,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "GEOG 1L"
+  },
+  {
+   "id": 42159,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "GEOG 4"
+  },
+  {
+   "id": 42160,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "GEOG 7"
+  },
+  {
+   "id": 42161,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "GEOL 10"
+  },
+  {
+   "id": 42162,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "GEOL 11"
+  },
+  {
+   "id": 42163,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "GEOL 11L"
+  },
+  {
+   "id": 42164,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "GEOL 21B"
+  },
+  {
+   "id": 42165,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "GEOL 30"
+  },
+  {
+   "id": 42166,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "GNBS 100"
+  },
+  {
+   "id": 42167,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HCT 104"
+  },
+  {
+   "id": 42168,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HCT 61"
+  },
+  {
+   "id": 42169,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HCT 82A"
+  },
+  {
+   "id": 42170,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HIST 1"
+  },
+  {
+   "id": 42171,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HIST 12B"
+  },
+  {
+   "id": 42172,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HIST 18B"
+  },
+  {
+   "id": 42173,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HIST 21"
+  },
+  {
+   "id": 42174,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HIST 37"
+  },
+  {
+   "id": 42175,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HIST 41A"
+  },
+  {
+   "id": 42176,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HIST 45"
+  },
+  {
+   "id": 42177,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HIST 4A"
+  },
+  {
+   "id": 42178,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HIST 5"
+  },
+  {
+   "id": 42179,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HIST C1001"
+  },
+  {
+   "id": 42180,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HIT 50A"
+  },
+  {
+   "id": 42181,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HIT 57"
+  },
+  {
+   "id": 42182,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HIT 65"
+  },
+  {
+   "id": 42183,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HIT 73A"
+  },
+  {
+   "id": 42184,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HIT 75"
+  },
+  {
+   "id": 42185,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HIT 77A"
+  },
+  {
+   "id": 42186,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HIT 79"
+  },
+  {
+   "id": 42187,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 100"
+  },
+  {
+   "id": 42188,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 103"
+  },
+  {
+   "id": 42189,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 105"
+  },
+  {
+   "id": 42190,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 110"
+  },
+  {
+   "id": 42191,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 116"
+  },
+  {
+   "id": 42192,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 177"
+  },
+  {
+   "id": 42193,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 202"
+  },
+  {
+   "id": 42194,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 203W"
+  },
+  {
+   "id": 42195,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 221"
+  },
+  {
+   "id": 42196,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 25"
+  },
+  {
+   "id": 42197,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 30"
+  },
+  {
+   "id": 42198,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 33"
+  },
+  {
+   "id": 42199,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 48"
+  },
+  {
+   "id": 42200,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 52"
+  },
+  {
+   "id": 42201,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 54"
+  },
+  {
+   "id": 42202,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 64"
+  },
+  {
+   "id": 42203,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 66"
+  },
+  {
+   "id": 42204,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 70"
+  },
+  {
+   "id": 42205,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 79"
+  },
+  {
+   "id": 42206,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 80C"
+  },
+  {
+   "id": 42207,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 81C"
+  },
+  {
+   "id": 42208,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 82"
+  },
+  {
+   "id": 42209,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 88"
+  },
+  {
+   "id": 42210,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 90C"
+  },
+  {
+   "id": 42211,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 91H"
+  },
+  {
+   "id": 42212,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 91M"
+  },
+  {
+   "id": 42213,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 95"
+  },
+  {
+   "id": 42214,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 98"
+  },
+  {
+   "id": 42215,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HUM 11"
+  },
+  {
+   "id": 42216,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HUM 20"
+  },
+  {
+   "id": 42217,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HUM 48"
+  },
+  {
+   "id": 42218,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HUM 8"
+  },
+  {
+   "id": 42219,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "IDST 17"
+  },
+  {
+   "id": 42220,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "IDST 29"
+  },
+  {
+   "id": 42221,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "IDST 30"
+  },
+  {
+   "id": 42222,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "IDST 31"
+  },
+  {
+   "id": 42223,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "IDST 37"
+  },
+  {
+   "id": 42224,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "IDST 45"
+  },
+  {
+   "id": 42225,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "IDST 47"
+  },
+  {
+   "id": 42226,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "IDST 80C"
+  },
+  {
+   "id": 42227,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "IDST 80E"
+  },
+  {
+   "id": 42228,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "IDST 80G"
+  },
+  {
+   "id": 42229,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "IDST 81B"
+  },
+  {
+   "id": 42230,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "INTD 102"
+  },
+  {
+   "id": 42231,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ITAL 1"
+  },
+  {
+   "id": 42232,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ITAL 10B"
+  },
+  {
+   "id": 42233,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ITAL 11B"
+  },
+  {
+   "id": 42234,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ITAL 1B"
+  },
+  {
+   "id": 42235,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ITAL 2A"
+  },
+  {
+   "id": 42236,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ITAL 3A"
+  },
+  {
+   "id": 42237,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "JAPA 1"
+  },
+  {
+   "id": 42238,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "JAPA 10B"
+  },
+  {
+   "id": 42239,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "JAPA 16"
+  },
+  {
+   "id": 42240,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "JAPA 18"
+  },
+  {
+   "id": 42241,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "JAPA 1B"
+  },
+  {
+   "id": 42242,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "JAPA 2A"
+  },
+  {
+   "id": 42243,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "JAPA 3"
+  },
+  {
+   "id": 42244,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "JAPA 3A"
+  },
+  {
+   "id": 42245,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "JAPA 4"
+  },
+  {
+   "id": 42246,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "JAPA 4B"
+  },
+  {
+   "id": 42247,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "JOUR 21"
+  },
+  {
+   "id": 42248,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "JOUR 23"
+  },
+  {
+   "id": 42249,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "JOUR 24B"
+  },
+  {
+   "id": 42250,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "JOUR 29A"
+  },
+  {
+   "id": 42251,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "JOUR 35"
+  },
+  {
+   "id": 42252,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "JOUR 37"
+  },
+  {
+   "id": 42253,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LALS 1"
+  },
+  {
+   "id": 42254,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LALS 11"
+  },
+  {
+   "id": 42255,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LALS 14"
+  },
+  {
+   "id": 42256,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LALS 2"
+  },
+  {
+   "id": 42257,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LALS 70"
+  },
+  {
+   "id": 42258,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LBCS 114"
+  },
+  {
+   "id": 42259,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LBCS 15"
+  },
+  {
+   "id": 42260,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LBCS 70B"
+  },
+  {
+   "id": 42261,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LBCS 88"
+  },
+  {
+   "id": 42262,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LGBT 10"
+  },
+  {
+   "id": 42263,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LGBT 12"
+  },
+  {
+   "id": 42264,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LGBT 18"
+  },
+  {
+   "id": 42265,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LGBT 21"
+  },
+  {
+   "id": 42266,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LGBT 5"
+  },
+  {
+   "id": 42267,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LGBT 55"
+  },
+  {
+   "id": 42268,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LGBT 75"
+  },
+  {
+   "id": 42269,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LIBR 51"
+  },
+  {
+   "id": 42270,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LIBR 55A"
+  },
+  {
+   "id": 42271,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LIBR 56"
+  },
+  {
+   "id": 42272,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LIBR 58"
+  },
+  {
+   "id": 42273,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LIBR 59"
+  },
+  {
+   "id": 42274,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MABS 202"
+  },
+  {
+   "id": 42275,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MABS 404"
+  },
+  {
+   "id": 42276,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MABS 412"
+  },
+  {
+   "id": 42277,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MABS 50"
+  },
+  {
+   "id": 42278,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MABS 67"
+  },
+  {
+   "id": 42279,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MATH 100A"
+  },
+  {
+   "id": 42280,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MATH 101"
+  },
+  {
+   "id": 42281,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MATH 110A"
+  },
+  {
+   "id": 42282,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MATH 110C"
+  },
+  {
+   "id": 42283,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MATH 120"
+  },
+  {
+   "id": 42284,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MATH 130"
+  },
+  {
+   "id": 42285,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MATH 70"
+  },
+  {
+   "id": 42286,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MATH 90"
+  },
+  {
+   "id": 42287,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MATH 98"
+  },
+  {
+   "id": 42288,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MED 55"
+  },
+  {
+   "id": 42289,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MED 62"
+  },
+  {
+   "id": 42290,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MED 71"
+  },
+  {
+   "id": 42291,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MED 73"
+  },
+  {
+   "id": 42292,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MGT 232"
+  },
+  {
+   "id": 42293,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MGT 234"
+  },
+  {
+   "id": 42294,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MOTO 500"
+  },
+  {
+   "id": 42295,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MOTO 91"
+  },
+  {
+   "id": 42296,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MOTO 93"
+  },
+  {
+   "id": 42297,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MRKT 140"
+  },
+  {
+   "id": 42298,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MRKT 170"
+  },
+  {
+   "id": 42299,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MUS 100"
+  },
+  {
+   "id": 42300,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MUS 11"
+  },
+  {
+   "id": 42301,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MUS 13A"
+  },
+  {
+   "id": 42302,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MUS 15"
+  },
+  {
+   "id": 42303,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MUS 18"
+  },
+  {
+   "id": 42304,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MUS 1B"
+  },
+  {
+   "id": 42305,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MUS 21"
+  },
+  {
+   "id": 42306,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MUS 22C"
+  },
+  {
+   "id": 42307,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MUS 24"
+  },
+  {
+   "id": 42308,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MUS 26"
+  },
+  {
+   "id": 42309,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MUS 27B"
+  },
+  {
+   "id": 42310,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MUS 3B"
+  },
+  {
+   "id": 42311,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MUS 6A"
+  },
+  {
+   "id": 42312,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MUS 7V1"
+  },
+  {
+   "id": 42313,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MUS 8A"
+  },
+  {
+   "id": 42314,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MUS 9B"
+  },
+  {
+   "id": 42315,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "NAIS 38"
+  },
+  {
+   "id": 42316,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "NURS 50A"
+  },
+  {
+   "id": 42317,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "NURS 50L"
+  },
+  {
+   "id": 42318,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "NURS 51L"
+  },
+  {
+   "id": 42319,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "NURS 54"
+  },
+  {
+   "id": 42320,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "NURS 56"
+  },
+  {
+   "id": 42321,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "OCAN 1"
+  },
+  {
+   "id": 42322,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 13"
+  },
+  {
+   "id": 42323,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 20"
+  },
+  {
+   "id": 42324,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 200C"
+  },
+  {
+   "id": 42325,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 204A"
+  },
+  {
+   "id": 42326,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 205A"
+  },
+  {
+   "id": 42327,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 206A"
+  },
+  {
+   "id": 42328,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 210A"
+  },
+  {
+   "id": 42329,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 211A"
+  },
+  {
+   "id": 42330,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 212A"
+  },
+  {
+   "id": 42331,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 214A"
+  },
+  {
+   "id": 42332,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 215A"
+  },
+  {
+   "id": 42333,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 216A"
+  },
+  {
+   "id": 42334,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 217A"
+  },
+  {
+   "id": 42335,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 218"
+  },
+  {
+   "id": 42336,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 219B"
+  },
+  {
+   "id": 42337,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 220"
+  },
+  {
+   "id": 42338,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 223A"
+  },
+  {
+   "id": 42339,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 225B"
+  },
+  {
+   "id": 42340,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 231B"
+  },
+  {
+   "id": 42341,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 233B"
+  },
+  {
+   "id": 42342,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 235B"
+  },
+  {
+   "id": 42343,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 236B"
+  },
+  {
+   "id": 42344,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 238B"
+  },
+  {
+   "id": 42345,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 240B"
+  },
+  {
+   "id": 42346,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 242B"
+  },
+  {
+   "id": 42347,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 252A"
+  },
+  {
+   "id": 42348,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 252C"
+  },
+  {
+   "id": 42349,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 255A"
+  },
+  {
+   "id": 42350,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 255C"
+  },
+  {
+   "id": 42351,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 256A"
+  },
+  {
+   "id": 42352,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 256C"
+  },
+  {
+   "id": 42353,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 258B"
+  },
+  {
+   "id": 42354,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 26"
+  },
+  {
+   "id": 42355,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 260B"
+  },
+  {
+   "id": 42356,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 271B"
+  },
+  {
+   "id": 42357,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 274B"
+  },
+  {
+   "id": 42358,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 276B"
+  },
+  {
+   "id": 42359,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 29A"
+  },
+  {
+   "id": 42360,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 41"
+  },
+  {
+   "id": 42361,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 43"
+  },
+  {
+   "id": 42362,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 7"
+  },
+  {
+   "id": 42363,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 9"
+  },
+  {
+   "id": 42364,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHIL 2"
+  },
+  {
+   "id": 42365,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHIL 25C"
+  },
+  {
+   "id": 42366,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHIL 40"
+  },
+  {
+   "id": 42367,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHOT 101C"
+  },
+  {
+   "id": 42368,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHOT 101E"
+  },
+  {
+   "id": 42369,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHOT 101P"
+  },
+  {
+   "id": 42370,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHOT 102A"
+  },
+  {
+   "id": 42371,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHOT 102C"
+  },
+  {
+   "id": 42372,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHOT 102E"
+  },
+  {
+   "id": 42373,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHOT 130B"
+  },
+  {
+   "id": 42374,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHOT 145"
+  },
+  {
+   "id": 42375,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHOT 50A"
+  },
+  {
+   "id": 42376,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHOT 51"
+  },
+  {
+   "id": 42377,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHOT 60A"
+  },
+  {
+   "id": 42378,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHOT 67"
+  },
+  {
+   "id": 42379,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHOT 81A"
+  },
+  {
+   "id": 42380,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHOT 81C"
+  },
+  {
+   "id": 42381,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHOT 83"
+  },
+  {
+   "id": 42382,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHOT 85B"
+  },
+  {
+   "id": 42383,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHOT 92"
+  },
+  {
+   "id": 42384,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHST 10"
+  },
+  {
+   "id": 42385,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHST 30"
+  },
+  {
+   "id": 42386,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHST 42"
+  },
+  {
+   "id": 42387,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHTC 101"
+  },
+  {
+   "id": 42388,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHTC 103"
+  },
+  {
+   "id": 42389,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHTC 104B"
+  },
+  {
+   "id": 42390,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHYC 10L"
+  },
+  {
+   "id": 42391,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHYC 2AL"
+  },
+  {
+   "id": 42392,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHYC 2BL"
+  },
+  {
+   "id": 42393,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHYC 4A"
+  },
+  {
+   "id": 42394,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHYC 4B"
+  },
+  {
+   "id": 42395,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHYC 4C"
+  },
+  {
+   "id": 42396,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHYC 4D"
+  },
+  {
+   "id": 42397,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PIL 1"
+  },
+  {
+   "id": 42398,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "POLS 12"
+  },
+  {
+   "id": 42399,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "POLS 18"
+  },
+  {
+   "id": 42400,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "POLS 2"
+  },
+  {
+   "id": 42401,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "POLS 3"
+  },
+  {
+   "id": 42402,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "POLS 41"
+  },
+  {
+   "id": 42403,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "POLS 45"
+  },
+  {
+   "id": 42404,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "POLS C1000"
+  },
+  {
+   "id": 42405,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PSYC 11"
+  },
+  {
+   "id": 42406,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PSYC 15"
+  },
+  {
+   "id": 42407,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PSYC 1B"
+  },
+  {
+   "id": 42408,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PSYC 21"
+  },
+  {
+   "id": 42409,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PSYC 24"
+  },
+  {
+   "id": 42410,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PSYC 26"
+  },
+  {
+   "id": 42411,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PSYC 4"
+  },
+  {
+   "id": 42412,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PSYC 5"
+  },
+  {
+   "id": 42413,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PSYC 9"
+  },
+  {
+   "id": 42414,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SC 106"
+  },
+  {
+   "id": 42415,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SC 107B"
+  },
+  {
+   "id": 42416,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SC 11"
+  },
+  {
+   "id": 42417,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SC 111"
+  },
+  {
+   "id": 42418,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SC 125"
+  },
+  {
+   "id": 42419,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SC 150"
+  },
+  {
+   "id": 42420,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SC 50"
+  },
+  {
+   "id": 42421,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SC 52A"
+  },
+  {
+   "id": 42422,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SC 55"
+  },
+  {
+   "id": 42423,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SC 61A"
+  },
+  {
+   "id": 42424,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SC 63"
+  },
+  {
+   "id": 42425,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SC 65"
+  },
+  {
+   "id": 42426,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SC 75B"
+  },
+  {
+   "id": 42427,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SC 75D"
+  },
+  {
+   "id": 42428,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SC 75F"
+  },
+  {
+   "id": 42429,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SOC 11"
+  },
+  {
+   "id": 42430,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SOC 120B"
+  },
+  {
+   "id": 42431,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SOC 21"
+  },
+  {
+   "id": 42432,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SOC 3"
+  },
+  {
+   "id": 42433,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SOC 52"
+  },
+  {
+   "id": 42434,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SOC 7"
+  },
+  {
+   "id": 42435,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SPAN 10A"
+  },
+  {
+   "id": 42436,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SPAN 10C"
+  },
+  {
+   "id": 42437,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SPAN 1A"
+  },
+  {
+   "id": 42438,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SPAN 2"
+  },
+  {
+   "id": 42439,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SPAN 22B"
+  },
+  {
+   "id": 42440,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SPAN 2A"
+  },
+  {
+   "id": 42441,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SPAN 3"
+  },
+  {
+   "id": 42442,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SPAN 31A"
+  },
+  {
+   "id": 42443,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SPAN 32"
+  },
+  {
+   "id": 42444,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SPAN 32B"
+  },
+  {
+   "id": 42445,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SPAN 3B"
+  },
+  {
+   "id": 42446,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SPAN 5"
+  },
+  {
+   "id": 42447,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SPAN 6A"
+  },
+  {
+   "id": 42448,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SPAN 7"
+  },
+  {
+   "id": 42449,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "STAT C1000E"
+  },
+  {
+   "id": 42450,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "TICU 9551"
+  },
+  {
+   "id": 42451,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VMD 100"
+  },
+  {
+   "id": 42452,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VMD 102"
+  },
+  {
+   "id": 42453,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VMD 110"
+  },
+  {
+   "id": 42454,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VMD 118"
+  },
+  {
+   "id": 42455,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VMD 122"
+  },
+  {
+   "id": 42456,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VMD 124B"
+  },
+  {
+   "id": 42457,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VMD 127"
+  },
+  {
+   "id": 42458,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VMD 131"
+  },
+  {
+   "id": 42459,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VMD 141"
+  },
+  {
+   "id": 42460,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VMD 151"
+  },
+  {
+   "id": 42461,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VMD 153"
+  },
+  {
+   "id": 42462,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VMD 155"
+  },
+  {
+   "id": 42463,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VMD 168"
+  },
+  {
+   "id": 42464,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VMD 172"
+  },
+  {
+   "id": 42465,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VMD 194A"
+  },
+  {
+   "id": 42466,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VMD 200B"
+  },
+  {
+   "id": 42467,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VOCN 24"
+  },
+  {
+   "id": 42468,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VOCN 51A"
+  },
+  {
+   "id": 42469,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VOCN 51C"
+  },
+  {
+   "id": 42470,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VOCN 52A"
+  },
+  {
+   "id": 42471,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VOCN 52C"
+  },
+  {
+   "id": 42472,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VOCN 53B"
+  },
+  {
+   "id": 42473,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "WELD 140"
+  },
+  {
+   "id": 42474,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "WGST 20"
+  },
+  {
+   "id": 42475,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "WGST 35"
+  },
+  {
+   "id": 42476,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "WGST 55"
+  },
+  {
+   "id": 42477,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ACCT 2"
+  },
+  {
+   "id": 42478,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ADMJ 220"
+  },
+  {
+   "id": 42479,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ADMJ 52"
+  },
+  {
+   "id": 42480,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ADMJ 54"
+  },
+  {
+   "id": 42481,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ADMJ 57"
+  },
+  {
+   "id": 42482,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ADMJ 62"
+  },
+  {
+   "id": 42483,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ADMJ 64"
+  },
+  {
+   "id": 42484,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ADMJ 66"
+  },
+  {
+   "id": 42485,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ADMJ 68"
+  },
+  {
+   "id": 42486,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ADMJ 70A"
+  },
+  {
+   "id": 42487,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ADMJ 72"
+  },
+  {
+   "id": 42488,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ADMJ 82"
+  },
+  {
+   "id": 42489,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ADMJ 85"
+  },
+  {
+   "id": 42490,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "AFAM 40"
+  },
+  {
+   "id": 42491,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "AFAM 55"
+  },
+  {
+   "id": 42492,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "AMSL 1A"
+  },
+  {
+   "id": 42493,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ANTH 1"
+  },
+  {
+   "id": 42494,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ANTH 12"
+  },
+  {
+   "id": 42495,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ANTH 1L"
+  },
+  {
+   "id": 42496,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ANTH 20"
+  },
+  {
+   "id": 42497,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ANTH 3"
+  },
+  {
+   "id": 42498,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ANTH 4"
+  },
+  {
+   "id": 42499,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ANTH 8"
+  },
+  {
+   "id": 42500,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ARCH 101"
+  },
+  {
+   "id": 42501,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ARCH 103"
+  },
+  {
+   "id": 42502,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ARCH 127"
+  },
+  {
+   "id": 42503,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ARCH 20"
+  },
+  {
+   "id": 42504,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ARCH 218"
+  },
+  {
+   "id": 42505,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ARCH 240"
+  },
+  {
+   "id": 42506,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ARCH 29B"
+  },
+  {
+   "id": 42507,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ARCH 31B"
+  },
+  {
+   "id": 42508,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ART 105"
+  },
+  {
+   "id": 42509,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ART 107"
+  },
+  {
+   "id": 42510,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ART 109"
+  },
+  {
+   "id": 42511,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ART 114"
+  },
+  {
+   "id": 42512,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ART 123U"
+  },
+  {
+   "id": 42513,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ART 123W"
+  },
+  {
+   "id": 42514,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ART 125B"
+  },
+  {
+   "id": 42515,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ART 130A"
+  },
+  {
+   "id": 42516,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ART 132A"
+  },
+  {
+   "id": 42517,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ART 136A"
+  },
+  {
+   "id": 42518,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ART 140A"
+  },
+  {
+   "id": 42519,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ART 145A"
+  },
+  {
+   "id": 42520,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ART 146B"
+  },
+  {
+   "id": 42521,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ART 150B"
+  },
+  {
+   "id": 42522,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ART 160B"
+  },
+  {
+   "id": 42523,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ART 170B"
+  },
+  {
+   "id": 42524,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ARTH C1100"
+  },
+  {
+   "id": 42525,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ASAM 1"
+  },
+  {
+   "id": 42526,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ASAM 20"
+  },
+  {
+   "id": 42527,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ASAM 23"
+  },
+  {
+   "id": 42528,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ASAM 30"
+  },
+  {
+   "id": 42529,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ASAM 40"
+  },
+  {
+   "id": 42530,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ASAM 6"
+  },
+  {
+   "id": 42531,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ASAM 65"
+  },
+  {
+   "id": 42532,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ASIA 11"
+  },
+  {
+   "id": 42533,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ASIA 30"
+  },
+  {
+   "id": 42534,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ASTR 16"
+  },
+  {
+   "id": 42535,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ASTR 18"
+  },
+  {
+   "id": 42536,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ASTR 4"
+  },
+  {
+   "id": 42537,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "AUTO 200"
+  },
+  {
+   "id": 42538,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "AUTO 202"
+  },
+  {
+   "id": 42539,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "AUTO 204"
+  },
+  {
+   "id": 42540,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "AUTO 206"
+  },
+  {
+   "id": 42541,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "AUTO 49"
+  },
+  {
+   "id": 42542,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "AUTO 51"
+  },
+  {
+   "id": 42543,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "AUTO 53"
+  },
+  {
+   "id": 42544,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "AUTO 55"
+  },
+  {
+   "id": 42545,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "AUTO 58"
+  },
+  {
+   "id": 42546,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "AUTO 63"
+  },
+  {
+   "id": 42547,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "AUTO 68"
+  },
+  {
+   "id": 42548,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BCST 101"
+  },
+  {
+   "id": 42549,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BCST 110"
+  },
+  {
+   "id": 42550,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BCST 119"
+  },
+  {
+   "id": 42551,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BCST 124A"
+  },
+  {
+   "id": 42552,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BCST 125A"
+  },
+  {
+   "id": 42553,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BCST 127A"
+  },
+  {
+   "id": 42554,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BCST 128"
+  },
+  {
+   "id": 42555,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BCST 136"
+  },
+  {
+   "id": 42556,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BCST 141"
+  },
+  {
+   "id": 42557,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BCST 144B"
+  },
+  {
+   "id": 42558,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BCST 147"
+  },
+  {
+   "id": 42559,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BCST 149"
+  },
+  {
+   "id": 42560,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BCST 160"
+  },
+  {
+   "id": 42561,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BIM 120"
+  },
+  {
+   "id": 42562,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BIO 100A"
+  },
+  {
+   "id": 42563,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BIO 106"
+  },
+  {
+   "id": 42564,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BIO 11"
+  },
+  {
+   "id": 42565,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BIO 112"
+  },
+  {
+   "id": 42566,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BIO 118B"
+  },
+  {
+   "id": 42567,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BIO 12"
+  },
+  {
+   "id": 42568,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BIO 121"
+  },
+  {
+   "id": 42569,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BIO 132"
+  },
+  {
+   "id": 42570,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BIO 14"
+  },
+  {
+   "id": 42571,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BIO 19"
+  },
+  {
+   "id": 42572,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BIO 21A"
+  },
+  {
+   "id": 42573,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BIO 21C"
+  },
+  {
+   "id": 42574,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BIO 21E"
+  },
+  {
+   "id": 42575,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BIO 21J"
+  },
+  {
+   "id": 42576,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BIO 26"
+  },
+  {
+   "id": 42577,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BIO 33"
+  },
+  {
+   "id": 42578,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BIO 51"
+  },
+  {
+   "id": 42579,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BIO 9"
+  },
+  {
+   "id": 42580,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BTEC 108A"
+  },
+  {
+   "id": 42581,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BTEC 120"
+  },
+  {
+   "id": 42582,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BTEC 14A"
+  },
+  {
+   "id": 42583,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BTEC 15"
+  },
+  {
+   "id": 42584,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BTEC 21C"
+  },
+  {
+   "id": 42585,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BTEC 21E"
+  },
+  {
+   "id": 42586,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BTEC 23"
+  },
+  {
+   "id": 42587,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BTEC 25"
+  },
+  {
+   "id": 42588,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "BTEC 5"
+  },
+  {
+   "id": 42589,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CAD 180"
+  },
+  {
+   "id": 42590,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CAD 182"
+  },
+  {
+   "id": 42591,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CAD 187"
+  },
+  {
+   "id": 42592,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CAD 99A"
+  },
+  {
+   "id": 42593,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CAHS 100"
+  },
+  {
+   "id": 42594,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CAHS 10B"
+  },
+  {
+   "id": 42595,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CAHS 208"
+  },
+  {
+   "id": 42596,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CAHS 20A"
+  },
+  {
+   "id": 42597,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CAHS 21"
+  },
+  {
+   "id": 42598,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CAHS 30A"
+  },
+  {
+   "id": 42599,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CAHS 32"
+  },
+  {
+   "id": 42600,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CAHS 34"
+  },
+  {
+   "id": 42601,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CAHS 42"
+  },
+  {
+   "id": 42602,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CAHS 45"
+  },
+  {
+   "id": 42603,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CAHS 60B"
+  },
+  {
+   "id": 42604,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CAHS 60H"
+  },
+  {
+   "id": 42605,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CAHS 60L"
+  },
+  {
+   "id": 42606,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CAHS 60N"
+  },
+  {
+   "id": 42607,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CAHS 60V"
+  },
+  {
+   "id": 42608,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 101"
+  },
+  {
+   "id": 42609,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 107"
+  },
+  {
+   "id": 42610,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 114"
+  },
+  {
+   "id": 42611,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 121"
+  },
+  {
+   "id": 42612,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 123"
+  },
+  {
+   "id": 42613,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 125"
+  },
+  {
+   "id": 42614,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 41B"
+  },
+  {
+   "id": 42615,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 41E"
+  },
+  {
+   "id": 42616,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 41G"
+  },
+  {
+   "id": 42617,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 41I"
+  },
+  {
+   "id": 42618,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 41K"
+  },
+  {
+   "id": 42619,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 41N"
+  },
+  {
+   "id": 42620,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 41P"
+  },
+  {
+   "id": 42621,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 41T"
+  },
+  {
+   "id": 42622,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 46"
+  },
+  {
+   "id": 42623,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 61"
+  },
+  {
+   "id": 42624,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 64"
+  },
+  {
+   "id": 42625,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 66"
+  },
+  {
+   "id": 42626,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 68"
+  },
+  {
+   "id": 42627,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 72B"
+  },
+  {
+   "id": 42628,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 74"
+  },
+  {
+   "id": 42629,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 78A"
+  },
+  {
+   "id": 42630,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 85"
+  },
+  {
+   "id": 42631,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 88"
+  },
+  {
+   "id": 42632,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 91"
+  },
+  {
+   "id": 42633,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 93"
+  },
+  {
+   "id": 42634,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 96"
+  },
+  {
+   "id": 42635,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CDEV 98"
+  },
+  {
+   "id": 42636,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CHEM 101A"
+  },
+  {
+   "id": 42637,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CHEM 110"
+  },
+  {
+   "id": 42638,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CHEM 212B"
+  },
+  {
+   "id": 42639,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CHEM 40"
+  },
+  {
+   "id": 42640,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CHIN 10A"
+  },
+  {
+   "id": 42641,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CHIN 10C"
+  },
+  {
+   "id": 42642,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CHIN 12B"
+  },
+  {
+   "id": 42643,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CHIN 14A"
+  },
+  {
+   "id": 42644,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CHIN 14C"
+  },
+  {
+   "id": 42645,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CHIN 1B"
+  },
+  {
+   "id": 42646,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CHIN 2A"
+  },
+  {
+   "id": 42647,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CHIN 3"
+  },
+  {
+   "id": 42648,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CHIN 30B"
+  },
+  {
+   "id": 42649,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CHIN 31B"
+  },
+  {
+   "id": 42650,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CHIN 33"
+  },
+  {
+   "id": 42651,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CHIN 3A"
+  },
+  {
+   "id": 42652,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CHIN 4"
+  },
+  {
+   "id": 42653,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CHIN 4B"
+  },
+  {
+   "id": 42654,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CINE 131"
+  },
+  {
+   "id": 42655,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CINE 170"
+  },
+  {
+   "id": 42656,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CINE 19"
+  },
+  {
+   "id": 42657,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CINE 20B"
+  },
+  {
+   "id": 42658,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CINE 21"
+  },
+  {
+   "id": 42659,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CINE 23A"
+  },
+  {
+   "id": 42660,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CINE 23C"
+  },
+  {
+   "id": 42661,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CINE 25"
+  },
+  {
+   "id": 42662,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CINE 54"
+  },
+  {
+   "id": 42663,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CINE 57"
+  },
+  {
+   "id": 42664,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CINE 61"
+  },
+  {
+   "id": 42665,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CINE 74"
+  },
+  {
+   "id": 42666,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CINE 75B"
+  },
+  {
+   "id": 42667,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CLAS 35"
+  },
+  {
+   "id": 42668,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CM 100"
+  },
+  {
+   "id": 42669,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CM 20"
+  },
+  {
+   "id": 42670,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CM 244"
+  },
+  {
+   "id": 42671,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CM 250"
+  },
+  {
+   "id": 42672,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 101"
+  },
+  {
+   "id": 42673,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 103"
+  },
+  {
+   "id": 42674,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 104"
+  },
+  {
+   "id": 42675,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 105L"
+  },
+  {
+   "id": 42676,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 106A"
+  },
+  {
+   "id": 42677,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 108"
+  },
+  {
+   "id": 42678,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 120"
+  },
+  {
+   "id": 42679,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 122"
+  },
+  {
+   "id": 42680,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 124"
+  },
+  {
+   "id": 42681,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 129"
+  },
+  {
+   "id": 42682,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 131"
+  },
+  {
+   "id": 42683,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 131H"
+  },
+  {
+   "id": 42684,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 132A"
+  },
+  {
+   "id": 42685,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 133A"
+  },
+  {
+   "id": 42686,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 133M"
+  },
+  {
+   "id": 42687,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 155"
+  },
+  {
+   "id": 42688,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 182"
+  },
+  {
+   "id": 42689,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 197"
+  },
+  {
+   "id": 42690,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 201C"
+  },
+  {
+   "id": 42691,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 203C"
+  },
+  {
+   "id": 42692,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 214"
+  },
+  {
+   "id": 42693,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 40"
+  },
+  {
+   "id": 42694,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 415"
+  },
+  {
+   "id": 42695,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 417"
+  },
+  {
+   "id": 42696,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNIT 420"
+  },
+  {
+   "id": 42697,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNST 103"
+  },
+  {
+   "id": 42698,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNST 108"
+  },
+  {
+   "id": 42699,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNST 111"
+  },
+  {
+   "id": 42700,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNST 113"
+  },
+  {
+   "id": 42701,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNST 116"
+  },
+  {
+   "id": 42702,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CNST 118B"
+  },
+  {
+   "id": 42703,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "COMM 12"
+  },
+  {
+   "id": 42704,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "COMM 20"
+  },
+  {
+   "id": 42705,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "COMM 38"
+  },
+  {
+   "id": 42706,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "COMM 5"
+  },
+  {
+   "id": 42707,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "COMM 8"
+  },
+  {
+   "id": 42708,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CS 110A"
+  },
+  {
+   "id": 42709,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CS 110C"
+  },
+  {
+   "id": 42710,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CS 111C"
+  },
+  {
+   "id": 42711,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CS 150A"
+  },
+  {
+   "id": 42712,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CS 177"
+  },
+  {
+   "id": 42713,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CS 198"
+  },
+  {
+   "id": 42714,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CS 211S"
+  },
+  {
+   "id": 42715,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CS 256"
+  },
+  {
+   "id": 42716,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CSST 9650"
+  },
+  {
+   "id": 42717,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CVT 100"
+  },
+  {
+   "id": 42718,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CVT 201"
+  },
+  {
+   "id": 42719,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CVT 210B"
+  },
+  {
+   "id": 42720,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CVT 310A"
+  },
+  {
+   "id": 42721,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "CVT 410A"
+  },
+  {
+   "id": 42722,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 100A"
+  },
+  {
+   "id": 42723,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 101A"
+  },
+  {
+   "id": 42724,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 102B"
+  },
+  {
+   "id": 42725,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 119B"
+  },
+  {
+   "id": 42726,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 119D"
+  },
+  {
+   "id": 42727,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 122"
+  },
+  {
+   "id": 42728,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 123B"
+  },
+  {
+   "id": 42729,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 124B"
+  },
+  {
+   "id": 42730,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 124D"
+  },
+  {
+   "id": 42731,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 127A"
+  },
+  {
+   "id": 42732,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 129A"
+  },
+  {
+   "id": 42733,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 129C"
+  },
+  {
+   "id": 42734,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 131A"
+  },
+  {
+   "id": 42735,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 133B"
+  },
+  {
+   "id": 42736,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 133D"
+  },
+  {
+   "id": 42737,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 134B"
+  },
+  {
+   "id": 42738,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 134D"
+  },
+  {
+   "id": 42739,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 138B"
+  },
+  {
+   "id": 42740,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 138D"
+  },
+  {
+   "id": 42741,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 145B"
+  },
+  {
+   "id": 42742,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 146B"
+  },
+  {
+   "id": 42743,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 155B"
+  },
+  {
+   "id": 42744,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 160A"
+  },
+  {
+   "id": 42745,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 160C"
+  },
+  {
+   "id": 42746,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 172A"
+  },
+  {
+   "id": 42747,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 173"
+  },
+  {
+   "id": 42748,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 34A"
+  },
+  {
+   "id": 42749,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DANC 37"
+  },
+  {
+   "id": 42750,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DENT 51"
+  },
+  {
+   "id": 42751,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DENT 53"
+  },
+  {
+   "id": 42752,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DENT 55A"
+  },
+  {
+   "id": 42753,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DENT 57"
+  },
+  {
+   "id": 42754,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DENT 67"
+  },
+  {
+   "id": 42755,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DENT 70B"
+  },
+  {
+   "id": 42756,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DMI 49"
+  },
+  {
+   "id": 42757,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DMI 50B"
+  },
+  {
+   "id": 42758,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DMI 51B"
+  },
+  {
+   "id": 42759,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DMI 54"
+  },
+  {
+   "id": 42760,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DMI 57"
+  },
+  {
+   "id": 42761,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DMI 63"
+  },
+  {
+   "id": 42762,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DMI 65"
+  },
+  {
+   "id": 42763,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DMI 68"
+  },
+  {
+   "id": 42764,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "DMI 70"
+  },
+  {
+   "id": 42765,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ECGT 101"
+  },
+  {
+   "id": 42766,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ECGT 103A"
+  },
+  {
+   "id": 42767,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ECHO 101"
+  },
+  {
+   "id": 42768,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ECHO 301"
+  },
+  {
+   "id": 42769,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ECON 15"
+  },
+  {
+   "id": 42770,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ECON 22"
+  },
+  {
+   "id": 42771,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ECON 30"
+  },
+  {
+   "id": 42772,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ECON 6"
+  },
+  {
+   "id": 42773,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ECON C2002"
+  },
+  {
+   "id": 42774,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ELEC 102A"
+  },
+  {
+   "id": 42775,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ELEC 103A"
+  },
+  {
+   "id": 42776,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ELEC 104A"
+  },
+  {
+   "id": 42777,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "EMT 100"
+  },
+  {
+   "id": 42778,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "EMT 14"
+  },
+  {
+   "id": 42779,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "EMTP 121"
+  },
+  {
+   "id": 42780,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "EMTP 123"
+  },
+  {
+   "id": 42781,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "EMTP 125"
+  },
+  {
+   "id": 42782,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "EMTP 127"
+  },
+  {
+   "id": 42783,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "EMTP 129"
+  },
+  {
+   "id": 42784,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "EMTP 130B"
+  },
+  {
+   "id": 42785,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENGL 30A"
+  },
+  {
+   "id": 42786,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENGL 35A"
+  },
+  {
+   "id": 42787,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENGL 35C"
+  },
+  {
+   "id": 42788,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENGL 35G"
+  },
+  {
+   "id": 42789,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENGL 35L"
+  },
+  {
+   "id": 42790,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENGL 43"
+  },
+  {
+   "id": 42791,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENGL 44B"
+  },
+  {
+   "id": 42792,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENGL 46B"
+  },
+  {
+   "id": 42793,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENGL 48C"
+  },
+  {
+   "id": 42794,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENGL 51"
+  },
+  {
+   "id": 42795,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENGL 54"
+  },
+  {
+   "id": 42796,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENGL 58"
+  },
+  {
+   "id": 42797,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENGL 62"
+  },
+  {
+   "id": 42798,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENGL C1000"
+  },
+  {
+   "id": 42799,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENGL C1003"
+  },
+  {
+   "id": 42800,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENGN 10B"
+  },
+  {
+   "id": 42801,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENGN 20L"
+  },
+  {
+   "id": 42802,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENGN 38"
+  },
+  {
+   "id": 42803,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENRG 3L"
+  },
+  {
+   "id": 42804,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENTR 102"
+  },
+  {
+   "id": 42805,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENVS 31"
+  },
+  {
+   "id": 42806,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ENVS 5"
+  },
+  {
+   "id": 42807,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESL 186"
+  },
+  {
+   "id": 42808,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESL 67"
+  },
+  {
+   "id": 42809,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESL 79"
+  },
+  {
+   "id": 42810,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESL 95"
+  },
+  {
+   "id": 42811,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 3010"
+  },
+  {
+   "id": 42812,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 3100"
+  },
+  {
+   "id": 42813,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 3120"
+  },
+  {
+   "id": 42814,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 3205"
+  },
+  {
+   "id": 42815,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 3305"
+  },
+  {
+   "id": 42816,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 3400"
+  },
+  {
+   "id": 42817,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 3500"
+  },
+  {
+   "id": 42818,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 3560"
+  },
+  {
+   "id": 42819,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 3600"
+  },
+  {
+   "id": 42820,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 3700"
+  },
+  {
+   "id": 42821,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 3780"
+  },
+  {
+   "id": 42822,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 3805"
+  },
+  {
+   "id": 42823,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 4015"
+  },
+  {
+   "id": 42824,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 5175"
+  },
+  {
+   "id": 42825,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 5325"
+  },
+  {
+   "id": 42826,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 5375"
+  },
+  {
+   "id": 42827,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 5525"
+  },
+  {
+   "id": 42828,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 5575"
+  },
+  {
+   "id": 42829,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 5750"
+  },
+  {
+   "id": 42830,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 6309"
+  },
+  {
+   "id": 42831,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 6401"
+  },
+  {
+   "id": 42832,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 6413"
+  },
+  {
+   "id": 42833,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 6507"
+  },
+  {
+   "id": 42834,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 6605"
+  },
+  {
+   "id": 42835,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 6621"
+  },
+  {
+   "id": 42836,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 6625"
+  },
+  {
+   "id": 42837,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ESLN 6705"
+  },
+  {
+   "id": 42838,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ET 130"
+  },
+  {
+   "id": 42839,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ET 136B"
+  },
+  {
+   "id": 42840,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ET 139B"
+  },
+  {
+   "id": 42841,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ETHN 37"
+  },
+  {
+   "id": 42842,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FASH 113"
+  },
+  {
+   "id": 42843,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FASH 15B"
+  },
+  {
+   "id": 42844,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FASH 22"
+  },
+  {
+   "id": 42845,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FASH 26"
+  },
+  {
+   "id": 42846,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FASH 29"
+  },
+  {
+   "id": 42847,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FASH 35B"
+  },
+  {
+   "id": 42848,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FASH 36B"
+  },
+  {
+   "id": 42849,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FASH 42"
+  },
+  {
+   "id": 42850,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FASH 45A"
+  },
+  {
+   "id": 42851,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FASH 51"
+  },
+  {
+   "id": 42852,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FASH 54A"
+  },
+  {
+   "id": 42853,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FASH 56"
+  },
+  {
+   "id": 42854,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FASH 60"
+  },
+  {
+   "id": 42855,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FASH 62"
+  },
+  {
+   "id": 42856,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FASH 67A"
+  },
+  {
+   "id": 42857,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FASH 73"
+  },
+  {
+   "id": 42858,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FREN 1A"
+  },
+  {
+   "id": 42859,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FREN 2"
+  },
+  {
+   "id": 42860,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FREN 23"
+  },
+  {
+   "id": 42861,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FREN 2B"
+  },
+  {
+   "id": 42862,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FREN 3A"
+  },
+  {
+   "id": 42863,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FREN 41"
+  },
+  {
+   "id": 42864,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "FREN 5"
+  },
+  {
+   "id": 42865,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "GEOG 110"
+  },
+  {
+   "id": 42866,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "GEOG 112"
+  },
+  {
+   "id": 42867,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "GEOG 3"
+  },
+  {
+   "id": 42868,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "GEOG 41A"
+  },
+  {
+   "id": 42869,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "GEOG 9"
+  },
+  {
+   "id": 42870,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "GEOL 10L"
+  },
+  {
+   "id": 42871,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "GEOL 111"
+  },
+  {
+   "id": 42872,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "GEOL 21A"
+  },
+  {
+   "id": 42873,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "GEOL 21C"
+  },
+  {
+   "id": 42874,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "GEOL 30L"
+  },
+  {
+   "id": 42875,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "GNBS 119"
+  },
+  {
+   "id": 42876,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HCT 110"
+  },
+  {
+   "id": 42877,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HCT 67"
+  },
+  {
+   "id": 42878,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HCT 82B"
+  },
+  {
+   "id": 42879,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HIST 12A"
+  },
+  {
+   "id": 42880,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HIST 18A"
+  },
+  {
+   "id": 42881,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HIST 20"
+  },
+  {
+   "id": 42882,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HIST 35A"
+  },
+  {
+   "id": 42883,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HIST 40"
+  },
+  {
+   "id": 42884,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HIST 41B"
+  },
+  {
+   "id": 42885,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HIST 49"
+  },
+  {
+   "id": 42886,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HIST 4B"
+  },
+  {
+   "id": 42887,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HIST 9"
+  },
+  {
+   "id": 42888,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HIST C1002"
+  },
+  {
+   "id": 42889,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HIT 50B"
+  },
+  {
+   "id": 42890,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HIT 63"
+  },
+  {
+   "id": 42891,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HIT 72"
+  },
+  {
+   "id": 42892,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HIT 73B"
+  },
+  {
+   "id": 42893,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HIT 76"
+  },
+  {
+   "id": 42894,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HIT 77B"
+  },
+  {
+   "id": 42895,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 10"
+  },
+  {
+   "id": 42896,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 102"
+  },
+  {
+   "id": 42897,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 104"
+  },
+  {
+   "id": 42898,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 105W"
+  },
+  {
+   "id": 42899,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 114"
+  },
+  {
+   "id": 42900,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 170"
+  },
+  {
+   "id": 42901,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 201"
+  },
+  {
+   "id": 42902,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 203"
+  },
+  {
+   "id": 42903,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 210"
+  },
+  {
+   "id": 42904,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 231"
+  },
+  {
+   "id": 42905,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 27"
+  },
+  {
+   "id": 42906,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 300"
+  },
+  {
+   "id": 42907,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 38"
+  },
+  {
+   "id": 42908,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 49"
+  },
+  {
+   "id": 42909,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 53"
+  },
+  {
+   "id": 42910,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 56"
+  },
+  {
+   "id": 42911,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 65"
+  },
+  {
+   "id": 42912,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 67"
+  },
+  {
+   "id": 42913,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 73"
+  },
+  {
+   "id": 42914,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 79W"
+  },
+  {
+   "id": 42915,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 80L"
+  },
+  {
+   "id": 42916,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 81L"
+  },
+  {
+   "id": 42917,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 85"
+  },
+  {
+   "id": 42918,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 90B"
+  },
+  {
+   "id": 42919,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 91C"
+  },
+  {
+   "id": 42920,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 91J"
+  },
+  {
+   "id": 42921,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 91N"
+  },
+  {
+   "id": 42922,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 97"
+  },
+  {
+   "id": 42923,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HLTH 99"
+  },
+  {
+   "id": 42924,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HUM 12"
+  },
+  {
+   "id": 42925,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HUM 25"
+  },
+  {
+   "id": 42926,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "HUM 7"
+  },
+  {
+   "id": 42927,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "IDST 14"
+  },
+  {
+   "id": 42928,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "IDST 27B"
+  },
+  {
+   "id": 42929,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "IDST 3"
+  },
+  {
+   "id": 42930,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "IDST 300"
+  },
+  {
+   "id": 42931,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "IDST 36"
+  },
+  {
+   "id": 42932,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "IDST 4"
+  },
+  {
+   "id": 42933,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "IDST 46"
+  },
+  {
+   "id": 42934,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "IDST 80A"
+  },
+  {
+   "id": 42935,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "IDST 80D"
+  },
+  {
+   "id": 42936,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "IDST 80F"
+  },
+  {
+   "id": 42937,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "IDST 81A"
+  },
+  {
+   "id": 42938,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "INTD 100"
+  },
+  {
+   "id": 42939,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "INTD 138"
+  },
+  {
+   "id": 42940,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ITAL 10A"
+  },
+  {
+   "id": 42941,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ITAL 11A"
+  },
+  {
+   "id": 42942,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ITAL 1A"
+  },
+  {
+   "id": 42943,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ITAL 2"
+  },
+  {
+   "id": 42944,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ITAL 2B"
+  },
+  {
+   "id": 42945,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "ITAL 3B"
+  },
+  {
+   "id": 42946,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "JAPA 10A"
+  },
+  {
+   "id": 42947,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "JAPA 10C"
+  },
+  {
+   "id": 42948,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "JAPA 17"
+  },
+  {
+   "id": 42949,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "JAPA 1A"
+  },
+  {
+   "id": 42950,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "JAPA 2"
+  },
+  {
+   "id": 42951,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "JAPA 2B"
+  },
+  {
+   "id": 42952,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "JAPA 39"
+  },
+  {
+   "id": 42953,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "JAPA 3B"
+  },
+  {
+   "id": 42954,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "JAPA 4A"
+  },
+  {
+   "id": 42955,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "JOUR 19"
+  },
+  {
+   "id": 42956,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "JOUR 22"
+  },
+  {
+   "id": 42957,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "JOUR 24A"
+  },
+  {
+   "id": 42958,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "JOUR 26"
+  },
+  {
+   "id": 42959,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "JOUR 29B"
+  },
+  {
+   "id": 42960,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "JOUR 36"
+  },
+  {
+   "id": 42961,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "JOUR 38"
+  },
+  {
+   "id": 42962,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LALS 10"
+  },
+  {
+   "id": 42963,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LALS 13"
+  },
+  {
+   "id": 42964,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LALS 15"
+  },
+  {
+   "id": 42965,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LALS 5"
+  },
+  {
+   "id": 42966,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LALS 9"
+  },
+  {
+   "id": 42967,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LBCS 115"
+  },
+  {
+   "id": 42968,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LBCS 70A"
+  },
+  {
+   "id": 42969,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LBCS 81"
+  },
+  {
+   "id": 42970,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LBCS 96C"
+  },
+  {
+   "id": 42971,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LGBT 11"
+  },
+  {
+   "id": 42972,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LGBT 15"
+  },
+  {
+   "id": 42973,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LGBT 20"
+  },
+  {
+   "id": 42974,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LGBT 24"
+  },
+  {
+   "id": 42975,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LGBT 50"
+  },
+  {
+   "id": 42976,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LGBT 70"
+  },
+  {
+   "id": 42977,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LGBT 9"
+  },
+  {
+   "id": 42978,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LIBR 53"
+  },
+  {
+   "id": 42979,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LIBR 55B"
+  },
+  {
+   "id": 42980,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LIBR 57"
+  },
+  {
+   "id": 42981,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "LIBR 58B"
+  },
+  {
+   "id": 42982,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MABS 101"
+  },
+  {
+   "id": 42983,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MABS 391"
+  },
+  {
+   "id": 42984,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MABS 408"
+  },
+  {
+   "id": 42985,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MABS 413"
+  },
+  {
+   "id": 42986,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MABS 60"
+  },
+  {
+   "id": 42987,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MAKR 100"
+  },
+  {
+   "id": 42988,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MATH 100B"
+  },
+  {
+   "id": 42989,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MATH 108"
+  },
+  {
+   "id": 42990,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MATH 110B"
+  },
+  {
+   "id": 42991,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MATH 115"
+  },
+  {
+   "id": 42992,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MATH 125"
+  },
+  {
+   "id": 42993,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MATH 65"
+  },
+  {
+   "id": 42994,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MATH 75"
+  },
+  {
+   "id": 42995,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MATH 90S"
+  },
+  {
+   "id": 42996,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MED 49"
+  },
+  {
+   "id": 42997,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MED 56"
+  },
+  {
+   "id": 42998,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MED 70"
+  },
+  {
+   "id": 42999,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MED 72"
+  },
+  {
+   "id": 43000,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MGT 231"
+  },
+  {
+   "id": 43001,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MGT 233"
+  },
+  {
+   "id": 43002,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MGT 235"
+  },
+  {
+   "id": 43003,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MOTO 90"
+  },
+  {
+   "id": 43004,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MOTO 92"
+  },
+  {
+   "id": 43005,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MRKT 122"
+  },
+  {
+   "id": 43006,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MRKT 150"
+  },
+  {
+   "id": 43007,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MRKT 180"
+  },
+  {
+   "id": 43008,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MUS 10A"
+  },
+  {
+   "id": 43009,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MUS 12"
+  },
+  {
+   "id": 43010,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MUS 13B"
+  },
+  {
+   "id": 43011,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MUS 17"
+  },
+  {
+   "id": 43012,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MUS 1A"
+  },
+  {
+   "id": 43013,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MUS 20"
+  },
+  {
+   "id": 43014,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MUS 22B"
+  },
+  {
+   "id": 43015,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MUS 23"
+  },
+  {
+   "id": 43016,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MUS 25"
+  },
+  {
+   "id": 43017,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MUS 27A"
+  },
+  {
+   "id": 43018,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MUS 3A"
+  },
+  {
+   "id": 43019,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MUS 46"
+  },
+  {
+   "id": 43020,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MUS 7P1"
+  },
+  {
+   "id": 43021,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MUS 7W1"
+  },
+  {
+   "id": 43022,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MUS 9A"
+  },
+  {
+   "id": 43023,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "MUS 9C"
+  },
+  {
+   "id": 43024,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "NURS 50"
+  },
+  {
+   "id": 43025,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "NURS 50B"
+  },
+  {
+   "id": 43026,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "NURS 51"
+  },
+  {
+   "id": 43027,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "NURS 53"
+  },
+  {
+   "id": 43028,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "NURS 55"
+  },
+  {
+   "id": 43029,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "NURS 58"
+  },
+  {
+   "id": 43030,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "OCAN 1L"
+  },
+  {
+   "id": 43031,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 174A"
+  },
+  {
+   "id": 43032,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 200B"
+  },
+  {
+   "id": 43033,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 202"
+  },
+  {
+   "id": 43034,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 204B"
+  },
+  {
+   "id": 43035,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 205B"
+  },
+  {
+   "id": 43036,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 206B"
+  },
+  {
+   "id": 43037,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 210B"
+  },
+  {
+   "id": 43038,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 211B"
+  },
+  {
+   "id": 43039,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 212B"
+  },
+  {
+   "id": 43040,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 214B"
+  },
+  {
+   "id": 43041,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 215B"
+  },
+  {
+   "id": 43042,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 216B"
+  },
+  {
+   "id": 43043,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 217B"
+  },
+  {
+   "id": 43044,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 219A"
+  },
+  {
+   "id": 43045,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 219C"
+  },
+  {
+   "id": 43046,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 222"
+  },
+  {
+   "id": 43047,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 225A"
+  },
+  {
+   "id": 43048,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 231A"
+  },
+  {
+   "id": 43049,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 233A"
+  },
+  {
+   "id": 43050,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 235A"
+  },
+  {
+   "id": 43051,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 236A"
+  },
+  {
+   "id": 43052,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 238A"
+  },
+  {
+   "id": 43053,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 240A"
+  },
+  {
+   "id": 43054,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 242A"
+  },
+  {
+   "id": 43055,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 243A"
+  },
+  {
+   "id": 43056,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 252B"
+  },
+  {
+   "id": 43057,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 254"
+  },
+  {
+   "id": 43058,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 255B"
+  },
+  {
+   "id": 43059,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 255D"
+  },
+  {
+   "id": 43060,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 256B"
+  },
+  {
+   "id": 43061,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 258A"
+  },
+  {
+   "id": 43062,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 258C"
+  },
+  {
+   "id": 43063,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 260A"
+  },
+  {
+   "id": 43064,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 271A"
+  },
+  {
+   "id": 43065,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 274A"
+  },
+  {
+   "id": 43066,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 276A"
+  },
+  {
+   "id": 43067,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 28"
+  },
+  {
+   "id": 43068,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 32A"
+  },
+  {
+   "id": 43069,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 42"
+  },
+  {
+   "id": 43070,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 45"
+  },
+  {
+   "id": 43071,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PE 8"
+  },
+  {
+   "id": 43072,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHIL 12A"
+  },
+  {
+   "id": 43073,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHIL 25A"
+  },
+  {
+   "id": 43074,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHIL 4"
+  },
+  {
+   "id": 43075,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHOT 100"
+  },
+  {
+   "id": 43076,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHOT 101D"
+  },
+  {
+   "id": 43077,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHOT 101G"
+  },
+  {
+   "id": 43078,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHOT 101S"
+  },
+  {
+   "id": 43079,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHOT 102B"
+  },
+  {
+   "id": 43080,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHOT 102D"
+  },
+  {
+   "id": 43081,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHOT 130A"
+  },
+  {
+   "id": 43082,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHOT 140"
+  },
+  {
+   "id": 43083,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHOT 40"
+  },
+  {
+   "id": 43084,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHOT 50B"
+  },
+  {
+   "id": 43085,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHOT 52"
+  },
+  {
+   "id": 43086,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHOT 60B"
+  },
+  {
+   "id": 43087,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHOT 80"
+  },
+  {
+   "id": 43088,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHOT 81B"
+  },
+  {
+   "id": 43089,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHOT 81D"
+  },
+  {
+   "id": 43090,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHOT 85A"
+  },
+  {
+   "id": 43091,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHOT 90"
+  },
+  {
+   "id": 43092,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHOT 99"
+  },
+  {
+   "id": 43093,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHST 20"
+  },
+  {
+   "id": 43094,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHST 40"
+  },
+  {
+   "id": 43095,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHST 50"
+  },
+  {
+   "id": 43096,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHTC 102"
+  },
+  {
+   "id": 43097,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHTC 104A"
+  },
+  {
+   "id": 43098,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHYC 10"
+  },
+  {
+   "id": 43099,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHYC 2A"
+  },
+  {
+   "id": 43100,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHYC 2B"
+  },
+  {
+   "id": 43101,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHYC 41"
+  },
+  {
+   "id": 43102,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHYC 4AL"
+  },
+  {
+   "id": 43103,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHYC 4BL"
+  },
+  {
+   "id": 43104,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHYC 4CL"
+  },
+  {
+   "id": 43105,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PHYC 4DL"
+  },
+  {
+   "id": 43106,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PIL 2"
+  },
+  {
+   "id": 43107,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "POLS 15"
+  },
+  {
+   "id": 43108,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "POLS 19"
+  },
+  {
+   "id": 43109,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "POLS 22"
+  },
+  {
+   "id": 43110,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "POLS 4"
+  },
+  {
+   "id": 43111,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "POLS 43"
+  },
+  {
+   "id": 43112,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "POLS 5"
+  },
+  {
+   "id": 43113,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PSYC 10"
+  },
+  {
+   "id": 43114,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PSYC 14"
+  },
+  {
+   "id": 43115,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PSYC 17"
+  },
+  {
+   "id": 43116,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PSYC 2"
+  },
+  {
+   "id": 43117,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PSYC 23"
+  },
+  {
+   "id": 43118,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PSYC 25"
+  },
+  {
+   "id": 43119,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PSYC 32"
+  },
+  {
+   "id": 43120,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PSYC 40"
+  },
+  {
+   "id": 43121,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PSYC 50"
+  },
+  {
+   "id": 43122,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "PSYC C1000"
+  },
+  {
+   "id": 43123,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SC 107A"
+  },
+  {
+   "id": 43124,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SC 108"
+  },
+  {
+   "id": 43125,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SC 110"
+  },
+  {
+   "id": 43126,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SC 120"
+  },
+  {
+   "id": 43127,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SC 145"
+  },
+  {
+   "id": 43128,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SC 17"
+  },
+  {
+   "id": 43129,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SC 51A"
+  },
+  {
+   "id": 43130,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SC 53"
+  },
+  {
+   "id": 43131,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SC 57"
+  },
+  {
+   "id": 43132,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SC 62"
+  },
+  {
+   "id": 43133,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SC 64"
+  },
+  {
+   "id": 43134,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SC 75A"
+  },
+  {
+   "id": 43135,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SC 75C"
+  },
+  {
+   "id": 43136,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SC 75E"
+  },
+  {
+   "id": 43137,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SOC 1"
+  },
+  {
+   "id": 43138,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SOC 120A"
+  },
+  {
+   "id": 43139,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SOC 2"
+  },
+  {
+   "id": 43140,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SOC 25"
+  },
+  {
+   "id": 43141,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SOC 35"
+  },
+  {
+   "id": 43142,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SOC 55"
+  },
+  {
+   "id": 43143,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SPAN 1"
+  },
+  {
+   "id": 43144,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SPAN 10B"
+  },
+  {
+   "id": 43145,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SPAN 10D"
+  },
+  {
+   "id": 43146,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SPAN 1B"
+  },
+  {
+   "id": 43147,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SPAN 22A"
+  },
+  {
+   "id": 43148,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SPAN 22C"
+  },
+  {
+   "id": 43149,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SPAN 2B"
+  },
+  {
+   "id": 43150,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SPAN 31"
+  },
+  {
+   "id": 43151,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SPAN 31B"
+  },
+  {
+   "id": 43152,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SPAN 32A"
+  },
+  {
+   "id": 43153,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SPAN 3A"
+  },
+  {
+   "id": 43154,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SPAN 42"
+  },
+  {
+   "id": 43155,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SPAN 5S"
+  },
+  {
+   "id": 43156,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "SPAN 6B"
+  },
+  {
+   "id": 43157,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "STAT C1000"
+  },
+  {
+   "id": 43158,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "TICU 9540"
+  },
+  {
+   "id": 43159,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "TRST 4600"
+  },
+  {
+   "id": 43160,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VMD 101"
+  },
+  {
+   "id": 43161,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VMD 105"
+  },
+  {
+   "id": 43162,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VMD 112"
+  },
+  {
+   "id": 43163,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VMD 120"
+  },
+  {
+   "id": 43164,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VMD 124A"
+  },
+  {
+   "id": 43165,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VMD 124C"
+  },
+  {
+   "id": 43166,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VMD 130"
+  },
+  {
+   "id": 43167,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VMD 140"
+  },
+  {
+   "id": 43168,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VMD 150"
+  },
+  {
+   "id": 43169,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VMD 152"
+  },
+  {
+   "id": 43170,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VMD 154"
+  },
+  {
+   "id": 43171,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VMD 166"
+  },
+  {
+   "id": 43172,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VMD 170"
+  },
+  {
+   "id": 43173,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VMD 190"
+  },
+  {
+   "id": 43174,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VMD 200A"
+  },
+  {
+   "id": 43175,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VOCN 23"
+  },
+  {
+   "id": 43176,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VOCN 25"
+  },
+  {
+   "id": 43177,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VOCN 51B"
+  },
+  {
+   "id": 43178,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VOCN 51D"
+  },
+  {
+   "id": 43179,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VOCN 52B"
+  },
+  {
+   "id": 43180,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VOCN 53A"
+  },
+  {
+   "id": 43181,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "VOCN 53C"
+  },
+  {
+   "id": 43182,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "WGST 10"
+  },
+  {
+   "id": 43183,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "WGST 25"
+  },
+  {
+   "id": 43184,
+   "kind": "slo",
+   "college": "City College of San Francisco",
+   "course_code": "WGST 54"
+  }
+ ],
+ "rollback": "delete from public.course_outcomes where id in (41769, 41770, 41771, 41772, 41773, 41774, 41775, 41776, 41777, 41778, 41779, 41780, 41781, 41782, 41783, 41784, 41785, 41786, 41787, 41788, 41789, 41790, 41791, 41792, 41793, 41794, 41795, 41796, 41797, 41798, 41799, 41800, 41801, 41802, 41803, 41804, 41805, 41806, 41807, 41808, 41809, 41810, 41811, 41812, 41813, 41814, 41815, 41816, 41817, 41818, 41819, 41820, 41821, 41822, 41823, 41824, 41825, 41826, 41827, 41828, 41829, 41830, 41831, 41832, 41833, 41834, 41835, 41836, 41837, 41838, 41839, 41840, 41841, 41842, 41843, 41844, 41845, 41846, 41847, 41848, 41849, 41850, 41851, 41852, 41853, 41854, 41855, 41856, 41857, 41858, 41859, 41860, 41861, 41862, 41863, 41864, 41865, 41866, 41867, 41868, 41869, 41870, 41871, 41872, 41873, 41874, 41875, 41876, 41877, 41878, 41879, 41880, 41881, 41882, 41883, 41884, 41885, 41886, 41887, 41888, 41889, 41890, 41891, 41892, 41893, 41894, 41895, 41896, 41897, 41898, 41899, 41900, 41901, 41902, 41903, 41904, 41905, 41906, 41907, 41908, 41909, 41910, 41911, 41912, 41913, 41914, 41915, 41916, 41917, 41918, 41919, 41920, 41921, 41922, 41923, 41924, 41925, 41926, 41927, 41928, 41929, 41930, 41931, 41932, 41933, 41934, 41935, 41936, 41937, 41938, 41939, 41940, 41941, 41942, 41943, 41944, 41945, 41946, 41947, 41948, 41949, 41950, 41951, 41952, 41953, 41954, 41955, 41956, 41957, 41958, 41959, 41960, 41961, 41962, 41963, 41964, 41965, 41966, 41967, 41968, 41969, 41970, 41971, 41972, 41973, 41974, 41975, 41976, 41977, 41978, 41979, 41980, 41981, 41982, 41983, 41984, 41985, 41986, 41987, 41988, 41989, 41990, 41991, 41992, 41993, 41994, 41995, 41996, 41997, 41998, 41999, 42000, 42001, 42002, 42003, 42004, 42005, 42006, 42007, 42008, 42009, 42010, 42011, 42012, 42013, 42014, 42015, 42016, 42017, 42018, 42019, 42020, 42021, 42022, 42023, 42024, 42025, 42026, 42027, 42028, 42029, 42030, 42031, 42032, 42033, 42034, 42035, 42036, 42037, 42038, 42039, 42040, 42041, 42042, 42043, 42044, 42045, 42046, 42047, 42048, 42049, 42050, 42051, 42052, 42053, 42054, 42055, 42056, 42057, 42058, 42059, 42060, 42061, 42062, 42063, 42064, 42065, 42066, 42067, 42068, 42069, 42070, 42071, 42072, 42073, 42074, 42075, 42076, 42077, 42078, 42079, 42080, 42081, 42082, 42083, 42084, 42085, 42086, 42087, 42088, 42089, 42090, 42091, 42092, 42093, 42094, 42095, 42096, 42097, 42098, 42099, 42100, 42101, 42102, 42103, 42104, 42105, 42106, 42107, 42108, 42109, 42110, 42111, 42112, 42113, 42114, 42115, 42116, 42117, 42118, 42119, 42120, 42121, 42122, 42123, 42124, 42125, 42126, 42127, 42128, 42129, 42130, 42131, 42132, 42133, 42134, 42135, 42136, 42137, 42138, 42139, 42140, 42141, 42142, 42143, 42144, 42145, 42146, 42147, 42148, 42149, 42150, 42151, 42152, 42153, 42154, 42155, 42156, 42157, 42158, 42159, 42160, 42161, 42162, 42163, 42164, 42165, 42166, 42167, 42168, 42169, 42170, 42171, 42172, 42173, 42174, 42175, 42176, 42177, 42178, 42179, 42180, 42181, 42182, 42183, 42184, 42185, 42186, 42187, 42188, 42189, 42190, 42191, 42192, 42193, 42194, 42195, 42196, 42197, 42198, 42199, 42200, 42201, 42202, 42203, 42204, 42205, 42206, 42207, 42208, 42209, 42210, 42211, 42212, 42213, 42214, 42215, 42216, 42217, 42218, 42219, 42220, 42221, 42222, 42223, 42224, 42225, 42226, 42227, 42228, 42229, 42230, 42231, 42232, 42233, 42234, 42235, 42236, 42237, 42238, 42239, 42240, 42241, 42242, 42243, 42244, 42245, 42246, 42247, 42248, 42249, 42250, 42251, 42252, 42253, 42254, 42255, 42256, 42257, 42258, 42259, 42260, 42261, 42262, 42263, 42264, 42265, 42266, 42267, 42268, 42269, 42270, 42271, 42272, 42273, 42274, 42275, 42276, 42277, 42278, 42279, 42280, 42281, 42282, 42283, 42284, 42285, 42286, 42287, 42288, 42289, 42290, 42291, 42292, 42293, 42294, 42295, 42296, 42297, 42298, 42299, 42300, 42301, 42302, 42303, 42304, 42305, 42306, 42307, 42308, 42309, 42310, 42311, 42312, 42313, 42314, 42315, 42316, 42317, 42318, 42319, 42320, 42321, 42322, 42323, 42324, 42325, 42326, 42327, 42328, 42329, 42330, 42331, 42332, 42333, 42334, 42335, 42336, 42337, 42338, 42339, 42340, 42341, 42342, 42343, 42344, 42345, 42346, 42347, 42348, 42349, 42350, 42351, 42352, 42353, 42354, 42355, 42356, 42357, 42358, 42359, 42360, 42361, 42362, 42363, 42364, 42365, 42366, 42367, 42368, 42369, 42370, 42371, 42372, 42373, 42374, 42375, 42376, 42377, 42378, 42379, 42380, 42381, 42382, 42383, 42384, 42385, 42386, 42387, 42388, 42389, 42390, 42391, 42392, 42393, 42394, 42395, 42396, 42397, 42398, 42399, 42400, 42401, 42402, 42403, 42404, 42405, 42406, 42407, 42408, 42409, 42410, 42411, 42412, 42413, 42414, 42415, 42416, 42417, 42418, 42419, 42420, 42421, 42422, 42423, 42424, 42425, 42426, 42427, 42428, 42429, 42430, 42431, 42432, 42433, 42434, 42435, 42436, 42437, 42438, 42439, 42440, 42441, 42442, 42443, 42444, 42445, 42446, 42447, 42448, 42449, 42450, 42451, 42452, 42453, 42454, 42455, 42456, 42457, 42458, 42459, 42460, 42461, 42462, 42463, 42464, 42465, 42466, 42467, 42468, 42469, 42470, 42471, 42472, 42473, 42474, 42475, 42476, 42477, 42478, 42479, 42480, 42481, 42482, 42483, 42484, 42485, 42486, 42487, 42488, 42489, 42490, 42491, 42492, 42493, 42494, 42495, 42496, 42497, 42498, 42499, 42500, 42501, 42502, 42503, 42504, 42505, 42506, 42507, 42508, 42509, 42510, 42511, 42512, 42513, 42514, 42515, 42516, 42517, 42518, 42519, 42520, 42521, 42522, 42523, 42524, 42525, 42526, 42527, 42528, 42529, 42530, 42531, 42532, 42533, 42534, 42535, 42536, 42537, 42538, 42539, 42540, 42541, 42542, 42543, 42544, 42545, 42546, 42547, 42548, 42549, 42550, 42551, 42552, 42553, 42554, 42555, 42556, 42557, 42558, 42559, 42560, 42561, 42562, 42563, 42564, 42565, 42566, 42567, 42568, 42569, 42570, 42571, 42572, 42573, 42574, 42575, 42576, 42577, 42578, 42579, 42580, 42581, 42582, 42583, 42584, 42585, 42586, 42587, 42588, 42589, 42590, 42591, 42592, 42593, 42594, 42595, 42596, 42597, 42598, 42599, 42600, 42601, 42602, 42603, 42604, 42605, 42606, 42607, 42608, 42609, 42610, 42611, 42612, 42613, 42614, 42615, 42616, 42617, 42618, 42619, 42620, 42621, 42622, 42623, 42624, 42625, 42626, 42627, 42628, 42629, 42630, 42631, 42632, 42633, 42634, 42635, 42636, 42637, 42638, 42639, 42640, 42641, 42642, 42643, 42644, 42645, 42646, 42647, 42648, 42649, 42650, 42651, 42652, 42653, 42654, 42655, 42656, 42657, 42658, 42659, 42660, 42661, 42662, 42663, 42664, 42665, 42666, 42667, 42668, 42669, 42670, 42671, 42672, 42673, 42674, 42675, 42676, 42677, 42678, 42679, 42680, 42681, 42682, 42683, 42684, 42685, 42686, 42687, 42688, 42689, 42690, 42691, 42692, 42693, 42694, 42695, 42696, 42697, 42698, 42699, 42700, 42701, 42702, 42703, 42704, 42705, 42706, 42707, 42708, 42709, 42710, 42711, 42712, 42713, 42714, 42715, 42716, 42717, 42718, 42719, 42720, 42721, 42722, 42723, 42724, 42725, 42726, 42727, 42728, 42729, 42730, 42731, 42732, 42733, 42734, 42735, 42736, 42737, 42738, 42739, 42740, 42741, 42742, 42743, 42744, 42745, 42746, 42747, 42748, 42749, 42750, 42751, 42752, 42753, 42754, 42755, 42756, 42757, 42758, 42759, 42760, 42761, 42762, 42763, 42764, 42765, 42766, 42767, 42768, 42769, 42770, 42771, 42772, 42773, 42774, 42775, 42776, 42777, 42778, 42779, 42780, 42781, 42782, 42783, 42784, 42785, 42786, 42787, 42788, 42789, 42790, 42791, 42792, 42793, 42794, 42795, 42796, 42797, 42798, 42799, 42800, 42801, 42802, 42803, 42804, 42805, 42806, 42807, 42808, 42809, 42810, 42811, 42812, 42813, 42814, 42815, 42816, 42817, 42818, 42819, 42820, 42821, 42822, 42823, 42824, 42825, 42826, 42827, 42828, 42829, 42830, 42831, 42832, 42833, 42834, 42835, 42836, 42837, 42838, 42839, 42840, 42841, 42842, 42843, 42844, 42845, 42846, 42847, 42848, 42849, 42850, 42851, 42852, 42853, 42854, 42855, 42856, 42857, 42858, 42859, 42860, 42861, 42862, 42863, 42864, 42865, 42866, 42867, 42868, 42869, 42870, 42871, 42872, 42873, 42874, 42875, 42876, 42877, 42878, 42879, 42880, 42881, 42882, 42883, 42884, 42885, 42886, 42887, 42888, 42889, 42890, 42891, 42892, 42893, 42894, 42895, 42896, 42897, 42898, 42899, 42900, 42901, 42902, 42903, 42904, 42905, 42906, 42907, 42908, 42909, 42910, 42911, 42912, 42913, 42914, 42915, 42916, 42917, 42918, 42919, 42920, 42921, 42922, 42923, 42924, 42925, 42926, 42927, 42928, 42929, 42930, 42931, 42932, 42933, 42934, 42935, 42936, 42937, 42938, 42939, 42940, 42941, 42942, 42943, 42944, 42945, 42946, 42947, 42948, 42949, 42950, 42951, 42952, 42953, 42954, 42955, 42956, 42957, 42958, 42959, 42960, 42961, 42962, 42963, 42964, 42965, 42966, 42967, 42968, 42969, 42970, 42971, 42972, 42973, 42974, 42975, 42976, 42977, 42978, 42979, 42980, 42981, 42982, 42983, 42984, 42985, 42986, 42987, 42988, 42989, 42990, 42991, 42992, 42993, 42994, 42995, 42996, 42997, 42998, 42999, 43000, 43001, 43002, 43003, 43004, 43005, 43006, 43007, 43008, 43009, 43010, 43011, 43012, 43013, 43014, 43015, 43016, 43017, 43018, 43019, 43020, 43021, 43022, 43023, 43024, 43025, 43026, 43027, 43028, 43029, 43030, 43031, 43032, 43033, 43034, 43035, 43036, 43037, 43038, 43039, 43040, 43041, 43042, 43043, 43044, 43045, 43046, 43047, 43048, 43049, 43050, 43051, 43052, 43053, 43054, 43055, 43056, 43057, 43058, 43059, 43060, 43061, 43062, 43063, 43064, 43065, 43066, 43067, 43068, 43069, 43070, 43071, 43072, 43073, 43074, 43075, 43076, 43077, 43078, 43079, 43080, 43081, 43082, 43083, 43084, 43085, 43086, 43087, 43088, 43089, 43090, 43091, 43092, 43093, 43094, 43095, 43096, 43097, 43098, 43099, 43100, 43101, 43102, 43103, 43104, 43105, 43106, 43107, 43108, 43109, 43110, 43111, 43112, 43113, 43114, 43115, 43116, 43117, 43118, 43119, 43120, 43121, 43122, 43123, 43124, 43125, 43126, 43127, 43128, 43129, 43130, 43131, 43132, 43133, 43134, 43135, 43136, 43137, 43138, 43139, 43140, 43141, 43142, 43143, 43144, 43145, 43146, 43147, 43148, 43149, 43150, 43151, 43152, 43153, 43154, 43155, 43156, 43157, 43158, 43159, 43160, 43161, 43162, 43163, 43164, 43165, 43166, 43167, 43168, 43169, 43170, 43171, 43172, 43173, 43174, 43175, 43176, 43177, 43178, 43179, 43180, 43181, 43182, 43183, 43184);",
+ "rollback_by_key_if_error": null,
+ "rollback_note": "rollback deletes the ids the responses named. rollback_by_key_if_error is filed only when error is set: a batch may have committed without its response. It takes every row of the sent kinds and (college, read_run) pairs, including any an earlier load of the same read inserted."
+}

@@ -1,0 +1,755 @@
+{
+ "college": "San Diego College of Continuing Education",
+ "run": "44739577102",
+ "written": "2026-11-20T13:32:50Z",
+ "rule": "a checked live row restores, or is held where the base files none; then own program (a heading sharing a title word, or a generic heading on a page the address or the capture shows is the program's own; then heading_award_check), where a failing re-read is restored, or held where the base files none or the live row already holds this run; then a live row holding this run keeps its record and names no dispatch; then a supplied live run other than the filed record's is held for a person; then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one (d-reread-keep-the-better-s683; COBIx on #3544 and #3547)",
+ "checked": [],
+ "live_runs": {
+  "24081": "39035224783",
+  "24143": "39035224783",
+  "24148": "39035224783",
+  "24237": "39035224783",
+  "24241": "39035224783",
+  "24279": "39035224783",
+  "24332": "39035224783",
+  "24333": "39035224783",
+  "24419": "39035224783",
+  "30772": "39035224783",
+  "30773": "39035224783",
+  "30789": "39035224783",
+  "30790": "39035224783",
+  "31483": "39035224783",
+  "31484": "39035224783",
+  "31486": "39035224783",
+  "31487": "39035224783",
+  "32671": "39035224783",
+  "33135": "39035224783",
+  "33136": "39035224783",
+  "33403": "39035224783",
+  "33783": "39035224783",
+  "33867": "39035224783",
+  "33869": "39035224783",
+  "35139": "39035224783",
+  "35841": "39035224783",
+  "35966": "39035224783",
+  "35967": "39035224783",
+  "35968": "39035224783",
+  "36588": "39035224783",
+  "36887": "39035224783",
+  "36895": "39035224783",
+  "36896": "39035224783",
+  "37546": "39035224783",
+  "37828": "39035224783",
+  "38005": "39035224783",
+  "38693": "39035224783",
+  "38694": "39035224783",
+  "38695": "39035224783",
+  "38720": "39035224783",
+  "39186": "39035224783",
+  "39187": "39035224783",
+  "39640": "39035224783",
+  "39700": "39035224783",
+  "39924": "39035224783",
+  "39925": "39035224783",
+  "39926": "39035224783",
+  "39928": "39035224783",
+  "39929": "39035224783",
+  "39930": "39035224783",
+  "39936": "39035224783",
+  "40120": "39035224783",
+  "40123": "39035224783",
+  "40469": "39035224783",
+  "40470": "39035224783",
+  "40471": "39035224783",
+  "40472": "39035224783",
+  "40474": "39035224783",
+  "40475": "39035224783",
+  "40517": "39035224783",
+  "41451": "39035224783",
+  "41468": "39035224783",
+  "41595": "39035224783",
+  "41623": "39035224783",
+  "41626": "39035224783",
+  "42016": "39035224783",
+  "42155": "39035224783",
+  "42360": "39035224783",
+  "42646": "39035224783",
+  "44332": "39035224783",
+  "44333": "39035224783",
+  "44334": "39035224783",
+  "44335": "39035224783",
+  "44337": "39035224783",
+  "44338": "39035224783",
+  "44339": "39035224783",
+  "44340": "39035224783",
+  "45374": "39035224783",
+  "45439": "39035224783",
+  "45440": "39035224783",
+  "45441": "39035224783",
+  "45442": "39035224783",
+  "45443": "39035224783",
+  "45444": "39035224783",
+  "46209": "39035224783",
+  "46210": "39035224783",
+  "46211": "39035224783",
+  "46212": "39035224783",
+  "46213": "39035224783",
+  "46214": "39035224783"
+ },
+ "live_read_at": "2026-11-20T13:31:46Z",
+ "load_skips": [
+  {
+   "control_number": "38411",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40532",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "dispatch": [
+  {
+   "workflow": "program-requirements-college.yml",
+   "ref": "claude/s690-wave-reread",
+   "inputs": {
+    "college": "San Diego College of Continuing Education",
+    "step": "reread",
+    "force": "44739577102"
+   },
+   "posts": 15,
+   "control_numbers": [
+    "31482",
+    "38411",
+    "38412",
+    "39700",
+    "39927",
+    "40118",
+    "40119",
+    "40120",
+    "40516",
+    "40532",
+    "41626",
+    "42361",
+    "42646",
+    "44336",
+    "45444"
+   ],
+   "not_live_at_run": [
+    "39700",
+    "40120",
+    "41626",
+    "42646",
+    "45444"
+   ]
+  },
+  {
+   "workflow": "program-requirements-college.yml",
+   "ref": "claude/s690-wave-reread",
+   "inputs": {
+    "college": "San Diego College of Continuing Education",
+    "step": "load"
+   },
+   "posts": 8,
+   "control_numbers": [
+    "31482",
+    "38412",
+    "39927",
+    "40118",
+    "40119",
+    "40516",
+    "42361",
+    "44336"
+   ],
+   "needs_load": [
+    "31482",
+    "38412",
+    "39927",
+    "40118",
+    "40119",
+    "40516",
+    "42361",
+    "44336"
+   ],
+   "load_skips": [
+    {
+     "control_number": "38411",
+     "why": "places none of its listed courses (another program's page)"
+    },
+    {
+     "control_number": "40532",
+     "why": "places none of its listed courses (another program's page)"
+    }
+   ]
+  }
+ ],
+ "carried_runs": {},
+ "counts": {
+  "reread": 15,
+  "kept": 15,
+  "restored": 0,
+  "restored_filed_pass": 0,
+  "restored_not_own_program": 0,
+  "held_for_person": 0,
+  "held_checked": 0,
+  "held_live_run": 0,
+  "new": 0,
+  "already_live": 0,
+  "kept_on_own_page": 0,
+  "plain_reread_would_lose_pass": 0,
+  "kept_by_extraction_guard": 0,
+  "run_places_none_after": 2,
+  "folder_places_none_after": 2,
+  "records_after": 100,
+  "dropped_by_filing": 9,
+  "dropped_filed_passes": 0
+ },
+ "runs": {
+  "44739577102": {
+   "base": "origin/main",
+   "base_sha": "9fc88a0729b949448d99630192c3759bb195e965",
+   "decided": "2026-11-20T13:32:50Z",
+   "counts": {
+    "reread": 15,
+    "kept": 15,
+    "restored": 0,
+    "restored_filed_pass": 0,
+    "restored_not_own_program": 0,
+    "held_for_person": 0,
+    "held_checked": 0,
+    "held_live_run": 0,
+    "new": 0,
+    "already_live": 0,
+    "kept_on_own_page": 0,
+    "plain_reread_would_lose_pass": 0,
+    "kept_by_extraction_guard": 0,
+    "run_places_none_after": 2,
+    "folder_places_none_after": 2,
+    "records_after": 100,
+    "dropped_by_filing": 9,
+    "dropped_filed_passes": 0
+   },
+   "kept_by_extraction_guard": {},
+   "next_read_pays": [],
+   "dropped_by_filing": [
+    {
+     "control_number": "24101",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "24236",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "24238",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "24306",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "24313",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "33750",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "35140",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "35838",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "39774",
+     "filed_passes_live": false
+    }
+   ],
+   "programs": [
+    {
+     "control_number": "31482",
+     "title": "Electronic Technician Program",
+     "award": null,
+     "source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=78",
+     "filed_source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=25",
+     "filed_run": "39035224783",
+     "reread": {
+      "pass": true,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 2,
+      "listed": 2,
+      "arithmetic": "unstated_pass"
+     },
+     "live_run": null,
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 2,
+      "arithmetic": "unstated_pass"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "38411",
+     "title": "Visual and Vector Design",
+     "award": "Noncredit program",
+     "source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=57",
+     "filed_source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=27",
+     "filed_run": "39035224783",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 2,
+      "arithmetic": "unstated_pass"
+     },
+     "live_run": null,
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 2,
+      "arithmetic": "unstated_pass"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "38412",
+     "title": "Digital Design",
+     "award": "Noncredit program",
+     "source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=58",
+     "filed_source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=27",
+     "filed_run": "39035224783",
+     "reread": {
+      "pass": true,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 4,
+      "listed": 4,
+      "arithmetic": "unstated_pass"
+     },
+     "live_run": null,
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 4,
+      "arithmetic": "unstated_pass"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "39700",
+     "title": "AWS Cloud Solutions",
+     "award": "Noncredit program",
+     "source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=74",
+     "filed_source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=73",
+     "filed_run": "39035224783",
+     "reread": {
+      "pass": true,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 2,
+      "listed": 2,
+      "arithmetic": "unstated_pass"
+     },
+     "live_run": "39035224783",
+     "filed": {
+      "pass": true,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 2,
+      "listed": 2,
+      "arithmetic": "unstated_pass"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "39927",
+     "title": "Early Learner Enrichment",
+     "award": "Noncredit program",
+     "source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=50",
+     "filed_source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=26",
+     "filed_run": "39035224783",
+     "reread": {
+      "pass": true,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 2,
+      "listed": 2,
+      "arithmetic": "unstated_pass"
+     },
+     "live_run": null,
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 2,
+      "arithmetic": "unstated_pass"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "40118",
+     "title": "Baking and Pastry Arts I",
+     "award": "Noncredit program",
+     "source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=71",
+     "filed_source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=29",
+     "filed_run": "39035224783",
+     "reread": {
+      "pass": true,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 2,
+      "listed": 2,
+      "arithmetic": "unstated_pass"
+     },
+     "live_run": null,
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 2,
+      "arithmetic": "unstated_pass"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "40119",
+     "title": "Baking and Pastry Arts II",
+     "award": "Noncredit program",
+     "source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=71",
+     "filed_source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=29",
+     "filed_run": "39035224783",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 2,
+      "listed": 2,
+      "arithmetic": "unstated_fail"
+     },
+     "live_run": null,
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 2,
+      "arithmetic": "unstated_pass"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.coverage.pass and the filed record does not"
+    },
+    {
+     "control_number": "40120",
+     "title": "Culinary Nutrition",
+     "award": "Noncredit program",
+     "source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=72",
+     "filed_source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=73",
+     "filed_run": "39035224783",
+     "reread": {
+      "pass": true,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 2,
+      "listed": 2,
+      "arithmetic": "unstated_pass"
+     },
+     "live_run": "39035224783",
+     "filed": {
+      "pass": true,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 2,
+      "listed": 2,
+      "arithmetic": "unstated_pass"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "40516",
+     "title": "Advanced Project Management",
+     "award": "Noncredit program",
+     "source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=47",
+     "filed_source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=90",
+     "filed_run": "39035224783",
+     "reread": {
+      "pass": true,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 3,
+      "listed": 3,
+      "arithmetic": "unstated_pass"
+     },
+     "live_run": null,
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 3,
+      "arithmetic": "unstated_pass"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "40532",
+     "title": "Intermediate Low Prevocational ESL",
+     "award": "Noncredit program",
+     "source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=66",
+     "filed_source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=113",
+     "filed_run": "39035224783",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 2,
+      "arithmetic": "unstated_pass"
+     },
+     "live_run": null,
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 2,
+      "arithmetic": "unstated_pass"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "41626",
+     "title": "Full Stack Web Developer",
+     "award": "Noncredit program",
+     "source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=59",
+     "filed_source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=60",
+     "filed_run": "39035224783",
+     "reread": {
+      "pass": true,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 4,
+      "listed": 4,
+      "arithmetic": "unstated_pass"
+     },
+     "live_run": "39035224783",
+     "filed": {
+      "pass": true,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 4,
+      "listed": 4,
+      "arithmetic": "unstated_pass"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "42361",
+     "title": "Instructional Aide",
+     "award": "Noncredit program",
+     "source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=51",
+     "filed_source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=120",
+     "filed_run": "39035224783",
+     "reread": {
+      "pass": true,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 2,
+      "listed": 2,
+      "arithmetic": "unstated_pass"
+     },
+     "live_run": null,
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 2,
+      "arithmetic": "unstated_pass"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "42646",
+     "title": "Digital Photography",
+     "award": "Noncredit program",
+     "source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=58",
+     "filed_source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=59",
+     "filed_run": "39035224783",
+     "reread": {
+      "pass": true,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 3,
+      "listed": 3,
+      "arithmetic": "unstated_pass"
+     },
+     "live_run": "39035224783",
+     "filed": {
+      "pass": true,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 3,
+      "listed": 3,
+      "arithmetic": "unstated_pass"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "44336",
+     "title": "Sewn Product Construction Essentials",
+     "award": "Noncredit program",
+     "source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=56",
+     "filed_source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=29",
+     "filed_run": "39035224783",
+     "reread": {
+      "pass": true,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 2,
+      "listed": 2,
+      "arithmetic": "unstated_pass"
+     },
+     "live_run": null,
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 2,
+      "arithmetic": "unstated_pass"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "45444",
+     "title": "Google for Business",
+     "award": "Noncredit program",
+     "source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=48",
+     "filed_source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=49",
+     "filed_run": "39035224783",
+     "reread": {
+      "pass": true,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 2,
+      "listed": 2,
+      "arithmetic": "unstated_pass"
+     },
+     "live_run": "39035224783",
+     "filed": {
+      "pass": true,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 2,
+      "listed": 2,
+      "arithmetic": "unstated_pass"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    }
+   ]
+  }
+ }
+}

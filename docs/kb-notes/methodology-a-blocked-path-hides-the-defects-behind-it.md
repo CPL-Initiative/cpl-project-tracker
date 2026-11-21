@@ -1,7 +1,7 @@
 ---
 title: A blocked path hides every defect behind it — budget for a chain, not a fix
 created: 2026-08-24
-updated: 2026-08-24
+updated: 2026-11-20
 tags: [methodology, curation, ccr, skyview, testing, verification]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -85,6 +85,17 @@ Two counts came out of the payload work and both are consumer-facing, not trivia
   surfaces an over-merged course on every card claiming it. The write is one row
   per control number, so a move is a **global** statement and the course must
   leave *every* card it was showing on, not the one on screen.
+
+## A CI job is a blocked path too (S692, 2026-11-20)
+
+A job whose steps run in order stops at its first failure, so every step after it is a path nobody has walked for
+this change. The hand-over PR (#3608) failed `lints` on the Pages allowlist; with that fixed it failed again nine
+minutes later, 200 steps on, on the single browser installer. Each fix cost a full CI cycle to find the next.
+
+What works: after a job fails at step N, read the workflow, write each later step's `run` block to its own file, and
+run them locally as real scripts before the next push (flattening a multi-line step onto one line breaks its
+`if ... then`, and reports a failure that is the flattening's own). The 17 steps after the second failure ran in a
+few minutes and passed, so the third push was the last. The budget is a chain, here as in the code path above.
 
 ## When this applies
 

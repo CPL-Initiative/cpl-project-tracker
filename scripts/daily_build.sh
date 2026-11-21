@@ -303,6 +303,33 @@ python3 kb/_build_inactive_cards.py || echo "::warning title=Course flags::kb/_b
 python3 kb/_build_not_applicable.py || echo "::warning title=Course flags::kb/_build_not_applicable.py failed; the prior file stands."
 STEP
 
+# ── The Courses List's closest M-ID and its exhibit links (S694, Sam and COBIx, 2026-11-20) ──
+# kb/coci_closest_mid.json: the closest M-ID for each course in the Needs an M-ID pile and the exhibit
+# links each one carries, which order the pile. After the pipeline (unified_courses_members.js) and the
+# course flags (kb/coci_not_applicable.json). --if-changed: no rebuild when no input changed (~22 s when
+# one did). Display only, so a failure warns and yesterday's file stands.
+step "Build the closest M-ID for the Needs an M-ID pile" <<'STEP'
+python3 kb/_closest_mid.py --if-changed || { git checkout -- kb/coci_closest_mid.json 2>/dev/null || true; echo "::warning title=Closest M-ID not rebuilt::kb/_closest_mid.py failed; the Courses List reads yesterday's kb/coci_closest_mid.json."; }
+STEP
+
+# ── The Commons Subjects card: local subject titles, then the codes the pile mint holds on (S695, 2026-11-21) ──
+# kb/status/local_subject_titles.json: each college's local subject codes, its printed catalog beside the state list
+# (coci_lookup_data.js), with the common subject code from the subject map. Read by the Subjects card and by the held
+# list below. --if-changed: no write when its fingerprint (the content less _sources, whose state list stamp moves
+# on its own) matches (~1 s). Display only, so a failure warns and yesterday's file stands.
+step "Build the Subjects card's local subject titles" <<'STEP'
+python3 kb/_build_local_subject_titles.py --if-changed || { git checkout -- kb/status/local_subject_titles.json 2>/dev/null || true; echo "::warning title=Local subject titles not rebuilt::kb/_build_local_subject_titles.py failed; the Commons Subjects card reads yesterday's kb/status/local_subject_titles.json."; }
+STEP
+
+# kb/status/held_subject_codes.json (#commons/subjects/held): the pile mint dry run's held list, computed in memory
+# (nothing is written under kb/pile_mint_out/), grouped by local subject code. After the closest M-ID
+# (kb/coci_closest_mid.json), the course flags, the identity file and the titles above, all of which the dry run
+# reads. --if-changed: no write when the list's fingerprint (the content less _sources, whose plan date moves daily)
+# matches (~7 s). Display only, so a failure warns and yesterday's file stands.
+step "Build the codes the pile mint holds on" <<'STEP'
+python3 kb/_held_subject_codes.py --if-changed || { git checkout -- kb/status/held_subject_codes.json 2>/dev/null || true; echo "::warning title=Held subject codes not rebuilt::kb/_held_subject_codes.py failed; #commons/subjects/held reads yesterday's kb/status/held_subject_codes.json."; }
+STEP
+
 # ── Step 4b: Re-run row Trust-Card auditor ────────────────────
 # Read-only over kb/coci_*.json; writes kb/row_audit/{latest.json,
 # <date>.md} that the UCL "⚠ hinky" badge consumes. See CLAUDE.md §11.
@@ -312,12 +339,12 @@ step "Run row Trust-Card auditor" <<'STEP'
 python3 kb/_row_audit.py || echo "Auditor failed — UCL hinky chips will use prior latest.json"
 STEP
 
-# ── Step 4b1: Keep the newest 14 row audit reports (#3476 Part 4 step 5) ──
-# After the day's report is written: each dated report past the newest 14 goes to the
+# ── Step 4b1: Store the row audit reports (#3476 Part 4 step 5; the newest 14 stayed until S695) ──
+# After the day's report is written: each dated report, the day's own included, goes to the
 # private bucket cpl-receipts (row_audit/) and leaves the tree only once its entry in
 # kb/receipts/index/ names its sha256. latest.json always stays. Never fails the run: a
 # failed upload or read-back leaves the files where they are and the log says so.
-step "Keep the newest 14 row audit reports" SUPABASE_SERVICE_KEY <<'STEP'
+step "Store the row audit reports" SUPABASE_SERVICE_KEY <<'STEP'
 # --budget-seconds bounds every bucket call (one try, timeout within what is left); `timeout 200`
 # stops the process outright if a call trickles past its socket timeout.
 timeout 200 python3 kb/_row_audit_prune.py --max-store 3 --budget-seconds 180 \
