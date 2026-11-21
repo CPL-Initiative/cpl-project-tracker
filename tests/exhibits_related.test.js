@@ -104,7 +104,7 @@ function byText(d, sel, t) { return Array.from(d.querySelectorAll(sel)).find(fun
 function stepTile(d, label) { return Array.from(d.querySelectorAll(".exh-step")).find(function (b) { return txt(b.querySelector(".exh-sl")) === label; }); }
 function writes(t) { return t.calls.filter(function (c) { return c.method === "POST" && /kb_curation/.test(c.url); }); }
 function rowsOf(t) { return writes(t).reduce(function (a, c) { return a.concat(c.body); }, []); }
-function panel(d) { return d.querySelector("aside.exh-rel"); }
+function panel(d) { return d.querySelector("aside.exh-rel:not(.exh-cdsum)"); }
 function panelTitles(d) { return Array.from(panel(d).querySelectorAll(".exh-rel-t")).map(txt); }
 function item(d, title) { return Array.from(panel(d).querySelectorAll(".exh-rel-list li")).find(function (li) { return txt(li.querySelector(".exh-rel-t")) === title; }); }
 
@@ -164,7 +164,8 @@ function item(d, title) { return Array.from(panel(d).querySelectorAll(".exh-rel-
     t.d.getElementById("exh-title").value === "Diesel Engines (ASE T2)" && t.d.getElementById("exh-issuer").value === ASE);
   names = panelTitles(t.d);
   check("its panel leads with the same test", names[0] === "ASE T2 — Diesel Engines");
-  item(t.d, "ASE T2 — Diesel Engines").querySelector("button").click(); await settle();
+  // The title is a button of its own since 2026-11-21 (it opens the title's details), so the word is found by name.
+  Array.from(item(t.d, "ASE T2 — Diesel Engines").querySelectorAll("button")).find(function (b) { return txt(b) === "Use this title"; }).click(); await settle();
   check("Use this title fills a Review card's title and issuer too",
     t.d.getElementById("exh-title").value === "ASE T2 — Diesel Engines" && t.d.getElementById("exh-issuer").value === ASE);
   const box = t.d.getElementById("exh-title");

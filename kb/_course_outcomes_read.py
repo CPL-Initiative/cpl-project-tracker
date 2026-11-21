@@ -910,21 +910,64 @@ def strip_page_files(root: str = OUT_DIR) -> list[str]:
 CCSF_RECALL = os.path.join(HERE, "course_outcomes", "ccsf_recall.json")
 RIO_HONDO_RECALL = os.path.join(HERE, "course_outcomes", "rio_hondo_recall.json")
 SADDLEBACK_RECALL = os.path.join(HERE, "course_outcomes", "saddleback_recall.json")
+IRVINE_VALLEY_RECALL = os.path.join(HERE, "course_outcomes", "irvine_valley_recall.json")
+# A host's recall file, or, where one host holds two colleges' outlines, each college's own file by its slug. Irvine
+# Valley's outlines sit on Saddleback's host, printed by another report (198, Official Course Outline of Record, where
+# Saddleback's is 201), so each college's count opens a read for that college alone (S697).
 RECALL_BY_HOST = {"ccsf.curricunet.com": CCSF_RECALL, "riohondo.curriqunet.com": RIO_HONDO_RECALL,
-                  "saddleback.curriqunet.com": SADDLEBACK_RECALL}
+                  "saddleback.curriqunet.com": {"saddleback": SADDLEBACK_RECALL,
+                                                "irvine_valley": IRVINE_VALLEY_RECALL}}
 
 
-def recall_for(host: str, slugs: str) -> dict:
-    """The self-recall gate for a full read at an outcomes-only host: rows_recall on the host's file, refused when
-    no file is recorded or the file's slugs name another college than the read's. Saddleback's host holds Irvine
-    Valley's outlines too, printed by another report, so Saddleback's count never opens a read for Irvine Valley."""
-    recall = RECALL_BY_HOST.get((host or "").lower())
+def recall_path(host: str, slugs: str | None = None) -> str | None:
+    """The recall file a read of these colleges at this host is gated by: the host's one file, or on a shared host the
+    file recorded for exactly these slugs; None when none is recorded."""
+    got = RECALL_BY_HOST.get((host or "").lower())
+    return got.get(slugs or "") if isinstance(got, dict) else got
+
+
+def recall_files() -> list[tuple[str, str]]:
+    """Every (host, recall file) RECALL_BY_HOST records, a shared host once per college."""
+    return [(h, p) for h, v in RECALL_BY_HOST.items() for p in (v.values() if isinstance(v, dict) else [v])]
+
+
+def recall_for(host: str, slugs: str, index: dict | None = None) -> dict:
+    """The self-recall gate for a full read at an outcomes-only host: rows_recall on the file recorded for the host
+    and these colleges, refused when no file is recorded or the file's slugs name another college than the read's.
+    Saddleback's host holds Irvine Valley's outlines too, printed by another report, so Saddleback's count never opens
+    a read for Irvine Valley, nor Irvine Valley's for Saddleback. index: the index the read would take; it must keep
+    the same client and report as the index the counted trial read, since a .run's slugs alone do not bind the pages
+    to the college (Saddleback's index with slugs=irvine_valley would read report 201 pages as Irvine Valley's;
+    second reader on #3642)."""
+    recall = recall_path(host, slugs)
     if not recall:
-        return {"ok": False, "why": "the host has no recall file recorded"}
+        return {"ok": False, "why": "the host has no recall file recorded for %s" % slugs}
     want = json.load(open(recall)) if os.path.exists(recall) else {}
     if want.get("slugs") and want["slugs"] != slugs:
         return {"ok": False, "why": "the host's recall file counts %s, and this read is for %s" % (want["slugs"], slugs)}
-    return rows_recall(recall)
+    if index is not None:
+        why = index_binding_problem(index, want.get("trial"))
+        if why:
+            return {"ok": False, "why": why}
+    return rows_recall(recall, host=(host or "").lower())
+
+
+def index_binding_problem(index: dict, trial: str | None, out_dir: str = OUT_DIR) -> str | None:
+    """Why a read's index differs from the one the counted trial read: its client filter or its report (the title
+    pattern and the checked ids). None when they agree."""
+    path = os.path.join(out_dir, "trial_%s" % trial, "read.json")
+    if not trial or not os.path.exists(path):
+        return "the counted trial %s is not filed, so the read's index cannot be checked against it" % trial
+    named = json.load(open(path)).get("index") or ""
+    counted_path = os.path.join(os.path.dirname(HERE), named)
+    if not named.startswith("kb/course_outline_index/") or not os.path.exists(counted_path):
+        return "the counted trial %s names index %r, which is not committed" % (trial, named)
+    counted = json.load(open(counted_path))
+    for key in ("client", "report_title", "report_ids"):
+        if index.get(key) != counted.get(key):
+            return ("this read's index keeps %s %r, and the counted trial %s read an index that keeps %r (%s)"
+                    % (key, index.get(key), trial, counted.get(key), named))
+    return None
 # The SLO section of a report 28 page, cut by its two printed headings alone, never by the parser's patterns.
 EXCERPT_FROM, EXCERPT_TO, EXCERPT_LINES = "STUDENT LEARNING OUTCOMES", "CONTENTS", 60
 # Each outcomes-only host's two printed headings around its SLO section, as a person read them off the host's own
@@ -934,11 +977,38 @@ EXCERPT_BY_HOST = {"ccsf.curricunet.com": (EXCERPT_FROM, EXCERPT_TO),
                    "riohondo.curriqunet.com": ("IX. Student Learning Outcome", "X. Texts/Instructional Materials:"),
                    # Saddleback's Course Outline (201): its SLOs end where its next Course Content heading starts (a
                    # trailing * marks a heading matched by its opening words; trial 44889396093, S691).
-                   "saddleback.curriqunet.com": ("Student Learning Outcomes", "Course Content*")}
+                   "saddleback.curriqunet.com": ("Student Learning Outcomes", "Course Content*"),
+                   # Irvine Valley's Official Course Outline of Record (198) on the same host: its STUDENT LEARNING
+                   # OUTCOMES section ends at its Required Texts heading (trial 44910471774's section_heads, 12 of 12
+                   # pages; S697).
+                   "saddleback.curriqunet.com/198": ("Student Learning Outcomes", "Required Texts*")}
 # The same for a host whose pages print objectives, so the count by eye covers both kinds the gate compares.
 OBJECTIVES_EXCERPT_BY_HOST = {
     "riohondo.curriqunet.com": ("V. Course Objectives", ("VI. Methods of Instruction:", "VI. Methods of Instruction")),
-    "saddleback.curriqunet.com": ("Course Content - Learning Objectives", "Student Learning Outcomes")}
+    "saddleback.curriqunet.com": ("Course Content - Learning Objectives", "Student Learning Outcomes"),
+    # Irvine Valley's report 198: Learning Objectives, then its Content section (trial 44910471774, 12 of 12; S697).
+    "saddleback.curriqunet.com/198": ("Learning Objectives", "Content*")}
+# A key whose sections run longer than EXCERPT_LINES: report 198 prints each SLO as its own entry with its
+# institutional outcome map under it, and up to 20 objectives a page, a few lines each (trial 44910471774; S697).
+EXCERPT_LINES_BY_KEY = {"saddleback.curriqunet.com/198": 200}
+# Where one host prints two colleges' outlines through different reports, the report its host-keyed pairs were read
+# from. A page from another report there is keyed "<host>/<reportId>" and logs the probe until its own pair is
+# recorded under that key: Saddleback's pairs are its Course Outline's (201), never Irvine Valley's report (S697).
+EXCERPT_REPORT = {"saddleback.curriqunet.com": "201"}
+
+
+def excerpt_key(report_url: str) -> str:
+    """The key a page's heading pairs are recorded under: "<host>/<reportId>" where that key is recorded, or where
+    the host's own pairs belong to another report (EXCERPT_REPORT); else the host."""
+    p = urllib.parse.urlparse(report_url or "")
+    host = p.netloc.lower()
+    rid = (urllib.parse.parse_qs(p.query).get("reportId") or [""])[0]
+    own = "%s/%s" % (host, rid)
+    if own in EXCERPT_BY_HOST or own in OBJECTIVES_EXCERPT_BY_HOST:
+        return own
+    if host in EXCERPT_REPORT and rid != EXCERPT_REPORT[host]:
+        return own
+    return host
 
 
 def slo_excerpt(text: str, host: str = "ccsf.curricunet.com") -> list[str] | None:
@@ -946,23 +1016,24 @@ def slo_excerpt(text: str, host: str = "ccsf.curricunet.com") -> list[str] | Non
     City College of San Francisco's STUDENT LEARNING OUTCOMES and CONTENTS), as printed; None when the host has no
     pair, either heading is missing or the section runs past EXCERPT_LINES, so nothing past the section is shown. A
     person counts the outcomes in it by eye, apart from the parser."""
-    return _excerpt(text, excerpt_pairs(host))
+    return _excerpt(text, excerpt_pairs(host), EXCERPT_LINES_BY_KEY.get((host or "").lower(), EXCERPT_LINES))
 
 
 def objectives_excerpt(text: str, host: str) -> list[str] | None:
     """The page's objectives section between the host's recorded headings (OBJECTIVES_EXCERPT_BY_HOST), as printed;
     None when the host has none recorded or the page prints neither heading."""
-    return _excerpt(text, excerpt_pairs(host, OBJECTIVES_EXCERPT_BY_HOST))
+    return _excerpt(text, excerpt_pairs(host, OBJECTIVES_EXCERPT_BY_HOST),
+                    EXCERPT_LINES_BY_KEY.get((host or "").lower(), EXCERPT_LINES))
 
 
-def _excerpt(text: str, pairs: list) -> list[str] | None:
+def _excerpt(text: str, pairs: list, limit: int = EXCERPT_LINES) -> list[str] | None:
     lines = [ln.rstrip() for ln in (text or "").split("\n")]
     bare = [ln.strip().upper() for ln in lines]
     for first, after in pairs:
         if first not in bare:
             continue
         start = bare.index(first) + 1
-        end = next((i for i in range(start, min(len(bare), start + EXCERPT_LINES + 1))
+        end = next((i for i in range(start, min(len(bare), start + limit + 1))
                     if any(bare[i] == a or (a.endswith("*") and bare[i].startswith(a[:-1])) for a in after)), None)
         return None if end is None else [ln for ln in lines[start:end] if ln.strip()]
     return None
@@ -1036,7 +1107,7 @@ def rows_recall(path: str, out_dir: str = OUT_DIR, host: str | None = None) -> d
     one that parsed outcomes on fewer than half its pages, whatever the counts. host: the gate's host; by default the
     one RECALL_BY_HOST names for path, so a trial of another host's pages never passes this host's gate (#3601)."""
     if host is None:
-        host = next((h for h, p in RECALL_BY_HOST.items() if os.path.abspath(p) == os.path.abspath(path)), None)
+        host = next((h for h, p in recall_files() if os.path.abspath(p) == os.path.abspath(path)), None)
     def refuse(why, pages=0, right=0, wrong=()):
         return {"pages": pages, "right": right, "wrong": list(wrong), "ok": False, "why": why}
     if not os.path.exists(path):
@@ -1046,6 +1117,11 @@ def rows_recall(path: str, out_dir: str = OUT_DIR, host: str | None = None) -> d
     if not os.path.exists(trial):
         return refuse("trial %s is not filed" % want["trial"])
     filed = json.load(open(trial))
+    # A count that names its colleges passes only for a trial of those colleges' pages: on a shared host the host check
+    # below cannot tell Saddleback's trial from Irvine Valley's (S697).
+    if want.get("slugs") and filed.get("slugs") != want["slugs"]:
+        return refuse("trial %s read %s's pages; this count is for %s" % (want["trial"], filed.get("slugs"),
+                                                                          want["slugs"]))
     if filed.get("parser_fingerprint") != parser_fingerprint():
         return refuse("trial %s was filed by parser %s; the current parser is %s: run the trial again and count it"
                       % (want["trial"], filed.get("parser_fingerprint"), parser_fingerprint()))
@@ -1074,7 +1150,9 @@ def rows_recall(path: str, out_dir: str = OUT_DIR, host: str | None = None) -> d
             else:
                 wrong.append((code, count, seen))
     pages = len(want["pages"])
-    parsed = sum(1 for r in filed["rows"] if r.get("status") == 200 and r.get("outcomes"))
+    # A page parsed as groups (SDCCD's colleges, Irvine Valley's untitled entries) files its outcomes in its groups.
+    parsed = sum(1 for r in filed["rows"] if r.get("status") == 200
+                 and (r.get("outcomes") or any(g.get("outcomes") for g in r.get("groups") or [])))
     if 2 * parsed < len(filed["rows"]):
         return refuse("trial %s parsed outcomes on %d of %d pages" % (want["trial"], parsed, len(filed["rows"])),
                       pages, right, wrong)
@@ -1174,7 +1252,7 @@ def main(argv=None) -> int:
     else:
         ap.error("--index FILE or --catalog SLUG (or --reparse FOLDER)")
     if outcomes_only(index["url"]) and not a.trial:
-        rc = recall_for(urllib.parse.urlparse(index["url"]).netloc.lower(), a.slugs)
+        rc = recall_for(urllib.parse.urlparse(index["url"]).netloc.lower(), a.slugs, index)
         if not rc["ok"]:
             raise SystemExit("%s: no full read before the self-recall count passes (%s). Run a trial, count its "
                              "parsed rows by eye into the host's recall file, then python3 "
@@ -1226,7 +1304,7 @@ def main(argv=None) -> int:
                 if outcomes_only(course["report"]):
                     # The SLO section as printed, for a count by eye apart from the parser: in the job's log, never
                     # in a filed page (S690).
-                    where = urllib.parse.urlparse(course["report"]).netloc.lower()
+                    where = excerpt_key(course["report"])
                     text = reader.page.evaluate(FULL_BODY_JS) or ""
                     if excerpt_pairs(where):
                         print(excerpt_log(course["code"], slo_excerpt(text, where), where), flush=True)

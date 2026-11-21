@@ -719,6 +719,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/course_outcomes` | none found | committed by: `course-outcomes-read.yml` |
 | `kb/course_outcomes/*/read_*.json` | scripts: `kb/_build_commons_status.py` | — |
 | `kb/course_outcomes/ccsf_recall.json` | scripts: `kb/_course_outcomes_read.py` | — |
+| `kb/course_outcomes/irvine_valley_recall.json` | scripts: `kb/_course_outcomes_read.py` | — |
 | `kb/course_outcomes/mtsac_recall.json` | scripts: `kb/_course_outcomes_read.py` | — |
 | `kb/course_outcomes/queue.json` | scripts: `kb/_build_commons_data_status.py` | — |
 | `kb/course_outcomes/rio_hondo_recall.json` | scripts: `kb/_course_outcomes_read.py` | — |
@@ -868,6 +869,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/program_requirements_reconcile_out/course_id_rescore_2026-11-15/estimate.json` | scripts: `kb/_course_id_rescore_estimate.py` | scripts: `kb/_course_id_rescore_estimate.py` |
 | `kb/program_requirements_reread_plan_s680.json` | scripts: `kb/_program_named_gaps.py`, `kb/_program_requirements_cheap_piles_s683.py` | — |
 | `kb/program_requirements_wave` | none found | committed by: `program-requirements-wave.yml` |
+| `kb/program_total_differs.json` | scripts: `kb/_program_named_gaps.py` | — |
 | `kb/program_total_not_printed.json` | scripts: `kb/_program_named_gaps.py` | — |
 | `kb/project_lifecycle.json` | scripts: `kb/_load_projects.py` | scripts: `kb/_load_projects.py` · committed by: `daily-dashboard.yml` |
 | `kb/projects_seed_out` | none found | committed by: `projects-seed-apply.yml` |
@@ -1355,6 +1357,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/program_requirements_extract_halt_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_extract_schema_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_extraction_gate_test.py` | workflows: `js-tests.yml` | — |
+| `tests/program_requirements_follow_up_s697_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_fragment_path_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_heading_agreement_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_pdf_numbers_after_test.py` | workflows: `js-tests.yml` | — |
@@ -1363,6 +1366,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/program_requirements_reader_fixes_s697_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_reconcile_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_rulings_2026_11_17_test.py` | workflows: `js-tests.yml` | — |
+| `tests/program_requirements_same_page_recall_s697_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_units_rules_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_wave_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_year_renumbers_test.py` | workflows: `js-tests.yml` | — |
@@ -1682,5 +1686,5 @@ check these BY HAND before trusting an absence:
 - `kb/_row_audit_prune.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 119 Supabase tables · 68 RPCs · 16 edge functions · 1125 file
+Coverage: 119 Supabase tables · 68 RPCs · 16 edge functions · 1129 file
 datasets · 197 external services · 646 consumers · 77 workflows · 41 tabs.

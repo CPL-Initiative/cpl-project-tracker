@@ -563,6 +563,56 @@ _again = NG.run(write=False, gaps=("total_not_printed",))
 check(_again["moved"] == [] and not _again["recall"]["wrong"],
       "a second pass with the gap filter moves nothing (the six already file it) and the recall stays right")
 
+# S697 (piles2): total_differs names only a record kb/program_total_differs.json lists with both of its page's figures,
+# and only while the record reads those two figures exactly; the held answer is the file's alone, so a record that
+# misread a list fails the self-recall instead of taking the gap.
+_td = NG.total_differs_list()
+check(_td and all((e.get("page") or e.get("where")) and e.get("run") and e.get("words") and e.get("evidence")
+                  and NG._differs(e) for e in _td.values()),
+      "every listed program carries its page (or where on a site), run, words and evidence, and two figures that differ")
+_td_sc = {"arithmetic": {"pass": False, "status": "unequal", "against": "program", "computed": [19.0, 19.0],
+                         "stated": [16.0, 16.0]}, "coverage": {"pass": True}, "invented": {"pass": True}}
+_td_rec = {"college": "Clovis Community College", "control_number": "42234", "score": _td_sc}
+check(NG.answer(_td_rec)[0] == "total_differs" and NG.held_answer(_td_rec) == "total_differs",
+      "Clovis 42234, read as the page prints it (19 against 16), takes total_differs")
+check("19" in NG.total_differs(_td_rec) and "16" in NG.total_differs(_td_rec), "the words name both figures")
+_td_mis = dict(_td_rec, score=dict(_td_sc, arithmetic=dict(_td_sc["arithmetic"], computed=[17.0, 19.0])))
+check(NG.total_differs(_td_mis) is None and NG.held_answer(_td_mis) == "total_differs",
+      "a listed record that misread its list takes no gap, and the held answer still names one (a recall miss)")
+check(NG.total_differs(dict(_td_rec, control_number="42235")) is None,
+      "an unlisted record of the same shape takes no total_differs")
+check(NG.total_differs(_td_rec, listed={("Clovis Community College", "42234"):
+                                        {"printed_total": [16, 16], "printed_sum": [16, 16]}}) is None,
+      "an entry whose two figures agree names no gap")
+check(NG.total_differs(dict(_td_rec, score=dict(_td_sc, coverage={"pass": False}))) is None,
+      "a listed record whose coverage fails is not collected under the gap")
+check(NG.ARITH_SCORE["total_differs"] == 50 and "total_differs" in NG.GAPS, "the gap has its sentence and score")
+for (_c, _cn), _e in _td.items():
+    _p = os.path.join(NG.COLLEGE_DIR, {"Clovis Community College": "clovis_community",
+                                       "Glendale Community College": "glendale_community"}[_c], "records", _cn + ".json")
+    with open(_p, encoding="utf-8") as _fh:
+        _f = _json.load(_fh)
+    _bare = dict(_f, score={k: v for k, v in _f["score"].items() if k not in ("gaps", "confidence")})
+    check(NG.answer(_bare) == ("total_differs", NG.total_differs(_bare)) and NG.held_answer(_bare) == "total_differs",
+          "%s %s: the filed record reads its page's two figures and takes total_differs" % (_c, _cn))
+    check([g.get("gap") for g in _f["score"].get("gaps") or []] == ["total_differs"]
+          and _f["score"]["confidence"]["unit_arithmetic"] == 50,
+          "%s %s: the record files the gap and unit arithmetic 50" % (_c, _cn))
+with open(os.path.join(ROOT, "kb", "receipts", "program_requirement_records_named_gaps_2026-11-21_s697p2.json"),
+          encoding="utf-8") as _fh:
+    _p2 = _json.load(_fh)
+_p2_keys = {(r["college"], str(r["control_number"])) for r in _p2["records"]}
+check(_p2["only_gaps"] == ["total_differs"] and _p2_keys == set(_td) and not _p2["recall"]["wrong"]
+      and all(r["after_image"]["checks"].get("gaps") == ["total_differs"]
+              and not (r["before_image"]["checks"] or {}).get("gaps") for r in _p2["records"]),
+      "the s697p2 plan moves exactly the listed programs to total_differs, and none filed a gap before")
+with open(os.path.join(ROOT, "kb", "migrations", "2026-11-21_s697p2_prreq_named_gaps_apply.sql"), encoding="utf-8") as _fh:
+    _p2_cns = set(re.findall(r"^\s*\(\d+, '([^']+)', '(\d{5})', \d+,", _fh.read(), re.M))
+check(_p2_cns == _p2_keys, "the s697p2 guarded UPDATE names exactly the plan's rows (%d)" % len(_p2_cns))
+check(_again["recall"]["by_answer"].get("total_differs") == len(_td),
+      "the self-recall holds every listed program as total_differs (%s of %d)"
+      % (_again["recall"]["by_answer"].get("total_differs"), len(_td)))
+
 if failures:
     for m in failures:
         print("FAIL:", m)

@@ -1,0 +1,2205 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30)",
+ "gaps": {
+  "major_total_differs": "major total differs from catalog",
+  "no_units_printed": "The catalog prints no units for at least one required course.",
+  "no_units_read": "A required course carries no units as read, so the program's units cannot be added.",
+  "no_hours_read": "A required course carries no hours as read, so the program's hours cannot be added.",
+  "catalog_figures_differ": "The catalog's own figures do not add up: each list matches its printed figure, and the lists sum past the program's printed total.",
+  "noncredit_names_only": "Noncredit certificate: the catalog names it but prints no course list.",
+  "total_not_printed": "The catalog prints no total for this program, so its units cannot be checked against one.",
+  "total_differs": "The catalog prints a total for this program that its own printed units do not add to."
+ },
+ "at": "2026-11-21T16:34:54Z",
+ "held_colleges": [
+  "Lassen College",
+  "Cosumnes River College",
+  "Allan Hancock College",
+  "Chabot College",
+  "Santiago Canyon College"
+ ],
+ "only_gaps": [
+  "total_differs"
+ ],
+ "collected": 10,
+ "by_gap": {
+  "total_differs": 10
+ },
+ "recall": {
+  "held": 1843,
+  "right": 1843,
+  "wrong": 0,
+  "by_answer": {
+   "none": 1747,
+   "no_hours_read": 56,
+   "no_units_read": 24,
+   "total_differs": 10,
+   "total_not_printed": 6
+  },
+  "wrong_keys": []
+ },
+ "matcher_recall": {
+  "noncredit": {
+   "held": 22141,
+   "right": 22141,
+   "wrong": 0,
+   "missed": 0
+  },
+  "printed_no_units": {
+   "held": 102527,
+   "right": 101872,
+   "wrong": 655
+  }
+ },
+ "records": [
+  {
+   "college": "Clovis Community College",
+   "control_number": "33493",
+   "award": "A.S. Degree",
+   "extracted_run": "44522071814",
+   "gap": "total_differs",
+   "words": "the catalog prints a total of 31-34.5, and its own figures add to 29.5-33 (PDF p.132; college-page-read run 44914829120)",
+   "confidence": {
+    "unit_arithmetic": 50,
+    "course_list_match": 88,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "path": "kb/program_requirements_college/clovis_community/records/33493.json",
+   "before_image": {
+    "program_title": "Information Systems -- Networking",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=132",
+    "measure": "units",
+    "total_min": 31,
+    "total_max": 34.5,
+    "record": {
+     "program": {
+      "section_heading": "INFORMATION SYSTEMS NETWORKING OPTION (Major #C.693B.AS) ASSOCIATE IN SCIENCE DEGREE",
+      "measure": "units",
+      "total_units": {
+       "min": 31,
+       "max": 34.5
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Operate commonly used computer hardware and office software.",
+       "Identify the categories of software by their purpose and provide examples of each category.",
+       "Plan, design, and write stand-alone computer programs.",
+       "Apply structured logic in analyzing and solving problems.",
+       "Develop a well-designed relational database.",
+       "Create a Web document that contains hyperlinks, graphics, tables and forms.",
+       "Demonstrate a breadth of knowledge of networking its uses in the business environment."
+      ],
+      "careers": [
+       "Information Systems"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required Core Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "BA 5",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BA 10",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "IS 13",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "IS 50A",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "IS 15",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "IS 16",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "IS 18",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "IS 40A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "IS 62",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "IS 63",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "IS 64",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Select one course",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "BA 39",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH C2210",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MATH 103",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "STAT 7",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 14,
+     "listed": 16
+    },
+    "extracted_run": "44522071814"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 14,
+     "listed": 16,
+     "gaps": [
+      "total_differs"
+     ],
+     "confidence": {
+      "unit_arithmetic": 50,
+      "course_list_match": 88,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 1
+  },
+  {
+   "college": "Clovis Community College",
+   "control_number": "35209",
+   "award": "A.A- T Degree",
+   "extracted_run": "39006155986",
+   "gap": "total_differs",
+   "words": "the catalog prints a total of 18-19, and its own figures add to 21-22 (PDF p.181; college-page-read run 44914829120)",
+   "confidence": {
+    "unit_arithmetic": 50,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "path": "kb/program_requirements_college/clovis_community/records/35209.json",
+   "before_image": {
+    "program_title": "Political Science",
+    "award": "A.A- T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=181",
+    "measure": "units",
+    "total_min": 18,
+    "total_max": 19,
+    "record": {
+     "program": {
+      "section_heading": "POLITICAL SCIENCE ASSOCIATE IN ARTS IN POLITICAL SCIENCE TRANSFER DEGREE (MAJOR #C.7450.AA-T)",
+      "measure": "units",
+      "total_units": {
+       "min": 18,
+       "max": 19
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "Cal-GETC",
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Describe the historically significant theories employed within the discipline of political science.",
+       "Interpret and evaluate political events through a critical comparison of local, state, national and international political frameworks and institutions.",
+       "Explain the complex relationship between political culture, diverse political institutions, and patterns of global engagement."
+      ],
+      "careers": [
+       "public administration",
+       "law",
+       "public relations",
+       "lobbying",
+       "political consulting",
+       "crisis management",
+       "journalism",
+       "public policy research",
+       "higher education",
+       "K-12 education"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required Core Courses: Select one course",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "POLS C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "POLS C1000H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "LIST A: Select three courses",
+       "rule": "choose_courses",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "POLS 3",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLS 5",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLS 24",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "STAT C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "BA 23",
+           "units": 4,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "LIST B: Select three courses",
+       "rule": "choose_courses",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ECON C2001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECON C2002",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOG 6",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST 1",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 2",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST C1001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST C1002H",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "HIST 20",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 32",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOCI 1B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOCI 2",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 14,
+     "listed": 14
+    },
+    "extracted_run": "39006155986"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 14,
+     "listed": 14,
+     "gaps": [
+      "total_differs"
+     ],
+     "confidence": {
+      "unit_arithmetic": 50,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 2
+  },
+  {
+   "college": "Clovis Community College",
+   "control_number": "37352",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "39006155986",
+   "gap": "total_differs",
+   "words": "the catalog prints a total of 24-25, and its own figures add to 21-22 (PDF p.141; college-page-read run 44914829120)",
+   "confidence": {
+    "unit_arithmetic": 50,
+    "course_list_match": 80,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "path": "kb/program_requirements_college/clovis_community/records/37352.json",
+   "before_image": {
+    "program_title": "Medical Office Administration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=141",
+    "measure": "units",
+    "total_min": 24,
+    "total_max": 25,
+    "record": {
+     "program": {
+      "section_heading": "MEDICAL OFFICE ADMINISTRATION (MAJOR #C.4502.CA) CERTIFICATE OF ACHIEVEMENT",
+      "measure": "units",
+      "total_units": {
+       "min": 24,
+       "max": 25
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Students will be able to demonstrate skills to work in a front office at a health care facility."
+      ],
+      "careers": [
+       "Medical Office Administrators"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required Core Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "BIOL 5",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "COMM 10",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "HCA 5",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "IS 15",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HCA 103",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HCA 104",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "OT 10",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "OT 17",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 8,
+     "listed": 10
+    },
+    "extracted_run": "39006155986"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 8,
+     "listed": 10,
+     "gaps": [
+      "total_differs"
+     ],
+     "confidence": {
+      "unit_arithmetic": 50,
+      "course_list_match": 80,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 3
+  },
+  {
+   "college": "Clovis Community College",
+   "control_number": "42234",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "44522071814",
+   "gap": "total_differs",
+   "words": "the catalog prints a total of 16, and its own figures add to 19 (PDF pp.121-122; college-page-read run 44883047940)",
+   "confidence": {
+    "unit_arithmetic": 50,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "path": "kb/program_requirements_college/clovis_community/records/42234.json",
+   "before_image": {
+    "program_title": "Elementary Teacher Level 2",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=121",
+    "measure": "units",
+    "total_min": 16,
+    "total_max": 16,
+    "record": {
+     "program": {
+      "section_heading": "ELEMENTARY TEACHER LEVEL 2 (Major #C.589B.CA) CERTIFICATE OF ACHIEVEMENT",
+      "measure": "units",
+      "total_units": {
+       "min": 16,
+       "max": 16
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [],
+      "careers": [
+       "teacher assistants",
+       "instructional aides",
+       "afterschool program teachers",
+       "tutors"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required Core Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "LING 11",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOL 9",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL C1001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL C1001H",
+           "units": 3,
+           "catalog_addition": false
+          },
+          {
+           "code": "PHIL 2",
+           "units": 3,
+           "catalog_addition": false
+          },
+          {
+           "code": "COMM 25",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOG 6",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 10B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 20",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 9,
+     "listed": 9
+    },
+    "extracted_run": "44522071814"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 9,
+     "listed": 9,
+     "gaps": [
+      "total_differs"
+     ],
+     "confidence": {
+      "unit_arithmetic": 50,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 4
+  },
+  {
+   "college": "Clovis Community College",
+   "control_number": "42706",
+   "award": "A.A- T Degree",
+   "extracted_run": "39006155986",
+   "gap": "total_differs",
+   "words": "the catalog prints a total of 21, and its own figures add to 17-18 (PDF p.175; college-page-read run 44914829120)",
+   "confidence": {
+    "unit_arithmetic": 50,
+    "course_list_match": 88,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "path": "kb/program_requirements_college/clovis_community/records/42706.json",
+   "before_image": {
+    "program_title": "Music",
+    "award": "A.A- T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=175",
+    "measure": "units",
+    "total_min": 21,
+    "total_max": 21,
+    "record": {
+     "program": {
+      "section_heading": "ASSOCIATE IN ARTS IN MUSIC FOR TRANSFER DEGREE (Major #C.5831.AA-T)",
+      "measure": "units",
+      "total_units": {
+       "min": 21,
+       "max": 21
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "Cal-GETC",
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Demonstrate knowledge of music theory equivalent to two years of undergraduate study.",
+       "Establish aural skills and musicianship (ear-training) needed to pursue a broad range of specializations in the music major.",
+       "Prepare keyboard and improvisational skills required for undergraduate piano proficiency.",
+       "Perform music from various styles as a soloist as well as within an ensemble."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Core Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "MUS 1A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 1B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 2A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 7A",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 7B",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 7C",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 23",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "MUS 31",
+           "units": 2,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List A: Select 3-4 units from the following courses",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 4
+       },
+       "courses": [
+        {
+         "code": "MUS 2B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 7D",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 20",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 21",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 22",
+         "units": 1,
+         "units_max": 2,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSCO 1",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 12",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 15,
+     "listed": 17
+    },
+    "extracted_run": "39006155986"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 15,
+     "listed": 17,
+     "gaps": [
+      "total_differs"
+     ],
+     "confidence": {
+      "unit_arithmetic": 50,
+      "course_list_match": 88,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 5
+  },
+  {
+   "college": "Clovis Community College",
+   "control_number": "44551",
+   "award": "A.S. Degree",
+   "extracted_run": "44522071814",
+   "gap": "total_differs",
+   "words": "the catalog prints a total of 20-21, and its own figures add to 24-25 (PDF pp.112-113; college-page-read run 44914829120)",
+   "confidence": {
+    "unit_arithmetic": 50,
+    "course_list_match": 71,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "path": "kb/program_requirements_college/clovis_community/records/44551.json",
+   "before_image": {
+    "program_title": "Data Science",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=112",
+    "measure": "units",
+    "total_min": 20,
+    "total_max": 21,
+    "record": {
+     "program": {
+      "section_heading": "DATA SCIENCE (Major #C.6921.AS) ASSOCIATE IN SCIENCE DEGREE",
+      "measure": "units",
+      "total_units": {
+       "min": 20,
+       "max": 21
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Understand the social impact of computers on human society",
+       "Carry out computer related tasks with professional ethics",
+       "Write programs using procedural programming language",
+       "Write programs using object oriented programming language",
+       "Analyze and solve application problems in science and engineering",
+       "Write programs using advanced programming concepts"
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Core Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "CSCI 40",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CSCI 41",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DATA 8",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Select an additional 12-13 courses",
+       "rule": "choose_units",
+       "minimum": 12,
+       "option_group": null,
+       "stated": {
+        "min": 12,
+        "max": 13
+       },
+       "courses": [
+        {
+         "code": "CSCI 25",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CSCI 45",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MATH C2210",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MATH C2220",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PHYS 2A",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "PHYS 4A",
+           "units": 4,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": true
+        },
+        {
+         "code": "PHYS 2B",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "PHYS 4B",
+           "units": 4,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": true
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 5,
+     "listed": 7
+    },
+    "extracted_run": "44522071814"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 5,
+     "listed": 7,
+     "gaps": [
+      "total_differs"
+     ],
+     "confidence": {
+      "unit_arithmetic": 50,
+      "course_list_match": 71,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 6
+  },
+  {
+   "college": "Glendale Community College",
+   "control_number": "12570",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "43415972509",
+   "gap": "total_differs",
+   "words": "the catalog prints a total of 19, and its own figures add to 20 (the Coursedog page TF-C, completion requirements; college-page-read run 44914829120)",
+   "confidence": {
+    "unit_arithmetic": 50,
+    "course_list_match": 67,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "path": "kb/program_requirements_college/glendale_community/records/12570.json",
+   "before_image": {
+    "program_title": "Tax Preparer",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.glendale.edu/programs/TF-C/completion-requirements-zaZdl",
+    "measure": "units",
+    "total_min": 19,
+    "total_max": 19,
+    "record": {
+     "program": {
+      "section_heading": "TF-C - Tax Fundamentals - Certificate of Achievement",
+      "measure": "units",
+      "total_units": {
+       "min": 19,
+       "max": 19
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "REQUIRED COURSES FOR CERTIFICATE",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 19,
+        "max": 19
+       },
+       "courses": [
+        {
+         "code": "ACCTG 101",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ACCTG 130",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ACCTG 150",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ACCTG 160",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ACCTG 165",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ACCTG 175",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 4,
+     "listed": 6
+    },
+    "extracted_run": "43415972509"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 4,
+     "listed": 6,
+     "gaps": [
+      "total_differs"
+     ],
+     "confidence": {
+      "unit_arithmetic": 50,
+      "course_list_match": 67,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 7
+  },
+  {
+   "college": "Glendale Community College",
+   "control_number": "12574",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "43415972509",
+   "gap": "total_differs",
+   "words": "the catalog prints a total of 18-23, and its own figures add to 21-26 (the Coursedog page FITS-C, completion requirements; college-page-read run 44914829120)",
+   "confidence": {
+    "unit_arithmetic": 50,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "path": "kb/program_requirements_college/glendale_community/records/12574.json",
+   "before_image": {
+    "program_title": "Fitness Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.glendale.edu/programs/FITS-C/completion-requirements-zaZdl",
+    "measure": "units",
+    "total_min": 18,
+    "total_max": 23,
+    "record": {
+     "program": {
+      "section_heading": "FITS-C - Fitness Specialist - Certificate of Achievement",
+      "measure": "units",
+      "total_units": {
+       "min": 18,
+       "max": 23
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "REQUIRED COURSES FOR MAJOR/CERTIFICATE",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "HLTH 102",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "KIN 151",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "KIN 155",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "KIN 156",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "KIN 167",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "KIN 168",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "CHOOSE ONE OF THE FOLLOWING",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "HLTH 128",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "KIN 157",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BUSAD 158",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENTRE 101",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENTRE 102",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "CHOOSE TWO OF THE FOLLOWING",
+       "rule": "choose_courses",
+       "minimum": 2,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "DANCE 101",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 124",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 127",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 128",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 129",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 133",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 190",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 194",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PE 108",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PE 110",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PE 111",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PE 131",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PE 180",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PE 181",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PE 220",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PE 221",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "KIN 50",
+         "units": 1,
+         "units_max": 3,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "CO ED 101",
+         "units": 1,
+         "units_max": 3,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 28,
+     "listed": 28
+    },
+    "extracted_run": "43415972509"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 28,
+     "listed": 28,
+     "gaps": [
+      "total_differs"
+     ],
+     "confidence": {
+      "unit_arithmetic": 50,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 8
+  },
+  {
+   "college": "Glendale Community College",
+   "control_number": "19566",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "43415972509",
+   "gap": "total_differs",
+   "words": "the catalog prints a total of 18, and its own figures add to 15 (the Coursedog page MRKTII-C, completion requirements; college-page-read run 44914829120)",
+   "confidence": {
+    "unit_arithmetic": 50,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "path": "kb/program_requirements_college/glendale_community/records/19566.json",
+   "before_image": {
+    "program_title": "Marketing II",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.glendale.edu/programs/MRKTII-C/completion-requirements-zaZdl",
+    "measure": "units",
+    "total_min": 18,
+    "total_max": 18,
+    "record": {
+     "program": {
+      "section_heading": "MRKTII-C - Marketing II - Certificate of Achievement",
+      "measure": "units",
+      "total_units": {
+       "min": 18,
+       "max": 18
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "REQUIRED COURSES FOR CERTIFICATE",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "BUSAD 101",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BUSAD 162",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BUSAD 166",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BUSAD 163",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "BUSAD 165",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "CHOOSE ONE OF THE FOLLOWING",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "BUSAD 131",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BUSAD 120",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BUSAD 152",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BUSAD 169",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CABOT 280",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 10,
+     "listed": 10
+    },
+    "extracted_run": "43415972509"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 10,
+     "listed": 10,
+     "gaps": [
+      "total_differs"
+     ],
+     "confidence": {
+      "unit_arithmetic": 50,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 9
+  },
+  {
+   "college": "Glendale Community College",
+   "control_number": "39905",
+   "award": "A.S. Degree",
+   "extracted_run": 44763682085,
+   "gap": "total_differs",
+   "words": "the catalog prints a total of 18-23, and its own figures add to 21-26 (the Coursedog page FITS-AS, completion requirements; college-page-read run 44914829120)",
+   "confidence": {
+    "unit_arithmetic": 50,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "path": "kb/program_requirements_college/glendale_community/records/39905.json",
+   "before_image": {
+    "program_title": "Fitness Specialist",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.glendale.edu/programs/FITS-AS/completion-requirements-zaZdl",
+    "measure": "units",
+    "total_min": 18,
+    "total_max": 23,
+    "record": {
+     "program": {
+      "section_heading": "FITS-AS - Fitness Specialist - Associate of Science",
+      "measure": "units",
+      "total_units": {
+       "min": 18,
+       "max": 23
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": 60,
+       "max": 60
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [],
+      "careers": [],
+      "degree_total_minimum": true
+     },
+     "blocks": [
+      {
+       "name": "REQUIRED COURSES FOR MAJOR/CERTIFICATE",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "HLTH 102",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "KIN 151",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "KIN 155",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "KIN 156",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "KIN 167",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "KIN 168",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "CHOOSE ONE OF THE FOLLOWING",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "HLTH 128",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "KIN 157",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BUSAD 158",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENTRE 101",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENTRE 102",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "CHOOSE TWO OF THE FOLLOWING",
+       "rule": "choose_courses",
+       "minimum": 2,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "DANCE 101",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 124",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 127",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 128",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 129",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 133",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 190",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "DANCE 194",
+         "units": 1.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PE 108",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PE 110",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PE 111",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PE 131",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PE 180",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PE 181",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PE 220",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PE 221",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "KIN 50",
+         "units": 1,
+         "units_max": 3,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CO ED 101",
+         "units": 1,
+         "units_max": 3,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 29,
+     "listed": 29
+    },
+    "extracted_run": "44763682085"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 29,
+     "listed": 29,
+     "gaps": [
+      "total_differs"
+     ],
+     "confidence": {
+      "unit_arithmetic": 50,
+      "course_list_match": 100,
+      "ge_pattern": 100,
+      "catalog_year": 100,
+      "source": 100
+     }
+    }
+   },
+   "i": 10
+  }
+ ],
+ "decided": "The 10 records count as collected with the gap named (the S680 conductor, on Sam's rule of 2026-11-17: never drop a record for failing; collect it with gaps noted and scores).",
+ "representation": "checks.gaps (a list of gap names, keys of gaps) and checks.confidence (five scores 0-100) added to program_requirement_records.checks; checks.arithmetic unchanged",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Clovis Community College', '33493', 44522071814, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BA 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BA 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"IS 50A\",\"units\":3}],\"catalog_addition\":false,\"code\":\"IS 13\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IS 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IS 16\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IS 18\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IS 40A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IS 62\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IS 63\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IS 64\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BA 39\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH C2210\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 103\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"STAT 7\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one course\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"Information Systems\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Operate commonly used computer hardware and office software.\",\"Identify the categories of software by their purpose and provide examples of each category.\",\"Plan, design, and write stand-alone computer programs.\",\"Apply structured logic in analyzing and solving problems.\",\"Develop a well-designed relational database.\",\"Create a Web document that contains hyperlinks, graphics, tables and forms.\",\"Demonstrate a breadth of knowledge of networking its uses in the business environment.\"],\"section_heading\":\"INFORMATION SYSTEMS NETWORKING OPTION (Major #C.693B.AS) ASSOCIATE IN SCIENCE DEGREE\",\"total_units\":{\"max\":34.5,\"min\":31}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":16,\"placed\":14}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":88,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":16,\"placed\":14}'::jsonb),\n  (2, 'Clovis Community College', '35209', 39006155986, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLS C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"POLS C1000\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Core Courses: Select one course\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS 24\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"BA 23\",\"units\":4}],\"catalog_addition\":true,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null}],\"minimum\":3,\"name\":\"LIST A: Select three courses\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON C2001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON C2002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GEOG 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST C1002H\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 32\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 1B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 2\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"LIST B: Select three courses\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"public administration\",\"law\",\"public relations\",\"lobbying\",\"political consulting\",\"crisis management\",\"journalism\",\"public policy research\",\"higher education\",\"K-12 education\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Describe the historically significant theories employed within the discipline of political science.\",\"Interpret and evaluate political events through a critical comparison of local, state, national and international political frameworks and institutions.\",\"Explain the complex relationship between political culture, diverse political institutions, and patterns of global engagement.\"],\"section_heading\":\"POLITICAL SCIENCE ASSOCIATE IN ARTS IN POLITICAL SCIENCE TRANSFER DEGREE (MAJOR #C.7450.AA-T)\",\"total_units\":{\"max\":19,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb),\n  (3, 'Clovis Community College', '37352', 39006155986, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"COMM 10\",\"units\":3}],\"catalog_addition\":false,\"code\":\"BIOL 5\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HCA 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IS 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HCA 103\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HCA 104\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"OT 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"OT 17\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"Medical Office Administrators\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Students will be able to demonstrate skills to work in a front office at a health care facility.\"],\"section_heading\":\"MEDICAL OFFICE ADMINISTRATION (MAJOR #C.4502.CA) CERTIFICATE OF ACHIEVEMENT\",\"total_units\":{\"max\":25,\"min\":24}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":10,\"placed\":8}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":80,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":10,\"placed\":8}'::jsonb),\n  (4, 'Clovis Community College', '42234', 44522071814, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LING 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 9\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1001H\",\"units\":3},{\"catalog_addition\":false,\"code\":\"PHIL 2\",\"units\":3},{\"catalog_addition\":false,\"code\":\"COMM 25\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ENGL C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 10B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 20\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"teacher assistants\",\"instructional aides\",\"afterschool program teachers\",\"tutors\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"ELEMENTARY TEACHER LEVEL 2 (Major #C.589B.CA) CERTIFICATE OF ACHIEVEMENT\",\"total_units\":{\"max\":16,\"min\":16}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb),\n  (5, 'Clovis Community College', '42706', 39006155986, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 1A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 1B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 2A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 7A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 7B\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 7C\",\"units\":1,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MUS 31\",\"units\":2}],\"catalog_addition\":false,\"code\":\"MUS 23\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 2B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 7D\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 20\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 21\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 22\",\"units\":1,\"units_max\":2},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSCO 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 12\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"List A: Select 3-4 units from the following courses\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate knowledge of music theory equivalent to two years of undergraduate study.\",\"Establish aural skills and musicianship (ear-training) needed to pursue a broad range of specializations in the music major.\",\"Prepare keyboard and improvisational skills required for undergraduate piano proficiency.\",\"Perform music from various styles as a soloist as well as within an ensemble.\"],\"section_heading\":\"ASSOCIATE IN ARTS IN MUSIC FOR TRANSFER DEGREE (Major #C.5831.AA-T)\",\"total_units\":{\"max\":21,\"min\":21}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":17,\"placed\":15}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":88,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":17,\"placed\":15}'::jsonb),\n  (6, 'Clovis Community College', '44551', 44522071814, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI 40\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI 41\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DATA 8\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI 25\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI 45\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH C2210\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH C2220\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"PHYS 4A\",\"units\":4}],\"catalog_addition\":true,\"code\":\"PHYS 2A\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"PHYS 4B\",\"units\":4}],\"catalog_addition\":true,\"code\":\"PHYS 2B\",\"units\":4,\"units_max\":null}],\"minimum\":12,\"name\":\"Select an additional 12-13 courses\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":13,\"min\":12}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Understand the social impact of computers on human society\",\"Carry out computer related tasks with professional ethics\",\"Write programs using procedural programming language\",\"Write programs using object oriented programming language\",\"Analyze and solve application problems in science and engineering\",\"Write programs using advanced programming concepts\"],\"section_heading\":\"DATA SCIENCE (Major #C.6921.AS) ASSOCIATE IN SCIENCE DEGREE\",\"total_units\":{\"max\":21,\"min\":20}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":7,\"placed\":5}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":71,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":7,\"placed\":5}'::jsonb),\n  (7, 'Glendale Community College', '12570', 43415972509, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ACCTG 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ACCTG 130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ACCTG 150\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ACCTG 160\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ACCTG 165\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ACCTG 175\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES FOR CERTIFICATE\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":19,\"min\":19}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"TF-C - Tax Fundamentals - Certificate of Achievement\",\"total_units\":{\"max\":19,\"min\":19}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":6,\"placed\":4}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":67,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":6,\"placed\":4}'::jsonb),\n  (8, 'Glendale Community College', '12574', 43415972509, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTH 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 151\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 155\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 156\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 167\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 168\",\"units\":1.5,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES FOR MAJOR/CERTIFICATE\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTH 128\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 157\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD 158\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENTRE 101\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENTRE 102\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"CHOOSE ONE OF THE FOLLOWING\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 101\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 124\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 127\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 128\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 129\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 133\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 190\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 194\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 108\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 110\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 111\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 131\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 180\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 181\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 220\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 221\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"KIN 50\",\"units\":1,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CO ED 101\",\"units\":1,\"units_max\":3}],\"minimum\":2,\"name\":\"CHOOSE TWO OF THE FOLLOWING\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"FITS-C - Fitness Specialist - Certificate of Achievement\",\"total_units\":{\"max\":23,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":28,\"placed\":28}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":28,\"placed\":28}'::jsonb),\n  (9, 'Glendale Community College', '19566', 43415972509, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD 162\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD 166\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"BUSAD 165\",\"units\":3}],\"catalog_addition\":false,\"code\":\"BUSAD 163\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES FOR CERTIFICATE\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD 131\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD 120\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD 152\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD 169\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CABOT 280\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"CHOOSE ONE OF THE FOLLOWING\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"MRKTII-C - Marketing II - Certificate of Achievement\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":10,\"placed\":10}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":10,\"placed\":10}'::jsonb),\n  (10, 'Glendale Community College', '39905', 44763682085, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTH 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 151\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 155\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 156\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 167\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 168\",\"units\":1.5,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES FOR MAJOR/CERTIFICATE\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTH 128\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 157\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD 158\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENTRE 101\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENTRE 102\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"CHOOSE ONE OF THE FOLLOWING\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 101\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 124\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 127\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 128\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 129\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 133\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 190\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 194\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 108\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 110\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 111\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 131\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 180\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 181\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 220\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 221\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 50\",\"units\":1,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CO ED 101\",\"units\":1,\"units_max\":3}],\"minimum\":2,\"name\":\"CHOOSE TWO OF THE FOLLOWING\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"degree_total_minimum\":true,\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"FITS-AS - Fitness Specialist - Associate of Science\",\"total_units\":{\"max\":23,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":29,\"placed\":29}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":29,\"placed\":29}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Clovis Community College', '33493', 44522071814, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BA 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BA 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"IS 50A\",\"units\":3}],\"catalog_addition\":false,\"code\":\"IS 13\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IS 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IS 16\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IS 18\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IS 40A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IS 62\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IS 63\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IS 64\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BA 39\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH C2210\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 103\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"STAT 7\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one course\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"Information Systems\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Operate commonly used computer hardware and office software.\",\"Identify the categories of software by their purpose and provide examples of each category.\",\"Plan, design, and write stand-alone computer programs.\",\"Apply structured logic in analyzing and solving problems.\",\"Develop a well-designed relational database.\",\"Create a Web document that contains hyperlinks, graphics, tables and forms.\",\"Demonstrate a breadth of knowledge of networking its uses in the business environment.\"],\"section_heading\":\"INFORMATION SYSTEMS NETWORKING OPTION (Major #C.693B.AS) ASSOCIATE IN SCIENCE DEGREE\",\"total_units\":{\"max\":34.5,\"min\":31}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":16,\"placed\":14}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":88,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":16,\"placed\":14}'::jsonb),\n  (2, 'Clovis Community College', '35209', 39006155986, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLS C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"POLS C1000\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Core Courses: Select one course\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS 24\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"BA 23\",\"units\":4}],\"catalog_addition\":true,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null}],\"minimum\":3,\"name\":\"LIST A: Select three courses\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON C2001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON C2002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GEOG 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST C1002H\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 32\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 1B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 2\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"LIST B: Select three courses\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"public administration\",\"law\",\"public relations\",\"lobbying\",\"political consulting\",\"crisis management\",\"journalism\",\"public policy research\",\"higher education\",\"K-12 education\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Describe the historically significant theories employed within the discipline of political science.\",\"Interpret and evaluate political events through a critical comparison of local, state, national and international political frameworks and institutions.\",\"Explain the complex relationship between political culture, diverse political institutions, and patterns of global engagement.\"],\"section_heading\":\"POLITICAL SCIENCE ASSOCIATE IN ARTS IN POLITICAL SCIENCE TRANSFER DEGREE (MAJOR #C.7450.AA-T)\",\"total_units\":{\"max\":19,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb),\n  (3, 'Clovis Community College', '37352', 39006155986, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"COMM 10\",\"units\":3}],\"catalog_addition\":false,\"code\":\"BIOL 5\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HCA 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IS 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HCA 103\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HCA 104\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"OT 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"OT 17\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"Medical Office Administrators\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Students will be able to demonstrate skills to work in a front office at a health care facility.\"],\"section_heading\":\"MEDICAL OFFICE ADMINISTRATION (MAJOR #C.4502.CA) CERTIFICATE OF ACHIEVEMENT\",\"total_units\":{\"max\":25,\"min\":24}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":10,\"placed\":8}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":80,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":10,\"placed\":8}'::jsonb),\n  (4, 'Clovis Community College', '42234', 44522071814, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LING 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 9\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1001H\",\"units\":3},{\"catalog_addition\":false,\"code\":\"PHIL 2\",\"units\":3},{\"catalog_addition\":false,\"code\":\"COMM 25\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ENGL C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 10B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 20\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"teacher assistants\",\"instructional aides\",\"afterschool program teachers\",\"tutors\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"ELEMENTARY TEACHER LEVEL 2 (Major #C.589B.CA) CERTIFICATE OF ACHIEVEMENT\",\"total_units\":{\"max\":16,\"min\":16}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb),\n  (5, 'Clovis Community College', '42706', 39006155986, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 1A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 1B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 2A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 7A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 7B\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 7C\",\"units\":1,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MUS 31\",\"units\":2}],\"catalog_addition\":false,\"code\":\"MUS 23\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 2B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 7D\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 20\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 21\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 22\",\"units\":1,\"units_max\":2},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSCO 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 12\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"List A: Select 3-4 units from the following courses\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate knowledge of music theory equivalent to two years of undergraduate study.\",\"Establish aural skills and musicianship (ear-training) needed to pursue a broad range of specializations in the music major.\",\"Prepare keyboard and improvisational skills required for undergraduate piano proficiency.\",\"Perform music from various styles as a soloist as well as within an ensemble.\"],\"section_heading\":\"ASSOCIATE IN ARTS IN MUSIC FOR TRANSFER DEGREE (Major #C.5831.AA-T)\",\"total_units\":{\"max\":21,\"min\":21}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":17,\"placed\":15}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":88,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":17,\"placed\":15}'::jsonb),\n  (6, 'Clovis Community College', '44551', 44522071814, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI 40\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI 41\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DATA 8\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI 25\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI 45\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH C2210\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH C2220\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"PHYS 4A\",\"units\":4}],\"catalog_addition\":true,\"code\":\"PHYS 2A\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"PHYS 4B\",\"units\":4}],\"catalog_addition\":true,\"code\":\"PHYS 2B\",\"units\":4,\"units_max\":null}],\"minimum\":12,\"name\":\"Select an additional 12-13 courses\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":13,\"min\":12}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Understand the social impact of computers on human society\",\"Carry out computer related tasks with professional ethics\",\"Write programs using procedural programming language\",\"Write programs using object oriented programming language\",\"Analyze and solve application problems in science and engineering\",\"Write programs using advanced programming concepts\"],\"section_heading\":\"DATA SCIENCE (Major #C.6921.AS) ASSOCIATE IN SCIENCE DEGREE\",\"total_units\":{\"max\":21,\"min\":20}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":7,\"placed\":5}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":71,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":7,\"placed\":5}'::jsonb),\n  (7, 'Glendale Community College', '12570', 43415972509, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ACCTG 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ACCTG 130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ACCTG 150\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ACCTG 160\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ACCTG 165\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ACCTG 175\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES FOR CERTIFICATE\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":19,\"min\":19}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"TF-C - Tax Fundamentals - Certificate of Achievement\",\"total_units\":{\"max\":19,\"min\":19}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":6,\"placed\":4}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":67,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":6,\"placed\":4}'::jsonb),\n  (8, 'Glendale Community College', '12574', 43415972509, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTH 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 151\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 155\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 156\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 167\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 168\",\"units\":1.5,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES FOR MAJOR/CERTIFICATE\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTH 128\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 157\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD 158\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENTRE 101\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENTRE 102\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"CHOOSE ONE OF THE FOLLOWING\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 101\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 124\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 127\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 128\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 129\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 133\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 190\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 194\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 108\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 110\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 111\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 131\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 180\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 181\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 220\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 221\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"KIN 50\",\"units\":1,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CO ED 101\",\"units\":1,\"units_max\":3}],\"minimum\":2,\"name\":\"CHOOSE TWO OF THE FOLLOWING\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"FITS-C - Fitness Specialist - Certificate of Achievement\",\"total_units\":{\"max\":23,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":28,\"placed\":28}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":28,\"placed\":28}'::jsonb),\n  (9, 'Glendale Community College', '19566', 43415972509, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD 162\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD 166\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"BUSAD 165\",\"units\":3}],\"catalog_addition\":false,\"code\":\"BUSAD 163\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES FOR CERTIFICATE\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD 131\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD 120\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD 152\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD 169\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CABOT 280\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"CHOOSE ONE OF THE FOLLOWING\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"MRKTII-C - Marketing II - Certificate of Achievement\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":10,\"placed\":10}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":10,\"placed\":10}'::jsonb),\n  (10, 'Glendale Community College', '39905', 44763682085, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTH 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 151\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 155\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 156\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 167\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 168\",\"units\":1.5,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES FOR MAJOR/CERTIFICATE\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTH 128\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 157\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD 158\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENTRE 101\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENTRE 102\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"CHOOSE ONE OF THE FOLLOWING\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 101\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 124\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 127\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 128\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 129\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 133\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 190\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 194\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 108\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 110\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 111\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 131\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 180\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 181\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 220\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 221\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 50\",\"units\":1,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CO ED 101\",\"units\":1,\"units_max\":3}],\"minimum\":2,\"name\":\"CHOOSE TWO OF THE FOLLOWING\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"degree_total_minimum\":true,\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"FITS-AS - Fitness Specialist - Associate of Science\",\"total_units\":{\"max\":23,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":29,\"placed\":29}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":29,\"placed\":29}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\ne(expect) as (values (10)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s697p2 named-gaps guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Clovis Community College', '33493', 44522071814, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BA 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BA 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"IS 50A\",\"units\":3}],\"catalog_addition\":false,\"code\":\"IS 13\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IS 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IS 16\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IS 18\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IS 40A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IS 62\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IS 63\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IS 64\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BA 39\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH C2210\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 103\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"STAT 7\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Select one course\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"Information Systems\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Operate commonly used computer hardware and office software.\",\"Identify the categories of software by their purpose and provide examples of each category.\",\"Plan, design, and write stand-alone computer programs.\",\"Apply structured logic in analyzing and solving problems.\",\"Develop a well-designed relational database.\",\"Create a Web document that contains hyperlinks, graphics, tables and forms.\",\"Demonstrate a breadth of knowledge of networking its uses in the business environment.\"],\"section_heading\":\"INFORMATION SYSTEMS NETWORKING OPTION (Major #C.693B.AS) ASSOCIATE IN SCIENCE DEGREE\",\"total_units\":{\"max\":34.5,\"min\":31}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":16,\"placed\":14}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":88,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":16,\"placed\":14}'::jsonb),\n  (2, 'Clovis Community College', '35209', 39006155986, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLS C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"POLS C1000\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Core Courses: Select one course\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS 24\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"BA 23\",\"units\":4}],\"catalog_addition\":true,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null}],\"minimum\":3,\"name\":\"LIST A: Select three courses\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON C2001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON C2002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"GEOG 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"HIST C1002H\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 32\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 1B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 2\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"LIST B: Select three courses\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"public administration\",\"law\",\"public relations\",\"lobbying\",\"political consulting\",\"crisis management\",\"journalism\",\"public policy research\",\"higher education\",\"K-12 education\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Describe the historically significant theories employed within the discipline of political science.\",\"Interpret and evaluate political events through a critical comparison of local, state, national and international political frameworks and institutions.\",\"Explain the complex relationship between political culture, diverse political institutions, and patterns of global engagement.\"],\"section_heading\":\"POLITICAL SCIENCE ASSOCIATE IN ARTS IN POLITICAL SCIENCE TRANSFER DEGREE (MAJOR #C.7450.AA-T)\",\"total_units\":{\"max\":19,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":14,\"placed\":14}'::jsonb),\n  (3, 'Clovis Community College', '37352', 39006155986, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"COMM 10\",\"units\":3}],\"catalog_addition\":false,\"code\":\"BIOL 5\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HCA 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IS 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HCA 103\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HCA 104\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"OT 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"OT 17\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"Medical Office Administrators\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Students will be able to demonstrate skills to work in a front office at a health care facility.\"],\"section_heading\":\"MEDICAL OFFICE ADMINISTRATION (MAJOR #C.4502.CA) CERTIFICATE OF ACHIEVEMENT\",\"total_units\":{\"max\":25,\"min\":24}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":10,\"placed\":8}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":80,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":10,\"placed\":8}'::jsonb),\n  (4, 'Clovis Community College', '42234', 44522071814, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LING 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 9\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1001H\",\"units\":3},{\"catalog_addition\":false,\"code\":\"PHIL 2\",\"units\":3},{\"catalog_addition\":false,\"code\":\"COMM 25\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ENGL C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 10B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 20\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"teacher assistants\",\"instructional aides\",\"afterschool program teachers\",\"tutors\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"ELEMENTARY TEACHER LEVEL 2 (Major #C.589B.CA) CERTIFICATE OF ACHIEVEMENT\",\"total_units\":{\"max\":16,\"min\":16}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":9,\"placed\":9}'::jsonb),\n  (5, 'Clovis Community College', '42706', 39006155986, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 1A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 1B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 2A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 7A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 7B\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 7C\",\"units\":1,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MUS 31\",\"units\":2}],\"catalog_addition\":false,\"code\":\"MUS 23\",\"units\":2,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 2B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 7D\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 20\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 21\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 22\",\"units\":1,\"units_max\":2},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSCO 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 12\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"List A: Select 3-4 units from the following courses\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate knowledge of music theory equivalent to two years of undergraduate study.\",\"Establish aural skills and musicianship (ear-training) needed to pursue a broad range of specializations in the music major.\",\"Prepare keyboard and improvisational skills required for undergraduate piano proficiency.\",\"Perform music from various styles as a soloist as well as within an ensemble.\"],\"section_heading\":\"ASSOCIATE IN ARTS IN MUSIC FOR TRANSFER DEGREE (Major #C.5831.AA-T)\",\"total_units\":{\"max\":21,\"min\":21}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":17,\"placed\":15}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":88,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":17,\"placed\":15}'::jsonb),\n  (6, 'Clovis Community College', '44551', 44522071814, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI 40\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI 41\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DATA 8\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI 25\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"CSCI 45\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH C2210\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH C2220\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"PHYS 4A\",\"units\":4}],\"catalog_addition\":true,\"code\":\"PHYS 2A\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"PHYS 4B\",\"units\":4}],\"catalog_addition\":true,\"code\":\"PHYS 2B\",\"units\":4,\"units_max\":null}],\"minimum\":12,\"name\":\"Select an additional 12-13 courses\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":13,\"min\":12}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Understand the social impact of computers on human society\",\"Carry out computer related tasks with professional ethics\",\"Write programs using procedural programming language\",\"Write programs using object oriented programming language\",\"Analyze and solve application problems in science and engineering\",\"Write programs using advanced programming concepts\"],\"section_heading\":\"DATA SCIENCE (Major #C.6921.AS) ASSOCIATE IN SCIENCE DEGREE\",\"total_units\":{\"max\":21,\"min\":20}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":7,\"placed\":5}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":71,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":7,\"placed\":5}'::jsonb),\n  (7, 'Glendale Community College', '12570', 43415972509, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ACCTG 101\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ACCTG 130\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ACCTG 150\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ACCTG 160\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ACCTG 165\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ACCTG 175\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES FOR CERTIFICATE\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":19,\"min\":19}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"TF-C - Tax Fundamentals - Certificate of Achievement\",\"total_units\":{\"max\":19,\"min\":19}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":6,\"placed\":4}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":67,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":6,\"placed\":4}'::jsonb),\n  (8, 'Glendale Community College', '12574', 43415972509, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTH 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 151\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 155\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 156\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 167\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 168\",\"units\":1.5,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES FOR MAJOR/CERTIFICATE\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTH 128\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 157\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD 158\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENTRE 101\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENTRE 102\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"CHOOSE ONE OF THE FOLLOWING\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 101\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 124\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 127\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 128\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 129\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 133\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 190\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 194\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 108\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 110\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 111\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 131\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 180\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 181\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 220\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 221\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"KIN 50\",\"units\":1,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CO ED 101\",\"units\":1,\"units_max\":3}],\"minimum\":2,\"name\":\"CHOOSE TWO OF THE FOLLOWING\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"FITS-C - Fitness Specialist - Certificate of Achievement\",\"total_units\":{\"max\":23,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":28,\"placed\":28}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":28,\"placed\":28}'::jsonb),\n  (9, 'Glendale Community College', '19566', 43415972509, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD 101\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD 162\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD 166\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"BUSAD 165\",\"units\":3}],\"catalog_addition\":false,\"code\":\"BUSAD 163\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES FOR CERTIFICATE\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD 131\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD 120\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD 152\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD 169\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CABOT 280\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"CHOOSE ONE OF THE FOLLOWING\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"MRKTII-C - Marketing II - Certificate of Achievement\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":10,\"placed\":10}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":10,\"placed\":10}'::jsonb),\n  (10, 'Glendale Community College', '39905', 44763682085, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTH 102\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 151\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 155\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 156\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 167\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 168\",\"units\":1.5,\"units_max\":null}],\"minimum\":null,\"name\":\"REQUIRED COURSES FOR MAJOR/CERTIFICATE\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTH 128\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 157\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BUSAD 158\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENTRE 101\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ENTRE 102\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"CHOOSE ONE OF THE FOLLOWING\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 101\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 124\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 127\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 128\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 129\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 133\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 190\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"DANCE 194\",\"units\":1.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 108\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 110\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 111\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 131\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 180\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 181\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 220\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PE 221\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"KIN 50\",\"units\":1,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CO ED 101\",\"units\":1,\"units_max\":3}],\"minimum\":2,\"name\":\"CHOOSE TWO OF THE FOLLOWING\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"degree_total_minimum\":true,\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"FITS-AS - Fitness Specialist - Associate of Science\",\"total_units\":{\"max\":23,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":29,\"placed\":29}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":100,\"source\":100,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"total_differs\"],\"invented\":true,\"listed\":29,\"placed\":29}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (10)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s697p2 named-gaps rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}

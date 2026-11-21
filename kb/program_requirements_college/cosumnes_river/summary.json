@@ -2,20 +2,95 @@
  "college": "Cosumnes River College",
  "programs": 226,
  "with_closed_list": 219,
- "found": 217,
+ "found": 197,
  "extracted": 217,
  "errors": 0,
- "passed_machine_checks": 138,
+ "passed_machine_checks": 148,
  "failed": {
-  "coverage": 43,
+  "coverage": 36,
   "invented": 8,
-  "arithmetic": 64,
+  "arithmetic": 54,
   "repeated": 0,
   "outcomes": 8
  },
- "cost_usd": 18.96,
- "cost_per_program": 0.0874,
+ "cost_usd_run": 1.16,
+ "cost_usd_filed": 19.01,
+ "cost_per_program": 0.0876,
+ "extract_calls": 14,
+ "extract_failed": [],
  "not_found": [
+  {
+   "control_number": "07302",
+   "title": "CIS: Server Administrator",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "07315",
+   "title": "ECE: School Age Child Care and Education",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "07320",
+   "title": "School Foodservice Specialist",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "11330",
+   "title": "CIS: Server Administrator",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "11348",
+   "title": "Interdisciplinary Studies, Women's Studies",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "12741",
+   "title": "Biology: Biological Sciences, Biology Concentration Option",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
+  },
   {
    "control_number": "14419",
    "title": "Kinesiology",
@@ -23,17 +98,182 @@
    "near_miss": {
     "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=442",
     "coverage": 0.42
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "20204",
+   "title": "CIS: Information Systems Security",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "35097",
+   "title": "CIS - Web Developer",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "35350",
+   "title": "Business Information Worker",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "35354",
+   "title": "Automatic Transmissions/Transaxles (Ford ASSET)",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=179",
+    "coverage": 0.0,
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "35358",
+   "title": "Automotive Heating and Air Conditioning (Ford ASSET)",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=179",
+    "coverage": 0.0,
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "35360",
+   "title": "Automotive Engine Performance (Ford ASSET)",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=179",
+    "coverage": 0.0,
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "35361",
+   "title": "Automotive Suspension and Steering (Ford ASSET)",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=179",
+    "coverage": 0.0,
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "35362",
+   "title": "Automotive Electrical Systems (Ford ASSET)",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=179",
+    "coverage": 0.0,
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "35374",
+   "title": "Manual Drive Train and Axles (Ford ASSET)",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=179",
+    "coverage": 0.0,
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "35408",
+   "title": "CIS - Linux Systems Administrator",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "35742",
+   "title": "Medical Assisting, Medical Insurance Billing",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "37285",
+   "title": "ECE, Associate Teacher",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "37842",
+   "title": "Culinary Arts Management: Basic Culinary Services",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "39131",
+   "title": "Business: Entrepreneurship",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "plain_named": true,
+    "page_checks": true
+   },
+   "status": "Active"
   },
   {
    "control_number": "39444",
    "title": "Honors",
    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
    "near_miss": {
-    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=378",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=377",
     "coverage": 0.333
-   }
+   },
+   "status": "Active"
   }
  ],
- "run": "39047009824"
+ "run": "44917314201"
 }

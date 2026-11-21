@@ -148,8 +148,9 @@ async function openIt(t, sel) {
     const t = load("#exhibits");
     await t.M.boot(); await settle();
     let f = t.d.getElementById("exh-sbs");
-    check("(1) ⭐ the Review card carries the side by side, closed", !!f && !f.open, f ? txt(f) : "none");
-    check("(1) its file is not read before it opens", sbsReads(t) === 0, String(sbsReads(t)));
+    // Sam, 2026-11-21: Side by side opens expanded on a Review card, so its file is read once as the card draws.
+    check("(1) ⭐ the Review card carries the side by side, expanded", !!f && f.open, f ? txt(f) : "none");
+    check("(1) its file is read once for the card", sbsReads(t) === 1, String(sbsReads(t)));
     if (f) {
       f = await openIt(t, "#exh-sbs");
       const r = rows(f);

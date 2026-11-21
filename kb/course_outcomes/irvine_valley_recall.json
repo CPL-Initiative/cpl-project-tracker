@@ -1,0 +1,92 @@
+{
+ "_about": "The self-recall count for Irvine Valley College's Official Course Outline of Record (report 198) on saddleback.curriqunet.com, the host that also holds Saddleback College's outlines (its Course Outline, 201, counted in saddleback_recall.json) (kb/_course_outcomes_read.py rows_recall, recall_path; S697). The host reads outcomes only (d-ccsf-outline-trial-no-staff-names-s689), so the trial filed no page. Report 198 prints each SLO as its own untitled entry, which the reader files as a group with no title; the count sums them. Each count comes from the page itself: the trial printed each page's SLO and objectives sections, cut by their printed headings alone (EXCERPT_BY_HOST and OBJECTIVES_EXCERPT_BY_HOST under saddleback.curriqunet.com/198), to its job log, and the worker counted the printed entries by eye. Every page answered 200 under both caps. slugs names the college this count stands for: a read for another college on the host is refused.",
+ "trial": "44911142170",
+ "parser_fingerprint": "2629a09aeac9be1183829d0cea92009f",
+ "slugs": "irvine_valley",
+ "pages": {
+  "ACCT 1A": {
+   "slo": 4,
+   "objective": 17,
+   "by": "S697 ivc worker",
+   "from": "the page's SLO section (STUDENT LEARNING OUTCOMES to its Required Texts heading) and objectives section (Learning Objectives to its Content heading) as printed in the log of trial 44911142170, job 136867300004, read by eye line by line, apart from the parser: each Outcome Text entry counted once, the summary list printed above the Student Learning Outcomes subheading, the lead-in Students completing this course satisfactorily will be able to:, and the Institutional Learning Outcomes maps under each entry not counted; the objectives column header Objective not counted.",
+   "at": "2026-11-21T13:58:19Z"
+  },
+  "ARTH 1": {
+   "slo": 3,
+   "objective": 9,
+   "by": "S697 ivc worker",
+   "from": "the page's SLO section (STUDENT LEARNING OUTCOMES to its Required Texts heading) and objectives section (Learning Objectives to its Content heading) as printed in the log of trial 44911142170, job 136867300004, read by eye line by line, apart from the parser: each Outcome Text entry counted once, the summary list printed above the Student Learning Outcomes subheading, the lead-in Students completing this course satisfactorily will be able to:, and the Institutional Learning Outcomes maps under each entry not counted; the objectives column header Objective not counted.",
+   "at": "2026-11-21T13:58:19Z"
+  },
+  "CHEM 12A": {
+   "slo": 5,
+   "objective": 6,
+   "by": "S697 ivc worker",
+   "from": "the page's SLO section (STUDENT LEARNING OUTCOMES to its Required Texts heading) and objectives section (Learning Objectives to its Content heading) as printed in the log of trial 44911142170, job 136867300004, read by eye line by line, apart from the parser: each Outcome Text entry counted once, the summary list printed above the Student Learning Outcomes subheading, the lead-in Students completing this course satisfactorily will be able to:, and the Institutional Learning Outcomes maps under each entry not counted; the objectives column header Objective not counted.",
+   "at": "2026-11-21T13:58:19Z"
+  },
+  "CS 1": {
+   "slo": 4,
+   "objective": 8,
+   "by": "S697 ivc worker",
+   "from": "the page's SLO section (STUDENT LEARNING OUTCOMES to its Required Texts heading) and objectives section (Learning Objectives to its Content heading) as printed in the log of trial 44911142170, job 136867300004, read by eye line by line, apart from the parser: each Outcome Text entry counted once, the summary list printed above the Student Learning Outcomes subheading, the lead-in Students completing this course satisfactorily will be able to:, and the Institutional Learning Outcomes maps under each entry not counted; the objectives column header Objective not counted.",
+   "at": "2026-11-21T13:58:19Z"
+  },
+  "ELEC 200": {
+   "slo": 3,
+   "objective": 7,
+   "by": "S697 ivc worker",
+   "from": "the page's SLO section (STUDENT LEARNING OUTCOMES to its Required Texts heading) and objectives section (Learning Objectives to its Content heading) as printed in the log of trial 44911142170, job 136867300004, read by eye line by line, apart from the parser: each Outcome Text entry counted once, the summary list printed above the Student Learning Outcomes subheading, the lead-in Students completing this course satisfactorily will be able to:, and the Institutional Learning Outcomes maps under each entry not counted; the objectives column header Objective not counted.",
+   "at": "2026-11-21T13:58:19Z"
+  },
+  "ERTH 20": {
+   "slo": 3,
+   "objective": 20,
+   "by": "S697 ivc worker",
+   "from": "the page's SLO section (STUDENT LEARNING OUTCOMES to its Required Texts heading) and objectives section (Learning Objectives to its Content heading) as printed in the log of trial 44911142170, job 136867300004, read by eye line by line, apart from the parser: each Outcome Text entry counted once, the summary list printed above the Student Learning Outcomes subheading, the lead-in Students completing this course satisfactorily will be able to:, and the Institutional Learning Outcomes maps under each entry not counted; the objectives column header Objective not counted.",
+   "at": "2026-11-21T13:58:19Z"
+  },
+  "FR 1": {
+   "slo": 3,
+   "objective": 5,
+   "by": "S697 ivc worker",
+   "from": "the page's SLO section (STUDENT LEARNING OUTCOMES to its Required Texts heading) and objectives section (Learning Objectives to its Content heading) as printed in the log of trial 44911142170, job 136867300004, read by eye line by line, apart from the parser: each Outcome Text entry counted once, the summary list printed above the Student Learning Outcomes subheading, the lead-in Students completing this course satisfactorily will be able to:, and the Institutional Learning Outcomes maps under each entry not counted; the objectives column header Objective not counted.",
+   "at": "2026-11-21T13:58:19Z"
+  },
+  "HD 10": {
+   "slo": 5,
+   "objective": 9,
+   "by": "S697 ivc worker",
+   "from": "the page's SLO section (STUDENT LEARNING OUTCOMES to its Required Texts heading) and objectives section (Learning Objectives to its Content heading) as printed in the log of trial 44911142170, job 136867300004, read by eye line by line, apart from the parser: each Outcome Text entry counted once, the summary list printed above the Student Learning Outcomes subheading, the lead-in Students completing this course satisfactorily will be able to:, and the Institutional Learning Outcomes maps under each entry not counted; the objectives column header Objective not counted.",
+   "at": "2026-11-21T13:58:19Z"
+  },
+  "IMA 191": {
+   "slo": 1,
+   "objective": 6,
+   "by": "S697 ivc worker",
+   "from": "the page's SLO section (STUDENT LEARNING OUTCOMES to its Required Texts heading) and objectives section (Learning Objectives to its Content heading) as printed in the log of trial 44911142170, job 136867300004, read by eye line by line, apart from the parser: each Outcome Text entry counted once, the summary list printed above the Student Learning Outcomes subheading, the lead-in Students completing this course satisfactorily will be able to:, and the Institutional Learning Outcomes maps under each entry not counted; the objectives column header Objective not counted.",
+   "at": "2026-11-21T13:58:19Z"
+  },
+  "LIB 20": {
+   "slo": 5,
+   "objective": 7,
+   "by": "S697 ivc worker",
+   "from": "the page's SLO section (STUDENT LEARNING OUTCOMES to its Required Texts heading) and objectives section (Learning Objectives to its Content heading) as printed in the log of trial 44911142170, job 136867300004, read by eye line by line, apart from the parser: each Outcome Text entry counted once, the summary list printed above the Student Learning Outcomes subheading, the lead-in Students completing this course satisfactorily will be able to:, and the Institutional Learning Outcomes maps under each entry not counted; the objectives column header Objective not counted.",
+   "at": "2026-11-21T13:58:19Z"
+  },
+  "MS 20": {
+   "slo": 4,
+   "objective": 13,
+   "by": "S697 ivc worker",
+   "from": "the page's SLO section (STUDENT LEARNING OUTCOMES to its Required Texts heading) and objectives section (Learning Objectives to its Content heading) as printed in the log of trial 44911142170, job 136867300004, read by eye line by line, apart from the parser: each Outcome Text entry counted once, the summary list printed above the Student Learning Outcomes subheading, the lead-in Students completing this course satisfactorily will be able to:, and the Institutional Learning Outcomes maps under each entry not counted; the objectives column header Objective not counted.",
+   "at": "2026-11-21T13:58:19Z"
+  },
+  "PHYS 20": {
+   "slo": 3,
+   "objective": 15,
+   "by": "S697 ivc worker",
+   "from": "the page's SLO section (STUDENT LEARNING OUTCOMES to its Required Texts heading) and objectives section (Learning Objectives to its Content heading) as printed in the log of trial 44911142170, job 136867300004, read by eye line by line, apart from the parser: each Outcome Text entry counted once, the summary list printed above the Student Learning Outcomes subheading, the lead-in Students completing this course satisfactorily will be able to:, and the Institutional Learning Outcomes maps under each entry not counted; the objectives column header Objective not counted.",
+   "at": "2026-11-21T13:58:19Z"
+  }
+ }
+}

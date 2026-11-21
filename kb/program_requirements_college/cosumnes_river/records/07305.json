@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Building Inspection Technology",
  "award": "A.S. Degree",
- "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=213",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=212",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11827,
+  "input_tokens": 10956,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11827,
-    "output_tokens": 2447,
+    "input_tokens": 10956,
+    "output_tokens": 2559,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,29 +30,26 @@
     "model": null
    }
   ],
-  "output_tokens": 2447,
+  "output_tokens": 2559,
   "output_tokens_details": {
-   "thinking_tokens": 829
+   "thinking_tokens": 904
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09625,
- "ms": 20932,
- "seconds": 21.4,
+ "cost_usd": 0.095,
+ "ms": 20953,
+ "seconds": 22.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 11,
+   "placed": 13,
    "listed": 13,
-   "share": 0.846,
-   "missing": [
-    "BIT100",
-    "BIT101"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
@@ -68,20 +65,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    33.0,
-    33.0
+    39.0,
+    39.0
    ],
    "stated": [
     39.0,
     39.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 33.0-33.0; the catalog states 39.0-39.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -98,7 +93,7 @@
    "pass": true
   },
   "careers": {
-   "count": 6,
+   "count": 7,
    "not_verbatim": [],
    "pass": true
   },
@@ -108,11 +103,11 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Building Inspection Technology A.S. Degree (heading not in extracted text; section begins on page 212)",
+   "section_heading": "A.S. in Building Inspection Technology",
    "measure": "units",
    "total_units": {
     "min": 39,
@@ -134,13 +129,14 @@
    },
    "electives_fill_degree": true,
    "outcomes": [
-    "Interpret the model building codes: Interpret the model building codes and summarize the origins and evolution of building codes in this country. Identify the origin and organization of the model building codes. Interpret code requirements for plans, permits and inspections. Diagnose code compliance with a minimum of 80% accuracy, congruent with industry certification. (PSLO 1)",
-    "Analyze a set of construction drawings to determine completeness/code compliance: Analyze a set of construction drawings to determine completeness and code compliance. Develop a thorough understanding of the organization and purpose of construction drawings. Recognize deficiencies in a set of construction drawings submitted for plan review. (PSLO 2)",
-    "Develop skills and competencies: Develop skills and competencies for effective and competitive workforce performance. (PSLO 3)",
-    "Apply specific and measurable career and /or workforce learning objectives: Apply specific and measurable career and/ or workforce learning objective through classroom study and independent assignments. (PSLO 4)",
-    "Ensure that the program is consistent with the college SLO’s: Ensure that the program is consistent with the college SLO’s and is providing the students and community with a valuable and meaningful service. (PSLO 5)"
+    "Interpret the model building codes: Interpret the model building codes and summarize the origins and evolution of building codes in this country. Identify the origin and organization of the model building codes. Interpret code requirements for plans, permits and inspections. Diagnose code compliance with a minimum of 80% accuracy, congruent with industry certification.",
+    "Analyze a set of construction drawings to determine completeness/code compliance: Analyze a set of construction drawings to determine completeness and code compliance. Develop a thorough understanding of the organization and purpose of construction drawings. Recognize deficiencies in a set of construction drawings submitted for plan review.",
+    "Develop skills and competencies: Develop skills and competencies for effective and competitive workforce performance.",
+    "Apply specific and measurable career and /or workforce learning objectives: Apply specific and measurable career and/ or workforce learning objective through classroom study and independent assignments.",
+    "Ensure that the program is consistent with the college SLO’s: Ensure that the program is consistent with the college SLO’s and is providing the students and community with a valuable and meaningful service."
    ],
    "careers": [
+    "building inspection",
     "Building Inspector",
     "Plan Checker",
     "Construction Supervisor",
@@ -151,7 +147,7 @@
   },
   "blocks": [
    {
-    "name": "Degree Requirements (required courses)",
+    "name": "Degree Requirements",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -160,6 +156,20 @@
      "max": null
     },
     "courses": [
+     {
+      "code": "BIT 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIT 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
      {
       "code": "BIT 112",
       "units": 3,
@@ -260,22 +270,34 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "BIT 100",
-    "why": "not in the extracted A.S. section; likely on page 212 (cut off); appears only in Fire Prevention and certificate sections"
-   },
-   {
-    "code": "BIT 101",
-    "why": "not in the extracted A.S. section; likely on page 212 (cut off); appears only in certificate section"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The A.S. degree requirements table starts on page 212, which is not in the extracted text; the visible rows begin with BIT 112. Required courses (5 x 3 = 15) plus 18 elective units total 33, short of the printed 39, suggesting two 3-unit required courses (probably BIT 100 and BIT 101, as in the certificate) are on the missing page. Reviewer should check page 212.",
-   "Section heading and description for the A.S. are not in the extracted text.",
-   "Degree is completed with Local GE or Cal-GETC plus sufficient electives for at least 60 units; read as electives filling the degree, not a printed degree total.",
-   "BIT 140 is printed as 'Residential Electrical Code Requirements' and BIT 141 as 'Commercial Electrical Code Requirements', differing from the state file titles (Electrical I/II)."
+   "The degree's required course table breaks across pages 212-213; BIT 100 and BIT 101 are on page 212 and the rest continue on page 213.",
+   "Trailing labels '(PSLO 1)' through '(PSLO 5)' were omitted from the outcomes as list numbers.",
+   "The page says the degree requires the program plus Local GE or Cal-GETC 'plus sufficient electives for a total of at least 60 units'; no degree total or GE units are printed as figures for this award, so degree_total and ge_units are null and electives_fill_degree is true.",
+   "Catalog titles differ from the state file for BIT 102 ('Plan Reading and Non-Structural Plan Review'), BIT 140 ('Residential Electrical Code Requirements'), BIT 141 ('Commercial Electrical Code Requirements') and BIT 150.",
+   "BIT 154 California Green Building Standards Code is not in the closed list; recorded as a catalog addition.",
+   "The page also prints a Building Inspection Technology Certificate (33 units, 12-unit elective choice) and an A.S. in Fire Prevention; those sections were not used.",
+   "'building inspection' was taken from the description 'prepare individuals for employment in building inspection'."
   ]
  },
- "extracted_run": "39047009824"
+ "extracted_run": "44917314201",
+ "catalog_year": "2026-2027",
+ "source_sha": "9d9ddef4b0b3eff9",
+ "source_codes": [
+  "BIT100",
+  "BIT101",
+  "BIT102",
+  "BIT104",
+  "BIT106",
+  "BIT112",
+  "BIT120",
+  "BIT121",
+  "BIT130",
+  "BIT140",
+  "BIT141",
+  "BIT150",
+  "CMT310"
+ ],
+ "source_coverage": 1.0
 }
