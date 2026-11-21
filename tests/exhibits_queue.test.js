@@ -106,7 +106,7 @@ const entry = (t, re) => Array.from(t.d.querySelectorAll(".exh-qs .exh-qe")).fin
   check("a lens opens from its address", txt(lensNav(r).querySelector('[aria-current="true"]')) === "Ready to check");
   check("Ready counts Proposed from the Review step", /^2 titles the nightly run proposed/.test(txt(entry(r, /proposed a name/))));
   check("saved-not-folded waits on a process and has no check control",
-    (function () { const li = entry(r, /saved and not yet folded/); return li && /^4 /.test(txt(li)) && !li.querySelector("button"); })());
+    (function () { const li = entry(r, /saved and not yet in the reference/); return li && /^4 /.test(txt(li)) && !li.querySelector("button"); })());
   const proposed = entry(r, /proposed a name/);
   clickWord(r, proposed, "Check them"); await settle();
   check("Check them opens Review on Proposed", r.M._state.view === "review" && r.M._state.filter === "Proposed");

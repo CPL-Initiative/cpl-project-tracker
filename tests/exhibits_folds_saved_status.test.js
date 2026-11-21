@@ -1,4 +1,4 @@
-// The Exhibits List's "Folds waiting for the apply" tells the truth about a saved fold (#3110 build step 2, S638).
+// The Exhibits List's "Combinations waiting for the apply" tells the truth about a saved fold (#3110 build step 2, S638).
 // Sam approved 35 folds on 2026-11-11, opened the waiting filter, and every row read "Unreviewed" with no hint what to
 // do: listStatus read only the frozen reference's curated_at/curated_by. Saving the decision is the review. Guards:
 //   (1) a saved, unapplied fold (a title override plus a merge confirm in kb_curation) never renders "Unreviewed";
@@ -72,7 +72,7 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
   await t.M.boot(); await settle();
   check("the List opens with today's saves read", t.M._state.view === "list" && t.M._state.cs.overlayOk === true);
 
-  const f = words(t.d, "Folds waiting for the apply");
+  const f = words(t.d, "Combinations waiting for the apply");
   check("the waiting filter is on the bar", !!f);
   if (f) { f.click(); await settle(); }
   const shown = rows(t.d);
@@ -88,7 +88,7 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
 
   const line = t.d.getElementById("exh-l-waitline");
   check("(3) one plain sentence opens the waiting view", !!line
-    && txt(line) === "These folds are saved, the apply runs them without a click from you, and each one leaves this list once it is applied.", txt(line));
+    && txt(line) === "These combinations are saved, the apply runs them without a click from you, and each one leaves this list once it is applied.", txt(line));
   check("(3) no Apply button", !Array.from(t.d.querySelectorAll("button")).some((b) => /^Apply\b/.test(txt(b))));
 
   check("(4) an old name of two titles names both, never the last one read",

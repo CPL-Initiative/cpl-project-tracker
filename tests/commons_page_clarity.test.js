@@ -126,6 +126,30 @@ function click(w, el) { el.dispatchEvent(new w.MouseEvent("click", { bubbles: tr
   check("(2) the answered list is gone from Needs you", !x.d.querySelector(".cmf-answered, [data-hunt-answered]"));
   check("(2) the source no longer only appends a line: the lists redraw from the live counts", /function redrawNeeds\(M\)/.test(SRC) && /M\.handed = rows/.test(SRC));
 
+  // ── COBIx's follow-ups on #3646 ──
+  // A term a hand-over names leaves the list; three copies of one term never clear the other two.
+  const term = (name, n) => ({ dataset: "term_reports", subject_kind: "dataset", college: null, course_code: null, kind: "file", status: "waiting", n: n, term: name });
+  x = load({ files: { "kb/status/commons_data.json": noCatalog }, summary: [term("Spring 2026", 3)] });
+  await x.M.boot(); await settle();
+  check("(2) ⭐ three hand-overs of one named term leave the other two terms wanted", txt(x.d.getElementById("cmf-term-wanted")).indexOf("Wanted, newest first: Spring 2025 and Fall 2024.") === 0
+    && txt(x.d.querySelector("#cmf-need-terms .cmf-handed")) === "Handed over: 3", txt(x.d.getElementById("cmf-term-wanted")));
+  x = load({ files: { "kb/status/commons_data.json": noCatalog }, summary: [term("Spring 2026", 1), term("Fall 2024", 1), term(null, 1)] });
+  await x.M.boot(); await settle();
+  check("(2) two named terms and one more hand-over clear the list", /^No term report waits on you: 3 term reports handed over\./.test(txt(x.d.getElementById("cmf-term-wanted"))), txt(x.d.getElementById("cmf-term-wanted")));
+  x = load({ files: { "kb/status/commons_data.json": noCatalog }, summary: [term("Spring 2026", 1), term("Spring 2025", 1)] });
+  await x.M.boot(); await settle();
+  check("(2) one term left reads as one term", txt(x.d.getElementById("cmf-term-wanted")).indexOf("Wanted, newest first: Fall 2024.") === 0, txt(x.d.getElementById("cmf-term-wanted")));
+  // A catalog address opens as a link only when it is a web address.
+  const odd = JSON.parse(JSON.stringify(OPEN_HUNT));
+  const oddC = odd.colleges.filter((c) => c.hunted && !c.filed);
+  oddC[0].catalog_url = "javascript:alert(1)"; oddC[1].catalog_url = "https://catalog.example.edu/";
+  x = load({ files: { "kb/status/commons_data.json": withData((d) => { d.blocked_hunt = odd; }) } });
+  await x.M.boot(); await settle();
+  const li0 = x.d.querySelector('#cmf-need-rows li[data-hunt-college="' + oddC[0].slug + '"]'), li1 = x.d.querySelector('#cmf-need-rows li[data-hunt-college="' + oddC[1].slug + '"]');
+  check("⭐ an address that is not a web address shows as plain text, never a link", li0 && !li0.querySelector("a.cmf-out") && txt(li0.querySelector(".cmf-out-plain")) === "javascript:alert(1)"
+    && !Array.from(x.d.querySelectorAll("a[href]")).some((l) => /^javascript:/i.test(l.getAttribute("href"))), li0 && txt(li0));
+  check("a web address still opens as a link", li1 && li1.querySelector("a.cmf-out") && li1.querySelector("a.cmf-out").getAttribute("href") === "https://catalog.example.edu/");
+
   // ── (3) the two estimated dates ──
   x = load();
   await x.M.boot(); await settle();
@@ -204,7 +228,9 @@ function click(w, el) { el.dispatchEvent(new w.MouseEvent("click", { bubbles: tr
     return !f || CM.colleges.filter((c) => f.test(c, CM)).length !== n;
   });
   check("(8) ⭐ every count is a link carrying its filter, and the filter counts the same colleges", countLinks.length === 6 && !bad.length, bad.map((l) => l.getAttribute("href") + " " + txt(l)).join(" | "));
-  check("(8) the denominator is the file's own college count", lineLis[0] && txt(lineLis[0]).indexOf(" of " + CM.colleges.length + " colleges done") > 0);
+  check("(8) the denominator is the file's own college count", lineLis[0] && txt(lineLis[0]).indexOf(" of " + CM.colleges.length + " colleges and campuses done") > 0);
+  check("(8) the stuck count says a person or a fix, as the list it opens does", lineLis.slice(0, 2).every((li) => /Stuck on a person or a fix: \d+/.test(txt(li))) && !/Stuck: waiting on a person:/.test(txt(cdc)), txt(lineLis[0]));
+  check("(8) the counting method names the districts beside the colleges and campuses", /colleges and continuing-education campuses, in \d+ districts \(\d+ plus Calbright\)\./.test(txt(cdc)), txt(cdc).slice(-260));
   const top = cdc.querySelector(".cmf-topfix"), topA = top && top.querySelector('a[href^="#collect/fix_"]');
   const topKey = topA ? topA.getAttribute("href").slice("#collect/fix_".length) : "";
   const reach = CM.colleges.filter((c) => (X.leversOf(c)[topKey] || 0) > 0).length;

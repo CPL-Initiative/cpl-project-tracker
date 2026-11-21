@@ -397,7 +397,7 @@ async function tickBox(t, title) { const c = cb(t.d, title); c.checked = true; c
   check("before the undo, the fold's target is held by the fold", !cb(t.d, "Firefighter 1A")
     && /1 title is saved to combine into it/.test(txt(item(t.d, "Firefighter 1A"))) && /Already saved to be renamed Firefighter 1A/.test(txt(item(t.d, "Firefighter I Academy"))));
   t.w.location.hash = "#exhibits/list"; t.M._routeFromHash(); t.M.render(); await settle(); await settle();
-  const row = Array.from(t.d.querySelectorAll(".exh-l-table tbody tr")).find(function (tr) { return /folds Firefighter I Academy into this credential/.test(txt(tr)); });
+  const row = Array.from(t.d.querySelectorAll(".exh-l-table tbody tr")).find(function (tr) { return /combines Firefighter I Academy into this credential/.test(txt(tr)); });
   const eb = row && Array.from(row.querySelectorAll("button")).find(function (b) { return txt(b) === "Edit"; });
   check("the List shows the saved fold, with its Edit", !!eb);
   eb.click(); await settle();
@@ -441,7 +441,7 @@ async function tickBox(t, title) { const c = cb(t.d, title); c.checked = true; c
   t = await saveInto({ types: T9 });
   r9 = rowsOf(t);
   check("with no saved rename, a cert-based title into graded Firefighter 1 is blocked on the first press, with nothing written",
-    r9.length === 0 && /^Blocked: Firefighter 1 Academy is cert-based .* and the fold lands on Firefighter 1, which is graded .*Press Save again/.test(txt(t.d.getElementById("exh-rel-note"))),
+    r9.length === 0 && /^Blocked: Firefighter 1 Academy is cert-based .* and the combination lands on Firefighter 1, which is graded .*Press Save again/.test(txt(t.d.getElementById("exh-rel-note"))),
     txt(t.d.getElementById("exh-rel-note")));
   t = await saveInto({ noTypes: true });
   check("⭐ with the CPL types file unread, the Save is held in plain words, with nothing written",

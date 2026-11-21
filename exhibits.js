@@ -227,7 +227,7 @@
     "In the reference": "Settled. The exhibit sits under its canonical credential, and the tabs and public pages show that name.",
     "Conflict with the reference": "The title saved for this exhibit disagrees with one a person already approved. The nightly run never overwrites a person's decision, so it waits for you.",
     "Rename batch": "Titles in the reference that are not named the way certifications now are: the official name first, the code in parentheses. Nothing is renamed until you approve the batch.",
-    "Another look": "Titles already in the reference that still differ from their neighbors: an ASE test to name, Roman numerals, a language level, a course number left in, a level that disagrees, or two titles to fold. Built nightly."
+    "Another look": "Titles already in the reference that still differ from their neighbors: an ASE test to name, Roman numerals, a language level, a course number left in, a level that disagrees, or two titles to combine. Built nightly."
   };
 
   var state = {
@@ -1296,7 +1296,11 @@
   function detailButton(text, key, cls, redraw) {
     var open = !!state.det[key];
     return word(text, function () {
-      if (state.det[key]) delete state.det[key]; else state.det[key] = true;
+      if (state.det[key]) delete state.det[key]; else {
+        state.det[key] = true;
+        // A read that failed is tried again when a person opens a title; a draw alone never retries, so it cannot loop.
+        if (state.cd.ready && state.cd.err) state.cd.ready = false;
+      }
       redraw();
       var b = document.getElementById(detailId(key) + "-b");
       if (b) b.focus();
@@ -1448,7 +1452,9 @@
   /* ── Possible duplicate (Sam, 2026-11-21) ──
      "'Possible duplicate' note when titles match on known aliases (CDF = CAL FIRE), e.g. MAPICI-CWFA-1-001 Fire CDF
      Academy. Flag only; never merge." Two titles are flagged when they name one agency by two of its known names, or
-     read the same once each known name is written one way. The note is words on the card and on the Exhibits row;
+     read the same once each known name is written one way. Two names of one agency flag a pair only when the rest of
+     the two titles shares a word (fire and firefighter count as one), so two programs of one agency are left alone
+     (COBIx on #3643, 2026-11-21). The note is words on the card and on the Exhibits row;
      nothing is saved, checked or merged by it. A new agency joins KNOWN_ALIASES with every name it is written under. */
   var KNOWN_ALIASES = [
     { name: "CAL FIRE", was: "CDF", forms: [["CDF", /(?:^|[^A-Za-z])CDF(?![A-Za-z])/], ["CAL FIRE", /(?:^|[^A-Za-z])Cal\s?Fire(?![A-Za-z])/i],
@@ -1465,12 +1471,20 @@
     });
     return { hits: hits, key: (t.toLowerCase().match(/~\d+~|[a-z0-9]+/g) || []).sort().join(" ") };
   }
+  var DUP_SMALL = { a: 1, an: 1, and: 1, the: 1, of: 1, "in": 1, "for": 1, to: 1, at: 1, on: 1 };
+  function dupRest(key) { return key.split(" ").filter(function (w) { return w && w.charAt(0) !== "~" && !DUP_SMALL[w]; }); }
+  function dupShares(a, b) {
+    var A = dupRest(a), B = dupRest(b);
+    return A.some(function (x) {
+      return B.some(function (y) { return x === y || (x.length >= 4 && y.length >= 4 && (x.indexOf(y) === 0 || y.indexOf(x) === 0)); });
+    });
+  }
   function possibleDuplicate(a, b) {
     if (!a || !b || a === b) return null;
     var A = aliasRead(a), B = aliasRead(b), found = null;
     Object.keys(A.hits).forEach(function (name) {
       if (found || !B.hits[name]) return;
-      if (A.hits[name] !== B.hits[name] || A.key === B.key) found = { name: name, a: A.hits[name], b: B.hits[name] };
+      if (A.key === B.key || (A.hits[name] !== B.hits[name] && dupShares(A.key, B.key))) found = { name: name, a: A.hits[name], b: B.hits[name] };
     });
     return found;
   }
@@ -1506,7 +1520,7 @@
     var tip = (b.type ? "CPL type: " + b.type + ". " : "") + (b.cert
       ? "The title is the official name of the certification, license or training program. Read the Exhibits panel first."
       : "One course stands behind the exhibit, so the course's title can name it. Read the Course details panel first.");
-    return el("span", { cls: "exh-chip exh-chip-key", id: "exh-chip-basis", tabindex: "0", "data-tip": tip, "aria-label": label + ". " + tip }, [label]);
+    return el("span", { cls: "exh-chip exh-chip-key", id: "exh-chip-basis", role: "note", tabindex: "0", "data-tip": tip, "aria-label": label + ". " + tip }, [label]);
   }
 
   /* ── The statewide or most-used title, and related titles changed from the panel (Sam, 2026-11-12) ──
@@ -1990,7 +2004,7 @@
     box.appendChild(el("p", { cls: "exh-small exh-muted", text: "Nothing is renamed until you approve. Edit a proposed title, or skip a row, before you do. "
       + "An approved title keeps its old name as a search alias, and its local titles, colleges and students move with it. "
       + "A row with no proposed title names more than one test or no test; it stays as it is unless you write a title. "
-      + "A title that folds into another keeps each local exhibit's own path and assessor, shown under it." }));
+      + "A title that combines into another keeps each local exhibit's own path and assessor, shown under it." }));
     if (!open.length) { box.appendChild(el("p", { cls: "exh-empty", text: "Every title in this batch is decided." })); return box; }
     var cols = el("colgroup", null, [["26%"], ["34%"], ["8%"], ["9%"], ["9%"], ["14%"]].map(function (w) { var c = el("col"); c.style.width = w[0]; return c; }));
     var head = el("thead", null, [el("tr", null, ["Current title", "Proposed title", "Local titles", "Colleges", "Students", "Decision"].map(function (h) {
@@ -2010,7 +2024,7 @@
         // Until the batch is saved nothing is renamed, so the row says what approving will do (#3228: a row read
         // "Renamed" before any save, and Sam took it for a decision that had not held).
         fate.textContent = renameSkipped(r) ? "Skipped: keeps its title"
-          : !t || t === r.current ? "Left as it is" : x && x.merge ? "Folds into the title of that name on approval" : "Renames on approval";
+          : !t || t === r.current ? "Left as it is" : x && x.merge ? "Combines into the title of that name on approval" : "Renames on approval";
       }
       inp.addEventListener("input", function () { state.rb.drafts[r.current] = inp.value; say(); count(); });
       if (skipped) inp.disabled = true;
@@ -2039,7 +2053,7 @@
     else {
       box.appendChild(el("p", { cls: "exh-small", role: "status" }, ["Save " + fmt(plan.renames.length) + " rename" + (plan.renames.length === 1 ? "" : "s")
         + (plan.skips.length ? ", and " + fmt(plan.skips.length) + " skipped so they do not come back" : "") + "? "
-        + fmt(plan.renames.filter(function (x) { return x.merge; }).length) + " fold into another title of the same name. "
+        + fmt(plan.renames.filter(function (x) { return x.merge; }).length) + " combine into another title of the same name. "
         + fmt(plan.left.length) + " stay as they are, still in this batch."]));
       acts.appendChild(word(state.rb.busy ? "Saving…" : "Save the batch", function () { if (!state.rb.busy) approveRename(b); }, state.rb.busy ? { disabled: "disabled" } : null));
       acts.appendChild(word("Cancel", function () { state.rb.ask = false; render(); }));
@@ -2204,7 +2218,7 @@
     saveSweep([c], "change", [title])
       .then(function () {
         swDecided(c, "change", title, "Saved “" + title + "” for " + fmt(c.locals.length) + " local title"
-          + (c.locals.length === 1 ? "" : "s") + ". The nightly fold moves them while “" + c.current + "” still stands.");
+          + (c.locals.length === 1 ? "" : "s") + ". The nightly run moves them while “" + c.current + "” still stands.");
       }).catch(failed);
   }
   function swKeep(c) {
@@ -2245,7 +2259,7 @@
         state.sw.saved[c.id] = "change"; state.sw.done[c.id] = true; delete state.sw.drafts[c.id];
       });
       state.sw.bulkBusy = false; state.sw.bulkAsk = false; state.sw.cur = 0;
-      state.note = "Saved the proposed title for " + fmt(cards.length) + " cards. The nightly fold moves them. Back returns to them one at a time.";
+      state.note = "Saved the proposed title for " + fmt(cards.length) + " cards. The nightly run moves them. Back returns to them one at a time.";
       render();
     }).catch(function (e) { state.sw.bulkBusy = false; state.sw.bulkAsk = false; failed(e); });
   }
@@ -2401,7 +2415,7 @@
     var row = el("div", { cls: "exh-chiprow" });
     c.rules.forEach(function (id) {
       var r = sweepRule(id);
-      row.appendChild(el("span", { cls: "exh-chip", tabindex: "0", "data-tip": r.tip || "", "aria-label": r.label + ". " + (r.tip || "") }, [r.label]));
+      row.appendChild(el("span", { cls: "exh-chip", role: "note", tabindex: "0", "data-tip": r.tip || "", "aria-label": r.label + ". " + (r.tip || "") }, [r.label]));
     });
     if (state.sw.saved[c.id]) row.appendChild(el("span", { cls: "exh-muted exh-small", text: state.sw.saved[c.id] === "change" ? "Changed earlier this visit" : "Kept earlier this visit" }));
     box.appendChild(row);
@@ -2506,7 +2520,7 @@
     var d = state.sw.data;
     if (state.sw.batchMode) return renderBatch(wrap);
     wrap.appendChild(el("p", { cls: "exh-muted exh-small", text: "Built " + stamp(d.generated_at) + " from every title in the reference. "
-      + "Each card names its rule; a change moves its local titles at the nightly fold." }));
+      + "Each card names its rule; a change moves its local titles at the nightly run." }));
     if (state.sw.readErr) wrap.appendChild(unreadNote(d.generated_at, state.sw.readErr, "card"));
     wrap.appendChild(sweepRules());
     var list = sweepShown();
@@ -2672,14 +2686,14 @@
 
   function card(h, list) {
     var c = el("section", { cls: "exh-card", "aria-label": "Review one title" });
-    var chip = el("span", { cls: "exh-chip", id: "exh-chip-step", tabindex: "0", "data-tip": TIPS[h.step] || "",
+    var chip = el("span", { cls: "exh-chip", id: "exh-chip-step", role: "note", tabindex: "0", "data-tip": TIPS[h.step] || "",
       "aria-label": "CER step: " + h.step + ". " + (TIPS[h.step] || "") }, ["CER step: " + h.step]);
     // The chips every Review card opens with (Sam, 2026-11-21): the basis first, then Statewide and the CPL-AI
     // recommendation where they hold for the title in the box.
     var basis = cardBasis(h, h.issuer);
-    var swChip = el("span", { cls: "exh-chip exh-chip-key", id: "exh-chip-sw", tabindex: "0",
+    var swChip = el("span", { cls: "exh-chip exh-chip-key", id: "exh-chip-sw", role: "note", tabindex: "0",
       "data-tip": "A statewide exhibit carries this title.", "aria-label": "Statewide. A statewide exhibit carries this title." }, ["Statewide"]);
-    var caiChip = el("span", { cls: "exh-chip exh-chip-key", id: "exh-chip-cai", tabindex: "0" }, ["CPL-AI recommendation"]);
+    var caiChip = el("span", { cls: "exh-chip exh-chip-key", id: "exh-chip-cai", role: "note", tabindex: "0" }, ["CPL-AI recommendation"]);
     var row = el("div", { cls: "exh-chiprow" }, [basisChip(basis), swChip, caiChip, chip]);
     if (h.saved) row.appendChild(el("span", { cls: "exh-muted exh-small", text: "Saved earlier as “" + h.saved + "”" }));
     c.appendChild(row);
@@ -3718,9 +3732,9 @@
     ["bare", "No articulation"],
     ["nosubj", "No Common SUBJ"],
     ["changed", "Changed this visit"],
-    ["suggested", "Suggested folds"],
+    ["suggested", "Suggested combinations"],
     ["outcomes", "Outcomes match"],
-    ["waiting", "Folds waiting for the apply"],
+    ["waiting", "Combinations waiting for the apply"],
     ["statewide", "Based on statewide"],
     ["local", "Local only"],
     ["left", "A title that has left MAP"],
@@ -4011,7 +4025,7 @@
     var raws = (r.raw_variants || []).map(function (v) { return v.r; }).filter(Boolean);
     if (raws.length) {
       var hit = raws.some(function (x) { return auditNorm(x) === key; });
-      facts.push(fmt(raws.length) + (raws.length === 1 ? " college-written title folds" : " college-written titles fold") + " here" + (hit ? ", and one reads this way" : "; none reads this way"));
+      facts.push(fmt(raws.length) + (raws.length === 1 ? " college-written title combines" : " college-written titles combine") + " here" + (hit ? ", and one reads this way" : "; none reads this way"));
     }
     // The noise the canonicalization rules strip.
     var noise = AUDIT_NOISE.filter(function (n) { return n[0].test(title); }).map(function (n) { return n[1]; });
@@ -4031,11 +4045,11 @@
     } else facts.push("no issuer named");
     // One recommendation, the most pressing first.
     if (same.length) recs.push(typed && typed !== was
-      ? "this title is “" + listTitle(same[0]) + "”'s. If they are one credential, fold them (Suggested folds, or Move); if not, add what tells them apart, a level, an exam or a version"
-      : "two credentials carry one title: fold them if they are one, or tell them apart");
+      ? "this title is “" + listTitle(same[0]) + "”'s. If they are one credential, combine them (Suggested combinations, or Move); if not, add what tells them apart, a level, an exam or a version"
+      : "two credentials carry one title: combine them if they are one, or tell them apart");
     else if (twin) recs.push("spell the issuer “" + twin + "”, as " + fmt(spell[twin]) + " credentials do");
     else if (noise.length) recs.push("drop " + noise[0] + " from the title; the canonicalization rules keep the credential's own name");
-    else if (close.length && close[0].s >= 0.75) recs.push("check “" + listTitle(close[0].x) + "”: if it is the same credential, fold one into the other");
+    else if (close.length && close[0].s >= 0.75) recs.push("check “" + listTitle(close[0].x) + "”: if it is the same credential, combine one into the other");
     else if (!issuer) recs.push("name the issuer, the body that grants the credential");
     else recs.push("the title and issuer read well against the reference");
     return facts.join("; ") + ". Recommendation: " + recs[0] + ".";
@@ -4189,7 +4203,7 @@
     if (o.title) return null;
     var end = listChainEnd(sg.to);
     if (end === r.ut) return null;
-    return { to: sg.to, end: end, why: end === sg.to ? sg.why : sg.why + "; " + sg.to + " itself now folds into " + end };
+    return { to: sg.to, end: end, why: end === sg.to ? sg.why : sg.why + "; " + sg.to + " itself now combines into " + end };
   }
   /* Where a title lands once the pending renames run: follow each credential's saved rename until one has none
      (Sam, 2026-11-01: "for the folds already accepted I would want to be sure that we can fold to better titles").
@@ -4239,7 +4253,7 @@
      press on another. */
   function guardKey(surface, key) { return surface + ": " + key; }
   function foldBlockWords(from, f, again) {
-    return "Blocked: " + from + " is " + groupWords(f.cross.a) + " and the fold lands on " + f.end
+    return "Blocked: " + from + " is " + groupWords(f.cross.a) + " and the combination lands on " + f.end
       + (f.end !== f.pick ? " (" + f.pick + " is saved to become " + f.end + ")" : "") + ", which is " + groupWords(f.cross.b)
       + (f.typedAt !== f.end ? ", the type of " + f.typedAt + ", since " + f.end + " has no CPL type of its own" : "")
       + ". Sam's rule keeps these apart. " + (again || "Accept again") + " to combine them anyway; that override is logged.";
@@ -4265,10 +4279,10 @@
       }).then(function (rs) {
         if (!rs.every(function (x) { return x.ok; })) throw new Error("HTTP " + rs.map(function (x) { return x.status; }).join("/"));
         listApply(r, writes);
-        return { ok: true, to: f.end, words: "Saved: " + from + " folds " + (o.straight ? "straight " : "") + "into " + f.end
+        return { ok: true, to: f.end, words: "Saved: " + from + " combines " + (o.straight ? "straight " : "") + "into " + f.end
           + (f.end !== pick ? ", where " + pick + "'s saved rename lands" : "") + ". The daily dry-run pairs them, and a reviewed apply merges the records." };
       }).catch(function (e) {
-        return { ok: false, words: e && e.message === "signin" ? "Sign in as a reviewer to " + (o.verb || "accept a fold") + "." : "The fold of " + from
+        return { ok: false, words: e && e.message === "signin" ? "Sign in as a reviewer to " + (o.verb || "accept a combination") + "." : "The combination of " + from
           + " did not reach the reference (" + (e && e.message || "no answer") + "); nothing changed." };
       });
     });
@@ -4282,14 +4296,14 @@
     return leftMapLoad().then(function () {
       var all = pairs.map(function (p) { return { from: p[0], f: foldLanding(p[0], p[1]) }; });
       var self = all.filter(function (x) { return x.f.end === x.from; })[0], held = all.filter(function (x) { return x.f.held; })[0];
-      if (self) return { words: self.f.pick + " is already saved to become " + self.from + ", so " + self.from + " cannot fold into it; nothing was saved." };
+      if (self) return { words: self.f.pick + " is already saved to become " + self.from + ", so " + self.from + " cannot combine into it; nothing was saved." };
       if (held) return { words: held.f.held };
       var cross = all.filter(function (x) { return x.f.cross; });
       var fresh = cross.filter(function (x) { return !LEFT.guard[guardKey(surface, x.f.key)]; });
       if (fresh.length) {
         fresh.forEach(function (x) { LEFT.guard[guardKey(surface, x.f.key)] = true; });
         return { words: foldBlockWords(fresh[0].from, fresh[0].f, again) + (fresh.length > 1 ? " " + fmt(fresh.length - 1) + " more "
-          + (fresh.length === 2 ? "fold crosses" : "folds cross") + " the groups the same way." : "") };
+          + (fresh.length === 2 ? "combination crosses" : "combinations cross") + " the groups the same way." : "") };
       }
       return { logs: cross.map(function (x) { return [x.from, foldOverride(x.from, x.f)]; }), ends: all.map(function (x) { return x.f.end; }) };
     });
@@ -4300,8 +4314,8 @@
   }
   /* Re-point a waiting fold at the end of its chain, so the dry-run never holds it as stale. */
   function listRepoint(r, pf) {
-    listCellNote("Re-pointing the fold of " + r.ut + " to " + pf.end + "…");
-    return foldWrite(r, pf.to, { again: "Press Re-point again", verb: "re-point a fold", straight: true, surface: "repoint" }).then(function (res) {
+    listCellNote("Re-pointing the combination of " + r.ut + " to " + pf.end + "…");
+    return foldWrite(r, pf.to, { again: "Press Re-point again", verb: "re-point a combination", straight: true, surface: "repoint" }).then(function (res) {
       if (!res.ok) { listCellNote(res.words); return; }
       listState().cellNote = res.words;
       redrawList();
@@ -4395,7 +4409,7 @@
     } else if (name === "Status" || name === "Confidence") {
       var dec = listDecision(r);
       if (dec && dec.status === STATUS_APPLIED) line("Applied: the reference now carries this title as an old name of " + dec.to + ".");
-      else if (dec) line("Saved: " + (dec.fold ? "the fold into " : "the rename to ") + dec.to
+      else if (dec) line("Saved: " + (dec.fold ? "the combination into " : "the rename to ") + dec.to
         + " is the review. The apply runs it with no click from you.");
       else if (listStatus(r) === STATUS_FAMILY) line("Family set: " + listFamily(r) + ", from a person's decision. The title stays its own credential, adopted on its own.");
       else line(listStatus(r) === "Unreviewed" ? "No review stamp yet." : "Reviewed " + (stamp(r.curated_at) || "") + " by " +
@@ -4548,7 +4562,7 @@
         // The comments box (Sam, 2026-11-01: "add in a comments box to the reanalysis routine where I can add my
         // observations or concerns or opportunities to better inform the reanalysis"). Kept across repaints this visit.
         var box = el("textarea", { id: "exh-l-note", cls: "exh-l-in exh-l-ta", rows: "3", maxlength: "4000",
-          placeholder: "Observations, concerns or opportunities: what you were fixing, a pattern you noticed, titles that should fold, an issuer that looks wrong" });
+          placeholder: "Observations, concerns or opportunities: what you were fixing, a pattern you noticed, titles that should combine, an issuer that looks wrong" });
         box.value = L.comments || "";
         box.addEventListener("input", function () { L.comments = box.value; });
         wrap.appendChild(el("div", { cls: "exh-l-re" }, [
@@ -4565,7 +4579,7 @@
         // The waiting folds, told plainly (#3110 step 2): saved, applied without a click, and gone from here once applied.
         // Worded to hold whether a session or a schedule starts the apply.
         if (L.f === "waiting") wrap.appendChild(el("p", { cls: "exh-note", id: "exh-l-waitline",
-          text: "These folds are saved, the apply runs them without a click from you, and each one leaves this list once it is applied." }));
+          text: "These combinations are saved, the apply runs them without a click from you, and each one leaves this list once it is applied." }));
         if (L.f === "outcomes") {
           var sd = L.slo, sc = (sd && sd.counts) || {};
           wrap.appendChild(el("p", { cls: "exh-note", id: "exh-l-sloline", text: sd === false
@@ -4585,9 +4599,9 @@
         var out = [], o = state.cs.overlay[r.ut] || {}, col = listCollision(r);
         var pf = listPendingFold(r);
         if (pf) out.push(el("span", { cls: "exh-l-sub exh-l-sg" }, pf.end === pf.to
-          ? ["folds " + r.ut + " into this credential; waits for the reviewed apply"]
-          : [pf.to + " now folds into " + pf.end + ", so this fold would stall. ",
-            word("Re-point to " + pf.end, function () { listRepoint(r, pf); }, { "aria-label": "Re-point the fold of " + r.ut + " to " + pf.end })]));
+          ? ["combines " + r.ut + " into this credential; waits for the reviewed apply"]
+          : [pf.to + " now combines into " + pf.end + ", so this combination would stall. ",
+            word("Re-point to " + pf.end, function () { listRepoint(r, pf); }, { "aria-label": "Re-point the combination of " + r.ut + " to " + pf.end })]));
         else if (o.title) out.push(el("span", { cls: "exh-l-sub", text: "renamed from " + r.ut + "; pending the apply" }));
         var fm = famOf(r.ut);
         if (fm) out.push(el("span", { cls: "exh-l-sub exh-l-fam" }, ["Family: ", word(famWords(fm.name), function () {
@@ -4603,8 +4617,8 @@
       drawer: listDrawerFill,
       // The engine draws a spelling twin's fold under its title (with the AI sort on, or under Suggested folds), owns the
       // filter ids suggested, changed and selected, and keeps the visit's changed set that Re-analyze sends.
-      suggest: { get: function (r) { var sg = listSuggest(r); return sg ? { text: "fold into " + sg.end, why: sg.why, to: sg.to, end: sg.end } : null; },
-        verb: "Accept", accept: listSuggestAccept, label: function (r, sg) { return "Fold " + r.ut + " into " + sg.end; } },
+      suggest: { get: function (r) { var sg = listSuggest(r); return sg ? { text: "combine into " + sg.end, why: sg.why, to: sg.to, end: sg.end } : null; },
+        verb: "Accept", accept: listSuggestAccept, label: function (r, sg) { return "Combine " + r.ut + " into " + sg.end; } },
       changed: true,
       flag: { get: listFlag, set: listSetFlag },
       edit: {
@@ -4666,11 +4680,11 @@
           var nc = Object.keys(colls).length;
           return fmt(nc) + " college" + (nc === 1 ? "" : "s") + (sw ? ", " + fmt(sw) + " based on statewide" : "");
         },
-        extra: { test: listSuggest, words: function (n) { return fmt(n) + " suggested fold" + (n === 1 ? "" : "s"); } },
+        extra: { test: listSuggest, words: function (n) { return fmt(n) + " suggested combination" + (n === 1 ? "" : "s"); } },
         sortLine: function (L) {
           return "AI sort: like with like, the groups A to Z. A group gathers titles that share their subject words once level words (Beginning, 1, II, Advanced) "
             + "are set aside, with discipline and issuer weighing in; built " + (stamp(L.aiData._built_at) || L.aiData._reference_generated_at && stamp(L.aiData._reference_generated_at) || "daily")
-            + ". " + (L.aiData.counts && L.aiData.counts.suggested_folds ? fmt(L.aiData.counts.suggested_folds) + " spelling twins carry a suggested fold. " : "")
+            + ". " + (L.aiData.counts && L.aiData.counts.suggested_folds ? fmt(L.aiData.counts.suggested_folds) + " spelling twins carry a suggested combination. " : "")
             + "Select rows to move them to another group; Keep this group fixes a group and its name, and a rename to another group's name joins the two. "
             + "What you keep or move holds through every nightly rebuild. Press a header to sort by it instead.";
         }
@@ -5005,7 +5019,7 @@
     } else {
       // Each exhibit's number links to it in MAP; the table opens A to Z by local title.
       out.push(h.table({ id: "members", label: "Members of " + listTitle(r), sort: { col: 1, dir: 1 },
-        note: "The MAP exhibits folded under this name, as colleges entered them. Press a header to sort; an exhibit's number opens it in MAP.",
+        note: "The MAP exhibits combined under this name, as colleges entered them. Press a header to sort; an exhibit's number opens it in MAP.",
         cols: [["id", "Exhibit"], ["title", "Local title"], ["units", "Units", true]],
         rows: members,
         cell: function (m, k) {
@@ -5139,8 +5153,8 @@
     } else if (state.error) items.push({ n: null, words: "held titles: the review file could not be read" });
     if (state.sw.data) {
       var sw = sweepShown("").length;
-      items.push({ n: sw, words: sw === 1 ? "title in the reference to take another look at, to fold or correct."
-        : "titles in the reference to take another look at, to fold or correct.",
+      items.push({ n: sw, words: sw === 1 ? "title in the reference to take another look at, to combine or correct."
+        : "titles in the reference to take another look at, to combine or correct.",
         action: { words: "Take another look", go: function () { cmGo("another-look"); } } });
     }
     (row && row.issues || []).forEach(function (i) {
@@ -5331,7 +5345,7 @@
   }
   function renderRules(wrap) {
     wrap.appendChild(viewsNav());
-    wrap.appendChild(el("p", { cls: "exh-muted", text: "Every rule that suggests or folds an exhibit title. The procedures run each night, "
+    wrap.appendChild(el("p", { cls: "exh-muted", text: "Every rule that suggests or combines an exhibit title. The procedures run each night, "
       + "in this order, and propose a title for each new exhibit; Another look's rules read the titles already in the reference." }));
     wrap.appendChild(el("p", { cls: "exh-status", role: "status", "aria-live": "polite", text: state.rq.note || "" }));
 
@@ -5434,7 +5448,7 @@
     var g = el("section", { cls: "exh-group", "aria-labelledby": "exh-cs-h" }, [el("h3", { cls: "exh-q", id: "exh-cs-h",
       text: "Credentials the public added" + (rows ? " (" + fmt(rows.length) + (open ? ", " + fmt(open) + " waiting" : "") + ")" : "") })]);
     g.appendChild(el("p", { cls: "exh-small exh-muted", text: "From the Credential Catalog's Add it, when its search finds nothing. Check each against its link. "
-      + "Verify adds it to the Catalog as Not yet evaluated, with its asks counted; Merge folds it into a credential the Catalog already holds; "
+      + "Verify adds it to the Catalog as Not yet evaluated, with its asks counted; Merge combines it into a credential the Catalog already holds; "
       + "Decline keeps it out. Nothing a visitor typed shows until verified (Sam, 2026-11-06)." }));
     if (rows == null) {
       g.appendChild(el("p", { cls: "exh-empty", text: state.cs.error === "no session" ? "The added credentials read behind the team phrase or a reviewer sign-in."
@@ -5614,11 +5628,11 @@
         entries: [
           queueEntry(have ? stepCount("Proposed") : null, "titles the nightly run proposed a name for.", "Check them", have ? function () { queueGoReview("Proposed"); } : null),
           queueEntry(have ? stepCount("Wording check") : null, "titles held for a wording check.", "Check them", have ? function () { queueGoReview("Wording check"); } : null),
-          queueListEntry(lc, "suggested", "suggested folds in the List.", "Open them")
+          queueListEntry(lc, "suggested", "suggested combinations in the List.", "Open them")
         ],
         after: [el("h4", { cls: "exh-qh", text: "Waiting on a process, not on a check" }), el("ul", { cls: "exh-ql" }, [
-          queueEntry(have ? savedNotFolded() : null, "titles saved and not yet folded; the nightly run adds them to the reference.", "", null),
-          queueListEntry(lc, "waiting", "folds waiting for the reviewed apply.", "Open them")])] };
+          queueEntry(have ? savedNotFolded() : null, "titles saved and not yet in the reference; the nightly run adds them.", "", null),
+          queueListEntry(lc, "waiting", "combinations waiting for the reviewed apply.", "Open them")])] };
     }
     if (lens === "all") {
       return { lead: "The whole reference, searchable, and every title the nightly run held.",
@@ -5647,7 +5661,7 @@
       entries: [
         queueEntry(visit, visit === 1 ? "Another look decision this visit (this visit only)." : "Another look decisions this visit (this visit only).", "", null),
         queueListEntry(lc, "changed", "credentials changed in the List this visit (this visit only).", "Open them"),
-        queueListEntry(lc, "waiting", "folds saved and waiting for the reviewed apply (saved, not applied).", "Open them"),
+        queueListEntry(lc, "waiting", "combinations saved and waiting for the reviewed apply (saved, not applied).", "Open them"),
         queueEntry(state.rq.rows ? state.rq.rows.length : null, "rule requests and their runs (lasting).", "Open the rules", function () { cmGo("rules"); })
       ] };
   }
@@ -5735,7 +5749,7 @@
     var rlBox = reviewListBox(d);
     if (rlBox) group.appendChild(rlBox);
     var steps = el("div", { cls: "exh-steps", role: "group", "aria-label": "Filter the review queue by CER step" },
-      [stepTile("", "All held")].concat(STEPS.map(function (s) { return stepTile(s, s); }), [stepTile("Saved, not folded", "Saved, waiting for the nightly fold"), sweepTile(), renameTile()]));
+      [stepTile("", "All held")].concat(STEPS.map(function (s) { return stepTile(s, s); }), [stepTile("Saved, not folded", "Saved, waiting for the nightly run"), sweepTile(), renameTile()]));
     group.appendChild(steps);
     wrap.appendChild(group);
 

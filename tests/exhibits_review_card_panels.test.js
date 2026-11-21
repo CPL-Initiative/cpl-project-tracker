@@ -78,7 +78,7 @@ function load(opts) {
   w.CPL_TABS = { loadScript: function (file, global, cb) {
     loaded.push(file);
     if (file === "statewide_data.js") w.CPL_STATEWIDE = STATEWIDE;
-    if (file === "unified_courses_members.js") w.CPL_UC_MEMBERS = MEMBERS;
+    if (file === "unified_courses_members.js" && !(opts.failMembers && opts.failMembers-- > 0)) w.CPL_UC_MEMBERS = MEMBERS;
     if (/^coci_lookup_desc_/.test(file)) { w.CPL_COCI_DESC = w.CPL_COCI_DESC || {}; w.CPL_COCI_DESC.F = { CCC000378240: "Wildland fire line safety and behavior." }; }
     setTimeout(cb, 0);
   } };
@@ -216,6 +216,8 @@ function chipsOf(d) { return Array.from(d.querySelectorAll(".exh-card .exh-chipr
     ["California Department of Forestry Fire Academy", "CDF Fire Academy"]];
   const no = [["CAL FIRE Basic Firefighter Training (219-hour)", "CAL FIRE Ethical Leadership in the Classroom"], ["Firefighter 1", "Fire CDF Academy"],
     ["Firefighter 1", "Firefighter 1A"], ["CDFA Pesticide Applicator", "CAL FIRE Basic Firefighter Training (219-hour)"], ["Fire CDF Academy", "Fire CDF Academy"]];
+  // Two programs of one agency under two of its names are left alone (COBIx on #3643).
+  no.push(["Fire CDF Academy", "CAL FIRE Ethical Leadership in the Classroom"], ["CDF Firefighter I", "CAL FIRE Company Officer"]);
   const right = yes.filter(function (p) { return P(p[0], p[1]); }).length + no.filter(function (p) { return !P(p[0], p[1]); }).length;
   check("(8) self-recall: " + right + " of " + (yes.length + no.length) + " held pairs read right", right === yes.length + no.length);
   // On the shipped reference: every flagged pair names one agency two ways, and Sam's example is among them.
@@ -225,6 +227,29 @@ function chipsOf(d) { return Array.from(d.querySelectorAll(".exh-card .exh-chipr
     for (let j = 0; j < REL.length; j++) if (j !== i && P(REL[i], REL[j])) flagged.push(REL[i] + " ~ " + REL[j]);
   check("(8) on the shipped titles the matcher flags Sam's pair and stays small (" + flagged.length + " ordered pairs)",
     flagged.indexOf("CAL FIRE Basic Firefighter Training (219-hour) ~ Fire CDF Academy") >= 0 && flagged.length <= 12, flagged.join(" || "));
+
+  check("(8) on the shipped titles the CDF title and the CAL FIRE leadership course are not a pair",
+    flagged.indexOf("Fire CDF Academy ~ CAL FIRE Ethical Leadership in the Classroom") < 0 && flagged.length === 2, flagged.join(" || "));
+
+  // (1) each chip that carries a label has a role, so a screen reader reads the label (COBIx on #3643)
+  const labeled = Array.from(d.querySelectorAll(".exh-chip[aria-label], .exh-chip[tabindex]"));
+  check("(1) every chip a person can reach is a note", labeled.length >= 2 && labeled.every(function (c) { return c.getAttribute("role") === "note"; }),
+    labeled.filter(function (c) { return c.getAttribute("role") !== "note"; }).map(txt).join(" | "));
+
+  // (4) a read that failed is tried again when a person opens a title, and a draw alone never retries (COBIx on #3643)
+  const tf = load({ failMembers: 1 });
+  await tf.M.boot(); await settle();
+  const fEx = function () { return aside(tf.d, "Exhibits"); };
+  const reads = function () { return tf.loaded.filter(function (f) { return f === "unified_courses_members.js"; }).length; };
+  byText(fEx(), "button.exh-det-t", /^Fire CDF Academy$/).click(); await settle();
+  const n1 = reads();
+  check("(4) a failed read says so in the details", /Part of the data could not be read/.test(txt(fEx())) && n1 >= 1, txt(fEx()).slice(0, 300));
+  byText(tf.d, ".exh-card button", /^Teach a rule$/).click(); await settle();
+  check("(4) a redraw alone does not read again", reads() === n1);
+  byText(fEx(), "button.exh-det-t", /^Fire CDF Academy$/).click(); await settle();   // closes
+  byText(fEx(), "button.exh-det-t", /^Fire CDF Academy$/).click(); await settle();   // opens: the retry
+  check("(4) opening a title again reads the file again, and the details are whole", reads() === n1 + 1
+    && !/Part of the data could not be read/.test(txt(fEx())), reads() + " reads; " + txt(fEx()).slice(0, 300));
 
   // words
   const panelWords = txt(aside(d, "Course details")) + " " + txt(aside(d, "Exhibits"));
