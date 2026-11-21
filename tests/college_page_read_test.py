@@ -113,6 +113,11 @@ ml = cpr.matching_links(links + [{"text": "Statewide Career Pathways", "href": "
 check([m["href"] for m in ml] == ["https://www.ironworkers433.org/", "https://www.example.org/pathways"],
       "links on any host are shown when they match, fragment dropped, in page order")
 check(cpr.matching_links(links, None) == [], "no pattern, nothing shown")
+many = [{"text": "Subject %d" % i, "href": "https://catalog.example.edu/course-descriptions/s%d/" % i} for i in range(130)]
+check(len(cpr.matching_links(many, r"/course-descriptions/")) == cpr.LINKS_SHOWN, "40 matching links print by default")
+check(len(cpr.matching_links(many, r"/course-descriptions/", cap=cpr.plan_cap({"links_cap": 300}, "links_cap", cpr.LINKS_SHOWN, cpr.LINKS_SHOWN_MAX))) == 130,
+      "a plan's links_cap prints every subject an index lists")
+check(cpr.plan_cap({"links_cap": 99999}, "links_cap", cpr.LINKS_SHOWN, cpr.LINKS_SHOWN_MAX) == cpr.LINKS_SHOWN_MAX, "links_cap has a ceiling")
 
 print("skipped_hosts")
 proc = {"hosts": [{"host": "hsarticulation.cerritos.edu", "access": "unreached", "note": "no DNS record"},
@@ -151,6 +156,44 @@ check(cpr.cq_view_ids("https://bcc.curriqunet.com/Catalog/_getPage?catalogId=103
       "a JSON call's address names no entry")
 
 plans = sorted(glob.glob(os.path.join(ROOT, "kb", "college_reads", "*.json")))
+# ── a headings read (S698, #3655): the lines above each subject's first course ──
+print("subject_context")
+HEAD = r"^(?P<subj>[A-Z][A-Z &.]{0,11}?) (?P<num>\d{3}[A-Z]{0,3}) (?P<title>[A-Z].*)$"
+PAGES = ["front matter\nnothing here",
+         "ACCOUNTING\n(See also Business)\nACCTG 001 INTRODUCTORY ACCOUNTING I\n5 UNITS\nA description.\nACCTG 002 INTRODUCTORY ACCOUNTING II\n",
+         "Still accounting text\n\nADMINISTRATION OF JUSTICE\nADM JUS 001 INTRODUCTION TO ADMINISTRATION OF JUSTICE\n3 UNITS\n",
+         "ACCTG 021 BOOKKEEPING\nMathematics (MATH & STAT)\nMATH 105 ARITHMETIC\n"]
+sc = cpr.subject_context(PAGES, HEAD, before=4)
+check([g["subj"] for g in sc] == ["ACCTG", "ADM JUS", "MATH"], "one entry per subject code, in page order (%s)" % [g["subj"] for g in sc])
+check(sc[0]["before"] == ["front matter", "nothing here", "ACCOUNTING", "(See also Business)"] and sc[0]["page"] == 2,
+      "the lines above the first course are kept as printed, across the page break (%s)" % sc[0])
+check(sc[1]["before"] == ["5 UNITS", "A description.", "Still accounting text", "ADMINISTRATION OF JUSTICE"][-4:] or
+      sc[1]["before"][-1] == "ADMINISTRATION OF JUSTICE", "the heading right above the first course is the last line kept")
+check(sc[1]["before"][0] != "ACCTG 002 INTRODUCTORY ACCOUNTING II" and "ACCTG 002 INTRODUCTORY ACCOUNTING II" not in sc[1]["before"],
+      "a course line is never kept as context: the lines stop at the course before")
+check(sc[2]["before"] == ["Mathematics (MATH & STAT)"], "a later course of a code already seen resets the lines (%s)" % sc[2]["before"])
+check(cpr.subject_context(PAGES, HEAD, start_page=3)[0]["subj"] == "ADM JUS", "start_page skips the front of the catalog")
+check(len(cpr.subject_context(PAGES, HEAD, before=99)[0]["before"]) <= cpr.SUBJECT_CONTEXT_BEFORE_MAX, "the lines kept are capped")
+front = ["Honors list\nACCTG 001 INTRODUCTORY ACCOUNTING I\nMATH 105 ARITHMETIC\nmore front matter"] + PAGES
+check(cpr.subject_context(front, HEAD)[0]["before"] == ["Honors list"], "with no units pattern the first mention opens the subject")
+uc = cpr.subject_context(front, HEAD, units=r"^\d+ UNITS?$", within=2)
+check([g["subj"] for g in uc] == ["ACCTG", "ADM JUS"] and uc[0]["page"] == 3 and uc[0]["before"][-2:] == ["ACCOUNTING", "(See also Business)"],
+      "with the file's units pattern a code named ahead of the course descriptions opens no subject (%s)" % uc)
+check([g["subj"] for g in cpr.subject_context(["Math\nMATH 105 ARITHMETIC (3) UC:CSU\n"], r"^(?P<subj>[A-Z]+) (?P<num>\d{3}) (?P<title>.*)$",
+                                              units_inline=r"\(\d+\)")] == ["MATH"], "units carried on the heading line count")
+check(cpr.subject_context([], HEAD) == [] and cpr.subject_context([""], HEAD) == [], "an empty catalog gives nothing")
+buf = io.StringIO()
+with contextlib.redirect_stdout(buf):
+    cpr.print_page(1, {"url": "https://x.edu/c.pdf", "kind": "pdf", "pages": PAGES, "text": "\n\n".join(PAGES), "answers": ["h"]},
+                   re.compile("UNITS"), {"subject_context": {"heading": HEAD, "before": 2}})
+printed = buf.getvalue()
+check("(3 subjects)" in printed and "[subject ADM JUS · page 3]" in printed and "  | ADMINISTRATION OF JUSTICE" in printed
+      and "[pdf page" not in printed, "a headings read prints the context and no whole page")
+for path in sorted(glob.glob(os.path.join(ROOT, "kb", "college_reads", "*_subject_headings.json"))):
+    sp = json.load(open(path)).get("subject_context") or {}
+    check("(?P<subj>" in (sp.get("heading") or "") and re.compile(sp["heading"]) and 1 <= int(sp.get("before") or 0) <= cpr.SUBJECT_CONTEXT_BEFORE_MAX,
+          "%s names a course-heading pattern with a subj group" % os.path.basename(path))
+
 check(len(plans) >= 1, "at least one plan is committed")
 OUTSIDE = {"regionalcte.org"}   # the regional program record, named on purpose
 for path in plans:

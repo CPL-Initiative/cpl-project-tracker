@@ -1,0 +1,20 @@
+{
+ "_readme": "S698 (SkyAuklet), 2026-11-21, under Sam's go in session on #3655: every subject the course-descriptions index lists, each with its own address, so a subject's page is read at the address the index gives and never at one made from its code (the first read printed 40 links and the rest were made from the code: several answered 404, and Cerritos's Mathematics, Sociology and Political Science pages were never read). The links only; the page's text was read before. No model call.",
+ "college": "Cerritos College",
+ "questions": {
+  "subjects": "Every subject the index lists, with its address."
+ },
+ "keywords": [
+  "\\([A-Z]{2,6}\\)"
+ ],
+ "pages": [
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/",
+   "answers": [
+    "subjects"
+   ],
+   "links": "/degrees-certificates-courses/course-descriptions/[a-z0-9_-]+/",
+   "links_cap": 300
+  }
+ ]
+}

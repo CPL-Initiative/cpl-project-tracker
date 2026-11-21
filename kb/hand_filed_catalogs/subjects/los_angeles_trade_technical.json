@@ -1,0 +1,2046 @@
+{
+ "_what": "The subject heading Los Angeles Trade-Technical College's catalog prints above each subject's first course, read for the local subject titles (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_subject_headings.py from a headings read; `heading` is saved in Title Case (Sam, 2026-11-21) with `heading_printed` as the catalog prints it; `above` holds the lines as printed, `rule` how the heading was taken (named, caps, fits or none), and `code_fits` whether the code's letters run in order through the heading, a second signal that decides nothing.",
+ "college": "Los Angeles Trade-Technical College",
+ "run": "44948526227",
+ "source": [
+  "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf"
+ ],
+ "subjects": 113,
+ "with_heading": 82,
+ "rows": [
+  {
+   "code": "A S L",
+   "heading": "American Sign Language",
+   "heading_printed": "AMERICAN SIGN LANGUAGE",
+   "rule": "caps",
+   "codes": [
+    "A S L"
+   ],
+   "candidate": null,
+   "page": 240,
+   "above": [
+    "spirituals, gospels, concert music, opera, ballet, blues, and jazz underscoring",
+    "styles, characteristics, origin, and contributions by African-American artists.",
+    "(Credit allowed for only one of AFRO AM 060 or MUSIC 135.)",
+    "AMERICAN SIGN LANGUAGE"
+   ],
+   "first_course": "A S L 001 AMERICAN SIGN LANGUAGE I (4) UC/CSU"
+  },
+  {
+   "code": "ACAD PR",
+   "heading": "Academic Preparation",
+   "heading_printed": "ACADEMIC PREPARATION",
+   "rule": "caps",
+   "codes": [
+    "ACAD PR"
+   ],
+   "candidate": null,
+   "page": 348,
+   "above": [
+    "Courses",
+    "ACADEMIC PREPARATION",
+    "Note: There are no specific limitations on noncredit course repetition (PCAH, 8th",
+    "Edition)."
+   ],
+   "first_course": "ACAD PR 001CE LANGUAGE ARTS: WRITING MECHANICS (0)"
+  },
+  {
+   "code": "ACCTG",
+   "heading": "Accounting",
+   "heading_printed": "ACCOUNTING",
+   "rule": "caps",
+   "codes": [
+    "ACCTG"
+   ],
+   "candidate": null,
+   "page": 238,
+   "above": [
+    "Course Descriptions - Credit Courses",
+    "GRADUATION REQUIREMENTS, PATHWAYS",
+    "AND PROGRAMS OF STUDY",
+    "ACCOUNTING"
+   ],
+   "first_course": "ACCTG 001 INTRODUCTORY ACCOUNTING I (5) UC/CSU"
+  },
+  {
+   "code": "ADM JUS",
+   "heading": "Administration of Justice",
+   "heading_printed": "ADMINISTRATION OF JUSTICE",
+   "rule": "caps",
+   "codes": [
+    "ADM JUS"
+   ],
+   "candidate": null,
+   "page": 238,
+   "above": [
+    "be able to identify employment or volunteer/intern placement in order to participate in",
+    "program. Completion of two in-person, campus seminars, online work, and 120-150 field",
+    "hours by the end of the course is required.",
+    "ADMINISTRATION OF JUSTICE"
+   ],
+   "first_course": "ADM JUS 001 INTRODUCTION TO ADMINISTRATION OF JUSTICE (3)"
+  },
+  {
+   "code": "AFRO AM",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "AFRO AM"
+   ],
+   "candidate": null,
+   "page": 240,
+   "above": [
+    "scholars, artists, musicians, poets, and filmmakers have contributed to",
+    "thinking about Black experiences both historically and contemporarily. Finally,",
+    "students consider current Black struggles for freedom, for justice, and for",
+    "humanity through an ethnic studies lens."
+   ],
+   "first_course": "AFRO AM 020 AFRICAN-AMERICAN LITERATURE I(3) CSU"
+  },
+  {
+   "code": "ANATOMY",
+   "heading": "Anatomy",
+   "heading_printed": "ANATOMY",
+   "rule": "caps",
+   "codes": [
+    "ANATOMY"
+   ],
+   "candidate": null,
+   "page": 241,
+   "above": [
+    "topics include: hand positioning (location and angle), handshapes, rhythm, fluency,",
+    "spelling, and numbers; reception of fingerspelled handshapes, patterns and",
+    "pauses/transitions. O/P MEDI-CAL B",
+    "ANATOMY"
+   ],
+   "first_course": "ANATOMY 001 INTRODUCTION TO HUMAN ANATOMY (4) UC/CSU"
+  },
+  {
+   "code": "ANTHRO",
+   "heading": "Anthropology",
+   "heading_printed": "ANTHROPOLOGY",
+   "rule": "caps",
+   "codes": [
+    "ANTHRO"
+   ],
+   "candidate": null,
+   "page": 241,
+   "above": [
+    "Prerequisite: Biology 003 or 005 or 006",
+    "A detailed study of structures and systems of the human body. Laboratory work",
+    "includes microscopy, mammalian dissections, and use of anatomical models.",
+    "ANTHROPOLOGY"
+   ],
+   "first_course": "ANTHRO 101 HUMAN BIOLOGICAL EVOLUTION (3) UC/CSU"
+  },
+  {
+   "code": "ARC",
+   "heading": "Architecture",
+   "heading_printed": "ARCHITECTURE",
+   "rule": "caps",
+   "codes": [
+    "ARC"
+   ],
+   "candidate": null,
+   "page": 242,
+   "above": [
+    "retrofitting, adding and remodeling the “small house project” including basic interior",
+    "construction details and finishes. Residential construction problems are explored",
+    "with an emphasis placed in functional design.",
+    "ARCHITECTURE"
+   ],
+   "first_course": "ARC 130 HISTORY OF ARCHITECTURE I (2) UC/CSU"
+  },
+  {
+   "code": "ART",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "page": 244,
+   "above": [
+    "Lecture: 3 hours",
+    "This course provides an overview of art and architecture from the",
+    "Renaissance to the contemporary period with a focus on art from Europe. The",
+    "course will further consider global interactions involving this region."
+   ],
+   "first_course": "ART 103 ART APPRECIATION I (3) UC/CSU"
+  },
+  {
+   "code": "ASTRON",
+   "heading": "Astronomy",
+   "heading_printed": "ASTRONOMY",
+   "rule": "caps",
+   "codes": [
+    "ASTRON"
+   ],
+   "candidate": null,
+   "page": 244,
+   "above": [
+    "space. Exercises will be given in geometric and biomorphic shapes. Various",
+    "mediums and fabrication techniques will be explored, including the use of",
+    "mat-board, plastics, paint, and a variety of other materials",
+    "ASTRONOMY"
+   ],
+   "first_course": "ASTRON 001 ELEMENTARY ASTRONOMY (3) UC/CSU"
+  },
+  {
+   "code": "AUTOCOR",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "AUTOCOR"
+   ],
+   "candidate": null,
+   "page": 245,
+   "above": [
+    "Certification for Compliant Coatings Rule 1151 is taught in this course. It will",
+    "include paint application problems and solutions. Spot and panel paint options",
+    "including color matching are taught. Certification testing for the DuPont Certificate",
+    "is given and certificates are awarded to qualifying students."
+   ],
+   "first_course": "AUTOCOR 148 PAINT PREPARATION AND APPLICATION (3)"
+  },
+  {
+   "code": "AUTORTK",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "AUTORTK"
+   ],
+   "candidate": null,
+   "page": 246,
+   "above": [
+    "AND PRACTICES (3) CSU",
+    "Lecture: 1 hour / Lab: 6 hours",
+    "This course provides instruction in the theory, design, principles, diagnostics, and",
+    "proper system service of automotive brake, suspension, and steering systems."
+   ],
+   "first_course": "AUTORTK 121 BASIC ENGINE THEORY INSPECTION AND REPAIR"
+  },
+  {
+   "code": "BAR",
+   "heading": "Barbering",
+   "heading_printed": "BARBERING",
+   "rule": "caps",
+   "codes": [
+    "BAR"
+   ],
+   "candidate": null,
+   "page": 249,
+   "above": [
+    "*Title 5, section 55253 states that a student may earn up to a maximum of 16 semester",
+    "units or 24 quarter units of General & Occupational work experience education",
+    "combined (Board Rule 6405.10).",
+    "BARBERING"
+   ],
+   "first_course": "BAR 113 FRESHMAN BARBERING I (6)"
+  },
+  {
+   "code": "BIOLOGY",
+   "heading": "Biology",
+   "heading_printed": "BIOLOGY",
+   "rule": "caps",
+   "codes": [
+    "BIOLOGY"
+   ],
+   "candidate": null,
+   "page": 250,
+   "above": [
+    "Course Descriptions - Credit Courses",
+    "GRADUATION REQUIREMENTS, PATHWAYS",
+    "AND PROGRAMS OF STUDY",
+    "BIOLOGY"
+   ],
+   "first_course": "BIOLOGY 003 INTRODUCTION TO BIOLOGY (4) UC/CSU"
+  },
+  {
+   "code": "BIOTECH",
+   "heading": "Biotechnology",
+   "heading_printed": "BIOTECHNOLOGY",
+   "rule": "caps",
+   "codes": [
+    "BIOTECH"
+   ],
+   "candidate": null,
+   "page": 250,
+   "above": [
+    "This is the second of a sequence of two General Biology courses designed",
+    "for life science and pre-med majors. It deals with basic concepts in evolution,",
+    "systematics, anatomy, physiology and ecology of organisms.",
+    "BIOTECHNOLOGY"
+   ],
+   "first_course": "BIOTECH 010 INTRODUCTION TO BIOMANUFACTURING I"
+  },
+  {
+   "code": "BLDGCTQ",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "BLDGCTQ"
+   ],
+   "candidate": null,
+   "page": 250,
+   "above": [
+    "contractor training entry level workers or a homeowner looking to improve their own",
+    "home. Efficiency practices related to: Energy basics, sealing, insulating, window",
+    "replacement/installation, environmental air, water, appliance energy efficiency, and",
+    "lighting are just some of the areas that will be covered."
+   ],
+   "first_course": "BLDGCTQ 009 ENERGY AUDITOR - RESIDENTIAL (3)"
+  },
+  {
+   "code": "BSICSKL",
+   "heading": "Basic Skills",
+   "heading_printed": "BASIC SKILLS",
+   "rule": "caps",
+   "codes": [
+    "BSICSKL"
+   ],
+   "candidate": null,
+   "page": 348,
+   "above": [
+    "credit English classes.",
+    "BASIC SKILLS",
+    "Note: There are no specific limitations on noncredit course repetition (PCAH, 8th",
+    "Edition)."
+   ],
+   "first_course": "BSICSKL 002CE DEVELOPING ENGLISH COMPOSITION SKILLS (0)"
+  },
+  {
+   "code": "BUS",
+   "heading": "Business",
+   "heading_printed": "BUSINESS",
+   "rule": "caps",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "page": 252,
+   "above": [
+    "Course Descriptions - Credit Courses",
+    "GRADUATION REQUIREMENTS, PATHWAYS",
+    "AND PROGRAMS OF STUDY",
+    "BUSINESS"
+   ],
+   "first_course": "BUS 001 INTRODUCTION TO BUSINESS (3) UC/CSU"
+  },
+  {
+   "code": "CAOT",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "CAOT"
+   ],
+   "candidate": "Graduation Requirements, Pathways",
+   "page": 263,
+   "above": [
+    "GRADUATION REQUIREMENTS, PATHWAYS",
+    "AND PROGRAMS OF STUDY",
+    "263",
+    "Course Descriptions - Credit Courses"
+   ],
+   "first_course": "CAOT 007 MACHINE TRANSCRIPTION (3)"
+  },
+  {
+   "code": "CH DEV",
+   "heading": "Child Development",
+   "heading_printed": "CHILD DEVELOPMENT",
+   "rule": "caps",
+   "codes": [
+    "CH DEV"
+   ],
+   "candidate": null,
+   "page": 257,
+   "above": [
+    "The course reveals the progression of a people and culture in American",
+    "society, artistically expressed by Mexican-American writers who seek to",
+    "understand themselves and the world around them.",
+    "CHILD DEVELOPMENT"
+   ],
+   "first_course": "CH DEV 001 CHILD GROWTH AND DEVELOPMENT (3) UC/"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "CHEMISTRY",
+   "rule": "caps",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "page": 256,
+   "above": [
+    "crown ethers,aromatic compounds, esters, amino acids, peptides,",
+    "proteins,carbohydrates synthetic and natural polymers, polarimetry, IR,UV/",
+    "VIS, NMR spectroscopy, and mass spectrometry.",
+    "CHEMISTRY"
+   ],
+   "first_course": "CHEM 051 FUNDAMENTALS OF CHEMISTRY I (5) UC/CSU"
+  },
+  {
+   "code": "CHEM T",
+   "heading": "Chemical Technology",
+   "heading_printed": "CHEMICAL TECHNOLOGY",
+   "rule": "caps",
+   "codes": [
+    "CHEM T"
+   ],
+   "candidate": null,
+   "page": 255,
+   "above": [
+    "work/internship. Completion of at least seven units, including Cooperative",
+    "Education, at the end of the semester is required. Students must be employed",
+    "or volunteering/interning in order to participate in program.",
+    "CHEMICAL TECHNOLOGY"
+   ],
+   "first_course": "CHEM T 113 APPLIED CHEMISTRY MATHEMATICS I (2)"
+  },
+  {
+   "code": "CHICANO",
+   "heading": "Chicano Studies",
+   "heading_printed": "CHICANO STUDIES",
+   "rule": "caps",
+   "codes": [
+    "CHICANO"
+   ],
+   "candidate": null,
+   "page": 257,
+   "above": [
+    "Lecture: 3 hours",
+    "This course allows students to pursue directed study in Chemistry on a contract basis",
+    "under the direction of a supervising instructor.",
+    "CHICANO STUDIES"
+   ],
+   "first_course": "CHICANO 004 INTRODUCTION TO CHICANA/O STUDIES (3) UC/"
+  },
+  {
+   "code": "CIS",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "CIS"
+   ],
+   "candidate": null,
+   "page": 264,
+   "above": [
+    "the possibilities and problems of computer use in historical, economic and social",
+    "contexts. Students develop college-level and workplace skills in word processing,",
+    "spreadsheets and presentation graphics in a practical lab environment, along with",
+    "a conceptual view of databases and Internet methods and procedures."
+   ],
+   "first_course": "CIS 102 COMPUTER CONCEPTS (3) UC/CSU"
+  },
+  {
+   "code": "CLN ART",
+   "heading": "Culinary Arts",
+   "heading_printed": "CULINARY ARTS",
+   "rule": "caps",
+   "codes": [
+    "CLN ART"
+   ],
+   "candidate": null,
+   "page": 269,
+   "above": [
+    "and responsibility, diversity in higher education, educational strategies and",
+    "planning, interpersonal communication, career development, health issues,",
+    "and self-assessment techniques.",
+    "CULINARY ARTS"
+   ],
+   "first_course": "CLN ART 111 CULINARY ARTS ORIENTATION I (4) CSU"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "COMMUNICATION STUDIES",
+   "rule": "caps",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "page": 260,
+   "above": [
+    "Completion of at least seven units, including Cooperative Education, at the end of",
+    "the semester is required. Students must be employed or volunteering/interning in",
+    "order to participate in program.",
+    "COMMUNICATION STUDIES"
+   ],
+   "first_course": "COMM C1000 INTRODUCTION TO PUBLIC SPEAKING (3) UC/"
+  },
+  {
+   "code": "COMPLAN",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "COMPLAN"
+   ],
+   "candidate": null,
+   "page": 260,
+   "above": [
+    "labor force development strategies used to revitalize urban neighborhoods.",
+    "Students will produce a neighborhood plan using e-planning tools including: asset",
+    "maps, a housing plan and a workforce development plan. The course is also",
+    "offered as three modules that run concurrently with the full course."
+   ],
+   "first_course": "COMPLAN 002 INTRODUCTION TO COMMUNITY ORGANIZING (3)"
+  },
+  {
+   "code": "COOP ED",
+   "heading": "Cooperative Education",
+   "heading_printed": "COOPERATIVE EDUCATION",
+   "rule": "caps",
+   "codes": [
+    "COOP ED"
+   ],
+   "candidate": null,
+   "page": 267,
+   "above": [
+    "AND PROGRAMS OF STUDY",
+    "267",
+    "Course Descriptions - Credit Courses",
+    "COOPERATIVE EDUCATION"
+   ],
+   "first_course": "COOP ED 195 WORK EXPERIENCE - GENERAL I (1) CSU"
+  },
+  {
+   "code": "COUNSEL",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "COUNSEL"
+   ],
+   "candidate": null,
+   "page": 268,
+   "above": [
+    "academic success. Assignments and activities will develop critical thinking,",
+    "communication, research, information literacy, and study skills in ways that",
+    "integrate the student’s career and academic interests and apply across",
+    "general education disciplines."
+   ],
+   "first_course": "COUNSEL 001 INTRODUCTION TO COLLEGE (1) CSU"
+  },
+  {
+   "code": "CRPNTRY",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "CRPNTRY"
+   ],
+   "candidate": null,
+   "page": 253,
+   "above": [
+    "This course covers the basic math skills needed to perform in the construction",
+    "field. Emphasis is placed on the basic operations and how they are applied to",
+    "carpentry. Measurement calculations will be performed in both standard and metric",
+    "measurements."
+   ],
+   "first_course": "CRPNTRY 111 CONSTRUCTION I (7) CSU"
+  },
+  {
+   "code": "CS",
+   "heading": "Computer Science",
+   "heading_printed": "COMPUTER SCIENCE",
+   "rule": "caps",
+   "codes": [
+    "CS"
+   ],
+   "candidate": null,
+   "page": 266,
+   "above": [
+    "Course Descriptions - Credit Courses",
+    "GRADUATION REQUIREMENTS, PATHWAYS",
+    "AND PROGRAMS OF STUDY",
+    "COMPUTER SCIENCE"
+   ],
+   "first_course": "CS 101 INTRODUCTION TO COMPUTER SCIENCE (3) UC/CSU"
+  },
+  {
+   "code": "CSMTLGY",
+   "heading": "Cosmetology",
+   "heading_printed": "COSMETOLOGY",
+   "rule": "caps",
+   "codes": [
+    "CSMTLGY"
+   ],
+   "candidate": null,
+   "page": 267,
+   "above": [
+    "employer, the student-employee, and the faculty. This course requires that the",
+    "student be employed in a paid or unpaid (intern) position. The place of employment",
+    "does not need to be related to the student’s educational goals.",
+    "COSMETOLOGY"
+   ],
+   "first_course": "CSMTLGY 035 SKIN THERAPY I (6)"
+  },
+  {
+   "code": "DIESLTK",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "DIESLTK"
+   ],
+   "candidate": null,
+   "page": 271,
+   "above": [
+    "Lecture: 2 hours, Lab: 5 hours",
+    "This course is designed to cover the theory and operation of heavy-duty",
+    "maintenance shops, shop safety, tools, fastening devices, measuring",
+    "instruments."
+   ],
+   "first_course": "DIESLTK 112B HEAVY DUTY ENGINE FUNDAMENTALS (4)"
+  },
+  {
+   "code": "DIGLMD",
+   "heading": "Digital Media",
+   "heading_printed": "DIGITAL MEDIA",
+   "rule": "caps",
+   "codes": [
+    "DIGLMD"
+   ],
+   "candidate": null,
+   "page": 274,
+   "above": [
+    "Cooperative Education, at the end of the semester is required. Students",
+    "must be employed or volunteering/interning in order to participate in",
+    "program.",
+    "DIGITAL MEDIA"
+   ],
+   "first_course": "DIGLMD 100 INTRODUCTION TO DIGITAL VIDEO (3) UC/"
+  },
+  {
+   "code": "DIGMLD",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "DIGMLD"
+   ],
+   "candidate": null,
+   "page": 275,
+   "above": [
+    "applications such as Adobe Illustrator, Flash, Dreamweaver, AfterEffects,",
+    "Photoshop, Premiere, and Soundbooth, and Apple Final Cut Pro, as well",
+    "as video production equipment to complete coursework in the Digital Media",
+    "program."
+   ],
+   "first_course": "DIGMLD 911 COOPERATIVE EDUCATION-DIGITAL MEDIA"
+  },
+  {
+   "code": "DRAFT",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "DRAFT"
+   ],
+   "candidate": null,
+   "page": 276,
+   "above": [
+    "Modeling (BIM) specific to landscape professionals. Includes introduction to",
+    "CADD skills, block functions, Internet applications, three-dimensional design,",
+    "presentation drawings, building systems, working drawings, and working",
+    "drawing coordination."
+   ],
+   "first_course": "DRAFT 062 CADD FOR ARCHITECTS (3) UC/CSU"
+  },
+  {
+   "code": "E.S.L.",
+   "heading": "English as a Second Language",
+   "heading_printed": "ENGLISH AS A SECOND LANGUAGE",
+   "rule": "caps",
+   "codes": [
+    "E.S.L."
+   ],
+   "candidate": null,
+   "page": 289,
+   "above": [
+    "This course is designed to give the student opportunities to view, analyze, and",
+    "evaluate films of artistic and cultural significance. The relationship between",
+    "literature and film is discussed and evaluated.",
+    "ENGLISH AS A SECOND LANGUAGE"
+   ],
+   "first_course": "E.S.L. 005A COLLEGE ESL V: WRITING AND GRAMMAR(6)"
+  },
+  {
+   "code": "EARTH",
+   "heading": "Earth Science",
+   "heading_printed": "EARTH SCIENCE",
+   "rule": "caps",
+   "codes": [
+    "EARTH"
+   ],
+   "candidate": null,
+   "page": 276,
+   "above": [
+    "complete assignments from other courses and expand his / her technology",
+    "detail knowledge. Students will work individually or in teams and will work with",
+    "the assistance of an Instructor.",
+    "EARTH SCIENCE"
+   ],
+   "first_course": "EARTH 001 EARTH SCIENCE (3) UC/CSU"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "ECONOMICS",
+   "rule": "caps",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "page": 276,
+   "above": [
+    "such as Carbon through Earth systems within the organizing paradigms of",
+    "contributory disciplines such as Plate Tectonic Theory, the Theory of Evolution,",
+    "and the Big Bang theory.",
+    "ECONOMICS"
+   ],
+   "first_course": "ECON C2001 PRINCIPLES OF MICROECONOMICS (3) UC/"
+  },
+  {
+   "code": "ECONMT",
+   "heading": "Electrical Construction and Maintenance",
+   "heading_printed": "ELECTRICAL CONSTRUCTION AND MAINTENANCE",
+   "rule": "caps",
+   "codes": [
+    "ECONMT"
+   ],
+   "candidate": null,
+   "page": 277,
+   "above": [
+    "of electronics to the fields of medicine, transportation, science, communications,",
+    "industry, and the start of the digital invasion into our homes and work.",
+    "ELECTRICAL CONSTRUCTION AND",
+    "MAINTENANCE"
+   ],
+   "first_course": "ECONMT 001 RESISTIVE CIRCUIT ELECTRICAL FUNDAMENTALS"
+  },
+  {
+   "code": "EDUC",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "page": 276,
+   "above": [
+    "An introductory course using models of the domestic and international economy",
+    "to understand national income, unemployment, inflation, economic growth,",
+    "inequality, the financial system, and monetary, fiscal, and other economic",
+    "policies. EDUCATION"
+   ],
+   "first_course": "EDUC 001 INTRODUCTION TO TEACHING (3) UC/CSU"
+  },
+  {
+   "code": "EGD TEK",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "EGD TEK"
+   ],
+   "candidate": "Engineering Graphics & Design",
+   "page": 287,
+   "above": [
+    "superposition, moment-area, and Castigliano methods are also studied. Topics",
+    "include thermal expansion, indeterminate forms and column buckling.",
+    "ENGINEERING GRAPHICS &",
+    "DESIGN"
+   ],
+   "first_course": "EGD TEK 101 ENGINEERING GRAPHICS (3) UC/CSU"
+  },
+  {
+   "code": "ELECL",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "ELECL"
+   ],
+   "candidate": "Powerline Mechanic Trainee",
+   "page": 327,
+   "above": [
+    "Students will explore the causes, consequences, and methods of resolving international",
+    "conflicts, and the impact of internal economic, political, and military factors on foreign",
+    "policy.",
+    "POWERLINE MECHANIC TRAINEE"
+   ],
+   "first_course": "ELECL 102 PRE-ELECTRIC STRATION OPERATOR (4)"
+  },
+  {
+   "code": "ELECTRN",
+   "heading": "Electronics",
+   "heading_printed": "ELECTRONICS",
+   "rule": "caps",
+   "codes": [
+    "ELECTRN"
+   ],
+   "candidate": null,
+   "page": 277,
+   "above": [
+    "AND PROGRAMS OF STUDY",
+    "277",
+    "Course Descriptions - Credit Courses",
+    "ELECTRONICS"
+   ],
+   "first_course": "ELECTRN 002 INTRODUCTION TO ELECTRONICS (3) CSU"
+  },
+  {
+   "code": "ENG ELC",
+   "heading": "Engineering, Electrical",
+   "heading_printed": "ENGINEERING, ELECTRICAL",
+   "rule": "caps",
+   "codes": [
+    "ENG ELC"
+   ],
+   "candidate": null,
+   "page": 286,
+   "above": [
+    "and the Shielded Metal Arc welding processes. The course objective requires",
+    "proficiency in producing high quality welds on 6 inch diameter schedule 80 pipe",
+    "in the 6G welding positions.",
+    "ENGINEERING, ELECTRICAL"
+   ],
+   "first_course": "ENG ELC 101 INTRODUCTION TO ELECTRICAL ENGINEERING"
+  },
+  {
+   "code": "ENG GEN",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "ENG GEN"
+   ],
+   "candidate": null,
+   "page": 286,
+   "above": [
+    "engineering. It introduces the fundamentals of procedural and object-oriented",
+    "programming, numerical analysis, and data structures. Examples and assignments",
+    "in the course are drawn from practical applications in engineering, physics, and",
+    "mathematics."
+   ],
+   "first_course": "ENG GEN 131 STATICS (3) UC/CSU"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "ENGLISH",
+   "rule": "section",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "page": 288,
+   "above": [
+    "increasing sophistication and complexity, progressing from paragraphs to",
+    "multi-paragraphs to research projects. Writing is based primarily on non-",
+    "fiction college-level readings. This course prepares students for English 101",
+    "based on achievement of identified competencies."
+   ],
+   "first_course": "ENGL C1000 ACADEMIC READING AND WRITING (3) UC/"
+  },
+  {
+   "code": "ENGLISH",
+   "heading": "English",
+   "heading_printed": "ENGLISH",
+   "rule": "caps",
+   "codes": [
+    "ENGLISH"
+   ],
+   "candidate": null,
+   "page": 287,
+   "above": [
+    "use of two- and three-dimensional CAD systems. Students use one or more",
+    "CAD software packages to draft and model various objects. The use of CAD",
+    "software is an integral part of the course.",
+    "ENGLISH"
+   ],
+   "first_course": "ENGLISH 028 INTERMEDIATE READING AND COMPOSITION (3)"
+  },
+  {
+   "code": "ENV",
+   "heading": "Environmental Design",
+   "heading_printed": "ENVIRONMENTAL DESIGN",
+   "rule": "caps",
+   "codes": [
+    "ENV"
+   ],
+   "candidate": null,
+   "page": 289,
+   "above": [
+    "mechanics are emphasized throughout each lesson. Required: Eight to ten",
+    "writing assignments, including at least four essays of 600-800 words, and one",
+    "research paper.",
+    "ENVIRONMENTAL DESIGN"
+   ],
+   "first_course": "ENV 101 FOUNDATIONS OF DESIGN I (3) UC/CSU"
+  },
+  {
+   "code": "ESL NC",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "ESL NC"
+   ],
+   "candidate": null,
+   "page": 350,
+   "above": [
+    "and reading/writing skills at a literacy level. The focus of the course is on",
+    "meeting adult standards that systematically build language skills around life",
+    "skills topics. The course also emphasizes the development of English sound/",
+    "symbol correspondence and reading and writing of simple English sentences."
+   ],
+   "first_course": "ESL NC 005CE ENGLISH AS A SECOND LANGUAGE (0)"
+  },
+  {
+   "code": "ESLCVCS",
+   "heading": "ESL Civics",
+   "heading_printed": "ESL CIVICS",
+   "rule": "caps",
+   "codes": [
+    "ESLCVCS"
+   ],
+   "candidate": null,
+   "page": 351,
+   "above": [
+    "compositions, including at least three 400+ word essays.",
+    "ESL CIVICS",
+    "Note: There are no specific limitations on noncredit course repetition (PCAH, 8th",
+    "Edition)."
+   ],
+   "first_course": "ESLCVCS 010CE ESL AND CIVICS I (0)"
+  },
+  {
+   "code": "ETNTLGY",
+   "heading": "Electronics Technology",
+   "heading_printed": "ELECTRONICS TECHNOLOGY",
+   "rule": "caps",
+   "codes": [
+    "ETNTLGY"
+   ],
+   "candidate": null,
+   "page": 283,
+   "above": [
+    "Fundamentals of electricity, identification, function, and operation of components",
+    "will be surveyed. Ohms law, safety, ropes, knots, rigging, and tools required in the",
+    "trade will be reviewed. Civil service exam assistance will also be covered.",
+    "ELECTRONICS TECHNOLOGY"
+   ],
+   "first_course": "ETNTLGY 150 SOLDERING SURFACE MOUNT TECHNOLOGY (3)"
+  },
+  {
+   "code": "FASHDSN",
+   "heading": "Fashion Design",
+   "heading_printed": "FASHION DESIGN",
+   "rule": "caps",
+   "codes": [
+    "FASHDSN"
+   ],
+   "candidate": null,
+   "page": 290,
+   "above": [
+    "Course Descriptions - Credit Courses",
+    "GRADUATION REQUIREMENTS, PATHWAYS",
+    "AND PROGRAMS OF STUDY",
+    "FASHION DESIGN"
+   ],
+   "first_course": "FASHDSN 111 CLOTHING CONSTRUCTION (5) CSU"
+  },
+  {
+   "code": "FASHMER",
+   "heading": "Fashion Merchandising",
+   "heading_printed": "FASHION MERCHANDISING",
+   "rule": "caps",
+   "codes": [
+    "FASHMER"
+   ],
+   "candidate": null,
+   "page": 295,
+   "above": [
+    "including Cooperative Education, at the end of the semester is required.",
+    "Students must be employed or volunteering/interning in order to participate in",
+    "program.",
+    "FASHION MERCHANDISING"
+   ],
+   "first_course": "FASHMER 001 ENTREPRENEURIAL FASHION (3) CSU"
+  },
+  {
+   "code": "FINANCE",
+   "heading": "Finance",
+   "heading_printed": "FINANCE",
+   "rule": "caps",
+   "codes": [
+    "FINANCE"
+   ],
+   "candidate": null,
+   "page": 298,
+   "above": [
+    "the student the chance to gain realistic work experience that is meaningfully",
+    "related to the Film Production Crafts field. Furthermore, it helps the student",
+    "acquire knowledge, skills and attitudes essential for successful employment.",
+    "FINANCE"
+   ],
+   "first_course": "FINANCE 008 PERSONAL FINANCE AND INVESTMENTS (3)"
+  },
+  {
+   "code": "FLM PRD",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "FLM PRD"
+   ],
+   "candidate": null,
+   "page": 297,
+   "above": [
+    "set painting, and scenic artists. Participants will gain a deeper appreciation of narrative",
+    "and visual design in audio-visual performance media, as well a thorough understanding",
+    "of the key terminology, protocols, personnel, equipment, duties, responsibilities and",
+    "physical demands required of the entertainment industry crafts."
+   ],
+   "first_course": "FLM PRD 101 PRODUCTION SKILLS (3) CSU"
+  },
+  {
+   "code": "FRENCH",
+   "heading": "French",
+   "heading_printed": "FRENCH",
+   "rule": "caps",
+   "codes": [
+    "FRENCH"
+   ],
+   "candidate": null,
+   "page": 298,
+   "above": [
+    "person’s financial affairs, including family budgeting, consumer credit, home",
+    "ownership, insurance, investment/savings, banking services, and major",
+    "consumer purchases.",
+    "FRENCH"
+   ],
+   "first_course": "FRENCH 001 ELEMENTARY FRENCH I (5) UC/CSU"
+  },
+  {
+   "code": "GAD",
+   "heading": "Game Art & Design",
+   "heading_printed": "GAME ART & DESIGN",
+   "rule": "caps",
+   "codes": [
+    "GAD"
+   ],
+   "candidate": null,
+   "page": 298,
+   "above": [
+    "on aural and written comprehension, oral expression, and the writing of",
+    "simple French. Further study of French and Francophone cultures are",
+    "expected to be covered.",
+    "GAME ART & DESIGN"
+   ],
+   "first_course": "GAD 101 INTRODUCTION TO GAME DESIGN (3) UC/CSU"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "GEOGRAPHY",
+   "rule": "caps",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "page": 299,
+   "above": [
+    "animation studios, visual effects houses and game design companies. Students",
+    "take a lead role in development work on projects such as animated shorts,",
+    "interactive content, and video games.",
+    "GEOGRAPHY"
+   ],
+   "first_course": "GEOG 001 PHYSICAL GEOGRAPHY (3) UC/CSU"
+  },
+  {
+   "code": "GEOLOGY",
+   "heading": "Geology",
+   "heading_printed": "GEOLOGY",
+   "rule": "caps",
+   "codes": [
+    "GEOLOGY"
+   ],
+   "candidate": null,
+   "page": 299,
+   "above": [
+    "influences and historical legacies on population growth, cities, transportation",
+    "networks, and natural environments. Focus is placed on distinctive features and",
+    "also regional issues of global concern.",
+    "GEOLOGY"
+   ],
+   "first_course": "GEOLOGY 001 PHYSICAL GEOLOGY (3) UC/CSU"
+  },
+  {
+   "code": "HEALTH",
+   "heading": "Health",
+   "heading_printed": "HEALTH",
+   "rule": "caps",
+   "codes": [
+    "HEALTH"
+   ],
+   "candidate": null,
+   "page": 299,
+   "above": [
+    "identification of rocks and minerals, reading of maps, and study of rock",
+    "structures. Studies of local geology are made based upon field trips and the",
+    "collection of specimens.",
+    "HEALTH"
+   ],
+   "first_course": "HEALTH 002 HEALTH AND FITNESS (3) UC/CSU"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "HISTORY",
+   "rule": "section",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "page": 303,
+   "above": [
+    "This course surveys Western Civilization from the Protestant Reformation to the",
+    "present. Major topics include the political, economic, and social organization",
+    "of Europe with emphasis upon the rise of the nation state and industrialization.",
+    "European imperialism in the nineteenth and twentieth centuries is also examined."
+   ],
+   "first_course": "HIST C1001 UNITED STATES HISTORY TO 1877 (3) UC/CSU"
+  },
+  {
+   "code": "HISTORY",
+   "heading": "History",
+   "heading_printed": "HISTORY",
+   "rule": "caps",
+   "codes": [
+    "HISTORY"
+   ],
+   "candidate": null,
+   "page": 303,
+   "above": [
+    "Completion of at least seven units, including Cooperative Education, at the end of",
+    "the semester is required. Students must be employed or volunteering/interning in",
+    "order to participate in program.",
+    "HISTORY"
+   ],
+   "first_course": "HISTORY 002 INTRODUCTION TO WESTERN CIVILIZATION II"
+  },
+  {
+   "code": "HLTHOCC",
+   "heading": "Health Occupations",
+   "heading_printed": "HEALTH OCCUPATIONS",
+   "rule": "caps",
+   "codes": [
+    "HLTHOCC"
+   ],
+   "candidate": null,
+   "page": 301,
+   "above": [
+    "and NoTouch BreastScan screening technology. Public health issues will be discussed on",
+    "safety, education, efficacy, and universal access to breast cancer screening, prevention,",
+    "and treatment.",
+    "HEALTH OCCUPATIONS"
+   ],
+   "first_course": "HLTHOCC 040 INTRODUCTION TO MEDICAL ASSISTING (3)"
+  },
+  {
+   "code": "HUMAN",
+   "heading": "Humanities",
+   "heading_printed": "HUMANITIES",
+   "rule": "caps",
+   "codes": [
+    "HUMAN"
+   ],
+   "candidate": null,
+   "page": 304,
+   "above": [
+    "governments, societies, and world cultures. Major topics will include the development of",
+    "the nation state, economic systems and technology, industrialization, colonization, and",
+    "global conquest, revolutions, and migration and settlement patterns.",
+    "HUMANITIES"
+   ],
+   "first_course": "HUMAN 001 CULTURAL PATTERNS OF WESTERN CIVILIZATION (3)"
+  },
+  {
+   "code": "INT",
+   "heading": "Architectural Interiors",
+   "heading_printed": "ARCHITECTURAL INTERIORS",
+   "rule": "caps",
+   "codes": [
+    "INT"
+   ],
+   "candidate": null,
+   "page": 242,
+   "above": [
+    "Mesoamerican craft tradition. The course objectives promote positive human",
+    "health and well-being by examining trade, technology, and medicine in",
+    "Mesoamerica.",
+    "ARCHITECTURAL INTERIORS"
+   ],
+   "first_course": "INT 200 RESIDENTIAL PLANNING (3) CSU"
+  },
+  {
+   "code": "KIN",
+   "heading": "Kinesiology",
+   "heading_printed": "KINESIOLOGY",
+   "rule": "caps",
+   "codes": [
+    "KIN"
+   ],
+   "candidate": null,
+   "page": 304,
+   "above": [
+    "values in light of the effects of technology from the Paleolithic period to the 21st century",
+    "are developed and discussed. In their research, students explore the societal effects of",
+    "the latest technological developments of our time.",
+    "KINESIOLOGY"
+   ],
+   "first_course": "KIN 047 ADAPTED SWIMMING AND HYDROEXERCISE (1) UC/CSU"
+  },
+  {
+   "code": "KIN ATH",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "KIN ATH"
+   ],
+   "candidate": null,
+   "page": 308,
+   "above": [
+    "Intercollegiate Athletic competitive swimming and diving team course.",
+    "Instruction, demonstration and practice of fundamental and advanced swimming",
+    "and diving techniques, including starts, turns, stroke technique, breathing,",
+    "interval training and intercollegiate competition."
+   ],
+   "first_course": "KIN ATH 516 INTERCOLLEGIATE ATHLETICS-VOLLEYBALL"
+  },
+  {
+   "code": "KIN MAJ",
+   "heading": "Kinesiology Major",
+   "heading_printed": "KINESIOLOGY MAJOR",
+   "rule": "caps",
+   "codes": [
+    "KIN MAJ"
+   ],
+   "candidate": null,
+   "page": 308,
+   "above": [
+    "This course is designed for the student athlete. It is intended to provide focused",
+    "strength and conditioning and flexibility exercises, emphasize safety and injury",
+    "prevention and present new rules and game plays for volleyball.",
+    "KINESIOLOGY MAJOR"
+   ],
+   "first_course": "KIN MAJ 100 INTRODUCTION TO KINESIOLOGY (3) UC/CSU"
+  },
+  {
+   "code": "LABR ST",
+   "heading": "Labor Studies",
+   "heading_printed": "LABOR STUDIES",
+   "rule": "caps",
+   "codes": [
+    "LABR ST"
+   ],
+   "candidate": null,
+   "page": 310,
+   "above": [
+    "Course Descriptions - Credit Courses",
+    "GRADUATION REQUIREMENTS, PATHWAYS",
+    "AND PROGRAMS OF STUDY",
+    "LABOR STUDIES"
+   ],
+   "first_course": "LABR ST 001 U.S. LABOR HISTORY (3) UC/CSU"
+  },
+  {
+   "code": "LAW",
+   "heading": "Law",
+   "heading_printed": "LAW",
+   "rule": "caps",
+   "codes": [
+    "LAW"
+   ],
+   "candidate": null,
+   "page": 312,
+   "above": [
+    "stops due to strikes, layoff, or plant closure. This course overviews professional",
+    "services available for referral and teaches strategies for negotiating with",
+    "landlords, mortgage companies, utility companies and other creditors.",
+    "LAW"
+   ],
+   "first_course": "LAW 007 STREET LAW (3) UC/CSU"
+  },
+  {
+   "code": "LIB SCI",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "LIB SCI"
+   ],
+   "candidate": null,
+   "page": 313,
+   "above": [
+    "to current academic endeavors and to their future as informed citizens and lifelong",
+    "learners. Through multiple online platforms and advanced online search strategies,",
+    "students learn to locate, evaluate, and communicate information responsibly and",
+    "ethically"
+   ],
+   "first_course": "LIB SCI 101 COLLEGE RESEARCH SKILLS (1) UC/CSU"
+  },
+  {
+   "code": "LRNSKIL",
+   "heading": "Learning Skills",
+   "heading_printed": "LEARNING SKILLS",
+   "rule": "caps",
+   "codes": [
+    "LRNSKIL"
+   ],
+   "candidate": null,
+   "page": 312,
+   "above": [
+    "55253 states that a student may earn up to a maximum of 16 semester units or 24",
+    "quarter units of General & Occupational work experience education combined (Board",
+    "Rule 6405.10).",
+    "LEARNING SKILLS"
+   ],
+   "first_course": "LRNSKIL 068 STUDY SKILLS (1)"
+  },
+  {
+   "code": "MARKET",
+   "heading": "Marketing",
+   "heading_printed": "MARKETING",
+   "rule": "caps",
+   "codes": [
+    "MARKET"
+   ],
+   "candidate": null,
+   "page": 316,
+   "above": [
+    "welding and automation. Emphasis is placed on safety awareness, programing",
+    "techniques, and basic gas metal arc welding applications using a six-axis",
+    "robotic welding systems.",
+    "MARKETING"
+   ],
+   "first_course": "MARKET 001 PRINCIPLES OF SELLING (3) CSU"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "MATHEMATICS",
+   "rule": "caps",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "page": 317,
+   "above": [
+    "AND PROGRAMS OF STUDY",
+    "317",
+    "Course Descriptions - Credit Courses",
+    "MATHEMATICS"
+   ],
+   "first_course": "MATH 215 PRINCIPLES OF MATHEMATICS I (3) UC/CSU"
+  },
+  {
+   "code": "MGMT",
+   "heading": "Management",
+   "heading_printed": "MANAGEMENT",
+   "rule": "caps",
+   "codes": [
+    "MGMT"
+   ],
+   "candidate": null,
+   "page": 315,
+   "above": [
+    "a student may earn up to a maximum of 16 semester units or 24 quarter units",
+    "of General & Occupational work experience education combined (Board Rule",
+    "6405.10).",
+    "MANAGEMENT"
+   ],
+   "first_course": "MGMT 002 ORGANIZATION AND MANAGEMENT THEORY (3) CSU"
+  },
+  {
+   "code": "MICRO",
+   "heading": "Microbiology",
+   "heading_printed": "MICROBIOLOGY",
+   "rule": "caps",
+   "codes": [
+    "MICRO"
+   ],
+   "candidate": null,
+   "page": 318,
+   "above": [
+    "singular points, Laplace transforms and linear systems. System of linear first-order",
+    "differential equations; Cauchy-Euler equation; series solutions; Laplace transform;",
+    "numerical solutions.",
+    "MICROBIOLOGY"
+   ],
+   "first_course": "MICRO 020 GENERAL MICROBIOLOGY (4) UC/CSU"
+  },
+  {
+   "code": "MICROTK",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "MICROTK"
+   ],
+   "candidate": "Microcomputer Technician",
+   "page": 318,
+   "above": [
+    "morphology, physiology, genetics, ecology and evolution of microorganisms. Medical",
+    "applications include basic concepts of microbial growth and control, epidemiology,",
+    "immune response and a survey of important human diseases.",
+    "MICROCOMPUTER TECHNICIAN"
+   ],
+   "first_course": "MICROTK 077 CISCO NETWORKING ACADEMY - SEMESTER I (3)"
+  },
+  {
+   "code": "MIT",
+   "heading": "Manufacturing & Industrial Technology",
+   "heading_printed": "MANUFACTURING & INDUSTRIAL TECHNOLOGY",
+   "rule": "caps",
+   "codes": [
+    "MIT"
+   ],
+   "candidate": null,
+   "page": 315,
+   "above": [
+    "of the semester is required. Students must be employed or volunteering/interning",
+    "in order to participate in program.",
+    "MANUFACTURING & INDUSTRIAL",
+    "TECHNOLOGY"
+   ],
+   "first_course": "MIT 220 INTRODUCTION TO ROBOTICS (3) CSU"
+  },
+  {
+   "code": "MSCNC",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "MSCNC"
+   ],
+   "candidate": "Machine Shop",
+   "page": 313,
+   "above": [
+    "organizational strategies for research assignments, to apply citation rules to their",
+    "assignments, and to understand the basic requirements of copyright law and",
+    "academic integrity.",
+    "MACHINE SHOP"
+   ],
+   "first_course": "MSCNC 111 PRINCIPLES OF MACHINE TOOLS I (2) CSU"
+  },
+  {
+   "code": "MUSIC",
+   "heading": "Music",
+   "heading_printed": "MUSIC",
+   "rule": "caps",
+   "codes": [
+    "MUSIC"
+   ],
+   "candidate": null,
+   "page": 320,
+   "above": [
+    "Course Descriptions - Credit Courses",
+    "GRADUATION REQUIREMENTS, PATHWAYS",
+    "AND PROGRAMS OF STUDY",
+    "MUSIC"
+   ],
+   "first_course": "MUSIC 101 FUNDAMENTALS OF MUSIC (3) UC/CSU"
+  },
+  {
+   "code": "OFF MCH",
+   "heading": "Office Machines",
+   "heading_printed": "OFFICE MACHINES",
+   "rule": "caps",
+   "codes": [
+    "OFF MCH"
+   ],
+   "candidate": null,
+   "page": 323,
+   "above": [
+    "of functioning according to state regulations and statutes are analyzed. Clinical",
+    "preceptorship experiences provide the student an opportunity to apply theoretical",
+    "concepts while functioning as a registered nurse in his/her practice area of interest.",
+    "OFFICE MACHINES"
+   ],
+   "first_course": "OFF MCH 002 ADDING AND CALCULATING MACHINES (1) CSU"
+  },
+  {
+   "code": "OPMA",
+   "heading": "Engineer-Operator/Maintenance - Apprentice",
+   "heading_printed": "ENGINEER-OPERATOR/MAINTENANCE - APPRENTICE",
+   "rule": "caps",
+   "codes": [
+    "OPMA"
+   ],
+   "candidate": null,
+   "page": 284,
+   "above": [
+    "troubleshooting, and power transmission. Completion of this second course prepares",
+    "trainee to take Los Angeles City examination for steam engineer’s license.",
+    "ENGINEER-OPERATOR/MAINTENANCE -",
+    "APPRENTICE"
+   ],
+   "first_course": "OPMA 040 HAZWOPER (2)"
+  },
+  {
+   "code": "OPMA AP",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "OPMA AP"
+   ],
+   "candidate": null,
+   "page": 285,
+   "above": [
+    "lock out tag out procedures, PPE, excavations, CPR, First Aid, AED, etc. are covered.",
+    "Participants that meet the required hourly attendance and successfully pass the final",
+    "exam will be eligible to receive their OSHA (30 hr) safety-training certificate and CPR",
+    "first Aid card."
+   ],
+   "first_course": "OPMA AP 703 ENERGY MANAGEMENT (2)"
+  },
+  {
+   "code": "OPMAINT",
+   "heading": "Engineer-Operator/Maintenance",
+   "heading_printed": "ENGINEER-OPERATOR/MAINTENANCE",
+   "rule": "caps",
+   "codes": [
+    "OPMAINT"
+   ],
+   "candidate": null,
+   "page": 284,
+   "above": [
+    "credit for work experience or volunteer work/internship. Completion of at least seven units,",
+    "including Cooperative Education, at the end of the semester is required. Students must be",
+    "employed or volunteering/interning in order to participate in program.",
+    "ENGINEER-OPERATOR/MAINTENANCE"
+   ],
+   "first_course": "OPMAINT 228 STEAM PLANT OPERATION I (6)"
+  },
+  {
+   "code": "PALEGAL",
+   "heading": "Paralegal",
+   "heading_printed": "PARALEGAL",
+   "rule": "caps",
+   "codes": [
+    "PALEGAL"
+   ],
+   "candidate": null,
+   "page": 323,
+   "above": [
+    "computerized calculator function keys. The methods used help develop the proper skills",
+    "needed to use computerized 10-key calculators in the workplace. The review of basic",
+    "math functions, with emphasis on practical business problems.",
+    "PARALEGAL"
+   ],
+   "first_course": "PALEGAL 003 CIVIL RIGHTS AND THE LAW (3) CSU"
+  },
+  {
+   "code": "PHILOS",
+   "heading": "Philosophy",
+   "heading_printed": "PHILOSOPHY",
+   "rule": "caps",
+   "codes": [
+    "PHILOS"
+   ],
+   "candidate": null,
+   "page": 324,
+   "above": [
+    "CALPR research resources to resolve legal problems. Resources will include",
+    "federal and state statutes, federal and state court decisions, federal and state",
+    "regulations, digests, law reviews, treatises, and other practice works..",
+    "PHILOSOPHY"
+   ],
+   "first_course": "PHILOS 001 INTRODUCTION TO PHILOSOPHY (3) UC/CSU"
+  },
+  {
+   "code": "PHYSICS",
+   "heading": "Physics",
+   "heading_printed": "PHYSICS",
+   "rule": "caps",
+   "codes": [
+    "PHYSICS"
+   ],
+   "candidate": null,
+   "page": 324,
+   "above": [
+    "Course Descriptions - Credit Courses",
+    "GRADUATION REQUIREMENTS, PATHWAYS",
+    "AND PROGRAMS OF STUDY",
+    "PHYSICS"
+   ],
+   "first_course": "PHYSICS 006 GENERAL PHYSICS I (4) UC/CSU"
+  },
+  {
+   "code": "PHYSIOL",
+   "heading": "Physiology",
+   "heading_printed": "PHYSIOLOGY",
+   "rule": "caps",
+   "codes": [
+    "PHYSIOL"
+   ],
+   "candidate": null,
+   "page": 325,
+   "above": [
+    "may also be included. The laboratory includes both quantitative and qualitative",
+    "experiments which enable students to verify, illustrate, and deduce some of the",
+    "laws of physics that apply to the topics covered.",
+    "PHYSIOLOGY"
+   ],
+   "first_course": "PHYSIOL 001 INTRODUCTION TO HUMAN PHYSIOLOGY (4) UC/"
+  },
+  {
+   "code": "PLUMBNG",
+   "heading": "Plumbing",
+   "heading_printed": "PLUMBING",
+   "rule": "caps",
+   "codes": [
+    "PLUMBNG"
+   ],
+   "candidate": null,
+   "page": 325,
+   "above": [
+    "Prerequisite: ANATOMY 001 and CHEM 051 or CHEM 065 or CHEM 101",
+    "A detailed study of the function of major systems of the human body. Laboratory",
+    "experiments will be based on physiological processes covered in lecture.",
+    "PLUMBING"
+   ],
+   "first_course": "PLUMBNG 026 PLUMBING LAYOUT AND ESTIMATING I (3)"
+  },
+  {
+   "code": "POL SCI",
+   "heading": "Political Science",
+   "heading_printed": "POLITICAL SCIENCE",
+   "rule": "section",
+   "codes": [
+    "POL SCI"
+   ],
+   "candidate": null,
+   "page": 327,
+   "above": [
+    "This course is an introduction to government and politics in the United States and",
+    "California. Students examine the constitutions, structure, and operation of governing",
+    "institutions, civil liberties and civil rights, political behaviors, political issues, and public",
+    "policy using political science theory and methodology."
+   ],
+   "first_course": "POL SCI 002 INTRODUCTION TO COMPARATIVE POLITICS (3) UC/"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "POLITICAL SCIENCE",
+   "rule": "caps",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "page": 327,
+   "above": [
+    "at least seven units, including Cooperative Education, at the end of the semester is",
+    "required. Students must be employed or volunteering/interning in order to participate in",
+    "program.",
+    "POLITICAL SCIENCE"
+   ],
+   "first_course": "POLS C1000 AMERICAN GOVERNMENT AND POLITICS (3) UC/CSU"
+  },
+  {
+   "code": "PROFBKG",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "PROFBKG"
+   ],
+   "candidate": "Baking, Professional",
+   "page": 248,
+   "above": [
+    "Cooperative Education, at the end of the semester is required. Students",
+    "must be employed or volunteering/interning in order to participate in",
+    "program.",
+    "BAKING, PROFESSIONAL"
+   ],
+   "first_course": "PROFBKG 102 PLANT BASED BAKING TECHNIQUES (4)"
+  },
+  {
+   "code": "PRPLTEK",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "PRPLTEK"
+   ],
+   "candidate": "Process Technology",
+   "page": 328,
+   "above": [
+    "might limit your abilities to succeed should be considered. Part D is the third of 3",
+    "laboratory modules of the standard 601 class, allows for offering the program over",
+    "an extended period.",
+    "PROCESS TECHNOLOGY"
+   ],
+   "first_course": "PRPLTEK 100 INTRODUCTION TO INDUSTRIAL PROCESS (3) CSU"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "PSYCHOLOGY",
+   "rule": "caps",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "page": 329,
+   "above": [
+    "appearance, employment trends, professional organizations. The course also",
+    "includes writing resumes, cover and thank you letters, as well as job search",
+    "techniques.",
+    "PSYCHOLOGY"
+   ],
+   "first_course": "PSYC C1000 INTRODUCTORY PSYCHOLOGY (3) UC/CSU"
+  },
+  {
+   "code": "PSYCH",
+   "heading": "Psychology",
+   "heading_printed": "PSYCHOLOGY",
+   "rule": "section",
+   "codes": [
+    "PSYCH"
+   ],
+   "candidate": null,
+   "page": 329,
+   "above": [
+    "This course is an introduction to psychology, which is the study of the mind",
+    "and behavior. Students focus on theories and concepts of biological, cognitive,",
+    "developmental, environmental, social, and cultural influences; their applications;",
+    "and their research foundations."
+   ],
+   "first_course": "PSYCH 002 BIOLOGICAL PSYCHOLOGY (3) UC/CSU"
+  },
+  {
+   "code": "PUB REL",
+   "heading": "Public Relations",
+   "heading_printed": "PUBLIC RELATIONS",
+   "rule": "caps",
+   "codes": [
+    "PUB REL"
+   ],
+   "candidate": null,
+   "page": 330,
+   "above": [
+    "students are able to analyze and interpret data from a variety of behavioral and",
+    "social sciences disciplines including psychology, sociology, child development,",
+    "business, life sciences, health sciences, and education.",
+    "PUBLIC RELATIONS"
+   ],
+   "first_course": "PUB REL 001 PRINCIPLES OF PUBLIC RELATIONS (3) CSU"
+  },
+  {
+   "code": "REAL ES",
+   "heading": "Real Estate",
+   "heading_printed": "REAL ESTATE",
+   "rule": "caps",
+   "codes": [
+    "REAL ES"
+   ],
+   "candidate": null,
+   "page": 330,
+   "above": [
+    "mobility (Title V Section 55250). This work experience education is offered as",
+    "a credit course with one semester unit of credit awarded for every 54 hours of",
+    "work experience (Title V Section 55253).",
+    "REAL ESTATE"
+   ],
+   "first_course": "REAL ES 001 REAL ESTATE PRINCIPLES (3) CSU"
+  },
+  {
+   "code": "REGNRSG",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "REGNRSG"
+   ],
+   "candidate": "Nursing, Registered",
+   "page": 320,
+   "above": [
+    "tuning, chords, strumming and notation. Students will learn to read and play",
+    "simple melodies and accompaniments to gain a firm grasp of the instrument.",
+    "Student must possess a guitar.",
+    "NURSING, REGISTERED"
+   ],
+   "first_course": "REGNRSG 119 INTRODUCTION TO NURSING (1)"
+  },
+  {
+   "code": "RESTMGT",
+   "heading": "Restaurant Management",
+   "heading_printed": "RESTAURANT MANAGEMENT",
+   "rule": "caps",
+   "codes": [
+    "RESTMGT"
+   ],
+   "candidate": null,
+   "page": 334,
+   "above": [
+    "work/internship. Completion of at least seven units, including Cooperative",
+    "Education, at the end of the semester is required. Students must be employed",
+    "or volunteering/interning in order to participate in program.",
+    "RESTAURANT MANAGEMENT"
+   ],
+   "first_course": "RESTMGT 100 RESTAURANT MANAGEMENT (3) CSU"
+  },
+  {
+   "code": "SGNGRPH",
+   "heading": "Sign Graphics",
+   "heading_printed": "SIGN GRAPHICS",
+   "rule": "caps",
+   "codes": [
+    "SGNGRPH"
+   ],
+   "candidate": null,
+   "page": 334,
+   "above": [
+    "Introduction to managing in the restaurant industry. Effective communication,",
+    "goal setting, management theory, problem solving and creating a team work",
+    "environment will be discussed.",
+    "SIGN GRAPHICS"
+   ],
+   "first_course": "SGNGRPH 101 INDIVIDUAL LETTERING (10)"
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "SOCIOLOGY",
+   "rule": "caps",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "page": 335,
+   "above": [
+    "including Cooperative Education, at the end of the semester is required.",
+    "Students must be employed or volunteering/interning in order to participate",
+    "in program.",
+    "SOCIOLOGY"
+   ],
+   "first_course": "SOC 001 INTRODUCTION TO SOCIOLOGY (3) UC/CSU"
+  },
+  {
+   "code": "SPANISH",
+   "heading": "Spanish",
+   "heading_printed": "SPANISH",
+   "rule": "caps",
+   "codes": [
+    "SPANISH"
+   ],
+   "candidate": null,
+   "page": 337,
+   "above": [
+    "credit for work experience or volunteer work/internship. Completion of at least seven units,",
+    "including Cooperative Education, at the end of the semester is required. Students must be",
+    "employed or volunteering/interning in order to participate in program.",
+    "SPANISH"
+   ],
+   "first_course": "SPANISH 001 ELEMENTARY SPANISH I (5) UC/CSU"
+  },
+  {
+   "code": "ST MAIN",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "ST MAIN"
+   ],
+   "candidate": null,
+   "page": 337,
+   "above": [
+    "PUBLIC WORKS) (3)",
+    "Lecture: 3 hours",
+    "This course is a practical mathematics exploration with an emphasis on application problems",
+    "encountered in ‘Street Maintenance’, ‘Street Services’, and other areas of ‘Public Works’."
+   ],
+   "first_course": "ST MAIN 200 SURVEY OF STREET SERVICES (3)"
+  },
+  {
+   "code": "STAT",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "page": 317,
+   "above": [
+    "This course is the first of two in a sequence designed primarily for prospective elementary",
+    "school teachers. The course covers language of sets, system of numeration, nature of",
+    "real numbers and fundamental operations, relations and functions, elementary logic, and",
+    "various algorithms used in calculations."
+   ],
+   "first_course": "STAT C1000 INTRODUCTION TO STATISTICS (4) UC/CSU"
+  },
+  {
+   "code": "SUPV",
+   "heading": "Supervision",
+   "heading_printed": "SUPERVISION",
+   "rule": "caps",
+   "codes": [
+    "SUPV"
+   ],
+   "candidate": null,
+   "page": 339,
+   "above": [
+    "AND PROGRAMS OF STUDY",
+    "339",
+    "Course Descriptions - Credit Courses",
+    "SUPERVISION"
+   ],
+   "first_course": "SUPV 001 ELEMENTS OF SUPERVISION (3) CSU"
+  },
+  {
+   "code": "SWM TEK",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "SWM TEK"
+   ],
+   "candidate": "Solid Waste Management Technology",
+   "page": 336,
+   "above": [
+    "and processes of empowerment through the examination of various social",
+    "movements throughout U.S. history.",
+    "SOLID WASTE MANAGEMENT",
+    "TECHNOLOGY"
+   ],
+   "first_course": "SWM TEK 101 INTRODUCTION TO SOLID WASTE MANAGEMENT (3)"
+  },
+  {
+   "code": "TAILRNG",
+   "heading": "Tailoring",
+   "heading_printed": "TAILORING",
+   "rule": "caps",
+   "codes": [
+    "TAILRNG"
+   ],
+   "candidate": null,
+   "page": 339,
+   "above": [
+    "work/internship. Completion of at least seven units, including Cooperative",
+    "Education, at the end of the semester is required. Students must be employed",
+    "or volunteering/interning in order to participate in program.",
+    "TAILORING"
+   ],
+   "first_course": "TAILRNG 185 DIRECTED STUDY-TAILORING (1)"
+  },
+  {
+   "code": "THEATER",
+   "heading": "Theater",
+   "heading_printed": "THEATER",
+   "rule": "caps",
+   "codes": [
+    "THEATER"
+   ],
+   "candidate": null,
+   "page": 340,
+   "above": [
+    "Completion of at least seven units, including Cooperative Education, at the",
+    "end of the semester is required. Students must be employed or volunteering/",
+    "interning in order to participate in program.",
+    "THEATER"
+   ],
+   "first_course": "THEATER 100 INTRODUCTION TO THE THEATER (3) UC/CSU"
+  },
+  {
+   "code": "VISCOM",
+   "heading": "Visual Communications",
+   "heading_printed": "VISUAL COMMUNICATIONS",
+   "rule": "caps",
+   "codes": [
+    "VISCOM"
+   ],
+   "candidate": null,
+   "page": 341,
+   "above": [
+    "AND PROGRAMS OF STUDY",
+    "341",
+    "Course Descriptions - Credit Courses",
+    "VISUAL COMMUNICATIONS"
+   ],
+   "first_course": "VISCOM 100 GRAPHIC DESIGN FUNDAMENTALS (3) UC/"
+  },
+  {
+   "code": "VOC ED",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "VOC ED"
+   ],
+   "candidate": null,
+   "page": 351,
+   "above": [
+    "Students will acquire conceptual, intra-, and inter-personal skills to prepare",
+    "them for the world of work. Topics include communication skills, group ef-",
+    "fectiveness, problem-solving skills, and teamwork while working in “simulated”",
+    "vocational settings."
+   ],
+   "first_course": "VOC ED 060CE CUSTODIAL TECHNICIAN TRAINING (0)"
+  },
+  {
+   "code": "WASTE",
+   "heading": "Wastewater Technology",
+   "heading_printed": "WASTEWATER TECHNOLOGY",
+   "rule": "caps",
+   "codes": [
+    "WASTE"
+   ],
+   "candidate": null,
+   "page": 343,
+   "above": [
+    "including Cooperative Education, at the end of the semester is required.",
+    "Students must be employed or volunteering/interning in order to participate",
+    "in program.",
+    "WASTEWATER TECHNOLOGY"
+   ],
+   "first_course": "WASTE 012 WASTEWATER OPERATIONS I (3)"
+  },
+  {
+   "code": "WATER",
+   "heading": "Water Supply Technology",
+   "heading_printed": "WATER SUPPLY TECHNOLOGY",
+   "rule": "caps",
+   "codes": [
+    "WATER"
+   ],
+   "candidate": null,
+   "page": 344,
+   "above": [
+    "work/internship. Completion of at least seven units, including Cooperative",
+    "Education, at the end of the semester is required. Students must be employed",
+    "or volunteering/interning in order to participate in program.",
+    "WATER SUPPLY TECHNOLOGY"
+   ],
+   "first_course": "WATER 001 WATER DISTRIBUTION I (3) CSU"
+  }
+ ]
+}

@@ -315,6 +315,10 @@ jobs:
       # codes compared exactly, one-sided codes kept for the curator, byte-identical reruns. Pure stdlib.
       - name: Local subject titles (kb/_build_local_subject_titles.py)
         run: python3 tests/local_subject_titles_test.py
+      # The subject headings filer (S698, #3655): a catalog's subject headings from the lines above each subject's
+      # first course, saved in Title Case; a line of prose is never a heading, and none is invented. Pure stdlib.
+      - name: Subject headings filer (kb/_file_subject_headings.py)
+        run: python3 tests/subject_headings_filer_test.py
       # The codes the pile mint holds on (S695): held courses summed, counted once each, ranked; a vote that missed its
       # floor is a suggestion, never a decision. Pure stdlib.
       - name: Held subject codes (kb/_held_subject_codes.py)

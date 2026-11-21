@@ -1,0 +1,1129 @@
+{
+ "_what": "The subjects Southwestern College's course-descriptions index lists: each subject's heading, its code or codes, and the address of its page, as the index links it (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_subject_headings.py --index; `heading` is saved in Title Case with `heading_printed` and the whole `label` as the index prints them. A subject's page is read at `address`, never at an address made from its code.",
+ "college": "Southwestern College",
+ "run": "44948295544",
+ "source": [
+  "https://catalog.swccd.edu/course-descriptions/"
+ ],
+ "subjects": 93,
+ "with_heading": 93,
+ "links_without_a_code": [],
+ "rows": [
+  {
+   "code": "ACCT",
+   "heading": "Accounting",
+   "heading_printed": "Accounting",
+   "rule": "index",
+   "codes": [
+    "ACCT"
+   ],
+   "candidate": null,
+   "label": "Accounting (ACCT)",
+   "address": "https://catalog.swccd.edu/course-descriptions/acct/"
+  },
+  {
+   "code": "ADN",
+   "heading": "Associate Degree Nursing",
+   "heading_printed": "Associate Degree Nursing",
+   "rule": "index",
+   "codes": [
+    "ADN"
+   ],
+   "candidate": null,
+   "label": "Associate Degree Nursing (ADN)",
+   "address": "https://catalog.swccd.edu/course-descriptions/adn/"
+  },
+  {
+   "code": "AERO",
+   "heading": "Aeronautics",
+   "heading_printed": "Aeronautics",
+   "rule": "index",
+   "codes": [
+    "AERO"
+   ],
+   "candidate": null,
+   "label": "Aeronautics (AERO)",
+   "address": "https://catalog.swccd.edu/course-descriptions/aero/"
+  },
+  {
+   "code": "AFRO",
+   "heading": "African-American Studies",
+   "heading_printed": "African-American Studies",
+   "rule": "index",
+   "codes": [
+    "AFRO"
+   ],
+   "candidate": null,
+   "label": "African-American Studies (AFRO)",
+   "address": "https://catalog.swccd.edu/course-descriptions/afro/"
+  },
+  {
+   "code": "AJ",
+   "heading": "Criminal Justice",
+   "heading_printed": "Criminal Justice",
+   "rule": "index",
+   "codes": [
+    "AJ"
+   ],
+   "candidate": null,
+   "label": "Criminal Justice (AJ)",
+   "address": "https://catalog.swccd.edu/course-descriptions/aj/"
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "label": "Anthropology (ANTH)",
+   "address": "https://catalog.swccd.edu/course-descriptions/anth/"
+  },
+  {
+   "code": "ARCH",
+   "heading": "Architecture",
+   "heading_printed": "Architecture",
+   "rule": "index",
+   "codes": [
+    "ARCH"
+   ],
+   "candidate": null,
+   "label": "Architecture (ARCH)",
+   "address": "https://catalog.swccd.edu/course-descriptions/arch/"
+  },
+  {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "index",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "label": "Art (ART)",
+   "address": "https://catalog.swccd.edu/course-descriptions/art/"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "label": "Art (ARTH)",
+   "address": "https://catalog.swccd.edu/course-descriptions/arth/"
+  },
+  {
+   "code": "ASIA",
+   "heading": "Asian-American Studies",
+   "heading_printed": "Asian-American Studies",
+   "rule": "index",
+   "codes": [
+    "ASIA"
+   ],
+   "candidate": null,
+   "label": "Asian-American Studies (ASIA)",
+   "address": "https://catalog.swccd.edu/course-descriptions/asia/"
+  },
+  {
+   "code": "ASL",
+   "heading": "American Sign Language",
+   "heading_printed": "American Sign Language",
+   "rule": "index",
+   "codes": [
+    "ASL"
+   ],
+   "candidate": null,
+   "label": "American Sign Language (ASL)",
+   "address": "https://catalog.swccd.edu/course-descriptions/asl/"
+  },
+  {
+   "code": "ASTR",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "ASTR"
+   ],
+   "candidate": null,
+   "label": "Astronomy (ASTR)",
+   "address": "https://catalog.swccd.edu/course-descriptions/astr/"
+  },
+  {
+   "code": "AT",
+   "heading": "Automotive Technology",
+   "heading_printed": "Automotive Technology",
+   "rule": "index",
+   "codes": [
+    "AT"
+   ],
+   "candidate": null,
+   "label": "Automotive Technology (AT)",
+   "address": "https://catalog.swccd.edu/course-descriptions/at/"
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "label": "Biology (BIOL)",
+   "address": "https://catalog.swccd.edu/course-descriptions/biol/"
+  },
+  {
+   "code": "BUS",
+   "heading": "Business",
+   "heading_printed": "Business",
+   "rule": "index",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "label": "Business (BUS)",
+   "address": "https://catalog.swccd.edu/course-descriptions/bus/"
+  },
+  {
+   "code": "CA",
+   "heading": "Culinary Arts",
+   "heading_printed": "Culinary Arts",
+   "rule": "index",
+   "codes": [
+    "CA"
+   ],
+   "candidate": null,
+   "label": "Culinary Arts (CA)",
+   "address": "https://catalog.swccd.edu/course-descriptions/ca/"
+  },
+  {
+   "code": "CAD",
+   "heading": "Computer Aided Design and Drafting",
+   "heading_printed": "Computer Aided Design and Drafting",
+   "rule": "index",
+   "codes": [
+    "CAD"
+   ],
+   "candidate": null,
+   "label": "Computer Aided Design and Drafting (CAD)",
+   "address": "https://catalog.swccd.edu/course-descriptions/cad/"
+  },
+  {
+   "code": "CBE",
+   "heading": "Automotive Technology",
+   "heading_printed": "Automotive Technology",
+   "rule": "index",
+   "codes": [
+    "CBE"
+   ],
+   "candidate": null,
+   "label": "Automotive Technology (CBE)",
+   "address": "https://catalog.swccd.edu/course-descriptions/atcbe/"
+  },
+  {
+   "code": "CD",
+   "heading": "Family Studies",
+   "heading_printed": "Family Studies",
+   "rule": "index",
+   "codes": [
+    "CD"
+   ],
+   "candidate": null,
+   "label": "Family Studies (CD)",
+   "address": "https://catalog.swccd.edu/course-descriptions/cd/"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "label": "Chemistry (CHEM)",
+   "address": "https://catalog.swccd.edu/course-descriptions/chem/"
+  },
+  {
+   "code": "CHIN",
+   "heading": "Chinese",
+   "heading_printed": "Chinese",
+   "rule": "index",
+   "codes": [
+    "CHIN"
+   ],
+   "candidate": null,
+   "label": "Chinese (CHIN)",
+   "address": "https://catalog.swccd.edu/course-descriptions/chin/"
+  },
+  {
+   "code": "CI",
+   "heading": "Construction Inspection",
+   "heading_printed": "Construction Inspection",
+   "rule": "index",
+   "codes": [
+    "CI"
+   ],
+   "candidate": null,
+   "label": "Construction Inspection (CI)",
+   "address": "https://catalog.swccd.edu/course-descriptions/ci/"
+  },
+  {
+   "code": "CIS",
+   "heading": "Computer Information Systems",
+   "heading_printed": "Computer Information Systems",
+   "rule": "index",
+   "codes": [
+    "CIS"
+   ],
+   "candidate": null,
+   "label": "Computer Information Systems (CIS)",
+   "address": "https://catalog.swccd.edu/course-descriptions/cis/"
+  },
+  {
+   "code": "CL",
+   "heading": "Computer Literacy",
+   "heading_printed": "Computer Literacy",
+   "rule": "index",
+   "codes": [
+    "CL"
+   ],
+   "candidate": null,
+   "label": "Computer Literacy (CL)",
+   "address": "https://catalog.swccd.edu/course-descriptions/cl/"
+  },
+  {
+   "code": "CNA",
+   "heading": "Certified Nursing Assistant",
+   "heading_printed": "Certified Nursing Assistant",
+   "rule": "index",
+   "codes": [
+    "CNA"
+   ],
+   "candidate": null,
+   "label": "Certified Nursing Assistant (CNA)",
+   "address": "https://catalog.swccd.edu/course-descriptions/cna/"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication",
+   "heading_printed": "Communication",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "label": "Communication (COMM)",
+   "address": "https://catalog.swccd.edu/course-descriptions/comm/"
+  },
+  {
+   "code": "DANC",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "index",
+   "codes": [
+    "DANC"
+   ],
+   "candidate": null,
+   "label": "Dance (DANC)",
+   "address": "https://catalog.swccd.edu/course-descriptions/danc/"
+  },
+  {
+   "code": "DH",
+   "heading": "Dental Hygiene",
+   "heading_printed": "Dental Hygiene",
+   "rule": "index",
+   "codes": [
+    "DH"
+   ],
+   "candidate": null,
+   "label": "Dental Hygiene (DH)",
+   "address": "https://catalog.swccd.edu/course-descriptions/dh/"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "label": "Economics (ECON)",
+   "address": "https://catalog.swccd.edu/course-descriptions/econ/"
+  },
+  {
+   "code": "ED",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "index",
+   "codes": [
+    "ED"
+   ],
+   "candidate": null,
+   "label": "Education (ED)",
+   "address": "https://catalog.swccd.edu/course-descriptions/ed/"
+  },
+  {
+   "code": "EHMT",
+   "heading": "Environmental Hazardous Materials Technology",
+   "heading_printed": "Environmental Hazardous Materials Technology",
+   "rule": "index",
+   "codes": [
+    "EHMT"
+   ],
+   "candidate": null,
+   "label": "Environmental Hazardous Materials Technology (EHMT)",
+   "address": "https://catalog.swccd.edu/course-descriptions/ehmt/"
+  },
+  {
+   "code": "ELEC",
+   "heading": "Electronics",
+   "heading_printed": "Electronics",
+   "rule": "index",
+   "codes": [
+    "ELEC"
+   ],
+   "candidate": null,
+   "label": "Electronics (ELEC)",
+   "address": "https://catalog.swccd.edu/course-descriptions/elec/"
+  },
+  {
+   "code": "EMT",
+   "heading": "Emergency Medical Technology",
+   "heading_printed": "Emergency Medical Technology",
+   "rule": "index",
+   "codes": [
+    "EMT"
+   ],
+   "candidate": null,
+   "label": "Emergency Medical Technology (EMT)",
+   "address": "https://catalog.swccd.edu/course-descriptions/emt/"
+  },
+  {
+   "code": "EMTP",
+   "heading": "Emergency Medical Technology and Paramedic",
+   "heading_printed": "Emergency Medical Technology and Paramedic",
+   "rule": "index",
+   "codes": [
+    "EMTP"
+   ],
+   "candidate": null,
+   "label": "Emergency Medical Technology and Paramedic (EMTP)",
+   "address": "https://catalog.swccd.edu/course-descriptions/emtp/"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "label": "English (ENGL)",
+   "address": "https://catalog.swccd.edu/course-descriptions/engl/"
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "index",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "label": "Engineering (ENGR)",
+   "address": "https://catalog.swccd.edu/course-descriptions/engr/"
+  },
+  {
+   "code": "ES/A",
+   "heading": "Exercise Science/Activity",
+   "heading_printed": "Exercise Science/Activity",
+   "rule": "index",
+   "codes": [
+    "ES/A"
+   ],
+   "candidate": null,
+   "label": "Exercise Science/Activity (ES/A)",
+   "address": "https://catalog.swccd.edu/course-descriptions/es_a/"
+  },
+  {
+   "code": "ES/I",
+   "heading": "Exercise Science/Intercollegiate",
+   "heading_printed": "Exercise Science/Intercollegiate",
+   "rule": "index",
+   "codes": [
+    "ES/I"
+   ],
+   "candidate": null,
+   "label": "Exercise Science/Intercollegiate (ES/I)",
+   "address": "https://catalog.swccd.edu/course-descriptions/es_i/"
+  },
+  {
+   "code": "ES/S",
+   "heading": "Exercise Science/Specialized",
+   "heading_printed": "Exercise Science/Specialized",
+   "rule": "index",
+   "codes": [
+    "ES/S"
+   ],
+   "candidate": null,
+   "label": "Exercise Science/Specialized (ES/S)",
+   "address": "https://catalog.swccd.edu/course-descriptions/es_s/"
+  },
+  {
+   "code": "ES/T",
+   "heading": "Exercise Science/Theory",
+   "heading_printed": "Exercise Science/Theory",
+   "rule": "index",
+   "codes": [
+    "ES/T"
+   ],
+   "candidate": null,
+   "label": "Exercise Science/Theory (ES/T)",
+   "address": "https://catalog.swccd.edu/course-descriptions/es_t/"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English as a Second Language",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "label": "English as a Second Language (ESL)",
+   "address": "https://catalog.swccd.edu/course-descriptions/esl/"
+  },
+  {
+   "code": "EVNT",
+   "heading": "Event and Convention Planning",
+   "heading_printed": "Event and Convention Planning",
+   "rule": "index",
+   "codes": [
+    "EVNT"
+   ],
+   "candidate": null,
+   "label": "Event and Convention Planning (EVNT)",
+   "address": "https://catalog.swccd.edu/course-descriptions/evnt/"
+  },
+  {
+   "code": "FARS",
+   "heading": "Farsi",
+   "heading_printed": "Farsi",
+   "rule": "index",
+   "codes": [
+    "FARS"
+   ],
+   "candidate": null,
+   "label": "Farsi (FARS)",
+   "address": "https://catalog.swccd.edu/course-descriptions/fars/"
+  },
+  {
+   "code": "FIL",
+   "heading": "Filipino",
+   "heading_printed": "Filipino",
+   "rule": "index",
+   "codes": [
+    "FIL"
+   ],
+   "candidate": null,
+   "label": "Filipino (FIL)",
+   "address": "https://catalog.swccd.edu/course-descriptions/fil/"
+  },
+  {
+   "code": "FREN",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "index",
+   "codes": [
+    "FREN"
+   ],
+   "candidate": null,
+   "label": "French (FREN)",
+   "address": "https://catalog.swccd.edu/course-descriptions/fren/"
+  },
+  {
+   "code": "FS",
+   "heading": "Fire Science Technology",
+   "heading_printed": "Fire Science Technology",
+   "rule": "index",
+   "codes": [
+    "FS"
+   ],
+   "candidate": null,
+   "label": "Fire Science Technology (FS)",
+   "address": "https://catalog.swccd.edu/course-descriptions/fs/"
+  },
+  {
+   "code": "FTMA",
+   "heading": "Film, Television, and Media Arts",
+   "heading_printed": "Film, Television, and Media Arts",
+   "rule": "index",
+   "codes": [
+    "FTMA"
+   ],
+   "candidate": null,
+   "label": "Film, Television, and Media Arts (FTMA)",
+   "address": "https://catalog.swccd.edu/course-descriptions/ftma/"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "label": "Geography (GEOG)",
+   "address": "https://catalog.swccd.edu/course-descriptions/geog/"
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "label": "Geology (GEOL)",
+   "address": "https://catalog.swccd.edu/course-descriptions/geol/"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "label": "History (HIST)",
+   "address": "https://catalog.swccd.edu/course-descriptions/hist/"
+  },
+  {
+   "code": "HLTH",
+   "heading": "Health",
+   "heading_printed": "Health",
+   "rule": "index",
+   "codes": [
+    "HLTH"
+   ],
+   "candidate": null,
+   "label": "Health (HLTH)",
+   "address": "https://catalog.swccd.edu/course-descriptions/hlth/"
+  },
+  {
+   "code": "HTM",
+   "heading": "Hospitality and Tourism Management",
+   "heading_printed": "Hospitality and Tourism Management",
+   "rule": "index",
+   "codes": [
+    "HTM"
+   ],
+   "candidate": null,
+   "label": "Hospitality and Tourism Management (HTM)",
+   "address": "https://catalog.swccd.edu/course-descriptions/htm/"
+  },
+  {
+   "code": "HUM",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "index",
+   "codes": [
+    "HUM"
+   ],
+   "candidate": null,
+   "label": "Humanities (HUM)",
+   "address": "https://catalog.swccd.edu/course-descriptions/hum/"
+  },
+  {
+   "code": "INS",
+   "heading": "Insurance",
+   "heading_printed": "Insurance",
+   "rule": "index",
+   "codes": [
+    "INS"
+   ],
+   "candidate": null,
+   "label": "Insurance (INS)",
+   "address": "https://catalog.swccd.edu/course-descriptions/ins/"
+  },
+  {
+   "code": "ITAL",
+   "heading": "Italian",
+   "heading_printed": "Italian",
+   "rule": "index",
+   "codes": [
+    "ITAL"
+   ],
+   "candidate": null,
+   "label": "Italian (ITAL)",
+   "address": "https://catalog.swccd.edu/course-descriptions/ital/"
+  },
+  {
+   "code": "JOUR",
+   "heading": "Journalism",
+   "heading_printed": "Journalism",
+   "rule": "index",
+   "codes": [
+    "JOUR"
+   ],
+   "candidate": null,
+   "label": "Journalism (JOUR)",
+   "address": "https://catalog.swccd.edu/course-descriptions/jour/"
+  },
+  {
+   "code": "JPN",
+   "heading": "Japanese",
+   "heading_printed": "Japanese",
+   "rule": "index",
+   "codes": [
+    "JPN"
+   ],
+   "candidate": null,
+   "label": "Japanese (JPN)",
+   "address": "https://catalog.swccd.edu/course-descriptions/jpn/"
+  },
+  {
+   "code": "LA",
+   "heading": "Landscape Architecture",
+   "heading_printed": "Landscape Architecture",
+   "rule": "index",
+   "codes": [
+    "LA"
+   ],
+   "candidate": null,
+   "label": "Landscape Architecture (LA)",
+   "address": "https://catalog.swccd.edu/course-descriptions/la/"
+  },
+  {
+   "code": "LDR",
+   "heading": "Leadership",
+   "heading_printed": "Leadership",
+   "rule": "index",
+   "codes": [
+    "LDR"
+   ],
+   "candidate": null,
+   "label": "Leadership (LDR)",
+   "address": "https://catalog.swccd.edu/course-descriptions/ldr/"
+  },
+  {
+   "code": "LEGL",
+   "heading": "Legal",
+   "heading_printed": "Legal",
+   "rule": "index",
+   "codes": [
+    "LEGL"
+   ],
+   "candidate": null,
+   "label": "Legal (LEGL)",
+   "address": "https://catalog.swccd.edu/course-descriptions/legl/"
+  },
+  {
+   "code": "LIB",
+   "heading": "Library",
+   "heading_printed": "Library",
+   "rule": "index",
+   "codes": [
+    "LIB"
+   ],
+   "candidate": null,
+   "label": "Library (LIB)",
+   "address": "https://catalog.swccd.edu/course-descriptions/lib/"
+  },
+  {
+   "code": "LNT",
+   "heading": "Landscape and Nursery Technology",
+   "heading_printed": "Landscape and Nursery Technology",
+   "rule": "index",
+   "codes": [
+    "LNT"
+   ],
+   "candidate": null,
+   "label": "Landscape and Nursery Technology (LNT)",
+   "address": "https://catalog.swccd.edu/course-descriptions/lnt/"
+  },
+  {
+   "code": "LS",
+   "heading": "Learning Skills",
+   "heading_printed": "Learning Skills",
+   "rule": "index",
+   "codes": [
+    "LS"
+   ],
+   "candidate": null,
+   "label": "Learning Skills (LS)",
+   "address": "https://catalog.swccd.edu/course-descriptions/ls/"
+  },
+  {
+   "code": "MAS",
+   "heading": "Mexican-American Studies",
+   "heading_printed": "Mexican-American Studies",
+   "rule": "index",
+   "codes": [
+    "MAS"
+   ],
+   "candidate": null,
+   "label": "Mexican-American Studies (MAS)",
+   "address": "https://catalog.swccd.edu/course-descriptions/mas/"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "label": "Mathematics (MATH)",
+   "address": "https://catalog.swccd.edu/course-descriptions/math/"
+  },
+  {
+   "code": "MEDOP",
+   "heading": "Medical Office Professional",
+   "heading_printed": "Medical Office Professional",
+   "rule": "index",
+   "codes": [
+    "MEDOP"
+   ],
+   "candidate": null,
+   "label": "Medical Office Professional (MEDOP)",
+   "address": "https://catalog.swccd.edu/course-descriptions/medop/"
+  },
+  {
+   "code": "MLT",
+   "heading": "Medical Laboratory Technician",
+   "heading_printed": "Medical Laboratory Technician",
+   "rule": "index",
+   "codes": [
+    "MLT"
+   ],
+   "candidate": null,
+   "label": "Medical Laboratory Technician (MLT)",
+   "address": "https://catalog.swccd.edu/course-descriptions/mlt/"
+  },
+  {
+   "code": "MUS",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "index",
+   "codes": [
+    "MUS"
+   ],
+   "candidate": null,
+   "label": "Music (MUS)",
+   "address": "https://catalog.swccd.edu/course-descriptions/mus/"
+  },
+  {
+   "code": "NAIS",
+   "heading": "Native American & Indigenous Studies",
+   "heading_printed": "Native American & Indigenous Studies",
+   "rule": "index",
+   "codes": [
+    "NAIS"
+   ],
+   "candidate": null,
+   "label": "Native American & Indigenous Studies (NAIS)",
+   "address": "https://catalog.swccd.edu/course-descriptions/nais/"
+  },
+  {
+   "code": "NC",
+   "heading": "Noncredit",
+   "heading_printed": "Noncredit",
+   "rule": "index",
+   "codes": [
+    "NC"
+   ],
+   "candidate": null,
+   "label": "Noncredit (NC)",
+   "address": "https://catalog.swccd.edu/course-descriptions/nc/"
+  },
+  {
+   "code": "ORN",
+   "heading": "Operating Room Nurse",
+   "heading_printed": "Operating Room Nurse",
+   "rule": "index",
+   "codes": [
+    "ORN"
+   ],
+   "candidate": null,
+   "label": "Operating Room Nurse (ORN)",
+   "address": "https://catalog.swccd.edu/course-descriptions/orn/"
+  },
+  {
+   "code": "PA",
+   "heading": "Public Administration",
+   "heading_printed": "Public Administration",
+   "rule": "index",
+   "codes": [
+    "PA"
+   ],
+   "candidate": null,
+   "label": "Public Administration (PA)",
+   "address": "https://catalog.swccd.edu/course-descriptions/public-administration/"
+  },
+  {
+   "code": "PD",
+   "heading": "Personal Development",
+   "heading_printed": "Personal Development",
+   "rule": "index",
+   "codes": [
+    "PD"
+   ],
+   "candidate": null,
+   "label": "Personal Development (PD)",
+   "address": "https://catalog.swccd.edu/course-descriptions/pd/"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "label": "Philosophy (PHIL)",
+   "address": "https://catalog.swccd.edu/course-descriptions/phil/"
+  },
+  {
+   "code": "PHS",
+   "heading": "Physical Science",
+   "heading_printed": "Physical Science",
+   "rule": "index",
+   "codes": [
+    "PHS"
+   ],
+   "candidate": null,
+   "label": "Physical Science (PHS)",
+   "address": "https://catalog.swccd.edu/course-descriptions/phs/"
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "label": "Physics (PHYS)",
+   "address": "https://catalog.swccd.edu/course-descriptions/phys/"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "label": "Political Science (POLS)",
+   "address": "https://catalog.swccd.edu/course-descriptions/pols/"
+  },
+  {
+   "code": "PORT",
+   "heading": "Portuguese",
+   "heading_printed": "Portuguese",
+   "rule": "index",
+   "codes": [
+    "PORT"
+   ],
+   "candidate": null,
+   "label": "Portuguese (PORT)",
+   "address": "https://catalog.swccd.edu/course-descriptions/port/"
+  },
+  {
+   "code": "PS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "PS"
+   ],
+   "candidate": null,
+   "label": "Political Science (PS)",
+   "address": "https://catalog.swccd.edu/course-descriptions/ps/"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "label": "Psychology (PSYC)",
+   "address": "https://catalog.swccd.edu/course-descriptions/psyc/"
+  },
+  {
+   "code": "RA&T",
+   "heading": "Recording Arts & Technology",
+   "heading_printed": "Recording Arts & Technology",
+   "rule": "index",
+   "codes": [
+    "RA&T"
+   ],
+   "candidate": null,
+   "label": "Recording Arts & Technology (RA&T)",
+   "address": "https://catalog.swccd.edu/course-descriptions/ra_t/"
+  },
+  {
+   "code": "RDG",
+   "heading": "Reading",
+   "heading_printed": "Reading",
+   "rule": "index",
+   "codes": [
+    "RDG"
+   ],
+   "candidate": null,
+   "label": "Reading (RDG)",
+   "address": "https://catalog.swccd.edu/course-descriptions/rdg/"
+  },
+  {
+   "code": "RE",
+   "heading": "Real Estate",
+   "heading_printed": "Real Estate",
+   "rule": "index",
+   "codes": [
+    "RE"
+   ],
+   "candidate": null,
+   "label": "Real Estate (RE)",
+   "address": "https://catalog.swccd.edu/course-descriptions/re/"
+  },
+  {
+   "code": "REC",
+   "heading": "Recreation and Leisure Studies",
+   "heading_printed": "Recreation and Leisure Studies",
+   "rule": "index",
+   "codes": [
+    "REC"
+   ],
+   "candidate": null,
+   "label": "Recreation and Leisure Studies (REC)",
+   "address": "https://catalog.swccd.edu/course-descriptions/rec/"
+  },
+  {
+   "code": "SES",
+   "heading": "Sustainable Energy Studies",
+   "heading_printed": "Sustainable Energy Studies",
+   "rule": "index",
+   "codes": [
+    "SES"
+   ],
+   "candidate": null,
+   "label": "Sustainable Energy Studies (SES)",
+   "address": "https://catalog.swccd.edu/course-descriptions/ses/"
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "label": "Sociology (SOC)",
+   "address": "https://catalog.swccd.edu/course-descriptions/soc/"
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "label": "Spanish (SPAN)",
+   "address": "https://catalog.swccd.edu/course-descriptions/span/"
+  },
+  {
+   "code": "ST",
+   "heading": "Surgical Technology",
+   "heading_printed": "Surgical Technology",
+   "rule": "index",
+   "codes": [
+    "ST"
+   ],
+   "candidate": null,
+   "label": "Surgical Technology (ST)",
+   "address": "https://catalog.swccd.edu/course-descriptions/st/"
+  },
+  {
+   "code": "STAT",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "label": "Mathematics (STAT)",
+   "address": "https://catalog.swccd.edu/course-descriptions/stat/"
+  },
+  {
+   "code": "SWHS",
+   "heading": "Social Work and Human Services",
+   "heading_printed": "Social Work and Human Services",
+   "rule": "index",
+   "codes": [
+    "SWHS"
+   ],
+   "candidate": null,
+   "label": "Social Work and Human Services (SWHS)",
+   "address": "https://catalog.swccd.edu/course-descriptions/swhs/"
+  },
+  {
+   "code": "T&T",
+   "heading": "Travel and Tourism",
+   "heading_printed": "Travel and Tourism",
+   "rule": "index",
+   "codes": [
+    "T&T"
+   ],
+   "candidate": null,
+   "label": "Travel and Tourism (T&T)",
+   "address": "https://catalog.swccd.edu/course-descriptions/t_t/"
+  },
+  {
+   "code": "TA",
+   "heading": "Theatre Arts",
+   "heading_printed": "Theatre Arts",
+   "rule": "index",
+   "codes": [
+    "TA"
+   ],
+   "candidate": null,
+   "label": "Theatre Arts (TA)",
+   "address": "https://catalog.swccd.edu/course-descriptions/ta/"
+  },
+  {
+   "code": "VN",
+   "heading": "Vocational Nursing",
+   "heading_printed": "Vocational Nursing",
+   "rule": "index",
+   "codes": [
+    "VN"
+   ],
+   "candidate": null,
+   "label": "Vocational Nursing (VN)",
+   "address": "https://catalog.swccd.edu/course-descriptions/vn/"
+  }
+ ]
+}

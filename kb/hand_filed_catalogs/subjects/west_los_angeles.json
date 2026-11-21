@@ -1,0 +1,1632 @@
+{
+ "_what": "The subject heading West Los Angeles College's catalog prints above each subject's first course, read for the local subject titles (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_subject_headings.py from a headings read; `heading` is saved in Title Case (Sam, 2026-11-21) with `heading_printed` as the catalog prints it; `above` holds the lines as printed, `rule` how the heading was taken (named, caps, fits or none), and `code_fits` whether the code's letters run in order through the heading, a second signal that decides nothing.",
+ "college": "West Los Angeles College",
+ "run": "44948529916",
+ "source": [
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf"
+ ],
+ "subjects": 90,
+ "with_heading": 75,
+ "rows": [
+  {
+   "code": "A S L",
+   "heading": "American Sign Language (a S L)",
+   "heading_printed": "AMERICAN SIGN LANGUAGE (A S L)",
+   "rule": "caps",
+   "codes": [
+    "A S L"
+   ],
+   "candidate": null,
+   "page": 165,
+   "above": [
+    "Medical Training program and is approved for Cooperative",
+    "Education, Work Experience, and Internships.",
+    "AMERICAN SIGN LANGUAGE",
+    "(A S L)"
+   ],
+   "first_course": "A S L 001 American Sign Language I (4) UC/CSU"
+  },
+  {
+   "code": "ACAD PR",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "ACAD PR"
+   ],
+   "candidate": "Required Courses",
+   "page": 248,
+   "above": [
+    "analyze quantitative aspects problems arising in",
+    "their major or area of concentration.",
+    "Required Courses",
+    "ACAD PR 015CE Data Analysis .......................... 12-36 hours"
+   ],
+   "first_course": "ACAD PR 016CE Algebra .................................... 12-54 hours"
+  },
+  {
+   "code": "ACCTG",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "ACCTG"
+   ],
+   "candidate": "Credit Course Units",
+   "page": 158,
+   "above": [
+    "8. “-1, -2” etc. = course that are part of a sequence of",
+    "courses closely related in content (e.g., KIN 251-1)",
+    "CREDIT COURSE UNITS",
+    "The number in parentheses following the course title - e.g.,"
+   ],
+   "first_course": "ACCTG 015 Tax Accounting (3) - indicates the credit value of"
+  },
+  {
+   "code": "ADDICST",
+   "heading": "Addiction Studies (Addicst)",
+   "heading_printed": "ADDICTION STUDIES (ADDICST)",
+   "rule": "section",
+   "codes": [
+    "ADDICST"
+   ],
+   "candidate": null,
+   "page": 162,
+   "above": [
+    "West Los Angeles College 2026-2027 Catalog 161",
+    "identification of disorders, assessment, and treatment",
+    "approaches. Attention is given to special populations including",
+    "multicultural clients."
+   ],
+   "first_course": "ADDICST 030 Case Management and Documentation (3)"
+  },
+  {
+   "code": "ADDICTST",
+   "heading": "Addiction Studies (Addicst)",
+   "heading_printed": "ADDICTION STUDIES (ADDICST)",
+   "rule": "caps",
+   "codes": [
+    "ADDICTST"
+   ],
+   "candidate": null,
+   "page": 161,
+   "above": [
+    "accounts receivable, accounts payable, and payroll. Real-",
+    "world applications will be stressed throughout the course.",
+    "ADDICTION STUDIES",
+    "(ADDICST)"
+   ],
+   "first_course": "ADDICTST 001 Understanding Addiction and Counseling"
+  },
+  {
+   "code": "ADM JUS",
+   "heading": "Administration of Justice (Adm Jus)",
+   "heading_printed": "ADMINISTRATION OF JUSTICE (ADM JUS)",
+   "rule": "caps",
+   "codes": [
+    "ADM JUS"
+   ],
+   "candidate": null,
+   "page": 162,
+   "above": [
+    "(CAADE). Internship hours must be completed during the",
+    "semester of enrollment.",
+    "ADMINISTRATION OF JUSTICE",
+    "(ADM JUS)"
+   ],
+   "first_course": "ADM JUS 001 Introduction to Administration of Justice (3)"
+  },
+  {
+   "code": "AFRO AM",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "AFRO AM"
+   ],
+   "candidate": null,
+   "page": 163,
+   "above": [
+    "affecting all Americans. This course is intended for all students",
+    "interested in Black Studies, Ethnic Studies, and the history of",
+    "the U.S. from an African American perspective. (GE Areas -",
+    "Cal-GETC: 4)"
+   ],
+   "first_course": "AFRO AM 019 Introduction to African American Studies"
+  },
+  {
+   "code": "ALD HTH",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "ALD HTH"
+   ],
+   "candidate": null,
+   "page": 163,
+   "above": [
+    "choking patients and heart disease prevention is also",
+    "included. Successful course completion earns an American",
+    "Heart Association Basic Cardiovascular Life Support for the",
+    "Healthcare Provider card valid for two years."
+   ],
+   "first_course": "ALD HTH 033 Medical Terminology (3) CSU"
+  },
+  {
+   "code": "ANATOMY",
+   "heading": "Anatomy (Anatomy)",
+   "heading_printed": "ANATOMY (ANATOMY)",
+   "rule": "caps",
+   "codes": [
+    "ANATOMY"
+   ],
+   "candidate": null,
+   "page": 165,
+   "above": [
+    "in readings, videos, and discussions in ASL. Non-verbal",
+    "communication is emphasized.",
+    "ANATOMY",
+    "(ANATOMY)"
+   ],
+   "first_course": "ANATOMY 001 Introduction to Human Anatomy (4)"
+  },
+  {
+   "code": "ANTHRO",
+   "heading": "Anthropology (Anthro)",
+   "heading_printed": "ANTHROPOLOGY (ANTHRO)",
+   "rule": "caps",
+   "codes": [
+    "ANTHRO"
+   ],
+   "candidate": null,
+   "page": 165,
+   "above": [
+    "Dissection and microscopy are used extensively in lab. (GE",
+    "Areas - Cal-GETC: 5B, 5C)",
+    "ANTHROPOLOGY",
+    "(ANTHRO)"
+   ],
+   "first_course": "ANTHRO 101 Human Biological Evolution (3) UC/CSU"
+  },
+  {
+   "code": "ARABIC",
+   "heading": "Arabic (Arabic)",
+   "heading_printed": "ARABIC (ARABIC)",
+   "rule": "caps",
+   "codes": [
+    "ARABIC"
+   ],
+   "candidate": null,
+   "page": 166,
+   "above": [
+    "health issues and programs, mental illness, and social",
+    "definitions of health and illness.",
+    "ARABIC",
+    "(ARABIC)"
+   ],
+   "first_course": "ARABIC 001 Elementary Arabic I (5) UC/CSU"
+  },
+  {
+   "code": "ART",
+   "heading": "Art (Art)",
+   "heading_printed": "ART (ART)",
+   "rule": "caps",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "page": 166,
+   "above": [
+    "ART",
+    "(ART)",
+    "ART 101 and 102 are now known as ARTH C1100 and",
+    "ARTH C1200, respectively."
+   ],
+   "first_course": "ART 103 Art Appreciation I (3) UC/CSU"
+  },
+  {
+   "code": "ASIAN",
+   "heading": "Asian-American Studies (Asian)",
+   "heading_printed": "ASIAN-AMERICAN STUDIES (ASIAN)",
+   "rule": "caps",
+   "codes": [
+    "ASIAN"
+   ],
+   "candidate": null,
+   "page": 168,
+   "above": [
+    "art from Europe. The course will further consider global",
+    "interactions involving this region. (GE Areas - Cal-GETC: 3A)",
+    "ASIAN-AMERICAN STUDIES",
+    "(ASIAN)"
+   ],
+   "first_course": "ASIAN 001 Asian American History (3) UC/CSU"
+  },
+  {
+   "code": "ASTRON",
+   "heading": "Astronomy (Astron)",
+   "heading_printed": "ASTRONOMY (ASTRON)",
+   "rule": "caps",
+   "codes": [
+    "ASTRON"
+   ],
+   "candidate": null,
+   "page": 169,
+   "above": [
+    "political themes of representation are approached utilizing an",
+    "interdisciplinary ethnic studies framework.",
+    "ASTRONOMY",
+    "(ASTRON)"
+   ],
+   "first_course": "ASTRON 001 Elementary Astronomy (3) UC/CSU"
+  },
+  {
+   "code": "AVIATEK",
+   "heading": "(Aviatek)",
+   "heading_printed": "(AVIATEK)",
+   "rule": "caps",
+   "codes": [
+    "AVIATEK"
+   ],
+   "candidate": null,
+   "page": 169,
+   "above": [
+    "(AVIATEK)",
+    "Note: Upper division courses can be found in the “Upper",
+    "Division Course Listings & Descriptions” section of this",
+    "catalog."
+   ],
+   "first_course": "AVIATEK 001 Maintenance Procedures (4) CSU"
+  },
+  {
+   "code": "BIOLOGY",
+   "heading": "Biology (Biology)",
+   "heading_printed": "BIOLOGY (BIOLOGY)",
+   "rule": "caps",
+   "codes": [
+    "BIOLOGY"
+   ],
+   "candidate": null,
+   "page": 170,
+   "above": [
+    "engine over- haul procedures, methods and practice are",
+    "presented.",
+    "BIOLOGY",
+    "(BIOLOGY)"
+   ],
+   "first_course": "BIOLOGY 003 Introduction to Biology (4) UC/CSU"
+  },
+  {
+   "code": "BIOTECH",
+   "heading": "Biotechnology (Biotech)",
+   "heading_printed": "BIOTECHNOLOGY (BIOTECH)",
+   "rule": "caps",
+   "codes": [
+    "BIOTECH"
+   ],
+   "candidate": null,
+   "page": 171,
+   "above": [
+    "autonomic drugs, cardiovascular drugs, antihistamines, anti-",
+    "inflammatory drugs, and anti-neoplastic drugs.",
+    "BIOTECHNOLOGY",
+    "(BIOTECH)"
+   ],
+   "first_course": "BIOTECH 001 Fundamentals of Biotechnology (3) UC/CSU"
+  },
+  {
+   "code": "BSICSKL",
+   "heading": "Basic Skills (Bsicskl)",
+   "heading_printed": "BASIC SKILLS (BSICSKL)",
+   "rule": "caps",
+   "codes": [
+    "BSICSKL"
+   ],
+   "candidate": null,
+   "page": 252,
+   "above": [
+    "this information. It also reviews such topics as linear functions",
+    "and matrices in the context of Statistics, as needed.",
+    "BASIC SKILLS",
+    "(BSICSKL)"
+   ],
+   "first_course": "BSICSKL 002CE Developing English Composition Skills"
+  },
+  {
+   "code": "BUS",
+   "heading": "Business (Bus)",
+   "heading_printed": "BUSINESS (BUS)",
+   "rule": "caps",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "page": 171,
+   "above": [
+    "the proper use and care of equipment for culturing cells. Stem",
+    "cell technology is also examined.",
+    "BUSINESS",
+    "(BUS)"
+   ],
+   "first_course": "BUS 001 Introduction to Business (3) UC/CSU"
+  },
+  {
+   "code": "CAOT",
+   "heading": "Computer Applications Office Technologies (Caot)",
+   "heading_printed": "COMPUTER APPLICATIONS OFFICE TECHNOLOGIES (CAOT)",
+   "rule": "caps",
+   "codes": [
+    "CAOT"
+   ],
+   "candidate": null,
+   "page": 178,
+   "above": [
+    "(GE Areas – Cal-GETC: 4)",
+    "COMPUTER APPLICATIONS OFFICE",
+    "TECHNOLOGIES",
+    "(CAOT)"
+   ],
+   "first_course": "CAOT 079 Microsoft Word: Advanced (3) CSU"
+  },
+  {
+   "code": "CH DEV",
+   "heading": "Child Development (Ch Dev)",
+   "heading_printed": "CHILD DEVELOPMENT (CH DEV)",
+   "rule": "caps",
+   "codes": [
+    "CH DEV"
+   ],
+   "candidate": null,
+   "page": 174,
+   "above": [
+    "This course is an upper division GE course for students",
+    "earning a BA at a community college.",
+    "CHILD DEVELOPMENT",
+    "(CH DEV)"
+   ],
+   "first_course": "CH DEV 001 Child Growth and Development (3) UC/CSU"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry (Chem)",
+   "heading_printed": "CHEMISTRY (CHEM)",
+   "rule": "caps",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "page": 172,
+   "above": [
+    "ensure project is completed on time and within the determined",
+    "budget.",
+    "CHEMISTRY",
+    "(CHEM)"
+   ],
+   "first_course": "CHEM 051 Fundamentals of Chemistry I (5) UC/CSU"
+  },
+  {
+   "code": "CHICANO",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "CHICANO"
+   ],
+   "candidate": null,
+   "page": 173,
+   "above": [
+    "Special attention is given to the social, cultural, literary,",
+    "artistic, economic, and political elements which differentiate",
+    "Mexican-Americans in relationship to other groups in",
+    "American society. (GE Areas – Cal-GETC: 4, 6)"
+   ],
+   "first_course": "CHICANO 004 Introduction To Chicana/o Studies (3)"
+  },
+  {
+   "code": "CINEMA",
+   "heading": "Cinema (Cinema)",
+   "heading_printed": "CINEMA (CINEMA)",
+   "rule": "caps",
+   "codes": [
+    "CINEMA"
+   ],
+   "candidate": null,
+   "page": 176,
+   "above": [
+    "qualifications required, resources available, as well as",
+    "academic and professional support systems.",
+    "CINEMA",
+    "(CINEMA)"
+   ],
+   "first_course": "CINEMA 001 Introduction to Motion Picture Production (3)"
+  },
+  {
+   "code": "CIS",
+   "heading": "Computer Information Systems (CIS)",
+   "heading_printed": "COMPUTER INFORMATION SYSTEMS (CIS)",
+   "rule": "caps",
+   "codes": [
+    "CIS"
+   ],
+   "candidate": null,
+   "page": 178,
+   "above": [
+    "interactive features, creating electronic forms, and adding",
+    "electronic security to documents.",
+    "COMPUTER INFORMATION SYSTEMS",
+    "(CIS)"
+   ],
+   "first_course": "CIS 101 Introduction to Computers and Their Uses (3)"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies (Comm)",
+   "heading_printed": "COMMUNICATION STUDIES (COMM)",
+   "rule": "caps",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "page": 177,
+   "above": [
+    "in ways that integrate the student’s career and academic",
+    "interests and apply across general education disciplines.",
+    "COMMUNICATION STUDIES",
+    "(COMM)"
+   ],
+   "first_course": "COMM C1000 Introduction to Public Speaking (3) UC/CSU"
+  },
+  {
+   "code": "COOP ED",
+   "heading": "Cooperative Education (Coop Ed)",
+   "heading_printed": "COOPERATIVE EDUCATION (COOP ED)",
+   "rule": "caps",
+   "codes": [
+    "COOP ED"
+   ],
+   "candidate": null,
+   "page": 183,
+   "above": [
+    "COOPERATIVE EDUCATION",
+    "(COOP ED)",
+    "Please see the section on Course Repetition for information",
+    "and limitations on repeating Active Participation courses."
+   ],
+   "first_course": "COOP ED 095 Work Experience - General I (0.5) (RPT)"
+  },
+  {
+   "code": "CORR",
+   "heading": "Corrections (Corr)",
+   "heading_printed": "CORRECTIONS (CORR)",
+   "rule": "caps",
+   "codes": [
+    "CORR"
+   ],
+   "candidate": null,
+   "page": 184,
+   "above": [
+    "hours or 240 volunteer hours during the semester to earn four",
+    "units for this course.",
+    "CORRECTIONS",
+    "(CORR)"
+   ],
+   "first_course": "CORR 002 Correctional Institutions (3) CSU"
+  },
+  {
+   "code": "COUNSEL",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "COUNSEL"
+   ],
+   "candidate": null,
+   "page": 185,
+   "above": [
+    "West Los Angeles College 2026-2027 Catalog 184",
+    "making decisions, job search, preparing a winning resume,",
+    "interviewing skills, and strategies for managing a career.",
+    "Students will design their own educational plan."
+   ],
+   "first_course": "COUNSEL 040 College Success Seminar (3) UC/CSU"
+  },
+  {
+   "code": "CS",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "CS"
+   ],
+   "candidate": "Computer Science",
+   "page": 182,
+   "above": [
+    "administration, IT security, cloud computing (AWS, Azure,",
+    "Google Cloud) and artificial intelligence.",
+    "COMPUTER SCIENCE",
+    "(CS)"
+   ],
+   "first_course": "CS 101 Introduction to Computer Science (3) UC/CSU"
+  },
+  {
+   "code": "DANCEST",
+   "heading": "Dance Studies (Dancest)",
+   "heading_printed": "DANCE STUDIES (DANCEST)",
+   "rule": "caps",
+   "codes": [
+    "DANCEST"
+   ],
+   "candidate": null,
+   "page": 185,
+   "above": [
+    "communication strategies, critical thinking, career exploration",
+    "and educational planning.",
+    "DANCE STUDIES",
+    "(DANCEST)"
+   ],
+   "first_course": "DANCEST 805 History and Appreciation of Dance (3)"
+  },
+  {
+   "code": "DANCETQ",
+   "heading": "Dance Techniques (Dancetq)",
+   "heading_printed": "DANCE TECHNIQUES (DANCETQ)",
+   "rule": "caps",
+   "codes": [
+    "DANCETQ"
+   ],
+   "candidate": null,
+   "page": 185,
+   "above": [
+    "different dance traditions world-wide. (GE Areas – Cal-GETC:",
+    "3A)",
+    "DANCE TECHNIQUES",
+    "(DANCETQ)"
+   ],
+   "first_course": "DANCETQ 111 Ballet Techniques I (1) UC/CSU"
+  },
+  {
+   "code": "DEN AST",
+   "heading": "Dental Assistant (Den Ast)",
+   "heading_printed": "DENTAL ASSISTANT (DEN AST)",
+   "rule": "caps",
+   "codes": [
+    "DEN AST"
+   ],
+   "candidate": null,
+   "page": 185,
+   "above": [
+    "DENTAL ASSISTANT",
+    "(DEN AST)",
+    "NOTE: Dental Assistant courses are open only to students",
+    "accepted into the Dental Assisting Program."
+   ],
+   "first_course": "DEN AST 001 Orientation to Dental Assisting (2)"
+  },
+  {
+   "code": "DEN HY",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "DEN HY"
+   ],
+   "candidate": null,
+   "page": 187,
+   "above": [
+    "Note: Dental hygiene special project courses are only open to",
+    "enrolled dental hygiene students. Upper division courses can",
+    "be found in the “Upper Division Course Listings &",
+    "Descriptions” section of this catalog."
+   ],
+   "first_course": "DEN HY 090 Special Projects in Dental Hygiene (2) NDA"
+  },
+  {
+   "code": "EARTH",
+   "heading": "Earth Science (Earth)",
+   "heading_printed": "EARTH SCIENCE (EARTH)",
+   "rule": "caps",
+   "codes": [
+    "EARTH"
+   ],
+   "candidate": null,
+   "page": 187,
+   "above": [
+    "pursue special projects in dental hygiene on a contract basis",
+    "under the direction of a supervising instructor.",
+    "EARTH SCIENCE",
+    "(EARTH)"
+   ],
+   "first_course": "EARTH 001 Earth Science (3) UC/CSU"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics (Econ)",
+   "heading_printed": "ECONOMICS (ECON)",
+   "rule": "caps",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "page": 187,
+   "above": [
+    "and critical thinking to solve problems. (GE Areas – Cal-GETC",
+    "5C)",
+    "ECONOMICS",
+    "(ECON)"
+   ],
+   "first_course": "ECON C2001 Principles of Microeconomics (3) UC/CSU"
+  },
+  {
+   "code": "EDUC",
+   "heading": "Education (Educ)",
+   "heading_printed": "EDUCATION (EDUC)",
+   "rule": "caps",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "page": 187,
+   "above": [
+    "cultural diversity, economic development, and immigration.",
+    "(GE Areas – Cal-GETC 4)",
+    "EDUCATION",
+    "(EDUC)"
+   ],
+   "first_course": "EDUC 001 Introduction to Teaching (3) UC/CSU"
+  },
+  {
+   "code": "EET",
+   "heading": "Engineering, Electrical Technology (Eet)",
+   "heading_printed": "ENGINEERING, ELECTRICAL TECHNOLOGY (EET)",
+   "rule": "caps",
+   "codes": [
+    "EET"
+   ],
+   "candidate": null,
+   "page": 188,
+   "above": [
+    "research in the social sciences more broadly.",
+    "ENGINEERING, ELECTRICAL",
+    "TECHNOLOGY",
+    "(EET)"
+   ],
+   "first_course": "EET 123 Introduction to Arduino (2) CSU"
+  },
+  {
+   "code": "EGD TEK",
+   "heading": "Engineering Graphics & Design (Egd Tek)",
+   "heading_printed": "ENGINEERING GRAPHICS & DESIGN (EGD TEK)",
+   "rule": "caps",
+   "codes": [
+    "EGD TEK"
+   ],
+   "candidate": null,
+   "page": 188,
+   "above": [
+    "determination of center of gravity, centroids, friction, and",
+    "moments of inertia of Area 5nd mass.",
+    "ENGINEERING GRAPHICS & DESIGN",
+    "(EGD TEK)"
+   ],
+   "first_course": "EGD TEK 101 Engineering Graphics (3) UC/CSU"
+  },
+  {
+   "code": "ENG GEN",
+   "heading": "Engineering, Electrical Technology (Eet)",
+   "heading_printed": "ENGINEERING, ELECTRICAL TECHNOLOGY (EET)",
+   "rule": "section",
+   "codes": [
+    "ENG GEN"
+   ],
+   "candidate": null,
+   "page": 188,
+   "above": [
+    "engineering to materials, the environment, and mathematics.",
+    "Speakers, field trips and classroom activities expose students",
+    "to the many ways engineering affects our lives and the variety",
+    "of roles of engineers in society."
+   ],
+   "first_course": "ENG GEN 131 Statics (3) UC/CSU"
+  },
+  {
+   "code": "ENGL",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": "English",
+   "page": 188,
+   "above": [
+    "develop sketching and 2-D and 3-D CAD skills. The use of",
+    "CAD software is an integral part of the course.",
+    "ENGLISH",
+    "(ENGLISH or ENGL)"
+   ],
+   "first_course": "ENGL C1000 Academic Reading and Writing (3) UC/CSU"
+  },
+  {
+   "code": "ENGLISH",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "ENGLISH"
+   ],
+   "candidate": null,
+   "page": 189,
+   "above": [
+    "is intended for students who plan to transfer to a four-year",
+    "college or university. Course content is identical to ENGL",
+    "C1000 with two additional lab support hours for students who",
+    "desire additional support (GE Areas – Cal-GETC 1A)"
+   ],
+   "first_course": "ENGLISH 102 Academic Writing and Literature (3) UC/CSU"
+  },
+  {
+   "code": "ENV SCI",
+   "heading": "Environmental Science (Env Sci)",
+   "heading_printed": "ENVIRONMENTAL SCIENCE (ENV SCI)",
+   "rule": "caps",
+   "codes": [
+    "ENV SCI"
+   ],
+   "candidate": null,
+   "page": 190,
+   "above": [
+    "division course, under the SB850 pilot project and only open",
+    "to students in the baccalaureate degree program.",
+    "ENVIRONMENTAL SCIENCE",
+    "(ENV SCI)"
+   ],
+   "first_course": "ENV SCI 001 Introduction to Environmental Science (3)"
+  },
+  {
+   "code": "ESL NC",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "ESL NC"
+   ],
+   "candidate": null,
+   "page": 256,
+   "above": [
+    "critical reading and interpretation/analysis. Students will be",
+    "introduced to appropriate citation and basic bibliographic",
+    "conventions in their writing. Advanced grammar skills and",
+    "mechanics are emphasized."
+   ],
+   "first_course": "ESL NC 023CE English as A Second Language - Speech I"
+  },
+  {
+   "code": "ESLCVCS",
+   "heading": "English as a Second Language – Civics (Eslcvcs)",
+   "heading_printed": "ENGLISH AS A SECOND LANGUAGE – CIVICS (ESLCVCS)",
+   "rule": "caps",
+   "codes": [
+    "ESLCVCS"
+   ],
+   "candidate": null,
+   "page": 257,
+   "above": [
+    "and autonomous learning strategies.",
+    "ENGLISH AS A SECOND LANGUAGE –",
+    "CIVICS",
+    "(ESLCVCS)"
+   ],
+   "first_course": "ESLCVCS 010CE ESL and Civics I (9-18 hours) NDA"
+  },
+  {
+   "code": "FAM & CS",
+   "heading": "Family and Consumer Studies (Fam & Cs)",
+   "heading_printed": "FAMILY AND CONSUMER STUDIES (FAM & CS)",
+   "rule": "caps",
+   "codes": [
+    "FAM & CS"
+   ],
+   "candidate": null,
+   "page": 190,
+   "above": [
+    "environments and societies based on current predictions. (GE",
+    "Areas – Cal-GETC 5A)",
+    "FAMILY AND CONSUMER STUDIES",
+    "(FAM & CS)"
+   ],
+   "first_course": "FAM & CS 021 Nutrition (3) UC/CSU"
+  },
+  {
+   "code": "FINANCE",
+   "heading": "Finance (Finance)",
+   "heading_printed": "FINANCE (FINANCE)",
+   "rule": "caps",
+   "codes": [
+    "FINANCE"
+   ],
+   "candidate": null,
+   "page": 196,
+   "above": [
+    "CREDIT COURSE LISTINGS & DESCRIPTIONS",
+    "West Los Angeles College 2026-2027 Catalog 195",
+    "FINANCE",
+    "(FINANCE)"
+   ],
+   "first_course": "FINANCE 001 Principles of Finance (3) CSU"
+  },
+  {
+   "code": "FIRETEK",
+   "heading": "Fire Technology (Firetek)",
+   "heading_printed": "FIRE TECHNOLOGY (FIRETEK)",
+   "rule": "caps",
+   "codes": [
+    "FIRETEK"
+   ],
+   "candidate": null,
+   "page": 196,
+   "above": [
+    "insurance, investment and savings plans, social security and",
+    "retirement plans.",
+    "FIRE TECHNOLOGY",
+    "(FIRETEK)"
+   ],
+   "first_course": "FIRETEK 201 Fire Protection Organization (3) CSU"
+  },
+  {
+   "code": "FLM PRD",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "FLM PRD"
+   ],
+   "candidate": null,
+   "page": 191,
+   "above": [
+    "employment in the industry, and practice 'life skills' which will",
+    "help them manage life both on set and off. This is the",
+    "introductory course for any student pursuing a certificate of",
+    "achievement in Film Production and TV Crafts."
+   ],
+   "first_course": "FLM PRD 101 Production Skills (3) CSU"
+  },
+  {
+   "code": "FRENCH",
+   "heading": "French (French)",
+   "heading_printed": "FRENCH (FRENCH)",
+   "rule": "caps",
+   "codes": [
+    "FRENCH"
+   ],
+   "candidate": null,
+   "page": 197,
+   "above": [
+    "body requirements. NFPA Pumping standards and testing",
+    "procedures will also be covered.",
+    "FRENCH",
+    "(FRENCH)"
+   ],
+   "first_course": "FRENCH 001 Elementary French I (5) UC/CSU"
+  },
+  {
+   "code": "GAD",
+   "heading": "Game Art and Design (Gad)",
+   "heading_printed": "GAME ART AND DESIGN (GAD)",
+   "rule": "caps",
+   "codes": [
+    "GAD"
+   ],
+   "candidate": null,
+   "page": 198,
+   "above": [
+    "in or has completed GEOLOGY 002. (GE Area – Cal-GETC:",
+    "5C)",
+    "GAME ART AND DESIGN",
+    "(GAD)"
+   ],
+   "first_course": "GAD 101 Introduction to Game Design (3) CSU"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography (Geog)",
+   "heading_printed": "GEOGRAPHY (GEOG)",
+   "rule": "caps",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "page": 197,
+   "above": [
+    "discussion. This course continues the development of French as",
+    "a spoken language.",
+    "GEOGRAPHY",
+    "(GEOG)"
+   ],
+   "first_course": "GEOG 001 Physical Geography (3) UC/CSU"
+  },
+  {
+   "code": "GEOLOGY",
+   "heading": "Geology (Geology)",
+   "heading_printed": "GEOLOGY (GEOLOGY)",
+   "rule": "caps",
+   "codes": [
+    "GEOLOGY"
+   ],
+   "candidate": null,
+   "page": 197,
+   "above": [
+    "landform evolution by tectonic, erosion, and depositional",
+    "forces. (GE Area – Cal-GETC: 5C)",
+    "GEOLOGY",
+    "(GEOLOGY)"
+   ],
+   "first_course": "GEOLOGY 001 Physical Geology (3) UC/CSU"
+  },
+  {
+   "code": "HEALTH",
+   "heading": "Health (Health)",
+   "heading_printed": "HEALTH (HEALTH)",
+   "rule": "caps",
+   "codes": [
+    "HEALTH"
+   ],
+   "candidate": null,
+   "page": 198,
+   "above": [
+    "projects such as animated shorts, interactive content, and",
+    "video games.",
+    "HEALTH",
+    "(HEALTH)"
+   ],
+   "first_course": "HEALTH 011 Principles of Healthful Living (3) UC/CSU"
+  },
+  {
+   "code": "HIST",
+   "heading": "History (Hist/History)",
+   "heading_printed": "HISTORY (HIST/HISTORY)",
+   "rule": "caps",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "page": 200,
+   "above": [
+    "CREDIT COURSE LISTINGS & DESCRIPTIONS",
+    "West Los Angeles College 2026-2027 Catalog 199",
+    "HISTORY",
+    "(HIST/HISTORY)"
+   ],
+   "first_course": "HIST C1001 United States History to 1877 (3) UC/CSU"
+  },
+  {
+   "code": "HISTORY",
+   "heading": "History (Hist/History)",
+   "heading_printed": "HISTORY (HIST/HISTORY)",
+   "rule": "section",
+   "codes": [
+    "HISTORY"
+   ],
+   "candidate": null,
+   "page": 200,
+   "above": [
+    "This course is a historical survey of the United States from the",
+    "end of the Civil War to the present. The course also introduces",
+    "students to historical reasoning skills. (GE Area – Cal-GETC:",
+    "4)"
+   ],
+   "first_course": "HISTORY 001 Introduction to Western Civilization I (3)"
+  },
+  {
+   "code": "HLTHOCC",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "HLTHOCC"
+   ],
+   "candidate": null,
+   "page": 199,
+   "above": [
+    "In this course students learn the essential microcomputer",
+    "management applications of the medical office. Topics include",
+    "spreadsheets, accounts receivable, insurance data entry,",
+    "patient demographic entry and scheduling systems."
+   ],
+   "first_course": "HLTHOCC 052 Medical Office Procedures I (4)"
+  },
+  {
+   "code": "HOSPT",
+   "heading": "Hospitality (Hospt)",
+   "heading_printed": "HOSPITALITY (HOSPT)",
+   "rule": "caps",
+   "codes": [
+    "HOSPT"
+   ],
+   "candidate": null,
+   "page": 201,
+   "above": [
+    "forces of world civilizations. Includes topics related to Asia, the",
+    "Americas, Africa, and Europe. (GE Area – Cal-GETC: 3B, 4)",
+    "HOSPITALITY",
+    "(HOSPT)"
+   ],
+   "first_course": "HOSPT 100 Introduction to the Hospitality Industry (3)"
+  },
+  {
+   "code": "HUMAN",
+   "heading": "Humanities (Human)",
+   "heading_printed": "HUMANITIES (HUMAN)",
+   "rule": "caps",
+   "codes": [
+    "HUMAN"
+   ],
+   "candidate": null,
+   "page": 202,
+   "above": [
+    "production and service of nutritious, safe, and high-quality",
+    "food.",
+    "HUMANITIES",
+    "(HUMAN)"
+   ],
+   "first_course": "HUMAN 030 The Beginnings of Civilization (3) UC/CSU"
+  },
+  {
+   "code": "JAPAN",
+   "heading": "Japanese (Japan)",
+   "heading_printed": "JAPANESE (JAPAN)",
+   "rule": "caps",
+   "codes": [
+    "JAPAN"
+   ],
+   "candidate": null,
+   "page": 202,
+   "above": [
+    "advances. Specifics as well as time periods may vary based",
+    "on instructor. (GE Area – Cal-GETC: 3B)",
+    "JAPANESE",
+    "(JAPAN)"
+   ],
+   "first_course": "JAPAN 001 Elementary Japanese I (5) UC/CSU"
+  },
+  {
+   "code": "KIN",
+   "heading": "Kinesiology (Kin)",
+   "heading_printed": "KINESIOLOGY (KIN)",
+   "rule": "caps",
+   "codes": [
+    "KIN"
+   ],
+   "candidate": null,
+   "page": 202,
+   "above": [
+    "KINESIOLOGY",
+    "(KIN)",
+    "Please see the section on Course Repetition for information",
+    "and limitations on repeating Active Participation courses."
+   ],
+   "first_course": "KIN 229 Body Conditioning Skills (1) UC/CSU"
+  },
+  {
+   "code": "KIN ATH",
+   "heading": "Kinesiology Athletics (Kin Ath)",
+   "heading_printed": "KINESIOLOGY ATHLETICS (KIN ATH)",
+   "rule": "caps",
+   "codes": [
+    "KIN ATH"
+   ],
+   "candidate": null,
+   "page": 203,
+   "above": [
+    "KINESIOLOGY ATHLETICS",
+    "(KIN ATH)",
+    "Please see the section on Course Repetition for information",
+    "and limitations on repeating Active Participation courses."
+   ],
+   "first_course": "KIN ATH 503 Intercollegiate Athletics - Baseball (4)"
+  },
+  {
+   "code": "KIN MAJ",
+   "heading": "Kinesiology Major (Kin Maj)",
+   "heading_printed": "KINESIOLOGY MAJOR (KIN MAJ)",
+   "rule": "caps",
+   "codes": [
+    "KIN MAJ"
+   ],
+   "candidate": null,
+   "page": 204,
+   "above": [
+    "exercises, emphasize safety and injury prevention and present",
+    "new rules and game plays for volleyball.",
+    "KINESIOLOGY MAJOR",
+    "(KIN MAJ)"
+   ],
+   "first_course": "KIN MAJ 100 Introduction to Kinesiology (3) UC/CSU"
+  },
+  {
+   "code": "LIB SCI",
+   "heading": "Library Science (Lib Sci)",
+   "heading_printed": "LIBRARY SCIENCE (LIB SCI)",
+   "rule": "caps",
+   "codes": [
+    "LIB SCI"
+   ],
+   "candidate": null,
+   "page": 204,
+   "above": [
+    "external factors will be examined and discussed to provide the",
+    "most appropriate care and management strategies.",
+    "LIBRARY SCIENCE",
+    "(LIB SCI)"
+   ],
+   "first_course": "LIB SCI 101 College Research Skills (1) UC/CSU"
+  },
+  {
+   "code": "MARKET",
+   "heading": "Marketing (Market)",
+   "heading_printed": "MARKETING (MARKET)",
+   "rule": "caps",
+   "codes": [
+    "MARKET"
+   ],
+   "candidate": null,
+   "page": 205,
+   "above": [
+    "mechanical assembly, connecting electronic components,",
+    "wiring and soldering, and testing.",
+    "MARKETING",
+    "(MARKET)"
+   ],
+   "first_course": "MARKET 001 Principles of Selling (3) CSU"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics (Math)",
+   "heading_printed": "MATHEMATICS (MATH)",
+   "rule": "caps",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "page": 205,
+   "above": [
+    "marketing technologies and emerging topics in e-commerce,",
+    "mobile marketing, and social media startups.",
+    "MATHEMATICS",
+    "(MATH)"
+   ],
+   "first_course": "MATH 215 Mathematical Concepts for Teachers I (3)"
+  },
+  {
+   "code": "MGMT",
+   "heading": "Management (Mgmt)",
+   "heading_printed": "MANAGEMENT (MGMT)",
+   "rule": "caps",
+   "codes": [
+    "MGMT"
+   ],
+   "candidate": null,
+   "page": 205,
+   "above": [
+    "CREDIT COURSE LISTINGS & DESCRIPTIONS",
+    "West Los Angeles College 2026-2027 Catalog 204",
+    "MANAGEMENT",
+    "(MGMT)"
+   ],
+   "first_course": "MGMT 001 Principles of Management (3) CSU"
+  },
+  {
+   "code": "MICRO",
+   "heading": "Microbiology (Micro)",
+   "heading_printed": "MICROBIOLOGY (MICRO)",
+   "rule": "caps",
+   "codes": [
+    "MICRO"
+   ],
+   "candidate": null,
+   "page": 207,
+   "above": [
+    "points, Laplace transforms and linear systems. (GE Area –",
+    "Cal-GETC: 2A)",
+    "MICROBIOLOGY",
+    "(MICRO)"
+   ],
+   "first_course": "MICRO 020 General Microbiology (4) UC/CSU"
+  },
+  {
+   "code": "MIT",
+   "heading": "Manufacturing & Industrial Technology (Mit)",
+   "heading_printed": "MANUFACTURING & INDUSTRIAL TECHNOLOGY (MIT)",
+   "rule": "caps",
+   "codes": [
+    "MIT"
+   ],
+   "candidate": null,
+   "page": 205,
+   "above": [
+    "professional presence.",
+    "MANUFACTURING & INDUSTRIAL",
+    "TECHNOLOGY",
+    "(MIT)"
+   ],
+   "first_course": "MIT 220 Introduction to Robotics (3) UC/CSU"
+  },
+  {
+   "code": "MULTIMD",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "MULTIMD"
+   ],
+   "candidate": null,
+   "page": 208,
+   "above": [
+    "This course provides an overview of the interactive multimedia",
+    "industry, the profession and career options, the market, and",
+    "production, forming the basis for the study of digital arts and",
+    "technologies."
+   ],
+   "first_course": "MULTIMD 210 Digital Editing (3) CSU"
+  },
+  {
+   "code": "MUSIC",
+   "heading": "Music (Music)",
+   "heading_printed": "MUSIC (MUSIC)",
+   "rule": "caps",
+   "codes": [
+    "MUSIC"
+   ],
+   "candidate": null,
+   "page": 208,
+   "above": [
+    "filters, animation techniques and output to video, via",
+    "demonstrations, practicums, and exercises.",
+    "MUSIC",
+    "(MUSIC)"
+   ],
+   "first_course": "MUSIC 101 Fundamentals of Music (3) UC/CSU"
+  },
+  {
+   "code": "OCEANO",
+   "heading": "Oceanography (Oceano)",
+   "heading_printed": "OCEANOGRAPHY (OCEANO)",
+   "rule": "caps",
+   "codes": [
+    "OCEANO"
+   ],
+   "candidate": null,
+   "page": 210,
+   "above": [
+    "throughout the course. An emphasis will be placed on",
+    "providing safe and efficient care in a diverse patient setting.",
+    "OCEANOGRAPHY",
+    "(OCEANO)"
+   ],
+   "first_course": "OCEANO 001 Introduction to Oceanography (3) UC/CSU"
+  },
+  {
+   "code": "PALEGAL",
+   "heading": "Paralegal Studies (Palegal)",
+   "heading_printed": "PARALEGAL STUDIES (PALEGAL)",
+   "rule": "caps",
+   "codes": [
+    "PALEGAL"
+   ],
+   "candidate": null,
+   "page": 210,
+   "above": [
+    "chemical & physical properties of ocean water, currents, tides,",
+    "waves and marine resources. (GE Area – Cal-GETC: 5A)",
+    "PARALEGAL STUDIES",
+    "(PALEGAL)"
+   ],
+   "first_course": "PALEGAL 010 Introduction to Law and Legal Profession"
+  },
+  {
+   "code": "PHILOS",
+   "heading": "Philosophy (Philos)",
+   "heading_printed": "PHILOSOPHY (PHILOS)",
+   "rule": "caps",
+   "codes": [
+    "PHILOS"
+   ],
+   "candidate": null,
+   "page": 213,
+   "above": [
+    "CREDIT COURSE LISTINGS & DESCRIPTIONS",
+    "West Los Angeles College 2026-2027 Catalog 212",
+    "PHILOSOPHY",
+    "(PHILOS)"
+   ],
+   "first_course": "PHILOS 001 Introduction to Philosophy (3) UC/CSU"
+  },
+  {
+   "code": "PHOTO",
+   "heading": "Photography (Photo)",
+   "heading_printed": "PHOTOGRAPHY (PHOTO)",
+   "rule": "caps",
+   "codes": [
+    "PHOTO"
+   ],
+   "candidate": null,
+   "page": 213,
+   "above": [
+    "the good life, the nature of reality and questions of knowledge,",
+    "appearance and reality. (GE Area – Cal-GETC: 3B)",
+    "PHOTOGRAPHY",
+    "(PHOTO)"
+   ],
+   "first_course": "PHOTO 007 Exploring Digital Photography (3) UC/CSU"
+  },
+  {
+   "code": "PHRMCTK",
+   "heading": "Pharmacy Technician (Phrmctk)",
+   "heading_printed": "PHARMACY TECHNICIAN (PHRMCTK)",
+   "rule": "caps",
+   "codes": [
+    "PHRMCTK"
+   ],
+   "candidate": null,
+   "page": 211,
+   "above": [
+    "decisions; and loose-leaf services. Students also receive",
+    "hands-on training in Westlaw and LexisNexis.",
+    "PHARMACY TECHNICIAN",
+    "(PHRMCTK)"
+   ],
+   "first_course": "PHRMCTK 023 Introduction to Pharmacy (2) CSU"
+  },
+  {
+   "code": "PHYS SC",
+   "heading": "Physical Science (Phys Sc)",
+   "heading_printed": "PHYSICAL SCIENCE (PHYS SC)",
+   "rule": "caps",
+   "codes": [
+    "PHYS SC"
+   ],
+   "candidate": null,
+   "page": 214,
+   "above": [
+    "CREDIT COURSE LISTINGS & DESCRIPTIONS",
+    "West Los Angeles College 2026-2027 Catalog 213",
+    "PHYSICAL SCIENCE",
+    "(PHYS SC)"
+   ],
+   "first_course": "PHYS SC 001 Physical Science I (3) UC/CSU"
+  },
+  {
+   "code": "PHYSICS",
+   "heading": "Physics (Physics)",
+   "heading_printed": "PHYSICS (PHYSICS)",
+   "rule": "caps",
+   "codes": [
+    "PHYSICS"
+   ],
+   "candidate": null,
+   "page": 214,
+   "above": [
+    "visualize and apply basic concepts in physics, chemistry,",
+    "astronomy and geology. (GE Area – Cal-GETC: 5C)",
+    "PHYSICS",
+    "(PHYSICS)"
+   ],
+   "first_course": "PHYSICS 006 General Physics I (4) UC/CSU"
+  },
+  {
+   "code": "PHYSIOL",
+   "heading": "Physiology (Physiol)",
+   "heading_printed": "PHYSIOLOGY (PHYSIOL)",
+   "rule": "caps",
+   "codes": [
+    "PHYSIOL"
+   ],
+   "candidate": null,
+   "page": 214,
+   "above": [
+    "deduce the laws of physics related to the topics discussed.",
+    "(GE Area – Cal-GETC: 5A, 5C)",
+    "PHYSIOLOGY",
+    "(PHYSIOL)"
+   ],
+   "first_course": "PHYSIOL 001 Introduction to Human Physiology (4)"
+  },
+  {
+   "code": "POL SCI",
+   "heading": "Political Science (Pol Sci/Pols)",
+   "heading_printed": "POLITICAL SCIENCE (POL SCI/POLS)",
+   "rule": "section",
+   "codes": [
+    "POL SCI"
+   ],
+   "candidate": null,
+   "page": 215,
+   "above": [
+    "constitutions, structure, and operation of governing",
+    "institutions, civil liberties and civil rights, political behaviors,",
+    "political issues, and public policy using political science theory",
+    "and methodology. (GE Areas - Cal-GETC: 4)"
+   ],
+   "first_course": "POL SCI 002 Introduction to Comparative Politics (3)"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science (Pol Sci/Pols)",
+   "heading_printed": "POLITICAL SCIENCE (POL SCI/POLS)",
+   "rule": "caps",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "page": 215,
+   "above": [
+    "who wish to extend their knowledge of the human body. (GE",
+    "Areas - Cal-GETC: 5B, 5C)",
+    "POLITICAL SCIENCE",
+    "(POL SCI/POLS)"
+   ],
+   "first_course": "POLS C1000 American Government and Politics (3)"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology (Psych/Psyc)",
+   "heading_printed": "PSYCHOLOGY (PSYCH/PSYC)",
+   "rule": "caps",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "page": 215,
+   "above": [
+    "governance, including the study of collective global",
+    "responsibilities. (GE Areas - Cal-GETC: 4)",
+    "PSYCHOLOGY",
+    "(PSYCH/PSYC)"
+   ],
+   "first_course": "PSYC C1000 Introduction to Psychology (3) UC/CSU"
+  },
+  {
+   "code": "PSYCH",
+   "heading": "Psychology (Psych/Psyc)",
+   "heading_printed": "PSYCHOLOGY (PSYCH/PSYC)",
+   "rule": "section",
+   "codes": [
+    "PSYCH"
+   ],
+   "candidate": null,
+   "page": 215,
+   "above": [
+    "and concepts of biological, cognitive, developmental,",
+    "environmental, social, and cultural influences; their",
+    "applications; and their research foundations. (GE Areas - Cal-",
+    "GETC: 4I)"
+   ],
+   "first_course": "PSYCH 002 Biological Psychology (3) UC/CSU"
+  },
+  {
+   "code": "REAL ES",
+   "heading": "Real Estate (Real Es)",
+   "heading_printed": "REAL ESTATE (REAL ES)",
+   "rule": "caps",
+   "codes": [
+    "REAL ES"
+   ],
+   "candidate": null,
+   "page": 217,
+   "above": [
+    "development, performance appraisal, and satisfaction will be",
+    "addressed.",
+    "REAL ESTATE",
+    "(REAL ES)"
+   ],
+   "first_course": "REAL ES 001 Real Estate Principles (3) CSU"
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology (Soc)",
+   "heading_printed": "SOCIOLOGY (SOC)",
+   "rule": "caps",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "page": 220,
+   "above": [
+    "The most up-to-date USPAP criteria must be used to govern",
+    "all coursework.",
+    "SOCIOLOGY",
+    "(SOC)"
+   ],
+   "first_course": "SOC 001 Introduction to Sociology (3) UC/CSU"
+  },
+  {
+   "code": "SPANISH",
+   "heading": "Spanish (Spanish)",
+   "heading_printed": "SPANISH (SPANISH)",
+   "rule": "caps",
+   "codes": [
+    "SPANISH"
+   ],
+   "candidate": null,
+   "page": 221,
+   "above": [
+    "subcultures, countercultures, and folk cultures are also",
+    "analyzed. (GE Areas - Cal-GETC: 4)",
+    "SPANISH",
+    "(SPANISH)"
+   ],
+   "first_course": "SPANISH 001 Elementary Spanish I (5) UC/CSU (P/NP"
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics (Stat)",
+   "heading_printed": "STATISTICS (STAT)",
+   "rule": "caps",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "page": 221,
+   "above": [
+    "representation, nation-building, the Revolution of 1910, border",
+    "studies, and globalization. (GE Areas - Cal-GETC: 3B)",
+    "STATISTICS",
+    "(STAT)"
+   ],
+   "first_course": "STAT C1000 Introduction to Statistics (4) UC/CSU"
+  },
+  {
+   "code": "THEATER",
+   "heading": "(Theater)",
+   "heading_printed": "(THEATER)",
+   "rule": "caps",
+   "codes": [
+    "THEATER"
+   ],
+   "candidate": null,
+   "page": 222,
+   "above": [
+    "THEATER",
+    "CREDIT COURSE LISTINGS & DESCRIPTIONS",
+    "West Los Angeles College 2026-2027 Catalog 221",
+    "(THEATER)"
+   ],
+   "first_course": "THEATER 100 Introduction to the Theater (3) UC/CSU"
+  },
+  {
+   "code": "TUTOR",
+   "heading": "Tutoring Courses (Tutor)",
+   "heading_printed": "TUTORING COURSES (TUTOR)",
+   "rule": "caps",
+   "codes": [
+    "TUTOR"
+   ],
+   "candidate": null,
+   "page": 258,
+   "above": [
+    "assist them in their immersion into a predominantly English-",
+    "speaking society.",
+    "TUTORING COURSES",
+    "(TUTOR)"
+   ],
+   "first_course": "TUTOR 001T Supervised Tutoring (360 hours) NDA"
+  },
+  {
+   "code": "VOC ED",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "VOC ED"
+   ],
+   "candidate": "Required Courses",
+   "page": 239,
+   "above": [
+    "3. Perform basic and supervisory level job functions in",
+    "hotel/restaurant careers.",
+    "Required Courses",
+    "VOC ED 243CE Front Desk Representative ..... 9-18 hours"
+   ],
+   "first_course": "VOC ED 249CE Reservationist Skills Training .. 9-18 hours"
+  }
+ ]
+}

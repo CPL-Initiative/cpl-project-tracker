@@ -1,0 +1,1794 @@
+{
+ "_what": "The subject heading Los Angeles Pierce College's catalog prints above each subject's first course, read for the local subject titles (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_subject_headings.py from a headings read; `heading` is saved in Title Case (Sam, 2026-11-21) with `heading_printed` as the catalog prints it; `above` holds the lines as printed, `rule` how the heading was taken (named, caps, fits or none), and `code_fits` whether the code's letters run in order through the heading, a second signal that decides nothing.",
+ "college": "Los Angeles Pierce College",
+ "run": "44948526227",
+ "source": [
+  "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf"
+ ],
+ "subjects": 99,
+ "with_heading": 88,
+ "rows": [
+  {
+   "code": "A S L",
+   "heading": "American Sign Language",
+   "heading_printed": "American Sign Language",
+   "rule": "named",
+   "codes": [
+    "A S L"
+   ],
+   "candidate": null,
+   "page": 173,
+   "above": [
+    "Agriculture - General . . . . . . . . . . Plant Science 100-199",
+    "Horticulture and Landscaping . . . . Plant Science 700-899",
+    "Natural Resource Management . . . Plant Science 900-999",
+    "American Sign Language (A S L)"
+   ],
+   "first_course": "A S L 001 American Sign Language I (4) UC:CSU"
+  },
+  {
+   "code": "A S T",
+   "heading": "Automotive Service Technology",
+   "heading_printed": "Automotive Service Technology",
+   "rule": "named",
+   "codes": [
+    "A S T"
+   ],
+   "candidate": null,
+   "page": 185,
+   "above": [
+    "Conference 1 hour per unit.",
+    "This course allows students to pursue directed study in Astronomy on a contract",
+    "basis under the direction of a supervising instructor.",
+    "Automotive Service Technology (A S T)"
+   ],
+   "first_course": "A S T 001 Automotive Engines (5) CSU"
+  },
+  {
+   "code": "ACCTG",
+   "heading": "Accounting",
+   "heading_printed": "Accounting",
+   "rule": "named",
+   "codes": [
+    "ACCTG"
+   ],
+   "candidate": null,
+   "page": 170,
+   "above": [
+    "170",
+    "Course Descriptions",
+    "2026-2027 GENERAL CATALOG",
+    "Accounting (ACCTG)"
+   ],
+   "first_course": "ACCTG 001 Introductor y Accounting I (5) UC:CSU"
+  },
+  {
+   "code": "ADDICST",
+   "heading": "Addiction Studies",
+   "heading_printed": "Addiction Studies",
+   "rule": "named",
+   "codes": [
+    "ADDICST"
+   ],
+   "candidate": null,
+   "page": 170,
+   "above": [
+    "rules and procedures to common business situations.",
+    "Accounting - Computerized",
+    "See course listings under Computer Applications and Office Technologies.",
+    "Addiction Studies (ADDICST)"
+   ],
+   "first_course": "ADDICST 001 Understanding Addiction and Counseling (3) UC:CSU"
+  },
+  {
+   "code": "ADM JUS",
+   "heading": "Administration of Justice",
+   "heading_printed": "Administration of Justice",
+   "rule": "named",
+   "codes": [
+    "ADM JUS"
+   ],
+   "candidate": null,
+   "page": 171,
+   "above": [
+    "required by the California Office of Alcohol and Drug Programs, and the",
+    "California Association of Alcohol and Drug Educators (CAADE). Internship",
+    "hours must be completed during the semester of enrollment.",
+    "Administration of Justice (ADM JUS)"
+   ],
+   "first_course": "ADM JUS 001 Introduction to Administration of Justice (3) UC:CSU"
+  },
+  {
+   "code": "AFRO AM",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "AFRO AM"
+   ],
+   "candidate": null,
+   "page": 173,
+   "above": [
+    "Reconstruction to the Jim Crow era to the modern Civil Rights Movement, the",
+    "Black Power Movement, Black Feminism, Social Justice, and the Black Lives",
+    "Matter movement.",
+    "(Cal-GETC Area 4)"
+   ],
+   "first_course": "AFRO AM 019 Introduction to African American Studies (3) UC:CSU"
+  },
+  {
+   "code": "ANATOMY",
+   "heading": "Anatomy",
+   "heading_printed": "Anatomy",
+   "rule": "fits",
+   "codes": [
+    "ANATOMY"
+   ],
+   "candidate": null,
+   "page": 175,
+   "above": [
+    "Conference 1 hour per unit.",
+    "This course allows students to pursue directed study in American Sign Language/",
+    "Deaf culture on a contract basis under the direction of a supervising instructor.",
+    "Anatomy"
+   ],
+   "first_course": "ANATOMY 001 Introduction to Human Anatomy (4) UC:CSU"
+  },
+  {
+   "code": "ANML SC",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "ANML SC"
+   ],
+   "candidate": null,
+   "page": 175,
+   "above": [
+    "Agriculture - General . . . . . . . . . . Animal Science 100-199",
+    "Veterinary Technology (RVT) . . . . . Animal Science 400-499",
+    "Animal Science . . . . . . . . . . . . . . . Animal Science 500-599",
+    "Horse Science . . . . . . . . . . . . . . . Animal Science 600-699"
+   ],
+   "first_course": "ANML SC 120 Ethical Issues of Using Animals (3) CSU"
+  },
+  {
+   "code": "ANTHRO",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "named",
+   "codes": [
+    "ANTHRO"
+   ],
+   "candidate": null,
+   "page": 178,
+   "above": [
+    "Conference 1 hour per unit.",
+    "This course allows students to pursue directed study in Animal Science on a con -",
+    "tract basis under the direction of a supervising instructor.",
+    "Anthropology (ANTHRO)"
+   ],
+   "first_course": "ANTHRO 101 Human Biological Evolution (3) UC:CSU"
+  },
+  {
+   "code": "ARC",
+   "heading": "Architecture",
+   "heading_printed": "Architecture",
+   "rule": "named",
+   "codes": [
+    "ARC"
+   ],
+   "candidate": null,
+   "page": 180,
+   "above": [
+    "Conference 1 hour per unit.",
+    "This course allows students to pursue directed study in Anthropology on a con -",
+    "tract basis under the direction of a supervising instructor.",
+    "Architecture (ARC)"
+   ],
+   "first_course": "ARC 110 Introduction to Architecture (1) UC:CSU"
+  },
+  {
+   "code": "ART",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "page": 181,
+   "above": [
+    "Oil Painting . . . . . . . . . . . . . . . . . . ART 307-309, 310-312",
+    "Sculpture . . . . . . . . . . . . . . . . . . . ART 700-703, 706, 707",
+    "Water Color & Acrylic . . . . . . . . . . ART 213, 301A, 300-306",
+    "Printmaking . . . . . . . . . . . . . . . . . ART 400, 401, 402, 407, 408, 411, 626"
+   ],
+   "first_course": "ART 092 Introduction to Museum Studies (3) UC:CSU"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "named",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "page": 185,
+   "above": [
+    "Students pursue on their own an in depth study of a subject of special interest to",
+    "them in studio art. Students work independently but consult with the instructor",
+    "on a weekly basis to critique their work.",
+    "Art History (ARTH)"
+   ],
+   "first_course": "ARTH C1100 Survey of Art from Prehistory to the Medieval Era (3) UC:CSU"
+  },
+  {
+   "code": "ASTRON",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "named",
+   "codes": [
+    "ASTRON"
+   ],
+   "candidate": null,
+   "page": 185,
+   "above": [
+    "consider global interactions involving this region.",
+    "(Cal-GETC Area 3A)",
+    "C-ID: ARTH 120",
+    "Astronomy (ASTRON)"
+   ],
+   "first_course": "ASTRON 001 Elementar y Astronomy (3) UC:CSU"
+  },
+  {
+   "code": "BIOLOGY",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "fits",
+   "codes": [
+    "BIOLOGY"
+   ],
+   "candidate": null,
+   "page": 189,
+   "above": [
+    "Course Descriptions",
+    "GENERAL CATALOG 2026-2027",
+    "Biology",
+    "See course listings under Anatomy, Microbiology, Oceanography, and Physiology."
+   ],
+   "first_course": "BIOLOGY 003 Introduction to Biolog y (4) *UC:CSU"
+  },
+  {
+   "code": "BIOTECH",
+   "heading": "Biotechnology",
+   "heading_printed": "Biotechnology",
+   "rule": "named",
+   "codes": [
+    "BIOTECH"
+   ],
+   "candidate": null,
+   "page": 190,
+   "above": [
+    "Conference 1 hour per unit.",
+    "This course allows students to pursue directed study in Biology on a contract basis",
+    "under the direction of a supervising instructor.",
+    "Biotechnology (BIOTECH)"
+   ],
+   "first_course": "BIOTECH 001 Fundamentals of Biotechnology (3) UC:CSU"
+  },
+  {
+   "code": "BRDCSTG",
+   "heading": "Broadcasting",
+   "heading_printed": "Broadcasting",
+   "rule": "named",
+   "codes": [
+    "BRDCSTG"
+   ],
+   "candidate": null,
+   "page": 192,
+   "above": [
+    "Conference 1 hour per unit.",
+    "This course allows students to pursue directed study in Biotechnology on a con -",
+    "tract basis under the direction of a supervising instructor.",
+    "Broadcasting (BRDCSTG)"
+   ],
+   "first_course": "BRDCSTG 001 Introduction to Broadcasting and the Internet (3) UC:CSU"
+  },
+  {
+   "code": "BSICSKL",
+   "heading": "Basic Skills",
+   "heading_printed": "Basic Skills",
+   "rule": "named",
+   "codes": [
+    "BSICSKL"
+   ],
+   "candidate": null,
+   "page": 187,
+   "above": [
+    "Conference 1 unit per hour.",
+    "This course allows students to pursue directed study in Automotive Service",
+    "Technology on a contract basis under the direction of a supervising instructor.",
+    "Basic Skills (BSICSKL)"
+   ],
+   "first_course": "BSICSKL 023CE College and Scholastic Assessment Preparation (0) (NDA)"
+  },
+  {
+   "code": "BUS",
+   "heading": "Business",
+   "heading_printed": "Business",
+   "rule": "named",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "page": 193,
+   "above": [
+    "193",
+    "Course Descriptions",
+    "GENERAL CATALOG 2026-2027",
+    "Business (BUS)"
+   ],
+   "first_course": "BUS 001 Introduction to Business (3) *UC:CSU"
+  },
+  {
+   "code": "CAOT",
+   "heading": "Technologies",
+   "heading_printed": "Technologies",
+   "rule": "named",
+   "codes": [
+    "CAOT"
+   ],
+   "candidate": null,
+   "page": 199,
+   "above": [
+    "(Cal-GETC Area 1C)",
+    "C-ID: COMM 110",
+    "Computer Applications and Office",
+    "Technologies (CAOT)"
+   ],
+   "first_course": "CAOT 001 Computer Keyboarding and Document Applications I (3) CSU"
+  },
+  {
+   "code": "CH DEV",
+   "heading": "Child Development",
+   "heading_printed": "Child Development",
+   "rule": "named",
+   "codes": [
+    "CH DEV"
+   ],
+   "candidate": null,
+   "page": 195,
+   "above": [
+    "change movements, issues, and problems that are relevant to the",
+    "Chicano Community.",
+    "(Cal-GETC Area 4)",
+    "Child Development (CH DEV)"
+   ],
+   "first_course": "CH DEV 001 Child Growth and Development (3) UC:CSU"
+  },
+  {
+   "code": "CHEM",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "page": 193,
+   "above": [
+    "enrolled in E.S.L. 008 before enrolling in Chemistry laboratory courses. Chemistry",
+    "courses require good reading and writing skills. It is recommended that students",
+    "complete Intermediate Algebra and Intermediate Reading and Composition before",
+    "enrolling in any Chemistry course."
+   ],
+   "first_course": "CHEM 051 Fundamentals of Chemistr y I (5) *UC:CSU"
+  },
+  {
+   "code": "CHICANO",
+   "heading": "Chicano Studies",
+   "heading_printed": "Chicano Studies",
+   "rule": "named",
+   "codes": [
+    "CHICANO"
+   ],
+   "candidate": null,
+   "page": 195,
+   "above": [
+    "195",
+    "Course Descriptions",
+    "GENERAL CATALOG 2026-2027",
+    "Chicano Studies (CHICANO)"
+   ],
+   "first_course": "CHICANO 002 The Me xican-American in Contemporary Society (3) UC:CSU"
+  },
+  {
+   "code": "CINEMA",
+   "heading": "Cinema",
+   "heading_printed": "Cinema",
+   "rule": "fits",
+   "codes": [
+    "CINEMA"
+   ],
+   "candidate": null,
+   "page": 197,
+   "above": [
+    "This course introduces students to a variety of career options available to Child",
+    "Development majors. It explores career opportunities, qualifications required,",
+    "resources available, as well as academic and professional support systems.",
+    "Cinema"
+   ],
+   "first_course": "CINEMA 003 Histor y of Motion Pictures (3) UC:CSU"
+  },
+  {
+   "code": "CIS",
+   "heading": "Computer Information Systems",
+   "heading_printed": "Computer Information Systems",
+   "rule": "named",
+   "codes": [
+    "CIS"
+   ],
+   "candidate": null,
+   "page": 204,
+   "above": [
+    "204",
+    "Course Descriptions",
+    "2026-2027 GENERAL CATALOG",
+    "Computer Information Systems (CIS)"
+   ],
+   "first_course": "CIS 101 Introduction to Computers and Their Uses (3) UC:CSU"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "named",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "page": 198,
+   "above": [
+    "Conference 1 unit per hour.",
+    "This course allows the student to pursue Directed Study in film production or",
+    "cinema on a contract basis under the direction of a supervising instructor.",
+    "Communication Studies (COMM)"
+   ],
+   "first_course": "COMM 100 Introduction to Communication Studies (3) UC:CSU"
+  },
+  {
+   "code": "COUNSEL",
+   "heading": "Counseling",
+   "heading_printed": "Counseling",
+   "rule": "named",
+   "codes": [
+    "COUNSEL"
+   ],
+   "candidate": null,
+   "page": 208,
+   "above": [
+    "develop services; create a home screen widget. Students implement exception",
+    "handling, will create manageable user preferences and will incorporate security",
+    "and permissions. Students will sign, publish and distribute developed applications.",
+    "Counseling (COUNSEL)"
+   ],
+   "first_course": "COUNSEL 001 Introduction to College (1) *UC:CSU"
+  },
+  {
+   "code": "CS",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "named",
+   "codes": [
+    "CS"
+   ],
+   "candidate": null,
+   "page": 207,
+   "above": [
+    "Conference 1 unit per hour.",
+    "This course allows the student to pursue directed study in Computer Information",
+    "Systems on a contract basis under the direction of a supervising instructor.",
+    "Computer Science (CS)"
+   ],
+   "first_course": "CS 111 Programming in Visual Basic (3) UC:CSU"
+  },
+  {
+   "code": "DANCEST",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "DANCEST"
+   ],
+   "candidate": null,
+   "page": 211,
+   "above": [
+    "Yoga/Stress Management . . . . . . . DANCETQ 101, 231-234, 710",
+    "Dance Choreography . . . . . . . . . . DANCEST 301, 302, 452",
+    "Dance Performance . . . . . . . . . . . DANCEST 822, 823",
+    "Folk Dance Forms . . . . . . . . . . . . . DNCESPC 491, 492"
+   ],
+   "first_course": "DANCEST 301 Choreography I (1) UC:CSU"
+  },
+  {
+   "code": "DANCETQ",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "DANCETQ"
+   ],
+   "candidate": null,
+   "page": 212,
+   "above": [
+    "Yoga/Stress Management . . . . . . . DANCETQ 101, 231-234, 710",
+    "Dance Choreography . . . . . . . . . . DANCEST 301, 302, 452",
+    "Dance Performance . . . . . . . . . . . DANCEST 822, 823",
+    "Folk Dance Forms . . . . . . . . . . . . . DNCESPC 491, 492"
+   ],
+   "first_course": "DANCETQ 101 Dance to Fitness (1) *UC:CSU"
+  },
+  {
+   "code": "DNCESPC",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "DNCESPC"
+   ],
+   "candidate": null,
+   "page": 209,
+   "above": [
+    "Yoga/Stress Management DANCETQ 101, 231-234, 710",
+    "Dance Choreography DANCEST 301, 302, 452",
+    "Dance Performance DANCEST 822, 823",
+    "Folk Dance Forms DNCESPC 491, 492"
+   ],
+   "first_course": "DNCESPC 171 Hip-Hop Dance Techniques I (1) UC:CSU"
+  },
+  {
+   "code": "E.S.L.",
+   "heading": "English as a Second Language",
+   "heading_printed": "English as a Second Language",
+   "rule": "named",
+   "codes": [
+    "E.S.L."
+   ],
+   "candidate": null,
+   "page": 226,
+   "above": [
+    "226",
+    "Course Descriptions",
+    "2026-2027 GENERAL CATALOG",
+    "English as a Second Language (E.S.L.)"
+   ],
+   "first_course": "E.S.L. 003A College ESL III: Writing and Grammar (6) (NDA)"
+  },
+  {
+   "code": "EARTH",
+   "heading": "Earth Science",
+   "heading_printed": "Earth Science",
+   "rule": "named",
+   "codes": [
+    "EARTH"
+   ],
+   "candidate": null,
+   "page": 215,
+   "above": [
+    "semester units.",
+    "Desktop Publishing",
+    "See course listings under Computer Applications Office Technology.",
+    "Earth Science (EARTH)"
+   ],
+   "first_course": "EARTH 003 Earth Science Lecture and Laborator y (4) UC:CSU"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "named",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "page": 215,
+   "above": [
+    "and critical thinking to solve problems.",
+    "(Cal-GETC Area 5A + 5C)",
+    "C-ID: GEOL 121",
+    "Economics (ECON)"
+   ],
+   "first_course": "ECON 010 Economic Histor y of the United States (3) UC:CSU"
+  },
+  {
+   "code": "EDUC",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "named",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "page": 215,
+   "above": [
+    "Conference 1 hour per unit.",
+    "This course allows students to pursue directed study in Economics on a contract",
+    "basis under the direction of a supervising instructor.",
+    "Education (EDUC)"
+   ],
+   "first_course": "EDUC 001 Introduction to T eaching (3) *UC:CSU"
+  },
+  {
+   "code": "EGD TEK",
+   "heading": "Technology",
+   "heading_printed": "Technology",
+   "rule": "named",
+   "codes": [
+    "EGD TEK"
+   ],
+   "candidate": null,
+   "page": 218,
+   "above": [
+    "Students pursue directed study in General Engineering on a contract basis under",
+    "the direction of a supervising instructor.",
+    "Engineering Graphics and Design",
+    "Technology (EGD TEK)"
+   ],
+   "first_course": "EGD TEK 101 Engineering Graphics with C AD (3) *UC:CSU"
+  },
+  {
+   "code": "ELECTRN",
+   "heading": "Electronics",
+   "heading_printed": "Electronics",
+   "rule": "named",
+   "codes": [
+    "ELECTRN"
+   ],
+   "candidate": null,
+   "page": 216,
+   "above": [
+    "tions of education and of school organization are used to evaluate selected pro -",
+    "posals and models for reform.",
+    "(Cal-GETC Area 4)",
+    "Electronics (ELECTRN)"
+   ],
+   "first_course": "ELECTRN 004A Fundamentals of Electronics I (3) UC:CSU"
+  },
+  {
+   "code": "ENG GEN",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "named",
+   "codes": [
+    "ENG GEN"
+   ],
+   "candidate": null,
+   "page": 218,
+   "above": [
+    "Machine Interface). Students will study PLC programming for Industrial",
+    "Processes, general controls, digital and analog IO, alarm / notification handling,",
+    "counters/Timers Using the Rockwell software RSLogix 500.",
+    "Engineering (ENG GEN)"
+   ],
+   "first_course": "ENG GEN 101 Introduction to Science, Engineering and Technology (2)"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "named",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "page": 221,
+   "above": [
+    "221",
+    "Course Descriptions",
+    "GENERAL CATALOG 2026-2027",
+    "English (ENGL)"
+   ],
+   "first_course": "ENGL C1000 Academic Reading and Writing (3) UC:CSU"
+  },
+  {
+   "code": "ENGLISH",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "section",
+   "codes": [
+    "ENGLISH"
+   ],
+   "candidate": null,
+   "page": 221,
+   "above": [
+    "or test, solve any problems, provide any writing samples, or review any sample",
+    "questions, problems, or prompts.",
+    "For additional information, please contact the Welcome Center:",
+    "www.lapc.edu/student-services/welcome-center"
+   ],
+   "first_course": "ENGLISH 021 English Fundamentals (3) (ND A)"
+  },
+  {
+   "code": "ENV",
+   "heading": "Environmental Design",
+   "heading_printed": "Environmental Design",
+   "rule": "named",
+   "codes": [
+    "ENV"
+   ],
+   "candidate": null,
+   "page": 228,
+   "above": [
+    "American English in everyday life and the workplace. This course focuses on",
+    "developing conversational strategies, including verbal and nonverbal communica -",
+    "tion, and appropriate language usage in everyday life and occupational settings.",
+    "Environmental Design (ENV)"
+   ],
+   "first_course": "ENV 101 Foundations of Design I (3) UC:CSU"
+  },
+  {
+   "code": "ENV SCI",
+   "heading": "Environmental Science",
+   "heading_printed": "Environmental Science",
+   "rule": "named",
+   "codes": [
+    "ENV SCI"
+   ],
+   "candidate": null,
+   "page": 229,
+   "above": [
+    "marks in U.S. history beginning with the first North Americans until the present",
+    "time. Students will also continue preparing for the U.S. Citizenship and",
+    "Naturalization Oral Test.",
+    "Environmental Science (ENV SCI)"
+   ],
+   "first_course": "ENV SCI 001 Introduction to Environmental Science (3) UC:CSU"
+  },
+  {
+   "code": "ESL NC",
+   "heading": "Noncredit",
+   "heading_printed": "Noncredit",
+   "rule": "named",
+   "codes": [
+    "ESL NC"
+   ],
+   "candidate": null,
+   "page": 227,
+   "above": [
+    "mar, sentence structure, paragraph and essay writing, and research skills particular",
+    "to those of non-native speakers of English.",
+    "English as a Second Language -",
+    "Noncredit (ESL NC)"
+   ],
+   "first_course": "ESL NC 001CE English as a Second Language - Beginning I (0) (NDA) -"
+  },
+  {
+   "code": "ESLCVCS",
+   "heading": "ESL Civics",
+   "heading_printed": "ESL Civics",
+   "rule": "named",
+   "codes": [
+    "ESLCVCS"
+   ],
+   "candidate": null,
+   "page": 229,
+   "above": [
+    "229",
+    "Course Descriptions",
+    "GENERAL CATALOG 2026-2027",
+    "ESL Civics (ESLCVCS)"
+   ],
+   "first_course": "ESLCVCS 010CE ESL and Civics I (0) (NDA) - RPT 9"
+  },
+  {
+   "code": "FAM &CS",
+   "heading": "Family and Consumer Studies",
+   "heading_printed": "Family and Consumer Studies",
+   "rule": "named",
+   "codes": [
+    "FAM &CS"
+   ],
+   "candidate": null,
+   "page": 229,
+   "above": [
+    "Conference 1 hour per unit.",
+    "This course allows students to pursue directed study in Environmental Science on",
+    "a contract basis under the direction of a supervising instructor.",
+    "Family and Consumer Studies (FAM &CS)"
+   ],
+   "first_course": "FAM &CS 034 Child Nutrition (3) CSU"
+  },
+  {
+   "code": "FINANCE",
+   "heading": "Finance",
+   "heading_printed": "Finance",
+   "rule": "fits",
+   "codes": [
+    "FINANCE"
+   ],
+   "candidate": null,
+   "page": 229,
+   "above": [
+    "that contribute to nutritional status. Students will learn about meal planning for",
+    "families and for child care centers as well as intervention strategies with",
+    "special populations.",
+    "Finance"
+   ],
+   "first_course": "FINANCE 001 Principles of Finance (3) UC:CSU"
+  },
+  {
+   "code": "FRENCH",
+   "heading": "French",
+   "heading_printed": "French",
+   "rule": "fits",
+   "codes": [
+    "FRENCH"
+   ],
+   "candidate": null,
+   "page": 230,
+   "above": [
+    "facing each household during its life cycle, including budgeting, record keeping,",
+    "consumer purchases, credit, home ownership, insurance, investing, retirement and",
+    "estate planning, are emphasized.",
+    "French"
+   ],
+   "first_course": "FRENCH 001 Elementar y French I (5) UC:CSU"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "named",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "page": 231,
+   "above": [
+    "project under the supervision of a faculty advisor. This capstone course in the GIS",
+    "Certificate of Achievement includes periodic meetings with the advisor, complet -",
+    "ing interim reports, and presenting a project with professional-quality maps.",
+    "Geography (GEOG)"
+   ],
+   "first_course": "GEOG 001 Physical Geography (3) *UC:CSU"
+  },
+  {
+   "code": "GEOLOGY",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "fits",
+   "codes": [
+    "GEOLOGY"
+   ],
+   "candidate": null,
+   "page": 233,
+   "above": [
+    "This course allows students to pursue directed study in Geography on a contract",
+    "basis under the direction of a supervising instructor.",
+    "Geology",
+    "See also course listings under Environmental Science and Oceanography."
+   ],
+   "first_course": "GEOLOGY 001 Physical Geolog y (3) UC:CSU"
+  },
+  {
+   "code": "GIS",
+   "heading": "Geographic Information Systems",
+   "heading_printed": "Geographic Information Systems",
+   "rule": "named",
+   "codes": [
+    "GIS"
+   ],
+   "candidate": null,
+   "page": 231,
+   "above": [
+    "Conference 1 hour per unit.",
+    "This course allows students to pursue directed study in French on a contract basis",
+    "under the direction of a supervising instructor.",
+    "Geographic Information Systems (GIS)"
+   ],
+   "first_course": "GIS 025 Introduction to Geographic Information Systems and Laborator y"
+  },
+  {
+   "code": "GLST",
+   "heading": "Global Studies",
+   "heading_printed": "Global Studies",
+   "rule": "named",
+   "codes": [
+    "GLST"
+   ],
+   "candidate": null,
+   "page": 234,
+   "above": [
+    "Conference 1 hour per unit.",
+    "This course allows students to pursue directed study in Geology on a contract",
+    "basis under the direction of a supervising instructor.",
+    "Global Studies (GLST)"
+   ],
+   "first_course": "GLST 101 Introduction to Global Studies (3) UC:CSU"
+  },
+  {
+   "code": "HEALTH",
+   "heading": "Health",
+   "heading_printed": "Health",
+   "rule": "fits",
+   "codes": [
+    "HEALTH"
+   ],
+   "candidate": null,
+   "page": 235,
+   "above": [
+    "235",
+    "Course Descriptions",
+    "GENERAL CATALOG 2026-2027",
+    "Health"
+   ],
+   "first_course": "HEALTH 002 Health and Fitness (3) *UC:CSU"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "named",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "page": 235,
+   "above": [
+    "be explored, and community organizing approaches will be practiced.",
+    "(Cal-GETC Area 4)",
+    "C-ID: PH 102",
+    "History (HIST)"
+   ],
+   "first_course": "HIST C1001 United States History to 1877 (3) UC:CSU"
+  },
+  {
+   "code": "HISTORY",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "fits",
+   "codes": [
+    "HISTORY"
+   ],
+   "candidate": null,
+   "page": 236,
+   "above": [
+    "236",
+    "Course Descriptions",
+    "2026-2027 GENERAL CATALOG",
+    "History"
+   ],
+   "first_course": "HISTORY 001 Introduction to W estern Civilization I (3) UC:CSU"
+  },
+  {
+   "code": "HOSPT",
+   "heading": "Hospitality",
+   "heading_printed": "Hospitality",
+   "rule": "named",
+   "codes": [
+    "HOSPT"
+   ],
+   "candidate": null,
+   "page": 237,
+   "above": [
+    "See course listings under Animal Science 600-699.",
+    "Horticulture, Ornamental",
+    "See course listings under Plant Science 700-899.",
+    "Hospitality (HOSPT)"
+   ],
+   "first_course": "HOSPT 100 Introduction to the Hospitality Industry (3) CSU"
+  },
+  {
+   "code": "HUMAN",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "named",
+   "codes": [
+    "HUMAN"
+   ],
+   "candidate": null,
+   "page": 237,
+   "above": [
+    "tive market analysis and develop a plan to improve service and revenue at a",
+    "selected property.",
+    "C-ID: HOSP 140",
+    "Humanities (HUMAN)"
+   ],
+   "first_course": "HUMAN 006 Great P eople, Great Ages (3) UC:CSU"
+  },
+  {
+   "code": "IND TEK",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "IND TEK"
+   ],
+   "candidate": "Welding",
+   "page": 238,
+   "above": [
+    "Machining/CNC (includes CAM)",
+    "Welding",
+    "Industrial Technology classes are affiliated with the Society of Manufacturing",
+    "Engineers and American Welding Society."
+   ],
+   "first_course": "IND TEK 105 Industrial Print Reading with GD&T (3) CSU"
+  },
+  {
+   "code": "INSUR",
+   "heading": "Insurance",
+   "heading_printed": "Insurance",
+   "rule": "named",
+   "codes": [
+    "INSUR"
+   ],
+   "candidate": null,
+   "page": 239,
+   "above": [
+    "239",
+    "Course Descriptions",
+    "GENERAL CATALOG 2026-2027",
+    "Insurance (INSUR)"
+   ],
+   "first_course": "INSUR 101 Principles of Property and Liability Insurance (3) CSU"
+  },
+  {
+   "code": "INTBUS",
+   "heading": "International Business",
+   "heading_printed": "International Business",
+   "rule": "named",
+   "codes": [
+    "INTBUS"
+   ],
+   "candidate": null,
+   "page": 239,
+   "above": [
+    "marine insurance, commercial general liability insurance, commercial automobile",
+    "insurance, business owner’s policies and farm insurance, workers compensation",
+    "and employers liability insurance, and other miscellaneous insurance.",
+    "International Business (INTBUS)"
+   ],
+   "first_course": "INTBUS 001 International T rade (3) *UC:CSU"
+  },
+  {
+   "code": "ITALIAN",
+   "heading": "Italian",
+   "heading_printed": "Italian",
+   "rule": "fits",
+   "codes": [
+    "ITALIAN"
+   ],
+   "candidate": null,
+   "page": 239,
+   "above": [
+    "al and multinational organizations. This issues of international human resource,",
+    "operational topics, marketing decisions, strategic planning, and cross-cultural",
+    "issues are analyzed.",
+    "Italian"
+   ],
+   "first_course": "ITALIAN 001 Elementar y Italian I (5) UC:CSU"
+  },
+  {
+   "code": "JAPAN",
+   "heading": "Japanese",
+   "heading_printed": "Japanese",
+   "rule": "named",
+   "codes": [
+    "JAPAN"
+   ],
+   "candidate": null,
+   "page": 240,
+   "above": [
+    "Conference 1 hour per unit.",
+    "This course allows students to pursue directed study in Italian language, literature,",
+    "or culture on a contract basic under the direction of a supervising instructor.",
+    "Japanese (JAPAN)"
+   ],
+   "first_course": "JAPAN 001 Elementar y Japanese I (5) UC:CSU"
+  },
+  {
+   "code": "JOURNAL",
+   "heading": "Journalism",
+   "heading_printed": "Journalism",
+   "rule": "named",
+   "codes": [
+    "JOURNAL"
+   ],
+   "candidate": null,
+   "page": 241,
+   "above": [
+    "241",
+    "Course Descriptions",
+    "GENERAL CATALOG 2026-2027",
+    "Journalism (JOURNAL)"
+   ],
+   "first_course": "JOURNAL 100 Social V alues in Mass Communication (3) *UC:CSU"
+  },
+  {
+   "code": "KIN",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "KIN"
+   ],
+   "candidate": null,
+   "page": 243,
+   "above": [
+    "Martial Arts/Combatives . . . . . . . . All Levels of KIN 217-1, 316",
+    "Mind/Body Conditioning . . . . . . . . All Levels of KIN 251, 340-1, 347, 351",
+    "Team Sports . . . . . . . . . . . . . . . . . All Levels of KIN 287, 289, 387-1, 387-2",
+    "Track & Field Mixed Activities . . . . All Levels of KIN 307, 334"
+   ],
+   "first_course": "KIN 201 Swimming Skills (1) *UC:CSU"
+  },
+  {
+   "code": "KIN ATH",
+   "heading": "Kinesiology Athletics",
+   "heading_printed": "Kinesiology Athletics",
+   "rule": "named",
+   "codes": [
+    "KIN ATH"
+   ],
+   "candidate": null,
+   "page": 246,
+   "above": [
+    "advance rules, proper etiquette, additional terminology.",
+    "*UC Credit Limit: Any or all of these PE Activity courses combined: maximum",
+    "credit, 4 semester units.",
+    "Kinesiology Athletics (KIN ATH)"
+   ],
+   "first_course": "KIN ATH 503 Intercollegiate Athletics-Baseball (4) *UC:CSU - RPT 3"
+  },
+  {
+   "code": "KIN MAJ",
+   "heading": "Kinesiology Major",
+   "heading_printed": "Kinesiology Major",
+   "rule": "named",
+   "codes": [
+    "KIN MAJ"
+   ],
+   "candidate": null,
+   "page": 248,
+   "above": [
+    "also learns rules necessary for competition at advanced levels.",
+    "*UC Credit Limit: Any or all of these PE Activity courses combined: maximum",
+    "credit, 4 semester units.",
+    "Kinesiology Major (KIN MAJ)"
+   ],
+   "first_course": "KIN MAJ 100 Introduction to Kinesiolog y (3) *UC:CSU"
+  },
+  {
+   "code": "LIB SCI",
+   "heading": "Library Science",
+   "heading_printed": "Library Science",
+   "rule": "named",
+   "codes": [
+    "LIB SCI"
+   ],
+   "candidate": null,
+   "page": 248,
+   "above": [
+    "cardiorespiratory fitness, and muscular endurance and strength.",
+    "Law",
+    "See course listings under Administration of Justice and Business Administration.",
+    "Library Science (LIB SCI)"
+   ],
+   "first_course": "LIB SCI 101 College Research Skills (1) UC:CSU"
+  },
+  {
+   "code": "MARKET",
+   "heading": "Marketing",
+   "heading_printed": "Marketing",
+   "rule": "named",
+   "codes": [
+    "MARKET"
+   ],
+   "candidate": null,
+   "page": 249,
+   "above": [
+    "communication; performance evaluation; promotion and transfer; accident pre -",
+    "vention; labor law and legislation; benefits and services; discipline, motivation",
+    "and morale.",
+    "Marketing (MARKET)"
+   ],
+   "first_course": "MARKET 001 Principles of Selling (3) CSU"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "named",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "page": 251,
+   "above": [
+    "Mathematics (MATH)",
+    "CAS MATH LABORATORY",
+    "Open to any regularly enrolled student in Los Angeles Pierce College. Mathematics",
+    "tutoring is located in The Center for Academic Success."
+   ],
+   "first_course": "MATH 103 How to Succeed at Math (1) (ND A)"
+  },
+  {
+   "code": "MEDIART",
+   "heading": "Media Arts",
+   "heading_printed": "Media Arts",
+   "rule": "named",
+   "codes": [
+    "MEDIART"
+   ],
+   "candidate": null,
+   "page": 253,
+   "above": [
+    "supervising instructor.",
+    "Media Arts (MEDIART)",
+    "See also course listings under Broadcasting, Cinema, Journalism, Multimedia,",
+    "Photography, and Public Relations."
+   ],
+   "first_course": "MEDIART 100 The Entertainment Industry: Breaking In (3) CSU"
+  },
+  {
+   "code": "METEOR",
+   "heading": "Meteorology",
+   "heading_printed": "Meteorology",
+   "rule": "named",
+   "codes": [
+    "METEOR"
+   ],
+   "candidate": null,
+   "page": 254,
+   "above": [
+    "Conference 1 hour per unit.",
+    "This course allows students to pursue directed study in Media Arts on a contract",
+    "basis under the direction of a supervising instructor.",
+    "Meteorology (METEOR)"
+   ],
+   "first_course": "METEOR 003 Introduction to W eather and Climate (3) UC:CSU"
+  },
+  {
+   "code": "MGMT",
+   "heading": "Management",
+   "heading_printed": "Management",
+   "rule": "named",
+   "codes": [
+    "MGMT"
+   ],
+   "candidate": null,
+   "page": 249,
+   "above": [
+    "Biology, Microbiology and Physiology.",
+    "Machining",
+    "See course listings under Industrial Technology - Machining/CNC.",
+    "Management (MGMT)"
+   ],
+   "first_course": "MGMT 002 Organization and Management Theor y (3) CSU"
+  },
+  {
+   "code": "MICRO",
+   "heading": "Microbiology",
+   "heading_printed": "Microbiology",
+   "rule": "named",
+   "codes": [
+    "MICRO"
+   ],
+   "candidate": null,
+   "page": 255,
+   "above": [
+    "extreme mountain weather. Inquiry tools used may include weather maps, radar",
+    "and satellite imagery, and geographic information systems.",
+    "(Cal-GETC Area 5A)",
+    "Microbiology (MICRO)"
+   ],
+   "first_course": "MICRO 001 Introductor y Microbiology (5) *UC:CSU"
+  },
+  {
+   "code": "MULTIMD",
+   "heading": "Multimedia",
+   "heading_printed": "Multimedia",
+   "rule": "named",
+   "codes": [
+    "MULTIMD"
+   ],
+   "candidate": null,
+   "page": 255,
+   "above": [
+    "Modern Language courses are listed separately under the following headings:",
+    "American Sign Language, French, Italian, Japanese, and Spanish.",
+    "Multimedia (MULTIMD)",
+    "See also course listings under Media Arts."
+   ],
+   "first_course": "MULTIMD 110 Visual Communication (3) UC:CSU"
+  },
+  {
+   "code": "MUSIC",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "MUSIC"
+   ],
+   "candidate": null,
+   "page": 256,
+   "above": [
+    "String Instruments . . . . . . . . . . . . MUSIC 611-614",
+    "Woodwind Instruments . . . . . . . . . MUSIC 621-624",
+    "Percussion Instruments . . . . . . . . MUSIC 631-634",
+    "Voice . . . . . . . . . . . . . . . . . . . . . . MUSIC 400-403, 411-414, 431-433, 441, 453"
+   ],
+   "first_course": "MUSIC 101 Fundamentals of Music (3) UC:CSU"
+  },
+  {
+   "code": "NATIVAM",
+   "heading": "Native American Studies",
+   "heading_printed": "Native American Studies",
+   "rule": "named",
+   "codes": [
+    "NATIVAM"
+   ],
+   "candidate": null,
+   "page": 262,
+   "above": [
+    "Topics or projects must be approved by the faculty member in charge, and the",
+    "course of study is to be submitted to the Music Department Chairman at the",
+    "beginning of the semester. †UC credit may be granted by petition after transfer.",
+    "Native American Studies (NATIVAM)"
+   ],
+   "first_course": "NATIVAM 170 Introduction to American Indian Studies (3) UC:CSU"
+  },
+  {
+   "code": "NURSING",
+   "heading": "Nursing",
+   "heading_printed": "Nursing",
+   "rule": "fits",
+   "codes": [
+    "NURSING"
+   ],
+   "candidate": null,
+   "page": 263,
+   "above": [
+    "See course listings under Industrial Technology - Machining/CNC.",
+    "Nursing",
+    "See Associate of Science Degree in Nursing on page 143 for General Education",
+    "Prerequisites."
+   ],
+   "first_course": "NURSING 400 Adult Health Care I (5) CSU"
+  },
+  {
+   "code": "OCEANO",
+   "heading": "Oceanography",
+   "heading_printed": "Oceanography",
+   "rule": "named",
+   "codes": [
+    "OCEANO"
+   ],
+   "candidate": null,
+   "page": 264,
+   "above": [
+    "transfer students to meet CA BRN requirements. The course may be provided in",
+    "an Independent Study format (Nursing 185).",
+    "Oceanography (OCEANO)",
+    "See course listings under Biology for Marine Biology courses."
+   ],
+   "first_course": "OCEANO 001 Introduction to Oceanography (3) UC:CSU"
+  },
+  {
+   "code": "OLD ADL",
+   "heading": "Older Adults",
+   "heading_printed": "Older Adults",
+   "rule": "named",
+   "codes": [
+    "OLD ADL"
+   ],
+   "candidate": null,
+   "page": 264,
+   "above": [
+    "See course listings under Computer Applications Office Technologies.",
+    "Older Adults (OLD ADL)",
+    "ENCORE is a Los Angeles Pierce College noncredit program that provides courses",
+    "designed specifically for older adults."
+   ],
+   "first_course": "OLD ADL 029CE Literature and the Human Experience (0) (ND A) - RPT 9"
+  },
+  {
+   "code": "PHILOS",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "named",
+   "codes": [
+    "PHILOS"
+   ],
+   "candidate": null,
+   "page": 265,
+   "above": [
+    "brass or percussion instrument. The class explores the varied repertoire for wind",
+    "ensemble and concert band. Weekly rehearsals prepare the student to participate",
+    "in public performances each semester.",
+    "Philosophy (PHILOS)"
+   ],
+   "first_course": "PHILOS 001 Introduction to Philosophy (3) UC:CSU"
+  },
+  {
+   "code": "PHOTO",
+   "heading": "Photography",
+   "heading_printed": "Photography",
+   "rule": "named",
+   "codes": [
+    "PHOTO"
+   ],
+   "candidate": null,
+   "page": 267,
+   "above": [
+    "Conference 1 hour per unit.",
+    "This course allows students to pursue directed study in Philosophy on a contract",
+    "basis under the direction of a supervising instructor.",
+    "Photography (PHOTO)"
+   ],
+   "first_course": "PHOTO 009 Introduction to Cameras and Composition (3) UC:CSU"
+  },
+  {
+   "code": "PHYS SC",
+   "heading": "Physical Science",
+   "heading_printed": "Physical Science",
+   "rule": "named",
+   "codes": [
+    "PHYS SC"
+   ],
+   "candidate": null,
+   "page": 268,
+   "above": [
+    "Conference 1 hour per unit.",
+    "This course allows students to pursue directed study in Photography on a contract",
+    "basis under the direction of a supervising instructor.",
+    "Physical Science (PHYS SC)"
+   ],
+   "first_course": "PHYS SC 004 Physical Science and Laborator y (4) UC:CSU"
+  },
+  {
+   "code": "PHYSICS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "fits",
+   "codes": [
+    "PHYSICS"
+   ],
+   "candidate": null,
+   "page": 268,
+   "above": [
+    "Conference 1 hour per unit.",
+    "This course allows students to pursue directed study in Physical Science on a con -",
+    "tract basis under the direction of a supervising instructor.",
+    "Physics"
+   ],
+   "first_course": "PHYSICS 006 General Physics I (4) *UC:CSU"
+  },
+  {
+   "code": "PHYSIOL",
+   "heading": "Physiology",
+   "heading_printed": "Physiology",
+   "rule": "named",
+   "codes": [
+    "PHYSIOL"
+   ],
+   "candidate": null,
+   "page": 269,
+   "above": [
+    "Conference 1 hour per unit.",
+    "This course allows students to pursue directed study in Physics on a contract basis",
+    "under the direction of a supervising instructor.",
+    "Physiology (PHYSIOL)"
+   ],
+   "first_course": "PHYSIOL 001 Introduction to Human Physiolog y (4) UC:CSU"
+  },
+  {
+   "code": "PLNT SC",
+   "heading": "Plant Science",
+   "heading_printed": "Plant Science",
+   "rule": "named",
+   "codes": [
+    "PLNT SC"
+   ],
+   "candidate": null,
+   "page": 269,
+   "above": [
+    "Plant Science (PLNT SC)",
+    "Agriculture - General . . . . . . . . . . Plant Science 100-199",
+    "Horticulture and Landscaping . . . . Plant Science 700-899",
+    "Natural Resources Management . . Plant Science 900-999"
+   ],
+   "first_course": "PLNT SC 103 Introduction to Soil Science (4) UC:CSU"
+  },
+  {
+   "code": "POL SCI",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "named",
+   "codes": [
+    "POL SCI"
+   ],
+   "candidate": null,
+   "page": 271,
+   "above": [
+    "Political Science (POL SCI)",
+    "See also Chicano Studies.",
+    "POL SCI 001 The Government of the United States (Common Course",
+    "Number change. See POLS C1000.)"
+   ],
+   "first_course": "POL SCI 002 Introduction to Comparative P olitics (3) UC:CSU"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "named",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "page": 272,
+   "above": [
+    "Conference 1 hour per unit.",
+    "This course allows students to pursue directed study in Political Science on a con -",
+    "tract basis under the direction of a supervising instructor.",
+    "Political Science (POLS)"
+   ],
+   "first_course": "POLS C1000 American Go vernment and Politics (3) UC:CSU"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "named",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "page": 272,
+   "above": [
+    "(Cal-GETC Area 4 • Satisfies CSU American Ideals Graduation Requirement US-2",
+    "+ US-3)",
+    "C-ID: POLS 110",
+    "Psychology (PSYC)"
+   ],
+   "first_course": "PSYC C1000 Introduction to Psycholog y (3) UC:CSU"
+  },
+  {
+   "code": "PSYCH",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "named",
+   "codes": [
+    "PSYCH"
+   ],
+   "candidate": null,
+   "page": 272,
+   "above": [
+    "C-ID: PSY 110",
+    "Psychology (PSYCH)",
+    "PSYCH 001 Introductory Psychology (Common Course Number change. See",
+    "PSYC C1000.)"
+   ],
+   "first_course": "PSYCH 002 Biological Psycholog y (3) UC:CSU"
+  },
+  {
+   "code": "PUB REL",
+   "heading": "Public Relations",
+   "heading_printed": "Public Relations",
+   "rule": "named",
+   "codes": [
+    "PUB REL"
+   ],
+   "candidate": null,
+   "page": 274,
+   "above": [
+    "Conference 1 hour per unit.",
+    "This course allows students to pursue directed study in Psychology on a contract",
+    "basis under the direction of a supervising instructor.",
+    "Public Relations (PUB REL)"
+   ],
+   "first_course": "PUB REL 001 Principles of Public Relations (3) CSU"
+  },
+  {
+   "code": "REAL ES",
+   "heading": "Real Estate",
+   "heading_printed": "Real Estate",
+   "rule": "named",
+   "codes": [
+    "REAL ES"
+   ],
+   "candidate": null,
+   "page": 274,
+   "above": [
+    "non-profit organization to create and implement a public relations plan.",
+    "Reading",
+    "See course listings under English.",
+    "Real Estate (REAL ES)"
+   ],
+   "first_course": "REAL ES 001 Real Estate Principles (3) CSU"
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "named",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "page": 274,
+   "above": [
+    "Real Estate Salesperson or Broker License.",
+    "Sign Language",
+    "See course listings under American Sign Language.",
+    "Sociology (SOC)"
+   ],
+   "first_course": "SOC 001 Introduction to Sociolog y (3) UC:CSU"
+  },
+  {
+   "code": "SPANISH",
+   "heading": "Spanish",
+   "heading_printed": "Spanish",
+   "rule": "fits",
+   "codes": [
+    "SPANISH"
+   ],
+   "candidate": null,
+   "page": 276,
+   "above": [
+    "*UC Credit Limit: STAT C1000, MATH 228B, MATH 229, SOC 125 and",
+    "STAT 101 combined: maximum credit, 1 course.",
+    "C-ID: SOCI 125",
+    "Spanish"
+   ],
+   "first_course": "SPANISH 001 Elementar y Spanish I (5) UC:CSU"
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "named",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "page": 278,
+   "above": [
+    "Conference 1 hour per unit.",
+    "This course allows students to pursue directed study in Spanish on a contract basis",
+    "under the direction of a supervising instructor.",
+    "Statistics (STAT)"
+   ],
+   "first_course": "STAT 074 Statistics Laboratory for the Social Sciences (1) UC:CSU"
+  },
+  {
+   "code": "SUPV",
+   "heading": "Supervision",
+   "heading_printed": "Supervision",
+   "rule": "named",
+   "codes": [
+    "SUPV"
+   ],
+   "candidate": null,
+   "page": 279,
+   "above": [
+    "Conference 1 hour per unit.",
+    "This course allows students to pursue directed study in Statistics/Psychology on a",
+    "contract basis under the direction of a supervising instructor.",
+    "Supervision (SUPV)"
+   ],
+   "first_course": "SUPV 001 Elements of Super vision (3) CSU"
+  },
+  {
+   "code": "TECTHTR",
+   "heading": "Technical Stage Production",
+   "heading_printed": "Technical Stage Production",
+   "rule": "named",
+   "codes": [
+    "TECTHTR"
+   ],
+   "candidate": null,
+   "page": 279,
+   "above": [
+    "industry. Students will examine an organization, duties and responsibilities,",
+    "human relations, grievances, training, rating promotion, quality-quantity control",
+    "and management/employee relations.",
+    "Technical Stage Production (TECTHTR)"
+   ],
+   "first_course": "TECTHTR 342 Technical Stage Production (2) UC:CSU"
+  },
+  {
+   "code": "THEATER",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "THEATER"
+   ],
+   "candidate": "Professional Performance Preparation",
+   "page": 279,
+   "above": [
+    "THEATER 232, 233, 235, 250, 262, 291-294",
+    "Professional Performance Preparation",
+    "All Levels of THEATER 205, 276, 277",
+    "Voice Theory . . . . . . . . . . . . . . . . . All Levels of THEATER 240, 242"
+   ],
+   "first_course": "THEATER 100 Introduction to the Theater (3) UC:CSU"
+  },
+  {
+   "code": "TUTOR",
+   "heading": "Tutor",
+   "heading_printed": "Tutor",
+   "rule": "fits",
+   "codes": [
+    "TUTOR"
+   ],
+   "candidate": null,
+   "page": 282,
+   "above": [
+    "282",
+    "Course Descriptions",
+    "2026-2027 GENERAL CATALOG",
+    "Tutor"
+   ],
+   "first_course": "TUTOR 001T Supervised Tutoring (0) (NDA) - RPT 9"
+  },
+  {
+   "code": "VETTECH",
+   "heading": "Veterinary Technology",
+   "heading_printed": "Veterinary Technology",
+   "rule": "named",
+   "codes": [
+    "VETTECH"
+   ],
+   "candidate": null,
+   "page": 282,
+   "above": [
+    "Students receive tutoring in designated subject areas through the tutoring center",
+    "on campus. Cumulative progress and attendance records will be maintained for",
+    "this non-credit, open-entry course.",
+    "Veterinary Technology (VETTECH)"
+   ],
+   "first_course": "VETTECH 180 Animal Care Experience (1) CSU"
+  },
+  {
+   "code": "VOC ED",
+   "heading": "Vocational Education",
+   "heading_printed": "Vocational Education",
+   "rule": "named",
+   "codes": [
+    "VOC ED"
+   ],
+   "candidate": null,
+   "page": 283,
+   "above": [
+    "of this course requires a minimum of 160 hours working at a veterinary clinic. The",
+    "lecture component of this course requires 3 hours per week of class time. Class",
+    "time is devoted to board exam review, case studies and impromptu discussions.",
+    "Vocational Education (VOC ED)"
+   ],
+   "first_course": "VOC ED 060CE Custodial Technician Training (0) (NDA) - RPT 3"
+  },
+  {
+   "code": "WELDING",
+   "heading": "Welding",
+   "heading_printed": "Welding",
+   "rule": "fits",
+   "codes": [
+    "WELDING"
+   ],
+   "candidate": null,
+   "page": 287,
+   "above": [
+    "hospitality, tourism, retail, recreation, and event planning. Progress indicators are",
+    "issued for this class including Pass (P), Satisfactory Progress (SP), and No Pass",
+    "(NP).",
+    "Welding"
+   ],
+   "first_course": "WELDING 161 Oxy-Acetylene Welding I (3) CSU"
+  }
+ ]
+}

@@ -87,6 +87,47 @@ try:
     check("totals add up", T["colleges"] == 2 and T["courses"] == 6 and T["catalog_codes"] == 5 and T["both"] == 3
           and T["catalog_only"] == 2 and T["state_only"] == 2 and T["named"] == 3 and T["colleges_named"] == 1)
     check("the rule is stated in the file", "trimming and upper-casing" in out["_rule"])
+    # ── S698 (#3655): the filed headings, Title Case and why a row has no title ──
+    check("(7) a row with a title reads catalog; its source is named", A["ENGL"]["title_state"] == "catalog" and A["ENGL"]["title_source"] == "course pages")
+    check("(7) courses under a code and no heading read for it yet: not_read", B["WELD"]["title_state"] == "not_read" and B["ENG"]["title_state"] == "not_read")
+    check("(7) a code in the state list and nowhere in the catalog: not_in_catalog", A["MATH"]["title_state"] == "not_in_catalog" and B["ENGL"]["title_state"] == "not_in_catalog")
+    check("(7) every state is one of the four", all(r["title_state"] in lst.TITLE_STATES for c in by.values() for r in c.values()))
+    sub = os.path.join(root, "kb", "hand_filed_catalogs", "subjects")
+    os.makedirs(sub)
+    json.dump({"college": "Beta Trade-Technical College", "run": "1", "rows": [
+        {"code": "WELD", "heading": "Welding Technology", "heading_printed": "WELDING TECHNOLOGY", "rule": "caps", "candidate": None},
+        {"code": "ENG", "heading": None, "rule": "none", "candidate": "English and Humanities"}]}, open(os.path.join(sub, "beta_trade_technical.json"), "w"))
+    json.dump({"college": "Alpha College", "run": "2", "rows": [
+        {"code": "MATH", "heading": "Mathematics", "rule": "index", "codes": ["MATH", "STAT"], "address": "https://catalog.alpha.example.edu/course-descriptions/math/"},
+        {"code": "STAT", "heading": "Mathematics", "rule": "index", "codes": ["MATH", "STAT"], "address": "https://catalog.alpha.example.edu/course-descriptions/math/"},
+        {"code": "ENGL", "heading": "ENGLISH LANGUAGE", "rule": "index", "address": "https://catalog.alpha.example.edu/course-descriptions/engl/"},
+        {"code": "WELD", "heading": "Welding", "rule": "index"}, {"code": "ZZZ", "heading": "Catalog Only", "rule": "index"}]},
+        open(os.path.join(sub, "alpha.json"), "w"))
+    out2 = lst.build(root)
+    by2 = {c["slug"]: {r[0]: dict(zip(cols, r)) for r in c["rows"]} for c in out2["colleges"]}
+    A2, B2 = by2["alpha"], by2["beta_trade_technical"]
+    check("(8) a heading filed from above the first course titles the code", B2["WELD"]["printed_name"] == "Welding Technology"
+          and B2["WELD"]["title_state"] == "catalog" and B2["WELD"]["title_source"] == "heading above the first course")
+    check("(8) a code with no heading keeps its candidate and stays not_read, never titled by it",
+          B2["ENG"]["printed_name"] is None and B2["ENG"]["candidate"] == "English and Humanities" and B2["ENG"]["title_state"] == "not_read")
+    check("(8) a code the index lists is in the catalog with its heading, though no course of its page is filed",
+          A2["MATH"]["printed_name"] == "Mathematics" and A2["MATH"]["side"] == "both" and A2["MATH"]["catalog_courses"] == 0
+          and A2["MATH"]["address"].endswith("/math/") and A2["STAT"]["side"] == "catalog" and A2["STAT"]["printed_name"] == "Mathematics")
+    check("(8) the course pages' own name wins over the index's", A2["ENGL"]["printed_name"] == "English" and A2["ENGL"]["title_source"] == "course pages")
+    check("(8) pages the index links with no course filed are counted", out2["totals"]["pages_not_read"] == 2)
+    check("(8) an index lists every subject: a catalog code it leaves out has no title in the catalog",
+          lst.build(root)["colleges"][0]["not_in_catalog"] == 0)
+    gz(os.path.join(root, "kb", "hand_filed_catalogs", "courses", "beta_trade_technical.json.gz"), {"rows": [
+        {"college": "Beta Trade-Technical College", "subject": "ENG", "subject_name": "ENGLISH AS A SECOND LANGUAGE", "code": "ENG 101", "title": "Composition"},
+        {"college": "Beta Trade-Technical College", "subject": "weld", "code": "WELD 20", "title": "Gas"}]})
+    out3 = lst.build(root)
+    named = [r[1] for c in out3["colleges"] for r in c["rows"] if r[1]]
+    check("(9) every title is saved in Title Case, never in capitals (Sam, 2026-11-21)",
+          "English as a Second Language" in named and not any(n.isupper() and len(n) > 4 for n in named))
+    shutil.rmtree(sub)
+    gz(os.path.join(root, "kb", "hand_filed_catalogs", "courses", "beta_trade_technical.json.gz"), {"rows": [
+        {"college": "Beta Trade-Technical College", "subject": "ENG", "code": "ENG 101", "title": "Composition"},
+        {"college": "Beta Trade-Technical College", "subject": "weld", "code": "WELD 20", "title": "Gas"}]})
     first, second = lst.dump(lst.build(root)), lst.dump(lst.build(root))
     check("(6) two runs write the same bytes", first == second)
     lst_root = lst.ROOT

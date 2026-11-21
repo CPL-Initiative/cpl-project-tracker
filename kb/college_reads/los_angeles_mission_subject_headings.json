@@ -1,0 +1,28 @@
+{
+ "_readme": "S698 (SkyAuklet), 2026-11-21, under Sam's go in session on #3655 (\"good, let's do it!\"): the subject heading the catalog prints above each subject's first course, for the local subject titles on the Commons' Subjects page. The same source and the same course-heading pattern as los_angeles_mission_courses.json (the filed catalog, kb/hand_filed_catalogs/courses/los_angeles_mission.json.gz), which kept each course from its heading line down and so kept no subject heading. This read prints only the lines above each subject's first course. No model call.",
+ "college": "Los Angeles Mission College",
+ "questions": {
+  "subject_headings": "The subject heading the catalog prints above each subject's first course."
+ },
+ "keywords": [
+  "\\bUnits?\\b",
+  "\\bUNITS?\\b",
+  "\\bHours?\\b"
+ ],
+ "subject_context": {
+  "heading": "^(?P<subj>[A-Z][A-Z &.\\-]{0,11}?) (?P<num>[A-Z]?\\d{3,4}[A-Z]{0,3}(?:-\\d)?)[*†]* (?P<title>[A-Z].*)$",
+  "before": 4,
+  "start_page": 85,
+  "units": "^(?:\\([^)]*\\)\\s*)?(\\d+(?:\\.\\d+)?(?:\\s*-\\s*\\d+(?:\\.\\d+)?)?) UNITS?\\b",
+  "units_inline": "\\s*(?:[–-]\\s*)?(?:\\([^)]*\\)\\s*)?(\\d+(?:\\.\\d+)?(?:\\s*-\\s*\\d+(?:\\.\\d+)?)?)\\s*UNITS?\\s*$",
+  "within": 3
+ },
+ "pages": [
+  {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf",
+   "answers": [
+    "subject_headings"
+   ]
+  }
+ ]
+}

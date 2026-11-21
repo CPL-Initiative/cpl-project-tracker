@@ -1,0 +1,1760 @@
+{
+ "_what": "The subject heading Los Angeles Mission College's catalog prints above each subject's first course, read for the local subject titles (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_subject_headings.py from a headings read; `heading` is saved in Title Case (Sam, 2026-11-21) with `heading_printed` as the catalog prints it; `above` holds the lines as printed, `rule` how the heading was taken (named, caps, fits or none), and `code_fits` whether the code's letters run in order through the heading, a second signal that decides nothing.",
+ "college": "Los Angeles Mission College",
+ "run": "44948526227",
+ "source": [
+  "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf"
+ ],
+ "subjects": 98,
+ "with_heading": 69,
+ "rows": [
+  {
+   "code": "A S L",
+   "heading": "American Sign Language",
+   "heading_printed": "AMERICAN SIGN LANGUAGE",
+   "rule": "caps",
+   "codes": [
+    "A S L"
+   ],
+   "candidate": null,
+   "page": 91,
+   "above": [
+    "This course is designed to help students develop the skills",
+    "necessary to gain employment in healthcare industry.",
+    "AMERICAN SIGN LANGUAGE – GLOBAL LANGUAGES",
+    "AND SOCIETY"
+   ],
+   "first_course": "A S L 001 AMERICAN SIGN LANGUAGE I (CSU) – 4 UNITS"
+  },
+  {
+   "code": "ACAD PR",
+   "heading": "Academic Preparation",
+   "heading_printed": "ACADEMIC PREPARATION",
+   "rule": "caps",
+   "codes": [
+    "ACAD PR"
+   ],
+   "candidate": null,
+   "page": 89,
+   "above": [
+    "89",
+    "COURSE DESCRIPTIONS",
+    "ACADEMIC PREPARATION – MATH, COMPUTER",
+    "SCIENCE, AND ENGINEERING"
+   ],
+   "first_course": "ACAD PR 003CE LANGUAGE ARTS: WRITING ESSAYS - 0 UNITS"
+  },
+  {
+   "code": "ACCTG",
+   "heading": "Accounting",
+   "heading_printed": "ACCOUNTING",
+   "rule": "caps",
+   "codes": [
+    "ACCTG"
+   ],
+   "candidate": null,
+   "page": 89,
+   "above": [
+    "for interpreting and solving application problems that can be",
+    "modeled using the above topics along with graphing tech-",
+    "niques for functions.",
+    "ACCOUNTING – BUSINESS AND LAW"
+   ],
+   "first_course": "ACCTG 001 INTRODUCTORY ACCOUNTING I"
+  },
+  {
+   "code": "ADM JUS",
+   "heading": "Administration of Justice",
+   "heading_printed": "ADMINISTRATION OF JUSTICE",
+   "rule": "caps",
+   "codes": [
+    "ADM JUS"
+   ],
+   "candidate": null,
+   "page": 89,
+   "above": [
+    "of laws, consideration of appropriate accounting procedures,",
+    "and preparation of reports and returns.",
+    "ADMINISTRATION OF JUSTICE",
+    "BUSINESS AND LAW"
+   ],
+   "first_course": "ADM JUS 001 INTRODUCTION TO ADMINISTRATION OF JUSTICE"
+  },
+  {
+   "code": "ALD HTH",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "ALD HTH"
+   ],
+   "candidate": null,
+   "page": 91,
+   "above": [
+    "NOTE: This course may be substituted by a valid CPR certificate",
+    "(Basic Life Support for the Health Care Provider) issued by the",
+    "American Heart Association. The 0.5 units may be substituted with",
+    "any associate degree applicable course."
+   ],
+   "first_course": "ALD HTH 035 INTRODUCTION TO MEDICAL ASSISTING I"
+  },
+  {
+   "code": "ANIMATN",
+   "heading": "Animation",
+   "heading_printed": "ANIMATION",
+   "rule": "caps",
+   "codes": [
+    "ANIMATN"
+   ],
+   "candidate": null,
+   "page": 92,
+   "above": [
+    "Los Angeles Mission College Catalog 2026 / 2027",
+    "92",
+    "COURSE DESCRIPTIONS",
+    "ANIMATION – ARTS, MEDIA, AND PERFORMANCE"
+   ],
+   "first_course": "ANIMATN 217 STORYBOARDS – (CSU) 3 UNITS"
+  },
+  {
+   "code": "ANTHRO",
+   "heading": "Anthropology",
+   "heading_printed": "ANTHROPOLOGY",
+   "rule": "caps",
+   "codes": [
+    "ANTHRO"
+   ],
+   "candidate": null,
+   "page": 92,
+   "above": [
+    "uniquely relevant to 3-D character animation including changes",
+    "in translation, scale, and rotation through space in time as well",
+    "as learning camera control and lighting techniques.",
+    "ANTHROPOLOGY – SOCIAL SCIENCES"
+   ],
+   "first_course": "ANTHRO 101 HUMAN BIOLOGICAL EVOLUTION - (UC:CSU) 3 UNITS"
+  },
+  {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "ART",
+   "rule": "caps",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "page": 92,
+   "above": [
+    "anthropology- the study of human health, disease, and curing",
+    "from a cross-cultural, historical, archeological, and evolution-",
+    "ary perspective.",
+    "ART – ARTS, MEDIA, AND PERFORMANCE"
+   ],
+   "first_course": "ART 092 INTRODUCTION TO MUSEUM STUDIES – (CSU) 3 UNITS"
+  },
+  {
+   "code": "ARTHIST",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "ARTHIST"
+   ],
+   "candidate": null,
+   "page": 94,
+   "above": [
+    "This course provides an overview of art and architecture from",
+    "the Renaissance to the contemporary period with a focus on",
+    "art from Europe. The course will further consider global inter-",
+    "actions involving this region."
+   ],
+   "first_course": "ARTHIST 103 ART APPRECIATION I – (UC:CSU:C-ID ARTH 100) 3 UNITS"
+  },
+  {
+   "code": "ASTRON",
+   "heading": "Astronomy",
+   "heading_printed": "ASTRONOMY",
+   "rule": "caps",
+   "codes": [
+    "ASTRON"
+   ],
+   "candidate": null,
+   "page": 94,
+   "above": [
+    "tradition will be the primary focus, art produced by the",
+    "global community will also be considered with the advent of",
+    "Globalism in the 1990s.",
+    "ASTRONOMY – PHYSICAL SCIENCES"
+   ],
+   "first_course": "ASTRON 001 ELEMENTARY ASTRONOMY – (UC:CSU) 3 UNITS"
+  },
+  {
+   "code": "BIOL",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": "Anatomy",
+   "page": 91,
+   "above": [
+    "aspects of the Deaf Community. Course is equivalent to two",
+    "years of high school study.",
+    "ANATOMY – LIFE SCIENCES",
+    "ANATOMY 001 INTRODUCTION TO HUMAN ANATOMY (UC:CSU:C-ID"
+   ],
+   "first_course": "BIOL 110 B) 4 UNITS"
+  },
+  {
+   "code": "BIOLOGY",
+   "heading": "Biology",
+   "heading_printed": "BIOLOGY",
+   "rule": "caps",
+   "codes": [
+    "BIOLOGY"
+   ],
+   "candidate": null,
+   "page": 97,
+   "above": [
+    "reading material. Skills include evaluating different genres of",
+    "readings, summarizing, questioning validity and relevance of",
+    "information, and analyzing and synthesizing information.",
+    "BIOLOGY – LIFE SCIENCES"
+   ],
+   "first_course": "BIOLOGY 003 INTRODUCTION TO BIOLOGY – (UC:CSU) 4 UNITS"
+  },
+  {
+   "code": "BIOTECH",
+   "heading": "Biotechnology",
+   "heading_printed": "BIOTECHNOLOGY",
+   "rule": "caps",
+   "codes": [
+    "BIOTECH"
+   ],
+   "candidate": null,
+   "page": 98,
+   "above": [
+    "include the classification of drugs, their pathophysiological",
+    "basis for therapeutic use, potential adverse effects, drug inter-",
+    "actions, and contraindications.",
+    "BIOTECHNOLOGY – LIFE SCIENCES"
+   ],
+   "first_course": "BIOTECH 002 BIOTECHNOLOGY I – (UC:CSU) 4 UNITS"
+  },
+  {
+   "code": "BSICSKL",
+   "heading": "Basic Skills",
+   "heading_printed": "BASIC SKILLS",
+   "rule": "caps",
+   "codes": [
+    "BSICSKL"
+   ],
+   "candidate": null,
+   "page": 95,
+   "above": [
+    "Enroll now at www.lamission.edu",
+    "95",
+    "COURSE DESCRIPTIONS",
+    "BASIC SKILLS – CAREER & CONTINUING EDUCATION"
+   ],
+   "first_course": "BSICSKL 001CE READING AND MATHEMATICS BASIC SKILLS – 0 UNITS"
+  },
+  {
+   "code": "BUS",
+   "heading": "Business",
+   "heading_printed": "BUSINESS",
+   "rule": "caps",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "page": 100,
+   "above": [
+    "Los Angeles Mission College Catalog 2026 / 2027",
+    "100",
+    "COURSE DESCRIPTIONS",
+    "BUSINESS – BUSINESS AND LAW"
+   ],
+   "first_course": "BUS 001 INTRODUCTION TO BUSINESS – (UC:CSU:C-ID BUS 110) 3 UNITS"
+  },
+  {
+   "code": "CAOT",
+   "heading": "Computer Applications & Office Technologies",
+   "heading_printed": "COMPUTER APPLICATIONS & OFFICE TECHNOLOGIES",
+   "rule": "caps",
+   "codes": [
+    "CAOT"
+   ],
+   "candidate": null,
+   "page": 107,
+   "above": [
+    "technologies drawing from their life experiences and estab-",
+    "lishing their voice.",
+    "COMPUTER APPLICATIONS & OFFICE",
+    "TECHNOLOGIES – BUSINESS AND LAW"
+   ],
+   "first_course": "CAOT 032 BUSINESS COMMUNICATIONS"
+  },
+  {
+   "code": "CH DEV",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "CH DEV"
+   ],
+   "candidate": null,
+   "page": 102,
+   "above": [
+    "Preschool: 003 or 008, 023, 045, 172 (11 units)",
+    "Dual Language Learning: 014, 015, 023 172 (11 units)",
+    "Special Needs: 023, 044 or 055, 045, 172 (11 units)",
+    "Family Child Care: 023, 060, 061, 062, 063, 172 (11 units)"
+   ],
+   "first_course": "CH DEV 001 CHILD GROWTH AND DEVELOPMENT"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "CHEMISTRY",
+   "rule": "caps",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "page": 100,
+   "above": [
+    "ated with the Volunteer Income Tax Assistance program",
+    "(VITA) which allows students to assist in the preparation of",
+    "actual tax returns for residents in the community.",
+    "CHEMISTRY – PHYSICAL SCIENCES"
+   ],
+   "first_course": "CHEM 051 FUNDAMENTALS OF CHEMISTRY I"
+  },
+  {
+   "code": "CHICANO",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "CHICANO"
+   ],
+   "candidate": null,
+   "page": 101,
+   "above": [
+    "an examination of present-day ethnic studies principles.",
+    "Special attention will be given to economic, social, political,",
+    "cultural, and institutional determinants that are important to",
+    "the Chicana/o/x as well as the Latina/o/x experience."
+   ],
+   "first_course": "CHICANO 004 INTRODUCTION TO CHICANA/O STUDIES"
+  },
+  {
+   "code": "CINEMA",
+   "heading": "Cinema",
+   "heading_printed": "CINEMA",
+   "rule": "caps",
+   "codes": [
+    "CINEMA"
+   ],
+   "candidate": null,
+   "page": 105,
+   "above": [
+    "to Child Development majors. It explores career opportuni-",
+    "ties, qualifications required, resources available, as well as",
+    "academic and professional support systems.",
+    "CINEMA – ARTS, MEDIA, AND PERFORMANCE"
+   ],
+   "first_course": "CINEMA 003 HISTORY OF MOTION PICTURES - (UC:CSU) 3 UNITS"
+  },
+  {
+   "code": "CIS",
+   "heading": "Course Descriptions",
+   "heading_printed": "COURSE DESCRIPTIONS",
+   "rule": "fits",
+   "codes": [
+    "CIS"
+   ],
+   "candidate": null,
+   "page": 108,
+   "above": [
+    "Troubleshooting",
+    "Los Angeles Mission College Catalog 2026 / 2027",
+    "108",
+    "COURSE DESCRIPTIONS"
+   ],
+   "first_course": "CIS 101 INTRODUCTION TO COMPUTERS AND THEIR USES"
+  },
+  {
+   "code": "CLN ART",
+   "heading": "Culinary Arts",
+   "heading_printed": "CULINARY ARTS",
+   "rule": "caps",
+   "codes": [
+    "CLN ART"
+   ],
+   "candidate": null,
+   "page": 111,
+   "above": [
+    "Enroll now at www.lamission.edu",
+    "111",
+    "COURSE DESCRIPTIONS",
+    "CULINARY ARTS – CULINARY ARTS"
+   ],
+   "first_course": "CLN ART 050 SANITATION AND SAFETY – (CSU:C-ID HOSP 110)"
+  },
+  {
+   "code": "COMM",
+   "heading": "Comm to Comm C",
+   "heading_printed": "COMM to COMM C",
+   "rule": "fits",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "page": 106,
+   "above": [
+    "COMMUNICATION STUDIES, AND JOURNALISM",
+    "COMMON COURSE NUMBER CROSSWALK",
+    "COMM to COMM C",
+    "Old Course New Course Title"
+   ],
+   "first_course": "COMM 101 COMM C1000 Introduction to Public Speaking"
+  },
+  {
+   "code": "COUNSEL",
+   "heading": "Counseling",
+   "heading_printed": "COUNSELING",
+   "rule": "caps",
+   "codes": [
+    "COUNSEL"
+   ],
+   "candidate": null,
+   "page": 110,
+   "above": [
+    "inheritance, virtual functions, polymorphism, templates, and",
+    "exception handling. Introduces to data structures such as",
+    "stacks, queues, and trees in C++ object oriented programming.",
+    "COUNSELING – COUNSELING"
+   ],
+   "first_course": "COUNSEL 004 CAREER PLANNING – (CSU) 1 UNIT"
+  },
+  {
+   "code": "CS",
+   "heading": "Computer Science",
+   "heading_printed": "COMPUTER SCIENCE",
+   "rule": "caps",
+   "codes": [
+    "CS"
+   ],
+   "candidate": null,
+   "page": 109,
+   "above": [
+    "Students study Computer Information Systems on a contract",
+    "basis under the direction of a supervising instructor.",
+    "COMPUTER SCIENCE – MATHEMATICS, COMPUTER",
+    "SCIENCE, AND ENGINEERING"
+   ],
+   "first_course": "CS 101 INTRODUCTION TO COMPUTER SCIENCE - (UC:CSU) 3 UNITS"
+  },
+  {
+   "code": "DANCEST",
+   "heading": "Dance Studies",
+   "heading_printed": "DANCE STUDIES",
+   "rule": "caps",
+   "codes": [
+    "DANCEST"
+   ],
+   "candidate": null,
+   "page": 112,
+   "above": [
+    "organization, sanitation and safety, nutrition, basic culinary",
+    "terminology, ingredient functions, and table centerpieces. This",
+    "course offers preparation for local and regional competitions.",
+    "DANCE STUDIES – HEALTH AND HUMAN PERFORMANCE"
+   ],
+   "first_course": "DANCEST 185 DIRECTED STUDY – (CSU) 1 UNIT"
+  },
+  {
+   "code": "DANCETQ",
+   "heading": "Dance Techniques",
+   "heading_printed": "DANCE TECHNIQUES",
+   "rule": "caps",
+   "codes": [
+    "DANCETQ"
+   ],
+   "candidate": null,
+   "page": 112,
+   "above": [
+    "events, political, and philosophical climate of the period",
+    "reflects on dance and its evolution.",
+    "DANCE TECHNIQUES – HEALTH AND HUMAN",
+    "PERFORMANCE"
+   ],
+   "first_course": "DANCETQ 111 BALLET TECHNIQUES I – (UC:CSU) 1 UNIT"
+  },
+  {
+   "code": "DNCESPC",
+   "heading": "Dance Specialties",
+   "heading_printed": "DANCE SPECIALTIES",
+   "rule": "caps",
+   "codes": [
+    "DNCESPC"
+   ],
+   "candidate": null,
+   "page": 113,
+   "above": [
+    "intensity cardiovascular endurance by practicing choreo-",
+    "graphed dance movement exercises.",
+    "DANCE SPECIALTIES – HEALTH AND HUMAN",
+    "PERFORMANCE"
+   ],
+   "first_course": "DNCESPC 441 LATIN SOCIAL AND SALSA DANCE I – (UC:CSU) 1 UNIT"
+  },
+  {
+   "code": "DRAFT",
+   "heading": "Drafting",
+   "heading_printed": "DRAFTING",
+   "rule": "caps",
+   "codes": [
+    "DRAFT"
+   ],
+   "candidate": null,
+   "page": 114,
+   "above": [
+    "introductory level partnering sequences, cultural origins,",
+    "and social etiquette.",
+    "DRAFTING – MATHEMATICS, COMPUTER SCIENCE, AND",
+    "ENGINEERING"
+   ],
+   "first_course": "DRAFT 016 BLUE PRINT READING I – (CSU) 2 UNITS"
+  },
+  {
+   "code": "E.S.L.",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "E.S.L."
+   ],
+   "candidate": null,
+   "page": 119,
+   "above": [
+    "NOTE: E.S.L. courses at levels 003, 004, 005, and 006 are divided",
+    "into three sections: A. Writing and Grammar, B. Reading and",
+    "Vocabulary, C. Listening and Speaking. Students are highly encour -",
+    "aged to enroll in all three sections (A, B, C)."
+   ],
+   "first_course": "E.S.L. 003A COLLEGE ESL III: WRITING AND GRAMMAR – 6 UNITS"
+  },
+  {
+   "code": "EARTH",
+   "heading": "Earth Science",
+   "heading_printed": "EARTH SCIENCE",
+   "rule": "caps",
+   "codes": [
+    "EARTH"
+   ],
+   "candidate": null,
+   "page": 114,
+   "above": [
+    "ous industrial parts involving simple linear and angular",
+    "dimensions. Advanced terminology and symbol usage are",
+    "stressed. A limited amount of drawing practices is included.",
+    "EARTH SCIENCE – PHYSICAL SCIENCES"
+   ],
+   "first_course": "EARTH 001 EARTH SCIENCE – (UC:CSU:C-ID GEOL 120) 3 UNITS"
+  },
+  {
+   "code": "ECON",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "page": 114,
+   "above": [
+    "An introductory course using models of the domestic and",
+    "international economy to understand national income, unem-",
+    "ployment, inflation, economic growth, inequality, the financial",
+    "system, and monetary, fiscal, and other economic policies."
+   ],
+   "first_course": "ECON 001 PRINCIPLES OF MICROECONOMICS – (UC:CSU:C-ID ECON 201)"
+  },
+  {
+   "code": "EDUC",
+   "heading": "Education",
+   "heading_printed": "EDUCATION",
+   "rule": "caps",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "page": 114,
+   "above": [
+    "(UC:CSU:C-ID ECON 202) 3 UNITS",
+    "(see ECON C2002 Principles of Macroeconomics)",
+    "EDUCATION – CHILD AND FAMILY STUDIES"
+   ],
+   "first_course": "EDUC 001 INTRODUCTION TO TEACHING"
+  },
+  {
+   "code": "EGD TEK",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "EGD TEK"
+   ],
+   "candidate": "Engineering Graphics & Design",
+   "page": 115,
+   "above": [
+    "rem using instruments such as multimeter, oscilloscopes, and",
+    "signal generators.",
+    "ENGINEERING GRAPHICS & DESIGN",
+    "MATHEMATICS, COMPUTER SCIENCE, AND ENGINEERING"
+   ],
+   "first_course": "EGD TEK 101 ENGINEERING GRAPHICS WITH CAD – (UC:CSU) 3 UNITS"
+  },
+  {
+   "code": "ENG GEN",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "ENG GEN"
+   ],
+   "candidate": null,
+   "page": 115,
+   "above": [
+    "plines and opportunities in engineering are presented.",
+    "Students are guided through challenging design exercises to",
+    "develop skills in planning, communication, team working,",
+    "and creativity. Only basic mathematics skills are required."
+   ],
+   "first_course": "ENG GEN 122 PROGRAMMING AND PROBLEM-SOLVING IN MATLAB –"
+  },
+  {
+   "code": "ENG SUP",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "ENG SUP"
+   ],
+   "candidate": null,
+   "page": 116,
+   "above": [
+    "Professional Land Surveyor. In this course, students review",
+    "math topics as they apply to plane surveying. Some topics",
+    "covered in this course are filed data and image data acquisi-",
+    "tion, development of GIS maps, boundary and cadastral law."
+   ],
+   "first_course": "ENG SUP 225 BOUNDARY CONTROL FOR SURVEYORS"
+  },
+  {
+   "code": "ENGL",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "page": 116,
+   "above": [
+    "In this course, students receive instruction in academic read-",
+    "ing and writing, including writing processes, effective use",
+    "of language, analytical thinking, and the foundations of",
+    "academic research."
+   ],
+   "first_course": "ENGL C1000E ACADEMIC READING AND WRITING – (UC:CSU) 3 UNITS"
+  },
+  {
+   "code": "ENGLISH",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "ENGLISH"
+   ],
+   "candidate": null,
+   "page": 117,
+   "above": [
+    "non-fiction texts, refining writing skills and research strate-",
+    "gies developed in ENGL C1000 Academic Reading and",
+    "Writing (or C-ID ENGL 100) or similar first-year college",
+    "writing course."
+   ],
+   "first_course": "ENGLISH 021 ENGLISH FUNDAMENTALS – (NDA) 3 UNITS"
+  },
+  {
+   "code": "ENV SCI",
+   "heading": "Environmental Science",
+   "heading_printed": "ENVIRONMENTAL SCIENCE",
+   "rule": "caps",
+   "codes": [
+    "ENV SCI"
+   ],
+   "candidate": null,
+   "page": 123,
+   "above": [
+    "123",
+    "COURSE DESCRIPTIONS",
+    "ENVIRONMENTAL SCIENCE",
+    "PHYSICAL SCIENCES"
+   ],
+   "first_course": "ENV SCI 002 THE HUMAN ENVIRONMENT: BIOLOGICAL PROCESSES"
+  },
+  {
+   "code": "ESL NC",
+   "heading": "English as a Second Language Noncredit",
+   "heading_printed": "ENGLISH AS A SECOND LANGUAGE NONCREDIT",
+   "rule": "caps",
+   "codes": [
+    "ESL NC"
+   ],
+   "candidate": null,
+   "page": 120,
+   "above": [
+    "tional focus is integrated grammar and academic vocabulary",
+    "instruction based on needs typical of second-language learners.",
+    "ENGLISH AS A SECOND LANGUAGE NONCREDIT",
+    "GLOBAL LANGUAGES AND SOCIETY"
+   ],
+   "first_course": "ESL NC 040CE CONVERSATION - FOUNDATIONAL – 0 UNITS"
+  },
+  {
+   "code": "FAM &CS",
+   "heading": "Family & Consumer Studies",
+   "heading_printed": "FAMILY & CONSUMER STUDIES",
+   "rule": "caps",
+   "codes": [
+    "FAM &CS"
+   ],
+   "candidate": null,
+   "page": 123,
+   "above": [
+    "be examined through the lens of population dynamics and",
+    "carrying capacity.",
+    "FAMILY & CONSUMER STUDIES",
+    "CHILD AND FAMILY STUDIES"
+   ],
+   "first_course": "FAM &CS 006 CHALLENGES OF AGING – (CSU) 3 UNITS"
+  },
+  {
+   "code": "FINANCE",
+   "heading": "Finance",
+   "heading_printed": "FINANCE",
+   "rule": "caps",
+   "codes": [
+    "FINANCE"
+   ],
+   "candidate": null,
+   "page": 123,
+   "above": [
+    "student will relate theory and coursework to practical applica-",
+    "tion in a program, agency, facility or family service center.",
+    "Student will complete 36 TBA hours as part of the class.",
+    "FINANCE – BUSINESS AND LAW"
+   ],
+   "first_course": "FINANCE 001 PRINCIPLES OF FINANCE – (UC:CSU) 3 UNITS"
+  },
+  {
+   "code": "FIRETEK",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "FIRETEK"
+   ],
+   "candidate": "Fire Technology",
+   "page": 123,
+   "above": [
+    "interviews and research to produce news content. Experiences",
+    "may include covering speeches, meetings, and other events;",
+    "writing under a deadline; and the use of AP Style.",
+    "FIRE TECHNOLOGY – BUSINESS AND LAW"
+   ],
+   "first_course": "FIRETEK 201 FIRE PROTECTION ORGANIZATION – (CSU) 3 UNITS"
+  },
+  {
+   "code": "FRENCH",
+   "heading": "French",
+   "heading_printed": "FRENCH",
+   "rule": "caps",
+   "codes": [
+    "FRENCH"
+   ],
+   "candidate": null,
+   "page": 124,
+   "above": [
+    "hazardous materials, and technical rescue. This course pro-",
+    "vides information on the establishment and management of a",
+    "safety program in an emergency service organization.",
+    "FRENCH – GLOBAL LANGUAGES AND SOCIETY"
+   ],
+   "first_course": "FRENCH 001 ELEMENTARY FRENCH I – (UC:CSU) 5 UNITS"
+  },
+  {
+   "code": "GAD",
+   "heading": "Game Art and Design",
+   "heading_printed": "GAME ART AND DESIGN",
+   "rule": "caps",
+   "codes": [
+    "GAD"
+   ],
+   "candidate": null,
+   "page": 124,
+   "above": [
+    "tion of the French-speaking world. Intended primarily for stu-",
+    "dents with the equivalent knowledge of first-semester French.",
+    "GAME ART AND DESIGN – ARTS, MEDIA, AND",
+    "PERFORMANCE"
+   ],
+   "first_course": "GAD 101 INTRODUCTION TO GAME DESIGN – (UC:CSU) 3 UNITS"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "GEOGRAPHY",
+   "rule": "caps",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "page": 124,
+   "above": [
+    "tion studios, visual effects houses and game design compa-",
+    "nies. Students work on projects such as animated shorts,",
+    "interactive content, and video games.",
+    "GEOGRAPHY – PHYSICAL SCIENCES"
+   ],
+   "first_course": "GEOG 001 PHYSICAL GEOGRAPHY – (UC:CSU:C-ID GEOG 110) 3 UNITS"
+  },
+  {
+   "code": "GEOLOGY",
+   "heading": "Geology",
+   "heading_printed": "GEOLOGY",
+   "rule": "caps",
+   "codes": [
+    "GEOLOGY"
+   ],
+   "candidate": null,
+   "page": 125,
+   "above": [
+    "landforms, and natural hazards. Students use both analog",
+    "maps and digital media (GIS, GPS, satellite images, and",
+    "Internet maps).",
+    "GEOLOGY – PHYSICAL SCIENCES"
+   ],
+   "first_course": "GEOLOGY 001 PHYSICAL GEOLOGY – (UC:CSU:C-ID GEOL 100) 3 UNITS"
+  },
+  {
+   "code": "HEALTH",
+   "heading": "Health",
+   "heading_printed": "HEALTH",
+   "rule": "caps",
+   "codes": [
+    "HEALTH"
+   ],
+   "candidate": null,
+   "page": 125,
+   "above": [
+    "running and groundwater, renewable and non-renewable",
+    "resources, and the environmental impacts of energy and min-",
+    "eral resource exploitation and use.",
+    "HEALTH – HEALTH AND HUMAN PERFORMANCE"
+   ],
+   "first_course": "HEALTH 002 HEALTH AND FITNESS – (CSU) 3 UNITS"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "HISTORY",
+   "rule": "section",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "page": 126,
+   "above": [],
+   "first_course": "HIST C1001 UNITED STATES HISTORY TO 1877 – (UC:CSU:C-ID HIST 130)"
+  },
+  {
+   "code": "HISTORY",
+   "heading": "History",
+   "heading_printed": "HISTORY",
+   "rule": "caps",
+   "codes": [
+    "HISTORY"
+   ],
+   "candidate": null,
+   "page": 126,
+   "above": [
+    "HISTORY – SOCIAL SCIENCES",
+    "COMMON COURSE NUMBER CROSSWALK",
+    "HISTORY to HIST C",
+    "Old Course New Course Title"
+   ],
+   "first_course": "HISTORY 011 HIST C1001 United States History to 1877"
+  },
+  {
+   "code": "HLTHOCC",
+   "heading": "Health Occupations",
+   "heading_printed": "HEALTH OCCUPATIONS",
+   "rule": "caps",
+   "codes": [
+    "HLTHOCC"
+   ],
+   "candidate": null,
+   "page": 126,
+   "above": [
+    "racial, and minority populations will be explored, and cultur-",
+    "ally competent ideas to bridge the health equity gap and",
+    "improve population health will be developed.",
+    "HEALTH OCCUPATIONS – LIFE SCIENCES"
+   ],
+   "first_course": "HLTHOCC 062 SKILL SET FOR THE HEALTH CARE PROFESSIONAL –"
+  },
+  {
+   "code": "HOSPT",
+   "heading": "Hospitality",
+   "heading_printed": "HOSPITALITY",
+   "rule": "caps",
+   "codes": [
+    "HOSPT"
+   ],
+   "candidate": null,
+   "page": 127,
+   "above": [
+    "tual and cultural movements and events of Early World",
+    "Civilizations from Early World History from the Paleolithic",
+    "Era, through the 16th Century.",
+    "HOSPITALITY – CULINARY ARTS"
+   ],
+   "first_course": "HOSPT 100 INTRODUCTION TO THE HOSPITALITY INDUSTRY"
+  },
+  {
+   "code": "HTHTEK",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "HTHTEK"
+   ],
+   "candidate": null,
+   "page": 126,
+   "above": [
+    "placed on the development, maintenance, and content of",
+    "patient health records, including format and documentation",
+    "requirements, filing and number system, medical staff organi-",
+    "zation, regulatory and accrediting agencies."
+   ],
+   "first_course": "HTHTEK 103 INTRODUCTION TO BASIC CODING – (CSU) 3 UNITS"
+  },
+  {
+   "code": "HUMAN",
+   "heading": "Humanities",
+   "heading_printed": "HUMANITIES",
+   "rule": "caps",
+   "codes": [
+    "HUMAN"
+   ],
+   "candidate": null,
+   "page": 127,
+   "above": [
+    "also covered. By using a preventive approach, this course can",
+    "keep the legal considerations of hotel and restaurant opera-",
+    "tions from becoming expensive problems.",
+    "HUMANITIES – ARTS, MEDIA, AND PERFORMANCE"
+   ],
+   "first_course": "HUMAN 001 CULTURAL PATTERNS OF WESTERN CIVILIZATION"
+  },
+  {
+   "code": "IND TEK",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "IND TEK"
+   ],
+   "candidate": "Industrial Technology",
+   "page": 127,
+   "above": [
+    "the contribution of their work toward the development of con-",
+    "temporary society.",
+    "INDUSTRIAL TECHNOLOGY – MATHEMATICS,",
+    "COMPUTER SCIENCE, AND ENGINEERING"
+   ],
+   "first_course": "IND TEK 103 TECHNICAL WRITING AND COMMUNICATION - (CSU)"
+  },
+  {
+   "code": "INTRDGN",
+   "heading": "Interior Design",
+   "heading_printed": "INTERIOR DESIGN",
+   "rule": "caps",
+   "codes": [
+    "INTRDGN"
+   ],
+   "candidate": null,
+   "page": 128,
+   "above": [
+    "Dimensioning and Tolerancing (GD&T). Laboratory activities",
+    "emphasize analysis of industrial prints and practical applica-",
+    "tion of drafting concepts.",
+    "INTERIOR DESIGN – ARTS, MEDIA, AND PERFORMANCE"
+   ],
+   "first_course": "INTRDGN 101 INTERIOR DESIGN LABORATORY – (CSU) 1 UNIT"
+  },
+  {
+   "code": "ITALIAN",
+   "heading": "Italian",
+   "heading_printed": "ITALIAN",
+   "rule": "caps",
+   "codes": [
+    "ITALIAN"
+   ],
+   "candidate": null,
+   "page": 129,
+   "above": [
+    "or commercial building. Daylighting and building energy analy-",
+    "sis, Mechanical, Electrical and Plumbing (MEP) systems, as well",
+    "as CALGreen and ADA code compliance are reviewed.",
+    "ITALIAN – GLOBAL LANGUAGES AND SOCIETY"
+   ],
+   "first_course": "ITALIAN 001 ELEMENTARY ITALIAN I – (UC:CSU) 5 UNITS"
+  },
+  {
+   "code": "JOURNAL",
+   "heading": "Journalism",
+   "heading_printed": "JOURNALISM",
+   "rule": "caps",
+   "codes": [
+    "JOURNAL"
+   ],
+   "candidate": null,
+   "page": 129,
+   "above": [
+    "zation of Italy. Intended primarily for students with the",
+    "equivalent knowledge of first-semester Italian.",
+    "JOURNALISM – ENGLISH, COMMUNICATION STUDIES, AND",
+    "JOURNALISM"
+   ],
+   "first_course": "JOURNAL 043 PUBLIC RELATIONS TECHNIQUES (CSU) 3 UNITS"
+  },
+  {
+   "code": "KIN",
+   "heading": "Kinesiology",
+   "heading_printed": "KINESIOLOGY",
+   "rule": "caps",
+   "codes": [
+    "KIN"
+   ],
+   "candidate": null,
+   "page": 130,
+   "above": [
+    "130",
+    "COURSE DESCRIPTIONS",
+    "KINESIOLOGY – HEALTH AND HUMAN PERFORMANCE",
+    "See Dance Specialties, Dance Studies, and Dance Techniques."
+   ],
+   "first_course": "KIN 035 ADAPTIVE ACTIVITIES – (UC:CSU) 1 UNIT"
+  },
+  {
+   "code": "KIN ATH",
+   "heading": "Kinesiology Athletics",
+   "heading_printed": "KINESIOLOGY ATHLETICS",
+   "rule": "caps",
+   "codes": [
+    "KIN ATH"
+   ],
+   "candidate": null,
+   "page": 132,
+   "above": [
+    "and exercise, cholesterol screening, breast health and cancer,",
+    "weight management, and stress management.",
+    "KINESIOLOGY ATHLETICS – HEALTH AND HUMAN",
+    "PERFORMANCE"
+   ],
+   "first_course": "KIN ATH 503 INTERCOLLEGIATE ATHELTICS – BASEBALL (UC:CSU)"
+  },
+  {
+   "code": "KIN MAJ",
+   "heading": "Kinesiology Major",
+   "heading_printed": "KINESIOLOGY MAJOR",
+   "rule": "caps",
+   "codes": [
+    "KIN MAJ"
+   ],
+   "candidate": null,
+   "page": 134,
+   "above": [
+    "increase explosiveness and speed. The student also learns",
+    "strategic plays necessary for competition at advanced levels.",
+    "KINESIOLOGY MAJOR – HEALTH AND HUMAN",
+    "PERFORMANCE"
+   ],
+   "first_course": "KIN MAJ 100 INTRODUCTION TO KINESIOLOGY – (UC:CSU:C-ID KIN 100)"
+  },
+  {
+   "code": "LAW",
+   "heading": "Law",
+   "heading_printed": "LAW",
+   "rule": "caps",
+   "codes": [
+    "LAW"
+   ],
+   "candidate": null,
+   "page": 136,
+   "above": [
+    "and to sport principles as they apply to sports and fitness",
+    "management programs-operation, facilities, equipment, lead-",
+    "ership style, communication, and motivation.",
+    "LAW – BUSINESS AND LAW"
+   ],
+   "first_course": "LAW 001 BUSINESS LAW I – (UC:CSU) 3 UNITS"
+  },
+  {
+   "code": "LIB SCI",
+   "heading": "Library Science",
+   "heading_printed": "LIBRARY SCIENCE",
+   "rule": "caps",
+   "codes": [
+    "LIB SCI"
+   ],
+   "candidate": null,
+   "page": 137,
+   "above": [
+    "emphasized in the areas of amnesty, naturalization, citizen-",
+    "ship, international law, criminal aspects of immigration, and",
+    "various types of immigration applications.",
+    "LIBRARY SCIENCE – LIBRARY"
+   ],
+   "first_course": "LIB SCI 101 COLLEGE RESEARCH SKILLS – (UC:CSU) 1 UNIT"
+  },
+  {
+   "code": "LING",
+   "heading": "Linguistics",
+   "heading_printed": "LINGUISTICS",
+   "rule": "caps",
+   "codes": [
+    "LING"
+   ],
+   "candidate": null,
+   "page": 137,
+   "above": [
+    "Students will develop skills to find, evaluate and cite resources",
+    "available in an academic library. These skills will help students",
+    "become stronger researchers and life-long learners.",
+    "LINGUISTICS – GLOBAL LANGUAGES AND SOCIETY"
+   ],
+   "first_course": "LING 001 INTRODUCTION TO LANGUAGE AND LINGUISTICS"
+  },
+  {
+   "code": "MARKET",
+   "heading": "Marketing",
+   "heading_printed": "MARKETING",
+   "rule": "caps",
+   "codes": [
+    "MARKET"
+   ],
+   "candidate": null,
+   "page": 138,
+   "above": [
+    "evaluation; wage and salary administration; labor relations",
+    "and communication; performance evaluation; promotion and",
+    "transfer; discipline, motivation, and morale.",
+    "MARKETING – BUSINESS AND LAW"
+   ],
+   "first_course": "MARKET 021 PRINCIPLES OF MARKETING – (CSU) 3 UNITS"
+  },
+  {
+   "code": "MATH",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "page": 138,
+   "above": [
+    "tistical analysis including the interpretation of the relevance",
+    "of the statistical findings. Students apply methods and pro-",
+    "cesses to applications using data from a broad range of disci-",
+    "plines. This course has embedded support."
+   ],
+   "first_course": "MATH 112 PRE-ALGEBRA – (NDA) 3 UNITS"
+  },
+  {
+   "code": "MATH NC",
+   "heading": "Mathematics Noncredit",
+   "heading_printed": "MATHEMATICS NONCREDIT",
+   "rule": "caps",
+   "codes": [
+    "MATH NC"
+   ],
+   "candidate": null,
+   "page": 141,
+   "above": [
+    "Directed studies on a contract basis under the supervision of",
+    "an instructor.",
+    "MATHEMATICS NONCREDIT – MATHEMATICS,",
+    "COMPUTER SCIENCE, AND ENGINEERING"
+   ],
+   "first_course": "MATH NC 001CE BASIC DIMENSIONAL ANALYSIS – 0 UNITS"
+  },
+  {
+   "code": "MEDIART",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "MEDIART"
+   ],
+   "candidate": null,
+   "page": 142,
+   "above": [
+    "edit sound, write and take photographs. Material created will",
+    "meet the standards for possible use in student-run online",
+    "media. Students will learn about ethical and legal issues",
+    "regarding professional journalistic practices."
+   ],
+   "first_course": "MEDIART 802 INTRODUCTION TO PODCAST – (CSU) 3 UNITS"
+  },
+  {
+   "code": "MGMT",
+   "heading": "Management",
+   "heading_printed": "MANAGEMENT",
+   "rule": "caps",
+   "codes": [
+    "MGMT"
+   ],
+   "candidate": null,
+   "page": 138,
+   "above": [
+    "Los Angeles Mission College Catalog 2026 / 2027",
+    "138",
+    "COURSE DESCRIPTIONS",
+    "MANAGEMENT – BUSINESS AND LAW"
+   ],
+   "first_course": "MGMT 002 ORGANIZATION AND MANAGEMENT THEORY – (CSU) 3 UNITS"
+  },
+  {
+   "code": "MICRO",
+   "heading": "Microbiology",
+   "heading_printed": "MICROBIOLOGY",
+   "rule": "caps",
+   "codes": [
+    "MICRO"
+   ],
+   "candidate": null,
+   "page": 142,
+   "above": [
+    "Podcasts are developed in class using microphones and",
+    "recording/editing software. A website is provided for stu-",
+    "dents to post podcasts.",
+    "MICROBIOLOGY – LIFE SCIENCES"
+   ],
+   "first_course": "MICRO 020 GENERAL MICROBIOLOGY – (UC:CSU) 4 UNITS"
+  },
+  {
+   "code": "MULTIMD",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "MULTIMD"
+   ],
+   "candidate": null,
+   "page": 142,
+   "above": [
+    "temporary digital tools. Students apply the principles and",
+    "elements of design while developing the skills necessary to",
+    "digitally manipulate graphic images and text with Adobe",
+    "Photoshop and Illustrator."
+   ],
+   "first_course": "MULTIMD 110 VISUAL COMMUNICATION – (CSU) 3 UNITS"
+  },
+  {
+   "code": "MUSIC",
+   "heading": "Music",
+   "heading_printed": "MUSIC",
+   "rule": "caps",
+   "codes": [
+    "MUSIC"
+   ],
+   "candidate": null,
+   "page": 144,
+   "above": [
+    "Students will be exposed to the concepts and techniques of",
+    "non-linear editing, computer generated imagery and live action",
+    "video, special effects, and design of titling and motion graphics.",
+    "MUSIC – ARTS, MEDIA, AND PERFORMANCE"
+   ],
+   "first_course": "MUSIC 101 FUNDAMENTALS OF MUSIC – (UC:CSU) 3 UNITS"
+  },
+  {
+   "code": "NRS-HCA",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "NRS-HCA"
+   ],
+   "candidate": null,
+   "page": 145,
+   "above": [
+    "control, methods for providing physical care, and emotional",
+    "and social support. Upon successful completion of this course,",
+    "students will be eligible to take the California’s Nurse",
+    "Assistant Certification Examination."
+   ],
+   "first_course": "NRS-HCA 399A NURSE ASSISTANT TRAINING PROGRAM"
+  },
+  {
+   "code": "NURSING",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "NURSING"
+   ],
+   "candidate": null,
+   "page": 146,
+   "above": [
+    "mance of complex vocational nursing procedures.",
+    "Application of critical reasoning and prioritization related",
+    "to safety, emotional support, communication, and client",
+    "teaching are integrated throughout the course."
+   ],
+   "first_course": "NURSING 095 INTERMEDIATE VOCATIONAL NURSING"
+  },
+  {
+   "code": "NUTRTN",
+   "heading": "Nutrition",
+   "heading_printed": "NUTRITION",
+   "rule": "caps",
+   "codes": [
+    "NUTRTN"
+   ],
+   "candidate": null,
+   "page": 146,
+   "above": [
+    "NOTE: A lab fee of $100 will be applied upon registration.",
+    "This course is designed to prepare Vocational Nursing stu-",
+    "dents for their state examination.",
+    "NUTRITION – HEALTH AND HUMAN PERFORMANCE"
+   ],
+   "first_course": "NUTRTN 001 CAREERS IN NUTRITION AND FOODS"
+  },
+  {
+   "code": "OCEANO",
+   "heading": "Oceanography",
+   "heading_printed": "OCEANOGRAPHY",
+   "rule": "caps",
+   "codes": [
+    "OCEANO"
+   ],
+   "candidate": null,
+   "page": 147,
+   "above": [
+    "is placed on developing food preparation skills based on fun-",
+    "damental scientific principles, along with considerations to",
+    "food safety, cost, culture, health and sustainability.",
+    "OCEANOGRAPHY – PHYSICAL SCIENCES"
+   ],
+   "first_course": "OCEANO 001 INTRODUCTION TO OCEANOGRAPHY – (UC:CSU) 3 UNITS"
+  },
+  {
+   "code": "OLD ADL",
+   "heading": "Older Adults",
+   "heading_printed": "OLDER ADULTS",
+   "rule": "caps",
+   "codes": [
+    "OLD ADL"
+   ],
+   "candidate": null,
+   "page": 147,
+   "above": [
+    "and the biosphere. Major topics include plate tectonics, seafloor",
+    "topography, coastal processes, estuaries, seawater properties,",
+    "marine ecosystem and the interactions with humans.",
+    "OLDER ADULTS – HEALTH AND HUMAN PERFORMANCE"
+   ],
+   "first_course": "OLD ADL 051CE FEELING FIT FOR SENIORS – 0 UNITS"
+  },
+  {
+   "code": "PARENT",
+   "heading": "Parenting",
+   "heading_printed": "PARENTING",
+   "rule": "caps",
+   "codes": [
+    "PARENT"
+   ],
+   "candidate": null,
+   "page": 147,
+   "above": [
+    "Prerequisite: None | Lab: 2 hours",
+    "Build and maintain strength with resistance exercises. This",
+    "course is for beginners who have not exercised frequently.",
+    "PARENTING – CHILD AND FAMILY STUDIES"
+   ],
+   "first_course": "PARENT 007CE POSITIVE PARENTING – 0 UNITS"
+  },
+  {
+   "code": "PHILOS",
+   "heading": "Philosophy",
+   "heading_printed": "PHILOSOPHY",
+   "rule": "caps",
+   "codes": [
+    "PHILOS"
+   ],
+   "candidate": null,
+   "page": 148,
+   "above": [
+    "The externship will give the students the opportunity to apply",
+    "and practice skills developed in other pharmacy technician",
+    "courses in a community or outpatient pharmacy.",
+    "PHILOSOPHY – SOCIAL SCIENCES"
+   ],
+   "first_course": "PHILOS 001 INTRODUCTION TO PHILOSOPHY"
+  },
+  {
+   "code": "PHOTO",
+   "heading": "Photography",
+   "heading_printed": "PHOTOGRAPHY",
+   "rule": "caps",
+   "codes": [
+    "PHOTO"
+   ],
+   "candidate": null,
+   "page": 149,
+   "above": [
+    "Confucianism and Daoism, Judaism, Christianity, and",
+    "Islam. Considers origins, principal beliefs and practices, and",
+    "contemporary issues.",
+    "PHOTOGRAPHY – ARTS, MEDIA, AND PERFORMANCE"
+   ],
+   "first_course": "PHOTO 007 EXPLORING DIGITAL PHOTOGRAPHY – (UC:CSU) 3 UNITS"
+  },
+  {
+   "code": "PHRMCTK",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "PHRMCTK"
+   ],
+   "candidate": "Pharmacy Technician",
+   "page": 147,
+   "above": [
+    "reviewed. Personal parenting goals will be developed and appro-",
+    "priate goal-setting strategies for children. Examination of family",
+    "stressors and community resources and support will be explored.",
+    "PHARMACY TECHNICIAN – LIFE SCIENCES"
+   ],
+   "first_course": "PHRMCTK 021 RETAIL PRODUCTS FOR PHARMACY CLERKS"
+  },
+  {
+   "code": "PHYS SC",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "PHYS SC"
+   ],
+   "candidate": "Physical Education",
+   "page": 149,
+   "above": [
+    "ions and understanding of photographs are an essential part",
+    "of this class.",
+    "PHYSICAL EDUCATION – SEE KINESIOLOGY",
+    "PHYSICAL SCIENCE – PHYSICAL SCIENCES"
+   ],
+   "first_course": "PHYS SC 001 PHYSICAL SCIENCE I – (UC:CSU) 3 UNITS"
+  },
+  {
+   "code": "PHYSICS",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "PHYSICS"
+   ],
+   "candidate": null,
+   "page": 150,
+   "above": [
+    "designed for the health science majors (Environmental and",
+    "occupational Health, Physical Therapy, Radiologic",
+    "Technology), Pre-medical, Pre-dental, Pre-optometry, Pre-",
+    "pharmacy, and Geology majors."
+   ],
+   "first_course": "PHYSICS 037 PHYSICS FOR ENGINEERS AND SCIENTISTS I"
+  },
+  {
+   "code": "PHYSIOL",
+   "heading": "Physiology",
+   "heading_printed": "PHYSIOLOGY",
+   "rule": "caps",
+   "codes": [
+    "PHYSIOL"
+   ],
+   "candidate": null,
+   "page": 150,
+   "above": [
+    "majors. Topics include thermodynamics, geometric optics, the",
+    "wave nature of light, special relativity, early quantum theory,",
+    "atomic and nuclear physics.",
+    "PHYSIOLOGY – LIFE SCIENCES"
+   ],
+   "first_course": "PHYSIOL 001 INTRODUCTION TO HUMAN PHYSIOLOGY"
+  },
+  {
+   "code": "POL SCI",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "POL SCI"
+   ],
+   "candidate": "Pol Sci to Pols C",
+   "page": 150,
+   "above": [
+    "POLITICAL SCIENCE – SOCIAL SCIENCES",
+    "COMMON COURSE NUMBER CROSSWALK",
+    "POL SCI to POLS C",
+    "Old Course New Course Title"
+   ],
+   "first_course": "POL SCI 001 POLS C1000 American Government and Politics"
+  },
+  {
+   "code": "POLS",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "page": 150,
+   "above": [],
+   "first_course": "POLS C1000 AMERICAN GOVERNMENT AND POLITICS"
+  },
+  {
+   "code": "PROFBKG",
+   "heading": "Professional Baking",
+   "heading_printed": "PROFESSIONAL BAKING",
+   "rule": "caps",
+   "codes": [
+    "PROFBKG"
+   ],
+   "candidate": null,
+   "page": 151,
+   "above": [
+    "151",
+    "COURSE DESCRIPTIONS",
+    "PROFESSIONAL BAKING – CULINARY ARTS",
+    "See CULINARY ARTS for additional courses"
+   ],
+   "first_course": "PROFBKG 122 ARTISANAL BREADS, SPECIALTY BREADS – (CSU)"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psych to Psyc C",
+   "heading_printed": "PSYCH to PSYC C",
+   "rule": "section",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "page": 151,
+   "above": [],
+   "first_course": "PSYC C1000 INTRODUCTION TO PSYCHOLOGY (UC:CSU:C-ID PSY 110)"
+  },
+  {
+   "code": "PSYCH",
+   "heading": "Psych to Psyc C",
+   "heading_printed": "PSYCH to PSYC C",
+   "rule": "fits",
+   "codes": [
+    "PSYCH"
+   ],
+   "candidate": null,
+   "page": 151,
+   "above": [
+    "PSYCHOLOGY – SOCIAL SCIENCES",
+    "COMMON COURSE NUMBER CROSSWALK",
+    "PSYCH to PSYC C",
+    "Old Course New Course Title"
+   ],
+   "first_course": "PSYCH 001 PSYC C1000 Introduction to Psychology"
+  },
+  {
+   "code": "PUBSERV",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "PUBSERV"
+   ],
+   "candidate": null,
+   "page": 152,
+   "above": [
+    "NOTE: Class is graded pass/no-pass.",
+    "This course offers supplemental information on correctional",
+    "policies and procedures for personnel who have completed",
+    "basic police academy training."
+   ],
+   "first_course": "PUBSERV 150 CUSTODIAL HEALTH ISSUES - 0.5 UNITS"
+  },
+  {
+   "code": "REAL ES",
+   "heading": "Real Estate",
+   "heading_printed": "REAL ESTATE",
+   "rule": "caps",
+   "codes": [
+    "REAL ES"
+   ],
+   "candidate": null,
+   "page": 153,
+   "above": [
+    "NOTE: Class is graded pass/no-pass.",
+    "This course is designed to provide an update of law enforce-",
+    "ment policy regarding the use of force.",
+    "REAL ESTATE – BUSINESS AND LAW"
+   ],
+   "first_course": "REAL ES 001 REAL ESTATE PRINCIPLES – (CSU) 3 UNITS"
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "SOCIOLOGY",
+   "rule": "caps",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "page": 153,
+   "above": [
+    "tion of rules of law to everyday affairs in business.",
+    "NOTE: This course is required for the California Broker’s license;",
+    "elective for a real estate salesperson’s license.",
+    "SOCIOLOGY – GLOBAL LANGUAGES AND SOCIETY"
+   ],
+   "first_course": "SOC 001 INTRODUCTION TO SOCIOLOGY – (UC:CSU:C-ID SOCI 110)"
+  },
+  {
+   "code": "SPANISH",
+   "heading": "Spanish",
+   "heading_printed": "SPANISH",
+   "rule": "caps",
+   "codes": [
+    "SPANISH"
+   ],
+   "candidate": null,
+   "page": 154,
+   "above": [
+    "Prerequisite: None | Lecture: 1 hour",
+    "Directed Study in the field of Sociology on a contract basis under",
+    "the direction of an instructor.",
+    "SPANISH – GLOBAL LANGUAGES AND SOCIETY"
+   ],
+   "first_course": "SPANISH 001 ELEMENTARY SPANISH I"
+  },
+  {
+   "code": "STAT",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "page": 138,
+   "above": [
+    "chi-squared, and t-tests; and application of technology for sta-",
+    "tistical analysis including the interpretation of the relevance of",
+    "the statistical findings. Students apply methods and processes",
+    "to applications using data from a broad range of disciplines."
+   ],
+   "first_course": "STAT C1000E INTRODUCTION TO STATISTICS – (UC:CSU) 4 UNITS"
+  },
+  {
+   "code": "TECTHTR",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "TECTHTR"
+   ],
+   "candidate": "Technical Stage Production",
+   "page": 156,
+   "above": [
+    "156",
+    "COURSE DESCRIPTIONS",
+    "TECHNICAL STAGE PRODUCTION",
+    "ARTS, MEDIA, AND PERFORMANCE"
+   ],
+   "first_course": "TECTHTR 342 TECHNICAL STAGE PRODUCTION – (UC:CSU)"
+  },
+  {
+   "code": "THEATER",
+   "heading": "Theater",
+   "heading_printed": "THEATER",
+   "rule": "caps",
+   "codes": [
+    "THEATER"
+   ],
+   "candidate": null,
+   "page": 156,
+   "above": [
+    "production responsibilities in any of the following: stage man-",
+    "agement, house management, construction, scenery, proper-",
+    "ties, costume, lighting, sound, and running crews.",
+    "THEATER – ARTS, MEDIA, AND PERFORMANCE"
+   ],
+   "first_course": "THEATER 100 INTRODUCTION TO THE THEATER"
+  },
+  {
+   "code": "TUTOR",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "TUTOR"
+   ],
+   "candidate": "See Mathematics",
+   "page": 155,
+   "above": [
+    "(formerly MATH 227S Statistics with Support)",
+    "See MATHEMATICS",
+    "SUPERVISED LEARNING ASSISTANCE",
+    "LEARNING CENTER"
+   ],
+   "first_course": "TUTOR 001T SUPERVISED LEARNING – 0 UNITS"
+  },
+  {
+   "code": "VOC ED",
+   "heading": "Vocational Education",
+   "heading_printed": "VOCATIONAL EDUCATION",
+   "rule": "caps",
+   "codes": [
+    "VOC ED"
+   ],
+   "candidate": null,
+   "page": 157,
+   "above": [
+    "of makeup style and design. Make-up is performed by the",
+    "student on their own face.",
+    "VOCATIONAL EDUCATION",
+    "CAREER & CONTINUING EDUCATION"
+   ],
+   "first_course": "VOC ED 002CE IN-HOME SUPPORTIVE SERVICE PROVIDERS – 0 UNITS"
+  }
+ ]
+}

@@ -1,0 +1,1542 @@
+{
+ "_what": "The subjects Long Beach City College's course-descriptions index lists: each subject's heading, its code or codes, and the address of its page, as the index links it (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_subject_headings.py --index; `heading` is saved in Title Case with `heading_printed` and the whole `label` as the index prints them. A subject's page is read at `address`, never at an address made from its code.",
+ "college": "Long Beach City College",
+ "run": "44948295544",
+ "source": [
+  "https://lbcc-public.courseleaf.com/course-descriptions/"
+ ],
+ "subjects": 127,
+ "with_heading": 127,
+ "links_without_a_code": [
+  {
+   "label": "C-ID Numbering",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/c-id-numbering/"
+  }
+ ],
+ "rows": [
+  {
+   "code": "ACCTG",
+   "heading": "Accounting",
+   "heading_printed": "Accounting",
+   "rule": "index",
+   "codes": [
+    "ACCTG"
+   ],
+   "candidate": null,
+   "label": "Accounting (ACCTG)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/acctg/"
+  },
+  {
+   "code": "ADJUS",
+   "heading": "Administration of Justice",
+   "heading_printed": "Administration of Justice",
+   "rule": "index",
+   "codes": [
+    "ADJUS"
+   ],
+   "candidate": null,
+   "label": "Administration of Justice (ADJUS)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/adjus/"
+  },
+  {
+   "code": "ADMT",
+   "heading": "Advanced Manufacturing Tech",
+   "heading_printed": "Advanced Manufacturing Tech",
+   "rule": "index",
+   "codes": [
+    "ADMT"
+   ],
+   "candidate": null,
+   "label": "Advanced Manufacturing Tech (ADMT)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/admt/"
+  },
+  {
+   "code": "ADN",
+   "heading": "Nursing, Associate Degree Nursing- RN",
+   "heading_printed": "Nursing, Associate Degree Nursing- RN",
+   "rule": "index",
+   "codes": [
+    "ADN"
+   ],
+   "candidate": null,
+   "label": "Nursing, Associate Degree Nursing- RN (ADN)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/adn/"
+  },
+  {
+   "code": "AH",
+   "heading": "Allied Health",
+   "heading_printed": "Allied Health",
+   "rule": "index",
+   "codes": [
+    "AH"
+   ],
+   "candidate": null,
+   "label": "Allied Health (AH)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/ah/"
+  },
+  {
+   "code": "AI",
+   "heading": "Artificial Intelligence",
+   "heading_printed": "Artificial Intelligence",
+   "rule": "index",
+   "codes": [
+    "AI"
+   ],
+   "candidate": null,
+   "label": "Artificial Intelligence (AI)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/ai/"
+  },
+  {
+   "code": "ANAT",
+   "heading": "Anatomy",
+   "heading_printed": "Anatomy",
+   "rule": "index",
+   "codes": [
+    "ANAT"
+   ],
+   "candidate": null,
+   "label": "Anatomy (ANAT)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/anat/"
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "label": "Anthropology (ANTH)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/anth/"
+  },
+  {
+   "code": "ANTHR",
+   "heading": "Anthropology",
+   "heading_printed": "Anthropology",
+   "rule": "index",
+   "codes": [
+    "ANTHR"
+   ],
+   "candidate": null,
+   "label": "Anthropology (ANTHR)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/anthr/"
+  },
+  {
+   "code": "ARCHT",
+   "heading": "Architectural Design",
+   "heading_printed": "Architectural Design",
+   "rule": "index",
+   "codes": [
+    "ARCHT"
+   ],
+   "candidate": null,
+   "label": "Architectural Design (ARCHT)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/archt/"
+  },
+  {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "Art",
+   "rule": "index",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "label": "Art (ART)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/art/"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art History",
+   "heading_printed": "Art History",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "label": "Art History (ARTH)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/arth/"
+  },
+  {
+   "code": "ASL",
+   "heading": "American Sign Language",
+   "heading_printed": "American Sign Language",
+   "rule": "index",
+   "codes": [
+    "ASL"
+   ],
+   "candidate": null,
+   "label": "American Sign Language (ASL)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/asl/"
+  },
+  {
+   "code": "ASTR",
+   "heading": "Astronomy",
+   "heading_printed": "Astronomy",
+   "rule": "index",
+   "codes": [
+    "ASTR"
+   ],
+   "candidate": null,
+   "label": "Astronomy (ASTR)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/astr/"
+  },
+  {
+   "code": "ATCMHS",
+   "heading": "Addiction Treatment Counseling & Mental Health Studies",
+   "heading_printed": "Addiction Treatment Counseling & Mental Health Studies",
+   "rule": "index",
+   "codes": [
+    "ATCMHS"
+   ],
+   "candidate": null,
+   "label": "Addiction Treatment Counseling & Mental Health Studies (ATCMHS)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/atcmhs/"
+  },
+  {
+   "code": "AUTO",
+   "heading": "Automotive Technology",
+   "heading_printed": "Automotive Technology",
+   "rule": "index",
+   "codes": [
+    "AUTO"
+   ],
+   "candidate": null,
+   "label": "Automotive Technology (AUTO)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/auto/"
+  },
+  {
+   "code": "BAKE",
+   "heading": "Baking",
+   "heading_printed": "Baking",
+   "rule": "index",
+   "codes": [
+    "BAKE"
+   ],
+   "candidate": null,
+   "label": "Baking (BAKE)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/bake/"
+  },
+  {
+   "code": "BCOM",
+   "heading": "Business, Communications",
+   "heading_printed": "Business, Communications",
+   "rule": "index",
+   "codes": [
+    "BCOM"
+   ],
+   "candidate": null,
+   "label": "Business, Communications (BCOM)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/bcom/"
+  },
+  {
+   "code": "BIO",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BIO"
+   ],
+   "candidate": null,
+   "label": "Biology (BIO)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/bio/"
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biology",
+   "heading_printed": "Biology",
+   "rule": "index",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "label": "Biology (BIOL)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/biol/"
+  },
+  {
+   "code": "CAD",
+   "heading": "Computer Aid Design",
+   "heading_printed": "Computer Aid Design",
+   "rule": "index",
+   "codes": [
+    "CAD"
+   ],
+   "candidate": null,
+   "label": "Computer Aid Design (CAD)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cad/"
+  },
+  {
+   "code": "CDECE",
+   "heading": "Child Development-Early Childhood Education",
+   "heading_printed": "Child Development-Early Childhood Education",
+   "rule": "index",
+   "codes": [
+    "CDECE"
+   ],
+   "candidate": null,
+   "label": "Child Development-Early Childhood Education (CDECE)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cdece/"
+  },
+  {
+   "code": "CDEV",
+   "heading": "Child Development",
+   "heading_printed": "Child Development",
+   "rule": "index",
+   "codes": [
+    "CDEV"
+   ],
+   "candidate": null,
+   "label": "Child Development (CDEV)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cdev/"
+  },
+  {
+   "code": "CDFDC",
+   "heading": "Child Development-Family Day Care",
+   "heading_printed": "Child Development-Family Day Care",
+   "rule": "index",
+   "codes": [
+    "CDFDC"
+   ],
+   "candidate": null,
+   "label": "Child Development-Family Day Care (CDFDC)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cdfdc/"
+  },
+  {
+   "code": "CDLL",
+   "heading": "Child Development-Learning Lab",
+   "heading_printed": "Child Development-Learning Lab",
+   "rule": "index",
+   "codes": [
+    "CDLL"
+   ],
+   "candidate": null,
+   "label": "Child Development-Learning Lab (CDLL)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cdll/"
+  },
+  {
+   "code": "CDPE",
+   "heading": "Child Development-Parent Education",
+   "heading_printed": "Child Development-Parent Education",
+   "rule": "index",
+   "codes": [
+    "CDPE"
+   ],
+   "candidate": null,
+   "label": "Child Development-Parent Education (CDPE)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cdpe/"
+  },
+  {
+   "code": "CDSED",
+   "heading": "Child Development-Special Education",
+   "heading_printed": "Child Development-Special Education",
+   "rule": "index",
+   "codes": [
+    "CDSED"
+   ],
+   "candidate": null,
+   "label": "Child Development-Special Education (CDSED)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cdsed/"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "Chemistry",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "label": "Chemistry (CHEM)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/chem/"
+  },
+  {
+   "code": "CHIN",
+   "heading": "World Language, Chinese",
+   "heading_printed": "World Language, Chinese",
+   "rule": "index",
+   "codes": [
+    "CHIN"
+   ],
+   "candidate": null,
+   "label": "World Language, Chinese (CHIN)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/chin/"
+  },
+  {
+   "code": "CISCO",
+   "heading": "Computer Academy Cisco Networking",
+   "heading_printed": "Computer Academy CISCO Networking",
+   "rule": "index",
+   "codes": [
+    "CISCO"
+   ],
+   "candidate": null,
+   "label": "Computer Academy CISCO Networking (CISCO)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cisco/"
+  },
+  {
+   "code": "CMUSIC",
+   "heading": "Music, Commercial",
+   "heading_printed": "Music, Commercial",
+   "rule": "index",
+   "codes": [
+    "CMUSIC"
+   ],
+   "candidate": null,
+   "label": "Music, Commercial (CMUSIC)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cmusic/"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "Communication Studies",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "label": "Communication Studies (COMM)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/comm/"
+  },
+  {
+   "code": "CONST",
+   "heading": "Construction Technology",
+   "heading_printed": "Construction Technology",
+   "rule": "index",
+   "codes": [
+    "CONST"
+   ],
+   "candidate": null,
+   "label": "Construction Technology (CONST)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/const/"
+  },
+  {
+   "code": "COSA",
+   "heading": "Computer & Office Studies, Application Software",
+   "heading_printed": "Computer & Office Studies, Application Software",
+   "rule": "index",
+   "codes": [
+    "COSA"
+   ],
+   "candidate": null,
+   "label": "Computer & Office Studies, Application Software (COSA)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cosa/"
+  },
+  {
+   "code": "COSE",
+   "heading": "Computer & Office Studies, Work Experience",
+   "heading_printed": "Computer & Office Studies, Work Experience",
+   "rule": "index",
+   "codes": [
+    "COSE"
+   ],
+   "candidate": null,
+   "label": "Computer & Office Studies, Work Experience (COSE)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cose/"
+  },
+  {
+   "code": "COSK",
+   "heading": "Computer & Office Studies, Keyboarding",
+   "heading_printed": "Computer & Office Studies, Keyboarding",
+   "rule": "index",
+   "codes": [
+    "COSK"
+   ],
+   "candidate": null,
+   "label": "Computer & Office Studies, Keyboarding (COSK)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cosk/"
+  },
+  {
+   "code": "COSN",
+   "heading": "Computer & Office Studies, Networking & Os",
+   "heading_printed": "Computer & Office Studies, Networking & OS",
+   "rule": "index",
+   "codes": [
+    "COSN"
+   ],
+   "candidate": null,
+   "label": "Computer & Office Studies, Networking & OS (COSN)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cosn/"
+  },
+  {
+   "code": "COSP",
+   "heading": "Computer & Office Studies, Programming",
+   "heading_printed": "Computer & Office Studies, Programming",
+   "rule": "index",
+   "codes": [
+    "COSP"
+   ],
+   "candidate": null,
+   "label": "Computer & Office Studies, Programming (COSP)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cosp/"
+  },
+  {
+   "code": "COSS",
+   "heading": "Computer & Office Studies, Security",
+   "heading_printed": "Computer & Office Studies, Security",
+   "rule": "index",
+   "codes": [
+    "COSS"
+   ],
+   "candidate": null,
+   "label": "Computer & Office Studies, Security (COSS)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/coss/"
+  },
+  {
+   "code": "COSW",
+   "heading": "Computer & Office Studies, Web Development",
+   "heading_printed": "Computer & Office Studies, Web Development",
+   "rule": "index",
+   "codes": [
+    "COSW"
+   ],
+   "candidate": null,
+   "label": "Computer & Office Studies, Web Development (COSW)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cosw/"
+  },
+  {
+   "code": "COUNS",
+   "heading": "Counseling/Guidance",
+   "heading_printed": "Counseling/Guidance",
+   "rule": "index",
+   "codes": [
+    "COUNS"
+   ],
+   "candidate": null,
+   "label": "Counseling/Guidance (COUNS)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/couns/"
+  },
+  {
+   "code": "CS",
+   "heading": "Computer Science",
+   "heading_printed": "Computer Science",
+   "rule": "index",
+   "codes": [
+    "CS"
+   ],
+   "candidate": null,
+   "label": "Computer Science (CS)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cs/"
+  },
+  {
+   "code": "CULAR",
+   "heading": "Culinary Arts",
+   "heading_printed": "Culinary Arts",
+   "rule": "index",
+   "codes": [
+    "CULAR"
+   ],
+   "candidate": null,
+   "label": "Culinary Arts (CULAR)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cular/"
+  },
+  {
+   "code": "DANCE",
+   "heading": "Dance",
+   "heading_printed": "Dance",
+   "rule": "index",
+   "codes": [
+    "DANCE"
+   ],
+   "candidate": null,
+   "label": "Dance (DANCE)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/dance/"
+  },
+  {
+   "code": "DMA",
+   "heading": "Digital Media Arts",
+   "heading_printed": "Digital Media Arts",
+   "rule": "index",
+   "codes": [
+    "DMA"
+   ],
+   "candidate": null,
+   "label": "Digital Media Arts (DMA)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/dma/"
+  },
+  {
+   "code": "DMI",
+   "heading": "Diagnostic Medical Imaging",
+   "heading_printed": "Diagnostic Medical Imaging",
+   "rule": "index",
+   "codes": [
+    "DMI"
+   ],
+   "candidate": null,
+   "label": "Diagnostic Medical Imaging (DMI)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/dmi/"
+  },
+  {
+   "code": "DSGN",
+   "heading": "Design",
+   "heading_printed": "Design",
+   "rule": "index",
+   "codes": [
+    "DSGN"
+   ],
+   "candidate": null,
+   "label": "Design (DSGN)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/design/"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "Economics",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "label": "Economics (ECON)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/econ/"
+  },
+  {
+   "code": "EDEV",
+   "heading": "Educational Development",
+   "heading_printed": "Educational Development",
+   "rule": "index",
+   "codes": [
+    "EDEV"
+   ],
+   "candidate": null,
+   "label": "Educational Development (EDEV)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/edev/"
+  },
+  {
+   "code": "EDUC",
+   "heading": "Education",
+   "heading_printed": "Education",
+   "rule": "index",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "label": "Education (EDUC)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/educ/"
+  },
+  {
+   "code": "ELECT",
+   "heading": "Electricity",
+   "heading_printed": "Electricity",
+   "rule": "index",
+   "codes": [
+    "ELECT"
+   ],
+   "candidate": null,
+   "label": "Electricity (ELECT)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/elect/"
+  },
+  {
+   "code": "EMT",
+   "heading": "Emergency Medical Technology",
+   "heading_printed": "Emergency Medical Technology",
+   "rule": "index",
+   "codes": [
+    "EMT"
+   ],
+   "candidate": null,
+   "label": "Emergency Medical Technology (EMT)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/emt/"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "English",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "label": "English (ENGL)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/engl/"
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering",
+   "heading_printed": "Engineering",
+   "rule": "index",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "label": "Engineering (ENGR)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/engr/"
+  },
+  {
+   "code": "ENVRS",
+   "heading": "Environmental Science",
+   "heading_printed": "Environmental Science",
+   "rule": "index",
+   "codes": [
+    "ENVRS"
+   ],
+   "candidate": null,
+   "label": "Environmental Science (ENVRS)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/envrs/"
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "English as a Second Language",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "label": "English as a Second Language (ESL)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/esl/"
+  },
+  {
+   "code": "ESLLC",
+   "heading": "English as a Second Language, Learning Center",
+   "heading_printed": "English as a Second Language, Learning Center",
+   "rule": "index",
+   "codes": [
+    "ESLLC"
+   ],
+   "candidate": null,
+   "label": "English as a Second Language, Learning Center (ESLLC)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/esllc/"
+  },
+  {
+   "code": "ETEC",
+   "heading": "Engineering Technology",
+   "heading_printed": "Engineering Technology",
+   "rule": "index",
+   "codes": [
+    "ETEC"
+   ],
+   "candidate": null,
+   "label": "Engineering Technology (ETEC)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/etec/"
+  },
+  {
+   "code": "ETHST",
+   "heading": "Ethnic Studies",
+   "heading_printed": "Ethnic Studies",
+   "rule": "index",
+   "codes": [
+    "ETHST"
+   ],
+   "candidate": null,
+   "label": "Ethnic Studies (ETHST)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/ethst/"
+  },
+  {
+   "code": "EWRC",
+   "heading": "English, Writing Reading Center",
+   "heading_printed": "English, Writing Reading Center",
+   "rule": "index",
+   "codes": [
+    "EWRC"
+   ],
+   "candidate": null,
+   "label": "English, Writing Reading Center (EWRC)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/ewrc/"
+  },
+  {
+   "code": "FASH",
+   "heading": "Fashion",
+   "heading_printed": "Fashion",
+   "rule": "index",
+   "codes": [
+    "FASH"
+   ],
+   "candidate": null,
+   "label": "Fashion (FASH)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/fash/"
+  },
+  {
+   "code": "FILM",
+   "heading": "Film",
+   "heading_printed": "Film",
+   "rule": "index",
+   "codes": [
+    "FILM"
+   ],
+   "candidate": null,
+   "label": "Film (FILM)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/film/"
+  },
+  {
+   "code": "FIRE",
+   "heading": "Fire Science",
+   "heading_printed": "Fire Science",
+   "rule": "index",
+   "codes": [
+    "FIRE"
+   ],
+   "candidate": null,
+   "label": "Fire Science (FIRE)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/fire/"
+  },
+  {
+   "code": "FLO",
+   "heading": "Floral Design",
+   "heading_printed": "Floral Design",
+   "rule": "index",
+   "codes": [
+    "FLO"
+   ],
+   "candidate": null,
+   "label": "Floral Design (FLO)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/flo/"
+  },
+  {
+   "code": "FREN",
+   "heading": "World Language, French",
+   "heading_printed": "World Language, French",
+   "rule": "index",
+   "codes": [
+    "FREN"
+   ],
+   "candidate": null,
+   "label": "World Language, French (FREN)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/fren/"
+  },
+  {
+   "code": "FS",
+   "heading": "Foundation Skills Development",
+   "heading_printed": "Foundation Skills Development",
+   "rule": "index",
+   "codes": [
+    "FS"
+   ],
+   "candidate": null,
+   "label": "Foundation Skills Development (FS)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/fs/"
+  },
+  {
+   "code": "FSA",
+   "heading": "Fire Academy",
+   "heading_printed": "Fire Academy",
+   "rule": "index",
+   "codes": [
+    "FSA"
+   ],
+   "candidate": null,
+   "label": "Fire Academy (FSA)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/fsa/"
+  },
+  {
+   "code": "FT",
+   "heading": "Food Technology",
+   "heading_printed": "Food Technology",
+   "rule": "index",
+   "codes": [
+    "FT"
+   ],
+   "candidate": null,
+   "label": "Food Technology (FT)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/ft/"
+  },
+  {
+   "code": "GBUS",
+   "heading": "Business, General",
+   "heading_printed": "Business, General",
+   "rule": "index",
+   "codes": [
+    "GBUS"
+   ],
+   "candidate": null,
+   "label": "Business, General (GBUS)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/gbus/"
+  },
+  {
+   "code": "GED/HSET",
+   "heading": "GED/HiSET Preparation",
+   "heading_printed": "GED/HiSET Preparation",
+   "rule": "index",
+   "codes": [
+    "GED/HSET"
+   ],
+   "candidate": null,
+   "label": "GED/HiSET Preparation (GED/HSET)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/ged-hset/"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "Geography",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "label": "Geography (GEOG)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/geog/"
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "Geology",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "label": "Geology (GEOL)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/geol/"
+  },
+  {
+   "code": "GER",
+   "heading": "World Language, German",
+   "heading_printed": "World Language, German",
+   "rule": "index",
+   "codes": [
+    "GER"
+   ],
+   "candidate": null,
+   "label": "World Language, German (GER)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/ger/"
+  },
+  {
+   "code": "GLST",
+   "heading": "Global Studies",
+   "heading_printed": "Global Studies",
+   "rule": "index",
+   "codes": [
+    "GLST"
+   ],
+   "candidate": null,
+   "label": "Global Studies (GLST)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/glst/"
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "History",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "label": "History (HIST)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/hist/"
+  },
+  {
+   "code": "HLED",
+   "heading": "Health Education",
+   "heading_printed": "Health Education",
+   "rule": "index",
+   "codes": [
+    "HLED"
+   ],
+   "candidate": null,
+   "label": "Health Education (HLED)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/hled/"
+  },
+  {
+   "code": "HORT",
+   "heading": "Horticulture",
+   "heading_printed": "Horticulture",
+   "rule": "index",
+   "codes": [
+    "HORT"
+   ],
+   "candidate": null,
+   "label": "Horticulture (HORT)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/hort/"
+  },
+  {
+   "code": "HSA",
+   "heading": "Homeland Security Admin",
+   "heading_printed": "Homeland Security Admin",
+   "rule": "index",
+   "codes": [
+    "HSA"
+   ],
+   "candidate": null,
+   "label": "Homeland Security Admin (HSA)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/hsa/"
+  },
+  {
+   "code": "HUMAN",
+   "heading": "Humanities",
+   "heading_printed": "Humanities",
+   "rule": "index",
+   "codes": [
+    "HUMAN"
+   ],
+   "candidate": null,
+   "label": "Humanities (HUMAN)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/human/"
+  },
+  {
+   "code": "IBUS",
+   "heading": "Business, International",
+   "heading_printed": "Business, International",
+   "rule": "index",
+   "codes": [
+    "IBUS"
+   ],
+   "candidate": null,
+   "label": "Business, International (IBUS)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/ibus/"
+  },
+  {
+   "code": "ITAL",
+   "heading": "World Language, Italian",
+   "heading_printed": "World Language, Italian",
+   "rule": "index",
+   "codes": [
+    "ITAL"
+   ],
+   "candidate": null,
+   "label": "World Language, Italian (ITAL)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/ital/"
+  },
+  {
+   "code": "JAPAN",
+   "heading": "World Language, Japanese",
+   "heading_printed": "World Language, Japanese",
+   "rule": "index",
+   "codes": [
+    "JAPAN"
+   ],
+   "candidate": null,
+   "label": "World Language, Japanese (JAPAN)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/japan/"
+  },
+  {
+   "code": "JOURN",
+   "heading": "Journalism",
+   "heading_printed": "Journalism",
+   "rule": "index",
+   "codes": [
+    "JOURN"
+   ],
+   "candidate": null,
+   "label": "Journalism (JOURN)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/journ/"
+  },
+  {
+   "code": "KHMER",
+   "heading": "World Language, Khmer",
+   "heading_printed": "World Language, Khmer",
+   "rule": "index",
+   "codes": [
+    "KHMER"
+   ],
+   "candidate": null,
+   "label": "World Language, Khmer (KHMER)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/khmer/"
+  },
+  {
+   "code": "KINA",
+   "heading": "Kinesiology, Adapted",
+   "heading_printed": "Kinesiology, Adapted",
+   "rule": "index",
+   "codes": [
+    "KINA"
+   ],
+   "candidate": null,
+   "label": "Kinesiology, Adapted (KINA)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/kina/"
+  },
+  {
+   "code": "KING",
+   "heading": "Kinesiology, General",
+   "heading_printed": "Kinesiology, General",
+   "rule": "index",
+   "codes": [
+    "KING"
+   ],
+   "candidate": null,
+   "label": "Kinesiology, General (KING)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/king/"
+  },
+  {
+   "code": "KINIA",
+   "heading": "Kinesiology, Intercollegiate Athletics",
+   "heading_printed": "Kinesiology, Intercollegiate Athletics",
+   "rule": "index",
+   "codes": [
+    "KINIA"
+   ],
+   "candidate": null,
+   "label": "Kinesiology, Intercollegiate Athletics (KINIA)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/kinia/"
+  },
+  {
+   "code": "KINPF",
+   "heading": "Kinesiology, Physical Fitness",
+   "heading_printed": "Kinesiology, Physical Fitness",
+   "rule": "index",
+   "codes": [
+    "KINPF"
+   ],
+   "candidate": null,
+   "label": "Kinesiology, Physical Fitness (KINPF)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/kinpf/"
+  },
+  {
+   "code": "KINPP",
+   "heading": "Kinesiology, Professional Preparation",
+   "heading_printed": "Kinesiology, Professional Preparation",
+   "rule": "index",
+   "codes": [
+    "KINPP"
+   ],
+   "candidate": null,
+   "label": "Kinesiology, Professional Preparation (KINPP)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/kinpp/"
+  },
+  {
+   "code": "LAW",
+   "heading": "Business, Law",
+   "heading_printed": "Business, Law",
+   "rule": "index",
+   "codes": [
+    "LAW"
+   ],
+   "candidate": null,
+   "label": "Business, Law (LAW)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/law/"
+  },
+  {
+   "code": "LEARN",
+   "heading": "Learning and Academic Resources",
+   "heading_printed": "Learning and Academic Resources",
+   "rule": "index",
+   "codes": [
+    "LEARN"
+   ],
+   "candidate": null,
+   "label": "Learning and Academic Resources (LEARN)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/learn/"
+  },
+  {
+   "code": "LIB",
+   "heading": "Library",
+   "heading_printed": "Library",
+   "rule": "index",
+   "codes": [
+    "LIB"
+   ],
+   "candidate": null,
+   "label": "Library (LIB)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/lib/"
+  },
+  {
+   "code": "LING",
+   "heading": "Linguistics",
+   "heading_printed": "Linguistics",
+   "rule": "index",
+   "codes": [
+    "LING"
+   ],
+   "candidate": null,
+   "label": "Linguistics (LING)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/ling/"
+  },
+  {
+   "code": "MA",
+   "heading": "Medical Assisting",
+   "heading_printed": "Medical Assisting",
+   "rule": "index",
+   "codes": [
+    "MA"
+   ],
+   "candidate": null,
+   "label": "Medical Assisting (MA)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/ma/"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "Mathematics",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "label": "Mathematics (MATH)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/math/"
+  },
+  {
+   "code": "MGMT",
+   "heading": "Business, Management",
+   "heading_printed": "Business, Management",
+   "rule": "index",
+   "codes": [
+    "MGMT"
+   ],
+   "candidate": null,
+   "label": "Business, Management (MGMT)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/mgmt/"
+  },
+  {
+   "code": "MKTG",
+   "heading": "Business, Marketing",
+   "heading_printed": "Business, Marketing",
+   "rule": "index",
+   "codes": [
+    "MKTG"
+   ],
+   "candidate": null,
+   "label": "Business, Marketing (MKTG)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/mktg/"
+  },
+  {
+   "code": "MONEY",
+   "heading": "Money Management",
+   "heading_printed": "Money Management",
+   "rule": "index",
+   "codes": [
+    "MONEY"
+   ],
+   "candidate": null,
+   "label": "Money Management (MONEY)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/money/"
+  },
+  {
+   "code": "MTFAB",
+   "heading": "Metal Fabrication",
+   "heading_printed": "Metal Fabrication",
+   "rule": "index",
+   "codes": [
+    "MTFAB"
+   ],
+   "candidate": null,
+   "label": "Metal Fabrication (MTFAB)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/mtfab/"
+  },
+  {
+   "code": "MUSIC",
+   "heading": "Music",
+   "heading_printed": "Music",
+   "rule": "index",
+   "codes": [
+    "MUSIC"
+   ],
+   "candidate": null,
+   "label": "Music (MUSIC)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/music/"
+  },
+  {
+   "code": "NUTR",
+   "heading": "Nutrition & Dietetics",
+   "heading_printed": "Nutrition & Dietetics",
+   "rule": "index",
+   "codes": [
+    "NUTR"
+   ],
+   "candidate": null,
+   "label": "Nutrition & Dietetics (NUTR)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/nutr/"
+  },
+  {
+   "code": "OSHA",
+   "heading": "Occupational Safety Health Administration",
+   "heading_printed": "Occupational Safety Health Administration",
+   "rule": "index",
+   "codes": [
+    "OSHA"
+   ],
+   "candidate": null,
+   "label": "Occupational Safety Health Administration (OSHA)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/osha/"
+  },
+  {
+   "code": "PGEOG",
+   "heading": "Geography, Physical",
+   "heading_printed": "Geography, Physical",
+   "rule": "index",
+   "codes": [
+    "PGEOG"
+   ],
+   "candidate": null,
+   "label": "Geography, Physical (PGEOG)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/pgeog/"
+  },
+  {
+   "code": "PH",
+   "heading": "Public Health",
+   "heading_printed": "Public Health",
+   "rule": "index",
+   "codes": [
+    "PH"
+   ],
+   "candidate": null,
+   "label": "Public Health (PH)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/ph/"
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "Philosophy",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "label": "Philosophy (PHIL)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/phil/"
+  },
+  {
+   "code": "PHOT",
+   "heading": "Photography",
+   "heading_printed": "Photography",
+   "rule": "index",
+   "codes": [
+    "PHOT"
+   ],
+   "candidate": null,
+   "label": "Photography (PHOT)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/phot/"
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "Physics",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "label": "Physics (PHYS)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/phys/"
+  },
+  {
+   "code": "PHYSI",
+   "heading": "Physiology",
+   "heading_printed": "Physiology",
+   "rule": "index",
+   "codes": [
+    "PHYSI"
+   ],
+   "candidate": null,
+   "label": "Physiology (PHYSI)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/physi/"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "label": "Political Science (POLS)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/pols/"
+  },
+  {
+   "code": "POLSC",
+   "heading": "Political Science",
+   "heading_printed": "Political Science",
+   "rule": "index",
+   "codes": [
+    "POLSC"
+   ],
+   "candidate": null,
+   "label": "Political Science (POLSC)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/polsc/"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "label": "Psychology (PSYC)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/psyc/"
+  },
+  {
+   "code": "PSYCH",
+   "heading": "Psychology",
+   "heading_printed": "Psychology",
+   "rule": "index",
+   "codes": [
+    "PSYCH"
+   ],
+   "candidate": null,
+   "label": "Psychology (PSYCH)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/psych/"
+  },
+  {
+   "code": "PSY_TS",
+   "heading": "Psychology Trauma Studies",
+   "heading_printed": "Psychology Trauma Studies",
+   "rule": "index",
+   "codes": [
+    "PSY_TS"
+   ],
+   "candidate": null,
+   "label": "Psychology Trauma Studies (PSY_TS)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/psy_ts/"
+  },
+  {
+   "code": "PUBAD",
+   "heading": "Public Administration",
+   "heading_printed": "Public Administration",
+   "rule": "index",
+   "codes": [
+    "PUBAD"
+   ],
+   "candidate": null,
+   "label": "Public Administration (PUBAD)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/pubad/"
+  },
+  {
+   "code": "READ",
+   "heading": "Reading",
+   "heading_printed": "Reading",
+   "rule": "index",
+   "codes": [
+    "READ"
+   ],
+   "candidate": null,
+   "label": "Reading (READ)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/read/"
+  },
+  {
+   "code": "REAL",
+   "heading": "Real Estate",
+   "heading_printed": "Real Estate",
+   "rule": "index",
+   "codes": [
+    "REAL"
+   ],
+   "candidate": null,
+   "label": "Real Estate (REAL)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/real/"
+  },
+  {
+   "code": "SOCI",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOCI"
+   ],
+   "candidate": null,
+   "label": "Sociology (SOCI)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/soci/"
+  },
+  {
+   "code": "SOCIO",
+   "heading": "Sociology",
+   "heading_printed": "Sociology",
+   "rule": "index",
+   "codes": [
+    "SOCIO"
+   ],
+   "candidate": null,
+   "label": "Sociology (SOCIO)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/socio/"
+  },
+  {
+   "code": "SOCSC",
+   "heading": "Social Science",
+   "heading_printed": "Social Science",
+   "rule": "index",
+   "codes": [
+    "SOCSC"
+   ],
+   "candidate": null,
+   "label": "Social Science (SOCSC)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/socsc/"
+  },
+  {
+   "code": "SPAN",
+   "heading": "World Language, Spanish",
+   "heading_printed": "World Language, Spanish",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "label": "World Language, Spanish (SPAN)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/span/"
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "Statistics",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "label": "Statistics (STAT)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/stat/"
+  },
+  {
+   "code": "SW",
+   "heading": "Social Work",
+   "heading_printed": "Social Work",
+   "rule": "index",
+   "codes": [
+    "SW"
+   ],
+   "candidate": null,
+   "label": "Social Work (SW)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/social-work/"
+  },
+  {
+   "code": "TART",
+   "heading": "Theatre Arts",
+   "heading_printed": "Theatre Arts",
+   "rule": "index",
+   "codes": [
+    "TART"
+   ],
+   "candidate": null,
+   "label": "Theatre Arts (TART)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/tart/"
+  },
+  {
+   "code": "TEAS",
+   "heading": "Teas Preparation",
+   "heading_printed": "TEAS Preparation",
+   "rule": "index",
+   "codes": [
+    "TEAS"
+   ],
+   "candidate": null,
+   "label": "TEAS Preparation (TEAS)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/teas/"
+  },
+  {
+   "code": "TV",
+   "heading": "Television & Emerging Media",
+   "heading_printed": "Television & Emerging Media",
+   "rule": "index",
+   "codes": [
+    "TV"
+   ],
+   "candidate": null,
+   "label": "Television & Emerging Media (TV)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/tv/"
+  },
+  {
+   "code": "VN",
+   "heading": "Nursing, Vocational Nursing",
+   "heading_printed": "Nursing, Vocational Nursing",
+   "rule": "index",
+   "codes": [
+    "VN"
+   ],
+   "candidate": null,
+   "label": "Nursing, Vocational Nursing (VN)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/vn/"
+  },
+  {
+   "code": "WELD",
+   "heading": "Welding",
+   "heading_printed": "Welding",
+   "rule": "index",
+   "codes": [
+    "WELD"
+   ],
+   "candidate": null,
+   "label": "Welding (WELD)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/weld/"
+  }
+ ]
+}

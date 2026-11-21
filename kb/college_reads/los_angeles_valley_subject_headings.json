@@ -1,0 +1,28 @@
+{
+ "_readme": "S698 (SkyAuklet), 2026-11-21, under Sam's go in session on #3655 (\"good, let's do it!\"): the subject heading the catalog prints above each subject's first course, for the local subject titles on the Commons' Subjects page. The same source and the same course-heading pattern as los_angeles_valley_courses.json (the filed catalog, kb/hand_filed_catalogs/courses/los_angeles_valley.json.gz), which kept each course from its heading line down and so kept no subject heading. This read prints only the lines above each subject's first course. No model call.",
+ "college": "Los Angeles Valley College",
+ "questions": {
+  "subject_headings": "The subject heading the catalog prints above each subject's first course."
+ },
+ "keywords": [
+  "\\bUnits?\\b",
+  "\\bUNITS?\\b",
+  "\\bHours?\\b"
+ ],
+ "subject_context": {
+  "heading": "^(?P<subj>[A-Z][A-Z &]{0,11}?) (?P<num>\\d{3}[A-Z]{0,3}) (?P<title>[A-Z].*)$",
+  "before": 4,
+  "start_page": 160,
+  "units": "^\\((\\d+(?:\\.\\d+)?(?:\\s*-\\s*\\d+(?:\\.\\d+)?)?)\\)(?:\\s|$)",
+  "units_inline": "\\s*\\((\\d+(?:\\.\\d+)?(?:\\s*-\\s*\\d+(?:\\.\\d+)?)?)\\)(?:\\s+\\S{1,7})*\\s*$",
+  "within": 3
+ },
+ "pages": [
+  {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf",
+   "answers": [
+    "subject_headings"
+   ]
+  }
+ ]
+}

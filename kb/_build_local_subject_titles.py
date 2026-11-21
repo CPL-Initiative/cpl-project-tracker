@@ -36,18 +36,31 @@ import os
 import re
 import sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from subject_title_case import title_case  # noqa: E402
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SUBJECTS = os.path.join("kb", "hand_filed_catalogs", "subjects")
 CATALOGS = os.path.join("kb", "hand_filed_catalogs", "courses")
 STATE = "coci_lookup_data.js"
 SUBJECT_MAP = os.path.join("kb", "reference", "subject_discipline_map.json")
 CANONICAL = os.path.join("kb", "discipline_canonical_subj4.json")
 OUT = os.path.join("kb", "status", "local_subject_titles.json")
 
-COLUMNS = ["code", "printed_name", "catalog_courses", "state_courses", "side", "common", "discipline"]
+COLUMNS = ["code", "printed_name", "catalog_courses", "state_courses", "side", "common", "discipline",
+           "title_state", "title_source", "candidate", "address"]
+# Why a row has no title (Sam, 2026-11-21, #3655: "an indicator (chip) in the row to indicate that the catalog read was
+# either blocked, title not in catalog, or not parsed yet"). A state comes from a recorded fact; a row nothing proves
+# reads not_read, because calling a title absent when the catalog was never looked at is the worse error.
+TITLE_STATES = ("catalog", "not_read", "blocked", "not_in_catalog")
 RULE = ("A catalog's subject code and the state list's are the same code when they are equal after trimming and "
         "upper-casing; nothing looser. A college is the same college when its names are equal after lower-casing and "
         "folding every run of other characters to one space (Los Angeles Trade-Technical College is Los Angeles Trade "
-        "Technical College). The common subject code is read from the subject map (its keys: upper case, letters and "
+        "Technical College). A local subject title is the catalog's subject heading, saved in Title Case: the name its "
+        "course pages carry, else the heading filed from the catalog's index or from the lines above the subject's first "
+        "course (kb/hand_filed_catalogs/subjects/). A code the catalog's index lists is in the catalog whether or not "
+        "its page's courses are filed. A row with no title says why (title_state): not_read where the catalog was not "
+        "read for it, blocked where the reader was refused, not_in_catalog where the catalog was read and gives it none. The common subject code is read from the subject map (its keys: upper case, letters and "
         "digits only) and the discipline's canonical SUBJ; where either has nothing, it is blank. A TOP code is never read.")
 
 
@@ -66,6 +79,20 @@ def map_key(s):
 def read_json(root, rel):
     with open(os.path.join(root, rel), encoding="utf-8") as f:
         return json.load(f)
+
+
+def read_subjects(root, slug):
+    """A college's filed subject headings (kb/_file_subject_headings.py), keyed by code; {} where none is filed."""
+    path = os.path.join(root, SUBJECTS, slug + ".json")
+    if not os.path.exists(path):
+        return None
+    with open(path, encoding="utf-8") as f:
+        d = json.load(f)
+    by = {}
+    for r in d.get("rows") or []:
+        by.setdefault(code_key(r.get("code")), r)
+    return {"by": by, "index": any(r.get("rule") == "index" for r in d.get("rows") or []),
+            "blocked": {code_key(c) for c in d.get("blocked") or []}}
 
 
 def read_state(root):
@@ -96,7 +123,8 @@ def build(root=ROOT):
 
     out_colleges = []
     T = {"colleges": 0, "courses": 0, "codes": 0, "catalog_codes": 0, "named": 0, "both": 0, "catalog_only": 0,
-         "state_only": 0, "with_common": 0, "colleges_named": 0, "colleges_not_in_state_list": 0}
+         "state_only": 0, "with_common": 0, "not_read": 0, "blocked": 0, "not_in_catalog": 0, "pages_not_read": 0,
+         "colleges_named": 0, "colleges_not_in_state_list": 0}
     for c in sorted(index.get("colleges") or [], key=lambda x: x["slug"]):
         with gzip.open(os.path.join(root, CATALOGS, c["file"]), "rt", encoding="utf-8") as f:
             rows = json.load(f).get("rows") or []
@@ -112,19 +140,41 @@ def build(root=ROOT):
                 e["names"][nm] = e["names"].get(nm, 0) + 1
         si = by_name.get(college_key(c["college"]))
         st = state_by_college.get(si, {}) if si is not None else {}
+        subj = read_subjects(root, c["slug"])
+        filed = (subj or {}).get("by") or {}
+        listed = {k for k, r in filed.items() if r.get("rule") == "index"}     # the codes the catalog's index lists
         out = []
-        for k in sorted(set(cat) | set(st)):
+        for k in sorted(set(cat) | set(st) | listed):
             e = cat.get(k)
+            in_catalog = bool(e) or k in listed
             # The name the catalog prints most often under the code (ties: A to Z); the files read today print one.
-            name = None
+            name, source = None, None
             if e and e["names"]:
-                name = sorted(e["names"].items(), key=lambda kv: (-kv[1], kv[0]))[0][0]
-            side = "both" if (e and k in st) else ("catalog" if e else "state")
+                name, source = sorted(e["names"].items(), key=lambda kv: (-kv[1], kv[0]))[0][0], "course pages"
+            h = filed.get(k)
+            if not name and h and h.get("heading"):
+                name, source = h["heading"], "index" if h.get("rule") == "index" else "heading above the first course"
+            name = title_case(name)
+            side = "both" if (in_catalog and k in st) else ("catalog" if in_catalog else "state")
+            if name:
+                state_ = "catalog"
+            elif k in ((subj or {}).get("blocked") or ()):
+                state_ = "blocked"
+            elif not in_catalog:
+                state_ = "not_in_catalog"      # in the state list and nowhere in the catalog that was read
+            elif subj and subj["index"]:
+                state_ = "not_in_catalog"      # the index lists every subject, and gives this code no heading
+            else:
+                state_ = "not_read"            # courses under the code, and no heading read for it yet
             common, disc = common_of(k)
-            out.append([k, name, e["n"] if e else 0, st.get(k, 0), side, common, disc])
-        n = {"codes": len(out), "catalog_codes": len(cat), "named": sum(1 for r in out if r[1]),
+            out.append([k, name, e["n"] if e else 0, st.get(k, 0), side, common, disc, state_, source,
+                        (h or {}).get("candidate") if not name else None, (h or {}).get("address")])
+        n = {"codes": len(out), "catalog_codes": len(set(cat) | listed), "named": sum(1 for r in out if r[1]),
              "both": sum(1 for r in out if r[4] == "both"), "catalog_only": sum(1 for r in out if r[4] == "catalog"),
-             "state_only": sum(1 for r in out if r[4] == "state"), "with_common": sum(1 for r in out if r[5])}
+             "state_only": sum(1 for r in out if r[4] == "state"), "with_common": sum(1 for r in out if r[5]),
+             "not_read": sum(1 for r in out if r[7] == "not_read"), "blocked": sum(1 for r in out if r[7] == "blocked"),
+             "not_in_catalog": sum(1 for r in out if r[7] == "not_in_catalog"),
+             "pages_not_read": sum(1 for r in out if r[10] and not r[2])}
         out_colleges.append({"slug": c["slug"], "college": c["college"], "catalog_year": c.get("catalog_year"),
                              "read_at": c.get("read_at"), "in_state_list": si is not None,
                              "courses": len(rows), **n, "rows": out})
@@ -141,7 +191,11 @@ def build(root=ROOT):
                   "catalog's subject heading and the draft local subject title (owner: the Courses bot, state: drafted); "
                   "null reads TBA. side says who prints the code: both, catalog (the catalog only) or state (the state "
                   "list only). The codes on one side only are the curator's list. common is the common subject code "
-                  "(Step a) where the subject map and the canonical SUBJ give one. Built by kb/_build_local_subject_titles.py; "
+                  "(Step a) where the subject map and the canonical SUBJ give one. title_state says why a row has no title "
+                  "(not_read, blocked, not_in_catalog; catalog where it has one), title_source where the title came from, "
+                  "candidate a line for a reviewer where no heading was taken (never a title by itself), and address the "
+                  "subject's own page where the catalog's index links one (pages_not_read counts the linked pages with "
+                  "no course filed). Built by kb/_build_local_subject_titles.py; "
                   "no clock is read, so read_at is each catalog's own."),
         "_rule": RULE,
         "_sources": {"catalogs": CATALOGS.replace(os.sep, "/") + "/index.json", "state_list": STATE,

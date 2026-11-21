@@ -1,0 +1,1830 @@
+{
+ "_what": "The subject heading Los Angeles City College's catalog prints above each subject's first course, read for the local subject titles (Sam's rule on #3655: a local subject title comes only from the catalog's subject heading). Filed by kb/_file_subject_headings.py from a headings read; `heading` is saved in Title Case (Sam, 2026-11-21) with `heading_printed` as the catalog prints it; `above` holds the lines as printed, `rule` how the heading was taken (named, caps, fits or none), and `code_fits` whether the code's letters run in order through the heading, a second signal that decides nothing.",
+ "college": "Los Angeles City College",
+ "run": "44948529916",
+ "source": [
+  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf"
+ ],
+ "subjects": 101,
+ "with_heading": 99,
+ "rows": [
+  {
+   "code": "A S L",
+   "heading": "American Sign Language",
+   "heading_printed": "AMERICAN SIGN LANGUAGE",
+   "rule": "named",
+   "codes": [
+    "A S L"
+   ],
+   "candidate": null,
+   "page": 244,
+   "above": [
+    "LACC 2026-2027 COLLEGE CATALOG 243",
+    "CREDIT COURSES",
+    "CREDIT COURSES",
+    "AMERICAN SIGN LANGUAGE (A S L)"
+   ],
+   "first_course": "A S L 001 - AMERICAN SIGN LANGUAGE I"
+  },
+  {
+   "code": "ACAD PR",
+   "heading": "Academic Preparation",
+   "heading_printed": "ACADEMIC PREPARATION",
+   "rule": "named",
+   "codes": [
+    "ACAD PR"
+   ],
+   "candidate": null,
+   "page": 342,
+   "above": [
+    "NONCREDIT COURSESNONCREDIT CLASSES ARE NOT SUBJECT TO REPEATABILITY RESTRICTIONS",
+    "NONCREDIT COURSES",
+    "NONCREDIT CLASSES ARE NOT SUBJECT TO REPEATABILITY RESTRICTIONS",
+    "ACADEMIC PREPARATION (ACAD PR)"
+   ],
+   "first_course": "ACAD PR 101CE - COLLEGE PREPARATORY SEMINAR"
+  },
+  {
+   "code": "ACCTG",
+   "heading": "Accounting",
+   "heading_printed": "ACCOUNTING",
+   "rule": "named",
+   "codes": [
+    "ACCTG"
+   ],
+   "candidate": null,
+   "page": 244,
+   "above": [
+    "Focuses on the cultural, historical, philosophical, educational, psy-",
+    "chological, and social aspects of the deaf and hard of hearing. No",
+    "knowledge of American Sign Language is required.",
+    "ACCOUNTING (ACCTG)"
+   ],
+   "first_course": "ACCTG 001 - INTRODUCTORY ACCOUNTING I"
+  },
+  {
+   "code": "ADDICST",
+   "heading": "Addiction Studies",
+   "heading_printed": "ADDICTION STUDIES",
+   "rule": "named",
+   "codes": [
+    "ADDICST"
+   ],
+   "candidate": null,
+   "page": 245,
+   "above": [
+    "iation, payroll computations, depreciation and allocation of over -",
+    "head, trade and cash discounts and other accounting related math",
+    "subjects.",
+    "ADDICTION STUDIES (ADDICST)"
+   ],
+   "first_course": "ADDICST 001 - UNDERSTANDING ADDICTION AND"
+  },
+  {
+   "code": "ADM JUS",
+   "heading": "Administration of Justice (Adm Jus)",
+   "heading_printed": "ADMINISTRATION OF JUSTICE (ADM JUS)",
+   "rule": "caps",
+   "codes": [
+    "ADM JUS"
+   ],
+   "candidate": null,
+   "page": 247,
+   "above": [
+    "246 LA CC 2026-2027 COLLEGE CATALOG",
+    "CREDIT COURSES",
+    "ADMINISTRATION OF JUSTICE",
+    "(ADM JUS)"
+   ],
+   "first_course": "ADM JUS 001 - INTRODUCTION TO ADMINISTRATION OF"
+  },
+  {
+   "code": "AFRO AM",
+   "heading": "African American Studies (Afro Am)",
+   "heading_printed": "AFRICAN AMERICAN STUDIES (AFRO AM)",
+   "rule": "caps",
+   "codes": [
+    "AFRO AM"
+   ],
+   "candidate": null,
+   "page": 248,
+   "above": [
+    "crime scenes, pattern evidence, instruments, firearms, questioned",
+    "documents, and controlled substances.",
+    "AFRICAN AMERICAN STUDIES",
+    "(AFRO AM)"
+   ],
+   "first_course": "AFRO AM 004 - THE AFRICAN AMERICAN EXPERIENCE IN"
+  },
+  {
+   "code": "ANATOMY",
+   "heading": "Anatomy",
+   "heading_printed": "ANATOMY",
+   "rule": "named",
+   "codes": [
+    "ANATOMY"
+   ],
+   "candidate": null,
+   "page": 248,
+   "above": [
+    "examines and reflects upon American society through the literature",
+    "that African Americans produce, especially as it pertains to issues",
+    "of social justice, agency and self affirmation.",
+    "ANATOMY (ANATOMY)"
+   ],
+   "first_course": "ANATOMY 001 - INTRODUCTION TO HUMAN ANATOMY"
+  },
+  {
+   "code": "ANIMATN",
+   "heading": "Animation",
+   "heading_printed": "ANIMATION",
+   "rule": "named",
+   "codes": [
+    "ANIMATN"
+   ],
+   "candidate": null,
+   "page": 248,
+   "above": [
+    "skeletal, muscular, nervous, sensory, endocrine, cardiovascular,",
+    "lymphatic, respiratory, digestive, excretory, and reproductive sys -",
+    "tems, from cellular to organ system levels of organization.",
+    "ANIMATION (ANIMATN)"
+   ],
+   "first_course": "ANIMATN 118 - HISTORY OF ANIMATION"
+  },
+  {
+   "code": "ANTHRO",
+   "heading": "Anthropology",
+   "heading_printed": "ANTHROPOLOGY",
+   "rule": "named",
+   "codes": [
+    "ANTHRO"
+   ],
+   "candidate": null,
+   "page": 249,
+   "above": [
+    "priate camera rigs to support the creation of digital animatics used",
+    "in 3-D film production, XR immersive experiences and game cine-",
+    "matic production.",
+    "ANTHROPOLOGY (ANTHRO)"
+   ],
+   "first_course": "ANTHRO 101 - HUMAN BIOLOGICAL EVOLUTION"
+  },
+  {
+   "code": "ARABIC",
+   "heading": "Arabic",
+   "heading_printed": "ARABIC",
+   "rule": "named",
+   "codes": [
+    "ARABIC"
+   ],
+   "candidate": null,
+   "page": 250,
+   "above": [
+    "under the direction of a supervising instructor.",
+    "LACC 2026-2027 COLLEGE CATALOG 249",
+    "CREDIT COURSES",
+    "ARABIC (ARABIC)"
+   ],
+   "first_course": "ARABIC 001 - ELEMENTARY ARABIC I"
+  },
+  {
+   "code": "ARMEN",
+   "heading": "Armenian",
+   "heading_printed": "ARMENIAN",
+   "rule": "named",
+   "codes": [
+    "ARMEN"
+   ],
+   "candidate": null,
+   "page": 250,
+   "above": [
+    "at the ACTFL Proficiency Novice Mid Level, and introduces Arabic",
+    "culture. Satisfies Humanities requirement for graduation. Corre-",
+    "sponds to the first two years of high school Arabic.",
+    "ARMENIAN (ARMEN)"
+   ],
+   "first_course": "ARMEN 001 - ELEMENTARY ARMENIAN I"
+  },
+  {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "ART",
+   "rule": "named",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "page": 250,
+   "above": [
+    "omatic usage. Writing forms and strategies are taught within the",
+    "contexts of contemporary ideas and cultural diversity as reflected",
+    "in selected readings.",
+    "ART (ART)"
+   ],
+   "first_course": "ART 100 - INTRODUCTION TO STUDIO ART FOR NON-ART"
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art History (CCN) (Arth)",
+   "heading_printed": "ART HISTORY (CCN) (ARTH)",
+   "rule": "caps",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "page": 254,
+   "above": [
+    "internship with an employer in the Design, Animation, or Visual Arts",
+    "field. outside of campus. Students are required to spend 36 hours",
+    "a semester either working in the gallery or at an outside internship.",
+    "ART HISTORY (CCN) (ARTH)"
+   ],
+   "first_course": "ARTH C1100 - SURVEY OF ART FROM PREHISTORY TO"
+  },
+  {
+   "code": "ARTHIST",
+   "heading": "Art History",
+   "heading_printed": "ART HISTORY",
+   "rule": "named",
+   "codes": [
+    "ARTHIST"
+   ],
+   "candidate": null,
+   "page": 255,
+   "above": [
+    "Renaissance to the contemporary period with a focus on art from",
+    "Europe. The course will further consider global interactions involv-",
+    "ing this region.",
+    "ART HISTORY (ARTHIST)"
+   ],
+   "first_course": "ARTHIST 103 - ART APPRECIATION I"
+  },
+  {
+   "code": "ASIAN",
+   "heading": "Asian Studies American Studies (Asian)",
+   "heading_printed": "ASIAN STUDIES AMERICAN STUDIES (ASIAN)",
+   "rule": "caps",
+   "codes": [
+    "ASIAN"
+   ],
+   "candidate": null,
+   "page": 255,
+   "above": [
+    "temporary visual art (including painting, sculpture, architecture,",
+    "new media, and other forms) produced by the global community.",
+    "ASIAN STUDIES AMERICAN STUDIES",
+    "(ASIAN)"
+   ],
+   "first_course": "ASIAN 001 - ASIAN AMERICAN HISTORY"
+  },
+  {
+   "code": "ASTRON",
+   "heading": "Astronomy",
+   "heading_printed": "ASTRONOMY",
+   "rule": "named",
+   "codes": [
+    "ASTRON"
+   ],
+   "candidate": null,
+   "page": 256,
+   "above": [
+    "Koreans, Filipinos, South Asians, and Southeast Asians.",
+    "LACC 2026-2027 COLLEGE CATALOG 255",
+    "CREDIT COURSES",
+    "ASTRONOMY (ASTRON)"
+   ],
+   "first_course": "ASTRON 001 - ELEMENTARY ASTRONOMY"
+  },
+  {
+   "code": "BIOLOGY",
+   "heading": "Biology",
+   "heading_printed": "BIOLOGY",
+   "rule": "named",
+   "codes": [
+    "BIOLOGY"
+   ],
+   "candidate": null,
+   "page": 256,
+   "above": [
+    "tem. Students learn about stars, stellar evolution, black holes, gal-",
+    "axies, the big bang, cosmology, and the possibility of extraterres -",
+    "trial life.",
+    "BIOLOGY (BIOLOGY)"
+   ],
+   "first_course": "BIOLOGY 003 - INTRODUCTION TO BIOLOGY"
+  },
+  {
+   "code": "BSICSKL",
+   "heading": "Basic Skills",
+   "heading_printed": "BASIC SKILLS",
+   "rule": "named",
+   "codes": [
+    "BSICSKL"
+   ],
+   "candidate": null,
+   "page": 342,
+   "above": [
+    "essential information, strategies, and tools that will help overcome",
+    "real and perceived obstacles and successfully navigate their tran -",
+    "sition to college.",
+    "BASIC SKILLS (BSICSKL)"
+   ],
+   "first_course": "BSICSKL 006CE - REVIEW OF BASIC ENGLISH"
+  },
+  {
+   "code": "BUS",
+   "heading": "Business",
+   "heading_printed": "BUSINESS",
+   "rule": "named",
+   "codes": [
+    "BUS"
+   ],
+   "candidate": null,
+   "page": 256,
+   "above": [
+    "the principle human organ systems according to structure and func-",
+    "tion and examine the problems of pollution, population control, and",
+    "preservation of the natural environment.",
+    "BUSINESS (BUS)"
+   ],
+   "first_course": "BUS 001 - INTRODUCTION TO BUSINESS"
+  },
+  {
+   "code": "CAOT",
+   "heading": "Computer Apps Office Tech",
+   "heading_printed": "COMPUTER APPS OFFICE TECH",
+   "rule": "named",
+   "codes": [
+    "CAOT"
+   ],
+   "candidate": null,
+   "page": 257,
+   "above": [
+    "business applications of mathematics, including trade and cash",
+    "discounts, markups and markdowns, payroll, simple interest and",
+    "promissory notes and compound interest.",
+    "COMPUTER APPS OFFICE TECH (CAOT)"
+   ],
+   "first_course": "CAOT 001 - COMPUTER KEYBOARDING AND DOCUMENT"
+  },
+  {
+   "code": "CH DEV",
+   "heading": "Child Development",
+   "heading_printed": "CHILD DEVELOPMENT",
+   "rule": "named",
+   "codes": [
+    "CH DEV"
+   ],
+   "candidate": null,
+   "page": 258,
+   "above": [
+    "the features of Windows, including changing and creating icons,",
+    "opening and closing windows and other applications, responding to",
+    "dialog boxes, and working with directories.",
+    "CHILD DEVELOPMENT (CH DEV)"
+   ],
+   "first_course": "CH DEV 001 - CHILD GROWTH AND DEVELOPMENT"
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "CHEMISTRY",
+   "rule": "named",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "page": 262,
+   "above": [
+    "and professional support systems.",
+    "LACC 2026-2027 COLLEGE CATALOG 261",
+    "CREDIT COURSES",
+    "CHEMISTRY (CHEM)"
+   ],
+   "first_course": "CHEM 060 - INTRODUCTION TO GENERAL CHEMISTRY"
+  },
+  {
+   "code": "CHICANO",
+   "heading": "Chicano Studies",
+   "heading_printed": "CHICANO STUDIES",
+   "rule": "named",
+   "codes": [
+    "CHICANO"
+   ],
+   "candidate": null,
+   "page": 263,
+   "above": [
+    "Students pursue Directed Study in Chemistry on a contract basis",
+    "under the direction of a supervising instructor. Laboratory and liter-",
+    "ature research are performed.",
+    "CHICANO STUDIES (CHICANO)"
+   ],
+   "first_course": "CHICANO 004 - INTRODUCTION TO CHICANA/O STUDIES"
+  },
+  {
+   "code": "CHINESE",
+   "heading": "Chinese",
+   "heading_printed": "CHINESE",
+   "rule": "named",
+   "codes": [
+    "CHINESE"
+   ],
+   "candidate": null,
+   "page": 264,
+   "above": [
+    "lishing a framework from which to view the historical development",
+    "and treatment of women in modern society. Includes an analysis of",
+    "selected Latina issues currently affecting Chicana women.",
+    "CHINESE (CHINESE)"
+   ],
+   "first_course": "CHINESE 001 - ELEMENTARY CHINESE I"
+  },
+  {
+   "code": "CINEMA",
+   "heading": "Cinema",
+   "heading_printed": "CINEMA",
+   "rule": "named",
+   "codes": [
+    "CINEMA"
+   ],
+   "candidate": null,
+   "page": 264,
+   "above": [
+    "Course taught in English. Focuses on the history, culture, traditions,",
+    "and arts of China and its people. The contribution of China to world",
+    "civilization is examined.",
+    "CINEMA (CINEMA)"
+   ],
+   "first_course": "CINEMA 001 - INTRODUCTION TO MOTION PICTURE"
+  },
+  {
+   "code": "CIS",
+   "heading": "Computer Information Systems (CIS)",
+   "heading_printed": "COMPUTER INFORMATION SYSTEMS (CIS)",
+   "rule": "caps",
+   "codes": [
+    "CIS"
+   ],
+   "candidate": null,
+   "page": 268,
+   "above": [
+    "Students must be employed or volunteering/interning in order to",
+    "participate in program.",
+    "COMPUTER INFORMATION SYSTEMS",
+    "(CIS)"
+   ],
+   "first_course": "CIS 101 - INTRODUCTION TO COMPUTERS AND THEIR"
+  },
+  {
+   "code": "CO TECH",
+   "heading": "Computer Technology",
+   "heading_printed": "COMPUTER TECHNOLOGY",
+   "rule": "named",
+   "codes": [
+    "CO TECH"
+   ],
+   "candidate": null,
+   "page": 270,
+   "above": [
+    "of a subject of special interest in the field of Computer Science.",
+    "Requires consultation with the instructor on a weekly basis, plus",
+    "independent work.",
+    "COMPUTER TECHNOLOGY (CO TECH)"
+   ],
+   "first_course": "CO TECH 002 - INTRODUCTION TO ELECTRONICS"
+  },
+  {
+   "code": "COLLEGE",
+   "heading": "College Studies",
+   "heading_printed": "COLLEGE STUDIES",
+   "rule": "named",
+   "codes": [
+    "COLLEGE"
+   ],
+   "candidate": null,
+   "page": 270,
+   "above": [
+    "nological implications of electronics. They learn implementation of",
+    "electronic circuits on breadboards and circuit simulation using soft-",
+    "ware applications.",
+    "COLLEGE STUDIES (COLLEGE)"
+   ],
+   "first_course": "COLLEGE 101 - NAVIGATING YOUR PATH THROUGH"
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication Studies",
+   "heading_printed": "COMMUNICATION STUDIES",
+   "rule": "named",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "page": 270,
+   "above": [
+    "essential information, strategies, and tools that will help overcome",
+    "real and perceived obstacles and successfully navigate their tran -",
+    "sition to college.",
+    "COMMUNICATION STUDIES (COMM)"
+   ],
+   "first_course": "COMM 100 - INTRODUCTION TO COMMUNICATION"
+  },
+  {
+   "code": "COOP ED",
+   "heading": "Coop Ed",
+   "heading_printed": "COOP ED",
+   "rule": "named",
+   "codes": [
+    "COOP ED"
+   ],
+   "candidate": null,
+   "page": 272,
+   "above": [
+    "speeches.",
+    "LACC 2026-2027 COLLEGE CATALOG 271",
+    "CREDIT COURSES",
+    "COOP ED (COOP ED)"
+   ],
+   "first_course": "COOP ED 195 - WORK EXPERIENCE - GENERAL I"
+  },
+  {
+   "code": "CORR",
+   "heading": "Corrections",
+   "heading_printed": "CORRECTIONS",
+   "rule": "named",
+   "codes": [
+    "CORR"
+   ],
+   "candidate": null,
+   "page": 272,
+   "above": [
+    "ence need not be related to the student's educational goals. Stu -",
+    "dents must work 225 paid hours or 18 volunteer hours during the",
+    "semester.",
+    "CORRECTIONS (CORR)"
+   ],
+   "first_course": "CORR 001 - INTRODUCTION TO CORRECTIONS"
+  },
+  {
+   "code": "COUNSEL",
+   "heading": "Counseling",
+   "heading_printed": "COUNSELING",
+   "rule": "named",
+   "codes": [
+    "COUNSEL"
+   ],
+   "candidate": null,
+   "page": 272,
+   "above": [
+    "critical examination of the types of correctional institutions and the",
+    "clients housed in each institution, and an examination of contem -",
+    "porary correctional issues.",
+    "COUNSELING (COUNSEL)"
+   ],
+   "first_course": "COUNSEL 020 - POST-SECONDARY EDUCATION: THE"
+  },
+  {
+   "code": "CS",
+   "heading": "Computer Science",
+   "heading_printed": "COMPUTER SCIENCE",
+   "rule": "named",
+   "codes": [
+    "CS"
+   ],
+   "candidate": null,
+   "page": 273,
+   "above": [
+    "assessment techniques.",
+    "272 LA CC 2026-2027 COLLEGE CATALOG",
+    "CREDIT COURSES",
+    "COMPUTER SCIENCE (CS)"
+   ],
+   "first_course": "CS 101 - INTRODUCTION TO COMPUTER SCIENCE"
+  },
+  {
+   "code": "DANCEST",
+   "heading": "Dance Studies",
+   "heading_printed": "DANCE STUDIES",
+   "rule": "named",
+   "codes": [
+    "DANCEST"
+   ],
+   "candidate": null,
+   "page": 275,
+   "above": [
+    "pointers, dynamic data types, and linked lists.",
+    "274 LA CC 2026-2027 COLLEGE CATALOG",
+    "CREDIT COURSES",
+    "DANCE STUDIES (DANCEST)"
+   ],
+   "first_course": "DANCEST 185 - DIRECTED STUDY - DANCE"
+  },
+  {
+   "code": "DANCETQ",
+   "heading": "Dance Techniques",
+   "heading_printed": "DANCE TECHNIQUES",
+   "rule": "named",
+   "codes": [
+    "DANCETQ"
+   ],
+   "candidate": null,
+   "page": 275,
+   "above": [
+    "movement development, injury prevention, conditioning and train -",
+    "ing and somatic technique modalities, (Pilates, dance fitness, for",
+    "example).",
+    "DANCE TECHNIQUES (DANCETQ)"
+   ],
+   "first_course": "DANCETQ 111 - BALLET TECHNIQUES I"
+  },
+  {
+   "code": "DEN TEK",
+   "heading": "Dental Technology",
+   "heading_printed": "DENTAL TECHNOLOGY",
+   "rule": "named",
+   "codes": [
+    "DEN TEK"
+   ],
+   "candidate": null,
+   "page": 276,
+   "above": [
+    "of different sources including: Pilates, gyrotonics, Franklin Method,",
+    "Swissphysio ball work, myo fascial rollers, somatic body therapies,",
+    "and other dance conditioning practices.",
+    "DENTAL TECHNOLOGY (DEN TEK)"
+   ],
+   "first_course": "DEN TEK 100 - INTRODUCTION TO THE DENTAL"
+  },
+  {
+   "code": "DNCESPC",
+   "heading": "Dance Specialties",
+   "heading_printed": "DANCE SPECIALTIES",
+   "rule": "named",
+   "codes": [
+    "DNCESPC"
+   ],
+   "candidate": null,
+   "page": 278,
+   "above": [
+    "tial dentures and implant over dentures. Students complete clin -",
+    "ically acceptable prosthetic restorations, where the coordination",
+    "between function and esthetics is fully maximized.",
+    "DANCE SPECIALTIES (DNCESPC)"
+   ],
+   "first_course": "DNCESPC 311 - FLAMENCO AND SPANISH DANCE"
+  },
+  {
+   "code": "E.S.L.",
+   "heading": "(E.s.l.)",
+   "heading_printed": "(E.S.L.)",
+   "rule": "caps",
+   "codes": [
+    "E.S.L."
+   ],
+   "candidate": null,
+   "page": 279,
+   "above": [
+    "Students learn basic tap dance steps and combinations, terminol -",
+    "ogy, music, and appreciation of dance as an art form.",
+    "ENGLISH AS A SECOND LANGUAGE 12",
+    "(E.S.L.)"
+   ],
+   "first_course": "E.S.L. 003A - COLLEGE ESL III: WRITING AND GRAMMAR"
+  },
+  {
+   "code": "EARTH",
+   "heading": "Earth Science",
+   "heading_printed": "EARTH SCIENCE",
+   "rule": "named",
+   "codes": [
+    "EARTH"
+   ],
+   "candidate": null,
+   "page": 280,
+   "above": [
+    "reading, cogent thinking, and research strategies. An additional",
+    "focus is integrated grammar and academic vocabulary instruction",
+    "based on needs typical of second language learners.",
+    "EARTH SCIENCE (EARTH)"
+   ],
+   "first_course": "EARTH 001 - EARTH SCIENCE"
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "ECONOMICS",
+   "rule": "named",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "page": 280,
+   "above": [
+    "and interactions between Earth's physical and chemical systems",
+    "that include the tectonic cycle, rock cycle, hydrologic cycle, weather,",
+    "and climate.",
+    "ECONOMICS (ECON)"
+   ],
+   "first_course": "ECON C2001 - PRINCIPLES OF MICROECONOMICS"
+  },
+  {
+   "code": "EDUC",
+   "heading": "Education",
+   "heading_printed": "EDUCATION",
+   "rule": "named",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "page": 280,
+   "above": [
+    "tional economy to understand national income, unemployment,",
+    "inflation, economic growth, inequality, the financial system, and",
+    "monetary, fiscal, and other economic policies.",
+    "EDUCATION (EDUC)"
+   ],
+   "first_course": "EDUC 001 - INTRODUCTION TO TEACHING"
+  },
+  {
+   "code": "EGD TEK",
+   "heading": "Engineering Graphics & Design (Egd Tek)",
+   "heading_printed": "ENGINEERING GRAPHICS & DESIGN (EGD TEK)",
+   "rule": "caps",
+   "codes": [
+    "EGD TEK"
+   ],
+   "candidate": null,
+   "page": 280,
+   "above": [
+    "impact of government policies on schools and children, and the var-",
+    "ious perspectives on curriculum and instruction.",
+    "ENGINEERING GRAPHICS & DESIGN",
+    "(EGD TEK)"
+   ],
+   "first_course": "EGD TEK 101 - ENGINEERING GRAPHICS WITH CAD"
+  },
+  {
+   "code": "ENG ELC",
+   "heading": "Engineering, Electrical",
+   "heading_printed": "ENGINEERING, ELECTRICAL",
+   "rule": "named",
+   "codes": [
+    "ENG ELC"
+   ],
+   "candidate": null,
+   "page": 280,
+   "above": [
+    "sioning and tolerancing (GD&T); and reverse engineering. Lab work",
+    "includes hand sketching and the use of two- and three-dimensional",
+    "CAD software.",
+    "ENGINEERING, ELECTRICAL (ENG ELC)"
+   ],
+   "first_course": "ENG ELC 220 - ELECTRICAL CIRCUITS I"
+  },
+  {
+   "code": "ENG GEN",
+   "heading": "Engineering, General",
+   "heading_printed": "ENGINEERING, GENERAL",
+   "rule": "named",
+   "codes": [
+    "ENG GEN"
+   ],
+   "candidate": null,
+   "page": 281,
+   "above": [
+    "and function generators. Students also use circuit simulation soft -",
+    "ware for DC operating point, transient, AC steady state, and fre -",
+    "quency response analysis.",
+    "ENGINEERING, GENERAL (ENG GEN)"
+   ],
+   "first_course": "ENG GEN 101 - INTRODUCTION TO SCIENCE,"
+  },
+  {
+   "code": "ENGL",
+   "heading": "English (CCN) (Engl)",
+   "heading_printed": "ENGLISH (CCN) (ENGL)",
+   "rule": "caps",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "page": 281,
+   "above": [
+    "bonding, crystalline structures, phases and phase diagrams, met -",
+    "als, polymers, ceramics, composites, mechanical deformation,",
+    "fracture, corrosion, and electrical and magnetic properties.",
+    "ENGLISH (CCN) (ENGL)"
+   ],
+   "first_course": "ENGL C1000 - ACADEMIC READING AND WRITING"
+  },
+  {
+   "code": "ENGLISH",
+   "heading": "English",
+   "heading_printed": "ENGLISH",
+   "rule": "named",
+   "codes": [
+    "ENGLISH"
+   ],
+   "candidate": null,
+   "page": 281,
+   "above": [
+    "ing writing skills and research strategies developed in ENGL C1000",
+    "Academic Reading and Writing (or C-ID ENGL 100) or similar first",
+    "year college writing course.",
+    "ENGLISH (ENGLISH)"
+   ],
+   "first_course": "ENGLISH 078 - WRITING MEMOIR"
+  },
+  {
+   "code": "ENV SCI",
+   "heading": "Environmental Science",
+   "heading_printed": "ENVIRONMENTAL SCIENCE",
+   "rule": "named",
+   "codes": [
+    "ENV SCI"
+   ],
+   "candidate": null,
+   "page": 284,
+   "above": [
+    "on the use of mythology, science fiction by scientists and non sci-",
+    "entists, philosophically oriented science fiction, and science fiction",
+    "as fantasy and escape literature.",
+    "ENVIRONMENTAL SCIENCE (ENV SCI)"
+   ],
+   "first_course": "ENV SCI 001 - INTRODUCTION TO ENVIRONMENTAL"
+  },
+  {
+   "code": "ESL NC",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "ESL NC"
+   ],
+   "candidate": "NC)",
+   "page": 344,
+   "above": [
+    "expressions, and solving non linear equations such as polynomial,",
+    "rational, radical, exponential, and logarithmic.",
+    "ENGLISH SECOND LANGUAGE - NC (ESL",
+    "NC)"
+   ],
+   "first_course": "ESL NC 001CE - ENGLISH AS A SECOND LANGUAGE -"
+  },
+  {
+   "code": "ESLCVCS",
+   "heading": "Civics",
+   "heading_printed": "CIVICS",
+   "rule": "named",
+   "codes": [
+    "ESLCVCS"
+   ],
+   "candidate": null,
+   "page": 345,
+   "above": [
+    "thinking, cultural awareness, teamwork, and autonomous learning",
+    "strategies.",
+    "ENGLISH AS A SECOND LANGUAGE",
+    "CIVICS (ESLCVCS)"
+   ],
+   "first_course": "ESLCVCS 010CE - ESL AND CIVICS I"
+  },
+  {
+   "code": "FAM &CS",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "FAM &CS"
+   ],
+   "candidate": "Family and Consumer Studies (Fam",
+   "page": 284,
+   "above": [
+    "ation and use, pollution, resources, and global climate change are",
+    "discussed.",
+    "FAMILY AND CONSUMER STUDIES (FAM",
+    "&CS)"
+   ],
+   "first_course": "FAM &CS 021 - NUTRITION"
+  },
+  {
+   "code": "FINANCE",
+   "heading": "Finance",
+   "heading_printed": "FINANCE",
+   "rule": "named",
+   "codes": [
+    "FINANCE"
+   ],
+   "candidate": null,
+   "page": 285,
+   "above": [
+    "ated according to state and federal regulatory guidelines. Student",
+    "shadows a Dietetic Service Supervisor and increasingly contributes",
+    "as a supervised member of the health care team.",
+    "FINANCE (FINANCE)"
+   ],
+   "first_course": "FINANCE 001 - PRINCIPLES OF FINANCE"
+  },
+  {
+   "code": "FRENCH",
+   "heading": "French",
+   "heading_printed": "FRENCH",
+   "rule": "named",
+   "codes": [
+    "FRENCH"
+   ],
+   "candidate": null,
+   "page": 285,
+   "above": [
+    "This course is designed to provide an understanding of the basic",
+    "functions of banking and a working knowledge of the operation of",
+    "the bank.",
+    "FRENCH (FRENCH)"
+   ],
+   "first_course": "FRENCH 001 - ELEMENTARY FRENCH I"
+  },
+  {
+   "code": "GAD",
+   "heading": "Game Art & Design",
+   "heading_printed": "GAME ART & DESIGN",
+   "rule": "named",
+   "codes": [
+    "GAD"
+   ],
+   "candidate": null,
+   "page": 286,
+   "above": [
+    "Course taught in English. Focuses on the history, culture, traditions,",
+    "and arts of France and its people. The contribution of France to",
+    "world civilization is examined.",
+    "GAME ART & DESIGN (GAD)"
+   ],
+   "first_course": "GAD 101 - INTRODUCTION TO GAME DESIGN"
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "GEOGRAPHY",
+   "rule": "named",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "page": 287,
+   "above": [
+    "effects houses and game design companies. Students take a lead",
+    "role in development work on projects such as animated shorts,",
+    "interactive content, and video games.",
+    "GEOGRAPHY (GEOG)"
+   ],
+   "first_course": "GEOG 001 - PHYSICAL GEOGRAPHY"
+  },
+  {
+   "code": "GEOLOGY",
+   "heading": "Geology",
+   "heading_printed": "GEOLOGY",
+   "rule": "named",
+   "codes": [
+    "GEOLOGY"
+   ],
+   "candidate": null,
+   "page": 288,
+   "above": [
+    "environments.",
+    "LACC 2026-2027 COLLEGE CATALOG 287",
+    "CREDIT COURSES",
+    "GEOLOGY (GEOLOGY)"
+   ],
+   "first_course": "GEOLOGY 001 - PHYSICAL GEOLOGY"
+  },
+  {
+   "code": "HEALTH",
+   "heading": "Health",
+   "heading_printed": "HEALTH",
+   "rule": "named",
+   "codes": [
+    "HEALTH"
+   ],
+   "candidate": null,
+   "page": 288,
+   "above": [
+    "Precambrian (Archean and Proterozoic Eons) geology; Phanerozoic",
+    "(Paleozoic, Mesozoic, and Cenozoic Eras) geology; and Hominin fos-",
+    "sils. Field trips may be taken.",
+    "HEALTH (HEALTH)"
+   ],
+   "first_course": "HEALTH 002 - HEALTH AND FITNESS"
+  },
+  {
+   "code": "HIST",
+   "heading": "History (CCN) (Hist)",
+   "heading_printed": "HISTORY (CCN) (HIST)",
+   "rule": "caps",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "page": 289,
+   "above": [
+    "der shape health epidemics and policy development. Fundamental",
+    "theories to advocate for health and social justice will be explored,",
+    "and community organizing approaches will be practiced.",
+    "HISTORY (CCN) (HIST)"
+   ],
+   "first_course": "HIST C1001 - UNITED STATES HISTORY TO 1877"
+  },
+  {
+   "code": "HISTORY",
+   "heading": "History",
+   "heading_printed": "HISTORY",
+   "rule": "named",
+   "codes": [
+    "HISTORY"
+   ],
+   "candidate": null,
+   "page": 290,
+   "above": [
+    "to historical reasoning skills.",
+    "LACC 2026-2027 COLLEGE CATALOG 289",
+    "CREDIT COURSES",
+    "HISTORY (HISTORY)"
+   ],
+   "first_course": "HISTORY 005 - HISTORY OF THE AMERICAS I"
+  },
+  {
+   "code": "HUMAN",
+   "heading": "Humanities",
+   "heading_printed": "HUMANITIES",
+   "rule": "named",
+   "codes": [
+    "HUMAN"
+   ],
+   "candidate": null,
+   "page": 290,
+   "above": [
+    "era of European expansion in the sixteenth century to the present.",
+    "Note: HIST 086 is not a prerequisite for this course. Students may",
+    "take HIST 087 without taking HIST 086.",
+    "HUMANITIES (HUMAN)"
+   ],
+   "first_course": "HUMAN 001 - CULTURAL PATTERNS OF WESTERN"
+  },
+  {
+   "code": "INTBUS",
+   "heading": "International Business",
+   "heading_printed": "INTERNATIONAL BUSINESS",
+   "rule": "named",
+   "codes": [
+    "INTBUS"
+   ],
+   "candidate": null,
+   "page": 291,
+   "above": [
+    "these art forms, promoting a deeper understanding of the human -",
+    "ities and applied aesthetics. Students learn how different cultures",
+    "use art to convey their values and ideas through comparison.",
+    "INTERNATIONAL BUSINESS (INTBUS)"
+   ],
+   "first_course": "INTBUS 001 - INTERNATIONAL TRADE"
+  },
+  {
+   "code": "JAPAN",
+   "heading": "Japanese",
+   "heading_printed": "JAPANESE",
+   "rule": "named",
+   "codes": [
+    "JAPAN"
+   ],
+   "candidate": null,
+   "page": 291,
+   "above": [
+    "make contact, and how to sell the product. Variables include: cul-",
+    "ture, trade customs, politics, climate, wealth, business and govern-",
+    "ment structures, and international law.",
+    "JAPANESE (JAPAN)"
+   ],
+   "first_course": "JAPAN 001 - ELEMENTARY JAPANESE I"
+  },
+  {
+   "code": "JOURNAL",
+   "heading": "Journalism",
+   "heading_printed": "JOURNALISM",
+   "rule": "named",
+   "codes": [
+    "JOURNAL"
+   ],
+   "candidate": null,
+   "page": 292,
+   "above": [
+    "and culture, as the ways in which these products interact transna -",
+    "tionally and attract global audience and fandom Open to all stu -",
+    "dents. Course taught in English.",
+    "JOURNALISM (JOURNAL)"
+   ],
+   "first_course": "JOURNAL 101 - COLLECTING AND WRITING NEWS"
+  },
+  {
+   "code": "KIN",
+   "heading": "Kinesiology",
+   "heading_printed": "KINESIOLOGY",
+   "rule": "named",
+   "codes": [
+    "KIN"
+   ],
+   "candidate": null,
+   "page": 294,
+   "above": [
+    "Transfer Credit: CSU",
+    "The student learns to work independently and produce content in",
+    "Directed Study with the guidance of a supervising instructor.",
+    "KINESIOLOGY (KIN)"
+   ],
+   "first_course": "KIN 045 - ADAPTED FITNESS"
+  },
+  {
+   "code": "KIN ATH",
+   "heading": "Kinesiology Athletics",
+   "heading_printed": "KINESIOLOGY ATHLETICS",
+   "rule": "named",
+   "codes": [
+    "KIN ATH"
+   ],
+   "candidate": null,
+   "page": 298,
+   "above": [
+    "shots. Students will focus their learning on individual and team",
+    "strategies. They will practice increasing their court coverage & posi-",
+    "tioning through drills and competition.",
+    "KINESIOLOGY ATHLETICS (KIN ATH)"
+   ],
+   "first_course": "KIN ATH 504 - INTERCOLLEGIATE ATHLETICS-BASKETBALL"
+  },
+  {
+   "code": "KIN MAJ",
+   "heading": "Kinesiology Major",
+   "heading_printed": "KINESIOLOGY MAJOR",
+   "rule": "named",
+   "codes": [
+    "KIN MAJ"
+   ],
+   "candidate": null,
+   "page": 299,
+   "above": [
+    "physical fitness and skills of intercollegiate basketball. The course",
+    "includes instruction, demonstration and practice of strength exer -",
+    "cises and basketball skills.",
+    "KINESIOLOGY MAJOR (KIN MAJ)"
+   ],
+   "first_course": "KIN MAJ 100 - INTRODUCTION TO KINESIOLOGY"
+  },
+  {
+   "code": "KOREAN",
+   "heading": "Korean",
+   "heading_printed": "KOREAN",
+   "rule": "named",
+   "codes": [
+    "KOREAN"
+   ],
+   "candidate": null,
+   "page": 302,
+   "above": [
+    "and understanding to prepare for the National Strength and Condi-",
+    "tioning Association's Tactical Strength and Conditioning Facilitator",
+    "(TSAC F) examination.",
+    "KOREAN (KOREAN)"
+   ],
+   "first_course": "KOREAN 001 - ELEMENTARY KOREAN I"
+  },
+  {
+   "code": "LAW",
+   "heading": "Law",
+   "heading_printed": "LAW",
+   "rule": "named",
+   "codes": [
+    "LAW"
+   ],
+   "candidate": null,
+   "page": 303,
+   "above": [
+    "and neoliberalism. The historical representations in films will be",
+    "analyzed with attention to socio political and cultural implications.",
+    "Open to all students. Course taught in English.",
+    "LAW (LAW)"
+   ],
+   "first_course": "LAW 001 - BUSINESS LAW I"
+  },
+  {
+   "code": "LIB SCI",
+   "heading": "Library Science",
+   "heading_printed": "LIBRARY SCIENCE",
+   "rule": "named",
+   "codes": [
+    "LIB SCI"
+   ],
+   "candidate": null,
+   "page": 305,
+   "above": [
+    "documents from opposing parties and non parties, index and orga-",
+    "nize documents as they are received, utilize computer assisted liti-",
+    "gation support programs, and use documents at trial.",
+    "LIBRARY SCIENCE (LIB SCI)"
+   ],
+   "first_course": "LIB SCI 101 - COLLEGE RESEARCH SKILLS"
+  },
+  {
+   "code": "LING",
+   "heading": "Linguistics",
+   "heading_printed": "LINGUISTICS",
+   "rule": "named",
+   "codes": [
+    "LING"
+   ],
+   "candidate": null,
+   "page": 305,
+   "above": [
+    "egies to find, organize, evaluate, and cite various print and online",
+    "sources effectively and ethically. These skills help students become",
+    "strong researchers and life long learners.",
+    "LINGUISTICS (LING)"
+   ],
+   "first_course": "LING 001 - INTRODUCTION TO LANGUAGE AND"
+  },
+  {
+   "code": "LRNFDTN",
+   "heading": "Learning Foundation",
+   "heading_printed": "LEARNING FOUNDATION",
+   "rule": "named",
+   "codes": [
+    "LRNFDTN"
+   ],
+   "candidate": null,
+   "page": 305,
+   "above": [
+    "observed in everyday life. Students also review related areas such",
+    "as processes of reading, language and the brain, and language and",
+    "thought.",
+    "LEARNING FOUNDATION (LRNFDTN)"
+   ],
+   "first_course": "LRNFDTN 001 - ADAPTED KEYBOARDING"
+  },
+  {
+   "code": "MARKET",
+   "heading": "Marketing",
+   "heading_printed": "MARKETING",
+   "rule": "named",
+   "codes": [
+    "MARKET"
+   ],
+   "candidate": null,
+   "page": 306,
+   "above": [
+    "strengths and weaknesses in order to develop a plan for academic",
+    "success. Eligibility for support services will be determined. Grades",
+    "are awarded on a Pass/No Pass basis.",
+    "MARKETING (MARKET)"
+   ],
+   "first_course": "MARKET 001 - PRINCIPLES OF SELLING"
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "MATHEMATICS",
+   "rule": "named",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "page": 306,
+   "above": [
+    "The student will learn the principles and procedures in retailing,",
+    "including a study of store location, store layout, store organization,",
+    "buying, pricing, stock planning, and retail sales promotion.",
+    "MATHEMATICS (MATH)"
+   ],
+   "first_course": "MATH 120 - PLANE GEOMETRY"
+  },
+  {
+   "code": "MGMT",
+   "heading": "Management",
+   "heading_printed": "MANAGEMENT",
+   "rule": "named",
+   "codes": [
+    "MGMT"
+   ],
+   "candidate": null,
+   "page": 309,
+   "above": [
+    "least squares, singular value decomposition, and applications in",
+    "machine learning. The course also includes hands on exercises and",
+    "projects using programming languages in Python and R.",
+    "MANAGEMENT (MGMT)"
+   ],
+   "first_course": "MGMT 002 - ORGANIZATION AND MANAGEMENT THEORY"
+  },
+  {
+   "code": "MICRO",
+   "heading": "Microbiology",
+   "heading_printed": "MICROBIOLOGY",
+   "rule": "named",
+   "codes": [
+    "MICRO"
+   ],
+   "candidate": null,
+   "page": 309,
+   "above": [
+    "The student will learn the essentials of human resource manage-",
+    "ment. Topics include recruitment, selection, training, appraisals,",
+    "compensations, benefits, labor relations, and collective bargaining.",
+    "MICROBIOLOGY (MICRO)"
+   ],
+   "first_course": "MICRO 001 - INTRODUCTORY MICROBIOLOGY"
+  },
+  {
+   "code": "MIT",
+   "heading": "Manufacturing Industrial Tech (Mit)",
+   "heading_printed": "MANUFACTURING INDUSTRIAL TECH (MIT)",
+   "rule": "caps",
+   "codes": [
+    "MIT"
+   ],
+   "candidate": null,
+   "page": 310,
+   "above": [
+    "logical laboratory with emphasis on safety and proper use and care",
+    "of laboratory equipment and supplies.",
+    "MANUFACTURING INDUSTRIAL TECH",
+    "(MIT)"
+   ],
+   "first_course": "MIT 220 - INTRODUCTION TO ROBOTICS"
+  },
+  {
+   "code": "MUSIC",
+   "heading": "Music",
+   "heading_printed": "MUSIC",
+   "rule": "named",
+   "codes": [
+    "MUSIC"
+   ],
+   "candidate": null,
+   "page": 310,
+   "above": [
+    "wiring, soldering, basic programming, and testing. Students also",
+    "learn to apply a methodical design process including documenta -",
+    "tion and presentation.",
+    "MUSIC (MUSIC)"
+   ],
+   "first_course": "MUSIC 101 - FUNDAMENTALS OF MUSIC"
+  },
+  {
+   "code": "NRS HCA",
+   "heading": "Nursing Health Care Ancillaries (Nrs Hca)",
+   "heading_printed": "NURSING HEALTH CARE ANCILLARIES (NRS HCA)",
+   "rule": "caps",
+   "codes": [
+    "NRS HCA"
+   ],
+   "candidate": null,
+   "page": 318,
+   "above": [
+    "songs in a variety of small combo settings. Emphasis is placed on",
+    "presentation and live performance.",
+    "NURSING HEALTH CARE ANCILLARIES",
+    "(NRS HCA)"
+   ],
+   "first_course": "NRS HCA 399A - NURSE ASSISTANT TRAINING PROGRAM"
+  },
+  {
+   "code": "OLD ADL",
+   "heading": "Older Adults",
+   "heading_printed": "OLDER ADULTS",
+   "rule": "named",
+   "codes": [
+    "OLD ADL"
+   ],
+   "candidate": null,
+   "page": 347,
+   "above": [
+    "for participation in CASAS and EL Civics assessments. This course",
+    "is part of a Certificate of Competency program. This class is the sec-",
+    "ond of a two course sequence.",
+    "OLDER ADULTS (OLD ADL)"
+   ],
+   "first_course": "OLD ADL 042CE - CREATIVE ART FOR SENIORS"
+  },
+  {
+   "code": "PARENT",
+   "heading": "Parenting",
+   "heading_printed": "PARENTING",
+   "rule": "named",
+   "codes": [
+    "PARENT"
+   ],
+   "candidate": null,
+   "page": 347,
+   "above": [
+    "backgrounds, self advocacy, and health and wellness. Students will",
+    "share life experiences, compare events through reminiscence, and",
+    "examine how current events impact their lives.",
+    "PARENTING (PARENT)"
+   ],
+   "first_course": "PARENT 007CE - POSITIVE PARENTING"
+  },
+  {
+   "code": "PHILOS",
+   "heading": "Philosophy",
+   "heading_printed": "PHILOSOPHY",
+   "rule": "named",
+   "codes": [
+    "PHILOS"
+   ],
+   "candidate": null,
+   "page": 318,
+   "above": [
+    "tion of this course, the student will be eligible to apply for certifica-",
+    "tion and to take the State of California Certified Nurse Assistant",
+    "examination.",
+    "PHILOSOPHY (PHILOS)"
+   ],
+   "first_course": "PHILOS 001 - INTRODUCTION TO PHILOSOPHY"
+  },
+  {
+   "code": "PHOTO",
+   "heading": "Photography",
+   "heading_printed": "PHOTOGRAPHY",
+   "rule": "named",
+   "codes": [
+    "PHOTO"
+   ],
+   "candidate": null,
+   "page": 319,
+   "above": [
+    "be examined include the meaning of life, the problem of skepticism,",
+    "the mind body problem, artificial intelligence, free will and deter-",
+    "minism, and moral dilemmas.",
+    "PHOTOGRAPHY (PHOTO)"
+   ],
+   "first_course": "PHOTO 007 - EXPLORING DIGITAL PHOTOGRAPHY"
+  },
+  {
+   "code": "PHYS SC",
+   "heading": "Physical Science",
+   "heading_printed": "PHYSICAL SCIENCE",
+   "rule": "named",
+   "codes": [
+    "PHYS SC"
+   ],
+   "candidate": null,
+   "page": 320,
+   "above": [
+    "course is recommended for all cinema and photography majors,",
+    "and is open to graphic artists as well as the general public. PHOTO",
+    "501 and CINEMA 501 cannot both be completed for credit.",
+    "PHYSICAL SCIENCE (PHYS SC)"
+   ],
+   "first_course": "PHYS SC 004 - PHYSICAL SCIENCE AND LABORATORY"
+  },
+  {
+   "code": "PHYSICS",
+   "heading": "Physics",
+   "heading_printed": "PHYSICS",
+   "rule": "named",
+   "codes": [
+    "PHYSICS"
+   ],
+   "candidate": null,
+   "page": 320,
+   "above": [
+    "tricity and magnetism, and relativity, by applying them to analyses",
+    "of popular movie scenes to gauge their level of physical plausibility",
+    "and realism.",
+    "PHYSICS (PHYSICS)"
+   ],
+   "first_course": "PHYSICS 006 - GENERAL PHYSICS I"
+  },
+  {
+   "code": "PHYSIOL",
+   "heading": "Physiology",
+   "heading_printed": "PHYSIOLOGY",
+   "rule": "named",
+   "codes": [
+    "PHYSIOL"
+   ],
+   "candidate": null,
+   "page": 322,
+   "above": [
+    "Transfer Credit: CSU",
+    "Allow students to pursue Directed Study on a contract basis under",
+    "the direction of a supervising instructor.",
+    "PHYSIOLOGY (PHYSIOL)"
+   ],
+   "first_course": "PHYSIOL 001 - INTRODUCTION TO HUMAN PHYSIOLOGY"
+  },
+  {
+   "code": "POL SCI",
+   "heading": "Political Science",
+   "heading_printed": "POLITICAL SCIENCE",
+   "rule": "named",
+   "codes": [
+    "POL SCI"
+   ],
+   "candidate": null,
+   "page": 322,
+   "above": [
+    "system, urinary system, digestive system, endocrine system, and",
+    "reproductive system. This course is primarily intended for Nursing,",
+    "Allied Health, Kinesiology, and other health related majors.",
+    "POLITICAL SCIENCE (POL SCI)"
+   ],
+   "first_course": "POL SCI 002 - INTRODUCTION TO COMPARATIVE POLITICS"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science (CCN) (Pols)",
+   "heading_printed": "POLITICAL SCIENCE (CCN) (POLS)",
+   "rule": "caps",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "page": 323,
+   "above": [
+    "produces among nation states, non governmental organizations,",
+    "and societies around the world with their particular ethnic, cultural",
+    "and religious groups.",
+    "POLITICAL SCIENCE (CCN) (POLS)"
+   ],
+   "first_course": "POLS C1000 - AMERICAN GOVERNMENT AND POLITICS"
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology (CCN) (Psyc)",
+   "heading_printed": "PSYCHOLOGY (CCN) (PSYC)",
+   "rule": "caps",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "page": 323,
+   "above": [
+    "structure, and operation of governing institutions, civil liberties and",
+    "civil rights, political behaviors, political issues, and public policy",
+    "using political science theory and methodology.",
+    "PSYCHOLOGY (CCN) (PSYC)"
+   ],
+   "first_course": "PSYC C1000 - INTRODUCTION TO PSYCHOLOGY"
+  },
+  {
+   "code": "PSYCH",
+   "heading": "Psychology",
+   "heading_printed": "PSYCHOLOGY",
+   "rule": "named",
+   "codes": [
+    "PSYCH"
+   ],
+   "candidate": null,
+   "page": 323,
+   "above": [
+    "the mind and behavior. Students focus on theories and concepts of",
+    "biological, cognitive, developmental, environmental, social, and cul-",
+    "tural influences; their applications; and their research foundations.",
+    "PSYCHOLOGY (PSYCH)"
+   ],
+   "first_course": "PSYCH 002 - BIOLOGICAL PSYCHOLOGY"
+  },
+  {
+   "code": "PUB REL",
+   "heading": "Public Relations",
+   "heading_printed": "PUBLIC RELATIONS",
+   "rule": "named",
+   "codes": [
+    "PUB REL"
+   ],
+   "candidate": null,
+   "page": 324,
+   "above": [
+    "fies half of the fieldwork hours (75) required by respective certifying",
+    "boards, in addition to the classroom hours. Internship hours must",
+    "be completed during the semester of enrollment",
+    "PUBLIC RELATIONS (PUB REL)"
+   ],
+   "first_course": "PUB REL 001 - PRINCIPLES OF PUBLIC RELATIONS"
+  },
+  {
+   "code": "RAD TEC",
+   "heading": "Radiologic Technology",
+   "heading_printed": "RADIOLOGIC TECHNOLOGY",
+   "rule": "named",
+   "codes": [
+    "RAD TEC"
+   ],
+   "candidate": null,
+   "page": 324,
+   "above": [
+    "an organization's success and examines how organizations can",
+    "ethically and systematically build productive, mutually beneficial",
+    "relationships with such groups.",
+    "RADIOLOGIC TECHNOLOGY (RAD TEC)"
+   ],
+   "first_course": "RAD TEC 103 - RADIOGRAPHIC ANATOMY AND"
+  },
+  {
+   "code": "REAL ES",
+   "heading": "Real Estate",
+   "heading_printed": "REAL ESTATE",
+   "rule": "named",
+   "codes": [
+    "REAL ES"
+   ],
+   "candidate": null,
+   "page": 326,
+   "above": [
+    "netic resonance imaging, computed tomography, nuclear medicine,",
+    "ultrasound, and radiation therapy. The LACC Clinical Coordinator",
+    "will serve as a resource for hospital based preceptor experience.",
+    "REAL ESTATE (REAL ES)"
+   ],
+   "first_course": "REAL ES 001 - REAL ESTATE PRINCIPLES"
+  },
+  {
+   "code": "REGNRSG",
+   "heading": "Nursing, Registered",
+   "heading_printed": "NURSING, REGISTERED",
+   "rule": "named",
+   "codes": [
+    "REGNRSG"
+   ],
+   "candidate": null,
+   "page": 327,
+   "above": [
+    "omy and its influence upon the real estate market including the fed-",
+    "eral reserve system, taxation and land use controls including zon -",
+    "ing, planning, and fair housing legislation.",
+    "NURSING, REGISTERED (REGNRSG)"
+   ],
+   "first_course": "REGNRSG 103 - NURSING PHARMACOLOGY"
+  },
+  {
+   "code": "RUSSIAN",
+   "heading": "Russian",
+   "heading_printed": "RUSSIAN",
+   "rule": "named",
+   "codes": [
+    "RUSSIAN"
+   ],
+   "candidate": null,
+   "page": 332,
+   "above": [
+    "ences, etc.",
+    "LACC 2026-2027 COLLEGE CATALOG 331",
+    "CREDIT COURSES",
+    "RUSSIAN (RUSSIAN)"
+   ],
+   "first_course": "RUSSIAN 001 - ELEMENTARY RUSSIAN I"
+  },
+  {
+   "code": "SOC",
+   "heading": "Sociology",
+   "heading_printed": "SOCIOLOGY",
+   "rule": "named",
+   "codes": [
+    "SOC"
+   ],
+   "candidate": null,
+   "page": 332,
+   "above": [
+    "Open to all students. Course taught in English. Focuses on the his -",
+    "tory, culture, traditions, and arts of Russia and its people. The con-",
+    "tribution of Russia to world civilization is examined.",
+    "SOCIOLOGY (SOC)"
+   ],
+   "first_course": "SOC 001 - INTRODUCTION TO SOCIOLOGY"
+  },
+  {
+   "code": "SPANISH",
+   "heading": "Spanish",
+   "heading_printed": "SPANISH",
+   "rule": "named",
+   "codes": [
+    "SPANISH"
+   ],
+   "candidate": null,
+   "page": 333,
+   "above": [
+    "esis testing; and correlation and linear regression. Students apply",
+    "technology to statistical analysis, including in the interpretation of",
+    "the relevance of the statistical findings.",
+    "SPANISH (SPANISH)"
+   ],
+   "first_course": "SPANISH 001 - ELEMENTARY SPANISH I"
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "STATISTICS",
+   "rule": "named",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "page": 334,
+   "above": [
+    "ice Mid Level, and introduces Spanish/Latin American culture.",
+    "SPANISH 021 and SPANISH 022 together are equivalent to SPAN-",
+    "ISH 001.",
+    "STATISTICS (STAT)"
+   ],
+   "first_course": "STAT C1000 - INTRODUCTION TO STATISTICS"
+  },
+  {
+   "code": "SUPV",
+   "heading": "Supervision",
+   "heading_printed": "SUPERVISION",
+   "rule": "named",
+   "codes": [
+    "SUPV"
+   ],
+   "candidate": null,
+   "page": 334,
+   "above": [
+    "tation of the relevance of the statistical findings. Students apply",
+    "methods and processes to applications using data from a broad",
+    "range of disciplines. This course has embedded support.",
+    "SUPERVISION (SUPV)"
+   ],
+   "first_course": "SUPV 001 - ELEMENTS OF SUPERVISION"
+  },
+  {
+   "code": "T V",
+   "heading": "Television",
+   "heading_printed": "TELEVISION",
+   "rule": "named",
+   "codes": [
+    "T V"
+   ],
+   "candidate": null,
+   "page": 334,
+   "above": [
+    "to the college's certificates in Business Administration, Marketing,",
+    "and Management, and the Western Association of Food Chains'",
+    "Marketing Management Certificate.",
+    "TELEVISION (T V)"
+   ],
+   "first_course": "T V 001 - EVOLUTION OF TELEVISION"
+  },
+  {
+   "code": "THEATER",
+   "heading": "Theater",
+   "heading_printed": "THEATER",
+   "rule": "named",
+   "codes": [
+    "THEATER"
+   ],
+   "candidate": null,
+   "page": 335,
+   "above": [
+    "tion study project as agreed upon by the student and a supervising",
+    "instructor. The time and depth of the project will align with earning",
+    "1 unit of credit.",
+    "THEATER (THEATER)"
+   ],
+   "first_course": "THEATER 100 - INTRODUCTION TO THE THEATER"
+  },
+  {
+   "code": "TUTOR",
+   "heading": "Supervised Learning Assistance (Tutor)",
+   "heading_printed": "SUPERVISED LEARNING ASSISTANCE (TUTOR)",
+   "rule": "caps",
+   "codes": [
+    "TUTOR"
+   ],
+   "candidate": null,
+   "page": 347,
+   "above": [
+    "encouraged to take an active role to promote academic success,",
+    "health and safety, and social well being of their children.",
+    "SUPERVISED LEARNING ASSISTANCE",
+    "(TUTOR)"
+   ],
+   "first_course": "TUTOR 001T - SUPERVISED TUTORING"
+  },
+  {
+   "code": "VOC ED",
+   "heading": "Vocational Education",
+   "heading_printed": "VOCATIONAL EDUCATION",
+   "rule": "named",
+   "codes": [
+    "VOC ED"
+   ],
+   "candidate": null,
+   "page": 347,
+   "above": [
+    "improved understanding of and ability to perform their course -",
+    "work. Skills attained complement classroom learning and college",
+    "success.",
+    "VOCATIONAL EDUCATION (VOC ED)"
+   ],
+   "first_course": "VOC ED 002CE - IN-HOME SUPPORTIVE SERVICE"
+  }
+ ]
+}

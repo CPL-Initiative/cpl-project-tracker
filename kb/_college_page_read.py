@@ -451,6 +451,76 @@ CAPTURE_LINES_MAX = 20000
 PDF_PAGE_CAP_MAX = 1000
 
 
+LINKS_SHOWN = 40               # matching links printed from one page
+LINKS_SHOWN_MAX = 400
+SUBJECT_CONTEXT_BEFORE = 5     # lines kept above a subject's first course
+SUBJECT_CONTEXT_BEFORE_MAX = 12
+
+
+def subject_context(pages: list[str], heading: str, before: int = SUBJECT_CONTEXT_BEFORE,
+                    start_page: int = 1, units: str | None = None, units_inline: str | None = None,
+                    within: int = 3) -> list[dict]:
+    """For each subject code, the lines printed above its first course (S698, #3655).
+
+    A filed catalog keeps each course from its heading line down, so the subject heading above a subject's
+    first course ("ACCOUNTING", "Mathematics (MATH & STAT)") was never kept. `heading` is the file's own
+    course-heading pattern with a `subj` group. The first course of each code is taken in page order from
+    `start_page` (1-based); the non-empty lines above it, up to `before` and never past the course before
+    it, are returned as printed. One entry per code: {subj, page, line, before}.
+
+    `units` and `units_inline` are the file's own units patterns. Where a plan names either, a heading line
+    is a course only when it carries its units (units_inline) or a units line follows within `within` lines,
+    as the filed parse reads it; a code named in a degree table or an honors list ahead of the course
+    descriptions then opens no subject."""
+    rx = re.compile(heading)
+    ux = re.compile(units) if units else None
+    ix = re.compile(units_inline) if units_inline else None
+    before = max(1, min(int(before or SUBJECT_CONTEXT_BEFORE), SUBJECT_CONTEXT_BEFORE_MAX))
+    lines: list[tuple[int, str]] = []
+    for i, text in enumerate(pages or []):
+        if i + 1 < int(start_page or 1):
+            continue
+        for raw in (text or "").splitlines():
+            line = " ".join(raw.split())
+            if line:
+                lines.append((i + 1, line))
+
+    def is_course(k: int) -> bool:
+        if not (ux or ix):
+            return True
+        if ix and ix.search(lines[k][1]):
+            return True
+        return bool(ux) and any(ux.search(lines[n][1]) for n in range(k + 1, min(len(lines), k + 1 + max(1, int(within or 3)))))
+
+    seen: dict = {}
+    out: list[dict] = []
+    tail: list[str] = []          # the non-empty lines since the last course heading, across pages
+    for k, (page, line) in enumerate(lines):
+        m = rx.match(line)
+        if not m or not is_course(k):
+            tail.append(line)
+            tail = tail[-SUBJECT_CONTEXT_BEFORE_MAX:]
+            continue
+        subj = " ".join((m.group("subj") or "").split())
+        if subj and subj not in seen:
+            seen[subj] = True
+            out.append({"subj": subj, "page": page, "line": line, "before": tail[-before:]})
+        tail = []
+    return out
+
+
+def print_subject_context(pages: list[str], spec: dict) -> None:
+    got = subject_context(pages, spec["heading"], spec.get("before") or SUBJECT_CONTEXT_BEFORE,
+                          spec.get("start_page") or 1, units=spec.get("units"),
+                          units_inline=spec.get("units_inline"), within=spec.get("within") or 3)
+    print("--- subject context: the lines above each subject's first course (%d subjects) ---" % len(got))
+    for g in got:
+        print("[subject %s · page %d]" % (g["subj"], g["page"]))
+        for b in g["before"]:
+            print("  | " + b[:200])
+        print("  > " + g["line"][:200])
+
+
 def plan_cap(plan: dict | None, key: str, default: int, ceiling: int) -> int:
     """The plan's own cap for key, between the default and the ceiling; the default when it names none."""
     try:
@@ -671,6 +741,11 @@ def print_page(n: int, rec: dict, pattern: re.Pattern, plan: dict | None = None)
         for f in rec["followed"]:
             print("- %s -> %s" % (f["text"], f["href"]))
     text = rec.get("text") or ""
+    if (plan or {}).get("subject_context") and (rec.get("pages") or text):
+        # A headings read (S698): nothing but the lines above each subject's first course, so a whole
+        # catalog fits the 5,000 lines the GitHub MCP returns of a job log.
+        print_subject_context(rec.get("pages") or [text], plan["subject_context"])
+        return
     if rec.get("kind") == "pdf" and rec.get("pages"):
         plan = plan or {}
         idx = pdf_pages_to_print(rec["pages"], pattern, cap=plan_cap(plan, "pdf_page_cap", PDF_PAGE_CAP, PDF_PAGE_CAP_MAX),
@@ -782,7 +857,10 @@ def main(argv: list[str] | None = None) -> int:
                 records.append(rec)
                 n = len(records)
                 if not parent:
-                    rec["links_shown"] = matching_links(rec.get("links"), target.get("links"))
+                    # "links_cap" (S698): a course-descriptions index lists 90 to 130 subjects, each with its own
+                    # address, and the first 40 left the rest to be guessed from the code (Cerritos /pols/, a 404).
+                    rec["links_shown"] = matching_links(rec.get("links"), target.get("links"),
+                                                        cap=plan_cap(target, "links_cap", LINKS_SHOWN, LINKS_SHOWN_MAX))
                     if target.get("forms"):
                         rec["forms_shown"] = rec.get("forms") or []
                     fol = follow_links(rec.get("links"), target.get("follow"),
