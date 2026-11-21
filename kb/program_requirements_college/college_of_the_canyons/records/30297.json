@@ -46,61 +46,21 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 4,
+   "placed": 13,
    "listed": 13,
-   "share": 0.308,
-   "missing": [
-    "COMS150",
-    "COMS190",
-    "COMS225",
-    "COMS227",
-    "COMS235",
-    "COMS246",
-    "COMS256",
-    "COMS260",
-    "COMS270"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "COMM100",
-     "listed": "COMS100",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "COMM120",
-     "listed": "COMS120",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 10,
+   "count": 1,
    "codes": [
-    "COMM150",
-    "COMM190",
-    "COMM200",
-    "COMM225",
-    "COMM227",
-    "COMM235",
-    "COMM246",
-    "COMM256",
-    "COMM260",
-    "COMM270"
+    "COMM200"
    ],
    "flagged": [
-    "COMM150",
-    "COMM190",
-    "COMM200",
-    "COMM225",
-    "COMM227",
-    "COMM235",
-    "COMM246",
-    "COMM256",
-    "COMM260",
-    "COMM270"
+    "COMM200"
    ],
    "pass": true
   },
@@ -387,7 +347,7 @@
    "No careers are named in the section."
   ]
  },
- "extracted_run": "44769429877",
+ "extracted_run": 44887850515,
  "catalog_year": "2026-2027",
  "source_sha": "aa0abe0b0034cf9b",
  "source_codes": [
@@ -404,5 +364,6 @@
   "COMS260",
   "COMS270"
  ],
- "source_coverage": 0.923
+ "source_coverage": 0.923,
+ "read_run": "44769429877"
 }

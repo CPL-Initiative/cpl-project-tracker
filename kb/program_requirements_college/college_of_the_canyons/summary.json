@@ -2,21 +2,21 @@
  "college": "College of the Canyons",
  "programs": 283,
  "with_closed_list": 264,
- "found": 248,
- "extracted": 248,
+ "found": 249,
+ "extracted": 247,
  "errors": 0,
- "passed_machine_checks": 177,
+ "passed_machine_checks": 191,
  "failed": {
-  "coverage": 25,
-  "invented": 24,
-  "arithmetic": 48,
+  "coverage": 8,
+  "invented": 7,
+  "arithmetic": 47,
   "repeated": 1,
   "outcomes": 2
  },
- "cost_usd_run": 12.88,
- "cost_usd_filed": 18.71,
+ "cost_usd_run": 0.0,
+ "cost_usd_filed": 18.63,
  "cost_per_program": 0.0754,
- "extract_calls": 196,
+ "extract_calls": null,
  "extract_failed": [],
  "not_found": [
   {
@@ -50,19 +50,6 @@
    "near_miss": {
     "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=136",
     "coverage": 0.043
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "37868",
-   "title": "Art History",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "rule B then A: the pages printing the program's title with its award are course descriptions or general-education pages",
-    "rule": "A",
-    "refused_b": 1,
-    "plain_named": true,
-    "page_checks": true
    },
    "status": "Active"
   },
@@ -164,5 +151,5 @@
    "status": "Approved"
   }
  ],
- "run": "44886816990"
+ "run": "44887850515"
 }

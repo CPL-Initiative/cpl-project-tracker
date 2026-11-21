@@ -46,45 +46,28 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 36,
+   "placed": 39,
    "listed": 41,
-   "share": 0.878,
+   "share": 0.951,
    "missing": [
-    "COMS246",
     "HIST112",
-    "HIST112H",
-    "PSYCH104",
-    "PSYCH240"
+    "HIST112H"
    ],
-   "unexplained": [
-    "COMS246",
-    "PSYCH104",
-    "PSYCH240"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "COMM120",
-     "listed": "COMS120",
-     "matched_by": "course_id"
-    }
-   ],
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 5,
+   "count": 2,
    "codes": [
-    "COMM246",
     "HISTC1002",
-    "HISTC1002H",
-    "PSYC104",
-    "PSYC240"
+    "HISTC1002H"
    ],
    "flagged": [
     "HISTC1002",
     "HISTC1002H"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
@@ -532,7 +515,7 @@
    "Courses printed on page 66 continue onto page 67 (Oral Communication list split across the page break); read as one block."
   ]
  },
- "extracted_run": "44769429877",
+ "extracted_run": 44887850515,
  "catalog_year": "2026-2027",
  "source_sha": "91a4faa77cb762a2",
  "source_codes": [
@@ -573,5 +556,6 @@
   "STATC1000E",
   "STATC1000H"
  ],
- "source_coverage": 0.878
+ "source_coverage": 0.878,
+ "read_run": "44769429877"
 }

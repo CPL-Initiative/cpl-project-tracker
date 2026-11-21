@@ -46,29 +46,11 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 28,
+   "placed": 36,
    "listed": 36,
-   "share": 0.778,
-   "missing": [
-    "COMS260",
-    "POLISC230",
-    "POLISC250",
-    "POLISC270",
-    "PSYCH172",
-    "PSYCH172H",
-    "PSYCH235",
-    "PSYCH240"
-   ],
-   "unexplained": [
-    "COMS260",
-    "POLISC230",
-    "POLISC250",
-    "POLISC270",
-    "PSYCH172",
-    "PSYCH172H",
-    "PSYCH235",
-    "PSYCH240"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
    "course_id": [
     {
@@ -77,19 +59,11 @@
      "matched_by": "course_id"
     }
    ],
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 10,
+   "count": 2,
    "codes": [
-    "COMM260",
-    "POLS230",
-    "POLS250",
-    "POLS270",
-    "PSYC172",
-    "PSYC172H",
-    "PSYC235",
-    "PSYC240",
     "SWHS111",
     "SWHS112"
    ],
@@ -97,7 +71,7 @@
     "SWHS111",
     "SWHS112"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -138,7 +112,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -515,7 +489,7 @@
    "No general education pattern or degree total is printed in this section."
   ]
  },
- "extracted_run": "44769429877",
+ "extracted_run": 44887850515,
  "catalog_year": "2026-2027",
  "source_sha": "0e62aaea29a0435a",
  "source_codes": [
@@ -548,5 +522,6 @@
   "SOCI250",
   "SWHS110"
  ],
- "source_coverage": 0.778
+ "source_coverage": 0.778,
+ "read_run": "44769429877"
 }

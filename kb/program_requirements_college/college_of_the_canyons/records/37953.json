@@ -46,28 +46,20 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 17,
+   "placed": 19,
    "listed": 19,
-   "share": 0.895,
-   "missing": [
-    "PSYCH103",
-    "PSYCH104"
-   ],
-   "unexplained": [
-    "PSYCH103",
-    "PSYCH104"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 6,
+   "count": 4,
    "codes": [
     "ANTHRO101H",
     "ANTHRO120",
     "GEOLOGY101",
-    "PSYC103",
-    "PSYC104",
     "STATC1000E"
    ],
    "flagged": [
@@ -76,7 +68,7 @@
     "GEOLOGY101",
     "STATC1000E"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -117,7 +109,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -359,7 +351,7 @@
    "Only one Degree Student Learning Outcome is printed for this award."
   ]
  },
- "extracted_run": "44769429877",
+ "extracted_run": 44887850515,
  "catalog_year": "2026-2027",
  "source_sha": "06045352400385d9",
  "source_codes": [
@@ -381,5 +373,6 @@
   "STATC1000",
   "STATC1000H"
  ],
- "source_coverage": 0.895
+ "source_coverage": 0.895,
+ "read_run": "44769429877"
 }

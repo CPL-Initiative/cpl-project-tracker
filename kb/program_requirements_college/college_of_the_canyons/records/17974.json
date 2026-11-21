@@ -46,50 +46,15 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 39,
+   "placed": 56,
    "listed": 59,
-   "share": 0.661,
+   "share": 0.949,
    "missing": [
-    "COMS246",
-    "COMS256",
     "HIST102",
     "HIST112",
-    "HIST112H",
-    "POLISC230",
-    "POLISC250",
-    "POLISC270",
-    "POLISC290",
-    "PSYCH102",
-    "PSYCH103",
-    "PSYCH104",
-    "PSYCH105",
-    "PSYCH109",
-    "PSYCH126",
-    "PSYCH172",
-    "PSYCH172H",
-    "PSYCH225",
-    "PSYCH230",
-    "PSYCH240"
+    "HIST112H"
    ],
-   "unexplained": [
-    "COMS246",
-    "COMS256",
-    "POLISC230",
-    "POLISC250",
-    "POLISC270",
-    "POLISC290",
-    "PSYCH102",
-    "PSYCH103",
-    "PSYCH104",
-    "PSYCH105",
-    "PSYCH109",
-    "PSYCH126",
-    "PSYCH172",
-    "PSYCH172H",
-    "PSYCH225",
-    "PSYCH230",
-    "PSYCH240"
-   ],
+   "unexplained": [],
    "none_placed": false,
    "course_id": [
     {
@@ -103,33 +68,16 @@
      "matched_by": "course_id"
     }
    ],
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 24,
+   "count": 7,
    "codes": [
-    "COMM246",
-    "COMM256",
     "ECE102",
     "ETHNST101",
     "ETHNST102",
     "HISTC1002",
     "HISTC1002H",
-    "POLS230",
-    "POLS250",
-    "POLS270",
-    "POLS290",
-    "PSYC102",
-    "PSYC103",
-    "PSYC104",
-    "PSYC105",
-    "PSYC109",
-    "PSYC126",
-    "PSYC172",
-    "PSYC172H",
-    "PSYC225",
-    "PSYC230",
-    "PSYC240",
     "SOCI107",
     "SOCI250"
    ],
@@ -142,7 +90,7 @@
     "SOCI107",
     "SOCI250"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -183,7 +131,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -685,7 +633,7 @@
    "No general education pattern or degree total is printed in this section."
   ]
  },
- "extracted_run": "44769429877",
+ "extracted_run": 44887850515,
  "catalog_year": "2026-2027",
  "source_sha": "6bcd8c3635773cef",
  "source_codes": [
@@ -729,5 +677,6 @@
   "SOCI200H",
   "SOCI207"
  ],
- "source_coverage": 0.661
+ "source_coverage": 0.661,
+ "read_run": "44769429877"
 }

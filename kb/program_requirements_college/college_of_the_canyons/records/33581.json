@@ -46,29 +46,17 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 13,
+   "placed": 14,
    "listed": 14,
-   "share": 0.929,
-   "missing": [
-    "COMS225"
-   ],
-   "unexplained": [
-    "COMS225"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "COMM100",
-     "listed": "COMS100",
-     "matched_by": "course_id"
-    }
-   ],
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 3,
    "codes": [
-    "COMM225",
     "MEA110",
     "MEA210",
     "STATC1000E"
@@ -78,7 +66,7 @@
     "MEA210",
     "STATC1000E"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -120,7 +108,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -310,7 +298,7 @@
    "Outcome copied as printed, including the catalog's wording 'cores skills'."
   ]
  },
- "extracted_run": "44769429877",
+ "extracted_run": 44887850515,
  "catalog_year": "2026-2027",
  "source_sha": "df211a21970bae4a",
  "source_codes": [
@@ -328,5 +316,6 @@
   "STATC1000",
   "STATC1000H"
  ],
- "source_coverage": 0.929
+ "source_coverage": 0.929,
+ "read_run": "44769429877"
 }

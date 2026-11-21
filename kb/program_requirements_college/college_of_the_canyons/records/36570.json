@@ -46,13 +46,11 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 25,
+   "placed": 27,
    "listed": 28,
-   "share": 0.893,
+   "share": 0.964,
    "missing": [
-    "GEOGRPH100",
-    "POLISC230",
-    "POLISC270"
+    "GEOGRPH100"
    ],
    "unexplained": [],
    "none_placed": false,
@@ -71,21 +69,17 @@
    "pass": true
   },
   "invented": {
-   "count": 6,
+   "count": 4,
    "codes": [
     "ECON291",
     "GEOGRPH101",
     "OCEAN119",
-    "POLS230",
-    "POLS270",
     "WE186ENVR"
    ],
    "flagged": [
     "ECON291",
     "GEOGRPH101",
     "OCEAN119",
-    "POLS230",
-    "POLS270",
     "WE186ENVR"
    ],
    "pass": true
@@ -450,7 +444,7 @@
    "The degree student learning outcome is printed for the A.A. section specifically. No degree total or general education pattern is printed in the section."
   ]
  },
- "extracted_run": "44769429877",
+ "extracted_run": 44887850515,
  "catalog_year": "2026-2027",
  "source_sha": "47ef1c4c34312c82",
  "source_codes": [
@@ -481,5 +475,6 @@
   "STATC1000E",
   "STATC1000H"
  ],
- "source_coverage": 0.929
+ "source_coverage": 0.929,
+ "read_run": "44769429877"
 }

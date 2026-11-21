@@ -46,34 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 14,
+   "placed": 18,
    "listed": 18,
-   "share": 0.778,
-   "missing": [
-    "COMS260",
-    "POLISC290",
-    "PSYCH104",
-    "PSYCH235"
-   ],
-   "unexplained": [
-    "COMS260",
-    "POLISC290",
-    "PSYCH104",
-    "PSYCH235"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 4,
-   "codes": [
-    "COMM260",
-    "POLS290",
-    "PSYC104",
-    "PSYC235"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -114,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -344,7 +329,7 @@
    "The degree student learning outcome is printed as a single 'Degree Student Learning Outcome' for this AA-T."
   ]
  },
- "extracted_run": "44769429877",
+ "extracted_run": 44887850515,
  "catalog_year": "2026-2027",
  "source_sha": "becde9b60b6a59f2",
  "source_codes": [
@@ -363,5 +348,6 @@
   "STATC1000E",
   "STATC1000H"
  ],
- "source_coverage": 0.778
+ "source_coverage": 0.778,
+ "read_run": "44769429877"
 }

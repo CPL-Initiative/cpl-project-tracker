@@ -46,28 +46,25 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 27,
+   "placed": 28,
    "listed": 30,
-   "share": 0.9,
+   "share": 0.933,
    "missing": [
     "ANTHRO103",
-    "ANTHRO103H",
-    "PSYCH104"
+    "ANTHRO103H"
    ],
    "unexplained": [
     "ANTHRO103",
-    "ANTHRO103H",
-    "PSYCH104"
+    "ANTHRO103H"
    ],
    "none_placed": false,
    "pass": false
   },
   "invented": {
-   "count": 3,
+   "count": 2,
    "codes": [
     "ANTRHO103",
-    "ANTRHO103H",
-    "PSYC104"
+    "ANTRHO103H"
    ],
    "flagged": [],
    "pass": false
@@ -432,7 +429,7 @@
    "The block for HLHSCI-100 and HLHSCI-140 has no printed name; named 'Program Requirements' after the section heading."
   ]
  },
- "extracted_run": "44769429877",
+ "extracted_run": 44887850515,
  "catalog_year": "2026-2027",
  "source_sha": "6dce4c74e63ccad0",
  "source_codes": [
@@ -466,5 +463,6 @@
   "STATC1000E",
   "STATC1000H"
  ],
- "source_coverage": 0.967
+ "source_coverage": 0.967,
+ "read_run": "44769429877"
 }

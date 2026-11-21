@@ -46,17 +46,11 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 16,
+   "placed": 18,
    "listed": 18,
-   "share": 0.889,
-   "missing": [
-    "POLISC250",
-    "POLISC270"
-   ],
-   "unexplained": [
-    "POLISC250",
-    "POLISC270"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
    "course_id": [
     {
@@ -70,16 +64,13 @@
      "matched_by": "course_id"
     }
    ],
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "POLS250",
-    "POLS270"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -121,7 +112,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -320,7 +311,7 @@
    "The Certificate of Achievement: Global Competencies section (with its outcomes and careers) was not read for this record."
   ]
  },
- "extracted_run": "44769429877",
+ "extracted_run": 44887850515,
  "catalog_year": "2026-2027",
  "source_sha": "335971bba7ad5995",
  "source_codes": [
@@ -341,5 +332,6 @@
   "SPAN201",
   "SPAN202"
  ],
- "source_coverage": 0.889
+ "source_coverage": 0.889,
+ "read_run": "44769429877"
 }

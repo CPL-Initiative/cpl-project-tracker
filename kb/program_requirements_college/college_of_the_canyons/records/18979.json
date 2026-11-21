@@ -46,25 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 24,
+   "placed": 25,
    "listed": 25,
-   "share": 0.96,
-   "missing": [
-    "PSYCH104"
-   ],
-   "unexplained": [
-    "PSYCH104"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "PSYC104"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -105,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -376,7 +370,7 @@
    "No general education pattern, degree total, or elective units are printed in the A.A. section; total_units 25-26 is the printed 'Units Required'."
   ]
  },
- "extracted_run": "44769429877",
+ "extracted_run": 44887850515,
  "catalog_year": "2026-2027",
  "source_sha": "a0bdbeb5e0da61cc",
  "source_codes": [
@@ -405,5 +399,6 @@
   "STATC1000E",
   "STATC1000H"
  ],
- "source_coverage": 0.96
+ "source_coverage": 0.96,
+ "read_run": "44769429877"
 }

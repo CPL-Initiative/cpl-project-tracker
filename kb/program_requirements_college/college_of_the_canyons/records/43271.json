@@ -46,15 +46,11 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 45,
+   "placed": 50,
    "listed": 100,
-   "share": 0.45,
+   "share": 0.5,
    "missing": [
     "ANTHRO210",
-    "COMS225",
-    "COMS235",
-    "COMS256",
-    "COMS260",
     "CWE189GNRL",
     "ECON201",
     "ECON202",
@@ -69,7 +65,6 @@
     "POLISC250",
     "POLISC270",
     "POLISC290",
-    "PSYCH104",
     "PSYCH230",
     "PSYCH235",
     "PSYCH240",
@@ -108,36 +103,19 @@
    ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "COMM120",
-     "listed": "COMS120",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 8,
+   "count": 3,
    "codes": [
     "ANTRHO210",
-    "COMM225",
-    "COMM235",
-    "COMM256",
-    "COMM260",
     "HISTC1002",
-    "HISTC1002H",
-    "PSYC104"
+    "HISTC1002H"
    ],
    "flagged": [
     "ANTRHO210",
-    "COMM225",
-    "COMM235",
-    "COMM256",
-    "COMM260",
     "HISTC1002",
-    "HISTC1002H",
-    "PSYC104"
+    "HISTC1002H"
    ],
    "pass": true
   },
@@ -947,7 +925,7 @@
    "Catalog prints the degree title as 'Law, Society, and Public Policy' in one sentence."
   ]
  },
- "extracted_run": "44769429877",
+ "extracted_run": 44887850515,
  "catalog_year": "2026-2027",
  "source_sha": "c9579365faed665f",
  "source_codes": [
@@ -1022,5 +1000,6 @@
   "STATC1000H",
   "WE186PLGL"
  ],
- "source_coverage": 0.7
+ "source_coverage": 0.7,
+ "read_run": "44769429877"
 }

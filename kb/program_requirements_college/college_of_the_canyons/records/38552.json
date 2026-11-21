@@ -46,35 +46,27 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 17,
+   "placed": 19,
    "listed": 19,
-   "share": 0.895,
-   "missing": [
-    "PSYCH172",
-    "PSYCH172H"
-   ],
-   "unexplained": [
-    "PSYCH172",
-    "PSYCH172H"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 5,
+   "count": 3,
    "codes": [
     "BIOSCI100",
     "BIOSCI100H",
-    "BIOSCI101",
-    "PSYC172",
-    "PSYC172H"
+    "BIOSCI101"
    ],
    "flagged": [
     "BIOSCI100",
     "BIOSCI100H",
     "BIOSCI101"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -115,7 +107,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -314,7 +306,7 @@
    "The Humanities, Mathematics and Science, and Social and Behavioral Sciences emphases were not recorded; they belong to other emphases of the same degree."
   ]
  },
- "extracted_run": "44769429877",
+ "extracted_run": 44887850515,
  "catalog_year": "2026-2027",
  "source_sha": "e9b1367ccb387635",
  "source_codes": [
@@ -336,5 +328,6 @@
   "STATC1000E",
   "STATC1000H"
  ],
- "source_coverage": 0.895
+ "source_coverage": 0.895,
+ "read_run": "44769429877"
 }

@@ -46,34 +46,23 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 21,
+   "placed": 24,
    "listed": 24,
-   "share": 0.875,
-   "missing": [
-    "PSYCH172",
-    "PSYCH172H",
-    "PSYCH180"
-   ],
-   "unexplained": [
-    "PSYCH172",
-    "PSYCH172H",
-    "PSYCH180"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 1,
    "codes": [
-    "EMS100",
-    "PSYC172",
-    "PSYC172H",
-    "PSYC180"
+    "EMS100"
    ],
    "flagged": [
     "EMS100"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -114,7 +103,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -382,7 +371,7 @@
    "Careers taken from the program description: 'Recreational managers' and work in the 'recreation and leisure industry'."
   ]
  },
- "extracted_run": "44769429877",
+ "extracted_run": 44887850515,
  "catalog_year": "2026-2027",
  "source_sha": "fe7f49892763b01b",
  "source_codes": [
@@ -408,5 +397,6 @@
   "SOCI233",
   "WE186REC"
  ],
- "source_coverage": 0.875
+ "source_coverage": 0.875,
+ "read_run": "44769429877"
 }

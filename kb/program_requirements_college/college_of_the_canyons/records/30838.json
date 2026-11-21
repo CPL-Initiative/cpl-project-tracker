@@ -46,67 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 5,
+   "placed": 20,
    "listed": 20,
-   "share": 0.25,
-   "missing": [
-    "PSYCH102",
-    "PSYCH103",
-    "PSYCH104",
-    "PSYCH105",
-    "PSYCH109",
-    "PSYCH110",
-    "PSYCH126",
-    "PSYCH167",
-    "PSYCH172",
-    "PSYCH172H",
-    "PSYCH180",
-    "PSYCH225",
-    "PSYCH230",
-    "PSYCH235",
-    "PSYCH240"
-   ],
-   "unexplained": [
-    "PSYCH102",
-    "PSYCH103",
-    "PSYCH104",
-    "PSYCH105",
-    "PSYCH109",
-    "PSYCH110",
-    "PSYCH126",
-    "PSYCH167",
-    "PSYCH172",
-    "PSYCH172H",
-    "PSYCH180",
-    "PSYCH225",
-    "PSYCH230",
-    "PSYCH235",
-    "PSYCH240"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 15,
-   "codes": [
-    "PSYC102",
-    "PSYC103",
-    "PSYC104",
-    "PSYC105",
-    "PSYC109",
-    "PSYC110",
-    "PSYC126",
-    "PSYC167",
-    "PSYC172",
-    "PSYC172H",
-    "PSYC180",
-    "PSYC225",
-    "PSYC230",
-    "PSYC235",
-    "PSYC240"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -147,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -402,7 +354,7 @@
    "The block lists were split across a page break (pages 263-264); PSYC-172H continues on page 264."
   ]
  },
- "extracted_run": "44769429877",
+ "extracted_run": 44887850515,
  "catalog_year": "2026-2027",
  "source_sha": "55f4580b7f431c1e",
  "source_codes": [
@@ -426,5 +378,6 @@
   "STATC1000E",
   "STATC1000H"
  ],
- "source_coverage": 0.95
+ "source_coverage": 0.95,
+ "read_run": "44769429877"
 }

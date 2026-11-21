@@ -46,32 +46,22 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 22,
+   "placed": 25,
    "listed": 27,
-   "share": 0.815,
+   "share": 0.926,
    "missing": [
-    "COMS225",
-    "COMS227",
     "HIST112",
-    "HIST112H",
-    "PSYCH104"
+    "HIST112H"
    ],
-   "unexplained": [
-    "COMS225",
-    "COMS227",
-    "PSYCH104"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 6,
+   "count": 3,
    "codes": [
-    "COMM225",
-    "COMM227",
     "HISTC1002",
     "HISTC1002H",
-    "PSYC104",
     "STATC1000E"
    ],
    "flagged": [
@@ -79,7 +69,7 @@
     "HISTC1002H",
     "STATC1000E"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -117,7 +107,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -388,7 +378,7 @@
    "Single 'Certificate Student Learning Outcome' printed for this certificate."
   ]
  },
- "extracted_run": "44769429877",
+ "extracted_run": 44887850515,
  "catalog_year": "2026-2027",
  "source_sha": "51265e94a5c00c54",
  "source_codes": [
@@ -415,5 +405,6 @@
   "STATC1000",
   "STATC1000H"
  ],
- "source_coverage": 0.815
+ "source_coverage": 0.815,
+ "read_run": "44769429877"
 }

@@ -46,15 +46,11 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 13,
+   "placed": 14,
    "listed": 14,
-   "share": 0.929,
-   "missing": [
-    "PSYCH104"
-   ],
-   "unexplained": [
-    "PSYCH104"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
    "course_id": [
     {
@@ -68,14 +64,13 @@
      "matched_by": "course_id"
     }
    ],
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 3,
    "codes": [
     "MATH211X",
     "MATH240X",
-    "PSYC104",
     "STATC1000E"
    ],
    "flagged": [
@@ -83,7 +78,7 @@
     "MATH240X",
     "STATC1000E"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -125,7 +120,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -327,7 +322,7 @@
    "The catalog heading for the math choice reads 'Plus one course form the following' (typo for 'from'); name kept as printed."
   ]
  },
- "extracted_run": "44769429877",
+ "extracted_run": 44887850515,
  "catalog_year": "2026-2027",
  "source_sha": "40b61be16735daf9",
  "source_codes": [
@@ -345,5 +340,6 @@
   "STATC1000",
   "STATC1000H"
  ],
- "source_coverage": 0.929
+ "source_coverage": 0.929,
+ "read_run": "44769429877"
 }

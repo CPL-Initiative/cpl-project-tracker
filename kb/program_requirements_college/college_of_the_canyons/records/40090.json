@@ -46,30 +46,27 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 58,
+   "placed": 59,
    "listed": 61,
-   "share": 0.951,
+   "share": 0.967,
    "missing": [
     "ANTHRO105",
-    "POLISC270",
     "PSYCH104"
    ],
    "unexplained": [
     "ANTHRO105",
-    "POLISC270",
     "PSYCH104"
    ],
    "none_placed": false,
    "pass": false
   },
   "invented": {
-   "count": 7,
+   "count": 6,
    "codes": [
     "ATNHRO105",
     "ENVRMT101",
     "GEOLOGY111",
     "OCEAN119",
-    "POLS270",
     "PSCYH104",
     "SOCI250"
    ],
@@ -792,7 +789,7 @@
    "The description names disciplines (earth sciences, environmental sciences, social sciences, business, urban planning, public safety, health sciences) where spatial thinking applies, but not careers; careers left empty."
   ]
  },
- "extracted_run": "44769429877",
+ "extracted_run": 44887850515,
  "catalog_year": "2026-2027",
  "source_sha": "c9aebfbfadd79c9e",
  "source_codes": [
@@ -855,5 +852,6 @@
   "STATC1000E",
   "STATC1000H"
  ],
- "source_coverage": 0.951
+ "source_coverage": 0.951,
+ "read_run": "44769429877"
 }
