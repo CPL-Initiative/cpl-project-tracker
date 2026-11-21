@@ -1247,8 +1247,8 @@ def main(argv=None) -> int:
                         "2026-11-17: never drop a record for failing; collect it with gaps noted and scores)." % n),
             "representation": ("checks.gaps (a list of gap names, keys of gaps) and checks.confidence (five scores "
                                "0-100) added to program_requirement_records.checks; checks.arithmetic unchanged"),
-            "pre_read": pre_read_sql(r["moved"]), "apply": update_sql(r["moved"]),
-            "rollback": rollback_sql(r["moved"])}
+            "pre_read": pre_read_sql(r["moved"]), "apply": update_sql(r["moved"], a.tag + " named-gaps"),
+            "rollback": rollback_sql(r["moved"], a.tag + " named-gaps rollback")}
     with open(path, "w", encoding="utf-8") as fh:
         json.dump(body, fh, ensure_ascii=False, indent=1)
         fh.write("\n")
@@ -1263,8 +1263,10 @@ def write_migrations(body: dict, receipt: str, day: str, tag: str) -> None:
     hdr = ("-- %s cheap piles, item 4: named gaps (%s). Each row's checks become the college load's image of its\n"
            "-- committed record (load_rows): checks.gaps and checks.confidence added, checks.arithmetic and the record\n"
            "-- unchanged. Receipt: %s (before_image per row).\n"
-           "-- The collection lane's twelve colleges (kb/collection_lane.py) and the parked colleges are not in the list.\n"
-           % (tag.upper(), ", ".join("%s %d" % kv for kv in sorted(body["by_gap"].items())), receipt))
+           "-- The collection lane's %d held colleges (kb/collection_lane.py, the receipt's held_colleges) and the parked\n"
+           "-- colleges are not in the list.\n"
+           % (tag.upper(), ", ".join("%s %d" % kv for kv in sorted(body["by_gap"].items())), receipt,
+              len(body.get("held_colleges") or ())))
     base = os.path.join(HERE, "migrations", "%s_%s_prreq_named_gaps_" % (day, tag))
     parts = {
         "preread.sql": "-- Pre-read, read-only: one SELECT, one JSON value.\n" + body["pre_read"],

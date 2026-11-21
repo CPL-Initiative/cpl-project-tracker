@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-21T13:33:03Z",
+ "written_at": "2026-11-21T16:35:26Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 16714,
-  "gap": 5621,
+  "passing": 16725,
+  "gap": 5610,
   "with_gap": 118,
   "cost_usd": 1339.66,
-  "passed_at_read": 16193,
+  "passed_at_read": 16194,
   "cost_receipts": 118,
   "spent_usd": 1233.53,
   "spent_runs": 182,
@@ -189,9 +189,9 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16613,
-  "gap": 5621,
-  "collected_with_gaps": 101,
+  "passing": 16614,
+  "gap": 5610,
+  "collected_with_gaps": 111,
   "discontinued": 0
  },
  "census_live": {
@@ -1886,13 +1886,13 @@
    "harvested": true,
    "slug": "clovis_community",
    "programs": 129,
-   "passing": 80,
-   "gap": 49,
+   "passing": 86,
+   "gap": 43,
    "causes": {
     "no_closed_list": 8,
     "page_not_found": 12,
     "places_none": 2,
-    "unknown_without_live": 27
+    "unknown_without_live": 21
    },
    "census_causes": {
     "course_added": 1,
@@ -1948,7 +1948,7 @@
    "read_seconds": 63.7,
    "run": "44522071814",
    "levers": {
-    "reconcile_steps": 27,
+    "reconcile_steps": 21,
     "reader_page_search": 12,
     "program_course_file_check": 8,
     "reader_page_assignment": 2
@@ -5169,13 +5169,12 @@
    "harvested": true,
    "slug": "glendale_community",
    "programs": 317,
-   "passing": 218,
-   "gap": 99,
+   "passing": 223,
+   "gap": 94,
    "causes": {
-    "found_not_extracted": 1,
     "no_closed_list": 50,
-    "page_not_found": 24,
-    "unknown_without_live": 24
+    "page_not_found": 25,
+    "unknown_without_live": 19
    },
    "census_causes": {
     "course_added": 1,
@@ -5199,10 +5198,10 @@
    "outcomes_file": "kb/status/commons_data_programs/glendale_community.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-20T15:29:44Z",
+   "read_at": "2026-11-21T14:45:01Z",
    "read_kind": "capture",
    "cost_usd": 16.04,
-   "passed_at_read": 218,
+   "passed_at_read": 219,
    "slo_queue": null,
    "scout": {
     "recommendation": "capture",
@@ -5225,7 +5224,7 @@
    "failed_checks": {
     "coverage": 3,
     "invented": 3,
-    "arithmetic": 21,
+    "arithmetic": 20,
     "repeated": 0,
     "outcomes": 0
    },
@@ -5235,14 +5234,13 @@
    "capture_root": "https://catalog.glendale.edu/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 4517.3,
-   "run": "44763682085",
+   "read_seconds": 4365.1,
+   "run": "44915445658",
    "levers": {
     "program_course_file_check": 50,
-    "reader_page_search": 24,
-    "reconcile_steps": 22,
-    "scorer_noncredit_hours": 2,
-    "paid_read": 1
+    "reader_page_search": 25,
+    "reconcile_steps": 17,
+    "scorer_noncredit_hours": 2
    },
    "collection": {
     "program_reader": {
@@ -5250,8 +5248,8 @@
      "models": {
       "claude-opus-5-5": 242
      },
-     "run": "44763682085",
-     "at": "2026-11-20T15:29:44Z",
+     "run": "44915445658",
+     "at": "2026-11-21T14:45:01Z",
      "cost_usd": 16.04,
      "platform": "coursedog"
     },
