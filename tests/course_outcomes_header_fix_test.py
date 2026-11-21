@@ -311,7 +311,51 @@ check("8 replayed over read 41399075269's 568 HTML rows: no outcome left that is
       len(after) == 568 and all(a and not any(read.CCCD_SUBHEAD.match(x) for x in a["outcomes"]) for a in after),
       len(after))
 
-failed = [r for r in results if not r[1]]
+# 9. S691: the before-values receipt the correction and its rollback join by id (d-golden-west-stops-after-two-rounds-s690).
+import hashlib  # noqa: E402
+_load_spec = importlib.util.spec_from_file_location("co_load", os.path.join(ROOT, "kb", "_course_outcomes_load.py"))
+co_load = importlib.util.module_from_spec(_load_spec)
+_load_spec.loader.exec_module(co_load)
+BEFORE = json.load(open(os.path.join(ROOT, "kb", "receipts", "course_outcomes_goldenwest_header_before_s691.json")))
+brows = BEFORE["rows"]
+HEAD = re.compile(r"^cour?se (learning )?outcomes?:?$", re.I)
+check("9 the before-values receipt holds 476 rows, one per id, each fingerprint the md5 of its outcomes",
+      len(brows) == BEFORE["rows_count"] == 476 and len({r["id"] for r in brows}) == 476
+      and all(r["fingerprint"] == co_load.fingerprint(r["outcomes"]) and r["lead"] is None for r in brows))
+ck = hashlib.md5(",".join("%d:%s:%s" % (r["id"], r["fingerprint"], r["shape"]) for r in brows).encode()).hexdigest()
+live = BEFORE["live_read"]["result"]
+check("9 the live read matched every row by id: 476 rows and guard_ok, nothing differs or is missing, its checksum the receipt's",
+      live["rows"] == live["guard_ok"] == 476 and live["differ"] == [] and live["missing"] == []
+      and live["checksum"] == ck == BEFORE["before_checksum"] and live["after_taken"] == 0, live)
+fixed_ok = []
+for r in brows:
+    last = max(i for i, x in enumerate(r["outcomes"]) if HEAD.search(x))
+    new = r["outcomes"][last + 1:]
+    fixed_ok.append(new and r["after_lead"] == r["outcomes"][last] and r["after_fingerprint"] == co_load.fingerprint(new)
+                    and r["after_shape"] == ("list" if len(new) > 1 else "paragraph"))
+corr = {}
+for p in sorted(glob.glob(os.path.join(ROOT, "kb", "course_outcomes", "cccd", "read_41399075269_p*of2.json"))):
+    corr.update({x["code"]: x for x in json.load(open(p))["rows"]})
+check("9 each row's after-values are its outcomes after the last sub-heading line, and equal the corrected filed read",
+      all(fixed_ok) and all(co_load.fingerprint(corr[r["course_code"]]["outcomes"]) == r["after_fingerprint"]
+                            for r in brows), sum(1 for x in fixed_ok if not x))
+wsql = open(os.path.join(ROOT, BEFORE["write"])).read()
+bsql = open(os.path.join(ROOT, BEFORE["rollback"])).read()
+vals = re.findall(r"^  \((\d+), '([0-9a-f]{32})', '([0-9a-f]{32})'\)", wsql, re.M)
+check("9 the write lists each receipt id with its before and after fingerprints, refuses any count but 476, and returns "
+      "the short fields before rows",
+      sorted((int(i), b, a) for i, b, a in vals) == sorted((r["id"], r["fingerprint"], r["after_fingerprint"]) for r in brows)
+      and "count(*) = 476" in wsql and wsql.index("'checksum'") < wsql.index("'rows'"))
+lit = json.loads(bsql[bsql.index("$before$") + 8:bsql.rindex("$before$")])
+check("9 the rollback's literal is the receipt's rows by id, and it restores a row only where the write's fingerprint stands",
+      [(x["id"], x["fingerprint"], x["after_fingerprint"], x["outcomes"]) for x in lit]
+      == [(r["id"], r["fingerprint"], r["after_fingerprint"], r["outcomes"]) for r in brows]
+      and "c.fingerprint = b.after_fingerprint" in bsql)
+apply_ = open(os.path.join(ROOT, "kb", "migrations", ".apply")).read()
+check("9 GUARD: neither the write nor the rollback is the trigger's file; both wait on a plain session's review",
+      BEFORE["write"] not in apply_ and BEFORE["rollback"] not in apply_ and "NOT RUN" in wsql and "NOT RUN" in bsql)
+
+failed =[r for r in results if not r[1]]
 for name, ok, why in results:
     print("  %s %s%s" % ("ok  " if ok else "FAIL", name, "" if ok else "  -- %s" % (why,)))
 print("\ncourse_outcomes_header_fix_test.py: %d/%d checks passed" % (len(results) - len(failed), len(results)))
