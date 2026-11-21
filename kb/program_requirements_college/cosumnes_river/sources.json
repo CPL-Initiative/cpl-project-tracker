@@ -65,25 +65,32 @@
    "PLTS310"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=134",
-   "title": "The Agriculture Business Associate in Science (A.S.) degree may be",
-   "h1": "The Agriculture Business Associate in Science (A.S.) degree may be",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=133",
+   "title": "Degree Requirements",
+   "h1": "Degree Requirements",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    133,
     134,
     135
    ],
    "extractor": "pypdf",
    "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 133,
+    "share": 1.0
+   },
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "f21bc32a3b20dabd"
   },
   "listed": 13,
-  "text_chars": 5885
+  "text_chars": 11822
  },
  {
   "control_number": "04589",
@@ -453,10 +460,14 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.647,
+  "coverage": 0.882,
   "codes_found": [
+   "AMT300",
    "AMT301",
+   "AMT303",
+   "AMT304",
    "AMT306",
+   "AMT310",
    "AMT314",
    "AMT316",
    "AMT321",
@@ -468,24 +479,27 @@
    "AMT340"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=180",
-   "title": "Course",
-   "h1": "Course",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=179",
+   "title": "A.S. in Automotive Mechanics Technology",
+   "h1": "A.S. in Automotive Mechanics Technology",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    179,
     180
    ],
    "extractor": "pypdf",
    "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "6f1cdc34f3e25978"
   },
   "listed": 17,
-  "text_chars": 4723
+  "text_chars": 6252
  },
  {
   "control_number": "04609",
@@ -831,24 +845,32 @@
    "SWHS498"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=583",
-   "title": "Course Code Course Title Units",
-   "h1": "Course Code Course Title Units",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=581",
+   "title": "Social Work and Human Services Certificate",
+   "h1": "Social Work and Human Services Certificate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    581,
+    582,
     583
    ],
    "extractor": "pypdf",
    "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 581,
+    "share": 1.0
+   },
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "ce0b77115e393af9"
   },
   "listed": 10,
-  "text_chars": 3734
+  "text_chars": 11695
  },
  {
   "control_number": "04635",
@@ -1558,27 +1580,29 @@
    "CMT310"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=213",
-   "title": "Course",
-   "h1": "Course",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=212",
+   "title": "A.S. in Building Inspection Technology",
+   "h1": "A.S. in Building Inspection Technology",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    212,
     213,
     214,
-    215,
-    216
+    215
    ],
    "extractor": "pypdf",
    "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "9d9ddef4b0b3eff9"
   },
   "listed": 13,
-  "text_chars": 16000
+  "text_chars": 13721
  },
  {
   "control_number": "07309",
@@ -1848,7 +1872,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 1.0,
+  "coverage": 0.977,
   "codes_found": [
    "ANTH300",
    "ANTH301",
@@ -1865,7 +1889,6 @@
    "BIOL430",
    "BIOL431",
    "BIOL440",
-   "BIOL462",
    "CHEM300",
    "CHEM305",
    "CHEM306",
@@ -1895,27 +1918,29 @@
    "PHYS431"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=206",
-   "title": "Course",
-   "h1": "Course",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=205",
+   "title": "A.S. in General Science",
+   "h1": "A.S. in General Science",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    205,
     206,
     207,
-    208,
-    209
+    208
    ],
    "extractor": "pypdf",
    "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "a125e1b11a02db88"
   },
   "listed": 43,
-  "text_chars": 15809
+  "text_chars": 13958
  },
  {
   "control_number": "11320",
@@ -2080,12 +2105,13 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.923,
+  "coverage": 1.0,
   "codes_found": [
    "ART300",
    "ART304",
    "ART320",
    "ART323",
+   "ART325",
    "ART338",
    "ART370",
    "ARTH309",
@@ -2096,27 +2122,29 @@
    "ARTNM324"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=169",
-   "title": "Course Code Course Title Units",
-   "h1": "Course Code Course Title Units",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=168",
+   "title": "A.A. in Art - Design",
+   "h1": "A.A. in Art - Design",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    168,
     169,
     170,
-    171,
-    172
+    171
    ],
    "extractor": "pypdf",
    "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "da1395bc3d1afa50"
   },
   "listed": 13,
-  "text_chars": 15253
+  "text_chars": 14543
  },
  {
   "control_number": "11339",
@@ -4156,25 +4184,32 @@
    "VT152"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=623",
-   "title": "Associate Degree",
-   "h1": "Associate Degree",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=622",
+   "title": "A.S. in Veterinary Technology",
+   "h1": "A.S. in Veterinary Technology",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    622,
     623,
     624
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 622,
+    "share": 1.0
+   },
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "4b82510b15922852"
   },
   "listed": 12,
-  "text_chars": 9564
+  "text_chars": 9892
  },
  {
   "control_number": "20153",
@@ -4372,27 +4407,33 @@
    "MKT300"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=220",
-   "title": "Course Code Course Title Units",
-   "h1": "Course Code Course Title Units",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=218",
+   "title": "Small Business Management/Entrepreneurship Certificate",
+   "h1": "Small Business Management/Entrepreneurship Certificate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    218,
+    219,
     220,
-    221,
-    222,
-    223
+    221
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 218,
+    "share": 0.8
+   },
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "fad8fbd35b7333d9"
   },
   "listed": 10,
-  "text_chars": 16000
+  "text_chars": 13822
  },
  {
   "control_number": "20197",
@@ -4821,24 +4862,31 @@
    "FT320"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=366",
-   "title": "• PSLO #5: Differentiate between fire detection and fire",
-   "h1": "• PSLO #5: Differentiate between fire detection and fire",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=365",
+   "title": "Firefighter Suppression Specialist Certificate",
+   "h1": "Firefighter Suppression Specialist Certificate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    365,
     366
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 365,
+    "share": 1.0
+   },
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "0bb6bc38a445a4bb"
   },
   "listed": 7,
-  "text_chars": 4272
+  "text_chars": 6755
  },
  {
   "control_number": "20367",
@@ -6061,7 +6109,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.786,
+  "coverage": 1.0,
   "codes_found": [
    "ENGCW400",
    "ENGCW410",
@@ -6076,35 +6124,48 @@
    "ENGLT320",
    "ENGLT321",
    "ENGLT330",
+   "ENGLT335",
    "ENGLT336",
    "ENGLT340",
    "ENGLT341",
    "ENGLT343",
    "ENGLT345",
    "ENGLT360",
+   "ENGLT365",
    "ENGLT370",
    "ENGLT402",
-   "ENGWR301"
+   "ENGWR301",
+   "JOUR300",
+   "SPAN426",
+   "SPAN427",
+   "TA300"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=335",
-   "title": "Associate’s degree in this major may be different from the",
-   "h1": "Associate’s degree in this major may be different from the",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=334",
+   "title": "Course",
+   "h1": "Course",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    334,
     335
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 334,
+    "share": 1.0
+   },
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "a65dfd8fd29381f6"
   },
   "listed": 28,
-  "text_chars": 3841
+  "text_chars": 8845
  },
  {
   "control_number": "33072",
@@ -6646,24 +6707,33 @@
    "CISS310"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=248",
-   "title": "• Implement network perimeter defense (PSLO 6).",
-   "h1": "• Implement network perimeter defense (PSLO 6).",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=258",
+   "title": "Information Technology Technician",
+   "h1": "Information Technology Technician",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    248
+    258,
+    259,
+    260,
+    261
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 258,
+    "share": 1.0
+   },
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "4196af04e9589ab3"
   },
   "listed": 8,
-  "text_chars": 4411
+  "text_chars": 11090
  },
  {
   "control_number": "35347",
@@ -6826,24 +6896,31 @@
    "AMT382"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=181",
-   "title": "Courses within the Ford ASSET program allow students to earn",
-   "h1": "Courses within the Ford ASSET program allow students to earn",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=188",
+   "title": "Automotive Engine Repair (Ford ASSET)",
+   "h1": "Automotive Engine Repair (Ford ASSET)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    181
+    188,
+    189
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 188,
+    "share": 1.0
+   },
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "b347561e866366c7"
   },
   "listed": 3,
-  "text_chars": 4030
+  "text_chars": 7455
  },
  {
   "control_number": "35360",
@@ -7427,27 +7504,32 @@
    "AMT383"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=191",
-   "title": "• Automatic Transmissions",
-   "h1": "• Automatic Transmissions",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=179",
+   "title": "A.S. in Automotive Mechanics Technology (Ford ASSET)",
+   "h1": "A.S. in Automotive Mechanics Technology (Ford ASSET)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    191,
-    192,
-    193,
-    194
+    179,
+    180,
+    181
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 179,
+    "share": 0.077
+   },
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "1fca35b92be5c4ae"
   },
   "listed": 13,
-  "text_chars": 15349
+  "text_chars": 11402
  },
  {
   "control_number": "35413",
@@ -7908,24 +7990,30 @@
    "CISS315"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=248",
-   "title": "• Implement network perimeter defense (PSLO 6).",
-   "h1": "• Implement network perimeter defense (PSLO 6).",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=258",
+   "title": "Information Technology Associate",
+   "h1": "Information Technology Associate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    248
+    258
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 258,
+    "share": 1.0
+   },
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "02f50cd1c983bc04"
   },
   "listed": 7,
-  "text_chars": 4411
+  "text_chars": 2795
  },
  {
   "control_number": "36525",

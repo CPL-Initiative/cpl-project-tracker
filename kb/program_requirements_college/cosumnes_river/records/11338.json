@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Art - Design",
  "award": "A.A. Degree",
- "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=169",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=168",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12036,
+  "input_tokens": 11643,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12036,
-    "output_tokens": 2520,
+    "input_tokens": 11643,
+    "output_tokens": 1941,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,34 +30,26 @@
     "model": null
    }
   ],
-  "output_tokens": 2520,
+  "output_tokens": 1941,
   "output_tokens_details": {
-   "thinking_tokens": 1071
+   "thinking_tokens": 590
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09854,
- "ms": 21193,
- "seconds": 21.5,
+ "cost_usd": 0.08539,
+ "ms": 15406,
+ "seconds": 16.4,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 6,
+   "placed": 13,
    "listed": 13,
-   "share": 0.462,
-   "missing": [
-    "ART300",
-    "ART304",
-    "ART320",
-    "ART323",
-    "ART325",
-    "ART370",
-    "ARTNM324"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
@@ -73,20 +65,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    6.0,
-    6.0
+    24.0,
+    24.0
    ],
    "stated": [
     24.0,
     24.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 6.0-6.0; the catalog states 24.0-24.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -113,11 +103,11 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "A.A. in Art - Design (heading not in excerpt; section identified by 'The Art - Design Associate in Arts (A.A.) degree')",
+   "section_heading": "A.A. in Art - Design",
    "measure": "units",
    "total_units": {
     "min": 24,
@@ -128,7 +118,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": "local CRC General Education Requirement",
+   "ge_pattern": "local CRC General Education",
    "degree_total": {
     "min": null,
     "max": null
@@ -172,6 +162,67 @@
      "max": null
     },
     "courses": [
+     {
+      "code": "ART 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 304",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 320",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 323",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 370",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Restricted Electives",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ART 325",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTNM 324",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
      {
       "code": "ART 301",
       "units": 3,
@@ -236,42 +287,33 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "ART 300",
-    "why": "not in the visible Art - Design section; requirements list begins on a prior page not in the excerpt (appears only in Studio Art/Photo sections)"
-   },
-   {
-    "code": "ART 304",
-    "why": "not in the visible Art - Design section; likely on prior page not in excerpt (appears only in Studio Art/Photo sections)"
-   },
-   {
-    "code": "ART 320",
-    "why": "not in the visible Art - Design section; likely on prior page not in excerpt (appears only in Studio Art section)"
-   },
-   {
-    "code": "ART 323",
-    "why": "not in the visible Art - Design section; likely on prior page not in excerpt"
-   },
-   {
-    "code": "ART 325",
-    "why": "not in the text"
-   },
-   {
-    "code": "ART 370",
-    "why": "not in the visible Art - Design section; likely on prior page not in excerpt (appears only in Studio Art section)"
-   },
-   {
-    "code": "ARTNM 324",
-    "why": "not in the visible Art - Design section; likely on prior page not in excerpt (appears only in Studio Art section)"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The excerpt begins mid-table on page 169: the Art - Design requirements list starts on page 168, which is not included. Only the last required row (ART 301 or ART 338) and the Art History Electives block are visible; the earlier required courses (likely ART 300, 304, 320, 323, 325, 370, ARTNM 324) could not be recorded. Reviewer should check page 168.",
-   "The block name 'Degree Requirements' for the ART 301/ART 338 row is assumed; its true heading and whether it is part of a required list or a choice is cut off.",
-   "Total Units: 24 is the major total. The page says the degree requires the local CRC GE plus sufficient electives to meet a 60-unit total; recorded as electives_fill_degree true, degree_total left null since 60 is the standard graduation total rather than a printed award total.",
-   "The same Student Learning Outcomes list and Career Information are printed identically for the Art - Studio Art degree; recorded here from the Art - Design section. Trailing 'SLO #n' labels were omitted as list labels."
+   "The Restricted Electives list continues across the page break from page 168 to 169; ART 301 / ART 338 'or' row on page 169 was read as part of the Restricted Electives list.",
+   "ART 301 is not in the closed list and is recorded as a catalog addition.",
+   "Each outcome is followed in the catalog by a label 'SLO #1' through 'SLO #6'; these labels were omitted as list numbers.",
+   "The same outcomes list and career list are printed identically for the A.A. in Art - Studio Art; the ones recorded are from the Art - Design section.",
+   "The 60-unit total is the general degree statement ('plus sufficient electives to meet a 60-unit total'), so degree_total is null and electives_fill_degree is true.",
+   "The description names applied-arts fields (graphic design, product design, architecture, web design, interior design) as areas of focus; these were not recorded as careers."
   ]
  },
- "extracted_run": "39047009824"
+ "extracted_run": "44917314201",
+ "catalog_year": "2026-2027",
+ "source_sha": "da1395bc3d1afa50",
+ "source_codes": [
+  "ART300",
+  "ART304",
+  "ART320",
+  "ART323",
+  "ART325",
+  "ART338",
+  "ART370",
+  "ARTH309",
+  "ARTH311",
+  "ARTH312",
+  "ARTH332",
+  "ARTHC1100",
+  "ARTNM324"
+ ],
+ "source_coverage": 1.0
 }
