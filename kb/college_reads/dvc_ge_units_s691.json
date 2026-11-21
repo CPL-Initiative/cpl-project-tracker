@@ -1,0 +1,26 @@
+{
+ "_readme": "S691 (worker piles2), lever 2: 5 Diablo Valley transfer degrees (31799, 31817, 32015, 32539, 46234) name Cal-GETC with no units. This read prints two of their program pages to see the words the pattern is named in. No model call.",
+ "college": "Diablo Valley College",
+ "questions": {
+  "ge_units": "Whether a Diablo Valley transfer degree page prints Cal-GETC's unit figure."
+ },
+ "keywords": [
+  "Cal-?\\s?GETC",
+  "General\\s+Education",
+  "\\b3[2-9]\\s*units"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "ge_units"
+   ],
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-history-for-transfer-fall-2026"
+  },
+  {
+   "answers": [
+    "ge_units"
+   ],
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-physics-for-transfer-2-0-fall-2026"
+  }
+ ]
+}
