@@ -75,6 +75,10 @@ with self-recall, free runs only. Its two colleges were written here a minute af
   (#3644, in review).
 - 15:11Z: Cosumnes River's named-programs read 44917314201 cost $1.16 and filed 10 passing records; the reread replaced
   four live rows and the load inserted seven (189 live, 10 passing at the new run). #3645 waits on `test`.
+- 15:37Z: #3644 merged (`25a8917a`) on its second reader's GO; four findings wait for the next follow-up (two rounds
+  reached). #3645 failed lints on a test that pinned Cosumnes River's old pages; fixed (`3c85e208`), waiting on `test`.
+- 15:45Z: Irvine Valley's full read 44913397609 is filed on #3642 (868 pages, every one 200): 864 SLO rows (2,639
+  SLOs) and 868 objective rows (6,695 objectives) once the load drops lines with no letter (23 lines statewide).
 - 15:05Z: COBIx relayed two rulings of Sam's (#3358, comment 7064588752): a block is a block whoever clears it, and
   vault-note drafts merge on their own once their checks pass. Under the second, S691's vault note
   `samueltlee/CPLBrain#837` merged (`c9da8405`; no checks configured, no ruling in it).
