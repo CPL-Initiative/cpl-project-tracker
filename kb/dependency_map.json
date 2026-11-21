@@ -4,7 +4,7 @@
   "supabase_tables": 119,
   "rpcs": 68,
   "edge_functions": 16,
-  "file_datasets": 1111,
+  "file_datasets": 1112,
   "external_services": 197,
   "consumers": 644,
   "workflows": 76,
@@ -6092,7 +6092,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 33
+     "line": 36
     },
     {
      "id": "script:kb/_build_oc_medical_assistant_crosswalk.py",
@@ -6329,7 +6329,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1800,
+     "line": 1801,
      "tabs": [
       "coci-lookup"
      ]
@@ -6856,7 +6856,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1588,
+     "line": 1589,
      "tabs": [
       "coci-lookup"
      ]
@@ -6959,7 +6959,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1676,
+     "line": 1677,
      "tabs": [
       "coci-lookup"
      ]
@@ -12553,7 +12553,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 320,
+     "line": 321,
      "tabs": [
       "coci-lookup"
      ]
@@ -12745,7 +12745,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 35
+     "line": 38
     },
     {
      "id": "script:kb/_build_remint_blast_radius.py",
@@ -12829,7 +12829,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 62
+     "line": 63
     },
     {
      "id": "script:kb/_honors_followups_s652.py",
@@ -13112,7 +13112,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 64
+     "line": 65
     }
    ],
    "producers": [
@@ -13273,7 +13273,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 36
+     "line": 39
     },
     {
      "id": "script:kb/_build_roep_display.py",
@@ -14221,7 +14221,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 37
+     "line": 40
     },
     {
      "id": "script:kb/_build_side_by_side.py",
@@ -14618,7 +14618,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 302,
+     "line": 303,
      "tabs": [
       "coci-lookup"
      ]
@@ -14628,7 +14628,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 31
+     "line": 34
     },
     {
      "id": "script:kb/_closest_mid.py",
@@ -14642,7 +14642,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 65
+     "line": 66
     },
     {
      "id": "script:kb/_pile_mint_dryrun.py",
@@ -14677,7 +14677,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 63
+     "line": 64
     }
    ],
    "producers": [
@@ -21242,7 +21242,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1189,
+     "line": 1190,
      "tabs": [
       "coci-lookup"
      ]
@@ -26781,6 +26781,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/coci_topics_not_applicable_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/college_briefing_publish_suppression_test.py": {
    "consumers": [
     {
@@ -30084,7 +30097,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 947,
+     "line": 948,
      "tabs": [
       "coci-lookup"
      ]
@@ -30528,7 +30541,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1589,
+     "line": 1590,
      "tabs": [
       "coci-lookup"
      ]
@@ -30632,7 +30645,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 34
+     "line": 37
     },
     {
      "id": "script:kb/_build_roep_display.py",
@@ -34220,7 +34233,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 383,
+     "line": 384,
      "tabs": [
       "coci-lookup"
      ]
@@ -34230,7 +34243,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 428,
+     "line": 429,
      "tabs": [
       "coci-lookup"
      ]
@@ -37625,6 +37638,7 @@
     "tests/row_audit_top_source_score_test.py",
     "tests/row_audit_zero_members_test.py",
     "tests/coci_flags_test.py",
+    "tests/coci_topics_not_applicable_test.py",
     "kb/_not_applicable_rule.py",
     "tests/cpl_pathway_membership_test.py",
     "tests/program_course_graph_test.py",
