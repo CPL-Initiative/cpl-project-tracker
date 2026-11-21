@@ -1,0 +1,27 @@
+{
+ "_readme": "Free page read for College of the Canyons' census lever 3 (S691, reread worker): 101 noncredit programs the 2026-27 credit catalog read (run 44769429877) found no page for. A 2023-24 extract of the catalog's School of Personal and Professional Learning pages exists on the college's site, so this read asks whether the 2026-27 catalog v3 prints those programs, on which pages and under what heading, and what the school's own page links for the current year. One load of each; robots.txt first, the census user agent, 4 s between loads.",
+ "college": "College of the Canyons",
+ "questions": {
+  "nc_in_catalog": "Whether the 2026-27 catalog v3 prints the noncredit Certificates of Completion and Competency, on which PDF pages, and how each program's heading and course list read.",
+  "nc_elsewhere": "Whether the School of Personal and Professional Learning links a current-year noncredit catalog or program pages."
+ },
+ "keywords": [
+  "Certificate of Completion",
+  "Certificate of Competency",
+  "Master Gardener",
+  "Workplace Essentials",
+  "Supervisor.s Roadmap"
+ ],
+ "pdf_page_cap": 24,
+ "pages": [
+  {
+   "answers": ["nc_in_catalog"],
+   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf"
+  },
+  {
+   "answers": ["nc_elsewhere"],
+   "url": "https://www.canyons.edu/ppl",
+   "links": "noncredit|catalog|certificate|program|\\.pdf"
+  }
+ ]
+}
