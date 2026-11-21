@@ -4,7 +4,7 @@
   "supabase_tables": 119,
   "rpcs": 68,
   "edge_functions": 16,
-  "file_datasets": 1123,
+  "file_datasets": 1125,
   "external_services": 197,
   "consumers": 646,
   "workflows": 77,
@@ -8977,14 +8977,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6906
+     "line": 7015
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 380
+     "line": 404
     }
    ],
    "served": false,
@@ -8997,14 +8997,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6982
+     "line": 7091
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 394
+     "line": 418
     }
    ],
    "served": false,
@@ -18909,7 +18909,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7585
+     "line": 7815
     }
    ],
    "served": true,
@@ -19177,7 +19177,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 630
+     "line": 634
     },
     {
      "id": "script:kb/_program_requirements_cheap_piles_s683.py",
@@ -19208,7 +19208,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 328
+     "line": 330
     }
    ],
    "served": false,
@@ -21955,14 +21955,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 85
+     "line": 87
     },
     {
      "id": "script:kb/_program_named_gaps.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 85
+     "line": 87
     }
    ],
    "served": false,
@@ -23124,14 +23124,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7317
+     "line": 7486
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 374
+     "line": 398
     }
    ],
    "served": false,
@@ -23144,7 +23144,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6346
+     "line": 6436
     }
    ],
    "served": false,
@@ -23787,6 +23787,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:not_named_*.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_college.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 7698
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:not_sent_*.json": {
    "consumers": [
     {
@@ -23794,14 +23807,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6944
+     "line": 7053
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 388
+     "line": 412
     }
    ],
    "served": false,
@@ -23931,7 +23944,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 640
+     "line": 644
     }
    ],
    "served": false,
@@ -29056,6 +29069,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/program_requirements_reader_fixes_s697_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/program_requirements_reconcile_test.py": {
    "consumers": [
     {
@@ -32324,7 +32350,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 7559
+     "line": 7789
     }
    ],
    "main_committers": []
@@ -32336,7 +32362,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 7676
+     "line": 7906
     }
    ],
    "main_committers": []
@@ -37671,6 +37697,7 @@
     "tests/program_requirements_prior_read_test.py",
     "tests/program_requirements_year_renumbers_test.py",
     "tests/program_requirements_extract_halt_test.py",
+    "tests/program_requirements_reader_fixes_s697_test.py",
     "tests/program_requirements_fragment_path_test.py",
     "tests/program_requirements_wave_test.py",
     "tests/program_requirements_extraction_gate_test.py",

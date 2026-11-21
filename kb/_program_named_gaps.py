@@ -55,6 +55,8 @@ THE COLLECTION LANE'S COLLEGES are left out: COLLECTION_LANE_S680 in kb/collecti
                                                     # rows the migrate receipt M returned (no rescoring)
     python3 kb/_program_named_gaps.py --three-part --tag s681   # S681: one plan in three parts (A the S680 rows to
                                                     # the corrected values, B #3502's records, C units rule A5's five)
+    python3 kb/_program_named_gaps.py --gap total_not_printed --tag s697   # S697: one gap's records alone, the
+                                                    # label file untouched
     python3 kb/_program_named_gaps.py --wave --college NAME ... --checked LIVE.json --tag s684
                                                     # S684: a re-read wave's records take their gap again (A the
                                                     # record rules, B #3502's plan), only at the wave's runs
@@ -510,7 +512,9 @@ def _load_images(colleges: set) -> dict:
     return out
 
 
-def run(write: bool, skip: tuple = ()) -> dict:
+def run(write: bool, skip: tuple = (), gaps: tuple = ()) -> dict:
+    """gaps: when given, only records whose gap is one of these move (S697: total_not_printed applied alone, so the
+    pass writes no other lane's records); the recall still reads every record."""
     moved, files, hits, every = [], [], [], []
     # A college the harvest parks (the census's PARKED) takes no gap from this lane either.
     import _harvest_gap_census as G
@@ -525,7 +529,7 @@ def run(write: bool, skip: tuple = ()) -> dict:
             continue
         files.append(filed)
         j = judge(filed)
-        if j:
+        if j and (not gaps or j[0] in gaps):
             hits.append((path, filed, j))
     # The load's image of each record before any rewrite (the guard), and after it (what the row takes).
     before = _load_images({f["college"] for _, f, _ in hits}) if write else {}
@@ -1067,6 +1071,8 @@ def main(argv=None) -> int:
                     help="S684: name the gaps again on the records a re-read wave filed, at the --college names")
     ap.add_argument("--college", action="append", default=[], help="with --wave: a college of the wave (repeat)")
     ap.add_argument("--checked", help="with --wave: the conductor's live read of checked rows (by_college)")
+    ap.add_argument("--gap", action="append", default=[], choices=sorted(GAPS),
+                    help="the plain pass: move only records taking this gap (repeat); the label file is left as is")
     a = ap.parse_args(argv)
     if a.wave:
         if not a.college:
@@ -1156,7 +1162,7 @@ def main(argv=None) -> int:
         out = write_rollback(body, rel(a.receipt), day, a.tag)
         print("replanned: %d rows applied (%s), rollback %s" % (body["applied"]["returned"], rel(a.applied), rel(out)))
         return 0
-    r = run(write=not a.dry_run, skip=tuple(a.skip_college))
+    r = run(write=not a.dry_run, skip=tuple(a.skip_college), gaps=tuple(a.gap))
     print("records collected with a named gap: %d (%s)" % (len(r["moved"]), ", ".join(
         "%s %d" % kv for kv in sorted(r["by_gap"].items())) or "none"))
     print("labels on programs with no record: %d (%s)" % (len(r["labels"]), ", ".join(
@@ -1173,17 +1179,18 @@ def main(argv=None) -> int:
     if a.dry_run:
         return 0
     held = list(CL.COLLECTION_LANE_S680) + list(a.skip_college)
-    with open(LABELS_OUT, "w", encoding="utf-8") as fh:
-        json.dump({"rule": RULING, "gaps": GAPS, "held_colleges": held, "labeled": len(r["labels"]),
-                   "by_gap": r["labels_by_gap"], "labels": r["labels"]}, fh, ensure_ascii=False, indent=1)
-        fh.write("\n")
+    if not a.gap:
+        with open(LABELS_OUT, "w", encoding="utf-8") as fh:
+            json.dump({"rule": RULING, "gaps": GAPS, "held_colleges": held, "labeled": len(r["labels"]),
+                       "by_gap": r["labels_by_gap"], "labels": r["labels"]}, fh, ensure_ascii=False, indent=1)
+            fh.write("\n")
     if not r["moved"]:
         return 0
     day = time.strftime("%Y-%m-%d", time.gmtime())
     path = os.path.join(RECEIPTS, "program_requirement_records_named_gaps_%s_%s.json" % (day, a.tag))
     n = len(r["moved"])
     body = {"rule": RULING, "gaps": GAPS, "at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-            "held_colleges": held, "collected": n, "by_gap": r["by_gap"],
+            "held_colleges": held, "only_gaps": list(a.gap), "collected": n, "by_gap": r["by_gap"],
             "recall": r["recall"], "matcher_recall": r["matcher_recall"], "records": r["moved"],
             "decided": ("The %d records count as collected with the gap named (the S680 conductor, on Sam's rule of "
                         "2026-11-17: never drop a record for failing; collect it with gaps noted and scores)." % n),

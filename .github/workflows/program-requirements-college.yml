@@ -21,10 +21,16 @@ name: Program requirements, one college
 #            a program), so it runs on a dispatch or when the pushed commit's
 #            message starts with [extract], never on a schedule. A record filed
 #            from the same page is kept, so a re-run pays only for what moved.
+#            only= (S697) names the control numbers to send, comma-separated:
+#            the preview and the price count those alone, every other program
+#            keeps its filed record as filed, and a name the capture cannot
+#            send refuses the run. The estimate gate and the hard stop apply.
 #   file     commits the run's account, and the records when there are any, to
 #            the branch that ran the workflow (kb/program_requirements_college/
 #            <slug>/), so no session reads a job log. The page text stays in the
-#            run's artifact for 90 days.
+#            run's artifact for 90 days. A run that is no whole read (the
+#            catalog PDF gave no page, no program's text was read, or the
+#            extraction ended short) files nothing and ends red (S697).
 #
 # load (a dispatch with step=load, or a push whose message starts with [load]):
 #   posts the records COMMITTED on the branch to
@@ -112,6 +118,10 @@ on:
         description: "read: an earlier run id whose artifact (program-requirements-<run>) holds this college's filed capture, or the capture-only read filed as its capture_preview.json (S648). Its pages are staged in place of a capture: no page is loaded and no site is contacted. Refused unless the artifact is the filed capture's own (college, catalog year, page counts, each program's text). Extraction then runs under the $40 estimate gate and the $40 hard stop (S647)"
         required: false
         default: ""
+      only:
+        description: "read: extract only these control numbers (comma-separated); every other program keeps its filed record as filed, and the price counts the named alone. A name the capture holds no text for refuses the run (S697). Empty = every program that moved"
+        required: false
+        default: ""
       display_college:
         description: "display: apply only this college's statements, as the receipt names it (empty = the whole build). Not the college input, whose default would scope every display (S645)"
         required: false
@@ -167,6 +177,10 @@ jobs:
       SOURCES_FROM: ${{ github.event.inputs.sources_from || '' }}
       ROUTE: ${{ github.event.inputs.route || '' }}
       PRIOR: ${{ github.event.inputs.prior || '' }}
+      # The named programs a read sends (S697): read by the capture's or the stage's would_extract, the price and
+      # the extraction alike, so the preview, the estimate and the calls agree. A push carries none.
+      ONLY: ${{ github.event.inputs.only || '' }}
+      READ_STEP: ${{ github.event.inputs.step || 'read' }}
       # A push extracts only when its message STARTS with [extract]: the first
       # run's commit merely described the marker, and contains() spent $15.80.
       EXTRACT: ${{ github.event.inputs.extract == '1' || (github.event_name == 'push' && startsWith(github.event.head_commit.message, '[extract]')) }}
@@ -179,6 +193,14 @@ jobs:
           fi
           if [ -n "$PRIOR" ] && { [ -n "$SOURCES_FROM" ] || [ -n "$ROUTE" ] || [ "$LIMIT" != "0" ]; }; then
             echo "::error::prior reads the programs it names: leave sources_from and route empty and limit 0"; exit 1
+          fi
+          if [ -n "$ONLY" ]; then
+            if ! [[ "$ONLY" =~ ^[0-9A-Za-z]+(,[0-9A-Za-z]+)*$ ]]; then
+              echo "::error::only names control numbers, comma-separated with no spaces (11338,04607)"; exit 1
+            fi
+            if [ -n "$PRIOR" ] || [ "$LIMIT" != "0" ] || [ "$READ_STEP" != "read" ]; then
+              echo "::error::only belongs to step=read: leave prior empty and limit 0"; exit 1
+            fi
           fi
           if [ -n "$SOURCES_FROM" ]; then
             if ! [[ "$SOURCES_FROM" =~ ^[0-9]+$ ]]; then echo "::error::sources_from must be a run id"; exit 1; fi
@@ -247,7 +269,7 @@ jobs:
           FORCE: ${{ github.event.inputs.force || '' }}
         run: >-
           python3 kb/_program_requirements_wave.py price --college "$COLLEGE" --out out --extract "$EXTRACT_ASKED"
-          --limit-usd 40 --attempt "$ATTEMPT" --fresh "$FRESH" --force "$FORCE" --write out/price_row.json
+          --limit-usd 40 --attempt "$ATTEMPT" --fresh "$FRESH" --force "$FORCE" --only "$ONLY" --write out/price_row.json
       - name: Extract and score
         if: env.EXTRACT == 'true' && steps.price.outputs.go == 'true'
         env:
@@ -261,7 +283,7 @@ jobs:
           CEILING: '40'
         run: >-
           python3 kb/_program_requirements_college.py extract --college "$COLLEGE" --out out --workers 6
-          --force "$FORCE" --ceiling-usd "$CEILING"
+          --force "$FORCE" --only "$ONLY" --ceiling-usd "$CEILING"
       - name: Reconcile the filed records with the fresh pages (no model call)
         if: github.event.inputs.step == 'reconcile' && env.EXTRACT != 'true'
         run: python3 kb/_program_requirements_college.py reconcile --college "$COLLEGE" --out out
