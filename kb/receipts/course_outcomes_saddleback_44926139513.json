@@ -1,0 +1,48 @@
+{
+ "what": "course_outcomes_load: course SLOs as printed, by college and course (Sheet 70 card 3)",
+ "host": "saddleback",
+ "load_run": "44926139513",
+ "reads": [
+  "kb/course_outcomes/saddleback/read_44913397609_p1of2.json",
+  "kb/course_outcomes/saddleback/read_44913397609_p2of2.json"
+ ],
+ "kind": "all",
+ "held_back": 0,
+ "posted": 1732,
+ "inserted": 0,
+ "kept": 1732,
+ "skipped": 4,
+ "skipped_rows": [
+  {
+   "course_code": "ECON 167B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HLTH 7",
+   "status": 200,
+   "shape": "none",
+   "kind": "slo",
+   "college": "Irvine Valley College",
+   "why": "every filed line holds no letter (a bare number)"
+  },
+  {
+   "course_code": "DMA 75",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "KNES 64",
+   "status": 200,
+   "shape": "none",
+   "kind": "slo",
+   "college": "Irvine Valley College",
+   "why": "every filed line holds no letter (a bare number)"
+  }
+ ],
+ "error": null,
+ "inserted_keys": [],
+ "rollback": null,
+ "rollback_by_key_if_error": null,
+ "rollback_note": "rollback deletes the ids the responses named. rollback_by_key_if_error is filed only when error is set: a batch may have committed without its response. It takes every row of the sent kinds and (college, read_run) pairs, including any an earlier load of the same read inserted."
+}
