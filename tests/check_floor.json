@@ -431,6 +431,7 @@
     "commons_arrival.test.js": 7,
     "coci_list_doubt.test.js": 53,
     "commons_needs_you.test.js": 55,
-    "commons_subjects.test.js": 27
+    "commons_subjects.test.js": 27,
+    "commons_subjects_held.test.js": 24
   }
 }

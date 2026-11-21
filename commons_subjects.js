@@ -12,7 +12,9 @@
 //
 // Addresses (loaded by commons.js when the address names it): #commons/subjects (every college),
 // #commons/subjects/<college slug> (one college), #commons/subjects/disagree (the codes only one side prints, the
-// curator's list). The view picked lasts the visit; only the address carries it. Tokens only (the tab's --cmn roles),
+// curator's list), #commons/subjects/held (S695: the local subject codes the pile mint holds on, ranked by the held
+// courses a decided common subject code releases; read from kb/status/held_subject_codes.json, built by
+// kb/_held_subject_codes.py, and fetched only when that view opens). The view picked lasts the visit; only the address carries it. Tokens only (the tab's --cmn roles),
 // words for every control, no glyphs.
 (function () {
   "use strict";
@@ -20,6 +22,8 @@
   var FILE = "kb/status/local_subject_titles.json";
   var SIDES = { both: "Both", catalog: "Catalog only", state: "State list only" };
   var DISAGREE = "disagree";
+  var HELD = "held";
+  var HELD_FILE = "kb/status/held_subject_codes.json";
 
   function el(tag, attrs, kids) {
     var e = document.createElement(tag);
@@ -100,22 +104,71 @@
     return el("div", { cls: "csb-wrap", role: "region", "aria-label": label, tabindex: "0" }, [tbl]);
   }
 
-  var VIEW = { root: null, M: null, noted: null };
+  /* ── the held codes (S695): one row per local subject code, ranked by the held courses it releases ── */
+  function heldModel(f) {
+    f = f || {};
+    var codes = (f.codes || []).slice().sort(function (a, b) { return (b.held || 0) - (a.held || 0) || String(a.key).localeCompare(String(b.key)); });
+    return { codes: codes, totals: f.totals || {}, floors: f.floors || {}, rule: f._rule || "", plan: (f._sources || {}).plan_date || "" };
+  }
+  function pct(v) { return v == null ? "" : Math.round(v * 100) + "%"; }
+  function voteLine(v) {
+    if (!v || !v.votes) return v && v.missed ? v.missed + "." : "";
+    return (v.winner ? v.winner + " won " : "No winner: ") + fmt(v.votes) + (v.votes === 1 ? " vote" : " votes") + (v.share != null ? ", " + pct(v.share) + " share" : "") + "; " + v.missed + ".";
+  }
+  function evidence(c) {
+    var out = [];
+    var sm = c.subject_map || {}, notes = Object.keys(sm.notes || {});
+    out.push(el("p", null, [el("strong", { text: "Subject map: " }), sm.reads ? "reads " + sm.reads + ". " : "has no entry. ",
+      notes.filter(function (n) { return n !== "no route reaches its floor"; }).join(" ")]));
+    if (c.suggestion) out.push(el("p", { cls: "csb-sug" }, [el("strong", { text: "Suggestion, not a decision: " }),
+      c.suggestion.subj4 + ", from the " + c.suggestion.from + " (" + fmt(c.suggestion.votes) + (c.suggestion.votes === 1 ? " vote" : " votes") + ", " + pct(c.suggestion.share) + " share)."]));
+    out.push(el("p", null, [el("strong", { text: "Statewide vote: " }), voteLine(c.statewide_vote)]));
+    var voted = (c.colleges || []).filter(function (x) { return x.college_vote && x.college_vote.votes; });
+    if (voted.length) out.push(el("p", null, [el("strong", { text: "College votes: " }), voted.map(function (x) { return x.college + ", " + voteLine(x.college_vote); }).join(" ")]));
+    if ((c.near_entries || []).length) out.push(el("p", null, [el("strong", { text: "Near entries in the subject map: " }),
+      c.near_entries.map(function (n) { return n.key + " (" + n.discipline + ")"; }).join(", ") + "."]));
+    return out;
+  }
+  function heldTable(H) {
+    var tbl = el("table", { cls: "csb-table csb-held" }, [
+      el("colgroup", null, [el("col", { cls: "csb-c-code" }), el("col", { cls: "csb-c-num" }), el("col", { cls: "csb-c-mid" }), el("col", { cls: "csb-c-mid" }), el("col", { cls: "csb-c-ev" })]),
+      el("thead", null, [el("tr", null, ["Local code", "Held courses it releases", "Colleges using it", "Example held courses", "Evidence that fell short"]
+        .map(function (t) { return el("th", { scope: "col", text: t }); }))]),
+      el("tbody", null, H.codes.length ? H.codes.map(function (c) {
+        return el("tr", { "data-code": c.key, "data-held": String(c.held) }, [
+          el("th", { scope: "row" }, [c.code, (c.printed_names || []).length ? el("span", { cls: "csb-sub", text: c.printed_names.join("; ") }) : null]),
+          el("td", { text: fmt(c.held) }),
+          el("td", { text: (c.colleges || []).map(function (x) { return x.college + " " + fmt(x.held); }).join("; ") }),
+          el("td", { text: (c.examples || []).map(function (x) { return x.title + " (" + x.college + ")"; }).join("; ") }),
+          el("td", { cls: "csb-ev" }, evidence(c))]);
+      }) : [el("tr", null, [el("td", { colspan: "5", text: "The pile mint holds no course for want of a common subject code." })])])]);
+    return el("div", { cls: "csb-wrap", role: "region", "aria-label": "Local subject codes the M-ID mint holds on", tabindex: "0" }, [tbl]);
+  }
+  var heldCache = null;
+  function loadHeld() {
+    heldCache = heldCache || fetch(HELD_FILE, { cache: "no-cache" }).then(function (r) {
+      if (!r || !r.ok) throw new Error(HELD_FILE + " answered " + (r ? r.status : "nothing"));
+      return r.json();
+    }).then(heldModel, function (e) { heldCache = null; throw e; });
+    return heldCache;
+  }
+
+  var VIEW = { root: null, M: null, noted: null, H: null };
   function render(root, M, view) {
     VIEW.root = root; VIEW.M = M;
     ensureCss();
     view = String(view || "");
-    var c = view && view !== DISAGREE ? M.by[view] : null;
-    var missing = view && view !== DISAGREE && !c ? view : "";
+    var c = view && view !== DISAGREE && view !== HELD ? M.by[view] : null;
+    var missing = view && view !== DISAGREE && view !== HELD && !c ? view : "";
     S.view = missing ? "" : view;
     root.removeAttribute("style");
     root.textContent = "";
     var T = M.totals, all = [];
     M.list.forEach(function (x) { all = all.concat(x.rows); });
     var wrap = el("div", { cls: "cmn-wrap csb" });
-    wrap.appendChild(trail(c ? c.college : S.view === DISAGREE ? "Codes only one side prints" : ""));
+    wrap.appendChild(trail(c ? c.college : S.view === DISAGREE ? "Codes only one side prints" : S.view === HELD ? "Codes the M-ID mint holds on" : ""));
     wrap.appendChild(el("header", { cls: "cmn-top" }, [
-      el("h2", { cls: "cmn-title", id: "csb-h", text: c ? "Subjects at " + c.college : S.view === DISAGREE ? "Subject codes only one side prints" : "Subjects" }),
+      el("h2", { cls: "cmn-title", id: "csb-h", text: c ? "Subjects at " + c.college : S.view === DISAGREE ? "Subject codes only one side prints" : S.view === HELD ? "Local subject codes the M-ID mint holds on" : "Subjects" }),
       el("div", { cls: "cmn-rule", "aria-hidden": "true" }),
       el("p", { cls: "cmn-lede", text: "Step a is the common subject code each discipline shares; Step b is each college’s own name for its subject codes, read from its printed catalog. The Courses bot drafts each local title from the catalog’s subject heading. A curator settles the codes the catalog and the state course list disagree on." })
     ]));
@@ -125,19 +178,31 @@
       go("#commons/subjects/" + DISAGREE, fmt((T.catalog_only || 0) + (T.state_only || 0)) + " codes only one side prints"),
       " (" + fmt(T.catalog_only) + " catalog only, " + fmt(T.state_only) + " state list only). ",
       fmt(T.with_common) + " codes have a common subject code from the subject map. ",
-      el("a", { href: "#canonical-subj4", text: "Common Subjects Reference" }), "."]));
+      el("a", { href: "#canonical-subj4", text: "Common Subjects Reference" }), ". ",
+      go("#commons/subjects/" + HELD, "Codes the M-ID mint holds on"), "."]));
     if (missing) wrap.appendChild(el("p", { cls: "csb-note", role: "status", text: "No college with a printed catalog is named " + missing + ". Every college is below." }));
     if (c) {
       wrap.appendChild(el("p", { cls: "csb-note", text: c.year + " catalog, read " + day(c.readAt) + ". " + (c.named ? fmt(c.named) + " of " + fmt(c.codes) + " codes carry a printed name." : "This catalog prints the code alone, so every title reads TBA.") }));
       wrap.appendChild(collegeTable(M, [c]));
       wrap.appendChild(codeTable(c.rows, "Subject codes at " + c.college));
+    } else if (S.view === HELD) {
+      var H = VIEW.H;
+      if (!H) wrap.appendChild(el("p", { cls: "csb-note", role: "status", text: VIEW.heldError ? "The held codes could not be read (" + VIEW.heldError + "). Reload the tab to try again." : "Reading the held codes…" }));
+      else {
+        var HT = H.totals;
+        wrap.appendChild(el("p", { cls: "csb-note" }, [el("strong", { text: fmt(HT.held) }), " courses the M-ID mint holds wait on ", el("strong", { text: fmt(HT.codes) }),
+          " local subject codes (" + fmt(HT.pairs) + " college-and-code pairs) that no route gives a common subject code. The top 20 codes release " + fmt(HT.top_20_release) + " of them. "
+          + "Deciding a code’s common subject code releases every held course under it. Each suggestion is a vote that missed the 98% floor, shown with its votes; it decides nothing."
+          + (H.plan ? " From the pile mint dry run of " + day(H.plan) + "." : "")]));
+        wrap.appendChild(heldTable(H));
+      }
     } else if (S.view === DISAGREE) {
       wrap.appendChild(codeTable(all.filter(function (r) { return r.side !== "both"; }), "Subject codes only one side prints"));
     } else {
       wrap.appendChild(collegeTable(M, M.list));
       wrap.appendChild(codeTable(all, "Every subject code"));
     }
-    wrap.appendChild(el("p", { cls: "csb-foot", text: "How codes are compared: " + M.rule + (M.built ? " The state course list was built " + day(M.built) + "." : "") }));
+    wrap.appendChild(el("p", { cls: "csb-foot", text: "How codes are compared: " + (S.view === HELD && VIEW.H ? VIEW.H.rule : M.rule + (M.built ? " The state course list was built " + day(M.built) + "." : "")) }));
     var page = el("div", { cls: "cmn-page" }, [wrap]);
     root.appendChild(page);
     Array.prototype.forEach.call(root.querySelectorAll("a[data-csb-go]"), function (a) {
@@ -146,9 +211,16 @@
     return page;
   }
   /* A pick: draw it and put it in the address, which is the only place it lives. */
+  /* The held view reads its own file the first time it opens, then draws again. */
+  function withHeld(view) {
+    if (String(view || "") !== HELD || VIEW.H) return Promise.resolve();
+    return loadHeld().then(function (H) { VIEW.H = H; VIEW.heldError = ""; }, function (e) { VIEW.heldError = e && e.message ? e.message : String(e); })
+      .then(function () { if (VIEW.root && VIEW.M && S.view === HELD) render(VIEW.root, VIEW.M, HELD); });
+  }
   function open(view) {
     if (!VIEW.root || !VIEW.M) return;
     render(VIEW.root, VIEW.M, view || "");
+    withHeld(view);
     var h = "#" + address();
     try { if (window.history && history.pushState && location.hash !== h) history.pushState(null, "", h); } catch (e) { /* the view still draws */ }
     if (VIEW.noted) VIEW.noted(String(location.hash || ""));
@@ -167,14 +239,14 @@
     opts = opts || {};
     VIEW.noted = opts.noted || null;
     if (!root) return Promise.resolve(null);
-    if (VIEW.M && cache) { render(root, VIEW.M, view); return Promise.resolve(VIEW.M); }
+    if (VIEW.M && cache) { render(root, VIEW.M, view); return withHeld(view).then(function () { return VIEW.M; }); }
     root.textContent = "Reading the subjects…";
     cache = cache || load();
     return cache.then(function (M) {
       render(root, M, view);
       var h = "#" + address();
       if (view && location.hash !== h) { try { history.replaceState(null, "", h); } catch (e) { /* keep the view */ } if (VIEW.noted) VIEW.noted(String(location.hash || "")); }
-      return M;
+      return withHeld(view).then(function () { return M; });
     }, function (e) {
       cache = null;
       root.textContent = "The subjects list could not be read (" + (e && e.message ? e.message : e) + "). Reload the tab to try again.";
@@ -199,9 +271,12 @@
     ".csb-table tbody th { font-weight:600; }",
     ".csb-table td { font-variant-numeric:tabular-nums; }",
     ".csb-c-wide { width:24%; }",
+    ".csb-c-code { width:12%; } .csb-c-num { width:10%; } .csb-c-mid { width:20%; } .csb-c-ev { width:38%; }",
+    ".csb-sub { display:block; font-weight:400; color:var(--cmn-muted); font-size:.85rem; }",
+    ".csb-ev p { margin:0 0 4px; } .csb-ev strong { color:var(--cmn-heading); font-weight:600; }",
     ".csb-tba { color:var(--cmn-muted); }",
     ".csb-foot { margin:0; color:var(--cmn-muted); font-size:.85rem; max-width:var(--cpl-measure,none); }",
-    "@media (max-width: 560px) { .csb-table { min-width:36rem; } .csb-table th, .csb-table td { padding:8px; } }"
+    "@media (max-width: 560px) { .csb-table { min-width:36rem; } .csb-held { min-width:44rem; } .csb-table th, .csb-table td { padding:8px; } }"
   ].join("\n");
   function ensureCss() {
     if (document.getElementById("csb-css")) return;
@@ -209,7 +284,7 @@
   }
 
   window.CPL_COMMONS_SUBJECTS = {
-    boot: boot, render: render, model: model, address: address, open: open, load: load, FILE: FILE, SIDES: SIDES, CSS: CSS,
-    _state: S, _reset: function () { cache = null; VIEW.M = null; S.view = ""; }
+    boot: boot, render: render, model: model, heldModel: heldModel, address: address, open: open, load: load, FILE: FILE, HELD_FILE: HELD_FILE, SIDES: SIDES, CSS: CSS,
+    _state: S, _reset: function () { cache = null; heldCache = null; VIEW.M = null; VIEW.H = null; S.view = ""; }
   };
 })();
