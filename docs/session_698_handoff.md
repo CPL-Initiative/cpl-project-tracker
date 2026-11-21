@@ -51,7 +51,9 @@ lane has nothing in flight there (`d-lane-names-only-colleges-in-flight-s681`). 
 `harvest-gap-census.yml` against 4,875, and the checkpoint.
 
 **Split changes during the run.** Butte joins lane 1 only if `readerfix` carries its normalized-address compare
-(`f-butte-page-addresses-changed-case-s690`).
+(`f-butte-page-addresses-changed-case-s690`). 14:28Z: `piles` finished (#3640 merged) and lane 2's next concern went
+to a fresh worker, `piles2`: the census's `reconcile_steps` at Glendale (33) and Clovis (26), catalog-wording rules
+with self-recall, free runs only. Its two colleges were written here a minute after it started.
 
 ## Progress (refreshed while the run works)
 
@@ -64,6 +66,8 @@ lane has nothing in flight there (`d-lane-names-only-colleges-in-flight-s681`). 
   the nine named programs on `main`'s runs and passing.
 - 14:04Z: #3640 ready, waiting on `test`. Irvine Valley's #3642 (index 44908824732: 1,199 current outlines; trial
   44911142170, 12 of 12) waits on its second reader before the full read.
+- 14:27Z: #3640 merged (`00e441ce`). The second reader on #3642 gave GO for the full read and the load
+  (`slugs=irvine_valley`), with one blocking test fix before the merge and three fixes forward; the full read is out.
 
 **Not tonight:** the plain session's list (handoff 696; brief section 4). Golden West's 476 header rows wait on a plain
 session's review. City College of San Francisco's Cal-GETC step stays a plain session's.
