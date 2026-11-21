@@ -899,7 +899,22 @@ def strip_page_files(root: str = OUT_DIR) -> list[str]:
 # (second reader on #3601, S690).
 CCSF_RECALL = os.path.join(HERE, "course_outcomes", "ccsf_recall.json")
 RIO_HONDO_RECALL = os.path.join(HERE, "course_outcomes", "rio_hondo_recall.json")
-RECALL_BY_HOST = {"ccsf.curricunet.com": CCSF_RECALL, "riohondo.curriqunet.com": RIO_HONDO_RECALL}
+SADDLEBACK_RECALL = os.path.join(HERE, "course_outcomes", "saddleback_recall.json")
+RECALL_BY_HOST = {"ccsf.curricunet.com": CCSF_RECALL, "riohondo.curriqunet.com": RIO_HONDO_RECALL,
+                  "saddleback.curriqunet.com": SADDLEBACK_RECALL}
+
+
+def recall_for(host: str, slugs: str) -> dict:
+    """The self-recall gate for a full read at an outcomes-only host: rows_recall on the host's file, refused when
+    no file is recorded or the file's slugs name another college than the read's. Saddleback's host holds Irvine
+    Valley's outlines too, printed by another report, so Saddleback's count never opens a read for Irvine Valley."""
+    recall = RECALL_BY_HOST.get((host or "").lower())
+    if not recall:
+        return {"ok": False, "why": "the host has no recall file recorded"}
+    want = json.load(open(recall)) if os.path.exists(recall) else {}
+    if want.get("slugs") and want["slugs"] != slugs:
+        return {"ok": False, "why": "the host's recall file counts %s, and this read is for %s" % (want["slugs"], slugs)}
+    return rows_recall(recall)
 # The SLO section of a report 28 page, cut by its two printed headings alone, never by the parser's patterns.
 EXCERPT_FROM, EXCERPT_TO, EXCERPT_LINES = "STUDENT LEARNING OUTCOMES", "CONTENTS", 60
 # Each outcomes-only host's two printed headings around its SLO section, as a person read them off the host's own
@@ -1149,8 +1164,7 @@ def main(argv=None) -> int:
     else:
         ap.error("--index FILE or --catalog SLUG (or --reparse FOLDER)")
     if outcomes_only(index["url"]) and not a.trial:
-        recall = RECALL_BY_HOST.get(urllib.parse.urlparse(index["url"]).netloc.lower())
-        rc = rows_recall(recall) if recall else {"ok": False, "why": "the host has no recall file recorded"}
+        rc = recall_for(urllib.parse.urlparse(index["url"]).netloc.lower(), a.slugs)
         if not rc["ok"]:
             raise SystemExit("%s: no full read before the self-recall count passes (%s). Run a trial, count its "
                              "parsed rows by eye into the host's recall file, then python3 "

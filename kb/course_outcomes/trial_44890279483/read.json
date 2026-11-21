@@ -1,5 +1,5 @@
 {
- "run": "44886389239",
+ "run": "44890279483",
  "index": "kb/course_outline_index/index_44882239715.json",
  "host": "https://riohondo.curriqunet.com/",
  "system": "curriqunet",
@@ -14,8 +14,8 @@
   "objective"
  ],
  "objectives_printed": true,
- "parser_fingerprint": "0c55630fdb9d85f0444db07a6930477c",
- "at": "2026-11-21T08:48:22Z",
+ "parser_fingerprint": "2629a09aeac9be1183829d0cea92009f",
+ "at": "2026-11-21T09:37:56Z",
  "complete": true,
  "summary": {
   "read": 12,
