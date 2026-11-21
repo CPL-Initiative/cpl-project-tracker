@@ -1,0 +1,285 @@
+{
+ "college": "Solano Community College",
+ "control_number": "06552",
+ "shape": "degree",
+ "title": "Early Childhood Education",
+ "award": "A.S. Degree",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=195",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9951,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9951,
+    "output_tokens": 1848,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1848,
+  "output_tokens_details": {
+   "thinking_tokens": 619
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07676,
+ "ms": 15244,
+ "seconds": 19.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "NUTR54"
+   ],
+   "flagged": [
+    "NUTR54"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    35.0,
+    35.0
+   ],
+   "stated": [
+    35.0,
+    35.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     35.0,
+     35.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": null,
+    "why": [],
+    "fill": [
+     25.0,
+     25.0
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [
+    "Demonstrate an understanding of child development theory, current research, and trends in the field, and their application to responsive practice in early care setting."
+   ],
+   "why": [
+    "not in the catalog text as printed: Demonstrate an understanding of child development theory, current research, and "
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Early Childhood Education Certificate of Achievement and Associate in Science",
+   "measure": "units",
+   "total_units": {
+    "min": 35,
+    "max": 35
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Demonstrate an understanding of child development theory, current research, and trends in the field, and their application to responsive practice in early care setting.",
+    "Implement techniques that strengthen home and school partnerships in order to gain an ecological perspective of children's development.",
+    "Develop curriculum and early care environments that are derived from unbiased observation and assessment of children's interests and developmental levels.",
+    "Demonstrate reflective practice in their work with young children by building awareness of self as teacher, child as learner, and early childhood pedagogy."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 35,
+     "max": 35
+    },
+    "courses": [
+     {
+      "code": "CDEV C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDFS 050",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDFS 053",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDFS 054",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "NUTR 054",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDFS 062",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDFS 063",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDFS 064",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDFS 065",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDFS 066",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDFS 077",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDFS 078",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The section is shared by the Certificate of Achievement and the A.S.; the outcomes list is printed for both awards (Certificate of Achievement/Associate in Science) and is recorded here.",
+   "degree_total 60 comes from the sentence 'completing the 35-unit major, General Education, and electives as needed to complete a minimum of 60 units'; it is a stated minimum, not a printed total line. Reviewer should confirm.",
+   "The general education pattern is not named (only 'General Education'), so ge_pattern is null.",
+   "Closed-list code CDEVC1000 is printed as 'CDEV C1000'; CDFS codes are printed with a leading zero (e.g., CDFS 050 = CDFS 50).",
+   "NUTR 054 is an alternative to CDFS 054 and is not on the closed list.",
+   "Page 195 text about the Associate in Science in Early Childhood Education for Transfer (25 core units) belongs to the AS-T program and was not used.",
+   "Outcome text was normalized from PDF ligature artifacts (e.g., 'applicaƟ on' read as 'application')."
+  ]
+ },
+ "extracted_run": "44884569184",
+ "catalog_year": "2026-2027",
+ "source_sha": "67ebc04f2e0fea54",
+ "source_codes": [
+  "CDEVC1000",
+  "CDFS50",
+  "CDFS53",
+  "CDFS54",
+  "CDFS62",
+  "CDFS63",
+  "CDFS64",
+  "CDFS65",
+  "CDFS66",
+  "CDFS77",
+  "CDFS78"
+ ],
+ "source_coverage": 1.0
+}

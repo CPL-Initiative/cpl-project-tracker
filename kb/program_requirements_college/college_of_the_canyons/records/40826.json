@@ -1,0 +1,225 @@
+{
+ "college": "College of the Canyons",
+ "control_number": "40826",
+ "shape": "noncredit",
+ "title": "Teaching Foundation",
+ "award": "Noncredit program",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=335",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8975,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8975,
+    "output_tokens": 1613,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1613,
+  "output_tokens_details": {
+   "thinking_tokens": 771
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06816,
+ "ms": 14116,
+ "seconds": 14.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    54.0,
+    108.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Completion: Teaching Foundation",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will be able to appraise teaching strategies and technologies to develop best practices for a 21st century learning environment."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Take one course from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NC.EDUC-100",
+      "units": 36,
+      "units_max": 54,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NC.EDUC-104",
+      "units": 36,
+      "units_max": 54,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NC.EDUC-105",
+      "units": 36,
+      "units_max": 54,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Plus two courses from the following",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NC.EDUC-101",
+      "units": 18,
+      "units_max": 36,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NC.EDUC-102",
+      "units": 9,
+      "units_max": 18,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NC.EDUC-103",
+      "units": 9,
+      "units_max": 18,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NC.EDUC-111",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The requirements list prints 'Units Required: 0' and 0.0 beside each course; measure is recorded as hours for this noncredit certificate, with each course's hours taken from its course description (ranges such as 36.00 – 54.00 hours). No total hours for the certificate is printed, so total_units is null.",
+   "The requirements list names NC.EDUC-103 as 'Critical Thinking'; the course description titles it 'Critical Thinking Strategies'.",
+   "Course descriptions for NC.EDUC-001 to 004 and 106 to 110 appear on the page but are not part of this certificate's requirements and were not placed.",
+   "The program description names educators as the audience but names no career outcome; 'career in education' appears only in course descriptions, so careers is left empty."
+  ]
+ },
+ "extracted_run": "44886816990",
+ "catalog_year": "2026-2027",
+ "source_sha": "6172d77cf3a769d1",
+ "source_codes": [
+  "NCEDUC100",
+  "NCEDUC101",
+  "NCEDUC102",
+  "NCEDUC103",
+  "NCEDUC104",
+  "NCEDUC105",
+  "NCEDUC111"
+ ],
+ "source_coverage": 1.0
+}

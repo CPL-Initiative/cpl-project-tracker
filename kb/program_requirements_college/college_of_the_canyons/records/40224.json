@@ -1,0 +1,172 @@
+{
+ "college": "College of the Canyons",
+ "control_number": "40224",
+ "shape": "noncredit",
+ "title": "English as a Second Language (ESL) for College Preparation II",
+ "award": "Noncredit program",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=340",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9379,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9379,
+    "output_tokens": 1165,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1165,
+  "output_tokens_details": {
+   "thinking_tokens": 540
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06082,
+ "ms": 10635,
+ "seconds": 10.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": [
+    0.0,
+    0.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Program Requirements: (heading for this certificate not in the excerpt; presumably Certificate of Completion: English as a Second Language for College Preparation II on the preceding page)",
+   "measure": "units",
+   "total_units": {
+    "min": 0,
+    "max": 0
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NC.ESL-070",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NC.ESL-071",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt begins mid-section on page 340: the certificate heading and any Certificate Student Learning Outcome for this award appear to be on the preceding page (339) and are not in the text, so section_heading is inferred and outcomes are left empty. A reviewer should check page 339.",
+   "The requirements list prints 'Units Required: 0' and 0.0 units beside each course, so measure is recorded as units and total_units as 0. The course descriptions print 60.00 – 100.00 hours each for NC.ESL-070 and NC.ESL-071; no total hours for the certificate are printed.",
+   "Catalog codes NC.ESL-070 and NC.ESL-071 match closed-list NC.ESL 70 and NC.ESL 71.",
+   "The following section (Certificate of Completion: English for the Workplace, NC.VESL-001 and NC.VESL-002) belongs to a different award and was not recorded."
+  ]
+ },
+ "extracted_run": "44886816990",
+ "catalog_year": "2026-2027",
+ "source_sha": "bce4b41104fe6774",
+ "source_codes": [
+  "NCESL70",
+  "NCESL71"
+ ],
+ "source_coverage": 1.0
+}

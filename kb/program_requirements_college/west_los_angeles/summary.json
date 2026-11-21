@@ -2,21 +2,21 @@
  "college": "West Los Angeles College",
  "programs": 245,
  "with_closed_list": 228,
- "found": 203,
- "extracted": 203,
+ "found": 204,
+ "extracted": 204,
  "errors": 0,
  "passed_machine_checks": 179,
  "failed": {
-  "coverage": 6,
+  "coverage": 7,
   "invented": 5,
-  "arithmetic": 18,
+  "arithmetic": 19,
   "repeated": 0,
   "outcomes": 1
  },
- "cost_usd_run": 0.18,
- "cost_usd_filed": 14.39,
- "cost_per_program": 0.0709,
- "extract_calls": 3,
+ "cost_usd_run": 0.05,
+ "cost_usd_filed": 14.44,
+ "cost_per_program": 0.0708,
+ "extract_calls": 1,
  "extract_failed": [],
  "not_found": [
   {
@@ -26,7 +26,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active - Teachout Only"
   },
@@ -47,7 +48,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -58,7 +60,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -69,7 +72,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -80,7 +84,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -91,7 +96,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -175,7 +181,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -186,7 +193,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -210,7 +218,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -221,7 +230,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -255,7 +265,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -284,17 +295,7 @@
     "why": "the page prints neither the control number nor the title and award"
    },
    "status": "Active"
-  },
-  {
-   "control_number": "46261",
-   "title": "Spanish for the Workplace Fundamentals",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=47",
-    "coverage": 0.0
-   },
-   "status": "Active"
   }
  ],
- "run": "44475503054"
+ "run": "44883863572"
 }

@@ -5,11 +5,11 @@
  "title": "Interdisciplinary Studies - Arts, Humanities, and Social Sciences Option",
  "award": "A.A. Degree",
  "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3346&print",
- "record_shape": 5,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 13962,
+  "input_tokens": 14271,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 13962,
-    "output_tokens": 14833,
+    "input_tokens": 14271,
+    "output_tokens": 14894,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,24 +30,25 @@
     "model": null
    }
   ],
-  "output_tokens": 14833,
+  "output_tokens": 14894,
   "output_tokens_details": {
-   "thinking_tokens": 3955
+   "thinking_tokens": 3799
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.35251,
- "ms": 101462,
- "seconds": 102.0,
+ "cost_usd": 0.35496,
+ "ms": 100665,
+ "seconds": 101.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 116,
+   "placed": 117,
    "listed": 138,
-   "share": 0.841,
+   "share": 0.848,
    "missing": [
     "CHIN1",
     "CHIN3",
@@ -56,7 +57,6 @@
     "DRAMA16B",
     "ECON3",
     "ECON5",
-    "ENGL1B",
     "GERM3",
     "GERM4",
     "HIST17A",
@@ -74,10 +74,17 @@
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ENGLC1002",
+     "listed": "ENGL1B",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 103,
+   "count": 102,
    "codes": [
     "ANTH4",
     "ART40A",
@@ -117,7 +124,6 @@
     "ENGL43C",
     "ENGL43D",
     "ENGL57",
-    "ENGLC1002",
     "ENGLC1003",
     "ETHNS30",
     "ETHNS33",
@@ -222,7 +228,6 @@
     "ENGL43C",
     "ENGL43D",
     "ENGL57",
-    "ENGLC1002",
     "ENGLC1003",
     "ETHNS30",
     "ETHNS33",
@@ -360,6 +365,10 @@
     "max": 18
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": "San Joaquin Delta College Associate Degree General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
    "degree_total": {
     "min": 60,
@@ -384,8 +393,8 @@
     "minimum": 6,
     "option_group": null,
     "stated": {
-     "min": 6,
-     "max": 6
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -1379,8 +1388,8 @@
     "minimum": 6,
     "option_group": null,
     "stated": {
-     "min": 6,
-     "max": 6
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -1934,8 +1943,8 @@
     "minimum": 6,
     "option_group": null,
     "stated": {
-     "min": 6,
-     "max": 6
+     "min": null,
+     "max": null
     },
     "courses": []
    }
@@ -1944,15 +1953,15 @@
   "missing_explained": [
    {
     "code": "ANTHR 10",
-    "why": "catalog lists Introduction to Archaeology as ANTH 10"
+    "why": "catalog prints it as ANTH 10 (recorded as catalog addition)"
    },
    {
     "code": "ART 2",
-    "why": "catalog lists Art History of the Non-Western World as ARTH 2"
+    "why": "catalog prints ARTH 2 Art History of the Non-Western World (likely renumbered)"
    },
    {
     "code": "ART 3",
-    "why": "catalog lists Art Appreciation as ARTH 3"
+    "why": "catalog prints ARTH 3 Art Appreciation (likely renumbered)"
    },
    {
     "code": "CHIN 1",
@@ -1968,51 +1977,51 @@
    },
    {
     "code": "CIVIL 3",
-    "why": "not in the text; Autobiography of Civilization listed as HUM 3"
+    "why": "not in the text; same title as HUM 3, which is listed"
    },
    {
     "code": "COM ST 52",
-    "why": "catalog lists it as COMM 52"
+    "why": "catalog prints COMM 52 (likely renamed subject)"
    },
    {
     "code": "COM ST 7",
-    "why": "catalog lists it as COMM 7"
+    "why": "catalog prints COMM 7 (likely renamed subject)"
    },
    {
     "code": "COM ST 8",
-    "why": "catalog lists it as COMM 8"
+    "why": "catalog prints COMM 8 (likely renamed subject)"
    },
    {
     "code": "DRAMA 16B",
-    "why": "not in the text (only DRAMA 16A listed)"
+    "why": "not in the text; only DRAMA 16A listed"
    },
    {
     "code": "ECON 3",
-    "why": "catalog lists Principles of Microeconomics as ECON C2001"
+    "why": "catalog prints ECON C2001 Principles of Microeconomics (likely renumbered)"
    },
    {
     "code": "ECON 5",
-    "why": "catalog lists Principles of Macroeconomics as ECON C2002"
+    "why": "catalog prints ECON C2002 Principles of Macroeconomics (likely renumbered)"
    },
    {
     "code": "ENG 35",
-    "why": "catalog lists Chicano Literature as ENGL 35"
+    "why": "catalog prints ENGL 35 (subject differs)"
    },
    {
     "code": "ENG 49A",
-    "why": "catalog lists it as ENGL 49A"
+    "why": "catalog prints ENGL 49A (subject differs)"
    },
    {
     "code": "ENG 49B",
-    "why": "catalog lists it as ENGL 49B"
+    "why": "catalog prints ENGL 49B (subject differs)"
    },
    {
     "code": "ENG 49C",
-    "why": "catalog lists it as ENGL 49C"
+    "why": "catalog prints ENGL 49C (subject differs)"
    },
    {
     "code": "ENG 49D",
-    "why": "catalog lists it as ENGL 49D"
+    "why": "catalog prints ENGL 49D (subject differs)"
    },
    {
     "code": "ENGL 1B",
@@ -2028,11 +2037,11 @@
    },
    {
     "code": "HIST 17A",
-    "why": "catalog lists U.S. history as HIST C1001"
+    "why": "not in the text; catalog lists HIST C1001 instead (likely renumbered)"
    },
    {
     "code": "HIST 17B",
-    "why": "catalog lists U.S. history as HIST C1002"
+    "why": "not in the text; catalog lists HIST C1002 instead (likely renumbered)"
    },
    {
     "code": "HIST 6B",
@@ -2040,7 +2049,7 @@
    },
    {
     "code": "HUM 4",
-    "why": "catalog lists Introduction to Linguistics as ANTH 4"
+    "why": "catalog prints ANTH 4 Introduction to Linguistics (likely renumbered)"
    },
    {
     "code": "ITAL 3",
@@ -2068,27 +2077,27 @@
    },
    {
     "code": "PSYCH 6",
-    "why": "catalog lists Lifespan Psychology as PSYC 6"
+    "why": "catalog prints PSYC 6 Lifespan Psychology (subject differs)"
    },
    {
     "code": "PSYCH 7",
-    "why": "catalog lists Abnormal Psychology as PSYC 7"
+    "why": "catalog prints PSYC 7 Abnormal Psychology (subject differs)"
    }
   ],
   "notes": [
-   "Area of emphasis: minimum 18 units including at least one course from each area (A and B); Area C is 6 additional units from any course in Areas A or B, so it has no separate course list.",
-   "Closed-list codes ARTHC1100, ARTHC1200, ANTH1 and SPAN5 matched to catalog ARTH C1100, ARTH C1200, ANTH 1 and SPAN 5 (spacing difference only).",
-   "Cross-listed Textiles is printed twice (FASHION /ID 6 and ID /FASHION 6) and Human Sexuality twice (BIOL /PSYC 30 and PSYC /BIOL 30); each recorded once with the cross-listed code as alternative.",
+   "The area of emphasis requires a minimum of 18 units including at least one course from each area; Area A and Area B each require 6 units.",
+   "Area C: 'Complete 6 additional units selected from any of the courses above' - no separate course list; the block is left empty and draws on the Area A and Area B lists.",
+   "Closed-list codes ANTH1, ARTHC1100, ARTHC1200 and SPAN5 differ from the catalog's ANTH 1, ARTH C1100, ARTH C1200 and SPAN 5 only by spacing; treated as the same codes (catalog_addition false).",
+   "Cross-listed courses printed twice: 'FASHION /ID 6' and 'ID /FASHION 6' recorded once as FASHION 6 with alternative ID 6; 'BIOL /PSYC 30' and 'PSYC /BIOL 30' recorded once as BIOL 30 with alternative PSYC 30.",
    "Honors twins (ART 9H, SPAN 1H, SPAN 20H, BUS 8H, POLS C1000H) recorded as alternatives.",
-   "ge_units records 27 (Delta College AA GE pattern) as min and 34 (Cal-GETC) as max; the student completes one of the two patterns.",
-   "Degree total of 60 is printed as 'Minimum Degree Units Required: 60' for this award; no open elective units are printed.",
-   "Stated 6 for each area taken from 'Complete 6 units selected from'.",
-   "GEOG 2 title differs between closed list (Cultural Geography) and catalog (Human Geography); matched by code.",
-   "No careers named in the text."
+   "Subject renames (e.g., COM ST to COMM, ENG to ENGL, PSYCH to PSYC, ART to ARTH, ANTHR to ANTH) were recorded as catalog additions because the printed codes do not match the closed list; reviewer may wish to treat them as the same courses.",
+   "GE: student completes one of two patterns - SJDC Associate Degree GE (27 units) or Cal-GETC (34 units); ge_units recorded as range 27-34.",
+   "degree_total from 'Minimum Degree Units Required: 60'; no electives units printed.",
+   "Catalog page is the Summer 2026 - Summer 2027 catalog, matching the requested year."
   ]
  },
- "extracted_run": 39217405432,
- "read_run": 39128562020,
+ "extracted_run": "44883860902",
+ "catalog_year": "2026-2027",
  "reconciled": [
   {
    "field": "degree_total_minimum",

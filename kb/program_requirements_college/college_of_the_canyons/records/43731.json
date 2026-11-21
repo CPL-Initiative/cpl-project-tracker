@@ -1,0 +1,188 @@
+{
+ "college": "College of the Canyons",
+ "control_number": "43731",
+ "shape": "noncredit",
+ "title": "Model Making for Architecture and Interior Design",
+ "award": "Noncredit program",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=319",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7138,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7138,
+    "output_tokens": 1163,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1163,
+  "output_tokens_details": {
+   "thinking_tokens": 383
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05181,
+ "ms": 10409,
+ "seconds": 10.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    40.0,
+    64.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Completion: Model Making for Architecture and Interior Design",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will be able to utilize industry recognized means and methods of physical model making to create architecture and/or interior design portfolio content."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NC.ARCH-050",
+      "units": 4,
+      "units_max": 8,
+      "alternatives": [
+       {
+        "code": "NC.ID-050",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "NC.ARCH-096",
+      "units": 36,
+      "units_max": 56,
+      "alternatives": [
+       {
+        "code": "NC.ID-096",
+        "units": 36,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Recorded in hours because this is a noncredit Certificate of Completion. The requirements list prints 'Units Required: 0' and 0.0 beside each course. Hours per course come from the course descriptions as ranges: 4.00-8.00 for the 050 courses and 36.00-56.00 for the 096 courses. Alternatives can hold only one number, so they carry the low end of the range.",
+   "No total hours is printed for the certificate, so total_units is null. The printed 'Units Required: 0' is a unit figure, not hours.",
+   "The cross-listed pairs (NC.ARCH-050/NC.ID-050 and NC.ARCH-096/NC.ID-096) are joined by 'OR' and the two pairs by 'AND'. Each pair is recorded as one required entry with its cross-listed twin as the alternative.",
+   "The catalog prints codes as NC.ARCH-050, NC.ID-050 and so on. They match the closed list's NC.ARCH 50, NC.ID 50, NC.ARCH 96 and NC.ID 96, so none is a catalog addition.",
+   "The text after the program (ART: Fundamental Skills for Commercial Artists) belongs to a different program and was not read."
+  ]
+ },
+ "extracted_run": "44886816990",
+ "catalog_year": "2026-2027",
+ "source_sha": "716493102aa3bc1e",
+ "source_codes": [
+  "NCARCH50",
+  "NCARCH96",
+  "NCID50",
+  "NCID96"
+ ],
+ "source_coverage": 1.0
+}

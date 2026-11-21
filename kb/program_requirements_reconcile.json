@@ -24,6 +24,68 @@
   "printed_total": "a heading's range whose low end is a test-out, beside a printed total that is its top (Moreno Valley 38758, S674): pattern's lo, hi and total; the record's total_units becomes the total only where it holds exactly lo-hi, the page prints the step's requires words, total equals hi, and the record's blocks are all rule-all with fixed stated figures summing to the total. The one step that replaces a filled figure"
  },
  "colleges": {
+  "College of the Canyons": {
+   "prefix_aliases": {
+    "PSYC": "PSYCH",
+    "POLS": "POLISC",
+    "COMM": "COMS"
+   },
+   "prefix_aliases_cited": [
+    {
+     "session": "S691",
+     "date": "2026-11-21",
+     "catalog_sources": [
+      "college_page_read"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-21_canyons/measure.json",
+     "printed": "PSYC",
+     "file": "PSYCH",
+     "evidence": 15,
+     "source": "S691, 2026-11-21: 15 courses of the same number and title, the catalog's printed code and title (college page read 44882193771, the 2026-27 catalog v3; the titles sit in that run's artifact and job log, not in a committed file, and on committed files kb/_prefix_alias_census.py's build() holds the pair: no catalog title for any of its 15 numbers) against the COCI course list's; no number naming two different courses at the college. The file lists PSYC C1000 and C1000H itself, which the scorer never renames.",
+     "examples": [
+      "PSYC-102 = PSYCH 102, Physiological Psychology",
+      "PSYC-109 = PSYCH 109, Social Psychology",
+      "PSYC-240 = PSYCH 240, Abnormal Psychology"
+     ]
+    },
+    {
+     "session": "S691",
+     "date": "2026-11-21",
+     "catalog_sources": [
+      "college_page_read"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-21_canyons/measure.json",
+     "printed": "POLS",
+     "file": "POLISC",
+     "evidence": 6,
+     "source": "S691, 2026-11-21: 6 courses of the same number and title (college page read 44882193771, the 2026-27 catalog v3; the titles sit in that run's artifact and job log, not in a committed file, and on committed files kb/_prefix_alias_census.py's build() holds the pair: no catalog title for any of its 6 numbers); no number naming two different courses. The catalog prints POLS-270 as International Relations, the file's title, and on one page as International Politics.",
+     "examples": [
+      "POLS-200 = POLISC 200, Introduction to Political Science",
+      "POLS-210 = POLISC 210, Model United Nations",
+      "POLS-230 = POLISC 230, Political Theory"
+     ]
+    },
+    {
+     "session": "S691",
+     "date": "2026-11-21",
+     "catalog_sources": [
+      "college_page_read"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-21_canyons/measure.json",
+     "printed": "COMM",
+     "file": "COMS",
+     "evidence": 12,
+     "source": "S691, 2026-11-21: 12 courses of the same number and title (college page read 44882193771, the 2026-27 catalog v3; the titles sit in that run's artifact and job log, not in a committed file, and on committed files kb/_prefix_alias_census.py's build() holds the pair: fewer than 3 titled numbers, 2 of its 11); no number naming two different courses. COMM-001 to 003 are noncredit courses with no file course of that code.",
+     "examples": [
+      "COMM-100 = COMS 100, Process of Communication",
+      "COMM-120 = COMS 120, Small Group Communication",
+      "COMM-246 = COMS 246, Interpersonal Communication"
+     ]
+    }
+   ],
+   "steps": [],
+   "why": "S691 (the S691 conductor's reread worker, 2026-11-21), census lever 8: the 2026-27 catalog prints PSYC, POLS and COMM where the state's file lists PSYCH, POLISC and COMS. The 2026-11-14 prefix-alias census held the three pairs for want of a catalog-side title in committed files; the catalog's own requirement lists supply it (college page read 44882193771). Measured over the 156 records filed on claude/s691-reread (the census's _measure_college): coverage fails 25 to 7, passing 120 to 135, no pass turned to a fail."
+  },
   "Cerro Coso Community College": {
    "why": "S648, d-calgetc-34-per-college-evidence-s648. Cerro Coso's catalog prints its own Cal-GETC figure: the pattern page (PDF p.65, printed p.57) heads 'California General Education Transfer Curriculum (Cal-GETC) (35 Units)', the heading the readings of 01980 and 38705 filed from that page, and the program pages name the pattern as 'OPTION B Cal-GETC'. The printed figure wins over the statewide 34 (Sam, Sheet 187 card 5), so a transfer degree naming Cal-GETC with no units read takes 35 from that page, only where the record names its pattern and degree total. Reversible by deleting this entry.",
    "steps": [

@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 149,
  "with_closed_list": 144,
- "started": "2026-11-17T11:20:56Z",
+ "started": "2026-11-20T15:29:19Z",
  "curriqunet": {
   "catalog": 115,
   "view_prefix": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/",
@@ -390,9 +390,9 @@
  "banner_h1": null,
  "catalog_lookup": {
   "self_test": {
-   "tested": 86,
+   "tested": 85,
    "hits": 67,
-   "recall": 0.779,
+   "recall": 0.788,
    "false": 0,
    "false_off_own": 0,
    "false_no_claims": 0,
@@ -418,7 +418,7 @@
     "award": "A.S. Degree",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 67 of 86 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 67 of 85 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "30171",
@@ -426,7 +426,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 67 of 86 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 67 of 85 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "30172",
@@ -442,7 +442,7 @@
     "award": "Noncredit program",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 67 of 86 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 67 of 85 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
    },
    {
     "control_number": "40329",
@@ -450,7 +450,7 @@
     "award": "Noncredit program",
     "status": "Active",
     "result": "not_searched",
-    "why": "the matcher found 67 of 86 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+    "why": "the matcher found 67 of 85 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
    }
   ],
   "yields": [],
@@ -458,12 +458,12 @@
   "yield_refused_passing": 0
  },
  "loads": 144,
- "seconds": 667.9,
- "found": 140,
+ "seconds": 763.2,
+ "found": 139,
  "by_method": {
   "no_closed_list": 5,
-  "not_found": 4,
-  "sitemap_page": 140
+  "not_found": 5,
+  "sitemap_page": 139
  },
  "shared_pages": {
   "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4470": [
@@ -576,6 +576,34 @@
   ]
  },
  "not_found": [
+  {
+   "control_number": "30152",
+   "title": "Administration of Justice/Law Enforcement Basic Peace Officer Academy Intensive",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4458",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3311,
+     "content": 3311,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Active"
+  },
   {
    "control_number": "37393",
    "title": "Fire Service Leadership",
@@ -690,84 +718,14 @@
  "coverage_bands": {
   "0.5-0.8": 0,
   "0.8-1.0": 25,
-  "1.0": 115
+  "1.0": 114
  },
  "would_extract": {
   "against": "kb/program_requirements_college/moreno_valley",
-  "kept": 118,
+  "kept": 136,
   "kept_moved": 0,
-  "programs": 21,
+  "programs": 2,
   "list": [
-   {
-    "control_number": "30165",
-    "title": "Administration & Information Systems",
-    "award": "A.A. Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4921",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4921",
-    "was_coverage": 0.935,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "30167",
-    "title": "Math & Sciences",
-    "award": "A.S. Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4927",
-    "coverage": 0.981,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4927",
-    "was_coverage": 0.942,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "30169",
-    "title": "Humanities, Philosophy & Arts",
-    "award": "A.A. Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4925",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4925",
-    "was_coverage": 0.976,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "30170",
-    "title": "Social and Behavioral Studies",
-    "award": "A.A. Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4928",
-    "coverage": 0.985,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4928",
-    "was_coverage": 0.908,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "31232",
-    "title": "American Studies",
-    "award": "A.A. Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4922",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4922",
-    "was_coverage": 0.889,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "32639",
-    "title": "Computer Science",
-    "award": "A.S. T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4488",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4488",
-    "was_coverage": 0.75,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "32941",
-    "title": "Political Science",
-    "award": "A.A- T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4554",
-    "coverage": 0.95,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4554",
-    "was_coverage": 0.8,
-    "was_method": "sitemap_page"
-   },
    {
     "control_number": "32946",
     "title": "Philosophy",
@@ -779,106 +737,6 @@
     "was_method": "sitemap_page"
    },
    {
-    "control_number": "33240",
-    "title": "History",
-    "award": "A.A- T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4527",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4527",
-    "was_coverage": 0.923,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "33953",
-    "title": "Biology",
-    "award": "A.S. T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4467",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4467",
-    "was_coverage": 0.889,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "39162",
-    "title": "Information Technology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4530",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4530",
-    "was_coverage": 0.923,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "41635",
-    "title": "Business Administration 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4468",
-    "coverage": 0.929,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4468",
-    "was_coverage": 0.714,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "41720",
-    "title": "Data Analytics",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4491",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4491",
-    "was_coverage": 0.895,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "41748",
-    "title": "Data Science",
-    "award": "A.S. Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4492",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4492",
-    "was_coverage": 0.905,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "42794",
-    "title": "Economics",
-    "award": "A.A- T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4502",
-    "coverage": 0.96,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4502",
-    "was_coverage": 0.8,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "43792",
-    "title": "Physics",
-    "award": "A.S. T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4966",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4966",
-    "was_coverage": 0.714,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "43884",
-    "title": "Environmental Science",
-    "award": "A.S. T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4868",
-    "coverage": 0.944,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4868",
-    "was_coverage": 0.833,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "45447",
-    "title": "Law, Public Policy, and Society",
-    "award": "A.A- T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4718",
-    "coverage": 0.979,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4718",
-    "was_coverage": 0.894,
-    "was_method": "sitemap_page"
-   },
-   {
     "control_number": "45914",
     "title": "Global Studies",
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
@@ -886,26 +744,6 @@
     "coverage": 1.0,
     "was_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/6365",
     "was_coverage": 0.913,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "46236",
-    "title": "Mathematics 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4543",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4543",
-    "was_coverage": 0.714,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "46532",
-    "title": "Elementary Teacher Education: Integrated Programs",
-    "award": "A.A- T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4858",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4858",
-    "was_coverage": 0.968,
     "was_method": "sitemap_page"
    }
   ],
@@ -1052,10 +890,6 @@
   "30151": {
    "sha256": "47719cbb9dbce2d35f6627681412a48c768bcf0c61f248226da86e836e42c87a",
    "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4455"
-  },
-  "30152": {
-   "sha256": "e83095a662f5e12494d0f1d7a0f7f53bc97d6c4e2f7642fdf15ac69a27fc73f6",
-   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4459"
   },
   "30158": {
    "sha256": "ab909cb2536069e92746c1fd9124341ddd5bef5bef1ffa3c4ec572e70fb4ef8e",
@@ -1486,5 +1320,5 @@
    "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4858"
   }
  },
- "run": "44072968931"
+ "run": "44763594152"
 }

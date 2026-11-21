@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Mathematics",
  "award": "A.S. Degree",
- "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=199",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=199",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12179,
+  "input_tokens": 12146,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12179,
-    "output_tokens": 1373,
+    "input_tokens": 12146,
+    "output_tokens": 1201,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1373,
+  "output_tokens": 1201,
   "output_tokens_details": {
-   "thinking_tokens": 384
+   "thinking_tokens": 251
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07618,
- "ms": 11303,
- "seconds": 11.6,
+ "cost_usd": 0.0726,
+ "ms": 10067,
+ "seconds": 10.4,
  "parts": null,
  "error": null,
  "score": {
@@ -93,7 +93,7 @@
    "pass": true
   },
   "careers": {
-   "count": 6,
+   "count": 0,
    "not_verbatim": [],
    "pass": true
   },
@@ -132,14 +132,7 @@
     "Prepare for the mathematical reasoning required in upper division work in their major, including the ability to generalize concepts and comprehend increasing levels of abstraction.",
     "Demonstrate mathematical literacy, problem-solving ability, and modeling ability."
    ],
-   "careers": [
-    "computer programmer",
-    "financial analyst",
-    "statistician",
-    "systems analyst",
-    "urban planner",
-    "teacher"
-   ]
+   "careers": []
   },
   "blocks": [
    {
@@ -246,10 +239,25 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Careers taken from the Mathematics program introduction preceding the A.S. degree section.",
-   "The elective block heading 'Plus three - five units from the following' was recorded as minimum 3 units with stated 3-5; STAT-C1000, STAT-C1000E and STAT-C1000H are printed as separate list entries rather than as 'or' alternatives, though UC limits credit to one of them.",
-   "MATH-211X (Calculus I with Support, 6.0 units) is printed as an OR option to MATH-211 and is not in the closed list."
+   "The 'three - five units' elective list prints STAT-C1000, STAT-C1000E and STAT-C1000H as separate rows (no 'or'); recorded as separate entries, though they are effectively alternatives (UC credit limit one course).",
+   "MATH-211X (Calculus I with Support, 6.0 units) is an 'or' alternative to MATH-211 and is not in the closed list.",
+   "The catalog text after the program requirements is course descriptions and a following Journalism AA-T section; neither was used for this award."
   ]
  },
- "extracted_run": "39006378829"
+ "extracted_run": "44886816990",
+ "catalog_year": "2026-2027",
+ "source_sha": "25aae7d00f2d3087",
+ "source_codes": [
+  "CMPSCI111",
+  "MATH211",
+  "MATH212",
+  "MATH213",
+  "MATH214",
+  "MATH215",
+  "PHYSIC220",
+  "STATC1000",
+  "STATC1000E",
+  "STATC1000H"
+ ],
+ "source_coverage": 1.0
 }

@@ -1,0 +1,179 @@
+{
+ "college": "College of the Canyons",
+ "control_number": "42349",
+ "shape": "noncredit",
+ "title": "Therapeutic Rehabilitation Technician",
+ "award": "Noncredit program",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=375",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8041,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8041,
+    "output_tokens": 1299,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1299,
+  "output_tokens_details": {
+   "thinking_tokens": 538
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05814,
+ "ms": 11101,
+ "seconds": 11.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 1,
+   "listed": 1,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "NCKPET212"
+   ],
+   "flagged": [
+    "NCKPET212"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": [
+    0.0,
+    0.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Completion: Therapeutic Rehabilitation Technician Certificate of Completion",
+   "measure": "units",
+   "total_units": {
+    "min": 0,
+    "max": 0
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Assess patient status and determine appropriate treatment including emergency care, therapeutic modalities, and/or exercises.",
+    "Perform emergency care, therapeutic modalities, and exercise treatments at a proficient level."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "NC.KPET-120",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NC.KPET-212",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate, but the catalog prints 'Units Required: 0' and 0.0 units beside each course and states no total hours for the certificate, so measure is recorded as units with the printed 0 values. Course descriptions give hour ranges only: NC.KPET-120 15.00-24.00 hours lecture, 40.00-60.00 hours lab; NC.KPET-212 25.00-48.00 hours lecture, 40.00-60.00 hours lab. A reviewer may prefer to record this award in hours instead.",
+   "The 'Units Required: 0' figure is recorded both as total_units and as the block's stated total.",
+   "NC.KPET-212 (Sports Medicine Clinical Experience) is required but is not in the closed list, so it is marked as a catalog addition.",
+   "The description names physical therapy, occupational therapy, athletic training, and chiropractic fields as where the techniques are used. These were not recorded as careers because the text names no explicit job titles; a reviewer may treat them as career fields.",
+   "The section was read from page 375, with its course descriptions continuing on page 376. The Theatre certificates that follow on page 376 were ignored."
+  ]
+ },
+ "extracted_run": "44886816990",
+ "catalog_year": "2026-2027",
+ "source_sha": "cd667c99ab324a6f",
+ "source_codes": [
+  "NCKPET120"
+ ],
+ "source_coverage": 1.0
+}
