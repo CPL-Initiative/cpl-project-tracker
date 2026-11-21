@@ -1,5 +1,7 @@
-run=2026-11-11
+run=2026-11-21-s691-a
 discover=
-index=https://shasta.curriqunet.com/
-slugs=shasta
+index=https://saddleback.curriqunet.com/
+slugs=saddleback,irvine_valley
 report=
+status=
+client=
