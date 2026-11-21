@@ -73,22 +73,19 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     30.0,
     31.0
    ],
    "stated": [
-    60.0,
-    60.0
+    30.0,
+    31.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the blocks and general education sum to 30.0-31.0; the catalog prints 60.0-60.0 for the degree"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
@@ -96,13 +93,18 @@
      31.0
     ],
     "stated": [
-     30.0,
-     31.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
-   },
-   "note": "major matches; degree total short of 60, electives probably not listed"
+    "against": "degree",
+    "ge": null,
+    "why": [],
+    "minimum": true,
+    "fill": [
+     29.0,
+     30.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -126,7 +128,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -152,7 +154,8 @@
    },
    "electives_fill_degree": false,
    "outcomes": [],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -294,5 +297,14 @@
    "CABOT 205 is printed as 'Keyboard & Document Processing I'; the closed list gives the title as 'Keyboarding & Document Processing I'."
   ]
  },
- "extracted_run": "43415972509"
+ "extracted_run": 44763682085,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Required Units for Degree (with GE)\n60"
+  }
+ ],
+ "read_run": "43415972509"
 }

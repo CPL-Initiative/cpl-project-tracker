@@ -5,18 +5,18 @@
  "found": 242,
  "extracted": 242,
  "errors": 0,
- "passed_machine_checks": 181,
+ "passed_machine_checks": 218,
  "failed": {
-  "coverage": 4,
-  "invented": 4,
-  "arithmetic": 60,
+  "coverage": 3,
+  "invented": 3,
+  "arithmetic": 21,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd_run": 5.12,
+ "cost_usd_run": 0.0,
  "cost_usd_filed": 16.04,
  "cost_per_program": 0.0663,
- "extract_calls": 73,
+ "extract_calls": null,
  "extract_failed": [],
  "not_found": [
   {
@@ -47,8 +47,8 @@
     "why": "coarse net: the page's code tokens name 3 of 21 listed courses",
     "error": null,
     "chars": {
-     "body": 1940,
-     "content": 321776,
+     "body": 1924,
+     "content": 350828,
      "tabs": 0
     },
     "tab_panels": []
@@ -74,8 +74,8 @@
     "why": "a candidate, lost to a program the page names more fully",
     "error": null,
     "chars": {
-     "body": 1362,
-     "content": 321379,
+     "body": 1346,
+     "content": 350431,
      "tabs": 0
     },
     "tab_panels": []
@@ -110,8 +110,8 @@
     "why": "coarse net: the page's code tokens name 1 of 3 listed courses",
     "error": null,
     "chars": {
-     "body": 1440,
-     "content": 321454,
+     "body": 1424,
+     "content": 350506,
      "tabs": 0
     },
     "tab_panels": []
@@ -155,8 +155,8 @@
     "why": "a candidate, lost to a program the page names more fully",
     "error": null,
     "chars": {
-     "body": 1546,
-     "content": 321547,
+     "body": 1526,
+     "content": 350595,
      "tabs": 0
     },
     "tab_panels": []
@@ -191,8 +191,8 @@
     "why": "coarse net: the page's code tokens name 3 of 21 listed courses",
     "error": null,
     "chars": {
-     "body": 1913,
-     "content": 321749,
+     "body": 1899,
+     "content": 350803,
      "tabs": 0
     },
     "tab_panels": []
@@ -213,7 +213,7 @@
    "title": "Medical Front Office Clerk",
    "award": null,
    "near_miss": {
-    "url": "https://catalog.glendale.edu/programs/NCGOC1/completion-requirements-zaZdl",
+    "url": "https://catalog.glendale.edu/programs/NCRFDC/completion-requirements-zaZdl",
     "label": {
      "award": 0,
      "title": 0.5
@@ -227,8 +227,8 @@
     "why": "coarse net: the page's code tokens name 0 of 6 listed courses",
     "error": null,
     "chars": {
-     "body": 1121,
-     "content": 321178,
+     "body": 1087,
+     "content": 350233,
      "tabs": 0
     },
     "tab_panels": []
@@ -254,8 +254,8 @@
     "why": "coarse net: the page's code tokens name 2 of 7 listed courses",
     "error": null,
     "chars": {
-     "body": 992,
-     "content": 320953,
+     "body": 976,
+     "content": 350151,
      "tabs": 0
     },
     "tab_panels": []
@@ -267,22 +267,22 @@
    "title": "General Office Clerk II",
    "award": "Noncredit program",
    "near_miss": {
-    "url": "https://catalog.glendale.edu/programs/NCAC2/completion-requirements-zaZdl",
+    "url": "https://catalog.glendale.edu/programs/NCGOAII/completion-requirements-zaZdl",
     "label": {
      "award": 1,
-     "title": 0.5
+     "title": 0.75
     },
     "field": "innerText",
-    "coverage": 0.167,
-    "body": 0.167,
-    "content": 0.0,
-    "net": 1,
+    "coverage": 0.5,
+    "body": 0.5,
+    "content": 0.167,
+    "net": 3,
     "listed": 6,
-    "why": "coarse net: the page's code tokens name 1 of 6 listed courses",
+    "why": "a candidate, lost to a program the page names more fully",
     "error": null,
     "chars": {
-     "body": 1068,
-     "content": 321015,
+     "body": 1022,
+     "content": 350199,
      "tabs": 0
     },
     "tab_panels": []
@@ -308,8 +308,8 @@
     "why": "coarse net: the page's code tokens name 0 of 26 listed courses",
     "error": null,
     "chars": {
-     "body": 1336,
-     "content": 321402,
+     "body": 1320,
+     "content": 350454,
      "tabs": 0
     },
     "tab_panels": []
@@ -344,8 +344,8 @@
     "why": "a candidate, lost to a program the page names more fully",
     "error": null,
     "chars": {
-     "body": 1489,
-     "content": 321464,
+     "body": 1473,
+     "content": 350516,
      "tabs": 0
     },
     "tab_panels": []
@@ -380,8 +380,8 @@
     "why": "a candidate, lost to a program the page names more fully",
     "error": null,
     "chars": {
-     "body": 1420,
-     "content": 321445,
+     "body": 1394,
+     "content": 350487,
      "tabs": 0
     },
     "tab_panels": []
@@ -407,8 +407,8 @@
     "why": "a candidate, lost to a program the page names more fully",
     "error": null,
     "chars": {
-     "body": 1420,
-     "content": 321445,
+     "body": 1394,
+     "content": 350487,
      "tabs": 0
     },
     "tab_panels": []
@@ -434,8 +434,35 @@
     "why": "a candidate, lost to a program the page names more fully",
     "error": null,
     "chars": {
-     "body": 1526,
-     "content": 321504,
+     "body": 1500,
+     "content": 350546,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "37070",
+   "title": "Information Technology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.glendale.edu/programs/ITT-C/completion-requirements-zaZdl",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.556,
+    "body": 0.556,
+    "content": 0.0,
+    "net": 5,
+    "listed": 9,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 1440,
+     "content": 350495,
      "tabs": 0
     },
     "tab_panels": []
@@ -449,7 +476,7 @@
    "near_miss": {
     "url": "https://catalog.glendale.edu/programs/NCCS/completion-requirements-zaZdl",
     "label": {
-     "award": 0,
+     "award": 1,
      "title": 1.0
     },
     "field": "innerText",
@@ -461,8 +488,8 @@
     "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
     "error": null,
     "chars": {
-     "body": 939,
-     "content": 320984,
+     "body": 945,
+     "content": 350126,
      "tabs": 0
     },
     "tab_panels": []
@@ -488,8 +515,8 @@
     "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
     "error": null,
     "chars": {
-     "body": 1163,
-     "content": 321114,
+     "body": 1147,
+     "content": 350312,
      "tabs": 0
     },
     "tab_panels": []
@@ -515,8 +542,8 @@
     "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
     "error": null,
     "chars": {
-     "body": 958,
-     "content": 321083,
+     "body": 942,
+     "content": 350135,
      "tabs": 0
     },
     "tab_panels": []
@@ -524,7 +551,7 @@
    "status": "Active"
   }
  ],
- "run": "43497305929",
+ "run": "44763682085",
  "held_wrong_tab": [
   {
    "control_number": "12571",

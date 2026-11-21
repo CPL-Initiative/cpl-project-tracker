@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-21T08:47:18Z",
+ "written_at": "2026-11-21T08:49:02Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 16577,
-  "gap": 5758,
+  "passing": 16627,
+  "gap": 5708,
   "with_gap": 118,
-  "cost_usd": 1334.27,
-  "passed_at_read": 16061,
+  "cost_usd": 1334.67,
+  "passed_at_read": 16117,
   "cost_receipts": 118,
   "spent_usd": 1224.87,
   "spent_runs": 171,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16482,
-  "gap": 5758,
+  "passing": 16532,
+  "gap": 5708,
   "collected_with_gaps": 95,
   "discontinued": 0
  },
@@ -739,13 +739,13 @@
    "harvested": true,
    "slug": "berkeley_city",
    "programs": 99,
-   "passing": 52,
-   "gap": 47,
+   "passing": 66,
+   "gap": 33,
    "causes": {
     "no_closed_list": 2,
     "page_not_found": 7,
     "places_none": 1,
-    "unknown_without_live": 37
+    "unknown_without_live": 23
    },
    "census_causes": {
     "no_closed_list": 1,
@@ -772,7 +772,7 @@
    "read_at": "2026-11-12T02:30:35Z",
    "read_kind": "capture",
    "cost_usd": 5.81,
-   "passed_at_read": 47,
+   "passed_at_read": 63,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -787,7 +787,7 @@
    "failed_checks": {
     "coverage": 1,
     "invented": 0,
-    "arithmetic": 42,
+    "arithmetic": 26,
     "repeated": 0,
     "outcomes": 1
    },
@@ -800,8 +800,8 @@
    "read_seconds": 2013.2,
    "run": "43141644775",
    "levers": {
-    "ge_units_steps": 21,
     "reconcile_steps": 16,
+    "ge_units_steps": 7,
     "reader_page_search": 7,
     "program_course_file_check": 2,
     "reader_page_assignment": 1
@@ -5165,13 +5165,13 @@
    "harvested": true,
    "slug": "glendale_community",
    "programs": 317,
-   "passing": 187,
-   "gap": 130,
+   "passing": 218,
+   "gap": 99,
    "causes": {
     "found_not_extracted": 1,
     "no_closed_list": 50,
     "page_not_found": 24,
-    "unknown_without_live": 55
+    "unknown_without_live": 24
    },
    "census_causes": {
     "course_added": 1,
@@ -5195,10 +5195,10 @@
    "outcomes_file": "kb/status/commons_data_programs/glendale_community.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-13T17:24:31Z",
+   "read_at": "2026-11-20T15:29:44Z",
    "read_kind": "capture",
    "cost_usd": 16.04,
-   "passed_at_read": 181,
+   "passed_at_read": 218,
    "slo_queue": null,
    "scout": {
     "recommendation": "capture",
@@ -5219,9 +5219,9 @@
    "extracted": 242,
    "errors": 0,
    "failed_checks": {
-    "coverage": 4,
-    "invented": 4,
-    "arithmetic": 60,
+    "coverage": 3,
+    "invented": 3,
+    "arithmetic": 21,
     "repeated": 0,
     "outcomes": 0
    },
@@ -5231,12 +5231,12 @@
    "capture_root": "https://catalog.glendale.edu/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 8812.6,
-   "run": "43497305929",
+   "read_seconds": 4517.3,
+   "run": "44763682085",
    "levers": {
-    "reconcile_steps": 53,
     "program_course_file_check": 50,
     "reader_page_search": 24,
+    "reconcile_steps": 22,
     "scorer_noncredit_hours": 2,
     "paid_read": 1
    },
@@ -5246,8 +5246,8 @@
      "models": {
       "claude-opus-5-5": 242
      },
-     "run": "43497305929",
-     "at": "2026-11-13T17:24:31Z",
+     "run": "44763682085",
+     "at": "2026-11-20T15:29:44Z",
      "cost_usd": 16.04,
      "platform": "coursedog"
     },
@@ -10586,12 +10586,11 @@
    "harvested": true,
    "slug": "san_joaquin_delta",
    "programs": 251,
-   "passing": 200,
-   "gap": 51,
+   "passing": 201,
+   "gap": 50,
    "causes": {
     "no_closed_list": 18,
     "page_not_found": 30,
-    "places_none": 1,
     "unknown_without_live": 2
    },
    "census_causes": {
@@ -10615,10 +10614,10 @@
    "outcomes_file": "kb/status/commons_data_programs/san_joaquin_delta.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-27T14:43:03Z",
+   "read_at": "2026-11-21T07:31:06Z",
    "read_kind": "capture",
    "cost_usd": 13.42,
-   "passed_at_read": 200,
+   "passed_at_read": 201,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -10631,9 +10630,9 @@
    "extracted": 203,
    "errors": 0,
    "failed_checks": {
-    "coverage": 1,
+    "coverage": 0,
     "invented": 0,
-    "arithmetic": 3,
+    "arithmetic": 2,
     "repeated": 0,
     "outcomes": 0
    },
@@ -10643,13 +10642,12 @@
    "capture_root": "https://catalog.deltacollege.edu/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1379.8,
-   "run": "40523400149",
+   "read_seconds": 1452.9,
+   "run": "44883860902",
    "levers": {
     "reader_page_search": 30,
     "program_course_file_check": 18,
-    "reconcile_steps": 2,
-    "reader_page_assignment": 1
+    "reconcile_steps": 2
    },
    "collection": {
     "program_reader": {
@@ -10657,13 +10655,13 @@
      "models": {
       "claude-opus-5-5": 203
      },
-     "run": "40523400149",
-     "at": "2026-10-27T14:43:03Z",
+     "run": "44883860902",
+     "at": "2026-11-21T07:31:06Z",
      "cost_usd": 13.42,
      "platform": "acalog"
     },
     "slo_read": null,
-    "plo_programs": 201,
+    "plo_programs": 202,
     "ppm_member": {
      "host": "programmap.deltacollege.edu",
      "by": "programmapper.org/ppm-schools, copied 2026-10-21"
@@ -11690,13 +11688,13 @@
    "harvested": true,
    "slug": "solano_community",
    "programs": 171,
-   "passing": 126,
-   "gap": 45,
+   "passing": 130,
+   "gap": 41,
    "causes": {
     "no_closed_list": 8,
-    "page_not_found": 12,
+    "page_not_found": 7,
     "places_none": 2,
-    "unknown_without_live": 23
+    "unknown_without_live": 24
    },
    "census_causes": {
     "coverage_fails": 7,
@@ -11719,10 +11717,10 @@
    "outcomes_file": "kb/status/commons_data_programs/solano_community.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-19T11:24:41Z",
+   "read_at": "2026-11-21T08:12:26Z",
    "read_kind": "capture",
-   "cost_usd": 12.87,
-   "passed_at_read": 103,
+   "cost_usd": 13.22,
+   "passed_at_read": 105,
    "slo_queue": null,
    "scout": null,
    "spot_check": {
@@ -11741,15 +11739,15 @@
     "why": "1 agree, 0 differ, 0 unreachable; fewer than 5 records checked at this college"
    },
    "listed_closed": 163,
-   "found": 151,
-   "extracted": 151,
+   "found": 156,
+   "extracted": 156,
    "errors": 0,
    "failed_checks": {
-    "coverage": 8,
+    "coverage": 9,
     "invented": 7,
-    "arithmetic": 18,
+    "arithmetic": 19,
     "repeated": 0,
-    "outcomes": 27
+    "outcomes": 30
    },
    "platform": "pdf",
    "catalog_year": "2026-2027",
@@ -11757,28 +11755,28 @@
    "capture_root": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 103.3,
-   "run": "44514080886",
+   "read_seconds": 88.4,
+   "run": "44884569184",
    "levers": {
     "reconcile_steps": 16,
-    "reader_page_search": 12,
+    "ge_units_steps": 8,
     "program_course_file_check": 8,
-    "ge_units_steps": 7,
+    "reader_page_search": 7,
     "reader_page_assignment": 2
    },
    "collection": {
     "program_reader": {
-     "records": 151,
+     "records": 156,
      "models": {
-      "claude-opus-5-5": 151
+      "claude-opus-5-5": 156
      },
-     "run": "44514080886",
-     "at": "2026-11-19T11:24:41Z",
-     "cost_usd": 12.87,
+     "run": "44884569184",
+     "at": "2026-11-21T08:12:26Z",
+     "cost_usd": 13.22,
      "platform": "pdf"
     },
     "slo_read": null,
-    "plo_programs": 148,
+    "plo_programs": 153,
     "ppm_member": null,
     "maps": {
      "held": 0,
@@ -12232,8 +12230,9 @@
    "passing": 180,
    "gap": 65,
    "causes": {
+    "found_not_extracted": 1,
     "no_closed_list": 17,
-    "page_not_found": 25,
+    "page_not_found": 24,
     "places_none": 1,
     "unknown_without_live": 22
    },
@@ -12260,9 +12259,9 @@
    "outcomes_file": "kb/status/commons_data_programs/west_los_angeles.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-19T07:25:28Z",
+   "read_at": "2026-11-21T07:32:27Z",
    "read_kind": "capture",
-   "cost_usd": 14.39,
+   "cost_usd": 14.44,
    "passed_at_read": 179,
    "slo_queue": null,
    "scout": null,
@@ -12272,13 +12271,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 228,
-   "found": 203,
-   "extracted": 203,
+   "found": 204,
+   "extracted": 204,
    "errors": 0,
    "failed_checks": {
-    "coverage": 6,
+    "coverage": 7,
     "invented": 5,
-    "arithmetic": 18,
+    "arithmetic": 19,
     "repeated": 0,
     "outcomes": 1
    },
@@ -12288,13 +12287,14 @@
    "capture_root": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 138.8,
-   "run": "44475503054",
+   "read_seconds": 177.4,
+   "run": "44883863572",
    "levers": {
-    "reader_page_search": 25,
+    "reader_page_search": 24,
     "program_course_file_check": 17,
     "reconcile_steps": 17,
     "scorer_noncredit_hours": 5,
+    "paid_read": 1,
     "reader_page_assignment": 1
    },
    "collection": {
@@ -12303,9 +12303,9 @@
      "models": {
       "claude-opus-5-5": 203
      },
-     "run": "44475503054",
-     "at": "2026-11-19T07:25:28Z",
-     "cost_usd": 14.39,
+     "run": "44883863572",
+     "at": "2026-11-21T07:32:27Z",
+     "cost_usd": 14.44,
      "platform": "pdf"
     },
     "slo_read": null,

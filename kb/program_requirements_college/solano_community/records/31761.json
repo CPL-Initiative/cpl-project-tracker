@@ -1,0 +1,252 @@
+{
+ "college": "Solano Community College",
+ "control_number": "31761",
+ "shape": "adt",
+ "title": "Early Childhood Education",
+ "award": "A.S. T Degree",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=195",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11293,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11293,
+    "output_tokens": 2053,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2053,
+  "output_tokens_details": {
+   "thinking_tokens": 746
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08623,
+ "ms": 17638,
+ "seconds": 18.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    25.0,
+    25.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Cal-GETC pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     25.0,
+     25.0
+    ],
+    "stated": [
+     25.0,
+     25.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [
+    "Demonstrate an understanding of child development theory, current research, and trends in the field, and their application to responsive practice in early care settings."
+   ],
+   "why": [
+    "not in the catalog text as printed: Demonstrate an understanding of child development theory, current research, and "
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [
+    "early childhood education"
+   ],
+   "pass": false
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Science in Early Childhood Education for Transfer (ADT: A.S.-T)",
+   "measure": "units",
+   "total_units": {
+    "min": 25,
+    "max": 25
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate an understanding of child development theory, current research, and trends in the field, and their application to responsive practice in early care settings.",
+    "Demonstrate an understanding of the context of individual development including the centrality of family, culture, and community through developing techniques for creating meaningful relationships between home and school.",
+    "Develop curriculum and early care environments that are derived from unbiased observation and assessment of children's interests and developmental levels.",
+    "Demonstrate reflective practice in their work with young children by building awareness of self as teacher, child as learner, and early childhood pedagogy."
+   ],
+   "careers": [
+    "early childhood education"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 25,
+     "max": 25
+    },
+    "courses": [
+     {
+      "code": "CDEV C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDFS 050",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDFS 053",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDFS 054",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDFS 062",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDFS 063",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDFS 064",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDFS 065",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes with leading zeros (CDFS 050, CDFS 053, etc.) and 'CDEV C1000'; these were matched to closed-list entries CDFS 50, CDFS 53, CDEVC1000, etc., so catalog_addition is false.",
+   "The program description says the CAP courses include 'CDFS 054 (or NUTR 054)', but the A.S.-T required course list prints CDFS 054 alone with no NUTR 054 alternative; NUTR 054 was not added as an alternative. The NUTR 054 'or' option appears only in the Certificate of Achievement/A.S. section.",
+   "degree_total 60 taken from 'To earn the Associate in Science in Early Childhood Education for Transfer, students must: 1. Complete 60 semester units ... including Cal-GETC and a minimum of 18 semester units in a major'. This is standard ADT wording; reviewer should confirm it should count as this award's degree total. The 18-unit minimum was not used as total_units; the printed 'Required Major Total Units 25' was.",
+   "No GE unit figure is printed for Cal-GETC. The page notes CDEV C1000 and CDFS 050 may double count for GE and the major.",
+   "Outcome text was normalized from PDF ligature artifacts (e.g., 'EducaƟ on' -> 'education', 'seƫ  ngs' -> 'settings', 'prac Ɵ ce' -> 'practice').",
+   "Only the A.S.-T section (page 195) was read; the following pages hold the ECE Certificate of Achievement/A.S., Associate Teacher, and Infant/Toddler Teacher programs."
+  ]
+ },
+ "extracted_run": "44884569184",
+ "catalog_year": "2026-2027",
+ "source_sha": "9ff23005b23f9257",
+ "source_codes": [
+  "CDEVC1000",
+  "CDFS50",
+  "CDFS53",
+  "CDFS54",
+  "CDFS62",
+  "CDFS63",
+  "CDFS64",
+  "CDFS65"
+ ],
+ "source_coverage": 1.0
+}

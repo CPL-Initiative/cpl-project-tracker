@@ -5,11 +5,11 @@
  "title": "Modern Policing",
  "award": "A.S. Degree",
  "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3386&print",
- "record_shape": 5,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7372,
+  "input_tokens": 7675,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7372,
-    "output_tokens": 2849,
+    "input_tokens": 7675,
+    "output_tokens": 2554,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2849,
+  "output_tokens": 2554,
   "output_tokens_details": {
-   "thinking_tokens": 706
+   "thinking_tokens": 438
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.08647,
- "ms": 21554,
- "seconds": 22.1,
+ "cost_usd": 0.08178,
+ "ms": 19366,
+ "seconds": 19.8,
  "parts": null,
  "error": null,
  "score": {
@@ -126,6 +127,10 @@
     "max": 48
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": "San Joaquin Delta College Associate Degree General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
    "degree_total": {
     "min": 60,
@@ -339,7 +344,7 @@
      },
      {
       "code": "STAT C1000",
-      "units": 3,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -358,25 +363,30 @@
   "missing_explained": [
    {
     "code": "ART 2",
-    "why": "catalog prints the same title as ARTH 2 (recorded as catalog addition)"
+    "why": "catalog prints it as ARTH 2 (same title), recorded as catalog addition"
    },
    {
     "code": "COM ST 7",
-    "why": "catalog prints the same title as COMM 7 (recorded as catalog addition)"
+    "why": "catalog prints it as COMM 7 (same title), recorded as catalog addition"
    }
   ],
   "notes": [
-   "The catalog text begins mid-description; the program heading is cut off, so section_heading uses the degree name printed in the description.",
-   "STAT C1000 is printed with 4 units in the catalog; the units field above should read 4 (correction: catalog prints 'Units: 4').",
-   "Core block 'Complete 39 units'; Minimum Units Required for the major: 48; Minimum Degree Units Required: 60.",
-   "General education offers two patterns: SJDC Associate Degree GE (27 units) or Cal-GETC (34 units); ge_units records 27-34 to cover both.",
-   "ARTH 2 and COMM 7 appear to be renumbered versions of closed-list ART 2 and COM ST 7 (identical titles).",
-   "Career 'Peace Officer' taken from the program description ('their role as a Peace Officer')."
+   "The excerpt begins mid-description; the section heading is not printed in the text, so 'Modern Policing Associate in Science Degree' is taken from the description.",
+   "ARTH 2 and COMM 7 appear to be renumbered versions of closed-list ART 2 and COM ST 7 (same titles).",
+   "Minimum Units Required: 48 recorded as the major total; Minimum Degree Units Required: 60 recorded as degree_total.",
+   "Student picks one of two GE patterns: local pattern 27 units or Cal-GETC 34 units; ge_units recorded as range 27-34.",
+   "Areas B and C say 'Complete 3 units' though some listed courses carry 4 or 4.5 units."
   ]
  },
- "extracted_run": 39217405432,
- "read_run": 39128562020,
+ "extracted_run": "44883860902",
+ "catalog_year": "2026-2027",
  "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Degree Units Required: 60"
+  },
   {
    "field": "total_units_minimum",
    "was": null,

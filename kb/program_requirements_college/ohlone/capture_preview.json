@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 204,
  "with_closed_list": 179,
- "started": "2026-11-20T06:27:07Z",
+ "started": "2026-11-21T07:31:11Z",
  "pdf": {
   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf",
   "access": "ok",
@@ -39,20 +39,6 @@
     "titled": true,
     "coverage": 0.9,
     "opens": "[page 66] Associate in Arts in Real Estate Sales Agent/Broker INTEREST AREA: BUSINESS This program prepares students to pursue entry-level careers in today’s fast paced Real Estate industry. The program includes in-"
-   },
-   {
-    "control_number": "01250",
-    "pages": [
-     87,
-     88,
-     89
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": true,
-    "coverage": 0.714,
-    "opens": "[page 87] 148 2026-2027 OHLONE COLLEGE CATALOG "
    },
    {
     "control_number": "01255",
@@ -108,18 +94,6 @@
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 68] Associate in Science in Respiratory Therapist INTEREST AREA: HEALTH AND WELLNESS Respiratory care is a health care specialty directed at the diagnosis, treatment, management, and care of patients with defi"
-   },
-   {
-    "control_number": "01285",
-    "pages": [
-     6
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": true,
-    "coverage": 0.5,
-    "opens": "[page 6] 2026-2027 OHLONE COLLEGE CATALOG "
    },
    {
     "control_number": "01286",
@@ -500,18 +474,6 @@
     "opens": "[page 26] Certificate of Achievement in Digital Arts and Interactive Design INTEREST AREA: ARTS AND CREATIVE INDUSTRIES The Digital Arts and Interactive Design Certificate of Achievement provides students with a com"
    },
    {
-    "control_number": "22199",
-    "pages": [
-     75
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": true,
-    "coverage": 0.5,
-    "opens": "[page 75] 136 2026-2027 OHLONE COLLEGE CATALOG "
-   },
-   {
     "control_number": "22202",
     "pages": [
      58,
@@ -821,21 +783,6 @@
     "opens": "[page 23] Certificate of Achievement in Database Administration INTEREST AREA: SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS (STEM) The Certificate of Achievement in Database Administration prepares students to "
    },
    {
-    "control_number": "33319",
-    "pages": [
-     46,
-     47,
-     48,
-     49
-    ],
-    "named": true,
-    "code": null,
-    "cn_printed": false,
-    "titled": true,
-    "coverage": 1.0,
-    "opens": "[page 46] Certificate of Achievement in Information Technology INTEREST AREA: SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS (STEM) The Certificate of Achievement in Information Technology prepares students to ei"
-   },
-   {
     "control_number": "33320",
     "pages": [
      74,
@@ -938,19 +885,6 @@
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 59] Certificate of Achievement in Personal Development Studies INTEREST AREA: SOCIAL SCIENCES Personal Development is an interdisciplinary program in which students are given the opportunity to choose from a v"
-   },
-   {
-    "control_number": "35797",
-    "pages": [
-     30,
-     31
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": true,
-    "coverage": 0.5,
-    "opens": "[page 30] 2026-2027 OHLONE COLLEGE CATALOG "
    },
    {
     "control_number": "35933",
@@ -1198,18 +1132,6 @@
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 63] POLITICAL SCIENCE FOR TRANSFER Associate in Arts in Political Science for Transfer (ADT) INTEREST AREA: SOCIAL SCIENCES The Student Transfer Achievement Reform Act (Senate Bill 1440, codified in Californi"
-   },
-   {
-    "control_number": "38441",
-    "pages": [
-     99
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": true,
-    "coverage": 0.5,
-    "opens": "[page 99] 160 2026-2027 OHLONE COLLEGE CATALOG "
    },
    {
     "control_number": "38755",
@@ -1875,19 +1797,6 @@
     "opens": "[page 98] Certificate of Completion in Internship Preparation for Multilingual Learners INTEREST AREA: SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS This noncredit program helps students understand their profes"
    },
    {
-    "control_number": "46035",
-    "pages": [
-     96,
-     97
-    ],
-    "named": true,
-    "code": null,
-    "cn_printed": false,
-    "titled": true,
-    "coverage": 1.0,
-    "opens": "[page 96] Certificate of Completion in Esports Entrepreneurship and Live Production – Game Design INTEREST AREA: ARTS AND CREATIVE INDUSTRIES The Esports Entrepreneurship and Live Production Certificate of Completi"
-   },
-   {
     "control_number": "46103",
     "pages": [
      94
@@ -1951,9 +1860,9 @@
    }
   ],
   "page_checks": {
-   "read": 2,
+   "read": 9,
    "own_page": 2,
-   "no_own_page": 0,
+   "no_own_page": 7,
    "not_printed": 0
   },
   "unproven": []
@@ -1961,12 +1870,12 @@
  "loads": 1,
  "pages_listed": 1,
  "pages_answered": 1,
- "seconds": 67.2,
- "found": 150,
+ "seconds": 56.9,
+ "found": 143,
  "by_method": {
   "no_closed_list": 25,
-  "not_found": 29,
-  "pdf_pages": 150
+  "not_found": 36,
+  "pdf_pages": 143
  },
  "shared_pages": {
   "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=66": [
@@ -1974,10 +1883,6 @@
    "01271",
    "22194",
    "43778"
-  ],
-  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=87": [
-   "01250",
-   "22195"
   ],
   "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=25": [
    "01255",
@@ -2002,7 +1907,6 @@
   ],
   "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=75": [
    "11810",
-   "22199",
    "32441",
    "33685"
   ],
@@ -2103,11 +2007,6 @@
    "33644",
    "43042"
   ],
-  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=30": [
-   "35797",
-   "40030",
-   "45896"
-  ],
   "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=8": [
    "36096",
    "39792"
@@ -2119,8 +2018,7 @@
   "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=96": [
    "36285",
    "38976",
-   "39369",
-   "46035"
+   "39369"
   ],
   "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=42": [
    "36299",
@@ -2140,13 +2038,6 @@
    "38974",
    "41245"
   ],
-  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=99": [
-   "38441",
-   "41055",
-   "41056",
-   "42775",
-   "46259"
-  ],
   "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=95": [
    "39758",
    "39827",
@@ -2157,6 +2048,10 @@
    "41888",
    "43090"
   ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=30": [
+   "40030",
+   "45896"
+  ],
   "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=69": [
    "40034",
    "40035"
@@ -2164,6 +2059,12 @@
   "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=22": [
    "40314",
    "42924"
+  ],
+  "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=99": [
+   "41055",
+   "41056",
+   "42775",
+   "46259"
   ],
   "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=93": [
    "41112",
@@ -2201,6 +2102,18 @@
    "status": "Active"
   },
   {
+   "control_number": "01250",
+   "title": "Journalism",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
    "control_number": "01254",
    "title": "Computer Studies",
    "award": "A.A. Degree",
@@ -2217,6 +2130,18 @@
    "near_miss": {
     "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=10",
     "coverage": 0.182
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "01285",
+   "title": "Administration of Justice",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -2271,6 +2196,18 @@
    "status": "Active"
   },
   {
+   "control_number": "22199",
+   "title": "UNIX/Linux Systems Administrator",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
    "control_number": "22204",
    "title": "Technical Support Specialist",
    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
@@ -2287,6 +2224,31 @@
    "near_miss": {
     "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=10",
     "coverage": 0.182
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "33319",
+   "title": "Information Technology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "rule B then A: the pages printing the program's title with its award are course descriptions or general-education pages",
+    "rule": "A",
+    "refused_b": 1,
+    "plain_named": true,
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "35797",
+   "title": "Bioengineering",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -2340,6 +2302,18 @@
    "title": "Entrepreneurial Business Basics",
    "award": "Noncredit program",
    "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "38441",
+   "title": "Math Applications",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
+   },
    "status": "Active"
   },
   {
@@ -2431,31 +2405,34 @@
    "award": "Noncredit program",
    "near_miss": null,
    "status": "Active"
+  },
+  {
+   "control_number": "46035",
+   "title": "Esports Entrepreneurship and Live Production - Game Design",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "plain_named": true,
+    "page_checks": true
+   },
+   "status": "Active"
   }
  ],
  "page_claimed": [],
  "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 10,
+  "0.5-0.8": 5,
   "0.8-1.0": 5,
-  "1.0": 135
+  "1.0": 133
  },
  "would_extract": {
   "against": "kb/program_requirements_college/ohlone",
   "kept": 127,
   "kept_moved": 0,
-  "programs": 22,
+  "programs": 15,
   "list": [
-   {
-    "control_number": "01250",
-    "title": "Journalism",
-    "award": "A.A. Degree",
-    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=87",
-    "coverage": 0.714,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
    {
     "control_number": "01271",
     "title": "Registered Nurse",
@@ -2465,16 +2442,6 @@
     "was_url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=66",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "01285",
-    "title": "Administration of Justice",
-    "award": "A.A. Degree",
-    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=6",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
    },
    {
     "control_number": "13256",
@@ -2517,16 +2484,6 @@
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "22199",
-    "title": "UNIX/Linux Systems Administrator",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=75",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
     "control_number": "22205",
     "title": "American Sign Language & Deaf Studies",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
@@ -2567,16 +2524,6 @@
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "33319",
-    "title": "Information Technology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=46",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
     "control_number": "35532",
     "title": "Biology",
     "award": "A.S. T Degree",
@@ -2587,16 +2534,6 @@
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "35797",
-    "title": "Bioengineering",
-    "award": "A.S. Degree",
-    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=30",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
     "control_number": "36031",
     "title": "English",
     "award": "A.A- T Degree",
@@ -2605,16 +2542,6 @@
     "was_url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=31",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "38441",
-    "title": "Math Applications",
-    "award": "Noncredit program",
-    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=99",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
    },
    {
     "control_number": "43778",
@@ -2655,16 +2582,6 @@
     "was_url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=20",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "46035",
-    "title": "Esports Entrepreneurship and Live Production - Game Design",
-    "award": "Noncredit program",
-    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=96",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
    }
   ],
   "held_worse_window": [],
@@ -2687,10 +2604,6 @@
    "sha256": "c0ad0d7fb306f2c0a46f27c9b692dbe9d39f2cfa713951fec83bb6303a5eea13",
    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=66"
   },
-  "01250": {
-   "sha256": "7270c98f04fae8ef0c01d15b0456380a16d855236ecc46a9ba1b3a06c54027b6",
-   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=87"
-  },
   "01255": {
    "sha256": "4cabd3c1812541db3d2ab5432370a9255ac5e5f5e390f5b0c424bb9524ce361c",
    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=25"
@@ -2706,10 +2619,6 @@
   "01273": {
    "sha256": "b2e8cf2c62a7cc0b0050ab45ee2632349d066cd0accb1b02e7a473db5110a50d",
    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=68"
-  },
-  "01285": {
-   "sha256": "3b4f6c2fe87d6492ad2ec2f36975ed672d88c33bc8c6202d397cc7a4993d3412",
-   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=6"
   },
   "01286": {
    "sha256": "31e72e860813eaa63515cb7658439812befddb9301e91e2e49e2f0056ee21878",
@@ -2827,10 +2736,6 @@
    "sha256": "e3839ac2a4a3218d4b6196a1437cd2c441b61d224486d01f4e64a882c7c2c2d3",
    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=26"
   },
-  "22199": {
-   "sha256": "d625ef8d494376ae89d8064e4abc20f50607252b1e913f58e28100d122d55743",
-   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=75"
-  },
   "22202": {
    "sha256": "59d7f54bb103f459bdfdade39a468aa857c30d7cdfe70787393218a2fb7a17db",
    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=58"
@@ -2927,10 +2832,6 @@
    "sha256": "26f6cda2823464fd0ba4b150e7e7e1abcb86233f99c6f6e3013ed2787c71c536",
    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=23"
   },
-  "33319": {
-   "sha256": "01dc72e0bb9d94d54794b5a1a62870252c5e66c75f9d9f6b86e845a9617c308d",
-   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=46"
-  },
   "33320": {
    "sha256": "96b5d66033a8d59bd6d3d68d59359a70c66bb1004a54baa73213b92c438f1b39",
    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=74"
@@ -2962,10 +2863,6 @@
   "35542": {
    "sha256": "2d47905fcb32fa5285d3d45df4806d44eb4743b25926b467e9ddf91f79270d9d",
    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=59"
-  },
-  "35797": {
-   "sha256": "aa5412188ccc92290b25eee02fe888c3a6daa683ae0a64f259d89dd9979bf154",
-   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=30"
   },
   "35933": {
    "sha256": "5659ec8052c81065f8d6dc7c60e632c59a98f730496eaa5e4b310cfb5591c4d0",
@@ -3042,10 +2939,6 @@
   "37937": {
    "sha256": "cbcc719c590ef547c7b6f43317c28b28d9b49bb59f521bd1cc545b54029182d7",
    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=63"
-  },
-  "38441": {
-   "sha256": "0da447b0b59a1ffc20b3f1e4563a8a0222a8bad2833e095d23198bb96b23b5f5",
-   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=99"
   },
   "38755": {
    "sha256": "4ff8c793307a2719957a46042357a24a90845ef049f4ccbef70f87697cdf8fb8",
@@ -3259,10 +3152,6 @@
    "sha256": "f15130331c7d64fbb1c2f4c30986fd192d6d1025df139976e54fda46c4e414ef",
    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=98"
   },
-  "46035": {
-   "sha256": "fe682526dc5601233259ed51bf62fbb58a417c41399a8e9609c47a83c164641f",
-   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=96"
-  },
   "46103": {
    "sha256": "bf56267aee41fd7edcd08ee7d6e614b90309b65556ee2728d9d4e62954a4d562",
    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=94"
@@ -3284,5 +3173,5 @@
    "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=53"
   }
  },
- "run": "44687785539"
+ "run": "44880530291"
 }
