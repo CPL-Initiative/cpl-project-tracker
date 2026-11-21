@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
-"""Keep the newest 14 row Trust-Card reports in the repo; store the older ones in the private bucket.
+"""Store the dated row Trust-Card reports in the private bucket; the repo keeps latest.json.
 
 WHY (S680, issue #3476 Part 4 step 5). kb/_row_audit.py writes kb/row_audit/<date>.md every
 day, about 6.9 MB each: 179 reports were 1,081 MB on disk, and every search a session runs
 crawled them. latest.json (the one file a page reads: the Pipeline and Unified Courses tabs,
 coci_lookup.js, kb/_build_commons_status.py, overmerge-apply.yml and phase-1e-apply.yml) and
-the newest KEEP dated reports stay. Each older report goes to the private bucket cpl-receipts
-at row_audit/row_audit_<date>.md, through kb/_receipt_store.py (kind row_audit), and is named
+the newest KEEP dated reports stay. KEEP is 0 from S695 (#3476 item 2; 14 until then, which
+were 99.7 MB of the tree, and each day's 7 MB report sat on main unlisted by the size guard), so
+the day's own report goes to the bucket the day it is written and never enters the tree when the
+store works. Each report goes to the private
+bucket cpl-receipts at row_audit/row_audit_<date>.md, through kb/_receipt_store.py (kind row_audit), and is named
 with its size and sha256 in kb/receipts/index/row_audit_<date>.md.json. No code reads a dated
 report; git history keeps every one, and `python3 kb/_receipt_store.py fetch
 row_audit_<date>.md` on a runner gets one back from the bucket.
@@ -15,7 +18,11 @@ A REPORT LEAVES THE TREE ONLY AFTER ITS INDEX ENTRY EXISTS WITH THE FILE'S SHA25
 is written by store_file() only after the upload reads back with that sha256. A report whose
 entry already matches is removed with no upload (a second pass, or the daily run after the
 one-time move). A report with no key, a failed upload or read-back, or an entry naming other
-bytes stays where it is, and the log says why.
+bytes stays where it is, and the log says why. One exception to the last: the NEWEST dated
+report, when its entry names other bytes, is stored again beside the old object
+(store_file(supersede=True); the entry lists what it supersedes, and the old bytes stay in the
+bucket), because a second run on the same day rewrites that day's report. An older report
+whose bytes changed still stays.
 
 IT NEVER FAILS THE DAILY RUN. Without --strict it exits 0 whatever happens, and
 scripts/daily_build.sh adds `|| echo` beside it. --strict exits 1 when any report that should
@@ -29,7 +36,7 @@ socket timeout is stopped too. An entry is written whole (a temp file and a rena
 and a report is removed only after its entry, so a stop at any point leaves the files sound.
 
 Usage:
-  python3 kb/_row_audit_prune.py [--keep 14] [--max-store N] [--budget-seconds S] [--strict]
+  python3 kb/_row_audit_prune.py [--keep 0] [--max-store N] [--budget-seconds S] [--strict]
       --max-store   upload at most N reports this run (the daily run passes 3: a normal day stores 1)
       --budget-seconds  start no new upload after S seconds
 Guard: tests/row_audit_prune_test.py.
@@ -50,7 +57,7 @@ sys.path.insert(0, HERE)
 import _receipt_store as RS  # noqa: E402
 
 FOLDER = os.path.join(HERE, "row_audit")
-KEEP = 14
+KEEP = 0
 REPORT = re.compile(r"^(\d{4}-\d{2}-\d{2})\.md$")
 CALL_TIMEOUT = 60  # seconds a bucket call may take here (the store's own default is 300)
 LOG_STAYED = 20  # reports named one by one in the log; the rest are counted
@@ -88,6 +95,7 @@ def prune(folder: str = FOLDER, *, storage=None, index_path: str | None = None, 
         dated = sorted(n for n in os.listdir(folder) if REPORT.match(n))
         old = old_reports(folder, keep)
         out["kept"] = [n for n in dated if n not in old]
+        newest = dated[-1] if dated else None
     except Exception as exc:
         log("row audit prune: could not list %s (%s); nothing removed" % (folder, RS._first(exc)))
         return out
@@ -98,7 +106,8 @@ def prune(folder: str = FOLDER, *, storage=None, index_path: str | None = None, 
             path = os.path.join(folder, name)
             try:
                 ok, why = _indexed(path, index_path)
-                if not ok and why == "no index entry":
+                again = not ok and name == newest and why.startswith("the index entry names other bytes")
+                if not ok and (why == "no index entry" or again):
                     if storage is None:
                         out["stayed"][name] = "no SUPABASE_SERVICE_KEY, so no upload"
                         continue
@@ -115,7 +124,8 @@ def prune(folder: str = FOLDER, *, storage=None, index_path: str | None = None, 
                     stored += 1
                     try:
                         RS.store_file(copy, kind=RS.ROW_AUDIT_KIND, build=None, built=REPORT.match(name).group(1),
-                                      rows=lines, storage=storage, run=run, index_path=index_path, log=log)
+                                      rows=lines, storage=storage, run=run, index_path=index_path, log=log,
+                                      supersede=again)
                     except SystemExit as exc:
                         out["stayed"][name] = str(exc)
                         continue
@@ -141,6 +151,46 @@ def prune(folder: str = FOLDER, *, storage=None, index_path: str | None = None, 
             log("  and %d more stay, the last %s: %s" % (len(stayed) - LOG_STAYED, stayed[-1][0], stayed[-1][1]))
     except Exception:
         pass
+    return out
+
+
+def tracked_reports(listing: str) -> list[dict]:
+    """The dated reports in `git ls-tree -r -l <tree> -- kb/row_audit/` output: [{path, name, blob, size}]."""
+    out = []
+    for line in listing.splitlines():
+        if "\t" not in line:
+            continue
+        meta, path = line.split("\t", 1)
+        parts = meta.split()
+        name = path.rsplit("/", 1)[-1]
+        if len(parts) < 3 or parts[1] != "blob" or path != "kb/row_audit/" + name or not REPORT.match(name):
+            continue
+        size = int(parts[3]) if len(parts) > 3 and parts[3].isdigit() else None
+        out.append({"path": path, "name": name, "blob": parts[2], "size": size})
+    return out
+
+
+def gate(base: list[dict], head_paths: set, index_path: str | None = None, read_blob=None) -> list[str]:
+    """Every dated report `base` tracks that `head_paths` lacks must have a sound row_audit entry whose size is the
+    blob's (with ls-tree -l) and, where `read_blob(blob)` returns the bytes, whose sha256 is theirs (S695). Returns
+    the problems; empty means each removal was stored first."""
+    out = []
+    for it in base:
+        if it["path"] in head_paths:
+            continue
+        e = RS.read_entry(store_name(it["name"]), index_path)
+        if e is None:
+            out.append("%s left the tree with no index entry" % it["path"])
+            continue
+        bad = RS.entry_problems(e)
+        if bad or e.get("kind") != RS.ROW_AUDIT_KIND:
+            out.append("%s: its entry is malformed (%s)" % (it["path"], "; ".join(bad) or "kind"))
+        elif it.get("size") is not None and e.get("bytes") != it["size"]:
+            out.append("%s left the tree at %d bytes; its entry names %s" % (it["path"], it["size"], e.get("bytes")))
+        elif read_blob is not None:
+            data = read_blob(it["blob"])
+            if data is not None and RS.sha256_bytes(data) != e["sha256"]:
+                out.append("%s: its blob's sha256 is not the entry's" % it["path"])
     return out
 
 
@@ -183,7 +233,7 @@ def main(argv: list[str] | None = None) -> int:
             storage = BoundedStorage(key, time.monotonic() + a.budget_seconds)
         else:
             storage = RS.Storage(key, opener=_opener)
-        res = prune(a.folder, storage=storage, keep=max(a.keep, 1), max_store=a.max_store,
+        res = prune(a.folder, storage=storage, keep=max(a.keep, 0), max_store=a.max_store,
                     budget_seconds=a.budget_seconds, run=os.environ.get("GITHUB_RUN_ID"))
     except Exception as exc:  # belt and braces: prune() itself never raises
         print("row audit prune: %s; nothing more removed" % RS._first(exc))

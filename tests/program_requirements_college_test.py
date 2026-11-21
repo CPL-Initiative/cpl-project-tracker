@@ -1296,12 +1296,14 @@ key_line = "SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}"
 holders = [st.splitlines()[0] for st in steps(read_job) + steps(load_job) + steps(display_job) + steps(fetch_job)
            if "SUPABASE_SERVICE_KEY" in st]
 # S680: the display job stores its receipt in the private cpl-receipts bucket before it applies, and step=fetch
-# reads one back for a session; both take the key, and nothing else does.
-check(wf.count("SUPABASE_SERVICE_KEY") == 2 * wf.count(key_line) == 10
+# reads one back for a session; both take the key, and nothing else does. S695: the display job stores its applied
+# record there too.
+check(wf.count("SUPABASE_SERVICE_KEY") == 2 * wf.count(key_line) == 12
       and holders == ["- name: Extract and score",
                       "- name: Load the committed records, unchecked (or replace unchecked rows from the newest run)",
                       "- name: Store the receipt in cpl-receipts and name it in kb/receipts/index/",
                       "- name: Apply the display build the page carries, or the stored receipt force names",
+                      "- name: Store this run's applied record in cpl-receipts",
                       "- name: Fetch the stored receipt force names, checked against its sha256"],
       "the service key reaches the extraction, load and display steps, and no other: %r" % holders)
 check("if: env.EXTRACT == 'true'" in read_job, "the extraction step runs only when asked")

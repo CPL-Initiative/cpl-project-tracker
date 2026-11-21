@@ -424,8 +424,8 @@ scores: `faculty_trust_score` (today's cross-college articulation adoption
 bar) and `mc_ready_score` (the ASCCC Model Curriculum submission destination
 — see CLAUDE.md §11 for the lifecycle + MC-vs-TMC framing). Outputs
 `kb/row_audit/latest.json` (~2 MB, committed) + `<date>.md` (human report,
-committed; the newest 14 stay in the tree, and `kb/_row_audit_prune.py` in the
-daily run stores older ones in the private bucket `cpl-receipts` under
+committed until stored: `kb/_row_audit_prune.py` in the daily run stores each,
+the day's own included (the newest 14 stayed until S695), in the private bucket `cpl-receipts` under
 `row_audit/` with an index entry in `kb/receipts/index/`, S680 #3498) +
 `<date>.full.json` (~12 MB, gitignored). Re-runnable,
 never mutates; suggested-fix payloads on aggregable Cluster fields are

@@ -408,6 +408,12 @@ check(up and up[0] < lnames.index("Commit the receipt to the branch that ran it"
 # fails never fails a job whose write and push succeed.
 for _job in ("load", "display"):
     _ups = [x for x in cwf["jobs"][_job]["steps"] if str(x.get("uses", "")).startswith("actions/upload-artifact")]
+    # S695: the display job also uploads the stored applied record's index entry (pointers-<run>-<attempt>).
+    _ptr = [x for x in _ups if x["with"]["name"] == "pointers-${{ github.run_id }}-${{ github.run_attempt }}"]
+    check(all(x["with"]["path"] == "kb/receipts/index/*${{ github.run_id }}*" and x.get("continue-on-error") is True
+              for x in _ptr) and len(_ptr) == (1 if _job == "display" else 0),
+          "the %s job's pointers artifact carries only this run's index entries and never fails the job" % _job)
+    _ups = [x for x in _ups if x not in _ptr]
     check(_ups and all(x["with"]["path"] == "kb/receipts/*${{ github.run_id }}*" and x.get("continue-on-error") is True
                        and x["with"]["name"] == "receipts-${{ github.run_id }}-${{ github.run_attempt }}" for x in _ups)
           and "receipts-${{ github.run_id }}-${{ github.run_attempt }}: commit it by hand" in college_wf,

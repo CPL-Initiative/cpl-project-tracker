@@ -1,0 +1,110 @@
+name: Receipt slim
+
+# Manual dispatch only (S695, issue #3476 items 1 and 2). Moves two kinds of committed file out of the tree into
+# the private cpl-receipts bucket and commits each removal together with its pointer, an index entry under
+# kb/receipts/index/ that names the stored object, its size and sha256, and the repo file's sha256, size and blob:
+#
+#   1. the display applied records, kb/receipts/program_requirement_records_display_*.applied_*.json, the display
+#      rollback (Rule 10 a2), stored gzipped at display/applied/ (`kb/_receipt_store.py store-applied --tracked`);
+#   2. the dated row audit reports, kb/row_audit/<date>.md, at row_audit/ (`kb/_row_audit_prune.py --keep 0`).
+#      kb/row_audit/latest.json stays.
+#
+# The size guard's exceptions list (.github/repo_size_exceptions.txt) loses the line of each row audit report
+# that left (its rule: remove a line when its file goes).
+#
+# A file leaves the tree only after the bucket reads back bytes with its sha256 and its entry is written; a file
+# that fails stays, and the run exits 1 after committing what did move. Before the push, the receipt move gate
+# (tests/receipt_move_gate_test.py) compares the new commit with main and refuses any applied record removed
+# without an entry naming its blob. Both commands are idempotent: a second run stores nothing new and removes
+# what a first run indexed. From S695 the display job stores each new applied record itself and the daily run
+# stores the day's report, so after one apply run this workflow has nothing left to do.
+#
+# dry-run counts what would move and changes nothing. concurrency: daily-dashboard, the group of every job that
+# pushes to main, so this never races the daily cron's commit. DISPATCH OUTSIDE THE CRON WINDOWS (the daily rungs
+# start 06:17, 09:17 and 12:17 UTC; keep 30 minutes clear of each): GitHub keeps one pending run per group, and a
+# newer pending run cancels an older one, so a rung queued behind this run would cancel it, or this run a rung.
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "dry-run counts what would move; apply stores, removes and commits to main"
+        required: true
+        default: dry-run
+        type: choice
+        options: [dry-run, apply]
+
+concurrency:
+  group: daily-dashboard
+  cancel-in-progress: false
+
+jobs:
+  slim:
+    if: github.actor != 'github-actions[bot]'
+    # The service key's environment (main only); this job runs only on main, by dispatch.
+    environment: live-counts
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v7
+        with:
+          ref: main
+          # Two commits: the gate reads the commit this run makes against its parent.
+          fetch-depth: 2
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Count what moves
+        run: |
+          python3 kb/_receipt_store.py store-applied --tracked --dry-run | tee -a "$GITHUB_STEP_SUMMARY"
+          n=$(ls kb/row_audit | grep -cE '^[0-9]{4}-[0-9]{2}-[0-9]{2}\.md$' || true)
+          echo "$n dated row audit reports in the tree, $(du -cb kb/row_audit/20*.md 2>/dev/null | tail -1 | cut -f1) bytes" | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Store each file, read it back, remove it once its entry is written
+        id: store
+        if: inputs.mode == 'apply'
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: |
+          set -o pipefail
+          rc=0
+          python3 kb/_receipt_store.py store-applied --tracked | tee -a "$GITHUB_STEP_SUMMARY" || rc=1
+          python3 kb/_row_audit_prune.py --keep 0 --strict | tee -a "$GITHUB_STEP_SUMMARY" || rc=1
+          echo "rc=$rc" >> "$GITHUB_OUTPUT"
+
+      - name: Commit the removals with their pointers, gate them, push to main
+        if: inputs.mode == 'apply'
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # The exceptions list keeps no line for a row audit report that is gone.
+          python3 -I -c "import os; p='.github/repo_size_exceptions.txt'; L=open(p).read().splitlines(True); open(p,'w').writelines(l for l in L if not l.split(' ', 1)[-1].strip().startswith('kb/row_audit/20') or os.path.exists(l.split(' ', 1)[-1].strip()))"
+          git add -A -- kb/receipts kb/row_audit .github/repo_size_exceptions.txt
+          # Only removals of the two kinds, new index entries and the shrunk exceptions list may be staged.
+          bad=$(git diff --cached --name-status | grep -vE \
+            '^D	kb/receipts/program_requirement_records_display_[^/]*\.applied_[^/]*\.json$|^D	kb/row_audit/[0-9]{4}-[0-9]{2}-[0-9]{2}\.md$|^[AM]	kb/receipts/index/[^/]+\.json$|^M	\.github/repo_size_exceptions\.txt$' || true)
+          if [ -n "$bad" ]; then echo "::error::unexpected staged changes:"; echo "$bad" | head -20; exit 1; fi
+          if git diff --cached --quiet; then echo "nothing moved"; exit 0; fi
+          echo "staged: $(git diff --cached --name-status | grep -c '^D') removals, $(git diff --cached --name-status | grep -c '^A') index entries" | tee -a "$GITHUB_STEP_SUMMARY"
+          git commit -q -m "Receipt slim: applied records and row audit reports to cpl-receipts (run $GITHUB_RUN_ID)"
+          RECEIPT_GATE_BASE=HEAD~1 python3 tests/receipt_move_gate_test.py | tail -3
+          python3 kb/_receipt_store.py check | tail -1
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then exit 0; fi
+            git fetch --depth 30 origin main
+            git rebase origin/main || { git rebase --abort; exit 1; }
+            sleep $((attempt * 3))
+          done
+          exit 1
+
+      - name: Fail when a file stayed
+        if: inputs.mode == 'apply' && steps.store.outputs.rc != '0'
+        run: |
+          echo "::error::Some files stayed in the tree (the summary names each and why); what moved is committed."
+          exit 1

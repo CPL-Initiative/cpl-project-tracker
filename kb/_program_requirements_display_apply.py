@@ -66,7 +66,9 @@ again. A receipt with no statement (or none of --college's) is refused.
 ROLLBACK (Rule 10 a2). The applied record beside the receipt
 (<receipt>.applied_<run>.json; a re-run adds its attempt above 1, from
 GITHUB_RUN_ATTEMPT, and a --college run adds the college's slug)
-files each planned row's before-build: a row that held no display goes back
+files each planned row's before-build (from S695 the display job stores it in
+cpl-receipts at display/applied/ and commits its index entry; --only-keys-from
+fetches a stored one through that entry): a row that held no display goes back
 to null, and a row that held an older build goes back by re-applying that
 build's receipt. The rollback names every row the run may have written:
 while the record is still a plan (state "planned" or "unconfirmed"), every
@@ -529,6 +531,13 @@ def applied_path(receipt: str, run: str | None, college: str | None = None, atte
     return stem[:-len(".sql")] + ".applied_%s%s%s.json" % (run or "local", tag, slug)
 
 
+class _Reader:
+    """`fetch` (the bucket's get) as the storage S.local_or_stored reads from."""
+
+    def __init__(self, get):
+        self.get = get
+
+
 def main(argv: list[str] | None = None, request=None, sleep=time.sleep, fetch=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     mode = ap.add_mutually_exclusive_group(required=True)
@@ -585,7 +594,14 @@ def main(argv: list[str] | None = None, request=None, sleep=time.sleep, fetch=No
               % (len(keys) - len(set(keys))))
         return 1
     if args.only_keys_from:
-        with open(args.only_keys_from, encoding="utf-8") as fh:
+        # From S695 an applied record may live in cpl-receipts with only its index entry in the tree:
+        # local_or_stored() fetches it (checked by sha256) to a temporary folder, never into kb/receipts.
+        try:
+            keys_from = S.local_or_stored(args.only_keys_from, _Reader(fetch) if fetch else None)
+        except SystemExit as exc:
+            print(exc)
+            return 1
+        with open(keys_from, encoding="utf-8") as fh:
             back = ((json.load(fh).get("rollback") or {}).get("reapply") or {}).get(build) or []
         if not back:
             print("REFUSING: %s sends no key back to build %s" % (args.only_keys_from, build))
