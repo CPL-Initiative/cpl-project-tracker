@@ -58,7 +58,7 @@ def fixture(root):
         {"college": "Beta Trade-Technical College", "subject": "weld", "code": "WELD 20", "title": "Gas"}]})
     state = {"_built_at": "2026-07-09", "colleges": ["Alpha College", "Beta Trade Technical College"], "rows": [
         [0, "CCC1", "ENGL", "1", "Composition"], [0, "CCC2", "ENGL", "2", "Critical Thinking"],
-        [0, "CCC3", "WELD", "10", "Arc"], [0, "CCC4", "MATH", "1", "Algebra"],
+        [0, "CCC3", "WELD", "10", "Arc", 3, "C"], [0, "CCC4", "MATH", "1", "Algebra", 0, "N"], [0, "CCC7", "WELD", "11", "Arc Lab", 0, "E"],
         [1, "CCC5", "ENGL", "101", "Composition"], [1, "CCC6", "WELD", "20", "Gas"]]}
     open(os.path.join(root, "coci_lookup_data.js"), "w").write("window.CPL_COCI_LOOKUP = " + json.dumps(state) + ";\n")
     json.dump({"map": {"ENGL": "English", "WELD": "Welding", "ENG": "English"}},
@@ -90,7 +90,12 @@ try:
     # ── S698 (#3655): the filed headings, Title Case and why a row has no title ──
     check("(7) a row with a title reads catalog; its source is named", A["ENGL"]["title_state"] == "catalog" and A["ENGL"]["title_source"] == "course pages")
     check("(7) courses under a code and no heading read for it yet: not_read", B["WELD"]["title_state"] == "not_read" and B["ENG"]["title_state"] == "not_read")
-    check("(7) a code in the state list and nowhere in the catalog: not_in_catalog", A["MATH"]["title_state"] == "not_in_catalog" and B["ENGL"]["title_state"] == "not_in_catalog")
+    check("(7) a code in the state list and nowhere in the catalog: not_in_catalog", B["ENGL"]["title_state"] == "not_in_catalog")
+    check("(7) an untitled code whose courses in the state list are all noncredit is on hold (Sam, 2026-11-21)",
+          A["MATH"]["title_state"] == "noncredit_hold" and A["MATH"]["noncredit_courses"] == 1 and A["MATH"]["credit_courses"] == 0)
+    check("(7) credit and noncredit courses are counted apart, enhanced funding as noncredit; a titled code is never held",
+          A["WELD"]["credit_courses"] == 1 and A["WELD"]["noncredit_courses"] == 1 and A["WELD"]["title_state"] == "catalog"
+          and A["ENGL"]["noncredit_courses"] == 0 and out["totals"]["noncredit_hold"] == 1 and out["totals"]["credit_and_noncredit"] == 1)
     check("(7) every state is one of the four", all(r["title_state"] in lst.TITLE_STATES for c in by.values() for r in c.values()))
     sub = os.path.join(root, "kb", "hand_filed_catalogs", "subjects")
     os.makedirs(sub)

@@ -12,7 +12,7 @@
 //
 // Addresses (loaded by commons.js when the address names it): #commons/subjects (every college),
 // #commons/subjects/<college slug> (one college), #commons/subjects/disagree (the codes only one side prints, the
-// curator's list), #commons/subjects/held (S695: the local subject codes the pile mint holds on, ranked by the held
+// list of codes with no title), #commons/subjects/held (S695: the local subject codes the pile mint holds on, ranked by the held
 // courses a decided common subject code releases; read from kb/status/held_subject_codes.json, built by
 // kb/_held_subject_codes.py, and fetched only when that view opens). The view picked lasts the visit; only the address carries it. Tokens only (the tab's --cmn roles),
 // words for every control, no glyphs.
@@ -20,7 +20,24 @@
   "use strict";
 
   var FILE = "kb/status/local_subject_titles.json";
-  var SIDES = { both: "Both", catalog: "Catalog only", state: "State list only" };
+  var SIDES = { both: "Both", catalog: "Catalog only", state: "COCI only" };
+  /* Why a row has no title (Sam, 2026-11-21, #3655: "an indicator (chip) in the row to indicate that the catalog read
+     was either blocked, title not in catalog, or not parsed yet"). The builder writes the state from a recorded fact;
+     a row nothing proves reads Not read yet. Only Not in catalog rows are Sam's; Not read yet is Sky's to clear. */
+  var STATES = {
+    not_read: { word: "Not read yet", tip: "The catalog has this subject and our read did not take its heading. Sky clears it with a re-read." },
+    blocked: { word: "Blocked", tip: "The college’s site refused our reader. A person hands the page over, or the reader is fixed." },
+    not_in_catalog: { word: "Not in catalog", tip: "The catalog was read and gives this code no subject heading. It waits on a title from a person." },
+    /* Sam, 2026-11-21 (COBIx on #3655): noncredit recommendations wait until the large noncredit programs' catalogs are read. */
+    noncredit_hold: { word: "Noncredit: on hold", tip: "Every course under this code is noncredit and its catalog gives no heading. Noncredit titles and common codes wait until the large noncredit programs’ catalogs are read." }
+  };
+  /* A code's courses in COCI, credit and noncredit apart (Sam, 2026-11-21: the MQs separate them). */
+  function bands(r) {
+    if (r.noncredit_courses == null || !r.noncredit_courses) return "";
+    return " (" + fmt(r.credit_courses || 0) + " credit, " + fmt(r.noncredit_courses) + " noncredit)";
+  }
+  function needsTitle(r) { return !r.printed_name; }
+  function stateOf(r) { return STATES[r.title_state] || STATES.not_read; }
   var DISAGREE = "disagree";
   var HELD = "held";
   var HELD_FILE = "kb/status/held_subject_codes.json";
@@ -76,30 +93,38 @@
   function collegeTable(M, list) {
     var tbl = el("table", { cls: "csb-table" }, [
       el("colgroup", null, [el("col", { cls: "csb-c-wide" }), el("col"), el("col"), el("col"), el("col"), el("col")]),
-      el("thead", null, [el("tr", null, ["College", "Subject codes the catalog prints", "Local titles drafted", "Both print", "Catalog only", "State list only"]
+      el("thead", null, [el("tr", null, ["College", "Subject codes in the catalog", "Local titles", "Both", "Catalog only", "COCI only"]
         .map(function (t) { return el("th", { scope: "col", text: t }); }))]),
       el("tbody", null, list.map(function (c) {
-        return el("tr", { "data-college": c.slug }, [el("th", { scope: "row" }, [go("#commons/subjects/" + c.slug, c.college)]),
+        return el("tr", { "data-college": c.slug }, [el("th", { scope: "row" }, [S.view === c.slug ? c.college : go("#commons/subjects/" + c.slug, c.college)]),
           el("td", { text: fmt(c.codes) }), el("td", { cls: c.named ? null : "csb-tba", text: c.named ? fmt(c.named) : "TBA" }),
           el("td", { text: fmt(c.both) }), el("td", { text: fmt(c.catalogOnly) }), el("td", { text: fmt(c.stateOnly) })]);
       }))]);
-    return el("div", { cls: "csb-wrap", role: "region", "aria-label": "Colleges with a printed catalog", tabindex: "0" }, [tbl]);
+    return el("div", { cls: "csb-wrap", role: "region", "aria-label": "Colleges with a catalog on file", tabindex: "0" }, [tbl]);
   }
 
   /* The codes, one row each: college, local code, printed name (the draft title), common code, courses, side. */
   function codeTable(rows, label) {
     var tbl = el("table", { cls: "csb-table csb-codes" }, [
       el("colgroup", null, [el("col", { cls: "csb-c-wide" }), el("col"), el("col", { cls: "csb-c-wide" }), el("col"), el("col"), el("col")]),
-      el("thead", null, [el("tr", null, ["College", "Local code", "Printed name (draft title)", "Common subject code", "Courses it heads", "Printed by"]
+      el("thead", null, [el("tr", null, ["College", "Local code", "Local Title", "Common subject code", "Courses", "Source"]
         .map(function (t) { return el("th", { scope: "col", text: t }); }))]),
       el("tbody", null, rows.length ? rows.map(function (r) {
-        var heads = r.side === "state" ? fmt(r.state_courses) + " in the state list" : fmt(r.catalog_courses);
-        return el("tr", { "data-code": r.code, "data-side": r.side }, [el("td", null, [go("#commons/subjects/" + r.slug, r.college)]),
+        var heads = r.side === "state" ? fmt(r.state_courses) + " in COCI" + bands(r)
+          : fmt(r.catalog_courses) + (r.side === "both" ? " in the catalog, " + fmt(r.state_courses) + " in COCI" + bands(r) : "")
+            + (r.address && !r.catalog_courses ? "; its page is not read yet" : "");
+        var st = needsTitle(r) ? stateOf(r) : null;
+        var title = st ? el("td", { cls: "csb-tba" }, [
+          el("span", { cls: "csb-chip", role: "note", tabindex: "0", "data-state": r.title_state || "not_read", "aria-label": st.word + ". " + st.tip, title: st.tip, text: st.word }),
+          r.candidate ? el("span", { cls: "csb-sub", text: "A line near it in the catalog: " + r.candidate }) : null])
+          : el("td", { text: r.printed_name });
+        return el("tr", { "data-code": r.code, "data-side": r.side, "data-title-state": r.title_state || null }, [
+          el("td", null, [S.view === r.slug ? r.college : go("#commons/subjects/" + r.slug, r.college)]),
           el("th", { scope: "row", text: r.code }),
-          el("td", { cls: r.printed_name ? null : "csb-tba", text: r.printed_name || "TBA" }),
+          title,
           el("td", { text: r.common || "" }),
           el("td", { text: heads }),
-          el("td", { text: SIDES[r.side] || r.side })]);
+          el("td", { text: st && r.title_state === "not_read" ? st.word : SIDES[r.side] || r.side })]);
       }) : [el("tr", null, [el("td", { colspan: "6", text: "No code is in this list." })])])]);
     return el("div", { cls: "csb-wrap", role: "region", "aria-label": label, tabindex: "0" }, [tbl]);
   }
@@ -165,24 +190,25 @@
     root.textContent = "";
     var T = M.totals, all = [];
     M.list.forEach(function (x) { all = all.concat(x.rows); });
+    var untitled = all.filter(needsTitle).length;
     var wrap = el("div", { cls: "cmn-wrap csb" });
-    wrap.appendChild(trail(c ? c.college : S.view === DISAGREE ? "Codes only one side prints" : S.view === HELD ? "Codes the M-ID mint holds on" : ""));
+    wrap.appendChild(trail(c ? c.college : S.view === DISAGREE ? "Codes with no title" : S.view === HELD ? "Codes the M-ID mint holds on" : ""));
     wrap.appendChild(el("header", { cls: "cmn-top" }, [
-      el("h2", { cls: "cmn-title", id: "csb-h", text: c ? "Subjects at " + c.college : S.view === DISAGREE ? "Subject codes only one side prints" : S.view === HELD ? "Local subject codes the M-ID mint holds on" : "Subjects" }),
+      el("h2", { cls: "cmn-title", id: "csb-h", text: c ? "Subjects at " + c.college : S.view === DISAGREE ? "Subject codes with no title" : S.view === HELD ? "Local subject codes the M-ID mint holds on" : "Subjects" }),
       el("div", { cls: "cmn-rule", "aria-hidden": "true" }),
-      el("p", { cls: "cmn-lede", text: "Step a is the common subject code each discipline shares; Step b is each college’s own name for its subject codes, read from its printed catalog. The Courses bot drafts each local title from the catalog’s subject heading. A curator settles the codes the catalog and the state course list disagree on." })
+      el("p", { cls: "cmn-lede", text: "Step a is the common subject code each discipline shares; Step b is each college’s own name for its subject codes, read from its catalog. The Courses bot drafts each local title from the catalog’s subject heading. A curator settles the codes the catalog and the state course list disagree on." })
     ]));
     wrap.appendChild(el("p", { cls: "csb-stamp" }, [
-      el("strong", { text: fmt(T.named) }), " local titles drafted at ", el("strong", { text: fmt(T.colleges_named) + " of " + fmt(T.colleges) }),
-      " colleges with a printed catalog (" + fmt(T.courses) + " courses, " + fmt(T.catalog_codes) + " subject codes). ",
-      go("#commons/subjects/" + DISAGREE, fmt((T.catalog_only || 0) + (T.state_only || 0)) + " codes only one side prints"),
-      " (" + fmt(T.catalog_only) + " catalog only, " + fmt(T.state_only) + " state list only). ",
+      el("strong", { text: fmt(T.named) }), " local titles at ", el("strong", { text: fmt(T.colleges_named) + " of " + fmt(T.colleges) }),
+      " colleges with a catalog on file (" + fmt(T.courses) + " courses, " + fmt(T.catalog_codes) + " subject codes in the catalogs). ",
+      go("#commons/subjects/" + DISAGREE, fmt(untitled) + " codes with no title"),
+      " (" + fmt(T.not_in_catalog || 0) + " not in catalog, " + fmt(T.not_read || 0) + " not read yet, " + fmt(T.blocked || 0) + " blocked, " + fmt(T.noncredit_hold || 0) + " noncredit on hold). ",
       fmt(T.with_common) + " codes have a common subject code from the subject map. ",
       el("a", { href: "#canonical-subj4", text: "Common Subjects Reference" }), ". ",
       go("#commons/subjects/" + HELD, "Codes the M-ID mint holds on"), "."]));
-    if (missing) wrap.appendChild(el("p", { cls: "csb-note", role: "status", text: "No college with a printed catalog is named " + missing + ". Every college is below." }));
+    if (missing) wrap.appendChild(el("p", { cls: "csb-note", role: "status", text: "No college with a catalog on file is named " + missing + ". Every college is below." }));
     if (c) {
-      wrap.appendChild(el("p", { cls: "csb-note", text: c.year + " catalog, read " + day(c.readAt) + ". " + (c.named ? fmt(c.named) + " of " + fmt(c.codes) + " codes carry a printed name." : "This catalog prints the code alone, so every title reads TBA.") }));
+      wrap.appendChild(el("p", { cls: "csb-note", text: c.year + " catalog, read " + day(c.readAt) + ". " + (c.named ? fmt(c.named) + " of " + fmt(c.codes) + " codes have a local title." : "No subject heading is read for this catalog yet.") }));
       wrap.appendChild(collegeTable(M, [c]));
       wrap.appendChild(codeTable(c.rows, "Subject codes at " + c.college));
     } else if (S.view === HELD) {
@@ -197,7 +223,13 @@
         wrap.appendChild(heldTable(H));
       }
     } else if (S.view === DISAGREE) {
-      wrap.appendChild(codeTable(all.filter(function (r) { return r.side !== "both"; }), "Subject codes only one side prints"));
+      /* Every row with no title, in or out of the catalog (#3655, item 7: a code in both with no title was dropped
+         by the old one-sided filter). Sam's rows first: Not in catalog, then Blocked, then Sky's Not read yet. */
+      var order = { not_in_catalog: 0, blocked: 1, not_read: 2, noncredit_hold: 3 };
+      wrap.appendChild(codeTable(all.filter(needsTitle).sort(function (a, b) {
+        return (order[a.title_state] == null ? 2 : order[a.title_state]) - (order[b.title_state] == null ? 2 : order[b.title_state])
+          || a.college.localeCompare(b.college) || String(a.code).localeCompare(String(b.code));
+      }), "Subject codes with no title"));
     } else {
       wrap.appendChild(collegeTable(M, M.list));
       wrap.appendChild(codeTable(all, "Every subject code"));
@@ -275,6 +307,9 @@
     ".csb-sub { display:block; font-weight:400; color:var(--cmn-muted); font-size:.85rem; }",
     ".csb-ev p { margin:0 0 4px; } .csb-ev strong { color:var(--cmn-heading); font-weight:600; }",
     ".csb-tba { color:var(--cmn-muted); }",
+    ".csb-chip { display:inline-block; font-size:.78rem; font-weight:600; color:var(--cmn-ink-2); border:1px solid var(--cmn-line); border-radius:999px; padding:1px 9px; background:var(--cmn-surface); white-space:nowrap; cursor:help; }",
+    ".csb-chip[data-state='not_in_catalog'] { color:var(--cmn-heading); border-color:var(--cmn-accent); }",
+    ".csb-chip:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:2px; }",
     ".csb-foot { margin:0; color:var(--cmn-muted); font-size:.85rem; max-width:var(--cpl-measure,none); }",
     "@media (max-width: 560px) { .csb-table { min-width:36rem; } .csb-held { min-width:44rem; } .csb-table th, .csb-table td { padding:8px; } }"
   ].join("\n");
