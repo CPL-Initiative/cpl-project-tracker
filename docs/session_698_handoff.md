@@ -71,6 +71,13 @@ with self-recall, free runs only. Its two colleges were written here a minute af
 - 14:31Z: `readerfix`'s #3641 is green (the short-read refusal, the same-page calls in one place, the `only` input,
   Butte's address compare); a second reader reads it before the merge and Cosumnes River's paid read (14 programs,
   about $1.53 estimated).
+- 14:54Z: #3641 merged (`32b00c99`) on the second reader's GO; its fix-forward findings went to worker `followup`
+  (#3644, in review).
+- 15:11Z: Cosumnes River's named-programs read 44917314201 cost $1.16 and filed 10 passing records; the reread replaced
+  four live rows and the load inserted seven (189 live, 10 passing at the new run). #3645 waits on `test`.
+- 15:05Z: COBIx relayed two rulings of Sam's (#3358, comment 7064588752): a block is a block whoever clears it, and
+  vault-note drafts merge on their own once their checks pass. Under the second, S691's vault note
+  `samueltlee/CPLBrain#837` merged (`c9da8405`; no checks configured, no ruling in it).
 
 **Not tonight:** the plain session's list (handoff 696; brief section 4). Golden West's 476 header rows wait on a plain
 session's review. City College of San Francisco's Cal-GETC step stays a plain session's.
