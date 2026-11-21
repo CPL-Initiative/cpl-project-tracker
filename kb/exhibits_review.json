@@ -1,23 +1,23 @@
 {
  "schema": 1,
  "_about": "The Exhibits tab's Review queue (kb/_build_exhibits_review.py): one record per title the CER procedures held, with its proposed canonical title and where that came from, its exhibits, where it is articulated and who could adopt it. Students per title are a reviewer-only read (exhibit_title_students).",
- "written_at": "2026-11-20T21:51:03Z",
+ "written_at": "2026-11-21T01:10:55Z",
  "sources": {
   "procedures_run": "2026-11-20T16:27:00Z",
-  "suggestions": "2026-11-20T21:50:55Z",
-  "statewide": "2026-11-20T21:43:09",
-  "audit": "2026-11-20T21:50:36+00:00",
+  "suggestions": "2026-11-21T01:10:46Z",
+  "statewide": "2026-11-21T01:01:17",
+  "audit": "2026-11-21T01:10:22+00:00",
   "assignments": {
    "read": "live",
-   "at": "2026-11-20T21:50:59Z",
+   "at": "2026-11-21T01:10:51Z",
    "decided": []
   }
  },
  "tiles": {
   "names": {
    "n": 6199,
-   "of": 6234,
-   "waiting": 35
+   "of": 6252,
+   "waiting": 53
   },
   "aligned": {
    "n": 10,

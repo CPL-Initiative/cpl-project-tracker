@@ -24,11 +24,11 @@
 },
 "curation":{
 "path":"kb/coci_curation.json",
-"sha256":"b458b523c5af24e4e36b1452a70d403306fb2041c0dea245de0b3c92a956736f"
+"sha256":"5398d4adb519fd1d9d248585f3c17415eb987769317440ca1734ebf250960784"
 },
 "list_members":{
 "path":"unified_courses_members.js",
-"sha256":"2748327163e183d1352f5bd6a934f1e7556ab8f3c0ed30087cf30dc14180258e"
+"sha256":"8336bc278931a39ad52e121cdfe6a4fd7fe72be3571381ba07bfbc9454fb0953"
 },
 "one_course_cards":{
 "path":"kb/coci_minted_singletons.json",
@@ -1166,8 +1166,8 @@
 "independent":3428,
 "internship":797
 },
-"courses_with_no_card":8244,
-"real_gaps":2544
+"courses_with_no_card":8229,
+"real_gaps":2529
 },
 "courses":{
 "Allan Hancock College|CCC000000069":[

@@ -1,13 +1,43 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied. `aligned` names each title's aligned course: the course its exhibit's credit recommendation names, as CCN > C-ID > M-ID > the college's course title (Sam, 2026-10-30); exam brands keep their names.",
- "_generated_at": "2026-11-20T21:50:55Z",
- "count": 5,
+ "_generated_at": "2026-11-21T01:10:46Z",
+ "count": 8,
  "suggestions": {
   "DRAFT 21: Mechanical Design I CX": [
    {
     "kind": "course",
     "title": "Mechanical Design I",
     "code": "DRAFT 21",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "ESLN 309A": [
+   {
+    "kind": "course",
+    "title": "ESL - Foundations",
+    "code": "ESLN 309A",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "ESLN 310A": [
+   {
+    "kind": "course",
+    "title": "ESL - Comprehensive I",
+    "code": "ESLN 310A",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "ESLN 310E": [
+   {
+    "kind": "course",
+    "title": "ESL - Comprehensive V",
+    "code": "ESLN 310E",
     "share": 1.0,
     "colleges": 1,
     "scoped": true
@@ -97,6 +127,13 @@
    "code": "AJ 63",
    "college": "Las Positas College"
   },
+  "High School Articulation (Monte Vista)- Introduction to Music Theory and Performance": {
+   "kind": "cid",
+   "id": "MUS 120",
+   "title": "Music Theory I",
+   "code": "MUS 8A",
+   "college": "Las Positas College"
+  },
   "High School Articulation (Livermore)- Principles of Engineering": {
    "kind": "cid",
    "id": "ENGR 110",
@@ -118,12 +155,47 @@
    "code": "BIO 55",
    "college": "Las Positas College"
   },
+  "High School Articulation ( Tri Valley ROP)- Introduction to Health Careers": {
+   "kind": "course",
+   "id": "BIOL M10SN",
+   "title": "Orientation to Health Care",
+   "code": "BIO 55",
+   "college": "Las Positas College"
+  },
+  "High School Articulation ( Tri Valley ROP)- Integrated Marketing Communications": {
+   "kind": "mid",
+   "id": "BUSI M1370",
+   "title": "Introduction to Marketing",
+   "code": "MKTG 50",
+   "college": "Las Positas College"
+  },
+  "High School Articulation ( Tri Valley ROP)- Sports and Entertainment Marketing": {
+   "kind": "mid",
+   "id": "BUSI M1370",
+   "title": "Introduction to Marketing",
+   "code": "MKTG 50",
+   "college": "Las Positas College"
+  },
   "Cal Fire Basic Firefighter (219 hour) Training": {
    "kind": "mid",
    "id": "FIRE M1297",
    "title": "Wildland Fire Control",
    "code": "F SC 55",
    "college": "City College of San Francisco"
+  },
+  "High School Articulation (Benicia High School)- Dance 1": {
+   "kind": "mid",
+   "id": "DANC M1290",
+   "title": "Introduction to Dance",
+   "code": "DANC 1",
+   "college": "Las Positas College"
+  },
+  "High School Articulation (Benicia High School)- Dance 2": {
+   "kind": "mid",
+   "id": "DANC M1476",
+   "title": "Beginning/Intermediate Jazz Dance",
+   "code": "DANC 2B",
+   "college": "Las Positas College"
   },
   "PHOTO 7: Beginning Digital Photography (CX)": {
    "kind": "cid",
@@ -167,7 +239,21 @@
    "code": "EMS 30",
    "college": "Las Positas College"
   },
+  "High School Articulation ( Tri Valley ROP)- Medical Occupations": {
+   "kind": "cid",
+   "id": "HIT 103 X",
+   "title": "Medical Terminology",
+   "code": "EMS 62",
+   "college": "Las Positas College"
+  },
   "High School Articulation (Livermore)- Introduction to Athletic Training": {
+   "kind": "course",
+   "id": "KINE M11GR",
+   "title": "Intro to Athletic Training and Sports Medicine",
+   "code": "KIN 17",
+   "college": "Las Positas College"
+  },
+  "High School Articulation ( Tri Valley ROP)- Introduction to Athletic Training": {
    "kind": "course",
    "id": "KINE M11GR",
    "title": "Intro to Athletic Training and Sports Medicine",

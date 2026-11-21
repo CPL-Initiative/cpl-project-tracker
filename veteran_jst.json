@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-11-20T21:43:57.759920+00:00",
+  "scraped_at": "2026-11-21T01:02:08.964361+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34565,
-    "jst": 32381,
+    "jst": 32382,
     "star_colleges": 70
   },
   "computed_star_colleges": 70,
@@ -130,15 +130,15 @@
       "jst": 432,
       "star": false
     },
-    "Santa Ana College": {
-      "vets": 392,
-      "jst": 397,
-      "star": true
-    },
     "Modesto Junior College": {
       "vets": 223,
       "jst": 154,
       "star": false
+    },
+    "Santa Ana College": {
+      "vets": 392,
+      "jst": 397,
+      "star": true
     },
     "Mt. San Jacinto College": {
       "vets": 639,
@@ -202,7 +202,7 @@
     },
     "Clovis Community College": {
       "vets": 135,
-      "jst": 200,
+      "jst": 201,
       "star": true
     },
     "Antelope Valley College": {

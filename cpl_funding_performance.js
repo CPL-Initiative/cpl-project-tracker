@@ -4,28 +4,28 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-11-20",
+ "as_of": "2026-11-21",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 52405,
-  "pa": 47347,
+  "pe": 52412,
+  "pa": 47354,
   "ppa": 125,
-  "p2": 3723,
-  "p3": 17012,
+  "p2": 3730,
+  "p3": 17020,
   "pp": 8,
   "ppe": 137,
-  "pac": 5432,
-  "ptc": 4750,
-  "pe_u": 1656034.45,
-  "pa_u": 291141.9,
+  "pac": 5440,
+  "ptc": 4758,
+  "pe_u": 1656203.45,
+  "pa_u": 291581.4,
   "ppa_u": 773.5,
   "ppe_u": 7285.5,
-  "pac_u": 39818.2,
-  "ptc_u": 33418.95,
-  "p3_u": 86721.65,
+  "pac_u": 39890.2,
+  "ptc_u": 33502.95,
+  "p3_u": 86805.65,
   "pp_u": 79.5,
-  "nc_exh": 462,
+  "nc_exh": 466,
   "nc_course": 0,
   "nc_cdcp": 7134
  },
@@ -219,7 +219,7 @@ window.CPL_FUNDING_PERF = {
    "pe": 2190,
    "pe_u": 18284.0,
    "pa": 2185,
-   "pa_u": 10462.25,
+   "pa_u": 10459.25,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 351,
@@ -229,8 +229,8 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0,
    "ppe": 0,
    "ppe_u": 0.0,
-   "pac": 2027,
-   "pac_u": 9432.75,
+   "pac": 2028,
+   "pac_u": 9437.75,
    "ptc": 1811,
    "ptc_u": 7732.5,
    "nc_exh": 95,
@@ -353,9 +353,9 @@ window.CPL_FUNDING_PERF = {
   },
   "Chaffey": {
    "pe": 1598,
-   "pe_u": 36215.0,
+   "pe_u": 36251.0,
    "pa": 1593,
-   "pa_u": 20594.5,
+   "pa_u": 20777.5,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 15.0,
@@ -398,10 +398,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 52
   },
   "Clovis": {
-   "pe": 196,
-   "pe_u": 8587.0,
-   "pa": 196,
-   "pa_u": 1183.0,
+   "pe": 197,
+   "pe_u": 8662.0,
+   "pa": 197,
+   "pa_u": 1189.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 12.0,
@@ -678,7 +678,7 @@ window.CPL_FUNDING_PERF = {
    "ptc": null,
    "ptc_suppressed": true,
    "ptc_u": 104.5,
-   "nc_exh": 1,
+   "nc_exh": 5,
    "nc_course": 0,
    "nc_cdcp": 188
   },
@@ -1418,26 +1418,26 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 86
   },
   "Modesto": {
-   "pe": 375,
-   "pe_u": 8754.0,
-   "pa": 363,
-   "pa_u": 2363.0,
+   "pe": 381,
+   "pe_u": 8815.0,
+   "pa": 369,
+   "pa_u": 2424.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 32.0,
-   "p2": 77,
-   "p3": 205,
-   "p3_u": 1491.5,
+   "p2": 82,
+   "p3": 211,
+   "p3_u": 1552.5,
    "pp": null,
    "pp_suppressed": true,
    "pp_u": 16.0,
    "ppe": null,
    "ppe_suppressed": true,
    "ppe_u": 32.0,
-   "pac": 211,
-   "pac_u": 1549.0,
-   "ptc": 208,
-   "ptc_u": 1507.5,
+   "pac": 217,
+   "pac_u": 1610.0,
+   "ptc": 214,
+   "ptc_u": 1568.5,
    "nc_exh": 0,
    "nc_course": 0,
    "nc_cdcp": 37
@@ -1977,24 +1977,24 @@ window.CPL_FUNDING_PERF = {
   },
   "San Francisco": {
    "pe": 1875,
-   "pe_u": 84072.5,
+   "pe_u": 84069.5,
    "pa": 1873,
-   "pa_u": 13923.5,
+   "pa_u": 14116.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 11.0,
-   "p2": 16,
-   "p3": 33,
-   "p3_u": 226.0,
+   "p2": 18,
+   "p3": 35,
+   "p3_u": 249.0,
    "pp": 0,
    "pp_u": 0.0,
    "ppe": null,
    "ppe_suppressed": true,
    "ppe_u": 27.0,
-   "pac": 60,
-   "pac_u": 526.5,
-   "ptc": 33,
-   "ptc_u": 226.0,
+   "pac": 61,
+   "pac_u": 532.5,
+   "ptc": 35,
+   "ptc_u": 249.0,
    "nc_exh": 4,
    "nc_course": 0,
    "nc_cdcp": 141
@@ -2848,8 +2848,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Clovis": {
    "Military": {
-    "pe": 196,
-    "pa": 196,
+    "pe": 197,
+    "pa": 197,
     "p3": 0
    }
   },
@@ -3397,9 +3397,9 @@ window.CPL_FUNDING_PERF = {
   },
   "Modesto": {
    "Credit By Exam": {
-    "pe": 84,
-    "pa": 79,
-    "p3": 74
+    "pe": 85,
+    "pa": 80,
+    "p3": 75
    },
    "Credit By Exam | Industry Certification": {
     "pe": null,
@@ -3466,14 +3466,14 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Credit By Exam | Standardized Assessment": {
-    "pe": 14,
-    "pa": 13,
-    "p3": 12
+    "pe": 16,
+    "pa": 15,
+    "p3": 14
    },
    "Industry Certification": {
-    "pe": 48,
-    "pa": 46,
-    "p3": 43
+    "pe": 47,
+    "pa": 45,
+    "p3": 42
    },
    "Industry Certification | Military": {
     "pe": null,
@@ -3484,12 +3484,9 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Industry Certification | Portfolio Review": {
-    "pe": null,
-    "pe_suppressed": true,
-    "pa": null,
-    "pa_suppressed": true,
-    "p3": null,
-    "p3_suppressed": true
+    "pe": 10,
+    "pa": 10,
+    "p3": 10
    },
    "Industry Certification | Standardized Assessment": {
     "pe": null,
@@ -3511,9 +3508,9 @@ window.CPL_FUNDING_PERF = {
     "p3": 18
    },
    "Standardized Assessment": {
-    "pe": 26,
-    "pa": 26,
-    "p3": 25
+    "pe": 28,
+    "pa": 28,
+    "p3": 27
    }
   },
   "Monterey": {
@@ -4045,14 +4042,15 @@ window.CPL_FUNDING_PERF = {
    "Industry Certification": {
     "pe": 19,
     "pa": 18,
-    "p3": 11
+    "p3": 12
    },
    "Industry Certification | Military": {
     "pe": null,
     "pe_suppressed": true,
     "pa": null,
     "pa_suppressed": true,
-    "p3": 0
+    "p3": null,
+    "p3_suppressed": true
    },
    "Industry Certification | Military | Standardized Assessment": {
     "pe": null,
@@ -4359,9 +4357,9 @@ window.CPL_FUNDING_PERF = {
  },
  "cpl_types_statewide": {
   "Credit By Exam": {
-   "pe": 11482,
-   "pa": 11125,
-   "p3": 10673
+   "pe": 11483,
+   "pa": 11126,
+   "p3": 10674
   },
   "Credit By Exam | Industry Certification": {
    "pe": 47,
@@ -4422,19 +4420,19 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Credit By Exam | Standardized Assessment": {
-   "pe": 60,
-   "pa": 59,
-   "p3": 46
+   "pe": 62,
+   "pa": 61,
+   "p3": 48
   },
   "Industry Certification": {
-   "pe": 1484,
-   "pa": 1459,
+   "pe": 1483,
+   "pa": 1458,
    "p3": 1224
   },
   "Industry Certification | Military": {
    "pe": 62,
    "pa": 61,
-   "p3": 36
+   "p3": 37
   },
   "Industry Certification | Military | Portfolio Review": {
    "pe": null,
@@ -4469,9 +4467,9 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Industry Certification | Portfolio Review": {
-   "pe": 29,
-   "pa": 27,
-   "p3": 19
+   "pe": 31,
+   "pa": 29,
+   "p3": 21
   },
   "Industry Certification | Standardized Assessment": {
    "pe": null,
@@ -4482,8 +4480,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 31524,
-   "pa": 28249,
+   "pe": 31525,
+   "pa": 28250,
    "p3": 2690
   },
   "Military | Other": {
@@ -4529,9 +4527,9 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Standardized Assessment": {
-   "pe": 7027,
-   "pa": 5672,
-   "p3": 2130
+   "pe": 7029,
+   "pa": 5674,
+   "p3": 2132
   }
  },
  "cpl_types_note": "Distinct-student counts per college per `CPL Type Description`, for the funnel rungs pe/pa/p3. COUNTS ONLY — no unit sums, because each source row carries the student's TOTAL credits rather than that type's portion, so a per-type unit sum would attribute the whole total to every type a student carries. A student holding two types counts once under each, so the types do NOT sum to the college's undifferentiated count. Batch Cx/AP/IB uploads arrive already-transcribed by construction (students already in the college SIS, surfaced in MAP), so read p3 by type before treating a transcribed figure as lifecycle work.",
@@ -4539,14 +4537,14 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1656034.45,
-   "pa_u": 291141.9,
-   "p3_u": 86721.65
+   "pe_u": 1656203.45,
+   "pa_u": 291581.4,
+   "p3_u": 86805.65
   },
   "map": {
-   "pe_u": 1663319.95,
-   "pa_u": 291915.4,
-   "p3_u": 86801.15
+   "pe_u": 1663488.95,
+   "pa_u": 292354.9,
+   "p3_u": 86885.15
   },
   "ratio": {
    "pe_u": 1.0044,
@@ -4579,8 +4577,8 @@ window.CPL_FUNDING_PERF = {
   "San Bernardino": false,
   "Desert": true,
   "Saddleback": false,
-  "Santa Ana": true,
   "Modesto": false,
+  "Santa Ana": true,
   "Mt. San Jacinto": true,
   "Barstow": true,
   "Cypress": true,
@@ -4671,7 +4669,7 @@ window.CPL_FUNDING_PERF = {
   "Lake Tahoe": false,
   "LA Swest": false
  },
- "vet_star_as_of": "2026-11-20",
+ "vet_star_as_of": "2026-11-21",
  "vet_star_threshold": 0.75,
  "vet_star_n": 70,
  "vet_jst": {
@@ -4795,15 +4793,15 @@ window.CPL_FUNDING_PERF = {
    "jst": 432,
    "pct": 0.5353
   },
-  "Santa Ana": {
-   "vets": 392,
-   "jst": 397,
-   "pct": 1.0128
-  },
   "Modesto": {
    "vets": 223,
    "jst": 154,
    "pct": 0.6906
+  },
+  "Santa Ana": {
+   "vets": 392,
+   "jst": 397,
+   "pct": 1.0128
   },
   "Mt. San Jacinto": {
    "vets": 639,
@@ -4867,8 +4865,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Clovis": {
    "vets": 135,
-   "jst": 200,
-   "pct": 1.4815
+   "jst": 201,
+   "pct": 1.4889
   },
   "Antelope Valley": {
    "vets": 286,
