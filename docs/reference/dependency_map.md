@@ -1355,6 +1355,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/program_requirements_extract_halt_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_extract_schema_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_extraction_gate_test.py` | workflows: `js-tests.yml` | — |
+| `tests/program_requirements_follow_up_s697_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_fragment_path_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_heading_agreement_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_pdf_numbers_after_test.py` | workflows: `js-tests.yml` | — |
@@ -1363,6 +1364,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/program_requirements_reader_fixes_s697_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_reconcile_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_rulings_2026_11_17_test.py` | workflows: `js-tests.yml` | — |
+| `tests/program_requirements_same_page_recall_s697_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_units_rules_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_wave_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_year_renumbers_test.py` | workflows: `js-tests.yml` | — |
@@ -1682,5 +1684,5 @@ check these BY HAND before trusting an absence:
 - `kb/_row_audit_prune.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 119 Supabase tables · 68 RPCs · 16 edge functions · 1125 file
+Coverage: 119 Supabase tables · 68 RPCs · 16 edge functions · 1127 file
 datasets · 197 external services · 646 consumers · 77 workflows · 41 tabs.

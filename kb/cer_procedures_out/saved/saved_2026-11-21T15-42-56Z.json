@@ -1,0 +1,440 @@
+{
+ "table": "kb_curation",
+ "mode": "save",
+ "at": "2026-11-21T15-42-56Z",
+ "run_id": "44920198299",
+ "ruling": "Open Asks Sheet 94 card 2 (Sam, 2026-10-18, 'save'): a result the classifier is sure of saves under its procedure, reversible by procedure",
+ "procedures_hash": "75e72fb99f8c",
+ "cohorts": [
+  "cer-procedure-brand-family@bot",
+  "cer-procedure-course-identity@bot",
+  "cer-procedure-high-school-rop@bot"
+ ],
+ "held_live": [],
+ "rows": [
+  {
+   "course_id": "_UNCLASSIFIED::DRAFT 21: Mechanical Design I CX",
+   "field": "unified_title_assignment",
+   "value": "Mechanical Design I",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::DRAFT 21: Mechanical Design I CX",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ESLN 309A",
+   "field": "unified_title_assignment",
+   "value": "ESL - Foundations",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ESLN 309A",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ESLN 310A",
+   "field": "unified_title_assignment",
+   "value": "ESL - Comprehensive I",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ESLN 310A",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ESLN 310E",
+   "field": "unified_title_assignment",
+   "value": "ESL - Comprehensive V",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ESLN 310E",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::GERO 400: Principles of Caregiving: Older Adults, and Their Care CX",
+   "field": "unified_title_assignment",
+   "value": "Principles of Caregiving: Older Adults and Their Care",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::GERO 400: Principles of Caregiving: Older Adults, and Their Care CX",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::GERO 455: Resources and Services for Older Adults CX",
+   "field": "unified_title_assignment",
+   "value": "Resources and Services for Older Adults",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::GERO 455: Resources and Services for Older Adults CX",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation (Benicia High School)- Dance 1",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Dance",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation (Benicia High School)- Dance 1",
+   "field": "issuing_agency_assignment",
+   "value": "Benicia High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation (Benicia High School)- Dance 2",
+   "field": "unified_title_assignment",
+   "value": "Beginning/Intermediate Jazz Dance",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation (Benicia High School)- Dance 2",
+   "field": "issuing_agency_assignment",
+   "value": "Benicia High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation (Monte Vista)- Introduction to Music Theory and Performance",
+   "field": "unified_title_assignment",
+   "value": "Music Theory I",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation (Monte Vista)- Introduction to Music Theory and Performance",
+   "field": "issuing_agency_assignment",
+   "value": "Monte Vista High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB Exam - Economics",
+   "field": "unified_title_assignment",
+   "value": "IB Economics HL",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB Exam - Economics",
+   "field": "issuing_agency_assignment",
+   "value": "International Baccalaureate Organization (IBO)",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB Exam - Mathematics: Analysis & Approaches",
+   "field": "unified_title_assignment",
+   "value": "IB Mathematics: Analysis and Approaches HL",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB Exam - Mathematics: Analysis & Approaches",
+   "field": "issuing_agency_assignment",
+   "value": "International Baccalaureate Organization (IBO)",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB Exam - Psychology",
+   "field": "unified_title_assignment",
+   "value": "IB Psychology HL",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB Exam - Psychology",
+   "field": "issuing_agency_assignment",
+   "value": "International Baccalaureate Organization (IBO)",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB Exam: Mathematics: Applications and Interpretations",
+   "field": "unified_title_assignment",
+   "value": "IB Mathematics: Applications and Interpretation HL",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB Exam: Mathematics: Applications and Interpretations",
+   "field": "issuing_agency_assignment",
+   "value": "International Baccalaureate Organization (IBO)",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB Exam: Social and Cultural Anthropology",
+   "field": "unified_title_assignment",
+   "value": "IB Social and Cultural Anthropology HL",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB Exam: Social and Cultural Anthropology",
+   "field": "issuing_agency_assignment",
+   "value": "International Baccalaureate Organization (IBO)",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::PHOTO 7: Beginning Digital Photography (CX)",
+   "field": "unified_title_assignment",
+   "value": "Digital Photography Beginning",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::PHOTO 7: Beginning Digital Photography (CX)",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  }
+ ],
+ "result": "written",
+ "inserted": [
+  {
+   "course_id": "_UNCLASSIFIED::DRAFT 21: Mechanical Design I CX",
+   "field": "unified_title_assignment",
+   "value": "Mechanical Design I",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::DRAFT 21: Mechanical Design I CX",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ESLN 309A",
+   "field": "unified_title_assignment",
+   "value": "ESL - Foundations",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ESLN 309A",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ESLN 310A",
+   "field": "unified_title_assignment",
+   "value": "ESL - Comprehensive I",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ESLN 310A",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ESLN 310E",
+   "field": "unified_title_assignment",
+   "value": "ESL - Comprehensive V",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ESLN 310E",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::GERO 400: Principles of Caregiving: Older Adults, and Their Care CX",
+   "field": "unified_title_assignment",
+   "value": "Principles of Caregiving: Older Adults and Their Care",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::GERO 400: Principles of Caregiving: Older Adults, and Their Care CX",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::GERO 455: Resources and Services for Older Adults CX",
+   "field": "unified_title_assignment",
+   "value": "Resources and Services for Older Adults",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::GERO 455: Resources and Services for Older Adults CX",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation (Benicia High School)- Dance 1",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Dance",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation (Benicia High School)- Dance 1",
+   "field": "issuing_agency_assignment",
+   "value": "Benicia High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation (Benicia High School)- Dance 2",
+   "field": "unified_title_assignment",
+   "value": "Beginning/Intermediate Jazz Dance",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation (Benicia High School)- Dance 2",
+   "field": "issuing_agency_assignment",
+   "value": "Benicia High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation (Monte Vista)- Introduction to Music Theory and Performance",
+   "field": "unified_title_assignment",
+   "value": "Music Theory I",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation (Monte Vista)- Introduction to Music Theory and Performance",
+   "field": "issuing_agency_assignment",
+   "value": "Monte Vista High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB Exam - Economics",
+   "field": "unified_title_assignment",
+   "value": "IB Economics HL",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB Exam - Economics",
+   "field": "issuing_agency_assignment",
+   "value": "International Baccalaureate Organization (IBO)",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB Exam - Mathematics: Analysis & Approaches",
+   "field": "unified_title_assignment",
+   "value": "IB Mathematics: Analysis and Approaches HL",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB Exam - Mathematics: Analysis & Approaches",
+   "field": "issuing_agency_assignment",
+   "value": "International Baccalaureate Organization (IBO)",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB Exam - Psychology",
+   "field": "unified_title_assignment",
+   "value": "IB Psychology HL",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB Exam - Psychology",
+   "field": "issuing_agency_assignment",
+   "value": "International Baccalaureate Organization (IBO)",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB Exam: Mathematics: Applications and Interpretations",
+   "field": "unified_title_assignment",
+   "value": "IB Mathematics: Applications and Interpretation HL",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB Exam: Mathematics: Applications and Interpretations",
+   "field": "issuing_agency_assignment",
+   "value": "International Baccalaureate Organization (IBO)",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB Exam: Social and Cultural Anthropology",
+   "field": "unified_title_assignment",
+   "value": "IB Social and Cultural Anthropology HL",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB Exam: Social and Cultural Anthropology",
+   "field": "issuing_agency_assignment",
+   "value": "International Baccalaureate Organization (IBO)",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::PHOTO 7: Beginning Digital Photography (CX)",
+   "field": "unified_title_assignment",
+   "value": "Digital Photography Beginning",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::PHOTO 7: Beginning Digital Photography (CX)",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  }
+ ],
+ "skipped_as_duplicate": []
+}

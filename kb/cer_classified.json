@@ -11574,6 +11574,24 @@
    "hints": "0e9807f130",
    "asked": "2026-11-19"
   },
+  "Completion of ESLN 310C": {
+   "raw_title": "Completion of ESLN 310C",
+   "unified_title": "English as a Second Language (ESLN 310C)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.6,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.7,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ],
+   "_notes": "Code-only noncredit ESL course at College of the Desert; the ESLN 310C course title was not looked up, so the title falls back to <Discipline> (<code>). The issuer is the CCC system because no outside trainer is named, though the Standardized Assessment type is unusual for a course exhibit.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-21"
+  },
   "Computer Aided Drafting 2A & 2B HS-CNUSD": {
    "raw_title": "Computer Aided Drafting 2A & 2B HS-CNUSD",
    "unified_title": "Computer-Aided Drafting 2",
@@ -16102,6 +16120,192 @@
    "hints": "c210382085",
    "asked": "2026-11-18"
   },
+  "High School Articulation ( Tri Valley ROP)- Developmental Psychology of Children I": {
+   "raw_title": "High School Articulation ( Tri Valley ROP)- Developmental Psychology of Children I",
+   "unified_title": "Developmental Psychology of Children 1",
+   "issuing_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "training_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "arabic-level-numerals",
+    "brand-family"
+   ],
+   "_notes": "Set aside the cx hint, which kept the school and used CCC as issuer. Stripped the ROP name and joined the existing house title, whose Amador Valley and Dublin issuers are Tri-Valley schools. The ROP becomes issuer and trainer.",
+   "rules": "75e72fb99f8c",
+   "hints": "5b2a21eae2",
+   "asked": "2026-11-21"
+  },
+  "High School Articulation ( Tri Valley ROP)- Developmental Psychology of Children II": {
+   "raw_title": "High School Articulation ( Tri Valley ROP)- Developmental Psychology of Children II",
+   "unified_title": "Developmental Psychology of Children 2",
+   "issuing_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "training_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "arabic-level-numerals"
+   ],
+   "_notes": "Set aside the cx hint. Stripped the ROP name and made the numeral Arabic; the aligned college course title is unverified. The ROP is issuer and trainer.",
+   "rules": "75e72fb99f8c",
+   "hints": "3672ac4e14",
+   "asked": "2026-11-21"
+  },
+  "High School Articulation ( Tri Valley ROP)- Economics of Business Ownership": {
+   "raw_title": "High School Articulation ( Tri Valley ROP)- Economics of Business Ownership",
+   "unified_title": "Economics of Business Ownership",
+   "issuing_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "training_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f"
+   ],
+   "_notes": "Set aside the cx hint. Stripped the ROP name; the aligned Las Positas course title is unverified, so the title is the ROP course content. The ROP is issuer and trainer.",
+   "rules": "75e72fb99f8c",
+   "hints": "8ff3031c4e",
+   "asked": "2026-11-21"
+  },
+  "High School Articulation ( Tri Valley ROP)- Emergency Medical Response": {
+   "raw_title": "High School Articulation ( Tri Valley ROP)- Emergency Medical Response",
+   "unified_title": "Emergency Medical Responder",
+   "issuing_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "training_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "join-when-likely-one"
+   ],
+   "_notes": "Set aside the cx hint. Joined the multi-issuer Emergency Medical Responder family, which already holds Tri-Valley high schools; the source wording was 'Emergency Medical Response'. The ROP is issuer and trainer.",
+   "rules": "75e72fb99f8c",
+   "hints": "d61c397c7e",
+   "asked": "2026-11-21"
+  },
+  "High School Articulation ( Tri Valley ROP)- Integrated Marketing Communications": {
+   "raw_title": "High School Articulation ( Tri Valley ROP)- Integrated Marketing Communications",
+   "unified_title": "Integrated Marketing Communications",
+   "issuing_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "training_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f"
+   ],
+   "_notes": "Set aside the cx hint. Stripped the ROP name; the aligned college course title is unverified. The ROP is issuer and trainer.",
+   "rules": "75e72fb99f8c",
+   "hints": "cde9045fe0",
+   "asked": "2026-11-21"
+  },
+  "High School Articulation ( Tri Valley ROP)- Introduction to Athletic Training": {
+   "raw_title": "High School Articulation ( Tri Valley ROP)- Introduction to Athletic Training",
+   "unified_title": "Introduction to Athletic Training",
+   "issuing_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "training_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "brand-family"
+   ],
+   "_notes": "Set aside the cx hint. Joined the existing house title held by Foothill and Granada HS, both Tri-Valley schools. The ROP is issuer and trainer.",
+   "rules": "75e72fb99f8c",
+   "hints": "21d5315b74",
+   "asked": "2026-11-21"
+  },
+  "High School Articulation ( Tri Valley ROP)- Introduction to Health Careers": {
+   "raw_title": "High School Articulation ( Tri Valley ROP)- Introduction to Health Careers",
+   "unified_title": "Introduction to Health Careers",
+   "issuing_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "training_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f"
+   ],
+   "_notes": "Set aside the cx hint. Stripped the ROP name and kept the title distinct from 'Orientation to Health Care' pending course alignment. The ROP is issuer and trainer.",
+   "rules": "75e72fb99f8c",
+   "hints": "a532d02fd7",
+   "asked": "2026-11-21"
+  },
+  "High School Articulation ( Tri Valley ROP)- Medical Occupations": {
+   "raw_title": "High School Articulation ( Tri Valley ROP)- Medical Occupations",
+   "unified_title": "Medical Occupations",
+   "issuing_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "training_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f"
+   ],
+   "_notes": "Set aside the cx hint. Stripped the ROP name; the aligned college course is unknown and the title is generic. The ROP is issuer and trainer.",
+   "rules": "75e72fb99f8c",
+   "hints": "9c9e9aa238",
+   "asked": "2026-11-21"
+  },
+  "High School Articulation ( Tri Valley ROP)- Nursing Careers": {
+   "raw_title": "High School Articulation ( Tri Valley ROP)- Nursing Careers",
+   "unified_title": "Nursing Careers",
+   "issuing_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "training_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "brand-family"
+   ],
+   "_notes": "Set aside the cx hint. Joined the existing Nursing Careers house title held by Emerald and Foothill HS, both Tri-Valley schools. The ROP is issuer and trainer.",
+   "rules": "75e72fb99f8c",
+   "hints": "f44be89371",
+   "asked": "2026-11-21"
+  },
+  "High School Articulation ( Tri Valley ROP)- Sports and Entertainment Marketing": {
+   "raw_title": "High School Articulation ( Tri Valley ROP)- Sports and Entertainment Marketing",
+   "unified_title": "Sports and Entertainment Marketing",
+   "issuing_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "training_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f"
+   ],
+   "_notes": "Set aside the cx hint. Stripped the ROP name; the aligned college course title is unverified. The ROP is issuer and trainer.",
+   "rules": "75e72fb99f8c",
+   "hints": "a75604a8a0",
+   "asked": "2026-11-21"
+  },
   "High School Articulation (Amador Valley)- Criminal Justice/Crime Scene Investigation": {
    "raw_title": "High School Articulation (Amador Valley)- Criminal Justice/Crime Scene Investigation",
    "unified_title": "Crime Scene Investigation",
@@ -16213,6 +16417,63 @@
    "rules": "75e72fb99f8c",
    "hints": "eea66d3ffb",
    "asked": "2026-11-18"
+  },
+  "High School Articulation (Benicia High School)- Dance 1": {
+   "raw_title": "High School Articulation (Benicia High School)- Dance 1",
+   "unified_title": "Dance 1",
+   "issuing_agency": "Benicia High School",
+   "training_agency": "Benicia High School",
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "arabic-level-numerals"
+   ],
+   "_notes": "Set aside the cx hint. Stripped the school name and kept the level numeral; the aligned Las Positas dance course title is unverified.",
+   "rules": "75e72fb99f8c",
+   "hints": "b13966dcba",
+   "asked": "2026-11-21"
+  },
+  "High School Articulation (Benicia High School)- Dance 2": {
+   "raw_title": "High School Articulation (Benicia High School)- Dance 2",
+   "unified_title": "Dance 2",
+   "issuing_agency": "Benicia High School",
+   "training_agency": "Benicia High School",
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "arabic-level-numerals"
+   ],
+   "_notes": "Set aside the cx hint. Stripped the school name; the aligned Las Positas dance course title is unverified.",
+   "rules": "75e72fb99f8c",
+   "hints": "ec6ae5f6bf",
+   "asked": "2026-11-21"
+  },
+  "High School Articulation (Benicia High School)- Dance 3": {
+   "raw_title": "High School Articulation (Benicia High School)- Dance 3",
+   "unified_title": "Dance 3",
+   "issuing_agency": "Benicia High School",
+   "training_agency": "Benicia High School",
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "arabic-level-numerals"
+   ],
+   "_notes": "Set aside the cx hint. Stripped the school name; the aligned Las Positas dance course title is unverified.",
+   "rules": "75e72fb99f8c",
+   "hints": "cbf564a2e9",
+   "asked": "2026-11-21"
   },
   "High School Articulation (Dublin)- Criminal Justice/ CSI": {
    "raw_title": "High School Articulation (Dublin)- Criminal Justice/ CSI",
@@ -17036,6 +17297,24 @@
    "hints": "4eb3dc8bfc",
    "asked": "2026-11-20"
   },
+  "High School Articulation (Monte Vista)- Introduction to Music Theory and Performance": {
+   "raw_title": "High School Articulation (Monte Vista)- Introduction to Music Theory and Performance",
+   "unified_title": "Introduction to Music Theory and Performance",
+   "issuing_agency": "Monte Vista High School",
+   "training_agency": "Monte Vista High School",
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.7,
+   "confidence_trainer": 0.7,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f"
+   ],
+   "_notes": "Set aside the cx hint. The raw says only 'Monte Vista', read as Monte Vista High School (Danville) given the high-school phrasing and the Las Positas region. The aligned course title is unverified.",
+   "rules": "75e72fb99f8c",
+   "hints": "2911bc7236",
+   "asked": "2026-11-21"
+  },
   "High School Articulation (Tracy)- Fire Service": {
    "raw_title": "High School Articulation (Tracy)- Fire Service",
    "unified_title": "Fire Service",
@@ -17054,6 +17333,201 @@
    "rules": "75e72fb99f8c",
    "hints": "cb794090d1",
    "asked": "2026-11-20"
+  },
+  "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (AJ 54)": {
+   "raw_title": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (AJ 54)",
+   "unified_title": "Administration of Justice (AJ 54)",
+   "issuing_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "training_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "Rule 5c"
+   ],
+   "_notes": "Hint set aside because it kept the school name, the mechanism and the code. The ROP is the issuer and trainer. The title is the code fallback until a lookup in the COCI course list finds the Las Positas AJ 54 course title (CCN, then C-ID, then local title).",
+   "rules": "75e72fb99f8c",
+   "hints": "f70930e191",
+   "asked": "2026-11-21"
+  },
+  "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (AJ 60)": {
+   "raw_title": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (AJ 60)",
+   "unified_title": "Administration of Justice (AJ 60)",
+   "issuing_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "training_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "Rule 5c"
+   ],
+   "_notes": "Hint set aside because it was a verbatim raw title. The ROP is the issuer and trainer. The title is the code fallback until a COCI lookup finds the Las Positas AJ 60 title; it may be Criminal Investigation, but this is unverified.",
+   "rules": "75e72fb99f8c",
+   "hints": "343d4dceed",
+   "asked": "2026-11-21"
+  },
+  "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (AJ 68)": {
+   "raw_title": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (AJ 68)",
+   "unified_title": "Administration of Justice (AJ 68)",
+   "issuing_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "training_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "Rule 5c"
+   ],
+   "_notes": "Hint set aside because it was a verbatim raw title. The ROP is the issuer and trainer. The title is the code fallback pending a COCI lookup of the Las Positas AJ 68 course.",
+   "rules": "75e72fb99f8c",
+   "hints": "1964702b91",
+   "asked": "2026-11-21"
+  },
+  "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (AJ 70)": {
+   "raw_title": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (AJ 70)",
+   "unified_title": "Administration of Justice (AJ 70)",
+   "issuing_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "training_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "Rule 5c"
+   ],
+   "_notes": "Hint set aside because it was a verbatim raw title. The ROP is the issuer and trainer. The title is the code fallback pending a COCI lookup of the Las Positas AJ 70 course.",
+   "rules": "75e72fb99f8c",
+   "hints": "6ef6e0a1f1",
+   "asked": "2026-11-21"
+  },
+  "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (FST 7)": {
+   "raw_title": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (FST 7)",
+   "unified_title": "Fire Service Technology (FST 7)",
+   "issuing_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "training_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "confidence_title": 0.4,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "Rule 5c"
+   ],
+   "_notes": "Hint set aside because it was a verbatim raw title. The ROP is the issuer and trainer. The title is the code fallback pending a COCI lookup of the Las Positas FST 7 course aligned to the Criminal Justice Academy.",
+   "rules": "75e72fb99f8c",
+   "hints": "afa2d3ef28",
+   "asked": "2026-11-21"
+  },
+  "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (KIN GBW 1)": {
+   "raw_title": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (KIN GBW 1)",
+   "unified_title": "Kinesiology (KIN GBW 1)",
+   "issuing_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "training_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "confidence_title": 0.4,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "Rule 5c",
+    "arabic-level-numerals"
+   ],
+   "_notes": "Hint set aside because it was a verbatim raw title. The ROP is the issuer and trainer. The title is the code fallback pending a COCI lookup of the Las Positas KIN GBW 1 course title (likely a fitness or body-weight course).",
+   "rules": "75e72fb99f8c",
+   "hints": "03f1f9d5ae",
+   "asked": "2026-11-21"
+  },
+  "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (KIN GBW 2)": {
+   "raw_title": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (KIN GBW 2)",
+   "unified_title": "Kinesiology (KIN GBW 2)",
+   "issuing_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "training_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "confidence_title": 0.4,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "Rule 5c",
+    "arabic-level-numerals"
+   ],
+   "_notes": "Hint set aside because it was a verbatim raw title. The ROP is the issuer and trainer. The title is the code fallback pending a COCI lookup of the Las Positas KIN GBW 2 course.",
+   "rules": "75e72fb99f8c",
+   "hints": "e2614e0d6d",
+   "asked": "2026-11-21"
+  },
+  "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (KIN GBW 3)": {
+   "raw_title": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (KIN GBW 3)",
+   "unified_title": "Kinesiology (KIN GBW 3)",
+   "issuing_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "training_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "confidence_title": 0.4,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "Rule 5c",
+    "arabic-level-numerals"
+   ],
+   "_notes": "Hint set aside because it was a verbatim raw title. The ROP is the issuer and trainer. The title is the code fallback pending a COCI lookup of the Las Positas KIN GBW 3 course.",
+   "rules": "75e72fb99f8c",
+   "hints": "f81316cda5",
+   "asked": "2026-11-21"
+  },
+  "High School Articulation (Tri Valley ROP)- Criminal Justice/CSI": {
+   "raw_title": "High School Articulation (Tri Valley ROP)- Criminal Justice/CSI",
+   "unified_title": "Crime Scene Investigation",
+   "issuing_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "training_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "join-when-likely-one",
+    "Rule 4"
+   ],
+   "_notes": "Joins the existing Crime Scene Investigation family, with CSI expanded; the ROP is the issuer and discriminates this record. The aligned Las Positas course is unverified.",
+   "rules": "75e72fb99f8c",
+   "hints": "eb84df7836",
+   "asked": "2026-11-21"
+  },
+  "High School Articulation (Tri Valley ROP)- Criminal Justice/Crime Scene Investigation": {
+   "raw_title": "High School Articulation (Tri Valley ROP)- Criminal Justice/Crime Scene Investigation",
+   "unified_title": "Crime Scene Investigation",
+   "issuing_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "training_agency": "Tri-Valley Regional Occupational Program (ROP)",
+   "confidence_title": 0.78,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "join-when-likely-one",
+    "Rule 4"
+   ],
+   "_notes": "Same credential as the CSI twin row; joins the existing Crime Scene Investigation family. The ROP is the issuer and trainer. The aligned course is unverified.",
+   "rules": "75e72fb99f8c",
+   "hints": "f0ff457eb3",
+   "asked": "2026-11-21"
   },
   "High School Articulation- Criminal Justice/Crime Scene Investigation": {
    "raw_title": "High School Articulation- Criminal Justice/Crime Scene Investigation",
