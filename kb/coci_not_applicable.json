@@ -17,7 +17,7 @@
 "_inputs":{
 "cards":{
 "path":"kb/coci_minted_courses.json",
-"sha256":"62928acbb6f1c0b4574a526ad143249eb7a405f84b41d6f565ee82ad70e83a5f"
+"sha256":"71586716d0d5f58165d02c981d6ea1819ed426795a5ecb79ebf863c4bb050b71"
 },
 "coci_courses":{
 "path":"coci_lookup_data.js",
@@ -25,11 +25,11 @@
 },
 "curation":{
 "path":"kb/coci_curation.json",
-"sha256":"8dc64b0a069a1224c95d4eda2033744f97219f9e6cdf77a12ac21c68c2707ee2"
+"sha256":"09f2159dc8a7c1cf9852a479066d6d200987d0eb530bf56fd99845d168513f9f"
 },
 "list_members":{
 "path":"unified_courses_members.js",
-"sha256":"ee49a58cef5bf0fab1211fb552f89cee0229bcc71db52286c184b31d72ba11cb"
+"sha256":"d46bfb5e47dcfad998a8af50d0a130af7af3144c8e138fac075ea4862363c236"
 },
 "one_course_cards":{
 "path":"kb/coci_minted_singletons.json",
@@ -1168,8 +1168,8 @@
 "internship":797,
 "topics":584
 },
-"courses_with_no_card":8229,
-"real_gaps":1945,
+"courses_with_no_card":8139,
+"real_gaps":1855,
 "topics_left_with_identity_or_curated":0
 },
 "courses":{

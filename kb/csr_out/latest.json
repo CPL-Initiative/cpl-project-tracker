@@ -1,6 +1,6 @@
 {
  "_scanned_at": "2026-11-21",
- "_registry_synced_at": "2026-11-21T02:16:27Z",
+ "_registry_synced_at": "2026-11-21T04:06:34Z",
  "_disciplines": 147,
  "_official_ccn_prefixes": {
   "ANTH": 50,
@@ -30,7 +30,7 @@
   "SPAN": 0
  },
  "_mid_codes": {
-  "ids": 75581,
+  "ids": 75582,
   "codes": 271,
   "canonical": 147,
   "umbrella": 31,

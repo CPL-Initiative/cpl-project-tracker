@@ -8,7 +8,7 @@
 },
 "curation":{
 "path":"kb/coci_curation.json",
-"sha256":"8dc64b0a069a1224c95d4eda2033744f97219f9e6cdf77a12ac21c68c2707ee2"
+"sha256":"09f2159dc8a7c1cf9852a479066d6d200987d0eb530bf56fd99845d168513f9f"
 },
 "fall_2025":{
 "path":"kb/reference/cb_course_basic_fall2025.csv",
@@ -16,7 +16,7 @@
 },
 "memberships":{
 "path":"kb/coci_minted_memberships.json",
-"sha256":"692aae0a7b2f0bfa20f92fc3300302ede07824f27b6c7d25fe645e567bed2c6d"
+"sha256":"86da3eb5a258ee51e24c03dc381511cecd571b774af6e495a29f0b1cf61e3b8b"
 },
 "status":{
 "path":"kb/reference/coci_program_course_file.csv.gz",
