@@ -68,6 +68,9 @@ with self-recall, free runs only. Its two colleges were written here a minute af
   44911142170, 12 of 12) waits on its second reader before the full read.
 - 14:27Z: #3640 merged (`00e441ce`). The second reader on #3642 gave GO for the full read and the load
   (`slugs=irvine_valley`), with one blocking test fix before the merge and three fixes forward; the full read is out.
+- 14:31Z: `readerfix`'s #3641 is green (the short-read refusal, the same-page calls in one place, the `only` input,
+  Butte's address compare); a second reader reads it before the merge and Cosumnes River's paid read (14 programs,
+  about $1.53 estimated).
 
 **Not tonight:** the plain session's list (handoff 696; brief section 4). Golden West's 476 header rows wait on a plain
 session's review. City College of San Francisco's Cal-GETC step stays a plain session's.
