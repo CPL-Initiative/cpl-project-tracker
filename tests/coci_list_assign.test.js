@@ -96,7 +96,7 @@ function tab(hash, opts) {
         const withWho = /reviewer_email/.test(url.split("select=")[1].split("&")[0]);
         const shape = (s) => withWho ? s : { course_id: s.course_id, value: s.value, reviewed_at: s.reviewed_at };
         if (keyOf) return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve(stored.filter((s) => s.course_id === keyOf).map(shape)) });
-        if (opts.failRead && opts.failRead()) return Promise.resolve({ ok: false, status: 401, json: () => Promise.resolve({ message: "JWT expired" }) });
+        if (opts.failRead && opts.failRead(headers)) return Promise.resolve({ ok: false, status: 401, json: () => Promise.resolve({ message: "JWT expired" }) });
         const m = /^(\d+)-(\d+)$/.exec(headers.Range || "0-999"), all = stored.slice().sort((a, b) => a.course_id < b.course_id ? -1 : 1);
         return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve(all.slice(+m[1], +m[2] + 1).map(shape)) });
       }
@@ -231,6 +231,14 @@ const APPR = "4th Year Commercial Electrical Apprenticeship I";
   pn = await panelNow(t.d, APPR);
   check("(12) Read it again reads it, and the other reviewer's assignment shows", /Assigned to AUTO M1036 by other@example\.org on 2026-11-19\./.test(txt(pn)) && !pn.querySelector("[data-assign]"), txt(pn).slice(0, 400));
   check("(12) no write was sent while the read was unknown", !t.calls.some((c) => c.method === "POST"));
+
+  // ── (19) a token the service refuses ──
+  t = tab("#coci-lookup/list/nomid", { sess: SESS, assigned: [{ course_id: "CN:CCC7", value: "AUTO M1036", reviewed_at: "2026-11-19T18:00:00Z", reviewer_email: "other@example.org" }],
+    failRead: (h) => h.Authorization === "Bearer tok-1" }); await sleep(80);
+  const again = t.calls.filter((c) => /course_id=like/.test(c.url));
+  check("(19) a refused token reads again signed out: no email asked, no token sent, and what stands still shows",
+    again.length === 2 && /reviewer_email/.test(again[0].url) && !/reviewer_email/.test(again[1].url) && again[1].headers.Authorization !== "Bearer tok-1"
+      && txt(cellOf(rowByTitle(t.d, "Suspension and Steering"), t.d, "Closest M-ID")) === "Assigned to AUTO M1036, lists after the next build", JSON.stringify(again.map((c) => c.url.slice(-90))));
 
   // ── (13) a row another reviewer saved after this page read the list ──
   t = tab("#coci-lookup/list/nomid", { sess: SESS }); await sleep(70);

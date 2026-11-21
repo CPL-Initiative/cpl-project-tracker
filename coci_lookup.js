@@ -369,6 +369,9 @@
   function assignedOf(ctrl) { return (ASSIGN.rows && ASSIGN.rows[assignKey(ctrl)]) || null; }
   // The state list gives some courses no control number (blank, or the word NULL); such a course has no key to save under.
   function noControlNumber(ctrl) { return !assignKey(ctrl) || /^(NULL|N\/A|NA|NONE)$/.test(assignKey(ctrl)); }
+  // The columns a read asks for: the reviewer's email only with a reviewer's token (the anon key cannot read it, and a
+  // read that names it without one fails whole; tests/kb_curation_no_anon_email.test.js).
+  function assignSelect(token) { return "select=course_id,value,reviewed_at" + (token ? ",reviewer_email" : ""); }
   function assignRow(x, token) { return { to: String(x.value || ""), at: String(x.reviewed_at || "").slice(0, 10), who: token ? x.reviewer_email : null }; }
   /* The read is all or nothing (second read of the control, 2026-11-21): a page that fails leaves the assignments
      unknown, ASSIGN.rows stays null, and the panel offers no Assign and says so. A read that passed a failed page off
@@ -377,7 +380,7 @@
     var by = {}, PAGE = 1000;
     ASSIGN.loading = true;
     function page(from, token) {
-      return fetch(REST + "/kb_curation?select=course_id,value,reviewed_at" + (token ? ",reviewer_email" : "") + "&field=eq.merge_into" +
+      return fetch(REST + "/kb_curation?" + assignSelect(token) + "&field=eq.merge_into" +
         "&course_id=like." + encodeURIComponent("CN:") + "%25&order=course_id.asc",
         { headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + (token || SUPABASE_ANON), "Range-Unit": "items", Range: from + "-" + (from + PAGE - 1) } })
         .then(function (res) { if (!res.ok) throw new Error("the service answered " + res.status); return res.json(); })
@@ -388,7 +391,13 @@
         });
     }
     var first;
-    try { first = (ccSession() ? ccFresh() : Promise.resolve(null)).then(function (sess) { return page(0, sess && sess.access_token); }); }
+    // COBIx on #2950: a token the server refuses reads again signed out (no email asked), so what stands still shows.
+    try {
+      first = (ccSession() ? ccFresh() : Promise.resolve(null)).then(function (sess) {
+        var token = sess && sess.access_token;
+        return page(0, token).catch(function (e) { if (!token) throw e; by = {}; return page(0, null); });
+      });
+    }
     catch (e) { first = Promise.reject(e); }
     return first.then(function () { ASSIGN.rows = by; ASSIGN.failed = ""; },
       function (e) { ASSIGN.rows = null; ASSIGN.failed = String(e && e.message || e || "no answer from the service"); })
@@ -403,7 +412,7 @@
   function assignSave(r, target) {
     if (ASSIGN.busy) return;
     ASSIGN.busy = true; ASSIGN.said[r.ctrl] = "Saving…"; ccRedraw();
-    var key = "CN:" + r.ctrl, one = REST + "/kb_curation?select=course_id,value,reviewed_at,reviewer_email&field=eq.merge_into&course_id=eq." + encodeURIComponent(key);
+    var key = "CN:" + r.ctrl, one = function (token) { return REST + "/kb_curation?" + assignSelect(token) + "&field=eq.merge_into&course_id=eq." + encodeURIComponent(key); };
     function done(words) { ASSIGN.busy = false; ASSIGN.said[r.ctrl] = words; LIST.memo = null; ccRedraw(); }
     function stands(x, sess) {
       ASSIGN.rows = ASSIGN.rows || {}; ASSIGN.rows[assignKey(r.ctrl)] = assignRow(x, sess.access_token);
@@ -412,7 +421,7 @@
     ccFresh().then(function (sess) {
       if (!sess) { done("Your sign-in has ended. Sign in again, then assign."); return null; }
       var auth = { apikey: SUPABASE_ANON, Authorization: "Bearer " + sess.access_token };
-      return fetch(one, { headers: auth }).then(function (res) { if (!res.ok) throw new Error("the service answered " + res.status); return res.json(); })
+      return fetch(one(sess.access_token), { headers: auth }).then(function (res) { if (!res.ok) throw new Error("the service answered " + res.status); return res.json(); })
         .then(function (rows) {
           if (!Array.isArray(rows)) throw new Error("the service sent no list");
           if (rows.length) { stands(rows[0], sess); return null; }
@@ -423,7 +432,7 @@
               if (!res.ok) { done("The save did not land (the service answered " + res.status + "). Nothing changed."); return null; }
               return res.json().then(function (saved) {
                 if (Array.isArray(saved) && !saved.length) {  // another reviewer's row arrived first and stands
-                  return fetch(one, { headers: auth }).then(function (r2) { return r2.ok ? r2.json() : []; })
+                  return fetch(one(sess.access_token), { headers: auth }).then(function (r2) { return r2.ok ? r2.json() : []; })
                     .then(function (now) { if (now && now.length) stands(now[0], sess); else done("The save did not land: a row for this course already stood. Nothing changed."); });
                 }
                 ASSIGN.rows = ASSIGN.rows || {};

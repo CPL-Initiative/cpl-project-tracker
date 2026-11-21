@@ -84,7 +84,7 @@
     "commons_data_sharing.test.js": 36,
     "commons_data_integrations.test.js": 26,
     "coci_list.test.js": 40,
-    "coci_list_assign.test.js": 35,
+    "coci_list_assign.test.js": 36,
     "coci_list_needs_mid.test.js": 36,
     "coci_list_kept.test.js": 14,
     "college_activity.test.js": 7,
