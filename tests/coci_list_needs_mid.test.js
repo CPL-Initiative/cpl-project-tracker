@@ -15,7 +15,7 @@
 //       score ... with a link to open a sidebar to curate"; and COBIx's note he relayed: three levels in place of a raw
 //       score, and "Propose new M-ID" when a course has no strong match): the column shows the M-ID with its level in
 //       words, the panel says how the level was measured and why each of the closest is close, a course with a C-ID
-//       or CCN never gets one, and nothing in the panel saves;
+//       or CCN never gets one, and signed out nothing in the panel saves;
 //   (7) ⭐ the pile opens in the order the exhibit titles need (COBIx, relayed by Sam, 2026-11-20: "sort the pile by how
 //       many exhibits each M-ID would unlock, so Group Communication, with 67 links, comes first"): a strong or possible
 //       match with more exhibit links above one with fewer, a strong match before a possible one at the same count, a
@@ -141,9 +141,10 @@ function panel(d) { return d.getElementById(P + "panel"); }
     /Closest common courses/.test(pn) && /Strong match: ELEC M1300\. Of 2,438 courses with a known M-ID that scored at this level when taken out of their own common course, 2,266 \(93%\) had their own M-ID come first\./.test(pn)
       && /ELEC M1300: 4 of its 6 local courses carry this same title; catalog descriptions overlap 42%\./.test(pn) && /ELEC M1301: none of its 3 local courses carries this same title\./.test(pn)
       && panel(d).querySelector("[data-rec-level]").getAttribute("data-rec-level") === "strong", pn.slice(0, 700));
-  check("(6) each of the closest is one word from SkyView, and the panel says nothing is saved",
-    panel(d).querySelectorAll(".ccl-rec-list li a[href*='skyview.html#outline/']").length === 2 && /A recommendation saves nothing\./.test(pn));
-  check("(6) no control in the panel assigns the course or mints an M-ID (the save waits on the build change)", !Array.from(panel(d).querySelectorAll("button")).some((b) => /assign|propose/i.test(txt(b))));
+  check("(6) each of the closest is one word from SkyView, and signed out the panel offers no save (tests/coci_list_assign.test.js guards the save)",
+    panel(d).querySelectorAll(".ccl-rec-list li a[href*='skyview.html#outline/']").length === 2 && !panel(d).querySelector("[data-assign]")
+      && /Assigning saves one row under your name/.test(pn));
+  check("(6) signed out, no control in the panel assigns the course or mints an M-ID", !Array.from(panel(d).querySelectorAll("button")).some((b) => /assign|propose/i.test(txt(b))));
   titleCell(tutor, d).querySelector("button").click(); await sleep(20);
   check("(6) ⭐ no strong match says so, offers a new M-ID, and still lists the closest for reference",
     /No strong match\. Propose a new M-ID\. The closest are listed for reference\. Of 1,687 courses .* 297 \(18%\) had their own M-ID come first\./.test(txt(panel(d))) && /LRNA M9001: none of its 1 local course carries this same title\./.test(txt(panel(d))), txt(panel(d)).slice(0, 600));
