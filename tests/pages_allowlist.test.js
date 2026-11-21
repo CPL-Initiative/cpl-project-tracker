@@ -190,8 +190,6 @@ const DYNAMIC = {
   "docket-process.yml": "stages git add -A kb/ (receipts under the published kb/docket, its allowed scripts' output under the withheld kb/*_out, and the Commons status files it rebuilds, each already decided); main turns red only if the docket writes a NEW path directly in a split folder (kb/, kb/status/, kb/reference/), which check B then names with the line to add",
   "chatbox-ghost-delete.yml": "stages $RECEIPT, a kb/receipts/chatbox_ghost_delete_<UTC> folder inside the withheld kb/receipts",
   "cred-rename-apply.yml": "stages $RECEIPT, the apply's receipt folder under the withheld kb/receipts",
-  "overmerge-apply.yml": "stages the split kb/row_audit/ whole: its dated .md are withheld by pattern, latest.json published",
-  "phase-1e-apply.yml": "stages the split kb/row_audit/ whole: its dated .md are withheld by pattern, latest.json published",
   "receipt-slim.yml": "stages the split kb/row_audit/ whole for its dated .md removals (withheld by pattern), and kb/receipts (withheld); a step refuses any staged change but those removals, index entries and the exceptions list",
 };
 const wfDir = ".github/workflows";

@@ -446,6 +446,20 @@ jobs:
           if [ ${#files[@]} -eq 0 ]; then echo "no applied record"; exit 0; fi
           python3 kb/_receipt_store.py store-applied "${files[@]}" \
             || echo "::warning title=Applied record committed::cpl-receipts did not take the applied record; it is committed to the tree instead."
+          # The pointer rides in the summary and in an artifact too, so a push that fails loses nothing: restore
+          # it by hand from either (docs/reference/data_write_rollback.md).
+          for f in "${files[@]}"; do
+            e="kb/receipts/index/$(basename "$f").json"
+            if [ -f "$e" ]; then { echo "Index entry \`$e\`:"; echo '```json'; cat "$e"; echo '```'; } >> "$GITHUB_STEP_SUMMARY"; fi
+          done
+      - uses: actions/upload-artifact@v7
+        if: always()
+        continue-on-error: true
+        with:
+          name: pointers-${{ github.run_id }}-${{ github.run_attempt }}
+          path: kb/receipts/index/*${{ github.run_id }}*
+          if-no-files-found: ignore
+          retention-days: 90
       - name: Commit the applied record to the branch that ran it
         if: always()
         # The message names a scoped run's college, so git log tells it from a whole-build run.

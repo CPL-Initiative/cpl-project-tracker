@@ -20,7 +20,9 @@ name: Receipt slim
 # stores the day's report, so after one apply run this workflow has nothing left to do.
 #
 # dry-run counts what would move and changes nothing. concurrency: daily-dashboard, the group of every job that
-# pushes to main, so this never races the daily cron's commit.
+# pushes to main, so this never races the daily cron's commit. DISPATCH OUTSIDE THE CRON WINDOWS (the daily rungs
+# start 06:17, 09:17 and 12:17 UTC; keep 30 minutes clear of each): GitHub keeps one pending run per group, and a
+# newer pending run cancels an older one, so a rung queued behind this run would cancel it, or this run a rung.
 
 on:
   workflow_dispatch:
@@ -39,6 +41,8 @@ concurrency:
 jobs:
   slim:
     if: github.actor != 'github-actions[bot]'
+    # The service key's environment (main only); this job runs only on main, by dispatch.
+    environment: live-counts
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:

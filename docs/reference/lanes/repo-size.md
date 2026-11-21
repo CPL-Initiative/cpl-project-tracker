@@ -102,7 +102,9 @@ the event value as the fallback, and log both.
   `local_or_stored` and `store-applied` in `kb/_receipt_store.py`; the display job stores its own record; the rollback
   reads a stored record through its entry; KEEP 0 in the prune; the gate in `tests/receipt_move_gate_test.py` covers
   applied records; `.github/workflows/receipt-slim.yml` (dispatch only, the `daily-dashboard` group) moves the
-  committed ones once.
+  committed ones once. The move gate holds every removal to its entry: an applied record by its git blob and
+  sha256, a row audit report by its size and sha256 (`gate` in `kb/_row_audit_prune.py`); `receipt-slim.yml` runs it
+  on its own commit before the push. The undo is the bucket copy by its entry, or git history.
 - **Measured before the move:** 139 applied records, 124.7 MB; 14 dated row audit reports, 99.7 MB (7.1 MB each, the
   newest three missing from the size guard's exceptions list, which the weekly listed-file check fails on).
 - **To finish:** after the merge, dispatch `receipt-slim.yml` with `mode=dry-run`, then `mode=apply`. The apply commits
@@ -110,8 +112,10 @@ the event value as the fallback, and log both.
 
 ## NEXT, in order
 
-0. **Dispatch `receipt-slim.yml`** (`mode=apply`) once this lane's S695 PR merges; then the workflow has nothing left
-   to move and a later PR may remove it.
+0. **Dispatch `receipt-slim.yml`** (`mode=apply`) once this lane's S695 PR merges, outside the daily cron windows
+   (06:17, 09:17 and 12:17 UTC; keep 30 minutes clear): it shares the `daily-dashboard` group, and a newer pending
+   run in a group cancels an older pending one. Then the workflow has nothing left to move and a later PR may remove
+   it.
 1. **Part 5, the history rewrite: Sam's go.** Rule 5's one permitted main-history rewrite needs the cron paused, his
    explicit go and every open session told to re-clone. Waits on him; not on the standing sheet as a card.
 2. The spreadsheet export and the videos out of the tree; the PR that moves them lowers `TOTAL_CAP_MB` (1,500 MB, then

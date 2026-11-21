@@ -154,6 +154,46 @@ def prune(folder: str = FOLDER, *, storage=None, index_path: str | None = None, 
     return out
 
 
+def tracked_reports(listing: str) -> list[dict]:
+    """The dated reports in `git ls-tree -r -l <tree> -- kb/row_audit/` output: [{path, name, blob, size}]."""
+    out = []
+    for line in listing.splitlines():
+        if "\t" not in line:
+            continue
+        meta, path = line.split("\t", 1)
+        parts = meta.split()
+        name = path.rsplit("/", 1)[-1]
+        if len(parts) < 3 or parts[1] != "blob" or path != "kb/row_audit/" + name or not REPORT.match(name):
+            continue
+        size = int(parts[3]) if len(parts) > 3 and parts[3].isdigit() else None
+        out.append({"path": path, "name": name, "blob": parts[2], "size": size})
+    return out
+
+
+def gate(base: list[dict], head_paths: set, index_path: str | None = None, read_blob=None) -> list[str]:
+    """Every dated report `base` tracks that `head_paths` lacks must have a sound row_audit entry whose size is the
+    blob's (with ls-tree -l) and, where `read_blob(blob)` returns the bytes, whose sha256 is theirs (S695). Returns
+    the problems; empty means each removal was stored first."""
+    out = []
+    for it in base:
+        if it["path"] in head_paths:
+            continue
+        e = RS.read_entry(store_name(it["name"]), index_path)
+        if e is None:
+            out.append("%s left the tree with no index entry" % it["path"])
+            continue
+        bad = RS.entry_problems(e)
+        if bad or e.get("kind") != RS.ROW_AUDIT_KIND:
+            out.append("%s: its entry is malformed (%s)" % (it["path"], "; ".join(bad) or "kind"))
+        elif it.get("size") is not None and e.get("bytes") != it["size"]:
+            out.append("%s left the tree at %d bytes; its entry names %s" % (it["path"], it["size"], e.get("bytes")))
+        elif read_blob is not None:
+            data = read_blob(it["blob"])
+            if data is not None and RS.sha256_bytes(data) != e["sha256"]:
+                out.append("%s: its blob's sha256 is not the entry's" % it["path"])
+    return out
+
+
 def _opener(req, timeout=None):
     return urllib.request.urlopen(req, timeout=CALL_TIMEOUT)
 

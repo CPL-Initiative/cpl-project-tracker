@@ -161,7 +161,7 @@ jobs:
                   kb/discipline_canonical_subj4.json \
                   kb/subj4_dryrun/ \
                   kb/subj4_apply/ \
-                  kb/row_audit/
+                  kb/row_audit/latest.json
           if git diff --cached --quiet; then
             echo "No changes to commit (apply was a no-op or re-ran on already-applied state)."
             exit 0

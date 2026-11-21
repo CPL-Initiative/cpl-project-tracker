@@ -390,11 +390,25 @@ try:
               "the rollback reads a moved applied record through its pointer, and leaves no copy in kb/receipts")
         calls.clear()
 
+        # The receipt object reads; only display/applied/ is unreachable, so the refusal is local_or_stored's.
         def down(obj):
-            raise OSError("connection refused")
-        check(A.main(["--apply", "--run", "6", "--attempt", "1", "--receipt", NAME, "--only-keys-from", moved],
-                     request=table, sleep=lambda s: None, fetch=down) == 1 and not calls,
-              "an unreachable store refuses the rollback before any table read")
+            if obj.startswith("display/applied/"):
+                raise OSError("connection refused")
+            return bucket.get(obj)
+        seen, real = [], S.local_or_stored
+
+        def spy(*a, **k):
+            seen.append(a[0])
+            return real(*a, **k)
+        S.local_or_stored = spy
+        try:
+            code = A.main(["--apply", "--run", "6", "--attempt", "1", "--receipt", NAME, "--only-keys-from", moved],
+                          request=table, sleep=lambda s: None, fetch=down)
+        finally:
+            S.local_or_stored = real
+        check(code == 1 and seen == [moved] and not calls,
+              "an unreachable store for the applied record refuses the rollback in local_or_stored, before any table "
+              "read")
         check(A.main(["--apply", "--run", "4", "--only-keys-from", record], request=table, sleep=lambda s: None,
                       fetch=bucket.get) == 1, "--only-keys-from without --receipt is refused")
         check(A.main(["--apply", "--run", "4", "--receipt", "program_requirement_records_display_2026-01-01_"

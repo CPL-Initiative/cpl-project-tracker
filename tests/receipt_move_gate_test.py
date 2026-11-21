@@ -36,6 +36,7 @@ sys.path.insert(0, os.path.join(ROOT, "kb"))
 import _receipt_store as S  # noqa: E402
 import _receipt_move_display as M  # noqa: E402
 import _program_requirements_display_apply as A  # noqa: E402
+import _row_audit_prune as P  # noqa: E402
 
 passed = 0
 
@@ -326,6 +327,31 @@ check(not os.path.exists(os.path.join(ROOT, ".github", "workflows", "receipt-mov
       "the one-time move's workflow and trigger file are removed")
 
 
+# ---- S695: the row audit gate, on a fixture: a removal needs an entry with the blob's size and sha256.
+d = tempfile.mkdtemp()
+try:
+    rep = os.path.join(d, "2026-11-20.md")
+    open(rep, "wb").write(b"# report\n")
+    ix = os.path.join(d, "index")
+    stored_copy = os.path.join(d, "row_audit_2026-11-20.md")
+    shutil.copyfile(rep, stored_copy)
+    S.store_file(stored_copy, kind=S.ROW_AUDIT_KIND, build=None, built="2026-11-20", rows=1, storage=Bucket(),
+                 index_path=ix, log=lambda *_: None)
+    data = open(rep, "rb").read()
+    one = P.tracked_reports("100644 blob %s %d\tkb/row_audit/2026-11-20.md\n100644 blob %s 9\tkb/row_audit/latest.json"
+                            % (S.git_blob(data), len(data), "5" * 40))
+    check(len(one) == 1, "tracked_reports lists the dated report and not latest.json")
+    check(P.gate(one, set(), ix, read_blob=lambda b: data) == [], "a stored report's removal passes")
+    check(any("sha256" in x for x in P.gate(one, set(), ix, read_blob=lambda b: b"other")),
+          "a removal whose bytes are not the entry's fails")
+    check(any("bytes" in x for x in P.gate([dict(one[0], size=99)], set(), ix)), "a removal of another size fails")
+    check(any("no index entry" in x for x in P.gate([dict(one[0], path="kb/row_audit/2026-11-19.md",
+                                                          name="2026-11-19.md")], set(), ix)),
+          "a removal with no entry fails")
+finally:
+    shutil.rmtree(d, ignore_errors=True)
+
+
 # ---- S695: receipt-slim.yml stores before it removes, gates before it pushes, and stages nothing else.
 slim = open(os.path.join(ROOT, ".github", "workflows", "receipt-slim.yml"), encoding="utf-8").read()
 order = [slim.index(x) for x in ("store-applied --tracked |", "_row_audit_prune.py --keep 0 --strict",
@@ -377,5 +403,17 @@ else:
           "indexed (%d removed, %d problems)" % (base_ref, gone, len(problems)))
     print("gate: %d display receipts and applied records on %s, %d removed here, each stored"
           % (len(base_items), base_ref, gone))
+    # S695: the dated row audit reports, by size (and sha256 where the blob is on disk).
+    # -l reads each blob's size, which a blob-less fetch would download one by one: CI reads names alone.
+    code, ra_base = g("ls-tree", "-r", *([] if promisor else ["-l"]), base_ref, "--", "kb/row_audit/")
+    check(code == 0, "the base tree %s lists kb/row_audit" % base_ref)
+    code, ra_head = g("ls-tree", "-r", "HEAD", "--", "kb/row_audit/")
+    ra_paths = {line.split("\t", 1)[1] for line in ra_head.splitlines() if "\t" in line}
+    ra_items = P.tracked_reports(ra_base)
+    ra_problems = P.gate(ra_items, ra_paths, read_blob=read_blob)
+    for p in ra_problems[:20]:
+        print("  " + p)
+    check(not ra_problems, "every row audit report this tree removed from %s is stored with its size and sha256 "
+          "(%d problems)" % (base_ref, len(ra_problems)))
 
 print("ok: receipt move gate pass (%d checks)" % passed)

@@ -575,7 +575,8 @@ def store_file(path: str, *, kind: str, build: str | None, built: str | None, ro
     if was is not None and was["sha256"] != sha:
         replaced.append({"object": was["object"], "sha256": was["sha256"], "seen_in": "index"})
     how, other = _put_and_check(storage, obj, data, sha)
-    if other:
+    if other and not any(r["object"] == obj and r["sha256"] == other for r in replaced):
+        # S695: the index's object and the bucket's are often the same one; name it once.
         replaced.append({"object": obj, "sha256": other, "seen_in": "bucket"})
     if replaced and not supersede:
         raise SystemExit("REFUSING: %s is held by other bytes (%s); they are kept. To store these bytes "

@@ -121,6 +121,8 @@ e = RS.read_entry("row_audit_" + newest, index)
 check("the newest report rewritten the same day supersedes its entry and leaves the tree",
       res["removed"] == [newest] and not os.path.exists(os.path.join(folder, newest)) and e.get("supersedes")
       and not RS.entry_problems(e) and len(store.objects) == 4, (res, e))
+check("supersedes names the replaced object once",
+      len(e.get("supersedes") or []) == len({(x["object"], x["sha256"]) for x in e.get("supersedes") or []}) == 1, e)
 folder, _ = fixture(3)
 with open(os.path.join(folder, days(3)[0]), "a") as f:
     f.write("edited\n")
