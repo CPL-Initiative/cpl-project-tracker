@@ -77,10 +77,10 @@ function byText(root, sel, t) { return Array.from(root.querySelectorAll(sel)).fi
   const top = labels(d);
   console.log("top 10:\n  " + top.join("\n  "));
   const cdev = FX.rows.rows.find(function (r) { return r[0] === "CDEV 100"; });
-  const want = "Child Growth and Development (C-ID CDEV 100) (" + cdev[2] + " colleges)";
+  const want = "Child Growth and Development (C-ID CDEV 100) (" + cdev[2] + " colleges teach the course)";
   check("(2) Child Growth and Development, C-ID CDEV 100, is in the top 10 with its college count", top.length === 10 && top.indexOf(want) >= 0, top);
-  check("(2) the count is the identities map's, never an estimate", cdev[2] > 1 && /\(\d+ colleges\)$/.test(want));
-  check("(2) every label names its system and id, and its colleges", top.every(function (l) { return /\((?:C-ID|CCN|M-ID) [^()]+\) \(\d[\d,]* colleges?\)$/.test(l); }), top);
+  check("(2) the count is the identities map's, never an estimate", cdev[2] > 1 && /\(\d+ colleges teach the course\)$/.test(want));
+  check("(2) every label names its system and id, and its colleges", top.every(function (l) { return /\((?:C-ID|CCN|M-ID) [^()]+\) \(\d[\d,]* (?:college teaches|colleges teach) the course\)$/.test(l); }), top);
   const all = byText(sec, "button.exh-w", "Show all " + FX.rows.rows.length + " in this subject");
   check("(3) Show all names how many, as a word control", !!all && all.getAttribute("aria-expanded") === "false" && all.getAttribute("aria-controls") === "exh-ss-list");
   check("(5) nothing is written on render", writes(t).length === 0, writes(t));
@@ -94,7 +94,7 @@ function byText(root, sel, t) { return Array.from(root.querySelectorAll(sel)).fi
   check("(3) folded back to ten", items(d).length === 10);
   // (4) the pick.
   const li = items(d).find(function (x) { return txt(x.querySelector(".exh-ss-t")) === want; });
-  const use = li && li.querySelector("button.exh-w");
+  const use = li && Array.from(li.querySelectorAll("button.exh-w")).find(function (b) { return txt(b) === "Use this title"; });
   check("(4) each title has Use this title, labeled with the title", !!use && txt(use) === "Use this title" && use.getAttribute("aria-label") === "Use this title: " + want);
   const issuer0 = d.getElementById("exh-issuer").value;
   use.click(); await settle();
