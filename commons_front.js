@@ -521,14 +521,25 @@
      at once, beside the nightly files. A hand-over our reader could not read, or that met a bot check, still waits. */
   var FAILED = { could_not_read: true, bot_check: true };
   var TERMS = ["Spring 2026", "Spring 2025", "Fall 2024"];
+  var WEB = /^https?:\/\//i;   /* an address opens as a link only when it is a web address (COBIx on #3646) */
+  /* A term a hand-over's row names takes that term off the wanted list; a row that names none counts toward the terms
+     still wanted, so three copies of one named term never clear the other two (COBIx on #3646). The hand-over counts
+     carry no term today, so until they do the list clears on the count. */
+  function termsWanted(named, unnamed) {
+    var left = TERMS.filter(function (t) { return !named[t.toLowerCase()]; });
+    return unnamed >= left.length ? [] : left;
+  }
   function HO() { return window.CPL_HANDOVER || null; }
   function needsModel(M) {
     var rows = (M.handed || []).filter(function (r) { return r && !FAILED[r.status]; });
-    var cDone = {}, colDone = {}, terms = 0;
+    var cDone = {}, colDone = {}, terms = 0, termNamed = {}, termUnnamed = 0;
     rows.forEach(function (r) {
       if (r.subject_kind === "course") cDone[(r.college || "") + "|" + (r.course_code || "")] = true;
       else if (r.subject_kind === "college" && (r.dataset === "catalog" || r.dataset === "programs")) colDone[r.college || ""] = true;
-      else if (r.subject_kind === "dataset" && r.dataset === "term_reports") terms += Number(r.n || 0);
+      else if (r.subject_kind === "dataset" && r.dataset === "term_reports") {
+        terms += Number(r.n || 0);
+        if (r.term) termNamed[String(r.term).trim().toLowerCase()] = true; else termUnnamed += Number(r.n || 0);
+      }
     });
     var h = M.hunt, outline = null;
     if (h && Array.isArray(h.colleges) && Array.isArray(h.courses)) {
@@ -543,7 +554,7 @@
     }
     var cat = (M.catalogNeed || []).filter(function (c) { return !colDone[c.college]; });
     return { outline: outline, catalog: { colleges: cat, handed: Object.keys(colDone).length },
-      term: { wanted: terms >= TERMS.length ? [] : TERMS.slice(), handed: terms } };
+      term: { wanted: termsWanted(termNamed, termUnnamed), handed: terms } };
   }
   function chip(n) { return el("span", { cls: "cmn-pill cmn-pill-done cmf-handed", text: "Handed over: " + fmt(n || 0) }); }
   function needHead(title, n, id) { return el("div", { cls: "cmf-need-head" }, [el("h4", { id: id || null, text: title }), chip(n)]); }
@@ -618,7 +629,8 @@
         p([H ? el("a", { cls: "cmf-need-t", href: H.collegeHref(c.college), "data-college-panel": c.slug, text: c.college }) : el("span", { cls: "cmf-need-t", text: c.college }), ": "]
           .concat(courseLinks(c), ["."])),
         p([], "cmf-standing"),
-        c.catalog_url ? p([el("a", { cls: "cmf-out", href: c.catalog_url, target: "_blank", rel: "noopener", text: c.catalog_url })]) : null
+        !c.catalog_url ? null : WEB.test(c.catalog_url) ? p([el("a", { cls: "cmf-out", href: c.catalog_url, target: "_blank", rel: "noopener", text: c.catalog_url })])
+          : p([el("span", { cls: "cmf-out-plain", text: c.catalog_url })])
       ].filter(Boolean));
     })));
     if (H) box.appendChild(p(["Choose a course to open it beside this list, then drop its outline, give a link to try, or paste the data. A college's name opens its own panel."]));
@@ -636,12 +648,12 @@
   }
   function termWords(T) {
     if (!T.wanted.length) return "No term report waits on you: " + plural(T.handed, "term report", "term reports") + " handed over. Our reader names each one's term when it reads it.";
-    return "Wanted, newest first: " + T.wanted.slice(0, -1).join(", ") + " and " + T.wanted[T.wanted.length - 1] + "."
+    return "Wanted, newest first: " + (T.wanted.length === 1 ? T.wanted[0] : T.wanted.slice(0, -1).join(", ") + " and " + T.wanted[T.wanted.length - 1]) + "."
       + (T.handed ? " " + plural(T.handed, "term report", "term reports") + " handed over so far; our reader names each one's term when it reads it." : "");
   }
   /* Term Reports Needed (cpl_memory q-term-report-sources-2026-11-20): the set-aside for courses a college no longer
-     offers compares term course files. The hand-over counts carry no term, so the wanted terms leave once as many term
-     reports are handed over as are wanted. */
+     offers compares term course files. A hand-over that names its term takes that term off the list; the counts carry
+     no term today, so the wanted terms leave once as many term reports are handed over as are wanted (termsWanted). */
   function termReports(M, N) {
     var H = HO(), kids = [needHead("Term Reports Needed", N.term.handed),
       p(["To set aside courses a college no longer offers, the Commons compares the term course files each college reported to the Chancellor's Office. Fall 2025 is on hand."]),
@@ -841,9 +853,9 @@
     var collegeLink = function (c) { return a("#collect/college/" + c.slug, c.name); };
     function line(name, L, ds, etaN, etaNote) {
       return el("li", { "data-dataset": ds }, [el("strong", { text: name + ": " }),
-        a("#collect/" + ds + "_done", fmt(L.done) + " of " + fmt(C.all) + " colleges done"), ", ",
+        a("#collect/" + ds + "_done", fmt(L.done) + " of " + fmt(C.all) + " colleges and campuses done"), ", ",
         a("#collect/" + ds + "_progress", fmt(L.progress) + " in progress"), ", ",
-        a("#collect/" + ds + "_stuck", "Stuck: waiting on a person: " + fmt(L.stuck)),
+        a("#collect/" + ds + "_stuck", "Stuck on a person or a fix: " + fmt(L.stuck)),
         ". ETA: " + (etaN == null ? "TBA" + (etaNote ? " (" + etaNote + ")" : "") : longDate(etaN) + ", estimated") + "."]);
     }
     function stuckLine(name, L) {
@@ -861,7 +873,7 @@
     }
     movedKids.push(".");
     return card({ key: "cdc", title: "College Data Collection", pill: "In progress",
-      big: fmt(C.catalogs.done) + " of " + fmt(C.all), rest: [" colleges with every catalog program passing"],
+      big: fmt(C.catalogs.done) + " of " + fmt(C.all), rest: [" colleges and campuses with every catalog program passing"],
       after: [p(C.top ? ["Top fix: " + C.top.what + ", reaching ", a("#collect/fix_" + C.top.key, plural(C.top.n, "college", "colleges")), "."] : ["Top fix: TBA."], "cmf-topfix")],
       body: [el("ul", { cls: "cmf-cdc-lines" }, [
           line("Catalogs (programs, PLOs, course requirements)", C.catalogs, "catalogs", C.catalogsEta, "the program-records date reads TBA"),
@@ -871,7 +883,9 @@
         el("h4", { cls: "cmf-sub", text: "Colleges that moved this week" }), p(movedKids)].filter(Boolean),
       method: [p(["Each count is College Data Collection’s own list, so a count and the list it opens agree. Catalogs are done when every program in the college’s count passes, and stuck when no catalog is collected or the scout found the catalog blocked. Course outlines are done when SLOs and objectives sit on every course in the college’s Active programs, and stuck when the college’s SLO read has nothing to read or is paused; the reason beside each college is the file’s own. "
         + "The top fix is the one, of the fixes the file names for programs still to pass, that reaches the most colleges. A college moved this week when its catalog was collected within the last 7 days. "
-        + "The file counts " + fmt(C.all) + " colleges and continuing-education campuses."])],
+        + "A stuck college waits on a person or on a fix to our reader; the line under the counts names which, college by college. "
+        + "The file counts " + fmt(C.all) + " colleges and continuing-education campuses"
+        + (M.colleges && M.colleges.districts > 1 ? ", in " + fmt(M.colleges.districts) + " districts (" + fmt(M.colleges.districts - 1) + " plus Calbright)." : ".")])],
       links: [["Open College Data Collection", "#collect"]] });
   }
 

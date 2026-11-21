@@ -249,14 +249,14 @@ const AUDIT = { title_cards: [
   cbox().querySelector("input").value = "Paramedic";
   cbox().querySelector('[data-left-go="combine"]').click(); await settle(); await settle();
   check("(6) ⭐ a combine across graded and cert-based is blocked on the first try, in plain words, with nothing written",
-    postsOf(cm).length === 0 && /Blocked: Emergency Medical Technician is a mix of graded and cert-based types and the fold lands on Paramedic, which is graded .*Press Combine here again to combine them anyway; that override is logged\./.test(txt(cbox())), txt(cbox()));
+    postsOf(cm).length === 0 && /Blocked: Emergency Medical Technician is a mix of graded and cert-based types and the combination lands on Paramedic, which is graded .*Press Combine here again to combine them anyway; that override is logged\./.test(txt(cbox())), txt(cbox()));
   cbox().querySelector('[data-left-go="combine"]').click(); await settle(); await settle();
   const cpost = postsOf(cm), cf = (f) => cpost.find((b) => b.field === f);
   check("(6) ⭐ the second try writes the List's Accept pair on the canonical and logs the override",
     cpost.length === 3 && cf("unified_title_override") && cf("unified_title_override").value === "Paramedic" && cf("unified_title_merge_confirm") && cf("unified_title_merge_confirm").value === "Paramedic"
     && cpost.every((b) => b.course_id === "_CREDENTIAL_REVIEW::Emergency Medical Technician")
     && cf("cpl_type_group_override") && /combine across groups: mixed into graded: Emergency Medical Technician -> Paramedic/.test(cf("cpl_type_group_override").value), JSON.stringify(cpost));
-  check("(6) the row says what the combine did", /Saved: Emergency Medical Technician folds into Paramedic\./.test(txt(panel(cm.d))), txt(panel(cm.d)).slice(0, 600));
+  check("(6) the row says what the combine did", /Saved: Emergency Medical Technician combines into Paramedic\./.test(txt(panel(cm.d))), txt(panel(cm.d)).slice(0, 600));
 
   // Combine inside one group goes through on the first try and logs nothing.
   const LMAP_CERT = JSON.parse(JSON.stringify(LMAP));
@@ -296,7 +296,7 @@ const AUDIT = { title_cards: [
   bbox().querySelector("input").value = "Paramedic";
   bbox().querySelector('[data-left-go="combine"]').click(); await settle(); await settle();
   check("(7) ⭐ Combine into a title whose pending rename the map does not hold yet is still blocked on the first try, with nothing written",
-    postsOf(bp).length === 0 && /Blocked: Emergency Medical Technician is cert-based .* and the fold lands on Paramedic \(Advanced\) \(Paramedic is saved to become Paramedic \(Advanced\)\), which is graded .*, the type of Paramedic/.test(txt(bbox())), txt(bbox()) + " | " + JSON.stringify(postsOf(bp)));
+    postsOf(bp).length === 0 && /Blocked: Emergency Medical Technician is cert-based .* and the combination lands on Paramedic \(Advanced\) \(Paramedic is saved to become Paramedic \(Advanced\)\), which is graded .*, the type of Paramedic/.test(txt(bbox())), txt(bbox()) + " | " + JSON.stringify(postsOf(bp)));
   if (bbox()) { bbox().querySelector('[data-left-go="combine"]').click(); await settle(); await settle(); }
   const bpost = postsOf(bp);
   check("(7) the second try folds into the chain's end and logs the override",
@@ -342,7 +342,7 @@ const AUDIT = { title_cards: [
     const x = await boot({ hash: "#exhibits/list", signedIn: true, overlay: ov, files: { "kb/exhibit_audit/latest.json": AUD8, "kb/exhibit_left_map.json": LMAP8, "kb/exhibits_ai_sort.json": AIS } });
     await settle(); await settle();
     const ed = x.d.getElementById("exh-l-editall"); if (ed) { ed.click(); await settle(); }
-    const sf = Array.from(x.d.querySelectorAll("button")).find((b) => /^Suggested folds/.test(txt(b))); if (sf) { sf.click(); await settle(); }
+    const sf = Array.from(x.d.querySelectorAll("button")).find((b) => /^Suggested combinations/.test(txt(b))); if (sf) { sf.click(); await settle(); }
     const btn = () => Array.from(x.d.querySelectorAll("button")).find((b) => txt(b) === "Accept" && /Emergency Medical Technician/.test(b.getAttribute("aria-label") || ""));
     if (!btn()) return { found: false, posts: [], words: "", line: "" };
     const line = txt(btn().parentNode), label = btn().getAttribute("aria-label");
@@ -356,9 +356,9 @@ const AUDIT = { title_cards: [
   //     does not hold: blocked, the words name where the fold lands and the type it carries; a second press logs it.
   const a8 = await accept8([ren("Paramedic", "Paramedic (Advanced)")], "Paramedic", true);
   check("(8a) the List shows the suggestion's landing title, in its line and its Accept label",
-    a8.found && /Suggested: fold into Paramedic \(Advanced\)/.test(a8.line) && a8.label === "Fold Emergency Medical Technician into Paramedic (Advanced)", a8.line + " | " + a8.label);
+    a8.found && /Suggested: combine into Paramedic \(Advanced\)/.test(a8.line) && a8.label === "Combine Emergency Medical Technician into Paramedic (Advanced)", a8.line + " | " + a8.label);
   check("(8a) ⭐ the List's Accept into Paramedic, whose pending rename lands on Paramedic (Advanced), is blocked with nothing written",
-    a8.found && a8.first.posts.length === 0 && /Blocked: Emergency Medical Technician is cert-based .* and the fold lands on Paramedic \(Advanced\) \(Paramedic is saved to become Paramedic \(Advanced\)\), which is graded \(Credit By Exam or Portfolio Review\), the type of Paramedic, since Paramedic \(Advanced\) has no CPL type of its own\. .*Accept again to combine them anyway/.test(a8.first.words),
+    a8.found && a8.first.posts.length === 0 && /Blocked: Emergency Medical Technician is cert-based .* and the combination lands on Paramedic \(Advanced\) \(Paramedic is saved to become Paramedic \(Advanced\)\), which is graded \(Credit By Exam or Portfolio Review\), the type of Paramedic, since Paramedic \(Advanced\) has no CPL type of its own\. .*Accept again to combine them anyway/.test(a8.first.words),
     a8.first.words + " | " + JSON.stringify(a8.first.posts));
   check("(8a) a second Accept writes the fold onto the landing title and logs the override",
     fieldOf(a8.posts, "unified_title_merge_confirm").some((b) => b.value === "Paramedic (Advanced)") && fieldOf(a8.posts, "unified_title_override").some((b) => b.value === "Paramedic (Advanced)")
@@ -366,14 +366,14 @@ const AUDIT = { title_cards: [
   // (b) A cert-based picked title whose pending rename lands on graded Paramedic: blocked, the words name Paramedic.
   const b8 = await combine8([ren("CompTIA Security+", "Paramedic")], "CompTIA Security+");
   check("(8b) ⭐ Combine into cert-based CompTIA Security+, whose pending rename lands on graded Paramedic, is blocked with nothing written",
-    b8.first.posts.length === 0 && /Blocked: Emergency Medical Technician is cert-based .* and the fold lands on Paramedic \(CompTIA Security\+ is saved to become Paramedic\), which is graded \(Credit By Exam or Portfolio Review\)\. Sam's rule/.test(b8.first.words), b8.first.words);
+    b8.first.posts.length === 0 && /Blocked: Emergency Medical Technician is cert-based .* and the combination lands on Paramedic \(CompTIA Security\+ is saved to become Paramedic\), which is graded \(Credit By Exam or Portfolio Review\)\. Sam's rule/.test(b8.first.words), b8.first.words);
   const b8l = await accept8([ren("CompTIA Security+", "Paramedic")], "CompTIA Security+");
-  check("(8b) the List's Accept of the same suggestion is blocked the same way", b8l.found && b8l.first.posts.length === 0 && /and the fold lands on Paramedic \(CompTIA Security\+ is saved to become Paramedic\), which is graded/.test(b8l.first.words), b8l.first.words);
+  check("(8b) the List's Accept of the same suggestion is blocked the same way", b8l.found && b8l.first.posts.length === 0 && /and the combination lands on Paramedic \(CompTIA Security\+ is saved to become Paramedic\), which is graded/.test(b8l.first.words), b8l.first.words);
   // (c) An untyped title in the middle of the chain: the guard reads past it to the typed end, and reads back from an
   //     untyped end to the last typed title.
   const c8 = await combine8([ren("CompTIA Security+", "Sec New"), ren("Sec New", "Paramedic")], "CompTIA Security+");
   check("(8c) ⭐ an untyped title mid-chain (CompTIA Security+ to Sec New to Paramedic): the guard reads Paramedic's type at the end and blocks",
-    c8.first.posts.length === 0 && /the fold lands on Paramedic \(CompTIA Security\+ is saved to become Paramedic\), which is graded \(Credit By Exam or Portfolio Review\)\. /.test(c8.first.words), c8.first.words);
+    c8.first.posts.length === 0 && /the combination lands on Paramedic \(CompTIA Security\+ is saved to become Paramedic\), which is graded \(Credit By Exam or Portfolio Review\)\. /.test(c8.first.words), c8.first.words);
   const c8b = await combine8([ren("Paramedic", "Para Mid"), ren("Para Mid", "CompTIA Security+")], "Paramedic");
   check("(8c) an untyped title mid-chain that ends on a cert-based title combines from a cert-based source on one press",
     c8b.first.posts.length === 2 && fieldOf(c8b.posts, "unified_title_merge_confirm").some((b) => b.value === "CompTIA Security+") && !fieldOf(c8b.posts, "cpl_type_group_override").length, JSON.stringify(c8b.posts));
@@ -383,7 +383,7 @@ const AUDIT = { title_cards: [
     d8.first.posts.length === 2 && fieldOf(d8.posts, "unified_title_override").some((b) => b.value === "CompTIA Security+")
     && fieldOf(d8.posts, "unified_title_merge_confirm").some((b) => b.value === "CompTIA Security+") && !fieldOf(d8.posts, "cpl_type_group_override").length, JSON.stringify(d8.posts));
   check("(8d) its words say where the fold lands and carry no false wording",
-    /Saved: Emergency Medical Technician folds into CompTIA Security\+, where Paramedic's saved rename lands\./.test(d8.words) && !/Blocked|graded|override|Sam's rule/.test(d8.words), d8.words.slice(0, 400));
+    /Saved: Emergency Medical Technician combines into CompTIA Security\+, where Paramedic's saved rename lands\./.test(d8.words) && !/Blocked|graded|override|Sam's rule/.test(d8.words), d8.words.slice(0, 400));
   // (e) Combines inside one group pass on the first press, with and without a chain.
   const e8 = await combine8([], "CompTIA Security+");
   check("(8e) ⭐ cert into cert with no chain combines on one press, with no override",
@@ -392,11 +392,11 @@ const AUDIT = { title_cards: [
   check("(8e) ⭐ cert into cert through a chain to an untyped title combines on one press, onto the chain's end",
     e8c.first.posts.length === 2 && fieldOf(e8c.posts, "unified_title_merge_confirm").some((b) => b.value === "CompTIA Security+ (2024)") && !fieldOf(e8c.posts, "cpl_type_group_override").length, JSON.stringify(e8c.posts));
   const e8l = await accept8([ren("CompTIA Security+", "CompTIA Security+ (2024)")], "CompTIA Security+");
-  check("(8e) the List's Accept inside one group through a chain saves on one press", e8l.found && e8l.first.posts.length === 2 && /Saved: Emergency Medical Technician folds into CompTIA Security\+ \(2024\)/.test(e8l.first.words), e8l.first.words);
+  check("(8e) the List's Accept inside one group through a chain saves on one press", e8l.found && e8l.first.posts.length === 2 && /Saved: Emergency Medical Technician combines into CompTIA Security\+ \(2024\)/.test(e8l.first.words), e8l.first.words);
   // (f) A chain of two renames: the write and the guard both land on the second rename's title.
   const f8 = await combine8([ren("Paramedic", "Paramedic (Advanced)"), ren("Paramedic (Advanced)", "Paramedic II")], "Paramedic", true);
   check("(8f) ⭐ a chain of two renames (Paramedic to Paramedic (Advanced) to Paramedic II) is blocked naming Paramedic II and Paramedic's type",
-    f8.first.posts.length === 0 && /the fold lands on Paramedic II \(Paramedic is saved to become Paramedic II\), which is graded \(Credit By Exam or Portfolio Review\), the type of Paramedic, since Paramedic II has no CPL type of its own/.test(f8.first.words), f8.first.words);
+    f8.first.posts.length === 0 && /the combination lands on Paramedic II \(Paramedic is saved to become Paramedic II\), which is graded \(Credit By Exam or Portfolio Review\), the type of Paramedic, since Paramedic II has no CPL type of its own/.test(f8.first.words), f8.first.words);
   check("(8f) the second press writes the fold onto Paramedic II and logs it",
     fieldOf(f8.posts, "unified_title_merge_confirm").some((b) => b.value === "Paramedic II") && fieldOf(f8.posts, "cpl_type_group_override").some((b) => /cert into graded: Emergency Medical Technician -> Paramedic II$/.test(b.value)), JSON.stringify(f8.posts));
   const f8ok = await combine8([ren("CompTIA Security+", "Sec New"), ren("Sec New", "CompTIA Network+")], "CompTIA Security+");
@@ -410,7 +410,7 @@ const AUDIT = { title_cards: [
   const rpb = Array.from(rp8.d.querySelectorAll("button")).find((b) => txt(b) === "Re-point to Paramedic");
   if (rpb) { rpb.click(); await settle(); await settle(); }
   check("(8) ⭐ Re-point goes through the same guard: re-pointing a cert-based fold onto graded Paramedic is blocked with nothing written",
-    rpb && postsOf(rp8).length === 0 && /Blocked: Emergency Medical Technician is cert-based .* and the fold lands on Paramedic .*Press Re-point again/.test(txt(rp8.d.getElementById("exh-l-cellnote"))),
+    rpb && postsOf(rp8).length === 0 && /Blocked: Emergency Medical Technician is cert-based .* and the combination lands on Paramedic .*Press Re-point again/.test(txt(rp8.d.getElementById("exh-l-cellnote"))),
     (rpb ? "" : "no Re-point button; ") + txt(rp8.d.getElementById("exh-l-cellnote")));
   check("(8) one choke point: Accept, Combine and Re-point call foldWrite, the guard's words live once, and the old chain-type walk is gone",
     /function listSuggestAccept\(r, sg\) \{ return foldWrite\(r, sg\.to\); \}/.test(src) && /function leftCombineBox[\s\S]*?foldWrite\(r, to,/.test(src)
@@ -426,7 +426,7 @@ const AUDIT = { title_cards: [
     const x = await boot({ hash: "#exhibits/list", signedIn: true, overlay: ov || [], files: Object.assign({ "kb/exhibit_audit/latest.json": AUD8 }, files) });
     await settle(); await settle();
     const ed = x.d.getElementById("exh-l-editall"); if (ed) { ed.click(); await settle(); }
-    const sf = Array.from(x.d.querySelectorAll("button")).find((b) => /^Suggested folds/.test(txt(b))); if (sf) { sf.click(); await settle(); }
+    const sf = Array.from(x.d.querySelectorAll("button")).find((b) => /^Suggested combinations/.test(txt(b))); if (sf) { sf.click(); await settle(); }
     return x;
   }
   const acceptBtn = (x) => Array.from(x.d.querySelectorAll("button")).find((b) => txt(b) === "Accept" && /Emergency Medical Technician/.test(b.getAttribute("aria-label") || ""));
@@ -441,7 +441,7 @@ const AUDIT = { title_cards: [
   up9 = true;
   await press(f9);
   check("(9a) ⭐ a retry after the file loads fetches it again and proceeds to the guard, which blocks the cross on its first read",
-    mapFetches(f9) === n9 + 1 && postsOf(f9).length === 0 && /^Blocked: Emergency Medical Technician is cert-based .* and the fold lands on Paramedic, which is graded/.test(cellNote(f9)), mapFetches(f9) + " | " + cellNote(f9));
+    mapFetches(f9) === n9 + 1 && postsOf(f9).length === 0 && /^Blocked: Emergency Medical Technician is cert-based .* and the combination lands on Paramedic, which is graded/.test(cellNote(f9)), mapFetches(f9) + " | " + cellNote(f9));
   await press(f9);
   check("(9a) the press after that writes the fold and logs the override",
     fieldOf(postsOf(f9), "unified_title_merge_confirm").some((b) => b.value === "Paramedic") && fieldOf(postsOf(f9), "cpl_type_group_override").length === 1, JSON.stringify(postsOf(f9)));

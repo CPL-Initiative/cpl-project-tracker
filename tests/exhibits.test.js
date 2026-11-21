@@ -266,8 +266,8 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
   check("each step tile carries its plain hover", /keep, change or edit it/.test(stepTile(t.d, "Proposed").getAttribute("data-tip"))
     && /Proposed, 1\./.test(stepTile(t.d, "Proposed").getAttribute("aria-label")));
   /* #3566: the step reads in plain words, as saved and waiting for the fold, never as work. */
-  check("Saved, waiting for the nightly fold shows and cannot filter", stepTile(t.d, "Saved, waiting for the nightly fold").disabled === true
-    && /no one needs to act/.test(stepTile(t.d, "Saved, waiting for the nightly fold").getAttribute("data-tip")));
+  check("Saved, waiting for the nightly run shows and cannot filter", stepTile(t.d, "Saved, waiting for the nightly run").disabled === true
+    && /no one needs to act/.test(stepTile(t.d, "Saved, waiting for the nightly run").getAttribute("data-tip")));
   check("without students the builder's order stands", current(t.d) === JUV);
   check("the footer says most colleges first", /1 of 4 · most colleges first/.test(txt(t.d.querySelector(".exh-foot"))));
   check("the CER step chip names the step, with its hover", /CER step: Conflict with the reference/.test(txt(t.d.getElementById("exh-chip-step")))

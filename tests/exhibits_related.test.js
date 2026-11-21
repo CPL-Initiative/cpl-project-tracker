@@ -210,7 +210,7 @@ function item(d, title) { return Array.from(panel(d).querySelectorAll(".exh-rel-
   check("a title with no students reads None", txt(trs[2].children[4]) === "None");
   // #3228 (Sam, 2026-11-13): a row read "Renamed" before any save, and he took the unsaved plan for a decision.
   check("each row says what approving will do, and nothing reads as renamed before the save",
-    /^Renames on approval\b/.test(txt(trs[0].children[5])) && /Folds into the title of that name on approval/.test(txt(trs[1].children[5]))
+    /^Renames on approval\b/.test(txt(trs[0].children[5])) && /Combines into the title of that name on approval/.test(txt(trs[1].children[5]))
     && /Left as it is/.test(txt(trs[3].children[5])) && !trs.some(function (tr) { return /^Renamed\b/.test(txt(tr.children[5])); }));
   check("opening the batch writes nothing", writes(t).length === 0);
   let go = Array.from(bcard.querySelectorAll(".exh-acts button"))[0];

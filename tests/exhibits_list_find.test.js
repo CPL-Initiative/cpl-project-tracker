@@ -15,13 +15,13 @@
 //       table keeps its fixed layout under 560px, where automatic layout ignored the widths a drag set, and the grip
 //       sits inside its own header, takes the finger (touch-action:none) and captures the pointer;
 //   (8) a spelling twin carries a suggested fold (Sam, 2026-11-01: "offering suggested titles based on what you see"):
-//       the Suggested folds filter shows only twins; Accept writes unified_title_override and unified_title_merge_confirm
+//       the Suggested combinations filter shows only twins; Accept writes unified_title_override and unified_title_merge_confirm
 //       naming the same target, the pair the rename dry-run folds on; Dismiss hides it for the visit; the line is the
 //       engine's suggestion slot (S545), so the accepted twin joins Changed this visit, the set Re-analyze sends, and a
 //       refused Accept says it did not reach the reference and the suggestion stays;
 //   (9) an accepted fold stays improvable (Sam, 2026-11-01: "for the folds already accepted I would want to be sure
 //       that we can fold to better titles"): a fold whose target itself folds shows Re-point, which writes both rows
-//       to the chain's end; Folds waiting for the apply lists the accepted folds; a group's band counts its
+//       to the chain's end; Combinations waiting for the apply lists the accepted folds; a group's band counts its
 //       suggested folds; a suggestion points at the end of the chain;
 //  (10) Basis (Sam, 2026-11-01: "count all canonical exhibit titles that include a statewide as based on a statewide,
 //       whether local or not"): a credential with a statewide exhibit in fact-sheet/statewide_recs.js reads Statewide,
@@ -216,40 +216,40 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
     && /setPointerCapture/.test(listSrc) && /pointercancel/.test(listSrc));
 
   t.d.getElementById("exh-l-editall").click(); await settle();
-  words(t.d, "Suggested folds").click(); await settle();
+  words(t.d, "Suggested combinations").click(); await settle();
   const sgRows = rows(t.d);
-  check("(8) with the AI sort's file read, Suggested folds carries its count",
-    txt(t.d.querySelector('#exh-l-filters [aria-current="true"]')) === "Suggested folds (1)", txt(t.d.querySelector('#exh-l-filters [aria-current="true"]')));
+  check("(8) with the AI sort's file read, Suggested combinations carries its count",
+    txt(t.d.querySelector('#exh-l-filters [aria-current="true"]')) === "Suggested combinations (1)", txt(t.d.querySelector('#exh-l-filters [aria-current="true"]')));
   const na = load({ noAiSort: true });
   await na.M.boot(); await settle();
-  check("(8) ⭐ with the AI sort's file unread, Suggested folds shows no count, never a 0", txt(words(na.d, "Suggested folds")) === "Suggested folds"
+  check("(8) ⭐ with the AI sort's file unread, Suggested combinations shows no count, never a 0", txt(words(na.d, "Suggested combinations")) === "Suggested combinations"
     && /^All \(\d+\)$/.test(txt(na.d.querySelector('#exh-l-filters [aria-current="true"]'))), txt(na.d.getElementById("exh-l-filters")));
-  check("(8) Suggested folds shows only the twin, with its fold and why", sgRows.length === 1 && /^10-Key/.test(txt(sgRows[0].children[2]))
-    && /Suggested: fold into Apiary Basics \(the same words spelled another way\)/.test(txt(sgRows[0].children[2])), sgRows.map(txt).join(" | "));
+  check("(8) Suggested combinations shows only the twin, with its fold and why", sgRows.length === 1 && /^10-Key/.test(txt(sgRows[0].children[2]))
+    && /Suggested: combine into Apiary Basics \(the same words spelled another way\)/.test(txt(sgRows[0].children[2])), sgRows.map(txt).join(" | "));
   const n4 = t.calls.filter((c) => c.method === "POST").length;
   Array.from(sgRows[0].querySelectorAll("button")).find((b) => txt(b) === "Accept").click(); await settle(); await settle();
   posts = t.calls.filter((c) => c.method === "POST").slice(n4);
   check("(8) ⭐ Accept writes the rename and the merge confirm, both naming the target",
     posts.length === 2 && posts.every((p) => p.body.course_id === "_CREDENTIAL_REVIEW::10-Key Data Entry" && p.body.value === "Apiary Basics")
     && posts.map((p) => p.body.field).sort().join(",") === "unified_title_merge_confirm,unified_title_override", JSON.stringify(posts.map((p) => p.body)));
-  check("(8) an accepted fold leaves the Suggested list", rows(t.d).length === 0 && /folds into Apiary Basics/.test(txt(t.d.getElementById("exh-l-cellnote"))),
+  check("(8) an accepted fold leaves the Suggested list", rows(t.d).length === 0 && /combines into Apiary Basics/.test(txt(t.d.getElementById("exh-l-cellnote"))),
     txt(t.d.getElementById("exh-l-cellnote")));
   words(t.d, "Changed this visit").click(); await settle();
-  const chg = rows(t.d).find((r) => /folds 10-Key Data Entry into this credential/.test(txt(r.children[2])));
+  const chg = rows(t.d).find((r) => /combines 10-Key Data Entry into this credential/.test(txt(r.children[2])));
   check("(8) ⭐ the accepted twin joins Changed this visit (the engine's set, the one Re-analyze sends), saying so under its title",
     !!chg && /changed this visit/.test(txt(chg.children[2])) && t.M._state.ls.changed.indexOf("10-Key Data Entry") !== -1, rows(t.d).map((r) => txt(r.children[2])).join(" | "));
   t.M._state.ls.aiData.suggest["Apiary Basics"] = { to: "Welding Level 1", why: "test" }; t.M._state.ls.f = ""; t.M.render(); await settle();
-  words(t.d, "Suggested folds").click(); await settle();
+  words(t.d, "Suggested combinations").click(); await settle();
   Array.from(rows(t.d)[0].querySelectorAll("button")).find((b) => txt(b) === "Dismiss").click(); await settle();
   check("(8) Dismiss hides the suggestion", rows(t.d).length === 0);
 
   const rf = load({ refuse: true });
   await rf.M.boot(); await settle();
-  words(rf.d, "Suggested folds").click(); await settle();
+  words(rf.d, "Suggested combinations").click(); await settle();
   Array.from(rows(rf.d)[0].querySelectorAll("button")).find((b) => txt(b) === "Accept").click(); await settle(); await settle();
   check("(8) ⭐ a refused Accept says it did not reach the reference, and the suggestion stays",
-    rows(rf.d).length === 1 && /Suggested: fold into Apiary Basics/.test(txt(rows(rf.d)[0].children[2]))
-    && /The fold of 10-Key Data Entry did not reach the reference \(HTTP 403\/403\); nothing changed/.test(txt(rf.d.getElementById("exh-l-cellnote"))),
+    rows(rf.d).length === 1 && /Suggested: combine into Apiary Basics/.test(txt(rows(rf.d)[0].children[2]))
+    && /The combination of 10-Key Data Entry did not reach the reference \(HTTP 403\/403\); nothing changed/.test(txt(rf.d.getElementById("exh-l-cellnote"))),
     txt(rf.d.getElementById("exh-l-cellnote")));
 
   // (9) A second visit, with two waiting folds: 10-Key into Apiary, and Apiary into Welding Level 1.
@@ -260,12 +260,12 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
     { course_id: "_CREDENTIAL_REVIEW::Apiary Basics", field: "unified_title_merge_confirm", value: "Welding Level 1" }];
   const u = load();
   await u.M.boot(); await settle();
-  words(u.d, "Folds waiting for the apply").click(); await settle();
+  words(u.d, "Combinations waiting for the apply").click(); await settle();
   const wr = rows(u.d).map((r) => txt(r.children[2]));
-  check("(9) Folds waiting for the apply lists both accepted folds", wr.length === 2, wr.join(" | "));
-  const stalled = rows(u.d).find((r) => /now folds into Welding Level 1/.test(txt(r.children[2])));
+  check("(9) Combinations waiting for the apply lists both accepted folds", wr.length === 2, wr.join(" | "));
+  const stalled = rows(u.d).find((r) => /now combines into Welding Level 1/.test(txt(r.children[2])));
   check("(9) ⭐ a fold whose target itself folds says it would stall and offers Re-point",
-    !!stalled && /Apiary Basics now folds into Welding Level 1, so this fold would stall/.test(txt(stalled.children[2])), wr.join(" | "));
+    !!stalled && /Apiary Basics now combines into Welding Level 1, so this combination would stall/.test(txt(stalled.children[2])), wr.join(" | "));
   const n5 = u.calls.filter((c) => c.method === "POST").length;
   Array.from(stalled.querySelectorAll("button")).find((b) => txt(b) === "Re-point to Welding Level 1").click(); await settle(); await settle();
   const rp = u.calls.filter((c) => c.method === "POST").slice(n5);
@@ -279,10 +279,10 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
   await v.M.boot(); await settle();
   v.d.getElementById("exh-l-ai").click(); await settle();
   const band = Array.from(v.d.querySelectorAll(".exh-l-band")).map(txt).join(" | ");
-  check("(9) a group's band counts its suggested folds", /2 in this group, .*1 suggested fold/.test(band), band);
+  check("(9) a group's band counts its suggested folds", /2 in this group, .*1 suggested combination/.test(band), band);
   const tenKey = rows(v.d).find((r) => /^10-Key/.test(txt(r.children[2])));
   check("(9) a suggestion points at the end of the chain",
-    !!tenKey && /Suggested: fold into Welding Level 1 \(the same words spelled another way; Apiary Basics itself now folds into Welding Level 1\)/.test(txt(tenKey.children[2])),
+    !!tenKey && /Suggested: combine into Welding Level 1 \(the same words spelled another way; Apiary Basics itself now combines into Welding Level 1\)/.test(txt(tenKey.children[2])),
     tenKey && txt(tenKey.children[2]));
 
   // (10) and (11) on a fresh visit.

@@ -216,7 +216,7 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
   typeIn(cT, "10-Key Data Entry");
   words(ca.d, "Check alignment").click(); await settle();
   check("(16) ⭐ a title another credential carries: named, with fold or tell apart", /“10-Key Data Entry” is already a credential/.test(hintTxt())
-    && /Recommendation: this title is “10-Key Data Entry”'s\. If they are one credential, fold them/.test(hintTxt()), hintTxt());
+    && /Recommendation: this title is “10-Key Data Entry”'s\. If they are one credential, combine them/.test(hintTxt()), hintTxt());
   typeIn(cT, "Welding Level 1 Credit by Exam");
   check("(16) a keystroke clears the old check", ca.d.getElementById("exh-l-edit-hint").hidden || hintTxt() === "");
   words(ca.d, "Check alignment").click(); await settle();
