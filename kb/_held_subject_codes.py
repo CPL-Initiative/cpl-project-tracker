@@ -6,10 +6,14 @@ the M-ID cards they unblock. Sam, 2026-11-20 (r-subjects-card-on-the-commons-sam
 commons card for subjects to house the common subjects and local subject titles we'll be establishing from catalog
 data?"
 
-The pile mint dry run (kb/_pile_mint_dryrun.py) holds a course under `held.no_route_gives_a_subj4` when no route gives
-it a SUBJ4 (a common four-letter subject code). Those courses share a much shorter list of local subject codes: once
-a person decides the common subject code for one local code, every held course under it can be minted. This tool
-groups the held list by local subject code (statewide, then by college) and writes, per code:
+The pile mint dry run (kb/_pile_mint_dryrun.py) holds a course a common four-letter subject code (SUBJ4) for its
+local subject would help release under three reasons (HELD_REASONS): no route gives it a SUBJ4
+(`no_route_gives_a_subj4`), the subject map's reading of its code is below route (i)'s floor
+(`route_i_below_its_floor`), or its title is a generic shell with no convention (`shell_title_no_convention`, a ruled
+kind's title left out: RULED_BY_KIND decides those). Those courses share a much shorter list of local subject codes:
+once a person decides the common subject code for one local code, the held courses under it can be minted. Each
+course carries its reason. This tool groups the held courses by local subject code (statewide, then by college) and
+writes, per code:
 
   - the colleges using it and the held courses each one releases (count, control numbers, up to 5 example titles);
   - the printed subject name, where kb/status/local_subject_titles.json (the Subjects card's file) holds one;
@@ -27,7 +31,11 @@ memory by kb/_pile_mint_dryrun.py's own compute_plan from the committed files; t
 module's functions over the same inputs. Writes kb/status/held_subject_codes.json. The only date written is the
 plan's own (today's, when the plan is computed in memory). A rerun on the same inputs writes the same bytes.
 
-  python3 kb/_held_subject_codes.py [--plan PATH] [--out PATH]
+GUARD. A held count that falls by more than half against the committed file stops the write with a warning (a plan
+whose held reasons were renamed would otherwise publish a near-empty list without a word), unless --expect-fall names
+the fall as expected.
+
+  python3 kb/_held_subject_codes.py [--plan PATH] [--out PATH] [--expect-fall]
 """
 from __future__ import annotations
 
@@ -47,6 +55,37 @@ TITLES = os.path.join("kb", "status", "local_subject_titles.json")
 EXAMPLES = 5
 NEAR_MAX = 5
 ROUTE_NAMES = {"ii": "college_subject_code", "iii": "statewide_subject_code"}
+# The plan's held reasons a decided common subject code for the course's local subject would help release.
+HELD_REASONS = ("no_route_gives_a_subj4", "route_i_below_its_floor", "shell_title_no_convention")
+FALL_LIMIT = 0.5
+
+
+def held_of(plan, ruled_kinds=()):
+    """The plan's held courses a code decision bears on, each with its `reason` (one of HELD_REASONS). A shell title
+    of a ruled kind is left out: the ruling, never a code decision, places it."""
+    out = []
+    for reason in HELD_REASONS:
+        for r in (plan.get("held") or {}).get(reason) or []:
+            if reason == "shell_title_no_convention" and r.get("kind") in ruled_kinds:
+                continue
+            out.append(dict(r, reason=reason))
+    return out
+
+
+def fall_guard(new_held, committed_path, expect_fall=False):
+    """None when the write may go ahead, else the warning: the held count fell by more than half against the
+    committed file and no flag names the fall as expected."""
+    if expect_fall or not os.path.exists(committed_path):
+        return None
+    try:
+        with open(committed_path, encoding="utf-8") as f:
+            was = int(((json.load(f).get("totals") or {}).get("held")) or 0)
+    except (OSError, ValueError, TypeError):
+        return None
+    if was and new_held < was * (1 - FALL_LIMIT):
+        return (f"the held count falls from {was} to {new_held}, more than half; the plan's held lists may have "
+                "changed meaning. Nothing written. Pass --expect-fall when the fall is expected.")
+    return None
 
 
 def normsubj(s):
@@ -133,7 +172,7 @@ def printed_names(titles_doc):
 
 
 def build(held, thresholds, col, state, disc_map, titles_doc, short_max=2, sources=None):
-    """Pure. held: the plan's held.no_route_gives_a_subj4 rows. thresholds: {route name: floor or None}. col:
+    """Pure. held: held_of(plan), each row with its reason. thresholds: {route name: floor or None}. col:
     {(college, ns): Counter}. state: {ns: Counter}. Returns the document."""
     names = printed_names(titles_doc)
     by_code = defaultdict(lambda: defaultdict(list))
@@ -145,15 +184,23 @@ def build(held, thresholds, col, state, disc_map, titles_doc, short_max=2, sourc
         colleges = []
         whys = Counter()
         spell = Counter()
+        reasons = Counter()
         for college in sorted(by_col):
             rows = sorted(by_col[college], key=lambda r: (r["title"], r["control_number"]))
             for r in rows:
-                whys[r.get("why") or "no route reaches its floor"] += 1
+                reason = r.get("reason") or HELD_REASONS[0]
+                reasons[reason] += 1
+                if reason == "no_route_gives_a_subj4":
+                    whys[r.get("why") or "no route reaches its floor"] += 1
+                elif reason == "route_i_below_its_floor":
+                    whys[f"route (i) reads {r.get('subj4')}, right for {r.get('right')} of {r.get('holders')} "
+                         "holders, under its 98% floor"] += 1
                 spell[r["subject"]] += 1
             colleges.append({
                 "college": college, "held": len(rows),
                 "printed_name": names.get((college_key(college), ns)),
                 "control_numbers": [r["control_number"] for r in rows],
+                "reasons": [r.get("reason") or HELD_REASONS[0] for r in rows],
                 "_titles": [r["title"] for r in rows[:EXAMPLES]],
                 "college_vote": vote(col.get((college, ns)), f2),
             })
@@ -180,6 +227,7 @@ def build(held, thresholds, col, state, disc_map, titles_doc, short_max=2, sourc
         codes.append({
             "code": sorted(spell.items(), key=lambda kv: (-kv[1], kv[0]))[0][0], "key": ns,
             "spellings": sorted(spell), "held": held_n, "pairs": len(colleges), "colleges": colleges,
+            "by_reason": dict(sorted(reasons.items())),
             "printed_names": sorted({c["printed_name"] for c in colleges if c["printed_name"]}),
             "examples": examples,
             "subject_map": {"reads": disc_map.get(ns), "notes": dict(sorted(whys.items(), key=lambda kv: (-kv[1], kv[0])))},
@@ -189,8 +237,9 @@ def build(held, thresholds, col, state, disc_map, titles_doc, short_max=2, sourc
     ranked = [c["held"] for c in codes]
     pairs = sum(len(c["colleges"]) for c in codes)
     return {
-        "_what": ("The local subject codes the pile mint holds on (no route gives their courses a SUBJ4), ranked by "
-                  "the held courses a decided common subject code releases. Read-only; nothing here is a decision."),
+        "_what": ("The local subject codes the pile mint holds on (the held reasons a common subject code bears on: "
+                  "no route, route (i) under its floor, a shell title with no convention), ranked by the held "
+                  "courses a decided common subject code would help release. Read-only; nothing here is a decision."),
         "_rule": ("Codes are compared in the subject map's key form (upper case, letters and digits only), statewide; "
                   "each college under a code is listed with its own held courses. A suggestion is the vote's winner "
                   "with its votes and share; it missed the 98% self-recall floor, which is why the course is held, "
@@ -200,6 +249,7 @@ def build(held, thresholds, col, state, disc_map, titles_doc, short_max=2, sourc
         "_sources": sources or {},
         "floors": {"college_subject_code": f2, "statewide_subject_code": f3},
         "totals": {"held": sum(ranked), "codes": len(codes), "pairs": pairs,
+                   "by_reason": dict(sorted(Counter(r.get("reason") or HELD_REASONS[0] for r in held).items())),
                    "top_20_release": sum(ranked[:20]),
                    "with_suggestion": sum(1 for c in codes if c["suggestion"]),
                    "with_printed_name": sum(1 for c in codes if c["printed_names"])},
@@ -231,6 +281,7 @@ def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--plan", default=None, help="a plan.json kb/_pile_mint_dryrun.py wrote; default: computed in memory")
     ap.add_argument("--out", default=os.path.join(ROOT, OUT))
+    ap.add_argument("--expect-fall", action="store_true", help="the held count may fall by more than half")
     a = ap.parse_args(argv)
     import _pile_mint_dryrun as pm  # noqa: E402  (load_inputs, compute_plan, holders, own_subj4, vote_tables)
     inp = pm.load_inputs()
@@ -241,7 +292,7 @@ def main(argv=None):
     else:
         plan = pm.compute_plan(inp, pm.date.today().isoformat())
         plan_from = "computed in memory by kb/_pile_mint_dryrun.py compute_plan"
-    held = (plan.get("held") or {}).get("no_route_gives_a_subj4") or []
+    held = held_of(plan, tuple(getattr(pm, "RULED_BY_KIND", {})))
     thresholds = (plan.get("self_recall") or {}).get("thresholds") or {}
     col, state = vote_tables(inp, pm)
     with open(os.path.join(ROOT, TITLES), encoding="utf-8") as f:
@@ -251,6 +302,10 @@ def main(argv=None):
                "course_list": (plan.get("inputs") or {}).get("course_list"),
                "printed_names": TITLES, "subject_map": "kb/reference/subject_discipline_map.json"}
     doc = build(held, thresholds, col, state, inp["disc_map"], titles_doc, short_max=pm.SUBJ_SHORT, sources=sources)
+    warn = fall_guard(doc["totals"]["held"], a.out, a.expect_fall)
+    if warn:
+        print("[held_subject_codes] WARNING: " + warn)
+        return 1
     with open(a.out, "w", encoding="utf-8") as f:
         f.write(dump(doc))
     t = doc["totals"]
