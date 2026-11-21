@@ -86,6 +86,8 @@ with self-recall, free runs only. Its two colleges were written here a minute af
 - 15:05Z: COBIx relayed two rulings of Sam's (#3358, comment 7064588752): a block is a block whoever clears it, and
   vault-note drafts merge on their own once their checks pass. Under the second, S691's vault note
   `samueltlee/CPLBrain#837` merged (`c9da8405`; no checks configured, no ruling in it).
+- 16:41Z: Irvine Valley's load 44925768837 inserted 1,732 rows, confirmed live; the receipt push re-ran it
+  (44926139513: 0 inserted, 1,732 kept). 16:46Z: the checkpoint's docs worker holds this branch until it reports.
 
 **Not tonight:** the plain session's list (handoff 696; brief section 4). Golden West's 476 header rows wait on a plain
 session's review. City College of San Francisco's Cal-GETC step stays a plain session's.
