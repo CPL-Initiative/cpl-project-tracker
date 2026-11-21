@@ -1,0 +1,1015 @@
+{
+  "_what": "kb/_pile_mint_apply.py receipt: the Needs an M-ID pile mint. Roll back with python3 kb/_pile_mint_apply.py --rollback THIS --apply --expect 1.",
+  "applied_at": "2026-11-21T03:45:25Z",
+  "closest_after": {
+    "existing_none": 1380,
+    "existing_possible": 209,
+    "existing_strong": 70,
+    "new_record_none": 116,
+    "new_record_possible": 37,
+    "new_record_strong": 6,
+    "no_candidate": 1
+  },
+  "counts": {
+    "after": {
+      "courses": 19569,
+      "member_courses_total": 63844,
+      "memberships": 15516,
+      "singletons": 56156
+    },
+    "before": {
+      "courses": 19568,
+      "member_courses_total": 63754,
+      "memberships": 15515,
+      "singletons": 56156
+    }
+  },
+  "files": {
+    "coci_minted_courses.json": {
+      "after_sha256": "71586716d0d5f58165d02c981d6ea1819ed426795a5ecb79ebf863c4bb050b71",
+      "before_sha256": "62928acbb6f1c0b4574a526ad143249eb7a405f84b41d6f565ee82ad70e83a5f",
+      "format": "indent2"
+    },
+    "coci_minted_memberships.json": {
+      "after_sha256": "86da3eb5a258ee51e24c03dc381511cecd571b774af6e495a29f0b1cf61e3b8b",
+      "before_sha256": "692aae0a7b2f0bfa20f92fc3300302ede07824f27b6c7d25fe645e567bed2c6d",
+      "format": "indent2"
+    },
+    "coci_minted_singletons.json": {
+      "after_sha256": "2f5d08359acd2dc7a9b93d72b583f0eecec7d9a359cd9811e84d72ebf9e0b030",
+      "before_sha256": "2f5d08359acd2dc7a9b93d72b583f0eecec7d9a359cd9811e84d72ebf9e0b030",
+      "format": "indent2"
+    }
+  },
+  "ids": {
+    "courses": [
+      "LSKL M9004"
+    ],
+    "singletons": []
+  },
+  "live_read_at": "2026-11-21T03:44:40.826521+00:00",
+  "members": {
+    "LSKL M9004": [
+      "CCC000524910",
+      "CCC000290048",
+      "CCC000216087",
+      "CCC000616334",
+      "CCC000599461",
+      "CCC000354176",
+      "CCC000232029",
+      "CCC000373199",
+      "CCC000425795",
+      "CCC000551808",
+      "CCC000622568",
+      "CCC000642041",
+      "CCC000529292",
+      "CCC000613857",
+      "CCC000192810",
+      "CCC000347272",
+      "CCC000523504",
+      "CCC000307927",
+      "CCC000349341",
+      "CCC000628475",
+      "CCC000525283",
+      "CCC000449332",
+      "CCC000566547",
+      "CCC000633193",
+      "CCC000321718",
+      "CCC000575348",
+      "CCC000613313",
+      "CCC000408626",
+      "CCC000641497",
+      "CCC000031675",
+      "CCC000166406",
+      "CCC000584078",
+      "CCC000583390",
+      "CCC000320504",
+      "CCC000524577",
+      "CCC000647718",
+      "CCC000506629",
+      "CCC000564502",
+      "CCC000625883",
+      "CCC000109086",
+      "CCC000639396",
+      "CCC000525336",
+      "CCC000371341",
+      "CCC000388770",
+      "CCC000574218",
+      "CCC000639564",
+      "CCC000350737",
+      "CCC000655940",
+      "CCC000620278",
+      "CCC000593037",
+      "CCC000407732",
+      "CCC000592359",
+      "CCC000222237",
+      "CCC000415089",
+      "CCC000625925",
+      "CCC000615369",
+      "CCC000360196",
+      "CCC000630973",
+      "CCC000371171",
+      "CCC000625387",
+      "CCC000149142",
+      "CCC000520586",
+      "CCC000604592",
+      "CCC000604665",
+      "CCC000604666",
+      "CCC000604667",
+      "CCC000613043",
+      "CCC000656794",
+      "CCC000614863",
+      "CCC000200018",
+      "CCC000554305",
+      "CCC000629023",
+      "CCC000653292",
+      "CCC000439098",
+      "CCC000510059",
+      "CCC000396690",
+      "CCC000615106",
+      "CCC000615107",
+      "CCC000615186",
+      "CCC000320843",
+      "CCC000583667",
+      "CCC000639455",
+      "CCC000388284",
+      "CCC000321662",
+      "CCC000509938",
+      "CCC000194248",
+      "CCC000580232",
+      "CCC000635512",
+      "CCC000056523",
+      "CCC000405980"
+    ]
+  },
+  "plan": "kb/pile_mint_out/2026-11-21_v3/plan.json",
+  "plan_date": "2026-11-21",
+  "plan_sha256": "69867ec85ab35012a467b5cc11d0c4fee26c16fd6d069a874291933bc9c5a35d",
+  "records": {
+    "courses": {
+      "LSKL M9004": {
+        "_notes": null,
+        "_pile_mint_from": "kb/pile_mint_out/2026-11-21_v3",
+        "c_id": null,
+        "ccn_id": null,
+        "classified_at": "2026-11-21",
+        "classified_by": "kb/_pile_mint_dryrun.py: the Needs an M-ID pile minted as M-IDs (Sam, 2026-11-20: the M-IDs first; Sam, 2026-09-03: everything that is not a C-ID or CCN is an M-ID)",
+        "common_title": "Supervised Tutoring",
+        "common_title_source": "local catalog (most common printed title)",
+        "confidence": 0.72,
+        "corroboration_members": 90,
+        "course_id": "LSKL M9004",
+        "credit_status": "Noncredit",
+        "credit_status_mixed": true,
+        "cte": false,
+        "description": "ILA-800 : Supervised Tutoring _x000D_ College: RIV_x000D_ Lecture Hours: 0.000_x000D_ Lab Hours: 1.000 - 216.000_x000D_ Total Student Learning Hours: 1.000 - 216.000_x000D_ Units: 0.00_x000D_ Grading Methods: NOG - No Grade_x000D_ Course Description_x000D_ Prerequisite: None_x000D_ Corequisite: Student must be enrolled in at least one other non-tutoring course._x000D_ Course Credit Recommendation: Non-Credit_x000D_ _x000D_ This self-paced, open-entry/open-exit non-credit course provides supervised tutoring, assistance with study skills, and guidance in completing basic skills or college-level course assignments. Students receive individualized tutoring and/or small group instruction outside of class time in a discipline-specific lab. Designed to help students achieve outcomes related to specific courses and/or to improve learning and study skills in specific related subjects. Content va…",
+        "description_source": "local catalog (longest on file)",
+        "discipline": "Learning Assistance or Learning Skills",
+        "discipline_confidence": null,
+        "discipline_inferred_at": "2026-11-21",
+        "discipline_provisional": "TUTOR",
+        "discipline_source": "pile_mint",
+        "id_system": "M-ID",
+        "noncredit_category": null,
+        "noncredit_category_distribution": null,
+        "noncredit_category_mixed": null,
+        "one_college": false,
+        "pile_mint_route": "ruled_kind",
+        "pile_mint_ruling": "d-tutoring-under-lskl-2026-11-21",
+        "pile_mint_shell": "supervised tutoring",
+        "reviewed_at": null,
+        "reviewed_by": null,
+        "source_college_count": 80,
+        "subject": "TUTOR",
+        "subject_4letter": "LSKL",
+        "subject_spread": 55,
+        "top_code": "4930.09",
+        "top_code_distribution": {
+          "1230.00": 1,
+          "1701.00": 1,
+          "4930.09": 86,
+          "4930.62": 1,
+          "4930.87": 1
+        },
+        "top_code_mixed": true,
+        "typical_units": 0.0
+      }
+    },
+    "memberships": {
+      "LSKL M9004": [
+        {
+          "college": "Allan Hancock College",
+          "control_number": "CCC000524910",
+          "course_number": "7004A",
+          "credit_status": "Noncredit",
+          "subject": "BASK",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "American River College",
+          "control_number": "CCC000290048",
+          "course_number": "1000",
+          "credit_status": "Noncredit",
+          "subject": "LRC",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Antelope Valley College",
+          "control_number": "CCC000216087",
+          "course_number": "900",
+          "credit_status": "Noncredit",
+          "subject": "LAC",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Bakersfield College",
+          "control_number": "CCC000616334",
+          "course_number": "B81NC",
+          "credit_status": "Noncredit",
+          "subject": "ACDV",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Barstow Community College",
+          "control_number": "CCC000599461",
+          "course_number": "151",
+          "credit_status": "Noncredit",
+          "subject": "SDEV",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Berkeley City College",
+          "control_number": "CCC000354176",
+          "course_number": "501",
+          "credit_status": "Noncredit",
+          "subject": "LRNRE",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Butte College",
+          "control_number": "CCC000232029",
+          "course_number": "310",
+          "credit_status": "Noncredit",
+          "subject": "EDUC",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Cabrillo College",
+          "control_number": "CCC000373199",
+          "course_number": "502",
+          "credit_status": "Noncredit",
+          "subject": "MATH",
+          "top_code": "1701.00: Mathematics, General",
+          "units": 0
+        },
+        {
+          "college": "Cerritos College",
+          "control_number": "CCC000425795",
+          "course_number": "42.05",
+          "credit_status": "Noncredit",
+          "subject": "AED",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Cerro Coso Community College",
+          "control_number": "CCC000551808",
+          "course_number": "C804",
+          "credit_status": "Noncredit",
+          "subject": "EDUC",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Chabot College",
+          "control_number": "CCC000622568",
+          "course_number": "200",
+          "credit_status": "Noncredit",
+          "subject": "TUTR",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Chaffey College",
+          "control_number": "CCC000642041",
+          "course_number": "650",
+          "credit_status": "Noncredit",
+          "subject": "SUCCESS",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Citrus College",
+          "control_number": "CCC000529292",
+          "course_number": "1",
+          "credit_status": "Noncredit",
+          "subject": "NC",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "City College of San Francisco",
+          "control_number": "CCC000613857",
+          "course_number": "1000",
+          "credit_status": "Noncredit",
+          "subject": "LERN",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Coalinga College",
+          "control_number": "CCC000192810",
+          "course_number": "100",
+          "credit_status": "Noncredit",
+          "subject": "NC",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "College of Alameda",
+          "control_number": "CCC000347272",
+          "course_number": "501",
+          "credit_status": "Noncredit",
+          "subject": "LRNRE",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "College of the Canyons",
+          "control_number": "CCC000523504",
+          "course_number": "94",
+          "credit_status": "Noncredit",
+          "subject": "NC.TUTR",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "College of the Desert",
+          "control_number": "CCC000307927",
+          "course_number": "300",
+          "credit_status": "Noncredit",
+          "subject": "ASC",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "College of the Redwoods",
+          "control_number": "CCC000349341",
+          "course_number": "205",
+          "credit_status": "Noncredit",
+          "subject": "GUID",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "College of the Sequoias",
+          "control_number": "CCC000628475",
+          "course_number": "425",
+          "credit_status": "Noncredit",
+          "subject": "LA",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Columbia College",
+          "control_number": "CCC000525283",
+          "course_number": "410",
+          "credit_status": "Noncredit",
+          "subject": "TUTOR",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Contra Costa College",
+          "control_number": "CCC000449332",
+          "course_number": "875N",
+          "credit_status": "Noncredit",
+          "subject": "ECHD",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Contra Costa College",
+          "control_number": "CCC000566547",
+          "course_number": "875N",
+          "credit_status": "Noncredit",
+          "subject": "ENGL",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Copper Mountain College",
+          "control_number": "CCC000633193",
+          "course_number": "100",
+          "credit_status": "Noncredit",
+          "subject": "ASC",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Cosumnes River College",
+          "control_number": "CCC000321718",
+          "course_number": "1000",
+          "credit_status": "Noncredit",
+          "subject": "HCD",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Cuyamaca College",
+          "control_number": "CCC000575348",
+          "course_number": "198",
+          "credit_status": "Noncredit",
+          "subject": "IS",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Diablo Valley College",
+          "control_number": "CCC000613313",
+          "course_number": "010NC",
+          "credit_status": "Noncredit",
+          "subject": "INTD",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "East Los Angeles College",
+          "control_number": "CCC000408626",
+          "course_number": "001T",
+          "credit_status": "Noncredit Enhanced",
+          "subject": "TUTOR",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "El Camino College",
+          "control_number": "CCC000641497",
+          "course_number": "500",
+          "credit_status": "Noncredit Enhanced",
+          "subject": "PASS",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Evergreen Valley College",
+          "control_number": "CCC000031675",
+          "course_number": "210",
+          "credit_status": "Noncredit",
+          "subject": "II",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Feather River College",
+          "control_number": "CCC000166406",
+          "course_number": "300",
+          "credit_status": "Noncredit",
+          "subject": "TUTR",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Feather River College",
+          "control_number": "CCC000584078",
+          "course_number": "3",
+          "credit_status": "Noncredit",
+          "subject": "COLL",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Foothill College",
+          "control_number": "CCC000583390",
+          "course_number": "406",
+          "credit_status": "Noncredit",
+          "subject": "NCCS",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Fresno City College",
+          "control_number": "CCC000320504",
+          "course_number": "300",
+          "credit_status": "Noncredit",
+          "subject": "ST",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Fullerton College",
+          "control_number": "CCC000524577",
+          "course_number": "NO1 F",
+          "credit_status": "Noncredit",
+          "subject": "HUM",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Fullerton College",
+          "control_number": "CCC000647718",
+          "course_number": "N01 F",
+          "credit_status": "Noncredit",
+          "subject": "TUT",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Gavilan College",
+          "control_number": "CCC000506629",
+          "course_number": "550",
+          "credit_status": "Noncredit",
+          "subject": "GUID",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Glendale Community College",
+          "control_number": "CCC000564502",
+          "course_number": "1",
+          "credit_status": "Noncredit",
+          "subject": "ST DV",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Golden West College",
+          "control_number": "CCC000625883",
+          "course_number": "G050N",
+          "credit_status": "Noncredit",
+          "subject": "TUTR",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Grossmont College",
+          "control_number": "CCC000109086",
+          "course_number": "198",
+          "credit_status": "Noncredit",
+          "subject": "MATH",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Grossmont College",
+          "control_number": "CCC000639396",
+          "course_number": "198",
+          "credit_status": "Noncredit",
+          "subject": "COUN",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Hartnell College",
+          "control_number": "CCC000525336",
+          "course_number": "301",
+          "credit_status": "Noncredit",
+          "subject": "INS",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Imperial Valley College",
+          "control_number": "CCC000371341",
+          "course_number": "800",
+          "credit_status": "Noncredit",
+          "subject": "LRNA",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Irvine Valley College",
+          "control_number": "CCC000388770",
+          "course_number": "301",
+          "credit_status": "Noncredit",
+          "subject": "TU",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Lake Tahoe Community College",
+          "control_number": "CCC000574218",
+          "course_number": "550",
+          "credit_status": "Noncredit",
+          "subject": "EDU",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Lake Tahoe Community College",
+          "control_number": "CCC000639564",
+          "course_number": "191A",
+          "credit_status": "Noncredit",
+          "subject": "INT",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Laney College",
+          "control_number": "CCC000350737",
+          "course_number": "501",
+          "credit_status": "Noncredit",
+          "subject": "LRNRE",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Las Positas College",
+          "control_number": "CCC000655940",
+          "course_number": "200",
+          "credit_status": "Noncredit",
+          "subject": "NTUT",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Lemoore College",
+          "control_number": "CCC000620278",
+          "course_number": "100",
+          "credit_status": "Noncredit",
+          "subject": "NC",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Long Beach City College",
+          "control_number": "CCC000593037",
+          "course_number": "650",
+          "credit_status": "Noncredit",
+          "subject": "LEARN",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Los Angeles City College",
+          "control_number": "CCC000407732",
+          "course_number": "001T",
+          "credit_status": "Noncredit Enhanced",
+          "subject": "TUTOR",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Los Angeles Harbor College",
+          "control_number": "CCC000592359",
+          "course_number": "001T",
+          "credit_status": "Noncredit Enhanced",
+          "subject": "TUTOR",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Los Angeles Pierce College",
+          "control_number": "CCC000222237",
+          "course_number": "001T",
+          "credit_status": "Noncredit",
+          "subject": "TUTOR",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Los Angeles Valley College",
+          "control_number": "CCC000415089",
+          "course_number": "001T",
+          "credit_status": "Noncredit Enhanced",
+          "subject": "TUTOR",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Los Medanos College",
+          "control_number": "CCC000625925",
+          "course_number": "020N",
+          "credit_status": "Noncredit Enhanced",
+          "subject": "SPTUT",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Madera College",
+          "control_number": "CCC000615369",
+          "course_number": "300",
+          "credit_status": "Noncredit",
+          "subject": "ST",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Mendocino College",
+          "control_number": "CCC000360196",
+          "course_number": "500",
+          "credit_status": "Noncredit",
+          "subject": "EDU",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Merced College",
+          "control_number": "CCC000630973",
+          "course_number": "106",
+          "credit_status": "Noncredit Enhanced",
+          "subject": "TUT",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Merritt College",
+          "control_number": "CCC000371171",
+          "course_number": "501",
+          "credit_status": "Noncredit",
+          "subject": "LRNRE",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Mission College",
+          "control_number": "CCC000625387",
+          "course_number": "947",
+          "credit_status": "Noncredit",
+          "subject": "INS",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Modesto Junior College",
+          "control_number": "CCC000149142",
+          "course_number": "850",
+          "credit_status": "Noncredit Enhanced",
+          "subject": "TUTOR",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Moreno Valley College",
+          "control_number": "CCC000520586",
+          "course_number": "800",
+          "credit_status": "Noncredit Enhanced",
+          "subject": "ILA",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Norco College",
+          "control_number": "CCC000604592",
+          "course_number": "800",
+          "credit_status": "Noncredit Enhanced",
+          "subject": "ILA",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Ohlone College",
+          "control_number": "CCC000604665",
+          "course_number": "965",
+          "credit_status": "Noncredit",
+          "subject": "DEAF",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Ohlone College",
+          "control_number": "CCC000604666",
+          "course_number": "965",
+          "credit_status": "Noncredit",
+          "subject": "ENGL",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Ohlone College",
+          "control_number": "CCC000604667",
+          "course_number": "965",
+          "credit_status": "Noncredit",
+          "subject": "MATH",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Ohlone College",
+          "control_number": "CCC000613043",
+          "course_number": "965",
+          "credit_status": "Noncredit",
+          "subject": "ESL",
+          "top_code": "4930.87: English as a Second Language - Integrated",
+          "units": 0
+        },
+        {
+          "college": "Ohlone College",
+          "control_number": "CCC000656794",
+          "course_number": "965",
+          "credit_status": "Noncredit",
+          "subject": "CS",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Oxnard College",
+          "control_number": "CCC000614863",
+          "course_number": "R805",
+          "credit_status": "Noncredit",
+          "subject": "TUTR",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Palomar College",
+          "control_number": "CCC000200018",
+          "course_number": "902",
+          "credit_status": "Noncredit",
+          "subject": "N BASC",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Palomar College",
+          "control_number": "CCC000554305",
+          "course_number": "904",
+          "credit_status": "Noncredit",
+          "subject": "N BASC",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Pasadena City College",
+          "control_number": "CCC000629023",
+          "course_number": "3031",
+          "credit_status": "Noncredit",
+          "subject": "LAC",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Porterville College",
+          "control_number": "CCC000653292",
+          "course_number": "P036Z",
+          "credit_status": "Noncredit",
+          "subject": "LIBR",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Reedley College",
+          "control_number": "CCC000439098",
+          "course_number": "300",
+          "credit_status": "Noncredit",
+          "subject": "ST",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Riverside City College",
+          "control_number": "CCC000510059",
+          "course_number": "800",
+          "credit_status": "Noncredit Enhanced",
+          "subject": "ILA",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Saddleback College",
+          "control_number": "CCC000396690",
+          "course_number": "300",
+          "credit_status": "Noncredit",
+          "subject": "TU",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "San Diego City College",
+          "control_number": "CCC000615106",
+          "course_number": "44",
+          "credit_status": "Noncredit",
+          "subject": "ELAC",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "San Diego Mesa College",
+          "control_number": "CCC000615107",
+          "course_number": "44",
+          "credit_status": "Noncredit",
+          "subject": "ELAC",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "San Diego Miramar College",
+          "control_number": "CCC000615186",
+          "course_number": "44",
+          "credit_status": "Noncredit",
+          "subject": "ELAC",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "San Jose City College",
+          "control_number": "CCC000320843",
+          "course_number": "210",
+          "credit_status": "Noncredit",
+          "subject": "Learning Skills (LS)",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Santa Ana College",
+          "control_number": "CCC000583667",
+          "course_number": "95",
+          "credit_status": "Noncredit",
+          "subject": "LRN",
+          "top_code": "4930.62: Secondary Education (Grades 9-12) and G.E.D.",
+          "units": 0
+        },
+        {
+          "college": "Santa Barbara City College",
+          "control_number": "CCC000639455",
+          "course_number": "NC001",
+          "credit_status": "Noncredit",
+          "subject": "TUTW",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Santa Monica College",
+          "control_number": "CCC000388284",
+          "course_number": "900",
+          "credit_status": "Noncredit",
+          "subject": "NURSNG",
+          "top_code": "1230.00: Nursing",
+          "units": 0
+        },
+        {
+          "college": "Santa Rosa Junior College",
+          "control_number": "CCC000321662",
+          "course_number": "770",
+          "credit_status": "Noncredit",
+          "subject": "CSKL",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Santiago Canyon College",
+          "control_number": "CCC000509938",
+          "course_number": "153",
+          "credit_status": "Noncredit",
+          "subject": "HSOTH",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Sierra College",
+          "control_number": "CCC000194248",
+          "course_number": "801",
+          "credit_status": "Noncredit",
+          "subject": "SKDV",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Solano Community College",
+          "control_number": "CCC000580232",
+          "course_number": "500",
+          "credit_status": "Noncredit",
+          "subject": "TUTR",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Southwestern College",
+          "control_number": "CCC000635512",
+          "course_number": "3",
+          "credit_status": "Noncredit Enhanced",
+          "subject": "NC",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Taft College",
+          "control_number": "CCC000056523",
+          "course_number": "260",
+          "credit_status": "Noncredit",
+          "subject": "TUTR",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        },
+        {
+          "college": "Ventura College",
+          "control_number": "CCC000405980",
+          "course_number": "N100",
+          "credit_status": "Noncredit Enhanced",
+          "subject": "IDS",
+          "top_code": "4930.09: Supervised Tutoring",
+          "units": 0
+        }
+      ]
+    },
+    "singletons": {}
+  },
+  "written": true
+}
