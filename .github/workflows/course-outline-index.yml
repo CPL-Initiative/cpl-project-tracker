@@ -67,10 +67,16 @@ jobs:
           slugs=$(sed -n 's/^slugs=//p' kb/course_outline_index/.run)
           index=$(sed -n 's/^index=//p' kb/course_outline_index/.run)
           report=$(sed -n 's/^report=//p' kb/course_outline_index/.run)
+          # status= the words a current outline carries where a host's are not Active; client= the college a row
+          # must be where one host holds several (Saddleback and Irvine Valley, S691).
+          status=$(sed -n 's/^status=//p' kb/course_outline_index/.run)
+          client=$(sed -n 's/^client=//p' kb/course_outline_index/.run)
           [ -n "$discover" ] && args+=(--discover "$discover")
           [ -n "$index" ] && args+=(--index "$index")
           [ -n "$slugs" ] && args+=(--slugs "$slugs")
           [ -n "$report" ] && args+=(--report "$report")
+          [ -n "$status" ] && args+=(--status "$status")
+          [ -n "$client" ] && args+=(--client "$client")
           python3 kb/_course_outline_index.py "${args[@]}"
 
       - name: Commit the result to this branch

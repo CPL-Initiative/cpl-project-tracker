@@ -1,0 +1,127 @@
+{
+ "_about": "The self-recall count for the reader's honors-or-lab rule (VARIANT_TITLE and variant_mix in kb/_course_outcomes_read.py) and for row_code (kb/_course_outline_index.py), over the 20 course outline indexes committed by S691 (indexes), every one but the superseded builds named below; an index committed later is not counted until a person judges its shared codes and adds it (S691's second reader, finding 2). A shared code is one index code holding two or more courses with reports. Each was judged by eye from its titles: variant, a course and its honors or lab version, which the rule must leave unread; different, two or more unrelated courses, which the title rule cannot tell apart and reads as one course retitled (the known gap, named here; HOND 045 alone is caught, by folded_pair from its records' two printed codes); every other shared code is one course retitled, which the rule must read. tests/ccsf_outcomes_only_test.py check 7 recomputes every count from the indexes and fails on any difference.",
+ "by": "S691 outlines2 worker, agreeing with the second reader's variant_recall.py",
+ "at": "2026-11-21T11:51:33Z",
+ "indexes_read": 20,
+ "indexes": [
+  "index_38313849383.json",
+  "index_38349485923.json",
+  "index_38349880564.json",
+  "index_38350560193.json",
+  "index_41399078640.json",
+  "index_41589640082.json",
+  "index_42434939730.json",
+  "index_42972399224.json",
+  "index_43566318943.json",
+  "index_44253437890.json",
+  "index_44253588454.json",
+  "index_44477383894.json",
+  "index_44477386352.json",
+  "index_44531705083.json",
+  "index_44531824831.json",
+  "index_44531933532.json",
+  "index_44536348461.json",
+  "index_44696736058.json",
+  "index_44882239715.json",
+  "index_44887971233.json"
+ ],
+ "superseded": {
+  "index_44881150075.json": "Saddleback's first build, empty",
+  "index_44881165580.json": "Rio Hondo's first build, empty",
+  "index_44881750816.json": "Rio Hondo, replaced by index_44882239715.json, the index read 44893126504 read",
+  "index_44882665427.json": "Saddleback before row_code: 95 codes held two or three courses (ACCT 1A and 1B under ACCT 1)",
+  "index_44884536269.json": "Saddleback before row_code, a rebuild of the same",
+  "index_44886092872.json": "Saddleback with row_code, replaced by index_44887971233.json, the index read 44892658073 read"
+ },
+ "totals": {
+  "shared": 198,
+  "variant": 12,
+  "different": 7,
+  "retitled": 179
+ },
+ "saddleback_honors_codes": {
+  "index": "index_44887971233.json",
+  "count": 30,
+  "rule": "a code whose number ends in letters ending H, with a report; row_code keys it from the row's Code field, and every entry under it is titled Honors"
+ },
+ "by_index": {
+  "index_41399078640.json": {
+   "host": "sac.curriqunet.com",
+   "shared": 12,
+   "variant": [],
+   "different": {}
+  },
+  "index_43566318943.json": {
+   "host": "hancockcollege.curriqunet.com",
+   "shared": 1,
+   "variant": [],
+   "different": {}
+  },
+  "index_44253437890.json": {
+   "host": "chabot.curriqunet.com",
+   "shared": 1,
+   "variant": [],
+   "different": {
+    "FT 1": "Intercollegiate Football and Principles of Emergency Services"
+   }
+  },
+  "index_44253588454.json": {
+   "host": "sac.curriqunet.com",
+   "shared": 14,
+   "variant": [],
+   "different": {}
+  },
+  "index_44477383894.json": {
+   "host": "craftonhills.curriqunet.com",
+   "shared": 153,
+   "variant": [],
+   "different": {
+    "BUSAD 103": "Human Resources Management and Marketing Principles",
+    "ETHS 106": "Introduction to Black Studies and Introduction to Women's Studies Through an Ethnic Studies Lens",
+    "HEALTH 104": "Introduction to Public Health and Women's Health"
+   }
+  },
+  "index_44531824831.json": {
+   "host": "palomar.curriqunet.com",
+   "shared": 2,
+   "variant": [],
+   "different": {
+    "NURS 118": "three courses: Behavioral Health, Pediatrics, the Childbearing Family",
+    "NURS 217": "three courses: Advanced Nursing Concepts I and II, Geriatrics"
+   }
+  },
+  "index_44696736058.json": {
+   "host": "ccsf.curricunet.com",
+   "shared": 2,
+   "variant": [],
+   "different": {}
+  },
+  "index_44882239715.json": {
+   "host": "riohondo.curriqunet.com",
+   "shared": 1,
+   "variant": [],
+   "different": {
+    "HOND 045": "Honda/Acura Chassis Electrical Systems and Express Service (HOND 045 and HOND 045-1 in the records)"
+   }
+  },
+  "index_44887971233.json": {
+   "host": "saddleback.curriqunet.com",
+   "shared": 12,
+   "variant": [
+    "ANTH 1001",
+    "COMM 1000",
+    "ECON 2001",
+    "ECON 2002",
+    "ENGL 1000",
+    "ENGL 1001",
+    "ENGL 1002",
+    "MATH 2210",
+    "POLS 1000",
+    "PSYC 1000",
+    "SOCI 1000",
+    "STAT 1000"
+   ],
+   "different": {}
+  }
+ }
+}

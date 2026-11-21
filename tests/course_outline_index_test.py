@@ -131,6 +131,136 @@ check("3 the index reads public pages only and never addresses the database (no 
       "supabase" not in src.lower() and "/rest/v1" not in src and "/rpc/" not in src and "PATCH" not in src
       and src.count("method: 'POST'") == 1)
 
+# 7. S691: a host whose current outlines carry another status word, one host holding two colleges, and a dashboard
+# that posts no search until its Search button is pressed.
+socccd = [
+    {"CourseId": 16961, "SubjectCode": "ACCT", "CourseNumber": "1A", "StatusTitle": "Archive",
+     "ProposalTypeTitle": "Saddleback - New Course", "MetaReports": [{"Id": 201, "Title": "Course Outline", "ClientId": 2}]},
+    {"CourseId": 20001, "SubjectCode": "ACCT", "CourseNumber": "1A", "StatusTitle": "Approved",
+     "ProposalTypeTitle": "Saddleback - Course Modification", "MetaReports": [{"Id": 201, "Title": "Course Outline", "ClientId": 2}]},
+    {"CourseId": 30001, "SubjectCode": "ACCT", "CourseNumber": "1A", "StatusTitle": "Approved",
+     "ProposalTypeTitle": "IVC - Course Modification",
+     "MetaReports": [{"Id": 198, "Title": "Official Course Outline of Record", "ClientId": 3}]},
+]
+base_s = "https://saddleback.curriqunet.com/"
+check("7 the default keeps Active rows only, so a host's Approved rows wait on its own status words",
+      idx.build_index(socccd, base_s) == {})
+both = idx.build_index(socccd, base_s, status="Approved|Active")
+sb = idx.build_index(socccd, base_s, status="Approved|Active", client="^Saddleback$")
+ivc = idx.build_index(socccd, base_s, status="Approved|Active", client="^IVC$")
+check("7 status= keeps the host's words (whole word, any case); the Archive row stays out",
+      [e["course_id"] for e in both["ACCT 1A"]] == [20001, 30001]
+      and idx.keep_row({"StatusTitle": "approved"}, "Approved") and not idx.keep_row({"StatusTitle": "Not Approved"}, "Approved"),
+      both)
+check("7 client= keeps one college's rows where one host holds two: ACCT 1A is Saddleback's 20001 and IVC's 30001",
+      [e["course_id"] for e in sb["ACCT 1A"]] == [20001] and [e["course_id"] for e in ivc["ACCT 1A"]] == [30001],
+      (sb, ivc))
+check("7 a row's client label: a client field first, then its proposal type's college prefix, then its reports' client id",
+      idx.client_of({"ClientTitle": "Irvine Valley College", "ProposalTypeTitle": "Saddleback - New"}) == "Irvine Valley College"
+      and idx.client_of(socccd[0]) == "Saddleback"
+      and idx.client_of({"ProposalTypeTitle": "New Course", "MetaReports": [{"ClientId": 6}]}) == "client 6"
+      and idx.client_of({}) == "")
+seen = idx.row_census(socccd)
+check("7 a run counts what the search returned: each status, each client, the two together, the field names",
+      seen["status_titles"] == {"Approved": 2, "Archive": 1} and seen["client_labels"] == {"Saddleback": 2, "IVC": 1}
+      and seen["client_status"]["Saddleback | Approved"] == 1 and "StatusTitle" in seen["row_fields"]
+      and idx.row_census([])["row_fields"] == [], seen)
+
+
+class _Page:
+    """A dashboard that posts NewSearch only when its Search button is pressed (Rio Hondo, run 44508907581). It has
+    `buttons` Search buttons, and only the one at `posts_at` (in the script's order) posts the search."""
+    def __init__(self, posts_on_load=False, buttons=2, posts_at=1):
+        self.handler, self.posts_on_load, self.buttons, self.posts_at = None, posts_on_load, buttons, posts_at
+        self.pressed = []
+
+    def on(self, _ev, fn):
+        self.handler = fn
+
+    def remove_listener(self, _ev, _fn):
+        self.handler = None
+
+    def wait_for_timeout(self, _ms):
+        pass
+
+    def _post(self, path="Search/NewSearch"):
+        class R:
+            url, method, post_data, headers = base_s + path, "POST", "options%5Bpagesize%5D=25&options%5Bpage%5D=0", {"accept": "*/*"}
+        if self.handler:
+            self.handler(R())
+
+    def evaluate(self, js, arg=None):
+        if js == idx.PRESS_SEARCH_JS:
+            if (arg or 0) >= self.buttons:
+                return None
+            self.pressed.append(arg or 0)
+            self._post("Search/NewSearch" if arg == self.posts_at else "Search/GetSearchFields")
+            return {"n": arg or 0, "tag": "BUTTON", "beside_reset": arg == self.posts_at}
+        if js == idx.OUTLINE_LINKS_JS:
+            return []
+        if js == idx.FETCH_JS:
+            return {"status": 200, "text": '{"TotalRows": 1, "results": [{"CourseId": 1}]}'}
+        return None
+
+
+class _Reader:
+    def __init__(self, page):
+        self.page = page
+
+    def load(self, _url):
+        if self.page.posts_on_load:
+            self.page._post()
+        return {"status": 200, "title": "Dashboard"}
+
+    def _robots_for(self, _url):
+        return None
+
+
+_orig = idx.census.robots_allows
+idx.census.robots_allows = lambda _r, _u: True
+try:
+    quiet = _Page()
+    got_q = idx.search_all(_Reader(quiet), base_s, 0)
+    auto = _Page(posts_on_load=True)
+    got_a = idx.search_all(_Reader(auto), base_s, 0)
+    none_ = _Page(buttons=0)
+    got_n = idx.search_all(_Reader(none_), base_s, 0)
+    never = _Page(buttons=5, posts_at=9)
+    got_v = idx.search_all(_Reader(never), base_s, 0)
+finally:
+    idx.census.robots_allows = _orig
+check("7 a dashboard that posts no search on load gets its Search buttons pressed in turn until one posts it, and its "
+      "own request is replayed; each press records the paths the page posted",
+      quiet.pressed == [0, 1] and got_q.get("rows_read") == 1 and "error" not in got_q
+      and [p["posted"] for p in got_q.get("pressed_search", [])] == [["/Search/GetSearchFields"], ["/Search/NewSearch"]],
+      got_q)
+check("7 a dashboard that searches on load is never pressed; one with no Search button keeps the no-NewSearch error",
+      auto.pressed == [] and "pressed_search" not in got_a and got_a.get("rows_read") == 1
+      and got_n.get("error") == "the page made no NewSearch request" and got_n.get("pressed_search") == [], (got_a, got_n))
+check("7 the presses stop at PRESS_TRIES, and a page that never posts its search keeps the no-NewSearch error",
+      never.pressed == list(range(idx.PRESS_TRIES)) and got_v.get("error") == "the page made no NewSearch request",
+      (never.pressed, got_v))
+check("7 the press fills no field and answers no check: the script clicks one button labeled Search and nothing else",
+      idx.PRESS_SEARCH_JS.count(".click()") == 1 and "value =" not in idx.PRESS_SEARCH_JS
+      and "turnstile" not in idx.PRESS_SEARCH_JS.lower() and "captcha" not in idx.PRESS_SEARCH_JS.lower())
+rc = {"ACCT 1A": idx.row_code({"SubjectCode": "ACCT", "CourseNumber": "1", "Code": "ACCT 1A"}),
+      "ACCT 1": idx.row_code({"SubjectCode": "ACCT", "CourseNumber": "1", "Code": "ACCT 12"}),
+      "ACC 1A": idx.row_code({"SubjectCode": "ACC", "CourseNumber": "1A", "Code": "ACC-1A"}),
+      "ACCT 1AH": idx.row_code({"SubjectCode": "ACCT", "CourseNumber": "01", "Code": "ACCT 1AH"}),
+      "KIN A11": idx.row_code({"SubjectCode": "KIN", "CourseNumber": "A11", "Code": "BUS 1A"})}
+check("7 a row keys by its own full code only where that is its subject and number with a letter suffix (Saddleback's "
+      "ACCT 1A and 1B both return CourseNumber 1); another subject, another number or the same code keys as before",
+      all(k == v for k, v in rc.items()), rc)
+two = idx.build_index([{"CourseId": 1, "SubjectCode": "ACCT", "CourseNumber": "1", "Code": "ACCT 1A", "StatusTitle": "Active",
+                        "MetaReports": []},
+                       {"CourseId": 2, "SubjectCode": "ACCT", "CourseNumber": "1", "Code": "ACCT 1B", "StatusTitle": "Active",
+                        "MetaReports": []}], base_s)
+check("7 Saddleback's ACCT 1A and ACCT 1B are two index codes, never two courses under ACCT 1",
+      sorted(two) == ["ACCT 1A", "ACCT 1B"], sorted(two))
+wf = open(os.path.join(ROOT, ".github", "workflows", "course-outline-index.yml")).read()
+check("7 the index workflow passes the .run's status= and client= lines to the index",
+      "s/^status=//p" in wf and "--status" in wf and "s/^client=//p" in wf and "--client" in wf)
+
 passed = sum(1 for _, ok, _ in results if ok)
 for name, ok, why in results:
     print(("  ok   " if ok else "  FAIL ") + name + ("" if ok or not why else " — " + str(why)))

@@ -183,6 +183,71 @@ def _():
     assert got == want, got
 
 
+def load_job_steps(wf: str) -> tuple[str, list[str]]:
+    """The load job's header (its lines above steps:) and each of its steps as written, one block a step."""
+    job = wf[wf.index("\n  load:\n"):]
+    head, _, body = job.partition("\n    steps:\n")
+    steps, cur = [], []
+    for line in body.split("\n"):
+        if re.match(r"^  \S", line):  # the next job
+            break
+        if line.startswith("      - ") and cur:
+            steps.append("\n".join(cur))
+            cur = []
+        cur.append(line)
+    if cur:
+        steps.append("\n".join(cur))
+    return head, steps
+
+
+def standing_test_gates_load(wf: str) -> str | None:
+    """Why the standing test would not stop the load, or None when it does: the test step runs first, neither step
+    nor the job carries continue-on-error, the test's command is not softened with || true, and the load step has
+    no if: (if: always() or failure() runs it after a red test)."""
+    head, steps = load_job_steps(wf)
+    test = [i for i, st in enumerate(steps) if "run: python3 tests/course_outcomes_objectives_standing_test.py" in st]
+    load_ = [i for i, st in enumerate(steps) if "python3 kb/_course_outcomes_load.py" in st]
+    if len(test) != 1 or len(load_) != 1 or test[0] >= load_[0]:
+        return "the standing test step must come once, before the load step (%s, %s)" % (test, load_)
+    if "continue-on-error" in head:
+        return "the load job carries continue-on-error"
+    for i in range(test[0], load_[0] + 1):
+        if re.search(r"^\s+(?:- )?continue-on-error:", steps[i], re.M):
+            return "step %d carries continue-on-error" % i
+        if "|| true" in steps[i] or "|| exit 0" in steps[i]:
+            return "step %d softens its command" % i
+    if re.search(r"^\s+(?:- )?if:", steps[load_[0]], re.M):
+        return "the load step carries an if:, which can run it past a red standing test"
+    return None
+
+
+@check("GUARD: the load workflow runs the standing test before the load step, so a red check posts nothing (S691)")
+def _():
+    wf = open(os.path.join(ROOT, ".github", "workflows", "course-outcomes-load.yml")).read()
+    why = standing_test_gates_load(wf)
+    assert why is None, why
+
+
+@check("GUARD: the gate fails continue-on-error above run: on the test step or on the job, if: always() or failure() "
+       "on the load step, and || true on the test (S691's second reader)")
+def _():
+    wf = open(os.path.join(ROOT, ".github", "workflows", "course-outcomes-load.yml")).read()
+    test_head = "      - name: The standing test, before anything posts\n"
+    load_head = "      - name: Load the filed read, insert-only\n"
+    assert test_head in wf and load_head in wf, "the step names moved; update this check"
+    mutants = {
+        "continue-on-error above run:": wf.replace(test_head, test_head + "        continue-on-error: true\n"),
+        "if: always() on the load step": wf.replace(load_head, load_head + "        if: always()\n"),
+        "if: failure() on the load step": wf.replace(load_head, load_head + "        if: ${{ failure() }}\n"),
+        "|| true on the test": wf.replace("run: python3 tests/course_outcomes_objectives_standing_test.py",
+                                          "run: python3 tests/course_outcomes_objectives_standing_test.py || true"),
+        "continue-on-error on the job": wf.replace("    timeout-minutes: 20\n",
+                                                   "    timeout-minutes: 20\n    continue-on-error: true\n", 1),
+    }
+    passed = [k for k, v in mutants.items() if v == wf or standing_test_gates_load(v) is None]
+    assert not passed, "mutants the gate lets through: %s" % passed
+
+
 def main():
     failed = 0
     for i, (name, fn) in enumerate(checks, 1):

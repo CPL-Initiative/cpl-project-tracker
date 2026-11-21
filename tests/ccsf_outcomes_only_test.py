@@ -251,17 +251,208 @@ check("6 GUARD: with no CONTENTS heading in reach nothing is printed",
       and STAFF not in read.excerpt_log("AAPS 100", read.slo_excerpt(TEXT.replace("CONTENTS\n", ""))))
 check("6 report 28 is recorded as printing no objectives", not read.prints_objectives(REPORT))
 
+def gate_stale(path):
+    """Why a recall gate is stale, or None: its trial was filed by a parser other than the current one. A stale gate
+    is named as stale, never failed: the reader refuses the full read on its own (S691's second reader)."""
+    want = json.load(open(path))
+    trial = os.path.join(read.OUT_DIR, "trial_%s" % want["trial"], "read.json")
+    if not os.path.exists(trial):
+        return None
+    fp = json.load(open(trial)).get("parser_fingerprint")
+    return None if fp == read.parser_fingerprint() else "trial %s filed by parser %s" % (want["trial"], (fp or "?")[:8])
+
+
 index = os.path.join(ROOT, "kb", "course_outline_index", "index_44696736058.json")
 rc = read.rows_recall(read.CCSF_RECALL)
+ccsf_stale = gate_stale(read.CCSF_RECALL)
+if ccsf_stale:
+    print("note City College of San Francisco's gate is stale (%s): a reread needs a new trial, an eye recount of its "
+          "excerpt log into ccsf_recall.json, then the read" % ccsf_stale)
 if not rc["ok"]:
     try:
         read.main(["--index", index, "--slugs", "city_of_san_francisco", "--part", "1", "--of", "1"])
         refused = False
     except SystemExit as exc:
         refused = "self-recall" in str(exc)
-    check("5 GUARD: with CCSF's count short, a full read refuses before it loads a page", refused)
+    check("5 GUARD: with CCSF's count short%s, a full read refuses before it loads a page"
+          % (" (its gate is stale: %s)" % ccsf_stale if ccsf_stale else ""), refused)
 else:
     check("5 CCSF's self-recall count passes, so a full read may run", rc["ok"], rc)
+
+# 6. S691: Saddleback's and Irvine Valley's host and Rio Hondo's read outcomes only from their first trial, log no
+# excerpt until a person records the host's heading pair, and a full read there refuses with no recall file.
+for host in ("saddleback.curriqunet.com", "riohondo.curriqunet.com"):
+    url = "https://%s/DynamicReports/AllFieldsReportByEntity/1?entityType=Course&reportId=201" % host
+    check("6 %s files parsed outcomes only, its trial no page file" % host,
+          read.outcomes_only(url) and set(read.file_row({"code": "X 1", "report": url, "title_printed": STAFF,
+                                                          "outcomes": ["a"]})) <= set(read.OUTCOMES_ONLY_KEYS))
+    check("6 %s's excerpt log of a page that names its staff names none of them" % host,
+          STAFF not in read.excerpt_log("X 1", read.slo_excerpt(TEXT, host), host)
+          and STAFF not in read.probe_log("X 1", TEXT))
+    check("6 GUARD: %s has no recall file yet, so a full read is refused" % host,
+          host not in read.RECALL_BY_HOST or os.path.exists(read.RECALL_BY_HOST[host]))
+check("6 City College of San Francisco's excerpt is unchanged by the host argument",
+      read.slo_excerpt(TEXT) == read.slo_excerpt(TEXT, "ccsf.curricunet.com") is not None)
+RIO = ("Outline w/SLO\nI. Cover\nOriginator: " + STAFF + "\nV. Course Objectives\nThe Student Will Be Able To:\nRecord transactions.\n"
+       "Prepare statements.\nVI. Methods of Instruction:\nLecture\nIX. Student Learning Outcome\n"
+       "1. Prepare a balance sheet.\n2. Explain accrual accounting.\nX. Texts/Instructional Materials:\n" + STAFF + "\n")
+rio = "riohondo.curriqunet.com"
+check("6 Rio Hondo's excerpts: IX. Student Learning Outcome to X. Texts, V. Course Objectives to VI. Methods; no "
+      "person's line in either",
+      read.slo_excerpt(RIO, rio) == ["1. Prepare a balance sheet.", "2. Explain accrual accounting."]
+      and read.objectives_excerpt(RIO, rio) == ["The Student Will Be Able To:", "Record transactions.", "Prepare statements."]
+      and STAFF not in read.excerpt_log("X 1", read.slo_excerpt(RIO, rio), rio)
+      and read.objectives_excerpt(RIO, "ccsf.curricunet.com") is None)
+got_rio = read.parse_page("", RIO, read.page_system("https://%s/x" % rio), "https://%s/x?reportId=358" % rio)
+check("6 the parser reads Rio Hondo's Roman-numbered sections: 2 SLOs and 2 objectives, the headings without numerals, "
+      "and its lead-in 'The Student Will Be Able To:' is the lead, never an objective (trial 44884988614)",
+      got_rio["outcomes"] == ["Prepare a balance sheet.", "Explain accrual accounting."]
+      and got_rio["objectives"] == ["Record transactions.", "Prepare statements."]
+      and got_rio["heading"] == "Student Learning Outcome" and got_rio["objectives_heading"] == "Course Objectives"
+      and got_rio["objectives_lead"] == "The Student Will Be Able To:", got_rio)
+EGSS = ("V. Course Objectives\nThe Student Will Be Able To:\nStudents will be able to analyze concepts of ethnic studies.\n"
+        "Students will be able to apply theory to critical events.\nVI. Methods of Instruction:\n")
+two_leads = ("Course Objectives\nAt the conclusion of this course, the student should be able to:\n"
+             "Upon completion of the course, students will be able to:\nInterpret results.\nCourse Content\n")
+check("6 after a lead-in, a line that opens 'Students will be able to' and states the objective is an objective "
+      "(Rio Hondo EGSS 110, trial 44885957222); a second line that ends as a lead-in is still passed over (Santa Ana)",
+      read.objectives_of(EGSS)["objectives"] == ["Students will be able to analyze concepts of ethnic studies.",
+                                                 "Students will be able to apply theory to critical events."]
+      and read.objectives_of(two_leads)["objectives"] == ["Interpret results."], read.objectives_of(EGSS))
+for name, host, slug, path in (("Rio Hondo", rio, "rio_hondo", read.RIO_HONDO_RECALL),
+                               ("Saddleback", "saddleback.curriqunet.com", "saddleback", read.SADDLEBACK_RECALL)):
+    rc = read.recall_for(host, slug)
+    why = gate_stale(path)
+    if why:
+        # A parser change stales every gate it touches; the gate then refuses a full read, which is its job. A reread
+        # needs a new trial, an eye recount of its excerpt log into the recall file, then the read (S691).
+        check("6 %s's gate is stale (%s): a full read there refuses until a new trial is counted by eye" % (name, why),
+              not rc["ok"] and "filed by parser" in (rc["why"] or ""), rc)
+    else:
+        check("6 %s's self-recall count passes: 12 of 12 pages, SLOs and objectives counted by eye from its trial's "
+              "log, bound to the current parser" % name, rc["ok"] and rc["right"] == 12, rc)
+check("6 GUARD: Saddleback's count never opens a read for Irvine Valley on the same host, and a host with no file is "
+      "refused",
+      not read.recall_for("saddleback.curriqunet.com", "irvine_valley")["ok"]
+      and not read.recall_for("sdccd.curriqunet.com", "san_diego_of_continuing_education")["ok"])
+with tempfile.TemporaryDirectory() as tmp:
+    want = json.load(open(read.RIO_HONDO_RECALL))
+    bad = dict(want, pages=dict(want["pages"]))
+    bad["pages"]["EGSS 110"] = dict(bad["pages"]["EGSS 110"], objective=0)
+    bad["pages"]["ACCT 100"] = dict(bad["pages"]["ACCT 100"], **{"from": "row"})
+    path = os.path.join(tmp, "r.json")
+    json.dump(bad, open(path, "w"))
+    # The trial's own rows, stamped with the current parser, so this guard tests the counts whether or not a parser
+    # change has staled the committed gate.
+    trial = json.load(open(os.path.join(read.OUT_DIR, "trial_%s" % want["trial"], "read.json")))
+    os.makedirs(os.path.join(tmp, "trial_%s" % want["trial"]))
+    json.dump(dict(trial, parser_fingerprint=read.parser_fingerprint()),
+              open(os.path.join(tmp, "trial_%s" % want["trial"], "read.json"), "w"))
+    rc_bad = read.rows_recall(path, tmp, host=rio)
+check("6 GUARD: a Rio Hondo count changed or sourced from the row fails the gate (2 wrong of 12)",
+      not rc_bad["ok"] and rc_bad["right"] == 10 and len(rc_bad["wrong"]) == 2, rc_bad)
+mix = [{"course_id": 29363, "title": "Introduction to Public Speaking", "reports": ["u1"]},
+       {"course_id": 29364, "title": "Introduction to Public Speaking - Honors", "reports": ["u2"]}]
+retitled = [{"course_id": 8474, "title": "Foundations of Two-Dimensional Design", "reports": ["u1"]},
+            {"course_id": 11308, "title": "Two-Dimensional Design", "reports": ["u2"]}]
+check("6 a code that holds a course and its honors or lab version is left unread (Saddleback COMM 1000); retitled "
+      "versions of one course (Crafton Hills ART 120) and one course id are read",
+      read.variant_mix(mix) and not read.variant_mix(retitled) and not read.variant_mix(mix[:1])
+      and not read.variant_mix([dict(mix[0]), dict(mix[1], reports=[])]))
+imod = read.index_mod
+hond = [{"course_id": 7012, "title": "Honda/Acura Chassis Electrical Systems", "reports": ["u1"]},
+        {"course_id": 7013, "title": "Honda/Acura Express Service", "reports": ["u2"]}]
+check("6 a code norm_code folds from two printed codes, holding two courses, is left unread (Rio Hondo's HOND 045 and "
+      "HOND 045-1, courses 7012 and 7013; S691's second reader); one printed code, one course, or two spellings of one "
+      "code are read",
+      imod.code_suffix("HOND 045-1") == "1" and imod.code_suffix("HOND 045") == ""
+      and imod.code_suffix("ACC-1A") == imod.code_suffix("ACC 1A") == ""
+      and read.folded_pair(hond, {"", "1"}) and not read.folded_pair(hond, {""})
+      and not read.folded_pair(hond[:1], {"", "1"}) and not read.folded_pair([hond[0], dict(hond[1], reports=[])], {"", "1"})
+      and imod.record_code_suffixes(["rio_hondo"]).get("HOND 045") == {"", "1"},
+      imod.record_code_suffixes(["rio_hondo"]).get("HOND 045"))
+SB = ("Course Content - Learning Objectives\nStudents participating in this class will:\n"
+      "Explain budgets.\nCompare investments.\nStudent Learning Outcomes\n"
+      "Students completing this course satisfactorily will be able to:\nCreate a budget.\nChoose an investment.\n"
+      "Course Content - Lecture\nOriginator: " + STAFF + "\n")
+sb = "saddleback.curriqunet.com"
+got_sb = read.parse_page("", SB, read.page_system("https://%s/x" % sb), "https://%s/x?reportId=201" % sb)
+check("6 Saddleback's Course Outline: its lead-in is the lead, never an outcome, and Course Content - Learning "
+      "Objectives heads its objectives (trial 44889396093)",
+      got_sb["outcomes"] == ["Create a budget.", "Choose an investment."]
+      and got_sb["lead"] == "Students completing this course satisfactorily will be able to:"
+      and got_sb["objectives"] == ["Explain budgets.", "Compare investments."], got_sb)
+check("6 Saddleback's excerpts end at the next Course Content heading and at Student Learning Outcomes, no person's line",
+      read.slo_excerpt(SB, sb) == ["Students completing this course satisfactorily will be able to:", "Create a budget.",
+                                   "Choose an investment."]
+      and read.objectives_excerpt(SB, sb)[-1] == "Compare investments."
+      and STAFF not in " ".join(read.slo_excerpt(SB, sb) + read.objectives_excerpt(SB, sb)))
+probe = read.probe_log("X 1", TEXT)
+check("6 a host with no heading pair logs only the lines that name outcomes or objectives, never a person's line",
+      STAFF not in probe and "STUDENT LEARNING OUTCOMES" in probe
+      and all(read.PROBE.search(ln.split("| ", 1)[1]) for ln in probe.split("\n")[1:-1]), probe)
+_saved = dict(read.EXCERPT_BY_HOST)
+read.EXCERPT_BY_HOST["x.example"] = [("Course Outcomes", ("Content", "Textbooks")), ("STUDENT LEARNING OUTCOMES", "CONTENTS")]
+try:
+    two = read.slo_excerpt(TEXT, "x.example")
+finally:
+    read.EXCERPT_BY_HOST.clear()
+    read.EXCERPT_BY_HOST.update(_saved)
+check("6 a host may record several heading pairs; the first whose SLO heading the page prints decides",
+      two == read.slo_excerpt(TEXT) and read.excerpt_pairs("nowhere.example") == [], two)
+
+# 7. The self-recall count for VARIANT_TITLE, variant_mix and row_code (S691's second reader, finding 2): every count in
+# kb/course_outcomes/variant_recall.json recomputed from the indexes it names.
+VR = json.load(open(os.path.join(ROOT, "kb", "course_outcomes", "variant_recall.json")))
+IDX = os.path.join(ROOT, "kb", "course_outline_index")
+counted = [n for n in VR["indexes"] if os.path.exists(os.path.join(IDX, n))]
+got_by, missing = {}, []
+for name in counted:
+    idx = json.load(open(os.path.join(IDX, name)))["index"]
+    shared = [c for c, es in sorted(idx.items()) if len({e.get("course_id") for e in es if e.get("reports")}) >= 2]
+    if shared:
+        got_by[name] = {"shared": len(shared), "variant": [c for c in shared if read.variant_mix(idx[c])]}
+    for code in (VR["by_index"].get(name) or {}).get("different") or {}:
+        if code not in shared or read.variant_mix(idx[code]):
+            missing.append((name, code))
+want_by = {k: {"shared": v["shared"], "variant": v["variant"]} for k, v in VR["by_index"].items()}
+check("7 every index the record counts is committed (%d), none of them a superseded build" % len(counted),
+      len(counted) == len(VR["indexes"]) == VR["indexes_read"] and not set(counted) & set(VR["superseded"])
+      and set(want_by) <= set(counted), (len(counted), VR["indexes_read"]))
+check("7 the honors-or-lab rule over %d indexes: %d shared codes, %d left unread, each a course and its honors or lab "
+      "version, none missed (the record's counts by eye)" % (VR["indexes_read"], VR["totals"]["shared"],
+                                                            VR["totals"]["variant"]),
+      got_by == want_by and sum(v["shared"] for v in got_by.values()) == VR["totals"]["shared"]
+      and sum(len(v["variant"]) for v in got_by.values()) == VR["totals"]["variant"],
+      [(k, got_by.get(k), want_by.get(k)) for k in set(got_by) | set(want_by) if got_by.get(k) != want_by.get(k)])
+check("7 the %d codes that hold different courses still read as retitles under the title rule (the gap the record "
+      "names: Chabot FT 1, Palomar NURS 118 and 217, three at Crafton Hills, Rio Hondo HOND 045)"
+      % VR["totals"]["different"], not missing and VR["totals"]["different"] == 7, missing)
+sbh = VR["saddleback_honors_codes"]
+sb_idx = json.load(open(os.path.join(IDX, sbh["index"])))["index"]
+hcodes = {c: es for c, es in sb_idx.items() if re.search(r"\d[A-Z]*H$", c.split(" ", 1)[1])
+          and any(e.get("reports") for e in es)}
+check("7 row_code: Saddleback's %d readable codes ending H each read Honors in every entry" % sbh["count"],
+      len(hcodes) == sbh["count"]
+      and all(re.search(r"honors", e.get("title") or "", re.I) for es in hcodes.values() for e in es),
+      len(hcodes))
+drops = {}
+for slug, name in (("saddleback", sbh["index"]), ("rio_hondo", "index_44882239715.json")):
+    index = json.load(open(os.path.join(IDX, name)))
+    kept = {c["code"] for c in read.wanted_courses(index, [slug])}
+    _vm, _fp = read.variant_mix, read.folded_pair
+    try:
+        read.variant_mix = lambda e: False
+        by_variant = {c["code"] for c in read.wanted_courses(index, [slug])} - kept
+        read.folded_pair = lambda e, s: False
+        every = {c["code"] for c in read.wanted_courses(index, [slug])}
+    finally:
+        read.variant_mix, read.folded_pair = _vm, _fp
+    drops[slug] = {"wanted": len(kept), "variant": sorted(by_variant), "folded": sorted(every - kept - by_variant)}
+check("7 no code Saddleback's or Rio Hondo's records want drops to the honors-or-lab rule; the folded-code rule drops "
+      "Rio Hondo's HOND 045 alone (Saddleback 1,301 wanted, Rio Hondo 946)",
+      drops == {"saddleback": {"wanted": 1301, "variant": [], "folded": []},
+                "rio_hondo": {"wanted": 946, "variant": [], "folded": ["HOND 045"]}}, drops)
 
 failed = [r for r in results if not r[1]]
 for name, ok, why in results:
