@@ -31,7 +31,8 @@
 //       listed"): signed in, the box lists each thing handed over by name; signed out it lists nothing and never
 //       asks the table;
 //  (16) ⭐ asking again for what a person gave (S693; Sam answered all 12 on 2026-11-20): an answered course leaves
-//       the to-do, stays listed with what was handed over, and keeps its panel, which says its outcomes still miss.
+//       Needs you (Sam, 2026-11-21: finished items leave right away), the list head counts it as handed over, and
+//       its panel still opens at its address and says its outcomes still miss.
 //
 // Run from repo root: `npm test` (or `node tests/commons_handover.test.js`).
 const fs = require("fs");
@@ -361,18 +362,18 @@ const STORED = { "storage/v1/object/commons-handover": () => ({ status: 200, bod
   x = load("#commons", { signedIn: true, hunt: ANS, answers: Object.assign({}, ADDED) });
   await x.M.boot(); await settle();
   const need = x.d.querySelector("#cmf-need-rows");
-  check("(16) ⭐ the to-do counts only the courses still waiting", /^7 courses still taught at 3 colleges need their course outline from a person\./.test(txt(need.querySelector("p"))), txt(need.querySelector("p")));
+  check("(16) ⭐ the to-do counts only the courses still waiting", /^7 courses still taught at 3 colleges need their course outline from a person\./.test(txt(need.querySelector("#cmf-outline-list p"))), txt(need.querySelector("#cmf-outline-list p")));
   check("(16) a college with one course answered keeps only the other on its to-do line",
     txt(need.querySelector('li[data-hunt-college="north_orange_continuing_education"] p')) === "North Orange Continuing Education: " + aNoce.still_taught[0].course + "." && !need.querySelector('li[data-hunt-college="ohlone"]'),
     txt(need.querySelector('li[data-hunt-college="north_orange_continuing_education"] p')));
-  check("(16) ⭐ the answered courses are listed by college with what was handed over",
-    txt(need.querySelector('li[data-hunt-answered="ohlone"] p')) === "Ohlone College: " + aOhl.answered.map((c) => c.course).join(", ") + ". Noted as not in the 2026-2027 catalog."
-      && txt(need.querySelector('li[data-hunt-answered="north_orange_continuing_education"] p')) === "North Orange Continuing Education: " + pastedCourse.course + ". Catalog description and units or hours filed."
-      && /Answered by a person, and off this list\. Each course's outcomes are still missing/.test(txt(need.querySelector(".cmf-answered-h"))),
-    txt(need.querySelector(".cmf-answered")));
-  const ansLinks = Array.from(need.querySelectorAll(".cmf-answered a[data-course]"));
-  check("(16) each answered course still opens its own panel", ansLinks.length === 5 && ansLinks.every((l) => /^#commons\/course\/CCC\d+$/.test(l.getAttribute("href"))), ansLinks.map((l) => l.getAttribute("href")).join(" "));
-  press(x.w, ansLinks.find((l) => txt(l) === pastedCourse.course)); await settle();
+  /* Sam, 2026-11-21 (item 2): an item he finished leaves the list at once; the list head counts it as handed over. */
+  check("(16) ⭐ the answered courses leave Needs you: no answered list, and the head counts them as handed over",
+    !need.querySelector(".cmf-answered") && !need.querySelector("[data-hunt-answered]") && txt(need.querySelector(".cmf-handed")) === "Handed over: 5"
+      && need.querySelector(".cmf-handed").classList.contains("cmn-pill-done"),
+    txt(need.querySelector(".cmf-handed")));
+  /* An answered course still opens its own panel at its own address. */
+  check("(16) each answered course still opens its own panel at its address", x.w.CPL_COMMONS_FRONT.openCourse(pastedCourse.control_number) !== false);
+  await settle();
   panel = x.d.querySelector("#cho-panel");
   check("(16) ⭐ an answered course's panel says it is answered, by whom and when, and that its outcomes are still missing",
     txt(panel.querySelector(".cho-eyebrow")) === "Answered by a person" && /Answered ?Catalog description and units or hours filed \(A Person, Nov 20, 2026\)\. It is off the to-do\./.test(txt(panel.querySelector("#cho-have-wrap")))
@@ -380,22 +381,22 @@ const STORED = { "storage/v1/object/commons-handover": () => ({ status: 200, bod
     txt(panel.querySelector("#cho-have-wrap")));
   check("(16) the answered course's panel still takes a hand-over, and the panel steps through all 12 courses",
     !!panel.querySelector(".cho-drop") && !!panel.querySelector("details.cho-note") && /^Course \d+ of 12$/.test(txt(panel.querySelector("#cho-pos"))), txt(panel.querySelector("#cho-pos")));
-  press(x.w, ansLinks.find((l) => txt(l) === aOhl.answered[0].course)); await settle();
+  x.w.CPL_COMMONS_FRONT.openCourse(aOhl.answered[0].control_number); await settle();
   panel = x.d.querySelector("#cho-panel");
   check("(16) a course answered with a note says no data is filed for it",
     /Answered ?Noted as not in the 2026-2027 catalog \(A Person, Nov 20, 2026\)/.test(txt(panel.querySelector("#cho-have-wrap"))) && /Description and hours ?None is filed: the course was noted, with no data\./.test(txt(panel.querySelector("#cho-have-wrap"))),
     txt(panel.querySelector("#cho-have-wrap")));
-  // the committed block, whatever it holds today: every answered course is a link, and none is also on the to-do
+  // the committed block, whatever it holds today: only open courses are links, and the head counts the answered ones
   x = load("#commons", { hunt: LIVE_HUNT });
   await x.M.boot(); await settle();
   const liveAnswered = [].concat(...LIVE_HUNT.colleges.map((c) => (c.answered || []).map((a) => a.control_number)));
   const liveOpen = [].concat(...LIVE_HUNT.colleges.filter((c) => c.hunted && !c.filed).map((c) => (c.still_taught || []).map((a) => a.control_number)));
   const liveLinks = Array.from(x.d.querySelectorAll("#cmf-need-rows a[data-course]")).map((l) => l.getAttribute("data-course"));
-  check("(16) the committed hunt: every answered course is a link, and no course is on both lists",
-    liveAnswered.every((k) => liveLinks.includes(k)) && liveOpen.every((k) => liveLinks.includes(k)) && !liveAnswered.some((k) => liveOpen.includes(k))
-      && liveLinks.length === liveAnswered.length + liveOpen.length && LIVE_HUNT.still_taught_answered === liveAnswered.length,
+  check("(16) the committed hunt: every open course is a link, no answered course is, and the head counts the answered",
+    liveOpen.every((k) => liveLinks.includes(k)) && !liveAnswered.some((k) => liveLinks.includes(k)) && liveLinks.length === liveOpen.length
+      && txt(x.d.querySelector("#cmf-need-rows .cmf-handed")) === "Handed over: " + liveAnswered.length,
     JSON.stringify({ answered: liveAnswered.length, open: liveOpen.length, links: liveLinks.length }));
-  if (!liveOpen.length) check("(16) with nothing left open the group says so in words", /^No still-taught course waits on an outline from a person\./.test(txt(x.d.querySelector("#cmf-need-rows p"))), txt(x.d.querySelector("#cmf-need-rows p")));
+  if (!liveOpen.length) check("(16) with nothing left open the group says so in words", /^No still-taught course waits on an outline from a person\./.test(txt(x.d.querySelector("#cmf-outline-list p"))), txt(x.d.querySelector("#cmf-outline-list p")));
 
   // ── (9) the public counts as words ──
   const SUMMARY = [

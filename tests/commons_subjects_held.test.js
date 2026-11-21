@@ -98,7 +98,7 @@ async function settle() { for (let i = 0; i < 40; i++) await tick(); }
   x = load("#commons", { "kb/status/held_subject_codes.json": undefined });
   await x.M.boot(); await settle();
   const sc = x.d.querySelector('.cmf-card[data-key="subjects"]');
-  check("(6) a missing held file reads TBA and the page still draws", sc && /common subject code: TBA/.test(txt(sc)) && x.d.querySelectorAll(".cmf-card").length === 9);
+  check("(6) a missing held file reads TBA and the page still draws", sc && /common subject code: TBA/.test(txt(sc)) && x.d.querySelectorAll(".cmf-card").length === 11);
   x = load("#commons/subjects/held", { "kb/status/held_subject_codes.json": undefined });
   await x.M.boot(); await settle();
   check("(6) the held view says when its file cannot be read", /could not be read/.test(txt(x.d.querySelector(".csb-note"))));

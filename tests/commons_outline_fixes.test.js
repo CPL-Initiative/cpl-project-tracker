@@ -72,7 +72,7 @@ function withHunt(change) {
   })());
 
   check("(2) ⭐ the group is named for its work, and \"Rows waiting on a person\" is gone from the page",
-    box && txt(box.querySelector("h4")) === "Course Outline and Catalog Fixes Needed" && !/Rows waiting on a person/.test(txt(needs)), txt(needs).slice(0, 200));
+    box && txt(box.querySelector("h4")) === "Course Outline Fixes" && !/Rows waiting on a person/.test(txt(needs)), txt(needs).slice(0, 200));
   const titles = x.d.querySelector("#cmf-need-titles");
   check("(2) the held exhibit titles sit under their own name", titles && txt(titles.querySelector("h4")) === "Exhibit Titles to Name" && titles.querySelector("#cmf-held") && !box.querySelector("#cmf-held"));
   check("(2) no group heading in Needs you opens on What, When, How or Why", Array.from(needs.querySelectorAll("h4")).every((h) => !/^(What|When|How|Why)\b/.test(txt(h))));

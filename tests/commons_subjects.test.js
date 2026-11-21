@@ -72,7 +72,7 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
   x = load("#commons", { "kb/status/local_subject_titles.json": undefined });
   await x.M.boot(); await settle();
   const sc = x.d.querySelector('.cmf-card[data-key="subjects"]');
-  check("(3) a missing titles file reads TBA and the page still draws", sc && /Step b, local subject title: TBA/.test(txt(sc)) && x.d.querySelectorAll(".cmf-card").length === 9);
+  check("(3) a missing titles file reads TBA and the page still draws", sc && /Step b, local subject title: TBA/.test(txt(sc)) && x.d.querySelectorAll(".cmf-card").length === 11);
 
   /* (4) the list from its address */
   x = load("#commons/subjects");

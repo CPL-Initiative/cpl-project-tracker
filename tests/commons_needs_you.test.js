@@ -130,8 +130,8 @@ const count = (hay, needle) => hay.split(needle).length - 1;
 
   // ── (C) the held titles, live ──
   const held = f.d.getElementById("cmf-held");
-  check("(C) ⭐ with the saves in kb_curation, the held line reads as saved by a person, waiting for the nightly fold",
-    new RegExp("^" + HELD.length + " exhibit titles a person saved wait for the nightly fold, which adds them to the reference\\. No one needs to act\\.").test(txt(held)));
+  check("(C) ⭐ with the saves in kb_curation, the held line reads as saved by a person, waiting for the nightly build",
+    new RegExp("^" + HELD.length + " exhibit titles a person saved wait for the nightly build, which adds them to the reference\\. No one needs to act\\.").test(txt(held)));
   check("(C) and it is work for no one: no held link, no owner, no count of held titles", !held.querySelector('a[href="#exhibits/held"]') && !/held for a person/.test(txt(held)) && !/a curator/.test(txt(held)));
   check("(C) ⭐ the five titles COBIx could not find are findable from the line", /Completed NC\.NURSNG-089 at College of the Canyons is saved as Success in Fundamental Nursing/.test(txt(held)) && held.querySelectorAll(".cmf-saved-list li").length === HELD.length);
   const live = f.calls.filter((c) => c[0].indexOf("/rest/v1/kb_curation") >= 0);
@@ -220,10 +220,13 @@ const count = (hay, needle) => hay.split(needle).length - 1;
   const SUBVIEWS = {
     "commons/details/decisions": /RECORD\.on = !!\(a && a\[0\] === "details" && a\[1\] === "decisions"\)/.test(COMMONS),
     "collect/outlines-blocked": /"outlines-blocked": "Course outlines blocked"/.test(DATA),
+    "collect/unread": /unread: \{ word: "Not collected yet"/.test(DATA),
     "exhibits/held": /ROUTE_WORDS = \{ held:/.test(fs.readFileSync("exhibits.js", "utf8")),
     "cr-reference/names": /FILTERS = \[[^\]]*"names"/.test(fs.readFileSync("cr_reference.js", "utf8"))
   };
-  const links = Array.from(f.d.querySelectorAll("#cmf-needs a")).filter((l) => /^#/.test(l.getAttribute("href")));
+  /* Sam, 2026-11-21 (item 1): the ranked links jump to a card on this page (data-onpage); they are guarded in
+     tests/commons_page_clarity.test.js. Every other Needs you link opens a view in the router. */
+  const links = Array.from(f.d.querySelectorAll("#cmf-needs a")).filter((l) => /^#/.test(l.getAttribute("href")) && !l.hasAttribute("data-onpage"));
   /* Sam, 2026-11-20 (his work order): the catalog addresses in Course Outline and Catalog Fixes Needed are links that
      open in a new tab. They are the one exception (a.cmf-out inside #cmf-need-rows, guarded in
      tests/commons_outline_fixes.test.js); every other Needs you link stays in the site. */
@@ -288,10 +291,10 @@ const count = (hay, needle) => hay.split(needle).length - 1;
   const longDate = (n) => new Date(n * 86400000).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
   const tile = Array.from(cw.document.querySelectorAll(".cdd-tile")).find((t) => /Active programs complete/.test(txt(t)));
   const pair = R.complete.toLocaleString("en-US") + " of " + R.active.toLocaleString("en-US");
-  check("(6) ⭐ #collect's Active programs tile shows the Commons' count (" + pair + ")", tile && txt(tile).indexOf(pair) === 0 && txt(fr.d.querySelector(".cmf-status")).indexOf(pair) === 0, txt(tile));
+  check("(6) ⭐ #collect's Active programs tile shows the Commons' count (" + pair + ")", tile && txt(tile).indexOf(pair) === 0 && txt(fr.d.querySelector(".cmf-date .cmf-more-body")).indexOf(pair + " Active programs are complete") >= 0, txt(tile));
   const E = cw.CPL_COMMONS_ETA, B = E.base(cw.CPL_COMMONS_DATA.model(cfiles["kb/status/commons_data.json"]), PR, cfiles["kb/reference/industry_credential_skills.json"]);
   const progDay = E.phase1(B, E.freshState(), null).parts.filter((p) => p.id === "programs")[0].now.day;
-  check("(6) ⭐ #collect's program-records date is the Commons' date (" + longDate(R.doneN) + ")", progDay === R.doneN && txt(fr.d.querySelector(".cmf-date-v")) === longDate(R.doneN) && B.remaining === R.left);
+  check("(6) ⭐ #collect's program-records date is the Commons' date (" + longDate(R.doneN) + ")", progDay === R.doneN && txt(fr.d.querySelector(".cmf-date-v")) === longDate(R.doneN) + " estimated" && B.remaining === R.left);
   check("(6) ⭐ computed in one file: no page keeps its own COCI-only count or its own target",
     !/\b713\b/.test(FRONT) && !/\b713\b/.test(ETA) && !/\b713\b/.test(DATA) && /COCI_ONLY = 713/.test(PRG) && !/h\.active - h\.complete/.test(ETA));
   check("(6) the shared module is published and loaded before both pages", /^publish commons_program_records\.js$/m.test(fs.readFileSync(".github/pages_allowlist.txt", "utf8"))
