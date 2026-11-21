@@ -1,9 +1,10 @@
-{"schema":1,"college":"West Los Angeles College","slug":"west_los_angeles","basis":"live","census_at":"2026-11-20 23:24Z","correction_rules":false,"programs":[
+{"schema":1,"college":"West Los Angeles College","slug":"west_los_angeles","basis":"live","census_at":"2026-11-21 10:10Z","correction_rules":false,"programs":[
 {"cn":"42558","title":"Athletic Training and Sports Medicine","award":"A.S. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=70"},
 {"cn":"36801","title":"College Readiness","award":"Noncredit program","cause":"coverage_fails","lever":"reconcile_steps","url":"https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=230"},
 {"cn":"37834","title":"College Readiness for the English Language Learner","award":"Noncredit program","cause":"coverage_fails","lever":"reconcile_steps","url":"https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=230"},
 {"cn":"46130","title":"Public Health","award":"A.S. T Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=116"},
 {"cn":"38406","title":"Science Preparation","award":"Noncredit program","cause":"coverage_fails","lever":"reconcile_steps","url":"https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=247"},
+{"cn":"46261","title":"Spanish for the Workplace Fundamentals","award":"Noncredit program","cause":"found_not_extracted","lever":"paid_read","url":"https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=266"},
 {"cn":"36685","title":"Arithmetic Fundamentals","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"38617","title":"Banquet and Restaurant Server","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"20228","title":"Business","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
@@ -37,7 +38,6 @@
 {"cn":"35079","title":"International Area Studies - Latin America","award":"A.A. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"35064","title":"International Area Studies - Middle East","award":"A.A. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"38647","title":"Mobile Application Development Essentials","award":"Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
-{"cn":"46261","title":"Spanish for the Workplace Fundamentals","award":"Noncredit program","cause":"page_not_found","lever":"reader_page_search","url":"https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=266"},
 {"cn":"19526","title":"Web Support & Administration","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"37833","title":"Workforce Preparation and Career Success","award":"Noncredit program","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"37264","title":"Workplace Success I: Creative Leadership","award":"Noncredit program","cause":"page_not_found","lever":"reader_page_search","url":null},

@@ -1,4 +1,4 @@
-{"schema":1,"college":"San Joaquin Delta College","slug":"san_joaquin_delta","basis":"live","census_at":"2026-11-20 23:24Z","correction_rules":true,"programs":[
+{"schema":1,"college":"San Joaquin Delta College","slug":"san_joaquin_delta","basis":"live","census_at":"2026-11-21 10:10Z","correction_rules":true,"programs":[
 {"cn":"33038","title":"Art History","award":"A.A- T Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"19689","title":"Business","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"17714","title":"Computer Networking - Essentials","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
@@ -39,14 +39,13 @@
 {"cn":"10257","title":"Psychiatric Technician","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"32820","title":"Psychiatric Technology","award":"A.S. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"19742","title":"Psychology","award":"A.A. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
-{"cn":"45583","title":"Public Safety Dispatcher","award":"Noncredit program","cause":"page_not_found","lever":"reader_page_search","url":"https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3402&print"},
 {"cn":"19694","title":"Real Estate","award":"A.S. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"42524","title":"Real Estate Broker","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"43463","title":"Social Media Strategy","award":"Noncredit program","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"33123","title":"Spanish","award":"A.A- T Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
+{"cn":"19752","title":"Spanish Language","award":"A.A. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"07445","title":"Substance Abuse Counselor","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"07303","title":"Tax Preparation","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
-{"cn":"19752","title":"Spanish Language","award":"A.A. Degree","cause":"places_none","lever":"reader_page_assignment","url":null},
 {"cn":"07304","title":"Computer Science","award":"A.S. Degree","cause":"units_incomplete","lever":"reconcile_steps","url":"https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3164&print","units":{"sum":[15.0,21.0],"printed":[21.0,21.0],"status":"incomplete","measure":"units","against":"program"}},
 {"cn":"16764","title":"Music","award":"A.A. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3236&print","units":{"sum":[26.0,32.0],"printed":[24.0,24.0],"status":"unequal","measure":"units","against":"program"}}
 ]}

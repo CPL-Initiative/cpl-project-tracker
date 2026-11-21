@@ -1,4 +1,4 @@
-{"schema":1,"college":"Fullerton College","slug":"fullerton","basis":"live","census_at":"2026-11-20 23:24Z","correction_rules":false,"programs":[
+{"schema":1,"college":"Fullerton College","slug":"fullerton","basis":"live","census_at":"2026-11-21 10:10Z","correction_rules":false,"programs":[
 {"cn":"03839","title":"Construction Technology","award":"A.S. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://catalog.nocccd.edu/fullerton-college/degrees-certificates/construction/construction-technology-associate-science-degree/"},
 {"cn":"21271","title":"Construction Technology","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"coverage_fails","lever":"reconcile_steps","url":"https://catalog.nocccd.edu/fullerton-college/degrees-certificates/construction/construction-technology-certificate/"},
 {"cn":"18166","title":"Interdisciplinary Studies: Emphasis in Social Behavior and Self-Development","award":"A.A. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://catalog.nocccd.edu/fullerton-college/degrees-certificates/interdisciplinary-studies/interdisciplinary-studies-emphasis-social-behavior-self-development-associate-arts-degree/"},
@@ -19,12 +19,9 @@
 {"cn":"03829","title":"Journalism","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"03821","title":"Microbiology","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"08397","title":"Radio Production","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
-{"cn":"03876","title":"Administration of Justice","award":"A.S. Degree","cause":"page_not_found","lever":"reader_page_search","url":"https://catalog.nocccd.edu/fullerton-college/degrees-certificates/administration-justice/administration-justice-associate-science-degree/"},
-{"cn":"31527","title":"Administration of Justice","award":"A.S. T Degree","cause":"page_not_found","lever":"reader_page_search","url":"https://catalog.nocccd.edu/fullerton-college/degrees-certificates/administration-justice/administration-justice-associate-science-degree-transfer/"},
 {"cn":"46115","title":"Autonomous Industrial Inspection","award":"Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"41372","title":"Autonomous Systems Technician","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"45832","title":"Cal-GETC","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
-{"cn":"42418","title":"Crime Scene Investigation","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"page_not_found","lever":"reader_page_search","url":"https://catalog.nocccd.edu/fullerton-college/degrees-certificates/administration-justice/crime-scene-investigation-skills-certificate/"},
 {"cn":"44110","title":"Drone and Autonomous Systems","award":"A.S. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"46098","title":"Drone and Autonomous Systems","award":"Baccalaureate of Science (B.S.) Degree.","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"46122","title":"Drone and Precision Agriculture Technician","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"page_not_found","lever":"reader_page_search","url":null},

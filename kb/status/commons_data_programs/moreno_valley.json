@@ -1,14 +1,14 @@
-{"schema":1,"college":"Moreno Valley College","slug":"moreno_valley","basis":"live","census_at":"2026-11-20 23:24Z","correction_rules":true,"programs":[
+{"schema":1,"college":"Moreno Valley College","slug":"moreno_valley","basis":"live","census_at":"2026-11-21 10:10Z","correction_rules":true,"programs":[
 {"cn":"40329","title":"Beginning American College English","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"30171","title":"CSU General Education","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"30139","title":"Dental Hygiene","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"30172","title":"IGETC","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"38799","title":"Social Media for Business","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"30152","title":"Administration of Justice/Law Enforcement Basic Peace Officer Academy Intensive","award":"A.S. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"38458","title":"Administration of Justice/Law Enforcement Basic Peace Officer Modular Academy","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"38874","title":"Administration of Justice/Law Enforcement Basic Peace Officer Modular Academy","award":"A.S. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"37393","title":"Fire Service Leadership","award":"A.S. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"37431","title":"Fire Service Leadership","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
-{"cn":"30152","title":"Administration of Justice/Law Enforcement Basic Peace Officer Academy Intensive","award":"A.S. Degree","cause":"places_none","lever":"reader_page_assignment","url":null},
 {"cn":"45914","title":"Global Studies","award":"Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units","cause":"units_incomplete","lever":"reconcile_steps","url":"https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/6365","units":{"sum":[5.0,8.0],"printed":[15.0,15.0],"status":"incomplete","measure":"units","against":"program"}},
 {"cn":"30169","title":"Humanities, Philosophy & Arts","award":"A.A. Degree","cause":"units_incomplete","lever":"reconcile_steps","url":"https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4925","units":{"sum":[18.0,18.0],"printed":[18.0,18.0],"status":"incomplete","measure":"units","against":"program"}},
 {"cn":"30167","title":"Math & Sciences","award":"A.S. Degree","cause":"units_incomplete","lever":"reconcile_steps","url":"https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4927","units":{"sum":[7.0,16.0],"printed":[18.0,18.0],"status":"incomplete","measure":"units","against":"program"}},

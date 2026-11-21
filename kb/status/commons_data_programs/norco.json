@@ -1,4 +1,4 @@
-{"schema":1,"college":"Norco College","slug":"norco","basis":"live","census_at":"2026-11-20 23:24Z","correction_rules":true,"programs":[
+{"schema":1,"college":"Norco College","slug":"norco","basis":"live","census_at":"2026-11-21 10:10Z","correction_rules":true,"programs":[
 {"cn":"30061","title":"Business Administration: Management Concentration","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"course_added","lever":"reconcile_steps","url":"https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5148"},
 {"cn":"40293","title":"Beginning American College English","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"38743","title":"Computerized Numerical Control Operator","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
@@ -11,10 +11,9 @@
 {"cn":"30112","title":"IGETC","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"42716","title":"Noncredit Essential Fusion 360","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"32821","title":"Pre-Engineering","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"30056","title":"Business Administration: General Business Concentration","award":"A.S. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"31317","title":"Game Art: Environments and Vehicles","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"37169","title":"Kinesiology","award":"A.A- T Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
-{"cn":"30056","title":"Business Administration: General Business Concentration","award":"A.S. Degree","cause":"places_none","lever":"reader_page_assignment","url":null},
-{"cn":"45912","title":"Global Studies","award":"Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units","cause":"units_incomplete","lever":"reconcile_steps","url":"https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/6342","units":{"sum":[15.0,15.0],"printed":[15.0,15.0],"status":"equal","measure":"units","against":"program"}},
 {"cn":"30109","title":"Humanities, Philosophy & Arts","award":"A.A. Degree","cause":"units_incomplete","lever":"reconcile_steps","url":"https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5569/5551","units":{"sum":[18.0,18.0],"printed":[18.0,18.0],"status":"incomplete","measure":"units","against":"program"}},
 {"cn":"30107","title":"Math & Sciences","award":"A.S. Degree","cause":"units_incomplete","lever":"reconcile_steps","url":"https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5546","units":{"sum":[7.0,16.0],"printed":[18.0,18.0],"status":"incomplete","measure":"units","against":"program"}},
 {"cn":"39998","title":"Apprenticeship: Manufacturing Technician 2","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"units_unequal","lever":"reconcile_steps","url":"https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5139","units":{"sum":[32.0,32.0],"printed":[30.0,31.0],"status":"unequal","measure":"units","against":"program"}},
