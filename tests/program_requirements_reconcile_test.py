@@ -1927,6 +1927,28 @@ check("Glendale: the floor step is Glendale's alone among the colleges that prin
       [c for c, v in R.load_steps().items() if isinstance(v, dict) and any(
           "with\\s+GE" in (st.get("pattern") or "") for st in v.get("steps") or [])] == ["Glendale Community College"])
 
+# S697 (piles2): Glendale's Addiction Studies Counseling 02570 prints its 1-unit internship as "AD ST 50 · Alcohol and Drug
+# Studies Internship · 2 x 1" (college-page-read 44914829120), and the repeat step counts it twice: 38 to the printed 39.
+_ad = json.load(open(os.path.join(ROOT, "kb", "program_requirements_college", "glendale_community", "records",
+                                  "02570.json")))["record"]
+for _b in _ad["blocks"]:
+    for _c in _b["courses"]:
+        _c.pop("times", None)  # the step reads the record as the extraction filed it
+_ad_page = ("Field Placement/Internship · AD ST 152 · Internship I · 3 · AD ST 153 · Internship II · 3 · AD ST 50 · "
+            "Alcohol and Drug Studies Internship · 2 x 1 · TOTAL UNITS REQUIRED · 39")
+check("Glendale 02570: as filed, the blocks sum to 38 against the printed 39",
+      S.program_units(_ad, {})[0] == (38.0, 38.0) and _ad["program"]["total_units"] == {"min": 39, "max": 39})
+_ad_new, _ad_notes = R.reconcile(copy.deepcopy(_ad), _ad_page, "Glendale Community College", "A.S. Degree",
+                                 control_number="02570")
+check("Glendale 02570: '2 x 1' gives AD ST 50 times 2, and the blocks sum to the printed 39",
+      [(c["code"], c.get("times")) for b in _ad_new["blocks"] for c in b["courses"] if c.get("times")]
+      == [("AD ST 50", 2)] and S.program_units(_ad_new, {})[0] == (39.0, 39.0)
+      and any(n["field"] == "times" and "2 x 1" in n["words"] for n in _ad_notes))
+check("Glendale 02570: a page printing AD ST 50 with its plain units counts it once",
+      not any(c.get("times") for b in R.reconcile(copy.deepcopy(_ad), _ad_page.replace("2 x 1", "1"),
+                                                  "Glendale Community College", "A.S. Degree")[0]["blocks"]
+              for c in b["courses"]))
+
 failed = [n for n, ok in results if not ok]
 for n, ok in results:
     print(("ok   " if ok else "FAIL ") + n)
