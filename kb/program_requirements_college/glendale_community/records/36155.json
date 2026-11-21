@@ -61,18 +61,20 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
-    39.0,
-    39.0
+    41.0,
+    41.0
    ],
    "stated": [
     39.0,
     39.0
    ],
    "against": "program",
-   "why": []
+   "why": [
+    "the blocks sum to 41.0-41.0; the catalog states 39.0-39.0"
+   ]
   },
   "repeated": {
    "codes": [],
@@ -96,7 +98,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -284,7 +286,8 @@
       "units": 2,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": false,
+      "times": 2
      }
     ]
    }
@@ -298,5 +301,16 @@
    "Award title says Certificate of Achievement requiring 30 to fewer than 60 units; catalog total 39 is consistent."
   ]
  },
- "extracted_run": "43415972509"
+ "extracted_run": 44915445658,
+ "reconciled": [
+  {
+   "field": "times",
+   "was": null,
+   "now": {
+    "AD ST 50": 2
+   },
+   "words": "AD ST 50\n\n\t\n\nAlcohol and Drug Studies Internship\n\n\t\n\n2 x 1"
+  }
+ ],
+ "read_run": "43415972509"
 }
