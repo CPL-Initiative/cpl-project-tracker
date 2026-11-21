@@ -519,7 +519,8 @@ window.COBI_ADMIN_SURFACE = {
         "commons_curation_eta.js",
         "commons_data.js",
         "commons_look.js",
-        "commons_progress.js"
+        "commons_progress.js",
+        "commons_subjects.js"
       ],
       "reads": [
         "course_outcomes",

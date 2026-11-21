@@ -4,9 +4,9 @@
   "supabase_tables": 119,
   "rpcs": 68,
   "edge_functions": 16,
-  "file_datasets": 1107,
+  "file_datasets": 1111,
   "external_services": 197,
-  "consumers": 641,
+  "consumers": 644,
   "workflows": 76,
   "data_js_files": 71,
   "tabs": 41
@@ -1205,7 +1205,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1763
+     "line": 1776
     },
     {
      "id": "module:admin.js",
@@ -1937,7 +1937,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2416
+     "line": 2429
     }
    ],
    "main_committers": []
@@ -1993,7 +1993,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1553,
+     "line": 1570,
      "tabs": [
       "commons"
      ]
@@ -2241,7 +2241,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 35
+     "line": 38
     },
     {
      "id": "module:commons_progress.js",
@@ -2608,7 +2608,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1373
+     "line": 1386
     }
    ],
    "main_committers": []
@@ -2627,7 +2627,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1718
+     "line": 1731
     },
     {
      "id": "module:college_briefing.js",
@@ -3336,7 +3336,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1774
+     "line": 1787
     },
     {
      "id": "module:dashboard_filters.js",
@@ -4560,7 +4560,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 255
+     "line": 262
     },
     {
      "id": "module:fact-sheet/factsheet_edit.js",
@@ -4681,7 +4681,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2080
+     "line": 2093
     }
    ],
    "main_committers": []
@@ -5909,7 +5909,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1971
+     "line": 1984
     },
     {
      "id": "module:admin.js",
@@ -6081,6 +6081,13 @@
      "line": 163
     },
     {
+     "id": "script:kb/_build_local_subject_titles.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 34
+    },
+    {
      "id": "script:kb/_build_not_applicable.py",
      "kind": "script",
      "direction": "read",
@@ -6121,6 +6128,13 @@
      "direction": "read",
      "how": "literal",
      "line": 133
+    },
+    {
+     "id": "script:kb/_pile_mint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 559
     },
     {
      "id": "script:kb/_prefix_alias_census.py",
@@ -6185,6 +6199,13 @@
      "direction": "read",
      "how": "literal",
      "line": 215
+    },
+    {
+     "id": "script:kb/_pile_mint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 562
     }
    ],
    "served": false,
@@ -6761,7 +6782,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 993,
+     "line": 994,
      "tabs": [
       "commons"
      ]
@@ -6777,7 +6798,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1135,
+     "line": 1151,
      "tabs": [
       "commons"
      ]
@@ -6793,7 +6814,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1010,
+     "line": 1023,
      "tabs": [
       "commons"
      ]
@@ -7020,6 +7041,22 @@
    "served": true,
    "main_committers": []
   },
+  "file:commons_subjects.js": {
+   "consumers": [
+    {
+     "id": "module:commons.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 1006,
+     "tabs": [
+      "commons"
+     ]
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:comms.js": {
    "consumers": [
     {
@@ -7202,7 +7239,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2355
+     "line": 2368
     },
     {
      "id": "module:college_briefing.js",
@@ -7415,7 +7452,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1433
+     "line": 1446
     },
     {
      "id": "module:cpl_funding.js",
@@ -12534,6 +12571,13 @@
      "direction": "read",
      "how": "literal",
      "line": 63
+    },
+    {
+     "id": "script:kb/_pile_mint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 568
     }
    ],
    "producers": [
@@ -14599,6 +14643,13 @@
      "direction": "read",
      "how": "literal",
      "line": 65
+    },
+    {
+     "id": "script:kb/_pile_mint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 571
     }
    ],
    "producers": [
@@ -16411,6 +16462,13 @@
      "direction": "read",
      "how": "literal",
      "line": 604
+    },
+    {
+     "id": "script:kb/_build_local_subject_titles.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 36
     },
     {
      "id": "script:kb/_ccr_confidence_apply.py",
@@ -20814,6 +20872,13 @@
      "line": 64
     },
     {
+     "id": "script:kb/_build_local_subject_titles.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 35
+    },
+    {
      "id": "script:kb/_build_oc_medical_assistant_crosswalk.py",
      "kind": "script",
      "direction": "read",
@@ -21557,6 +21622,29 @@
      "direction": "read",
      "how": "literal",
      "line": 56
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/status/local_subject_titles.json": {
+   "consumers": [
+    {
+     "id": "module:commons_subjects.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 20,
+     "tabs": [
+      "commons"
+     ]
+    },
+    {
+     "id": "script:kb/_build_local_subject_titles.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 37
     }
    ],
    "served": true,
@@ -28144,6 +28232,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/local_subject_titles_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/map_ace_catalog_cr_test.py": {
    "consumers": [
     {
@@ -28387,6 +28488,19 @@
    "main_committers": []
   },
   "file:tests/partner_crosswalk_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/pile_mint_dryrun_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -30591,6 +30705,13 @@
      "line": 356
     },
     {
+     "id": "script:kb/_pile_mint_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 560
+    },
+    {
      "id": "script:kb/_program_requirements_units_rules.py",
      "kind": "script",
      "direction": "read",
@@ -32006,7 +32127,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1309,
+     "line": 1325,
      "tabs": [
       "commons"
      ]
@@ -34139,7 +34260,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 514
+     "line": 521
     },
     {
      "id": "module:cr_reference.js",
@@ -35724,7 +35845,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1287,
+     "line": 1303,
      "tabs": [
       "commons"
      ]
@@ -36274,6 +36395,9 @@
    "cr-reference",
    "credential-reference",
    "program-requirements"
+  ],
+  "commons_subjects.js": [
+   "commons"
   ],
   "comms.js": [
    "letters"
@@ -37249,6 +37373,7 @@
     "tests/handover_mark_filed_sql_proof.py",
     "tests/handover_pickup_test.py",
     "tests/ccr_doubt_test.py",
+    "tests/local_subject_titles_test.py",
     "tests/closest_mid_links_test.py",
     "tests/apply_curation_rulings_test.py",
     "tests/ccr_confidence_rules_test.py",
@@ -37372,6 +37497,7 @@
     "tests/authority_recode_apply_test.py",
     "tests/zband_retire_apply_test.py",
     "tests/uc_cur_promote_test.py",
+    "tests/pile_mint_dryrun_test.py",
     "tests/occupation_matcher_stemming_test.py",
     "tests/identities_rekey_test.py",
     "tests/identities_rebuild_test.py",

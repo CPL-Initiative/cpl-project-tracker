@@ -51,8 +51,9 @@
 //                      on; on: false starts them off. The AI sort, when on, wins. Members count every row, filtered or not.
 //   cols()[i].cell(r, el): the nodes a cell shows in place of its text (the Courses List's identity chips); v(r) still
 //                      sorts, filters and names the cell to a screen reader.
-//   cols()[i].sortBy(r): a numeric column's sort value where it differs from v(r), which still shows, filters and
-//                      downloads (the Courses List's Closest M-ID sorts by exhibit links and shows a level).
+//   cols()[i].sortBy(r): a number the column sorts by where that differs from v(r), which still shows, filters and
+//                      downloads; the column then sorts as a number whatever v(r) is (the Courses List's Closest M-ID
+//                      shows and downloads words, and sorts by the exhibits the M-ID would unlock).
 //   sortFor(L)         The sort levels the List opens on for its state (the Courses List's Needs an M-ID pile opens on
 //                      the exhibits each closest M-ID would unlock), until a person presses a header or Clear the sort;
 //                      their choice then holds for the visit. Null or [] keeps L.sort.
@@ -220,7 +221,7 @@
       var id = isTitle ? "title" : String(ci);
       if (memo && memo.k[id]) return memo.k[id];
       var n = rows.length, i, out, sc = isTitle ? null : (listCols()[ci] || listCols()[0]);
-      if (sc && sc.n) {
+      if (sc && (sc.n || sc.sortBy)) {
         var nul = new Uint8Array(n), num = new Float64Array(n);
         for (i = 0; i < n; i++) { var x = sc.sortBy ? sc.sortBy(rows[i]) : sc.v(rows[i]); if (x == null) nul[i] = 1; else num[i] = +x || 0; }
         out = { n: true, nul: nul, num: num };
@@ -721,7 +722,7 @@
         var lvs = sortLevels(L), lvIdx = -1; lvs.forEach(function (x, k) { if (x.col === i) lvIdx = k; });
         var on = lvIdx > -1, up = on && lvs[lvIdx].dir > 0;
         var b = el("button", { type: "button", cls: P + "sort", title: "Press to sort by this column; Shift and press to sort within the sort already set" },
-          [c.h + (!on ? "" : (lvs.length > 1 ? " (" + (lvIdx + 1) + ")" : "") + (c.n ? (up ? ", low to high" : ", high to low") : (up ? ", A to Z" : ", Z to A")))]);
+          [c.h + (!on ? "" : (lvs.length > 1 ? " (" + (lvIdx + 1) + ")" : "") + ((c.n || c.sortBy) ? (up ? ", low to high" : ", high to low") : (up ? ", A to Z" : ", Z to A")))]);
         b.addEventListener("click", function (e) {
           L.ai = false;
           // A press makes the sort the person's own: it starts from the sort on screen and holds for the visit.
@@ -832,7 +833,7 @@
         el("span", { cls: CL.muted + " " + CL.small, id: P + "sortline", text: aiOn && G.sortLine
           ? G.sortLine(L)
           : (bi ? "In bands by " + (S.bands.by || "group") + "; inside each, sorted by " : "Sorted by ") + sortLevels(L).map(function (x) {
-          var c = listCols()[x.col]; return c.h + (c.n ? (x.dir > 0 ? ", low to high" : ", high to low") : (x.dir > 0 ? ", A to Z" : ", Z to A")); }).join(", then ")
+          var c = listCols()[x.col]; return c.h + ((c.n || c.sortBy) ? (x.dir > 0 ? ", low to high" : ", high to low") : (x.dir > 0 ? ", A to Z" : ", Z to A")); }).join(", then ")
           + ". Shift and press a header to add a level." }),
         G ? word("AI sort", listAiToggle, { id: P + "ai", "aria-pressed": aiOn ? "true" : "false" }) : null,
         S.bands ? word(S.bands.label || "Bands", function () {
