@@ -1,7 +1,7 @@
 ---
 title: Scheduled sessions — what a session started by Sam's routine does
 date: 2026-10-04
-updated: 2026-11-19
+updated: 2026-11-21
 tags: [reference, scheduled-sessions, checkpoint, governance-team-enablement]
 ---
 
@@ -496,6 +496,12 @@ asked and why on the sheet, finish what does not depend on it, and move on. A
 Supabase write the connector holds for a person's confirmation is the same: name
 the receipt on the sheet for Sam to run.
 
+**A block is a block (Sam, 2026-11-21, relayed by COBIx on #3358, comment 7064588752;
+`r-a-block-is-a-block-sam-2026-11-21`).** *"a block is a block regardless of whose it is to clear."*
+Every blocked job, the session's own included, goes on the Commons' Needs you, under
+Collect as *Stuck: waiting on a fix*, with who clears it and since when, ranked with
+everything else. Until the Commons shows that list, the handoff lists the blocks.
+
 **Effort and Fable.** Call your own effort per piece of work (CLAUDE.md, Call the
 effort level). For a judgment with nothing to score against (a definition, a
 naming call, a design choice, a doctrine reading), ask Fable once through the
@@ -511,6 +517,13 @@ result, kept or dropped); COBIx scans every other Monday (#3306).
 Run `/checkpoint` as always: the handoff names the next moniker, and the next
 firing claims it. Sign off with the opening line as CLAUDE.md asks, so Sam can
 also paste it by hand.
+
+**The vault note merges on its checks (Sam, 2026-11-21, relayed by COBIx on #3358,
+comment 7064588752; `r-vault-notes-merge-on-checks-sam-2026-11-21`).** The checkpoint's
+vault note (step 11) is a draft PR in `samueltlee/CPLBrain` that merges on its own once
+its checks pass, under the Nov 18 rule that yes-style goes are Sky's (COBIx's wording).
+Bring Sam a vault note only when it changes or adds one of his rulings, and say so in
+one line; the morning brief does not list routine vault merges as his decisions.
 
 ## A signed-off session lets go (Sam, 2026-10-05)
 

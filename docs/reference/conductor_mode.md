@@ -179,6 +179,16 @@ at the top of each piece of work so Sam can change the dial before it runs.
   remains on it shows a worked example on real rows: the row today, and the row under each choice.
 - His unplanned statements are captured verbatim (the vault's braindump skill, on-the-fly mode) and he is told in one
   line. Replies to him are a few lines, active voice, stated positively.
+- **A block is a block (Sam, relayed by COBIx on #3358, comment 7064588752, about 7:04 AM PT 2026-11-21;
+  `r-a-block-is-a-block-sam-2026-11-21`).** *"a block is a block regardless of whose it is to clear."* Every blocked
+  job goes on the Commons' Needs you, shown under Collect as *Stuck: waiting on a fix* with who clears it and since
+  when, ranked with everything else, the conductor's own blocks included (City College of San Francisco's Cal-GETC
+  dry run is one). The Commons build session builds the view; until it shows them, each handoff lists the blocks.
+- **Vault notes merge on their checks (Sam, relayed by COBIx on #3358, comment 7064588752, 2026-11-21;
+  `r-vault-notes-merge-on-checks-sam-2026-11-21`).** A vault-note draft in `samueltlee/CPLBrain` merges on its own
+  once its checks pass, under the Nov 18 rule that yes-style goes are Sky's (COBIx's wording). Bring Sam a vault note
+  only when it changes or adds one of his rulings, and say so in one line; the morning brief does not list routine
+  vault merges as his decisions.
 
 - **M-IDs are ours (Sam, in session S652, 2026-11-14, verbatim):** "why are we asking anyone anything about a MID course, which is our own construct (synthetic). what makes this MID so important that we would bother someone at SDCCD about it--they have no idea that MIDs even exist" and "we will be adjusting and deleting and refolding and reminting MIDs for quite a while as we figure out the best way to do it almost through trial and error" and "think of MIDs as low stakes attempts to get our course clusters as close to right as we can with the expectation that we will do lots of adjusting along the way" (`sam-mids-are-ours-trial-and-error-2026-11-14`). And, about 14:53Z: "the thing that probably makes them not low stakes to you is all the ways mids are wired to dependencies that have to be rewired when changes are made. that probs takes a lot of compute (which is not low stakes on the compute side) but still low stakes on the end user side provided that all the rewiring along the way is done correctly" (`sam-mid-care-goes-into-the-rewiring-2026-11-14`). So the choice is low stakes and the care goes into the rewiring: every M-ID change runs its dependents (the alias chain, the identities map, the dependency map's consumers) and proves them, and that is what a reader checks. An M-ID question never goes to a college. A change to the M-ID staging layer is the conductor's to decide and carry out under a receipt that undoes it; a row a person saved still wins (Rule 10); Sam reacts to the result on the Commons.
 
@@ -196,6 +206,32 @@ at the top of each piece of work so Sam can change the dial before it runs.
   at a scheduled check-in instead (S653: context went from 16% to 73% in 100 minutes on notices).
 - A tool trial (a repo, a library, a service) gets one line in [`reference/stack_scouting`](stack_scouting.md): candidate,
   measured cost, result, kept or dropped. COBIx scans every other Monday (#3306).
+
+## What went wrong in S697, and what worked
+
+The CPL Queue routine's 13:12Z firing of 2026-11-21 (SkyPuffin, first command 13:13Z), a conductor run for collection
+only. No session was live at the start; it declared on draft #3639 at 13:17Z. No `list_sessions`, `get_trigger`,
+`get_session` or `set_session_tags` in this session.
+
+- **A bot receipt head runs no `test`** (`p-bot-receipt-head-runs-no-test-s697`). Irvine Valley's load branch ended on
+  the runner's receipt commit, which starts no `test`. Push a real change (the receipt's closing live count), never an
+  empty commit; the load branch merged into the checkpoint #3639 (`d-ivc-load-receipt-rides-checkpoint-s697`). That
+  push re-ran the load (44926139513): 0 inserted, 1,732 kept.
+- **`check_generated.sh` said current while the Commons data were stale** (`p-check-generated-misses-commons-data-s697`):
+  it runs neither Commons builder. After a records change run `kb/_build_commons_data_status.py` under 3.12 and
+  `tests/commons_data_status_build_test.py`.
+- **Every records PR rebuilds the Commons files, so two of them conflict** (`p-commons-files-conflict-between-prs-s697`).
+  Merge one, merge `main` into the next, take `main`'s side and rerun both builders, `kb/_build_commons_status.py` and
+  `kb/_build_commons_data_status.py`.
+- **A test pinned a college's old pages** (`f-s680-pin-test-pinned-old-pages-s697`): #3645 failed lints on the S680
+  pin test once Cosumnes River's pin moved its pages; the test now expects the pin's page.
+- **Two writes never on one table at once** (`d-display-held-for-gaps-apply-s697`): the display build waited for the
+  `total_differs` apply on `program_requirement_records`.
+- **What worked:** a free pricing run with `only` named exactly the 14 programs before the paid read ($1.16 against
+  about $1.53 estimated); a second reader on each change to shared reader code (#3641, #3642, #3644, #3649; Clovis
+  33431 dropped from the gap, floors over lists); both guarded UPDATEs in compact form with each plan's rollback
+  unchanged (`d-named-gaps-compact-apply-s697`); COBIx's two relayed rulings recorded inside the run, and S691's vault
+  note merged under the second (`d-vault-note-merged-under-ruling-s697`).
 
 ## What went wrong in S691, and what worked
 
