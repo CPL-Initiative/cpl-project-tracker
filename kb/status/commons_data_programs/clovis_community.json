@@ -1,4 +1,4 @@
-{"schema":1,"college":"Clovis Community College","slug":"clovis_community","basis":"live","census_at":"2026-11-21 17:06Z","correction_rules":false,"programs":[
+{"schema":1,"college":"Clovis Community College","slug":"clovis_community","basis":"live","census_at":"2026-11-21 22:26Z","correction_rules":false,"programs":[
 {"cn":"33486","title":"Liberal Studies","award":"A.A. Degree","cause":"course_added","lever":"reconcile_steps","url":"https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=139"},
 {"cn":"45957","title":"Law, Public Policy, and Society","award":"A.A- T Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=171"},
 {"cn":"33506","title":"Philosophy","award":"A.A- T Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=177"},
