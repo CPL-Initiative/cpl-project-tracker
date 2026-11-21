@@ -330,6 +330,18 @@ check("6 a code that holds a course and its honors or lab version is left unread
       "versions of one course (Crafton Hills ART 120) and one course id are read",
       read.variant_mix(mix) and not read.variant_mix(retitled) and not read.variant_mix(mix[:1])
       and not read.variant_mix([dict(mix[0]), dict(mix[1], reports=[])]))
+imod = read.index_mod
+hond = [{"course_id": 7012, "title": "Honda/Acura Chassis Electrical Systems", "reports": ["u1"]},
+        {"course_id": 7013, "title": "Honda/Acura Express Service", "reports": ["u2"]}]
+check("6 a code norm_code folds from two printed codes, holding two courses, is left unread (Rio Hondo's HOND 045 and "
+      "HOND 045-1, courses 7012 and 7013; S691's second reader); one printed code, one course, or two spellings of one "
+      "code are read",
+      imod.code_suffix("HOND 045-1") == "1" and imod.code_suffix("HOND 045") == ""
+      and imod.code_suffix("ACC-1A") == imod.code_suffix("ACC 1A") == ""
+      and read.folded_pair(hond, {"", "1"}) and not read.folded_pair(hond, {""})
+      and not read.folded_pair(hond[:1], {"", "1"}) and not read.folded_pair([hond[0], dict(hond[1], reports=[])], {"", "1"})
+      and imod.record_code_suffixes(["rio_hondo"]).get("HOND 045") == {"", "1"},
+      imod.record_code_suffixes(["rio_hondo"]).get("HOND 045"))
 SB = ("Course Content - Learning Objectives\nStudents participating in this class will:\n"
       "Explain budgets.\nCompare investments.\nStudent Learning Outcomes\n"
       "Students completing this course satisfactorily will be able to:\nCreate a budget.\nChoose an investment.\n"

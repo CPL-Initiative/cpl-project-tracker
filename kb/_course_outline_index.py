@@ -124,6 +124,29 @@ def record_codes(slugs: list[str]) -> dict[str, list[str]]:
     return out
 
 
+def code_suffix(raw: str) -> str:
+    """What a record's code prints past the subject and number norm_code keeps: HOND 045-1 keeps HOND 045 and leaves
+    "1". Letters and digits only, so 'ACC-1A' and 'ACC 1A' leave the same (nothing)."""
+    up = (raw or "").upper()
+    m = CODE.search(up)
+    return re.sub(r"[^A-Z0-9]", "", up[m.end():]) if m else ""
+
+
+def record_code_suffixes(slugs: list[str]) -> dict[str, set[str]]:
+    """Each normalized code the loaded program records name, with the suffixes its printed spellings carry past it
+    (code_suffix). Two suffixes under one code are two printed codes that norm_code folds into one (Rio Hondo's HOND
+    045 and HOND 045-1, S691's second reader)."""
+    out: dict[str, set[str]] = {}
+    for slug in slugs:
+        for path in glob.glob(os.path.join(HERE, "program_requirements_college", slug, "records", "*.json")):
+            text = json.dumps((json.load(open(path)) or {}).get("record") or {})
+            for raw in re.findall(r'"(?:code|course_code|course)"\s*:\s*"([^"]+)"', text):
+                c = norm_code(raw)
+                if c:
+                    out.setdefault(c, set()).add(code_suffix(raw))
+    return out
+
+
 def discover(reader, url: str) -> dict:
     seen = []  # responses; bodies are read after the load, never inside the handler
 
