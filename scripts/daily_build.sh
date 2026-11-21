@@ -330,6 +330,14 @@ step "Build the codes the pile mint holds on" <<'STEP'
 python3 kb/_held_subject_codes.py --if-changed || { git checkout -- kb/status/held_subject_codes.json 2>/dev/null || true; echo "::warning title=Held subject codes not rebuilt::kb/_held_subject_codes.py failed; #commons/subjects/held reads yesterday's kb/status/held_subject_codes.json."; }
 STEP
 
+# kb/status/local_subject_recommendations.json (#3655): a recommended local title for each Subjects row with no
+# catalog heading and a recommended common code for each credit row with none, with the level each source measured
+# on the titled codes. After the titles above, which it reads. No clock is read, so the same inputs write the same
+# bytes (~3 s). Display only, so a failure warns and yesterday's file stands.
+step "Build the Subjects recommendations" <<'STEP'
+python3 kb/_build_local_subject_recommendations.py || { git checkout -- kb/status/local_subject_recommendations.json 2>/dev/null || true; echo "::warning title=Subject recommendations not rebuilt::kb/_build_local_subject_recommendations.py failed; the Subjects page reads yesterday's kb/status/local_subject_recommendations.json."; }
+STEP
+
 # ── Step 4b: Re-run row Trust-Card auditor ────────────────────
 # Read-only over kb/coci_*.json; writes kb/row_audit/{latest.json,
 # <date>.md} that the UCL "⚠ hinky" badge consumes. See CLAUDE.md §11.

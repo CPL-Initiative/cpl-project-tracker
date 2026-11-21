@@ -28,7 +28,10 @@ const FILES = {
   "kb/status/program-requirements.json": JSON.parse(fs.readFileSync("kb/status/program-requirements.json", "utf8")),
   "kb/status/commons_data.json": JSON.parse(fs.readFileSync("kb/status/commons_data.json", "utf8")),
   "kb/reference/industry_credential_skills.json": JSON.parse(fs.readFileSync("kb/reference/industry_credential_skills.json", "utf8")),
-  "kb/status/local_subject_titles.json": FIX
+  "kb/status/local_subject_titles.json": FIX,
+  "kb/status/local_subject_recommendations.json": { colleges: [{ slug: "alpha", rows: [{ code: "MATH",
+    title: { title: "Mathematics", level: "High", from: "other_colleges", why: "other colleges: 3 of 3 other colleges (all agree).", also: [{ title: "Math Lab", from: "program_titles" }] },
+    common: { code: "MATH", discipline: "Mathematics", level: "Medium", from: "own_courses", why: "4 of 4 of its courses with an M-ID sit under MATH." } }] }] }
 };
 
 function load(hash, files) {
@@ -93,7 +96,19 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
   check("(7) ⭐ a code in COCI and nowhere in the catalog carries the Not in catalog chip, a note a screen reader reads",
     chip && txt(chip) === "Not in catalog" && chip.getAttribute("role") === "note" && /waits on a title from a person/.test(chip.getAttribute("aria-label")));
   check("(7) a titled row carries no chip", !d.querySelector('.csb-codes tr[data-code="ENGL"] .csb-chip'));
-  check("(4) the common code shows where the maps give one, blank where not", txt(d.querySelector('.csb-codes tr[data-code="ENGL"]').children[3]) === "ENGL" && txt(zzz.children[3]) === "");
+  check("(4) the common code shows with its discipline title where the maps give one, blank where not", txt(d.querySelector('.csb-codes tr[data-code="ENGL"]').children[3]) === "ENGL English" && txt(zzz.children[3]) === "");
+  /* (8) the recommendations (S700, #3655): a note beside a row with no title or no common code, never a value */
+  const mrec = math.children[2].querySelector('.csb-rec[data-rec="title"]');
+  check("(8) ⭐ a row with no title shows its recommended title, its level in words and why", mrec && /Recommended: Mathematics\. Confidence: High\. other colleges: 3 of 3/.test(txt(mrec)) && mrec.getAttribute("data-level") === "High");
+  check("(8) the chip stays: a recommendation is not a title", !!math.children[2].querySelector(".csb-chip") && math.getAttribute("data-title-state") === "not_in_catalog");
+  check("(8) where sources differ the other title shows", /Also read: Math Lab\./.test(txt(mrec)));
+  const mcom = math.children[3].querySelector('.csb-rec[data-rec="common"]');
+  check("(8) ⭐ a row with no common code shows the recommended code with its discipline", mcom && /Recommended: MATH Mathematics\. Confidence: Medium\./.test(txt(mcom)));
+  check("(8) a titled row with a common code carries no recommendation", !d.querySelector('.csb-codes tr[data-code="ENGL"] .csb-rec'));
+  check("(8) a row the file does not name carries none", !zzz.querySelector(".csb-rec"));
+  let y = load("#commons/subjects", { "kb/status/local_subject_recommendations.json": undefined });
+  await y.M.boot(); await settle();
+  check("(8) the list draws without the recommendations file", y.d.querySelectorAll(".csb-codes tbody tr").length > 0 && !y.d.querySelector(".csb-rec"));
   check("(4) the rule is on the page", /trimming and upper-casing/.test(txt(d.querySelector(".csb-foot"))));
 
   /* (5) a press on a college moves the address and reports it */

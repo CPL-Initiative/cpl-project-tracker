@@ -8,11 +8,13 @@
    "catalog_year": "2026-2027",
    "source": "runner HTML",
    "runs": [
-    "44767159068"
+    "44767159068",
+    "44961768967",
+    "44961846963"
    ],
-   "courses": 1656,
+   "courses": 1703,
    "missed_upper_bound": null,
-   "sha256_uncompressed": "46eeee9f1719b03edf26fd87907fa0f3d6cff93ad2d6e8372ae808e2f2923d19",
+   "sha256_uncompressed": "1a8ad95c910ed18c8208fa1437fb363994de007aa4c8c4b3a4314901730eccc7",
    "read_at": "2026-11-20T15:50:34Z"
   },
   {
@@ -64,11 +66,12 @@
    "catalog_year": "2026-2027",
    "source": "runner HTML",
    "runs": [
-    "44765123063"
+    "44765123063",
+    "44961971516"
    ],
-   "courses": 1595,
+   "courses": 1642,
    "missed_upper_bound": null,
-   "sha256_uncompressed": "50d672d38fc031fc267a39fd4d285041f33895bbceecfdb8d11fddbbcafb262c",
+   "sha256_uncompressed": "e1c4fc8a7b91f4e724e7c788c044c8daa25b8d7595f55a48dd71ba441d48f4bb",
    "read_at": "2026-11-20T15:38:25Z"
   },
   {
@@ -176,11 +179,13 @@
    "catalog_year": "2026-2027",
    "source": "runner HTML",
    "runs": [
-    "44765198579"
+    "44765198579",
+    "44962016039",
+    "44962136733"
    ],
-   "courses": 1137,
+   "courses": 1208,
    "missed_upper_bound": null,
-   "sha256_uncompressed": "080425aa65fdc2abce72db2a79441d8ba842b3e56538da57e7951f96dce22a51",
+   "sha256_uncompressed": "24299c236815a2d6f1477824c399ac9645ccaa65c65b6ad5ccc1139c3a14da20",
    "read_at": "2026-11-20T15:38:56Z"
   },
   {
@@ -205,11 +210,13 @@
    "catalog_year": "2026-2027",
    "source": "runner HTML",
    "runs": [
-    "44759854547"
+    "44759854547",
+    "44961387532",
+    "44962136733"
    ],
-   "courses": 1692,
+   "courses": 2020,
    "missed_upper_bound": null,
-   "sha256_uncompressed": "9f6405d43cdbaf9711128745bdaf54cc9450e428f880c45c7130b44f0bb62371",
+   "sha256_uncompressed": "1ba9a902c9fa48a5e503a0bee2100301c146c30a87c13445f4da4c86275c25ec",
    "read_at": "2026-11-20T15:06:53Z"
   },
   {

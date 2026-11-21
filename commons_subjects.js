@@ -8,7 +8,8 @@
 //
 // What it reads (WRITES NOTHING): kb/status/local_subject_titles.json, built by kb/_build_local_subject_titles.py from
 // the printed catalogs (kb/hand_filed_catalogs/courses/), the state course list (coci_lookup_data.js), the subject map
-// and the canonical SUBJ file. A catalog that prints the code alone reads TBA for its title.
+// and the canonical SUBJ file. A catalog that prints the code alone reads TBA for its title. Beside a row with no
+// title or no common code it shows the recommendation kb/status/local_subject_recommendations.json holds for it.
 //
 // Addresses (loaded by commons.js when the address names it): #commons/subjects (every college),
 // #commons/subjects/<college slug> (one college), #commons/subjects/disagree (the codes only one side prints, the
@@ -38,6 +39,26 @@
   }
   function needsTitle(r) { return !r.printed_name; }
   function stateOf(r) { return STATES[r.title_state] || STATES.not_read; }
+  /* The recommendations (S700, #3655; Sam, 2026-11-21): a recommended local title beside every row with no catalog
+     heading and a recommended common code beside every credit row with none, each with the level its source
+     measured on the titled codes (kb/_build_local_subject_recommendations.py). A recommendation is a note for the
+     person who settles the row; the page saves nothing. A row on the noncredit hold has none. */
+  var REC_FILE = "kb/status/local_subject_recommendations.json";
+  var REC = {};
+  function recModel(f) {
+    var by = {};
+    ((f || {}).colleges || []).forEach(function (c) {
+      (c.rows || []).forEach(function (r) { by[c.slug + "|" + r.code] = r; });
+    });
+    return by;
+  }
+  function recOf(r) { return REC[r.slug + "|" + r.code] || {}; }
+  function recNote(kind, what, x) {
+    var also = (x.also || []).map(function (a) { return a.title; }).filter(Boolean);
+    return el("span", { cls: "csb-sub csb-rec", "data-rec": kind, "data-level": x.level }, [
+      el("strong", { text: "Recommended: " + what }), ". Confidence: " + x.level + ". " + (x.why || "")
+      + (also.length ? " Also read: " + also.join("; ") + "." : "")]);
+  }
   var DISAGREE = "disagree";
   var HELD = "held";
   var HELD_FILE = "kb/status/held_subject_codes.json";
@@ -112,17 +133,19 @@
       el("tbody", null, rows.length ? rows.map(function (r) {
         var heads = r.side === "state" ? fmt(r.state_courses) + " in COCI" + bands(r)
           : fmt(r.catalog_courses) + (r.side === "both" ? " in the catalog, " + fmt(r.state_courses) + " in COCI" + bands(r) : "")
-            + (r.address && !r.catalog_courses ? "; its page is not read yet" : "");
+            + (r.address && !r.catalog_courses ? (r.page_codes && r.page_codes.length ? "; its page prints its courses under " + r.page_codes.join(" and ") : "; its page is not read yet") : "");
         var st = needsTitle(r) ? stateOf(r) : null;
         var title = st ? el("td", { cls: "csb-tba" }, [
           el("span", { cls: "csb-chip", role: "note", tabindex: "0", "data-state": r.title_state || "not_read", "aria-label": st.word + ". " + st.tip, title: st.tip, text: st.word }),
-          r.candidate ? el("span", { cls: "csb-sub", text: "A line near it in the catalog: " + r.candidate }) : null])
+          r.candidate ? el("span", { cls: "csb-sub", text: "A line near it in the catalog: " + r.candidate }) : null,
+          recOf(r).title ? recNote("title", recOf(r).title.title, recOf(r).title) : null])
           : el("td", { text: r.printed_name });
         return el("tr", { "data-code": r.code, "data-side": r.side, "data-title-state": r.title_state || null }, [
           el("td", null, [S.view === r.slug ? r.college : go("#commons/subjects/" + r.slug, r.college)]),
           el("th", { scope: "row", text: r.code }),
           title,
-          el("td", { text: r.common || "" }),
+          el("td", null, [r.common ? r.common + (r.discipline ? " " + r.discipline : "") : "",
+            !r.common && recOf(r).common ? recNote("common", recOf(r).common.code + " " + recOf(r).common.discipline, recOf(r).common) : null]),
           el("td", { text: heads }),
           el("td", { text: st && r.title_state === "not_read" ? st.word : SIDES[r.side] || r.side })]);
       }) : [el("tr", null, [el("td", { colspan: "6", text: "No code is in this list." })])])]);
@@ -264,7 +287,11 @@
     return fetch(FILE, { cache: "no-cache" }).then(function (r) {
       if (!r || !r.ok) throw new Error(FILE + " answered " + (r ? r.status : "nothing"));
       return r.json();
-    }).then(model);
+    }).then(function (f) {
+      /* The recommendations are a second file; the list draws without them when they cannot be read. */
+      return fetch(REC_FILE, { cache: "no-cache" }).then(function (r) { return r && r.ok ? r.json() : null; }, function () { return null; })
+        .then(function (rf) { REC = recModel(rf); return model(f); });
+    });
   }
   var cache = null;
   function boot(root, view, opts) {
@@ -307,6 +334,7 @@
     ".csb-sub { display:block; font-weight:400; color:var(--cmn-muted); font-size:.85rem; }",
     ".csb-ev p { margin:0 0 4px; } .csb-ev strong { color:var(--cmn-heading); font-weight:600; }",
     ".csb-tba { color:var(--cmn-muted); }",
+    ".csb-rec { color:var(--cmn-ink-2); margin-top:4px; } .csb-rec strong { color:var(--cmn-heading); font-weight:600; }",
     ".csb-chip { display:inline-block; font-size:.78rem; font-weight:600; color:var(--cmn-ink-2); border:1px solid var(--cmn-line); border-radius:999px; padding:1px 9px; background:var(--cmn-surface); white-space:nowrap; cursor:help; }",
     ".csb-chip[data-state='not_in_catalog'] { color:var(--cmn-heading); border-color:var(--cmn-accent); }",
     ".csb-chip:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:2px; }",
@@ -319,7 +347,8 @@
   }
 
   window.CPL_COMMONS_SUBJECTS = {
-    boot: boot, render: render, model: model, heldModel: heldModel, address: address, open: open, load: load, FILE: FILE, HELD_FILE: HELD_FILE, SIDES: SIDES, CSS: CSS,
+    boot: boot, render: render, model: model, heldModel: heldModel, recModel: recModel, REC_FILE: REC_FILE,
+    _recs: function (f) { REC = recModel(f); }, address: address, open: open, load: load, FILE: FILE, HELD_FILE: HELD_FILE, SIDES: SIDES, CSS: CSS,
     _state: S, _reset: function () { cache = null; heldCache = null; VIEW.M = null; VIEW.H = null; S.view = ""; }
   };
 })();

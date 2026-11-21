@@ -48,7 +48,7 @@ CANONICAL = os.path.join("kb", "discipline_canonical_subj4.json")
 OUT = os.path.join("kb", "status", "local_subject_titles.json")
 
 COLUMNS = ["code", "printed_name", "catalog_courses", "state_courses", "side", "common", "discipline",
-           "title_state", "title_source", "candidate", "address", "credit_courses", "noncredit_courses"]
+           "title_state", "title_source", "candidate", "address", "credit_courses", "noncredit_courses", "page_codes"]
 # Why a row has no title (Sam, 2026-11-21, #3655: "an indicator (chip) in the row to indicate that the catalog read was
 # either blocked, title not in catalog, or not parsed yet"). A state comes from a recorded fact; a row nothing proves
 # reads not_read, because calling a title absent when the catalog was never looked at is the worse error.
@@ -135,7 +135,15 @@ def build(root=ROOT):
          "colleges_named": 0, "colleges_not_in_state_list": 0}
     for c in sorted(index.get("colleges") or [], key=lambda x: x["slug"]):
         with gzip.open(os.path.join(root, CATALOGS, c["file"]), "rt", encoding="utf-8") as f:
-            rows = json.load(f).get("rows") or []
+            doc = json.load(f)
+        rows = doc.get("rows") or []
+        # The pages that were read, and the codes each page prints its courses under: a subject the index lists as
+        # A&P whose page prints AP 120 was read, and its courses sit under the other code (S700).
+        pages = [p for key in ("pages", "pages_added") for p in (doc.get(key) or []) if isinstance(p, dict)]
+        read_urls = {p.get("url") for p in pages if str(p.get("status")) == "200"}
+        codes_at = {}
+        for r in rows:
+            codes_at.setdefault(r.get("source_url"), set()).add(code_key(r.get("subject")))
         cat = {}
         for r in rows:
             k = code_key(r.get("subject"))
@@ -182,8 +190,10 @@ def build(root=ROOT):
                 # waits until the large noncredit programs' catalogs are read. A title the catalog itself gives stays.
                 state_ = "noncredit_hold"
             common, disc = common_of(k)
+            addr = (h or {}).get("address")
+            page_codes = sorted(codes_at.get(addr) or ()) if addr and not e and addr in read_urls else None
             out.append([k, name, e["n"] if e else 0, st.get(k, 0), side, common, disc, state_, source,
-                        (h or {}).get("candidate") if not name else None, (h or {}).get("address"), cr_n, nc_n])
+                        (h or {}).get("candidate") if not name else None, addr, cr_n, nc_n, page_codes or None])
         n = {"codes": len(out), "catalog_codes": len(set(cat) | listed), "named": sum(1 for r in out if r[1]),
              "both": sum(1 for r in out if r[4] == "both"), "catalog_only": sum(1 for r in out if r[4] == "catalog"),
              "state_only": sum(1 for r in out if r[4] == "state"), "with_common": sum(1 for r in out if r[5]),
@@ -191,7 +201,7 @@ def build(root=ROOT):
              "not_in_catalog": sum(1 for r in out if r[7] == "not_in_catalog"),
              "noncredit_hold": sum(1 for r in out if r[7] == "noncredit_hold"),
              "noncredit_only": sum(1 for r in out if r[12] and not r[11]), "credit_and_noncredit": sum(1 for r in out if r[12] and r[11]),
-             "pages_not_read": sum(1 for r in out if r[10] and not r[2])}
+             "pages_not_read": sum(1 for r in out if r[10] and not r[2] and r[10] not in read_urls)}
         out_colleges.append({"slug": c["slug"], "college": c["college"], "catalog_year": c.get("catalog_year"),
                              "read_at": c.get("read_at"), "in_state_list": si is not None,
                              "courses": len(rows), **n, "rows": out})
@@ -211,8 +221,8 @@ def build(root=ROOT):
                   "(Step a) where the subject map and the canonical SUBJ give one. title_state says why a row has no title "
                   "(not_read, blocked, not_in_catalog; catalog where it has one), title_source where the title came from, "
                   "candidate a line for a reviewer where no heading was taken (never a title by itself), and address the "
-                  "subject's own page where the catalog's index links one (pages_not_read counts the linked pages with "
-                  "no course filed). Built by kb/_build_local_subject_titles.py; "
+                  "subject's own page where the catalog's index links one (pages_not_read counts the linked pages that were not read; page_codes names the codes a page that was read "
+                  "prints its courses under, where that is not this code). Built by kb/_build_local_subject_titles.py; "
                   "no clock is read, so read_at is each catalog's own."),
         "_rule": RULE,
         "_sources": {"catalogs": CATALOGS.replace(os.sep, "/") + "/index.json", "state_list": STATE,

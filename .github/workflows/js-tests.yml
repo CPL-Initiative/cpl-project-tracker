@@ -323,6 +323,14 @@ jobs:
       # apart from its credit courses; no band and no category is guessed. Pure stdlib (the build reads the export).
       - name: Noncredit categories (kb/_build_noncredit_categories.py)
         run: python3 tests/noncredit_categories_test.py
+      # The Subjects recommendations (S700, #3655): a title's own heading never votes for it, a level is the one its
+      # source measured, program titles never read High, a row on the noncredit hold takes none. Pure stdlib.
+      - name: Subject recommendations (kb/_build_local_subject_recommendations.py)
+        run: python3 tests/local_subject_recommendations_test.py
+      # The missed subject pages (S700, #3655): a course the file holds is never filed twice, each college's heading
+      # rule reads its own pages only, the subject's name is the page title's. Pure stdlib.
+      - name: Missed subject pages (kb/_file_missed_subject_pages.py)
+        run: python3 tests/missed_subject_pages_test.py
       # The codes the pile mint holds on (S695): held courses summed, counted once each, ranked; a vote that missed its
       # floor is a suggestion, never a decision. Pure stdlib.
       - name: Held subject codes (kb/_held_subject_codes.py)

@@ -69,3 +69,18 @@ A PDF college's rows come from the page read's pypdf text (plan keys `pdf_unfold
 its heading and units patterns (`parse`) and how many units lines no heading claimed (`units_lines_unclaimed`, an upper
 bound on the courses the parse missed, since front matter prints a few such lines too). `entry_printed` keeps each entry
 as printed; `requisites` and `description` are split from it on a best-effort reading.
+
+## The subject pages the first read missed (S700, 2026-11-21, #3655)
+
+The first read of the four CourseLeaf catalogs made each subject's address from its code in lower case. Where the
+catalog's index links the subject somewhere else, the page was never read. `kb/college_reads/<slug>_course_descriptions_missed*.json`
+take each address from the index's own link (`../subjects/<slug>.json`), and `kb/_file_missed_subject_pages.py` parses
+those logs and adds the courses in each file's own row shape, leaving a course the file already holds as filed. Added:
+Cerritos 47 (Mathematics and Statistics, Political Science, Sociology), Long Beach City 47 (Design, GED/HiSET
+Preparation, Psychology Trauma Studies, Social Work), Monterey Peninsula 71 (Law Enforcement Training Program,
+Mathematics and Statistics, Work Experience), Southwestern 328 (the four Exercise Science subjects, Public
+Administration, Recording Arts & Technology, Travel and Tourism): 493 courses on 21 pages, runs 44961387532,
+44961768967, 44961846963, 44961971516, 44962016039 and 44962136733. Three pages print their courses under a code other
+than the one the index names (Cerritos A&P prints AP, Monterey Peninsula SPCH prints COMM, Southwestern CBE prints
+ATCBE); their courses were already filed. A run's log reads back at most 5,000 lines, so a plan holds about that many
+printed lines (Southwestern's Exercise Science/Activity page alone prints 2,900).
