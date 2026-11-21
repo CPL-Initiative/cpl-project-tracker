@@ -123,6 +123,17 @@ check("credentials: the catalog's own counts", (building[0].get("facts") or {}).
 check("outcomes: counted from the committed reads, colleges by the courses' named_by",
       isinstance((building[1].get("facts") or {}).get("colleges"), list) and len(building[1]["facts"]["colleges"]) >= 1
       and building[1]["facts"].get("reads", 0) >= 1)
+with tempfile.TemporaryDirectory() as _tmp:
+    os.makedirs(os.path.join(_tmp, "kb", "course_outcomes", "x"))
+    with open(os.path.join(_tmp, "kb", "course_outcomes", "x", "read_1_p1of1.json"), "w") as _f:
+        json.dump({"run": "1", "slugs": "a,b", "summary": {"outcomes": 3}, "rows": [
+            {"outcomes": ["o"], "named_by": ["a"]},
+            {"outcomes": [], "groups": [{"group": None, "outcomes": ["g1", "g2"]}], "named_by": ["b"]},
+            {"outcomes": [], "groups": [{"group": None, "outcomes": []}], "named_by": ["c"]}]}, _f)
+    _bo = B.building_outcomes(_tmp)["facts"]
+check("outcomes: a page read as groups (SDCCD's colleges, Irvine Valley's untitled entries) counts as a course; one "
+      "whose groups hold none does not (second reader on #3642)",
+      _bo["courses"] == 2 and _bo["colleges"] == ["a", "b"], _bo)
 
 check("Program Requirements: complete + failing + unread = the active universe",
       f.get("complete") + f.get("failing") + f.get("unread") == f.get("active") == req["pair"][0]["of"], f)
