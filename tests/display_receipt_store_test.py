@@ -503,7 +503,8 @@ fj = wf[wf.index("\n  fetch:\n"):]
 check("--for-artifact" in fj and "retention-days: 1\n" in fj and fj.count("retention-days") == 1,
       "the fetch artifact is a public-safe kind only, kept one day")
 dj = wf[wf.index("\n  display:\n"):wf.index("\n  fetch:\n")]
-check(re.findall(r"path: (.*)", dj) == ["kb/receipts/*${{ github.run_id }}*"],
+check(re.findall(r"path: (.*)", dj) == ["kb/receipts/*${{ github.run_id }}*",
+                                        "kb/receipts/index/*${{ github.run_id }}*"],  # S695: the record's pointer
       "the display job's artifact holds only files carrying the run id (the applied records), never the built "
       "receipt, whose name carries its date and build")
 check("step == 'fetch'" in fj and "kb/_receipt_store.py fetch" in fj and "upload-artifact" in fj
