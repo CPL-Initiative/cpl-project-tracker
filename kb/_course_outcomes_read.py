@@ -95,8 +95,10 @@ MARKER = re.compile(r"^[ \t]*(?:\(?\d{1,2}[.)]|\(?[a-zA-Z][.)]|[\u2022\u25cf\u25
 # course, the student should be able to:" (S664: 505 live SLO rows had filed it as their first outcome).
 # Rio Hondo prints "The Student Will Be Able To:" above every objectives list (trial 44884988614's log, 12 of 12; S691):
 # the article is part of the lead-in, never an objective of its own.
+# Saddleback's Course Outline (201) opens its SLOs with "Students completing this course satisfactorily will be able
+# to:" (trial 44889396093 filed it as the first outcome on 12 of 12 pages; S691).
 LEAD = re.compile(r"(upon (the )?(successful )?completion|at the conclusion of|(?:the )?students? (will|should) be able|"
-                  r"by the end of)[^\n]*", re.I)
+                  r"students? completing (this|the) course\b|by the end of)[^\n]*", re.I)
 # The column header a report's SLO table prints above its rows, a line of its own that is never an outcome (S689).
 # Feather River's report 485 prints "Learning Outcomes" under its Student Learning Outcomes heading (read 44535960153
 # filed it as 336 of its 2,072 SLOs, one per page); Palomar's report 99 prints "Outcome" (trial 44536105509, 12 of 12).
@@ -341,8 +343,9 @@ def outcomes_of(text: str) -> dict:
 # report "STUDENT LEARNING OBJECTIVES:" and its All Fields report "Student Learning Objectives" with a field label
 # "Objective Text" before each item. Chabot's All Fields report (347) prints "Measurable Objectives:" (S681). Palomar's
 # report 99 prints "Specific Course Objectives" right after its SLOs, then an "Objective" column header (S689).
+# Saddleback's Course Outline (201) prints "Course Content - Learning Objectives" (trial 44889396093, 12 of 12; S691).
 OBJ_TITLE = re.compile(r"^[ \t]*(?:[IVX]{1,4}\.[ \t]+)?(course|specific course|student learning|learning|performance|"
-                       r"measurable)? ?objectives"
+                       r"measurable|course content[ \t]*[-\u2013][ \t]*learning)? ?objectives"
                        r"[ \t]*:?[ \t]*$", re.I)
 # A field label a report prints before each item, never an objective itself.
 OBJ_LABEL = re.compile(r"^(objective text|objective)$", re.I)
@@ -901,10 +904,14 @@ EXCERPT_FROM, EXCERPT_TO, EXCERPT_LINES = "STUDENT LEARNING OUTCOMES", "CONTENTS
 # first trial (its filed section_heads). A host not listed here logs no excerpt until its pair is recorded (S691).
 EXCERPT_BY_HOST = {"ccsf.curricunet.com": (EXCERPT_FROM, EXCERPT_TO),
                    # Rio Hondo's Outline w/SLO (358, 359): trial 44884579875's log, 12 of 12 pages (S691).
-                   "riohondo.curriqunet.com": ("IX. Student Learning Outcome", "X. Texts/Instructional Materials:")}
+                   "riohondo.curriqunet.com": ("IX. Student Learning Outcome", "X. Texts/Instructional Materials:"),
+                   # Saddleback's Course Outline (201): its SLOs end where its next Course Content heading starts (a
+                   # trailing * marks a heading matched by its opening words; trial 44889396093, S691).
+                   "saddleback.curriqunet.com": ("Student Learning Outcomes", "Course Content*")}
 # The same for a host whose pages print objectives, so the count by eye covers both kinds the gate compares.
 OBJECTIVES_EXCERPT_BY_HOST = {
-    "riohondo.curriqunet.com": ("V. Course Objectives", ("VI. Methods of Instruction:", "VI. Methods of Instruction"))}
+    "riohondo.curriqunet.com": ("V. Course Objectives", ("VI. Methods of Instruction:", "VI. Methods of Instruction")),
+    "saddleback.curriqunet.com": ("Course Content - Learning Objectives", "Student Learning Outcomes")}
 
 
 def slo_excerpt(text: str, host: str = "ccsf.curricunet.com") -> list[str] | None:
@@ -928,7 +935,8 @@ def _excerpt(text: str, pairs: list) -> list[str] | None:
         if first not in bare:
             continue
         start = bare.index(first) + 1
-        end = next((i for i in range(start, min(len(bare), start + EXCERPT_LINES + 1)) if bare[i] in after), None)
+        end = next((i for i in range(start, min(len(bare), start + EXCERPT_LINES + 1))
+                    if any(bare[i] == a or (a.endswith("*") and bare[i].startswith(a[:-1])) for a in after)), None)
         return None if end is None else [ln for ln in lines[start:end] if ln.strip()]
     return None
 
