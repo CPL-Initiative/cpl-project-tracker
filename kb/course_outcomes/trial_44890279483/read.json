@@ -1,0 +1,594 @@
+{
+ "run": "44890279483",
+ "index": "kb/course_outline_index/index_44882239715.json",
+ "host": "https://riohondo.curriqunet.com/",
+ "system": "curriqunet",
+ "source_kind": "course_outline",
+ "slugs": "rio_hondo",
+ "part": 1,
+ "of": 1,
+ "wanted": 947,
+ "slice": 12,
+ "collects": [
+  "slo",
+  "objective"
+ ],
+ "objectives_printed": true,
+ "parser_fingerprint": "2629a09aeac9be1183829d0cea92009f",
+ "at": "2026-11-21T09:37:56Z",
+ "complete": true,
+ "summary": {
+  "read": 12,
+  "shapes": {
+   "list": 11,
+   "paragraph": 1
+  },
+  "status_not_200": 0,
+  "outcomes": 51
+ },
+ "rows": [
+  {
+   "code": "ACCT 100",
+   "title": "Introduction to Accounting",
+   "course_id": 4563,
+   "report": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/4563?entityType=Course&reportId=358",
+   "named_by": [
+    "rio_hondo"
+   ],
+   "status": 200,
+   "final_url": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/4563?entityType=Course&reportId=358",
+   "access": "public",
+   "chars": 7700,
+   "text_cut": false,
+   "html_chars": 657857,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcome",
+   "lead": null,
+   "outcomes": [
+    "Students will be able to complete the accounting cycle for a service-oriented business.",
+    "Students will be able to prepare financial statements from an adjusted trial balance.",
+    "Students will be able to recognize and apply concepts and procedures of a double-entry accounting system."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "e798674f19ff798a4583a684107736b6",
+   "objectives": [
+    "Recognize and apply concepts and procedures of a double-entry accounting system.",
+    "Prepare financial statements from the adjusted trial balance.",
+    "Complete the accounting cycle for a service-oriented business.",
+    "Recognize the effects of business transactions to the accounting equation.",
+    "Analyze business transactions and record debits and credits in a general journal."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "The Student Will Be Able To:",
+   "objectives_fingerprint": "51f187cada5607a3087c9bc55f26b379",
+   "section_heads": [
+    "COURSE DESCRIPTION",
+    "V. COURSE OBJECTIVES",
+    "STUDENT LEARNING OUTCOME",
+    "TEXTBOOKS"
+   ]
+  },
+  {
+   "code": "ARTH C1100",
+   "title": "Survey of Art from Prehistory to the Medieval Era (formerly ART 105)",
+   "course_id": 7887,
+   "report": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/7887?entityType=Course&reportId=358",
+   "named_by": [
+    "rio_hondo"
+   ],
+   "status": 200,
+   "final_url": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/7887?entityType=Course&reportId=358",
+   "access": "public",
+   "chars": 9961,
+   "text_cut": false,
+   "html_chars": 660642,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcome",
+   "lead": null,
+   "outcomes": [
+    "Presented with a set of images, students will effectively analyze, interpret, and differentiate between works of Western art and architecture from the Prehistoric era through the Late Middle Ages in terms of their functions, roles in society, cultural value, historical context and iconography.",
+    "Presented with representative work(s) of Western art and architecture from the Prehistoric era through the Late Middle Ages, students will effectively describe and analyze the artists' style and use of formal elements, media, materials, and processes.",
+    "Presented with unnamed images, students will correctly attribute representative examples of Western art and architecture from the Prehistoric era through the Late Middle Ages to their origins—artist, time, place, culture-- while providing a rationale for their choices using relevant art historical terminology."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "202168ffbc56d8c4d165ac0c33735aa8",
+   "objectives": [
+    "Identify, examine, and assess representative works of art and architecture from prehistory to the medieval era employing appropriate art historical terminology.",
+    "Analyze works of art and architecture in terms of aesthetic, socio-political, religious, historical, technological, and cultural contexts in which they were created.",
+    "Develop critical thinking, information literacy, and problem solving through an engagement with art, architecture, artists, and patrons from prehistory to the medieval era."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "The Student Will Be Able To:",
+   "objectives_fingerprint": "682fb2db9c444e135e7a1d3ca5d6fe5a",
+   "section_heads": [
+    "COURSE DESCRIPTION",
+    "V. COURSE OBJECTIVES",
+    "METHODS OF EVALUATION",
+    "METHODS OF EVALUATION",
+    "METHODS OF EVALUATION",
+    "STUDENT LEARNING OUTCOME",
+    "TEXTBOOKS"
+   ]
+  },
+  {
+   "code": "CD 102",
+   "title": "Nutrition, Health and Safety for Children",
+   "course_id": 6661,
+   "report": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/6661?entityType=Course&reportId=358",
+   "named_by": [
+    "rio_hondo"
+   ],
+   "status": 200,
+   "final_url": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/6661?entityType=Course&reportId=358",
+   "access": "public",
+   "chars": 13606,
+   "text_cut": false,
+   "html_chars": 667439,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcome",
+   "lead": null,
+   "outcomes": [
+    "Student will observe a child and write about the behaviors in each of the domains. Using an observation form, students will observe, record and demonstrate their knowledge of the each of developmental domains including: cognitive, social-emotional and , physical skills.",
+    "Student will observe children regarding indoor and outdoor practices. Thy will identify differences in developmental skills among children.",
+    "Students will demonstrate an understanding of the policies set by the local health authority regarding records, physical examinations and communicable disease.",
+    "Students will describe the responsibilities of personnel in maintaining a safe and healthy environment for children.",
+    "Students will develop curriculum focusing on nutrition, health and safety that is developmentally appropriate.",
+    "Students will evaluate the physical facilities of children's programs according to the criteria for safe environments.",
+    "Students will explain the developmental nutritional needs of children by age."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "99f74058c10b709cb767c1f26ea3061b",
+   "objectives": [
+    "Identify health, safety and environmental risks in children’s programs including identifying symptoms of common communicable diseases.",
+    "Describe the relationship between nutrition and healthy development and analyze the nutritional needs of children at various ages while planning economical meals and snacks.",
+    "Assess strategies to maximize the mental and physical health of children and adults in programs for children including modeling good nutrition and health and safety habits.",
+    "Evaluate regulations, standards, policies, and procedures related to health, safety, and nutrition in support of children, teachers, and families including mandated reporting and characteristics of abuse and neglect.",
+    "Distinguish aspects of quality in programs for children related to health and safety including planning curriculum on the topics of nutrition, health, and safety with culturally, linguistic, and developmentally sound practice.",
+    "Compare and contrast various methods of collaboration with families and community health professionals to promote health and safety in settings for all children.",
+    "Demonstrate effective strategies for evaluating health and safety policies and procedures including various health assessment tools and policies.",
+    "Discuss current health issues related to children and families."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "The Student Will Be Able To:",
+   "objectives_fingerprint": "2fcb3b59c45c6b4a71f8469fc69e0293",
+   "section_heads": [
+    "COURSE DESCRIPTION",
+    "DISCIPLINE",
+    "OBJECTIVES",
+    "V. COURSE OBJECTIVES",
+    "STUDENT LEARNING OUTCOME",
+    "TEXTBOOKS"
+   ]
+  },
+  {
+   "code": "CORR 101",
+   "title": "Introduction to Corrections",
+   "course_id": 8000,
+   "report": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/8000?entityType=Course&reportId=358",
+   "named_by": [
+    "rio_hondo"
+   ],
+   "status": 200,
+   "final_url": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/8000?entityType=Course&reportId=358",
+   "access": "public",
+   "chars": 6882,
+   "text_cut": false,
+   "html_chars": 654478,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcome",
+   "lead": null,
+   "outcomes": [
+    "Give a model correctional facility, the students will correctly apply legal definitions, concepts, and principles to a custodial setting.",
+    "Presented with a correctional scenario facility, the students will effectively analyze ethical dilemmas.",
+    "Given an example correctional facility, the students will correctly describe the purposes and organization in California."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "494ba0b39248fa0dae3bafe2496315c6",
+   "objectives": [
+    "Discuss the history and trends of corrections.",
+    "Describe the legal issues, specific laws, and general operations of corrections.",
+    "Describe the relationship between corrections and other components of the justice system.",
+    "Identify the difference in adult and juvenile corrections, probation, and parole."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "The Student Will Be Able To:",
+   "objectives_fingerprint": "56016fc6627aa002b689551d2cf0c854",
+   "section_heads": [
+    "COURSE DESCRIPTION",
+    "V. COURSE OBJECTIVES",
+    "STUDENT LEARNING OUTCOME",
+    "TEXTBOOKS"
+   ]
+  },
+  {
+   "code": "EGSS 110",
+   "title": "Introduction to Ethnic Studies",
+   "course_id": 6540,
+   "report": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/6540?entityType=Course&reportId=358",
+   "named_by": [
+    "rio_hondo"
+   ],
+   "status": 200,
+   "final_url": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/6540?entityType=Course&reportId=358",
+   "access": "public",
+   "chars": 10462,
+   "text_cut": false,
+   "html_chars": 660454,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcome",
+   "lead": null,
+   "outcomes": [
+    "Analyze the historical and cultural experiences of the four major ethnic groups in the U.S. (i.e., Native American, African American, Latinx/Chicanx, Asian American/Pacific Islander).",
+    "To demonstrate the ability to connect classroom ideas and knowledge to current events and processes from a local, national, and/or transnational perspective.",
+    "Summarize the key terminology, theoretical orientations, principles, and methods used in the field of Ethnic Studies."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "8216d188b4ce716bd49b5d529c650e49",
+   "objectives": [
+    "Students will be able to analyze and articulate concepts of ethnic studies, including but not limited to race and ethnicity, racialization, equity, ethno-centrism, eurocentrism, white supremacy, self- determination, liberation, decolonization and anti-racism.",
+    "Students will be able to apply theory to describe critical events in the histories, cultures and intellectual traditions, with special focus on the lived-experiences and social struggles of one or more of the following four historically defined racialized core groups: Native Americans, African Americans, Latina/o Americans and/or Asian Americans, and emphasizing agency and group-affirmation.",
+    "Students will be able to critically discuss the intersection of race and ethnicity with other forms of difference affected by hierarchy and oppression, such as class, gender, sexuality, religion, spirituality, national origin, immigration status, ability and/or age.",
+    "Students will be able to describe how struggle, resistance, social justice, solidarity and liberation as experienced by communities of color are relevant to current issues.",
+    "Students will be able to demonstrate active engagement with anti-racist issues, practices and movements to build a diverse, just and equitable society beyond the classroom."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "The Student Will Be Able To:",
+   "objectives_fingerprint": "27fb125f24ae16b7f943c15d71274849",
+   "section_heads": [
+    "COURSE DESCRIPTION",
+    "V. COURSE OBJECTIVES",
+    "STUDENT LEARNING OUTCOME",
+    "TEXTBOOKS"
+   ]
+  },
+  {
+   "code": "FIN 101",
+   "title": "Introduction to Financial Planning",
+   "course_id": 6798,
+   "report": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/6798?entityType=Course&reportId=358",
+   "named_by": [
+    "rio_hondo"
+   ],
+   "status": 200,
+   "final_url": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/6798?entityType=Course&reportId=358",
+   "access": "public",
+   "chars": 12955,
+   "text_cut": false,
+   "html_chars": 668017,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcome",
+   "lead": null,
+   "outcomes": [
+    "Develop a personal balance sheet and cash flow statement, and create and implement a budget.",
+    "Students will be able to analyze the process for making personal financial decisions and develop personal financial goals.",
+    "Students will be able to identify the difference types of investment options available to the investors.",
+    "Students will use and apply time value of money concepts to properly analyze investments with different cash flows.",
+    "They will also be able to explain how to analyze current assets and liabilities for retirement."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "5a6640ed7f79570e4a3e6c3af339df36",
+   "objectives": [
+    "Explain the importance of financial literacy to the overall well-being of an individual.",
+    "Analyze the process for making personal financial decisions and develop personal financial goals.",
+    "Create a system for maintaining personal financial records, develop a personal balance sheet and cash flow statement, and create and implement a budget.",
+    "Define consumer credit and analyze its advantages and disadvantages, differentiate among various types of credit, assess their credit capacity, calculate the cost of various types of credit, and explain how to build a credit rating.",
+    "Discuss the importance of retirement planing and explain how to analyize current assets and liabilities for retirement.",
+    "Analyze the concept of the time value of money (TVM) and recognize the critical role it plays in the investing process.",
+    "Calculate the future and present value of money related to financial decisions and how changes to interest rates effect the future or present values.",
+    "Identify the different types of investment options available to the investor and be able to calculate the risk and total return for each.",
+    "Calculate and analyze financial ratios for liquidity and solvency for personal financial position as well as investment decisions.",
+    "Prepare and analyze amortization schedules for short and long-term loans and understand how changes to interest rate and/or term effects the total cost of the loan.",
+    "Analyze personal net worth and calculate how changes to assets and liabilities effect their net worth value in the present and future."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "The Student Will Be Able To:",
+   "objectives_fingerprint": "be6e8f258db090f27058d61b3ce66570",
+   "section_heads": [
+    "COURSE DESCRIPTION",
+    "EFFECTIVE",
+    "V. COURSE OBJECTIVES",
+    "STUDENT LEARNING OUTCOME",
+    "TEXTBOOKS"
+   ]
+  },
+  {
+   "code": "HEFR 040",
+   "title": "Insulation Industry Orientation",
+   "course_id": 4645,
+   "report": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/4645?entityType=Course&reportId=358",
+   "named_by": [
+    "rio_hondo"
+   ],
+   "status": 200,
+   "final_url": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/4645?entityType=Course&reportId=358",
+   "access": "public",
+   "chars": 7065,
+   "text_cut": false,
+   "html_chars": 657413,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "paragraph",
+   "heading": "Student Learning Outcome",
+   "lead": null,
+   "outcomes": [
+    "Student will complete all tasks determined to meet the needs of Indentured Apprentices with the State of California for the area of study. (Benchmark: 70%)"
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "45d8e07f1c2aa8967ea3c617146c084d",
+   "objectives": [
+    "Identify terms used in the construction industry.",
+    "Identify the Focus Four in the Insulation Industry.",
+    "Demonstrate the ability for proper use of personal protective equipment.",
+    "Discuss matters concerning OSHA regulations, policies and practices.",
+    "Obtain OSHA 30 certification card for the construction industry."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "The Student Will Be Able To:",
+   "objectives_fingerprint": "21131c87ff396f16aaf01f0d86417c2c",
+   "section_heads": [
+    "COURSE DESCRIPTION",
+    "V. COURSE OBJECTIVES",
+    "STUDENT LEARNING OUTCOME",
+    "TEXTBOOKS"
+   ]
+  },
+  {
+   "code": "HUSR 111",
+   "title": "Human Services in Contemporary Society",
+   "course_id": 6760,
+   "report": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/6760?entityType=Course&reportId=358",
+   "named_by": [
+    "rio_hondo"
+   ],
+   "status": 200,
+   "final_url": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/6760?entityType=Course&reportId=358",
+   "access": "public",
+   "chars": 8700,
+   "text_cut": false,
+   "html_chars": 661528,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcome",
+   "lead": null,
+   "outcomes": [
+    "Students will identify various national human service organizations and articulate the functions and objectives of each .",
+    "Students will understand historical development and scope of human services .",
+    "Demonstrate knowledge concerning the impact of ageism ,homophobia , racism , sexism , and special populations on the individual , community , and greater society .",
+    "Students will identify and evaluate social work roles as related to issues of diversity , ethnicity , and multiculturalism",
+    "Students will demonstrate knowledge of the public welfare system , in reference to the modern industrial state , and the impact on the individual .",
+    "Students will be able to acquire a basic understanding of the DSM V diagnostic manual , and the relationship to the human services professional .",
+    "Students will demonstrate awareness of issues in the human service profession as it relates to client autonomy, confidentiality, and dignity."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "78ee5592512dfb09c2c71d7a2c1f4571",
+   "objectives": [
+    "Discuss the history of social services in America.",
+    "Explain the philosophy of human services in contemporary society.",
+    "Identify the function and objectives of human service organizations.",
+    "Describe the qualifications necessary for human service professionals.",
+    "Recognize and identify the populations served in the human services field.",
+    "Demonstrate knowledge of issues in human services.",
+    "Assess and ascertain pursuing a certificate, degree and or professional position in the human services."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "The Student Will Be Able To:",
+   "objectives_fingerprint": "0694bd1f9df9dae2d57a0a91ec2df57f",
+   "section_heads": [
+    "COURSE DESCRIPTION",
+    "V. COURSE OBJECTIVES",
+    "STUDENT LEARNING OUTCOME",
+    "TEXTBOOKS"
+   ]
+  },
+  {
+   "code": "MGMT 101",
+   "title": "Introduction to Business",
+   "course_id": 4688,
+   "report": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/4688?entityType=Course&reportId=358",
+   "named_by": [
+    "rio_hondo"
+   ],
+   "status": 200,
+   "final_url": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/4688?entityType=Course&reportId=358",
+   "access": "public",
+   "chars": 10050,
+   "text_cut": false,
+   "html_chars": 663383,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcome",
+   "lead": null,
+   "outcomes": [
+    "Presented with a hypothetical business problem, students will analyze the business situation and recommend a plan for improvement using a general set of knowledge from the functional areas of business which would include: marketing, management, finance, accounting, and the general business environment.",
+    "Provided with a case study, examination, or project, students will understand the basic tenets of the stock market and explain how various financial elements impact investing.",
+    "Presented with a case study, examination, or project, students will identify and use common business terms from each functional area of business."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "fa4c86de5ad673a8f9f2de7a895ac52c",
+   "objectives": [
+    "Demonstrate knowledge of economic systems and how each operates.",
+    "Identify the various forms of business ownership including sole proprietorships, partnerships, corporations, and franchises.",
+    "Understand the elements of global business and explain the impact of global business on the world economy.",
+    "Identify management functions and explain how they relate to current organizational structure.",
+    "Identify the basic elements of a marketing strategy and explain how markets are defined.",
+    "Differentiate between the various accounting statements and explain the elements of each.",
+    "Identify the sources of short-term and long-term financing."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "The Student Will Be Able To:",
+   "objectives_fingerprint": "b31918c4406ffe850a6a8a12d70773f0",
+   "section_heads": [
+    "COURSE DESCRIPTION",
+    "EFFECTIVE",
+    "V. COURSE OBJECTIVES",
+    "STUDENT LEARNING OUTCOME",
+    "TEXTBOOKS"
+   ]
+  },
+  {
+   "code": "NBSS 040",
+   "title": "Family Child Care License Preparation, Nutrition, Safety and Preventative Health",
+   "course_id": 6065,
+   "report": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/6065?entityType=Course&reportId=359",
+   "named_by": [
+    "rio_hondo"
+   ],
+   "status": 200,
+   "final_url": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/6065?entityType=Course&reportId=359",
+   "access": "public",
+   "chars": 6956,
+   "text_cut": false,
+   "html_chars": 653945,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcome",
+   "lead": null,
+   "outcomes": [
+    "The students will define terms used in the application process to secure a Family Child Care License.",
+    "The students will describe building and grounds issues related to Family Child Care Licensing.",
+    "The students will explain procedures for operating a Family Child Care Program.",
+    "The students will recognize basic components of nutrition, nutrition by age and feed practices.",
+    "The students will identify key components that provide a safe indoor and outdoor environment in Family Child Care Center.",
+    "The students will name procedures and policies that prevent infectious health issues."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "f8e7cf5f58e22d28102903309d9af8e7",
+   "objectives": [
+    "Understand the licensing requirements of Family Child Care set by Title 22.",
+    "Explore the licensing requirements of Family Child Care in California related to buildings and grounds.",
+    "Review the procedures for operating a Family Child Care Home.",
+    "Examine basic nutrition requirements by age and feeding procedures by age.",
+    "Identify components of Family Child Care that provide a safe experience for children and families.",
+    "Describe health practices that prevent infections."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "The Student Will Be Able To:",
+   "objectives_fingerprint": "5d863e5ea2042e94d8a75311e09685e4",
+   "section_heads": [
+    "V. COURSE OBJECTIVES",
+    "STUDENT LEARNING OUTCOME",
+    "TEXTBOOKS"
+   ]
+  },
+  {
+   "code": "PHIL 101",
+   "title": "Introduction to Philosophy",
+   "course_id": 6210,
+   "report": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/6210?entityType=Course&reportId=358",
+   "named_by": [
+    "rio_hondo"
+   ],
+   "status": 200,
+   "final_url": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/6210?entityType=Course&reportId=358",
+   "access": "public",
+   "chars": 8890,
+   "text_cut": false,
+   "html_chars": 659160,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcome",
+   "lead": null,
+   "outcomes": [
+    "Given a philosophical work, students will demonstrate an understanding through a competent paraphrase of it.",
+    "Given previous instruction in a philosophical theory the student will correctly identify and explain the basic elements of that theory.",
+    "Provided with a philosophical argument, students will defend a point of view.",
+    "Provided with a real world scenario, students will correctly apply a philosophical theory to it."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "6cfb0ea90acf9072708772e71b732eee",
+   "objectives": [
+    "Demonstrate a basic understanding of philosophical methods.",
+    "Demonstrate the ability to articulate ideas about philosophical issues.",
+    "Use philosophical methods, assumptions and principles to analyze philosophical ideas and positions.",
+    "Evaluate philosophical arguments, methods, assumptions, and principles for consistency, relevance, and truth.",
+    "Evaluate ideas, philosophers, teachings, doctrines, which impact on all facets of human life.",
+    "Employ philosophy oneself, and explain how the philosophical method can have daily practical significance."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "The Student Will Be Able To:",
+   "objectives_fingerprint": "f8aee6cb5c88378dc6b7c1ca95831d24",
+   "section_heads": [
+    "COURSE DESCRIPTION",
+    "ADVISORY",
+    "V. COURSE OBJECTIVES",
+    "STUDENT LEARNING OUTCOME",
+    "TEXTBOOKS"
+   ]
+  },
+  {
+   "code": "SOC 102",
+   "title": "Major Social Problems",
+   "course_id": 6272,
+   "report": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/6272?entityType=Course&reportId=358",
+   "named_by": [
+    "rio_hondo"
+   ],
+   "status": 200,
+   "final_url": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/6272?entityType=Course&reportId=358",
+   "access": "public",
+   "chars": 9671,
+   "text_cut": false,
+   "html_chars": 660248,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcome",
+   "lead": null,
+   "outcomes": [
+    "Given a reading assignment, students will distinguish between the structure(s) of society and its major institutional components",
+    "Given an article on a specific social problem, the student will accurately recognize how the circumstances come to be defined as a social problem and how it impacts society both individually and structurally.",
+    "Given several general social problems, students will appropriately utilize an intersectional understanding; especially as it relates to race, class, gender age, sexual orientation, disability, religion and nationality.",
+    "In a written assignment, students will demonstrate how social problems impact individuals, communities and societies.",
+    "Provided with a Social Problem, Students will effectively analyze the problem through macro, mezzo and micro sociology using different Theoretical Perspectives.",
+    "Through a particular example, students will accurately recognize the relevance of the \"sociological imagination\" to the study of social problems."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "889aee6d3a26e94d62ec6b3ac11c4dda",
+   "objectives": [
+    "Demonstrate an understanding of major social problems concerning the U.S.",
+    "Place local, regional, and national social problems in a global context.",
+    "Identify and distinguish between, causes and consequences of social problems",
+    "Analyze social problems using sociological approaches and concepts",
+    "Analyze and interpret qualitative and quantitative information about social problems",
+    "Identify and evaluate policies that address social problems and assess the policies impact on society"
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "The Student Will Be Able To:",
+   "objectives_fingerprint": "098c686ec329057746bba087cbd69190",
+   "section_heads": [
+    "COURSE DESCRIPTION",
+    "V. COURSE OBJECTIVES",
+    "STUDENT LEARNING OUTCOME",
+    "TEXTBOOKS"
+   ]
+  }
+ ]
+}

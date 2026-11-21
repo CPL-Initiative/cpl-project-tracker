@@ -1,0 +1,415 @@
+{
+ "run": "44887686814",
+ "index": "kb/course_outline_index/index_44886092872.json",
+ "host": "https://saddleback.curriqunet.com/",
+ "system": "curriqunet",
+ "source_kind": "course_outline",
+ "slugs": "saddleback",
+ "part": 1,
+ "of": 1,
+ "wanted": 1301,
+ "slice": 12,
+ "collects": [
+  "slo",
+  "objective"
+ ],
+ "objectives_printed": true,
+ "parser_fingerprint": "0c55630fdb9d85f0444db07a6930477c",
+ "at": "2026-11-21T09:05:27Z",
+ "complete": true,
+ "summary": {
+  "read": 12,
+  "shapes": {
+   "none": 10,
+   "list": 2
+  },
+  "status_not_200": 0,
+  "outcomes": 10
+ },
+ "rows": [
+  {
+   "code": "ACCT 120",
+   "title": "INTRODUCTION TO FINANCIAL PLANNING",
+   "course_id": 30069,
+   "report": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/30069?entityType=Course&reportId=190",
+   "named_by": [
+    "saddleback"
+   ],
+   "status": 200,
+   "final_url": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/30069?entityType=Course&reportId=190",
+   "access": "public",
+   "chars": 1383,
+   "text_cut": false,
+   "html_chars": 633298,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null,
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null,
+   "section_heads": [
+    "COURSE DESCRIPTION"
+   ]
+  },
+  {
+   "code": "ART 10",
+   "title": "CERAMICS - HANDBUILDING I",
+   "course_id": 27711,
+   "report": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/27711?entityType=Course&reportId=190",
+   "named_by": [
+    "saddleback"
+   ],
+   "status": 200,
+   "final_url": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/27711?entityType=Course&reportId=190",
+   "access": "public",
+   "chars": 1251,
+   "text_cut": false,
+   "html_chars": 633165,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null,
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null,
+   "section_heads": [
+    "COURSE DESCRIPTION"
+   ]
+  },
+  {
+   "code": "CHI 1",
+   "title": "ELEMENTARY CHINESE",
+   "course_id": 30637,
+   "report": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/30637?entityType=Course&reportId=190",
+   "named_by": [
+    "saddleback"
+   ],
+   "status": 200,
+   "final_url": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/30637?entityType=Course&reportId=190",
+   "access": "public",
+   "chars": 1011,
+   "text_cut": false,
+   "html_chars": 632929,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null,
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null,
+   "section_heads": [
+    "COURSE DESCRIPTION"
+   ]
+  },
+  {
+   "code": "CMT 215",
+   "title": "ELECTRONICS FOR COMPUTER TECHNOLOGISTS",
+   "course_id": 24677,
+   "report": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/24677?entityType=Course&reportId=190",
+   "named_by": [
+    "saddleback"
+   ],
+   "status": 200,
+   "final_url": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/24677?entityType=Course&reportId=190",
+   "access": "public",
+   "chars": 1251,
+   "text_cut": false,
+   "html_chars": 633452,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null,
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null,
+   "section_heads": [
+    "COURSE DESCRIPTION"
+   ]
+  },
+  {
+   "code": "DANC 10",
+   "title": "DANCE PRODUCTION",
+   "course_id": 29792,
+   "report": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/29792?entityType=Course&reportId=190",
+   "named_by": [
+    "saddleback"
+   ],
+   "status": 200,
+   "final_url": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/29792?entityType=Course&reportId=190",
+   "access": "public",
+   "chars": 1171,
+   "text_cut": false,
+   "html_chars": 633230,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null,
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null,
+   "section_heads": [
+    "COURSE DESCRIPTION"
+   ]
+  },
+  {
+   "code": "ES 1",
+   "title": "INTRODUCTION TO ETHNIC STUDIES",
+   "course_id": 27605,
+   "report": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/27605?entityType=Course&reportId=190",
+   "named_by": [
+    "saddleback"
+   ],
+   "status": 200,
+   "final_url": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/27605?entityType=Course&reportId=190",
+   "access": "public",
+   "chars": 2619,
+   "text_cut": false,
+   "html_chars": 634749,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Upon successful completion of this course, students will be able to explain anti-racist and anti-colonial issues as articulated by Native American, African American, Asian American, and Chicanx and Latinx activists and social movements.",
+   "lead": "Upon successful completion of this course, students will be able to explain anti-racist and anti-colonial issues as articulated by Native American, African American, Asian American, and Chicanx and Latinx activists and social movements.",
+   "outcomes": [
+    "Upon successful completion of this course, students will be able to apply concepts of Ethnic Studies such as race and racism, racialization, ethnicity, equity, ethnocentrism, Eurocentrism, white supremacy, self-determination, liberation, decolonization, sovereignty, imperialism, settler colonialism, and anti-racism.",
+    "Upon successful completion of this course, students will be able to analyze the intersection of race and racism as they relate to class, gender, sexuality, religion, spirituality, ability, tribal citizenship, sovereignty, language, and/or age in Native American. African American, Asian American, and Chicanx and Latinx communities.",
+    "Upon successful completion of this course, students will be able to explain the critical events, histories, cultures, intellectual traditions, contributions, lived-experiences, and social struggles of Native American, African American, Asian American, and Chicanx and Latinx communities.",
+    "Upon successful completion of this course, students will be able to identify how Native American, African American, Asian American, and Chicanx and Latinx struggles for racial and social justice are relevant to current and structural issues.",
+    "Upon successful completion of this course, students will be able to discuss theory and knowledge produced by Native Americans African Americans, Asian Americans, and/or Chicanx and Latinx individuals."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "46eb4c1fc350b00b6368aa0683cfb7a5",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null,
+   "section_heads": [
+    "COURSE DESCRIPTION"
+   ]
+  },
+  {
+   "code": "GD 1",
+   "title": "HISTORY OF ANIMATION",
+   "course_id": 29902,
+   "report": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/29902?entityType=Course&reportId=190",
+   "named_by": [
+    "saddleback"
+   ],
+   "status": 200,
+   "final_url": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/29902?entityType=Course&reportId=190",
+   "access": "public",
+   "chars": 916,
+   "text_cut": false,
+   "html_chars": 632829,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null,
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null,
+   "section_heads": [
+    "COURSE DESCRIPTION"
+   ]
+  },
+  {
+   "code": "HIST 10",
+   "title": "RACE, ETHNICITY, AND RESISTANCE IN THE U.S.",
+   "course_id": 27352,
+   "report": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/27352?entityType=Course&reportId=190",
+   "named_by": [
+    "saddleback"
+   ],
+   "status": 200,
+   "final_url": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/27352?entityType=Course&reportId=190",
+   "access": "public",
+   "chars": 2123,
+   "text_cut": false,
+   "html_chars": 634259,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null,
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null,
+   "section_heads": [
+    "COURSE DESCRIPTION"
+   ]
+  },
+  {
+   "code": "ID 110",
+   "title": "FUNDAMENTALS OF INTERIOR DESIGN",
+   "course_id": 29898,
+   "report": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/29898?entityType=Course&reportId=190",
+   "named_by": [
+    "saddleback"
+   ],
+   "status": 200,
+   "final_url": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/29898?entityType=Course&reportId=190",
+   "access": "public",
+   "chars": 1261,
+   "text_cut": false,
+   "html_chars": 633179,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null,
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null,
+   "section_heads": [
+    "COURSE DESCRIPTION"
+   ]
+  },
+  {
+   "code": "LIB 100",
+   "title": "BASIC INFORMATION COMPETENCY SKILLS, LIBRARY RESEARCH",
+   "course_id": 27667,
+   "report": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/27667?entityType=Course&reportId=190",
+   "named_by": [
+    "saddleback"
+   ],
+   "status": 200,
+   "final_url": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/27667?entityType=Course&reportId=190",
+   "access": "public",
+   "chars": 983,
+   "text_cut": false,
+   "html_chars": 632896,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null,
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null,
+   "section_heads": [
+    "COURSE DESCRIPTION"
+   ]
+  },
+  {
+   "code": "PH 1",
+   "title": "INTRODUCTION TO PUBLIC HEALTH",
+   "course_id": 29053,
+   "report": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/29053?entityType=Course&reportId=190",
+   "named_by": [
+    "saddleback"
+   ],
+   "status": 200,
+   "final_url": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/29053?entityType=Course&reportId=190",
+   "access": "public",
+   "chars": 1386,
+   "text_cut": false,
+   "html_chars": 633302,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null,
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null,
+   "section_heads": [
+    "COURSE DESCRIPTION"
+   ]
+  },
+  {
+   "code": "PS 10H",
+   "title": "HONORS POLITICAL THEORY",
+   "course_id": 26971,
+   "report": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/26971?entityType=Course&reportId=190",
+   "named_by": [
+    "saddleback"
+   ],
+   "status": 200,
+   "final_url": "https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/26971?entityType=Course&reportId=190",
+   "access": "public",
+   "chars": 1302,
+   "text_cut": false,
+   "html_chars": 633432,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Upon successful completion of this course students will demonstrate an understanding and critical analysis of Plato’s, Republic or Aristotle’s, Politics.",
+   "lead": "Upon successful completion of this course students will demonstrate an understanding and critical analysis of Plato’s, Republic or Aristotle’s, Politics.",
+   "outcomes": [
+    "Demonstrate an understanding and critical analysis of Plato’s, Republic or Aristotle’s, Politics.",
+    "Demonstrate an understanding and critical analysis of Niccolo Machiavelli’s, The Prince.",
+    "Demonstrate an understanding and critical analysis of John Stuart Mill’s, On Liberty.",
+    "Demonstrate an understanding and critical analysis of Karl Marx’s The Communist Manifesto.",
+    "Demonstrate an understanding and critical analysis of John Locke’s Second Treatise on Government."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "61fb2c313290a4b8213f57e3e3944182",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null,
+   "section_heads": [
+    "COURSE DESCRIPTION"
+   ]
+  }
+ ]
+}

@@ -54,6 +54,11 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: The standing test, before anything posts
+        # Step 11 runs this by hand before a .load (S681: Chabot's load posted 1,013 objectives as SLOs past red
+        # checks 8 and 9, then was rolled back); here the load itself refuses while a check fails (S691).
+        run: python3 tests/course_outcomes_objectives_standing_test.py
+
       - name: Load the filed read, insert-only
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}

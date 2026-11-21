@@ -1,0 +1,421 @@
+{
+ "run": "44883156016",
+ "index": "kb/course_outline_index/index_44882239715.json",
+ "host": "https://riohondo.curriqunet.com/",
+ "system": "curriqunet",
+ "source_kind": "course_outline",
+ "slugs": "rio_hondo",
+ "part": 1,
+ "of": 1,
+ "wanted": 947,
+ "slice": 12,
+ "collects": [
+  "slo",
+  "objective"
+ ],
+ "objectives_printed": true,
+ "parser_fingerprint": "d5cef4939108bf28904728debe65f05b",
+ "at": "2026-11-21T08:07:27Z",
+ "complete": true,
+ "summary": {
+  "read": 12,
+  "shapes": {
+   "none": 12
+  },
+  "status_not_200": 0,
+  "outcomes": 0
+ },
+ "rows": [
+  {
+   "code": "ACCT 100",
+   "title": "Introduction to Accounting",
+   "course_id": 4563,
+   "report": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/4563?entityType=Course&reportId=358",
+   "named_by": [
+    "rio_hondo"
+   ],
+   "status": 200,
+   "final_url": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/4563?entityType=Course&reportId=358",
+   "access": "public",
+   "chars": 7700,
+   "text_cut": false,
+   "html_chars": 657857,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null,
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null,
+   "section_heads": [
+    "COURSE DESCRIPTION",
+    "TEXTBOOKS"
+   ]
+  },
+  {
+   "code": "ARTH C1100",
+   "title": "Survey of Art from Prehistory to the Medieval Era (formerly ART 105)",
+   "course_id": 7887,
+   "report": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/7887?entityType=Course&reportId=358",
+   "named_by": [
+    "rio_hondo"
+   ],
+   "status": 200,
+   "final_url": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/7887?entityType=Course&reportId=358",
+   "access": "public",
+   "chars": 9961,
+   "text_cut": false,
+   "html_chars": 660642,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null,
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null,
+   "section_heads": [
+    "COURSE DESCRIPTION",
+    "METHODS OF EVALUATION",
+    "METHODS OF EVALUATION",
+    "METHODS OF EVALUATION",
+    "TEXTBOOKS"
+   ]
+  },
+  {
+   "code": "CD 102",
+   "title": "Nutrition, Health and Safety for Children",
+   "course_id": 6661,
+   "report": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/6661?entityType=Course&reportId=358",
+   "named_by": [
+    "rio_hondo"
+   ],
+   "status": 200,
+   "final_url": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/6661?entityType=Course&reportId=358",
+   "access": "public",
+   "chars": 13606,
+   "text_cut": false,
+   "html_chars": 667439,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null,
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null,
+   "section_heads": [
+    "COURSE DESCRIPTION",
+    "DISCIPLINE",
+    "OBJECTIVES",
+    "TEXTBOOKS"
+   ]
+  },
+  {
+   "code": "CORR 101",
+   "title": "Introduction to Corrections",
+   "course_id": 8000,
+   "report": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/8000?entityType=Course&reportId=358",
+   "named_by": [
+    "rio_hondo"
+   ],
+   "status": 200,
+   "final_url": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/8000?entityType=Course&reportId=358",
+   "access": "public",
+   "chars": 6882,
+   "text_cut": false,
+   "html_chars": 654478,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null,
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null,
+   "section_heads": [
+    "COURSE DESCRIPTION",
+    "TEXTBOOKS"
+   ]
+  },
+  {
+   "code": "EGSS 110",
+   "title": "Introduction to Ethnic Studies",
+   "course_id": 6540,
+   "report": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/6540?entityType=Course&reportId=358",
+   "named_by": [
+    "rio_hondo"
+   ],
+   "status": 200,
+   "final_url": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/6540?entityType=Course&reportId=358",
+   "access": "public",
+   "chars": 10462,
+   "text_cut": false,
+   "html_chars": 660454,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null,
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null,
+   "section_heads": [
+    "COURSE DESCRIPTION",
+    "TEXTBOOKS"
+   ]
+  },
+  {
+   "code": "FIN 101",
+   "title": "Introduction to Financial Planning",
+   "course_id": 6798,
+   "report": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/6798?entityType=Course&reportId=358",
+   "named_by": [
+    "rio_hondo"
+   ],
+   "status": 200,
+   "final_url": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/6798?entityType=Course&reportId=358",
+   "access": "public",
+   "chars": 12955,
+   "text_cut": false,
+   "html_chars": 668017,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null,
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null,
+   "section_heads": [
+    "COURSE DESCRIPTION",
+    "EFFECTIVE",
+    "TEXTBOOKS"
+   ]
+  },
+  {
+   "code": "HEFR 040",
+   "title": "Insulation Industry Orientation",
+   "course_id": 4645,
+   "report": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/4645?entityType=Course&reportId=358",
+   "named_by": [
+    "rio_hondo"
+   ],
+   "status": 200,
+   "final_url": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/4645?entityType=Course&reportId=358",
+   "access": "public",
+   "chars": 7065,
+   "text_cut": false,
+   "html_chars": 657413,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null,
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null,
+   "section_heads": [
+    "COURSE DESCRIPTION",
+    "TEXTBOOKS"
+   ]
+  },
+  {
+   "code": "HUSR 111",
+   "title": "Human Services in Contemporary Society",
+   "course_id": 6760,
+   "report": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/6760?entityType=Course&reportId=358",
+   "named_by": [
+    "rio_hondo"
+   ],
+   "status": 200,
+   "final_url": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/6760?entityType=Course&reportId=358",
+   "access": "public",
+   "chars": 8700,
+   "text_cut": false,
+   "html_chars": 661528,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null,
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null,
+   "section_heads": [
+    "COURSE DESCRIPTION",
+    "TEXTBOOKS"
+   ]
+  },
+  {
+   "code": "MGMT 101",
+   "title": "Introduction to Business",
+   "course_id": 4688,
+   "report": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/4688?entityType=Course&reportId=358",
+   "named_by": [
+    "rio_hondo"
+   ],
+   "status": 200,
+   "final_url": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/4688?entityType=Course&reportId=358",
+   "access": "public",
+   "chars": 10050,
+   "text_cut": false,
+   "html_chars": 663383,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null,
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null,
+   "section_heads": [
+    "COURSE DESCRIPTION",
+    "EFFECTIVE",
+    "TEXTBOOKS"
+   ]
+  },
+  {
+   "code": "NBSS 040",
+   "title": "Family Child Care License Preparation, Nutrition, Safety and Preventative Health",
+   "course_id": 6065,
+   "report": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/6065?entityType=Course&reportId=359",
+   "named_by": [
+    "rio_hondo"
+   ],
+   "status": 200,
+   "final_url": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/6065?entityType=Course&reportId=359",
+   "access": "public",
+   "chars": 6956,
+   "text_cut": false,
+   "html_chars": 653945,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null,
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null,
+   "section_heads": [
+    "TEXTBOOKS"
+   ]
+  },
+  {
+   "code": "PHIL 101",
+   "title": "Introduction to Philosophy",
+   "course_id": 6210,
+   "report": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/6210?entityType=Course&reportId=358",
+   "named_by": [
+    "rio_hondo"
+   ],
+   "status": 200,
+   "final_url": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/6210?entityType=Course&reportId=358",
+   "access": "public",
+   "chars": 8890,
+   "text_cut": false,
+   "html_chars": 659160,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null,
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null,
+   "section_heads": [
+    "COURSE DESCRIPTION",
+    "ADVISORY",
+    "TEXTBOOKS"
+   ]
+  },
+  {
+   "code": "SOC 102",
+   "title": "Major Social Problems",
+   "course_id": 6272,
+   "report": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/6272?entityType=Course&reportId=358",
+   "named_by": [
+    "rio_hondo"
+   ],
+   "status": 200,
+   "final_url": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsReportByEntity/6272?entityType=Course&reportId=358",
+   "access": "public",
+   "chars": 9671,
+   "text_cut": false,
+   "html_chars": 660248,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null,
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null,
+   "section_heads": [
+    "COURSE DESCRIPTION",
+    "TEXTBOOKS"
+   ]
+  }
+ ]
+}

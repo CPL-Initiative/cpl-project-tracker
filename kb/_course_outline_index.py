@@ -124,6 +124,29 @@ def record_codes(slugs: list[str]) -> dict[str, list[str]]:
     return out
 
 
+def code_suffix(raw: str) -> str:
+    """What a record's code prints past the subject and number norm_code keeps: HOND 045-1 keeps HOND 045 and leaves
+    "1". Letters and digits only, so 'ACC-1A' and 'ACC 1A' leave the same (nothing)."""
+    up = (raw or "").upper()
+    m = CODE.search(up)
+    return re.sub(r"[^A-Z0-9]", "", up[m.end():]) if m else ""
+
+
+def record_code_suffixes(slugs: list[str]) -> dict[str, set[str]]:
+    """Each normalized code the loaded program records name, with the suffixes its printed spellings carry past it
+    (code_suffix). Two suffixes under one code are two printed codes that norm_code folds into one (Rio Hondo's HOND
+    045 and HOND 045-1, S691's second reader)."""
+    out: dict[str, set[str]] = {}
+    for slug in slugs:
+        for path in glob.glob(os.path.join(HERE, "program_requirements_college", slug, "records", "*.json")):
+            text = json.dumps((json.load(open(path)) or {}).get("record") or {})
+            for raw in re.findall(r'"(?:code|course_code|course)"\s*:\s*"([^"]+)"', text):
+                c = norm_code(raw)
+                if c:
+                    out.setdefault(c, set()).add(code_suffix(raw))
+    return out
+
+
 def discover(reader, url: str) -> dict:
     seen = []  # responses; bodies are read after the load, never inside the handler
 
@@ -211,6 +234,26 @@ KNOWN_SEARCH = {
         "report_ids": [28],
     },
 }
+# The page's own Search buttons: each visible, enabled button (or submit input) whose whole label is "Search", a
+# primary-styled one first, then one in the same form or row as a Reset button, then the rest in page order. Given n,
+# it presses the n-th and returns which one, or null when there is no n-th; it fills no field and answers no check.
+# Index run 44881165580 pressed Rio Hondo's first of two (btn-secondary), which posted no search (S691).
+PRESS_SEARCH_JS = """(n) => {
+  const label = e => (e.innerText || e.value || '').replace(/\\s+/g, ' ').trim();
+  const shown = e => !!(e.offsetWidth || e.offsetHeight || e.getClientRects().length);
+  const all = Array.from(document.querySelectorAll('button, input[type=submit], input[type=button]'));
+  const found = all.filter(e => shown(e) && !e.disabled && /^search$/i.test(label(e)));
+  const box = e => e.closest('form') || (e.parentElement && e.parentElement.parentElement) || e.parentElement;
+  const resetNear = e => !!box(e) && Array.from(box(e).querySelectorAll('button, input')).some(x => /^reset$/i.test(label(x)));
+  const rank = e => (/primary/i.test(String(e.className || '')) ? 0 : 2) + (resetNear(e) ? 0 : 1);
+  const order = found.map((e, i) => [rank(e), i, e]).sort((a, b) => a[0] - b[0] || a[1] - b[1]).map(x => x[2]);
+  const b = order[n || 0];
+  if (!b) return null;
+  b.click();
+  return {n: n || 0, tag: b.tagName, id: b.id || null, cls: String(b.className || '').slice(0, 80),
+          candidates: found.length, beside_reset: resetNear(b)};
+}"""
+PRESS_TRIES = 3
 JSON_SEARCH_HEADERS = {"content-type": "application/json; charset=utf-8", "x-requested-with": "XMLHttpRequest"}
 
 
@@ -239,13 +282,95 @@ def with_page(post: str, size: int, page: int) -> str:
     return "&".join(parts)
 
 
-def keep_row(row: dict) -> bool:
-    """An active course outline: Active status, not a distance education addendum."""
-    if (row.get("StatusTitle") or "") != "Active":
+# The status words a current outline carries. Every host indexed through S690 marks its current outline Active; a
+# host whose current outlines carry another word (Saddleback and Irvine Valley, index run 44473234614: 26,785 rows,
+# none kept) names its words in the .run's status= line, a pattern matched against the whole StatusTitle (S691).
+STATUS_KEEP = r"Active"
+# Which college's records a row is, where one host holds two or more colleges' outlines: the .run's client= line, a
+# pattern matched against the row's client label (client_of). Unset, every row is kept (S691).
+CLIENT_KEYS = ("ClientTitle", "ClientName", "Client", "CampusTitle")
+
+
+def client_of(row: dict) -> str:
+    """The row's client label: a client field where the search returns one, else the college prefix of its proposal
+    type (Saddleback's "Saddleback - New Course"), else the client id its outline reports carry."""
+    for k in CLIENT_KEYS:
+        v = row.get(k)
+        if isinstance(v, str) and v.strip():
+            return v.strip()
+    m = re.match(r"^\s*([^-]+?)\s+-\s+", row.get("ProposalTypeTitle") or "")
+    if m:
+        return m.group(1)
+    ids = sorted({str(r.get("ClientId")) for r in row.get("MetaReports") or [] if r.get("ClientId") is not None})
+    return "client " + ",".join(ids) if ids else ""
+
+
+def keep_row(row: dict, status: str = STATUS_KEEP, client: str = "") -> bool:
+    """A current course outline: a status the host's words name (Active unless the .run says otherwise), the college
+    the .run's client= names when it names one, and not a distance education addendum."""
+    if not re.fullmatch(status or STATUS_KEEP, (row.get("StatusTitle") or "").strip(), re.I):
+        return False
+    if client and not re.search(client, client_of(row), re.I):
         return False
     if re.search(r"distance education", row.get("ProposalTypeTitle") or "", re.I):
         return False
     return True
+
+
+def row_code(row: dict) -> str | None:
+    """The row's course code: its subject and number, or the row's own full code where that is the same subject and
+    number with a suffix the number field leaves off. Saddleback's search returns CourseNumber "1" for both ACCT 1A
+    and ACCT 1B (index run 44882665427: 95 codes held two or three courses), and its Code field carries the suffix.
+    A host whose Code is the subject and number again keys as before."""
+    base = norm_code("%s %s" % (row.get("SubjectCode") or "", row.get("CourseNumber") or ""))
+    if not base:
+        return None
+    subj, num = base.split(" ", 1)
+    for cand in (row.get("Code"), "%s %s" % (row.get("district-subject") or "", row.get("district-coursenumber") or ""),
+                 row.get("PublicEntityTitle"), row.get("ProposalTitle")):
+        c = norm_code(cand if isinstance(cand, str) else "")
+        if not c or c == base:
+            continue
+        csubj, cnum = c.split(" ", 1)
+        n, cn = num.lstrip("0"), cnum.lstrip("0")
+        if csubj == subj and cn.startswith(n) and len(cn) > len(n) and cn[len(n)].isalpha():
+            return c
+    return base
+
+
+def row_census(rows: list[dict], kept: list[dict] | None = None) -> dict:
+    """What a search returned, counted so a run shows the host's own words: each status, each client label, the two
+    together, and the field names one row carries. Counts and field names only, never a row's people fields."""
+    from collections import Counter
+    status = Counter((r.get("StatusTitle") or "").strip() for r in rows)
+    client = Counter(client_of(r) for r in rows)
+    both = Counter("%s | %s" % (client_of(r), (r.get("StatusTitle") or "").strip()) for r in rows)
+    return {"status_titles": dict(status.most_common()), "client_labels": dict(client.most_common(20)),
+            "client_status": dict(both.most_common(60)), "row_fields": sorted(rows[0]) if rows else [],
+            # Up to 12 rows whose full code keys them past their subject and number (row_code), as the search
+            # returned them: course codes only.
+            "code_from_field": [[r.get("SubjectCode"), r.get("CourseNumber"), row_code(r)] for r in rows
+                                if row_code(r) and row_code(r) != norm_code("%s %s" % (r.get("SubjectCode") or "",
+                                                                                      r.get("CourseNumber") or ""))][:12],
+            # The code fields of the first rows that share one subject and number with another row, cut at 80
+            # characters each, so a run shows where a host prints a course's suffix. Code fields only.
+            "shared_code_fields": _shared_code_fields(rows if kept is None else kept)}
+
+
+CODE_FIELDS = ("SubjectCode", "CourseNumber", "Code", "district-subject", "district-coursenumber", "PublicEntityTitle")
+
+
+def _shared_code_fields(rows: list[dict], n: int = 8) -> list[dict]:
+    from collections import Counter
+    keys = Counter(norm_code("%s %s" % (r.get("SubjectCode") or "", r.get("CourseNumber") or "")) for r in rows)
+    out = []
+    for r in rows:
+        k = norm_code("%s %s" % (r.get("SubjectCode") or "", r.get("CourseNumber") or ""))
+        if k and keys[k] > 1 and row_code(r) == k:
+            out.append({f: str(r.get(f))[:80] for f in CODE_FIELDS if r.get(f) is not None})
+            if len(out) >= n:
+                break
+    return out
 
 
 # RCCD's form (discovery run 38312406074); a host whose own links say otherwise wins.
@@ -320,13 +445,14 @@ def report_titles(rows: list[dict], title: str = REPORT_TITLE, ids=None) -> list
     return sorted(seen.values(), key=lambda x: -x["rows"])
 
 
-def build_index(rows: list[dict], base: str, form: str = LEGACY_FORM, title: str = REPORT_TITLE, ids=None) -> dict:
-    """norm_code -> the active outline rows for it."""
+def build_index(rows: list[dict], base: str, form: str = LEGACY_FORM, title: str = REPORT_TITLE, ids=None,
+                status: str = STATUS_KEEP, client: str = "") -> dict:
+    """norm_code -> the current outline rows for it (keep_row: the host's status words, the .run's client)."""
     index = {}
     for row in rows:
-        if not keep_row(row):
+        if not keep_row(row, status, client):
             continue
-        code = norm_code("%s %s" % (row.get("SubjectCode") or "", row.get("CourseNumber") or ""))
+        code = row_code(row)
         if not code:
             continue
         index.setdefault(code, []).append({
@@ -348,16 +474,42 @@ def known_request(url: str) -> dict | None:
 def search_all(reader, url: str, delay_ms: int) -> dict:
     """Load the dashboard, capture its NewSearch request, page through every row."""
     captured = {}
+    posts = []  # the paths the page itself posts to on its own host, so a press that finds no search shows where
 
     def on_request(req):
         if "/Search/NewSearch" in req.url and req.method == "POST" and "url" not in captured:
             captured.update(url=req.url, post=req.post_data or "", headers=dict(req.headers))
+        if req.method == "POST" and urllib.parse.urlparse(req.url).netloc == urllib.parse.urlparse(url).netloc:
+            posts.append(urllib.parse.urlparse(req.url).path)
 
     reader.page.on("request", on_request)
     page = reader.load(url)
     reader.page.wait_for_timeout(3000)
+    pressed = None
+    if "url" not in captured and page.get("status") == 200 and not known_search(url):
+        # Rio Hondo's dashboard (discovery run 44508907581) and SDCCD's since S685 (index runs 44531933532 and
+        # 44536348461) load their search model and fields but post no NewSearch until a person presses Search. The
+        # index presses the page's own Search buttons, one at a time as a person would, until the page posts its
+        # search, and captures what the page posts.
+        pressed = []
+        for n in range(PRESS_TRIES):
+            before = len(posts)
+            try:
+                got = reader.page.evaluate(PRESS_SEARCH_JS, n)
+            except Exception as e:  # a page that navigates or throws on the press keeps its "no NewSearch" error
+                pressed.append({"n": n, "error": str(e)[:200]})
+                break
+            if not got:
+                break
+            reader.page.wait_for_timeout(5000)
+            got["posted"] = sorted(set(posts[before:]))[:10]
+            pressed.append(got)
+            if "url" in captured:
+                break
     reader.page.remove_listener("request", on_request)
     out = {"url": url, "status": page.get("status"), "title": page.get("title")}
+    if pressed is not None:
+        out["pressed_search"] = pressed
     try:
         out["outline_links"] = reader.page.evaluate(OUTLINE_LINKS_JS) or []
     except Exception:
@@ -395,7 +547,8 @@ def search_all(reader, url: str, delay_ms: int) -> dict:
     return out
 
 
-def write_index(url: str, searched: dict, wanted: dict, loads: int, title: str = REPORT_TITLE) -> int:
+def write_index(url: str, searched: dict, wanted: dict, loads: int, title: str = REPORT_TITLE,
+                status: str = STATUS_KEEP, client: str = "") -> int:
     base = url if url.endswith("/") else url + "/"
     rows = searched.pop("rows", [])
     rec = known_search(url) or {}
@@ -404,14 +557,15 @@ def write_index(url: str, searched: dict, wanted: dict, loads: int, title: str =
     form_from = ("the checked record (%s)" % rec["source"] if rec.get("form") else
                  "the page's own outline links" if learned else "RCCD's default")
     ids = rec.get("report_ids")
-    index = build_index(rows, base, form, title, ids)
+    index = build_index(rows, base, form, title, ids, status, client)
     union = set().union(*wanted.values()) if wanted else set()
     with_report = {c for c, v in index.items() if any(x["reports"] for x in v)}
     coverage = {slug: {"courses": len(codes), "with_outline": sum(1 for c in codes if c in with_report)}
                 for slug, codes in wanted.items()}
     run = os.environ.get("GITHUB_RUN_ID", "local")
     out = {"run": run, "at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "url": url,
-           "search": searched, "loads": loads,
+           "search": searched, "loads": loads, "status_keep": status, "client": client or None,
+           "rows_seen": row_census(rows, [r for r in rows if keep_row(r, status, client)]),
            "report_form": form, "report_form_from": form_from,
            "report_title": title, "report_ids": ids, "report_titles": report_titles(rows, title, ids),
            "sample_row": {k: (rows[0] if rows else {}).get(k) for k in
@@ -424,7 +578,8 @@ def write_index(url: str, searched: dict, wanted: dict, loads: int, title: str =
     with open(path, "w") as f:
         json.dump(out, f, indent=1)
     print(json.dumps({k: out[k] for k in ("active_codes", "active_with_report", "wanted_union",
-                                          "wanted_with_outline", "coverage", "report_form", "report_titles")}, indent=1))
+                                          "wanted_with_outline", "coverage", "report_form", "report_titles",
+                                          "status_keep", "client", "rows_seen")}, indent=1))
     print("search:", {k: v for k, v in searched.items()})
     print("wrote", os.path.relpath(path, os.path.dirname(HERE)))
     return 0
@@ -436,6 +591,8 @@ def main(argv=None) -> int:
     ap.add_argument("--index", default="")
     ap.add_argument("--slugs", default="riverside_city,moreno_valley,norco")
     ap.add_argument("--report", default=REPORT_TITLE, help="title pattern of the report that prints the SLOs")
+    ap.add_argument("--status", default=STATUS_KEEP, help="the status words a current outline carries (a pattern)")
+    ap.add_argument("--client", default="", help="the college a row must be, where one host holds several (a pattern)")
     ap.add_argument("--delay", type=int, default=int(os.environ.get("CENSUS_DELAY_MS", "3000")))
     a = ap.parse_args(argv)
     if not (a.discover or a.index):
@@ -457,7 +614,8 @@ def main(argv=None) -> int:
         browser.close()
 
     if a.index:
-        return write_index(a.index, searched, wanted, reader.loads, a.report or REPORT_TITLE)
+        return write_index(a.index, searched, wanted, reader.loads, a.report or REPORT_TITLE,
+                           a.status or STATUS_KEEP, a.client)
 
     run = os.environ.get("GITHUB_RUN_ID", "local")
     listed = {norm_code(r["row"]) for r in (found.get("rows_at_load") or {}).get("rows", [])} - {None}

@@ -1,0 +1,92 @@
+{
+ "_about": "The self-recall count for Rio Hondo College's Outline w/SLO report (358, 359) on riohondo.curriqunet.com (kb/_course_outcomes_read.py rows_recall; S691). The host reads outcomes only (d-ccsf-outline-trial-no-staff-names-s689), so the trial filed no page. Each count comes from the page itself: the trial printed each page's SLO and objectives sections, cut by their printed headings alone (EXCERPT_BY_HOST, OBJECTIVES_EXCERPT_BY_HOST), to its job log, and the worker counted the printed lines by eye. Every page answered 200 under both caps. slugs names the college this count stands for: a read for another college on the host is refused.",
+ "trial": "44890279483",
+ "parser_fingerprint": "2629a09aeac9be1183829d0cea92009f",
+ "slugs": "rio_hondo",
+ "pages": {
+  "ACCT 100": {
+   "slo": 3,
+   "objective": 5,
+   "by": "S691 outlines worker",
+   "from": "the page's SLO section (IX. Student Learning Outcome to X. Texts/Instructional Materials:) and objectives section (V. Course Objectives to VI. Methods of Instruction:) as printed in the log of trial 44890279483, job 136804652509, read by eye line by line, apart from the parser; the lead-in line The Student Will Be Able To: not counted. The same sections printed identically in the logs of trials 44884988614, 44885957222, 44886389239 and 44889864455, whose counts caught two parser faults (the lead-in filed as an objective; objectives that open 'Students will be able to' read as lead-ins).",
+   "at": "2026-11-21T09:39:20Z"
+  },
+  "ARTH C1100": {
+   "slo": 3,
+   "objective": 3,
+   "by": "S691 outlines worker",
+   "from": "the page's SLO section (IX. Student Learning Outcome to X. Texts/Instructional Materials:) and objectives section (V. Course Objectives to VI. Methods of Instruction:) as printed in the log of trial 44890279483, job 136804652509, read by eye line by line, apart from the parser; the lead-in line The Student Will Be Able To: not counted. The same sections printed identically in the logs of trials 44884988614, 44885957222, 44886389239 and 44889864455, whose counts caught two parser faults (the lead-in filed as an objective; objectives that open 'Students will be able to' read as lead-ins).",
+   "at": "2026-11-21T09:39:20Z"
+  },
+  "CD 102": {
+   "slo": 7,
+   "objective": 8,
+   "by": "S691 outlines worker",
+   "from": "the page's SLO section (IX. Student Learning Outcome to X. Texts/Instructional Materials:) and objectives section (V. Course Objectives to VI. Methods of Instruction:) as printed in the log of trial 44890279483, job 136804652509, read by eye line by line, apart from the parser; the lead-in line The Student Will Be Able To: not counted. The same sections printed identically in the logs of trials 44884988614, 44885957222, 44886389239 and 44889864455, whose counts caught two parser faults (the lead-in filed as an objective; objectives that open 'Students will be able to' read as lead-ins).",
+   "at": "2026-11-21T09:39:20Z"
+  },
+  "CORR 101": {
+   "slo": 3,
+   "objective": 4,
+   "by": "S691 outlines worker",
+   "from": "the page's SLO section (IX. Student Learning Outcome to X. Texts/Instructional Materials:) and objectives section (V. Course Objectives to VI. Methods of Instruction:) as printed in the log of trial 44890279483, job 136804652509, read by eye line by line, apart from the parser; the lead-in line The Student Will Be Able To: not counted. The same sections printed identically in the logs of trials 44884988614, 44885957222, 44886389239 and 44889864455, whose counts caught two parser faults (the lead-in filed as an objective; objectives that open 'Students will be able to' read as lead-ins).",
+   "at": "2026-11-21T09:39:20Z"
+  },
+  "EGSS 110": {
+   "slo": 3,
+   "objective": 5,
+   "by": "S691 outlines worker",
+   "from": "the page's SLO section (IX. Student Learning Outcome to X. Texts/Instructional Materials:) and objectives section (V. Course Objectives to VI. Methods of Instruction:) as printed in the log of trial 44890279483, job 136804652509, read by eye line by line, apart from the parser; the lead-in line The Student Will Be Able To: not counted. The same sections printed identically in the logs of trials 44884988614, 44885957222, 44886389239 and 44889864455, whose counts caught two parser faults (the lead-in filed as an objective; objectives that open 'Students will be able to' read as lead-ins).",
+   "at": "2026-11-21T09:39:20Z"
+  },
+  "FIN 101": {
+   "slo": 5,
+   "objective": 11,
+   "by": "S691 outlines worker",
+   "from": "the page's SLO section (IX. Student Learning Outcome to X. Texts/Instructional Materials:) and objectives section (V. Course Objectives to VI. Methods of Instruction:) as printed in the log of trial 44890279483, job 136804652509, read by eye line by line, apart from the parser; the lead-in line The Student Will Be Able To: not counted. The same sections printed identically in the logs of trials 44884988614, 44885957222, 44886389239 and 44889864455, whose counts caught two parser faults (the lead-in filed as an objective; objectives that open 'Students will be able to' read as lead-ins).",
+   "at": "2026-11-21T09:39:20Z"
+  },
+  "HEFR 040": {
+   "slo": 1,
+   "objective": 5,
+   "by": "S691 outlines worker",
+   "from": "the page's SLO section (IX. Student Learning Outcome to X. Texts/Instructional Materials:) and objectives section (V. Course Objectives to VI. Methods of Instruction:) as printed in the log of trial 44890279483, job 136804652509, read by eye line by line, apart from the parser; the lead-in line The Student Will Be Able To: not counted. The same sections printed identically in the logs of trials 44884988614, 44885957222, 44886389239 and 44889864455, whose counts caught two parser faults (the lead-in filed as an objective; objectives that open 'Students will be able to' read as lead-ins).",
+   "at": "2026-11-21T09:39:20Z"
+  },
+  "HUSR 111": {
+   "slo": 7,
+   "objective": 7,
+   "by": "S691 outlines worker",
+   "from": "the page's SLO section (IX. Student Learning Outcome to X. Texts/Instructional Materials:) and objectives section (V. Course Objectives to VI. Methods of Instruction:) as printed in the log of trial 44890279483, job 136804652509, read by eye line by line, apart from the parser; the lead-in line The Student Will Be Able To: not counted. The same sections printed identically in the logs of trials 44884988614, 44885957222, 44886389239 and 44889864455, whose counts caught two parser faults (the lead-in filed as an objective; objectives that open 'Students will be able to' read as lead-ins).",
+   "at": "2026-11-21T09:39:20Z"
+  },
+  "MGMT 101": {
+   "slo": 3,
+   "objective": 7,
+   "by": "S691 outlines worker",
+   "from": "the page's SLO section (IX. Student Learning Outcome to X. Texts/Instructional Materials:) and objectives section (V. Course Objectives to VI. Methods of Instruction:) as printed in the log of trial 44890279483, job 136804652509, read by eye line by line, apart from the parser; the lead-in line The Student Will Be Able To: not counted. The same sections printed identically in the logs of trials 44884988614, 44885957222, 44886389239 and 44889864455, whose counts caught two parser faults (the lead-in filed as an objective; objectives that open 'Students will be able to' read as lead-ins).",
+   "at": "2026-11-21T09:39:20Z"
+  },
+  "NBSS 040": {
+   "slo": 6,
+   "objective": 6,
+   "by": "S691 outlines worker",
+   "from": "the page's SLO section (IX. Student Learning Outcome to X. Texts/Instructional Materials:) and objectives section (V. Course Objectives to VI. Methods of Instruction:) as printed in the log of trial 44890279483, job 136804652509, read by eye line by line, apart from the parser; the lead-in line The Student Will Be Able To: not counted. The same sections printed identically in the logs of trials 44884988614, 44885957222, 44886389239 and 44889864455, whose counts caught two parser faults (the lead-in filed as an objective; objectives that open 'Students will be able to' read as lead-ins).",
+   "at": "2026-11-21T09:39:20Z"
+  },
+  "PHIL 101": {
+   "slo": 4,
+   "objective": 6,
+   "by": "S691 outlines worker",
+   "from": "the page's SLO section (IX. Student Learning Outcome to X. Texts/Instructional Materials:) and objectives section (V. Course Objectives to VI. Methods of Instruction:) as printed in the log of trial 44890279483, job 136804652509, read by eye line by line, apart from the parser; the lead-in line The Student Will Be Able To: not counted. The same sections printed identically in the logs of trials 44884988614, 44885957222, 44886389239 and 44889864455, whose counts caught two parser faults (the lead-in filed as an objective; objectives that open 'Students will be able to' read as lead-ins).",
+   "at": "2026-11-21T09:39:20Z"
+  },
+  "SOC 102": {
+   "slo": 6,
+   "objective": 6,
+   "by": "S691 outlines worker",
+   "from": "the page's SLO section (IX. Student Learning Outcome to X. Texts/Instructional Materials:) and objectives section (V. Course Objectives to VI. Methods of Instruction:) as printed in the log of trial 44890279483, job 136804652509, read by eye line by line, apart from the parser; the lead-in line The Student Will Be Able To: not counted. The same sections printed identically in the logs of trials 44884988614, 44885957222, 44886389239 and 44889864455, whose counts caught two parser faults (the lead-in filed as an objective; objectives that open 'Students will be able to' read as lead-ins).",
+   "at": "2026-11-21T09:39:20Z"
+  }
+ }
+}
