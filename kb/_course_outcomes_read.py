@@ -866,24 +866,48 @@ def slo_excerpt(text: str, host: str = "ccsf.curricunet.com") -> list[str] | Non
     City College of San Francisco's STUDENT LEARNING OUTCOMES and CONTENTS), as printed; None when the host has no
     pair, either heading is missing or the section runs past EXCERPT_LINES, so nothing past the section is shown. A
     person counts the outcomes in it by eye, apart from the parser."""
-    pair = EXCERPT_BY_HOST.get((host or "").lower())
-    if not pair:
-        return None
-    first, after = pair
     lines = [ln.rstrip() for ln in (text or "").split("\n")]
     bare = [ln.strip().upper() for ln in lines]
-    if first not in bare:
-        return None
-    start = bare.index(first) + 1
-    end = next((i for i in range(start, min(len(bare), start + EXCERPT_LINES + 1)) if bare[i] == after), None)
-    return None if end is None else [ln for ln in lines[start:end] if ln.strip()]
+    for first, after in excerpt_pairs(host):
+        if first not in bare:
+            continue
+        start = bare.index(first) + 1
+        end = next((i for i in range(start, min(len(bare), start + EXCERPT_LINES + 1)) if bare[i] in after), None)
+        return None if end is None else [ln for ln in lines[start:end] if ln.strip()]
+    return None
+
+
+def excerpt_pairs(host: str) -> list[tuple[str, tuple[str, ...]]]:
+    """The host's recorded heading pairs, each (the SLO heading, the headings that may follow it), upper case: one
+    pair or a list of them in EXCERPT_BY_HOST, the first whose SLO heading the page prints deciding."""
+    got = EXCERPT_BY_HOST.get((host or "").lower())
+    if not got:
+        return []
+    pairs = [got] if isinstance(got[0], str) else list(got)
+    return [(a.upper(), tuple(x.upper() for x in ([b] if isinstance(b, str) else b))) for a, b in pairs]
+
+
+# The words an SLO or objectives heading carries. A page from an outcomes-only host with no heading pair recorded
+# prints only its lines that carry one of them, each cut at PROBE_CHARS, to the trial's log (S691).
+PROBE = re.compile(r"outcome|\bslos?\b|objective", re.I)
+PROBE_CHARS, PROBE_MAX = 160, 40
+
+
+def probe_log(code: str, text: str) -> str:
+    """The page's lines that name outcomes or objectives, numbered by their line in the page, and the page's line
+    count; nothing else from the page."""
+    lines = (text or "").split("\n")
+    hits = [(i, ln.strip()[:PROBE_CHARS]) for i, ln in enumerate(lines, 1) if PROBE.search(ln)][:PROBE_MAX]
+    return "\n".join(["PROBE %s BEGIN (%d of %d lines)" % (code, len(hits), len(lines))]
+                     + ["  %04d| %s" % (i, ln) for i, ln in hits] + ["PROBE %s END" % code])
 
 
 def excerpt_log(code: str, excerpt: list[str] | None, host: str = "ccsf.curricunet.com") -> str:
     """The excerpt as the trial's log prints it, one numbered line each, between two markers."""
     if excerpt is None:
-        first, after = EXCERPT_BY_HOST.get((host or "").lower(), ("(no heading pair recorded for this host)", "-"))
-        return "EXCERPT %s: no section between %s and %s within %d lines" % (code, first, after, EXCERPT_LINES)
+        pairs = excerpt_pairs(host) or [("(no heading pair recorded for this host)", ("-",))]
+        return "EXCERPT %s: no section between %s within %d lines" % (
+            code, " or ".join("%s and %s" % (a, "/".join(b)) for a, b in pairs), EXCERPT_LINES)
     return "\n".join(["EXCERPT %s BEGIN (%d lines)" % (code, len(excerpt))]
                      + ["  %02d| %s" % (i, ln) for i, ln in enumerate(excerpt, 1)] + ["EXCERPT %s END" % code])
 
@@ -1101,8 +1125,13 @@ def main(argv=None) -> int:
                     # The SLO section as printed, for a count by eye apart from the parser: in the job's log, never
                     # in a filed page (S690).
                     where = urllib.parse.urlparse(course["report"]).netloc.lower()
-                    print(excerpt_log(course["code"], slo_excerpt(reader.page.evaluate(FULL_BODY_JS) or "", where),
-                                      where), flush=True)
+                    text = reader.page.evaluate(FULL_BODY_JS) or ""
+                    if excerpt_pairs(where):
+                        print(excerpt_log(course["code"], slo_excerpt(text, where), where), flush=True)
+                    else:
+                        # No heading pair recorded yet: where the page names outcomes or objectives, so a person can
+                        # record the pair (S691). Those lines only, never the page.
+                        print(probe_log(course["code"], text), flush=True)
             if n % SAVE_EVERY == 0:
                 save(False)
 
