@@ -211,7 +211,9 @@ async function openPanel(t, title, re) {
     const t = tab({ live: [{ field: "unified_title", value: "Composition One", reviewer_email: "x@rccd.edu", reviewed_at: "2026-11-04" }] });
     await openPanel(t, "College Composition", /Saved in COBI/);
     check("(5) a save since the file was built shows as said", /Saved in COBI since this file was built: the name Composition One/.test(txt(panel(t.d))));
-    check("(5) one read of the live rows per common course", t.reads.length === 1 && /course_id=eq\.ENGL%20M1001/.test(t.reads[0]), t.reads.join(" "));
+    // The List's own read of assigned courses (CN: rows, tests/coci_list_assign.test.js) is a different read; it is left out here.
+    const cardReads = t.reads.filter((u) => !/course_id=like\.CN%3A/.test(u));
+    check("(5) one read of the live rows per common course", cardReads.length === 1 && /course_id=eq\.ENGL%20M1001/.test(cardReads[0]), t.reads.join(" "));
   }
 
   // ── (6) the file fails; the fields written ──
