@@ -4,7 +4,7 @@
   "supabase_tables": 119,
   "rpcs": 68,
   "edge_functions": 16,
-  "file_datasets": 1125,
+  "file_datasets": 1127,
   "external_services": 197,
   "consumers": 646,
   "workflows": 77,
@@ -8977,7 +8977,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7015
+     "line": 7024
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -8997,7 +8997,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7091
+     "line": 7100
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -18909,7 +18909,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7815
+     "line": 7874
     }
    ],
    "served": true,
@@ -23124,7 +23124,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7486
+     "line": 7507
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -23794,7 +23794,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7698
+     "line": 7744
     }
    ],
    "served": false,
@@ -23807,7 +23807,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7053
+     "line": 7062
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -29004,6 +29004,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/program_requirements_follow_up_s697_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/program_requirements_fragment_path_test.py": {
    "consumers": [
     {
@@ -29096,6 +29109,19 @@
    "main_committers": []
   },
   "file:tests/program_requirements_rulings_2026_11_17_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_requirements_same_page_recall_s697_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -32350,7 +32376,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 7789
+     "line": 7848
     }
    ],
    "main_committers": []
@@ -32362,7 +32388,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 7906
+     "line": 7965
     }
    ],
    "main_committers": []
@@ -37698,6 +37724,8 @@
     "tests/program_requirements_year_renumbers_test.py",
     "tests/program_requirements_extract_halt_test.py",
     "tests/program_requirements_reader_fixes_s697_test.py",
+    "tests/program_requirements_follow_up_s697_test.py",
+    "tests/program_requirements_same_page_recall_s697_test.py",
     "tests/program_requirements_fragment_path_test.py",
     "tests/program_requirements_wave_test.py",
     "tests/program_requirements_extraction_gate_test.py",
