@@ -920,7 +920,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/reference/mq_disciplines.json` | scripts: `excel_to_dashboard.py`, `kb/_apply_kin_pe_convergence.py`, `kb/_build_ccr_title_rung_sheet.py`, `kb/_build_crosslist_decision_sheet.py`, `kb/_ccr_confidence_score.py`, `kb/_infer_disciplines.py`, `kb/_infer_disciplines_from_desc.py`, `kb/_infer_disciplines_from_top.py`, `kb/_infer_disciplines_from_top_division.py`, `kb/_mq_title5_rename.py`, `kb/_preseed_null_issuers.py`, `kb/_seed_coci_courses.py`, `kb/_seed_coci_minted_mids.py`, `kb/_seed_subject_discipline_map.py`, `kb/_verify_top_division_inference.py`, `kb/discipline_list.py` | — |
 | `kb/reference/mq_sections.json` | tabs: `canonical-subj4` · scripts: `kb/_ccr_trail.py`, `kb/_csr_quarterly_probe.py`, `kb/_mq_title5_rename.py` | — |
 | `kb/reference/restricted_table_access.json` | scripts: `kb/_build_cdc_sharing.py` | — |
-| `kb/reference/subject_discipline_map.json` | scripts: `excel_to_dashboard.py`, `kb/_apply_crossdisc_remint.py`, `kb/_build_ccr_title_rung_sheet.py`, `kb/_build_crosslist_decision_sheet.py`, `kb/_build_local_subject_titles.py`, `kb/_build_oc_medical_assistant_crosswalk.py`, `kb/_build_openclassrooms_crosswalk.py`, `kb/_build_orphan_parent_worklist.py`, `kb/_build_side_by_side.py`, `kb/_ccr_confidence_score.py`, `kb/_esl_new_identities_dryrun.py`, `kb/_exhibit_subject_fill.py`, `kb/_jev_next_steps.py`, `kb/_mid_outcomes_compare.py`, `kb/_mq_title5_rename.py`, `kb/_preseed_null_issuers.py`, `kb/_seed_coci_minted_mids.py`, `kb/_seed_subject_discipline_map.py` | scripts: `kb/_seed_subject_discipline_map.py` |
+| `kb/reference/subject_discipline_map.json` | scripts: `excel_to_dashboard.py`, `kb/_apply_crossdisc_remint.py`, `kb/_build_ccr_title_rung_sheet.py`, `kb/_build_crosslist_decision_sheet.py`, `kb/_build_local_subject_titles.py`, `kb/_build_oc_medical_assistant_crosswalk.py`, `kb/_build_openclassrooms_crosswalk.py`, `kb/_build_orphan_parent_worklist.py`, `kb/_build_side_by_side.py`, `kb/_ccr_confidence_score.py`, `kb/_esl_new_identities_dryrun.py`, `kb/_exhibit_subject_fill.py`, `kb/_held_subject_codes.py`, `kb/_jev_next_steps.py`, `kb/_mid_outcomes_compare.py`, `kb/_mq_title5_rename.py`, `kb/_preseed_null_issuers.py`, `kb/_seed_coci_minted_mids.py`, `kb/_seed_subject_discipline_map.py` | scripts: `kb/_seed_subject_discipline_map.py` |
 | `kb/reference/swp_region_roster.json` | scripts: `kb/_build_oc_medical_assistant_crosswalk.py`, `kb/_build_openclassrooms_crosswalk.py`, `kb/_build_regional_cpl_opportunity.py`, `kb/_emit_regional_opps_data.py`, `kb/_emit_swp_region_data.py` | — |
 | `kb/reference/top_categories.json` | scripts: `kb/_authority_recode_dryrun.py`, `kb/_build_ccr_sky.py`, `kb/_build_ccr_universe.py`, `kb/_build_side_by_side.py`, `kb/_correct_top_lookup_code4.py`, `kb/_join_cte_from_top.py`, `kb/_seed_canonical_subj4.py` | — |
 | `kb/reference/topcip_2021_crosswalk.xlsx` | scripts: `excel_to_dashboard.py`, `kb/_build_cip_crosswalk.py`, `kb/_correct_top_lookup_code4.py` | — |
@@ -948,7 +948,8 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/status/harvest_heading_agreement.md` | scripts: `kb/_program_requirements_heading_agreement.py` | — |
 | `kb/status/harvest_ncl_lookup_census.json` | scripts: `kb/_harvest_ncl_lookup_census.py` | scripts: `kb/_harvest_ncl_lookup_census.py` |
 | `kb/status/harvest_no_closed_list.json` | scripts: `kb/_harvest_no_closed_list_diagnosis.py` | — |
-| `kb/status/local_subject_titles.json` | tabs: `commons` · scripts: `kb/_build_local_subject_titles.py` | — |
+| `kb/status/held_subject_codes.json` | tabs: `commons` · scripts: `kb/_held_subject_codes.py` | — |
+| `kb/status/local_subject_titles.json` | tabs: `commons` · scripts: `kb/_build_local_subject_titles.py`, `kb/_held_subject_codes.py` | — |
 | `kb/status/mid_outcomes_compare_*.json` | none found | committed by: `mid-outcomes-compare.yml` |
 | `kb/status/mid_outcomes_compare_*.md` | none found | committed by: `mid-outcomes-compare.yml` |
 | `kb/status/mid_outcomes_compare_<date>.json` | scripts: `kb/_reclustering_s648_dryrun.py` | — |
@@ -1284,6 +1285,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/harvest_gap_census_test.py` | workflows: `js-tests.yml` | — |
 | `tests/harvest_ncl_lookup_census_test.py` | workflows: `js-tests.yml` | — |
 | `tests/harvest_no_closed_list_diagnosis_test.py` | workflows: `js-tests.yml` | — |
+| `tests/held_subject_codes_test.py` | workflows: `js-tests.yml` | — |
 | `tests/honors_of_rows_check_test.py` | workflows: `js-tests.yml` | — |
 | `tests/honors_of_test.py` | workflows: `js-tests.yml` | — |
 | `tests/honors_subject_reading_test.py` | workflows: `js-tests.yml` | — |
@@ -1668,5 +1670,5 @@ check these BY HAND before trusting an absence:
 - `kb/_row_audit_prune.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 119 Supabase tables · 68 RPCs · 16 edge functions · 1112 file
-datasets · 197 external services · 644 consumers · 76 workflows · 41 tabs.
+Coverage: 119 Supabase tables · 68 RPCs · 16 edge functions · 1114 file
+datasets · 197 external services · 645 consumers · 76 workflows · 41 tabs.

@@ -1216,6 +1216,8 @@ async function seedCommonsSubjects(page, theme) {
   await page.evaluate(() => { if (!/^commons\/subjects/.test(location.hash.replace(/^#/, ""))) location.hash = "commons/subjects/cerritos"; });
   if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
   await page.waitForSelector("#commons-root .csb-foot", { state: "attached", timeout: 60000 });
+  /* The held codes read their own file after the list draws (S695): wait for the table, not the reading note. */
+  if (/subjects\/held/.test(await page.evaluate(() => location.hash))) await page.waitForSelector("#commons-root .csb-held", { state: "attached", timeout: 60000 });
   await page.evaluate(() => {
     try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
     const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
@@ -3759,7 +3761,7 @@ module.exports = {
   "commons-subjects": {
     file: "index.html",
     title: "CPL Commons: the Subjects list",
-    routes: [{ hash: "commons/subjects/cerritos", name: "subjects-cerritos" }, { hash: "commons/subjects/disagree", name: "subjects-disagree" }],
+    routes: [{ hash: "commons/subjects/cerritos", name: "subjects-cerritos" }, { hash: "commons/subjects/disagree", name: "subjects-disagree" }, { hash: "commons/subjects/held", name: "subjects-held" }],
     widths: [320, 390, 768, 1440],
     seed: (page) => seedCommonsSubjects(page, "light"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],

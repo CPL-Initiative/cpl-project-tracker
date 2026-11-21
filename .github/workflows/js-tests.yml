@@ -315,6 +315,10 @@ jobs:
       # codes compared exactly, one-sided codes kept for the curator, byte-identical reruns. Pure stdlib.
       - name: Local subject titles (kb/_build_local_subject_titles.py)
         run: python3 tests/local_subject_titles_test.py
+      # The codes the pile mint holds on (S695): held courses summed, counted once each, ranked; a vote that missed its
+      # floor is a suggestion, never a decision. Pure stdlib.
+      - name: Held subject codes (kb/_held_subject_codes.py)
+        run: python3 tests/held_subject_codes_test.py
       # The Needs an M-ID pile's exhibit links and the daily rebuild (S694): the join, the alias chain, --if-changed, same bytes.
       - name: Closest M-ID exhibit links (kb/_closest_mid.py)
         run: python3 tests/closest_mid_links_test.py

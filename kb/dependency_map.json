@@ -4,9 +4,9 @@
   "supabase_tables": 119,
   "rpcs": 68,
   "edge_functions": 16,
-  "file_datasets": 1112,
+  "file_datasets": 1114,
   "external_services": 197,
-  "consumers": 644,
+  "consumers": 645,
   "workflows": 76,
   "data_js_files": 71,
   "tabs": 41
@@ -1205,7 +1205,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1776
+     "line": 1778
     },
     {
      "id": "module:admin.js",
@@ -1937,7 +1937,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2429
+     "line": 2431
     }
    ],
    "main_committers": []
@@ -2241,7 +2241,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 38
+     "line": 39
     },
     {
      "id": "module:commons_progress.js",
@@ -2608,7 +2608,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1386
+     "line": 1388
     }
    ],
    "main_committers": []
@@ -2627,7 +2627,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1731
+     "line": 1733
     },
     {
      "id": "module:college_briefing.js",
@@ -3336,7 +3336,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1787
+     "line": 1789
     },
     {
      "id": "module:dashboard_filters.js",
@@ -4560,7 +4560,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 262
+     "line": 265
     },
     {
      "id": "module:fact-sheet/factsheet_edit.js",
@@ -4681,7 +4681,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2093
+     "line": 2095
     }
    ],
    "main_committers": []
@@ -5909,7 +5909,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1984
+     "line": 1986
     },
     {
      "id": "module:admin.js",
@@ -7239,7 +7239,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2368
+     "line": 2370
     },
     {
      "id": "module:college_briefing.js",
@@ -7452,7 +7452,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1446
+     "line": 1448
     },
     {
      "id": "module:cpl_funding.js",
@@ -20928,6 +20928,13 @@
      "line": 66
     },
     {
+     "id": "script:kb/_held_subject_codes.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 252
+    },
+    {
      "id": "script:kb/_jev_next_steps.py",
      "kind": "script",
      "direction": "read",
@@ -21627,6 +21634,29 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/status/held_subject_codes.json": {
+   "consumers": [
+    {
+     "id": "module:commons_subjects.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 26,
+     "tabs": [
+      "commons"
+     ]
+    },
+    {
+     "id": "script:kb/_held_subject_codes.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 45
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/status/local_subject_titles.json": {
    "consumers": [
     {
@@ -21634,7 +21664,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 20,
+     "line": 22,
      "tabs": [
       "commons"
      ]
@@ -21645,6 +21675,13 @@
      "direction": "read",
      "how": "literal",
      "line": 37
+    },
+    {
+     "id": "script:kb/_held_subject_codes.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 46
     }
    ],
    "served": true,
@@ -27965,6 +28002,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/held_subject_codes_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/honors_of_rows_check_test.py": {
    "consumers": [
     {
@@ -34273,7 +34323,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 521
+     "line": 524
     },
     {
      "id": "module:cr_reference.js",
@@ -37387,6 +37437,7 @@
     "tests/handover_pickup_test.py",
     "tests/ccr_doubt_test.py",
     "tests/local_subject_titles_test.py",
+    "tests/held_subject_codes_test.py",
     "tests/closest_mid_links_test.py",
     "tests/apply_curation_rulings_test.py",
     "tests/ccr_confidence_rules_test.py",

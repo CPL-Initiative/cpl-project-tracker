@@ -1,0 +1,31 @@
+{
+ "_what": "Fixture for tests/commons_subjects_held.test.js: three local subject codes, written out of rank order, so the view must sort them by held courses itself.",
+ "_rule": "Codes are compared in the subject map's key form (upper case, letters and digits only), statewide.",
+ "_sources": {"plan_date": "2026-11-21"},
+ "floors": {"college_subject_code": {"support_min": 50, "share_min": 1.0}, "statewide_subject_code": {"support_min": 100, "share_min": 1.0}},
+ "totals": {"held": 9, "codes": 3, "pairs": 4, "top_20_release": 9, "with_suggestion": 2, "with_printed_name": 1},
+ "codes": [
+  {"code": "HUSV", "key": "HUSV", "spellings": ["HUSV"], "held": 1, "pairs": 1,
+   "colleges": [{"college": "Gamma College", "held": 1, "printed_name": null, "control_numbers": ["C6"], "college_vote": {"winner": null, "votes": 0, "share": null, "missed": "no identity-holding course under this code votes"}}],
+   "printed_names": [], "examples": [{"title": "Human Services Practicum", "college": "Gamma College"}],
+   "subject_map": {"reads": null, "notes": {"no route reaches its floor": 1}},
+   "statewide_vote": {"winner": "COUN", "votes": 36, "share": 0.9444, "tally": {"COUN": 34, "HSER": 2}, "missed": "36 votes under the floor of 100, and a share under 1.00"},
+   "suggestion": {"subj4": "COUN", "from": "statewide vote", "votes": 36, "share": 0.9444},
+   "near_entries": [{"key": "HUS", "discipline": "Human Services"}]},
+  {"code": "TUTR", "key": "TUTR", "spellings": ["TUTR"], "held": 6, "pairs": 2,
+   "colleges": [{"college": "Alpha College", "held": 4, "printed_name": "Tutoring", "control_numbers": ["C1", "C2", "C7", "C8"], "college_vote": {"winner": null, "votes": 0, "share": null, "missed": "no identity-holding course under this code votes"}},
+                {"college": "Beta College", "held": 2, "printed_name": null, "control_numbers": ["C3", "C9"], "college_vote": {"winner": "EDUC", "votes": 6, "share": 0.8333, "tally": {"EDUC": 5, "IDST": 1}, "missed": "6 votes under the floor of 50, and a share under 1.00"}}],
+   "printed_names": ["Tutoring"], "examples": [{"title": "Supervised Tutoring", "college": "Alpha College"}, {"title": "Tutoring Practicum", "college": "Beta College"}],
+   "subject_map": {"reads": null, "notes": {"no route reaches its floor": 6}},
+   "statewide_vote": {"winner": "EDUC", "votes": 9, "share": 0.7778, "tally": {"EDUC": 7, "IDST": 2}, "missed": "9 votes under the floor of 100, and a share under 1.00"},
+   "suggestion": {"subj4": "EDUC", "from": "statewide vote", "votes": 9, "share": 0.7778},
+   "near_entries": [{"key": "TUT", "discipline": "Education"}, {"key": "TUTOR", "discipline": "Education"}]},
+  {"code": "CD", "key": "CD", "spellings": ["C D", "CD"], "held": 2, "pairs": 1,
+   "colleges": [{"college": "Beta College", "held": 2, "printed_name": null, "control_numbers": ["C4", "C5"], "college_vote": {"winner": null, "votes": 0, "share": null, "missed": "no identity-holding course under this code votes"}}],
+   "printed_names": [], "examples": [{"title": "Child Development Practicum", "college": "Beta College"}],
+   "subject_map": {"reads": "Child Development", "notes": {"modal subject 'CD' is a 2-character code and nothing longer in the cluster corroborates it; discipline held for review.": 2}},
+   "statewide_vote": {"winner": null, "votes": 0, "share": null, "missed": "a code of two characters or fewer gets no statewide vote"},
+   "suggestion": null,
+   "near_entries": [{"key": "CDEV", "discipline": "Child Development"}]}
+ ]
+}

@@ -105,6 +105,9 @@ const READS_OWN_ROUTE = { "exhibits": 1, "cr-reference": 1, "program-requirement
   check("(E) ⭐ commons/subjects[/<college>] opens from its arrival and reports its address",
     /a\[0\] === "subjects"/.test(COMMONS) && /CPL_COMMONS_SUBJECTS\.address\(\) : "commons\/subjects"/.test(COMMONS)
     && /"commons\/subjects\/" \+ encodeURIComponent\(S\.view\)/.test(SUBJJS));
+  // The held codes (S695): #commons/subjects/held, the same address path; the round trip is in
+  // tests/commons_subjects_held.test.js (1, 5).
+  check("(E) commons/subjects/held is a view of the Subjects list's address", /var HELD = "held"/.test(SUBJJS) && /S\.view === HELD/.test(SUBJJS));
   check("(E) a college's hand-over pane carries its address", /handover: 0/.test(DATAJS) && /p\.k === "handover"/.test(DATAJS));
   // #3310: a module beside commons_data.js adds its views to VIEWS, so each opens from #collect/<view> by the
   // same parser; Data elements and sharing is the first (#collect/sharing). The round trip is in
