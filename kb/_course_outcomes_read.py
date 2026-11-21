@@ -80,9 +80,15 @@ STOP = re.compile(
 # Chabot's All Fields report (347) numbers it as a field of its Assignments section, "3. Student Learning
 # Outcomes", after its "Measurable Objectives:" section; without the number the old rule fell back to the lead-in and
 # filed Chabot's objectives as its SLOs (full read 44264136885, all 1,013 rows; S681).
-SLO_TITLE = re.compile(r"^[ \t]*(?:\d{1,2}[.)][ \t]+)?(student|course) learning outcomes?\b", re.I | re.M)
-# The number a heading carries in front of it (Chabot's "3. "), never part of the heading as filed.
-HEAD_NUMBER = re.compile(r"^[ \t]*\d{1,2}[.)][ \t]+")
+# Rio Hondo's Outline w/SLO report (358, 359) numbers its sections in Roman numerals: "V. Course Objectives" and
+# "IX. Student Learning Outcome" (trial 44883156016's log, 12 of 12 pages; S691).
+SLO_TITLE = re.compile(r"^[ \t]*(?:(?:\d{1,2}[.)]|[IVX]{1,4}\.)[ \t]+)?(student|course) learning outcomes?\b",
+                       re.I | re.M)
+# The number a heading carries in front of it (Chabot's "3. ", Rio Hondo's "IX. "), never part of the heading as filed.
+HEAD_NUMBER = re.compile(r"^[ \t]*(?:\d{1,2}[.)]|[IVX]{1,4}\.)[ \t]+")
+# A section heading numbered in Roman numerals (upper case only). A section whose own heading carries one ends at the
+# next one, whatever its words (Rio Hondo, S691); a section headed otherwise never reads this rule.
+ROMAN_HEAD = re.compile(r"^[ \t]*[IVX]{1,4}\.[ \t]+[A-Z]")
 # A list marker the outline prints before an outcome: 1. 1) a. a) • - – *
 MARKER = re.compile(r"^[ \t]*(?:\(?\d{1,2}[.)]|\(?[a-zA-Z][.)]|[\u2022\u25cf\u25aa\u00b7\-\u2013*])[ \t]+")
 # The lead-in a college prints between the heading and the list. Las Positas prints "Upon the completion of this
@@ -303,6 +309,7 @@ def outcomes_of(text: str) -> dict:
     start = text.rfind("\n", 0, m.start()) + 1
     lines = text[start:].split("\n")
     heading = HEAD_NUMBER.sub("", lines[0].strip(), count=1)
+    roman = bool(ROMAN_HEAD.match(lines[0]))
     lead, items = None, []
     lm = LEAD.search(heading)
     if lm:
@@ -312,7 +319,7 @@ def outcomes_of(text: str) -> dict:
         s = line.strip()
         if not s:
             continue
-        if STOP.match(s) or (SLO_TITLE.match(s) and items):
+        if STOP.match(s) or (SLO_TITLE.match(s) and items) or (roman and ROMAN_HEAD.match(s)):
             break
         if SLO_COLUMN_HEAD.match(s):
             continue
@@ -332,7 +339,8 @@ def outcomes_of(text: str) -> dict:
 # report "STUDENT LEARNING OBJECTIVES:" and its All Fields report "Student Learning Objectives" with a field label
 # "Objective Text" before each item. Chabot's All Fields report (347) prints "Measurable Objectives:" (S681). Palomar's
 # report 99 prints "Specific Course Objectives" right after its SLOs, then an "Objective" column header (S689).
-OBJ_TITLE = re.compile(r"^[ \t]*(course|specific course|student learning|learning|performance|measurable)? ?objectives"
+OBJ_TITLE = re.compile(r"^[ \t]*(?:[IVX]{1,4}\.[ \t]+)?(course|specific course|student learning|learning|performance|"
+                       r"measurable)? ?objectives"
                        r"[ \t]*:?[ \t]*$", re.I)
 # A field label a report prints before each item, never an objective itself.
 OBJ_LABEL = re.compile(r"^(objective text|objective)$", re.I)
@@ -372,11 +380,12 @@ def objectives_of(text: str) -> dict:
         if not OBJ_TITLE.match(line):
             continue
         lead, items = None, []
+        roman = bool(ROMAN_HEAD.match(line))
         for raw in lines[i + 1:i + 200]:
             s = raw.strip()
             if not s or OBJ_LABEL.match(s):
                 continue
-            if _obj_ends(s):
+            if _obj_ends(s) or (roman and ROMAN_HEAD.match(s)):
                 break
             if not items and LEAD.match(s):
                 lead = lead or s
@@ -389,7 +398,7 @@ def objectives_of(text: str) -> dict:
             # methods and content lines between (trial 42573515439, S616): the labeled lines are the objectives.
             items = [x for x in inline if x]
         if items:
-            return {"objectives": items, "objectives_heading": line.strip().rstrip(":").strip(),
+            return {"objectives": items, "objectives_heading": HEAD_NUMBER.sub("", line.strip(), count=1).rstrip(":").strip(),
                     "objectives_lead": lead, "objectives_fingerprint": fingerprint(items)}
     return {"objectives": [], "objectives_heading": None, "objectives_lead": None, "objectives_fingerprint": None}
 
@@ -894,10 +903,11 @@ PROBE_CHARS, PROBE_MAX = 160, 40
 
 
 def probe_log(code: str, text: str) -> str:
-    """The page's lines that name outcomes or objectives, numbered by their line in the page, and the page's line
-    count; nothing else from the page."""
+    """The page's lines that name outcomes or objectives, and its Roman-numbered section headings (ROMAN_HEAD),
+    numbered by their line in the page, and the page's line count; nothing else from the page."""
     lines = (text or "").split("\n")
-    hits = [(i, ln.strip()[:PROBE_CHARS]) for i, ln in enumerate(lines, 1) if PROBE.search(ln)][:PROBE_MAX]
+    hits = [(i, ln.strip()[:PROBE_CHARS]) for i, ln in enumerate(lines, 1)
+            if PROBE.search(ln) or ROMAN_HEAD.match(ln)][:PROBE_MAX]
     return "\n".join(["PROBE %s BEGIN (%d of %d lines)" % (code, len(hits), len(lines))]
                      + ["  %04d| %s" % (i, ln) for i, ln in hits] + ["PROBE %s END" % code])
 
@@ -918,7 +928,7 @@ PARSER_PARTS = ("parse_page", "_parse_outcomes", "outcomes_of", "_heads_section"
                 "groups_from_html", "elumen_outcomes_from_html", "cccd_outcomes_from_html", "mtsac_outcomes_from_html",
                 "objectives_block", "objectives_of", "objectives_from_html", "_obj_ends", "page_html_of", "read_one",
                 "file_row", "section_heads")
-PARSER_PATTERNS = ("STOP", "SLO_TITLE", "HEAD_NUMBER", "MARKER", "LEAD", "SLO_COLUMN_HEAD", "LEAD_ENDS", "OBJ_TITLE",
+PARSER_PATTERNS = ("STOP", "SLO_TITLE", "HEAD_NUMBER", "ROMAN_HEAD", "MARKER", "LEAD", "SLO_COLUMN_HEAD", "LEAD_ENDS", "OBJ_TITLE",
                    "OBJ_LABEL", "OBJ_INLINE", "OBJ_STOP", "EL_SLO_HEAD", "CCCD_SLO_HEAD", "CCCD_SUBHEAD")
 
 
