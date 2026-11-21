@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-654 document(s).
+655 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 696 | [Session 696 handoff (from SkyShearwater, the plain session of 2026-11-21 that set the mint's floor and minted the first pile record)](../session_696_handoff.md) | 2026-11-21 |
 | 695 | [Session 695 handoff (from SkyPetrel, the plain session of 2026-11-20 to 21 that built Assign from the panel and planned the pile mint)](../session_695_handoff.md) | 2026-11-21 |
 | 694 | [Session 694 handoff (from SkyKittiwake, the plain session of 2026-11-20 that put the M-IDs first)](../session_694_handoff.md) | 2026-11-20 |
 | 693 | [Session 693 handoff (from SkyGannet, the plain session of 2026-11-20 that built the hand-over)](../session_693_handoff.md) | 2026-11-20 |

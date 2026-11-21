@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-21_s695_checkpoint_memory_rows.sql",
+ "name": "s695_checkpoint_memory_rows",
+ "version": "20261121035857",
+ "sha256": "6ff5d798ee8c818c0b9da84f86f6448e038f120773c902f05ee53cbe9b1cff26",
+ "run": "44863705419",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"slug\":\"d-held-codes-saved-in-subject-map-2026-11-21\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":311},{\"slug\":\"d-pile-mint-floor-98-2026-11-21\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":350},{\"slug\":\"d-pile-mint-source-value-2026-11-21\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":290},{\"slug\":\"d-shell-kind-one-course-statewide-2026-11-21\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":331},{\"slug\":\"d-tutoring-under-lskl-2026-11-21\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":320},{\"slug\":\"f-held-codes-measured-2026-11-21\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":338},{\"slug\":\"f-pile-mint-v2-wave-2026-11-21\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":348},{\"slug\":\"f-state-course-list-stale-2026-11-21\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":280},{\"slug\":\"f-subject-map-route-recall-2026-11-21\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":354},{\"slug\":\"m-first-pile-mint-record-2026-11-21\",\"kind\":\"milestone\",\"status\":\"proposed\",\"summary_len\":338},{\"slug\":\"p-copied-loader-misses-reservations-2026-11-21\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":350},{\"slug\":\"p-downstream-shrinks-on-upstream-change-2026-11-21\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":263},{\"slug\":\"p-rollback-needs-file-formatting-2026-11-21\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":291},{\"slug\":\"p-watcher-output-wakes-no-one-2026-11-21\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":303}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

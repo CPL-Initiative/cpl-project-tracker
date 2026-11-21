@@ -1,8 +1,8 @@
 ---
 title: A new matcher is gated by a self-recall test on records whose answer is already held
 created: 2026-11-14
-updated: 2026-11-14
-tags: [methodology, program-requirements, catalog-harvest, matching]
+updated: 2026-11-21
+tags: [methodology, program-requirements, catalog-harvest, matching, m-id, mint]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
 related:
@@ -57,6 +57,19 @@ It applies to any matcher whose negative result changes a record, a count or a p
 alias rule, a crosswalk join. It needs a held answer set from the same sources the matcher will read; a test on another
 source's records measures another matcher. It does not apply where a miss costs nothing and is retried (a search box a
 person reads), and a passing test does not license a matcher on a college it was not measured on.
+
+## 2026-11-21: a mint plan's route is a matcher too
+
+A route that gives a new record its identity (here the SUBJ4 a mint plan writes) is a matcher whose positive result
+changes a record, and it takes the same floor. S695's second read of a 572-record mint plan for the courses with no
+M-ID found it had passed seven structural validations and failed the one question none of them asked: was the SUBJ4
+right? Run on the courses whose SUBJ4 the identity file already holds, each left out of its own vote, the subject-map
+route was right for 87.3% of ordinary titles and for none of 883 generic-shell titles (work experience, cooperative
+education). The rebuilt dry run mints only where a route clears 98%
+on held answers: per local subject code with at least 10 holders, and per generic kind with each holder's college left
+out. Under that floor the plan planned nothing on its own, and the one record minted was a kind a person had ruled.
+A shape check says the record can be written; only a held-answer check says it should be. Lessons:
+[`commons_lessons`](../commons_lessons.md), *S695*.
 
 ## See also
 

@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 694,
-  "moniker": "SkyPetrel",
+  "session": 695,
+  "moniker": "SkyShearwater",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_695_handoff.md",
+  "handoff": "docs/session_696_handoff.md",
   "calls": [
     {
       "title": "Two forestry courses still sit on AGRI under a parent on ENVR",
@@ -30,13 +30,21 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-21T00:34:46Z",
+  "written_at": "2026-11-21T03:53:25Z",
   "project": "subjects",
   "next_step": {
-    "title": "Give the held courses' local subject codes a common subject code",
-    "text": "The Subjects card on the Commons front lists each college's local subject codes beside the common subject codes. 753 of 1,625 codes get one from the existing files; the 944 courses the pile mint holds reduce to a list of local codes that still need one."
+    "title": "Save a person's common subject code for a held local code",
+    "text": "The held view lists 416 local subject codes on which the pile mint holds 1,341 courses. Next, saving a person's choice from that view into the subject map by a committed change, and a session pass over the codes that read the same at every college using them."
   },
   "changes": [
+    {
+      "at": "2026-11-21T03:20:00Z",
+      "text": "The held view, opened from a figure on the Subjects card, lists the local subject codes the pile mint holds on: 1,341 courses, 416 codes, 678 college-and-code pairs."
+    },
+    {
+      "at": "2026-11-21T02:40:00Z",
+      "text": "Both Subjects files rebuild in the daily build when their content changes; a failed step keeps yesterday's file and the publish goes on."
+    },
     {
       "at": "2026-11-21T00:30:00Z",
       "text": "The Subjects card on the Commons front reads 16 colleges, 1,431 college-and-code pairs and 746 printed names; 753 of 1,625 codes get a common subject code from the existing files. Its builder is not in the daily build yet."
