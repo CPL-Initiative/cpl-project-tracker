@@ -324,7 +324,7 @@ check("6 a code that holds a course and its honors or lab version is left unread
       "versions of one course (Crafton Hills ART 120) and one course id are read",
       read.variant_mix(mix) and not read.variant_mix(retitled) and not read.variant_mix(mix[:1])
       and not read.variant_mix([dict(mix[0]), dict(mix[1], reports=[])]))
-SB = ("Course Content - Learning Objectives\nStudents completing this course satisfactorily will be able to:\n"
+SB = ("Course Content - Learning Objectives\nStudents participating in this class will:\n"
       "Explain budgets.\nCompare investments.\nStudent Learning Outcomes\n"
       "Students completing this course satisfactorily will be able to:\nCreate a budget.\nChoose an investment.\n"
       "Course Content - Lecture\nOriginator: " + STAFF + "\n")
