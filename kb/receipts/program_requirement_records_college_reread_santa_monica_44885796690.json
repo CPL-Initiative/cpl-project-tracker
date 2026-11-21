@@ -1,0 +1,4071 @@
+{
+ "college": "Santa Monica College",
+ "reread_run": "44885796690",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "44885033145",
+ "at": "2026-11-21T08:38:37Z",
+ "posted": 11,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "45012",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 11,
+ "absent": 0,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "03256",
+  "03272",
+  "03274",
+  "08970",
+  "19299",
+  "19300",
+  "21007",
+  "30899",
+  "31231",
+  "39651",
+  "45928"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 7,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Santa Monica College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 44885033145;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 26,
+    "placed": 14,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "LIST B: Select a MAXIMUM of 7 units (if less than 12 units are completed from List A)",
+      "rule": "choose_units",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ACCTG 6",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ACCTG 7",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ACCTG 10A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ACCTG 10B",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ACCTG 10C",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ACCTG 11",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ACCTG 12",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ACCTG 16",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ACCTG 19A",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ACCTG 23",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ACCTG 40A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ACCTG 40B",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ACCTG 50",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS 5",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "LIST B: Select a MAXIMUM of 7 units (if less than 12 units are completed from List A)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=83",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39567439681,
+   "program_title": "Accounting",
+   "control_number": "03256"
+  },
+  {
+   "award": "A.A. Degree",
+   "checks": {
+    "listed": 58,
+    "placed": 41,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Course list continued from previous page (heading and rule not in text)",
+      "rule": "choose_units",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "MUSIC 36",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 37",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 39",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 40",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 42",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 45",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "TH ART 45",
+          "units": 3,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 50A",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 50B",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 52",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 53",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 55",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 57",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 59",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 60A",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "MUSIC 66",
+          "units": 5,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 60B",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 60C",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 60D",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 61A",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 61B",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 63",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 64",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 65A",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 65B",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 69D",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 70A",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 70B",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 70C",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 71",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 72",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 73A",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 73B",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 74",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 76",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "MUSIC 77",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 78",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "MUSIC 79A",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 84A",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 84B",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 84C",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "MUSIC 87A",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 87B",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 92",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 94",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Music, A.A. Degree (heading on the preceding page, not in the provided text)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=172",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39567439681,
+   "program_title": "Music",
+   "control_number": "03272"
+  },
+  {
+   "award": "A.A. Degree",
+   "checks": {
+    "listed": 54,
+    "placed": 41,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Preceding requirement block (continued from page 123; name not in text)",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "DANCE 61",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Additional Electives",
+      "rule": "choose_units",
+      "stated": {
+       "max": 2,
+       "min": 2
+      },
+      "courses": [
+       {
+        "code": "DANCE 2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 6",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 10",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 11",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 12",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 13",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 14",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 15",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 16",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 17",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 18",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 19A",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 20",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 21A",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 21B",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 22A",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 22B",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 24",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 24B",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 25",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 25B",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 26A",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 27",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 27B",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 29",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 31A",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 32A",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 41A",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 41B",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 42A",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 42B",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 55B",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 57B",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 59A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 62",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 63",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 70",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 75",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ECE 75",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 77",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "DANCE 79",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Dance, Associate Degree (heading is on the preceding page; not in the supplied text)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=124",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39567439681,
+   "program_title": "Dance",
+   "control_number": "03274"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 37,
+    "placed": 36,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core Courses (continued from preceding page)",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CS 40",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "CS 80",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS 50",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS 60",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "MATH 4 or One of the following",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 5,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "MATH 4",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 3",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 7",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 8",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 10",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 11",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 13",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 15",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 21",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 26",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 28",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 29",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 41",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHILOS 9",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "Required Concentration Courses: GROUP 1",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CS 15",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS 19",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Concentration"
+     },
+     {
+      "name": "Required Concentration Courses: GROUP 2",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CS 81",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Concentration"
+     },
+     {
+      "name": "GROUP 2: One course from the following",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "CS 82",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS 83",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS 83R",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS 84",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS 85",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": "Concentration"
+     },
+     {
+      "name": "Required Concentration Courses: GROUP 3",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CS 65",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS 66",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Concentration"
+     },
+     {
+      "name": "Required Concentration Courses: GROUP 4",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CS 52",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Concentration"
+     },
+     {
+      "name": "GROUP 4: One course from the following",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "CS 20A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS 51",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": "Concentration"
+     },
+     {
+      "name": "Required Concentration Courses: GROUP 5",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CS 55",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Concentration"
+     },
+     {
+      "name": "GROUP 5: One course from the following",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "CS 20B",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS 56",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": "Concentration"
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Computer Programming (heading not in the provided text; the section starts on the preceding catalog page)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=116",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39567439681,
+   "program_title": "Computer Programming",
+   "control_number": "08970"
+  },
+  {
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "checks": {
+    "listed": 24,
+    "placed": 23,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ETH ST 6",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ETH ST 7",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Required Elective",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ENGL 10",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 10",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCIOL 34",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "Intra-Ethnic Studies",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "AHIS 71",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COM ST 38",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 34",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 41",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 53",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 54",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETH ST 6",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETH ST 7",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 16",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 41",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 42",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 43",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 62",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCIOL 30",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCIOL 31",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCIOL 32",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     },
+     {
+      "name": "Inter-Ethnic Studies",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ANTHRO 2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COM ST 20",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FILM 7",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 10",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 10",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MEDIA 10",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCIOL 34",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Ethnic Studies (heading not in the supplied text; section begins mid-list on page 143)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=143",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39567439681,
+   "program_title": "Ethnic Studies",
+   "control_number": "19299"
+  },
+  {
+   "award": "A.A. Degree",
+   "checks": {
+    "listed": 24,
+    "placed": 23,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ETH ST 6",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ETH ST 7",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Required Elective",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ENGL 10",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 10",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCIOL 34",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "Intra-Ethnic Studies",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "AHIS 71",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COM ST 38",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 34",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 41",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 53",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 54",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETH ST 6",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETH ST 7",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 16",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 41",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 42",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 43",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 62",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCIOL 30",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCIOL 31",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCIOL 32",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     },
+     {
+      "name": "Inter-Ethnic Studies",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ANTHRO 2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COM ST 20",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FILM 7",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 10",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 10",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MEDIA 10",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCIOL 34",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Ethnic Studies (A.A. Degree; heading not in the excerpt, which begins mid-section on page 143)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=143",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39567439681,
+   "program_title": "Ethnic Studies",
+   "control_number": "19300"
+  },
+  {
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "checks": {
+    "listed": 20,
+    "placed": 20,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core Courses (continued from previous page; heading cut off)",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CS 40",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "CS 80",
+          "units": 3,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "CS 50",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CS 60",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "MATH 4, College Algebra for STEM Majors or One of the following",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 5,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "MATH 4",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 3",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 7",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 8",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 10",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 11",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 13",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 15",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 21",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 26",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 28",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 29",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 41",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHILOS 9",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "GROUP 1",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CS 15",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CS 19",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": "Concentration groups (select 2)"
+     },
+     {
+      "name": "GROUP 2",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CS 81",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": "Concentration groups (select 2)"
+     },
+     {
+      "name": "GROUP 2: One course from the following",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "CS 82",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS 83",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS 83R",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS 84",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CS 85",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 1,
+      "option_group": "Concentration groups (select 2)"
+     },
+     {
+      "name": "GROUP 3",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CS 65",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CS 66",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": "Concentration groups (select 2)"
+     },
+     {
+      "name": "GROUP 4",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CS 52",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": "Concentration groups (select 2)"
+     },
+     {
+      "name": "GROUP 4: One course from the following",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "CS 20A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CS 51",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": "Concentration groups (select 2)"
+     },
+     {
+      "name": "GROUP 5",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CS 55",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": "Concentration groups (select 2)"
+     },
+     {
+      "name": "GROUP 5: One course from the following",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "CS 20B",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CS 56",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 1,
+      "option_group": "Concentration groups (select 2)"
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Computer Programming, Associate Degree or Certificate of Achievement (heading not in the extracted text; section continues from the previous page)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=116",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39567439681,
+   "program_title": "Computer Programming",
+   "control_number": "21007"
+  },
+  {
+   "award": "A.A. Degree",
+   "checks": {
+    "listed": 67,
+    "placed": 66,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required core (heading not in excerpt)",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "POL SC 3",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POL SC 31",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POL SC 95",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "AREA A: English Language and Critical Thinking",
+      "rule": "choose_units",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "BUS 32",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 31",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 47",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHILOS 7",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     },
+     {
+      "name": "AREA B: Oral Communication/Media Literacy",
+      "rule": "choose_units",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "COMM C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COM ST 37",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "JOURN 1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MEDIA 1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MEDIA 2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MEDIA 10",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WGS 30",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     },
+     {
+      "name": "Arts and Cultural Affairs Track",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "AHIS 3",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AHIS 11",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AHIS 72",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 5",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 30",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 33",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 36",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 37",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TH ART 2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TH ART 5",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": "Specialization track"
+     },
+     {
+      "name": "Educational Track",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "ECE 11",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECE 19",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECE 45",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECE 64",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "EDUC 12",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "LING 1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYCH 11",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": "Specialization track"
+     },
+     {
+      "name": "Environmental Track",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "BIOL 9",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENVRN 7",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENVRN 20",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENVRN 22",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENVRN 40",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 7",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 14",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHILOS 20",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POL SC 22",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYCH 40",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": "Specialization track"
+     },
+     {
+      "name": "Public Health Track",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "ECE 64",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HEALTH 10",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HEALTH 60",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HEALTH 70",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NURSNG 60",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NUTR 1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NUTR 7",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYCH 8",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYCH 13",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": "Specialization track"
+     },
+     {
+      "name": "Urban/Socioeconomic Track",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "AD JUS 1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON C2001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON C2002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON 6",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 8",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 10",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POL SC 21",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POL SC 24",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYCH 8",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYCH 13",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCIOL 1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCIOL 2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "SOCIOL 2s",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCIOL 30",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCIOL 31",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCIOL 32",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCIOL 34",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "URBAN 8",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": "Specialization track"
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Public Policy (heading not in the excerpt; text begins mid-section at top of page 189)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=189",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39567439681,
+   "program_title": "Public Policy",
+   "control_number": "30899"
+  },
+  {
+   "award": "A.A. Degree",
+   "checks": {
+    "listed": 89,
+    "placed": 75,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "(area heading printed on the previous page, not in supplied text)",
+      "rule": "choose_units",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ENVRN 7",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENVRN 20",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENVRN 22",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENVRN 40",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FASHN 15",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "GEOG 2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 7",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 8",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GLOBAL 3",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "LING 1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MEDIA 3",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHILOS 20",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POL SC 22",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYCH 40",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCIOL 1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "URBAN 8",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WGS 20",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Governance and Conflict",
+      "rule": "choose_units",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "PHILOS 51",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHILOS 52",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POL SC 2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POL SC 3",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POL SC 7",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POL SC 51",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POL SC 52",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     },
+     {
+      "name": "Markets and Economies",
+      "rule": "choose_units",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "BUS 50",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS 52",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS 53",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS 54",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS 55",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON C2001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON C2002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     },
+     {
+      "name": "World History/Area Studies",
+      "rule": "choose_units",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "AHIS 3",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AHIS 5",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AHIS 6",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AHIS 11",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AHIS 15",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AHIS 17",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AHIS 18",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AHIS 22",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 5",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 20",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 21A",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 22B",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 24",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 25",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 27",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 29",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 32",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 40",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 45",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 49",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 56",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENVRN 32",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 4",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 6",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 19",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 21",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 22",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 25",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 27",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 28",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 29",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 32",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 34",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 39",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 41",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 53",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HUM 9A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "JAPAN 9",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KOREAN 9",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 29",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 31",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHILOS 4",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHILOS 22",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHILOS 23",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 20",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "GLOBAL STUDIES",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=152",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39567439681,
+   "program_title": "Global Studies",
+   "control_number": "31231"
+  },
+  {
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "checks": {
+    "listed": 8,
+    "placed": 5,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "OFTECH 5",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "OFTECH 1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "OFTECH 10",
+          "units": 3,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Track 1: Social Media Specialist",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BUS 34A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CIS 50",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CIS 70",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": "Specialization track"
+     },
+     {
+      "name": "Track 2: Office Finance Specialist",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CIS 30",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ACCTG 1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ACCTG 21",
+          "units": 3,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "CIS 35A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "CIS 35B",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Specialization track"
+     },
+     {
+      "name": "Track 3: Microsoft Office Specialist",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CIS 30",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CIS 32",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CIS 38",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Specialization track"
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Business Information Worker 2, Certificate of Achievement (heading not in the supplied text; section begins on the preceding catalog page)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=112",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39567439681,
+   "program_title": "Business Information Worker 2",
+   "control_number": "39651"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 42,
+    "placed": 23,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Unnamed list continued from previous page (likely List B)",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ENGL 40",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 45",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 50",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 58",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ENGL 71",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List C",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ENGL 26",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "HUM 26",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 31",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 49",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 51",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "REL ST 52",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 52",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "REL ST 52",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 55",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 56",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 57",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 58",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ENGL 59",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 60",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 61",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 62",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 63",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 64",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 70",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ENGL 72",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 73",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 74",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "English A.A-T (heading not printed in the excerpt; text begins mid-list, ending at 'Creative Writing, Certificate of Achievement')",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=137",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39567439681,
+   "program_title": "English",
+   "control_number": "45928"
+  }
+ ]
+}

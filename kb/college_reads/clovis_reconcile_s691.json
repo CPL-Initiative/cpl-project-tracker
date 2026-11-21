@@ -1,0 +1,26 @@
+{
+ "_readme": "S691 (worker piles2), Clovis's reconcile_steps lever (26): Elementary Teacher Level 2 42234 (filed p.121) states 16 units over courses that sum to 19, and Life Science 33431 (filed p.104) holds lists of 8 and 3 units under a total of 18. This read prints both pages and the page after, so the shape is named from the catalog's own figures. No model call.",
+ "college": "Clovis Community College",
+ "questions": {
+  "total_words": "Where and in what words the two programs print their totals and lists."
+ },
+ "keywords": [
+  "Elementary\\s+Teacher",
+  "Life\\s+Science"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "total_words"
+   ],
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf"
+  }
+ ],
+ "pdf_span": [
+  102,
+  123
+ ],
+ "pdf_after": 1,
+ "pdf_page_cap": 8,
+ "pdf_unfolded": true
+}

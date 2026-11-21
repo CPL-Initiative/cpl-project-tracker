@@ -1,0 +1,22 @@
+{
+ "_readme": "S691 (worker piles2), lever 2: 3 City College of San Francisco transfer degrees (32080, 33652, 46300) name Cal-GETC with no units. This read looks for the page printing Cal-GETC's units in the 2026-27 catalog the extraction read. A refusal is filed as such and not retried. No model call.",
+ "college": "City College of San Francisco",
+ "questions": {
+  "ge_units": "Whether and where the 2026-27 catalog prints Cal-GETC's unit figure."
+ },
+ "keywords": [
+  "Cal-?\\s?GETC[^.\\n]{0,120}?\\(?\\b3[2-9]\\s*(?:semester\\s+)?units?",
+  "\\b3[2-9]\\s*(?:semester\\s+)?units?[^.\\n]{0,120}?Cal-?\\s?GETC",
+  "General\\s+Education\\s+Transfer\\s+Curriculum[^.\\n]{0,80}?\\b3[2-9]"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "ge_units"
+   ],
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf"
+  }
+ ],
+ "pdf_after": 0,
+ "pdf_page_cap": 6
+}

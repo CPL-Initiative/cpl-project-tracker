@@ -1,0 +1,23 @@
+{
+ "_readme": "S691 (worker piles2), lever 2: 4 Sacramento City transfer degrees (32001, 32732, 35463, 42894) name Cal-GETC with no units; 7 local degrees name 'Local General Education Pattern or Cal-GETC'. This read looks for the page printing each pattern's units. No model call.",
+ "college": "Sacramento City College",
+ "questions": {
+  "ge_units": "Whether and where the 2026-27 catalog prints Cal-GETC's and the local pattern's unit figures."
+ },
+ "keywords": [
+  "Cal-?\\s?GETC[^.\\n]{0,120}?\\(?\\b3[2-9]\\s*(?:semester\\s+)?units?",
+  "\\b3[2-9]\\s*(?:semester\\s+)?units?[^.\\n]{0,120}?Cal-?\\s?GETC",
+  "General\\s+Education\\s+Transfer\\s+Curriculum[^.\\n]{0,80}?\\b3[2-9]",
+  "Local\\s+General\\s+Education\\s+Pattern[^.\\n]{0,120}?\\b\\d{2}\\s*units"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "ge_units"
+   ],
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf"
+  }
+ ],
+ "pdf_after": 0,
+ "pdf_page_cap": 6
+}

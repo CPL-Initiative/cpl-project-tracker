@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-21T09:11:55Z",
+ "written_at": "2026-11-21T09:42:09Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 16701,
-  "gap": 5634,
+  "passing": 16708,
+  "gap": 5627,
   "with_gap": 118,
-  "cost_usd": 1339.36,
-  "passed_at_read": 16188,
+  "cost_usd": 1339.66,
+  "passed_at_read": 16193,
   "cost_receipts": 118,
   "spent_usd": 1224.87,
   "spent_runs": 171,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16606,
-  "gap": 5634,
+  "passing": 16613,
+  "gap": 5627,
   "collected_with_gaps": 95,
   "discontinued": 0
  },
@@ -11018,12 +11018,13 @@
    "harvested": true,
    "slug": "santa_monica",
    "programs": 256,
-   "passing": 187,
-   "gap": 69,
+   "passing": 194,
+   "gap": 62,
    "causes": {
     "no_closed_list": 16,
-    "page_not_found": 10,
-    "unknown_without_live": 43
+    "page_not_found": 9,
+    "places_none": 1,
+    "unknown_without_live": 36
    },
    "census_causes": {
     "coverage_fails": 1,
@@ -11045,10 +11046,10 @@
    "outcomes_file": "kb/status/commons_data_programs/santa_monica.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-20T12:53:10Z",
+   "read_at": "2026-11-21T08:29:39Z",
    "read_kind": "capture",
-   "cost_usd": 19.88,
-   "passed_at_read": 181,
+   "cost_usd": 20.18,
+   "passed_at_read": 186,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -11057,15 +11058,15 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 240,
-   "found": 230,
-   "extracted": 230,
+   "found": 231,
+   "extracted": 231,
    "errors": 0,
    "failed_checks": {
-    "coverage": 1,
+    "coverage": 3,
     "invented": 1,
-    "arithmetic": 44,
+    "arithmetic": 38,
     "repeated": 1,
-    "outcomes": 7
+    "outcomes": 9
    },
    "platform": "custom_html",
    "catalog_year": "2026-2027",
@@ -11073,26 +11074,27 @@
    "capture_root": "https://catalog.smc.edu/current/index.php",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 246.8,
-   "run": "44739378155",
+   "read_seconds": 286.5,
+   "run": "44885033145",
    "levers": {
-    "reconcile_steps": 43,
+    "reconcile_steps": 36,
     "program_course_file_check": 16,
-    "reader_page_search": 10
+    "reader_page_search": 9,
+    "reader_page_assignment": 1
    },
    "collection": {
     "program_reader": {
-     "records": 230,
+     "records": 231,
      "models": {
-      "claude-opus-5-5": 230
+      "claude-opus-5-5": 231
      },
-     "run": "44739378155",
-     "at": "2026-11-20T12:53:10Z",
-     "cost_usd": 19.88,
+     "run": "44885033145",
+     "at": "2026-11-21T08:29:39Z",
+     "cost_usd": 20.18,
      "platform": "custom_html"
     },
     "slo_read": null,
-    "plo_programs": 213,
+    "plo_programs": 225,
     "ppm_member": null,
     "maps": {
      "held": 1,

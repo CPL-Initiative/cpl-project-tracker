@@ -499,6 +499,24 @@ try:
 finally:
     shutil.rmtree(_tmp, ignore_errors=True)
 
+# S691: total_not_printed names only a record kb/program_total_not_printed.json lists, read from its page, and only
+# while its one arithmetic reason is that it names no total.
+_tnp = NG.total_not_printed_list()
+_tnp_sc = {"arithmetic": {"pass": False, "status": "incomplete", "why": [NG.NO_TOTAL_WHY]},
+           "coverage": {"pass": True}, "invented": {"pass": True}}
+_tnp_rec = {"college": "Santa Monica College", "control_number": "45811", "score": _tnp_sc}
+check(sorted(cn for c, cn in _tnp) == ["37885", "45811", "45812", "45813", "45814", "45815"]
+      and all(c == "Santa Monica College" and e.get("page") and e.get("words") and e.get("evidence") and e.get("run")
+              for (c, _), e in _tnp.items()), "the not-printed list holds Santa Monica's six, each with its page and run")
+check(NG.answer(_tnp_rec)[0] == "total_not_printed" and NG.held_answer(_tnp_rec) == "total_not_printed",
+      "a listed record naming no total takes total_not_printed")
+check(NG.total_not_printed(dict(_tnp_rec, control_number="45899")) is None,
+      "an unlisted record of the same shape takes no total_not_printed")
+check(NG.total_not_printed(dict(_tnp_rec, score=dict(_tnp_sc, arithmetic={"pass": False, "status": "incomplete",
+      "why": [NG.NO_TOTAL_WHY, "a required course in 'Core' has no units"]}))) is None,
+      "a listed record with another arithmetic reason takes no total_not_printed")
+check(NG.ARITH_SCORE["total_not_printed"] == 40 and "total_not_printed" in NG.GAPS, "the gap has its sentence and score")
+
 if failures:
     for m in failures:
         print("FAIL:", m)
