@@ -27,8 +27,15 @@
   var STATES = {
     not_read: { word: "Not read yet", tip: "The catalog has this subject and our read did not take its heading. Sky clears it with a re-read." },
     blocked: { word: "Blocked", tip: "The college’s site refused our reader. A person hands the page over, or the reader is fixed." },
-    not_in_catalog: { word: "Not in catalog", tip: "The catalog was read and gives this code no subject heading. It waits on a title from a person." }
+    not_in_catalog: { word: "Not in catalog", tip: "The catalog was read and gives this code no subject heading. It waits on a title from a person." },
+    /* Sam, 2026-11-21 (COBIx on #3655): noncredit recommendations wait until the large noncredit programs' catalogs are read. */
+    noncredit_hold: { word: "Noncredit: on hold", tip: "Every course under this code is noncredit and its catalog gives no heading. Noncredit titles and common codes wait until the large noncredit programs’ catalogs are read." }
   };
+  /* A code's courses in COCI, credit and noncredit apart (Sam, 2026-11-21: the MQs separate them). */
+  function bands(r) {
+    if (r.noncredit_courses == null || !r.noncredit_courses) return "";
+    return " (" + fmt(r.credit_courses || 0) + " credit, " + fmt(r.noncredit_courses) + " noncredit)";
+  }
   function needsTitle(r) { return !r.printed_name; }
   function stateOf(r) { return STATES[r.title_state] || STATES.not_read; }
   var DISAGREE = "disagree";
@@ -103,8 +110,8 @@
       el("thead", null, [el("tr", null, ["College", "Local code", "Local Title", "Common subject code", "Courses", "Source"]
         .map(function (t) { return el("th", { scope: "col", text: t }); }))]),
       el("tbody", null, rows.length ? rows.map(function (r) {
-        var heads = r.side === "state" ? fmt(r.state_courses) + " in COCI"
-          : fmt(r.catalog_courses) + (r.side === "both" ? " in the catalog, " + fmt(r.state_courses) + " in COCI" : "")
+        var heads = r.side === "state" ? fmt(r.state_courses) + " in COCI" + bands(r)
+          : fmt(r.catalog_courses) + (r.side === "both" ? " in the catalog, " + fmt(r.state_courses) + " in COCI" + bands(r) : "")
             + (r.address && !r.catalog_courses ? "; its page is not read yet" : "");
         var st = needsTitle(r) ? stateOf(r) : null;
         var title = st ? el("td", { cls: "csb-tba" }, [
@@ -195,7 +202,7 @@
       el("strong", { text: fmt(T.named) }), " local titles at ", el("strong", { text: fmt(T.colleges_named) + " of " + fmt(T.colleges) }),
       " colleges with a catalog on file (" + fmt(T.courses) + " courses, " + fmt(T.catalog_codes) + " subject codes in the catalogs). ",
       go("#commons/subjects/" + DISAGREE, fmt(untitled) + " codes with no title"),
-      " (" + fmt(T.not_in_catalog || 0) + " not in catalog, " + fmt(T.not_read || 0) + " not read yet, " + fmt(T.blocked || 0) + " blocked). ",
+      " (" + fmt(T.not_in_catalog || 0) + " not in catalog, " + fmt(T.not_read || 0) + " not read yet, " + fmt(T.blocked || 0) + " blocked, " + fmt(T.noncredit_hold || 0) + " noncredit on hold). ",
       fmt(T.with_common) + " codes have a common subject code from the subject map. ",
       el("a", { href: "#canonical-subj4", text: "Common Subjects Reference" }), ". ",
       go("#commons/subjects/" + HELD, "Codes the M-ID mint holds on"), "."]));
@@ -218,7 +225,7 @@
     } else if (S.view === DISAGREE) {
       /* Every row with no title, in or out of the catalog (#3655, item 7: a code in both with no title was dropped
          by the old one-sided filter). Sam's rows first: Not in catalog, then Blocked, then Sky's Not read yet. */
-      var order = { not_in_catalog: 0, blocked: 1, not_read: 2 };
+      var order = { not_in_catalog: 0, blocked: 1, not_read: 2, noncredit_hold: 3 };
       wrap.appendChild(codeTable(all.filter(needsTitle).sort(function (a, b) {
         return (order[a.title_state] == null ? 2 : order[a.title_state]) - (order[b.title_state] == null ? 2 : order[b.title_state])
           || a.college.localeCompare(b.college) || String(a.code).localeCompare(String(b.code));

@@ -319,6 +319,10 @@ jobs:
       # first course, saved in Title Case; a line of prose is never a heading, and none is invented. Pure stdlib.
       - name: Subject headings filer (kb/_file_subject_headings.py)
         run: python3 tests/subject_headings_filer_test.py
+      # Noncredit by category (S698, #3655): a code's noncredit courses under the category the COCI export names,
+      # apart from its credit courses; no band and no category is guessed. Pure stdlib (the build reads the export).
+      - name: Noncredit categories (kb/_build_noncredit_categories.py)
+        run: python3 tests/noncredit_categories_test.py
       # The codes the pile mint holds on (S695): held courses summed, counted once each, ranked; a vote that missed its
       # floor is a suggestion, never a decision. Pure stdlib.
       - name: Held subject codes (kb/_held_subject_codes.py)

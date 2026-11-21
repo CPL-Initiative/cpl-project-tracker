@@ -63,7 +63,7 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
   check("(2) ⭐ the drafted titles open the subjects list", by("3 local titles") && by("3 local titles").getAttribute("href") === "#commons/subjects");
   check("(2) ⭐ the colleges open the subjects list", by("1 of 2 colleges") && by("1 of 2 colleges").getAttribute("href") === "#commons/subjects");
   check("(2) the codes with no title open their list, each reason counted", by("3 codes with no title") && by("3 codes with no title").getAttribute("href") === "#commons/subjects/disagree"
-    && /\(1 not in catalog, 2 not read yet, 0 blocked\)/.test(txt(first)));
+    && /\(1 not in catalog, 2 not read yet, 0 blocked, 0 noncredit on hold\)/.test(txt(first)));
   check("(2) Step a's figure opens the Common Subjects Reference", links.some((l) => l.getAttribute("href") === "#canonical-subj4" && /disciplines settled/.test(txt(l))));
   check("(2) the card names an owner on each step", /Owner: a curator/.test(txt(first)) && /Owner: the Courses bot/.test(txt(first)));
   check("the card's link row opens the list", Array.from(first.querySelectorAll(".cmf-links a")).some((l) => l.getAttribute("href") === "#commons/subjects"));
@@ -119,6 +119,26 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
   check("(7) ⭐ the list holds every code with no title, in or out of the catalog, a person's rows first",
     sides.length === 3 && states.join(",") === "not_in_catalog,not_read,not_read" && sides.indexOf("both") >= 0, states.join(",") + " / " + sides.join(","));
   check("(7) its heading says what it lists", txt(d.getElementById("csb-h")) === "Subject codes with no title");
+
+  // Noncredit (Sam, 2026-11-21): a code whose courses are all noncredit and untitled is on hold; the counts show apart.
+  const NC = JSON.parse(JSON.stringify(FIX)), ci = NC.columns;
+  NC.colleges.forEach((c) => c.rows.forEach((r) => {
+    if (c.slug === "beta" && r[0] === "WELD") { r[ci.indexOf("title_state")] = "noncredit_hold"; r[ci.indexOf("credit_courses")] = 0; r[ci.indexOf("noncredit_courses")] = r[ci.indexOf("state_courses")]; }
+    if (c.slug === "alpha" && r[0] === "ENGL") { r[ci.indexOf("credit_courses")] = 1; r[ci.indexOf("noncredit_courses")] = 1; }
+  }));
+  NC.totals.not_read = 1; NC.totals.noncredit_hold = 1;
+  x = load("#commons/subjects/disagree", { "kb/status/local_subject_titles.json": NC });
+  await x.M.boot(); await settle();
+  const ncRows = Array.from(x.d.querySelectorAll(".csb-codes tbody tr"));
+  const held = ncRows.find((r) => r.getAttribute("data-title-state") === "noncredit_hold");
+  check("(8) ⭐ an untitled code whose courses are all noncredit reads Noncredit: on hold, after a person's rows",
+    held && txt(held.children[2].querySelector(".csb-chip")) === "Noncredit: on hold" && ncRows.indexOf(held) === ncRows.length - 1
+    && /wait until the large noncredit programs/.test(held.children[2].querySelector(".csb-chip").getAttribute("aria-label")));
+  check("(8) the page counts the codes on hold", /1 noncredit on hold/.test(txt(x.d.querySelector(".csb-stamp"))));
+  x = load("#commons/subjects/alpha", { "kb/status/local_subject_titles.json": NC });
+  await x.M.boot(); await settle();
+  check("(8) ⭐ a code's credit and noncredit courses are counted apart", /\(1 credit, 1 noncredit\)/.test(txt(x.d.querySelector('.csb-codes tr[data-code="ENGL"]').children[4]))
+    && !/noncredit\)/.test(txt(x.d.querySelector('.csb-codes tr[data-code="WELD"]').children[4])));
 
   x = load("#commons/subjects/nowhere");
   await x.M.boot(); await settle();

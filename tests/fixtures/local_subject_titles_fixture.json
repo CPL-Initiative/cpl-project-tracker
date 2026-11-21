@@ -23,7 +23,10 @@
   "not_read": 2,
   "blocked": 0,
   "not_in_catalog": 1,
-  "pages_not_read": 0
+  "pages_not_read": 0,
+  "noncredit_hold": 0,
+  "noncredit_only": 0,
+  "credit_and_noncredit": 0
  },
  "columns": [
   "code",
@@ -36,7 +39,9 @@
   "title_state",
   "title_source",
   "candidate",
-  "address"
+  "address",
+  "credit_courses",
+  "noncredit_courses"
  ],
  "colleges": [
   {
@@ -65,7 +70,9 @@
      "catalog",
      "course pages",
      null,
-     null
+     null,
+     11,
+     0
     ],
     [
      "MATH",
@@ -78,7 +85,9 @@
      "not_in_catalog",
      null,
      null,
-     null
+     null,
+     4,
+     0
     ],
     [
      "WELD",
@@ -91,7 +100,9 @@
      "catalog",
      "course pages",
      null,
-     null
+     null,
+     6,
+     0
     ],
     [
      "ZZZ",
@@ -104,13 +115,16 @@
      "catalog",
      "course pages",
      null,
-     null
+     null,
+     0,
+     0
     ]
    ],
    "not_read": 0,
    "blocked": 0,
    "not_in_catalog": 1,
-   "pages_not_read": 0
+   "pages_not_read": 0,
+   "noncredit_hold": 0
   },
   {
    "slug": "beta",
@@ -138,7 +152,9 @@
      "not_read",
      null,
      "Engineering and Design",
-     null
+     null,
+     0,
+     0
     ],
     [
      "WELD",
@@ -151,13 +167,16 @@
      "not_read",
      null,
      null,
-     null
+     null,
+     7,
+     0
     ]
    ],
    "not_read": 2,
    "blocked": 0,
    "not_in_catalog": 0,
-   "pages_not_read": 0
+   "pages_not_read": 0,
+   "noncredit_hold": 0
   }
  ]
 }
