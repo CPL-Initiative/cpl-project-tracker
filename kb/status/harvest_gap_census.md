@@ -1,12 +1,12 @@
 # Harvest gap census
 
-Written by `kb/_harvest_gap_census.py` (2026-11-21 10:10Z, live). Every active program without a passing record, each with one cause and one lever. Counts are a snapshot; rerun `harvest-gap-census.yml` for today's.
+Written by `kb/_harvest_gap_census.py` (2026-11-21 17:06Z, live). Every active program without a passing record, each with one cause and one lever. Counts are a snapshot; rerun `harvest-gap-census.yml` for today's.
 
-Universe 20282 · passing 15314 · without a passing record 4875.
+Universe 20282 · passing 15334 · without a passing record 4839.
 
 Of the passing, 54 counts as passing on the tab; the scorer's own test fails (listed in the JSON, not counted as gaps).
 
-Collected with a named gap, out of the gap: 93 (catalog_figures_differ 20, no_hours_read 51, no_units_read 22).
+Collected with a named gap, out of the gap: 109 (catalog_figures_differ 20, no_hours_read 51, no_units_read 22, total_differs 10, total_not_printed 6).
 
 Read by the harvest but outside the universe: Active - Teachout Only 630, Approved 1423.
 
@@ -22,12 +22,12 @@ Named gap, 4 programs: "The state lists this program twice. The other listing ha
 | no closed list in the Program Course File | 1747 |
 | page not found | 1108 |
 | page found, never extracted | 17 |
-| extracted, places none of its courses | 244 |
+| extracted, places none of its courses | 237 |
 | extracted, no score (an error) | 4 |
 | live, coverage fails | 185 |
 | live, a course added | 4 |
-| live, units unequal | 985 |
-| live, units incomplete | 485 |
+| live, units unequal | 971 |
+| live, units incomplete | 470 |
 
 ## Top levers
 
@@ -39,32 +39,32 @@ Named gap, 4 programs: "The state lists this program twice. The other listing ha
 | 4 | a session takes the parked college back up under its decision | Los Medanos College | 59 | free |  |
 | 5 | a reader change finds the program's page (a free page read first) | City College of San Francisco | 53 | free |  |
 | 6 | a reader change finds the program's page (a free page read first) | Ohlone College | 36 | free |  |
-| 7 | a team session writes correction rules from the catalog's own wording, then rescores the saved record | Santa Monica College | 36 | free |  |
-| 8 | a team session writes correction rules from the catalog's own wording, then rescores the saved record | Glendale Community College | 33 | free |  |
-| 9 | a reader change finds the program's page (a free page read first) | San Joaquin Delta College | 30 | free |  |
-| 10 | a reader change hands it its own page, then extraction | Cosumnes River College | 29 | paid | $2.53 |
-| 11 | a reader change finds the program's page (a free page read first) | Mt. San Antonio College | 28 | free |  |
-| 12 | a reader change finds the program's page (a free page read first) | Santa Barbara City College | 28 | free |  |
-| 13 | a team session writes correction rules from the catalog's own wording, then rescores the saved record | City College of San Francisco | 28 | free |  |
-| 14 | a reader change finds the program's page (a free page read first) | Orange Coast College | 27 | free |  |
-| 15 | a team session writes correction rules from the catalog's own wording, then rescores the saved record | Santa Rosa Junior College | 27 | free |  |
-| 16 | a reader change finds the program's page (a free page read first) | Fresno City College | 26 | free |  |
-| 17 | a reader change finds the program's page (a free page read first) | Victor Valley College | 26 | free |  |
-| 18 | a team session writes correction rules from the catalog's own wording, then rescores the saved record | Clovis Community College | 26 | free |  |
-| 19 | a reader change finds the program's page (a free page read first) | Saddleback College | 25 | free |  |
-| 20 | a reader change finds the program's page (a free page read first) | Diablo Valley College | 24 | free |  |
-| 21 | a reader change finds the program's page (a free page read first) | Mt. San Jacinto College | 24 | free |  |
-| 22 | a reader change finds the program's page (a free page read first) | Southwestern College | 24 | free |  |
-| 23 | a team session writes correction rules from the catalog's own wording, then rescores the saved record | East Los Angeles College | 24 | free |  |
-| 24 | a team session writes correction rules from the catalog's own wording, then rescores the saved record | El Camino College | 24 | free |  |
-| 25 | a team session writes correction rules from the catalog's own wording, then rescores the saved record | Fullerton College | 24 | free |  |
+| 7 | a reader change finds the program's page (a free page read first) | San Joaquin Delta College | 30 | free |  |
+| 8 | a team session writes correction rules from the catalog's own wording, then rescores the saved record | Santa Monica College | 30 | free |  |
+| 9 | a reader change finds the program's page (a free page read first) | Mt. San Antonio College | 28 | free |  |
+| 10 | a reader change finds the program's page (a free page read first) | Santa Barbara City College | 28 | free |  |
+| 11 | a team session writes correction rules from the catalog's own wording, then rescores the saved record | City College of San Francisco | 28 | free |  |
+| 12 | a team session writes correction rules from the catalog's own wording, then rescores the saved record | Glendale Community College | 28 | free |  |
+| 13 | a reader change finds the program's page (a free page read first) | Orange Coast College | 27 | free |  |
+| 14 | a team session writes correction rules from the catalog's own wording, then rescores the saved record | Santa Rosa Junior College | 27 | free |  |
+| 15 | a reader change finds the program's page (a free page read first) | Fresno City College | 26 | free |  |
+| 16 | a reader change finds the program's page (a free page read first) | Victor Valley College | 26 | free |  |
+| 17 | a reader change finds the program's page (a free page read first) | Saddleback College | 25 | free |  |
+| 18 | a reader change finds the program's page (a free page read first) | Diablo Valley College | 24 | free |  |
+| 19 | a reader change finds the program's page (a free page read first) | Mt. San Jacinto College | 24 | free |  |
+| 20 | a reader change finds the program's page (a free page read first) | Southwestern College | 24 | free |  |
+| 21 | a team session writes correction rules from the catalog's own wording, then rescores the saved record | East Los Angeles College | 24 | free |  |
+| 22 | a team session writes correction rules from the catalog's own wording, then rescores the saved record | El Camino College | 24 | free |  |
+| 23 | a team session writes correction rules from the catalog's own wording, then rescores the saved record | Fullerton College | 24 | free |  |
+| 24 | a reader change hands it its own page, then extraction | College of the Desert | 23 | paid | $1.83 |
+| 25 | a reader change finds the program's page (a free page read first) | Allan Hancock College | 23 | free |  |
 
 ## Next wave: one college per catalog host
 
 | College | Host | Programs a read would gain | Estimate | Read before |
 |---|---|---:|---:|---|
-| Cosumnes River College | crc.losrios.edu | 29 | $2.53 | yes |
 | College of the Desert | catalog.collegeofthedesert.edu | 23 | $1.83 | yes |
+| Cosumnes River College | crc.losrios.edu | 22 | $1.93 | yes |
 | Sacramento City College | scc.losrios.edu | 22 | $2.00 | yes |
 | San Bernardino Valley College | catalog.valleycollege.edu | 16 | $1.10 | yes |
 | Antelope Valley College | avc.elumenapp.com | 10 | $0.73 | yes |

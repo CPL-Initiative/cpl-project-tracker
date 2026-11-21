@@ -103,6 +103,9 @@ withhold kb/program_requirements_reread_plan_s683.json
 withhold kb/program_requirements_cheap_piles_s683.json
 # The programs whose catalog page prints no total (S691); kb/_program_named_gaps.py reads it, no page does.
 withhold kb/program_total_not_printed.json
+# The programs whose catalog page prints a total its own units do not add to (S697); kb/_program_named_gaps.py reads
+# it, no page does.
+withhold kb/program_total_differs.json
 # Standing pattern for a dated file automation adds (the course-outcomes compare); no page reads one, and the
 # ones already committed stay published by their own lines.
 withhold kb/status/mid_outcomes_compare_*

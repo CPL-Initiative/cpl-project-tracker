@@ -1,7 +1,7 @@
 {
  "_readme": "A dated snapshot of main at `commit` (as_of: the newest capture it reads), written by kb/_program_requirements_heading_agreement.py from the files the tree commits (git ls-files). Rewritten by a dispatch of harvest-gap-census.yml beside the gap census; nothing gates a PR on its freshness, so it can trail the records. Each record's own heading (program.section_heading) against the program it is filed under (sources.json: COCI title and award). check_would_fail_passing counts the records that pass on the committed files (passes_live) whose heading names another award type (heading_award_check, in no pass rule). award_not_program counts headings that name an award and none of the program's title words, set aside (Pasadena's one page for an A.S. and its certificate).",
  "commit": {
-  "sha": "b6d52c8e6ec73fd2eadc2141670f81df2830a763",
+  "sha": "bbb08dda82d969420a6106cfa6b25bae791096d1",
   "date": "2026-11-21"
  },
  "as_of": "2026-11-21",
@@ -10,10 +10,10 @@
  ],
  "totals": {
   "records": 18958,
-  "agree": 15397,
+  "agree": 15409,
   "disagree": 276,
-  "cannot_tell": 3285,
-  "heading_absent": 288,
+  "cannot_tell": 3273,
+  "heading_absent": 279,
   "disagree_passing": 168,
   "disagree_loaded": 206,
   "check_would_fail_passing": 136,
@@ -2917,21 +2917,21 @@
    "slug": "cosumnes_river",
    "college": "Cosumnes River College",
    "read_from": "main",
-   "platform": "custom_html",
+   "platform": "pdf",
    "records": 217,
    "pdf_records": 217,
-   "agree": 176,
+   "agree": 188,
    "disagree": 1,
-   "cannot_tell": 40,
-   "heading_absent": 23,
+   "cannot_tell": 28,
+   "heading_absent": 14,
    "disagree_passing": 0,
    "disagree_loaded": 0,
    "pdf_disagree": 1,
    "pdf_disagree_passing": 0,
    "pdf_suspect": 1,
    "pdf_suspect_passing": 0,
-   "pdf_agree": 176,
-   "pdf_cannot_tell": 40,
+   "pdf_agree": 188,
+   "pdf_cannot_tell": 28,
    "by_reason": {
     "title": 1
    },
@@ -2964,7 +2964,7 @@
     }
    ],
    "control_number_print": {
-    "picks": 217,
+    "picks": 197,
     "cn_printed_picks": 0,
     "labels_in_openings": {},
     "positions": {},

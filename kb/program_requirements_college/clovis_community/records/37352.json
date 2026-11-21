@@ -101,7 +101,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "total_differs",
+    "label": "The catalog prints a total for this program that its own printed units do not add to.",
+    "words": "the catalog prints a total of 24-25, and its own figures add to 21-22 (PDF p.141; college-page-read run 44914829120)"
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 80,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

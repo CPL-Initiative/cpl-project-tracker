@@ -1145,9 +1145,16 @@ def _college_steps(record: dict, text: str | None, college: str, award: str | No
             for m in re.finditer(st.get("pattern") or r"(?!)", text):
                 code, n = norm_code(m.group("code")), _count(m.group("n"))
                 total = _num(m.group("total")) if "total" in m.re.groupindex and m.group("total") else None
+                # A pattern that names the figure of one enrollment (Glendale's "AD ST 50 ... 2 x 1", S697) touches
+                # only an entry the reading gave exactly that figure: a reading that already counted the course
+                # twice (the certificate 36155 read it as 2 units) keeps its figure.
+                each = _num(m.group("each")) if "each" in m.re.groupindex and m.group("each") else None
                 for block in out.get("blocks") or []:
                     for course in block.get("courses") or []:
                         for entry in [course] + [a for a in course.get("alternatives") or [] if isinstance(a, dict)]:
+                            if each is not None and (_num(entry.get("units")) != each
+                                                     or entry.get("units_max") not in (None, entry.get("units"))):
+                                continue
                             if n and n > 1 and norm_code(entry.get("code")) == code and entry.get("times") is None:
                                 entry["times"] = n
                                 now = {entry["code"]: n}

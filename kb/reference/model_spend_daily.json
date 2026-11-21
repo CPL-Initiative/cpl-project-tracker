@@ -88,7 +88,7 @@
   "2026-11-17": 7.87,
   "2026-11-19": 63.24,
   "2026-11-20": 31.95,
-  "2026-11-21": 4.82
+  "2026-11-21": 5.98
  },
  "runner_runs": {
   "38322747831": {
@@ -1000,6 +1000,16 @@
    "college": "college_of_the_canyons",
    "usd": 0.0,
    "day": "2026-11-21"
+  },
+  "44915445658": {
+   "college": "glendale_community",
+   "usd": 0.0,
+   "day": "2026-11-21"
+  },
+  "44917314201": {
+   "college": "cosumnes_river",
+   "usd": 1.16,
+   "day": "2026-11-21"
   }
  },
  "runner_since": "2026-11-17",
@@ -1030,9 +1040,9 @@
    "sessions": 5,
    "not_available": 0,
    "tags": {
-    "curation": 136.0,
+    "collection": 256.0,
     "infrastructure": 109.9,
-    "collection": 256.0
+    "curation": 136.0
    },
    "untagged_usd": 0.0,
    "estimate_usd": 288.0
