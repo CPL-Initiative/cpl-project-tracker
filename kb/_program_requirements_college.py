@@ -5256,6 +5256,10 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
                     rec["source"]["after_unbound"] = unbound["why"]
                 if best["opens_on_list"]:
                     rec["source"]["opens_on_list"] = True   # held() holds a passing record read from it
+                if pinned.get(prog["control_number"]):
+                    # A page a person pinned is a deliberate call: same_page's one-page-off reading never folds it
+                    # into the record's old page (deliberate_page, S697: Cosumnes River's 07305, pinned p.212).
+                    rec["source"]["pinned"] = True
                 if hf:
                     rec["source"]["hand_filed"] = {k: hf["meta"][k] for k in ("fetched_by", "fetched_at", "sha256")}
                 # The pages are the program's own: keep their text whole, not a window around the codes.
@@ -5932,8 +5936,15 @@ def filed_from(path: str, src: dict, prev: dict | None = None) -> bool:
         return False
     if rec.get("source_url") == url:
         return True
-    if not same_page(rec.get("source_url"), url):
+    if deliberate_page(src.get("source")) or not same_page(rec.get("source_url"), url):
         return False
+    if pdf_page_of(rec.get("source_url")) != pdf_page_of(url):
+        # A window one page off is other text. It stands for a record that passes as the live table counts it;
+        # a failing record is read again, as held() reads one whatever its window (S697 pricing run 44911690112:
+        # Cosumnes River's 04586, 20147 and 20227 place none of their courses and now open one page earlier).
+        from _program_requirements_score import passes_live
+        if not passes_live(rec.get("score")):
+            return False
     was = rec.get("source_coverage")
     if was is None and prev and names_page((prev.get("source") or {}).get("url"), rec.get("source_url")):
         was = prev.get("coverage")
@@ -6090,8 +6101,10 @@ def unchanged(prev: dict | None, src: dict) -> bool:
     stands and the model need not be asked again."""
     a, b = ((prev or {}).get("source") or {}), (src.get("source") or {})
     # The page is the reread gate's (same_page): Butte's every address moved from Catalog//iq to catalog/iq
-    # (f-butte-page-addresses-changed-case-s690), and 163 unchanged programs read as moved.
-    return bool(prev) and same_page(a.get("url"), b.get("url")) and a.get("text_from") == b.get("text_from") \
+    # (f-butte-page-addresses-changed-case-s690), and 163 unchanged programs read as moved. A page called on
+    # purpose (deliberate_page) matches only as written.
+    page = a.get("url") == b.get("url") or (not deliberate_page(b) and same_page(a.get("url"), b.get("url")))
+    return bool(prev) and page and a.get("text_from") == b.get("text_from") \
         and prev.get("coverage") == src.get("coverage") and prev.get("codes_found") == src.get("codes_found")
 
 
@@ -7179,6 +7192,15 @@ def names_page(a: str | None, b: str | None) -> bool:
     if a == b:
         return bool(a)
     return bool(a) and bool(b) and same_file(a, b) and pdf_page_of(a) == pdf_page_of(b)
+
+
+def deliberate_page(source: dict | None) -> bool:
+    """A source whose page was called on purpose: a person's pdf_pages pin (pinned) or the reader's page checks
+    (page_check, rules A to D, for a record that placed none of its courses). Such a page is new evidence, so it is
+    the same page as a filed record's only when the address is the record's own as written: the gate's one-page-off
+    and edition calls are for a page that drifted, never for one moved on purpose (S697 pricing run 44911690112:
+    Cosumnes River's 07305, pinned to its heading's p.212, read as the same page as its filed p.213)."""
+    return bool((source or {}).get("pinned") or (source or {}).get("page_check"))
 
 
 def same_page(a: str | None, b: str | None) -> bool:

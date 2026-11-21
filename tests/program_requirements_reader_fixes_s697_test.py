@@ -62,6 +62,8 @@ def snapshot(folder):
 
 
 COLLEGE = "Reader Fixes Test College"
+PASSING = {"pass": True, "coverage": {"pass": True, "share": 1.0}, "invented": {"pass": True},
+           "arithmetic": {"status": "equal"}}
 V2 = "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf"
 V3 = V2.replace("-v2-", "-v3-")
 _saved = (C.COLLEGE_DIR, X.call, os.environ.get("SUPABASE_SERVICE_KEY"), os.environ.get("ONLY"))
@@ -181,6 +183,9 @@ try:
     cn_same, cn_off, cn_new, cn_less, cn_other = "10298", "32656", "45268", "02275", "44444"
     pages = {cn_same: 107, cn_off: 130, cn_new: 150, cn_less: 107, cn_other: 90}
     root, dest = filed_college("canyons", list(pages), url_of=lambda cn: V2 + "#page=%d" % pages[cn])
+    # 32656 passes as the live table counts it; a window one page off stands only for such a record.
+    _p = os.path.join(dest, "records", cn_off + ".json")
+    dump(_p, dict(json.load(open(_p)), score=PASSING))
     # The v3 capture: the same page, one page off, a genuinely new page (150 -> 180), a smaller share, another file.
     new_url = {cn_same: V3 + "#page=107", cn_off: V3 + "#page=129", cn_new: V3 + "#page=180",
                cn_less: V3 + "#page=107", cn_other: "https://www.canyons.edu/other/noncredit-guide.pdf#page=90"}
@@ -214,6 +219,37 @@ try:
     dump(os.path.join(root411, "records", "5.json"), {"record": {"blocks": []}, "source_url": "y#page=236"})
     check(not C.filed_from(os.path.join(root411, "records", "5.json"), dict(s411, text="t"), s411),
           "B S411's record, filed beside a fresh source one page on, with no share to prove it, still goes")
+    # A page called on purpose is new evidence (pricing run 44911690112): Cosumnes River's 07305, pinned to its
+    # heading's p.212 and filed from p.213 at the same share and codes, goes to the model; so does a page the
+    # reader's page checks assigned.
+    crc = "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf"
+    root_pin = os.path.join(_tmp, "pinned")
+    dump(os.path.join(root_pin, "records", "07305.json"),
+         {"record": {"blocks": []}, "source_url": crc + "#page=213", "score": PASSING})
+    prev_pin = {"control_number": "07305", "coverage": 1.0, "codes_found": ["BIT100"],
+                "source": {"url": crc + "#page=213", "text_from": "pdf_pages"}}
+    for flag in ({"pinned": True}, {"page_check": {"rule": "A", "page": 212, "share": 1.0}}):
+        new_pin = {"control_number": "07305", "coverage": 1.0, "codes_found": ["BIT100"], "text": "t",
+                   "source": dict({"url": crc + "#page=212", "text_from": "pdf_pages"}, **flag)}
+        check(not C.unchanged(prev_pin, new_pin)
+              and not C.filed_from(os.path.join(root_pin, "records", "07305.json"), new_pin, prev_pin),
+              "B a page one off that was called on purpose (%s) is not the filed page" % list(flag)[0])
+    drift = {"control_number": "07305", "coverage": 1.0, "codes_found": ["BIT100"], "text": "t",
+             "source": {"url": crc + "#page=212", "text_from": "pdf_pages"}}
+    check(C.unchanged(prev_pin, drift) and C.filed_from(os.path.join(root_pin, "records", "07305.json"), drift, prev_pin),
+          "B the same page one off with no call is the gate's drifted page, for a record that passes")
+    dump(os.path.join(root_pin, "records", "04586.json"),
+         {"record": {"blocks": []}, "source_url": crc + "#page=134", "score": {"pass": False}})
+    check(not C.filed_from(os.path.join(root_pin, "records", "04586.json"),
+                           dict(drift, source={"url": crc + "#page=133", "text_from": "pdf_pages"}),
+                           dict(prev_pin, source={"url": crc + "#page=134", "text_from": "pdf_pages"})),
+          "B a failing record's window one page off is read again (Cosumnes River's 04586, p.134 to p.133)")
+    dump(os.path.join(root_pin, "records", "45268.json"),
+         {"record": {"blocks": []}, "source_url": V2 + "#page=150", "score": {"pass": False}})
+    check(C.filed_from(os.path.join(root_pin, "records", "45268.json"),
+                       {"coverage": 1.0, "text": "t", "source": {"url": V3 + "#page=150"}},
+                       {"coverage": 1.0, "source": {"url": V2 + "#page=150"}}),
+          "B a new edition on the same page number stands for a failing record too")
     # The extraction applies the same test: it sends the new page and the smaller share, and keeps the rest.
     sent = []
     X.call = lambda src, key, *a, **k: (sent.append(src["control_number"]),
