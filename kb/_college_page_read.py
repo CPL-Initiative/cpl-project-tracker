@@ -451,6 +451,55 @@ CAPTURE_LINES_MAX = 20000
 PDF_PAGE_CAP_MAX = 1000
 
 
+SUBJECT_CONTEXT_BEFORE = 5     # lines kept above a subject's first course
+SUBJECT_CONTEXT_BEFORE_MAX = 12
+
+
+def subject_context(pages: list[str], heading: str, before: int = SUBJECT_CONTEXT_BEFORE,
+                    start_page: int = 1) -> list[dict]:
+    """For each subject code, the lines printed above its first course (S698, #3655).
+
+    A filed catalog keeps each course from its heading line down, so the subject heading above a subject's
+    first course ("ACCOUNTING", "Mathematics (MATH & STAT)") was never kept. `heading` is the file's own
+    course-heading pattern with a `subj` group. The first course of each code is taken in page order from
+    `start_page` (1-based); the non-empty lines above it, up to `before` and never past the course before
+    it, are returned as printed. One entry per code: {subj, page, line, before}."""
+    rx = re.compile(heading)
+    before = max(1, min(int(before or SUBJECT_CONTEXT_BEFORE), SUBJECT_CONTEXT_BEFORE_MAX))
+    seen: dict = {}
+    out: list[dict] = []
+    tail: list[str] = []          # the non-empty lines since the last course heading, across pages
+    for i, text in enumerate(pages or []):
+        if i + 1 < int(start_page or 1):
+            continue
+        for raw in (text or "").splitlines():
+            line = " ".join(raw.split())
+            if not line:
+                continue
+            m = rx.match(line)
+            if not m:
+                tail.append(line)
+                tail = tail[-SUBJECT_CONTEXT_BEFORE_MAX:]
+                continue
+            subj = " ".join((m.group("subj") or "").split())
+            if subj and subj not in seen:
+                seen[subj] = True
+                out.append({"subj": subj, "page": i + 1, "line": line, "before": tail[-before:]})
+            tail = []
+    return out
+
+
+def print_subject_context(pages: list[str], spec: dict) -> None:
+    got = subject_context(pages, spec["heading"], spec.get("before") or SUBJECT_CONTEXT_BEFORE,
+                          spec.get("start_page") or 1)
+    print("--- subject context: the lines above each subject's first course (%d subjects) ---" % len(got))
+    for g in got:
+        print("[subject %s · page %d]" % (g["subj"], g["page"]))
+        for b in g["before"]:
+            print("  | " + b[:200])
+        print("  > " + g["line"][:200])
+
+
 def plan_cap(plan: dict | None, key: str, default: int, ceiling: int) -> int:
     """The plan's own cap for key, between the default and the ceiling; the default when it names none."""
     try:
@@ -671,6 +720,11 @@ def print_page(n: int, rec: dict, pattern: re.Pattern, plan: dict | None = None)
         for f in rec["followed"]:
             print("- %s -> %s" % (f["text"], f["href"]))
     text = rec.get("text") or ""
+    if (plan or {}).get("subject_context") and (rec.get("pages") or text):
+        # A headings read (S698): nothing but the lines above each subject's first course, so a whole
+        # catalog fits the 5,000 lines the GitHub MCP returns of a job log.
+        print_subject_context(rec.get("pages") or [text], plan["subject_context"])
+        return
     if rec.get("kind") == "pdf" and rec.get("pages"):
         plan = plan or {}
         idx = pdf_pages_to_print(rec["pages"], pattern, cap=plan_cap(plan, "pdf_page_cap", PDF_PAGE_CAP, PDF_PAGE_CAP_MAX),
