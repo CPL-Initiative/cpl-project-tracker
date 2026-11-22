@@ -98,6 +98,8 @@ def read_program(root, slug):
         d = json.load(f)
     by = defaultdict(Counter)
     for r in d.get("rows") or []:
+        if r.get("section") == "credit":
+            continue        # Santa Ana's and Mt. San Antonio's credit courses, filed beside their noncredit rows (S701)
         by[str(r.get("subject") or "").strip().upper()][str(r.get("subject_name") or "").strip()] += 1
     out = []
     for code in sorted(by):

@@ -1,0 +1,335 @@
+{
+ "_readme": "S701, 2026-11-22, #3655 (collection first, r-collection-first-sam-2026-11-20): Mt. San Antonio College's credit course pages, line for line through the capture view, at the addresses the credit A to Z page links (mt_san_antonio_credit_index, run 44991606237: 137 subject pages). Part 1 of 3, 46 subjects. No model call.",
+ "college": "Mt. San Antonio College",
+ "questions": {
+  "courses": "Each credit course's code, title, units, hours, requisites and description, line for line, under its subject heading."
+ },
+ "keywords": [
+  "\\bUnits?\\b"
+ ],
+ "capture_lines": 8000,
+ "pages": [
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/aabs/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/accs/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/ad/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/adju/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/aero/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/agag/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/aghe/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/agor/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/ahis/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/airc/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/airm/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/airt/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/amla/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/anat/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/anim/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/anth/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/apis/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/arab/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/arch/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/artb/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/artc/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/artd/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/artg/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/arth/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/arts/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/artz/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/asci/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/astr/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/biol/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/btny/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/busa/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/busc/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/busl/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/busm/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/buso/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/busr/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/buss/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/chem/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/chin/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/chld/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/cisb/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/cisd/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/cism/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/cisn/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/cisp/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/ciss/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  }
+ ]
+}

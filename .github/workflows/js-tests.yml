@@ -339,6 +339,10 @@ jobs:
       # no course filed twice, the heading from the line above the course, no credit course from Santa Ana's PDF.
       - name: Noncredit catalogs filing (kb/_file_noncredit_catalogs.py)
         run: python3 tests/noncredit_catalogs_filing_test.py
+      # Santa Ana's and Mt. San Antonio's credit courses (S701, #3655): no program or requisite line read as a course,
+      # no course filed twice, the noncredit rows kept field for field, the noncredit title list blind to credit rows.
+      - name: Credit catalogs filing (kb/_file_credit_catalogs.py)
+        run: python3 tests/credit_catalogs_filing_test.py
       # The Subjects page's course panel (S700, #3655): one row per course whichever way its number is written, credit
       # and noncredit apart, no band guessed for a catalog-only course. Pure stdlib.
       - name: Subject courses (kb/_build_subject_courses.py)

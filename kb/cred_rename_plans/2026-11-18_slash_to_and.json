@@ -497,6 +497,12 @@
    "new": "Water and Wastewater Operator Certification",
    "kind": "rename",
    "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Beginning/Intermediate Jazz Dance",
+   "new": "Beginning and Intermediate Jazz Dance",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
   }
  ],
  "held": [
@@ -697,6 +703,13 @@
    "kind": "code",
    "kept": [
     "rations (FRA/FRO) Instruc (code)"
+   ]
+  },
+  {
+   "title": "Cisco CCNA3/3 Enterprise Networking, Security, and Automation v7.0 (ENSA)",
+   "kind": "code",
+   "kept": [
+    "Cisco CCNA3/3 Enterprise (code)"
    ]
   },
   {
@@ -977,6 +990,13 @@
    "kind": "code",
    "kept": [
     "ation (CCAPP/CADTP) (code)"
+   ]
+  },
+  {
+   "title": "Success in Advanced Medical/Surgical Nursing",
+   "kind": "official",
+   "kept": [
+    "nced Medical/Surgical Nur (official)"
    ]
   },
   {
