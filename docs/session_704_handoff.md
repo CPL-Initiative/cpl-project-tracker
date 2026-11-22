@@ -85,3 +85,16 @@ lane 1 signs off at those colleges. Each move is written here before it starts.
 - 11:28Z: `piles` lever 2 (`ge_units_not_read`, 152 records at 35 colleges, self-recall 1,685 right and 0 wrong) is
   PR #3678; a second reader reads it from `/home/user/rd3678` before the guarded UPDATE runs. `piles` moved on to lever
   3 (the noncredit hours total) on `claude/s703-piles-nc-hours`.
+- 11:33Z: Glendale 38973's state list is a re-prefix (OBT printed as STV): **DECIDED**
+  `d-glendale-obt-stv-prefix-alias-s703`, a per-college alias in Glendale's reconcile entry (#3675).
+- 11:38Z: the second reader on #3678 found 21 of the 152 print a general education figure (the free `ge_units_steps`
+  lever passes them) and that the self-recall reads the fields the rule reads. **DECIDED**
+  `d-ge-gap-only-where-no-figure-s703`: hold the 21 by key; the gap applies only where the notes say no units are
+  printed, or are silent and the page text shows no figure; a precision count is committed. The reader moved to
+  #3679 (lever 3, 70 records) from `/home/user/rd3679`. The run holds six open PRs against the cap of three, so
+  `piles` builds the wording rules on a local branch and opens no PR until the count drops.
+- 11:44Z: City College of San Francisco's gate cannot be refreshed by code (the trial saved no pages): **DECIDED**
+  `d-ccsf-gate-refresh-by-free-trial-s703`, a free 12-page trial on `main`'s parser and a recount by `outlines`, no
+  staff name filed. San Diego College of Continuing Education: index 45016944119 (199 of 228 codes have an outline),
+  trial 45017581874 at 12 of 12 after two load-side fixes, full read 45018663453 (free, 199 pages); the load waits
+  on a second reader of the `_course_outcomes_load.py` change.
