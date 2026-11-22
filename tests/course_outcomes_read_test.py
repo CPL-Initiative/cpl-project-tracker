@@ -418,6 +418,211 @@ def _():
     assert got["outcomes"] == [] and got["shape"] == "none", got
 
 
+PERALTA_RECALL = os.path.join(ROOT, "kb", "course_outcomes", "peralta_recall.json")
+PERALTA_SHAPE = os.path.join(ROOT, "kb", "course_outline_index", "shape_45025388165.json")
+PERALTA_INDEX = os.path.join(ROOT, "kb", "course_outline_index", "index_45025388165.json")
+PERALTA_SLUGS = ["laney", "merritt", "college_of_alameda", "berkeley_city"]
+LAN = "https://lan.curriqunet.com/DynamicReports/AllFieldsReportByEntity/%d?entityType=Course&reportId=416"
+_lspec = importlib.util.spec_from_file_location("load", os.path.join(ROOT, "kb", "_course_outcomes_load.py"))
+load = importlib.util.module_from_spec(_lspec)
+_lspec.loader.exec_module(load)
+STAFF = "Pat Q. Example"
+
+
+def _sec(name: str, body: str) -> str:
+    return ('<div class="rendered-section row section-body meta-renderable meta-section"><div class="col-md-12">'
+            '<div class="h4 section-name"><span class="bold">%s</span></div></div><div class="col-md-12"><div '
+            'class="row"><div class="meta-field"><div class="field-value"><div class="querytext-result-row '
+            'display-block">%s</div></div></div></div></div></div>' % (name, body))
+
+
+def peralta_page(college: str, slos: list, objectives: str, logo_attrs: str | None = None) -> str:
+    """An Outcome Outline page in report 416's shape (shape trial 45026998155): the college logo, an Originator
+    field, the Exit Skills objectives, each SLO in bold with its methods after a break, and the CB data elements."""
+    logo = logo_attrs if logo_attrs is not None else 'class="college-logo" src="/x.png" title="%s"' % college
+    slo = "".join("<li><b>%s</b><br>%s</li>" % (o, m) for o, m in slos)
+    return ('<html><body><div class="college-logo-wrapper"><img %s></div><h1 class="report-title h1">Outcome '
+            'Outline</h1>%s%s%s%s</body></html>' % (
+                logo, _sec("Originator:", STAFF), _sec("Student Performance Objectives (Exit Skills):", objectives),
+                _sec("STUDENT LEARNING OUTCOMES:", '<ol style="list-stype-type: decimal;">%s</ol>' % slo),
+                _sec("", "<table><tr><th>CB 004:</th><td>D - Credit - Degree Applicable</td></tr></table>")))
+
+
+def _ol(items: list) -> str:
+    return '<ol style="list-style-type: decimal;">%s</ol>' % "".join("<li>%s</li>" % i for i in items)
+
+
+# Shape trial 45026998155's five pages in their counted shape: (course id, college slug, printed college, SLOs,
+# objectives), the counts in peralta_recall.json.
+PERALTA_PAGES = [(22154, "merritt", "Merritt College", 3, 4), (22262, "berkeley_city", "Berkeley City College", 3, 4),
+                 (22279, "college_of_alameda", "College of Alameda", 3, 6), (22604, "laney", "Laney College", 3, 8),
+                 (19484, "berkeley_city", "Berkeley City College", 2, 3)]
+
+
+def _peralta_rows() -> list[dict]:
+    """The five pages read as read_courses files them: read_one's base parse, then apply_sections."""
+    rows = []
+    for cid, slug, college, n_slo, n_obj in PERALTA_PAGES:
+        code = "ART 024" if cid == 19484 else "ART 001"
+        page = peralta_page(college, [("Outcome %d of %s." % (i, college), "exam, essay") for i in range(n_slo)],
+                            _ol(["Objective %d of %s." % (i, college) for i in range(n_obj)]))
+        r = {"code": code, "title": "Art", "course_id": cid, "report": LAN % cid, "named_by": [slug],
+             "row_college": slug, "status": 200}
+        r.update(reader.parse_page(page, "", reader.page_system(r["report"]), r["report"]))
+        rows.append(reader.apply_sections(reader.file_row(r), page))
+    return rows
+
+
+@check("Peralta: a shared code is read once per college, each from the row its proposal type names; the 21 codes a "
+       "college's records name that the index holds only under another college are named, never read (S703)")
+def _():
+    got = reader.wanted_courses(json.load(open(PERALTA_SHAPE)), PERALTA_SLUGS)
+    assert sorted((c["code"], c["row_college"]) for c in got) == [
+        ("ART 001", "berkeley_city"), ("ART 001", "college_of_alameda"), ("ART 001", "laney"), ("ART 001", "merritt"),
+        ("ART 024", "berkeley_city")], got
+    assert all(c["named_by"] == [c["row_college"]] for c in got)
+    assert len({reader.page_stem(c) for c in got}) == 5
+    other = {"url": "https://example.curriqunet.com/", "index": json.load(open(PERALTA_SHAPE))["index"]}
+    once = reader.wanted_courses(other, PERALTA_SLUGS)
+    assert [c["code"] for c in once] == ["ART 001", "ART 024"] and not any("row_college" in c for c in once), once
+    assert reader.shared_code_unread(other, PERALTA_SLUGS) == []
+    full = json.load(open(PERALTA_INDEX))
+    unread = reader.shared_code_unread(full, PERALTA_SLUGS)
+    read_pairs = {(c["row_college"], c["code"]) for c in reader.wanted_courses(full, PERALTA_SLUGS)}
+    assert len(unread) == 21 and not {(u["college"], u["code"]) for u in unread} & read_pairs, len(unread)
+    assert {u["college"] for u in unread} == set(PERALTA_SLUGS)
+
+
+@check("Peralta's Outcome Outline parses by its sections, as counted off shape trial 45026998155's pages (5 of 5): "
+       "the bold outcome without its assessment methods, no CB data element, the Exit Skills objectives, and the "
+       "college the page prints; the row files no page text and no Originator")
+def _():
+    want = json.load(open(PERALTA_RECALL))
+    assert want["trial"] == "45026998155" and len(want["pages"]) == 5
+    rows = {reader.recall_key(r): r for r in _peralta_rows()}
+    assert set(rows) == set(want["pages"]), sorted(rows)
+    for key, eye in want["pages"].items():
+        r = rows[key]
+        assert eye.get("from") and eye.get("at") and r["course_id"] == eye["course_id"], key
+        assert (len(r["outcomes"]), len(r["objectives"])) == (eye["slo"], eye["objective"]), (key, r)
+        assert not any(o.startswith("CB 0") or "exam" in o for o in r["outcomes"]), r["outcomes"]
+        assert r["fingerprint"] == reader.fingerprint(r["outcomes"]) and \
+            r["objectives_fingerprint"] == reader.fingerprint(r["objectives"]), key
+        assert STAFF not in json.dumps(r) and set(r) <= set(reader.OUTCOMES_ONLY_KEYS), sorted(r)
+    assert reader.section_host(LAN % 1) and reader.outcomes_only(LAN % 1) and \
+        not reader.section_host("https://saddleback.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1")
+
+
+@check("Peralta's objectives keep their whole item: a bold word inside one, a line break inside one, and paragraph "
+       "items with no list each file as printed; an SLO keeps its bold outcome and drops the methods after its break "
+       "(second reader on 206e481a)")
+def _():
+    def objectives(body):
+        return reader.sections_from_html(peralta_page("Laney College", [("Explain X.", "exam")], body))["objective"]
+    assert objectives(_ol(["Analyze <strong>primary</strong> sources"]))["items"] == ["Analyze primary sources"]
+    assert objectives(_ol(["Compare A<br>and B"]))["items"] == ["Compare A and B"]
+    assert objectives("<p>Describe X.</p><p>Explain Y.</p><p>  </p><p>Apply Z.</p>")["items"] == [
+        "Describe X.", "Explain Y.", "Apply Z."]
+    slo = reader.sections_from_html(peralta_page("Laney College", [("Explain <i>X</i>.", "exam, essay")], ""))["slo"]
+    assert slo["items"] == ["Explain X."], slo
+    plain = reader.sections_from_html(
+        peralta_page("Laney College", [], "").replace("<ol style=\"list-stype-type: decimal;\"></ol>",
+                                                      _ol(["Explain X.<br>exam, essay"])))["slo"]
+    assert plain["items"] == ["Explain X."], plain
+
+
+@check("printed_college reads the college-logo image's title among other classes and in either quote; a page with "
+       "no college logo prints none")
+def _():
+    assert reader.printed_college('<img src="/a.png" class="college-logo" title="Laney College">') == "Laney College"
+    assert reader.printed_college("<img class='wide college-logo' title='College of Alameda'>") == "College of Alameda"
+    assert reader.printed_college('<img class="college-logo-wrapper" title="Not It"><img class="logo" title="X">') \
+        is None
+    assert reader.printed_college("<img class=\"college-logo\" title=\"Merritt &amp; College\">") == \
+        "Merritt & College"
+
+
+@check("Peralta's excerpt log covers the SLO and Exit Skills sections and names no person: the Originator line sits "
+       "outside both")
+def _():
+    host = "lan.curriqunet.com"
+    text = ("Outcome Outline\nOriginator:\t" + STAFF + "\nStudent Performance Objectives (Exit Skills):\nDescribe X.\n"
+            "Explain Y.\nCourse Content:\nLecture.\nSTUDENT LEARNING OUTCOMES:\nExplain X.\nexam, essay\n"
+            "CB 004:\tD - Credit - Degree Applicable\n")
+    assert reader.excerpt_key(LAN % 1) == host
+    assert reader.slo_excerpt(text, host) == ["Explain X.", "exam, essay"]
+    assert reader.objectives_excerpt(text, host) == ["Describe X.", "Explain Y."]
+    assert STAFF not in reader.excerpt_log("ART 001", reader.slo_excerpt(text, host), host)
+
+
+@check("the Peralta section parse moves lan.curriqunet.com's parser fingerprint alone: every other host keeps "
+       "2629a09a, read_courses (which applies it) is among lan's parts, and no section part is in the base parse "
+       "(d-lan-parse-parts-in-lan-fingerprint-only-s703)")
+def _():
+    base = "2629a09aeac9be1183829d0cea92009f"
+    for host in (None, "saddleback.curriqunet.com", "https://riohondo.curriqunet.com/", "ccsf.curricunet.com",
+                 "sdccd.curriqunet.com", "https://rccd.curriqunet.com/Report/Course/GetReport/1?reportId=97"):
+        assert reader.parser_fingerprint(host) == base, (host, reader.parser_fingerprint(host))
+    lan = reader.parser_fingerprint(LAN % 1)
+    assert lan != base and lan == reader.parser_fingerprint("lan.curriqunet.com"), lan
+    assert "read_courses" in reader.SECTION_PARTS and not set(reader.SECTION_PARTS) & set(reader.PARSER_PARTS)
+    other = {"report": "https://saddleback.curriqunet.com/x", "status": 200, "outcomes": ["Kept."]}
+    assert reader.apply_sections(other, "<div class=\"rendered-section\"></div>") is other
+
+
+@check("rows_recall counts a shared-code host's rows by code and printed college, so one code's four pages are four "
+       "counted rows, never one")
+def _():
+    import tempfile
+    rows = _peralta_rows()
+    want = json.load(open(PERALTA_RECALL))
+    with tempfile.TemporaryDirectory() as tmp:
+        os.makedirs(os.path.join(tmp, "trial_7"))
+        json.dump({"parser_fingerprint": reader.parser_fingerprint(LAN % 1), "slugs": want["slugs"], "rows": rows},
+                  open(os.path.join(tmp, "trial_7", "read.json"), "w"))
+        path = os.path.join(tmp, "count.json")
+        json.dump(dict(want, trial="7", parser_fingerprint=reader.parser_fingerprint(LAN % 1)), open(path, "w"))
+        got = reader.rows_recall(path, tmp, host="lan.curriqunet.com")
+    assert got["pages"] == 5 and got["right"] == 5 and not got["wrong"], got
+
+
+@check("Peralta: a shared code's rows go to the college its page prints, never the code's other colleges; a page "
+       "that prints another college whose records name the code goes to that college; one that prints none, or a "
+       "college whose records do not name the code, loads nothing (S703)")
+def _():
+    import tempfile
+    rows = _peralta_rows()
+    with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
+        json.dump({"run": "45026998155", "system": "curriqunet", "rows": rows}, f)
+    got, skipped = load.rows_from([f.name], "lan")
+    by = {}
+    for r in got:
+        by.setdefault((r["course_code"], r["kind"]), []).append(r["college"])
+    for kind in ("slo", "objective"):
+        assert sorted(by[("ART 001", kind)]) == ["Berkeley City College", "College of Alameda", "Laney College",
+                                                  "Merritt College"], by
+        assert by[("ART 024", kind)] == ["Berkeley City College"], by
+    laney = next(r for r in got if r["college"] == "Laney College" and r["course_code"] == "ART 001"
+                 and r["kind"] == "objective")
+    assert len(laney["outcomes"]) == 8 and laney["source_url"] == LAN % 22604
+    assert not skipped, skipped
+    swap = [dict(r) for r in rows]
+    m = next(r for r in swap if r["course_id"] == 22154)
+    m.update(college_printed="Laney College", named_by=["laney", "merritt"])
+    next(r for r in swap if r["course_id"] == 19484).update(college_printed="Merritt College")
+    next(r for r in swap if r["course_id"] == 22279).update(college_printed=None)
+    with open(f.name, "w") as g:
+        json.dump({"run": "45026998155", "system": "curriqunet", "rows": swap}, g)
+    got, skipped = load.rows_from([f.name], "lan")
+    cols = sorted({(r["course_code"], r["college"], r["source_url"].split("/")[-1].split("?")[0]) for r in got})
+    assert cols == [("ART 001", "Berkeley City College", "22262"), ("ART 001", "Laney College", "22154"),
+                    ("ART 001", "Laney College", "22604")], cols
+    why = {s["course_id"]: s["why"] for s in skipped}
+    assert why == {19484: "the page prints Merritt College, whose records do not name the code",
+                   22279: "the page prints no college"}, why
+    os.unlink(f.name)
+
+
 def main():
     failed = 0
     for i, (name, fn) in enumerate(checks, 1):
