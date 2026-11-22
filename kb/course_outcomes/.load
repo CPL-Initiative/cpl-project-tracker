@@ -1,2 +1,4 @@
-host=saddleback
-slugs=irvine_valley
+host=sdccd
+slugs=san_diego_of_continuing_education
+kind=objective
+run=2026-11-22T12:14Z S703 San Diego College of Continuing Education objectives load (read 45018663453; d-sdcce-load-objectives-only-s703)
