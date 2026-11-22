@@ -19,7 +19,7 @@ One per session, newest first. **Only the highest-numbered handoff is authoritat
 
 | N | Handoff | Created |
 |---|---|---|
-| 704 | [Session 704 handoff (from SkyDovekie, S703, the CPL Queue routine's 10:12Z firing of 2026-11-22) — DRAFT, the declaration](../session_704_handoff.md) | 2026-11-22 |
+| 704 | [Session 704 handoff (from SkyDovekie, S703, the CPL Queue routine's collection run of 2026-11-22)](../session_704_handoff.md) | 2026-11-22 |
 | 703 | [Session 703 handoff (from SkyRazorbill, S702, Sam's plain session of 2026-11-22: Subjects Edit, panel and counts from every surface, full width; the queue kept running beside it)](../session_703_handoff.md) | 2026-11-22 |
 | 702 | [Session 702 handoff (from SkyMurre, S701, Sam's plain session of 2026-11-22: Subjects Edit and Save, the noncredit hold lifted, two credit catalogs, the build honors saves)](../session_702_handoff.md) | 2026-11-22 |
 | 701 | [Session 701 handoff (from SkyGuillemot, S700, Sam's plain session of 2026-11-21 to 22: Subjects recommendations, the course panel, the noncredit catalogs and the draft noncredit title list)](../session_701_handoff.md) | 2026-11-22 |

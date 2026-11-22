@@ -1,7 +1,7 @@
 ---
 title: A test must not take its own rule as the truth
 created: 2026-11-14
-updated: 2026-11-20
+updated: 2026-11-22
 tags: [methodology, testing, matching, program-requirements, honors]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -60,6 +60,24 @@ read. And make the gate refuse what it cannot judge (an empty trial, a refused p
 passing it. Two points stayed open for the follow-up: the gate does not check the host, and the fingerprint does not
 cover `_ws`, `READER_HTML_CAP` or `SLO_HEADING`. Pitfall row `p-recall-gate-counts-parser-output-s690`; the run:
 [`program_requirements_harvest_lessons`](../program_requirements_harvest_lessons.md), *S690*.
+
+## A named gap's self-recall (S703, #3678, #3679, #3685)
+
+A named gap files a record as collected with one reason, so its test asks whether the reason is true of the record.
+The first self-recalls answered a narrower question. #3678 took 1,685 passing degrees, removed their general
+education units, and checked that the rule named `ge_units_not_read` on each: 1,685 right, 0 wrong. #3679 moved or
+removed the hours total of 1,099 passing records and read 3,297 right, 0 wrong. Each held answer came from the same
+fields the rule reads, so the count could not fall. The second reader then read the records themselves and found the
+gap mislabeled 21 on #3678 (their pages print a general education figure) and 18 on #3679 (a wording the reconcile
+step passes free, or text read without the program's section).
+
+Three additions make the test able to fail. A claim check reads each record's own notes and classes it (says none
+printed, prints a figure, silent), and the gap applies only to the classes where its reason holds. Boundary readings
+put the sum at each end of a printed range and hold the rule to the scorer's own verdict there. A precision count runs
+the claim check against the records a person held by hand and reports how many it flags; #3685's flags 28 of 29. The
+held records stay out of the apply by key, and the count is committed beside the test. Pitfall row
+`p-self-recall-reads-rule-fields-s703`; the run:
+[`program_requirements_harvest_lessons`](../program_requirements_harvest_lessons.md), *S703*.
 
 Related: [A new matcher is gated by a self-recall test](methodology-a-new-matcher-is-gated-by-a-self-recall-test.md).
 Pitfall row `p-snapshot-test-pins-the-rule-s653`.

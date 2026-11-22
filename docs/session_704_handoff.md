@@ -1,5 +1,5 @@
 ---
-title: "Session 704 handoff (from SkyDovekie, S703, the CPL Queue routine's 10:12Z firing of 2026-11-22) — DRAFT, the declaration"
+title: "Session 704 handoff (from SkyDovekie, S703, the CPL Queue routine's collection run of 2026-11-22)"
 created: 2026-11-22
 updated: 2026-11-22
 tags: [handoff, session]
@@ -7,128 +7,207 @@ kb-status: internal
 obsidian-folder: cpl-project-tracker/handoffs
 ---
 
-**Routing.** This handoff is the CPL Queue routine's. A plain session Sam opens follows `docs/session_702_handoff.md`
-(SkyMurre's, S701) or the newer plain handoff that session writes. **Numbered 704, not 703:** Sam's next plain session
-(SkyRazorbill, S702, named by handoff 702) writes `docs/session_703_handoff.md`, so this run takes S703 and the moniker
-SkyDovekie, and its handoff takes 704.
+**Routing, both ways.** A CPL Queue routine firing follows this file. A plain session Sam opens follows
+`docs/session_703_handoff.md` (SkyRazorbill's, S702), which names that session SkyTystie, Session 705; never this file.
+**Numbering.** Sam's plain session S702 wrote 703, so this run took S703 and handoff 704. The routine's next session is
+**Session 704, SkyKittiwake**, and writes 705; the plain S705 writes 706.
 
-**DRAFT.** This file is the run's declaration and its college split, written before any worker started. The
-checkpoint rewrites it.
+# You are SkyKittiwake (Session 704)
+
+From SkyDovekie (S703), the CPL Queue routine's collection run of 2026-11-22, a conductor run for collection only under
+Sam's routine prompt of 2026-11-17 and the COBIx brief on #3358. A **full checkpoint** (lanes moved; Rule 10 data writes
+ran: four guarded UPDATEs, rereads, loads), written by the checkpoint-docs worker from 14:48Z while #3686, #3675, #3683,
+#3684 and the display build were in flight. The conductor applies the memory rows, runs step 12's headline and harvest
+SQL and `--stamp`, and fills the Spend and final lines. Skipped: steps 2 (no KB structure change), 3 (no user-facing
+surface changed), 7 (no M-ID pipeline move) and 9 (the UI pass is its own queue item).
+
+## Open with the standing block (COBIx on #3358, 21:20Z 2026-11-18, corrected 21:36Z; Sam's rule for the next two or three sessions)
+
+0. **COBIx's brief is on issue #3358**: read it, and comment 7064588752 (Sam's two rulings of 2026-11-21), before the
+   split.
+1. **Restart the COBIx watcher:** `bash scripts/cobix_watch.sh [state dir]` in the background, and read its output
+   yourself every few turns; it stops at the two-hour background limit, so restart it. Act on each new
+   `<!-- cobix -->` comment; read a PR's whole thread before you merge it or apply what it carries.
+1a. **Clone light (Sam, 2026-11-19):** `git clone --filter=blob:none` (or `--depth=1` when history is not needed),
+   never a full clone, for every session and worker.
+2. **Merge rules:** at most 3 open PRs (plus #3511 and dependabot's), the oldest finished first, one update from `main`
+   right before its merge, no dependency-map rebuild inside a PR, no full rerun when the input fingerprints match. Stop
+   a review after two rounds. Records PRs merge one at a time (`p-records-prs-merge-one-at-a-time-s703`).
+2a. **Sam's work order (2026-11-20):** collection comes first, data waves before fixes, and a fix goes ahead of the next
+   wave only when it blocks it or would file wrong rows (`r-collection-first-sam-2026-11-20`). Collection serves the
+   M-IDs, so its fixes are ranked by the M-ID cards they unblock (`r-collect-for-mids-work-order-sam-2026-11-20`).
+3. **Merge order:** #3686 (`levers`), #3675 (`glendale`, with Butte), #3683 (the follow-up), #3684 (Peralta, after its
+   load), then this checkpoint #3674 (`claude/awesome-fermat-lwf2xm`, carrying `claude/s703-sdcce-load`'s receipt) at
+   sign-off. Dependabot's #3383 waits. Each records PR merges `main` once right before its merge, takes `main`'s side
+   of a conflicted Commons file and reruns both builders.
 
 ## The start
 
-The 10:12Z firing found S701 (Sam's plain session) live: it pushed #3671 at 10:12:50Z, with no declared side-session
-scope, so the firing stood down. S701 signed off at 11:00Z (checkpoint #3672, `main` 660218c6). At about 11:03Z Sam
-said, live: *"/coord and keep going. I will be starting another session but don't let that stop the queue."* This run
-proceeds as the routine's conductor, beside the plain session he starts.
-
-No `list_sessions`, `get_trigger`, `get_session` or `set_session_tags` in this session; no peer in `ListAgents`.
-Open PRs at 11:04Z: dependabot's #3383 only. `daily-dashboard.yml` ran on 2026-11-22 (`e547f007`, 06:22Z); the Pages
-deploys after #3669 and #3670 succeeded, so the brief's failed deploy (run 44973859667) is superseded. No pause line.
-Three repos attached. No `queue_todo_done` row since 2026-11-21. Hooks: `LIVE (root)`, merge-read and clock guards
-yes. Disk: 58 GB free.
-
-## Scope (for /coord: the plain session reads this)
-
-Collection only, under handoff 699's NEXT and the COBIx brief of 2026-11-21 on #3358. Files: the program-requirements
-harvest's readers and records (`kb/_program_requirements_*.py`, `kb/college_reads/`, `kb/program_requirements/`,
-`kb/receipts/`), the outline readers and their gates, `kb/status/program-requirements.json`, the harvest lane and
-lessons, and the Commons data files a records change rebuilds (`kb/_build_commons_status.py`,
-`kb/_build_commons_data_status.py` outputs). Shared ground: `program_requirement_records` and the outline tables
-through their workflows; no cron change, no public page, no public KB. **One writer per file:** the plain session keeps
-the Subjects and Commons page files (`commons_subjects.js`, `kb/*subject*`, `lanes/commons.md`); this run keeps the
-harvest files. On a conflicted Commons data file, take `main`'s side and rerun both builders
-(`p-commons-files-conflict-between-prs-s697`).
+The 10:12Z firing found S701 (Sam's plain session) live with no declared side-session scope, so it stood down. S701
+signed off at 11:00Z. At about 11:03Z Sam said, live: *"/coord and keep going. I will be starting another session but
+don't let that stop the queue."* This run declared on draft #3674 at 11:08Z and ran beside his plain session S702
+(#3673): S702 kept `commons_subjects.js`, `kb/*subject*` and `lanes/commons.md`; this run kept the harvest files.
 
 ## The college split (written before any worker started, 11:08Z)
 
-Two lanes, never on one college at the same time, one writer per college; a college moves between lanes only when its
-lane has nothing in flight there (`d-lane-names-only-colleges-in-flight-s681`). Ordered by Sam's work order
-(`r-collect-for-mids-work-order-sam-2026-11-20`): outline fills first, program records second.
-
-**Lane 1, collection (Opus 5.5 workers, high effort).**
-
-- **Worker `outlines`:** City College of San Francisco's outline recall gate refreshed on `main` (8c95dee8 against the
-  trial's d5cef493, `f-ccsf-outline-gate-stale-on-main-s691`), then San Diego College of Continuing Education's
-  outline index search (191 cards), a 12-page trial with its recall file, and the full read. The conductor dispatches
-  the paid read and the load. Colleges: City College of San Francisco (the gate only), San Diego College of Continuing
-  Education.
-- **Worker `pins`:** Clovis Business 33432, 33433, 33487, 33491 and Social Science 33492 (a page-break pin and a
-  reread), and Cosumnes River 20147, 20193 and 20227 (their own page) and 33053 (a pin). Free pricing with `only`
-  first; the conductor runs each paid read under $40 per college. Colleges: Clovis, Cosumnes River.
-- **Worker `glendale`:** Glendale's 11 with no record file (40846, 40847, 21302, 38973, 24377, 24327, 37070, 36599,
-  36601, 11155, 21303), then Butte's read now that its address compare landed (#3641). Free pricing first; paid reads
-  under $40 per college. Colleges: Glendale, Butte.
-
-**Lane 2, the cheap piles (one Opus 5.5 worker, high effort, free rule work).**
-
-- **Worker `piles`:** lever 2, the general education pattern's units rule (192 statewide), and lever 3, the noncredit
-  hours total (100), applied at every college except the lane 1 colleges above while they are in flight; the
-  catalog-wording rules at Santa Monica (30) and Santa Rosa Junior (27). Each new matcher runs its self-recall test
-  first. Colleges: every college the two rules touch, less City College of San Francisco, San Diego College of
-  Continuing Education, Clovis, Cosumnes River, Glendale and Butte.
-
-**The conductor's own:** the merges, the paid-run checks against the caps, the display build once after the posts,
-`harvest-gap-census.yml` against 4,839, the Spend line and the checkpoint.
-
-**Held to a later slot in this run:** the free page-finding levers (Ohlone 36, San Joaquin Delta 30, Mt. San Antonio
-28, Santa Barbara City 28, Orange Coast 27, then City College of San Francisco 53) go to a fresh lane 1 worker when a
-checkout frees; Glendale's 28, Clovis's 14 and City College of San Francisco's 28 wording rules go to lane 2 after
-lane 1 signs off at those colleges. Each move is written here before it starts.
+Two lanes, never on one college at the same time, one writer per college (`d-lane-names-only-colleges-in-flight-s681`);
+outline fills first, program records second (`r-collect-for-mids-work-order-sam-2026-11-20`). **Lane 1:** `outlines`
+(City College of San Francisco's gate, then San Diego College of Continuing Education), `pins` (Clovis, Cosumnes
+River), `glendale` (Glendale, Butte). **Lane 2:** `piles` (the general education units rule, the noncredit hours total,
+the catalog-wording rules) at every college but lane 1's. **Held to a later slot:** the free page-finding levers.
 
 ## Split changes during the run
 
-- 11:25Z: `glendale` found all 11 Glendale programs `not_found` with no text, so `only=` refuses them before any model
-  call. Six have an own page whose coverage is low; five have none. **DECIDED** `d-glendale-own-pages-filed-as-gaps-s703`:
-  no change to the shared `_ranked`/`candidates` tonight (the coverage bar would still stop the six); the 11 are
-  filed as named gaps in #3675, and the data-names-the-program lever goes to the night's one follow-up.
-- 11:28Z: `piles` lever 2 (`ge_units_not_read`, 152 records at 35 colleges, self-recall 1,685 right and 0 wrong) is
-  PR #3678; a second reader reads it from `/home/user/rd3678` before the guarded UPDATE runs. `piles` moved on to lever
-  3 (the noncredit hours total) on `claude/s703-piles-nc-hours`.
-- 11:33Z: Glendale 38973's state list is a re-prefix (OBT printed as STV): **DECIDED**
-  `d-glendale-obt-stv-prefix-alias-s703`, a per-college alias in Glendale's reconcile entry (#3675).
-- 11:38Z: the second reader on #3678 found 21 of the 152 print a general education figure (the free `ge_units_steps`
-  lever passes them) and that the self-recall reads the fields the rule reads. **DECIDED**
-  `d-ge-gap-only-where-no-figure-s703`: hold the 21 by key; the gap applies only where the notes say no units are
-  printed, or are silent and the page text shows no figure; a precision count is committed. The reader moved to
-  #3679 (lever 3, 70 records) from `/home/user/rd3679`. The run holds six open PRs against the cap of three, so
-  `piles` builds the wording rules on a local branch and opens no PR until the count drops.
-- 11:44Z: City College of San Francisco's gate cannot be refreshed by code (the trial saved no pages): **DECIDED**
-  `d-ccsf-gate-refresh-by-free-trial-s703`, a free 12-page trial on `main`'s parser and a recount by `outlines`, no
-  staff name filed. San Diego College of Continuing Education: index 45016944119 (199 of 228 codes have an outline),
-  trial 45017581874 at 12 of 12 after two load-side fixes, full read 45018663453 (free, 199 pages); the load waits
-  on a second reader of the `_course_outcomes_load.py` change.
-- 11:48Z: #3676 merged (`d8b5e4ee`, the recall-refusal test), files disjoint from #3673's (`d-merge-on-clean-when-files-disjoint-s691`).
-- 11:46Z: paid reads dispatched on `claude/s703-pins`: Cosumnes River 45018951701 ($0.36 actual) and Clovis 45018954283
-  ($0.23 actual). **DECIDED** `d-clovis-through-pin-to-followup-s703`: Clovis 33432 and 33492 wait on a `through`
-  pin field in the night's follow-up (a shared reader change); `d-clovis-management-is-the-standalone-degree-s703`.
-- 11:55Z: round two of the second read passed #3678 (131 rows) and #3679 (50 rows after holding 19). The second
-  reader held #3677's load: its fix dropped HMID 535's 11 real objectives. **DECIDED**
-  `d-legacy-objectives-kept-when-only-copy-s703`; fixed on #3677, only the two target rows change across 144 reads.
-- 12:02Z: #3678 applied by supabase-migrate 45019924640 (returned 131, none skipped); live: 131 rows at 29 colleges
-  hold `ge_units_not_read`.
-- 12:13Z: **DECIDED** `d-sdcce-load-objectives-only-s703`: San Diego College of Continuing Education loads objectives
-  only (198 rows, 1,860 objectives); its 6 SLO rows read field labels and go to the follow-up. Load 45021318423 on
-  `claude/s703-sdcce-load` finished 12:17Z. Cosumnes River reread 45021161151 done; Clovis reread 45022017976 running.
-  Butte's capture (45016561973) runs about 91 minutes, as its last did.
-- 12:31Z: Cosumnes River load 45022641854 done: 3 new, 4 replaced at the two colleges, 5 of 7 passing.
-- 12:38Z: #3678 merged (`5dbc743d`). 12:44Z: #3679 applied by supabase-migrate 45023631381; live: 32, 11 and 7, 50 rows
-  at 11 colleges. **DECIDED** `d-clovis-two-gaps-existing-rules-s703`: Clovis 33433 and 33491 take the existing
-  `total_not_printed` and `total_differs` gaps without a new second read.
-- 12:50Z: the free page-finding levers moved to a fresh lane 1 worker, `levers`: Ohlone, San Joaquin Delta, Mt. San
-  Antonio, Santa Barbara City and Orange Coast (lane 2 has nothing in flight at Orange Coast; #3678's 11 there stay).
-  City College of San Francisco's 53 stay for a later run. `piles` signs off after #3679's closing commit; the
-  wording rule (`claude/s703-piles-wording`, 49 rows) goes to a fresh lane 2 worker once #3679 merges.
-- 12:50Z: Clovis 33433 and 33491 applied by supabase-migrate 45024254789 (2 of 2; live `total_not_printed` 40 and
-  `total_differs` 50). 12:52Z: San Diego College of Continuing Education's load confirmed live, 198 rows, 1,860
-  objectives, 198 courses.
-- 13:00Z: Butte 39882 (page moved) read at $0.05 on `claude/s703-butte` (Glendale 38973's pricing holds the other
-  branch's concurrency group), reread, load 45026794241. Peralta (worker `peralta`, the four Peralta colleges) started
-  12:55Z: index 45025388165 (2,201 codes; 376 shared by two to four colleges), shape trial 45026998155; its reader change
-  for shared codes waits on #3677 and a second reader. The night's one follow-up went to worker `followup`
-  (`claude/s703-followup`: S697's four, the `through` pin field, the named-gaps tag).
-- 13:15Z: **DECIDED** `d-levers-paid-under-5-delegated-s703`: `levers` dispatches paid reads to $5 a college per run
-  after free pricing. Ohlone: 2 of 36 found and loaded (45026280729, 2 inserted, $0.14); 34 filed as named gaps.
-  San Joaquin Delta: six apprenticeship pages bound by per-college prefix aliases; 24 filed as gaps; pricing running.
-- 13:18Z: #3679 merged (`94406494`). `piles2` took the wording rule with both of tonight's second-read fixes
-  (a claim check, boundary readings and a precision measure). #3677 merged `main` (54b754e9); #3681 waits behind it.
+- 11:25Z: Glendale's 11 have no text, so `only=` refuses them; filed as named gaps (`d-glendale-own-pages-filed-as-gaps-s703`).
+  11:33Z: 38973's OBT prints as STV (`d-glendale-obt-stv-prefix-alias-s703`).
+- 11:38Z: #3678's second reader held 21 (`d-ge-gap-only-where-no-figure-s703`). Six open PRs against three: `piles`
+  built on a local branch until the count dropped.
+- 11:44Z: City College of San Francisco's gate refreshed by a free trial (`d-ccsf-gate-refresh-by-free-trial-s703`).
+- 11:46Z: Clovis 33432 and 33492 to the follow-up's `through` pin field (`d-clovis-through-pin-to-followup-s703`).
+- 11:55Z: #3677's second reader held the load for HMID 535 (`d-legacy-objectives-kept-when-only-copy-s703`); #3679's
+  held 19 (`d-hours-gaps-hold-misreads-s703`). 12:13Z: SDCCE loads objectives only (`d-sdcce-load-objectives-only-s703`).
+- 12:50Z: the page-finding levers went to a fresh lane 1 worker, `levers` (Ohlone, San Joaquin Delta, Mt. San Antonio,
+  Santa Barbara City, Orange Coast); City College of San Francisco's 53 stay for a later run. `piles` signed off; its
+  wording rule went to `piles2` once #3679 merged.
+- 12:55Z: worker `peralta` (the four Peralta colleges). 13:00Z: the night's one follow-up went to worker `followup`.
+- 13:15Z: `levers` dispatches paid reads to $5 a college per run after free pricing (`d-levers-paid-under-5-delegated-s703`).
+- After the merges: worker `display` took the night's display build, gate college Cosumnes River.
+
+## What shipped (squash-merged on a green `test`, each thread read)
+
+- **#3676 `d8b5e4ee`:** a recall count binds to its own trial's parser (City College of San Francisco's stale gate).
+- **#3678 `5dbc743d`:** the `ge_units_not_read` named gap, 131 records at 29 colleges (migrate 45019924640, 131
+  returned, none skipped); the second read held 21 that print a figure.
+- **#3679 `94406494`:** three hours gaps, 50 records at 11 colleges (32 not read, 11 differs, 7 within; migrate
+  45023631381); the second read held 19.
+- **#3677 `50e4bc1d`:** San Diego College of Continuing Education's outlines (index 45016944119, 199 of 228 codes;
+  trial 45017581874, 12 of 12; full read 45018663453, 199 pages, all 200); City College of San Francisco's recall
+  refreshed (trial 45018845370, 12 of 12 on parser 2629a09a); HMID 535's Legacy Data objectives kept. Load
+  45021318423 on `claude/s703-sdcce-load`: 198 objective rows, 1,860 objectives, 198 courses, confirmed live; its
+  receipt rides #3674, whose `kb/course_outcomes/.load` stays at `main`'s value so no push re-runs it.
+- **#3681 `40b9a2f6`:** Cosumnes River and Clovis pins and own pages (paid reads 45018951701 $0.36 and 45018954283
+  $0.23; rereads 45021161151 and 45022017976; load 45022641854): 3 new, 4 replaced, 5 passing. Clovis 33433
+  `total_not_printed` and 33491 `total_differs` (migrate 45024254789, 2 of 2).
+- **#3685 `be37ec75`:** the `lists_past_their_figure` gap, 17 records at 9 colleges (migrate 45030559364); the second
+  read held 12 more, 29 in all.
+
+**In flight at the checkpoint:** #3686 (Ohlone 2 loaded, 45026280729, $0.14; San Joaquin Delta 6 loaded, 45029460149,
+$0.36, through prefix aliases IND, ELE and MEC with an A- prefix; 141 filed as named gaps in `no_record_s703.json`);
+#3675 (Glendale's 11 filed as named gaps, the OBT to STV alias, Butte 39882 at $0.05, load 45026794241, live and
+passing; Glendale 38973's fresh read 45030485543); #3683 (S697's four findings, the `through` pin field, the named-gaps
+tag; second reader: merge, three minors fixed; Clovis 33492 passes at $0.15, read 45033577888, reread 45034008640,
+load 45034109582; 33432 at coverage 0.933 with no total); #3684 (Peralta: index 45025388165, 2,201 codes, 376 shared;
+trial 45030224450, 11 of 12; full read 45031089800, 1,869 pages in 5 parts, queued 14:07Z, part 1 filed 14:38Z).
+
+**The display build and the census:** DISPLAY_CENSUS_TBD
+
+Read in order: this file; the NEXT of [`program-requirements-harvest`](reference/lanes/program-requirements-harvest.md);
+`docs/program_requirements_harvest_lessons.md`, *S703*; `docs/reference/conductor_mode.md`, *What went wrong in S703*;
+[`methodology-a-test-must-not-take-its-rule-as-the-truth`](kb-notes/methodology-a-test-must-not-take-its-rule-as-the-truth.md),
+*A named gap's self-recall*.
+
+## Open work, from the lanes' NEXT lines
+
+1. **`program-requirements-harvest`** (outline fills first):
+   - **Peralta's load first**, once read 45031089800 lands: a dry run, then `.load` with `host=lan` and
+     `slugs=laney,merritt,college_of_alameda,berkeley_city`.
+   - Land #3686, #3675 and #3683, one at a time; then the next display build and `harvest-gap-census.yml` on `main`.
+   - City College of San Francisco's gate is fresh: its next outline read can run.
+   - Lane 2: the wording rules at Glendale (28), Clovis (14) and City College of San Francisco (28), each with a claim
+     check, boundary readings and a precision count before its second read.
+   - The next follow-up's minors (lane NEXT (2)), after the waves.
+2. **A plain session's, each by its lane's NEXT** (conductor runs stay on collection): `commons` (the Subjects page's
+   one Save for every college, then the hand-over box); `cer-procedures` (the pair apply; compact the lane first, it is
+   over 20,000 bytes); `repo-size` (dispatch `receipt-slim.yml` `mode=apply` outside the cron windows, then the
+   spreadsheet export and videos, the timed workflows' commits, the session trim, `START_HERE.md` and the `CLAUDE.md`
+   cut; Part 5 on Sam's go); `common-subjects-reference` (ECONMT and Electricity's adult-education codes); `library`
+   (deploy #3600, then part 4, then part 3).
+
+## Blocks (Sam's ruling 1: listed here until the Commons' Needs you shows them)
+
+| Block | Who clears it | Since |
+|---|---|---|
+| The 30-day artifact `course-outcomes-45026998155-part1` holds trial pages that print a staff name: delete it | a person | 2026-11-22 (S703) |
+| Peralta's load (dry run, then `.load` `host=lan`) | the next session | 2026-11-22 (S703) |
+| The next follow-up's minors: SDCCE's 6 SLO-label rows; Peralta's 4 parse minors; Los Angeles Harbor 44271, Los Angeles Trade-Technical 44345 and 45670; Orange Coast 03997, 08668, 12159; the hours reconcile eight (Laney 38970, 39365, 39366, 39368, 43451; De Anza 41176; Mendocino 43158; Coastline 42718); Mt. San Antonio 43777 and 43999 (capture reach); Glendale's data-names-the-program lever; the coarse-net hyphen; the `sources_from` pinned refusal; the `through` window's `until` field | Sky, the next follow-up | 2026-11-22 (S703) |
+| The Commons shows SDCCE's 6 SLO-label rows as outcomes | Sky, the next follow-up | 2026-11-22 (S703) |
+| City College of San Francisco's Cal-GETC dry run (32080, 33652, 46300): the permission check refused it twice | a plain session | 2026-11-21 (S691) |
+| Golden West's 476 outline header rows: the guarded correction | a plain session's review | 2026-11-20 (S690) |
+| Cerritos 20504: its run also holds 44984, held for a person | a person, on 44984 | 2026-11-21 (S697) |
+| Records held for a person: College of the Canyons 43388, West Los Angeles 46261 and 38677, Napa Valley 19126, 31158 and 36528, Los Angeles Harbor 44947, Cerritos 44984, Los Angeles Mission 44849, Los Angeles City 32832, Ventura 45355, Shasta 18153 | a person | S653 to S691 |
+| Clovis's 14 and Glendale's 12 that the reader or scorer reads wrongly | Sky, lane 2's wording rules | 2026-11-21 (S697) |
+| College of the Desert's 8: the prior catalog sits behind robots.txt | the college, or another source | 2026-11-20 (S689) |
+
+## For Sam
+
+Nothing waits on Sam ([Open Asks Sheet 200](https://claude.ai/artifact/5ShC7pGgNuz9bJUhkdsc8Y), current). The vault
+note (`samueltlee/CPLBrain#846`, draft, branch `claude/pensive-archimedes-lwf2xm`) quotes his words below, adds no
+ruling and merges on its own checks (`r-vault-notes-merge-on-checks-sam-2026-11-21`).
+
+## Decisions Sam made
+
+1. **2026-11-22, about 11:03Z, live:** *"/coord and keep going. I will be starting another session but don't let that
+   stop the queue."* (`d-coord-and-keep-going-sam-2026-11-22`). A decision for tonight; it adds no standing ruling.
+
+## Decisions (the conductor's, each reversible)
+
+`d-glendale-own-pages-filed-as-gaps-s703`, `d-glendale-obt-stv-prefix-alias-s703`, `d-ge-gap-only-where-no-figure-s703`,
+`d-hours-gaps-hold-misreads-s703`, `d-ccsf-gate-refresh-by-free-trial-s703`, `d-clovis-through-pin-to-followup-s703`,
+`d-clovis-management-is-the-standalone-degree-s703`, `d-clovis-two-gaps-existing-rules-s703`,
+`d-legacy-objectives-kept-when-only-copy-s703`, `d-sdcce-load-objectives-only-s703`, `d-levers-paid-under-5-delegated-s703`,
+`d-lan-parse-parts-in-lan-fingerprint-only-s703`, `d-lan-outcomes-only-host-s703`, `d-lists-gap-holds-claim-false-s703`,
+`d-lists-gap-holds-range-sums-s703`, `d-sjdelta-prefix-alias-stopgap-s703`. DECIDED lines: the harvest lane. Memory
+rows: `kb/migrations/2026-11-22_s703_cpl_memory_rows.sql` (rollback beside it), not pointed at by `.apply`; the
+conductor applies it with one `execute_sql` call.
+
+## Patterns that worked
+
+- A second reader on every named gap before its apply: four applies, 200 rows, 69 held by key.
+- Free pricing with `only` before each paid read: $1.29 of extraction in all.
+- A fresh free trial to refresh a stale recall gate; per-college prefix aliases as a stopgap.
+- One writer per file beside Sam's plain session, the queue kept running.
+
+## Safety patterns to honor
+
+All of handoff 699's. New tonight: `p-self-recall-reads-rule-fields-s703` (a held answer from the rule's own fields
+measures nothing: a claim check, boundary readings, a precision count); `p-sources-from-refuses-pinned-refused-s703`
+(read fresh); `p-merge-head-push-starts-no-read-s703` (dispatch by plan name); `p-global-fingerprint-stales-every-gate-s703`
+(per-host fingerprints); `p-lan-not-outcomes-only-filed-names-s703` (an outline host is outcomes-only before any trial
+files a page); `p-records-prs-merge-one-at-a-time-s703`; `p-test-check-after-lints-s703` (no `test` yet is pending,
+never green). A push of a branch whose trigger file differs from `main`'s starts that job again: keep each trigger at
+`main`'s value on a branch that has run it. Never file a person's name from an outline page anywhere. A
+permission-check refusal is never routed around.
+
+## Conductor settings
+
+A conductor run for collection only, under Sam's routine prompt of 2026-11-17 (`docs/reference/conductor_mode.md`,
+*Settings*; review rounds as his ruling of 2026-11-20 sets them): two lanes, never on one college; about $750 a day for
+everything, $10k running total for the whole job; workers on Opus 5.5, high effort on any worker that writes shared
+data; reviews at most 9 agents, stopped after two rounds with what is left sent to Sam or COBIx; $40 per college per run
+for program requirements and a separate $40 for SLOs, PLOs and course objectives, per run, never a remaining pot. Stop
+rules from the brief: a day over $300 with fewer than 40 new programs; over $12 per new program or $0.50 per outline
+row; a rollback that undoes over 1% of a day's rows; the $10k checkpoint.
+
+## Ledger
+
+| PR or branch | State | Next |
+|---|---|---|
+| #3674 (`claude/awesome-fermat-lwf2xm`) | the declaration and this checkpoint, carrying `claude/s703-sdcce-load`'s receipt | merges at sign-off |
+| #3676, #3678, #3679, #3677, #3681, #3685 | merged | none |
+| #3686 (`claude/s703-levers`) | open | merge, one at a time |
+| #3675 (`claude/s703-glendale-butte`, Butte on `claude/s703-butte`) | open; 38973's read 45030485543 | merge after the read |
+| #3683 (`claude/s703-followup`) | open; second reader: merge | merge |
+| #3684 (`claude/s703-peralta-outlines`) | open; read 45031089800 | the load, then merge |
+| `claude/s703-outlines-ccsf-refresh` | its content rode #3677 | none |
+| `samueltlee/CPLBrain#846` (the vault note) | draft | merges on its own checks |
+| #3383 | dependabot's | waits |
+
+## Let go
+
+LET_GO_TBD
+
+SPEND_LINE_TBD
+
+Opening line: *Greetings, you are SkyKittiwake (Session 704), see SkyDovekie's (S703) handoff — `docs/session_704_handoff.md` — let's keep rolling with our queue.*
+
+FINAL_LINE_TBD

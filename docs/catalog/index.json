@@ -4940,7 +4940,7 @@
      ],
      "title": "A test must not take its own rule as the truth",
      "type": "methodology",
-     "updated": "2026-11-20"
+     "updated": "2026-11-22"
     },
     {
      "created": "2026-08-25",
@@ -14259,7 +14259,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 108,
+   "count": 109,
    "docs": [
     {
      "created": "2026-05-30",
@@ -15492,6 +15492,21 @@
      "title": "Program requirements harvest lessons \u2014 archive 7 (S655 onward)",
      "type": null,
      "updated": "2026-11-21"
+    },
+    {
+     "created": "2026-11-22",
+     "governs": [],
+     "path": "docs/program_requirements_harvest_lessons_archive_8.md",
+     "status": "internal",
+     "tags": [
+      "lessons",
+      "archive",
+      "program-requirements",
+      "catalog-harvest"
+     ],
+     "title": "Program requirements harvest lessons \u2014 archive 8 (S687 onward)",
+     "type": null,
+     "updated": "2026-11-22"
     },
     {
      "created": "2026-11-12",
@@ -16775,7 +16790,7 @@
      ],
      "title": "Program requirements harvest \u2014 lane state",
      "type": null,
-     "updated": "2026-11-21"
+     "updated": "2026-11-22"
     },
     {
      "created": "2026-08-28",
@@ -17030,7 +17045,7 @@
      ],
      "title": "Conductor mode \u2014 how a session runs workers, COBIx and the merge gate",
      "type": null,
-     "updated": "2026-11-21"
+     "updated": "2026-11-22"
     },
     {
      "created": "2026-08-29",
@@ -17455,7 +17470,7 @@
       "handoff",
       "session"
      ],
-     "title": "Session 704 handoff (from SkyDovekie, S703, the CPL Queue routine's 10:12Z firing of 2026-11-22) \u2014 DRAFT, the declaration",
+     "title": "Session 704 handoff (from SkyDovekie, S703, the CPL Queue routine's collection run of 2026-11-22)",
      "type": null,
      "updated": "2026-11-22"
     },
@@ -28499,5 +28514,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1550
+ "total": 1551
 }

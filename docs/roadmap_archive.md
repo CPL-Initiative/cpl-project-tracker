@@ -18,6 +18,9 @@ S196, and the INDEX history rotated out before 2026-09-17. [Part 7](roadmap_arch
 history moved 2026-09-17 to 2026-10-31, and (moved 2026-11-22, S701) the rotations of 2026-10-26 to
 2026-11-04. New rotations keep landing here.
 
+## INDEX update-history entries rotated out (2026-11-22)
+- 2026-11-21 (S695 SkyShearwater, Sam's plain session on the Commons, conductor, full checkpoint): #3624 (special and selected topics flagged not applicable; the pile 2,493 to 1,909), #3625 (`#commons/subjects/held`), #3627 (both Subjects builders in the daily build), #3626 (the pile mint v3: a 98% floor per route, `discipline_source: pile_mint`, the apply); #3630 (`LSKL M9004`, the first pile-minted record) and #3629 (repo slimming items 1 and 2) open; the self-recall note gains a dated section on mint routes; `docs/commons_lessons.md` *S695*, three sections to its archive; 14 memory rows drafted in `kb/migrations/2026-11-21_s695_checkpoint_memory_rows.sql`; handoff 696 (SkyFulmar).
+
 ## INDEX update-history entries rotated out (2026-11-19)
 - 2026-11-17 (S676 SkyPipit, the CPL Queue routine, full checkpoint): #3456 (slice B: six yield colleges read, reread and loaded, display build 71b67268c567, passing +22); the harvest lessons doc compacted to archive 6. Handoff 677.
 
