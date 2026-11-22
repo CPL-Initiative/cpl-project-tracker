@@ -4,9 +4,9 @@
   "supabase_tables": 119,
   "rpcs": 68,
   "edge_functions": 16,
-  "file_datasets": 1138,
-  "external_services": 197,
-  "consumers": 648,
+  "file_datasets": 1149,
+  "external_services": 199,
+  "consumers": 653,
   "workflows": 77,
   "data_js_files": 71,
   "tabs": 41
@@ -886,6 +886,25 @@
    ],
    "main_committers": []
   },
+  "external:catalog.mtsac.edu": {
+   "consumers": [
+    {
+     "id": "script:kb/_file_credit_catalogs.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 325
+    },
+    {
+     "id": "script:kb/_file_noncredit_catalogs.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 517
+    }
+   ],
+   "main_committers": []
+  },
   "external:ccsf.curricunet.com": {
    "consumers": [
     {
@@ -1205,7 +1224,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1778
+     "line": 1791
     },
     {
      "id": "module:admin.js",
@@ -1937,7 +1956,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2431
+     "line": 2444
     }
    ],
    "main_committers": []
@@ -2608,7 +2627,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1388
+     "line": 1401
     }
    ],
    "main_committers": []
@@ -2627,7 +2646,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1733
+     "line": 1746
     },
     {
      "id": "module:college_briefing.js",
@@ -3336,7 +3355,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1789
+     "line": 1802
     },
     {
      "id": "module:dashboard_filters.js",
@@ -4368,6 +4387,25 @@
    ],
    "main_committers": []
   },
+  "external:www.sac.edu": {
+   "consumers": [
+    {
+     "id": "script:kb/_file_credit_catalogs.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 323
+    },
+    {
+     "id": "script:kb/_file_noncredit_catalogs.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 512
+    }
+   ],
+   "main_committers": []
+  },
   "external:www.saddleback.edu": {
    "consumers": [
     {
@@ -4440,6 +4478,13 @@
       "map-queue",
       "map-users"
      ]
+    },
+    {
+     "id": "script:kb/_file_noncredit_catalogs.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 507
     }
    ],
    "main_committers": []
@@ -4681,7 +4726,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2095
+     "line": 2108
     }
    ],
    "main_committers": []
@@ -5930,7 +5975,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1986
+     "line": 1999
     },
     {
      "id": "module:admin.js",
@@ -6106,14 +6151,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 61
+     "line": 70
     },
     {
      "id": "script:kb/_build_local_subject_titles.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 45
+     "line": 46
     },
     {
      "id": "script:kb/_build_not_applicable.py",
@@ -6144,6 +6189,13 @@
      "line": 38
     },
     {
+     "id": "script:kb/_build_subject_courses.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 31
+    },
+    {
      "id": "script:kb/_closest_mid.py",
      "kind": "script",
      "direction": "read",
@@ -6156,6 +6208,20 @@
      "direction": "read",
      "how": "literal",
      "line": 133
+    },
+    {
+     "id": "script:kb/_file_credit_catalogs.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 466
+    },
+    {
+     "id": "script:kb/_file_noncredit_catalogs.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 569
     },
     {
      "id": "script:kb/_pile_mint_dryrun.py",
@@ -7267,7 +7333,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2370
+     "line": 2383
     },
     {
      "id": "module:college_briefing.js",
@@ -7480,7 +7546,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1448
+     "line": 1461
     },
     {
      "id": "module:cpl_funding.js",
@@ -10390,6 +10456,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/_build_noncredit_subject_titles.py": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/_build_not_applicable.py": {
    "consumers": [
     {
@@ -10553,6 +10632,19 @@
    "consumers": [
     {
      "id": "workflow:harvest-gap-census.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/_build_subject_courses.py": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -16609,14 +16701,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 62
+     "line": 71
     },
     {
      "id": "script:kb/_build_local_subject_titles.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 47
+     "line": 48
     },
     {
      "id": "script:kb/_ccr_confidence_apply.py",
@@ -16645,6 +16737,13 @@
      "direction": "read",
      "how": "literal",
      "line": 67
+    },
+    {
+     "id": "script:kb/_file_subject_decisions.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 36
     },
     {
      "id": "script:kb/_fl_stray_remint.py",
@@ -18469,6 +18568,19 @@
      "direction": "read",
      "how": "literal",
      "line": 13
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/migrations/<date>_s701_subject_decisions_receipt.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_file_subject_decisions.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 39
     }
    ],
    "served": false,
@@ -21041,6 +21153,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/reference/subject_code_decisions_cerritos_<date>.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_file_subject_decisions.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 34
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/reference/subject_discipline_map.json": {
    "consumers": [
     {
@@ -21076,7 +21201,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 46
+     "line": 47
     },
     {
      "id": "script:kb/_build_oc_medical_assistant_crosswalk.py",
@@ -21194,7 +21319,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 64
+     "line": 73
     }
    ],
    "served": false,
@@ -21846,7 +21971,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 64,
+     "line": 107,
      "tabs": [
       "commons"
      ]
@@ -21877,7 +22002,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 46,
+     "line": 87,
      "tabs": [
       "commons"
      ]
@@ -21887,7 +22012,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 66
+     "line": 75
     }
    ],
    "producers": [
@@ -21908,7 +22033,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 23,
+     "line": 34,
      "tabs": [
       "commons"
      ]
@@ -21918,14 +22043,21 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 60
+     "line": 69
     },
     {
      "id": "script:kb/_build_local_subject_titles.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 48
+     "line": 49
+    },
+    {
+     "id": "script:kb/_file_subject_decisions.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 35
     },
     {
      "id": "script:kb/_held_subject_codes.py",
@@ -21984,15 +22116,67 @@
   "file:kb/status/noncredit_categories.json": {
    "consumers": [
     {
+     "id": "script:kb/_build_local_subject_titles.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 62
+    },
+    {
      "id": "script:kb/_build_noncredit_categories.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
      "line": 24
+    },
+    {
+     "id": "script:kb/_build_noncredit_subject_titles.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 45
     }
    ],
    "served": true,
    "main_committers": []
+  },
+  "file:kb/status/noncredit_subject_titles.json": {
+   "consumers": [
+    {
+     "id": "module:commons_subjects.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 113,
+     "tabs": [
+      "commons"
+     ]
+    },
+    {
+     "id": "script:kb/_build_local_subject_recommendations.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 76
+    },
+    {
+     "id": "script:kb/_build_noncredit_subject_titles.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 46
+    }
+   ],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": true,
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
   },
   "file:kb/status/program-requirements-checked.json": {
    "consumers": [
@@ -22091,6 +22275,19 @@
    ],
    "served": false,
    "main_committers": []
+  },
+  "file:kb/status/subject_courses": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": false,
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
   },
   "file:kb/status/subjects.json": {
    "consumers": [
@@ -26298,7 +26495,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 63
+     "line": 72
     }
    ],
    "served": false,
@@ -27611,6 +27808,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/credit_catalogs_filing_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/csr_confirm_authority_test.py": {
    "consumers": [
     {
@@ -28855,7 +29065,33 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/noncredit_catalogs_filing_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/noncredit_categories_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/noncredit_subject_titles_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -29786,6 +30022,32 @@
    "main_committers": []
   },
   "file:tests/stop_hook_git_check_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/subject_courses_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/subject_decisions_filing_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -34768,6 +35030,26 @@
      "line": 800
     },
     {
+     "id": "module:commons_subjects.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 184,
+     "tabs": [
+      "commons"
+     ]
+    },
+    {
+     "id": "module:commons_subjects.js",
+     "kind": "module",
+     "direction": "write",
+     "how": "literal",
+     "line": 207,
+     "tabs": [
+      "commons"
+     ]
+    },
+    {
      "id": "module:cr_reference.js",
      "kind": "module",
      "direction": "read",
@@ -37574,6 +37856,8 @@
     "kb/_closest_mid.py",
     "kb/_build_local_subject_titles.py",
     "kb/_held_subject_codes.py",
+    "kb/_build_subject_courses.py",
+    "kb/_build_noncredit_subject_titles.py",
     "kb/_build_local_subject_recommendations.py",
     "kb/_row_audit.py",
     "kb/_row_audit_prune.py",
@@ -37639,6 +37923,8 @@
     "kb/status/local_subject_titles.json",
     "kb/status/held_subject_codes.json",
     "kb/status/local_subject_recommendations.json",
+    "kb/status/subject_courses",
+    "kb/status/noncredit_subject_titles.json",
     "cpl_pathways_membership_data.js",
     "kb/discipline_canonical_subj4.json",
     "kb/cid_claim_audit.json",
@@ -37887,10 +38173,15 @@
     "tests/handover_pickup_test.py",
     "tests/ccr_doubt_test.py",
     "tests/local_subject_titles_test.py",
+    "tests/subject_decisions_filing_test.py",
     "tests/subject_headings_filer_test.py",
     "tests/noncredit_categories_test.py",
     "tests/local_subject_recommendations_test.py",
     "tests/missed_subject_pages_test.py",
+    "tests/noncredit_catalogs_filing_test.py",
+    "tests/credit_catalogs_filing_test.py",
+    "tests/subject_courses_test.py",
+    "tests/noncredit_subject_titles_test.py",
     "tests/held_subject_codes_test.py",
     "tests/subjects_daily_build_test.py",
     "tests/closest_mid_links_test.py",
