@@ -2251,60 +2251,208 @@
   "title": "Industrial Technology: Maintenance Apprenticeship Option",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AELE75A",
+   "AELE75B",
+   "AIND72A",
+   "AIND76",
+   "AIND77E",
+   "AIND77H",
+   "AIND77L",
+   "AIND78A",
+   "AIND78B",
+   "AIND78C",
+   "AIND78D",
+   "AIND78E",
+   "AIND78F",
+   "AIND78G",
+   "AIND78J",
+   "AIND78K",
+   "AIND78L",
+   "AIND78M",
+   "AIND78N",
+   "AIND78P",
+   "AMEC74A",
+   "AMEC74B"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3285&print",
+   "title": "Program: Industrial Technology - Maintenance Apprenticeship Option Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Industrial Technology - Maintenance Apprenticeship Option Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "industrial technology - maintenance apprenticeship option certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 22,
-  "text_chars": 0
+  "text_chars": 2623
  },
  {
   "control_number": "14595",
   "title": "Electrical Technology: Apprenticeship Option",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AELE70A",
+   "AELE70B",
+   "AELE71A",
+   "AELE71B",
+   "AELE72A",
+   "AELE72B",
+   "AELE73A",
+   "AELE73B",
+   "AELE74A",
+   "AELE74B"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3327&print",
+   "title": "Program: Electrical Technology - Apprenticeship Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Electrical Technology - Apprenticeship Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "electrical technology - apprenticeship certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 2187
  },
  {
   "control_number": "14597",
   "title": "Industrial Technology: Electrical Apprenticeship Option",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AELE75A",
+   "AELE75B",
+   "AELE75C",
+   "AELE75D",
+   "AELE75E",
+   "AELE75F",
+   "AIND72A",
+   "AIND76",
+   "AIND77A",
+   "AIND77B",
+   "AIND77C",
+   "AIND77D",
+   "AIND77G",
+   "AIND77H",
+   "AIND77K",
+   "AIND77L",
+   "AIND77M",
+   "AIND77N"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3286&print",
+   "title": "Program: Industrial Technology - Electrical Apprenticeship Option Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Industrial Technology - Electrical Apprenticeship Option Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "industrial technology - electrical apprenticeship option certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 18,
-  "text_chars": 0
+  "text_chars": 2278
  },
  {
   "control_number": "14598",
   "title": "Industrial Technology: Mechanical Apprenticeship Option",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AELE75A",
+   "AELE75C",
+   "AIND72A",
+   "AIND76",
+   "AIND77A",
+   "AIND77B",
+   "AIND77D",
+   "AIND77E",
+   "AIND77F",
+   "AIND77G",
+   "AIND77H",
+   "AIND77K",
+   "AIND77L",
+   "AIND77M",
+   "AIND77N",
+   "AMEC74A",
+   "AMEC74B"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3284&print",
+   "title": "Program: Industrial Technology - Mechanical Apprenticeship Option Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Industrial Technology - Mechanical Apprenticeship Option Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "industrial technology - mechanical apprenticeship option certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 2281
  },
  {
   "control_number": "14599",
   "title": "Industrial Technology: Operations Apprenticeship Option",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "AELE75A",
+   "AELE75B",
+   "AELE75C",
+   "AELE75D",
+   "AELE75E",
+   "AIND72A",
+   "AIND76",
+   "AIND77A",
+   "AIND77B",
+   "AIND77C",
+   "AIND77D",
+   "AIND77G",
+   "AIND77H",
+   "AIND77J",
+   "AIND77L",
+   "AIND77N"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3283&print",
+   "title": "Program: Industrial Technology - Operations Apprenticeship Option Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Industrial Technology - Operations Apprenticeship Option Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "industrial technology - operations apprenticeship option certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 2255
  },
  {
   "control_number": "14763",
@@ -6108,12 +6256,35 @@
   "title": "Electrical Technology: Apprenticeship",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AELE70A",
+   "AELE70B",
+   "AELE71A",
+   "AELE71B",
+   "AELE72A",
+   "AELE72B",
+   "AELE73A",
+   "AELE73B",
+   "AELE74A",
+   "AELE74B"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3355&print",
+   "title": "Program: Electrical Technology - Apprenticeship, AS - San Joaquin Delta College",
+   "h1": "Electrical Technology - Apprenticeship, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 2888
  },
  {
   "control_number": "37612",
