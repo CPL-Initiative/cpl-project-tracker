@@ -72,22 +72,47 @@ def untitled_groups(host: str, row: dict) -> bool:
 # filed read stays as read, so no parser change and no recall gate moves (the conductor, S697).
 LETTER = re.compile(r"[^\W\d_]")
 DROPPED = {"lines": 0, "rows": 0}
-# Two more lines that are no objective, both from San Diego College of Continuing Education's All Fields report (4)
-# in trial 45017581874 (S703). Its Student Learning Objectives field lists each objective under an "Objective Text"
-# label, and its Legacy Data field follows. Where the objectives field is empty (HMID 535) the parser runs on into
-# Legacy Data and files the heading and the paragraph after it; and HSDP 403's one entry reads "See specific course
-# outline." The load ends a block at a line that is the Legacy Data heading alone (that line and every line after
-# it), and drops a line that only points to another outline. The filed read stays as read, so no parser change and
-# no recall gate moves (as d-outline-load-strips-letterless-lines-s697).
+# Two more cases from San Diego College of Continuing Education's All Fields report (4), trial 45017581874 (S703).
+# Its Student Learning Objectives field lists each objective under an "Objective Text" label, and the field's Legacy
+# Data subfield follows: on most pages (AUTO 411, HLTH 605) a numbered paragraph repeating the objectives above it,
+# so a block whose objectives come first ends at the Legacy Data heading (that line and every line after it). Where
+# the field prints no Objective Text entry (HMID 535) the paragraph is the page's only copy of its objectives
+# (d-legacy-objectives-kept-when-only-copy-s703): the load drops the heading alone and loads the paragraph, one
+# objective per number where it numbers them 1, 2, 3 in order, the lead-in before "1." left out. And HSDP 403's one
+# entry reads "See specific course outline.": a line that only points to another outline drops. The filed read stays
+# as read, so no parser change and no recall gate moves (as d-outline-load-strips-letterless-lines-s697).
 FIELD_END = re.compile(r"^\s*legacy data\s*:?\s*$", re.I)
 POINTER = re.compile(r"^\s*see (the )?(specific |individual )?course outlines?\.?\s*$", re.I)
+NUMBERED = re.compile(r"(?:^|(?<=\s))(\d{1,2})[.)]\s+")
+
+
+def numbered_items(text: str) -> list[str] | None:
+    """A paragraph's numbered objectives ("... to: 1. Adhere ... 2. Sew ..."), each without its number, when it
+    numbers two or more of them 1, 2, 3 in order; None otherwise, and the paragraph loads whole."""
+    marks = list(NUMBERED.finditer(text or ""))
+    if len(marks) < 2 or [int(m.group(1)) for m in marks] != list(range(1, len(marks) + 1)):
+        return None
+    ends = [m.start() for m in marks[1:]] + [len(text)]
+    out = [text[m.end():e].strip() for m, e in zip(marks, ends)]
+    return out if all(LETTER.search(o) for o in out) else None
 
 
 def no_letterless(block: dict) -> dict | None:
-    """The block with every line that holds no letter dropped, and every line from a Legacy Data heading on, and a
-    line that only points to another outline (FIELD_END, POINTER; S703), its maps_to entries with each, and its
-    fingerprint and shape taken from what is left; the block itself when none drops; None when no line is left."""
+    """The block with every line that holds no letter dropped, and a line that only points to another outline
+    (POINTER), its maps_to entries with each; a Legacy Data heading after the block's objectives ends it, and one
+    that opens the block is dropped alone, its paragraph split by its numbers (FIELD_END, numbered_items; S703).
+    Its fingerprint and shape are taken from what is left; the block itself when none drops; None when no line is
+    left."""
     items = block.get("outcomes") or []
+    if items and FIELD_END.match(items[0] or ""):
+        legacy = []
+        for o in items[1:]:
+            legacy += numbered_items(o) or [o]
+        DROPPED["lines"] += 1
+        if not legacy:
+            return None
+        return no_letterless({**block, "outcomes": legacy, "maps_to": None, "fingerprint": fingerprint(legacy),
+                              "shape": "list" if len(legacy) > 1 else "paragraph"})
     end = next((i for i, o in enumerate(items) if FIELD_END.match(o or "")), len(items))
     keep = [i for i, o in enumerate(items[:end]) if LETTER.search(o or "") and not POINTER.match(o or "")]
     if len(keep) == len(items):

@@ -1,5 +1,5 @@
 {
- "_about": "The count for San Diego College of Continuing Education's All Fields report (4) on sdccd.curriqunet.com, trial 45017581874 (S703). The trial filed each page's text, so each count is read off the filed page apart from the parser: the worker listed each page's objectives field and its Objective Text entries, and read HMID 535 and HSDP 403 line by line. No page prints a student learning outcomes heading, so every SLO count is 0. The parser files 10 of 12 right: HMID 535's empty field runs on into Legacy Data (2 filed, 0 printed) and HSDP 403's one entry reads 'See specific course outline.' (1 filed, 0 objectives). The load drops both (FIELD_END, POINTER in kb/_course_outcomes_load.py), so the loaded rows match all 12. sdccd.curriqunet.com is not an outcomes-only host, so no reader gate reads this file; tests/course_outcomes_load_test.py does.",
+ "_about": "The count for San Diego College of Continuing Education's All Fields report (4) on sdccd.curriqunet.com, trial 45017581874 (S703). The trial filed each page's text, so each count is read off the filed page apart from the parser: the worker listed each page's objectives field and its Objective Text entries, and read HMID 535 and HSDP 403 line by line. No page prints a student learning outcomes heading, so every SLO count is 0. The parser files 10 of 12 right: HMID 535's field prints no Objective Text entry, so the parse files the Legacy Data heading and the subfield's one paragraph, which numbers the page's 11 objectives and is their only copy (2 filed, 11 printed) and HSDP 403's one entry reads 'See specific course outline.' (1 filed, 0 objectives). The load drops HMID 535's heading line and splits its paragraph by its numbers, and drops HSDP 403's pointer (FIELD_END, numbered_items, POINTER in kb/_course_outcomes_load.py), so the loaded rows match all 12. sdccd.curriqunet.com is not an outcomes-only host, so no reader gate reads this file; tests/course_outcomes_load_test.py does.",
  "trial": "45017581874",
  "slugs": "san_diego_of_continuing_education",
  "parser_fingerprint": "2629a09aeac9be1183829d0cea92009f",
@@ -76,10 +76,10 @@
   },
   "HMID 535": {
    "slo": 0,
-   "objective": 0,
-   "by": "S703 outlines worker",
-   "from": "the filed page kb/course_outcomes/trial_45017581874/HMID_535.txt: its Student Learning Objectives field, from that heading to its Legacy Data or Assignments heading, one objective per Objective Text entry, an entry that only points to another outline not counted; the page prints no outcomes heading",
-   "at": "2026-11-22T11:40:07Z"
+   "objective": 11,
+   "by": "S703 outlines worker, after #3677's second reader",
+   "from": "the filed page kb/course_outcomes/trial_45017581874/HMID_535.txt: its Student Learning Objectives field prints no Objective Text entry, and the field's Legacy Data subfield holds the page's only copy of its objectives, one paragraph numbered 1 to 11, read line by line (d-legacy-objectives-kept-when-only-copy-s703)",
+   "at": "2026-11-22T12:02:31Z"
   },
   "HSDP 403": {
    "slo": 0,
