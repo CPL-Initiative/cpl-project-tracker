@@ -1,4 +1,4 @@
-{"schema":1,"college":"College of the Canyons","slug":"college_of_the_canyons","basis":"live","census_at":"2026-11-22 15:16Z","correction_rules":true,"programs":[
+{"schema":1,"college":"College of the Canyons","slug":"college_of_the_canyons","basis":"live","census_at":"2026-11-22 22:50Z","correction_rules":true,"programs":[
 {"cn":"40090","title":"Applied GIS and Spatial Studies","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"coverage_fails","lever":"reconcile_steps","url":"https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=156"},
 {"cn":"44260","title":"Building Performance","award":"Baccalaureate of Science (B.S.) Degree.","cause":"coverage_fails","lever":"reconcile_steps","url":"https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=71"},
 {"cn":"10302","title":"Interior Design","award":"A.S. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=173"},
