@@ -315,6 +315,10 @@ jobs:
       # codes compared exactly, one-sided codes kept for the curator, byte-identical reruns. Pure stdlib.
       - name: Local subject titles (kb/_build_local_subject_titles.py)
         run: python3 tests/local_subject_titles_test.py
+      # Sam's held Cerritos subject decisions, prepared as kb_curation rows (S701, #3655): 30 rows, 29 credit and AP
+      # whole, ATH as KINE, every code canonical, INSERT only with a cohort rollback, identical reruns. Pure stdlib.
+      - name: Subject decisions filing (kb/_file_subject_decisions.py)
+        run: python3 tests/subject_decisions_filing_test.py
       # The subject headings filer (S698, #3655): a catalog's subject headings from the lines above each subject's
       # first course, saved in Title Case; a line of prose is never a heading, and none is invented. Pure stdlib.
       - name: Subject headings filer (kb/_file_subject_headings.py)

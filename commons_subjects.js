@@ -6,10 +6,19 @@
 // (d-step-b-owner-courses-bot-2026-11-20) the Courses bot drafts each local subject title from the catalog's subject
 // heading, and a curator settles the codes the catalog and the state list disagree on.
 //
-// What it reads (WRITES NOTHING): kb/status/local_subject_titles.json, built by kb/_build_local_subject_titles.py from
+// What it reads: kb/status/local_subject_titles.json, built by kb/_build_local_subject_titles.py from
 // the printed catalogs (kb/hand_filed_catalogs/courses/), the state course list (coci_lookup_data.js), the subject map
 // and the canonical SUBJ file. A catalog that prints the code alone reads TBA for its title. Beside a row with no
 // title or no common code it shows the recommendation kb/status/local_subject_recommendations.json holds for it.
+//
+// What it writes (S701, r-subject-save-path-kb-curation-sam-2026-11-22, Sam: "Fine."): Edit and Save in a code's
+// course panel, for a signed-in reviewer. One kb_curation row per decision, course_id SUBJ:<college>|<code>|<band>
+// (band credit, or whole where COCI lists no course under the code), field subject_decision, value JSON text with
+// local_title and or common_code, under the reviewer's own email; Take it back deletes that one row. A person's save
+// wins on this page over the catalog, the subject map and every recommendation. A code whose COCI courses are all
+// noncredit offers no Edit (r-noncredit-hold-sam-2026-11-21). The rows hold a college slug, a code, a title and a
+// common code; no student or staff detail (Rule 10 a3; kb/governance_surface_map.json maps the field to DR-25). The
+// Python builders do not read these rows yet.
 //
 // Addresses (loaded by commons.js when the address names it): #commons/subjects (every college),
 // #commons/subjects/noncredit (the draft noncredit subject title list, from kb/status/noncredit_subject_titles.json),
@@ -83,6 +92,133 @@
   var NC = "noncredit";
   var NC_FILE = "kb/status/noncredit_subject_titles.json";
 
+  /* ── Edit and Save (S701): a person's decision as one kb_curation row ── */
+  var REST = (window.CPL_SUPABASE_URL || "https://hvuwhnbuahrtptokpqfh.supabase.co") + "/rest/v1";
+  var SAVE_PREFIX = "SUBJ:", SAVE_FIELD = "subject_decision", PAGE = 1000;
+  var SAVED = {}, SAVE_ERR = "", SAID = {}, LAPSED = false;
+  var COMMON = null, TC = null;   /* from the titles file: canonical SUBJ -> MQ discipline, and the Title Case word lists */
+  /* The band a decision is keyed by (Sam, 2026-11-21: credit and noncredit disciplines are separate in the MQs):
+     credit where COCI lists a credit course under the code, whole where it lists none (the catalog alone prints it),
+     noncredit where every COCI course is noncredit, which takes no decision while the noncredit hold stands. */
+  function bandOf(r) {
+    if ((r.credit_courses || 0) > 0) return "credit";
+    if ((r.noncredit_courses || 0) > 0) return "noncredit";
+    return (r.state_courses || 0) ? "credit" : "whole";
+  }
+  function saveKey(slug, code, band) { return SAVE_PREFIX + slug + "|" + code + "|" + band; }
+  function savedOf(r) {
+    var b = bandOf(r);
+    return b === "noncredit" ? null : SAVED[r.slug + "|" + r.code + "|" + b] || null;
+  }
+  function savesModel(rows) {
+    var by = {};
+    (rows || []).forEach(function (row) {
+      var id = String(row.course_id || "");
+      if (id.indexOf(SAVE_PREFIX) !== 0) return;
+      var parts = id.slice(SAVE_PREFIX.length).split("|");
+      if (parts.length < 3) return;
+      var v;
+      try { v = JSON.parse(row.value || "{}"); } catch (e) { return; }
+      if (!v || typeof v !== "object") return;
+      var slug = parts[0], band = parts[parts.length - 1], code = parts.slice(1, -1).join("|");
+      by[slug + "|" + code + "|" + band] = { title: v.local_title || "", common: v.common_code || "",
+        at: v.decided_at || row.reviewed_at || "", by: row.reviewer_email || "" };
+    });
+    return by;
+  }
+  function session() {
+    var Sx = window.CPL_SESSION;
+    if (!Sx || typeof Sx.get !== "function") return null;
+    var s = Sx.get();
+    return s && s.email && s.access_token && (typeof Sx.isFresh !== "function" || Sx.isFresh(s)) ? s : null;
+  }
+  /* Who may see the form: a fresh session, or one whose token lapsed and can renew (the save renews it first). */
+  function reviewer() {
+    var Sx = window.CPL_SESSION;
+    if (!Sx || typeof Sx.get !== "function") return null;
+    var s = Sx.get();
+    return s && s.email && ((typeof Sx.isFresh !== "function" || Sx.isFresh(s)) || s.refresh_token) ? s : null;
+  }
+  /* kb_curation's reviewer emails answer a signed-in reviewer's token only (S614): signed out the read asks for
+     reviewer_label, and a token the server refuses reads again signed out for this page and the pages after it. */
+  function readSaves() {
+    var Sx = window.CPL_SESSION;
+    if (!Sx || typeof Sx.authHeaders !== "function") return Promise.resolve(null);
+    var W = session() ? { cols: "reviewer_email,reviewer_label", tok: true } : { cols: "reviewer_label", tok: false };
+    var rows = [];
+    function page(from) {
+      var h = Sx.authHeaders({ "Range-Unit": "items", Range: from + "-" + (from + PAGE - 1) });
+      if (!W.tok) h.Authorization = "Bearer " + h.apikey;
+      var url = REST + "/kb_curation?select=course_id,value,reviewed_at," + W.cols + "&field=eq." + SAVE_FIELD
+        + "&course_id=like." + encodeURIComponent(SAVE_PREFIX) + "*&order=course_id";
+      return fetch(url, { headers: h }).then(function (r) {
+        if (r && (r.status === 401 || r.status === 403) && W.tok) { W = { cols: "reviewer_label", tok: false }; return page(from); }
+        if (!r || !r.ok) throw new Error("kb_curation answered " + (r ? r.status : "nothing"));
+        return r.json().then(function (arr) {
+          arr = Array.isArray(arr) ? arr : [];
+          rows = rows.concat(arr);
+          return arr.length === PAGE ? page(from + PAGE) : rows;
+        });
+      });
+    }
+    return page(0).then(savesModel);
+  }
+  /* The session at the moment of the write: the keeper renews a token near expiry, and null means it has ended. */
+  function freshReviewer() {
+    var Sx = window.CPL_SESSION;
+    var p = Sx && typeof Sx.ensureFresh === "function" ? Promise.resolve(Sx.ensureFresh()) : Promise.resolve(null);
+    return p.then(function () { return session(); }, function () { return session(); });
+  }
+  function writeSave(key, value) {
+    return freshReviewer().then(function (s) {
+      if (!s) return { ok: false, lapsed: true };
+      return fetch(REST + "/kb_curation?on_conflict=course_id,field", { method: "POST",
+        headers: window.CPL_SESSION.authHeaders({ "Content-Type": "application/json", Prefer: "resolution=merge-duplicates,return=minimal" }),
+        body: JSON.stringify({ course_id: key, field: SAVE_FIELD, value: JSON.stringify(value), reviewer_email: s.email }) })
+        .then(function (r) { return { ok: r.ok, status: r.status, lapsed: r.status === 401, email: s.email }; });
+    });
+  }
+  function takeBack(key) {
+    return freshReviewer().then(function (s) {
+      if (!s) return { ok: false, lapsed: true };
+      return fetch(REST + "/kb_curation?course_id=eq." + encodeURIComponent(key) + "&field=eq." + SAVE_FIELD + "&select=course_id",
+        { method: "DELETE", headers: window.CPL_SESSION.authHeaders({ Prefer: "return=representation" }) })
+        .then(function (r) {
+          if (!r.ok) return { ok: false, status: r.status, lapsed: r.status === 401 };
+          return r.json().then(function (arr) { return { ok: true, n: Array.isArray(arr) ? arr.length : 0 }; }, function () { return { ok: true, n: 1 }; });
+        });
+    });
+  }
+  /* Title Case, the rule of kb/subject_title_case.py (r-subject-titles-title-case-sam-2026-11-21), with its word lists
+     read from the titles file so the page holds no copy of them. */
+  function isUpperWord(s) { return s !== s.toLowerCase() && s === s.toUpperCase(); }
+  function hasUpper(s) { for (var i = 0; i < s.length; i++) { var ch = s.charAt(i); if (ch !== ch.toLowerCase() && ch === ch.toUpperCase()) return true; } return false; }
+  var ROMAN = /^(?=[IVX])(X{0,3})(IX|IV|V?I{0,3})$/;
+  function tcWord(w, first) {
+    var small = (TC && TC.small) || [], kept = (TC && TC.kept) || [];
+    var core = w.replace(/^[()\[\],;:.–—]+/, "").replace(/[()\[\],;:.–—]+$/, "");
+    if (!core) return w;
+    var up = core.toUpperCase(), out;
+    if (kept.indexOf(up) >= 0 || (ROMAN.test(up) && up.length <= 4 && isUpperWord(core))) out = up;
+    else if (small.indexOf(core.toLowerCase()) >= 0 && !first) out = core.toLowerCase();
+    else if (/[-\/]/.test(core)) out = core.replace(/[^-\/]+/g, function (m) { return tcWord(m, true); });
+    else if (!isUpperWord(core) && hasUpper(core.slice(1))) out = core;
+    else out = core.charAt(0).toUpperCase() + core.slice(1).toLowerCase();
+    return w.replace(core, function () { return out; });
+  }
+  function titleCase(s) {
+    if (!s || !String(s).trim()) return s;
+    var out = [];
+    String(s).trim().split(/\s+/).forEach(function (w, i) {
+      var prev = out[i - 1] || "";
+      out.push(tcWord(w, i === 0 || /[:–—]$/.test(prev) || prev === "-" || prev === "–" || prev === "—"));
+    });
+    return out.join(" ");
+  }
+  function savedLine(sv) {
+    return el("span", { cls: "csb-sub csb-saved", text: "Saved by a person" + (sv.by ? ", " + sv.by : "") + (day(sv.at) ? ", " + day(sv.at) : "") + "." });
+  }
+
   function el(tag, attrs, kids) {
     var e = document.createElement(tag);
     if (attrs) for (var k in attrs) {
@@ -105,6 +241,7 @@
   /* ── the model: the file's rows as objects, keyed by college ── */
   function model(f) {
     f = f || {};
+    COMMON = f.common_codes || null; TC = f.title_case || null;
     var cols = f.columns || [], by = {}, list = [];
     (f.colleges || []).forEach(function (c) {
       var rows = (c.rows || []).map(function (r) {
@@ -158,17 +295,20 @@
         var heads = r.side === "state" ? fmt(r.state_courses) + " in COCI" + bands(r)
           : fmt(r.catalog_courses) + (r.side === "both" ? " in the catalog, " + fmt(r.state_courses) + " in COCI" + bands(r) : "")
             + (r.address && !r.catalog_courses ? (r.page_codes && r.page_codes.length ? "; its page prints its courses under " + r.page_codes.join(" and ") : "; its page is not read yet") : "");
-        var st = needsTitle(r) ? stateOf(r) : null;
-        var title = st ? el("td", { cls: "csb-tba" }, [
+        var sv = savedOf(r);
+        var st = needsTitle(r) && !(sv && sv.title) ? stateOf(r) : null;
+        var title = sv && sv.title ? el("td", { "data-saved": "title" }, [sv.title, " ", savedLine(sv)])
+          : st ? el("td", { cls: "csb-tba" }, [
           el("span", { cls: "csb-chip", role: "note", tabindex: "0", "data-state": r.title_state || "not_read", "aria-label": st.word + ". " + st.tip, title: st.tip, text: st.word }),
           r.candidate ? el("span", { cls: "csb-sub", text: "A line near it in the catalog: " + r.candidate }) : null,
           recOf(r).title ? recNote("title", recOf(r).title.title, recOf(r).title) : null])
           : el("td", { text: r.printed_name });
-        return el("tr", { "data-code": r.code, "data-side": r.side, "data-title-state": r.title_state || null }, [
+        return el("tr", { "data-code": r.code, "data-side": r.side, "data-title-state": r.title_state || null, "data-saved": sv ? "yes" : null }, [
           el("td", null, [S.view === r.slug ? r.college : go("#commons/subjects/" + r.slug, r.college)]),
           el("th", { scope: "row" }, [codeWord(r)]),
           title,
-          el("td", null, [r.common ? r.common + (r.discipline ? " " + r.discipline : "") : "",
+          sv && sv.common ? el("td", { "data-saved": "common" }, [sv.common + (COMMON && COMMON[sv.common] ? " " + COMMON[sv.common] : ""), " ", savedLine(sv)])
+          : el("td", null, [r.common ? r.common + (r.discipline ? " " + r.discipline : "") : "",
             !r.common && recOf(r).common ? recNote("common", recOf(r).common.code + " " + recOf(r).common.discipline, recOf(r).common) : null]),
           el("td", { text: heads }),
           el("td", { text: st && r.title_state === "not_read" ? st.word : SIDES[r.side] || r.side })]);
@@ -300,6 +440,105 @@
       }))]);
     return el("div", { cls: "csb-wrap csb-wrap-in", role: "region", "aria-label": label, tabindex: "0" }, [tbl]);
   }
+  /* Edit and Save, above the course tables: the local title and the common subject code a person settles. */
+  function editBlock(c, row) {
+    var box = el("section", { cls: "csb-edit", id: "csb-edit", "aria-labelledby": "csb-edit-h" }, [
+      el("h4", { cls: "csb-edit-head", id: "csb-edit-h", text: "Settle this code" })]);
+    var band = bandOf(row);
+    if (band === "noncredit") {
+      box.appendChild(el("p", { cls: "csb-note", id: "csb-edit-hold", text: "Every course COCI lists under " + row.code + " is noncredit. Noncredit titles and common subject codes are on hold until the draft noncredit subject title list is settled, so this code has no Edit yet." }));
+      return box;
+    }
+    if (String(row.code).indexOf("|") >= 0) {
+      box.appendChild(el("p", { cls: "csb-note", text: "This code holds a character the saved key cannot carry, so it cannot be saved here." }));
+      return box;
+    }
+    if (!reviewer()) {
+      box.appendChild(el("p", { cls: "csb-note", id: "csb-edit-signin", text: "Edit opens once you sign in as a reviewer, from the sign-in link emailed to you." }));
+      return box;
+    }
+    var key = saveKey(c.slug, row.code, band), sv = SAVED[c.slug + "|" + row.code + "|" + band] || null, rec = recOf(row);
+    var tVal = sv && sv.title ? sv.title : row.printed_name || (rec.title && rec.title.title) || "";
+    var kVal = sv && sv.common ? sv.common : row.common || (rec.common && rec.common.code) || "";
+    var fromRec = [];
+    if (!(sv && sv.title) && !row.printed_name && rec.title && rec.title.title) fromRec.push("the local title");
+    if (!(sv && sv.common) && !row.common && rec.common && rec.common.code) fromRec.push("the common subject code");
+    box.appendChild(el("p", { cls: "csb-note", id: "csb-edit-band", text: band === "whole"
+      ? "COCI lists no course under " + row.code + ", so a save settles the whole code."
+      : (row.noncredit_courses || 0) > 0 ? row.code + " holds credit and noncredit courses in COCI. A save settles its credit courses; noncredit decisions are on hold."
+      : "A save settles " + row.code + " for its credit courses. A person’s save wins over the catalog, the subject map and every recommendation." }));
+    if (fromRec.length) box.appendChild(el("p", { cls: "csb-note csb-rec", id: "csb-edit-rec", text: "Filled in from the recommendation: " + fromRec.join(" and ") + ". It stays a recommendation until you save it." }));
+    var ti = el("input", { type: "text", id: "csb-ed-title", cls: "csb-input", maxlength: "120", autocomplete: "off", "aria-describedby": "csb-ed-title-msg" });
+    ti.value = tVal;
+    var co = el("input", { type: "text", id: "csb-ed-code", cls: "csb-input csb-input-code", maxlength: "4", autocomplete: "off", spellcheck: "false",
+      autocapitalize: "characters", list: COMMON ? "csb-ed-codes" : null, "aria-describedby": "csb-ed-code-msg" });
+    co.value = kVal;
+    var tmsg = el("p", { cls: "csb-ed-msg", id: "csb-ed-title-msg" }), cmsg = el("p", { cls: "csb-ed-msg", id: "csb-ed-code-msg" });
+    var status = el("p", { cls: "csb-ed-msg", id: "csb-ed-status", role: "status", tabindex: "-1", text: SAID[key] || (LAPSED ? "Your sign-in has ended. Sign in again, then save." : "") });
+    var save = el("button", { type: "button", cls: "csb-word", id: "csb-ed-save", text: "Save" });
+    var undo = sv ? el("button", { type: "button", cls: "csb-word", id: "csb-ed-undo", text: "Take it back" }) : null;
+    box.appendChild(el("div", { cls: "csb-ed-field" }, [el("label", { "for": "csb-ed-title", text: "Local title" }), ti, tmsg]));
+    box.appendChild(el("div", { cls: "csb-ed-field" }, [el("label", { "for": "csb-ed-code", text: "Common subject code" }), co, cmsg]));
+    if (COMMON) box.appendChild(el("datalist", { id: "csb-ed-codes" }, Object.keys(COMMON).sort().map(function (k) { return el("option", { value: k, label: COMMON[k] }); })));
+    box.appendChild(el("p", { cls: "csb-ed-row" }, [save, undo]));
+    box.appendChild(status);
+    var stay = S.view + "/" + S.code;
+    function redraw(focusId) {
+      if (!VIEW.root || !VIEW.M) return;
+      render(VIEW.root, VIEW.M, stay);
+      var f = VIEW.root.querySelector("#" + focusId) || VIEW.root.querySelector("#csb-ed-status");
+      if (f && f.focus) f.focus();
+    }
+    function failed(res) {
+      if (res && res.lapsed) { LAPSED = true; return "Not saved: your sign-in has ended. Sign in again, then save."; }
+      return "Not saved: the server answered " + (res && res.status) + ". Only a reviewer on the list may save.";
+    }
+    save.addEventListener("click", function () {
+      var t = String(ti.value || "").trim().replace(/\s+/g, " "), k = String(co.value || "").trim().toUpperCase();
+      tmsg.textContent = ""; cmsg.textContent = ""; status.textContent = "";
+      var bad = false;
+      if (t) {
+        var tc = titleCase(t);
+        if (tc !== t) {
+          bad = true;
+          var use = el("button", { type: "button", cls: "csb-word", id: "csb-ed-use", text: "Use “" + tc + "”" });
+          use.addEventListener("click", function () { ti.value = tc; tmsg.textContent = ""; ti.focus(); });
+          tmsg.appendChild(document.createTextNode((isUpperWord(t) ? "A title is saved in Title Case, not in capitals." : "A title is saved in Title Case.") + " Nothing was saved. "));
+          tmsg.appendChild(use);
+        }
+      }
+      if (k) {
+        if (!COMMON) { bad = true; cmsg.textContent = "The list of common subject codes could not be read, so no code can be checked. Nothing was saved."; }
+        else if (!COMMON[k]) { bad = true; cmsg.textContent = k + " is not a common subject code on the Common Subjects Reference. Type a code it holds, such as KINE for Kinesiology. Nothing was saved."; }
+      }
+      if (!t && !k) { bad = true; status.textContent = "Type a local title or a common subject code, then save."; }
+      if (bad) return;
+      var value = {};
+      if (t) value.local_title = t;
+      if (k) value.common_code = k;
+      save.disabled = true;
+      status.textContent = "Saving…";
+      writeSave(key, value).then(function (res) {
+        if (!res.ok) { save.disabled = false; status.textContent = failed(res); return; }
+        LAPSED = false;
+        SAVED[c.slug + "|" + row.code + "|" + band] = { title: value.local_title || "", common: value.common_code || "", at: new Date().toISOString(), by: res.email || "" };
+        SAID[key] = "Saved. The list shows your decision in place of the files.";
+        redraw("csb-ed-status");
+      }, function (e) { save.disabled = false; status.textContent = "Not saved: " + ((e && e.message) || "the network failed") + "."; });
+    });
+    if (undo) undo.addEventListener("click", function () {
+      undo.disabled = true;
+      status.textContent = "Taking it back…";
+      takeBack(key).then(function (res) {
+        if (!res.ok) { undo.disabled = false; status.textContent = failed(res).replace("Not saved", "Not taken back"); return; }
+        if (!res.n) { undo.disabled = false; status.textContent = "Nothing was taken back: only the reviewer who saved this decision can take it back."; return; }
+        delete SAVED[c.slug + "|" + row.code + "|" + band];
+        SAID[key] = "Taken back. The row reads from the files again.";
+        redraw("csb-ed-status");
+      }, function (e) { undo.disabled = false; status.textContent = "Not taken back: " + ((e && e.message) || "the network failed") + "."; });
+    });
+    return box;
+  }
   function panelDraw(root, M) {
     var old = root.querySelector("#csb-panel");
     if (old) old.parentNode.removeChild(old);
@@ -309,13 +548,17 @@
     var close = el("button", { type: "button", cls: "csb-word", id: "csb-panel-close", text: "Close" });
     close.addEventListener("click", function () { open(slug); });
     var body = el("div", { id: "csb-panel-body" }, [el("p", { cls: "csb-note", role: "status", text: "Reading the courses…" })]);
-    var name = row && row.printed_name ? row.printed_name : "";
+    var sv = row ? savedOf(row) : null;
+    var name = sv && sv.title ? sv.title : row && row.printed_name ? row.printed_name : "";
+    var common = sv && sv.common ? sv.common + (COMMON && COMMON[sv.common] ? " " + COMMON[sv.common] : "")
+      : row && row.common ? row.common + (row.discipline ? " " + row.discipline : "") : "";
     var panel = el("aside", { cls: "csb-panel", id: "csb-panel", role: "dialog", "aria-labelledby": "csb-panel-h" }, [
       el("div", { cls: "csb-panel-in" }, [
         el("div", { cls: "csb-panel-top" }, [el("p", { cls: "csb-eyebrow", text: "Courses under a local code" }), close]),
         el("h3", { id: "csb-panel-h", tabindex: "-1", text: code + (name ? ", " + name : "") }),
         el("p", { cls: "csb-note", text: c.college + ". " + (name ? "" : "No local title yet. ")
-          + (row && row.common ? "Common subject code " + row.common + (row.discipline ? " " + row.discipline : "") + "." : "No common subject code yet.") }),
+          + (common ? "Common subject code " + common + "." : "No common subject code yet.") }),
+        row ? editBlock(c, row) : null,
         body])]);
     panel.addEventListener("keydown", function (e) { if (e.key === "Escape") { e.preventDefault(); open(slug); } });
     root.appendChild(panel);
@@ -373,7 +616,9 @@
       fmt(T.with_common) + " codes have a common subject code from the subject map. ",
       el("a", { href: "#canonical-subj4", text: "Common Subjects Reference" }), ". ",
       go("#commons/subjects/" + HELD, "Codes the M-ID mint holds on"), ". ",
-      go("#commons/subjects/" + NC, "Noncredit subject titles"), "."]));
+      go("#commons/subjects/" + NC, "Noncredit subject titles"), ".",
+      Object.keys(SAVED).length ? " " + fmt(Object.keys(SAVED).length) + (Object.keys(SAVED).length === 1 ? " code is" : " codes are") + " settled by a person’s save." : ""]));
+    if (SAVE_ERR) wrap.appendChild(el("p", { cls: "csb-note", id: "csb-save-err", role: "status", text: "The saves people made could not be read (" + SAVE_ERR + "). The list below is drawn from the files alone." }));
     if (missing) wrap.appendChild(el("p", { cls: "csb-note", role: "status", text: "No college with a catalog on file is named " + missing + ". Every college is below." }));
     if (c) {
       wrap.appendChild(el("p", { cls: "csb-note", text: c.year + " catalog, read " + day(c.readAt) + ". " + (c.named ? fmt(c.named) + " of " + fmt(c.codes) + " codes have a local title." : "No subject heading is read for this catalog yet.") }));
@@ -466,9 +711,24 @@
     }).then(function (f) {
       /* The recommendations are a second file; the list draws without them when they cannot be read. */
       return fetch(REC_FILE, { cache: "no-cache" }).then(function (r) { return r && r.ok ? r.json() : null; }, function () { return null; })
-        .then(function (rf) { REC = recModel(rf); return model(f); });
+        .then(function (rf) {
+          REC = recModel(rf);
+          var M = model(f);
+          /* The saves are a third read; a failed one leaves the list drawn from the files and says so. */
+          return readSaves().then(function (m) { SAVED = m || {}; SAVE_ERR = ""; },
+            function (e) { SAVED = {}; SAVE_ERR = e && e.message ? e.message : String(e); }).then(function () { return M; });
+        });
     });
   }
+  /* A sign-in or sign-out while a code is open redraws it, so Edit appears or goes without a reload. */
+  try {
+    window.addEventListener("cpl-session-changed", function () {
+      if (VIEW.root && VIEW.M && VIEW.root.querySelector && VIEW.root.querySelector(".csb") && VIEW.root.isConnected !== false) {
+        LAPSED = false;
+        render(VIEW.root, VIEW.M, S.view + (S.code ? "/" + S.code : ""));
+      }
+    });
+  } catch (e) { /* the page still draws */ }
   var cache = null;
   function boot(root, view, opts) {
     opts = opts || {};
@@ -530,6 +790,19 @@
     ".csb-courses { font-size:.88rem; } .csb-courses .csb-c-num { width:16%; } .csb-courses .csb-c-code { width:16%; } .csb-courses .csb-c-mid { width:30%; }",
     ".csb-nc-cat th { background:var(--cmn-surface-2, var(--cmn-surface)); color:var(--cmn-heading); font-weight:700; }",
     ".csb-foot { margin:0; color:var(--cmn-muted); font-size:.85rem; max-width:var(--cpl-measure,none); }",
+    ".csb-saved { margin-top:4px; color:var(--cmn-ink-2); }",
+    ".csb-edit { display:grid; gap:8px; padding:12px 14px; background:var(--cmn-surface); border:1px solid var(--cmn-line); border-radius:10px; min-width:0; }",
+    ".csb-edit-head { margin:0; font-size:1rem; color:var(--cmn-heading); }",
+    ".csb-ed-field { display:grid; gap:4px; min-width:0; }",
+    ".csb-ed-field label { font-weight:600; color:var(--cmn-heading); font-size:.92rem; }",
+    ".csb-input { font:inherit; font-size:.95rem; color:var(--cmn-ink); background:var(--cmn-surface); border:1px solid var(--cmn-muted); border-radius:6px; padding:6px 8px; min-height:32px; box-sizing:border-box; width:100%; max-width:28rem; }",
+    ".csb-input-code { max-width:8rem; text-transform:uppercase; letter-spacing:.04em; }",
+    ".csb-input:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:2px; }",
+    ".csb-ed-row { margin:0; display:flex; flex-wrap:wrap; gap:6px 18px; align-items:baseline; }",
+    ".csb-ed-msg { margin:0; color:var(--cmn-ink-2); font-size:.9rem; max-width:var(--cpl-measure,none); }",
+    ".csb-ed-msg:empty { display:none; }",
+    ".csb-ed-msg:focus { outline:none; } .csb-ed-msg:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:2px; }",
+    ".csb-word:disabled { color:var(--cmn-muted); cursor:default; }",
     "@media (max-width: 560px) { .csb-table { min-width:36rem; } .csb-held { min-width:44rem; } .csb-nc { min-width:40rem; } .csb-courses { min-width:26rem; } .csb-table th, .csb-table td { padding:8px; } }"
   ].join("\n");
   function ensureCss() {
@@ -540,7 +813,8 @@
   window.CPL_COMMONS_SUBJECTS = {
     boot: boot, render: render, model: model, heldModel: heldModel, recModel: recModel, REC_FILE: REC_FILE,
     _recs: function (f) { REC = recModel(f); }, address: address, open: open, load: load, FILE: FILE, HELD_FILE: HELD_FILE, SIDES: SIDES, CSS: CSS,
-    _state: S, COURSE_DIR: COURSE_DIR,
-    _reset: function () { cache = null; heldCache = null; ncCache = null; courseCache = {}; VIEW.M = null; VIEW.H = null; VIEW.N = null; S.view = ""; S.code = ""; S.band = ""; }
+    _state: S, COURSE_DIR: COURSE_DIR, bandOf: bandOf, saveKey: saveKey, titleCase: titleCase, savesModel: savesModel,
+    SAVE_FIELD: SAVE_FIELD, SAVE_PREFIX: SAVE_PREFIX,
+    _reset: function () { SAVED = {}; SAVE_ERR = ""; SAID = {}; LAPSED = false; COMMON = null; TC = null; cache = null; heldCache = null; ncCache = null; courseCache = {}; VIEW.M = null; VIEW.H = null; VIEW.N = null; S.view = ""; S.code = ""; S.band = ""; }
   };
 })();

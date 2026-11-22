@@ -1223,6 +1223,19 @@ async function seedCommonsSubjects(page, theme) {
     const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
     if (x) x.click();
   });
+  /* S701: the ATH route opens Edit and Save signed in, then presses Save on a title in capitals, so the form, its
+     refusal and the Use Title Case control are all measured. Nothing is sent: the refusal makes no request. */
+  if (/subjects\/cerritos\/ATH$/.test(await page.evaluate(() => location.hash))) {
+    await page.waitForSelector("#csb-panel", { state: "attached", timeout: 60000 });
+    await page.evaluate(() => {
+      const s = { email: "seed@example.org", access_token: "seed.seed.seed", refresh_token: "seed", exp: Date.now() + 3600 * 1000 };
+      if (window.CPL_SESSION) { window.CPL_SESSION.get = () => s; window.CPL_SESSION.isFresh = () => true; }
+      window.dispatchEvent(new Event("cpl-session-changed"));
+    });
+    await page.waitForSelector("#csb-ed-save", { state: "attached", timeout: 60000 });
+    await page.evaluate(() => { const t = document.getElementById("csb-ed-title"); t.value = "ATHLETICS"; document.getElementById("csb-ed-save").click(); });
+    await page.waitForSelector("#csb-ed-use", { state: "attached", timeout: 60000 });
+  }
   await page.waitForTimeout(300);
 }
 
@@ -3765,7 +3778,9 @@ module.exports = {
       /* S700: a local code's course panel, credit and noncredit apart. */
       { hash: "commons/subjects/cerritos/MATH", name: "subjects-course-panel" },
       /* S700: the draft noncredit subject title list. */
-      { hash: "commons/subjects/noncredit", name: "subjects-noncredit" }],
+      { hash: "commons/subjects/noncredit", name: "subjects-noncredit" },
+      /* S701: Edit and Save in a code's panel, signed in, with a title refused for its capitals. */
+      { hash: "commons/subjects/cerritos/ATH", name: "subjects-edit" }],
     widths: [320, 390, 768, 1440],
     seed: (page) => seedCommonsSubjects(page, "light"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
@@ -3773,7 +3788,8 @@ module.exports = {
   "commons-subjects-dark": {
     file: "index.html",
     title: "CPL Commons: the Subjects list, dark",
-    routes: [{ hash: "commons/subjects/cerritos", name: "subjects-cerritos-dark" }, { hash: "commons/subjects/cerritos/MATH", name: "subjects-course-panel-dark" }],
+    routes: [{ hash: "commons/subjects/cerritos", name: "subjects-cerritos-dark" }, { hash: "commons/subjects/cerritos/MATH", name: "subjects-course-panel-dark" },
+      { hash: "commons/subjects/cerritos/ATH", name: "subjects-edit-dark" }],
     widths: [390, 1440],
     seed: (page) => seedCommonsSubjects(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
