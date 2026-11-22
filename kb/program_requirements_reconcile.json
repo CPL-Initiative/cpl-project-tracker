@@ -914,8 +914,22 @@
    "why": "S505 SkyBoysenberry, 2026-10-28. Glendale's 2025-2026 catalog prints its program pages under older subject prefixes and older numbers than its own course descriptions and the state's file keep. The program pages print PSYCH 170 and TART 101 (Sports Coaching, page 88; college-page-read 40690480267); the course descriptions print '170 \u00b7 SPORTS PSYCHOLOGY \u00b7 3.0 Units \u00b7 PSYC 170 is designed...' (page 252) and '101 \u00b7 INTRODUCTION TO THEATRE \u00b7 3.0 Units \u00b7 THTR 101 introduces...' (college-page-read 40692306069), the same numbers and titles the state's file lists as PSYC 170 Sports Psychology and THTR 101 Introduction To Theatre (coci_program_courses, read 2026-10-28). Filed records placing PSYCH codes the file lists as PSYC: 11; TART for THTR: 9. The renumbers are the descriptions' own words: 'C1000 \u00b7 ACADEMIC READING AND WRITING \u00b7 4.0 Units \u00b7 (Previously ENGL 101)' (page 188, read 40690480267), 'C1001 \u00b7 CRITICAL THINKING AND WRITING \u00b7 3.0 Units \u00b7 (Previously ENGL 104)' and 'C1000 \u00b7 AMERICAN GOVERNMENT AND POLITICS \u00b7 3.0 Units \u00b7 (Previously POL S 101)' (read 40692306069). ART for ARTH (5 records) is left out: neither read printed an ARTH description, and ART is a live Glendale prefix of its own.",
    "prefix_aliases": {
     "PSYCH": "PSYC",
-    "TART": "THTR"
+    "TART": "THTR",
+    "STV": "OBT"
    },
+   "prefix_aliases_cited": [
+    {
+     "session": "S703",
+     "date": "2026-11-22",
+     "catalog_sources": ["college_page_read"],
+     "plan": "kb/college_reads/glendale_eleven_pages_s703.json",
+     "printed": "STV",
+     "file": "OBT",
+     "evidence": 4,
+     "source": "S703 (worker glendale), d-glendale-obt-stv-prefix-alias-s703. Customer Service 38973's own Coursedog tab NCCS (its program data names 38973; college page read 45016708970) prints 'STV11 Beginning Keyboarding 50, STV35 On-The-Job Communication 32, STV40 21st Century Employment Strategies 96, STV50 Customer Service Skills 32, Total Required Hours 210', where the state's file lists OBT 11, OBT 35, OBT 40 and OBT 50 (coci_program_courses, read by the conductor 2026-11-22). Four numbers of four, the page's whole list. The scorer renames a placed STV code only where the file lists the OBT code and not the STV one; on the committed records the pair renames nothing (no filed Glendale record places an STV code whose OBT form it lists).",
+     "examples": ["STV11 = OBT 11", "STV35 = OBT 35", "STV40 = OBT 40", "STV50 = OBT 50"]
+    }
+   ],
    "course_renumbers": {
     "ENGL101": "ENGL C1000",
     "ENGL104": "ENGL C1001",

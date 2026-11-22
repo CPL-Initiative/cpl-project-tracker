@@ -68,7 +68,8 @@
     "STV40",
     "STV50"
    ],
-   "which_is_stale": "Neither's courses: the page prints the same four numbers under STV, the prefix that replaced OBT. A prefix alias OBT to STV in Glendale's reconcile entry would place all four."
+   "which_is_stale": "Neither's courses: the page prints the same four numbers under STV, the prefix that replaced OBT. Glendale's reconcile entry now carries the pair STV for OBT (d-glendale-obt-stv-prefix-alias-s703), so a fresh capture names all four on NCCS; the program waits for a read with only=38973.",
+   "lever": "prefix alias STV for OBT, filed S703"
   },
   {
    "control_number": "24327",

@@ -443,6 +443,10 @@ jobs:
       # Pure-stdlib python; same non-required check.
       - name: Program requirements pilot (course codes, page finder, scorer)
         run: python3 tests/program_requirements_pilot_test.py
+      # Glendale's STV-for-OBT prefix alias (S703): Glendale's alone, it names 38973's four courses on its own
+      # page, and it renames nothing in a filed record.
+      - name: Glendale's STV prefix alias (S703)
+        run: python3 tests/glendale_stv_alias_s703_test.py
       # The course-id route (S653): the scorer meets a printed code by the Program Course File's
       # own id for the listed course, before the prefix aliases. Rebuilds the proof that each
       # retired alias pair's matches are reproduced, and the self-recall test with its floor,
