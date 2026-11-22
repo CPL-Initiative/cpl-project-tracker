@@ -86,6 +86,9 @@ withhold kb/reference/moc_crosswalk.json
 withhold kb/reference/restricted_table_access.json
 # The blocked-catalog hunt list (S678): the builders read it; the pages read commons_data.json and commons.json.
 withhold kb/reference/blocked_catalog_hunt.json
+# A college's own department list of its subject codes (S705, Cerritos's schedule): the title builder reads it; the
+# pages read kb/status/local_subject_titles.json.
+withhold kb/reference/college_department_lists
 # The bulk COCI program and program-course dumps program-course-fetch.yml commits; no page reads them.
 withhold kb/reference/coci_program_*.csv
 withhold kb/reference/subject_code_decisions_cerritos_2026-11-21.json

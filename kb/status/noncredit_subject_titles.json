@@ -29,23 +29,23 @@
   },
   "Citizenship for Immigrants": {
    "mq_discipline": "Citizenship: Noncredit",
-   "common_code": null,
-   "note": "no common subject code yet"
+   "common_code": "CTZN",
+   "note": null
   },
   "Health & Safety": {
    "mq_discipline": "Health and Safety: Noncredit",
-   "common_code": null,
-   "note": "no common subject code yet"
+   "common_code": "HLSN",
+   "note": null
   },
   "Home Economics": {
    "mq_discipline": "Home Economics: Noncredit",
-   "common_code": null,
-   "note": "no common subject code yet"
+   "common_code": "HMEN",
+   "note": null
   },
   "Courses for Persons with Substantial Disabilities": {
    "mq_discipline": "Disabled Student Programs and Services: Noncredit",
-   "common_code": null,
-   "note": "no common subject code yet"
+   "common_code": "DSPN",
+   "note": null
   },
   "Workforce Preparation": {
    "mq_discipline": null,
@@ -84,8 +84,8 @@
   "codes": 129,
   "titles": 114,
   "titles_in_two_or_more_programs": 7,
-  "with_common_code": 78,
-  "category_without_code": 9,
+  "with_common_code": 85,
+  "category_without_code": 2,
   "no_noncredit_course_in_coci": 27,
   "several_categories": 9,
   "by_category": {
@@ -2294,7 +2294,7 @@
     ]
    ],
    "mq_discipline": "Citizenship: Noncredit",
-   "common_code": null,
+   "common_code": "CTZN",
    "state": "one category"
   },
   {
@@ -2320,7 +2320,7 @@
     ]
    ],
    "mq_discipline": "Health and Safety: Noncredit",
-   "common_code": null,
+   "common_code": "HLSN",
    "state": "one category"
   },
   {
@@ -2346,7 +2346,7 @@
     ]
    ],
    "mq_discipline": "Health and Safety: Noncredit",
-   "common_code": null,
+   "common_code": "HLSN",
    "state": "one category"
   },
   {
@@ -2381,7 +2381,7 @@
     ]
    ],
    "mq_discipline": "Disabled Student Programs and Services: Noncredit",
-   "common_code": null,
+   "common_code": "DSPN",
    "state": "several categories"
   },
   {
@@ -2407,7 +2407,7 @@
     ]
    ],
    "mq_discipline": "Disabled Student Programs and Services: Noncredit",
-   "common_code": null,
+   "common_code": "DSPN",
    "state": "one category"
   },
   {
@@ -2437,7 +2437,7 @@
     ]
    ],
    "mq_discipline": "Disabled Student Programs and Services: Noncredit",
-   "common_code": null,
+   "common_code": "DSPN",
    "state": "one category"
   },
   {
@@ -2463,7 +2463,7 @@
     ]
    ],
    "mq_discipline": "Disabled Student Programs and Services: Noncredit",
-   "common_code": null,
+   "common_code": "DSPN",
    "state": "one category"
   },
   {

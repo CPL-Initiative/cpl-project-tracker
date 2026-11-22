@@ -36,7 +36,11 @@ const SEED = { _counts: {}, disciplines: { "Welding": entry("WELD"), "Mathematic
   check("(2) ⭐ a stored width opens the panel at it", u.d.getElementById("csl-panel").style.width === "640px");
   // (3) the narrow-window rule and the grip's look
   const css = Array.from(t.d.querySelectorAll("style")).map((s) => s.textContent).join("\n");
-  check("(3) on a narrow window the panel takes the full row and the grip hides", /@media \(max-width: 900px\)\{\.csl-panel\{flex:1 1 100% !important;width:auto !important;max-width:none !important\}\.csl-pgrip\{display:none\}\}/.test(css));
+  check("(3) on a narrow window the panel takes the full row and the grip hides", /@media \(max-width: 900px\)\{\.csl-panel\{flex:1 1 100% !important;width:auto !important;max-width:none !important;position:relative;max-height:none\}\.csl-panel > \.csl-pbody\{overflow-y:visible\}\.csl-pgrip\{display:none\}\}/.test(css));
+  // S705 (Sam, 2026-11-22: "Side bar top rows all need to be frozen so the close button doesn't get lost on scroll").
+  check("(3) on a wide window the panel holds its place and its body scrolls under a fixed trail and bar",
+    /\.csl-panel\{position:sticky;top:8px;display:flex;flex-direction:column;max-height:calc\(100vh - 16px\)/.test(css)
+    && /\.csl-panel > \.csl-pbody\{flex:1 1 auto;min-height:0;overflow-y:auto/.test(css));
   check("(3) the grip is drawn on tokens, with a visible focus", /\.csl-pgrip\{position:absolute;left:0;top:0;bottom:0;width:12px;cursor:col-resize;touch-action:none/.test(css)
     && /\.csl-pgrip:focus-visible\{outline:2px solid var\(--seal-blue\)/.test(css));
   H.report(results);

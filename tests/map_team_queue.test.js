@@ -115,6 +115,7 @@ const COLLEGE_ITEMS = [
   { college: "Cerritos College", loaded_at: "2026-10-09T18:00:00Z" }
 ];
 const FULL = {
+  review: { written_at: "2026-11-22T06:00:00Z", colleges: [], held: [{ raw: "A valid exhibit", credit_recs: [["X 1", "3 hours"]] }] },
   collegeItems: COLLEGE_ITEMS,
   gaps: GAPS, fallback: FALLBACK, feedback: FEEDBACK, owners: OWNERS, register: REGISTER,
   nudges: [], loads: [{ table_name: "map_student_credit", loaded_at: "2026-08-08T00:00:00Z" }],
@@ -407,6 +408,23 @@ function byId(items) {
     check("paged read: a failed page is null, never a short list", rows === null);
   });
 }).then(report);
+
+// ── S705: exhibits with no credit recommendation (Sam, 2026-11-22: "add the MAP team worklist for flagged exhibits") ──
+{
+  const REV = { written_at: "2026-11-22T06:00:00Z", colleges: ["Las Positas College", "Norco College"], held: [
+    { raw: "HS Articulation - Welding", colleges: [0], ids: ["MAPCXH-W-1-001"], credit_recs: [], local_courses: [] },
+    { raw: "Fire Technology 1", colleges: [0], ids: ["MAPCXH-F-1-001"], credit_recs: [["FST 1", "3 hours"]], local_courses: [[0, "FST 1", "Fire", 3]] },
+    { raw: "Old card", colleges: [1], ids: ["MAPX-1"] }] };
+  const q1 = byId(makeWin().CPL_MAP_QUEUE._buildQueue(Object.assign({}, FULL, { review: REV }), NOW));
+  check("⭐ S705: an exhibit with no credit recommendation is counted on the MAP team's queue, named with its college and id",
+    q1["exhibits-no-cr"] && q1["exhibits-no-cr"].count === 1 && /HS Articulation - Welding \(Las Positas College; MAPCXH-W-1-001\)/.test(q1["exhibits-no-cr"].detail)
+    && q1["exhibits-no-cr"].personWaiting === true && q1["exhibits-no-cr"].where.tab === "exhibits");
+  const old = { written_at: REV.written_at, colleges: REV.colleges, held: [{ raw: "Old card", ids: ["MAPX-1"] }] };
+  const q2 = byId(makeWin().CPL_MAP_QUEUE._buildQueue(Object.assign({}, FULL, { review: old }), NOW));
+  check("S705: a review file built before credit_recs reads unknown, never zero", q2["exhibits-no-cr"].state === "unknown" && q2["exhibits-no-cr"].count === null);
+  const q3 = byId(makeWin().CPL_MAP_QUEUE._buildQueue(Object.assign({}, FULL, { review: null }), NOW));
+  check("S705: an unread review file reads unknown", q3["exhibits-no-cr"].state === "unknown");
+}
 
 // ── Report ──
 function report() {
