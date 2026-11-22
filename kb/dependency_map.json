@@ -990,7 +990,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4722,
+     "line": 4935,
      "tabs": [
       "exhibits"
      ]
@@ -1685,6 +1685,16 @@
      ]
     },
     {
+     "id": "module:map_team_queue.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 657,
+     "tabs": [
+      "map-queue"
+     ]
+    },
+    {
      "id": "script:chatbox/scrape_landing_pages.py",
      "kind": "script",
      "direction": "read",
@@ -1956,7 +1966,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2458
+     "line": 2465
     }
    ],
    "main_committers": []
@@ -4726,7 +4736,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2122
+     "line": 2129
     }
    ],
    "main_committers": []
@@ -6193,7 +6203,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 31
+     "line": 36
     },
     {
      "id": "script:kb/_closest_mid.py",
@@ -6322,7 +6332,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1405,
+     "line": 1436,
      "tabs": [
       "exhibits"
      ]
@@ -6712,7 +6722,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 3976,
+     "line": 4189,
      "tabs": [
       "exhibits"
      ]
@@ -6980,7 +6990,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4714,
+     "line": 4927,
      "tabs": [
       "exhibits"
      ]
@@ -7073,7 +7083,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5236,
+     "line": 5449,
      "tabs": [
       "exhibits"
      ]
@@ -7333,7 +7343,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2397
+     "line": 2404
     },
     {
      "id": "module:college_briefing.js",
@@ -7857,7 +7867,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 921
+     "line": 946
     },
     {
      "id": "script:kb/_sync_subject_decisions.py",
@@ -8423,7 +8433,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1132
+     "line": 1134
     }
    ],
    "served": false,
@@ -8993,7 +9003,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5525,
+     "line": 5738,
      "tabs": [
       "exhibits"
      ]
@@ -12185,7 +12195,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1010
+     "line": 1035
     },
     {
      "id": "script:scripts/build_exhibits_list_preview.py",
@@ -15510,7 +15520,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3754,
+     "line": 3967,
      "tabs": [
       "exhibits"
      ]
@@ -15697,7 +15707,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1544,
+     "line": 1575,
      "tabs": [
       "exhibits"
      ]
@@ -15920,7 +15930,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1020
+     "line": 1046
     },
     {
      "id": "script:kb/_build_sheet181_rename_plan.py",
@@ -16087,7 +16097,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1018
+     "line": 1044
     },
     {
      "id": "script:kb/_build_it_ai_credential_catalog.py",
@@ -17325,7 +17335,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4746,
+     "line": 4959,
      "tabs": [
       "exhibits"
      ]
@@ -17349,7 +17359,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1022
+     "line": 1048
     },
     {
      "id": "script:kb/_build_left_map.py",
@@ -17483,7 +17493,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4742,
+     "line": 4955,
      "tabs": [
       "exhibits"
      ]
@@ -17593,7 +17603,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3749,
+     "line": 3962,
      "tabs": [
       "exhibits"
      ]
@@ -17795,7 +17805,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4163,
+     "line": 4376,
      "tabs": [
       "exhibits"
      ]
@@ -19356,7 +19366,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1594
+     "line": 1596
     },
     {
      "id": "script:kb/_program_requirements_cheap_piles_s683.py",
@@ -20439,6 +20449,13 @@
      "line": 44
     },
     {
+     "id": "script:kb/_build_subject_courses.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 39
+    },
+    {
      "id": "script:kb/_crossdisc_dryrun.py",
      "kind": "script",
      "direction": "read",
@@ -20881,7 +20898,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 622
+     "line": 647
     }
    ],
    "served": true,
@@ -20932,6 +20949,13 @@
      "direction": "read",
      "how": "literal",
      "line": 423
+    },
+    {
+     "id": "script:kb/_build_exhibits_review.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 1039
     },
     {
      "id": "script:kb/_verify_map_exhibit_links.py",
@@ -21110,7 +21134,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 183
+     "line": 184
     },
     {
      "id": "script:kb/_verify_top_division_inference.py",
@@ -21759,7 +21783,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1627,
+     "line": 1632,
      "tabs": [
       "canonical-subj4",
       "coci-lookup",
@@ -22154,7 +22178,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 67
+     "line": 72
     },
     {
      "id": "script:kb/_build_noncredit_categories.py",
@@ -22881,7 +22905,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1023
+     "line": 1049
     },
     {
      "id": "script:kb/_fold_unclassified.py",
@@ -23008,7 +23032,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1011
+     "line": 1036
     },
     {
      "id": "script:kb/_cer_procedures.py",
@@ -23123,7 +23147,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1017
+     "line": 1043
     },
     {
      "id": "script:kb/_build_left_map.py",
@@ -24093,7 +24117,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 543,
+     "line": 588,
      "tabs": [
       "map-queue"
      ]
@@ -24334,7 +24358,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1604
+     "line": 1606
     }
    ],
    "served": false,
@@ -26310,7 +26334,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2598,
+     "line": 2720,
      "tabs": [
       "exhibits"
      ]
@@ -26386,7 +26410,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1013
+     "line": 1038
     },
     {
      "id": "script:kb/_build_oc_medical_assistant_crosswalk.py",
@@ -26539,7 +26563,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1015
+     "line": 1041
     }
    ],
    "producers": [
@@ -31074,7 +31098,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1057
+     "line": 1083
     },
     {
      "id": "script:kb/_build_orphan_parent_worklist.py",
@@ -31463,7 +31487,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2599,
+     "line": 2721,
      "tabs": [
       "exhibits"
      ]
@@ -31532,7 +31556,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1014
+     "line": 1040
     },
     {
      "id": "script:kb/_build_inactive_cards.py",
@@ -32542,7 +32566,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 701,
+     "line": 707,
      "tabs": [
       "exhibits"
      ]
@@ -32572,7 +32596,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 587,
+     "line": 593,
      "tabs": [
       "exhibits"
      ]
@@ -34596,7 +34620,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 677,
+     "line": 683,
      "tabs": [
       "exhibits"
      ]
@@ -34611,7 +34635,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 700,
+     "line": 706,
      "tabs": [
       "exhibits"
      ]
@@ -34826,7 +34850,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 516,
+     "line": 560,
      "tabs": [
       "map-queue"
      ]
@@ -35181,7 +35205,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 229,
+     "line": 254,
      "tabs": [
       "commons"
      ]
@@ -35191,7 +35215,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 252,
+     "line": 277,
      "tabs": [
       "commons"
      ]
@@ -35241,7 +35265,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 492,
+     "line": 498,
      "tabs": [
       "exhibits"
      ]
@@ -35251,7 +35275,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 835,
+     "line": 841,
      "tabs": [
       "exhibits"
      ]
@@ -35367,7 +35391,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 937
+     "line": 962
     },
     {
      "id": "script:kb/_cer_decision_apply.py",
@@ -35968,7 +35992,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 517,
+     "line": 561,
      "tabs": [
       "map-queue"
      ]
@@ -36146,7 +36170,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 510,
+     "line": 554,
      "tabs": [
       "map-queue"
      ]
@@ -36237,7 +36261,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 518,
+     "line": 562,
      "tabs": [
       "map-queue"
      ]
@@ -36432,7 +36456,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 522,
+     "line": 567,
      "tabs": [
       "map-queue"
      ]
@@ -36821,7 +36845,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 514,
+     "line": 558,
      "tabs": [
       "map-queue"
      ]
@@ -39538,6 +39562,7 @@
   "kb/reference/*.xlsx",
   "kb/reference/blocked_catalog_hunt.json",
   "kb/reference/coci_program_*.csv",
+  "kb/reference/college_department_lists",
   "kb/reference/cos_certifications.json",
   "kb/reference/moc_crosswalk.json",
   "kb/reference/restricted_table_access.json",
