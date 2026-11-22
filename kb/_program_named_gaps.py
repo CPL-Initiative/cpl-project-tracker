@@ -111,9 +111,14 @@ GAPS = {
     # S697: the page prints a program total its own printed figures do not add to, read from the page itself and
     # listed with both figures in kb/program_total_differs.json (Clovis's Elementary Teacher Level 2: 19 against 16).
     "total_differs": "The catalog prints a total for this program that its own printed units do not add to.",
+    # S703 (the catalog-wording lever at Santa Monica and Santa Rosa Junior): the catalog counts each choice list at
+    # its printed figure, and its figures add to the printed total, while the list's own courses carry more.
+    "lists_past_their_figure": ("The catalog's figures add up to its printed total, counting each choice list at "
+                                "its printed figure; the courses in a list carry more units than that figure."),
 }
 ARITH_SCORE = {"major_total_differs": 30, "no_units_printed": 40, "no_units_read": 20, "no_hours_read": 20,
-               "catalog_figures_differ": 50, "total_not_printed": 40, "total_differs": 50}
+               "catalog_figures_differ": 50, "total_not_printed": 40, "total_differs": 50,
+               "lists_past_their_figure": 60}
 MAJOR_NOT_EXACT = "the major does not match the catalog's major total exactly"
 NO_UNITS_WHY = re.compile(r"^a required course in '.*' has no units$")
 PRINTED_NO_UNITS = re.compile(r"\b(?:no|without)\s+units\b|\bunits?\s+(?:are\s+|is\s+)?not\s+(?:printed|listed|given)\b"
@@ -398,8 +403,65 @@ def total_differs(filed: dict, listed: dict | None = None) -> str | None:
         S._fig(*pt), S._fig(*ps), e.get("where") or "PDF p.%s" % e.get("page"), e.get("run"))
 
 
+# S703 (the catalog-wording lever; S691's "Santa Monica's 12 lists past their figure, 238 statewide"): a program
+# whose required lists' courses and choice lists' printed figures add to its printed total exactly, while its sum as
+# read passes that total because a choice list's courses carry more units than the list's printed figure (Santa
+# Monica's Psychology AA-T 36265: 9 required, three lists printed at 3 each, "18" printed; a list's 4-unit course
+# makes the sum 19). Santa Monica and Santa Rosa Junior print their totals this way. The record must carry units on
+# every required course and on each of its "or" alternatives; a recommended list counts toward nothing.
+def figures_total(filed: dict):
+    """(the figures' sum (lo, hi), the choice lists whose courses pass their figure) or None: each required list
+    at its courses' units, each choice list at its printed figure."""
+    rec = filed.get("record") or {}
+    hours = S.measure(rec) == "hours"
+    lo = hi = 0.0
+    past = []
+    for b in rec.get("blocks") or []:
+        rule = b.get("rule")
+        if rule == "recommended":
+            continue
+        if rule == "all":
+            spans = [S.choice_units(c, {}, hours) for c in b.get("courses") or []]
+            if not spans or any(x is None for x in spans):
+                return None
+            # A blank "or" alternative is an incomplete reading (units rule A4's), never this gap (S703 self-recall:
+            # College of the Desert 33012 and 45567, San Bernardino Valley 31886 and 43049).
+            if any(S._num(x.get("units")) is None for c in b.get("courses") or [] for x in c.get("alternatives") or []):
+                return None
+            lo, hi = lo + sum(x[0] for x in spans), hi + sum(x[1] for x in spans)
+            continue
+        if rule not in ("choose_courses", "choose_units"):
+            return None
+        st = S._span(b.get("stated"))
+        if st is None:
+            return None
+        got, _ = S.block_units_summed(b, {}, hours)
+        if got is not None and got[0] > st[0] + FIG_EPS:
+            past.append((b.get("name") or "")[:60])
+        lo, hi = lo + st[0], hi + st[1]
+    return (lo, hi), past
+
+
+def lists_past_their_figure(filed: dict) -> str | None:
+    sc = filed.get("score") or {}
+    a = sc.get("arithmetic") or {}
+    if (a.get("pass") or a.get("status") != "unequal" or a.get("against") != "program" or not collectable(sc)
+            or len(a.get("why") or []) != 1):
+        return None
+    comp, st = _pair(a.get("computed")), _pair(a.get("stated"))
+    ft = figures_total(filed)
+    if not comp or not st or not ft or not ft[1] or comp[0] <= st[0] + FIG_EPS:
+        return None
+    (flo, fhi), past = ft
+    if abs(flo - st[0]) > FIG_EPS or abs(fhi - st[1]) > FIG_EPS:
+        return None
+    return ("the figures add to the printed %s, counting %s at %s; the courses as read add to %s" % (
+        S._fig(*st), _listed(["'%s'" % n for n in past]), "its printed figure" if len(past) == 1 else
+        "their printed figures", S._fig(*comp)))
+
+
 RECORD_RULES = (("major_total_differs", major_total_differs), ("total_not_printed", total_not_printed),
-                ("total_differs", total_differs)) + (
+                ("total_differs", total_differs), ("lists_past_their_figure", lists_past_their_figure)) + (
     (("no_units_printed", no_units_printed),) if NO_UNITS_PRINTED_ON else ()) + (("no_units_read", no_units_read),)
 
 
@@ -461,6 +523,47 @@ def _sources(path: str) -> tuple[dict, str | None]:
     return src, year
 
 
+def _figures_past_held(filed: dict, comp, st) -> bool:
+    """The held answer's own reading of lists_past_their_figure (S703), over the raw fields: each required course's
+    units (units, units_max, and its alternatives'), each choice list's stated figure, and a choice list's cheapest courses, by its count
+    or its figure, past that figure."""
+    if not comp or not st or comp[0] <= st[0] + FIG_EPS:
+        return False
+    lo = hi = 0.0
+    past = False
+    for b in (filed.get("record") or {}).get("blocks") or []:
+        if b.get("rule") == "recommended":
+            continue
+        if b.get("rule") == "all":
+            for c in b.get("courses") or []:
+                # A required course or any of its "or" alternatives: the least and the most of them.
+                figs = []
+                for x in [c] + list(c.get("alternatives") or []):
+                    u, um = S._num(x.get("units")), S._num(x.get("units_max"))
+                    if u is None:
+                        return False
+                    figs += [u, um if um is not None else u]
+                lo, hi = lo + min(figs), hi + max(figs)
+            continue
+        figure = b.get("stated") or {}
+        f_lo, f_hi = S._num(figure.get("min")), S._num(figure.get("max"))
+        if f_lo is None and f_hi is None:
+            return False
+        f_lo = f_hi if f_lo is None else f_lo
+        f_hi = f_lo if f_hi is None else f_hi
+        # Only a choose-courses list with a count can pass its figure: a choose-units list counts at its figure.
+        units = [S._num(c.get("units")) for c in b.get("courses") or []]
+        n = S._num(b.get("minimum"))
+        least = None
+        if (b.get("rule") == "choose_courses" and n and not b.get("repeats")
+                and all(u is not None for u in units) and len(units) >= n):
+            least = sum(sorted(units)[:int(n)])
+        if least is not None and least > f_lo + FIG_EPS:
+            past = True
+        lo, hi = lo + f_lo, hi + f_hi
+    return past and abs(lo - st[0]) <= FIG_EPS and abs(hi - st[1]) <= FIG_EPS
+
+
 def held_answer(filed: dict) -> str | None:
     """The gap a failing, collectable record holds, read from the scorer's own verdict and the second reader's
     held cases, apart from the rules' code paths: major_total_differs where a local degree's major check itself
@@ -480,6 +583,9 @@ def held_answer(filed: dict) -> str | None:
         # The page itself, read and listed in kb/program_total_differs.json with both of its figures, is the held
         # answer (S697); whether the record read those figures is the rule's question, not the answer's.
         return "total_differs"
+    if (a.get("status") == "unequal" and a.get("against") == "program" and len(a.get("why") or []) == 1
+            and _figures_past_held(filed, _pair(a.get("computed")), _pair(a.get("stated")))):
+        return "lists_past_their_figure"
     why = [w for w in a.get("why") or [] if w != "the record names no total"]
     if (a.get("status") == "incomplete" and why and all(w.endswith(" has no units") for w in why)
             and (filed.get("college"), str(filed.get("control_number"))) not in HELD_INCOMPLETE):
@@ -508,6 +614,59 @@ def recall(every: list[dict]) -> dict:
             out["wrong_keys"].append({"college": f.get("college"), "control_number": f.get("control_number"),
                                       "held": truth, "rule": got})
     out["by_answer"] = dict(out["by_answer"])
+    return out
+
+
+def lists_recall(every: list[dict]) -> dict:
+    """lists_past_their_figure against answers already held (S703; S652's review rule): every passing record the
+    scorer reproduces (S.score, no closed list, no page text) with a choose-courses list printed at a figure its
+    cheapest courses meet exactly. The scorer reads it twice: each course of that list one unit more (the held answer
+    is the gap, since the figures still add to the printed total) and, beside that, the printed total one unit more
+    (the held answer is no gap, since the figures no longer add to it). Right when the rule names the held answer."""
+    out = {"held": 0, "right": 0, "wrong": 0, "not_reproduced": 0, "by_test": collections.Counter(), "wrong_keys": []}
+    for f in every:
+        sc = f.get("score") or {}
+        a = sc.get("arithmetic") or {}
+        rec = f.get("record") or {}
+        if not a.get("pass") or a.get("status") != "equal" or a.get("against") != "program" or not collectable(sc):
+            continue
+        blocks = rec.get("blocks") or []
+        pick = None
+        for i, b in enumerate(blocks):
+            n, st = S._num(b.get("minimum")), S._span(b.get("stated"))
+            units = [S._num(c.get("units")) for c in b.get("courses") or []]
+            if (b.get("rule") == "choose_courses" and n and st and not b.get("repeats") and units
+                    and all(u is not None for u in units) and not any(c.get("alternatives") for c in b["courses"])
+                    and abs(sum(sorted(units)[:int(n)]) - st[0]) <= FIG_EPS):
+                pick = i
+                break
+        ft, tot = figures_total(f), _pair(a.get("stated"))
+        if pick is None or ft is None or tot is None or any(abs(x - y) > FIG_EPS for x, y in zip(ft[0], tot)):
+            # The held answer's premise: the figures add to the printed total at both ends.
+            continue
+        if S.score(rec, [], None, f.get("award"))["arithmetic"] != a:
+            out["not_reproduced"] += 1
+            continue
+        bumped = [dict(b, courses=[dict(c, units=S._num(c["units"]) + 1) for c in b["courses"]]) if i == pick else b
+                  for i, b in enumerate(blocks)]
+        for held, prog in (("lists_past_their_figure", rec.get("program") or {}),
+                           (None, dict(rec.get("program") or {}, total_units={"min": tot[0] + 1, "max": tot[1] + 1}))):
+            test_rec = dict(rec, blocks=bumped, program=prog)
+            again = S.score(test_rec, [], None, f.get("award"))["arithmetic"]
+            if again.get("pass"):
+                continue
+            test = dict(f, record=test_rec, score=dict(sc, arithmetic=again))
+            got = (answer(test) or (None,))[0]
+            got = got if got == "lists_past_their_figure" else None
+            out["held"] += 1
+            out["by_test"][held or "none"] += 1
+            if got == held and (held_answer(test) == "lists_past_their_figure") == bool(held):
+                out["right"] += 1
+            else:
+                out["wrong"] += 1
+                out["wrong_keys"].append({"college": f.get("college"), "control_number": f.get("control_number"),
+                                          "held": held, "rule": got})
+    out["by_test"] = dict(out["by_test"])
     return out
 
 
@@ -616,6 +775,7 @@ def run(write: bool, skip: tuple = (), gaps: tuple = ()) -> dict:
         m["i"] = i
     labs = labels(skip=skip)
     return {"moved": moved, "labels": labs, "recall": recall(every), "matcher_recall": matcher_recall(files),
+            "lists_recall": lists_recall(every),
             "by_gap": dict(collections.Counter(m["gap"] for m in moved)),
             "labels_by_gap": dict(collections.Counter(x["gap"] for x in labs))}
 
@@ -1225,8 +1385,15 @@ def main(argv=None) -> int:
         print("  wrong: %(college)s %(control_number)s held %(held)s, rule %(rule)s" % w)
     for n, c in r["matcher_recall"].items():
         print("matcher recall %s: %s" % (n, ", ".join("%s %d" % kv for kv in c.items())))
-    if rc["wrong"]:
-        raise SystemExit("the recall is wrong on %d records: no plan is written" % rc["wrong"])
+    lr = r["lists_recall"]
+    print("lists_past_their_figure recall on passing records, a list's courses and the total moved: held %d, right %d, "
+          "wrong %d (%s; not reproduced %d)" % (lr["held"], lr["right"], lr["wrong"],
+                                               ", ".join("%s %d" % kv for kv in sorted(lr["by_test"].items())),
+                                               lr["not_reproduced"]))
+    for w in lr["wrong_keys"][:10]:
+        print("  wrong: %(college)s %(control_number)s held %(held)s, rule %(rule)s" % w)
+    if rc["wrong"] or lr["wrong"]:
+        raise SystemExit("the recall is wrong on %d records: no plan is written" % (rc["wrong"] + lr["wrong"]))
     if a.dry_run:
         return 0
     held = list(CL.COLLECTION_LANE_S680) + list(a.skip_college)
@@ -1242,7 +1409,9 @@ def main(argv=None) -> int:
     n = len(r["moved"])
     body = {"rule": RULING, "gaps": GAPS, "at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
             "held_colleges": held, "only_gaps": list(a.gap), "collected": n, "by_gap": r["by_gap"],
-            "recall": r["recall"], "matcher_recall": r["matcher_recall"], "records": r["moved"],
+            "recall": r["recall"], "matcher_recall": r["matcher_recall"],
+            "lists_recall": {k: v for k, v in r["lists_recall"].items() if k != "wrong_keys"},
+            "records": r["moved"],
             "decided": ("The %d records count as collected with the gap named (the S680 conductor, on Sam's rule of "
                         "2026-11-17: never drop a record for failing; collect it with gaps noted and scores)." % n),
             "representation": ("checks.gaps (a list of gap names, keys of gaps) and checks.confidence (five scores "
