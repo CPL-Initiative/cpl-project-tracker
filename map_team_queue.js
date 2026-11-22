@@ -360,6 +360,28 @@
         where: { tab: "program-requirements", label: "Program Requirements" } });
     }
 
+    // ── 7b. Exhibits with no credit recommendation (Sam, 2026-11-22, S705: "if there is no cr on the exhibit that should be
+    // flagged clearly and would not be a valid exhibit and would need map team follow up"; "yes, add the MAP team worklist
+    // for flagged exhibits"). Measured from kb/exhibits_review.json: a held exhibit whose credit_recs list is empty names
+    // no college course a student earns. A file built before it carried credit_recs reads unknown, never zero.
+    if (!src.review || !Array.isArray(src.review.held)) {
+      unknown("exhibits-no-cr", "Exhibits with no credit recommendation", "The Exhibits review file could not be read.",
+        { tab: "exhibits", label: "Exhibits" });
+    } else if (!src.review.held.some(function (h) { return Array.isArray(h.credit_recs); })) {
+      unknown("exhibits-no-cr", "Exhibits with no credit recommendation", "The Exhibits review file predates the credit "
+        + "recommendation field; the nightly rebuild adds it.", { tab: "exhibits", label: "Exhibits" });
+    } else {
+      var noCr = src.review.held.filter(function (h) { return Array.isArray(h.credit_recs) && !h.credit_recs.length && !(h.local_courses || []).length; });
+      var cn = src.review.colleges || [];
+      add({ id: "exhibits-no-cr", title: "Exhibits with no credit recommendation", count: noCr.length,
+        detail: noCr.slice(0, 8).map(function (h) { return h.raw + " (" + (h.colleges || h.art || []).map(function (i) { return cn[i] || ""; }).filter(Boolean).join(", ") + "; " + (h.ids || []).slice(0, 2).join(", ") + ")"; }).join("; ")
+          + (noCr.length > 8 ? "; and " + (noCr.length - 8) + " more" : ""),
+        personWaiting: noCr.length > 0, since: noCr.length ? src.review.written_at || null : null,
+        why: "An exhibit with no credit recommendation names no college course a student earns, so it is not a valid "
+          + "exhibit; the MAP team follows up with the college that entered it. Read from kb/exhibits_review.json.",
+        where: { tab: "exhibits", label: "Exhibits" } });
+    }
+
     // ── 8. The hand-tracked lane ───────────────────────────────────────────
     // No live source exists for these. They are shown with their staleness so
     // an unconfirmed item looks unreliable rather than authoritative.
@@ -519,13 +541,14 @@
       jgetLocal("kb/governance_register.json"),
       jgetLocal("kb/map_team_tracked.json"),
       loadFallbackContacts(),
+      jgetLocal("kb/exhibits_review.json"),
       jgetAll(REST + "/program_record_college_items?select=college,loaded_at&order=college,control_number,n")
     ]).then(function (r) {
       var owners = null;
       if (r[2]) { owners = {}; r[2].forEach(function (o) { owners[o.register_id] = o; }); }
       return buildQueue({
         gaps: r[0], feedback: r[1], owners: owners, nudges: r[3], loads: r[4],
-        register: r[5], tracked: r[6], fallback: r[7], collegeItems: r[8]
+        register: r[5], tracked: r[6], fallback: r[7], review: r[8], collegeItems: r[9]
       }, new Date().toISOString());
     });
   }

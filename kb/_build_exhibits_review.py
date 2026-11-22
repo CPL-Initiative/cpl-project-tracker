@@ -475,6 +475,10 @@ def course_index(members):
 # "TOP nnnn". The tab ranks the list against the card; the file ranks nothing and applies nothing.
 TOP_DSRC = {"top_code", "top_division"}
 SUBJECT_ROW_CAP = 600   # titles kept per subject; the file says how many in all
+# Every other discipline, so a reviewer can look in another subject (Sam, 2026-11-22: "looking at this course under
+# business, but I suspect it should be under CIS. Need to be able to change the Subject in the Course Sidebar so I can
+# see if there is a common Introduction to Computers course to use"). Each holds its most widely taught titles.
+OTHER_SUBJECT_CAP = 250
 
 
 def _prefix(ident):
@@ -516,7 +520,7 @@ def _units(r):
     return lo, hi
 
 
-def subject_rows(key, sidx):
+def subject_rows(key, sidx, cap=SUBJECT_ROW_CAP):
     """{disc, rows: [[id, title, colleges, units low, units high, system]], total} for one subject key, the most
     colleges first."""
     if key.startswith("TOP "):
@@ -539,7 +543,7 @@ def subject_rows(key, sidx):
         lo, hi = _units(r)
         out.append([r["id"], r["title"].strip(), sidx["colleges"].get(r["id"], 0), lo, hi, r.get("id_system") or "M-ID"])
     out.sort(key=lambda x: (-x[2], x[1].lower(), x[0]))
-    return {"disc": disc, "total": len(out), "rows": out[:SUBJECT_ROW_CAP]}
+    return {"disc": disc, "total": len(out), "rows": out[:cap]}
 
 
 def main_course(courses):
@@ -1130,6 +1134,11 @@ def build(root, live=None):
         }
         if key:
             rec["courses_key"] = key
+        # The credit recommendations the card's exhibits carry, [course, credit] (Sam, 2026-11-22: "need to clearly see
+        # what college course this is articulated with (the credit recommendation)... if there is no cr on the exhibit
+        # that should be flagged clearly and would not be a valid exhibit and would need map team follow up"). An empty
+        # list is the flag; the tab says it in words.
+        rec["credit_recs"] = (ex.get("recs") or [])[:12]
         if mine:
             rec["local_courses"] = mine
             at_main = main_course(mine)
@@ -1199,12 +1208,17 @@ def build(root, live=None):
     course_file = {"schema": SCHEMA, "colleges": names,
                    "courses": {i: {str(at[c]): rows for c, rows in sorted(by.items())}
                                for i, by in sorted(courses.items())}}
+    # Every discipline the identities map names, beside the cards' own subjects, at OTHER_SUBJECT_CAP titles each.
+    for p, dname in sorted(sidx["disc"].items()):
+        if dname and dname not in subjects:
+            subjects[dname] = subject_rows(p, sidx, OTHER_SUBJECT_CAP)
     subject_file = {"schema": SCHEMA,
                     "_about": "The Same subject list beside each Review card (kb/_build_exhibits_review.py): every C-ID, "
                               "CCN and M-ID title in the subject of the card's main local course, as [id, title, colleges, "
                               "units low, units high, system], the most colleges first, keyed by the discipline's name (or the SUBJ4, or "
                               "\"TOP nnnn\" when only the course's TOP code places it). A card names its key in `subject` and "
-                              "the course it came from in `subject_course`.",
+                              "the course it came from in `subject_course`. Every other discipline the identities map names is listed "
+                              "too, at its 250 most widely taught titles, so a reviewer can look in another subject.",
                     "subjects": {k: v for k, v in sorted(subjects.items()) if v["rows"]}}
     review = credential_aliases.review_list(root)
     titled = sum(1 for c in cards if c.get("unified_title"))

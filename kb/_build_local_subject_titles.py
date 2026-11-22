@@ -48,6 +48,11 @@ STATE = "coci_lookup_data.js"
 SUBJECT_MAP = os.path.join("kb", "reference", "subject_discipline_map.json")
 CANONICAL = os.path.join("kb", "discipline_canonical_subj4.json")
 OUT = os.path.join("kb", "status", "local_subject_titles.json")
+# A college's own list of its subject codes and their titles, where the college publishes one outside the catalog
+# (Cerritos's class schedule names each code's "department"; Sam, 2026-11-22, S705,
+# r-college-department-list-is-a-title-source-sam-2026-11-22). kb/reference/college_department_lists/<slug>.json.
+DEPARTMENTS = os.path.join("kb", "reference", "college_department_lists")
+DEPARTMENT_TITLE = "the college's department list"
 
 COLUMNS = ["code", "printed_name", "catalog_courses", "state_courses", "side", "common", "discipline",
            "title_state", "title_source", "candidate", "address", "credit_courses", "noncredit_courses", "page_codes",
@@ -128,6 +133,16 @@ def read_subjects(root, slug):
             "blocked": {code_key(c) for c in d.get("blocked") or []}}
 
 
+def read_departments(root, slug):
+    """A college's department list, keyed by code; None where none is filed."""
+    path = os.path.join(root, DEPARTMENTS, slug + ".json")
+    if not os.path.exists(path):
+        return None
+    with open(path, encoding="utf-8") as f:
+        d = json.load(f)
+    return {code_key(k): v for k, v in (d.get("codes") or {}).items() if v}
+
+
 def read_state(root):
     src = open(os.path.join(root, STATE), encoding="utf-8").read()
     j = json.loads(src[src.index("{"):src.rindex("}") + 1])
@@ -204,6 +219,8 @@ def build(root=ROOT):
         subj = read_subjects(root, c["slug"])
         filed = (subj or {}).get("by") or {}
         listed = {k for k, r in filed.items() if r.get("rule") == "index"}     # the codes the catalog's index lists
+        depts = read_departments(root, c["slug"]) or {}
+        dept_titles = {title_case(v) for v in depts.values()}
         out = []
         college_codes = {map_key(x) for x in set(cat) | set(st) | listed}
         for k in sorted(set(cat) | set(st) | listed):
@@ -219,6 +236,12 @@ def build(root=ROOT):
             name = title_case(without_code(name, college_codes))
             if not name:
                 source = None
+            # The college's department list (r-college-department-list-is-a-title-source-sam-2026-11-22) titles a code
+            # the catalog gives none, and wins where the catalog's name is another code's department title (a heading
+            # that names several codes, as Cerritos's "Mathematics (MATH & STAT)" gave STAT the name Mathematics).
+            dt = title_case(depts[k]) if k in depts else None
+            if dt and (not name or (name != dt and name in dept_titles)):
+                name, source = dt, DEPARTMENT_TITLE
             side = "both" if (in_catalog and k in st) else ("catalog" if in_catalog else "state")
             if name:
                 state_ = "catalog"
@@ -358,7 +381,8 @@ def build(root=ROOT):
         "_rule": RULE,
         "_sources": {"catalogs": CATALOGS.replace(os.sep, "/") + "/index.json", "state_list": STATE,
                      "state_list_built_at": state.get("_built_at"), "subject_map": SUBJECT_MAP.replace(os.sep, "/"),
-                     "canonical_subj": CANONICAL.replace(os.sep, "/"), "subject_decisions": SD.STATUS.replace(os.sep, "/")},
+                     "canonical_subj": CANONICAL.replace(os.sep, "/"), "subject_decisions": SD.STATUS.replace(os.sep, "/"),
+                     "department_lists": DEPARTMENTS.replace(os.sep, "/")},
         # The saved decisions this build honors (kb/subject_decisions.py): how many took a row, and each one refused
         # (never applied) or matched by no row, with the reason.
         "decisions": {"applied": len(applied), "refused": dec.refused, "not_applied": not_applied,
