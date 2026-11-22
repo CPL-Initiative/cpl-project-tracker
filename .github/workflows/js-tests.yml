@@ -595,6 +595,10 @@ jobs:
       # alone settles nothing, a stale compare holds every M-ID, a strong or partial split holds. Pure-stdlib python.
       - name: Re-mint readiness (the draft gate)
         run: python3 tests/mid_readiness_test.py
+      # The scope re-mint dry run (S710, #3655): a ready M-ID takes its settled code and that code's discipline,
+      # never onto a vacated or SkyView-drawn slot; a cross-listed pair stays; a split across courses is held.
+      - name: Scope re-mint dry run (the ready M-IDs)
+        run: python3 tests/scope_remint_dryrun_test.py
       # The nine MQ names in the handbook's spelling (S430, Sam's Sheet 99 card 6):
       # no store holds an old spelling, and the rename touches whole strings only.
       # Pure-stdlib python.

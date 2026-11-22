@@ -355,7 +355,11 @@
   "William S. Hart Union High School District": [],
   "Wine & Spirit Education Trust (WSET)": [],
   "Tracy High School": [],
-  "Information Systems Audit and Control Association (ISACA)": []
+  "Information Systems Audit and Control Association (ISACA)": [],
+  "Tri-Valley Regional Occupational Program": [],
+  "Mission Valley Regional Occupational Program": [],
+  "Tri-Valley Regional Occupational Program (ROP)": [],
+  "Mission Valley Regional Occupational Program (ROP)": []
  },
  "acronyms": {
   "A.B. Miller High School": [],
@@ -984,7 +988,11 @@
   "Tracy High School": [],
   "Information Systems Audit and Control Association (ISACA)": [
    "ISACA"
-  ]
+  ],
+  "Tri-Valley Regional Occupational Program": [],
+  "Mission Valley Regional Occupational Program": [],
+  "Tri-Valley Regional Occupational Program (ROP)": [],
+  "Mission Valley Regional Occupational Program (ROP)": []
  },
  "aliases": {
   "PayrollOrg": "American Payroll Association (PayrollOrg)",

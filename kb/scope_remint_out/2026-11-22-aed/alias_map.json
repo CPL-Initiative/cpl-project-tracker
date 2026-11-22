@@ -1,0 +1,164 @@
+{
+ "_status": "scope re-mint old->new alias (receipt + rollback inverse) - DRY RUN, not applied",
+ "_at": "2026-11-22",
+ "_scope": "aed",
+ "_count": 31,
+ "_gate": "d-remint-ready-gate-draft-s707 (draft, Sam's to set)",
+ "aliases": {
+  "ELEC M9055": {
+   "new_id": "VOCE M9100",
+   "route": "VOCE",
+   "discipline": "Vocational"
+  },
+  "ELEC M9060": {
+   "new_id": "VOCE M9101",
+   "route": "VOCE",
+   "discipline": "Vocational"
+  },
+  "ELEC M9063": {
+   "new_id": "VOCE M9102",
+   "route": "VOCE",
+   "discipline": "Vocational"
+  },
+  "ELEC M90AP": {
+   "new_id": "VOCE M90RT",
+   "route": "VOCE",
+   "discipline": "Vocational"
+  },
+  "ELEC M90AS": {
+   "new_id": "VOCE M90RU",
+   "route": "VOCE",
+   "discipline": "Vocational"
+  },
+  "ELEC M90AW": {
+   "new_id": "VOCE M90RV",
+   "route": "VOCE",
+   "discipline": "Vocational"
+  },
+  "ELEC M90BF": {
+   "new_id": "VOCE M90RW",
+   "route": "VOCE",
+   "discipline": "Vocational"
+  },
+  "ELEC M90BL": {
+   "new_id": "VOCE M90RX",
+   "route": "VOCE",
+   "discipline": "Vocational"
+  },
+  "ELEC M90BT": {
+   "new_id": "VOCE M90RY",
+   "route": "VOCE",
+   "discipline": "Vocational"
+  },
+  "ELEC M90BU": {
+   "new_id": "VOCE M90RZ",
+   "route": "VOCE",
+   "discipline": "Vocational"
+  },
+  "ELEC M90BV": {
+   "new_id": "VOCE M90SA",
+   "route": "VOCE",
+   "discipline": "Vocational"
+  },
+  "ELEC M90BW": {
+   "new_id": "VOCE M90SB",
+   "route": "VOCE",
+   "discipline": "Vocational"
+  },
+  "ELEC M90BX": {
+   "new_id": "VOCE M90SC",
+   "route": "VOCE",
+   "discipline": "Vocational"
+  },
+  "ELEC M90BY": {
+   "new_id": "VOCE M90SD",
+   "route": "VOCE",
+   "discipline": "Vocational"
+  },
+  "ELEC M90CA": {
+   "new_id": "VOCE M90SE",
+   "route": "VOCE",
+   "discipline": "Vocational"
+  },
+  "ELEC M90CB": {
+   "new_id": "VOCE M90SF",
+   "route": "VOCE",
+   "discipline": "Vocational"
+  },
+  "ELEC M90CE": {
+   "new_id": "VOCE M90SG",
+   "route": "VOCE",
+   "discipline": "Vocational"
+  },
+  "ELEC M90CM": {
+   "new_id": "VOCE M90SH",
+   "route": "VOCE",
+   "discipline": "Vocational"
+  },
+  "ELEC M90CV": {
+   "new_id": "VOCE M90SI",
+   "route": "VOCE",
+   "discipline": "Vocational"
+  },
+  "ELEC M90CY": {
+   "new_id": "VOCE M90SJ",
+   "route": "VOCE",
+   "discipline": "Vocational"
+  },
+  "ELEC M90DF": {
+   "new_id": "VOCE M90SK",
+   "route": "VOCE",
+   "discipline": "Vocational"
+  },
+  "ELEC M90DI": {
+   "new_id": "VOCE M90SL",
+   "route": "VOCE",
+   "discipline": "Vocational"
+  },
+  "ELEC M90DL": {
+   "new_id": "VOCE M90SM",
+   "route": "VOCE",
+   "discipline": "Vocational"
+  },
+  "ELEC M90DM": {
+   "new_id": "VOCE M90SN",
+   "route": "VOCE",
+   "discipline": "Vocational"
+  },
+  "ELEC M90DY": {
+   "new_id": "VOCE M90SO",
+   "route": "VOCE",
+   "discipline": "Vocational"
+  },
+  "ELEC M90ED": {
+   "new_id": "VOCE M90SP",
+   "route": "VOCE",
+   "discipline": "Vocational"
+  },
+  "ELEC M90EG": {
+   "new_id": "VOCE M90SQ",
+   "route": "VOCE",
+   "discipline": "Vocational"
+  },
+  "ELEC M90EJ": {
+   "new_id": "VOCE M90SR",
+   "route": "VOCE",
+   "discipline": "Vocational"
+  },
+  "ELEC M90EK": {
+   "new_id": "VOCE M90SS",
+   "route": "VOCE",
+   "discipline": "Vocational"
+  },
+  "ELEC M90EL": {
+   "new_id": "VOCE M90ST",
+   "route": "VOCE",
+   "discipline": "Vocational"
+  },
+  "ELEC M90EO": {
+   "new_id": "VOCE M90SU",
+   "route": "VOCE",
+   "discipline": "Vocational"
+  }
+ }
+}
