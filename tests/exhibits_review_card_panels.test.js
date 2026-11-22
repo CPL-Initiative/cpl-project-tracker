@@ -221,7 +221,9 @@ function chipsOf(d) { return Array.from(d.querySelectorAll(".exh-card .exh-chipr
   const right = yes.filter(function (p) { return P(p[0], p[1]); }).length + no.filter(function (p) { return !P(p[0], p[1]); }).length;
   check("(8) self-recall: " + right + " of " + (yes.length + no.length) + " held pairs read right", right === yes.length + no.length);
   // On the shipped reference: every flagged pair names one agency two ways, and Sam's example is among them.
-  const REL = JSON.parse(fs.readFileSync("kb/exhibits_related.json", "utf8")).titles.map(function (r) { return r[0]; });
+  // The titles as shipped when this check was written (3f6cd13f), frozen: the CER procedures run of 2026-11-22 folded one
+  // of Sam's pair, so the live file would move the check once the fold it asks for lands (S703).
+  const REL = JSON.parse(fs.readFileSync("tests/fixtures/exhibits_related_titles_3f6cd13f.json", "utf8")).titles;
   let flagged = [];
   for (let i = 0; i < REL.length; i++) if (/CDF|Cal\s?Fire|Department of Forestry/i.test(REL[i]))
     for (let j = 0; j < REL.length; j++) if (j !== i && P(REL[i], REL[j])) flagged.push(REL[i] + " ~ " + REL[j]);
