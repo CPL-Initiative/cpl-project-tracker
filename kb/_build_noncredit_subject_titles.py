@@ -64,10 +64,10 @@ MQ = {
     "Courses for Older Adults": ("Older Adults: Noncredit", "OLAD"),
     "Parenting": ("Parent Education: Noncredit", "PARN"),
     "Short-term Vocational": ("Vocational", "VOCE"),
-    "Citizenship for Immigrants": ("Citizenship: Noncredit", None),
-    "Health & Safety": ("Health and Safety: Noncredit", None),
-    "Home Economics": ("Home Economics: Noncredit", None),
-    "Courses for Persons with Substantial Disabilities": ("Disabled Student Programs and Services: Noncredit", None),
+    "Citizenship for Immigrants": ("Citizenship: Noncredit", "CTZN"),
+    "Health & Safety": ("Health and Safety: Noncredit", "HLSN"),
+    "Home Economics": ("Home Economics: Noncredit", "HMEN"),
+    "Courses for Persons with Substantial Disabilities": ("Disabled Student Programs and Services: Noncredit", "DSPN"),
     "Workforce Preparation": (None, None),
 }
 NO_CATEGORY = "(no category in the export)"

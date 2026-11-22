@@ -106,6 +106,7 @@
   "field:kb_curation.subject_discipline_confirm": "DR-25",
   "field:kb_curation.subject_discipline_note": "DR-25",
   "field:kb_curation.subject_decision": "DR-25",
+  "field:kb_curation.course_subject_decision": "DR-25",
   "table:credential_priority_requests": "DR-31",
   "rpc:credential_priority_request": "DR-31",
   "table:credential_submissions": "DR-32",

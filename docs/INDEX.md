@@ -68,12 +68,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 6 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 601 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 602 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 95 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 109 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 77 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 663 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1551** | |
+| Session handoffs | 664 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1553** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -124,6 +124,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-22 (S705 SkyTystie, Sam's plain session, light checkpoint): #3687, one Save that settles a code's common subject code at every college using it (#3655 item 0), then Sam's four asks: Cerritos's department list as a title source with a source link, the frozen and resizable panel, moving courses, sortable and resizable columns; and the Exhibits Review card's tools (Previous and Next, Undo, what Change saves, Changes this visit, training sites in place, Articulated with and its no-credit-recommendation flag, another subject), with every Commons List side panel's top frozen. The queue ran beside it as S703 (#3674). Handoff 706.
 - 2026-11-22 (S703 SkyDovekie, the CPL Queue routine's collection run, conductor, full checkpoint): #3676 (a recall count binds to its own trial's parser), #3678 (`ge_units_not_read`, 131 rows), #3679 (three hours gaps, 50 rows), #3677 (San Diego College of Continuing Education's outlines: 198 objective rows, 1,860 objectives), #3681 (Clovis and Cosumnes River pins), #3685 (`lists_past_their_figure`, 17 rows); #3686, #3675, #3683 and #3684 (Peralta) in flight. The harvest lessons doc compacted to archive 8; a section on a named gap's self-recall in `methodology-a-test-must-not-take-its-rule-as-the-truth`. Handoff 704 is the routine's; a plain session follows handoff 703.
 - 2026-11-22 (S702 SkyRazorbill, Sam's plain session, light checkpoint): #3673, Sam's three Subjects asks: Edit and the course panel from every surface, counts that open their rows, the window's width. The queue ran beside it as S703 (#3674); handoff 703 is the plain line's, for Session 705.
 - 2026-11-22 (S701 SkyMurre, Sam's plain session, full checkpoint): the Subjects page under #3655: #3666 (Edit and Save on the `kb_curation` path; Sam's 30 Cerritos decisions filed under `subjects-s701@bot` with a receipt), #3667 (the noncredit hold lifted on Sam's word), #3669 (Santa Ana's and Mt. San Antonio's credit catalogs), #3670 (the daily build honors saved decisions), #3671 (noncredit saves, merged `80032b55`). Handoff 702 for SkyRazorbill; the Commons lessons compacted into `commons_lessons_archive_2.md`; KB note `methodology-a-page-promise-narrower-than-its-delete-policy`.
