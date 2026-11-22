@@ -2,21 +2,21 @@
  "college": "Clovis Community College",
  "programs": 129,
  "with_closed_list": 121,
- "found": 109,
+ "found": 107,
  "extracted": 109,
  "errors": 0,
- "passed_machine_checks": 77,
+ "passed_machine_checks": 78,
  "failed": {
-  "coverage": 5,
+  "coverage": 4,
   "invented": 3,
-  "arithmetic": 27,
+  "arithmetic": 26,
   "repeated": 0,
   "outcomes": 5
  },
- "cost_usd_run": 4.06,
+ "cost_usd_run": 0.23,
  "cost_usd_filed": 8.22,
  "cost_per_program": 0.0754,
- "extract_calls": 49,
+ "extract_calls": 3,
  "extract_failed": [],
  "not_found": [
   {
@@ -25,7 +25,8 @@
    "award": "A.S. Degree",
    "near_miss": {
     "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=90",
-    "coverage": 0.0
+    "coverage": 0.0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -35,7 +36,8 @@
    "award": "A.S. Degree",
    "near_miss": {
     "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=90",
-    "coverage": 0.0
+    "coverage": 0.0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -45,7 +47,8 @@
    "award": "A.S. Degree",
    "near_miss": {
     "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=90",
-    "coverage": 0.0
+    "coverage": 0.0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -55,7 +58,8 @@
    "award": "A.A. Degree",
    "near_miss": {
     "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=92",
-    "coverage": 0.0
+    "coverage": 0.0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -65,9 +69,21 @@
    "award": "A.A. Degree",
    "near_miss": {
     "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=92",
-    "coverage": 0.0
+    "coverage": 0.0,
+    "page_checks": true
    },
    "status": "Active"
+  },
+  {
+   "control_number": "33496",
+   "title": "Communication Studies",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=90",
+    "coverage": 0.0,
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "35845",
@@ -86,7 +102,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -101,12 +118,24 @@
    "status": "Active"
   },
   {
+   "control_number": "42839",
+   "title": "Communication Studies 2.0",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=90",
+    "coverage": 0.0,
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
    "control_number": "43376",
    "title": "Agriculture Plant Science",
    "award": "A.S. T Degree",
    "near_miss": {
     "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=89",
-    "coverage": 0.0
+    "coverage": 0.0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -130,10 +159,11 @@
    "award": "A.A- T Degree",
    "near_miss": {
     "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=91",
-    "coverage": 0.0
+    "coverage": 0.0,
+    "page_checks": true
    },
    "status": "Approved"
   }
  ],
- "run": "44522071814"
+ "run": "45018954283"
 }

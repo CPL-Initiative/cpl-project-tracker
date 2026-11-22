@@ -1,0 +1,24 @@
+{
+ "_readme": "S703 (worker pins for SkyDovekie), the harvest lane's NEXT (4): Small Business Management/Entrepreneurship Certificate 20193 places none: the capture read the Business department's landing page (PDF pp.218-221). This plan prints pp.218-226 to find the certificate's own section. It prints those pages of the hand-filed 2026-27 catalog (kb/hand_filed_catalogs/cosumnes_river.json, sha256 pinned; the file every Cosumnes River record was extracted from). One load, no model call, nothing written.",
+ "college": "Cosumnes River College",
+ "questions": {
+  "own_page": "Where the program's own section opens (its heading and the first line of its requirement list) and where its list ends (its total), so a pdf_pages pin can name the page and the words it opens on."
+ },
+ "keywords": [
+  "\\S"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://github.com/user-attachments/files/33599449/crc-catalog-26-27.pdf"
+  }
+ ],
+ "pdf_span": [
+  218,
+  226
+ ],
+ "pdf_page_cap": 14,
+ "pdf_unfolded": true
+}
