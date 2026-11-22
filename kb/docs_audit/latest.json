@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1562,
-    "bytes": 16966074,
+    "files": 1563,
+    "bytes": 16976834,
     "over_budget": 6,
-    "handoff_max": 702,
+    "handoff_max": 703,
     "always_loaded_files": 1,
     "always_loaded_bytes": 62630,
     "superseded_files": 1,
@@ -26,12 +26,12 @@
       },
       "other": {
         "files": 165,
-        "bytes": 5680614,
+        "bytes": 5681851,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 12440,
+        "bytes": 11791,
         "over": 0
       },
       "lessons": {
@@ -50,8 +50,8 @@
         "over": 2
       },
       "handoff": {
-        "files": 661,
-        "bytes": 4870722,
+        "files": 662,
+        "bytes": 4880894,
         "over": 0
       }
     },
@@ -62,8 +62,8 @@
       "vault_heavy_path": 77
     },
     "vault": {
-      "files": 29354,
-      "bytes": 1559067021,
+      "files": 29357,
+      "bytes": 1559082369,
       "heavy_bytes": 1212795817,
       "heavy_share": 0.778,
       "ignore_filters": [
@@ -242,10 +242,10 @@
       "fixable": true,
       "detail": {
         "session": 699,
-        "authoritative": 702,
+        "authoritative": 703,
         "has_frontmatter": true
       },
-      "message": "handoff 699 is below the authoritative 702 but is not stamped `superseded: true`",
+      "message": "handoff 699 is below the authoritative 703 but is not stamped `superseded: true`",
       "path": "docs/session_699_handoff.md"
     },
     {
