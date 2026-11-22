@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1568,
-    "bytes": 17058447,
+    "files": 1570,
+    "bytes": 17072365,
     "over_budget": 5,
-    "handoff_max": 708,
+    "handoff_max": 710,
     "always_loaded_files": 1,
     "always_loaded_bytes": 63086,
     "superseded_files": 0,
@@ -26,12 +26,12 @@
       },
       "other": {
         "files": 166,
-        "bytes": 5716135,
+        "bytes": 5716520,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 11345,
+        "bytes": 11691,
         "over": 0
       },
       "lessons": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 44,
-        "bytes": 542296,
+        "bytes": 544414,
         "over": 1
       },
       "handoff": {
-        "files": 665,
-        "bytes": 4923045,
+        "files": 667,
+        "bytes": 4934114,
         "over": 0
       }
     },
@@ -61,10 +61,10 @@
       "vault_heavy_path": 78
     },
     "vault": {
-      "files": 29442,
-      "bytes": 1567276965,
-      "heavy_bytes": 1216189180,
-      "heavy_share": 0.776,
+      "files": 29450,
+      "bytes": 1568392695,
+      "heavy_bytes": 1216202527,
+      "heavy_share": 0.775,
       "ignore_filters": [
         "cpl-project-tracker/kb/program_requirements_college",
         "cpl-project-tracker/kb/regional_cpl_out",
@@ -309,10 +309,10 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 15998724,
+        "bytes": 16012071,
         "kind": "dir"
       },
-      "message": "directory totals 15,998,724 B inside the vault"
+      "message": "directory totals 16,012,071 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

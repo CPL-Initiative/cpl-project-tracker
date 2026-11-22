@@ -17478,8 +17478,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 666,
+   "count": 667,
    "docs": [
+    {
+     "created": "2026-11-22",
+     "governs": [],
+     "n": 710,
+     "path": "docs/session_710_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 710 handoff (from SkyMurrelet, S709, Sam's plain session of 2026-11-22: the re-mint readiness count, AED scope first)",
+     "type": null,
+     "updated": "2026-11-22"
+    },
     {
      "created": "2026-11-22",
      "governs": [],
@@ -28576,5 +28590,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1555
+ "total": 1556
 }
