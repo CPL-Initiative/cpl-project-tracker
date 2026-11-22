@@ -1,0 +1,4482 @@
+{
+ "_what": "The noncredit subject title list, drafted from the subject headings of the four large noncredit programs' catalogs only (Sam, 2026-11-21, relayed by COBIx on #3655). Each title lists the headings printed for it, the programs that print it, and the COCI noncredit category its courses sit under, counted from the export, with that category's noncredit MQ discipline and common subject code where one exists. A draft for a person to settle: nothing reads it as a title or a mapping, and the noncredit hold stands. Built by kb/_build_noncredit_subject_titles.py; no clock is read.",
+ "_rule": "Two headings are one title when they are equal after folding case, '&', punctuation and a trailing campus mark, or when the synonym list names them: English as a Second Language (esl classes, english as a second language, esl); Basic Skills (adult basic education, basic skills); Parent Education (parenting, parent education); Older Adults (emeritus, older adult, older adults). Nothing else is merged. state says one category where 90% or more of a title's noncredit courses sit under one category, several categories otherwise.",
+ "mq": {
+  "English as a Second Language (ESL)": {
+   "mq_discipline": "English as a Second Language (ESL): Noncredit",
+   "common_code": "ESLN",
+   "note": null
+  },
+  "Elementary and Secondary Basic Skills": {
+   "mq_discipline": "Interdisciplinary-Basic Skills: Noncredit",
+   "common_code": "BSKL",
+   "note": null
+  },
+  "Courses for Older Adults": {
+   "mq_discipline": "Older Adults: Noncredit",
+   "common_code": "OLAD",
+   "note": null
+  },
+  "Parenting": {
+   "mq_discipline": "Parent Education: Noncredit",
+   "common_code": "PARN",
+   "note": null
+  },
+  "Short-term Vocational": {
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "note": null
+  },
+  "Citizenship for Immigrants": {
+   "mq_discipline": "Citizenship: Noncredit",
+   "common_code": null,
+   "note": "no common subject code yet"
+  },
+  "Health & Safety": {
+   "mq_discipline": "Health and Safety: Noncredit",
+   "common_code": null,
+   "note": "no common subject code yet"
+  },
+  "Home Economics": {
+   "mq_discipline": "Home Economics: Noncredit",
+   "common_code": null,
+   "note": "no common subject code yet"
+  },
+  "Courses for Persons with Substantial Disabilities": {
+   "mq_discipline": "Disabled Student Programs and Services: Noncredit",
+   "common_code": null,
+   "note": "no common subject code yet"
+  },
+  "Workforce Preparation": {
+   "mq_discipline": null,
+   "common_code": null,
+   "note": "no common subject code yet"
+  }
+ },
+ "programs": [
+  {
+   "slug": "north_orange_continuing_education",
+   "college": "North Orange Continuing Education",
+   "subject_codes": 48,
+   "with_heading": 48
+  },
+  {
+   "slug": "san_diego_of_continuing_education",
+   "college": "San Diego College of Continuing Education",
+   "subject_codes": 44,
+   "with_heading": 44
+  },
+  {
+   "slug": "mt_san_antonio",
+   "college": "Mt. San Antonio College",
+   "subject_codes": 8,
+   "with_heading": 8
+  },
+  {
+   "slug": "santa_ana",
+   "college": "Santa Ana College",
+   "subject_codes": 29,
+   "with_heading": 29
+  }
+ ],
+ "totals": {
+  "headings": 129,
+  "codes": 129,
+  "titles": 114,
+  "titles_in_two_or_more_programs": 7,
+  "with_common_code": 78,
+  "category_without_code": 9,
+  "no_noncredit_course_in_coci": 27,
+  "several_categories": 9,
+  "by_category": {
+   "Citizenship for Immigrants": 1,
+   "Courses for Older Adults": 14,
+   "Courses for Persons with Substantial Disabilities": 4,
+   "Elementary and Secondary Basic Skills": 17,
+   "English as a Second Language (ESL)": 1,
+   "Health & Safety": 2,
+   "Parenting": 1,
+   "Short-term Vocational": 45,
+   "Workforce Preparation": 2,
+   "none in COCI": 27
+  }
+ },
+ "titles": [
+  {
+   "title": "English as a Second Language",
+   "printed_as": [
+    "English as a Second Language",
+    "ESL Classes",
+    "English As a Second Language"
+   ],
+   "programs": 4,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "ESLA",
+     "heading": "ESL Classes"
+    },
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "ESLA",
+     "heading": "English as a Second Language"
+    },
+    {
+     "college": "mt_san_antonio",
+     "code": "ESL",
+     "heading": "English as a Second Language"
+    },
+    {
+     "college": "santa_ana",
+     "code": "ESL",
+     "heading": "English As a Second Language"
+    }
+   ],
+   "catalog_courses": 183,
+   "category": "English as a Second Language (ESL)",
+   "category_share": 0.991,
+   "categories": [
+    [
+     "English as a Second Language (ESL)",
+     110
+    ],
+    [
+     "Citizenship for Immigrants",
+     1
+    ]
+   ],
+   "mq_discipline": "English as a Second Language (ESL): Noncredit",
+   "common_code": "ESLN",
+   "state": "one category"
+  },
+  {
+   "title": "Basic Skills",
+   "printed_as": [
+    "Adult Basic Education",
+    "Basic Skills"
+   ],
+   "programs": 4,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "ABE",
+     "heading": "Adult Basic Education"
+    },
+    {
+     "college": "north_orange_continuing_education",
+     "code": "ABED",
+     "heading": "Adult Basic Education"
+    },
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "ABED",
+     "heading": "Adult Basic Education"
+    },
+    {
+     "college": "mt_san_antonio",
+     "code": "BS",
+     "heading": "Basic Skills"
+    },
+    {
+     "college": "santa_ana",
+     "code": "ABE",
+     "heading": "Adult Basic Education"
+    }
+   ],
+   "catalog_courses": 73,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_share": 0.963,
+   "categories": [
+    [
+     "Elementary and Secondary Basic Skills",
+     52
+    ],
+    [
+     "Courses for Older Adults",
+     1
+    ],
+    [
+     "Workforce Preparation",
+     1
+    ]
+   ],
+   "mq_discipline": "Interdisciplinary-Basic Skills: Noncredit",
+   "common_code": "BSKL",
+   "state": "one category"
+  },
+  {
+   "title": "Individual High School Subjcts",
+   "printed_as": [
+    "Individual High School Subjcts"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "IHSS",
+     "heading": "Individual High School Subjcts"
+    }
+   ],
+   "catalog_courses": 47,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Elementary and Secondary Basic Skills",
+     37
+    ]
+   ],
+   "mq_discipline": "Interdisciplinary-Basic Skills: Noncredit",
+   "common_code": "BSKL",
+   "state": "one category"
+  },
+  {
+   "title": "High School Basic Skills",
+   "printed_as": [
+    "High School Basic Skills"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "mt_san_antonio",
+     "code": "BSHS",
+     "heading": "High School Basic Skills"
+    }
+   ],
+   "catalog_courses": 41,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Elementary and Secondary Basic Skills",
+     19
+    ]
+   ],
+   "mq_discipline": "Interdisciplinary-Basic Skills: Noncredit",
+   "common_code": "BSKL",
+   "state": "one category"
+  },
+  {
+   "title": "High School Diploma Program",
+   "printed_as": [
+    "High School Diploma Program"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "HSDP",
+     "heading": "High School Diploma Program"
+    }
+   ],
+   "catalog_courses": 27,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Elementary and Secondary Basic Skills",
+     30
+    ]
+   ],
+   "mq_discipline": "Interdisciplinary-Basic Skills: Noncredit",
+   "common_code": "BSKL",
+   "state": "one category"
+  },
+  {
+   "title": "High School Subjects - English",
+   "printed_as": [
+    "High School Subjects - English"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "santa_ana",
+     "code": "HSENG",
+     "heading": "High School Subjects - English"
+    }
+   ],
+   "catalog_courses": 16,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Elementary and Secondary Basic Skills",
+     15
+    ]
+   ],
+   "mq_discipline": "Interdisciplinary-Basic Skills: Noncredit",
+   "common_code": "BSKL",
+   "state": "one category"
+  },
+  {
+   "title": "High School Subjects - Math",
+   "printed_as": [
+    "High School Subjects - Math"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "santa_ana",
+     "code": "HSMTH",
+     "heading": "High School Subjects - Math"
+    }
+   ],
+   "catalog_courses": 14,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Elementary and Secondary Basic Skills",
+     15
+    ]
+   ],
+   "mq_discipline": "Interdisciplinary-Basic Skills: Noncredit",
+   "common_code": "BSKL",
+   "state": "one category"
+  },
+  {
+   "title": "High School Subjects",
+   "printed_as": [
+    "High School Subjects"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "santa_ana",
+     "code": "HSS",
+     "heading": "High School Subjects"
+    }
+   ],
+   "catalog_courses": 11,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Elementary and Secondary Basic Skills",
+     12
+    ]
+   ],
+   "mq_discipline": "Interdisciplinary-Basic Skills: Noncredit",
+   "common_code": "BSKL",
+   "state": "one category"
+  },
+  {
+   "title": "High School Subjects - Natural Sciences",
+   "printed_as": [
+    "High School Subjects - Natural Sciences"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "santa_ana",
+     "code": "HSSCI",
+     "heading": "High School Subjects - Natural Sciences"
+    }
+   ],
+   "catalog_courses": 11,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Elementary and Secondary Basic Skills",
+     11
+    ]
+   ],
+   "mq_discipline": "Interdisciplinary-Basic Skills: Noncredit",
+   "common_code": "BSKL",
+   "state": "one category"
+  },
+  {
+   "title": "High School Subjects - Social Sciences",
+   "printed_as": [
+    "High School Subjects - Social Sciences"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "santa_ana",
+     "code": "HSSOC",
+     "heading": "High School Subjects - Social Sciences"
+    }
+   ],
+   "catalog_courses": 11,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Elementary and Secondary Basic Skills",
+     11
+    ]
+   ],
+   "mq_discipline": "Interdisciplinary-Basic Skills: Noncredit",
+   "common_code": "BSKL",
+   "state": "one category"
+  },
+  {
+   "title": "High School Equivalency Preparation",
+   "printed_as": [
+    "High School Equivalency Preparation"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "HSEP",
+     "heading": "High School Equivalency Preparation"
+    }
+   ],
+   "catalog_courses": 9,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Elementary and Secondary Basic Skills",
+     9
+    ]
+   ],
+   "mq_discipline": "Interdisciplinary-Basic Skills: Noncredit",
+   "common_code": "BSKL",
+   "state": "one category"
+  },
+  {
+   "title": "High School Subjects - Other",
+   "printed_as": [
+    "High School Subjects - Other"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "santa_ana",
+     "code": "HSOTH",
+     "heading": "High School Subjects - Other"
+    }
+   ],
+   "catalog_courses": 5,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Elementary and Secondary Basic Skills",
+     5
+    ]
+   ],
+   "mq_discipline": "Interdisciplinary-Basic Skills: Noncredit",
+   "common_code": "BSKL",
+   "state": "one category"
+  },
+  {
+   "title": "Learning",
+   "printed_as": [
+    "Learning"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "santa_ana",
+     "code": "LRN",
+     "heading": "Learning"
+    }
+   ],
+   "catalog_courses": 5,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Elementary and Secondary Basic Skills",
+     5
+    ]
+   ],
+   "mq_discipline": "Interdisciplinary-Basic Skills: Noncredit",
+   "common_code": "BSKL",
+   "state": "one category"
+  },
+  {
+   "title": "Counseling",
+   "printed_as": [
+    "Counseling - CEC"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "santa_ana",
+     "code": "CNSL",
+     "heading": "Counseling - CEC"
+    }
+   ],
+   "catalog_courses": 3,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Elementary and Secondary Basic Skills",
+     3
+    ]
+   ],
+   "mq_discipline": "Interdisciplinary-Basic Skills: Noncredit",
+   "common_code": "BSKL",
+   "state": "one category"
+  },
+  {
+   "title": "High School Subjects - Arts",
+   "printed_as": [
+    "High School Subjects - Arts"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "santa_ana",
+     "code": "HSART",
+     "heading": "High School Subjects - Arts"
+    }
+   ],
+   "catalog_courses": 3,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Elementary and Secondary Basic Skills",
+     2
+    ]
+   ],
+   "mq_discipline": "Interdisciplinary-Basic Skills: Noncredit",
+   "common_code": "BSKL",
+   "state": "one category"
+  },
+  {
+   "title": "High School Subjects - Reading",
+   "printed_as": [
+    "High School Subjects - Reading"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "santa_ana",
+     "code": "HSRDG",
+     "heading": "High School Subjects - Reading"
+    }
+   ],
+   "catalog_courses": 2,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Elementary and Secondary Basic Skills",
+     3
+    ]
+   ],
+   "mq_discipline": "Interdisciplinary-Basic Skills: Noncredit",
+   "common_code": "BSKL",
+   "state": "one category"
+  },
+  {
+   "title": "Secondary Subjects GED",
+   "printed_as": [
+    "Secondary Subjects GED"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "santa_ana",
+     "code": "HSGED",
+     "heading": "Secondary Subjects GED"
+    }
+   ],
+   "catalog_courses": 1,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Elementary and Secondary Basic Skills",
+     1
+    ]
+   ],
+   "mq_discipline": "Interdisciplinary-Basic Skills: Noncredit",
+   "common_code": "BSKL",
+   "state": "one category"
+  },
+  {
+   "title": "Speech",
+   "printed_as": [
+    "Speech"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "SPEE",
+     "heading": "Speech"
+    }
+   ],
+   "catalog_courses": 1,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Elementary and Secondary Basic Skills",
+     1
+    ]
+   ],
+   "mq_discipline": "Interdisciplinary-Basic Skills: Noncredit",
+   "common_code": "BSKL",
+   "state": "one category"
+  },
+  {
+   "title": "Older Adults",
+   "printed_as": [
+    "Emeritus",
+    "Older Adult",
+    "Older Adults"
+   ],
+   "programs": 3,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "EMER",
+     "heading": "Emeritus"
+    },
+    {
+     "college": "mt_san_antonio",
+     "code": "OAD",
+     "heading": "Older Adult"
+    },
+    {
+     "college": "santa_ana",
+     "code": "OAP",
+     "heading": "Older Adults"
+    }
+   ],
+   "catalog_courses": 48,
+   "category": "Courses for Older Adults",
+   "category_share": 0.98,
+   "categories": [
+    [
+     "Courses for Older Adults",
+     49
+    ],
+    [
+     "Health & Safety",
+     1
+    ]
+   ],
+   "mq_discipline": "Older Adults: Noncredit",
+   "common_code": "OLAD",
+   "state": "one category"
+  },
+  {
+   "title": "Music",
+   "printed_as": [
+    "Music - NOCE"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "MUSC",
+     "heading": "Music - NOCE"
+    }
+   ],
+   "catalog_courses": 20,
+   "category": "Courses for Older Adults",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Courses for Older Adults",
+     2
+    ]
+   ],
+   "mq_discipline": "Older Adults: Noncredit",
+   "common_code": "OLAD",
+   "state": "one category"
+  },
+  {
+   "title": "Creative Arts",
+   "printed_as": [
+    "Creative Arts"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "CRAE",
+     "heading": "Creative Arts"
+    }
+   ],
+   "catalog_courses": 15,
+   "category": "Courses for Older Adults",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Courses for Older Adults",
+     6
+    ]
+   ],
+   "mq_discipline": "Older Adults: Noncredit",
+   "common_code": "OLAD",
+   "state": "one category"
+  },
+  {
+   "title": "English/Communications",
+   "printed_as": [
+    "English/Communications"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "ENCO",
+     "heading": "English/Communications"
+    }
+   ],
+   "catalog_courses": 11,
+   "category": "Courses for Older Adults",
+   "category_share": 0.6,
+   "categories": [
+    [
+     "Courses for Older Adults",
+     3
+    ],
+    [
+     "Elementary and Secondary Basic Skills",
+     1
+    ],
+    [
+     "Short-term Vocational",
+     1
+    ]
+   ],
+   "mq_discipline": "Older Adults: Noncredit",
+   "common_code": "OLAD",
+   "state": "several categories"
+  },
+  {
+   "title": "Public Affairs and Services",
+   "printed_as": [
+    "Public Affairs and Services"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "PASV",
+     "heading": "Public Affairs and Services"
+    }
+   ],
+   "catalog_courses": 8,
+   "category": "Courses for Older Adults",
+   "category_share": 0.714,
+   "categories": [
+    [
+     "Courses for Older Adults",
+     5
+    ],
+    [
+     "Short-term Vocational",
+     2
+    ]
+   ],
+   "mq_discipline": "Older Adults: Noncredit",
+   "common_code": "OLAD",
+   "state": "several categories"
+  },
+  {
+   "title": "Arts Experimental",
+   "printed_as": [
+    "Arts Experimental"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "ARTX",
+     "heading": "Arts Experimental"
+    }
+   ],
+   "catalog_courses": 5,
+   "category": "Courses for Older Adults",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Courses for Older Adults",
+     1
+    ]
+   ],
+   "mq_discipline": "Older Adults: Noncredit",
+   "common_code": "OLAD",
+   "state": "one category"
+  },
+  {
+   "title": "Consumer Ed",
+   "printed_as": [
+    "Consumer Ed"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "CNED",
+     "heading": "Consumer Ed"
+    }
+   ],
+   "catalog_courses": 4,
+   "category": "Courses for Older Adults",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Courses for Older Adults",
+     2
+    ]
+   ],
+   "mq_discipline": "Older Adults: Noncredit",
+   "common_code": "OLAD",
+   "state": "one category"
+  },
+  {
+   "title": "Educational Enrichment",
+   "printed_as": [
+    "Educational Enrichment"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "EDEN",
+     "heading": "Educational Enrichment"
+    }
+   ],
+   "catalog_courses": 3,
+   "category": "Courses for Older Adults",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Courses for Older Adults",
+     3
+    ]
+   ],
+   "mq_discipline": "Older Adults: Noncredit",
+   "common_code": "OLAD",
+   "state": "one category"
+  },
+  {
+   "title": "Psychology",
+   "printed_as": [
+    "Psychology"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "PSYC",
+     "heading": "Psychology"
+    }
+   ],
+   "catalog_courses": 3,
+   "category": "Courses for Older Adults",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Courses for Older Adults",
+     1
+    ]
+   ],
+   "mq_discipline": "Older Adults: Noncredit",
+   "common_code": "OLAD",
+   "state": "one category"
+  },
+  {
+   "title": "Investments",
+   "printed_as": [
+    "Investments"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "INVS",
+     "heading": "Investments"
+    }
+   ],
+   "catalog_courses": 2,
+   "category": "Courses for Older Adults",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Courses for Older Adults",
+     1
+    ]
+   ],
+   "mq_discipline": "Older Adults: Noncredit",
+   "common_code": "OLAD",
+   "state": "one category"
+  },
+  {
+   "title": "Music Instrumental",
+   "printed_as": [
+    "Music Instrumental"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "MUSN",
+     "heading": "Music Instrumental"
+    }
+   ],
+   "catalog_courses": 2,
+   "category": "Courses for Older Adults",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Courses for Older Adults",
+     2
+    ]
+   ],
+   "mq_discipline": "Older Adults: Noncredit",
+   "common_code": "OLAD",
+   "state": "one category"
+  },
+  {
+   "title": "Music Vocal",
+   "printed_as": [
+    "Music Vocal"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "MUSV",
+     "heading": "Music Vocal"
+    }
+   ],
+   "catalog_courses": 2,
+   "category": "Courses for Older Adults",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Courses for Older Adults",
+     1
+    ]
+   ],
+   "mq_discipline": "Older Adults: Noncredit",
+   "common_code": "OLAD",
+   "state": "one category"
+  },
+  {
+   "title": "Driver Education",
+   "printed_as": [
+    "Driver Education"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "DRVE",
+     "heading": "Driver Education"
+    }
+   ],
+   "catalog_courses": 1,
+   "category": "Courses for Older Adults",
+   "category_share": 0.5,
+   "categories": [
+    [
+     "Courses for Older Adults",
+     1
+    ],
+    [
+     "Short-term Vocational",
+     1
+    ]
+   ],
+   "mq_discipline": "Older Adults: Noncredit",
+   "common_code": "OLAD",
+   "state": "several categories"
+  },
+  {
+   "title": "English",
+   "printed_as": [
+    "English"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "ENGL",
+     "heading": "English"
+    }
+   ],
+   "catalog_courses": 1,
+   "category": "Courses for Older Adults",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Courses for Older Adults",
+     1
+    ]
+   ],
+   "mq_discipline": "Older Adults: Noncredit",
+   "common_code": "OLAD",
+   "state": "one category"
+  },
+  {
+   "title": "Parent Education",
+   "printed_as": [
+    "Parenting",
+    "Parent Education"
+   ],
+   "programs": 3,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "PARN",
+     "heading": "Parenting"
+    },
+    {
+     "college": "mt_san_antonio",
+     "code": "PAED",
+     "heading": "Parenting"
+    },
+    {
+     "college": "santa_ana",
+     "code": "PRNT",
+     "heading": "Parent Education"
+    }
+   ],
+   "catalog_courses": 72,
+   "category": "Parenting",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Parenting",
+     39
+    ]
+   ],
+   "mq_discipline": "Parent Education: Noncredit",
+   "common_code": "PARN",
+   "state": "one category"
+  },
+  {
+   "title": "Business Management",
+   "printed_as": [
+    "Business Management",
+    "Business Management - NOCE"
+   ],
+   "programs": 2,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "BMGR",
+     "heading": "Business Management - NOCE"
+    },
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "BUSN",
+     "heading": "Business Management"
+    }
+   ],
+   "catalog_courses": 39,
+   "category": "Short-term Vocational",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Short-term Vocational",
+     37
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Health",
+   "printed_as": [
+    "Health"
+   ],
+   "programs": 2,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "HLTH",
+     "heading": "Health"
+    },
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "HLTH",
+     "heading": "Health"
+    }
+   ],
+   "catalog_courses": 26,
+   "category": "Short-term Vocational",
+   "category_share": 0.696,
+   "categories": [
+    [
+     "Short-term Vocational",
+     16
+    ],
+    [
+     "Courses for Older Adults",
+     6
+    ],
+    [
+     "Health & Safety",
+     1
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "several categories"
+  },
+  {
+   "title": "Vocational",
+   "printed_as": [
+    "Vocational"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "mt_san_antonio",
+     "code": "VOC",
+     "heading": "Vocational"
+    }
+   ],
+   "catalog_courses": 320,
+   "category": "Short-term Vocational",
+   "category_share": 0.822,
+   "categories": [
+    [
+     "Short-term Vocational",
+     152
+    ],
+    [
+     "Workforce Preparation",
+     33
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "several categories"
+  },
+  {
+   "title": "Computer and Information Sciences",
+   "printed_as": [
+    "Computer and Information Sciences"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "COMP",
+     "heading": "Computer and Information Sciences"
+    }
+   ],
+   "catalog_courses": 42,
+   "category": "Short-term Vocational",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Short-term Vocational",
+     40
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Vocational - Business",
+   "printed_as": [
+    "Vocational - Business"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "santa_ana",
+     "code": "VBUS",
+     "heading": "Vocational - Business"
+    }
+   ],
+   "catalog_courses": 40,
+   "category": "Short-term Vocational",
+   "category_share": 0.923,
+   "categories": [
+    [
+     "Short-term Vocational",
+     36
+    ],
+    [
+     "Workforce Preparation",
+     3
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Clothing and Textiles",
+   "printed_as": [
+    "Clothing and Textiles"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "CLTX",
+     "heading": "Clothing and Textiles"
+    }
+   ],
+   "catalog_courses": 33,
+   "category": "Short-term Vocational",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Short-term Vocational",
+     33
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Computer",
+   "printed_as": [
+    "Computer"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "COMP",
+     "heading": "Computer"
+    }
+   ],
+   "catalog_courses": 29,
+   "category": "Short-term Vocational",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Short-term Vocational",
+     9
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Business",
+   "printed_as": [
+    "Business"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "BUSN",
+     "heading": "Business"
+    }
+   ],
+   "catalog_courses": 26,
+   "category": "Short-term Vocational",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Short-term Vocational",
+     2
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Office Technician",
+   "printed_as": [
+    "Office Technician"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "OTEC",
+     "heading": "Office Technician"
+    }
+   ],
+   "catalog_courses": 26,
+   "category": "Short-term Vocational",
+   "category_share": 0.938,
+   "categories": [
+    [
+     "Short-term Vocational",
+     15
+    ],
+    [
+     "Workforce Preparation",
+     1
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Human Development",
+   "printed_as": [
+    "Human Development"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "HMDV",
+     "heading": "Human Development"
+    }
+   ],
+   "catalog_courses": 24,
+   "category": "Short-term Vocational",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Short-term Vocational",
+     26
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Office Systems",
+   "printed_as": [
+    "Office Systems"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "OFSY",
+     "heading": "Office Systems"
+    }
+   ],
+   "catalog_courses": 24,
+   "category": "Short-term Vocational",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Short-term Vocational",
+     40
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Vocational - Health",
+   "printed_as": [
+    "Vocational - Health"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "santa_ana",
+     "code": "VHLTH",
+     "heading": "Vocational - Health"
+    }
+   ],
+   "catalog_courses": 24,
+   "category": "Short-term Vocational",
+   "category_share": 0.933,
+   "categories": [
+    [
+     "Short-term Vocational",
+     14
+    ],
+    [
+     "Workforce Preparation",
+     1
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Communications",
+   "printed_as": [
+    "Communications"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "COMM",
+     "heading": "Communications"
+    }
+   ],
+   "catalog_courses": 22,
+   "category": "Short-term Vocational",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Short-term Vocational",
+     27
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Vocational - Fine Performing Arts",
+   "printed_as": [
+    "Vocational - Fine Performing Arts"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "santa_ana",
+     "code": "VFPA",
+     "heading": "Vocational - Fine Performing Arts"
+    }
+   ],
+   "catalog_courses": 21,
+   "category": "Short-term Vocational",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Short-term Vocational",
+     19
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Electrical",
+   "printed_as": [
+    "Electrical"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "ELET",
+     "heading": "Electrical"
+    }
+   ],
+   "catalog_courses": 19,
+   "category": "Short-term Vocational",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Short-term Vocational",
+     14
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Financial",
+   "printed_as": [
+    "Financial"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "FINC",
+     "heading": "Financial"
+    }
+   ],
+   "catalog_courses": 18,
+   "category": "Short-term Vocational",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Short-term Vocational",
+     1
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Foods and Nutrition",
+   "printed_as": [
+    "Foods and Nutrition"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "FDNT",
+     "heading": "Foods and Nutrition"
+    }
+   ],
+   "catalog_courses": 17,
+   "category": "Short-term Vocational",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Short-term Vocational",
+     27
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Computer Information Systems and Technology",
+   "printed_as": [
+    "Computer Information Systems and Technology"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "CIST",
+     "heading": "Computer Information Systems and Technology"
+    }
+   ],
+   "catalog_courses": 15,
+   "category": "Short-term Vocational",
+   "category_share": 0.6,
+   "categories": [
+    [
+     "Short-term Vocational",
+     9
+    ],
+    [
+     "Workforce Preparation",
+     6
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "several categories"
+  },
+  {
+   "title": "Medical Assisting",
+   "printed_as": [
+    "Medical Assisting"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "MEDA",
+     "heading": "Medical Assisting"
+    }
+   ],
+   "catalog_courses": 15,
+   "category": "Short-term Vocational",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Short-term Vocational",
+     13
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Industrial Technology",
+   "printed_as": [
+    "Industrial Technology"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "INDT",
+     "heading": "Industrial Technology"
+    }
+   ],
+   "catalog_courses": 13,
+   "category": "Short-term Vocational",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Short-term Vocational",
+     14
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Pharmacy Technician",
+   "printed_as": [
+    "Pharmacy Technician"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "PTEC",
+     "heading": "Pharmacy Technician"
+    }
+   ],
+   "catalog_courses": 13,
+   "category": "Short-term Vocational",
+   "category_share": 0.889,
+   "categories": [
+    [
+     "Short-term Vocational",
+     8
+    ],
+    [
+     "Workforce Preparation",
+     1
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "several categories"
+  },
+  {
+   "title": "Automotive Technology",
+   "printed_as": [
+    "Automotive Technology"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "AUTO",
+     "heading": "Automotive Technology"
+    }
+   ],
+   "catalog_courses": 12,
+   "category": "Short-term Vocational",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Short-term Vocational",
+     11
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Early Childhood Education",
+   "printed_as": [
+    "Early Childhood Education"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "ECED",
+     "heading": "Early Childhood Education"
+    }
+   ],
+   "catalog_courses": 12,
+   "category": "Short-term Vocational",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Short-term Vocational",
+     10
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Vocational - Automotive",
+   "printed_as": [
+    "Vocational - Automotive"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "santa_ana",
+     "code": "VAUTO",
+     "heading": "Vocational - Automotive"
+    }
+   ],
+   "catalog_courses": 8,
+   "category": "Short-term Vocational",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Short-term Vocational",
+     6
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Mechanical Technology",
+   "printed_as": [
+    "Mechanical Technology"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "MECT",
+     "heading": "Mechanical Technology"
+    }
+   ],
+   "catalog_courses": 7,
+   "category": "Short-term Vocational",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Short-term Vocational",
+     8
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Vocational - Food",
+   "printed_as": [
+    "Vocational - Food"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "santa_ana",
+     "code": "VFOOD",
+     "heading": "Vocational - Food"
+    }
+   ],
+   "catalog_courses": 7,
+   "category": "Short-term Vocational",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Short-term Vocational",
+     7
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Quality Assurance Medical Devices",
+   "printed_as": [
+    "Quality Assurance Medical Devices"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "QAMD",
+     "heading": "Quality Assurance Medical Devices"
+    }
+   ],
+   "catalog_courses": 6,
+   "category": "Short-term Vocational",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Short-term Vocational",
+     6
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Funeral Service",
+   "printed_as": [
+    "Funeral Service - NOCE"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "FSRV",
+     "heading": "Funeral Service - NOCE"
+    }
+   ],
+   "catalog_courses": 5,
+   "category": "Short-term Vocational",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Short-term Vocational",
+     3
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Medical Occupations",
+   "printed_as": [
+    "Medical Occupations"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "MEDO",
+     "heading": "Medical Occupations"
+    }
+   ],
+   "catalog_courses": 5,
+   "category": "Short-term Vocational",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Short-term Vocational",
+     5
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Accounting",
+   "printed_as": [
+    "Accounting"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "ACCT",
+     "heading": "Accounting"
+    }
+   ],
+   "catalog_courses": 4,
+   "category": "Short-term Vocational",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Short-term Vocational",
+     4
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Construction Crafts Technology",
+   "printed_as": [
+    "Construction Crafts Technology"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "CNCT",
+     "heading": "Construction Crafts Technology"
+    }
+   ],
+   "catalog_courses": 4,
+   "category": "Short-term Vocational",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Short-term Vocational",
+     3
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Consumer Education Management of Resources",
+   "printed_as": [
+    "Consumer Education Management of Resources"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "CEMR",
+     "heading": "Consumer Education Management of Resources"
+    }
+   ],
+   "catalog_courses": 4,
+   "category": "Short-term Vocational",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Short-term Vocational",
+     3
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Microsoft",
+   "printed_as": [
+    "Microsoft"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "MS",
+     "heading": "Microsoft"
+    }
+   ],
+   "catalog_courses": 4,
+   "category": "Short-term Vocational",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Short-term Vocational",
+     12
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Physical Education",
+   "printed_as": [
+    "Physical Education"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "PHYE",
+     "heading": "Physical Education"
+    }
+   ],
+   "catalog_courses": 4,
+   "category": "Short-term Vocational",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Short-term Vocational",
+     1
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Vocational - Construction",
+   "printed_as": [
+    "Vocational - Construction"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "santa_ana",
+     "code": "VCNST",
+     "heading": "Vocational - Construction"
+    }
+   ],
+   "catalog_courses": 4,
+   "category": "Short-term Vocational",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Short-term Vocational",
+     4
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Business Accounting",
+   "printed_as": [
+    "Business Accounting"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "BUSA",
+     "heading": "Business Accounting"
+    }
+   ],
+   "catalog_courses": 3,
+   "category": "Short-term Vocational",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Short-term Vocational",
+     2
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Vocational - Digital Media Arts",
+   "printed_as": [
+    "Vocational - Digital Media Arts"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "santa_ana",
+     "code": "VDMA",
+     "heading": "Vocational - Digital Media Arts"
+    }
+   ],
+   "catalog_courses": 3,
+   "category": "Short-term Vocational",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Short-term Vocational",
+     3
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Electronics",
+   "printed_as": [
+    "Electronics"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "ELRN",
+     "heading": "Electronics"
+    }
+   ],
+   "catalog_courses": 2,
+   "category": "Short-term Vocational",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Short-term Vocational",
+     3
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Housing, Maintenance and Interior Design",
+   "printed_as": [
+    "Housing, Maintenance and Interior Design"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "HMID",
+     "heading": "Housing, Maintenance and Interior Design"
+    }
+   ],
+   "catalog_courses": 2,
+   "category": "Short-term Vocational",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Short-term Vocational",
+     1
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Medical Occupations-Clerical",
+   "printed_as": [
+    "Medical Occupations-Clerical"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "MEOC",
+     "heading": "Medical Occupations-Clerical"
+    }
+   ],
+   "catalog_courses": 2,
+   "category": "Short-term Vocational",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Short-term Vocational",
+     11
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Vocational - Fashion Design & Merchandising",
+   "printed_as": [
+    "Vocational - Fashion Design & Merchandising"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "santa_ana",
+     "code": "VFDM",
+     "heading": "Vocational - Fashion Design & Merchandising"
+    }
+   ],
+   "catalog_courses": 2,
+   "category": "Short-term Vocational",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Short-term Vocational",
+     2
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Agriculture",
+   "printed_as": [
+    "Agriculture"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "AGRI",
+     "heading": "Agriculture"
+    }
+   ],
+   "catalog_courses": 1,
+   "category": "Short-term Vocational",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Short-term Vocational",
+     2
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Printing/Graphics",
+   "printed_as": [
+    "Printing/Graphics"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "PRTG",
+     "heading": "Printing/Graphics"
+    }
+   ],
+   "catalog_courses": 1,
+   "category": "Short-term Vocational",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Short-term Vocational",
+     1
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Vocational - Hospitality",
+   "printed_as": [
+    "Vocational - Hospitality"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "santa_ana",
+     "code": "VHOSP",
+     "heading": "Vocational - Hospitality"
+    }
+   ],
+   "catalog_courses": 1,
+   "category": "Short-term Vocational",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Short-term Vocational",
+     1
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Vocational - Manufacturing",
+   "printed_as": [
+    "Vocational - Manufacturing"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "santa_ana",
+     "code": "VMFG",
+     "heading": "Vocational - Manufacturing"
+    }
+   ],
+   "catalog_courses": 1,
+   "category": "Short-term Vocational",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Short-term Vocational",
+     1
+    ]
+   ],
+   "mq_discipline": "Vocational",
+   "common_code": "VOCE",
+   "state": "one category"
+  },
+  {
+   "title": "Citizenship",
+   "printed_as": [
+    "Citizenship"
+   ],
+   "programs": 2,
+   "members": [
+    {
+     "college": "mt_san_antonio",
+     "code": "CITZ",
+     "heading": "Citizenship"
+    },
+    {
+     "college": "santa_ana",
+     "code": "CTZN",
+     "heading": "Citizenship"
+    }
+   ],
+   "catalog_courses": 2,
+   "category": "Citizenship for Immigrants",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Citizenship for Immigrants",
+     2
+    ]
+   ],
+   "mq_discipline": "Citizenship: Noncredit",
+   "common_code": null,
+   "state": "one category"
+  },
+  {
+   "title": "Health Education",
+   "printed_as": [
+    "Health Education"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "HEAL",
+     "heading": "Health Education"
+    }
+   ],
+   "catalog_courses": 4,
+   "category": "Health & Safety",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Health & Safety",
+     1
+    ]
+   ],
+   "mq_discipline": "Health and Safety: Noncredit",
+   "common_code": null,
+   "state": "one category"
+  },
+  {
+   "title": "Health and Safety",
+   "printed_as": [
+    "Health and Safety"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "santa_ana",
+     "code": "SAFE",
+     "heading": "Health and Safety"
+    }
+   ],
+   "catalog_courses": 2,
+   "category": "Health & Safety",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Health & Safety",
+     2
+    ]
+   ],
+   "mq_discipline": "Health and Safety: Noncredit",
+   "common_code": null,
+   "state": "one category"
+  },
+  {
+   "title": "Disability Support Services",
+   "printed_as": [
+    "Disability Support Services"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "DSPS",
+     "heading": "Disability Support Services"
+    },
+    {
+     "college": "north_orange_continuing_education",
+     "code": "DSSS",
+     "heading": "Disability Support Services"
+    }
+   ],
+   "catalog_courses": 67,
+   "category": "Courses for Persons with Substantial Disabilities",
+   "category_share": 0.676,
+   "categories": [
+    [
+     "Courses for Persons with Substantial Disabilities",
+     50
+    ],
+    [
+     "Elementary and Secondary Basic Skills",
+     24
+    ]
+   ],
+   "mq_discipline": "Disabled Student Programs and Services: Noncredit",
+   "common_code": null,
+   "state": "several categories"
+  },
+  {
+   "title": "Access",
+   "printed_as": [
+    "Access"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "mt_san_antonio",
+     "code": "ACCS",
+     "heading": "Access"
+    }
+   ],
+   "catalog_courses": 29,
+   "category": "Courses for Persons with Substantial Disabilities",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Courses for Persons with Substantial Disabilities",
+     13
+    ]
+   ],
+   "mq_discipline": "Disabled Student Programs and Services: Noncredit",
+   "common_code": null,
+   "state": "one category"
+  },
+  {
+   "title": "Disability Support Programs and Services",
+   "printed_as": [
+    "Disability Support Programs and Services"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "DSPS",
+     "heading": "Disability Support Programs and Services"
+    }
+   ],
+   "catalog_courses": 17,
+   "category": "Courses for Persons with Substantial Disabilities",
+   "category_share": 0.968,
+   "categories": [
+    [
+     "Courses for Persons with Substantial Disabilities",
+     30
+    ],
+    [
+     "Short-term Vocational",
+     1
+    ]
+   ],
+   "mq_discipline": "Disabled Student Programs and Services: Noncredit",
+   "common_code": null,
+   "state": "one category"
+  },
+  {
+   "title": "Substantial Disabilities",
+   "printed_as": [
+    "Substantial Disabilities"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "santa_ana",
+     "code": "SSD",
+     "heading": "Substantial Disabilities"
+    }
+   ],
+   "catalog_courses": 6,
+   "category": "Courses for Persons with Substantial Disabilities",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Courses for Persons with Substantial Disabilities",
+     6
+    ]
+   ],
+   "mq_discipline": "Disabled Student Programs and Services: Noncredit",
+   "common_code": null,
+   "state": "one category"
+  },
+  {
+   "title": "Workforce Preparation",
+   "printed_as": [
+    "Workforce Preparation"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "WFPR",
+     "heading": "Workforce Preparation"
+    }
+   ],
+   "catalog_courses": 48,
+   "category": "Workforce Preparation",
+   "category_share": 1.0,
+   "categories": [
+    [
+     "Workforce Preparation",
+     46
+    ]
+   ],
+   "mq_discipline": null,
+   "common_code": null,
+   "state": "one category"
+  },
+  {
+   "title": "Interdisciplinary Studies",
+   "printed_as": [
+    "Interdisciplinary Studies"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "INTD",
+     "heading": "Interdisciplinary Studies"
+    }
+   ],
+   "catalog_courses": 4,
+   "category": "Workforce Preparation",
+   "category_share": 0.6,
+   "categories": [
+    [
+     "Workforce Preparation",
+     3
+    ],
+    [
+     "Elementary and Secondary Basic Skills",
+     1
+    ],
+    [
+     "Short-term Vocational",
+     1
+    ]
+   ],
+   "mq_discipline": null,
+   "common_code": null,
+   "state": "several categories"
+  },
+  {
+   "title": "Kids College",
+   "printed_as": [
+    "Kids College"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "KIDS",
+     "heading": "Kids College"
+    }
+   ],
+   "catalog_courses": 278,
+   "category": null,
+   "category_share": null,
+   "categories": [],
+   "mq_discipline": null,
+   "common_code": null,
+   "state": "no noncredit course in COCI"
+  },
+  {
+   "title": "Digital",
+   "printed_as": [
+    "Digital"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "DIG",
+     "heading": "Digital"
+    }
+   ],
+   "catalog_courses": 40,
+   "category": null,
+   "category_share": null,
+   "categories": [],
+   "mq_discipline": null,
+   "common_code": null,
+   "state": "no noncredit course in COCI"
+  },
+  {
+   "title": "Fitness",
+   "printed_as": [
+    "Fitness"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "FITN",
+     "heading": "Fitness"
+    }
+   ],
+   "catalog_courses": 34,
+   "category": null,
+   "category_share": null,
+   "categories": [],
+   "mq_discipline": null,
+   "common_code": null,
+   "state": "no noncredit course in COCI"
+  },
+  {
+   "title": "Clothing",
+   "printed_as": [
+    "Clothing"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "CC",
+     "heading": "Clothing"
+    }
+   ],
+   "catalog_courses": 29,
+   "category": null,
+   "category_share": null,
+   "categories": [],
+   "mq_discipline": null,
+   "common_code": null,
+   "state": "no noncredit course in COCI"
+  },
+  {
+   "title": "Dance",
+   "printed_as": [
+    "Dance-NOCE"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "DAN",
+     "heading": "Dance-NOCE"
+    }
+   ],
+   "catalog_courses": 25,
+   "category": null,
+   "category_share": null,
+   "categories": [],
+   "mq_discipline": null,
+   "common_code": null,
+   "state": "no noncredit course in COCI"
+  },
+  {
+   "title": "Arts & Crafts",
+   "printed_as": [
+    "Arts & Crafts"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "ARTC",
+     "heading": "Arts & Crafts"
+    }
+   ],
+   "catalog_courses": 16,
+   "category": null,
+   "category_share": null,
+   "categories": [],
+   "mq_discipline": null,
+   "common_code": null,
+   "state": "no noncredit course in COCI"
+  },
+  {
+   "title": "Language",
+   "printed_as": [
+    "Language"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "LANG",
+     "heading": "Language"
+    }
+   ],
+   "catalog_courses": 8,
+   "category": null,
+   "category_share": null,
+   "categories": [],
+   "mq_discipline": null,
+   "common_code": null,
+   "state": "no noncredit course in COCI"
+  },
+  {
+   "title": "Human Resource Management",
+   "printed_as": [
+    "Human Resource Management"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "HRMA",
+     "heading": "Human Resource Management"
+    }
+   ],
+   "catalog_courses": 5,
+   "category": null,
+   "category_share": null,
+   "categories": [],
+   "mq_discipline": null,
+   "common_code": null,
+   "state": "no noncredit course in COCI"
+  },
+  {
+   "title": "Photography",
+   "printed_as": [
+    "Photography"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "FOTO",
+     "heading": "Photography"
+    }
+   ],
+   "catalog_courses": 4,
+   "category": null,
+   "category_share": null,
+   "categories": [],
+   "mq_discipline": null,
+   "common_code": null,
+   "state": "no noncredit course in COCI"
+  },
+  {
+   "title": "Sign Language",
+   "printed_as": [
+    "Sign Language"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "SIGN",
+     "heading": "Sign Language"
+    }
+   ],
+   "catalog_courses": 4,
+   "category": null,
+   "category_share": null,
+   "categories": [],
+   "mq_discipline": null,
+   "common_code": null,
+   "state": "no noncredit course in COCI"
+  },
+  {
+   "title": "ESL Ed Planning",
+   "printed_as": [
+    "ESL Ed Planning"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "ESLW",
+     "heading": "ESL Ed Planning"
+    }
+   ],
+   "catalog_courses": 3,
+   "category": null,
+   "category_share": null,
+   "categories": [],
+   "mq_discipline": null,
+   "common_code": null,
+   "state": "no noncredit course in COCI"
+  },
+  {
+   "title": "Entrepreneurship",
+   "printed_as": [
+    "Entrepreneurship"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "ENTR",
+     "heading": "Entrepreneurship"
+    }
+   ],
+   "catalog_courses": 3,
+   "category": null,
+   "category_share": null,
+   "categories": [],
+   "mq_discipline": null,
+   "common_code": null,
+   "state": "no noncredit course in COCI"
+  },
+  {
+   "title": "Adult Education Block Grant",
+   "printed_as": [
+    "Adult Education Block Grant"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "AEBG",
+     "heading": "Adult Education Block Grant"
+    }
+   ],
+   "catalog_courses": 2,
+   "category": null,
+   "category_share": null,
+   "categories": [],
+   "mq_discipline": null,
+   "common_code": null,
+   "state": "no noncredit course in COCI"
+  },
+  {
+   "title": "Applied Design",
+   "printed_as": [
+    "Applied Design"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "APLD",
+     "heading": "Applied Design"
+    }
+   ],
+   "catalog_courses": 2,
+   "category": null,
+   "category_share": null,
+   "categories": [],
+   "mq_discipline": null,
+   "common_code": null,
+   "state": "no noncredit course in COCI"
+  },
+  {
+   "title": "Commercial Art",
+   "printed_as": [
+    "Commercial Art"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "ARTC",
+     "heading": "Commercial Art"
+    }
+   ],
+   "catalog_courses": 2,
+   "category": null,
+   "category_share": null,
+   "categories": [],
+   "mq_discipline": null,
+   "common_code": null,
+   "state": "no noncredit course in COCI"
+  },
+  {
+   "title": "Cooking",
+   "printed_as": [
+    "Cooking"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "FN",
+     "heading": "Cooking"
+    }
+   ],
+   "catalog_courses": 2,
+   "category": null,
+   "category_share": null,
+   "categories": [],
+   "mq_discipline": null,
+   "common_code": null,
+   "state": "no noncredit course in COCI"
+  },
+  {
+   "title": "Creative Writing",
+   "printed_as": [
+    "Creative Writing"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "CRTW",
+     "heading": "Creative Writing"
+    }
+   ],
+   "catalog_courses": 2,
+   "category": null,
+   "category_share": null,
+   "categories": [],
+   "mq_discipline": null,
+   "common_code": null,
+   "state": "no noncredit course in COCI"
+  },
+  {
+   "title": "Hospitality Management",
+   "printed_as": [
+    "Hospitality Management"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "HOSM",
+     "heading": "Hospitality Management"
+    }
+   ],
+   "catalog_courses": 2,
+   "category": null,
+   "category_share": null,
+   "categories": [],
+   "mq_discipline": null,
+   "common_code": null,
+   "state": "no noncredit course in COCI"
+  },
+  {
+   "title": "Safety Education",
+   "printed_as": [
+    "Safety Education"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "SFED",
+     "heading": "Safety Education"
+    }
+   ],
+   "catalog_courses": 2,
+   "category": null,
+   "category_share": null,
+   "categories": [],
+   "mq_discipline": null,
+   "common_code": null,
+   "state": "no noncredit course in COCI"
+  },
+  {
+   "title": "Vocational - Child Development",
+   "printed_as": [
+    "Vocational - Child Development"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "santa_ana",
+     "code": "VCDEV",
+     "heading": "Vocational - Child Development"
+    }
+   ],
+   "catalog_courses": 2,
+   "category": null,
+   "category_share": null,
+   "categories": [],
+   "mq_discipline": null,
+   "common_code": null,
+   "state": "no noncredit course in COCI"
+  },
+  {
+   "title": "Art Theory",
+   "printed_as": [
+    "Art Theory"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "ARTS",
+     "heading": "Art Theory"
+    }
+   ],
+   "catalog_courses": 1,
+   "category": null,
+   "category_share": null,
+   "categories": [],
+   "mq_discipline": null,
+   "common_code": null,
+   "state": "no noncredit course in COCI"
+  },
+  {
+   "title": "Dramatic Arts",
+   "printed_as": [
+    "Dramatic Arts"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "DRAM",
+     "heading": "Dramatic Arts"
+    }
+   ],
+   "catalog_courses": 1,
+   "category": null,
+   "category_share": null,
+   "categories": [],
+   "mq_discipline": null,
+   "common_code": null,
+   "state": "no noncredit course in COCI"
+  },
+  {
+   "title": "ESL Mirrored Couse",
+   "printed_as": [
+    "ESL Mirrored Couse"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "ESLM",
+     "heading": "ESL Mirrored Couse"
+    }
+   ],
+   "catalog_courses": 1,
+   "category": null,
+   "category_share": null,
+   "categories": [],
+   "mq_discipline": null,
+   "common_code": null,
+   "state": "no noncredit course in COCI"
+  },
+  {
+   "title": "Law",
+   "printed_as": [
+    "Law"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "LAWS",
+     "heading": "Law"
+    }
+   ],
+   "catalog_courses": 1,
+   "category": null,
+   "category_share": null,
+   "categories": [],
+   "mq_discipline": null,
+   "common_code": null,
+   "state": "no noncredit course in COCI"
+  },
+  {
+   "title": "Music Appreciation, Theory",
+   "printed_as": [
+    "Music Appreciation, Theory"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "MUSI",
+     "heading": "Music Appreciation, Theory"
+    }
+   ],
+   "catalog_courses": 1,
+   "category": null,
+   "category_share": null,
+   "categories": [],
+   "mq_discipline": null,
+   "common_code": null,
+   "state": "no noncredit course in COCI"
+  },
+  {
+   "title": "Social Sciences",
+   "printed_as": [
+    "Social Sciences"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "san_diego_of_continuing_education",
+     "code": "SOCC",
+     "heading": "Social Sciences"
+    }
+   ],
+   "catalog_courses": 1,
+   "category": null,
+   "category_share": null,
+   "categories": [],
+   "mq_discipline": null,
+   "common_code": null,
+   "state": "no noncredit course in COCI"
+  },
+  {
+   "title": "Solar Technician",
+   "printed_as": [
+    "Solar Technician"
+   ],
+   "programs": 1,
+   "members": [
+    {
+     "college": "north_orange_continuing_education",
+     "code": "SOLR",
+     "heading": "Solar Technician"
+    }
+   ],
+   "catalog_courses": 1,
+   "category": null,
+   "category_share": null,
+   "categories": [],
+   "mq_discipline": null,
+   "common_code": null,
+   "state": "no noncredit course in COCI"
+  }
+ ],
+ "headings": [
+  {
+   "college": "north_orange_continuing_education",
+   "code": "ABE",
+   "heading": "Adult Basic Education",
+   "catalog_courses": 3,
+   "noncredit_courses_in_coci": 5,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_courses": 4,
+   "other_categories": [
+    [
+     "Courses for Older Adults",
+     1
+    ]
+   ]
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "ABED",
+   "heading": "Adult Basic Education",
+   "catalog_courses": 17,
+   "noncredit_courses_in_coci": 8,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_courses": 8,
+   "other_categories": []
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "AEBG",
+   "heading": "Adult Education Block Grant",
+   "catalog_courses": 2,
+   "noncredit_courses_in_coci": 0,
+   "category": null,
+   "category_courses": 0,
+   "other_categories": []
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "ARTC",
+   "heading": "Arts & Crafts",
+   "catalog_courses": 16,
+   "noncredit_courses_in_coci": 0,
+   "category": null,
+   "category_courses": 0,
+   "other_categories": []
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "BMGR",
+   "heading": "Business Management - NOCE",
+   "catalog_courses": 14,
+   "noncredit_courses_in_coci": 11,
+   "category": "Short-term Vocational",
+   "category_courses": 11,
+   "other_categories": []
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "BUSA",
+   "heading": "Business Accounting",
+   "catalog_courses": 3,
+   "noncredit_courses_in_coci": 2,
+   "category": "Short-term Vocational",
+   "category_courses": 2,
+   "other_categories": []
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "BUSN",
+   "heading": "Business",
+   "catalog_courses": 26,
+   "noncredit_courses_in_coci": 2,
+   "category": "Short-term Vocational",
+   "category_courses": 2,
+   "other_categories": []
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "CC",
+   "heading": "Clothing",
+   "catalog_courses": 29,
+   "noncredit_courses_in_coci": 0,
+   "category": null,
+   "category_courses": 0,
+   "other_categories": []
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "CIST",
+   "heading": "Computer Information Systems and Technology",
+   "catalog_courses": 15,
+   "noncredit_courses_in_coci": 15,
+   "category": "Short-term Vocational",
+   "category_courses": 9,
+   "other_categories": [
+    [
+     "Workforce Preparation",
+     6
+    ]
+   ]
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "CNED",
+   "heading": "Consumer Ed",
+   "catalog_courses": 4,
+   "noncredit_courses_in_coci": 2,
+   "category": "Courses for Older Adults",
+   "category_courses": 2,
+   "other_categories": []
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "COMP",
+   "heading": "Computer",
+   "catalog_courses": 29,
+   "noncredit_courses_in_coci": 9,
+   "category": "Short-term Vocational",
+   "category_courses": 9,
+   "other_categories": []
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "CRAE",
+   "heading": "Creative Arts",
+   "catalog_courses": 15,
+   "noncredit_courses_in_coci": 6,
+   "category": "Courses for Older Adults",
+   "category_courses": 6,
+   "other_categories": []
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "DAN",
+   "heading": "Dance-NOCE",
+   "catalog_courses": 25,
+   "noncredit_courses_in_coci": 0,
+   "category": null,
+   "category_courses": 0,
+   "other_categories": []
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "DIG",
+   "heading": "Digital",
+   "catalog_courses": 40,
+   "noncredit_courses_in_coci": 0,
+   "category": null,
+   "category_courses": 0,
+   "other_categories": []
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "DSPS",
+   "heading": "Disability Support Services",
+   "catalog_courses": 2,
+   "noncredit_courses_in_coci": 26,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_courses": 24,
+   "other_categories": [
+    [
+     "Courses for Persons with Substantial Disabilities",
+     1
+    ]
+   ]
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "DSSS",
+   "heading": "Disability Support Services",
+   "catalog_courses": 65,
+   "noncredit_courses_in_coci": 49,
+   "category": "Courses for Persons with Substantial Disabilities",
+   "category_courses": 49,
+   "other_categories": []
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "ECED",
+   "heading": "Early Childhood Education",
+   "catalog_courses": 12,
+   "noncredit_courses_in_coci": 10,
+   "category": "Short-term Vocational",
+   "category_courses": 10,
+   "other_categories": []
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "EDEN",
+   "heading": "Educational Enrichment",
+   "catalog_courses": 3,
+   "noncredit_courses_in_coci": 3,
+   "category": "Courses for Older Adults",
+   "category_courses": 3,
+   "other_categories": []
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "ELET",
+   "heading": "Electrical",
+   "catalog_courses": 19,
+   "noncredit_courses_in_coci": 14,
+   "category": "Short-term Vocational",
+   "category_courses": 14,
+   "other_categories": []
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "EMER",
+   "heading": "Emeritus",
+   "catalog_courses": 23,
+   "noncredit_courses_in_coci": 26,
+   "category": "Courses for Older Adults",
+   "category_courses": 25,
+   "other_categories": [
+    [
+     "Health & Safety",
+     1
+    ]
+   ]
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "ENCO",
+   "heading": "English/Communications",
+   "catalog_courses": 11,
+   "noncredit_courses_in_coci": 5,
+   "category": "Courses for Older Adults",
+   "category_courses": 3,
+   "other_categories": [
+    [
+     "Elementary and Secondary Basic Skills",
+     1
+    ],
+    [
+     "Short-term Vocational",
+     1
+    ]
+   ]
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "ENTR",
+   "heading": "Entrepreneurship",
+   "catalog_courses": 3,
+   "noncredit_courses_in_coci": 0,
+   "category": null,
+   "category_courses": 0,
+   "other_categories": []
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "ESLA",
+   "heading": "ESL Classes",
+   "catalog_courses": 89,
+   "noncredit_courses_in_coci": 26,
+   "category": "English as a Second Language (ESL)",
+   "category_courses": 25,
+   "other_categories": [
+    [
+     "Citizenship for Immigrants",
+     1
+    ]
+   ]
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "ESLM",
+   "heading": "ESL Mirrored Couse",
+   "catalog_courses": 1,
+   "noncredit_courses_in_coci": 0,
+   "category": null,
+   "category_courses": 0,
+   "other_categories": []
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "ESLW",
+   "heading": "ESL Ed Planning",
+   "catalog_courses": 3,
+   "noncredit_courses_in_coci": 0,
+   "category": null,
+   "category_courses": 0,
+   "other_categories": []
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "FINC",
+   "heading": "Financial",
+   "catalog_courses": 18,
+   "noncredit_courses_in_coci": 1,
+   "category": "Short-term Vocational",
+   "category_courses": 1,
+   "other_categories": []
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "FITN",
+   "heading": "Fitness",
+   "catalog_courses": 34,
+   "noncredit_courses_in_coci": 0,
+   "category": null,
+   "category_courses": 0,
+   "other_categories": []
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "FN",
+   "heading": "Cooking",
+   "catalog_courses": 2,
+   "noncredit_courses_in_coci": 0,
+   "category": null,
+   "category_courses": 0,
+   "other_categories": []
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "FOTO",
+   "heading": "Photography",
+   "catalog_courses": 4,
+   "noncredit_courses_in_coci": 0,
+   "category": null,
+   "category_courses": 0,
+   "other_categories": []
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "FSRV",
+   "heading": "Funeral Service - NOCE",
+   "catalog_courses": 5,
+   "noncredit_courses_in_coci": 3,
+   "category": "Short-term Vocational",
+   "category_courses": 3,
+   "other_categories": []
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "HLTH",
+   "heading": "Health",
+   "catalog_courses": 11,
+   "noncredit_courses_in_coci": 7,
+   "category": "Courses for Older Adults",
+   "category_courses": 6,
+   "other_categories": [
+    [
+     "Health & Safety",
+     1
+    ]
+   ]
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "HOSM",
+   "heading": "Hospitality Management",
+   "catalog_courses": 2,
+   "noncredit_courses_in_coci": 0,
+   "category": null,
+   "category_courses": 0,
+   "other_categories": []
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "HRMA",
+   "heading": "Human Resource Management",
+   "catalog_courses": 5,
+   "noncredit_courses_in_coci": 0,
+   "category": null,
+   "category_courses": 0,
+   "other_categories": []
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "IHSS",
+   "heading": "Individual High School Subjcts",
+   "catalog_courses": 47,
+   "noncredit_courses_in_coci": 37,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_courses": 37,
+   "other_categories": []
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "KIDS",
+   "heading": "Kids College",
+   "catalog_courses": 278,
+   "noncredit_courses_in_coci": 0,
+   "category": null,
+   "category_courses": 0,
+   "other_categories": []
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "LANG",
+   "heading": "Language",
+   "catalog_courses": 8,
+   "noncredit_courses_in_coci": 0,
+   "category": null,
+   "category_courses": 0,
+   "other_categories": []
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "MEDA",
+   "heading": "Medical Assisting",
+   "catalog_courses": 15,
+   "noncredit_courses_in_coci": 13,
+   "category": "Short-term Vocational",
+   "category_courses": 13,
+   "other_categories": []
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "MEDO",
+   "heading": "Medical Occupations",
+   "catalog_courses": 5,
+   "noncredit_courses_in_coci": 5,
+   "category": "Short-term Vocational",
+   "category_courses": 5,
+   "other_categories": []
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "MEOC",
+   "heading": "Medical Occupations-Clerical",
+   "catalog_courses": 2,
+   "noncredit_courses_in_coci": 11,
+   "category": "Short-term Vocational",
+   "category_courses": 11,
+   "other_categories": []
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "MS",
+   "heading": "Microsoft",
+   "catalog_courses": 4,
+   "noncredit_courses_in_coci": 12,
+   "category": "Short-term Vocational",
+   "category_courses": 12,
+   "other_categories": []
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "MUSC",
+   "heading": "Music - NOCE",
+   "catalog_courses": 20,
+   "noncredit_courses_in_coci": 2,
+   "category": "Courses for Older Adults",
+   "category_courses": 2,
+   "other_categories": []
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "OTEC",
+   "heading": "Office Technician",
+   "catalog_courses": 26,
+   "noncredit_courses_in_coci": 16,
+   "category": "Short-term Vocational",
+   "category_courses": 15,
+   "other_categories": [
+    [
+     "Workforce Preparation",
+     1
+    ]
+   ]
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "PARN",
+   "heading": "Parenting",
+   "catalog_courses": 62,
+   "noncredit_courses_in_coci": 30,
+   "category": "Parenting",
+   "category_courses": 30,
+   "other_categories": []
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "PTEC",
+   "heading": "Pharmacy Technician",
+   "catalog_courses": 13,
+   "noncredit_courses_in_coci": 9,
+   "category": "Short-term Vocational",
+   "category_courses": 8,
+   "other_categories": [
+    [
+     "Workforce Preparation",
+     1
+    ]
+   ]
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "QAMD",
+   "heading": "Quality Assurance Medical Devices",
+   "catalog_courses": 6,
+   "noncredit_courses_in_coci": 6,
+   "category": "Short-term Vocational",
+   "category_courses": 6,
+   "other_categories": []
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "SIGN",
+   "heading": "Sign Language",
+   "catalog_courses": 4,
+   "noncredit_courses_in_coci": 0,
+   "category": null,
+   "category_courses": 0,
+   "other_categories": []
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "SOLR",
+   "heading": "Solar Technician",
+   "catalog_courses": 1,
+   "noncredit_courses_in_coci": 0,
+   "category": null,
+   "category_courses": 0,
+   "other_categories": []
+  },
+  {
+   "college": "north_orange_continuing_education",
+   "code": "WFPR",
+   "heading": "Workforce Preparation",
+   "catalog_courses": 48,
+   "noncredit_courses_in_coci": 46,
+   "category": "Workforce Preparation",
+   "category_courses": 46,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "ABED",
+   "heading": "Adult Basic Education",
+   "catalog_courses": 10,
+   "noncredit_courses_in_coci": 13,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_courses": 13,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "ACCT",
+   "heading": "Accounting",
+   "catalog_courses": 4,
+   "noncredit_courses_in_coci": 4,
+   "category": "Short-term Vocational",
+   "category_courses": 4,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "AGRI",
+   "heading": "Agriculture",
+   "catalog_courses": 1,
+   "noncredit_courses_in_coci": 2,
+   "category": "Short-term Vocational",
+   "category_courses": 2,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "APLD",
+   "heading": "Applied Design",
+   "catalog_courses": 2,
+   "noncredit_courses_in_coci": 0,
+   "category": null,
+   "category_courses": 0,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "ARTC",
+   "heading": "Commercial Art",
+   "catalog_courses": 2,
+   "noncredit_courses_in_coci": 0,
+   "category": null,
+   "category_courses": 0,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "ARTS",
+   "heading": "Art Theory",
+   "catalog_courses": 1,
+   "noncredit_courses_in_coci": 0,
+   "category": null,
+   "category_courses": 0,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "ARTX",
+   "heading": "Arts Experimental",
+   "catalog_courses": 5,
+   "noncredit_courses_in_coci": 1,
+   "category": "Courses for Older Adults",
+   "category_courses": 1,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "AUTO",
+   "heading": "Automotive Technology",
+   "catalog_courses": 12,
+   "noncredit_courses_in_coci": 12,
+   "category": "Short-term Vocational",
+   "category_courses": 11,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "BUSN",
+   "heading": "Business Management",
+   "catalog_courses": 25,
+   "noncredit_courses_in_coci": 26,
+   "category": "Short-term Vocational",
+   "category_courses": 26,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "CEMR",
+   "heading": "Consumer Education Management of Resources",
+   "catalog_courses": 4,
+   "noncredit_courses_in_coci": 3,
+   "category": "Short-term Vocational",
+   "category_courses": 3,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "CLTX",
+   "heading": "Clothing and Textiles",
+   "catalog_courses": 33,
+   "noncredit_courses_in_coci": 33,
+   "category": "Short-term Vocational",
+   "category_courses": 33,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "CNCT",
+   "heading": "Construction Crafts Technology",
+   "catalog_courses": 4,
+   "noncredit_courses_in_coci": 3,
+   "category": "Short-term Vocational",
+   "category_courses": 3,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "COMM",
+   "heading": "Communications",
+   "catalog_courses": 22,
+   "noncredit_courses_in_coci": 27,
+   "category": "Short-term Vocational",
+   "category_courses": 27,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "COMP",
+   "heading": "Computer and Information Sciences",
+   "catalog_courses": 42,
+   "noncredit_courses_in_coci": 40,
+   "category": "Short-term Vocational",
+   "category_courses": 40,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "CRTW",
+   "heading": "Creative Writing",
+   "catalog_courses": 2,
+   "noncredit_courses_in_coci": 0,
+   "category": null,
+   "category_courses": 0,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "DRAM",
+   "heading": "Dramatic Arts",
+   "catalog_courses": 1,
+   "noncredit_courses_in_coci": 0,
+   "category": null,
+   "category_courses": 0,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "DRVE",
+   "heading": "Driver Education",
+   "catalog_courses": 1,
+   "noncredit_courses_in_coci": 2,
+   "category": "Courses for Older Adults",
+   "category_courses": 1,
+   "other_categories": [
+    [
+     "Short-term Vocational",
+     1
+    ]
+   ]
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "DSPS",
+   "heading": "Disability Support Programs and Services",
+   "catalog_courses": 17,
+   "noncredit_courses_in_coci": 31,
+   "category": "Courses for Persons with Substantial Disabilities",
+   "category_courses": 30,
+   "other_categories": [
+    [
+     "Short-term Vocational",
+     1
+    ]
+   ]
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "ELRN",
+   "heading": "Electronics",
+   "catalog_courses": 2,
+   "noncredit_courses_in_coci": 3,
+   "category": "Short-term Vocational",
+   "category_courses": 3,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "ENGL",
+   "heading": "English",
+   "catalog_courses": 1,
+   "noncredit_courses_in_coci": 1,
+   "category": "Courses for Older Adults",
+   "category_courses": 1,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "ESLA",
+   "heading": "English as a Second Language",
+   "catalog_courses": 27,
+   "noncredit_courses_in_coci": 34,
+   "category": "English as a Second Language (ESL)",
+   "category_courses": 34,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "FDNT",
+   "heading": "Foods and Nutrition",
+   "catalog_courses": 17,
+   "noncredit_courses_in_coci": 27,
+   "category": "Short-term Vocational",
+   "category_courses": 27,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "HEAL",
+   "heading": "Health Education",
+   "catalog_courses": 4,
+   "noncredit_courses_in_coci": 1,
+   "category": "Health & Safety",
+   "category_courses": 1,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "HLTH",
+   "heading": "Health",
+   "catalog_courses": 15,
+   "noncredit_courses_in_coci": 16,
+   "category": "Short-term Vocational",
+   "category_courses": 16,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "HMDV",
+   "heading": "Human Development",
+   "catalog_courses": 24,
+   "noncredit_courses_in_coci": 26,
+   "category": "Short-term Vocational",
+   "category_courses": 26,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "HMID",
+   "heading": "Housing, Maintenance and Interior Design",
+   "catalog_courses": 2,
+   "noncredit_courses_in_coci": 1,
+   "category": "Short-term Vocational",
+   "category_courses": 1,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "HSDP",
+   "heading": "High School Diploma Program",
+   "catalog_courses": 27,
+   "noncredit_courses_in_coci": 30,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_courses": 30,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "HSEP",
+   "heading": "High School Equivalency Preparation",
+   "catalog_courses": 9,
+   "noncredit_courses_in_coci": 9,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_courses": 9,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "INDT",
+   "heading": "Industrial Technology",
+   "catalog_courses": 13,
+   "noncredit_courses_in_coci": 14,
+   "category": "Short-term Vocational",
+   "category_courses": 14,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "INTD",
+   "heading": "Interdisciplinary Studies",
+   "catalog_courses": 4,
+   "noncredit_courses_in_coci": 5,
+   "category": "Workforce Preparation",
+   "category_courses": 3,
+   "other_categories": [
+    [
+     "Elementary and Secondary Basic Skills",
+     1
+    ],
+    [
+     "Short-term Vocational",
+     1
+    ]
+   ]
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "INVS",
+   "heading": "Investments",
+   "catalog_courses": 2,
+   "noncredit_courses_in_coci": 1,
+   "category": "Courses for Older Adults",
+   "category_courses": 1,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "LAWS",
+   "heading": "Law",
+   "catalog_courses": 1,
+   "noncredit_courses_in_coci": 0,
+   "category": null,
+   "category_courses": 0,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "MECT",
+   "heading": "Mechanical Technology",
+   "catalog_courses": 7,
+   "noncredit_courses_in_coci": 8,
+   "category": "Short-term Vocational",
+   "category_courses": 8,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "MUSI",
+   "heading": "Music Appreciation, Theory",
+   "catalog_courses": 1,
+   "noncredit_courses_in_coci": 0,
+   "category": null,
+   "category_courses": 0,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "MUSN",
+   "heading": "Music Instrumental",
+   "catalog_courses": 2,
+   "noncredit_courses_in_coci": 2,
+   "category": "Courses for Older Adults",
+   "category_courses": 2,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "MUSV",
+   "heading": "Music Vocal",
+   "catalog_courses": 2,
+   "noncredit_courses_in_coci": 1,
+   "category": "Courses for Older Adults",
+   "category_courses": 1,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "OFSY",
+   "heading": "Office Systems",
+   "catalog_courses": 24,
+   "noncredit_courses_in_coci": 40,
+   "category": "Short-term Vocational",
+   "category_courses": 40,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "PASV",
+   "heading": "Public Affairs and Services",
+   "catalog_courses": 8,
+   "noncredit_courses_in_coci": 7,
+   "category": "Courses for Older Adults",
+   "category_courses": 5,
+   "other_categories": [
+    [
+     "Short-term Vocational",
+     2
+    ]
+   ]
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "PHYE",
+   "heading": "Physical Education",
+   "catalog_courses": 4,
+   "noncredit_courses_in_coci": 1,
+   "category": "Short-term Vocational",
+   "category_courses": 1,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "PRTG",
+   "heading": "Printing/Graphics",
+   "catalog_courses": 1,
+   "noncredit_courses_in_coci": 1,
+   "category": "Short-term Vocational",
+   "category_courses": 1,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "PSYC",
+   "heading": "Psychology",
+   "catalog_courses": 3,
+   "noncredit_courses_in_coci": 1,
+   "category": "Courses for Older Adults",
+   "category_courses": 1,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "SFED",
+   "heading": "Safety Education",
+   "catalog_courses": 2,
+   "noncredit_courses_in_coci": 0,
+   "category": null,
+   "category_courses": 0,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "SOCC",
+   "heading": "Social Sciences",
+   "catalog_courses": 1,
+   "noncredit_courses_in_coci": 0,
+   "category": null,
+   "category_courses": 0,
+   "other_categories": []
+  },
+  {
+   "college": "san_diego_of_continuing_education",
+   "code": "SPEE",
+   "heading": "Speech",
+   "catalog_courses": 1,
+   "noncredit_courses_in_coci": 1,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_courses": 1,
+   "other_categories": []
+  },
+  {
+   "college": "mt_san_antonio",
+   "code": "ACCS",
+   "heading": "Access",
+   "catalog_courses": 29,
+   "noncredit_courses_in_coci": 13,
+   "category": "Courses for Persons with Substantial Disabilities",
+   "category_courses": 13,
+   "other_categories": []
+  },
+  {
+   "college": "mt_san_antonio",
+   "code": "BS",
+   "heading": "Basic Skills",
+   "catalog_courses": 25,
+   "noncredit_courses_in_coci": 15,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_courses": 14,
+   "other_categories": [
+    [
+     "Workforce Preparation",
+     1
+    ]
+   ]
+  },
+  {
+   "college": "mt_san_antonio",
+   "code": "BSHS",
+   "heading": "High School Basic Skills",
+   "catalog_courses": 41,
+   "noncredit_courses_in_coci": 19,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_courses": 19,
+   "other_categories": []
+  },
+  {
+   "college": "mt_san_antonio",
+   "code": "CITZ",
+   "heading": "Citizenship",
+   "catalog_courses": 1,
+   "noncredit_courses_in_coci": 1,
+   "category": "Citizenship for Immigrants",
+   "category_courses": 1,
+   "other_categories": []
+  },
+  {
+   "college": "mt_san_antonio",
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "catalog_courses": 42,
+   "noncredit_courses_in_coci": 24,
+   "category": "English as a Second Language (ESL)",
+   "category_courses": 24,
+   "other_categories": []
+  },
+  {
+   "college": "mt_san_antonio",
+   "code": "OAD",
+   "heading": "Older Adult",
+   "catalog_courses": 18,
+   "noncredit_courses_in_coci": 16,
+   "category": "Courses for Older Adults",
+   "category_courses": 16,
+   "other_categories": []
+  },
+  {
+   "college": "mt_san_antonio",
+   "code": "PAED",
+   "heading": "Parenting",
+   "catalog_courses": 1,
+   "noncredit_courses_in_coci": 0,
+   "category": null,
+   "category_courses": 0,
+   "other_categories": []
+  },
+  {
+   "college": "mt_san_antonio",
+   "code": "VOC",
+   "heading": "Vocational",
+   "catalog_courses": 320,
+   "noncredit_courses_in_coci": 187,
+   "category": "Short-term Vocational",
+   "category_courses": 152,
+   "other_categories": [
+    [
+     "Workforce Preparation",
+     33
+    ]
+   ]
+  },
+  {
+   "college": "santa_ana",
+   "code": "ABE",
+   "heading": "Adult Basic Education",
+   "catalog_courses": 18,
+   "noncredit_courses_in_coci": 13,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_courses": 13,
+   "other_categories": []
+  },
+  {
+   "college": "santa_ana",
+   "code": "CNSL",
+   "heading": "Counseling - CEC",
+   "catalog_courses": 3,
+   "noncredit_courses_in_coci": 3,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_courses": 3,
+   "other_categories": []
+  },
+  {
+   "college": "santa_ana",
+   "code": "CTZN",
+   "heading": "Citizenship",
+   "catalog_courses": 1,
+   "noncredit_courses_in_coci": 1,
+   "category": "Citizenship for Immigrants",
+   "category_courses": 1,
+   "other_categories": []
+  },
+  {
+   "college": "santa_ana",
+   "code": "ESL",
+   "heading": "English As a Second Language",
+   "catalog_courses": 25,
+   "noncredit_courses_in_coci": 29,
+   "category": "English as a Second Language (ESL)",
+   "category_courses": 27,
+   "other_categories": []
+  },
+  {
+   "college": "santa_ana",
+   "code": "HSART",
+   "heading": "High School Subjects - Arts",
+   "catalog_courses": 3,
+   "noncredit_courses_in_coci": 3,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_courses": 2,
+   "other_categories": []
+  },
+  {
+   "college": "santa_ana",
+   "code": "HSENG",
+   "heading": "High School Subjects - English",
+   "catalog_courses": 16,
+   "noncredit_courses_in_coci": 18,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_courses": 15,
+   "other_categories": []
+  },
+  {
+   "college": "santa_ana",
+   "code": "HSGED",
+   "heading": "Secondary Subjects GED",
+   "catalog_courses": 1,
+   "noncredit_courses_in_coci": 1,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_courses": 1,
+   "other_categories": []
+  },
+  {
+   "college": "santa_ana",
+   "code": "HSMTH",
+   "heading": "High School Subjects - Math",
+   "catalog_courses": 14,
+   "noncredit_courses_in_coci": 15,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_courses": 15,
+   "other_categories": []
+  },
+  {
+   "college": "santa_ana",
+   "code": "HSOTH",
+   "heading": "High School Subjects - Other",
+   "catalog_courses": 5,
+   "noncredit_courses_in_coci": 5,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_courses": 5,
+   "other_categories": []
+  },
+  {
+   "college": "santa_ana",
+   "code": "HSRDG",
+   "heading": "High School Subjects - Reading",
+   "catalog_courses": 2,
+   "noncredit_courses_in_coci": 3,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_courses": 3,
+   "other_categories": []
+  },
+  {
+   "college": "santa_ana",
+   "code": "HSS",
+   "heading": "High School Subjects",
+   "catalog_courses": 11,
+   "noncredit_courses_in_coci": 12,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_courses": 12,
+   "other_categories": []
+  },
+  {
+   "college": "santa_ana",
+   "code": "HSSCI",
+   "heading": "High School Subjects - Natural Sciences",
+   "catalog_courses": 11,
+   "noncredit_courses_in_coci": 11,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_courses": 11,
+   "other_categories": []
+  },
+  {
+   "college": "santa_ana",
+   "code": "HSSOC",
+   "heading": "High School Subjects - Social Sciences",
+   "catalog_courses": 11,
+   "noncredit_courses_in_coci": 11,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_courses": 11,
+   "other_categories": []
+  },
+  {
+   "college": "santa_ana",
+   "code": "LRN",
+   "heading": "Learning",
+   "catalog_courses": 5,
+   "noncredit_courses_in_coci": 5,
+   "category": "Elementary and Secondary Basic Skills",
+   "category_courses": 5,
+   "other_categories": []
+  },
+  {
+   "college": "santa_ana",
+   "code": "OAP",
+   "heading": "Older Adults",
+   "catalog_courses": 7,
+   "noncredit_courses_in_coci": 8,
+   "category": "Courses for Older Adults",
+   "category_courses": 8,
+   "other_categories": []
+  },
+  {
+   "college": "santa_ana",
+   "code": "PRNT",
+   "heading": "Parent Education",
+   "catalog_courses": 9,
+   "noncredit_courses_in_coci": 9,
+   "category": "Parenting",
+   "category_courses": 9,
+   "other_categories": []
+  },
+  {
+   "college": "santa_ana",
+   "code": "SAFE",
+   "heading": "Health and Safety",
+   "catalog_courses": 2,
+   "noncredit_courses_in_coci": 2,
+   "category": "Health & Safety",
+   "category_courses": 2,
+   "other_categories": []
+  },
+  {
+   "college": "santa_ana",
+   "code": "SSD",
+   "heading": "Substantial Disabilities",
+   "catalog_courses": 6,
+   "noncredit_courses_in_coci": 6,
+   "category": "Courses for Persons with Substantial Disabilities",
+   "category_courses": 6,
+   "other_categories": []
+  },
+  {
+   "college": "santa_ana",
+   "code": "VAUTO",
+   "heading": "Vocational - Automotive",
+   "catalog_courses": 8,
+   "noncredit_courses_in_coci": 6,
+   "category": "Short-term Vocational",
+   "category_courses": 6,
+   "other_categories": []
+  },
+  {
+   "college": "santa_ana",
+   "code": "VBUS",
+   "heading": "Vocational - Business",
+   "catalog_courses": 40,
+   "noncredit_courses_in_coci": 39,
+   "category": "Short-term Vocational",
+   "category_courses": 36,
+   "other_categories": [
+    [
+     "Workforce Preparation",
+     3
+    ]
+   ]
+  },
+  {
+   "college": "santa_ana",
+   "code": "VCDEV",
+   "heading": "Vocational - Child Development",
+   "catalog_courses": 2,
+   "noncredit_courses_in_coci": 0,
+   "category": null,
+   "category_courses": 0,
+   "other_categories": []
+  },
+  {
+   "college": "santa_ana",
+   "code": "VCNST",
+   "heading": "Vocational - Construction",
+   "catalog_courses": 4,
+   "noncredit_courses_in_coci": 4,
+   "category": "Short-term Vocational",
+   "category_courses": 4,
+   "other_categories": []
+  },
+  {
+   "college": "santa_ana",
+   "code": "VDMA",
+   "heading": "Vocational - Digital Media Arts",
+   "catalog_courses": 3,
+   "noncredit_courses_in_coci": 3,
+   "category": "Short-term Vocational",
+   "category_courses": 3,
+   "other_categories": []
+  },
+  {
+   "college": "santa_ana",
+   "code": "VFDM",
+   "heading": "Vocational - Fashion Design & Merchandising",
+   "catalog_courses": 2,
+   "noncredit_courses_in_coci": 2,
+   "category": "Short-term Vocational",
+   "category_courses": 2,
+   "other_categories": []
+  },
+  {
+   "college": "santa_ana",
+   "code": "VFOOD",
+   "heading": "Vocational - Food",
+   "catalog_courses": 7,
+   "noncredit_courses_in_coci": 7,
+   "category": "Short-term Vocational",
+   "category_courses": 7,
+   "other_categories": []
+  },
+  {
+   "college": "santa_ana",
+   "code": "VFPA",
+   "heading": "Vocational - Fine Performing Arts",
+   "catalog_courses": 21,
+   "noncredit_courses_in_coci": 19,
+   "category": "Short-term Vocational",
+   "category_courses": 19,
+   "other_categories": []
+  },
+  {
+   "college": "santa_ana",
+   "code": "VHLTH",
+   "heading": "Vocational - Health",
+   "catalog_courses": 24,
+   "noncredit_courses_in_coci": 15,
+   "category": "Short-term Vocational",
+   "category_courses": 14,
+   "other_categories": [
+    [
+     "Workforce Preparation",
+     1
+    ]
+   ]
+  },
+  {
+   "college": "santa_ana",
+   "code": "VHOSP",
+   "heading": "Vocational - Hospitality",
+   "catalog_courses": 1,
+   "noncredit_courses_in_coci": 1,
+   "category": "Short-term Vocational",
+   "category_courses": 1,
+   "other_categories": []
+  },
+  {
+   "college": "santa_ana",
+   "code": "VMFG",
+   "heading": "Vocational - Manufacturing",
+   "catalog_courses": 1,
+   "noncredit_courses_in_coci": 1,
+   "category": "Short-term Vocational",
+   "category_courses": 1,
+   "other_categories": []
+  }
+ ]
+}

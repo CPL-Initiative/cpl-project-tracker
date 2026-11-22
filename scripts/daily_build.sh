@@ -342,6 +342,10 @@ step "Build the Subjects page's courses by code" <<'STEP'
 python3 kb/_build_subject_courses.py || { git checkout -- kb/status/subject_courses 2>/dev/null || true; echo "::warning title=Subject courses not rebuilt::kb/_build_subject_courses.py failed; the Subjects page's course panel reads yesterday's files under kb/status/subject_courses/."; }
 STEP
 
+step "Build the noncredit subject title list" <<'STEP'
+python3 kb/_build_noncredit_subject_titles.py || { git checkout -- kb/status/noncredit_subject_titles.json 2>/dev/null || true; echo "::warning title=Noncredit subject titles not rebuilt::kb/_build_noncredit_subject_titles.py failed; #commons/subjects/noncredit reads yesterday's kb/status/noncredit_subject_titles.json."; }
+STEP
+
 step "Build the Subjects recommendations" <<'STEP'
 python3 kb/_build_local_subject_recommendations.py || { git checkout -- kb/status/local_subject_recommendations.json 2>/dev/null || true; echo "::warning title=Subject recommendations not rebuilt::kb/_build_local_subject_recommendations.py failed; the Subjects page reads yesterday's kb/status/local_subject_recommendations.json."; }
 STEP

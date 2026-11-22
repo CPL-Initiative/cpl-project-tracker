@@ -339,6 +339,10 @@ jobs:
       # and noncredit apart, no band guessed for a catalog-only course. Pure stdlib.
       - name: Subject courses (kb/_build_subject_courses.py)
         run: python3 tests/subject_courses_test.py
+      # The noncredit subject title list (S700, #3655): read from the four large noncredit programs only, a category
+      # counted from the export and never read from a heading's words, nothing merged beyond the named synonyms.
+      - name: Noncredit subject titles (kb/_build_noncredit_subject_titles.py)
+        run: python3 tests/noncredit_subject_titles_test.py
       # The codes the pile mint holds on (S695): held courses summed, counted once each, ranked; a vote that missed its
       # floor is a suggestion, never a decision. Pure stdlib.
       - name: Held subject codes (kb/_held_subject_codes.py)

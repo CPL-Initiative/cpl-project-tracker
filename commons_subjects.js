@@ -12,6 +12,7 @@
 // title or no common code it shows the recommendation kb/status/local_subject_recommendations.json holds for it.
 //
 // Addresses (loaded by commons.js when the address names it): #commons/subjects (every college),
+// #commons/subjects/noncredit (the draft noncredit subject title list, from kb/status/noncredit_subject_titles.json),
 // #commons/subjects/<college slug> (one college), #commons/subjects/<college slug>/<local code> (that college with
 // the code's course panel open, read from kb/status/subject_courses/<slug>.json), #commons/subjects/disagree (the codes only one side prints, the
 // list of codes with no title), #commons/subjects/held (S695: the local subject codes the pile mint holds on, ranked by the held
@@ -63,6 +64,11 @@
   var DISAGREE = "disagree";
   var HELD = "held";
   var HELD_FILE = "kb/status/held_subject_codes.json";
+  /* The noncredit subject title list (S700; Sam, 2026-11-21, relayed by COBIx on #3655: build it from the four large
+     noncredit programs' catalogs, then line the smaller programs up with it). #commons/subjects/noncredit draws
+     kb/status/noncredit_subject_titles.json (kb/_build_noncredit_subject_titles.py): a draft a person settles. */
+  var NC = "noncredit";
+  var NC_FILE = "kb/status/noncredit_subject_titles.json";
 
   function el(tag, attrs, kids) {
     var e = document.createElement(tag);
@@ -197,6 +203,46 @@
       }) : [el("tr", null, [el("td", { colspan: "5", text: "The pile mint holds no course for want of a common subject code." })])])]);
     return el("div", { cls: "csb-wrap", role: "region", "aria-label": "Local subject codes the M-ID mint holds on", tabindex: "0" }, [tbl]);
   }
+  function ncTable(N) {
+    var names = {};
+    (N.programs || []).forEach(function (p) { names[p.slug] = p.college; });
+    var rows = [], last = null;
+    (N.titles || []).forEach(function (t) {
+      var cat = t.category || "No noncredit course in COCI";
+      if (cat !== last) {
+        var m = (N.mq || {})[t.category] || {};
+        rows.push(el("tr", { cls: "csb-nc-cat", "data-category": cat }, [el("th", { scope: "colgroup", colspan: "5" }, [cat,
+          el("span", { cls: "csb-sub", text: !t.category ? "The export lists no noncredit course under these codes, so no category is counted."
+            : m.common_code ? "Noncredit MQ discipline: " + m.mq_discipline + ". Common subject code " + m.common_code + "."
+            : m.mq_discipline ? "Noncredit MQ discipline: " + m.mq_discipline + ". No common subject code yet." : "No noncredit MQ discipline is named for this category, and no common subject code yet." })])]));
+        last = cat;
+      }
+      var where = (t.members || []).map(function (x) { return (names[x.college] || x.college) + " " + x.code; }).join("; ");
+      var share = t.category_share == null ? "" : Math.round(t.category_share * 100) + "% of its noncredit courses";
+      var others = (t.categories || []).slice(1).map(function (c) { return c[0] + " " + fmt(c[1]); }).join("; ");
+      rows.push(el("tr", { "data-title": t.title, "data-state": t.state }, [
+        el("th", { scope: "row" }, [t.title, (t.printed_as || []).length > 1 || (t.printed_as || [])[0] !== t.title
+          ? el("span", { cls: "csb-sub", text: "Printed as: " + (t.printed_as || []).join("; ") }) : null]),
+        el("td", { text: fmt(t.programs) + " of " + fmt((N.programs || []).length) }),
+        el("td", { text: where }),
+        el("td", { text: fmt(t.catalog_courses) }),
+        el("td", null, [t.category ? share : "", t.state === "several categories" && others ? el("span", { cls: "csb-sub", text: "Also under: " + others }) : null])]));
+    });
+    var tbl = el("table", { cls: "csb-table csb-nc" }, [
+      el("colgroup", null, [el("col", { cls: "csb-c-wide" }), el("col", { cls: "csb-c-num" }), el("col"), el("col", { cls: "csb-c-num" }), el("col", { cls: "csb-c-mid" })]),
+      el("thead", null, [el("tr", null, ["Noncredit subject title", "Programs", "Where it is printed", "Courses in the catalogs", "Share under this category"]
+        .map(function (t) { return el("th", { scope: "col", text: t }); }))]),
+      el("tbody", null, rows.length ? rows : [el("tr", null, [el("td", { colspan: "5", text: "No heading is filed yet." })])])]);
+    return el("div", { cls: "csb-wrap", role: "region", "aria-label": "Noncredit subject titles by category", tabindex: "0" }, [tbl]);
+  }
+  var ncCache = null;
+  function loadNc() {
+    ncCache = ncCache || fetch(NC_FILE, { cache: "no-cache" }).then(function (r) {
+      if (!r || !r.ok) throw new Error(NC_FILE + " answered " + (r ? r.status : "nothing"));
+      return r.json();
+    }).then(null, function (e) { ncCache = null; throw e; });
+    return ncCache;
+  }
   var heldCache = null;
   function loadHeld() {
     heldCache = heldCache || fetch(HELD_FILE, { cache: "no-cache" }).then(function (r) {
@@ -289,8 +335,9 @@
     /* <college slug>/<local code> opens that college with the code's course panel; a code may hold a slash (ES/A). */
     var cut = view.indexOf("/"), code = cut > 0 ? view.slice(cut + 1) : "";
     if (cut > 0) view = view.slice(0, cut);
-    var c = view && view !== DISAGREE && view !== HELD ? M.by[view] : null;
-    var missing = view && view !== DISAGREE && view !== HELD && !c ? view : "";
+    var special = view === DISAGREE || view === HELD || view === NC;
+    var c = view && !special ? M.by[view] : null;
+    var missing = view && !special && !c ? view : "";
     S.view = missing ? "" : view;
     S.code = c && code && c.rows.some(function (r) { return r.code === code; }) ? code : "";
     root.removeAttribute("style");
@@ -299,9 +346,9 @@
     M.list.forEach(function (x) { all = all.concat(x.rows); });
     var untitled = all.filter(needsTitle).length;
     var wrap = el("div", { cls: "cmn-wrap csb" });
-    wrap.appendChild(trail(c ? c.college : S.view === DISAGREE ? "Codes with no title" : S.view === HELD ? "Codes the M-ID mint holds on" : ""));
+    wrap.appendChild(trail(c ? c.college : S.view === DISAGREE ? "Codes with no title" : S.view === HELD ? "Codes the M-ID mint holds on" : S.view === NC ? "Noncredit subject titles" : ""));
     wrap.appendChild(el("header", { cls: "cmn-top" }, [
-      el("h2", { cls: "cmn-title", id: "csb-h", text: c ? "Subjects at " + c.college : S.view === DISAGREE ? "Subject codes with no title" : S.view === HELD ? "Local subject codes the M-ID mint holds on" : "Subjects" }),
+      el("h2", { cls: "cmn-title", id: "csb-h", text: c ? "Subjects at " + c.college : S.view === DISAGREE ? "Subject codes with no title" : S.view === HELD ? "Local subject codes the M-ID mint holds on" : S.view === NC ? "Noncredit subject titles" : "Subjects" }),
       el("div", { cls: "cmn-rule", "aria-hidden": "true" }),
       el("p", { cls: "cmn-lede", text: "Step a is the common subject code each discipline shares; Step b is each college’s own name for its subject codes, read from its catalog. The Courses bot drafts each local title from the catalog’s subject heading. A curator settles the codes the catalog and the state course list disagree on." })
     ]));
@@ -312,7 +359,8 @@
       " (" + fmt(T.not_in_catalog || 0) + " not in catalog, " + fmt(T.not_read || 0) + " not read yet, " + fmt(T.blocked || 0) + " blocked, " + fmt(T.noncredit_hold || 0) + " noncredit on hold). ",
       fmt(T.with_common) + " codes have a common subject code from the subject map. ",
       el("a", { href: "#canonical-subj4", text: "Common Subjects Reference" }), ". ",
-      go("#commons/subjects/" + HELD, "Codes the M-ID mint holds on"), "."]));
+      go("#commons/subjects/" + HELD, "Codes the M-ID mint holds on"), ". ",
+      go("#commons/subjects/" + NC, "Noncredit subject titles"), "."]));
     if (missing) wrap.appendChild(el("p", { cls: "csb-note", role: "status", text: "No college with a catalog on file is named " + missing + ". Every college is below." }));
     if (c) {
       wrap.appendChild(el("p", { cls: "csb-note", text: c.year + " catalog, read " + day(c.readAt) + ". " + (c.named ? fmt(c.named) + " of " + fmt(c.codes) + " codes have a local title." : "No subject heading is read for this catalog yet.") }));
@@ -329,6 +377,18 @@
           + (H.plan ? " From the pile mint dry run of " + day(H.plan) + "." : "")]));
         wrap.appendChild(heldTable(H));
       }
+    } else if (S.view === NC) {
+      var N = VIEW.N;
+      if (!N) wrap.appendChild(el("p", { cls: "csb-note", role: "status", text: VIEW.ncError ? "The noncredit title list could not be read (" + VIEW.ncError + "). Reload the tab to try again." : "Reading the noncredit titles…" }));
+      else {
+        var NT = N.totals || {};
+        wrap.appendChild(el("p", { cls: "csb-note", id: "csb-nc-note" }, [el("strong", { text: fmt(NT.titles) }), " noncredit subject titles from ", el("strong", { text: fmt(NT.headings) }),
+          " subject headings in the catalogs of the four large noncredit programs: " + (N.programs || []).map(function (p) { return p.college; }).join(", ") + ". "
+          + fmt(NT.titles_in_two_or_more_programs) + " titles are printed by two or more programs. " + fmt(NT.with_common_code) + " sit under a category whose noncredit MQ discipline has a common subject code, "
+          + fmt(NT.category_without_code) + " under a category with no code yet, and " + fmt(NT.no_noncredit_course_in_coci) + " have no noncredit course in COCI. "
+          + "This is a draft for a person to settle. Noncredit rows stay on hold until it is settled."]));
+        wrap.appendChild(ncTable(N));
+      }
     } else if (S.view === DISAGREE) {
       /* Every row with no title, in or out of the catalog (#3655, item 7: a code in both with no title was dropped
          by the old one-sided filter). Sam's rows first: Not in catalog, then Blocked, then Sky's Not read yet. */
@@ -341,7 +401,7 @@
       wrap.appendChild(collegeTable(M, M.list));
       wrap.appendChild(codeTable(all, "Every subject code"));
     }
-    wrap.appendChild(el("p", { cls: "csb-foot", text: "How codes are compared: " + (S.view === HELD && VIEW.H ? VIEW.H.rule : M.rule + (M.built ? " The state course list was built " + day(M.built) + "." : "")) }));
+    wrap.appendChild(el("p", { cls: "csb-foot", text: "How codes are compared: " + (S.view === HELD && VIEW.H ? VIEW.H.rule : S.view === NC && VIEW.N ? VIEW.N._rule : M.rule + (M.built ? " The state course list was built " + day(M.built) + "." : "")) }));
     var page = el("div", { cls: "cmn-page" }, [wrap]);
     root.appendChild(page);
     Array.prototype.forEach.call(root.querySelectorAll("a[data-csb-go]"), function (a) {
@@ -356,6 +416,10 @@
   /* A pick: draw it and put it in the address, which is the only place it lives. */
   /* The held view reads its own file the first time it opens, then draws again. */
   function withHeld(view) {
+    if (String(view || "") === NC && !VIEW.N) {
+      return loadNc().then(function (N) { VIEW.N = N; VIEW.ncError = ""; }, function (e) { VIEW.ncError = e && e.message ? e.message : String(e); })
+        .then(function () { if (VIEW.root && VIEW.M && S.view === NC) render(VIEW.root, VIEW.M, NC); });
+    }
     if (String(view || "") !== HELD || VIEW.H) return Promise.resolve();
     return loadHeld().then(function (H) { VIEW.H = H; VIEW.heldError = ""; }, function (e) { VIEW.heldError = e && e.message ? e.message : String(e); })
       .then(function () { if (VIEW.root && VIEW.M && S.view === HELD) render(VIEW.root, VIEW.M, HELD); });
@@ -438,8 +502,9 @@
     "#csb-panel-body { display:grid; gap:10px; min-width:0; }",
     ".csb-wrap-in { max-height:none; }",
     ".csb-courses { font-size:.88rem; } .csb-courses .csb-c-num { width:16%; } .csb-courses .csb-c-code { width:16%; } .csb-courses .csb-c-mid { width:30%; }",
+    ".csb-nc-cat th { background:var(--cmn-surface-2, var(--cmn-surface)); color:var(--cmn-heading); font-weight:700; }",
     ".csb-foot { margin:0; color:var(--cmn-muted); font-size:.85rem; max-width:var(--cpl-measure,none); }",
-    "@media (max-width: 560px) { .csb-table { min-width:36rem; } .csb-held { min-width:44rem; } .csb-courses { min-width:26rem; } .csb-table th, .csb-table td { padding:8px; } }"
+    "@media (max-width: 560px) { .csb-table { min-width:36rem; } .csb-held { min-width:44rem; } .csb-nc { min-width:40rem; } .csb-courses { min-width:26rem; } .csb-table th, .csb-table td { padding:8px; } }"
   ].join("\n");
   function ensureCss() {
     if (document.getElementById("csb-css")) return;
@@ -450,6 +515,6 @@
     boot: boot, render: render, model: model, heldModel: heldModel, recModel: recModel, REC_FILE: REC_FILE,
     _recs: function (f) { REC = recModel(f); }, address: address, open: open, load: load, FILE: FILE, HELD_FILE: HELD_FILE, SIDES: SIDES, CSS: CSS,
     _state: S, COURSE_DIR: COURSE_DIR,
-    _reset: function () { cache = null; heldCache = null; courseCache = {}; VIEW.M = null; VIEW.H = null; S.view = ""; S.code = ""; }
+    _reset: function () { cache = null; heldCache = null; ncCache = null; courseCache = {}; VIEW.M = null; VIEW.H = null; VIEW.N = null; S.view = ""; S.code = ""; }
   };
 })();

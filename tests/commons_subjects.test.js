@@ -29,6 +29,14 @@ const FILES = {
   "kb/status/commons_data.json": JSON.parse(fs.readFileSync("kb/status/commons_data.json", "utf8")),
   "kb/reference/industry_credential_skills.json": JSON.parse(fs.readFileSync("kb/reference/industry_credential_skills.json", "utf8")),
   "kb/status/local_subject_titles.json": FIX,
+  "kb/status/noncredit_subject_titles.json": { _rule: "Two headings are one title when they are equal after folding.",
+    mq: { "Parenting": { mq_discipline: "Parent Education: Noncredit", common_code: "PARN" }, "Citizenship for Immigrants": { mq_discipline: "Citizenship: Noncredit", common_code: null } },
+    programs: [{ slug: "p1", college: "Program One" }, { slug: "p2", college: "Program Two" }],
+    totals: { titles: 3, headings: 4, titles_in_two_or_more_programs: 1, with_common_code: 1, category_without_code: 1, no_noncredit_course_in_coci: 1 },
+    titles: [{ title: "Parent Education", printed_as: ["Parenting", "Parent Education"], programs: 2, members: [{ college: "p1", code: "PARN" }, { college: "p2", code: "PRNT" }], catalog_courses: 70,
+        category: "Parenting", category_share: 0.9, categories: [["Parenting", 9], ["Workforce Preparation", 1]], state: "several categories", common_code: "PARN" },
+      { title: "Citizenship", printed_as: ["Citizenship"], programs: 1, members: [{ college: "p2", code: "CTZN" }], catalog_courses: 1, category: "Citizenship for Immigrants", category_share: 1, categories: [["Citizenship for Immigrants", 1]], state: "one category", common_code: null },
+      { title: "Kids College", printed_as: ["Kids College"], programs: 1, members: [{ college: "p1", code: "KIDS" }], catalog_courses: 278, category: null, category_share: null, categories: [], state: "no noncredit course in COCI", common_code: null }] },
   "kb/status/subject_courses/alpha.json": { college: "Alpha College", slug: "alpha", columns: ["number", "title", "band", "listed", "units", "cid", "ccn", "mid"],
     codes: { MATH: [["1", "Algebra", "C", "Both", 4, "MATH 151", "", "MATH M1001"], ["2", "Statistics", "C", "COCI", 4, "", "STAT C1000", ""],
       ["300", "Math Lab", "N", "COCI", 0, "", "", ""], ["9", "Topics", "", "Catalog", "1", "", "", ""]], "ES/A": [["5", "Yoga", "C", "Both", 1, "", "", ""]] } },
@@ -139,6 +147,23 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
   await z.M.boot(); await settle();
   check("(9) a courses file that cannot be read says so in the panel", /could not be read/.test(txt(z.d.querySelector("#csb-panel-body"))));
   check("(9) the panel stores nothing", z.writes() === 0);
+  /* (10) the noncredit subject title list (S700; Sam's order relayed by COBIx on #3655) */
+  let n = load("#commons/subjects/noncredit");
+  await n.M.boot(); await settle();
+  const nctr = Array.from(n.d.querySelectorAll(".csb-nc tbody tr"));
+  check("(10) ⭐ the noncredit titles open from their own address and report it", nctr.length === 6 && n.w.CPL_COMMONS_SUBJECTS.address() === "commons/subjects/noncredit" && txt(n.d.querySelector("#csb-h")) === "Noncredit subject titles");
+  const cats = nctr.filter((r) => r.classList.contains("csb-nc-cat")).map(txt);
+  check("(10) ⭐ titles sit under their COCI category, which names its MQ discipline and common code, or says there is no code yet",
+    /^Parenting.*Parent Education: Noncredit\. Common subject code PARN\./.test(cats[0]) && /^Citizenship for Immigrants.*No common subject code yet\./.test(cats[1]) && /^No noncredit course in COCI/.test(cats[2]));
+  const pe = n.d.querySelector('.csb-nc tr[data-title="Parent Education"]');
+  check("(10) a title shows the headings printed for it, the programs and codes, its courses and its share", /Printed as: Parenting; Parent Education/.test(txt(pe.children[0])) && txt(pe.children[1]) === "2 of 2"
+    && txt(pe.children[2]) === "Program One PARN; Program Two PRNT" && txt(pe.children[3]) === "70" && /90% of its noncredit courses/.test(txt(pe.children[4])) && /Also under: Workforce Preparation 1/.test(txt(pe.children[4])));
+  check("(10) the note says it is a draft and that the hold stands", /draft for a person to settle\. Noncredit rows stay on hold/.test(txt(n.d.querySelector("#csb-nc-note"))));
+  check("(10) the Subjects list links to it", Array.from(n.d.querySelectorAll(".csb-stamp a")).some((a) => a.getAttribute("href") === "#commons/subjects/noncredit"));
+  check("(10) every header cell carries a scope and the table sits in a labeled region", Array.from(n.d.querySelectorAll(".csb-nc th")).every((th) => th.getAttribute("scope")) && n.d.querySelector(".csb-nc").parentNode.getAttribute("aria-label"));
+  n = load("#commons/subjects/noncredit", { "kb/status/noncredit_subject_titles.json": undefined });
+  await n.M.boot(); await settle();
+  check("(10) a list that cannot be read says so", /could not be read/.test(txt(n.d.querySelector(".csb-note[role=status]"))));
   let y = load("#commons/subjects", { "kb/status/local_subject_recommendations.json": undefined });
   await y.M.boot(); await settle();
   check("(8) the list draws without the recommendations file", y.d.querySelectorAll(".csb-codes tbody tr").length > 0 && !y.d.querySelector(".csb-rec"));
