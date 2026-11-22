@@ -5,14 +5,14 @@
   "course_joins": {
    "few or mixed": {
     "right": 372,
-    "asked": 641,
-    "share": 0.58,
+    "asked": 643,
+    "share": 0.579,
     "level": "Low"
    },
    "most courses agree": {
     "right": 580,
-    "asked": 658,
-    "share": 0.881,
+    "asked": 657,
+    "share": 0.883,
     "level": "Medium"
    }
   },
@@ -59,8 +59,8 @@
   "program_titles": {
    "one or mixed": {
     "right": 241,
-    "asked": 436,
-    "share": 0.553,
+    "asked": 437,
+    "share": 0.551,
     "level": "Low"
    },
    "several agree": {
@@ -105,9 +105,9 @@
    },
    "letters, several titles": {
     "right": 9,
-    "wrong": 23,
-    "asked": 32,
-    "share": 0.281,
+    "wrong": 24,
+    "asked": 33,
+    "share": 0.273,
     "level": "Low",
     "used": false
    },
@@ -122,9 +122,9 @@
   },
   "common_code_from_the_category": {
    "right": 16,
-   "wrong": 25,
-   "asked": 41,
-   "share": 0.39,
+   "wrong": 24,
+   "asked": 40,
+   "share": 0.4,
    "level": "Low"
   },
   "note": "Measured on the noncredit-only codes that hold a catalog heading (titles) or a common code from the subject map (codes), each left out of its own vote. A title condition right less than half the time is a guess: it stays measured here, used false, and gives no recommendation. The common code's answer key is the subject map, which reads a code without its credit or noncredit band (f-subject-map-ignores-credit-band-s698), so its share is a floor, and it reads Low."
@@ -203,8 +203,8 @@
   },
   "rows_the_subject_map_settles": {
    "own_courses": {
-    "right": 172,
-    "asked": 189
+    "right": 171,
+    "asked": 188
    },
    "same_code_statewide": {
     "right": 38,
@@ -224,16 +224,16 @@
   "common_no_code_yet": 14,
   "common_none": 181,
   "no_common": 986,
-  "no_title": 318,
+  "no_title": 317,
   "noncredit_common": 134,
   "noncredit_no_common": 174,
-  "noncredit_no_title": 54,
+  "noncredit_no_title": 53,
   "noncredit_title": 4,
-  "noncredit_title_unused_condition": 13,
+  "noncredit_title_unused_condition": 12,
   "title_high": 122,
   "title_low": 92,
   "title_medium": 20,
-  "title_none": 84
+  "title_none": 83
  },
  "colleges": [
   {

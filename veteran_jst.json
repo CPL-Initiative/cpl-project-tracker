@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-11-22T06:18:03.851860+00:00",
+  "scraped_at": "2026-11-22T14:42:16.203957+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34565,
-    "jst": 32400,
+    "jst": 32573,
     "star_colleges": 70
   },
   "computed_star_colleges": 70,
@@ -200,6 +200,11 @@
       "jst": 174,
       "star": true
     },
+    "East Los Angeles College": {
+      "vets": 642,
+      "jst": 409,
+      "star": false
+    },
     "Clovis Community College": {
       "vets": 135,
       "jst": 201,
@@ -278,11 +283,6 @@
     "Lemoore College": {
       "vets": 76,
       "jst": 20,
-      "star": false
-    },
-    "East Los Angeles College": {
-      "vets": 642,
-      "jst": 236,
       "star": false
     },
     "Golden West College": {

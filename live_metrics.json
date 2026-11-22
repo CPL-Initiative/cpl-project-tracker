@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-11-22T06:18:03.422Z",
+  "scraped_at": "2026-11-22T14:42:16.079Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 116,
@@ -477,14 +477,14 @@
           "units": 2278.2,
           "avgUnits": 3.532093023255814,
           "transcriptionRate": 15.5,
-          "avgTranscribed": 0.5475968992248063,
+          "avgTranscribed": 0.5475968992248061,
           "criteriaMetCount": 1,
           "militaryStudents": 397,
           "nonMilitaryStudents": 249,
           "apprenticeStudents": 13,
           "savings": 3460008.5,
           "yearImpact": 13104405.600000001,
-          "transcribedUnits": 353.20000000000005
+          "transcribedUnits": 353.2
         },
         {
           "college": "Cypress College",
@@ -1027,6 +1027,21 @@
           "transcribedUnits": 0
         },
         {
+          "college": "East Los Angeles College",
+          "students": 412,
+          "units": 1209,
+          "avgUnits": 2.9344660194174756,
+          "transcriptionRate": 6.5,
+          "avgTranscribed": 0.18932038834951456,
+          "criteriaMetCount": 0,
+          "militaryStudents": 409,
+          "nonMilitaryStudents": 3,
+          "apprenticeStudents": 0,
+          "savings": 2091570,
+          "yearImpact": 7335003,
+          "transcribedUnits": 78
+        },
+        {
           "college": "Victor Valley College",
           "students": 349,
           "units": 1041,
@@ -1073,33 +1088,18 @@
         },
         {
           "college": "Los Medanos College",
-          "students": 249,
+          "students": 250,
           "units": 105,
-          "avgUnits": 0.42168674698795183,
+          "avgUnits": 0.42,
           "transcriptionRate": 8.6,
-          "avgTranscribed": 0.03614457831325301,
+          "avgTranscribed": 0.036,
           "criteriaMetCount": 0,
           "militaryStudents": 231,
-          "nonMilitaryStudents": 20,
+          "nonMilitaryStudents": 21,
           "apprenticeStudents": 4,
           "savings": 181650,
           "yearImpact": 637035,
           "transcribedUnits": 9
-        },
-        {
-          "college": "East Los Angeles College",
-          "students": 239,
-          "units": 705,
-          "avgUnits": 2.9497907949790796,
-          "transcriptionRate": 11.1,
-          "avgTranscribed": 0.3263598326359833,
-          "criteriaMetCount": 0,
-          "militaryStudents": 236,
-          "nonMilitaryStudents": 3,
-          "apprenticeStudents": 0,
-          "savings": 1219650,
-          "yearImpact": 4277235,
-          "transcribedUnits": 78
         },
         {
           "college": "Citrus College",
@@ -1772,15 +1772,15 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "60,902",
+      "value": "61,076",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "32,400"
+          "value": "32,573"
         },
         {
           "label": "Workforce/Other",
-          "value": "28,614"
+          "value": "28,615"
         },
         {
           "label": "Apprentice",
@@ -1790,7 +1790,7 @@
     },
     {
       "title": "ELIGIBLE UNITS",
-      "value": "292k",
+      "value": "293k",
       "avg": "4.8 avg",
       "breakdowns": [
         {
@@ -1828,11 +1828,11 @@
     },
     {
       "title": "SAVINGS",
-      "value": "$417M",
+      "value": "$418M",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "$213M"
+          "value": "$214M"
         },
         {
           "label": "Workforce/Other",
@@ -1850,7 +1850,7 @@
       "breakdowns": [
         {
           "label": "Military",
-          "value": "$862M"
+          "value": "$865M"
         },
         {
           "label": "Workforce/Other",
@@ -1892,15 +1892,15 @@
     }
   ],
   "raw": {
-    "Students": 60902,
-    "Units": 292472.9,
+    "Students": 61076,
+    "Units": 292976.9,
     "TranscribedUnits": 86885.15,
-    "Savings": 417353120.25,
-    "YearImpact": 1685568514.3999999,
-    "MilitaryStudents": 32400,
-    "NonMilitaryStudents": 28614,
+    "Savings": 418225040.25,
+    "YearImpact": 1688626282.3999999,
+    "MilitaryStudents": 32573,
+    "NonMilitaryStudents": 28615,
     "AprenticeStudents": 965,
-    "AverageUnits": 4.802352960493908,
-    "TranscribedAverage": 1.4266386982365111
+    "AverageUnits": 4.796923505141136,
+    "TranscribedAverage": 1.4225743336171326
   }
 }
