@@ -1,0 +1,483 @@
+All Fields
+HLTH 605 - NURSING ASSISTANT TRAINING
+Cover
+Course Number
+605
+Subject
+HLTH
+Course Title
+NURSING ASSISTANT TRAINING
+Short Title
+NURSING ASSISTANT TRAINING
+Effective Semester
+2020 Fall
+CB04: Credit Status
+N - Non Credit
+CB05: Transfer Status
+C - Not transferable
+CB08: Basic Skills
+N - Not Basic Skills
+Main
+CB11 Classification K - Other Noncredit Enhanced Funding
+CB22 Non-Credit Category I - Short-term Vocational: Includes programs with high employment potential
+Grading Method
+Grade Options Letter Grade Only
+Grade Graded
+Catalog Description
+This course will prepare the student for the California Nurse Assistant certification exam and for employment as an entry-level health care worker in a skilled nursing facility or other healthcare organization or agency. The student will gain knowledge of basic nursing theory and practice nurse assistant procedures. This course is approved by the California Department of Public Health. Successful completion of this course enables student to take California‘s Nurse Assistant Competency Exam to become a Certified Nurse Assistant in California.
+Originating Campus
+Colleges
+Continuing Education
+Proposal Information
+Reason For Proposed Action
+Import
+Costs
+0
+Field Trips May be required
+This is a CTE Course Yes
+Codes
+CB03: TOP Code 123030 - Certified Nurse Assistant
+CIP Code
+CB09: SAM Code B - Advanced Occupational
+CB04: Credit Status (DO NOT DELETE. Needed for show / hide to work. The width and height have been set to 0 so the field appears hidden.) N - Non Credit
+Goals
+Course Goals
+Goals Text
+Roles and responsibilities of a Certified Nurse Assistant.
+Goals Text
+Patient/resident rights and skills needed to promote rights and independence.
+Goals Text
+Safety and emergency concepts and procedures used in long-term care.
+Goals Text
+Infection control concepts and practices.
+Goals Text
+Concepts and skills to assist with personal care needs, rehabilitative care, and basic nursing procedures.
+Goals Text
+Communication, reporting and documentation practices used long-term care
+Goals Text
+Skills necessary to perform procedures in accordance with the National Nurse Assistant Assessment Program (NNAAP) and the Nurse Assistant Training and Assessment Program (NATAP)
+Goals Text
+Weight and measurements calculations used in healthcare.
+Goals Text
+Basic anatomy and physiology including the aging process and nutritional needs.
+Goals Text
+Disease processes, interventions and treatments that are common in long term care.
+Goals Text
+Behaviors and treatments related to mental health issues.
+Goals Text
+Issues related physical and psychosocial changes during death and dying.
+Goals Text
+Soft skills and career opportunities.
+Legacy Data
+Students will learn: 1. Roles and responsibilities of a Certified Nurse Assistant. 2. Patient/resident rights and skills needed to promote rights and independence. 3. Safety and emergency concepts and procedures used in long-term care. 4. Infection control concepts and practices. 5. Concepts and skills to assist with personal care needs, rehabilitative care, and basic nursing procedures. 6. Communication, reporting and documentation practices used long-term care 7. Skills necessary to perform procedures in accordance with the National Nurse Assistant Assessment Program (NNAAP) and the Nurse Assistant Training and Assessment Program (NATAP) 8. Weight and measurements calculations used in healthcare. 9. Basic anatomy and physiology including the aging process and nutritional needs. 10. Disease processes, interventions and treatments that are common in long term care. 11. Behaviors and treatments related to mental health issues. 12. Issues related physical and psychosocial changes during death and dying. 13. Soft skills and career opportunities.
+Disciplines
+Minimum Qualification
+Minimum Qualification Vocational (short-term): Noncredit
+Additional Required Qualifications
+Condition
+Hours/Units
+Lecture Hours
+Min Lecture Hours
+Max Lecture Hours
+Lab Hours
+Min Lab Hours
+Max Lab Hours
+Lecture/Lab
+Min Lab/Lecture Hours 330.000
+Max Lab/Lecture Hours 330.000
+Min Total Hours 330.000
+Max Total Hours 330.000
+Additional Information
+Content
+Course Lecture Content (Use outline format)
+Introduction
+Role and responsibilities of the Certified Nursing Assistant (CNA) 
+Review Title 22, division 5, California code of regulations
+Requirements for nurse assistant certification
+Professionalism for the CNA
+Ethics and confidentiality
+Promoting Patient/Resident Rights and Independence                  
+Purpose of a long term care facility
+Title 22, Certified Nurse Assistant Program section
+California Health and Safety code
+Ombudsman
+CNA's role in monitoring patient/residents' rights
+Patient/residents' rights for security, belonging, self-esteem and privacy
+Communication and Interpersonal Skills                               
+Five basic physical and psychological needs 
+Maslow's Hierarchy of Human Needs
+Patient/resident behavior that demonstrates unmet needs
+Nursing assistants response to recognizing and reporting unmet needs of patient/resident
+Steps in the communication process and methods used to communicate
+Barriers to communication
+Verbal
+Nonverbal
+Culture
+Socio-economic
+Age
+Reaction to illness/medication
+Communicating with members of the health team
+Medical/Surgical Asepsis                                             
+The body's lines of defense
+Micro-organisms
+Types
+Common diseases
+Transmission and growth 
+Signs and symptoms of infection
+Asepsis, purpose and practices
+Medical vs. surgical asepsis
+Precautions
+Transmission-based precautions 
+Standard precautions
+Psychological effects of precautions
+Body Mechanics                                                            
+Purpose of body mechanics
+Proper body mechanics and rules
+Safety measures for lifting and moving residents
+Positioning and transfer
+Ambulation
+Rehabilitative/Restorative Care                                  
+Rehabilitative/restorative care
+Promoting independence and patient/residents' potential
+Goals to independence
+Rehabilitation team
+Nursing assistants' responsibilities
+Activities of daily living
+Comfort devices
+Range of motion
+Patient/Residents’ self-esteem vs. family involvement
+Emergency Procedures and Prevention of Catastrophe   
+A safe environment
+Rules for residents on oxygen therapy
+Postural supports and their implications
+Psychological implications of postural supports
+Signs and symptoms of distress and intervention
+Nursing assistant's role in emergency situation
+Disaster/fire
+Emergency codes
+Patient/resident Care Skills                                         
+Bathing
+Oral hygiene
+Grooming
+Skin care (and decubitus prevention/care)
+Dressing 
+Bowel and bladder
+Elimination needs
+Retraining
+Measuring heights and weights
+Prosthetic devices
+Patient/resident Care Procedures
+Specimen collection
+Bed care
+Enemas and suppositories
+Intake and output
+Bandages and dressings
+Ointments, powders and lotions
+Admission, transfer and discharge
+Vital Signs                                                          
+Temperature
+Pulse
+Respiration
+Blood pressure
+Measure and record
+Weights and Measures                                                
+Metric and English units
+Military time
+Traditional/military
+Nutrition                                                              
+Body's requirement for food and liquids
+Common nutrients and their food sources
+Basic food groups 
+Food pyramid
+Vegan groups
+Nutritional needs of patient/resident
+Dietary needs of the elderly
+Therapeutic diets and nursing assistant's responsibility
+Techniques for feeding patient/resident
+Modifications of diet due to culture and religion
+Alternative ways to administer nutrients
+Observation and Charting                                            
+Observation of patient/resident
+Signs and symptoms
+Charting procedures and legal implications
+Medical terminology and abbreviations
+Long Term Care Resident                                            
+Basic body organization
+Body systems and organs
+Changes of each system with aging
+Common diseases and disorders
+Common needs and intervention
+Physical
+Social
+Recreational
+Spiritual
+Community resources
+Mental and behavioral issues
+Dementia and Alzheimer 
+Depression
+Developmental disabilities
+Schizophrenia
+Other
+Death and Dying                                                           
+Five stages of grieving
+Meeting emotional and spiritual needs of terminally ill
+Rights of the dying patient/resident
+Signs of approaching death
+Comfort measures for the dying
+Procedures and responsibilities for post mortem care
+Career Exploration        
+Career search
+Internet
+Resume, cover letter, interview skills
+Nursing career ladder and further education
+Alternate healthcare careers and education requirements
+Certification Preparation
+Skills Lab
+Theory Review
+Course Lab/Activity Content
+Student Learning Objectives
+Upon successful completion of the course the student will be able to:
+Objective Text
+Explain patient/resident rights and the methods to promote and uphold rights.
+Objective Text
+Describe the role and responsibilities of the Certified Nurse Assistant in California.
+Objective Text
+Perform patient/resident care skills and procedures as defined in the NNAAP and NATAP.
+Objective Text
+Calculate weights and measurements.
+Objective Text
+Recognize the nutritional needs of patient/resident and implement appropriate nutritional practices.
+Objective Text
+Demonstrate and explain proper infection control practices.
+Objective Text
+Identify and report changes in patient/resident conditions.
+Objective Text
+Modify and adapt nursing behavior as an appropriate response to the patient behavior, expressed or implied needs.
+Objective Text
+Identify psychosocial and physical needs associated with the aging process and demonstrate techniques to promote independence and provide nursing care.
+Objective Text
+Communicate effectively in the healthcare setting.
+Objective Text
+Describe the approaches to meet the physical and psychological needs of the dying resident.
+Objective Text
+Describe grievance process.
+Objective Text
+Implement safety measures to prevent injury to self and patient.
+Objective Text
+Demonstrate interventions in a medical emergency and emergency codes and protocols
+Objective Text
+Identify body systems and organs and describe functions.
+Objective Text
+Describe signs and symptoms and treatments of common diseases and disorders found in long-term care.
+Objective Text
+Search careers and/or colleges on-line.
+Objective Text
+Describe a professional job interview and resume and resources for further career development.
+Legacy Data
+Upon completion of this course the student will be able to: 1. Explain patient/resident rights and the methods to promote and uphold rights. 2. Describe the role and responsibilities of the Certified Nurse Assistant in California. 3. Perform patient/resident care skills and procedures as defined in the NNAAP and NATAP. 4. Calculate weights and measurements. 5. Recognize the nutritional needs of patient/resident and implement appropriate nutritional practices. 6. Demonstrate and explain proper infection control practices. 7. Identify and report changes in patient/resident conditions. 8. Modify and adapt nursing behavior as an appropriate response to the patient behavior, expressed or implied needs. 9. Identify psychosocial and physical needs associated with the aging process and demonstrate techniques to promote independence and provide nursing care. 10. Communicate effectively in the healthcare setting. 11. Describe the approaches to meet the physical and psychological needs of the dying resident. 12. Describe grievance process. 13. Implement safety measures to prevent injury to self and patient. 14. Demonstrate interventions in a medical emergency and emergency codes and protocols 15. Identify body systems and organs and describe functions. 16. Describe signs and symptoms and treatments of common diseases and disorders found in long-term care. 17. Search careers and/or colleges on-line. 18. Describe a professional job interview and resume and resources for further career development.
+Assignments
+Reading Assignments
+Optional Text
+Assignments
+
+Nursing journals, instructor selected websites, and nursing assistant handbook.
+
+Writing Assignments
+Optional Text
+Assignments
+
+Completing assignments in workbook and sample nurse assistant documentation forms.
+
+Appropriate Outside Assignments
+Optional Text
+Assignments
+
+Practicing performing vital signs and nursing skills and practicing computerized documentation at clinical sites.
+
+Appropriate Assignments that Demonstrate Critical Thinking
+Optional Text
+Assignments
+
+Reviewing, discussing, and evaluating clinical observations and nursing procedures, and effectively applying healthcare terminology in role play scenarios. All students must read, comprehend and apply the principles outlined in the "Student Handbook for Nursing Assistant".
+
+Methods of Evaluation
+Text box for Common Course Numbering (CCN) only.
+Evaluation Method
+Exams
+Quizzes
+Skills Demonstrations/Performance Exam
+Other
+If you selected "Other", please provide details.
+
+Student must attain a 75% on all theory related tests throughout the course and 75% on the midterm and final examination.  Students will not be advanced to the clinical phase of training unless this standard is maintained throughout academic instruction.  Clinical evaluations must be consistent with the State approved level of clinical proficiency in all learned clinical tasks and assignments.  Students who demonstrate unsafe practices in providing patient care, can upon the discretion of the Director of Nursing, be terminated immediately from the program.
+
+Legacy Data
+Student must attain a 75% on all theory related tests throughout the course and 75% on the midterm and final examination. Students will not be advanced to the clinical phase of training unless this standard is maintained throughout academic instruction. Clinical evaluations must be consistent with the State approved level of clinical proficiency in all learned clinical tasks and assignments. Students who demonstrate unsafe practices in providing patient care, can upon the discretion of the Director of Nursing, be terminated immediately from the program. Upon successful completion of each individual course a Certificate of Course Completion will be issued. Upon successful completion of both courses included in the program a Certificate of Program Completion will be issued.
+Methods of Instruction
+Check all that apply:
+Lecture
+Laboratory
+Lecture Discussion
+Collaborative Learning
+Shadowing
+Other
+If you selected "Other", please provide details.
+
+A minimum of clinical hours, as defined by Title 22, must occur in an approved clinical site.
+
+Legacy Data
+Methods of instruction will include but are not limited to, lecture, lab, clinical, group discussion, role-playing, field trips, demonstration and actual hands-on practice with patients under supervision. This course, or sections of this course, may be offered through distance education. A minimum of clinical hours, as defined by Title 22, must occur in an approved clinical site.
+Distance Ed
+Does this course have a DE component? Yes
+Colleges
+Campus
+Delivery Methods
+Partially Online
+Other Methods
+Techniques used to ensure quality
+Course may meet partially online only - same methods as in-person.
+Evaluation Method
+Course may meet partially online only - same methods as in-person.
+Additional Resources
+None
+Contact Types
+Chat Rooms
+Frequency
+As needed
+Participant/s
+Faculty to Student/s No
+Among Students No
+Discussion Board
+Frequency
+As needed
+Participant/s
+Faculty to Student/s No
+Among Students No
+Email/Message System
+Frequency
+As needed
+Participant/s
+Faculty to Student/s No
+Among Students No
+Group Meetings
+Frequency
+As needed
+Participant/s
+Faculty to Student/s No
+Among Students No
+Individual Meetings
+Frequency
+As needed
+Participant/s
+Faculty to Student/s No
+Among Students No
+Synchronous or Asynchronous Video
+Frequency
+As needed
+Participant/s
+Faculty to Student/s No
+Among Students No
+Telephone Contact
+Frequency
+As needed
+Participant/s
+Faculty to Student/s No
+Among Students No
+Outside-of-Class Hours
+Min Outside-of-Class Hours 176.000
+Max Outside-of-Class Hours 330.000
+Textbooks/Resources
+Is there a Zero Textbook Cost listed for this course? Yes
+Please explain why a Zero Cost textbook option is not included in the resource list
+Does your department have a commitment to using free, or low cost resources in all offerings of this course? Yes
+Describe any additional strategies the department is using to lower the cost of resources students need when they enroll in this course.
+Zero Textbook Cost (ZTC) and/or Open Educational Resource(s) (OER)
+Text\Other Text
+Author(s) , Chancellor’s Office California Community Colleges
+Title Nurse Assistant and Training Assessment Program Model (NATAP) curriculum
+Edition current
+Publisher , Chancellor’s Office California Community Colleges
+Year 2019
+Website NA
+Is this a classic textbook? No
+ISBN # NA
+Additional Textbook Information
+Textbook Transfer Data
+Textbooks
+Text Text
+Author(s) Care Hedman, Fuzy, RN, MS and Rymer, MSTE, RNBC, LSW
+Title Nursing Assistant Care Long-Term Care
+Edition current
+Publisher Hartman’s Publishing, Inc.
+Year 2019
+Is this a classic textbook? No
+ISBN #
+Additional Textbook Information
+Text Text
+Author(s) NA
+Title Workbook: Hartman’s Nursing Assistant Care Long Term Care
+Edition current
+Publisher Hartman Publishing, Inc.
+Year 2019
+Is this a classic textbook? No
+ISBN # NA
+Additional Textbook Information
+Periodicals
+Manual
+Software
+Other Learning Materials
+Other
+I have entered at least one resource Yes
+Supplies (Instructional Materials)
+Enrollment Conditions
+Course has additional instructional materials fees No
+Explanation
+Supplies (Instructional Materials)
+Description
+Uniform
+Description
+Watch
+Description
+Stethoscope
+Description
+Blood pressure cuff
+Description
+Note pad, binder
+Requisites
+Course Requisites
+Requisite Type Advisory
+Subject
+Course # and Title
+Comment
+Proof of negative TB Test within 3 months and physical exam within 1 year of class start date.
+Enrollment Limitation
+Requirement Type
+Requisite Type Advisory
+Subject
+Course # and Title
+Comment
+Immunizations, Livescans, Background checks, Drug screening
+Enrollment Limitation
+Requirement Type
+Conditions of Enrollment Catalog View
+Content Review
+Is there a Course Requisite? No
+Content Review
+Attachments
+Attached File
+HLTH 605 NURSING ASSISTANT TRAINING.pdf
+SDCE DE Addendum Form HLTH 605.docx
+Tech Review
+CB10: Work Experience N - Is not part of a cooperative work experience education program.
+CB13: Special Class Status N - Course is not a special class.
+Course Prior to College Level (CB21) Y - Not applicable
+Funding Agency Category (CB23) Y - Not Applicable (funding not used to develop course)
+Course Program Status (CB24)
+Continuing Education
+CB24: Program Status 1 - Program Applicable
+Course Gen Education Status (CB25)
+Not Applicable
+Course Support Course Status (CB26) N - Course is not a support course
+CB27: Upper Division Status N - Course is not an upper division course
+Major Restriction Code
+Comments
