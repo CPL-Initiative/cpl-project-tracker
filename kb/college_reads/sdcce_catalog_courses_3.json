@@ -1,0 +1,24 @@
+{
+ "_readme": "S700, 2026-11-22, #3655 (Sam's order relayed by COBIx, comment 7069586791: the four large noncredit programs' catalogs are filed, then their subject headings make the noncredit title list). San Diego College of Continuing Education's 2026-27 catalog PDF (144 pages), pages 101 to 144, each printed whole and unfolded, for kb/hand_filed_catalogs/courses/. A run's log reads back at most 5,000 lines, so the catalog is read in three parts. No model call.",
+ "college": "San Diego College of Continuing Education",
+ "questions": {
+  "courses": "Each course's code, title, hours, advisories and description, line for line."
+ },
+ "keywords": [
+  "\\w"
+ ],
+ "pdf_page_cap": 60,
+ "pdf_span": [
+  101,
+  144
+ ],
+ "pdf_unfolded": true,
+ "pages": [
+  {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf",
+   "answers": [
+    "courses"
+   ]
+  }
+ ]
+}
