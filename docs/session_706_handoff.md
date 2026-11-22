@@ -166,6 +166,8 @@ samueltlee/CPLBrain. Wiki candidate for `/wiki-ingest`: the every-college Save a
 
 **#3687 at 16:20Z:** #3689 merged, so the census and Subjects checks are green; `main` is now red on `tests/exhibits_review_card_panels.test.js` check (8) (*the matcher flags Sam's pair*, 0 ordered pairs) since the CER procedures run `ac670dd0` changed the shipped titles. Not this PR's; fix that test or the matcher's data on `main`, then merge #3687 on a green `test`.
 
+**EMERGENCY checkpoint (16:19Z, 48,264 tokens left).** Refreshed: this handoff, the commons and cer-procedures lanes, the `cpl_memory` rows (s705, s705b, s705c receipts). NOT refreshed after 16:10Z, deferred to the next session: the INDEX update-history line and docs index rebuild (last run 16:05Z), `kb/status/subjects.json` (lacks the noncredit codes and the MAP queue item), the vault session note (lacks the noncredit codes and the worklist), the To-Do feed, the lessons doc and KB notes (none written this run beyond the playbook).
+
 ## Let go
 
 Still held at the last checkpoint (16:25Z): the PR subscription on #3687, and one check-in (`S705: recheck main's lints
