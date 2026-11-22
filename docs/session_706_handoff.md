@@ -108,10 +108,11 @@ text), 5, 7, 9, and in 12 every status file but `kb/status/subjects.json`.
 
 - **Sam's two answers at about 16:15Z:** the four noncredit MQ disciplines take common codes (CTZN, HLSN, HMEN, DSPN;
   shipped on #3687, `r-noncredit-four-mq-codes-sam-2026-11-22`); and exhibits with no credit recommendation go on the
-  MAP team worklist (`r-map-team-worklist-for-no-cr-exhibits-sam-2026-11-22`). **The worklist is NOT built:** it is the
-  first item for the next session. Sam: *"we have a cobi tab for map team to-do but I don't think I've used it since
-  creating it"*, the MAP-team queue of the `my-college-action-page` lane. Feed it from `credit_recs` on
-  `kb/exhibits_review.json` (an empty list is the flag) and from the statewide exhibits with no credit recommendation.
+  MAP team worklist (`r-map-team-worklist-for-no-cr-exhibits-sam-2026-11-22`). **The worklist is built** on the MAP Team Queue tab
+  (`map_team_queue.js`, item `exhibits-no-cr`): it counts the held exhibits whose `credit_recs` is empty, names each
+  with its college and MAP id, and reads unknown until tonight's rebuild writes `credit_recs` (guard
+  `tests/map_team_queue.test.js`, S705 block). Sam: *"we have a cobi tab for map team to-do but I don't think I've used
+  it since creating it"*. Next: widen it from the held cards to every statewide exhibit with no credit recommendation.
 
 ## Decisions Sam made (in session, verbatim in `cpl_memory`)
 
