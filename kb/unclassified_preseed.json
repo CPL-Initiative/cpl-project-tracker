@@ -1,28 +1,14 @@
 {
  "_about": "Pre-fills for the CER's unclassified titles, written each night by kb/_cer_procedures.py from the procedures in kb/cer_procedures.json and the classifier. credential_reference.js pre-fills each row. A pre-fill no reason holds is also saved to kb_curation under its procedure's cohort (Open Asks Sheet 94 card 2, 2026-10-18); a held one waits for the curator's Save. Rows with a saved assignment are never here.",
- "_generated_at": "2026-11-21T15:42:53Z",
- "_queue_count": 53,
+ "_generated_at": "2026-11-22T15:44:08Z",
+ "_queue_count": 37,
  "_counts": {
-  "staged": 52,
-  "needs_you": 38,
+  "staged": 36,
+  "needs_you": 37,
   "not_yet_asked": 0
  },
  "_residual": [],
  "staged": {
-  "CA Specialized Training Institute First Responder Operations and Decon": {
-   "title": "Hazardous Materials First Responder Operational — Decontamination",
-   "issuer": "California Specialized Training Institute (CSTI)",
-   "via": "classifier",
-   "confidence": 0.7,
-   "note": "Joined the existing FRO-Decontamination family; CSTI is the issuer named in the title. Kept apart from CSTI's 'First Receiver' (healthcare) course, which is a different role. A reviewer should confirm the FRO-Decon competency matches.",
-   "procedure": "classifier",
-   "rests_on": [
-    "join-when-likely-one",
-    "Rule 4",
-    "Rule 6",
-    "issuer-issues-the-card"
-   ]
-  },
   "Cal Fire Basic Firefighter (219 hour) Training": {
    "title": "CAL FIRE Basic Firefighter Training (219-hour)",
    "issuer": "California Department of Forestry and Fire Protection (CAL FIRE)",
@@ -47,54 +33,6 @@
     "course-identity",
     "Rule 5c"
    ]
-  },
-  "DRAFT 21: Mechanical Design I CX": {
-   "title": "Mechanical Design I",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for DRAFT 21; issuer = CCC.",
-   "procedure": "course-identity"
-  },
-  "ESLN 309A": {
-   "title": "ESL - Foundations",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for ESLN 309A; issuer = CCC.",
-   "procedure": "course-identity"
-  },
-  "ESLN 310A": {
-   "title": "ESL - Comprehensive I",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for ESLN 310A; issuer = CCC.",
-   "procedure": "course-identity"
-  },
-  "ESLN 310E": {
-   "title": "ESL - Comprehensive V",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for ESLN 310E; issuer = CCC.",
-   "procedure": "course-identity"
-  },
-  "GERO 400: Principles of Caregiving: Older Adults, and Their Care CX": {
-   "title": "Principles of Caregiving: Older Adults and Their Care",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for GERO 400; issuer = CCC.",
-   "procedure": "course-identity"
-  },
-  "GERO 455: Resources and Services for Older Adults CX": {
-   "title": "Resources and Services for Older Adults",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for GERO 455; issuer = CCC.",
-   "procedure": "course-identity"
   },
   "High School Articulation ( Tri Valley ROP)- Developmental Psychology of Children I": {
    "title": "Developmental Psychology of Children 1",
@@ -213,28 +151,6 @@
    "via": "school",
    "confidence": 1.0,
    "note": "Sheet 147 card 2: the aligned course (MKTG 50 at Las Positas College) names it, M-ID BUSI M1370; the school issues it.",
-   "procedure": "high-school-rop",
-   "rests_on": [
-    "high-school-rop"
-   ]
-  },
-  "High School Articulation (Benicia High School)- Dance 1": {
-   "title": "Introduction to Dance",
-   "issuer": "Benicia High School",
-   "via": "school",
-   "confidence": 1.0,
-   "note": "Sheet 147 card 2: the aligned course (DANC 1 at Las Positas College) names it, M-ID DANC M1290; the school issues it.",
-   "procedure": "high-school-rop",
-   "rests_on": [
-    "high-school-rop"
-   ]
-  },
-  "High School Articulation (Benicia High School)- Dance 2": {
-   "title": "Beginning/Intermediate Jazz Dance",
-   "issuer": "Benicia High School",
-   "via": "school",
-   "confidence": 1.0,
-   "note": "Sheet 147 card 2: the aligned course (DANC 2B at Las Positas College) names it, M-ID DANC M1476; the school issues it.",
    "procedure": "high-school-rop",
    "rests_on": [
     "high-school-rop"
@@ -386,17 +302,6 @@
     "high-school-rop"
    ]
   },
-  "High School Articulation (Monte Vista)- Introduction to Music Theory and Performance": {
-   "title": "Music Theory I",
-   "issuer": "Monte Vista High School",
-   "via": "school",
-   "confidence": 1.0,
-   "note": "Sheet 147 card 2: the aligned course (MUS 8A at Las Positas College) names it, C-ID MUS 120; the school issues it.",
-   "procedure": "high-school-rop",
-   "rests_on": [
-    "high-school-rop"
-   ]
-  },
   "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (AJ 54)": {
    "title": "Administration of Justice (AJ 54)",
    "issuer": "Tri-Valley Regional Occupational Program (ROP)",
@@ -533,54 +438,6 @@
    "rests_on": [
     "high-school-rop"
    ]
-  },
-  "IB Exam - Economics": {
-   "title": "IB Economics HL",
-   "issuer": "International Baccalaureate Organization (IBO)",
-   "confidence": 0.95,
-   "via": "ib",
-   "note": "IB's own Diploma Programme subject and level, read from the title.",
-   "procedure": "brand-family"
-  },
-  "IB Exam - Mathematics: Analysis & Approaches": {
-   "title": "IB Mathematics: Analysis and Approaches HL",
-   "issuer": "International Baccalaureate Organization (IBO)",
-   "confidence": 0.95,
-   "via": "ib",
-   "note": "IB's own Diploma Programme subject and level, read from the title.",
-   "procedure": "brand-family"
-  },
-  "IB Exam - Psychology": {
-   "title": "IB Psychology HL",
-   "issuer": "International Baccalaureate Organization (IBO)",
-   "confidence": 0.95,
-   "via": "ib",
-   "note": "IB's own Diploma Programme subject and level, read from the title.",
-   "procedure": "brand-family"
-  },
-  "IB Exam: Mathematics: Applications and Interpretations": {
-   "title": "IB Mathematics: Applications and Interpretation HL",
-   "issuer": "International Baccalaureate Organization (IBO)",
-   "confidence": 0.95,
-   "via": "ib",
-   "note": "IB's own Diploma Programme subject and level, read from the title.",
-   "procedure": "brand-family"
-  },
-  "IB Exam: Social and Cultural Anthropology": {
-   "title": "IB Social and Cultural Anthropology HL",
-   "issuer": "International Baccalaureate Organization (IBO)",
-   "confidence": 0.95,
-   "via": "ib",
-   "note": "IB's own Diploma Programme subject and level, read from the title.",
-   "procedure": "brand-family"
-  },
-  "PHOTO 7: Beginning Digital Photography (CX)": {
-   "title": "Digital Photography Beginning",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for PHOTO 7; issuer = CCC.",
-   "procedure": "course-identity"
   },
   "Portfolio Review CIS101-Introduction to Computers and Their Uses": {
    "title": "Introduction to Computers and Their Uses",

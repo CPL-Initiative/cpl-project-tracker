@@ -1,12 +1,12 @@
 {
  "_about": "The CER procedures run (kb/_cer_procedures.py): what each procedure settled and held, and the titles that need a person. A pre-fill no reason holds saves under its procedure (Open Asks Sheet 94 card 2); a held one pre-fills the tab and waits for a person.",
- "_generated_at": "2026-11-21T15:42:53Z",
+ "_generated_at": "2026-11-22T15:44:08Z",
  "procedures_hash": "75e72fb99f8c",
- "queue": 53,
+ "queue": 37,
  "saved_not_folded": 0,
- "waiting": 53,
- "proposed": 52,
- "needs_you_count": 38,
+ "waiting": 37,
+ "proposed": 36,
+ "needs_you_count": 37,
  "not_yet_asked": 0,
  "fold_held": 0,
  "procedures": [
@@ -21,30 +21,9 @@
     "words": "it would be helpful to have a procedure that pre-seeds the common exhibit titles and issuing agencies -- all the APs should be an easy win, right?",
     "skill": "Rule 5d"
    },
-   "settled": 5,
+   "settled": 0,
    "held": 2,
-   "sample": [
-    [
-     "IB Exam - Economics",
-     "IB Economics HL"
-    ],
-    [
-     "IB Exam - Mathematics: Analysis & Approaches",
-     "IB Mathematics: Analysis and Approaches HL"
-    ],
-    [
-     "IB Exam - Psychology",
-     "IB Psychology HL"
-    ],
-    [
-     "IB Exam: Mathematics: Applications and Interpretations",
-     "IB Mathematics: Applications and Interpretation HL"
-    ],
-    [
-     "IB Exam: Social and Cultural Anthropology",
-     "IB Social and Cultural Anthropology HL"
-    ]
-   ]
+   "sample": []
   },
   {
    "id": "statewide-catalog",
@@ -132,30 +111,9 @@
     "words": "Sam's Cx procedure: CCN title, then C-ID, then the course's own title",
     "skill": "Rule 5c"
    },
-   "settled": 7,
+   "settled": 0,
    "held": 4,
-   "sample": [
-    [
-     "DRAFT 21: Mechanical Design I CX",
-     "Mechanical Design I"
-    ],
-    [
-     "ESLN 309A",
-     "ESL - Foundations"
-    ],
-    [
-     "ESLN 310A",
-     "ESL - Comprehensive I"
-    ],
-    [
-     "ESLN 310E",
-     "ESL - Comprehensive V"
-    ],
-    [
-     "GERO 400: Principles of Caregiving: Older Adults, and Their Care CX",
-     "Principles of Caregiving: Older Adults and Their Care"
-    ]
-   ]
+   "sample": []
   },
   {
    "id": "high-school-rop",
@@ -168,22 +126,9 @@
     "words": "Make it a rule (Open Asks Sheet 147 card 2: 'High school and ROP titles: settle the 96 under one rule, with the AP exams keeping their names?'); 2026-10-30: 'if there's a M-ID title aligned show it and let it determine the proposed classifyer'",
     "skill": "Rule 5c, Rule 5f"
    },
-   "settled": 3,
+   "settled": 0,
    "held": 32,
-   "sample": [
-    [
-     "High School Articulation (Benicia High School)- Dance 1",
-     "Introduction to Dance"
-    ],
-    [
-     "High School Articulation (Benicia High School)- Dance 2",
-     "Beginning/Intermediate Jazz Dance"
-    ],
-    [
-     "High School Articulation (Monte Vista)- Introduction to Music Theory and Performance",
-     "Music Theory I"
-    ]
-   ]
+   "sample": []
   },
   {
    "id": "issuer-issues-the-card",
@@ -198,7 +143,7 @@
     "also": "Open Asks Sheet 39 card 2 (2026-10-05): the OSHA issuer's name across the CER"
    },
    "settled": 0,
-   "held": 2,
+   "held": 1,
    "sample": []
   },
   {
@@ -303,7 +248,7 @@
     "skill": null
    },
    "settled": 0,
-   "held": 3,
+   "held": 2,
    "sample": []
   },
   {
@@ -317,43 +262,12 @@
     "words": "have you classify and complete common exhibit titles"
    },
    "settled": 0,
-   "held": 19,
+   "held": 18,
    "sample": []
   }
  ],
- "classifier_run": {
-  "calls": 2,
-  "answered": 2,
-  "errors": [],
-  "cost_usd": 0.94,
-  "spend": {
-   "estimate_usd": 11.71,
-   "limit_usd": 40.0,
-   "calls_priced": 2,
-   "asked": 25,
-   "remaining": 0,
-   "ceiling_usd": 40.0,
-   "charge_usd": 0.93587,
-   "in_flight_usd": 0.0,
-   "stopped": false,
-   "sent": 2,
-   "posts_held": 0
-  }
- },
+ "classifier_run": null,
  "needs_you": [
-  {
-   "raw_title": "CA Specialized Training Institute First Responder Operations and Decon",
-   "why": "the classifier is unsure (0.70)",
-   "proposal": {
-    "title": "Hazardous Materials First Responder Operational — Decontamination",
-    "issuer": "California Specialized Training Institute (CSTI)",
-    "confidence": 0.7,
-    "note": "Joined the existing FRO-Decontamination family; CSTI is the issuer named in the title. Kept apart from CSTI's 'First Receiver' (healthcare) course, which is a different role. A reviewer should confirm the FRO-Decon competency matches."
-   },
-   "colleges": [
-    "City College of San Francisco"
-   ]
-  },
   {
    "raw_title": "Cal Fire Basic Firefighter (219 hour) Training",
    "why": "the classifier is unsure (0.80)",
