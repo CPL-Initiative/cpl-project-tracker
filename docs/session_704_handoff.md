@@ -78,4 +78,10 @@ lane 1 signs off at those colleges. Each move is written here before it starts.
 
 ## Split changes during the run
 
-(none yet)
+- 11:25Z: `glendale` found all 11 Glendale programs `not_found` with no text, so `only=` refuses them before any model
+  call. Six have an own page whose coverage is low; five have none. **DECIDED** `d-glendale-own-pages-filed-as-gaps-s703`:
+  no change to the shared `_ranked`/`candidates` tonight (the coverage bar would still stop the six); the 11 are
+  filed as named gaps in #3675, and the data-names-the-program lever goes to the night's one follow-up.
+- 11:28Z: `piles` lever 2 (`ge_units_not_read`, 152 records at 35 colleges, self-recall 1,685 right and 0 wrong) is
+  PR #3678; a second reader reads it from `/home/user/rd3678` before the guarded UPDATE runs. `piles` moved on to lever
+  3 (the noncredit hours total) on `claude/s703-piles-nc-hours`.
