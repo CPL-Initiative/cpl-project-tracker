@@ -1,0 +1,70 @@
+{
+ "_readme": "S700, 2026-11-21, #3655: the subject pages the course-descriptions index links (kb/hand_filed_catalogs/subjects/southwestern.json, each address the index's own link) whose courses kb/hand_filed_catalogs/courses/southwestern.json.gz does not hold, because the first read guessed the address from the lower-case code. Each page line for line through the capture view. No model call.",
+ "college": "Southwestern College",
+ "questions": {
+  "courses": "Each course's code, title, units or hours, requisites and description, line for line."
+ },
+ "keywords": [
+  "\\bUnits?\\b",
+  "\\bHours?\\b"
+ ],
+ "capture_lines": 6000,
+ "pages": [
+  {
+   "url": "https://catalog.swccd.edu/course-descriptions/atcbe/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.swccd.edu/course-descriptions/es_a/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.swccd.edu/course-descriptions/es_i/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.swccd.edu/course-descriptions/es_s/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.swccd.edu/course-descriptions/es_t/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.swccd.edu/course-descriptions/public-administration/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.swccd.edu/course-descriptions/ra_t/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.swccd.edu/course-descriptions/t_t/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  }
+ ]
+}
