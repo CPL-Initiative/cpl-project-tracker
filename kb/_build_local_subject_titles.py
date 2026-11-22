@@ -195,6 +195,10 @@ def build(root=ROOT):
                 state_ = "catalog"
             elif k in ((subj or {}).get("blocked") or ()):
                 state_ = "blocked"
+            elif not in_catalog and c.get("scope") and st.get(k, 0) > ncs.get(k, 0):
+                # A file that holds one section of the catalog (Santa Ana's School of Continuing Education, Mt. San
+                # Antonio's noncredit pages; index.json "scope", S700) says nothing of the credit subjects it never read.
+                state_ = "not_read"
             elif not in_catalog:
                 state_ = "not_in_catalog"      # in the state list and nowhere in the catalog that was read
             elif subj and subj["index"]:
@@ -237,7 +241,9 @@ def build(root=ROOT):
                   "null reads TBA. side says who prints the code: both, catalog (the catalog only) or state (the state "
                   "list only). The codes on one side only are the curator's list. common is the common subject code "
                   "(Step a) where the subject map and the canonical SUBJ give one. title_state says why a row has no title "
-                  "(not_read, blocked, not_in_catalog; catalog where it has one), title_source where the title came from, "
+                  "(not_read, blocked, not_in_catalog; catalog where it has one; a college whose file holds one section "
+                  "of its catalog, its index entry's scope, leaves the credit codes it never read not_read), "
+                  "title_source where the title came from, "
                   "candidate a line for a reviewer where no heading was taken (never a title by itself), and address the "
                   "subject's own page where the catalog's index links one (pages_not_read counts the linked pages that were not read; page_codes names the codes a page that was read "
                   "prints its courses under, where that is not this code). Built by kb/_build_local_subject_titles.py; "

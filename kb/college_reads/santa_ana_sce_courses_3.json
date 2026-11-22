@@ -1,0 +1,24 @@
+{
+ "_readme": "S700, 2026-11-22, #3655 (Sam's order relayed by COBIx, comment 7069586791: the four large noncredit programs' catalogs are filed, then their subject headings make the noncredit title list). Santa Ana College's 2026-27 catalog PDF (506 pages), pages 475 to 506: its School of Continuing Education section, each page printed whole and unfolded, for kb/hand_filed_catalogs/courses/. Read in three parts to stay inside the 5,000 lines a log reads back. No model call.",
+ "college": "Santa Ana College",
+ "questions": {
+  "courses": "Each School of Continuing Education course's code, title, hours and description, line for line."
+ },
+ "keywords": [
+  "\\w"
+ ],
+ "pdf_page_cap": 40,
+ "pdf_span": [
+  475,
+  506
+ ],
+ "pdf_unfolded": true,
+ "pages": [
+  {
+   "url": "https://www.sac.edu/admissions/catalogarchive/SAC_2026-27_Catalog_11_03_26.pdf",
+   "answers": [
+    "courses"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,24 @@
+{
+ "_readme": "S700, 2026-11-22, #3655 (Sam's order relayed by COBIx, comment 7069586791: the large noncredit programs' catalogs are filed before any noncredit subject title is recommended). A probe: the page's opening lines and its size, to plan the filing read inside the 5,000 lines a log reads back. No model call. San Diego College of Continuing Education's 2026-27 catalog PDF: its contents pages.",
+ "college": "San Diego College of Continuing Education",
+ "questions": {
+  "contents": "The table of contents: where the course descriptions begin and end."
+ },
+ "keywords": [
+  "\\w"
+ ],
+ "pdf_page_cap": 8,
+ "pdf_span": [
+  1,
+  8
+ ],
+ "pdf_unfolded": true,
+ "pages": [
+  {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf",
+   "answers": [
+    "contents"
+   ]
+  }
+ ]
+}

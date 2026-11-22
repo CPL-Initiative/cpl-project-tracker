@@ -1,0 +1,22 @@
+{
+ "_readme": "S700, 2026-11-22, #3655 (Sam's order relayed by COBIx, comment 7069586791: the four large noncredit programs' catalogs are filed, then their subject headings make the noncredit title list). Mt. San Antonio College's noncredit course pages, line for line through the capture view, at the address CourseLeaf serves under the A to Z page; the A to Z page's own subject links print beside them. Part 2: Vocational (VOC), about 325 courses in the state list. No model call.",
+ "college": "Mt. San Antonio College",
+ "questions": {
+  "subjects": "The address each noncredit subject heading links.",
+  "courses": "Each noncredit course's code, title, hours, requisites and description, line for line."
+ },
+ "keywords": [
+  "\\bHours?\\b"
+ ],
+ "capture_lines": 8000,
+ "links_cap": 60,
+ "pages": [
+  {
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/adult-continuing-coursesaz/voc/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  }
+ ]
+}

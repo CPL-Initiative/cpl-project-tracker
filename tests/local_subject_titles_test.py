@@ -97,6 +97,15 @@ try:
           A["WELD"]["credit_courses"] == 1 and A["WELD"]["noncredit_courses"] == 1 and A["WELD"]["title_state"] == "catalog"
           and A["ENGL"]["noncredit_courses"] == 0 and out["totals"]["noncredit_hold"] == 1 and out["totals"]["credit_and_noncredit"] == 1)
     check("(7) every state is one of the four", all(r["title_state"] in lst.TITLE_STATES for c in by.values() for r in c.values()))
+    idx_path = os.path.join(root, "kb", "hand_filed_catalogs", "courses", "index.json")
+    idx = json.load(open(idx_path))
+    idx["colleges"][1]["scope"] = "School of Continuing Education"
+    json.dump(idx, open(idx_path, "w"))
+    S = {r[0]: dict(zip(cols, r)) for c in lst.build(root)["colleges"] if c["slug"] == "beta_trade_technical" for r in c["rows"]}
+    check("(7) a file that holds one section of the catalog (scope, S700) leaves a credit code it never read not_read",
+          S["ENGL"]["title_state"] == "not_read" and S["ENGL"]["credit_courses"] == 1)
+    del idx["colleges"][1]["scope"]
+    json.dump(idx, open(idx_path, "w"))
     sub = os.path.join(root, "kb", "hand_filed_catalogs", "subjects")
     os.makedirs(sub)
     json.dump({"college": "Beta Trade-Technical College", "run": "1", "rows": [

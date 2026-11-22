@@ -110,14 +110,14 @@
   {
    "college": "cerritos",
    "local_code": "ATH",
-   "common_code": "ATHL",
+   "common_code": "KINE",
    "band": null,
-   "note": "Kinesiology",
+   "note": "Revised by Sam, 2026-11-22, in session: \"ATHL can be in kine. It's for competitive athletic sports as distinguished from PE activity courses\". His 2026-11-21 decision read ATHL (Kinesiology), a code the canonical file does not hold.",
    "local_title": "Athletics",
    "credit_courses": 86,
    "noncredit_courses": 0,
    "subject_map_says": null,
-   "in_canonical_file": false
+   "in_canonical_file": true
   },
   {
    "college": "cerritos",
@@ -382,6 +382,16 @@
    "noncredit_courses": 0,
    "subject_map_says": null,
    "in_canonical_file": true
+  }
+ ],
+ "revised": [
+  {
+   "local_code": "ATH",
+   "from": "ATHL",
+   "to": "KINE",
+   "by": "Sam",
+   "on": "2026-11-22",
+   "memory": "r-athletics-under-kine-sam-2026-11-22"
   }
  ]
 }

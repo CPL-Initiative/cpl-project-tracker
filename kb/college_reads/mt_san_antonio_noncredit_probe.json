@@ -1,0 +1,21 @@
+{
+ "_readme": "S700, 2026-11-22, #3655 (Sam's order relayed by COBIx, comment 7069586791: the large noncredit programs' catalogs are filed before any noncredit subject title is recommended). A probe: the page's opening lines and its size, to plan the filing read inside the 5,000 lines a log reads back. No model call. Mt. San Antonio College's noncredit courses A to Z.",
+ "college": "Mt. San Antonio College",
+ "questions": {
+  "courses": "Each noncredit course's code, title, hours and description, line for line."
+ },
+ "keywords": [
+  "\\bHours?\\b",
+  "\\bNoncredit\\b"
+ ],
+ "capture_lines": 1400,
+ "pages": [
+  {
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/adult-continuing-coursesaz/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  }
+ ]
+}

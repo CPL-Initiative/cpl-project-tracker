@@ -3763,7 +3763,9 @@ module.exports = {
     title: "CPL Commons: the Subjects list",
     routes: [{ hash: "commons/subjects/cerritos", name: "subjects-cerritos" }, { hash: "commons/subjects/disagree", name: "subjects-disagree" }, { hash: "commons/subjects/held", name: "subjects-held" },
       /* S700: a local code's course panel, credit and noncredit apart. */
-      { hash: "commons/subjects/cerritos/MATH", name: "subjects-course-panel" }],
+      { hash: "commons/subjects/cerritos/MATH", name: "subjects-course-panel" },
+      /* S700: the draft noncredit subject title list. */
+      { hash: "commons/subjects/noncredit", name: "subjects-noncredit" }],
     widths: [320, 390, 768, 1440],
     seed: (page) => seedCommonsSubjects(page, "light"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
