@@ -119,3 +119,16 @@ lane 1 signs off at those colleges. Each move is written here before it starts.
   Antonio, Santa Barbara City and Orange Coast (lane 2 has nothing in flight at Orange Coast; #3678's 11 there stay).
   City College of San Francisco's 53 stay for a later run. `piles` signs off after #3679's closing commit; the
   wording rule (`claude/s703-piles-wording`, 49 rows) goes to a fresh lane 2 worker once #3679 merges.
+- 12:50Z: Clovis 33433 and 33491 applied by supabase-migrate 45024254789 (2 of 2; live `total_not_printed` 40 and
+  `total_differs` 50). 12:52Z: San Diego College of Continuing Education's load confirmed live, 198 rows, 1,860
+  objectives, 198 courses.
+- 13:00Z: Butte 39882 (page moved) read at $0.05 on `claude/s703-butte` (Glendale 38973's pricing holds the other
+  branch's concurrency group), reread, load 45026794241. Peralta (worker `peralta`, the four Peralta colleges) started
+  12:55Z: index 45025388165 (2,201 codes; 376 shared by two to four colleges), shape trial 45026998155; its reader change
+  for shared codes waits on #3677 and a second reader. The night's one follow-up went to worker `followup`
+  (`claude/s703-followup`: S697's four, the `through` pin field, the named-gaps tag).
+- 13:15Z: **DECIDED** `d-levers-paid-under-5-delegated-s703`: `levers` dispatches paid reads to $5 a college per run
+  after free pricing. Ohlone: 2 of 36 found and loaded (45026280729, 2 inserted, $0.14); 34 filed as named gaps.
+  San Joaquin Delta: six apprenticeship pages bound by per-college prefix aliases; 24 filed as gaps; pricing running.
+- 13:18Z: #3679 merged (`94406494`). `piles2` took the wording rule with both of tonight's second-read fixes
+  (a claim check, boundary readings and a precision measure). #3677 merged `main` (54b754e9); #3681 waits behind it.
