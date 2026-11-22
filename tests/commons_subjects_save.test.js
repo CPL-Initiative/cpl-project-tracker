@@ -6,7 +6,8 @@
 //   (2) ⭐ a save posts exactly one row: course_id SUBJ:<college>|<code>|<band>, field subject_decision, value JSON text
 //       with local_title and or common_code, under the reviewer's own email, as an upsert on (course_id, field);
 //       credit for a code with credit courses in COCI, whole for a code COCI does not list;
-//   (3) ⭐ a code whose COCI courses are all noncredit offers no form (the noncredit hold);
+//   (3) ⭐ a code whose COCI courses are all noncredit, with no COCI noncredit category on file, offers no form
+//       (the noncredit forms, one per category, are guarded in commons_subjects_nc_save.test.js);
 //   (4) ⭐ an unknown common code and an all-capitals title make no request, and the title offers its Title Case form;
 //   (5) ⭐ Take it back shows only on the signed-in reviewer's own save, and its DELETE names that reviewer's email;
 //       on another's save, a filed decision included, the page says a new Save replaces it;
@@ -149,8 +150,8 @@ function typeIn(x, id, v) { const i = x.d.getElementById(id); i.value = v; retur
   x = load("#commons/subjects/alpha/NCX", { sess: ME });
   await x.M.boot(); await settle();
   panel = x.d.querySelector("#csb-panel");
-  check("(3) ⭐ a code whose COCI courses are all noncredit offers no form and says noncredit saves come next",
-    panel && !panel.querySelector("input") && !x.d.getElementById("csb-ed-save") && /noncredit\. Noncredit saves come next, each keyed by the code’s noncredit category/.test(txt(x.d.getElementById("csb-edit-hold"))));
+  check("(3) ⭐ a noncredit-only code with no noncredit category on file offers no form and says why",
+    panel && !panel.querySelector("input") && !x.d.getElementById("csb-ed-save") && /is noncredit, and no COCI noncredit category is on file for them, so this code has no Edit yet/.test(txt(x.d.getElementById("csb-edit-hold"))));
 
   /* (4) refusals make no request */
   x = load("#commons/subjects/alpha/MATH", { sess: ME });

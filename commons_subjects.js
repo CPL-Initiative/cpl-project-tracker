@@ -15,10 +15,13 @@
 // course panel, for a signed-in reviewer. One kb_curation row per decision, course_id SUBJ:<college>|<code>|<band>
 // (band credit, or whole where COCI lists no course under the code), field subject_decision, value JSON text with
 // local_title and or common_code, under the reviewer's own email; Take it back deletes that one row. A person's save
-// wins on this page over the catalog, the subject map and every recommendation. A code whose COCI courses are all
-// noncredit offers no Edit yet: noncredit saves come next, keyed by noncredit category (d-subject-save-key-three-part-s698). The rows hold a college slug, a code, a title and a
-// common code; no student or staff detail (Rule 10 a3; kb/governance_surface_map.json maps the field to DR-25). The
-// Python builders do not read these rows yet.
+// wins on this page over the catalog, the subject map and every recommendation. A code's noncredit courses save one
+// row per COCI noncredit category it holds, band nc:<category slug> (#3655, d-subject-save-key-three-part-s698; the
+// slugs come from the titles file's noncredit_slugs): a noncredit-only code keeps its title on its dominant category's
+// row, and a category with no common subject code takes a title and no code (d-noncredit-four-categories-no-code-s701).
+// The rows hold a college slug, a code, a title and a common code; no student or staff detail (Rule 10 a3;
+// kb/governance_surface_map.json maps the field to DR-25). The daily build reads them (kb/_sync_subject_decisions.py,
+// kb/subject_decisions.py).
 //
 // Addresses (loaded by commons.js when the address names it): #commons/subjects (every college),
 // #commons/subjects/noncredit (the noncredit subject title list, standing on Sam's word of 2026-11-22, from kb/status/noncredit_subject_titles.json),
@@ -119,19 +122,61 @@
   var COMMON = null, TC = null;   /* from the titles file: canonical SUBJ -> MQ discipline, and the Title Case word lists */
   /* The band a decision is keyed by (Sam, 2026-11-21: credit and noncredit disciplines are separate in the MQs):
      credit where COCI lists a credit course under the code, whole where it lists none (the catalog alone prints it),
-     noncredit where every COCI course is noncredit, which takes no save until noncredit saves are keyed by category. */
+     noncredit where every COCI course is noncredit, whose saves are keyed one per COCI noncredit category
+     (nc:<category slug>; the code's noncredit courses in a code with credit ones are keyed the same way). */
   function bandOf(r) {
     if ((r.credit_courses || 0) > 0) return "credit";
     if ((r.noncredit_courses || 0) > 0) return "noncredit";
     return (r.state_courses || 0) ? "credit" : "whole";
   }
   function saveKey(slug, code, band) { return SAVE_PREFIX + slug + "|" + code + "|" + band; }
+  /* The noncredit categories (#3655): each category's slug comes from the titles file (noncredit_slugs, copied from
+     the one list in kb/status/noncredit_categories.json), so the page makes no slug of its own. */
+  var NO_CAT = "(no category in the export)", NC_SLUGS = {};
+  function ncParts(r) { return (r.categories || []).filter(function (p) { return p && p[0] && (p[1] || 0) > 0; }); }
+  /* The category a noncredit-only code keeps its title under: the most courses (ties A to Z), a named category before
+     the export's blank one. kb/subject_decisions.py dominant is the same rule. */
+  function dominantOf(parts) {
+    var named = parts.filter(function (p) { return p[0] !== NO_CAT; });
+    if (!named.length) named = parts;
+    return named.slice().sort(function (a, b) { return b[1] - a[1] || (a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0); }).map(function (p) { return p[0]; })[0] || null;
+  }
+  function catWords(cat) { return cat === NO_CAT ? "the courses COCI names no category for" : cat; }
+  function catOfSlug(slug) { for (var k in NC_SLUGS) if (NC_SLUGS[k] === slug) return k; return null; }
+  function slugOfSave(sv) { var i = String(sv.mapKey).lastIndexOf("|nc:"); return i < 0 ? "" : String(sv.mapKey).slice(i + 4); }
+  function ncSaves(r) {
+    var base = r.slug + "|" + r.code + "|nc:";
+    return Object.keys(SAVED).sort().filter(function (k) { return k.indexOf(base) === 0 && k.slice(base.length).indexOf("|") < 0; }).map(function (k) { return SAVED[k]; });
+  }
+  /* A noncredit-only code's title: the dominant category's save, else another category's, marked moved (the latest
+     first, then by key: kb/subject_decisions.py noncredit_title). */
+  function ncTitleOf(r) {
+    var dom = dominantOf(ncParts(r)), ds = dom ? NC_SLUGS[dom] : null, mk = r.slug + "|" + r.code + "|nc:" + ds;
+    var here = ds ? SAVED[mk] : null;
+    if (here && here.title) return { title: here.title, sv: here, cat: dom, moved: false };
+    var best = null;
+    ncSaves(r).forEach(function (sv) {
+      if (sv.mapKey === mk || !sv.title) return;
+      if (!best || String(sv.at || "") > String(best.at || "") || (String(sv.at || "") === String(best.at || "") && sv.key > best.key)) best = sv;
+    });
+    return best ? { title: best.title, sv: best, cat: catOfSlug(slugOfSave(best)), moved: true } : null;
+  }
   /* The row's save under its band today. COCI's counts move, so a code saved whole can gain a credit course (and the
      reverse): where the current band has no save, the save under the other band stands, marked moved, and a new Save
-     writes under the current band. */
+     writes under the current band. A noncredit-only row shows its code's title and its dominant category's code. */
   function savedOf(r) {
     var b = bandOf(r);
-    if (b === "noncredit") return null;
+    if (b === "noncredit") {
+      var parts = ncParts(r);
+      if (!parts.length) return null;
+      var ds = NC_SLUGS[dominantOf(parts)], dsv = ds ? SAVED[r.slug + "|" + r.code + "|nc:" + ds] : null, t = ncTitleOf(r);
+      var cm = dsv && dsv.common ? dsv : null;
+      if (!t && !cm) return null;
+      var base = cm || t.sv, n = {};
+      for (var q in base) n[q] = base[q];
+      n.title = t ? t.title : ""; n.common = cm ? cm.common : "";
+      return n;
+    }
     var here = SAVED[r.slug + "|" + r.code + "|" + b];
     if (here) return here;
     var other = b === "credit" ? "whole" : "credit", there = SAVED[r.slug + "|" + r.code + "|" + other];
@@ -262,15 +307,24 @@
     ["printed_name", "common", "discipline", "title_state", "title_source", "common_source"].forEach(function (k) { r[k] = w[k] == null ? null : w[k]; });
     r.decision = null;
   }
+  function whoOf(w) { return w && w !== "a reviewer" && !/@/.test(w) ? w : ""; }
   function reconcile(M, live) {
     ((M && M.list) || []).forEach(function (x) {
       x.rows.forEach(function (r) {
+        /* The noncredit decisions the build carries, one per category: where no live read ran, they stand in its place. */
+        if (!live) (r.noncredit_decisions || []).forEach(function (n) {
+          if (String(n.key || "").indexOf(SAVE_PREFIX) !== 0) return;
+          var nk = String(n.key).slice(SAVE_PREFIX.length);
+          if (!SAVED[nk]) SAVED[nk] = { title: n.local_title || "", common: n.common_code || "", at: n.at || "", by: "", label: "",
+            decidedBy: whoOf(n.who), key: n.key, mapKey: nk, fromFile: true };
+        });
         var d = r.decision;
         if (!d || d.from !== "subject_decision" || String(d.key || "").indexOf(SAVE_PREFIX) !== 0) return;
         var mk = String(d.key).slice(SAVE_PREFIX.length);
-        if (SAVED[mk]) return;
+        var tk = d.title_key && String(d.title_key).indexOf(SAVE_PREFIX) === 0 ? String(d.title_key).slice(SAVE_PREFIX.length) : "";
+        if (SAVED[mk] && (!tk || SAVED[tk])) return;
         if (live) { revert(r); return; }
-        var who = d.who && d.who !== "a reviewer" && !/@/.test(d.who) ? d.who : "";
+        var who = whoOf(d.who);
         SAVED[mk] = { title: d.title ? r.printed_name || "" : "", common: d.common ? r.common || "" : "", at: d.at || "",
           by: "", label: "", decidedBy: who, key: d.key, mapKey: mk, fromFile: true };
       });
@@ -310,7 +364,7 @@
   /* ── the model: the file's rows as objects, keyed by college ── */
   function model(f) {
     f = f || {};
-    COMMON = f.common_codes || null; TC = f.title_case || null; NC_MQ = f.noncredit_mq || {};
+    COMMON = f.common_codes || null; TC = f.title_case || null; NC_MQ = f.noncredit_mq || {}; NC_SLUGS = f.noncredit_slugs || {};
     var cols = f.columns || [], by = {}, list = [];
     (f.colleges || []).forEach(function (c) {
       var rows = (c.rows || []).map(function (r) {
@@ -511,74 +565,61 @@
       }))]);
     return el("div", { cls: "csb-wrap csb-wrap-in", role: "region", "aria-label": label, tabindex: "0" }, [tbl]);
   }
-  /* Edit and Save, above the course tables: the local title and the common subject code a person settles. */
-  function editBlock(c, row) {
-    var box = el("section", { cls: "csb-edit", id: "csb-edit", "aria-labelledby": "csb-edit-h" }, [
-      el("h4", { cls: "csb-edit-head", id: "csb-edit-h", text: "Settle this code" })]);
-    var band = bandOf(row);
-    if (band === "noncredit") {
-      box.appendChild(el("p", { cls: "csb-note", id: "csb-edit-hold", text: "Every course COCI lists under " + row.code + " is noncredit. Noncredit saves come next, each keyed by the code’s noncredit category; until then this code has no Edit." }));
-      return box;
-    }
-    if (String(row.code).indexOf("|") >= 0) {
-      box.appendChild(el("p", { cls: "csb-note", text: "This code holds a character the saved key cannot carry, so it cannot be saved here." }));
-      return box;
-    }
-    if (!reviewer()) {
-      box.appendChild(el("p", { cls: "csb-note", id: "csb-edit-signin", text: "Edit opens once you sign in as a reviewer, from the sign-in link emailed to you." }));
-      return box;
-    }
-    var key = saveKey(c.slug, row.code, band), sv = savedOf(row), rec = recOf(row);
-    var tVal = sv && sv.title ? sv.title : row.printed_name || (rec.title && rec.title.title) || "";
-    var kVal = sv && sv.common ? sv.common : row.common || (rec.common && rec.common.code) || "";
-    var fromRec = [];
-    if (!(sv && sv.title) && !row.printed_name && rec.title && rec.title.title) fromRec.push("the local title");
-    if (!(sv && sv.common) && !row.common && rec.common && rec.common.code) fromRec.push("the common subject code");
-    box.appendChild(el("p", { cls: "csb-note", id: "csb-edit-band", text: band === "whole"
-      ? "COCI lists no course under " + row.code + ", so a save settles the whole code."
-      : (row.noncredit_courses || 0) > 0 ? row.code + " holds credit and noncredit courses in COCI. A save settles its credit courses; noncredit saves come next."
-      : "A save settles " + row.code + " for its credit courses. A person’s save wins over the catalog, the subject map and every recommendation." }));
-    if (fromRec.length) box.appendChild(el("p", { cls: "csb-note csb-rec", id: "csb-edit-rec", text: "Filled in from the recommendation: " + fromRec.join(" and ") + ". It stays a recommendation until you save it." }));
-    var ti = el("input", { type: "text", id: "csb-ed-title", cls: "csb-input", maxlength: "120", autocomplete: "off", "aria-describedby": "csb-ed-title-msg" });
-    ti.value = tVal;
-    var co = el("input", { type: "text", id: "csb-ed-code", cls: "csb-input csb-input-code", maxlength: "4", autocomplete: "off", spellcheck: "false",
-      autocapitalize: "characters", list: COMMON ? "csb-ed-codes" : null, "aria-describedby": "csb-ed-code-msg" });
-    co.value = kVal;
-    var tmsg = el("p", { cls: "csb-ed-msg", id: "csb-ed-title-msg" }), cmsg = el("p", { cls: "csb-ed-msg", id: "csb-ed-code-msg" });
-    var status = el("p", { cls: "csb-ed-msg", id: "csb-ed-status", role: "status", tabindex: "-1", text: SAID[key] || (LAPSED ? "Your sign-in has ended. Sign in again, then save." : "") });
-    var save = el("button", { type: "button", cls: "csb-word", id: "csb-ed-save", text: "Save" });
+  /* Edit and Save, above the course tables: the local title and the common subject code a person settles. A code's
+     credit courses take one form (band credit, or whole where COCI lists no course); its noncredit courses take one
+     form per COCI noncredit category it holds, most courses first (band nc:<category slug>, #3655;
+     d-subject-save-key-three-part-s698). A code has one local title: a code with credit courses keeps it on its credit
+     form, a noncredit-only code on the form of its dominant category; the other forms take a common subject code. */
+  function form(c, row, f) {
+    /* f: ids, key, mapKey, sv (the save under this key), wrap (where the form goes), notes (before the fields),
+       after (after the line about another's save), title ("edit", a text shown read-only, or null), tVal,
+       code (true for a code field), kVal, noCode (the words where it takes none), fromRec. */
+    var I = f.ids, key = f.key, sv = f.sv, box = f.wrap;
+    (f.notes || []).forEach(function (n) { if (n) box.appendChild(n); });
+    if (f.fromRec && f.fromRec.length) box.appendChild(el("p", { cls: "csb-note csb-rec", id: I.rec, text: "Filled in from the recommendation: " + f.fromRec.join(" and ") + ". It stays a recommendation until you save it." }));
+    var ti = null, co = null, editable = f.title === "edit" || !!f.code;
+    var tmsg = el("p", { cls: "csb-ed-msg", id: I.tmsg }), cmsg = el("p", { cls: "csb-ed-msg", id: I.cmsg });
+    var status = el("p", { cls: "csb-ed-msg", id: I.status, role: "status", tabindex: "-1", text: SAID[key] || (LAPSED ? "Your sign-in has ended. Sign in again, then save." : "") });
+    var save = editable ? el("button", { type: "button", cls: "csb-word", id: I.save, text: "Save" }) : null;
     /* Take it back only on the signed-in reviewer's own save; on anyone else's (a filed decision included) a new Save
        replaces it, and the page says so. */
-    var undo = sv && mine(sv) ? el("button", { type: "button", cls: "csb-word", id: "csb-ed-undo", text: "Take it back" }) : null;
-    if (sv && !undo) box.appendChild(el("p", { cls: "csb-note", id: "csb-edit-others", text: (filedRow(sv) ? "This decision was filed for " + sv.decidedBy
-      : "Another reviewer saved this decision") + ". A new Save replaces it." }));
-    if (sv && sv.moved) box.appendChild(el("p", { cls: "csb-note", id: "csb-edit-moved", text: "This decision was saved under the " + sv.moved.from
-      + " band. COCI’s counts have changed since, and the code’s band is now " + sv.moved.to + ", so a new Save writes under " + sv.moved.to + "." }));
-    box.appendChild(el("div", { cls: "csb-ed-field" }, [el("label", { "for": "csb-ed-title", text: "Local title" }), ti, tmsg]));
-    box.appendChild(el("div", { cls: "csb-ed-field" }, [el("label", { "for": "csb-ed-code", text: "Common subject code" }), co, cmsg]));
-    if (COMMON) box.appendChild(el("datalist", { id: "csb-ed-codes" }, Object.keys(COMMON).sort().map(function (k) { return el("option", { value: k, label: COMMON[k] }); })));
-    box.appendChild(el("p", { cls: "csb-ed-row" }, [save, undo]));
+    var undo = sv && mine(sv) ? el("button", { type: "button", cls: "csb-word", id: I.undo, text: "Take it back" }) : null;
+    if (sv && !undo) box.appendChild(el("p", { cls: "csb-note", id: I.others, text: (filedRow(sv) ? "This decision was filed for " + sv.decidedBy
+      : "Another reviewer saved this decision") + "." + (editable ? " A new Save replaces it." : "") }));
+    (f.after || []).forEach(function (n) { if (n) box.appendChild(n); });
+    if (f.title === "edit") {
+      ti = el("input", { type: "text", id: I.title, cls: "csb-input", maxlength: "120", autocomplete: "off", "aria-describedby": I.tmsg });
+      ti.value = f.tVal || "";
+      box.appendChild(el("div", { cls: "csb-ed-field" }, [el("label", { "for": I.title, text: "Local title" }), ti, tmsg]));
+    } else if (f.title) box.appendChild(el("p", { cls: "csb-ed-ro", id: I.title + "-ro" }, [el("strong", { text: "Local title: " }), f.title]));
+    if (f.code) {
+      co = el("input", { type: "text", id: I.code, cls: "csb-input csb-input-code", maxlength: "4", autocomplete: "off", spellcheck: "false",
+        autocapitalize: "characters", list: COMMON ? "csb-ed-codes" : null, "aria-describedby": I.cmsg });
+      co.value = f.kVal || "";
+      box.appendChild(el("div", { cls: "csb-ed-field" }, [el("label", { "for": I.code, text: "Common subject code" }), co, cmsg]));
+    } else if (f.noCode) box.appendChild(el("p", { cls: "csb-ed-ro", id: I.code + "-none", text: f.noCode }));
+    if (save || undo) box.appendChild(el("p", { cls: "csb-ed-row" }, [save, undo]));
     box.appendChild(status);
     var stay = S.view + "/" + S.code;
     function redraw(focusId) {
       if (!VIEW.root || !VIEW.M) return;
       render(VIEW.root, VIEW.M, stay);
-      var f = VIEW.root.querySelector("#" + focusId) || VIEW.root.querySelector("#csb-ed-status");
-      if (f && f.focus) f.focus();
+      var fx = VIEW.root.querySelector("#" + focusId) || VIEW.root.querySelector("#" + I.status);
+      if (fx && fx.focus) fx.focus();
     }
     function failed(res) {
       if (res && res.lapsed) { LAPSED = true; return "Not saved: your sign-in has ended. Sign in again, then save."; }
       return "Not saved: the server answered " + (res && res.status) + ". Only a reviewer on the list may save.";
     }
-    save.addEventListener("click", function () {
-      var t = String(ti.value || "").trim().replace(/\s+/g, " "), k = String(co.value || "").trim().toUpperCase();
+    if (save) save.addEventListener("click", function () {
+      var t = ti ? String(ti.value || "").trim().replace(/\s+/g, " ") : "", k = co ? String(co.value || "").trim().toUpperCase() : "";
       tmsg.textContent = ""; cmsg.textContent = ""; status.textContent = "";
       var bad = false;
       if (t) {
         var tc = titleCase(t);
         if (tc !== t) {
           bad = true;
-          var use = el("button", { type: "button", cls: "csb-word", id: "csb-ed-use", text: "Use “" + tc + "”" });
+          var use = el("button", { type: "button", cls: "csb-word", id: I.use, text: "Use “" + tc + "”" });
           use.addEventListener("click", function () { ti.value = tc; tmsg.textContent = ""; ti.focus(); });
           tmsg.appendChild(document.createTextNode((isUpperWord(t) ? "A title is saved in Title Case, not in capitals." : "A title is saved in Title Case.") + " Nothing was saved. "));
           tmsg.appendChild(use);
@@ -588,20 +629,21 @@
         if (!COMMON) { bad = true; cmsg.textContent = "The list of common subject codes could not be read, so no code can be checked. Nothing was saved."; }
         else if (!COMMON[k]) { bad = true; cmsg.textContent = k + " is not a common subject code on the Common Subjects Reference. Type a code it holds, such as KINE for Kinesiology. Nothing was saved."; }
       }
-      if (!t && !k) { bad = true; status.textContent = "Type a local title or a common subject code, then save."; }
+      if (!t && !k) { bad = true; status.textContent = ti && co ? "Type a local title or a common subject code, then save." : ti ? "Type a local title, then save." : "Type a common subject code, then save."; }
       if (bad) return;
       var value = {};
       if (t) value.local_title = t;
+      else if (!ti && sv && sv.title) value.local_title = sv.title;   /* a form with no title field keeps the one saved here */
       if (k) value.common_code = k;
       save.disabled = true;
       status.textContent = "Saving…";
       writeSave(key, value).then(function (res) {
         if (!res.ok) { save.disabled = false; status.textContent = failed(res); return; }
         LAPSED = false;
-        SAVED[c.slug + "|" + row.code + "|" + band] = { title: value.local_title || "", common: value.common_code || "", at: new Date().toISOString(), by: res.email || "",
-          label: "a reviewer", decidedBy: "", key: key, mapKey: c.slug + "|" + row.code + "|" + band };
+        SAVED[f.mapKey] = { title: value.local_title || "", common: value.common_code || "", at: new Date().toISOString(), by: res.email || "",
+          label: "a reviewer", decidedBy: "", key: key, mapKey: f.mapKey };
         SAID[key] = "Saved. The list shows your decision in place of the files.";
-        redraw("csb-ed-status");
+        redraw(I.status);
       }, function (e) { save.disabled = false; status.textContent = "Not saved: " + ((e && e.message) || "the network failed") + "."; });
     });
     if (undo) undo.addEventListener("click", function () {
@@ -611,11 +653,111 @@
         if (!res.ok) { undo.disabled = false; status.textContent = failed(res).replace("Not saved", "Not taken back"); return; }
         if (!res.n) { undo.disabled = false; status.textContent = "Nothing was taken back: no save of yours is stored under this code now. Reload the tab to read the saves again."; return; }
         delete SAVED[sv.mapKey];
-        if (row.decision && row.decision.key === sv.key) revert(row);
+        if (row.decision && (row.decision.key === sv.key || row.decision.title_key === sv.key)) revert(row);
         SAID[key] = "Taken back. The row reads from the files again.";
-        redraw("csb-ed-status");
+        redraw(I.status);
       }, function (e) { undo.disabled = false; status.textContent = "Not taken back: " + ((e && e.message) || "the network failed") + "."; });
     });
+    return box;
+  }
+  function ids(pre, notes) {
+    return { title: pre + "-title", code: pre + "-code", tmsg: pre + "-title-msg", cmsg: pre + "-code-msg", status: pre + "-status",
+      save: pre + "-save", undo: pre + "-undo", use: pre + "-use", rec: notes + "-rec", others: notes + "-others", moved: notes + "-moved" };
+  }
+  /* The credit form: band credit, or whole where COCI lists no course under the code. */
+  function creditForm(c, row, box, band) {
+    var key = saveKey(c.slug, row.code, band), sv = savedOf(row), rec = recOf(row);
+    var tVal = sv && sv.title ? sv.title : row.printed_name || (rec.title && rec.title.title) || "";
+    var kVal = sv && sv.common ? sv.common : row.common || (rec.common && rec.common.code) || "";
+    var fromRec = [];
+    if (!(sv && sv.title) && !row.printed_name && rec.title && rec.title.title) fromRec.push("the local title");
+    if (!(sv && sv.common) && !row.common && rec.common && rec.common.code) fromRec.push("the common subject code");
+    var nc = (row.noncredit_courses || 0) > 0, forms = nc && ncParts(row).length > 0;
+    return form(c, row, { ids: ids("csb-ed", "csb-edit"), key: key, mapKey: c.slug + "|" + row.code + "|" + band, sv: sv, wrap: box,
+      notes: [el("p", { cls: "csb-note", id: "csb-edit-band", text: band === "whole"
+        ? "COCI lists no course under " + row.code + ", so a save settles the whole code."
+        : nc ? row.code + " holds credit and noncredit courses in COCI. A save here settles its credit courses and the code’s local title"
+          + (forms ? "; each noncredit category below has its own form." : "; no COCI noncredit category is on file for its noncredit courses, so they take no save yet.")
+        : "A save settles " + row.code + " for its credit courses. A person’s save wins over the catalog, the subject map and every recommendation." })],
+      after: [sv && sv.moved ? el("p", { cls: "csb-note", id: "csb-edit-moved", text: "This decision was saved under the " + sv.moved.from
+        + " band. COCI’s counts have changed since, and the code’s band is now " + sv.moved.to + ", so a new Save writes under " + sv.moved.to + "." }) : null],
+      title: "edit", tVal: tVal, code: true, kVal: kVal, fromRec: fromRec });
+  }
+  /* One form per noncredit category the code holds, most courses first, and a line for each save whose category the
+     code no longer holds (its courses moved, so it settles none). */
+  function ncForms(c, row, box) {
+    var parts = ncParts(row), only = bandOf(row) === "noncredit", dom = dominantOf(parts), rec = recOf(row);
+    var held = only ? ncTitleOf(row) : null, credit = only ? null : savedOf(row);
+    var codeTitle = only ? (held && held.title) || row.printed_name || "" : (credit && credit.title) || row.printed_name || "";
+    box.appendChild(el("h5", { cls: "csb-edit-head csb-nc-head", id: "csb-nc-h", text: "Noncredit courses, by COCI noncredit category" }));
+    box.appendChild(el("p", { cls: "csb-note", id: "csb-nc-title-rule", text: only
+      ? "A code has one local title, so " + row.code + " keeps its title on the form of the category with the most courses, " + catWords(dom) + "; each other category takes a common subject code only."
+      : "A code has one local title, so " + row.code + " keeps its title with its credit courses above; each noncredit category takes a common subject code only." }));
+    var shown = {};
+    parts.forEach(function (p) {
+      var cat = p[0], slug = NC_SLUGS[cat];
+      var fs = el("fieldset", { cls: "csb-nc-form", "data-category": cat, "data-slug": slug || null }, [
+        el("legend", { text: catWords(cat) + ", " + fmt(p[1]) + (p[1] === 1 ? " noncredit course" : " noncredit courses") })]);
+      box.appendChild(fs);
+      if (!slug) { fs.appendChild(el("p", { cls: "csb-note", text: "No noncredit save can be keyed for " + cat + ": the list of category keys does not name it." })); return; }
+      shown[slug] = true;
+      var m = NC_MQ[cat] || {}, hasCode = !!m.common_code, holder = only && cat === dom;
+      var mapKey = c.slug + "|" + row.code + "|nc:" + slug, sv = SAVED[mapKey] || null;
+      var pre = "csb-nc-" + slug;
+      var mq = el("p", { cls: "csb-note", id: pre + "-mq", text: cat === NO_CAT
+        ? "COCI names no noncredit category for these courses, so they have no noncredit MQ discipline and no common subject code."
+        : (m.mq_discipline ? "Noncredit MQ discipline: " + m.mq_discipline + ". " : "No noncredit MQ discipline is named for this category. ")
+          + (hasCode ? "Its common subject code is " + m.common_code + "." : "It has no common subject code yet.") });
+      var tVal = "", fromRec = [];
+      if (holder) {
+        tVal = sv && sv.title ? sv.title : held && held.title ? held.title : row.printed_name || (rec.title && rec.title.title) || "";
+        if (!(sv && sv.title) && !held && !row.printed_name && rec.title && rec.title.title) fromRec.push("the local title");
+      }
+      var kVal = hasCode ? (sv && sv.common ? sv.common : m.common_code) : "";
+      if (hasCode && !(sv && sv.common)) fromRec.push("the common subject code");
+      if (!holder && !hasCode && !sv) {
+        fs.appendChild(mq);
+        if (codeTitle) fs.appendChild(el("p", { cls: "csb-ed-ro", id: pre + "-title-ro" }, [el("strong", { text: "Local title: " }), codeTitle + " (the code’s own)."]));
+        fs.appendChild(el("p", { cls: "csb-ed-ro", id: pre + "-code-none", text: "This category takes no save: its title is the code’s, and it has no common subject code yet." }));
+        return;
+      }
+      form(c, row, { ids: ids(pre, pre), key: saveKey(c.slug, row.code, "nc:" + slug), mapKey: mapKey, sv: sv, wrap: fs, notes: [mq],
+        after: [holder && held && held.moved ? el("p", { cls: "csb-note", id: pre + "-moved", text: "The title " + held.title + " was saved on the "
+          + catWords(held.cat) + " form, when that category held the most courses. A Save here writes it under " + catWords(dom) + "." }) : null],
+        title: holder ? "edit" : codeTitle ? codeTitle + " (the code’s own)." : null, tVal: tVal,
+        code: hasCode, kVal: kVal, noCode: hasCode ? null : catWords(cat) + " has no common subject code yet, so this form takes a title and no code.",
+        fromRec: fromRec });
+    });
+    ncSaves(row).filter(function (sv) { return !shown[slugOfSave(sv)]; }).forEach(function (sv) {
+      var slug = slugOfSave(sv), cat = catOfSlug(slug), pre = "csb-nc-gone-" + slug;
+      var fs = el("fieldset", { cls: "csb-nc-form", "data-category": cat || "", "data-slug": slug, "data-gone": "yes" }, [
+        el("legend", { text: (cat ? catWords(cat) : "A category the list does not name (" + slug + ")") + ", no course now" })]);
+      box.appendChild(fs);
+      form(c, row, { ids: ids(pre, pre), key: sv.key, mapKey: sv.mapKey, sv: sv, wrap: fs,
+        notes: [el("p", { cls: "csb-note", id: pre + "-gone", text: "A decision was saved under this category, and COCI lists no course of " + row.code + " in it now, so it settles none: "
+          + [sv.title ? "the title " + sv.title : "", sv.common ? "the common subject code " + sv.common : ""].filter(Boolean).join(" and ") + "." })],
+        title: null, code: false });
+    });
+  }
+  function editBlock(c, row) {
+    var box = el("section", { cls: "csb-edit", id: "csb-edit", "aria-labelledby": "csb-edit-h" }, [
+      el("h4", { cls: "csb-edit-head", id: "csb-edit-h", text: "Settle this code" })]);
+    var band = bandOf(row);
+    if (String(row.code).indexOf("|") >= 0) {
+      box.appendChild(el("p", { cls: "csb-note", text: "This code holds a character the saved key cannot carry, so it cannot be saved here." }));
+      return box;
+    }
+    if (band === "noncredit" && !ncParts(row).length) {
+      box.appendChild(el("p", { cls: "csb-note", id: "csb-edit-hold", text: "Every course COCI lists under " + row.code + " is noncredit, and no COCI noncredit category is on file for them, so this code has no Edit yet." }));
+      return box;
+    }
+    if (!reviewer()) {
+      box.appendChild(el("p", { cls: "csb-note", id: "csb-edit-signin", text: "Edit opens once you sign in as a reviewer, from the sign-in link emailed to you." }));
+      return box;
+    }
+    if (band !== "noncredit") creditForm(c, row, box, band);
+    if ((row.noncredit_courses || 0) > 0 && ncParts(row).length) ncForms(c, row, box);
+    if (COMMON) box.appendChild(el("datalist", { id: "csb-ed-codes" }, Object.keys(COMMON).sort().map(function (k) { return el("option", { value: k, label: COMMON[k] }); })));
     return box;
   }
   function panelDraw(root, M) {
@@ -883,6 +1025,10 @@
     ".csb-ed-msg:empty { display:none; }",
     ".csb-ed-msg:focus { outline:none; } .csb-ed-msg:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:2px; }",
     ".csb-word:disabled { color:var(--cmn-muted); cursor:default; }",
+    ".csb-nc-head { margin-top:6px; }",
+    ".csb-nc-form { display:grid; gap:8px; min-width:0; margin:0; padding:8px 12px 10px; border:1px solid var(--cmn-line); border-radius:8px; }",
+    ".csb-nc-form legend { padding:0 4px; font-weight:600; color:var(--cmn-heading); font-size:.95rem; overflow-wrap:anywhere; }",
+    ".csb-ed-ro { margin:0; color:var(--cmn-ink-2); font-size:.92rem; max-width:var(--cpl-measure,none); overflow-wrap:anywhere; } .csb-ed-ro strong { color:var(--cmn-heading); font-weight:600; }",
     "@media (max-width: 560px) { .csb-table { min-width:36rem; } .csb-held { min-width:44rem; } .csb-nc { min-width:40rem; } .csb-courses { min-width:26rem; } .csb-table th, .csb-table td { padding:8px; } }"
   ].join("\n");
   function ensureCss() {
@@ -894,7 +1040,7 @@
     boot: boot, render: render, model: model, heldModel: heldModel, recModel: recModel, REC_FILE: REC_FILE,
     _recs: function (f) { REC = recModel(f); }, address: address, open: open, load: load, FILE: FILE, HELD_FILE: HELD_FILE, SIDES: SIDES, CSS: CSS,
     _state: S, COURSE_DIR: COURSE_DIR, bandOf: bandOf, saveKey: saveKey, titleCase: titleCase, savesModel: savesModel,
-    SAVE_FIELD: SAVE_FIELD, SAVE_PREFIX: SAVE_PREFIX,
-    _reset: function () { SAVED = {}; SAVE_ERR = ""; SAID = {}; LAPSED = false; COMMON = null; TC = null; cache = null; heldCache = null; ncCache = null; courseCache = {}; VIEW.M = null; VIEW.H = null; VIEW.N = null; S.view = ""; S.code = ""; S.band = ""; }
+    SAVE_FIELD: SAVE_FIELD, SAVE_PREFIX: SAVE_PREFIX, dominantOf: dominantOf,
+    _reset: function () { SAVED = {}; SAVE_ERR = ""; SAID = {}; LAPSED = false; COMMON = null; TC = null; NC_SLUGS = {}; cache = null; heldCache = null; ncCache = null; courseCache = {}; VIEW.M = null; VIEW.H = null; VIEW.N = null; S.view = ""; S.code = ""; S.band = ""; }
   };
 })();

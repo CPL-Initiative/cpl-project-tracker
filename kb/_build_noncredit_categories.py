@@ -17,12 +17,37 @@ the same export writes the same bytes.
 """
 import json
 import os
+import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 XLSX = os.path.join("kb", "reference", "coci_course_list.xlsx")
 OUT = os.path.join("kb", "status", "noncredit_categories.json")
 NO_CATEGORY = "(no category in the export)"
+# The slug a noncredit decision is keyed by (SUBJ:<college>|<code>|nc:<slug>; d-subject-save-key-three-part-s698). This
+# file's `slugs` is the one list of them: kb/subject_decisions.py reads it to accept a key, and the Subjects page reads
+# the copy kb/_build_local_subject_titles.py carries (noncredit_slugs), so neither holds a rule of its own.
+NO_CATEGORY_SLUG = "uncategorized"
+
+
+def category_slug(name):
+    """A category's slug: lower-case letters, digits and single hyphens. & reads and; a slash, a parenthesis and
+    every other run of characters fold to one hyphen ("Health & Safety" is health-and-safety)."""
+    if name == NO_CATEGORY:
+        return NO_CATEGORY_SLUG
+    s = " ".join(str(name or "").split()).lower().replace("&", " and ")
+    return re.sub(r"[^a-z0-9]+", "-", s).strip("-")
+
+
+def slugs_of(names):
+    """{category: slug} for the categories named, refusing an empty slug or two categories under one slug."""
+    out, seen = {}, {}
+    for n in sorted(names):
+        s = category_slug(n)
+        if not s or (s in seen and seen[s] != n):
+            raise SystemExit("REFUSED: the noncredit category %r slugs to %r, %s" % (n, s, "which is empty" if not s else "as %r does" % seen[s]))
+        seen[s], out[n] = n, s
+    return out
 
 
 def is_credit(credit_type):
@@ -92,6 +117,8 @@ def build(rows):
         "columns": ["code", "credit_courses", "noncredit_courses", "categories"],
         "totals": T,
         "categories": [[c, cats[c]] for c in sorted(cats, key=lambda c: (-cats[c], c))],
+        # Each category's slug, the key a noncredit save is filed under (SUBJ:<college>|<code>|nc:<slug>).
+        "slugs": slugs_of(cats),
         "colleges": colleges,
     }
 
