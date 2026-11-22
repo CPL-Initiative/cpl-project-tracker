@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-600 document(s).
+601 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -174,6 +174,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A one-rule class must be checked against its own text](../kb-notes/methodology-a-one-rule-class-must-be-checked-against-its-own-text.md) | methodology | published | 2026-08-19 | 2026-08-19 |
 | [A one-shot hand-off must not consume what it cannot deliver](../kb-notes/methodology-a-one-shot-handoff-must-not-consume-what-it-cannot-deliver.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [A page can hide text that names every course](../kb-notes/methodology-a-page-can-hide-text-that-names-every-course.md) | methodology | published | 2026-10-11 | 2026-10-11 |
+| [A page whose promise is narrower than its table's delete policy filters on the owner](../kb-notes/methodology-a-page-promise-narrower-than-its-delete-policy.md) | methodology | published | 2026-11-22 | 2026-11-22 |
 | [A pane painted only by its event is blank after every re-render](../kb-notes/methodology-a-pane-painted-only-by-its-event-is-blank-after-a-re-render.md) | methodology | published | 2026-09-10 | 2026-09-10 |
 | [A partial ARIA pattern is worse than none — take the native control instead](../kb-notes/methodology-a-partial-aria-pattern-is-worse-than-none.md) | methodology | published | 2026-08-16 | 2026-08-16 |
 | [A path filter compares pushes, not branches](../kb-notes/methodology-a-path-filter-compares-pushes-not-branches.md) | methodology | published | 2026-10-11 | 2026-10-11 |

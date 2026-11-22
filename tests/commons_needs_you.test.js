@@ -177,13 +177,17 @@ const count = (hay, needle) => hay.split(needle).length - 1;
   // the wording rule leaves Decisions waiting once a decision is fixtured
   const crRuled = runLog("cr");
   crRuled.calls.filter((c) => c.todo_id === WORDING)[0].answer = { by: "Sam", at: "2026-11-20", words: "Keep the colleges' wording." };
-  const ruled = load("#commons", { files: { "kb/status/cr.json": crRuled } });
+  /* S701 checkpoint: the Subjects run log carries an open call of its own (aligning 192 Cerritos courses' M-IDs), so
+     this fixture keeps only its answered calls; the open-list order above is checked against the committed files. */
+  const subjAnswered = runLog("subjects");
+  subjAnswered.calls = subjAnswered.calls.filter((c) => c.answer);
+  const ruled = load("#commons", { files: { "kb/status/cr.json": crRuled, "kb/status/subjects.json": subjAnswered } });
   await ruled.M.boot(); await settle();
   check("(A) ⭐ once a decision is fixtured, the wording rule leaves Decisions waiting", !ruled.d.querySelector('#cmf-need-decisions li[data-todo="' + WORDING + '"]')
     && /None waiting\./.test(txt(ruled.d.getElementById("cmf-need-decisions"))));
   /* S701: Sam answered the noncredit subject title list (r-noncredit-title-list-go-sam-2026-11-22), so the Subjects
      run log waits on nothing and the list is empty again once the wording rule is answered. */
-  const ruledRec = load("#commons/details/decisions", { files: { "kb/status/cr.json": crRuled } });
+  const ruledRec = load("#commons/details/decisions", { files: { "kb/status/cr.json": crRuled, "kb/status/subjects.json": subjAnswered } });
   await ruledRec.M.boot(); await settle();
   /* Newest first: Sam's answer on the noncredit list (2026-11-22) sits above the fixtured wording ruling (2026-11-20). */
   const doneLis = Array.from(ruledRec.d.querySelectorAll("#cmn-rec-done li"));
@@ -224,6 +228,7 @@ const count = (hay, needle) => hay.split(needle).length - 1;
   const tabs = new Set(Array.from(HTML.matchAll(/class="cpl-tab[^"]*" data-tab="([a-z0-9-]+)"/g)).map((m) => m[1]).concat(["collect"]));
   const SUBVIEWS = {
     "commons/subjects/noncredit": true,   // S700: the noncredit subject title list, a view of the Subjects list
+    "commons/subjects/held": /var HELD = "held";/.test(fs.readFileSync("commons_subjects.js", "utf8")),   // the held codes, a view of the Subjects list
     "commons/details/decisions": /RECORD\.on = !!\(a && a\[0\] === "details" && a\[1\] === "decisions"\)/.test(COMMONS),
     "collect/outlines-blocked": /"outlines-blocked": "Course outlines blocked"/.test(DATA),
     "collect/unread": /unread: \{ word: "Not collected yet"/.test(DATA),

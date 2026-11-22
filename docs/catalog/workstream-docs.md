@@ -15,7 +15,7 @@ related:
 
 Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` that is not a lessons doc or a session handoff.
 
-107 document(s).
+108 document(s).
 
 | Title | File | Created | Updated |
 |---|---|---|---|
@@ -109,6 +109,7 @@ Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` t
 | [SkyView — drag any local course, queue the breakage, batch the re-mint](../skyview_drag_rehome_scope.md) | `skyview_drag_rehome_scope.md` | 2026-08-24 | 2026-08-24 |
 | [SkyView — the smaller backlog](../skyview_backlog.md) | `skyview_backlog.md` | 2026-09-07 | 2026-09-10 |
 | [Team-phrase auth expansion — recommendation + execution plan](../team_phrase_expansion_plan.md) | `team_phrase_expansion_plan.md` | 2026-07-03 |  |
+| [The Commons — lessons archive, part 2 (S648 onward)](../commons_lessons_archive_2.md) | `commons_lessons_archive_2.md` | 2026-11-22 | 2026-11-22 |
 | [The CPL clean-up worklist — what to fix, in what order, and who fixes it](../map_cleanup_worklist.md) | `map_cleanup_worklist.md` | 2026-08-19 | 2026-08-19 |
 | [The Library and its filer — lessons, archive 2 (2026-10-24 to 2026-10-29)](../library_lessons_archive_2.md) | `library_lessons_archive_2.md` | 2026-11-06 |  |
 | [The Library — lessons, archive 3 (the lane's text moved at the S690 checkpoint, 2026-11-20)](../library_lessons_archive_3.md) | `library_lessons_archive_3.md` | 2026-11-20 |  |

@@ -1,0 +1,6 @@
+-- Rollback for kb/migrations/2026-11-22_s701_cpl_memory_rows.sql: deletes only the nine proposed rows and
+-- their create log rows, by slug and author, so a row a person has since taken over is left alone. The three rows
+-- that carry Sam's words stay (Rule 8: a human-sourced row is not removed
+-- by a session's rollback).
+delete from public.cpl_memory_log where action = 'create' and memory_id in (select id from public.cpl_memory where slug in ('d-noncredit-four-categories-no-code-s701','f-subject-save-live-s701','p-delete-policy-wider-than-page-s701','f-noncredit-hold-lifted-measured-s701','f-credit-catalogs-santa-ana-mtsac-s701','f-builders-read-subject-decisions-s701','p-decision-never-routes-shell-title-s701','f-cerritos-mids-differ-from-decisions-s701','p-shared-branch-name-stale-checkout-s701') and author = 'SkyMurre (S701)');
+delete from public.cpl_memory where slug in ('d-noncredit-four-categories-no-code-s701','f-subject-save-live-s701','p-delete-policy-wider-than-page-s701','f-noncredit-hold-lifted-measured-s701','f-credit-catalogs-santa-ana-mtsac-s701','f-builders-read-subject-decisions-s701','p-decision-never-routes-shell-title-s701','f-cerritos-mids-differ-from-decisions-s701','p-shared-branch-name-stale-checkout-s701') and author = 'SkyMurre (S701)';
