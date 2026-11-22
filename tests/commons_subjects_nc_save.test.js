@@ -15,7 +15,10 @@
 //       round-trips back into that category's form;
 //   (7) ⭐ signed out makes no write and shows no input;
 //   (8) a title saved under another category stands on the dominant form, marked moved; a save whose category the
-//       code no longer holds shows apart and settles nothing; a failed read falls back to the build's decisions.
+//       code no longer holds shows apart and settles no course, and says so where its title stands as the code's;
+//       a failed read falls back to the build's decisions;
+//   (9) ⭐ a form with no title field writes no title, and a title saved there earlier shows read-only with where the
+//       code's title lives now (its category lost the most courses, or the code gained credit courses).
 // Run from repo root: `npm test` (or `node tests/commons_subjects_nc_save.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -231,9 +234,38 @@ const save = (key, v, email) => ({ course_id: key, value: JSON.stringify(v), rev
     && /^Electronics Saved by a person/.test(txt(x.d.querySelector('.csb-codes tr[data-code="AED"]').children[2])));
   const gone = x.d.querySelector('fieldset[data-gone="yes"]');
   check("(8) ⭐ a save under a category the code no longer holds shows apart, settles nothing, and its owner may take it back",
-    gone && gone.getAttribute("data-slug") === "parenting" && /COCI lists no course of AED in it now, so it settles none: the common subject code PARN\./.test(txt(gone))
+    gone && gone.getAttribute("data-slug") === "parenting" && /COCI lists no course of AED in it now\. It settles no course: the common subject code PARN\./.test(txt(gone))
     && !gone.querySelector("input") && !!g(x, "csb-nc-gone-parenting-undo"));
   check("(8) the row's common code is the dominant category's, never a moved category's", !/BSKL|PARN/.test(txt(x.d.querySelector('.csb-codes tr[data-code="AED"]').children[3])));
+  x = load("#commons/subjects/alpha/AED", { sess: ME, saves: [save("SUBJ:alpha|AED|nc:parenting", { local_title: "Parenting Classes", common_code: "PARN" })] });
+  await x.M.boot(); await settle();
+  const gone2 = x.d.querySelector('fieldset[data-gone="yes"]');
+  check("(8) ⭐ a gone save whose title is the code's title says so, as the list row and the dominant form do",
+    /Its title, Parenting Classes, stands as the code’s title until the Short-term Vocational form saves one\. It settles no course: the common subject code PARN\./.test(txt(gone2))
+    && !/the title Parenting Classes/.test(txt(gone2)) && g(x, VOC + "-title").value === "Parenting Classes"
+    && /^Parenting Classes Saved by a person/.test(txt(x.d.querySelector('.csb-codes tr[data-code="AED"]').children[2])));
+
+  /* (9) a form with no title field never writes a title */
+  const FLIP = [save("SUBJ:alpha|AED|nc:elementary-and-secondary-basic-skills", { local_title: "Old Basic Skills", common_code: "BSKL" }, ME.email),
+    save("SUBJ:alpha|AED|nc:short-term-vocational", { local_title: "Electrical Apprenticeship", common_code: "VOCE" }, ME.email)];
+  x = load("#commons/subjects/alpha/AED", { sess: ME, saves: FLIP });
+  await x.M.boot(); await settle();
+  check("(9) ⭐ a title saved when its category held most courses shows read-only, saying where the code's title lives now",
+    !g(x, BSK + "-title") && /^Saved here earlier: Old Basic Skills\. It was saved as this form’s title when Elementary and Secondary Basic Skills held most of the courses\. The code’s title now lives on the Short-term Vocational form, and a Save here writes no title\.$/.test(txt(g(x, BSK + "-stale")))
+    && /Local title: Electrical Apprenticeship/.test(txt(g(x, BSK + "-title-ro"))));
+  g(x, BSK + "-save").click(); await settle();
+  b = bodies(x);
+  check("(9) ⭐ saving that form's code writes no title, so the old one is never stamped anew",
+    b.length === 1 && b[0].course_id === "SUBJ:alpha|AED|nc:elementary-and-secondary-basic-skills" && b[0].value === JSON.stringify({ common_code: "BSKL" }), JSON.stringify(b));
+  x = load("#commons/subjects/alpha/MIX", { sess: ME, saves: [save("SUBJ:alpha|MIX|nc:english-as-a-second-language-esl", { local_title: "ESL Noncredit", common_code: "ESLN" })] });
+  await x.M.boot(); await settle();
+  const ESL2 = "csb-nc-english-as-a-second-language-esl";
+  check("(9) ⭐ a code that gained credit courses says its noncredit-only title now lives on the credit form",
+    /^Saved here earlier: ESL Noncredit\. It was saved as this form’s title when MIX held noncredit courses only\. The code’s title now lives on the credit form above, and a Save here writes no title\.$/.test(txt(g(x, ESL2 + "-stale")))
+    && g(x, "csb-ed-title").value === "English");
+  g(x, ESL2 + "-save").click(); await settle();
+  b = bodies(x);
+  check("(9) and its Save writes the code alone", b.length === 1 && b[0].value === JSON.stringify({ common_code: "ESLN" }), JSON.stringify(b));
   const BUILT = JSON.parse(JSON.stringify(FIX));
   BUILT.colleges[0].rows.forEach((r) => { if (r[0] === "AED") r[C.indexOf("noncredit_decisions")] = [{ key: "SUBJ:alpha|AED|nc:elementary-and-secondary-basic-skills", category: "Elementary and Secondary Basic Skills",
     common_code: "BSKL", discipline: "Interdisciplinary-Basic Skills: Noncredit", local_title: null, who: "Sam", at: "2026-11-22T09:00:00Z", holds: true }]; });

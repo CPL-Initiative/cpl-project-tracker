@@ -1236,19 +1236,19 @@ async function seedCommonsSubjects(page, theme) {
     await page.evaluate(() => { const t = document.getElementById("csb-ed-title"); t.value = "ATHLETICS"; document.getElementById("csb-ed-save").click(); });
     await page.waitForSelector("#csb-ed-use", { state: "attached", timeout: 60000 });
   }
-  /* #3655: the AED route opens the noncredit forms signed in, one per COCI noncredit category, and presses Save on the
+  /* #3655: the AED and Southwestern NC routes open the noncredit forms signed in, one per COCI noncredit category, and press Save on the
      dominant one's title in capitals, so a form, its refusal and the forms that take a code only are all measured.
      Nothing is sent: the refusal makes no request. */
-  if (/subjects\/cerritos\/AED$/.test(await page.evaluate(() => location.hash))) {
+  if (/subjects\/(cerritos\/AED|southwestern\/NC)$/.test(await page.evaluate(() => location.hash))) {
     await page.waitForSelector("#csb-panel", { state: "attached", timeout: 60000 });
     await page.evaluate(() => {
       const s = { email: "seed@example.org", access_token: "seed.seed.seed", refresh_token: "seed", exp: Date.now() + 3600 * 1000 };
       if (window.CPL_SESSION) { window.CPL_SESSION.get = () => s; window.CPL_SESSION.isFresh = () => true; }
       window.dispatchEvent(new Event("cpl-session-changed"));
     });
-    await page.waitForSelector("#csb-nc-short-term-vocational-save", { state: "attached", timeout: 60000 });
-    await page.evaluate(() => { const t = document.getElementById("csb-nc-short-term-vocational-title"); t.value = "ELECTRICAL"; document.getElementById("csb-nc-short-term-vocational-save").click(); });
-    await page.waitForSelector("#csb-nc-short-term-vocational-use", { state: "attached", timeout: 60000 });
+    await page.waitForSelector("fieldset.csb-nc-form input[id$='-title']", { state: "attached", timeout: 60000 });
+    await page.evaluate(() => { const t = document.querySelector("fieldset.csb-nc-form input[id$='-title']"); t.value = "ELECTRICAL"; document.getElementById(t.id.replace(/-title$/, "-save")).click(); });
+    await page.waitForSelector("fieldset.csb-nc-form button[id$='-use']", { state: "attached", timeout: 60000 });
   }
   await page.waitForTimeout(300);
 }
@@ -3796,7 +3796,9 @@ module.exports = {
       /* S701: Edit and Save in a code's panel, signed in, with a title refused for its capitals. */
       { hash: "commons/subjects/cerritos/ATH", name: "subjects-edit" },
       /* #3655: noncredit saves, one form per COCI noncredit category; Cerritos AED spans seven. */
-      { hash: "commons/subjects/cerritos/AED", name: "subjects-edit-noncredit" }],
+      { hash: "commons/subjects/cerritos/AED", name: "subjects-edit-noncredit" },
+      /* Southwestern NC spans ten categories. */
+      { hash: "commons/subjects/southwestern/NC", name: "subjects-edit-noncredit-ten" }],
     widths: [320, 390, 768, 1440],
     seed: (page) => seedCommonsSubjects(page, "light"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
@@ -3806,7 +3808,8 @@ module.exports = {
     title: "CPL Commons: the Subjects list, dark",
     routes: [{ hash: "commons/subjects/cerritos", name: "subjects-cerritos-dark" }, { hash: "commons/subjects/cerritos/MATH", name: "subjects-course-panel-dark" },
       { hash: "commons/subjects/cerritos/ATH", name: "subjects-edit-dark" },
-      { hash: "commons/subjects/cerritos/AED", name: "subjects-edit-noncredit-dark" }],
+      { hash: "commons/subjects/cerritos/AED", name: "subjects-edit-noncredit-dark" },
+      { hash: "commons/subjects/southwestern/NC", name: "subjects-edit-noncredit-ten-dark" }],
     widths: [390, 1440],
     seed: (page) => seedCommonsSubjects(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],

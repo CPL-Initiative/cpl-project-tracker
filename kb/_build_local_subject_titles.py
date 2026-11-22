@@ -141,7 +141,7 @@ def build(root=ROOT):
     canon_doc = read_json(root, CANONICAL)
     canon = canon_doc.get("disciplines", {})
     dec = SD.load(root, canon_doc)
-    applied, not_applied = set(), []
+    applied, not_applied, nc_why = set(), [], {}
     cats = {}
     cat_path = os.path.join(root, CATEGORIES)
     for cc in (read_json(root, CATEGORIES).get("colleges") or []) if os.path.exists(cat_path) else []:
@@ -273,9 +273,20 @@ def build(root=ROOT):
                             "discipline": r["discipline"], "local_title": r["local_title"], "who": r.get("who"),
                             "at": r.get("at"), "holds": r["category"] in held}
                            for _s, r in sorted(ncd.items())]
+                # Applied is only what a built column takes: the row's title and its dominant category's code. Every
+                # other noncredit decision is listed with why (no per-course reader takes it yet).
+                taken = {rec["key"], t_key} if rec and band == "noncredit" else set()
                 for r in nc_list:
-                    if (r["holds"] and r["common_code"]) or r["key"] == t_key:
-                        applied.add(r["key"])
+                    if r["key"] in taken:
+                        continue
+                    if not r["holds"]:
+                        nc_why[r["key"]] = "saved; COCI lists no noncredit course of %s under %s in %s now" % (c["slug"], k, r["category"])
+                    elif r["local_title"] and not r["common_code"]:
+                        nc_why[r["key"]] = ("saved; a title on the %s row of %s, whose title lives on its %s row"
+                                            % (r["category"], k, "credit" if cr_n else "dominant category's"))
+                    else:
+                        nc_why[r["key"]] = ("saved; waiting on the per-course reader (kb/subject_decisions.py "
+                                            "for_noncredit_course has no caller yet), so no built column takes it")
             decision = None
             if rec:
                 was = {"printed_name": name, "title_state": state_, "title_source": source, "common": common,
@@ -293,6 +304,7 @@ def build(root=ROOT):
                     applied.add(rec["key"])
                 if rec.get("title_key"):
                     decision["title_key"], decision["title_moved"] = rec["title_key"], rec["title_moved"]
+                    applied.add(rec["title_key"])
             addr = (h or {}).get("address")
             page_codes = sorted(codes_at.get(addr) or ()) if addr and not e and addr in read_urls else None
             out.append([k, name, e["n"] if e else 0, st.get(k, 0), side, common, disc, state_, source,
@@ -324,9 +336,8 @@ def build(root=ROOT):
                                 "a code the catalog and the state list do not print)" % (slug, code)})
     for (slug, code, _cat), r in sorted(dec.noncredit.items()):
         if r["key"] not in applied:
-            not_applied.append({"key": r["key"], "why": "no noncredit course of %s under %s in %s takes it (the code "
-                                "holds none in that category now, or a title saved there where the code's title lives "
-                                "on another row)" % (slug, code, r["category"])})
+            not_applied.append({"key": r["key"], "why": nc_why.get(r["key"]) or "no Subjects row of %s under %s holds "
+                                "a noncredit course" % (slug, code)})
     return {
         "_what": ("Step b of the Commons' curation order: each college's local subject codes, from its printed catalog "
                   "(kb/hand_filed_catalogs/courses/) beside the state list (coci_lookup_data.js). printed_name is the "

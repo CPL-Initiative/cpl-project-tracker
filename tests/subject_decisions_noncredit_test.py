@@ -161,10 +161,25 @@ changed = sorted(k for k in after if [x for i, x in enumerate(after[k]) if i != 
 listed = sorted(k for k in after if after[k][NCD])
 check("(3) ⭐ nothing else moves: no other row at any college, and no other row lists a noncredit decision",
       changed == [("los_angeles_pierce", "OLD")] and listed == [("el_camino", "ESL"), ("los_angeles_pierce", "OLD")], json.dumps(changed[:6]))
-check("(3) the decision whose category the code no longer holds is listed as not applied; the bad ones as refused",
-      [r["key"] for r in out["decisions"]["not_applied"]] == ["SUBJ:el_camino|ESL|nc:parenting"]
-      and {"SUBJ:el_camino|ESL|nc:bogus", "SUBJ:el_camino|ESL|nc:health-and-safety"} <= {r["key"] for r in out["decisions"]["refused"]}
-      and out["decisions"]["applied"] == titles["decisions"]["applied"] + 2)
+na = {r["key"]: r["why"] for r in out["decisions"]["not_applied"]}
+check("(3) ⭐ applied counts only what a built column takes: the noncredit-only row's decision, never a credit-and-"
+      "noncredit code's category (no per-course reader takes it yet), each other one listed with why",
+      out["decisions"]["applied"] == titles["decisions"]["applied"] + 1
+      and sorted(na) == ["SUBJ:el_camino|ESL|nc:english-as-a-second-language-esl", "SUBJ:el_camino|ESL|nc:parenting"]
+      and "waiting on the per-course reader" in na["SUBJ:el_camino|ESL|nc:english-as-a-second-language-esl"]
+      and "lists no noncredit course" in na["SUBJ:el_camino|ESL|nc:parenting"], json.dumps(na))
+check("(3) the bad ones are refused", {"SUBJ:el_camino|ESL|nc:bogus", "SUBJ:el_camino|ESL|nc:health-and-safety"} <= {r["key"] for r in out["decisions"]["refused"]})
+NC2 = [dec("SUBJ:los_angeles_pierce|OLD|nc:courses-for-older-adults", "OLAD"),
+       dec("SUBJ:cerritos|AED|nc:elementary-and-secondary-basic-skills", "BSKL")]
+lst.SD.read_status = lambda root=None, path=None: dict(committed, decisions=(committed.get("decisions") or []) + NC2)
+try:
+    out2 = lst.build(ROOT)
+finally:
+    lst.SD.read_status = real_read
+na2 = {r["key"]: r["why"] for r in out2["decisions"]["not_applied"]}
+check("(3) ⭐ a decision on a non-dominant category is listed as waiting on the per-course reader, never counted applied",
+      out2["decisions"]["applied"] == titles["decisions"]["applied"] + 1
+      and "waiting on the per-course reader" in na2.get("SUBJ:cerritos|AED|nc:elementary-and-secondary-basic-skills", ""), json.dumps(na2))
 tmp = tempfile.mkdtemp()
 try:
     p = os.path.join(tmp, "local_subject_titles.json")

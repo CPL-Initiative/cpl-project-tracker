@@ -633,7 +633,6 @@
       if (bad) return;
       var value = {};
       if (t) value.local_title = t;
-      else if (!ti && sv && sv.title) value.local_title = sv.title;   /* a form with no title field keeps the one saved here */
       if (k) value.common_code = k;
       save.disabled = true;
       status.textContent = "Saving…";
@@ -684,7 +683,7 @@
       title: "edit", tVal: tVal, code: true, kVal: kVal, fromRec: fromRec });
   }
   /* One form per noncredit category the code holds, most courses first, and a line for each save whose category the
-     code no longer holds (its courses moved, so it settles none). */
+     code no longer holds (it settles no course; its title may still stand as the code’s). */
   function ncForms(c, row, box) {
     var parts = ncParts(row), only = bandOf(row) === "noncredit", dom = dominantOf(parts), rec = recOf(row);
     var held = only ? ncTitleOf(row) : null, credit = only ? null : savedOf(row);
@@ -715,6 +714,14 @@
       }
       var kVal = hasCode ? (sv && sv.common ? sv.common : m.common_code) : "";
       if (hasCode && !(sv && sv.common)) fromRec.push("the common subject code");
+      /* A title saved on this form when it held the code's title (its category held most of the courses, or the code
+         held noncredit courses only) shows read-only and says where the code's title lives now; a Save here writes no
+         title, so the old one is never stamped anew. */
+      var stale = !holder && sv && sv.title && sv.title !== codeTitle ? el("p", { cls: "csb-note", id: pre + "-stale" }, [
+        el("strong", { text: "Saved here earlier: " }), sv.title + ". It was saved as this form’s title when "
+        + (only ? catWords(cat) + " held most of the courses. The code’s title now lives on the " + catWords(dom) + " form"
+          : row.code + " held noncredit courses only. The code’s title now lives on the credit form above")
+        + ", and a Save here writes no title."]) : null;
       if (!holder && !hasCode && !sv) {
         fs.appendChild(mq);
         if (codeTitle) fs.appendChild(el("p", { cls: "csb-ed-ro", id: pre + "-title-ro" }, [el("strong", { text: "Local title: " }), codeTitle + " (the code’s own)."]));
@@ -723,7 +730,7 @@
       }
       form(c, row, { ids: ids(pre, pre), key: saveKey(c.slug, row.code, "nc:" + slug), mapKey: mapKey, sv: sv, wrap: fs, notes: [mq],
         after: [holder && held && held.moved ? el("p", { cls: "csb-note", id: pre + "-moved", text: "The title " + held.title + " was saved on the "
-          + catWords(held.cat) + " form, when that category held the most courses. A Save here writes it under " + catWords(dom) + "." }) : null],
+          + catWords(held.cat) + " form, when that category held the most courses. A Save here writes it under " + catWords(dom) + "." }) : null, stale],
         title: holder ? "edit" : codeTitle ? codeTitle + " (the code’s own)." : null, tVal: tVal,
         code: hasCode, kVal: kVal, noCode: hasCode ? null : catWords(cat) + " has no common subject code yet, so this form takes a title and no code.",
         fromRec: fromRec });
@@ -733,9 +740,14 @@
       var fs = el("fieldset", { cls: "csb-nc-form", "data-category": cat || "", "data-slug": slug, "data-gone": "yes" }, [
         el("legend", { text: (cat ? catWords(cat) : "A category the list does not name (" + slug + ")") + ", no course now" })]);
       box.appendChild(fs);
+      /* Where this save's title is the code's title today (a noncredit-only code whose dominant form holds none), it
+         says so, as the list row and the dominant form do; its code settles no course. */
+      var isTitle = only && held && held.sv === sv;
+      var settles = [!isTitle && sv.title ? "the title " + sv.title : "", sv.common ? "the common subject code " + sv.common : ""].filter(Boolean).join(" and ");
       form(c, row, { ids: ids(pre, pre), key: sv.key, mapKey: sv.mapKey, sv: sv, wrap: fs,
-        notes: [el("p", { cls: "csb-note", id: pre + "-gone", text: "A decision was saved under this category, and COCI lists no course of " + row.code + " in it now, so it settles none: "
-          + [sv.title ? "the title " + sv.title : "", sv.common ? "the common subject code " + sv.common : ""].filter(Boolean).join(" and ") + "." })],
+        notes: [el("p", { cls: "csb-note", id: pre + "-gone", text: "A decision was saved under this category, and COCI lists no course of " + row.code + " in it now. "
+          + (isTitle ? "Its title, " + sv.title + ", stands as the code’s title until the " + catWords(dom) + " form saves one." + (settles ? " " : "") : "")
+          + (settles ? "It settles no course: " + settles + "." : "") })],
         title: null, code: false });
     });
   }
