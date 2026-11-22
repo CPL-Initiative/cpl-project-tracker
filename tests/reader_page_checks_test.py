@@ -574,10 +574,11 @@ finally:
     shutil.rmtree(td)
 
 # ── #3587 follow-up 1: plain_named leaves keep-the-better's dropped list too (COBIx, 7033947220) ─────────────────────
-# Ohlone's committed capture.json and reread_keep_better.json, copied as they stand: 33319 and 46035 are refused by
-# rule A there and listed as dropped by run 44515665022's filing. A newer preview files each refusal beside the plain
-# picker's own named heading (p.46 and p.96, run 44687785539), and both come out unmarked.
-ohlone = os.path.join(ROOT, "kb", "program_requirements_college", "ohlone")
+# Ohlone's capture.json and reread_keep_better.json as run 44515665022's filing left them, frozen in a fixture since
+# S703 pinned and loaded both programs (#3686): 33319 and 46035 are refused by rule A there and listed as dropped by
+# that filing. A newer preview files each refusal beside the plain picker's own named heading (p.46 and p.96, run
+# 44687785539), and both come out unmarked.
+ohlone = os.path.join(ROOT, "tests", "fixtures", "reader_page_checks_ohlone_44515665022")
 td = tempfile.mkdtemp()
 try:
     for name in ("capture.json", "reread_keep_better.json"):
