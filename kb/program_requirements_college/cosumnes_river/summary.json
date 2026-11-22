@@ -5,18 +5,18 @@
  "found": 197,
  "extracted": 217,
  "errors": 0,
- "passed_machine_checks": 148,
+ "passed_machine_checks": 152,
  "failed": {
-  "coverage": 36,
+  "coverage": 33,
   "invented": 8,
-  "arithmetic": 54,
+  "arithmetic": 50,
   "repeated": 0,
   "outcomes": 8
  },
- "cost_usd_run": 1.16,
- "cost_usd_filed": 19.01,
- "cost_per_program": 0.0876,
- "extract_calls": 14,
+ "cost_usd_run": 0.36,
+ "cost_usd_filed": 19.09,
+ "cost_per_program": 0.088,
+ "extract_calls": 4,
  "extract_failed": [],
  "not_found": [
   {
@@ -275,5 +275,5 @@
    "status": "Active"
   }
  ],
- "run": "44917314201"
+ "run": "45018951701"
 }

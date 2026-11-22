@@ -141,8 +141,8 @@ with tempfile.TemporaryDirectory() as tmp:
     def trial(rows_, parser=fp):
         json.dump({"parser_fingerprint": parser, "rows": rows_}, open(os.path.join(folder, "read.json"), "w"))
 
-    def counts(rows_, slo=2, src="the page's SLO section in trial 7's log, by eye"):
-        eye_ = {"trial": "7", "pages": {r["code"]: {"slo": slo, "objective": 0, "by": "fixture", "from": src,
+    def counts(rows_, slo=2, src="the page's SLO section in trial 7's log, by eye", parser=fp):
+        eye_ = {"trial": "7", "parser_fingerprint": parser, "pages": {r["code"]: {"slo": slo, "objective": 0, "by": "fixture", "from": src,
                                                     "at": "2026-11-20T13:00:00Z"} for r in rows_}}
         json.dump(eye_, open(path, "w"))
         return eye_
@@ -175,11 +175,21 @@ with tempfile.TemporaryDirectory() as tmp:
           and rc["right"] == 0 and all(w[2] == "status 403" for w in rc["wrong"]), rc)
     good = [{**row, "code": "G %d" % i} for i in range(12)]
     trial(good, parser="an older parser")
-    counts(good)
+    counts(good, parser="an older parser")
     rc = read.rows_recall(path, tmp)
     check("5 GUARD: a trial another parser filed is refused", not rc["ok"] and "filed by parser" in rc["why"], rc["why"])
     trial(good)
+    counts(good)
     check("5 the same trial under the current parser passes", read.rows_recall(path, tmp)["ok"])
+    # S703: a count bound to another trial's parser than the trial it names (repointed by hand, or refiled) is refused,
+    # and so is a count that names no parser at all.
+    counts(good, parser="an older parser")
+    rc = read.rows_recall(path, tmp)
+    check("5 GUARD: a count that names another parser than its trial's is refused, though every count matches",
+          not rc["ok"] and "point the count at the trial" in (rc["why"] or ""), rc["why"])
+    counts(good, parser=None)
+    check("5 GUARD: a count that names no parser is refused", not read.rows_recall(path, tmp)["ok"])
+    counts(good)
     counts(good, src="row")
     rc = read.rows_recall(path, tmp)
     check("5 GUARD: counts read off the trial's own rows name no source and fail", not rc["ok"] and rc["right"] == 0, rc)
@@ -266,8 +276,12 @@ index = os.path.join(ROOT, "kb", "course_outline_index", "index_44696736058.json
 rc = read.rows_recall(read.CCSF_RECALL)
 ccsf_stale = gate_stale(read.CCSF_RECALL)
 if ccsf_stale:
-    print("note City College of San Francisco's gate is stale (%s): a reread needs a new trial, an eye recount of its "
-          "excerpt log into ccsf_recall.json, then the read" % ccsf_stale)
+    # S703: no file change refreshes it. The parser moved in the text path report 28 reads (SLO_TITLE, LEAD,
+    # HEAD_NUMBER, ROMAN_HEAD, outcomes_of, objectives_of, read_one), and the trial filed no page to reparse.
+    print("note City College of San Francisco's gate is stale (%s): a reread needs a new trial (kb/course_outcomes/.run: "
+          "index=kb/course_outline_index/index_44696736058.json, slugs=city_of_san_francisco, trial=12), an eye "
+          "recount of its excerpt log into ccsf_recall.json (trial and parser_fingerprint moved to the new run), then "
+          "the read" % ccsf_stale)
 if not rc["ok"]:
     try:
         read.main(["--index", index, "--slugs", "city_of_san_francisco", "--part", "1", "--of", "1"])
@@ -334,6 +348,26 @@ for name, host, slug, path in (("Rio Hondo", rio, "rio_hondo", read.RIO_HONDO_RE
     else:
         check("6 %s's self-recall count passes: 12 of 12 pages, SLOs and objectives counted by eye from its trial's "
               "log, bound to the current parser" % name, rc["ok"] and rc["right"] == 12, rc)
+def gate_mismatch(path):
+    """Why a committed count is bound to the wrong trial, or None: its parser line names another parser than the
+    trial it names was filed by, or that trial is not committed (S703, f-ccsf-outline-gate-stale-on-main-s691)."""
+    want = json.load(open(path))
+    trial = os.path.join(read.OUT_DIR, "trial_%s" % want.get("trial"), "read.json")
+    if not os.path.exists(trial):
+        return "its trial %s is not committed" % want.get("trial")
+    filed = json.load(open(trial)).get("parser_fingerprint")
+    if not want.get("parser_fingerprint") or want["parser_fingerprint"] != filed:
+        return "it names parser %s, its trial %s was filed by %s" % (
+            (want.get("parser_fingerprint") or "none")[:8], want["trial"], (filed or "none")[:8])
+    return None
+
+
+mismatched = {os.path.basename(p): gate_mismatch(p) for h, p in read.recall_files() if gate_mismatch(p)}
+check("6 GUARD: every committed recall file names the parser its own trial was filed by (%d files)"
+      % len(read.recall_files()), not mismatched, mismatched)
+check("6 GUARD: every college's gate is either current or named stale, never bound to another trial's parser",
+      all(gate_mismatch(p) is None and (gate_stale(p) is None or not read.rows_recall(p, host=h)["ok"])
+          for h, p in read.recall_files()))
 check("6 GUARD: Saddleback's count never opens a read for Irvine Valley on the same host, and a host with no file is "
       "refused",
       read.recall_path("saddleback.curriqunet.com", "irvine_valley") != read.SADDLEBACK_RECALL

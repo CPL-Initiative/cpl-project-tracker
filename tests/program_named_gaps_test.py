@@ -505,9 +505,11 @@ _tnp = NG.total_not_printed_list()
 _tnp_sc = {"arithmetic": {"pass": False, "status": "incomplete", "why": [NG.NO_TOTAL_WHY]},
            "coverage": {"pass": True}, "invented": {"pass": True}}
 _tnp_rec = {"college": "Santa Monica College", "control_number": "45811", "score": _tnp_sc}
-check(sorted(cn for c, cn in _tnp) == ["37885", "45811", "45812", "45813", "45814", "45815"]
-      and all(c == "Santa Monica College" and e.get("page") and e.get("words") and e.get("evidence") and e.get("run")
-              for (c, _), e in _tnp.items()), "the not-printed list holds Santa Monica's six, each with its page and run")
+# S703 adds Clovis's General Business 33433 (PDF pp.106-107 print each option's total, none for the major).
+check(sorted(_tnp) == sorted([("Santa Monica College", cn) for cn in ["37885", "45811", "45812", "45813", "45814",
+                                                                      "45815"]] + [("Clovis Community College", "33433")])
+      and all(e.get("page") and e.get("words") and e.get("evidence") and e.get("run") for e in _tnp.values()),
+      "the not-printed list holds Santa Monica's six and Clovis's 33433, each with its page and run")
 check(NG.answer(_tnp_rec)[0] == "total_not_printed" and NG.held_answer(_tnp_rec) == "total_not_printed",
       "a listed record naming no total takes total_not_printed")
 check(NG.total_not_printed(dict(_tnp_rec, control_number="45899")) is None,
@@ -534,9 +536,14 @@ for _p in sorted(_glob.glob(os.path.join(NG.COLLEGE_DIR, "*", "records", "*.json
         _tnp_files[_k] = _f
     if isinstance(_f.get("score"), dict) and NG.held_answer(_f) == "total_not_printed":
         _held_tnp.add(_k)
-_plan_tnp = {(r["college"], str(r["control_number"])) for r in _s697["records"]}
-check(_filed_tnp == _plan_tnp == _held_tnp == set(_tnp) and len(_plan_tnp) == 6,
-      "the applied gap names exactly the self-recall's six (filed %d, plan %d, held %d)"
+# S703 (worker pins): --gap total_not_printed --gap total_differs --tag s703pins moves Clovis 33433 and 33491.
+with open(os.path.join(ROOT, "kb", "receipts", "program_requirement_records_named_gaps_2026-11-22_s703pins.json"),
+          encoding="utf-8") as _fh:
+    _s703 = _json.load(_fh)
+_plan_tnp = {(r["college"], str(r["control_number"])) for r in _s697["records"]} | {
+    (r["college"], str(r["control_number"])) for r in _s703["records"] if r["gap"] == "total_not_printed"}
+check(_filed_tnp == _plan_tnp == _held_tnp == set(_tnp) and len(_plan_tnp) == 7,
+      "the applied gaps name exactly the self-recall's seven (filed %d, plans %d, held %d)"
       % (len(_filed_tnp), len(_plan_tnp), len(_held_tnp)))
 check(_s697["only_gaps"] == ["total_not_printed"] and _s697["by_gap"] == {"total_not_printed": 6}
       and {r["gap"] for r in _s697["records"]} == {"total_not_printed"}, "the S697 plan moves total_not_printed alone")
@@ -558,7 +565,14 @@ for _r in _s697["records"]:
 _apply_p = os.path.join(ROOT, "kb", "migrations", "2026-11-21_s697_prreq_named_gaps_apply.sql")
 with open(_apply_p, encoding="utf-8") as _fh:
     _apply_cns = set(re.findall(r"^\s*\(\d+, '([^']+)', '(\d{5})', \d+,", _fh.read(), re.M))
-check(_apply_cns == _plan_tnp, "the guarded UPDATE names exactly the plan's rows (%d)" % len(_apply_cns))
+check(_apply_cns == {(r["college"], str(r["control_number"])) for r in _s697["records"]},
+      "the guarded UPDATE names exactly the plan's rows (%d)" % len(_apply_cns))
+with open(os.path.join(ROOT, "kb", "migrations", "2026-11-22_s703pins_prreq_named_gaps_apply.sql"),
+          encoding="utf-8") as _fh:
+    _apply703 = set(re.findall(r"^\s*\(\d+, '([^']+)', '(\d{5})', \d+,", _fh.read(), re.M))
+check(_apply703 == {(r["college"], str(r["control_number"])) for r in _s703["records"]}
+      == {("Clovis Community College", "33433"), ("Clovis Community College", "33491")},
+      "the s703pins guarded UPDATE names exactly its plan's two rows")
 _again = NG.run(write=False, gaps=("total_not_printed",))
 check(_again["moved"] == [] and not _again["recall"]["wrong"],
       "a second pass with the gap filter moves nothing (the six already file it) and the recall stays right")
@@ -602,10 +616,16 @@ with open(os.path.join(ROOT, "kb", "receipts", "program_requirement_records_name
           encoding="utf-8") as _fh:
     _p2 = _json.load(_fh)
 _p2_keys = {(r["college"], str(r["control_number"])) for r in _p2["records"]}
-check(_p2["only_gaps"] == ["total_differs"] and _p2_keys == set(_td) and not _p2["recall"]["wrong"]
+_s703_td = [r for r in _s703["records"] if r["gap"] == "total_differs"]
+check(_p2["only_gaps"] == ["total_differs"] and not _p2["recall"]["wrong"]
+      and _p2_keys | {(r["college"], str(r["control_number"])) for r in _s703_td} == set(_td)
+      and {(r["college"], str(r["control_number"])) for r in _s703_td} == {("Clovis Community College", "33491")}
       and all(r["after_image"]["checks"].get("gaps") == ["total_differs"]
-              and not (r["before_image"]["checks"] or {}).get("gaps") for r in _p2["records"]),
-      "the s697p2 plan moves exactly the listed programs to total_differs, and none filed a gap before")
+              and not (r["before_image"]["checks"] or {}).get("gaps") for r in _p2["records"] + _s703_td),
+      "the s697p2 and s703pins plans move exactly the listed programs to total_differs, none with a gap before")
+check(sorted(_s703["only_gaps"]) == ["total_differs", "total_not_printed"] and not _s703["recall"]["wrong"]
+      and _s703["by_gap"] == {"total_differs": 1, "total_not_printed": 1},
+      "the s703pins plan moves Clovis 33433 (total_not_printed) and 33491 (total_differs) alone, recall wrong 0")
 with open(os.path.join(ROOT, "kb", "migrations", "2026-11-21_s697p2_prreq_named_gaps_apply.sql"), encoding="utf-8") as _fh:
     _p2_cns = set(re.findall(r"^\s*\(\d+, '([^']+)', '(\d{5})', \d+,", _fh.read(), re.M))
 check(_p2_cns == _p2_keys, "the s697p2 guarded UPDATE names exactly the plan's rows (%d)" % len(_p2_cns))

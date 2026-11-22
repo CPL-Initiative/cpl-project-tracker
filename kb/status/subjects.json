@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 701,
-  "moniker": "SkyMurre",
+  "session": 702,
+  "moniker": "SkyRazorbill",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_702_handoff.md",
+  "handoff": "docs/session_703_handoff.md",
   "calls": [
     {
       "title": "The noncredit subject title list",
@@ -57,13 +57,17 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-22T10:29:57Z",
+  "written_at": "2026-11-22T11:32:07Z",
   "project": "subjects",
   "next_step": {
-    "title": "Edit from every Subjects surface, clickable counts, full width",
-    "text": "Sam's three asks of 2026-11-22 come first: an Edit word on every Subjects surface, signed in from COBI's header, with one action for a code wrong at several colleges such as AED read as Electricity; the course panel over the main list and every count opening what it counts; and the Subjects surfaces at the window's full width. Then the noncredit saves and the 8 catalog pages a web search found."
+    "title": "One Save for a code at every college using it",
+    "text": "Edit, the course panel and the counts now open from every Subjects surface, at the window's width. Next is one Save that settles a code at every college using it, where today the panel lists the colleges and each opens its own form; then the per-course reader for noncredit saves and the 8 catalog pages a web search found."
   },
   "changes": [
+    {
+      "at": "2026-11-22T11:31:00Z",
+      "text": "Edit on every code row and the course panel over every Subjects surface; every count opens the rows it counts; the surfaces take the window's width; Local titles reads 88 of 101 codes at Los Angeles Pierce"
+    },
     {
       "at": "2026-11-22T10:27:00Z",
       "text": "Noncredit codes get a save per COCI noncredit category, keyed SUBJ:college|code|nc:category; 275 codes get a noncredit form, 64 span several categories, 37 have no category on file; a form with no title field writes no title, and a title saved before its category moved shows read-only (#3671)."

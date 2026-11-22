@@ -1,0 +1,289 @@
+All Fields
+BUSN 621 - PROJECT MANAGEMENT I
+Cover
+Course Number
+621
+Subject
+BUSN
+Course Title
+PROJECT MANAGEMENT I
+Short Title
+PROJECT MANAGEMENT I
+Effective Semester
+2014 Fall
+CB04: Credit Status
+N - Non Credit
+CB05: Transfer Status
+C - Not transferable
+CB08: Basic Skills
+N - Not Basic Skills
+Main
+CB11 Classification K - Other Noncredit Enhanced Funding
+CB22 Non-Credit Category I - Short-term Vocational: Includes programs with high employment potential
+Grading Method
+Grade Options Letter Grade Only
+Grade Graded
+Catalog Description
+This course provides an introduction and overview of the fundamental aspects of project planning and management in business including defining and managing a project. Topics follow the Project Life Cycle model as the framing project management concept and include an introduction to Microsoft Project or equivalent software. Course content includes exploring the use of projects to accomplish an objective, consideration of the key process steps such as alternatives to consider, selection of solution, implementation and closure. (FT)
+Originating Campus
+Colleges
+Continuing Education
+Proposal Information
+Reason For Proposed Action
+Import
+Costs
+0
+Field Trips May be required
+This is a CTE Course Yes
+Codes
+CB03: TOP Code 050600 - Business Management
+CIP Code
+CB09: SAM Code C - Clearly Occupational
+CB04: Credit Status (DO NOT DELETE. Needed for show / hide to work. The width and height have been set to 0 so the field appears hidden.) N - Non Credit
+Goals
+Course Goals
+Goals Text
+Demonstrate knowledge of the steps necessary in requirements identification and subsequent project planning. 
+Goals Text
+Introduce the elements of projects and project management and their relevance in business.
+Goals Text
+Define the characteristics of effective project teams.
+Goals Text
+Identify and explain the roles and responsibilities of both project managers and project team members.
+Goals Text
+Use a software package for planning and tracking projects.
+Legacy Data
+1. Introduce the elements of projects and project management and their relevance in business. 2. Demonstrate knowledge of the steps necessary in requirements identification and subsequent project planning. 3. Define the characteristics of effective project teams. 4. Identify and explain the roles and responsibilities of both project managers and project team members. 5. Use a software package for planning and tracking projects.
+Disciplines
+Minimum Qualification
+Hours/Units
+Lecture Hours
+Min Lecture Hours
+Max Lecture Hours
+Lab Hours
+Min Lab Hours
+Max Lab Hours
+Lecture/Lab
+Min Lab/Lecture Hours
+Max Lab/Lecture Hours
+Min Total Hours 60.000
+Max Total Hours 60.000
+Additional Information
+Combined Lecture/Lab Hours
+Content
+Course Lecture Content (Use outline format)
+Fundamentals of Project Management
+Introduction and overview 
+Relevance in business 
+Definitions and key concepts
+Brief history of project management 
+Common problems encountered
+Factors leading to success and/or failure
+Common constraints; the Triple Constraint Triangle
+Project life cycle as the framing project management program concept
+Identifying the need; including request for proposal activity
+Selecting the solution; including proposal and contract activities
+Performing the tasks; including project plan and tracking activities
+Close the project; including performance evaluation activities
+Important resources
+The Project Management Body of Knowledge (PMBOK)
+Project Management Institute (PMI)
+Other
+Defining the Project
+Managing tools at startup; project charter
+Work breakdown structure
+Structure
+Multiple uses in projects 
+Resources
+Concept
+Types
+Allocation
+Budget 
+Estimation of Task Times
+Concept of Task Dependencies and Predecessors
+Network Diagrams
+Concept of Critical Path 
+Gantt Charts Introduction
+Managing the Project
+Roles and responsibilities
+Project manager 
+Project team leader
+Project team member
+Other roles
+Necessary skills
+Communication
+Delegation
+Time management
+Other
+Tools and processes
+Process of project management during task execution
+Project status 
+Determination of project health
+Concept of variances
+Reporting
+Corrective action; alternatives
+Common Mistakes of Project Management
+The issues
+The causes
+The red flags; early warnings
+The corrective actions; turning things around
+The systemic actions; avoiding it again on the next project
+Planning 
+Impact of business type on project manager authority & responsibility 
+Alternate project life cycles, and implications
+Controlling 
+Control charts 
+Project Evaluation and Review Technique (PERT) charts 
+Gantt charts (advanced use) 
+Earned Value Management System (EVMS):
+Where are we on schedule?
+Where are we on budget?
+Where are we on tasks completed?
+Introduction to Microsoft Project (or equivalent software product) 
+Overview of viable project management software options for business
+Defining a project 
+Properties of projects
+Working calendar
+Common views
+Creating a project task list 
+Task information
+Milestones
+Tasks into project phases
+Task relationships (dependencies and predecessors)
+Setting up project resource information
+Define people, equipment, and material
+Introduce cost information
+Introduce work calendar information
+Assigning resources to tasks
+People
+Equipment
+Material
+Formatting and printing a plan
+Customization
+Previewing
+Inserting drawings
+Changing the formats
+Editing and printing 
+Importing
+Exporting  
+Tracking progress on tasks
+Using baseline plans
+Recording task progress
+Adjusting task links
+Applying constraints to tasks
+Identifying tasks on the critical path
+Splitting tasks
+Changing task types
+Recording task deadlines
+Setting up recurring tasks
+Course Lab/Activity Content
+Student Learning Objectives
+Upon successful completion of the course the student will be able to:
+Objective Text
+Identify and explain the elements of projects and project management in business.
+Objective Text
+Demonstrate the steps necessary in requirements identification and subsequent project planning.
+Objective Text
+Identify and explain the characteristics of effective project teams, and the roles and responsibilities of both project managers and project team members.
+Objective Text
+Demonstrate and use Microsoft Project or a similar tool on a computer system to create and manage a project.
+Legacy Data
+Upon completion of this course, the student will be able to: 1. Identify and explain the elements of projects and project management in business. 2. Demonstrate the steps necessary in requirements identification and subsequent project planning. 3. Identify and explain the characteristics of effective project teams, and the roles and responsibilities of both project managers and project team members. 4. Demonstrate and use Microsoft Project or a similar tool on a computer system to create and manage a project.
+Assignments
+Reading Assignments
+Optional Text
+Assignments
+
+Rading assignments from the textbook, informational handouts, related trade magazines and internet articles.
+
+Writing Assignments
+Optional Text
+Assignments
+
+Completing assigned reports, providing written answers to assigned questions, performing internet research and reporting on that research.
+
+Appropriate Outside Assignments
+Optional Text
+Assignments
+
+Appropriate internet research, reading, preparing reports and studying as needed to perform successfully in class.
+
+Appropriate Assignments that Demonstrate Critical Thinking
+Optional Text
+Assignments
+
+Participate in teams that research specific areas related to project management and present verbal and written presentations on the material to the class.
+
+Methods of Evaluation
+Text box for Common Course Numbering (CCN) only.
+Evaluation Method
+Laboratory Assignments
+Participation
+Quizzes
+If you selected "Other", please provide details.
+Legacy Data
+A student's grade will be based on multiple measures of performance related to the course objectives. The assessment will measure development of independent critical thinking skills and will include evaluation of the student's ability. Multiple measures may include but are not limited to the following: quizzes, assignments, classroom participation and attendance. Upon successful completion of the course a Certificate of Course Completion will be issued.
+Methods of Instruction
+Check all that apply:
+Lecture
+Laboratory
+Computer Assisted Instruction
+Collaborative Learning
+If you selected "Other", please provide details.
+Legacy Data
+Methods of instruction will include, but are not limited to; lectures, laboratory, group exercises, supplemental online material and field trips. This course, or sections of this course, may be offered through distance education.
+Distance Ed
+Does this course have a DE component?
+Colleges
+Outside-of-Class Hours
+Min Outside-of-Class Hours
+Max Outside-of-Class Hours
+Textbooks/Resources
+Is there a Zero Textbook Cost listed for this course?
+Please explain why a Zero Cost textbook option is not included in the resource list
+Does your department have a commitment to using free, or low cost resources in all offerings of this course?
+Describe any additional strategies the department is using to lower the cost of resources students need when they enroll in this course.
+Zero Textbook Cost (ZTC) and/or Open Educational Resource(s) (OER)
+Textbooks
+Text Text
+Author(s) Corporate Author
+Title A Guide to the Project Management Body of Knowledge
+Edition current
+Publisher Project Management Institute
+Year 2011
+Is this a classic textbook? No
+ISBN # NA
+Additional Textbook Information
+Periodicals
+Manual
+Software
+Other Learning Materials
+I have entered at least one resource Yes
+Supplies (Instructional Materials)
+Enrollment Conditions
+Course has additional instructional materials fees No
+Explanation
+Supplies (Instructional Materials)
+Requisites
+Course Requisites
+Conditions of Enrollment Catalog View
+Content Review
+Is there a Course Requisite?
+Content Review
+Attachments
+Attached File
+BUSN 621 PROJECT MANAGEMENT I.pdf
+Tech Review
+CB10: Work Experience N - Is not part of a cooperative work experience education program.
+CB13: Special Class Status N - Course is not a special class.
+Course Prior to College Level (CB21) Y - Not applicable
+Funding Agency Category (CB23) Y - Not Applicable (funding not used to develop course)
+Course Program Status (CB24)
+Continuing Education
+CB24: Program Status 1 - Program Applicable
+Course Gen Education Status (CB25)
+Not Applicable
+Course Support Course Status (CB26) N - Course is not a support course
+CB27: Upper Division Status N - Course is not an upper division course
+Major Restriction Code
+Comments

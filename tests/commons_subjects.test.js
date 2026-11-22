@@ -96,12 +96,12 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
   check("(4) ⭐ #commons/subjects opens the list", txt(d.getElementById("csb-h")) === "Subjects" && d.querySelector(".cmf-card") === null);
   const beta = d.querySelector('tr[data-college="beta"]');
   check("(4) ⭐ a college whose catalog prints no names reads TBA", beta && txt(beta.children[2]) === "TBA");
-  check("(4) a college that prints names reads its count", txt(d.querySelector('tr[data-college="alpha"]').children[2]) === "3");
+  check("(4) a college that prints names reads its count", txt(d.querySelector('tr[data-college="alpha"]').children[2]) === "3 of 4 codes");
   check("(4) every code is listed", d.querySelectorAll(".csb-codes tbody tr").length === 6);
   const zzz = d.querySelector('.csb-codes tr[data-code="ZZZ"]'), math = d.querySelector('.csb-codes tr[data-code="MATH"]');
   check("(4) each code says who prints it", txt(zzz.children[5]) === "Catalog only" && txt(math.children[5]) === "COCI only");
   const heads = Array.from(d.querySelectorAll(".csb-codes thead th")).map(txt);
-  check("(7) the labels: Local Title and Source, and no label says print", heads.join(" | ") === "College | Local code | Local Title | Common subject code | Courses | Source"
+  check("(7) the labels: Local Title and Source, and no label says print", heads.join(" | ") === "College | Local code | Local Title | Common subject code | Courses | Source | Settle"
     && !/print/i.test(Array.from(d.querySelectorAll(".csb-table thead th")).map(txt).join(" ")));
   const chip = math.children[2].querySelector(".csb-chip");
   check("(7) ⭐ a code in COCI and nowhere in the catalog carries the Not in catalog chip, a note a screen reader reads",
