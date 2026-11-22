@@ -193,6 +193,42 @@ def _():
     assert all(re.search(r"[^\W\d_]", o) for r in rows for o in r["outcomes"])
 
 
+SDCCE_TRIAL = os.path.join(ROOT, "kb", "course_outcomes", "trial_45017581874", "read.json")
+SDCCE_RECALL = os.path.join(ROOT, "kb", "course_outcomes", "sdcce_recall.json")
+
+
+@check("San Diego College of Continuing Education's trial loads its objectives as counted from the filed pages, "
+       "12 of 12; the parser's two misses (HMID 535 runs into Legacy Data, HSDP 403 a pointer) drop at the load (S703)")
+def _():
+    want = json.load(open(SDCCE_RECALL))
+    trial = json.load(open(SDCCE_TRIAL))
+    assert want["trial"] == str(trial["run"]) and want["parser_fingerprint"] == trial["parser_fingerprint"]
+    assert len(want["pages"]) == 12 and all(p["slo"] == 0 and p.get("from") and p.get("at")
+                                            for p in want["pages"].values())
+    filed = {r["code"]: len(r.get("objectives") or []) for r in trial["rows"]}
+    assert {c for c, n in filed.items() if n != want["pages"][c]["objective"]} == {"HMID 535", "HSDP 403"}, filed
+    rows, skipped = load.rows_from([SDCCE_TRIAL], "sdccd")
+    assert all(r["kind"] == "objective" and r["college"] == "San Diego College of Continuing Education" for r in rows)
+    got = {r["course_code"]: len(r["outcomes"]) for r in rows}
+    assert got == {c: p["objective"] for c, p in want["pages"].items() if p["objective"]}, got
+    gone = {s["course_code"]: s["why"] for s in skipped if s.get("kind") == "objective"}
+    assert set(gone) == {"HMID 535", "HSDP 403"} and all("Legacy Data" in w for w in gone.values()), gone
+    assert load.DROPPED == {"lines": 3, "rows": 2}, load.DROPPED
+
+
+@check("the load ends a block at a Legacy Data heading and drops a line that only points to another outline; an "
+       "objective that names an outline stays")
+def _():
+    block = {"outcomes": ["Apply safety practices.", "See specific course outline.", "Legacy Data", "1. Old text."],
+             "maps_to": None, "fingerprint": "x", "shape": "list"}
+    got = load.no_letterless(block)
+    assert got["outcomes"] == ["Apply safety practices."] and got["shape"] == "paragraph", got
+    keep = {"outcomes": ["Write a course outline for a short workshop.", "See the legacy data section in the text."],
+            "fingerprint": "f", "shape": "list"}
+    assert load.no_letterless(keep) is keep
+    assert load.no_letterless({"outcomes": ["Legacy Data", "Upon completion, apply X."]}) is None
+
+
 @check("an outcome that opens with a number ('1. Analyze ...') loads whole; '#1', '.', '•' and '123' drop")
 def _():
     block = {"outcomes": ["1. Analyze a balance sheet.", "#1", "2) Explain accruals.", ".", "•", "123"],

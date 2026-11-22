@@ -1,0 +1,92 @@
+{
+ "_about": "The count for San Diego College of Continuing Education's All Fields report (4) on sdccd.curriqunet.com, trial 45017581874 (S703). The trial filed each page's text, so each count is read off the filed page apart from the parser: the worker listed each page's objectives field and its Objective Text entries, and read HMID 535 and HSDP 403 line by line. No page prints a student learning outcomes heading, so every SLO count is 0. The parser files 10 of 12 right: HMID 535's empty field runs on into Legacy Data (2 filed, 0 printed) and HSDP 403's one entry reads 'See specific course outline.' (1 filed, 0 objectives). The load drops both (FIELD_END, POINTER in kb/_course_outcomes_load.py), so the loaded rows match all 12. sdccd.curriqunet.com is not an outcomes-only host, so no reader gate reads this file; tests/course_outcomes_load_test.py does.",
+ "trial": "45017581874",
+ "slugs": "san_diego_of_continuing_education",
+ "parser_fingerprint": "2629a09aeac9be1183829d0cea92009f",
+ "pages": {
+  "AUTO 411": {
+   "slo": 0,
+   "objective": 12,
+   "by": "S703 outlines worker",
+   "from": "the filed page kb/course_outcomes/trial_45017581874/AUTO_411.txt: its Student Learning Objectives field, from that heading to its Legacy Data or Assignments heading, one objective per Objective Text entry, an entry that only points to another outline not counted; the page prints no outcomes heading",
+   "at": "2026-11-22T11:40:07Z"
+  },
+  "BUSN 621": {
+   "slo": 0,
+   "objective": 4,
+   "by": "S703 outlines worker",
+   "from": "the filed page kb/course_outcomes/trial_45017581874/BUSN_621.txt: its Student Learning Objectives field, from that heading to its Legacy Data or Assignments heading, one objective per Objective Text entry, an entry that only points to another outline not counted; the page prints no outcomes heading",
+   "at": "2026-11-22T11:40:07Z"
+  },
+  "CLTX 506": {
+   "slo": 0,
+   "objective": 8,
+   "by": "S703 outlines worker",
+   "from": "the filed page kb/course_outcomes/trial_45017581874/CLTX_506.txt: its Student Learning Objectives field, from that heading to its Legacy Data or Assignments heading, one objective per Objective Text entry, an entry that only points to another outline not counted; the page prints no outcomes heading",
+   "at": "2026-11-22T11:40:07Z"
+  },
+  "COMM 550": {
+   "slo": 0,
+   "objective": 6,
+   "by": "S703 outlines worker",
+   "from": "the filed page kb/course_outcomes/trial_45017581874/COMM_550.txt: its Student Learning Objectives field, from that heading to its Legacy Data or Assignments heading, one objective per Objective Text entry, an entry that only points to another outline not counted; the page prints no outcomes heading",
+   "at": "2026-11-22T11:40:07Z"
+  },
+  "COMP 600": {
+   "slo": 0,
+   "objective": 14,
+   "by": "S703 outlines worker",
+   "from": "the filed page kb/course_outcomes/trial_45017581874/COMP_600.txt: its Student Learning Objectives field, from that heading to its Legacy Data or Assignments heading, one objective per Objective Text entry, an entry that only points to another outline not counted; the page prints no outcomes heading",
+   "at": "2026-11-22T11:40:07Z"
+  },
+  "ELRN 451": {
+   "slo": 0,
+   "objective": 4,
+   "by": "S703 outlines worker",
+   "from": "the filed page kb/course_outcomes/trial_45017581874/ELRN_451.txt: its Student Learning Objectives field, from that heading to its Legacy Data or Assignments heading, one objective per Objective Text entry, an entry that only points to another outline not counted; the page prints no outcomes heading",
+   "at": "2026-11-22T11:40:07Z"
+  },
+  "ESLA 415": {
+   "slo": 0,
+   "objective": 12,
+   "by": "S703 outlines worker",
+   "from": "the filed page kb/course_outcomes/trial_45017581874/ESLA_415.txt: its Student Learning Objectives field, from that heading to its Legacy Data or Assignments heading, one objective per Objective Text entry, an entry that only points to another outline not counted; the page prints no outcomes heading",
+   "at": "2026-11-22T11:40:07Z"
+  },
+  "FDNT 501": {
+   "slo": 0,
+   "objective": 6,
+   "by": "S703 outlines worker",
+   "from": "the filed page kb/course_outcomes/trial_45017581874/FDNT_501.txt: its Student Learning Objectives field, from that heading to its Legacy Data or Assignments heading, one objective per Objective Text entry, an entry that only points to another outline not counted; the page prints no outcomes heading",
+   "at": "2026-11-22T11:40:07Z"
+  },
+  "HLTH 605": {
+   "slo": 0,
+   "objective": 18,
+   "by": "S703 outlines worker",
+   "from": "the filed page kb/course_outcomes/trial_45017581874/HLTH_605.txt: its Student Learning Objectives field, from that heading to its Legacy Data or Assignments heading, one objective per Objective Text entry, an entry that only points to another outline not counted; the page prints no outcomes heading",
+   "at": "2026-11-22T11:40:07Z"
+  },
+  "HMDV 575A": {
+   "slo": 0,
+   "objective": 4,
+   "by": "S703 outlines worker",
+   "from": "the filed page kb/course_outcomes/trial_45017581874/HMDV_575A.txt: its Student Learning Objectives field, from that heading to its Legacy Data or Assignments heading, one objective per Objective Text entry, an entry that only points to another outline not counted; the page prints no outcomes heading",
+   "at": "2026-11-22T11:40:07Z"
+  },
+  "HMID 535": {
+   "slo": 0,
+   "objective": 0,
+   "by": "S703 outlines worker",
+   "from": "the filed page kb/course_outcomes/trial_45017581874/HMID_535.txt: its Student Learning Objectives field, from that heading to its Legacy Data or Assignments heading, one objective per Objective Text entry, an entry that only points to another outline not counted; the page prints no outcomes heading",
+   "at": "2026-11-22T11:40:07Z"
+  },
+  "HSDP 403": {
+   "slo": 0,
+   "objective": 0,
+   "by": "S703 outlines worker",
+   "from": "the filed page kb/course_outcomes/trial_45017581874/HSDP_403.txt: its Student Learning Objectives field, from that heading to its Legacy Data or Assignments heading, one objective per Objective Text entry, an entry that only points to another outline not counted; the page prints no outcomes heading",
+   "at": "2026-11-22T11:40:07Z"
+  }
+ }
+}

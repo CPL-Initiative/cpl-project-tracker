@@ -72,13 +72,24 @@ def untitled_groups(host: str, row: dict) -> bool:
 # filed read stays as read, so no parser change and no recall gate moves (the conductor, S697).
 LETTER = re.compile(r"[^\W\d_]")
 DROPPED = {"lines": 0, "rows": 0}
+# Two more lines that are no objective, both from San Diego College of Continuing Education's All Fields report (4)
+# in trial 45017581874 (S703). Its Student Learning Objectives field lists each objective under an "Objective Text"
+# label, and its Legacy Data field follows. Where the objectives field is empty (HMID 535) the parser runs on into
+# Legacy Data and files the heading and the paragraph after it; and HSDP 403's one entry reads "See specific course
+# outline." The load ends a block at a line that is the Legacy Data heading alone (that line and every line after
+# it), and drops a line that only points to another outline. The filed read stays as read, so no parser change and
+# no recall gate moves (as d-outline-load-strips-letterless-lines-s697).
+FIELD_END = re.compile(r"^\s*legacy data\s*:?\s*$", re.I)
+POINTER = re.compile(r"^\s*see (the )?(specific |individual )?course outlines?\.?\s*$", re.I)
 
 
 def no_letterless(block: dict) -> dict | None:
-    """The block with every line that holds no letter dropped (its maps_to entries with it) and its fingerprint and
-    shape taken from what is left; the block itself when none drops; None when no line is left."""
+    """The block with every line that holds no letter dropped, and every line from a Legacy Data heading on, and a
+    line that only points to another outline (FIELD_END, POINTER; S703), its maps_to entries with each, and its
+    fingerprint and shape taken from what is left; the block itself when none drops; None when no line is left."""
     items = block.get("outcomes") or []
-    keep = [i for i, o in enumerate(items) if LETTER.search(o or "")]
+    end = next((i for i, o in enumerate(items) if FIELD_END.match(o or "")), len(items))
+    keep = [i for i, o in enumerate(items[:end]) if LETTER.search(o or "") and not POINTER.match(o or "")]
     if len(keep) == len(items):
         return block
     DROPPED["lines"] += len(items) - len(keep)
@@ -90,6 +101,15 @@ def no_letterless(block: dict) -> dict | None:
         maps = [maps[i] for i in keep]
     return {**block, "outcomes": outs, "maps_to": maps, "fingerprint": fingerprint(outs),
             "shape": "list" if len(outs) > 1 else "paragraph"}
+
+
+def why_all_dropped(block: dict) -> str:
+    """Why the load dropped every line of a filed block: a bare number (the S697 reason), or a field heading and
+    what follows it, or a pointer to another outline (S703)."""
+    items = block.get("outcomes") or []
+    if not any(LETTER.search(o or "") for o in items):
+        return "every filed line holds no letter (a bare number)"
+    return "every filed line holds no letter, is a Legacy Data heading or a line after it, or points to another outline"
 
 
 def shared_folder_problem(host: str, slugs: list[str]) -> str | None:
@@ -221,12 +241,12 @@ def rows_from(paths: list[str], host: str = "") -> tuple[list[dict], list[dict]]
     DROPPED.update(lines=0, rows=0)
 
     def add(college, r, block, d, kind="slo"):
-        block = no_letterless(block)
+        filed, block = block, no_letterless(block)
         if block is None:
             # Every line the page filed here holds no letter: nothing to load, and the row says why.
             DROPPED["rows"] += 1
             skipped.append({"course_code": r.get("code"), "status": r.get("status"), "shape": "none", "kind": kind,
-                            "college": college, "why": "every filed line holds no letter (a bare number)"})
+                            "college": college, "why": why_all_dropped(filed)})
             return
         key = (college, r["code"], r["report"], kind, block["fingerprint"])
         if key in seen:
