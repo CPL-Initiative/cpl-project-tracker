@@ -41,10 +41,12 @@ the time on that measure. The TOP code is read nowhere.
   (p)   A PERSON'S DECISION (#3655; r-subject-save-path-kb-curation-sam-2026-11-22: a person's save wins over the
         catalog, the subject map and any recommendation). Where a person saved a common subject code for the course's
         college and local code (kb/status/subject_decisions.json, read through kb/subject_decisions.py for_course),
-        a credit course takes that code as its SUBJ4 ahead of routes (i), (ii) and (iii), and a shell title with no
-        convention takes it in place of the hold. A noncredit or noncredit enhanced course never takes a credit
-        decision (r-noncredit-disciplines-separate-in-mqs-sam-2026-11-21). A ruled kind and an accepted convention
-        stand: each names the course's title kind, which a decision about the local subject does not. A statewide
+        a credit course with an ordinary title takes that code as its SUBJ4 ahead of routes (i), (ii) and (iii). A
+        noncredit or noncredit enhanced course never takes a credit decision
+        (r-noncredit-disciplines-separate-in-mqs-sam-2026-11-21). A shell title never takes one: it stays with (r), (s)
+        or its hold, whatever a person decided for its code. The plan measures why (`person_decision_recall`): the
+        identity-holding shell titles under decided codes match the decided code far under route (s)'s floor (98%
+        over 10 or more), where the ordinary titles are the ones a decision names. A statewide
         filing in the Local subjects List decides no M-ID (kb/subject_decisions.py). The plan lists every course a
         decision placed with its key and what the machine routes would have done (`decided`): released from a hold,
         or placed under another SUBJ4, or the same.
@@ -562,6 +564,23 @@ def compute_plan(inp, today):
             return None
         return decisions.for_course(dec_slug.get(sdec.college_key(c["college"])), c["subj"], c["credit"])
 
+    # How often a decided code names the SUBJ4 an identity-holding credit course under it already carries, ordinary
+    # and shell titles apart: the measure that keeps route p off shell titles (the second reader on #3670).
+    dec_codes = {}
+    for (slug, code, band), r in ((decisions.college.items()) if decisions else ()):
+        if r.get("common_code"):
+            dec_codes.setdefault((slug, seed.normsubj(code)), r["common_code"])
+    recall_p = {"ordinary": [0, 0], "shell": [0, 0]}
+    for h in hlist:
+        want = dec_codes.get((dec_slug.get(sdec.college_key(h["college"])), h["ns"]))
+        if want and h["band"] == "1":
+            cell = recall_p["ordinary" if h["kind"] is None else "shell"]
+            cell[1] += 1
+            cell[0] += h["s4"] == want
+    shell_floor = {"accuracy": ACCURACY_FLOOR, "min_holders": MIN_HOLDERS}
+    r_, a_ = recall_p["shell"]
+    shell_at_floor = a_ >= MIN_HOLDERS and r_ / a_ >= ACCURACY_FLOOR
+
     def machine_ordinary(c, ns, tag):
         """Routes (i), (ii), (iii) for an ordinary title: ("placed", s4, route, conf, disc) or ("held", list, row)."""
         disc, s4, note = ri(ns)
@@ -595,7 +614,7 @@ def compute_plan(inp, today):
         band = band_of(c["credit"])
         conf = None
         ruling = None
-        pd = decision_of(c) if kind not in RULED_BY_KIND else None
+        pd = decision_of(c) if kind is None else None   # a shell title never takes a decision
         if kind in RULED_BY_KIND:
             rk = RULED_BY_KIND[kind]
             if not re.match(rk["bare"], seed.ntitle(c["title"])):
@@ -607,11 +626,6 @@ def compute_plan(inp, today):
                 held["ruled_kind_subj4_names_another_discipline"].append(dict(tag, kind=kind, subj4=rk["subj4"]))
                 continue
             s4, route, ruling = rk["subj4"], "r", rk["ruling"]
-        elif kind and not ((conventions.get((kind, band)) or {}).get("accepted")) and pd:
-            # a shell title with no convention, under a code a person decided: the decision in place of the hold
-            s4, route, d = pd["common_code"], "p", s4_disc.get(pd["common_code"])
-            decided.append(dict(tag, key=pd["key"], subj4=s4, moved=pd.get("moved", False),
-                                machine="held: shell_title_no_convention"))
         elif kind:
             conv = conventions.get((kind, band))
             if not (conv and conv["accepted"]):
@@ -748,6 +762,13 @@ def compute_plan(inp, today):
             "subject_codes_at_floor": len(codes_at_floor), "subject_codes_answered": len(code_stats),
         },
         "shell_conventions": [conventions[k] for k in sorted(conventions, key=lambda k: (k[0], k[1]))],
+        "person_decision_recall": {
+            "how": ("Each identity-holding credit course under a code a person decided: is its own SUBJ4 the decided "
+                    "code? Ordinary and shell titles apart. A shell title would need route (s)'s floor to take a "
+                    "decision; route p reads ordinary titles only."),
+            "ordinary": {"right": recall_p["ordinary"][0], "asked": recall_p["ordinary"][1]},
+            "shell": {"right": r_, "asked": a_}, "shell_floor": shell_floor, "shell_at_floor": shell_at_floor,
+            "shell_routed": False},
         "ruled_kinds": RULED_KINDS,
         "ruled_kind_held_titles": _ruled_held(held),
         "supervised_tutoring": tut,
@@ -918,13 +939,8 @@ def _validate(wave, left, held, pc, pm, ps, inp, all_keys, buckets, staged, conv
     planned_cn = {m["control_number"] for ms in pm.values() for m in ms} | {r["control_number"] for r in ps.values()}
     already = sorted(planned_cn & known_cn)
     recs = list(pc.items()) + list(ps.items())
-    # a shell title mints under its convention, a ruled kind, or a person's decision that names its key
-    shell_ok = {ROUTE_SOURCE["s"], ROUTE_SOURCE["r"], ROUTE_SOURCE["p"]}
-
-    def shell_bad(r):
-        parts = set(str(r.get("pile_mint_route") or "").split("+"))
-        return not parts <= shell_ok or (ROUTE_SOURCE["p"] in parts and not r.get("pile_mint_decision"))
-    bad_shell = sorted(i for i, r in recs if r.get("pile_mint_shell") and shell_bad(r))
+    bad_shell = sorted(i for i, r in recs if r.get("pile_mint_shell")
+                       and r.get("pile_mint_route") not in (ROUTE_SOURCE["s"], ROUTE_SOURCE["r"]))
     bad_source = sorted(i for i, r in recs if r.get("discipline_source") != DISCIPLINE_SOURCE)
     return {
         "V1_every_wave_course_lands_once": {"pass": once, "wave": len(wave_cn), "landed": sum(landed.values())},

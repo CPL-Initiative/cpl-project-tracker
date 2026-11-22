@@ -11,13 +11,17 @@ WHAT THIS GUARDS (each a way a person's save would be lost, misapplied, or leak)
       same code;
   (2) a credit decision leaves the code's noncredit courses alone (the mint), and a noncredit row takes none;
   (3) a statewide _SUBJ_DISC:: filing loses to a college-keyed decision and beats the subject map;
-  (4) a failed, short or empty sync read leaves the committed file as it was;
+  (4) a failed or short sync read, or an empty one with no count, leaves the committed file as it was, and a
+      definite read of an exact 0 empties it;
   (5) a decision whose common code the canonical file does not hold is refused and listed, never applied;
   (6) the held list's released count equals the held courses under decided codes, ATH and PEX at Cerritos the worked
       example; the committed files agree with the decisions file;
   (7) no email appears in any committed file the sync or the builders write;
   (8) the daily build syncs before the titles, takes no secret, warns and restores on failure, and the workflow
-      stages the file.
+      stages the file;
+  (9) a shell title is never routed by a decision, and the self-recall that keeps it out is measured (the second
+      reader on #3670: Cerritos's decided codes match its shell titles' M-IDs 0 of 5);
+ (10) the sync lists an unreadable row, a later Save replaces a filed row, and a Take it back removes one.
 
 Run from repo root: python3 tests/subject_decisions_honored_test.py
 """
@@ -150,16 +154,18 @@ try:
 finally:
     shutil.rmtree(root)
 
-# ── (2), (5), (6): the pile mint dry run and the held list on the shared fixture ──
+# ── (2), (5), (6), (9): the pile mint dry run and the held list on the shared fixture ──
 inp0 = pmf.fixture()
 plan0 = pm.compute_plan(inp0, "2026-11-22")
 canon = inp0["canon_doc"]
 inp1 = pmf.fixture()
 inp1["subject_decisions"] = sd.Decisions({"decisions": [
-    dec("SUBJ:d|MATH|credit", "EDUC"),        # D College's MATH: its shell title with no convention (S4)
+    dec("SUBJ:d|MATH|credit", "EDUC"),        # D College's MATH: its one course is a shell title with no convention (S4)
     dec("SUBJ:a|ZZZ|credit", "NRSR"),          # A College's unmapped code: held, no route (P8)
     dec("SUBJ:c|MATH|credit", "EDUC"),         # C College's MATH courses are noncredit (P3): never touched
     dec("SUBJ:c|ES|credit", "NOPE"),           # a code the canonical file does not hold: refused (P4 stays held)
+    dec("SUBJ:a|ACCT|credit", "EDUC"),         # A College's ACCT holders are internships, all under WEXP: shell recall
+    dec("SUBJ:a|LRNC|credit", "EDUC"),         # A College's LRNC holders are ordinary titles, all under EDUC
 ]}, canon)
 inp1["decision_slugs"] = {"a college": "a", "b college": "b", "c college": "c", "d college": "d"}
 plan1 = pm.compute_plan(inp1, "2026-11-22")
@@ -172,11 +178,21 @@ def held_cns(plan):
 
 h0, h1 = held_cns(plan0), held_cns(plan1)
 rows1 = {cn: r for r in plan1["plan_rows"] for cn in r["control_numbers"]}
-check("(6) ⭐ a shell title with no convention under a decided code mints under the decision, released from its hold",
-      h0.get("S4") == "shell_title_no_convention" and "S4" not in h1 and rows1.get("S4", {}).get("route") == ["p"]
-      and dec_cn["S4"]["machine"] == "held: shell_title_no_convention" and dec_cn["S4"]["subj4"] == "EDUC")
+wave_shell = {c["ctrl"] for c in inp1["courses"] if pm.shell_pattern(c["title"]) is not None}
+check("(9) ⭐ a shell title is never routed by a decision: none is in `decided`, none mints under route p",
+      not (wave_shell & set(dec_cn)) and not any("p" in r["route"] and set(r["control_numbers"]) & wave_shell
+                                                 for r in plan1["plan_rows"]))
+check("(9) ⭐ the shell title with no convention under a decided code stays held",
+      h0.get("S4") == h1.get("S4") == "shell_title_no_convention")
+R = plan1["person_decision_recall"]
+check("(9) ⭐ the self-recall keeps route p off shell titles: A College's ACCT internships match the decided code "
+      "0 of 5, under the 98%-over-10 floor; the ordinary holders match 60 of 64 (LRNC 60 of 60, C College's MATH 0 of 4)",
+      R["shell"] == {"right": 0, "asked": 5} and not R["shell_at_floor"] and R["shell_routed"] is False
+      and R["shell_floor"] == {"accuracy": 0.98, "min_holders": 10} and R["ordinary"] == {"right": 60, "asked": 64}, json.dumps(R))
 check("(6) ⭐ an ordinary title the routes held takes the decided code", h0.get("P8") == "no_route_gives_a_subj4"
       and "P8" not in h1 and dec_cn["P8"]["key"] == "SUBJ:a|ZZZ|credit" and rows1["P8"]["id"].startswith("NRSR "))
+check("(6) an ordinary title a route placed takes the decision, and the plan says what the route gave",
+      dec_cn["P11"]["machine"] == "placed: EDUC by college_subject_code" and rows1["P11"]["route"] == ["p"])
 check("(1) ⭐ the same code at another college keeps its own route (A College's MATH reads the subject map)",
       "P1" not in dec_cn and "i" in rows1["P1"]["route"])
 check("(2) ⭐ a credit decision leaves the code's noncredit course alone", "P3" not in dec_cn and "i" in rows1["P3"]["route"])
@@ -185,23 +201,28 @@ check("(5) ⭐ a refused decision is never applied: the course stays held", h1.g
 check("(6) the records name the decision they were minted under, and every validation holds",
       all(rec.get("pile_mint_decision") for part in ("courses", "singletons") for rec in plan1["planned"][part].values()
           if rec.get("pile_mint_route") == "person_decision") and all(v["pass"] for v in plan1["validation"].values()))
+plan_none = pm.compute_plan(dict(pmf.fixture(), subject_decisions=sd.Decisions({}, canon)), "2026-11-22")
+check("(6) with no decision the plan is the plan without the resolver, section for section",
+      all(json.dumps(plan_none[k], sort_keys=True) == json.dumps(plan0[k], sort_keys=True) for k in plan0))
 held0, _ = hsc.held_of(plan0)
 held1, thr = hsc.held_of(plan1)
 doc = hsc.build(held1, thr, {}, {}, inp1["disc_map"], {}, decided=plan1["decided"])
-under = [r for r in held0 if (r["college"], r["subject"]) in {("D College", "MATH"), ("A College", "ZZZ")}
-         and r["control_number"] in {"S4", "P8"}]
-check("(6) ⭐ the held list's released count equals the held courses under decided codes, and the held count falls by it",
-      doc["totals"]["released"] == len(under) == len(held0) - len(held1) == 2, (doc["totals"]["released"], len(under), len(held0) - len(held1)))
+decided_pairs = {("D College", "MATH"), ("A College", "ZZZ"), ("A College", "ACCT"), ("A College", "LRNC")}
+under = [r for r in held0 if (r["college"], r["subject"]) in decided_pairs and pm.shell_pattern(r["title"]) is None]
+check("(6) ⭐ the held list's released count equals the held ordinary credit courses under decided codes, and the "
+      "held count falls by it", doc["totals"]["released"] == len(under) == len(held0) - len(held1) == 1,
+      (doc["totals"]["released"], len(under), len(held0) - len(held1)))
 # The worked example: ATH and PEX at Cerritos, a decision each, and one decided course the routes would have placed anyway.
 DEC_ROWS = [{"college": "Cerritos College", "control_number": "A1", "title": "Varsity Sports", "subject": "ATH", "key": "SUBJ:cerritos|ATH|credit", "subj4": "KINE", "machine": "held: no_route_gives_a_subj4"},
-            {"college": "Cerritos College", "control_number": "A2", "title": "Practicum", "subject": "ATH", "key": "SUBJ:cerritos|ATH|credit", "subj4": "KINE", "machine": "held: shell_title_no_convention"},
+            {"college": "Cerritos College", "control_number": "A2", "title": "Sports Conditioning", "subject": "ATH", "key": "SUBJ:cerritos|ATH|credit", "subj4": "KINE", "machine": "held: route_i_below_its_floor"},
             {"college": "Cerritos College", "control_number": "P1", "title": "Yoga", "subject": "PEX", "key": "SUBJ:cerritos|PEX|credit", "subj4": "KINE", "machine": "held: route_i_below_its_floor"},
             {"college": "Cerritos College", "control_number": "P2", "title": "Swim", "subject": "PEX", "key": "SUBJ:cerritos|PEX|credit", "subj4": "KINE", "machine": "placed: KINE by subject_map"}]
 rel = hsc.released_of(DEC_ROWS)
 check("(6) ⭐ ATH and PEX at Cerritos: three courses released under two keys, the one already placed not counted",
-      [(e["code"], e["courses"]) for e in rel] == [("ATH", 2), ("PEX", 1)] and rel[0]["was"] == {"no_route_gives_a_subj4": 1, "shell_title_no_convention": 1})
+      [(e["code"], e["courses"]) for e in rel] == [("ATH", 2), ("PEX", 1)]
+      and rel[0]["was"] == {"no_route_gives_a_subj4": 1, "route_i_below_its_floor": 1})
 
-# ── (4), (7): the sync ────────────────────────────────────────────────────────
+# ── (4), (7), (10): the sync ──────────────────────────────────────────────────
 tmp = tempfile.mkdtemp()
 try:
     out_path = os.path.join(tmp, "subject_decisions.json")
@@ -211,29 +232,53 @@ try:
              "reviewed_at": "2026-11-22T05:00:00Z", "reviewer_label": "a reviewer", "reviewer_email": "someone@rccd.edu"},
             {"course_id": "_SUBJ_DISC::KIN", "field": "subject_discipline_confirm", "value": "Kinesiology", "reviewed_at": "2026-11-20T01:00:00Z", "reviewer_label": "a reviewer"}]
     rows_path = os.path.join(tmp, "rows.json")
-    json.dump(ROWS, open(rows_path, "w"))
-    rc = sync.main(["--rows", rows_path, "--out", out_path])
+
+    def run_rows(rows, *extra):
+        json.dump(rows, open(rows_path, "w"))
+        return sync.main(["--rows", rows_path, "--out", out_path] + list(extra))
+    rc = run_rows(ROWS)
     good = open(out_path, encoding="utf-8").read()
     d = json.loads(good)
     check("(7) ⭐ the sync keeps who the filing names and never an email, whatever a row carries",
           rc == 0 and not EMAIL.search(good) and [x["who"] for x in d["decisions"]] == ["Sam", "a reviewer"]
           and d["statewide"][0]["discipline"] == "Kinesiology" and d["totals"]["decisions"] == 2, good[:200])
-    rc = sync.main(["--rows", rows_path, "--out", out_path])
-    check("(4) a second read of the same rows writes the same bytes", rc == 0 and open(out_path, encoding="utf-8").read() == good)
-    real_fetch, real_key = sync.fetch, sync.anon_key
+    check("(4) a second read of the same rows writes the same bytes", run_rows(ROWS) == 0 and open(out_path, encoding="utf-8").read() == good)
+    BAD = [{"course_id": "SUBJ:cerritos|TH|credit", "field": "subject_decision", "value": "not json", "reviewer_label": "a reviewer"},
+           {"course_id": "SUBJ:cerritos-TH", "field": "subject_decision", "value": json.dumps({"common_code": "THTR"}), "reviewer_label": "a reviewer"},
+           {"course_id": "SUBJ:cerritos|BA|credit", "field": "subject_decision", "value": json.dumps({"common_code": 5}), "reviewer_label": "a reviewer"}]
+    sh = sync.shape(ROWS + BAD)
+    check("(10) a value that is not JSON, a key of the wrong shape and a common code that is not text land in "
+          "unreadable, and the readable rows stand",
+          sorted(u["key"] for u in sh["unreadable"]) == ["SUBJ:cerritos-TH", "SUBJ:cerritos|BA|credit", "SUBJ:cerritos|TH|credit"]
+          and sh["totals"]["unreadable"] == 3 and sh["totals"]["decisions"] == 2)
+    LATER = copy.deepcopy(ROWS)
+    LATER[0].update(value=json.dumps({"common_code": "PEDS"}), reviewer_label="a reviewer", reviewed_at="2026-11-23T01:00:00Z")
+    run_rows(LATER)
+    ath = [x for x in json.load(open(out_path))["decisions"] if x["code"] == "ATH"][0]
+    check("(10) ⭐ a later Save replacing a filed row replaces it in the file: the new code, who saved it, when",
+          ath["common_code"] == "PEDS" and ath["who"] == "a reviewer" and ath["at"] == "2026-11-23T01:00:00Z")
+    run_rows([r for r in ROWS if "PEX" not in r["course_id"]])
+    check("(10) ⭐ a Take it back removes the row from the file",
+          [x["code"] for x in json.load(open(out_path))["decisions"]] == ["ATH"])
+    run_rows(ROWS)
+    check("(4) rows given from a file with no count never empty it", run_rows([]) == 1
+          and open(out_path, encoding="utf-8").read() == good)
+    real_open, real_key = sync.open_page, sync.anon_key
     sync.anon_key = lambda: "ANON"
 
-    def broken(*a, **k):
+    def broken(req):
         raise OSError("the network failed")
-    sync.fetch = broken
+    sync.open_page = broken
     check("(4) ⭐ a failed read exits non-zero and leaves the committed file as it was",
           sync.main(["--out", out_path]) == 1 and open(out_path, encoding="utf-8").read() == good)
-    sync.fetch = lambda *a, **k: []
-    check("(4) ⭐ an empty read is refused and leaves the committed file as it was",
+    sync.open_page = lambda req: ([], "")
+    check("(4) ⭐ an empty read that carries no count is refused and leaves the committed file as it was",
           sync.main(["--out", out_path]) == 1 and open(out_path, encoding="utf-8").read() == good)
-    check("(4) an empty read named as expected may empty it", sync.main(["--out", out_path, "--expect-empty"]) == 0
-          and json.load(open(out_path))["totals"]["decisions"] == 0)
-    sync.fetch, sync.anon_key = real_fetch, real_key
+    sync.open_page = lambda req: ([], "*/0")
+    gone = sync.main(["--out", out_path]) == 0 and json.load(open(out_path))
+    check("(4) ⭐ a definite read of an exact 0 empties the file, so the last Take it back lands",
+          gone and gone["totals"]["decisions"] == 0 and gone["totals"]["statewide"] == 0 and gone["statewide_read"])
+    sync.open_page, sync.anon_key = real_open, real_key
 
     def pages(sizes, total):
         it = iter(sizes)

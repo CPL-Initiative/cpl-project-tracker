@@ -26,7 +26,8 @@ RELEASED BY A PERSON'S DECISION (#3655). A course whose college and local code a
 for (kb/status/subject_decisions.json; the dry run's route p) is placed by that decision, so it leaves the held lists.
 Each one the held reasons would have held is listed under `released`, by decision key, with its college, code, common
 code, courses and the reasons it was held for; totals.released counts them. A credit decision releases credit courses
-alone, so a noncredit course under a decided code stays held.
+with ordinary titles alone: a noncredit course and a shell title under a decided code stay held (the dry run's
+person_decision_recall measures why for shell titles).
 
 A vote winner is written as `suggestion`, with its votes and share, never as a decision: the routes missed the 98%
 self-recall floor, which is why the course is held. A TOP code is read nowhere (CLAUDE.md Rule 7). Nothing is written

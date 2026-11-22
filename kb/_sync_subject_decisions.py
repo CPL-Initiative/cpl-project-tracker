@@ -18,9 +18,10 @@ value.decided_by where a filing names the person it was filed for ("Sam"), else 
 id, or "a reviewer" for a person's own save. No email is committed: a who that reads as one is written "a reviewer".
 No clock is read, so a rerun on the same rows writes the same bytes, and a run whose rows did not move writes nothing.
 
-A FAILED READ keeps the committed file and says so (exit 1; the daily step warns and restores it). A read that
-returns no rows where the committed file holds some, or one short of its count, is refused the same way: an empty
-answer never empties the file. --expect-empty names an empty read as expected (every save taken back).
+A FAILED READ keeps the committed file and says so (exit 1; the daily step warns and restores it), and so does a read
+short of its count or one whose answer carries no count. A live read that carries an exact count is definite: an exact
+0 empties that section, so the last Take it back lands. Rows given from a file carry no count, so an empty section
+there never empties the file unless --expect-empty names it as expected.
 
   python3 kb/_sync_subject_decisions.py                 the daily read
   python3 kb/_sync_subject_decisions.py --rows FILE     rows from a file (a JSON list of PostgREST rows, both fields)
@@ -78,7 +79,7 @@ def open_page(req, attempts=4):
             delay *= 2
 
 
-def fetch(field, prefix, key, opener=open_page):
+def fetch(field, prefix, key, opener=None):
     """Every row of one field under one key prefix, Range-paged, checked against the exact count."""
     url = (URL + "/rest/v1/kb_curation?select=" + COLUMNS + "&field=eq." + field
            + "&course_id=like." + urllib.parse.quote(prefix, safe="") + "*&order=course_id.asc")
@@ -86,7 +87,7 @@ def fetch(field, prefix, key, opener=open_page):
     while True:
         headers = {"apikey": key, "Authorization": "Bearer " + key, "Accept": "application/json",
                    "Range-Unit": "items", "Range": "%d-%d" % (start, start + PAGE - 1), "Prefer": "count=exact"}
-        batch, span = opener(urllib.request.Request(url, headers=headers))
+        batch, span = (opener or open_page)(urllib.request.Request(url, headers=headers))
         if not isinstance(batch, list):
             raise ValueError("kb_curation answered something other than a list for " + field)
         tail = str(span).rsplit("/", 1)[-1]
@@ -140,6 +141,10 @@ def shape(rows, statewide_read=True):
             if v is None or not k:
                 unreadable.append({"key": cid, "why": "the key or the value does not read"})
                 continue
+            bad = [f for f in ("local_title", "common_code", "decided_by") if v.get(f) is not None and not isinstance(v[f], str)]
+            if bad:
+                unreadable.append({"key": cid, "why": "%s is not text" % " and ".join(bad)})
+                continue
             decisions.append({
                 "key": cid, "college": k[0], "code": k[1], "band": k[2],
                 "local_title": (v.get("local_title") or "").strip() or None,
@@ -189,11 +194,14 @@ def committed(path=OUT):
         return None
 
 
-def empty_guard(doc, was, expect_empty=False):
-    """None when the write may go ahead, else why not: a read with no saves where the file holds some."""
+def empty_guard(doc, was, expect_empty=False, definite=()):
+    """None when the write may go ahead, else why not: a section with no rows where the file holds some, read with no
+    count to say the empty answer is true. A section in `definite` came from a read with an exact count."""
     if expect_empty or not was:
         return None
     for part in ("decisions", "statewide"):
+        if part in definite:
+            continue
         if was.get(part) and not doc.get(part) and (part != "statewide" or was.get("statewide_read")):
             return ("the read returned no %s rows and %s holds %d; an empty answer never empties the file. Pass "
                     "--expect-empty when every save was taken back." % (part, sd.STATUS, len(was[part])))
@@ -234,7 +242,7 @@ def main(argv=None):
     ap.add_argument("--out", default=OUT)
     a = ap.parse_args(argv)
     was = committed(a.out)
-    statewide_read = True
+    statewide_read, definite = True, ()
     try:
         if a.seed_filed:
             rows, statewide_read = seed_rows(), False
@@ -244,6 +252,7 @@ def main(argv=None):
         else:
             key = anon_key()
             rows = [r for field, prefix in READS for r in fetch(field, prefix, key)]
+            definite = ("decisions", "statewide")    # fetch raised unless each read carried its exact count
     except (OSError, ValueError) as e:
         print("[subject_decisions] the read failed (%s: %s); %s keeps the committed decisions"
               % (type(e).__name__, e, sd.STATUS), file=sys.stderr)
@@ -252,7 +261,7 @@ def main(argv=None):
     if not statewide_read and was and was.get("statewide_read"):
         doc["statewide"], doc["statewide_read"] = was.get("statewide") or [], True
         doc["totals"]["statewide"] = len(doc["statewide"])
-    warn = empty_guard(doc, was, a.expect_empty)
+    warn = empty_guard(doc, was, a.expect_empty, definite)
     if warn:
         print("[subject_decisions] REFUSED: " + warn, file=sys.stderr)
         return 1
