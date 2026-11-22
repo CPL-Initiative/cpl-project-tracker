@@ -92,28 +92,32 @@
     "wrong": 22,
     "asked": 23,
     "share": 0.043,
-    "level": "Low"
+    "level": "Low",
+    "used": false
    },
    "letters, one title": {
     "right": 18,
     "wrong": 13,
     "asked": 31,
     "share": 0.581,
-    "level": "Low"
+    "level": "Low",
+    "used": true
    },
    "letters, several titles": {
     "right": 9,
     "wrong": 23,
     "asked": 32,
     "share": 0.281,
-    "level": "Low"
+    "level": "Low",
+    "used": false
    },
    "same code": {
     "right": 13,
     "wrong": 0,
     "asked": 13,
     "share": 1.0,
-    "level": "Low"
+    "level": "Low",
+    "used": true
    }
   },
   "common_code_from_the_category": {
@@ -123,7 +127,7 @@
    "share": 0.39,
    "level": "Low"
   },
-  "note": "Measured on the noncredit-only codes that hold a catalog heading (titles) or a common code from the subject map (codes), each left out of its own vote."
+  "note": "Measured on the noncredit-only codes that hold a catalog heading (titles) or a common code from the subject map (codes), each left out of its own vote. A title condition right less than half the time is a guess: it stays measured here, used false, and gives no recommendation. The common code's answer key is the subject map, which reads a code without its credit or noncredit band (f-subject-map-ignores-credit-band-s698), so its share is a floor, and it reads Low."
  },
  "common_code": {
   "levels": {
@@ -224,11 +228,12 @@
   "noncredit_common": 134,
   "noncredit_no_common": 174,
   "noncredit_no_title": 54,
-  "noncredit_title": 17,
+  "noncredit_title": 4,
+  "noncredit_title_unused_condition": 13,
   "title_high": 197,
-  "title_low": 179,
+  "title_low": 166,
   "title_medium": 61,
-  "title_none": 99
+  "title_none": 112
  },
  "colleges": [
   {
@@ -252,16 +257,6 @@
       "level": "High",
       "from": "own_courses",
       "why": "9 of 9 of its courses with an M-ID sit under IDST."
-     }
-    },
-    {
-     "code": "AED",
-     "title": {
-      "title": "Computer Information Systems and Technology",
-      "level": "Low",
-      "from": "noncredit_list",
-      "why": "noncredit list: the title under its dominant COCI noncredit category, Short-term Vocational (48 of 118 noncredit courses, 41%) (letters, several titles).",
-      "also": []
      }
     },
     {
@@ -680,13 +675,6 @@
     },
     {
      "code": "ESC",
-     "title": {
-      "title": "High School Subjects - Natural Sciences",
-      "level": "Low",
-      "from": "noncredit_list",
-      "why": "noncredit list: the title under its dominant COCI noncredit category, Elementary and Secondary Basic Skills (7 of 7 noncredit courses, 100%) (letters, several titles).",
-      "also": []
-     },
      "common": {
       "code": "BSKL",
       "discipline": "Interdisciplinary-Basic Skills: Noncredit",
@@ -2117,13 +2105,6 @@
     },
     {
      "code": "NESL",
-     "title": {
-      "title": "English as a Second Language",
-      "level": "Low",
-      "from": "noncredit_list",
-      "why": "noncredit list: the title under its dominant COCI noncredit category, English as a Second Language (ESL) (35 of 35 noncredit courses, 100%) (courses match).",
-      "also": []
-     },
      "common": {
       "code": "ESLN",
       "discipline": "English as a Second Language (ESL): Noncredit",
@@ -5471,13 +5452,6 @@
     },
     {
      "code": "BASIC SKILLS",
-     "title": {
-      "title": "Basic Skills",
-      "level": "Low",
-      "from": "noncredit_list",
-      "why": "noncredit list: the title under its dominant COCI noncredit category, Elementary and Secondary Basic Skills (2 of 2 noncredit courses, 100%) (letters, several titles).",
-      "also": []
-     },
      "common": {
       "code": "BSKL",
       "discipline": "Interdisciplinary-Basic Skills: Noncredit",
@@ -5499,13 +5473,6 @@
     },
     {
      "code": "BSICKL",
-     "title": {
-      "title": "High School Subjects - Math",
-      "level": "Low",
-      "from": "noncredit_list",
-      "why": "noncredit list: the title under its dominant COCI noncredit category, Elementary and Secondary Basic Skills (1 of 1 noncredit courses, 100%) (courses match).",
-      "also": []
-     },
      "common": {
       "code": "BSKL",
       "discipline": "Interdisciplinary-Basic Skills: Noncredit",
@@ -7321,16 +7288,6 @@
       "level": "High",
       "from": "own_courses",
       "why": "4 of 5 of its courses with an M-ID sit under WEXP."
-     }
-    },
-    {
-     "code": "VOC ED",
-     "title": {
-      "title": "Vocational - Digital Media Arts",
-      "level": "Low",
-      "from": "noncredit_list",
-      "why": "noncredit list: the title under its dominant COCI noncredit category, Short-term Vocational (51 of 61 noncredit courses, 84%) (letters, several titles).",
-      "also": []
      }
     },
     {
@@ -10562,13 +10519,6 @@
     },
     {
      "code": "CCTR",
-     "title": {
-      "title": "Construction Crafts Technology",
-      "level": "Low",
-      "from": "noncredit_list",
-      "why": "noncredit list: the title under its dominant COCI noncredit category, Short-term Vocational (1 of 1 noncredit courses, 100%) (letters, several titles).",
-      "also": []
-     },
      "common": {
       "code": "VOCE",
       "discipline": "Vocational",
@@ -10602,13 +10552,6 @@
     },
     {
      "code": "CONS",
-     "title": {
-      "title": "Clothing and Textiles",
-      "level": "Low",
-      "from": "noncredit_list",
-      "why": "noncredit list: the title under its dominant COCI noncredit category, Short-term Vocational (5 of 5 noncredit courses, 100%) (letters, several titles).",
-      "also": []
-     },
      "common": {
       "code": "VOCE",
       "discipline": "Vocational",
@@ -10649,16 +10592,6 @@
       "from": "noncredit_category",
       "category": "Courses for Persons with Substantial Disabilities",
       "why": "The category has no common subject code yet: its dominant COCI noncredit category, Courses for Persons with Substantial Disabilities (49 of 49 noncredit courses, 100%)."
-     }
-    },
-    {
-     "code": "ECE",
-     "title": {
-      "title": "Computer and Information Sciences",
-      "level": "Low",
-      "from": "noncredit_list",
-      "why": "noncredit list: the title under its dominant COCI noncredit category, Short-term Vocational (1 of 1 noncredit courses, 100%) (letters, several titles).",
-      "also": []
      }
     },
     {
@@ -10910,13 +10843,6 @@
     },
     {
      "code": "DIES",
-     "title": {
-      "title": "Clothing and Textiles",
-      "level": "Low",
-      "from": "noncredit_list",
-      "why": "noncredit list: the title under its dominant COCI noncredit category, Short-term Vocational (2 of 2 noncredit courses, 100%) (letters, several titles).",
-      "also": []
-     },
      "common": {
       "code": "VOCE",
       "discipline": "Vocational",
@@ -10950,13 +10876,6 @@
     },
     {
      "code": "ENGE",
-     "title": {
-      "title": "Business Management",
-      "level": "Low",
-      "from": "noncredit_list",
-      "why": "noncredit list: the title under its dominant COCI noncredit category, Short-term Vocational (1 of 1 noncredit courses, 100%) (letters, several titles).",
-      "also": []
-     },
      "common": {
       "code": "VOCE",
       "discipline": "Vocational",
@@ -11155,13 +11074,6 @@
     },
     {
      "code": "PHYN",
-     "title": {
-      "title": "High School Subjects - Natural Sciences",
-      "level": "Low",
-      "from": "noncredit_list",
-      "why": "noncredit list: the title under its dominant COCI noncredit category, Elementary and Secondary Basic Skills (1 of 1 noncredit courses, 100%) (courses match).",
-      "also": []
-     },
      "common": {
       "code": "BSKL",
       "discipline": "Interdisciplinary-Basic Skills: Noncredit",
@@ -13948,16 +13860,6 @@
       "from": "noncredit_category",
       "category": "Elementary and Secondary Basic Skills",
       "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (1 of 1 noncredit courses, 100%)."
-     }
-    },
-    {
-     "code": "VOC ED",
-     "title": {
-      "title": "Vocational",
-      "level": "Low",
-      "from": "noncredit_list",
-      "why": "noncredit list: the title under its dominant COCI noncredit category, Short-term Vocational (58 of 78 noncredit courses, 74%) (courses match).",
-      "also": []
      }
     }
    ]

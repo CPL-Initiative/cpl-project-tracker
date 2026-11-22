@@ -13,6 +13,7 @@ Run from repo root: python3 tests/local_subject_recommendations_test.py
 import json
 import os
 import sys
+from collections import Counter
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "kb"))
@@ -74,6 +75,20 @@ for r in nc_only:
         lt = listed.get(t["title"])
         ok = ok and t["from"] == "noncredit_list" and lt is not None and lt["category"] == R.dominant(r)[0]
 check("⭐ every noncredit title recommendation is a title of the standing list under the row's own dominant category", ok)
+fed = Counter()
+for r in nc_only:
+    t_ = recs.get((r["slug"], r["code"]), {}).get("title")
+    if t_ and t_["from"] == "noncredit_list":
+        got = R.noncredit_list(data, r)
+        fed[got[1] if got else None] += 1
+check("⭐ no noncredit title condition measured under 50% right feeds a recommendation",
+      fed and all(c is not None and nct[c]["share"] >= 0.5 and nct[c]["used"] for c in fed)
+      and all(m["used"] == (m["share"] >= 0.5) for m in nct.values()))
+check("all four conditions stay measured in the file, the two guesses marked unused",
+      set(nct) == {"same code", "letters, one title", "letters, several titles", "courses match"}
+      and not nct["letters, several titles"]["used"] and not nct["courses match"]["used"])
+check("the common code's note names the subject map as its answer key, which reads a code without its band",
+      "subject map" in doc["noncredit"]["note"] and "without its credit or noncredit band" in doc["noncredit"]["note"] and ncc["level"] == "Low")
 nocode = [(r, recs[(r["slug"], r["code"])]["common"]) for r in nc_only if (r["slug"], r["code"]) in recs
           and recs[(r["slug"], r["code"])].get("common", {}).get("code", "x") is None]
 check("⭐ a noncredit-only code under a category with no common code names the category and recommends no code",

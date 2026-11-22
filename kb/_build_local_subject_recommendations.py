@@ -42,8 +42,8 @@ BANDS. Credit and noncredit are read apart (Sam, 2026-11-21: the MQs separate th
 recommendation from its credit courses. The noncredit hold (r-noncredit-hold-sam-2026-11-21) lifted on Sam's go of
 2026-11-22 (r-noncredit-title-list-go-sam-2026-11-22), so a row whose courses are all noncredit is lined up with the
 standing noncredit subject title list (kb/status/noncredit_subject_titles.json) by its own dominant COCI noncredit
-category: a list title under that category whose program prints the same code, else one whose courses share their
-titles with this code's, else the one title under it the code's letters run through. Nothing else is read, and a
+category: a list title under that category whose program prints the same code, else the one title under it the code's letters run through. Two more conditions are measured and not used, because
+each was right less than half the time (shared course titles; letters that run through several titles). Nothing else is read, and a
 category name alone gives no title. The noncredit_list source is measured the same way, on the noncredit-only codes
 that hold a catalog heading, each left out of the list; a heading the list folds into one of its titles (ESL Classes
 into English as a Second Language) counts as that title. Its common code is the category's noncredit MQ
@@ -77,6 +77,9 @@ NCLIST = os.path.join("kb", "status", "noncredit_subject_titles.json")
 NO_CATEGORY = "(no category in the export)"
 
 HIGH, MEDIUM, FLOOR_N = 0.90, 0.60, 20
+# A noncredit list condition right less often than wrong is a guess, and the brief rules guesses out (S701 review): it
+# stays measured in the file, marked unused, and feeds no recommendation.
+USE_FLOOR = 0.50
 LEVELS = ["Low", "Medium", "High"]
 AWARD_WORDS = re.compile(
     r"\b(a\.?a\.?-?t?|a\.?s\.?-?t?|associate (in|of) (arts|science)( for transfer)?|degree|certificate( of "
@@ -445,7 +448,8 @@ def measure_noncredit(data):
     table = {}
     for cond, (right, asked) in sorted(titles.items()):
         level, share = level_of(right, asked)
-        table[cond] = {"right": right, "wrong": asked - right, "asked": asked, "share": round(share, 3), "level": level}
+        table[cond] = {"right": right, "wrong": asked - right, "asked": asked, "share": round(share, 3), "level": level,
+                       "used": share >= USE_FLOOR}
     level, share = level_of(*common)
     return table, {"right": common[0], "wrong": common[1] - common[0], "asked": common[1], "share": round(share, 3), "level": level}
 
@@ -525,6 +529,9 @@ def build(root=ROOT):
                     totals["no_title"] += 1
                     totals["noncredit_no_title"] += 1
                     got = noncredit_list(data, row)
+                    if got and not (nc_table.get(got[1]) or {}).get("used"):
+                        totals["noncredit_title_unused_condition"] += 1
+                        got = None
                     if got:
                         lvl = (nc_table.get(got[1]) or {"level": "Low"})["level"]
                         entry["title"] = {"title": got[0], "level": lvl, "from": "noncredit_list",
@@ -598,7 +605,11 @@ def build(root=ROOT):
         "measured_on_titled_codes": table,
         "noncredit": {"title_from_the_list": nc_table, "common_code_from_the_category": nc_common,
                       "note": ("Measured on the noncredit-only codes that hold a catalog heading (titles) or a common "
-                               "code from the subject map (codes), each left out of its own vote.")},
+                               "code from the subject map (codes), each left out of its own vote. A title condition "
+                               "right less than half the time is a guess: it stays measured here, used false, and "
+                               "gives no recommendation. The common code's answer key is the subject map, which reads "
+                               "a code without its credit or noncredit band (f-subject-map-ignores-credit-band-s698), "
+                               "so its share is a floor, and it reads Low.")},
         "common_code": {
             "levels": common_level,
             "sams_30": {"decisions": len(dec["decisions"]), "agree": agrees, "diverge": len(diverges),
