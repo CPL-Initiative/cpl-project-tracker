@@ -1,7 +1,7 @@
 ---
 title: Conductor mode — how a session runs workers, COBIx and the merge gate
 date: 2026-11-11
-updated: 2026-11-21
+updated: 2026-11-22
 status: retired
 tags: [reference, conductor, retired, governance-team-enablement, scheduled-sessions]
 kb-status: internal
@@ -206,6 +206,28 @@ at the top of each piece of work so Sam can change the dial before it runs.
   at a scheduled check-in instead (S653: context went from 16% to 73% in 100 minutes on notices).
 - A tool trial (a repo, a library, a service) gets one line in [`reference/stack_scouting`](stack_scouting.md): candidate,
   measured cost, result, kept or dropped. COBIx scans every other Monday (#3306).
+
+## What went wrong in S703, and what worked
+
+The CPL Queue routine's collection run of 2026-11-22 (SkyDovekie, from about 11:03Z). The 10:12Z firing stood down
+while S701 was live; at about 11:03Z Sam said, live: *"/coord and keep going. I will be starting another session but
+don't let that stop the queue."* The run declared on draft #3674 at 11:08Z and ran beside his plain session S702, one
+writer per file.
+
+- **A self-recall that reads the rule's own fields measures nothing** (`p-self-recall-reads-rule-fields-s703`): two
+  named gaps read 0 wrong, and the second reader found 21 and 18 mislabeled. A claim check on the record's notes,
+  boundary readings and a precision count now go in before the second read.
+- **Over the PR cap:** at 11:38Z the run held six open PRs against three; `piles` built on a local branch and opened
+  none until the count dropped. Records PRs merge one at a time, each sending the next back to merge `main`, about 25
+  minutes of CI each (`p-records-prs-merge-one-at-a-time-s703`).
+- **A trial filed pages that print a staff name** (`p-lan-not-outcomes-only-filed-names-s703`): Peralta's host was not
+  yet outcomes-only. The branch was scrubbed; the 30-day artifact waits on a person.
+- **A merge-commit head starts no page read** (`p-merge-head-push-starts-no-read-s703`), and **a global parser
+  fingerprint stales every host's gate** (`p-global-fingerprint-stales-every-gate-s703`): dispatch by plan name, and
+  keep the fingerprint per host.
+- **What worked:** a second reader on every named gap before its apply (four applies, 200 rows, 69 held by key); free
+  pricing with `only` before each paid read ($1.29 of extraction in all); paid reads under $5 a college delegated to the
+  lane 1 worker (`d-levers-paid-under-5-delegated-s703`); a free trial to refresh a stale recall gate.
 
 ## What went wrong in S697, and what worked
 

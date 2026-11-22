@@ -269,7 +269,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A target at exactly the minimum size fails at fractional zoom](../kb-notes/methodology-a-target-at-exactly-the-minimum-fails-at-fractional-zoom.md) | methodology | published | 2026-11-12 | 2026-11-12 |
 | [A team-curated Supabase table needs team_pass_ok() on UPDATE too, not just SELECT + INSERT](../kb-notes/methodology-team-curated-table-needs-update-rls.md) | methodology | published | 2026-07-26 | 2026-07-26 |
 | [A test file is a memory budget, and the process boundary is the only allocator](../kb-notes/methodology-a-test-file-is-a-memory-budget.md) | methodology | published | 2026-08-20 | 2026-08-20 |
-| [A test must not take its own rule as the truth](../kb-notes/methodology-a-test-must-not-take-its-rule-as-the-truth.md) | methodology | published | 2026-11-14 | 2026-11-20 |
+| [A test must not take its own rule as the truth](../kb-notes/methodology-a-test-must-not-take-its-rule-as-the-truth.md) | methodology | published | 2026-11-14 | 2026-11-22 |
 | [A test must report a missing thing, not dereference it](../kb-notes/methodology-a-test-must-report-a-missing-thing-not-dereference-it.md) | methodology | published | 2026-08-25 | 2026-08-25 |
 | [A test that only fails under load is racing a timer the product owns](../kb-notes/methodology-a-test-that-only-fails-under-load-is-racing-a-timer.md) | methodology | published | 2026-09-06 | 2026-09-06 |
 | [A test that pins a figure from a regenerated artifact fails on a data refresh, not on a defect](../kb-notes/methodology-a-test-that-pins-a-generated-figure-fails-on-a-data-refresh.md) | methodology | published | 2026-09-17 | 2026-11-12 |
@@ -353,7 +353,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Crowd consensus beats a single-item signal (the two-signals-agree gate, via the crowd)](../kb-notes/methodology-crowd-consensus-beats-single-item-signal.md) | methodology | published | 2026-07-17 |  |
 | [Derive a listing from the things it lists](../kb-notes/methodology-derive-a-listing-from-the-things-it-lists.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [Derive theme tokens from brand seeds with a contrast script — the mock is the spec](../kb-notes/methodology-derived-aa-token-palette.md) | methodology | published | 2026-06-12 | 2026-06-12 |
-| [Detecting mis-disciplined minted identities via subject-code cohort outliers + a two-signals-agree gate](../kb-notes/methodology-subject-cohort-discipline-outlier.md) | methodology | published | 2026-07-13 |  |
+| [Detecting mis-disciplined minted identities via subject-code cohort outliers + a two-signals-agree gate](../kb-notes/methodology-subject-cohort-discipline-outlier.md) | methodology | published | 2026-07-13 | 2026-11-22 |
 | [Emit the threshold with the label it prints](../kb-notes/methodology-emit-the-threshold-with-the-label-it-prints.md) | methodology | published | 2026-08-10 | 2026-08-10 |
 | [Every id-keyed artifact class belongs in the post-apply chain](../kb-notes/methodology-every-id-keyed-artifact-class-belongs-in-the-post-apply-chain.md) | methodology | published | 2026-09-04 | 2026-09-27 |
 | [Every live database function needs a committed schema-of-record file](../kb-notes/methodology-live-db-functions-need-committed-schema.md) | methodology | published | 2026-07-02 | 2026-07-02 |

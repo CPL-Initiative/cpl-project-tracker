@@ -240,169 +240,9 @@ Seven sections, verbatim: [`program_requirements_harvest_lessons_archive_6.md`](
 
 6 sections, verbatim: [`program_requirements_harvest_lessons_archive_7.md`](program_requirements_harvest_lessons_archive_7.md): *Moved from the lane (S683 checkpoint)*, *S683*, *(S684 checkpoint)*, *S684*, *(S685 checkpoint)* and *S685*.
 
-## Moved from the lane (S687 checkpoint, 2026-11-19)
+## S687 and S688, and their lane text: moved to archive 8 (S703 checkpoint compaction)
 
-Verbatim from `docs/reference/lanes/program-requirements-harvest.md`, as the lane stood before the S687 checkpoint (relative links re-pointed to this folder); the lane keeps the current text.
-
-**The unblocker step (Sam, 2026-11-18 about 10:43 AM PT, relayed by COBIx on #3510, comment 6988133754):** before a document goes on Sam's hand-fetch list, the session tries the college's other public routes: its HTML catalog index pages, and a plain browser-like page read when the curl reader is blocked. A college read that way is marked *Sky can read 2026-27 HTML*. Never script around a WAF or a bot check, and never ignore robots.txt. The procedure: [`scheduled_sessions`](reference/scheduled_sessions.md) step 12; a refused read still follows [`blocked_sources`](reference/blocked_sources.md). #3536 stops the reader at a WAF challenge and a challenged robots.txt (follow-up: JSON calls should file `challenged`). Southwestern read in S685 (run 44529722751, $2.56, 6 new).
-
-**Open:** #3557 (head 4bfff633; COBIx's rule: an address whose award ending was stripped passes only when `slug_awards` names the program's award kind, and `award_tail` on the decision row; replay 43 to 43) and #3558 (head 34229779; with `live_runs`, a run is named whenever a kept or new record is not live at that run, `p-second-pass-run-never-named-s685`). The second pass of the 43 runs on #3558's head, the second ten's posts on #3557's; counts in handoff 686.
-
-**Course objectives, collected with every SLO read (Sam, 2026-11-02; `sam-data-collection-six-asks-2026-11-13`):** filed as `course_outcomes.kind` `objective`, one host at a time, never replacing an SLO row; the `objectives_reread_plan` has no step left since Golden West (S680). **PITFALL:** an objectives `.load` is written by hand. The paragraph as it stood: lessons, *Moved from the lane (S680 checkpoint)*.
-
-**The nightly SLO read (Sam, 2026-11-01):** step 11 of [`scheduled_sessions`](reference/scheduled_sessions.md), pages only, no cost; De Anza and College of Marin held. **Next:** the day's full read and preparation run, as `--next` names them; S684's outline steps are NEXT (6). **PITFALL** `p-outcome-load-without-standing-test-s681` stands (the standing test before `.load`). The paragraph as it stood, with S683's Chabot load: lessons, *Moved from the lane (S684 checkpoint)*.
-
-**The display apply runs live (#3190, #3204):** `step=display` writes the whole build the page carries, `display_college` one college; `d-display-first-run-one-college-s645`, `d-merge-is-publication-spot-check-first-s645` and `d-display-missing-threshold-s644` stand. The paragraph as it stood: lessons, *Moved from the lane (S680 checkpoint)*.
-
-**No display receipt is committed (S680, #3495):** a session commits the page alone; `step=display` stores the receipt in the private bucket `cpl-receipts` ([repo-size](reference/lanes/repo-size.md)). The paragraph as it stood: lessons, *Moved from the lane (S684 checkpoint)*.
-
-**Cheap piles (S680 to S685; Sam, relayed by COBIx on #3358: *"my priority is completion and will find the funding to make it happen"*).** Two lanes, never on one college; collect with gaps. S683's two applies (#3497's 99 named-gap rows, #3508's 14 A4 rows), `d-note-pair-off-s683` and S684's #3548 (2 rows, apply 44515993146): lessons, *Moved from the lane (S685 checkpoint)*. Undo newest first: #3548's rollback, then the 99-row plan's, then S680's. S685 labeled none.
-
-**Keep-the-better (#3553, `main` 95f85b1e):** a generic CourseLeaf heading (*REQUIREMENTS*, *Course List*, *Major Requirements*, *Requirements*) passes the own-program test only where the committed files show the page is the program's own (`page_is_own`: the address's last segment, or the capture's page title, h1 or `heading_named`, naming every title word and no other award); a live run equal to this run is `posted` and never dispatched again; a failing re-read whose live row holds this run goes to a person. Its replay of 412 decisions flipped 43, none the other way (**DECIDED** `d-keep-better-ship-verified-43-s685`; **FINDING** `f-generic-heading-cost-43-rereads-s685`).
-
-## S687 (SkyPipit, Sam's session of 2026-11-19, started by hand at 17:56Z): nine colleges posted, display 3361e3aa5b7d confirmed, rule D
-
-**What happened.** Sam started the session by hand with handoff 687's opening line and, at about 18:21Z, said *"keep
-rolling, merge them when green"*. The run posted and loaded S685's nine-college reread, landed it with S685's second
-pass and three outline index files as one wave (#3565), fixed the display apply's confirming read (#3564), ran display
-build `3361e3aa5b7d` to a confirmed state (#3567), ran the gap census, and taught the discontinued check to read rule
-D's marks from committed previews (#3569). Every PR merged on a green `test` after its thread was read.
-
-**The posts (#3565 `b63a4ba9`; `m-nine-colleges-posted-s687`).**
-- The live read went through the migrate runner: runs 44582982949 and 44583388525, read at 18:02:52Z, 1,555 live rows.
-  The second read added `gone` to `scripts/reread_live_compare_sql.py`, so `live_runs` is exact, and limited `chk` to
-  the batch.
-- Keep-the-better ran against `main` 6aed4111 with `--checked`; then `step=reread` with each run pinned, then
-  `step=load`. Every receipt's error is null.
-- Replaced / inserted: American River 104/18, Modesto Junior 13/2, Woodland Community 15/1, Cerritos 15/0, Imperial
-  Valley 7/0, Yuba 6/4, Southwestern 4/16, Grossmont 0/1, MiraCosta 0/3. Total 164 replaced, 45 inserted.
-- Cerritos 44984 went to `held_for_person`: its live run 37961137169 differs from `main`'s file, 38064252862. Cerritos
-  02202, a checked row, was restored.
-- No decision rested on a generic heading, so COBIx's `award_tail` list from #3557 is empty for this batch.
-- The wave also carried S685's second pass (the 43), the Feather River, Palomar and San Diego College of Continuing
-  Education outline index files and `queue.json` rows (no load), and S684's and S685's trigger-branch receipts and SQL,
-  only the files `main` lacked. Every `.apply` and `.run` trigger-file change was left out.
-- Left out on purpose (`d-feather-palomar-trials-off-wave-s687`): Feather River's full read
-  `kb/course_outcomes/frc/read_44535960153_p1of1.json` and both trials (44534888428, 44536105509). They fail the
-  standing test's check 4 (SLOs filed with no objectives; `f-outline-readers-need-header-fixes-s685`) and stay on their
-  `claude/slo-*` branches until the reader fixes land.
-- **Skyline skipped** (`d-skyline-skipped-compare-page-s687`): its paid read (`claude/reread-skyline-s687`, run
-  44586737073) filed only a capture-only preview; both candidates (30882 Mathematics, 45698 Engineering) point at
-  `_compare.new.programs.php`, a page that compares many programs, so nothing was posted. Copper Mountain is untouched;
-  its catalog address still answers 404.
-
-**The display (#3564 `bc0bf6ee`, #3567 `52d85a7e`).**
-- S685's confirming read, paged by limit and offset, answered HTTP 500. #3564 pages it by key, never by offset, as COBIx suspected
-  on #3556; a page with no new key stops the read, and the check is collation-independent (COBIx's second review on
-  #3564; `d-display-keyset-confirm-s687`).
-- Build `3361e3aa5b7d`, 18,380 statements, in four steps: one college, Imperial Valley (run 44600185371, 125 of 125,
-  confirmed); the gate (migrate run 44600769857); the whole build (run 44601141904: 18,255 written, 125 already current,
-  0 errors, state `confirmed` from its own read, in under 4 minutes); the closing count (migrate run 44602140198: 18,380
-  rows at the new build, 15 at `bef8ef819af7`, 16 at `0874a3a15f22`, none without a display or a build key). The first
-  full build to confirm on its own read (`m-display-3361e3aa5b7d-confirmed-s687`).
-- The census (run 44604899544, `main` `ab6bf57b`): 5,145 left against 5,203 (58 fewer); passing 15,044 of 20,282, up
-  from 14,986 (`m-census-5145-s687`).
-
-**Rule D (#3569 `3cbf7012`; `d-rule-d-from-committed-previews-s687`).**
-- `kb/_program_discontinued.py` gains `committed_not_printed`, which reads rule D's marks from the committed capture
-  files; only each college's newest read by run counts (COBIx's hunch on #3569). A capture-only preview with
-  `rule_d=1` is enough, so the three reads cost nothing.
-- College of the Desert (run 44596615241): 8 programs not printed in the 2026-2027 catalog: 31538 Reserve Police
-  Officer, 35969 Advanced First Aid and Safety CPR/AED, 36308 Family Child Care, 36768 and 36769 Business Information
-  Worker (Office Professional, Office Manager), 38979 Basic Peace Officer, 38980 Automotive Introductions, 40197
-  Emergency Medical Responder Intermediate. 20 others have no own page.
-- City College of San Francisco (run 44596600042): none in scope, because no CCSF record places none.
-- Santa Rosa Junior (run 44610950917): 2 read, both no own page, 0 not printed. Its preview is on `claude/rule-d-s687`
-  and not on `main`, which is harmless since it carries no mark.
-- `kb/status/program_discontinued.json`: 9 flagged, 8 not printed. The not-printed are candidates for a prior-year read
-  (`CAPTURE_PRIOR`), never flags.
-- **Follow-up** (COBIx's third point on #3569): a scoped newer read (`limit` or `force`) would drop an older read's marks
-  for programs it never read. Keep the older mark for control numbers the newer read did not cover.
-- **FINDING** `f-rule-d-cannot-reach-dropped-records-s687`: rule D reads only committed records that place none, so the
-  programs whose files S683's filing dropped while their live rows stayed are out of its reach (CCSF's 20 no-page
-  programs).
-
-**Lessons.**
-- **A confirming read pages by key** (`d-display-keyset-confirm-s687`). An offset page over a table being written can
-  skip or repeat rows and runs slow at depth; S685's offset-paged read answered 500 and left the record `unconfirmed`. Keyed,
-  the whole 18,380-row confirm finished inside the run.
-- **A test fake must follow the reader's paging** (`p-fake-table-ignores-keyset-s687`). A store test's fake table
-  answered on `offset=`; once the reader paged by key it returned the same page forever and `lints` hung 55 minutes
-  (run 44585137180, canceled).
-- **One pending run per concurrency group** (`p-read-dispatches-share-group-s687`). Three reads dispatched on one branch;
-  the middle one (Santa Rosa, run 44596607977) was canceled by the third. Space the dispatches out.
-- **A `sources_from` read needs its preview filed** (`p-sources-from-needs-filed-preview-s687`): the workflow refuses it
-  unless the branch files that run's preview.
-- **Commit straight after `git add`** (`p-stash-unstaged-commit-s687`). A `git stash` and `pop` between them left the
-  code half of #3569's first commit unstaged; COBIx caught it.
-- **The sandbox cannot download run artifacts** (`p-artifact-host-blocked-s687`): the blob host is blocked, so a
-  session reads a run through its committed receipt or its log.
-
-## Moved from the lane (S688 checkpoint, 2026-11-20)
-
-Verbatim from `docs/reference/lanes/program-requirements-harvest.md`, as the lane stood before the S688 checkpoint; the lane keeps a one-line pointer to each.
-
-**S687's posts at nine colleges (#3565 `b63a4ba9`; `m-nine-colleges-posted-s687`):** 164 rows replaced and 45 inserted, every receipt's error null; the live read through the migrate runner, keep-the-better with `--checked`, then `step=reread` with each run pinned and `step=load`. Cerritos 44984 went to `held_for_person`. Skyline skipped (**DECIDED** `d-skyline-skipped-compare-page-s687`: both candidates point at `_compare.new.programs.php`, a page comparing many programs). Feather River's full read and the Feather River and Palomar trials stay on their `claude/slo-*` branches (**DECIDED** `d-feather-palomar-trials-off-wave-s687`). Per college: lessons, *S687*.
-
-**Rule D (S687, #3569 `3cbf7012`; **DECIDED** `d-rule-d-from-committed-previews-s687`):** `kb/_program_discontinued.py` `committed_not_printed` reads rule D's marks from the committed capture files, each college's newest read by run only. Run at College of the Desert (8 not printed in the 2026-2027 catalog, 20 with no own page), City College of San Francisco (none in scope) and Santa Rosa Junior (2, no own page); `kb/status/program_discontinued.json` holds 9 flagged and 8 not printed, and a not-printed program is a candidate for a prior-year read (`CAPTURE_PRIOR`), never a flag. **FINDING** `f-rule-d-cannot-reach-dropped-records-s687`: rule D reads only committed records that place none, so programs whose files S683's filing dropped while their live rows stayed (CCSF's 20 no-page programs) are out of its reach. Runs and control numbers: lessons, *S687*.
-
-## S688 (SkyLinnet, Sam's session of 2026-11-19, started 23:40Z with handoff 688's opening line): the merge queue, five merged
-
-**What happened.** Sam pasted handoff 688's opening line and gave no other direction. The run applied S687's 15 memory
-rows, worked the merge queue to five squash merges on a green `test` (each thread read first), and merged a sixth at
-sign-off (#3577, the Library check that binds the url it checked). The COBIx watcher ran all session, re-armed every 30 minutes.
-
-**The memory apply (`m-s687-rows-applied-s688`).** supabase-migrate run 44639823760 from the trigger branch
-`claude/s688-memory-apply` (never merges) applied `kb/migrations/2026-11-19_s687_cpl_memory_rows.sql`; all 15 slugs
-returned. The receipt, `kb/migrations/receipts/migration_s687_cpl_memory_rows_44639823760.json`, is on that branch.
-
-**The merges (`m-s688-five-merged`).**
-- #3500 `31e039c4`: Cosumnes River's four local degrees pinned to their heading's page (04602 and 04614 stay as filed).
-  The paid read still waits on the named-programs-only `only` input #3500's body describes.
-- #3529 `3e3bb837`: flagged cards leave the confidence scorer and its apply. COBIx's point 4 there: after the update,
-  take `--expect` from the dry run's own count, never the 2859 the PR body printed.
-- #3578 `f6f67759`: `first-light-art.yml` puts back a report whose only change is `_generated`; its own run on the
-  branch made no commit-back.
-- #3537 `258a61d4`: the Mt. San Antonio SLO page reader. COBIx (comment 7026617916): an unfiled page in
-  `mtsac_recall.json` raised instead of counting; it now counts wrong as "page not filed" (test 9/9; COBIx verified in
-  7026674586). Next: a 12-page trial, counted by eye into `mtsac_recall.json`.
-- #3579 `ef16178c`: rule D's `committed_not_printed` walks a college's reads newest first, and an older read's mark
-  stands for control numbers no newer scoped read covered (`read_covers`); a read filed before fingerprints counts as
-  the whole college. `program_discontinued_test` 26/26; the status file is unchanged (9 flagged, 8 not printed).
-- Order (**DECIDED** `d-oldest-finished-among-finished-s688`): "the oldest finished first" was read as the oldest among
-  the PRs that are finished, so #3578 and #3579 merged while an older PR still waited on its tests.
-
-**The bot commits (`p-bot-commit-leaves-head-untested-s688`, `d-revert-stamp-commit-for-test-s688`).** On #3500 and
-#3529, the update from `main` carried #3571's `first_light.js`, so `first-light-art.yml` ran on the branch and committed
-a timestamp-only `tools/first_light_verify.json` with the skip tag onto the PR head. A commit pushed with the built-in
-token or the skip tag starts no workflow, so the head had no `test` run and the doctrine-level gate could not be met.
-Each was reverted by a human push that restored the exact tree `test` had passed on. #3578 removes the cause: the
-workflow puts back a report whose only change is its own stamp.
-
-**The skip tag in a human message (`p-skip-tag-in-commit-message-s688`).** The first revert message on #3500 quoted the
-bot commit's subject, tag and all, and GitHub skipped that push too: it honors the tag anywhere in the head commit's
-message, quoted or not. The commit was reworded and pushed with `--force-with-lease`. In a commit message, call it the
-skip tag.
-
-**The stash slip, again (`p-stash-unstaged-commit-s687`, a repeat).** On #3579 the code file was staged, then stashed
-and popped to prove the test fails without it; the pop restored it unstaged, and commit 49bdf050 carried only the test
-and the lane. The stop hook caught it and aeb4d529 added the code. S687 wrote this rule a day earlier. The rule as it
-reads is right; the failure is doing the stash at all once a file is staged. Prove a test fails without the fix in a
-scratch worktree or with `git show HEAD:<file>` into a scratch path, never by stashing the working tree after `git add`.
-
-**At sign-off.** #3577 merged at `45af74fd` (squash, `test` green on ec29c995; COBIx's #3572 comment 7023899407: after
-a url move, a Public press relisted on the old url's pass). SQL proof 69/69, `library_publishing_model` 60/60,
-`public_library` 138/138. Its two migrations were applying from the trigger branch `claude/s688-library-gate-apply`
-(never merges): `library_check_binds_url` (commit f3354f83), then `s688_library_memory_rows` (commit ea5bd537, row
-`d-library-check-binds-url-s688`). Its lane edit landed with the PR.
-
-**Lessons.**
-- **A commit-back that skips CI moves a PR head past its checked commit.** With `test` as a doctrine-level gate, that
-  blocks the merge rather than slipping past it, which is the gate working. Fix the producer so a no-change report makes
-  no commit; until then, revert to the tested tree with a human push.
-- **Never quote the skip tag in a human commit message.** Describe it in words.
-- **An update from `main` can start a branch-scoped workflow.** A PR that touches nothing of First Light's still runs
-  `first-light-art.yml` when the merge brings in a changed watched path; read the head's commits after every update.
+4 sections, verbatim: [`program_requirements_harvest_lessons_archive_8.md`](program_requirements_harvest_lessons_archive_8.md): *Moved from the lane (S687 checkpoint)*, *S687*, *(S688 checkpoint)* and *S688*.
 
 ## Moved from the lane (S689 checkpoint, 2026-11-20)
 
@@ -868,3 +708,101 @@ checks pass; a vault note goes to Sam only when it changes or adds one of his ru
 - **What worked:** a free pricing run with `only` named exactly the 14 before any money moved; a second reader on every
   change to shared reader code (#3641, #3642, #3644, #3649); one write per table at a time; COBIx's relay acted on
   inside the run.
+
+## Moved from the lane (S703 checkpoint, 2026-11-22)
+
+Verbatim from `docs/reference/lanes/program-requirements-harvest.md`, as the lane stood before the S703 checkpoint (relative links re-pointed to this folder); the lane keeps the current text.
+
+**Display build `e35ae1722a56` is live, confirmed by its closing count** (S691, #3635 `ca45115f`; it replaced `ac082e9d96dc`; 18,609 rows at the build; `m-display-build-live-s691`; its four runs: lessons, *S691*). 32 rows stay at older builds, the same 32 as S690. The confirming read pages by key, never by offset (**DECIDED** `d-display-keyset-confirm-s687`). The gap census of 2026-11-21 (run 44892712171, `main` c1700e76): 4,875 left of 20,282, passing 15,314, from 4,982 and 15,207 (`m-census-4875-s691`). **S697's build `9d9244ee7496`** (#3650, in flight at the checkpoint; held until the named gaps' apply, **DECIDED** `d-display-held-for-gaps-apply-s697`): Santa Monica first 44925708471 (230 of 230), the gate read 16:42:55Z (only Santa Monica's 230 moved), then the whole build.
+
+**S697's posts** (`m-collection-s697`; #3640 `00e441ce`, #3645 `c85bb975`; #3649 in flight): 7 new records (Cosumnes River), 119 replaced by a better reread (Orange Coast 109, Hartnell 2, Imperial Valley 2, Oxnard 1, Cosumnes River 4, Glendale 1), 20 of them newly passing, and 16 collected with a named gap; $1.16 of extraction. Irvine Valley's outlines: 1,732 rows (#3642 `0695b665`, load 44925768837, `m-ivc-outlines-loaded-s697`). Run ids: lessons, *S697*.
+
+**Decisions of S697** (the conductor's, each reversible; rows in `cpl_memory`): **DECIDED** `d-orange-coast-main-run-stands-s697` (`main`'s 39726645292 passes or ties on all 109 rows), `d-named-gaps-compact-apply-s697` (each plan's rollback applies unchanged), `d-cerritos-20504-waits-on-44984-s697`, `d-load-skips-places-none-s697`, `d-outline-load-strips-letterless-lines-s697` (at the load, so no recall gate stales), `d-display-held-for-gaps-apply-s697`, `d-vault-note-merged-under-ruling-s697` and `d-ivc-load-receipt-rides-checkpoint-s697`.
+
+**Rule D (S687, #3569 `3cbf7012`; S688, #3579 `ef16178c`; `d-rule-d-from-committed-previews-s687`, `f-rule-d-cannot-reach-dropped-records-s687`):** `kb/status/program_discontinued.json` holds 16 flagged, each printed only in the prior year's catalog (City College of San Francisco's 7 among them), and 28 not printed (City College of San Francisco 20, College of the Desert 8); a not-printed program is a candidate for a prior-year read, never a flag. #3592 opens the prior-year read (`CAPTURE_PRIOR`) on a PDF catalog. The paragraph as it stood: lessons, *Moved from the lane (S691 checkpoint)*.
+
+**NEXT, in order** (Sam's work order of Nov 20 ranks collection by the M-ID cards each fix unblocks, `r-collect-for-mids-work-order-sam-2026-11-20`: outline fills first, program records second, **DECIDED** `d-mid-ranking-orders-lane-1-s690`; every block is listed until the Commons shows it, `r-a-block-is-a-block-sam-2026-11-21`): (0) Standing: never force a re-extraction blind (`d-rccd-pilot-no-blind-force-s671`); read a PR's whole thread before its merge or any apply of a file it carries (`p-apply-before-thread-read-s685`); revert a timestamp-only bot commit on a PR head so `test` runs (`d-revert-stamp-commit-for-test-s688`), and on a bot receipt head push a real change, never an empty commit (`p-bot-receipt-head-runs-no-test-s697`); build a generated file with the runner's Python, 3.12 ([`methodology-a-generated-file-is-built-with-the-runners-python`](kb-notes/methodology-a-generated-file-is-built-with-the-runners-python.md)); after a records change run `kb/_build_commons_status.py`, `kb/_build_commons_data_status.py` and `tests/commons_data_status_build_test.py`, which `check_generated.sh` does not (`p-check-generated-misses-commons-data-s697`, `p-commons-files-conflict-between-prs-s697`). (1) **Outline readers** (step 11, [`scheduled_sessions`](reference/scheduled_sessions.md)), by the M-ID cards each improves (`f-outline-ranking-s691`): Saddleback, Rio Hondo and Irvine Valley are loaded. Next San Diego College of Continuing Education's index search (191 cards), then Peralta (one code holds up to four colleges' records). City College of San Francisco's recall gate on `main` names 8c95dee8 where its trial read d5cef493 (`f-ccsf-outline-gate-stale-on-main-s691`): refresh it before the college's next read. Then the standing test in `course-outcomes-load.yml` and the staff-names question (`q-trial-pages-file-staff-names-s689`). The 12 still-taught courses' hand-ins carry no outline text (`f-still-taught-hand-ins-no-outline-text-s691`). **Golden West's 476 header rows** (`f-golden-west-476-header-rows-s690`; Coastline ANTH G190 has the same shape): the before-values file is filed (checksum cb441aa1; plan on `claude/s690-goldenwest-header` 0995d8b5; `d-golden-west-before-values-filed-s691`); the guarded correction waits on a plain session's review. (2) **The next night's one follow-up** (#3644's second reader, two rounds reached; `f-followup-four-left-s697`): a test for the own-run filter in `kb/_program_reread_keep_better.py` (about L631-633; a None run stamp at `kb/_program_requirements_college.py` about L7815); `named_fragment` reads any `=` as viewer parameters (`#/program?id=1` against `id=2`, `#nameddest=`); `EDITION_TOKEN` still joins `catalog-v24` and `-v25`; a capture-only prior read with no PDF page now ends red (College of the Desert's preview 44711759115). (3) **City College of San Francisco:** 20 not printed stay unnamed (`d-ccsf-20-not-named-s691`). Its Cal-GETC step for 32080, 33652 and 46300: the permission check refused the `--calgetc-apply` dry run twice; not routed around, a plain session's, and a block on the list. College of the Desert's 8 keep their gap (`f-desert-prior-catalog-behind-robots-s689`). (4) **Program records' open levers:** Clovis's 19 (`f-clovis-19-left-s697`): Business 33432, 33433, 33487, 33491 and Social Science 33492 start or are cut at a page break (a pin and a paid reread); 14 read pairs or "any course from List A" wrongly. Glendale (`f-glendale-28-left-s697`): 11 with no record file need a paid extraction (40846, 40847, 21302, 38973, 24377, 24327, 37070, 36599, 36601, 11155, 21303); of 17 left, 8 language records take a list "If 20 units have not been reached" (a scorer kind), 18639 prints EIGHTEEN, 32607, 36416 and 12503 read pairs wrongly, 44488, 45068, 18640 and 30813 fail coverage. Cosumnes River's 20147, 20193 and 20227 need their own page, 33053 a page-break pin. Cerritos 20504 waits on 44984, held for a person (`d-cerritos-20504-waits-on-44984-s697`). Butte's address compare landed (#3641; 163 of its records now read unchanged), so its read can run. San Joaquin Delta's apprenticeship programs (`f-sjdelta-apprenticeship-coarse-net-s691`): measure free first. Copper Mountain's catalog moved (`f-copper-mountain-catalog-moved-s689`). S691's other leftovers (College of the Canyons' 9 with no page, the colleges with no own page, the reread gate's three failures, S690's pages): lessons, *Moved from the lane (S697 checkpoint)*. (5) **Cheap piles** (free rule work): the named gaps `total_not_printed` (#3640, 6) and `total_differs` (#3649, 10; self-recall 1,843 right, 0 wrong; `f-total-differs-gap-s697`) are applied. Lever 2 (the general education pattern's units, 192): free reads filed at five colleges (`kb/college_reads/*_ge_units_s691.json`). The noncredit hours total (100), Santa Monica's lists past their figure and Lake Tahoe's quarter units: lessons, *S691*. Santa Rosa Junior's 12 with no own page and 13898 stay as filed; 37014 is held. Los Medanos stays parked. (6) **The printed-course files** (`r-plain-page-read-blocked-catalogs-sam-2026-11-20`, `m-printed-catalog-courses-s690`): 17,341 printed courses at 16 colleges in `kb/hand_filed_catalogs/courses/<slug>.json.gz` with `index.json` (**DECIDED** `d-course-rows-gzipped-s690`), read on the runner for $0; no committed pipeline yet fills an M-ID card's missing description from them. **Sky can read 2026-27 HTML:** North Orange Continuing Education, Southwestern, Cerritos, Long Beach City, Monterey Peninsula. **Sky can read 2026-27 catalog PDF:** East Los Angeles, Los Angeles City, Los Angeles Harbor, Los Angeles Mission, Los Angeles Southwest, Los Angeles Trade-Technical, Los Angeles Valley, Pierce, West Los Angeles, Clovis. The rest of the item: lessons, *Moved from the lane (S697 checkpoint)*. (7) **The display and the census:** #3650's build, then `harvest-gap-census.yml` on `main` against 4,875; Glendale 02570 and the ten `total_differs` records wait for the build after it. (8) Lassen: the structured-fields migration's step 1 ([`reference/roep_display_structured_fields_design`](reference/roep_display_structured_fields_design.md), #3296); 31297, 35106 and 41912 held. (9) #3293, parked as issue #3525 (`d-passing-dry-run-held-for-cobix-s651`): a plain session decides from the issue. (10) #3502's reader changes, cheapest first. (11) Ruling 3's self-recall run (`CPL_GE_AREA_SLOT_FILL=1`), then the default on. (12) The `NCL_EXTRACT` switch after the Commons sidecars hold `no_state_list` records back; then #3414's refusal probe. (13) The teach-out rule (#3491), after a runner capture. (14) Los Medanos's and Los Angeles Valley's program rules, with a person. (15) Confirm the harvest card shows #3465's `spent_usd`. **For a person:** College of the Canyons 43388 and West Los Angeles 46261 (S691); Napa Valley 19126, 31158 and 36528 (`napa_valley/held_for_person/`, S690); Los Angeles Harbor 44947; Cerritos 44984; West Los Angeles 38677; Los Angeles Mission 44849 (no live row); Los Angeles City 32832 (live run 39006380342, `main` files 43212072618); Ventura 45355 and Shasta 18153. Older lists: lessons, S653, S666, *Moved from the lane (S684 checkpoint)* to *(S697 checkpoint)*.
+
+## S703 (SkyDovekie, the CPL Queue routine's collection run of 2026-11-22, from about 11:03Z): four named gaps, San Diego College of Continuing Education's outlines, Peralta's read
+
+**What happened.** The 10:12Z firing stood down: S701 (Sam's plain session) was live and its open PR named no
+side-session scope. S701 signed off at 11:00Z. At about 11:03Z Sam said, live: *"/coord and keep going. I will be
+starting another session but don't let that stop the queue."* The run declared on draft #3674 at 11:08Z with the college
+split, beside Sam's plain session S702 (#3673; one writer per file: S702 kept the Subjects and Commons page files, this
+run the harvest files). Two lanes, never on one college: lane 1 `outlines`, `pins` and `glendale`, then `levers`,
+`peralta` and `followup`; lane 2 `piles`, then `piles2`; worker `display` after the merges. The split changes are in
+handoff 704. Merged, each on a green `test` after its thread was read: #3676 `d8b5e4ee`, #3678 `5dbc743d`, #3679
+`94406494`, #3677 `50e4bc1d`, #3681 `40b9a2f6`, #3685 `be37ec75`. In flight at the checkpoint: #3686 (`levers`), #3675
+(`glendale`), #3683 (`followup`), #3684 (`peralta`) and the display build.
+
+**The numbers.**
+- **Named gaps, each a guarded UPDATE through `supabase-migrate.yml`** (Sam, 2026-11-17: collect with gaps noted):
+  - #3678: `ge_units_not_read`, 131 rows at 29 colleges (migrate 45019924640, returned 131, none skipped). The second
+    read held 21 that print a general education figure, which the free `ge_units_steps` lever passes
+    (`d-ge-gap-only-where-no-figure-s703`).
+  - #3679: `hours_total_not_read` 32, `hours_total_differs` 11, `hours_within_printed_range` 7, 50 rows at 11 colleges
+    (migrate 45023631381). The second read held 19: eight a reread or reconcile wording passes free, ten read without
+    the program section, and Reedley 42457 as a rounding question (`d-hours-gaps-hold-misreads-s703`).
+  - #3681: Clovis 33433 `total_not_printed` and 33491 `total_differs` under the existing rules (migrate 45024254789, 2
+    of 2; `d-clovis-two-gaps-existing-rules-s703`).
+  - #3685: `lists_past_their_figure`, 17 rows at 9 colleges (migrate 45030559364). The second read held 12 more, 29 in
+    all: notes that name the course or list making up the difference (`d-lists-gap-holds-claim-false-s703`) and sums
+    inside a printed range (`d-lists-gap-holds-range-sums-s703`). Santa Rosa Junior's 27 are cut-off or incomplete
+    reads, not this shape.
+- **Program records.** #3681: Cosumnes River 20147, 20193, 20227 and 33053 and Clovis 33433, 33487 and 33491 pinned to
+  their own pages (free reads 45016537664 and 45017083685), paid reads 45018951701 ($0.36) and 45018954283 ($0.23),
+  rereads 45021161151 and 45022017976, load 45022641854: 3 new, 4 replaced, 5 passing. Clovis Management 33487 is the
+  standalone degree (`d-clovis-management-is-the-standalone-degree-s703`); 33432 and 33492 waited on a `through` pin
+  field (`d-clovis-through-pin-to-followup-s703`). In flight: #3686, Ohlone 2 (load 45026280729, $0.14) and San
+  Joaquin Delta 6 (load 45029460149, $0.36, through per-college prefix aliases IND, ELE and MEC with an A- prefix,
+  `d-sjdelta-prefix-alias-stopgap-s703`), and 141 filed as named gaps in `no_record_s703.json` at Ohlone, San Joaquin
+  Delta, Mt. San Antonio, Santa Barbara City and Orange Coast (`d-levers-paid-under-5-delegated-s703`: $5 a college
+  per run after free pricing). #3675: Glendale's 11 with no record file filed as named gaps
+  (`d-glendale-own-pages-filed-as-gaps-s703`), 38973's OBT re-prefixed as STV by a per-college alias
+  (`d-glendale-obt-stv-prefix-alias-s703`), Butte 39882 (page moved; $0.05, load 45026794241, 1 inserted, live and
+  passing). #3683: Clovis 33492 passes ($0.15, read 45033577888; reread 45034008640, load 45034109582); 33432 reads at
+  coverage 0.933 with no total printed. Extraction tonight: $1.29 before Glendale 38973's fresh read 45030485543.
+- **Outlines.** #3676: a recall count binds to its own trial's parser. City College of San Francisco's gate refreshed by
+  free trial 45018845370, 12 of 12 on parser 2629a09a (`d-ccsf-gate-refresh-by-free-trial-s703`). San Diego College of
+  Continuing Education: index 45016944119 (199 of 228 codes hold an outline), trial 45017581874 (12 of 12), full read
+  45018663453 (199 pages, all 200), load 45021318423 on `claude/s703-sdcce-load`: 198 objective rows, 1,860 objectives,
+  198 courses, confirmed live (`d-sdcce-load-objectives-only-s703`; its 6 SLO rows read field labels). HMID 535 keeps
+  its 11 Legacy Data objectives, its only copy (`d-legacy-objectives-kept-when-only-copy-s703`). The load's receipt
+  rides the checkpoint #3674; `kb/course_outcomes/.load` there stays at `main`'s value, so no push re-runs it.
+- **Peralta** (#3684): index 45025388165 (2,201 codes, 376 shared by two to four colleges); per-college rows, a
+  section parser, the page's printed college, an outcomes-only host (`d-lan-outcomes-only-host-s703`) and a per-host
+  fingerprint, lan 27934ff7 and the others 2629a09a (`d-lan-parse-parts-in-lan-fingerprint-only-s703`). Trial
+  45030224450 counted 11 of 12; full read 45031089800 (1,869 pages in 5 parts) queued 14:07Z, part 1 filed 14:38Z.
+
+**Stopped or carried over.** Peralta's load is the next session's: a dry run, then `.load` with `host=lan` and
+`slugs=laney,merritt,college_of_alameda,berkeley_city`. The next follow-up's minors and the blocks: handoff 704 and the
+lane's NEXT (2). The display build and the census against 4,839 ran after the merges.
+
+**Lessons.**
+- **A self-recall whose held answer comes from the rule's own fields measures nothing**
+  (`p-self-recall-reads-rule-fields-s703`). #3678's and #3679's self-recalls read 1,685 and 3,297 right with 0 wrong,
+  and the second reader still found records the gap mislabeled, 21 on #3678 and 18 on #3679. The fix is a claim check
+  on the record's own notes, boundary readings (the sum at each end of a printed range) and a precision count against
+  hand-held records. #3685 began with all three; its second reader still held 12 more, and its precision count flags 28 of
+  the 29 hand-held. Note:
+  [`methodology-a-test-must-not-take-its-rule-as-the-truth`](kb-notes/methodology-a-test-must-not-take-its-rule-as-the-truth.md),
+  *A named gap's self-recall*.
+- **A `sources_from` paid read refuses a pinned program refused before** (`p-sources-from-refuses-pinned-refused-s703`;
+  Ohlone 45025818053). Read fresh. Glendale 38973's staged read met the same refusal
+  (`p-sources-from-repays-refused-pages-s689`).
+- **A push whose head is a merge commit starts no page read** (`p-merge-head-push-starts-no-read-s703`). Dispatch by
+  plan name.
+- **A reader change that moves the global parser fingerprint stales every host's gate**
+  (`p-global-fingerprint-stales-every-gate-s703`). Make the fingerprint per host.
+- **Peralta's 5-page shape trial filed pages that print an Originator's name**, because `lan.curriqunet.com` was not
+  outcomes-only (`p-lan-not-outcomes-only-filed-names-s703`). One fresh commit and a force-with-lease on the `claude/*`
+  branch scrubbed the branch; the 30-day artifact `course-outcomes-45026998155-part1` still holds the pages, and the old
+  commits stay fetchable by sha until GitHub prunes them. Deleting the artifact is a person's. No name goes in any
+  document.
+- **Records PRs merge one at a time** (`p-records-prs-merge-one-at-a-time-s703`): each rebuilds
+  `commons_data.json`, so each merge sends the next back to merge `main`, a CI cycle of about 25 minutes.
+- **A `test` check appears only after `lints` finishes** (`p-test-check-after-lints-s703`): a head with no `test` yet is
+  pending, never green.
+- **What worked:** a second reader on every named gap before its apply; free pricing with `only` before each paid read
+  ($1.29 of extraction in all); a fresh free trial to refresh a stale gate; per-college prefix aliases as a
+  stopgap; the run went on beside Sam's plain session with one writer per file.

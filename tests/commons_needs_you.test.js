@@ -191,8 +191,13 @@ const count = (hay, needle) => hay.split(needle).length - 1;
   await ruledRec.M.boot(); await settle();
   /* Newest first: Sam's answer on the noncredit list (2026-11-22) sits above the fixtured wording ruling (2026-11-20). */
   const doneLis = Array.from(ruledRec.d.querySelectorAll("#cmn-rec-done li"));
-  check("(A) and the record lists it as decided, newest first", doneLis.length >= 2 && doneLis[1].getAttribute("data-todo") === WORDING
-    && /noncredit subject title list/i.test(txt(doneLis[0])));
+  /* S707: Sam's answer on the 192 Cerritos courses (2026-11-22) is a second Subjects answer of that day, so the
+     wording ruling's place is found, never pinned: every answer of 2026-11-22 sits above it. */
+  const wi = doneLis.findIndex(function (li) { return li.getAttribute("data-todo") === WORDING; });
+  const above = doneLis.slice(0, Math.max(wi, 0)).map(txt);
+  check("(A) and the record lists it as decided, newest first", wi >= 1
+    && above.some(function (t) { return /noncredit subject title list/i.test(t); })
+    && above.some(function (t) { return /192 Cerritos courses/i.test(t); }), doneLis.map(txt).join(" | ").slice(0, 400));
 
   // ── COBIx's review of #3570, item 1: a call's address is checked before it becomes a link ──
   const crBad = runLog("cr");
