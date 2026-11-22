@@ -1,0 +1,24 @@
+{
+ "_readme": "S700, 2026-11-22, #3655 (Sam's order relayed by COBIx, comment 7069586791: the large noncredit programs' catalogs are filed before any noncredit subject title is recommended). A probe: the page's opening lines and its size, to plan the filing read inside the 5,000 lines a log reads back. No model call. Santa Ana College's 2026-27 catalog PDF: the first pages of its School of Continuing Education section (p. 401 on).",
+ "college": "Santa Ana College",
+ "questions": {
+  "courses": "The School of Continuing Education section: how its courses are printed."
+ },
+ "keywords": [
+  "\\w"
+ ],
+ "pdf_page_cap": 6,
+ "pdf_span": [
+  401,
+  406
+ ],
+ "pdf_unfolded": true,
+ "pages": [
+  {
+   "url": "https://www.sac.edu/admissions/catalogarchive/SAC_2026-27_Catalog_11_03_26.pdf",
+   "answers": [
+    "courses"
+   ]
+  }
+ ]
+}
