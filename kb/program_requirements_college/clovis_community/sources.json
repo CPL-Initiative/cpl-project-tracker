@@ -229,7 +229,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.818,
+  "coverage": 0.909,
   "codes_found": [
    "ACCTG31",
    "ACCTG40",
@@ -244,6 +244,8 @@
    "BA47",
    "BA5",
    "BA52",
+   "ECONC2001",
+   "ECONC2002",
    "IS15",
    "IS40A",
    "MKTG10",
@@ -251,23 +253,24 @@
    "MKTG12"
   ],
   "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=107",
-   "title": "",
-   "h1": "",
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=106",
+   "title": "BUSINESS ADMINISTRATION",
+   "h1": "BUSINESS ADMINISTRATION",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    106,
     107,
     108,
-    109,
-    110
+    109
    ],
    "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "dfc2eea6d6f65e08"
+   "heading_named": true,
+   "pinned": true,
+   "text_sha": "b381161cb748f47f"
   },
   "listed": 22,
-  "text_chars": 12004
+  "text_chars": 10128
  },
  {
   "control_number": "33434",
@@ -1103,20 +1106,22 @@
    "ACCTG40"
   ],
   "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=107",
-   "title": "",
-   "h1": "",
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=109",
+   "title": "MANAGEMENT",
+   "h1": "MANAGEMENT",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    107
+    109,
+    110
    ],
    "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "b8717e7e6e5c34e5"
+   "heading_named": true,
+   "pinned": true,
+   "text_sha": "09ceef0af9ddc321"
   },
   "listed": 1,
-  "text_chars": 2505
+  "text_chars": 6022
  },
  {
   "control_number": "33488",
@@ -1222,20 +1227,21 @@
    "ACCTG40"
   ],
   "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=107",
-   "title": "",
-   "h1": "",
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=110",
+   "title": "SMALL BUSINESS MANAGEMENT",
+   "h1": "SMALL BUSINESS MANAGEMENT",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    107
+    110
    ],
    "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "b8717e7e6e5c34e5"
+   "heading_named": true,
+   "pinned": true,
+   "text_sha": "bdcb32f6155d887d"
   },
   "listed": 1,
-  "text_chars": 2505
+  "text_chars": 3307
  },
  {
   "control_number": "33492",
