@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-21T17:09:25Z",
+  "written_at": "2026-11-22T15:13:06Z",
   "session": 703,
   "moniker": "SkyDovekie",
   "run": "the CPL Queue routine",
@@ -892,6 +892,12 @@
       "active": 20282,
       "complete": 15334,
       "colleges": 118
+    },
+    {
+      "day": "2026-11-22",
+      "active": 20282,
+      "complete": 15349,
+      "colleges": 118
     }
   ],
   "next_run": {
@@ -900,8 +906,8 @@
     "at": "2026-11-20T06:12:00Z"
   },
   "harvest": {
-    "day": "2026-11-21",
-    "gaps": 3405,
+    "day": "2026-11-22",
+    "gaps": 3407,
     "parts": {
       "links": {
         "catalog": [
@@ -922,7 +928,7 @@
         20282
       ],
       "coci": [
-        17133,
+        17145,
         20282
       ],
       "outcomes": {
@@ -931,15 +937,14 @@
           88736
         ],
         "plo": [
-          17133,
+          17145,
           20282
         ]
       },
       "careers": [
-        16155,
+        16167,
         20282
       ]
     }
-  },
-  "headline_tbd": "HEADLINE_TBD: the conductor runs scripts/queue_status.py --stamp --next-run and --headline, then --harvest, and deletes this key."
+  }
 }

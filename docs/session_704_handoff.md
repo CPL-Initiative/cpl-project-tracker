@@ -99,7 +99,15 @@ tag; second reader: merge, three minors fixed; Clovis 33492 passes at $0.15, rea
 load 45034109582; 33432 at coverage 0.933 with no total); #3684 (Peralta: index 45025388165, 2,201 codes, 376 shared;
 trial 45030224450, 11 of 12; full read 45031089800, 1,869 pages in 5 parts, queued 14:07Z, part 1 filed 14:38Z).
 
-**The display build and the census:** DISPLAY_CENSUS_TBD
+**The display build and the census:** deferred to you. `main`'s `test` broke at the daily update `cbcfeee7` (rebuilt on
+`be37ec75`): `tests/subject_decisions_noncredit_test.py` check (3), "nothing else moves", reports
+`[["los_angeles_pierce", "OLD"]]` after the day's synced subject saves. It fails on `main` and on every PR that takes
+`main`, so #3686, #3675 and #3683 could not merge, and the display build (worker `display`'s plan: gate college Cosumnes
+River, 192 programs, then the whole build, about 18,629; `program-requirements-college.yml` `step=display`) waits for
+them. The Subjects files are S705 SkyTystie's (#3687); S703 reported it there at 15:11Z (comment 7081112623) and left
+the fix to that writer. The census `harvest-gap-census.yml` was dispatched on `main` at 15:14Z; read its count at your
+start. The headline at 15:13Z: 15,349 of 20,282 active programs pass the machine checks, at 118 colleges (15,334 at the
+brief).
 
 Read in order: this file; the NEXT of [`program-requirements-harvest`](reference/lanes/program-requirements-harvest.md);
 `docs/program_requirements_harvest_lessons.md`, *S703*; `docs/reference/conductor_mode.md`, *What went wrong in S703*;
@@ -204,10 +212,12 @@ row; a rollback that undoes over 1% of a day's rows; the $10k checkpoint.
 
 ## Let go
 
-LET_GO_TBD
+No PR subscription was taken (the run gated each PR by reads), no check-in is scheduled, and no artifact is watched.
+The COBIx watcher stopped at its two-hour limit at 13:08Z; single polls to 15:03Z found nothing new. Workers end with
+the session; their branches are pushed. The main checkout was left detached.
 
-SPEND_LINE_TBD
+Spend: $232.00 (estimate from token counts at list prices; Opus 5.5 $226.50, Haiku 5.5 $5.50); collection $215.00, infrastructure $17.00; 2026-11-22T10:12Z to 2026-11-22T15:25Z. The paid extraction runs' own cost, $1.29 (Cosumnes River $0.36, Clovis $0.23 and $0.15, Butte $0.05, Ohlone $0.14, San Joaquin Delta $0.36), is listed apart.
 
 Opening line: *Greetings, you are SkyKittiwake (Session 704), see SkyDovekie's (S703) handoff — `docs/session_704_handoff.md` — let's keep rolling with our queue.*
 
-FINAL_LINE_TBD
+This session's cost: about $232 at list prices (no `get_session` in this session; estimated from the session's and its workers' token counts) plus $1.29 of paid reads. Records collected: 218 (12 new, 6 replaced, 200 collected with a named gap), and 152 more programs filed as no-record gaps. Outline rows added: 198. Substantive PRs merged: 6 (#3676, #3677, #3678, #3679, #3681, #3685).
