@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 129,
  "with_closed_list": 121,
- "started": "2026-11-22T11:43:38Z",
+ "started": "2026-11-22T14:32:47Z",
  "pdf": {
   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf",
   "access": "ok",
@@ -28,6 +28,11 @@
    "read": "heading"
   },
   "pinned": {
+   "33432": {
+    "page": 106,
+    "bound": true,
+    "through": 107
+   },
    "33433": {
     "page": 106,
     "bound": true
@@ -39,6 +44,11 @@
    "33491": {
     "page": 110,
     "bound": true
+   },
+   "33492": {
+    "page": 148,
+    "bound": true,
+    "through": 149
    }
   },
   "picks": [
@@ -110,17 +120,16 @@
    {
     "control_number": "33432",
     "pages": [
-     107,
-     108,
-     109,
-     110
+     106,
+     107
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.8,
-    "opens": "[page 107] 102 Select one course: Course # Course Name Units BA 19 Work Experience Education, Busine ss (Formerly Business Administration 19V) 1 BA 27 Students in Free Enterprise SIFE/C"
+    "coverage": 0.933,
+    "opens": "[page 106] BUSINESS ADMINISTRATION ASSOCIATE IN SCIENCE DEGREE Catalog Description A student who completes this degree will be prepared to assume responsibility for an entry or mid-level managerial position in an ",
+    "pinned": true
    },
    {
     "control_number": "33433",
@@ -445,14 +454,16 @@
    {
     "control_number": "33492",
     "pages": [
-     148
+     148,
+     149
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 148] 143 Select one sequence: Course # Course Name Units PHYS 2A AND General Physics I 4 PHYS 2B OR General Physics II 4 PHYS 4A AND Physics for Scientists and Engineers I (Formerly Physics f"
+    "opens": "[page 148] SOCIAL SCIENCE (Major #C.7410.AA) ASSOCIATE IN ARTS DEGREE Catalog Description Students who complete the requirements for the Social Science Associate Degree will acquire a knowledge of human behavior, ",
+    "pinned": true
    },
    {
     "control_number": "33493",
@@ -1489,7 +1500,7 @@
  "loads": 1,
  "pages_listed": 1,
  "pages_answered": 1,
- "seconds": 80.8,
+ "seconds": 50.2,
  "found": 107,
  "by_method": {
   "no_closed_list": 8,
@@ -1502,6 +1513,7 @@
    "33430"
   ],
   "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=106": [
+   "33432",
    "33433",
    "45319"
   ],
@@ -1774,38 +1786,18 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/clovis_community",
-  "kept": 85,
+  "kept": 87,
   "kept_moved": 0,
-  "programs": 3,
+  "programs": 1,
   "list": [
    {
-    "control_number": "33433",
-    "title": "Business Administration: General Business",
+    "control_number": "33432",
+    "title": "Business Administration, Entrepreneur",
     "award": "A.S. Degree",
     "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=106",
-    "coverage": 0.909,
+    "coverage": 0.933,
     "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=107",
-    "was_coverage": 0.818,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "33487",
-    "title": "Management",
-    "award": "A.S. Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=109",
-    "coverage": 1.0,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=107",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "33491",
-    "title": "Small Business Management",
-    "award": "A.S. Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=110",
-    "coverage": 1.0,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=107",
-    "was_coverage": 1.0,
+    "was_coverage": 0.8,
     "was_method": "pdf_pages"
    }
   ],
@@ -1855,9 +1847,8 @@
   ],
   "held_opens_on_list": [],
   "only": [
-   "33433",
-   "33487",
-   "33491"
+   "33432",
+   "33492"
   ],
   "not_named": [
    {
@@ -2026,8 +2017,8 @@
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=138"
   },
   "33432": {
-   "sha256": "7ea870675ad4c16fbc00f1c4aa70d0491ccd38417482032f3820d1654c157590",
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=107"
+   "sha256": "ebc19d5eba1d1db2a8c7438e03e4581f580b071fef0accc6ef97c15d591e16bc",
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=106"
   },
   "33433": {
    "sha256": "e972ec4f1528ed0eb84bc88d90758f62166e3349be032afb028c72f6598a9dd8",
@@ -2122,7 +2113,7 @@
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=110"
   },
   "33492": {
-   "sha256": "4874d188a3aff7e93aaa497e98e8dc2c1371c10f44f23dc7bbefc02888433fbd",
+   "sha256": "998430628ac28b8f78532fbd14ec7a900901f2db7465ed4bc61c7b3009565c6f",
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=148"
   },
   "33493": {
@@ -2435,9 +2426,9 @@
   }
  },
  "staged_from": {
-  "run": "45018063256",
+  "run": "45033325880",
   "proof": "text sha256 of 107 programs",
   "pages_loaded": 0
  },
- "run": "45018954283"
+ "run": "45033577888"
 }
