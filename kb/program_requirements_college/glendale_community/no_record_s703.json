@@ -1,7 +1,7 @@
 {
  "_readme": "S703 (worker glendale; d-glendale-own-pages-filed-as-gaps-s703). Glendale's 11 programs with no record file (f-glendale-28-left-s697), each filed with the page and control number that free page read 45016708970 found (customFields.eL_programControlNumber in each tab's own Coursedog data) and one of three reasons. The state's lists come from coci_program_courses, read by the conductor 2026-11-22; every noncredit course there is at 0 units. No model call, no Supabase write: no row exists for these programs, and the capture holds no text for them, so a read with only= naming them refuses (only_refused). The follow-up lever: a tab whose own data names a listed program is that program's candidate (_ranked/candidates), which the extraction's coverage bar would still stop.",
  "college": "Glendale Community College",
- "written": "2026-11-22T11:27:17Z",
+ "written": "2026-11-22T15:02:38Z",
  "capture": "44915445658",
  "page_read": "45016708970",
  "reasons": {
@@ -68,8 +68,20 @@
     "STV40",
     "STV50"
    ],
-   "which_is_stale": "Neither's courses: the page prints the same four numbers under STV, the prefix that replaced OBT. Glendale's reconcile entry now carries the pair STV for OBT (d-glendale-obt-stv-prefix-alias-s703), so a fresh capture names all four on NCCS; the program waits for a read with only=38973.",
-   "lever": "prefix alias STV for OBT, filed S703"
+   "which_is_stale": "Neither's courses: the page prints the same four numbers under STV, the prefix that replaced OBT. Glendale's reconcile entry now carries the pair STV for OBT (d-glendale-obt-stv-prefix-alias-s703), so a fresh capture names all four on NCCS (pricing run 45017885023 bound 38973 to NCCS at coverage 1.0, estimate $0.10).",
+   "lever": "prefix alias STV for OBT, filed S703",
+   "read_attempts": [
+    {
+     "run": "45030349942",
+     "sources_from": "45017885023",
+     "result": "refused at staging, no model call: the current code reads refused pages differently (02566, 11194, 19580)"
+    },
+    {
+     "run": "45030485543",
+     "result": "refused at pricing, no model call: only= refused, 38973 has no text in the capture (page_challenged); the host challenged NCCS on this read"
+    }
+   ],
+   "next": "a read with only=38973 when Glendale's host answers NCCS again; never routed around the challenge (the unblocker step)"
   },
   {
    "control_number": "24327",
