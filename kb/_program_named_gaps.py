@@ -1278,6 +1278,16 @@ def replan_applied(body: dict, migrate: dict, applied_from: str, tag: str = "s68
     return body
 
 
+RECEIPT_NAME = re.compile(r"^program_requirement_records_named_gaps_(\d{4}-\d{2}-\d{2})_([A-Za-z0-9]+)\.json$")
+
+
+def receipt_day_tag(receipt: str) -> tuple[str | None, str | None]:
+    """(day, tag) a named-gaps receipt's file name carries (program_requirement_records_named_gaps_<day>_<tag>.json,
+    the name main() writes), or (None, None) for any other name."""
+    m = RECEIPT_NAME.match(os.path.basename(receipt or ""))
+    return (m.group(1), m.group(2)) if m else (None, None)
+
+
 def write_rollback(body: dict, receipt: str, day: str, tag: str) -> str:
     """The rollback alone as a committed file: the pre-read and the apply ran as committed (the migrate receipts
     hold their sha256) and stay as they ran."""
@@ -1302,7 +1312,8 @@ def write_rollback(body: dict, receipt: str, day: str, tag: str) -> str:
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--dry-run", action="store_true")
-    ap.add_argument("--tag", default="s680")
+    ap.add_argument("--tag", default=None, help="the plan's tag (default s680); with --receipt, the receipt's own "
+                                              "tag, read from its file name")
     ap.add_argument("--skip-college", action="append", default=[])
     ap.add_argument("--three-part", action="store_true",
                     help="S681: write the one plan in three parts (A corrective, B #3502's records, C A5's five)")
@@ -1319,6 +1330,8 @@ def main(argv=None) -> int:
                     help="the plain pass: move only records the committed census lists under this exact cause "
                          "(programs_by_college, e.g. 'units_incomplete|ge_pattern_no_units'; repeat)")
     a = ap.parse_args(argv)
+    if not (a.receipt or a.applied):
+        a.tag = a.tag or "s680"
     if a.wave:
         if not a.college:
             ap.error("--wave needs --college")
@@ -1394,17 +1407,23 @@ def main(argv=None) -> int:
     if a.receipt or a.applied:
         if not (a.receipt and a.applied):
             ap.error("--receipt and --applied go together")
+        # The rollback is named after the receipt's own tag (S703 follow-up): with the default s680, a replan of
+        # another night's receipt wrote its rollback under s680's name.
+        day, tag = receipt_day_tag(a.receipt)
+        if not tag:
+            ap.error("the receipt's file name names no tag (program_requirement_records_named_gaps_<day>_<tag>.json)")
+        if a.tag and a.tag != tag:
+            ap.error("--tag %s differs from the receipt's own tag %s" % (a.tag, tag))
         with open(a.receipt, encoding="utf-8") as fh:
             body = json.load(fh)
         with open(a.applied, encoding="utf-8") as fh:
             mig = json.load(fh)
         rel = lambda p: os.path.relpath(os.path.abspath(p), ROOT)  # noqa: E731
-        replan_applied(body, mig, rel(a.applied), a.tag)
+        replan_applied(body, mig, rel(a.applied), tag)
         with open(a.receipt, "w", encoding="utf-8") as fh:
             json.dump(body, fh, ensure_ascii=False, indent=1)
             fh.write("\n")
-        day = re.search(r"_(\d{4}-\d{2}-\d{2})_", os.path.basename(a.receipt)).group(1)
-        out = write_rollback(body, rel(a.receipt), day, a.tag)
+        out = write_rollback(body, rel(a.receipt), day, tag)
         print("replanned: %d rows applied (%s), rollback %s" % (body["applied"]["returned"], rel(a.applied), rel(out)))
         return 0
     r = run(write=not a.dry_run, skip=tuple(a.skip_college), gaps=tuple(a.gap), census_causes=tuple(a.census_cause))

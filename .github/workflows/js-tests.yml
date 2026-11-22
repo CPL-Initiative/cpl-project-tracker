@@ -491,6 +491,12 @@ jobs:
       # page's source says pinned; an only= filing keeps the earlier kept_passing entries it does not name.
       - name: Program requirements reader follow-up (killed wave, prior read, fragments, editions, pins)
         run: python3 tests/program_requirements_follow_up_s697_test.py
+      # S703 follow-up (S697's four left, f-followup-four-left-s697): the own-run filter with a None run stamp; a
+      # route or named destination keeps two pages apart; v24 and v25 are years; a capture-only prior read with no
+      # PDF page files its preview; a pin's through binds across a page break; the named-gaps rollback's tag.
+      # Needs git for the keep-better fixture repo.
+      - name: Program requirements reader follow-up S703 (own run, fragments, editions, prior preview, through, tag)
+        run: python3 tests/program_requirements_follow_up_s703_test.py
       # S697: the same-page calls over every committed folder, frozen in a fixture: 320 newly kept (Butte 163,
       # Cuyamaca 155, College of the Canyons 2), none one page off, and one edition pair. Pure stdlib.
       - name: Program requirements same-page recall over the committed folders
