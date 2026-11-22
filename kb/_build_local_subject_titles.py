@@ -37,7 +37,7 @@ import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from subject_title_case import title_case  # noqa: E402
+from subject_title_case import KEPT, SMALL, title_case  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SUBJECTS = os.path.join("kb", "hand_filed_catalogs", "subjects")
@@ -256,6 +256,11 @@ def build(root=ROOT):
         "totals": T,
         "columns": COLUMNS,
         "colleges": out_colleges,
+        # The Subjects page's Edit and Save (S701, r-subject-save-path-kb-curation-sam-2026-11-22) refuses a common code
+        # the canonical list does not hold and offers a typed title in Title Case. It reads both from here, so the page
+        # carries no copy: each canonical SUBJ with its MQ discipline, and kb/subject_title_case.py's word lists.
+        "common_codes": dict(sorted((v.get("canonical_subj4"), d) for d, v in canon.items() if v.get("canonical_subj4"))),
+        "title_case": {"small": sorted(SMALL), "kept": sorted(KEPT)},
     }
 
 

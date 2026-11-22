@@ -709,3 +709,29 @@ Moved verbatim at the S700 checkpoint (2026-11-22), to keep the lane under its s
 ## INDEX update history, moved (S700 checkpoint, 2026-11-22)
 
 - 2026-11-20 (S692 SkyGannet, Sam's plain session on the Commons, full checkpoint): #3608 (hand it over in place, slice 1: `commons_handover.js`, the private bucket and the `commons_handover` table applied through the runner, the reader's pickup and the `handover-try-link` function, governance DR-35); the new note [`reference-commons-hand-over`](kb-notes/reference-commons-hand-over.md); a section on CI jobs added to `methodology-a-blocked-path-hides-the-defects-behind-it`; the checkpoint command's standing block carries Sam's work order; `handover-try-link`, `cpl-chat` and `library-revise-draft` deployed from main; handoff 693.
+
+## Moved from lanes/commons.md (S701)
+
+Moved verbatim on 2026-11-22 when Edit and Save landed, to keep the lane under its size limit. Each sentence stood in the Subjects paragraph when moved.
+
+One web search per *Not in catalog* row is filed in `kb/reference/subject_web_searches.json`; a search lifts a level where it agrees, and a department or program label counts as weaker evidence. Against Sam's 30 Cerritos decisions (`common_code.sams_30`): 23 agree, 5 diverge (ASAM, AFRS, NAIS, AP, ACLR), none for BCOT and WGS; his decision stands in each.
+
+**The noncredit catalogs:** SDCCE, Santa Ana's School of Continuing Education and Mt. San Antonio noncredit are filed (`kb/_file_noncredit_catalogs.py`; North Orange since S690).
+
+The draft noncredit subject title list, as it stood: 129 headings, 114 titles, 7 printed by two or more programs; 78 titles under a category whose noncredit MQ discipline has a common code, 9 under one with none (Citizenship, Health and Safety, substantial disabilities, Workforce Preparation), 27 with no noncredit course in COCI.
+
+Sam's save-path ruling, as the lane stated it: *"Fine."* to the save path: one inserted `kb_curation` row per decision keyed by college, local code and band (`SUBJ:cerritos|ATH|credit`), the reviewer's own sign-in, *Take it back* removes it, a person's save wins over the catalog, the subject map and any recommendation, the subject map stays the statewide default by PR, noncredit rows wait on the title list (`r-subject-save-path-kb-curation-sam-2026-11-22`).
+
+Moved at the S701 fix round, the same day, verbatim:
+
+A row with no title carries a chip that says why: *Not in catalog* 108, *Not read yet* 374 (Santa Ana's 96 and Mt. San Antonio's 136 credit codes among them, until their credit catalogs are filed), *Blocked* 0, *Noncredit: on hold* 54.
+
+*"Dept labels can be helpful for our edge case recommendations"* (`r-dept-labels-help-edge-recommendations-sam-2026-11-21`)
+
+*"ATHL can be in kine. It's for competitive athletic sports as distinguished from PE activity courses"*, so ATH is KINE and ATHL is no common code (`r-athletics-under-kine-sam-2026-11-22`)
+
+*"Yes, view inside subjects"*, *"And should be able to see all subjects on one list"* (`r-noncredit-is-a-view-inside-subjects-sam-2026-11-22`)
+
+The recommendations were shown beside the row with its level and why.
+
+NEXT (5), the 8 pages a web search found: (Long Beach City CART and SHOWB, Southwestern PIL now FIL, four in Los Angeles district PDFs).
