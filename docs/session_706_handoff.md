@@ -47,14 +47,48 @@ text), 5, 7, 9, and in 12 every status file but `kb/status/subjects.json`.
   checks); the other Subjects suites and `every_view_has_an_address` pass; `npm run a11y -- commons-subjects
   commons-subjects-dark` passed 15 routes.
 
+- **Sam's four asks of 2026-11-22, on the same PR (#3687):**
+  1. **Cerritos's department list.** Sam found Cerritos's schedule (https://secure.cerritos.edu/schedule/index.cgi),
+     whose *All Departments* list names each code's title, and pasted it. Filed at
+     `kb/reference/college_department_lists/cerritos.json`; `kb/_build_local_subject_titles.py` reads a college's list
+     after the catalog (a code the catalog gives no title, or one whose catalog name is another code's department
+     title): AED Adult Education, STAT Statistics. Procedure: `docs/kb-notes/playbook-local-subject-title-sources.md`.
+     The Edit form takes a source link, saved as `source_url`, with *Open the link* to check it; the saved line links it.
+  2. **The panel resizes from its left edge and its top row stays frozen**, Close included, inside one scroller. Sam
+     made it a rule for every sidebar; it is in CLAUDE.md's presentation rules.
+  3. **Move courses.** Signed in, each course in the panel has a checkbox (and one per table for all); *Move the checked
+     courses* writes one `kb_curation` row per course, field `course_subject_decision`, key
+     `CRS:<college>|<code>|<number>`, value `common_code`, `from_mid`, `title`, `band`, under the reviewer's email (DR-25,
+     in `kb/governance_surface_map.json`). Another person's move is held; one's own shows *Take it back*. The M-ID moves
+     only at a re-mint. 138 of Cerritos's 143 AED courses sit on ELEC M-IDs.
+  4. **Every Subjects table sorts by a header word and resizes by its header's edge**, for the visit.
+  Guards: `tests/commons_subjects_tools.test.js` (23), `tests/local_subject_titles_test.py` (the department list);
+  `npm run a11y -- commons-subjects commons-subjects-dark` passed 15 routes.
+
 ## Decisions the session made (each Sam's to revise)
 
 - `d-subjects-one-save-every-college-credit-forms-s705`: the every-college Save settles the credit forms only, and
   person-settled wins. It supersedes `d-subjects-several-colleges-one-press-each-s702`.
+- `d-course-move-field-crs-key-s705`: a course move is one row keyed by college, code and number; it records the
+  decision and the M-ID moves at a re-mint.
+- `d-source-link-on-form-before-handover-s705`: the source link sits on the Edit form; the hand-over box's server reader
+  for a subject source waits on a `commons_handover` dataset (a migration) and on its 503.
+- The department list wins over the catalog only where the catalog's name is another code's department title (STAT);
+  the eight other Cerritos codes the list words differently (AB, AUTO, EDT, ELAP, NAIS, VCS, WELD, WMT) keep the
+  catalog heading, for a person to change on the page.
+
+## Decisions Sam made (in session, verbatim in `cpl_memory`)
+
+`r-college-department-list-is-a-title-source-sam-2026-11-22`, `r-subject-title-source-link-sam-2026-11-22`,
+`r-sidebars-resize-and-frozen-top-sam-2026-11-22`, `r-subjects-move-courses-sam-2026-11-22`,
+`r-subjects-columns-sort-resize-sam-2026-11-22`.
 
 ## Open work, from the lanes' NEXT lines
 
-1. **`commons`, the Subjects page (#3655), in order:** (0) the statewide default by the DR-25 route, in
+1. **`commons`, the Subjects page (#3655), in order:** (00) the course moves into the re-mint:
+   `kb/_sync_subject_decisions.py` reads `course_subject_decision` into the committed file, then a re-mint dry run under
+   `docs/coursecontrolnumber_remint.md` for the Cerritos AED courses Sam moves; the hand-over box's *Try the link* for a
+   subject source; the frozen top and grip on the other Commons sidebars (Sam's rule); (0) the statewide default by the DR-25 route, in
    `kb/reference/subject_discipline_map.json`, for a code that reads the same at every college (the map is keyed by code
    alone, `f-subject-map-ignores-credit-band-s698`); (1) the per-course reader through `for_noncredit_course` in
    `kb/subject_decisions.py`; (2) the 8 catalog pages a web search found; (3) the code spellings as sibling codes (LATTC
@@ -78,17 +112,20 @@ text), 5, 7, 9, and in 12 every status file but `kb/status/subjects.json`.
 - **`cpl_memory.summary` is capped at 400 characters** (`cpl_memory_summary_check`); the insert fails with a
   check-constraint error that does not name the length.
 - **The `test` check was absent on the head right after a draft PR was marked ready**; the gate waits for it.
+- **The auto-mode check refused an ad-hoc Playwright script against a local server**; `npm run a11y` is the sanctioned
+  browser pass and ran clean.
 
 ## Memory and vault
 
-One `cpl_memory` row by `SkyTystie (S705)`, applied 2026-11-22T14:25Z, and S702's one-press-each row superseded
-(`kb/migrations/2026-11-22_s705_cpl_memory_rows.sql`, rollback beside it). Vault: a session note on a draft PR in
+Eight `cpl_memory` rows by `SkyTystie (S705)`: one at 14:25Z with S702's one-press-each row superseded
+(`kb/migrations/2026-11-22_s705_cpl_memory_rows.sql`), seven later, Sam's five statements verified and two decisions
+(`kb/migrations/2026-11-22_s705b_cpl_memory_rows.sql`); rollbacks beside each. Vault: a session note on a draft PR in
 samueltlee/CPLBrain. Wiki candidate for `/wiki-ingest`: the every-college Save and its person-settled rule.
 
 ## Let go
 
 Dropped at sign-off: the PR subscription on #3687 and the COBIx watcher. No check-in and no artifact watch.
 
-Spend: not available; 2026-11-22T14:10Z to about 14:40Z.
+Spend: not available; 2026-11-22T14:10Z to about 15:30Z.
 
 Opening line: *Greetings, you are SkyPrion (Session 707), see SkyTystie's handoff — `docs/session_706_handoff.md` — let's keep rolling with our queue.*

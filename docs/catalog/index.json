@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 601,
+   "count": 602,
    "docs": [
     {
      "created": "2026-08-14",
@@ -10736,6 +10736,26 @@
      "title": "Playbook \u2014 Trail Crew \ud83e\udd7e: the method + magic audit (deterministic scanner \u2192 AI adjudication \u2192 adversarial verify \u2192 fire-able staged plan)",
      "type": "playbook",
      "updated": ""
+    },
+    {
+     "created": "2026-11-22",
+     "governs": [
+      "kb/_build_local_subject_titles.py",
+      "kb/reference/college_department_lists/",
+      "kb/status/local_subject_titles.json"
+     ],
+     "path": "docs/kb-notes/playbook-local-subject-title-sources.md",
+     "status": "internal",
+     "tags": [
+      "playbook",
+      "commons",
+      "subjects",
+      "catalogs",
+      "local-subject-titles"
+     ],
+     "title": "Playbook \u2014 where a college's local subject title comes from",
+     "type": "playbook",
+     "updated": "2026-11-22"
     },
     {
      "created": "2026-06-12",
@@ -28499,5 +28519,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1550
+ "total": 1551
 }

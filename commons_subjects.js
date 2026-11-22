@@ -129,6 +129,7 @@
     if ((r.noncredit_courses || 0) > 0) return "noncredit";
     return (r.state_courses || 0) ? "credit" : "whole";
   }
+  function isLink(u) { return /^https?:\/\/[^\s\/]+\.[^\s]+$/i.test(String(u || "").trim()); }
   function saveKey(slug, code, band) { return SAVE_PREFIX + slug + "|" + code + "|" + band; }
   /* The noncredit categories (#3655): each category's slug comes from the titles file (noncredit_slugs, copied from
      the one list in kb/status/noncredit_categories.json), so the page makes no slug of its own. */
@@ -197,9 +198,32 @@
       try { v = JSON.parse(row.value || "{}"); } catch (e) { return; }
       if (!v || typeof v !== "object") return;
       var slug = parts[0], band = parts[parts.length - 1], code = parts.slice(1, -1).join("|");
-      by[slug + "|" + code + "|" + band] = { title: v.local_title || "", common: v.common_code || "",
+      by[slug + "|" + code + "|" + band] = { title: v.local_title || "", common: v.common_code || "", source: v.source_url || "",
         at: v.decided_at || row.reviewed_at || "", by: row.reviewer_email || "", label: row.reviewer_label || "",
         decidedBy: v.decided_by || "", key: id, mapKey: slug + "|" + code + "|" + band };
+    });
+    return by;
+  }
+  /* ── Move courses (Sam, 2026-11-22, r-subjects-move-courses-sam-2026-11-22): "the list of ELEC courses that at one
+     point got defined as AED, which is an error. I have no way to fix that error on this screen or sidebar and need a
+     simple way to do that for 1 or a groups of courses that need to be reassigned." A signed-in reviewer checks one
+     course or a group in the panel, names the common subject code they belong under, and saves: one kb_curation row
+     per course, field course_subject_decision, course_id CRS:<college>|<local code>|<course number>, value
+     { common_code, from_mid, title, band }, under the reviewer's own email (governance DR-25). It records the person's
+     decision; the M-ID itself moves by the re-mint playbook (docs/coursecontrolnumber_remint.md), which reads these. A
+     course another person moved keeps that move (person-settled wins). ── */
+  var MOVE_FIELD = "course_subject_decision", MOVE_PREFIX = "CRS:", MOVES = {}, MOVE_SAID = {};
+  function moveKey(slug, code, number) { return MOVE_PREFIX + slug + "|" + code + "|" + number; }
+  function movesModel(rows) {
+    var by = {};
+    (rows || []).forEach(function (row) {
+      var id = String(row.course_id || "");
+      if (id.indexOf(MOVE_PREFIX) !== 0) return;
+      var v;
+      try { v = JSON.parse(row.value || "{}"); } catch (e) { return; }
+      if (!v || typeof v !== "object" || !v.common_code) return;
+      by[id] = { common: String(v.common_code).toUpperCase(), fromMid: v.from_mid || "", title: v.title || "", at: v.decided_at || row.reviewed_at || "",
+        by: row.reviewer_email || "", label: row.reviewer_label || "", decidedBy: v.decided_by || "", key: id };
     });
     return by;
   }
@@ -218,7 +242,8 @@
   }
   /* kb_curation's reviewer emails answer a signed-in reviewer's token only (S614): signed out the read asks for
      reviewer_label, and a token the server refuses reads again signed out for this page and the pages after it. */
-  function readSaves() {
+  function readSaves() { return readRows(SAVE_FIELD, SAVE_PREFIX).then(function (rows) { return rows === null ? null : savesModel(rows); }); }
+  function readRows(field, prefix) {
     var Sx = window.CPL_SESSION;
     if (!Sx || typeof Sx.authHeaders !== "function") return Promise.resolve(null);
     var W = session() ? { cols: "reviewer_email,reviewer_label", tok: true } : { cols: "reviewer_label", tok: false };
@@ -226,8 +251,8 @@
     function page(from) {
       var h = Sx.authHeaders({ "Range-Unit": "items", Range: from + "-" + (from + PAGE - 1) });
       if (!W.tok) h.Authorization = "Bearer " + h.apikey;
-      var url = REST + "/kb_curation?select=course_id,value,reviewed_at," + W.cols + "&field=eq." + SAVE_FIELD
-        + "&course_id=like." + encodeURIComponent(SAVE_PREFIX) + "*&order=course_id";
+      var url = REST + "/kb_curation?select=course_id,value,reviewed_at," + W.cols + "&field=eq." + field
+        + "&course_id=like." + encodeURIComponent(prefix) + "*&order=course_id";
       return fetch(url, { headers: h }).then(function (r) {
         if (r && (r.status === 401 || r.status === 403) && W.tok) { W = { cols: "reviewer_label", tok: false }; return page(from); }
         if (!r || !r.ok) throw new Error("kb_curation answered " + (r ? r.status : "nothing"));
@@ -238,7 +263,7 @@
         });
       });
     }
-    return page(0).then(savesModel);
+    return page(0);
   }
   /* The session at the moment of the write: the keeper renews a token near expiry, and null means it has ended. */
   function freshReviewer() {
@@ -246,21 +271,21 @@
     var p = Sx && typeof Sx.ensureFresh === "function" ? Promise.resolve(Sx.ensureFresh()) : Promise.resolve(null);
     return p.then(function () { return session(); }, function () { return session(); });
   }
-  function writeSave(key, value) {
+  function writeSave(key, value, field) {
     return freshReviewer().then(function (s) {
       if (!s) return { ok: false, lapsed: true };
       return fetch(REST + "/kb_curation?on_conflict=course_id,field", { method: "POST",
         headers: window.CPL_SESSION.authHeaders({ "Content-Type": "application/json", Prefer: "resolution=merge-duplicates,return=minimal" }),
-        body: JSON.stringify({ course_id: key, field: SAVE_FIELD, value: JSON.stringify(value), reviewer_email: s.email }) })
+        body: JSON.stringify({ course_id: key, field: field || SAVE_FIELD, value: JSON.stringify(value), reviewer_email: s.email }) })
         .then(function (r) { return { ok: r.ok, status: r.status, lapsed: r.status === 401, email: s.email }; });
     });
   }
   /* The delete names the signed-in reviewer's email as well as the key: the table's delete policy lets any allowed
      reviewer delete any row, so the filter is what keeps one reviewer from removing another's save or a filed one. */
-  function takeBack(key) {
+  function takeBack(key, field) {
     return freshReviewer().then(function (s) {
       if (!s) return { ok: false, lapsed: true };
-      return fetch(REST + "/kb_curation?course_id=eq." + encodeURIComponent(key) + "&field=eq." + SAVE_FIELD
+      return fetch(REST + "/kb_curation?course_id=eq." + encodeURIComponent(key) + "&field=eq." + (field || SAVE_FIELD)
         + "&reviewer_email=eq." + encodeURIComponent(s.email) + "&select=course_id",
         { method: "DELETE", headers: window.CPL_SESSION.authHeaders({ Prefer: "return=representation" }) })
         .then(function (r) {
@@ -338,8 +363,10 @@
     var when = day(sv.at) ? ", " + day(sv.at) : "";
     var who = filedRow(sv) ? "Filed for " + sv.decidedBy + when + "."
       : "Saved by a person" + (sv.by && !/@bot$/.test(sv.by) ? ", " + sv.by : "") + when + ".";
-    return el("span", { cls: "csb-sub csb-saved", text: who + (sv.moved ? " Saved under the " + sv.moved.from
-      + " band; the code’s band is now " + sv.moved.to + ", so a new Save writes under " + sv.moved.to + "." : "") });
+    var words = who + (sv.moved ? " Saved under the " + sv.moved.from
+      + " band; the code’s band is now " + sv.moved.to + ", so a new Save writes under " + sv.moved.to + "." : "");
+    return el("span", { cls: "csb-sub csb-saved" }, [words, sv.source && isLink(sv.source) ? " " : null,
+      sv.source && isLink(sv.source) ? el("a", { href: sv.source, target: "_blank", rel: "noopener", "data-saved": "source" }, ["Source"]) : null]);
   }
 
   function el(tag, attrs, kids) {
@@ -422,6 +449,118 @@
   }
 
   /* The colleges, one row each: what its catalog prints and what it shares with the state list. */
+  /* Sortable and resizable columns on every Subjects table (Sam, 2026-11-22, r-subjects-columns-sort-resize-sam-2026-11-22:
+     "The columns on subjects tab need to be sortable and resizable--following our formatting norms for commons views";
+     the Commons List's norms, commons_list.js). A header is a word that sorts (a second press reverses it); its right
+     edge is a separator to drag, or to focus and move with the arrow keys (Home narrows to the least). The first resize
+     fixes every column at its drawn width, so the table may grow wider and scroll inside its own box. A sort and the
+     widths last the visit and are never stored. A table whose rows sit under category rows sorts within each category. */
+  var GRID = {}, COL_MIN = 64, COL_STEP = 24;
+  function cellValue(tr, i) {
+    var c = tr.children[i];
+    if (!c) return "";
+    var v = c.getAttribute("data-sort");
+    return v != null ? v : String(c.textContent || "").replace(/\s+/g, " ").trim();
+  }
+  function numOf(v) { var m = /^-?[\d,]+(\.\d+)?/.exec(String(v)); return m ? parseFloat(m[0].replace(/,/g, "")) : null; }
+  function gridify(wrap, key, skip) {
+    var tbl = wrap.querySelector("table"), head = tbl && tbl.querySelector("thead tr");
+    var body = tbl && tbl.querySelector("tbody");
+    if (!head || !body) return wrap;
+    var G = GRID[key] || (GRID[key] = { col: -1, dir: 1, widths: null });
+    var ths = Array.prototype.slice.call(head.children), cols = tbl.querySelectorAll("col");
+    var data = function (tr) { return !tr.classList.contains("csb-nc-cat") && !(tr.children.length === 1 && tr.children[0].hasAttribute("colspan")); };
+    function sortRows() {
+      if (G.col < 0) return;
+      var all = Array.prototype.slice.call(body.children), segs = [[]];
+      all.forEach(function (tr) { if (!data(tr)) segs.push([tr]); else segs[segs.length - 1].push(tr); });
+      var vals = all.filter(data).map(function (tr) { return cellValue(tr, G.col); }).filter(Boolean);
+      var numeric = vals.length > 0 && vals.every(function (v) { return numOf(v) !== null; });
+      segs.forEach(function (seg) {
+        var lead = seg.length && !data(seg[0]) ? [seg[0]] : [], rest = seg.slice(lead.length);
+        rest.sort(function (a, b) {
+          var x = cellValue(a, G.col), y = cellValue(b, G.col);
+          var d = numeric ? (numOf(x) || 0) - (numOf(y) || 0) : x.localeCompare(y, "en", { sensitivity: "base", numeric: true });
+          return d * G.dir;
+        });
+        lead.concat(rest).forEach(function (tr) { body.appendChild(tr); });
+      });
+    }
+    function fixWidths() {
+      if (G.widths) return G.widths;
+      G.widths = ths.map(function (th) { var w = th.getBoundingClientRect ? Math.round(th.getBoundingClientRect().width) : 0; return w > 0 ? w : 140; });
+      return G.widths;
+    }
+    function applyWidths() {
+      if (!G.widths) return;
+      G.widths.forEach(function (w, i) { if (cols[i]) cols[i].style.width = w + "px"; });
+      tbl.style.width = G.widths.reduce(function (a, x) { return a + x; }, 0) + "px";
+      tbl.style.minWidth = "0";
+    }
+    function setWidth(i, w, g) {
+      var W = fixWidths();
+      W[i] = Math.max(COL_MIN, Math.round(w));
+      applyWidths();
+      if (g) g.setAttribute("aria-valuenow", String(W[i]));
+    }
+    var labels = ths.map(function (th) { return String(th.textContent || "").trim(); }), buttons = [];
+    function heads() {
+      buttons.forEach(function (b, i) {
+        if (!b) return;
+        var on = G.col === i, words = numeric0(i) ? (G.dir > 0 ? ", low to high" : ", high to low") : (G.dir > 0 ? ", A to Z" : ", Z to A");
+        b.textContent = labels[i] + (on ? words : "");
+        ths[i].setAttribute("aria-sort", on ? (G.dir > 0 ? "ascending" : "descending") : "none");
+      });
+    }
+    ths.forEach(function (th, i) {
+      var label = labels[i];
+      th.classList.add("csb-th");
+      if (!(skip && skip.indexOf(i) >= 0)) {
+        var b = el("button", { type: "button", cls: "csb-sort", "data-csb-sort": String(i), title: "Press to sort by this column; press again to reverse it", text: label });
+        b.addEventListener("click", function () {
+          if (G.col === i) G.dir = -G.dir; else { G.col = i; G.dir = 1; }
+          sortRows(); heads(); b.focus();
+        });
+        th.textContent = "";
+        th.appendChild(b);
+        buttons[i] = b;
+      }
+      var g = el("span", { cls: "csb-grip", role: "separator", tabindex: "0", "aria-orientation": "vertical", "aria-label": "Resize " + label,
+        "aria-valuemin": String(COL_MIN), "aria-valuemax": "1600", "aria-valuenow": String(G.widths ? G.widths[i] : 140) });
+      g.addEventListener("keydown", function (e) {
+        var W = fixWidths();
+        if (e.key === "ArrowRight") setWidth(i, W[i] + COL_STEP, g);
+        else if (e.key === "ArrowLeft") setWidth(i, W[i] - COL_STEP, g);
+        else if (e.key === "Home") setWidth(i, COL_MIN, g);
+        else return;
+        e.preventDefault(); e.stopPropagation();
+      });
+      g.addEventListener("pointerdown", function (e) {
+        if (e.button !== undefined && e.button !== 0) return;
+        e.preventDefault(); e.stopPropagation();
+        var startX = e.clientX, startW = fixWidths()[i];
+        try { g.setPointerCapture(e.pointerId); } catch (err) { /* an older engine */ }
+        function move(ev) { if (ev.pointerId === e.pointerId) setWidth(i, startW + (ev.clientX - startX), g); }
+        function up(ev) {
+          if (ev && ev.pointerId !== undefined && ev.pointerId !== e.pointerId) return;
+          g.removeEventListener("pointermove", move); document.removeEventListener("pointermove", move);
+          ["pointerup", "pointercancel", "lostpointercapture"].forEach(function (t) { g.removeEventListener(t, up); document.removeEventListener(t, up); });
+        }
+        g.addEventListener("pointermove", move); document.addEventListener("pointermove", move);
+        ["pointerup", "pointercancel", "lostpointercapture"].forEach(function (t) { g.addEventListener(t, up); document.addEventListener(t, up); });
+      });
+      g.addEventListener("click", function (e) { e.stopPropagation(); });
+      th.appendChild(g);
+    });
+    function numeric0(i) {
+      var v = Array.prototype.filter.call(body.children, data).map(function (tr) { return cellValue(tr, i); }).filter(Boolean);
+      return v.length > 0 && v.every(function (x) { return numOf(x) !== null; });
+    }
+    sortRows();
+    heads();
+    applyWidths();
+    return wrap;
+  }
   function collegeTable(M, list) {
     var tbl = el("table", { cls: "csb-table" }, [
       el("colgroup", null, [el("col", { cls: "csb-c-wide" }), el("col"), el("col"), el("col"), el("col"), el("col")]),
@@ -436,7 +575,7 @@
           el("td", null, [count(c.catalogOnly, c.slug, "catalog", fmt(c.catalogOnly) + " codes in the catalog only at " + c.college + ". Show them.")]),
           el("td", null, [count(c.stateOnly, c.slug, "state", fmt(c.stateOnly) + " codes in COCI only at " + c.college + ". Show them.")])]);
       }))]);
-    return el("div", { cls: "csb-wrap", role: "region", "aria-label": "Colleges with a catalog on file", tabindex: "0" }, [tbl]);
+    return gridify(el("div", { cls: "csb-wrap", role: "region", "aria-label": "Colleges with a catalog on file", tabindex: "0" }, [tbl]), "colleges");
   }
 
   /* The codes, one row each: college, local code, printed name (the draft title), common code, courses, side. */
@@ -472,7 +611,7 @@
           el("td", null, [el("button", { type: "button", cls: "csb-word", "data-csb-code": r.code, "data-csb-slug": r.slug, "data-csb-edit": "yes",
             "aria-label": "Edit " + r.code + " at " + r.college, text: "Edit" })])]);
       }) : [el("tr", null, [el("td", { colspan: "7", text: "No code is in this list." })])])]);
-    return el("div", { cls: "csb-wrap", role: "region", "aria-label": label, tabindex: "0" }, [tbl]);
+    return gridify(el("div", { cls: "csb-wrap", role: "region", "aria-label": label, tabindex: "0" }, [tbl]), "codes", [6]);
   }
 
   /* ── the held codes (S695): one row per local subject code, ranked by the held courses it releases ── */
@@ -513,7 +652,7 @@
           el("td", { text: (c.examples || []).map(function (x) { return x.title + " (" + x.college + ")"; }).join("; ") }),
           el("td", { cls: "csb-ev" }, evidence(c))]);
       }) : [el("tr", null, [el("td", { colspan: "5", text: "The pile mint holds no course for want of a common subject code." })])])]);
-    return el("div", { cls: "csb-wrap", role: "region", "aria-label": "Local subject codes the M-ID mint holds on", tabindex: "0" }, [tbl]);
+    return gridify(el("div", { cls: "csb-wrap", role: "region", "aria-label": "Local subject codes the M-ID mint holds on", tabindex: "0" }, [tbl]), "held", [4]);
   }
   function ncTable(N) {
     var names = {};
@@ -545,7 +684,7 @@
       el("thead", null, [el("tr", null, ["Noncredit subject title", "Programs", "Where it is printed", "Courses in the catalogs", "Share under this category"]
         .map(function (t) { return el("th", { scope: "col", text: t }); }))]),
       el("tbody", null, rows.length ? rows : [el("tr", null, [el("td", { colspan: "5", text: "No heading is filed yet." })])])]);
-    return el("div", { cls: "csb-wrap", role: "region", "aria-label": "Noncredit subject titles by category", tabindex: "0" }, [tbl]);
+    return gridify(el("div", { cls: "csb-wrap", role: "region", "aria-label": "Noncredit subject titles by category", tabindex: "0" }, [tbl]), "noncredit");
   }
   var ncCache = null;
   function loadNc() {
@@ -606,16 +745,95 @@
     return b;
   }
   var BANDS = [["C", "Credit courses"], ["N", "Noncredit courses"], ["E", "Noncredit enhanced courses"], ["", "In the catalog only (COCI does not list it, so its band is not known)"]];
-  function courseTable(rows, label) {
-    var tbl = el("table", { cls: "csb-table csb-courses" }, [
-      el("colgroup", null, [el("col", { cls: "csb-c-num" }), el("col"), el("col", { cls: "csb-c-code" }), el("col", { cls: "csb-c-mid" })]),
-      el("thead", null, [el("tr", null, ["Number", "Title", "Listed in", "C-ID, CCN, M-ID"].map(function (t) { return el("th", { scope: "col", text: t }); }))]),
+  function moveCell(ctx, c) {
+    var mv = MOVES[moveKey(ctx.slug, ctx.code, c.number)];
+    if (!mv) return null;
+    var who = mine(mv) ? "you" : mv.decidedBy || "a person";
+    var kids = [el("span", { cls: "csb-sub csb-saved", "data-moved": mv.common }, ["Moved to " + mv.common + (COMMON && COMMON[mv.common] ? " " + COMMON[mv.common] : "")
+      + " by " + who + (day(mv.at) ? ", " + day(mv.at) : "") + ". The M-ID moves at the next re-mint."])];
+    if (mine(mv)) {
+      var tb = el("button", { type: "button", cls: "csb-word", "data-move-undo": mv.key, "aria-label": "Take back the move of " + c.number, text: "Take it back" });
+      tb.addEventListener("click", function () {
+        tb.disabled = true;
+        takeBack(mv.key, MOVE_FIELD).then(function (res) {
+          if (!res.ok || !res.n) { tb.disabled = false; tb.textContent = "Not taken back; try again"; return; }
+          delete MOVES[mv.key];
+          MOVE_SAID[ctx.slug + "|" + ctx.code] = "Taken back the move of " + c.number + ".";
+          if (VIEW.root && VIEW.M) render(VIEW.root, VIEW.M, viewPath());
+        }, function () { tb.disabled = false; tb.textContent = "Not taken back; try again"; });
+      });
+      kids.push(" ", tb);
+    }
+    return kids;
+  }
+  function courseTable(rows, label, ctx) {
+    var can = !!(ctx && ctx.can);
+    var all = can ? el("input", { type: "checkbox", cls: "csb-move-all", id: "csb-move-all-" + ctx.n, "aria-label": "Check every course in " + label }) : null;
+    var tbl = el("table", { cls: "csb-table csb-courses" + (can ? " csb-movable" : "") }, [
+      el("colgroup", null, (can ? [el("col", { cls: "csb-c-box" })] : []).concat([el("col", { cls: "csb-c-num" }), el("col"), el("col", { cls: "csb-c-code" }), el("col", { cls: "csb-c-mid" })])),
+      el("thead", null, [el("tr", null, (can ? [el("th", { scope: "col" }, [el("label", { cls: "csb-vh", "for": all.id, text: "Move" }), all])] : [])
+        .concat(["Number", "Title", "Listed in", "C-ID, CCN, M-ID"].map(function (t) { return el("th", { scope: "col", text: t }); })))]),
       el("tbody", null, rows.map(function (c) {
         var ids = [c.cid ? "C-ID " + c.cid : "", c.ccn ? "CCN " + c.ccn : "", c.mid ? "M-ID " + c.mid : ""].filter(Boolean).join("; ");
-        return el("tr", { "data-number": c.number, "data-band": c.band || "" }, [el("th", { scope: "row", text: c.number }),
-          el("td", { text: c.title || "" }), el("td", { text: c.listed || "" }), el("td", { text: ids })]);
+        var mv = ctx ? MOVES[moveKey(ctx.slug, ctx.code, c.number)] : null, theirs = mv && !mine(mv);
+        var box = can ? el("input", { type: "checkbox", cls: "csb-move", "data-move-number": c.number, "data-move-mid": c.mid || "", "data-move-title": c.title || "",
+          "data-move-band": c.band || "", "aria-label": "Move " + c.number + " " + (c.title || ""), disabled: theirs ? true : null }) : null;
+        var idCell = el("td", null, [ids].concat(ctx ? (moveCell(ctx, c) ? [" "].concat(moveCell(ctx, c)) : []) : []));
+        return el("tr", { "data-number": c.number, "data-band": c.band || "", "data-moved": mv ? mv.common : null }, (can ? [el("td", { "data-sort": mv ? "1" : "0" }, [box])] : []).concat([
+          el("th", { scope: "row", text: c.number }), el("td", { text: c.title || "" }), el("td", { text: c.listed || "" }), idCell]));
       }))]);
-    return el("div", { cls: "csb-wrap csb-wrap-in", role: "region", "aria-label": label, tabindex: "0" }, [tbl]);
+    if (all) all.addEventListener("change", function () {
+      Array.prototype.forEach.call(tbl.querySelectorAll("input.csb-move:not([disabled])"), function (b) { b.checked = all.checked; });
+      if (ctx.onCheck) ctx.onCheck();
+    });
+    if (can) tbl.addEventListener("change", function (e) { if (e.target && e.target.classList && e.target.classList.contains("csb-move") && ctx.onCheck) ctx.onCheck(); });
+    return gridify(el("div", { cls: "csb-wrap csb-wrap-in", role: "region", "aria-label": label, tabindex: "0" }, [tbl]), can ? "courses-move" : "courses", can ? [0] : null);
+  }
+  /* The move bar under the panel's course tables: one common subject code for the checked courses, and one Save. */
+  function moveBar(slug, code, body) {
+    var pre = "csb-move", said = MOVE_SAID[slug + "|" + code] || "";
+    var co = el("input", { type: "text", id: pre + "-code", cls: "csb-input csb-input-code", maxlength: "4", autocomplete: "off", spellcheck: "false",
+      autocapitalize: "characters", list: COMMON ? "csb-ed-codes" : null, "aria-describedby": pre + "-code-msg" });
+    var cmsg = el("p", { cls: "csb-ed-msg", id: pre + "-code-msg" });
+    var n = el("p", { cls: "csb-note", id: pre + "-n", role: "status", text: "No course is checked." });
+    var status = el("p", { cls: "csb-ed-msg", id: pre + "-status", role: "status", tabindex: "-1", text: said });
+    var save = el("button", { type: "button", cls: "csb-word", id: pre + "-save", text: "Move the checked courses" });
+    function checked() { return Array.prototype.slice.call(body.querySelectorAll("input.csb-move:checked:not([disabled])")); }
+    function count() { var k = checked().length; n.textContent = k ? fmt(k) + (k === 1 ? " course is checked." : " courses are checked.") : "No course is checked."; }
+    save.addEventListener("click", function () {
+      var k = String(co.value || "").trim().toUpperCase(), boxes = checked();
+      cmsg.textContent = ""; status.textContent = "";
+      if (!boxes.length) { status.textContent = "Check one course or more first."; return; }
+      if (!k) { status.textContent = "Type the common subject code they belong under, then save."; return; }
+      if (!COMMON) { cmsg.textContent = "The list of common subject codes could not be read, so no code can be checked. Nothing was saved."; return; }
+      if (!COMMON[k]) { cmsg.textContent = k + " is not a common subject code on the Common Subjects Reference. Nothing was saved."; return; }
+      save.disabled = true;
+      status.textContent = "Moving " + fmt(boxes.length) + (boxes.length === 1 ? " course…" : " courses…");
+      var done = 0, bad = [], stop = false;
+      boxes.reduce(function (p, b) {
+        return p.then(function () {
+          var num = b.getAttribute("data-move-number"), key = moveKey(slug, code, num);
+          if (stop || String(num).indexOf("|") >= 0) { bad.push(num); return; }
+          var value = { common_code: k, from_mid: b.getAttribute("data-move-mid") || null, title: b.getAttribute("data-move-title") || null, band: b.getAttribute("data-move-band") || null };
+          return writeSave(key, value, MOVE_FIELD).then(function (res) {
+            if (!res.ok) { bad.push(num); if (res.lapsed) { LAPSED = true; stop = true; } return; }
+            done += 1;
+            MOVES[key] = { common: k, fromMid: value.from_mid || "", title: value.title || "", at: new Date().toISOString(), by: res.email || "", label: "a reviewer", decidedBy: "", key: key };
+          }, function () { bad.push(num); });
+        });
+      }, Promise.resolve()).then(function () {
+        var w = done ? "Moved " + fmt(done) + (done === 1 ? " course" : " courses") + " to " + k + ". The M-IDs move at the next re-mint." : "";
+        if (bad.length) w += (w ? " " : "") + "Not moved: " + bad.join(", ") + (stop ? ". Your sign-in has ended; sign in again, then save." : ". Only a reviewer on the list may save; press again to retry.");
+        MOVE_SAID[slug + "|" + code] = w;
+        if (!done) { save.disabled = false; status.textContent = w; return; }
+        if (VIEW.root && VIEW.M) render(VIEW.root, VIEW.M, viewPath());
+      });
+    });
+    return { node: el("section", { cls: "csb-edit", id: pre, "aria-labelledby": pre + "-h" }, [
+      el("h4", { cls: "csb-edit-head", id: pre + "-h", text: "Move courses to another common subject code" }),
+      el("p", { cls: "csb-note", text: "Check one course or a group in the tables above, type the common subject code they belong under, and save. Each move is saved under your sign-in and shows on its course; the course’s M-ID moves at the next re-mint. A course another person moved keeps that move." }),
+      n, el("div", { cls: "csb-ed-field" }, [el("label", { "for": pre + "-code", text: "Common subject code for the checked courses" }), co, cmsg]),
+      el("p", { cls: "csb-ed-row" }, [save]), status]), count: count };
   }
   /* Edit and Save, above the course tables: the local title and the common subject code a person settles. A code's
      credit courses take one form (band credit, or whole where COCI lists no course); its noncredit courses take one
@@ -629,7 +847,7 @@
     var I = f.ids, key = f.key, sv = f.sv, box = f.wrap;
     (f.notes || []).forEach(function (n) { if (n) box.appendChild(n); });
     if (f.fromRec && f.fromRec.length) box.appendChild(el("p", { cls: "csb-note csb-rec", id: I.rec, text: "Filled in from the recommendation: " + f.fromRec.join(" and ") + ". It stays a recommendation until you save it." }));
-    var ti = null, co = null, editable = f.title === "edit" || !!f.code;
+    var ti = null, co = null, si = null, smsg = null, editable = f.title === "edit" || !!f.code;
     var tmsg = el("p", { cls: "csb-ed-msg", id: I.tmsg }), cmsg = el("p", { cls: "csb-ed-msg", id: I.cmsg });
     var status = el("p", { cls: "csb-ed-msg", id: I.status, role: "status", tabindex: "-1", text: SAID[key] || (LAPSED ? "Your sign-in has ended. Sign in again, then save." : "") });
     var save = editable ? el("button", { type: "button", cls: "csb-word", id: I.save, text: "Save" }) : null;
@@ -643,6 +861,20 @@
       ti = el("input", { type: "text", id: I.title, cls: "csb-input", maxlength: "120", autocomplete: "off", "aria-describedby": I.tmsg });
       ti.value = f.tVal || "";
       box.appendChild(el("div", { cls: "csb-ed-field" }, [el("label", { "for": I.title, text: "Local title" }), ti, tmsg]));
+      /* Where the title comes from (Sam, 2026-11-22, r-subject-title-source-link-sam-2026-11-22: "I wanted to add the link
+         and test it"): a link saved with the decision, and Open the link to check it in a new tab before Save. */
+      si = el("input", { type: "url", id: I.src, cls: "csb-input", maxlength: "500", autocomplete: "off", spellcheck: "false", inputmode: "url", "aria-describedby": I.smsg });
+      si.value = (sv && sv.source) || "";
+      smsg = el("p", { cls: "csb-ed-msg", id: I.smsg });
+      var openL = el("button", { type: "button", cls: "csb-word", id: I.open, text: "Open the link" });
+      openL.addEventListener("click", function () {
+        var u = String(si.value || "").trim();
+        smsg.textContent = "";
+        if (!isLink(u)) { smsg.textContent = u ? "That is not a web address. A link starts with https:// or http://." : "Paste the page's address first."; si.focus(); return; }
+        var w = window.open(u, "_blank", "noopener");
+        smsg.textContent = w === null ? "Your browser held the new tab. Allow pop-ups for this site, or copy the link into a new tab." : "Opened in a new tab. Check that it names " + row.code + ", then save.";
+      });
+      box.appendChild(el("div", { cls: "csb-ed-field" }, [el("label", { "for": I.src, text: "Source link (the page that names this title)" }), si, el("p", { cls: "csb-ed-row" }, [openL]), smsg]));
     } else if (f.title) box.appendChild(el("p", { cls: "csb-ed-ro", id: I.title + "-ro" }, [el("strong", { text: "Local title: " }), f.title]));
     if (f.code) {
       co = el("input", { type: "text", id: I.code, cls: "csb-input csb-input-code", maxlength: "4", autocomplete: "off", spellcheck: "false",
@@ -681,17 +913,21 @@
         if (!COMMON) { bad = true; cmsg.textContent = "The list of common subject codes could not be read, so no code can be checked. Nothing was saved."; }
         else if (!COMMON[k]) { bad = true; cmsg.textContent = k + " is not a common subject code on the Common Subjects Reference. Type a code it holds, such as KINE for Kinesiology. Nothing was saved."; }
       }
+      var src = si ? String(si.value || "").trim() : "";
+      if (smsg) smsg.textContent = "";
+      if (src && !isLink(src)) { bad = true; smsg.textContent = "That is not a web address. A link starts with https:// or http://. Nothing was saved."; }
       if (!t && !k) { bad = true; status.textContent = ti && co ? "Type a local title or a common subject code, then save." : ti ? "Type a local title, then save." : "Type a common subject code, then save."; }
       if (bad) return;
       var value = {};
       if (t) value.local_title = t;
       if (k) value.common_code = k;
+      if (src) value.source_url = src;
       save.disabled = true;
       status.textContent = "Saving…";
       writeSave(key, value).then(function (res) {
         if (!res.ok) { save.disabled = false; status.textContent = failed(res); return; }
         LAPSED = false;
-        SAVED[f.mapKey] = { title: value.local_title || "", common: value.common_code || "", at: new Date().toISOString(), by: res.email || "",
+        SAVED[f.mapKey] = { title: value.local_title || "", common: value.common_code || "", source: value.source_url || "", at: new Date().toISOString(), by: res.email || "",
           label: "a reviewer", decidedBy: "", key: key, mapKey: f.mapKey };
         SAID[key] = "Saved. The list shows your decision in place of the files.";
         redraw(I.status);
@@ -713,7 +949,8 @@
   }
   function ids(pre, notes) {
     return { title: pre + "-title", code: pre + "-code", tmsg: pre + "-title-msg", cmsg: pre + "-code-msg", status: pre + "-status",
-      save: pre + "-save", undo: pre + "-undo", use: pre + "-use", rec: notes + "-rec", others: notes + "-others", moved: notes + "-moved" };
+      save: pre + "-save", undo: pre + "-undo", use: pre + "-use", rec: notes + "-rec", others: notes + "-others", moved: notes + "-moved",
+      src: pre + "-source", smsg: pre + "-source-msg", open: pre + "-source-open" };
   }
   /* The credit form: band credit, or whole where COCI lists no course under the code. */
   function creditForm(c, row, box, band) {
@@ -855,6 +1092,7 @@
       var value = {};
       if (sv && sv.title) value.local_title = sv.title;
       if (k) value.common_code = k;
+      if (sv && sv.source) value.source_url = sv.source;
       plan.write.push({ x: x, r: r, band: band, key: saveKey(x.slug, code, band), mapKey: x.slug + "|" + code + "|" + band, value: value });
     });
     return plan;
@@ -904,7 +1142,7 @@
           return writeSave(it.key, it.value).then(function (res) {
             if (!res.ok) { bad.push(it); if (res.lapsed) { LAPSED = true; stop = "lapsed"; } return; }
             done.push(it);
-            SAVED[it.mapKey] = { title: it.value.local_title || "", common: k, at: new Date().toISOString(), by: res.email || "",
+            SAVED[it.mapKey] = { title: it.value.local_title || "", common: k, source: it.value.source_url || "", at: new Date().toISOString(), by: res.email || "",
               label: "a reviewer", decidedBy: "", key: it.key, mapKey: it.mapKey };
           }, function () { bad.push(it); });
         });
@@ -923,6 +1161,52 @@
     });
     return box;
   }
+  /* The panel's width: dragged by mouse, pen or finger from its left edge, or set from the keyboard on the grip (Left
+     widens, Right narrows, Home returns it to its own width). One width for every Subjects panel, kept across visits:
+     a width is no filter (CLAUDE.md, tabs never remember a filter). */
+  var PANEL_KEY = "cplSubjectsPanelW", PANEL_MIN = 360, PANEL_STEP = 40, panelMem;
+  function panelMax() { return Math.max(PANEL_MIN, (window.innerWidth || 1280) - 24); }
+  function panelW() {
+    if (panelMem === undefined) { try { panelMem = parseInt(window.localStorage.getItem(PANEL_KEY), 10) || null; } catch (e) { panelMem = null; } }
+    return panelMem;
+  }
+  function setPanelW(w) {
+    panelMem = w || null;
+    try { if (panelMem) window.localStorage.setItem(PANEL_KEY, String(panelMem)); else window.localStorage.removeItem(PANEL_KEY); } catch (e) { /* storage blocked */ }
+  }
+  function panelSize(panel) { var w = panelW(); panel.style.width = w ? Math.min(w, panelMax()) + "px" : ""; }
+  function panelGrip(panel) {
+    function now() { return panelW() || Math.round(panel.getBoundingClientRect().width) || 620; }
+    var g = el("span", { cls: "csb-pgrip", id: "csb-panel-grip", role: "separator", tabindex: "0", "aria-orientation": "vertical",
+      "aria-label": "Resize the panel", "aria-valuemin": String(PANEL_MIN), "aria-valuemax": String(panelMax()), "aria-valuenow": String(now()) });
+    function set(w) {
+      w = Math.max(PANEL_MIN, Math.min(panelMax(), Math.round(w)));
+      setPanelW(w); panelSize(panel); g.setAttribute("aria-valuenow", String(w));
+    }
+    g.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowLeft") set(now() + PANEL_STEP);
+      else if (e.key === "ArrowRight") set(now() - PANEL_STEP);
+      else if (e.key === "Home") { setPanelW(null); panelSize(panel); g.setAttribute("aria-valuenow", String(now())); }
+      else return;
+      e.preventDefault(); e.stopPropagation();
+    });
+    g.addEventListener("pointerdown", function (e) {
+      if (e.button !== undefined && e.button !== 0) return;
+      e.preventDefault(); e.stopPropagation();
+      var startX = e.clientX, startW = now();
+      try { g.setPointerCapture(e.pointerId); } catch (err) { /* an older engine */ }
+      /* The grip sits on the panel's left edge, so a drag to the left widens it. */
+      function move(ev) { if (ev.pointerId === e.pointerId) set(startW - (ev.clientX - startX)); }
+      function up(ev) {
+        if (ev && ev.pointerId !== undefined && ev.pointerId !== e.pointerId) return;
+        g.removeEventListener("pointermove", move); document.removeEventListener("pointermove", move);
+        ["pointerup", "pointercancel", "lostpointercapture"].forEach(function (t) { g.removeEventListener(t, up); document.removeEventListener(t, up); });
+      }
+      g.addEventListener("pointermove", move); document.addEventListener("pointermove", move);
+      ["pointerup", "pointercancel", "lostpointercapture"].forEach(function (t) { g.addEventListener(t, up); document.addEventListener(t, up); });
+    });
+    return g;
+  }
   function panelDraw(root, M) {
     var old = root.querySelector("#csb-panel");
     if (old) old.parentNode.removeChild(old);
@@ -937,10 +1221,15 @@
     var name = sv && sv.title ? sv.title : row && row.printed_name ? row.printed_name : "";
     var common = sv && sv.common ? sv.common + (COMMON && COMMON[sv.common] ? " " + COMMON[sv.common] : "")
       : row && row.common ? row.common + (row.discipline ? " " + row.discipline : "") : "";
+    /* The top row (the eyebrow, Close and the heading) stays frozen at the panel's top while its body scrolls, and the
+       panel resizes from its left edge (Sam, 2026-11-22, r-sidebars-resize-and-frozen-top-sam-2026-11-22: "the
+       sidebar needs to be adjustable width and the top row, including the close button, should be frozen to the top as
+       you scroll--this is a rule to apply to all side bars"). */
     var panel = el("aside", { cls: "csb-panel", id: "csb-panel", role: "dialog", "aria-labelledby": "csb-panel-h" }, [
       el("div", { cls: "csb-panel-in" }, [
-        el("div", { cls: "csb-panel-top" }, [el("p", { cls: "csb-eyebrow", text: "Courses under a local code" }), close]),
-        el("h3", { id: "csb-panel-h", tabindex: "-1", text: code + (name ? ", " + name : "") }),
+        el("div", { cls: "csb-panel-head", id: "csb-panel-head" }, [
+          el("div", { cls: "csb-panel-top" }, [el("p", { cls: "csb-eyebrow", text: "Courses under a local code" }), close]),
+          el("h3", { id: "csb-panel-h", tabindex: "-1", text: code + (name ? ", " + name : "") })]),
         el("p", { cls: "csb-note", text: c.college + ". " + (name ? "" : "No local title yet. ")
           + (common ? "Common subject code " + common + "." : "No common subject code yet.") }),
         row ? editBlock(c, row) : null,
@@ -951,6 +1240,8 @@
       b.addEventListener("click", function () { open(panelPath(b.getAttribute("data-csb-slug"), b.getAttribute("data-csb-code"))); });
     });
     panel.addEventListener("keydown", function (e) { if (e.key === "Escape") { e.preventDefault(); open(back); } });
+    panel.insertBefore(panelGrip(panel), panel.firstChild);
+    panelSize(panel);
     root.appendChild(panel);
     loadCourses(slug).then(function (codes) {
       if (S.code !== code || (S.at || S.view) !== slug) return;
@@ -960,12 +1251,14 @@
       var both = rows.filter(function (x) { return x.listed === "Both"; }).length, cat = rows.filter(function (x) { return x.listed === "Catalog"; }).length;
       body.appendChild(el("p", { cls: "csb-note", id: "csb-panel-count", text: fmt(rows.length) + (rows.length === 1 ? " course: " : " courses: ")
         + fmt(both) + " in both the catalog and COCI, " + fmt(cat) + " in the catalog only, " + fmt(rows.length - both - cat) + " in COCI only." }));
+      var can = !!reviewer() && String(code).indexOf("|") < 0, bar = can ? moveBar(slug, code, body) : null, nT = 0;
       BANDS.forEach(function (b) {
         var part = rows.filter(function (x) { return (x.band || "") === b[0]; });
         if (!part.length) return;
         body.appendChild(el("h4", { cls: "csb-band", "data-band": b[0], text: b[1] + " (" + fmt(part.length) + ")" }));
-        body.appendChild(courseTable(part, b[1] + " under " + code));
+        body.appendChild(courseTable(part, b[1] + " under " + code, { slug: slug, code: code, can: can, n: nT++, onCheck: bar ? bar.count : null }));
       });
+      if (bar) body.appendChild(bar.node);
     }, function (e) {
       if (S.code !== code) return;
       body.textContent = "";
@@ -1136,7 +1429,9 @@
           var M = model(f);
           /* The saves are a third read; a failed one leaves the list drawn from the files and says so. */
           return readSaves().then(function (m) { SAVED = m || {}; SAVE_ERR = ""; reconcile(M, m !== null); },
-            function (e) { SAVED = {}; SAVE_ERR = e && e.message ? e.message : String(e); reconcile(M, false); }).then(function () { return M; });
+            function (e) { SAVED = {}; SAVE_ERR = e && e.message ? e.message : String(e); reconcile(M, false); })
+            .then(function () { return readRows(MOVE_FIELD, MOVE_PREFIX).then(function (rows) { MOVES = movesModel(rows); }, function () { MOVES = {}; }); })
+            .then(function () { return M; });
         });
     });
   }
@@ -1189,6 +1484,15 @@
     ".csb-table th, .csb-table td { text-align:left; vertical-align:top; padding:8px 12px; border-bottom:1px solid var(--cmn-line-soft); color:var(--cmn-ink); overflow-wrap:anywhere; }",
     ".csb-table thead th { position:sticky; top:0; background:var(--cmn-surface); font-size:.75rem; letter-spacing:.04em; text-transform:uppercase; color:var(--cmn-muted); font-weight:700; }",
     ".csb-table tbody th { font-weight:600; }",
+    ".csb-courses .csb-c-box { width:44px; } .csb-courses input[type=checkbox] { width:20px; height:20px; margin:2px 0; accent-color:var(--cmn-accent); }",
+    ".csb-vh { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }",
+    ".csb-table thead th.csb-th { position:sticky; padding-right:20px; }",
+    ".csb-sort { all:unset; box-sizing:border-box; cursor:pointer; min-height:24px; font:inherit; letter-spacing:inherit; text-transform:inherit; color:inherit; text-decoration:underline; text-underline-offset:3px; overflow-wrap:anywhere; }",
+    ".csb-sort:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:2px; border-radius:2px; }",
+    ".csb-th[aria-sort='ascending'] .csb-sort, .csb-th[aria-sort='descending'] .csb-sort { color:var(--cmn-heading); }",
+    ".csb-grip { position:absolute; top:0; right:0; width:14px; height:100%; min-height:24px; cursor:col-resize; touch-action:none; z-index:3; }",
+    ".csb-grip:hover, .csb-grip:focus-visible { background:var(--cmn-line); }",
+    ".csb-grip:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:-2px; }",
     ".csb-table td { font-variant-numeric:tabular-nums; }",
     ".csb-c-wide { width:24%; }",
     ".csb-c-code { width:12%; } .csb-c-num { width:10%; } .csb-c-mid { width:20%; } .csb-c-ev { width:38%; }",
@@ -1204,8 +1508,13 @@
     ".csb-bands .csb-word[aria-pressed='true'] { color:var(--cmn-heading); text-decoration:none; border-bottom:2px solid var(--cmn-accent); }",
     ".csb-word:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:2px; border-radius:2px; }",
     ".csb-panel { position:fixed; top:0; right:0; bottom:0; z-index:1000; display:flex; width:min(620px, calc(100vw - 24px)); background:var(--cmn-dialog, var(--cmn-surface)); border-left:1px solid var(--cmn-line); box-shadow:-12px 0 32px color-mix(in srgb, var(--cmn-heading) 16%, transparent); color:var(--cmn-ink); }",
-    ".csb-panel-in { flex:1 1 auto; min-width:0; overflow-y:auto; display:grid; gap:12px; align-content:start; padding:calc(18px + env(safe-area-inset-top, 0px)) max(18px, env(safe-area-inset-right, 0px)) 24px 18px; }",
+    ".csb-panel-in { flex:1 1 auto; min-width:0; overflow-y:auto; overscroll-behavior:contain; display:grid; gap:12px; align-content:start; padding:0 max(18px, env(safe-area-inset-right, 0px)) 24px 18px; }",
+    ".csb-panel-head { position:sticky; top:0; z-index:2; display:grid; gap:6px; margin:0 calc(-1 * max(18px, env(safe-area-inset-right, 0px))) 0 -18px; padding:calc(14px + env(safe-area-inset-top, 0px)) max(18px, env(safe-area-inset-right, 0px)) 10px 18px; background:var(--cmn-dialog, var(--cmn-surface)); border-bottom:1px solid var(--cmn-line); }",
     ".csb-panel-top { display:flex; justify-content:space-between; align-items:baseline; gap:12px; }",
+    ".csb-pgrip { flex:0 0 12px; align-self:stretch; cursor:col-resize; touch-action:none; background:transparent; }",
+    ".csb-pgrip:hover, .csb-pgrip:focus-visible { background:var(--cmn-line); }",
+    ".csb-pgrip:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:-2px; }",
+    "@media (max-width: 560px) { .csb-panel { width:calc(100vw - 12px) !important; } .csb-pgrip { display:none; } }",
     ".csb-eyebrow { margin:0; font-size:.82rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--cmn-muted); }",
     ".csb-panel h3 { margin:0; font-family:var(--cmn-serif); font-size:clamp(1.15rem, 1rem + .6vw, 1.4rem); color:var(--cmn-title, var(--cmn-heading)); overflow-wrap:anywhere; }",
     ".csb-panel h3:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:3px; border-radius:2px; }",
