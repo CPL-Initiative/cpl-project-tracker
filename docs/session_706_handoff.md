@@ -164,6 +164,8 @@ Eight `cpl_memory` rows by `SkyTystie (S705)`: one at 14:25Z with S702's one-pre
 (`kb/migrations/2026-11-22_s705b_cpl_memory_rows.sql`); rollbacks beside each. Vault: a session note on a draft PR in
 samueltlee/CPLBrain. Wiki candidate for `/wiki-ingest`: the every-college Save and its person-settled rule.
 
+**#3687 at 16:20Z:** #3689 merged, so the census and Subjects checks are green; `main` is now red on `tests/exhibits_review_card_panels.test.js` check (8) (*the matcher flags Sam's pair*, 0 ordered pairs) since the CER procedures run `ac670dd0` changed the shipped titles. Not this PR's; fix that test or the matcher's data on `main`, then merge #3687 on a green `test`.
+
 ## Let go
 
 Still held at the last checkpoint (16:25Z): the PR subscription on #3687, and one check-in (`S705: recheck main's lints
