@@ -109,8 +109,9 @@ the fix to that writer. The census `harvest-gap-census.yml` ran on `main` at 15:
 broke three S703 tests, which read the live census: it reads the 131, 50 and 17 planned programs collected. **#3689**
 (`claude/s703-gap-tests-frozen-census`) freezes the plans' census in `tests/fixtures/harvest_gap_census_s703_plans.json`
 and carries #3687's Subjects hunk byte for byte, so it clears both red checks on `main`
-(`p-test-reads-live-census-s703`: a test of an applied plan reads the census it was built from). Merge it first, then
-#3686, #3675, #3683 and #3684, one at a time, each merging `main` again. Read the census's count at your start. The headline at 15:13Z: 15,349 of 20,282 active programs pass the machine checks, at 118 colleges (15,334 at the
+(`p-test-reads-live-census-s703`: a test of an applied plan reads the census it was built from). It merged at 16:06Z (`5ecfc451`); the CER procedures run 45039686524 then broke
+`tests/exhibits_review_card_panels.test.js` (it folded one of Sam's CAL FIRE pair), fixed on `main` by `68e839fb`. Merge
+#3686, #3675, #3683 and #3684 one at a time, each merging `main` again. Read the census's count at your start. The headline at 15:13Z: 15,349 of 20,282 active programs pass the machine checks, at 118 colleges (15,334 at the
 brief).
 
 Read in order: this file; the NEXT of [`program-requirements-harvest`](reference/lanes/program-requirements-harvest.md);
@@ -206,7 +207,8 @@ row; a rollback that undoes over 1% of a day's rows; the $10k checkpoint.
 |---|---|---|
 | #3674 (`claude/awesome-fermat-lwf2xm`) | the declaration and this checkpoint, carrying `claude/s703-sdcce-load`'s receipt | merges at sign-off |
 | #3676, #3678, #3679, #3677, #3681, #3685 | merged | none |
-| #3689 (`claude/s703-gap-tests-frozen-census`) | open; clears `main`'s two red checks | merge first |
+| #3689 (`claude/s703-gap-tests-frozen-census`) | merged `5ecfc451` (16:06Z): `main`'s two red checks cleared | none |
+| #3692 (`claude/s703-exhibits-test-frozen-titles`) | closed: `68e839fb` (another session) fixed the exhibits check the CER run 45039686524 broke | none |
 | #3686 (`claude/s703-levers`) | open | merge, one at a time |
 | #3675 (`claude/s703-glendale-butte`, Butte on `claude/s703-butte`) | open; 38973's read 45030485543 | merge after the read |
 | #3683 (`claude/s703-followup`) | open; second reader: merge | merge |
