@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 129,
  "with_closed_list": 121,
- "started": "2026-11-19T12:15:47Z",
+ "started": "2026-11-22T11:43:38Z",
  "pdf": {
   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf",
   "access": "ok",
@@ -26,6 +26,20 @@
    "after_mode": false,
    "gated": false,
    "read": "heading"
+  },
+  "pinned": {
+   "33433": {
+    "page": 106,
+    "bound": true
+   },
+   "33487": {
+    "page": 109,
+    "bound": true
+   },
+   "33491": {
+    "page": 110,
+    "bound": true
+   }
   },
   "picks": [
    {
@@ -81,16 +95,17 @@
    {
     "control_number": "33431",
     "pages": [
-     104,
-     105,
-     106
+     138,
+     139,
+     140,
+     141
     ],
-    "named": true,
+    "named": false,
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.909,
-    "opens": "[page 104] LIFE SCIENCE (MAJOR #C.6102.AS) ASSOCIATE IN SCIENCE DEGREE Program Learning Outcomes 1. Demonstrate basic knowledge of comparative anatomy and comparative physiology 2. Demonstrate basic microscopic te"
+    "coverage": 0.773,
+    "opens": "[page 138] 133 List C: Select one course: Course # Course Name Units HIST 1 Western Civilization to 1648 3 HIST 2 Western Civilization from 1648 3 HIST C1001 United States History to 1877 3 HIST C1"
    },
    {
     "control_number": "33432",
@@ -110,17 +125,18 @@
    {
     "control_number": "33433",
     "pages": [
+     106,
      107,
      108,
-     109,
-     110
+     109
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.818,
-    "opens": "[page 107] 102 Select one course: Course # Course Name Units BA 19 Work Experience Education, Busine ss (Formerly Business Administration 19V) 1 BA 27 Students in Free Enterprise SIFE/C"
+    "coverage": 0.909,
+    "opens": "[page 106] BUSINESS ADMINISTRATION ASSOCIATE IN SCIENCE DEGREE Catalog Description A student who completes this degree will be prepared to assume responsibility for an entry or mid-level managerial position in an ",
+    "pinned": true
    },
    {
     "control_number": "33458",
@@ -389,39 +405,42 @@
    {
     "control_number": "33487",
     "pages": [
-     107
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": true,
-    "coverage": 1.0,
-    "opens": "[page 107] 102 Select one course: Course # Course Name Units BA 19 Work Experience Education, Busine ss (Formerly Business Administration 19V) 1 BA 27 Students in Free Enterprise SIFE/C"
-   },
-   {
-    "control_number": "33489",
-    "pages": [
-     146,
-     147
+     109,
+     110
     ],
     "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 146] PHYSICAL EDUCATION PHYSICAL EDUCATION (MAJOR #C.4200.AA) ASSOCIATE IN ARTS DEGREE Program Learning Outcomes 1. Plan, implement, practice, and measure app ropriate fitness activities which promote impro"
+    "opens": "[page 109] MANAGEMENT (Major #C.2180.AS) ASSOCIATE IN SCIENCE DEGREE Catalog Description This associate degree is intended for students who wish to be successful in the business environment. The course of study w",
+    "pinned": true
    },
    {
-    "control_number": "33491",
+    "control_number": "33489",
     "pages": [
-     107
+     173,
+     174
     ],
     "named": false,
     "code": null,
     "cn_printed": false,
     "titled": true,
+    "coverage": 0.632,
+    "opens": "[page 173] KINESIOLOGY ASSOCIATE IN ARTS IN KINESIOLOGY FOR TRANSFER DEGREE (Major #C.1270.AA-T) Program Learning Outcomes 1. Plan, implement, practice, and/or measure appropriate physical activities, whi"
+   },
+   {
+    "control_number": "33491",
+    "pages": [
+     110
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
     "coverage": 1.0,
-    "opens": "[page 107] 102 Select one course: Course # Course Name Units BA 19 Work Experience Education, Busine ss (Formerly Business Administration 19V) 1 BA 27 Students in Free Enterprise SIFE/C"
+    "opens": "[page 110] SMALL BUSINESS MANAGEMENT (Major #C.2030.AS) ASSOCIATE IN SCIENCE DEGREE Catalog Description This associate degree is intended for students who wish to be successful in the business environment, especi",
+    "pinned": true
    },
    {
     "control_number": "33492",
@@ -477,18 +496,6 @@
     "opens": "[page 159] Business Administration for Transfer Degree 2.0 will be able to seamlessly transfer into the CSU system to pursue a baccalaureate degree in Business Administration. Students completing this degree will hav"
    },
    {
-    "control_number": "33496",
-    "pages": [
-     111
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": true,
-    "coverage": 0.529,
-    "opens": "[page 111] 106 COMMUNICATION (MAJOR #C.5342.AA) ASSOCIATE IN ARTS DEGREE Catalog Description The number one skill requested by employers is good communication skills. The associate degree in comm"
-   },
-   {
     "control_number": "33497",
     "pages": [
      163,
@@ -541,7 +548,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 173] KINESIOLOGY ASSOCIATE IN ARTS IN KINESIOLOGY FOR TRANSFER DEGREE (Major #C.1270.AA-T) Program Learning Outcomes 1. Plan, implement, practice, and/or measure appropriate physical activities, which promo"
+    "opens": "[page 173] The Associate in Arts in Kinesiology for Transfer Degree prepares students for transfer into four-year kinesiology programs. A diverse field of academic study and practical application in kinesiology allows"
    },
    {
     "control_number": "33501",
@@ -583,7 +590,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 179] PHYSICS ASSOCIATE IN SCIENCE IN PHYSICS FOR TRANSFER DEGREE (Major #C.3664.AS-T) Program Learning Outcomes 1. Apply algebra, trigonometry, and first-year calculus to solve physical problems. 2. Appl"
+    "opens": "[page 179] Degree in Physics for Transfer (AS-T in Physics) generally transfers to a four-year institution to complete a bachelor’s degree. Physics graduates at the bachelors’ level are qualified for a variety of tec"
    },
    {
     "control_number": "33504",
@@ -609,7 +616,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 0.947,
-    "opens": "[page 155] ASSOCIATE IN ARTS IN STUDIO ARTS FOR TRANSFER DEGREE (Major #C.5203.AA-T) Program Learning Outcomes 1. Apply knowledge of the elements and principles of design to the description and/or production of ar"
+    "opens": "[page 155] AA-T in Studio Arts is designed to give students basic skills in 2D and 3D composition, an introductory level of knowledge of art history and computer digital art familiarity. The primary focus is to prepa"
    },
    {
     "control_number": "33506",
@@ -966,17 +973,16 @@
    {
     "control_number": "38394",
     "pages": [
-     183,
-     184,
      185,
-     186
+     186,
+     187
     ],
-    "named": true,
+    "named": false,
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.957,
-    "opens": "[page 183] SOCIAL JUSTICE STUDIES ASSOCIATE IN ARTS IN SOCIAL JUSTICE STUDIES FOR TRANSFER DEGREE (Major #C.7611.AA-T) Program Learning Outcomes 1. Identify and analyze the ways injustices are institutionalized "
+    "coverage": 0.609,
+    "opens": "[page 185] 180 To obtain the Associate in Arts in Social Work and Human Services for Transfer Degree, students must complete the following. Associate Degree for Transfer requirements (pursuant to SB144"
    },
    {
     "control_number": "38401",
@@ -1228,18 +1234,6 @@
     "opens": "[page 175] The Associate in Arts in Music for Transfer degree prepares students to transfer to a CSU campus to pursue a bachelor's degree in music. Specializations may include music education, music performance, musi"
    },
    {
-    "control_number": "42839",
-    "pages": [
-     111
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": true,
-    "coverage": 0.5,
-    "opens": "[page 111] 106 COMMUNICATION (MAJOR #C.5342.AA) ASSOCIATE IN ARTS DEGREE Catalog Description The number one skill requested by employers is good communication skills. The associate degree in comm"
-   },
-   {
     "control_number": "42888",
     "pages": [
      150
@@ -1371,15 +1365,14 @@
    {
     "control_number": "44475",
     "pages": [
-     128,
-     129
+     168
     ],
-    "named": true,
+    "named": false,
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 1.0,
-    "opens": "[page 128] GEOGRAPHIC INFORMATION SYSTEMS (MAJOR #C.7301.CA) CERTIFICATE OF ACHIEVEMENT Program Learning Outcomes 1. Identify, evaluate, and interpret sources of geographic information from maps, geographic informa"
+    "coverage": 0.6,
+    "opens": "[page 168] 163 GEOGRAPHY ASSOCIATE IN ARTS IN GEOGRAPHY FOR TRANSFER DEGREE (MAJOR #C.7300.AA-T) Program Learning Outcomes 1. Recognize, identify and discuss the major geographic features of the "
    },
    {
     "control_number": "44551",
@@ -1486,8 +1479,8 @@
    }
   ],
   "page_checks": {
-   "read": 15,
-   "own_page": 14,
+   "read": 10,
+   "own_page": 9,
    "no_own_page": 1,
    "not_printed": 0
   },
@@ -1496,28 +1489,21 @@
  "loads": 1,
  "pages_listed": 1,
  "pages_answered": 1,
- "seconds": 63.7,
- "found": 109,
+ "seconds": 80.8,
+ "found": 107,
  "by_method": {
   "no_closed_list": 8,
-  "not_found": 12,
-  "pdf_pages": 109
+  "not_found": 14,
+  "pdf_pages": 107
  },
  "shared_pages": {
-  "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=111": [
-   "33347",
-   "33496",
-   "42839"
-  ],
   "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=136": [
    "33367",
    "33430"
   ],
-  "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=107": [
-   "33432",
+  "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=106": [
    "33433",
-   "33487",
-   "33491"
+   "45319"
   ],
   "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=117": [
    "33458",
@@ -1530,6 +1516,7 @@
   "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=109": [
    "33462",
    "33479",
+   "33487",
    "38403"
   ],
   "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=120": [
@@ -1552,9 +1539,17 @@
    "33483",
    "33768"
   ],
+  "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=110": [
+   "33480",
+   "33491"
+  ],
   "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=149": [
    "33481",
    "33961"
+  ],
+  "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=173": [
+   "33489",
+   "33500"
   ],
   "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=169": [
    "33499",
@@ -1565,6 +1560,10 @@
    "42232",
    "42234",
    "42235"
+  ],
+  "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=168": [
+   "36326",
+   "44475"
   ],
   "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=103": [
    "36909",
@@ -1594,6 +1593,10 @@
    "37948",
    "45571"
   ],
+  "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=185": [
+   "38394",
+   "43534"
+  ],
   "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=108": [
    "38401",
    "38402"
@@ -1622,7 +1625,8 @@
    "award": "A.S. Degree",
    "near_miss": {
     "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=90",
-    "coverage": 0.0
+    "coverage": 0.0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -1632,7 +1636,8 @@
    "award": "A.S. Degree",
    "near_miss": {
     "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=90",
-    "coverage": 0.0
+    "coverage": 0.0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -1642,7 +1647,8 @@
    "award": "A.S. Degree",
    "near_miss": {
     "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=90",
-    "coverage": 0.0
+    "coverage": 0.0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -1652,7 +1658,8 @@
    "award": "A.A. Degree",
    "near_miss": {
     "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=92",
-    "coverage": 0.0
+    "coverage": 0.0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -1662,9 +1669,21 @@
    "award": "A.A. Degree",
    "near_miss": {
     "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=92",
-    "coverage": 0.0
+    "coverage": 0.0,
+    "page_checks": true
    },
    "status": "Active"
+  },
+  {
+   "control_number": "33496",
+   "title": "Communication Studies",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=90",
+    "coverage": 0.0,
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "35845",
@@ -1683,7 +1702,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -1698,12 +1718,24 @@
    "status": "Active"
   },
   {
+   "control_number": "42839",
+   "title": "Communication Studies 2.0",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=90",
+    "coverage": 0.0,
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
    "control_number": "43376",
    "title": "Agriculture Plant Science",
    "award": "A.S. T Degree",
    "near_miss": {
     "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=89",
-    "coverage": 0.0
+    "coverage": 0.0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -1727,7 +1759,8 @@
    "award": "A.A- T Degree",
    "near_miss": {
     "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=91",
-    "coverage": 0.0
+    "coverage": 0.0,
+    "page_checks": true
    },
    "status": "Approved"
   }
@@ -1735,175 +1768,73 @@
  "page_claimed": [],
  "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 6,
-  "0.8-1.0": 52,
-  "1.0": 51
+  "0.5-0.8": 8,
+  "0.8-1.0": 50,
+  "1.0": 49
  },
  "would_extract": {
   "against": "kb/program_requirements_college/clovis_community",
-  "kept": 49,
+  "kept": 85,
   "kept_moved": 0,
-  "programs": 49,
+  "programs": 3,
   "list": [
    {
-    "control_number": "33347",
-    "title": "Communication Studies",
-    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=111",
-    "coverage": 1.0,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=111",
-    "was_coverage": 0.889,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "33431",
-    "title": "Life Science",
+    "control_number": "33433",
+    "title": "Business Administration: General Business",
     "award": "A.S. Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=104",
+    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=106",
     "coverage": 0.909,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=138",
-    "was_coverage": 0.682,
+    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=107",
+    "was_coverage": 0.818,
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "33464",
-    "title": "Teacher II",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=119",
-    "coverage": 0.833,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=119",
-    "was_coverage": 0.75,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "33465",
-    "title": "Teacher III",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=120",
-    "coverage": 0.75,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=120",
-    "was_coverage": 0.625,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "33466",
-    "title": "Child Development",
+    "control_number": "33487",
+    "title": "Management",
     "award": "A.S. Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=117",
-    "coverage": 0.8,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=118",
-    "was_coverage": 0.75,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "33468",
-    "title": "Computer Science",
-    "award": "A.S. Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=112",
+    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=109",
     "coverage": 1.0,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=112",
-    "was_coverage": 0.8,
+    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=107",
+    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "33483",
-    "title": "Information Systems -- Programming for the Web",
+    "control_number": "33491",
+    "title": "Small Business Management",
     "award": "A.S. Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=133",
-    "coverage": 0.938,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=133",
-    "was_coverage": 0.875,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "33486",
-    "title": "Liberal Studies",
-    "award": "A.A. Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=139",
-    "coverage": 0.97,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=139",
-    "was_coverage": 0.909,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "33489",
-    "title": "Physical Education",
-    "award": "A.A. Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=146",
+    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=110",
     "coverage": 1.0,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=173",
-    "was_coverage": 0.632,
+    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=107",
+    "was_coverage": 1.0,
     "was_method": "pdf_pages"
-   },
+   }
+  ],
+  "held_worse_window": [
    {
-    "control_number": "33493",
-    "title": "Information Systems -- Networking",
-    "award": "A.S. Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=132",
-    "coverage": 0.938,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=132",
-    "was_coverage": 0.875,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "33494",
-    "title": "Administration of Justice",
-    "award": "A.S. T Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=152",
-    "coverage": 0.938,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=152",
-    "was_coverage": 0.875,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "33496",
-    "title": "Communication Studies",
+    "control_number": "38394",
+    "title": "Social Justice Studies",
     "award": "A.A- T Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=111",
-    "coverage": 0.529,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=185",
+    "coverage": 0.609,
+    "was_coverage": 0.957
    },
    {
-    "control_number": "33499",
-    "title": "History",
-    "award": "A.A- T Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=169",
-    "coverage": 1.0,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=170",
-    "was_coverage": 0.968,
-    "was_method": "pdf_pages"
-   },
+    "control_number": "44475",
+    "title": "Geographic Information Systems (GIS)",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=168",
+    "coverage": 0.6,
+    "was_coverage": 1.0
+   }
+  ],
+  "held_no_gain": [
    {
     "control_number": "33500",
     "title": "Kinesiology",
     "award": "A.A- T Degree",
     "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=173",
     "coverage": 1.0,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=147",
-    "was_coverage": 0.931,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "33501",
-    "title": "Mathematics",
-    "award": "A.S. T Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=174",
-    "coverage": 1.0,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=175",
-    "was_coverage": 0.625,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "33502",
-    "title": "Psychology",
-    "award": "A.A- T Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=182",
-    "coverage": 0.957,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=182",
-    "was_coverage": 0.739,
-    "was_method": "pdf_pages"
+    "was_coverage": 1.0
    },
    {
     "control_number": "33503",
@@ -1911,19 +1842,7 @@
     "award": "A.S. T Degree",
     "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=179",
     "coverage": 1.0,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=123",
-    "was_coverage": 0.667,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "33504",
-    "title": "Sociology",
-    "award": "A.A- T Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=186",
-    "coverage": 0.727,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=186",
-    "was_coverage": 0.636,
-    "was_method": "pdf_pages"
+    "was_coverage": 1.0
    },
    {
     "control_number": "33505",
@@ -1931,18 +1850,74 @@
     "award": "A.A- T Degree",
     "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=155",
     "coverage": 0.947,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=98",
-    "was_coverage": 0.947,
+    "was_coverage": 0.947
+   }
+  ],
+  "held_opens_on_list": [],
+  "only": [
+   "33433",
+   "33487",
+   "33491"
+  ],
+  "not_named": [
+   {
+    "control_number": "33431",
+    "title": "Life Science",
+    "award": "A.S. Degree",
+    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=138",
+    "coverage": 0.773,
+    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=104",
+    "was_coverage": 0.909,
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "33506",
-    "title": "Philosophy",
-    "award": "A.A- T Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=177",
-    "coverage": 0.975,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=178",
-    "was_coverage": 0.8,
+    "control_number": "33459",
+    "title": "Art: Two-Dimensional",
+    "award": "A.A. Degree",
+    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=97",
+    "coverage": 0.95,
+    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=97",
+    "was_coverage": 0.95,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "33467",
+    "title": "Communication",
+    "award": "A.A. Degree",
+    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=162",
+    "coverage": 0.889,
+    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=162",
+    "was_coverage": 0.889,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "33481",
+    "title": "Wastewater Treatment",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=149",
+    "coverage": 1.0,
+    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=149",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "33489",
+    "title": "Physical Education",
+    "award": "A.A. Degree",
+    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=173",
+    "coverage": 0.632,
+    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=146",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "33497",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=163",
+    "coverage": 0.75,
+    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=163",
+    "was_coverage": 0.75,
     "was_method": "pdf_pages"
    },
    {
@@ -1951,324 +1926,9 @@
     "award": "A.A- T Degree",
     "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=121",
     "coverage": 0.96,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=166",
-    "was_coverage": 0.88,
+    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=121",
+    "was_coverage": 0.96,
     "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "35129",
-    "title": "Biology",
-    "award": "A.S. T Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=157",
-    "coverage": 0.643,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=158",
-    "was_coverage": 0.571,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "35535",
-    "title": "Economics",
-    "award": "A.A- T Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=165",
-    "coverage": 1.0,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=165",
-    "was_coverage": 0.818,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "35886",
-    "title": "Spanish",
-    "award": "A.A- T Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=187",
-    "coverage": 1.0,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=187",
-    "was_coverage": 0.957,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "36050",
-    "title": "Art History",
-    "award": "A.A- T Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=154",
-    "coverage": 0.808,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=155",
-    "was_coverage": 0.75,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "36326",
-    "title": "Geography",
-    "award": "A.A- T Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=168",
-    "coverage": 1.0,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=168",
-    "was_coverage": 0.957,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "36632",
-    "title": "Anthropology",
-    "award": "A.A- T Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=153",
-    "coverage": 0.867,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=153",
-    "was_coverage": 0.8,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "37030",
-    "title": "Civil Engineering",
-    "award": "A.S. Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=123",
-    "coverage": 0.882,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=123",
-    "was_coverage": 0.765,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "37031",
-    "title": "Civil Engineering",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=123",
-    "coverage": 0.882,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=123",
-    "was_coverage": 0.765,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "37033",
-    "title": "Electrical Engineering",
-    "award": "A.S. Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=126",
-    "coverage": 0.929,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=126",
-    "was_coverage": 0.786,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "37035",
-    "title": "Computer or Software Engineering",
-    "award": "A.S. Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=124",
-    "coverage": 0.929,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=124",
-    "was_coverage": 0.786,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "37039",
-    "title": "Computer or Software Engineering",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=124",
-    "coverage": 0.929,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=124",
-    "was_coverage": 0.786,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "37043",
-    "title": "Electrical Engineering",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=126",
-    "coverage": 0.929,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=126",
-    "was_coverage": 0.786,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "37044",
-    "title": "Mechanical, Aerospace, or Manufacturing Engineering",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=127",
-    "coverage": 1.0,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=127",
-    "was_coverage": 0.875,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "37045",
-    "title": "Mechanical, Aerospace, or Manufacturing Engineering",
-    "award": "A.S. Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=127",
-    "coverage": 1.0,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=127",
-    "was_coverage": 0.875,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "37227",
-    "title": "Environmental Science",
-    "award": "A.S. T Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=158",
-    "coverage": 1.0,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=158",
-    "was_coverage": 0.929,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "38394",
-    "title": "Social Justice Studies",
-    "award": "A.A- T Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=183",
-    "coverage": 0.957,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=185",
-    "was_coverage": 0.565,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "39539",
-    "title": "Occupational Therapy Assistant",
-    "award": "A.S. Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=145",
-    "coverage": 0.926,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=145",
-    "was_coverage": 0.889,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "40009",
-    "title": "UCTP Chemistry",
-    "award": "A.S. T Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=161",
-    "coverage": 0.923,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=161",
-    "was_coverage": 0.769,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "40316",
-    "title": "Geology",
-    "award": "A.S. T Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=169",
-    "coverage": 1.0,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=169",
-    "was_coverage": 0.667,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "40703",
-    "title": "Child and Adolescent Development",
-    "award": "A.A- T Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=164",
-    "coverage": 0.9,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=164",
-    "was_coverage": 0.75,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "41534",
-    "title": "Chemistry",
-    "award": "A.S. T Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=160",
-    "coverage": 0.9,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=161",
-    "was_coverage": 0.7,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "42234",
-    "title": "Elementary Teacher Level 2",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=121",
-    "coverage": 1.0,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=122",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "42235",
-    "title": "Elementary Teacher Level 3",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=121",
-    "coverage": 0.909,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=122",
-    "was_coverage": 0.727,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "42405",
-    "title": "UCTP Physics",
-    "award": "A.S. T Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=180",
-    "coverage": 1.0,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=180",
-    "was_coverage": 0.778,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "42839",
-    "title": "Communication Studies 2.0",
-    "award": "A.A- T Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=111",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "43534",
-    "title": "Social Work and Human Services",
-    "award": "A.A- T Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=185",
-    "coverage": 1.0,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=185",
-    "was_coverage": 0.966,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "44475",
-    "title": "Geographic Information Systems (GIS)",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=128",
-    "coverage": 1.0,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=168",
-    "was_coverage": 0.6,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "44551",
-    "title": "Data Science",
-    "award": "A.S. Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=112",
-    "coverage": 0.857,
-    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=112",
-    "was_coverage": 0.571,
-    "was_method": "pdf_pages"
-   }
-  ],
-  "held_worse_window": [],
-  "held_no_gain": [
-   {
-    "control_number": "33459",
-    "title": "Art: Two-Dimensional",
-    "award": "A.A. Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=97",
-    "coverage": 0.95,
-    "was_coverage": 0.95
-   },
-   {
-    "control_number": "33467",
-    "title": "Communication",
-    "award": "A.A. Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=162",
-    "coverage": 0.889,
-    "was_coverage": 0.889
-   },
-   {
-    "control_number": "33481",
-    "title": "Wastewater Treatment",
-    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=149",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "33497",
-    "title": "Early Childhood Education",
-    "award": "A.S. T Degree",
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=163",
-    "coverage": 0.75,
-    "was_coverage": 0.75
    },
    {
     "control_number": "41135",
@@ -2276,7 +1936,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=141",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=141",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "41138",
@@ -2284,7 +1946,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=143",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=143",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "41298",
@@ -2292,7 +1956,9 @@
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
     "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=120",
     "coverage": 0.857,
-    "was_coverage": 0.857
+    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=120",
+    "was_coverage": 0.857,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "43174",
@@ -2300,7 +1966,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=100",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=100",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "43175",
@@ -2308,7 +1976,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=100",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=100",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "45315",
@@ -2316,7 +1986,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=102",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=102",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "45319",
@@ -2324,10 +1996,11 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=106",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=106",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    }
   ],
-  "held_opens_on_list": [],
   "refused_passing": [],
   "forced_unbound": []
  },
@@ -2349,16 +2022,16 @@
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=136"
   },
   "33431": {
-   "sha256": "465a33f7392a267109ed929036633af0660dc0644ee0eada9172c291583bdc39",
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=104"
+   "sha256": "e0314a2545ff57b1dba7b873803bcc2a9627d063c82d17f613ad2cc3c7486936",
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=138"
   },
   "33432": {
    "sha256": "7ea870675ad4c16fbc00f1c4aa70d0491ccd38417482032f3820d1654c157590",
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=107"
   },
   "33433": {
-   "sha256": "7ea870675ad4c16fbc00f1c4aa70d0491ccd38417482032f3820d1654c157590",
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=107"
+   "sha256": "e972ec4f1528ed0eb84bc88d90758f62166e3349be032afb028c72f6598a9dd8",
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=106"
   },
   "33458": {
    "sha256": "f9095e09def087ec86a4ed58ed443280bc36c898bd5869bbf3ce238ade74fa78",
@@ -2437,16 +2110,16 @@
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=139"
   },
   "33487": {
-   "sha256": "a0762af30ab65c82afa01e21f01318908cb8c85bb2537b839a4cd301b3d33768",
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=107"
+   "sha256": "3aa162fa58f9d6e6f1b3fd1dabd53a8af565dc8a9cf5959aa787acf5dd3bbd8f",
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=109"
   },
   "33489": {
-   "sha256": "417922a204ae0db2ea1a0bf87caa2f53ca664ef2c82d3908649835395309d498",
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=146"
+   "sha256": "2f3d4b27ca8f905fd6b5255034fa1633ee7845257423d57003e6290594f4aae7",
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=173"
   },
   "33491": {
-   "sha256": "a0762af30ab65c82afa01e21f01318908cb8c85bb2537b839a4cd301b3d33768",
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=107"
+   "sha256": "8d9774956f9bd603fd2fcc512909c2fbff8f06bd4d898307cce9eadcc9a6357c",
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=110"
   },
   "33492": {
    "sha256": "4874d188a3aff7e93aaa497e98e8dc2c1371c10f44f23dc7bbefc02888433fbd",
@@ -2464,10 +2137,6 @@
    "sha256": "25f787b7822f9f5b812535d379f05b95acf0736cac598b6ee60a946bdffe5ca3",
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=159"
   },
-  "33496": {
-   "sha256": "e2d6619c8c0e3b82405da1de0667498cfca69935ca7bfb67cb1d99157b3fc2f5",
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=111"
-  },
   "33497": {
    "sha256": "bc9d1534f6bafddd4232a6e9003eaa0d02b93e057f5430b3fd5ad89c0ea91cd7",
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=163"
@@ -2481,7 +2150,7 @@
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=169"
   },
   "33500": {
-   "sha256": "7f8c5ac229cb85d524330d25ddf0832b720f776c693355644f19be8ac7d73355",
+   "sha256": "ab99e044c7e7ed92918b782e73571571c5769ece995e0289ef11f689e44679d8",
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=173"
   },
   "33501": {
@@ -2493,7 +2162,7 @@
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=182"
   },
   "33503": {
-   "sha256": "2436ca81528f2a7ab931d3f3247e003ff198f62631e7eb1ecae33b6716f8571b",
+   "sha256": "0acda3133a3961d3b53b064c387d7b276c72f023beea0fb3af1619e9b5757783",
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=179"
   },
   "33504": {
@@ -2501,7 +2170,7 @@
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=186"
   },
   "33505": {
-   "sha256": "ffbe3eac9552570b757c6b45aeb70cd02e8e2b934ebd3efd1ab4b91ea4b14066",
+   "sha256": "0154e4ff649349a2629c8603e463f1a4cdd5be0119fdf9dc89dcafa306831ee0",
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=155"
   },
   "33506": {
@@ -2609,8 +2278,8 @@
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=94"
   },
   "38394": {
-   "sha256": "f851278a088c3dc7051c0b68068c5436be5417c96f26c60cccf464002ee27cb9",
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=183"
+   "sha256": "678c0aa67c55c4a91fcd5261ca991c17a33182b9d5aea0987ebfa15d0084afe4",
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=185"
   },
   "38401": {
    "sha256": "e78edf96568b946030a74aae7792d775ab248dc8124b37b429c9def9d0932857",
@@ -2688,10 +2357,6 @@
    "sha256": "9bac9ed9f83b9d118fff08accee6c109e8b5ac6abeb30a4d5cfa6031eca9120b",
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=175"
   },
-  "42839": {
-   "sha256": "e2d6619c8c0e3b82405da1de0667498cfca69935ca7bfb67cb1d99157b3fc2f5",
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=111"
-  },
   "42888": {
    "sha256": "80bc7fd48246cc3911c6ae8b76c48b55038cd9584582e0f962a222d402412381",
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=150"
@@ -2733,8 +2398,8 @@
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=96"
   },
   "44475": {
-   "sha256": "7ae1e65fe94311d400f75d2a288703f59883560b2c19602968c0adce7bed07b6",
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=128"
+   "sha256": "768cf879cd7d5c3f6c213132f8b40ad7da7d382c70d70b6ac69fd74b42cf2a11",
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=168"
   },
   "44551": {
    "sha256": "e9467c9537531c56614484bad73045eb54e064e9b2c467970968522f24b78c41",
@@ -2769,5 +2434,10 @@
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=112"
   }
  },
- "run": "44522071814"
+ "staged_from": {
+  "run": "45018063256",
+  "proof": "text sha256 of 107 programs",
+  "pages_loaded": 0
+ },
+ "run": "45018954283"
 }

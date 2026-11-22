@@ -1,0 +1,321 @@
+All Fields
+COMM 550 - INTRO TO DIGITAL DESIGN
+Cover
+Course Number
+550
+Subject
+COMM
+Course Title
+INTRO TO DIGITAL DESIGN
+Short Title
+INTRO TO DIGITAL DESIGN
+Effective Semester
+2022 Spring
+CB04: Credit Status
+N - Non Credit
+CB05: Transfer Status
+C - Not transferable
+CB08: Basic Skills
+N - Not Basic Skills
+Main
+CB11 Classification K - Other Noncredit Enhanced Funding
+CB22 Non-Credit Category I - Short-term Vocational: Includes programs with high employment potential
+Grading Method
+Grade Options Letter Grade Only
+Grade Graded
+Catalog Description
+This course provides an introduction and overview of the graphic communications industry and the qualifications necessary to match career opportunities. An emphasis will be placed on the basic knowledge required for advancement towards certificate and/or degree programs in visual communications or employment in related professional fields. Students will develop a professional portfolio to include but not limited to a resume and digital portfolio. Hands-on exercises in planning, designing, and creating computer-based digital media through various projects will be utilized during the course. (FT)
+Originating Campus
+Colleges
+Continuing Education
+Proposal Information
+Reason For Proposed Action
+Import
+Costs
+0
+Field Trips May be required
+This is a CTE Course Yes
+Codes
+CB03: TOP Code 070710 - Computer Programming
+CIP Code
+CB09: SAM Code C - Clearly Occupational
+CB04: Credit Status (DO NOT DELETE. Needed for show / hide to work. The width and height have been set to 0 so the field appears hidden.) N - Non Credit
+Goals
+Course Goals
+Goals Text
+Acquire an overview of the business structure, organization, and specialties in pursuit of a career in the current graphic communications industry.
+Goals Text
+Prepare for industry employment and future course work by learning the basics of pixel and vector based graphics for digital deployment.
+Legacy Data
+1. Acquire an overview of the business structure, organization, and specialties in pursuit of a career in the current graphic communications industry. 2. Prepare for industry employment and future course work by learning the basics of pixel and vector based graphics for digital deployment.
+Disciplines
+Minimum Qualification
+Hours/Units
+Lecture Hours
+Min Lecture Hours
+Max Lecture Hours
+Lab Hours
+Min Lab Hours
+Max Lab Hours
+Lecture/Lab
+Min Lab/Lecture Hours
+Max Lab/Lecture Hours
+Min Total Hours 80.000
+Max Total Hours 80.000
+Additional Information
+Combined Lecture/Lab Hours
+Content
+Course Lecture Content (Use outline format)
+Graphic Communications Careers 
+Business communications 
+Critical thinking 
+Project coordination 
+Client relations and management 
+Scope creep 
+Cost management 
+Business correspondence 
+Job Search 
+Cover letter 
+Resume 
+Professional organizations 
+Networking 
+Lifelong learning 
+Project management 
+Tasks 
+Responsibilities 
+Further education 
+Professional certification 
+Community college and/or higher education certificates 
+University and/or university extension certification 
+Associate’s degrees 
+Bachelor’s degrees and Beyond 
+Career Pathways 
+Job description 
+Educational requirements 
+Responsibilities 
+Work schedules 
+Wages 
+Title 
+Graphic designer 
+Web designer 
+Photo editor 
+Video editor
+Animator
+Web designer 
+Package designer 
+Social media specialist 
+User experience Designer (UX) 
+User Interface Designer (UI)  
+Art director 
+Creative director 
+Chief Media Officer  
+Introduction to the Elements and Principles of Design  
+Elements
+Line
+Shape
+Color
+Texture
+Form  
+Principles 
+Contrast 
+Balance 
+Emphasis 
+Proportion 
+Hierarchy 
+Repetition  
+Introduction to Photoshop  
+Workspace 
+User Interface 
+Interface functions 
+Understanding pixel-based images  
+Picture element 
+Color depth 
+Image types 
+Basic Image Correction 
+Color correction 
+Blending 
+Cloning 
+Filters  
+Basic digital photo editing 
+Selections 
+Layers 
+Colors 
+Saving and Exporting 
+Saving 
+Exporting 
+File formats 
+Introduction to Illustrator 
+Workspace 
+User interface 
+Interface functions 
+Understanding Vector based graphics 
+Layers, art boards 
+Color and swatches 
+Fill and Stroke 
+Typography 
+Basic tools functions 
+Selection 
+Shapes 
+Scale 
+Basic vector creation 
+Layers 
+Vector drawing tools 
+Views, modes 
+Saving and exporting 
+Saving 
+Exporting 
+File formats 
+Introduction to InDesign 
+Workspace 
+User interface 
+Interface functions 
+Portfolio page layout 
+Panels  
+Tools 
+Pages 
+Layers 
+Actions for interactivity between pages 
+Graphic and text frames 
+Creating frames 
+Placing graphics 
+Importing text 
+Linking text between frames 
+Typography 
+Font Families 
+Font hierarchy 
+Text alignment 
+Leading, kerning, tracking 
+Portfolio Presentation 
+Packaging 
+Saving 
+Exporting as an Interactive.pdf 
+Presentation of portfolio to class 
+Career Advancement 
+Digital Design certificate program pathways 
+Job placement assistance 
+Career planning and assessment 
+Course Lab/Activity Content
+Student Learning Objectives
+Upon successful completion of the course the student will be able to:
+Objective Text
+Explain the business structure, organization, and specialties in the current graphic communications industry.  
+Objective Text
+Demonstrate effective communication skills, ethics and professional conduct in group or team settings.  
+Objective Text
+Describe graphic communications careers including specific job responsibilities.  
+Objective Text
+Explain the basic design principles and best practices employed in the visual design industry.  
+Objective Text
+Demonstrate how pixel based and vector-based graphics are created and used in digital layout design.  
+Objective Text
+Create a professional portfolio, (i.e., cover letter, resume, letter of recommendation and digital portfolio).  
+Legacy Data
+Upon successful completion of the course the student will be able to: 1. Explain the business structure, organization, and specialties in the current graphic communications industry. 2. Demonstrate effective communication skills, ethics and professional conduct in group or team settings. 3. Describe graphic communications careers including specific job responsibilities. 4. Explain the basic design principles and best practices employed in the visual design industry. 5. Demonstrate how pixel based and vector-based graphics are created and used in digital layout design. 6. Create a professional portfolio, (i.e., cover letter, resume, letter of recommendation and digital portfolio).
+Assignments
+Reading Assignments
+Optional Text
+Assignments
+
+Textbook, supplemental reading assignments, industry-related periodicals or magazines, manuals, videos, online help, articles posted on the internet, and information from web sites, online libraries and databases.
+
+Writing Assignments
+Optional Text
+Assignments
+
+Completing assigned projects, providing written answers to assigned questions, performing internet research and reporting on that research.
+
+Appropriate Outside Assignments
+Optional Text
+Assignments
+
+Appropriate internet research, reading, preparing projects and studying as needed to perform successfully in class.
+
+Appropriate Assignments that Demonstrate Critical Thinking
+Optional Text
+Assignments
+
+Creating a pixel-based image and a vector based graphic. Create a multi-page portfolio using the graphics created during the course and exporting it as an interactive .pdf. Students may also be expected to write a resume, cover letter, in-class discussions and project reviews.
+
+Methods of Evaluation
+Text box for Common Course Numbering (CCN) only.
+Evaluation Method
+Exams
+Laboratory Assignments
+Participation
+Quizzes
+Research Project
+Skills Demonstrations/Performance Exam
+If you selected "Other", please provide details.
+Legacy Data
+Evaluation methods may include, but are not limited to performance in a variety of activities and assignments, such as completing a research project individually or in a group, hands-on projects, demonstration of use of applications, class participation, written and practical tests, attendance and punctuality. Upon successful completion of all courses included in the program, a Certificate of Program Completion will be issued.
+Methods of Instruction
+Check all that apply:
+Lecture
+Laboratory
+Computer Assisted Instruction
+Audio-Visual
+Collaborative Learning
+If you selected "Other", please provide details.
+Legacy Data
+Methods of instruction may include, but are not limited to, hands-on lecture, computerbased instruction, self-paced lab, demonstrations, individualized study, use of audio- visual aids, group/team work, tutorials, outside assignments, guest lectures, and field trips and guided student job assignments. This course, or sections of this course, may be offered through distance education.
+Distance Ed
+Does this course have a DE component?
+Colleges
+Outside-of-Class Hours
+Min Outside-of-Class Hours
+Max Outside-of-Class Hours
+Textbooks/Resources
+Is there a Zero Textbook Cost listed for this course? No
+Please explain why a Zero Cost textbook option is not included in the resource list
+Not avalable
+Does your department have a commitment to using free, or low cost resources in all offerings of this course? Yes
+Describe any additional strategies the department is using to lower the cost of resources students need when they enroll in this course.
+Zero Textbook Cost (ZTC) and/or Open Educational Resource(s) (OER)
+Textbooks
+Text Text
+Author(s) Andrew Faulkner, Conrad Chavez
+Title Adobe Photoshop Classroom in a Book
+Edition current
+Publisher Adobe Press
+Year 2021
+Is this a classic textbook? No
+ISBN # NA
+Additional Textbook Information
+Periodicals
+Manual
+Software
+Other Learning Materials
+Other
+Online video training htttp://www.lynda.com (subscription based), https://tv.adobe.com
+I have entered at least one resource Yes
+Supplies (Instructional Materials)
+Enrollment Conditions
+Course has additional instructional materials fees No
+Explanation
+Supplies (Instructional Materials)
+Description
+Pen, journal (composition book), sketchbook, and storage media such as an USB
+Flash Drive or external hard drive.
+Requisites
+Course Requisites
+Conditions of Enrollment Catalog View
+Content Review
+Is there a Course Requisite?
+Content Review
+Attachments
+Attached File
+COMM 550 INTRO TO DIGITAL DESIGN.pdf
+Tech Review
+CB10: Work Experience N - Is not part of a cooperative work experience education program.
+CB13: Special Class Status N - Course is not a special class.
+Course Prior to College Level (CB21) Y - Not applicable
+Funding Agency Category (CB23) Y - Not Applicable (funding not used to develop course)
+Course Program Status (CB24)
+Continuing Education
+CB24: Program Status 1 - Program Applicable
+Course Gen Education Status (CB25)
+Not Applicable
+Course Support Course Status (CB26) N - Course is not a support course
+CB27: Upper Division Status N - Course is not an upper division course
+Major Restriction Code
+Comments

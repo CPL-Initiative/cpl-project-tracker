@@ -1,0 +1,426 @@
+All Fields
+COMP 600 - Introduction to Networks (ITN)
+Cover
+Course Number
+600
+Subject
+COMP
+Course Title
+Introduction to Networks (ITN)
+Short Title
+Introduction to Networks (ITN)
+Effective Semester
+2025 Fall
+CB04: Credit Status
+N - Non Credit
+CB05: Transfer Status
+C - Not transferable
+CB08: Basic Skills
+N - Not Basic Skills
+Main
+CB11 Classification K - Other Noncredit Enhanced Funding
+CB22 Non-Credit Category I - Short-term Vocational: Includes programs with high employment potential
+Grading Method
+Grade Options Letter Grade Only
+Grade Graded
+Catalog Description
+Introduction to Networks (ITN) is the first course in the Cisco Certified Network Associate (CCNA) program and introduces the architectures, models, protocols, and networking elements that connect users, devices, applications and data through the internet and across modern computer networks – including Internet Protocol (IP) addressing and Ethernet fundamentals. By the end of the course, students can build simple local area networks (LANs) that integrate IP addressing schemes, foundational network security, and perform basic configurations for routers and switches. The course helps students develop workforce readiness skills and builds a foundation for success in networking-related careers and certificate programs.
+Originating Campus
+Colleges
+Continuing Education
+Proposal Information
+Reason For Proposed Action
+Six-year Review
+Revision: Title, Description, Goals, Objectives, Content, Hours, Assignments, Textbooks/Resources to align with CCNA version 7.0.
+Costs
+0
+Field Trips May be required
+This is a CTE Course Yes
+Codes
+CB03: TOP Code 070810 - Computer Networking
+CIP Code
+CB09: SAM Code B - Advanced Occupational
+CB04: Credit Status (DO NOT DELETE. Needed for show / hide to work. The width and height have been set to 0 so the field appears hidden.) N - Non Credit
+Goals
+Course Goals
+Goals Text
+The course aims to provide students with a foundational understanding of network operations, including building simple LANs, integrating IP addressing schemes, implementing basic network security, and configuring routers and switches. Emphasizing critical thinking, problem-solving, and collaboration, the course prepares students for continued computer network training through the Cisco Networking Academy, ultimately leading to the CCNA certification exam.
+Legacy Data
+Provide instruction in the theory of operation and design of networks and intranetworks. Students will learn how data travels over a network; how routers, switches and other devices operate; how to design a network; how network topologies and protocols work. Students will be able to explain the functions of the OSI model layers and configure IP addressing. Students will be able to cut and install various types of cables and adhere to basic electricity and safety procedures. This course will prepare the student to take certification exams like the CCNA Certification Exam (Cisco Certified Network Associate). Students will learn to show a spirit of cooperation and teamwork by completing assigned group tasks. Completion of these tasks will enhance the students’ reading, writing, communication and mathematical competencies. Interpretation of technical terms used in networking and telecommunications technology, both verbal and written is covered. Students who successfully complete this course will be prepared to move on to the next phase of networking training, which can include the Cisco Networking Academy in preparation to take the CCNA Certification Exam.
+Disciplines
+Minimum Qualification
+Minimum Qualification Vocational (short-term): Noncredit
+Additional Required Qualifications
+Condition
+Hours/Units
+Lecture Hours
+Min Lecture Hours
+Max Lecture Hours
+Lab Hours
+Min Lab Hours
+Max Lab Hours
+Lecture/Lab
+Min Lab/Lecture Hours 110.000
+Max Lab/Lecture Hours 120.000
+Min Total Hours
+Max Total Hours
+Additional Information
+Content
+Course Lecture Content (Use outline format)
+Basic Switch and End Device Configuration
+Cisco Internet Operating System (IOS) Access
+IOS Navigation
+Configuration
+Network device
+Host IP
+Connectivity verification
+Protocols and Models
+Rules
+Protocols
+Suites
+Standards organizations
+Reference models
+Data encapsulation
+Physical Layer
+Cabling
+Copper
+UTP
+Fiber-optic
+Wireless Media
+Number Systems
+Binary
+4.2 Hexadecimal
+Data Link Layer
+Topologies
+Frame
+Ethernet Switching
+Frame
+Media Access Control (MAC)
+Address
+Address table
+Switch speeds
+Forwarding methods
+Network Layer
+Packets
+IPv4
+IPv6
+Routing tables
+Address Resolution
+MAC and IP
+ARP
+Neighbor Discovery
+Basic Router Configuration
+Initial router settings
+Interfaces
+Default gateway
+IPv4 Addressing
+Address Structure
+Transmission types
+Unicast
+Broadcast
+Multicast
+Network 4.6 Segmentation
+Subnetting
+Fixed length subnet mask
+Variable length subnet mask (VLSM)
+Structured design
+IPv6 Addressing
+Address representation
+Types:
+Globally unique
+Link-Local
+Multicast
+Subnetting networks
+Internet Control Message Protocol (ICMP)
+Messages
+Tests
+Ping
+traceroute
+Transport Layer
+Protocols
+Transmission Control Protocol (TCP)
+User Datagram Protocol (UDP)
+Port numbers
+Communication process
+Reliability
+Flow control
+Application Layer
+Layers
+Application
+Presentation
+Session
+Client-Server
+Peer-to-Peer
+Web Services
+Hypertext Transfer Protocol (HTTP)
+HTTP Secure (HTTPS)
+Email protocols
+Simple Mail Transfer Protocol (SMTP)
+Post Office Protocol (POP)
+Internet Message Access Protocol (IMAP)
+Addressing services
+Domain Name System (DNS)
+Dynamic Host Configuration Protocol (DHCP)
+File sharing services
+File Transfer Protocol
+Server Message Block (SMB)
+Network Security Fundamentals
+Threats
+Vulnerabilities
+Network Attacks
+Types
+Mitigation
+Device Security
+Build a Small Network
+Devices
+Scaling
+Connection verification
+Host and IOS commands
+Troubleshooting:
+Methodologies
+Scenarios
+Course Lab/Activity Content
+Student Learning Objectives
+Upon successful completion of the course the student will be able to:
+Objective Text
+Implement initial settings including passwords, IP addressing, and default gateway parameters on a network switch and end devices.
+Objective Text
+Explain how network protocols enable devices to access local and remote network resources.
+Objective Text
+Explain how physical layer protocols, services, and network media support communications across data networks.
+Objective Text
+Calculate numbers between decimal, binary, and hexadecimal systems.
+Objective Text
+Explain how media access control in the data link layer supports communication across networks.
+Objective Text
+Explain how Ethernet operates in a switched network.
+Objective Text
+Explain how routers use network layer protocols and services to enable end-to-end connectivity.
+Objective Text
+Explain how Address Resolution Protocol (ARP) and Neighbor Discovery (ND) enable communication on a network.
+Objective Text
+ Implement initial settings on a router and end devices.
+Objective Text
+Calculate an IP version 4 (IPv4) subnetting scheme to efficiently segment a network.
+Objective Text
+Implement an IPv6 addressing scheme.
+Objective Text
+Use various tools to test.
+Objective Text
+ Configure switches and routers with device hardening features to enhance security.
+Objective Text
+Implement a network design for a small network to include a router, a switch, and end devices.
+Legacy Data
+Upon successful completion of this course, students will demonstrate through theory and practical application, problem solving, critical thinking, written and oral communication, mathematical ability and the following skills and knowledge: 1. Describe the seven layers of the OSI model. 2. Describe the functions of the seven layers of the OSI model and TCP/IP model. 3. Describe how data travels up and down the OSI model and TCP/IP model. 4. Describe the OSI and TCP/IP model layer devices. 5. Use Binary Mathematics. 6. Use hexadecimal numbering system. 7. Convert binary to decimal. 8. Describe the function and use MAC addresses. 9. Describe and create IP addresses. 10. Configure IP addresses and convert the addresses to binary. 11. Describe IP Class ranges: A, B, C, etc. 12. Describe the difference between a network address and a broadcast address. 13. Describe TCP/IP, including IPv4 and IPv6 addressing and show how subnetting is accomplished. 14. Configure subnet IP addresses and describe subnet masking. 15. Demonstrate an understanding of LAN topologies (Star, Bus, Ring, Mesh and Hierarchical). 16. Demonstrate a knowledge of basic electricity and safety precautions. 17. Describe cable configurations and standards. 18. Demonstrate network cable configurations. 19. Design a basic network. 20. Configure Wiring Closet hardware and premise equipment. 21. Setup horizontal and vertical cable. 22. Terminate and test cable.
+Assignments
+Reading Assignments
+Optional Text
+Assignments
+
+Assigned texts, student lab source files, white papers, instructor-written materials, technical manuals, instructor selected URLs, and other publications related to design and implementation of networks. For example, students may conduct research using a web search engine to learn about the non-profit organizations that are responsible for establishing international standards for the internet and the development of internet technologies.
+
+Writing Assignments
+Optional Text
+Assignments
+
+Preparing text for projects, maintaining a journal for recording laboratory assignments and projects, group reports, and performing mathematic calculations. For example, working alone or as a team, students work with IPv4 subnets and determine network and host information based on a given IP address and subnet mask.
+
+Appropriate Outside Assignments
+Optional Text
+Assignments
+
+The use of resources to supplement assigned course materials, including interactive network simulation tools to build practical skills; practice certification exams and guides to test for understanding; vendor documentation, technical blogs, and user forums to troubleshoot and resolve misconfigurations and issues in lab assignments; video tutorials and other web resources for extended learning, and participation in discussion boards, chats, and user groups to build professional competence. An example assignment may include a targeted job search on the web to find the types of IT jobs and titles, the associated skills and certifications, and typical salary ranges.
+
+Appropriate Assignments that Demonstrate Critical Thinking
+Optional Text
+Assignments
+
+Assignments that demonstrate critical thinking involve analyzing and evaluating learning materials, and applying this analysis in classroom discussions, writing assignments, and laboratory activities. Students then select and use appropriate methods and materials to complete laboratory assignments.
+
+For example, a work-based scenario presents the student with a typical computer network issue and challenges the student to use troubleshooting tools to identify the issue, establish a theory of probable cause, test the theory, establish a plan of action, implement the solution, verify functionality, and document findings and configuration changes.
+
+Methods of Evaluation
+Text box for Common Course Numbering (CCN) only.
+Evaluation Method
+Exams
+Homework
+Laboratory Assignments
+Participation
+Problem Solving Exercises
+Quizzes
+Skills Demonstrations/Performance Exam
+Other
+If you selected "Other", please provide details.
+
+For example, a student will participate as a member of a team to design and build a small network on physical equipment, showing how small networks are designed, configured, verified, and secured. Evalution also considers student’s ability to explain their network design and its verification using appropriate network commands.
+
+Satisfactory completion of the course requires completion of culminating activities, which may include a final objective examination with a required minimum passing score and a skills-based practical assessment.
+
+Legacy Data
+A Student's grade will be based on multiple measures of performance. The assessment will measure development of independent critical thinking skills and will include evaluation of student's ability to: EVALUATION (CONTINUED) 1. Perform the manipulative skills of the craft, as required. 2. Apply theory to laboratory assignments. 3. Complete all online lessons. 4. Successfully complete all online exams. 5. Successfully complete the online final exam. 6. Successfully perform on written, oral, or practical examinations. 7. Successfully complete all assigned hands-on labs. 8. Contribute to class discussions. 9. Maintain attendance per current policy. Satisfactory completion of the course requires completion of a culminating activity, which may include, but not limited to, one of the following: 1. Skills based assessment. 2. Classroom presentation. 3. Practical lab projects, which include practical demonstrations of cable configurations and installation and wiring closet hardware and premise equipment. Upon successful completion of each individual course a Certificate of Course Completion will be issued. Upon successful completion of all courses in the program a Certificate of Program Completion will be issued.
+Methods of Instruction
+Check all that apply:
+Lecture
+Laboratory
+Computer Assisted Instruction
+Lecture Discussion
+Learning Modules
+Audio-Visual
+Collaborative Learning
+Other
+If you selected "Other", please provide details.
+
+For example, students complete a series of practical hands-on labs using physical equipment and simulators that include both guided instruction and open-ended challenges to leverage prior learning.
+
+Lecture presentation by the instructor regarding how the upper layers of the OSI model support network applications.
+Instructor demonstration of network device configuration.
+In-class and out-of-class video presentations followed by instructor guided review and analysis of essential network concepts.
+Engaging in supervised laboratory sessions focused on exploring techniques for diagnosing and resolving connectivity issues.
+Legacy Data
+Methods of instruction will include, but not limited to, lecture, on-line instruction and curricula, self-paced lab, hands-on labs, instructor demonstration, demonstration, individualized study, use of multimedia presentations, group/team work, tutorials, and other unique instruction requirements, such as, outside assignments, field trips, and guided student job assignments.
+Distance Ed
+Does this course have a DE component? Yes
+Colleges
+Campus Continuing Education
+Delivery Methods
+Fully Online
+Other Methods
+Techniques used to ensure quality
+Electronic lectures, weekly synchronous meetings
+Evaluation Method
+Same as the on-site course
+Additional Resources
+None
+Contact Types
+Chat Rooms
+Frequency
+Weekly
+Participant/s
+Faculty to Student/s Yes
+Among Students Yes
+Conferencing
+Frequency
+As necessary
+Participant/s
+Faculty to Student/s Yes
+Among Students No
+Discussion Board
+Frequency
+Weekly
+Participant/s
+Faculty to Student/s Yes
+Among Students Yes
+Email/Message System
+Frequency
+As needed
+Participant/s
+Faculty to Student/s No
+Among Students No
+Group Meetings
+Frequency
+Weekly
+Participant/s
+Faculty to Student/s Yes
+Among Students Yes
+Individual Meetings
+Frequency
+As necessary
+Participant/s
+Faculty to Student/s Yes
+Among Students No
+Synchronous or Asynchronous Video
+Frequency
+As necessary
+Participant/s
+Faculty to Student/s Yes
+Among Students No
+Outside-of-Class Hours
+Min Outside-of-Class Hours 55.000
+Max Outside-of-Class Hours 60.000
+Textbooks/Resources
+Is there a Zero Textbook Cost listed for this course? Yes
+Please explain why a Zero Cost textbook option is not included in the resource list
+Does your department have a commitment to using free, or low cost resources in all offerings of this course? Yes
+Describe any additional strategies the department is using to lower the cost of resources students need when they enroll in this course.
+The IT program is a member of the Cisco Networking Academy, which provides students free access to learning content, available through the NetAcad LMS. The program provides and maintains networking hardware and software for use by students at no-cost.
+Zero Textbook Cost (ZTC) and/or Open Educational Resource(s) (OER)
+Text\Other Other
+Author(s) Cisco Networking Academy
+Title CCNAv7: Introduction to Networks
+Edition
+Publisher Cisco Networking Academy
+Year 2024
+Website https://www.netacad.com/
+Is this a classic textbook? No
+ISBN #
+Additional Textbook Information
+Textbook Transfer Data
+Textbooks
+Text Text
+Author(s) Cisco Networking Academy
+Title Introduction to Networks Companion Guide (CCNAv7)
+Edition
+Publisher Pearson
+Year 2020
+Is this a classic textbook? No
+ISBN # 978-0-13-663366-2
+Additional Textbook Information
+Periodicals
+Manual
+Software
+Other Learning Materials
+Other
+URLs: www.cisco.com
+I have entered at least one resource Yes
+Supplies (Instructional Materials)
+Enrollment Conditions
+Course has additional instructional materials fees No
+Explanation
+Supplies (Instructional Materials)
+Description
+Personal storage device, composition or notebook and writing instrument (pen or pencil)
+Requisites
+Course Requisites
+Group Title
+Comment
+Enrollment Limitation
+Requirement Type Course
+Requisite Type Advisory
+Subject COMP - Computer & Information Science
+Course # and Title COMP 612 - HARDWARE SERVICE TECHNICIAN (Historical)
+Comment
+Enrollment Limitation
+Requirement Type
+Requisite Type Advisory
+Subject COMP - Computer & Information Science
+Course # and Title COMP 608 - BASIC NETWORK CONFIGURATION (Historical)
+Comment
+Enrollment Limitation
+Requirement Type
+Requisite Type Advisory
+Subject COMP - Computer & Information Science
+Course # and Title COMP 641 - LINUX ESSENTIALS (Active)
+Comment
+Enrollment Limitation
+Requirement Type
+Conditions of Enrollment Catalog View
+Content Review
+Is there a Course Requisite? No
+Content Review
+Attachments
+Attached File
+Tech Review
+CB10: Work Experience N - Is not part of a cooperative work experience education program.
+CB13: Special Class Status N - Course is not a special class.
+Course Prior to College Level (CB21) Y - Not applicable
+Funding Agency Category (CB23) Y - Not Applicable (funding not used to develop course)
+Course Program Status (CB24)
+Continuing Education
+CB24: Program Status 1 - Program Applicable
+Course Gen Education Status (CB25)
+Not Applicable
+Course Support Course Status (CB26) N - Course is not a support course
+CB27: Upper Division Status N - Course is not an upper division course
+Major Restriction Code
+NONE -
+Comments

@@ -193,6 +193,56 @@ def _():
     assert all(re.search(r"[^\W\d_]", o) for r in rows for o in r["outcomes"])
 
 
+SDCCE_TRIAL = os.path.join(ROOT, "kb", "course_outcomes", "trial_45017581874", "read.json")
+SDCCE_RECALL = os.path.join(ROOT, "kb", "course_outcomes", "sdcce_recall.json")
+
+
+@check("San Diego College of Continuing Education's trial loads its objectives as counted from the filed pages, "
+       "12 of 12: HMID 535 loads the 11 objectives its Legacy Data paragraph numbers, its only copy, and HSDP 403's "
+       "pointer drops (S703; d-legacy-objectives-kept-when-only-copy-s703)")
+def _():
+    want = json.load(open(SDCCE_RECALL))
+    trial = json.load(open(SDCCE_TRIAL))
+    assert want["trial"] == str(trial["run"]) and want["parser_fingerprint"] == trial["parser_fingerprint"]
+    assert len(want["pages"]) == 12 and all(p["slo"] == 0 and p.get("from") and p.get("at")
+                                            for p in want["pages"].values())
+    filed = {r["code"]: len(r.get("objectives") or []) for r in trial["rows"]}
+    assert {c for c, n in filed.items() if n != want["pages"][c]["objective"]} == {"HMID 535", "HSDP 403"}, filed
+    rows, skipped = load.rows_from([SDCCE_TRIAL], "sdccd")
+    assert all(r["kind"] == "objective" and r["college"] == "San Diego College of Continuing Education" for r in rows)
+    got = {r["course_code"]: len(r["outcomes"]) for r in rows}
+    assert got == {c: p["objective"] for c, p in want["pages"].items() if p["objective"]}, got
+    assert got["HMID 535"] == 11
+    hmid = next(r for r in rows if r["course_code"] == "HMID 535")
+    assert hmid["outcomes"][0] == "Adhere to all safety requirements for the upholstery shop." and \
+        hmid["outcomes"][-1].startswith("Show ethical standards") and hmid["shape"] == "list" and \
+        hmid["fingerprint"] == load.fingerprint(hmid["outcomes"]) and not any(
+            "Legacy Data" in o or "Upon successful completion" in o for o in hmid["outcomes"]), hmid
+    gone = {s["course_code"]: s["why"] for s in skipped if s.get("kind") == "objective"}
+    assert set(gone) == {"HSDP 403"} and "points to another outline" in gone["HSDP 403"], gone
+    assert load.DROPPED == {"lines": 2, "rows": 1}, load.DROPPED
+
+
+@check("a Legacy Data heading after a block's objectives ends it; one that opens the block drops alone and its "
+       "paragraph loads, split by its numbers 1, 2, 3 in order; a pointer line drops; an objective naming an outline "
+       "stays")
+def _():
+    block = {"outcomes": ["Apply safety practices.", "See specific course outline.", "Legacy Data", "1. Old text."],
+             "maps_to": None, "fingerprint": "x", "shape": "list"}
+    got = load.no_letterless(block)
+    assert got["outcomes"] == ["Apply safety practices."] and got["shape"] == "paragraph", got
+    keep = {"outcomes": ["Write a course outline for a short workshop.", "See the legacy data section in the text."],
+            "fingerprint": "f", "shape": "list"}
+    assert load.no_letterless(keep) is keep
+    only = load.no_letterless({"outcomes": ["Legacy Data", "Upon completion, students can: 1. Apply X. 2. Explain "
+                                                "Y."], "maps_to": [[], []], "fingerprint": "x", "shape": "list"})
+    assert only["outcomes"] == ["Apply X.", "Explain Y."] and only["maps_to"] is None and \
+        only["fingerprint"] == load.fingerprint(only["outcomes"]), only
+    loose = load.no_letterless({"outcomes": ["Legacy Data", "Apply X in 2 ways. 4. Explain Y."], "fingerprint": "x"})
+    assert loose["outcomes"] == ["Apply X in 2 ways. 4. Explain Y."] and loose["shape"] == "paragraph", loose
+    assert load.no_letterless({"outcomes": ["Legacy Data"]}) is None
+
+
 @check("an outcome that opens with a number ('1. Analyze ...') loads whole; '#1', '.', '•' and '123' drop")
 def _():
     block = {"outcomes": ["1. Analyze a balance sheet.", "#1", "2) Explain accruals.", ".", "•", "123"],

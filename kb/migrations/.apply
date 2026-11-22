@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-22_s703w_prreq_named_gaps_apply.sql
-name=s703w_prreq_named_gaps_lists
+file=kb/migrations/2026-11-22_s703nc_prreq_named_gaps_apply.sql
+name=s703_prreq_named_gaps_hours
