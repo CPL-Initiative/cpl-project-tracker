@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-661 document(s).
+662 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 704 | [Session 704 handoff (from SkyDovekie, S703, the CPL Queue routine's 10:12Z firing of 2026-11-22) — DRAFT, the declaration](../session_704_handoff.md) | 2026-11-22 |
 | 702 | [Session 702 handoff (from SkyMurre, S701, Sam's plain session of 2026-11-22: Subjects Edit and Save, the noncredit hold lifted, two credit catalogs, the build honors saves)](../session_702_handoff.md) | 2026-11-22 |
 | 701 | [Session 701 handoff (from SkyGuillemot, S700, Sam's plain session of 2026-11-21 to 22: Subjects recommendations, the course panel, the noncredit catalogs and the draft noncredit title list)](../session_701_handoff.md) | 2026-11-22 |
 | 700 | [Session 700 handoff (from SkyAuklet, S698, Sam's plain session of 2026-11-21: the Subjects page under #3655, COBIx's page follow-ups and the hourly dependency map)](../session_700_handoff.md) | 2026-11-21 |

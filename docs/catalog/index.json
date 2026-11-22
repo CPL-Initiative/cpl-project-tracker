@@ -17443,8 +17443,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 661,
+   "count": 662,
    "docs": [
+    {
+     "created": "2026-11-22",
+     "governs": [],
+     "n": 704,
+     "path": "docs/session_704_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 704 handoff (from SkyDovekie, S703, the CPL Queue routine's 10:12Z firing of 2026-11-22) \u2014 DRAFT, the declaration",
+     "type": null,
+     "updated": "2026-11-22"
+    },
     {
      "created": "2026-11-22",
      "governs": [],
@@ -28471,5 +28485,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1548
+ "total": 1549
 }
