@@ -1,0 +1,24 @@
+{
+ "_readme": "S701, 2026-11-22, #3655 (collection first, r-collection-first-sam-2026-11-20): Santa Ana College's credit course descriptions, so its credit subject codes carry the catalog's own subject heading on the Subjects page. The 2026-27 catalog PDF (506 pages), pages 1 to 406, each page printed whole and unfolded: the table of contents names where the credit course list opens, and the credit list ends on page 405 (406 is the campus map; santa_ana_sce_probe). One load of the PDF; the job log is read back whole with gh. No model call.",
+ "college": "Santa Ana College",
+ "questions": {
+  "courses": "Each credit course's code, title, units, hours, requisites and description, line for line, under its subject heading."
+ },
+ "keywords": [
+  "\\w"
+ ],
+ "pdf_page_cap": 410,
+ "pdf_span": [
+  1,
+  406
+ ],
+ "pdf_unfolded": true,
+ "pages": [
+  {
+   "url": "https://www.sac.edu/admissions/catalogarchive/SAC_2026-27_Catalog_11_03_26.pdf",
+   "answers": [
+    "courses"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,20 @@
+{
+ "_readme": "S701, 2026-11-22, #3655 (collection first, r-collection-first-sam-2026-11-20): Mt. San Antonio College's credit course list A to Z (/programs/coursesaz/, where the college files its courses; mt_san_antonio_courseleaf_course_slos), so the credit subject pages are read at the addresses the page itself links. No model call.",
+ "college": "Mt. San Antonio College",
+ "questions": {
+  "subjects": "The credit subjects and the address of each one."
+ },
+ "keywords": [
+  "\\w"
+ ],
+ "links_cap": 400,
+ "pages": [
+  {
+   "url": "https://catalog.mtsac.edu/programs/coursesaz/",
+   "answers": [
+    "subjects"
+   ],
+   "links": "coursesaz/[a-z0-9_-]+/?$"
+  }
+ ]
+}
