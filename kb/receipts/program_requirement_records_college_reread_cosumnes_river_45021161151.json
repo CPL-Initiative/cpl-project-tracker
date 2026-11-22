@@ -1,0 +1,304 @@
+{
+ "college": "Cosumnes River College",
+ "reread_run": "45021161151",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "45018951701",
+ "at": "2026-11-22T12:14:42Z",
+ "posted": 4,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "07302",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "07315",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "07320",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "11330",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "11336",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "11348",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "12741",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "20204",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35072",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35097",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35350",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35354",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35358",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35360",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35361",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35362",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35363",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35364",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35367",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35374",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35408",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35742",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37285",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37842",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39131",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 1,
+ "absent": 3,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "33053"
+ ],
+ "absent_keys": [
+  "20147",
+  "20193",
+  "20227"
+ ],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 4,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Cosumnes River College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 45018951701;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 28,
+    "placed": 12,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Untitled list (heading and earlier rows cut off at page break before page 334)",
+      "rule": "choose_units",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ENGLT 336",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGLT 343",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGLT 345",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGLT 360",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGLT 370",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGLT 402",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "JOUR 300",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 426",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 427",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA 300",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGLT 365",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGLT 335",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "Advertising",
+      "Business",
+      "Civil Servant",
+      "Columnist/Journalist",
+      "Contract Specialist",
+      "Editor/Evaluator",
+      "Information Specialist",
+      "Insurance",
+      "Interpreter",
+      "Lawyer",
+      "Lexicographer",
+      "Legislative Assistant",
+      "Librarian",
+      "Manager",
+      "Methods Analyst",
+      "Program Developer",
+      "Public Relations",
+      "Publisher",
+      "Researcher",
+      "Teacher",
+      "Technical Writer",
+      "Writing Consultant"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "function successfully and completely at the university, in the workplace, and in diverse cultural settings with the academic literacy skills they have obtained. (P-SLO #1: Diversity)",
+      "recognize the ethical implications of various modes of communication and the need to use this knowledge responsibly. (P-SLO #2: Ethics)",
+      "become self-reliant, evaluative readers and writers, able to use critical thinking skills to read and write effectively and in academic and workplace settings. (P-SLO #3: Critical thinking)",
+      "develop academic literacy skills, to utilize reading and writing processes, to find and comprehend information, and to apply that knowledge in myriad rhetorical situations. (P-SLO #4: Analytical thinking)",
+      "obtain the necessary reading and writing skills for university-level courses. (P-SLO #5: Communication)"
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 18,
+      "min": 18
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Associate in Arts in English for Transfer (AA-T) degree (heading printed on the preceding page, not in the text)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 18,
+   "total_min": 18,
+   "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=334",
+   "catalog_year": "2026-2027",
+   "extracted_run": 44917314201,
+   "program_title": "English",
+   "control_number": "33053"
+  }
+ ]
+}

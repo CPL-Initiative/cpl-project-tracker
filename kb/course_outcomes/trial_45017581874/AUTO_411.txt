@@ -1,0 +1,390 @@
+All Fields
+AUTO 411 - AUTO BODY AND PAINT TECHNICIAN
+Cover
+Course Number
+411
+Subject
+AUTO
+Course Title
+AUTO BODY AND PAINT TECHNICIAN
+Short Title
+AUTO BODY AND PAINT TECHNICIAN
+Effective Semester
+2011 Fall
+CB04: Credit Status
+N - Non Credit
+CB05: Transfer Status
+C - Not transferable
+CB08: Basic Skills
+N - Not Basic Skills
+Main
+CB11 Classification K - Other Noncredit Enhanced Funding
+CB22 Non-Credit Category I - Short-term Vocational: Includes programs with high employment potential
+Grading Method
+Grade Options Letter Grade Only
+Grade Graded
+Catalog Description
+This open-entry/exit course is designed to teach skills required for entry-level employment in auto body/collision repair and related industries. This course includes guided practice in a simulated work environment, in sanding, masking, collision repair, and glass installation.Class instruction is based on standards developed by the  National Automotive Technicians Education Foundation (NATEF) and the Inter-Industry Conference on Auto Collision Repair (I-CAR). (FT)
+Originating Campus
+Colleges
+Continuing Education
+Proposal Information
+Reason For Proposed Action
+Import
+Costs
+0
+Field Trips Required
+This is a CTE Course No
+Codes
+CB03: TOP Code 094900 - Automotive Collision Repair
+CIP Code
+CB09: SAM Code B - Advanced Occupational
+CB04: Credit Status (DO NOT DELETE. Needed for show / hide to work. The width and height have been set to 0 so the field appears hidden.) N - Non Credit
+Goals
+Course Goals
+Goals Text
+This course will provide instruction in current methods and practices of repair used in the auto body repair industry.
+Goals Text
+Students will develop the critical thinking skills necessary to diagnose and repair collision problems.
+Goals Text
+Instruction is integrated in order to enhance the students’ reading, writing math and communication skills, enabling them to interact successfully with future employers and customers.
+Goals Text
+Activities will take place in a simulated work environment representative of those encountered in the auto body repair industry today.
+Goals Text
+This experience will include instruction in common business practices, ethics and integrity.  
+Goals Text
+Students who successfully complete the course will be qualified for an entry-level position as an auto body collision repair technician. 
+Legacy Data
+This course will provide instruction in current methods and practices of repair used in the auto body repair industry. Students will develop the critical thinking skills necessary to diagnose and repair collision problems. Instruction is integrated in order to enhance the students’ reading, writing math and communication skills, enabling them to interact successfully with future employers and customers. Activities will take place in a simulated work environment representative of those encountered in the auto body repair industry today. This experience will include instruction in common business practices, ethics and integrity. Students who successfully complete the course will be qualified for an entry-level position as an auto body collision repair technician.
+Disciplines
+Minimum Qualification
+Minimum Qualification Vocational (short-term): Noncredit
+Additional Required Qualifications
+Condition
+Hours/Units
+Lecture Hours
+Min Lecture Hours 60.000
+Max Lecture Hours 60.000
+Lab Hours
+Min Lab Hours 240.000
+Max Lab Hours 240.000
+Lecture/Lab
+Min Lab/Lecture Hours
+Max Lab/Lecture Hours
+Min Total Hours 300.000
+Max Total Hours 300.000
+Additional Information
+Content
+Course Lecture Content (Use outline format)
+
+All modules of the program contain the following:
+
+Safety Review
+System Descriptions
+Theory of Operation
+Component Functions
+Diagnostic Procedures
+System – Component Repair Procedures
+Related Terminology and Communication Skills
+
+Math review for this course may include the following areas:  addition, subtraction, multiplication and division of whole numbers; fractions and decimals; linear measurements; degrees and angles; the metric system; temperature measures.
+
+ 
+
+I SAFETY AND ORIENTATION 5 hrs.
+
+Program Orientation
+Syllabus
+Overview of the auto collision and refinishing industry
+Management structure
+Finances
+Labor issues
+Facilities Orientation
+Safety equipment
+Types
+Locations
+Common Types of Injuries
+Burns
+Asbestos hazards
+Chemical hazards
+Vapors/inhalation hazards
+Tool Safety
+Fire Safety
+Batteries
+Charging
+Use of jumper cables
+Material Safety Data Sheets (MSDS)
+Hybrid/Electric vehicle precautions
+
+II PREPARATION 10 hrs.
+
+NOTE:  Preparation is an ongoing activity and is re-enforced throughout all units.
+
+Interpret Damage Report
+Plan Repair Surface
+Prepare Repair Surface
+Removl of dirt, wax corrosion protection
+Protecting Panels and Adjacent Areas
+
+III PANEL REPLACEMENT AND ALIGNMENT 40 hrs.
+
+Panel Replacement and Alignment Tools
+Selection
+Use
+Fasteners
+Types
+Applications
+Repair Procedures
+Panel Alignment Methods
+Remove, Reinstall and Align
+Bumpers
+Fascia
+Header panel
+Hood
+Deck lid
+Hatches
+Fenders
+Doors
+Tailgates
+
+IV TRIM AND HARDWARE 30 hrs.
+
+Trim Tools
+Removal
+Installation
+Remove and Reinstall
+Interior door trim panels
+Door lock and handle assembly
+Decklid lock cylinder
+Exterior trim and moldings
+Pin stripes
+Decals
+Emblems
+
+V GLASS AND HARDWARE 20 hrs.
+
+Removing and Replacing Glass
+Door
+Hinged glass
+Windshield and rear window
+Alignment of Movable Glass
+Sealing
+Air leaks
+Water leaks
+
+VI WELDING AND CUTTING 30 hrs.
+
+Safety Review
+Oxyacetylene Equipment
+Orientation
+Set up
+Adjustments
+Use
+M.I.G. Welding
+Set up and adjust
+Protect computers and other electrical components
+Weld continuous, stitch, spot, plug and tack
+Spot Welders (STRSW)
+Orientation
+Set up
+Adjustments
+Use
+Spot Weld Sheet Metal Panels
+
+VII STRAIGHTENING AND FILLING 80 hrs
+
+Metal Straightening
+Tools
+Straightening techniques
+Shrinking techniques
+Body Fillers
+Tools
+Materials
+Surface preparation
+Mixing
+Application
+Specialty and finish fillers
+Mixing
+Tools
+
+VIII DOOR AND QUARTER PANEL REPAIR 70 hrs.
+
+Door Repair
+Straightening door frames
+Removing and replacing welded door skins
+Removing and replacing bonded door skins
+Replacing intrusion beams
+Quarter Panel Repair
+Planning and preparation
+Sectioning
+Full panel replacement
+Removal of damaged panel
+Preparation for reinstallation of replacement panel
+Installation and alignment of replacement panel
+
+IX BUSINESS PROCEDURES & CUSTOMER RELATIONS 15 hrs.
+
+Business Conduct and Ethics
+Consumer ffairs
+Repair Order and Job Scheduling
+Phone Skills
+Oral and Written Communications
+Keyboarding Skills and Computer Literacy for Use in this Field
+Course Lab/Activity Content
+Student Learning Objectives
+Upon successful completion of the course the student will be able to:
+Objective Text
+Apply general safety practices in addition to the specific procedures related to the Auto Collision Repair industry. 
+Objective Text
+Analyze and evaluate waste products from the repair task and dispose of the residue or trash according to Federal, State and Local rules and regulations. 
+Objective Text
+Understand the use and safety requirements of all solvents used in automotive applications. 
+Objective Text
+Use the information from service manuals, charts, tables, graphs or databases to determine manufacturer’s specifications for systems operations and the appropriate repair/replacement part and procedures. 
+Objective Text
+Select and properly use the correct hand and power tools to repair auto body/collision damage. 
+Objective Text
+Convert measurements as necessary to U.S. Standard or Metric specifications. 
+Objective Text
+Explain the principle of force as it applies to the realignment of body and frame components. 
+Objective Text
+Demonstrate the concept of pressure in relation to force when realigning body and frame components. 
+Objective Text
+Use precision measuring tools to determine if repairs and replaced components are within manufacturers specifications.  
+Objective Text
+Explain the necessity of knowing that the hardness of a metal determines its function and location in the automobile. 
+Objective Text
+Explain how fillers and finishes adhere to metals. 
+Objective Text
+Demonstrate current welding techniques used to repair modern auto body designs. 
+Legacy Data
+Students will demonstrate through practical applications, written and oral exams, their ability to: 1. Apply general safety practices in addition to the specific procedures related to the Auto Collision Repair industry. 2. Analyze and evaluate waste products from the repair task and dispose of the residue or trash according to Federal, State and Local rules and regulations. 3. Understand the use and safety requirements of all solvents used in automotive applications. 4. Use the information from service manuals, charts, tables, graphs or databases to determine manufacturer’s specifications for systems operations and the appropriate repair/replacement part and procedures. 5. Select and properly use the correct hand and power tools to repair auto body/collision damage. 6. Convert measurements as necessary to U.S. Standard or Metric specifications. 7. Explain the principle of force as it applies to the realignment of body and frame components. 8. Demonstrate the concept of pressure in relation to force when realigning body and frame components. 9. Use precision measuring tools to determine if repairs and replaced components are within manufacturers specifications. 10. Explain the necessity of knowing that the hardness of a metal determines its function and location in the automobile. 11. Explain how fillers and finishes adhere to metals. 12. Demonstrate current welding techniques used to repair modern auto body designs. 13. Demonstrate professional ethics, personal integrity, good business practices and customer relation skills, meeting the standards of the California Department of Consumer Affairs.
+Assignments
+Reading Assignments
+Optional Text
+Assignments
+Dupont Refinishing News, monthly magazine
+Auto Body News, monthly magazine
+I Car Advantage, monthly magazine
+San Diego Craftsman, California Autobody Association, monthly publication
+Writing Assignments
+Optional Text
+Assignments
+Completing assigned reports.
+Providing written answers to assigned questions.
+Performing arithmetic calculations as assigned.
+Completing repair orders.
+Completing a job application and resume.
+Appropriate Outside Assignments
+Optional Text Students are expected to spend a minimum of 1 hour per day outside of class in practice and preparation for each day in class.
+Assignments
+Appropriate readings.
+Preparing research reports.
+Preparing appropriate writing assignments.
+Studying as needed to perform successfully in class.
+Appropriate Assignments that Demonstrate Critical Thinking
+Optional Text
+Assignments
+
+Students will perform analysis and evaluation of reading and/or classroom materials and utilize this analysis in classroom discussions, writing assignments, and in performing laboratory activities. Students must select and use appropriate methods and materials needed to complete laboratory assignments.
+
+Methods of Evaluation
+Text box for Common Course Numbering (CCN) only.
+Evaluation Method
+Essay/Paper
+Homework
+Laboratory Assignments
+Oral Tests/Class Performance
+Participation
+Problem Solving Exercises
+Quizzes
+Skills Demonstrations/Performance Exam
+Other
+If you selected "Other", please provide details.
+Legacy Data
+A student’s grade will be based on multiple measures of performance. The assessment will measure the development of independent critical thinking skills and will include evaluation of the student’s ability to: 1. Perform the manipulative skills of the craft, as required, to NATEF and I-CAR standards. 2. Apply theory to laboratory assignments. 3. Perform on written, oral, or practical examinations. 4. Contribute to class discussions. 5. Maintain attendance per current policy. Satisfactory completion of the course requires completion of a culminating activity, which may include, but is not limited to, one of the following: 1. Written report. 2. Classroom presentation. 3. Research project. 4. Industry involvement. The culminating activity will require the student to use the new skills that he/she acquired during the course. The student will receive an evaluation at the end of each module or when requested by the student. A grade point average of 2.0 or letter grade of C or better must be achieved for satisfactory completion. Upon successful completion of each individual course, a Certificate of Course Completion will be issued. Upon successful completion of all courses included in the program a Certificate of Program Completion will be issued.
+Methods of Instruction
+Check all that apply:
+Lecture
+Laboratory
+Computer Assisted Instruction
+Lecture Discussion
+Audio-Visual
+Collaborative Learning
+Shadowing
+If you selected "Other", please provide details.
+Legacy Data
+Classroom lectures, demonstrations, laboratory, audio-visual presentations and computer assisted instruction. Group and individual instruction. Field trips, job shadowing and intern/externships may be utilized.
+Distance Ed
+Does this course have a DE component?
+Colleges
+Campus Continuing Education
+Delivery Methods
+Other Methods
+Techniques used to ensure quality
+Evaluation Method
+Additional Resources
+Contact Types
+Outside-of-Class Hours
+Min Outside-of-Class Hours
+Max Outside-of-Class Hours
+Textbooks/Resources
+Is there a Zero Textbook Cost listed for this course? No
+Please explain why a Zero Cost textbook option is not included in the resource list
+Import
+Does your department have a commitment to using free, or low cost resources in all offerings of this course? Yes
+Describe any additional strategies the department is using to lower the cost of resources students need when they enroll in this course.
+Zero Textbook Cost (ZTC) and/or Open Educational Resource(s) (OER)
+Textbooks
+Text Text
+Author(s) James E. Duffy
+Title I-CAR Professional Automotive Collision Repair
+Edition current
+Publisher NA
+Year 2011
+Is this a classic textbook? No
+ISBN # NA
+Additional Textbook Information
+Periodicals
+Manual
+Software
+Other Learning Materials
+I have entered at least one resource Yes
+Supplies (Instructional Materials)
+Enrollment Conditions
+Course has additional instructional materials fees Yes
+Explanation
+Required Supplies:
+Air Bow Gun and Connector 
+Rubber Spreader 
+Plastic Spreader (3 PC set) 
+Safety Glasses 
+Rubber Sanding Block 
+Particle Mask 
+Tip Cleaner 
+Soft Sanding Pad 
+OSHA approved Respirator
+Supplies (Instructional Materials)
+Requisites
+Course Requisites
+Conditions of Enrollment Catalog View
+Content Review
+Is there a Course Requisite?
+Content Review
+Attachments
+Attached File
+AUTO 411 AUTO BODY AND PAINT TECHNICIAN.pdf
+Tech Review
+CB10: Work Experience N - Is not part of a cooperative work experience education program.
+CB13: Special Class Status N - Course is not a special class.
+Course Prior to College Level (CB21) Y - Not applicable
+Funding Agency Category (CB23) Y - Not Applicable (funding not used to develop course)
+Course Program Status (CB24)
+Continuing Education
+CB24: Program Status 1 - Program Applicable
+Course Gen Education Status (CB25)
+Not Applicable
+Course Support Course Status (CB26) N - Course is not a support course
+CB27: Upper Division Status N - Course is not an upper division course
+Major Restriction Code
+Comments
