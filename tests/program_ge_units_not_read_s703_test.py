@@ -80,7 +80,8 @@ check(NG.ge_units_not_read(no_major) is None and NG.held_answer(no_major) is Non
       "a degree with no major check (no printed major total) takes no gap")
 
 # The self-recall on held answers, and the plain recall, over every committed record.
-res = NG.run(write=False, gaps=("ge_units_not_read",), skip=LANE_1_S703)
+res = NG.run(write=False, gaps=("ge_units_not_read",), skip=LANE_1_S703,
+             census_causes=("units_incomplete|ge_pattern_no_units",))
 gr = res["ge_units_recall"]
 check(gr["held"] > 1000 and gr["right"] == gr["held"] and gr["wrong"] == 0,
       "self-recall, units removed from passing degrees: held %d, right %d, wrong %d (%s)"
@@ -114,6 +115,39 @@ for college, cn in sorted(keys):
         filed = json.load(fh)
     check([g.get("gap") for g in filed["score"].get("gaps") or []] == ["ge_units_not_read"],
           "%s %s: the record files the gap" % (college, cn))
+
+# #3678 second reader, findings 1 and 2 (d-ge-gap-only-where-no-figure-s703): a record whose page prints a GE
+# figure is held out, by key or by its own words, and the gap's claim is measured on the records of its shape.
+gp = res["ge_units_precision"]
+check(set(gp) >= {"says_none", "prints_figure", "silent"}, "the precision measure has its three counts")
+check(len(NG.HELD_GE_FIGURE) == 21 and not keys & NG.HELD_GE_FIGURE,
+      "the 21 records the second reader found printing a GE figure are held out of the plan")
+check(gp["hand_held_flagged_by_ge_claim"] >= 20 and gp["hand_held_prints_figure"] == 21,
+      "ge_claim alone reads a printed figure on %d of the 21 hand-held records" % gp["hand_held_flagged_by_ge_claim"])
+pp = plan["ge_units_precision"]
+check(pp["says_none"] + pp["silent"] - len(pp["hand_held_not_flagged"]) == len(keys),
+      "the plan holds the says-none and silent records less the held keys ge_claim does not flag (%d + %d - %d "
+      "against %d)" % (pp["says_none"], pp["silent"], len(pp["hand_held_not_flagged"]), len(keys)))
+for k in sorted(keys):
+    with open(os.path.join(ROOT, "kb", "program_requirements_college", C.slug_of(k[0]), "records", k[1] + ".json"),
+              encoding="utf-8") as fh:
+        check(NG.ge_claim(json.load(fh)) != "prints_figure", "%s %s: a plan row prints no GE figure" % k)
+held_f = degree()
+held_f["record"]["notes"] = ["The page prints 34 for 'Completion of General Education requirements, plus electives'."]
+check(NG.ge_claim(held_f) == "prints_figure" and NG.ge_units_not_read(held_f) is None
+      and NG.held_answer(held_f) is None, "a note that the page prints a GE figure holds the record out")
+none_f = degree()
+none_f["record"]["notes"] = ["No GE unit figure is printed for Cal-GETC.",
+                             "including Cal-GETC and a minimum of 18 semester units in a major."]
+check(NG.ge_claim(none_f) == "says_none" and NG.ge_units_not_read(none_f),
+      "a note saying none is printed, beside a major's figure, keeps the gap")
+check(NG.ge_units_not_read(dict(degree(), college="Orange Coast College", control_number="16634")) is None,
+      "a held key is held out whatever its notes say")
+check(len(set(plan["held_colleges"])) == len(plan["held_colleges"]), "held_colleges names each college once")
+with open(os.path.join(ROOT, "kb", "migrations", "2026-11-22_s703_prreq_named_gaps_apply.sql"), encoding="utf-8") as fh:
+    head = fh.read(1200)
+check("ge_units_not_read %d)" % len(keys) in head and "%d held colleges" % len(plan["held_colleges"]) in head,
+      "the SQL header's counts match the plan and its held colleges")
 
 # The lane 1 colleges' records carry no ge_units_not_read.
 for college in LANE_1_S703:
