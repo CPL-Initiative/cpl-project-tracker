@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""kb/_file_subject_decisions.py (S701, #3655): Sam's 30 held Cerritos decisions as kb_curation rows, prepared.
+"""kb/_file_subject_decisions.py (S701, #3655): Sam's 30 held Cerritos decisions as kb_curation rows, applied 2026-11-22.
 
 WHAT THIS GUARDS (each a way the filing would misfile his decisions):
   (1) 30 rows, one per decision, each keyed SUBJ:cerritos|<code>|<band>, field subject_decision, one cohort;
@@ -68,6 +68,14 @@ buf = io.StringIO()
 with contextlib.redirect_stdout(buf):
     rc = fsd.main(["--check"])
 check("(7) --check passes", rc == 0)
+# The apply (S701, 2026-11-22T04:45Z): the committed receipt names the rows' md5, and the plan gives the same one.
+rc_ = json.load(open(os.path.join(ROOT, fsd.RECEIPT), encoding="utf-8"))
+check("(8) ⭐ the receipt's rows md5 is the plan's, 30 rows inserted under the cohort, none before",
+      rc_["rows_md5"] == fsd.rows_md5(rows) == "137729fdcfec757c49ddd72bc97d5244" and rc_["rows_inserted"] == 30
+      and rc_["rows_before"] == 0 and rc_["cohort_reviewer_email"] == fsd.COHORT and rc_["applied_at"] == fsd.APPLIED_AT)
+check("(8) the forward file says it was applied, when, and names the receipt", ("APPLIED " + fsd.APPLIED_AT) in forward and fsd.RECEIPT in forward
+      and "PREPARED" not in forward)
+check("(8) the receipt names the rollback, which undoes the write by its cohort", rc_["rollback"] == fsd.ROLLBACK and "subjects-s701@bot" in rc_["rollback_how"])
 # A noncredit-only code is refused: the band rule says so before any SQL is written.
 check("(2) a code whose COCI courses are all noncredit has no band to file",
       fsd.band_of({"state_courses": 3, "credit_courses": 0, "noncredit_courses": 3}) == "noncredit"

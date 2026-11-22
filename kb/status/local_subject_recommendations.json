@@ -1,5 +1,5 @@
 {
- "_what": "A recommended local title for every Subjects row with no catalog heading, and a recommended common subject code for every credit row with none, each with the level its source measured (Sam on #3655, 2026-11-21). A recommendation is for a person to accept or change; nothing reads it as a title or a mapping. Rows whose courses are all noncredit are on hold and absent. Built by kb/_build_local_subject_recommendations.py; no clock is read.",
+ "_what": "A recommended local title for every Subjects row with no catalog heading, and a recommended common subject code for every credit row with none, each with the level its source measured (Sam on #3655, 2026-11-21). A recommendation is for a person to accept or change; nothing reads it as a title or a mapping. A row whose courses are all noncredit is lined up with the standing noncredit subject title list by its dominant COCI noncredit category. Built by kb/_build_local_subject_recommendations.py; no clock is read.",
  "_levels": "High: the source's condition gave the catalog's own heading for 90% or more of the titled codes it was asked, each left out of its own vote. Medium: 60% or more. Low: below, or asked fewer than 20. Program titles are capped at Medium. A second source that agrees lifts a level one step; one that differs is listed under also and the row reads Low.",
  "measured_on_titled_codes": {
   "course_joins": {
@@ -84,6 +84,46 @@
     "level": "Low"
    }
   }
+ },
+ "noncredit": {
+  "title_from_the_list": {
+   "courses match": {
+    "right": 1,
+    "wrong": 22,
+    "asked": 23,
+    "share": 0.043,
+    "level": "Low"
+   },
+   "letters, one title": {
+    "right": 18,
+    "wrong": 13,
+    "asked": 31,
+    "share": 0.581,
+    "level": "Low"
+   },
+   "letters, several titles": {
+    "right": 9,
+    "wrong": 23,
+    "asked": 32,
+    "share": 0.281,
+    "level": "Low"
+   },
+   "same code": {
+    "right": 13,
+    "wrong": 0,
+    "asked": 13,
+    "share": 1.0,
+    "level": "Low"
+   }
+  },
+  "common_code_from_the_category": {
+   "right": 16,
+   "wrong": 25,
+   "asked": 41,
+   "share": 0.39,
+   "level": "Low"
+  },
+  "note": "Measured on the noncredit-only codes that hold a catalog heading (titles) or a common code from the subject map (codes), each left out of its own vote."
  },
  "common_code": {
   "levels": {
@@ -175,16 +215,20 @@
  "web_searches_filed": 108,
  "totals": {
   "common_high": 522,
-  "common_low": 33,
+  "common_low": 167,
   "common_medium": 134,
-  "common_none": 152,
-  "no_common": 841,
-  "no_title": 482,
-  "on_hold": 54,
+  "common_no_code_yet": 14,
+  "common_none": 178,
+  "no_common": 1015,
+  "no_title": 536,
+  "noncredit_common": 134,
+  "noncredit_no_common": 174,
+  "noncredit_no_title": 54,
+  "noncredit_title": 17,
   "title_high": 197,
-  "title_low": 162,
+  "title_low": 179,
   "title_medium": 61,
-  "title_none": 62
+  "title_none": 99
  },
  "colleges": [
   {
@@ -208,6 +252,16 @@
       "level": "High",
       "from": "own_courses",
       "why": "9 of 9 of its courses with an M-ID sit under IDST."
+     }
+    },
+    {
+     "code": "AED",
+     "title": {
+      "title": "Computer Information Systems and Technology",
+      "level": "Low",
+      "from": "noncredit_list",
+      "why": "noncredit list: the title under its dominant COCI noncredit category, Short-term Vocational (48 of 118 noncredit courses, 41%) (letters, several titles).",
+      "also": []
      }
     },
     {
@@ -625,6 +679,34 @@
      }
     },
     {
+     "code": "ESC",
+     "title": {
+      "title": "High School Subjects - Natural Sciences",
+      "level": "Low",
+      "from": "noncredit_list",
+      "why": "noncredit list: the title under its dominant COCI noncredit category, Elementary and Secondary Basic Skills (7 of 7 noncredit courses, 100%) (letters, several titles).",
+      "also": []
+     },
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (7 of 7 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "ESL",
+     "title": {
+      "title": "English as a Second Language",
+      "level": "Low",
+      "from": "noncredit_list",
+      "why": "noncredit list: the title under its dominant COCI noncredit category, English as a Second Language (ESL) (3 of 3 noncredit courses, 100%) (same code).",
+      "also": []
+     }
+    },
+    {
      "code": "ETHNST",
      "common": {
       "code": "ETHS",
@@ -898,6 +980,17 @@
    "slug": "east_los_angeles",
    "rows": [
     {
+     "code": "ACAD PR",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (12 of 12 noncredit courses, 100%)."
+     }
+    },
+    {
      "code": "ADDICST",
      "common": {
       "code": "COUN",
@@ -988,6 +1081,17 @@
      }
     },
     {
+     "code": "BSICSKL",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (11 of 11 noncredit courses, 100%)."
+     }
+    },
+    {
      "code": "CAOT",
      "title": {
       "title": "Technologies",
@@ -1007,6 +1111,17 @@
        "result_url": "https://elac.edu/academics/aos/CAOT",
        "where": "college site"
       }
+     }
+    },
+    {
+     "code": "CITIZN",
+     "common": {
+      "code": null,
+      "discipline": "Citizenship: Noncredit",
+      "level": null,
+      "from": "noncredit_category",
+      "category": "Citizenship for Immigrants",
+      "why": "The category has no common subject code yet: its dominant COCI noncredit category, Citizenship for Immigrants (1 of 1 noncredit courses, 100%)."
      }
     },
     {
@@ -1328,6 +1443,17 @@
      }
     },
     {
+     "code": "MATH NC",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (11 of 11 noncredit courses, 100%)."
+     }
+    },
+    {
      "code": "MEDIART",
      "common": {
       "code": "MULT",
@@ -1522,6 +1648,17 @@
       "from": "title",
       "why": "The title names the discipline Drama/Theater Arts."
      }
+    },
+    {
+     "code": "TUTOR",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (1 of 1 noncredit courses, 100%)."
+     }
     }
    ]
   },
@@ -1546,6 +1683,17 @@
       "level": "High",
       "from": "title",
       "why": "The title names the discipline Art History."
+     }
+    },
+    {
+     "code": "AHSD",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (33 of 33 noncredit courses, 100%)."
      }
     },
     {
@@ -1932,6 +2080,82 @@
      }
     },
     {
+     "code": "NATE",
+     "title": {
+      "title": "Interdisciplinary Studies",
+      "level": "Low",
+      "from": "noncredit_list",
+      "why": "noncredit list: the title under its dominant COCI noncredit category, Workforce Preparation (2 of 2 noncredit courses, 100%) (letters, one title).",
+      "also": []
+     },
+     "common": {
+      "code": null,
+      "discipline": null,
+      "level": null,
+      "from": "noncredit_category",
+      "category": "Workforce Preparation",
+      "why": "The category has no common subject code yet: its dominant COCI noncredit category, Workforce Preparation (2 of 2 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "NENG",
+     "title": {
+      "title": "Counseling",
+      "level": "Low",
+      "from": "noncredit_list",
+      "why": "noncredit list: the title under its dominant COCI noncredit category, Elementary and Secondary Basic Skills (1 of 1 noncredit courses, 100%) (letters, one title).",
+      "also": []
+     },
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (1 of 1 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "NESL",
+     "title": {
+      "title": "English as a Second Language",
+      "level": "Low",
+      "from": "noncredit_list",
+      "why": "noncredit list: the title under its dominant COCI noncredit category, English as a Second Language (ESL) (35 of 35 noncredit courses, 100%) (courses match).",
+      "also": []
+     },
+     "common": {
+      "code": "ESLN",
+      "discipline": "English as a Second Language (ESL): Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "English as a Second Language (ESL)",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, English as a Second Language (ESL) (35 of 35 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "PAR",
+     "common": {
+      "code": "PARN",
+      "discipline": "Parent Education: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Parenting",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Parenting (3 of 3 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "PASS",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (19 of 29 noncredit courses, 66%)."
+     }
+    },
+    {
      "code": "PE",
      "common": {
       "code": "KINE",
@@ -2185,6 +2409,17 @@
      }
     },
     {
+     "code": "CDPE",
+     "common": {
+      "code": "PARN",
+      "discipline": "Parent Education: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Parenting",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Parenting (2 of 2 noncredit courses, 100%)."
+     }
+    },
+    {
      "code": "CDSED",
      "common": {
       "code": "FCSH",
@@ -2319,6 +2554,28 @@
      }
     },
     {
+     "code": "EDEV",
+     "common": {
+      "code": null,
+      "discipline": null,
+      "level": null,
+      "from": "noncredit_category",
+      "category": "Workforce Preparation",
+      "why": "The category has no common subject code yet: its dominant COCI noncredit category, Workforce Preparation (4 of 6 noncredit courses, 67%)."
+     }
+    },
+    {
+     "code": "ESLLC",
+     "common": {
+      "code": "ESLN",
+      "discipline": "English as a Second Language (ESL): Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "English as a Second Language (ESL)",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, English as a Second Language (ESL) (1 of 1 noncredit courses, 100%)."
+     }
+    },
+    {
      "code": "EWRC",
      "common": {
       "code": "ENGL",
@@ -2339,6 +2596,17 @@
      }
     },
     {
+     "code": "FS",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (2 of 2 noncredit courses, 100%)."
+     }
+    },
+    {
      "code": "FSA",
      "common": {
       "code": "FIRE",
@@ -2356,6 +2624,17 @@
       "level": "High",
       "from": "title",
       "why": "The title names the discipline Business."
+     }
+    },
+    {
+     "code": "GED/HSET",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (8 of 8 noncredit courses, 100%)."
      }
     },
     {
@@ -2486,6 +2765,17 @@
      }
     },
     {
+     "code": "MONEY",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (2 of 2 noncredit courses, 100%)."
+     }
+    },
+    {
      "code": "PGEOG",
      "common": {
       "code": "GEOG",
@@ -2568,12 +2858,34 @@
       "from": "own_courses",
       "why": "31 of 34 of its courses with an M-ID sit under THTR."
      }
+    },
+    {
+     "code": "TEAS",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (2 of 2 noncredit courses, 100%)."
+     }
     }
    ]
   },
   {
    "slug": "los_angeles_city",
    "rows": [
+    {
+     "code": "ACAD PR",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (1 of 1 noncredit courses, 100%)."
+     }
+    },
     {
      "code": "ADDICST",
      "common": {
@@ -2642,6 +2954,17 @@
       "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under BIOL."
+     }
+    },
+    {
+     "code": "BSICSKL",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (24 of 28 noncredit courses, 86%)."
      }
     },
     {
@@ -2777,6 +3100,17 @@
       "level": "Medium",
       "from": "same_code_statewide",
       "why": "2 of 3 courses under this code statewide sit under GEOG."
+     }
+    },
+    {
+     "code": "ESLCVCS",
+     "common": {
+      "code": "ESLN",
+      "discipline": "English as a Second Language (ESL): Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "English as a Second Language (ESL)",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, English as a Second Language (ESL) (14 of 14 noncredit courses, 100%)."
      }
     },
     {
@@ -2916,6 +3250,28 @@
      }
     },
     {
+     "code": "OLD ADL",
+     "common": {
+      "code": "OLAD",
+      "discipline": "Older Adults: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Courses for Older Adults",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Courses for Older Adults (4 of 4 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "PARENT",
+     "common": {
+      "code": "PARN",
+      "discipline": "Parent Education: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Parenting",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Parenting (1 of 1 noncredit courses, 100%)."
+     }
+    },
+    {
      "code": "PHYS SC",
      "common": {
       "code": "PHSC",
@@ -2993,6 +3349,17 @@
       "level": "High",
       "from": "own_courses",
       "why": "49 of 50 of its courses with an M-ID sit under THTR."
+     }
+    },
+    {
+     "code": "TUTOR",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (2 of 2 noncredit courses, 100%)."
      }
     }
    ]
@@ -3075,6 +3442,17 @@
       "level": "High",
       "from": "title",
       "why": "The title names the discipline Biotechnology."
+     }
+    },
+    {
+     "code": "BSICSKL",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (22 of 22 noncredit courses, 100%)."
      }
     },
     {
@@ -3211,6 +3589,17 @@
        "result_url": null,
        "where": "none"
       }
+     }
+    },
+    {
+     "code": "ESLCVCS",
+     "common": {
+      "code": "ESLN",
+      "discipline": "English as a Second Language (ESL): Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "English as a Second Language (ESL)",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, English as a Second Language (ESL) (2 of 2 noncredit courses, 100%)."
      }
     },
     {
@@ -3377,6 +3766,28 @@
      }
     },
     {
+     "code": "OLD ADL",
+     "common": {
+      "code": "OLAD",
+      "discipline": "Older Adults: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Courses for Older Adults",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Courses for Older Adults (4 of 4 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "PARENT",
+     "common": {
+      "code": "PARN",
+      "discipline": "Parent Education: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Parenting",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Parenting (2 of 2 noncredit courses, 100%)."
+     }
+    },
+    {
      "code": "PHYS SC",
      "title": {
       "title": "Physical Science",
@@ -3452,12 +3863,34 @@
       "from": "own_courses",
       "why": "11 of 12 of its courses with an M-ID sit under THTR."
      }
+    },
+    {
+     "code": "TUTOR",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (1 of 1 noncredit courses, 100%)."
+     }
     }
    ]
   },
   {
    "slug": "los_angeles_mission",
    "rows": [
+    {
+     "code": "ACAD PR",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (1 of 1 noncredit courses, 100%)."
+     }
+    },
     {
      "code": "AFRO AM",
      "title": {
@@ -3584,6 +4017,17 @@
       "level": "High",
       "from": "title",
       "why": "The title names the discipline Biotechnology."
+     }
+    },
+    {
+     "code": "BSICSKL",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (7 of 8 noncredit courses, 88%)."
      }
     },
     {
@@ -3961,6 +4405,17 @@
      }
     },
     {
+     "code": "MATH NC",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (5 of 5 noncredit courses, 100%)."
+     }
+    },
+    {
      "code": "MEDIART",
      "title": {
       "title": "Media Arts",
@@ -4058,6 +4513,17 @@
      }
     },
     {
+     "code": "OLD ADL",
+     "common": {
+      "code": "OLAD",
+      "discipline": "Older Adults: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Courses for Older Adults",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Courses for Older Adults (1 of 1 noncredit courses, 100%)."
+     }
+    },
+    {
      "code": "PALEGAL",
      "title": {
       "title": "Paralegal",
@@ -4079,6 +4545,17 @@
       "level": "Medium",
       "from": "same_code_statewide",
       "why": "21 of 22 courses under this code statewide sit under LEGL."
+     }
+    },
+    {
+     "code": "PARENT",
+     "common": {
+      "code": "PARN",
+      "discipline": "Parent Education: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Parenting",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Parenting (4 of 4 noncredit courses, 100%)."
      }
     },
     {
@@ -4482,6 +4959,17 @@
      }
     },
     {
+     "code": "ESLCVCS",
+     "common": {
+      "code": null,
+      "discipline": "Citizenship: Noncredit",
+      "level": null,
+      "from": "noncredit_category",
+      "category": "Citizenship for Immigrants",
+      "why": "The category has no common subject code yet: its dominant COCI noncredit category, Citizenship for Immigrants (3 of 4 noncredit courses, 75%)."
+     }
+    },
+    {
      "code": "FAM &CS",
      "common": {
       "code": "FCSH",
@@ -4716,6 +5204,35 @@
      }
     },
     {
+     "code": "OLD",
+     "title": {
+      "title": "Older Adults",
+      "level": "Low",
+      "from": "noncredit_list",
+      "why": "noncredit list: the title under its dominant COCI noncredit category, Courses for Older Adults (2 of 2 noncredit courses, 100%) (letters, one title).",
+      "also": []
+     },
+     "common": {
+      "code": "OLAD",
+      "discipline": "Older Adults: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Courses for Older Adults",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Courses for Older Adults (2 of 2 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "OLD ADL",
+     "common": {
+      "code": "OLAD",
+      "discipline": "Older Adults: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Courses for Older Adults",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Courses for Older Adults (13 of 13 noncredit courses, 100%)."
+     }
+    },
+    {
      "code": "PHYS SC",
      "common": {
       "code": "PHSC",
@@ -4802,6 +5319,17 @@
       "level": "High",
       "from": "own_courses",
       "why": "25 of 28 of its courses with an M-ID sit under THTR."
+     }
+    },
+    {
+     "code": "TUTOR",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (1 of 1 noncredit courses, 100%)."
      }
     },
     {
@@ -4942,6 +5470,24 @@
      }
     },
     {
+     "code": "BASIC SKILLS",
+     "title": {
+      "title": "Basic Skills",
+      "level": "Low",
+      "from": "noncredit_list",
+      "why": "noncredit list: the title under its dominant COCI noncredit category, Elementary and Secondary Basic Skills (2 of 2 noncredit courses, 100%) (letters, several titles).",
+      "also": []
+     },
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (2 of 2 noncredit courses, 100%)."
+     }
+    },
+    {
      "code": "BIOLOGY",
      "common": {
       "code": "BIOL",
@@ -4949,6 +5495,35 @@
       "level": "High",
       "from": "own_courses",
       "why": "8 of 9 of its courses with an M-ID sit under BIOL."
+     }
+    },
+    {
+     "code": "BSICKL",
+     "title": {
+      "title": "High School Subjects - Math",
+      "level": "Low",
+      "from": "noncredit_list",
+      "why": "noncredit list: the title under its dominant COCI noncredit category, Elementary and Secondary Basic Skills (1 of 1 noncredit courses, 100%) (courses match).",
+      "also": []
+     },
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (1 of 1 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "BSICSKL",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (12 of 19 noncredit courses, 63%)."
      }
     },
     {
@@ -5149,6 +5724,17 @@
       "level": "Medium",
       "from": "same_code_statewide",
       "why": "2 of 3 courses under this code statewide sit under GEOG."
+     }
+    },
+    {
+     "code": "ESLCVCS",
+     "common": {
+      "code": "ESLN",
+      "discipline": "English as a Second Language (ESL): Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "English as a Second Language (ESL)",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, English as a Second Language (ESL) (1 of 1 noncredit courses, 100%)."
      }
     },
     {
@@ -5377,6 +5963,28 @@
      }
     },
     {
+     "code": "OLD ADL",
+     "common": {
+      "code": "OLAD",
+      "discipline": "Older Adults: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Courses for Older Adults",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Courses for Older Adults (1 of 1 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "PARENT",
+     "common": {
+      "code": "PARN",
+      "discipline": "Parent Education: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Parenting",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Parenting (2 of 2 noncredit courses, 100%)."
+     }
+    },
+    {
      "code": "PERSDEV",
      "title": {
       "title": "Counseling",
@@ -5544,6 +6152,17 @@
    "slug": "los_angeles_trade_technical",
    "rows": [
     {
+     "code": "ACAD PR",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (5 of 5 noncredit courses, 100%)."
+     }
+    },
+    {
      "code": "ADM",
      "title": {
       "title": "Administration of Justice",
@@ -5708,6 +6327,17 @@
       "level": "Low",
       "from": "title",
       "why": "The title names the discipline Art."
+     }
+    },
+    {
+     "code": "BSICSKL",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (10 of 21 noncredit courses, 48%)."
      }
     },
     {
@@ -6074,6 +6704,17 @@
       "level": "Medium",
       "from": "same_code_statewide",
       "why": "2 of 3 courses under this code statewide sit under GEOG."
+     }
+    },
+    {
+     "code": "ESLCVCS",
+     "common": {
+      "code": "ESLN",
+      "discipline": "English as a Second Language (ESL): Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "English as a Second Language (ESL)",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, English as a Second Language (ESL) (2 of 2 noncredit courses, 100%)."
      }
     },
     {
@@ -6683,6 +7324,16 @@
      }
     },
     {
+     "code": "VOC ED",
+     "title": {
+      "title": "Vocational - Digital Media Arts",
+      "level": "Low",
+      "from": "noncredit_list",
+      "why": "noncredit list: the title under its dominant COCI noncredit category, Short-term Vocational (51 of 61 noncredit courses, 84%) (letters, several titles).",
+      "also": []
+     }
+    },
+    {
      "code": "WASTE",
      "common": {
       "code": "WEXP",
@@ -6736,6 +7387,17 @@
   {
    "slug": "los_angeles_valley",
    "rows": [
+    {
+     "code": "ACAD PR",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (1 of 1 noncredit courses, 100%)."
+     }
+    },
     {
      "code": "AFRO AM",
      "common": {
@@ -6823,6 +7485,17 @@
       "level": "High",
       "from": "own_courses",
       "why": "4 of 5 of its courses with an M-ID sit under WEXP."
+     }
+    },
+    {
+     "code": "BSICSKL",
+     "common": {
+      "code": null,
+      "discipline": null,
+      "level": null,
+      "from": "noncredit_category",
+      "category": "Workforce Preparation",
+      "why": "The category has no common subject code yet: its dominant COCI noncredit category, Workforce Preparation (10 of 17 noncredit courses, 59%)."
      }
     },
     {
@@ -7131,6 +7804,17 @@
      }
     },
     {
+     "code": "ESLCVCS",
+     "common": {
+      "code": "ESLN",
+      "discipline": "English as a Second Language (ESL): Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "English as a Second Language (ESL)",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, English as a Second Language (ESL) (6 of 6 noncredit courses, 100%)."
+     }
+    },
+    {
      "code": "FINANCE",
      "common": {
       "code": "WEXP",
@@ -7324,6 +8008,17 @@
      }
     },
     {
+     "code": "MATH NC",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (2 of 2 noncredit courses, 100%)."
+     }
+    },
+    {
      "code": "MEDIART",
      "title": {
       "title": "Media Arts",
@@ -7432,6 +8127,17 @@
      }
     },
     {
+     "code": "OLD ADL",
+     "common": {
+      "code": "OLAD",
+      "discipline": "Older Adults: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Courses for Older Adults",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Courses for Older Adults (8 of 8 noncredit courses, 100%)."
+     }
+    },
+    {
      "code": "PALEGAL",
      "common": {
       "code": "LEGL",
@@ -7439,6 +8145,17 @@
       "level": "High",
       "from": "own_courses",
       "why": "5 of 5 of its courses with an M-ID sit under LEGL."
+     }
+    },
+    {
+     "code": "PARENT",
+     "common": {
+      "code": "PARN",
+      "discipline": "Parent Education: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Parenting",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Parenting (2 of 2 noncredit courses, 100%)."
      }
     },
     {
@@ -7581,6 +8298,17 @@
       "level": "High",
       "from": "own_courses",
       "why": "27 of 33 of its courses with an M-ID sit under THTR."
+     }
+    },
+    {
+     "code": "TUTOR",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (1 of 1 noncredit courses, 100%)."
      }
     }
    ]
@@ -7746,6 +8474,17 @@
       "level": "High",
       "from": "own_courses",
       "why": "3 of 5 of its courses with an M-ID sit under COUN."
+     }
+    },
+    {
+     "code": "INDS",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (1 of 1 noncredit courses, 100%)."
      }
     },
     {
@@ -8260,6 +8999,28 @@
      }
     },
     {
+     "code": "BS",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (14 of 15 noncredit courses, 93%)."
+     }
+    },
+    {
+     "code": "BSHS",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (19 of 19 noncredit courses, 100%)."
+     }
+    },
+    {
      "code": "BTNY",
      "common": {
       "code": "BIOL",
@@ -8554,6 +9315,17 @@
       "level": "High",
       "from": "own_courses",
       "why": "8 of 9 of its courses with an M-ID sit under CSIS."
+     }
+    },
+    {
+     "code": "CITZ",
+     "common": {
+      "code": null,
+      "discipline": "Citizenship: Noncredit",
+      "level": null,
+      "from": "noncredit_category",
+      "category": "Citizenship for Immigrants",
+      "why": "The category has no common subject code yet: its dominant COCI noncredit category, Citizenship for Immigrants (1 of 1 noncredit courses, 100%)."
      }
     },
     {
@@ -9412,6 +10184,17 @@
      }
     },
     {
+     "code": "OAD",
+     "common": {
+      "code": "OLAD",
+      "discipline": "Older Adults: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Courses for Older Adults",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Courses for Older Adults (16 of 16 noncredit courses, 100%)."
+     }
+    },
+    {
      "code": "OCEA",
      "title": {
       "title": "Oceanography",
@@ -9731,8 +10514,701 @@
    ]
   },
   {
+   "slug": "north_orange_continuing_education",
+   "rows": [
+    {
+     "code": "ABE",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (4 of 5 noncredit courses, 80%)."
+     }
+    },
+    {
+     "code": "ABED",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (8 of 8 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "BMGR",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (11 of 11 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "BUSA",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (2 of 2 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "CCTR",
+     "title": {
+      "title": "Construction Crafts Technology",
+      "level": "Low",
+      "from": "noncredit_list",
+      "why": "noncredit list: the title under its dominant COCI noncredit category, Short-term Vocational (1 of 1 noncredit courses, 100%) (letters, several titles).",
+      "also": []
+     },
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (1 of 1 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "CIST",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (9 of 15 noncredit courses, 60%)."
+     }
+    },
+    {
+     "code": "CNED",
+     "common": {
+      "code": "OLAD",
+      "discipline": "Older Adults: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Courses for Older Adults",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Courses for Older Adults (2 of 2 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "CONS",
+     "title": {
+      "title": "Clothing and Textiles",
+      "level": "Low",
+      "from": "noncredit_list",
+      "why": "noncredit list: the title under its dominant COCI noncredit category, Short-term Vocational (5 of 5 noncredit courses, 100%) (letters, several titles).",
+      "also": []
+     },
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (5 of 5 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "CRAE",
+     "common": {
+      "code": "OLAD",
+      "discipline": "Older Adults: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Courses for Older Adults",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Courses for Older Adults (6 of 6 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "CRPL",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (5 of 5 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "DSSS",
+     "common": {
+      "code": null,
+      "discipline": "Disabled Student Programs and Services: Noncredit",
+      "level": null,
+      "from": "noncredit_category",
+      "category": "Courses for Persons with Substantial Disabilities",
+      "why": "The category has no common subject code yet: its dominant COCI noncredit category, Courses for Persons with Substantial Disabilities (49 of 49 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "ECE",
+     "title": {
+      "title": "Computer and Information Sciences",
+      "level": "Low",
+      "from": "noncredit_list",
+      "why": "noncredit list: the title under its dominant COCI noncredit category, Short-term Vocational (1 of 1 noncredit courses, 100%) (letters, several titles).",
+      "also": []
+     }
+    },
+    {
+     "code": "ECED",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (10 of 10 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "EDEN",
+     "common": {
+      "code": "OLAD",
+      "discipline": "Older Adults: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Courses for Older Adults",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Courses for Older Adults (3 of 3 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "ELET",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (14 of 14 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "EMER",
+     "common": {
+      "code": "OLAD",
+      "discipline": "Older Adults: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Courses for Older Adults",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Courses for Older Adults (25 of 26 noncredit courses, 96%)."
+     }
+    },
+    {
+     "code": "ENCO",
+     "common": {
+      "code": "OLAD",
+      "discipline": "Older Adults: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Courses for Older Adults",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Courses for Older Adults (3 of 5 noncredit courses, 60%)."
+     }
+    },
+    {
+     "code": "FINC",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (1 of 1 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "FSRV",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (3 of 3 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "IHSS",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (37 of 37 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "MEDO",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (5 of 5 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "MEOC",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (11 of 11 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "MS",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (12 of 12 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "OTEC",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (15 of 16 noncredit courses, 94%)."
+     }
+    },
+    {
+     "code": "PTEC",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (8 of 9 noncredit courses, 89%)."
+     }
+    },
+    {
+     "code": "QAMD",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (6 of 6 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "SHOP",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (1 of 1 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "WFPR",
+     "common": {
+      "code": null,
+      "discipline": null,
+      "level": null,
+      "from": "noncredit_category",
+      "category": "Workforce Preparation",
+      "why": "The category has no common subject code yet: its dominant COCI noncredit category, Workforce Preparation (46 of 46 noncredit courses, 100%)."
+     }
+    }
+   ]
+  },
+  {
+   "slug": "san_diego_of_continuing_education",
+   "rows": [
+    {
+     "code": "ABED",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (13 of 13 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "AGRI",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (2 of 2 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "ARTX",
+     "common": {
+      "code": "OLAD",
+      "discipline": "Older Adults: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Courses for Older Adults",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Courses for Older Adults (1 of 1 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "CEMR",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (3 of 3 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "CLTX",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (33 of 33 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "CNCT",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (3 of 3 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "DIES",
+     "title": {
+      "title": "Clothing and Textiles",
+      "level": "Low",
+      "from": "noncredit_list",
+      "why": "noncredit list: the title under its dominant COCI noncredit category, Short-term Vocational (2 of 2 noncredit courses, 100%) (letters, several titles).",
+      "also": []
+     },
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (2 of 2 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "DRVE",
+     "common": {
+      "code": "OLAD",
+      "discipline": "Older Adults: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Courses for Older Adults",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Courses for Older Adults (1 of 2 noncredit courses, 50%)."
+     }
+    },
+    {
+     "code": "ELRN",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (3 of 3 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "ENGE",
+     "title": {
+      "title": "Business Management",
+      "level": "Low",
+      "from": "noncredit_list",
+      "why": "noncredit list: the title under its dominant COCI noncredit category, Short-term Vocational (1 of 1 noncredit courses, 100%) (letters, several titles).",
+      "also": []
+     },
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (1 of 1 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "FDNT",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (27 of 27 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "HEAL",
+     "common": {
+      "code": null,
+      "discipline": "Health and Safety: Noncredit",
+      "level": null,
+      "from": "noncredit_category",
+      "category": "Health & Safety",
+      "why": "The category has no common subject code yet: its dominant COCI noncredit category, Health & Safety (1 of 1 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "HMDV",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (26 of 26 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "HMID",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (1 of 1 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "HSDP",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (30 of 30 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "HSEP",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (9 of 9 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "INDT",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (14 of 14 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "INTD",
+     "common": {
+      "code": null,
+      "discipline": null,
+      "level": null,
+      "from": "noncredit_category",
+      "category": "Workforce Preparation",
+      "why": "The category has no common subject code yet: its dominant COCI noncredit category, Workforce Preparation (3 of 5 noncredit courses, 60%)."
+     }
+    },
+    {
+     "code": "INVS",
+     "common": {
+      "code": "OLAD",
+      "discipline": "Older Adults: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Courses for Older Adults",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Courses for Older Adults (1 of 1 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "MARK",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (1 of 1 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "MECT",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (8 of 8 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "MUSN",
+     "common": {
+      "code": "OLAD",
+      "discipline": "Older Adults: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Courses for Older Adults",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Courses for Older Adults (2 of 2 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "MUSV",
+     "common": {
+      "code": "OLAD",
+      "discipline": "Older Adults: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Courses for Older Adults",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Courses for Older Adults (1 of 1 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "OFBA",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (1 of 1 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "OFSY",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (40 of 40 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "PASV",
+     "common": {
+      "code": "OLAD",
+      "discipline": "Older Adults: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Courses for Older Adults",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Courses for Older Adults (5 of 7 noncredit courses, 71%)."
+     }
+    },
+    {
+     "code": "PHYE",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (1 of 1 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "PHYN",
+     "title": {
+      "title": "High School Subjects - Natural Sciences",
+      "level": "Low",
+      "from": "noncredit_list",
+      "why": "noncredit list: the title under its dominant COCI noncredit category, Elementary and Secondary Basic Skills (1 of 1 noncredit courses, 100%) (courses match).",
+      "also": []
+     },
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (1 of 1 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "PRTG",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (1 of 1 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "SPEE",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (1 of 1 noncredit courses, 100%)."
+     }
+    }
+   ]
+  },
+  {
    "slug": "santa_ana",
    "rows": [
+    {
+     "code": "ABE",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (13 of 13 noncredit courses, 100%)."
+     }
+    },
     {
      "code": "ACCT",
      "title": {
@@ -10084,6 +11560,17 @@
      }
     },
     {
+     "code": "CTZN",
+     "common": {
+      "code": null,
+      "discipline": "Citizenship: Noncredit",
+      "level": null,
+      "from": "noncredit_category",
+      "category": "Citizenship for Immigrants",
+      "why": "The category has no common subject code yet: its dominant COCI noncredit category, Citizenship for Immigrants (1 of 1 noncredit courses, 100%)."
+     }
+    },
+    {
      "code": "CULN",
      "title": {
       "title": "Culinary Arts",
@@ -10422,6 +11909,105 @@
      }
     },
     {
+     "code": "HSART",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (2 of 2 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "HSENG",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (15 of 15 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "HSGED",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (1 of 1 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "HSMTH",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (15 of 15 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "HSOTH",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (5 of 5 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "HSRDG",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (3 of 3 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "HSS",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (12 of 12 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "HSSCI",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (11 of 11 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "HSSOC",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (11 of 11 noncredit courses, 100%)."
+     }
+    },
+    {
      "code": "IDS",
      "title": {
       "title": "Sociology",
@@ -10652,6 +12238,17 @@
      }
     },
     {
+     "code": "LRN",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (5 of 5 noncredit courses, 100%)."
+     }
+    },
+    {
      "code": "MA",
      "title": {
       "title": "Medical Assistant",
@@ -10763,6 +12360,17 @@
         "from": "program_titles"
        }
       ]
+     }
+    },
+    {
+     "code": "OAP",
+     "common": {
+      "code": "OLAD",
+      "discipline": "Older Adults: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Courses for Older Adults",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Courses for Older Adults (8 of 8 noncredit courses, 100%)."
      }
     },
     {
@@ -10885,6 +12493,17 @@
      }
     },
     {
+     "code": "PRNT",
+     "common": {
+      "code": "PARN",
+      "discipline": "Parent Education: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Parenting",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Parenting (9 of 9 noncredit courses, 100%)."
+     }
+    },
+    {
      "code": "PSC",
      "common": {
       "code": "PHSC",
@@ -10912,6 +12531,17 @@
       "from": "other_colleges",
       "why": "other colleges: 2 of 2 other colleges (all agree).",
       "also": []
+     }
+    },
+    {
+     "code": "SAFE",
+     "common": {
+      "code": null,
+      "discipline": "Health and Safety: Noncredit",
+      "level": null,
+      "from": "noncredit_category",
+      "category": "Health & Safety",
+      "why": "The category has no common subject code yet: its dominant COCI noncredit category, Health & Safety (2 of 2 noncredit courses, 100%)."
      }
     },
     {
@@ -10969,6 +12599,17 @@
      }
     },
     {
+     "code": "SSD",
+     "common": {
+      "code": null,
+      "discipline": "Disabled Student Programs and Services: Noncredit",
+      "level": null,
+      "from": "noncredit_category",
+      "category": "Courses for Persons with Substantial Disabilities",
+      "why": "The category has no common subject code yet: its dominant COCI noncredit category, Courses for Persons with Substantial Disabilities (6 of 6 noncredit courses, 100%)."
+     }
+    },
+    {
      "code": "STAT",
      "title": {
       "title": "Statistics",
@@ -11012,6 +12653,116 @@
       "level": "High",
       "from": "own_courses",
       "why": "46 of 52 of its courses with an M-ID sit under THTR."
+     }
+    },
+    {
+     "code": "VAUTO",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (6 of 6 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "VBUS",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (36 of 39 noncredit courses, 92%)."
+     }
+    },
+    {
+     "code": "VCNST",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (4 of 4 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "VDMA",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (3 of 3 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "VFDM",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (2 of 2 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "VFOOD",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (7 of 7 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "VFPA",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (19 of 19 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "VHLTH",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (14 of 15 noncredit courses, 93%)."
+     }
+    },
+    {
+     "code": "VHOSP",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (1 of 1 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "VMFG",
+     "common": {
+      "code": "VOCE",
+      "discipline": "Vocational",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Short-term Vocational",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Short-term Vocational (1 of 1 noncredit courses, 100%)."
      }
     },
     {
@@ -11565,6 +13316,17 @@
    "slug": "west_los_angeles",
    "rows": [
     {
+     "code": "ACAD PR",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (5 of 5 noncredit courses, 100%)."
+     }
+    },
+    {
      "code": "ACCTG",
      "title": {
       "title": "Accounting",
@@ -11668,6 +13430,17 @@
      }
     },
     {
+     "code": "BASIC SKILLS",
+     "common": {
+      "code": null,
+      "discipline": null,
+      "level": null,
+      "from": "noncredit_category",
+      "category": "Workforce Preparation",
+      "why": "The category has no common subject code yet: its dominant COCI noncredit category, Workforce Preparation (7 of 10 noncredit courses, 70%)."
+     }
+    },
+    {
      "code": "BIOLOGY",
      "common": {
       "code": "BIOL",
@@ -11685,6 +13458,17 @@
       "level": "High",
       "from": "title",
       "why": "The title names the discipline Biotechnology."
+     }
+    },
+    {
+     "code": "BSICSKL",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (15 of 28 noncredit courses, 54%)."
      }
     },
     {
@@ -11851,6 +13635,17 @@
       "from": "district",
       "why": "district: 6 of 6 colleges in the district (all agree). course joins agrees.",
       "also": []
+     }
+    },
+    {
+     "code": "ESLCVCS",
+     "common": {
+      "code": "ESLN",
+      "discipline": "English as a Second Language (ESL): Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "English as a Second Language (ESL)",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, English as a Second Language (ESL) (6 of 6 noncredit courses, 100%)."
      }
     },
     {
@@ -12142,6 +13937,27 @@
       "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under THTR."
+     }
+    },
+    {
+     "code": "TUTOR",
+     "common": {
+      "code": "BSKL",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit",
+      "level": "Low",
+      "from": "noncredit_category",
+      "category": "Elementary and Secondary Basic Skills",
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (1 of 1 noncredit courses, 100%)."
+     }
+    },
+    {
+     "code": "VOC ED",
+     "title": {
+      "title": "Vocational",
+      "level": "Low",
+      "from": "noncredit_list",
+      "why": "noncredit list: the title under its dominant COCI noncredit category, Short-term Vocational (58 of 78 noncredit courses, 74%) (courses match).",
+      "also": []
      }
     }
    ]

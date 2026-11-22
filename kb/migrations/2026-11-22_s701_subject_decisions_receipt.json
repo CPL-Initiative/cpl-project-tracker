@@ -1,0 +1,18 @@
+{
+  "_what": "Receipt for kb/migrations/2026-11-22_s701_subject_decisions.sql (S701, #3655): Sam's 30 Cerritos subject decisions filed as kb_curation subject_decision rows. Follows docs/reference/data_write_rollback.md, the INSERT-only cohort shape: the cohort reviewer_email, the row count and the table are enough to undo it.",
+  "migration": "kb/migrations/2026-11-22_s701_subject_decisions.sql",
+  "rollback": "kb/migrations/2026-11-22_s701_subject_decisions_rollback.sql",
+  "table": "public.kb_curation",
+  "shape": "INSERT-only cohort, ON CONFLICT (course_id, field) DO NOTHING",
+  "field": "subject_decision",
+  "cohort_reviewer_email": "subjects-s701@bot",
+  "applied_at": "2026-11-22T04:45Z",
+  "applied_by": "the conductor session of S701, through the Supabase tool (Rule 10 c), after a second read of the PR",
+  "rows_before": 0,
+  "rows_before_read": "count of kb_curation rows with course_id like 'SUBJ:%' before the apply",
+  "rows_inserted": 30,
+  "bands": {"credit": 29, "whole": 1},
+  "rows_md5": "137729fdcfec757c49ddd72bc97d5244",
+  "rows_md5_rule": "md5 of each row's course_id, a tab and its value, joined by newline, in course_id order; read live after the apply, and equal to the same digest computed from the committed file (kb/_file_subject_decisions.py rows_md5)",
+  "rollback_how": "Read live first and hold out any row changed since the apply, then: delete from public.kb_curation where reviewer_email = 'subjects-s701@bot' and course_id like 'SUBJ:%' and field = 'subject_decision'; (the rollback file). A row a person saved under the same key carries their own email and stays."
+}

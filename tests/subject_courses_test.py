@@ -35,7 +35,7 @@ d = B.build_college("Alpha College", "alpha", CAT, STATE)
 M = {r[0]: dict(zip(d["columns"], r)) for r in d["codes"]["MATH"]}
 check("a course is one row where the catalog and the state list write its number apart (22A and 022A)", len(d["codes"]["MATH"]) == 4 and M["022A"]["listed"] == "Both")
 check("the title is the catalog's where the catalog lists the course", M["022A"]["title"] == "Algebra Lab" and M["300"]["title"] == "Math Lab")
-check("the state list's N and E are both noncredit", M["300"]["band"] == "N" and M["301"]["band"] == "N" and M["022A"]["band"] == "C")
+check("the state list's N and E stay apart: noncredit and noncredit enhanced", M["300"]["band"] == "N" and M["301"]["band"] == "E" and M["022A"]["band"] == "C")
 check("a catalog-only course has no band: none is guessed", M["9"]["band"] == "" and M["9"]["listed"] == "Catalog")
 check("C-ID, CCN and M-ID are the state list's", M["022A"]["cid"] == "MATH 151" and M["022A"]["mid"] == "MATH M1001")
 check("a subject is matched exactly after trimming and upper-casing, nothing looser", "MATHS" in d["codes"] and len(d["codes"]["MATHS"]) == 1)

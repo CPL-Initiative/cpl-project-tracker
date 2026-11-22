@@ -3,7 +3,7 @@
  "decided_by": "Sam",
  "decided_at": "2026-11-21T21:11:00Z",
  "relayed_by": "COBIx, cpl-project-tracker#3655 comment 7069308014",
- "status": "held for comparison; filing prepared, not applied (kb/_file_subject_decisions.py writes kb/migrations/2026-11-22_s701_subject_decisions.sql and its rollback; the conductor applies after a second read)",
+ "status": "filed: 30 kb_curation subject_decision rows applied 2026-11-22T04:45Z (kb/migrations/2026-11-22_s701_subject_decisions.sql; receipt kb/migrations/2026-11-22_s701_subject_decisions_receipt.json; rollback beside it)",
  "key": "A decision is keyed by college, local code and band. band is null where the decision was made for the whole code; credit or a noncredit category where a code holds both (Sam, 2026-11-21: noncredit and credit disciplines are separate in the MQs).",
  "not_decided": [
   "INST",

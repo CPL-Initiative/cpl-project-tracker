@@ -8,7 +8,11 @@ of Continuing Education, Mt. San Antonio College's noncredit program and Santa A
 Education (kb/hand_filed_catalogs/courses/). This script reads ONLY those four files' subject headings, groups the
 headings that name one subject, and says for each which noncredit category its courses sit under in the COCI export
 and which noncredit MQ discipline and common subject code that category has. It files
-kb/status/noncredit_subject_titles.json. It is a draft for a person: it changes no title, no common code and no hold.
+kb/status/noncredit_subject_titles.json. The titles stand on Sam's word of 2026-11-22 ("Looks good ... Can we go with
+it and I can look more closely tomorrow and reverse or change anything that looks wrong?",
+r-noncredit-title-list-go-sam-2026-11-22) and are his to change; the recommender lines the smaller programs'
+noncredit codes up with it. The four categories with no common code keep none and show by name
+(d-noncredit-four-categories-no-code-s701, Sky's call, his to revise).
 
 WHAT IT DOES NOT GUESS.
   The category of a heading is counted, never inferred from its words: the COCI export's Non_Credit_Category of the
@@ -160,8 +164,10 @@ def build(root=ROOT):
                   "programs' catalogs only (Sam, 2026-11-21, relayed by COBIx on #3655). Each title lists the headings "
                   "printed for it, the programs that print it, and the COCI noncredit category its courses sit under, "
                   "counted from the export, with that category's noncredit MQ discipline and common subject code "
-                  "where one exists. A draft for a person to settle: nothing reads it as a title or a mapping, and "
-                  "the noncredit hold stands. Built by kb/_build_noncredit_subject_titles.py; no clock is read."),
+                  "where one exists. The titles stand on Sam's word of 2026-11-22 (r-noncredit-title-list-go-sam-"
+                  "2026-11-22) and are his to change; a category with no common code keeps none and shows by name. "
+                  "The recommender lines the smaller programs' noncredit codes up with it. Built by "
+                  "kb/_build_noncredit_subject_titles.py; no clock is read."),
         "_rule": ("Two headings are one title when they are equal after folding case, '&', punctuation and a trailing "
                   "campus mark, or when the synonym list names them: " + "; ".join(
                       "%s (%s)" % (t, ", ".join(n)) for t, n in SYNONYMS.items()) + ". Nothing else is merged. "

@@ -10,8 +10,8 @@ college, kb/status/subject_courses/<slug>.json, and the panel fetches the one it
 WHAT A ROW IS. A course is matched between the catalog (kb/hand_filed_catalogs/courses/<slug>.json.gz) and the
 state list when the college, the subject code (trimmed, upper case) and the course number (upper case, spaces
 and leading zeros dropped) are equal; nothing looser. The title is the catalog's where the catalog lists the
-course, else the state list's. The band is the state list's: C credit, N noncredit (its N and E, the enhanced-funding courses), blank where the course is in
-the catalog only (the catalog files do not say). C-ID, CCN and M-ID are the state list's columns as they stand.
+course, else the state list's. The band is the state list's: C credit, N noncredit, E noncredit enhanced (S701: the panel lists N and E apart),
+blank where the course is in the catalog only (the catalog files do not say). C-ID, CCN and M-ID are the state list's columns as they stand.
 
 Each file: {"college", "slug", "columns", "codes": {CODE: [row, ...]}}, rows sorted by number.
 No clock is read, so the same inputs write the same bytes.
@@ -65,7 +65,9 @@ def build_college(college, slug, catalog_rows, state_rows):
     for r in state_rows:
         k = (code_key(r[2]), num_key(r[3]))
         e = codes.setdefault(k[0], {}).setdefault(k[1], {"number": str(r[3]).strip(), "listed": "COCI"})
-        band = "C" if r[6] == "C" else ("N" if r[6] else "")     # N and E (enhanced funding) are both noncredit
+        # C credit, N noncredit, E noncredit enhanced (Sam, 2026-11-22, f-coci-credit-status-three-values-sam-2026-11-22:
+        # "Coci has a credit, noncredit, noncredit enhanced indicator"); any other mark reads N, a noncredit course.
+        band = r[6] if r[6] in ("C", "N", "E") else ("N" if r[6] else "")
         if "band" in e:        # a second state row for one number: the first row stands; credit wins a mixed pair
             if band == "C":
                 e["band"] = "C"

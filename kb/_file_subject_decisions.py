@@ -12,13 +12,15 @@ This builder writes them on that path, as the Subjects page's Save writes a pers
 
 The band is the page's rule (commons_subjects.js bandOf), read from kb/status/local_subject_titles.json: credit where
 COCI lists a credit course under the code, whole where COCI lists no course under it. A decision on a code whose COCI
-courses are all noncredit is refused: noncredit decisions wait on the noncredit title list (r-noncredit-hold-sam-
-2026-11-21). Every common code must be a canonical SUBJ in kb/discipline_canonical_subj4.json.
+courses are all noncredit is refused: noncredit saves are keyed by noncredit category, which comes next
+(d-subject-save-key-three-part-s698). Every common code must be a canonical SUBJ in kb/discipline_canonical_subj4.json.
 
 Rule 10: INSERT only, ON CONFLICT (course_id, field) DO NOTHING, so a person's saved row stands; one cohort,
 subjects-s701@bot (reviewer_label is generated from reviewer_email, so the cohort id is the label too); the rollback
-deletes that cohort's subject_decision rows and nothing else. Neither file is pointed at by kb/migrations/.apply: the
-conductor applies after a second read. No clock is read, so a second run writes identical files.
+deletes that cohort's subject_decision rows and nothing else. APPLIED 2026-11-22T04:45Z: the conductor ran the forward
+file through the Supabase tool after a second read (0 SUBJ: rows before, 30 inserted); the receipt beside it,
+kb/migrations/2026-11-22_s701_subject_decisions_receipt.json, holds the rows' md5, which rows_md5() recomputes from
+the plan. Neither file is pointed at by kb/migrations/.apply. No clock is read, so a second run writes identical files.
 
 Run:  python3 kb/_file_subject_decisions.py           write the two SQL files
       python3 kb/_file_subject_decisions.py --check   exit 1 if either file differs from what the inputs give
@@ -34,6 +36,8 @@ TITLES = "kb/status/local_subject_titles.json"
 CANONICAL = "kb/discipline_canonical_subj4.json"
 FORWARD = "kb/migrations/2026-11-22_s701_subject_decisions.sql"
 ROLLBACK = "kb/migrations/2026-11-22_s701_subject_decisions_rollback.sql"
+RECEIPT = "kb/migrations/2026-11-22_s701_subject_decisions_receipt.json"
+APPLIED_AT = "2026-11-22T04:45Z"
 COHORT = "subjects-s701@bot"
 PREFIX = "SUBJ:"
 FIELD = "subject_decision"
@@ -97,6 +101,12 @@ def plan():
     return dec, out
 
 
+def rows_md5(rows):
+    """The receipt's digest: md5 of each row's course_id, a tab and its value, joined by newline, in course_id order."""
+    return hashlib.md5("\n".join(r["course_id"] + "\t" + r["value"] for r in sorted(rows, key=lambda r: r["course_id"]))
+                       .encode("utf-8")).hexdigest()
+
+
 def digest(dec):
     return hashlib.sha256(json.dumps(dec["decisions"], ensure_ascii=False, sort_keys=True,
                                      separators=(",", ":")).encode("utf-8")).hexdigest()
@@ -109,8 +119,9 @@ def render(dec, rows):
         bands[r["band"]] = bands.get(r["band"], 0) + 1
     band_words = ", ".join("%d %s" % (bands[b], b) for b in sorted(bands))
     head = [
-        "-- Sam's %d Cerritos subject decisions as kb_curation rows (S701, #3655). PREPARED, NOT APPLIED, and NOT pointed at" % n,
-        "-- by kb/migrations/.apply: the conductor applies it after a second read.",
+        "-- Sam's %d Cerritos subject decisions as kb_curation rows (S701, #3655). APPLIED %s by the conductor through the" % (n, APPLIED_AT),
+        "-- Supabase tool, after a second read: 0 SUBJ: rows before, %d inserted. Receipt: %s" % (n, RECEIPT),
+        "-- (rows md5 %s). NOT pointed at by kb/migrations/.apply." % rows_md5(rows),
         "-- Written by kb/_file_subject_decisions.py from %s (decisions sha256 %s)" % (DECISIONS, digest(dec)),
         "-- and %s (bands). Ruling: r-subject-save-path-kb-curation-sam-2026-11-22 (\"Fine.\"); ATH is KINE" % TITLES,
         "-- (r-athletics-under-kine-sam-2026-11-22). Key SUBJ:<college>|<local code>|<band>, field subject_decision; %s." % band_words,

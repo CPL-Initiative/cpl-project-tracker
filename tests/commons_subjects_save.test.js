@@ -34,7 +34,7 @@ const alpha = FIX.colleges.find((c) => c.slug === "alpha");
 alpha.rows.push(
   row({ code: "ES/A", printed_name: "Exercise Science Activities", catalog_courses: 1, state_courses: 1, side: "both", title_state: "catalog", credit_courses: 1, noncredit_courses: 0 }),
   row({ code: "A&P", printed_name: "Anatomy and Physiology", catalog_courses: 2, state_courses: 2, side: "both", title_state: "catalog", credit_courses: 2, noncredit_courses: 0 }),
-  row({ code: "NCX", printed_name: null, catalog_courses: 0, state_courses: 3, side: "state", title_state: "noncredit_hold", credit_courses: 0, noncredit_courses: 3 }),
+  row({ code: "NCX", printed_name: null, catalog_courses: 0, state_courses: 3, side: "state", title_state: "not_in_catalog", credit_courses: 0, noncredit_courses: 3 }),
   row({ code: "AP", printed_name: "Anatomy and Physiology", catalog_courses: 1, state_courses: 0, side: "catalog", title_state: "catalog", credit_courses: 0, noncredit_courses: 0 }));
 FIX.common_codes = { BIOL: "Biology", ENGL: "English", KINE: "Kinesiology", MATH: "Mathematics", WELD: "Welding" };
 FIX.title_case = LIVE.title_case;
@@ -147,8 +147,8 @@ function typeIn(x, id, v) { const i = x.d.getElementById(id); i.value = v; retur
   x = load("#commons/subjects/alpha/NCX", { sess: ME });
   await x.M.boot(); await settle();
   panel = x.d.querySelector("#csb-panel");
-  check("(3) ⭐ a code whose COCI courses are all noncredit offers no form and says the hold stands",
-    panel && !panel.querySelector("input") && !x.d.getElementById("csb-ed-save") && /noncredit\. Noncredit titles and common subject codes are on hold/.test(txt(x.d.getElementById("csb-edit-hold"))));
+  check("(3) ⭐ a code whose COCI courses are all noncredit offers no form and says noncredit saves come next",
+    panel && !panel.querySelector("input") && !x.d.getElementById("csb-ed-save") && /noncredit\. Noncredit saves come next, each keyed by the code’s noncredit category/.test(txt(x.d.getElementById("csb-edit-hold"))));
 
   /* (4) refusals make no request */
   x = load("#commons/subjects/alpha/MATH", { sess: ME });

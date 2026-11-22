@@ -38,9 +38,17 @@ other colleges. It is scored on Sam's 30 Cerritos decisions (kb/reference/subjec
 2026-11-21.json), which no source reads, and on the rows the subject map already settles. Where a recommendation
 diverges from Sam's decision, his decision stands and the divergence is listed.
 
-BANDS. Credit and noncredit are read apart (Sam, 2026-11-21: the MQs separate them). A row whose courses are all
-noncredit is on hold (r-noncredit-hold-sam-2026-11-21) and takes no recommendation here; a row with both takes
-its recommendation from its credit courses.
+BANDS. Credit and noncredit are read apart (Sam, 2026-11-21: the MQs separate them); a row with both takes its
+recommendation from its credit courses. The noncredit hold (r-noncredit-hold-sam-2026-11-21) lifted on Sam's go of
+2026-11-22 (r-noncredit-title-list-go-sam-2026-11-22), so a row whose courses are all noncredit is lined up with the
+standing noncredit subject title list (kb/status/noncredit_subject_titles.json) by its own dominant COCI noncredit
+category: a list title under that category whose program prints the same code, else one whose courses share their
+titles with this code's, else the one title under it the code's letters run through. Nothing else is read, and a
+category name alone gives no title. The noncredit_list source is measured the same way, on the noncredit-only codes
+that hold a catalog heading, each left out of the list; a heading the list folds into one of its titles (ESL Classes
+into English as a Second Language) counts as that title. Its common code is the category's noncredit MQ
+discipline's code, measured on the noncredit-only rows the subject map settles; a category with no code yet says so
+and recommends none.
 
 Usage: python3 kb/_build_local_subject_recommendations.py            (write the file)
        python3 kb/_build_local_subject_recommendations.py --check    (fail if the committed file is stale)
@@ -56,6 +64,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 from subject_title_case import title_case  # noqa: E402
+from _build_noncredit_subject_titles import group_title  # noqa: E402
 
 TITLES = os.path.join("kb", "status", "local_subject_titles.json")
 STATE = "coci_lookup_data.js"
@@ -64,6 +73,8 @@ DECISIONS = os.path.join("kb", "reference", "subject_code_decisions_cerritos_202
 SEARCHES = os.path.join("kb", "reference", "subject_web_searches.json")
 PROGRAMS = os.path.join("kb", "program_requirements_college")
 OUT = os.path.join("kb", "status", "local_subject_recommendations.json")
+NCLIST = os.path.join("kb", "status", "noncredit_subject_titles.json")
+NO_CATEGORY = "(no category in the export)"
 
 HIGH, MEDIUM, FLOOR_N = 0.90, 0.60, 20
 LEVELS = ["Low", "Medium", "High"]
@@ -145,6 +156,7 @@ class Data:
         self.courses = defaultdict(list)      # (slug, code) -> [(band, keys, subj4)]
         self.mid_all = defaultdict(Counter)   # (code, band) -> Counter(subj4) at every college in the state list
         self.mid_own = defaultdict(Counter)   # (slug, code, band) -> Counter(subj4)
+        self.course_names = defaultdict(set)  # (slug, code) -> {folded title} of its noncredit courses
         for r in state["rows"]:
             code, band = r[2].strip().upper(), r[6]
             subj4 = r[10].split(" ")[0] if r[10] else None
@@ -156,6 +168,8 @@ class Data:
             keys = [k for k in ("M:" + r[10] if r[10] else None, "C:" + r[8] if r[8] else None,
                                 "N:" + r[9] if r[9] else None) if k]
             self.courses[(slug, code)].append((band, keys))
+            if band != "C" and norm(r[4]):
+                self.course_names[(slug, code)].add(norm(r[4]))
             for k in keys:
                 self.join[k].add((slug, code))
             if subj4:
@@ -180,6 +194,9 @@ class Data:
                 fold[v["data_modal"]][c4] += v.get("total_mids") or 1
         self.fold = {var: top(c)[0] for var, c in fold.items()}
         self.programs = self._programs(root)
+        p = os.path.join(root, NCLIST)
+        nl = json.load(open(p, encoding="utf-8")) if os.path.exists(p) else {}
+        self.nc_titles, self.nc_mq = nl.get("titles") or [], nl.get("mq") or {}
         p = os.path.join(root, SEARCHES)
         self.searches = {}
         if os.path.exists(p):
@@ -345,6 +362,94 @@ def recommend_title(data, table, row):
     return out
 
 
+def noncredit_only(row):
+    return bool(row.get("noncredit_courses")) and not row.get("credit_courses")
+
+
+def dominant(row):
+    """(category, its noncredit courses, all noncredit courses with a category) for the row, most courses first."""
+    parts = sorted([(n, k) for n, k in (row.get("categories") or []) if n != NO_CATEGORY], key=lambda p: (-p[1], p[0]))
+    return (parts[0][0], parts[0][1], sum(k for _, k in parts)) if parts else (None, 0, 0)
+
+
+def category_words(cat, n, total):
+    return "its dominant COCI noncredit category, %s (%d of %d noncredit courses, %d%%)" % (cat, n, total, round(100 * n / total))
+
+
+def noncredit_list(data, row):
+    """(title, condition, category, n, total) from the standing noncredit title list, or None. The row's own place
+    in the list is left out, so a heading never votes for itself."""
+    cat, n, total = dominant(row)
+    if not cat:
+        return None
+    me = (row["slug"], row["code"])
+    cands = []
+    for t in data.nc_titles:
+        if t.get("category") != cat:
+            continue
+        members = [(m["college"], m["code"]) for m in t.get("members") or [] if (m["college"], m["code"]) != me]
+        if members:
+            cands.append((t, members))
+    if not cands:
+        return None
+    order = lambda t: (-t.get("programs", 0), t["title"])  # noqa: E731
+    same_code = sorted([t for t, ms in cands if any(c == row["code"] for _, c in ms)], key=order)
+    if same_code:
+        return same_code[0]["title"], "same code", cat, n, total
+    mine = data.course_names.get(me) or set()
+    best = []
+    for t, ms in cands:
+        theirs = set()
+        for m in ms:
+            theirs |= data.course_names.get(m, set())
+        hit = len(mine & theirs)
+        if hit:
+            best.append((hit, t))
+    if best:
+        best.sort(key=lambda x: (-x[0],) + order(x[1]))
+        hit, t = best[0]
+        if hit >= 2 or hit / len(mine) >= 0.5:
+            return t["title"], "courses match", cat, n, total
+    fit = sorted([t for t, _ in cands if fits(row["code"], t["title"])], key=order)
+    if fit:
+        return fit[0]["title"], "letters, one title" if len(fit) == 1 else "letters, several titles", cat, n, total
+    return None
+
+
+def level_of(right, asked):
+    share = right / asked if asked else 0.0
+    level = "High" if share >= HIGH else ("Medium" if share >= MEDIUM else "Low")
+    return ("Low" if asked < FLOOR_N else level), share
+
+
+def measure_noncredit(data):
+    """The noncredit_list source and the category's common code, each asked on the noncredit-only rows that already
+    hold the answer (a catalog heading; a common code from the subject map), the row left out of its own vote."""
+    titles, common = defaultdict(lambda: [0, 0]), [0, 0]
+    for row in data.rows:
+        if not noncredit_only(row):
+            continue
+        h = row["printed_name"]
+        if h:
+            got = noncredit_list(data, row)
+            if got:
+                cell = titles[got[1]]
+                cell[1] += 1
+                cell[0] += 1 if (same(got[0], h) or same(got[0], group_title(h)[1])) else 0
+        if row["common"]:
+            cat = dominant(row)[0]
+            code = (data.nc_mq.get(cat) or {}).get("common_code") if cat else None
+            if code:
+                common[1] += 1
+                common[0] += 1 if code == row["common"] else 0
+    table = {}
+    for cond, (right, asked) in sorted(titles.items()):
+        level, share = level_of(right, asked)
+        table[cond] = {"right": right, "wrong": asked - right, "asked": asked, "share": round(share, 3), "level": level}
+    level, share = level_of(*common)
+    return table, {"right": common[0], "wrong": common[1] - common[0], "asked": common[1], "share": round(share, 3), "level": level}
+
+
 def recommend_common(data, slug, code, title, band="C"):
     """(code, source, evidence) or None. The subject map is not read."""
     for part in ([title] + re.split(r"[/,]", title) if title else []):
@@ -374,6 +479,7 @@ def recommend_common(data, slug, code, title, band="C"):
 def build(root=ROOT):
     data = Data(root)
     table = measure(data)
+    nc_table, nc_common = measure_noncredit(data)
     dec = json.load(open(os.path.join(root, DECISIONS), encoding="utf-8"))
     # the common code, scored
     score = {"sams_30": defaultdict(lambda: [0, 0]), "subject_map_rows": defaultdict(lambda: [0, 0])}
@@ -412,10 +518,42 @@ def build(root=ROOT):
         out_rows = []
         for code in sorted(data.by_college[slug]):
             row = data.by_college[slug][code]
-            if row["title_state"] == "noncredit_hold":
-                totals["on_hold"] += 1
-                continue
             entry = {"code": code}
+            if noncredit_only(row):
+                cat, n, total = dominant(row)
+                if not row["printed_name"]:
+                    totals["no_title"] += 1
+                    totals["noncredit_no_title"] += 1
+                    got = noncredit_list(data, row)
+                    if got:
+                        lvl = (nc_table.get(got[1]) or {"level": "Low"})["level"]
+                        entry["title"] = {"title": got[0], "level": lvl, "from": "noncredit_list",
+                                          "why": "noncredit list: the title under %s (%s)." % (category_words(cat, n, total), got[1]),
+                                          "also": []}
+                        totals["title_" + lvl.lower()] += 1
+                        totals["noncredit_title"] += 1
+                    else:
+                        totals["title_none"] += 1
+                if not row["common"]:
+                    totals["no_common"] += 1
+                    totals["noncredit_no_common"] += 1
+                    m = data.nc_mq.get(cat) or {} if cat else {}
+                    if cat and m.get("common_code"):
+                        entry["common"] = {"code": m["common_code"], "discipline": m.get("mq_discipline"), "level": nc_common["level"],
+                                           "from": "noncredit_category", "category": cat,
+                                           "why": "The noncredit MQ discipline of %s." % category_words(cat, n, total)}
+                        totals["common_" + nc_common["level"].lower()] += 1
+                        totals["noncredit_common"] += 1
+                    elif cat:
+                        entry["common"] = {"code": None, "discipline": m.get("mq_discipline"), "level": None,
+                                           "from": "noncredit_category", "category": cat,
+                                           "why": "The category has no common subject code yet: %s." % category_words(cat, n, total)}
+                        totals["common_no_code_yet"] += 1
+                    else:
+                        totals["common_none"] += 1
+                if len(entry) > 1:
+                    out_rows.append(entry)
+                continue
             title = row["printed_name"]
             if not title:
                 rec = recommend_title(data, table, row)
@@ -450,13 +588,17 @@ def build(root=ROOT):
         "_what": ("A recommended local title for every Subjects row with no catalog heading, and a recommended "
                   "common subject code for every credit row with none, each with the level its source measured "
                   "(Sam on #3655, 2026-11-21). A recommendation is for a person to accept or change; nothing "
-                  "reads it as a title or a mapping. Rows whose courses are all noncredit are on hold and absent. "
+                  "reads it as a title or a mapping. A row whose courses are all noncredit is lined up with the "
+                  "standing noncredit subject title list by its dominant COCI noncredit category. "
                   "Built by kb/_build_local_subject_recommendations.py; no clock is read."),
         "_levels": ("High: the source's condition gave the catalog's own heading for 90% or more of the titled "
                     "codes it was asked, each left out of its own vote. Medium: 60% or more. Low: below, or asked "
                     "fewer than 20. Program titles are capped at Medium. A second source that agrees lifts a "
                     "level one step; one that differs is listed under also and the row reads Low."),
         "measured_on_titled_codes": table,
+        "noncredit": {"title_from_the_list": nc_table, "common_code_from_the_category": nc_common,
+                      "note": ("Measured on the noncredit-only codes that hold a catalog heading (titles) or a common "
+                               "code from the subject map (codes), each left out of its own vote.")},
         "common_code": {
             "levels": common_level,
             "sams_30": {"decisions": len(dec["decisions"]), "agree": agrees, "diverge": len(diverges),

@@ -91,11 +91,17 @@ try:
     check("(7) a row with a title reads catalog; its source is named", A["ENGL"]["title_state"] == "catalog" and A["ENGL"]["title_source"] == "course pages")
     check("(7) courses under a code and no heading read for it yet: not_read", B["WELD"]["title_state"] == "not_read" and B["ENG"]["title_state"] == "not_read")
     check("(7) a code in the state list and nowhere in the catalog: not_in_catalog", B["ENGL"]["title_state"] == "not_in_catalog")
-    check("(7) an untitled code whose courses in the state list are all noncredit is on hold (Sam, 2026-11-21)",
-          A["MATH"]["title_state"] == "noncredit_hold" and A["MATH"]["noncredit_courses"] == 1 and A["MATH"]["credit_courses"] == 0)
-    check("(7) credit and noncredit courses are counted apart, enhanced funding as noncredit; a titled code is never held",
+    check("(7) the hold is lifted (S701): an untitled noncredit-only code keeps its true reason",
+          A["MATH"]["title_state"] == "not_in_catalog" and A["MATH"]["noncredit_courses"] == 1 and A["MATH"]["credit_courses"] == 0
+          and "noncredit_hold" not in out["totals"] and "noncredit_hold" not in lst.TITLE_STATES)
+    check("(7) credit and noncredit courses are counted apart, and N and E apart inside noncredit",
           A["WELD"]["credit_courses"] == 1 and A["WELD"]["noncredit_courses"] == 1 and A["WELD"]["title_state"] == "catalog"
-          and A["ENGL"]["noncredit_courses"] == 0 and out["totals"]["noncredit_hold"] == 1 and out["totals"]["credit_and_noncredit"] == 1)
+          and A["WELD"]["noncredit_plain"] == 0 and A["WELD"]["noncredit_enhanced"] == 1 and A["MATH"]["noncredit_plain"] == 1
+          and A["ENGL"]["noncredit_courses"] == 0 and out["totals"]["credit_and_noncredit"] == 1)
+    check("(7) ⭐ the N and E split sums to the noncredit count on every row", all(
+        r["noncredit_plain"] + r["noncredit_enhanced"] == r["noncredit_courses"] for c in by.values() for r in c.values()))
+    check("(7) each noncredit category's MQ discipline and common code ride in the file; a category with no code keeps none",
+          out["noncredit_mq"]["Parenting"]["common_code"] == "PARN" and out["noncredit_mq"]["Workforce Preparation"]["common_code"] is None)
     check("(7) every state is one of the four", all(r["title_state"] in lst.TITLE_STATES for c in by.values() for r in c.values()))
     idx_path = os.path.join(root, "kb", "hand_filed_catalogs", "courses", "index.json")
     idx = json.load(open(idx_path))

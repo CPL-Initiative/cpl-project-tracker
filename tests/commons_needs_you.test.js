@@ -180,12 +180,15 @@ const count = (hay, needle) => hay.split(needle).length - 1;
   const ruled = load("#commons", { files: { "kb/status/cr.json": crRuled } });
   await ruled.M.boot(); await settle();
   check("(A) ⭐ once a decision is fixtured, the wording rule leaves Decisions waiting", !ruled.d.querySelector('#cmf-need-decisions li[data-todo="' + WORDING + '"]')
-    && !/wording/i.test(txt(ruled.d.getElementById("cmf-need-decisions"))));
-  /* S700: the Subjects run log holds one more item waiting on Sam (the draft noncredit subject title list), so the
-     list is no longer empty once the wording rule is answered; the check is that the wording rule left it. */
+    && /None waiting\./.test(txt(ruled.d.getElementById("cmf-need-decisions"))));
+  /* S701: Sam answered the noncredit subject title list (r-noncredit-title-list-go-sam-2026-11-22), so the Subjects
+     run log waits on nothing and the list is empty again once the wording rule is answered. */
   const ruledRec = load("#commons/details/decisions", { files: { "kb/status/cr.json": crRuled } });
   await ruledRec.M.boot(); await settle();
-  check("(A) and the record lists it as decided, newest first", (ruledRec.d.querySelector("#cmn-rec-done li") || { getAttribute: () => "" }).getAttribute("data-todo") === WORDING);
+  /* Newest first: Sam's answer on the noncredit list (2026-11-22) sits above the fixtured wording ruling (2026-11-20). */
+  const doneLis = Array.from(ruledRec.d.querySelectorAll("#cmn-rec-done li"));
+  check("(A) and the record lists it as decided, newest first", doneLis.length >= 2 && doneLis[1].getAttribute("data-todo") === WORDING
+    && /noncredit subject title list/i.test(txt(doneLis[0])));
 
   // ── COBIx's review of #3570, item 1: a call's address is checked before it becomes a link ──
   const crBad = runLog("cr");
@@ -220,7 +223,7 @@ const count = (hay, needle) => hay.split(needle).length - 1;
   // ── (B) every Needs you link: a view in the router, and the way back ──
   const tabs = new Set(Array.from(HTML.matchAll(/class="cpl-tab[^"]*" data-tab="([a-z0-9-]+)"/g)).map((m) => m[1]).concat(["collect"]));
   const SUBVIEWS = {
-    "commons/subjects/noncredit": true,   // S700: the draft noncredit subject title list, a view of the Subjects list
+    "commons/subjects/noncredit": true,   // S700: the noncredit subject title list, a view of the Subjects list
     "commons/details/decisions": /RECORD\.on = !!\(a && a\[0\] === "details" && a\[1\] === "decisions"\)/.test(COMMONS),
     "collect/outlines-blocked": /"outlines-blocked": "Course outlines blocked"/.test(DATA),
     "collect/unread": /unread: \{ word: "Not collected yet"/.test(DATA),

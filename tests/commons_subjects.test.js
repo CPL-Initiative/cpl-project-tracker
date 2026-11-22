@@ -77,7 +77,7 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
   check("(2) ⭐ the drafted titles open the subjects list", by("3 local titles") && by("3 local titles").getAttribute("href") === "#commons/subjects");
   check("(2) ⭐ the colleges open the subjects list", by("1 of 2 colleges") && by("1 of 2 colleges").getAttribute("href") === "#commons/subjects");
   check("(2) the codes with no title open their list, each reason counted", by("3 codes with no title") && by("3 codes with no title").getAttribute("href") === "#commons/subjects/disagree"
-    && /\(1 not in catalog, 2 not read yet, 0 blocked, 0 noncredit on hold\)/.test(txt(first)));
+    && /\(1 not in catalog, 2 not read yet, 0 blocked\)/.test(txt(first)) && !/on hold/.test(txt(first)));
   check("(2) Step a's figure opens the Common Subjects Reference", links.some((l) => l.getAttribute("href") === "#canonical-subj4" && /disciplines settled/.test(txt(l))));
   check("(2) the card names an owner on each step", /Owner: a curator/.test(txt(first)) && /Owner: the Courses bot/.test(txt(first)));
   check("the card's link row opens the list", Array.from(first.querySelectorAll(".cmf-links a")).some((l) => l.getAttribute("href") === "#commons/subjects"));
@@ -158,7 +158,9 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
   const pe = n.d.querySelector('.csb-nc tr[data-title="Parent Education"]');
   check("(10) a title shows the headings printed for it, the programs and codes, its courses and its share", /Printed as: Parenting; Parent Education/.test(txt(pe.children[0])) && txt(pe.children[1]) === "2 of 2"
     && txt(pe.children[2]) === "Program One PARN; Program Two PRNT" && txt(pe.children[3]) === "70" && /90% of its noncredit courses/.test(txt(pe.children[4])) && /Also under: Workforce Preparation 1/.test(txt(pe.children[4])));
-  check("(10) the note says it is a draft and that the hold stands", /draft for a person to settle\. Noncredit rows stay on hold/.test(txt(n.d.querySelector("#csb-nc-note"))));
+  check("(10) ⭐ the note says the titles stand on Sam's word and are his to change, and calls the list no draft",
+    /The titles stand on Sam’s word of November 22, 2026, and are his to change\. A category with no common subject code keeps none and is shown by name\./.test(txt(n.d.querySelector("#csb-nc-note")))
+    && !/draft|on hold/i.test(txt(n.d.querySelector("#csb-nc-note"))));
   check("(10) the Subjects list links to it", Array.from(n.d.querySelectorAll(".csb-stamp a")).some((a) => a.getAttribute("href") === "#commons/subjects/noncredit"));
   check("(10) every header cell carries a scope and the table sits in a labeled region", Array.from(n.d.querySelectorAll(".csb-nc th")).every((th) => th.getAttribute("scope")) && n.d.querySelector(".csb-nc").parentNode.getAttribute("aria-label"));
   n = load("#commons/subjects/noncredit", { "kb/status/noncredit_subject_titles.json": undefined });
@@ -207,25 +209,42 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
     sides.length === 3 && states.join(",") === "not_in_catalog,not_read,not_read" && sides.indexOf("both") >= 0, states.join(",") + " / " + sides.join(","));
   check("(7) its heading says what it lists", txt(d.getElementById("csb-h")) === "Subject codes with no title");
 
-  // Noncredit (Sam, 2026-11-21): a code whose courses are all noncredit and untitled is on hold; the counts show apart.
+  // Noncredit (S701): the hold lifted (r-noncredit-title-list-go-sam-2026-11-22). A noncredit-only untitled code reads its
+  // true reason; its courses count noncredit and noncredit enhanced apart; its COCI categories show with their MQ discipline.
   const NC = JSON.parse(JSON.stringify(FIX)), ci = NC.columns;
+  ci.push("noncredit_plain", "noncredit_enhanced", "categories");
   NC.colleges.forEach((c) => c.rows.forEach((r) => {
-    if (c.slug === "beta" && r[0] === "WELD") { r[ci.indexOf("title_state")] = "noncredit_hold"; r[ci.indexOf("credit_courses")] = 0; r[ci.indexOf("noncredit_courses")] = r[ci.indexOf("state_courses")]; }
-    if (c.slug === "alpha" && r[0] === "ENGL") { r[ci.indexOf("credit_courses")] = 1; r[ci.indexOf("noncredit_courses")] = 1; }
+    r.push(null, null, null);
+    if (c.slug === "beta" && r[0] === "WELD") { r[ci.indexOf("credit_courses")] = 0; r[ci.indexOf("noncredit_courses")] = 7; r[ci.indexOf("noncredit_plain")] = 3;
+      r[ci.indexOf("noncredit_enhanced")] = 4; r[ci.indexOf("categories")] = [["Workforce Preparation", 5], ["Parenting", 2]]; }
+    if (c.slug === "alpha" && r[0] === "ENGL") { r[ci.indexOf("credit_courses")] = 1; r[ci.indexOf("noncredit_courses")] = 1; r[ci.indexOf("noncredit_plain")] = 1; r[ci.indexOf("noncredit_enhanced")] = 0;
+      r[ci.indexOf("categories")] = [["Parenting", 1]]; }
   }));
-  NC.totals.not_read = 1; NC.totals.noncredit_hold = 1;
-  x = load("#commons/subjects/disagree", { "kb/status/local_subject_titles.json": NC });
+  NC.noncredit_mq = { "Parenting": { mq_discipline: "Parent Education: Noncredit", common_code: "PARN" }, "Workforce Preparation": { mq_discipline: null, common_code: null } };
+  const NCREC = { colleges: [{ slug: "beta", rows: [{ code: "WELD", common: { code: null, discipline: null, level: null, from: "noncredit_category", category: "Workforce Preparation",
+    why: "The category has no common subject code yet: its dominant COCI noncredit category, Workforce Preparation (5 of 7 noncredit courses, 71%)." } }] }] };
+  x = load("#commons/subjects/disagree", { "kb/status/local_subject_titles.json": NC, "kb/status/local_subject_recommendations.json": NCREC });
   await x.M.boot(); await settle();
-  const ncRows = Array.from(x.d.querySelectorAll(".csb-codes tbody tr"));
-  const held = ncRows.find((r) => r.getAttribute("data-title-state") === "noncredit_hold");
-  check("(8) ⭐ an untitled code whose courses are all noncredit reads Noncredit: on hold, after a person's rows",
-    held && txt(held.children[2].querySelector(".csb-chip")) === "Noncredit: on hold" && ncRows.indexOf(held) === ncRows.length - 1
-    && /wait until the large noncredit programs/.test(held.children[2].querySelector(".csb-chip").getAttribute("aria-label")));
-  check("(8) the page counts the codes on hold", /1 noncredit on hold/.test(txt(x.d.querySelector(".csb-stamp"))));
+  const ncw = Array.from(x.d.querySelectorAll(".csb-codes tbody tr")).find((r) => r.getAttribute("data-code") === "WELD" && /Beta/.test(txt(r.children[0])));
+  check("(8) ⭐ a noncredit-only untitled code reads its true reason, no hold chip", ncw && ncw.getAttribute("data-title-state") === "not_read"
+    && txt(ncw.children[2].querySelector(".csb-chip")) === "Not read yet" && !/on hold/i.test(txt(x.d.querySelector("#commons-root"))));
+  check("(8) ⭐ its courses count noncredit and noncredit enhanced apart", /7 in the catalog, 7 in COCI \(0 credit, 3 noncredit, 4 noncredit enhanced\)/.test(txt(ncw.children[4])));
+  check("(8) ⭐ a category with no common code shows by name and no code, beside the categories most courses first",
+    /COCI noncredit categories: Workforce Preparation \(5\), Parenting \(2\)\. No noncredit MQ discipline is named for Workforce Preparation, and no common subject code yet\./.test(txt(ncw.children[4]))
+    && /^No common subject code yet\. The category has no common subject code yet: .*Workforce Preparation \(5 of 7 noncredit courses, 71%\)\.$/.test(txt(ncw.children[3].querySelector('.csb-rec[data-rec="common-none"]'))));
+  check("(8) the stamp's reasons still sum to the codes with no title, and none is on hold", /3 codes with no title \(1 not in catalog, 2 not read yet, 0 blocked\)\./.test(txt(x.d.querySelector(".csb-stamp"))));
   x = load("#commons/subjects/alpha", { "kb/status/local_subject_titles.json": NC });
   await x.M.boot(); await settle();
-  check("(8) ⭐ a code's credit and noncredit courses are counted apart", /\(1 credit, 1 noncredit\)/.test(txt(x.d.querySelector('.csb-codes tr[data-code="ENGL"]').children[4]))
-    && !/noncredit\)/.test(txt(x.d.querySelector('.csb-codes tr[data-code="WELD"]').children[4])));
+  check("(8) ⭐ a code's credit and noncredit courses are counted apart, with its category's MQ discipline and code", /\(1 credit, 1 noncredit\)/.test(txt(x.d.querySelector('.csb-codes tr[data-code="ENGL"]').children[4]))
+    && /COCI noncredit category: Parenting \(1\)\. Noncredit MQ discipline: Parent Education: Noncredit, common subject code PARN\./.test(txt(x.d.querySelector('.csb-codes tr[data-code="ENGL"]').children[4]))
+    && !/noncredit\)|category/.test(txt(x.d.querySelector('.csb-codes tr[data-code="WELD"]').children[4])));
+  const E = JSON.parse(JSON.stringify(FILES["kb/status/subject_courses/alpha.json"]));
+  E.codes.MATH.push(["301", "Math Lab II", "E", "COCI", 0, "", "", ""], ["302", "Math Lab III", "E", "COCI", 0, "", "", ""]);
+  x = load("#commons/subjects/alpha/MATH", { "kb/status/subject_courses/alpha.json": E });
+  await x.M.boot(); await settle();
+  const eb = Array.from(x.d.querySelectorAll("#csb-panel .csb-band")).map(txt);
+  check("(12) ⭐ the course panel's noncredit group splits into Noncredit and Noncredit enhanced", eb.indexOf("Noncredit courses (1)") >= 0 && eb.indexOf("Noncredit enhanced courses (2)") >= 0
+    && eb.indexOf("Noncredit courses (1)") < eb.indexOf("Noncredit enhanced courses (2)"));
 
   x = load("#commons/subjects/nowhere");
   await x.M.boot(); await settle();

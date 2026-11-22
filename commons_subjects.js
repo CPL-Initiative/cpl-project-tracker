@@ -16,12 +16,12 @@
 // (band credit, or whole where COCI lists no course under the code), field subject_decision, value JSON text with
 // local_title and or common_code, under the reviewer's own email; Take it back deletes that one row. A person's save
 // wins on this page over the catalog, the subject map and every recommendation. A code whose COCI courses are all
-// noncredit offers no Edit (r-noncredit-hold-sam-2026-11-21). The rows hold a college slug, a code, a title and a
+// noncredit offers no Edit yet: noncredit saves come next, keyed by noncredit category (d-subject-save-key-three-part-s698). The rows hold a college slug, a code, a title and a
 // common code; no student or staff detail (Rule 10 a3; kb/governance_surface_map.json maps the field to DR-25). The
 // Python builders do not read these rows yet.
 //
 // Addresses (loaded by commons.js when the address names it): #commons/subjects (every college),
-// #commons/subjects/noncredit (the draft noncredit subject title list, from kb/status/noncredit_subject_titles.json),
+// #commons/subjects/noncredit (the noncredit subject title list, standing on Sam's word of 2026-11-22, from kb/status/noncredit_subject_titles.json),
 // #commons/subjects/<college slug> (one college), #commons/subjects/<college slug>/<local code> (that college with
 // the code's course panel open, read from kb/status/subject_courses/<slug>.json), #commons/subjects/disagree (the codes only one side prints, the
 // list of codes with no title), #commons/subjects/held (S695: the local subject codes the pile mint holds on, ranked by the held
@@ -39,14 +39,30 @@
   var STATES = {
     not_read: { word: "Not read yet", tip: "The catalog has this subject and our read did not take its heading. Sky clears it with a re-read." },
     blocked: { word: "Blocked", tip: "The college’s site refused our reader. A person hands the page over, or the reader is fixed." },
-    not_in_catalog: { word: "Not in catalog", tip: "The catalog was read and gives this code no subject heading. It waits on a title from a person." },
-    /* Sam, 2026-11-21 (COBIx on #3655): noncredit recommendations wait until the large noncredit programs' catalogs are read. */
-    noncredit_hold: { word: "Noncredit: on hold", tip: "Every course under this code is noncredit and its catalog gives no heading. Noncredit titles and common codes wait until the large noncredit programs’ catalogs are read." }
+    not_in_catalog: { word: "Not in catalog", tip: "The catalog was read and gives this code no subject heading. It waits on a title from a person." }
   };
-  /* A code's courses in COCI, credit and noncredit apart (Sam, 2026-11-21: the MQs separate them). */
+  /* A code's courses in COCI, credit and noncredit apart (Sam, 2026-11-21: the MQs separate them), and noncredit and
+     noncredit enhanced apart (Sam, 2026-11-22: "Coci has a credit, noncredit, noncredit enhanced indicator"). */
+  function ncWords(r) {
+    if (r.noncredit_plain == null && r.noncredit_enhanced == null) return fmt(r.noncredit_courses) + " noncredit";
+    return [r.noncredit_plain ? fmt(r.noncredit_plain) + " noncredit" : "", r.noncredit_enhanced ? fmt(r.noncredit_enhanced) + " noncredit enhanced" : ""]
+      .filter(Boolean).join(", ");
+  }
   function bands(r) {
     if (r.noncredit_courses == null || !r.noncredit_courses) return "";
-    return " (" + fmt(r.credit_courses || 0) + " credit, " + fmt(r.noncredit_courses) + " noncredit)";
+    return " (" + fmt(r.credit_courses || 0) + " credit, " + ncWords(r) + ")";
+  }
+  /* A noncredit row's COCI noncredit categories, most courses first, and the dominant one's noncredit MQ discipline;
+     a category with no common code shows by name and says so (d-noncredit-four-categories-no-code-s701). */
+  var NC_MQ = {};
+  function categoryLine(r) {
+    var parts = (r.categories || []).filter(function (p) { return p && p[0] && p[0] !== "(no category in the export)"; });
+    if (!r.noncredit_courses || !parts.length) return null;
+    var m = NC_MQ[parts[0][0]] || {};
+    return el("span", { cls: "csb-sub csb-nc-line", "data-category": parts[0][0] }, [
+      "COCI noncredit " + (parts.length === 1 ? "category: " : "categories: ") + parts.map(function (p) { return p[0] + " (" + fmt(p[1]) + ")"; }).join(", ") + ". "
+      + (m.mq_discipline ? "Noncredit MQ discipline: " + m.mq_discipline + (m.common_code ? ", common subject code " + m.common_code + "." : ", no common subject code yet.")
+        : "No noncredit MQ discipline is named for " + parts[0][0] + ", and no common subject code yet.")]);
   }
   function needsTitle(r) { return !r.printed_name; }
   /* One list, every subject (Sam, 2026-11-22: "view inside subjects"; "should be able to see all subjects on one
@@ -66,7 +82,8 @@
   /* The recommendations (S700, #3655; Sam, 2026-11-21): a recommended local title beside every row with no catalog
      heading and a recommended common code beside every credit row with none, each with the level its source
      measured on the titled codes (kb/_build_local_subject_recommendations.py). A recommendation is a note for the
-     person who settles the row; the page saves nothing. A row on the noncredit hold has none. */
+     person who settles the row. A noncredit-only row's recommendation is lined up with the noncredit title list by its own
+     COCI noncredit category (S701, after the hold lifted). */
   var REC_FILE = "kb/status/local_subject_recommendations.json";
   var REC = {};
   function recModel(f) {
@@ -78,6 +95,8 @@
   }
   function recOf(r) { return REC[r.slug + "|" + r.code] || {}; }
   function recNote(kind, what, x) {
+    if (kind === "common" && !x.code) return el("span", { cls: "csb-sub csb-rec", "data-rec": "common-none" }, [
+      el("strong", { text: "No common subject code yet" }), ". " + (x.why || "")]);
     var also = (x.also || []).map(function (a) { return a.title; }).filter(Boolean);
     return el("span", { cls: "csb-sub csb-rec", "data-rec": kind, "data-level": x.level }, [
       el("strong", { text: "Recommended: " + what }), ". Confidence: " + x.level + ". " + (x.why || "")
@@ -88,7 +107,8 @@
   var HELD_FILE = "kb/status/held_subject_codes.json";
   /* The noncredit subject title list (S700; Sam, 2026-11-21, relayed by COBIx on #3655: build it from the four large
      noncredit programs' catalogs, then line the smaller programs up with it). #commons/subjects/noncredit draws
-     kb/status/noncredit_subject_titles.json (kb/_build_noncredit_subject_titles.py): a draft a person settles. */
+     kb/status/noncredit_subject_titles.json (kb/_build_noncredit_subject_titles.py). The titles stand on Sam's word of
+     2026-11-22 (r-noncredit-title-list-go-sam-2026-11-22) and are his to change. */
   var NC = "noncredit";
   var NC_FILE = "kb/status/noncredit_subject_titles.json";
 
@@ -99,7 +119,7 @@
   var COMMON = null, TC = null;   /* from the titles file: canonical SUBJ -> MQ discipline, and the Title Case word lists */
   /* The band a decision is keyed by (Sam, 2026-11-21: credit and noncredit disciplines are separate in the MQs):
      credit where COCI lists a credit course under the code, whole where it lists none (the catalog alone prints it),
-     noncredit where every COCI course is noncredit, which takes no decision while the noncredit hold stands. */
+     noncredit where every COCI course is noncredit, which takes no save until noncredit saves are keyed by category. */
   function bandOf(r) {
     if ((r.credit_courses || 0) > 0) return "credit";
     if ((r.noncredit_courses || 0) > 0) return "noncredit";
@@ -265,7 +285,7 @@
   /* ── the model: the file's rows as objects, keyed by college ── */
   function model(f) {
     f = f || {};
-    COMMON = f.common_codes || null; TC = f.title_case || null;
+    COMMON = f.common_codes || null; TC = f.title_case || null; NC_MQ = f.noncredit_mq || {};
     var cols = f.columns || [], by = {}, list = [];
     (f.colleges || []).forEach(function (c) {
       var rows = (c.rows || []).map(function (r) {
@@ -334,7 +354,7 @@
           sv && sv.common ? el("td", { "data-saved": "common" }, [sv.common + (COMMON && COMMON[sv.common] ? " " + COMMON[sv.common] : ""), " ", savedLine(sv)])
           : el("td", null, [r.common ? r.common + (r.discipline ? " " + r.discipline : "") : "",
             !r.common && recOf(r).common ? recNote("common", recOf(r).common.code + " " + recOf(r).common.discipline, recOf(r).common) : null]),
-          el("td", { text: heads }),
+          el("td", null, [heads, categoryLine(r)]),
           el("td", { text: st && r.title_state === "not_read" ? st.word : SIDES[r.side] || r.side })]);
       }) : [el("tr", null, [el("td", { colspan: "6", text: "No code is in this list." })])])]);
     return el("div", { cls: "csb-wrap", role: "region", "aria-label": label, tabindex: "0" }, [tbl]);
@@ -452,7 +472,7 @@
       "aria-label": "Courses under " + r.code + " at " + r.college, text: r.code });
     return b;
   }
-  var BANDS = [["C", "Credit courses"], ["N", "Noncredit courses"], ["", "In the catalog only (COCI does not list it, so its band is not known)"]];
+  var BANDS = [["C", "Credit courses"], ["N", "Noncredit courses"], ["E", "Noncredit enhanced courses"], ["", "In the catalog only (COCI does not list it, so its band is not known)"]];
   function courseTable(rows, label) {
     var tbl = el("table", { cls: "csb-table csb-courses" }, [
       el("colgroup", null, [el("col", { cls: "csb-c-num" }), el("col"), el("col", { cls: "csb-c-code" }), el("col", { cls: "csb-c-mid" })]),
@@ -470,7 +490,7 @@
       el("h4", { cls: "csb-edit-head", id: "csb-edit-h", text: "Settle this code" })]);
     var band = bandOf(row);
     if (band === "noncredit") {
-      box.appendChild(el("p", { cls: "csb-note", id: "csb-edit-hold", text: "Every course COCI lists under " + row.code + " is noncredit. Noncredit titles and common subject codes are on hold until the draft noncredit subject title list is settled, so this code has no Edit yet." }));
+      box.appendChild(el("p", { cls: "csb-note", id: "csb-edit-hold", text: "Every course COCI lists under " + row.code + " is noncredit. Noncredit saves come next, each keyed by the code’s noncredit category; until then this code has no Edit." }));
       return box;
     }
     if (String(row.code).indexOf("|") >= 0) {
@@ -489,7 +509,7 @@
     if (!(sv && sv.common) && !row.common && rec.common && rec.common.code) fromRec.push("the common subject code");
     box.appendChild(el("p", { cls: "csb-note", id: "csb-edit-band", text: band === "whole"
       ? "COCI lists no course under " + row.code + ", so a save settles the whole code."
-      : (row.noncredit_courses || 0) > 0 ? row.code + " holds credit and noncredit courses in COCI. A save settles its credit courses; noncredit decisions are on hold."
+      : (row.noncredit_courses || 0) > 0 ? row.code + " holds credit and noncredit courses in COCI. A save settles its credit courses; noncredit saves come next."
       : "A save settles " + row.code + " for its credit courses. A person’s save wins over the catalog, the subject map and every recommendation." }));
     if (fromRec.length) box.appendChild(el("p", { cls: "csb-note csb-rec", id: "csb-edit-rec", text: "Filled in from the recommendation: " + fromRec.join(" and ") + ". It stays a recommendation until you save it." }));
     var ti = el("input", { type: "text", id: "csb-ed-title", cls: "csb-input", maxlength: "120", autocomplete: "off", "aria-describedby": "csb-ed-title-msg" });
@@ -644,7 +664,7 @@
       el("strong", { text: fmt(T.named) }), " local titles at ", el("strong", { text: fmt(T.colleges_named) + " of " + fmt(T.colleges) }),
       " colleges with a catalog on file (" + fmt(T.courses) + " courses, " + fmt(T.catalog_codes) + " subject codes in the catalogs). ",
       go("#commons/subjects/" + DISAGREE, fmt(untitled) + " codes with no title"),
-      " (" + fmt(T.not_in_catalog || 0) + " not in catalog, " + fmt(T.not_read || 0) + " not read yet, " + fmt(T.blocked || 0) + " blocked, " + fmt(T.noncredit_hold || 0) + " noncredit on hold). ",
+      " (" + fmt(T.not_in_catalog || 0) + " not in catalog, " + fmt(T.not_read || 0) + " not read yet, " + fmt(T.blocked || 0) + " blocked). ",
       fmt(T.with_common) + " codes have a common subject code from the subject map. ",
       el("a", { href: "#canonical-subj4", text: "Common Subjects Reference" }), ". ",
       go("#commons/subjects/" + HELD, "Codes the M-ID mint holds on"), ". ",
@@ -677,13 +697,13 @@
           " subject headings in the catalogs of the four large noncredit programs: " + (N.programs || []).map(function (p) { return p.college; }).join(", ") + ". "
           + fmt(NT.titles_in_two_or_more_programs) + " titles are printed by two or more programs. " + fmt(NT.with_common_code) + " sit under a category whose noncredit MQ discipline has a common subject code, "
           + fmt(NT.category_without_code) + " under a category with no code yet, and " + fmt(NT.no_noncredit_course_in_coci) + " have no noncredit course in COCI. "
-          + "This is a draft for a person to settle. Noncredit rows stay on hold until it is settled."]));
+          + "The titles stand on Sam’s word of November 22, 2026, and are his to change. A category with no common subject code keeps none and is shown by name."]));
         wrap.appendChild(ncTable(N));
       }
     } else if (S.view === DISAGREE) {
       /* Every row with no title, in or out of the catalog (#3655, item 7: a code in both with no title was dropped
          by the old one-sided filter). Sam's rows first: Not in catalog, then Blocked, then Sky's Not read yet. */
-      var order = { not_in_catalog: 0, blocked: 1, not_read: 2, noncredit_hold: 3 };
+      var order = { not_in_catalog: 0, blocked: 1, not_read: 2 };
       wrap.appendChild(bandBar(all.filter(needsTitle)));
       wrap.appendChild(codeTable(all.filter(needsTitle).filter(function (r) { return inBand(r, S.band); }).sort(function (a, b) {
         return (order[a.title_state] == null ? 2 : order[a.title_state]) - (order[b.title_state] == null ? 2 : order[b.title_state])
