@@ -1,0 +1,1816 @@
+{
+ "college": "Butte College",
+ "catalog_url": "https://butte.curriqunet.com/Catalog/",
+ "platform": "curriqunet",
+ "catalog_year": "2026-2027",
+ "programs": 192,
+ "with_closed_list": 168,
+ "started": "2026-11-22T11:18:06Z",
+ "curriqunet": {
+  "catalog": 14,
+  "view_prefix": "https://butte.curriqunet.com/catalog/iq/",
+  "errors": [],
+  "sections": [
+   "Academic Program Types and Requirements",
+   "Programs by Subject",
+   "Programs by Communities of Interest"
+  ],
+  "nodes_read": 93,
+  "calls": 186,
+  "entries": 467,
+  "stopped_at_cap": false,
+  "same_title_entries": 221,
+  "entries_read": 246,
+  "twin_ids": {
+   "28186": [
+    27993
+   ],
+   "28184": [
+    27991
+   ],
+   "28188": [
+    27995
+   ],
+   "28192": [
+    28001
+   ],
+   "28406": [
+    28003
+   ],
+   "28388": [
+    28005
+   ],
+   "28190": [
+    27997
+   ],
+   "27609": [
+    27999
+   ],
+   "28194": [
+    28211
+   ],
+   "28202": [
+    27957
+   ],
+   "28198": [
+    27951
+   ],
+   "28200": [
+    27953
+   ],
+   "28196": [
+    27955
+   ],
+   "28206": [
+    27961
+   ],
+   "28204": [
+    27959
+   ],
+   "28210": [
+    27965
+   ],
+   "28213": [
+    27969
+   ],
+   "28208": [
+    27963
+   ],
+   "28212": [
+    27967
+   ],
+   "28214": [
+    27979
+   ],
+   "28219": [
+    27981
+   ],
+   "28514": [
+    28521
+   ],
+   "27520": [
+    27947
+   ],
+   "28220": [
+    27715
+   ],
+   "28221": [
+    27877
+   ],
+   "28398": [
+    27881
+   ],
+   "28222": [
+    27879
+   ],
+   "28223": [
+    27883
+   ],
+   "28224": [
+    27885
+   ],
+   "28225": [
+    27919
+   ],
+   "28227": [
+    27915
+   ],
+   "28229": [
+    27923
+   ],
+   "28226": [
+    27921
+   ],
+   "28228": [
+    27917
+   ],
+   "28230": [
+    27925
+   ],
+   "28232": [
+    27929
+   ],
+   "28235": [
+    27935
+   ],
+   "28238": [
+    27941
+   ],
+   "28234": [
+    27931
+   ],
+   "28237": [
+    27937
+   ],
+   "28239": [
+    27943
+   ],
+   "28231": [
+    27927
+   ],
+   "28233": [
+    27933
+   ],
+   "28236": [
+    27939
+   ],
+   "27512": [
+    27945
+   ],
+   "28241": [
+    27889
+   ],
+   "28240": [
+    27887
+   ],
+   "28243": [
+    27893
+   ],
+   "28242": [
+    27895
+   ],
+   "28244": [
+    27897
+   ],
+   "28247": [
+    27905
+   ],
+   "28250": [
+    27913
+   ],
+   "28245": [
+    27899
+   ],
+   "28248": [
+    27907
+   ],
+   "28397": [
+    27909
+   ],
+   "28249": [
+    27911
+   ],
+   "28246": [
+    27901
+   ],
+   "28403": [
+    27903
+   ],
+   "28251": [
+    27869
+   ],
+   "28252": [
+    27871
+   ],
+   "28254": [
+    27873
+   ],
+   "28253": [
+    27875
+   ],
+   "28548": [
+    28552
+   ],
+   "28255": [
+    27713
+   ],
+   "28257": [
+    27703
+   ],
+   "28256": [
+    27705
+   ],
+   "28435": [
+    28439
+   ],
+   "28443": [
+    28448
+   ],
+   "28354": [
+    27709
+   ],
+   "28353": [
+    27707
+   ],
+   "28444": [
+    28449
+   ],
+   "28355": [
+    27711
+   ],
+   "28258": [
+    27695
+   ],
+   "28259": [
+    27697
+   ],
+   "28391": [
+    27699
+   ],
+   "28260": [
+    27701
+   ],
+   "28267": [
+    27841
+   ],
+   "28263": [
+    27833
+   ],
+   "28264": [
+    27835
+   ],
+   "28266": [
+    27839
+   ],
+   "28269": [
+    27845
+   ],
+   "27600": [
+    27849
+   ],
+   "28265": [
+    27837
+   ],
+   "28270": [
+    27847
+   ],
+   "27592": [
+    27851
+   ],
+   "28261": [
+    27859
+   ],
+   "28268": [
+    27843
+   ],
+   "28390": [
+    27853
+   ],
+   "28389": [
+    27855
+   ],
+   "28271": [
+    27857
+   ],
+   "28274": [
+    27865
+   ],
+   "28275": [
+    27867
+   ],
+   "28272": [
+    27861
+   ],
+   "28276": [
+    27717
+   ],
+   "28469": [
+    28474
+   ],
+   "28278": [
+    27721
+   ],
+   "28279": [
+    27723
+   ],
+   "28280": [
+    27727
+   ],
+   "28282": [
+    27729
+   ],
+   "28283": [
+    27731
+   ],
+   "28284": [
+    27733
+   ],
+   "28285": [
+    27735
+   ],
+   "28286": [
+    27737
+   ],
+   "28287": [
+    27739
+   ],
+   "28288": [
+    27741
+   ],
+   "28358": [
+    27747
+   ],
+   "28359": [
+    27749
+   ],
+   "28356": [
+    27743
+   ],
+   "28357": [
+    27745
+   ],
+   "28289": [
+    27751
+   ],
+   "28290": [
+    27753
+   ],
+   "27529": [
+    27759
+   ],
+   "28291": [
+    27755
+   ],
+   "27533": [
+    27763
+   ],
+   "27537": [
+    27767
+   ],
+   "27541": [
+    27775
+   ],
+   "27545": [
+    27779
+   ],
+   "27531": [
+    27761
+   ],
+   "28292": [
+    27757
+   ],
+   "27535": [
+    27765
+   ],
+   "27539": [
+    27769
+   ],
+   "27549": [
+    27771
+   ],
+   "27551": [
+    27773
+   ],
+   "27543": [
+    27777
+   ],
+   "27547": [
+    27781
+   ],
+   "28293": [
+    27783
+   ],
+   "28296": [
+    27789
+   ],
+   "28297": [
+    27791
+   ],
+   "28294": [
+    27785
+   ],
+   "28295": [
+    27787
+   ],
+   "28301": [
+    27799
+   ],
+   "28302": [
+    27801
+   ],
+   "28303": [
+    27803
+   ],
+   "28300": [
+    27797
+   ],
+   "28304": [
+    27805
+   ],
+   "28305": [
+    27807
+   ],
+   "28364": [
+    27809
+   ],
+   "28306": [
+    27827
+   ],
+   "28368": [
+    27821
+   ],
+   "28367": [
+    27811
+   ],
+   "28369": [
+    27823
+   ],
+   "27560": [
+    27817
+   ],
+   "27552": [
+    27819
+   ],
+   "28372": [
+    27825
+   ],
+   "28370": [
+    27813
+   ],
+   "28371": [
+    27815
+   ],
+   "28307": [
+    27829
+   ],
+   "28361": [
+    27691
+   ],
+   "28360": [
+    27689
+   ],
+   "28362": [
+    27693
+   ],
+   "28526": [
+    27647
+   ],
+   "28308": [
+    27645
+   ],
+   "28365": [
+    27649
+   ],
+   "28373": [
+    27661
+   ],
+   "28374": [
+    27659
+   ],
+   "27584": [
+    27651
+   ],
+   "27576": [
+    27653
+   ],
+   "28377": [
+    27663
+   ],
+   "28378": [
+    27665
+   ],
+   "28375": [
+    27655
+   ],
+   "28376": [
+    27657
+   ],
+   "28311": [
+    27671
+   ],
+   "28312": [
+    27667
+   ],
+   "28313": [
+    27673
+   ],
+   "28314": [
+    27675
+   ],
+   "28310": [
+    27669
+   ],
+   "28315": [
+    27681
+   ],
+   "27601": [
+    27679
+   ],
+   "28316": [
+    27685
+   ],
+   "28460": [
+    28543
+   ],
+   "27603": [
+    27683
+   ],
+   "27605": [
+    27677
+   ],
+   "28317": [
+    27687
+   ],
+   "28318": [
+    27637
+   ],
+   "27528": [
+    27633
+   ],
+   "27568": [
+    27635
+   ],
+   "27544": [
+    27639
+   ],
+   "28319": [
+    27641
+   ],
+   "28380": [
+    27615
+   ],
+   "28381": [
+    27611
+   ],
+   "28322": [
+    27629
+   ],
+   "28324": [
+    27621
+   ],
+   "28325": [
+    27617
+   ],
+   "28382": [
+    27613
+   ],
+   "28323": [
+    27631
+   ],
+   "28326": [
+    27619
+   ],
+   "28320": [
+    27623
+   ],
+   "28321": [
+    27625
+   ],
+   "28379": [
+    27627
+   ],
+   "27508": [
+    27499
+   ],
+   "27536": [
+    27521
+   ],
+   "28327": [
+    27563
+   ],
+   "28328": [
+    27565
+   ],
+   "28538": [
+    27569
+   ],
+   "28329": [
+    27567
+   ],
+   "28331": [
+    27575
+   ],
+   "28332": [
+    27571
+   ],
+   "28333": [
+    27573
+   ],
+   "28334": [
+    27523
+   ],
+   "28335": [
+    27581
+   ],
+   "28336": [
+    27583
+   ],
+   "28337": [
+    27577
+   ],
+   "28338": [
+    27579
+   ],
+   "28339": [
+    27585
+   ],
+   "28342": [
+    27591
+   ],
+   "28343": [
+    27593
+   ],
+   "28341": [
+    27589
+   ],
+   "28344": [
+    27595
+   ],
+   "28345": [
+    27525
+   ],
+   "28346": [
+    27527
+   ],
+   "28347": [
+    27597
+   ],
+   "28366": [
+    27599
+   ],
+   "28534": [
+    28414
+   ],
+   "28349": [
+    27559
+   ],
+   "28350": [
+    27561
+   ],
+   "28348": [
+    27553
+   ],
+   "28351": [
+    27555
+   ],
+   "28352": [
+    27557
+   ],
+   "27515": [
+    27983
+   ],
+   "27517": [
+    27985
+   ],
+   "27519": [
+    27987
+   ]
+  },
+  "failed_calls": 0
+ },
+ "pages_read": 246,
+ "pages_listed": 246,
+ "pages_answered": 246,
+ "listing_failed": 0,
+ "banner_h1": null,
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 159,
+   "hits": 141,
+   "recall": 0.887,
+   "false": 0,
+   "false_off_own": 7,
+   "false_no_claims": 7,
+   "shared": 6,
+   "false_matches": [
+    {
+     "control_number": "17970",
+     "title": "Law Enforcement Academy - Basic/Fish and Wildlife Emphasis",
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "page": "https://butte.curriqunet.com/catalog/iq/25399/28163/28033/27977",
+     "h1": "Law Enforcement Academy-Basic/Fish & Wildlife (Certificate of Achievement)"
+    },
+    {
+     "control_number": "31284",
+     "title": "Computer Animation and Game Development",
+     "award": "A.S. Degree",
+     "page": "https://butte.curriqunet.com/catalog/iq/25399/28165/28027/27831",
+     "h1": "Computer Animation & Game Development (AS Degree)"
+    },
+    {
+     "control_number": "35132",
+     "title": "Nutrition and Dietetics",
+     "award": "A.S. T Degree",
+     "page": "https://butte.curriqunet.com/catalog/iq/25399/28163/28035/27793",
+     "h1": "Nutrition & Dietetics (AS-T Degree)"
+    },
+    {
+     "control_number": "35684",
+     "title": "Film, Television, and Electronic Media",
+     "award": "A.S. T Degree",
+     "page": "https://butte.curriqunet.com/catalog/iq/25399/28161/28045/27587",
+     "h1": "Film, Television & Electronic Media (AS-T Degree)"
+    },
+    {
+     "control_number": "35937",
+     "title": "Law Enforcement Academy-Basic/State Parks Emphasis",
+     "award": "A.S. Degree",
+     "page": "https://butte.curriqunet.com/catalog/iq/25399/28163/28033/27971",
+     "h1": "Law Enforcement Academy-Basic/State Parks (AS Degree)"
+    },
+    {
+     "control_number": "36240",
+     "title": "Law Enforcement Academy-Basic/State Parks Emphasis",
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "page": "https://butte.curriqunet.com/catalog/iq/25399/28163/28033/27973",
+     "h1": "Law Enforcement Academy-Basic/State Parks (Certificate of Achievement)"
+    },
+    {
+     "control_number": "44131",
+     "title": "Health Occupations Preparation",
+     "award": "A.S. Degree",
+     "page": "https://butte.curriqunet.com/catalog/iq/25398/28088/28157",
+     "h1": "AS Degree in Health Occupation Preparation"
+    }
+   ],
+   "no_claims_matches": [
+    {
+     "control_number": "17970",
+     "title": "Law Enforcement Academy - Basic/Fish and Wildlife Emphasis",
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "page": "https://butte.curriqunet.com/catalog/iq/25399/28163/28033/27977",
+     "h1": "Law Enforcement Academy-Basic/Fish & Wildlife (Certificate of Achievement)"
+    },
+    {
+     "control_number": "31284",
+     "title": "Computer Animation and Game Development",
+     "award": "A.S. Degree",
+     "page": "https://butte.curriqunet.com/catalog/iq/25399/28165/28027/27831",
+     "h1": "Computer Animation & Game Development (AS Degree)"
+    },
+    {
+     "control_number": "35132",
+     "title": "Nutrition and Dietetics",
+     "award": "A.S. T Degree",
+     "page": "https://butte.curriqunet.com/catalog/iq/25399/28163/28035/27793",
+     "h1": "Nutrition & Dietetics (AS-T Degree)"
+    },
+    {
+     "control_number": "35684",
+     "title": "Film, Television, and Electronic Media",
+     "award": "A.S. T Degree",
+     "page": "https://butte.curriqunet.com/catalog/iq/25399/28161/28045/27587",
+     "h1": "Film, Television & Electronic Media (AS-T Degree)"
+    },
+    {
+     "control_number": "35937",
+     "title": "Law Enforcement Academy-Basic/State Parks Emphasis",
+     "award": "A.S. Degree",
+     "page": "https://butte.curriqunet.com/catalog/iq/25399/28163/28033/27971",
+     "h1": "Law Enforcement Academy-Basic/State Parks (AS Degree)"
+    },
+    {
+     "control_number": "36240",
+     "title": "Law Enforcement Academy-Basic/State Parks Emphasis",
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "page": "https://butte.curriqunet.com/catalog/iq/25399/28163/28033/27973",
+     "h1": "Law Enforcement Academy-Basic/State Parks (Certificate of Achievement)"
+    },
+    {
+     "control_number": "44131",
+     "title": "Health Occupations Preparation",
+     "award": "A.S. Degree",
+     "page": "https://butte.curriqunet.com/catalog/iq/25398/28088/28157",
+     "h1": "AS Degree in Health Occupation Preparation"
+    }
+   ],
+   "searches": false,
+   "catalog_list": null
+  },
+  "programs": 24,
+  "by_result": {
+   "not_searched": 24
+  },
+  "found": 0,
+  "found_active": 0,
+  "found_pages": 0,
+  "found_programs": [],
+  "other_programs": [
+   {
+    "control_number": "01301",
+    "title": "Agriculture Business",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "01320",
+    "title": "General Physical Education",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "01321",
+    "title": "Engineering",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "01324",
+    "title": "Drafting and CAD Technology",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "01334",
+    "title": "Photography",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "01339",
+    "title": "LVN to ADN",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "01340",
+    "title": "Licensed Vocational Nursing",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "01342",
+    "title": "Respiratory Care",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "01343",
+    "title": "Emergency Medical Technology/Paramedic",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "01349",
+    "title": "Early Childhood Education",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "01356",
+    "title": "Physical Science",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "01357",
+    "title": "Physics",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "01363",
+    "title": "Social and Behavioral Science",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "01372",
+    "title": "Liberal Studies",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "07259",
+    "title": "Natural Resources",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "11122",
+    "title": "Small Business/Entrepreneurship",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "11126",
+    "title": "Physical Education: Exercise Physiology",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "11133",
+    "title": "Liberal Studies: Bilingual Pattern",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "11137",
+    "title": "Agriculture and Natural Resources",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "11138",
+    "title": "Computer Science",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "11139",
+    "title": "Dietetics and Food Administration",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "17935",
+    "title": "Law Enforcement",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "18988",
+    "title": "Law Enforcement: Fish & Wildlife",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "19042",
+    "title": "Communication Studies",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 141 of 159 closed-list programs on their own page, 0 on another program's and 7 off their own page (floor 80% of at least 10, none false)"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
+ "loads": 1171,
+ "seconds": 5505.0,
+ "found": 165,
+ "by_method": {
+  "no_closed_list": 24,
+  "not_found": 2,
+  "page_claimed": 1,
+  "sitemap_page": 165
+ },
+ "shared_pages": {
+  "https://butte.curriqunet.com/catalog/iq/25398/28156/28380": [
+   "14583",
+   "43185"
+  ],
+  "https://butte.curriqunet.com/catalog/iq/25398/28164/28538": [
+   "31950",
+   "46540"
+  ],
+  "https://butte.curriqunet.com/catalog/iq/25398/28146/28526": [
+   "31953",
+   "46541"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "30774",
+   "title": "Noncredit Certificate of Competency in ESL",
+   "award": null,
+   "near_miss": {
+    "url": "https://butte.curriqunet.com/catalog/iq/25398/28120/28293",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2051,
+     "content": 2051,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "44891",
+   "title": "Cal-GETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://butte.curriqunet.com/catalog/iq/25399/28171/27949/27989",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 149,
+    "why": "coarse net: the page's code tokens name 0 of 149 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2596,
+     "content": 2596,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "16226",
+   "title": "Child Development",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://butte.curriqunet.com/catalog/iq/25398/28096/28251"
+   ],
+   "status": "Active"
+  }
+ ],
+ "page_challenged": [],
+ "coverage_bands": {
+  "0.5-0.8": 1,
+  "0.8-1.0": 9,
+  "1.0": 155
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/butte",
+  "kept": 162,
+  "kept_moved": 0,
+  "programs": 1,
+  "list": [
+   {
+    "control_number": "39882",
+    "title": "Advanced Manufacturing Level I",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://butte.curriqunet.com/catalog/iq/25398/28144/27584",
+    "coverage": 1.0,
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28144/28374",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   }
+  ],
+  "held_worse_window": [
+   {
+    "control_number": "31953",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://butte.curriqunet.com/catalog/iq/25398/28146/28526",
+    "coverage": 0.8,
+    "was_coverage": 1.0
+   }
+  ],
+  "held_no_gain": [
+   {
+    "control_number": "31950",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://butte.curriqunet.com/catalog/iq/25398/28164/28538",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   }
+  ],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
+ },
+ "fingerprints": {
+  "01298": {
+   "sha256": "0689e2b48d6c524c860b972f7ef0b653bb12df4f7bc42795e62020eb6a4ba7d3",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28078/28202"
+  },
+  "01302": {
+   "sha256": "ec790c44af2c2e2a91da1e9fa1dc6457d8cc0cfdb5d57b3173b4456de100ac60",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28122/28286"
+  },
+  "01305": {
+   "sha256": "214706d3684fd4e3209b23b9c68e1daa1a77a5f3748e1d620b9835c089b5f757",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28074/28198"
+  },
+  "01306": {
+   "sha256": "f3439cad2de2b86e5a7a643e3b2281a8b9b1def2ea6d401dce5a4c1c36ba79d8",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28088/28240"
+  },
+  "01307": {
+   "sha256": "8ed94a93dc5293603104f1872b94932bf41914a9b536842dc5c8fee54b8b8aff",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28090/28242"
+  },
+  "01308": {
+   "sha256": "c63fa3628060427109cb608ddbaa8cc0a4240d0425ccef7615dbfacb68b70bd8",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28068/28192"
+  },
+  "01310": {
+   "sha256": "61c0250510d2314e6992bd87737e8c14c1d3f68d3e75a91de6c655be7daed21b",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28090/28244"
+  },
+  "01311": {
+   "sha256": "d15978f4a386e69e6eb91012ae326be8fc015d52f160d9159db101164042e8df",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28090/28247"
+  },
+  "01312": {
+   "sha256": "7ec94e3aefc8b61d4c82989241e904e399fbb8200b235daf6b11cb7f40d8bbd4",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28172/28335"
+  },
+  "01313": {
+   "sha256": "fe6c384655db88571abc8055ea2d73ca80b6a92aba9cca8c6a83a814b89d94f6",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28092/28232"
+  },
+  "01314": {
+   "sha256": "7c8abda65d26c20c9eab1abc805fe2b9f185749e3b36092247c1c2fe578e2dbb",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28092/28235"
+  },
+  "01315": {
+   "sha256": "f266eea2edc7e2449636bb3a29649944c8b4babe439f4509bb0f0a5de69409b4",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28092/28238"
+  },
+  "01322": {
+   "sha256": "c7b742ec70d5c54ccb81fbc3126d478c9ab0d80d37fa326f65d9dd3e40b694e5",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/28291"
+  },
+  "01323": {
+   "sha256": "78ee4df89c3ed3283079cba69733d539bb85bf13fa0b165e2e80e97c4960056f",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28225"
+  },
+  "01325": {
+   "sha256": "312d296c7eaf133ad72fcb826cb29c2608e5c1c4555afc7a52578902f4f42f0b",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28182/28349"
+  },
+  "01329": {
+   "sha256": "0dbb2856ff048f3571c6079c1c30a00a6515fda71686da04f2001db7b79a4815",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28084/28222"
+  },
+  "01348": {
+   "sha256": "8bb470e684f0b52617c2ab729baf5879ad898e9d3375435fd0ae222c6181f5ae",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28124/28296"
+  },
+  "01355": {
+   "sha256": "ea7a221548d589f2cc756da03b70642c56051c55cb19b647041861fad73fc5af",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28146/28308"
+  },
+  "01358": {
+   "sha256": "c45ef809dc6905e8d8ecc567bf6b73a59595f709b697c58b0f2b3b4b1756cef4",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28094/28255"
+  },
+  "01362": {
+   "sha256": "0f4a1b05a2c9fe0c4c2d43077f0bedd2ca55e1eb5e6ff1683cbe1f58b93cfb07",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28126/28301"
+  },
+  "01370": {
+   "sha256": "8a0a2eaa53d5adb0790af79a22d087af7d08307c867eff2c375271fe34fb9f7f",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28104/28258"
+  },
+  "07257": {
+   "sha256": "53e79563e5580cd4982af4b27ac2d779169580aabebc7b90b9bc1f1b1f82cb6f",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28122/28287"
+  },
+  "07258": {
+   "sha256": "658b460fcee7f167a63d04c19b2d81d840be1d21d7b801c4f8a86cfadc655d80",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28122/28284"
+  },
+  "07260": {
+   "sha256": "0d2bcd5b72f6a6d5e3d30b546decd8c97b078f5288e2666401fa9336f72c05c9",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28074/28196"
+  },
+  "07264": {
+   "sha256": "1c435b84fd8eae3c945529a02b2c2f0fe7ce3d1792ceb187eb5de77b621699a8",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28150/28312"
+  },
+  "07269": {
+   "sha256": "8d39fa85ea239b23fd64495fc60b8540f3d97985dc60fb9f7b019317bfe5ac99",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28070/28204"
+  },
+  "07474": {
+   "sha256": "bff1a29bc7483987e27c0c6288c1090768f78394530154b2d6dad8ac58a65144",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28170/28342"
+  },
+  "09582": {
+   "sha256": "6f29c42585a1b5c2340dc84d94549414b9bc631744195e03a50128e8f3187f71",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28150/28313"
+  },
+  "11128": {
+   "sha256": "55f20694fba4266667fbddd5f1dd85b63a09de16e5391e153ce7153017c583fa",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28084/28223"
+  },
+  "11131": {
+   "sha256": "17562da68df6c5147013adbea8f6b5ca1975ea443cf43950f608349a42b33a65",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28118/28290"
+  },
+  "11136": {
+   "sha256": "0cdb546dee983f54842a7e342b755226e48fae9a7f1d02c279f0d0eb946331c8",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28070/28210"
+  },
+  "11140": {
+   "sha256": "bd1b9ee8598092091906022c993cf8ab029bb9bb06f2b5fda9683f7b975ccaf7",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28150/28311"
+  },
+  "12221": {
+   "sha256": "5e8333635bf08d2001baa2ea787aa9edc3fb49e5be4ac7e509edca42b4024320",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28090/28249"
+  },
+  "14583": {
+   "sha256": "5966bcc1c521e68e3c90f796cf264ba2117becc758f33cf8781ce47f213061b6",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28156/28380"
+  },
+  "15151": {
+   "sha256": "8408e845fb75da793a190da94b45f4cc22f01b4a4885079949a500134f0f7448",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28162/28332"
+  },
+  "16981": {
+   "sha256": "f7f127e8fdd333c16731cd4761bd5a021419b80ff4f37a5f391ce3db6f3abb41",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28070/28213"
+  },
+  "17970": {
+   "sha256": "6b0f5e20537f8eed747dffa65196a41016d4a51b8e6311bb96ba836cb8165e8f",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28072/28216"
+  },
+  "19980": {
+   "sha256": "effc5e034fe179ee2356daec09a87c44f648cd1d5f7b9dbd65a3827213dd7106",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28122/28285"
+  },
+  "19981": {
+   "sha256": "832b751575b440973416e573ae89a29eb50fc66068dfe285fb7a23320d1803e7",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28076/28188"
+  },
+  "19984": {
+   "sha256": "9353dbdd92be182693c213e07db5e3dff3cefa8afeec65716d303abd41f57c8a",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28074/28200"
+  },
+  "19985": {
+   "sha256": "1089fda469a02b83c1e30af6b660d9edee832b88962ceb25d21ff11936a6152d",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28068/28406"
+  },
+  "19986": {
+   "sha256": "9ff66649077c61f5365a87073c83946f8d2f2a4d9efac3f457d684e99a07c751",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28090/28245"
+  },
+  "19987": {
+   "sha256": "d9b9a2cd633e80ab645febbcd553b38b33bfa48cd3010923df2f5cc2650d7aca",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28090/28248"
+  },
+  "19988": {
+   "sha256": "73c8ef0294c5844675dd292f5be7689a848d1e3dfbd14e1963fb578e8faa36c8",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28172/28336"
+  },
+  "19989": {
+   "sha256": "5a9c88dd04dbd08e87bb94cd5bab9758bce9211d4c2615deea3e9d9e95b491b7",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28092/28234"
+  },
+  "19990": {
+   "sha256": "340ad53c4bb0a5b95f2d349a467460846608ecefbf4d01df43ada6708eca362b",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28092/28237"
+  },
+  "19991": {
+   "sha256": "01d1ee8f6a6b86e352eb6878cb826ed624ec468cefa21f42207a26b3b39e03fb",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28092/28239"
+  },
+  "19995": {
+   "sha256": "ad3d4a5cccc1ec49c90df0da14c364791bcd057810dd99249568f3d3a2841c8b",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28170/28343"
+  },
+  "19996": {
+   "sha256": "cc2cf7e19b1b9e27777beedf3747be6a98306dc4375cc54e7c97f3e1dc167db5",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28150/28314"
+  },
+  "19998": {
+   "sha256": "12b42fc45bae4d99b5026b3ad9b36bbba0ca061381034d1f19784650d68e8f34",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/28292"
+  },
+  "19999": {
+   "sha256": "e8e7009c318e5f2e5e86aa0fc7d0c6964ef7c6f8783d47f289ba53d5614514b1",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28226"
+  },
+  "20000": {
+   "sha256": "677f912b40e811448f1dcd89b9a5342e4d5d68b21a1db2256dcb84e8a6c80028",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28106/28275"
+  },
+  "20001": {
+   "sha256": "8a52f877f42c3831535776ebd6362fa92fecf89b31ebb6d238f5770f4acb0444",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28182/28350"
+  },
+  "20003": {
+   "sha256": "b892db068ab127dfb693bdaaa47414e8764b58fec0f3d2cc09a961bc860ea0a4",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28084/28224"
+  },
+  "20005": {
+   "sha256": "269f039d799dcfe72cbf7b65fb920f989255b0948b8ebf986aa6f868ef673f35",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28156/28326"
+  },
+  "20006": {
+   "sha256": "04eba78d6944126ee10ffa920aeeb13adb508884ac7025925a3a2c6e8149f56a",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28156/28323"
+  },
+  "20007": {
+   "sha256": "e606d3e5882e02317983e500c4aa67affa25aac33167b12f0bfb527e10c92d14",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28114/28359"
+  },
+  "20010": {
+   "sha256": "58b911dcda3d4d02de9f9672a8a55a579a0260e758360ee6ffa845916cc7833f",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28124/28297"
+  },
+  "20012": {
+   "sha256": "19f516d0de1eede7d98d9d9fe299d78bc268d30d598070ebe5ec93458213de58",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28096/28254"
+  },
+  "20014": {
+   "sha256": "543d83fabd2ae65ef3de483307da0dce08aa9b213d929ffe09eabe7388a860ed",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28070/28208"
+  },
+  "20015": {
+   "sha256": "be99b70274a75bcfbfad76db43c645fef149f2417d43957244211fda3d69a1cc",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28070/28212"
+  },
+  "20016": {
+   "sha256": "12b579c8bb7be202f0ee9641fc62e43cc77f0939220f4e69b15ee43ceb2c4029",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28126/28302"
+  },
+  "20017": {
+   "sha256": "df7090a57e34d2db6c2c58cad8ebb0fe042eea334c8e03b89a9dcbd3769b99d6",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28104/28259"
+  },
+  "31000": {
+   "sha256": "50f5d5debcaeaec1846b3ff8c32afc5eff4e7a8be4eff5355b4f865ea987e2a5",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28138/28306"
+  },
+  "31042": {
+   "sha256": "89829b3fd496c7edeed6387ee0f8d0fba5394fd4366552542dac2a638fd5aa34",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28070/28206"
+  },
+  "31133": {
+   "sha256": "e4db112f004870c1a3f5d8c63f99a2c6e2890138b49b911905faeafa227050c4",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28118/28289"
+  },
+  "31236": {
+   "sha256": "9d3894663770d2526c7386ac1374a940dc66c4430c1274b46f9b052af01de5e4",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28100/28270"
+  },
+  "31246": {
+   "sha256": "57c04e44ab3aa96f83c6259a89807fc25a540eaeae47ba7180caaabade328b99",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28100/28265"
+  },
+  "31284": {
+   "sha256": "7639c3e4732d5f8b86c1d627eb3c3426e37ec45c39d762a9337f99332dc9d627",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28100/28262"
+  },
+  "31306": {
+   "sha256": "585e6e2a9d292ee1c7158ea3c74a6a13ad7c71f0da49e4aa31e55d8a57923b2d",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28100/28269"
+  },
+  "31307": {
+   "sha256": "7a59bbe832c8f9d87e1032d32fa49ff989908cc5ed85cbdbeeb081f261180c6e",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28100/28264"
+  },
+  "31422": {
+   "sha256": "48ab5a524174ed406bfac4dcc72d71141da9b7c88b7daa3d67cb91b5af71e4ef",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28168/28334"
+  },
+  "31512": {
+   "sha256": "a9ca8d78101c8b370ddaf98e3090d57daaa878d2b25158b76db40b276790d59d",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28122/28288"
+  },
+  "31850": {
+   "sha256": "2c60c2f636106b2e2815810c82dda2945607117ad5cd90894755194aecc5145d",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28108/28276"
+  },
+  "31930": {
+   "sha256": "9a4595aad308aa45e88b9a5547991dbc65b1437ec9b349b5edd9fb176b2681c7",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28100/28267"
+  },
+  "31939": {
+   "sha256": "39f1aa6cd806afef82546a00455775cff9648365d8d7350b7b472e59c333c0c1",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28166/28331"
+  },
+  "31941": {
+   "sha256": "2bd926fc7dc05745d2ba1aa4c402bef6c8b3bdac731d008987441eccb293b938",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28096/28252"
+  },
+  "31950": {
+   "sha256": "af1fbf7fcbd453efe562c44f1963914432625eee445e18efca9a2972d953f5b3",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28164/28538"
+  },
+  "31951": {
+   "sha256": "8725463801dbeaab36f09123a89c7f2cb5921a5be9f29a2cbe4479fb11e23dc1",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28084/28221"
+  },
+  "31952": {
+   "sha256": "47d6aa9858fac03d52f31997694734eb8d99d055a2824f3bf1e29095bf7bc4f2",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28130/28304"
+  },
+  "31953": {
+   "sha256": "2ef0f1459d12a5d7c8e419c0dece46465cf554f1fdf1008ddac0f341af452a37",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28146/28526"
+  },
+  "31954": {
+   "sha256": "b9517c3affb11e292cfb9ccb7935f73e9c2ca927c7a20e57d4961a5de8d2760d",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28176/28345"
+  },
+  "32093": {
+   "sha256": "c61f6ab41874c414918df91b669e9a093c12a8958bebe69e78fb9133fef46ceb",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28084/28398"
+  },
+  "32446": {
+   "sha256": "64cf9c1d4fdb01bf495c62c917e2608a4213f76f280c405072573dc209982a9b",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28142/28361"
+  },
+  "32469": {
+   "sha256": "b7c1e1279d64b40ca4aa9edf9142738833ffd3660586407fcffb56e081ebed00",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28152/28315"
+  },
+  "32721": {
+   "sha256": "8d99074e9d8e476d8c50eece8cd715c43ee2d5f39386de00d08dfd639e13e82a",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28132/28305"
+  },
+  "32841": {
+   "sha256": "3c3a1227ed6deeb283906b7bf3d69affb3094564e240fb161080bce0597b7854",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28126/28303"
+  },
+  "33182": {
+   "sha256": "5bd1b341815468f9da9ff42b2530afa0303dbf1a14b37e25664d86c3b6a1c6c5",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28152/28317"
+  },
+  "33199": {
+   "sha256": "360c7daa68dfa69534e5f58b2e2f92320f74ed4575d49e8f030b4ca07e9ef1e1",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28140/28307"
+  },
+  "33222": {
+   "sha256": "83db65729501157db0ce2ff7b58ca9c743ceccc3d4e097f9c1781a2c1b458324",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28152/28316"
+  },
+  "33254": {
+   "sha256": "dab1a19a59bd22c225cdfec0523a4e4fc33132a91a317a78640ff4a3ccfb7854",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28072/28219"
+  },
+  "33563": {
+   "sha256": "98242a3526503e9ab4fcdb060a95bd9089096aded464e0073639ab67efd7d428",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28112/28279"
+  },
+  "33579": {
+   "sha256": "954ec11fbbde5e20bb80e07b3dac8128df1d5bc79486750a96afceba383b6dab",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28076/28186"
+  },
+  "33847": {
+   "sha256": "d2f9ea2f4f7e1c3bdde82d55274f003cdc5040e299b18ac0f743cd2afb993cc5",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28158/28363"
+  },
+  "33927": {
+   "sha256": "8adc3ee05d734bcfda56cd80ce7a16c27633f0eede112a909b88f6a14ac72338",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28110/28278"
+  },
+  "35022": {
+   "sha256": "2e6a3aed3e8dbeb63122bef5b588df09dfd5d38e20f91d2d20b9978a9d121b0e",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28088/28241"
+  },
+  "35061": {
+   "sha256": "a6f98b78136615f48d50aa78276b8b026f5b3616642bf147e5b238689ac4a6f7",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28122/28283"
+  },
+  "35132": {
+   "sha256": "99bca2bb7e89eb3c532a17df60ee217c8c1e8bb407637f9e7bcf9077d1dcb0ad",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28128/28298"
+  },
+  "35197": {
+   "sha256": "b840b60ed6487dc118efe60989dcd924aa90a3a5e45ea57c75bd374ac98a4d20",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28096/28251"
+  },
+  "35684": {
+   "sha256": "a2f2311df564bd70026236c78e8e19496d0dd3114ceec9d9d30238874cde2e4d",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28170/28340"
+  },
+  "35746": {
+   "sha256": "4f3983f6ac5c2049a3175e33cb2b7902a3aea576d04e18da73ef9e604f1b3742",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28134/28364"
+  },
+  "35887": {
+   "sha256": "f44d124d54c9200803179ed9825730ede2ff10a04ae3a596c6c0d41e756263ce",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28178/28347"
+  },
+  "35937": {
+   "sha256": "de8b5e54127398a528fc25f48837d1a8843e566cf07761f78484f45871c2596f",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28072/28217"
+  },
+  "36240": {
+   "sha256": "1024f5c1fcc71970a448fbb5bd08d4ec9eca444c52d7d7dcadb51a38dfb504c1",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28072/28218"
+  },
+  "36241": {
+   "sha256": "5cb5070a06b275a1b0a777bdf43602fe1d9f5b0b7d3d29a1121df2abc036f17c",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28100/28263"
+  },
+  "36259": {
+   "sha256": "65bc7cd9c661240e94e95f288a63ce6c78658f883b7ee21675d52915d6b386c1",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28148/28365"
+  },
+  "37059": {
+   "sha256": "e7924c95098768fb7ee9fa278e9990d15f59b4c9a79c4b979843b9766bd848cd",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28080/28514"
+  },
+  "37852": {
+   "sha256": "f8d1e5425ffd0c467bbe3f512ab78f6d00d043d2273fac4f4977e1b91553fd0f",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28136/28369"
+  },
+  "37939": {
+   "sha256": "115793221d1ac301e769b24c12a4dde78293924bd2c182524239c2b95fd6ee16",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28144/28374"
+  },
+  "37940": {
+   "sha256": "f6676abbac13a581b54da07adeac71aa71ef651298b37fcdabb61863ed3c69c5",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28136/28367"
+  },
+  "37941": {
+   "sha256": "1839fd7225b800aca501de875a9659b25647a12ed1621792a722e5433a2e2654",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28230"
+  },
+  "37942": {
+   "sha256": "e6cab14a460676ab9f2af5cf8f72abdc740133bd4dcfaead8588ebc355a62787",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28144/28378"
+  },
+  "37943": {
+   "sha256": "725eb5281b73219ad62d877dd9894f6a3760757b4771f3f48a9a54079da352d9",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28136/28372"
+  },
+  "37944": {
+   "sha256": "2d6cd7d09e16eaf202f8987469ded06d0bf5257c1f3e4332dda4ff3c49101240",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28102/28355"
+  },
+  "37945": {
+   "sha256": "f5cb57e4255b728f9cb757710045173f753af22fa7b8ad0924901598958308e9",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28144/28377"
+  },
+  "37967": {
+   "sha256": "ab1833ef94aa2231ec65d538018fd73795aa1686545b9cffd11791373b4e9806",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28102/28353"
+  },
+  "37972": {
+   "sha256": "0d15f023aeff5f718259b74723b7a28b969fdc0c8f77abb1182a2b09ad07af09",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28228"
+  },
+  "38056": {
+   "sha256": "45c478a28d6a0383ce6acf8672d4ca28a01ea8c58e542749d5b44c85244a9019",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28144/28373"
+  },
+  "38057": {
+   "sha256": "7f8ab199cddac2e294037c968f4ee637eb0ab026dae4f4e1d7bd5e3d0312ecdd",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28102/28354"
+  },
+  "38058": {
+   "sha256": "850e330e8eb18bbcd076b6e6471af6b43ac3b1c0fab69352c93c4988b3a546f9",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28136/28368"
+  },
+  "38059": {
+   "sha256": "e9850941d221d085c25453285b736ba82490f9570ecc2af767ea6989cb06667d",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28229"
+  },
+  "38066": {
+   "sha256": "354cb0015740ac4bf44981239508dde025cf68a856a59b5057db56caebb8f369",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28227"
+  },
+  "39882": {
+   "sha256": "c3e25674658f4c46267a0be41c2e0d2354398a6e1800a9c0497069584e8702a6",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28144/27584"
+  },
+  "39883": {
+   "sha256": "07c0adfac5e13711c46ea96617788e140029f9058232975d302e67ecb9c8d526",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28136/27560"
+  },
+  "39884": {
+   "sha256": "f520f06eba217bab334df205196392a9dc59ab58912f423cf61627d1f7c226c7",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28144/27576"
+  },
+  "39885": {
+   "sha256": "5eb30d812ebbb0a4d34ab28cd19d9bdba2d6a94a534e39f59e552afb30e48f87",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28136/27552"
+  },
+  "40709": {
+   "sha256": "cba8812a743b9613070628bb76d89dedf2b8fa422ff81d52d0b3f228ddfe4500",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28100/27592"
+  },
+  "40710": {
+   "sha256": "c7393bd65411b6bf9b9bb841995fa0e2df260c18ae673d5db9691a2dd87dfff9",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28100/27600"
+  },
+  "40923": {
+   "sha256": "a48efdd4c4520309725ffc4ce8d563a0e860bfc80cc960d7bda5f9f10dcab7ab",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28402/27536"
+  },
+  "41755": {
+   "sha256": "fa8c0eb08427de7e15f000532d6596c08f5bbf0f2678340afabea6aecbe13aa4",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28090/28243"
+  },
+  "41986": {
+   "sha256": "8e61d244ffac386e5077bfdc608fae983b79c14bb90753896e380864e0cf52eb",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28068/28388"
+  },
+  "42240": {
+   "sha256": "f78fc6f7638c8e16a39ed9f8fa3384b32a2096d8b59e9b8c5478ecb1ef62963f",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28090/28397"
+  },
+  "43185": {
+   "sha256": "eb7a8f7fccb140104a3b3100bc6ca288d9ee50d792da9b8d99d78d7c6f819384",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28156/28380"
+  },
+  "43186": {
+   "sha256": "8abc08dbc8ccc496c47bda7ae301426b97074d22fd4d05fdf9ef7c24939e5fe1",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28156/28381"
+  },
+  "43187": {
+   "sha256": "7ab2b03f5f32a304ca9539573eb1114d813f6a96387fe5569bea53acd22ff867",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28156/28382"
+  },
+  "43333": {
+   "sha256": "86af0c742ed9a411c2551f0ba0dc1ccc3b8b40a21466ae5095f2847b81cded16",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28158/27508"
+  },
+  "43453": {
+   "sha256": "858630cc15783f42c60d584d12e4a69294179627b3c31ae4d540b03dc66360ab",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28098/28257"
+  },
+  "44131": {
+   "sha256": "356220283cc0e9e82b39b9da363d3b306a988b1e0827ed174ff1f706315bb908",
+   "url": "https://butte.curriqunet.com/catalog/iq/25399/28165/28025/27891"
+  },
+  "44132": {
+   "sha256": "98f35599d408cc7b425b48fe72ddf79683a16d2c517bb1060c5d02556547de1e",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27529"
+  },
+  "44133": {
+   "sha256": "a4080adc114db38af4459acf7d7d1a8b3ea39c1ef44fa2bba339e1d87eaa4075",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27545"
+  },
+  "44134": {
+   "sha256": "f1cab34348a37b8b83871bcea2964d24cec0421c875f554c4334cdf7aa9b4c97",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27533"
+  },
+  "44135": {
+   "sha256": "d4b49143d3c32c89ebe06ee8f0712bd0e807cd9e3fc2e4e579e39990ed0199b9",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27537"
+  },
+  "44136": {
+   "sha256": "f8f53913a9556b073139397df07c94179c72adb2d7747f9450462a4232860564",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27541"
+  },
+  "44137": {
+   "sha256": "ec32f64d9903ccacc77cf9a1fc45666a04771d235011e8c1d7136aa11d5b5bdb",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27531"
+  },
+  "44138": {
+   "sha256": "6ac31930f9b372488a3c2724fbd837b1fd8094ae2131fe7687043bfb8b2c12c7",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27535"
+  },
+  "44141": {
+   "sha256": "34e5295ad07c25cb03677bce6ca1bc0ea57077198039767abe14591a69ac731f",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27547"
+  },
+  "44142": {
+   "sha256": "b37675565d6bf1601d63288cef246dcb52f96ed4c092235612e4b4e866a39b1d",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27543"
+  },
+  "44143": {
+   "sha256": "bcf0d7c6eba7dc3bb178cade157d53881231a7c9cf4ce0289c6b15ae7a0f67b3",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27549"
+  },
+  "44298": {
+   "sha256": "c5fa69af328a3cdc032babd7e12679f85520ae5ae39092e6f4463421bcff1b8c",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/27607/27515"
+  },
+  "44301": {
+   "sha256": "d26a602cdf95014d323ae8456d718e70b0528d45c2d8c89f7aeed02b1664a640",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/27607/27519"
+  },
+  "44349": {
+   "sha256": "d417a06d9105abbea38711ab85f30896afdc431a204792fab63a80c2e099f79d",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/27607/27517"
+  },
+  "44575": {
+   "sha256": "3deae9cfa1973409a6950e80fe37fbd4d43458dcd944d84d0dddde80a0f1477b",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27539"
+  },
+  "44716": {
+   "sha256": "1fd63954001732e0e067c86b899e077a35080d44df469643ddca4b7718832fad",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28152/27601"
+  },
+  "44753": {
+   "sha256": "1ddab80a1da43d88cc15a8eff35a9665a7fbc098e7638a77894da2272eb6a352",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28152/27603"
+  },
+  "44823": {
+   "sha256": "603c2a2d2c76ee62b95104f1d4d13caf7033a5f877c81504c058b7b00579b39e",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28152/27605"
+  },
+  "44968": {
+   "sha256": "403c90e64d6169444354a0031a7daa7eed4c406a459487431595f96d8170cbf5",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27551"
+  },
+  "45454": {
+   "sha256": "f7fbe3037da21e4c20a601ea9f39b810b6f5b3d46b860305e78080f3a38a4c17",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28098/28435"
+  },
+  "45652": {
+   "sha256": "36e2dc0499929793953ec846c75febf59f83bb08e0f89241c170def568654757",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28428/28534"
+  },
+  "45662": {
+   "sha256": "9974d4434dd3e620a631aeec53a4ed5c6612ed96105a9e0f3bf6e2a8d8b96aff",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28152/28460"
+  },
+  "45770": {
+   "sha256": "71e515fba5d5d3b49809f482aee4d6801fe746583e5923466a693970b53a5f0b",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28102/28444"
+  },
+  "45799": {
+   "sha256": "5c2fec1ff0342cf56c315d44faa20b2bba8c4e8e7fa9a1d54dced2f61843660e",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28102/28443"
+  },
+  "46303": {
+   "sha256": "52fe1a8ed462b57e80a6092ab5fd1a576284cf53bad8c612457b973d49af4c38",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28108/28469"
+  },
+  "46540": {
+   "sha256": "af1fbf7fcbd453efe562c44f1963914432625eee445e18efca9a2972d953f5b3",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28164/28538"
+  },
+  "46541": {
+   "sha256": "2ef0f1459d12a5d7c8e419c0dece46465cf554f1fdf1008ddac0f341af452a37",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28146/28526"
+  },
+  "46584": {
+   "sha256": "78db3a12bfa959b54d00e977c17ead4b38dcb30f1326cf0fe3d5cb6623e97de0",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28096/28548"
+  }
+ },
+ "run": "45016561973"
+}
