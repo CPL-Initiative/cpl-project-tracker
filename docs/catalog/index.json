@@ -16884,7 +16884,7 @@
      ],
      "title": "The Commons \u2014 one tracking system for the common references, and a Commons dash \u2014 lane state",
      "type": null,
-     "updated": "2026-11-21"
+     "updated": "2026-11-22"
     },
     {
      "created": "2026-08-28",
@@ -17410,8 +17410,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 659,
+   "count": 660,
    "docs": [
+    {
+     "created": "2026-11-22",
+     "governs": [],
+     "n": 701,
+     "path": "docs/session_701_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 701 handoff (from SkyGuillemot, S700, Sam's plain session of 2026-11-21 to 22: Subjects recommendations, the course panel, the noncredit catalogs and the draft noncredit title list)",
+     "type": null,
+     "updated": "2026-11-22"
+    },
     {
      "created": "2026-11-21",
      "governs": [],
@@ -28410,5 +28424,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1544
+ "total": 1545
 }

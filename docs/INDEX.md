@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-11-21
+updated: 2026-11-22
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -72,8 +72,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 95 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 107 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 77 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 659 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1544** | |
+| Session handoffs | 660 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1545** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -124,6 +124,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-22 (S700 SkyGuillemot, Sam's plain session, light checkpoint): the Subjects page under #3655: #3660 (the 21 index-linked subject pages filed, 493 courses; the measured recommendations and 108 web searches), #3661 (the course panel at `#commons/subjects/<college>/<code>`), #3662 (SDCCE, Santa Ana School of Continuing Education and Mt. San Antonio noncredit filed; the draft noncredit subject title list inside Subjects; ATH is KINE); Sam's four rulings recorded; the commons lane compacted under 20,000 bytes. Handoff 701.
 - 2026-11-21 (S698 SkyAuklet, second checkpoint, light): the Subjects page under #3655: #3657 (local titles from the catalogs' own headings, in Title Case: 1,334 of 1,629 codes) and #3658 (the labels, the chip that says why a row has no title, the noncredit hold and categories, Sam's 30 Cerritos decisions held). Handoff 700 rewritten.
 - 2026-11-21 (S698 SkyAuklet, Sam's plain session, light checkpoint): #3652 (COBIx's follow-ups on the Exhibits Review card and the Commons front page: *combine* across the Exhibits tab, chips as notes, the details retry, the narrower duplicate flag; colleges and campuses, the stuck words, the term match, the checked catalog address) and #3654 (the dependency map on an hourly timer). Handoff 700.
 - 2026-11-21 (S697 SkyPuffin, the CPL Queue routine's 13:12Z firing, conductor, full checkpoint): #3640 (the `total_not_printed` gap applied at Santa Monica; Orange Coast, Hartnell, Imperial Valley and Oxnard reread), #3641 and #3644 (a short or timed-out read files nothing, the same-page calls in one place, the named-programs `only` input, Butte's address compare), #3645 (Cosumnes River's named read, $1.16, 10 passing), #3642 (Irvine Valley's outlines on Saddleback's host; 1,732 rows loaded); #3649 (`total_differs`) and #3650 (display `9d9244ee7496`) in flight; Sam's two rulings relayed by COBIx (a block is a block; vault notes merge on their checks) in `sam_rulings`, `conductor_mode` and `scheduled_sessions`; a section of `methodology-chain-prs-when-every-merge-conflicts-a-generated-file` on the Commons files. Handoff 698.
@@ -131,4 +132,3 @@ Authoritative external sources we've cached:
 - 2026-11-21 (S695 SkyShearwater, Sam's plain session on the Commons, conductor, full checkpoint): #3624 (special and selected topics flagged not applicable; the pile 2,493 to 1,909), #3625 (`#commons/subjects/held`), #3627 (both Subjects builders in the daily build), #3626 (the pile mint v3: a 98% floor per route, `discipline_source: pile_mint`, the apply); #3630 (`LSKL M9004`, the first pile-minted record) and #3629 (repo slimming items 1 and 2) open; the self-recall note gains a dated section on mint routes; `docs/commons_lessons.md` *S695*, three sections to its archive; 14 memory rows drafted in `kb/migrations/2026-11-21_s695_checkpoint_memory_rows.sql`; handoff 696 (SkyFulmar).
 - 2026-11-21 (S694 SkyPetrel, Sam's plain session on the Commons, conductor, full checkpoint): #3617 (the commons lane compacted), #3618 (the build for Assign from the panel, with its dry run), #3619 (the pile sorted by exhibit links through the folds; the closest M-ID file rebuilt daily), #3621 (the pile mint dry run, nothing applied); #3620 (the Subjects card) and #3622 (the Assign control) open when written. Handoff `docs/session_695_handoff.md` (SkyShearwater).
 - 2026-11-20 (S693 SkyKittiwake, Sam's plain session on the Commons, full checkpoint): #3610 (the hand-over takes a note and lists each drop; note migration and five memory rows applied through the runner), #3612 (Needs an M-ID, one gap pile of 2,508); #3613 (Sam's first hand-overs filed, 12 hunt courses answered) and #3614 (the Closest M-ID column, measured 93% right at 0.75 or more) open; seven of Sam's rulings in `sam_rulings`; 11 memory rows drafted; handoff 694.
-- 2026-11-20 (S692 SkyGannet, Sam's plain session on the Commons, full checkpoint): #3608 (hand it over in place, slice 1: `commons_handover.js`, the private bucket and the `commons_handover` table applied through the runner, the reader's pickup and the `handover-try-link` function, governance DR-35); the new note [`reference-commons-hand-over`](kb-notes/reference-commons-hand-over.md); a section on CI jobs added to `methodology-a-blocked-path-hides-the-defects-behind-it`; the checkpoint command's standing block carries Sam's work order; `handover-try-link`, `cpl-chat` and `library-revise-draft` deployed from main; handoff 693.

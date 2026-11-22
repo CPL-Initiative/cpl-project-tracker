@@ -5,6 +5,8 @@ updated: 2026-11-21
 tags: [handoff, session]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/handoffs
+superseded: true
+superseded_by: session_701_handoff.md
 ---
 
 **Routing.** A CPL Queue routine firing follows `docs/session_697_handoff.md`, never this file. This handoff is for
