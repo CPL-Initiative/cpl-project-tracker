@@ -115,10 +115,15 @@ cap = json.load(open(os.path.join(FOLDER, "capture.json")))
 gaps = json.load(open(os.path.join(FOLDER, "no_record_s703.json")))
 nf = [n["control_number"] for n in cap["not_found"]]
 filed = [g["control_number"] for g in gaps["programs"]]
-check(str(cap.get("run")) == "44515665022" and gaps["capture"] == "44515665022",
-      "the gap file names the capture it reads, 44515665022")
+check(gaps["capture"] == "44515665022", "the gap file names the capture it was written from, 44515665022")
 check(sorted(filed) == sorted(set(nf) - set(PROGRAMS)) and len(filed) == len(set(filed)) == 34,
-      "the gap file names the capture's 34 other not_found programs, once each")
+      "the gap file names the filed capture's 34 other not_found programs, once each")
+# S703's paid read 45025966614 ($0.14) extracted the two from their pins' pages; both pass.
+for cn, p in PROGRAMS.items():
+    rec = json.load(open(os.path.join(FOLDER, "records", cn + ".json")))
+    check(rec["source_url"].endswith("#page=%d" % p["page"]) and str(rec["extracted_run"]) == "45025966614"
+          and cn not in nf,
+          "%s: the filed record names the pin's p.%d, extracted by S703's read 45025966614" % (cn, p["page"]))
 check(not set(filed) & set(PINS), "no pinned program is filed as a gap")
 check(all(g["reason"] in gaps["reasons"] for g in gaps["programs"])
       and all((g["reason"] == "noncredit_not_in_guide") == ("noncredit" in g["award"].lower())

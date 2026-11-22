@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-22T11:45:47Z",
+ "written_at": "2026-11-22T13:13:47Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 16866,
-  "gap": 5469,
+  "passing": 16868,
+  "gap": 5467,
   "with_gap": 118,
-  "cost_usd": 1339.71,
-  "passed_at_read": 16204,
+  "cost_usd": 1339.84,
+  "passed_at_read": 16206,
   "cost_receipts": 118,
   "spent_usd": 1234.69,
   "spent_runs": 184,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16624,
-  "gap": 5469,
+  "passing": 16626,
+  "gap": 5467,
   "collected_with_gaps": 242,
   "discontinued": 0
  },
@@ -8780,11 +8780,11 @@
    "harvested": true,
    "slug": "ohlone",
    "programs": 204,
-   "passing": 135,
-   "gap": 69,
+   "passing": 137,
+   "gap": 67,
    "causes": {
     "no_closed_list": 25,
-    "page_not_found": 36,
+    "page_not_found": 34,
     "places_none": 2,
     "unknown_without_live": 6
    },
@@ -8811,10 +8811,10 @@
    "outcomes_file": "kb/status/commons_data_programs/ohlone.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-19T11:36:05Z",
+   "read_at": "2026-11-22T13:10:01Z",
    "read_kind": "capture",
-   "cost_usd": 10.02,
-   "passed_at_read": 125,
+   "cost_usd": 10.15,
+   "passed_at_read": 127,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -8823,11 +8823,11 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 179,
-   "found": 143,
-   "extracted": 143,
+   "found": 145,
+   "extracted": 145,
    "errors": 0,
    "failed_checks": {
-    "coverage": 4,
+    "coverage": 3,
     "invented": 1,
     "arithmetic": 9,
     "repeated": 0,
@@ -8839,27 +8839,27 @@
    "capture_root": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 57.1,
-   "run": "44515665022",
+   "read_seconds": 50.8,
+   "run": "45025966614",
    "levers": {
-    "reader_page_search": 36,
+    "reader_page_search": 34,
     "program_course_file_check": 25,
     "reconcile_steps": 6,
     "reader_page_assignment": 2
    },
    "collection": {
     "program_reader": {
-     "records": 143,
+     "records": 145,
      "models": {
-      "claude-opus-5-5": 143
+      "claude-opus-5-5": 145
      },
-     "run": "44515665022",
-     "at": "2026-11-19T11:36:05Z",
-     "cost_usd": 10.02,
+     "run": "45025966614",
+     "at": "2026-11-22T13:10:01Z",
+     "cost_usd": 10.15,
      "platform": "pdf"
     },
     "slo_read": null,
-    "plo_programs": 134,
+    "plo_programs": 136,
     "ppm_member": null,
     "maps": {
      "held": 0,
