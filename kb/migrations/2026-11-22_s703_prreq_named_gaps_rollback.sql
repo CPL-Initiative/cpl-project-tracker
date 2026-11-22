@@ -1,10 +1,10 @@
--- S703 cheap piles, item 4: named gaps (ge_units_not_read 131). Each row's checks become the college load's image of its
+-- S703 cheap piles, item 4: named gaps (ge_units_not_read 131). Each row's checks became the college load's image of its
 -- committed record (load_rows): checks.gaps and checks.confidence added, checks.arithmetic and the record
 -- unchanged. Receipt: kb/receipts/program_requirement_records_named_gaps_2026-11-22_s703.json (before_image per row).
--- The collection lane's 10 held colleges (kb/collection_lane.py, the receipt's held_colleges) and the parked
--- colleges are not in the list.
--- Rollback, NOT applied: the before-image's checks back where the row still holds the
--- after-image, skipping and listing a row a person checked.
+-- The collection lane's twelve colleges (kb/collection_lane.py) and the parked colleges are not in the list.
+-- Rollback, NOT applied: the 131 rows the apply returned (kb/receipts/migration_s703_prreq_named_gaps_ge_45019924640.json), the before-image's checks
+-- back where the row still holds the after-image, skipping and listing a row a person checked; it
+-- aborts unless it matches those rows less the checked ones (edit expect for a partial rollback).
 -- A rollback lasts only until the next load of that college: the load posts the committed
 -- record files, which still carry score.gaps, so revert those files too (git revert of this
 -- plan's commit) or the next load writes the gaps back.
