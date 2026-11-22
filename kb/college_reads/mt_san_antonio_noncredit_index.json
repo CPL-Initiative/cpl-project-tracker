@@ -1,0 +1,20 @@
+{
+ "_readme": "S700, 2026-11-22, #3655 (Sam's order relayed by COBIx, comment 7069586791: the four large noncredit programs' catalogs are filed, then their subject headings make the noncredit title list). Mt. San Antonio College's noncredit course list A to Z: the address of each of its eight subject pages, as the page links it. No model call.",
+ "college": "Mt. San Antonio College",
+ "questions": {
+  "subjects": "The noncredit subjects and the address of each one."
+ },
+ "keywords": [
+  "\\bNoncredit\\b"
+ ],
+ "links_cap": 100,
+ "pages": [
+  {
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/adult-continuing-coursesaz/",
+   "answers": [
+    "subjects"
+   ],
+   "links": "/(accs|bs|citz|esl|bshs|oad|paed|voc)[a-z0-9_-]*/?$"
+  }
+ ]
+}
