@@ -61,6 +61,18 @@ joins on `code`. The plain session and COBIx wire them in.
 - `monterey_peninsula.json.gz`: Monterey Peninsula 2026-2027, 76 of 78 subject pages, 1,137 courses (run 44765198579).
 - `long_beach_city.json.gz`: Long Beach City 2026-2027, 123 of 128 subject pages, 1,595 courses (run 44765123063).
 - `cerritos.json.gz`: Cerritos 2026-2027, 91 of 93 subject pages, 1,656 courses (run 44767159068).
+- `san_diego_of_continuing_education.json.gz`: San Diego College of Continuing Education 2026-2027, 392 courses under 44
+  subject headings from the college's catalog PDF, pages 83 to 134 (runs 44968521109, 44968975726 and 44968979994; Sky,
+  S700, #3655). The catalog prints a fee line, not hours: Fee marks a community education class, filed and marked.
+- `santa_ana.json.gz`: Santa Ana College 2026-27, the School of Continuing Education only: 263 courses under 29 subject
+  headings from the catalog PDF's NONCREDIT COURSES list, pages 435 to 464 (runs 44969369928, 44969532478 and
+  44970020478). Its index entry carries `scope`, so a credit subject absent from it reads not read, never absent.
+- `mt_san_antonio.json.gz`: Mt. San Antonio College 2026-2027, the eight noncredit Adult & Continuing Education subject
+  pages, 477 courses (runs 44970201578 and 44970489020). `scope` as for Santa Ana.
+
+The three above were filed under Sam's order of 2026-11-21 (relayed by COBIx on #3655, comment 7069586791): the large
+noncredit programs' catalogs are filed and their subject headings parsed before any noncredit subject title is
+recommended. `kb/_file_noncredit_catalogs.py` holds one parse rule per college and states each in its docstring.
 
 Mission, Pierce, Trade-Tech and West Los Angeles were read from the colleges' own PDFs, which the program capture already reads. Sam's hand-fetched copies
 (COBIx's gists) print two columns side by side (`pdftotext -layout`), which this parse does not split.

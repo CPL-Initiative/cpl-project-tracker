@@ -189,6 +189,22 @@
    "read_at": "2026-11-20T15:38:56Z"
   },
   {
+   "slug": "mt_san_antonio",
+   "file": "mt_san_antonio.json.gz",
+   "college": "Mt. San Antonio College",
+   "catalog_year": "2026-2027",
+   "source": "runner HTML",
+   "runs": [
+    "44970201578",
+    "44970489020"
+   ],
+   "courses": 477,
+   "missed_upper_bound": 0,
+   "sha256_uncompressed": "8facb846da2ef8b0d40fe93bd4210ab36178f13cb639ab5ab6a19f4a3b189c5a",
+   "read_at": "2026-11-22T01:15:25Z",
+   "scope": "Adult & Continuing Education (noncredit)"
+  },
+  {
    "slug": "north_orange_continuing_education",
    "file": "north_orange_continuing_education.json.gz",
    "college": "North Orange Continuing Education",
@@ -202,6 +218,39 @@
    "missed_upper_bound": null,
    "sha256_uncompressed": "447561a8632fb1cfc8e69b5c805422209302a8d47b588bbcf9eb23de0f8d52a5",
    "read_at": "2026-11-20T14:46:44Z"
+  },
+  {
+   "slug": "san_diego_of_continuing_education",
+   "file": "san_diego_of_continuing_education.json.gz",
+   "college": "San Diego College of Continuing Education",
+   "catalog_year": "2026-2027",
+   "source": "runner PDF",
+   "runs": [
+    "44968521109",
+    "44968975726",
+    "44968979994"
+   ],
+   "courses": 392,
+   "missed_upper_bound": 0,
+   "sha256_uncompressed": "4ffcb237d5df502d99ec2d5121081b91026e38e0136e478fbe3c1ca92fe71658",
+   "read_at": "2026-11-22T00:57:20Z"
+  },
+  {
+   "slug": "santa_ana",
+   "file": "santa_ana.json.gz",
+   "college": "Santa Ana College",
+   "catalog_year": "2026-2027",
+   "source": "runner PDF",
+   "runs": [
+    "44969369928",
+    "44969532478",
+    "44970020478"
+   ],
+   "courses": 263,
+   "missed_upper_bound": 2,
+   "sha256_uncompressed": "6bb257c2845224a758d657ee821cc267d626e4a4fc1ea8b0792db9d116bdb9fa",
+   "read_at": "2026-11-22T01:03:47Z",
+   "scope": "School of Continuing Education"
   },
   {
    "slug": "southwestern",

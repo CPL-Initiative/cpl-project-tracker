@@ -4,15 +4,15 @@
  "measured_on_titled_codes": {
   "course_joins": {
    "few or mixed": {
-    "right": 307,
-    "asked": 478,
-    "share": 0.642,
+    "right": 310,
+    "asked": 515,
+    "share": 0.602,
     "level": "Medium"
    },
    "most courses agree": {
     "right": 523,
-    "asked": 584,
-    "share": 0.896,
+    "asked": 592,
+    "share": 0.883,
     "level": "Medium"
    }
   },
@@ -38,29 +38,29 @@
   },
   "other_colleges": {
    "all agree": {
-    "right": 229,
-    "asked": 232,
-    "share": 0.987,
+    "right": 239,
+    "asked": 242,
+    "share": 0.988,
     "level": "High"
    },
    "mixed": {
-    "right": 105,
-    "asked": 126,
-    "share": 0.833,
+    "right": 111,
+    "asked": 134,
+    "share": 0.828,
     "level": "Medium"
    },
    "one college": {
-    "right": 143,
-    "asked": 162,
-    "share": 0.883,
+    "right": 145,
+    "asked": 168,
+    "share": 0.863,
     "level": "Medium"
    }
   },
   "program_titles": {
    "one or mixed": {
-    "right": 199,
-    "asked": 336,
-    "share": 0.592,
+    "right": 201,
+    "asked": 355,
+    "share": 0.566,
     "level": "Low"
    },
    "several agree": {
@@ -88,7 +88,7 @@
  "common_code": {
   "levels": {
    "title": "High",
-   "own_courses": "Medium",
+   "own_courses": "High",
    "same_code_statewide": "Medium"
   },
   "sams_30": {
@@ -167,32 +167,32 @@
   },
   "rows_the_subject_map_settles": {
    "own_courses": {
-    "right": 135,
-    "asked": 149
+    "right": 218,
+    "asked": 238
    },
    "same_code_statewide": {
-    "right": 33,
-    "asked": 43
+    "right": 43,
+    "asked": 55
    },
    "title": {
-    "right": 417,
-    "asked": 428
+    "right": 418,
+    "asked": 429
    }
   }
  },
  "web_searches_filed": 108,
  "totals": {
-  "common_high": 175,
-  "common_low": 23,
-  "common_medium": 394,
-  "common_none": 128,
-  "no_common": 720,
-  "no_title": 250,
-  "on_hold": 48,
-  "title_high": 119,
-  "title_low": 80,
-  "title_medium": 20,
-  "title_none": 31
+  "common_high": 522,
+  "common_low": 33,
+  "common_medium": 134,
+  "common_none": 152,
+  "no_common": 841,
+  "no_title": 482,
+  "on_hold": 54,
+  "title_high": 197,
+  "title_low": 162,
+  "title_medium": 61,
+  "title_none": 62
  },
  "colleges": [
   {
@@ -203,7 +203,7 @@
      "common": {
       "code": "BIOL",
       "discipline": "Biological Sciences",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 3 of its courses with an M-ID sit under BIOL."
      }
@@ -213,7 +213,7 @@
      "common": {
       "code": "IDST",
       "discipline": "Interdisciplinary Studies",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "9 of 9 of its courses with an M-ID sit under IDST."
      }
@@ -223,7 +223,7 @@
      "common": {
       "code": "SOCS",
       "discipline": "Social Science",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "11 of 13 of its courses with an M-ID sit under SOCS."
      }
@@ -233,7 +233,7 @@
      "common": {
       "code": "SOCS",
       "discipline": "Social Science",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under SOCS."
      }
@@ -243,7 +243,7 @@
      "common": {
       "code": "KINE",
       "discipline": "Kinesiology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "86 of 86 of its courses with an M-ID sit under KINE."
      }
@@ -253,7 +253,7 @@
      "common": {
       "code": "BUSI",
       "discipline": "Business",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "33 of 35 of its courses with an M-ID sit under BUSI."
      }
@@ -323,7 +323,7 @@
      "common": {
       "code": "EDTC",
       "discipline": "Instructional Design/Technology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "20 of 21 of its courses with an M-ID sit under EDTC."
      }
@@ -333,7 +333,7 @@
      "common": {
       "code": "ELEC",
       "discipline": "Electricity",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "19 of 20 of its courses with an M-ID sit under ELEC."
      }
@@ -344,7 +344,7 @@
       "title": "English as a Second Language",
       "level": "High",
       "from": "other_colleges",
-      "why": "other colleges: 2 of 2 other colleges (all agree). web search agrees.",
+      "why": "other colleges: 4 of 4 other colleges (all agree). web search agrees.",
       "also": [],
       "search": {
        "query": "Cerritos College ESL pronunciation plus multilingual courses",
@@ -370,7 +370,7 @@
      "common": {
       "code": "BUSI",
       "discipline": "Business",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "5 of 5 of its courses with an M-ID sit under BUSI."
      }
@@ -380,7 +380,7 @@
      "common": {
       "code": "HLTH",
       "discipline": "Health",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 5 of its courses with an M-ID sit under HLTH."
      }
@@ -400,7 +400,7 @@
      "common": {
       "code": "FLNG",
       "discipline": "Foreign Languages",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under FLNG."
      }
@@ -420,7 +420,7 @@
      "common": {
       "code": "SOCS",
       "discipline": "Social Science",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 5 of its courses with an M-ID sit under SOCS."
      }
@@ -430,7 +430,7 @@
      "common": {
       "code": "MANU",
       "discipline": "Manufacturing Technology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "7 of 7 of its courses with an M-ID sit under MANU."
      }
@@ -450,7 +450,7 @@
      "common": {
       "code": "KINE",
       "discipline": "Kinesiology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "83 of 99 of its courses with an M-ID sit under KINE."
      }
@@ -487,7 +487,7 @@
      "common": {
       "code": "PHSC",
       "discipline": "Physical Sciences",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under PHSC."
      }
@@ -507,7 +507,7 @@
      "common": {
       "code": "THTR",
       "discipline": "Drama/Theater Arts",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "26 of 38 of its courses with an M-ID sit under THTR."
      }
@@ -517,7 +517,7 @@
      "common": {
       "code": "ARTS",
       "discipline": "Art",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 5 of its courses with an M-ID sit under ARTS."
      }
@@ -559,7 +559,7 @@
      "common": {
       "code": "BUSI",
       "discipline": "Business",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "10 of 12 of its courses with an M-ID sit under BUSI."
      }
@@ -598,7 +598,7 @@
      "common": {
       "code": "CRIM",
       "discipline": "Administration of Justice",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "15 of 18 of its courses with an M-ID sit under CRIM."
      }
@@ -661,7 +661,7 @@
      "common": {
       "code": "AGRI",
       "discipline": "Agriculture",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "7 of 7 of its courses with an M-ID sit under AGRI."
      }
@@ -691,7 +691,7 @@
      "common": {
       "code": "IDST",
       "discipline": "Interdisciplinary Studies",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "4 of 5 of its courses with an M-ID sit under IDST."
      }
@@ -701,7 +701,7 @@
      "common": {
       "code": "CULN",
       "discipline": "Culinary Arts/Food Technology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under CULN."
      }
@@ -711,7 +711,7 @@
      "common": {
       "code": "COUN",
       "discipline": "Counseling",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under COUN."
      }
@@ -731,7 +731,7 @@
      "common": {
       "code": "CSIS",
       "discipline": "Artificial Intelligence",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "21 of 23 of its courses with an M-ID sit under CSIS."
      }
@@ -741,7 +741,7 @@
      "common": {
       "code": "HUMA",
       "discipline": "Humanities",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under HUMA."
      }
@@ -790,7 +790,7 @@
      "common": {
       "code": "KINE",
       "discipline": "Kinesiology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "27 of 27 of its courses with an M-ID sit under KINE."
      }
@@ -800,7 +800,7 @@
      "common": {
       "code": "AGPR",
       "discipline": "Agricultural Production",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 4 of its courses with an M-ID sit under AGPR."
      }
@@ -858,7 +858,7 @@
      "common": {
       "code": "HLTH",
       "discipline": "Health",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under HLTH."
      }
@@ -910,7 +910,7 @@
      "common": {
       "code": "COUN",
       "discipline": "Counseling",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "7 of 7 of its courses with an M-ID sit under COUN."
      }
@@ -920,7 +920,7 @@
      "common": {
       "code": "ETHS",
       "discipline": "Ethnic Studies",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 3 of its courses with an M-ID sit under ETHS."
      }
@@ -930,7 +930,7 @@
      "common": {
       "code": "HLTH",
       "discipline": "Health",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 3 of its courses with an M-ID sit under HLTH."
      }
@@ -950,7 +950,7 @@
      "common": {
       "code": "MULT",
       "discipline": "Multimedia",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "17 of 19 of its courses with an M-ID sit under MULT."
      }
@@ -960,7 +960,7 @@
      "common": {
       "code": "ETHS",
       "discipline": "Ethnic Studies",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 4 of its courses with an M-ID sit under ETHS."
      }
@@ -970,7 +970,7 @@
      "common": {
       "code": "AUTO",
       "discipline": "Automotive Technology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "10 of 11 of its courses with an M-ID sit under AUTO."
      }
@@ -980,7 +980,7 @@
      "common": {
       "code": "BIOL",
       "discipline": "Biological Sciences",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "8 of 9 of its courses with an M-ID sit under BIOL."
      }
@@ -1022,7 +1022,7 @@
      "common": {
       "code": "IDST",
       "discipline": "Interdisciplinary Studies",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under IDST."
      }
@@ -1032,7 +1032,7 @@
      "common": {
       "code": "WEXP",
       "discipline": "Work Experience Instructors",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 3 of its courses with an M-ID sit under WEXP."
      }
@@ -1052,7 +1052,7 @@
      "common": {
       "code": "DANC",
       "discipline": "Dance",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "10 of 10 of its courses with an M-ID sit under DANC."
      }
@@ -1099,7 +1099,7 @@
      "common": {
       "code": "DRAF",
       "discipline": "Drafting/CADD",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "4 of 4 of its courses with an M-ID sit under DRAF."
      }
@@ -1119,7 +1119,7 @@
      "common": {
       "code": "INDT",
       "discipline": "Industrial Technology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "5 of 7 of its courses with an M-ID sit under INDT."
      }
@@ -1129,7 +1129,7 @@
      "common": {
       "code": "INDT",
       "discipline": "Industrial Technology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "7 of 9 of its courses with an M-ID sit under INDT."
      }
@@ -1140,7 +1140,7 @@
       "title": "English",
       "level": "High",
       "from": "other_colleges",
-      "why": "other colleges: 6 of 6 other colleges (all agree). course joins, district, web search agrees.",
+      "why": "other colleges: 7 of 7 other colleges (all agree). course joins, district, web search agrees.",
       "also": [],
       "search": {
        "query": "East Los Angeles College English ENGL C1000 \"Academic Reading and Writing\" (elac.edu only)",
@@ -1156,7 +1156,7 @@
      "common": {
       "code": "ARCH",
       "discipline": "Architecture",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under ARCH."
      }
@@ -1176,7 +1176,7 @@
      "common": {
       "code": "BUSI",
       "discipline": "Business",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under BUSI."
      }
@@ -1196,7 +1196,7 @@
      "common": {
       "code": "MULT",
       "discipline": "Multimedia",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under MULT."
      }
@@ -1216,7 +1216,7 @@
      "common": {
       "code": "HTEC",
       "discipline": "Health Care Ancillaries",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "14 of 14 of its courses with an M-ID sit under HTEC."
      }
@@ -1256,7 +1256,7 @@
      "common": {
       "code": "BUSI",
       "discipline": "Business",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "4 of 4 of its courses with an M-ID sit under BUSI."
      }
@@ -1290,7 +1290,7 @@
      "common": {
       "code": "KINE",
       "discipline": "Kinesiology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "24 of 24 of its courses with an M-ID sit under KINE."
      }
@@ -1310,7 +1310,7 @@
      "common": {
       "code": "HUMA",
       "discipline": "Humanities",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under HUMA."
      }
@@ -1320,7 +1320,7 @@
      "common": {
       "code": "BUSI",
       "discipline": "Business",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "7 of 9 of its courses with an M-ID sit under BUSI."
      }
@@ -1340,7 +1340,7 @@
      "common": {
       "code": "MULT",
       "discipline": "Multimedia",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 4 of its courses with an M-ID sit under MULT."
      }
@@ -1400,7 +1400,7 @@
      "common": {
       "code": "BIOL",
       "discipline": "Biological Sciences",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under BIOL."
      }
@@ -1438,7 +1438,7 @@
       "title": "Psychology",
       "level": "High",
       "from": "other_colleges",
-      "why": "other colleges: 5 of 5 other colleges (all agree). course joins, district, sibling, web search agrees.",
+      "why": "other colleges: 6 of 6 other colleges (all agree). course joins, district, sibling, web search agrees.",
       "also": [],
       "search": {
        "query": "East Los Angeles College elac.edu psychology department \"PSYC\" \"Introduction to Psychology\"",
@@ -1464,7 +1464,7 @@
      "common": {
       "code": "RECR",
       "discipline": "Recreation Administration",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "5 of 5 of its courses with an M-ID sit under RECR."
      }
@@ -1474,7 +1474,7 @@
      "common": {
       "code": "RSPT",
       "discipline": "Respiratory Technologies",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "30 of 32 of its courses with an M-ID sit under RSPT."
      }
@@ -1516,7 +1516,7 @@
      "common": {
       "code": "THES",
       "discipline": "Stagecraft",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "21 of 30 of its courses with an M-ID sit under THES."
      }
@@ -1541,7 +1541,7 @@
      "common": {
       "code": "AUTB",
       "discipline": "Auto Body Technology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "26 of 27 of its courses with an M-ID sit under AUTB."
      }
@@ -1561,7 +1561,7 @@
      "common": {
       "code": "BIOL",
       "discipline": "Biological Sciences",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under BIOL."
      }
@@ -1571,7 +1571,7 @@
      "common": {
       "code": "BIOL",
       "discipline": "Biological Sciences",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under BIOL."
      }
@@ -1627,7 +1627,7 @@
      "common": {
       "code": "RSPT",
       "discipline": "Respiratory Technologies",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "9 of 9 of its courses with an M-ID sit under RSPT."
      }
@@ -1717,7 +1717,7 @@
      "common": {
       "code": "HLTH",
       "discipline": "Health",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 3 of its courses with an M-ID sit under HLTH."
      }
@@ -1776,7 +1776,7 @@
      "common": {
       "code": "IDST",
       "discipline": "Interdisciplinary Studies",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 3 of its courses with an M-ID sit under IDST."
      }
@@ -1803,7 +1803,7 @@
      "common": {
       "code": "IDST",
       "discipline": "Interdisciplinary Studies",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "14 of 17 of its courses with an M-ID sit under IDST."
      }
@@ -1814,7 +1814,7 @@
       "title": "English as a Second Language",
       "level": "High",
       "from": "other_colleges",
-      "why": "other colleges: 2 of 2 other colleges (all agree).",
+      "why": "other colleges: 4 of 4 other colleges (all agree).",
       "also": []
      }
     },
@@ -1850,7 +1850,7 @@
      "common": {
       "code": "EDUC",
       "discipline": "Education",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 3 of its courses with an M-ID sit under EDUC."
      }
@@ -1860,7 +1860,7 @@
      "common": {
       "code": "MULT",
       "discipline": "Multimedia",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "10 of 11 of its courses with an M-ID sit under MULT."
      }
@@ -1870,7 +1870,7 @@
      "common": {
       "code": "IDST",
       "discipline": "Interdisciplinary Studies",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "6 of 10 of its courses with an M-ID sit under IDST."
      }
@@ -1914,7 +1914,7 @@
      "common": {
       "code": "HUMA",
       "discipline": "Humanities",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under HUMA."
      }
@@ -1944,7 +1944,7 @@
      "common": {
       "code": "KINE",
       "discipline": "Kinesiology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "111 of 120 of its courses with an M-ID sit under KINE."
      }
@@ -1979,7 +1979,7 @@
      "common": {
       "code": "EDUC",
       "discipline": "Education",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 3 of its courses with an M-ID sit under EDUC."
      }
@@ -2006,7 +2006,7 @@
      "common": {
       "code": "RADT",
       "discipline": "Radiological Technology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "12 of 18 of its courses with an M-ID sit under RADT."
      }
@@ -2046,7 +2046,7 @@
      "common": {
       "code": "BUSI",
       "discipline": "Business",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under BUSI."
      }
@@ -2056,7 +2056,7 @@
      "common": {
       "code": "ARCH",
       "discipline": "Architecture",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "8 of 8 of its courses with an M-ID sit under ARCH."
      }
@@ -2066,7 +2066,7 @@
      "common": {
       "code": "THTR",
       "discipline": "Drama/Theater Arts",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "22 of 25 of its courses with an M-ID sit under THTR."
      }
@@ -2140,7 +2140,7 @@
      "common": {
       "code": "CULN",
       "discipline": "Culinary Arts/Food Technology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "10 of 10 of its courses with an M-ID sit under CULN."
      }
@@ -2160,7 +2160,7 @@
      "common": {
       "code": "DRAF",
       "discipline": "Drafting/CADD",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "6 of 8 of its courses with an M-ID sit under DRAF."
      }
@@ -2197,7 +2197,7 @@
      "common": {
       "code": "FCSH",
       "discipline": "Family and Consumer Studies/ Home Economics",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 3 of its courses with an M-ID sit under FCSH."
      }
@@ -2207,7 +2207,7 @@
      "common": {
       "code": "ELET",
       "discipline": "Electronics",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 4 of its courses with an M-ID sit under ELET."
      }
@@ -2227,7 +2227,7 @@
      "common": {
       "code": "CSIS",
       "discipline": "Artificial Intelligence",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "11 of 11 of its courses with an M-ID sit under CSIS."
      }
@@ -2237,7 +2237,7 @@
      "common": {
       "code": "CSIS",
       "discipline": "Artificial Intelligence",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "4 of 4 of its courses with an M-ID sit under CSIS."
      }
@@ -2247,7 +2247,7 @@
      "common": {
       "code": "CSIS",
       "discipline": "Artificial Intelligence",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "5 of 5 of its courses with an M-ID sit under CSIS."
      }
@@ -2257,7 +2257,7 @@
      "common": {
       "code": "CSIS",
       "discipline": "Artificial Intelligence",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "4 of 4 of its courses with an M-ID sit under CSIS."
      }
@@ -2277,7 +2277,7 @@
      "common": {
       "code": "MULT",
       "discipline": "Multimedia",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "11 of 14 of its courses with an M-ID sit under MULT."
      }
@@ -2287,7 +2287,7 @@
      "common": {
       "code": "RADT",
       "discipline": "Radiological Technology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "32 of 32 of its courses with an M-ID sit under RADT."
      }
@@ -2341,7 +2341,7 @@
      "common": {
       "code": "HORT",
       "discipline": "Ornamental Horticulture",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "7 of 8 of its courses with an M-ID sit under HORT."
      }
@@ -2351,7 +2351,7 @@
      "common": {
       "code": "FIRE",
       "discipline": "Fire Technology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "4 of 4 of its courses with an M-ID sit under FIRE."
      }
@@ -2371,7 +2371,7 @@
      "common": {
       "code": "SOCS",
       "discipline": "Social Science",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under SOCS."
      }
@@ -2381,7 +2381,7 @@
      "common": {
       "code": "HLTH",
       "discipline": "Health",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "5 of 6 of its courses with an M-ID sit under HLTH."
      }
@@ -2408,7 +2408,7 @@
      "common": {
       "code": "CRIM",
       "discipline": "Administration of Justice",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 3 of its courses with an M-ID sit under CRIM."
      }
@@ -2478,7 +2478,7 @@
      "common": {
       "code": "IDST",
       "discipline": "Interdisciplinary Studies",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under IDST."
      }
@@ -2488,7 +2488,7 @@
      "common": {
       "code": "HUMA",
       "discipline": "Humanities",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 3 of its courses with an M-ID sit under HUMA."
      }
@@ -2508,7 +2508,7 @@
      "common": {
       "code": "HLTH",
       "discipline": "Health",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 4 of its courses with an M-ID sit under HLTH."
      }
@@ -2542,7 +2542,7 @@
      "common": {
       "code": "THTR",
       "discipline": "Drama/Theater Arts",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "8 of 8 of its courses with an M-ID sit under THTR."
      }
@@ -2562,7 +2562,7 @@
      "common": {
       "code": "COUN",
       "discipline": "Counseling",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "6 of 7 of its courses with an M-ID sit under COUN."
      }
@@ -2572,7 +2572,7 @@
      "common": {
       "code": "THTR",
       "discipline": "Drama/Theater Arts",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "31 of 34 of its courses with an M-ID sit under THTR."
      }
@@ -2587,7 +2587,7 @@
      "common": {
       "code": "COUN",
       "discipline": "Counseling",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "8 of 8 of its courses with an M-ID sit under COUN."
      }
@@ -2597,7 +2597,7 @@
      "common": {
       "code": "ETHS",
       "discipline": "Ethnic Studies",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 4 of its courses with an M-ID sit under ETHS."
      }
@@ -2617,7 +2617,7 @@
      "common": {
       "code": "MULT",
       "discipline": "Multimedia",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "4 of 4 of its courses with an M-ID sit under MULT."
      }
@@ -2627,7 +2627,7 @@
      "common": {
       "code": "FLNG",
       "discipline": "Foreign Languages",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "7 of 7 of its courses with an M-ID sit under FLNG."
      }
@@ -2647,7 +2647,7 @@
      "common": {
       "code": "BIOL",
       "discipline": "Biological Sciences",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under BIOL."
      }
@@ -2667,7 +2667,7 @@
      "common": {
       "code": "WEXP",
       "discipline": "Work Experience Instructors",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "6 of 6 of its courses with an M-ID sit under WEXP."
      }
@@ -2697,7 +2697,7 @@
      "common": {
       "code": "DANC",
       "discipline": "Dance",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "8 of 8 of its courses with an M-ID sit under DANC."
      }
@@ -2717,7 +2717,7 @@
      "common": {
       "code": "DANC",
       "discipline": "Dance",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "4 of 4 of its courses with an M-ID sit under DANC."
      }
@@ -2818,7 +2818,7 @@
      "common": {
       "code": "BUSI",
       "discipline": "Business",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "4 of 4 of its courses with an M-ID sit under BUSI."
      }
@@ -2828,7 +2828,7 @@
      "common": {
       "code": "MULT",
       "discipline": "Multimedia",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "9 of 9 of its courses with an M-ID sit under MULT."
      }
@@ -2838,7 +2838,7 @@
      "common": {
       "code": "BUSI",
       "discipline": "Business",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under BUSI."
      }
@@ -2858,7 +2858,7 @@
      "common": {
       "code": "KINE",
       "discipline": "Kinesiology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "8 of 8 of its courses with an M-ID sit under KINE."
      }
@@ -2868,7 +2868,7 @@
      "common": {
       "code": "FLNG",
       "discipline": "Foreign Languages",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "10 of 10 of its courses with an M-ID sit under FLNG."
      }
@@ -2888,7 +2888,7 @@
      "common": {
       "code": "HUMA",
       "discipline": "Humanities",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 3 of its courses with an M-ID sit under HUMA."
      }
@@ -2918,7 +2918,7 @@
      "common": {
       "code": "BIOL",
       "discipline": "Biological Sciences",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 3 of its courses with an M-ID sit under BIOL."
      }
@@ -2928,7 +2928,7 @@
      "common": {
       "code": "PHSC",
       "discipline": "Physical Sciences",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under PHSC."
      }
@@ -2968,7 +2968,7 @@
      "common": {
       "code": "RADT",
       "discipline": "Radiological Technology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "16 of 21 of its courses with an M-ID sit under RADT."
      }
@@ -2988,7 +2988,7 @@
      "common": {
       "code": "MGMT",
       "discipline": "Management",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under MGMT."
      }
@@ -2998,7 +2998,7 @@
      "common": {
       "code": "THTR",
       "discipline": "Drama/Theater Arts",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "49 of 50 of its courses with an M-ID sit under THTR."
      }
@@ -3030,7 +3030,7 @@
      "common": {
       "code": "ETHS",
       "discipline": "Ethnic Studies",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under ETHS."
      }
@@ -3050,7 +3050,7 @@
      "common": {
       "code": "MULT",
       "discipline": "Multimedia",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "6 of 6 of its courses with an M-ID sit under MULT."
      }
@@ -3060,7 +3060,7 @@
      "common": {
       "code": "ETHS",
       "discipline": "Ethnic Studies",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 3 of its courses with an M-ID sit under ETHS."
      }
@@ -3070,7 +3070,7 @@
      "common": {
       "code": "BIOL",
       "discipline": "Biological Sciences",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 3 of its courses with an M-ID sit under BIOL."
      }
@@ -3110,7 +3110,7 @@
      "common": {
       "code": "WEXP",
       "discipline": "Work Experience Instructors",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 3 of its courses with an M-ID sit under WEXP."
      }
@@ -3210,7 +3210,7 @@
       "title": "English as a Second Language",
       "level": "High",
       "from": "other_colleges",
-      "why": "other colleges: 2 of 2 other colleges (all agree). course joins agrees.",
+      "why": "other colleges: 4 of 4 other colleges (all agree). course joins agrees.",
       "also": [],
       "search": {
        "query": "Los Angeles Harbor College English as a Second Language ESL courses (lahc.edu only)",
@@ -3226,7 +3226,7 @@
      "common": {
       "code": "BUSI",
       "discipline": "Business",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "4 of 4 of its courses with an M-ID sit under BUSI."
      }
@@ -3246,7 +3246,7 @@
      "common": {
       "code": "MULT",
       "discipline": "Multimedia",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "5 of 5 of its courses with an M-ID sit under MULT."
      }
@@ -3266,7 +3266,7 @@
      "common": {
       "code": "BUSI",
       "discipline": "Business",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 3 of its courses with an M-ID sit under BUSI."
      }
@@ -3306,7 +3306,7 @@
      "common": {
       "code": "IDST",
       "discipline": "Interdisciplinary Studies",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "4 of 4 of its courses with an M-ID sit under IDST."
      }
@@ -3316,7 +3316,7 @@
      "common": {
       "code": "READ",
       "discipline": "Reading",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "4 of 4 of its courses with an M-ID sit under READ."
      }
@@ -3369,7 +3369,7 @@
      "common": {
       "code": "HLTH",
       "discipline": "Health",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under HLTH."
      }
@@ -3396,7 +3396,7 @@
      "common": {
       "code": "PHSC",
       "discipline": "Physical Sciences",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under PHSC."
      }
@@ -3436,7 +3436,7 @@
      "common": {
       "code": "CULN",
       "discipline": "Culinary Arts/Food Technology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "6 of 6 of its courses with an M-ID sit under CULN."
      }
@@ -3456,7 +3456,7 @@
      "common": {
       "code": "THTR",
       "discipline": "Drama/Theater Arts",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "11 of 12 of its courses with an M-ID sit under THTR."
      }
@@ -3483,7 +3483,7 @@
      "common": {
       "code": "ETHS",
       "discipline": "Ethnic Studies",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under ETHS."
      }
@@ -3505,7 +3505,7 @@
      "common": {
       "code": "HTEC",
       "discipline": "Health Care Ancillaries",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "4 of 6 of its courses with an M-ID sit under HTEC."
      }
@@ -3539,7 +3539,7 @@
      "common": {
       "code": "MULT",
       "discipline": "Multimedia",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 3 of its courses with an M-ID sit under MULT."
      }
@@ -3671,7 +3671,7 @@
      "common": {
       "code": "DANC",
       "discipline": "Dance",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "4 of 4 of its courses with an M-ID sit under DANC."
      }
@@ -3728,7 +3728,7 @@
      "common": {
       "code": "DRAF",
       "discipline": "Drafting/CADD",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 4 of its courses with an M-ID sit under DRAF."
      }
@@ -3762,7 +3762,7 @@
      "common": {
       "code": "INDT",
       "discipline": "Industrial Technology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "4 of 6 of its courses with an M-ID sit under INDT."
      }
@@ -3773,7 +3773,7 @@
       "title": "English",
       "level": "High",
       "from": "other_colleges",
-      "why": "other colleges: 6 of 6 other colleges (all agree). course joins, district agrees.",
+      "why": "other colleges: 7 of 7 other colleges (all agree). course joins, district agrees.",
       "also": []
      }
     },
@@ -3812,7 +3812,7 @@
      "common": {
       "code": "BUSI",
       "discipline": "Business",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under BUSI."
      }
@@ -3839,7 +3839,7 @@
      "common": {
       "code": "MULT",
       "discipline": "Multimedia",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "4 of 4 of its courses with an M-ID sit under MULT."
      }
@@ -3849,7 +3849,7 @@
      "common": {
       "code": "HTEC",
       "discipline": "Health Care Ancillaries",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "4 of 4 of its courses with an M-ID sit under HTEC."
      }
@@ -3923,7 +3923,7 @@
      "common": {
       "code": "KINE",
       "discipline": "Kinesiology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "22 of 22 of its courses with an M-ID sit under KINE."
      }
@@ -3943,7 +3943,7 @@
      "common": {
       "code": "HUMA",
       "discipline": "Humanities",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 3 of its courses with an M-ID sit under HUMA."
      }
@@ -4033,7 +4033,7 @@
      "common": {
       "code": "HLTH",
       "discipline": "Health",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 3 of its courses with an M-ID sit under HLTH."
      }
@@ -4101,7 +4101,7 @@
      "common": {
       "code": "PHMT",
       "discipline": "Pharmacy Technology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "6 of 8 of its courses with an M-ID sit under PHMT."
      }
@@ -4118,7 +4118,7 @@
      "common": {
       "code": "PHSC",
       "discipline": "Physical Sciences",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under PHSC."
      }
@@ -4182,7 +4182,7 @@
      "common": {
       "code": "CULN",
       "discipline": "Culinary Arts/Food Technology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "7 of 7 of its courses with an M-ID sit under CULN."
      }
@@ -4234,7 +4234,7 @@
      "common": {
       "code": "THTR",
       "discipline": "Drama/Theater Arts",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "11 of 11 of its courses with an M-ID sit under THTR."
      }
@@ -4249,7 +4249,7 @@
      "common": {
       "code": "AUTO",
       "discipline": "Automotive Technology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "21 of 24 of its courses with an M-ID sit under AUTO."
      }
@@ -4259,7 +4259,7 @@
      "common": {
       "code": "COUN",
       "discipline": "Counseling",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "16 of 16 of its courses with an M-ID sit under COUN."
      }
@@ -4302,13 +4302,18 @@
       "title": "Agriculture Animal Sciences",
       "level": "Low",
       "from": "program_titles",
-      "why": "program titles: 1 of 2 programs (one or mixed).",
-      "also": []
+      "why": "program titles: 1 of 2 programs (one or mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "Vocational",
+        "from": "course_joins"
+       }
+      ]
      },
      "common": {
       "code": "AGRI",
       "discipline": "Agriculture",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "31 of 39 of its courses with an M-ID sit under AGRI."
      }
@@ -4328,7 +4333,7 @@
      "common": {
       "code": "BIOL",
       "discipline": "Biological Sciences",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "13 of 13 of its courses with an M-ID sit under BIOL."
      }
@@ -4348,7 +4353,7 @@
      "common": {
       "code": "BRDC",
       "discipline": "Broadcasting Technology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under BRDC."
      }
@@ -4392,7 +4397,7 @@
      "common": {
       "code": "DANC",
       "discipline": "Dance",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "17 of 17 of its courses with an M-ID sit under DANC."
      }
@@ -4419,7 +4424,7 @@
      "common": {
       "code": "DANC",
       "discipline": "Dance",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "12 of 12 of its courses with an M-ID sit under DANC."
      }
@@ -4469,7 +4474,7 @@
      "common": {
       "code": "ARCH",
       "discipline": "Architecture",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under ARCH."
      }
@@ -4499,7 +4504,7 @@
      "common": {
       "code": "BUSI",
       "discipline": "Business",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 3 of its courses with an M-ID sit under BUSI."
      }
@@ -4509,7 +4514,7 @@
      "common": {
       "code": "GEOG",
       "discipline": "Geography",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "6 of 6 of its courses with an M-ID sit under GEOG."
      }
@@ -4519,7 +4524,7 @@
      "common": {
       "code": "SOCS",
       "discipline": "Social Science",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under SOCS."
      }
@@ -4561,7 +4566,7 @@
      "common": {
       "code": "BUSI",
       "discipline": "Business",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 3 of its courses with an M-ID sit under BUSI."
      }
@@ -4571,7 +4576,7 @@
      "common": {
       "code": "BUSI",
       "discipline": "Business",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "5 of 5 of its courses with an M-ID sit under BUSI."
      }
@@ -4601,7 +4606,7 @@
      "common": {
       "code": "KINE",
       "discipline": "Kinesiology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "17 of 17 of its courses with an M-ID sit under KINE."
      }
@@ -4653,7 +4658,7 @@
      "common": {
       "code": "MULT",
       "discipline": "Multimedia",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "7 of 9 of its courses with an M-ID sit under MULT."
      }
@@ -4663,7 +4668,7 @@
      "common": {
       "code": "GEOG",
       "discipline": "Geography",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 3 of its courses with an M-ID sit under GEOG."
      }
@@ -4673,7 +4678,7 @@
      "common": {
       "code": "BIOL",
       "discipline": "Biological Sciences",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under BIOL."
      }
@@ -4703,7 +4708,7 @@
      "common": {
       "code": "SOCS",
       "discipline": "Social Science",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "4 of 6 of its courses with an M-ID sit under SOCS."
      }
@@ -4802,7 +4807,7 @@
      "common": {
       "code": "THTR",
       "discipline": "Drama/Theater Arts",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "25 of 28 of its courses with an M-ID sit under THTR."
      }
@@ -4827,7 +4832,7 @@
      "common": {
       "code": "COUN",
       "discipline": "Counseling",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "5 of 5 of its courses with an M-ID sit under COUN."
      }
@@ -4949,7 +4954,7 @@
      "common": {
       "code": "BIOL",
       "discipline": "Biological Sciences",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "8 of 9 of its courses with an M-ID sit under BIOL."
      }
@@ -5003,7 +5008,7 @@
      "common": {
       "code": "DANC",
       "discipline": "Dance",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "9 of 9 of its courses with an M-ID sit under DANC."
      }
@@ -5064,7 +5069,7 @@
      "common": {
       "code": "DRAF",
       "discipline": "Drafting/CADD",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 4 of its courses with an M-ID sit under DRAF."
      }
@@ -5139,7 +5144,7 @@
      "common": {
       "code": "BUSI",
       "discipline": "Business",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "5 of 8 of its courses with an M-ID sit under BUSI."
      }
@@ -5203,7 +5208,7 @@
      "common": {
       "code": "GEOL",
       "discipline": "Earth Science",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 5 of its courses with an M-ID sit under GEOL."
      }
@@ -5213,7 +5218,7 @@
      "common": {
       "code": "SOCS",
       "discipline": "Social Science",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under SOCS."
      }
@@ -5223,7 +5228,7 @@
      "common": {
       "code": "HTEC",
       "discipline": "Health Care Ancillaries",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 4 of its courses with an M-ID sit under HTEC."
      }
@@ -5233,7 +5238,7 @@
      "common": {
       "code": "BUSI",
       "discipline": "Business",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "11 of 12 of its courses with an M-ID sit under BUSI."
      }
@@ -5297,7 +5302,7 @@
      "common": {
       "code": "BIOL",
       "discipline": "Biological Sciences",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 3 of its courses with an M-ID sit under BIOL."
      }
@@ -5340,7 +5345,7 @@
      "common": {
       "code": "HLTH",
       "discipline": "Health",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 3 of its courses with an M-ID sit under HLTH."
      }
@@ -5350,7 +5355,7 @@
      "common": {
       "code": "NRSR",
       "discipline": "Nursing",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "15 of 22 of its courses with an M-ID sit under NRSR."
      }
@@ -5425,7 +5430,7 @@
      "common": {
       "code": "PHSC",
       "discipline": "Physical Sciences",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 3 of its courses with an M-ID sit under PHSC."
      }
@@ -5506,7 +5511,7 @@
      "common": {
       "code": "INDT",
       "discipline": "Industrial Technology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 4 of its courses with an M-ID sit under INDT."
      }
@@ -5526,7 +5531,7 @@
      "common": {
       "code": "MGMT",
       "discipline": "Management",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 4 of its courses with an M-ID sit under MGMT."
      }
@@ -5536,7 +5541,7 @@
      "common": {
       "code": "THTR",
       "discipline": "Drama/Theater Arts",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "17 of 17 of its courses with an M-ID sit under THTR."
      }
@@ -5587,7 +5592,7 @@
      "common": {
       "code": "ETHS",
       "discipline": "Ethnic Studies",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "4 of 5 of its courses with an M-ID sit under ETHS."
      }
@@ -5676,7 +5681,7 @@
      "common": {
       "code": "BIOL",
       "discipline": "Biological Sciences",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "4 of 4 of its courses with an M-ID sit under BIOL."
      }
@@ -5810,7 +5815,7 @@
      "common": {
       "code": "PUBS",
       "discipline": "Public Safety",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "30 of 31 of its courses with an M-ID sit under PUBS."
      }
@@ -5910,7 +5915,7 @@
      "common": {
       "code": "MULT",
       "discipline": "Multimedia",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "15 of 22 of its courses with an M-ID sit under MULT."
      }
@@ -5947,7 +5952,7 @@
      "common": {
       "code": "ELMT",
       "discipline": "Electromechanical Technology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "55 of 59 of its courses with an M-ID sit under ELMT."
      }
@@ -5991,7 +5996,7 @@
      "common": {
       "code": "ELEC",
       "discipline": "Electricity",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "6 of 6 of its courses with an M-ID sit under ELEC."
      }
@@ -6008,7 +6013,7 @@
      "common": {
       "code": "ELEC",
       "discipline": "Electricity",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "10 of 10 of its courses with an M-ID sit under ELEC."
      }
@@ -6084,7 +6089,7 @@
      "common": {
       "code": "ELET",
       "discipline": "Electronics",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "17 of 19 of its courses with an M-ID sit under ELET."
      }
@@ -6104,7 +6109,7 @@
      "common": {
       "code": "MULT",
       "discipline": "Multimedia",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "9 of 9 of its courses with an M-ID sit under MULT."
      }
@@ -6114,7 +6119,7 @@
      "common": {
       "code": "GEOL",
       "discipline": "Earth Science",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under GEOL."
      }
@@ -6124,7 +6129,7 @@
      "common": {
       "code": "HTEC",
       "discipline": "Health Care Ancillaries",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "18 of 21 of its courses with an M-ID sit under HTEC."
      }
@@ -6175,7 +6180,7 @@
      "common": {
       "code": "KINE",
       "discipline": "Kinesiology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "5 of 5 of its courses with an M-ID sit under KINE."
      }
@@ -6199,7 +6204,7 @@
      "common": {
       "code": "LABR",
       "discipline": "Industrial Relations",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "30 of 31 of its courses with an M-ID sit under LABR."
      }
@@ -6209,7 +6214,7 @@
      "common": {
       "code": "LABR",
       "discipline": "Industrial Relations",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "6 of 6 of its courses with an M-ID sit under LABR."
      }
@@ -6260,7 +6265,7 @@
      "common": {
       "code": "INDT",
       "discipline": "Industrial Technology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 4 of its courses with an M-ID sit under INDT."
      }
@@ -6280,7 +6285,7 @@
      "common": {
       "code": "INDT",
       "discipline": "Industrial Technology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "7 of 9 of its courses with an M-ID sit under INDT."
      }
@@ -6290,7 +6295,7 @@
      "common": {
       "code": "WELD",
       "discipline": "Welding",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 3 of its courses with an M-ID sit under WELD."
      }
@@ -6312,7 +6317,7 @@
      "common": {
       "code": "MACH",
       "discipline": "Machine Tool Technology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "20 of 23 of its courses with an M-ID sit under MACH."
      }
@@ -6342,7 +6347,7 @@
      "common": {
       "code": "CNSM",
       "discipline": "Construction Management",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 3 of its courses with an M-ID sit under CNSM."
      }
@@ -6352,7 +6357,7 @@
      "common": {
       "code": "LEGL",
       "discipline": "Law",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "7 of 7 of its courses with an M-ID sit under LEGL."
      }
@@ -6438,7 +6443,7 @@
      "common": {
       "code": "CULN",
       "discipline": "Culinary Arts/Food Technology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "7 of 8 of its courses with an M-ID sit under CULN."
      }
@@ -6502,18 +6507,14 @@
     {
      "code": "REF A/C",
      "title": {
-      "title": "Art",
+      "title": "Heating, Ventilating, Air Conditioning & Refrigeration",
       "level": "Low",
-      "from": "course_joins",
-      "why": "course joins: 1 of 1 joined courses (few or mixed). Another source reads differently.",
+      "from": "program_titles",
+      "why": "program titles: 2 of 2 programs (several agree). Another source reads differently.",
       "also": [
        {
-        "title": "Heating, Ventilating, Air Conditioning & Refrigeration",
-        "from": "program_titles"
-       },
-       {
-        "title": "Heating, Ventilating, Air Conditioning (HVAC) and Refrigeration",
-        "from": "web_search"
+        "title": "Art",
+        "from": "course_joins"
        }
       ],
       "search": {
@@ -6525,11 +6526,11 @@
       }
      },
      "common": {
-      "code": "ARTS",
-      "discipline": "Art",
-      "level": "Low",
-      "from": "title",
-      "why": "The title names the discipline Art."
+      "code": "HVAC",
+      "discipline": "Air Conditioning, Refrigeration, Heating",
+      "level": "High",
+      "from": "own_courses",
+      "why": "27 of 28 of its courses with an M-ID sit under HVAC."
      }
     },
     {
@@ -6564,7 +6565,7 @@
      "common": {
       "code": "WEXP",
       "discipline": "Work Experience Instructors",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "4 of 4 of its courses with an M-ID sit under WEXP."
      }
@@ -6610,7 +6611,7 @@
      "common": {
       "code": "CNSM",
       "discipline": "Construction Management",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "8 of 8 of its courses with an M-ID sit under CNSM."
      }
@@ -6635,7 +6636,7 @@
      "common": {
       "code": "MGMT",
       "discipline": "Management",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 5 of its courses with an M-ID sit under MGMT."
      }
@@ -6684,7 +6685,7 @@
      "common": {
       "code": "WEXP",
       "discipline": "Work Experience Instructors",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "4 of 5 of its courses with an M-ID sit under WEXP."
      }
@@ -6694,7 +6695,7 @@
      "common": {
       "code": "WEXP",
       "discipline": "Work Experience Instructors",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under WEXP."
      }
@@ -6704,7 +6705,7 @@
      "common": {
       "code": "WEXP",
       "discipline": "Work Experience Instructors",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "4 of 4 of its courses with an M-ID sit under WEXP."
      }
@@ -6748,7 +6749,7 @@
      "common": {
       "code": "ETHS",
       "discipline": "Ethnic Studies",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 4 of its courses with an M-ID sit under ETHS."
      }
@@ -6805,7 +6806,7 @@
      "common": {
       "code": "BIOL",
       "discipline": "Biological Sciences",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "5 of 7 of its courses with an M-ID sit under BIOL."
      }
@@ -6827,7 +6828,7 @@
      "common": {
       "code": "WEXP",
       "discipline": "Work Experience Instructors",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "4 of 5 of its courses with an M-ID sit under WEXP."
      }
@@ -6871,7 +6872,7 @@
      "common": {
       "code": "CSIS",
       "discipline": "Artificial Intelligence",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under CSIS."
      }
@@ -6941,7 +6942,7 @@
      "common": {
       "code": "WEXP",
       "discipline": "Work Experience Instructors",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 3 of its courses with an M-ID sit under WEXP."
      }
@@ -6983,7 +6984,7 @@
      "common": {
       "code": "DANC",
       "discipline": "Dance",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "10 of 10 of its courses with an M-ID sit under DANC."
      }
@@ -7017,7 +7018,7 @@
      "common": {
       "code": "READ",
       "discipline": "Reading",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 3 of its courses with an M-ID sit under READ."
      }
@@ -7034,7 +7035,7 @@
      "common": {
       "code": "DANC",
       "discipline": "Dance",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "13 of 13 of its courses with an M-ID sit under DANC."
      }
@@ -7073,7 +7074,7 @@
      "common": {
       "code": "DRAF",
       "discipline": "Drafting/CADD",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 3 of its courses with an M-ID sit under DRAF."
      }
@@ -7116,7 +7117,7 @@
       "title": "English",
       "level": "High",
       "from": "other_colleges",
-      "why": "other colleges: 6 of 6 other colleges (all agree). course joins, district, web search agrees.",
+      "why": "other colleges: 7 of 7 other colleges (all agree). course joins, district, web search agrees.",
       "also": [],
       "search": {
        "query": "Los Angeles Valley College English ENGL C1000 \"Academic Reading and Writing\" (lavc.edu only)",
@@ -7142,7 +7143,7 @@
      "common": {
       "code": "WEXP",
       "discipline": "Work Experience Instructors",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "4 of 6 of its courses with an M-ID sit under WEXP."
      }
@@ -7162,7 +7163,7 @@
      "common": {
       "code": "FLNG",
       "discipline": "Foreign Languages",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under FLNG."
      }
@@ -7172,7 +7173,7 @@
      "common": {
       "code": "FLNG",
       "discipline": "Foreign Languages",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under FLNG."
      }
@@ -7202,7 +7203,7 @@
      "common": {
       "code": "ETHS",
       "discipline": "Ethnic Studies",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 3 of its courses with an M-ID sit under ETHS."
      }
@@ -7229,7 +7230,7 @@
      "common": {
       "code": "KINE",
       "discipline": "Kinesiology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "12 of 12 of its courses with an M-ID sit under KINE."
      }
@@ -7305,7 +7306,7 @@
      "common": {
       "code": "IDST",
       "discipline": "Interdisciplinary Studies",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 3 of its courses with an M-ID sit under IDST."
      }
@@ -7389,7 +7390,7 @@
      "common": {
       "code": "MACH",
       "discipline": "Machine Tool Technology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 3 of its courses with an M-ID sit under MACH."
      }
@@ -7443,7 +7444,7 @@
      "common": {
       "code": "LEGL",
       "discipline": "Law",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "5 of 5 of its courses with an M-ID sit under LEGL."
      }
@@ -7453,7 +7454,7 @@
      "common": {
       "code": "PHSC",
       "discipline": "Physical Sciences",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under PHSC."
      }
@@ -7525,7 +7526,7 @@
       "title": "Psychology",
       "level": "High",
       "from": "other_colleges",
-      "why": "other colleges: 5 of 5 other colleges (all agree). course joins, district, web search agrees.",
+      "why": "other colleges: 6 of 6 other colleges (all agree). course joins, district, web search agrees.",
       "also": [],
       "search": {
        "query": "Los Angeles Valley College PSYC Introduction to Psychology courses",
@@ -7575,7 +7576,7 @@
      "common": {
       "code": "RSPT",
       "discipline": "Respiratory Technologies",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "21 of 25 of its courses with an M-ID sit under RSPT."
      }
@@ -7585,7 +7586,7 @@
      "common": {
       "code": "THTR",
       "discipline": "Drama/Theater Arts",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "27 of 33 of its courses with an M-ID sit under THTR."
      }
@@ -7600,7 +7601,7 @@
      "common": {
       "code": "PEDS",
       "discipline": "Physical Education Disabled Students",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "7 of 8 of its courses with an M-ID sit under PEDS."
      }
@@ -7610,7 +7611,7 @@
      "common": {
       "code": "BIOL",
       "discipline": "Biological Sciences",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under BIOL."
      }
@@ -7630,7 +7631,7 @@
      "common": {
       "code": "PHOT",
       "discipline": "Photography",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "10 of 11 of its courses with an M-ID sit under PHOT."
      }
@@ -7680,7 +7681,7 @@
      "common": {
       "code": "EMST",
       "discipline": "Emergency Medical Technologies",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "5 of 6 of its courses with an M-ID sit under EMST."
      }
@@ -7710,7 +7711,7 @@
      "common": {
       "code": "FIRE",
       "discipline": "Fire Technology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "44 of 47 of its courses with an M-ID sit under FIRE."
      }
@@ -7720,7 +7721,7 @@
      "common": {
       "code": "HIST",
       "discipline": "History",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "16 of 16 of its courses with an M-ID sit under HIST."
      }
@@ -7740,7 +7741,7 @@
      "common": {
       "code": "CULN",
       "discipline": "Culinary Arts/Food Technology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "24 of 24 of its courses with an M-ID sit under CULN."
      }
@@ -7750,7 +7751,7 @@
      "common": {
       "code": "COUN",
       "discipline": "Counseling",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 5 of its courses with an M-ID sit under COUN."
      }
@@ -7760,7 +7761,7 @@
      "common": {
       "code": "CRIM",
       "discipline": "Administration of Justice",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "48 of 49 of its courses with an M-ID sit under CRIM."
      }
@@ -7780,7 +7781,7 @@
      "common": {
       "code": "IDST",
       "discipline": "Interdisciplinary Studies",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "16 of 17 of its courses with an M-ID sit under IDST."
      }
@@ -7800,7 +7801,7 @@
      "common": {
       "code": "PHSC",
       "discipline": "Physical Sciences",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under PHSC."
      }
@@ -7810,7 +7811,7 @@
      "common": {
       "code": "KINE",
       "discipline": "Kinesiology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "47 of 47 of its courses with an M-ID sit under KINE."
      }
@@ -7820,7 +7821,7 @@
      "common": {
       "code": "KINE",
       "discipline": "Kinesiology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "40 of 40 of its courses with an M-ID sit under KINE."
      }
@@ -7830,7 +7831,7 @@
      "common": {
       "code": "THTR",
       "discipline": "Drama/Theater Arts",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "45 of 46 of its courses with an M-ID sit under THTR."
      }
@@ -7850,9 +7851,3207 @@
      "common": {
       "code": "HIST",
       "discipline": "History",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "14 of 17 of its courses with an M-ID sit under HIST."
+     }
+    }
+   ]
+  },
+  {
+   "slug": "mt_san_antonio",
+   "rows": [
+    {
+     "code": "ACCS",
+     "common": {
+      "code": "IDST",
+      "discipline": "Interdisciplinary Studies",
+      "level": "High",
+      "from": "own_courses",
+      "why": "7 of 8 of its courses with an M-ID sit under IDST."
+     }
+    },
+    {
+     "code": "AD",
+     "title": {
+      "title": "Addiction Counseling",
+      "level": "Low",
+      "from": "program_titles",
+      "why": "program titles: 2 of 2 programs (several agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "Law",
+        "from": "course_joins"
+       }
+      ]
+     },
+     "common": {
+      "code": "COUN",
+      "discipline": "Counseling",
+      "level": "High",
+      "from": "own_courses",
+      "why": "12 of 16 of its courses with an M-ID sit under COUN."
+     }
+    },
+    {
+     "code": "ADJU",
+     "title": {
+      "title": "Administration of Justice",
+      "level": "High",
+      "from": "course_joins",
+      "why": "course joins: 4 of 6 joined courses (most courses agree). program titles agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "AERO",
+     "title": {
+      "title": "Aeronautics",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 1 of 1 other colleges (one college). Another source reads differently.",
+      "also": [
+       {
+        "title": "Law",
+        "from": "course_joins"
+       },
+       {
+        "title": "Aviation Science",
+        "from": "program_titles"
+       }
+      ]
+     }
+    },
+    {
+     "code": "AGHE",
+     "title": {
+      "title": "Law",
+      "level": "Low",
+      "from": "course_joins",
+      "why": "course joins: 5 of 5 joined courses (most courses agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "Registered Veterinary Technology",
+        "from": "program_titles"
+       }
+      ]
+     },
+     "common": {
+      "code": "LEGL",
+      "discipline": "Law",
+      "level": "Low",
+      "from": "title",
+      "why": "The title names the discipline Law."
+     }
+    },
+    {
+     "code": "AGOR",
+     "title": {
+      "title": "Horticulture",
+      "level": "Low",
+      "from": "course_joins",
+      "why": "course joins: 2 of 5 joined courses (few or mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "Cannabis - Level 1",
+        "from": "program_titles"
+       }
+      ]
+     },
+     "common": {
+      "code": "HORT",
+      "discipline": "Ornamental Horticulture",
+      "level": "High",
+      "from": "own_courses",
+      "why": "20 of 33 of its courses with an M-ID sit under HORT."
+     }
+    },
+    {
+     "code": "AHIS",
+     "title": {
+      "title": "Art History",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 1 of 1 other colleges (one college). course joins agrees.",
+      "also": []
+     },
+     "common": {
+      "code": "ARTH",
+      "discipline": "Art History",
+      "level": "High",
+      "from": "title",
+      "why": "The title names the discipline Art History."
+     }
+    },
+    {
+     "code": "AIRC",
+     "title": {
+      "title": "Building Automation",
+      "level": "Low",
+      "from": "program_titles",
+      "why": "program titles: 2 of 5 programs (several agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "Law",
+        "from": "course_joins"
+       }
+      ]
+     },
+     "common": {
+      "code": "HVAC",
+      "discipline": "Air Conditioning, Refrigeration, Heating",
+      "level": "High",
+      "from": "own_courses",
+      "why": "15 of 17 of its courses with an M-ID sit under HVAC."
+     }
+    },
+    {
+     "code": "AIRM",
+     "title": {
+      "title": "Aircraft Powerplant Maintenance Technology",
+      "level": "Low",
+      "from": "program_titles",
+      "why": "program titles: 1 of 3 programs (one or mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "Law",
+        "from": "course_joins"
+       }
+      ]
+     },
+     "common": {
+      "code": "AVIA",
+      "discipline": "Aviation",
+      "level": "High",
+      "from": "own_courses",
+      "why": "25 of 27 of its courses with an M-ID sit under AVIA."
+     }
+    },
+    {
+     "code": "AIRT",
+     "title": {
+      "title": "Law",
+      "level": "Medium",
+      "from": "course_joins",
+      "why": "course joins: 1 of 1 joined courses (few or mixed).",
+      "also": []
+     },
+     "common": {
+      "code": "LEGL",
+      "discipline": "Law",
+      "level": "Medium",
+      "from": "title",
+      "why": "The title names the discipline Law."
+     }
+    },
+    {
+     "code": "AMLA",
+     "title": {
+      "title": "American Language Advanced Proficiency English for English Language Learners",
+      "level": "Low",
+      "from": "program_titles",
+      "why": "program titles: 1 of 3 programs (one or mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "English as a Second Language",
+        "from": "course_joins"
+       }
+      ]
+     }
+    },
+    {
+     "code": "ANAT",
+     "title": {
+      "title": "Anatomy",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 3 of 3 other colleges (all agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "Human Prosection",
+        "from": "program_titles"
+       }
+      ]
+     },
+     "common": {
+      "code": "BIOL",
+      "discipline": "Biological Sciences",
+      "level": "High",
+      "from": "own_courses",
+      "why": "6 of 6 of its courses with an M-ID sit under BIOL."
+     }
+    },
+    {
+     "code": "ANIM",
+     "title": {
+      "title": "Animation",
+      "level": "Low",
+      "from": "program_titles",
+      "why": "program titles: 1 of 4 programs (one or mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "Art",
+        "from": "course_joins"
+       }
+      ]
+     }
+    },
+    {
+     "code": "ANTH",
+     "title": {
+      "title": "Anthropology",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 6 of 6 other colleges (all agree). course joins, program titles agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "APIS",
+     "title": {
+      "title": "Ethnic Studies",
+      "level": "Medium",
+      "from": "course_joins",
+      "why": "course joins: 1 of 1 joined courses (few or mixed).",
+      "also": []
+     },
+     "common": {
+      "code": "ETHS",
+      "discipline": "Ethnic Studies",
+      "level": "Medium",
+      "from": "title",
+      "why": "The title names the discipline Ethnic Studies."
+     }
+    },
+    {
+     "code": "ARAB",
+     "title": {
+      "title": "Arabic",
+      "level": "Medium",
+      "from": "course_joins",
+      "why": "course joins: 1 of 1 joined courses (few or mixed).",
+      "also": []
+     }
+    },
+    {
+     "code": "ARCH",
+     "title": {
+      "title": "Architecture",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 3 of 3 other colleges (all agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "Law",
+        "from": "course_joins"
+       },
+       {
+        "title": "Architectural Design Concentration",
+        "from": "program_titles"
+       }
+      ]
+     }
+    },
+    {
+     "code": "ARTB",
+     "title": {
+      "title": "Art - Basics",
+      "level": "Medium",
+      "from": "other_colleges",
+      "why": "other colleges: 1 of 1 other colleges (one college).",
+      "also": []
+     }
+    },
+    {
+     "code": "ARTC",
+     "title": {
+      "title": "Arts & Crafts",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 1 of 2 other colleges (mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "Art",
+        "from": "course_joins"
+       },
+       {
+        "title": "Graphic Design - Level 2 - Generalist",
+        "from": "program_titles"
+       }
+      ]
+     }
+    },
+    {
+     "code": "ARTD",
+     "title": {
+      "title": "Art - Dimensional",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 1 of 1 other colleges (one college). Another source reads differently.",
+      "also": [
+       {
+        "title": "Printmaking",
+        "from": "program_titles"
+       }
+      ]
+     }
+    },
+    {
+     "code": "ARTG",
+     "title": {
+      "title": "Art - Graphics",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 1 of 1 other colleges (one college). Another source reads differently.",
+      "also": [
+       {
+        "title": "Law",
+        "from": "course_joins"
+       },
+       {
+        "title": "Museum Studies and Art Gallery",
+        "from": "program_titles"
+       }
+      ]
+     },
+     "common": {
+      "code": "ARTS",
+      "discipline": "Art",
+      "level": "Medium",
+      "from": "same_code_statewide",
+      "why": "5 of 7 courses under this code statewide sit under ARTS."
+     }
+    },
+    {
+     "code": "ARTS",
+     "title": {
+      "title": "Art - Studio",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 1 of 2 other colleges (mixed). course joins agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "ASCI",
+     "title": {
+      "title": "Animal Science",
+      "level": "Low",
+      "from": "program_titles",
+      "why": "program titles: 1 of 7 programs (one or mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "Law",
+        "from": "course_joins"
+       }
+      ]
+     }
+    },
+    {
+     "code": "ASTR",
+     "title": {
+      "title": "Astronomy",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 5 of 5 other colleges (all agree). course joins agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "BIOL",
+     "title": {
+      "title": "Biology",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 7 of 7 other colleges (all agree). course joins agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "BTNY",
+     "common": {
+      "code": "BIOL",
+      "discipline": "Biological Sciences",
+      "level": "Medium",
+      "from": "same_code_statewide",
+      "why": "3 of 3 courses under this code statewide sit under BIOL."
+     }
+    },
+    {
+     "code": "BUSA",
+     "title": {
+      "title": "Accounting",
+      "level": "High",
+      "from": "course_joins",
+      "why": "course joins: 6 of 9 joined courses (most courses agree). other colleges, program titles agrees.",
+      "also": []
+     },
+     "common": {
+      "code": "BUSI",
+      "discipline": "Business",
+      "level": "High",
+      "from": "own_courses",
+      "why": "14 of 16 of its courses with an M-ID sit under BUSI."
+     }
+    },
+    {
+     "code": "BUSC",
+     "title": {
+      "title": "Business Skills",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 1 of 1 other colleges (one college). Another source reads differently.",
+      "also": [
+       {
+        "title": "Economics",
+        "from": "course_joins"
+       }
+      ]
+     },
+     "common": {
+      "code": "ECON",
+      "discipline": "Economics",
+      "level": "High",
+      "from": "own_courses",
+      "why": "3 of 4 of its courses with an M-ID sit under ECON."
+     }
+    },
+    {
+     "code": "BUSL",
+     "title": {
+      "title": "Business",
+      "level": "Medium",
+      "from": "course_joins",
+      "why": "course joins: 1 of 1 joined courses (few or mixed).",
+      "also": []
+     },
+     "common": {
+      "code": "BUSI",
+      "discipline": "Business",
+      "level": "Medium",
+      "from": "title",
+      "why": "The title names the discipline Business."
+     }
+    },
+    {
+     "code": "BUSM",
+     "title": {
+      "title": "Business",
+      "level": "High",
+      "from": "course_joins",
+      "why": "course joins: 4 of 7 joined courses (few or mixed). program titles agrees.",
+      "also": []
+     },
+     "common": {
+      "code": "BUSI",
+      "discipline": "Business",
+      "level": "High",
+      "from": "title",
+      "why": "The title names the discipline Business."
+     }
+    },
+    {
+     "code": "BUSO",
+     "title": {
+      "title": "Business",
+      "level": "Medium",
+      "from": "course_joins",
+      "why": "course joins: 2 of 3 joined courses (most courses agree).",
+      "also": []
+     },
+     "common": {
+      "code": "BUSI",
+      "discipline": "Business",
+      "level": "Medium",
+      "from": "title",
+      "why": "The title names the discipline Business."
+     }
+    },
+    {
+     "code": "BUSR",
+     "title": {
+      "title": "Real Estate",
+      "level": "High",
+      "from": "course_joins",
+      "why": "course joins: 7 of 8 joined courses (most courses agree). program titles agrees.",
+      "also": []
+     },
+     "common": {
+      "code": "REAL",
+      "discipline": "Real Estate",
+      "level": "High",
+      "from": "title",
+      "why": "The title names the discipline Real Estate."
+     }
+    },
+    {
+     "code": "BUSS",
+     "title": {
+      "title": "Marketing",
+      "level": "High",
+      "from": "course_joins",
+      "why": "course joins: 2 of 4 joined courses (few or mixed). program titles agrees.",
+      "also": []
+     },
+     "common": {
+      "code": "MRKT",
+      "discipline": "Marketing",
+      "level": "High",
+      "from": "title",
+      "why": "The title names the discipline Marketing."
+     }
+    },
+    {
+     "code": "CHEM",
+     "title": {
+      "title": "Chemistry",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 14 of 14 other colleges (all agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "Applied Laboratory Science Technology",
+        "from": "program_titles"
+       }
+      ]
+     }
+    },
+    {
+     "code": "CHIN",
+     "title": {
+      "title": "Chinese",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 4 of 5 other colleges (mixed). course joins agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "CHLD",
+     "title": {
+      "title": "Child Development",
+      "level": "High",
+      "from": "course_joins",
+      "why": "course joins: 13 of 13 joined courses (most courses agree). program titles agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "CISB",
+     "title": {
+      "title": "Business Communications Office Technology",
+      "level": "Low",
+      "from": "course_joins",
+      "why": "course joins: 3 of 5 joined courses (most courses agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "Administrative Assistant",
+        "from": "program_titles"
+       }
+      ]
+     },
+     "common": {
+      "code": "CSIS",
+      "discipline": "Artificial Intelligence",
+      "level": "High",
+      "from": "own_courses",
+      "why": "5 of 7 of its courses with an M-ID sit under CSIS."
+     }
+    },
+    {
+     "code": "CISD",
+     "title": {
+      "title": "Computer and Information Sciences",
+      "level": "Low",
+      "from": "course_joins",
+      "why": "course joins: 1 of 1 joined courses (few or mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "Big Data Analytics",
+        "from": "program_titles"
+       }
+      ]
+     },
+     "common": {
+      "code": "CSIS",
+      "discipline": "Artificial Intelligence",
+      "level": "High",
+      "from": "own_courses",
+      "why": "8 of 10 of its courses with an M-ID sit under CSIS."
+     }
+    },
+    {
+     "code": "CISM",
+     "title": {
+      "title": "Computer and Information Sciences",
+      "level": "Medium",
+      "from": "course_joins",
+      "why": "course joins: 1 of 1 joined courses (few or mixed).",
+      "also": []
+     }
+    },
+    {
+     "code": "CISN",
+     "title": {
+      "title": "Computer & Office Studies, Networking & Os",
+      "level": "Low",
+      "from": "course_joins",
+      "why": "course joins: 1 of 3 joined courses (few or mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "CIS Professional in Linux",
+        "from": "program_titles"
+       }
+      ]
+     }
+    },
+    {
+     "code": "CISP",
+     "title": {
+      "title": "CIS Professional in Object-Oriented Design and Programming",
+      "level": "Low",
+      "from": "program_titles",
+      "why": "program titles: 1 of 2 programs (one or mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "Computer Science",
+        "from": "course_joins"
+       }
+      ]
+     }
+    },
+    {
+     "code": "CISS",
+     "title": {
+      "title": "CIS Professional in Information and Operating Systems Security",
+      "level": "Low",
+      "from": "program_titles",
+      "why": "program titles: 1 of 2 programs (one or mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "Law",
+        "from": "course_joins"
+       }
+      ]
+     },
+     "common": {
+      "code": "CSIS",
+      "discipline": "Artificial Intelligence",
+      "level": "High",
+      "from": "own_courses",
+      "why": "11 of 12 of its courses with an M-ID sit under CSIS."
+     }
+    },
+    {
+     "code": "CISW",
+     "title": {
+      "title": "CIS Professional in Web Programming",
+      "level": "Low",
+      "from": "program_titles",
+      "why": "program titles: 1 of 1 programs (one or mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "Law",
+        "from": "course_joins"
+       }
+      ]
+     },
+     "common": {
+      "code": "CSIS",
+      "discipline": "Artificial Intelligence",
+      "level": "High",
+      "from": "own_courses",
+      "why": "8 of 9 of its courses with an M-ID sit under CSIS."
+     }
+    },
+    {
+     "code": "CMGT",
+     "title": {
+      "title": "Construction Management - Level II",
+      "level": "Low",
+      "from": "program_titles",
+      "why": "program titles: 1 of 1 programs (one or mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "Law",
+        "from": "course_joins"
+       }
+      ]
+     },
+     "common": {
+      "code": "CNSM",
+      "discipline": "Construction Management",
+      "level": "High",
+      "from": "own_courses",
+      "why": "4 of 5 of its courses with an M-ID sit under CNSM."
+     }
+    },
+    {
+     "code": "CNET",
+     "title": {
+      "title": "Computer and Networking Technology",
+      "level": "Low",
+      "from": "program_titles",
+      "why": "program titles: 2 of 5 programs (several agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "Computer Information Systems",
+        "from": "course_joins"
+       }
+      ]
+     }
+    },
+    {
+     "code": "COMM",
+     "title": {
+      "title": "Communication Studies",
+      "level": "Low",
+      "from": "course_joins",
+      "why": "course joins: 9 of 11 joined courses (most courses agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "Forensics Competition Management",
+        "from": "program_titles"
+       }
+      ]
+     }
+    },
+    {
+     "code": "COUN",
+     "title": {
+      "title": "Counseling",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 3 of 3 other colleges (all agree). course joins agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "CSCI",
+     "title": {
+      "title": "Computer Science",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 3 of 3 other colleges (all agree). course joins agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "CUL",
+     "title": {
+      "title": "Baking, Professional",
+      "level": "Low",
+      "from": "course_joins",
+      "why": "course joins: 1 of 3 joined courses (few or mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "Baking and Pastry",
+        "from": "program_titles"
+       }
+      ]
+     }
+    },
+    {
+     "code": "DN T",
+     "title": {
+      "title": "Dance",
+      "level": "Medium",
+      "from": "course_joins",
+      "why": "course joins: 2 of 3 joined courses (most courses agree).",
+      "also": []
+     },
+     "common": {
+      "code": "DANC",
+      "discipline": "Dance",
+      "level": "Medium",
+      "from": "title",
+      "why": "The title names the discipline Dance."
+     }
+    },
+    {
+     "code": "DNCE",
+     "title": {
+      "title": "Dance",
+      "level": "High",
+      "from": "course_joins",
+      "why": "course joins: 8 of 11 joined courses (most courses agree). program titles agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "DSPS",
+     "title": {
+      "title": "Disability Support Programs and Services",
+      "level": "Medium",
+      "from": "other_colleges",
+      "why": "other colleges: 1 of 3 other colleges (mixed).",
+      "also": []
+     }
+    },
+    {
+     "code": "ECT",
+     "title": {
+      "title": "Architecture",
+      "level": "Low",
+      "from": "course_joins",
+      "why": "course joins: 1 of 1 joined courses (few or mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "Construction Management - Level I",
+        "from": "program_titles"
+       }
+      ]
+     },
+     "common": {
+      "code": "ARCH",
+      "discipline": "Architecture",
+      "level": "Low",
+      "from": "title",
+      "why": "The title names the discipline Architecture."
+     }
+    },
+    {
+     "code": "EDT",
+     "title": {
+      "title": "Educational Technology",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 1 of 1 other colleges (one college). Another source reads differently.",
+      "also": [
+       {
+        "title": "Law",
+        "from": "course_joins"
+       }
+      ]
+     },
+     "common": {
+      "code": "EDTC",
+      "discipline": "Instructional Design/Technology",
+      "level": "Medium",
+      "from": "same_code_statewide",
+      "why": "28 of 46 courses under this code statewide sit under EDTC."
+     }
+    },
+    {
+     "code": "EDUC",
+     "title": {
+      "title": "Education",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 12 of 12 other colleges (all agree).",
+      "also": []
+     }
+    },
+    {
+     "code": "ELEC",
+     "title": {
+      "title": "Electronics",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 1 of 1 other colleges (one college). Another source reads differently.",
+      "also": [
+       {
+        "title": "Law",
+        "from": "course_joins"
+       }
+      ]
+     }
+    },
+    {
+     "code": "EMS",
+     "title": {
+      "title": "Emergency Medical Services - Paramedic",
+      "level": "Low",
+      "from": "program_titles",
+      "why": "program titles: 1 of 2 programs (one or mixed).",
+      "also": []
+     }
+    },
+    {
+     "code": "EMT",
+     "title": {
+      "title": "Emergency Medical Technology",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 2 of 2 other colleges (all agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "Fire Technology",
+        "from": "course_joins"
+       }
+      ]
+     }
+    },
+    {
+     "code": "ENGL",
+     "title": {
+      "title": "English",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 12 of 12 other colleges (all agree). course joins agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "ENGR",
+     "title": {
+      "title": "Engineering",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 6 of 6 other colleges (all agree). course joins, program titles agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "ENGT",
+     "title": {
+      "title": "Engineering Design Technology",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 1 of 1 other colleges (one college). Another source reads differently.",
+      "also": [
+       {
+        "title": "Technical Sales",
+        "from": "program_titles"
+       }
+      ]
+     }
+    },
+    {
+     "code": "EST",
+     "common": {
+      "code": "KINE",
+      "discipline": "Kinesiology",
+      "level": "Medium",
+      "from": "same_code_statewide",
+      "why": "26 of 34 courses under this code statewide sit under KINE."
+     }
+    },
+    {
+     "code": "ETHS",
+     "title": {
+      "title": "Ethnic Studies",
+      "level": "Medium",
+      "from": "course_joins",
+      "why": "course joins: 1 of 1 joined courses (few or mixed).",
+      "also": []
+     }
+    },
+    {
+     "code": "FASH",
+     "title": {
+      "title": "Fashion",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 2 of 3 other colleges (mixed). course joins, program titles agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "FCS",
+     "title": {
+      "title": "Law",
+      "level": "Low",
+      "from": "course_joins",
+      "why": "course joins: 1 of 1 joined courses (few or mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "Consumer Affairs",
+        "from": "program_titles"
+       }
+      ]
+     },
+     "common": {
+      "code": "LEGL",
+      "discipline": "Law",
+      "level": "Low",
+      "from": "title",
+      "why": "The title names the discipline Law."
+     }
+    },
+    {
+     "code": "FIRE",
+     "title": {
+      "title": "Fire Science",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 1 of 1 other colleges (one college). Another source reads differently.",
+      "also": [
+       {
+        "title": "Fire Technology",
+        "from": "program_titles"
+       },
+       {
+        "title": "Fire Technology",
+        "from": "course_joins"
+       }
+      ]
+     }
+    },
+    {
+     "code": "FRCH",
+     "title": {
+      "title": "French",
+      "level": "Medium",
+      "from": "course_joins",
+      "why": "course joins: 3 of 3 joined courses (most courses agree).",
+      "also": []
+     }
+    },
+    {
+     "code": "GEOG",
+     "title": {
+      "title": "Geography",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 15 of 15 other colleges (all agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "Geographic Information Systems",
+        "from": "program_titles"
+       }
+      ]
+     }
+    },
+    {
+     "code": "GEOL",
+     "title": {
+      "title": "Geology",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 6 of 6 other colleges (all agree). course joins agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "GERM",
+     "title": {
+      "title": "German",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 2 of 2 other colleges (all agree). course joins agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "HIST",
+     "title": {
+      "title": "History",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 13 of 13 other colleges (all agree). course joins agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "HRM",
+     "title": {
+      "title": "Hospitality",
+      "level": "High",
+      "from": "course_joins",
+      "why": "course joins: 2 of 7 joined courses (few or mixed). program titles agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "HT",
+     "title": {
+      "title": "Histotechnician Training",
+      "level": "Low",
+      "from": "program_titles",
+      "why": "program titles: 1 of 1 programs (one or mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "Law",
+        "from": "course_joins"
+       }
+      ]
+     }
+    },
+    {
+     "code": "HTL",
+     "title": {
+      "title": "Dental Technology",
+      "level": "Medium",
+      "from": "course_joins",
+      "why": "course joins: 1 of 1 joined courses (few or mixed).",
+      "also": []
+     },
+     "common": {
+      "code": "DENT",
+      "discipline": "Dental Technology",
+      "level": "Medium",
+      "from": "title",
+      "why": "The title names the discipline Dental Technology."
+     }
+    },
+    {
+     "code": "HUMA",
+     "title": {
+      "title": "Humanities",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 2 of 2 other colleges (all agree).",
+      "also": []
+     }
+    },
+    {
+     "code": "ID",
+     "title": {
+      "title": "Interior Design",
+      "level": "High",
+      "from": "course_joins",
+      "why": "course joins: 1 of 1 joined courses (few or mixed). program titles agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "IDE",
+     "title": {
+      "title": "Industrial Design Engineering - Level I",
+      "level": "Low",
+      "from": "program_titles",
+      "why": "program titles: 1 of 4 programs (one or mixed).",
+      "also": []
+     },
+     "common": {
+      "code": "DRAF",
+      "discipline": "Drafting/CADD",
+      "level": "High",
+      "from": "own_courses",
+      "why": "9 of 11 of its courses with an M-ID sit under DRAF."
+     }
+    },
+    {
+     "code": "ITAL",
+     "title": {
+      "title": "Italian",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 2 of 3 other colleges (mixed). course joins agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "JAPN",
+     "title": {
+      "title": "Japanese",
+      "level": "High",
+      "from": "course_joins",
+      "why": "course joins: 3 of 3 joined courses (most courses agree). other colleges agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "JOUR",
+     "title": {
+      "title": "Journalism",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 3 of 3 other colleges (all agree). course joins, program titles agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "KIN",
+     "title": {
+      "title": "Kinesiology",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 9 of 9 other colleges (all agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "Law",
+        "from": "course_joins"
+       },
+       {
+        "title": "Yoga",
+        "from": "program_titles"
+       }
+      ]
+     }
+    },
+    {
+     "code": "KINA",
+     "title": {
+      "title": "Kinesiology, Adapted",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 1 of 1 other colleges (one college). Another source reads differently.",
+      "also": [
+       {
+        "title": "Physical Education",
+        "from": "course_joins"
+       }
+      ]
+     },
+     "common": {
+      "code": "KINE",
+      "discipline": "Kinesiology",
+      "level": "Low",
+      "from": "title",
+      "why": "The title names the discipline Kinesiology."
+     }
+    },
+    {
+     "code": "KINF",
+     "title": {
+      "title": "Physical Education",
+      "level": "Medium",
+      "from": "course_joins",
+      "why": "course joins: 3 of 3 joined courses (most courses agree).",
+      "also": []
+     }
+    },
+    {
+     "code": "KINI",
+     "title": {
+      "title": "Physical Education",
+      "level": "Medium",
+      "from": "course_joins",
+      "why": "course joins: 7 of 12 joined courses (few or mixed).",
+      "also": []
+     },
+     "common": {
+      "code": "KINE",
+      "discipline": "Kinesiology",
+      "level": "High",
+      "from": "own_courses",
+      "why": "29 of 30 of its courses with an M-ID sit under KINE."
+     }
+    },
+    {
+     "code": "KINS",
+     "title": {
+      "title": "Kinesiology",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 1 of 1 other colleges (one college). Another source reads differently.",
+      "also": [
+       {
+        "title": "Exercise Science/Activity",
+        "from": "course_joins"
+       }
+      ]
+     }
+    },
+    {
+     "code": "KINX",
+     "title": {
+      "title": "Athletics",
+      "level": "Medium",
+      "from": "course_joins",
+      "why": "course joins: 18 of 20 joined courses (most courses agree).",
+      "also": []
+     },
+     "common": {
+      "code": "KINE",
+      "discipline": "Kinesiology",
+      "level": "High",
+      "from": "own_courses",
+      "why": "28 of 28 of its courses with an M-ID sit under KINE."
+     }
+    },
+    {
+     "code": "KORE",
+     "common": {
+      "code": "FLNG",
+      "discipline": "Foreign Languages",
+      "level": "High",
+      "from": "own_courses",
+      "why": "5 of 5 of its courses with an M-ID sit under FLNG."
+     }
+    },
+    {
+     "code": "LATN",
+     "common": {
+      "code": "FLNG",
+      "discipline": "Foreign Languages",
+      "level": "High",
+      "from": "own_courses",
+      "why": "4 of 4 of its courses with an M-ID sit under FLNG."
+     }
+    },
+    {
+     "code": "LCAS",
+     "common": {
+      "code": "ETHS",
+      "discipline": "Ethnic Studies",
+      "level": "High",
+      "from": "own_courses",
+      "why": "2 of 2 of its courses with an M-ID sit under ETHS."
+     }
+    },
+    {
+     "code": "LCOM",
+     "common": {
+      "code": "IDST",
+      "discipline": "Interdisciplinary Studies",
+      "level": "High",
+      "from": "own_courses",
+      "why": "3 of 3 of its courses with an M-ID sit under IDST."
+     }
+    },
+    {
+     "code": "LEAD",
+     "title": {
+      "title": "Counseling - Cec",
+      "level": "Medium",
+      "from": "course_joins",
+      "why": "course joins: 1 of 1 joined courses (few or mixed).",
+      "also": []
+     }
+    },
+    {
+     "code": "LERN",
+     "common": {
+      "code": "MATH",
+      "discipline": "Mathematics",
+      "level": "High",
+      "from": "own_courses",
+      "why": "2 of 3 of its courses with an M-ID sit under MATH."
+     }
+    },
+    {
+     "code": "LIBR",
+     "title": {
+      "title": "Library",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 1 of 3 other colleges (mixed). course joins agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "LING",
+     "title": {
+      "title": "Linguistics",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 8 of 8 other colleges (all agree). course joins agrees.",
+      "also": []
+     },
+     "common": {
+      "code": "HUMA",
+      "discipline": "Humanities",
+      "level": "High",
+      "from": "own_courses",
+      "why": "6 of 6 of its courses with an M-ID sit under HUMA."
+     }
+    },
+    {
+     "code": "LIT",
+     "title": {
+      "title": "English",
+      "level": "Medium",
+      "from": "course_joins",
+      "why": "course joins: 4 of 4 joined courses (most courses agree).",
+      "also": []
+     },
+     "common": {
+      "code": "ENGL",
+      "discipline": "English",
+      "level": "Medium",
+      "from": "title",
+      "why": "The title names the discipline English."
+     }
+    },
+    {
+     "code": "MATH",
+     "title": {
+      "title": "Mathematics",
+      "level": "High",
+      "from": "course_joins",
+      "why": "course joins: 14 of 14 joined courses (most courses agree). other colleges, program titles agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "MEDI",
+     "title": {
+      "title": "Biology",
+      "level": "Medium",
+      "from": "course_joins",
+      "why": "course joins: 1 of 1 joined courses (few or mixed).",
+      "also": []
+     }
+    },
+    {
+     "code": "MENT",
+     "title": {
+      "title": "Mental Health Technology - Psychiatric Technician",
+      "level": "Low",
+      "from": "program_titles",
+      "why": "program titles: 2 of 2 programs (several agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "Law",
+        "from": "course_joins"
+       }
+      ]
+     }
+    },
+    {
+     "code": "METO",
+     "common": {
+      "code": "PHSC",
+      "discipline": "Physical Sciences",
+      "level": "High",
+      "from": "own_courses",
+      "why": "2 of 2 of its courses with an M-ID sit under PHSC."
+     }
+    },
+    {
+     "code": "MFG",
+     "title": {
+      "title": "Manufacturing Technology",
+      "level": "Low",
+      "from": "program_titles",
+      "why": "program titles: 1 of 1 programs (one or mixed).",
+      "also": []
+     },
+     "common": {
+      "code": "MANU",
+      "discipline": "Manufacturing Technology",
+      "level": "Low",
+      "from": "title",
+      "why": "The title names the discipline Manufacturing Technology."
+     }
+    },
+    {
+     "code": "MICR",
+     "title": {
+      "title": "Microbiology",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 2 of 2 other colleges (all agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "Biology",
+        "from": "course_joins"
+       }
+      ]
+     },
+     "common": {
+      "code": "BIOL",
+      "discipline": "Biological Sciences",
+      "level": "High",
+      "from": "own_courses",
+      "why": "3 of 3 of its courses with an M-ID sit under BIOL."
+     }
+    },
+    {
+     "code": "MUS",
+     "title": {
+      "title": "Music",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 3 of 3 other colleges (all agree). course joins, program titles agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "MUSA",
+     "title": {
+      "title": "Commercial Music",
+      "level": "Low",
+      "from": "course_joins",
+      "why": "course joins: 1 of 3 joined courses (few or mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "Audio Arts",
+        "from": "program_titles"
+       }
+      ]
+     }
+    },
+    {
+     "code": "NAIS",
+     "title": {
+      "title": "Native American & Indigenous Studies",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 2 of 2 other colleges (all agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "Ethnic Studies",
+        "from": "course_joins"
+       }
+      ]
+     },
+     "common": {
+      "code": "ETHS",
+      "discipline": "Ethnic Studies",
+      "level": "Medium",
+      "from": "same_code_statewide",
+      "why": "33 of 37 courses under this code statewide sit under ETHS."
+     }
+    },
+    {
+     "code": "NF",
+     "title": {
+      "title": "Law",
+      "level": "Low",
+      "from": "course_joins",
+      "why": "course joins: 2 of 5 joined courses (few or mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "Nutrition",
+        "from": "program_titles"
+       }
+      ]
+     },
+     "common": {
+      "code": "LEGL",
+      "discipline": "Law",
+      "level": "Low",
+      "from": "title",
+      "why": "The title names the discipline Law."
+     }
+    },
+    {
+     "code": "NURS",
+     "title": {
+      "title": "Nursing",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 2 of 2 other colleges (all agree). course joins, program titles agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "OCEA",
+     "title": {
+      "title": "Oceanography",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 1 of 1 other colleges (one college). course joins agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "PHIL",
+     "title": {
+      "title": "Philosophy",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 6 of 6 other colleges (all agree). course joins agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "PHOT",
+     "title": {
+      "title": "Photography",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 2 of 2 other colleges (all agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "Drone Camera Operator",
+        "from": "program_titles"
+       }
+      ]
+     }
+    },
+    {
+     "code": "PHSC",
+     "common": {
+      "code": "PHSC",
+      "discipline": "Physical Sciences",
+      "level": "High",
+      "from": "own_courses",
+      "why": "2 of 2 of its courses with an M-ID sit under PHSC."
+     }
+    },
+    {
+     "code": "PHYS",
+     "title": {
+      "title": "Physics",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 6 of 6 other colleges (all agree). course joins agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "PLGL",
+     "title": {
+      "title": "Paralegal/Legal Assistant",
+      "level": "Low",
+      "from": "program_titles",
+      "why": "program titles: 2 of 3 programs (several agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "Law",
+        "from": "course_joins"
+       }
+      ]
+     },
+     "common": {
+      "code": "LEGL",
+      "discipline": "Law",
+      "level": "High",
+      "from": "own_courses",
+      "why": "4 of 5 of its courses with an M-ID sit under LEGL."
+     }
+    },
+    {
+     "code": "POLS",
+     "title": {
+      "title": "Political Science",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 11 of 11 other colleges (all agree). course joins agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "PSYC",
+     "title": {
+      "title": "Psychology",
+      "level": "High",
+      "from": "course_joins",
+      "why": "course joins: 8 of 9 joined courses (most courses agree). other colleges agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "PUBH",
+     "title": {
+      "title": "Health",
+      "level": "Medium",
+      "from": "course_joins",
+      "why": "course joins: 1 of 1 joined courses (few or mixed).",
+      "also": []
+     },
+     "common": {
+      "code": "HLTH",
+      "discipline": "Health",
+      "level": "Medium",
+      "from": "title",
+      "why": "The title names the discipline Health."
+     }
+    },
+    {
+     "code": "R TV",
+     "title": {
+      "title": "Law",
+      "level": "Medium",
+      "from": "course_joins",
+      "why": "course joins: 2 of 7 joined courses (few or mixed).",
+      "also": []
+     },
+     "common": {
+      "code": "LEGL",
+      "discipline": "Law",
+      "level": "Medium",
+      "from": "title",
+      "why": "The title names the discipline Law."
+     }
+    },
+    {
+     "code": "RAD",
+     "title": {
+      "title": "Computed Tomography",
+      "level": "Low",
+      "from": "program_titles",
+      "why": "program titles: 1 of 2 programs (one or mixed).",
+      "also": []
+     }
+    },
+    {
+     "code": "READ",
+     "title": {
+      "title": "Reading",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 2 of 2 other colleges (all agree).",
+      "also": []
+     }
+    },
+    {
+     "code": "RESD",
+     "title": {
+      "title": "Respiratory Therapy",
+      "level": "High",
+      "from": "course_joins",
+      "why": "course joins: 1 of 1 joined courses (few or mixed). program titles agrees.",
+      "also": []
+     },
+     "common": {
+      "code": "RSPT",
+      "discipline": "Respiratory Technologies",
+      "level": "High",
+      "from": "own_courses",
+      "why": "16 of 17 of its courses with an M-ID sit under RSPT."
+     }
+    },
+    {
+     "code": "SIGN",
+     "title": {
+      "title": "American Sign Language",
+      "level": "Low",
+      "from": "course_joins",
+      "why": "course joins: 7 of 7 joined courses (most courses agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "Deaf Studies",
+        "from": "program_titles"
+       }
+      ]
+     }
+    },
+    {
+     "code": "SLPA",
+     "common": {
+      "code": "SLPA",
+      "discipline": "Speech Language Pathology",
+      "level": "High",
+      "from": "own_courses",
+      "why": "10 of 11 of its courses with an M-ID sit under SLPA."
+     }
+    },
+    {
+     "code": "SOC",
+     "title": {
+      "title": "Sociology",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 11 of 11 other colleges (all agree). course joins, program titles agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "SPAN",
+     "title": {
+      "title": "Spanish",
+      "level": "High",
+      "from": "course_joins",
+      "why": "course joins: 3 of 3 joined courses (most courses agree). other colleges agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "STAT",
+     "title": {
+      "title": "Statistics",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 8 of 11 other colleges (mixed). course joins agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "STDY",
+     "common": {
+      "code": "IDST",
+      "discipline": "Interdisciplinary Studies",
+      "level": "High",
+      "from": "own_courses",
+      "why": "4 of 4 of its courses with an M-ID sit under IDST."
+     }
+    },
+    {
+     "code": "SURV",
+     "common": {
+      "code": "ENGR",
+      "discipline": "Engineering",
+      "level": "High",
+      "from": "own_courses",
+      "why": "2 of 3 of its courses with an M-ID sit under ENGR."
+     }
+    },
+    {
+     "code": "TECH",
+     "title": {
+      "title": "Law",
+      "level": "Medium",
+      "from": "course_joins",
+      "why": "course joins: 1 of 1 joined courses (few or mixed).",
+      "also": []
+     },
+     "common": {
+      "code": "LEGL",
+      "discipline": "Law",
+      "level": "Medium",
+      "from": "title",
+      "why": "The title names the discipline Law."
+     }
+    },
+    {
+     "code": "THTR",
+     "title": {
+      "title": "Theater",
+      "level": "High",
+      "from": "course_joins",
+      "why": "course joins: 6 of 9 joined courses (most courses agree). program titles agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "TUTR",
+     "common": {
+      "code": "EDUC",
+      "discipline": "Education",
+      "level": "Medium",
+      "from": "same_code_statewide",
+      "why": "5 of 6 courses under this code statewide sit under EDUC."
+     }
+    },
+    {
+     "code": "WELD",
+     "title": {
+      "title": "Welding",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 2 of 3 other colleges (mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "Welder-Automotive, Cutting & Modification",
+        "from": "program_titles"
+       }
+      ]
+     }
+    },
+    {
+     "code": "ZOOL",
+     "title": {
+      "title": "Zoology",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 1 of 1 other colleges (one college). Another source reads differently.",
+      "also": [
+       {
+        "title": "Biology",
+        "from": "course_joins"
+       }
+      ]
+     },
+     "common": {
+      "code": "BIOL",
+      "discipline": "Biological Sciences",
+      "level": "Medium",
+      "from": "same_code_statewide",
+      "why": "9 of 10 courses under this code statewide sit under BIOL."
+     }
+    }
+   ]
+  },
+  {
+   "slug": "santa_ana",
+   "rows": [
+    {
+     "code": "ACCT",
+     "title": {
+      "title": "Accounting",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 3 of 3 other colleges (all agree). course joins, program titles agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "ANTH",
+     "title": {
+      "title": "Anthropology",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 6 of 6 other colleges (all agree). course joins, program titles agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "APCD",
+     "title": {
+      "title": "Child Development",
+      "level": "Low",
+      "from": "course_joins",
+      "why": "course joins: 6 of 6 joined courses (most courses agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "Infant and Toddler Education and Development",
+        "from": "program_titles"
+       }
+      ]
+     },
+     "common": {
+      "code": "CDEV",
+      "discipline": "Child Development/Early Childhood Education",
+      "level": "Low",
+      "from": "title",
+      "why": "The title names the discipline Child Development/Early Childhood Education."
+     }
+    },
+    {
+     "code": "ART",
+     "title": {
+      "title": "Art",
+      "level": "High",
+      "from": "course_joins",
+      "why": "course joins: 13 of 17 joined courses (most courses agree). other colleges, program titles agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "ASIA",
+     "title": {
+      "title": "Asian-American Studies",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 1 of 1 other colleges (one college). Another source reads differently.",
+      "also": [
+       {
+        "title": "Ethnic Studies",
+        "from": "course_joins"
+       }
+      ]
+     },
+     "common": {
+      "code": "SOCS",
+      "discipline": "Social Science",
+      "level": "Medium",
+      "from": "same_code_statewide",
+      "why": "5 of 8 courses under this code statewide sit under SOCS."
+     }
+    },
+    {
+     "code": "ASL",
+     "title": {
+      "title": "American Sign Language",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 4 of 4 other colleges (all agree). course joins, program titles agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "ASTR",
+     "title": {
+      "title": "Astronomy",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 5 of 5 other colleges (all agree). course joins agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "AUTO",
+     "title": {
+      "title": "Automotive Technology",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 4 of 4 other colleges (all agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "Alternative Powertrain Technology",
+        "from": "program_titles"
+       }
+      ]
+     }
+    },
+    {
+     "code": "BA",
+     "title": {
+      "title": "Business Administration",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 2 of 2 other colleges (all agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "Artificial Intelligence for Business",
+        "from": "program_titles"
+       },
+       {
+        "title": "Business Communications Office Technology",
+        "from": "course_joins"
+       }
+      ]
+     },
+     "common": {
+      "code": "BUSI",
+      "discipline": "Business",
+      "level": "High",
+      "from": "own_courses",
+      "why": "47 of 57 of its courses with an M-ID sit under BUSI."
+     }
+    },
+    {
+     "code": "BANK",
+     "title": {
+      "title": "Banking & Finance",
+      "level": "Low",
+      "from": "program_titles",
+      "why": "program titles: 1 of 1 programs (one or mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "Law",
+        "from": "course_joins"
+       }
+      ]
+     },
+     "common": {
+      "code": "BUSI",
+      "discipline": "Business",
+      "level": "High",
+      "from": "own_courses",
+      "why": "6 of 8 of its courses with an M-ID sit under BUSI."
+     }
+    },
+    {
+     "code": "BIOL",
+     "title": {
+      "title": "Biology",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 7 of 7 other colleges (all agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "Biological Science",
+        "from": "program_titles"
+       }
+      ]
+     }
+    },
+    {
+     "code": "BLST",
+     "common": {
+      "code": "ETHS",
+      "discipline": "Ethnic Studies",
+      "level": "Medium",
+      "from": "same_code_statewide",
+      "why": "7 of 7 courses under this code statewide sit under ETHS."
+     }
+    },
+    {
+     "code": "BUS",
+     "title": {
+      "title": "Business",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 10 of 10 other colleges (all agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "Law",
+        "from": "course_joins"
+       }
+      ]
+     }
+    },
+    {
+     "code": "CAR",
+     "title": {
+      "title": "Reading",
+      "level": "Medium",
+      "from": "course_joins",
+      "why": "course joins: 1 of 1 joined courses (few or mixed).",
+      "also": []
+     },
+     "common": {
+      "code": "READ",
+      "discipline": "Reading",
+      "level": "Medium",
+      "from": "title",
+      "why": "The title names the discipline Reading."
+     }
+    },
+    {
+     "code": "CDEV",
+     "title": {
+      "title": "Child Development",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 3 of 3 other colleges (all agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "Child Care Administration and Leadership",
+        "from": "program_titles"
+       }
+      ]
+     }
+    },
+    {
+     "code": "CHEM",
+     "title": {
+      "title": "Chemistry",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 14 of 14 other colleges (all agree). course joins, program titles agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "CHNS",
+     "title": {
+      "title": "Chinese",
+      "level": "Medium",
+      "from": "course_joins",
+      "why": "course joins: 2 of 2 joined courses (few or mixed).",
+      "also": []
+     }
+    },
+    {
+     "code": "CHST",
+     "title": {
+      "title": "Ethnic Studies",
+      "level": "Medium",
+      "from": "course_joins",
+      "why": "course joins: 1 of 1 joined courses (few or mixed).",
+      "also": []
+     },
+     "common": {
+      "code": "ETHS",
+      "discipline": "Ethnic Studies",
+      "level": "Medium",
+      "from": "title",
+      "why": "The title names the discipline Ethnic Studies."
+     }
+    },
+    {
+     "code": "CJ",
+     "title": {
+      "title": "Criminal Justice Option",
+      "level": "Low",
+      "from": "program_titles",
+      "why": "program titles: 1 of 2 programs (one or mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "Administration of Justice",
+        "from": "course_joins"
+       }
+      ]
+     }
+    },
+    {
+     "code": "CJA",
+     "title": {
+      "title": "Public Service",
+      "level": "Medium",
+      "from": "course_joins",
+      "why": "course joins: 2 of 4 joined courses (few or mixed).",
+      "also": []
+     }
+    },
+    {
+     "code": "CMPR",
+     "title": {
+      "title": "Computer Information Systems",
+      "level": "Low",
+      "from": "program_titles",
+      "why": "program titles: 2 of 15 programs (several agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "Computer Science",
+        "from": "course_joins"
+       }
+      ]
+     },
+     "common": {
+      "code": "ITIS",
+      "discipline": "Computer Information Systems",
+      "level": "Low",
+      "from": "title",
+      "why": "The title names the discipline Computer Information Systems."
+     }
+    },
+    {
+     "code": "CMST",
+     "title": {
+      "title": "Communication Studies",
+      "level": "High",
+      "from": "course_joins",
+      "why": "course joins: 8 of 9 joined courses (most courses agree). program titles agrees.",
+      "also": []
+     },
+     "common": {
+      "code": "COMM",
+      "discipline": "Communication Studies",
+      "level": "High",
+      "from": "title",
+      "why": "The title names the discipline Communication Studies."
+     }
+    },
+    {
+     "code": "CNSL",
+     "common": {
+      "code": "IDST",
+      "discipline": "Interdisciplinary Studies",
+      "level": "High",
+      "from": "own_courses",
+      "why": "15 of 18 of its courses with an M-ID sit under IDST."
+     }
+    },
+    {
+     "code": "COMM",
+     "title": {
+      "title": "Communication Studies",
+      "level": "High",
+      "from": "course_joins",
+      "why": "course joins: 4 of 4 joined courses (most courses agree). other colleges agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "CULN",
+     "title": {
+      "title": "Culinary Arts",
+      "level": "High",
+      "from": "course_joins",
+      "why": "course joins: 3 of 8 joined courses (few or mixed). program titles agrees.",
+      "also": []
+     },
+     "common": {
+      "code": "CULN",
+      "discipline": "Culinary Arts/Food Technology",
+      "level": "High",
+      "from": "title",
+      "why": "The title names the discipline Culinary Arts/Food Technology."
+     }
+    },
+    {
+     "code": "DETT",
+     "title": {
+      "title": "Law",
+      "level": "Low",
+      "from": "course_joins",
+      "why": "course joins: 1 of 1 joined courses (few or mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "Electric Heavy-Duty Vehicle Service",
+        "from": "program_titles"
+       }
+      ]
+     },
+     "common": {
+      "code": "LEGL",
+      "discipline": "Law",
+      "level": "Low",
+      "from": "title",
+      "why": "The title names the discipline Law."
+     }
+    },
+    {
+     "code": "DM",
+     "title": {
+      "title": "Broadcast Journalism",
+      "level": "Low",
+      "from": "program_titles",
+      "why": "program titles: 2 of 11 programs (several agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "Cinema",
+        "from": "course_joins"
+       }
+      ]
+     }
+    },
+    {
+     "code": "DNCE",
+     "title": {
+      "title": "Dance",
+      "level": "High",
+      "from": "course_joins",
+      "why": "course joins: 19 of 26 joined courses (most courses agree). program titles agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "DSL",
+     "title": {
+      "title": "Automotive Technology",
+      "level": "Medium",
+      "from": "course_joins",
+      "why": "course joins: 1 of 1 joined courses (few or mixed).",
+      "also": []
+     },
+     "common": {
+      "code": "AUTO",
+      "discipline": "Automotive Technology",
+      "level": "Medium",
+      "from": "title",
+      "why": "The title names the discipline Automotive Technology."
+     }
+    },
+    {
+     "code": "ECON",
+     "title": {
+      "title": "Economics",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 13 of 13 other colleges (all agree). course joins agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "EDUC",
+     "title": {
+      "title": "Education",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 12 of 12 other colleges (all agree). course joins, program titles agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "EMLS",
+     "title": {
+      "title": "English for Multilingual Students",
+      "level": "Medium",
+      "from": "other_colleges",
+      "why": "other colleges: 1 of 1 other colleges (one college).",
+      "also": []
+     }
+    },
+    {
+     "code": "EMT",
+     "title": {
+      "title": "Emergency Medical Technology",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 2 of 2 other colleges (all agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "Fire Technology",
+        "from": "course_joins"
+       }
+      ]
+     }
+    },
+    {
+     "code": "ENGL",
+     "title": {
+      "title": "English",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 12 of 12 other colleges (all agree). course joins agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "ENGR",
+     "title": {
+      "title": "Engineering",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 6 of 6 other colleges (all agree). course joins, program titles agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "ENTR",
+     "title": {
+      "title": "Entrepreneurship",
+      "level": "Medium",
+      "from": "other_colleges",
+      "why": "other colleges: 1 of 1 other colleges (one college).",
+      "also": []
+     },
+     "common": {
+      "code": "ENTR",
+      "discipline": "Small Business Development",
+      "level": "High",
+      "from": "own_courses",
+      "why": "9 of 14 of its courses with an M-ID sit under ENTR."
+     }
+    },
+    {
+     "code": "ENVR",
+     "title": {
+      "title": "Biology",
+      "level": "Medium",
+      "from": "course_joins",
+      "why": "course joins: 2 of 2 joined courses (few or mixed).",
+      "also": []
+     },
+     "common": {
+      "code": "BIOL",
+      "discipline": "Biological Sciences",
+      "level": "High",
+      "from": "own_courses",
+      "why": "3 of 5 of its courses with an M-ID sit under BIOL."
+     }
+    },
+    {
+     "code": "ERTH",
+     "title": {
+      "title": "Earth Science",
+      "level": "Medium",
+      "from": "course_joins",
+      "why": "course joins: 2 of 5 joined courses (few or mixed).",
+      "also": []
+     },
+     "common": {
+      "code": "GEOL",
+      "discipline": "Earth Science",
+      "level": "Medium",
+      "from": "title",
+      "why": "The title names the discipline Earth Science."
+     }
+    },
+    {
+     "code": "ETHN",
+     "title": {
+      "title": "Ethnic Studies",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 1 of 1 other colleges (one college). course joins agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "FAC",
+     "title": {
+      "title": "Fire and Emergency Technology",
+      "level": "Medium",
+      "from": "course_joins",
+      "why": "course joins: 5 of 7 joined courses (most courses agree).",
+      "also": []
+     }
+    },
+    {
+     "code": "FDM",
+     "title": {
+      "title": "Apparel Product Development and Technical Design",
+      "level": "Low",
+      "from": "program_titles",
+      "why": "program titles: 2 of 8 programs (several agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "Fashion",
+        "from": "course_joins"
+       }
+      ]
+     },
+     "common": {
+      "code": "FASH",
+      "discipline": "Fashion and Related Technologies",
+      "level": "High",
+      "from": "own_courses",
+      "why": "30 of 45 of its courses with an M-ID sit under FASH."
+     }
+    },
+    {
+     "code": "FOT",
+     "title": {
+      "title": "Fire Administration Option",
+      "level": "Low",
+      "from": "program_titles",
+      "why": "program titles: 2 of 4 programs (several agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "Public Service",
+        "from": "course_joins"
+       }
+      ]
+     }
+    },
+    {
+     "code": "FREN",
+     "title": {
+      "title": "French",
+      "level": "High",
+      "from": "course_joins",
+      "why": "course joins: 4 of 4 joined courses (most courses agree). other colleges agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "FSA",
+     "title": {
+      "title": "Fire Academy",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 1 of 1 other colleges (one college). Another source reads differently.",
+      "also": [
+       {
+        "title": "Fire Science Technology",
+        "from": "course_joins"
+       }
+      ]
+     },
+     "common": {
+      "code": "FIRE",
+      "discipline": "Fire Technology",
+      "level": "High",
+      "from": "own_courses",
+      "why": "6 of 7 of its courses with an M-ID sit under FIRE."
+     }
+    },
+    {
+     "code": "FTC",
+     "title": {
+      "title": "Fire Technology",
+      "level": "Low",
+      "from": "course_joins",
+      "why": "course joins: 3 of 3 joined courses (most courses agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "Public Fire Service Option",
+        "from": "program_titles"
+       }
+      ]
+     },
+     "common": {
+      "code": "FIRE",
+      "discipline": "Fire Technology",
+      "level": "Low",
+      "from": "title",
+      "why": "The title names the discipline Fire Technology."
+     }
+    },
+    {
+     "code": "GEOG",
+     "title": {
+      "title": "Geography",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 15 of 15 other colleges (all agree). course joins, program titles agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "GEOL",
+     "title": {
+      "title": "Geology",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 6 of 6 other colleges (all agree). course joins, program titles agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "HIST",
+     "title": {
+      "title": "History",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 13 of 13 other colleges (all agree). course joins agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "IDS",
+     "title": {
+      "title": "Sociology",
+      "level": "Medium",
+      "from": "course_joins",
+      "why": "course joins: 1 of 1 joined courses (few or mixed).",
+      "also": []
+     },
+     "common": {
+      "code": "SOCI",
+      "discipline": "Sociology",
+      "level": "Medium",
+      "from": "title",
+      "why": "The title names the discipline Sociology."
+     }
+    },
+    {
+     "code": "INFO",
+     "common": {
+      "code": "CSIS",
+      "discipline": "Artificial Intelligence",
+      "level": "Medium",
+      "from": "same_code_statewide",
+      "why": "13 of 13 courses under this code statewide sit under CSIS."
+     }
+    },
+    {
+     "code": "ITAL",
+     "title": {
+      "title": "Italian",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 2 of 3 other colleges (mixed). course joins agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "JAMS",
+     "title": {
+      "title": "Journalism",
+      "level": "High",
+      "from": "course_joins",
+      "why": "course joins: 3 of 4 joined courses (most courses agree). other colleges, program titles agrees.",
+      "also": []
+     },
+     "common": {
+      "code": "JOUR",
+      "discipline": "Journalism",
+      "level": "High",
+      "from": "title",
+      "why": "The title names the discipline Journalism."
+     }
+    },
+    {
+     "code": "JAPN",
+     "title": {
+      "title": "Japanese",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 1 of 1 other colleges (one college). course joins agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "KNAC",
+     "title": {
+      "title": "Physical Education",
+      "level": "Medium",
+      "from": "course_joins",
+      "why": "course joins: 8 of 14 joined courses (few or mixed).",
+      "also": []
+     },
+     "common": {
+      "code": "KINE",
+      "discipline": "Kinesiology",
+      "level": "High",
+      "from": "own_courses",
+      "why": "29 of 30 of its courses with an M-ID sit under KINE."
+     }
+    },
+    {
+     "code": "KNAD",
+     "common": {
+      "code": "PEDS",
+      "discipline": "Physical Education Disabled Students",
+      "level": "High",
+      "from": "own_courses",
+      "why": "8 of 8 of its courses with an M-ID sit under PEDS."
+     }
+    },
+    {
+     "code": "KNAF",
+     "common": {
+      "code": "KINE",
+      "discipline": "Kinesiology",
+      "level": "High",
+      "from": "own_courses",
+      "why": "9 of 9 of its courses with an M-ID sit under KINE."
+     }
+    },
+    {
+     "code": "KNAQ",
+     "title": {
+      "title": "Physical Education",
+      "level": "Medium",
+      "from": "course_joins",
+      "why": "course joins: 1 of 1 joined courses (few or mixed).",
+      "also": []
+     },
+     "common": {
+      "code": "KINE",
+      "discipline": "Kinesiology",
+      "level": "High",
+      "from": "own_courses",
+      "why": "2 of 2 of its courses with an M-ID sit under KINE."
+     }
+    },
+    {
+     "code": "KNFI",
+     "title": {
+      "title": "Physical Education",
+      "level": "Medium",
+      "from": "course_joins",
+      "why": "course joins: 5 of 5 joined courses (most courses agree).",
+      "also": []
+     },
+     "common": {
+      "code": "KINE",
+      "discipline": "Kinesiology",
+      "level": "High",
+      "from": "own_courses",
+      "why": "19 of 19 of its courses with an M-ID sit under KINE."
+     }
+    },
+    {
+     "code": "KNHE",
+     "title": {
+      "title": "Health Education",
+      "level": "Low",
+      "from": "course_joins",
+      "why": "course joins: 3 of 5 joined courses (most courses agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "Kinesiology",
+        "from": "program_titles"
+       }
+      ]
+     },
+     "common": {
+      "code": "HLTH",
+      "discipline": "Health",
+      "level": "High",
+      "from": "own_courses",
+      "why": "5 of 8 of its courses with an M-ID sit under HLTH."
+     }
+    },
+    {
+     "code": "KNIA",
+     "title": {
+      "title": "Athletics",
+      "level": "Medium",
+      "from": "course_joins",
+      "why": "course joins: 16 of 19 joined courses (most courses agree).",
+      "also": []
+     },
+     "common": {
+      "code": "KINE",
+      "discipline": "Kinesiology",
+      "level": "High",
+      "from": "own_courses",
+      "why": "33 of 33 of its courses with an M-ID sit under KINE."
+     }
+    },
+    {
+     "code": "KNPR",
+     "title": {
+      "title": "Kinesiology",
+      "level": "Low",
+      "from": "course_joins",
+      "why": "course joins: 4 of 8 joined courses (few or mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "Fitness Specialist",
+        "from": "program_titles"
+       }
+      ]
+     },
+     "common": {
+      "code": "KINE",
+      "discipline": "Kinesiology",
+      "level": "Low",
+      "from": "title",
+      "why": "The title names the discipline Kinesiology."
+     }
+    },
+    {
+     "code": "LAW",
+     "title": {
+      "title": "Law",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 8 of 9 other colleges (mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "Legal Office Interpreting Spanish",
+        "from": "program_titles"
+       }
+      ]
+     }
+    },
+    {
+     "code": "LIBR",
+     "title": {
+      "title": "Library",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 1 of 3 other colleges (mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "Archives and Digital Collections",
+        "from": "program_titles"
+       },
+       {
+        "title": "Law",
+        "from": "course_joins"
+       }
+      ]
+     }
+    },
+    {
+     "code": "MA",
+     "title": {
+      "title": "Medical Assistant",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 1 of 2 other colleges (mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "Allied Health",
+        "from": "course_joins"
+       }
+      ]
+     }
+    },
+    {
+     "code": "MATH",
+     "title": {
+      "title": "Mathematics",
+      "level": "High",
+      "from": "course_joins",
+      "why": "course joins: 13 of 13 joined courses (most courses agree). other colleges, program titles agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "MGMT",
+     "title": {
+      "title": "Management",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 9 of 10 other colleges (mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "Business Administration",
+        "from": "course_joins"
+       }
+      ]
+     }
+    },
+    {
+     "code": "MKTG",
+     "title": {
+      "title": "Business, Marketing",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 1 of 2 other colleges (mixed). course joins agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "MNFG",
+     "title": {
+      "title": "CNC Lathe Set Up & Operation",
+      "level": "Low",
+      "from": "program_titles",
+      "why": "program titles: 2 of 12 programs (several agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "Computer Aid Design",
+        "from": "course_joins"
+       }
+      ]
+     }
+    },
+    {
+     "code": "MUS",
+     "title": {
+      "title": "Music",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 3 of 3 other colleges (all agree). course joins, program titles agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "NCE",
+     "common": {
+      "code": "HLTH",
+      "discipline": "Health",
+      "level": "High",
+      "from": "own_courses",
+      "why": "2 of 3 of its courses with an M-ID sit under HLTH."
+     }
+    },
+    {
+     "code": "NRN",
+     "title": {
+      "title": "Associates Degree in Nursing",
+      "level": "Medium",
+      "from": "course_joins",
+      "why": "course joins: 1 of 3 joined courses (few or mixed).",
+      "also": []
+     }
+    },
+    {
+     "code": "NUTR",
+     "title": {
+      "title": "Nutrition & Dietetics",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 1 of 2 other colleges (mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "Culinary Arts",
+        "from": "course_joins"
+       },
+       {
+        "title": "Culinary Nutrition",
+        "from": "program_titles"
+       }
+      ]
+     }
+    },
+    {
+     "code": "OS",
+     "common": {
+      "code": "HLTH",
+      "discipline": "Health",
+      "level": "High",
+      "from": "own_courses",
+      "why": "8 of 9 of its courses with an M-ID sit under HLTH."
+     }
+    },
+    {
+     "code": "OTA",
+     "title": {
+      "title": "Occupational Therapy Assistant",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 1 of 1 other colleges (one college). program titles agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "PARA",
+     "title": {
+      "title": "Paralegal Studies",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 1 of 1 other colleges (one college). Another source reads differently.",
+      "also": [
+       {
+        "title": "Law",
+        "from": "course_joins"
+       }
+      ]
+     }
+    },
+    {
+     "code": "PHAR",
+     "title": {
+      "title": "Pharmacy Technician",
+      "level": "Low",
+      "from": "course_joins",
+      "why": "course joins: 6 of 6 joined courses (most courses agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "Pharmacy Technology",
+        "from": "program_titles"
+       }
+      ]
+     },
+     "common": {
+      "code": "PHMT",
+      "discipline": "Pharmacy Technology",
+      "level": "High",
+      "from": "own_courses",
+      "why": "17 of 20 of its courses with an M-ID sit under PHMT."
+     }
+    },
+    {
+     "code": "PHIL",
+     "title": {
+      "title": "Philosophy",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 6 of 6 other colleges (all agree). course joins, program titles agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "PHOT",
+     "title": {
+      "title": "Photography",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 2 of 2 other colleges (all agree). course joins, program titles agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "PHYS",
+     "title": {
+      "title": "Physics",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 6 of 6 other colleges (all agree). Another source reads differently.",
+      "also": [
+       {
+        "title": "Engineering",
+        "from": "program_titles"
+       }
+      ]
+     }
+    },
+    {
+     "code": "POLS",
+     "title": {
+      "title": "Political Science",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 11 of 11 other colleges (all agree). course joins agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "POLT",
+     "title": {
+      "title": "Global Studies",
+      "level": "Medium",
+      "from": "course_joins",
+      "why": "course joins: 2 of 3 joined courses (most courses agree).",
+      "also": []
+     },
+     "common": {
+      "code": "SOCS",
+      "discipline": "Social Science",
+      "level": "High",
+      "from": "own_courses",
+      "why": "2 of 2 of its courses with an M-ID sit under SOCS."
+     }
+    },
+    {
+     "code": "PSC",
+     "common": {
+      "code": "PHSC",
+      "discipline": "Physical Sciences",
+      "level": "High",
+      "from": "own_courses",
+      "why": "2 of 3 of its courses with an M-ID sit under PHSC."
+     }
+    },
+    {
+     "code": "PSYC",
+     "title": {
+      "title": "Psychology",
+      "level": "High",
+      "from": "course_joins",
+      "why": "course joins: 10 of 12 joined courses (most courses agree). other colleges agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "READ",
+     "title": {
+      "title": "Reading",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 2 of 2 other colleges (all agree).",
+      "also": []
+     }
+    },
+    {
+     "code": "SLPA",
+     "title": {
+      "title": "Linguistics",
+      "level": "Medium",
+      "from": "course_joins",
+      "why": "course joins: 1 of 1 joined courses (few or mixed).",
+      "also": []
+     },
+     "common": {
+      "code": "SLPA",
+      "discipline": "Speech Language Pathology",
+      "level": "High",
+      "from": "own_courses",
+      "why": "7 of 7 of its courses with an M-ID sit under SLPA."
+     }
+    },
+    {
+     "code": "SOC",
+     "title": {
+      "title": "Sociology",
+      "level": "High",
+      "from": "other_colleges",
+      "why": "other colleges: 11 of 11 other colleges (all agree). course joins, program titles agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "SPAN",
+     "title": {
+      "title": "Spanish",
+      "level": "High",
+      "from": "course_joins",
+      "why": "course joins: 6 of 6 joined courses (most courses agree). other colleges, program titles agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "SPEC",
+     "title": {
+      "title": "Counseling/Guidance",
+      "level": "Medium",
+      "from": "course_joins",
+      "why": "course joins: 1 of 1 joined courses (few or mixed).",
+      "also": []
+     },
+     "common": {
+      "code": "COUN",
+      "discipline": "Counseling",
+      "level": "Medium",
+      "from": "title",
+      "why": "The title names the discipline Counseling."
+     }
+    },
+    {
+     "code": "STAT",
+     "title": {
+      "title": "Statistics",
+      "level": "High",
+      "from": "course_joins",
+      "why": "course joins: 3 of 3 joined courses (most courses agree). other colleges agrees.",
+      "also": []
+     }
+    },
+    {
+     "code": "STDY",
+     "common": {
+      "code": "IDST",
+      "discipline": "Interdisciplinary Studies",
+      "level": "Medium",
+      "from": "same_code_statewide",
+      "why": "4 of 4 courses under this code statewide sit under IDST."
+     }
+    },
+    {
+     "code": "THEA",
+     "title": {
+      "title": "Theatre",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 1 of 2 other colleges (mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "Theater",
+        "from": "course_joins"
+       },
+       {
+        "title": "Costume Design and Technology",
+        "from": "program_titles"
+       }
+      ]
+     },
+     "common": {
+      "code": "THTR",
+      "discipline": "Drama/Theater Arts",
+      "level": "High",
+      "from": "own_courses",
+      "why": "46 of 52 of its courses with an M-ID sit under THTR."
+     }
+    },
+    {
+     "code": "WELD",
+     "title": {
+      "title": "Welding",
+      "level": "Low",
+      "from": "other_colleges",
+      "why": "other colleges: 2 of 3 other colleges (mixed). Another source reads differently.",
+      "also": [
+       {
+        "title": "Vocational",
+        "from": "course_joins"
+       }
+      ]
+     }
+    },
+    {
+     "code": "WMNS",
+     "title": {
+      "title": "Women's Studies",
+      "level": "Medium",
+      "from": "course_joins",
+      "why": "course joins: 1 of 1 joined courses (few or mixed).",
+      "also": []
+     },
+     "common": {
+      "code": "WMST",
+      "discipline": "Women’s Studies",
+      "level": "Medium",
+      "from": "title",
+      "why": "The title names the discipline Women’s Studies."
      }
     }
    ]
@@ -7865,7 +11064,7 @@
      "common": {
       "code": "SOCS",
       "discipline": "Social Science",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 4 of its courses with an M-ID sit under SOCS."
      }
@@ -7899,7 +11098,7 @@
      "common": {
       "code": "SOCS",
       "discipline": "Social Science",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "4 of 6 of its courses with an M-ID sit under SOCS."
      }
@@ -7929,7 +11128,7 @@
      "common": {
       "code": "DRAF",
       "discipline": "Drafting/CADD",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "12 of 12 of its courses with an M-ID sit under DRAF."
      }
@@ -7939,7 +11138,7 @@
      "common": {
       "code": "CNSM",
       "discipline": "Construction Management",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "9 of 12 of its courses with an M-ID sit under CNSM."
      }
@@ -7949,7 +11148,7 @@
      "common": {
       "code": "NRSR",
       "discipline": "Nursing",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "6 of 6 of its courses with an M-ID sit under NRSR."
      }
@@ -7969,7 +11168,7 @@
      "common": {
       "code": "WEXP",
       "discipline": "Work Experience Instructors",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "4 of 5 of its courses with an M-ID sit under WEXP."
      }
@@ -7989,7 +11188,7 @@
      "common": {
       "code": "KINE",
       "discipline": "Kinesiology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "179 of 182 of its courses with an M-ID sit under KINE."
      }
@@ -7999,7 +11198,7 @@
      "common": {
       "code": "KINE",
       "discipline": "Kinesiology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "41 of 41 of its courses with an M-ID sit under KINE."
      }
@@ -8009,7 +11208,7 @@
      "common": {
       "code": "PEDS",
       "discipline": "Physical Education Disabled Students",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "6 of 6 of its courses with an M-ID sit under PEDS."
      }
@@ -8019,7 +11218,7 @@
      "common": {
       "code": "KINE",
       "discipline": "Kinesiology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "60 of 61 of its courses with an M-ID sit under KINE."
      }
@@ -8029,7 +11228,7 @@
      "common": {
       "code": "FCSH",
       "discipline": "Family and Consumer Studies/ Home Economics",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 3 of its courses with an M-ID sit under FCSH."
      }
@@ -8039,7 +11238,7 @@
      "common": {
       "code": "FIRE",
       "discipline": "Fire Technology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "24 of 30 of its courses with an M-ID sit under FIRE."
      }
@@ -8049,7 +11248,7 @@
      "common": {
       "code": "FCSH",
       "discipline": "Family and Consumer Studies/ Home Economics",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 3 of its courses with an M-ID sit under FCSH."
      }
@@ -8083,7 +11282,7 @@
      "common": {
       "code": "BUSI",
       "discipline": "Business",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "4 of 4 of its courses with an M-ID sit under BUSI."
      }
@@ -8093,7 +11292,7 @@
      "common": {
       "code": "HORT",
       "discipline": "Ornamental Horticulture",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 4 of its courses with an M-ID sit under HORT."
      }
@@ -8103,7 +11302,7 @@
      "common": {
       "code": "MGMT",
       "discipline": "Management",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "7 of 10 of its courses with an M-ID sit under MGMT."
      }
@@ -8113,7 +11312,7 @@
      "common": {
       "code": "HORT",
       "discipline": "Ornamental Horticulture",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "32 of 35 of its courses with an M-ID sit under HORT."
      }
@@ -8123,7 +11322,7 @@
      "common": {
       "code": "IDST",
       "discipline": "Interdisciplinary Studies",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 4 of its courses with an M-ID sit under IDST."
      }
@@ -8133,7 +11332,7 @@
      "common": {
       "code": "DRAF",
       "discipline": "Drafting/CADD",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under DRAF."
      }
@@ -8143,7 +11342,7 @@
      "common": {
       "code": "HLTH",
       "discipline": "Health",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "13 of 17 of its courses with an M-ID sit under HLTH."
      }
@@ -8153,7 +11352,7 @@
      "common": {
       "code": "ETHS",
       "discipline": "Ethnic Studies",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 3 of its courses with an M-ID sit under ETHS."
      }
@@ -8173,7 +11372,7 @@
      "common": {
       "code": "HLTH",
       "discipline": "Health",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "7 of 9 of its courses with an M-ID sit under HLTH."
      }
@@ -8183,7 +11382,7 @@
      "common": {
       "code": "IDST",
       "discipline": "Interdisciplinary Studies",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "33 of 41 of its courses with an M-ID sit under IDST."
      }
@@ -8217,7 +11416,7 @@
      "common": {
       "code": "DANC",
       "discipline": "Dance",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under DANC."
      }
@@ -8227,7 +11426,7 @@
      "common": {
       "code": "PEDS",
       "discipline": "Physical Education Disabled Students",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 3 of its courses with an M-ID sit under PEDS."
      }
@@ -8237,7 +11436,7 @@
      "common": {
       "code": "KINE",
       "discipline": "Kinesiology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under KINE."
      }
@@ -8291,7 +11490,7 @@
      "common": {
       "code": "RECR",
       "discipline": "Recreation Administration",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "4 of 4 of its courses with an M-ID sit under RECR."
      }
@@ -8301,7 +11500,7 @@
      "common": {
       "code": "ARCH",
       "discipline": "Architecture",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under ARCH."
      }
@@ -8343,7 +11542,7 @@
      "common": {
       "code": "COUN",
       "discipline": "Counseling",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "9 of 14 of its courses with an M-ID sit under COUN."
      }
@@ -8353,7 +11552,7 @@
      "common": {
       "code": "WEXP",
       "discipline": "Work Experience Instructors",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "4 of 4 of its courses with an M-ID sit under WEXP."
      }
@@ -8363,7 +11562,7 @@
      "common": {
       "code": "THTR",
       "discipline": "Drama/Theater Arts",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "21 of 21 of its courses with an M-ID sit under THTR."
      }
@@ -8388,7 +11587,7 @@
      "common": {
       "code": "COUN",
       "discipline": "Counseling",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "8 of 8 of its courses with an M-ID sit under COUN."
      }
@@ -8405,7 +11604,7 @@
      "common": {
       "code": "ETHS",
       "discipline": "Ethnic Studies",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 3 of its courses with an M-ID sit under ETHS."
      }
@@ -8454,7 +11653,7 @@
      "common": {
       "code": "ETHS",
       "discipline": "Ethnic Studies",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 4 of its courses with an M-ID sit under ETHS."
      }
@@ -8471,7 +11670,7 @@
      "common": {
       "code": "AVIA",
       "discipline": "Aviation",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "20 of 30 of its courses with an M-ID sit under AVIA."
      }
@@ -8481,7 +11680,7 @@
      "common": {
       "code": "BIOL",
       "discipline": "Biological Sciences",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 3 of its courses with an M-ID sit under BIOL."
      }
@@ -8528,7 +11727,7 @@
      "common": {
       "code": "WEXP",
       "discipline": "Work Experience Instructors",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "5 of 5 of its courses with an M-ID sit under WEXP."
      }
@@ -8538,7 +11737,7 @@
      "common": {
       "code": "CRIM",
       "discipline": "Administration of Justice",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under CRIM."
      }
@@ -8580,7 +11779,7 @@
      "common": {
       "code": "DANC",
       "discipline": "Dance",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under DANC."
      }
@@ -8590,7 +11789,7 @@
      "common": {
       "code": "DENT",
       "discipline": "Dental Technology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "12 of 16 of its courses with an M-ID sit under DENT."
      }
@@ -8607,7 +11806,7 @@
      "common": {
       "code": "DENT",
       "discipline": "Dental Technology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "23 of 30 of its courses with an M-ID sit under DENT."
      }
@@ -8648,7 +11847,7 @@
       "title": "English",
       "level": "High",
       "from": "other_colleges",
-      "why": "other colleges: 6 of 6 other colleges (all agree). course joins, district agrees.",
+      "why": "other colleges: 7 of 7 other colleges (all agree). course joins, district agrees.",
       "also": []
      }
     },
@@ -8696,7 +11895,7 @@
      "common": {
       "code": "BUSI",
       "discipline": "Business",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "3 of 3 of its courses with an M-ID sit under BUSI."
      }
@@ -8731,7 +11930,7 @@
      "common": {
       "code": "MULT",
       "discipline": "Multimedia",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "6 of 6 of its courses with an M-ID sit under MULT."
      }
@@ -8753,7 +11952,7 @@
      "common": {
       "code": "HTEC",
       "discipline": "Health Care Ancillaries",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "11 of 11 of its courses with an M-ID sit under HTEC."
      }
@@ -8763,7 +11962,7 @@
      "common": {
       "code": "FCSH",
       "discipline": "Family and Consumer Studies/ Home Economics",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "9 of 12 of its courses with an M-ID sit under FCSH."
      }
@@ -8773,7 +11972,7 @@
      "common": {
       "code": "KINE",
       "discipline": "Kinesiology",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "15 of 15 of its courses with an M-ID sit under KINE."
      }
@@ -8871,7 +12070,7 @@
      "common": {
       "code": "NRSR",
       "discipline": "Nursing",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "11 of 15 of its courses with an M-ID sit under NRSR."
      }
@@ -8881,7 +12080,7 @@
      "common": {
       "code": "LEGL",
       "discipline": "Law",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "9 of 10 of its courses with an M-ID sit under LEGL."
      }
@@ -8901,7 +12100,7 @@
      "common": {
       "code": "PHSC",
       "discipline": "Physical Sciences",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under PHSC."
      }
@@ -8948,7 +12147,7 @@
      "common": {
       "code": "THTR",
       "discipline": "Drama/Theater Arts",
-      "level": "Medium",
+      "level": "High",
       "from": "own_courses",
       "why": "2 of 2 of its courses with an M-ID sit under THTR."
      }
