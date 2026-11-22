@@ -3791,6 +3791,9 @@ module.exports = {
     routes: [{ hash: "commons/subjects/cerritos", name: "subjects-cerritos" }, { hash: "commons/subjects/disagree", name: "subjects-disagree" }, { hash: "commons/subjects/held", name: "subjects-held" },
       /* S700: a local code's course panel, credit and noncredit apart. */
       { hash: "commons/subjects/cerritos/MATH", name: "subjects-course-panel" },
+      /* S702: the front list at the window's width, with Edit on every row and its counts as controls, and the
+         panel over the front list. */
+      { hash: "commons/subjects", name: "subjects-front" }, { hash: "commons/subjects/all/cerritos/AED", name: "subjects-front-panel" },
       /* S700: the draft noncredit subject title list. */
       { hash: "commons/subjects/noncredit", name: "subjects-noncredit" },
       /* S701: Edit and Save in a code's panel, signed in, with a title refused for its capitals. */

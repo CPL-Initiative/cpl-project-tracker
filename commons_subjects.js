@@ -381,11 +381,38 @@
     return { list: list, by: by, totals: f.totals || {}, rule: f._rule || "", built: (f._sources || {}).state_list_built_at || "" };
   }
 
-  var S = { view: "", code: "", band: "" };   /* view: "", a college slug, "disagree" or "held"; code: the local code whose course
-                                       panel is open at that college. The visit's pick, which only the address carries. */
+  /* view: the surface, "" (every college), a college slug, "disagree", "held" or "noncredit"; code: the local code
+     whose course panel is open; at: that code's college where the surface is not the college's own view (S702, Sam,
+     2026-11-22: the panel and Edit open from every Subjects surface); band and pick: the visit's filters, never stored.
+     The address carries the surface and the panel: <slug>/<code> on a college's view, <surface>/<slug>/<code> on the
+     three lists, all/<slug>/<code> on the front list. */
+  var S = { view: "", code: "", at: "", band: "", pick: "" };
+  var ALL = "all";
   function address() {
-    var base = S.view ? "commons/subjects/" + encodeURIComponent(S.view) : "commons/subjects";
+    var base = S.view ? "commons/subjects/" + encodeURIComponent(S.view) : S.code ? "commons/subjects/" + ALL : "commons/subjects";
+    if (S.code && S.at) base += "/" + encodeURIComponent(S.at);
     return S.code ? base + "/" + S.code.split("/").map(encodeURIComponent).join("/") : base;
+  }
+  /* The same pick as render reads it: the surface, then the panel's college and code. */
+  function viewPath() {
+    if (!S.code) return S.view;
+    return (S.view || ALL) + (S.at ? "/" + S.at : "") + "/" + S.code;
+  }
+  function panelPath(slug, code) { return S.view === slug ? slug + "/" + code : (S.view || ALL) + "/" + slug + "/" + code; }
+  /* The filters a count opens (CLAUDE.md, a figure card opens what it counts). */
+  var PICKS = {
+    both: ["in both the catalog and COCI", function (r) { return r.side === "both"; }],
+    catalog: ["in the catalog only", function (r) { return r.side === "catalog"; }],
+    state: ["in COCI only", function (r) { return r.side === "state"; }],
+    incat: ["in the catalog", function (r) { return r.side !== "state"; }],
+    titled: ["with a local title", function (r) { var sv = savedOf(r); return !needsTitle(r) || !!(sv && sv.title); }],
+    common: ["with a common subject code", function (r) { var sv = savedOf(r); return !!r.common || !!(sv && sv.common); }],
+    saved: ["settled by a person’s save", function (r) { return !!savedOf(r); }]
+  };
+  function inPick(r) { return !S.pick || !PICKS[S.pick] || PICKS[S.pick][1](r); }
+  /* A figure that opens the rows it counts: the surface (a college slug, or "" for every college) and the filter. */
+  function count(n, slug, pick, label) {
+    return el("button", { type: "button", cls: "csb-word csb-num", "data-csb-pick": pick, "data-csb-pick-at": slug, "aria-label": label, text: fmt(n) });
   }
   function go(href, text) { return el("a", { href: href, "data-csb-go": href.replace(/^#commons\/subjects\/?/, ""), text: text }); }
 
@@ -402,8 +429,12 @@
         .map(function (t) { return el("th", { scope: "col", text: t }); }))]),
       el("tbody", null, list.map(function (c) {
         return el("tr", { "data-college": c.slug }, [el("th", { scope: "row" }, [S.view === c.slug ? c.college : go("#commons/subjects/" + c.slug, c.college)]),
-          el("td", { text: fmt(c.codes) }), el("td", { cls: c.named ? null : "csb-tba", text: c.named ? fmt(c.named) : "TBA" }),
-          el("td", { text: fmt(c.both) }), el("td", { text: fmt(c.catalogOnly) }), el("td", { text: fmt(c.stateOnly) })]);
+          el("td", null, [count(c.codes, c.slug, "incat", fmt(c.codes) + " subject codes in the catalog at " + c.college + ". Show them.")]),
+          c.named ? el("td", null, [count(c.named, c.slug, "titled", fmt(c.named) + " codes with a local title at " + c.college + ". Show them."), " of " + fmt(c.rows.length) + " codes"])
+            : el("td", { cls: "csb-tba", text: "TBA" }),
+          el("td", null, [count(c.both, c.slug, "both", fmt(c.both) + " codes in both the catalog and COCI at " + c.college + ". Show them.")]),
+          el("td", null, [count(c.catalogOnly, c.slug, "catalog", fmt(c.catalogOnly) + " codes in the catalog only at " + c.college + ". Show them.")]),
+          el("td", null, [count(c.stateOnly, c.slug, "state", fmt(c.stateOnly) + " codes in COCI only at " + c.college + ". Show them.")])]);
       }))]);
     return el("div", { cls: "csb-wrap", role: "region", "aria-label": "Colleges with a catalog on file", tabindex: "0" }, [tbl]);
   }
@@ -411,8 +442,8 @@
   /* The codes, one row each: college, local code, printed name (the draft title), common code, courses, side. */
   function codeTable(rows, label) {
     var tbl = el("table", { cls: "csb-table csb-codes" }, [
-      el("colgroup", null, [el("col", { cls: "csb-c-wide" }), el("col"), el("col", { cls: "csb-c-wide" }), el("col"), el("col"), el("col")]),
-      el("thead", null, [el("tr", null, ["College", "Local code", "Local Title", "Common subject code", "Courses", "Source"]
+      el("colgroup", null, [el("col", { cls: "csb-c-wide" }), el("col"), el("col", { cls: "csb-c-wide" }), el("col"), el("col"), el("col"), el("col", { cls: "csb-c-act" })]),
+      el("thead", null, [el("tr", null, ["College", "Local code", "Local Title", "Common subject code", "Courses", "Source", "Settle"]
         .map(function (t) { return el("th", { scope: "col", text: t }); }))]),
       el("tbody", null, rows.length ? rows.map(function (r) {
         var heads = r.side === "state" ? fmt(r.state_courses) + " in COCI" + bands(r)
@@ -435,9 +466,12 @@
             r.common_source === "statewide_filing" ? " " : null,
             r.common_source === "statewide_filing" ? el("span", { cls: "csb-sub csb-saved", text: "Filed statewide by a person in the Local subjects List." }) : null,
             !r.common && recOf(r).common ? recNote("common", recOf(r).common.code + " " + recOf(r).common.discipline, recOf(r).common) : null]),
-          el("td", null, [heads, categoryLine(r)]),
-          el("td", { text: st && r.title_state === "not_read" ? st.word : SIDES[r.side] || r.side })]);
-      }) : [el("tr", null, [el("td", { colspan: "6", text: "No code is in this list." })])])]);
+          el("td", null, [el("button", { type: "button", cls: "csb-word csb-num", "data-csb-code": r.code, "data-csb-slug": r.slug,
+            "aria-label": "Courses under " + r.code + " at " + r.college + ": " + heads + ". Show them.", text: heads }), categoryLine(r)]),
+          el("td", { text: st && r.title_state === "not_read" ? st.word : SIDES[r.side] || r.side }),
+          el("td", null, [el("button", { type: "button", cls: "csb-word", "data-csb-code": r.code, "data-csb-slug": r.slug, "data-csb-edit": "yes",
+            "aria-label": "Edit " + r.code + " at " + r.college, text: "Edit" })])]);
+      }) : [el("tr", null, [el("td", { colspan: "7", text: "No code is in this list." })])])]);
     return el("div", { cls: "csb-wrap", role: "region", "aria-label": label, tabindex: "0" }, [tbl]);
   }
 
@@ -475,7 +509,7 @@
         return el("tr", { "data-code": c.key, "data-held": String(c.held) }, [
           el("th", { scope: "row" }, [c.code, (c.printed_names || []).length ? el("span", { cls: "csb-sub", text: c.printed_names.join("; ") }) : null]),
           el("td", { text: fmt(c.held) }),
-          el("td", { text: (c.colleges || []).map(function (x) { return x.college + " " + fmt(x.held); }).join("; ") }),
+          el("td", null, sep((c.colleges || []).map(function (x) { return codeAt(slugOfName(x.college), c.code, x.college + " " + fmt(x.held)); }))),
           el("td", { text: (c.examples || []).map(function (x) { return x.title + " (" + x.college + ")"; }).join("; ") }),
           el("td", { cls: "csb-ev" }, evidence(c))]);
       }) : [el("tr", null, [el("td", { colspan: "5", text: "The pile mint holds no course for want of a common subject code." })])])]);
@@ -495,14 +529,14 @@
             : m.mq_discipline ? "Noncredit MQ discipline: " + m.mq_discipline + ". No common subject code yet." : "No noncredit MQ discipline is named for this category, and no common subject code yet." })])]));
         last = cat;
       }
-      var where = (t.members || []).map(function (x) { return (names[x.college] || x.college) + " " + x.code; }).join("; ");
+      var where = sep((t.members || []).map(function (x) { return codeAt(x.college, x.code, (names[x.college] || x.college) + " " + x.code); }));
       var share = t.category_share == null ? "" : Math.round(t.category_share * 100) + "% of its noncredit courses";
       var others = (t.categories || []).slice(1).map(function (c) { return c[0] + " " + fmt(c[1]); }).join("; ");
       rows.push(el("tr", { "data-title": t.title, "data-state": t.state }, [
         el("th", { scope: "row" }, [t.title, (t.printed_as || []).length > 1 || (t.printed_as || [])[0] !== t.title
           ? el("span", { cls: "csb-sub", text: "Printed as: " + (t.printed_as || []).join("; ") }) : null]),
         el("td", { text: fmt(t.programs) + " of " + fmt((N.programs || []).length) }),
-        el("td", { text: where }),
+        el("td", null, where),
         el("td", { text: fmt(t.catalog_courses) }),
         el("td", null, [t.category ? share : "", t.state === "several categories" && others ? el("span", { cls: "csb-sub", text: "Also under: " + others }) : null])]));
     });
@@ -547,6 +581,24 @@
       return codes;
     }, function (e) { delete courseCache[slug]; throw e; });
     return courseCache[slug];
+  }
+  /* A college's code named on a list that is not the college's own: a word that opens its panel where the college
+     has a catalog on file and the code is in its list, and plain words where it does not. */
+  function slugOfName(name) {
+    var M = VIEW.M, hit = "";
+    ((M && M.list) || []).forEach(function (x) { if (x.college === name) hit = x.slug; });
+    return hit;
+  }
+  function codeAt(slug, code, words) {
+    var M = VIEW.M, c = slug && M && M.by[slug];
+    if (!c || !c.rows.some(function (r) { return r.code === code; })) return words;
+    return el("button", { type: "button", cls: "csb-word", "data-csb-code": code, "data-csb-slug": slug,
+      "aria-label": words + ". Show its courses and settle it.", text: words });
+  }
+  function sep(parts) {
+    var out = [];
+    parts.forEach(function (p, i) { if (i) out.push("; "); out.push(p); });
+    return out;
   }
   function codeWord(r) {
     var b = el("button", { type: "button", cls: "csb-word", "data-csb-code": r.code, "data-csb-slug": r.slug,
@@ -600,7 +652,7 @@
     } else if (f.noCode) box.appendChild(el("p", { cls: "csb-ed-ro", id: I.code + "-none", text: f.noCode }));
     if (save || undo) box.appendChild(el("p", { cls: "csb-ed-row" }, [save, undo]));
     box.appendChild(status);
-    var stay = S.view + "/" + S.code;
+    var stay = viewPath();
     function redraw(focusId) {
       if (!VIEW.root || !VIEW.M) return;
       render(VIEW.root, VIEW.M, stay);
@@ -764,7 +816,7 @@
       return box;
     }
     if (!reviewer()) {
-      box.appendChild(el("p", { cls: "csb-note", id: "csb-edit-signin", text: "Edit opens once you sign in as a reviewer, from the sign-in link emailed to you." }));
+      box.appendChild(el("p", { cls: "csb-note", id: "csb-edit-signin", text: "Edit opens once you sign in as a reviewer. Sign in from the control in COBI’s header, at the top of the window; this page has no sign-in of its own." }));
       return box;
     }
     if (band !== "noncredit") creditForm(c, row, box, band);
@@ -772,14 +824,28 @@
     if (COMMON) box.appendChild(el("datalist", { id: "csb-ed-codes" }, Object.keys(COMMON).sort().map(function (k) { return el("option", { value: k, label: COMMON[k] }); })));
     return box;
   }
+  /* The same local code at the other colleges with a catalog on file (Sam, 2026-11-22: "all the AEDs that are in ELEC
+     erroneously"): each opens that college's form, so a code wrong at several colleges is settled from one place. */
+  function elsewhere(M, slug, code) {
+    var others = M.list.filter(function (x) { return x.slug !== slug && x.rows.some(function (r) { return r.code === code; }); });
+    if (!others.length) return null;
+    return el("p", { cls: "csb-note", id: "csb-elsewhere" }, [code + " is also a code at " + fmt(others.length) + (others.length === 1 ? " other college" : " other colleges")
+      + " with a catalog on file, and each college’s code is settled on its own: "].concat(sep(others.map(function (x) {
+        var r = x.rows.filter(function (q) { return q.code === code; })[0], sv = savedOf(r);
+        var has = (sv && sv.common) || r.common || "";
+        return el("span", null, [el("button", { type: "button", cls: "csb-word", "data-csb-code": code, "data-csb-slug": x.slug,
+          "aria-label": code + " at " + x.college + ". Show its courses and settle it.", text: x.college }), has ? " (" + has + (sv && sv.common ? ", saved" : "") + ")" : " (no common subject code)"]);
+      })), ["."]));
+  }
   function panelDraw(root, M) {
     var old = root.querySelector("#csb-panel");
     if (old) old.parentNode.removeChild(old);
-    if (!S.code || !M.by[S.view]) return;
-    var c = M.by[S.view], slug = S.view, code = S.code;
+    var slug = S.at || S.view, back = S.view;
+    if (!S.code || !M.by[slug]) return;
+    var c = M.by[slug], code = S.code;
     var row = c.rows.filter(function (r) { return r.code === code; })[0];
     var close = el("button", { type: "button", cls: "csb-word", id: "csb-panel-close", text: "Close" });
-    close.addEventListener("click", function () { open(slug); });
+    close.addEventListener("click", function () { open(back); });
     var body = el("div", { id: "csb-panel-body" }, [el("p", { cls: "csb-note", role: "status", text: "Reading the courses…" })]);
     var sv = row ? savedOf(row) : null;
     var name = sv && sv.title ? sv.title : row && row.printed_name ? row.printed_name : "";
@@ -792,11 +858,15 @@
         el("p", { cls: "csb-note", text: c.college + ". " + (name ? "" : "No local title yet. ")
           + (common ? "Common subject code " + common + "." : "No common subject code yet.") }),
         row ? editBlock(c, row) : null,
+        elsewhere(M, slug, code),
         body])]);
-    panel.addEventListener("keydown", function (e) { if (e.key === "Escape") { e.preventDefault(); open(slug); } });
+    Array.prototype.forEach.call(panel.querySelectorAll("button[data-csb-code]"), function (b) {
+      b.addEventListener("click", function () { open(panelPath(b.getAttribute("data-csb-slug"), b.getAttribute("data-csb-code"))); });
+    });
+    panel.addEventListener("keydown", function (e) { if (e.key === "Escape") { e.preventDefault(); open(back); } });
     root.appendChild(panel);
     loadCourses(slug).then(function (codes) {
-      if (S.code !== code || S.view !== slug) return;
+      if (S.code !== code || (S.at || S.view) !== slug) return;
       var rows = codes[code] || [];
       body.textContent = "";
       if (!rows.length) { body.appendChild(el("p", { cls: "csb-note", text: "No course is listed under " + code + " in the catalog on file or in COCI." })); return; }
@@ -817,18 +887,29 @@
   }
 
   var VIEW = { root: null, M: null, noted: null, H: null };
+  /* The filter a count opened, said in words above the table, with the way back to every code. */
+  function pickLine(rows) {
+    if (!S.pick || !PICKS[S.pick]) return null;
+    var n = rows.filter(inPick).length;
+    return el("p", { cls: "csb-note csb-pick", id: "csb-pick", role: "status" }, ["Showing the " + fmt(n) + (n === 1 ? " code " : " codes ") + PICKS[S.pick][0] + ", of " + fmt(rows.length) + ". ",
+      el("button", { type: "button", cls: "csb-word", "data-csb-pick": "", "data-csb-pick-at": S.view, text: "Show every code" })]);
+  }
   function render(root, M, view) {
     VIEW.root = root; VIEW.M = M;
     ensureCss();
     view = String(view || "");
     /* <college slug>/<local code> opens that college with the code's course panel; a code may hold a slash (ES/A). */
-    var cut = view.indexOf("/"), code = cut > 0 ? view.slice(cut + 1) : "";
-    if (cut > 0) view = view.slice(0, cut);
+    var seg = view.split("/"), code = "", at = "";
+    view = seg[0] === ALL && seg.length >= 3 ? "" : seg[0];
     var special = view === DISAGREE || view === HELD || view === NC;
+    if (seg.length >= 3 && (special || seg[0] === ALL)) { at = seg[1]; code = seg.slice(2).join("/"); }
+    else if (seg.length >= 2 && !special && seg[0] !== ALL) code = seg.slice(1).join("/");
     var c = view && !special ? M.by[view] : null;
     var missing = view && !special && !c ? view : "";
     S.view = missing ? "" : view;
-    S.code = c && code && c.rows.some(function (r) { return r.code === code; }) ? code : "";
+    var pc = at ? M.by[at] : c;   /* the panel's college */
+    S.code = pc && code && pc.rows.some(function (r) { return r.code === code; }) ? code : "";
+    S.at = S.code && at && at !== S.view ? at : "";
     root.removeAttribute("style");
     root.textContent = "";
     var T = M.totals, all = [];
@@ -843,22 +924,24 @@
       el("p", { cls: "cmn-lede", text: "Step a is the common subject code each discipline shares; Step b is each college’s own name for its subject codes, read from its catalog. The Courses bot drafts each local title from the catalog’s subject heading. A curator settles the codes the catalog and the state course list disagree on." })
     ]));
     wrap.appendChild(el("p", { cls: "csb-stamp" }, [
-      el("strong", { text: fmt(T.named) }), " local titles at ", el("strong", { text: fmt(T.colleges_named) + " of " + fmt(T.colleges) }),
-      " colleges with a catalog on file (" + fmt(T.courses) + " courses, " + fmt(T.catalog_codes) + " subject codes in the catalogs). ",
+      count(T.named, "", "titled", fmt(T.named) + " codes with a local title. Show them."), " local titles at ", el("strong", { text: fmt(T.colleges_named) + " of " + fmt(T.colleges) }),
+      " colleges with a catalog on file (" + fmt(T.courses) + " courses, ", count(T.catalog_codes, "", "incat", fmt(T.catalog_codes) + " subject codes in the catalogs. Show them."), " subject codes in the catalogs). ",
       go("#commons/subjects/" + DISAGREE, fmt(untitled) + " codes with no title"),
       " (" + fmt(T.not_in_catalog || 0) + " not in catalog, " + fmt(T.not_read || 0) + " not read yet, " + fmt(T.blocked || 0) + " blocked). ",
-      fmt(T.with_common) + " codes have a common subject code from the subject map. ",
+      count(T.with_common, "", "common", fmt(T.with_common) + " codes with a common subject code. Show them."), " codes have a common subject code from the subject map. ",
       el("a", { href: "#canonical-subj4", text: "Common Subjects Reference" }), ". ",
       go("#commons/subjects/" + HELD, "Codes the M-ID mint holds on"), ". ",
       go("#commons/subjects/" + NC, "Noncredit subject titles"), ".",
-      nSaved ? " " + fmt(nSaved) + (nSaved === 1 ? " code is" : " codes are") + " settled by a person’s save." : ""]));
+      nSaved ? " " : null, nSaved ? count(nSaved, "", "saved", fmt(nSaved) + " codes settled by a person’s save. Show them.") : null,
+      nSaved ? (nSaved === 1 ? " code is" : " codes are") + " settled by a person’s save." : ""]));
     if (SAVE_ERR) wrap.appendChild(el("p", { cls: "csb-note", id: "csb-save-err", role: "status", text: "The saves people made could not be read (" + SAVE_ERR + "). The list below is drawn from the files alone, with the saves the daily build carried." }));
     if (missing) wrap.appendChild(el("p", { cls: "csb-note", role: "status", text: "No college with a catalog on file is named " + missing + ". Every college is below." }));
     if (c) {
       wrap.appendChild(el("p", { cls: "csb-note", text: c.year + " catalog, read " + day(c.readAt) + ". " + (c.named ? fmt(c.named) + " of " + fmt(c.codes) + " codes have a local title." : "No subject heading is read for this catalog yet.") }));
       wrap.appendChild(collegeTable(M, [c]));
       wrap.appendChild(bandBar(c.rows));
-      wrap.appendChild(codeTable(c.rows.filter(function (r) { return inBand(r, S.band); }), "Subject codes at " + c.college));
+      var pl = pickLine(c.rows); if (pl) wrap.appendChild(pl);
+      wrap.appendChild(codeTable(c.rows.filter(inPick).filter(function (r) { return inBand(r, S.band); }), "Subject codes at " + c.college));
     } else if (S.view === HELD) {
       var H = VIEW.H;
       if (!H) wrap.appendChild(el("p", { cls: "csb-note", role: "status", text: VIEW.heldError ? "The held codes could not be read (" + VIEW.heldError + "). Reload the tab to try again." : "Reading the held codes…" }));
@@ -894,7 +977,8 @@
     } else {
       wrap.appendChild(collegeTable(M, M.list));
       wrap.appendChild(bandBar(all));
-      wrap.appendChild(codeTable(all.filter(function (r) { return inBand(r, S.band); }), "Every subject code"));
+      var pl2 = pickLine(all); if (pl2) wrap.appendChild(pl2);
+      wrap.appendChild(codeTable(all.filter(inPick).filter(function (r) { return inBand(r, S.band); }), "Every subject code"));
     }
     wrap.appendChild(el("p", { cls: "csb-foot", text: "How codes are compared: " + (S.view === HELD && VIEW.H ? VIEW.H.rule : S.view === NC && VIEW.N ? VIEW.N._rule : M.rule + (M.built ? " The state course list was built " + day(M.built) + "." : "")) }));
     var page = el("div", { cls: "cmn-page" }, [wrap]);
@@ -905,13 +989,25 @@
     Array.prototype.forEach.call(root.querySelectorAll("button[data-csb-band]"), function (b) {
       b.addEventListener("click", function () {
         S.band = b.getAttribute("data-csb-band") || "";
-        render(root, M, S.view + (S.code ? "/" + S.code : ""));
+        render(root, M, viewPath());
         var on = root.querySelector('button[data-csb-band="' + S.band + '"]');
         if (on && on.focus) on.focus();
       });
     });
     Array.prototype.forEach.call(root.querySelectorAll("button[data-csb-code]"), function (b) {
-      b.addEventListener("click", function () { open(b.getAttribute("data-csb-slug") + "/" + b.getAttribute("data-csb-code")); });
+      b.addEventListener("click", function () {
+        open(panelPath(b.getAttribute("data-csb-slug"), b.getAttribute("data-csb-code")));
+        var ed = b.getAttribute("data-csb-edit") && VIEW.root.querySelector("#csb-edit-h");
+        if (ed) { ed.setAttribute("tabindex", "-1"); if (ed.focus) ed.focus(); if (ed.scrollIntoView) ed.scrollIntoView({ block: "start" }); }
+      });
+    });
+    Array.prototype.forEach.call(root.querySelectorAll("button[data-csb-pick]"), function (b) {
+      b.addEventListener("click", function () {
+        S.pick = b.getAttribute("data-csb-pick") || "";
+        open(b.getAttribute("data-csb-pick-at") || "", true);
+        var line = VIEW.root.querySelector("#csb-pick");
+        if (line) { line.setAttribute("tabindex", "-1"); if (line.focus) line.focus(); if (line.scrollIntoView) line.scrollIntoView({ block: "start" }); }
+      });
     });
     panelDraw(root, M);
     return page;
@@ -927,8 +1023,11 @@
     return loadHeld().then(function (H) { VIEW.H = H; VIEW.heldError = ""; }, function (e) { VIEW.heldError = e && e.message ? e.message : String(e); })
       .then(function () { if (VIEW.root && VIEW.M && S.view === HELD) render(VIEW.root, VIEW.M, HELD); });
   }
-  function open(view) {
+  function open(view, keep) {
     if (!VIEW.root || !VIEW.M) return;
+    /* A count's filter lasts while its surface is open; a move to another surface drops it. */
+    var first = String(view || "").split("/")[0];
+    if (!keep && (first === ALL ? "" : first) !== S.view) S.pick = "";
     render(VIEW.root, VIEW.M, view || "");
     withHeld(view);
     var h = "#" + address();
@@ -959,7 +1058,7 @@
     window.addEventListener("cpl-session-changed", function () {
       if (VIEW.root && VIEW.M && VIEW.root.querySelector && VIEW.root.querySelector(".csb") && VIEW.root.isConnected !== false) {
         LAPSED = false;
-        render(VIEW.root, VIEW.M, S.view + (S.code ? "/" + S.code : ""));
+        render(VIEW.root, VIEW.M, viewPath());
       }
     });
   } catch (e) { /* the page still draws */ }
@@ -984,7 +1083,12 @@
   }
 
   var CSS = [
-    ".cmn-wrap.csb { grid-template-columns:minmax(0, 1fr); }",
+    /* The Subjects surfaces take the window's width (Sam, 2026-11-22: "the subjects surfaces should use the full width of window, which is a design standard"). */
+    ".cmn-wrap.csb { grid-template-columns:minmax(0, 1fr); max-width:none; }",
+    ".csb-c-act { width:6%; }",
+    ".csb-num { font-weight:400; font-variant-numeric:tabular-nums; }",
+    ".csb-stamp .csb-num { font-weight:700; }",
+    ".csb-pick:focus { outline:none; } .csb-pick:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:2px; }",
     ".csb > * { min-width:0; }",
     ".csb .csb-trail { margin:0; color:var(--cmn-muted); font-size:.92rem; }",
     ".csb a { color:var(--cmn-link); text-decoration:underline; text-underline-offset:3px; }",
@@ -1041,7 +1145,7 @@
     ".csb-nc-form { display:grid; gap:8px; min-width:0; margin:0; padding:8px 12px 10px; border:1px solid var(--cmn-line); border-radius:8px; }",
     ".csb-nc-form legend { padding:0 4px; font-weight:600; color:var(--cmn-heading); font-size:.95rem; overflow-wrap:anywhere; }",
     ".csb-ed-ro { margin:0; color:var(--cmn-ink-2); font-size:.92rem; max-width:var(--cpl-measure,none); overflow-wrap:anywhere; } .csb-ed-ro strong { color:var(--cmn-heading); font-weight:600; }",
-    "@media (max-width: 560px) { .csb-table { min-width:36rem; } .csb-held { min-width:44rem; } .csb-nc { min-width:40rem; } .csb-courses { min-width:26rem; } .csb-table th, .csb-table td { padding:8px; } }"
+    "@media (max-width: 560px) { .csb-table { min-width:36rem; } .csb-codes { min-width:44rem; } .csb-held { min-width:44rem; } .csb-nc { min-width:40rem; } .csb-courses { min-width:26rem; } .csb-table th, .csb-table td { padding:8px; } }"
   ].join("\n");
   function ensureCss() {
     if (document.getElementById("csb-css")) return;
@@ -1053,6 +1157,6 @@
     _recs: function (f) { REC = recModel(f); }, address: address, open: open, load: load, FILE: FILE, HELD_FILE: HELD_FILE, SIDES: SIDES, CSS: CSS,
     _state: S, COURSE_DIR: COURSE_DIR, bandOf: bandOf, saveKey: saveKey, titleCase: titleCase, savesModel: savesModel,
     SAVE_FIELD: SAVE_FIELD, SAVE_PREFIX: SAVE_PREFIX, dominantOf: dominantOf,
-    _reset: function () { SAVED = {}; SAVE_ERR = ""; SAID = {}; LAPSED = false; COMMON = null; TC = null; NC_SLUGS = {}; cache = null; heldCache = null; ncCache = null; courseCache = {}; VIEW.M = null; VIEW.H = null; VIEW.N = null; S.view = ""; S.code = ""; S.band = ""; }
+    _reset: function () { SAVED = {}; SAVE_ERR = ""; SAID = {}; LAPSED = false; COMMON = null; TC = null; NC_SLUGS = {}; cache = null; heldCache = null; ncCache = null; courseCache = {}; VIEW.M = null; VIEW.H = null; VIEW.N = null; S.view = ""; S.code = ""; S.at = ""; S.band = ""; S.pick = ""; }
   };
 })();

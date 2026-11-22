@@ -107,21 +107,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false,
-  "gaps": [
-   {
-    "gap": "lists_past_their_figure",
-    "label": "The catalog's figures add up to its printed total, counting each list at its printed figure; the courses in a list carry more units than that figure.",
-    "words": "the figures add to the printed 29.5-32, counting 'A.3. Select two courses from the following or any courses fr' at its printed figure; the courses as read add to 30.5-32"
-   }
-  ],
-  "confidence": {
-   "unit_arithmetic": 60,
-   "course_list_match": 75,
-   "ge_pattern": null,
-   "catalog_year": 100,
-   "source": 100
-  }
+  "pass": false
  },
  "record": {
   "program": {

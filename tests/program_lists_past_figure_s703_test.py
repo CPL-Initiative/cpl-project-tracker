@@ -13,10 +13,18 @@ S652's review rule: a new rule runs first against records whose answer is alread
   * the self-recall on held answers: every passing record the scorer reproduces whose figures add to its total and
     one of whose lists its courses meet exactly; each such list's courses one unit more (the gap) and the total one
     more beside it (no gap), read by the scorer itself (wrong 0);
+  * the boundary readings (#3678 and #3679 second readers, finding 2): the list half a unit past its figure (the
+    gap), the total half a unit past the figures (no gap), and the list beside another list of its own courses that
+    a note lets it take (no gap), each wrong 0;
+  * the claim check (finding 1; decided d-lists-gap-holds-claim-false-s703): a record whose own words make the
+    claim false takes no gap (a list that takes another list's courses and meets its figure with them, a second
+    printed total the courses meet, a counted course that is optional or exempt); the 17 hand-held records are held
+    by key, lists_claim flags all 17, and its counts on the census's records of the gap's shape are pinned;
   * the plain recall on every failing record stays wrong 0;
-  * the s703w plan names only programs the committed census lists as units_unequal, and its guarded UPDATE names
-    exactly the plan's rows;
-  * the six colleges lane 1 held on 2026-11-22 and the parked colleges are untouched.
+  * the s703w plan names only programs the committed census lists as units_unequal, none held out, and its
+    pre-read, guarded UPDATE and rollback name exactly the plan's rows;
+  * the colleges held from tonight's plan (lane 1's six, worker levers' five, worker peralta's four) and the parked
+    colleges are untouched.
 
 Run from repo root: python3 tests/program_lists_past_figure_s703_test.py
 """
@@ -43,6 +51,11 @@ def check(cond, msg):
 
 LANE_1_S703 = ("City College of San Francisco", "San Diego College of Continuing Education", "Clovis Community College",
                "Cosumnes River College", "Glendale Community College", "Butte College")
+# Held by other workers tonight (S703 conductor): levers and peralta.
+LEVERS_S703 = ("Ohlone College", "San Joaquin Delta College", "Mt. San Antonio College", "Santa Barbara City College",
+               "Orange Coast College")
+PERALTA_S703 = ("Berkeley City College", "College of Alameda", "Laney College", "Merritt College")
+HELD_S703 = LANE_1_S703 + LEVERS_S703 + PERALTA_S703
 GAP = "lists_past_their_figure"
 
 
@@ -85,12 +98,62 @@ blank["record"]["blocks"][0]["courses"][0]["alternatives"] = [{"code": "Y", "uni
 check(named(blank) == (None, None), "a blank 'or' alternative is units rule A4's, never this gap")
 check(named(psych(list_figure=None))[0] != GAP, "a list that prints no figure takes no gap")
 
-res = NG.run(write=False, gaps=(GAP,), skip=LANE_1_S703, census_causes=("units_unequal",))
+
+def listed_past(note=None, name="LIST B", extra_total=None):
+    """The core at its figure; LIST A of 3-unit courses; LIST B's one course 4 units against a figure of 3."""
+    f = psych(core=(3, 3, 3), computed=[19.0, 22.0])
+    f["record"]["blocks"][2] = {"rule": "choose_courses", "name": name, "minimum": 1, "stated": {"min": 3, "max": 3},
+                                "courses": [course(4)]}
+    f["record"]["blocks"][1]["courses"] = [course(3), course(3)]
+    f["record"]["notes"] = [note] if note else []
+    return f
+
+
+check(named(listed_past()) == (GAP, GAP) and NG.lists_claim(listed_past()) == "stands",
+      "a list whose one course passes its figure, with no word letting it take another's, takes the gap")
+cross = listed_past("List B also allows any List A course not already used.")
+check(NG.lists_claim(cross) == "lists_meet_figure" and named(cross) == (None, None),
+      "a list a note lets take another list's courses, and which meets its figure with them, takes no gap")
+check(named(listed_past(name="LIST B (or any List A course not already used)")) == (None, None),
+      "the same allowance in the list's own name takes no gap")
+opened = listed_past("List B also allows any lower division CSU-transferable Economics elective.")
+check(NG.lists_claim(opened) == "lists_meet_figure" and named(opened) == (None, None),
+      "a list whose allowance reaches courses off the record is never past its figure")
+other = psych()
+other["record"]["notes"] = ["Conflicting totals: the table prints 'Total Units 19'."]
+check(NG.lists_claim(other) == "prints_other_total" and named(other) == (None, None),
+      "a second printed total the courses meet takes no gap (a reread passes it free)")
+sample = psych()
+sample["record"]["notes"] = ["The Suggested Course Sequence prints 'Total : 19'; this is a sample-plan total."]
+check(NG.lists_claim(sample) == "stands", "a sample plan's total is not the program's")
+opt = psych()
+opt["record"]["notes"] = ["X 4 is optional: the core is 9 units without it."]
+check(NG.lists_claim(opt) == "course_optional" and named(opt) == (None, None),
+      "a counted course a note calls optional takes no gap")
+rec_note = psych()
+rec_note["record"]["notes"] = ["Y 3 is recommended before X 4 and does not count toward the total."]
+check(NG.lists_claim(rec_note) == "stands", "a note on a recommended course leaves the claim standing")
+check(len(NG.HELD_LISTS) == 17 and sum(1 for w in NG.HELD_LISTS.values() if w == NG.LISTS_CROSS_WHY) == 8
+      and sum(1 for w in NG.HELD_LISTS.values() if w == NG.LISTS_TOTAL_WHY) == 4
+      and sum(1 for w in NG.HELD_LISTS.values() if w == NG.LISTS_OPTIONAL_WHY) == 5,
+      "17 records held by key: 8 take another list's courses, 4 print a second total, 5 count an optional course")
+
+res = NG.run(write=False, gaps=(GAP,), skip=HELD_S703, census_causes=("units_unequal",))
 lr = res["lists_recall"]
-check(lr["held"] > 10000 and lr["right"] == lr["held"] and lr["wrong"] == 0
+check(lr["held"] > 20000 and lr["right"] == lr["held"] and lr["wrong"] == 0
       and lr["by_kind"].get("all", 0) > 1000 and lr["by_kind"].get("choose_courses", 0) > 1000,
       "self-recall, a list's courses and the total moved: held %d, right %d, wrong %d, by kind %s (%s)"
       % (lr["held"], lr["right"], lr["wrong"], lr["by_kind"], lr["wrong_keys"][:3]))
+bd = lr["by_boundary"]
+check(bd.get("past_by_half", 0) > 1000 and bd.get("total_by_half", 0) > 1000 and bd.get("cross_list", 0) > 1000,
+      "the boundary readings ran, each right: %s" % bd)
+lp = res["lists_precision"]
+check((lp["stands"], lp["lists_meet_figure"], lp["prints_other_total"], lp["course_optional"]) == (29, 8, 4, 5),
+      "lists_claim on the census's records of the gap's shape: stands 29, meet 8, other total 4, optional 5 (%s)" % lp)
+check(lp["hand_held"] == 17 and lp["hand_held_flagged_by_lists_claim"] == 17,
+      "lists_claim flags %d of the 17 hand-held records (%s)" % (lp["hand_held_flagged_by_lists_claim"],
+                                                                lp["hand_held_not_flagged"]))
+check(not any(m["college"] in HELD_S703 for m in res["moved"]), "the dry run moves no record at a held college")
 rc = res["recall"]
 check(rc["wrong"] == 0 and rc["by_answer"].get(GAP, 0) > 30,
       "the plain recall with the new rule: right %d, wrong %d" % (rc["right"], rc["wrong"]))
@@ -106,25 +169,31 @@ check(keys and keys <= census, "every plan row is a census units_unequal program
 check(all(r["gap"] == GAP and r["after_image"]["checks"].get("gaps") == [GAP]
           and not (r["before_image"]["checks"] or {}).get("gaps") for r in plan["records"]),
       "each row takes the gap, and none filed a gap before")
-check(not {c for c, _ in keys} & set(LANE_1_S703), "no plan row at a lane 1 college")
+check(len(keys) == 29 and plan["collected"] == 29, "the plan holds 29 rows (%d)" % len(keys))
+check(not {c for c, _ in keys} & set(HELD_S703), "no plan row at a college held tonight")
 check(not {c for c, _ in keys} & set(G.PARKED), "no plan row at a parked college")
-check(len(set(plan["held_colleges"])) == len(plan["held_colleges"]) and set(LANE_1_S703) <= set(plan["held_colleges"]),
-      "the receipt names each held college once, the six lane 1 colleges among them")
-with open(os.path.join(ROOT, "kb", "migrations", "2026-11-22_s703w_prreq_named_gaps_apply.sql"), encoding="utf-8") as fh:
-    sql_keys = set(re.findall(r"^\s*\(\d+, '([^']+)', '(\d{5})', \d+,", fh.read(), re.M))
-check(sql_keys == keys, "the guarded UPDATE names exactly the plan's rows (%d of %d)" % (len(sql_keys), len(keys)))
+check(not keys & set(NG.HELD_LISTS), "no plan row is a hand-held record")
+check(len(set(plan["held_colleges"])) == len(plan["held_colleges"]) and set(HELD_S703) <= set(plan["held_colleges"]),
+      "the receipt names each held college once, the fifteen held tonight among them")
+for part in ("apply", "preread", "rollback"):
+    with open(os.path.join(ROOT, "kb", "migrations", "2026-11-22_s703w_prreq_named_gaps_%s.sql" % part),
+              encoding="utf-8") as fh:
+        sql_keys = set(re.findall(r"^\s*\(\d+, '([^']+)', '(\d{5})', \d+,", fh.read(), re.M))
+    check(sql_keys == keys, "the %s names exactly the plan's rows (%d of %d)" % (part, len(sql_keys), len(keys)))
 for college, cn in sorted(keys):
     with open(os.path.join(ROOT, "kb", "program_requirements_college", C.slug_of(college), "records", cn + ".json"),
               encoding="utf-8") as fh:
         filed = json.load(fh)
     check([g.get("gap") for g in filed["score"].get("gaps") or []] == [GAP], "%s %s: the record files the gap"
           % (college, cn))
-for college in LANE_1_S703:
+    check(NG.lists_claim(filed) == "stands" and NG.lists_held_out(filed) is None,
+          "%s %s: a plan row's own words leave the claim standing" % (college, cn))
+for college in HELD_S703:
     for p in glob.glob(os.path.join(ROOT, "kb", "program_requirements_college", C.slug_of(college), "records", "*.json")):
         with open(p, encoding="utf-8") as fh:
             sc = json.load(fh).get("score") or {}
         check(GAP not in [g.get("gap") for g in sc.get("gaps") or [] if isinstance(g, dict)],
-              "%s: a lane 1 college's record carries no %s" % (os.path.relpath(p, ROOT), GAP))
+              "%s: a held college's record carries no %s" % (os.path.relpath(p, ROOT), GAP))
 
 if failures:
     for m in failures:

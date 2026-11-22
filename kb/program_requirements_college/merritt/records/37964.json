@@ -126,21 +126,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false,
-  "gaps": [
-   {
-    "gap": "lists_past_their_figure",
-    "label": "The catalog's figures add up to its printed total, counting each list at its printed figure; the courses in a list carry more units than that figure.",
-    "words": "the figures add to the printed 31-32, counting 'Group A: Cybersecurity - Secure Software Development', 'Group B: Cybersecurity - DevOps (Dev/Sec/Ops)', 'Group C: Blockchain Services and Mobile Applications', 'Group D: DevOps - Software Engineering Automation and Contin' and 2 more at their printed figures; the courses as read add to 43-49"
-   }
-  ],
-  "confidence": {
-   "unit_arithmetic": 60,
-   "course_list_match": 100,
-   "ge_pattern": 100,
-   "catalog_year": 100,
-   "source": 100
-  }
+  "pass": false
  },
  "record": {
   "program": {
