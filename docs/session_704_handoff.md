@@ -105,8 +105,12 @@ trial 45030224450, 11 of 12; full read 45031089800, 1,869 pages in 5 parts, queu
 `main`, so #3686, #3675 and #3683 could not merge, and the display build (worker `display`'s plan: gate college Cosumnes
 River, 192 programs, then the whole build, about 18,629; `program-requirements-college.yml` `step=display`) waits for
 them. The Subjects files are S705 SkyTystie's (#3687); S703 reported it there at 15:11Z (comment 7081112623) and left
-the fix to that writer. The census `harvest-gap-census.yml` was dispatched on `main` at 15:14Z; read its count at your
-start. The headline at 15:13Z: 15,349 of 20,282 active programs pass the machine checks, at 118 colleges (15,334 at the
+the fix to that writer. The census `harvest-gap-census.yml` ran on `main` at 15:14Z (45037095240, `29e2a88d`) and then
+broke three S703 tests, which read the live census: it reads the 131, 50 and 17 planned programs collected. **#3689**
+(`claude/s703-gap-tests-frozen-census`) freezes the plans' census in `tests/fixtures/harvest_gap_census_s703_plans.json`
+and carries #3687's Subjects hunk byte for byte, so it clears both red checks on `main`
+(`p-test-reads-live-census-s703`: a test of an applied plan reads the census it was built from). Merge it first, then
+#3686, #3675, #3683 and #3684, one at a time, each merging `main` again. Read the census's count at your start. The headline at 15:13Z: 15,349 of 20,282 active programs pass the machine checks, at 118 colleges (15,334 at the
 brief).
 
 Read in order: this file; the NEXT of [`program-requirements-harvest`](reference/lanes/program-requirements-harvest.md);
@@ -202,6 +206,7 @@ row; a rollback that undoes over 1% of a day's rows; the $10k checkpoint.
 |---|---|---|
 | #3674 (`claude/awesome-fermat-lwf2xm`) | the declaration and this checkpoint, carrying `claude/s703-sdcce-load`'s receipt | merges at sign-off |
 | #3676, #3678, #3679, #3677, #3681, #3685 | merged | none |
+| #3689 (`claude/s703-gap-tests-frozen-census`) | open; clears `main`'s two red checks | merge first |
 | #3686 (`claude/s703-levers`) | open | merge, one at a time |
 | #3675 (`claude/s703-glendale-butte`, Butte on `claude/s703-butte`) | open; 38973's read 45030485543 | merge after the read |
 | #3683 (`claude/s703-followup`) | open; second reader: merge | merge |
