@@ -361,6 +361,11 @@ jobs:
       # is the courses under decided codes, and no email is committed. Pure stdlib.
       - name: Subject decisions honored (kb/_sync_subject_decisions.py, kb/subject_decisions.py)
         run: python3 tests/subject_decisions_honored_test.py
+      # Noncredit subject decisions, one per COCI noncredit category (#3655): an nc:<slug> decision changes only that
+      # category's noncredit courses at that college, never a credit course and never a mint route; an unknown slug is
+      # refused and listed; the sync accepts credit, whole and nc:<a listed slug>. Pure stdlib.
+      - name: Subject decisions, noncredit (kb/subject_decisions.py nc:<category>)
+        run: python3 tests/subject_decisions_noncredit_test.py
       # The Subjects card's two files in the daily build (S695): both builders run after their inputs' steps with
       # --if-changed, each fingerprint ignores its daily stamp, and a rerun on the same inputs writes nothing. Pure stdlib.
       - name: Subjects card in the daily build (--if-changed fingerprints)
