@@ -93,15 +93,15 @@
   },
   "sams_30": {
    "decisions": 30,
-   "agree": 22,
-   "diverge": 6,
+   "agree": 23,
+   "diverge": 5,
    "no_recommendation": [
     "BCOT",
     "WGS"
    ],
    "by_source": {
     "own_courses": {
-     "right": 9,
+     "right": 10,
      "asked": 14
     },
     "same_code_statewide": {
@@ -137,14 +137,6 @@
      "recommended": "SOCS",
      "from": "own_courses",
      "why": "3 of 5 of its courses with an M-ID sit under SOCS"
-    },
-    {
-     "local_code": "ATH",
-     "local_title": "Athletics",
-     "sam": "ATHL",
-     "recommended": "KINE",
-     "from": "own_courses",
-     "why": "86 of 86 of its courses with an M-ID sit under KINE"
     },
     {
      "local_code": "AP",
