@@ -3,8 +3,9 @@
 with no catalog title, its confidence measured before it shows).
 
 Failure modes: a titled code's own heading counted in its own vote (every source would read 100%); a level that is
-not the one its source measured; program titles reading High (Sam: they inform, never set); a row on the noncredit
-hold given a recommendation; a differing source left out of sight; the subject map or Sam's 30 decisions read as a
+not the one its source measured; program titles reading High (Sam: they inform, never set); a row left on the
+noncredit hold after it lifted (S701), or a noncredit title guessed from a category name; a noncredit level claimed
+above its measured share; a category with no common code given one; a differing source left out of sight; the subject map or Sam's 30 decisions read as a
 source; a committed file that the daily build would rewrite.
 
 Run from repo root: python3 tests/local_subject_recommendations_test.py
@@ -12,6 +13,7 @@ Run from repo root: python3 tests/local_subject_recommendations_test.py
 import json
 import os
 import sys
+from collections import Counter
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "kb"))
@@ -54,9 +56,50 @@ for s, conds in table.items():
         check("%s, %s: %d of %d right reads %s" % (s, c, m["right"], m["asked"], want), m["level"] == want)
 check("program titles never read High", all(m["level"] != "High" for m in table.get("program_titles", {}).values()))
 
-hold = {(r["slug"], r["code"]) for r in data.rows if r["title_state"] == "noncredit_hold"}
 recs = {(c["slug"], r["code"]): r for c in doc["colleges"] for r in c["rows"]}
-check("a row on the noncredit hold takes no recommendation", hold and not (hold & set(recs)))
+# ── S701: the hold lifted (r-noncredit-title-list-go-sam-2026-11-22) ──
+check("no row is left on the noncredit hold", not [r for r in data.rows if r["title_state"] == "noncredit_hold"])
+nct, ncc = doc["noncredit"]["title_from_the_list"], doc["noncredit"]["common_code_from_the_category"]
+for c, m in sorted(nct.items()) + [("common code", ncc)]:
+    want = "High" if m["share"] >= 0.9 else ("Medium" if m["share"] >= 0.6 else "Low")
+    if m["asked"] < 20:
+        want = "Low"
+    check("noncredit %s: %d right, %d wrong of %d reads %s, never above its measured share" % (c, m["right"], m["wrong"], m["asked"], want),
+          m["level"] == want and m["right"] + m["wrong"] == m["asked"])
+nc_only = [r for r in data.rows if r["noncredit_courses"] and not r["credit_courses"]]
+listed = {t["title"]: t for t in data.nc_titles}
+ok = True
+for r in nc_only:
+    t = recs.get((r["slug"], r["code"]), {}).get("title")
+    if t:
+        lt = listed.get(t["title"])
+        ok = ok and t["from"] == "noncredit_list" and lt is not None and lt["category"] == R.dominant(r)[0]
+check("⭐ every noncredit title recommendation is a title of the standing list under the row's own dominant category", ok)
+fed = Counter()
+for r in nc_only:
+    t_ = recs.get((r["slug"], r["code"]), {}).get("title")
+    if t_ and t_["from"] == "noncredit_list":
+        got = R.noncredit_list(data, r)
+        fed[got[1] if got else None] += 1
+check("⭐ no noncredit title condition measured under 50% right feeds a recommendation",
+      fed and all(c is not None and nct[c]["share"] >= 0.5 and nct[c]["used"] for c in fed)
+      and all(m["used"] == (m["share"] >= 0.5) for m in nct.values()))
+check("all four conditions stay measured in the file, the two guesses marked unused",
+      set(nct) == {"same code", "letters, one title", "letters, several titles", "courses match"}
+      and not nct["letters, several titles"]["used"] and not nct["courses match"]["used"])
+check("the common code's note names the subject map as its answer key, which reads a code without its band",
+      "subject map" in doc["noncredit"]["note"] and "without its credit or noncredit band" in doc["noncredit"]["note"] and ncc["level"] == "Low")
+nocode = [(r, recs[(r["slug"], r["code"])]["common"]) for r in nc_only if (r["slug"], r["code"]) in recs
+          and recs[(r["slug"], r["code"])].get("common", {}).get("code", "x") is None]
+check("⭐ a noncredit-only code under a category with no common code names the category and recommends no code",
+      nocode and all(c["category"] and c["category"] in c["why"] and "no common subject code yet" in c["why"]
+                     and not (data.nc_mq.get(c["category"]) or {}).get("common_code") for _, c in nocode))
+check("a category that holds a code recommends that code", all(
+    recs[k]["common"]["code"] == data.nc_mq[recs[k]["common"]["category"]]["common_code"]
+    for k in recs if recs[k].get("common", {}).get("from") == "noncredit_category" and recs[k]["common"]["code"]))
+spans = [recs[(r["slug"], r["code"])] for r in nc_only if len([p for p in (r["categories"] or []) if p[0] != R.NO_CATEGORY]) > 1
+         and (r["slug"], r["code"]) in recs and recs[(r["slug"], r["code"])].get("common")]
+check("a code spanning several categories names its dominant one and says the share", spans and all("%)" in x["common"]["why"] for x in spans))
 check("a titled row is never given a title", all("title" not in recs[(r["slug"], r["code"])]
                                                    for r in titled if (r["slug"], r["code"]) in recs))
 check("a row that already holds a common code is never given one",

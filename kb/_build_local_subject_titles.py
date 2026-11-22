@@ -38,6 +38,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from subject_title_case import KEPT, SMALL, title_case  # noqa: E402
+from _build_noncredit_subject_titles import MQ as NC_MQ  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SUBJECTS = os.path.join("kb", "hand_filed_catalogs", "subjects")
@@ -48,14 +49,17 @@ CANONICAL = os.path.join("kb", "discipline_canonical_subj4.json")
 OUT = os.path.join("kb", "status", "local_subject_titles.json")
 
 COLUMNS = ["code", "printed_name", "catalog_courses", "state_courses", "side", "common", "discipline",
-           "title_state", "title_source", "candidate", "address", "credit_courses", "noncredit_courses", "page_codes"]
+           "title_state", "title_source", "candidate", "address", "credit_courses", "noncredit_courses", "page_codes",
+           "noncredit_plain", "noncredit_enhanced", "categories"]
 # Why a row has no title (Sam, 2026-11-21, #3655: "an indicator (chip) in the row to indicate that the catalog read was
 # either blocked, title not in catalog, or not parsed yet"). A state comes from a recorded fact; a row nothing proves
 # reads not_read, because calling a title absent when the catalog was never looked at is the worse error.
-TITLE_STATES = ("catalog", "not_read", "blocked", "not_in_catalog", "noncredit_hold")
-# The state list's credit mark for a course (kb/_build_coci_lookup.py credit_char): C credit; N and E noncredit (E is
-# enhanced funding). Noncredit and credit disciplines are separate in the MQs (Sam, 2026-11-21), so a row counts them apart.
-CREDIT_AT, CREDIT = 6, "C"
+TITLE_STATES = ("catalog", "not_read", "blocked", "not_in_catalog")
+# The state list's credit mark for a course (kb/_build_coci_lookup.py credit_char): C credit, N noncredit, E noncredit
+# enhanced (Sam, 2026-11-22: "Coci has a credit, noncredit, noncredit enhanced indicator"). Noncredit and credit
+# disciplines are separate in the MQs (Sam, 2026-11-21), so a row counts them apart, and N and E apart inside noncredit.
+CREDIT_AT, CREDIT, ENHANCED = 6, "C", "E"
+CATEGORIES = os.path.join("kb", "status", "noncredit_categories.json")
 RULE = ("A catalog's subject code and the state list's are the same code when they are equal after trimming and "
         "upper-casing; nothing looser. A college is the same college when its names are equal after lower-casing and "
         "folding every run of other characters to one space (Los Angeles Trade-Technical College is Los Angeles Trade "
@@ -63,7 +67,7 @@ RULE = ("A catalog's subject code and the state list's are the same code when th
         "course pages carry, else the heading filed from the catalog's index or from the lines above the subject's first "
         "course (kb/hand_filed_catalogs/subjects/). A code the catalog's index lists is in the catalog whether or not "
         "its page's courses are filed. A row with no title says why (title_state): not_read where the catalog was not "
-        "read for it, blocked where the reader was refused, not_in_catalog where the catalog was read and gives it none, noncredit_hold where the code's courses in the state list are all noncredit and it has no catalog title (noncredit recommendations wait on the large noncredit programs' catalogs). credit_courses and noncredit_courses count the code's courses in the state list apart. The common subject code is read from the subject map (its keys: upper case, letters and "
+        "read for it, blocked where the reader was refused, not_in_catalog where the catalog was read and gives it none. credit_courses and noncredit_courses count the code's courses in the state list apart, and noncredit_plain and noncredit_enhanced split the noncredit ones by the state list's N and E. categories names the COCI noncredit categories of the code's noncredit courses, most courses first (kb/status/noncredit_categories.json). The common subject code is read from the subject map (its keys: upper case, letters and "
         "digits only) and the discipline's canonical SUBJ; where either has nothing, it is blank. A TOP code is never read.")
 
 
@@ -124,9 +128,15 @@ def build(root=ROOT):
     state = read_state(root)
     smap = read_json(root, SUBJECT_MAP).get("map", {})
     canon = read_json(root, CANONICAL).get("disciplines", {})
+    cats = {}
+    cat_path = os.path.join(root, CATEGORIES)
+    for cc in (read_json(root, CATEGORIES).get("colleges") or []) if os.path.exists(cat_path) else []:
+        for code, _cr, _nc, parts in cc["codes"]:
+            cats[(college_key(cc["college"]), code_key(code))] = parts
 
     state_by_college = {}
     noncredit_by_college = {}
+    enhanced_by_college = {}
     names = state.get("colleges") or []
     by_name = {college_key(n): i for i, n in enumerate(names)}
     for r in state.get("rows") or []:
@@ -137,6 +147,9 @@ def build(root=ROOT):
             if len(r) > CREDIT_AT and r[CREDIT_AT] != CREDIT:
                 noncredit_by_college.setdefault(r[0], {})
                 noncredit_by_college[r[0]][k] = noncredit_by_college[r[0]].get(k, 0) + 1
+                if r[CREDIT_AT] == ENHANCED:
+                    enhanced_by_college.setdefault(r[0], {})
+                    enhanced_by_college[r[0]][k] = enhanced_by_college[r[0]].get(k, 0) + 1
 
     def common_of(code):
         disc = smap.get(map_key(code))
@@ -145,7 +158,7 @@ def build(root=ROOT):
 
     out_colleges = []
     T = {"colleges": 0, "courses": 0, "codes": 0, "catalog_codes": 0, "named": 0, "both": 0, "catalog_only": 0,
-         "state_only": 0, "with_common": 0, "not_read": 0, "blocked": 0, "not_in_catalog": 0, "noncredit_hold": 0,
+         "state_only": 0, "with_common": 0, "not_read": 0, "blocked": 0, "not_in_catalog": 0,
          "noncredit_only": 0, "credit_and_noncredit": 0, "pages_not_read": 0,
          "colleges_named": 0, "colleges_not_in_state_list": 0}
     for c in sorted(index.get("colleges") or [], key=lambda x: x["slug"]):
@@ -172,6 +185,7 @@ def build(root=ROOT):
         si = by_name.get(college_key(c["college"]))
         st = state_by_college.get(si, {}) if si is not None else {}
         ncs = noncredit_by_college.get(si, {}) if si is not None else {}
+        ens = enhanced_by_college.get(si, {}) if si is not None else {}
         subj = read_subjects(root, c["slug"])
         filed = (subj or {}).get("by") or {}
         listed = {k for k, r in filed.items() if r.get("rule") == "index"}     # the codes the catalog's index lists
@@ -207,21 +221,20 @@ def build(root=ROOT):
                 state_ = "not_read"            # courses under the code, and no heading read for it yet
             nc_n = ncs.get(k, 0)
             cr_n = st.get(k, 0) - nc_n
-            if state_ in ("not_read", "not_in_catalog") and nc_n and not cr_n:
-                # Sam, 2026-11-21 (relayed by COBIx on #3655): every noncredit title and common-code recommendation
-                # waits until the large noncredit programs' catalogs are read. A title the catalog itself gives stays.
-                state_ = "noncredit_hold"
+            # The noncredit hold (r-noncredit-hold-sam-2026-11-21) lifted on Sam's go of 2026-11-22
+            # (r-noncredit-title-list-go-sam-2026-11-22): a noncredit-only row keeps its true reason.
+            parts = cats.get((college_key(c["college"]), k)) if nc_n else None
             common, disc = common_of(k)
             addr = (h or {}).get("address")
             page_codes = sorted(codes_at.get(addr) or ()) if addr and not e and addr in read_urls else None
             out.append([k, name, e["n"] if e else 0, st.get(k, 0), side, common, disc, state_, source,
-                        (h or {}).get("candidate") if not name else None, addr, cr_n, nc_n, page_codes or None])
+                        (h or {}).get("candidate") if not name else None, addr, cr_n, nc_n, page_codes or None,
+                        nc_n - ens.get(k, 0), ens.get(k, 0), parts or None])
         n = {"codes": len(out), "catalog_codes": len(set(cat) | listed), "named": sum(1 for r in out if r[1]),
              "both": sum(1 for r in out if r[4] == "both"), "catalog_only": sum(1 for r in out if r[4] == "catalog"),
              "state_only": sum(1 for r in out if r[4] == "state"), "with_common": sum(1 for r in out if r[5]),
              "not_read": sum(1 for r in out if r[7] == "not_read"), "blocked": sum(1 for r in out if r[7] == "blocked"),
              "not_in_catalog": sum(1 for r in out if r[7] == "not_in_catalog"),
-             "noncredit_hold": sum(1 for r in out if r[7] == "noncredit_hold"),
              "noncredit_only": sum(1 for r in out if r[12] and not r[11]), "credit_and_noncredit": sum(1 for r in out if r[12] and r[11]),
              "pages_not_read": sum(1 for r in out if r[10] and not r[2] and r[10] not in read_urls)}
         out_colleges.append({"slug": c["slug"], "college": c["college"], "catalog_year": c.get("catalog_year"),
@@ -261,6 +274,9 @@ def build(root=ROOT):
         # carries no copy: each canonical SUBJ with its MQ discipline, and kb/subject_title_case.py's word lists.
         "common_codes": dict(sorted((v.get("canonical_subj4"), d) for d, v in canon.items() if v.get("canonical_subj4"))),
         "title_case": {"small": sorted(SMALL), "kept": sorted(KEPT)},
+        # Each COCI noncredit category's noncredit MQ discipline and common subject code, from the one table in
+        # kb/_build_noncredit_subject_titles.py (MQ); a category with no code keeps none and shows by name.
+        "noncredit_mq": {cat: {"mq_discipline": d, "common_code": k} for cat, (d, k) in NC_MQ.items()},
     }
 
 

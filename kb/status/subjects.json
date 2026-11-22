@@ -7,14 +7,19 @@
   "handoff": "docs/session_701_handoff.md",
   "calls": [
     {
-      "title": "The draft noncredit subject title list",
+      "title": "The noncredit subject title list",
       "text": "The list holds 129 headings from the four large noncredit programs as 114 titles. Sam settles which headings join one title, and whether Citizenship, Health and Safety, substantial disabilities and Workforce Preparation take a common code or none.",
       "if_no_reply": "The noncredit hold stands and the list stays a draft.",
       "link": "https://github.com/CPL-Initiative/cpl-project-tracker/issues/3655#issuecomment-7071038844",
       "link_text": "The ask on issue 3655",
       "view": {
         "href": "#commons/subjects/noncredit",
-        "text": "The draft noncredit subject title list"
+        "text": "The noncredit subject title list"
+      },
+      "answer": {
+        "by": "Sam",
+        "at": "2026-11-22",
+        "words": "\"Looks good. Based on a quick check on my phone. Can we go with it and I can look more closely tomorrow and reverse or change anything that looks wrong?\" The 114 titles stand and the hold lifts; the four categories with no common code keep none (r-noncredit-title-list-go-sam-2026-11-22)."
       }
     },
     {

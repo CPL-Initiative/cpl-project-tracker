@@ -293,9 +293,9 @@
         codes: LS.totals.catalog_codes, oneSided: (LS.totals.catalog_only || 0) + (LS.totals.state_only || 0),
         catalogOnly: LS.totals.catalog_only, stateOnly: LS.totals.state_only, courses: LS.totals.courses,
         notInCatalog: LS.totals.not_in_catalog || 0, notRead: LS.totals.not_read || 0, blocked: LS.totals.blocked || 0,
-        noncreditHold: LS.totals.noncredit_hold || 0,
+        /* S701: the noncredit hold lifted, so every untitled code reads one of the three reasons. */
         untitled: LS.totals.not_in_catalog == null ? (LS.totals.codes || 0) - (LS.totals.named || 0)
-          : (LS.totals.not_in_catalog || 0) + (LS.totals.not_read || 0) + (LS.totals.blocked || 0) + (LS.totals.noncredit_hold || 0) } : null,
+          : (LS.totals.not_in_catalog || 0) + (LS.totals.not_read || 0) + (LS.totals.blocked || 0) } : null,
       /* Step a's queue (S695): the local subject codes the pile mint holds on, and the held courses they release. */
       heldCodes: HS && HS.totals ? { held: HS.totals.held, codes: HS.totals.codes, pairs: HS.totals.pairs } : null,
       building: { skillsCreds: (facts("skills").with_issuer_skills != null ? facts("skills").with_issuer_skills : cred.with_issuer_skills),
@@ -979,10 +979,10 @@
             LT ? " at " : "", LT ? a("#commons/subjects", fmt(LT.collegesNamed) + " of " + fmt(LT.colleges) + " colleges") : "",
             LT ? " with a catalog on file. Owner: the Courses bot takes each title from the catalog’s subject heading; a person settles the " : "",
             LT ? a("#commons/subjects/disagree", fmt(LT.untitled) + " codes with no title") : "",
-            LT ? " (" + fmt(LT.notInCatalog) + " not in catalog, " + fmt(LT.notRead) + " not read yet, " + fmt(LT.blocked) + " blocked, " + fmt(LT.noncreditHold) + " noncredit on hold)." : ""]),
+            LT ? " (" + fmt(LT.notInCatalog) + " not in catalog, " + fmt(LT.notRead) + " not read yet, " + fmt(LT.blocked) + " blocked)." : ""]),
           p(["Step c, the M-ID, is the Courses and M-IDs card."])],
         method: [p([(sOf ? fmt(S.of) + " is the number of disciplines in the Common Subjects Reference; " + fmt(S.settled) + " have a settled common subject code. " : "")
-          + (LT ? "The local titles come from the " + fmt(LT.colleges) + " catalogs filed so far (" + fmt(LT.courses) + " courses, " + fmt(LT.codes) + " subject codes). A title is the catalog’s own subject heading, saved in Title Case. A code with no title says why: not in catalog (the catalog was read and gives it no heading, so it waits on a person), not read yet (Sky reads it again), blocked (the college’s site refused our reader), or noncredit on hold (every course under the code is noncredit; noncredit titles and common codes wait until the large noncredit programs’ catalogs are read). "
+          + (LT ? "The local titles come from the " + fmt(LT.colleges) + " catalogs filed so far (" + fmt(LT.courses) + " courses, " + fmt(LT.codes) + " subject codes). A title is the catalog’s own subject heading, saved in Title Case. A code with no title says why: not in catalog (the catalog was read and gives it no heading, so it waits on a person), not read yet (Sky reads it again), or blocked (the college’s site refused our reader). A noncredit code is recommended a title from the noncredit subject title list, lined up by its own COCI noncredit category. "
             + "Each catalog’s codes are compared with the state course list’s codes for the same college, exactly, after trimming spaces and setting upper case: " + fmt(LT.catalogOnly) + " codes are in the catalog only and " + fmt(LT.stateOnly) + " in COCI only. "
             + "The common subject code beside a local code comes from the subject map and each discipline’s settled code, never from a TOP code."
             : "The local subject titles file has not been read, so Step b reads TBA.")])],

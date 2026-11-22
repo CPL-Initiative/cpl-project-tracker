@@ -1,5 +1,6 @@
--- Sam's 30 Cerritos subject decisions as kb_curation rows (S701, #3655). PREPARED, NOT APPLIED, and NOT pointed at
--- by kb/migrations/.apply: the conductor applies it after a second read.
+-- Sam's 30 Cerritos subject decisions as kb_curation rows (S701, #3655). APPLIED 2026-11-22T04:45Z by the conductor through the
+-- Supabase tool, after a second read: 0 SUBJ: rows before, 30 inserted. Receipt: kb/migrations/2026-11-22_s701_subject_decisions_receipt.json
+-- (rows md5 137729fdcfec757c49ddd72bc97d5244). NOT pointed at by kb/migrations/.apply.
 -- Written by kb/_file_subject_decisions.py from kb/reference/subject_code_decisions_cerritos_2026-11-21.json (decisions sha256 ff2d2419c79df7b17d0e0c23b326bb4466118cb455436bc139c823eb634e7340)
 -- and kb/status/local_subject_titles.json (bands). Ruling: r-subject-save-path-kb-curation-sam-2026-11-22 ("Fine."); ATH is KINE
 -- (r-athletics-under-kine-sam-2026-11-22). Key SUBJ:<college>|<local code>|<band>, field subject_decision; 29 credit, 1 whole.
