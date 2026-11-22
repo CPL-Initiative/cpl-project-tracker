@@ -4296,8 +4296,9 @@ def pdf_pinned_heading(pages: list[str], program: dict, pin: dict | None) -> tup
     A pin may name `through`, the last PDF page (1-based) of the program's section, when the section runs across a
     page break (S703, d-clovis-through-pin-to-followup-s703): the words still sit on the pinned page, the title
     words may print anywhere from the pinned page through `through` (Clovis 33432's core page p.106 lacks
-    "Entrepreneur", which p.107 prints), and pdf_best reads every page through `through` even where one names no
-    listed course (Clovis 33492's total prints on p.149). `through` is at most PDF_RUN_PAGES past the pin, never
+    "Entrepreneur", which p.107 prints), and pdf_best reads the pinned page through `through` and no page after it,
+    even where one names no listed course (Clovis 33492's total prints on p.149). `through` is at most
+    PDF_RUN_PAGES past the pin, never
     before it and never past the file; outside that the pin binds nothing. A pin without `through` reads as before."""
     if not pin:
         return None, None
@@ -4868,10 +4869,11 @@ def pdf_best(url: str, pages: list[str], program: dict, courses: list[dict], ext
     if heading:
         run, cn_at, head, titled = _pdf_run(pages, heading["page"], courses), -1, (1.0, True, heading["at"]), True
         if heading.get("through") is not None:
-            # A pin's through (pdf_pinned_heading): every page to it, a page naming no listed course included, and
-            # never more than PDF_RUN_PAGES past the pin. The run past through stays _pdf_run's (S703 follow-up).
+            # A pin's through (pdf_pinned_heading) names the section's last page: the window is the pinned page
+            # through it, a page naming no listed course included, and no page after it (Clovis 33432's p.108 and
+            # p.109 print the Management degree), never more than PDF_RUN_PAGES past the pin (S703 follow-up).
             last = min(int(heading["through"]), heading["page"] + PDF_RUN_PAGES, len(pages) - 1)
-            run = sorted(set(run) | set(range(heading["page"], last + 1)))
+            run = list(range(heading["page"], last + 1))
     else:
         run, cn_at, head, titled = _pdf_pick(pages, program, courses)
     if not run:

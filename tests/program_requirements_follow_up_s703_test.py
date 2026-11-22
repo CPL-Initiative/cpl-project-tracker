@@ -15,8 +15,9 @@ named-gaps rollback's tag. One check group per item, each guarding the failure i
   4. A capture-only prior read (no records/) whose PDF gave no page ended red after #3644 put read_short before
      file_prior (College of the Desert's preview 44711759115, pages_total 0). It files its preview and ends green;
      a prior read that extracted still refuses.
-  5. A pin's `through`: the title words may print across the pinned page through `through`, and pdf_best reads every
-     page to it, a page naming no listed course included, at most PDF_RUN_PAGES past the pin. A pin without
+  5. A pin's `through`: the title words may print across the pinned page through `through`, and pdf_best reads the
+     pinned page through it and no page after, a page naming no listed course included, and `through` is at most
+     PDF_RUN_PAGES past the pin. A pin without
      `through` binds and reads exactly as before (Cosumnes River's S650 pins on their fixture).
   6. kb/_program_named_gaps.py --receipt R --applied M named the rollback after the default tag s680 unless --tag was
      passed. It takes the tag from the receipt's file name, refuses a --tag that differs, and refuses a name with no tag.
@@ -235,14 +236,18 @@ try:
     check(why1 is None and thru["pages"] == [4, 5] and "Total Units for the Major: 18" in thru["text"]
           and thru["coverage"] == plain_read["coverage"],
           "5 through p.5 reads the page naming no listed course, and its total (%s)" % thru["pages"])
-    # Past through, _pdf_run's own continuation still applies, within PDF_RUN_PAGES of the pin.
-    more = "Electives\nSOC 2 Problems 3\n"
-    pages3 = filler + [ss, tail, more, more, more, more]
+    # through names the section's last page: the window stops there even where the next pages name listed courses
+    # (Clovis 33432: pp.108-109 print the Management degree, whose core names the same BA courses).
+    more = "MANAGEMENT ASSOCIATE IN SCIENCE DEGREE\nSOC 2 Problems 3\nSOC 1A Intro 3\n"
+    pages3 = filler + [ss, more, more, more, more]
     soc3 = dict(soc, closed_list=soc["closed_list"] + [{"code": "SOC 2"}])
+    h3, _ = C.pdf_pinned_heading(pages3, soc3, {"page": 4, "words": sw})
+    run3 = C.pdf_best("https://x.edu/c.pdf", pages3, soc3, soc3["closed_list"], "pypdf", h3)["pages"]
     h3, _ = C.pdf_pinned_heading(pages3, soc3, {"page": 4, "words": sw, "through": 5})
     got3 = C.pdf_best("https://x.edu/c.pdf", pages3, soc3, soc3["closed_list"], "pypdf", h3)
-    check(got3["pages"] == [4, 5] and len(got3["pages"]) <= 1 + C.PDF_RUN_PAGES,
-          "5 the run never reaches past PDF_RUN_PAGES of the pin (%s)" % got3["pages"])
+    check(run3 == [4, 5, 6, 7] and got3["pages"] == [4, 5],
+          "5 a pin without through runs on while pages name listed courses (%s); through p.5 stops at p.5 (%s)"
+          % (run3, got3["pages"]))
     for bad, want in (({"through": 3}, "is not from p.4 to p.7"), ({"through": 4 + C.PDF_RUN_PAGES + 1}, "is not from"),
                       ({"through": "five"}, "is not a page number")):
         h, w = C.pdf_pinned_heading(pages2, soc, dict({"page": 4, "words": sw}, **bad))
