@@ -104,7 +104,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "hours_total_differs",
+    "label": "A program measured in hours: its courses' hours as read add to a figure other than the program's printed total.",
+    "words": "the courses' hours add to 235.5 against the printed 235.4 hours"
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 30,
+   "course_list_match": 92,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {
