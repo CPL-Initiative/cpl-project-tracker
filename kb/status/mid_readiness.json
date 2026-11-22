@@ -1,0 +1,4354 @@
+{
+ "_what": "Which M-IDs in a re-mint's scope pass the draft readiness gate (d-remint-ready-gate-draft-s707, Sam's to set), and why each of the rest is held. Read by the Subjects page and the re-mint dry run. Written by kb/_mid_readiness.py; nothing here is a decision.",
+ "_gate": [
+  "every member's code has a settled common code: a person's save for that college's code (noncredit under its own category) or a person's statewide filing; the subject map alone settles nothing",
+  "the settled codes give one code or a split along the codes; both pass",
+  "the outcomes comparison ran on the current reads, and no strong or partial split waits on an answer"
+ ],
+ "_sources": {
+  "members": "unified_courses_members.js generated 2026-11-22 14:47",
+  "courses": "kb/status/subject_courses/<slug>.json",
+  "decisions": "kb/status/subject_decisions.json",
+  "subject_map": "kb/reference/subject_discipline_map.json",
+  "outcomes_compare": "kb/status/mid_outcomes_compare_2026-11-22.json.gz",
+  "outcomes_compare_rows": 45673,
+  "outcomes_reads_rows": 45673,
+  "outcomes_current": true
+ },
+ "scopes": {
+  "aed": {
+   "college": "Cerritos College",
+   "code": "AED",
+   "why": "AED (Adult Education) gave 45 shared M-IDs an ELEC prefix through the subject map (f-aed-electricity-gave-elec-m90-s707); AED is unmapped since #3693.",
+   "mids": 127,
+   "ready": 34,
+   "held": 93,
+   "members": 3084,
+   "member_status": {
+    "settled": 64,
+    "college not read": 2373,
+    "no settled code": 506,
+    "category has no common code": 21,
+    "no noncredit category": 120
+   },
+   "fully_settled_mids": 34,
+   "codes_to_settle": [
+    {
+     "college": "North Orange Continuing Education",
+     "code": "ESLA",
+     "band": "(no category in the export)",
+     "status": "no noncredit category",
+     "subject_map_draft": "ESOL",
+     "members": 42
+    },
+    {
+     "college": "Cerritos College",
+     "code": "AED",
+     "band": "Elementary and Secondary Basic Skills",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 32
+    },
+    {
+     "college": "Cerritos College",
+     "code": "AED",
+     "band": "(no category in the export)",
+     "status": "no noncredit category",
+     "subject_map_draft": null,
+     "members": 26
+    },
+    {
+     "college": "El Camino College",
+     "code": "NESL",
+     "band": "English as a Second Language (ESL)",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 25
+    },
+    {
+     "college": "Southwestern College",
+     "code": "ESL",
+     "band": "credit",
+     "status": "no settled code",
+     "subject_map_draft": "ESOL",
+     "members": 25
+    },
+    {
+     "college": "Los Angeles Southwest College",
+     "code": "ESL NC",
+     "band": "English as a Second Language (ESL)",
+     "status": "no settled code",
+     "subject_map_draft": "ESLN",
+     "members": 22
+    },
+    {
+     "college": "Long Beach City College",
+     "code": "ESL",
+     "band": "credit",
+     "status": "no settled code",
+     "subject_map_draft": "ESOL",
+     "members": 21
+    },
+    {
+     "college": "Mt. San Antonio College",
+     "code": "ESL",
+     "band": "English as a Second Language (ESL)",
+     "status": "no settled code",
+     "subject_map_draft": "ESOL",
+     "members": 21
+    },
+    {
+     "college": "Santa Ana College",
+     "code": "ESL",
+     "band": "English as a Second Language (ESL)",
+     "status": "no settled code",
+     "subject_map_draft": "ESOL",
+     "members": 20
+    },
+    {
+     "college": "Cerritos College",
+     "code": "AED",
+     "band": "Workforce Preparation",
+     "status": "category has no common code",
+     "subject_map_draft": null,
+     "members": 19
+    },
+    {
+     "college": "Long Beach City College",
+     "code": "ESL",
+     "band": "English as a Second Language (ESL)",
+     "status": "no settled code",
+     "subject_map_draft": "ESOL",
+     "members": 19
+    },
+    {
+     "college": "West Los Angeles College",
+     "code": "ESL NC",
+     "band": "English as a Second Language (ESL)",
+     "status": "no settled code",
+     "subject_map_draft": "ESLN",
+     "members": 18
+    },
+    {
+     "college": "San Diego College of Continuing Education",
+     "code": "ESLA",
+     "band": "English as a Second Language (ESL)",
+     "status": "no settled code",
+     "subject_map_draft": "ESOL",
+     "members": 17
+    },
+    {
+     "college": "Los Angeles Valley College",
+     "code": "ESL NC",
+     "band": "English as a Second Language (ESL)",
+     "status": "no settled code",
+     "subject_map_draft": "ESLN",
+     "members": 15
+    },
+    {
+     "college": "Mt. San Antonio College",
+     "code": "ESL",
+     "band": "(no category in the export)",
+     "status": "no noncredit category",
+     "subject_map_draft": "ESOL",
+     "members": 15
+    },
+    {
+     "college": "East Los Angeles College",
+     "code": "ESL NC",
+     "band": "English as a Second Language (ESL)",
+     "status": "no settled code",
+     "subject_map_draft": "ESLN",
+     "members": 14
+    },
+    {
+     "college": "Los Angeles City College",
+     "code": "ESL NC",
+     "band": "English as a Second Language (ESL)",
+     "status": "no settled code",
+     "subject_map_draft": "ESLN",
+     "members": 14
+    },
+    {
+     "college": "Los Angeles City College",
+     "code": "ESLCVCS",
+     "band": "English as a Second Language (ESL)",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 14
+    },
+    {
+     "college": "Los Angeles Pierce College",
+     "code": "ESL NC",
+     "band": "English as a Second Language (ESL)",
+     "status": "no settled code",
+     "subject_map_draft": "ESLN",
+     "members": 13
+    },
+    {
+     "college": "Monterey Peninsula College",
+     "code": "ENSL",
+     "band": "English as a Second Language (ESL)",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 13
+    },
+    {
+     "college": "Monterey Peninsula College",
+     "code": "ENSL",
+     "band": "credit",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 13
+    },
+    {
+     "college": "Los Angeles Pierce College",
+     "code": "E.S.L.",
+     "band": "credit",
+     "status": "no settled code",
+     "subject_map_draft": "ESOL",
+     "members": 10
+    },
+    {
+     "college": "East Los Angeles College",
+     "code": "E.S.L.",
+     "band": "credit",
+     "status": "no settled code",
+     "subject_map_draft": "ESOL",
+     "members": 9
+    },
+    {
+     "college": "Los Angeles City College",
+     "code": "E.S.L.",
+     "band": "credit",
+     "status": "no settled code",
+     "subject_map_draft": "ESOL",
+     "members": 9
+    },
+    {
+     "college": "Los Angeles Harbor College",
+     "code": "ESL NC",
+     "band": "English as a Second Language (ESL)",
+     "status": "no settled code",
+     "subject_map_draft": "ESLN",
+     "members": 9
+    },
+    {
+     "college": "Los Angeles Mission College",
+     "code": "E.S.L.",
+     "band": "credit",
+     "status": "no settled code",
+     "subject_map_draft": "ESOL",
+     "members": 9
+    },
+    {
+     "college": "Los Angeles Valley College",
+     "code": "E.S.L.",
+     "band": "credit",
+     "status": "no settled code",
+     "subject_map_draft": "ESOL",
+     "members": 9
+    },
+    {
+     "college": "Cerritos College",
+     "code": "AED",
+     "band": "English as a Second Language (ESL)",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 8
+    },
+    {
+     "college": "El Camino College",
+     "code": "ESL",
+     "band": "credit",
+     "status": "no settled code",
+     "subject_map_draft": "ESOL",
+     "members": 8
+    },
+    {
+     "college": "Los Angeles Trade Technical College",
+     "code": "ESL NC",
+     "band": "English as a Second Language (ESL)",
+     "status": "no settled code",
+     "subject_map_draft": "ESLN",
+     "members": 8
+    },
+    {
+     "college": "Mt. San Antonio College",
+     "code": "BSHS",
+     "band": "(no category in the export)",
+     "status": "no noncredit category",
+     "subject_map_draft": null,
+     "members": 8
+    },
+    {
+     "college": "North Orange Continuing Education",
+     "code": "ESLA",
+     "band": "English as a Second Language (ESL)",
+     "status": "no settled code",
+     "subject_map_draft": "ESOL",
+     "members": 8
+    },
+    {
+     "college": "El Camino College",
+     "code": "ESL",
+     "band": "English as a Second Language (ESL)",
+     "status": "no settled code",
+     "subject_map_draft": "ESOL",
+     "members": 7
+    },
+    {
+     "college": "Mt. San Antonio College",
+     "code": "AMLA",
+     "band": "credit",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 7
+    },
+    {
+     "college": "Cerritos College",
+     "code": "AED",
+     "band": "Courses for Older Adults",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 6
+    },
+    {
+     "college": "Cerritos College",
+     "code": "ESL",
+     "band": "credit",
+     "status": "no settled code",
+     "subject_map_draft": "ESOL",
+     "members": 6
+    },
+    {
+     "college": "El Camino College",
+     "code": "ESL",
+     "band": "(no category in the export)",
+     "status": "no noncredit category",
+     "subject_map_draft": "ESOL",
+     "members": 6
+    },
+    {
+     "college": "Los Angeles Valley College",
+     "code": "ESLCVCS",
+     "band": "English as a Second Language (ESL)",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 6
+    },
+    {
+     "college": "Southwestern College",
+     "code": "NC",
+     "band": "English as a Second Language (ESL)",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 6
+    },
+    {
+     "college": "West Los Angeles College",
+     "code": "ESLCVCS",
+     "band": "English as a Second Language (ESL)",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 6
+    },
+    {
+     "college": "Los Angeles Southwest College",
+     "code": "ESL NC",
+     "band": "(no category in the export)",
+     "status": "no noncredit category",
+     "subject_map_draft": "ESLN",
+     "members": 5
+    },
+    {
+     "college": "Santa Ana College",
+     "code": "EMLS",
+     "band": "credit",
+     "status": "no settled code",
+     "subject_map_draft": "ESOL",
+     "members": 5
+    },
+    {
+     "college": "Cerritos College",
+     "code": "AED",
+     "band": "Courses for Persons with Substantial Disabilities",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 3
+    },
+    {
+     "college": "Los Angeles Harbor College",
+     "code": "E.S.L.",
+     "band": "credit",
+     "status": "no settled code",
+     "subject_map_draft": "ESOL",
+     "members": 3
+    },
+    {
+     "college": "Los Angeles Pierce College",
+     "code": "ESLCVCS",
+     "band": "Citizenship for Immigrants",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 3
+    },
+    {
+     "college": "Mt. San Antonio College",
+     "code": "BSHS",
+     "band": "Elementary and Secondary Basic Skills",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 3
+    },
+    {
+     "college": "North Orange Continuing Education",
+     "code": "IHSS",
+     "band": "(no category in the export)",
+     "status": "no noncredit category",
+     "subject_map_draft": null,
+     "members": 3
+    },
+    {
+     "college": "North Orange Continuing Education",
+     "code": "IHSS",
+     "band": "Elementary and Secondary Basic Skills",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 3
+    },
+    {
+     "college": "Cerritos College",
+     "code": "AED",
+     "band": "Health & Safety",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 2
+    },
+    {
+     "college": "Cerritos College",
+     "code": "IWAP",
+     "band": "credit",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 2
+    },
+    {
+     "college": "Clovis Community College",
+     "code": "ESL",
+     "band": "English as a Second Language (ESL)",
+     "status": "no settled code",
+     "subject_map_draft": "ESOL",
+     "members": 2
+    },
+    {
+     "college": "Long Beach City College",
+     "code": "ESL",
+     "band": "Citizenship for Immigrants",
+     "status": "no settled code",
+     "subject_map_draft": "ESOL",
+     "members": 2
+    },
+    {
+     "college": "Los Angeles Harbor College",
+     "code": "ESL",
+     "band": "credit",
+     "status": "no settled code",
+     "subject_map_draft": "ESOL",
+     "members": 2
+    },
+    {
+     "college": "Los Angeles Harbor College",
+     "code": "ESLCVCS",
+     "band": "English as a Second Language (ESL)",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 2
+    },
+    {
+     "college": "Los Angeles Mission College",
+     "code": "ESLCVCS",
+     "band": "(no category in the export)",
+     "status": "no noncredit category",
+     "subject_map_draft": null,
+     "members": 2
+    },
+    {
+     "college": "Los Angeles Pierce College",
+     "code": "ESL NC",
+     "band": "(no category in the export)",
+     "status": "no noncredit category",
+     "subject_map_draft": "ESLN",
+     "members": 2
+    },
+    {
+     "college": "Los Angeles Trade Technical College",
+     "code": "ESL NC",
+     "band": "(no category in the export)",
+     "status": "no noncredit category",
+     "subject_map_draft": "ESLN",
+     "members": 2
+    },
+    {
+     "college": "Los Angeles Trade Technical College",
+     "code": "ESLCVCS",
+     "band": "English as a Second Language (ESL)",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 2
+    },
+    {
+     "college": "Santa Ana College",
+     "code": "CAR",
+     "band": "credit",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 2
+    },
+    {
+     "college": "Southwestern College",
+     "code": "NC",
+     "band": "Workforce Preparation",
+     "status": "category has no common code",
+     "subject_map_draft": null,
+     "members": 2
+    },
+    {
+     "college": "Southwestern College",
+     "code": "NC",
+     "band": "(no category in the export)",
+     "status": "no noncredit category",
+     "subject_map_draft": null,
+     "members": 2
+    },
+    {
+     "college": "Southwestern College",
+     "code": "NC",
+     "band": "Elementary and Secondary Basic Skills",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 2
+    },
+    {
+     "college": "East Los Angeles College",
+     "code": "ESL NC",
+     "band": "(no category in the export)",
+     "status": "no noncredit category",
+     "subject_map_draft": "ESLN",
+     "members": 1
+    },
+    {
+     "college": "East Los Angeles College",
+     "code": "READING",
+     "band": "credit",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 1
+    },
+    {
+     "college": "East Los Angeles College",
+     "code": "TUTOR",
+     "band": "Elementary and Secondary Basic Skills",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 1
+    },
+    {
+     "college": "El Camino College",
+     "code": "PASS",
+     "band": "Elementary and Secondary Basic Skills",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 1
+    },
+    {
+     "college": "Long Beach City College",
+     "code": "ESL",
+     "band": "(no category in the export)",
+     "status": "no noncredit category",
+     "subject_map_draft": "ESOL",
+     "members": 1
+    },
+    {
+     "college": "Long Beach City College",
+     "code": "ESLLC",
+     "band": "English as a Second Language (ESL)",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 1
+    },
+    {
+     "college": "Long Beach City College",
+     "code": "LEARN",
+     "band": "Elementary and Secondary Basic Skills",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 1
+    },
+    {
+     "college": "Los Angeles City College",
+     "code": "ESLCVCS",
+     "band": "(no category in the export)",
+     "status": "no noncredit category",
+     "subject_map_draft": null,
+     "members": 1
+    },
+    {
+     "college": "Los Angeles City College",
+     "code": "TUTOR",
+     "band": "Elementary and Secondary Basic Skills",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 1
+    },
+    {
+     "college": "Los Angeles Harbor College",
+     "code": "TUTOR",
+     "band": "Elementary and Secondary Basic Skills",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 1
+    },
+    {
+     "college": "Los Angeles Mission College",
+     "code": "BSICSKL",
+     "band": "(no category in the export)",
+     "status": "no noncredit category",
+     "subject_map_draft": null,
+     "members": 1
+    },
+    {
+     "college": "Los Angeles Pierce College",
+     "code": "BSICSKL",
+     "band": "Elementary and Secondary Basic Skills",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 1
+    },
+    {
+     "college": "Los Angeles Pierce College",
+     "code": "ESLCVCS",
+     "band": "(no category in the export)",
+     "status": "no noncredit category",
+     "subject_map_draft": null,
+     "members": 1
+    },
+    {
+     "college": "Los Angeles Pierce College",
+     "code": "ESLCVCS",
+     "band": "English as a Second Language (ESL)",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 1
+    },
+    {
+     "college": "Los Angeles Pierce College",
+     "code": "TUTOR",
+     "band": "Elementary and Secondary Basic Skills",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 1
+    },
+    {
+     "college": "Los Angeles Southwest College",
+     "code": "ESLCVCS",
+     "band": "English as a Second Language (ESL)",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 1
+    },
+    {
+     "college": "Los Angeles Southwest College",
+     "code": "READING",
+     "band": "credit",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 1
+    },
+    {
+     "college": "Los Angeles Trade Technical College",
+     "code": "E.S.L.",
+     "band": "credit",
+     "status": "no settled code",
+     "subject_map_draft": "ESOL",
+     "members": 1
+    },
+    {
+     "college": "Los Angeles Valley College",
+     "code": "TUTOR",
+     "band": "Elementary and Secondary Basic Skills",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 1
+    },
+    {
+     "college": "Mt. San Antonio College",
+     "code": "ACCS",
+     "band": "Courses for Persons with Substantial Disabilities",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 1
+    },
+    {
+     "college": "Mt. San Antonio College",
+     "code": "PHOT",
+     "band": "credit",
+     "status": "no settled code",
+     "subject_map_draft": "PHOT",
+     "members": 1
+    },
+    {
+     "college": "North Orange Continuing Education",
+     "code": "ESLM",
+     "band": "(no category in the export)",
+     "status": "no noncredit category",
+     "subject_map_draft": null,
+     "members": 1
+    },
+    {
+     "college": "San Diego College of Continuing Education",
+     "code": "PASV",
+     "band": "Courses for Older Adults",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 1
+    },
+    {
+     "college": "Santa Ana College",
+     "code": "ESL",
+     "band": "credit",
+     "status": "no settled code",
+     "subject_map_draft": "ESOL",
+     "members": 1
+    },
+    {
+     "college": "Santa Ana College",
+     "code": "HSSOC",
+     "band": "Elementary and Secondary Basic Skills",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 1
+    },
+    {
+     "college": "Santa Ana College",
+     "code": "LRN",
+     "band": "Elementary and Secondary Basic Skills",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 1
+    },
+    {
+     "college": "Southwestern College",
+     "code": "PD",
+     "band": "credit",
+     "status": "no settled code",
+     "subject_map_draft": null,
+     "members": 1
+    },
+    {
+     "college": "West Los Angeles College",
+     "code": "ESL NC",
+     "band": "(no category in the export)",
+     "status": "no noncredit category",
+     "subject_map_draft": "ESLN",
+     "members": 1
+    }
+   ],
+   "by_mid": {
+    "ELEC M1018": {
+     "ready": true,
+     "members": 2,
+     "settled": 2,
+     "held_members": {},
+     "codes": {
+      "ELEC": 1,
+      "VOCE": 1
+     },
+     "shape": "splits along code",
+     "outcomes": null,
+     "reasons": [],
+     "held": []
+    },
+    "ELEC M1045": {
+     "ready": false,
+     "members": 3,
+     "settled": 1,
+     "held_members": {
+      "college not read": 2
+     },
+     "codes": {
+      "VOCE": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [
+      "2 college not read"
+     ],
+     "held": [
+      [
+       "American River College",
+       "IW 170",
+       "college not read"
+      ],
+      [
+       "San Jose City College",
+       "Ironworker Apprenticeship (IRON) 170",
+       "college not read"
+      ]
+     ]
+    },
+    "ELEC M1046": {
+     "ready": false,
+     "members": 5,
+     "settled": 1,
+     "held_members": {
+      "college not read": 3,
+      "category has no common code": 1
+     },
+     "codes": {
+      "ELEC": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [
+      "3 college not read",
+      "1 category has no common code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 90.2",
+       "category has no common code"
+      ],
+      [
+       "Santa Barbara City College",
+       "CT 196",
+       "college not read"
+      ],
+      [
+       "Santa Barbara City College",
+       "CTV NC196",
+       "college not read"
+      ],
+      [
+       "Rio Hondo College",
+       "ETEC 114",
+       "college not read"
+      ]
+     ]
+    },
+    "ELEC M1047": {
+     "ready": false,
+     "members": 8,
+     "settled": 0,
+     "held_members": {
+      "college not read": 7,
+      "category has no common code": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": {
+      "class": "Not enough text",
+      "level": null
+     },
+     "reasons": [
+      "7 college not read",
+      "1 category has no common code"
+     ],
+     "held": [
+      [
+       "American River College",
+       "CARPT 215",
+       "college not read"
+      ],
+      [
+       "Cerritos College",
+       "AED 90.21",
+       "category has no common code"
+      ],
+      [
+       "Santa Barbara City College",
+       "CT 137",
+       "college not read"
+      ],
+      [
+       "Santa Barbara City College",
+       "CTV NC137",
+       "college not read"
+      ],
+      [
+       "American River College",
+       "CARPT 145",
+       "college not read"
+      ],
+      [
+       "Norco College",
+       "ELE 409",
+       "college not read"
+      ],
+      [
+       "Norco College",
+       "ELC 409",
+       "college not read"
+      ],
+      [
+       "Rio Hondo College",
+       "ETEC 112",
+       "college not read"
+      ]
+     ]
+    },
+    "ELEC M9001": {
+     "ready": false,
+     "members": 5,
+     "settled": 0,
+     "held_members": {
+      "college not read": 2,
+      "no settled code": 2,
+      "no noncredit category": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "2 college not read",
+      "2 no settled code",
+      "1 no noncredit category"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED CR7",
+       "no settled code"
+      ],
+      [
+       "Compton College",
+       "HSED 1",
+       "college not read"
+      ],
+      [
+       "Mt. San Antonio College",
+       "BSHS ENG1",
+       "no noncredit category"
+      ],
+      [
+       "North Orange Continuing Education",
+       "IHSS 100",
+       "no settled code"
+      ],
+      [
+       "North Orange Continuing Education Credit",
+       "IHSS 100",
+       "college not read"
+      ]
+     ]
+    },
+    "ELEC M9002": {
+     "ready": false,
+     "members": 2,
+     "settled": 0,
+     "held_members": {
+      "college not read": 1,
+      "no noncredit category": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 college not read",
+      "1 no noncredit category"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED CR1",
+       "no noncredit category"
+      ],
+      [
+       "Compton College",
+       "HSED 5",
+       "college not read"
+      ]
+     ]
+    },
+    "ELEC M9003": {
+     "ready": false,
+     "members": 3,
+     "settled": 0,
+     "held_members": {
+      "college not read": 1,
+      "no settled code": 1,
+      "no noncredit category": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 college not read",
+      "1 no settled code",
+      "1 no noncredit category"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED CR8",
+       "no settled code"
+      ],
+      [
+       "Compton College",
+       "HSED 14",
+       "college not read"
+      ],
+      [
+       "Mt. San Antonio College",
+       "BSHS SPN1",
+       "no noncredit category"
+      ]
+     ]
+    },
+    "ELEC M9004": {
+     "ready": false,
+     "members": 2,
+     "settled": 0,
+     "held_members": {
+      "no noncredit category": 2
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "2 no noncredit category"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED CR13",
+       "no noncredit category"
+      ],
+      [
+       "Mt. San Antonio College",
+       "BSHS ALG2",
+       "no noncredit category"
+      ]
+     ]
+    },
+    "ELEC M9005": {
+     "ready": false,
+     "members": 5,
+     "settled": 0,
+     "held_members": {
+      "college not read": 2,
+      "no settled code": 2,
+      "no noncredit category": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "2 college not read",
+      "2 no settled code",
+      "1 no noncredit category"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED CR9",
+       "no settled code"
+      ],
+      [
+       "Compton College",
+       "HSED 2",
+       "college not read"
+      ],
+      [
+       "Mt. San Antonio College",
+       "BSHS ENG2",
+       "no noncredit category"
+      ],
+      [
+       "North Orange Continuing Education",
+       "IHSS 101",
+       "no settled code"
+      ],
+      [
+       "North Orange Continuing Education Credit",
+       "IHSS 101",
+       "college not read"
+      ]
+     ]
+    },
+    "ELEC M9006": {
+     "ready": false,
+     "members": 2,
+     "settled": 0,
+     "held_members": {
+      "college not read": 1,
+      "no noncredit category": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 college not read",
+      "1 no noncredit category"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED CR2",
+       "no noncredit category"
+      ],
+      [
+       "Compton College",
+       "HSED 6",
+       "college not read"
+      ]
+     ]
+    },
+    "ELEC M9007": {
+     "ready": false,
+     "members": 3,
+     "settled": 0,
+     "held_members": {
+      "college not read": 1,
+      "no settled code": 1,
+      "no noncredit category": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 college not read",
+      "1 no settled code",
+      "1 no noncredit category"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED CR5",
+       "no settled code"
+      ],
+      [
+       "Compton College",
+       "HSED 15",
+       "college not read"
+      ],
+      [
+       "Mt. San Antonio College",
+       "BSHS SPN2",
+       "no noncredit category"
+      ]
+     ]
+    },
+    "ELEC M9008": {
+     "ready": false,
+     "members": 3,
+     "settled": 0,
+     "held_members": {
+      "college not read": 2,
+      "no settled code": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "2 college not read",
+      "1 no settled code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 10.07",
+       "no settled code"
+      ],
+      [
+       "Mission College",
+       "NCO 3905",
+       "college not read"
+      ],
+      [
+       "Santa Rosa Junior College",
+       "LL 507",
+       "college not read"
+      ]
+     ]
+    },
+    "ELEC M9009": {
+     "ready": false,
+     "members": 3,
+     "settled": 0,
+     "held_members": {
+      "no settled code": 3
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "3 no settled code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED CR6",
+       "no settled code"
+      ],
+      [
+       "Mt. San Antonio College",
+       "BSHS ART1",
+       "no settled code"
+      ],
+      [
+       "Cerritos College",
+       "AED CR6A",
+       "no settled code"
+      ]
+     ]
+    },
+    "ELEC M9010": {
+     "ready": false,
+     "members": 2,
+     "settled": 0,
+     "held_members": {
+      "college not read": 1,
+      "no settled code": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 college not read",
+      "1 no settled code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 42.13",
+       "no settled code"
+      ],
+      [
+       "Cuesta College",
+       "BSNC 500B",
+       "college not read"
+      ]
+     ]
+    },
+    "ELEC M9011": {
+     "ready": false,
+     "members": 5,
+     "settled": 3,
+     "held_members": {
+      "no settled code": 1,
+      "no noncredit category": 1
+     },
+     "codes": {
+      "VOCE": 3
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [
+      "1 no settled code",
+      "1 no noncredit category"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 40.5",
+       "no noncredit category"
+      ],
+      [
+       "Cerritos College",
+       "IWAP 40.5",
+       "no settled code"
+      ]
+     ]
+    },
+    "ELEC M9012": {
+     "ready": false,
+     "members": 3,
+     "settled": 2,
+     "held_members": {
+      "college not read": 1
+     },
+     "codes": {
+      "VOCE": 2
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [
+      "1 college not read"
+     ],
+     "held": [
+      [
+       "Gavilan College",
+       "HVAC 201",
+       "college not read"
+      ]
+     ]
+    },
+    "ELEC M9013": {
+     "ready": false,
+     "members": 3,
+     "settled": 1,
+     "held_members": {
+      "college not read": 1,
+      "category has no common code": 1
+     },
+     "codes": {
+      "ELEC": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [
+      "1 college not read",
+      "1 category has no common code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 90.02",
+       "category has no common code"
+      ],
+      [
+       "Sierra College",
+       "BI 801",
+       "college not read"
+      ]
+     ]
+    },
+    "ELEC M9015": {
+     "ready": false,
+     "members": 2,
+     "settled": 0,
+     "held_members": {
+      "college not read": 1,
+      "no settled code": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 college not read",
+      "1 no settled code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 42.14",
+       "no settled code"
+      ],
+      [
+       "Foothill College",
+       "NCEL 410",
+       "college not read"
+      ]
+     ]
+    },
+    "ELEC M9017": {
+     "ready": false,
+     "members": 5,
+     "settled": 0,
+     "held_members": {
+      "college not read": 2,
+      "no settled code": 2,
+      "no noncredit category": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "2 college not read",
+      "2 no settled code",
+      "1 no noncredit category"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED CR3",
+       "no settled code"
+      ],
+      [
+       "Compton College",
+       "HSED 8",
+       "college not read"
+      ],
+      [
+       "Mt. San Antonio College",
+       "BSHS BIO",
+       "no settled code"
+      ],
+      [
+       "North Orange Continuing Education",
+       "IHSS 123",
+       "no noncredit category"
+      ],
+      [
+       "North Orange Continuing Education Credit",
+       "IHSS 123",
+       "college not read"
+      ]
+     ]
+    },
+    "ELEC M9019": {
+     "ready": false,
+     "members": 3,
+     "settled": 2,
+     "held_members": {
+      "college not read": 1
+     },
+     "codes": {
+      "VOCE": 2
+     },
+     "shape": "one code",
+     "outcomes": {
+      "class": "Not enough text",
+      "level": null
+     },
+     "reasons": [
+      "1 college not read"
+     ],
+     "held": [
+      [
+       "Golden West College",
+       "BUS G012N",
+       "college not read"
+      ]
+     ]
+    },
+    "ELEC M9020": {
+     "ready": false,
+     "members": 4,
+     "settled": 0,
+     "held_members": {
+      "college not read": 1,
+      "no settled code": 3
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 college not read",
+      "3 no settled code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED CR4",
+       "no settled code"
+      ],
+      [
+       "Compton College",
+       "HSED 9",
+       "college not read"
+      ],
+      [
+       "Mt. San Antonio College",
+       "BSHS CHEM",
+       "no settled code"
+      ],
+      [
+       "Cerritos College",
+       "AED CR4A",
+       "no settled code"
+      ]
+     ]
+    },
+    "ELEC M9023": {
+     "ready": false,
+     "members": 2,
+     "settled": 1,
+     "held_members": {
+      "category has no common code": 1
+     },
+     "codes": {
+      "ELEC": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [
+      "1 category has no common code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 90.13",
+       "category has no common code"
+      ]
+     ]
+    },
+    "ELEC M9025": {
+     "ready": false,
+     "members": 2,
+     "settled": 0,
+     "held_members": {
+      "college not read": 1,
+      "no settled code": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 college not read",
+      "1 no settled code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 48.04",
+       "no settled code"
+      ],
+      [
+       "Santa Rosa Junior College",
+       "DRD 390.2",
+       "college not read"
+      ]
+     ]
+    },
+    "ELEC M9026": {
+     "ready": false,
+     "members": 2,
+     "settled": 1,
+     "held_members": {
+      "category has no common code": 1
+     },
+     "codes": {
+      "ELEC": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [
+      "1 category has no common code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 90.14",
+       "category has no common code"
+      ]
+     ]
+    },
+    "ELEC M9028": {
+     "ready": false,
+     "members": 4,
+     "settled": 1,
+     "held_members": {
+      "college not read": 2,
+      "category has no common code": 1
+     },
+     "codes": {
+      "ELEC": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [
+      "2 college not read",
+      "1 category has no common code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 90.18",
+       "category has no common code"
+      ],
+      [
+       "Santa Barbara City College",
+       "CT 133",
+       "college not read"
+      ],
+      [
+       "Santa Barbara City College",
+       "CTV NC133",
+       "college not read"
+      ]
+     ]
+    },
+    "ELEC M9030": {
+     "ready": false,
+     "members": 2,
+     "settled": 0,
+     "held_members": {
+      "college not read": 1,
+      "no settled code": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 college not read",
+      "1 no settled code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 48.03",
+       "no settled code"
+      ],
+      [
+       "Cuesta College",
+       "ECOL 411",
+       "college not read"
+      ]
+     ]
+    },
+    "ELEC M9031": {
+     "ready": false,
+     "members": 2,
+     "settled": 0,
+     "held_members": {
+      "no noncredit category": 2
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "2 no noncredit category"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 42.2",
+       "no noncredit category"
+      ],
+      [
+       "Cerritos College",
+       "AED 42.2",
+       "no noncredit category"
+      ]
+     ]
+    },
+    "ELEC M9032": {
+     "ready": false,
+     "members": 2,
+     "settled": 1,
+     "held_members": {
+      "category has no common code": 1
+     },
+     "codes": {
+      "ELEC": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [
+      "1 category has no common code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 90.15",
+       "category has no common code"
+      ]
+     ]
+    },
+    "ELEC M9041": {
+     "ready": false,
+     "members": 2,
+     "settled": 1,
+     "held_members": {
+      "category has no common code": 1
+     },
+     "codes": {
+      "ELEC": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [
+      "1 category has no common code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 90.11",
+       "category has no common code"
+      ]
+     ]
+    },
+    "ELEC M9042": {
+     "ready": false,
+     "members": 5,
+     "settled": 1,
+     "held_members": {
+      "college not read": 3,
+      "category has no common code": 1
+     },
+     "codes": {
+      "ELEC": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [
+      "3 college not read",
+      "1 category has no common code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 90.12",
+       "category has no common code"
+      ],
+      [
+       "College of the Siskiyous",
+       "WORK 538",
+       "college not read"
+      ],
+      [
+       "Santa Barbara City College",
+       "CT 136",
+       "college not read"
+      ],
+      [
+       "Santa Barbara City College",
+       "CTV NC136",
+       "college not read"
+      ]
+     ]
+    },
+    "ELEC M9043": {
+     "ready": false,
+     "members": 3,
+     "settled": 1,
+     "held_members": {
+      "college not read": 1,
+      "category has no common code": 1
+     },
+     "codes": {
+      "ELEC": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [
+      "1 college not read",
+      "1 category has no common code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 90.01",
+       "category has no common code"
+      ],
+      [
+       "Sierra College",
+       "BI 800",
+       "college not read"
+      ]
+     ]
+    },
+    "ELEC M9044": {
+     "ready": true,
+     "members": 2,
+     "settled": 2,
+     "held_members": {},
+     "codes": {
+      "VOCE": 1,
+      "ELEC": 1
+     },
+     "shape": "splits along code",
+     "outcomes": null,
+     "reasons": [],
+     "held": []
+    },
+    "ELEC M9045": {
+     "ready": false,
+     "members": 2,
+     "settled": 0,
+     "held_members": {
+      "college not read": 1,
+      "no settled code": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 college not read",
+      "1 no settled code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 49.02",
+       "no settled code"
+      ],
+      [
+       "Lemoore College",
+       "NC 133",
+       "college not read"
+      ]
+     ]
+    },
+    "ELEC M9046": {
+     "ready": false,
+     "members": 2,
+     "settled": 1,
+     "held_members": {
+      "no settled code": 1
+     },
+     "codes": {
+      "VOCE": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [
+      "1 no settled code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "IWAP 40.07",
+       "no settled code"
+      ]
+     ]
+    },
+    "ELEC M9047": {
+     "ready": false,
+     "members": 6,
+     "settled": 0,
+     "held_members": {
+      "college not read": 3,
+      "no settled code": 2,
+      "no noncredit category": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "3 college not read",
+      "2 no settled code",
+      "1 no noncredit category"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 42.12",
+       "no settled code"
+      ],
+      [
+       "Cuesta College",
+       "BSNC 500A",
+       "college not read"
+      ],
+      [
+       "College of Marin",
+       "ESBS 3010",
+       "college not read"
+      ],
+      [
+       "College of the Canyons",
+       "NC.BCSK 100",
+       "college not read"
+      ],
+      [
+       "Los Angeles Mission College",
+       "BSICSKL 038CE",
+       "no noncredit category"
+      ],
+      [
+       "Los Angeles Pierce College",
+       "BSICSKL 038CE",
+       "no settled code"
+      ]
+     ]
+    },
+    "ELEC M9048": {
+     "ready": false,
+     "members": 3,
+     "settled": 1,
+     "held_members": {
+      "category has no common code": 2
+     },
+     "codes": {
+      "ELEC": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [
+      "2 category has no common code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 90.19",
+       "category has no common code"
+      ],
+      [
+       "Southwestern College",
+       "NC 308",
+       "category has no common code"
+      ]
+     ]
+    },
+    "ELEC M9049": {
+     "ready": false,
+     "members": 4,
+     "settled": 1,
+     "held_members": {
+      "college not read": 2,
+      "category has no common code": 1
+     },
+     "codes": {
+      "ELEC": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [
+      "2 college not read",
+      "1 category has no common code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 90.16",
+       "category has no common code"
+      ],
+      [
+       "Santa Barbara City College",
+       "CT 135",
+       "college not read"
+      ],
+      [
+       "Santa Barbara City College",
+       "CTV NC135",
+       "college not read"
+      ]
+     ]
+    },
+    "ELEC M9050": {
+     "ready": false,
+     "members": 5,
+     "settled": 0,
+     "held_members": {
+      "college not read": 2,
+      "no settled code": 2,
+      "no noncredit category": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "2 college not read",
+      "2 no settled code",
+      "1 no noncredit category"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED CR11",
+       "no settled code"
+      ],
+      [
+       "Compton College",
+       "HSED 16",
+       "college not read"
+      ],
+      [
+       "Mt. San Antonio College",
+       "BSHS USH",
+       "no noncredit category"
+      ],
+      [
+       "North Orange Continuing Education",
+       "IHSS 106",
+       "no settled code"
+      ],
+      [
+       "North Orange Continuing Education Credit",
+       "IHSS 106",
+       "college not read"
+      ]
+     ]
+    },
+    "ELEC M9051": {
+     "ready": true,
+     "members": 2,
+     "settled": 2,
+     "held_members": {},
+     "codes": {
+      "VOCE": 1,
+      "ELEC": 1
+     },
+     "shape": "splits along code",
+     "outcomes": null,
+     "reasons": [],
+     "held": []
+    },
+    "ELEC M9052": {
+     "ready": false,
+     "members": 3,
+     "settled": 1,
+     "held_members": {
+      "college not read": 1,
+      "category has no common code": 1
+     },
+     "codes": {
+      "ELEC": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [
+      "1 college not read",
+      "1 category has no common code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 90.03",
+       "category has no common code"
+      ],
+      [
+       "Sierra College",
+       "BI 802",
+       "college not read"
+      ]
+     ]
+    },
+    "ELEC M9053": {
+     "ready": false,
+     "members": 2,
+     "settled": 1,
+     "held_members": {
+      "category has no common code": 1
+     },
+     "codes": {
+      "ELEC": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [
+      "1 category has no common code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 90.17",
+       "category has no common code"
+      ]
+     ]
+    },
+    "ELEC M9054": {
+     "ready": false,
+     "members": 6,
+     "settled": 0,
+     "held_members": {
+      "college not read": 3,
+      "no settled code": 3
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": {
+      "class": "Not enough text",
+      "level": null
+     },
+     "reasons": [
+      "3 college not read",
+      "3 no settled code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED CR9A",
+       "no settled code"
+      ],
+      [
+       "Cerritos College",
+       "AED CR5A",
+       "no settled code"
+      ],
+      [
+       "Los Angeles Southwest College",
+       "ESL NC 102CE",
+       "no settled code"
+      ],
+      [
+       "Pasadena City College",
+       "ESLN 1062A",
+       "college not read"
+      ],
+      [
+       "Rio Hondo College",
+       "NBAS 52",
+       "college not read"
+      ],
+      [
+       "Santiago Canyon College",
+       "HSOTH 505",
+       "college not read"
+      ]
+     ]
+    },
+    "ELEC M9055": {
+     "ready": true,
+     "members": 2,
+     "settled": 2,
+     "held_members": {},
+     "codes": {
+      "VOCE": 2
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [],
+     "held": []
+    },
+    "ELEC M9057": {
+     "ready": false,
+     "members": 2,
+     "settled": 0,
+     "held_members": {
+      "college not read": 1,
+      "no settled code": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 college not read",
+      "1 no settled code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 42.06",
+       "no settled code"
+      ],
+      [
+       "College of Marin",
+       "ESBS 3020",
+       "college not read"
+      ]
+     ]
+    },
+    "ELEC M9058": {
+     "ready": false,
+     "members": 3,
+     "settled": 0,
+     "held_members": {
+      "no settled code": 3
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "3 no settled code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 49.05",
+       "no settled code"
+      ],
+      [
+       "Cerritos College",
+       "AED 49.06",
+       "no settled code"
+      ],
+      [
+       "Cerritos College",
+       "AED 49.04",
+       "no settled code"
+      ]
+     ]
+    },
+    "ELEC M9059": {
+     "ready": false,
+     "members": 2,
+     "settled": 1,
+     "held_members": {
+      "no noncredit category": 1
+     },
+     "codes": {
+      "VOCE": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [
+      "1 no noncredit category"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 39.01",
+       "no noncredit category"
+      ]
+     ]
+    },
+    "ELEC M9060": {
+     "ready": true,
+     "members": 2,
+     "settled": 2,
+     "held_members": {},
+     "codes": {
+      "VOCE": 2
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [],
+     "held": []
+    },
+    "ELEC M9061": {
+     "ready": false,
+     "members": 2,
+     "settled": 0,
+     "held_members": {
+      "no settled code": 1,
+      "no noncredit category": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 no settled code",
+      "1 no noncredit category"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 42.23",
+       "no noncredit category"
+      ],
+      [
+       "Cerritos College",
+       "AED 42.22",
+       "no settled code"
+      ]
+     ]
+    },
+    "ELEC M9062": {
+     "ready": false,
+     "members": 2,
+     "settled": 0,
+     "held_members": {
+      "college not read": 1,
+      "no settled code": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": {
+      "class": "Not enough text",
+      "level": null
+     },
+     "reasons": [
+      "1 college not read",
+      "1 no settled code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 42.17",
+       "no settled code"
+      ],
+      [
+       "College of the Redwoods",
+       "ESL 211",
+       "college not read"
+      ]
+     ]
+    },
+    "ELEC M9063": {
+     "ready": true,
+     "members": 3,
+     "settled": 3,
+     "held_members": {},
+     "codes": {
+      "VOCE": 3
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [],
+     "held": []
+    },
+    "ELEC M90AA": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "no noncredit category": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 no noncredit category"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 48.01",
+       "no noncredit category"
+      ]
+     ]
+    },
+    "ELEC M90AC": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "category has no common code": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 category has no common code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 90.05",
+       "category has no common code"
+      ]
+     ]
+    },
+    "ELEC M90AD": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "no settled code": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 no settled code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED CR8A",
+       "no settled code"
+      ]
+     ]
+    },
+    "ELEC M90AL": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "no settled code": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 no settled code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 42.04",
+       "no settled code"
+      ]
+     ]
+    },
+    "ELEC M90AM": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "no settled code": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 no settled code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 11.08",
+       "no settled code"
+      ]
+     ]
+    },
+    "ELEC M90AO": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "no noncredit category": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 no noncredit category"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 10.08",
+       "no noncredit category"
+      ]
+     ]
+    },
+    "ELEC M90AP": {
+     "ready": true,
+     "members": 1,
+     "settled": 1,
+     "held_members": {},
+     "codes": {
+      "VOCE": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [],
+     "held": []
+    },
+    "ELEC M90AQ": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "no settled code": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 no settled code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 42.18",
+       "no settled code"
+      ]
+     ]
+    },
+    "ELEC M90AR": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "no settled code": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 no settled code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 80.09",
+       "no settled code"
+      ]
+     ]
+    },
+    "ELEC M90AS": {
+     "ready": true,
+     "members": 1,
+     "settled": 1,
+     "held_members": {},
+     "codes": {
+      "VOCE": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [],
+     "held": []
+    },
+    "ELEC M90AT": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "no settled code": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 no settled code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 90.07",
+       "no settled code"
+      ]
+     ]
+    },
+    "ELEC M90AU": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "no settled code": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 no settled code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 42.99",
+       "no settled code"
+      ]
+     ]
+    },
+    "ELEC M90AV": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "no noncredit category": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 no noncredit category"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 39.08",
+       "no noncredit category"
+      ]
+     ]
+    },
+    "ELEC M90AW": {
+     "ready": true,
+     "members": 1,
+     "settled": 1,
+     "held_members": {},
+     "codes": {
+      "VOCE": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [],
+     "held": []
+    },
+    "ELEC M90AX": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "no noncredit category": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 no noncredit category"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 39.12",
+       "no noncredit category"
+      ]
+     ]
+    },
+    "ELEC M90AY": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "no noncredit category": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 no noncredit category"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 39.11",
+       "no noncredit category"
+      ]
+     ]
+    },
+    "ELEC M90AZ": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "no noncredit category": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 no noncredit category"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 40.6",
+       "no noncredit category"
+      ]
+     ]
+    },
+    "ELEC M90BF": {
+     "ready": true,
+     "members": 1,
+     "settled": 1,
+     "held_members": {},
+     "codes": {
+      "VOCE": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [],
+     "held": []
+    },
+    "ELEC M90BI": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "no settled code": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 no settled code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 42.03B",
+       "no settled code"
+      ]
+     ]
+    },
+    "ELEC M90BJ": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "no settled code": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 no settled code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 42.11",
+       "no settled code"
+      ]
+     ]
+    },
+    "ELEC M90BK": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "category has no common code": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 category has no common code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 36.03",
+       "category has no common code"
+      ]
+     ]
+    },
+    "ELEC M90BL": {
+     "ready": true,
+     "members": 1,
+     "settled": 1,
+     "held_members": {},
+     "codes": {
+      "VOCE": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [],
+     "held": []
+    },
+    "ELEC M90BM": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "no settled code": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 no settled code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 42.02",
+       "no settled code"
+      ]
+     ]
+    },
+    "ELEC M90BO": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "no noncredit category": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 no noncredit category"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 42.15",
+       "no noncredit category"
+      ]
+     ]
+    },
+    "ELEC M90BR": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "no noncredit category": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 no noncredit category"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 39.07",
+       "no noncredit category"
+      ]
+     ]
+    },
+    "ELEC M90BT": {
+     "ready": true,
+     "members": 1,
+     "settled": 1,
+     "held_members": {},
+     "codes": {
+      "VOCE": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [],
+     "held": []
+    },
+    "ELEC M90BU": {
+     "ready": true,
+     "members": 1,
+     "settled": 1,
+     "held_members": {},
+     "codes": {
+      "VOCE": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [],
+     "held": []
+    },
+    "ELEC M90BV": {
+     "ready": true,
+     "members": 1,
+     "settled": 1,
+     "held_members": {},
+     "codes": {
+      "VOCE": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [],
+     "held": []
+    },
+    "ELEC M90BW": {
+     "ready": true,
+     "members": 1,
+     "settled": 1,
+     "held_members": {},
+     "codes": {
+      "VOCE": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [],
+     "held": []
+    },
+    "ELEC M90BX": {
+     "ready": true,
+     "members": 1,
+     "settled": 1,
+     "held_members": {},
+     "codes": {
+      "VOCE": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [],
+     "held": []
+    },
+    "ELEC M90BY": {
+     "ready": true,
+     "members": 1,
+     "settled": 1,
+     "held_members": {},
+     "codes": {
+      "VOCE": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [],
+     "held": []
+    },
+    "ELEC M90CA": {
+     "ready": true,
+     "members": 1,
+     "settled": 1,
+     "held_members": {},
+     "codes": {
+      "VOCE": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [],
+     "held": []
+    },
+    "ELEC M90CB": {
+     "ready": true,
+     "members": 1,
+     "settled": 1,
+     "held_members": {},
+     "codes": {
+      "VOCE": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [],
+     "held": []
+    },
+    "ELEC M90CE": {
+     "ready": true,
+     "members": 1,
+     "settled": 1,
+     "held_members": {},
+     "codes": {
+      "VOCE": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [],
+     "held": []
+    },
+    "ELEC M90CF": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "category has no common code": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 category has no common code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 22.06",
+       "category has no common code"
+      ]
+     ]
+    },
+    "ELEC M90CI": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "no noncredit category": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 no noncredit category"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 60.01",
+       "no noncredit category"
+      ]
+     ]
+    },
+    "ELEC M90CJ": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "no noncredit category": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 no noncredit category"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 39.06",
+       "no noncredit category"
+      ]
+     ]
+    },
+    "ELEC M90CM": {
+     "ready": true,
+     "members": 1,
+     "settled": 1,
+     "held_members": {},
+     "codes": {
+      "VOCE": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [],
+     "held": []
+    },
+    "ELEC M90CP": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "no settled code": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 no settled code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 48.05",
+       "no settled code"
+      ]
+     ]
+    },
+    "ELEC M90CQ": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "no settled code": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 no settled code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 42.98",
+       "no settled code"
+      ]
+     ]
+    },
+    "ELEC M90CR": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "no noncredit category": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": {
+      "class": "Not enough text",
+      "level": null
+     },
+     "reasons": [
+      "1 no noncredit category"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 39.09",
+       "no noncredit category"
+      ]
+     ]
+    },
+    "ELEC M90CS": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "no settled code": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 no settled code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 36.07",
+       "no settled code"
+      ]
+     ]
+    },
+    "ELEC M90CV": {
+     "ready": true,
+     "members": 1,
+     "settled": 1,
+     "held_members": {},
+     "codes": {
+      "VOCE": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [],
+     "held": []
+    },
+    "ELEC M90CY": {
+     "ready": true,
+     "members": 1,
+     "settled": 1,
+     "held_members": {},
+     "codes": {
+      "VOCE": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [],
+     "held": []
+    },
+    "ELEC M90DE": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "no noncredit category": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 no noncredit category"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 39.1",
+       "no noncredit category"
+      ]
+     ]
+    },
+    "ELEC M90DF": {
+     "ready": true,
+     "members": 1,
+     "settled": 1,
+     "held_members": {},
+     "codes": {
+      "VOCE": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [],
+     "held": []
+    },
+    "ELEC M90DI": {
+     "ready": true,
+     "members": 1,
+     "settled": 1,
+     "held_members": {},
+     "codes": {
+      "VOCE": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [],
+     "held": []
+    },
+    "ELEC M90DJ": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "no noncredit category": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 no noncredit category"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 42.21",
+       "no noncredit category"
+      ]
+     ]
+    },
+    "ELEC M90DL": {
+     "ready": true,
+     "members": 1,
+     "settled": 1,
+     "held_members": {},
+     "codes": {
+      "VOCE": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [],
+     "held": []
+    },
+    "ELEC M90DM": {
+     "ready": true,
+     "members": 1,
+     "settled": 1,
+     "held_members": {},
+     "codes": {
+      "VOCE": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [],
+     "held": []
+    },
+    "ELEC M90DO": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "no settled code": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 no settled code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED CR7A",
+       "no settled code"
+      ]
+     ]
+    },
+    "ELEC M90DP": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "no settled code": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 no settled code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 42.19",
+       "no settled code"
+      ]
+     ]
+    },
+    "ELEC M90DR": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "no noncredit category": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 no noncredit category"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 39.04",
+       "no noncredit category"
+      ]
+     ]
+    },
+    "ELEC M90DU": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "no noncredit category": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 no noncredit category"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 41.1",
+       "no noncredit category"
+      ]
+     ]
+    },
+    "ELEC M90DX": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "no noncredit category": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 no noncredit category"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 42.1",
+       "no noncredit category"
+      ]
+     ]
+    },
+    "ELEC M90DY": {
+     "ready": true,
+     "members": 1,
+     "settled": 1,
+     "held_members": {},
+     "codes": {
+      "VOCE": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [],
+     "held": []
+    },
+    "ELEC M90EC": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "no noncredit category": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 no noncredit category"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 40.1",
+       "no noncredit category"
+      ]
+     ]
+    },
+    "ELEC M90ED": {
+     "ready": true,
+     "members": 1,
+     "settled": 1,
+     "held_members": {},
+     "codes": {
+      "VOCE": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [],
+     "held": []
+    },
+    "ELEC M90EG": {
+     "ready": true,
+     "members": 1,
+     "settled": 1,
+     "held_members": {},
+     "codes": {
+      "VOCE": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [],
+     "held": []
+    },
+    "ELEC M90EJ": {
+     "ready": true,
+     "members": 1,
+     "settled": 1,
+     "held_members": {},
+     "codes": {
+      "VOCE": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [],
+     "held": []
+    },
+    "ELEC M90EK": {
+     "ready": true,
+     "members": 1,
+     "settled": 1,
+     "held_members": {},
+     "codes": {
+      "VOCE": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [],
+     "held": []
+    },
+    "ELEC M90EL": {
+     "ready": true,
+     "members": 1,
+     "settled": 1,
+     "held_members": {},
+     "codes": {
+      "VOCE": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [],
+     "held": []
+    },
+    "ELEC M90EM": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "no settled code": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 no settled code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 42.07",
+       "no settled code"
+      ]
+     ]
+    },
+    "ELEC M90EN": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "no settled code": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 no settled code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 22.09",
+       "no settled code"
+      ]
+     ]
+    },
+    "ELEC M90EO": {
+     "ready": true,
+     "members": 1,
+     "settled": 1,
+     "held_members": {},
+     "codes": {
+      "VOCE": 1
+     },
+     "shape": "one code",
+     "outcomes": null,
+     "reasons": [],
+     "held": []
+    },
+    "ELEC M90EQ": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "no settled code": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 no settled code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 49.01",
+       "no settled code"
+      ]
+     ]
+    },
+    "ELEC M90ER": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "no settled code": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 no settled code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 90.06",
+       "no settled code"
+      ]
+     ]
+    },
+    "ELEC M90ES": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "category has no common code": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 category has no common code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 36.01",
+       "category has no common code"
+      ]
+     ]
+    },
+    "ELEC M90ET": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "category has no common code": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 category has no common code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 36.06",
+       "category has no common code"
+      ]
+     ]
+    },
+    "ELEC M90EV": {
+     "ready": false,
+     "members": 1,
+     "settled": 0,
+     "held_members": {
+      "no settled code": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "1 no settled code"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED 14.11",
+       "no settled code"
+      ]
+     ]
+    },
+    "ESOL M9168": {
+     "ready": false,
+     "members": 1786,
+     "settled": 0,
+     "held_members": {
+      "college not read": 1411,
+      "no settled code": 310,
+      "category has no common code": 1,
+      "no noncredit category": 64
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": {
+      "class": "Split",
+      "level": "limited"
+     },
+     "reasons": [
+      "1411 college not read",
+      "310 no settled code",
+      "1 category has no common code",
+      "64 no noncredit category"
+     ],
+     "held": [
+      [
+       "Hartnell College",
+       "ENGM 620",
+       "college not read"
+      ],
+      [
+       "Las Positas College",
+       "ESL 131A",
+       "college not read"
+      ],
+      [
+       "Las Positas College",
+       "NESL 231A",
+       "college not read"
+      ],
+      [
+       "Saddleback College",
+       "ESL 325",
+       "college not read"
+      ],
+      [
+       "Saddleback College",
+       "ESL 325NC",
+       "college not read"
+      ],
+      [
+       "Santa Monica College",
+       "ESL 961",
+       "college not read"
+      ],
+      [
+       "Cerritos College",
+       "AED 42.03A",
+       "no settled code"
+      ],
+      [
+       "College of Marin",
+       "ENGL 71",
+       "college not read"
+      ],
+      [
+       "Los Angeles Pierce College",
+       "ESL NC 006CE",
+       "no settled code"
+      ],
+      [
+       "Los Angeles Southwest College",
+       "ESL NC 006CE",
+       "no noncredit category"
+      ],
+      [
+       "Los Angeles Trade Technical College",
+       "ESL NC 006CE",
+       "no settled code"
+      ],
+      [
+       "Los Angeles Valley College",
+       "ESL NC 006CE",
+       "no settled code"
+      ],
+      [
+       "West Los Angeles College",
+       "ESL NC 006CE",
+       "no settled code"
+      ],
+      [
+       "East Los Angeles College",
+       "ESL NC 113CE",
+       "no settled code"
+      ],
+      [
+       "Los Angeles Trade Technical College",
+       "ESL NC 113CE",
+       "no settled code"
+      ],
+      [
+       "East Los Angeles College",
+       "ESL NC 054CE",
+       "no settled code"
+      ],
+      [
+       "Los Angeles Southwest College",
+       "ESL NC 054CE",
+       "no settled code"
+      ],
+      [
+       "East Los Angeles College",
+       "ESL NC 055CE",
+       "no settled code"
+      ],
+      [
+       "Los Angeles Southwest College",
+       "ESL NC 055CE",
+       "no noncredit category"
+      ],
+      [
+       "Allan Hancock College",
+       "ELDN 7450",
+       "college not read"
+      ],
+      [
+       "East Los Angeles College",
+       "ESL NC 050CE",
+       "no settled code"
+      ],
+      [
+       "Irvine Valley College",
+       "AESL 541",
+       "college not read"
+      ],
+      [
+       "Los Angeles City College",
+       "ESL NC 050CE",
+       "no settled code"
+      ],
+      [
+       "Los Angeles Harbor College",
+       "ESL NC 050CE",
+       "no settled code"
+      ],
+      [
+       "Los Angeles Pierce College",
+       "ESL NC 050CE",
+       "no settled code"
+      ],
+      [
+       "Los Angeles Southwest College",
+       "ESL NC 050CE",
+       "no settled code"
+      ],
+      [
+       "Los Angeles Trade Technical College",
+       "ESL NC 050CE",
+       "no noncredit category"
+      ],
+      [
+       "Los Angeles Valley College",
+       "ESL NC 050CE",
+       "no settled code"
+      ],
+      [
+       "Saddleback College",
+       "ESL 322NC",
+       "college not read"
+      ],
+      [
+       "Saddleback College",
+       "ESL 322",
+       "college not read"
+      ],
+      [
+       "Santa Barbara City College",
+       "ITAL 120",
+       "college not read"
+      ],
+      [
+       "Santa Barbara City College",
+       "CHIN 120",
+       "college not read"
+      ],
+      [
+       "Ventura College",
+       "ESL N120A",
+       "college not read"
+      ],
+      [
+       "West Los Angeles College",
+       "ESL NC 050CE",
+       "no settled code"
+      ],
+      [
+       "Los Angeles City College",
+       "ESL NC 001CE",
+       "no settled code"
+      ],
+      [
+       "Los Angeles Pierce College",
+       "ESL NC 001CE",
+       "no settled code"
+      ],
+      [
+       "Los Angeles Trade Technical College",
+       "ESL NC 001CE",
+       "no settled code"
+      ],
+      [
+       "Los Angeles Valley College",
+       "ESL NC 001CE",
+       "no settled code"
+      ],
+      [
+       "Los Angeles City College",
+       "ESL NC 002CE",
+       "no settled code"
+      ],
+      [
+       "Los Angeles Pierce College",
+       "ESL NC 002CE",
+       "no settled code"
+      ]
+     ]
+    },
+    "ESOL M9256": {
+     "ready": false,
+     "members": 964,
+     "settled": 0,
+     "held_members": {
+      "college not read": 820,
+      "no settled code": 126,
+      "no noncredit category": 18
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": {
+      "class": "Split",
+      "level": "limited"
+     },
+     "reasons": [
+      "820 college not read",
+      "126 no settled code",
+      "18 no noncredit category"
+     ],
+     "held": [
+      [
+       "Chabot College",
+       "ESL 242B",
+       "college not read"
+      ],
+      [
+       "Fresno City College",
+       "EMLS 266LS",
+       "college not read"
+      ],
+      [
+       "Fresno City College",
+       "EMLS 366LS",
+       "college not read"
+      ],
+      [
+       "Madera College",
+       "ESL 213LS",
+       "college not read"
+      ],
+      [
+       "Madera College",
+       "ESL 313LS",
+       "college not read"
+      ],
+      [
+       "Mission College",
+       "ESL 950LS",
+       "college not read"
+      ],
+      [
+       "Mission College",
+       "NCE 950LS",
+       "college not read"
+      ],
+      [
+       "Modesto Junior College",
+       "ELIC 33",
+       "college not read"
+      ],
+      [
+       "Modesto Junior College",
+       "ELIC 933",
+       "college not read"
+      ],
+      [
+       "Pasadena City College",
+       "ESL 183",
+       "college not read"
+      ],
+      [
+       "Reedley College",
+       "ESL 213LS",
+       "college not read"
+      ],
+      [
+       "Reedley College",
+       "ESL 313LS",
+       "college not read"
+      ],
+      [
+       "Santa Monica College",
+       "ESL 913",
+       "college not read"
+      ],
+      [
+       "West Valley College",
+       "NCEL 050LS",
+       "college not read"
+      ],
+      [
+       "West Valley College",
+       "ESLW 050LS",
+       "college not read"
+      ],
+      [
+       "Allan Hancock College",
+       "ELDN 7480",
+       "college not read"
+      ],
+      [
+       "East Los Angeles College",
+       "ESL NC 051CE",
+       "no settled code"
+      ],
+      [
+       "Irvine Valley College",
+       "AESL 543",
+       "college not read"
+      ],
+      [
+       "Los Angeles Pierce College",
+       "ESL NC 051CE",
+       "no settled code"
+      ],
+      [
+       "Los Angeles Southwest College",
+       "ESL NC 051CE",
+       "no settled code"
+      ],
+      [
+       "Los Angeles Trade Technical College",
+       "ESL NC 051CE",
+       "no settled code"
+      ],
+      [
+       "Los Angeles Valley College",
+       "ESL NC 051CE",
+       "no settled code"
+      ],
+      [
+       "Moreno Valley College",
+       "SPA 8",
+       "college not read"
+      ],
+      [
+       "Norco College",
+       "SPA 8",
+       "college not read"
+      ],
+      [
+       "Riverside City College",
+       "SPA 8",
+       "college not read"
+      ],
+      [
+       "Riverside City College",
+       "ARA 8",
+       "college not read"
+      ],
+      [
+       "Saddleback College",
+       "ESL 332NC",
+       "college not read"
+      ],
+      [
+       "Saddleback College",
+       "ESL 332",
+       "college not read"
+      ],
+      [
+       "Santa Barbara City College",
+       "FR 140",
+       "college not read"
+      ],
+      [
+       "Santa Barbara City College",
+       "FR 130",
+       "college not read"
+      ],
+      [
+       "Santa Barbara City College",
+       "ITAL 130",
+       "college not read"
+      ],
+      [
+       "Santa Barbara City College",
+       "GER 140",
+       "college not read"
+      ],
+      [
+       "Santa Rosa Junior College",
+       "SPAN 50C",
+       "college not read"
+      ],
+      [
+       "Santa Rosa Junior College",
+       "FREN 50C",
+       "college not read"
+      ],
+      [
+       "Ventura College",
+       "ESL N120B",
+       "college not read"
+      ],
+      [
+       "Chaffey College",
+       "ESL 652",
+       "college not read"
+      ],
+      [
+       "Los Angeles Pierce College",
+       "ESL NC 016CE",
+       "no noncredit category"
+      ],
+      [
+       "Los Angeles Valley College",
+       "ESL NC 016CE",
+       "no settled code"
+      ],
+      [
+       "Los Angeles Valley College",
+       "ESL NC 018CE",
+       "no settled code"
+      ],
+      [
+       "West Los Angeles College",
+       "ESL NC ESLNC",
+       "no noncredit category"
+      ]
+     ]
+    },
+    "HIST M9004": {
+     "ready": false,
+     "members": 7,
+     "settled": 0,
+     "held_members": {
+      "college not read": 3,
+      "no settled code": 2,
+      "no noncredit category": 2
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "3 college not read",
+      "2 no settled code",
+      "2 no noncredit category"
+     ],
+     "held": [
+      [
+       "Citrus College",
+       "NC 215A",
+       "college not read"
+      ],
+      [
+       "Santa Ana College",
+       "HSSOC 228",
+       "no settled code"
+      ],
+      [
+       "Cerritos College",
+       "AED CR12",
+       "no settled code"
+      ],
+      [
+       "Compton College",
+       "HSED 17",
+       "college not read"
+      ],
+      [
+       "Mt. San Antonio College",
+       "BSHS WHS",
+       "no noncredit category"
+      ],
+      [
+       "North Orange Continuing Education",
+       "IHSS 109",
+       "no noncredit category"
+      ],
+      [
+       "North Orange Continuing Education Credit",
+       "IHSS 109",
+       "college not read"
+      ]
+     ]
+    },
+    "IDST M9053": {
+     "ready": false,
+     "members": 5,
+     "settled": 0,
+     "held_members": {
+      "college not read": 2,
+      "no settled code": 1,
+      "no noncredit category": 2
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "2 college not read",
+      "1 no settled code",
+      "2 no noncredit category"
+     ],
+     "held": [
+      [
+       "Cerritos College",
+       "AED CR10",
+       "no settled code"
+      ],
+      [
+       "Compton College",
+       "HSED 3",
+       "college not read"
+      ],
+      [
+       "Mt. San Antonio College",
+       "BSHS ENG3",
+       "no noncredit category"
+      ],
+      [
+       "North Orange Continuing Education",
+       "IHSS 102",
+       "no noncredit category"
+      ],
+      [
+       "North Orange Continuing Education Credit",
+       "IHSS 102",
+       "college not read"
+      ]
+     ]
+    },
+    "IDST M90SF": {
+     "ready": false,
+     "members": 3,
+     "settled": 0,
+     "held_members": {
+      "college not read": 2,
+      "no settled code": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "2 college not read",
+      "1 no settled code"
+     ],
+     "held": [
+      [
+       "Citrus College",
+       "NC 218A",
+       "college not read"
+      ],
+      [
+       "Cerritos College",
+       "AED CR3A",
+       "no settled code"
+      ],
+      [
+       "Copper Mountain College",
+       "AE 460A",
+       "college not read"
+      ]
+     ]
+    },
+    "LSKL M9004": {
+     "ready": false,
+     "members": 90,
+     "settled": 0,
+     "held_members": {
+      "college not read": 80,
+      "no settled code": 10
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": {
+      "class": "Not enough text",
+      "level": null
+     },
+     "reasons": [
+      "80 college not read",
+      "10 no settled code"
+     ],
+     "held": [
+      [
+       "Allan Hancock College",
+       "BASK 7004A",
+       "college not read"
+      ],
+      [
+       "American River College",
+       "LRC 1000",
+       "college not read"
+      ],
+      [
+       "Antelope Valley College",
+       "LAC 900",
+       "college not read"
+      ],
+      [
+       "Bakersfield College",
+       "ACDV B81NC",
+       "college not read"
+      ],
+      [
+       "Barstow Community College",
+       "SDEV 151",
+       "college not read"
+      ],
+      [
+       "Berkeley City College",
+       "LRNRE 501",
+       "college not read"
+      ],
+      [
+       "Butte College",
+       "EDUC 310",
+       "college not read"
+      ],
+      [
+       "Cabrillo College",
+       "MATH 502",
+       "college not read"
+      ],
+      [
+       "Cerritos College",
+       "AED 42.05",
+       "no settled code"
+      ],
+      [
+       "Cerro Coso Community College",
+       "EDUC C804",
+       "college not read"
+      ],
+      [
+       "Chabot College",
+       "TUTR 200",
+       "college not read"
+      ],
+      [
+       "Chaffey College",
+       "SUCCESS 650",
+       "college not read"
+      ],
+      [
+       "Citrus College",
+       "NC 1",
+       "college not read"
+      ],
+      [
+       "City College of San Francisco",
+       "LERN 1000",
+       "college not read"
+      ],
+      [
+       "Coalinga College",
+       "NC 100",
+       "college not read"
+      ],
+      [
+       "College of Alameda",
+       "LRNRE 501",
+       "college not read"
+      ],
+      [
+       "College of the Canyons",
+       "NC.TUTR 94",
+       "college not read"
+      ],
+      [
+       "College of the Desert",
+       "ASC 300",
+       "college not read"
+      ],
+      [
+       "College of the Redwoods",
+       "GUID 205",
+       "college not read"
+      ],
+      [
+       "College of the Sequoias",
+       "LA 425",
+       "college not read"
+      ],
+      [
+       "Columbia College",
+       "TUTOR 410",
+       "college not read"
+      ],
+      [
+       "Contra Costa College",
+       "ECHD 875N",
+       "college not read"
+      ],
+      [
+       "Contra Costa College",
+       "ENGL 875N",
+       "college not read"
+      ],
+      [
+       "Copper Mountain College",
+       "ASC  100",
+       "college not read"
+      ],
+      [
+       "Cosumnes River College",
+       "HCD 1000",
+       "college not read"
+      ],
+      [
+       "Cuyamaca College",
+       "IS 198",
+       "college not read"
+      ],
+      [
+       "Diablo Valley College",
+       "INTD 010NC",
+       "college not read"
+      ],
+      [
+       "East Los Angeles College",
+       "TUTOR 001T",
+       "no settled code"
+      ],
+      [
+       "El Camino College",
+       "PASS 500",
+       "no settled code"
+      ],
+      [
+       "Evergreen Valley College",
+       "II 210",
+       "college not read"
+      ],
+      [
+       "Feather River College",
+       "TUTR 300",
+       "college not read"
+      ],
+      [
+       "Feather River College",
+       "COLL 3",
+       "college not read"
+      ],
+      [
+       "Foothill College",
+       "NCCS 406",
+       "college not read"
+      ],
+      [
+       "Fresno City College",
+       "ST 300",
+       "college not read"
+      ],
+      [
+       "Fullerton College",
+       "HUM NO1 F",
+       "college not read"
+      ],
+      [
+       "Fullerton College",
+       "TUT N01 F",
+       "college not read"
+      ],
+      [
+       "Gavilan College",
+       "GUID 550",
+       "college not read"
+      ],
+      [
+       "Glendale Community College",
+       "ST DV 1",
+       "college not read"
+      ],
+      [
+       "Golden West College",
+       "TUTR G050N",
+       "college not read"
+      ],
+      [
+       "Grossmont College",
+       "MATH 198",
+       "college not read"
+      ]
+     ]
+    },
+    "OLAD M9006": {
+     "ready": false,
+     "members": 5,
+     "settled": 0,
+     "held_members": {
+      "college not read": 3,
+      "no settled code": 1,
+      "no noncredit category": 1
+     },
+     "codes": {},
+     "shape": null,
+     "outcomes": null,
+     "reasons": [
+      "3 college not read",
+      "1 no settled code",
+      "1 no noncredit category"
+     ],
+     "held": [
+      [
+       "San Diego College of Continuing Education",
+       "PASV 545",
+       "no settled code"
+      ],
+      [
+       "San Diego College of Continuing Education Credit",
+       "PASV 545",
+       "college not read"
+      ],
+      [
+       "Cerritos College",
+       "AED 14.08",
+       "no noncredit category"
+      ],
+      [
+       "Santiago Canyon College",
+       "OAP 827",
+       "college not read"
+      ],
+      [
+       "City College of San Francisco",
+       "OLAD 7301",
+       "college not read"
+      ]
+     ]
+    }
+   }
+  }
+ }
+}

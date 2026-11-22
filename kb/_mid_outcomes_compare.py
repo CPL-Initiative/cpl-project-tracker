@@ -55,6 +55,8 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import glob
+import gzip
+import io
 import importlib.util
 import json
 import math
@@ -72,6 +74,9 @@ from _suggest_unclassified import load_js, norm_college, split_code  # noqa: E40
 from _college_identity_latest import latest_crosswalk_path  # noqa: E402
 import alias_chain  # noqa: E402
 
+
+
+JSON_GZIP_OVER = 5 * 1024 * 1024  # bytes; the repo size guard's FILE_CAP_MB
 
 def _load(name, file):
     spec = importlib.util.spec_from_file_location(name, os.path.join(HERE, file))
@@ -1439,10 +1444,21 @@ def main(argv=None):
     base = os.path.join(OUT_DIR, "mid_outcomes_compare_%s" % a.date)
     with open(base + ".md", "w", encoding="utf-8") as f:
         f.write(md)
-    with open(base + ".json", "w", encoding="utf-8") as f:
-        dump(to_json(state, inv, counts), f)
-    print("wrote %s.md and .json: %d M-IDs read, %d in scope" % (os.path.relpath(base, ROOT), len(state["results"]),
-                                                                  len(state["in_scope"])))
+    buf = io.StringIO()
+    dump(to_json(state, inv, counts), buf)
+    text = buf.getvalue()
+    # The repo's file limit is 5 MB (scripts/repo_size_guard.py FILE_CAP_MB); the 2026-11-22 run on 45,673 rows
+    # wrote 8.6 MB. Past the limit the JSON is written gzipped, and kb/_mid_readiness.py reads either form.
+    ext = ".json"
+    if len(text.encode("utf-8")) > JSON_GZIP_OVER:
+        ext = ".json.gz"
+        with gzip.open(base + ext, "wt", encoding="utf-8", compresslevel=9) as f:
+            f.write(text)
+    else:
+        with open(base + ext, "w", encoding="utf-8") as f:
+            f.write(text)
+    print("wrote %s.md and %s: %d M-IDs read, %d in scope" % (os.path.relpath(base, ROOT), ext, len(state["results"]),
+                                                               len(state["in_scope"])))
     return 0
 
 

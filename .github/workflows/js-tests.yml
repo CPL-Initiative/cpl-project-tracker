@@ -591,6 +591,10 @@ jobs:
       # reason for a split. Reads the fixture only; writes nothing. Pure-stdlib python.
       - name: MID outcomes compare (split, confirm, the standing rules)
         run: python3 tests/mid_outcomes_compare_test.py
+      # The re-mint readiness count (S709, #3655) by the draft gate d-remint-ready-gate-draft-s707: the subject map
+      # alone settles nothing, a stale compare holds every M-ID, a strong or partial split holds. Pure-stdlib python.
+      - name: Re-mint readiness (the draft gate)
+        run: python3 tests/mid_readiness_test.py
       # The nine MQ names in the handbook's spelling (S430, Sam's Sheet 99 card 6):
       # no store holds an old spelling, and the rename touches whole strings only.
       # Pure-stdlib python.

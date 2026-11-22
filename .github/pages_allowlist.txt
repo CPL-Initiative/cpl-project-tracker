@@ -472,6 +472,7 @@ publish kb/status/local_subject_recommendations.json
 publish kb/status/local_subject_titles.json
 publish kb/status/mid_outcomes_compare_2026-11-12.json
 publish kb/status/mid_outcomes_compare_2026-11-12.md
+publish kb/status/mid_readiness.json
 publish kb/status/noncredit_categories.json
 publish kb/status/noncredit_subject_titles.json
 publish kb/status/program-requirements-checked.json
