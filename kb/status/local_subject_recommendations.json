@@ -4,9 +4,9 @@
  "measured_on_titled_codes": {
   "course_joins": {
    "few or mixed": {
-    "right": 372,
+    "right": 373,
     "asked": 643,
-    "share": 0.579,
+    "share": 0.58,
     "level": "Low"
    },
    "most courses agree": {
@@ -44,9 +44,9 @@
     "level": "High"
    },
    "mixed": {
-    "right": 190,
+    "right": 191,
     "asked": 218,
-    "share": 0.872,
+    "share": 0.876,
     "level": "Medium"
    },
    "one college": {
@@ -207,12 +207,12 @@
     "asked": 188
    },
    "same_code_statewide": {
-    "right": 38,
-    "asked": 48
+    "right": 39,
+    "asked": 49
    },
    "title": {
-    "right": 474,
-    "asked": 488
+    "right": 473,
+    "asked": 487
    }
   }
  },
@@ -1966,7 +1966,7 @@
       "title": "Statistics",
       "level": "High",
       "from": "other_colleges",
-      "why": "other colleges: 10 of 13 other colleges (mixed). course joins agrees.",
+      "why": "other colleges: 11 of 13 other colleges (mixed). course joins agrees.",
       "also": []
      }
     },
