@@ -1,0 +1,120 @@
+{
+ "_readme": "S703 (worker levers for SkyDovekie), census lever 10 (Santa Barbara City College, page not found, 28). Capture 44519697720 read them as not_found or page_claimed. This read prints each not_found program's near-miss page and each page_claimed program's first candidate page, so a session can tell whether each is the program's own page, which codes it prints and in what form, and whether a per-college entry binds it. 16 loads and robots.txt, no model call, nothing written. No page was named for 24266, 24270, 24271, 24272, 24300, 24392, 36970, 36971, 38315. One index page lists the links that might name those programs.",
+ "college": "Santa Barbara City College",
+ "questions": {
+  "own_page": "Whether the page is the program's own (title and award), and the course codes it prints, as printed.",
+  "claimed": "Which program the page is, and the course codes it prints.",
+  "index": "Whether the School of Extended Learning index links a page for the nine noncredit programs no page names (Adult Basic Education 24266, 24270, 24271, 24272, 24300; Health Care Interpreter 24392; Secondary Education 36970, 36971; Adult High School Diploma 38315)."
+ },
+ "keywords": [
+  "[A-Z]{2,6}[- ]?\\d{1,3}[A-Z]?\\b",
+  "Total",
+  "Units",
+  "Hours"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "claimed"
+   ],
+   "url": "https://catalog.sbcc.edu/academic-departments/engineering/engineering-aa/"
+  },
+  {
+   "answers": [
+    "claimed"
+   ],
+   "url": "https://catalog.sbcc.edu/academic-departments/computer-science/computer-science-as/"
+  },
+  {
+   "answers": [
+    "claimed"
+   ],
+   "url": "https://catalog.sbcc.edu/academic-departments/justice-studies/administration-justice-as-criminology-emphasis/"
+  },
+  {
+   "answers": [
+    "claimed"
+   ],
+   "url": "https://catalog.sbcc.edu/academic-departments/accounting-education/assistant-bookkeeper-level-IV-certificate-achievement/"
+  },
+  {
+   "answers": [
+    "claimed"
+   ],
+   "url": "https://catalog.sbcc.edu/academic-departments/justice-studies/administration-justice-certificate-achievement-law-enforcement-emphasis/"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.sbcc.edu/sel/career-skills/medical-assistant-training-program-certificate-completion/"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.sbcc.edu/sel/career-skills/beginning-mac-skills-certificate-completion/"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.sbcc.edu/sel/esl-noncredit/esl-intermediate-grammar-composition-certificate-competency/"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.sbcc.edu/sel/esl-noncredit/esl-advanced-grammar-composition-certificate-competency/"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.sbcc.edu/sel/career-skills/basic-mac-software-skills-certificate-completion/"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.sbcc.edu/sel/career-skills/computer-hardware-fundamentals-certificate-completion/"
+  },
+  {
+   "answers": [
+    "claimed"
+   ],
+   "url": "https://catalog.sbcc.edu/academic-departments/history/history-aat/"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.sbcc.edu/sel/career-skills/strategic-marketing-certificate-completion/"
+  },
+  {
+   "answers": [
+    "claimed"
+   ],
+   "url": "https://catalog.sbcc.edu/academic-departments/film-media-studies/film-media-studies-aa/"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.sbcc.edu/sel/career-skills/green-documents-documents-for-the-environment-nc-completion/"
+  },
+  {
+   "answers": [
+    "claimed"
+   ],
+   "url": "https://catalog.sbcc.edu/academic-departments/communication/global-leadership-certificate-achievement/"
+  },
+  {
+   "answers": [
+    "index"
+   ],
+   "url": "https://catalog.sbcc.edu/sel/",
+   "links": "basic-education|adult|high-school|diploma|ged|interpret|bilingual|biliter|secondary"
+  }
+ ]
+}
