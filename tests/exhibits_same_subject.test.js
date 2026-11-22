@@ -35,6 +35,10 @@ SUBJECTS.subjects[SUBJ] = FX.rows;
 // A second subject to look in (S705; Sam, 2026-11-22: "Need to be able to change the Subject in the Course Sidebar").
 SUBJECTS.subjects["Computer Information Systems"] = { disc: "Computer Information Systems", total: 2,
   rows: [["ITIS M1113", "Introduction to Computer Applications", 4, 3, 3, "M-ID"], ["ITIS M1197", "Introduction to Cloud Computing", 26, 3, 3, "M-ID"]] };
+// Find a subject (S709; Sam, 2026-11-22: "I need to see subjects with 'computer' and 'information tech'").
+SUBJECTS.subjects["Computer Science"] = { disc: "Computer Science", total: 1, rows: [["COMP 122", "Programming Concepts", 90, 3, 4, "C-ID"]] };
+SUBJECTS.subjects["Health Information Technology"] = { disc: "Health Information Technology", total: 1, rows: [["HITE M1001", "Medical Terminology", 12, 3, 3, "M-ID"]] };
+SUBJECTS.subjects["Journalism"] = { disc: "Journalism", total: 1, rows: [["JOUR 110", "Newswriting", 80, 3, 3, "C-ID"]] };
 
 function load(opts) {
   opts = opts || {};
@@ -135,6 +139,34 @@ function byText(root, sel, t) { return Array.from(root.querySelectorAll(sel)).fi
     const again = t4.d.getElementById("exh-ss-pick");
     again.value = SUBJ; again.dispatchEvent(new t4.w.Event("change")); await settle();
     check("(7) picking this course's subject again returns the list as it was", txt(section(t4.d).querySelector("h5")) === "Same subject: " + SUBJ && !t4.d.getElementById("exh-ss-pick-note"));
+  }
+
+  // (8) S709: Find a subject narrows the picker by words that start a word of the name; the pick and this course's
+  // subject stay; the count says how many match; typing writes nothing.
+  {
+    const t5 = load();
+    await t5.M.boot(); await settle();
+    const find = t5.d.getElementById("exh-ss-find");
+    const opts = function () { return Array.from(t5.d.getElementById("exh-ss-pick").options).map(function (o) { return o.value; }); };
+    check("(8) ⭐ a labelled Find a subject box sits beside the picker", !!find && !!t5.d.querySelector('label[for="exh-ss-find"]') && opts().length === 5, opts());
+    const before = writes(t5).length;
+    find.value = "computer"; find.dispatchEvent(new t5.w.Event("input")); await settle();
+    check("(8) ⭐ \"computer\" keeps this course's subject and the two computer subjects",
+      JSON.stringify(opts()) === JSON.stringify([SUBJ, "Computer Information Systems", "Computer Science"]), opts());
+    find.value = "information tech"; find.dispatchEvent(new t5.w.Event("input")); await settle();
+    check("(8) ⭐ \"information tech\" finds every name holding both words' starts",
+      JSON.stringify(opts()) === JSON.stringify([SUBJ, "Health Information Technology"]), opts());
+    check("(8) the count says how many match", /^1 of 4 other subjects match$/.test(txt(t5.d.getElementById("exh-ss-find-count"))), txt(t5.d.getElementById("exh-ss-find-count")));
+    find.value = "sci"; find.dispatchEvent(new t5.w.Event("input")); await settle();
+    const pick = t5.d.getElementById("exh-ss-pick");
+    pick.value = "Computer Science"; pick.dispatchEvent(new t5.w.Event("change")); await settle();
+    check("(8) picking from the narrowed list lists that subject, and the find box keeps its words",
+      txt(section(t5.d).querySelector("h5")) === "Subject: Computer Science" && t5.d.getElementById("exh-ss-find").value === "sci");
+    const f2 = t5.d.getElementById("exh-ss-find");
+    f2.value = "journal"; f2.dispatchEvent(new t5.w.Event("input")); await settle();
+    check("(8) the picked subject stays listed while the words no longer match it",
+      opts().indexOf("Computer Science") >= 0 && opts().indexOf("Journalism") >= 0, opts());
+    check("(8) ⭐ finding writes nothing", writes(t5).length === before);
   }
 
   // (6) the CSS uses tokens.

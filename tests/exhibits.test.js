@@ -659,9 +659,13 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
   await t.M.boot(); await settle();
   // Sam, 2026-11-22: "The See them in the List link takes me out of exhibits ... It should instead open another sidebar".
   const setIt = t.d.getElementById("exh-edit-sites");
-  check("the card's training site opens a side panel, and says so", setIt && txt(setIt) === "Edit training sites" && setIt.getAttribute("aria-controls") === "exh-credpanel");
+  // S709: closed, it says it opens a dialog and names no panel (axe aria-valid-attr-value: aria-controls must name an
+  // element on the page); open, it names the panel.
+  check("the card's training site opens a side panel, and says so", setIt && txt(setIt) === "Edit training sites"
+    && setIt.getAttribute("aria-haspopup") === "dialog" && !setIt.hasAttribute("aria-controls"));
   setIt.click(); await settle();
   const cpan = t.d.getElementById("exh-credpanel");
+  check("open, the button names the panel it controls", t.d.getElementById("exh-edit-sites").getAttribute("aria-controls") === "exh-credpanel");
   check("⭐ the side panel holds the credential the title joins, its sites and their colleges, over the card it came from",
     cpan && txt(t.d.getElementById("exh-cp-h")) === JLP && t.d.getElementById("exh-cp-site-0").value === "Regional Academy North"
     && t.d.getElementById("exh-cp-col-0").value === "Norco College" && !!t.d.getElementById("exh-title") && current(t.d) === JUV);

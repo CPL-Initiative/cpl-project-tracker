@@ -1165,15 +1165,35 @@
        is saved, and Use this title fills the box as before. */
     var picks = ss.pick || (ss.pick = {}), picked = picks[o.key] && ss.data[picks[o.key]] ? picks[o.key] : h.subject;
     var names = Object.keys(ss.data).filter(function (k) { return k !== h.subject && (ss.data[k].rows || []).length; }).sort(lowerCmp);
-    var sel = el("select", { id: "exh-ss-pick", "aria-describedby": "exh-ss-pick-note" });
-    [h.subject].concat(names).forEach(function (k) {
-      var op = el("option", { value: k, text: k + (k === h.subject ? " (this course's subject)" : "") });
-      if (k === picked) op.selected = true;
-      sel.appendChild(op);
-    });
+    var sel = el("select", { id: "exh-ss-pick", "aria-describedby": "exh-ss-pick-note exh-ss-find-count" });
+    /* Find a subject (Sam, 2026-11-22: "the change subjects filter is too limited. I need to see subjects with
+       'computer' and 'information tech'"). Every typed word must start a word of the name, so "information tech" finds
+       Computer Information Systems and Health Information Technology; this course's subject and the one picked stay. */
+    var find = el("input", { id: "exh-ss-find", type: "search", autocomplete: "off", value: ss.find || "",
+      "aria-describedby": "exh-ss-find-count", "aria-controls": "exh-ss-pick" });
+    var count = el("span", { cls: "exh-muted", id: "exh-ss-find-count", role: "status" });
+    function fill() {
+      var words = String(ss.find || "").toLowerCase().split(/[^a-z0-9]+/).filter(Boolean);
+      var shown = names.filter(function (k) {
+        if (k === picked) return true;
+        var parts = k.toLowerCase().split(/[^a-z0-9]+/);
+        return words.every(function (w) { return parts.some(function (p) { return p.indexOf(w) === 0; }); });
+      });
+      while (sel.firstChild) sel.removeChild(sel.firstChild);
+      [h.subject].concat(shown).forEach(function (k) {
+        var op = el("option", { value: k, text: k + (k === h.subject ? " (this course's subject)" : "") });
+        if (k === picked) op.selected = true;
+        sel.appendChild(op);
+      });
+      var n = shown.length;
+      count.textContent = words.length ? fmt(n) + " of " + fmt(names.length) + " other subjects match" : fmt(names.length) + " other subjects";
+    }
+    fill();
+    find.addEventListener("input", function () { ss.find = find.value; fill(); });
     sel.addEventListener("change", function () { picks[o.key] = sel.value === h.subject ? null : sel.value; ss.all = null; redraw();
       var f = document.getElementById("exh-ss-pick"); if (f) f.focus(); });
-    var pickRow = el("p", { cls: "exh-small exh-ss-pickrow" }, [el("label", { "for": "exh-ss-pick", text: "Look in the subject " }), sel]);
+    var pickRow = el("p", { cls: "exh-small exh-ss-pickrow" }, [el("label", { "for": "exh-ss-find", text: "Find a subject " }), find,
+      el("label", { "for": "exh-ss-pick", text: "Look in the subject " }), sel, count]);
     var pickNote = null;
     if (picked !== h.subject) {
       sec.firstChild.textContent = "Subject: " + picked;
@@ -2944,7 +2964,8 @@
       var want = (cr && cr.ut) || (credOf(title.value) ? title.value.trim() : h.title);
       state.credPanel = want; render();
       (state.cs.rows ? Promise.resolve() : loadCredentials()).then(function () { render(); var pt = document.getElementById("exh-cp-h"); if (pt) pt.focus(); }, function () { render(); });
-    }, { cls: "exh-w exh-small", id: "exh-edit-sites", "aria-controls": "exh-credpanel" });
+    }, state.credPanel ? { cls: "exh-w exh-small", id: "exh-edit-sites", "aria-controls": "exh-credpanel", "aria-haspopup": "dialog" }
+      : { cls: "exh-w exh-small", id: "exh-edit-sites", "aria-haspopup": "dialog" });   // aria-controls only names a panel on the page (axe aria-valid-attr-value)
     var undoMove = mv && mv.sites.length ? word("Put it back", function () { var back = mv.sites.pop(); if (!mv.sites.length) delete state.siteMoves[h.raw];
       state.drafts[h.raw] = { title: title.value, issuer: back }; state.note = ""; render(); }, { cls: "exh-w exh-small", id: "exh-move-back" }) : null;
     canon.appendChild(el("div", { cls: "exh-inbox exh-read exh-sitesline" }, [el("span", { cls: "exh-pre", text: "Training site:" }), siteText,
@@ -6083,7 +6104,8 @@
   var CSS = [
     ".exh-wrap { display:grid; gap:16px; min-width:0; }",
     ".exh-ss-pickrow { display:flex; flex-wrap:wrap; gap:4px 8px; align-items:center; min-width:0; margin:4px 0; }",
-    ".exh-ss-pickrow select { min-height:28px; max-width:100%; min-width:0; font:inherit; }",
+    ".exh-ss-pickrow select, .exh-ss-pickrow input { min-height:28px; max-width:100%; min-width:0; font:inherit; }",
+    ".exh-ss-pickrow input { width:16ch; }",
     ".exh-saves { margin:4px 0 0; color:var(--text-muted); overflow-wrap:anywhere; }",
     ".exh-artwith { display:grid; gap:4px; min-width:0; }",
     ".exh-artlist { margin:0; padding-left:18px; display:grid; gap:2px; overflow-wrap:anywhere; }",
