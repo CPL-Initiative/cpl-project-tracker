@@ -353,7 +353,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Crowd consensus beats a single-item signal (the two-signals-agree gate, via the crowd)](../kb-notes/methodology-crowd-consensus-beats-single-item-signal.md) | methodology | published | 2026-07-17 |  |
 | [Derive a listing from the things it lists](../kb-notes/methodology-derive-a-listing-from-the-things-it-lists.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [Derive theme tokens from brand seeds with a contrast script — the mock is the spec](../kb-notes/methodology-derived-aa-token-palette.md) | methodology | published | 2026-06-12 | 2026-06-12 |
-| [Detecting mis-disciplined minted identities via subject-code cohort outliers + a two-signals-agree gate](../kb-notes/methodology-subject-cohort-discipline-outlier.md) | methodology | published | 2026-07-13 |  |
+| [Detecting mis-disciplined minted identities via subject-code cohort outliers + a two-signals-agree gate](../kb-notes/methodology-subject-cohort-discipline-outlier.md) | methodology | published | 2026-07-13 | 2026-11-22 |
 | [Emit the threshold with the label it prints](../kb-notes/methodology-emit-the-threshold-with-the-label-it-prints.md) | methodology | published | 2026-08-10 | 2026-08-10 |
 | [Every id-keyed artifact class belongs in the post-apply chain](../kb-notes/methodology-every-id-keyed-artifact-class-belongs-in-the-post-apply-chain.md) | methodology | published | 2026-09-04 | 2026-09-27 |
 | [Every live database function needs a committed schema-of-record file](../kb-notes/methodology-live-db-functions-need-committed-schema.md) | methodology | published | 2026-07-02 | 2026-07-02 |
