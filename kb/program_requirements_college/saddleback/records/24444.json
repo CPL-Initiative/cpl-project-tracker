@@ -98,7 +98,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "hours_within_printed_range",
+    "label": "A program measured in hours: its courses' hours as read fall within the printed range of hours rather than matching it.",
+    "words": "the courses' hours add to 373.5-448.2, within the printed 199.2-448.2 hours"
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

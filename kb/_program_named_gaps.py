@@ -111,9 +111,21 @@ GAPS = {
     # S697: the page prints a program total its own printed figures do not add to, read from the page itself and
     # listed with both figures in kb/program_total_differs.json (Clovis's Elementary Teacher Level 2: 19 against 16).
     "total_differs": "The catalog prints a total for this program that its own printed units do not add to.",
+    # S703 (census lever 3, the noncredit hours total): a program measured in hours whose courses carry their hours.
+    "hours_total_not_read": ("A program measured in hours: its courses carry their hours, and no program total was "
+                             "read, so its hours cannot be checked against one."),
+    "hours_within_printed_range": ("A program measured in hours: its courses' hours as read fall within the printed "
+                                   "range of hours rather than matching it."),
+    "hours_total_differs": ("A program measured in hours: its courses' hours as read add to a figure other than "
+                            "the program's printed total."),
+    # S703 (census lever 2): the degree names a general education pattern and no units for it were read; its major
+    # adds up to the major total the page prints, so the general education units are all that is missing.
+    "ge_units_not_read": ("The degree names a general education pattern, and no units for it were read, so the "
+                          "degree's units cannot be added. Its major adds up to the printed major total."),
 }
 ARITH_SCORE = {"major_total_differs": 30, "no_units_printed": 40, "no_units_read": 20, "no_hours_read": 20,
-               "catalog_figures_differ": 50, "total_not_printed": 40, "total_differs": 50}
+               "catalog_figures_differ": 50, "total_not_printed": 40, "total_differs": 50, "ge_units_not_read": 50,
+               "hours_total_not_read": 40, "hours_within_printed_range": 50, "hours_total_differs": 30}
 MAJOR_NOT_EXACT = "the major does not match the catalog's major total exactly"
 NO_UNITS_WHY = re.compile(r"^a required course in '.*' has no units$")
 PRINTED_NO_UNITS = re.compile(r"\b(?:no|without)\s+units\b|\bunits?\s+(?:are\s+|is\s+)?not\s+(?:printed|listed|given)\b"
@@ -398,8 +410,227 @@ def total_differs(filed: dict, listed: dict | None = None) -> str | None:
         S._fig(*pt), S._fig(*ps), e.get("where") or "PDF p.%s" % e.get("page"), e.get("run"))
 
 
+# S703 (census lever 3, 100 programs on 2026-11-21): a program measured in hours (record.program.measure "hours")
+# whose courses' hours as read add to more than zero. Three shapes, each the record's one arithmetic reason:
+#   hours_total_not_read        the scorer's only reason is "the record names no total" (40): the courses carry
+#                               hours, and no program total was read;
+#   hours_within_printed_range  the hours add to a figure the printed range holds, neither end of it (50): Laney's
+#                               ESOL pages print "172-245" hours over courses that add to a figure between;
+#   hours_total_differs         the hours add to any other figure than the printed total (30, as COBIx's D2 scores a
+#                               major total that differs from the catalog).
+# A record whose hours add to zero, or whose printed total is zero, reads no hours: it takes none of these.
+# The second reader's held-out records on #3679 (S703; decided d-hours-gaps-hold-misreads-s703). Each takes no hours
+# gap: a reread or a reconcile step from the page's own wording passes eight of them, ten were read from text that
+# lacks the program's own section, and one differs from its printed total by a rounding the scorer should settle.
+HOURS_REREAD_WHY = "reread or reconcile wording passes it free"
+HOURS_NO_SECTION_WHY = "text lacks the program section"
+HOURS_ROUNDING_WHY = "235.5 against 235.4: a scorer rounding question, not a gap"
+HELD_HOURS = {
+    # (a) the reading its own heading or note names passes it.
+    ("Laney College", "38970"): HOURS_REREAD_WHY, ("Laney College", "39365"): HOURS_REREAD_WHY,
+    ("Laney College", "39366"): HOURS_REREAD_WHY, ("Laney College", "39368"): HOURS_REREAD_WHY,
+    ("Laney College", "43451"): HOURS_REREAD_WHY,      # "min 47/172/158 hours" read as a list of rule all
+    ("De Anza College", "41176"): HOURS_REREAD_WHY,    # ESL 400 "need not be taken"
+    ("Mendocino College", "43158"): HOURS_REREAD_WHY,  # the second list is optional
+    ("Coastline Community College", "42718"): HOURS_REREAD_WHY,  # "Subtotal 120-288" is the program total
+    # (b) hours_total_not_read read from text without the program's own section.
+    ("Los Angeles City College", "24099"): HOURS_NO_SECTION_WHY,
+    ("West Los Angeles College", "30369"): HOURS_NO_SECTION_WHY,
+    ("West Los Angeles College", "45311"): HOURS_NO_SECTION_WHY,
+    ("Porterville College", "44805"): HOURS_NO_SECTION_WHY, ("Ventura College", "40179"): HOURS_NO_SECTION_WHY,
+    **{("Pasadena City College", cn): HOURS_NO_SECTION_WHY for cn in ("33140", "33141", "33142", "33143", "33144")},
+    ("Reedley College", "42457"): HOURS_ROUNDING_WHY,
+}
+# What a no-total hours record's notes say of the text it was read from (#3679 second reader, finding 2):
+# "section_missing" where a note says the program's own section, heading or requirements are not in the text
+# (it begins mid-section, is cut off before the requirements, or is a course listing), "says_no_total" where one
+# says no program total is printed, else "silent". hours_total_not_read is held on section_missing.
+HOURS_SECTION_MISSING = re.compile(
+    r"\b(?:excerpt|text)\s+begins\s+mid-?(?:section|entry)|\bbegins\s+mid-?section\b"
+    r"|\bcut\s+off\s+before\s+the\s+requirements|\bnot\s+a\s+program\s+requirements\s+(?:section|page)\b"
+    r"|\bno\s+program\s+section\b"
+    r"|\b(?:heading|total\s+hours)[^.;]{0,80}\b(?:on|at\s+the\s+bottom\s+of)\s+the\s+(?:preceding|previous)\s+page\b",
+    re.I)
+HOURS_SAYS_NO_TOTAL = re.compile(r"\bno\s+(?:program\s+)?total(?:\s+hours)?\s+(?:is|are)?\s*(?:printed|stated)\b"
+                                 r"|\bno\s+total\s+hours\s+are\s+(?:printed|stated)\b", re.I)
+
+
+def hours_claim(filed: dict) -> str:
+    """section_missing, says_no_total or silent: what an hours record's notes say of its text."""
+    notes = " ".join(n if isinstance(n, str) else json.dumps(n) for n in (filed.get("record") or {}).get("notes") or [])
+    if HOURS_SECTION_MISSING.search(notes):
+        return "section_missing"
+    return "says_no_total" if HOURS_SAYS_NO_TOTAL.search(notes) else "silent"
+
+
+def hours_held_out(filed: dict) -> str | None:
+    """Why an hours record takes no hours gap: a held key, or (no total read) notes saying its section is missing."""
+    why = HELD_HOURS.get((filed.get("college"), str(filed.get("control_number"))))
+    if why:
+        return why
+    a = (filed.get("score") or {}).get("arithmetic") or {}
+    if a.get("stated") is None and hours_claim(filed) == "section_missing":
+        return HOURS_NO_SECTION_WHY
+    return None
+
+
+def _hours_figures(filed: dict):
+    """(sum, printed) of an hours record the arithmetic reads against the program, each a positive (lo, hi), else
+    None; printed is None where the record names no total. A held-out record (hours_held_out) reads None."""
+    if not hours_measured(filed) or hours_held_out(filed):
+        return None
+    sc = filed.get("score") or {}
+    a = sc.get("arithmetic") or {}
+    if a.get("pass") or not collectable(sc) or len(a.get("why") or []) != 1:
+        return None
+    comp, st = _pair(a.get("computed")), _pair(a.get("stated"))
+    if comp is None or comp[1] <= 0 or (st is not None and st[1] <= 0):
+        return None
+    return comp, st
+
+
+def hours_total_not_read(filed: dict) -> str | None:
+    hf = _hours_figures(filed)
+    a = (filed.get("score") or {}).get("arithmetic") or {}
+    if not hf or hf[1] is not None or a.get("status") != "incomplete" or a.get("why") != [NO_TOTAL_WHY]:
+        return None
+    return "the courses carry %s hours as read, and no program total was read" % S._fig(*hf[0])
+
+
+def _hours_unequal(filed: dict):
+    hf = _hours_figures(filed)
+    a = (filed.get("score") or {}).get("arithmetic") or {}
+    if not hf or hf[1] is None or a.get("status") != "unequal" or a.get("against") != "program":
+        return None
+    return hf
+
+
+def _within(comp, st) -> bool:
+    return (st[0] + FIG_EPS < comp[0] or comp[1] + FIG_EPS < st[1]) and st[0] - FIG_EPS <= comp[0] \
+        and comp[1] <= st[1] + FIG_EPS
+
+
+def hours_within_printed_range(filed: dict) -> str | None:
+    hf = _hours_unequal(filed)
+    if not hf or not _within(*hf):
+        return None
+    return "the courses' hours add to %s, within the printed %s hours" % (S._fig(*hf[0]), S._fig(*hf[1]))
+
+
+def hours_total_differs(filed: dict) -> str | None:
+    hf = _hours_unequal(filed)
+    if not hf or _within(*hf):
+        return None
+    return "the courses' hours add to %s against the printed %s hours" % (S._fig(*hf[0]), S._fig(*hf[1]))
+
+
+# S703 (census lever 2, 192 programs): a degree whose only arithmetic reason is the scorer's general education
+# sentence (degree_check in kb/_program_requirements_score.py: "the record names the degree total and the <pattern>
+# pattern, but no units for it"), and whose major check passes, so the major's courses add up to the major total
+# the page prints. The gap claims only what the record shows: a pattern named and no units read for it. A later set
+# step or statewide Cal-GETC fill that gives the pattern its units rescores the record, which then passes or fails
+# on its own figures.
+GE_NO_UNITS_WHY = re.compile(r"^the record names the degree total and the (?P<pattern>.+) pattern, but no units for it$")
+
+
+# The second reader's held-out records on #3678 (S703): each page prints a general education figure, so the free
+# ge_units_steps lever (a college set step from the page's own words) passes it, and the gap would take it off that
+# lever. Sixteen print one figure for general education and electives together, and the major plus that figure is
+# the degree total; five print a figure of their own (Orange Coast 16634 "OCC AS General Education: 21 Units ...
+# Total Units 60"; De Anza 45499's 54-unit minimum; Marin 19789 and 19791, 22 or 34; Antelope Valley 43028, 39 or 37).
+GE_FIGURE_HELD_WHY = "page prints a GE figure; ge_units_steps passes it free"
+HELD_GE_FIGURE = frozenset(
+    [("Antelope Valley College", cn) for cn in ("36852", "39295", "40870", "43028")]
+    + [("Berkeley City College", cn) for cn in ("31835", "41766", "41902", "42381", "42838")]
+    + [("College of Alameda", cn) for cn in ("01129", "01132", "01141", "32765")]
+    + [("Las Positas College", cn) for cn in ("09214", "09227", "36235", "38886")]
+    + [("Orange Coast College", "16634"), ("De Anza College", "45499"), ("College of Marin", "19789"),
+       ("College of Marin", "19791")])
+
+# What the record says of the pattern's units, read from its notes, block names and section heading (#3678 second
+# reader, finding 2; decided d-ge-gap-only-where-no-figure-s703): "prints_figure" where a sentence naming general
+# education carries a unit figure other than the degree and major totals, "says_none" where one says no units are
+# printed for it, else "silent". The gap applies to says_none and silent; a record printing a figure is held out.
+# The committed files keep no page text, so the record's own words are what is read.
+GE_WORD = re.compile(r"general\s+education|\bG\.?E\.?\b|Cal-?\s?GETC|IGETC|\bCSU\s*GE|LPC-GE|COSGE", re.I)
+GE_NONE = re.compile(r"\b(?:no|not|without)\b[^.;]{0,60}?\bunits?\b[^.;]{0,40}?\b(?:printed|given|stated|listed|shown)\b"
+                     r"|\bprints?\s+no\b[^.;]{0,40}?\bunits?\b|\bno\s+(?:GE|general\s+education|Cal-?GETC)\s+units?\b"
+                     r"|\bunits?\s+(?:are|is)\s+not\s+(?:printed|given|stated|listed|shown)\b", re.I)
+# A figure with its unit word, never one the sentence gives the major ("a minimum of 18 semester units in a major":
+# Solano 31761).
+GE_UNIT_FIGURE = re.compile(r"(?<![\d.])(\d{1,2}(?:\.\d+)?)(?:\s*(?:-|–|to|or)\s*(\d{1,2}(?:\.\d+)?))?\s*"
+                            r"(?:semester\s+|quarter\s+)?(?:units?|credits?)\b(?!\s+(?:in|for)\s+(?:a|the)\s+major)", re.I)
+# A figure after the pattern's label ("General Education (CalGETC) and Electives 30": Berkeley City 42838).
+GE_LABEL_FIGURE = re.compile(r"(?:general\s+education|\bGE\b|Cal-?\s?GETC|IGETC)(?:\s+and\s+electives?)?[^.;\d]{0,30}?"
+                             r"[:\s](\d{1,2}(?:\.\d+)?)(?![\d.])"
+                             r"(?!\s*(?:semester\s+|quarter\s+)?units?\s+(?:in|for)\s+(?:a|the)\s+major)", re.I)
+# A note that says the page prints a figure for a line ("The page prints 34 for 'Completion of General Education
+# requirements ...'", "prints '30-33' for": Antelope Valley 36852 and 39295).
+GE_PRINTS_FIGURE = re.compile(r"\bprints\s+'?(\d{1,2}(?:\.\d+)?)(?:\s*-\s*(\d{1,2}(?:\.\d+)?))?'?\s+(?:for|as)\b", re.I)
+# A sentence that gives its figures to another program ("belong to the preceding program": Porterville 18526).
+GE_OTHER_PROGRAM = re.compile(r"\bbelongs?\s+to\s+(?:the\s+)?(?:preceding|previous|next|following|another|other)\b", re.I)
+
+
+def _ge_sentences(filed: dict) -> list[str]:
+    rec = filed.get("record") or {}
+    text = [n if isinstance(n, str) else json.dumps(n) for n in rec.get("notes") or []]
+    text += [b.get("name") or "" for b in rec.get("blocks") or []]
+    text.append(((rec.get("program") or {}).get("section_heading")) or "")
+    return [x for t in text for x in re.split(r"(?<=[.!?;])\s+", t) if GE_WORD.search(x)]
+
+
+def ge_claim(filed: dict) -> str:
+    """prints_figure, says_none or silent: what the record's own words say of the general education units."""
+    prog = (filed.get("record") or {}).get("program") or {}
+    not_ge = {v for v in R._lo_hi(prog.get("degree_total")) if v is not None}
+    sents = _ge_sentences(filed)
+    for x in sents:
+        if GE_OTHER_PROGRAM.search(x):
+            continue
+        figs = [float(g) for rx in (GE_UNIT_FIGURE, GE_LABEL_FIGURE, GE_PRINTS_FIGURE) for m in rx.finditer(x)
+                for g in m.groups() if g]
+        if any(6 <= v <= 70 and v not in not_ge for v in figs):
+            return "prints_figure"
+    return "says_none" if any(GE_NONE.search(x) for x in sents) else "silent"
+
+
+def _ge_units_shape(filed: dict):
+    """The scorer's shape of the gap: (the pattern, the major's printed total), or None."""
+    sc = filed.get("score") or {}
+    a = sc.get("arithmetic") or {}
+    if a.get("pass") or a.get("status") != "incomplete" or a.get("against") != "degree" or not collectable(sc):
+        return None
+    why = a.get("why") or []
+    m = GE_NO_UNITS_WHY.match(why[0]) if len(why) == 1 else None
+    major = a.get("major")
+    if not m or not isinstance(major, dict) or major.get("pass") is not True:
+        return None
+    return m.group("pattern"), _pair(major.get("stated"))
+
+
+def ge_units_held_out(filed: dict) -> str | None:
+    """Why a record of the gap's shape is held out of it: a held key, or its own words printing a GE figure."""
+    if (filed.get("college"), str(filed.get("control_number"))) in HELD_GE_FIGURE:
+        return GE_FIGURE_HELD_WHY
+    if ge_claim(filed) == "prints_figure":
+        return "the record's own words print a general education figure (%s)" % GE_FIGURE_HELD_WHY
+    return None
+
+
+def ge_units_not_read(filed: dict) -> str | None:
+    shape = _ge_units_shape(filed)
+    if not shape or ge_units_held_out(filed):
+        return None
+    pattern, st = shape
+    return ("the degree names the %s pattern and no units were read for it; its major adds to the printed %s"
+            % (pattern[:120], S._fig(*st) if st else "total"))
+
+
 RECORD_RULES = (("major_total_differs", major_total_differs), ("total_not_printed", total_not_printed),
-                ("total_differs", total_differs)) + (
+                ("total_differs", total_differs), ("ge_units_not_read", ge_units_not_read),
+                ("hours_total_not_read", hours_total_not_read),
+                ("hours_within_printed_range", hours_within_printed_range),
+                ("hours_total_differs", hours_total_differs)) + (
     (("no_units_printed", no_units_printed),) if NO_UNITS_PRINTED_ON else ()) + (("no_units_read", no_units_read),)
 
 
@@ -480,6 +711,23 @@ def held_answer(filed: dict) -> str | None:
         # The page itself, read and listed in kb/program_total_differs.json with both of its figures, is the held
         # answer (S697); whether the record read those figures is the rule's question, not the answer's.
         return "total_differs"
+    prog = (filed.get("record") or {}).get("program") or {}
+    comp, st = _pair(a.get("computed")), _pair(a.get("stated"))
+    if (str(prog.get("measure") or "").lower() == "hours" and len(a.get("why") or []) == 1 and comp
+            and comp[1] > 0 and not hours_held_out(filed)):
+        # S703: the held answer reads the score's own figures and status, apart from the rules' helpers.
+        if a.get("status") == "incomplete" and a.get("stated") is None and a.get("against") is None:
+            return "hours_total_not_read"
+        if a.get("status") == "unequal" and a.get("against") == "program" and st and st[1] > 0:
+            inside = st[0] - FIG_EPS <= comp[0] and comp[1] <= st[1] + FIG_EPS
+            return "hours_within_printed_range" if inside else "hours_total_differs"
+    if (a.get("status") == "incomplete" and a.get("against") == "degree" and a.get("ge") is None
+            and len(a.get("why") or []) == 1 and prog.get("ge_pattern") and R._no_ge_units(prog.get("ge_units"))
+            and isinstance(m, dict) and m.get("pass") is True and not ge_units_held_out(filed)):
+        # The held answer reads the record and the score's own fields (no ge units read, a pattern named, the major
+        # passing, one reason), apart from the rule's sentence matcher (S703). A record printing a GE figure is held
+        # out of both by one reading (ge_units_held_out); ge_units_precision measures that reading.
+        return "ge_units_not_read"
     why = [w for w in a.get("why") or [] if w != "the record names no total"]
     if (a.get("status") == "incomplete" and why and all(w.endswith(" has no units") for w in why)
             and (filed.get("college"), str(filed.get("control_number"))) not in HELD_INCOMPLETE):
@@ -509,6 +757,144 @@ def recall(every: list[dict]) -> dict:
                                       "held": truth, "rule": got})
     out["by_answer"] = dict(out["by_answer"])
     return out
+
+
+def hours_recall(every: list[dict]) -> dict:
+    """The three hours gaps against answers already held (S703; S652's review rule): every passing record measured
+    in hours whose courses' hours add to more than zero and match its printed total. The scorer itself (S.score on
+    the filed record, no closed list and no page text, which reproduces each filed arithmetic) reads the record
+    three ways, each with a held answer: its total removed (hours_total_not_read), its total moved past the sum
+    (hours_total_differs) and widened around it (hours_within_printed_range). Right when the rule names the held
+    gap; a record the scorer does not reproduce unchanged is counted apart (not_reproduced), and so is one held out
+    (hours_held_out). Two boundary readings follow (#3679 second reader, finding 2): the sum at the top of a printed
+    range and at its low end. Their held answer is the scorer's own verdict: no gap where it passes the sum (its
+    meets and meets-top readings), else hours_within_printed_range; by_boundary counts each outcome."""
+    out = {"held": 0, "right": 0, "wrong": 0, "not_reproduced": 0, "held_out": 0, "by_test": collections.Counter(),
+           "by_boundary": collections.Counter(), "wrong_keys": []}
+    for f in every:
+        sc = f.get("score") or {}
+        a = sc.get("arithmetic") or {}
+        rec = f.get("record") or {}
+        comp = _pair(a.get("computed"))
+        if (not hours_measured(f) or not a.get("pass") or a.get("against") != "program" or not collectable(sc)
+                or comp is None or comp[1] <= 0):
+            continue
+        if hours_held_out(dict(f, score=dict(sc, arithmetic=dict(a, stated=None)))):
+            out["held_out"] += 1
+            continue
+        if S.score(rec, [], None, f.get("award"))["arithmetic"] != a:
+            out["not_reproduced"] += 1
+            continue
+        lo, hi = comp
+        for gap, total in (("hours_total_not_read", None),
+                           ("hours_total_differs", {"min": round(hi * 2 + 10, 2), "max": round(hi * 2 + 10, 2)}),
+                           ("hours_within_printed_range", {"min": round(lo / 2, 2), "max": round(hi * 2 + 10, 2)}),
+                           ("boundary_top", {"min": round(lo / 2, 2), "max": hi}),
+                           ("boundary_low", {"min": lo, "max": round(hi * 2 + 10, 2)})):
+            prog = dict(rec.get("program") or {}, total_units=total)
+            again = S.score(dict(rec, program=prog), [], None, f.get("award"))["arithmetic"]
+            test = dict(f, record=dict(rec, program=prog), score=dict(sc, arithmetic=again))
+            got = (answer(test) or (None,))[0]
+            if gap.startswith("boundary"):
+                expect = None if again.get("pass") else "hours_within_printed_range"
+                out["by_boundary"]["%s %s" % (gap, "passes" if expect is None else "within")] += 1
+                gap = expect
+            out["held"] += 1
+            out["by_test"][gap or "none"] += 1
+            if got == gap and held_answer(test) == gap:
+                out["right"] += 1
+            else:
+                out["wrong"] += 1
+                out["wrong_keys"].append({"college": f.get("college"), "control_number": f.get("control_number"),
+                                          "held": gap, "rule": got})
+    out["by_test"] = dict(out["by_test"])
+    out["by_boundary"] = dict(out["by_boundary"])
+    return out
+
+
+def hours_precision(files: list[dict], keys: frozenset | None = None) -> dict:
+    """hours_total_not_read's claim, a program section read with no total printed, measured on the records of its
+    shape (no total read, the courses' hours above zero, one reason; held keys counted too) with keys the census's
+    records alone (#3679 second reader, finding 2): hours_claim's three counts; and hours_claim against the hand-held
+    answers, the ten records the second reader found read from text without the program section."""
+    counts = collections.Counter()
+    for f in files:
+        sc = f.get("score") or {}
+        a = sc.get("arithmetic") or {}
+        comp = _pair(a.get("computed"))
+        if (not hours_measured(f) or a.get("pass") or not collectable(sc) or a.get("why") != [NO_TOTAL_WHY]
+                or a.get("stated") is not None or comp is None or comp[1] <= 0):
+            continue
+        if keys is not None and (f.get("college"), str(f.get("control_number"))) not in keys:
+            continue
+        counts[hours_claim(f)] += 1
+    by_key = {(f.get("college"), str(f.get("control_number"))): f for f in files}
+    held = [by_key[k] for k, why in sorted(HELD_HOURS.items()) if why == HOURS_NO_SECTION_WHY and k in by_key]
+    flagged = [f for f in held if hours_claim(f) == "section_missing"]
+    return {"section_missing": counts["section_missing"], "says_no_total": counts["says_no_total"],
+            "silent": counts["silent"], "hand_held_no_section": len(held),
+            "hand_held_flagged_by_hours_claim": len(flagged),
+            "hand_held_not_flagged": ["%s %s" % (f["college"], f["control_number"]) for f in held if f not in flagged]}
+
+
+def ge_units_recall(every: list[dict]) -> dict:
+    """The gap's scorer shape (_ge_units_shape) against answers already held (S703; S652's review rule): every
+    passing degree whose major passes and whose general education units were read. The held answer is that the units
+    were all the degree needed past its major, since with them it passes. Each record loses its units and is checked
+    again by the scorer's own degree_check, and the shape must hold on it (right). A record whose pattern is not named
+    cannot take the gap and is counted apart (no_pattern). This measures the shape alone: whether the page prints
+    a figure is ge_units_precision's question (#3678 second reader, finding 2)."""
+    out = {"held": 0, "right": 0, "wrong": 0, "no_pattern": 0, "wrong_keys": []}
+    for f in every:
+        sc = f.get("score") or {}
+        a = sc.get("arithmetic") or {}
+        deg = a.get("degree")
+        prog = (f.get("record") or {}).get("program") or {}
+        if (not sc.get("pass") or not a.get("pass") or a.get("against") != "program" or not isinstance(deg, dict)
+                or not deg.get("pass") or deg.get("ge") is None or not collectable(sc)):
+            continue
+        if not prog.get("ge_pattern"):
+            out["no_pattern"] += 1
+            continue
+        bare = dict(prog, ge_units={"min": None, "max": None})
+        stated = _pair(deg.get("stated"))
+        comp = _pair(deg.get("computed")) or (0.0, 0.0)
+        again = S.degree_check(bare, stated, comp[0], comp[1], [], None, f.get("award"))
+        major = {k: v for k, v in a.items() if k != "degree"}
+        test = dict(f, record=dict(f.get("record") or {}, program=bare),
+                    score=dict(sc, arithmetic=dict(again, major=major)))
+        got = "ge_units_not_read" if _ge_units_shape(test) else (answer(test) or (None,))[0]
+        out["held"] += 1
+        if got == "ge_units_not_read":
+            out["right"] += 1
+        else:
+            out["wrong"] += 1
+            out["wrong_keys"].append({"college": f.get("college"), "control_number": f.get("control_number"),
+                                      "rule": got})
+    return out
+
+
+def ge_units_precision(files: list[dict], keys: frozenset | None = None) -> dict:
+    """The gap's own claim, that no units were printed for the pattern, measured on the records of its shape
+    (#3678 second reader, finding 2): ge_claim's three counts (says_none, prints_figure, silent) on those records,
+    with keys the census's records alone; and ge_claim against the hand-held answers, the second reader's 21 records
+    whose pages print a GE figure (HELD_GE_FIGURE): flagged when ge_claim reads prints_figure. Every record
+    printing a figure is held out by key or by ge_claim, so the gap's precision on the 21 is exact by construction;
+    the flagged count is how far ge_claim alone reaches."""
+    counts = collections.Counter()
+    for f in files:
+        if not _ge_units_shape(f):
+            continue
+        if keys is not None and (f.get("college"), str(f.get("control_number"))) not in keys:
+            continue
+        counts[ge_claim(f)] += 1
+    by_key = {(f.get("college"), str(f.get("control_number"))): f for f in files}
+    held = [by_key[k] for k in sorted(HELD_GE_FIGURE) if k in by_key]
+    flagged = [f for f in held if ge_claim(f) == "prints_figure"]
+    return {"says_none": counts["says_none"], "prints_figure": counts["prints_figure"], "silent": counts["silent"],
+            "hand_held_prints_figure": len(held), "hand_held_flagged_by_ge_claim": len(flagged),
+            "hand_held_not_flagged": ["%s %s" % (f["college"], f["control_number"]) for f in held
+                                      if f not in flagged]}
 
 
 NONCREDIT_AWARD = re.compile(r"^\s*(?:noncredit\s+program|certificate\s+of\s+(?:competency|completion))", re.I)
@@ -563,9 +949,23 @@ def _load_images(colleges: set) -> dict:
     return out
 
 
-def run(write: bool, skip: tuple = (), gaps: tuple = ()) -> dict:
+CENSUS = os.path.join(HERE, "status", "harvest_gap_census.json")
+
+
+def census_keys(causes: tuple, path: str = CENSUS) -> frozenset:
+    """{(college, control number)} the committed census files under one of these exact causes (programs_by_college):
+    the programs whose live row the census read failing for that reason (S703: the live row of a program outside
+    them may hold another record, and the guarded UPDATE would abort on it)."""
+    with open(path, encoding="utf-8") as fh:
+        by = json.load(fh).get("programs_by_college") or {}
+    return frozenset((c, cn) for c, m in by.items() for cn, v in m.items() if v in set(causes))
+
+
+def run(write: bool, skip: tuple = (), gaps: tuple = (), census_causes: tuple = ()) -> dict:
     """gaps: when given, only records whose gap is one of these move (S697: total_not_printed applied alone, so the
-    pass writes no other lane's records); the recall still reads every record."""
+    pass writes no other lane's records); the recall still reads every record. census_causes: when given, only
+    records the committed census lists under one of these causes move (S703)."""
+    in_census = census_keys(census_causes) if census_causes else None
     moved, files, hits, every = [], [], [], []
     # A college the harvest parks (the census's PARKED) takes no gap from this lane either.
     import _harvest_gap_census as G
@@ -580,7 +980,8 @@ def run(write: bool, skip: tuple = (), gaps: tuple = ()) -> dict:
             continue
         files.append(filed)
         j = judge(filed)
-        if j and (not gaps or j[0] in gaps):
+        if j and (not gaps or j[0] in gaps) and (in_census is None or
+                                                  (filed.get("college"), str(filed.get("control_number"))) in in_census):
             hits.append((path, filed, j))
     # The load's image of each record before any rewrite (the guard), and after it (what the row takes).
     before = _load_images({f["college"] for _, f, _ in hits}) if write else {}
@@ -616,6 +1017,10 @@ def run(write: bool, skip: tuple = (), gaps: tuple = ()) -> dict:
         m["i"] = i
     labs = labels(skip=skip)
     return {"moved": moved, "labels": labs, "recall": recall(every), "matcher_recall": matcher_recall(files),
+            "hours_recall": hours_recall(every),
+            "hours_precision": hours_precision(files, census_keys(census_causes) if census_causes else None),
+            "ge_units_recall": ge_units_recall(every),
+            "ge_units_precision": ge_units_precision(files, census_keys(census_causes) if census_causes else None),
             "by_gap": dict(collections.Counter(m["gap"] for m in moved)),
             "labels_by_gap": dict(collections.Counter(x["gap"] for x in labs))}
 
@@ -1124,6 +1529,9 @@ def main(argv=None) -> int:
     ap.add_argument("--checked", help="with --wave: the conductor's live read of checked rows (by_college)")
     ap.add_argument("--gap", action="append", default=[], choices=sorted(GAPS),
                     help="the plain pass: move only records taking this gap (repeat); the label file is left as is")
+    ap.add_argument("--census-cause", action="append", default=[],
+                    help="the plain pass: move only records the committed census lists under this exact cause "
+                         "(programs_by_college, e.g. 'units_incomplete|ge_pattern_no_units'; repeat)")
     a = ap.parse_args(argv)
     if a.wave:
         if not a.college:
@@ -1213,7 +1621,7 @@ def main(argv=None) -> int:
         out = write_rollback(body, rel(a.receipt), day, a.tag)
         print("replanned: %d rows applied (%s), rollback %s" % (body["applied"]["returned"], rel(a.applied), rel(out)))
         return 0
-    r = run(write=not a.dry_run, skip=tuple(a.skip_college), gaps=tuple(a.gap))
+    r = run(write=not a.dry_run, skip=tuple(a.skip_college), gaps=tuple(a.gap), census_causes=tuple(a.census_cause))
     print("records collected with a named gap: %d (%s)" % (len(r["moved"]), ", ".join(
         "%s %d" % kv for kv in sorted(r["by_gap"].items())) or "none"))
     print("labels on programs with no record: %d (%s)" % (len(r["labels"]), ", ".join(
@@ -1225,11 +1633,35 @@ def main(argv=None) -> int:
         print("  wrong: %(college)s %(control_number)s held %(held)s, rule %(rule)s" % w)
     for n, c in r["matcher_recall"].items():
         print("matcher recall %s: %s" % (n, ", ".join("%s %d" % kv for kv in c.items())))
-    if rc["wrong"]:
-        raise SystemExit("the recall is wrong on %d records: no plan is written" % rc["wrong"])
+    hr = r["hours_recall"]
+    print("hours gaps recall on passing hours records, read five ways: held %d, right %d, wrong %d (%s; not "
+          "reproduced %d)" % (hr["held"], hr["right"], hr["wrong"],
+                              ", ".join("%s %d" % kv for kv in sorted(hr["by_test"].items())), hr["not_reproduced"]))
+    for w in hr["wrong_keys"][:10]:
+        print("  wrong: %(college)s %(control_number)s held %(held)s, rule %(rule)s" % w)
+    print("  boundaries: %s; held out %d" % (", ".join("%s %d" % kv for kv in sorted(hr["by_boundary"].items())),
+                                            hr["held_out"]))
+    hp = r["hours_precision"]
+    print("hours_total_not_read precision, the records of its shape: section missing %d (held), says no total %d, "
+          "silent %d; hand-held no-section records %d, hours_claim flags %d" % (
+              hp["section_missing"], hp["says_no_total"], hp["silent"], hp["hand_held_no_section"],
+              hp["hand_held_flagged_by_hours_claim"]))
+    gr = r["ge_units_recall"]
+    print("ge_units_not_read recall on %d passing degrees whose units were read, units removed: right %d, wrong %d "
+          "(no pattern named %d)" % (gr["held"], gr["right"], gr["wrong"], gr["no_pattern"]))
+    for w in gr["wrong_keys"][:10]:
+        print("  wrong: %(college)s %(control_number)s, rule %(rule)s" % w)
+    gp = r["ge_units_precision"]
+    print("ge_units_not_read precision, the records of its shape: says none printed %d, prints a figure %d (held), "
+          "silent %d; hand-held figure records %d, ge_claim flags %d" % (
+              gp["says_none"], gp["prints_figure"], gp["silent"], gp["hand_held_prints_figure"],
+              gp["hand_held_flagged_by_ge_claim"]))
+    if rc["wrong"] or hr["wrong"] or gr["wrong"]:
+        raise SystemExit("the recall is wrong on %d records: no plan is written" % (rc["wrong"] + hr["wrong"]
+                                                                                    + gr["wrong"]))
     if a.dry_run:
         return 0
-    held = list(CL.COLLECTION_LANE_S680) + list(a.skip_college)
+    held = list(dict.fromkeys(list(CL.COLLECTION_LANE_S680) + list(a.skip_college)))
     if not a.gap:
         with open(LABELS_OUT, "w", encoding="utf-8") as fh:
             json.dump({"rule": RULING, "gaps": GAPS, "held_colleges": held, "labeled": len(r["labels"]),
@@ -1241,8 +1673,17 @@ def main(argv=None) -> int:
     path = os.path.join(RECEIPTS, "program_requirement_records_named_gaps_%s_%s.json" % (day, a.tag))
     n = len(r["moved"])
     body = {"rule": RULING, "gaps": GAPS, "at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-            "held_colleges": held, "only_gaps": list(a.gap), "collected": n, "by_gap": r["by_gap"],
-            "recall": r["recall"], "matcher_recall": r["matcher_recall"], "records": r["moved"],
+            "held_colleges": held, "only_gaps": list(a.gap), "census_causes": list(a.census_cause), "collected": n, "by_gap": r["by_gap"],
+            "recall": r["recall"], "matcher_recall": r["matcher_recall"],
+            "ge_units_recall": {k: v for k, v in r["ge_units_recall"].items() if k != "wrong_keys"},
+            "ge_units_precision": r["ge_units_precision"],
+            "ge_units_held_out": {"why": GE_FIGURE_HELD_WHY, "decided": "d-ge-gap-only-where-no-figure-s703",
+                                  "keys": sorted(list(k) for k in HELD_GE_FIGURE)},
+            "hours_recall": {k: v for k, v in r["hours_recall"].items() if k != "wrong_keys"},
+            "hours_precision": r["hours_precision"],
+            "hours_held_out": {"decided": "d-hours-gaps-hold-misreads-s703",
+                               "keys": sorted([k[0], k[1], why] for k, why in HELD_HOURS.items())},
+            "records": r["moved"],
             "decided": ("The %d records count as collected with the gap named (the S680 conductor, on Sam's rule of "
                         "2026-11-17: never drop a record for failing; collect it with gaps noted and scores)." % n),
             "representation": ("checks.gaps (a list of gap names, keys of gaps) and checks.confidence (five scores "
