@@ -13,6 +13,9 @@ against the first page's exact count. Two reads:
   subject_decision            course_id like SUBJ:*         the page's saves
   subject_discipline_confirm  course_id like _SUBJ_DISC::*  the List's statewide filings
 
+A KEY'S BAND is credit, whole or nc:<slug>, the slug one that kb/status/noncredit_categories.json lists (slugs); any
+other band is listed as unreadable with its reason.
+
 THE FILE carries per decision its key, college slug, code, band, local_title, common_code, who and when. who is
 value.decided_by where a filing names the person it was filed for ("Sam"), else reviewer_label: a procedure's cohort
 id, or "a reviewer" for a person's own save. No email is committed: a who that reads as one is written "a reviewer".
@@ -130,8 +133,24 @@ def value_of(row):
     return v if isinstance(v, dict) else None
 
 
-def shape(rows, statewide_read=True):
-    """The committed document from PostgREST rows of both fields. Unreadable rows are listed, never dropped quietly."""
+def band_why(band, slugs):
+    """None for a band the builders read (credit, whole, nc:<a slug the one list names>), else why not."""
+    if band in sd.BANDS:
+        return None
+    if not str(band).startswith(sd.NC_PREFIX):
+        return "the band %s is not credit, whole or nc:<noncredit category>" % band
+    s = sd.nc_slug_of(band)
+    if not s:
+        return "the noncredit band %s holds a character other than lower-case letters, digits and single hyphens" % band
+    if s not in slugs:
+        return "the noncredit category %s is not one %s names" % (band, sd.CATEGORIES.replace(os.sep, "/"))
+    return None
+
+
+def shape(rows, statewide_read=True, slugs=None):
+    """The committed document from PostgREST rows of both fields. Unreadable rows are listed, never dropped quietly.
+    slugs: {slug: category}, the one list of noncredit category slugs (kb/status/noncredit_categories.json)."""
+    slugs = sd.read_slugs(ROOT) if slugs is None else slugs
     decisions, statewide, unreadable = [], [], []
     for r in rows:
         cid, field = str(r.get("course_id") or ""), r.get("field")
@@ -140,6 +159,10 @@ def shape(rows, statewide_read=True):
             k = sd.parse_key(cid)
             if v is None or not k:
                 unreadable.append({"key": cid, "why": "the key or the value does not read"})
+                continue
+            why = band_why(k[2], slugs)
+            if why:
+                unreadable.append({"key": cid, "why": why})
                 continue
             bad = [f for f in ("local_title", "common_code", "decided_by") if v.get(f) is not None and not isinstance(v[f], str)]
             if bad:
@@ -165,13 +188,15 @@ def shape(rows, statewide_read=True):
     return {
         "_what": ("A person's saved subject decisions, synced daily from kb_curation by kb/_sync_subject_decisions.py "
                   "so the builders honor them (kb/subject_decisions.py). decisions: the Subjects page's saves "
-                  "(SUBJ:<college>|<code>|<band>, subject_decision). statewide: the Local subjects List's filings "
+                  "(SUBJ:<college>|<code>|<band>, subject_decision; band credit, whole or nc:<noncredit category "
+                  "slug>). statewide: the Local subjects List's filings "
                   "(_SUBJ_DISC::<CODE>, subject_discipline_confirm), the MQ discipline a person filed a code under. "
                   "who is the person a filing names, a procedure's cohort id, or 'a reviewer'; no email is kept."),
         "_rule": ("A person's save wins over the catalog, the subject map and any recommendation "
                   "(r-subject-save-path-kb-curation-sam-2026-11-22). Precedence for a college's code and band: its "
                   "decision, then a statewide filing, then the subject map, then a recommendation. A credit decision "
-                  "reads the code's credit courses only; whole reads a code COCI lists no course under."),
+                  "reads the code's credit courses only; whole reads a code COCI lists no course under; nc:<slug> "
+                  "reads the code's noncredit courses in that COCI noncredit category only."),
         "statewide_read": bool(statewide_read),
         "totals": {"decisions": len(decisions), "by_band": dict(sorted(by_band.items())),
                    "colleges": len({d["college"] for d in decisions}), "statewide": len(statewide),

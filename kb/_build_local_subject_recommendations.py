@@ -38,7 +38,9 @@ other colleges. It is scored on Sam's 30 Cerritos decisions (kb/reference/subjec
 2026-11-21.json), which no source reads, and on the rows the subject map already settles. Where a recommendation
 diverges from Sam's decision, his decision stands and the divergence is listed. A part a person saved (the titles
 file's title_state person, common_source person or statewide_filing; kb/subject_decisions.py) takes no
-recommendation, and a row whose common code a person gave is never an answer for the subject map's score.
+recommendation, and a row whose common code a person gave is never an answer for the subject map's score. A noncredit
+decision (nc:<category>, #3655) reaches a noncredit-only row through the same columns: the titles builder sets the
+row's title from it and its common code from the dominant category's decision, so neither is recommended again.
 
 BANDS. Credit and noncredit are read apart (Sam, 2026-11-21: the MQs separate them); a row with both takes its
 recommendation from its credit courses. The noncredit hold (r-noncredit-hold-sam-2026-11-21) lifted on Sam's go of
