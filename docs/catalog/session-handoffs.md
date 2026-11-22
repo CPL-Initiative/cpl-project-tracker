@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-662 document(s).
+663 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 706 | [Session 706 handoff (from SkyTystie, S705, Sam's plain session of 2026-11-22: one Save settles a code at every college; the queue kept running beside it)](../session_706_handoff.md) | 2026-11-22 |
 | 703 | [Session 703 handoff (from SkyRazorbill, S702, Sam's plain session of 2026-11-22: Subjects Edit, panel and counts from every surface, full width; the queue kept running beside it)](../session_703_handoff.md) | 2026-11-22 |
 | 702 | [Session 702 handoff (from SkyMurre, S701, Sam's plain session of 2026-11-22: Subjects Edit and Save, the noncredit hold lifted, two credit catalogs, the build honors saves)](../session_702_handoff.md) | 2026-11-22 |
 | 701 | [Session 701 handoff (from SkyGuillemot, S700, Sam's plain session of 2026-11-21 to 22: Subjects recommendations, the course panel, the noncredit catalogs and the draft noncredit title list)](../session_701_handoff.md) | 2026-11-22 |

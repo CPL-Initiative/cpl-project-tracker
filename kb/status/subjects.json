@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 702,
-  "moniker": "SkyRazorbill",
+  "session": 705,
+  "moniker": "SkyTystie",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_703_handoff.md",
+  "handoff": "docs/session_706_handoff.md",
   "calls": [
     {
       "title": "The noncredit subject title list",
@@ -57,13 +57,17 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-22T11:32:07Z",
+  "written_at": "2026-11-22T14:35:00Z",
   "project": "subjects",
   "next_step": {
-    "title": "One Save for a code at every college using it",
-    "text": "Edit, the course panel and the counts now open from every Subjects surface, at the window's width. Next is one Save that settles a code at every college using it, where today the panel lists the colleges and each opens its own form; then the per-course reader for noncredit saves and the 8 catalog pages a web search found."
+    "title": "The statewide default for a code by the DR-25 route",
+    "text": "One Save now settles a code's common subject code at every college using it, on each college's credit form. Next is the statewide default in the subject map for a code that reads the same everywhere, then the per-course reader for noncredit saves and the 8 catalog pages a web search found."
   },
   "changes": [
+    {
+      "at": "2026-11-22T14:30:00Z",
+      "text": "Settle a code at every college: one common subject code and one Save write a kb_curation row per college at its credit form's key, under the reviewer's own email; a college a person or filing settled keeps it, a noncredit-only code keeps its category forms (#3687)."
+    },
     {
       "at": "2026-11-22T11:31:00Z",
       "text": "Edit on every code row and the course panel over every Subjects surface; every count opens the rows it counts; the surfaces take the window's width; Local titles reads 88 of 101 codes at Los Angeles Pierce"
