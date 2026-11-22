@@ -19,7 +19,7 @@
       "answer": {
         "by": "Sam",
         "at": "2026-11-22",
-        "words": "\"Looks good. Based on a quick check on my phone. Can we go with it and I can look more closely tomorrow and reverse or change anything that looks wrong?\" (in session, about 03:50Z). The 114 titles stand and the hold is lifted (#3667); the four categories with no common code keep none (r-noncredit-title-list-go-sam-2026-11-22). He may change the list after a closer look."
+        "words": "\"Looks good. Based on a quick check on my phone. Can we go with it and I can look more closely tomorrow and reverse or change anything that looks wrong?\" (in session, about 03:50Z). The 114 titles stand and the hold is lifted (#3667); the five categories with no common code keep none (r-noncredit-title-list-go-sam-2026-11-22). He may change the list after a closer look."
       }
     },
     {
@@ -57,7 +57,7 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-22T09:56:08Z",
+  "written_at": "2026-11-22T10:29:57Z",
   "project": "subjects",
   "next_step": {
     "title": "Edit from every Subjects surface, clickable counts, full width",
@@ -65,8 +65,8 @@
   },
   "changes": [
     {
-      "at": "2026-11-22T09:23:00Z",
-      "text": "Noncredit codes get a save per COCI noncredit category, keyed SUBJ:college|code|nc:category; 275 codes get a noncredit form, 64 span several categories, 37 have no category on file (#3671, open)."
+      "at": "2026-11-22T10:27:00Z",
+      "text": "Noncredit codes get a save per COCI noncredit category, keyed SUBJ:college|code|nc:category; 275 codes get a noncredit form, 64 span several categories, 37 have no category on file; a form with no title field writes no title, and a title saved before its category moved shows read-only (#3671)."
     },
     {
       "at": "2026-11-22T08:51:00Z",

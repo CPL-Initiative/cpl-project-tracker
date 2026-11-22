@@ -633,3 +633,6 @@ Sam's asks: `r-commons-page-clarity-sam-2026-11-21`, `r-commons-cdc-card-sam-202
 - **A decided code can disagree with an M-ID already minted.** 192 Cerritos courses hold an M-ID under a Common SUBJ
   other than Sam's decision (ATH's under ATHL against KINE); on ordinary titles the two agree for 253 of 440. Aligning
   them is a re-mint under `docs/coursecontrolnumber_remint.md`, and the build changes no M-ID on its own.
+- **A form writes only the fields it shows.** In #3671 a noncredit form with no title field re-saved the code's stale
+  title, which the reviewer never saw; the second reader caught it. A form with no title field now writes no title,
+  and a title saved before the code's dominant category moved shows read-only with where it now lives.

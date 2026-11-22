@@ -34,7 +34,7 @@ steps 2 and 3 (no KB or README surface moved), 7 (no re-mint, no Roadmap row), 9
 2a. **Sam's work order (2026-11-20):** collection comes first, data waves before fixes, and a fix goes ahead of the
    next wave only when it blocks it or would file wrong rows (`r-collection-first-sam-2026-11-20`). Collection serves
    the M-IDs, so its fixes are ranked by the M-ID cards they unblock (`r-collect-for-mids-work-order-sam-2026-11-20`).
-3. **Merge order:** #3666, #3667, #3669 and #3670 are merged; #3671 below; this checkpoint's PR merges at sign-off.
+3. **Merge order:** #3666, #3667, #3669, #3670 and #3671 are merged; this checkpoint's PR merges at sign-off.
    Dependabot's #3383 waits.
 
 ## What shipped (squash-merged, `test` green on each head)
@@ -55,8 +55,14 @@ steps 2 and 3 (no KB or README surface moved), 7 (no re-mint, no Roadmap row), 9
 
 ## PR #3671
 
-Open at this writing, head `8f825be4`: noncredit saves keyed `SUBJ:<college>|<code>|nc:<category slug>`; 275 codes
-get a noncredit form, 64 span several categories, 37 have no category on file. It waits on a second reader's verdict.
+Squash-merged as `80032b55` (`test` green on head `3a2d0f3f`) after one fix round from its second reader. Noncredit
+saves are keyed `SUBJ:<college>|<code>|nc:<category slug>`; 275 codes get a noncredit form, 64 span several
+categories, 37 have no category on file. The code's local title lives on its dominant category's row or on the credit
+row. A form with no title field writes no title: the reader caught a Save re-saving a stale title the reviewer never
+saw. A title saved before the code's dominant category moved, or before it gained credit courses, shows read-only
+with where the title now lives. `applied` counts only what a built column takes; the rest is listed as waiting on the
+per-course reader. Five categories have no common code. A COCI category rename would orphan saved rows: they are
+listed, and no alias exists yet. Its durable facts are in the lane, with no memory row of its own.
 
 ## Decisions Sam made (in session)
 
@@ -66,11 +72,11 @@ get a noncredit form, 64 span several categories, 37 have no category on file. I
 2. **2026-11-22:** *"Coci has a credit, noncredit, noncredit enhanced indicator"*
    (`f-coci-credit-status-three-values-sam-2026-11-22`).
 3. **2026-11-22, on progress:** *"keep rolling. All looks good to me!"* (no row).
-4. **About 2026-11-22T10:00Z, three asks with a screenshot of `#commons/subjects`**, your FIRST Subjects work
+4. **About 2026-11-22T09:50Z, three asks with a screenshot of `#commons/subjects`**, your FIRST Subjects work
    (`r-subjects-edit-counts-full-width-sam-2026-11-22`); he said *"do not make any changes on these; just advise and
    add them to be addressed in the next session"*, so nothing changed for them:
    *"I don't see how I can take action on subjects that need edit, such as all the AEDs that are in ELEC erroneously.
-   need to be able to take action easily when signed in from all subject surfaces"*, corrected at about 10:05Z:
+   need to be able to take action easily when signed in from all subject surfaces"*, corrected at about 09:55Z:
    *"cobi header has a sign in control so the page doesn't need it"*; *"on the main tab, there is no
    sidebar to view the courses assigned to the subjects for the counts, which should be clickable"*; *"the subjects
    surfaces should use the full width of window, which is a design standard"*. The session's advice is the starting
@@ -78,22 +84,23 @@ get a noncredit form, 64 span several categories, 37 have no category on file. I
 
 ## Decisions the session made (each his to revise)
 
-The four categories with no common code keep none (`d-noncredit-four-categories-no-code-s701`); a title condition
+The five categories with no common code (Home Economics is the fifth) keep none (`d-noncredit-four-categories-no-code-s701`); a title condition
 measured under half right feeds no recommendation; a shell title is never routed by a person's subject decision; a
 code's local title lives on its dominant noncredit category's row. The memory rows are drafted in
-`kb/migrations/2026-11-22_s701_cpl_memory_rows.sql` (11 rows, rollback beside it).
+`kb/migrations/2026-11-22_s701_cpl_memory_rows.sql`: 12 rows by `SkyMurre (S701)`, applied 2026-11-22T10:02Z, rollback
+beside it.
 
 ## Open work, from the lanes' NEXT lines
 
-1. **`commons`, the Subjects page (#3655), in order.** First, Sam's three asks of about 10:00Z:
+1. **`commons`, the Subjects page (#3655), in order.** First, Sam's three asks of about 09:50Z:
    (a) **Edit from every surface.** Today Edit is reachable only in the course panel, from a local code on one
    college's view, and no row says so. Build an Edit word on every row of every Subjects surface (all subjects, a
    college's list, codes with no title, held codes, the noncredit list), with the form opening in the panel wherever
-   the row is. The surfaces read the session from COBI's header control (Sam, about 10:05Z: *"cobi header has a sign
+   the row is. The surfaces read the session from COBI's header control (Sam, about 09:55Z: *"cobi header has a sign
    in control so the page doesn't need it"*); a signed-out row's Edit says to sign in from the header. For a code wrong at several colleges (AED
    reads Electricity because `kb/reference/subject_discipline_map.json` is keyed by code alone,
    `f-subject-map-ignores-credit-band-s698`), one action that lists every college using the code and saves the
-   decision for each, or changes the statewide default by the DR-25 route; AED is noncredit, so this rides on #3671.
+   decision for each, or changes the statewide default by the DR-25 route; AED is noncredit, so this rides on #3671's noncredit saves.
    (b) **The panel and clickable counts on the main list.** `panelDraw` draws only when the view is a college, so a
    press there moves to the college's view. Build the panel over any Subjects surface, and make every count open what
    it counts (CLAUDE.md, *A figure card opens what it counts*): the college table's Subject codes, Local titles, Both,
@@ -102,7 +109,8 @@ code's local title lives on its dominant noncredit category's row. The memory ro
    (`--cpl-measure: none`; tables keep `table-layout:fixed` and scroll in their own container when narrow), checked
    with `npm run a11y`. Also check, from his screenshot: Los Angeles Pierce College shows 69 subject codes in the
    catalog and 88 local titles, more titles than codes.
-   Then: (1) #3671's noncredit saves, above; (2) the 8 pages a web search found on a college's catalog read; (3) the
+   Then: (1) the per-course reader, a builder that gives each noncredit course its category's saved code through
+   `for_noncredit_course` in `kb/subject_decisions.py`, which has no caller yet; (2) the 8 pages a web search found on a college's catalog read; (3) the
    code spellings the searches surfaced (LATTC LABR is LABR ST, REAL is REAL ES; El Camino E DEV is EDEV) as sibling
    codes; (4) the stale Common SUBJ in the state list's M-ID column (THEA, ECED, FLKO) taken from the identity file;
    (5) the common-code list with the noncredit MQ disciplines.
@@ -141,10 +149,11 @@ code's local title lives on its dominant noncredit category's row. The memory ro
 
 ## Let go
 
-Dropped: the PR subscriptions on #3666, #3667, #3669 and #3670 at their merges. The COBIx watcher is stopped. No
+Dropped: the PR subscriptions on #3666, #3667, #3669, #3670 and #3671 at their merges, and on the vault's draft PR
+samueltlee/CPLBrain#843 (the session note, merging on its own checks) at sign-off. The COBIx watcher is stopped. No
 check-in is scheduled. No artifact is watched. One stash in the main checkout, `s701-stale-main-checkout-0552`,
 holds only stale files and may be dropped.
 
-Spend: not available; 2026-11-22T03:09Z to <end, leave for the conductor>.
+Spend: not available; 2026-11-22T03:09Z to 2026-11-22T10:55Z.
 
 Opening line: *Greetings, you are SkyRazorbill (Session 702), see SkyMurre's handoff — `docs/session_702_handoff.md` — let's keep rolling with our queue.*

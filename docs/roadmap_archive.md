@@ -15,7 +15,8 @@ Parts 2 to 6 ([2](roadmap_archive_2.md) · [3](roadmap_archive_3.md) · [4](road
 (S474) for the 150 KB archive budget: the completed roadmap rows, the session narratives through
 S196, and the INDEX history rotated out before 2026-09-17. [Part 7](roadmap_archive_7.md) (moved verbatim
 2026-11-03, S563) holds the rotation of 2026-08-16, the narratives of S62, S113, S146 and S147, and the INDEX
-history moved 2026-09-17 to 2026-10-31. New rotations keep landing here.
+history moved 2026-09-17 to 2026-10-31, and (moved 2026-11-22, S701) the rotations of 2026-10-26 to
+2026-11-04. New rotations keep landing here.
 
 ## INDEX update-history entries rotated out (2026-11-19)
 - 2026-11-17 (S676 SkyPipit, the CPL Queue routine, full checkpoint): #3456 (slice B: six yield colleges read, reread and loaded, display build 71b67268c567, passing +22); the harvest lessons doc compacted to archive 6. Handoff 677.
@@ -30,52 +31,6 @@ history moved 2026-09-17 to 2026-10-31. New rotations keep landing here.
 
 ## INDEX update-history entries rotated out (2026-11-12)
 - 2026-11-10 (S626b SkyUmbrella, Sam in session): the review opens itself, no scroll gate, the drawer, the landing page and the contacts in the panel (#3061, #3063, #3064, #3066, #3067); Email templates a reviewer can change (#3068); handoff 633.
-
-## INDEX update-history entries rotated out (2026-11-04)
-- 2026-11-04 S568 SkyMalin (CPL Queue routine): the cert link's FAA family, 11 titles to 15 certs (#2758); light checkpoint; handoff 569.
-- 2026-11-03 SkyTrue: the List becomes each common reference's workspace (#2735, #2736); the Local subjects List (#2737); the Exhibits side panel (#2738); light checkpoint.
-
-- 2026-11-03 S561 SkyCigar (CPL Queue routine): merged S560's #2721; the Commons to-do's last four pairs, Subjects' findings count and Exhibits' held list now agree with their cards (#2722); light checkpoint; handoff 562.
-- 2026-11-03 S559 SkyAndromeda (CPL Queue routine): the Common Course Reference takes the Commons page in COCI Lookup (#2720), the last reference; Santa Ana's 1,366 SLO rows loaded (#2716); Las Positas's trial 12 of 12; handoff 560.
-- 2026-11-03 S558 SkyFornax (CPL Queue routine): CPL Pathways' Progress view draws the CPL Commons page (#2719); Las Positas's SLO trial; light checkpoint; handoff 559.
-- 2026-11-03 S557 SkySculptor (CPL Queue routine): the ELL IET Version 3 draft from Sam's Revise request; Santa Ana's SLO read and Las Positas's index; the CSM Workspace UI pass; library lessons archived (`docs/library_lessons_archive.md`); handoff 558.
-- 2026-11-03 S555 SkyTadpole: the CSM Workspace tab ships with its communications log (`csm_log`) and contacts; the Commons closes a to-do from its band; Sheet 159; a11y `--dark`
-- 2026-11-02 S554 SkySombrero (funding): every Eligibility word editable on the public page, a minimum-conditions filter, No NC, Email reopens an acceptance (#2701, #2703); the CSM Workspace mock; new `docs/csm_workspace_lessons.md`; handoff 555 extended.
-- 2026-11-02 S554 SkySombrero: the Library's stuck remediations get Finish remediation on their cards, bound to the record; `/coord` tells live sessions this one is running; handoff 555.
-
-## INDEX update-history entries rotated out (2026-11-03)
-
-- 2026-11-02 S550 SkyMoonflower: the ninth contacts read (33 records, 16 new, 0 gone; 295 people at 75 colleges) closes the first full pass, so the harvest goes weekly on Sundays; the contacts lane compacted; handoff 551.
-- 2026-11-02 S549 SkySunflower: Santa Ana's SLO trial, 12 of 12 after a reader fix (#2691); two contacts title patterns (#2692); the eighth contacts read (31 people, 279 at 70 colleges); handoff 550.
-- 2026-11-02 S548 SkyTadpole: the cert link's IT vendor family (CompTIA, Cisco, Microsoft; 208 titles to 165 certs, #2689), the seventh contacts read (47 people, 246 at 59 colleges); handoff 549.
-- 2026-11-02 S547 SkyCartwheel: Golden West's SLO load (568 rows), the sixth contacts read (53 people), Open Asks Sheet 156 on the colleges that refuse the read; handoff 548.
-- 2026-11-02 (Sam's session, SkyWhirlpool S545): the List norms' step 3 (CR wordings in read-only bands by group, `bands.order`; #2679) and Exhibits on the engine's suggestion slot (#2680), so all three steps have landed; the college short-name editor (`public.college_short_names`, the College Identity tab's Short name column, the daily fold `kb/_apply_college_short_names.py`, DR-30; #2681); KB note `methodology-probe-a-live-trigger-inside-a-failing-statement`.
-- 2026-11-02 (Sam's session, SkySombrero S544): the List norms' steps 1 and 2 in the engine (suggestions with Confirm and Dismiss, Changed this visit, filter counts, Selected; #2673, #2675); the Commons status rebuilt nightly after the procedures (#2674); City College of San Francisco and College of the Desert back in the funding join on Sam's Sheet 155 *restore* (#2676); new KB note methodology-a-name-a-join-keys-on-is-a-key.
-- 2026-11-02 (Sam's session, SkyAndromeda S543): Sierra answers which colleges have not met the 75 percent JST condition from one aggregate funding-note section and names the statewide JST count (#2666, deployed on Sheet 154 *deploy*); the credential reference's statewide flag counts the Fact Sheet's 152 (#2667, *count*, ESS outcome 2 70 to 72 colleges); S542's five PRs merged; new KB note methodology-a-per-entity-index-cannot-answer-which-ones.
-- 2026-11-01 (Sam's session, SkyTriangulum S542): kept groups and moves in the Exhibits List (#2655); one List engine, `commons_list.js`, with Lists for the CR Reference (flag, #2659), Subjects and Program Requirements (#2656-#2660); Lists and the Catalog Commons span the window (#2661, #2662); a read-only SLO grouping test (lessons, the vault report).
-
-## INDEX update-history entries rotated out (2026-10-31)
-
-- 2026-10-30 (S527 SkyLoganberry): Glendale's eleven C-numbered courses priced from the catalog through a read that parses itself on the runner (`parse_units`); 115 of 226 pass (#2578); handoff 528.
-- 2026-10-30 (S525 SkyTayberry): S524's 8 Glendale prose totals were the first program's on each page; rolled back by receipt, and the fill now reads from the program's own heading (#2576); handoff 526.
-- 2026-10-30 (S524 SkyCranberry): Glendale's prose program totals fill `total_units` through a reconcile step's new `before` boundary; 8 records now name their total, all unequal, 105 still pass (#2575); handoff 525.
-- 2026-10-30 (S521 SkyBearberry): Sierra's program search fixed live (no temp files; s521 and s521b, Sheet 142 card 1), the deploy smoke retries a read and reports a wording (#2571, card 2), handoff 522.
-- 2026-10-29 (S520 SkyLingonberry, Sam's session): the public funding page in COBI's Share menu (#2565); #2563 and #2560 landed before the Summit, #2560 after two merges of main; Sierra deployed; the tests check out less and run on six shards (#2567); handoff 521.
-
-## INDEX update-history entries rotated out (2026-10-27)
-
-- 2026-10-27 (S495 SkySalmonberry): Sierra's scene 8 re-read and the narrated cut on the v11 picture (#2499, held for Open Asks Sheet 135); axe on the internal tabs worked (#2498, #2500, #2501); lanes under budget (#2502); Hartnell's Cal-GETC area step on its branch; handoff 496.
-- 2026-10-26 S486 SkyQuince (the CPL Queue routine): Hartnell's double-count words read as the overlap; three local degrees pass, the carry basis leaves the flag out (#2462); handoff 487.
-- 2026-10-26 S485 SkyElderberry (the CPL Queue routine): Hartnell's last three noncredit courses carry no hours in its data; why six of its degrees fail arithmetic, read from their tabs (#2461); light checkpoint, handoff 486.
-- 2026-10-26 S483 SkyCoyoteMint (opened by hand): DSP Credit Starting Points Version 2 on the agency template, a draft beside v1 (CPLBrain#487, receipt applied); Open Asks Sheet 129 and the series record caught up to it; the library lane back under budget (#2458); full checkpoint, handoff 484.
-- 2026-10-26 S482 SkyShootingStar (opened by hand): ELL IET Version 2 with example articulations (CPLBrain#485, receipt applied); the Summit film v3 and the funding film v11 (#2457); Open Asks Sheet 128; the house-voice note gains *Lead with what is possible*; full checkpoint, handoff 483.
-- 2026-10-26 S480 SkyChia (opened by hand): the funding tab's NC labels, outcome chips and Serves on P3 and P4 (#2453); the Library's Changes to make and Copy the request, the Coordinator Guide In development (#2452); Coordinator Guide Draft 1 (CPLBrain#482); full checkpoint, handoff 481.
-
-## INDEX update-history entries rotated out (2026-10-26)
-
-- 2026-10-25 S477 SkyOwlsClover (opened by hand, beside the 12:14Z firing): the noncredit counts confirmed live; the privacy screen reads only a row's own cells; a hand-opened session claims the queue with a draft PR (#2445); light checkpoint, handoff 478.
-- 2026-10-25 S473 SkyClarkia: NC-1 channel 3, the credential crosswalk (13 rows proposed, Open Asks Sheet 127); handoff 474.
-- 2026-10-25 S472 SkyBrodiaea: the funding memo prints the noncredit outcomes (#2439); light checkpoint, handoff 473.
 
 ## INDEX update-history entries rotated out (2026-10-25)
 

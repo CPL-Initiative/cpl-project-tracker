@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1562,
-    "bytes": 16957993,
+    "bytes": 16965296,
     "over_budget": 5,
     "handoff_max": 702,
     "always_loaded_files": 1,
@@ -26,17 +26,17 @@
       },
       "other": {
         "files": 165,
-        "bytes": 5674682,
+        "bytes": 5680614,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 12421,
+        "bytes": 12440,
         "over": 0
       },
       "lessons": {
         "files": 87,
-        "bytes": 2854314,
+        "bytes": 2854651,
         "over": 2
       },
       "kb_note": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 44,
-        "bytes": 543396,
+        "bytes": 543398,
         "over": 1
       },
       "handoff": {
         "files": 661,
-        "bytes": 4869709,
+        "bytes": 4870722,
         "over": 0
       }
     },
@@ -62,9 +62,9 @@
       "vault_heavy_path": 77
     },
     "vault": {
-      "files": 29351,
-      "bytes": 1558932538,
-      "heavy_bytes": 1212740057,
+      "files": 29353,
+      "bytes": 1559022378,
+      "heavy_bytes": 1212781853,
       "heavy_share": 0.778,
       "ignore_filters": [
         "agent-afc27acbfacad76bc/kb/program_requirements_college",
@@ -320,10 +320,10 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 15694885,
+        "bytes": 15736681,
         "kind": "dir"
       },
-      "message": "directory totals 15,694,885 B inside the vault"
+      "message": "directory totals 15,736,681 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
