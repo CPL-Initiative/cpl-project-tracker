@@ -196,13 +196,15 @@
    "source": "runner HTML",
    "runs": [
     "44970201578",
-    "44970489020"
+    "44970489020",
+    "44991702485",
+    "44992165518",
+    "44992616187"
    ],
-   "courses": 477,
+   "courses": 2147,
    "missed_upper_bound": 0,
-   "sha256_uncompressed": "8facb846da2ef8b0d40fe93bd4210ab36178f13cb639ab5ab6a19f4a3b189c5a",
-   "read_at": "2026-11-22T01:15:25Z",
-   "scope": "Adult & Continuing Education (noncredit)"
+   "sha256_uncompressed": "cb6d0ba2745762577388739ebce8ca2c06f513a70762e6c495ffca63a823746e",
+   "read_at": "2026-11-22T06:17:05Z"
   },
   {
    "slug": "north_orange_continuing_education",
@@ -244,13 +246,13 @@
    "runs": [
     "44969369928",
     "44969532478",
-    "44970020478"
+    "44970020478",
+    "44991463627"
    ],
-   "courses": 263,
-   "missed_upper_bound": 2,
-   "sha256_uncompressed": "6bb257c2845224a758d657ee821cc267d626e4a4fc1ea8b0792db9d116bdb9fa",
-   "read_at": "2026-11-22T01:03:47Z",
-   "scope": "School of Continuing Education"
+   "courses": 1905,
+   "missed_upper_bound": 11,
+   "sha256_uncompressed": "d898018dff04baee111d4d1d2b0a0fb9f9c916420d3f0c6fadd2f082a74bd447",
+   "read_at": "2026-11-22T05:56:51Z"
   },
   {
    "slug": "southwestern",
