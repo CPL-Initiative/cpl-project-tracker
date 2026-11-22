@@ -36,7 +36,7 @@ const NC = (cats, extra) => Object.assign({ printed_name: null, catalog_courses:
 const SLASH = "Arts/Crafts & Design";        /* a fixture category; tests/subject_decisions_noncredit_test.py checks its slug */
 const FIX = {
   _rule: "rule", totals: { colleges: 1, named: 1, colleges_named: 1 }, columns: C,
-  common_codes: { BSKL: "Interdisciplinary-Basic Skills: Noncredit", ESLN: "English as a Second Language (ESL): Noncredit", ENGL: "English", VOCE: "Vocational", KINE: "Kinesiology" },
+  common_codes: { BSKL: "Interdisciplinary-Basic Skills: Noncredit", ESLN: "English as a Second Language (ESL): Noncredit", ENGL: "English", VOCE: "Vocational", KINE: "Kinesiology", HLSN: "Health and Safety: Noncredit" },
   title_case: LIVE.title_case, noncredit_mq: LIVE.noncredit_mq,
   noncredit_slugs: Object.assign({}, LIVE.noncredit_slugs, { [SLASH]: "arts-crafts-and-design" }),
   colleges: [{ slug: "alpha", college: "Alpha College", catalog_year: "2026-2027", read_at: "2026-11-20T10:00:00Z", rows: [
@@ -145,9 +145,9 @@ const save = (key, v, email) => ({ course_id: key, value: JSON.stringify(v), rev
   check("(2) ⭐ the title field is on the dominant category's form only", x.d.querySelectorAll('#csb-panel input[id$="-title"]').length === 1 && !!g(x, VOC + "-title")
     && g(x, VOC + "-title").value === "Electrical Apprenticeship" && /the local title and the common subject code/.test(txt(g(x, VOC + "-rec"))));
   check("(2) the other category with a code takes a code only", !g(x, BSK + "-title") && g(x, BSK + "-code").value === "BSKL" && !!g(x, BSK + "-save"));
-  check("(2) a category with no code and no title to hold takes no save and says so", !g(x, WP + "-save") && !g(x, WP + "-code")
+  check("(2) a category with no code and no title to hold takes no save and says so; Health and Safety takes HLSN since S705", !g(x, WP + "-save") && !g(x, WP + "-code")
     && /takes no save: its title is the code’s, and it has no common subject code yet/.test(txt(g(x, WP + "-code-none")))
-    && !g(x, "csb-nc-health-and-safety-save") && !g(x, "csb-nc-uncategorized-save")
+    && !!g(x, "csb-nc-health-and-safety-save") && g(x, "csb-nc-health-and-safety-code").value === "HLSN" && !g(x, "csb-nc-uncategorized-save")
     && /COCI names no noncredit category for these courses/.test(txt(g(x, "csb-nc-uncategorized-mq"))));
   typeIn(x, VOC + "-code", "voce");
   g(x, VOC + "-save").click(); await settle();

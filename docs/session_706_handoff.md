@@ -106,6 +106,13 @@ text), 5, 7, 9, and in 12 every status file but `kb/status/subjects.json`.
   Today's 37 held cards all carry one; the flag has no case yet. A worklist of flagged exhibits for the MAP team is the
   next step if Sam wants one.
 
+- **Sam's two answers at about 16:15Z:** the four noncredit MQ disciplines take common codes (CTZN, HLSN, HMEN, DSPN;
+  shipped on #3687, `r-noncredit-four-mq-codes-sam-2026-11-22`); and exhibits with no credit recommendation go on the
+  MAP team worklist (`r-map-team-worklist-for-no-cr-exhibits-sam-2026-11-22`). **The worklist is NOT built:** it is the
+  first item for the next session. Sam: *"we have a cobi tab for map team to-do but I don't think I've used it since
+  creating it"*, the MAP-team queue of the `my-college-action-page` lane. Feed it from `credit_recs` on
+  `kb/exhibits_review.json` (an empty list is the flag) and from the statewide exhibits with no credit recommendation.
+
 ## Decisions Sam made (in session, verbatim in `cpl_memory`)
 
 `r-college-department-list-is-a-title-source-sam-2026-11-22`, `r-subject-title-source-link-sam-2026-11-22`,

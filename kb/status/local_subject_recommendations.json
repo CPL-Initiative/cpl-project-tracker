@@ -122,9 +122,9 @@
   },
   "common_code_from_the_category": {
    "right": 16,
-   "wrong": 24,
-   "asked": 40,
-   "share": 0.4,
+   "wrong": 25,
+   "asked": 41,
+   "share": 0.39,
    "level": "Low"
   },
   "note": "Measured on the noncredit-only codes that hold a catalog heading (titles) or a common code from the subject map (codes), each left out of its own vote. A title condition right less than half the time is a guess: it stays measured here, used false, and gives no recommendation. The common code's answer key is the subject map, which reads a code without its credit or noncredit band (f-subject-map-ignores-credit-band-s698), so its share is a floor, and it reads Low."
@@ -219,13 +219,13 @@
  "web_searches_filed": 108,
  "totals": {
   "common_high": 180,
-  "common_low": 164,
+  "common_low": 172,
   "common_medium": 447,
-  "common_no_code_yet": 14,
+  "common_no_code_yet": 6,
   "common_none": 181,
   "no_common": 986,
   "no_title": 317,
-  "noncredit_common": 134,
+  "noncredit_common": 142,
   "noncredit_no_common": 174,
   "noncredit_no_title": 53,
   "noncredit_title": 4,
@@ -834,12 +834,12 @@
     {
      "code": "CITIZN",
      "common": {
-      "code": null,
+      "code": "CTZN",
       "discipline": "Citizenship: Noncredit",
-      "level": null,
+      "level": "Low",
       "from": "noncredit_category",
       "category": "Citizenship for Immigrants",
-      "why": "The category has no common subject code yet: its dominant COCI noncredit category, Citizenship for Immigrants (1 of 1 noncredit courses, 100%)."
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Citizenship for Immigrants (1 of 1 noncredit courses, 100%)."
      }
     },
     {
@@ -4669,12 +4669,12 @@
     {
      "code": "ESLCVCS",
      "common": {
-      "code": null,
+      "code": "CTZN",
       "discipline": "Citizenship: Noncredit",
-      "level": null,
+      "level": "Low",
       "from": "noncredit_category",
       "category": "Citizenship for Immigrants",
-      "why": "The category has no common subject code yet: its dominant COCI noncredit category, Citizenship for Immigrants (3 of 4 noncredit courses, 75%)."
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Citizenship for Immigrants (3 of 4 noncredit courses, 75%)."
      }
     },
     {
@@ -8500,12 +8500,12 @@
     {
      "code": "CITZ",
      "common": {
-      "code": null,
+      "code": "CTZN",
       "discipline": "Citizenship: Noncredit",
-      "level": null,
+      "level": "Low",
       "from": "noncredit_category",
       "category": "Citizenship for Immigrants",
-      "why": "The category has no common subject code yet: its dominant COCI noncredit category, Citizenship for Immigrants (1 of 1 noncredit courses, 100%)."
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Citizenship for Immigrants (1 of 1 noncredit courses, 100%)."
      }
     },
     {
@@ -9021,12 +9021,12 @@
     {
      "code": "DSSS",
      "common": {
-      "code": null,
+      "code": "DSPN",
       "discipline": "Disabled Student Programs and Services: Noncredit",
-      "level": null,
+      "level": "Low",
       "from": "noncredit_category",
       "category": "Courses for Persons with Substantial Disabilities",
-      "why": "The category has no common subject code yet: its dominant COCI noncredit category, Courses for Persons with Substantial Disabilities (49 of 49 noncredit courses, 100%)."
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Courses for Persons with Substantial Disabilities (49 of 49 noncredit courses, 100%)."
      }
     },
     {
@@ -9334,12 +9334,12 @@
     {
      "code": "HEAL",
      "common": {
-      "code": null,
+      "code": "HLSN",
       "discipline": "Health and Safety: Noncredit",
-      "level": null,
+      "level": "Low",
       "from": "noncredit_category",
       "category": "Health & Safety",
-      "why": "The category has no common subject code yet: its dominant COCI noncredit category, Health & Safety (1 of 1 noncredit courses, 100%)."
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Health & Safety (1 of 1 noncredit courses, 100%)."
      }
     },
     {
@@ -9656,12 +9656,12 @@
     {
      "code": "CTZN",
      "common": {
-      "code": null,
+      "code": "CTZN",
       "discipline": "Citizenship: Noncredit",
-      "level": null,
+      "level": "Low",
       "from": "noncredit_category",
       "category": "Citizenship for Immigrants",
-      "why": "The category has no common subject code yet: its dominant COCI noncredit category, Citizenship for Immigrants (1 of 1 noncredit courses, 100%)."
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Citizenship for Immigrants (1 of 1 noncredit courses, 100%)."
      }
     },
     {
@@ -10049,12 +10049,12 @@
     {
      "code": "SAFE",
      "common": {
-      "code": null,
+      "code": "HLSN",
       "discipline": "Health and Safety: Noncredit",
-      "level": null,
+      "level": "Low",
       "from": "noncredit_category",
       "category": "Health & Safety",
-      "why": "The category has no common subject code yet: its dominant COCI noncredit category, Health & Safety (2 of 2 noncredit courses, 100%)."
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Health & Safety (2 of 2 noncredit courses, 100%)."
      }
     },
     {
@@ -10087,12 +10087,12 @@
     {
      "code": "SSD",
      "common": {
-      "code": null,
+      "code": "DSPN",
       "discipline": "Disabled Student Programs and Services: Noncredit",
-      "level": null,
+      "level": "Low",
       "from": "noncredit_category",
       "category": "Courses for Persons with Substantial Disabilities",
-      "why": "The category has no common subject code yet: its dominant COCI noncredit category, Courses for Persons with Substantial Disabilities (6 of 6 noncredit courses, 100%)."
+      "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Courses for Persons with Substantial Disabilities (6 of 6 noncredit courses, 100%)."
      }
     },
     {
@@ -10565,11 +10565,11 @@
     {
      "code": "NC",
      "common": {
-      "code": "ESLN",
-      "discipline": "English as a Second Language (ESL): Noncredit",
+      "code": "CTZN",
+      "discipline": "Citizenship: Noncredit",
       "level": "High",
       "from": "title",
-      "why": "The title names the discipline English as a Second Language (ESL): Noncredit."
+      "why": "The title names the discipline Citizenship: Noncredit."
      }
     },
     {

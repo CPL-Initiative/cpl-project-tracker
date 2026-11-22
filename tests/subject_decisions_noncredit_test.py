@@ -136,7 +136,7 @@ NC_DECS = [dec("SUBJ:los_angeles_pierce|OLD|nc:courses-for-older-adults", "OLAD"
            dec("SUBJ:el_camino|ESL|nc:english-as-a-second-language-esl", "ESLN"),
            dec("SUBJ:el_camino|ESL|nc:parenting", "PARN"),
            dec("SUBJ:el_camino|ESL|nc:bogus", "ESLN"),
-           dec("SUBJ:el_camino|ESL|nc:health-and-safety", "ESLN")]
+           dec("SUBJ:el_camino|ESL|nc:workforce-preparation", "ESLN")]
 committed = json.load(open(os.path.join(ROOT, sd.STATUS), encoding="utf-8"))
 real_read = lst.SD.read_status
 lst.SD.read_status = lambda root=None, path=None: dict(committed, decisions=(committed.get("decisions") or []) + NC_DECS)
@@ -172,7 +172,7 @@ check("(3) ⭐ applied counts only what a built column takes: the noncredit-only
       and sorted(na) == ["SUBJ:el_camino|ESL|nc:english-as-a-second-language-esl", "SUBJ:el_camino|ESL|nc:parenting"]
       and "waiting on the per-course reader" in na["SUBJ:el_camino|ESL|nc:english-as-a-second-language-esl"]
       and "lists no noncredit course" in na["SUBJ:el_camino|ESL|nc:parenting"], json.dumps(na))
-check("(3) the bad ones are refused", {"SUBJ:el_camino|ESL|nc:bogus", "SUBJ:el_camino|ESL|nc:health-and-safety"} <= {r["key"] for r in out["decisions"]["refused"]})
+check("(3) the bad ones are refused", {"SUBJ:el_camino|ESL|nc:bogus", "SUBJ:el_camino|ESL|nc:workforce-preparation"} <= {r["key"] for r in out["decisions"]["refused"]})
 NC2 = [dec("SUBJ:los_angeles_pierce|OLD|nc:courses-for-older-adults", "OLAD"),
        dec("SUBJ:cerritos|AED|nc:elementary-and-secondary-basic-skills", "BSKL")]
 lst.SD.read_status = lambda root=None, path=None: dict(committed, decisions=(committed.get("decisions") or []) + NC2)
