@@ -27,6 +27,9 @@ import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# The census the plan was built from (2026-11-21 22:26Z), frozen: a later census reads the planned programs
+# collected once the gap is applied, so the live file would move this test (S703, run 45037095240).
+CENSUS_AT_PLAN = os.path.join(ROOT, "tests", "fixtures", "harvest_gap_census_s703_plans.json")
 sys.path.insert(0, os.path.join(ROOT, "kb"))
 import _program_named_gaps as NG  # noqa: E402
 import _harvest_gap_census as G  # noqa: E402
@@ -84,7 +87,7 @@ check(named(hours([90.0, 90.0], [90.0, 90.0], passes=True))[0] is None, "a passi
 
 # The self-recall on held answers, and the plain recall, over every committed record.
 res = NG.run(write=False, gaps=HOURS, skip=LANE_1_S703,
-             census_causes=("units_incomplete|noncredit_hours", "units_unequal|noncredit_hours"))
+             census_causes=("units_incomplete|noncredit_hours", "units_unequal|noncredit_hours"), census_path=CENSUS_AT_PLAN)
 hr = res["hours_recall"]
 check(hr["held"] > 3000 and hr["right"] == hr["held"] and hr["wrong"] == 0
       and set(hr["by_test"]) <= set(HOURS) | {"none"},
@@ -101,7 +104,7 @@ with open(os.path.join(ROOT, "kb", "receipts", "program_requirement_records_name
           encoding="utf-8") as fh:
     plan = json.load(fh)
 keys = {(r["college"], str(r["control_number"])) for r in plan["records"]}
-census = NG.census_keys(tuple(CAUSES))
+census = NG.census_keys(tuple(CAUSES), CENSUS_AT_PLAN)
 check(sorted(plan["only_gaps"]) == sorted(HOURS) and plan["census_causes"] == CAUSES,
       "the plan moves the three hours gaps, at the two census causes")
 check(keys and keys <= census, "every plan row is a census lever 3 program (%d of %d)" % (len(keys & census), len(keys)))
