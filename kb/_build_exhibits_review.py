@@ -349,6 +349,27 @@ def exhibits_by_raw(statewide, raws):
     return out
 
 
+def exhibits_without_recs(statewide, verified):
+    """Every exhibit in MAP's statewide data whose records carry no credit recommendation, one row per MAP id, for the
+    MAP team's worklist (Sam, 2026-11-22, S705: an exhibit with no credit recommendation "would not be a valid exhibit
+    and would need map team follow up"; "yes, add the MAP team worklist for flagged exhibits"). The college is the one
+    MAP's exhibit list names as the exhibit's owner (kb/reference/map_cpl_opportunities_verified.json `found`), blank
+    when that read predates the exhibit. Sorted by college, a blank college last, then title and id."""
+    found = (verified or {}).get("found") or {}
+    rows = []
+    for x in statewide.get("exhibits") or []:
+        if any((r.get("course") or "").strip() or (r.get("credit") or "").strip() for r in x.get("credit_recs") or []):
+            continue
+        ids = x.get("exhibit_ids") or [i for i in (x.get("exhibit_id") or "").split("|") if i]
+        titles = {(r.get("id") or ""): (r.get("title") or "").strip() for r in x.get("exhibit_records") or []}
+        for i in ids:
+            owner = found.get(i) or found.get(i.upper()) or {}
+            rows.append({"id": i, "title": titles.get(i) or (x.get("raw_titles") or [x.get("title") or ""])[0],
+                         "type": x.get("cpl_type") or "", "college": owner.get("college") or ""})
+    rows.sort(key=lambda r: (not r["college"], r["college"].lower(), r["title"].lower(), r["id"]))
+    return rows
+
+
 def teaching_colleges(prescriptive, title):
     """college name -> [[code, "", units]] for the courses a college already teaches that map to the
     credential's M-ID identity (statewide_prescriptive.js), in the courses file's row shape."""
@@ -1015,6 +1036,7 @@ def build(root, live=None):
     sugg = load_json(root, "kb/unclassified_suggestions.json", {}) or {}
     aligned_all = sugg.get("aligned") or {}
     statewide = load_js(os.path.join(root, "statewide_data.js"))
+    verified = load_json(root, "kb/reference/map_cpl_opportunities_verified.json", {}) or {}
     members = load_js(os.path.join(root, "unified_courses_members.js"))
     pres_path = os.path.join(root, "statewide_prescriptive.js")
     prescriptive = load_js(pres_path) if os.path.exists(pres_path) else {}
@@ -1257,6 +1279,10 @@ def build(root, live=None):
         "sites": sorted(set(name_list(creds, "training_agency"))
                         | {(s.get("site") or "").strip() for ss in site_lists.values() for s in ss
                            if isinstance(s, dict)} - {""}, key=str.lower),
+        # The MAP team's worklist of exhibits with no credit recommendation, statewide (exhibits_without_recs).
+        "no_cr": {"of": len(statewide.get("exhibits") or []),
+                  "owners_read": (verified or {}).get("checked_at"),
+                  "rows": exhibits_without_recs(statewide, verified)},
         "held": items,
     }, course_file, adoption, subject_file
 
