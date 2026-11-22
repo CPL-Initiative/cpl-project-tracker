@@ -16,7 +16,9 @@
 //   (9) the page's Title Case gives what kb/subject_title_case.py gives, from the word lists the titles file carries;
 //  (10) a refused token marks the sign-in ended, and the page stores nothing;
 //  (11) ⭐ a code whose band moved since its save still shows the save, says the band changed, and saves anew under
-//       the current band.
+//       the current band;
+//  (12) ⭐ a save the daily build carries (the titles file's `decision`, #3655) shows one line: the live save where the
+//       read holds it, the file's where the read failed, and the files' own values where the save was taken back.
 // Run from repo root: `npm test` (or `node tests/commons_subjects_save.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -288,6 +290,46 @@ function typeIn(x, id, v) { const i = x.d.getElementById(id); i.value = v; retur
   check("(10) the page stores nothing", x.writes() === 0);
   check("(10) tokens only: no raw hex in the CSS", !/#[0-9a-fA-F]{3,8}\b/.test(x.w.CPL_COMMONS_SUBJECTS.CSS));
   check("(10) every header cell carries a scope with the form open", Array.from(x.d.querySelectorAll("#csb-panel th")).every((th) => th.getAttribute("scope")));
+
+  /* (12) the daily build honors a save (kb/_sync_subject_decisions.py, #3655): the titles file carries it in `decision`
+     with what the files gave in `was`, and the page shows one line for it whichever way the live read goes. */
+  const DEC = JSON.parse(JSON.stringify(FIX));
+  DEC.columns = C.concat(["common_source", "decision"]);
+  const DC = DEC.columns;
+  const drow = (o) => DC.map((k) => (k in o ? o[k] : null));
+  const PEXD = { key: "SUBJ:alpha|PEX|credit", from: "subject_decision", who: "Sam", at: "2026-11-21T21:11:00Z", title: false, common: true,
+    band: "credit", moved: false, was: { printed_name: "Physical Education", common: null, discipline: null, title_state: "catalog", title_source: "course pages", common_source: null } };
+  DEC.colleges.find((c) => c.slug === "alpha").rows.push(
+    drow({ code: "PEX", printed_name: "Physical Education", catalog_courses: 4, state_courses: 4, side: "both", common: "KINE", discipline: "Kinesiology",
+      title_state: "catalog", title_source: "course pages", credit_courses: 4, noncredit_courses: 0, common_source: "person", decision: PEXD }),
+    drow({ code: "ATHL", printed_name: "Athletics", catalog_courses: 2, state_courses: 2, side: "both", common: "KINE", discipline: "Kinesiology",
+      title_state: "catalog", title_source: "course pages", credit_courses: 2, noncredit_courses: 0, common_source: "statewide_filing",
+      decision: { key: "_SUBJ_DISC::ATHL", from: "local_subjects_list", who: "a reviewer", at: "2026-11-20", title: false, common: true, was: {} } }));
+  const PEXLIVE = [{ course_id: "SUBJ:alpha|PEX|credit", value: JSON.stringify({ common_code: "KINE", decided_by: "Sam", decided_at: "2026-11-21T21:11:00Z" }),
+    reviewed_at: "2026-11-22T04:45:00Z", reviewer_email: "subjects-s701@bot", reviewer_label: "subjects-s701@bot" }];
+  const pexCell = (x) => x.d.querySelector('.csb-codes tr[data-code="PEX"]').children[3];
+  x = load("#commons/subjects/alpha", { saves: PEXLIVE, files: { "kb/status/local_subject_titles.json": DEC } });
+  await x.M.boot(); await settle();
+  check("(12) ⭐ the file and the live save agree: the row shows one line, not two",
+    txt(pexCell(x)) === "KINE Kinesiology Filed for Sam, November 21, 2026." && pexCell(x).querySelectorAll(".csb-saved").length === 1, txt(pexCell(x)));
+  x = load("#commons/subjects/alpha", { readStatus: 500, files: { "kb/status/local_subject_titles.json": DEC } });
+  await x.M.boot(); await settle();
+  check("(12) ⭐ a failed live read shows the save the daily build carried, once, and says the live read failed",
+    txt(pexCell(x)) === "KINE Kinesiology Filed for Sam, November 21, 2026." && pexCell(x).querySelectorAll(".csb-saved").length === 1
+    && x.d.querySelector('.csb-codes tr[data-code="PEX"]').getAttribute("data-saved") === "yes"
+    && /the saves the daily build carried/.test(txt(x.d.getElementById("csb-save-err"))), txt(pexCell(x)));
+  x = load("#commons/subjects/alpha", { saves: [], files: { "kb/status/local_subject_titles.json": DEC } });
+  await x.M.boot(); await settle();
+  check("(12) ⭐ a save taken back since the build: the live read wins and the row reads the files' own values again",
+    txt(pexCell(x)) === "" && !x.d.querySelector('.csb-codes tr[data-code="PEX"]').getAttribute("data-saved"), txt(pexCell(x)));
+  check("(12) a statewide filing says a person filed it in the Local subjects List",
+    /^KINE Kinesiology Filed statewide by a person in the Local subjects List\.$/.test(txt(x.d.querySelector('.csb-codes tr[data-code="ATHL"]').children[3])));
+  x = load("#commons/subjects/alpha/PEX", { sess: ME, saves: [{ course_id: "SUBJ:alpha|PEX|credit", value: JSON.stringify({ common_code: "KINE" }),
+    reviewed_at: "2026-11-22T05:00:00Z", reviewer_email: ME.email, reviewer_label: "a reviewer" }], files: { "kb/status/local_subject_titles.json": DEC } });
+  await x.M.boot(); await settle();
+  x.d.getElementById("csb-ed-undo").click(); await settle();
+  check("(12) ⭐ taking back a save the file carries returns the row to the files' own values at once",
+    txt(pexCell(x)) === "" && /Taken back/.test(txt(x.d.getElementById("csb-ed-status"))), txt(pexCell(x)));
 
   const failed = results.filter((r) => !r[1]);
   results.forEach((r) => console.log((r[1] ? "PASS " : "FAIL ") + r[0] + (r[1] || !r[2] ? "" : "  [" + r[2] + "]")));
