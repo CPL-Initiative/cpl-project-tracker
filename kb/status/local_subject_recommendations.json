@@ -218,12 +218,12 @@
  },
  "web_searches_filed": 108,
  "totals": {
-  "common_high": 189,
+  "common_high": 180,
   "common_low": 164,
-  "common_medium": 465,
+  "common_medium": 447,
   "common_no_code_yet": 14,
-  "common_none": 183,
-  "no_common": 1015,
+  "common_none": 181,
+  "no_common": 986,
   "no_title": 318,
   "noncredit_common": 134,
   "noncredit_no_common": 174,
@@ -239,146 +239,6 @@
   {
    "slug": "cerritos",
    "rows": [
-    {
-     "code": "A&P",
-     "common": {
-      "code": "BIOL",
-      "discipline": "Biological Sciences",
-      "level": "Medium",
-      "from": "own_courses",
-      "why": "3 of 3 of its courses with an M-ID sit under BIOL."
-     }
-    },
-    {
-     "code": "ACLR",
-     "common": {
-      "code": "IDST",
-      "discipline": "Interdisciplinary Studies",
-      "level": "Medium",
-      "from": "own_courses",
-      "why": "9 of 9 of its courses with an M-ID sit under IDST."
-     }
-    },
-    {
-     "code": "AFRS",
-     "common": {
-      "code": "SOCS",
-      "discipline": "Social Science",
-      "level": "Medium",
-      "from": "own_courses",
-      "why": "11 of 13 of its courses with an M-ID sit under SOCS."
-     }
-    },
-    {
-     "code": "ASAM",
-     "common": {
-      "code": "SOCS",
-      "discipline": "Social Science",
-      "level": "Medium",
-      "from": "own_courses",
-      "why": "2 of 2 of its courses with an M-ID sit under SOCS."
-     }
-    },
-    {
-     "code": "ATH",
-     "common": {
-      "code": "KINE",
-      "discipline": "Kinesiology",
-      "level": "Medium",
-      "from": "own_courses",
-      "why": "86 of 86 of its courses with an M-ID sit under KINE."
-     }
-    },
-    {
-     "code": "BA",
-     "common": {
-      "code": "BUSI",
-      "discipline": "Business",
-      "level": "Medium",
-      "from": "own_courses",
-      "why": "33 of 35 of its courses with an M-ID sit under BUSI."
-     }
-    },
-    {
-     "code": "BTEC",
-     "common": {
-      "code": "BIOT",
-      "discipline": "Biotechnology",
-      "level": "High",
-      "from": "title",
-      "why": "The title names the discipline Biotechnology."
-     }
-    },
-    {
-     "code": "CA",
-     "common": {
-      "code": "CULN",
-      "discipline": "Culinary Arts/Food Technology",
-      "level": "High",
-      "from": "title",
-      "why": "The title names the discipline Culinary Arts/Food Technology."
-     }
-    },
-    {
-     "code": "CDEC",
-     "common": {
-      "code": "CDEV",
-      "discipline": "Child Development/Early Childhood Education",
-      "level": "High",
-      "from": "title",
-      "why": "The title names the discipline Child Development/Early Childhood Education."
-     }
-    },
-    {
-     "code": "CDIT",
-     "common": {
-      "code": "CDEV",
-      "discipline": "Child Development/Early Childhood Education",
-      "level": "High",
-      "from": "title",
-      "why": "The title names the discipline Child Development/Early Childhood Education."
-     }
-    },
-    {
-     "code": "CDSE",
-     "common": {
-      "code": "CDEV",
-      "discipline": "Child Development/Early Childhood Education",
-      "level": "High",
-      "from": "title",
-      "why": "The title names the discipline Child Development/Early Childhood Education."
-     }
-    },
-    {
-     "code": "EDEL",
-     "common": {
-      "code": "EDUC",
-      "discipline": "Education",
-      "level": "High",
-      "from": "title",
-      "why": "The title names the discipline Education."
-     }
-    },
-    {
-     "code": "EDT",
-     "common": {
-      "code": "EDTC",
-      "discipline": "Instructional Design/Technology",
-      "level": "Medium",
-      "from": "own_courses",
-      "why": "20 of 21 of its courses with an M-ID sit under EDTC."
-     }
-    },
-    {
-     "code": "ELAP",
-     "common": {
-      "code": "ELEC",
-      "discipline": "Electricity",
-      "level": "Medium",
-      "from": "own_courses",
-      "why": "19 of 20 of its courses with an M-ID sit under ELEC."
-     }
-    },
     {
      "code": "ESL",
      "title": {
@@ -397,16 +257,6 @@
      }
     },
     {
-     "code": "ET",
-     "common": {
-      "code": "ENGT",
-      "discipline": "Engineering Technology",
-      "level": "High",
-      "from": "title",
-      "why": "The title names the discipline Engineering Technology."
-     }
-    },
-    {
      "code": "FIN",
      "common": {
       "code": "BUSI",
@@ -417,56 +267,6 @@
      }
     },
     {
-     "code": "HED",
-     "common": {
-      "code": "HLTH",
-      "discipline": "Health",
-      "level": "Medium",
-      "from": "own_courses",
-      "why": "3 of 5 of its courses with an M-ID sit under HLTH."
-     }
-    },
-    {
-     "code": "JAMS",
-     "common": {
-      "code": "JOUR",
-      "discipline": "Journalism",
-      "level": "Medium",
-      "from": "same_code_statewide",
-      "why": "8 of 12 courses under this code statewide sit under JOUR."
-     }
-    },
-    {
-     "code": "KOR",
-     "common": {
-      "code": "FLNG",
-      "discipline": "Foreign Languages",
-      "level": "Medium",
-      "from": "own_courses",
-      "why": "2 of 2 of its courses with an M-ID sit under FLNG."
-     }
-    },
-    {
-     "code": "MICR",
-     "common": {
-      "code": "BIOL",
-      "discipline": "Biological Sciences",
-      "level": "Medium",
-      "from": "same_code_statewide",
-      "why": "16 of 16 courses under this code statewide sit under BIOL."
-     }
-    },
-    {
-     "code": "NAIS",
-     "common": {
-      "code": "SOCS",
-      "discipline": "Social Science",
-      "level": "Medium",
-      "from": "own_courses",
-      "why": "3 of 5 of its courses with an M-ID sit under SOCS."
-     }
-    },
-    {
      "code": "NPD",
      "common": {
       "code": "MANU",
@@ -474,36 +274,6 @@
       "level": "Medium",
       "from": "own_courses",
       "why": "7 of 7 of its courses with an M-ID sit under MANU."
-     }
-    },
-    {
-     "code": "NRSG",
-     "common": {
-      "code": "NRSR",
-      "discipline": "Nursing",
-      "level": "High",
-      "from": "title",
-      "why": "The title names the discipline Nursing."
-     }
-    },
-    {
-     "code": "PEX",
-     "common": {
-      "code": "KINE",
-      "discipline": "Kinesiology",
-      "level": "Medium",
-      "from": "own_courses",
-      "why": "83 of 99 of its courses with an M-ID sit under KINE."
-     }
-    },
-    {
-     "code": "PHAR",
-     "common": {
-      "code": "PHMT",
-      "discipline": "Pharmacy Technology",
-      "level": "Medium",
-      "from": "same_code_statewide",
-      "why": "17 of 21 courses under this code statewide sit under PHMT."
      }
     },
     {
@@ -524,36 +294,6 @@
      }
     },
     {
-     "code": "PS",
-     "common": {
-      "code": "PHSC",
-      "discipline": "Physical Sciences",
-      "level": "Medium",
-      "from": "own_courses",
-      "why": "2 of 2 of its courses with an M-ID sit under PHSC."
-     }
-    },
-    {
-     "code": "SLP",
-     "common": {
-      "code": "SLPA",
-      "discipline": "Speech Language Pathology",
-      "level": "High",
-      "from": "title",
-      "why": "The title names the discipline Speech Language Pathology."
-     }
-    },
-    {
-     "code": "TH",
-     "common": {
-      "code": "THTR",
-      "discipline": "Drama/Theater Arts",
-      "level": "Medium",
-      "from": "own_courses",
-      "why": "26 of 38 of its courses with an M-ID sit under THTR."
-     }
-    },
-    {
      "code": "WMT",
      "common": {
       "code": "ARTS",
@@ -561,16 +301,6 @@
       "level": "Medium",
       "from": "own_courses",
       "why": "3 of 5 of its courses with an M-ID sit under ARTS."
-     }
-    },
-    {
-     "code": "ZOOL",
-     "common": {
-      "code": "BIOL",
-      "discipline": "Biological Sciences",
-      "level": "Medium",
-      "from": "same_code_statewide",
-      "why": "9 of 10 courses under this code statewide sit under BIOL."
      }
     }
    ]

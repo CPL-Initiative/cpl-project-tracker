@@ -39,6 +39,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from subject_title_case import KEPT, SMALL, title_case  # noqa: E402
 from _build_noncredit_subject_titles import MQ as NC_MQ  # noqa: E402
+import subject_decisions as SD  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SUBJECTS = os.path.join("kb", "hand_filed_catalogs", "subjects")
@@ -50,11 +51,15 @@ OUT = os.path.join("kb", "status", "local_subject_titles.json")
 
 COLUMNS = ["code", "printed_name", "catalog_courses", "state_courses", "side", "common", "discipline",
            "title_state", "title_source", "candidate", "address", "credit_courses", "noncredit_courses", "page_codes",
-           "noncredit_plain", "noncredit_enhanced", "categories"]
+           "noncredit_plain", "noncredit_enhanced", "categories", "common_source", "decision"]
 # Why a row has no title (Sam, 2026-11-21, #3655: "an indicator (chip) in the row to indicate that the catalog read was
 # either blocked, title not in catalog, or not parsed yet"). A state comes from a recorded fact; a row nothing proves
 # reads not_read, because calling a title absent when the catalog was never looked at is the worse error.
-TITLE_STATES = ("catalog", "not_read", "blocked", "not_in_catalog")
+TITLE_STATES = ("catalog", "person", "not_read", "blocked", "not_in_catalog")
+# Where a row's common subject code came from, first that answers (kb/subject_decisions.py resolve): a person's save
+# for the college's code and band, a person's statewide filing in the Local subjects List, the subject map.
+COMMON_SOURCES = ("person", "statewide_filing", "subject_map")
+PERSON_TITLE = "a person's save"
 # The state list's credit mark for a course (kb/_build_coci_lookup.py credit_char): C credit, N noncredit, E noncredit
 # enhanced (Sam, 2026-11-22: "Coci has a credit, noncredit, noncredit enhanced indicator"). Noncredit and credit
 # disciplines are separate in the MQs (Sam, 2026-11-21), so a row counts them apart, and N and E apart inside noncredit.
@@ -68,7 +73,9 @@ RULE = ("A catalog's subject code and the state list's are the same code when th
         "course (kb/hand_filed_catalogs/subjects/). A code the catalog's index lists is in the catalog whether or not "
         "its page's courses are filed. A row with no title says why (title_state): not_read where the catalog was not "
         "read for it, blocked where the reader was refused, not_in_catalog where the catalog was read and gives it none. credit_courses and noncredit_courses count the code's courses in the state list apart, and noncredit_plain and noncredit_enhanced split the noncredit ones by the state list's N and E. categories names the COCI noncredit categories of the code's noncredit courses, most courses first (kb/status/noncredit_categories.json). The common subject code is read from the subject map (its keys: upper case, letters and "
-        "digits only) and the discipline's canonical SUBJ; where either has nothing, it is blank. A TOP code is never read.")
+        "digits only) and the discipline's canonical SUBJ; where either has nothing, it is blank. A person's saved decision "
+        "for the college's code and band wins over the catalog's heading and the subject map, and a person's statewide "
+        "filing of the code in the Local subjects List wins over the map (kb/subject_decisions.py). A TOP code is never read.")
 
 
 def code_key(s):
@@ -127,7 +134,10 @@ def build(root=ROOT):
     index = read_json(root, os.path.join(CATALOGS, "index.json"))
     state = read_state(root)
     smap = read_json(root, SUBJECT_MAP).get("map", {})
-    canon = read_json(root, CANONICAL).get("disciplines", {})
+    canon_doc = read_json(root, CANONICAL)
+    canon = canon_doc.get("disciplines", {})
+    dec = SD.load(root, canon_doc)
+    applied, not_applied = set(), []
     cats = {}
     cat_path = os.path.join(root, CATEGORIES)
     for cc in (read_json(root, CATEGORIES).get("colleges") or []) if os.path.exists(cat_path) else []:
@@ -160,7 +170,8 @@ def build(root=ROOT):
     T = {"colleges": 0, "courses": 0, "codes": 0, "catalog_codes": 0, "named": 0, "both": 0, "catalog_only": 0,
          "state_only": 0, "with_common": 0, "not_read": 0, "blocked": 0, "not_in_catalog": 0,
          "noncredit_only": 0, "credit_and_noncredit": 0, "pages_not_read": 0,
-         "colleges_named": 0, "colleges_not_in_state_list": 0}
+         "colleges_named": 0, "colleges_not_in_state_list": 0, "named_by_person": 0, "common_by_person": 0,
+         "common_by_statewide_filing": 0}
     for c in sorted(index.get("colleges") or [], key=lambda x: x["slug"]):
         with gzip.open(os.path.join(root, CATALOGS, c["file"]), "rt", encoding="utf-8") as f:
             doc = json.load(f)
@@ -225,18 +236,42 @@ def build(root=ROOT):
             # (r-noncredit-title-list-go-sam-2026-11-22): a noncredit-only row keeps its true reason.
             parts = cats.get((college_key(c["college"]), k)) if nc_n else None
             common, disc = common_of(k)
+            common_src = "subject_map" if common else None
+            # A person's save wins over the catalog, the subject map and any recommendation
+            # (r-subject-save-path-kb-curation-sam-2026-11-22): the college's decision for the code's band, then a
+            # person's statewide filing (kb/subject_decisions.py). The row keeps what the files gave in decision.was.
+            band = "credit" if cr_n > 0 else ("noncredit" if nc_n > 0 else ("credit" if st.get(k, 0) else "whole"))
+            rec, by = dec.resolve(c["slug"], k, band)
+            decision = None
+            if rec:
+                was = {"printed_name": name, "title_state": state_, "title_source": source, "common": common,
+                       "discipline": disc, "common_source": common_src}
+                took_title = bool(by == "subject_decision" and rec.get("local_title"))
+                if took_title:
+                    name, state_, source = rec["local_title"], "person", PERSON_TITLE
+                if rec.get("common_code"):
+                    common, disc = rec["common_code"], rec["discipline"]
+                    common_src = "person" if by == "subject_decision" else "statewide_filing"
+                decision = {"key": rec["key"], "from": rec["from"], "who": rec.get("who"), "at": rec.get("at"),
+                            "title": took_title, "common": bool(rec.get("common_code")), "was": was}
+                if by == "subject_decision":
+                    decision["band"], decision["moved"] = rec["band"], rec["moved"]
+                    applied.add(rec["key"])
             addr = (h or {}).get("address")
             page_codes = sorted(codes_at.get(addr) or ()) if addr and not e and addr in read_urls else None
             out.append([k, name, e["n"] if e else 0, st.get(k, 0), side, common, disc, state_, source,
                         (h or {}).get("candidate") if not name else None, addr, cr_n, nc_n, page_codes or None,
-                        nc_n - ens.get(k, 0), ens.get(k, 0), parts or None])
+                        nc_n - ens.get(k, 0), ens.get(k, 0), parts or None, common_src, decision])
         n = {"codes": len(out), "catalog_codes": len(set(cat) | listed), "named": sum(1 for r in out if r[1]),
              "both": sum(1 for r in out if r[4] == "both"), "catalog_only": sum(1 for r in out if r[4] == "catalog"),
              "state_only": sum(1 for r in out if r[4] == "state"), "with_common": sum(1 for r in out if r[5]),
              "not_read": sum(1 for r in out if r[7] == "not_read"), "blocked": sum(1 for r in out if r[7] == "blocked"),
              "not_in_catalog": sum(1 for r in out if r[7] == "not_in_catalog"),
              "noncredit_only": sum(1 for r in out if r[12] and not r[11]), "credit_and_noncredit": sum(1 for r in out if r[12] and r[11]),
-             "pages_not_read": sum(1 for r in out if r[10] and not r[2] and r[10] not in read_urls)}
+             "pages_not_read": sum(1 for r in out if r[10] and not r[2] and r[10] not in read_urls),
+             "named_by_person": sum(1 for r in out if r[7] == "person"),
+             "common_by_person": sum(1 for r in out if r[17] == "person"),
+             "common_by_statewide_filing": sum(1 for r in out if r[17] == "statewide_filing")}
         out_colleges.append({"slug": c["slug"], "college": c["college"], "catalog_year": c.get("catalog_year"),
                              "read_at": c.get("read_at"), "in_state_list": si is not None,
                              "courses": len(rows), **n, "rows": out})
@@ -247,6 +282,10 @@ def build(root=ROOT):
         T["colleges_named"] += 1 if n["named"] else 0
         T["colleges_not_in_state_list"] += 0 if si is not None else 1
 
+    for (slug, code, band), r in sorted(dec.college.items()):
+        if r["key"] not in applied:
+            not_applied.append({"key": r["key"], "why": "no Subjects row of %s under %s takes it (a noncredit row, or "
+                                "a code the catalog and the state list do not print)" % (slug, code)})
     return {
         "_what": ("Step b of the Commons' curation order: each college's local subject codes, from its printed catalog "
                   "(kb/hand_filed_catalogs/courses/) beside the state list (coci_lookup_data.js). printed_name is the "
@@ -259,12 +298,19 @@ def build(root=ROOT):
                   "title_source where the title came from, "
                   "candidate a line for a reviewer where no heading was taken (never a title by itself), and address the "
                   "subject's own page where the catalog's index links one (pages_not_read counts the linked pages that were not read; page_codes names the codes a page that was read "
-                  "prints its courses under, where that is not this code). Built by kb/_build_local_subject_titles.py; "
+                  "prints its courses under, where that is not this code). A person's saved decision "
+                  "(kb/status/subject_decisions.json) replaces the title and the common code it names: title_state "
+                  "person, common_source person or statewide_filing (else subject_map), and decision names the save "
+                  "with what the files gave in was. Built by kb/_build_local_subject_titles.py; "
                   "no clock is read, so read_at is each catalog's own."),
         "_rule": RULE,
         "_sources": {"catalogs": CATALOGS.replace(os.sep, "/") + "/index.json", "state_list": STATE,
                      "state_list_built_at": state.get("_built_at"), "subject_map": SUBJECT_MAP.replace(os.sep, "/"),
-                     "canonical_subj": CANONICAL.replace(os.sep, "/")},
+                     "canonical_subj": CANONICAL.replace(os.sep, "/"), "subject_decisions": SD.STATUS.replace(os.sep, "/")},
+        # The saved decisions this build honors (kb/subject_decisions.py): how many took a row, and each one refused
+        # (never applied) or matched by no row, with the reason.
+        "decisions": {"applied": len(applied), "refused": dec.refused, "not_applied": not_applied,
+                      "statewide_filings": len(dec.statewide), "statewide_read": bool(dec.doc.get("statewide_read"))},
         "draft": {"owner": "Courses bot", "state": "drafted", "settled_by": "a curator, for the codes that disagree"},
         "totals": T,
         "columns": COLUMNS,

@@ -250,7 +250,32 @@
     });
     return out.join(" ");
   }
-  function filedRow(sv) { return /@bot$/.test(sv.by || sv.label || "") && !!sv.decidedBy; }
+  function filedRow(sv) { return (/@bot$/.test(sv.by || sv.label || "") || !!sv.fromFile) && !!sv.decidedBy; }
+  /* The daily build honors a saved decision (kb/_sync_subject_decisions.py, #3655): a row the file took one for
+     carries it in `decision`, with what the catalog and the map gave in decision.was. The live read stays the
+     authority, so a row shows one line: a save the live read holds is that line; a save the file holds and the live
+     read no longer does was taken back since the build, so the row reads the files' own values again; where no live
+     read ran or it failed, the file's save shows in its place. */
+  function revert(r) {
+    var w = (r && r.decision && r.decision.was) || {};
+    if (!r || !r.decision) return;
+    ["printed_name", "common", "discipline", "title_state", "title_source", "common_source"].forEach(function (k) { r[k] = w[k] == null ? null : w[k]; });
+    r.decision = null;
+  }
+  function reconcile(M, live) {
+    ((M && M.list) || []).forEach(function (x) {
+      x.rows.forEach(function (r) {
+        var d = r.decision;
+        if (!d || d.from !== "subject_decision" || String(d.key || "").indexOf(SAVE_PREFIX) !== 0) return;
+        var mk = String(d.key).slice(SAVE_PREFIX.length);
+        if (SAVED[mk]) return;
+        if (live) { revert(r); return; }
+        var who = d.who && d.who !== "a reviewer" && !/@/.test(d.who) ? d.who : "";
+        SAVED[mk] = { title: d.title ? r.printed_name || "" : "", common: d.common ? r.common || "" : "", at: d.at || "",
+          by: "", label: "", decidedBy: who, key: d.key, mapKey: mk, fromFile: true };
+      });
+    });
+  }
   function mine(sv) {
     var s = reviewer();
     return !!(sv && sv.by && s && s.email && String(sv.by).toLowerCase() === String(s.email).toLowerCase());
@@ -353,6 +378,8 @@
           title,
           sv && sv.common ? el("td", { "data-saved": "common" }, [sv.common + (COMMON && COMMON[sv.common] ? " " + COMMON[sv.common] : ""), " ", savedLine(sv)])
           : el("td", null, [r.common ? r.common + (r.discipline ? " " + r.discipline : "") : "",
+            r.common_source === "statewide_filing" ? " " : null,
+            r.common_source === "statewide_filing" ? el("span", { cls: "csb-sub csb-saved", text: "Filed statewide by a person in the Local subjects List." }) : null,
             !r.common && recOf(r).common ? recNote("common", recOf(r).common.code + " " + recOf(r).common.discipline, recOf(r).common) : null]),
           el("td", null, [heads, categoryLine(r)]),
           el("td", { text: st && r.title_state === "not_read" ? st.word : SIDES[r.side] || r.side })]);
@@ -584,6 +611,7 @@
         if (!res.ok) { undo.disabled = false; status.textContent = failed(res).replace("Not saved", "Not taken back"); return; }
         if (!res.n) { undo.disabled = false; status.textContent = "Nothing was taken back: no save of yours is stored under this code now. Reload the tab to read the saves again."; return; }
         delete SAVED[sv.mapKey];
+        if (row.decision && row.decision.key === sv.key) revert(row);
         SAID[key] = "Taken back. The row reads from the files again.";
         redraw("csb-ed-status");
       }, function (e) { undo.disabled = false; status.textContent = "Not taken back: " + ((e && e.message) || "the network failed") + "."; });
@@ -670,7 +698,7 @@
       go("#commons/subjects/" + HELD, "Codes the M-ID mint holds on"), ". ",
       go("#commons/subjects/" + NC, "Noncredit subject titles"), ".",
       nSaved ? " " + fmt(nSaved) + (nSaved === 1 ? " code is" : " codes are") + " settled by a person’s save." : ""]));
-    if (SAVE_ERR) wrap.appendChild(el("p", { cls: "csb-note", id: "csb-save-err", role: "status", text: "The saves people made could not be read (" + SAVE_ERR + "). The list below is drawn from the files alone." }));
+    if (SAVE_ERR) wrap.appendChild(el("p", { cls: "csb-note", id: "csb-save-err", role: "status", text: "The saves people made could not be read (" + SAVE_ERR + "). The list below is drawn from the files alone, with the saves the daily build carried." }));
     if (missing) wrap.appendChild(el("p", { cls: "csb-note", role: "status", text: "No college with a catalog on file is named " + missing + ". Every college is below." }));
     if (c) {
       wrap.appendChild(el("p", { cls: "csb-note", text: c.year + " catalog, read " + day(c.readAt) + ". " + (c.named ? fmt(c.named) + " of " + fmt(c.codes) + " codes have a local title." : "No subject heading is read for this catalog yet.") }));
@@ -767,8 +795,8 @@
           REC = recModel(rf);
           var M = model(f);
           /* The saves are a third read; a failed one leaves the list drawn from the files and says so. */
-          return readSaves().then(function (m) { SAVED = m || {}; SAVE_ERR = ""; },
-            function (e) { SAVED = {}; SAVE_ERR = e && e.message ? e.message : String(e); }).then(function () { return M; });
+          return readSaves().then(function (m) { SAVED = m || {}; SAVE_ERR = ""; reconcile(M, m !== null); },
+            function (e) { SAVED = {}; SAVE_ERR = e && e.message ? e.message : String(e); reconcile(M, false); }).then(function () { return M; });
         });
     });
   }

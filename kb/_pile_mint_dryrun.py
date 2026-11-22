@@ -38,6 +38,18 @@ the time on that measure. The TOP code is read nowhere.
   (iii) where that is silent, the SUBJ4 the same local subject code carries statewide (codes of three characters or
         more only). Routes (ii) and (iii) take the support and share floors their self-recall test sets.
   Otherwise the course is held, with the reason.
+  (p)   A PERSON'S DECISION (#3655; r-subject-save-path-kb-curation-sam-2026-11-22: a person's save wins over the
+        catalog, the subject map and any recommendation). Where a person saved a common subject code for the course's
+        college and local code (kb/status/subject_decisions.json, read through kb/subject_decisions.py for_course),
+        a credit course with an ordinary title takes that code as its SUBJ4 ahead of routes (i), (ii) and (iii). A
+        noncredit or noncredit enhanced course never takes a credit decision
+        (r-noncredit-disciplines-separate-in-mqs-sam-2026-11-21). A shell title never takes one: it stays with (r), (s)
+        or its hold, whatever a person decided for its code. The plan measures why (`person_decision_recall`): the
+        identity-holding shell titles under decided codes match the decided code far under route (s)'s floor (98%
+        over 10 or more), where the ordinary titles are the ones a decision names. A statewide
+        filing in the Local subjects List decides no M-ID (kb/subject_decisions.py). The plan lists every course a
+        decision placed with its key and what the machine routes would have done (`decided`): released from a hold,
+        or placed under another SUBJ4, or the same.
 
 GROUPING. Wave courses sharing (folded title, SUBJ4, band) are one common course: two or more make a catalog record
 with a memberships entry, one makes a stand-alone record. The fold drops punctuation, case and spacing alone; a roman
@@ -80,6 +92,7 @@ import _zband_retire_dryrun as zdry  # noqa: E402  (Buckets, the id shapes, cano
 import _uc_cur_promote as promote  # noqa: E402  (reserved_alias_ids: every alias map's old and new side)
 import _top_gate as top_gate  # noqa: E402  (is_top_sourced)
 import _subj4_dryrun as s4dry  # noqa: E402  (add_reserved_ids: the shared reservation loader's rule)
+import subject_decisions as sdec  # noqa: E402  (a person's saved subject decisions: for_course, slugs_by_college)
 
 OUT_DIR = os.environ.get("PILE_MINT_OUT") or os.path.join(HERE, "pile_mint_out")
 PLAN_TAG = "_v3"
@@ -100,8 +113,8 @@ SUPPORT_GRID = (1, 2, 3, 4, 5, 7, 10, 15, 20, 30, 50, 100, 200)
 SHARE_GRID = (0.5, 0.6, 0.67, 0.75, 0.8, 0.85, 0.9, 0.95, 1.0)
 SUPPORT_BUCKETS = ((1, 1), (2, 2), (3, 4), (5, 9), (10, 19), (20, 49), (50, 99), (100, 10 ** 9))
 SHARE_BUCKETS = ((0.0, 0.6), (0.6, 0.8), (0.8, 0.9), (0.9, 1.0), (1.0, 1.01))
-ROUTE_SOURCE = {"r": "ruled_kind", "s": "shell_convention", "i": "subject_map", "ii": "college_subject_code",
-                "iii": "statewide_subject_code"}
+ROUTE_SOURCE = {"r": "ruled_kind", "s": "shell_convention", "p": "person_decision", "i": "subject_map",
+                "ii": "college_subject_code", "iii": "statewide_subject_code"}
 # Ruled kinds: a shell kind a person or the conductor ruled onto a SUBJ4, kept apart from the measured conventions.
 # Only the bare title mints ("Supervised Tutoring", "Tutoring", in any punctuation and case); a title that names
 # more than the kind ("Supervised Tutoring in Mathematics", "Tutoring Methods") is held and listed by class.
@@ -542,6 +555,58 @@ def compute_plan(inp, today):
     held = defaultdict(list)
     placed = []
     route_count = Counter()
+    decisions = inp.get("subject_decisions")
+    dec_slug = inp.get("decision_slugs") or {}
+    decided = []
+
+    def decision_of(c):
+        if not decisions:
+            return None
+        return decisions.for_course(dec_slug.get(sdec.college_key(c["college"])), c["subj"], c["credit"])
+
+    # How often a decided code names the SUBJ4 an identity-holding credit course under it already carries, ordinary
+    # and shell titles apart: the measure that keeps route p off shell titles (the second reader on #3670).
+    dec_codes = {}
+    for (slug, code, band), r in ((decisions.college.items()) if decisions else ()):
+        if r.get("common_code"):
+            dec_codes.setdefault((slug, seed.normsubj(code)), r["common_code"])
+    recall_p = {"ordinary": [0, 0], "shell": [0, 0]}
+    for h in hlist:
+        want = dec_codes.get((dec_slug.get(sdec.college_key(h["college"])), h["ns"]))
+        if want and h["band"] == "1":
+            cell = recall_p["ordinary" if h["kind"] is None else "shell"]
+            cell[1] += 1
+            cell[0] += h["s4"] == want
+    shell_floor = {"accuracy": ACCURACY_FLOOR, "min_holders": MIN_HOLDERS}
+    r_, a_ = recall_p["shell"]
+    shell_at_floor = a_ >= MIN_HOLDERS and r_ / a_ >= ACCURACY_FLOOR
+
+    def machine_ordinary(c, ns, tag):
+        """Routes (i), (ii), (iii) for an ordinary title: ("placed", s4, route, conf, disc) or ("held", list, row)."""
+        disc, s4, note = ri(ns)
+        route = "i" if s4 else None
+        conf = None
+        if s4:
+            if not at_floor(ns):
+                n, r = code_stats.get(ns, (0, 0))
+                return ("held", "route_i_below_its_floor", dict(tag, subj4=s4, holders=n, right=r))
+            n, r = code_stats[ns]
+            conf = round(r / n, 4)
+        else:
+            for rt, w in (("ii", winner(col.get((c["college"], ns), {}))),
+                          ("iii", winner(state.get(ns, {})) if len(ns) > SUBJ_SHORT else None)):
+                if not accept(rt, w):
+                    continue
+                cand = w[0]
+                if disc and (cand not in umbrella.get(disc, set()) and s4_disc.get(cand) != disc):
+                    note = f"the subject map reads {disc!r} and route ({rt}) offers {cand}, another discipline's code"
+                    continue
+                s4, route, conf = cand, rt, thresholds[rt]["accuracy"]
+                break
+        if not s4:
+            return ("held", "no_route_gives_a_subj4", dict(tag, why=note or "no route reaches its floor"))
+        return ("placed", s4, route, conf, disc if route == "i" else (disc or s4_disc.get(s4)))
+
     for c in wave:
         ns = seed.normsubj(c["subj"])
         kind = shell_pattern(c["title"])
@@ -549,6 +614,7 @@ def compute_plan(inp, today):
         band = band_of(c["credit"])
         conf = None
         ruling = None
+        pd = decision_of(c) if kind is None else None   # a shell title never takes a decision
         if kind in RULED_BY_KIND:
             rk = RULED_BY_KIND[kind]
             if not re.match(rk["bare"], seed.ntitle(c["title"])):
@@ -573,36 +639,24 @@ def compute_plan(inp, today):
                 continue
             s4, d, route, conf = conv["subj4"], conv["discipline"], "s", conv["accuracy"]
         else:
-            disc, s4, note = ri(ns)
-            route = "i" if s4 else None
-            if s4:
-                if not at_floor(ns):
-                    n, r = code_stats.get(ns, (0, 0))
-                    held["route_i_below_its_floor"].append(dict(tag, subj4=s4, holders=n, right=r))
-                    continue
-                n, r = code_stats[ns]
-                conf = round(r / n, 4)
-            else:
-                for rt, w in (("ii", winner(col.get((c["college"], ns), {}))),
-                              ("iii", winner(state.get(ns, {})) if len(ns) > SUBJ_SHORT else None)):
-                    if not accept(rt, w):
-                        continue
-                    cand = w[0]
-                    if disc and (cand not in umbrella.get(disc, set()) and s4_disc.get(cand) != disc):
-                        note = f"the subject map reads {disc!r} and route ({rt}) offers {cand}, another discipline's code"
-                        continue
-                    s4, route, conf = cand, rt, thresholds[rt]["accuracy"]
-                    break
-            if not s4:
-                held["no_route_gives_a_subj4"].append(dict(tag, why=note or "no route reaches its floor"))
+            out = machine_ordinary(c, ns, tag)
+            if pd:
+                # a person's decision wins over routes (i) to (iii); the plan records what they would have done
+                s4, route, d = pd["common_code"], "p", s4_disc.get(pd["common_code"])
+                machine = ("held: " + out[1]) if out[0] == "held" else (
+                    "placed: " + out[1] + " by " + ROUTE_SOURCE[out[2]])
+                decided.append(dict(tag, key=pd["key"], subj4=s4, moved=pd.get("moved", False), machine=machine))
+            elif out[0] == "held":
+                held[out[1]].append(out[2])
                 continue
-            d = disc if route == "i" else (disc or s4_disc.get(s4))
+            else:
+                _, s4, route, conf, d = out
         if not d:
             held["subj4_names_no_discipline"].append(dict(tag, subj4=s4, route=route))
             continue
         route_count[route] += 1
         placed.append(dict(c, subj4=s4, discipline=d, route=route, band=band, kind=kind, conf=conf,
-                           ruling=ruling, fk=fold_key(c["title"])))
+                           ruling=ruling, fk=fold_key(c["title"]), decision=pd["key"] if route == "p" else None))
 
     # ── grouping and the duplicate check ──
     existing = defaultdict(list)
@@ -682,7 +736,9 @@ def compute_plan(inp, today):
         "measures": {
             "pile": len(pile), "pile_by_title_kind": dict(sorted(shells.items())),
             "left_out": {k: len(v) for k, v in sorted(left.items())}, "wave": len(wave),
-            "subj4_by_route": {ROUTE_SOURCE[r]: route_count.get(r, 0) for r in ("s", "i", "ii", "iii")},
+            "subj4_by_route": {ROUTE_SOURCE[r]: route_count.get(r, 0) for r in ("s", "p", "i", "ii", "iii")},
+            "decided": len(decided),
+            "decided_released": sum(1 for x in decided if x["machine"].startswith("held: ")),
             "held": {k: len(v) for k, v in sorted(held.items())},
             "held_shell_titles_by_kind": dict(sorted(Counter(h["kind"] for h in held["shell_title_no_convention"])
                                                      .items(), key=lambda kv: (-kv[1], kv[0]))),
@@ -706,6 +762,13 @@ def compute_plan(inp, today):
             "subject_codes_at_floor": len(codes_at_floor), "subject_codes_answered": len(code_stats),
         },
         "shell_conventions": [conventions[k] for k in sorted(conventions, key=lambda k: (k[0], k[1]))],
+        "person_decision_recall": {
+            "how": ("Each identity-holding credit course under a code a person decided: is its own SUBJ4 the decided "
+                    "code? Ordinary and shell titles apart. A shell title would need route (s)'s floor to take a "
+                    "decision; route p reads ordinary titles only."),
+            "ordinary": {"right": recall_p["ordinary"][0], "asked": recall_p["ordinary"][1]},
+            "shell": {"right": r_, "asked": a_}, "shell_floor": shell_floor, "shell_at_floor": shell_at_floor,
+            "shell_routed": False},
         "ruled_kinds": RULED_KINDS,
         "ruled_kind_held_titles": _ruled_held(held),
         "supervised_tutoring": tut,
@@ -731,6 +794,9 @@ def compute_plan(inp, today):
                     "singletons": dict(sorted(planned_single.items()))},
         "plan_rows": plan_rows,
         "held_for_assign": assign,
+        # every wave course a person's decision placed (route p): its key, its SUBJ4, and what the machine routes
+        # would have done ("held: <reason>" is a course the decision released)
+        "decided": sorted(decided, key=lambda x: (x["college"], x["control_number"])),
         "held": {k: v for k, v in sorted(held.items())},
         "left_out": {k: v for k, v in sorted(left.items())},
     }
@@ -812,6 +878,9 @@ def _records(new_id, g, descs, today):
     rulings = sorted({p["ruling"] for p in g if p.get("ruling")})
     if rulings:
         prov["pile_mint_ruling"] = "+".join(rulings)
+    keys = sorted({p["decision"] for p in g if p.get("decision")})
+    if keys:
+        prov["pile_mint_decision"] = "+".join(keys)
     if len(g) >= 2:
         rec = {
             "course_id": new_id, "id_system": "M-ID", "ccn_id": None, "c_id": None,
@@ -991,6 +1060,7 @@ def load_inputs(kb_dir=None):
         "singleton_cns": [r.get("control_number") for r in sing_doc["courses"].values() if r.get("control_number")],
         "disc_aliases": _load(promote.ALIASES).get("aliases") or {},
         "disc_map": disc_map, "canon_map": seed.load_canonical_map(), "canon_doc": canon_doc,
+        "subject_decisions": sdec.load(ROOT, canon_doc), "decision_slugs": sdec.slugs_by_college(ROOT),
         "fl_doc": _load(zdry.FL_SPLIT),
         "reservations": s4dry.add_reserved_ids(zdry.load_id_reservations(), rollback_reserved_ids(kb_dir)),
         "alias_ids": sorted(promote.reserved_alias_ids()),

@@ -1,0 +1,319 @@
+{
+ "_what": "A person's saved subject decisions, synced daily from kb_curation by kb/_sync_subject_decisions.py so the builders honor them (kb/subject_decisions.py). decisions: the Subjects page's saves (SUBJ:<college>|<code>|<band>, subject_decision). statewide: the Local subjects List's filings (_SUBJ_DISC::<CODE>, subject_discipline_confirm), the MQ discipline a person filed a code under. who is the person a filing names, a procedure's cohort id, or 'a reviewer'; no email is kept.",
+ "_rule": "A person's save wins over the catalog, the subject map and any recommendation (r-subject-save-path-kb-curation-sam-2026-11-22). Precedence for a college's code and band: its decision, then a statewide filing, then the subject map, then a recommendation. A credit decision reads the code's credit courses only; whole reads a code COCI lists no course under.",
+ "statewide_read": false,
+ "totals": {
+  "decisions": 30,
+  "by_band": {
+   "credit": 29,
+   "whole": 1
+  },
+  "colleges": 1,
+  "statewide": 0,
+  "unreadable": 0
+ },
+ "decisions": [
+  {
+   "key": "SUBJ:cerritos|A&P|credit",
+   "college": "cerritos",
+   "code": "A&P",
+   "band": "credit",
+   "local_title": null,
+   "common_code": "BIOL",
+   "who": "Sam",
+   "at": "2026-11-21T21:11:00Z"
+  },
+  {
+   "key": "SUBJ:cerritos|ACLR|credit",
+   "college": "cerritos",
+   "code": "ACLR",
+   "band": "credit",
+   "local_title": null,
+   "common_code": "DSPS",
+   "who": "Sam",
+   "at": "2026-11-21T21:11:00Z"
+  },
+  {
+   "key": "SUBJ:cerritos|AFRS|credit",
+   "college": "cerritos",
+   "code": "AFRS",
+   "band": "credit",
+   "local_title": null,
+   "common_code": "ETHS",
+   "who": "Sam",
+   "at": "2026-11-21T21:11:00Z"
+  },
+  {
+   "key": "SUBJ:cerritos|AP|whole",
+   "college": "cerritos",
+   "code": "AP",
+   "band": "whole",
+   "local_title": null,
+   "common_code": "BIOL",
+   "who": "Sam",
+   "at": "2026-11-21T21:11:00Z"
+  },
+  {
+   "key": "SUBJ:cerritos|ASAM|credit",
+   "college": "cerritos",
+   "code": "ASAM",
+   "band": "credit",
+   "local_title": null,
+   "common_code": "ETHS",
+   "who": "Sam",
+   "at": "2026-11-21T21:11:00Z"
+  },
+  {
+   "key": "SUBJ:cerritos|ATH|credit",
+   "college": "cerritos",
+   "code": "ATH",
+   "band": "credit",
+   "local_title": null,
+   "common_code": "KINE",
+   "who": "Sam",
+   "at": "2026-11-21T21:11:00Z"
+  },
+  {
+   "key": "SUBJ:cerritos|BA|credit",
+   "college": "cerritos",
+   "code": "BA",
+   "band": "credit",
+   "local_title": null,
+   "common_code": "BUSI",
+   "who": "Sam",
+   "at": "2026-11-21T21:11:00Z"
+  },
+  {
+   "key": "SUBJ:cerritos|BCOT|credit",
+   "college": "cerritos",
+   "code": "BCOT",
+   "band": "credit",
+   "local_title": null,
+   "common_code": "BSOT",
+   "who": "Sam",
+   "at": "2026-11-21T21:11:00Z"
+  },
+  {
+   "key": "SUBJ:cerritos|BTEC|credit",
+   "college": "cerritos",
+   "code": "BTEC",
+   "band": "credit",
+   "local_title": null,
+   "common_code": "BIOT",
+   "who": "Sam",
+   "at": "2026-11-21T21:11:00Z"
+  },
+  {
+   "key": "SUBJ:cerritos|CA|credit",
+   "college": "cerritos",
+   "code": "CA",
+   "band": "credit",
+   "local_title": null,
+   "common_code": "CULN",
+   "who": "Sam",
+   "at": "2026-11-21T21:11:00Z"
+  },
+  {
+   "key": "SUBJ:cerritos|CDEC|credit",
+   "college": "cerritos",
+   "code": "CDEC",
+   "band": "credit",
+   "local_title": null,
+   "common_code": "CDEV",
+   "who": "Sam",
+   "at": "2026-11-21T21:11:00Z"
+  },
+  {
+   "key": "SUBJ:cerritos|CDIT|credit",
+   "college": "cerritos",
+   "code": "CDIT",
+   "band": "credit",
+   "local_title": null,
+   "common_code": "CDEV",
+   "who": "Sam",
+   "at": "2026-11-21T21:11:00Z"
+  },
+  {
+   "key": "SUBJ:cerritos|CDSE|credit",
+   "college": "cerritos",
+   "code": "CDSE",
+   "band": "credit",
+   "local_title": null,
+   "common_code": "CDEV",
+   "who": "Sam",
+   "at": "2026-11-21T21:11:00Z"
+  },
+  {
+   "key": "SUBJ:cerritos|EDEL|credit",
+   "college": "cerritos",
+   "code": "EDEL",
+   "band": "credit",
+   "local_title": null,
+   "common_code": "EDUC",
+   "who": "Sam",
+   "at": "2026-11-21T21:11:00Z"
+  },
+  {
+   "key": "SUBJ:cerritos|EDT|credit",
+   "college": "cerritos",
+   "code": "EDT",
+   "band": "credit",
+   "local_title": null,
+   "common_code": "EDTC",
+   "who": "Sam",
+   "at": "2026-11-21T21:11:00Z"
+  },
+  {
+   "key": "SUBJ:cerritos|ELAP|credit",
+   "college": "cerritos",
+   "code": "ELAP",
+   "band": "credit",
+   "local_title": null,
+   "common_code": "ELEC",
+   "who": "Sam",
+   "at": "2026-11-21T21:11:00Z"
+  },
+  {
+   "key": "SUBJ:cerritos|ET|credit",
+   "college": "cerritos",
+   "code": "ET",
+   "band": "credit",
+   "local_title": null,
+   "common_code": "ENGT",
+   "who": "Sam",
+   "at": "2026-11-21T21:11:00Z"
+  },
+  {
+   "key": "SUBJ:cerritos|HED|credit",
+   "college": "cerritos",
+   "code": "HED",
+   "band": "credit",
+   "local_title": null,
+   "common_code": "HLTH",
+   "who": "Sam",
+   "at": "2026-11-21T21:11:00Z"
+  },
+  {
+   "key": "SUBJ:cerritos|JAMS|credit",
+   "college": "cerritos",
+   "code": "JAMS",
+   "band": "credit",
+   "local_title": null,
+   "common_code": "JOUR",
+   "who": "Sam",
+   "at": "2026-11-21T21:11:00Z"
+  },
+  {
+   "key": "SUBJ:cerritos|KOR|credit",
+   "college": "cerritos",
+   "code": "KOR",
+   "band": "credit",
+   "local_title": null,
+   "common_code": "FLNG",
+   "who": "Sam",
+   "at": "2026-11-21T21:11:00Z"
+  },
+  {
+   "key": "SUBJ:cerritos|MICR|credit",
+   "college": "cerritos",
+   "code": "MICR",
+   "band": "credit",
+   "local_title": null,
+   "common_code": "BIOL",
+   "who": "Sam",
+   "at": "2026-11-21T21:11:00Z"
+  },
+  {
+   "key": "SUBJ:cerritos|NAIS|credit",
+   "college": "cerritos",
+   "code": "NAIS",
+   "band": "credit",
+   "local_title": null,
+   "common_code": "ETHA",
+   "who": "Sam",
+   "at": "2026-11-21T21:11:00Z"
+  },
+  {
+   "key": "SUBJ:cerritos|NRSG|credit",
+   "college": "cerritos",
+   "code": "NRSG",
+   "band": "credit",
+   "local_title": null,
+   "common_code": "NRSR",
+   "who": "Sam",
+   "at": "2026-11-21T21:11:00Z"
+  },
+  {
+   "key": "SUBJ:cerritos|PEX|credit",
+   "college": "cerritos",
+   "code": "PEX",
+   "band": "credit",
+   "local_title": null,
+   "common_code": "KINE",
+   "who": "Sam",
+   "at": "2026-11-21T21:11:00Z"
+  },
+  {
+   "key": "SUBJ:cerritos|PHAR|credit",
+   "college": "cerritos",
+   "code": "PHAR",
+   "band": "credit",
+   "local_title": null,
+   "common_code": "PHMT",
+   "who": "Sam",
+   "at": "2026-11-21T21:11:00Z"
+  },
+  {
+   "key": "SUBJ:cerritos|PS|credit",
+   "college": "cerritos",
+   "code": "PS",
+   "band": "credit",
+   "local_title": null,
+   "common_code": "PHSC",
+   "who": "Sam",
+   "at": "2026-11-21T21:11:00Z"
+  },
+  {
+   "key": "SUBJ:cerritos|SLP|credit",
+   "college": "cerritos",
+   "code": "SLP",
+   "band": "credit",
+   "local_title": null,
+   "common_code": "SLPA",
+   "who": "Sam",
+   "at": "2026-11-21T21:11:00Z"
+  },
+  {
+   "key": "SUBJ:cerritos|TH|credit",
+   "college": "cerritos",
+   "code": "TH",
+   "band": "credit",
+   "local_title": null,
+   "common_code": "THTR",
+   "who": "Sam",
+   "at": "2026-11-21T21:11:00Z"
+  },
+  {
+   "key": "SUBJ:cerritos|WGS|credit",
+   "college": "cerritos",
+   "code": "WGS",
+   "band": "credit",
+   "local_title": null,
+   "common_code": "WMST",
+   "who": "Sam",
+   "at": "2026-11-21T21:11:00Z"
+  },
+  {
+   "key": "SUBJ:cerritos|ZOOL|credit",
+   "college": "cerritos",
+   "code": "ZOOL",
+   "band": "credit",
+   "local_title": null,
+   "common_code": "BIOL",
+   "who": "Sam",
+   "at": "2026-11-21T21:11:00Z"
+  }
+ ],
+ "statewide": [],
+ "unreadable": []
+}

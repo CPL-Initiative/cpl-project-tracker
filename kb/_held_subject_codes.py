@@ -22,6 +22,13 @@ writes, per code:
     winner, votes and share with the floor it missed; and the subject map's near entries (keys that share the code's
     first three characters, or that one extends the other).
 
+RELEASED BY A PERSON'S DECISION (#3655). A course whose college and local code a person decided a common subject code
+for (kb/status/subject_decisions.json; the dry run's route p) is placed by that decision, so it leaves the held lists.
+Each one the held reasons would have held is listed under `released`, by decision key, with its college, code, common
+code, courses and the reasons it was held for; totals.released counts them. A credit decision releases credit courses
+with ordinary titles alone: a noncredit course and a shell title under a decided code stay held (the dry run's
+person_decision_recall measures why for shell titles).
+
 A vote winner is written as `suggestion`, with its votes and share, never as a decision: the routes missed the 98%
 self-recall floor, which is why the course is held. A TOP code is read nowhere (CLAUDE.md Rule 7). Nothing is written
 to any table and no identity file is touched. Read-only.
@@ -168,9 +175,33 @@ def printed_names(titles_doc):
     return out
 
 
-def build(held, thresholds, col, state, disc_map, titles_doc, short_max=2, sources=None):
+def released_of(decided):
+    """The courses a person's decision released from a held reason (the plan's `decided` rows whose machine routes
+    would have held them under HELD_REASONS), one entry per decision key."""
+    by = {}
+    for r in decided or []:
+        why = str(r.get("machine") or "")
+        reason = why[len("held: "):] if why.startswith("held: ") else None
+        if reason not in HELD_REASONS:
+            continue
+        e = by.setdefault(r["key"], {"key": r["key"], "college": r["college"], "code": r["subject"],
+                                     "common_code": r["subj4"], "courses": 0, "control_numbers": [], "was": Counter()})
+        e["courses"] += 1
+        e["control_numbers"].append(r["control_number"])
+        e["was"][reason] += 1
+    out = []
+    for k in sorted(by):
+        e = by[k]
+        e["control_numbers"].sort()
+        e["was"] = dict(sorted(e["was"].items()))
+        out.append(e)
+    return out
+
+
+def build(held, thresholds, col, state, disc_map, titles_doc, short_max=2, sources=None, decided=None):
     """Pure. held: held_of(plan), each row with its reason. thresholds: {route name: floor or None}. col:
-    {(college, ns): Counter}. state: {ns: Counter}. Returns the document."""
+    {(college, ns): Counter}. state: {ns: Counter}. decided: the plan's `decided` rows. Returns the document."""
+    released = released_of(decided)
     names = printed_names(titles_doc)
     by_code = defaultdict(lambda: defaultdict(list))
     for r in held:
@@ -249,8 +280,10 @@ def build(held, thresholds, col, state, disc_map, titles_doc, short_max=2, sourc
                    "by_reason": dict(sorted(Counter(r.get("reason") or HELD_REASONS[0] for r in held).items())),
                    "top_20_release": sum(ranked[:20]),
                    "with_suggestion": sum(1 for c in codes if c["suggestion"]),
-                   "with_printed_name": sum(1 for c in codes if c["printed_names"])},
+                   "with_printed_name": sum(1 for c in codes if c["printed_names"]),
+                   "released": sum(e["courses"] for e in released), "released_by_decisions": len(released)},
         "codes": codes,
+        "released": released,
     }
 
 
@@ -355,12 +388,15 @@ def main(argv=None):
                "identity_file": (plan.get("inputs") or {}).get("identity_file"),
                "course_list": (plan.get("inputs") or {}).get("course_list"),
                "printed_names": TITLES, "subject_map": "kb/reference/subject_discipline_map.json"}
-    doc = build(held, thresholds, col, state, inp["disc_map"], titles_doc, short_max=pm.SUBJ_SHORT, sources=sources)
+    sources["subject_decisions"] = "kb/status/subject_decisions.json"
+    doc = build(held, thresholds, col, state, inp["disc_map"], titles_doc, short_max=pm.SUBJ_SHORT, sources=sources,
+                decided=plan.get("decided"))
     if not write_if_changed(doc, a.out, a.if_changed):
         return 0
     t = doc["totals"]
     print(f"[held_subject_codes] {t['held']} held courses, {t['codes']} codes, {t['pairs']} college-and-code pairs; "
-          f"the top 20 codes release {t['top_20_release']}")
+          f"the top 20 codes release {t['top_20_release']}; {t['released']} released by "
+          f"{t['released_by_decisions']} person's decisions")
     for c in doc["codes"][:10]:
         print(f"  {c['code']:<8} {c['held']:>4}  {len(c['colleges'])} colleges")
     return 0

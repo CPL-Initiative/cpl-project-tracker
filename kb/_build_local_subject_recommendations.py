@@ -36,7 +36,9 @@ kb/discipline_canonical_subj4.json), the M-IDs its own courses
 hold (the majority Common SUBJ, folded to the discipline's canonical code), and the M-IDs the same code holds at
 other colleges. It is scored on Sam's 30 Cerritos decisions (kb/reference/subject_code_decisions_cerritos_
 2026-11-21.json), which no source reads, and on the rows the subject map already settles. Where a recommendation
-diverges from Sam's decision, his decision stands and the divergence is listed.
+diverges from Sam's decision, his decision stands and the divergence is listed. A part a person saved (the titles
+file's title_state person, common_source person or statewide_filing; kb/subject_decisions.py) takes no
+recommendation, and a row whose common code a person gave is never an answer for the subject map's score.
 
 BANDS. Credit and noncredit are read apart (Sam, 2026-11-21: the MQs separate them); a row with both takes its
 recommendation from its credit courses. The noncredit hold (r-noncredit-hold-sam-2026-11-21) lifted on Sam's go of
@@ -425,6 +427,13 @@ def level_of(right, asked):
     return ("Low" if asked < FLOOR_N else level), share
 
 
+def map_settled(row):
+    """True where the subject map gave the row its common code. A person's save or statewide filing
+    (common_source person, statewide_filing) is no answer for the map's score; a file without the column reads as
+    the map's."""
+    return bool(row["common"]) and row.get("common_source", "subject_map") == "subject_map"
+
+
 def measure_noncredit(data):
     """The noncredit_list source and the category's common code, each asked on the noncredit-only rows that already
     hold the answer (a catalog heading; a common code from the subject map), the row left out of its own vote."""
@@ -439,7 +448,7 @@ def measure_noncredit(data):
                 cell = titles[got[1]]
                 cell[1] += 1
                 cell[0] += 1 if (same(got[0], h) or same(got[0], group_title(h)[1])) else 0
-        if row["common"]:
+        if map_settled(row):
             cat = dominant(row)[0]
             code = (data.nc_mq.get(cat) or {}).get("common_code") if cat else None
             if code:
@@ -502,7 +511,7 @@ def build(root=ROOT):
             diverges.append({"local_code": x["local_code"], "local_title": x.get("local_title"),
                              "sam": x["common_code"], "recommended": rec[0], "from": rec[1], "why": rec[2]})
     for row in data.rows:
-        if not row["common"] or not row["credit_courses"]:
+        if not map_settled(row) or not row["credit_courses"]:
             continue
         rec = recommend_common(data, row["slug"], row["code"], row["printed_name"])
         if rec:

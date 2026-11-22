@@ -317,6 +317,15 @@ STEP
 # (coci_lookup_data.js), with the common subject code from the subject map. Read by the Subjects card and by the held
 # list below. --if-changed: no write when its fingerprint (the content less _sources, whose state list stamp moves
 # on its own) matches (~1 s). Display only, so a failure warns and yesterday's file stands.
+# First the saved decisions it honors (#3655): kb/_sync_subject_decisions.py reads the Subjects page's saves
+# (subject_decision) and the Local subjects List's filings (subject_discipline_confirm) from kb_curation with the
+# public anon key, asking reviewer_label and never reviewer_email, Range-paged and checked against the exact count, and
+# writes kb/status/subject_decisions.json only when the rows moved. The titles, the held list and the pile mint dry run
+# read it (kb/subject_decisions.py). A failed, short or empty read keeps the committed file and warns.
+step "Sync the Subjects page's saved decisions" <<'STEP'
+python3 kb/_sync_subject_decisions.py || { git checkout -- kb/status/subject_decisions.json 2>/dev/null || true; echo "::warning title=Subject decisions not synced::kb/_sync_subject_decisions.py could not read kb_curation, or refused a short or empty read; the builders honor the committed kb/status/subject_decisions.json until the next run. Check the step log."; }
+STEP
+
 step "Build the Subjects card's local subject titles" <<'STEP'
 python3 kb/_build_local_subject_titles.py --if-changed || { git checkout -- kb/status/local_subject_titles.json 2>/dev/null || true; echo "::warning title=Local subject titles not rebuilt::kb/_build_local_subject_titles.py failed; the Commons Subjects card reads yesterday's kb/status/local_subject_titles.json."; }
 STEP
