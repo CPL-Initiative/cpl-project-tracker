@@ -95,7 +95,21 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "hours_total_not_read",
+    "label": "A program measured in hours: its courses carry their hours, and no program total was read, so its hours cannot be checked against one.",
+    "words": "the courses carry 16 hours as read, and no program total was read"
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

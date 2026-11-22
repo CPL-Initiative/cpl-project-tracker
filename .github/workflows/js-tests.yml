@@ -531,6 +531,9 @@ jobs:
       # stays as filed; A11's named gaps; the collection lane's colleges left out. Pure stdlib.
       - name: Units rules A1, A4, A5, A6, A8 and A11 (self-check, exact sums, named gaps)
         run: python3 tests/program_requirements_units_rules_test.py
+      # S703, census lever 3: the three hours gaps, their self-recall on held answers, and lane 1's colleges untouched.
+      - name: Named hours gaps (self-recall, the plan, the held colleges)
+        run: python3 tests/program_hours_gaps_s703_test.py
       # The S683 cheap-piles lists (#3358 section 2): A5's wrong answers are the self-check's own, key for key, and
       # each of the 33 held-out records names a committed record and a gap from GAPS or none. Pure stdlib.
       - name: Cheap piles S683 (A5's misses by cause, the 33 held-out records)
