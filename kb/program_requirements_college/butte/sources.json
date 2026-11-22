@@ -4814,20 +4814,20 @@
    "MFG16"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28144/28374",
-   "title": "Certificate of Achievement in Advanced Manufacturing",
-   "h1": "Certificate of Achievement in Advanced Manufacturing",
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28144/27584",
+   "title": "Certificate of Achievement in Advanced Manufacturing Level I",
+   "h1": "Certificate of Achievement in Advanced Manufacturing Level I",
    "text_from": "innerText",
    "label": {
     "award": 1,
     "title": 1.0,
     "section": "coa",
-    "section_line": "certificate of achievement in advanced manufacturing",
+    "section_line": "certificate of achievement in advanced manufacturing level i",
     "section_fit": 1.0
    }
   },
   "listed": 4,
-  "text_chars": 3235
+  "text_chars": 2924
  },
  {
   "control_number": "39883",
