@@ -111,3 +111,11 @@ lane 1 signs off at those colleges. Each move is written here before it starts.
   only (198 rows, 1,860 objectives); its 6 SLO rows read field labels and go to the follow-up. Load 45021318423 on
   `claude/s703-sdcce-load` finished 12:17Z. Cosumnes River reread 45021161151 done; Clovis reread 45022017976 running.
   Butte's capture (45016561973) runs about 91 minutes, as its last did.
+- 12:31Z: Cosumnes River load 45022641854 done: 3 new, 4 replaced at the two colleges, 5 of 7 passing.
+- 12:38Z: #3678 merged (`5dbc743d`). 12:44Z: #3679 applied by supabase-migrate 45023631381; live: 32, 11 and 7, 50 rows
+  at 11 colleges. **DECIDED** `d-clovis-two-gaps-existing-rules-s703`: Clovis 33433 and 33491 take the existing
+  `total_not_printed` and `total_differs` gaps without a new second read.
+- 12:50Z: the free page-finding levers moved to a fresh lane 1 worker, `levers`: Ohlone, San Joaquin Delta, Mt. San
+  Antonio, Santa Barbara City and Orange Coast (lane 2 has nothing in flight at Orange Coast; #3678's 11 there stay).
+  City College of San Francisco's 53 stay for a later run. `piles` signs off after #3679's closing commit; the
+  wording rule (`claude/s703-piles-wording`, 49 rows) goes to a fresh lane 2 worker once #3679 merges.
