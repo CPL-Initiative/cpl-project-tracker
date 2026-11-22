@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Advanced Manufacturing Level I",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://butte.curriqunet.com/catalog/iq/25398/28144/28374",
+ "source_url": "https://butte.curriqunet.com/catalog/iq/25398/28144/27584",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7240,
+  "input_tokens": 6836,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7240,
-    "output_tokens": 1370,
+    "input_tokens": 6836,
+    "output_tokens": 931,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,34 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1370,
+  "output_tokens": 931,
   "output_tokens_details": {
-   "thinking_tokens": 636
+   "thinking_tokens": 274
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05636,
- "ms": 13801,
- "seconds": 14.3,
+ "cost_usd": 0.04596,
+ "ms": 8727,
+ "seconds": 12.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 4,
    "listed": 4,
-   "share": 0.0,
-   "missing": [
-    "MFG10",
-    "MFG12",
-    "MFG14",
-    "MFG16"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -66,49 +61,50 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    17.0,
+    17.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    17.0,
+    17.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Certificate of Achievement in Advanced Manufacturing",
+   "section_heading": "Certificate of Achievement in Advanced Manufacturing Level I",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 17,
+    "max": 17
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -125,36 +121,66 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Practice safety skills required on job sites.",
+    "Apply precision measurement strategies and unit conversion skills.",
+    "Explain the basic principles of feed and speed settings on various manufacturing platforms."
+   ],
+   "careers": [
+    "Manufacturing industry"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "MFG 10",
-    "why": "text prints only the 62-unit Advanced Manufacturing certificate, not Level I"
-   },
-   {
-    "code": "MFG 12",
-    "why": "text prints only the 62-unit Advanced Manufacturing certificate, not Level I"
-   },
-   {
-    "code": "MFG 14",
-    "why": "text prints only the 62-unit Advanced Manufacturing certificate, not Level I"
-   },
-   {
-    "code": "MFG 16",
-    "why": "text prints only the 62-unit Advanced Manufacturing certificate, not Level I"
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 17,
+     "max": 17
+    },
+    "courses": [
+     {
+      "code": "MFG 10",
+      "units": 8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MFG 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MFG 14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MFG 16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The catalog text does not contain a section for 'Advanced Manufacturing Level I'. It prints only 'Certificate of Achievement in Advanced Manufacturing' (Program Code 37939.00CA), which requires 16 MFG courses totaling 62.00 units. That is well above the 16-30 unit range of the named award.",
-   "Nothing was recorded from that section, because it belongs to a different, larger award. The four closed-list courses (MFG 10 8, MFG 12 3, MFG 14 3, MFG 16 3; 17 units) match exactly 'Term 1' (17.00 units) of the 62-unit certificate's map.",
-   "A Level I certificate may have been merged into the full certificate in this catalog year. A reviewer should check whether a separate Level I page exists.",
-   "The 62-unit certificate prints a prerequisite of ITEC 55 and seven distinct program learning outcomes; the first is repeated at the end of the list. The outcomes were not recorded for Level I because they are printed for the 62-unit certificate.",
-   "The 62-unit certificate's other courses are MFG 20, 22, 24, 26, 30, 32, 34, 36, 40, 42, 44 and 46. All are absent from the closed list."
+   "The page prints the requirements twice: once in the summary and once in the term map. Both list the same four courses for a total of 17.00 units.",
+   "ITEC 55 is stated as a program prerequisite ('This program has a prerequisite of ITEC 55'; 'Term 1 Prerequisite: ITEC 55'). It is not recorded as a required course block.",
+   "The career entry 'Manufacturing industry' is taken from the phrase 'prepare students for productive futures in the Manufacturing industry'. Reviewer may check whether it should count as a career field.",
+   "The description also mentions an A.S. degree. That degree is a separate award and was not recorded."
   ]
  },
- "extracted_run": "38981247046"
+ "extracted_run": "45025068740",
+ "catalog_year": "2026-2027"
 }
