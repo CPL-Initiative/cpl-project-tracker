@@ -364,7 +364,29 @@
     // flagged clearly and would not be a valid exhibit and would need map team follow up"; "yes, add the MAP team worklist
     // for flagged exhibits"). Measured from kb/exhibits_review.json: a held exhibit whose credit_recs list is empty names
     // no college course a student earns. A file built before it carried credit_recs reads unknown, never zero.
-    if (!src.review || !Array.isArray(src.review.held)) {
+    // S708: the list is every exhibit in MAP's statewide data, not only the held cards (`no_cr`, written by the nightly
+    // rebuild, one row per MAP id with the college MAP names as its owner); the held cards are the fallback until then.
+    var noCrRows = src.review && src.review.no_cr && Array.isArray(src.review.no_cr.rows) ? src.review.no_cr.rows : null;
+    if (noCrRows) {
+      var byOwner = {}, NO_OWNER = "College not yet named in MAP's exhibit list";
+      noCrRows.forEach(function (r) { var c = r.college || NO_OWNER; (byOwner[c] = byOwner[c] || []).push(r); });
+      var owners = Object.keys(byOwner).sort(function (a, b) {
+        return (a === NO_OWNER) - (b === NO_OWNER) || byOwner[b].length - byOwner[a].length || (a < b ? -1 : a > b ? 1 : 0);
+      });
+      var nc = noCrRows.length, ncCols = owners.filter(function (c) { return c !== NO_OWNER; }).length;
+      add({ id: "exhibits-no-cr", title: "Exhibits with no credit recommendation", count: nc,
+        detail: nc + (nc === 1 ? " MAP exhibit" : " MAP exhibits") + " of the " + (src.review.no_cr.of || "?")
+          + " in MAP's statewide data " + (nc === 1 ? "carries" : "carry") + " no credit recommendation, at " + ncCols
+          + (ncCols === 1 ? " college" : " colleges") + ". Each needs follow-up with the college that entered it. "
+          + "Open a college below for its list; each MAP id opens the exhibit in MAP in a new tab.",
+        personWaiting: nc > 0, since: nc ? src.review.written_at || null : null,
+        colleges: owners.map(function (c) { return { college: c, n: byOwner[c].length, rows: byOwner[c] }; }),
+        why: "An exhibit with no credit recommendation names no college course a student earns, so it is not a valid "
+          + "exhibit. Read from kb/exhibits_review.json, which the nightly rebuild writes from statewide_data.js; the "
+          + "college is the owner MAP's exhibit list names"
+          + (src.review.no_cr.owners_read ? " (read " + String(src.review.no_cr.owners_read).slice(0, 10) + ")" : "") + ".",
+        where: null });
+    } else if (!src.review || !Array.isArray(src.review.held)) {
       unknown("exhibits-no-cr", "Exhibits with no credit recommendation", "The Exhibits review file could not be read.",
         { tab: "exhibits", label: "Exhibits" });
     } else if (!src.review.held.some(function (h) { return Array.isArray(h.credit_recs); })) {
@@ -600,6 +622,15 @@
     }
     if (it.colleges && it.colleges.length) {
       h += '<div class="mtq-cols">' + it.colleges.map(function (c) {
+        // A college line that carries its own rows (the exhibits with no credit recommendation) draws them in place;
+        // the others read their list when they first open (wireCollegeLists).
+        if (Array.isArray(c.rows)) {
+          return '<details class="mtq-col"><summary>' + esc(c.college) + " (" + c.n + ")</summary>"
+            + '<ul class="mtq-col-list">' + c.rows.map(function (r) {
+              return "<li>" + esc(r.title || r.id) + ' <span class="m">(' + (r.type ? esc(r.type) + ", " : "")
+                + '<a href="' + esc(mapExhibitUrl(r.id)) + '" target="_blank" rel="noopener">' + esc(r.id) + "</a>)</span></li>";
+            }).join("") + "</ul></details>";
+        }
         return '<details class="mtq-col" data-mtq-college="' + esc(c.college) + '"><summary>' + esc(c.college)
           + " (" + c.n + ")</summary>" + '<div class="mtq-col-list" aria-live="polite"></div></details>';
       }).join("") + "</div>";
@@ -617,6 +648,13 @@
     }
     h += '<p class="mtq-why">' + esc(it.why) + "</p></div>";
     return h;
+  }
+
+  // MAP's page for one exhibit: map_links.js's address (COBI loads it first), else the same address spelled here.
+  function mapExhibitUrl(id) {
+    var L = typeof window !== "undefined" && window.CPL_MAP_LINKS;
+    return L && typeof L.url === "function" ? L.url(id)
+      : "https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=" + encodeURIComponent(id) + "&View=Non-Military";
   }
 
   // One college's items, grouped by program, read when its line first opens.
