@@ -694,6 +694,15 @@ def figures_total(filed: dict):
 #                        "may instead be met by a typing certification": Madera 39862; "admission prerequisites that
 #                        do not count toward the 27-unit major total": Siskiyous 17596). The courses then meet the
 #                        figure.
+#   note_names_difference
+#                        a note names the course or list that makes up the difference ("suggest the core is ENGL C1000/H plus one of ...": El Camino 02524;
+#                        "The 14 would fit if only one of the HIST C1002 or POLS C1000 rows were required": 02538;
+#                        "may be listed in error": 02495; "ARTH 26 may actually belong to List A": Madera 39811;
+#                        "without it the courses sum to 24, matching the printed total": East Los Angeles 45602).
+#                        A reread on that reading passes the record free. Los Angeles Trade Technical 08479, which
+#                        reads the A.A. section for an A.S. control number, is held by key in this class.
+#   within_printed_range the courses as read fall inside a printed range, so the figures meet the total and no list
+#                        carries past it (Gavilan 08460: 36 against 30-36; decided d-lists-gap-holds-range-sums-s703).
 #   stands               none of these: the record's words leave both claims standing.
 # A record reading any but stands is held out (lists_held_out), as d-ge-gap-only-where-no-figure-s703 and
 # d-hours-gaps-hold-misreads-s703 hold theirs; lists_precision counts the four on the gap's shape.
@@ -714,9 +723,23 @@ LISTS_OPTIONAL = re.compile(r"\bis\s+optional\b|\bnot\s+strictly\s+required\b|\b
 # The hand-held answers: the S703 reading of each of the 46 records the rule named in the census's units_unequal
 # programs at the colleges tonight's plan may touch, before the claim check was written (decided
 # d-lists-gap-holds-claim-false-s703). Each takes no lists gap.
+# A note naming the course, list or section that makes up the difference (note_names_difference). Wording that
+# names only the state file's units ("8-9 would be consistent if ENGLISH 032 carries 2 units as in the state file":
+# Los Angeles Harbor 44271; "With 3 units for BUS the sum would be 17": Los Angeles Trade Technical 45670) is not
+# this class: the page prints the units the record holds.
+LISTS_NAMES_DIFFERENCE = re.compile(
+    r"\bwould\s+fit\s+if\b|\bsuggests?\s+the\s+(?:core|list)\s+is\b|\b(?:may\s+be\s+)?listed\s+in\s+error\b"
+    # A course that may belong to another list, never a page or a figure that may belong elsewhere (53 notes).
+    r"|\b[A-Z]{2,7}\s?C?\d{1,4}[A-Z]{0,2}\s+may\s+(?:actually\s+)?belong\s+to\s+(?:list|group)\b"
+    r"|\bwithout\s+it\b[^.;]{0,60}\bmatching\b", re.I)
+# A note that the record reads another award's section ("The requested award is an A.S. Degree, but ... this record
+# reads the A.A. section": Los Angeles Trade Technical 08479) is held by key alone: 95 records carry the wording,
+# passing ones among them (Antelope Valley 20179, Fresno City 37439), so it names a section, never the difference.
 LISTS_CROSS_WHY = "a list takes courses from another list; with them, no list passes its figure"
 LISTS_TOTAL_WHY = "the page prints a second total the courses meet; a reread passes it free"
 LISTS_OPTIONAL_WHY = "a counted course is optional, exempt or met another way; the courses meet the figure"
+LISTS_DIFFERENCE_WHY = "the note names the course or list that makes up the difference"
+LISTS_RANGE_WHY = "the sum sits inside the printed range, so the label overstates"
 HELD_LISTS = {
     ("Cuesta College", "33041"): LISTS_CROSS_WHY, ("Imperial Valley College", "35587"): LISTS_CROSS_WHY,
     ("Lake Tahoe Community College", "38760"): LISTS_CROSS_WHY, ("Madera College", "39520"): LISTS_CROSS_WHY,
@@ -727,6 +750,16 @@ HELD_LISTS = {
     ("College of San Mateo", "33879"): LISTS_OPTIONAL_WHY, ("Saddleback College", "04069"): LISTS_OPTIONAL_WHY,
     ("Saddleback College", "22874"): LISTS_OPTIONAL_WHY, ("Madera College", "39862"): LISTS_OPTIONAL_WHY,
     ("College of the Siskiyous", "17596"): LISTS_OPTIONAL_WHY,
+    # The second reader's round one on 5d3851de (finding 1): each record's own note names a reading under which it
+    # passes; the reader rescored five of them equal.
+    ("El Camino College", "02524"): LISTS_DIFFERENCE_WHY, ("El Camino College", "02538"): LISTS_DIFFERENCE_WHY,
+    ("El Camino College", "02495"): LISTS_DIFFERENCE_WHY, ("Madera College", "39811"): LISTS_DIFFERENCE_WHY,
+    ("East Los Angeles College", "45602"): LISTS_DIFFERENCE_WHY,
+    ("Los Angeles Trade Technical College", "08479"): LISTS_DIFFERENCE_WHY,
+    # Finding 2 (decided d-lists-gap-holds-range-sums-s703).
+    ("Gavilan College", "08460"): LISTS_RANGE_WHY, ("Gavilan College", "38787"): LISTS_RANGE_WHY,
+    ("Gavilan College", "41394"): LISTS_RANGE_WHY, ("Irvine Valley College", "32865"): LISTS_RANGE_WHY,
+    ("Palomar College", "33826"): LISTS_RANGE_WHY, ("West Valley College", "32022"): LISTS_RANGE_WHY,
 }
 
 
@@ -803,7 +836,8 @@ def _lists_still_past(filed: dict) -> list[int]:
 
 
 def lists_claim(filed: dict) -> str:
-    """course_optional, prints_other_total, lists_meet_figure or stands: what the record's words say of the claim."""
+    """course_optional, note_names_difference, within_printed_range, prints_other_total, lists_meet_figure or
+    stands: what the record's words and figures say of the claim."""
     rec = filed.get("record") or {}
     notes = [n if isinstance(n, str) else json.dumps(n) for n in rec.get("notes") or []]
     past = _lists_still_past(filed)
@@ -817,6 +851,8 @@ def lists_claim(filed: dict) -> str:
         # City 40592: THEATER 200 "does not count toward the total", recommended before THEATER 270).
         if LISTS_OPTIONAL.search(n) and not re.search(r"\brecommended\b", n, re.I) and any(c in flat for c in codes):
             return "course_optional"
+    if any(LISTS_NAMES_DIFFERENCE.search(n) for n in notes):
+        return "note_names_difference"
     a = (filed.get("score") or {}).get("arithmetic") or {}
     comp, st = _pair(a.get("computed")), _pair(a.get("stated"))
     if comp and st:
@@ -827,7 +863,11 @@ def lists_claim(filed: dict) -> str:
                 v = float(m.group(1) or m.group(2))
                 if comp[0] - FIG_EPS <= v <= comp[1] + FIG_EPS and all(abs(v - s) > FIG_EPS for s in st):
                     return "prints_other_total"
-    return "stands" if past else "lists_meet_figure"
+    if not past:
+        return "lists_meet_figure"
+    if comp and st and st[1] > st[0] + FIG_EPS and st[0] - FIG_EPS <= comp[0] and comp[1] <= st[1] + FIG_EPS:
+        return "within_printed_range"
+    return "stands"
 
 
 def lists_held_out(filed: dict) -> str | None:
@@ -837,7 +877,9 @@ def lists_held_out(filed: dict) -> str | None:
         return why
     claim = lists_claim(filed)
     return None if claim == "stands" else {"lists_meet_figure": LISTS_CROSS_WHY, "prints_other_total": LISTS_TOTAL_WHY,
-                                           "course_optional": LISTS_OPTIONAL_WHY}[claim]
+                                           "course_optional": LISTS_OPTIONAL_WHY,
+                                           "note_names_difference": LISTS_DIFFERENCE_WHY,
+                                           "within_printed_range": LISTS_RANGE_WHY}[claim]
 
 
 def _lists_shape(filed: dict):
@@ -1214,7 +1256,8 @@ def lists_recall(every: list[dict]) -> dict:
       cross_list     the gap reading of a choose-courses list, beside a list (counted toward nothing) of the
                      list's own courses at their own units and a note that the list also allows that list's courses
                      (no gap: with them the list meets its figure). The picked list is renamed LIST Y for this reading.
-    Right when the rule names the held answer and held_answer agrees. A reading the scorer passes is counted apart
+    A reading whose sum the scorer reads inside a printed range holds no gap (d-lists-gap-holds-range-sums-s703;
+    "<test> inside range"). Right when the rule names the held answer and held_answer agrees. A reading the scorer passes is counted apart
     ("<test> passes"). A gap reading the claim check holds out counts as wrong, since the claim check may not reach
     a record whose own words are the gap's."""
     out = {"held": 0, "right": 0, "wrong": 0, "not_reproduced": 0, "hours": 0, "allows_other": 0,
@@ -1312,11 +1355,15 @@ def _lists_reading(f, rec, sc, pick, reading, tot, out):
         out["by_test"]["%s passes" % test] += 1
         return
     filed = dict(f, record=test_rec, score=dict(sc, arithmetic=again))
+    comp, st = _pair(again.get("computed")), _pair(again.get("stated"))
+    if held and comp and st and st[1] > st[0] + FIG_EPS and st[0] - FIG_EPS <= comp[0] and comp[1] <= st[1] + FIG_EPS:
+        # d-lists-gap-holds-range-sums-s703: a sum inside a printed range holds no gap, read from the score itself.
+        held, test = None, test + " inside range"
     got = (answer(filed) or (None,))[0]
     got = got if got == "lists_past_their_figure" else None
     out["held"] += 1
     out["by_test"][test] += 1
-    if test not in ("gap", "none"):
+    if test.split()[0] not in ("gap", "none"):
         out["by_boundary"][test] += 1
     if got == held and (held_answer(filed) == "lists_past_their_figure") == bool(held):
         out["right"] += 1
@@ -1329,9 +1376,9 @@ def _lists_reading(f, rec, sc, pick, reading, tot, out):
 def lists_precision(files: list[dict], keys: frozenset | None = None) -> dict:
     """The gap's own claim, that the figures add to the printed total while a list's courses pass its figure,
     measured on the records of its shape (_lists_shape; #3678 and #3679 second readers, finding 2) with keys the
-    census's records alone: lists_claim's four counts; and lists_claim against the hand-held answers (HELD_LISTS),
-    the S703 reading of the 46 records the rule named before the claim check: flagged when lists_claim reads other
-    than stands. Every hand-held record is held out by key, so the gap's precision on them is exact by
+    census's records alone: lists_claim's six counts; and lists_claim against the hand-held answers (HELD_LISTS),
+    the S703 reading of the 46 records the rule named before the claim check and the second reader's twelve on
+    5d3851de: flagged when lists_claim reads other than stands. Every hand-held record is held out by key, so the gap's precision on them is exact by
     construction; the flagged count is how far lists_claim alone reaches."""
     counts = collections.Counter()
     for f in files:
@@ -1345,7 +1392,9 @@ def lists_precision(files: list[dict], keys: frozenset | None = None) -> dict:
     flagged = [k for k, f in held if lists_claim(f) != "stands"]
     return {"stands": counts["stands"], "lists_meet_figure": counts["lists_meet_figure"],
             "prints_other_total": counts["prints_other_total"], "course_optional": counts["course_optional"],
-            "hand_held": len(held), "hand_held_flagged_by_lists_claim": len(flagged),
+            "note_names_difference": counts["note_names_difference"],
+            "within_printed_range": counts["within_printed_range"], "hand_held": len(held),
+            "hand_held_flagged_by_why": dict(collections.Counter(HELD_LISTS[k] for k in flagged)), "hand_held_flagged_by_lists_claim": len(flagged),
             "hand_held_by_why": dict(collections.Counter(HELD_LISTS[k] for k, _ in held)),
             "hand_held_not_flagged": ["%s %s" % k for k, _ in held if k not in flagged]}
 
@@ -2122,9 +2171,11 @@ def main(argv=None) -> int:
         ", ".join("%s %d" % kv for kv in sorted(lr["by_boundary"].items())), lr["hours"]))
     lp = r["lists_precision"]
     print("lists_past_their_figure precision, the records of its shape: stands %d, lists meet their figure %d, "
-          "prints another total %d, a course optional %d; hand-held records %d, lists_claim flags %d" % (
+          "prints another total %d, a course optional %d, a note names the difference %d, inside a printed range "
+          "%d; hand-held records %d, lists_claim flags %d (%s)" % (
               lp["stands"], lp["lists_meet_figure"], lp["prints_other_total"], lp["course_optional"],
-              lp["hand_held"], lp["hand_held_flagged_by_lists_claim"]))
+              lp["note_names_difference"], lp["within_printed_range"], lp["hand_held"],
+              lp["hand_held_flagged_by_lists_claim"], lp["hand_held_flagged_by_why"]))
     if rc["wrong"] or hr["wrong"] or gr["wrong"] or lr["wrong"]:
         raise SystemExit("the recall is wrong on %d records: no plan is written" % (rc["wrong"] + hr["wrong"]
                                                                                     + gr["wrong"] + lr["wrong"]))

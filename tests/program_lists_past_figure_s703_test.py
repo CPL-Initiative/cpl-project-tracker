@@ -18,8 +18,11 @@ S652's review rule: a new rule runs first against records whose answer is alread
     a note lets it take (no gap), each wrong 0;
   * the claim check (finding 1; decided d-lists-gap-holds-claim-false-s703): a record whose own words make the
     claim false takes no gap (a list that takes another list's courses and meets its figure with them, a second
-    printed total the courses meet, a counted course that is optional or exempt); the 17 hand-held records are held
-    by key, lists_claim flags all 17, and its counts on the census's records of the gap's shape are pinned;
+    printed total the courses meet, a counted course that is optional or exempt, a note naming the course or list
+    that makes up the difference, a sum inside a printed range); the 29 hand-held records (S703's 17, and the
+    second reader's 12 on 5d3851de, decided d-lists-gap-holds-range-sums-s703 for six of them) are held by key,
+    lists_claim flags 28 of them (all but Los Angeles Trade Technical 08479, held by key alone), and its counts on
+    the census's records of the gap's shape are pinned;
   * the plain recall on every failing record stays wrong 0;
   * the s703w plan names only programs the committed census lists as units_unequal, none held out, and its
     pre-read, guarded UPDATE and rollback name exactly the plan's rows;
@@ -133,10 +136,31 @@ check(NG.lists_claim(opt) == "course_optional" and named(opt) == (None, None),
 rec_note = psych()
 rec_note["record"]["notes"] = ["Y 3 is recommended before X 4 and does not count toward the total."]
 check(NG.lists_claim(rec_note) == "stands", "a note on a recommended course leaves the claim standing")
-check(len(NG.HELD_LISTS) == 17 and sum(1 for w in NG.HELD_LISTS.values() if w == NG.LISTS_CROSS_WHY) == 8
-      and sum(1 for w in NG.HELD_LISTS.values() if w == NG.LISTS_TOTAL_WHY) == 4
-      and sum(1 for w in NG.HELD_LISTS.values() if w == NG.LISTS_OPTIONAL_WHY) == 5,
-      "17 records held by key: 8 take another list's courses, 4 print a second total, 5 count an optional course")
+diff = psych()
+diff["record"]["notes"] = ["The 9 would fit if only one of the X 3 rows were required."]
+check(NG.lists_claim(diff) == "note_names_difference" and named(diff) == (None, None),
+      "a note naming the course that makes up the difference takes no gap")
+moved = psych()
+moved["record"]["notes"] = ["ARTH 26 may actually belong to List A."]
+check(NG.lists_claim(moved) == "note_names_difference", "a course a note says may belong to another list")
+page = psych()
+page["record"]["notes"] = ["The source page may belong to a different certificate; a reviewer should verify it."]
+check(NG.lists_claim(page) == "stands", "a page that may belong elsewhere names no course, so the claim stands")
+ranged = psych(total=18, computed=[19.0, 19.0])
+ranged["score"]["arithmetic"]["stated"] = [18.0, 20.0]
+ranged["record"]["blocks"][1:] = [{"rule": "choose_courses", "name": n, "minimum": 1, "stated": {"min": 3, "max": 3},
+                                   "courses": [course(3)]} for n in ("LIST A", "LIST B")]
+ranged["record"]["blocks"].append({"rule": "choose_units", "name": "LIST C", "minimum": 3,
+                                   "stated": {"min": 3, "max": 5}, "courses": [course(3), course(5)]})
+check(NG.lists_claim(ranged) == "within_printed_range" and named(ranged) == (None, None),
+      "a sum inside the printed range takes no gap (d-lists-gap-holds-range-sums-s703)")
+by_why = {}
+for w in NG.HELD_LISTS.values():
+    by_why[w] = by_why.get(w, 0) + 1
+check(len(NG.HELD_LISTS) == 29 and by_why == {NG.LISTS_CROSS_WHY: 8, NG.LISTS_TOTAL_WHY: 4, NG.LISTS_OPTIONAL_WHY: 5,
+                                              NG.LISTS_DIFFERENCE_WHY: 6, NG.LISTS_RANGE_WHY: 6},
+      "29 records held by key: 8 take another list's courses, 4 print a second total, 5 count an optional course, "
+      "6 name the difference, 6 sum inside a printed range (%s)" % by_why)
 
 res = NG.run(write=False, gaps=(GAP,), skip=HELD_S703, census_causes=("units_unequal",))
 lr = res["lists_recall"]
@@ -148,15 +172,18 @@ bd = lr["by_boundary"]
 check(bd.get("past_by_half", 0) > 1000 and bd.get("total_by_half", 0) > 1000 and bd.get("cross_list", 0) > 1000,
       "the boundary readings ran, each right: %s" % bd)
 lp = res["lists_precision"]
-check((lp["stands"], lp["lists_meet_figure"], lp["prints_other_total"], lp["course_optional"]) == (29, 8, 4, 5),
-      "lists_claim on the census's records of the gap's shape: stands 29, meet 8, other total 4, optional 5 (%s)" % lp)
-check(lp["hand_held"] == 17 and lp["hand_held_flagged_by_lists_claim"] == 17,
-      "lists_claim flags %d of the 17 hand-held records (%s)" % (lp["hand_held_flagged_by_lists_claim"],
+check((lp["stands"], lp["lists_meet_figure"], lp["prints_other_total"], lp["course_optional"],
+       lp["note_names_difference"], lp["within_printed_range"]) == (18, 8, 4, 5, 5, 6),
+      "lists_claim on the census's 46 records of the gap's shape: stands 18, meet 8, other total 4, optional 5, "
+      "names the difference 5, inside a range 6 (%s)" % lp)
+check(lp["hand_held"] == 29 and lp["hand_held_flagged_by_lists_claim"] == 28
+      and lp["hand_held_not_flagged"] == ["Los Angeles Trade Technical College 08479"],
+      "lists_claim flags %d of the 29 hand-held records (%s)" % (lp["hand_held_flagged_by_lists_claim"],
                                                                 lp["hand_held_not_flagged"]))
 check(not any(m["college"] in HELD_S703 for m in res["moved"]), "the dry run moves no record at a held college")
 rc = res["recall"]
-check(rc["wrong"] == 0 and rc["by_answer"].get(GAP, 0) > 30,
-      "the plain recall with the new rule: right %d, wrong %d" % (rc["right"], rc["wrong"]))
+check(rc["wrong"] == 0 and rc["by_answer"].get(GAP, 0) == 21,
+      "the plain recall with the new rule: right %d, wrong %d, the gap held on 21 (%d)" % (rc["right"], rc["wrong"], rc["by_answer"].get(GAP, 0)))
 
 with open(os.path.join(ROOT, "kb", "receipts", "program_requirement_records_named_gaps_2026-11-22_s703w.json"),
           encoding="utf-8") as fh:
@@ -169,7 +196,7 @@ check(keys and keys <= census, "every plan row is a census units_unequal program
 check(all(r["gap"] == GAP and r["after_image"]["checks"].get("gaps") == [GAP]
           and not (r["before_image"]["checks"] or {}).get("gaps") for r in plan["records"]),
       "each row takes the gap, and none filed a gap before")
-check(len(keys) == 29 and plan["collected"] == 29, "the plan holds 29 rows (%d)" % len(keys))
+check(len(keys) == 17 and plan["collected"] == 17, "the plan holds 17 rows (%d)" % len(keys))
 check(not {c for c, _ in keys} & set(HELD_S703), "no plan row at a college held tonight")
 check(not {c for c, _ in keys} & set(G.PARKED), "no plan row at a parked college")
 check(not keys & set(NG.HELD_LISTS), "no plan row is a hand-held record")
