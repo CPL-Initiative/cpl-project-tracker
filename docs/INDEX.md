@@ -68,12 +68,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 6 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 600 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 601 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 95 | [`catalog/lessons.md`](catalog/lessons.md) |
-| Workstream docs | 107 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
+| Workstream docs | 108 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 77 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 660 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1545** | |
+| Session handoffs | 661 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1548** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -124,6 +124,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-22 (S701 SkyMurre, Sam's plain session, full checkpoint): the Subjects page under #3655: #3666 (Edit and Save on the `kb_curation` path; Sam's 30 Cerritos decisions filed under `subjects-s701@bot` with a receipt), #3667 (the noncredit hold lifted on Sam's word), #3669 (Santa Ana's and Mt. San Antonio's credit catalogs), #3670 (the daily build honors saved decisions), #3671 (noncredit saves). Handoff 702 for SkyRazorbill; the Commons lessons compacted into `commons_lessons_archive_2.md`; KB note `methodology-a-page-promise-narrower-than-its-delete-policy`.
 - 2026-11-22 (S700 SkyGuillemot, Sam's plain session, light checkpoint): the Subjects page under #3655: #3660 (the 21 index-linked subject pages filed, 493 courses; the measured recommendations and 108 web searches), #3661 (the course panel at `#commons/subjects/<college>/<code>`), #3662 (SDCCE, Santa Ana School of Continuing Education and Mt. San Antonio noncredit filed; the draft noncredit subject title list inside Subjects; ATH is KINE); Sam's four rulings recorded; the commons lane compacted under 20,000 bytes. Handoff 701.
 - 2026-11-21 (S698 SkyAuklet, second checkpoint, light): the Subjects page under #3655: #3657 (local titles from the catalogs' own headings, in Title Case: 1,334 of 1,629 codes) and #3658 (the labels, the chip that says why a row has no title, the noncredit hold and categories, Sam's 30 Cerritos decisions held). Handoff 700 rewritten.
 - 2026-11-21 (S698 SkyAuklet, Sam's plain session, light checkpoint): #3652 (COBIx's follow-ups on the Exhibits Review card and the Commons front page: *combine* across the Exhibits tab, chips as notes, the details retry, the narrower duplicate flag; colleges and campuses, the stuck words, the term match, the checked catalog address) and #3654 (the dependency map on an hourly timer). Handoff 700.

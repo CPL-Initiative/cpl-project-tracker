@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 700,
-  "moniker": "SkyGuillemot",
+  "session": 701,
+  "moniker": "SkyMurre",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_701_handoff.md",
+  "handoff": "docs/session_702_handoff.md",
   "calls": [
     {
       "title": "The noncredit subject title list",
@@ -19,7 +19,18 @@
       "answer": {
         "by": "Sam",
         "at": "2026-11-22",
-        "words": "\"Looks good. Based on a quick check on my phone. Can we go with it and I can look more closely tomorrow and reverse or change anything that looks wrong?\" The 114 titles stand and the hold lifts; the four categories with no common code keep none (r-noncredit-title-list-go-sam-2026-11-22)."
+        "words": "\"Looks good. Based on a quick check on my phone. Can we go with it and I can look more closely tomorrow and reverse or change anything that looks wrong?\" (in session, about 03:50Z). The 114 titles stand and the hold is lifted (#3667); the four categories with no common code keep none (r-noncredit-title-list-go-sam-2026-11-22). He may change the list after a closer look."
+      }
+    },
+    {
+      "title": "Aligning 192 Cerritos courses whose M-ID sits under another Common SUBJ",
+      "text": "Sam's saved subject decisions put 192 Cerritos courses under a Common SUBJ other than the one their M-ID was minted under; ATH's 84 sit under ATHL against his KINE, and on ordinary titles the decided code and the M-ID agree for 253 of 440. Aligning them is a re-mint under the re-mint playbook, with its dry run and alias map.",
+      "if_no_reply": "Nothing is re-minted; the courses keep their M-IDs and the page shows the decided code beside them.",
+      "link": "https://github.com/CPL-Initiative/cpl-project-tracker/issues/3655",
+      "link_text": "The Subjects brief on issue 3655",
+      "view": {
+        "href": "#commons/subjects/held",
+        "text": "The held subject codes"
       }
     },
     {
@@ -46,13 +57,37 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-22T02:07:41Z",
+  "written_at": "2026-11-22T09:56:08Z",
   "project": "subjects",
   "next_step": {
-    "title": "Edit and Save on the approved kb_curation path",
-    "text": "A signed-in reviewer saves a local title or common code on the Subjects page as one inserted kb_curation row keyed by college, local code and band, with its line in the governance surface map and the privacy check first; then Sam's 29 standing Cerritos decisions and ATH as KINE are filed with a rollback receipt."
+    "title": "Edit from every Subjects surface, clickable counts, full width",
+    "text": "Sam's three asks of 2026-11-22 come first: an Edit word on every Subjects surface, signed in from COBI's header, with one action for a code wrong at several colleges such as AED read as Electricity; the course panel over the main list and every count opening what it counts; and the Subjects surfaces at the window's full width. Then the noncredit saves and the 8 catalog pages a web search found."
   },
   "changes": [
+    {
+      "at": "2026-11-22T09:23:00Z",
+      "text": "Noncredit codes get a save per COCI noncredit category, keyed SUBJ:college|code|nc:category; 275 codes get a noncredit form, 64 span several categories, 37 have no category on file (#3671, open)."
+    },
+    {
+      "at": "2026-11-22T08:51:00Z",
+      "text": "The daily build reads saved subject decisions: a college's save, then a statewide List filing, then the subject map, then a recommendation; codes with a common code rose from 888 to 918. Shell titles such as work experience stay held, and the mint plan equals main's (#3670)."
+    },
+    {
+      "at": "2026-11-22T07:19:00Z",
+      "text": "Santa Ana's and Mt. San Antonio's credit catalogs are filed with their headings; Not read yet fell from 388 to 156 and titled codes rose from 1,412 to 1,636 (#3669)."
+    },
+    {
+      "at": "2026-11-22T05:51:00Z",
+      "text": "The noncredit hold is lifted on Sam's word: the noncredit title list no longer reads as a draft, the 54 held rows became ordinary rows, and noncredit and noncredit enhanced courses show apart (#3667)."
+    },
+    {
+      "at": "2026-11-22T04:45:00Z",
+      "text": "Sam's 30 Cerritos subject decisions are filed in kb_curation under cohort subjects-s701@bot, with a receipt and a rollback beside it."
+    },
+    {
+      "at": "2026-11-22T04:44:00Z",
+      "text": "Edit and Save on the Subjects page: a signed-in reviewer saves a local title or common code as one kb_curation row, and Take it back removes only that reviewer's own save (#3666)."
+    },
     {
       "at": "2026-11-22T01:58:00Z",
       "text": "Three large noncredit catalogs are filed (San Diego College of Continuing Education, Santa Ana School of Continuing Education, Mt. San Antonio noncredit), and a draft noncredit subject title list opens inside Subjects; the list opens on All subjects with a Credit and Noncredit filter, and ATH is KINE (#3662)."

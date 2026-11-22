@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 600,
+   "count": 601,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3102,6 +3102,25 @@
      "title": "A page can hide text that names every course",
      "type": "methodology",
      "updated": "2026-10-11"
+    },
+    {
+     "created": "2026-11-22",
+     "governs": [
+      "commons_subjects.js",
+      "tests/commons_subjects_save.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-page-promise-narrower-than-its-delete-policy.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "supabase",
+      "kb-curation",
+      "write-surface",
+      "commons"
+     ],
+     "title": "A page whose promise is narrower than its table's delete policy filters on the owner",
+     "type": "methodology",
+     "updated": "2026-11-22"
     },
     {
      "created": "2026-09-10",
@@ -14014,7 +14033,7 @@
      ],
      "title": "The Commons \u2014 lessons",
      "type": null,
-     "updated": "2026-11-21"
+     "updated": "2026-11-22"
     },
     {
      "created": "2026-11-14",
@@ -14240,7 +14259,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 107,
+   "count": 108,
    "docs": [
     {
      "created": "2026-05-30",
@@ -15938,6 +15957,20 @@
      "updated": ""
     },
     {
+     "created": "2026-11-22",
+     "governs": [],
+     "path": "docs/commons_lessons_archive_2.md",
+     "status": "internal",
+     "tags": [
+      "lessons",
+      "archive",
+      "commons"
+     ],
+     "title": "The Commons \u2014 lessons archive, part 2 (S648 onward)",
+     "type": null,
+     "updated": "2026-11-22"
+    },
+    {
      "created": "2026-08-19",
      "governs": [
       "kb/supabase_map_cleanup_worklist.sql"
@@ -17410,8 +17443,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 660,
+   "count": 661,
    "docs": [
+    {
+     "created": "2026-11-22",
+     "governs": [],
+     "n": 702,
+     "path": "docs/session_702_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 702 handoff (from SkyMurre, S701, Sam's plain session of 2026-11-22: Subjects Edit and Save, the noncredit hold lifted, two credit catalogs, the build honors saves)",
+     "type": null,
+     "updated": "2026-11-22"
+    },
     {
      "created": "2026-11-22",
      "governs": [],
@@ -28424,5 +28471,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1545
+ "total": 1548
 }
