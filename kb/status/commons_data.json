@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-22T14:09:53Z",
+ "written_at": "2026-11-22T14:47:21Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,8 +168,8 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 16931,
-  "gap": 5404,
+  "passing": 16948,
+  "gap": 5387,
   "with_gap": 118,
   "cost_usd": 1340.28,
   "passed_at_read": 16217,
@@ -190,8 +190,8 @@
  "census_check": {
   "universe": 22335,
   "passing": 16637,
-  "gap": 5404,
-  "collected_with_gaps": 294,
+  "gap": 5387,
+  "collected_with_gaps": 311,
   "discontinued": 0
  },
  "census_live": {
@@ -3685,13 +3685,13 @@
    "harvested": true,
    "slug": "cuesta",
    "programs": 206,
-   "passing": 168,
-   "gap": 38,
+   "passing": 169,
+   "gap": 37,
    "causes": {
     "no_closed_list": 8,
     "page_not_found": 15,
     "places_none": 2,
-    "unknown_without_live": 13
+    "unknown_without_live": 12
    },
    "census_causes": {
     "no_closed_list": 6,
@@ -3749,7 +3749,7 @@
    "run": "39063368678",
    "levers": {
     "reader_page_search": 15,
-    "reconcile_steps": 13,
+    "reconcile_steps": 12,
     "program_course_file_check": 8,
     "reader_page_assignment": 2
    },
@@ -4343,13 +4343,13 @@
    "harvested": true,
    "slug": "el_camino",
    "programs": 189,
-   "passing": 98,
-   "gap": 91,
+   "passing": 100,
+   "gap": 89,
    "causes": {
     "no_closed_list": 54,
     "page_not_found": 9,
     "places_none": 4,
-    "unknown_without_live": 24
+    "unknown_without_live": 22
    },
    "census_causes": {
     "no_closed_list": 54,
@@ -4404,7 +4404,7 @@
    "run": "44480396671",
    "levers": {
     "program_course_file_check": 54,
-    "reconcile_steps": 24,
+    "reconcile_steps": 22,
     "reader_page_search": 9,
     "reader_page_assignment": 4
    },
@@ -5696,12 +5696,12 @@
    "harvested": true,
    "slug": "irvine_valley",
    "programs": 171,
-   "passing": 132,
-   "gap": 39,
+   "passing": 133,
+   "gap": 38,
    "causes": {
     "no_closed_list": 25,
     "page_not_found": 2,
-    "unknown_without_live": 12
+    "unknown_without_live": 11
    },
    "census_causes": {
     "coverage_fails": 3,
@@ -5757,7 +5757,7 @@
    "run": "39539599944",
    "levers": {
     "program_course_file_check": 25,
-    "reconcile_steps": 12,
+    "reconcile_steps": 11,
     "reader_page_search": 2
    },
    "collection": {
@@ -6534,14 +6534,14 @@
    "harvested": true,
    "slug": "los_angeles_harbor",
    "programs": 124,
-   "passing": 97,
-   "gap": 27,
+   "passing": 98,
+   "gap": 26,
    "causes": {
     "found_not_extracted": 1,
     "no_closed_list": 3,
     "page_not_found": 10,
     "places_none": 1,
-    "unknown_without_live": 12
+    "unknown_without_live": 11
    },
    "census_causes": {
     "coverage_fails": 4,
@@ -6597,7 +6597,7 @@
    "read_seconds": 113.3,
    "run": "44687664966",
    "levers": {
-    "reconcile_steps": 12,
+    "reconcile_steps": 11,
     "reader_page_search": 10,
     "program_course_file_check": 3,
     "paid_read": 1,
@@ -6958,13 +6958,13 @@
    "harvested": true,
    "slug": "los_angeles_trade_technical",
    "programs": 211,
-   "passing": 148,
-   "gap": 63,
+   "passing": 150,
+   "gap": 61,
    "causes": {
     "no_closed_list": 23,
     "page_not_found": 20,
     "places_none": 1,
-    "unknown_without_live": 19
+    "unknown_without_live": 17
    },
    "census_causes": {
     "coverage_fails": 8,
@@ -7021,7 +7021,7 @@
    "levers": {
     "program_course_file_check": 23,
     "reader_page_search": 20,
-    "reconcile_steps": 19,
+    "reconcile_steps": 17,
     "reader_page_assignment": 1
    },
    "collection": {
@@ -9193,13 +9193,13 @@
    "harvested": true,
    "slug": "palomar",
    "programs": 342,
-   "passing": 268,
-   "gap": 74,
+   "passing": 271,
+   "gap": 71,
    "causes": {
     "no_closed_list": 11,
     "page_not_found": 49,
     "places_none": 1,
-    "unknown_without_live": 13
+    "unknown_without_live": 10
    },
    "census_causes": {
     "course_added": 1,
@@ -9255,8 +9255,8 @@
    "run": "42371822077",
    "levers": {
     "reader_page_search": 49,
-    "reconcile_steps": 13,
     "program_course_file_check": 11,
+    "reconcile_steps": 10,
     "reader_page_assignment": 1
    },
    "collection": {
@@ -9617,12 +9617,12 @@
    "harvested": true,
    "slug": "rio_hondo",
    "programs": 321,
-   "passing": 278,
-   "gap": 43,
+   "passing": 279,
+   "gap": 42,
    "causes": {
     "no_closed_list": 20,
     "page_not_found": 13,
-    "unknown_without_live": 10
+    "unknown_without_live": 9
    },
    "census_causes": {
     "coverage_fails": 1,
@@ -9680,7 +9680,7 @@
    "levers": {
     "program_course_file_check": 20,
     "reader_page_search": 13,
-    "reconcile_steps": 10
+    "reconcile_steps": 9
    },
    "collection": {
     "program_reader": {
@@ -10798,13 +10798,13 @@
    "harvested": true,
    "slug": "santa_ana",
    "programs": 370,
-   "passing": 328,
-   "gap": 42,
+   "passing": 330,
+   "gap": 40,
    "causes": {
     "extraction_error": 1,
     "no_closed_list": 11,
     "page_not_found": 12,
-    "unknown_without_live": 18
+    "unknown_without_live": 16
    },
    "census_causes": {
     "extraction_error": 1,
@@ -10861,7 +10861,7 @@
    "read_seconds": 7227.4,
    "run": "38843461766",
    "levers": {
-    "reconcile_steps": 17,
+    "reconcile_steps": 15,
     "reader_page_search": 12,
     "program_course_file_check": 11,
     "ge_units_steps": 1,
@@ -11009,13 +11009,13 @@
    "harvested": true,
    "slug": "santa_monica",
    "programs": 256,
-   "passing": 200,
-   "gap": 56,
+   "passing": 204,
+   "gap": 52,
    "causes": {
     "no_closed_list": 16,
     "page_not_found": 9,
     "places_none": 1,
-    "unknown_without_live": 30
+    "unknown_without_live": 26
    },
    "census_causes": {
     "coverage_fails": 1,
@@ -11070,7 +11070,7 @@
    "read_seconds": 286.5,
    "run": "44885033145",
    "levers": {
-    "reconcile_steps": 30,
+    "reconcile_steps": 26,
     "program_course_file_check": 16,
     "reader_page_search": 9,
     "reader_page_assignment": 1
