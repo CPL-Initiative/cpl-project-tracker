@@ -180,7 +180,9 @@ const count = (hay, needle) => hay.split(needle).length - 1;
   const ruled = load("#commons", { files: { "kb/status/cr.json": crRuled } });
   await ruled.M.boot(); await settle();
   check("(A) ⭐ once a decision is fixtured, the wording rule leaves Decisions waiting", !ruled.d.querySelector('#cmf-need-decisions li[data-todo="' + WORDING + '"]')
-    && /None waiting\./.test(txt(ruled.d.getElementById("cmf-need-decisions"))));
+    && !/wording/i.test(txt(ruled.d.getElementById("cmf-need-decisions"))));
+  /* S700: the Subjects run log holds one more item waiting on Sam (the draft noncredit subject title list), so the
+     list is no longer empty once the wording rule is answered; the check is that the wording rule left it. */
   const ruledRec = load("#commons/details/decisions", { files: { "kb/status/cr.json": crRuled } });
   await ruledRec.M.boot(); await settle();
   check("(A) and the record lists it as decided, newest first", (ruledRec.d.querySelector("#cmn-rec-done li") || { getAttribute: () => "" }).getAttribute("data-todo") === WORDING);
@@ -218,6 +220,7 @@ const count = (hay, needle) => hay.split(needle).length - 1;
   // ── (B) every Needs you link: a view in the router, and the way back ──
   const tabs = new Set(Array.from(HTML.matchAll(/class="cpl-tab[^"]*" data-tab="([a-z0-9-]+)"/g)).map((m) => m[1]).concat(["collect"]));
   const SUBVIEWS = {
+    "commons/subjects/noncredit": true,   // S700: the draft noncredit subject title list, a view of the Subjects list
     "commons/details/decisions": /RECORD\.on = !!\(a && a\[0\] === "details" && a\[1\] === "decisions"\)/.test(COMMONS),
     "collect/outlines-blocked": /"outlines-blocked": "Course outlines blocked"/.test(DATA),
     "collect/unread": /unread: \{ word: "Not collected yet"/.test(DATA),

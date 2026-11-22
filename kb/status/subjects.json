@@ -1,11 +1,22 @@
 {
   "schema": 1,
-  "session": 695,
-  "moniker": "SkyShearwater",
+  "session": 700,
+  "moniker": "SkyGuillemot",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_696_handoff.md",
+  "handoff": "docs/session_701_handoff.md",
   "calls": [
+    {
+      "title": "The draft noncredit subject title list",
+      "text": "The list holds 129 headings from the four large noncredit programs as 114 titles. Sam settles which headings join one title, and whether Citizenship, Health and Safety, substantial disabilities and Workforce Preparation take a common code or none.",
+      "if_no_reply": "The noncredit hold stands and the list stays a draft.",
+      "link": "https://github.com/CPL-Initiative/cpl-project-tracker/issues/3655#issuecomment-7071038844",
+      "link_text": "The ask on issue 3655",
+      "view": {
+        "href": "#commons/subjects/noncredit",
+        "text": "The draft noncredit subject title list"
+      }
+    },
     {
       "title": "Two forestry courses still sit on AGRI under a parent on ENVR",
       "text": "Open Asks Sheet 105 card 1: AGRI M10SY Forest Surveying and AGRI M1104 Introduction to Forest Operations are merged into Forest Ecology, which moved to ENVR on Sheet 104. The dry run that moves both to ENVR is committed; the session's permission check held its apply.",
@@ -30,13 +41,25 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-21T03:53:25Z",
+  "written_at": "2026-11-22T02:07:41Z",
   "project": "subjects",
   "next_step": {
-    "title": "Save a person's common subject code for a held local code",
-    "text": "The held view lists 416 local subject codes on which the pile mint holds 1,341 courses. Next, saving a person's choice from that view into the subject map by a committed change, and a session pass over the codes that read the same at every college using them."
+    "title": "Edit and Save on the approved kb_curation path",
+    "text": "A signed-in reviewer saves a local title or common code on the Subjects page as one inserted kb_curation row keyed by college, local code and band, with its line in the governance surface map and the privacy check first; then Sam's 29 standing Cerritos decisions and ATH as KINE are filed with a rollback receipt."
   },
   "changes": [
+    {
+      "at": "2026-11-22T01:58:00Z",
+      "text": "Three large noncredit catalogs are filed (San Diego College of Continuing Education, Santa Ana School of Continuing Education, Mt. San Antonio noncredit), and a draft noncredit subject title list opens inside Subjects; the list opens on All subjects with a Credit and Noncredit filter, and ATH is KINE (#3662)."
+    },
+    {
+      "at": "2026-11-22T00:43:00Z",
+      "text": "A local code opens that college's courses in a side panel, credit and noncredit apart, each with its C-ID, CCN and M-ID (#3661)."
+    },
+    {
+      "at": "2026-11-22T00:21:00Z",
+      "text": "The 21 subject pages the catalog indexes link are read and filed (493 courses), and each row with no title shows a recommended local title or common code with its measured level; 108 web searches are filed for the Not in catalog rows (#3660)."
+    },
     {
       "at": "2026-11-21T03:20:00Z",
       "text": "The held view, opened from a figure on the Subjects card, lists the local subject codes the pile mint holds on: 1,341 courses, 416 codes, 678 college-and-code pairs."
