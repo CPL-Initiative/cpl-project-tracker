@@ -1,0 +1,201 @@
+All Fields
+HSDP 403 - INDEPENDENT STUDY
+Cover
+Course Number
+403
+Subject
+HSDP
+Course Title
+INDEPENDENT STUDY
+Short Title
+INDEPENDENT STUDY
+Effective Semester
+2012 Fall
+CB04: Credit Status
+N - Non Credit
+CB05: Transfer Status
+C - Not transferable
+CB08: Basic Skills
+B - Basic Skills
+Main
+CB11 Classification K - Other Noncredit Enhanced Funding
+CB22 Non-Credit Category C - Elementary and Secondary Basic Skills
+Grading Method
+Grade Options Letter Grade Only
+Grade Graded
+Catalog Description
+This course is designed as an alternative approach to classroom instruction using a variety of instructional materials specifically selected for mastery of course objectives. Students receive individualized course materials developed to meet their specific educational needs. Skills assessment is a prerequisite to the selection of appropriate instructional media or delivery systems. The goal of the instructor who is utilizing instructional technology as an alternative approach is to put learning as much as possible in the hand of the learner. (FT)
+Originating Campus
+Colleges
+Continuing Education
+Proposal Information
+Reason For Proposed Action
+Import
+Costs
+0
+Field Trips May be required
+This is a CTE Course No
+Codes
+CB03: TOP Code 493062 - Secondary Education (Grades 9-12) and G.E.D.
+CIP Code
+CB09: SAM Code E - Non-Occupational
+CB04: Credit Status (DO NOT DELETE. Needed for show / hide to work. The width and height have been set to 0 so the field appears hidden.) N - Non Credit
+Goals
+Course Goals
+Goals Text
+See specific course outline.
+Legacy Data
+See specific course outline.
+Disciplines
+Minimum Qualification
+Minimum Qualification Interdisciplinary-Basic Skills: Noncredit
+Additional Required Qualifications
+Condition
+Hours/Units
+Lecture Hours
+Min Lecture Hours
+Max Lecture Hours
+Lab Hours
+Min Lab Hours
+Max Lab Hours
+Lecture/Lab
+Min Lab/Lecture Hours
+Max Lab/Lecture Hours
+Min Total Hours 90.000
+Max Total Hours 90.000
+Additional Information
+Combined Lecture/Lab Hours
+Content
+Course Lecture Content (Use outline format)
+
+Course content standards meet or exceed the standards for the high school curriculum established by the California Department of Education for the courses listed.
+
+See specific course outline for:
+
+HSDP 403 Independent Study
+HSDP 409 English 3-4
+HSDP 411 English 3-4, Second Semester
+HSDP 413A Contemporary Voices 1
+HSDP 413B Contemporary Voices 2
+HSDP 414 American Literature 1&2
+HSDP 415 Reading Improvement
+HSDP 416 American Literature 1&2 Sem 2
+HSDP 427 United States Government 1
+HSDP 432 Economics
+HSDP 433 United States History 1
+HSDP 436 20TH Century U.S. History 2
+HSDP 448 G.E.D. Preparation
+HSDP 451 G.E.D. Mathematics
+HSDP 461 Physics 1
+HSDP 465 Algebra 3-4
+HSDP 466 Algebra 3-4, Second Semester
+HSDP 467A Unifying Algebra/Geometry 1
+HSDP 467B Unifying Algebra/Geometry 2
+HSDP 478 World Hist/Geography/Econ 1
+HSDP 479 World Hist/Geography/Econ 2
+HSDP 500 Pre-Algebra, Semester 1
+HSDP 501 Pre-Algebra, Semester 2
+HSDP 506 Algebra 1-2, Semester 1
+HSDP 507 Algebra 1-2, Semester 2
+HSDP 511 Biology 1
+HSDP 512 Biology 2
+INTD 501 Career Development
+Course Lab/Activity Content
+Student Learning Objectives
+Upon successful completion of the course the student will be able to:
+Objective Text
+See specific course outline.
+Legacy Data
+See specific course outline.
+Assignments
+Reading Assignments
+Optional Text
+Assignments
+See specific course outline.
+Writing Assignments
+Optional Text
+Assignments
+See specific course outline.
+Appropriate Outside Assignments
+Optional Text
+Assignments
+See specific course outline.
+Appropriate Assignments that Demonstrate Critical Thinking
+Optional Text
+Assignments
+See specific course outline.
+Methods of Evaluation
+Text box for Common Course Numbering (CCN) only.
+Evaluation Method
+Essay/Paper
+Exams
+Laboratory Assignments
+Research Project
+If you selected "Other", please provide details.
+Legacy Data
+A student’s grade will be based on multiple measures of performance. This may include, but is not limited to: pre/post testing, mastery testing, written assignments, final examinations, research projects. Upon successful completion of each individual course a Certificate of Course Completion will be issued. Upon successful completion of all courses included in the program a Certificate of Program Completion will be issued.
+Methods of Instruction
+Check all that apply:
+Lecture
+Laboratory
+Lecture Discussion
+Collaborative Learning
+If you selected "Other", please provide details.
+Legacy Data
+The primary method of instruction will be self-paced individualized programs, but may also include lectures, laboratory, classroom discussions, cooperative learning and field trips. This course, or sections of this course, may be offered through distance education.
+Distance Ed
+Does this course have a DE component?
+Colleges
+Outside-of-Class Hours
+Min Outside-of-Class Hours
+Max Outside-of-Class Hours
+Textbooks/Resources
+Is there a Zero Textbook Cost listed for this course?
+Please explain why a Zero Cost textbook option is not included in the resource list
+Does your department have a commitment to using free, or low cost resources in all offerings of this course?
+Describe any additional strategies the department is using to lower the cost of resources students need when they enroll in this course.
+Zero Textbook Cost (ZTC) and/or Open Educational Resource(s) (OER)
+Textbooks
+Periodicals
+Manual
+Software
+Other Learning Materials
+Other
+See specific course outline. 
+Material may be supplemented with appropriate workbooks, handouts, software.
+I have entered at least one resource
+Supplies (Instructional Materials)
+Enrollment Conditions
+Course has additional instructional materials fees No
+Explanation
+Supplies (Instructional Materials)
+Requisites
+Course Requisites
+Requisite Type
+Subject
+Course # and Title
+Comment
+See specific course outline. Possess an 8th grade reading and math level and ability to communicate effectively in the English language.
+Enrollment Limitation
+Requirement Type
+Conditions of Enrollment Catalog View
+Content Review
+Is there a Course Requisite?
+Content Review
+Attachments
+Attached File
+HSDP 403 INDEPENDENT STUDY.pdf
+Tech Review
+CB10: Work Experience N - Is not part of a cooperative work experience education program.
+CB13: Special Class Status N - Course is not a special class.
+Course Prior to College Level (CB21) Y - Not applicable
+Funding Agency Category (CB23) Y - Not Applicable (funding not used to develop course)
+Course Program Status (CB24)
+Continuing Education
+CB24: Program Status 1 - Program Applicable
+Course Gen Education Status (CB25)
+Not Applicable
+Course Support Course Status (CB26) N - Course is not a support course
+CB27: Upper Division Status N - Course is not an upper division course
+Major Restriction Code
+Comments

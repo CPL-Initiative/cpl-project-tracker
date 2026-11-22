@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-22T12:40:11Z",
+ "written_at": "2026-11-22T13:18:51Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -158,7 +158,7 @@
   "coe": "The regional labor market crosswalk is committed but not yet read per college here.",
   "loaded": "The load time is a column of the live program requirements table, which this file does not carry.",
   "owners": "The gap census names the change that would move each program, not who makes it; an owner joins each ask when the asks are filed with one.",
-  "slo": "Course SLO reads are committed for 25 hosts under kb/course_outcomes/<host>/, not yet read per college here; the SLO queue's state shows where the queue holds a college.",
+  "slo": "Course SLO reads are committed for 26 hosts under kb/course_outcomes/<host>/, not yet read per college here; the SLO queue's state shows where the queue holds a college.",
   "objectives": "Course objectives are committed for 16 hosts (ccc, cccd, chabot, craftonhills, cuesta, hancockcollege, laspositas, palomar, rccd, redwoods, riohondo, sac, saddleback, sdccd, shasta, siskiyous) under kb/course_outcomes/<host>/, not yet read per college here."
  },
  "statewide": {
@@ -177,7 +177,7 @@
   "spent_usd": 1234.69,
   "spent_runs": 184,
   "spent_since": "2026-11-17",
-  "slo_waiting": 10,
+  "slo_waiting": 9,
   "scouted": 11,
   "scout_barrier": 1,
   "spot_checked": 8,
@@ -10291,18 +10291,16 @@
     "at": "2026-11-21 22:26Z"
    },
    "programs_file": "kb/status/commons_data_programs/san_diego_of_continuing_education.json",
-   "outcomes_file": null,
-   "outline_system": null,
+   "outcomes_file": "kb/status/commons_data_programs/san_diego_of_continuing_education.outcomes.json",
+   "outline_system": [
+    "curriqunet"
+   ],
    "objectives_printed": null,
    "read_at": "2026-11-20T12:54:40Z",
    "read_kind": "capture",
    "cost_usd": 4.56,
    "passed_at_read": 96,
-   "slo_queue": {
-    "state": "held",
-    "why": "the sdccd.curriqunet.com dashboard made no NewSearch request on either index run, so the index found none of its 242 course codes; the census found SLOs on report 4 there, so the host prints them and the index cannot reach its course list",
-    "on": "2026-11-19"
-   },
+   "slo_queue": null,
    "scout": null,
    "spot_check": null,
    "confidence": {
@@ -10344,7 +10342,13 @@
      "cost_usd": 4.56,
      "platform": "pdf"
     },
-    "slo_read": null,
+    "slo_read": {
+     "run": "45018663453",
+     "at": "2026-11-22T12:11:17Z",
+     "system": "curriqunet",
+     "source_kind": "course_outline",
+     "file": "kb/course_outcomes/sdccd/read_45018663453_p1of1.json"
+    },
     "plo_programs": 0,
     "ppm_member": null,
     "maps": {

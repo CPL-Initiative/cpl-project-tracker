@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-22T06:22:14Z",
+ "written_at": "2026-11-22T13:18:43Z",
  "rows": [
   {
    "key": "requirements",
@@ -383,7 +383,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-19T06:22:43Z",
+    "at": "2026-11-21T09:52:22-08:00",
     "every_hours": null
    },
    "facts": {
@@ -584,9 +584,9 @@
    ],
    "pair": [
     {
-     "n": 89735,
+     "n": 89769,
      "of": null,
-     "words": "outcomes read from 25,313 courses at 34 colleges",
+     "words": "outcomes read from 25,319 courses at 35 colleges",
      "open": "#coci-lookup"
     }
    ],
@@ -594,8 +594,8 @@
     "read from the public outline"
    ],
    "facts": {
-    "outcomes": 89735,
-    "courses": 25313,
+    "outcomes": 89769,
+    "courses": 25319,
     "colleges": [
      "allan_hancock",
      "cabrillo",
@@ -628,15 +628,16 @@
      "san_diego_city",
      "san_diego_mesa",
      "san_diego_miramar",
+     "san_diego_of_continuing_education",
      "santa_ana",
      "santiago_canyon",
      "shasta"
     ],
-    "reads": 78
+    "reads": 79
    },
    "machine": {
     "what": "the last outline read",
-    "at": "2026-11-21T15:32:09Z",
+    "at": "2026-11-22T12:11:17Z",
     "every_hours": null
    },
    "sources": [
@@ -1076,6 +1077,17 @@
     }
    ],
    "at": "2026-11-22T06:21:23Z"
+  },
+  {
+   "kind": "decision",
+   "project": "subjects",
+   "n": 1,
+   "title": "Aligning 192 Cerritos courses whose M-ID sits under another Common SUBJ",
+   "teaches": "Sam's saved subject decisions put 192 Cerritos courses under a Common SUBJ other than the one their M-ID was minted under; ATH's 84 sit under ATHL against his KINE, and on ordinary titles the decided code and the M-ID agree for 253 of 440. Aligning them is a re-mint under the re-mint playbook, with its dry run and alias map.",
+   "open": "https://github.com/CPL-Initiative/cpl-project-tracker/issues/3655",
+   "todo_id": null,
+   "chosen": "Nothing is re-minted; the courses keep their M-IDs and the page shows the decided code beside them.",
+   "stop": "It stands unless you change it."
   },
   {
    "kind": "job",

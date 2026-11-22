@@ -1,0 +1,586 @@
+All Fields
+ELRN 451 - ELECTRONIC TECHNICIAN I
+Cover
+Course Number
+451
+Subject
+ELRN
+Course Title
+ELECTRONIC TECHNICIAN I
+Short Title
+ELECTRONIC TECHNICIAN I
+Effective Semester
+2021 Fall
+CB04: Credit Status
+N - Non Credit
+CB05: Transfer Status
+C - Not transferable
+CB08: Basic Skills
+N - Not Basic Skills
+Main
+CB11 Classification K - Other Noncredit Enhanced Funding
+CB22 Non-Credit Category I - Short-term Vocational: Includes programs with high employment potential
+Grading Method
+Grade Options Letter Grade Only
+Grade Graded
+Catalog Description
+This is an open-entry/exit course that is designed to teach skills required for entry-level employment as an electronic technician. Students will learn the fundamentals of electricity, DC and AC circuit theory, electronic devices and basic communications electronics. Instruction includes the operation of test instruments, basic programming for testing, problem solving and safety practices and procedures. Instruction will take place in a simulated workplace enabling students to gain the necessary workplace skills. (FT)
+Originating Campus
+Colleges
+Continuing Education
+Proposal Information
+Reason For Proposed Action
+Import
+Costs
+0
+Field Trips May be required
+This is a CTE Course Yes
+Codes
+CB03: TOP Code 093400 - Electronics and Electric Technology
+CIP Code
+CB09: SAM Code C - Clearly Occupational
+CB04: Credit Status (DO NOT DELETE. Needed for show / hide to work. The width and height have been set to 0 so the field appears hidden.) N - Non Credit
+Goals
+Course Goals
+Goals Text
+Introduce the principles and practices of electrical theory, direct current and alternating current circuits and computer technology that the electronic technician will use in the electronic component fabrication industry today.
+Goals Text
+Provide the student with instruction and practical experience necessary to safely perform electronic component identification and basic troubleshooting.
+Goals Text
+Introduce electronic testing and troubleshooting techniques and practices using computerized equipment to assist in identification and repair of electronic components to identified acceptable standards.
+Goals Text
+Enhance the student's workplace skills including soft skills, math, communications, business ethics, etc., necessary to succeed in the electronics industry.
+Legacy Data
+1. Introduce the principles and practices of electrical theory, direct current and alternating current circuits and computer technology that the electronic technician will use in the electronic component fabrication industry today. 2. Provide the student with instruction and practical experience necessary to safely perform electronic component identification and basic troubleshooting. 3. Introduce electronic testing and troubleshooting techniques and practices using computerized equipment to assist in identification and repair of electronic components to identified acceptable standards. 4. Enhance the student's workplace skills including soft skills, math, communications, business ethics, etc., necessary to succeed in the electronics industry.
+Disciplines
+Minimum Qualification
+Hours/Units
+Lecture Hours
+Min Lecture Hours
+Max Lecture Hours
+Lab Hours
+Min Lab Hours
+Max Lab Hours
+Lecture/Lab
+Min Lab/Lecture Hours
+Max Lab/Lecture Hours
+Min Total Hours 450.000
+Max Total Hours 450.000
+Additional Information
+Combined Lecture/Lab Hours
+Content
+Course Lecture Content (Use outline format)
+
+Module 1 Orientation & Safety - 10 hrs
+
+Orientation
+Course Syllabus
+Program
+Facilities
+Industry Trends
+Management
+Finances
+Labor issues
+Safety Orientation
+Facilities
+Safety equipment
+Types
+Common types of injuries
+Electrical burns
+Chemical hazards
+Tool safety
+Hand tools
+Electrical tools
+Fire safety
+Escape procedures
+Overloading
+Equipment safety
+Grounding
+High voltage
+Right to Know
+Material Safety Data Sheets (MSDS)
+
+ Module 2 DC - 55 hrs
+
+Basic Concepts of Electricity
+Static electricity
+Conductors, insulators, and electron flow
+Electric circuits
+Voltage and current
+Resistance
+Voltage and current in a practical circuit
+Conventional versus electron flow
+OHM's Law
+How voltage, current, and resistance relate
+An analogy for Ohm's Law
+Power in electric circuits
+Calculating electric power
+Resistors
+Nonlinear conduction
+Circuit wiring
+Polarity of voltage drops
+Computer simulation of electric circuits
+Electrical Safety
+The importance of electrical safety
+Physiological effects of electricity
+Shock current path
+Safe practices
+Emergency response
+Common sources of hazard
+Safe circuit design
+Safe meter usage
+Scientific Notation And Metric Prefixes
+Scientific notation
+Arithmetic with scientific notation
+Metric notation
+Metric prefix conversions
+Hand calculator use
+Scientific notation in SPICE
+Series And Parallel Circuits
+What are "series" and "parallel" circuits?
+Simple series circuits
+Simple parallel circuits
+Conductance
+Power calculations
+Correct use of Ohm's Law
+Component failure analysis
+Building simple resistor circuits
+Divider Circuits And Kirchhoff's Laws
+Voltage divider circuits
+Kirchhoff's Voltage Law (KVL)
+Current divider circuits
+Kirchhoff's Current Law (KCL)
+Series-Parallel Combination Circuits
+What is a series-parallel circuit?
+Analysis technique
+Re-drawing complex schematics
+Component failure analysis
+Building series-parallel resistor circuits
+DC Network Analysis
+What is network analysis?
+Branch current method
+Mesh current method
+Node voltage method
+Introduction to network theorems
+Superposition Theorem
+Thevenin's Theorem
+Norton's Theorem
+Thevenin - Norton equivalencies
+Maximum Power Transfer Theorem
+-Y and Y- conversions
+Physics Of Conductors And Insulators
+Introduction
+Conductor size
+Conductor ampacity
+Fuses
+Specific resistance
+Temperature coefficient of resistance
+Superconductivity
+Insulator breakdown voltage
+Capacitors
+Electric fields and capacitance
+Capacitors and calculus
+Factors affecting capacitance
+Series and parallel capacitors
+Practical considerations
+Inductors
+Magnetic fields and inductance
+Inductors and calculus
+Factors affecting inductance
+Series and parallel inductors
+Practical considerations
+Rc And L/R Time Constants
+Electrical transients
+Capacitor transient response
+Inductor transient response
+Voltage and current calculations
+Complex voltage and current calculations
+Complex circuits
+Solving for unknown time
+
+Module 3 AC - 115 hrs
+
+Basic Ac Theory
+What is alternating current (AC)?
+AC waveforms
+Measurements of AC magnitude
+Simple AC circuit calculations
+AC phase
+Principles of radio
+Complex Numbers
+Introduction
+Vectors and AC waveforms
+Simple vector addition
+Complex vector addition
+Polar and rectangular notation
+Complex number arithmetic
+More on AC "polarity"
+Some examples with AC circuits
+Reactance And Impedance - Inductive
+AC resistor circuits
+AC inductor circuits
+Series resistor-inductor circuits
+Parallel resistor-inductor circuits
+Reactance And Impedance - Capacitive
+AC resistor circuits
+AC capacitor circuits
+Series resistor-capacitor circuits
+Parallel resistor-capacitor circuits
+Reactance And Impedance - R, L, and C
+Review of R, X, and Z
+Series R, L, and C
+Parallel R, L, and C
+Series-parallel R, L, and C
+Susceptance and Admittance
+Resonance
+An electric pendulum
+Simple parallel (tank circuit) resonance
+Simple series resonance
+Applications of resonance
+Resonance in series-parallel circuits
+Q and bandwidth of a resonant circuit
+Mixed-Frequency Ac Signals
+Introduction
+Square wave signals
+Other waveshapes
+Circuit effects
+Filters
+What is a filter?
+Low-pass filters
+High-pass filters
+Band-pass filters
+Band-stop filters
+Resonant filters
+Transformers
+Mutual inductance and basic operation
+Step-up and step-down transformers
+Electrical isolation
+Phasing
+Winding configurations
+Voltage regulation
+Polyphase Ac Circuits
+Single-phase power systems
+Three-phase power systems
+Phase rotation
+Polyphase motor design
+Three-phase Y and Delta configurations
+Three-phase transformer circuits
+Harmonics in polyphase power systems
+Harmonic phase sequences
+Power Factor
+Power in resistive and reactive AC circuits
+True, Reactive, and Apparent power
+Calculating power factor
+Practical power factor correction
+AC Metering Circuits
+AC voltmeters and ammeters
+Frequency and phase measurement
+Power measurement
+Power quality measurement
+AC bridge circuits
+AC instrumentation transducers
+
+Module 4 Electronics - 150 hrs
+
+Amplifiers And Active Devices
+From electric to electronic
+Active versus passive devices
+Amplifiers
+Amplifier gain
+Decibels
+Absolute dB scales
+Attenuators
+Solid-State Device Theory
+Introduction
+Quantum physics
+Valence and Crystal structure
+Band theory of solids
+Electrons and ``holes''
+The P-N junction
+Junction diodes
+Bipolar junction transistors
+Junction field-effect transistors
+Insulated-gate field-effect transistors (MOSFET)
+Semiconductor manufacturing techniques
+Superconducting devices
+Quantum devices
+Semiconductor devices in SPICE
+Diodes And Rectifiers
+Introduction
+Meter check of a diode
+Diode ratings
+Rectifier circuits
+Peak detector
+Clipper circuits
+Clamper circuits
+Voltage multipliers
+Inductor commutating circuits
+Diode switching circuits
+Zener diodes
+Special-purpose diodes
+Other diode technologies
+Bipolar Junction Transistors
+Introduction
+The transistor as a switch
+Meter check of a transistor
+Active mode operation
+The common-emitter amplifier
+The common-collector amplifier
+The common-base amplifier
+The cascode amplifier
+Biasing techniques
+Biasing calculations
+Input and output coupling
+Amplifier impedances
+Current mirrors
+Junction Field-Effect Transistors
+Introduction
+The transistor as a switch
+Meter check of a transistor
+Active-mode operation
+The common-source amplifier
+The common-drain amplifier
+The common-gate amplifier
+Depletion-type
+Enhancement-type
+Biasing techniques
+Operational Amplifiers
+Introduction
+Single-ended and differential amplifiers
+The "operational" amplifier
+Negative feedback
+Divided feedback
+An analogy for divided feedback
+Voltage-to-current signal conversion
+Averager and summer circuits
+Building a differential amplifier
+The instrumentation amplifier
+Differentiator and integrator circuits
+Positive feedback
+Practical considerations
+Operational amplifier models
+Practical Analog Semiconductor Circuits
+ElectroStatic Discharge
+Power supply circuits
+Amplifier circuits
+Oscillator circuits
+Phase-locked loops
+Computational circuits
+Measurement circuits
+Control circuits
+
+Module 5 Computer Technology - 120 hrs
+
+Computer & Interface as a Test Instrument
+Introduction
+Inside and outside PC
+Keyboard, LCD display
+Serial Interface RS232, SESI, USB, IEEE 1394
+CPU, memories
+Hardware installations
+Printers
+Using Windows as a Test Instrument
+Windows and PC
+Working with files
+Creating folders, subfolders
+Copying, moving, deleting files
+Networks for Electronic Testing
+Programming Test Instruments
+Local Area Networks (LANs)
+Working on the network
+Sharing files
+Sharing printers
+Finding computers on the network
+Programming in C++
+Basic internet & Email understanding
+Searching on the internet
+Course Lab/Activity Content
+Student Learning Objectives
+Upon successful completion of the course the student will be able to:
+Objective Text
+Demonstrate safety requirements and practices utilized in the electronics industry.
+Objective Text
+Understand and utilize the terminology of electronic components and test equipment when communicating with instructors, staff and students.
+Objective Text
+Identify DC and AC circuits, and components in an electronic assembly.
+Objective Text
+Set up computerized test equipment, troubleshoot and safely operate electronic testing equipment found in industry to industry acceptable standards.
+Legacy Data
+1. Demonstrate safety requirements and practices utilized in the electronics industry. 2. Understand and utilize the terminology of electronic components and test equipment when communicating with instructors, staff and students. 3. Identify DC and AC circuits, and components in an electronic assembly. 4. Set up computerized test equipment, troubleshoot and safely operate electronic testing equipment found in industry to industry acceptable standards.
+Assignments
+Reading Assignments
+Optional Text
+Assignments
+
+Course text book, informational handouts, related trade magazines and internet articles.
+
+Writing Assignments
+Optional Text
+Assignments
+
+Completing assigned reports, providing written answers to assigned questions, performing arithmetic calculations as assigned and completing shop and/or job orders.
+
+Appropriate Outside Assignments
+Optional Text
+Assignments
+
+Analysis and evaluation of reading and/or classroom materials and utilize this analysis in classroom discussions, writing assignments, and in performing laboratory activities. Students must select and use appropriate methods and materials needed to complete laboratory assignments.
+
+Appropriate Assignments that Demonstrate Critical Thinking
+Optional Text
+Assignments
+
+Students are expected to spend a minimum of one hour per day outside of the class in practice and preparation for each day in class.
+
+Internet research, readings, preparing research reports, preparing appropriate writing assignments and studying as needed to perform successfully in class.
+
+Methods of Evaluation
+Text box for Common Course Numbering (CCN) only.
+Evaluation Method
+Laboratory Assignments
+Participation
+Quizzes
+If you selected "Other", please provide details.
+Legacy Data
+A student's grade will be based on multiple measures of performance related to the course objectives. The assessment will measure development of independent critical thinking skills and will include evaluation of the student's ability. Multiple measures may include, but are not limited to the following: quizzes, lab projects, classroom participation, and attendance. Upon successful completion of the course a Certificate of Course Completion will be issued. Upon successful completion of this course and Electronic Technician II a Certificate of Program Completion will be issued.
+Methods of Instruction
+Check all that apply:
+Lecture
+Laboratory
+Computer Assisted Instruction
+Audio-Visual
+Collaborative Learning
+Shadowing
+If you selected "Other", please provide details.
+Legacy Data
+Methods of instruction will include, but are not limited to; lectures, demonstrations, laboratory, audio-visual presentations and computer assisted instruction. Classroom lectures, demonstration, laboratory, computer assisted instruction, computer assisted in simulation analog and digital labs, computer assisted in semi-automatic testing and troubleshooting. Group and individual instructions, field trips, guess speakers, job shadowing and internships/externships may also be utilized. This course, or sections of this course, may be offered through distance education.
+Distance Ed
+Does this course have a DE component?
+Colleges
+Outside-of-Class Hours
+Min Outside-of-Class Hours
+Max Outside-of-Class Hours
+Textbooks/Resources
+Is there a Zero Textbook Cost listed for this course? Yes
+Please explain why a Zero Cost textbook option is not included in the resource list
+Does your department have a commitment to using free, or low cost resources in all offerings of this course?
+Describe any additional strategies the department is using to lower the cost of resources students need when they enroll in this course.
+Zero Textbook Cost (ZTC) and/or Open Educational Resource(s) (OER)
+Text\Other
+Author(s)
+Title
+Edition
+Publisher
+Year
+Website
+Is this a classic textbook? No
+ISBN #
+Additional Textbook Information
+Textbook Transfer Data
+Text\Other
+Author(s)
+Title
+Edition
+Publisher
+Year
+Website
+Is this a classic textbook? No
+ISBN #
+Additional Textbook Information
+Textbook Transfer Data
+Textbooks
+Text Text
+Author(s) Robbins & Miller
+Title Circuit Analysis Theories and Practice
+Edition current
+Publisher Delmar
+Year 2003
+Is this a classic textbook? No
+ISBN # NA
+Additional Textbook Information
+Text Text
+Author(s) Grob
+Title Basic Electronics
+Edition current
+Publisher McGraw-Hill
+Year 2010
+Is this a classic textbook? No
+ISBN # NA
+Additional Textbook Information
+Text Text
+Author(s) Mitchel E. Schultz
+Title Grob’s Basic Electronics
+Edition current
+Publisher McGraw-Hill
+Year 2006
+Is this a classic textbook? No
+ISBN # NA
+Additional Textbook Information
+Text Text
+Author(s) Floyd
+Title Digital Fundamentals
+Edition current
+Publisher Prentice Hall
+Year 2005
+Is this a classic textbook? No
+ISBN # NA
+Additional Textbook Information
+Text Text
+Author(s) David L. Heiserman
+Title Electronic Communication Systems
+Edition current
+Publisher McGraw-Hill
+Year 1996
+Is this a classic textbook? No
+ISBN # NA
+Additional Textbook Information
+Text Text
+Author(s) Frenzel
+Title Principal of Electronic Communication Systems
+Edition current
+Publisher McGraw-Hill
+Year 2007
+Is this a classic textbook? No
+ISBN # NA
+Additional Textbook Information
+Periodicals
+Manual
+Software
+Other Learning Materials
+Other
+I have entered at least one resource Yes
+Supplies (Instructional Materials)
+Enrollment Conditions
+Course has additional instructional materials fees No
+Explanation
+Supplies (Instructional Materials)
+Requisites
+Course Requisites
+Requisite Type Advisory
+Subject
+Course # and Title
+Comment
+Basic computer knowledge and internet search skills.
+Enrollment Limitation
+Requirement Type
+Conditions of Enrollment Catalog View
+Content Review
+Is there a Course Requisite?
+Content Review
+Attachments
+Attached File
+ELRN 451 ELECTRONIC TECHNICIAN I.pdf
+Tech Review
+CB10: Work Experience N - Is not part of a cooperative work experience education program.
+CB13: Special Class Status N - Course is not a special class.
+Course Prior to College Level (CB21) Y - Not applicable
+Funding Agency Category (CB23) Y - Not Applicable (funding not used to develop course)
+Course Program Status (CB24)
+Continuing Education
+CB24: Program Status 1 - Program Applicable
+Course Gen Education Status (CB25)
+Not Applicable
+Course Support Course Status (CB26) N - Course is not a support course
+CB27: Upper Division Status N - Course is not an upper division course
+Major Restriction Code
+Comments
