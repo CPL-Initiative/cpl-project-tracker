@@ -1077,9 +1077,12 @@ IRVINE_VALLEY_RECALL = os.path.join(HERE, "course_outcomes", "irvine_valley_reca
 # A host's recall file, or, where one host holds two colleges' outlines, each college's own file by its slug. Irvine
 # Valley's outlines sit on Saddleback's host, printed by another report (198, Official Course Outline of Record, where
 # Saddleback's is 201), so each college's count opens a read for that college alone (S697).
+# Peralta's four colleges read lan.curriqunet.com as one set, the page's own college deciding each row (S703).
+PERALTA_RECALL = os.path.join(HERE, "course_outcomes", "peralta_recall.json")
 RECALL_BY_HOST = {"ccsf.curricunet.com": CCSF_RECALL, "riohondo.curriqunet.com": RIO_HONDO_RECALL,
                   "saddleback.curriqunet.com": {"saddleback": SADDLEBACK_RECALL,
-                                                "irvine_valley": IRVINE_VALLEY_RECALL}}
+                                                "irvine_valley": IRVINE_VALLEY_RECALL},
+                  "lan.curriqunet.com": PERALTA_RECALL}
 
 
 def recall_path(host: str, slugs: str | None = None) -> str | None:

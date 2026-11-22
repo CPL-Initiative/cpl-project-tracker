@@ -497,13 +497,13 @@ def _():
        "the bold outcome without its assessment methods, no CB data element, the Exit Skills objectives, and the "
        "college the page prints; the row files no page text and no Originator")
 def _():
-    want = json.load(open(PERALTA_RECALL))
-    assert want["trial"] == "45026998155" and len(want["pages"]) == 5
+    want = {"%s | %s" % ("ART 024" if cid == 19484 else "ART 001", college): {"course_id": cid, "slo": s, "objective": o}
+            for cid, _slug, college, s, o in PERALTA_PAGES}
     rows = {reader.recall_key(r): r for r in _peralta_rows()}
-    assert set(rows) == set(want["pages"]), sorted(rows)
-    for key, eye in want["pages"].items():
+    assert set(rows) == set(want), sorted(rows)
+    for key, eye in want.items():
         r = rows[key]
-        assert eye.get("from") and eye.get("at") and r["course_id"] == eye["course_id"], key
+        assert r["course_id"] == eye["course_id"] and r["college_printed"] == key.split(" | ")[1], key
         assert (len(r["outcomes"]), len(r["objectives"])) == (eye["slo"], eye["objective"]), (key, r)
         assert not any(o.startswith("CB 0") or "exam" in o for o in r["outcomes"]), r["outcomes"]
         assert r["fingerprint"] == reader.fingerprint(r["outcomes"]) and \
@@ -575,7 +575,9 @@ def _():
 def _():
     import tempfile
     rows = _peralta_rows()
-    want = json.load(open(PERALTA_RECALL))
+    want = {"slugs": ",".join(PERALTA_SLUGS), "pages": {
+        reader.recall_key(r): {"slo": len(r["outcomes"]), "objective": len(r["objectives"]), "by": "fixture",
+                               "from": "the fixture page", "at": "2026-11-22T13:28:47Z"} for r in rows}}
     with tempfile.TemporaryDirectory() as tmp:
         os.makedirs(os.path.join(tmp, "trial_7"))
         json.dump({"parser_fingerprint": reader.parser_fingerprint(LAN % 1), "slugs": want["slugs"], "rows": rows},
@@ -584,6 +586,18 @@ def _():
         json.dump(dict(want, trial="7", parser_fingerprint=reader.parser_fingerprint(LAN % 1)), open(path, "w"))
         got = reader.rows_recall(path, tmp, host="lan.curriqunet.com")
     assert got["pages"] == 5 and got["right"] == 5 and not got["wrong"], got
+
+
+@check("Peralta's gate: trial 45030224450's count by eye opens the full read for the four colleges together, 11 of 12 "
+       "(ARTH C1100 files 'Part 2' as an objective), and never for one college's slugs alone")
+def _():
+    want = json.load(open(PERALTA_RECALL))
+    assert reader.recall_path("lan.curriqunet.com", want["slugs"]) == PERALTA_RECALL
+    assert want["parser_fingerprint"] == reader.parser_fingerprint("lan.curriqunet.com")
+    rc = reader.recall_for("lan.curriqunet.com", want["slugs"], json.load(open(PERALTA_INDEX)))
+    assert rc["ok"] and rc["pages"] == 12 and rc["right"] == 11, rc
+    assert [w[0] for w in rc["wrong"]] == ["ARTH C1100 | Laney College"], rc["wrong"]
+    assert not reader.recall_for("lan.curriqunet.com", "laney")["ok"]
 
 
 @check("Peralta: a shared code's rows go to the college its page prints, never the code's other colleges; a page "
