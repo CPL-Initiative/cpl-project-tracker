@@ -4,23 +4,23 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-11-21",
+ "as_of": "2026-11-22",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 52412,
-  "pa": 47354,
-  "ppa": 125,
+  "pe": 52429,
+  "pa": 47371,
+  "ppa": 126,
   "p2": 3730,
   "p3": 17020,
   "pp": 8,
-  "ppe": 137,
+  "ppe": 138,
   "pac": 5440,
   "ptc": 4758,
-  "pe_u": 1656203.45,
-  "pa_u": 291581.4,
-  "ppa_u": 773.5,
-  "ppe_u": 7285.5,
+  "pe_u": 1656755.45,
+  "pa_u": 291696.4,
+  "ppa_u": 776.5,
+  "ppe_u": 7288.5,
   "pac_u": 39890.2,
   "ptc_u": 33502.95,
   "p3_u": 86805.65,
@@ -358,7 +358,7 @@ window.CPL_FUNDING_PERF = {
    "pa_u": 20777.5,
    "ppa": null,
    "ppa_suppressed": true,
-   "ppa_u": 15.0,
+   "ppa_u": 18.0,
    "p2": 25,
    "p3": 54,
    "p3_u": 414.0,
@@ -366,7 +366,7 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0,
    "ppe": null,
    "ppe_suppressed": true,
-   "ppe_u": 91.0,
+   "ppe_u": 94.0,
    "pac": 39,
    "pac_u": 289.5,
    "ptc": 36,
@@ -1812,10 +1812,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 85
   },
   "Riverside": {
-   "pe": 917,
-   "pe_u": 39834.0,
-   "pa": 898,
-   "pa_u": 4452.0,
+   "pe": 934,
+   "pe_u": 40386.0,
+   "pa": 915,
+   "pa_u": 4567.0,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 22,
@@ -3857,8 +3857,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 894,
-    "pa": 875,
+    "pe": 911,
+    "pa": 892,
     "p3": 875
    }
   },
@@ -4480,8 +4480,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 31525,
-   "pa": 28250,
+   "pe": 31542,
+   "pa": 28267,
    "p3": 2690
   },
   "Military | Other": {
@@ -4537,13 +4537,13 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1656203.45,
-   "pa_u": 291581.4,
+   "pe_u": 1656755.45,
+   "pa_u": 291696.4,
    "p3_u": 86805.65
   },
   "map": {
-   "pe_u": 1663488.95,
-   "pa_u": 292354.9,
+   "pe_u": 1664043.95,
+   "pa_u": 292472.9,
    "p3_u": 86885.15
   },
   "ratio": {
@@ -4669,7 +4669,7 @@ window.CPL_FUNDING_PERF = {
   "Lake Tahoe": false,
   "LA Swest": false
  },
- "vet_star_as_of": "2026-11-21",
+ "vet_star_as_of": "2026-11-22",
  "vet_star_threshold": 0.75,
  "vet_star_n": 70,
  "vet_jst": {
@@ -4685,8 +4685,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Chaffey": {
    "vets": 207,
-   "jst": 419,
-   "pct": 2.0242
+   "jst": 420,
+   "pct": 2.029
   },
   "San Francisco": {
    "vets": 1326,
@@ -4750,8 +4750,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Riverside": {
    "vets": 1508,
-   "jst": 897,
-   "pct": 0.5948
+   "jst": 914,
+   "pct": 0.6061
   },
   "El Camino": {
    "vets": 327,

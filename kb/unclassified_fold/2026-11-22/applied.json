@@ -1,0 +1,208 @@
+{
+  "folded": [
+    {
+      "raw": "CA Specialized Training Institute First Responder Operations and Decon",
+      "assigned": "Hazardous Materials First Responder Operational — Decontamination",
+      "issuer": "California Specialized Training Institute (CSTI)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-21T13:08:08.069166+00:00"
+    },
+    {
+      "raw": "DRAFT 21: Mechanical Design I CX",
+      "assigned": "Mechanical Design I",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+    },
+    {
+      "raw": "ESLN 309A",
+      "assigned": "ESL - Foundations",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+    },
+    {
+      "raw": "ESLN 310A",
+      "assigned": "ESL - Comprehensive I",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+    },
+    {
+      "raw": "ESLN 310E",
+      "assigned": "ESL - Comprehensive V",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+    },
+    {
+      "raw": "GERO 400: Principles of Caregiving: Older Adults, and Their Care CX",
+      "assigned": "Principles of Caregiving: Older Adults and Their Care",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+    },
+    {
+      "raw": "GERO 455: Resources and Services for Older Adults CX",
+      "assigned": "Resources and Services for Older Adults",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+    },
+    {
+      "raw": "High School Articulation (Benicia High School)- Dance 1",
+      "assigned": "Introduction to Dance",
+      "issuer": "Benicia High School",
+      "reviewed_by": "cer-procedure-high-school-rop@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+    },
+    {
+      "raw": "High School Articulation (Benicia High School)- Dance 2",
+      "assigned": "Beginning/Intermediate Jazz Dance",
+      "issuer": "Benicia High School",
+      "reviewed_by": "cer-procedure-high-school-rop@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+    },
+    {
+      "raw": "High School Articulation (Monte Vista)- Introduction to Music Theory and Performance",
+      "assigned": "Music Theory I",
+      "issuer": "Monte Vista High School",
+      "reviewed_by": "cer-procedure-high-school-rop@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+    },
+    {
+      "raw": "IB Exam - Economics",
+      "assigned": "IB Economics HL",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+    },
+    {
+      "raw": "IB Exam - Mathematics: Analysis & Approaches",
+      "assigned": "IB Mathematics: Analysis and Approaches HL",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+    },
+    {
+      "raw": "IB Exam - Psychology",
+      "assigned": "IB Psychology HL",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+    },
+    {
+      "raw": "IB Exam: Mathematics: Applications and Interpretations",
+      "assigned": "IB Mathematics: Applications and Interpretation HL",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+    },
+    {
+      "raw": "IB Exam: Social and Cultural Anthropology",
+      "assigned": "IB Social and Cultural Anthropology HL",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+    },
+    {
+      "raw": "PHOTO 7: Beginning Digital Photography (CX)",
+      "assigned": "Digital Photography Beginning",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+    }
+  ],
+  "superseded": [],
+  "revised": [],
+  "credential_moved": [],
+  "credential_retired": [],
+  "held": [],
+  "credential_added": [
+    {
+      "raw": "DRAFT 21: Mechanical Design I CX",
+      "assigned": "Mechanical Design I",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+    },
+    {
+      "raw": "ESLN 309A",
+      "assigned": "ESL - Foundations",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+    },
+    {
+      "raw": "ESLN 310A",
+      "assigned": "ESL - Comprehensive I",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+    },
+    {
+      "raw": "ESLN 310E",
+      "assigned": "ESL - Comprehensive V",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+    },
+    {
+      "raw": "GERO 400: Principles of Caregiving: Older Adults, and Their Care CX",
+      "assigned": "Principles of Caregiving: Older Adults and Their Care",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+    },
+    {
+      "raw": "GERO 455: Resources and Services for Older Adults CX",
+      "assigned": "Resources and Services for Older Adults",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+    },
+    {
+      "raw": "High School Articulation (Benicia High School)- Dance 1",
+      "assigned": "Introduction to Dance",
+      "issuer": "Benicia High School",
+      "reviewed_by": "cer-procedure-high-school-rop@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+    },
+    {
+      "raw": "High School Articulation (Benicia High School)- Dance 2",
+      "assigned": "Beginning/Intermediate Jazz Dance",
+      "issuer": "Benicia High School",
+      "reviewed_by": "cer-procedure-high-school-rop@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+    },
+    {
+      "raw": "High School Articulation (Monte Vista)- Introduction to Music Theory and Performance",
+      "assigned": "Music Theory I",
+      "issuer": "Monte Vista High School",
+      "reviewed_by": "cer-procedure-high-school-rop@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+    },
+    {
+      "raw": "PHOTO 7: Beginning Digital Photography (CX)",
+      "assigned": "Digital Photography Beginning",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00"
+    }
+  ],
+  "credential_issuer_fills": [],
+  "credential_issuer_adds": [
+    {
+      "title": "Hazardous Materials First Responder Operational — Decontamination",
+      "issuer": "California Specialized Training Institute (CSTI)",
+      "raw": "CA Specialized Training Institute First Responder Operations and Decon",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-21T13:08:08.069166+00:00"
+    }
+  ],
+  "credential_pruned": [],
+  "articulations_repointed": 0,
+  "title_anchors_stamped": 0,
+  "audit_pruned": 16,
+  "unified_titles_count": 6215
+}

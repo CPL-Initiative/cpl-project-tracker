@@ -1,25 +1,23 @@
 {
  "schema": 1,
  "_about": "The Exhibits tab's Review queue (kb/_build_exhibits_review.py): one record per title the CER procedures held, with its proposed canonical title and where that came from, its exhibits, where it is articulated and who could adopt it. Students per title are a reviewer-only read (exhibit_title_students).",
- "written_at": "2026-11-21T15:43:00Z",
+ "written_at": "2026-11-22T06:21:22Z",
  "sources": {
   "procedures_run": "2026-11-21T15:42:53Z",
-  "suggestions": "2026-11-21T01:10:46Z",
-  "statewide": "2026-11-21T04:05:22",
-  "audit": "2026-11-21T04:09:20+00:00",
+  "suggestions": "2026-11-22T06:21:14Z",
+  "statewide": "2026-11-22T06:17:09",
+  "audit": "2026-11-22T06:20:53+00:00",
   "assignments": {
    "read": "live",
-   "at": "2026-11-21T15:42:57Z",
-   "decided": [
-    "CA Specialized Training Institute First Responder Operations and Decon"
-   ]
+   "at": "2026-11-22T06:21:18Z",
+   "decided": []
   }
  },
  "tiles": {
   "names": {
-   "n": 6199,
+   "n": 6215,
    "of": 6252,
-   "waiting": 53
+   "waiting": 37
   },
   "aligned": {
    "n": 20,
@@ -261,6 +259,7 @@
   "Automotive Apprenticeship Group (AAG)",
   "Baldwin Park Adult and Community Education",
   "Baldy View Regional Occupational Program",
+  "Benicia High School",
   "Biocom California Institute",
   "Biodynamic Association",
   "Birmingham Community Charter High School",
@@ -425,6 +424,7 @@
   "McDonald's Corporation",
   "Microsoft",
   "Middle College",
+  "Monte Vista High School",
   "Moreno Valley Unified School District",
   "Moreno Valley Unified School District (MVUSD)",
   "Music Teachers' Association of California (MTAC)",
@@ -587,7 +587,7 @@
  ],
  "held": [
   {"raw": "Cal Fire Basic Firefighter (219 hour) Training", "step": "Proposed", "why": "the classifier is unsure (0.80)", "colleges": [14], "title": "CAL FIRE Basic Firefighter Training (219-hour)", "issuer": "California Department of Forestry and Fire Protection (CAL FIRE)", "from": "the classifier", "proposal_source": "classifier", "ids": ["MAPICI-CFBF-1-001"], "art": [14], "could": [1, 2, 12, 20, 26, 31, 37, 46, 59, 62, 76, 84, 108, 111, 114, 115], "basis": "M-ID FIRE M1297", "same": true, "courses_key": "FIRE M1297", "local_courses": [[14, "F SC 55", "Wildland Fire Control", 3, "CCC000378240", "3 hours in Wildland Fire Control", "A critical study of wildland fire line safety, fire behavior, fire prevention, fire extinguishment methods, strategy and tactics, Incident Command System, communications, use of fire apparatus, aircraft, bulldozers, hand crews, and analysis of wildland fire incidents. Required for F SC 111, the Firefighter Academy."]], "subject": "Fire Technology", "subject_course": 0, "confidence": 0.8, "needs_official_name": true, "course_title_set_aside": {"title": "Wildland Fire Control", "basis": "M-ID FIRE M1297", "why": "industry certification, not credit by exam"}, "aligned_id": "FIRE M1297", "course": "F SC 55", "course_college": "City College of San Francisco"},
-  {"raw": "Completion of ESLN 310C", "step": "Wording check", "why": "the classifier's title has a course code left in", "colleges": [22], "title": "ESL - Foundations", "issuer": "California Community Colleges", "from": "the local course title (College of the Desert ESLN 309A)", "proposal_source": "course", "ids": ["MAPSAN-COE3-1-001"], "art": [22], "could": [], "basis": "", "same": false, "local_courses": [[22, "ESLN 309A", "ESL - Foundations", 0, "CCC000282169", "0 hours in ESL - Foundations", "This foundation level comprehensive English as a Second Language course emphasizes the development of the very basic English literacy skills. This course is for ESLN students who require basic skills development in reading, writing, speaking, and listening."], [22, "ESLN 310A", "ESL - Comprehensive I", 0, "CCC000326324", "0 hours in ESL - Comprehensive I", "This first level comprehensive English as a Second Language course introduces students to the main structures of functional American grammar and stresses the simple present and present continuous tenses in reading, writing, listening and speaking."], [22, "ESLN 310B", "ESL - Comprehensive II", 0, "CCC000324599", "0 hours in ESL - Comprehensive II", "This second level comprehensive English as a Second Language course reinforces previously learned grammatical structures, as well as reading, writing, listening and speaking skills from Level I, with emphasis on developing a higher level of fluency in these areas. Students receive a Pass/No Pass grade mark."]], "subject": "English as a Second Language", "subject_course": 0, "confidence": 0.6, "alternates": ["English as a Second Language (ESLN 310C)"]},
+  {"raw": "Completion of ESLN 310C", "step": "Wording check", "why": "the classifier's title has a course code left in", "colleges": [22], "title": "ESL - Foundations", "issuer": "California Community Colleges", "from": "the local course title (College of the Desert ESLN 309A)", "proposal_source": "course", "ids": ["MAPSAN-COE3-1-001"], "art": [22], "could": [], "basis": "", "same": false, "local_courses": [[22, "ESLN 309A", "ESL - Foundations", 0, "CCC000282169", "0 hours in ESL - Foundations", "This foundation level comprehensive English as a Second Language course emphasizes the development of the very basic English literacy skills. This course is for ESLN students who require basic skills development in reading, writing, speaking, and listening."], [22, "ESLN 310A", "ESL - Comprehensive I", 0, "CCC000326324", "0 hours in ESL - Comprehensive I", "This first level comprehensive English as a Second Language course introduces students to the main structures of functional American grammar and stresses the simple present and present continuous tenses in reading, writing, listening and speaking."], [22, "ESLN 310B", "ESL - Comprehensive II", 0, "CCC000324599", "0 hours in ESL - Comprehensive II", "This second level comprehensive English as a Second Language course reinforces previously learned grammatical structures, as well as reading, writing, listening and speaking skills from Level I, with emphasis on developing a higher level of fluency in these areas. Students receive a Pass/No Pass grade mark."]], "subject": "English as a Second Language", "subject_course": 0, "confidence": 0.6, "alternates": ["English as a Second Language (ESLN 310C)"], "under": ["ESLN 309A"], "under_count": 1, "exists": true},
   {"raw": "Credit by Exam HISTC1001-United States History Since 1877", "step": "Proposed", "why": "the classifier is unsure (0.75)", "colleges": [62], "title": "United States History to 1877", "issuer": "California Community Colleges", "from": "the classifier", "proposal_source": "classifier", "ids": ["MAPCXS-CBEH3-1-001"], "art": [62], "could": [], "basis": "", "same": false, "confidence": 0.75},
   {"raw": "High School Articulation ( Tri Valley ROP)- Developmental Psychology of Children I", "step": "Proposed", "why": "the classifier is unsure (0.80)", "colleges": [54], "title": "Developmental Psychology of Children 1", "issuer": "Tri-Valley Regional Occupational Program (ROP)", "from": "the classifier", "proposal_source": "classifier", "ids": ["MAPCXH-HSA(63-1-001"], "art": [54], "could": [], "basis": "", "same": false, "local_courses": [[54, "ECE 64", "Play: Materials and Environments", 3, "CCC000584377", "3 hours in Play: Materials and Environments", "Application of principles of human growth and development in the consideration of play materials and environments for children birth through early elementary. The selection and development of play materials and environments that are developmentally, culturally, and age-appropriate."], [54, "ECE 95", "Work Experience", 1, "CCC000595189", "1 hour in Work Experience", "Cooperative effort between, student, supervisor and instructor to accomplish professional work objectives and broaden experiences. On-the-job work experience to build early childhood competencies."]], "subject": "Child Development/Early Childhood Education", "subject_course": 0, "confidence": 0.8, "under": ["High School Articulation (Amador Valley)- Developmental Psychology of Children 1", "High School Articulations (Dublin)- Developmental Psychology of Children I"], "under_count": 2, "exists": true},
   {"raw": "High School Articulation ( Tri Valley ROP)- Developmental Psychology of Children II", "step": "Two issuers", "why": "a merge would join two issuers (Tri-Valley Regional Occupational Program; the reference has Emerald High School, Foothill High School, Granada High School, Local High School)", "colleges": [54], "title": "Principles & Practices of Teaching Young Children", "issuer": "Tri-Valley Regional Occupational Program", "from": "the classifier", "proposal_source": "classifier", "ids": ["MAPCXH-HSA(64-1-001", "MAPCXH-HSA(65-1-001"], "art": [54], "could": [0, 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 19, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 32, 33, 35, 36, 37, 38, 40, 41, 42, 44, 45, 46, 48, 49, 50, 51, 52, 55, 56, 57, 58, 59, 61, 64, 65, 67, 68, 69, 71, 72, 73, 74, 76, 77, 78, 79, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 112, 113, 114, 115, 116, 117, 118], "basis": "C-ID ECE 120", "same": true, "courses_key": "ECE 120", "local_courses": [[54, "ECE 50", "Early Childhood Principles and Practices", 3, "CCC000355784", "3 hours in Early Childhood Principles and Practices", "Historical contexts and theoretical perspectives of developmentally appropriate practice in early care and education for children birth through age eight. Explores the typical roles and expectations of early childhood educators. Identifies professional ethics, career pathways, and professional standards. Introduces best practices for developmentally…"], [54, "ECE 54", "Child Health, Safety and Nutrition", 3, "CCC000589344", "3 hours in Child Health, Safety and Nutrition", "This course covers aspects of nutrition, health, and safety that promote and maintain the health and well-being of all children and adults who work with young children. Topics include health and nutritional guidelines; maintaining safe and healthy learning environments; state regulations, policies, and procedures; common childhood illnesses and infectious…"]], "subject": "Child Development/Early Childhood Education", "subject_course": 0, "confidence": 1.0, "course_title_set_aside": {"title": "Principles & Practices of Teaching Young Children", "basis": "C-ID ECE 120", "why": "2 credit recommendations"}, "aligned_id": "ECE 120", "course": "ECE 50", "course_college": "Las Positas College", "under": ["High School Articulation (Emerald)- Developmental Psychology of Children II", "High School Articulation (Foothill)- Developmental Psychology of Children II", "High School Articulation (Granada)- Developmental Psychology of Children II", "High School Articulation- Developmental Psychology of Children II"], "under_count": 4, "exists": true},

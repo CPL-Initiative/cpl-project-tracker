@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-21T16:39:50Z",
+ "written_at": "2026-11-22T06:22:14Z",
  "rows": [
   {
    "key": "requirements",
@@ -98,13 +98,13 @@
    "status_file": "kb/status/exhibit.json",
    "pair": [
     {
-     "n": 3169,
+     "n": 3185,
      "of": 6252,
-     "words": "titles carry a review stamp (1,539 a person's, 1,630 a cohort's), counting 53 titles MAP carries with no entry yet; 2,947 credentials, 2,531 of 3,301 records stamped",
+     "words": "titles carry a review stamp (1,540 a person's, 1,645 a cohort's), counting 37 titles MAP carries with no entry yet; 2,957 credentials, 2,542 of 3,312 records stamped",
      "open": "#exhibits/list"
     },
     {
-     "n": 1539,
+     "n": 1540,
      "of": 6252,
      "words": "confirmed by a person",
      "open": "#exhibits/list",
@@ -166,23 +166,23 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-21T15:42:56Z",
+    "at": "2026-11-22T06:18:23Z",
     "every_hours": 24
    },
    "facts": {
-    "titles": 6199,
-    "backlog": 53,
-    "stamped": 3169,
-    "person": 1539,
-    "cohort": 1630,
-    "credentials": 2947,
-    "confirmed": 1539,
-    "records": 3301,
-    "records_stamped": 2531,
+    "titles": 6215,
+    "backlog": 37,
+    "stamped": 3185,
+    "person": 1540,
+    "cohort": 1645,
+    "credentials": 2957,
+    "confirmed": 1540,
+    "records": 3312,
+    "records_stamped": 2542,
     "saved_at": "2026-11-21T15:42:56Z",
-    "fold_at": "2026-11-20T21:48:17Z",
+    "fold_at": "2026-11-22T06:18:23Z",
     "map_titles": 5440,
-    "unclassified": 53,
+    "unclassified": 37,
     "left_map": 812,
     "below_80": 1117,
     "below_60": 235,
@@ -293,7 +293,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-21T04:09:14+00:00",
+    "at": "2026-11-22T06:20:44+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -383,7 +383,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-21T16:05:38+00:00",
+    "at": "2026-11-19T06:22:43Z",
     "every_hours": null
    },
    "facts": {
@@ -510,7 +510,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-21T04:06:34Z",
+    "at": "2026-11-22T06:18:20Z",
     "every_hours": 24
    },
    "facts": {
@@ -523,7 +523,7 @@
     "modal": 0,
     "shared": [],
     "missed_alignment": 0,
-    "scanned_at": "2026-11-21",
+    "scanned_at": "2026-11-22",
     "procedures_on": 6
    },
    "sources": [
@@ -808,7 +808,7 @@
     "kind": "not_shrinking",
     "n": 2937,
     "was": 2820,
-    "since": "2026-11-14",
+    "since": "2026-11-15",
     "words": "active programs with no record yet",
     "owner": "the harvest",
     "open": "#program-requirements/list/unread"
@@ -819,7 +819,7 @@
     "kind": "not_shrinking",
     "n": 574,
     "was": 499,
-    "since": "2026-11-14",
+    "since": "2026-11-15",
     "words": "credentials with no Common SUBJ (467 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
     "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
     "open": "#exhibits/list/nosubj"
@@ -845,34 +845,34 @@
     {
      "name": "brand-family",
      "placed": 249,
-     "untouched": 237,
+     "untouched": 242,
      "kept": 0,
      "renamed": 2,
      "moved": 0,
      "by_procedure": 5,
-     "left": 5,
+     "left": 0,
      "looked": 2
     },
     {
      "name": "course-identity",
      "placed": 201,
-     "untouched": 168,
+     "untouched": 175,
      "kept": 0,
      "renamed": 26,
      "moved": 0,
      "by_procedure": 0,
-     "left": 7,
+     "left": 0,
      "looked": 26
     },
     {
      "name": "high-school-rop",
      "placed": 66,
-     "untouched": 39,
+     "untouched": 42,
      "kept": 19,
      "renamed": 5,
      "moved": 0,
      "by_procedure": 0,
-     "left": 3,
+     "left": 0,
      "looked": 24
     },
     {
@@ -922,12 +922,12 @@
    ],
    "total": {
     "placed": 1507,
-    "untouched": 1359,
+    "untouched": 1374,
     "kept": 23,
     "renamed": 86,
     "moved": 0,
     "by_procedure": 24,
-    "left": 15,
+    "left": 0,
     "looked": 109
    }
   },
@@ -1028,16 +1028,45 @@
  "batches": [
   {
    "kind": "another-look",
-   "n": 1,
-   "of": 1,
+   "n": 5,
+   "of": 5,
    "open": "#exhibits/another-look/batch",
-   "title": "Another look at 1 exhibit title",
+   "title": "Another look at 5 exhibit titles",
    "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
    "stop": "The batch ends when its cards are decided.",
    "rules": [
-    "fold"
+    "fold",
+    "numerals"
    ],
    "cards": [
+    {
+     "id": "302e658390a1",
+     "current": "ESL - Comprehensive I",
+     "keys": [
+      "_UNCLASSIFIED::ESLN 310A"
+     ]
+    },
+    {
+     "id": "57706504886f",
+     "current": "ESL - Comprehensive V",
+     "keys": [
+      "_UNCLASSIFIED::ESLN 310E"
+     ]
+    },
+    {
+     "id": "82c074974c00",
+     "current": "Mechanical Design I",
+     "keys": [
+      "_UNCLASSIFIED::DRAFT 21: Mechanical Design I CX"
+     ]
+    },
+    {
+     "id": "5341f0a0836a",
+     "current": "Music Theory I",
+     "keys": [
+      "_UNCLASSIFIED::High School Articulation (Monte Vista)- Introduction to Music Theory and Performance"
+     ]
+    },
     {
      "id": "0b6d6a199c47",
      "current": "Practical PC and Career Technologies",
@@ -1046,7 +1075,7 @@
      ]
     }
    ],
-   "at": "2026-11-20T21:51:04Z"
+   "at": "2026-11-22T06:21:23Z"
   },
   {
    "kind": "job",
@@ -1061,16 +1090,45 @@
  ],
  "next_batch": {
   "kind": "another-look",
-  "n": 1,
-  "of": 1,
+  "n": 5,
+  "of": 5,
   "open": "#exhibits/another-look/batch",
-  "title": "Another look at 1 exhibit title",
+  "title": "Another look at 5 exhibit titles",
   "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
   "stop": "The batch ends when its cards are decided.",
   "rules": [
-   "fold"
+   "fold",
+   "numerals"
   ],
   "cards": [
+   {
+    "id": "302e658390a1",
+    "current": "ESL - Comprehensive I",
+    "keys": [
+     "_UNCLASSIFIED::ESLN 310A"
+    ]
+   },
+   {
+    "id": "57706504886f",
+    "current": "ESL - Comprehensive V",
+    "keys": [
+     "_UNCLASSIFIED::ESLN 310E"
+    ]
+   },
+   {
+    "id": "82c074974c00",
+    "current": "Mechanical Design I",
+    "keys": [
+     "_UNCLASSIFIED::DRAFT 21: Mechanical Design I CX"
+    ]
+   },
+   {
+    "id": "5341f0a0836a",
+    "current": "Music Theory I",
+    "keys": [
+     "_UNCLASSIFIED::High School Articulation (Monte Vista)- Introduction to Music Theory and Performance"
+    ]
+   },
    {
     "id": "0b6d6a199c47",
     "current": "Practical PC and Career Technologies",
@@ -1079,6 +1137,6 @@
     ]
    }
   ],
-  "at": "2026-11-20T21:51:04Z"
+  "at": "2026-11-22T06:21:23Z"
  }
 }
