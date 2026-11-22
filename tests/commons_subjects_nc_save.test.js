@@ -276,6 +276,30 @@ const save = (key, v, email) => ({ course_id: key, value: JSON.stringify(v), rev
   await x.M.boot(); await settle();
   check("(8) where the live read holds no such save, the form reads the files again", !!g(x, BSK + "-rec") && !g(x, BSK + "-others"));
 
+  /* (9) S705, Sam: "the appearance makes it seem like I am changing all the listed courses to AED, even though I maybe
+     be just moving the AED out and associating them with the common subject VOCE". The panel's noncredit courses stand
+     under their COCI category, each heading saying the code its form's save sets and that the local subject stays. */
+  const COURSES = { college: "Alpha College", slug: "alpha", columns: ["number", "title", "band", "listed", "units", "cid", "ccn", "mid", "category"],
+    codes: { AED: [["10.07", "Fitness for Older Adults", "N", "COCI", 0, "", "", "ELEC M9008", "Courses for Older Adults"],
+      ["36.02", "Intro to Construction", "E", "COCI", 0, "", "", "ELEC M90CY", "Short-term Vocational"],
+      ["39.01", "Painting Trades", "N", "COCI", 0, "", "", "ELEC M90CK", "Short-term Vocational"],
+      ["42.03A", "ESL Conversation A", "N", "COCI", 0, "", "", "ELEC M90CZ", "English as a Second Language (ESL)"],
+      ["50.1", "Old Course", "N", "COCI", 0, "", "", "ELEC M90ZZ", ""]] } };
+  x = load("#commons/subjects/alpha/AED", { sess: ME, saves: [save("SUBJ:alpha|AED|nc:short-term-vocational", { local_title: "Adult Education", common_code: "VOCE" })],
+    files: { "kb/status/subject_courses/alpha.json": COURSES } });
+  await x.M.boot(); await settle();
+  const heads = Array.from(x.d.querySelectorAll("#csb-panel .csb-band")).map((h) => txt(h));
+  check("(9) ⭐ the noncredit courses stand under their category, the most courses first, the uncategorized last",
+    JSON.stringify(heads) === JSON.stringify(["Noncredit, Short-term Vocational (2)", "Noncredit, Courses for Older Adults (1)", "Noncredit, English as a Second Language (ESL) (1)", "Noncredit, no category in COCI’s export (1)"]), heads.join(" | "));
+  const lines = Array.from(x.d.querySelectorAll("#csb-panel .csb-cat-code")).map((p) => txt(p));
+  check("(9) ⭐ the saved category says its code applies to its own courses only and the local subject stays",
+    /^Common subject code VOCE, from a person’s save on the Short-term Vocational form\. It applies to these 2 courses only: their local subject stays AED, and their M-IDs move to VOCE at the next re-mint\.$/.test(lines[0]), lines[0]);
+  check("(9) ⭐ an unsaved category names its MQ code and says a Save on its form applies it to its courses only",
+    /^Not settled yet\. Courses for Older Adults’s noncredit MQ discipline, Older Adults: Noncredit, has the common subject code OLAD; a Save on that form above applies it to this course only\. The local subject stays AED\.$/.test(lines[1]), lines[1]);
+  check("(9) the uncategorized courses say no category's save reaches them", /no category’s save reaches it\. Move it/.test(lines[3]));
+  check("(9) an M-ID minted under another code than its category's says so; an enhanced course says so",
+    /M-ID ELEC M90CY \(minted under ELEC\)/.test(txt(x.d.querySelector('#csb-panel tr[data-number="36.02"]'))) && /COCI, enhanced/.test(txt(x.d.querySelector('#csb-panel tr[data-number="36.02"]'))));
+
   let pass = 0;
   results.forEach(([n, ok, why]) => { if (ok) pass++; else console.log("FAIL", n, why ? "\n     " + String(why).slice(0, 400) : ""); });
   console.log(pass + "/" + results.length + " checks passed");

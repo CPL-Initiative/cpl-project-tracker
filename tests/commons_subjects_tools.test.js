@@ -7,6 +7,9 @@
 //       course, CRS:<college>|<code>|<number>, field course_subject_decision, under the reviewer's own email; a course
 //       another person moved is held; the reviewer's own move shows Take it back, whose DELETE names the email
 //       (r-subjects-move-courses-sam-2026-11-22);
+//   (5) ⭐ where a code's courses hold M-IDs minted under another Common SUBJ, the panel says the courses are listed
+//       under the local code and the M-ID letters name the code they were minted under, so the column never reads as
+//       a filing (r-mid-prefix-is-not-the-local-subject-sam-2026-11-22);
 //   (4) ⭐ the Edit form takes a source link, saved with the decision, refused when it is not a web address, and the
 //       saved line links it (r-subject-title-source-link-sam-2026-11-22).
 // Run from repo root: `npm test` (or `node tests/commons_subjects_tools.test.js`).
@@ -137,6 +140,18 @@ const posts = (x) => x.calls.filter((c) => c.method !== "GET");
   const del = x.calls.filter((c) => c.method === "DELETE")[0];
   check("(3) ⭐ Take it back deletes by key, field and the reviewer's email", del && /course_id=eq\.CRS%3Aalpha%7CAED%7C10\.07/.test(del.url) && /field=eq\.course_subject_decision/.test(del.url)
     && /reviewer_email=eq\.a%40rccd\.edu/.test(del.url), del && del.url);
+
+  /* (5) an M-ID's prefix never reads as the course's local subject (Sam, 2026-11-22, r-mid-prefix-is-not-the-local-subject-sam-2026-11-22) */
+  x = load("#commons/subjects/alpha/AED", { saves: SAVES.concat([{ course_id: "SUBJ:alpha|AED|credit", value: JSON.stringify({ common_code: "AUTO" }), reviewed_at: AT, reviewer_label: "a reviewer" }]) });
+  await x.M.boot(); await settle();
+  const note = x.d.getElementById("csb-mint");
+  check("(5) ⭐ the panel says the courses are listed under the local code and the M-ID letters name the code they were minted under",
+    note && /Every course below is listed under AED at Alpha College\./.test(txt(note)) && /not the course’s local subject/.test(txt(note))
+    && /4 of these 4 courses hold M-IDs minted under another code: 4 under ELEC \(Electronics\)/.test(txt(note)) && /common subject code is AUTO, from a person’s save, so those M-IDs move at the next re-mint/.test(txt(note)), txt(note));
+  check("(5) each such course says its M-ID was minted under another code", /M-ID ELEC M9008 \(minted under ELEC\)/.test(txt(x.d.getElementById("csb-panel-body"))));
+  x = load("#commons/subjects/alpha/AED", { saves: SAVES });
+  await x.M.boot(); await settle();
+  check("(5) no note where the M-IDs sit under the code's own common subject code", !x.d.getElementById("csb-mint") && !/minted under/.test(txt(x.d.getElementById("csb-panel-body"))));
 
   /* (2) sort and resize */
   x = load("#commons/subjects", { saves: SAVES });

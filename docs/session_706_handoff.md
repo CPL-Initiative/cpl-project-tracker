@@ -77,15 +77,33 @@ text), 5, 7, 9, and in 12 every status file but `kb/status/subjects.json`.
   the eight other Cerritos codes the list words differently (AB, AUTO, EDT, ELAP, NAIS, VCS, WELD, WMT) keep the
   catalog heading, for a person to change on the page.
 
+- **An M-ID's prefix no longer reads as a filing.** Sam read Cerritos AED's ELEC M-IDs as ELEC courses filed under
+  AED. They are AED's own courses (older adults, painting trades, ironworkers, ESL, GED prep); the subject map's
+  `"AED": "Electricity"` gave them ELEC M-IDs at the mint. The panel now says the courses are listed under the local
+  code, counts the M-IDs minted under another code, and says the code's common subject code moves them at a re-mint;
+  each such M-ID reads *(minted under ELEC)*. Sam's save sets AED (Short-term Vocational) to VOCE. The per-course move
+  is for a course that belongs under a different code than the rest.
+
+- **A category's save shows which courses it touches.** Sam read the AED panel as moving every listed course to VOCE.
+  `kb/_build_subject_courses.py` now carries each noncredit course's COCI category (`category`, joined on the control
+  number; a blank CreditType takes none, as `kb/_build_noncredit_categories.py` tallies), and the panel lists the
+  noncredit courses under their category, each heading saying the code that category's save sets, that it applies to
+  those courses only, and that the local subject stays. An enhanced course says *COCI, enhanced* on its row (it was a
+  table of its own). Cerritos AED: Short-term Vocational 48 (VOCE, Sam's save), Basic Skills 32 (BSKL by its MQ, not
+  saved), Workforce Preparation 19 (no code), ESL 8 (ESLN), Older Adults 6 (OLAD), Substantial Disabilities 3 and Health
+  and Safety 2 (no code), 1 with no category, and 24 with no credit type or category in the export.
+
 ## Decisions Sam made (in session, verbatim in `cpl_memory`)
 
 `r-college-department-list-is-a-title-source-sam-2026-11-22`, `r-subject-title-source-link-sam-2026-11-22`,
 `r-sidebars-resize-and-frozen-top-sam-2026-11-22`, `r-subjects-move-courses-sam-2026-11-22`,
-`r-subjects-columns-sort-resize-sam-2026-11-22`.
+`r-subjects-columns-sort-resize-sam-2026-11-22`, `r-mid-prefix-is-not-the-local-subject-sam-2026-11-22`.
 
 ## Open work, from the lanes' NEXT lines
 
-1. **`commons`, the Subjects page (#3655), in order:** (00) the course moves into the re-mint:
+1. **`commons`, the Subjects page (#3655), in order:** (000) the subject map's `"AED": "Electricity"` (keyed by code
+   alone) read against every college's AED and corrected, then a re-mint dry run for Cerritos AED's ELEC M-IDs by the
+   code's decisions per noncredit category; (00) the course moves into the re-mint:
    `kb/_sync_subject_decisions.py` reads `course_subject_decision` into the committed file, then a re-mint dry run under
    `docs/coursecontrolnumber_remint.md` for the Cerritos AED courses Sam moves; the hand-over box's *Try the link* for a
    subject source; the frozen top and grip on the other Commons sidebars (Sam's rule); (0) the statewide default by the DR-25 route, in

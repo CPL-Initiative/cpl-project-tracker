@@ -774,13 +774,13 @@
       el("thead", null, [el("tr", null, (can ? [el("th", { scope: "col" }, [el("label", { cls: "csb-vh", "for": all.id, text: "Move" }), all])] : [])
         .concat(["Number", "Title", "Listed in", "C-ID, CCN, M-ID"].map(function (t) { return el("th", { scope: "col", text: t }); })))]),
       el("tbody", null, rows.map(function (c) {
-        var ids = [c.cid ? "C-ID " + c.cid : "", c.ccn ? "CCN " + c.ccn : "", c.mid ? "M-ID " + c.mid : ""].filter(Boolean).join("; ");
+        var ids = [c.cid ? "C-ID " + c.cid : "", c.ccn ? "CCN " + c.ccn : "", c.mid ? "M-ID " + c.mid + (ctx && ctx.common && String(c.mid).split(" ")[0] !== ctx.common ? " (minted under " + String(c.mid).split(" ")[0] + ")" : "") : ""].filter(Boolean).join("; ");
         var mv = ctx ? MOVES[moveKey(ctx.slug, ctx.code, c.number)] : null, theirs = mv && !mine(mv);
         var box = can ? el("input", { type: "checkbox", cls: "csb-move", "data-move-number": c.number, "data-move-mid": c.mid || "", "data-move-title": c.title || "",
           "data-move-band": c.band || "", "aria-label": "Move " + c.number + " " + (c.title || ""), disabled: theirs ? true : null }) : null;
         var idCell = el("td", null, [ids].concat(ctx ? (moveCell(ctx, c) ? [" "].concat(moveCell(ctx, c)) : []) : []));
         return el("tr", { "data-number": c.number, "data-band": c.band || "", "data-moved": mv ? mv.common : null }, (can ? [el("td", { "data-sort": mv ? "1" : "0" }, [box])] : []).concat([
-          el("th", { scope: "row", text: c.number }), el("td", { text: c.title || "" }), el("td", { text: c.listed || "" }), idCell]));
+          el("th", { scope: "row", text: c.number }), el("td", { text: c.title || "" }), el("td", { text: (c.listed || "") + (c.band === "E" ? ", enhanced" : "") }), idCell]));
       }))]);
     if (all) all.addEventListener("change", function () {
       Array.prototype.forEach.call(tbl.querySelectorAll("input.csb-move:not([disabled])"), function (b) { b.checked = all.checked; });
@@ -788,6 +788,36 @@
     });
     if (can) tbl.addEventListener("change", function (e) { if (e.target && e.target.classList && e.target.classList.contains("csb-move") && ctx.onCheck) ctx.onCheck(); });
     return gridify(el("div", { cls: "csb-wrap csb-wrap-in", role: "region", "aria-label": label, tabindex: "0" }, [tbl]), can ? "courses-move" : "courses", can ? [0] : null);
+  }
+  /* The common subject code a noncredit category's courses take: the category form's save, else its noncredit MQ
+     discipline's code, else none. */
+  function catCode(row, cat) {
+    var sl = NC_SLUGS[cat], sv = sl ? SAVED[row.slug + "|" + row.code + "|nc:" + sl] : null, m = NC_MQ[cat] || {};
+    if (sv && sv.common) return { code: sv.common, saved: true, mq: m.mq_discipline || "" };
+    if (m.common_code) return { code: m.common_code, saved: false, mq: m.mq_discipline || "" };
+    return null;
+  }
+  /* An M-ID's four letters name the Common SUBJ it was minted under, never the course's local subject (Sam, 2026-11-22,
+     on Cerritos AED: "it appeared to me that they were sitting under the AED local subject...we want to make sure that is
+     not the appearance"). Where a code's courses hold M-IDs under a Common SUBJ other than the code's common subject code
+     today, the panel says so above the tables, counted by prefix, and says how they move: by the code's decision at a
+     re-mint, so a course is moved one at a time only where it belongs under another code than the rest. */
+  function mintNote(row, rows, code, college) {
+    var by = {}, n = 0;
+    rows.forEach(function (x) { var p = String(x.mid || "").split(" ")[0]; if (p) { by[p] = (by[p] || 0) + 1; n += 1; } });
+    var sv = row ? savedOf(row) : null, cc = (sv && sv.common) || (row && row.common) || "";
+    var off = Object.keys(by).filter(function (p) { return p !== cc; }).sort(function (a, b) { return by[b] - by[a] || (a < b ? -1 : 1); });
+    if (!off.length) return null;
+    var parts = off.map(function (p) { return fmt(by[p]) + " under " + p + (COMMON && COMMON[p] ? " (" + COMMON[p] + ")" : ""); });
+    var m = off.reduce(function (a, p) { return a + by[p]; }, 0);
+    return el("p", { cls: "csb-note csb-mint", id: "csb-mint", role: "note" }, [
+      el("strong", { text: "Every course below is listed under " + code + " at " + college + ". " }),
+      "The four letters of an M-ID name the common subject code it was minted under, not the course’s local subject. "
+      + fmt(m) + " of these " + fmt(rows.length) + " courses hold M-IDs minted under another code: " + parts.join("; ") + ". "
+      + ((row && (row.noncredit_courses || 0) > 0) ? "Each noncredit category’s save above sets the code for that category’s courses only, shown under each heading below; the M-IDs move at the next re-mint, and the local subject stays " + code + ". "
+        : cc ? code + "’s common subject code is " + cc + (sv && sv.common ? ", from a person’s save" : "") + ", so those M-IDs move at the next re-mint. "
+        : code + " has no common subject code yet; settle it above and those M-IDs move at the next re-mint. ")
+      + "Move a course one at a time only where it belongs under a different code than the rest."]);
   }
   /* The move bar under the panel's course tables: one common subject code for the checked courses, and one Save. */
   function moveBar(slug, code, body) {
@@ -831,7 +861,7 @@
     });
     return { node: el("section", { cls: "csb-edit", id: pre, "aria-labelledby": pre + "-h" }, [
       el("h4", { cls: "csb-edit-head", id: pre + "-h", text: "Move courses to another common subject code" }),
-      el("p", { cls: "csb-note", text: "Check one course or a group in the tables above, type the common subject code they belong under, and save. Each move is saved under your sign-in and shows on its course; the course’s M-ID moves at the next re-mint. A course another person moved keeps that move." }),
+      el("p", { cls: "csb-note", text: "For the course that belongs under a different code than the rest of " + code + ": check it, or a group, type the common subject code it belongs under, and save. The code’s own common subject code, settled above, moves the rest at the next re-mint. Each move is saved under your sign-in and shows on its course. A course another person moved keeps that move." }),
       n, el("div", { cls: "csb-ed-field" }, [el("label", { "for": pre + "-code", text: "Common subject code for the checked courses" }), co, cmsg]),
       el("p", { cls: "csb-ed-row" }, [save]), status]), count: count };
   }
@@ -1251,13 +1281,35 @@
       var both = rows.filter(function (x) { return x.listed === "Both"; }).length, cat = rows.filter(function (x) { return x.listed === "Catalog"; }).length;
       body.appendChild(el("p", { cls: "csb-note", id: "csb-panel-count", text: fmt(rows.length) + (rows.length === 1 ? " course: " : " courses: ")
         + fmt(both) + " in both the catalog and COCI, " + fmt(cat) + " in the catalog only, " + fmt(rows.length - both - cat) + " in COCI only." }));
+      var mn = mintNote(row, rows, code, c.college);
+      if (mn) body.appendChild(mn);
       var can = !!reviewer() && String(code).indexOf("|") < 0, bar = can ? moveBar(slug, code, body) : null, nT = 0;
-      BANDS.forEach(function (b) {
+      var ctxOf = function (common) { return { slug: slug, code: code, can: can, n: nT++, onCheck: bar ? bar.count : null, common: common }; };
+      var rowCommon = (row && savedOf(row) && savedOf(row).common) || (row && row.common) || "";
+      function bandTable(b) {
         var part = rows.filter(function (x) { return (x.band || "") === b[0]; });
         if (!part.length) return;
         body.appendChild(el("h4", { cls: "csb-band", "data-band": b[0], text: b[1] + " (" + fmt(part.length) + ")" }));
-        body.appendChild(courseTable(part, b[1] + " under " + code, { slug: slug, code: code, can: can, n: nT++, onCheck: bar ? bar.count : null }));
+        body.appendChild(courseTable(part, b[1] + " under " + code, ctxOf(rowCommon)));
+      }
+      bandTable(BANDS[0]);
+      /* Noncredit courses by COCI noncredit category (Sam, 2026-11-22: "the appearance makes it seem like I am changing
+         all the listed courses to AED, even though I maybe be just moving the AED out and associating them with the
+         common subject VOCE"): a category's save touches that category's courses only, so each category's courses
+         stand under their own heading with the code that save sets, and the local subject never changes. */
+      var nc = rows.filter(function (x) { return x.band === "N" || x.band === "E"; }), groups = {};
+      nc.forEach(function (x) { var k = x.category || ""; (groups[k] = groups[k] || []).push(x); });
+      Object.keys(groups).sort(function (a, b) { return (a === "") - (b === "") || groups[b].length - groups[a].length || (a < b ? -1 : 1); }).forEach(function (cat) {
+        var part = groups[cat], cc = row && cat ? catCode(row, cat) : null, them = part.length === 1 ? "this course" : "these " + fmt(part.length) + " courses", their = part.length === 1 ? "its" : "their";
+        body.appendChild(el("h4", { cls: "csb-band", "data-band": "N", "data-category": cat || "none", text: (cat ? "Noncredit, " + catWords(cat) : "Noncredit, no category in COCI’s export") + " (" + fmt(part.length) + ")" }));
+        body.appendChild(el("p", { cls: "csb-note csb-cat-code", "data-category": cat || "none", text: !cat
+          ? "COCI’s export gives " + them + " no credit type and no noncredit category, so no category’s save reaches " + (part.length === 1 ? "it. Move it" : "them. Move one") + " where it belongs under a code."
+          : cc && cc.saved ? "Common subject code " + cc.code + ", from a person’s save on the " + catWords(cat) + " form. It applies to " + them + " only: " + their + " local subject stays " + code + ", and " + their + " M-IDs move to " + cc.code + " at the next re-mint."
+          : cc ? "Not settled yet. " + catWords(cat) + "’s noncredit MQ discipline, " + cc.mq + ", has the common subject code " + cc.code + "; a Save on that form above applies it to " + them + " only. The local subject stays " + code + "."
+          : "No common subject code yet: " + (cc === null && NC_MQ[cat] && NC_MQ[cat].mq_discipline ? "the noncredit MQ discipline " + NC_MQ[cat].mq_discipline + " has none" : "no noncredit MQ discipline is named for this category") + ". " + (part.length === 1 ? "This course keeps its M-ID" : "These " + fmt(part.length) + " courses keep their M-IDs") + " until one is set." }));
+        body.appendChild(courseTable(part, (cat ? catWords(cat) : "Noncredit courses with no category") + " under " + code, ctxOf(cc ? cc.code : "")));
       });
+      bandTable(BANDS[3]);
       if (bar) body.appendChild(bar.node);
     }, function (e) {
       if (S.code !== code) return;

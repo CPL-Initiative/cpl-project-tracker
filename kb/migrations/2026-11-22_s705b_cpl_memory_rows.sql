@@ -14,3 +14,5 @@ select id, 'SkyTystie (S705)', 'create', 'S705 (2026-11-22)', to_jsonb(m)
 from public.cpl_memory m where m.author = 'SkyTystie (S705)'
   and not exists (select 1 from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create');
 select slug, status from public.cpl_memory where author = 'SkyTystie (S705)' order by slug;
+-- Added later in S705 and applied with execute_sql the same way:
+-- r-mid-prefix-is-not-the-local-subject-sam-2026-11-22 (verified, Sam's words on Cerritos AED's ELEC M-IDs).
