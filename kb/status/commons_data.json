@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-22T11:33:03Z",
+ "written_at": "2026-11-22T11:51:01Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,8 +168,8 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 16805,
-  "gap": 5530,
+  "passing": 16785,
+  "gap": 5550,
   "with_gap": 118,
   "cost_usd": 1339.71,
   "passed_at_read": 16204,
@@ -190,8 +190,8 @@
  "census_check": {
   "universe": 22335,
   "passing": 16624,
-  "gap": 5530,
-  "collected_with_gaps": 181,
+  "gap": 5550,
+  "collected_with_gaps": 161,
   "discontinued": 0
  },
  "census_live": {
@@ -2097,13 +2097,13 @@
    "harvested": true,
    "slug": "coastline_community",
    "programs": 175,
-   "passing": 126,
-   "gap": 49,
+   "passing": 125,
+   "gap": 50,
    "causes": {
     "no_closed_list": 16,
     "page_not_found": 5,
     "places_none": 14,
-    "unknown_without_live": 14
+    "unknown_without_live": 15
    },
    "census_causes": {
     "no_closed_list": 11,
@@ -2164,7 +2164,7 @@
     "reader_page_assignment": 14,
     "reconcile_steps": 10,
     "reader_page_search": 5,
-    "scorer_noncredit_hours": 4
+    "scorer_noncredit_hours": 5
    },
    "collection": {
     "program_reader": {
@@ -2511,14 +2511,14 @@
    "harvested": true,
    "slug": "college_of_the_canyons",
    "programs": 283,
-   "passing": 223,
-   "gap": 60,
+   "passing": 222,
+   "gap": 61,
    "causes": {
     "found_not_extracted": 2,
     "no_closed_list": 19,
     "page_not_found": 15,
     "places_none": 1,
-    "unknown_without_live": 23
+    "unknown_without_live": 24
    },
    "census_causes": {
     "coverage_fails": 7,
@@ -2587,7 +2587,7 @@
     "reconcile_steps": 20,
     "program_course_file_check": 19,
     "reader_page_search": 15,
-    "scorer_noncredit_hours": 3,
+    "scorer_noncredit_hours": 4,
     "paid_read": 2,
     "reader_page_assignment": 1
    },
@@ -4001,13 +4001,13 @@
    "harvested": true,
    "slug": "de_anza",
    "programs": 248,
-   "passing": 206,
-   "gap": 42,
+   "passing": 205,
+   "gap": 43,
    "causes": {
     "found_not_extracted": 21,
     "no_closed_list": 5,
     "page_not_found": 1,
-    "unknown_without_live": 15
+    "unknown_without_live": 16
    },
    "census_causes": {
     "found_not_extracted": 2,
@@ -4070,9 +4070,9 @@
     "paid_read": 21,
     "reconcile_steps": 13,
     "program_course_file_check": 5,
+    "scorer_noncredit_hours": 2,
     "ge_units_steps": 1,
-    "reader_page_search": 1,
-    "scorer_noncredit_hours": 1
+    "reader_page_search": 1
    },
    "collection": {
     "program_reader": {
@@ -5922,11 +5922,11 @@
    "harvested": true,
    "slug": "laney",
    "programs": 175,
-   "passing": 145,
-   "gap": 30,
+   "passing": 140,
+   "gap": 35,
    "causes": {
     "page_not_found": 19,
-    "unknown_without_live": 11
+    "unknown_without_live": 16
    },
    "census_causes": {
     "page_not_found": 19,
@@ -5977,7 +5977,8 @@
    "run": "44744386009",
    "levers": {
     "reader_page_search": 19,
-    "reconcile_steps": 11
+    "reconcile_steps": 11,
+    "scorer_noncredit_hours": 5
    },
    "collection": {
     "program_reader": {
@@ -6441,12 +6442,12 @@
    "harvested": true,
    "slug": "los_angeles_city",
    "programs": 260,
-   "passing": 230,
-   "gap": 30,
+   "passing": 229,
+   "gap": 31,
    "causes": {
     "no_closed_list": 2,
     "page_not_found": 14,
-    "unknown_without_live": 14
+    "unknown_without_live": 15
    },
    "census_causes": {
     "coverage_fails": 6,
@@ -6504,7 +6505,8 @@
     "reader_page_search": 14,
     "reconcile_steps": 13,
     "program_course_file_check": 2,
-    "ge_units_steps": 1
+    "ge_units_steps": 1,
+    "scorer_noncredit_hours": 1
    },
    "collection": {
     "program_reader": {
@@ -7356,13 +7358,13 @@
    "harvested": true,
    "slug": "mendocino",
    "programs": 125,
-   "passing": 80,
-   "gap": 45,
+   "passing": 79,
+   "gap": 46,
    "causes": {
     "no_closed_list": 2,
     "page_not_found": 16,
     "places_none": 7,
-    "unknown_without_live": 20
+    "unknown_without_live": 21
    },
    "census_causes": {
     "coverage_fails": 1,
@@ -7423,7 +7425,8 @@
     "reconcile_steps": 11,
     "ge_units_steps": 9,
     "reader_page_assignment": 7,
-    "program_course_file_check": 2
+    "program_course_file_check": 2,
+    "scorer_noncredit_hours": 1
    },
    "collection": {
     "program_reader": {
@@ -9315,13 +9318,13 @@
    "harvested": true,
    "slug": "pasadena_city",
    "programs": 367,
-   "passing": 279,
-   "gap": 88,
+   "passing": 274,
+   "gap": 93,
    "causes": {
     "no_closed_list": 49,
     "page_not_found": 19,
     "places_none": 3,
-    "unknown_without_live": 17
+    "unknown_without_live": 22
    },
    "census_causes": {
     "no_closed_list": 48,
@@ -9380,6 +9383,7 @@
     "program_course_file_check": 49,
     "reader_page_search": 19,
     "reconcile_steps": 15,
+    "scorer_noncredit_hours": 5,
     "reader_page_assignment": 3,
     "ge_units_steps": 2
    },
@@ -9421,12 +9425,12 @@
    "harvested": true,
    "slug": "porterville",
    "programs": 91,
-   "passing": 53,
-   "gap": 38,
+   "passing": 52,
+   "gap": 39,
    "causes": {
     "no_closed_list": 6,
     "page_not_found": 6,
-    "unknown_without_live": 26
+    "unknown_without_live": 27
    },
    "census_causes": {
     "coverage_fails": 2,
@@ -9484,7 +9488,8 @@
     "reconcile_steps": 24,
     "program_course_file_check": 6,
     "reader_page_search": 6,
-    "ge_units_steps": 2
+    "ge_units_steps": 2,
+    "scorer_noncredit_hours": 1
    },
    "collection": {
     "program_reader": {
@@ -9524,13 +9529,13 @@
    "harvested": true,
    "slug": "reedley",
    "programs": 213,
-   "passing": 179,
-   "gap": 34,
+   "passing": 178,
+   "gap": 35,
    "causes": {
     "no_closed_list": 13,
     "page_not_found": 4,
     "places_none": 1,
-    "unknown_without_live": 16
+    "unknown_without_live": 17
    },
    "census_causes": {
     "coverage_fails": 5,
@@ -9588,7 +9593,8 @@
     "reconcile_steps": 16,
     "program_course_file_check": 13,
     "reader_page_search": 4,
-    "reader_page_assignment": 1
+    "reader_page_assignment": 1,
+    "scorer_noncredit_hours": 1
    },
    "collection": {
     "program_reader": {
@@ -12019,14 +12025,14 @@
    "harvested": true,
    "slug": "ventura",
    "programs": 184,
-   "passing": 144,
-   "gap": 40,
+   "passing": 143,
+   "gap": 41,
    "causes": {
     "found_not_extracted": 1,
     "no_closed_list": 6,
     "page_not_found": 4,
     "places_none": 1,
-    "unknown_without_live": 28
+    "unknown_without_live": 29
    },
    "census_causes": {
     "found_not_extracted": 1,
@@ -12087,7 +12093,8 @@
     "ge_units_steps": 5,
     "reader_page_search": 4,
     "paid_read": 1,
-    "reader_page_assignment": 1
+    "reader_page_assignment": 1,
+    "scorer_noncredit_hours": 1
    },
    "collection": {
     "program_reader": {
@@ -12231,14 +12238,14 @@
    "harvested": true,
    "slug": "west_los_angeles",
    "programs": 245,
-   "passing": 182,
-   "gap": 63,
+   "passing": 180,
+   "gap": 65,
    "causes": {
     "found_not_extracted": 1,
     "no_closed_list": 17,
     "page_not_found": 24,
     "places_none": 1,
-    "unknown_without_live": 20
+    "unknown_without_live": 22
    },
    "census_causes": {
     "coverage_fails": 5,
@@ -12299,7 +12306,7 @@
     "reader_page_search": 24,
     "program_course_file_check": 17,
     "reconcile_steps": 17,
-    "scorer_noncredit_hours": 3,
+    "scorer_noncredit_hours": 5,
     "paid_read": 1,
     "reader_page_assignment": 1
    },

@@ -51,7 +51,7 @@ def hours(computed, stated, measure="hours", why=None, coverage=True, passes=Fal
     if why is None:
         why = (["the record names no total"] if stated is None else
                ["the blocks sum to %s-%s; the catalog states %s-%s" % (computed[0], computed[1], stated[0], stated[1])])
-    return {"college": "Laney College", "control_number": "39368", "award": "Noncredit program",
+    return {"college": "Laney College", "control_number": "99999", "award": "Noncredit program",
             "record": {"program": {"measure": measure}, "blocks": [], "notes": []},
             "score": {"coverage": {"pass": coverage, "share": 1.0}, "invented": {"pass": True},
                       "arithmetic": {"pass": passes, "status": "equal" if passes else status, "computed": computed,
@@ -83,10 +83,11 @@ check(named(hours([72.0, 72.0], [90.0, 90.0], coverage=False))[0] is None, "a fa
 check(named(hours([90.0, 90.0], [90.0, 90.0], passes=True))[0] is None, "a passing record takes no gap")
 
 # The self-recall on held answers, and the plain recall, over every committed record.
-res = NG.run(write=False, gaps=HOURS, skip=LANE_1_S703)
+res = NG.run(write=False, gaps=HOURS, skip=LANE_1_S703,
+             census_causes=("units_incomplete|noncredit_hours", "units_unequal|noncredit_hours"))
 hr = res["hours_recall"]
 check(hr["held"] > 3000 and hr["right"] == hr["held"] and hr["wrong"] == 0
-      and set(hr["by_test"]) == set(HOURS),
+      and set(hr["by_test"]) <= set(HOURS) | {"none"},
       "self-recall, three readings of each passing hours record: held %d, right %d, wrong %d (%s)"
       % (hr["held"], hr["right"], hr["wrong"], hr["wrong_keys"][:3]))
 rc = res["recall"]
@@ -120,6 +121,38 @@ for college, cn in sorted(keys):
         filed = json.load(fh)
     check(len(filed["score"].get("gaps") or []) == 1 and filed["score"]["gaps"][0]["gap"] in HOURS,
           "%s %s: the record files its hours gap" % (college, cn))
+
+# #3679 second reader (d-hours-gaps-hold-misreads-s703): 19 records held by key, the boundary readings, and the
+# claim behind hours_total_not_read measured on the records' own words.
+check(len(NG.HELD_HOURS) == 19 and not keys & set(NG.HELD_HOURS), "the 19 held records are not in the plan")
+check(sum(1 for w in NG.HELD_HOURS.values() if w == NG.HOURS_REREAD_WHY) == 8
+      and sum(1 for w in NG.HELD_HOURS.values() if w == NG.HOURS_NO_SECTION_WHY) == 10
+      and NG.HELD_HOURS[("Reedley College", "42457")] == NG.HOURS_ROUNDING_WHY,
+      "eight held for a reread, ten for a missing section, Reedley 42457 for rounding")
+bd = hr["by_boundary"]
+check(sum(v for k, v in bd.items() if k.startswith("boundary_top")) > 1000
+      and sum(v for k, v in bd.items() if k.startswith("boundary_low")) > 1000,
+      "the boundary readings ran: %s" % bd)
+check(named(hours([245.0, 245.0], [172.0, 245.0])) == ("hours_within_printed_range",) * 2
+      and named(hours([172.0, 172.0], [172.0, 245.0])) == ("hours_within_printed_range",) * 2,
+      "a sum at the top or at the low end of a printed range the scorer fails takes hours_within_printed_range")
+hp = res["hours_precision"]
+check(set(hp) >= {"section_missing", "says_no_total", "silent"}, "the precision measure has its three counts")
+check(hp["hand_held_no_section"] == 10 and hp["hand_held_flagged_by_hours_claim"] == 10,
+      "hours_claim reads a missing section on %d of the 10 hand-held records" % hp["hand_held_flagged_by_hours_claim"])
+mid = hours([135.0, 135.0], None)
+mid["record"]["notes"] = ["The excerpt begins mid-section on page 249; the heading is on the previous page."]
+check(NG.hours_claim(mid) == "section_missing" and named(mid) == (None, None),
+      "a no-total record read from text without its section takes no gap")
+said = hours([135.0, 135.0], None)
+said["record"]["notes"] = ["No total hours are printed for this certificate."]
+check(NG.hours_claim(said) == "says_no_total" and named(said) == ("hours_total_not_read",) * 2,
+      "a note that no total is printed keeps hours_total_not_read")
+for k in sorted(keys):
+    with open(os.path.join(ROOT, "kb", "program_requirements_college", C.slug_of(k[0]), "records", k[1] + ".json"),
+              encoding="utf-8") as fh:
+        check(NG.hours_held_out(json.load(fh)) is None, "%s %s: a plan row is not held out" % k)
+check(len(set(plan["held_colleges"])) == len(plan["held_colleges"]), "held_colleges names each college once")
 
 # The lane 1 colleges' records carry no hours gap.
 for college in LANE_1_S703:
