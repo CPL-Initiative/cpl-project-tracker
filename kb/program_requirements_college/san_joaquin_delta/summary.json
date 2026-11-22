@@ -2,10 +2,10 @@
  "college": "San Joaquin Delta College",
  "programs": 251,
  "with_closed_list": 233,
- "found": 203,
- "extracted": 203,
+ "found": 209,
+ "extracted": 209,
  "errors": 0,
- "passed_machine_checks": 201,
+ "passed_machine_checks": 207,
  "failed": {
   "coverage": 0,
   "invented": 0,
@@ -13,10 +13,10 @@
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd_run": 2.18,
- "cost_usd_filed": 13.42,
- "cost_per_program": 0.0661,
- "extract_calls": 19,
+ "cost_usd_run": 0.36,
+ "cost_usd_filed": 13.78,
+ "cost_per_program": 0.0659,
+ "extract_calls": 6,
  "extract_failed": [],
  "not_found": [
   {
@@ -148,141 +148,6 @@
     "chars": {
      "body": 3447,
      "content": 37336,
-     "tabs": 0
-    },
-    "tab_panels": []
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "14594",
-   "title": "Industrial Technology: Maintenance Apprenticeship Option",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3285&print",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 1.0,
-    "body": 1.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 22,
-    "why": "coarse net: the page's code tokens name 0 of 22 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2623,
-     "content": 36501,
-     "tabs": 0
-    },
-    "tab_panels": []
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "14595",
-   "title": "Electrical Technology: Apprenticeship Option",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3327&print",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 1.0,
-    "body": 1.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 10,
-    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2187,
-     "content": 36078,
-     "tabs": 0
-    },
-    "tab_panels": []
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "14597",
-   "title": "Industrial Technology: Electrical Apprenticeship Option",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3286&print",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 1.0,
-    "body": 1.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 18,
-    "why": "coarse net: the page's code tokens name 0 of 18 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2278,
-     "content": 36160,
-     "tabs": 0
-    },
-    "tab_panels": []
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "14598",
-   "title": "Industrial Technology: Mechanical Apprenticeship Option",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3284&print",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 1.0,
-    "body": 1.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 17,
-    "why": "coarse net: the page's code tokens name 0 of 17 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2281,
-     "content": 36164,
-     "tabs": 0
-    },
-    "tab_panels": []
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "14599",
-   "title": "Industrial Technology: Operations Apprenticeship Option",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3283&print",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.941,
-    "body": 0.941,
-    "content": 0.0,
-    "net": 0,
-    "listed": 17,
-    "why": "coarse net: the page's code tokens name 0 of 17 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2255,
-     "content": 36138,
      "tabs": 0
     },
     "tab_panels": []
@@ -446,33 +311,6 @@
     "chars": {
      "body": 3677,
      "content": 37568,
-     "tabs": 0
-    },
-    "tab_panels": []
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "37611",
-   "title": "Electrical Technology: Apprenticeship",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3355&print",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 1.0,
-    "body": 1.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 10,
-    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2888,
-     "content": 36777,
      "tabs": 0
     },
     "tab_panels": []
@@ -669,5 +507,5 @@
    "status": "Active"
   }
  ],
- "run": "44883860902"
+ "run": "45029248913"
 }
