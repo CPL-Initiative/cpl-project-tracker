@@ -1,0 +1,28 @@
+{
+ "_readme": "S703 (worker levers for SkyDovekie), census lever 10, second read. The first (run 45029864826) found the School of Extended Learning index links an Adult High School and GED/Bilingual GED page. This read prints it, and the Adult Basic Education page if one exists, so a gap can name whether Secondary Education 36970 and 36971, Adult High School Diploma 38315, the five Adult Basic Education programs (24266, 24270, 24271, 24272, 24300) and Health Care Interpreter 24392 have their own page. Two loads, no model call, nothing written.",
+ "college": "Santa Barbara City College",
+ "questions": {
+  "index": "Which programs the page links, and whether any is a named target."
+ },
+ "keywords": [
+  "Certificate",
+  "Diploma",
+  "Program"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "index"
+   ],
+   "url": "https://catalog.sbcc.edu/sel/ahs-ged/",
+   "links": "high-school|diploma|ged|bilingual|biliter|secondary"
+  },
+  {
+   "answers": [
+    "index"
+   ],
+   "url": "https://catalog.sbcc.edu/sel/adult-basic-education/",
+   "links": "basic|reading|writing|math|interpret"
+  }
+ ]
+}
