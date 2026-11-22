@@ -1490,13 +1490,18 @@
         "." + P + "split{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-start}",
         "." + P + "split > ." + P + "wrap{flex:999 1 480px;min-width:0}",
         "." + P + "rowedit>td{cursor:pointer}",
-        "." + P + "panel{position:relative;flex:1 1 420px;max-width:760px;min-width:0;box-sizing:border-box;background:var(--surface-opaque);border:1px solid var(--border-strong);border-radius:10px;overflow:hidden}",
+        // The panel holds its place in the window while the page scrolls, and its top (the trail and the bar with Close)
+        // stays put while its body scrolls inside it: one scroller (Sam, 2026-11-22, r-sidebars-resize-and-frozen-top-sam-2026-11-22:
+        // "Side bar top rows all need to be frozen so the close button doesn't get lost on scroll").
+        "." + P + "panel{position:sticky;top:8px;display:flex;flex-direction:column;max-height:calc(100vh - 16px);flex:1 1 420px;max-width:760px;min-width:0;box-sizing:border-box;background:var(--surface-opaque);border:1px solid var(--border-strong);border-radius:10px;overflow:hidden}",
+        "." + P + "panel > ." + P + "pbody{flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain}",
+        "." + P + "panel > ." + P + "trail, ." + P + "panel > ." + P + "pbar{flex:0 0 auto}",
         // The panel's left-edge grip: a 12px strip, quiet until hovered or focused.
         "." + P + "pgrip{position:absolute;left:0;top:0;bottom:0;width:12px;cursor:col-resize;touch-action:none;z-index:2}",
         "." + P + "pgrip:hover,." + P + "pgrip:focus-visible{background:var(--border-strong)}",
         "." + P + "pgrip:focus-visible{outline:2px solid var(--seal-blue);outline-offset:-2px}",
         // On a narrow window the panel wraps below the table at the full width, so a stored width never scrolls the page.
-        "@media (max-width: 900px){." + P + "panel{flex:1 1 100% !important;width:auto !important;max-width:none !important}." + P + "pgrip{display:none}}",
+        "@media (max-width: 900px){." + P + "panel{flex:1 1 100% !important;width:auto !important;max-width:none !important;position:relative;max-height:none}." + P + "panel > ." + P + "pbody{overflow-y:visible}." + P + "pgrip{display:none}}",
         "." + P + "trail{padding:6px 12px 0;font-size:.82rem;color:var(--text-muted);overflow-wrap:anywhere}",
         "." + P + "trail a{display:inline-block;min-height:24px;line-height:24px;color:var(--cobalt);text-underline-offset:3px}",
         "." + P + "trail-here{color:var(--text-strong)}",

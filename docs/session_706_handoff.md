@@ -93,11 +93,27 @@ text), 5, 7, 9, and in 12 every status file but `kb/status/subjects.json`.
   saved), Workforce Preparation 19 (no code), ESL 8 (ESLN), Older Adults 6 (OLAD), Substantial Disabilities 3 and Health
   and Safety 2 (no code), 1 with no category, and 24 with no credit type or category in the export.
 
+- **Exhibits Review card, Sam's asks of 2026-11-22 (same PR):** Previous and Next move without saving and Undo is its
+  own word; the line under the words says which title Change saves; *Changes this visit* lists before and after at the
+  foot; *Move the issuer to training sites* and *Edit training sites* (a side panel with the List's editor, frozen top,
+  resizable) replace the link that left the view; a source id opens MAP in a new tab where Course details is not drawn;
+  Course details looks in another subject (`kb/_build_exhibits_review.py` writes every discipline, 250 titles each,
+  from tonight's rebuild; code-only, the file is the runner's). The Commons List's side panel (`commons_list.js`, every
+  List) now holds its place in the window with its trail and Close fixed and its body scrolling. `a11y` passed
+  `exhibits-review-card` light and dark. The card also shows **Articulated with**: each college course, its units and
+  its credit recommendation (`credit_recs` on each card from tonight's rebuild), and an exhibit with none reads, in a flag,
+  that it is not a valid exhibit and needs MAP team follow-up (`r-exhibits-card-shows-articulated-course-cr-sam-2026-11-22`).
+  Today's 37 held cards all carry one; the flag has no case yet. A worklist of flagged exhibits for the MAP team is the
+  next step if Sam wants one.
+
 ## Decisions Sam made (in session, verbatim in `cpl_memory`)
 
 `r-college-department-list-is-a-title-source-sam-2026-11-22`, `r-subject-title-source-link-sam-2026-11-22`,
 `r-sidebars-resize-and-frozen-top-sam-2026-11-22`, `r-subjects-move-courses-sam-2026-11-22`,
-`r-subjects-columns-sort-resize-sam-2026-11-22`, `r-mid-prefix-is-not-the-local-subject-sam-2026-11-22`.
+`r-subjects-columns-sort-resize-sam-2026-11-22`, `r-mid-prefix-is-not-the-local-subject-sam-2026-11-22`, and on Exhibits
+`r-exhibits-review-nav-undo-apart-sam-2026-11-22`, `r-exhibits-review-say-what-change-saves-sam-2026-11-22`,
+`r-exhibits-review-session-changes-list-sam-2026-11-22`, `r-exhibits-review-edit-sites-in-place-sam-2026-11-22`,
+`r-exhibits-look-in-another-subject-sam-2026-11-22`.
 
 ## Open work, from the lanes' NEXT lines
 
@@ -144,6 +160,6 @@ samueltlee/CPLBrain. Wiki candidate for `/wiki-ingest`: the every-college Save a
 
 Dropped at sign-off: the PR subscription on #3687 and the COBIx watcher. No check-in and no artifact watch.
 
-Spend: not available; 2026-11-22T14:10Z to about 15:30Z.
+Spend: not available; 2026-11-22T14:10Z to about 16:15Z.
 
 Opening line: *Greetings, you are SkyPrion (Session 707), see SkyTystie's handoff — `docs/session_706_handoff.md` — let's keep rolling with our queue.*
