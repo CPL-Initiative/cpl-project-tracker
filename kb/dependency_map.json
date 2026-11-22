@@ -4,9 +4,9 @@
   "supabase_tables": 119,
   "rpcs": 68,
   "edge_functions": 16,
-  "file_datasets": 1129,
+  "file_datasets": 1138,
   "external_services": 197,
-  "consumers": 646,
+  "consumers": 648,
   "workflows": 77,
   "data_js_files": 71,
   "tabs": 41
@@ -4560,7 +4560,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 413
+     "line": 417
     },
     {
      "id": "module:fact-sheet/factsheet_edit.js",
@@ -6102,11 +6102,18 @@
      "line": 163
     },
     {
+     "id": "script:kb/_build_local_subject_recommendations.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 61
+    },
+    {
      "id": "script:kb/_build_local_subject_titles.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 41
+     "line": 45
     },
     {
      "id": "script:kb/_build_not_applicable.py",
@@ -10346,6 +10353,19 @@
      "how": "yaml",
      "line": 0
     },
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/_build_local_subject_recommendations.py": {
+   "consumers": [
     {
      "id": "workflow:daily-dashboard.yml",
      "kind": "workflow",
@@ -16585,11 +16605,18 @@
      "line": 604
     },
     {
+     "id": "script:kb/_build_local_subject_recommendations.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 62
+    },
+    {
      "id": "script:kb/_build_local_subject_titles.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 43
+     "line": 47
     },
     {
      "id": "script:kb/_ccr_confidence_apply.py",
@@ -20259,6 +20286,13 @@
      "line": 106
     },
     {
+     "id": "script:kb/_build_noncredit_categories.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 23
+    },
+    {
      "id": "script:kb/_build_program_course_graph.py",
      "kind": "script",
      "direction": "read",
@@ -21042,7 +21076,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 42
+     "line": 46
     },
     {
      "id": "script:kb/_build_oc_medical_assistant_crosswalk.py",
@@ -21151,6 +21185,19 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:kb/reference/subject_web_searches.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_local_subject_recommendations.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 64
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:kb/reference/swp_region_roster.json": {
@@ -21799,7 +21846,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 26,
+     "line": 64,
      "tabs": [
       "commons"
      ]
@@ -21823,6 +21870,37 @@
     "workflow:daily-dashboard.yml"
    ]
   },
+  "file:kb/status/local_subject_recommendations.json": {
+   "consumers": [
+    {
+     "id": "module:commons_subjects.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 46,
+     "tabs": [
+      "commons"
+     ]
+    },
+    {
+     "id": "script:kb/_build_local_subject_recommendations.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 66
+    }
+   ],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": true,
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
+  },
   "file:kb/status/local_subject_titles.json": {
    "consumers": [
     {
@@ -21830,17 +21908,24 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 22,
+     "line": 23,
      "tabs": [
       "commons"
      ]
+    },
+    {
+     "id": "script:kb/_build_local_subject_recommendations.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 60
     },
     {
      "id": "script:kb/_build_local_subject_titles.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 44
+     "line": 48
     },
     {
      "id": "script:kb/_held_subject_codes.py",
@@ -21894,6 +21979,19 @@
     }
    ],
    "served": false,
+   "main_committers": []
+  },
+  "file:kb/status/noncredit_categories.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_noncredit_categories.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 24
+    }
+   ],
+   "served": true,
    "main_committers": []
   },
   "file:kb/status/program-requirements-checked.json": {
@@ -26193,6 +26291,19 @@
     "workflow:daily-dashboard.yml"
    ]
   },
+  "file:subject_code_decisions_cerritos_<date>.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_local_subject_recommendations.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 63
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:swp_region_data.js": {
    "consumers": [
     {
@@ -28502,6 +28613,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/local_subject_recommendations_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/local_subject_titles_test.py": {
    "consumers": [
     {
@@ -28653,6 +28777,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/missed_subject_pages_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/model_run_gates_test.py": {
    "consumers": [
     {
@@ -28706,6 +28843,19 @@
    "main_committers": []
   },
   "file:tests/next_slo_colleges_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/noncredit_categories_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -29636,6 +29786,19 @@
    "main_committers": []
   },
   "file:tests/stop_hook_git_check_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/subject_headings_filer_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -34602,7 +34765,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 796
+     "line": 800
     },
     {
      "id": "module:cr_reference.js",
@@ -37411,6 +37574,7 @@
     "kb/_closest_mid.py",
     "kb/_build_local_subject_titles.py",
     "kb/_held_subject_codes.py",
+    "kb/_build_local_subject_recommendations.py",
     "kb/_row_audit.py",
     "kb/_row_audit_prune.py",
     "kb/_audit_exhibits.py",
@@ -37474,6 +37638,7 @@
     "kb/coci_closest_mid.json",
     "kb/status/local_subject_titles.json",
     "kb/status/held_subject_codes.json",
+    "kb/status/local_subject_recommendations.json",
     "cpl_pathways_membership_data.js",
     "kb/discipline_canonical_subj4.json",
     "kb/cid_claim_audit.json",
@@ -37550,7 +37715,9 @@
   },
   "dependency-map.yml": {
    "name": "Dependency map",
-   "crons": [],
+   "crons": [
+    "43 * * * *"
+   ],
    "scripts": [
     "kb/_build_dependency_map.py",
     "kb/_build_cobi_admin_surface.py"
@@ -37720,6 +37887,10 @@
     "tests/handover_pickup_test.py",
     "tests/ccr_doubt_test.py",
     "tests/local_subject_titles_test.py",
+    "tests/subject_headings_filer_test.py",
+    "tests/noncredit_categories_test.py",
+    "tests/local_subject_recommendations_test.py",
+    "tests/missed_subject_pages_test.py",
     "tests/held_subject_codes_test.py",
     "tests/subjects_daily_build_test.py",
     "tests/closest_mid_links_test.py",
@@ -38917,6 +39088,8 @@
   "kb/reference/cos_certifications.json",
   "kb/reference/moc_crosswalk.json",
   "kb/reference/restricted_table_access.json",
+  "kb/reference/subject_code_decisions_cerritos_2026-11-21.json",
+  "kb/reference/subject_web_searches.json",
   "kb/row_audit/*.md",
   "kb/status/harvest_heading_agreement.json",
   "kb/status/harvest_heading_agreement.md",
