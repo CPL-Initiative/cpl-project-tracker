@@ -10,7 +10,7 @@ and the page its filed record was read from before the S703 reread. Each pinned 
   2. reads from the pinned page in capture_pdf, under the college's real reconcile entry, its source marked pinned;
   3. finds on the pin's window what the filed page lacked (its total, or the core it missed);
   4. cannot bind on its filed page, which does not print the pin's words;
-  5. names its pin's page in the filed record once the S703 reread files it (until then the old page).
+  5. names its pin's page in the filed record, extracted by S703's paid read.
 
 Two Clovis programs carry no pin, and the test says why, so a pin added without the reader change fails here:
 Entrepreneur 33432's core page does not print the title word, and Social Science 33492's total prints on the page
@@ -59,6 +59,9 @@ MUST = {
     "33487": ["MANAGEMENT (Major #C.2180.AS)", "Total Units for the Major: 33-34"],
     "33491": ["SMALL BUSINESS MANAGEMENT (Major #C.2030.AS)", "Total Units for the Major: 32-35"],
 }
+# S703's paid reads, each from the pricing run's staged pages (sources_from): Cosumnes River 45018951701 (from
+# 45018060132), Clovis 45018954283 (from 45018063256).
+S703_RUNS = {"Cosumnes River College": "45018951701", "Clovis Community College": "45018954283"}
 PINNED = {"Cosumnes River College": {"33053": 333, "20227": 367, "20147": 625, "20193": 227},
           "Clovis Community College": {"33433": 106, "33487": 109, "33491": 110}}
 
@@ -94,8 +97,9 @@ for college, want in PINNED.items():
         check(filed != page and C.pdf_pinned_heading(pages, p, dict(pin, page=filed))[0] is None,
               "%s: the filed page p.%d does not print the pin's words, so the pin cannot bind there" % (cn, filed))
         rec = as_read(os.path.join(ROOT, "kb", "program_requirements_college", col["slug"], "records", cn + ".json"))
-        check(rec["source_url"].rsplit("#page=", 1)[1] in (str(page), str(filed)),
-              "%s: the filed record names the pin's p.%d (or, until the S703 reread files it, p.%d)" % (cn, page, filed))
+        check(rec["source_url"].endswith("#page=%d" % page) and str(rec["extracted_run"]) == S703_RUNS[college],
+              "%s: the filed record names the pin's p.%d, extracted by S703's read %s (it was p.%d)"
+              % (cn, page, S703_RUNS[college], filed))
 
     # capture_pdf reads each pinned program from its pin's page under the real entry, and marks its source pinned.
     programs = [prog(cn, p) for cn, p in col["programs"].items()]
