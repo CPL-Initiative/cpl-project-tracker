@@ -11,9 +11,10 @@
   "total_differs": "The catalog prints a total for this program that its own printed units do not add to.",
   "hours_total_not_read": "A program measured in hours: its courses carry their hours, and no program total was read, so its hours cannot be checked against one.",
   "hours_within_printed_range": "A program measured in hours: its courses' hours as read fall within the printed range of hours rather than matching it.",
-  "hours_total_differs": "A program measured in hours: its courses' hours as read add to a figure other than the program's printed total."
+  "hours_total_differs": "A program measured in hours: its courses' hours as read add to a figure other than the program's printed total.",
+  "ge_units_not_read": "The degree names a general education pattern, and no units for it were read, so the degree's units cannot be added. Its major adds up to the printed major total."
  },
- "at": "2026-11-22T11:49:32Z",
+ "at": "2026-11-22T12:39:54Z",
  "held_colleges": [
   "Lassen College",
   "Cosumnes River College",
@@ -46,7 +47,8 @@
   "right": 1840,
   "wrong": 0,
   "by_answer": {
-   "none": 1681,
+   "ge_units_not_read": 171,
+   "none": 1510,
    "hours_total_differs": 18,
    "hours_within_printed_range": 12,
    "hours_total_not_read": 33,
@@ -69,6 +71,112 @@
    "right": 96769,
    "wrong": 637
   }
+ },
+ "ge_units_recall": {
+  "held": 1685,
+  "right": 1685,
+  "wrong": 0,
+  "no_pattern": 268
+ },
+ "ge_units_precision": {
+  "says_none": 0,
+  "prints_figure": 0,
+  "silent": 0,
+  "hand_held_prints_figure": 21,
+  "hand_held_flagged_by_ge_claim": 20,
+  "hand_held_not_flagged": [
+   "Orange Coast College 16634"
+  ]
+ },
+ "ge_units_held_out": {
+  "why": "page prints a GE figure; ge_units_steps passes it free",
+  "decided": "d-ge-gap-only-where-no-figure-s703",
+  "keys": [
+   [
+    "Antelope Valley College",
+    "36852"
+   ],
+   [
+    "Antelope Valley College",
+    "39295"
+   ],
+   [
+    "Antelope Valley College",
+    "40870"
+   ],
+   [
+    "Antelope Valley College",
+    "43028"
+   ],
+   [
+    "Berkeley City College",
+    "31835"
+   ],
+   [
+    "Berkeley City College",
+    "41766"
+   ],
+   [
+    "Berkeley City College",
+    "41902"
+   ],
+   [
+    "Berkeley City College",
+    "42381"
+   ],
+   [
+    "Berkeley City College",
+    "42838"
+   ],
+   [
+    "College of Alameda",
+    "01129"
+   ],
+   [
+    "College of Alameda",
+    "01132"
+   ],
+   [
+    "College of Alameda",
+    "01141"
+   ],
+   [
+    "College of Alameda",
+    "32765"
+   ],
+   [
+    "College of Marin",
+    "19789"
+   ],
+   [
+    "College of Marin",
+    "19791"
+   ],
+   [
+    "De Anza College",
+    "45499"
+   ],
+   [
+    "Las Positas College",
+    "09214"
+   ],
+   [
+    "Las Positas College",
+    "09227"
+   ],
+   [
+    "Las Positas College",
+    "36235"
+   ],
+   [
+    "Las Positas College",
+    "38886"
+   ],
+   [
+    "Orange Coast College",
+    "16634"
+   ]
+  ]
  },
  "hours_recall": {
   "held": 5285,

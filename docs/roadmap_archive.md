@@ -712,3 +712,9 @@ The Subjects paragraph as it stood before the noncredit saves landed, verbatim:
 The S683 daytime paragraph, verbatim, moved to keep the lane under 20,000 bytes when Sam's three Subjects asks joined its NEXT:
 
 **S683 daytime (#3517: plain words, the nightly click-through):** the paragraph as it stood, [`docs/roadmap_archive.md`](../../roadmap_archive.md), *Moved from lanes/commons.md (S694 start)*. **NEXT:** (a) `kb/status/cr_decisions_live.json` from a read-only job; (b) `kb_curation` `ccr_procedure_request` rulings synced into `coci_curation` `ruling`; (c) the Programs click-through figures after the first 04:37 UTC run; (d) the retired note on the 11 courses on retired cards; (e) the fetch-plan builders import `kb/_flags.py` `hidden_card_ids()`.
+
+
+## Moved from docs/INDEX.md Update history (S702 checkpoint)
+
+- 2026-11-21 (S694 SkyPetrel, Sam's plain session on the Commons, conductor, full checkpoint): #3617 (the commons lane compacted), #3618 (the build for Assign from the panel, with its dry run), #3619 (the pile sorted by exhibit links through the folds; the closest M-ID file rebuilt daily), #3621 (the pile mint dry run, nothing applied); #3620 (the Subjects card) and #3622 (the Assign control) open when written. Handoff `docs/session_695_handoff.md` (SkyShearwater).
+- 2026-11-20 (S693 SkyKittiwake, Sam's plain session on the Commons, full checkpoint): #3610 (the hand-over takes a note and lists each drop; note migration and five memory rows applied through the runner), #3612 (Needs an M-ID, one gap pile of 2,508); #3613 (Sam's first hand-overs filed, 12 hunt courses answered) and #3614 (the Closest M-ID column, measured 93% right at 0.75 or more) open; seven of Sam's rulings in `sam_rulings`; 11 memory rows drafted; handoff 694.
