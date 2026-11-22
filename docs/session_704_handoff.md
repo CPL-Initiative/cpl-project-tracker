@@ -223,8 +223,8 @@ No PR subscription was taken (the run gated each PR by reads), no check-in is sc
 The COBIx watcher stopped at its two-hour limit at 13:08Z; single polls to 15:03Z found nothing new. Workers end with
 the session; their branches are pushed. The main checkout was left detached.
 
-Spend: $232.00 (estimate from token counts at list prices; Opus 5.5 $226.50, Haiku 5.5 $5.50); collection $215.00, infrastructure $17.00; 2026-11-22T10:12Z to 2026-11-22T15:25Z. The paid extraction runs' own cost, $1.29 (Cosumnes River $0.36, Clovis $0.23 and $0.15, Butte $0.05, Ohlone $0.14, San Joaquin Delta $0.36), is listed apart.
+Spend: $245.00 (estimate from token counts at list prices; Opus 5.5 $236.00, Haiku 5.5 $9.00); collection $215.00, infrastructure $30.00; 2026-11-22T10:12Z to 2026-11-22T17:20Z. The paid extraction runs' own cost, $1.29 (Cosumnes River $0.36, Clovis $0.23 and $0.15, Butte $0.05, Ohlone $0.14, San Joaquin Delta $0.36), is listed apart.
 
 Opening line: *Greetings, you are SkyKittiwake (Session 704), see SkyDovekie's (S703) handoff — `docs/session_704_handoff.md` — let's keep rolling with our queue.*
 
-This session's cost: about $232 at list prices (no `get_session` in this session; estimated from the session's and its workers' token counts) plus $1.29 of paid reads. Records collected: 218 (12 new, 6 replaced, 200 collected with a named gap), and 152 more programs filed as no-record gaps. Outline rows added: 198. Substantive PRs merged: 6 (#3676, #3677, #3678, #3679, #3681, #3685).
+This session's cost: about $245 at list prices (no `get_session` in this session; estimated from the session's and its workers' token counts) plus $1.29 of paid reads. Records collected: 218 (12 new, 6 replaced, 200 collected with a named gap), and 152 more programs filed as no-record gaps. Outline rows added: 198. Substantive PRs merged: 7 (#3676, #3677, #3678, #3679, #3681, #3685, #3689).
