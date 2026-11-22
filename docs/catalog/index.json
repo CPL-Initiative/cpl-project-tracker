@@ -17478,8 +17478,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 665,
+   "count": 666,
    "docs": [
+    {
+     "created": "2026-11-22",
+     "governs": [],
+     "n": 709,
+     "path": "docs/session_709_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 709 handoff (from SkyNoddy, S708, Ashley's side session of 2026-11-22: the MAP team worklist of exhibits with no credit recommendation, statewide)",
+     "type": null,
+     "updated": "2026-11-22"
+    },
     {
      "created": "2026-11-22",
      "governs": [],
@@ -28562,5 +28576,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1554
+ "total": 1555
 }
