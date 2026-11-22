@@ -142,7 +142,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "lists_past_their_figure",
+    "label": "The catalog's figures add up to its printed total, counting each list at its printed figure; the courses in a list carry more units than that figure.",
+    "words": "the figures add to the printed 41, counting 'Degree Major Requirements: 32 units' at its printed figure; the courses as read add to 42"
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 60,
+   "course_list_match": 83,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {
