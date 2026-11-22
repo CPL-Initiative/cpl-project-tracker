@@ -164,6 +164,20 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
   n = load("#commons/subjects/noncredit", { "kb/status/noncredit_subject_titles.json": undefined });
   await n.M.boot(); await settle();
   check("(10) a list that cannot be read says so", /could not be read/.test(txt(n.d.querySelector(".csb-note[role=status]"))));
+  /* (11) one list, every subject, with a credit and noncredit filter (Sam, 2026-11-22) */
+  let f = load("#commons/subjects");
+  await f.M.boot(); await settle();
+  const total = f.d.querySelectorAll(".csb-codes tbody tr").length;
+  const bandBtn = (b) => f.d.querySelector('button[data-csb-band="' + b + '"]');
+  check("(11) ⭐ the list opens on All subjects: every code on one list", bandBtn("").getAttribute("aria-pressed") === "true" && total === 6 && /^All subjects \(6\)$/.test(txt(bandBtn(""))));
+  bandBtn("C").click(); await settle();
+  check("(11) Credit narrows the list to codes with credit courses in COCI and says so", bandBtn("C").getAttribute("aria-pressed") === "true"
+    && Array.from(f.d.querySelectorAll(".csb-codes tbody tr")).map((r) => r.getAttribute("data-code")).join(",") === "ENGL,MATH,WELD,WELD");
+  bandBtn("N").click(); await settle();
+  check("(11) Noncredit shows the codes with noncredit courses, none in this fixture, in words", /No code is in this list/.test(txt(f.d.querySelector(".csb-codes tbody"))));
+  bandBtn("").click(); await settle();
+  check("(11) All subjects brings every code back", f.d.querySelectorAll(".csb-codes tbody tr").length === total);
+  check("(11) the pick is never stored and the address does not change", f.writes() === 0 && f.w.CPL_COMMONS_SUBJECTS.address() === "commons/subjects");
   let y = load("#commons/subjects", { "kb/status/local_subject_recommendations.json": undefined });
   await y.M.boot(); await settle();
   check("(8) the list draws without the recommendations file", y.d.querySelectorAll(".csb-codes tbody tr").length > 0 && !y.d.querySelector(".csb-rec"));
