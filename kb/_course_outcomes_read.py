@@ -1122,6 +1122,12 @@ def rows_recall(path: str, out_dir: str = OUT_DIR, host: str | None = None) -> d
     if want.get("slugs") and filed.get("slugs") != want["slugs"]:
         return refuse("trial %s read %s's pages; this count is for %s" % (want["trial"], filed.get("slugs"),
                                                                           want["slugs"]))
+    # The count names the parser of the trial it was counted against. A count repointed at another trial without its
+    # parser line moved with it (or a trial refiled under another parser) counts a parse nobody compared (S703).
+    if want.get("parser_fingerprint") != filed.get("parser_fingerprint"):
+        return refuse("the count names parser %s, and its trial %s was filed by parser %s: point the count at the "
+                      "trial it was counted against" % (want.get("parser_fingerprint"), want["trial"],
+                                                         filed.get("parser_fingerprint")))
     if filed.get("parser_fingerprint") != parser_fingerprint():
         return refuse("trial %s was filed by parser %s; the current parser is %s: run the trial again and count it"
                       % (want["trial"], filed.get("parser_fingerprint"), parser_fingerprint()))
