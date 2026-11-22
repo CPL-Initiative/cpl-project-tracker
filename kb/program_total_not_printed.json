@@ -8,6 +8,9 @@
    "45814": {"page": 162, "words": "Pilates Apparatus Teacher Training, Certificate of Achievement", "evidence": "PDF p.162 prints Required Core Courses: (6 units), Required Mat Courses: (3 units) and Required Apparatus Courses: (3 units), and no 'Area of Emphasis' or other program total (college-page-read run 44881390798).", "run": "44881390798"},
    "45815": {"page": 163, "words": "Pilates Reformer Teacher Training, Certificate of Achievement", "evidence": "PDF p.163 prints Required Core Courses: (6 units), Required Mat Courses: (3 units) and Required Reformer Courses: (3 units), and no 'Area of Emphasis' or other program total (college-page-read run 44881390798).", "run": "44881390798"},
    "37885": {"page": 135, "words": "Introduction to Engineering, Certificate of Achievement", "evidence": "PDF pp.135-136 print Required Mathematics Course: (5 units), Required Physics Course: (5 units), Required Engineering Course: (2 units) and Elective Engineering Course: (3 units), and no 'Area of Emphasis' or other program total (college-page-read run 44881390798).", "run": "44881390798"}
+  },
+  "Clovis Community College": {
+   "33433": {"page": 106, "words": "BUSINESS ADMINISTRATION ASSOCIATE IN SCIENCE DEGREE", "evidence": "Business Administration: General Business A.S. 33433: PDF p.106 prints the degree's heading and the start of its Business Administration Core, and p.107 the rest of the core (three 'Select one course' lists) and 'COMPLETE ONE OF THE FOLLOWING OPTIONS', each option with its own 'Total Units' (the General Business Option, Major #C.205C.AS: 'Select 9 units from the following', 'Total Units: 9'). Neither page prints a total for the degree's major (college-page-read run 45016537664; S703 paid read 45018954283).", "run": "45016537664"}
   }
  }
 }

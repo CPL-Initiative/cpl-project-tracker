@@ -101,6 +101,28 @@
     }
    ]
   },
+  "Clovis Community College": {
+   "why": "S703 (worker pins for SkyDovekie), the harvest lane's NEXT (4), f-clovis-19-left-s697: no reconcile step; the entry names three programs' own pages (pdf_pages).",
+   "steps": [],
+   "pdf_pages": {
+    "33433": {
+     "page": 106,
+     "words": "BUSINESS ADMINISTRATION ASSOCIATE IN SCIENCE DEGREE Catalog Description",
+     "evidence": "Business Administration: General Business A.S. 33433: the degree's heading 'BUSINESS ADMINISTRATION ASSOCIATE IN SCIENCE DEGREE' and the start of its Business Administration Core (BA 5, BA 10, BA 33, ECON C2002, ECON C2001, IS 15) print on PDF p.106; the core runs on to p.107, which prints its three 'Select one course' lists and the options, the General Business Option (Major #C.205C.AS) among them (college-page-read run 45016537664). The filed record was read from p.107 on, which opens mid-core ('Select one course: ... BA 19'), and places 14 of 22 listed courses, none of the core's first six."
+    },
+    "33487": {
+     "page": 109,
+     "words": "MANAGEMENT (Major #C.2180.AS) ASSOCIATE IN SCIENCE DEGREE",
+     "evidence": "Management A.S. 33487: its heading 'MANAGEMENT (Major #C.2180.AS) ASSOCIATE IN SCIENCE DEGREE', its Required Core Courses and 'Total Units for the Major: 33-34' print on PDF p.109 (college-page-read run 45016537664). The filed record was read from p.107, where its one listed course (ACCTG 40) prints in the Business Administration degree's core, and filed that degree's Management Option (Major #C.205F.AS) with no total. The state's title is Management, the stand-alone degree's, and the option's degree is Business Administration (S703, d-clovis-management-is-the-standalone-degree-s703)."
+    },
+    "33491": {
+     "page": 110,
+     "words": "SMALL BUSINESS MANAGEMENT (Major #C.2030.AS) ASSOCIATE IN SCIENCE DEGREE",
+     "evidence": "Small Business Management A.S. 33491: its heading 'SMALL BUSINESS MANAGEMENT (Major #C.2030.AS) ASSOCIATE IN SCIENCE DEGREE', its Required Core Courses and 'Total Units for the Major: 32-35' print on PDF p.110 (college-page-read run 45016537664). The filed record was read from p.107, where its one listed course (ACCTG 40) prints in the Business Administration degree's core, and filed that degree's core and its Accounting and Entrepreneur options with no total."
+    }
+   },
+   "pdf_pages_why": "S703 (f-clovis-19-left-s697): three Business degrees read from the wrong page are pinned to the page their section opens on, named with the words it opens on there (college-page-read run 45016537664), never found by a pattern over the catalog's text (S650, Cosumnes River). General Business 33433's core starts on the page before the one the capture took; Management 33487 and Small Business Management 33491 list one course (ACCTG 40), which the Business Administration degree's core prints too, so the picker took that page. Entrepreneur 33432 and Social Science 33492 are not pinned: 33432's core page (p.106) does not print the title word 'Entrepreneur', so the pin's title check refuses it, and 33492 is read from its own page (p.148) but its list and total run on to p.149, which names no listed course, so the window stops at p.148. Both wait on a reader change. A pin binds only while the catalog prints the words and every title word on that page; otherwise the program gets no fresh text and its filed record stands. Reversible by deleting this entry."
+  },
   "Cosumnes River College": {
    "why": "S648, d-calgetc-34-per-college-evidence-s648. Cosumnes River's catalog names Cal-GETC and prints no unit figure for it: its Cal-GETC page (PDF p.95, filed as the Cal-GETC certificate 45203) prints area minimums and no total (the reading: 'No total units for the certificate is printed (Cal-GETC areas give minimums: Area 1 nine units, Area 2 three, Area 3 six, Area 4 six, Area 6 three)', 'Area 5 prints no unit'), and its transfer degrees' readings say no units are printed for Cal-GETC (30566, 33072, 39656). So the statewide 34 applies (Sam, Sheet 187 card 5). S649: the page's own words, read from the hand-filed copy by college-page-read run 43519918667 (plans kb/college_reads/cosumnes_cal_getc_page.json and cosumnes_calgetc_degree_sections.json), are quoted in the evidence. Reversible by deleting this entry.",
    "steps": [],
@@ -139,6 +161,26 @@
      "page": 212,
      "words": "A.S. in Building Inspection Technology This CRC program has been developed",
      "evidence": "Building Inspection Technology A.S. 07305: its heading 'A.S. in Building Inspection Technology', above 'This CRC program has been developed', and the start of its Degree Requirements (BIT 100, BIT 101) print at the foot of PDF p.212; the list runs on to p.213 (college-page-read run 44255327142). The words skip the page's 'Degrees and Certificates Offered' list. The filed record was read from p.213 alone (#page=213) and places 33 of 39 units, missing BIT 100 and BIT 101."
+    },
+    "33053": {
+     "page": 333,
+     "words": "A.A.-T. in English The Associate in Arts in English for Transfer Degree",
+     "evidence": "English AA-T 33053: its heading 'A.A.-T. in English', above 'The Associate in Arts in English for Transfer Degree (AA-T) is designed', and the start of its Degree Requirements (Core: ENGL 301, ENGL C1001; List A) print on PDF p.333; the list runs on to p.334, which closes it 'Total Units: 18' (college-page-read run 45016537664). The filed record (run 44917314201) was read from p.334 on, which opens mid-list ('Course Code Course Title Units ENGLT 336'), and places 12 of 28 listed courses."
+    },
+    "20227": {
+     "page": 367,
+     "words": "Firefighter Suppression Specialist Certificate The fire service",
+     "evidence": "Firefighter Suppression Specialist Certificate 20227: its heading prints at the foot of PDF p.367, above 'The fire service is one of the most dynamic employers'; its Certificate Requirements (FT 300, EMT 115, EMT 116, EMT 117, FT 210, FT 211, FT 320, FT 498) open p.368 and close 'Total Units: 44' (college-page-read run 45016537664). The filed record was read from PDF p.365, the Fire Technology page that names the certificate in its list of awards and holds the A.S. degrees' text, so it places none of 7."
+    },
+    "20147": {
+     "page": 625,
+     "words": "Veterinary Technology Certificate CRC's Veterinary Technology Certificate program",
+     "evidence": "Veterinary Technology Certificate 20147: its heading, above 'CRC's Veterinary Technology Certificate program provides students', prints on PDF p.625; its Certificate Requirements (VT 100 to VT 134) print on p.626 and close 'Total Units: 36' (college-page-read run 45016537664). The filed record was read from p.622, the department page that names the certificate in its list of awards, and the A.S. in Veterinary Technology's text after it, so it places none of 12."
+    },
+    "20193": {
+     "page": 227,
+     "words": "Small Business Management/ Entrepreneurship Certificate The Certificate of Achievement in Small Business Management/",
+     "evidence": "Small Business Management/Entrepreneurship Certificate 20193: its heading, above 'The Certificate of Achievement in Small Business Management/ Entrepreneurship', its Certificate Requirements (BUS 215, BUS 300, BUS 350, MKT 300, BUS 340, and a minimum of 3 units from ACCT 301, BUS 310, BUS 320, CISC 310, ECON C2001) and 'Total Units: 18' print on PDF p.227, below the Entrepreneurship Certificate's (college-page-read run 45017083685). The filed record was read from p.218, the Business department page that names the certificate in its list of awards, so it places none of 10."
     }
    },
    "pdf_pages_why": "S650: the two transfer degrees the statewide 34 waits on (calgetc_apply_plan.json waiting.own_pages) are read from their own pages, named here with the words the filed capture opened on, never found by a pattern over the catalog's text. S680: four local degrees whose requirement list starts at the foot of their heading's page and was read from the next page alone (11338, 04607, 11319, 07305) are pinned to the heading's page, with the words the page prints there. 04614 and 04602 share the cause and are not pinned: on their pages the lines above the heading name listed codes, so the window does not cut at the heading and opens on the program before (Art - Design's tail; Information Technology's whole list, CISC 310 found only there), which waits on a reader fix (the S680 second reader). A pin binds only while the hand-filed file (sha256 pinned in kb/hand_filed_catalogs) prints the words and every title word on that page; otherwise the program gets no fresh text, its filed record stands, and the capture says why. Reversible by deleting this entry."

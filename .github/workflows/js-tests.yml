@@ -495,6 +495,10 @@ jobs:
       # page's source says pinned; an only= filing keeps the earlier kept_passing entries it does not name.
       - name: Program requirements reader follow-up (killed wave, prior read, fragments, editions, pins)
         run: python3 tests/program_requirements_follow_up_s697_test.py
+      # S703: Clovis's and Cosumnes River's own-page pins bind on the pages the free reads printed, open on their
+      # words, read from the pinned page in capture_pdf, and hold what the filed page lacked. Pure stdlib.
+      - name: Program requirements own-page pins (Clovis, Cosumnes River)
+        run: python3 tests/program_requirements_pins_s703_test.py
       # S697: the same-page calls over every committed folder, frozen in a fixture: 320 newly kept (Butte 163,
       # Cuyamaca 155, College of the Canyons 2), none one page off, and one edition pair. Pure stdlib.
       - name: Program requirements same-page recall over the committed folders
