@@ -1,0 +1,31 @@
+{
+ "_readme": "S703 (worker levers for SkyDovekie), census lever 6 (Ohlone, page not found, 36), second read. The first (run 45024779831, pp.45-47, 65-67, 93-100) found Information Technology 33319's own heading on p.46 and Esports Entrepreneurship and Live Production - Game Design 46035's on p.96, and no other target in the noncredit section (pp.93-100, A to V). This plan prints the pages that name the credit targets' titles, so each one's gap names its own page or the absence of one: Interior Design 01265/22214, Computer Studies 01254/22198, Technical Support Specialist 22204, Administrative Assistant 16763/22192, Entrepreneurship 42090, Bioengineering 35797, UNIX/Linux 22199, Administration of Justice 01285. One load, no model call, nothing written.",
+ "college": "Ohlone College",
+ "questions": {
+  "own_page": "Whether the page is the named program's own section (its heading, award and requirement list), and which course codes it prints."
+ },
+ "keywords": [
+  "Interior Design",
+  "Computer Studies",
+  "Technical Support",
+  "Administrative Assistant",
+  "Entrepreneurship",
+  "Bioengineering",
+  "UNIX",
+  "Administration of Justice"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf"
+  }
+ ],
+ "pdf_span": [
+  1,
+  92
+ ],
+ "pdf_page_cap": 20,
+ "pdf_unfolded": true
+}
