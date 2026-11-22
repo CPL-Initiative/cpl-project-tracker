@@ -1,53 +1,30 @@
 {
  "schema": 1,
  "_about": "The Exhibits tab's Review queue (kb/_build_exhibits_review.py): one record per title the CER procedures held, with its proposed canonical title and where that came from, its exhibits, where it is articulated and who could adopt it. Students per title are a reviewer-only read (exhibit_title_students).",
- "written_at": "2026-11-22T15:44:14Z",
+ "written_at": "2026-11-22T21:52:00Z",
  "sources": {
   "procedures_run": "2026-11-22T15:44:08Z",
-  "suggestions": "2026-11-22T06:21:14Z",
-  "statewide": "2026-11-22T14:41:24",
-  "audit": "2026-11-22T14:49:58+00:00",
+  "suggestions": "2026-11-22T21:51:52Z",
+  "statewide": "2026-11-22T21:47:14",
+  "audit": "2026-11-22T21:51:28+00:00",
   "assignments": {
    "read": "live",
-   "at": "2026-11-22T15:44:12Z",
-   "decided": [
-    "Cal Fire Basic Firefighter (219 hour) Training",
-    "Completion of ESLN 310C",
-    "Credit by Exam HISTC1001-United States History Since 1877",
-    "High School Articulation ( Tri Valley ROP)- Developmental Psychology of Children I",
-    "High School Articulation ( Tri Valley ROP)- Developmental Psychology of Children II",
-    "High School Articulation ( Tri Valley ROP)- Economics of Business Ownership",
-    "High School Articulation ( Tri Valley ROP)- Emergency Medical Response",
-    "High School Articulation ( Tri Valley ROP)- Integrated Marketing Communications",
-    "High School Articulation ( Tri Valley ROP)- Introduction to Athletic Training",
-    "High School Articulation ( Tri Valley ROP)- Introduction to Health Careers",
-    "High School Articulation ( Tri Valley ROP)- Medical Occupations",
-    "High School Articulation ( Tri Valley ROP)- Nursing Careers",
-    "High School Articulation ( Tri Valley ROP)- Sports and Entertainment Marketing",
-    "High School Articulation (Benicia High School)- Dance 3",
-    "High School Articulation (Livermore)- Developmental Psychology of Children II",
-    "High School Articulation (Livermore)- Emergency Medical Response",
-    "High School Articulation (Livermore)- Introduction to Athletic Training",
-    "High School Articulation (Livermore)- Introduction to Health Careers",
-    "High School Articulation (Livermore)- Medical Occupations",
-    "High School Articulation (Livermore)- Nursing Careers",
-    "High School Articulation (Livermore)- Principles of Engineering",
-    "High School Articulation (Mission Valley ROP)- Emergency Medical Responder"
-   ]
+   "at": "2026-11-22T21:51:57Z",
+   "decided": []
   }
  },
  "tiles": {
   "names": {
-   "n": 6215,
+   "n": 6251,
    "of": 6252,
-   "waiting": 37
+   "waiting": 1
   },
   "aligned": {
-   "n": 5,
-   "of": 15
+   "n": 0,
+   "of": 1
   },
   "saved_not_folded": 0,
-  "settled_since_run": 22,
+  "settled_since_run": 36,
   "review_list": {
    "n": 12,
    "unacknowledged": 0
@@ -116,124 +93,18 @@
   }
  ],
  "steps": {
-  "Proposed": 9,
+  "Proposed": 0,
   "Wording check": 0,
-  "Two issuers": 6,
+  "Two issuers": 1,
   "Conflict with the reference": 0
  },
  "colleges": [
-  "Allan Hancock College",
-  "American River College",
-  "Antelope Valley College",
-  "Bakersfield College",
-  "Barstow Community College",
-  "Butte College",
-  "Cabrillo College",
-  "Cañada College",
-  "Cerritos College",
-  "Cerro Coso Community College",
-  "Chabot College",
-  "Chaffey College",
-  "Citrus College",
-  "City College of San Francisco",
-  "Clovis Community College",
-  "Coalinga College",
-  "Coastline Community College",
-  "College of Marin",
-  "College of San Mateo",
-  "College of the Canyons",
-  "College of the Desert",
-  "College of the Redwoods",
-  "College of the Sequoias",
-  "College of the Siskiyous",
-  "Compton College",
-  "Contra Costa College",
-  "Copper Mountain College",
-  "Cosumnes River College",
-  "Crafton Hills College",
-  "Cuesta College",
-  "Cuyamaca College",
-  "Cypress College",
-  "De Anza College",
-  "Diablo Valley College",
   "East Los Angeles College",
-  "El Camino College",
-  "Evergreen Valley College",
-  "Feather River College",
-  "Folsom Lake College",
-  "Foothill College",
-  "Fresno City College",
-  "Fullerton College",
-  "Gavilan College",
-  "Glendale Community College",
-  "Golden West College",
-  "Grossmont College",
-  "Hartnell College",
-  "Imperial Valley College",
-  "Irvine Valley College",
-  "Lake Tahoe Community College",
-  "Laney College",
-  "Las Positas College",
-  "Lassen College",
-  "Lemoore College",
-  "Long Beach City College",
-  "Los Angeles City College",
-  "Los Angeles Harbor College",
   "Los Angeles Mission College",
-  "Los Angeles Pierce College",
   "Los Angeles Southwest College",
   "Los Angeles Trade Technical College",
   "Los Angeles Valley College",
-  "Los Medanos College",
-  "Madera College",
-  "Mendocino College",
-  "Merced College",
-  "Merritt College",
-  "MiraCosta College",
-  "Mission College",
-  "Modesto Junior College",
-  "Monterey Peninsula College",
-  "Moorpark College",
-  "Moreno Valley College",
-  "Mt. San Antonio College",
-  "Mt. San Jacinto College",
-  "Napa Valley College",
-  "Norco College",
-  "Ohlone College",
-  "Orange Coast College",
-  "Oxnard College",
-  "Palo Verde College",
-  "Palomar College",
-  "Pasadena City College",
-  "Porterville College",
-  "Reedley College",
-  "Rio Hondo College",
-  "Riverside City College",
-  "Sacramento City College",
-  "Saddleback College",
-  "San Bernardino Valley College",
-  "San Diego City College",
-  "San Diego Mesa College",
-  "San Diego Miramar College",
-  "San Joaquin Delta College",
-  "San Jose City College",
-  "Santa Ana College",
-  "Santa Barbara City College",
-  "Santa Monica College",
-  "Santa Rosa Junior College",
-  "Santiago Canyon College",
-  "Shasta College",
-  "Sierra College",
-  "Skyline College",
-  "Solano Community College",
-  "Southwestern College",
-  "Taft College",
-  "Ventura College",
-  "Victor Valley College",
-  "West Los Angeles College",
-  "West Valley College",
-  "Woodland Community College",
-  "Yuba College"
+  "West Los Angeles College"
  ],
  "issuers": [
   "A.B. Miller High School",
@@ -440,6 +311,8 @@
   "McDonald's Corporation",
   "Microsoft",
   "Middle College",
+  "Mission Valley Regional Occupational Program",
+  "Mission Valley Regional Occupational Program (ROP)",
   "Monte Vista High School",
   "Moreno Valley Unified School District",
   "Moreno Valley Unified School District (MVUSD)",
@@ -502,6 +375,8 @@
   "Summit High School",
   "The Walt Disney Company",
   "Tracy High School",
+  "Tri-Valley Regional Occupational Program",
+  "Tri-Valley Regional Occupational Program (ROP)",
   "U.S. Army Child and Youth Services (CYS)",
   "U.S. Department of Defense (DoD)",
   "U.S. Department of Veterans Affairs (VA)",
@@ -601,21 +476,439 @@
   "varies by academy",
   "Villa Park High School"
  ],
+ "no_cr": {
+  "of": 3065,
+  "owners_read": "2026-10-26T23:35Z",
+  "rows": [
+   {
+    "id": "MAPPRN-CCAH-1-001",
+    "title": "Creative Careers Art History",
+    "type": "Credit By Exam",
+    "college": "Cabrillo College"
+   },
+   {
+    "id": "MAPPRN-CCD-1-001",
+    "title": "Creative Careers Dance",
+    "type": "Credit By Exam",
+    "college": "Cabrillo College"
+   },
+   {
+    "id": "MAPPRN-CCTA-1-001",
+    "title": "Creative Careers Theatre Art",
+    "type": "Credit By Exam",
+    "college": "Cabrillo College"
+   },
+   {
+    "id": "MAPCBEN-PP-1-001",
+    "title": "Portrait Photography",
+    "type": "Credit By Exam",
+    "college": "Cabrillo College"
+   },
+   {
+    "id": "MAPICA-SA4P-1-001",
+    "title": "Structural Apprenticeship 433: Period 1",
+    "type": "Industry Certification",
+    "college": "Cerritos College"
+   },
+   {
+    "id": "MAPCXH-C1IT-1-001",
+    "title": "CISCYBR 1 Introduction to Systems & Network Cybersecurity (HSA)",
+    "type": "Credit By Exam",
+    "college": "Chaffey College"
+   },
+   {
+    "id": "MAPICI-HFA-1-001",
+    "title": "Adult CPR and Standard First Aid",
+    "type": "Industry Certification",
+    "college": "City College of San Francisco"
+   },
+   {
+    "id": "MAPSAM-RDLP1-1-001",
+    "title": "Russian Defense Language Proficiency Test (DLPT) Score 1",
+    "type": "Standardized Assessment",
+    "college": "City College of San Francisco"
+   },
+   {
+    "id": "MAPSAM-RDLP4-1-001",
+    "title": "Russian Defense Language Proficiency Test (DLPT) Score 2+ (Heritage Speakers)",
+    "type": "Standardized Assessment",
+    "college": "City College of San Francisco"
+   },
+   {
+    "id": "MAPSAM-RDLP5-1-001",
+    "title": "Russian Defense Language Proficiency Test (DLPT) Score 3 (Heritage Speakers)",
+    "type": "Standardized Assessment",
+    "college": "City College of San Francisco"
+   },
+   {
+    "id": "MAPSAM-RDLP-1-001",
+    "title": "Russian Defense Language Proficiency Test (DLPT) Scores 0+ to 1",
+    "type": "Standardized Assessment",
+    "college": "City College of San Francisco"
+   },
+   {
+    "id": "MAPSAS-FLI-1-001",
+    "title": "French Level II",
+    "type": "Standardized Assessment",
+    "college": "Coastline Community College"
+   },
+   {
+    "id": "MAPMM-N-1-001",
+    "title": "Network Fundamentals",
+    "type": "Military",
+    "college": "Cuesta College"
+   },
+   {
+    "id": "MAPPRS-P72-1-001",
+    "title": "Darkroom I",
+    "type": "Portfolio Review",
+    "college": "Foothill College"
+   },
+   {
+    "id": "MAPPRA-H9-1-001",
+    "title": "Horticultural & Landscape Photography",
+    "type": "Portfolio Review",
+    "college": "Foothill College"
+   },
+   {
+    "id": "MAPPRS-G1-1-001",
+    "title": "Introduction to Geospatial Technology",
+    "type": "Portfolio Review",
+    "college": "Foothill College"
+   },
+   {
+    "id": "MAPPRA-H92-1-001",
+    "title": "Landscape Design: Perspective Sketching",
+    "type": "Portfolio Review",
+    "college": "Foothill College"
+   },
+   {
+    "id": "MAPPRA-H6-1-001",
+    "title": "Landscape Design: Planting",
+    "type": "Portfolio Review",
+    "college": "Foothill College"
+   },
+   {
+    "id": "MAPPRA-H91-1-001",
+    "title": "Landscaping with Edibles",
+    "type": "Portfolio Review",
+    "college": "Foothill College"
+   },
+   {
+    "id": "MAPPRS-P2-1-001",
+    "title": "Photojournalism",
+    "type": "Portfolio Review",
+    "college": "Foothill College"
+   },
+   {
+    "id": "MAPPRS-P6-1-001",
+    "title": "Photoshop for Photographers",
+    "type": "Portfolio Review",
+    "college": "Foothill College"
+   },
+   {
+    "id": "MAPPRS-G5-1-001",
+    "title": "Remote Sensing and Digital Image Processing",
+    "type": "Portfolio Review",
+    "college": "Foothill College"
+   },
+   {
+    "id": "MAPPRA-H61-1-001",
+    "title": "Sketchup for Landscape Designers",
+    "type": "Portfolio Review",
+    "college": "Foothill College"
+   },
+   {
+    "id": "MAPPRS-P73-1-001",
+    "title": "Studio Photography Techniques I",
+    "type": "Portfolio Review",
+    "college": "Foothill College"
+   },
+   {
+    "id": "MAPSAA-B1YC-1-001",
+    "title": "Boatworks 101 Apprenticeship Industry Recognized Training",
+    "type": "Industry Certification",
+    "college": "Las Positas College"
+   },
+   {
+    "id": "MAPSAA-AWPI-1-001",
+    "title": "LiUNA Laborers' Construction Training Center Industry Recognized Training",
+    "type": "Industry Certification",
+    "college": "Las Positas College"
+   },
+   {
+    "id": "MAPICN-BE((-1-002",
+    "title": "Basic Electronics (DC) (3-hours)",
+    "type": "Industry Certification",
+    "college": "Lemoore College"
+   },
+   {
+    "id": "MAPCXA-C0-1-001",
+    "title": "CUL 007",
+    "type": "Credit By Exam",
+    "college": "Lemoore College"
+   },
+   {
+    "id": "MAPCXS-C0RM-1-001",
+    "title": "CUL 051: Restaurant Math",
+    "type": "Credit By Exam",
+    "college": "Lemoore College"
+   },
+   {
+    "id": "MAPCXS-M0EF-1-001",
+    "title": "MM 054C: Electrical Fundamentals",
+    "type": "Credit By Exam",
+    "college": "Lemoore College"
+   },
+   {
+    "id": "MAPCXS-S0EA-1-001",
+    "title": "SW 021: Eligibility and Case Management",
+    "type": "Credit By Exam",
+    "college": "Lemoore College"
+   },
+   {
+    "id": "MAPICI-ACOE-1-001",
+    "title": "American Council on Exercise (ACE) Personal Trainer Certification",
+    "type": "Industry Certification",
+    "college": "Los Angeles Pierce College"
+   },
+   {
+    "id": "MAPICI-CPP2-1-001",
+    "title": "Clinical Psychology Psy.D.",
+    "type": "Industry Certification",
+    "college": "Los Angeles Pierce College"
+   },
+   {
+    "id": "MAPICI-F3-F1-1-001",
+    "title": "Fire 37 - Fire Hydraulics",
+    "type": "Industry Certification",
+    "college": "Merced College"
+   },
+   {
+    "id": "MAPICI-FFTA1-1-001",
+    "title": "FIRE-35 Firefighting Tactics and Strategy",
+    "type": "Industry Certification",
+    "college": "Merced College"
+   },
+   {
+    "id": "MAPMM-FFTA1-1-001",
+    "title": "FIRE-35 Firefighting Tactics and Strategy",
+    "type": "Military",
+    "college": "Merced College"
+   },
+   {
+    "id": "MAPCXS-FHM-1-001",
+    "title": "FIRE-36 Hazardous Materials",
+    "type": "Credit By Exam",
+    "college": "Merced College"
+   },
+   {
+    "id": "MAPCXS-RAMA-1-001",
+    "title": "REGN-24 ACUTE MEDICAL/SURGICAL AND NURSING OF THE CHILDBEARING FAMILY",
+    "type": "Credit By Exam",
+    "college": "Merced College"
+   },
+   {
+    "id": "MAPCXH-AVPA-1-001",
+    "title": "ANSC250 Veterinary Physiology, Anatomy, & Terminology",
+    "type": "Credit By Exam",
+    "college": "Modesto Junior College"
+   },
+   {
+    "id": "MAPICP-M3-I-1-001",
+    "title": "MDAST 320 - Introduction to Medical Assisting - Industry Certification",
+    "type": "Industry Certification",
+    "college": "Modesto Junior College"
+   },
+   {
+    "id": "MAPPRA-N2PP-1-001",
+    "title": "NURSE 270\tNursing Process: Pharmacology - Portfolio Review",
+    "type": "Portfolio Review",
+    "college": "Modesto Junior College"
+   },
+   {
+    "id": "MAPPRA-N2PA-1-001",
+    "title": "NURSE 278\tNursing Process Advanced Medical-Surgical - Portfolio Review",
+    "type": "Portfolio Review",
+    "college": "Modesto Junior College"
+   },
+   {
+    "id": "MAPCXS-CP-B-1-001",
+    "title": "Class Piano - Beginning II",
+    "type": "Credit By Exam",
+    "college": "Moorpark College"
+   },
+   {
+    "id": "MAPCXO-DR&P-1-001",
+    "title": "Dance Rehearsal & Performance I",
+    "type": "Credit By Exam",
+    "college": "Moorpark College"
+   },
+   {
+    "id": "MAPCXO-IAT-1-001",
+    "title": "Internetworking and TCP/IP",
+    "type": "Credit By Exam",
+    "college": "Moorpark College"
+   },
+   {
+    "id": "MAPPRA-IICN-1-001",
+    "title": "Internship in Computer Network Systems Engineering (CNSE)",
+    "type": "Portfolio Review",
+    "college": "Moorpark College"
+   },
+   {
+    "id": "MAPCXO-SFSM-1-001",
+    "title": "Scripting for Security Management",
+    "type": "Credit By Exam",
+    "college": "Moorpark College"
+   },
+   {
+    "id": "MAPICI-NCFC-1-001",
+    "title": "National Center for Construction Education and Research (NCCER)",
+    "type": "Industry Certification",
+    "college": "Norco College"
+   },
+   {
+    "id": "MAPICI-NCC--1-001",
+    "title": "NCCER CORE Curriculum - Introduction to Basic Construction Skills",
+    "type": "Industry Certification",
+    "college": "Orange Coast College"
+   },
+   {
+    "id": "MAPICI-WFT-1-001",
+    "title": "WIldland Fire Technology",
+    "type": "Industry Certification",
+    "college": "Rio Hondo College"
+   },
+   {
+    "id": "MAPPRS-A13-1-001",
+    "title": "ADJUS 106",
+    "type": "Portfolio Review",
+    "college": "San Bernardino Valley College"
+   },
+   {
+    "id": "MAPICI-CBHW-1-001",
+    "title": "C-4 Boiler, Hot Water Heating and Steam Fitting Contractor",
+    "type": "Industry Certification",
+    "college": "San Bernardino Valley College"
+   },
+   {
+    "id": "MAPICI-CBO(-1-001",
+    "title": "Certified Building Official (BC)",
+    "type": "Industry Certification",
+    "college": "San Bernardino Valley College"
+   },
+   {
+    "id": "MAPICI-CMI-1-001",
+    "title": "Commercial Mechanical Inspector",
+    "type": "Industry Certification",
+    "college": "San Bernardino Valley College"
+   },
+   {
+    "id": "MAPICI-MSBA-1-001",
+    "title": "Manufacturer/Vendor Specific Building Automation System (BAS) Certification",
+    "type": "Industry Certification",
+    "college": "San Bernardino Valley College"
+   },
+   {
+    "id": "MAPICI-MPE-1-001",
+    "title": "Mechanical Plans Examiner",
+    "type": "Industry Certification",
+    "college": "San Bernardino Valley College"
+   },
+   {
+    "id": "MAPICI-NGSH-1-001",
+    "title": "NATE Ground Source Heat Pump Loop Installer Certification",
+    "type": "Industry Certification",
+    "college": "San Bernardino Valley College"
+   },
+   {
+    "id": "MAPPRI-PR-P-1-001",
+    "title": "Portfolio Review - Pharmacology and Pharmacy Calculations",
+    "type": "Portfolio Review",
+    "college": "San Bernardino Valley College"
+   },
+   {
+    "id": "MAPICI-RMI-1-001",
+    "title": "Residential Mechanical Inspector",
+    "type": "Industry Certification",
+    "college": "San Bernardino Valley College"
+   },
+   {
+    "id": "MAPICI-ASEM-1-001",
+    "title": "Auto Service Excellence Master Auto Technician",
+    "type": "Industry Certification",
+    "college": "Santa Ana College"
+   },
+   {
+    "id": "MAPPRP-AI-1-001",
+    "title": "AutoCAD I",
+    "type": "Portfolio Review",
+    "college": "Santa Ana College"
+   },
+   {
+    "id": "MAPPRA-BMBR-1-001",
+    "title": "Basic Mechanical Blueprint Reading",
+    "type": "Portfolio Review",
+    "college": "Santa Ana College"
+   },
+   {
+    "id": "MAPPRA-ED-1-001",
+    "title": "Engineering Drawing",
+    "type": "Portfolio Review",
+    "college": "Santa Ana College"
+   },
+   {
+    "id": "MAPPRA-IATC-1-001",
+    "title": "Infant and Toddler Care and Curriculum",
+    "type": "Portfolio Review",
+    "college": "Santa Ana College"
+   },
+   {
+    "id": "MAPPRA-ITE-1-001",
+    "title": "Introduction to Engineering",
+    "type": "Portfolio Review",
+    "college": "Santa Ana College"
+   },
+   {
+    "id": "MAPCXH-PIEO-1-001",
+    "title": "Professional Internship Education or Professional Internship Education 132 - Century High School",
+    "type": "Credit By Exam",
+    "college": "Santa Ana College"
+   },
+   {
+    "id": "MAPPRA-SASM-1-001",
+    "title": "Solidworks Advanced Solid Modeling",
+    "type": "Portfolio Review",
+    "college": "Santa Ana College"
+   },
+   {
+    "id": "MAPPRA-SISM-1-001",
+    "title": "Solidworks Intermediate Solid Modeling",
+    "type": "Portfolio Review",
+    "college": "Santa Ana College"
+   },
+   {
+    "id": "MAPCXS-CBED4-1-001",
+    "title": "Credit by Exam- Diesel Electrical/Electronic Systems",
+    "type": "Credit By Exam",
+    "college": "Ventura College"
+   },
+   {
+    "id": "MAPCXS-G1WD-1-001",
+    "title": "GRART 115 Website Design",
+    "type": "Credit By Exam",
+    "college": ""
+   },
+   {
+    "id": "MAPCXN-NFB3-1-001",
+    "title": "Noncredit Course for BUSN 33",
+    "type": "Credit By Exam",
+    "college": ""
+   }
+  ]
+ },
  "held": [
-  {"raw": "High School Articulation (Mission Valley ROP)- Fire Technology 1", "step": "Proposed", "why": "the classifier is unsure (0.70)", "colleges": [51], "title": "Fire Technology", "issuer": "Mission Valley Regional Occupational Program (ROP)", "from": "the classifier", "proposal_source": "classifier", "ids": ["MAPCXH-HSA(47-1-001", "MAPCXH-HSA(49-1-001"], "art": [51], "could": [], "basis": "", "same": false, "local_courses": [[51, "FST 1", "Fire Protection Organization", 3, "CCC000366472", "3 hours in Fire Protection Organization", "This course provides an overview to fire protection and emergency services, career opportunities in fire protection and related fields, culture and history of emergency services, fire loss analysis, organization and function of public and private fire protection services, fire departments as part of local government, laws and regulations affecting the fire…"], [51, "EMS 70", "CPR for Healthcare Providers", 0.5, "CCC000589240", "0.5 hours in CPR for Healthcare Providers", "Development of knowledge, skills and personal judgment necessary to initiate and perform basic life support techniques as a health care professional. Successful completion of the knowledge and skills tests qualifies for an American Heart Association Basic Life Support Certificate."]], "subject": "Fire Technology", "subject_course": 0, "confidence": 0.7, "under": ["Fire Technology", "Fire Technology - La Habra HS / NOCROP", "Fire Technology -Los Alamitos HS / NOCROP", "Fire Technology Certificate"], "under_count": 4, "exists": true, "trainers": ["North Orange County ROP (NOCROP) — Los Alamitos HS"]},
-  {"raw": "High School Articulation (Mission Valley ROP)- Medical Occupations", "step": "Proposed", "why": "the classifier is unsure (0.75)", "colleges": [51], "title": "Medical Occupations", "issuer": "Mission Valley Regional Occupational Program (ROP)", "from": "the classifier", "proposal_source": "classifier", "ids": ["MAPCXH-HSA(50-1-001"], "art": [51], "could": [], "basis": "", "same": false, "local_courses": [[51, "BIO 55", "Orientation to Health Care", 2, "CCC000521419", "2 hours in Orientation to Health Care", "Examine physiological, psychological, ethical, social, and public health issues. Introduce the workings of the human body and mind and explore the relationship between health and larger cultural and societal issues. Introduce medical terminology. Review diseases, including causes, symptoms, how they affect the body systems, and treatment options available.…"]], "subject": "Biological Sciences", "subject_course": 0, "confidence": 0.75},
-  {"raw": "High School Articulation (Mission Valley ROP)- Principles of Engineering", "step": "Two issuers", "why": "a merge would join two issuers (Mission Valley Regional Occupational Program; the reference has Amador Valley High School, California Community Colleges, Dublin High School, Emerald High School, Foothill High School, Long Beach Unified School District)", "colleges": [51], "title": "Introduction to Engineering", "issuer": "Mission Valley Regional Occupational Program", "from": "C-ID ENGR 110", "proposal_source": "course", "ids": ["MAPCXH-HSA(51-1-001"], "art": [51], "could": [0, 1, 2, 3, 5, 6, 7, 8, 10, 11, 12, 14, 17, 18, 19, 20, 22, 24, 25, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 39, 40, 41, 42, 43, 44, 46, 48, 50, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 65, 67, 68, 69, 70, 71, 73, 74, 75, 76, 77, 78, 79, 81, 82, 83, 84, 85, 86, 87, 90, 91, 93, 94, 95, 96, 97, 98, 100, 101, 102, 103, 104, 105, 106, 108, 109], "basis": "C-ID ENGR 110", "same": true, "courses_key": "ENGR 110", "local_courses": [[51, "ENGR 1", "Introduction to Engineering", 2, "CCC000604376", "2 hours in Introduction to Engineering", "Introduction to careers, activities, and topics related to the field of engineering, including computer applications to design and problem solving."]], "subject": "Engineering", "subject_course": 0, "confidence": 1.0, "aligned_id": "ENGR 110", "course": "ENGR 1", "course_college": "Las Positas College", "under": ["Credit by Exam - Long Beach Unified School District - Introduction to Engineering and Design", "High School Articulation (Foothill)- Principles of Engineering", "High School Articulations (Amador Valley)- Principles of Engineering", "High School Articulations (Dublin)- Principles of Engineering", "High School Articulations (Emerald) -Principles of Engineering", "Introduction to Engineering"], "under_count": 6, "exists": true},
-  {"raw": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (AJ 54)", "step": "Proposed", "why": "the classifier is unsure (0.45)", "colleges": [51], "title": "Investigative Report Writing", "issuer": "Tri-Valley Regional Occupational Program (ROP)", "from": "the local course title (Las Positas College AJ 54)", "proposal_source": "course", "ids": ["MAPCXH-HSA(54-1-001"], "art": [51], "could": [1, 20, 29, 38, 87, 103], "basis": "", "same": false, "courses_key": "teaches:Investigative Report Writing", "local_courses": [[51, "AJ 54", "Investigative Report Writing", 3, "CCC000345484", "3 hours in Investigative Report Writing", "Investigative reports with emphasis upon accuracy, detail and avoiding assumptions or stereotypes. Includes arrest reports, incident reports and miscellaneous field reports. Techniques and methods used to cover information; how to analyze and present information in a clear and concise report that reflects impartiality and respect for all parties involved."]], "subject": "Administration of Justice", "subject_course": 0, "confidence": 0.45, "alternates": ["Administration of Justice (AJ 54)"], "under": ["Credit by Portfolio AJ 54 Investigative Report Writing", "Industry for AJ 54", "Industry Training Evidence for AJ 54"], "under_count": 3, "exists": true},
-  {"raw": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (AJ 60)", "step": "Two issuers", "why": "a merge would join two issuers (Tri-Valley Regional Occupational Program; the reference has American Council on Education (ACE), California Commission on Peace Officer Standards and Training (POST), California Community Colleges)", "colleges": [51], "title": "Concepts of Criminal Law", "issuer": "Tri-Valley Regional Occupational Program", "from": "C-ID AJ 120", "proposal_source": "course", "ids": ["MAPCXH-HSA(55-1-001"], "art": [51], "could": [0, 1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 29, 31, 32, 33, 34, 35, 36, 37, 38, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 52, 53, 54, 55, 56, 57, 58, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 80, 81, 82, 83, 84, 85, 86, 87, 89, 90, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111], "basis": "C-ID AJ 120", "same": true, "courses_key": "AJ 120", "local_courses": [[51, "AJ 60", "Criminal Law", 3, "CCC000359431", "3 hours in Criminal Law", "Historical development, philosophy of law and constitutional provisions; definitions, classification of crime and their application to the system of administration of justice; frequently used Penal and other code sections; case law, methodology and concepts of law as a social force, emphasizing the importance of fairness and justice in the application and…"]], "subject": "Administration of Justice", "subject_course": 0, "confidence": 1.0, "aligned_id": "AJ 120", "course": "AJ 60", "course_college": "Las Positas College", "under": ["ADJU 203\tConcepts of Criminal Law - Credit by Exam", "ADJU 203\tConcepts of Criminal Law - Industry Certification", "ADJU 203\tConcepts of Criminal Law - Portfolio", "ADJUS 103", "ADM JUS 002 - Concepts of Criminal Law", "Admin Just 2 CBE", "AJ 101 Criminal Law", "Concepts of Criminal Law", "Credit by Exam for ADJUS 22 Concepts of Criminal Law", "CRIM-04 Criminal Law", "Discipline Exam - ADM JUS 002", "Industry Training Evidence for AJ 60", "Introduction to Criminal Law - Military Training"], "under_count": 13, "exists": true},
-  {"raw": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (AJ 68)", "step": "Proposed", "why": "the classifier is unsure (0.45)", "colleges": [51], "title": "Police Ethics and Leadership", "issuer": "Tri-Valley Regional Occupational Program (ROP)", "from": "the local course title (Las Positas College AJ 68)", "proposal_source": "course", "ids": ["MAPCXH-HSA(56-1-001"], "art": [51], "could": [], "basis": "", "same": false, "local_courses": [[51, "AJ 68", "Police Ethics and Leadership", 3, "CCC000516085", "3 hours in Police Ethics and Leadership", "This course will explore the ethical, legal and moral complexities of law enforcement in a democracy. From the initial application process and background investigation of a potential law enforcement recruit, to the working law enforcement officer, the course will examine societyÃ¢â‚¬â„¢s need for organizational integrity and leadership in law enforcement…"]], "subject": "Administration of Justice", "subject_course": 0, "confidence": 0.45, "alternates": ["Administration of Justice (AJ 68)"], "under": ["Industry for AJ 68", "Industry Training Evidence for AJ 68", "MOS-31B-003 Military Police (skill level 50)"], "under_count": 3, "exists": true},
-  {"raw": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (AJ 70)", "step": "Two issuers", "why": "a merge would join two issuers (Tri-Valley Regional Occupational Program; the reference has California Commission on Peace Officer Standards and Training (POST), California Community Colleges)", "colleges": [51], "title": "Community and the Justice System", "issuer": "Tri-Valley Regional Occupational Program", "from": "C-ID AJ 160", "proposal_source": "course", "ids": ["MAPCXH-HSA(57-1-001"], "art": [51], "could": [0, 1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 29, 31, 32, 33, 34, 35, 36, 37, 38, 40, 42, 43, 44, 45, 46, 47, 48, 49, 52, 53, 55, 56, 58, 60, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 80, 81, 82, 83, 84, 85, 86, 87, 89, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111], "basis": "C-ID AJ 160", "same": true, "courses_key": "AJ 160", "local_courses": [[51, "AJ 70", "Community Relations", 3, "CCC000370024", "3 hours in Community Relations", "This course examines the complex, dynamic relationship between communities and the justice system in addressing crime and conflict with an emphasis on the challenges and prospects of administering justice within a diverse multicultural population. Topics may include the consensus and conflicting values in Culture, Religion, and Law."]], "subject": "Administration of Justice", "subject_course": 0, "confidence": 1.0, "aligned_id": "AJ 160", "course": "AJ 70", "course_college": "Las Positas College", "under": ["ADJU 205\tCommunity Relations - Credit by Exam", "ADJU 205\tCommunity Relations - Portfolio", "ADJUS 25 Community Relations", "ADM JUS 067", "ADM JUS 067 ", "ADM JUS 067 - Community Relations I", "Admin Just 5 X", "AJ 118 Community and the Justice System", "AOJ 016: Human and Community Relations in Criminal Justice", "Community and the Justice System", "Community and the Justice System (AJ 160 C)", "Community and the Justice System CJ 005A Cx", "Industry Training Evidence for AJ 70"], "under_count": 13, "exists": true},
-  {"raw": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (FST 7)", "step": "Proposed", "why": "the classifier is unsure (0.40)", "colleges": [51], "title": "Fire Service Conditioning & Physical Agility Development", "issuer": "Tri-Valley Regional Occupational Program (ROP)", "from": "the local course title (Las Positas College FST 7)", "proposal_source": "course", "ids": ["MAPCXH-HSA(53-1-001"], "art": [51], "could": [], "basis": "", "same": false, "local_courses": [[51, "FST 7", "Fire Service Conditioning & Physical Agility Development", 1, "CCC000589414", "1 hour in Fire Service Conditioning & Physical Agility Development", "This course is an introduction to the components of physical fitness development and conditioning, with an emphasis in preparing students for the physical agility performance and testing standards required of Ã¢â‚¬Å“Emergency First ResponderÃ¢â‚¬Â Candidates entering into Police or Fire Academies. Students will be presented instruction on proper warm-up…"]], "subject": "Kinesiology", "subject_course": 0, "confidence": 0.4, "alternates": ["Fire Service Technology (FST 7)"], "under": ["High School Articulation (Tracy)- Fire Service"], "under_count": 1, "exists": true},
-  {"raw": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (KIN GBW 1)", "step": "Proposed", "why": "the classifier is unsure (0.40)", "colleges": [51], "title": "Kinesiology (KIN GBW 1)", "issuer": "Tri-Valley Regional Occupational Program (ROP)", "from": "the classifier", "proposal_source": "classifier", "ids": ["MAPCXH-HSA(58-1-001"], "art": [51], "could": [], "basis": "", "same": false, "local_courses": [[51, "KIN GBW1", "Guts and Butts Workout 1", 1, "CCC000606209", "1 hour in Guts and Butts Workout 1", "This course will focus on improving muscle strength and endurance of the abdominals, gluteals, quadriceps, and hamstrings. Functional exercises such as squats, lunges and planks will be utilized."]], "subject": "Kinesiology", "subject_course": 0, "confidence": 0.4},
-  {"raw": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (KIN GBW 2)", "step": "Proposed", "why": "the classifier is unsure (0.40)", "colleges": [51], "title": "Kinesiology (KIN GBW 2)", "issuer": "Tri-Valley Regional Occupational Program (ROP)", "from": "the classifier", "proposal_source": "classifier", "ids": ["MAPCXH-HSA(59-1-001"], "art": [51], "could": [], "basis": "", "same": false, "local_courses": [[51, "KIN GBW2", "Guts and Butts Workout 2", 1, "CCC000612031", "1 hour in Guts and Butts Workout 2", "This course will focus on strengthening the core and glute muscles. Students will learn how to use equipment such as steps, TRX, swiss balls, and dumbbells to increase exercise intensity."]], "subject": "Kinesiology", "subject_course": 0, "confidence": 0.4},
-  {"raw": "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (KIN GBW 3)", "step": "Proposed", "why": "the classifier is unsure (0.40)", "colleges": [51], "title": "Kinesiology (KIN GBW 3)", "issuer": "Tri-Valley Regional Occupational Program (ROP)", "from": "the classifier", "proposal_source": "classifier", "ids": ["MAPCXH-HSA(60-1-001"], "art": [51], "could": [], "basis": "", "same": false, "local_courses": [[51, "KIN GBW3", "Guts and Butts Workout 3", 1, "CCC000642902", "1 hour in Guts and Butts Workout 3", "This course will teach intermediate/advanced strength training and cardiovascular fitness. Student will learn how to use progressive overload to improve strength in all the major muscle groups."]], "subject": "Kinesiology", "subject_course": 0, "confidence": 0.4},
-  {"raw": "High School Articulation (Tri Valley ROP)- Criminal Justice/Crime Scene Investigation", "step": "Two issuers", "why": "a merge would join two issuers (Tri-Valley Regional Occupational Program; the reference has Amador Valley High School, California Community Colleges, Dublin High School, Emerald High School, Foothill High School, Granada High School, Kimball High School, Livermore High School, Local High School)", "colleges": [51], "title": "Introduction to Criminal Justice", "issuer": "Tri-Valley Regional Occupational Program", "from": "C-ID AJ 110", "proposal_source": "course", "ids": ["MAPCXH-HSA(61-1-001"], "art": [51], "could": [0, 1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 29, 31, 32, 33, 34, 35, 36, 37, 38, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 52, 53, 54, 55, 56, 57, 58, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111], "basis": "C-ID AJ 110", "same": true, "courses_key": "AJ 110", "local_courses": [[51, "AJ 50", "Introduction to Administration of Justice", 3, "CCC000348890", "3 hours in Introduction to Administration of Justice", "History and philosophy of administration of justice in America; recapitulation of the system; identifying the various subsystems, role expectations, and their interrelationships; theories of crime, punishment, and rehabilitation; ethics, education and training for professionalism in the system."]], "subject": "Administration of Justice", "subject_course": 0, "confidence": 1.0, "aligned_id": "AJ 110", "course": "AJ 50", "course_college": "Las Positas College", "under": ["ADM JUS 001 - Introduction to Administration of Justice", "AJ 102 Introduction to Criminal Justice", "Credit by Exam: Introduction to Criminal Justice", "CRIM-02 Introduction to Criminal Justice", "High School Articulation ( Emerald)- Criminal Justice/ Criminal Scene Investigation", "High School Articulation (Amador Valley)- Criminal Justice/Crime Scene Investigation", "High School Articulation (Foothill)-  Criminal Justice/ Crime Scene Investigation", "High School Articulation (Granada)- Criminal Justice/ Crime Scene Investigation", "High School Articulation (Kimball)- Fundamentals of Criminal Justice", "High School Articulation (Livermore)- Criminal Justice/ Crime Scene Investigation", "High School Articulation- Criminal Justice/Crime Scene Investigation", "High School Articulations (Dublin)- Criminal Justice/ Crime Scene Investigation", "Intro to Criminal J High School Articulation"], "under_count": 13, "exists": true},
-  {"raw": "High School Articulation (Tri Valley ROP)- Criminal Justice/CSI", "step": "Two issuers", "why": "a merge would join two issuers (Tri-Valley Regional Occupational Program; the reference has California Commission on Peace Officer Standards and Training (POST), California Community Colleges, Colton-Redlands-Yucaipa ROP, Dublin High School, Emerald High School, Foothill High School)", "colleges": [51], "title": "Criminal Investigation", "issuer": "Tri-Valley Regional Occupational Program", "from": "C-ID AJ 140", "proposal_source": "course", "ids": ["MAPCXH-HSA(62-1-001"], "art": [51], "could": [0, 1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 29, 31, 32, 33, 34, 35, 36, 37, 38, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 52, 53, 54, 55, 56, 57, 58, 60, 61, 62, 63, 64, 65, 66, 67, 69, 70, 71, 72, 73, 74, 75, 76, 77, 80, 81, 82, 83, 84, 85, 86, 87, 89, 92, 93, 94, 95, 96, 97, 98, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111], "basis": "C-ID AJ 140", "same": true, "courses_key": "AJ 140", "local_courses": [[51, "AJ 63", "Criminal Investigation", 3, "CCC000366307", "3 hours in Criminal Investigation", "This course addresses the techniques, procedures, and ethical issues in the investigation of crime, including organization of the investigative process, crime scene searches, interviewing and interrogating, surveillance, source of information, utility of evidence, scientific analysis of evidence and the role of the investigator in the trial process."]], "subject": "Administration of Justice", "subject_course": 0, "confidence": 1.0, "aligned_id": "AJ 140", "course": "AJ 63", "course_college": "Las Positas College", "under": ["ADJU 212\tCriminal Investation - Credit by Exam", "ADM JUS 005 - Criminal Investigation", "Admin Just 6 CBE", "AJ 108 Criminal Investigation", "CRIM-08 Introduction to Investigation", "Criminal Investigation", "Criminal Investigation- HS CE(CRYROP)", "Criminal Investigations ADJ 13 Cx", "Discipline Exam - ADM JUS 005", "High School Articulation (Dublin)- Criminal Justice/ CSI", "High School Articulation (Emerald)- Criminal Justice/ CSI", "High School Articulation (Foothill)- Criminal Justice/ CSI", "Industry for AJ 63", "Industry Training Evidence for AJ 63"], "under_count": 14, "exists": true},
-  {"raw": "Portfolio Review CIS101-Introduction to Computers and Their Uses", "step": "Two issuers", "why": "a merge would join two issuers (California Community Colleges; the reference has Birmingham Community Charter High School)", "colleges": [59], "title": "Introduction to Computers and Their Uses", "issuer": "California Community Colleges", "from": "the classifier", "proposal_source": "classifier", "ids": ["MAPPRS-PRCT-1-001"], "art": [59], "could": [34, 57, 60, 61, 108], "basis": "", "same": false, "courses_key": "teaches:Introduction to Computers and Their Uses", "local_courses": [[59, "CIS 101", "INTRODUCTION TO COMPUTERS AND THEIR USES", 3, "CCC000064371", "3 hours in Introduction to Computers and their Uses", "This is a basic course in computer literacy concepts. It provides an overview of computer networking, hardware and software (including operating systems and file management). The student will assess the implications of computer technology on society."]], "subject": "Business", "subject_course": 0, "confidence": 0.9, "under": ["HIGH SCHOOL ARTICULATION - BIRMINGHAM CCHS: CIS 101 Introduction to Computers and Their Uses"], "under_count": 1, "exists": true, "trainers": ["Birmingham Community Charter High School"]},
-  {"raw": "Portfolio Review JOURNAL101-Journalism 101: Collecting & Writing News", "step": "Proposed", "why": "the classifier is unsure (0.72)", "colleges": [59], "title": "Collecting and Writing News", "issuer": "California Community Colleges", "from": "the classifier", "proposal_source": "classifier", "ids": ["MAPPRS-PRJ1-1-001"], "art": [59], "could": [], "basis": "", "same": false, "local_courses": [[59, "JOURNAL 101", "COLLECTING AND WRITING NEWS", 3, "CCC000076161", "3 hours in Collecting and Writing News", "Introduction to journalism; students learn the basics of news reporting and journalistic writing skills, and write for the campus newspaper."]], "subject": "Journalism", "subject_course": 0, "confidence": 0.72}
+  {"raw": "Portfolio Review CIS101-Introduction to Computers and Their Uses", "step": "Two issuers", "why": "a merge would join two issuers (California Community Colleges; the reference has Birmingham Community Charter High School)", "colleges": [2], "title": "Introduction to Computers and Their Uses", "issuer": "California Community Colleges", "from": "the classifier", "proposal_source": "classifier", "ids": ["MAPPRS-PRCT-1-001"], "art": [2], "could": [0, 1, 3, 4, 5], "basis": "", "same": false, "courses_key": "teaches:Introduction to Computers and Their Uses", "credit_recs": [["CIS 101", "3 hours in Introduction to Computers and their Uses"]], "local_courses": [[2, "CIS 101", "INTRODUCTION TO COMPUTERS AND THEIR USES", 3, "CCC000064371", "3 hours in Introduction to Computers and their Uses", "This is a basic course in computer literacy concepts. It provides an overview of computer networking, hardware and software (including operating systems and file management). The student will assess the implications of computer technology on society."]], "subject": "Business", "subject_course": 0, "confidence": 0.9, "under": ["HIGH SCHOOL ARTICULATION - BIRMINGHAM CCHS: CIS 101 Introduction to Computers and Their Uses"], "under_count": 1, "exists": true, "trainers": ["Birmingham Community Charter High School"]}
  ]
 }

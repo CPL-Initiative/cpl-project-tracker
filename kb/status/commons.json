@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-22T15:44:22Z",
+ "written_at": "2026-11-22T21:52:40Z",
  "rows": [
   {
    "key": "requirements",
@@ -98,13 +98,13 @@
    "status_file": "kb/status/exhibit.json",
    "pair": [
     {
-     "n": 3185,
+     "n": 3221,
      "of": 6252,
-     "words": "titles carry a review stamp (1,540 a person's, 1,645 a cohort's), counting 37 titles MAP carries with no entry yet; 2,957 credentials, 2,542 of 3,312 records stamped",
+     "words": "titles carry a review stamp (1,581 a person's, 1,640 a cohort's), counting 1 titles MAP carries with no entry yet; 2,970 credentials, 2,572 of 3,342 records stamped",
      "open": "#exhibits/list"
     },
     {
-     "n": 1540,
+     "n": 1581,
      "of": 6252,
      "words": "confirmed by a person",
      "open": "#exhibits/list",
@@ -166,23 +166,23 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-22T06:18:23Z",
+    "at": "2026-11-22T21:48:16Z",
     "every_hours": 24
    },
    "facts": {
-    "titles": 6215,
-    "backlog": 37,
-    "stamped": 3185,
-    "person": 1540,
-    "cohort": 1645,
-    "credentials": 2957,
-    "confirmed": 1540,
-    "records": 3312,
-    "records_stamped": 2542,
+    "titles": 6251,
+    "backlog": 1,
+    "stamped": 3221,
+    "person": 1581,
+    "cohort": 1640,
+    "credentials": 2970,
+    "confirmed": 1581,
+    "records": 3342,
+    "records_stamped": 2572,
     "saved_at": "2026-11-21T15:42:56Z",
-    "fold_at": "2026-11-22T06:18:23Z",
+    "fold_at": "2026-11-22T21:48:16Z",
     "map_titles": 5440,
-    "unclassified": 37,
+    "unclassified": 1,
     "left_map": 812,
     "below_80": 1117,
     "below_60": 235,
@@ -293,7 +293,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-22T14:49:47+00:00",
+    "at": "2026-11-22T21:51:18+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -454,15 +454,15 @@
    "status_file": "kb/status/subjects.json",
    "pair": [
     {
-     "n": 147,
-     "of": 147,
-     "words": "MQ disciplines with courses carry a settled Common SUBJ: confirmed (by a person, or by the nightly procedure where the code is the authority's own), on the authority rule, in no collision (133 by a person, 14 by the nightly procedure or a session cohort)",
+     "n": 151,
+     "of": 151,
+     "words": "MQ disciplines with courses carry a settled Common SUBJ: confirmed (by a person, or by the nightly procedure where the code is the authority's own), on the authority rule, in no collision (137 by a person, 14 by the nightly procedure or a session cohort)",
      "open": "#canonical-subj4/list"
     },
     {
-     "n": 133,
-     "of": 147,
-     "words": "confirmed by a person, 133 of them settled",
+     "n": 137,
+     "of": 151,
+     "words": "confirmed by a person, 137 of them settled",
      "open": "#canonical-subj4/list/person",
      "error": null
     }
@@ -510,16 +510,16 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-22T14:47:00Z",
+    "at": "2026-11-22T21:48:14Z",
     "every_hours": 24
    },
    "facts": {
-    "disciplines": 147,
-    "confirmed": 147,
-    "person": 133,
+    "disciplines": 151,
+    "confirmed": 151,
+    "person": 137,
     "cohort": 14,
-    "person_settled": 133,
-    "settled": 147,
+    "person_settled": 137,
+    "settled": 151,
     "modal": 0,
     "shared": [],
     "missed_alignment": 0,
@@ -835,13 +835,13 @@
     {
      "name": "classifier",
      "placed": 979,
-     "untouched": 903,
+     "untouched": 902,
      "kept": 4,
-     "renamed": 53,
+     "renamed": 54,
      "moved": 0,
      "by_procedure": 19,
      "left": 0,
-     "looked": 57
+     "looked": 58
     },
     {
      "name": "brand-family",
@@ -857,24 +857,24 @@
     {
      "name": "course-identity",
      "placed": 201,
-     "untouched": 175,
+     "untouched": 172,
      "kept": 0,
-     "renamed": 26,
+     "renamed": 29,
      "moved": 0,
      "by_procedure": 0,
      "left": 0,
-     "looked": 26
+     "looked": 29
     },
     {
      "name": "high-school-rop",
      "placed": 66,
-     "untouched": 42,
+     "untouched": 41,
      "kept": 19,
-     "renamed": 5,
+     "renamed": 6,
      "moved": 0,
      "by_procedure": 0,
      "left": 0,
-     "looked": 24
+     "looked": 25
     },
     {
      "name": "nccer-verbatim",
@@ -923,13 +923,13 @@
    ],
    "total": {
     "placed": 1507,
-    "untouched": 1374,
+    "untouched": 1369,
     "kept": 23,
-    "renamed": 86,
+    "renamed": 91,
     "moved": 0,
     "by_procedure": 24,
     "left": 0,
-    "looked": 109
+    "looked": 114
    }
   },
   {
@@ -1028,68 +1028,6 @@
  "docket": [],
  "batches": [
   {
-   "kind": "another-look",
-   "n": 5,
-   "of": 5,
-   "open": "#exhibits/another-look/batch",
-   "title": "Another look at 5 exhibit titles",
-   "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
-   "stop": "The batch ends when its cards are decided.",
-   "rules": [
-    "fold",
-    "numerals"
-   ],
-   "cards": [
-    {
-     "id": "302e658390a1",
-     "current": "ESL - Comprehensive I",
-     "keys": [
-      "_UNCLASSIFIED::ESLN 310A"
-     ]
-    },
-    {
-     "id": "57706504886f",
-     "current": "ESL - Comprehensive V",
-     "keys": [
-      "_UNCLASSIFIED::ESLN 310E"
-     ]
-    },
-    {
-     "id": "82c074974c00",
-     "current": "Mechanical Design I",
-     "keys": [
-      "_UNCLASSIFIED::DRAFT 21: Mechanical Design I CX"
-     ]
-    },
-    {
-     "id": "5341f0a0836a",
-     "current": "Music Theory I",
-     "keys": [
-      "_UNCLASSIFIED::High School Articulation (Monte Vista)- Introduction to Music Theory and Performance"
-     ]
-    },
-    {
-     "id": "0b6d6a199c47",
-     "current": "Practical PC and Career Technologies",
-     "keys": [
-      "_UNCLASSIFIED::Portfolio Review CIS100-Practical PC & Career Technologies"
-     ]
-    }
-   ],
-   "at": "2026-11-22T06:21:23Z"
-  },
-  {
-   "kind": "decision",
-   "project": "subjects",
-   "n": 1,
-   "title": "Aligning 192 Cerritos courses whose M-ID sits under another Common SUBJ",
-   "teaches": "Sam's saved subject decisions put 192 Cerritos courses under a Common SUBJ other than the one their M-ID was minted under; ATH's 84 sit under ATHL against his KINE, and on ordinary titles the decided code and the M-ID agree for 253 of 440. Aligning them is a re-mint under the re-mint playbook, with its dry run and alias map.",
-   "open": "https://github.com/CPL-Initiative/cpl-project-tracker/issues/3655",
-   "todo_id": null,
-   "chosen": "Nothing is re-minted; the courses keep their M-IDs and the page shows the decided code beside them.",
-   "stop": "It stands unless you change it."
-  },
-  {
    "kind": "job",
    "ref": "course",
    "n": 5,
@@ -1101,54 +1039,13 @@
   }
  ],
  "next_batch": {
-  "kind": "another-look",
+  "kind": "job",
+  "ref": "course",
   "n": 5,
-  "of": 5,
-  "open": "#exhibits/another-look/batch",
-  "title": "Another look at 5 exhibit titles",
-  "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
-  "stop": "The batch ends when its cards are decided.",
-  "rules": [
-   "fold",
-   "numerals"
-  ],
-  "cards": [
-   {
-    "id": "302e658390a1",
-    "current": "ESL - Comprehensive I",
-    "keys": [
-     "_UNCLASSIFIED::ESLN 310A"
-    ]
-   },
-   {
-    "id": "57706504886f",
-    "current": "ESL - Comprehensive V",
-    "keys": [
-     "_UNCLASSIFIED::ESLN 310E"
-    ]
-   },
-   {
-    "id": "82c074974c00",
-    "current": "Mechanical Design I",
-    "keys": [
-     "_UNCLASSIFIED::DRAFT 21: Mechanical Design I CX"
-    ]
-   },
-   {
-    "id": "5341f0a0836a",
-    "current": "Music Theory I",
-    "keys": [
-     "_UNCLASSIFIED::High School Articulation (Monte Vista)- Introduction to Music Theory and Performance"
-    ]
-   },
-   {
-    "id": "0b6d6a199c47",
-    "current": "Practical PC and Career Technologies",
-    "keys": [
-     "_UNCLASSIFIED::Portfolio Review CIS100-Practical PC & Career Technologies"
-    ]
-   }
-  ],
-  "at": "2026-11-22T06:21:23Z"
+  "title": "Common Course Reference",
+  "words": "common courses (cards) whose catalog description reads as another discipline than the one they carry (Kinesiology)",
+  "teaches": "Sam (rule on each and say why; a reason marked for similar cards becomes a procedure)",
+  "open": "#coci-lookup/list/doubt",
+  "reason": "unsure"
  }
 }
