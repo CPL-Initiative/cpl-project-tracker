@@ -4298,8 +4298,11 @@ def pdf_pinned_heading(pages: list[str], program: dict, pin: dict | None) -> tup
     words may print anywhere from the pinned page through `through` (Clovis 33432's core page p.106 lacks
     "Entrepreneur", which p.107 prints), and pdf_best reads the pinned page through `through` and no page after it,
     even where one names no listed course (Clovis 33492's total prints on p.149). `through` is at most
-    PDF_RUN_PAGES past the pin, never
-    before it and never past the file; outside that the pin binds nothing. A pin without `through` reads as before."""
+    PDF_RUN_PAGES past the pin, never before it and never past the file; outside that the pin binds nothing. A pin
+    without `through` reads as before.
+    Not built yet (second reader on #3683): the window through `through` holds whatever else that page prints
+    (33492's p.149 also holds the Drinking Water Treatment certificate's list), so a later pin may name `until`, the
+    words the next program opens on, and the window would end there."""
     if not pin:
         return None, None
     i = int(pin.get("page") or 0) - 1
@@ -7221,12 +7224,16 @@ def named_fragment(url: str | None) -> str:
     places keep two pages apart (S697 second reader on #3641; S703 follow-up: reading any '=' as viewer parameters
     made #/program?id=1 and #/program?id=2 one page)."""
     frag = urllib.parse.urlparse(url or "").fragment
+    # A text fragment (#:~:text=..., or #accounting:~:text=...) is a browser's highlight, never a place: everything
+    # from ':~:' on is set aside (second reader on #3683).
+    frag = frag.split(":~:", 1)[0]
     if not frag:
         return ""
     if frag.startswith("/") or "?" in frag:
         return frag.lower()   # a page's route, its own query included (#/program?id=1&page=2)
     parts = [x for x in re.split(r"[&;]", frag) if x]
-    named = [x for x in parts if not ("=" in x and x.split("=", 1)[0].strip().lower() in PDF_VIEWER_PARAMS)]
+    # A viewer setting with or without a value (#page=12&zoom) is still a viewer setting (second reader on #3683).
+    named = [x for x in parts if x.split("=", 1)[0].strip().lower() not in PDF_VIEWER_PARAMS]
     return "&".join(named).lower()
 
 
@@ -7749,6 +7756,18 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
         # A capture-only prior read files only its preview (prior_<year>_preview.json) and touches no record or
         # earlier account, so a PDF that gave no page is its finding, never a loss: the preview files and the step
         # ends green (S703 follow-up; College of the Desert's preview 44711759115, its prior PDF behind robots).
+        # A filed preview whose PDF gave pages is a whole read, and an empty one never replaces it (second reader
+        # on #3683: City College of San Francisco's 528-page preview of run 44777204746): nothing is filed, and red.
+        year = (report.get("prior") or {}).get("catalog_year")
+        try:
+            with open(os.path.join(dest, "prior_%s_preview.json" % year)) as fh:
+                filed_pages = ((json.load(fh) or {}).get("pdf") or {}).get("pages_total")
+        except (OSError, ValueError, AttributeError):
+            filed_pages = None
+        if filed_pages:
+            print("::error::%s: the filed prior_%s_preview.json read %s PDF pages, so this empty read files "
+                  "nothing and it stays as filed. Run the read again." % (short, year, filed_pages))
+            return 1
         print("::warning::%s: filed as the capture-only prior read's preview; no record is touched." % short)
         return file_prior(dest, out_dir, report)
     if short:

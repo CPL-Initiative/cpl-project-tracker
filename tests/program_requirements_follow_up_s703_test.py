@@ -21,6 +21,11 @@ named-gaps rollback's tag. One check group per item, each guarding the failure i
      `through` binds and reads exactly as before (Cosumnes River's S650 pins on their fixture).
   6. kb/_program_named_gaps.py --receipt R --applied M named the rollback after the default tag s680 unless --tag was
      passed. It takes the tag from the receipt's file name, refuses a --tag that differs, and refuses a name with no tag.
+  7. Self-recall (second reader on #3683): over every committed folder, same_page, names_page, same_file,
+     named_fragment and pdf_page_of answer as main's definitions do. Swapping main's named_fragment and
+     EDITION_TOKEN into the module gives main's answers, since every other page call is the same code.
+Item 2 also covers the second reader's two shapes (#:~:text= and #page=12&zoom), and item 4 the 528-page preview
+an empty read must not replace (City College of San Francisco, run 44777204746).
 """
 import io
 import json
@@ -158,6 +163,15 @@ try:
           "2 a viewer parameter beside a named destination is set aside")
     check(C.same_page("https://c.edu/c.pdf#page=129", "https://c.edu/c.pdf#page=130&zoom=100"),
           "2 a PDF page one off, with a viewer parameter, is still one page")
+    # Second reader on #3683: a text fragment and a viewer setting with no value name no place.
+    check(NF("https://c.edu/p/#:~:text=Business%20Administration") == ""
+          and NF("https://c.edu/p/#accounting-aa:~:text=Core") == "accounting-aa"
+          and C.same_page("https://c.edu/p/", "https://c.edu/p/#:~:text=Total%20Units")
+          and C.same_page("https://c.edu/p/#:~:text=a", "https://c.edu/p/#:~:text=b"),
+          "2 a text fragment (#:~:text=) is set aside: no place, and a name before it stands")
+    check(NF("https://c.edu/x.pdf#page=12&zoom") == "" and NF("https://c.edu/x.pdf#zoom") == ""
+          and C.same_page("https://c.edu/x.pdf#page=12&zoom", "https://c.edu/x.pdf#page=12"),
+          "2 a viewer setting with no value (#page=12&zoom) is still a viewer setting")
 
     # ── 3. EDITION_TOKEN: one digit ──────────────────────────────────────────────────────────────────────
     check(not C.same_file("https://c.edu/docs/catalog-v24.pdf", "https://c.edu/docs/catalog-v25.pdf"),
@@ -192,6 +206,21 @@ try:
     check(load(os.path.join(dest, "prior_2025-2026.json")) == {"run": "8", "filed": ["1"], "kept": []}
           and os.path.isfile(os.path.join(dest, "records", "1.json")),
           "4 the earlier prior read's account and the records stay as filed")
+    # Second reader on #3683: an empty read never replaces a preview whose PDF gave pages (City College of San
+    # Francisco's 528-page preview of run 44777204746, committed on main).
+    ccsf = {"college": "Prior College", "programs": 27, "with_closed_list": 27, "prior": PRIOR, "run": "44777204746",
+            "pdf": {"url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf",
+                    "pages_total": 528, "access": "ok"}}
+    dump(pv, ccsf)
+    with redirect_stdout(io.StringIO()) as b1:
+        rc = C.file_run("Prior College", out, "44711759118")
+    check(rc != 0 and load(pv) == ccsf and "528 PDF pages" in b1.getvalue(),
+          "4 an empty read keeps a filed 528-page preview as filed, and ends red (rc %r: %s)"
+          % (rc, b1.getvalue().strip()[:160]))
+    dump(pv, dict(ccsf, pdf={"url": None, "access": "no_address", "pages_total": 0}))
+    with redirect_stdout(io.StringIO()):
+        rc = C.file_run("Prior College", out, "44711759119")
+    check(rc == 0 and load(pv)["run"] == "44711759119", "4 an empty read replaces an empty preview, and ends green")
     os.makedirs(os.path.join(out, "records"))
     with redirect_stdout(io.StringIO()) as b2:
         rc = C.file_run("Prior College", out, "44711759116")
@@ -321,6 +350,76 @@ try:
                   "6 %s stops before anything is written (%s)" % (what, err.getvalue().strip()[-120:]))
     finally:
         G.replan_applied, G.write_rollback = _rp, _wr
+
+    # ── 7. Self-recall over every committed folder: the page calls answer as main's did ───────────────────
+    # main's two definitions this PR changes, as #3644 left them; every other page call is the same code, so
+    # swapping these two into the module gives main's answers. Over all committed records the two must agree.
+    import glob
+    import itertools
+    import urllib.parse
+
+    MAIN_EDITION = re.compile(r"(?i)(?<![a-z0-9])v(?:er(?:sion)?)?[-_]?\d{1,2}(?![a-z0-9])")
+
+    def main_named_fragment(url):
+        frag = urllib.parse.urlparse(url or "").fragment
+        return "" if not frag or "=" in frag else frag.lower()
+
+    calls = ("same_page", "names_page", "same_file", "named_fragment", "pdf_page_of")
+
+    def answers(fn_pairs, urls, file_pairs):
+        out = {"same_page": [C.same_page(a, b) for a, b in fn_pairs],
+               "names_page": [C.names_page(a, b) for a, b in fn_pairs],
+               "same_file": [C.same_file(a, b) for a, b in file_pairs],
+               "named_fragment": [C.named_fragment(u) for u in urls],
+               "pdf_page_of": [C.pdf_page_of(u) for u in urls]}
+        return out
+    pairs, urls, file_pairs, n_records = [], set(), [], 0
+    for folder in sorted(glob.glob(os.path.join(ROOT, "kb", "program_requirements_college", "*"))):
+        try:
+            entries = {e.get("control_number"): e for e in load(os.path.join(folder, "sources.json"))}
+        except (OSError, ValueError):
+            entries = {}
+        mine = set()
+        for path in glob.glob(os.path.join(folder, "records", "*.json")):
+            try:
+                rec_ = load(path)
+            except (OSError, ValueError):
+                continue
+            n_records += 1
+            a = rec_.get("source_url")
+            b = ((entries.get(rec_.get("control_number")) or {}).get("source") or {}).get("url")
+            mine.update(u for u in (a, b) if u)
+            if a and b:
+                pairs.append((a, b))
+        mine.update(u for u in ((e.get("source") or {}).get("url") for e in entries.values()) if u)
+        urls |= mine
+        # same_file differs between the two only through the edition token, so the pairs that can differ are the
+        # files of one college whose names match once their digits are set aside; every such pair is compared.
+        by_shape = {}
+        for f in sorted({u.split("#")[0] for u in mine}):
+            by_shape.setdefault(re.sub(r"\d+", "#", f.lower()), []).append(f)
+        file_pairs.extend(p for fs in by_shape.values() for p in itertools.combinations(fs, 2))
+    urls = sorted(urls)
+    new = answers(pairs, urls, file_pairs)
+    _nf, _et = C.named_fragment, C.EDITION_TOKEN
+    C.named_fragment, C.EDITION_TOKEN = main_named_fragment, MAIN_EDITION
+    try:
+        old = answers(pairs, urls, file_pairs)
+    finally:
+        C.named_fragment, C.EDITION_TOKEN = _nf, _et
+    differ = {k: sum(x != y for x, y in zip(old[k], new[k])) for k in calls}
+    check(n_records > 18000 and len(pairs) > 18000 and len(urls) > 16000 and len(file_pairs) > 0
+          and not any(differ.values()),
+          "7 over %d committed records, %d record/entry pairs, %d addresses and %d same-shape file pairs, every page "
+          "call answers as main's did (%s)" % (n_records, len(pairs), len(urls), len(file_pairs), differ))
+    # The swap is live: on the shapes this PR changes, main's definitions answer otherwise.
+    C.named_fragment, C.EDITION_TOKEN = main_named_fragment, MAIN_EDITION
+    try:
+        swapped = (C.same_page("https://c.edu/c/#/program?id=1", "https://c.edu/c/#/program?id=2"),
+                   C.same_file("https://c.edu/catalog-v24.pdf", "https://c.edu/catalog-v25.pdf"))
+    finally:
+        C.named_fragment, C.EDITION_TOKEN = _nf, _et
+    check(swapped == (True, True), "7 main's definitions, swapped in, still join id=1 with id=2 and v24 with v25")
 finally:
     C.COLLEGE_DIR = _saved_dir
     shutil.rmtree(_tmp, ignore_errors=True)
