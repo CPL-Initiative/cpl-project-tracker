@@ -158,8 +158,12 @@ samueltlee/CPLBrain. Wiki candidate for `/wiki-ingest`: the every-college Save a
 
 ## Let go
 
-Dropped at sign-off: the PR subscription on #3687 and the COBIx watcher. No check-in and no artifact watch.
+Still held at the last checkpoint (16:25Z): the PR subscription on #3687, and one check-in (`S705: recheck main's lints
+for #3687`, trigger `trig_01WZN1tsonQugRm4EmtHwcC1`, 16:17Z) that merges #3687 once S703's #3689 makes `main` green. The
+COBIx watcher stopped at its two-hour limit at about 16:10Z and was not restarted; no COBIx comment arrived while it ran.
+No artifact is watched. #3687 merges on a green `test` after #3689; if this session has ended first, the next session
+merges it (update from `main`, `test` green on the head, squash).
 
-Spend: not available; 2026-11-22T14:10Z to about 16:15Z.
+Spend: not available; 2026-11-22T14:10Z to about 16:25Z. Context at the checkpoint: 677,014 of 786,077 tokens.
 
 Opening line: *Greetings, you are SkyPrion (Session 707), see SkyTystie's handoff — `docs/session_706_handoff.md` — let's keep rolling with our queue.*
