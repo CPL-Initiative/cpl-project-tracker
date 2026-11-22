@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-22T06:22:14Z",
+ "written_at": "2026-11-22T13:28:10Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 15323,
+     "n": 15324,
      "of": 20282,
      "words": "complete at 118 colleges",
      "open": "#program-requirements/list"
@@ -34,7 +34,7 @@
    ],
    "issues": [
     {
-     "n": 2022,
+     "n": 2021,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
@@ -63,13 +63,13 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-11-21T14:58:59Z",
+    "at": "2026-11-22T11:18:06Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 15323,
-    "failing": 2022,
+    "complete": 15324,
+    "failing": 2021,
     "unread": 2937,
     "records": 18951,
     "colleges": 118,
@@ -383,7 +383,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-19T06:22:43Z",
+    "at": "2026-11-21T10:05:16-08:00",
     "every_hours": null
    },
    "facts": {
@@ -771,7 +771,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 2022,
+    "n": 2021,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"
@@ -1076,6 +1076,17 @@
     }
    ],
    "at": "2026-11-22T06:21:23Z"
+  },
+  {
+   "kind": "decision",
+   "project": "subjects",
+   "n": 1,
+   "title": "Aligning 192 Cerritos courses whose M-ID sits under another Common SUBJ",
+   "teaches": "Sam's saved subject decisions put 192 Cerritos courses under a Common SUBJ other than the one their M-ID was minted under; ATH's 84 sit under ATHL against his KINE, and on ordinary titles the decided code and the M-ID agree for 253 of 440. Aligning them is a re-mint under the re-mint playbook, with its dry run and alias map.",
+   "open": "https://github.com/CPL-Initiative/cpl-project-tracker/issues/3655",
+   "todo_id": null,
+   "chosen": "Nothing is re-minted; the courses keep their M-IDs and the page shows the decided code beside them.",
+   "stop": "It stands unless you change it."
   },
   {
    "kind": "job",
