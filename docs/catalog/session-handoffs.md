@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-664 document(s).
+665 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 708 | [Session 708 handoff (from SkyPrion, S707, Sam's plain session of 2026-11-22: main green again, AED unmapped, subjects before re-mints)](../session_708_handoff.md) | 2026-11-22 |
 | 706 | [Session 706 handoff (from SkyTystie, S705, Sam's plain session of 2026-11-22: one Save settles a code at every college; the queue kept running beside it)](../session_706_handoff.md) | 2026-11-22 |
 | 704 | [Session 704 handoff (from SkyDovekie, S703, the CPL Queue routine's collection run of 2026-11-22)](../session_704_handoff.md) | 2026-11-22 |
 | 703 | [Session 703 handoff (from SkyRazorbill, S702, Sam's plain session of 2026-11-22: Subjects Edit, panel and counts from every surface, full width; the queue kept running beside it)](../session_703_handoff.md) | 2026-11-22 |

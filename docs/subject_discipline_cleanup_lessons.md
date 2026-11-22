@@ -111,3 +111,24 @@ priority for the CCR lane.
 
 Distilled, reusable form of the detector:
 [`docs/kb-notes/methodology-subject-cohort-discipline-outlier.md`](kb-notes/methodology-subject-cohort-discipline-outlier.md).
+
+## 2026-11-22 (S707 SkyPrion): AED was a local name, read as a discipline
+
+### (a) Learned
+- `"AED": "Electricity"` in `kb/reference/subject_discipline_map.json` came from the seed's sampled titles, which were
+  the electrical apprenticeship courses. AED is Cerritos's Adult Education (its department list), a mixed noncredit
+  bucket, and no other college uses the code. As the modal subject it gave 46 M-IDs their prefix; 45 hold other
+  colleges' courses, about 15 are electrical. The cohort outlier rule could not see it: one college is the whole cohort.
+- The map is hand-curated since Sam's 2026-09-08 rulings, so the seed and the JSON both carry the change.
+
+### (b) State
+AED is in `_deliberately_unmapped` (#3693). Nothing re-minted. `kb/status/local_subject_titles.json`'s only change is
+Cerritos AED's `was`.
+
+### (c) Roadmap
+Sam, 2026-11-22: subjects before re-mints. The draft readiness gate and the order are in the commons lane.
+
+### (d) Next step
+A readiness count per M-ID for the AED scope (221 members, 74 local codes), then statewide defaults for the codes
+that read the same everywhere.
+
