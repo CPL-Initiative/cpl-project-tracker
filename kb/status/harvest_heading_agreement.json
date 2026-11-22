@@ -1,19 +1,19 @@
 {
  "_readme": "A dated snapshot of main at `commit` (as_of: the newest capture it reads), written by kb/_program_requirements_heading_agreement.py from the files the tree commits (git ls-files). Rewritten by a dispatch of harvest-gap-census.yml beside the gap census; nothing gates a PR on its freshness, so it can trail the records. Each record's own heading (program.section_heading) against the program it is filed under (sources.json: COCI title and award). check_would_fail_passing counts the records that pass on the committed files (passes_live) whose heading names another award type (heading_award_check, in no pass rule). award_not_program counts headings that name an award and none of the program's title words, set aside (Pasadena's one page for an A.S. and its certificate).",
  "commit": {
-  "sha": "80d9b0b8f6d92db4deed84fdf9f2863a9752b0a3",
-  "date": "2026-11-21"
+  "sha": "cbcfeee7c22c2625a5e862d63da79cfdd32970ec",
+  "date": "2026-11-22"
  },
- "as_of": "2026-11-21",
+ "as_of": "2026-11-22",
  "read_from": [
   "main"
  ],
  "totals": {
   "records": 18958,
-  "agree": 15409,
+  "agree": 15413,
   "disagree": 276,
-  "cannot_tell": 3273,
-  "heading_absent": 279,
+  "cannot_tell": 3269,
+  "heading_absent": 278,
   "disagree_passing": 168,
   "disagree_loaded": 206,
   "check_would_fail_passing": 136,
@@ -1804,9 +1804,9 @@
    "platform": "pdf",
    "records": 109,
    "pdf_records": 109,
-   "agree": 88,
+   "agree": 91,
    "disagree": 2,
-   "cannot_tell": 19,
+   "cannot_tell": 16,
    "heading_absent": 12,
    "disagree_passing": 1,
    "disagree_loaded": 2,
@@ -1814,8 +1814,8 @@
    "pdf_disagree_passing": 1,
    "pdf_suspect": 2,
    "pdf_suspect_passing": 1,
-   "pdf_agree": 88,
-   "pdf_cannot_tell": 19,
+   "pdf_agree": 91,
+   "pdf_cannot_tell": 16,
    "by_reason": {
     "title": 1,
     "award": 1
@@ -1866,7 +1866,7 @@
     }
    ],
    "control_number_print": {
-    "picks": 109,
+    "picks": 107,
     "cn_printed_picks": 0,
     "labels_in_openings": {},
     "positions": {},
@@ -2920,18 +2920,18 @@
    "platform": "pdf",
    "records": 217,
    "pdf_records": 217,
-   "agree": 188,
+   "agree": 189,
    "disagree": 1,
-   "cannot_tell": 28,
-   "heading_absent": 14,
+   "cannot_tell": 27,
+   "heading_absent": 13,
    "disagree_passing": 0,
    "disagree_loaded": 0,
    "pdf_disagree": 1,
    "pdf_disagree_passing": 0,
    "pdf_suspect": 1,
    "pdf_suspect_passing": 0,
-   "pdf_agree": 188,
-   "pdf_cannot_tell": 28,
+   "pdf_agree": 189,
+   "pdf_cannot_tell": 27,
    "by_reason": {
     "title": 1
    },

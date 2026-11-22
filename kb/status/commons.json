@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-22T14:11:28Z",
+ "written_at": "2026-11-22T15:44:22Z",
  "rows": [
   {
    "key": "requirements",
@@ -118,16 +118,16 @@
    ],
    "issues": [
     {
-     "n": 38,
+     "n": 37,
      "words": "titles held for a person",
-     "owner": "a curator (a merge would join two issuers 20, the classifier is unsure 17, the classifier's title has a course code left in 1)",
+     "owner": "a curator (a merge would join two issuers 20, the classifier is unsure 16, the classifier's title has a course code left in 1)",
      "carry": "unsure",
      "open": "#exhibits/held",
      "error": null
     },
     {
-     "n": 574,
-     "words": "credentials with no Common SUBJ (467 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
+     "n": 584,
+     "words": "credentials with no Common SUBJ (449 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
      "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
      "carry": "routine",
      "open": "#exhibits/list/nosubj",
@@ -186,7 +186,7 @@
     "left_map": 812,
     "below_80": 1117,
     "below_60": 235,
-    "no_subject": 574,
+    "no_subject": 584,
     "review_list": 12,
     "returned_unacknowledged": 0
    },
@@ -293,7 +293,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-22T06:20:44+00:00",
+    "at": "2026-11-22T14:49:47+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -383,7 +383,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-21T10:28:19-08:00",
+    "at": "2026-11-19T06:22:43Z",
     "every_hours": null
    },
    "facts": {
@@ -510,7 +510,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-22T06:18:20Z",
+    "at": "2026-11-22T14:47:00Z",
     "every_hours": 24
    },
    "facts": {
@@ -710,9 +710,9 @@
      {
       "ref": "exhibit",
       "title": "Common Exhibit Reference",
-      "n": 38,
+      "n": 37,
       "words": "titles held for a person",
-      "owner": "a curator (a merge would join two issuers 20, the classifier is unsure 17, the classifier's title has a course code left in 1)",
+      "owner": "a curator (a merge would join two issuers 20, the classifier is unsure 16, the classifier's title has a course code left in 1)",
       "open": "#exhibits/held"
      },
      {
@@ -788,8 +788,8 @@
    {
     "ref": "exhibit",
     "title": "Common Exhibit Reference",
-    "n": 574,
-    "words": "credentials with no Common SUBJ (467 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
+    "n": 584,
+    "words": "credentials with no Common SUBJ (449 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
     "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
     "open": "#exhibits/list/nosubj"
    },
@@ -818,10 +818,10 @@
     "ref": "exhibit",
     "title": "Common Exhibit Reference",
     "kind": "not_shrinking",
-    "n": 574,
+    "n": 584,
     "was": 499,
     "since": "2026-11-15",
-    "words": "credentials with no Common SUBJ (467 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
+    "words": "credentials with no Common SUBJ (449 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
     "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
     "open": "#exhibits/list/nosubj"
    }

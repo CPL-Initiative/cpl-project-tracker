@@ -4,9 +4,9 @@
   "supabase_tables": 119,
   "rpcs": 68,
   "edge_functions": 16,
-  "file_datasets": 1149,
+  "file_datasets": 1157,
   "external_services": 199,
-  "consumers": 653,
+  "consumers": 655,
   "workflows": 77,
   "data_js_files": 71,
   "tabs": 41
@@ -1224,7 +1224,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1791
+     "line": 1805
     },
     {
      "id": "module:admin.js",
@@ -1956,7 +1956,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2444
+     "line": 2458
     }
    ],
    "main_committers": []
@@ -2627,7 +2627,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1401
+     "line": 1415
     }
    ],
    "main_committers": []
@@ -2646,7 +2646,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1746
+     "line": 1760
     },
     {
      "id": "module:college_briefing.js",
@@ -3355,7 +3355,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1802
+     "line": 1816
     },
     {
      "id": "module:dashboard_filters.js",
@@ -4726,7 +4726,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2108
+     "line": 2122
     }
    ],
    "main_committers": []
@@ -5975,7 +5975,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1999
+     "line": 2013
     },
     {
      "id": "module:admin.js",
@@ -6151,14 +6151,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 70
+     "line": 74
     },
     {
      "id": "script:kb/_build_local_subject_titles.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 46
+     "line": 47
     },
     {
      "id": "script:kb/_build_not_applicable.py",
@@ -6228,7 +6228,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 970
+     "line": 1039
     },
     {
      "id": "script:kb/_prefix_alias_census.py",
@@ -6299,7 +6299,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 973
+     "line": 1042
     }
    ],
    "served": false,
@@ -7333,7 +7333,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2383
+     "line": 2397
     },
     {
      "id": "module:college_briefing.js",
@@ -7546,7 +7546,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1461
+     "line": 1475
     },
     {
      "id": "module:cpl_funding.js",
@@ -7858,6 +7858,13 @@
      "direction": "read",
      "how": "literal",
      "line": 921
+    },
+    {
+     "id": "script:kb/_sync_subject_decisions.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 62
     }
    ],
    "served": true,
@@ -11728,6 +11735,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/_sync_subject_decisions.py": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/_test_workplan_current_hybrid.py": {
    "consumers": [
     {
@@ -12750,7 +12770,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 980
+     "line": 1049
     }
    ],
    "producers": [
@@ -13677,7 +13697,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 90
+     "line": 103
     },
     {
      "id": "script:kb/_pols_remint.py",
@@ -14151,7 +14171,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 90
+     "line": 103
     },
     {
      "id": "script:kb/_pols_remint.py",
@@ -14625,7 +14645,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 90
+     "line": 103
     },
     {
      "id": "script:kb/_pols_remint.py",
@@ -14843,7 +14863,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 983
+     "line": 1052
     }
    ],
    "producers": [
@@ -15477,7 +15497,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1225
+     "line": 1231
     }
    ],
    "served": false,
@@ -16701,14 +16721,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 71
+     "line": 75
     },
     {
      "id": "script:kb/_build_local_subject_titles.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 48
+     "line": 49
     },
     {
      "id": "script:kb/_ccr_confidence_apply.py",
@@ -16877,6 +16897,13 @@
      "direction": "read",
      "how": "literal",
      "line": 66
+    },
+    {
+     "id": "script:kb/subject_decisions.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 45
     }
    ],
    "producers": [
@@ -18868,7 +18895,7 @@
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 1047
+     "line": 1117
     }
    ],
    "served": false,
@@ -19329,7 +19356,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 685
+     "line": 1594
     },
     {
      "id": "script:kb/_program_requirements_cheap_piles_s683.py",
@@ -19360,7 +19387,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 371
+     "line": 388
     }
    ],
    "served": false,
@@ -19373,7 +19400,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 339
+     "line": 356
     }
    ],
    "served": false,
@@ -20402,7 +20429,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 23
+     "line": 24
     },
     {
      "id": "script:kb/_build_program_course_graph.py",
@@ -21201,7 +21228,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 47
+     "line": 48
     },
     {
      "id": "script:kb/_build_oc_medical_assistant_crosswalk.py",
@@ -21257,7 +21284,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 357
+     "line": 390
     },
     {
      "id": "script:kb/_jev_next_steps.py",
@@ -21319,7 +21346,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 73
+     "line": 77
     }
    ],
    "served": false,
@@ -21875,6 +21902,13 @@
      "direction": "read",
      "how": "literal",
      "line": 55
+    },
+    {
+     "id": "script:kb/_program_named_gaps.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 1454
     }
    ],
    "producers": [
@@ -21971,7 +22005,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 107,
+     "line": 110,
      "tabs": [
       "commons"
      ]
@@ -21981,7 +22015,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 61
+     "line": 68
     }
    ],
    "producers": [
@@ -22002,7 +22036,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 87,
+     "line": 90,
      "tabs": [
       "commons"
      ]
@@ -22012,7 +22046,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 75
+     "line": 79
     }
    ],
    "producers": [
@@ -22033,7 +22067,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 34,
+     "line": 37,
      "tabs": [
       "commons"
      ]
@@ -22043,14 +22077,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 69
+     "line": 73
     },
     {
      "id": "script:kb/_build_local_subject_titles.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 49
+     "line": 50
     },
     {
      "id": "script:kb/_file_subject_decisions.py",
@@ -22064,7 +22098,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 62
+     "line": 69
     }
    ],
    "producers": [
@@ -22120,14 +22154,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 62
+     "line": 67
     },
     {
      "id": "script:kb/_build_noncredit_categories.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 24
+     "line": 25
     },
     {
      "id": "script:kb/_build_noncredit_subject_titles.py",
@@ -22135,6 +22169,13 @@
      "direction": "read",
      "how": "literal",
      "line": 45
+    },
+    {
+     "id": "script:kb/subject_decisions.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 54
     }
    ],
    "served": true,
@@ -22147,7 +22188,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 113,
+     "line": 116,
      "tabs": [
       "commons"
      ]
@@ -22157,7 +22198,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 76
+     "line": 80
     },
     {
      "id": "script:kb/_build_noncredit_subject_titles.py",
@@ -22278,6 +22319,34 @@
   },
   "file:kb/status/subject_courses": {
    "consumers": [],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": false,
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
+  },
+  "file:kb/status/subject_decisions.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_held_subject_codes.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 391
+    },
+    {
+     "id": "script:kb/subject_decisions.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 44
+    }
+   ],
    "producers": [
     {
      "by": "workflow:daily-dashboard.yml",
@@ -24174,7 +24243,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 89
+     "line": 102
     }
    ],
    "served": false,
@@ -24265,7 +24334,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 695
+     "line": 1604
     }
    ],
    "served": false,
@@ -25150,7 +25219,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 139
+     "line": 184
     }
    ],
    "served": false,
@@ -26495,7 +26564,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 72
+     "line": 76
     }
    ],
    "served": false,
@@ -29286,6 +29355,45 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/program_ge_units_not_read_s703_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_hours_gaps_s703_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_lists_past_figure_s703_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/program_map_parse_test.py": {
    "consumers": [
     {
@@ -29469,6 +29577,19 @@
    "main_committers": []
   },
   "file:tests/program_requirements_pilot_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_requirements_pins_s703_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -30048,6 +30169,32 @@
    "main_committers": []
   },
   "file:tests/subject_decisions_filing_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/subject_decisions_honored_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/subject_decisions_noncredit_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -31476,7 +31623,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 971
+     "line": 1040
     },
     {
      "id": "script:kb/_program_requirements_units_rules.py",
@@ -35034,7 +35181,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 184,
+     "line": 229,
      "tabs": [
       "commons"
      ]
@@ -35044,7 +35191,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 207,
+     "line": 252,
      "tabs": [
       "commons"
      ]
@@ -35375,6 +35522,13 @@
      "direction": "write",
      "how": "literal",
      "line": 82
+    },
+    {
+     "id": "script:kb/_sync_subject_decisions.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 87
     }
    ],
    "main_committers": []
@@ -37854,6 +38008,7 @@
     "kb/_build_inactive_cards.py",
     "kb/_build_not_applicable.py",
     "kb/_closest_mid.py",
+    "kb/_sync_subject_decisions.py",
     "kb/_build_local_subject_titles.py",
     "kb/_held_subject_codes.py",
     "kb/_build_subject_courses.py",
@@ -37922,6 +38077,7 @@
     "kb/coci_closest_mid.json",
     "kb/status/local_subject_titles.json",
     "kb/status/held_subject_codes.json",
+    "kb/status/subject_decisions.json",
     "kb/status/local_subject_recommendations.json",
     "kb/status/subject_courses",
     "kb/status/noncredit_subject_titles.json",
@@ -38183,6 +38339,8 @@
     "tests/subject_courses_test.py",
     "tests/noncredit_subject_titles_test.py",
     "tests/held_subject_codes_test.py",
+    "tests/subject_decisions_honored_test.py",
+    "tests/subject_decisions_noncredit_test.py",
     "tests/subjects_daily_build_test.py",
     "tests/closest_mid_links_test.py",
     "tests/apply_curation_rulings_test.py",
@@ -38213,6 +38371,7 @@
     "tests/program_requirements_extract_halt_test.py",
     "tests/program_requirements_reader_fixes_s697_test.py",
     "tests/program_requirements_follow_up_s697_test.py",
+    "tests/program_requirements_pins_s703_test.py",
     "tests/program_requirements_same_page_recall_s697_test.py",
     "tests/program_requirements_fragment_path_test.py",
     "tests/program_requirements_wave_test.py",
@@ -38220,8 +38379,11 @@
     "tests/model_run_gates_test.py",
     "tests/harvest_gap_census_test.py",
     "tests/program_named_gaps_test.py",
+    "tests/program_ge_units_not_read_s703_test.py",
     "tests/program_requirements_units_rules_test.py",
+    "tests/program_hours_gaps_s703_test.py",
     "tests/program_requirements_cheap_piles_s683_test.py",
+    "tests/program_lists_past_figure_s703_test.py",
     "tests/program_discontinued_test.py",
     "tests/reader_page_checks_test.py",
     "tests/reader_page_checks_recall_test.py",
@@ -39388,6 +39550,7 @@
   "kb/status/mid_outcomes_compare_*",
   "kb/status/program_discontinued.json",
   "kb/status/program_named_gaps.json",
+  "kb/status/subject_decisions.json",
   "kb/subj4_*",
   "kb/supabase_*.sql",
   "map",

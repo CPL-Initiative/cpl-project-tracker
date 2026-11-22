@@ -38,6 +38,9 @@ import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# The census the plan was built from (2026-11-21 22:26Z), frozen: a later census reads the planned programs
+# collected once the gap is applied, so the live file would move this test (S703, run 45037095240).
+CENSUS_AT_PLAN = os.path.join(ROOT, "tests", "fixtures", "harvest_gap_census_s703_plans.json")
 sys.path.insert(0, os.path.join(ROOT, "kb"))
 import _program_named_gaps as NG  # noqa: E402
 import _harvest_gap_census as G  # noqa: E402
@@ -162,7 +165,7 @@ check(len(NG.HELD_LISTS) == 29 and by_why == {NG.LISTS_CROSS_WHY: 8, NG.LISTS_TO
       "29 records held by key: 8 take another list's courses, 4 print a second total, 5 count an optional course, "
       "6 name the difference, 6 sum inside a printed range (%s)" % by_why)
 
-res = NG.run(write=False, gaps=(GAP,), skip=HELD_S703, census_causes=("units_unequal",))
+res = NG.run(write=False, gaps=(GAP,), skip=HELD_S703, census_causes=("units_unequal",), census_path=CENSUS_AT_PLAN)
 lr = res["lists_recall"]
 check(lr["held"] > 20000 and lr["right"] == lr["held"] and lr["wrong"] == 0
       and lr["by_kind"].get("all", 0) > 1000 and lr["by_kind"].get("choose_courses", 0) > 1000,
@@ -189,7 +192,7 @@ with open(os.path.join(ROOT, "kb", "receipts", "program_requirement_records_name
           encoding="utf-8") as fh:
     plan = json.load(fh)
 keys = {(r["college"], str(r["control_number"])) for r in plan["records"]}
-census = NG.census_keys(("units_unequal",))
+census = NG.census_keys(("units_unequal",), CENSUS_AT_PLAN)
 check(plan["only_gaps"] == [GAP] and plan["census_causes"] == ["units_unequal"], "one gap, at one census cause")
 check(keys and keys <= census, "every plan row is a census units_unequal program (%d of %d)" % (len(keys & census),
                                                                                             len(keys)))
