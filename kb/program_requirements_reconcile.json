@@ -495,8 +495,46 @@
     "ANTH": "ANTHR",
     "ENGL": "ENG",
     "ARTH": "ART",
-    "COMM": "COM ST"
+    "COMM": "COM ST",
+    "IND": "A-IND",
+    "ELE": "A-ELE",
+    "MEC": "A-MEC"
    },
+   "prefix_aliases_cited": [
+    {
+     "session": "S703",
+     "date": "2026-11-22",
+     "catalog_sources": [
+      "college_page_read"
+     ],
+     "printed": "IND",
+     "file": "A-IND",
+     "evidence": "the coarse net's reading of the file's code",
+     "source": "S703 (worker levers, census lever 7), college-page-read run 45026053479: the apprenticeship pages print the state's own codes with a hyphenated prefix (A-IND 75A, A-IND 78A). The capture's exact test names every listed course on each page (body coverage 1.0), but the coarse net's code tokens read 'A-IND 78A' as 'IND 78A', so the net named none and refused the page (f-sjdelta-apprenticeship-coarse-net-s691: 14594, 14595, 14597, 14598, 14599, 37611; capture 44883860902). The pair gives each listed A-IND course the form the net reads, per college, and changes no shared reader. No IND course is listed or printed at the college (its committed records and the read's 30 pages; ELEC is another subject). Reversible by deleting the pair."
+    },
+    {
+     "session": "S703",
+     "date": "2026-11-22",
+     "catalog_sources": [
+      "college_page_read"
+     ],
+     "printed": "ELE",
+     "file": "A-ELE",
+     "evidence": "the coarse net's reading of the file's code",
+     "source": "S703 (worker levers, census lever 7), college-page-read run 45026053479: the apprenticeship pages print the state's own codes with a hyphenated prefix (A-ELE 75A, A-ELE 78A). The capture's exact test names every listed course on each page (body coverage 1.0), but the coarse net's code tokens read 'A-ELE 78A' as 'ELE 78A', so the net named none and refused the page (f-sjdelta-apprenticeship-coarse-net-s691: 14594, 14595, 14597, 14598, 14599, 37611; capture 44883860902). The pair gives each listed A-ELE course the form the net reads, per college, and changes no shared reader. No ELE course is listed or printed at the college (its committed records and the read's 30 pages; ELEC is another subject). Reversible by deleting the pair."
+    },
+    {
+     "session": "S703",
+     "date": "2026-11-22",
+     "catalog_sources": [
+      "college_page_read"
+     ],
+     "printed": "MEC",
+     "file": "A-MEC",
+     "evidence": "the coarse net's reading of the file's code",
+     "source": "S703 (worker levers, census lever 7), college-page-read run 45026053479: the apprenticeship pages print the state's own codes with a hyphenated prefix (A-MEC 75A, A-MEC 78A). The capture's exact test names every listed course on each page (body coverage 1.0), but the coarse net's code tokens read 'A-MEC 78A' as 'MEC 78A', so the net named none and refused the page (f-sjdelta-apprenticeship-coarse-net-s691: 14594, 14595, 14597, 14598, 14599, 37611; capture 44883860902). The pair gives each listed A-MEC course the form the net reads, per college, and changes no shared reader. No MEC course is listed or printed at the college (its committed records and the read's 30 pages; ELEC is another subject). Reversible by deleting the pair."
+    }
+   ],
    "steps": [
     {
      "kind": "fill",
