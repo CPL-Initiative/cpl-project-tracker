@@ -1,8 +1,8 @@
 {
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-11-20T21:48:17Z",
-  "count": 3019,
+  "_synced_at": "2026-11-22T06:18:23Z",
+  "count": 3035,
   "assignments": {
     "1st Receiver Ops & Decon": {
       "issuing_agency": "",
@@ -5554,6 +5554,12 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-03T17:12:43.443936+00:00"
     },
+    "CA Specialized Training Institute First Responder Operations and Decon": {
+      "issuing_agency": "California Specialized Training Institute (CSTI)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-21T13:08:08.069166+00:00",
+      "unified_title": "Hazardous Materials First Responder Operational — Decontamination"
+    },
     "CAD Drawing and Modeling - Credit by Exam (ARCH 119 )": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "cer-procedure-classifier@bot",
@@ -9025,6 +9031,12 @@
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "User Experience Design Tools and Applications"
     },
+    "DRAFT 21: Mechanical Design I CX": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00",
+      "unified_title": "Mechanical Design I"
+    },
     "DRAFT-43 High School- Advanced Engineering Design II H 1&2": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
@@ -9687,6 +9699,24 @@
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "ESCO Master Specialist — Principles of Electrical and Refrigeration Theory"
+    },
+    "ESLN 309A": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00",
+      "unified_title": "ESL - Foundations"
+    },
+    "ESLN 310A": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00",
+      "unified_title": "ESL - Comprehensive I"
+    },
+    "ESLN 310E": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00",
+      "unified_title": "ESL - Comprehensive V"
     },
     "ESRI Technical Certification - GEOG 025": {
       "issuing_agency": "Esri (Environmental Systems Research Institute)",
@@ -10774,6 +10804,18 @@
       "unified_title": "Elementary German 2",
       "supersedes": "German 2"
     },
+    "GERO 400: Principles of Caregiving: Older Adults, and Their Care CX": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00",
+      "unified_title": "Principles of Caregiving: Older Adults and Their Care"
+    },
+    "GERO 455: Resources and Services for Older Adults CX": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00",
+      "unified_title": "Resources and Services for Older Adults"
+    },
     "GISCI GISP Certification - GEOG 025": {
       "issuing_agency": "GIS Certification Institute (GISCI)",
       "reviewed_by": "cer-procedure-classifier@bot",
@@ -11144,6 +11186,18 @@
       "reviewed_at": "2026-11-18T16:47:32.11346+00:00",
       "unified_title": "Orientation to Health Care"
     },
+    "High School Articulation (Benicia High School)- Dance 1": {
+      "issuing_agency": "Benicia High School",
+      "reviewed_by": "cer-procedure-high-school-rop@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00",
+      "unified_title": "Introduction to Dance"
+    },
+    "High School Articulation (Benicia High School)- Dance 2": {
+      "issuing_agency": "Benicia High School",
+      "reviewed_by": "cer-procedure-high-school-rop@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00",
+      "unified_title": "Beginning/Intermediate Jazz Dance"
+    },
     "High School Articulation (Dublin)- Criminal Justice/ CSI": {
       "issuing_agency": "Dublin High School",
       "reviewed_by": "slee@cccco.edu",
@@ -11341,6 +11395,12 @@
       "reviewed_by": "slee@cccco.edu",
       "reviewed_at": "2026-11-19T17:50:54.620748+00:00",
       "unified_title": "Play: Materials and Environments"
+    },
+    "High School Articulation (Monte Vista)- Introduction to Music Theory and Performance": {
+      "issuing_agency": "Monte Vista High School",
+      "reviewed_by": "cer-procedure-high-school-rop@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00",
+      "unified_title": "Music Theory I"
     },
     "High School Articulation (Tracy)- Fire Service": {
       "issuing_agency": "Tracy High School",
@@ -11582,6 +11642,36 @@
       "reviewed_by": "cer-ib-fold-skyinkberry@bot",
       "reviewed_at": "2026-11-01T00:54:48.327335+00:00",
       "unified_title": "IB Language A: Literature HL"
+    },
+    "IB Exam - Economics": {
+      "issuing_agency": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00",
+      "unified_title": "IB Economics HL"
+    },
+    "IB Exam - Mathematics: Analysis & Approaches": {
+      "issuing_agency": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00",
+      "unified_title": "IB Mathematics: Analysis and Approaches HL"
+    },
+    "IB Exam - Psychology": {
+      "issuing_agency": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00",
+      "unified_title": "IB Psychology HL"
+    },
+    "IB Exam: Mathematics: Applications and Interpretations": {
+      "issuing_agency": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00",
+      "unified_title": "IB Mathematics: Applications and Interpretation HL"
+    },
+    "IB Exam: Social and Cultural Anthropology": {
+      "issuing_agency": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00",
+      "unified_title": "IB Social and Cultural Anthropology HL"
     },
     "IB Geography (HL)": {
       "issuing_agency": "International Baccalaureate Organization (IBO)",
@@ -15906,6 +15996,12 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-09T23:38:18.780568+00:00",
       "unified_title": "Digital Imaging Fundamentals"
+    },
+    "PHOTO 7: Beginning Digital Photography (CX)": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-21T15:42:56.294188+00:00",
+      "unified_title": "Digital Photography Beginning"
     },
     "PLNT SC 714 - Principles of Horticulture": {
       "unified_title": "Principles of Horticulture",

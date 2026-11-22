@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generated_at": "2026-11-20T21:51:04Z",
+ "generated_at": "2026-11-22T06:21:23Z",
  "generated_by": "kb/_sweep_exhibit_titles.py",
  "rules": [
   {
@@ -54,14 +54,122 @@
  ],
  "counts": {
   "ase": 0,
-  "numerals": 0,
+  "numerals": 4,
   "language": 0,
   "course-code": 0,
   "level": 0,
   "fold": 1
  },
- "local_titles": 1,
+ "local_titles": 5,
  "cards": [
+  {
+   "current": "ESL - Comprehensive I",
+   "proposed": "ESL - Comprehensive 1",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "ESLN 310A",
+     "colleges": [
+      "College of the Desert"
+     ],
+     "course": "ESLN 310A",
+     "credit": "0 hours in ESL - Comprehensive I"
+    }
+   ],
+   "id": "302e658390a1",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "ESL - Comprehensive V",
+   "proposed": "ESL - Comprehensive 5",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "ESLN 310E",
+     "colleges": [
+      "College of the Desert"
+     ],
+     "course": "ESLN 310C",
+     "credit": "0 hours in ESL - Comprehensive III"
+    }
+   ],
+   "id": "57706504886f",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Mechanical Design I",
+   "proposed": "Mechanical Design 1",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "DRAFT 21: Mechanical Design I CX",
+     "colleges": [
+      "Chaffey College"
+     ],
+     "course": "DRAFT 21",
+     "credit": "3 hours in Mechanical Design I"
+    }
+   ],
+   "id": "82c074974c00",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Music Theory I",
+   "proposed": "Music Theory 1",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "High School Articulation (Monte Vista)- Introduction to Music Theory and Performance",
+     "colleges": [
+      "Las Positas College"
+     ],
+     "course": "MUS 8A",
+     "credit": "4 hours in Music Theory and Musicianship 1"
+    }
+   ],
+   "id": "5341f0a0836a",
+   "issuer": "Monte Vista High School",
+   "proposed_exists": true,
+   "proposed_locals": 6,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 1,
+   "moves_all": true
+  },
   {
    "current": "Practical PC and Career Technologies",
    "proposed": "Practical PC & Career Technologies",

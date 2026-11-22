@@ -1,83 +1,13 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied. `aligned` names each title's aligned course: the course its exhibit's credit recommendation names, as CCN > C-ID > M-ID > the college's course title (Sam, 2026-10-30); exam brands keep their names.",
- "_generated_at": "2026-11-21T01:10:46Z",
- "count": 8,
+ "_generated_at": "2026-11-22T06:21:14Z",
+ "count": 1,
  "suggestions": {
-  "DRAFT 21: Mechanical Design I CX": [
-   {
-    "kind": "course",
-    "title": "Mechanical Design I",
-    "code": "DRAFT 21",
-    "share": 1.0,
-    "colleges": 1,
-    "scoped": true
-   }
-  ],
-  "ESLN 309A": [
-   {
-    "kind": "course",
-    "title": "ESL - Foundations",
-    "code": "ESLN 309A",
-    "share": 1.0,
-    "colleges": 1,
-    "scoped": true
-   }
-  ],
-  "ESLN 310A": [
-   {
-    "kind": "course",
-    "title": "ESL - Comprehensive I",
-    "code": "ESLN 310A",
-    "share": 1.0,
-    "colleges": 1,
-    "scoped": true
-   }
-  ],
-  "ESLN 310E": [
-   {
-    "kind": "course",
-    "title": "ESL - Comprehensive V",
-    "code": "ESLN 310E",
-    "share": 1.0,
-    "colleges": 1,
-    "scoped": true
-   }
-  ],
-  "GERO 400: Principles of Caregiving: Older Adults, and Their Care CX": [
-   {
-    "kind": "course",
-    "title": "Principles of Caregiving: Older Adults and Their Care",
-    "code": "GERO 400",
-    "share": 1.0,
-    "colleges": 1,
-    "scoped": true
-   }
-  ],
-  "GERO 455: Resources and Services for Older Adults CX": [
-   {
-    "kind": "course",
-    "title": "Resources and Services for Older Adults",
-    "code": "GERO 455",
-    "share": 1.0,
-    "colleges": 1,
-    "scoped": true
-   }
-  ],
   "High School Articulation (Tri Valley ROP)- Criminal Justice Academy (AJ 60)": [
    {
     "kind": "course",
     "title": "Criminal Law",
     "code": "AJ 60",
-    "share": 1.0,
-    "colleges": 5,
-    "scoped": true
-   }
-  ],
-  "PHOTO 7: Beginning Digital Photography (CX)": [
-   {
-    "kind": "course",
-    "title": "Beginning Digital Photography",
-    "code": "PHOTO 7",
     "share": 1.0,
     "colleges": 5,
     "scoped": true
@@ -125,13 +55,6 @@
    "id": "AJ 140",
    "title": "Criminal Investigation",
    "code": "AJ 63",
-   "college": "Las Positas College"
-  },
-  "High School Articulation (Monte Vista)- Introduction to Music Theory and Performance": {
-   "kind": "cid",
-   "id": "MUS 120",
-   "title": "Music Theory I",
-   "code": "MUS 8A",
    "college": "Las Positas College"
   },
   "High School Articulation (Livermore)- Principles of Engineering": {
@@ -183,27 +106,6 @@
    "code": "F SC 55",
    "college": "City College of San Francisco"
   },
-  "High School Articulation (Benicia High School)- Dance 1": {
-   "kind": "mid",
-   "id": "DANC M1290",
-   "title": "Introduction to Dance",
-   "code": "DANC 1",
-   "college": "Las Positas College"
-  },
-  "High School Articulation (Benicia High School)- Dance 2": {
-   "kind": "mid",
-   "id": "DANC M1476",
-   "title": "Beginning/Intermediate Jazz Dance",
-   "code": "DANC 2B",
-   "college": "Las Positas College"
-  },
-  "PHOTO 7: Beginning Digital Photography (CX)": {
-   "kind": "cid",
-   "id": "ARTS 260",
-   "title": "Introduction to Photography (Archived - for reference only)",
-   "code": "PHOTO 7",
-   "college": "Chaffey College"
-  },
   "High School Articulation (Livermore)- Emergency Medical Response": {
    "kind": "mid",
    "id": "EMST M1056",
@@ -224,13 +126,6 @@
    "title": "Emergency Medical Responder",
    "code": "EMS 30",
    "college": "Las Positas College"
-  },
-  "CA Specialized Training Institute First Responder Operations and Decon": {
-   "kind": "mid",
-   "id": "PUBS M1014",
-   "title": "Hazardous Materials First Responder Operations",
-   "code": "F SC 65",
-   "college": "City College of San Francisco"
   },
   "High School Articulation ( Tri Valley ROP)- Emergency Medical Response": {
    "kind": "mid",
@@ -259,27 +154,6 @@
    "title": "Intro to Athletic Training and Sports Medicine",
    "code": "KIN 17",
    "college": "Las Positas College"
-  },
-  "DRAFT 21: Mechanical Design I CX": {
-   "kind": "course",
-   "id": "DRAF M10IS",
-   "title": "Mechanical Design I",
-   "code": "DRAFT 21",
-   "college": "Chaffey College"
-  },
-  "GERO 455: Resources and Services for Older Adults CX": {
-   "kind": "mid",
-   "id": "OLAD M1002",
-   "title": "Resources and Services for Older Adults",
-   "code": "GERO 455",
-   "college": "Chaffey College"
-  },
-  "GERO 400: Principles of Caregiving: Older Adults, and Their Care CX": {
-   "kind": "mid",
-   "id": "OLAD M1001",
-   "title": "Principles of Caregiving: Older Adults and Their Care",
-   "code": "GERO 400",
-   "college": "Chaffey College"
   }
  }
 }

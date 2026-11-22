@@ -1,8 +1,8 @@
 {
  "schema": 1,
  "built_from": {
-  "audit": "2026-11-21T04:09:20+00:00",
-  "unified_titles": 6199
+  "audit": "2026-11-22T06:20:53+00:00",
+  "unified_titles": 6215
  },
  "rule": {
   "graded": [
@@ -12338,6 +12338,10 @@
    "type": "CPL type not recorded",
    "group": ""
   },
+  "Beginning/Intermediate Jazz Dance": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
   "Behavorial Health & Cancer Awareness 2A First-Level Supervisor": {
    "type": "CPL type not recorded",
    "group": ""
@@ -14458,6 +14462,10 @@
    "type": "Credit By Exam",
    "group": "graded"
   },
+  "Digital Photography Beginning": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
   "Digital Photography Intermediate": {
    "type": "CPL type not recorded",
    "group": ""
@@ -14635,6 +14643,18 @@
    "group": ""
   },
   "ESCO Master Specialist — Principles of Electrical and Refrigeration Theory": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "ESL - Comprehensive I": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "ESL - Comprehensive V": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "ESL - Foundations": {
    "type": "CPL type not recorded",
    "group": ""
   },
@@ -17298,6 +17318,10 @@
    "type": "Credit By Exam, Portfolio Review and Industry Certification (mixed)",
    "group": "mixed"
   },
+  "Introduction to Dance": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
   "Introduction to Data Science": {
    "type": "Credit By Exam",
    "group": "graded"
@@ -18634,6 +18658,10 @@
    "type": "Industry Certification",
    "group": "cert"
   },
+  "Mechanical Design I": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
   "Mechanical Plans Examiner": {
    "type": "CPL type not recorded",
    "group": ""
@@ -19125,6 +19153,10 @@
   "Music Theory 4": {
    "type": "Credit By Exam",
    "group": "graded"
+  },
+  "Music Theory I": {
+   "type": "CPL type not recorded",
+   "group": ""
   },
   "Music Theory and Musicianship 1": {
    "type": "CPL type not recorded",
@@ -20142,6 +20174,10 @@
    "type": "Credit By Exam",
    "group": "graded"
   },
+  "Principles of Caregiving: Older Adults and Their Care": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
   "Principles of Emergency Services": {
    "type": "Credit By Exam, Portfolio Review and Industry Certification (mixed)",
    "group": "mixed"
@@ -20609,6 +20645,10 @@
   "Residential Wiring": {
    "type": "Credit By Exam and Portfolio Review (mixed)",
    "group": "graded"
+  },
+  "Resources and Services for Older Adults": {
+   "type": "CPL type not recorded",
+   "group": ""
   },
   "Restaurant Experience": {
    "type": "Portfolio Review",
