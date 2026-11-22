@@ -106,9 +106,20 @@
     return (r.state_courses || 0) ? "credit" : "whole";
   }
   function saveKey(slug, code, band) { return SAVE_PREFIX + slug + "|" + code + "|" + band; }
+  /* The row's save under its band today. COCI's counts move, so a code saved whole can gain a credit course (and the
+     reverse): where the current band has no save, the save under the other band stands, marked moved, and a new Save
+     writes under the current band. */
   function savedOf(r) {
     var b = bandOf(r);
-    return b === "noncredit" ? null : SAVED[r.slug + "|" + r.code + "|" + b] || null;
+    if (b === "noncredit") return null;
+    var here = SAVED[r.slug + "|" + r.code + "|" + b];
+    if (here) return here;
+    var other = b === "credit" ? "whole" : "credit", there = SAVED[r.slug + "|" + r.code + "|" + other];
+    if (!there) return null;
+    var o = {};
+    for (var k in there) o[k] = there[k];
+    o.moved = { from: other, to: b };
+    return o;
   }
   function savesModel(rows) {
     var by = {};
@@ -122,7 +133,8 @@
       if (!v || typeof v !== "object") return;
       var slug = parts[0], band = parts[parts.length - 1], code = parts.slice(1, -1).join("|");
       by[slug + "|" + code + "|" + band] = { title: v.local_title || "", common: v.common_code || "",
-        at: v.decided_at || row.reviewed_at || "", by: row.reviewer_email || "" };
+        at: v.decided_at || row.reviewed_at || "", by: row.reviewer_email || "", label: row.reviewer_label || "",
+        decidedBy: v.decided_by || "", key: id, mapKey: slug + "|" + code + "|" + band };
     });
     return by;
   }
@@ -178,10 +190,13 @@
         .then(function (r) { return { ok: r.ok, status: r.status, lapsed: r.status === 401, email: s.email }; });
     });
   }
+  /* The delete names the signed-in reviewer's email as well as the key: the table's delete policy lets any allowed
+     reviewer delete any row, so the filter is what keeps one reviewer from removing another's save or a filed one. */
   function takeBack(key) {
     return freshReviewer().then(function (s) {
       if (!s) return { ok: false, lapsed: true };
-      return fetch(REST + "/kb_curation?course_id=eq." + encodeURIComponent(key) + "&field=eq." + SAVE_FIELD + "&select=course_id",
+      return fetch(REST + "/kb_curation?course_id=eq." + encodeURIComponent(key) + "&field=eq." + SAVE_FIELD
+        + "&reviewer_email=eq." + encodeURIComponent(s.email) + "&select=course_id",
         { method: "DELETE", headers: window.CPL_SESSION.authHeaders({ Prefer: "return=representation" }) })
         .then(function (r) {
           if (!r.ok) return { ok: false, status: r.status, lapsed: r.status === 401 };
@@ -215,8 +230,17 @@
     });
     return out.join(" ");
   }
+  function filedRow(sv) { return /@bot$/.test(sv.by || sv.label || "") && !!sv.decidedBy; }
+  function mine(sv) {
+    var s = reviewer();
+    return !!(sv && sv.by && s && s.email && String(sv.by).toLowerCase() === String(s.email).toLowerCase());
+  }
   function savedLine(sv) {
-    return el("span", { cls: "csb-sub csb-saved", text: "Saved by a person" + (sv.by ? ", " + sv.by : "") + (day(sv.at) ? ", " + day(sv.at) : "") + "." });
+    var when = day(sv.at) ? ", " + day(sv.at) : "";
+    var who = filedRow(sv) ? "Filed for " + sv.decidedBy + when + "."
+      : "Saved by a person" + (sv.by && !/@bot$/.test(sv.by) ? ", " + sv.by : "") + when + ".";
+    return el("span", { cls: "csb-sub csb-saved", text: who + (sv.moved ? " Saved under the " + sv.moved.from
+      + " band; the code’s band is now " + sv.moved.to + ", so a new Save writes under " + sv.moved.to + "." : "") });
   }
 
   function el(tag, attrs, kids) {
@@ -457,7 +481,7 @@
       box.appendChild(el("p", { cls: "csb-note", id: "csb-edit-signin", text: "Edit opens once you sign in as a reviewer, from the sign-in link emailed to you." }));
       return box;
     }
-    var key = saveKey(c.slug, row.code, band), sv = SAVED[c.slug + "|" + row.code + "|" + band] || null, rec = recOf(row);
+    var key = saveKey(c.slug, row.code, band), sv = savedOf(row), rec = recOf(row);
     var tVal = sv && sv.title ? sv.title : row.printed_name || (rec.title && rec.title.title) || "";
     var kVal = sv && sv.common ? sv.common : row.common || (rec.common && rec.common.code) || "";
     var fromRec = [];
@@ -476,7 +500,13 @@
     var tmsg = el("p", { cls: "csb-ed-msg", id: "csb-ed-title-msg" }), cmsg = el("p", { cls: "csb-ed-msg", id: "csb-ed-code-msg" });
     var status = el("p", { cls: "csb-ed-msg", id: "csb-ed-status", role: "status", tabindex: "-1", text: SAID[key] || (LAPSED ? "Your sign-in has ended. Sign in again, then save." : "") });
     var save = el("button", { type: "button", cls: "csb-word", id: "csb-ed-save", text: "Save" });
-    var undo = sv ? el("button", { type: "button", cls: "csb-word", id: "csb-ed-undo", text: "Take it back" }) : null;
+    /* Take it back only on the signed-in reviewer's own save; on anyone else's (a filed decision included) a new Save
+       replaces it, and the page says so. */
+    var undo = sv && mine(sv) ? el("button", { type: "button", cls: "csb-word", id: "csb-ed-undo", text: "Take it back" }) : null;
+    if (sv && !undo) box.appendChild(el("p", { cls: "csb-note", id: "csb-edit-others", text: (filedRow(sv) ? "This decision was filed for " + sv.decidedBy
+      : "Another reviewer saved this decision") + ". A new Save replaces it." }));
+    if (sv && sv.moved) box.appendChild(el("p", { cls: "csb-note", id: "csb-edit-moved", text: "This decision was saved under the " + sv.moved.from
+      + " band. COCI’s counts have changed since, and the code’s band is now " + sv.moved.to + ", so a new Save writes under " + sv.moved.to + "." }));
     box.appendChild(el("div", { cls: "csb-ed-field" }, [el("label", { "for": "csb-ed-title", text: "Local title" }), ti, tmsg]));
     box.appendChild(el("div", { cls: "csb-ed-field" }, [el("label", { "for": "csb-ed-code", text: "Common subject code" }), co, cmsg]));
     if (COMMON) box.appendChild(el("datalist", { id: "csb-ed-codes" }, Object.keys(COMMON).sort().map(function (k) { return el("option", { value: k, label: COMMON[k] }); })));
@@ -521,7 +551,8 @@
       writeSave(key, value).then(function (res) {
         if (!res.ok) { save.disabled = false; status.textContent = failed(res); return; }
         LAPSED = false;
-        SAVED[c.slug + "|" + row.code + "|" + band] = { title: value.local_title || "", common: value.common_code || "", at: new Date().toISOString(), by: res.email || "" };
+        SAVED[c.slug + "|" + row.code + "|" + band] = { title: value.local_title || "", common: value.common_code || "", at: new Date().toISOString(), by: res.email || "",
+          label: "a reviewer", decidedBy: "", key: key, mapKey: c.slug + "|" + row.code + "|" + band };
         SAID[key] = "Saved. The list shows your decision in place of the files.";
         redraw("csb-ed-status");
       }, function (e) { save.disabled = false; status.textContent = "Not saved: " + ((e && e.message) || "the network failed") + "."; });
@@ -529,10 +560,10 @@
     if (undo) undo.addEventListener("click", function () {
       undo.disabled = true;
       status.textContent = "Taking it back…";
-      takeBack(key).then(function (res) {
+      takeBack(sv.key).then(function (res) {
         if (!res.ok) { undo.disabled = false; status.textContent = failed(res).replace("Not saved", "Not taken back"); return; }
-        if (!res.n) { undo.disabled = false; status.textContent = "Nothing was taken back: only the reviewer who saved this decision can take it back."; return; }
-        delete SAVED[c.slug + "|" + row.code + "|" + band];
+        if (!res.n) { undo.disabled = false; status.textContent = "Nothing was taken back: no save of yours is stored under this code now. Reload the tab to read the saves again."; return; }
+        delete SAVED[sv.mapKey];
         SAID[key] = "Taken back. The row reads from the files again.";
         redraw("csb-ed-status");
       }, function (e) { undo.disabled = false; status.textContent = "Not taken back: " + ((e && e.message) || "the network failed") + "."; });
@@ -601,6 +632,7 @@
     var T = M.totals, all = [];
     M.list.forEach(function (x) { all = all.concat(x.rows); });
     var untitled = all.filter(needsTitle).length;
+    var nSaved = all.filter(function (r) { return !!savedOf(r); }).length;   /* the rows that show a save, no more */
     var wrap = el("div", { cls: "cmn-wrap csb" });
     wrap.appendChild(trail(c ? c.college : S.view === DISAGREE ? "Codes with no title" : S.view === HELD ? "Codes the M-ID mint holds on" : S.view === NC ? "Noncredit subject titles" : ""));
     wrap.appendChild(el("header", { cls: "cmn-top" }, [
@@ -617,7 +649,7 @@
       el("a", { href: "#canonical-subj4", text: "Common Subjects Reference" }), ". ",
       go("#commons/subjects/" + HELD, "Codes the M-ID mint holds on"), ". ",
       go("#commons/subjects/" + NC, "Noncredit subject titles"), ".",
-      Object.keys(SAVED).length ? " " + fmt(Object.keys(SAVED).length) + (Object.keys(SAVED).length === 1 ? " code is" : " codes are") + " settled by a person’s save." : ""]));
+      nSaved ? " " + fmt(nSaved) + (nSaved === 1 ? " code is" : " codes are") + " settled by a person’s save." : ""]));
     if (SAVE_ERR) wrap.appendChild(el("p", { cls: "csb-note", id: "csb-save-err", role: "status", text: "The saves people made could not be read (" + SAVE_ERR + "). The list below is drawn from the files alone." }));
     if (missing) wrap.appendChild(el("p", { cls: "csb-note", role: "status", text: "No college with a catalog on file is named " + missing + ". Every college is below." }));
     if (c) {

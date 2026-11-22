@@ -8,12 +8,15 @@
 //       credit for a code with credit courses in COCI, whole for a code COCI does not list;
 //   (3) ⭐ a code whose COCI courses are all noncredit offers no form (the noncredit hold);
 //   (4) ⭐ an unknown common code and an all-capitals title make no request, and the title offers its Title Case form;
-//   (5) Take it back sends one DELETE for that course_id and field;
+//   (5) ⭐ Take it back shows only on the signed-in reviewer's own save, and its DELETE names that reviewer's email;
+//       on another's save, a filed decision included, the page says a new Save replaces it;
 //   (6) ⭐ a saved row wins over the file's title, its common code and every recommendation;
 //   (7) a failed read of the saves still draws the list and says so;
 //   (8) a code holding a slash or an ampersand (ES/A, A&P) round-trips through the key and the URL encoding;
 //   (9) the page's Title Case gives what kb/subject_title_case.py gives, from the word lists the titles file carries;
-//  (10) a refused token marks the sign-in ended, and the page stores nothing.
+//  (10) a refused token marks the sign-in ended, and the page stores nothing;
+//  (11) ⭐ a code whose band moved since its save still shows the save, says the band changed, and saves anew under
+//       the current band.
 // Run from repo root: `npm test` (or `node tests/commons_subjects_save.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -31,7 +34,8 @@ const alpha = FIX.colleges.find((c) => c.slug === "alpha");
 alpha.rows.push(
   row({ code: "ES/A", printed_name: "Exercise Science Activities", catalog_courses: 1, state_courses: 1, side: "both", title_state: "catalog", credit_courses: 1, noncredit_courses: 0 }),
   row({ code: "A&P", printed_name: "Anatomy and Physiology", catalog_courses: 2, state_courses: 2, side: "both", title_state: "catalog", credit_courses: 2, noncredit_courses: 0 }),
-  row({ code: "NCX", printed_name: null, catalog_courses: 0, state_courses: 3, side: "state", title_state: "noncredit_hold", credit_courses: 0, noncredit_courses: 3 }));
+  row({ code: "NCX", printed_name: null, catalog_courses: 0, state_courses: 3, side: "state", title_state: "noncredit_hold", credit_courses: 0, noncredit_courses: 3 }),
+  row({ code: "AP", printed_name: "Anatomy and Physiology", catalog_courses: 1, state_courses: 0, side: "catalog", title_state: "catalog", credit_courses: 0, noncredit_courses: 0 }));
 FIX.common_codes = { BIOL: "Biology", ENGL: "English", KINE: "Kinesiology", MATH: "Mathematics", WELD: "Welding" };
 FIX.title_case = LIVE.title_case;
 const FILES = {
@@ -69,7 +73,9 @@ function load(hash, opt) {
       calls.push({ url, method, headers: init.headers || {}, body: init.body });
       if (method === "GET") {
         if (opt.readStatus) return Promise.resolve({ ok: false, status: opt.readStatus, json: () => Promise.resolve([]) });
-        return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve(JSON.parse(JSON.stringify(opt.saves || []))) });
+        /* As the live grants do: a read that does not select reviewer_email gets no reviewer_email. */
+        const sel = /reviewer_email/.test(url);
+        return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve(JSON.parse(JSON.stringify(opt.saves || [])).map((r) => { if (!sel) delete r.reviewer_email; return r; })) });
       }
       if (method === "POST") { const st = opt.postStatus || 201; return Promise.resolve({ ok: st < 300, status: st, json: () => Promise.resolve(null) }); }
       if (method === "DELETE") return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve(opt.deleted === undefined ? [{ course_id: "x" }] : opt.deleted) });
@@ -106,8 +112,9 @@ function typeIn(x, id, v) { const i = x.d.getElementById(id); i.value = v; retur
   const ti = x.d.getElementById("csb-ed-title"), co = x.d.getElementById("csb-ed-code");
   check("(2) signed in, the form is filled from the recommendation and says so", ti && ti.value === "Mathematics" && co.value === "MATH"
     && /Filled in from the recommendation: the local title and the common subject code/.test(txt(x.d.getElementById("csb-edit-rec"))));
-  check("(2) each field has its label and a 24px target at least", x.d.querySelector('label[for="csb-ed-title"]') && x.d.querySelector('label[for="csb-ed-code"]')
-    && /\.csb-input \{[^}]*min-height:32px/.test(x.w.CPL_COMMONS_SUBJECTS.CSS));
+  const CSSX = x.w.CPL_COMMONS_SUBJECTS.CSS, WORD24 = /\.csb-word \{[^}]*min-width:24px; min-height:24px/.test(CSSX);
+  check("(2) each field has its label and a 24px target at least, and Save is a 24px underlined word", x.d.querySelector('label[for="csb-ed-title"]') && x.d.querySelector('label[for="csb-ed-code"]')
+    && /\.csb-input \{[^}]*min-height:32px/.test(CSSX) && WORD24 && x.d.getElementById("csb-ed-save").classList.contains("csb-word") && x.d.getElementById("csb-ed-save").tagName === "BUTTON");
   check("(2) the signed-in read asks for the email beside the label, with the token",
     /reviewer_email,reviewer_label/.test(x.calls[0].url) && x.calls[0].headers.Authorization === "Bearer " + ME.access_token);
   typeIn(x, "csb-ed-code", "math");
@@ -126,6 +133,7 @@ function typeIn(x, id, v) { const i = x.d.getElementById(id); i.value = v; retur
     mrow.getAttribute("data-saved") === "yes" && /^Mathematics Saved by a person, a@rccd\.edu/.test(txt(mrow.children[2]))
     && /^MATH Mathematics Saved by a person/.test(txt(mrow.children[3])) && !!x.d.getElementById("csb-ed-undo")
     && /^Saved\./.test(txt(x.d.getElementById("csb-ed-status"))));
+  check("(2) Take it back is a 24px underlined word too", WORD24 && x.d.getElementById("csb-ed-undo").classList.contains("csb-word") && x.d.getElementById("csb-ed-undo").tagName === "BUTTON");
 
   /* (2) a catalog-only code is keyed whole; (3) a noncredit-only code has no form */
   x = load("#commons/subjects/alpha/ZZZ", { sess: ME });
@@ -166,12 +174,17 @@ function typeIn(x, id, v) { const i = x.d.getElementById(id); i.value = v; retur
   check("(4) an empty form makes no request", writesOf(x).length === 0 && /Type a local title or a common subject code/.test(txt(x.d.getElementById("csb-ed-status"))));
 
   /* (6) the overlay wins; (5) Take it back */
+  const OTHER = "b@rccd.edu", AT = "2026-11-22T10:00:00Z";
   const SAVES = [
-    { course_id: "SUBJ:alpha|MATH|credit", value: JSON.stringify({ local_title: "Maths Saved", common_code: "KINE" }), reviewed_at: "2026-11-22T10:00:00Z", reviewer_label: "a reviewer" },
-    { course_id: "SUBJ:alpha|ENGL|credit", value: JSON.stringify({ common_code: "BIOL" }), reviewed_at: "2026-11-22T10:00:00Z", reviewer_label: "a reviewer" },
-    { course_id: "SUBJ:alpha|ZZZ|whole", value: JSON.stringify({ common_code: "KINE", decided_by: "Sam", decided_at: "2026-11-21T21:11:00Z" }), reviewed_at: "2026-11-22T11:00:00Z", reviewer_label: "subjects-s701@bot" },
-    { course_id: "SUBJ:alpha|A&P|credit", value: JSON.stringify({ common_code: "BIOL" }), reviewed_at: "2026-11-22T10:00:00Z", reviewer_label: "a reviewer" },
-    { course_id: "SUBJ:alpha|ES/A|credit", value: JSON.stringify({ local_title: "Exercise Science" }), reviewed_at: "2026-11-22T10:00:00Z", reviewer_label: "a reviewer" }];
+    { course_id: "SUBJ:alpha|MATH|credit", value: JSON.stringify({ local_title: "Maths Saved", common_code: "KINE" }), reviewed_at: AT, reviewer_email: OTHER, reviewer_label: "a reviewer" },
+    { course_id: "SUBJ:alpha|ENGL|credit", value: JSON.stringify({ common_code: "BIOL" }), reviewed_at: AT, reviewer_email: OTHER, reviewer_label: "a reviewer" },
+    { course_id: "SUBJ:alpha|ZZZ|whole", value: JSON.stringify({ common_code: "KINE", decided_by: "Sam", decided_at: "2026-11-21T21:11:00Z" }), reviewed_at: "2026-11-22T11:00:00Z", reviewer_email: "subjects-s701@bot", reviewer_label: "subjects-s701@bot" },
+    { course_id: "SUBJ:alpha|A&P|credit", value: JSON.stringify({ common_code: "BIOL" }), reviewed_at: AT, reviewer_email: ME.email, reviewer_label: "a reviewer" },
+    { course_id: "SUBJ:alpha|ES/A|credit", value: JSON.stringify({ local_title: "Exercise Science" }), reviewed_at: AT, reviewer_email: ME.email, reviewer_label: "a reviewer" },
+    { course_id: "SUBJ:alpha|WELD|credit", value: JSON.stringify({ common_code: "WELD" }), reviewed_at: AT, reviewer_email: ME.email, reviewer_label: "a reviewer" },
+    { course_id: "SUBJ:alpha|AP|whole", value: JSON.stringify({ common_code: "BIOL", decided_by: "Sam", decided_at: "2026-11-21T21:11:00Z" }), reviewed_at: AT, reviewer_email: "subjects-s701@bot", reviewer_label: "subjects-s701@bot" },
+    /* a credit-band row for a code that is noncredit-only today: no row shows it, so the count leaves it out */
+    { course_id: "SUBJ:alpha|NCX|credit", value: JSON.stringify({ common_code: "KINE" }), reviewed_at: AT, reviewer_email: OTHER, reviewer_label: "a reviewer" }];
   x = load("#commons/subjects/alpha", { saves: SAVES });
   await x.M.boot(); await settle();
   const m = x.d.querySelector('.csb-codes tr[data-code="MATH"]'), e = x.d.querySelector('.csb-codes tr[data-code="ENGL"]');
@@ -181,30 +194,52 @@ function typeIn(x, id, v) { const i = x.d.getElementById(id); i.value = v; retur
     && !m.children[3].querySelector(".csb-rec"));
   check("(6) ⭐ a saved common code wins over the subject map's", /^BIOL Biology Saved by a person/.test(txt(e.children[3])) && txt(e.children[2]) === "English");
   check("(6) a signed-out read names no reviewer", !/a reviewer|@/.test(txt(m.children[2])));
-  check("(6) a filed decision reads its decision date", /Saved by a person, November 21, 2026\./.test(txt(x.d.querySelector('.csb-codes tr[data-code="ZZZ"]').children[3])));
-  check("(6) the page counts the codes a person settled", /5 codes are settled by a person’s save\./.test(txt(x.d.querySelector(".csb-stamp"))));
+  check("(6) a filed decision reads Filed for Sam with its decision date, never the cohort id",
+    txt(x.d.querySelector('.csb-codes tr[data-code="ZZZ"]').children[3]) === "KINE Kinesiology Filed for Sam, November 21, 2026." && !/@bot/.test(txt(x.d.querySelector(".csb-codes"))));
+  check("(6) ⭐ the page counts the rows that show a save: 7 of the 8 saved rows (the noncredit-only code's credit row shows nowhere)",
+    /7 codes are settled by a person’s save\./.test(txt(x.d.querySelector(".csb-stamp"))) && x.d.querySelectorAll('.csb-codes tr[data-saved="yes"]').length === 7);
   check("(6) a noncredit-only row takes no saved value", !x.d.querySelector('.csb-codes tr[data-code="NCX"]').getAttribute("data-saved"));
   x = load("#commons/subjects/alpha/ZZZ", { sess: ME, saves: SAVES });
   await x.M.boot(); await settle();
   check("(6) the form opens on the saved values", x.d.getElementById("csb-ed-code").value === "KINE" && !x.d.getElementById("csb-edit-rec"));
+  /* (5) Take it back only on the signed-in reviewer's own save, and the delete names that reviewer. */
+  check("(5) ⭐ a decision filed for Sam offers no Take it back and says a new Save replaces it",
+    !x.d.getElementById("csb-ed-undo") && txt(x.d.getElementById("csb-edit-others")) === "This decision was filed for Sam. A new Save replaces it." && !/@bot/.test(txt(x.d.querySelector("#csb-panel"))));
+  x = load("#commons/subjects/alpha/MATH", { sess: ME, saves: SAVES });
+  await x.M.boot(); await settle();
+  check("(5) ⭐ another reviewer's save offers no Take it back and says a new Save replaces it",
+    !x.d.getElementById("csb-ed-undo") && txt(x.d.getElementById("csb-edit-others")) === "Another reviewer saved this decision. A new Save replaces it."
+    && /^Maths Saved Saved by a person, b@rccd\.edu, November 22, 2026\.$/.test(txt(x.d.querySelector('.csb-codes tr[data-code="MATH"]').children[2])));
+  x = load("#commons/subjects/alpha/WELD", { sess: ME, saves: SAVES });
+  await x.M.boot(); await settle();
+  check("(5) the reviewer's own save offers Take it back and no line about another's", !!x.d.getElementById("csb-ed-undo") && !x.d.getElementById("csb-edit-others"));
   x.d.getElementById("csb-ed-undo").click(); await settle();
   let dels = writesOf(x);
-  check("(5) ⭐ Take it back sends one DELETE for that course_id and field", dels.length === 1 && dels[0].method === "DELETE"
-    && dels[0].url === REST + "?course_id=eq.SUBJ%3Aalpha%7CZZZ%7Cwhole&field=eq.subject_decision&select=course_id"
+  check("(5) ⭐ Take it back sends one DELETE for that course_id and field, filtered to the signed-in reviewer's email",
+    dels.length === 1 && dels[0].method === "DELETE"
+    && dels[0].url === REST + "?course_id=eq.SUBJ%3Aalpha%7CWELD%7Ccredit&field=eq.subject_decision&reviewer_email=eq.a%40rccd.edu&select=course_id"
     && dels[0].headers.Authorization === "Bearer " + ME.access_token, dels[0] && dels[0].url);
-  check("(5) the row reads from the files again", !x.d.querySelector('.csb-codes tr[data-code="ZZZ"]').getAttribute("data-saved")
+  check("(5) the row reads from the files again", !x.d.querySelector('.csb-codes tr[data-code="WELD"]').getAttribute("data-saved")
     && !x.d.getElementById("csb-ed-undo") && /Taken back/.test(txt(x.d.getElementById("csb-ed-status"))));
-  x = load("#commons/subjects/alpha/ZZZ", { sess: ME, saves: SAVES, deleted: [] });
+
+  /* (11) the band moves with COCI's counts: AP was saved whole and gains a credit course */
+  const MOVED = JSON.parse(JSON.stringify(FIX));
+  MOVED.colleges.find((c) => c.slug === "alpha").rows.forEach((r) => { if (r[0] === "AP") { r[C.indexOf("state_courses")] = 1; r[C.indexOf("credit_courses")] = 1; r[C.indexOf("side")] = "both"; } });
+  x = load("#commons/subjects/alpha/AP", { sess: ME, saves: SAVES, files: { "kb/status/local_subject_titles.json": MOVED } });
   await x.M.boot(); await settle();
-  x.d.getElementById("csb-ed-undo").click(); await settle();
-  check("(5) a delete the server matched to no row says so and keeps the saved value",
-    /only the reviewer who saved this decision can take it back/.test(txt(x.d.getElementById("csb-ed-status"))) && x.d.querySelector('.csb-codes tr[data-code="ZZZ"]').getAttribute("data-saved") === "yes");
+  const apRow = Array.from(x.d.querySelectorAll(".csb-codes tbody tr")).find((r) => r.getAttribute("data-code") === "AP");
+  check("(11) ⭐ a save under the other band still shows, and says the band changed since it was saved",
+    apRow.getAttribute("data-saved") === "yes" && /^BIOL Biology Filed for Sam, November 21, 2026\. Saved under the whole band; the code’s band is now credit, so a new Save writes under credit\.$/.test(txt(apRow.children[3]))
+    && /saved under the whole band\. COCI’s counts have changed since, and the code’s band is now credit/.test(txt(x.d.getElementById("csb-edit-moved"))));
+  check("(11) the stamp still counts it", /7 codes are settled by a person’s save\./.test(txt(x.d.querySelector(".csb-stamp"))));
+  x.d.getElementById("csb-ed-save").click(); await settle();
+  check("(11) ⭐ a new Save writes under the current band", writesOf(x).length === 1 && JSON.parse(writesOf(x)[0].body).course_id === "SUBJ:alpha|AP|credit");
 
   /* (7) a failed read of the saves */
   x = load("#commons/subjects", { readStatus: 500 });
   await x.M.boot(); await settle();
   check("(7) ⭐ a failed read still draws the list from the files and says the saves could not be read",
-    x.d.querySelectorAll(".csb-codes tbody tr").length === 9 && /The saves people made could not be read \(kb_curation answered 500\)/.test(txt(x.d.getElementById("csb-save-err"))));
+    x.d.querySelectorAll(".csb-codes tbody tr").length === 10 && /The saves people made could not be read \(kb_curation answered 500\)/.test(txt(x.d.getElementById("csb-save-err"))));
 
   /* (8) slash and ampersand */
   x = load("#commons/subjects/alpha", { sess: ME, saves: SAVES });
@@ -215,7 +250,7 @@ function typeIn(x, id, v) { const i = x.d.getElementById(id); i.value = v; retur
   x.d.getElementById("csb-ed-undo").click(); await settle();
   dels = writesOf(x);
   check("(8) ⭐ A&P round-trips: read from its key, deleted by its encoded key", dels.length === 1
-    && dels[0].url === REST + "?course_id=eq.SUBJ%3Aalpha%7CA%26P%7Ccredit&field=eq.subject_decision&select=course_id", dels[0] && dels[0].url);
+    && dels[0].url === REST + "?course_id=eq.SUBJ%3Aalpha%7CA%26P%7Ccredit&field=eq.subject_decision&reviewer_email=eq.a%40rccd.edu&select=course_id", dels[0] && dels[0].url);
   x = load("#commons/subjects/alpha/A%26P", { sess: ME });
   await x.M.boot(); await settle();
   check("(8) the encoded address opens the A&P panel on arrival", !!x.d.getElementById("csb-ed-save") && /^A&P/.test(txt(x.d.getElementById("csb-panel-h"))));
