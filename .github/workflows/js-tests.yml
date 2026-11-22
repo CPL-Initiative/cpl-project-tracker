@@ -491,6 +491,10 @@ jobs:
       # page's source says pinned; an only= filing keeps the earlier kept_passing entries it does not name.
       - name: Program requirements reader follow-up (killed wave, prior read, fragments, editions, pins)
         run: python3 tests/program_requirements_follow_up_s697_test.py
+      # S703 (census lever 6): Ohlone's two own-page pins bind on the pages the free read printed and read from the
+      # pinned page in capture_pdf; the other 34 not_found programs are filed as named gaps, once each. Pure stdlib.
+      - name: Program requirements own-page pins and named gaps (Ohlone)
+        run: python3 tests/program_requirements_ohlone_pins_s703_test.py
       # S697: the same-page calls over every committed folder, frozen in a fixture: 320 newly kept (Butte 163,
       # Cuyamaca 155, College of the Canyons 2), none one page off, and one edition pair. Pure stdlib.
       - name: Program requirements same-page recall over the committed folders
