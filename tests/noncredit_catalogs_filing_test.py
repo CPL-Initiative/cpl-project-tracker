@@ -57,6 +57,10 @@ SD_PAGES = [
           "Interpersonal communication skills. (FT)"]),
     (84, ["84          San Diego College of Continuing eDuCation • 2026-2027",
           "Infant/Toddler Outdoor HMDV 590", "Enrichment", "Non-Fee", "Outdoor learning. (FT)",
+          "Alternate Title(s): Self Employment For Retired", "Investments (INVS)", "Investments – A INVS 515",
+          "Non-Fee", "Investing for adults. (FT)", "Alternate Title(s): Textile Embellishment",
+          "Construction Crafts Technology (CNCT)", "Construction Blueprint Read I CNCT 631", "Non-Fee",
+          "Reading blueprints. (FT)",
           "Physical Education (PHYE)", "Tennis PHYE 561", "Fee", "Basic grips and strokes. (FT)",
           "Arithmetic Review  ABED 414", "Non-Fee", "A second printing. (FT)"]),
     (85, ["San Diego College of Continuing Education", "Contract Faculty", "Acierno, Elizabeth"]),
@@ -86,6 +90,12 @@ check("SDCCE: the subject heading is the line directly above the title, wrapped 
       "Computer and Information Sciences")
 check("SDCCE: a description's closing parenthetical is no heading, and an intro line naming another code is none",
       info["headings"].get("AWS") is None and "OA" not in info["headings"])
+check("SDCCE: an alternate-title line above a heading is never part of the heading",
+      by["INVS 515"]["subject_name"] == "Investments" and by["CNCT 631"]["subject_name"] ==
+      "Construction Crafts Technology" and not any("Alternate" in (r.get("subject_name") or "") for r in filed))
+check("SDCCE: that alternate-title line stays with the course above",
+      by["HMDV 590"].get("alternate_titles") == "Alternate Title(s): Self Employment For Retired" and
+      by["INVS 515"].get("alternate_titles") == "Alternate Title(s): Textile Embellishment")
 check("SDCCE: a course with no heading of its own subject gets none", by["SPEE 520"]["subject_name"] is None and
       by["HMDV 590"]["subject_name"] is None)
 check("SDCCE: the requisite runs to its period, the description is the rest",

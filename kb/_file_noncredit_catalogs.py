@@ -21,7 +21,8 @@ THE RULES, one per college.
     alternate title, provided the line above them closes (ends in . ) ! ? : or a closing quote, is a fee line, or ends
     an alternate-title list). An alternate-title list opens on "Alternate Title(s):" and runs on while its line ends in
     ; , or - or is too full (53 characters) to have held the next line's first word. A subject heading is a line
-    "Name (SUBJ)" (or "(SUBJ)" whose name wraps onto the line above) that sits directly above a course's title and
+    "Name (SUBJ)" (or "(SUBJ)" whose name wraps onto the line above, never an alternate-title line, and an
+    alternate-title list never runs on into a heading) that sits directly above a course's title and
     whose SUBJ is that course's subject; it names every course of that subject under it. A parenthetical that closes
     a description or a title ("(AWS)", "(ENSA)") is no heading: its code is not the next course's subject or the line
     is the course's own title. The entry runs from the fee line to the next course's title or heading. Lines opening
@@ -215,7 +216,7 @@ def sd_alt_blocks(T, stops):
             continue
         out.add(i)
         j = i
-        while j + 1 < len(T) and j + 1 not in stops:
+        while j + 1 < len(T) and j + 1 not in stops and not SD_HEADING.match(T[j + 1]):
             cur, nxt = T[j], T[j + 1]
             if cur.endswith((";", ",", "-")) or len(cur) + 1 + len(nxt.split()[0]) > SD_WIDTH:
                 j += 1
@@ -284,7 +285,7 @@ def parse_sdcce(lines):
             h = SD_HEADING.match(T[k - 1])
             if h and h.group(2) == x["subject"]:
                 name = h.group(1)
-                if k >= 2 and not fin(k - 2) and fin(k - 3):
+                if k >= 2 and not fin(k - 2) and fin(k - 3) and k - 2 not in alt_at and not SD_ALT.match(T[k - 2]):
                     name = norm(T[k - 2] + " " + name)   # a heading wrapped onto two lines
                 if name:
                     current[x["subject"]] = name
@@ -295,7 +296,8 @@ def parse_sdcce(lines):
             j = nxt - 1
             if j > x["anchor"] and SD_HEADING.match(T[j]) and SD_HEADING.match(T[j]).group(2) == found[n + 1]["subject"]:
                 nxt = j
-                if j - 1 > x["anchor"] and not fin(j - 1) and fin(j - 2):
+                if j - 1 > x["anchor"] and not fin(j - 1) and fin(j - 2) and j - 1 not in alt_at and \
+                        not SD_ALT.match(T[j - 1]):
                     nxt = j - 1
         body = T[x["anchor"] + 1:nxt]
         reqs, alt, desc, k2 = [], [], [], 0
