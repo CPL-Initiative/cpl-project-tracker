@@ -12,7 +12,8 @@
 // title or no common code it shows the recommendation kb/status/local_subject_recommendations.json holds for it.
 //
 // Addresses (loaded by commons.js when the address names it): #commons/subjects (every college),
-// #commons/subjects/<college slug> (one college), #commons/subjects/disagree (the codes only one side prints, the
+// #commons/subjects/<college slug> (one college), #commons/subjects/<college slug>/<local code> (that college with
+// the code's course panel open, read from kb/status/subject_courses/<slug>.json), #commons/subjects/disagree (the codes only one side prints, the
 // list of codes with no title), #commons/subjects/held (S695: the local subject codes the pile mint holds on, ranked by the held
 // courses a decided common subject code releases; read from kb/status/held_subject_codes.json, built by
 // kb/_held_subject_codes.py, and fetched only when that view opens). The view picked lasts the visit; only the address carries it. Tokens only (the tab's --cmn roles),
@@ -101,8 +102,12 @@
     return { list: list, by: by, totals: f.totals || {}, rule: f._rule || "", built: (f._sources || {}).state_list_built_at || "" };
   }
 
-  var S = { view: "" };   /* "", a college slug, or "disagree": the visit's pick, which only the address carries */
-  function address() { return S.view ? "commons/subjects/" + encodeURIComponent(S.view) : "commons/subjects"; }
+  var S = { view: "", code: "" };   /* view: "", a college slug, "disagree" or "held"; code: the local code whose course
+                                       panel is open at that college. The visit's pick, which only the address carries. */
+  function address() {
+    var base = S.view ? "commons/subjects/" + encodeURIComponent(S.view) : "commons/subjects";
+    return S.code ? base + "/" + S.code.split("/").map(encodeURIComponent).join("/") : base;
+  }
   function go(href, text) { return el("a", { href: href, "data-csb-go": href.replace(/^#commons\/subjects\/?/, ""), text: text }); }
 
   function trail(here) {
@@ -142,7 +147,7 @@
           : el("td", { text: r.printed_name });
         return el("tr", { "data-code": r.code, "data-side": r.side, "data-title-state": r.title_state || null }, [
           el("td", null, [S.view === r.slug ? r.college : go("#commons/subjects/" + r.slug, r.college)]),
-          el("th", { scope: "row", text: r.code }),
+          el("th", { scope: "row" }, [codeWord(r)]),
           title,
           el("td", null, [r.common ? r.common + (r.discipline ? " " + r.discipline : "") : "",
             !r.common && recOf(r).common ? recNote("common", recOf(r).common.code + " " + recOf(r).common.discipline, recOf(r).common) : null]),
@@ -201,14 +206,93 @@
     return heldCache;
   }
 
+  /* ── the course panel (S700, #3655 item 3): a local code opens its courses at that college, credit and noncredit
+     apart (Sam, 2026-11-21: "nc and cr courses should be differentiated in the college subject sidebars"). It reads
+     kb/status/subject_courses/<slug>.json (kb/_build_subject_courses.py), one college's file, when it opens. ── */
+  var COURSE_DIR = "kb/status/subject_courses/";
+  var courseCache = {};
+  function loadCourses(slug) {
+    courseCache[slug] = courseCache[slug] || fetch(COURSE_DIR + slug + ".json", { cache: "no-cache" }).then(function (r) {
+      if (!r || !r.ok) throw new Error(COURSE_DIR + slug + ".json answered " + (r ? r.status : "nothing"));
+      return r.json();
+    }).then(function (f) {
+      var cols = f.columns || [], codes = {};
+      Object.keys(f.codes || {}).forEach(function (k) {
+        codes[k] = f.codes[k].map(function (row) { var o = {}; cols.forEach(function (c, i) { o[c] = row[i]; }); return o; });
+      });
+      return codes;
+    }, function (e) { delete courseCache[slug]; throw e; });
+    return courseCache[slug];
+  }
+  function codeWord(r) {
+    var b = el("button", { type: "button", cls: "csb-word", "data-csb-code": r.code, "data-csb-slug": r.slug,
+      "aria-label": "Courses under " + r.code + " at " + r.college, text: r.code });
+    return b;
+  }
+  var BANDS = [["C", "Credit courses"], ["N", "Noncredit courses"], ["", "In the catalog only (COCI does not list it, so its band is not known)"]];
+  function courseTable(rows, label) {
+    var tbl = el("table", { cls: "csb-table csb-courses" }, [
+      el("colgroup", null, [el("col", { cls: "csb-c-num" }), el("col"), el("col", { cls: "csb-c-code" }), el("col", { cls: "csb-c-mid" })]),
+      el("thead", null, [el("tr", null, ["Number", "Title", "Listed in", "C-ID, CCN, M-ID"].map(function (t) { return el("th", { scope: "col", text: t }); }))]),
+      el("tbody", null, rows.map(function (c) {
+        var ids = [c.cid ? "C-ID " + c.cid : "", c.ccn ? "CCN " + c.ccn : "", c.mid ? "M-ID " + c.mid : ""].filter(Boolean).join("; ");
+        return el("tr", { "data-number": c.number, "data-band": c.band || "" }, [el("th", { scope: "row", text: c.number }),
+          el("td", { text: c.title || "" }), el("td", { text: c.listed || "" }), el("td", { text: ids })]);
+      }))]);
+    return el("div", { cls: "csb-wrap csb-wrap-in", role: "region", "aria-label": label, tabindex: "0" }, [tbl]);
+  }
+  function panelDraw(root, M) {
+    var old = root.querySelector("#csb-panel");
+    if (old) old.parentNode.removeChild(old);
+    if (!S.code || !M.by[S.view]) return;
+    var c = M.by[S.view], slug = S.view, code = S.code;
+    var row = c.rows.filter(function (r) { return r.code === code; })[0];
+    var close = el("button", { type: "button", cls: "csb-word", id: "csb-panel-close", text: "Close" });
+    close.addEventListener("click", function () { open(slug); });
+    var body = el("div", { id: "csb-panel-body" }, [el("p", { cls: "csb-note", role: "status", text: "Reading the courses…" })]);
+    var name = row && row.printed_name ? row.printed_name : "";
+    var panel = el("aside", { cls: "csb-panel", id: "csb-panel", role: "dialog", "aria-labelledby": "csb-panel-h" }, [
+      el("div", { cls: "csb-panel-in" }, [
+        el("div", { cls: "csb-panel-top" }, [el("p", { cls: "csb-eyebrow", text: "Courses under a local code" }), close]),
+        el("h3", { id: "csb-panel-h", tabindex: "-1", text: code + (name ? ", " + name : "") }),
+        el("p", { cls: "csb-note", text: c.college + ". " + (name ? "" : "No local title yet. ")
+          + (row && row.common ? "Common subject code " + row.common + (row.discipline ? " " + row.discipline : "") + "." : "No common subject code yet.") }),
+        body])]);
+    panel.addEventListener("keydown", function (e) { if (e.key === "Escape") { e.preventDefault(); open(slug); } });
+    root.appendChild(panel);
+    loadCourses(slug).then(function (codes) {
+      if (S.code !== code || S.view !== slug) return;
+      var rows = codes[code] || [];
+      body.textContent = "";
+      if (!rows.length) { body.appendChild(el("p", { cls: "csb-note", text: "No course is listed under " + code + " in the catalog on file or in COCI." })); return; }
+      var both = rows.filter(function (x) { return x.listed === "Both"; }).length, cat = rows.filter(function (x) { return x.listed === "Catalog"; }).length;
+      body.appendChild(el("p", { cls: "csb-note", id: "csb-panel-count", text: fmt(rows.length) + (rows.length === 1 ? " course: " : " courses: ")
+        + fmt(both) + " in both the catalog and COCI, " + fmt(cat) + " in the catalog only, " + fmt(rows.length - both - cat) + " in COCI only." }));
+      BANDS.forEach(function (b) {
+        var part = rows.filter(function (x) { return (x.band || "") === b[0]; });
+        if (!part.length) return;
+        body.appendChild(el("h4", { cls: "csb-band", "data-band": b[0], text: b[1] + " (" + fmt(part.length) + ")" }));
+        body.appendChild(courseTable(part, b[1] + " under " + code));
+      });
+    }, function (e) {
+      if (S.code !== code) return;
+      body.textContent = "";
+      body.appendChild(el("p", { cls: "csb-note", role: "status", text: "The courses could not be read (" + (e && e.message ? e.message : e) + "). Close the panel and open it again to retry." }));
+    });
+  }
+
   var VIEW = { root: null, M: null, noted: null, H: null };
   function render(root, M, view) {
     VIEW.root = root; VIEW.M = M;
     ensureCss();
     view = String(view || "");
+    /* <college slug>/<local code> opens that college with the code's course panel; a code may hold a slash (ES/A). */
+    var cut = view.indexOf("/"), code = cut > 0 ? view.slice(cut + 1) : "";
+    if (cut > 0) view = view.slice(0, cut);
     var c = view && view !== DISAGREE && view !== HELD ? M.by[view] : null;
     var missing = view && view !== DISAGREE && view !== HELD && !c ? view : "";
     S.view = missing ? "" : view;
+    S.code = c && code && c.rows.some(function (r) { return r.code === code; }) ? code : "";
     root.removeAttribute("style");
     root.textContent = "";
     var T = M.totals, all = [];
@@ -263,6 +347,10 @@
     Array.prototype.forEach.call(root.querySelectorAll("a[data-csb-go]"), function (a) {
       a.addEventListener("click", function (e) { if (e && e.preventDefault) e.preventDefault(); open(a.getAttribute("data-csb-go")); });
     });
+    Array.prototype.forEach.call(root.querySelectorAll("button[data-csb-code]"), function (b) {
+      b.addEventListener("click", function () { open(b.getAttribute("data-csb-slug") + "/" + b.getAttribute("data-csb-code")); });
+    });
+    panelDraw(root, M);
     return page;
   }
   /* A pick: draw it and put it in the address, which is the only place it lives. */
@@ -279,7 +367,7 @@
     var h = "#" + address();
     try { if (window.history && history.pushState && location.hash !== h) history.pushState(null, "", h); } catch (e) { /* the view still draws */ }
     if (VIEW.noted) VIEW.noted(String(location.hash || ""));
-    var h2 = VIEW.root.querySelector("#csb-h");
+    var h2 = VIEW.root.querySelector(S.code ? "#csb-panel-h" : "#csb-h");
     if (h2) { h2.setAttribute("tabindex", "-1"); if (h2.focus) h2.focus(); }
   }
 
@@ -338,8 +426,20 @@
     ".csb-chip { display:inline-block; font-size:.78rem; font-weight:600; color:var(--cmn-ink-2); border:1px solid var(--cmn-line); border-radius:999px; padding:1px 9px; background:var(--cmn-surface); white-space:nowrap; cursor:help; }",
     ".csb-chip[data-state='not_in_catalog'] { color:var(--cmn-heading); border-color:var(--cmn-accent); }",
     ".csb-chip:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:2px; }",
+    ".csb-word { font:inherit; font-weight:600; color:var(--cmn-link); background:none; border:0; padding:0; min-width:24px; min-height:24px; line-height:24px; text-decoration:underline; text-underline-offset:3px; cursor:pointer; overflow-wrap:anywhere; text-align:left; }",
+    ".csb-word:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:2px; border-radius:2px; }",
+    ".csb-panel { position:fixed; top:0; right:0; bottom:0; z-index:1000; display:flex; width:min(620px, calc(100vw - 24px)); background:var(--cmn-dialog, var(--cmn-surface)); border-left:1px solid var(--cmn-line); box-shadow:-12px 0 32px color-mix(in srgb, var(--cmn-heading) 16%, transparent); color:var(--cmn-ink); }",
+    ".csb-panel-in { flex:1 1 auto; min-width:0; overflow-y:auto; display:grid; gap:12px; align-content:start; padding:calc(18px + env(safe-area-inset-top, 0px)) max(18px, env(safe-area-inset-right, 0px)) 24px 18px; }",
+    ".csb-panel-top { display:flex; justify-content:space-between; align-items:baseline; gap:12px; }",
+    ".csb-eyebrow { margin:0; font-size:.82rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--cmn-muted); }",
+    ".csb-panel h3 { margin:0; font-family:var(--cmn-serif); font-size:clamp(1.15rem, 1rem + .6vw, 1.4rem); color:var(--cmn-title, var(--cmn-heading)); overflow-wrap:anywhere; }",
+    ".csb-panel h3:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:3px; border-radius:2px; }",
+    ".csb-band { margin:6px 0 0; font-size:1rem; color:var(--cmn-heading); }",
+    "#csb-panel-body { display:grid; gap:10px; min-width:0; }",
+    ".csb-wrap-in { max-height:none; }",
+    ".csb-courses { font-size:.88rem; } .csb-courses .csb-c-num { width:16%; } .csb-courses .csb-c-code { width:16%; } .csb-courses .csb-c-mid { width:30%; }",
     ".csb-foot { margin:0; color:var(--cmn-muted); font-size:.85rem; max-width:var(--cpl-measure,none); }",
-    "@media (max-width: 560px) { .csb-table { min-width:36rem; } .csb-held { min-width:44rem; } .csb-table th, .csb-table td { padding:8px; } }"
+    "@media (max-width: 560px) { .csb-table { min-width:36rem; } .csb-held { min-width:44rem; } .csb-courses { min-width:26rem; } .csb-table th, .csb-table td { padding:8px; } }"
   ].join("\n");
   function ensureCss() {
     if (document.getElementById("csb-css")) return;
@@ -349,6 +449,7 @@
   window.CPL_COMMONS_SUBJECTS = {
     boot: boot, render: render, model: model, heldModel: heldModel, recModel: recModel, REC_FILE: REC_FILE,
     _recs: function (f) { REC = recModel(f); }, address: address, open: open, load: load, FILE: FILE, HELD_FILE: HELD_FILE, SIDES: SIDES, CSS: CSS,
-    _state: S, _reset: function () { cache = null; heldCache = null; VIEW.M = null; VIEW.H = null; S.view = ""; }
+    _state: S, COURSE_DIR: COURSE_DIR,
+    _reset: function () { cache = null; heldCache = null; courseCache = {}; VIEW.M = null; VIEW.H = null; S.view = ""; S.code = ""; }
   };
 })();

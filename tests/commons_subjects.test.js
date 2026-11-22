@@ -29,6 +29,9 @@ const FILES = {
   "kb/status/commons_data.json": JSON.parse(fs.readFileSync("kb/status/commons_data.json", "utf8")),
   "kb/reference/industry_credential_skills.json": JSON.parse(fs.readFileSync("kb/reference/industry_credential_skills.json", "utf8")),
   "kb/status/local_subject_titles.json": FIX,
+  "kb/status/subject_courses/alpha.json": { college: "Alpha College", slug: "alpha", columns: ["number", "title", "band", "listed", "units", "cid", "ccn", "mid"],
+    codes: { MATH: [["1", "Algebra", "C", "Both", 4, "MATH 151", "", "MATH M1001"], ["2", "Statistics", "C", "COCI", 4, "", "STAT C1000", ""],
+      ["300", "Math Lab", "N", "COCI", 0, "", "", ""], ["9", "Topics", "", "Catalog", "1", "", "", ""]], "ES/A": [["5", "Yoga", "C", "Both", 1, "", "", ""]] } },
   "kb/status/local_subject_recommendations.json": { colleges: [{ slug: "alpha", rows: [{ code: "MATH",
     title: { title: "Mathematics", level: "High", from: "other_colleges", why: "other colleges: 3 of 3 other colleges (all agree).", also: [{ title: "Math Lab", from: "program_titles" }] },
     common: { code: "MATH", discipline: "Mathematics", level: "Medium", from: "own_courses", why: "4 of 4 of its courses with an M-ID sit under MATH." } }] }] }
@@ -106,6 +109,36 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
   check("(8) ⭐ a row with no common code shows the recommended code with its discipline", mcom && /Recommended: MATH Mathematics\. Confidence: Medium\./.test(txt(mcom)));
   check("(8) a titled row with a common code carries no recommendation", !d.querySelector('.csb-codes tr[data-code="ENGL"] .csb-rec'));
   check("(8) a row the file does not name carries none", !zzz.querySelector(".csb-rec"));
+  /* (9) the course panel (S700, #3655 item 3): a local code opens its courses, credit and noncredit apart */
+  let z = load("#commons/subjects/alpha");
+  await z.M.boot(); await settle();
+  const word = z.d.querySelector('.csb-codes tr[data-code="MATH"] th button.csb-word');
+  check("(9) ⭐ a local code is a control, a button with its own name", word && txt(word) === "MATH" && /Courses under MATH at Alpha College/.test(word.getAttribute("aria-label")));
+  check("(9) no panel is open until a code is picked", !z.d.querySelector("#csb-panel"));
+  word.click(); await settle();
+  const panel = z.d.querySelector("#csb-panel");
+  check("(9) ⭐ picking it opens the panel and the address names the college and the code", panel && panel.getAttribute("role") === "dialog" && z.w.location.hash === "#commons/subjects/alpha/MATH");
+  const bandsSeen = Array.from(panel.querySelectorAll(".csb-band")).map(txt);
+  check("(9) ⭐ credit and noncredit courses are listed apart, each counted; a catalog-only course says its band is not known",
+    bandsSeen.length === 3 && bandsSeen[0] === "Credit courses (2)" && bandsSeen[1] === "Noncredit courses (1)" && /^In the catalog only .* \(1\)$/.test(bandsSeen[2]));
+  const crs1 = panel.querySelector('.csb-courses tr[data-number="1"]');
+  check("(9) a course shows its number, title, where it is listed and its C-ID, CCN and M-ID", crs1 && txt(crs1.children[1]) === "Algebra" && txt(crs1.children[2]) === "Both"
+    && txt(crs1.children[3]) === "C-ID MATH 151; M-ID MATH M1001" && /CCN STAT C1000/.test(txt(panel.querySelector('.csb-courses tr[data-number="2"]'))));
+  check("(9) the panel counts the courses by where they are listed", /4 courses: 1 in both the catalog and COCI, 1 in the catalog only, 2 in COCI only\./.test(txt(panel.querySelector("#csb-panel-count"))));
+  check("(9) every header cell in the panel carries a scope and each table sits in a labeled region",
+    Array.from(panel.querySelectorAll("th")).every((th) => th.getAttribute("scope")) && Array.from(panel.querySelectorAll(".csb-courses")).every((t) => t.parentNode.getAttribute("aria-label")));
+  panel.querySelector("#csb-panel-close").click(); await settle();
+  check("(9) Close returns to the college and its address", !z.d.querySelector("#csb-panel") && z.w.location.hash === "#commons/subjects/alpha");
+  z = load("#commons/subjects/alpha/MATH");
+  await z.M.boot(); await settle();
+  check("(9) ⭐ the address opens the panel on arrival", !!z.d.querySelector("#csb-panel") && /Credit courses \(2\)/.test(txt(z.d.querySelector("#csb-panel"))) && z.w.CPL_COMMONS_SUBJECTS.address() === "commons/subjects/alpha/MATH");
+  z = load("#commons/subjects/alpha/NOPE");
+  await z.M.boot(); await settle();
+  check("(9) a code the college does not hold opens the college alone", !z.d.querySelector("#csb-panel") && z.w.CPL_COMMONS_SUBJECTS.address() === "commons/subjects/alpha");
+  z = load("#commons/subjects/alpha/MATH", { "kb/status/subject_courses/alpha.json": undefined });
+  await z.M.boot(); await settle();
+  check("(9) a courses file that cannot be read says so in the panel", /could not be read/.test(txt(z.d.querySelector("#csb-panel-body"))));
+  check("(9) the panel stores nothing", z.writes() === 0);
   let y = load("#commons/subjects", { "kb/status/local_subject_recommendations.json": undefined });
   await y.M.boot(); await settle();
   check("(8) the list draws without the recommendations file", y.d.querySelectorAll(".csb-codes tbody tr").length > 0 && !y.d.querySelector(".csb-rec"));

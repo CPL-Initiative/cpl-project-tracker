@@ -330,10 +330,18 @@ step "Build the codes the pile mint holds on" <<'STEP'
 python3 kb/_held_subject_codes.py --if-changed || { git checkout -- kb/status/held_subject_codes.json 2>/dev/null || true; echo "::warning title=Held subject codes not rebuilt::kb/_held_subject_codes.py failed; #commons/subjects/held reads yesterday's kb/status/held_subject_codes.json."; }
 STEP
 
+# kb/status/subject_courses/<slug>.json (#3655 item 3): each college's courses under each local subject code, the
+# catalog beside the state list, credit and noncredit apart, for the Subjects page's course panel. No clock is read,
+# so the same inputs write the same bytes (~3 s). Display only, so a failure warns and yesterday's files stand.
+#
 # kb/status/local_subject_recommendations.json (#3655): a recommended local title for each Subjects row with no
 # catalog heading and a recommended common code for each credit row with none, with the level each source measured
 # on the titled codes. After the titles above, which it reads. No clock is read, so the same inputs write the same
 # bytes (~3 s). Display only, so a failure warns and yesterday's file stands.
+step "Build the Subjects page's courses by code" <<'STEP'
+python3 kb/_build_subject_courses.py || { git checkout -- kb/status/subject_courses 2>/dev/null || true; echo "::warning title=Subject courses not rebuilt::kb/_build_subject_courses.py failed; the Subjects page's course panel reads yesterday's files under kb/status/subject_courses/."; }
+STEP
+
 step "Build the Subjects recommendations" <<'STEP'
 python3 kb/_build_local_subject_recommendations.py || { git checkout -- kb/status/local_subject_recommendations.json 2>/dev/null || true; echo "::warning title=Subject recommendations not rebuilt::kb/_build_local_subject_recommendations.py failed; the Subjects page reads yesterday's kb/status/local_subject_recommendations.json."; }
 STEP

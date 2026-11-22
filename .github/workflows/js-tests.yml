@@ -331,6 +331,10 @@ jobs:
       # rule reads its own pages only, the subject's name is the page title's. Pure stdlib.
       - name: Missed subject pages (kb/_file_missed_subject_pages.py)
         run: python3 tests/missed_subject_pages_test.py
+      # The Subjects page's course panel (S700, #3655): one row per course whichever way its number is written, credit
+      # and noncredit apart, no band guessed for a catalog-only course. Pure stdlib.
+      - name: Subject courses (kb/_build_subject_courses.py)
+        run: python3 tests/subject_courses_test.py
       # The codes the pile mint holds on (S695): held courses summed, counted once each, ranked; a vote that missed its
       # floor is a suggestion, never a decision. Pure stdlib.
       - name: Held subject codes (kb/_held_subject_codes.py)

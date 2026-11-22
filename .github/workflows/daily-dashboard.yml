@@ -176,6 +176,8 @@ jobs:
             git add kb/status/held_subject_codes.json 2>/dev/null || true
             # The Subjects recommendations (kb/_build_local_subject_recommendations.py, S700, #3655).
             git add kb/status/local_subject_recommendations.json 2>/dev/null || true
+            # The Subjects page's courses by code (kb/_build_subject_courses.py, S700, #3655).
+            git add kb/status/subject_courses 2>/dev/null || true
             # CPL Pathways AUTHORITATIVE membership view (StarMora) — the program→
             # course join artifact the cards read; regenerated in Step 4a1b above.
             git add cpl_pathways_membership_data.js 2>/dev/null || true

@@ -3761,7 +3761,9 @@ module.exports = {
   "commons-subjects": {
     file: "index.html",
     title: "CPL Commons: the Subjects list",
-    routes: [{ hash: "commons/subjects/cerritos", name: "subjects-cerritos" }, { hash: "commons/subjects/disagree", name: "subjects-disagree" }, { hash: "commons/subjects/held", name: "subjects-held" }],
+    routes: [{ hash: "commons/subjects/cerritos", name: "subjects-cerritos" }, { hash: "commons/subjects/disagree", name: "subjects-disagree" }, { hash: "commons/subjects/held", name: "subjects-held" },
+      /* S700: a local code's course panel, credit and noncredit apart. */
+      { hash: "commons/subjects/cerritos/MATH", name: "subjects-course-panel" }],
     widths: [320, 390, 768, 1440],
     seed: (page) => seedCommonsSubjects(page, "light"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
@@ -3769,7 +3771,7 @@ module.exports = {
   "commons-subjects-dark": {
     file: "index.html",
     title: "CPL Commons: the Subjects list, dark",
-    routes: [{ hash: "commons/subjects/cerritos", name: "subjects-cerritos-dark" }],
+    routes: [{ hash: "commons/subjects/cerritos", name: "subjects-cerritos-dark" }, { hash: "commons/subjects/cerritos/MATH", name: "subjects-course-panel-dark" }],
     widths: [390, 1440],
     seed: (page) => seedCommonsSubjects(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
