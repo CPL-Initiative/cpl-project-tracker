@@ -1,0 +1,24 @@
+{
+ "_readme": "S703 (worker pins for SkyDovekie), the harvest lane's NEXT (4): Clovis's Social Science A.A. 33492 was read from PDF p.148, which opens mid-list ('Select one sequence: PHYS 2A'), so its heading prints on an earlier page (f-clovis-19-left-s697). This plan prints pp.145-150. It prints those pages of the 2026-2027 catalog PDF the filed capture read (capture.json pdf.url). One load, no model call, nothing written.",
+ "college": "Clovis Community College",
+ "questions": {
+  "own_page": "Where the program's own section opens (its heading and the first line of its requirement list) and where its list ends (its total), so a pdf_pages pin can name the page and the words it opens on."
+ },
+ "keywords": [
+  "\\S"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf"
+  }
+ ],
+ "pdf_span": [
+  145,
+  150
+ ],
+ "pdf_page_cap": 14,
+ "pdf_unfolded": true
+}

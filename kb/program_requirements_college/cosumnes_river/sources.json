@@ -4184,32 +4184,29 @@
    "VT152"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=622",
-   "title": "A.S. in Veterinary Technology",
-   "h1": "A.S. in Veterinary Technology",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=625",
+   "title": "Veterinary Technology Certificate",
+   "h1": "Veterinary Technology Certificate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    622,
-    623,
-    624
+    625,
+    626,
+    627,
+    628
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "page_check": {
-    "rule": "A",
-    "page": 622,
-    "share": 1.0
-   },
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
    },
-   "text_sha": "4b82510b15922852"
+   "text_sha": "97b9d41f01471a7e"
   },
   "listed": 12,
-  "text_chars": 9892
+  "text_chars": 16000
  },
  {
   "control_number": "20153",
@@ -4407,33 +4404,28 @@
    "MKT300"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=218",
-   "title": "Small Business Management/Entrepreneurship Certificate",
-   "h1": "Small Business Management/Entrepreneurship Certificate",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=227",
+   "title": "Small Business Management/",
+   "h1": "Small Business Management/",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    218,
-    219,
-    220,
-    221
+    227,
+    228,
+    229
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "page_check": {
-    "rule": "A",
-    "page": 218,
-    "share": 0.8
-   },
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
    },
-   "text_sha": "fad8fbd35b7333d9"
+   "text_sha": "724782d1ec17bba1"
   },
   "listed": 10,
-  "text_chars": 13822
+  "text_chars": 10890
  },
  {
   "control_number": "20197",
@@ -4862,31 +4854,29 @@
    "FT320"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=365",
-   "title": "Firefighter Suppression Specialist Certificate",
-   "h1": "Firefighter Suppression Specialist Certificate",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=367",
+   "title": "Firefighter Suppression Specialist",
+   "h1": "Firefighter Suppression Specialist",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    365,
-    366
+    367,
+    368,
+    369,
+    370
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "page_check": {
-    "rule": "A",
-    "page": 365,
-    "share": 1.0
-   },
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
    },
-   "text_sha": "0bb6bc38a445a4bb"
+   "text_sha": "bcb6e316154fa8ef"
   },
   "listed": 7,
-  "text_chars": 6755
+  "text_chars": 14837
  },
  {
   "control_number": "20367",
@@ -6141,31 +6131,28 @@
    "TA300"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=334",
-   "title": "Course",
-   "h1": "Course",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=333",
+   "title": "A.A.-T. in English",
+   "h1": "A.A.-T. in English",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    333,
     334,
     335
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "page_check": {
-    "rule": "A",
-    "page": 334,
-    "share": 1.0
-   },
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
    },
-   "text_sha": "a65dfd8fd29381f6"
+   "text_sha": "cafea362b5d2f9ad"
   },
   "listed": 28,
-  "text_chars": 8845
+  "text_chars": 11166
  },
  {
   "control_number": "33072",

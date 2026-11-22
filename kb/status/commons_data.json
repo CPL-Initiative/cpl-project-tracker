@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-22T13:50:44Z",
+ "written_at": "2026-11-22T14:09:53Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 16924,
-  "gap": 5411,
+  "passing": 16931,
+  "gap": 5404,
   "with_gap": 118,
-  "cost_usd": 1340.2,
-  "passed_at_read": 16212,
+  "cost_usd": 1340.28,
+  "passed_at_read": 16217,
   "cost_receipts": 118,
   "spent_usd": 1234.69,
   "spent_runs": 184,
@@ -189,9 +189,9 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16632,
-  "gap": 5411,
-  "collected_with_gaps": 292,
+  "passing": 16637,
+  "gap": 5404,
+  "collected_with_gaps": 294,
   "discontinued": 0
  },
  "census_live": {
@@ -1884,13 +1884,13 @@
    "harvested": true,
    "slug": "clovis_community",
    "programs": 129,
-   "passing": 86,
-   "gap": 43,
+   "passing": 89,
+   "gap": 40,
    "causes": {
     "no_closed_list": 8,
     "page_not_found": 12,
     "places_none": 2,
-    "unknown_without_live": 21
+    "unknown_without_live": 18
    },
    "census_causes": {
     "course_added": 1,
@@ -1915,10 +1915,10 @@
    "outcomes_file": "kb/status/commons_data_programs/clovis_community.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-19T12:15:47Z",
+   "read_at": "2026-11-22T11:43:38Z",
    "read_kind": "capture",
    "cost_usd": 8.22,
-   "passed_at_read": 77,
+   "passed_at_read": 78,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -1927,13 +1927,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 121,
-   "found": 109,
+   "found": 107,
    "extracted": 109,
    "errors": 0,
    "failed_checks": {
-    "coverage": 5,
+    "coverage": 4,
     "invented": 3,
-    "arithmetic": 27,
+    "arithmetic": 26,
     "repeated": 0,
     "outcomes": 5
    },
@@ -1943,10 +1943,10 @@
    "capture_root": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 63.7,
-   "run": "44522071814",
+   "read_seconds": 80.8,
+   "run": "45018954283",
    "levers": {
-    "reconcile_steps": 21,
+    "reconcile_steps": 18,
     "reader_page_search": 12,
     "program_course_file_check": 8,
     "reader_page_assignment": 2
@@ -1957,13 +1957,13 @@
      "models": {
       "claude-opus-5-5": 109
      },
-     "run": "44522071814",
-     "at": "2026-11-19T12:15:47Z",
+     "run": "45018954283",
+     "at": "2026-11-22T11:43:38Z",
      "cost_usd": 8.22,
      "platform": "pdf"
     },
     "slo_read": null,
-    "plo_programs": 66,
+    "plo_programs": 67,
     "ppm_member": {
      "host": "programmap.cloviscollege.edu",
      "by": "programmapper.org/ppm-schools, copied 2026-10-21"
@@ -3470,13 +3470,13 @@
    "harvested": true,
    "slug": "cosumnes_river",
    "programs": 226,
-   "passing": 156,
-   "gap": 70,
+   "passing": 160,
+   "gap": 66,
    "causes": {
     "no_closed_list": 7,
     "page_not_found": 2,
-    "places_none": 28,
-    "unknown_without_live": 33
+    "places_none": 25,
+    "unknown_without_live": 32
    },
    "census_causes": {
     "coverage_fails": 8,
@@ -3501,10 +3501,10 @@
    "outcomes_file": "kb/status/commons_data_programs/cosumnes_river.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-21T14:58:59Z",
+   "read_at": "2026-11-22T11:36:44Z",
    "read_kind": "capture",
-   "cost_usd": 19.01,
-   "passed_at_read": 148,
+   "cost_usd": 19.09,
+   "passed_at_read": 152,
    "slo_queue": null,
    "scout": {
     "recommendation": "page_read",
@@ -3525,9 +3525,9 @@
    "extracted": 217,
    "errors": 0,
    "failed_checks": {
-    "coverage": 36,
+    "coverage": 33,
     "invented": 8,
-    "arithmetic": 54,
+    "arithmetic": 50,
     "repeated": 0,
     "outcomes": 8
    },
@@ -3537,11 +3537,11 @@
    "capture_root": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 267.6,
-   "run": "44917314201",
+   "read_seconds": 352.3,
+   "run": "45018951701",
    "levers": {
-    "reader_page_assignment": 28,
-    "reconcile_steps": 19,
+    "reader_page_assignment": 25,
+    "reconcile_steps": 18,
     "ge_units_steps": 14,
     "program_course_file_check": 7,
     "reader_page_search": 2
@@ -3552,13 +3552,13 @@
      "models": {
       "claude-opus-5-5": 217
      },
-     "run": "44917314201",
-     "at": "2026-11-21T14:58:59Z",
-     "cost_usd": 19.01,
+     "run": "45018951701",
+     "at": "2026-11-22T11:36:44Z",
+     "cost_usd": 19.09,
      "platform": "pdf"
     },
     "slo_read": null,
-    "plo_programs": 173,
+    "plo_programs": 176,
     "ppm_member": null,
     "maps": {
      "held": 0,

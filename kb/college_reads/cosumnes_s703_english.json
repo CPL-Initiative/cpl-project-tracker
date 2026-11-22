@@ -1,0 +1,24 @@
+{
+ "_readme": "S703 (worker pins for SkyDovekie), the harvest lane's NEXT (4): English AA-T 33053 is partial: the capture opened mid-list on PDF p.334 ('Course Code Course Title Units ENGLT 336'), so its heading and first blocks print on an earlier page. This plan prints pp.331-335. It prints those pages of the hand-filed 2026-27 catalog (kb/hand_filed_catalogs/cosumnes_river.json, sha256 pinned; the file every Cosumnes River record was extracted from). One load, no model call, nothing written.",
+ "college": "Cosumnes River College",
+ "questions": {
+  "own_page": "Where the program's own section opens (its heading and the first line of its requirement list) and where its list ends (its total), so a pdf_pages pin can name the page and the words it opens on."
+ },
+ "keywords": [
+  "\\S"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://github.com/user-attachments/files/33599449/crc-catalog-26-27.pdf"
+  }
+ ],
+ "pdf_span": [
+  331,
+  335
+ ],
+ "pdf_page_cap": 14,
+ "pdf_unfolded": true
+}
