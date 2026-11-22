@@ -98,3 +98,16 @@ lane 1 signs off at those colleges. Each move is written here before it starts.
   staff name filed. San Diego College of Continuing Education: index 45016944119 (199 of 228 codes have an outline),
   trial 45017581874 at 12 of 12 after two load-side fixes, full read 45018663453 (free, 199 pages); the load waits
   on a second reader of the `_course_outcomes_load.py` change.
+- 11:48Z: #3676 merged (`d8b5e4ee`, the recall-refusal test), files disjoint from #3673's (`d-merge-on-clean-when-files-disjoint-s691`).
+- 11:46Z: paid reads dispatched on `claude/s703-pins`: Cosumnes River 45018951701 ($0.36 actual) and Clovis 45018954283
+  ($0.23 actual). **DECIDED** `d-clovis-through-pin-to-followup-s703`: Clovis 33432 and 33492 wait on a `through`
+  pin field in the night's follow-up (a shared reader change); `d-clovis-management-is-the-standalone-degree-s703`.
+- 11:55Z: round two of the second read passed #3678 (131 rows) and #3679 (50 rows after holding 19). The second
+  reader held #3677's load: its fix dropped HMID 535's 11 real objectives. **DECIDED**
+  `d-legacy-objectives-kept-when-only-copy-s703`; fixed on #3677, only the two target rows change across 144 reads.
+- 12:02Z: #3678 applied by supabase-migrate 45019924640 (returned 131, none skipped); live: 131 rows at 29 colleges
+  hold `ge_units_not_read`.
+- 12:13Z: **DECIDED** `d-sdcce-load-objectives-only-s703`: San Diego College of Continuing Education loads objectives
+  only (198 rows, 1,860 objectives); its 6 SLO rows read field labels and go to the follow-up. Load 45021318423 on
+  `claude/s703-sdcce-load` finished 12:17Z. Cosumnes River reread 45021161151 done; Clovis reread 45022017976 running.
+  Butte's capture (45016561973) runs about 91 minutes, as its last did.
