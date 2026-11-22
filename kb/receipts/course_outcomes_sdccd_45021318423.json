@@ -1,0 +1,2183 @@
+{
+ "what": "course_outcomes_load: course SLOs as printed, by college and course (Sheet 70 card 3)",
+ "host": "sdccd",
+ "load_run": "45021318423",
+ "reads": [
+  "kb/course_outcomes/sdccd/read_45018663453_p1of1.json"
+ ],
+ "kind": "objective",
+ "held_back": 6,
+ "posted": 198,
+ "inserted": 198,
+ "kept": 0,
+ "skipped": 194,
+ "skipped_rows": [
+  {
+   "course_code": "AUTO 411",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AUTO 411A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AUTO 414",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AUTO 415",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AUTO 508",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AUTO 508A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AUTO 600",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AUTO 601",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BUSN 621",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BUSN 622",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BUSN 623",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BUSN 632",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BUSN 633",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BUSN 634",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BUSN 640",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BUSN 641",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CLTX 506",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CLTX 507",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CLTX 620",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CLTX 625",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CLTX 630",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CLTX 635",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMM 550",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMM 660",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMM 661",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMM 662",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMM 663",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMM 666",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMM 669",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMM 670",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMM 671",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMM 672",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMM 673",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMM 674",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMM 675",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMM 681",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMM 682",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMM 683",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMP 600",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMP 601",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMP 602",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMP 608",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMP 609",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMP 612",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMP 628",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMP 640",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMP 641",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMP 643",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMP 648",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMP 649",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMP 655",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMP 656",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMP 657",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMP 660",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMP 661",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMP 662",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMP 663",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMP 666",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMP 667",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMP 671",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMP 672",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMP 673",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMP 674",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMP 675",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMP 690",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMP 691",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMP 692",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMP 693",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ELRN 451",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ELRN 452",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESLA 415",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESLA 425A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESLA 425B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESLA 426A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESLA 426B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESLA 427A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESLA 427B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESLA 428A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESLA 428B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESLA 429A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESLA 429B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESLA 431",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESLA 432",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESLA 433",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESLA 434",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESLA 435",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESLA 436",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESLA 437",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESLA 441",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESLA 442",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESLA 450",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESLA 451",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESLA 452",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESLA 453",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESLA 454",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESLA 455",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESLA 456",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESLA 457",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FDNT 501",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FDNT 618",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FDNT 619",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FDNT 661",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FDNT 662",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FDNT 663",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FDNT 664",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FDNT 671",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FDNT 672",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FDNT 673",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FDNT 674",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FDNT 675",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FDNT 676",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HLTH 605",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HLTH 606",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HLTH 607",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HLTH 608",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HLTH 609",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HLTH 610",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HLTH 611",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HLTH 612",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HLTH 613",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HLTH 614",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HLTH 615",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HLTH 616",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HLTH 617",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HMDV 575A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HMDV 575B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HMDV 580",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HMDV 581",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HMDV 582",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HMDV 583",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HMDV 584",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HMDV 585",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HMDV 586",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HMDV 590",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HMDV 591",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HMDV 593",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HMDV 594",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HMDV 595",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HMDV 596",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HMDV 597",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HMID 535",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HSDP 403",
+   "status": 200,
+   "shape": "none",
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "why": "every filed line holds no letter, is a Legacy Data heading or a line after it, or points to another outline"
+  },
+  {
+   "course_code": "HSDP 403",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HSDP 413A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HSDP 413B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HSDP 414",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HSDP 415",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HSDP 416",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HSDP 427",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HSDP 432",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HSDP 433",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HSDP 436",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HSDP 461",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HSDP 465",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HSDP 466",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HSDP 467A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HSDP 467B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HSDP 478",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HSDP 479",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HSDP 500",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HSDP 501",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HSDP 506",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HSDP 511",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HSDP 512",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HSDP 513",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HSDP 514",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HSEP 400",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HSEP 401",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HSEP 402",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HSEP 403",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HSEP 404",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HSEP 405",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HSEP 406",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HSEP 407",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "INDT 601",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "INDT 602",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "INDT 605",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "INDT 606",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "INDT 621",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "INDT 622",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "INDT 631",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "INDT 632",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "INDT 681",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "INDT 682",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "INTD 500",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "INTD 501",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "OFSY 505",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "OFSY 506",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "OFSY 507",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "OFSY 527",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "OFSY 528",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "OFSY 541",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "OFSY 575",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "OFSY 596",
+   "status": 200,
+   "shape": "none"
+  }
+ ],
+ "error": null,
+ "inserted_keys": [
+  {
+   "id": 51114,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "AUTO 411"
+  },
+  {
+   "id": 51115,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "AUTO 411A"
+  },
+  {
+   "id": 51116,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "AUTO 414"
+  },
+  {
+   "id": 51117,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "AUTO 415"
+  },
+  {
+   "id": 51118,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "AUTO 507"
+  },
+  {
+   "id": 51119,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "AUTO 507A"
+  },
+  {
+   "id": 51120,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "AUTO 507B"
+  },
+  {
+   "id": 51121,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "AUTO 508"
+  },
+  {
+   "id": 51122,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "AUTO 508A"
+  },
+  {
+   "id": 51123,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "AUTO 600"
+  },
+  {
+   "id": 51124,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "AUTO 601"
+  },
+  {
+   "id": 51125,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "BUSN 621"
+  },
+  {
+   "id": 51126,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "BUSN 622"
+  },
+  {
+   "id": 51127,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "BUSN 623"
+  },
+  {
+   "id": 51128,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "BUSN 632"
+  },
+  {
+   "id": 51129,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "BUSN 633"
+  },
+  {
+   "id": 51130,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "BUSN 634"
+  },
+  {
+   "id": 51131,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "BUSN 640"
+  },
+  {
+   "id": 51132,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "BUSN 641"
+  },
+  {
+   "id": 51133,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "CLTX 506"
+  },
+  {
+   "id": 51134,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "CLTX 507"
+  },
+  {
+   "id": 51135,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "CLTX 620"
+  },
+  {
+   "id": 51136,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "CLTX 625"
+  },
+  {
+   "id": 51137,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "CLTX 630"
+  },
+  {
+   "id": 51138,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "CLTX 635"
+  },
+  {
+   "id": 51139,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMM 550"
+  },
+  {
+   "id": 51140,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMM 660"
+  },
+  {
+   "id": 51141,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMM 661"
+  },
+  {
+   "id": 51142,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMM 662"
+  },
+  {
+   "id": 51143,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMM 663"
+  },
+  {
+   "id": 51144,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMM 666"
+  },
+  {
+   "id": 51145,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMM 669"
+  },
+  {
+   "id": 51146,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMM 670"
+  },
+  {
+   "id": 51147,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMM 671"
+  },
+  {
+   "id": 51148,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMM 672"
+  },
+  {
+   "id": 51149,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMM 673"
+  },
+  {
+   "id": 51150,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMM 674"
+  },
+  {
+   "id": 51151,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMM 675"
+  },
+  {
+   "id": 51152,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMM 681"
+  },
+  {
+   "id": 51153,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMM 682"
+  },
+  {
+   "id": 51154,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMM 683"
+  },
+  {
+   "id": 51155,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMP 600"
+  },
+  {
+   "id": 51156,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMP 601"
+  },
+  {
+   "id": 51157,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMP 602"
+  },
+  {
+   "id": 51158,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMP 608"
+  },
+  {
+   "id": 51159,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMP 609"
+  },
+  {
+   "id": 51160,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMP 612"
+  },
+  {
+   "id": 51161,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMP 628"
+  },
+  {
+   "id": 51162,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMP 640"
+  },
+  {
+   "id": 51163,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMP 641"
+  },
+  {
+   "id": 51164,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMP 643"
+  },
+  {
+   "id": 51165,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMP 648"
+  },
+  {
+   "id": 51166,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMP 649"
+  },
+  {
+   "id": 51167,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMP 655"
+  },
+  {
+   "id": 51168,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMP 656"
+  },
+  {
+   "id": 51169,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMP 657"
+  },
+  {
+   "id": 51170,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMP 660"
+  },
+  {
+   "id": 51171,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMP 661"
+  },
+  {
+   "id": 51172,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMP 662"
+  },
+  {
+   "id": 51173,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMP 663"
+  },
+  {
+   "id": 51174,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMP 666"
+  },
+  {
+   "id": 51175,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMP 667"
+  },
+  {
+   "id": 51176,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMP 671"
+  },
+  {
+   "id": 51177,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMP 672"
+  },
+  {
+   "id": 51178,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMP 673"
+  },
+  {
+   "id": 51179,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMP 674"
+  },
+  {
+   "id": 51180,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMP 675"
+  },
+  {
+   "id": 51181,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMP 690"
+  },
+  {
+   "id": 51182,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMP 691"
+  },
+  {
+   "id": 51183,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMP 692"
+  },
+  {
+   "id": 51184,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "COMP 693"
+  },
+  {
+   "id": 51185,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "ELRN 451"
+  },
+  {
+   "id": 51186,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "ELRN 452"
+  },
+  {
+   "id": 51187,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "ESLA 415"
+  },
+  {
+   "id": 51188,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "ESLA 425A"
+  },
+  {
+   "id": 51189,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "ESLA 425B"
+  },
+  {
+   "id": 51190,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "ESLA 426A"
+  },
+  {
+   "id": 51191,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "ESLA 426B"
+  },
+  {
+   "id": 51192,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "ESLA 427A"
+  },
+  {
+   "id": 51193,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "ESLA 427B"
+  },
+  {
+   "id": 51194,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "ESLA 428A"
+  },
+  {
+   "id": 51195,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "ESLA 428B"
+  },
+  {
+   "id": 51196,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "ESLA 429A"
+  },
+  {
+   "id": 51197,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "ESLA 429B"
+  },
+  {
+   "id": 51198,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "ESLA 431"
+  },
+  {
+   "id": 51199,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "ESLA 432"
+  },
+  {
+   "id": 51200,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "ESLA 433"
+  },
+  {
+   "id": 51201,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "ESLA 434"
+  },
+  {
+   "id": 51202,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "ESLA 435"
+  },
+  {
+   "id": 51203,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "ESLA 436"
+  },
+  {
+   "id": 51204,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "ESLA 437"
+  },
+  {
+   "id": 51205,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "ESLA 441"
+  },
+  {
+   "id": 51206,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "ESLA 442"
+  },
+  {
+   "id": 51207,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "ESLA 450"
+  },
+  {
+   "id": 51208,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "ESLA 451"
+  },
+  {
+   "id": 51209,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "ESLA 452"
+  },
+  {
+   "id": 51210,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "ESLA 453"
+  },
+  {
+   "id": 51211,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "ESLA 454"
+  },
+  {
+   "id": 51212,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "ESLA 455"
+  },
+  {
+   "id": 51213,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "ESLA 456"
+  },
+  {
+   "id": 51214,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "ESLA 457"
+  },
+  {
+   "id": 51215,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "FDNT 501"
+  },
+  {
+   "id": 51216,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "FDNT 618"
+  },
+  {
+   "id": 51217,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "FDNT 619"
+  },
+  {
+   "id": 51218,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "FDNT 661"
+  },
+  {
+   "id": 51219,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "FDNT 662"
+  },
+  {
+   "id": 51220,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "FDNT 663"
+  },
+  {
+   "id": 51221,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "FDNT 664"
+  },
+  {
+   "id": 51222,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "FDNT 671"
+  },
+  {
+   "id": 51223,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "FDNT 672"
+  },
+  {
+   "id": 51224,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "FDNT 673"
+  },
+  {
+   "id": 51225,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "FDNT 674"
+  },
+  {
+   "id": 51226,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "FDNT 675"
+  },
+  {
+   "id": 51227,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "FDNT 676"
+  },
+  {
+   "id": 51228,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HLTH 605"
+  },
+  {
+   "id": 51229,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HLTH 606"
+  },
+  {
+   "id": 51230,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HLTH 607"
+  },
+  {
+   "id": 51231,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HLTH 608"
+  },
+  {
+   "id": 51232,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HLTH 609"
+  },
+  {
+   "id": 51233,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HLTH 610"
+  },
+  {
+   "id": 51234,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HLTH 611"
+  },
+  {
+   "id": 51235,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HLTH 612"
+  },
+  {
+   "id": 51236,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HLTH 613"
+  },
+  {
+   "id": 51237,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HLTH 614"
+  },
+  {
+   "id": 51238,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HLTH 615"
+  },
+  {
+   "id": 51239,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HLTH 616"
+  },
+  {
+   "id": 51240,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HLTH 617"
+  },
+  {
+   "id": 51241,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HMDV 575A"
+  },
+  {
+   "id": 51242,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HMDV 575B"
+  },
+  {
+   "id": 51243,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HMDV 580"
+  },
+  {
+   "id": 51244,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HMDV 581"
+  },
+  {
+   "id": 51245,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HMDV 582"
+  },
+  {
+   "id": 51246,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HMDV 583"
+  },
+  {
+   "id": 51247,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HMDV 584"
+  },
+  {
+   "id": 51248,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HMDV 585"
+  },
+  {
+   "id": 51249,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HMDV 586"
+  },
+  {
+   "id": 51250,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HMDV 590"
+  },
+  {
+   "id": 51251,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HMDV 591"
+  },
+  {
+   "id": 51252,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HMDV 593"
+  },
+  {
+   "id": 51253,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HMDV 594"
+  },
+  {
+   "id": 51254,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HMDV 595"
+  },
+  {
+   "id": 51255,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HMDV 596"
+  },
+  {
+   "id": 51256,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HMDV 597"
+  },
+  {
+   "id": 51257,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HMID 535"
+  },
+  {
+   "id": 51258,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HSDP 409"
+  },
+  {
+   "id": 51259,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HSDP 411"
+  },
+  {
+   "id": 51260,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HSDP 413A"
+  },
+  {
+   "id": 51261,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HSDP 413B"
+  },
+  {
+   "id": 51262,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HSDP 414"
+  },
+  {
+   "id": 51263,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HSDP 415"
+  },
+  {
+   "id": 51264,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HSDP 416"
+  },
+  {
+   "id": 51265,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HSDP 427"
+  },
+  {
+   "id": 51266,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HSDP 432"
+  },
+  {
+   "id": 51267,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HSDP 433"
+  },
+  {
+   "id": 51268,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HSDP 436"
+  },
+  {
+   "id": 51269,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HSDP 461"
+  },
+  {
+   "id": 51270,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HSDP 465"
+  },
+  {
+   "id": 51271,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HSDP 466"
+  },
+  {
+   "id": 51272,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HSDP 467A"
+  },
+  {
+   "id": 51273,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HSDP 467B"
+  },
+  {
+   "id": 51274,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HSDP 478"
+  },
+  {
+   "id": 51275,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HSDP 479"
+  },
+  {
+   "id": 51276,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HSDP 500"
+  },
+  {
+   "id": 51277,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HSDP 501"
+  },
+  {
+   "id": 51278,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HSDP 506"
+  },
+  {
+   "id": 51279,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HSDP 507"
+  },
+  {
+   "id": 51280,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HSDP 511"
+  },
+  {
+   "id": 51281,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HSDP 512"
+  },
+  {
+   "id": 51282,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HSDP 513"
+  },
+  {
+   "id": 51283,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HSDP 514"
+  },
+  {
+   "id": 51284,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HSEP 400"
+  },
+  {
+   "id": 51285,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HSEP 401"
+  },
+  {
+   "id": 51286,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HSEP 402"
+  },
+  {
+   "id": 51287,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HSEP 403"
+  },
+  {
+   "id": 51288,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HSEP 404"
+  },
+  {
+   "id": 51289,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HSEP 405"
+  },
+  {
+   "id": 51290,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HSEP 406"
+  },
+  {
+   "id": 51291,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "HSEP 407"
+  },
+  {
+   "id": 51292,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "INDT 601"
+  },
+  {
+   "id": 51293,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "INDT 602"
+  },
+  {
+   "id": 51294,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "INDT 605"
+  },
+  {
+   "id": 51295,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "INDT 606"
+  },
+  {
+   "id": 51296,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "INDT 621"
+  },
+  {
+   "id": 51297,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "INDT 622"
+  },
+  {
+   "id": 51298,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "INDT 631"
+  },
+  {
+   "id": 51299,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "INDT 632"
+  },
+  {
+   "id": 51300,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "INDT 681"
+  },
+  {
+   "id": 51301,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "INDT 682"
+  },
+  {
+   "id": 51302,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "INTD 500"
+  },
+  {
+   "id": 51303,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "INTD 501"
+  },
+  {
+   "id": 51304,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "OFSY 505"
+  },
+  {
+   "id": 51305,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "OFSY 506"
+  },
+  {
+   "id": 51306,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "OFSY 507"
+  },
+  {
+   "id": 51307,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "OFSY 527"
+  },
+  {
+   "id": 51308,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "OFSY 528"
+  },
+  {
+   "id": 51309,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "OFSY 541"
+  },
+  {
+   "id": 51310,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "OFSY 575"
+  },
+  {
+   "id": 51311,
+   "kind": "objective",
+   "college": "San Diego College of Continuing Education",
+   "course_code": "OFSY 596"
+  }
+ ],
+ "rollback": "delete from public.course_outcomes where id in (51114, 51115, 51116, 51117, 51118, 51119, 51120, 51121, 51122, 51123, 51124, 51125, 51126, 51127, 51128, 51129, 51130, 51131, 51132, 51133, 51134, 51135, 51136, 51137, 51138, 51139, 51140, 51141, 51142, 51143, 51144, 51145, 51146, 51147, 51148, 51149, 51150, 51151, 51152, 51153, 51154, 51155, 51156, 51157, 51158, 51159, 51160, 51161, 51162, 51163, 51164, 51165, 51166, 51167, 51168, 51169, 51170, 51171, 51172, 51173, 51174, 51175, 51176, 51177, 51178, 51179, 51180, 51181, 51182, 51183, 51184, 51185, 51186, 51187, 51188, 51189, 51190, 51191, 51192, 51193, 51194, 51195, 51196, 51197, 51198, 51199, 51200, 51201, 51202, 51203, 51204, 51205, 51206, 51207, 51208, 51209, 51210, 51211, 51212, 51213, 51214, 51215, 51216, 51217, 51218, 51219, 51220, 51221, 51222, 51223, 51224, 51225, 51226, 51227, 51228, 51229, 51230, 51231, 51232, 51233, 51234, 51235, 51236, 51237, 51238, 51239, 51240, 51241, 51242, 51243, 51244, 51245, 51246, 51247, 51248, 51249, 51250, 51251, 51252, 51253, 51254, 51255, 51256, 51257, 51258, 51259, 51260, 51261, 51262, 51263, 51264, 51265, 51266, 51267, 51268, 51269, 51270, 51271, 51272, 51273, 51274, 51275, 51276, 51277, 51278, 51279, 51280, 51281, 51282, 51283, 51284, 51285, 51286, 51287, 51288, 51289, 51290, 51291, 51292, 51293, 51294, 51295, 51296, 51297, 51298, 51299, 51300, 51301, 51302, 51303, 51304, 51305, 51306, 51307, 51308, 51309, 51310, 51311);",
+ "rollback_by_key_if_error": null,
+ "rollback_note": "rollback deletes the ids the responses named. rollback_by_key_if_error is filed only when error is set: a batch may have committed without its response. It takes every row of the sent kinds and (college, read_run) pairs, including any an earlier load of the same read inserted."
+}

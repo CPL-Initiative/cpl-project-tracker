@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-21T17:09:25Z",
-  "session": 697,
-  "moniker": "SkyPuffin",
+  "written_at": "2026-11-22T15:13:06Z",
+  "session": 703,
+  "moniker": "SkyDovekie",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_699_handoff.md",
+  "handoff": "docs/session_704_handoff.md",
   "next_step": {
-    "title": "Read San Diego College of Continuing Education's course outlines",
-    "text": "The next session lands tonight's display build and the gap census against 4,875, then searches San Diego College of Continuing Education's outline index, whose outlines would fill 191 common course cards, and runs the night's one follow-up of four reader checks."
+    "title": "Load the four Peralta colleges' course outlines",
+    "text": "The next session loads Peralta's course outlines once their full read lands, a dry run first and then the load at Laney, Merritt, College of Alameda and Berkeley City. It merges the night's three open records pull requests one at a time, runs the display build and the gap census, then writes the catalog-wording rules at Glendale, Clovis and City College of San Francisco."
   },
   "calls": [
     {
@@ -337,6 +337,38 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-22T14:47:00Z",
+      "text": "Page-finding at eight colleges, in pull requests still open at the checkpoint: Ohlone's 2 and San Joaquin Delta's 6 records were added, Butte's moved page was read for one more, Clovis's Social Science degree now passes, and 152 programs with no page of their own, Glendale's 11 among them, were filed as named gaps."
+    },
+    {
+      "at": "2026-11-22T14:46:24Z",
+      "text": "Seventeen programs at nine colleges whose choice lists, counted at their printed figures, meet the printed total while their cheapest courses run past it are filed with that named gap. A second read held 29 others whose notes or printed ranges explain the difference."
+    },
+    {
+      "at": "2026-11-22T14:07:00Z",
+      "text": "The four Peralta colleges' outline pages are being read, 1,869 pages in five parts, after a 12-page trial counted 11 of 12. Their load is the next session's."
+    },
+    {
+      "at": "2026-11-22T12:52:00Z",
+      "text": "San Diego College of Continuing Education's course outlines are loaded: 198 courses with 1,860 objectives. City College of San Francisco's outline check was refreshed by a free trial, so its next read can run."
+    },
+    {
+      "at": "2026-11-22T12:50:00Z",
+      "text": "Two Clovis business programs are filed with the existing named gaps: one prints no degree total and one prints a range its own units do not match."
+    },
+    {
+      "at": "2026-11-22T12:44:00Z",
+      "text": "Fifty noncredit programs at 11 colleges measured in hours are filed with one of three named gaps: no total read, a different total, or a sum inside a printed range. A second read held 19 that a reread, a wording rule or a person settles."
+    },
+    {
+      "at": "2026-11-22T12:31:00Z",
+      "text": "Cosumnes River and Clovis programs were pinned to their own catalog pages and read for $0.59: 3 records were added and 4 replaced by a better read, and 5 pass."
+    },
+    {
+      "at": "2026-11-22T12:02:00Z",
+      "text": "131 degrees at 29 colleges whose catalog names a general education pattern but prints no units for it are filed with that named gap. A second read held 21 that print a general education figure, which a free step reads."
+    },
     {
       "at": "2026-11-21T16:38:00Z",
       "text": "Ten programs at Clovis and Glendale whose printed units do not reach the total their catalog prints are filed with that named gap, so each counts as collected, and Glendale's 02570 now passes after a repeat step and a reread."
@@ -860,6 +892,12 @@
       "active": 20282,
       "complete": 15334,
       "colleges": 118
+    },
+    {
+      "day": "2026-11-22",
+      "active": 20282,
+      "complete": 15349,
+      "colleges": 118
     }
   ],
   "next_run": {
@@ -868,8 +906,8 @@
     "at": "2026-11-20T06:12:00Z"
   },
   "harvest": {
-    "day": "2026-11-21",
-    "gaps": 3405,
+    "day": "2026-11-22",
+    "gaps": 3407,
     "parts": {
       "links": {
         "catalog": [
@@ -890,7 +928,7 @@
         20282
       ],
       "coci": [
-        17133,
+        17145,
         20282
       ],
       "outcomes": {
@@ -899,12 +937,12 @@
           88736
         ],
         "plo": [
-          17133,
+          17145,
           20282
         ]
       },
       "careers": [
-        16155,
+        16167,
         20282
       ]
     }
