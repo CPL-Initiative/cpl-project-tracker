@@ -837,6 +837,92 @@
           "aria-label": code + " at " + x.college + ". Show its courses and settle it.", text: x.college }), has ? " (" + has + (sv && sv.common ? ", saved" : "") + ")" : " (no common subject code)"]);
       })), ["."]));
   }
+  /* One Save that settles a code's common subject code at every college on file using it (#3655 item 0, S705;
+     d-subjects-one-save-every-college-credit-forms-s705). It writes one kb_curation row per college, keyed as that
+     college's own credit form keys it (credit, or whole where COCI lists no course), under the reviewer's own email.
+     A college whose code a person or a filing already settled keeps that decision (person-settled wins), the
+     reviewer's own save keeps its title, and a noncredit-only code keeps its own forms: each COCI noncredit category
+     takes the code its noncredit MQ discipline names, so no one code fits them all. */
+  function everyPlan(M, code, k) {
+    var plan = { write: [], same: [], other: [], nc: [] };
+    M.list.forEach(function (x) {
+      var r = x.rows.filter(function (q) { return q.code === code; })[0];
+      if (!r) return;
+      var band = bandOf(r), sv = savedOf(r);
+      if (band === "noncredit") { plan.nc.push({ x: x, r: r }); return; }
+      if (sv && !mine(sv)) { plan.other.push({ x: x, r: r, sv: sv }); return; }
+      if (k && sv && !sv.moved && sv.common === k) { plan.same.push({ x: x, r: r }); return; }
+      var value = {};
+      if (sv && sv.title) value.local_title = sv.title;
+      if (k) value.common_code = k;
+      plan.write.push({ x: x, r: r, band: band, key: saveKey(x.slug, code, band), mapKey: x.slug + "|" + code + "|" + band, value: value });
+    });
+    return plan;
+  }
+  function names(items, extra) {
+    return items.map(function (it) { return it.x.college + (extra ? extra(it) : ""); }).join("; ");
+  }
+  function everyCollege(M, slug, code, row) {
+    if (!row || String(code).indexOf("|") >= 0 || !reviewer()) return null;
+    var others = M.list.filter(function (x) { return x.slug !== slug && x.rows.some(function (r) { return r.code === code; }); });
+    if (!others.length) return null;
+    var pre = "csb-all", sv0 = savedOf(row);
+    var co = el("input", { type: "text", id: pre + "-code", cls: "csb-input csb-input-code", maxlength: "4", autocomplete: "off", spellcheck: "false",
+      autocapitalize: "characters", list: COMMON ? "csb-ed-codes" : null, "aria-describedby": pre + "-code-msg" });
+    co.value = (sv0 && sv0.common) || row.common || "";
+    var cmsg = el("p", { cls: "csb-ed-msg", id: pre + "-code-msg" });
+    var status = el("p", { cls: "csb-ed-msg", id: pre + "-status", role: "status", tabindex: "-1", text: SAID[pre + "|" + code] || "" });
+    var save = el("button", { type: "button", cls: "csb-word", id: pre + "-save", text: "Save at every college" });
+    var plan0 = everyPlan(M, code, "");
+    var left = [];
+    if (plan0.other.length) left.push(el("p", { cls: "csb-note", id: pre + "-other" }, ["Kept as a person settled them: " + names(plan0.other, function (it) {
+      return it.sv.common ? " (" + it.sv.common + ")" : " (a title only)"; }) + "."]));
+    if (plan0.nc.length) left.push(el("p", { cls: "csb-note", id: pre + "-nc" }, ["Settled on their own noncredit forms, one per COCI noncredit category: " + names(plan0.nc) + "."]));
+    var box = el("section", { cls: "csb-edit", id: pre, "aria-labelledby": pre + "-h" }, [
+      el("h4", { cls: "csb-edit-head", id: pre + "-h", text: "Settle " + code + " at every college" }),
+      el("p", { cls: "csb-note", id: pre + "-rule", text: "One Save writes this common subject code for " + code + "’s credit courses at each of the "
+        + fmt(plan0.write.length + plan0.same.length) + (plan0.write.length + plan0.same.length === 1 ? " college" : " colleges")
+        + " on file that use the code and have no other person’s decision on it: " + (names(plan0.write.concat(plan0.same)) || "none") + "."
+        + " Each save is yours, under your sign-in, and Take it back on each college’s form removes it." })]
+      .concat(left, [
+        el("div", { cls: "csb-ed-field" }, [el("label", { "for": pre + "-code", text: "Common subject code at every college" }), co, cmsg]),
+        el("p", { cls: "csb-ed-row" }, [save]), status]));
+    save.addEventListener("click", function () {
+      var k = String(co.value || "").trim().toUpperCase();
+      cmsg.textContent = ""; status.textContent = "";
+      if (!k) { status.textContent = "Type a common subject code, then save."; return; }
+      if (!COMMON) { cmsg.textContent = "The list of common subject codes could not be read, so no code can be checked. Nothing was saved."; return; }
+      if (!COMMON[k]) { cmsg.textContent = k + " is not a common subject code on the Common Subjects Reference. Type a code it holds, such as KINE for Kinesiology. Nothing was saved."; return; }
+      var plan = everyPlan(M, code, k);
+      if (!plan.write.length) { status.textContent = "Nothing to save: every college listed already holds your save of " + k + "."; return; }
+      save.disabled = true;
+      status.textContent = "Saving at " + fmt(plan.write.length) + (plan.write.length === 1 ? " college…" : " colleges…");
+      var done = [], bad = [], stop = null;
+      var chain = plan.write.reduce(function (p, it) {
+        return p.then(function () {
+          if (stop) { bad.push(it); return; }
+          return writeSave(it.key, it.value).then(function (res) {
+            if (!res.ok) { bad.push(it); if (res.lapsed) { LAPSED = true; stop = "lapsed"; } return; }
+            done.push(it);
+            SAVED[it.mapKey] = { title: it.value.local_title || "", common: k, at: new Date().toISOString(), by: res.email || "",
+              label: "a reviewer", decidedBy: "", key: it.key, mapKey: it.mapKey };
+          }, function () { bad.push(it); });
+        });
+      }, Promise.resolve());
+      chain.then(function () {
+        if (done.length) LAPSED = stop === "lapsed";
+        var said = done.length ? "Saved " + k + " at " + fmt(done.length) + (done.length === 1 ? " college: " : " colleges: ") + names(done) + "." : "";
+        if (bad.length) said += (said ? " " : "") + "Not saved at " + names(bad) + (stop === "lapsed" ? ": your sign-in has ended. Sign in again, then save." : ". Only a reviewer on the list may save; press Save again to retry.");
+        SAID[pre + "|" + code] = said;
+        if (!done.length) { save.disabled = false; status.textContent = said; return; }
+        if (!VIEW.root || !VIEW.M) return;
+        render(VIEW.root, VIEW.M, viewPath());
+        var fx = VIEW.root.querySelector("#" + pre + "-status");
+        if (fx && fx.focus) fx.focus();
+      });
+    });
+    return box;
+  }
   function panelDraw(root, M) {
     var old = root.querySelector("#csb-panel");
     if (old) old.parentNode.removeChild(old);
@@ -859,6 +945,7 @@
           + (common ? "Common subject code " + common + "." : "No common subject code yet.") }),
         row ? editBlock(c, row) : null,
         elsewhere(M, slug, code),
+        everyCollege(M, slug, code, row),
         body])]);
     Array.prototype.forEach.call(panel.querySelectorAll("button[data-csb-code]"), function (b) {
       b.addEventListener("click", function () { open(panelPath(b.getAttribute("data-csb-slug"), b.getAttribute("data-csb-code"))); });
