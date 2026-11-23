@@ -1,0 +1,28 @@
+{
+ "_what": "The attempts to read a college's local subject titles, one list per college and way, in the ladder's order: the catalog's course descriptions (catalog), the catalog system's public data (system: curriQunet, eLumen), the class schedule, HTML or PDF (schedule), and a department list (department). kb/_subject_sources.py reads this file with the titles file and writes kb/status/subject_sources.json, the Subjects tab's Colleges by source view. Only what the titles file cannot show goes here: a probe sent, a way that is blocked, a read the titles file does not mark. Add an entry when an attempt starts or ends; never delete one.",
+ "_rule": "status is read, probing or blocked. date is the day of the attempt (YYYY-MM-DD). note says what was tried or found in plain words. file names the read plan or filed file, when one exists. by names the session or person who made the attempt. The newest entry for a way is that way's status; an older one stays as its history.",
+ "_ladder": "d-subject-title-sources-ladder-s712 (S712, with Sam, 2026-11-23). COCI and the MIS reports carry no subject names (Sam checked), so neither is a way.",
+ "colleges": {
+  "allan_hancock": {
+   "system": [
+    {"status": "probing", "date": "2026-11-23", "note": "The curriQunet catalog's Courses node (28544) and its 20 children, read to see whether they are subjects named with their codes.", "file": "kb/college_reads/s712_allan_hancock_subject_list_2.json", "by": "S712 SkyPuffin"}
+   ]
+  },
+  "antelope_valley": {
+   "system": [
+    {"status": "probing", "date": "2026-11-23", "note": "The eLumen courses view, read to see whether it lists each subject as Name - CODE, as Bakersfield's does.", "file": "kb/college_reads/s712_antelope_valley_subject_list_2.json", "by": "S712 SkyPuffin"}
+   ]
+  },
+  "bakersfield": {
+   "system": [
+    {"status": "probing", "date": "2026-11-23", "note": "The eLumen courses view lists every subject as Name - CODE in one public call (f-elumen-courses-view-lists-subjects-s712); the filer is still to write.", "file": "kb/college_reads/s712_bakersfield_subject_list.json", "by": "S712 SkyPuffin"}
+   ]
+  },
+  "clovis_community": {
+   "catalog": [
+    {"status": "blocked", "date": "2026-11-23", "note": "cloviscollege.edu did not answer from the session; Sam pasted the catalog contents (PDF page 3), filed as kb/hand_filed_catalogs/subjects/clovis_community.json.", "file": "kb/hand_filed_catalogs/subjects/clovis_community.json", "by": "S715 SkyAlbatross"},
+    {"status": "read", "date": "2026-11-23", "note": "Read from Sam's paste of the catalog contents.", "file": "kb/hand_filed_catalogs/subjects/clovis_community.json", "by": "Sam"}
+   ]
+  }
+ }
+}

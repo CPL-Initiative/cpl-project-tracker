@@ -386,6 +386,11 @@ jobs:
       # courses under the new code at that college. Pure stdlib.
       - name: Subject code history (kb/subject_code_history.py)
         run: python3 tests/subject_code_history_test.py
+      # Every college's subject titles by source (kb/_subject_sources.py, S717): one row per college, a status per way in
+      # the ladder's order, No system off curriQunet and eLumen, the register's newest attempt wins, a probe is Next,
+      # and the committed file is what a build writes. Pure stdlib.
+      - name: Subject sources (kb/_subject_sources.py)
+        run: python3 tests/subject_sources_test.py
       # The Subjects card's two files in the daily build (S695): both builders run after their inputs' steps with
       # --if-changed, each fingerprint ignores its daily stamp, and a rerun on the same inputs writes nothing. Pure stdlib.
       - name: Subjects card in the daily build (--if-changed fingerprints)

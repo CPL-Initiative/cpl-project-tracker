@@ -372,6 +372,9 @@ python3 kb/_outline_hunt.py || { git checkout -- kb/status/outline_hunt.json 2>/
 # Every local subject code statewide, with its colleges and a recommended common code (kb/_statewide_subject_codes.py,
 # S712): it reads the members this build just wrote and the subject decisions synced above.
 python3 kb/_statewide_subject_codes.py || { git checkout -- kb/status/statewide_subject_codes.json 2>/dev/null || true; echo "::warning title=Statewide subject codes not rebuilt::kb/_statewide_subject_codes.py failed; kb/status/statewide_subject_codes.json is yesterday's."; }
+# Every college's subject titles by source (kb/_subject_sources.py, S717): it reads the statewide list and the titles
+# file this build just wrote, so it runs after both.
+python3 kb/_subject_sources.py --if-changed || { git checkout -- kb/status/subject_sources.json 2>/dev/null || true; echo "::warning title=Subject sources not rebuilt::kb/_subject_sources.py failed; #commons/subjects/sources reads yesterday's kb/status/subject_sources.json."; }
 STEP
 
 # ── Step 4b: Re-run row Trust-Card auditor ────────────────────
