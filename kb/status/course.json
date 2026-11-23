@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 703,
-  "moniker": "SkyDovekie",
+  "session": 713,
+  "moniker": "SkyKittiwake",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_704_handoff.md",
+  "handoff": "docs/session_714_handoff.md",
   "calls": [
     {
       "title": "Confirm Kinesiology's 627 where the descriptions and TOP both agree?",
@@ -106,10 +106,18 @@
   "written_at": "2026-11-22T15:13:06Z",
   "project": "course",
   "next_step": {
-    "title": "Load the four Peralta colleges' course outlines",
-    "text": "San Diego College of Continuing Education's outlines are loaded. Peralta's full read of 1,869 pages was running at the checkpoint; the next session runs a dry run and then the load at Laney, Merritt, College of Alameda and Berkeley City. City College of San Francisco's next read can run on its refreshed check."
+    "title": "Read the next college's course outlines",
+    "text": "The four Peralta colleges and City College of San Francisco are loaded. Once City College of San Francisco's pull request merges, the next session asks the next-college helper on main which college comes next and starts its outline read. Peralta's remaining label lines wait for the night's one follow-up."
   },
   "changes": [
+    {
+      "at": "2026-11-23T09:37:00Z",
+      "text": "City College of San Francisco's outlines were read again in four parts: learning outcomes for 3 more courses were loaded, and the other 1,416 matched the rows already live."
+    },
+    {
+      "at": "2026-11-23T07:04:00Z",
+      "text": "The four Peralta colleges' course outlines were loaded: 3,731 rows at Laney, Merritt, College of Alameda and Berkeley City, learning outcomes and objectives for each course, after the load set aside label lines and curriculum-system notes."
+    },
     {
       "at": "2026-11-22T14:07:00Z",
       "text": "The four Peralta colleges' outline pages are being read, 1,869 pages in five parts, after a 12-page trial counted 11 of 12. Each page is read for its outcomes alone."
