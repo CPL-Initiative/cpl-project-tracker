@@ -884,7 +884,7 @@
         "A department list: read at Cerritos.",
         "A person’s hand-over, where a site blocks our reader.",
         "COCI and the MIS reports carry no subject names.",
-        "Who: Sky, in the nightly data collection queue."]),
+        "Who: Sky, in the nightly data collection."]),
       act([["The colleges and their titles", "#commons/subjects"], ["Hand over a file or link", "#collect"]]),
       stage("Curate"),
       checkHead(2, "A Confident common code for every local code", L ? [el("strong", { text: fmt(L.pairs.Confident) }), " of " + fmt(L.totalPairs) + " pairs"] : ["TBA"]),
