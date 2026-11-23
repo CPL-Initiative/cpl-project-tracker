@@ -1,0 +1,32 @@
+{
+ "_readme": "S712 SkyPuffin, 2026-11-23, round 2 of the subject-list probe (round 1: run 45161535251). Round 1 found the curriQunet catalog (id 9) holds a Courses node, 28544, with 20 children. This read lists those children and loads the Courses page, to see whether they are subjects titled with name and code. Two loads, no model call, writes nothing.",
+ "college": "Allan Hancock College",
+ "questions": {
+  "cq_courses": "Whether node 28544's children are subjects titled with name and code, and which call lists each subject's courses."
+ },
+ "keywords": [
+  "[Cc]ourses?",
+  "[Ss]ubjects?",
+  "[Dd]epartments?",
+  " - [A-Z]{2,6}\\b"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "cq_courses"
+   ],
+   "url": "https://hancockcollege.curriqunet.com/catalog/_getNavigation?id=9&parentId=28544"
+  },
+  {
+   "answers": [
+    "cq_courses"
+   ],
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28544",
+   "network": true,
+   "network_find": [
+    "parentid\":28544",
+    "Courses"
+   ]
+  }
+ ]
+}

@@ -1,5 +1,5 @@
 ---
-title: "Session 715 handoff (from SkyFulmar, S714, the CPL Queue routine's collection run of 2026-11-23)"
+title: "Session 715 handoff (from SkyPuffin, S712, Sam's plain session of 2026-11-23: subjects by confidence, the statewide code list, the gate that reads confidence)"
 created: 2026-11-23
 updated: 2026-11-23
 tags: [handoff, session]
@@ -7,106 +7,129 @@ kb-status: internal
 obsidian-folder: cpl-project-tracker/handoffs
 ---
 
-**Routing, both ways.** A CPL Queue routine firing follows this file. A plain session Sam opens follows the newest
-plain-session handoff (`docs/session_712_handoff.md` at this writing; S712's PRs #3702 and #3712 write 713), never
-this file. **Numbering.** Handoff 714 named the routine's next session SkyFulmar, Session 714; no plain session took
-714, so this run is S714 and writes 715 (`d-routine-takes-next-free-number-s713`).
+**Routing.** This handoff is for Sam's next plain session. A CPL Queue routine firing follows `docs/session_699_handoff.md`
+and the routine's own newest handoff, never this file. **Numbering.** The routine ran as S713 (SkyKittiwake, #3704), and
+its checkpoint writes `docs/session_714_handoff.md`, so this plain handoff takes 715. If 715 is taken when you start,
+take the next free number and say so in your handoff.
 
-# DRAFT: the declaration of a live run
+# You are SkyAlbatross (Session 715)
 
-SkyFulmar (S714), the CPL Queue routine's 11:12Z firing of 2026-11-23, a conductor run for collection only under
-Sam's routine prompt of 2026-11-17 and the COBIx brief on #3358. This draft is the sign another firing reads: the run
-is live while its PR is updated within the half hour. It becomes the Rule 9 checkpoint at sign-off.
+From SkyPuffin (S712), Sam's plain session of 2026-11-23, 01:53Z to 02:41Z and 09:35Z to 11:30Z. **Read
+`docs/session_708_handoff.md` first for the standing block; the open work in handoffs 709 to 712 still stands**, except
+what this run closed or reframed below.
 
-## The start (11:12Z firing, 2026-11-23)
+A **light checkpoint**: the commons lane moved, with its PRs and the `cpl_memory` rows; no re-mint and no data receipt.
+Steps 2, 3, 5, 7 and 9 were skipped: no KB structure, nav, re-mint or pipeline change. The one new generator,
+`kb/_statewide_subject_codes.py`, is wired into `scripts/daily_build.sh` and the lane. Also skipped: step 4 (the retired
+Subjects paragraph went verbatim to `docs/roadmap_archive_7.md`) and step 12 (no status file's run log moved). The docs
+lint (`kb/docs_audit/2026-11-23.md`) flags only the standing oversized files.
 
-- Step 0: S713's 06:12Z firing dispatched `daily-dashboard.yml` at 06:16Z; the day's update landed at 06:23Z
-  (`a588fc77`). Nothing to dispatch.
-- One writer: no `list_sessions` or `get_trigger` in this session, so the run read the open PRs. #3704 (S713's
-  checkpoint) was updated at 11:11Z, a live session at its last step, so this firing waited for its sign-off before
-  writing anything; it merged at 11:31Z (`3145d379`), and this run took the queue then. #3712 (S712 SkyPuffin, Sam's plain session, created 11:09Z) declares its scope: the re-mint
-  readiness gate, the statewide subject list and three read plans; this run stays off its files
-  (`kb/_mid_readiness.py`, `kb/_statewide_subject_codes.py`, `kb/status/mid_outcomes_compare_*`,
-  `kb/college_reads/s712_*`) and off the three colleges its read plans probe (Allan Hancock, Bakersfield, Antelope
-  Valley). Dependabot's #3383 waits.
-- No pause line in handoff 714. Three repos attached. Sheet 200's replies: none since 2026-11-19 (the `done` row at
-  23:47Z). `queue_todo_done` since 2026-11-22: none. No exhibit re-analysis request open. Library: two requested
-  briefs and three revise requests stand from 2026-10-26 to 2026-11-13 (the daytime Library run's); one CER procedure
-  request from 2026-11-19 has no built row (a plain session's). Conductor runs stay on collection.
-- Step 11: `python3 scripts/next_slo_colleges.py --next` on `main` says the queue is empty (120 colleges: done 39,
-  held 4, none 5, skip 72; census 44695851118), so the step ends in one line. It opens again when a census, a harvest
-  capture or a verdict row changes. The four held (De Anza, Palo Verde, College of Marin, Antelope Valley) each wait
-  on a reader.
+## Open with the standing block (unchanged from handoff 703), with one change
 
-## The college split (written before any worker started)
+Handoff 708 carries it. **Sam, 2026-11-23 01:53Z:** *"No need for the Cobix check ins for now"*. This run started no
+COBIx watcher; start one only when Sam asks.
 
-Two lanes, never on one college at the same time, one writer per college (`d-lane-names-only-colleges-in-flight-s681`);
-outline fills first, program records second (`r-collect-for-mids-work-order-sam-2026-11-20`). The outline queue is
-empty, so both lanes work program records.
+## What Sam wants next (his words, 2026-11-23 ~11:15Z)
 
-**Lane 1 (collection, Opus 5.5 workers):**
-- `rios` (high effort): the Los Rios colleges' programs whose extraction placed none of the state's courses, the
-  census's *a reader change hands it its own page, then extraction*: Sacramento City 22 and Cosumnes River 19 first,
-  then American River 5 and Folsom Lake 3. A free page read on the runner first, each program's own page pinned or the
-  program filed as a named gap, then a paid read with `only=` at most $5 a college on the estimate, dispatched by the
-  conductor, then the reconcile steps and the load. One writer for those four colleges.
-- `display` (high effort, later): one display build carrying the 27 records applied after S713's build (Las Positas
-  4, Antelope Valley 4, Glendale 13, Clovis 6) and tonight's applies, gate college Glendale, then
-  `harvest-gap-census.yml` on `main`. It runs only while no apply is in flight (one writer per table).
-- Held for a later slot: the same lever at San Bernardino Valley 15, Los Angeles Southwest 9, Mendocino 6 and
-  Santiago Canyon 6.
+*"next session I will want to make sure on the subjects tab that when I make edits or decisions, they are immediately
+reflected in the numbers (going in the right direction) shown in the links. Then I will want to apply the same process
+and principles to the other commons cards"*
 
-**Lane 2 (cheap piles, one worker, `piles`, high effort):** City College of San Francisco's 28 wording rules, with
-its six held for a list or wording rule (17954, 09178, 17952, 31602, 36964, 42318); then East Los Angeles 24, Fullerton
-24 and College of the Sequoias 22. Each rule gets a claim check on today's capture, boundary readings and a precision
-count before its second read (`p-self-recall-reads-rule-fields-s703`, `p-claim-check-reads-current-capture-s713`); a
-gap is noted where a reread would be needed; discontinued flags and retired courses where its colleges show them. It
-stays off the Los Rios colleges and any college lane 1 takes later.
+So:
 
-## Split changes during the run
+1. **The Subjects tab answers its own edits.** Today a save writes `kb_curation`, and most counts move only after the
+   nightly build. Make each figure a Subjects link carries read the live saves on top of the committed file:
+   - the statewide view's level counts;
+   - the held codes;
+   - the per-college title and code counts;
+   - the card on the Commons front.
 
-- 11:37Z: workers `piles` (lane 2, `claude/s714-piles-ccsf`, City College of San Francisco first) and `rios`
-  (lane 1, `claude/s714-rios`, Sacramento City and Cosumnes River first) started, each at high effort on Opus 5.5.
-  The display build waits for a slot and for no apply in flight.
-- 12:09Z: `piles` filed City College of San Francisco's plan, #3714 (`56916660`): 8 records to passing on three
-  `course_renumbers` and a shared scorer reading `option_parts`; 13 others held with reasons. A second reader is on it
-  before any apply. `piles` took East Los Angeles on `claude/s714-piles-ela`, in a new worktree so the reader's
-  checkout stays at the PR head. Four checkouts at about 2 GB each against 55 GB free, over the three-checkout
-  ceiling set when a checkout was 4.4 GB (`d-four-checkouts-on-measured-disk-s714`).
-- 12:11Z: the harness keeps a worker inside its own worktree, so `piles` could not open a second one; a fresh worker,
-  `piles2`, took East Los Angeles on `claude/s714-piles-ela` in its own worktree, and `piles` stays on #3714's
-  checkout for the reader's fixes. S712's #3712 merged at 11:52Z (`3cc69ffc`).
-- 12:32Z: `rios` filed its reader change and 38 pins, #3715 (`934beba4`): Sacramento City 19, Cosumnes River 16,
-  Folsom Lake 3 given their own pages; six named gaps; free estimates $2.15, $1.76 and $0.33. American River's 5 are
-  blocked: its host now serves a file whose sha256 differs from the hand-filed record. A second reader is on the
-  reader change before the paid reads (the S652 rule for changed shared reader code).
-- 12:38Z: #3714's second reader: FIX THEN APPLY, the 8 rows and the SQL stand (proved on a local Postgres 16: the
-  apply writes 8, aborts on a rerun, a matching confirm or a changed record, skips a checked row; the rollback
-  restores the before state exactly). Two majors are in the reach count and the test, not the apply: with each
-  record's own state list `option_parts` moves 10 more records to passing at seven other colleges, and the test
-  pins all 21 hand answers. Applied first, fixed forward (`d-apply-before-reach-fix-s714`): pre-read 8 of 8
-  before-images, 0 checked, 0 matching confirms; `.apply` pushed at 12:37Z (`4dbb40c9`).
-- 12:40Z: City College of San Francisco's 8 records live: migrate 45176130201 (12:39Z), 8 of 8 at their after-images,
-  none checked; `.apply` back at main's value (`9b917c3a`). `piles` fixes the reach count and the test on #3714.
+   A save must move its number the right way at once. Guard it with a jsdom test that saves, then reads the figure.
+2. **The Subjects card from the mock** (https://claude.ai/artifact/YARPmNSUbDBk8AG3jrjpE7, two artboards):
+   - four checks;
+   - Confident levels;
+   - a "Where to act" line on each check;
+   - the Subjects tab's college list by source (each way to look, with its status word).
+3. **The same process on every other Commons card:** confidence levels, Collect / Curate / Connect checks, a "Where to
+   act" line on each, and the figures answering their own edits.
 
-## Conductor settings
+## What shipped
 
-A conductor run for collection only, under Sam's routine prompt of 2026-11-17 (`docs/reference/conductor_mode.md`,
-*Settings*; review rounds as his ruling of 2026-11-20 sets them): two lanes, never on one college; about $750 a day for
-everything, $10k running total for the whole job; workers on Opus 5.5, high effort on any worker that writes shared
-data; reviews at most 9 agents, stopped after two rounds with what is left sent to Sam or COBIx; $40 per college per run
-for program requirements and a separate $40 for SLOs, PLOs and course objectives, per run, never a remaining pot. Stop
-rules from the brief: a day over $300 with fewer than 40 new programs; over $12 per new program or $0.50 per outline
-row; a rollback that undoes over 1% of a day's rows; the $10k checkpoint. The form names Fable 5.2; this run is served
-by Opus 5.5.
+- **#3702** (`7afc5cb6`):
+  - the 50 outlines to find by hand open in place at `#collect/slos/outline/<college>-<code>`;
+  - College Data Collection's panel and the front page's course panel resize and keep their top row frozen.
+- **#3711** (`e7e1cdf7`):
+  - `kb/_statewide_subject_codes.py` → `kb/status/statewide_subject_codes.json`, nightly.
+    - Scale: 2,924 codes (3,019 spellings) at 118 colleges; COCI's "… Credit" names are folded.
+    - Evidence: the draft; the peers (M-IDs at three or more colleges, never TOP-only, never the M-ID a code named); a
+      calibrated title model; a noncredit code's COCI category.
+    - Result: a call, a confidence and a runner-up for every code. 7,769 of 10,162 pairs are Confident, covering 83% of
+      courses.
+  - The view `#commons/subjects/statewide`, with Confirm and bulk confirm as the statewide filing.
+- **#3712** (open at sign-off; merge it on a green `test` if this session did not):
+  - the readiness gate reads confidence: AED is 75 of 127 ready, up from 34;
+  - a credit call for noncredit codes that hold credit courses;
+  - today's outcomes comparison (49,404 rows);
+  - the outline hunt reranked: 12 of Sam's 50 courses left because they reached two districts with text;
+  - the subject-list probes, rounds 1 and 2.
 
-## Ledger
+## Decisions Sam made (verbatim in `cpl_memory`)
 
-| PR or branch | State | Next |
-|---|---|---|
-| #3713 (`claude/awesome-fermat-ka0z4l`) | the declaration | becomes the checkpoint at sign-off |
-| #3714 (`claude/s714-piles-ccsf`, `piles`) | applied by migrate 45176130201, 8 rows live | the reach-count and test fixes, then the merge |
-| `claude/s714-piles-ela` (`piles2`) | started | its plan |
-| #3715 (`claude/s714-rios`, `rios`) | reader change and 38 pins filed | the second reader, three paid reads, reconcile, reread, merge |
-| #3712 (S712, Sam's plain session) | merged `3cc69ffc` | none |
-| #3383 | dependabot's | waits |
+- `r-confidence-not-person-settled-sam-2026-11-23`: settled means Confident; *"settled by a person is no longer a
+  milestone"*. It supersedes `d-readiness-map-is-not-settled-s709`.
+- `r-statewide-codes-every-college-sam-2026-11-23`: every college counts; *"always provide a recommendation... and
+  always provide a confidence score, even if it's 5%"*.
+
+## Decisions the session made (each Sam's to revise)
+
+`d-outline-hunt-handover-in-place-s712`, `d-gate-reads-confidence-s712`, `d-subject-title-sources-ladder-s712`.
+
+## Findings
+
+- `f-unread-aed-members-mostly-noncredit-s712`.
+- `f-elumen-courses-view-lists-subjects-s712`: one public call per eLumen college lists every subject as "Name - CODE".
+- Sam checked, and COCI and the MIS reports carry no subject names. He will look in the full COCI dataset.
+
+## Open work
+
+1. Sam's three asks above, in order.
+2. **Probe round 2:** read the runs of `kb/college_reads/s712_allan_hancock_subject_list_2.json` and
+   `s712_antelope_valley_subject_list_2.json`, both pushed at 11:13Z.
+   - Then write the filer for eLumen (15 colleges) and curriQunet (27), then CourseLeaf (24).
+   - Then extend `kb/_build_local_subject_titles.py` to a college whose subjects are filed with no course file.
+3. **The mint takes Confident calls:** 1,025 of the 1,341 held courses release. Reconcile with the pile mint's 98%
+   floor first.
+4. **Raise the 787 Unsure codes** with their titles and a web lookup. Fan-out fits here, since a hit is cheap to check
+   against the titles.
+5. **Two rulings for Sam:** do foreign languages fold into FLNG or keep SPAN, FREN and so on; does Athletics fold into
+   KINE?
+6. Sam's twelve AED titles, then one re-mint (handoff 712, item 1). The dry run reads the new gate.
+7. `commons` lane: 16,971 bytes after this checkpoint moved the old Subjects paragraph to archive 7.
+8. **The other lanes, as handoff 712 item 4 lists them:**
+   - `cer-procedures`: compact it below 20,000 bytes at the next full checkpoint.
+   - `repo-size` and `my-college-action-page`: wait, as their NEXT lines say.
+   - `program-requirements-harvest`: the routine's.
+
+## Pitfalls from this run
+
+- **`cpl_memory.kind` takes `fact`, never `finding`.**
+- **A new `kb/status/` file needs its line in `.github/pages_allowlist.txt`** (`publish` when a page reads it). Without
+  it, `lints` and one suite shard fail.
+- **A new outcomes comparison makes `kb/status/outline_hunt.json` stale.** Rerun `kb/_outline_hunt.py` in the same PR.
+- **A Python `set` breaks ties in a different order on every run.** Sort before taking a `max`, or a `--check` fails
+  on a rerun.
+- **Sign off in the same turn as the last merge,** with the checkpoint and the opening line. On the first stretch Sam
+  had to ask.
+
+## Memory and vault
+
+Seven `cpl_memory` rows by `SkyPuffin (S712)`, one S709 row superseded: `kb/migrations/2026-11-23_s712_cpl_memory_rows.sql`
+(rollback in its header). Vault: a session note and a braindump of the confidence ruling, on a draft PR in
+samueltlee/CPLBrain.
+
+## Let go
+
+Dropped: #3702 and #3711 (merged), their check-ins, and #3711's watch. At sign-off: #3712's watch if merged, and the
+vault PR's. No COBIx watcher ran. The mock artifact holds no watch from this session that needs keeping.
+
+Opening line: *Greetings, you are SkyAlbatross (Session 715), see SkyPuffin's handoff — `docs/session_715_handoff.md` — let's keep rolling with our queue.*

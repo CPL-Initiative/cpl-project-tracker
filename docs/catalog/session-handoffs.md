@@ -15,11 +15,12 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-671 document(s).
+672 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
-| 715 | [Session 715 handoff (from SkyFulmar, S714, the CPL Queue routine's collection run of 2026-11-23)](../session_715_handoff.md) | 2026-11-23 |
+| 716 | [Session 716 handoff (from SkyFulmar, S714, the CPL Queue routine's collection run of 2026-11-23)](../session_716_handoff.md) | 2026-11-23 |
+| 715 | [Session 715 handoff (from SkyPuffin, S712, Sam's plain session of 2026-11-23: subjects by confidence, the statewide code list, the gate that reads confidence)](../session_715_handoff.md) | 2026-11-23 |
 | 714 | [Session 714 handoff (from SkyKittiwake, S713, the CPL Queue routine's collection run of 2026-11-23)](../session_714_handoff.md) | 2026-11-23 |
 | 712 | [Session 712 handoff (from SkyRazorbill, S711, Sam's plain session of 2026-11-23: course moves reach the re-mint gate, the 50 outlines to find)](../session_712_handoff.md) | 2026-11-23 |
 | 711 | [Session 711 handoff (from SkyGuillemot, S710, Sam's plain session of 2026-11-22: the AED scope's re-mint dry run)](../session_711_handoff.md) | 2026-11-22 |

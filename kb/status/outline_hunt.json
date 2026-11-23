@@ -3,21 +3,21 @@
  "_rule": "M-IDs only, never C-ID or CCN; CTE by the TOP manual's asterisk; credit; at least 5 districts; fewer than two districts print enough outcome text; no shell titles. Ranked by districts reached per outline needed. Each course is a member in a district with no outcome text for its M-ID yet, at a college already read where one is, nearest the M-ID's title.",
  "_sources": {
   "members": "unified_courses_members.js generated 2026-11-23 06:20",
-  "compare": "kb/status/mid_outcomes_compare_2026-11-22.json.gz",
-  "compare_date": "2026-11-22",
+  "compare": "kb/status/mid_outcomes_compare_2026-11-23.json.gz",
+  "compare_date": "2026-11-23",
   "cte": "kb/coci_minted_courses.json"
  },
  "totals": {
   "listed": 50,
-  "mids": 50,
-  "candidate_mids": 590,
+  "mids": 49,
+  "candidate_mids": 549,
   "skipped": {
    "not an M-ID": 564,
    "not CTE": 40541,
    "not credit": 1325,
    "shell title": 14,
    "few districts": 5936,
-   "already comparable": 594
+   "already comparable": 635
   }
  },
  "courses": [
@@ -103,22 +103,6 @@
   },
   {
    "rank": 6,
-   "college": "Feather River College",
-   "college_read": true,
-   "code": "ADMJ 214",
-   "course_title": "Report Writing",
-   "units": 1,
-   "mid": "CRIM M1309",
-   "mid_title": "Report Writing",
-   "discipline": "Administration of Justice",
-   "districts": 17,
-   "members": 27,
-   "districts_with_text": 1,
-   "class_now": "Split",
-   "why": "one more district's outline makes this M-ID comparable"
-  },
-  {
-   "rank": 7,
    "college": "Allan Hancock College",
    "college_read": true,
    "code": "NURS 370",
@@ -134,7 +118,7 @@
    "why": "one more district's outline makes this M-ID comparable"
   },
   {
-   "rank": 8,
+   "rank": 7,
    "college": "Lake Tahoe Community College",
    "college_read": true,
    "code": "ART 142",
@@ -150,7 +134,7 @@
    "why": "one more district's outline makes this M-ID comparable"
   },
   {
-   "rank": 9,
+   "rank": 8,
    "college": "Mt. San Antonio College",
    "college_read": true,
    "code": "R TV 1",
@@ -166,23 +150,7 @@
    "why": "one more district's outline makes this M-ID comparable"
   },
   {
-   "rank": 10,
-   "college": "Citrus College",
-   "college_read": false,
-   "code": "DENT 201",
-   "course_title": "Dental Radiology",
-   "units": 2,
-   "mid": "DENT M1083",
-   "mid_title": "Dental Radiology",
-   "discipline": "Dental Technology",
-   "districts": 14,
-   "members": 24,
-   "districts_with_text": 1,
-   "class_now": "Not enough text",
-   "why": "one more district's outline makes this M-ID comparable"
-  },
-  {
-   "rank": 11,
+   "rank": 9,
    "college": "Rio Hondo College",
    "college_read": true,
    "code": "ADN 251",
@@ -198,9 +166,9 @@
    "why": "one more district's outline makes this M-ID comparable"
   },
   {
-   "rank": 12,
+   "rank": 10,
    "college": "Berkeley City College",
-   "college_read": false,
+   "college_read": true,
    "code": "ASL 202A",
    "course_title": "Fingerspelling and Numbers I",
    "units": 1,
@@ -214,23 +182,7 @@
    "why": "one more district's outline makes this M-ID comparable"
   },
   {
-   "rank": 13,
-   "college": "Antelope Valley College",
-   "college_read": false,
-   "code": "WELD 130",
-   "course_title": "Advanced Shielded Metal Arc Welding",
-   "units": 2,
-   "mid": "WELD M1015",
-   "mid_title": "Advanced Shielded Metal Arc Welding",
-   "discipline": "Welding",
-   "districts": 14,
-   "members": 16,
-   "districts_with_text": 1,
-   "class_now": "Not enough text",
-   "why": "one more district's outline makes this M-ID comparable"
-  },
-  {
-   "rank": 14,
+   "rank": 11,
    "college": "MiraCosta College",
    "college_read": false,
    "code": "AUTO 201",
@@ -246,7 +198,7 @@
    "why": "one more district's outline makes this M-ID comparable"
   },
   {
-   "rank": 15,
+   "rank": 12,
    "college": "Las Positas College",
    "college_read": true,
    "code": "AJ 87A",
@@ -262,7 +214,7 @@
    "why": "one more district's outline makes this M-ID comparable"
   },
   {
-   "rank": 16,
+   "rank": 13,
    "college": "Mt. San Antonio College",
    "college_read": true,
    "code": "ADJU 38",
@@ -278,23 +230,7 @@
    "why": "one more district's outline makes this M-ID comparable"
   },
   {
-   "rank": 17,
-   "college": "Riverside City College",
-   "college_read": true,
-   "code": "CUL 22",
-   "course_title": "Cake Decorating I",
-   "units": 2,
-   "mid": "CULN M1062",
-   "mid_title": "Cake Decorating",
-   "discipline": "Culinary Arts/Food Technology",
-   "districts": 13,
-   "members": 15,
-   "districts_with_text": 1,
-   "class_now": "Not enough text",
-   "why": "one more district's outline makes this M-ID comparable"
-  },
-  {
-   "rank": 18,
+   "rank": 14,
    "college": "Crafton Hills College",
    "college_read": true,
    "code": "FIRET 104",
@@ -310,7 +246,7 @@
    "why": "one more district's outline makes this M-ID comparable"
   },
   {
-   "rank": 19,
+   "rank": 15,
    "college": "Cerritos College",
    "college_read": false,
    "code": "ADN 200B",
@@ -326,7 +262,7 @@
    "why": "one more district's outline makes this M-ID comparable"
   },
   {
-   "rank": 20,
+   "rank": 16,
    "college": "Rio Hondo College",
    "college_read": true,
    "code": "ADN 253",
@@ -342,23 +278,7 @@
    "why": "one more district's outline makes this M-ID comparable"
   },
   {
-   "rank": 21,
-   "college": "Contra Costa College",
-   "college_read": true,
-   "code": "NURS 250",
-   "course_title": "Intermediate Medical Surgical Nursing",
-   "units": 5.5,
-   "mid": "NRSR M1147",
-   "mid_title": "Intermediate Medical Surgical Nursing",
-   "discipline": "Nursing",
-   "districts": 13,
-   "members": 13,
-   "districts_with_text": 1,
-   "class_now": "Not enough text",
-   "why": "one more district's outline makes this M-ID comparable"
-  },
-  {
-   "rank": 22,
+   "rank": 17,
    "college": "Crafton Hills College",
    "college_read": true,
    "code": "THART 164",
@@ -374,7 +294,7 @@
    "why": "one more district's outline makes this M-ID comparable"
   },
   {
-   "rank": 23,
+   "rank": 18,
    "college": "Moreno Valley College",
    "college_read": true,
    "code": "ADJ T1B",
@@ -390,7 +310,7 @@
    "why": "one more district's outline makes this M-ID comparable"
   },
   {
-   "rank": 24,
+   "rank": 19,
    "college": "Allan Hancock College",
    "college_read": true,
    "code": "FTEC 304",
@@ -406,39 +326,7 @@
    "why": "one more district's outline makes this M-ID comparable"
   },
   {
-   "rank": 25,
-   "college": "Allan Hancock College",
-   "college_read": true,
-   "code": "VOCE 7603A",
-   "course_title": "Landscape Construction",
-   "units": 0,
-   "mid": "HORT M1021",
-   "mid_title": "Landscape Construction",
-   "discipline": "Ornamental Horticulture",
-   "districts": 12,
-   "members": 15,
-   "districts_with_text": 1,
-   "class_now": "Not enough text",
-   "why": "one more district's outline makes this M-ID comparable"
-  },
-  {
-   "rank": 26,
-   "college": "Coastline Community College",
-   "college_read": true,
-   "code": "LAW C120",
-   "course_title": "Legal Research",
-   "units": 3,
-   "mid": "LEGL M1034",
-   "mid_title": "Legal Research",
-   "discipline": "Law",
-   "districts": 12,
-   "members": 14,
-   "districts_with_text": 1,
-   "class_now": "Not enough text",
-   "why": "one more district's outline makes this M-ID comparable"
-  },
-  {
-   "rank": 27,
+   "rank": 20,
    "college": "Cerritos College",
    "college_read": false,
    "code": "ADN 200A",
@@ -454,7 +342,7 @@
    "why": "one more district's outline makes this M-ID comparable"
   },
   {
-   "rank": 28,
+   "rank": 21,
    "college": "Allan Hancock College",
    "college_read": true,
    "code": "PHTO 7203B",
@@ -470,7 +358,7 @@
    "why": "one more district's outline makes this M-ID comparable"
   },
   {
-   "rank": 29,
+   "rank": 22,
    "college": "Allan Hancock College",
    "college_read": true,
    "code": "RE 303",
@@ -486,7 +374,7 @@
    "why": "one more district's outline makes this M-ID comparable"
   },
   {
-   "rank": 30,
+   "rank": 23,
    "college": "Palomar College",
    "college_read": true,
    "code": "AP C 719",
@@ -502,7 +390,23 @@
    "why": "one more district's outline makes this M-ID comparable"
   },
   {
-   "rank": 31,
+   "rank": 24,
+   "college": "City College of San Francisco",
+   "college_read": true,
+   "code": "CS 10",
+   "course_title": "Introduction to Computer Science",
+   "units": 4,
+   "mid": "COMP M1054",
+   "mid_title": "Introduction to Computer Science",
+   "discipline": "Computer Science",
+   "districts": 11,
+   "members": 17,
+   "districts_with_text": 1,
+   "class_now": "Confirmed",
+   "why": "one more district's outline makes this M-ID comparable"
+  },
+  {
+   "rank": 25,
    "college": "College of the Redwoods",
    "college_read": true,
    "code": "AJ 170",
@@ -518,23 +422,7 @@
    "why": "one more district's outline makes this M-ID comparable"
   },
   {
-   "rank": 32,
-   "college": "San Diego Mesa College",
-   "college_read": true,
-   "code": "CACM 101",
-   "course_title": "Sanitation, Safety, and Equipment",
-   "units": 3,
-   "mid": "CULN M1108",
-   "mid_title": "Culinary Safety and Sanitation",
-   "discipline": "Culinary Arts/Food Technology",
-   "districts": 11,
-   "members": 15,
-   "districts_with_text": 1,
-   "class_now": "Not enough text",
-   "why": "one more district's outline makes this M-ID comparable"
-  },
-  {
-   "rank": 33,
+   "rank": 26,
    "college": "City College of San Francisco",
    "college_read": true,
    "code": "DENT 70",
@@ -550,39 +438,7 @@
    "why": "one more district's outline makes this M-ID comparable"
   },
   {
-   "rank": 34,
-   "college": "Cerritos College",
-   "college_read": false,
-   "code": "PHAR 90",
-   "course_title": "Clinical Experience I",
-   "units": 3.5,
-   "mid": "DENT M1042",
-   "mid_title": "Clinical Experience 1",
-   "discipline": "Dental Technology",
-   "districts": 11,
-   "members": 14,
-   "districts_with_text": 1,
-   "class_now": "Split",
-   "why": "one more district's outline makes this M-ID comparable"
-  },
-  {
-   "rank": 35,
-   "college": "Cerritos College",
-   "college_read": false,
-   "code": "PHAR 95",
-   "course_title": "Clinical Experience II",
-   "units": 5,
-   "mid": "DENT M1043",
-   "mid_title": "Clinical Experience 2",
-   "discipline": "Dental Technology",
-   "districts": 11,
-   "members": 14,
-   "districts_with_text": 1,
-   "class_now": "Split",
-   "why": "one more district's outline makes this M-ID comparable"
-  },
-  {
-   "rank": 36,
+   "rank": 27,
    "college": "Allan Hancock College",
    "college_read": true,
    "code": "WFT 307",
@@ -598,7 +454,7 @@
    "why": "one more district's outline makes this M-ID comparable"
   },
   {
-   "rank": 37,
+   "rank": 28,
    "college": "Shasta College",
    "college_read": true,
    "code": "FTWO 121",
@@ -614,7 +470,7 @@
    "why": "one more district's outline makes this M-ID comparable"
   },
   {
-   "rank": 38,
+   "rank": 29,
    "college": "Shasta College",
    "college_read": true,
    "code": "FIRS 135",
@@ -630,7 +486,7 @@
    "why": "one more district's outline makes this M-ID comparable"
   },
   {
-   "rank": 39,
+   "rank": 30,
    "college": "San Diego College of Continuing Education",
    "college_read": true,
    "code": "OFSY 550",
@@ -646,7 +502,7 @@
    "why": "one more district's outline makes this M-ID comparable"
   },
   {
-   "rank": 40,
+   "rank": 31,
    "college": "American River College",
    "college_read": false,
    "code": "LA 368",
@@ -662,7 +518,7 @@
    "why": "one more district's outline makes this M-ID comparable"
   },
   {
-   "rank": 41,
+   "rank": 32,
    "college": "Butte College",
    "college_read": false,
    "code": "EH 20",
@@ -678,7 +534,7 @@
    "why": "one more district's outline makes this M-ID comparable"
   },
   {
-   "rank": 42,
+   "rank": 33,
    "college": "Mt. San Antonio College",
    "college_read": true,
    "code": "AGOR 52",
@@ -694,7 +550,7 @@
    "why": "one more district's outline makes this M-ID comparable"
   },
   {
-   "rank": 43,
+   "rank": 34,
    "college": "Cerritos College",
    "college_read": false,
    "code": "AUTO 130",
@@ -710,7 +566,7 @@
    "why": "one more district's outline makes this M-ID comparable"
   },
   {
-   "rank": 44,
+   "rank": 35,
    "college": "Allan Hancock College",
    "college_read": true,
    "code": "ACCT 100",
@@ -726,23 +582,7 @@
    "why": "one more district's outline makes this M-ID comparable"
   },
   {
-   "rank": 45,
-   "college": "Cabrillo College",
-   "college_read": true,
-   "code": "ECE 139C",
-   "course_title": "Curriculum With Toddlers",
-   "units": 0.5,
-   "mid": "CDEV M1180",
-   "mid_title": "Curriculum with Toddlers",
-   "discipline": "Child Development/Early Childhood Education",
-   "districts": 10,
-   "members": 12,
-   "districts_with_text": 1,
-   "class_now": "Not enough text",
-   "why": "one more district's outline makes this M-ID comparable"
-  },
-  {
-   "rank": 46,
+   "rank": 36,
    "college": "Santiago Canyon College",
    "college_read": true,
    "code": "WKPR 603",
@@ -758,7 +598,7 @@
    "why": "one more district's outline makes this M-ID comparable"
   },
   {
-   "rank": 47,
+   "rank": 37,
    "college": "College of the Redwoods",
    "college_read": true,
    "code": "AJ 107",
@@ -774,7 +614,7 @@
    "why": "one more district's outline makes this M-ID comparable"
   },
   {
-   "rank": 48,
+   "rank": 38,
    "college": "Santiago Canyon College",
    "college_read": true,
    "code": "ELCT 103",
@@ -790,23 +630,7 @@
    "why": "one more district's outline makes this M-ID comparable"
   },
   {
-   "rank": 49,
-   "college": "Modesto Junior College",
-   "college_read": true,
-   "code": "ELTEC 321",
-   "course_title": "Photovoltaic Systems",
-   "units": 3,
-   "mid": "ENVS M1085",
-   "mid_title": "Photovoltaic Systems",
-   "discipline": "Environmental Technologies",
-   "districts": 10,
-   "members": 13,
-   "districts_with_text": 1,
-   "class_now": "Not enough text",
-   "why": "one more district's outline makes this M-ID comparable"
-  },
-  {
-   "rank": 50,
+   "rank": 39,
    "college": "Allan Hancock College",
    "college_read": true,
    "code": "WFTO 316",
@@ -817,6 +641,182 @@
    "discipline": "Fire Technology",
    "districts": 10,
    "members": 13,
+   "districts_with_text": 1,
+   "class_now": "Not enough text",
+   "why": "one more district's outline makes this M-ID comparable"
+  },
+  {
+   "rank": 40,
+   "college": "Crafton Hills College",
+   "college_read": true,
+   "code": "FIRET 041A",
+   "course_title": "Fire Inspector 2A - Fire Prevention Administration",
+   "units": 1,
+   "mid": "FIRE M1097",
+   "mid_title": "Fire Inspector 2A: Fire Prevention Administration",
+   "discipline": "Fire Technology",
+   "districts": 10,
+   "members": 14,
+   "districts_with_text": 1,
+   "class_now": "Not enough text",
+   "why": "one more district's outline makes this M-ID comparable"
+  },
+  {
+   "rank": 41,
+   "college": "Allan Hancock College",
+   "college_read": true,
+   "code": "FTEC 302",
+   "course_title": "Company Officer 2B - General Administrative Functions",
+   "units": 1,
+   "mid": "FIRE M1109",
+   "mid_title": "Company Officer 2B: General Administrative Functions",
+   "discipline": "Fire Technology",
+   "districts": 10,
+   "members": 11,
+   "districts_with_text": 1,
+   "class_now": "Not enough text",
+   "why": "one more district's outline makes this M-ID comparable"
+  },
+  {
+   "rank": 42,
+   "college": "Allan Hancock College",
+   "college_read": true,
+   "code": "FTEC 305",
+   "course_title": "Company Officer 2E - Wildland Incident Operations",
+   "units": 2,
+   "mid": "FIRE M1136",
+   "mid_title": "Company Officer 2E: Wildland Incident Operations",
+   "discipline": "Fire Technology",
+   "districts": 10,
+   "members": 10,
+   "districts_with_text": 1,
+   "class_now": "Not enough text",
+   "why": "one more district's outline makes this M-ID comparable"
+  },
+  {
+   "rank": 43,
+   "college": "Mt. San Antonio College",
+   "college_read": true,
+   "code": "NURS 207",
+   "course_title": "Psychiatric Mental Health Nursing",
+   "units": 2.5,
+   "mid": "NRSR M1115",
+   "mid_title": "Mental Health/Psychiatric Nursing",
+   "discipline": "Nursing",
+   "districts": 19,
+   "members": 25,
+   "districts_with_text": 0,
+   "class_now": "Not enough text",
+   "why": "no district's outline prints outcomes for this M-ID yet; this is one of two"
+  },
+  {
+   "rank": 44,
+   "college": "Rio Hondo College",
+   "college_read": true,
+   "code": "ADN 252",
+   "course_title": "Psychiatric/ Mental Health Nursing",
+   "units": 2,
+   "mid": "NRSR M1115",
+   "mid_title": "Mental Health/Psychiatric Nursing",
+   "discipline": "Nursing",
+   "districts": 19,
+   "members": 25,
+   "districts_with_text": 0,
+   "class_now": "Not enough text",
+   "why": "no district's outline prints outcomes for this M-ID yet; this is one of two"
+  },
+  {
+   "rank": 45,
+   "college": "Antelope Valley College",
+   "college_read": false,
+   "code": "ACCT 111",
+   "course_title": "Bookkeeping",
+   "units": 3,
+   "mid": "BUSI M1143",
+   "mid_title": "Bookkeeping",
+   "discipline": "Business",
+   "districts": 9,
+   "members": 11,
+   "districts_with_text": 1,
+   "class_now": "Not enough text",
+   "why": "one more district's outline makes this M-ID comparable"
+  },
+  {
+   "rank": 46,
+   "college": "Long Beach City College",
+   "college_read": false,
+   "code": "IBUS 75",
+   "course_title": "Introduction to Logistics",
+   "units": 3,
+   "mid": "BUSI M1367",
+   "mid_title": "Introduction to Logistics",
+   "discipline": "Business",
+   "districts": 9,
+   "members": 14,
+   "districts_with_text": 1,
+   "class_now": "Not enough text",
+   "why": "one more district's outline makes this M-ID comparable"
+  },
+  {
+   "rank": 47,
+   "college": "Crafton Hills College",
+   "college_read": true,
+   "code": "CD 270",
+   "course_title": "Mentor Teacher/Adult Supervision",
+   "units": 2,
+   "mid": "CDEV M1027",
+   "mid_title": "The Mentor Teacher/Adult Supervision",
+   "discipline": "Child Development/Early Childhood Education",
+   "districts": 9,
+   "members": 9,
+   "districts_with_text": 1,
+   "class_now": "Not enough text",
+   "why": "one more district's outline makes this M-ID comparable"
+  },
+  {
+   "rank": 48,
+   "college": "Santa Ana College",
+   "college_read": true,
+   "code": "CJA 042B",
+   "course_title": "Crisis Intervention Training II",
+   "units": 0.3,
+   "mid": "COUN M1168",
+   "mid_title": "Case Administration, Crisis Intervention and Referral",
+   "discipline": "Counseling",
+   "districts": 9,
+   "members": 10,
+   "districts_with_text": 1,
+   "class_now": "Not enough text",
+   "why": "one more district's outline makes this M-ID comparable"
+  },
+  {
+   "rank": 49,
+   "college": "Shasta College",
+   "college_read": true,
+   "code": "FTWP 114",
+   "course_title": "Wildland Fire Origin and Cause Determination FI-210",
+   "units": 1.5,
+   "mid": "FIRE M1069",
+   "mid_title": "Wildland Fire Origin and Cause Determination FI-210",
+   "discipline": "Fire Technology",
+   "districts": 9,
+   "members": 10,
+   "districts_with_text": 1,
+   "class_now": "Not enough text",
+   "why": "one more district's outline makes this M-ID comparable"
+  },
+  {
+   "rank": 50,
+   "college": "Allan Hancock College",
+   "college_read": true,
+   "code": "WFT 310",
+   "course_title": "Portable Pumps and Water Use S-211",
+   "units": 1.5,
+   "mid": "FIRE M1070",
+   "mid_title": "Portable Pumps and Water Use (S-211)",
+   "discipline": "Fire Technology",
+   "districts": 9,
+   "members": 10,
    "districts_with_text": 1,
    "class_now": "Not enough text",
    "why": "one more district's outline makes this M-ID comparable"
