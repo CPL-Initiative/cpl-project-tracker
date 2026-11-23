@@ -9,6 +9,7 @@ boundary readings wrong 0, the records each step moves beyond its targets named.
 
 Run from repo root: python3 tests/program_ge_steps_s713_test.py
 """
+import json
 import os
 import re
 import sys
@@ -57,7 +58,11 @@ check(ge(MARIN, "A.A. Degree", "College of Marin GE (minimum 22 units) or Cal-GE
 check(ge(MARIN, "A.A. Degree", "College of Marin GE requirements apply") == {"min": None, "max": None},
       "Marin needs both minimums printed")
 
-m = G.measure()
+# The measure ran on the base commit's records, before the runs filled them in; the receipt keeps it.
+RECEIPT = os.path.join(ROOT, "kb", "receipts", "program_requirement_records_ge_steps_2026-11-23_s713ge.json")
+with open(RECEIPT, encoding="utf-8") as fh:
+    receipt = json.load(fh)
+m = receipt["measured_before_the_runs"]["measured"]
 for c, r in m.items():
     check(r["precision"]["wrong"] == 0, "%s: precision wrong %r" % (c, r["precision"]["wrong_keys"]))
     check(r["boundaries"]["wrong"] == 0, "%s: boundaries wrong %r" % (c, r["boundaries"]["wrong_keys"]))
@@ -65,6 +70,36 @@ for c, r in m.items():
 check(m[LPC]["moves_beyond_targets"] == ["01032", "01037"], "Las Positas moves 01032 and 01037 beyond its targets")
 check(m[AVC]["moves_beyond_targets"] == ["43686", "43722"], "Antelope Valley moves 43686 and 43722 beyond its targets")
 check(m[MARIN]["would_pass"] == [], "Marin passes none: its pages name no electives filling the 60")
+
+# The runs against the prediction, and the plan: one full-row row per record a step wrote.
+rows = receipt["records"]
+keys = {(r["college"], r["control_number"]) for r in rows}
+predicted = {(c, cn): True for c, r in m.items() for cn in r["would_pass"]}
+predicted.update({(c, cn): False for c, r in m.items() for cn in r["would_fail"]})
+for r in rows:
+    k = (r["college"], r["control_number"])
+    check(k in predicted and predicted[k] == r["passes_after"], "%s %s: the run's verdict is the predicted one" % k)
+    check(r["before_image"]["record"] != r["after_image"]["record"], "%s %s: a step wrote the record" % k)
+    with open(os.path.join(ROOT, "kb", "program_requirements_college", G.COLLEGES[k[0]], "records",
+                           k[1] + ".json"), encoding="utf-8") as fh:
+        filed = json.load(fh)
+    check(str(filed.get("extracted_run")) == str(r["after_image"]["extracted_run"])
+          and filed["record"]["program"].get("ge_units", {}).get("min") is not None,
+          "%s %s: the committed record carries the run and its units" % k)
+check(len(rows) == 11 and sum(r["passes_after"] for r in rows) == 9, "11 rows, 9 of them passing")
+check({k for k, v in predicted.items() if k[0] != MARIN} == keys, "every predicted mover outside Marin has a row")
+check(not any(c == MARIN for c, _ in keys), "Marin has no row: its run read no page of its own")
+for part in ("apply", "preread", "rollback"):
+    with open(os.path.join(ROOT, "kb", "migrations", "2026-11-23_s713ge_prreq_ge_steps_%s.sql" % part),
+              encoding="utf-8") as fh:
+        sql = fh.read()
+    check(set(re.findall(r"^\s*\(\d+, '([^']+)', '(\d{5})', \d+,", sql, re.M)) == keys,
+          "the %s names exactly the plan's rows" % part)
+    if part == "apply":
+        check("e(expect) as (values (11))" in sql and "when f.n > 0" in sql
+              and "program_record_fp(v.after_record)" in sql, "the apply's count guard and confirm guard")
+    if part == "preread":
+        check("'confirm_matches_after'" in sql, "the pre-read counts confirms matching the new record")
 
 if failures:
     for x in failures:
