@@ -102,5 +102,35 @@
    "from": "trial 45030224450's job log (read job 137232258281), the page's EXCERPT block (STUDENT LEARNING OUTCOMES: to the first CB data element) read as one outcome a pair of lines, the outcome and then its assessment methods, and its objectives block (Student Performance Objectives (Exit Skills): to Course Content:) one objective a line, a line that heads a part of the list not counted",
    "at": "2026-11-22T14:04:48Z"
   }
+ },
+ "loaded": {
+  "read": "45031089800",
+  "load_run": "45127831747",
+  "receipt": "kb/receipts/course_outcomes_lan_45127831747.json",
+  "posted": 3731,
+  "inserted": 3731,
+  "kept": 0,
+  "skipped": 7,
+  "inserted_by_college": {
+   "Laney College": {
+    "slo": 663,
+    "objective": 663
+   },
+   "Merritt College": {
+    "slo": 463,
+    "objective": 465
+   },
+   "College of Alameda": {
+    "slo": 365,
+    "objective": 368
+   },
+   "Berkeley City College": {
+    "slo": 372,
+    "objective": 372
+   }
+  },
+  "note": "the load after the lan label clean (d-peralta-load-cleans-labels-first-s713); the 7 skips are blocks that printed only None or N/A",
+  "by": "S713 peralta worker",
+  "at": "2026-11-23T07:02:33Z"
  }
 }
