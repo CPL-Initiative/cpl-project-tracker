@@ -262,7 +262,10 @@ Memory rows: `kb/migrations/2026-11-23_s714_cpl_memory_rows.sql` (15 rows, rollb
 
 ## Safety patterns to honor
 
-**New at the end of S714:** a test must never read the live census for its members: once a plan's records pass, the next census drops them and the test breaks every PR's CI and `main` (`tests/program_piles_s714_ela_test.py` did, fixed in #3721); pin the members in a fixture, as the City College of San Francisco test does (`p-test-pins-census-members-s714`).
+**New at the end of S714:** a test must never read the live census for its members: once a plan's records pass, the next census drops them and the test breaks every PR's CI and `main` (`tests/program_piles_s714_ela_test.py` did, fixed in #3721); pin the members in a fixture, as the City College of San Francisco test does (`p-test-pins-census-members-s714`). And a CI run that dies at `npm install` on a 404 may be a package published
+seconds before (`@bramus/specificity` 2.4.4 at 16:21:23Z, fetched at 16:21:42Z): read the version's publish time
+with `npm view <pkg> time` before pinning, and rerun the failed jobs once the release has propagated
+(`p-fresh-release-404-reruns-s714`).
 
 All of handoff 714's. New tonight: one dispatch at a time per branch; a fresh worker per branch; no reconcile at any
 college before the fill is measured and the dropped gaps are fixed; the claim check reads today's capture and can hold
@@ -300,11 +303,12 @@ by Opus 5.5.
 ## Let go
 
 The ledger names no PR subscription, scheduled check-in or artifact watch: the run gated each PR by reads. The COBIx
-watcher stopped at 12:58Z on Sam's word. Workers end with the session; each branch is pushed. The local Postgres 16
+watcher stopped at 12:58Z on Sam's word. Context at sign-off: about 105,000 tokens left of 786,077, past the
+warning line, so the run checkpointed and let go. Workers end with the session; each branch is pushed. The local Postgres 16
 used for the apply proofs stops at sign-off.
 
 Spend: about $275 (an estimate from the session's and its agents' token counts at list prices, `kb/_spend_meter.py`'s rates: Opus 5.5 about $268, Sonnet $5, Haiku $0.21; the conductor about $33, six workers about $165, eight second-reader rounds about $66, the checkpoint documents $13), all collection; 2026-11-23T11:32Z to about 16:30Z. Every message ran on Opus 5.5, Sonnet or Haiku (the form names Fable 5.2). The three paid reads' own cost, $4.13 on their estimates (Sacramento City $2.04, Cosumnes River $1.76, Folsom Lake $0.33), is listed apart. Stop rules: none fired (93 new records, about $3 each; no outline rows; no rollback). With S713's $219 the day stands near $495 before Sam's plain sessions.
 
 Opening line: *Greetings, you are SkyPetrel (Session 716), see SkyFulmar's (S714) handoff — `docs/session_716_handoff.md` — let's keep rolling with our queue.* (If a plain session has taken 716 by then, take the next free number and say so.)
 
-This session's cost: about $275 at list prices (no `get_session` in this session; estimated from the session's and its agents' token counts) plus $4.13 of paid reads. Records collected: 93 (90 passing, 1 named gap, 2 failing new records), and 7 more programs filed as named gaps. Outline rows added: 0. Substantive PRs merged: PRCOUNT.
+This session's cost: about $275 at list prices (no `get_session` in this session; estimated from the session's and its agents' token counts) plus $4.13 of paid reads. Records collected: 93 (90 passing, 1 named gap, 2 failing new records), and 7 more programs filed as named gaps. Outline rows added: 0. Substantive PRs merged: 5 (#3714, #3716, #3715, #3719, #3721).
