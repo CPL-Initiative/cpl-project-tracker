@@ -94,7 +94,7 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
     54.0,
     67.0
@@ -109,8 +109,9 @@
     34.0
    ],
    "why": [
-    "the record says electives fill the degree total, but the catalog text names no electives"
+    "the blocks and general education come to 54.0-67.0, past the 60.0-60.0 the catalog prints for the degree"
    ],
+   "fill": null,
    "major": {
     "pass": true,
     "status": "equal",
@@ -179,7 +180,8 @@
     "Explain the validity of fitness, health, and human movement using the scientific method and the relationship between scientific research and established knowledge.",
     "Identify the importance of lifelong participation in a fitness program as related to overall health and well-being."
    ],
-   "careers": []
+   "careers": [],
+   "electives_fill_words": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS"
   },
   "blocks": [
    {
@@ -820,6 +822,14 @@
    "Catalog prints codes with leading zeros (ANATOMY 001, BUS 015, etc.); matched to closed-list codes without zeros. Catalog also lists HEALTH 011 under List A, which is not in the closed list."
   ]
  },
- "extracted_run": 43357061643,
- "read_run": "39063389278"
+ "extracted_run": 45176404274,
+ "read_run": 43357061643,
+ "reconciled": [
+  {
+   "field": "electives_fill_words",
+   "was": null,
+   "now": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS",
+   "words": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE \nUNITS"
+  }
+ ]
 }

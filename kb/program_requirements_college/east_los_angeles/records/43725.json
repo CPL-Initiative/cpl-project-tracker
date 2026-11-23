@@ -169,7 +169,8 @@
     "camp counselor",
     "theme park attendant"
    ],
-   "electives_fill_words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS"
+   "electives_fill_words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS",
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -417,14 +418,14 @@
    "Text before the section heading (activity courses, 9-unit electives) belongs to the preceding Kinesiology program and was not read."
   ]
  },
- "extracted_run": 43357061643,
+ "extracted_run": 45176404274,
  "reconciled": [
   {
-   "field": "electives_fill_words",
+   "field": "ge_overlap",
    "was": null,
-   "now": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS",
-   "words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 \nUNITS"
+   "now": true,
+   "words": "double counted \ntowards  LACCD General Education"
   }
  ],
- "read_run": "39063389278"
+ "read_run": 43357061643
 }

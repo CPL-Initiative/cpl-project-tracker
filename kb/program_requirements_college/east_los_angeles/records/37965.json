@@ -79,8 +79,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     64.0,
     68.0
@@ -94,10 +94,8 @@
     27.0,
     27.0
    ],
-   "why": [
-    "the blocks and general education come to 64.0-68.0, past the 60.0-60.0 the catalog prints for the degree"
-   ],
-   "fill": null
+   "why": [],
+   "overlap": true
   },
   "repeated": {
    "codes": [],
@@ -121,7 +119,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -161,7 +159,8 @@
     "music recording",
     "education"
    ],
-   "electives_fill_words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS"
+   "electives_fill_words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS",
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -401,14 +400,14 @@
    "Section heading reads 'Commercial Music and Recording, Associate in Arts Degree' while the program title is 'Commercial Music and Recording Arts'."
   ]
  },
- "extracted_run": 43357061643,
+ "extracted_run": 45176404274,
  "reconciled": [
   {
-   "field": "electives_fill_words",
+   "field": "ge_overlap",
    "was": null,
-   "now": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS",
-   "words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 \nUNITS"
+   "now": true,
+   "words": "double counted in LACCD GE"
   }
  ],
- "read_run": "39063389278"
+ "read_run": 43357061643
 }

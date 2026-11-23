@@ -140,7 +140,8 @@
     "Develop problem-solving skills to solve environmental problems in real world situations."
    ],
    "careers": [],
-   "electives_fill_words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS"
+   "electives_fill_words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS",
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -318,14 +319,14 @@
    "Catalog codes use leading zeros (e.g., ENV SCI 001, ECON 011) where the closed list uses ENV SCI 1, ECON 11; treated as the same courses."
   ]
  },
- "extracted_run": 43357061643,
+ "extracted_run": 45176404274,
  "reconciled": [
   {
-   "field": "electives_fill_words",
+   "field": "ge_overlap",
    "was": null,
-   "now": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS",
-   "words": "ADDITIONAL DEGREE APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS"
+   "now": true,
+   "words": "double counted in \nLACCD General Education"
   }
  ],
- "read_run": "39063389278"
+ "read_run": 43357061643
 }

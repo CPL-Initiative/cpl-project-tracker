@@ -159,7 +159,8 @@
     "crime scene investigator",
     "identification technician"
    ],
-   "electives_fill_words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS"
+   "electives_fill_words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS",
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -257,14 +258,14 @@
    "Page 72 content (A.S.-T in Administration of Justice) belongs to a different award and was not used."
   ]
  },
- "extracted_run": 43357061643,
+ "extracted_run": 45176404274,
  "reconciled": [
   {
-   "field": "electives_fill_words",
+   "field": "ge_overlap",
    "was": null,
-   "now": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS",
-   "words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 \nUNITS"
+   "now": true,
+   "words": "double-counted in \nLACCD GE"
   }
  ],
- "read_run": "39063389278"
+ "read_run": 43357061643
 }
