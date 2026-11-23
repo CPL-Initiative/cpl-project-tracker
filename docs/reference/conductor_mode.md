@@ -78,9 +78,12 @@ at the top of each piece of work so Sam can change the dial before it runs.
    per open branch from its PR diff and the ledger. `SendMessage` to a worker's name nudges it or gives it its next task.
 5. `git worktree list` and `df -h /home/user` before spawning. A locked worktree whose worker is not in `ListAgents`
    is dead: push any unpushed commits from it, then `git worktree unlock`, `git worktree remove --force`, `git worktree
-   prune`. Each checkout is 4.4 to 4.7 GB. **Three checkouts at once is the ceiling** (S653: four filled the disk twice
-   in ten minutes); a read-only task (a review, a count) takes no worktree, and nobody writes a tar. Remove a checkout
-   only when its worker is finished for good: a worker cannot be resumed once its checkout is gone.
+   prune`. **The ceiling is the measured disk:** a checkout from the light clone is about 2 GB, and S714 ran four
+   against 55 GB free (`d-four-checkouts-on-measured-disk-s714`); three was the ceiling when a checkout took 4.4 to
+   4.7 GB (S653: four filled the disk twice in ten minutes). A read-only task (a review, a count) takes no worktree, and
+   nobody writes a tar. A worker cannot open a second worktree, so a new branch gets a fresh worker
+   (`p-harness-keeps-worker-in-its-worktree-s714`). Remove a checkout only when its worker is finished for good: a
+   worker cannot be resumed once its checkout is gone.
    **A clone is never a full clone (Sam, 2026-11-19):** the conductor and every worker clone `cpl-project-tracker`
    with `git clone --filter=blob:none`, or `--depth=1` when history is not needed. `scripts/repo_size_guard.py` reads a
    partial clone through one fetch (#3543).
@@ -138,6 +141,9 @@ at the top of each piece of work so Sam can change the dial before it runs.
   blast radius beforehand when it is in doubt.
 - Timing: clear of the daily cron's 06:17, 09:17 and 12:17 UTC slots when the apply touches `kb/` files the daily run
   commits; never two applies on one table at once; one writer per table with any other live session.
+- One dispatch at a time per branch: a workflow's concurrency group holds one running and one pending run per branch,
+  and a newer pending run cancels the older one (S655; `p-read-dispatches-share-group-s687`;
+  `p-one-pending-run-per-branch-s714`, where Cosumnes River's read was canceled before it ran).
 - Dispatch with `actions_run_trigger` (ref `main`, the inputs its `workflow_dispatch` names), read the run with
   `actions_get`, pull its receipt, and confirm with one aggregate live count before telling COBIx or Sam it landed.
 - Deleting data, funding figures to colleges and a public KB merge wait for Sam (the hold list in `CLAUDE.md`).
@@ -206,6 +212,39 @@ at the top of each piece of work so Sam can change the dial before it runs.
   at a scheduled check-in instead (S653: context went from 16% to 73% in 100 minutes on notices).
 - A tool trial (a repo, a library, a service) gets one line in [`reference/stack_scouting`](stack_scouting.md): candidate,
   measured cost, result, kept or dropped. COBIx scans every other Monday (#3306).
+
+## What went wrong in S714, and what worked
+
+The CPL Queue routine's 11:12Z collection run of 2026-11-23 (SkyFulmar), served by Opus 5.5 (the form names Fable
+5.2). S713's checkpoint was at its last step, so the firing waited for its sign-off (11:31Z) and took the queue then,
+beside Sam's plain sessions S712 and S715, one writer per file. No `list_sessions` or `get_trigger` in this session.
+
+- **The handoff number moved under the declaration.** The run declared holding handoff 715; S712's #3712 merged handoff
+  715 at 11:52Z, so the declaration moved to 716 in its merge of `main` (`d-routine-takes-next-free-number-s713`). A
+  plain session's checkpoint can take the number a routine's draft holds: read `main`'s highest before each merge of it.
+- **Three dispatches at once on one branch** (`p-one-pending-run-per-branch-s714`): the concurrency group canceled
+  Cosumnes River's pending read four seconds after Folsom Lake's took its place, before anything was paid; it went in
+  again alone. S655 and `p-read-dispatches-share-group-s687` had written the rule, now under *Dispatching a data plan*.
+- **A worker cannot open a second worktree** (`p-harness-keeps-worker-in-its-worktree-s714`): `piles` could not move to
+  East Los Angeles, so `piles2` started there, under *Start* step 5.
+- **The reconciles reached past their pins.** Three free reconciles at the Los Rios colleges rescored records outside
+  the pinned programs, dropped 16 named `ge_units_not_read` gaps (`f-rescore-drops-ge-units-not-read-gaps-s714`) and
+  newly passed 9, 8 of them through the program-level fill over windows their notes call cut off
+  (`f-elective-fill-passes-cut-off-windows-s714`). `test` and `lints` were green on that head: S655's guard reads six
+  colleges, and its note pattern matches none of the 8. A Sonnet reader caught them, and all went back to `main`'s
+  filings before any load (`d-elective-fill-rereads-held-s714`).
+- **A hand-filed catalog went stale** (`f-american-river-hand-filed-sha-mismatch-s714`): American River's host now
+  serves a file whose sha256 differs from the filed record, so its 5 programs wait.
+- **The COBIx watcher stopped on Sam's word** to S712 (01:53Z, handoff 715: *"No need for the Cobix check ins for
+  now"*; `d-cobix-watcher-stopped-on-sam-word-s714`) as soon as the run read it at 12:58Z; each PR's thread was read
+  before its merge.
+- **What worked:** applying a plan first and fixing forward where a reader's majors touch neither the rows, the SQL nor
+  the undo (`d-apply-before-reach-fix-s714`: City College of San Francisco and East Los Angeles live about 40 and 30
+  minutes before their merges), each apply proved first on a local Postgres 16; Sonnet second readers on plans whose
+  shared code was already reviewed or that change none (`d-sonnet-reader-for-scoped-plans-s714`: `option_parts`,
+  Fullerton, the nine rescored); two applied branches in one PR under the cap (`d-fullerton-rides-3719-s714`); four
+  checkouts on measured disk (`d-four-checkouts-on-measured-disk-s714`); a claim check that held a row
+  (`d-optparts-holds-05934-claim-check-s714`); free rule work first, 43 records with no paid read and 37 for $4.13.
 
 ## What went wrong in S713, and what worked
 

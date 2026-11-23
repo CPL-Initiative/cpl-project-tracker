@@ -1674,7 +1674,8 @@
      "created": "2026-11-14",
      "governs": [
       "kb/_program_requirements_score.py",
-      "kb/_program_requirements_reconcile.py"
+      "kb/_program_requirements_reconcile.py",
+      "tests/reconcile_window_fill_test.py"
      ],
      "path": "docs/kb-notes/methodology-a-fill-must-check-what-it-fills.md",
      "status": "published",
@@ -1686,7 +1687,7 @@
      ],
      "title": "A fill must check the units it fills, not the word that licenses it",
      "type": "methodology",
-     "updated": "2026-11-14"
+     "updated": "2026-11-23"
     },
     {
      "created": "2026-09-09",
@@ -17478,7 +17479,7 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 672,
+   "count": 673,
    "docs": [
     {
      "created": "2026-11-23",
@@ -17491,6 +17492,20 @@
       "session"
      ],
      "title": "Session 717 handoff (from SkyAlbatross, S715, Sam's plain session of 2026-11-23: the Subjects figures answer their own edits, and the Subjects card from the mock)",
+     "type": null,
+     "updated": "2026-11-23"
+    },
+    {
+     "created": "2026-11-23",
+     "governs": [],
+     "n": 716,
+     "path": "docs/session_716_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 716 handoff (from SkyFulmar, S714, the CPL Queue routine's collection run of 2026-11-23)",
      "type": null,
      "updated": "2026-11-23"
     },
@@ -28660,5 +28675,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1561
+ "total": 1562
 }
