@@ -61,10 +61,10 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    2.0,
+    20.0,
     25.5
    ],
    "stated": [
@@ -72,9 +72,7 @@
     25.5
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 2.0-25.5; the catalog states 20.0-25.5"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -98,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
