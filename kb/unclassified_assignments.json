@@ -1,8 +1,8 @@
 {
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-11-22T21:48:15Z",
-  "count": 3071,
+  "_synced_at": "2026-11-23T06:19:46Z",
+  "count": 3072,
   "assignments": {
     "1st Receiver Ops & Decon": {
       "issuing_agency": "",
@@ -16952,6 +16952,12 @@
       "reviewed_at": "2026-11-22T15:28:47.639+00:00",
       "unified_title": "Practical PC & Career Technologies",
       "supersedes": "Practical PC and Career Technologies"
+    },
+    "Portfolio Review CIS101-Introduction to Computers and Their Uses": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-23T00:13:34.866152+00:00",
+      "unified_title": "Computer Literacy"
     },
     "Portfolio Review CIS104-Microcomputer Application Software": {
       "issuing_agency": "California Community Colleges",
