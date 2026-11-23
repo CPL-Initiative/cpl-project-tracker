@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-23T14:56:09Z",
+ "written_at": "2026-11-23T15:24:22Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 15425,
+     "n": 15444,
      "of": 20282,
      "words": "complete at 118 colleges",
      "open": "#program-requirements/list"
@@ -34,7 +34,7 @@
    ],
    "issues": [
     {
-     "n": 1929,
+     "n": 1910,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
@@ -68,8 +68,8 @@
    },
    "facts": {
     "active": 20282,
-    "complete": 15425,
-    "failing": 1929,
+    "complete": 15444,
+    "failing": 1910,
     "unread": 2928,
     "records": 18960,
     "colleges": 118,
@@ -383,7 +383,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-20T05:01:19-08:00",
+    "at": "2026-11-19T06:22:43+00:00",
     "every_hours": null
    },
    "facts": {
@@ -776,7 +776,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 1929,
+    "n": 1910,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"

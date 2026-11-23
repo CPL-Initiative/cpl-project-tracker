@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-23T14:56:03Z",
+ "written_at": "2026-11-23T15:24:16Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,8 +168,8 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17052,
-  "gap": 5283,
+  "passing": 17072,
+  "gap": 5263,
   "with_gap": 118,
   "cost_usd": 1340.94,
   "passed_at_read": 16311,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16730,
-  "gap": 5283,
+  "passing": 16750,
+  "gap": 5263,
   "collected_with_gaps": 322,
   "discontinued": 0
  },
@@ -4742,12 +4742,12 @@
    "harvested": true,
    "slug": "foothill",
    "programs": 209,
-   "passing": 152,
-   "gap": 57,
+   "passing": 153,
+   "gap": 56,
    "causes": {
     "no_closed_list": 19,
     "page_not_found": 21,
-    "unknown_without_live": 17
+    "unknown_without_live": 16
    },
    "census_causes": {
     "coverage_fails": 4,
@@ -4801,7 +4801,7 @@
    "levers": {
     "reader_page_search": 21,
     "program_course_file_check": 19,
-    "reconcile_steps": 17
+    "reconcile_steps": 16
    },
    "collection": {
     "program_reader": {
@@ -4944,13 +4944,13 @@
    "harvested": true,
    "slug": "fullerton",
    "programs": 332,
-   "passing": 290,
-   "gap": 42,
+   "passing": 301,
+   "gap": 31,
    "causes": {
     "no_closed_list": 6,
     "page_not_found": 10,
     "places_none": 2,
-    "unknown_without_live": 24
+    "unknown_without_live": 13
    },
    "census_causes": {
     "coverage_fails": 14,
@@ -5005,7 +5005,7 @@
    "read_seconds": 2095.2,
    "run": "44762380826",
    "levers": {
-    "reconcile_steps": 24,
+    "reconcile_steps": 13,
     "reader_page_search": 10,
     "program_course_file_check": 6,
     "reader_page_assignment": 2
@@ -5151,12 +5151,12 @@
    "harvested": true,
    "slug": "glendale_community",
    "programs": 317,
-   "passing": 236,
-   "gap": 81,
+   "passing": 237,
+   "gap": 80,
    "causes": {
     "no_closed_list": 50,
     "page_not_found": 25,
-    "unknown_without_live": 6
+    "unknown_without_live": 5
    },
    "census_causes": {
     "course_added": 1,
@@ -5222,7 +5222,7 @@
     "program_course_file_check": 50,
     "reader_page_search": 25,
     "reconcile_steps": 4,
-    "scorer_noncredit_hours": 2
+    "scorer_noncredit_hours": 1
    },
    "collection": {
     "program_reader": {
@@ -5262,13 +5262,13 @@
    "harvested": true,
    "slug": "golden_west",
    "programs": 181,
-   "passing": 112,
-   "gap": 69,
+   "passing": 113,
+   "gap": 68,
    "causes": {
     "no_closed_list": 29,
     "page_not_found": 17,
     "places_none": 6,
-    "unknown_without_live": 17
+    "unknown_without_live": 16
    },
    "census_causes": {
     "no_closed_list": 29,
@@ -5326,7 +5326,7 @@
    "levers": {
     "program_course_file_check": 29,
     "reader_page_search": 17,
-    "reconcile_steps": 17,
+    "reconcile_steps": 16,
     "reader_page_assignment": 6
    },
    "collection": {
@@ -7643,13 +7643,13 @@
    "harvested": true,
    "slug": "miracosta",
    "programs": 187,
-   "passing": 111,
-   "gap": 76,
+   "passing": 112,
+   "gap": 75,
    "causes": {
     "no_closed_list": 26,
     "page_not_found": 24,
     "places_none": 9,
-    "unknown_without_live": 17
+    "unknown_without_live": 16
    },
    "census_causes": {
     "no_closed_list": 26,
@@ -7705,7 +7705,7 @@
    "levers": {
     "program_course_file_check": 26,
     "reader_page_search": 24,
-    "reconcile_steps": 17,
+    "reconcile_steps": 16,
     "reader_page_assignment": 9
    },
    "collection": {
@@ -7967,10 +7967,10 @@
    "harvested": true,
    "slug": "monterey_peninsula",
    "programs": 206,
-   "passing": 185,
-   "gap": 21,
+   "passing": 187,
+   "gap": 19,
    "causes": {
-    "parked_college": 21
+    "parked_college": 19
    },
    "census_causes": {
     "parked_college": 21
@@ -8017,7 +8017,7 @@
    "read_seconds": 1588.3,
    "run": "42195216637",
    "levers": {
-    "unpark": 21
+    "unpark": 19
    },
    "collection": {
     "program_reader": {
@@ -9505,13 +9505,13 @@
    "harvested": true,
    "slug": "reedley",
    "programs": 213,
-   "passing": 178,
-   "gap": 35,
+   "passing": 181,
+   "gap": 32,
    "causes": {
     "no_closed_list": 13,
     "page_not_found": 4,
     "places_none": 1,
-    "unknown_without_live": 17
+    "unknown_without_live": 14
    },
    "census_causes": {
     "coverage_fails": 5,
@@ -9566,8 +9566,8 @@
    "read_seconds": 1422.2,
    "run": "39616074283",
    "levers": {
-    "reconcile_steps": 16,
     "program_course_file_check": 13,
+    "reconcile_steps": 13,
     "reader_page_search": 4,
     "reader_page_assignment": 1,
     "scorer_noncredit_hours": 1

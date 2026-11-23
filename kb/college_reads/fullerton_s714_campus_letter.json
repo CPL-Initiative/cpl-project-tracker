@@ -1,0 +1,30 @@
+{
+ "_readme": "S714 (lane 2's cheap piles at Fullerton): the claim check for the campus letter's place. The state's file keeps nine Fullerton courses as 'F HORT002', 'F ANTH102', 'CSTR 42' and the like, and the capture looks for those forms, so today's sources.json cannot say whether the program's page prints the course as the record read it ('HORT 002 F'). This read prints, on each of the ten pages, the stretch around each of the nine courses as the record read it. One load per page and robots.txt, no model call, nothing written.",
+ "college": "Fullerton College",
+ "questions": {
+  "printed": "Whether the program's own page prints the course with its campus letter after the number, as the record read it."
+ },
+ "keywords": [
+  "\\bHORT\\W*0*2\\W*F\\b",
+  "\\bANTH\\W*102\\W*F\\b",
+  "\\bCRTV\\W*196\\W*F\\b",
+  "\\bTHEA\\W*146\\W*F\\b",
+  "\\bHORT\\W*185\\W*F\\b",
+  "\\bCSTR\\W*0*39\\W*F\\b",
+  "\\bCSTR\\W*0*42\\W*F\\b",
+  "\\bJOUR\\W*140\\W*F\\b"
+ ],
+ "pages": [
+  {"answers": ["printed"], "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/horticulture/nursery-management-associate-arts-degree/"},
+  {"answers": ["printed"], "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/latin-american-studies/latin-american-studies-associate-arts-degree/"},
+  {"answers": ["printed"], "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/cinema-radio-tv/radio-television-video-production-certificate/"},
+  {"answers": ["printed"], "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/theatre-arts-drama/scenic-artist-certificate/"},
+  {"answers": ["printed"], "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/horticulture/landscape-design-management-certificate/"},
+  {"answers": ["printed"], "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/cinema-radio-tv/television-film-production-certificate/"},
+  {"answers": ["printed"], "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/construction/construction-technology-certificate/"},
+  {"answers": ["printed"], "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/journalism/journalism-associate-arts-degree-transfer/"},
+  {"answers": ["printed"], "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/horticulture/ornamental-horticultural-certificate/"},
+  {"answers": ["printed"], "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/horticulture/landscape-horticultural-certificate/"},
+  {"answers": ["printed"], "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/construction/construction-technology-associate-science-degree/"}
+ ]
+}

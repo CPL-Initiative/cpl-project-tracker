@@ -45,25 +45,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 24,
+   "placed": 25,
    "listed": 25,
-   "share": 0.96,
-   "missing": [
-    "FHORT185"
-   ],
-   "unexplained": [
-    "FHORT185"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "HORT185F"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -101,7 +95,14 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true,
+  "course_renumbers": [
+   {
+    "printed": "HORT 185 F",
+    "listed": "FHORT185",
+    "block": "Restricted Electives (11-13 units):"
+   }
+  ]
  },
  "record": {
   "program": {
