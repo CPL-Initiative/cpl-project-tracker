@@ -5,8 +5,8 @@
  "source": [
   "https://lbcc-public.courseleaf.com/course-descriptions/"
  ],
- "subjects": 127,
- "with_heading": 127,
+ "subjects": 128,
+ "with_heading": 128,
  "links_without_a_code": [
   {
    "label": "C-ID Numbering",
@@ -265,6 +265,19 @@
    "candidate": null,
    "label": "Computer Aid Design (CAD)",
    "address": "https://lbcc-public.courseleaf.com/course-descriptions/cad/"
+  },
+  {
+   "code": "CART",
+   "heading": "Creative Arts",
+   "heading_printed": "Creative Arts",
+   "rule": "code_address",
+   "codes": [
+    "CART"
+   ],
+   "candidate": null,
+   "label": "Creative Arts (CART)",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/cart/",
+   "run": "45275042093"
   },
   {
    "code": "CDECE",
@@ -1537,6 +1550,43 @@
    "candidate": null,
    "label": "Welding (WELD)",
    "address": "https://lbcc-public.courseleaf.com/course-descriptions/weld/"
+  }
+ ],
+ "code_address_tried": [
+  {
+   "code": "BARB",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/barb/",
+   "status": "404",
+   "first_line": null,
+   "run": "45275042093"
+  },
+  {
+   "code": "DRAFT",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/draft/",
+   "status": "404",
+   "first_line": null,
+   "run": "45275042093"
+  },
+  {
+   "code": "HS",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/hs/",
+   "status": "200",
+   "first_line": "Accounting (ACCTG)",
+   "run": "45275042093"
+  },
+  {
+   "code": "HVAC/R",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/hvacr/",
+   "status": "404",
+   "first_line": null,
+   "run": "45275042093"
+  },
+  {
+   "code": "SHOWB",
+   "address": "https://lbcc-public.courseleaf.com/course-descriptions/showb/",
+   "status": "404",
+   "first_line": null,
+   "run": "45275042093"
   }
  ]
 }

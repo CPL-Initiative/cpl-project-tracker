@@ -218,22 +218,22 @@
  },
  "web_searches_filed": 108,
  "totals": {
-  "common_high": 197,
+  "common_high": 198,
   "common_low": 171,
   "common_medium": 434,
   "common_no_code_yet": 6,
-  "common_none": 178,
+  "common_none": 177,
   "no_common": 986,
-  "no_title": 309,
+  "no_title": 307,
   "noncredit_common": 142,
   "noncredit_no_common": 174,
   "noncredit_no_title": 50,
   "noncredit_title": 3,
   "noncredit_title_unused_condition": 11,
   "title_high": 118,
-  "title_low": 90,
+  "title_low": 89,
   "title_medium": 20,
-  "title_none": 81
+  "title_none": 80
  },
  "colleges": [
   {
@@ -264,6 +264,16 @@
       "level": "Medium",
       "from": "own_courses",
       "why": "5 of 5 of its courses with an M-ID sit under BUSI."
+     }
+    },
+    {
+     "code": "INST",
+     "common": {
+      "code": "IDST",
+      "discipline": "Interdisciplinary Studies",
+      "level": "High",
+      "from": "title",
+      "why": "The title names the discipline Interdisciplinary Studies."
      }
     },
     {
@@ -1995,23 +2005,6 @@
       "level": "Medium",
       "from": "own_courses",
       "why": "6 of 8 of its courses with an M-ID sit under DRAF."
-     }
-    },
-    {
-     "code": "CART",
-     "title": {
-      "title": "Creative Arts",
-      "level": "Low",
-      "from": "web_search",
-      "why": "A web search found it on the college's own site; no other source names a title.",
-      "also": [],
-      "search": {
-       "query": "Long Beach City College CART \"The Arts and Modern Man\" courses",
-       "searched_on": "2026-11-21",
-       "result_title": "Creative Arts (CART)",
-       "result_url": "https://lbcc-public.courseleaf.com/course-descriptions/cart",
-       "where": "catalog"
-      }
      }
     },
     {

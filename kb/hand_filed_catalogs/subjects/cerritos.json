@@ -5,8 +5,8 @@
  "source": [
   "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/"
  ],
- "subjects": 97,
- "with_heading": 97,
+ "subjects": 98,
+ "with_heading": 98,
  "links_without_a_code": [],
  "rows": [
   {
@@ -720,6 +720,19 @@
    "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/hum/"
   },
   {
+   "code": "INST",
+   "heading": "Interdisciplinary Studies",
+   "heading_printed": "Interdisciplinary Studies",
+   "rule": "code_address",
+   "codes": [
+    "INST"
+   ],
+   "candidate": null,
+   "label": "Interdisciplinary Studies (INST)",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/inst/",
+   "run": "45275042093"
+  },
+  {
    "code": "IWAP",
    "heading": "Field Ironworkers",
    "heading_printed": "Field Ironworkers",
@@ -1178,6 +1191,22 @@
    "candidate": null,
    "label": "Zoology (ZOOL)",
    "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/zool/"
+  }
+ ],
+ "code_address_tried": [
+  {
+   "code": "ESL",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/esl/",
+   "status": "404",
+   "first_line": null,
+   "run": "45275042093"
+  },
+  {
+   "code": "POL",
+   "address": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/pol/",
+   "status": "200",
+   "first_line": "Political Science (POLS)",
+   "run": "45275042093"
   }
  ]
 }

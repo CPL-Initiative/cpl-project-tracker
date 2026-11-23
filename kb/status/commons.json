@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-23T19:33:22Z",
+ "written_at": "2026-11-23T22:21:19Z",
  "rows": [
   {
    "key": "requirements",
@@ -375,7 +375,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-19T06:22:43Z",
+    "at": "2026-11-22T22:56:49-08:00",
     "every_hours": null
    },
    "facts": {
@@ -447,13 +447,13 @@
    "pair": [
     {
      "n": 151,
-     "of": 151,
+     "of": 246,
      "words": "MQ disciplines with courses carry a settled Common SUBJ: confirmed (by a person, or by the nightly procedure where the code is the authority's own), on the authority rule, in no collision (137 by a person, 14 by the nightly procedure or a session cohort)",
      "open": "#canonical-subj4/list"
     },
     {
      "n": 137,
-     "of": 151,
+     "of": 246,
      "words": "confirmed by a person, 137 of them settled",
      "open": "#canonical-subj4/list/person",
      "error": null
@@ -506,7 +506,7 @@
     "every_hours": 24
    },
    "facts": {
-    "disciplines": 151,
+    "disciplines": 246,
     "confirmed": 151,
     "person": 137,
     "cohort": 14,

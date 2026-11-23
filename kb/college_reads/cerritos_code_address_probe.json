@@ -1,0 +1,34 @@
+{
+ "_readme": "S718 (SkyPetrel), 2026-11-23: the codes COCI carries at Cerritos College that its course-descriptions index does not list, each read once at its code's address (kb/_subject_code_address_probe.py). A heading is filed only when the page names the code in parentheses. No model call.",
+ "college": "Cerritos College",
+ "questions": {
+  "code_esl": "Does Cerritos College's catalog print a ESL page, and under what heading?",
+  "code_inst": "Does Cerritos College's catalog print a INST page, and under what heading?",
+  "code_pol": "Does Cerritos College's catalog print a POL page, and under what heading?"
+ },
+ "keywords": [
+  "ESL",
+  "INST",
+  "POL"
+ ],
+ "pages": [
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/esl/",
+   "answers": [
+    "code_esl"
+   ]
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/inst/",
+   "answers": [
+    "code_inst"
+   ]
+  },
+  {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/pol/",
+   "answers": [
+    "code_pol"
+   ]
+  }
+ ]
+}
