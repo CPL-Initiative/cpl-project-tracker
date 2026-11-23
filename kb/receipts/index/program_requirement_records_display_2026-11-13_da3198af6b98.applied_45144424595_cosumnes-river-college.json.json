@@ -1,0 +1,17 @@
+{
+ "name": "program_requirement_records_display_2026-11-13_da3198af6b98.applied_45144424595_cosumnes-river-college.json",
+ "kind": "display_applied",
+ "bucket": "cpl-receipts",
+ "object": "display/applied/program_requirement_records_display_2026-11-13_da3198af6b98.applied_45144424595_cosumnes-river-college.json.gz",
+ "build": "da3198af6b98",
+ "built": "2026-11-13",
+ "bytes": 1875,
+ "sha256": "8358e0587a187bda5483e0b69eebb7f6482f55b816a673f553498ac3b91725de",
+ "rows": 192,
+ "stored_at": "2026-11-23T09:11:30Z",
+ "run": "45144424595",
+ "gzip": true,
+ "repo_sha256": "2a2dce4db0c87757c0f7fd42311e5c735b78c72e0bbb9c3aa84aa2ba64eba035",
+ "repo_bytes": 17642,
+ "repo_blob": "c6beb011705aa6aa44ae5578a1085a7e655be46e"
+}
