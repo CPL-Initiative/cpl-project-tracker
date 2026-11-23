@@ -15526,7 +15526,7 @@
      ],
      "title": "Program requirements harvest lessons \u2014 archive 8 (S687 onward)",
      "type": null,
-     "updated": "2026-11-22"
+     "updated": "2026-11-23"
     },
     {
      "created": "2026-11-12",
@@ -16810,7 +16810,7 @@
      ],
      "title": "Program requirements harvest \u2014 lane state",
      "type": null,
-     "updated": "2026-11-22"
+     "updated": "2026-11-23"
     },
     {
      "created": "2026-08-28",
@@ -17065,7 +17065,7 @@
      ],
      "title": "Conductor mode \u2014 how a session runs workers, COBIx and the merge gate",
      "type": null,
-     "updated": "2026-11-22"
+     "updated": "2026-11-23"
     },
     {
      "created": "2026-08-29",
@@ -17478,8 +17478,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 669,
+   "count": 670,
    "docs": [
+    {
+     "created": "2026-11-23",
+     "governs": [],
+     "n": 714,
+     "path": "docs/session_714_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 714 handoff (from SkyKittiwake, S713, the CPL Queue routine's collection run of 2026-11-23)",
+     "type": null,
+     "updated": "2026-11-23"
+    },
     {
      "created": "2026-11-23",
      "governs": [],
@@ -28618,5 +28632,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1558
+ "total": 1559
 }

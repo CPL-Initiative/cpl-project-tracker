@@ -2,14 +2,14 @@
   "schema": 1,
   "project": "program-requirements",
   "written_at": "2026-11-22T15:13:06Z",
-  "session": 703,
-  "moniker": "SkyDovekie",
+  "session": 713,
+  "moniker": "SkyKittiwake",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_704_handoff.md",
+  "handoff": "docs/session_714_handoff.md",
   "next_step": {
-    "title": "Load the four Peralta colleges' course outlines",
-    "text": "The next session loads Peralta's course outlines once their full read lands, a dry run first and then the load at Laney, Merritt, College of Alameda and Berkeley City. It merges the night's three open records pull requests one at a time, runs the display build and the gap census, then writes the catalog-wording rules at Glendale, Clovis and City College of San Francisco."
+    "title": "Land the night's open records pull requests, then the census and the next display build",
+    "text": "The next session lands what the night left open, one at a time: the general education steps at Las Positas and Antelope Valley, Glendale's wording rules and City College of San Francisco's outlines and named gaps, each already applied or loaded, then Clovis's six records after their second read. Then it runs the gap census and the next display build, and writes City College of San Francisco's 28 wording rules."
   },
   "calls": [
     {
@@ -337,6 +337,26 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-23T09:35:00Z",
+      "text": "Thirteen Glendale programs now pass: nine language degrees whose list stands in for one core course, two whose list heading gives its figure in words, and two whose catalog prints PSYC 104 where the state's file has PSYCH 104. Four stay held for a reread or a person."
+    },
+    {
+      "at": "2026-11-23T09:34:00Z",
+      "text": "Eight programs at Las Positas and Antelope Valley now pass once their general education units are read from the catalog's own wording. Three that still fall short, or pass only by counting units twice, are held, and two more go to a person."
+    },
+    {
+      "at": "2026-11-23T09:24:48Z",
+      "text": "The display build that carries S703's four pull requests and Santa Rosa Junior's records reached CPL Pathways and Sierra: 18,628 records at the new build, 12 of them new, and the same 32 at older builds."
+    },
+    {
+      "at": "2026-11-23T09:02:00Z",
+      "text": "Of City College of San Francisco's 53 programs with no page of their own, 47 are filed as named gaps, one of them under the general education pattern's gap, and 6 programs whose pages were found wait for a list or wording rule. One paid read cost $0.17."
+    },
+    {
+      "at": "2026-11-23T07:30:00Z",
+      "text": "Fifteen Santa Rosa Junior programs are filed: five now pass, since a course that prints its common course number in parentheses counts as that number, and ten whose requirements continue on a page the read did not hold carry that named gap. Santa Monica's 26 wait on a page-text step, a reread or a person."
+    },
     {
       "at": "2026-11-22T14:47:00Z",
       "text": "Page-finding at eight colleges, in pull requests still open at the checkpoint: Ohlone's 2 and San Joaquin Delta's 6 records were added, Butte's moved page was read for one more, Clovis's Social Science degree now passes, and 152 programs with no page of their own, Glendale's 11 among them, were filed as named gaps."
