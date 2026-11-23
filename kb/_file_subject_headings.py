@@ -27,9 +27,8 @@ A heading in capitals or mixed case is saved as the title only when the code's l
 A college whose catalog is one page per subject lists them on an index, each label a heading with its code:
 `--index` files those, with each subject's own address.
 
-  former   a code the index names as a subject's former code ("ANTHROPOLOGY (ANTH, Formerly ANTHRO)"). It takes the
-           subject's heading as its title, and the index does not count it among the codes the catalog prints.
-A curator may file an index by hand from a source the reader cannot reach (Clovis, S715: Sam's reading of the
+A former code the index names ("ANTHROPOLOGY (ANTH, Formerly ANTHRO)") belongs to the college's code history
+(kb/subject_code_history.py), never to this file. A curator may file an index by hand from a source the reader cannot reach (Clovis, S715: Sam's reading of the
 catalog PDF's table of contents); the file names the person, the date and the page as its `read_by` and `source`.
 
 Usage: python3 kb/_file_subject_headings.py <job log with timestamps stripped> --run <run id> [--index] [--write]
@@ -304,7 +303,7 @@ def check(root=ROOT):
         if d.get("with_heading") != sum(1 for r in rows if r.get("heading")):
             bad.append("%s: with_heading" % os.path.basename(path))
         for r in rows:
-            if r.get("rule") not in ("named", "caps", "fits", "section", "index", "former", "none") or bool(r.get("heading")) != (r.get("rule") != "none"):
+            if r.get("rule") not in ("named", "caps", "fits", "section", "index", "none") or bool(r.get("heading")) != (r.get("rule") != "none"):
                 bad.append("%s: %s rule" % (os.path.basename(path), r.get("code")))
     return bad
 

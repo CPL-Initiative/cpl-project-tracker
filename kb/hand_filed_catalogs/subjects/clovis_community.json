@@ -1,13 +1,13 @@
 {
- "_what": "The subjects Clovis Community College's 2026-2027 catalog lists in its table of contents under COURSE DESCRIPTIONS (PDF page 3), each with its code, its former code where the catalog names one, and its catalog page. Filed by hand from Sam's reading of the PDF, pasted in session S715 on 2026-11-23, because the session's network could not reach the college's site. `heading` is saved in Title Case with `heading_printed` and the whole `label` as the contents prints them. Rule index: a subject the contents lists. Rule former: a code the contents names as a subject's former code (ANTHRO, POLSCI, PSY, SOC, COTR); it takes the subject's heading and is not counted among the codes the catalog prints.",
+ "_what": "The subjects Clovis Community College's 2026-2027 catalog lists in its table of contents under COURSE DESCRIPTIONS (PDF page 3), each with its code, its former code where the catalog names one, and its catalog page. Filed by hand from Sam's reading of the PDF, pasted in session S715 on 2026-11-23, because the session's network could not reach the college's site. `heading` is saved in Title Case with `heading_printed` and the whole `label` as the contents prints them. Rule index: a subject the contents lists. The former codes the contents names (ANTHRO, POLSCI, PSY, SOC, COTR) and ECE's former title are in the college's code history, kb/reference/subject_code_history/clovis_community.json.",
  "college": "Clovis Community College",
  "run": "hand-filed-s715-2026-11-23",
  "read_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23",
  "source": [
   "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=3"
  ],
- "subjects": 67,
- "with_heading": 67,
+ "subjects": 62,
+ "with_heading": 62,
  "links_without_a_code": [],
  "rows": [
   {
@@ -42,19 +42,6 @@
    "codes": [
     "ANTH"
    ],
-   "candidate": null,
-   "label": "ANTHROPOLOGY (ANTH, Formerly ANTHRO)",
-   "catalog_page": 194
-  },
-  {
-   "code": "ANTHRO",
-   "heading": "Anthropology",
-   "heading_printed": "ANTHROPOLOGY",
-   "rule": "former",
-   "codes": [
-    "ANTHRO"
-   ],
-   "former_of": "ANTH",
    "candidate": null,
    "label": "ANTHROPOLOGY (ANTH, Formerly ANTHRO)",
    "catalog_page": 194
@@ -178,19 +165,6 @@
    "candidate": null,
    "label": "COMMUNICATION (COMM)",
    "catalog_page": 210
-  },
-  {
-   "code": "COTR",
-   "heading": "Work Experience Education",
-   "heading_printed": "WORK EXPERIENCE EDUCATION",
-   "rule": "former",
-   "codes": [
-    "COTR"
-   ],
-   "former_of": "WKEXP",
-   "candidate": null,
-   "label": "WORK EXPERIENCE EDUCATION (WKEXP) (Formerly Cooperative Work Experience (COTR)",
-   "catalog_page": 269
   },
   {
    "code": "COUN",
@@ -697,32 +671,6 @@
    "catalog_page": 262
   },
   {
-   "code": "POLSCI",
-   "heading": "Political Science",
-   "heading_printed": "POLITICAL SCIENCE",
-   "rule": "former",
-   "codes": [
-    "POLSCI"
-   ],
-   "former_of": "POLS",
-   "candidate": null,
-   "label": "POLITICAL SCIENCE (POLS) FORMERLY POLSCI",
-   "catalog_page": 262
-  },
-  {
-   "code": "PSY",
-   "heading": "Psychology",
-   "heading_printed": "PSYCHOLOGY",
-   "rule": "former",
-   "codes": [
-    "PSY"
-   ],
-   "former_of": "PSYC",
-   "candidate": null,
-   "label": "PSYCHOLOGY (PSYC) FORMERLY PSY",
-   "catalog_page": 263
-  },
-  {
    "code": "PSYC",
    "heading": "Psychology",
    "heading_printed": "PSYCHOLOGY",
@@ -744,19 +692,6 @@
    ],
    "candidate": null,
    "label": "SCIENCE (SCI)",
-   "catalog_page": 265
-  },
-  {
-   "code": "SOC",
-   "heading": "Sociology",
-   "heading_printed": "SOCIOLOGY",
-   "rule": "former",
-   "codes": [
-    "SOC"
-   ],
-   "former_of": "SOCI",
-   "candidate": null,
-   "label": "SOCIOLOGY (SOCI, Formerly SOC)",
    "catalog_page": 265
   },
   {
