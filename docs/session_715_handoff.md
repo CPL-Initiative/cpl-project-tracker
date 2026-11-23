@@ -76,6 +76,10 @@ stays off the Los Rios colleges and any college lane 1 takes later.
 - 12:11Z: the harness keeps a worker inside its own worktree, so `piles` could not open a second one; a fresh worker,
   `piles2`, took East Los Angeles on `claude/s714-piles-ela` in its own worktree, and `piles` stays on #3714's
   checkout for the reader's fixes. S712's #3712 merged at 11:52Z (`3cc69ffc`).
+- 12:32Z: `rios` filed its reader change and 38 pins, #3715 (`934beba4`): Sacramento City 19, Cosumnes River 16,
+  Folsom Lake 3 given their own pages; six named gaps; free estimates $2.15, $1.76 and $0.33. American River's 5 are
+  blocked: its host now serves a file whose sha256 differs from the hand-filed record. A second reader is on the
+  reader change before the paid reads (the S652 rule for changed shared reader code).
 
 ## Conductor settings
 
@@ -95,6 +99,6 @@ by Opus 5.5.
 | #3713 (`claude/awesome-fermat-ka0z4l`) | the declaration | becomes the checkpoint at sign-off |
 | #3714 (`claude/s714-piles-ccsf`, `piles`) | plan filed, 8 rows | the second reader, the pre-read, the apply, the merge |
 | `claude/s714-piles-ela` (`piles2`) | started | its plan |
-| `claude/s714-rios` (`rios`) | started | its reader change, a second reader, the conductor's paid reads |
+| #3715 (`claude/s714-rios`, `rios`) | reader change and 38 pins filed | the second reader, three paid reads, reconcile, reread, merge |
 | #3712 (S712, Sam's plain session) | merged `3cc69ffc` | none |
 | #3383 | dependabot's | waits |
