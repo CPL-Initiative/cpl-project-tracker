@@ -9,6 +9,24 @@
  "with_heading": 82,
  "rows": [
   {
+   "code": "A S L",
+   "heading": "American Sign Language",
+   "heading_printed": "AMERICAN SIGN LANGUAGE",
+   "rule": "caps",
+   "codes": [
+    "A S L"
+   ],
+   "candidate": null,
+   "page": 240,
+   "above": [
+    "spirituals, gospels, concert music, opera, ballet, blues, and jazz underscoring",
+    "styles, characteristics, origin, and contributions by African-American artists.",
+    "(Credit allowed for only one of AFRO AM 060 or MUSIC 135.)",
+    "AMERICAN SIGN LANGUAGE"
+   ],
+   "first_course": "A S L 001 AMERICAN SIGN LANGUAGE I (4) UC/CSU"
+  },
+  {
    "code": "ACAD PR",
    "heading": "Academic Preparation",
    "heading_printed": "ACADEMIC PREPARATION",
@@ -151,24 +169,6 @@
     "course will further consider global interactions involving this region."
    ],
    "first_course": "ART 103 ART APPRECIATION I (3) UC/CSU"
-  },
-  {
-   "code": "A S L",
-   "heading": "American Sign Language",
-   "heading_printed": "AMERICAN SIGN LANGUAGE",
-   "rule": "caps",
-   "codes": [
-    "A S L"
-   ],
-   "candidate": null,
-   "page": 240,
-   "above": [
-    "spirituals, gospels, concert music, opera, ballet, blues, and jazz underscoring",
-    "styles, characteristics, origin, and contributions by African-American artists.",
-    "(Credit allowed for only one of AFRO AM 060 or MUSIC 135.)",
-    "AMERICAN SIGN LANGUAGE"
-   ],
-   "first_course": "A S L 001 AMERICAN SIGN LANGUAGE I (4) UC/CSU"
   },
   {
    "code": "ASTRON",
@@ -891,24 +891,6 @@
    "first_course": "ENV 101 FOUNDATIONS OF DESIGN I (3) UC/CSU"
   },
   {
-   "code": "ESLCVCS",
-   "heading": "ESL Civics",
-   "heading_printed": "ESL CIVICS",
-   "rule": "caps",
-   "codes": [
-    "ESLCVCS"
-   ],
-   "candidate": null,
-   "page": 351,
-   "above": [
-    "compositions, including at least three 400+ word essays.",
-    "ESL CIVICS",
-    "Note: There are no specific limitations on noncredit course repetition (PCAH, 8th",
-    "Edition)."
-   ],
-   "first_course": "ESLCVCS 010CE ESL AND CIVICS I (0)"
-  },
-  {
    "code": "ESL NC",
    "heading": null,
    "heading_printed": null,
@@ -925,6 +907,24 @@
     "symbol correspondence and reading and writing of simple English sentences."
    ],
    "first_course": "ESL NC 005CE ENGLISH AS A SECOND LANGUAGE (0)"
+  },
+  {
+   "code": "ESLCVCS",
+   "heading": "ESL Civics",
+   "heading_printed": "ESL CIVICS",
+   "rule": "caps",
+   "codes": [
+    "ESLCVCS"
+   ],
+   "candidate": null,
+   "page": 351,
+   "above": [
+    "compositions, including at least three 400+ word essays.",
+    "ESL CIVICS",
+    "Note: There are no specific limitations on noncredit course repetition (PCAH, 8th",
+    "Edition)."
+   ],
+   "first_course": "ESLCVCS 010CE ESL AND CIVICS I (0)"
   },
   {
    "code": "ETNTLGY",
@@ -1629,24 +1629,6 @@
    "first_course": "PLUMBNG 026 PLUMBING LAYOUT AND ESTIMATING I (3)"
   },
   {
-   "code": "POLS",
-   "heading": "Political Science",
-   "heading_printed": "POLITICAL SCIENCE",
-   "rule": "caps",
-   "codes": [
-    "POLS"
-   ],
-   "candidate": null,
-   "page": 327,
-   "above": [
-    "at least seven units, including Cooperative Education, at the end of the semester is",
-    "required. Students must be employed or volunteering/interning in order to participate in",
-    "program.",
-    "POLITICAL SCIENCE"
-   ],
-   "first_course": "POLS C1000 AMERICAN GOVERNMENT AND POLITICS (3) UC/CSU"
-  },
-  {
    "code": "POL SCI",
    "heading": "Political Science",
    "heading_printed": "POLITICAL SCIENCE",
@@ -1663,6 +1645,24 @@
     "policy using political science theory and methodology."
    ],
    "first_course": "POL SCI 002 INTRODUCTION TO COMPARATIVE POLITICS (3) UC/"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "POLITICAL SCIENCE",
+   "rule": "caps",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "page": 327,
+   "above": [
+    "at least seven units, including Cooperative Education, at the end of the semester is",
+    "required. Students must be employed or volunteering/interning in order to participate in",
+    "program.",
+    "POLITICAL SCIENCE"
+   ],
+   "first_course": "POLS C1000 AMERICAN GOVERNMENT AND POLITICS (3) UC/CSU"
   },
   {
    "code": "PROFBKG",
@@ -1863,24 +1863,6 @@
    "first_course": "SPANISH 001 ELEMENTARY SPANISH I (5) UC/CSU"
   },
   {
-   "code": "STAT",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
-   "codes": [
-    "STAT"
-   ],
-   "candidate": null,
-   "page": 317,
-   "above": [
-    "This course is the first of two in a sequence designed primarily for prospective elementary",
-    "school teachers. The course covers language of sets, system of numeration, nature of",
-    "real numbers and fundamental operations, relations and functions, elementary logic, and",
-    "various algorithms used in calculations."
-   ],
-   "first_course": "STAT C1000 INTRODUCTION TO STATISTICS (4) UC/CSU"
-  },
-  {
    "code": "ST MAIN",
    "heading": null,
    "heading_printed": null,
@@ -1897,6 +1879,24 @@
     "encountered in ‘Street Maintenance’, ‘Street Services’, and other areas of ‘Public Works’."
    ],
    "first_course": "ST MAIN 200 SURVEY OF STREET SERVICES (3)"
+  },
+  {
+   "code": "STAT",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "page": 317,
+   "above": [
+    "This course is the first of two in a sequence designed primarily for prospective elementary",
+    "school teachers. The course covers language of sets, system of numeration, nature of",
+    "real numbers and fundamental operations, relations and functions, elementary logic, and",
+    "various algorithms used in calculations."
+   ],
+   "first_course": "STAT C1000 INTRODUCTION TO STATISTICS (4) UC/CSU"
   },
   {
    "code": "SUPV",

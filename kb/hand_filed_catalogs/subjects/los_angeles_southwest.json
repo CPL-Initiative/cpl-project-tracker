@@ -9,6 +9,24 @@
  "with_heading": 82,
  "rows": [
   {
+   "code": "A S L",
+   "heading": "American Sign Language",
+   "heading_printed": "AMERICAN SIGN LANGUAGE",
+   "rule": "named",
+   "codes": [
+    "A S L"
+   ],
+   "candidate": null,
+   "page": 173,
+   "above": [
+    "also included. Successful course completion earns an American Heart",
+    "Association Basic Cardiovascular Life Support for the Healthcare Provider card",
+    "valid for two years.",
+    "AMERICAN SIGN LANGUAGE (ASL)"
+   ],
+   "first_course": "A S L 001 American Sign Language I (4) UC:CSU"
+  },
+  {
    "code": "ACCTG",
    "heading": "Accounting",
    "heading_printed": "ACCOUNTING",
@@ -170,24 +188,6 @@
     "further consider global interactions involving this region."
    ],
    "first_course": "ARTHIST 126 Introduction to Modern Art (3) UC:CSU"
-  },
-  {
-   "code": "A S L",
-   "heading": "American Sign Language",
-   "heading_printed": "AMERICAN SIGN LANGUAGE",
-   "rule": "named",
-   "codes": [
-    "A S L"
-   ],
-   "candidate": null,
-   "page": 173,
-   "above": [
-    "also included. Successful course completion earns an American Heart",
-    "Association Basic Cardiovascular Life Support for the Healthcare Provider card",
-    "valid for two years.",
-    "AMERICAN SIGN LANGUAGE (ASL)"
-   ],
-   "first_course": "A S L 001 American Sign Language I (4) UC:CSU"
   },
   {
    "code": "ASTRON",
@@ -389,6 +389,24 @@
    "first_course": "CO INFO 035 Multimedia Presentations for the Internet I"
   },
   {
+   "code": "CO TECH",
+   "heading": "Computer Technology",
+   "heading_printed": "COMPUTER TECHNOLOGY",
+   "rule": "named",
+   "codes": [
+    "CO TECH"
+   ],
+   "candidate": null,
+   "page": 191,
+   "above": [
+    "Emphasis in this course is placed on a maximum of independent study and",
+    "research. Note: This course should be taken as the last class in the required",
+    "courses list",
+    "COMPUTER TECHNOLOGY (CO TECH)"
+   ],
+   "first_course": "CO TECH 001 Introduction to Computers for Technicians"
+  },
+  {
    "code": "COLLEGE",
    "heading": "College",
    "heading_printed": "COLLEGE",
@@ -441,24 +459,6 @@
     "COOPERATIVE EDUCATION (COOP ED)"
    ],
    "first_course": "COOP ED 195 Work Experience- General I (1)"
-  },
-  {
-   "code": "CO TECH",
-   "heading": "Computer Technology",
-   "heading_printed": "COMPUTER TECHNOLOGY",
-   "rule": "named",
-   "codes": [
-    "CO TECH"
-   ],
-   "candidate": null,
-   "page": 191,
-   "above": [
-    "Emphasis in this course is placed on a maximum of independent study and",
-    "research. Note: This course should be taken as the last class in the required",
-    "courses list",
-    "COMPUTER TECHNOLOGY (CO TECH)"
-   ],
-   "first_course": "CO TECH 001 Introduction to Computers for Technicians"
   },
   {
    "code": "COUNSEL",
@@ -1307,6 +1307,24 @@
    "first_course": "PHILOS 001 Introduction to Philosophy (3) UC:CSU"
   },
   {
+   "code": "PHYS SC",
+   "heading": "Physical Science",
+   "heading_printed": "PHYSICAL SCIENCE",
+   "rule": "named",
+   "codes": [
+    "PHYS SC"
+   ],
+   "candidate": null,
+   "page": 216,
+   "above": [
+    "standards and techniques of correct thought with regular practice with short",
+    "specimens of correct and incorrect reasoning taken from daily life. Consistency,",
+    "thoroughness, and other aspects of rational thought are fostered.",
+    "PHYSICAL SCIENCE (PHYS SC)"
+   ],
+   "first_course": "PHYS SC 001 Physical Science I (3) UC:CSU"
+  },
+  {
    "code": "PHYSICS",
    "heading": "Physics",
    "heading_printed": "PHYSICS",
@@ -1343,24 +1361,6 @@
    "first_course": "PHYSIOL 001 Introduction to Human Physiology (4)"
   },
   {
-   "code": "PHYS SC",
-   "heading": "Physical Science",
-   "heading_printed": "PHYSICAL SCIENCE",
-   "rule": "named",
-   "codes": [
-    "PHYS SC"
-   ],
-   "candidate": null,
-   "page": 216,
-   "above": [
-    "standards and techniques of correct thought with regular practice with short",
-    "specimens of correct and incorrect reasoning taken from daily life. Consistency,",
-    "thoroughness, and other aspects of rational thought are fostered.",
-    "PHYSICAL SCIENCE (PHYS SC)"
-   ],
-   "first_course": "PHYS SC 001 Physical Science I (3) UC:CSU"
-  },
-  {
    "code": "PLNT SC",
    "heading": "Plant Science",
    "heading_printed": "PLANT SCIENCE",
@@ -1379,24 +1379,6 @@
    "first_course": "PLNT SC 103 Introduction to Soil Science (3)"
   },
   {
-   "code": "POLS",
-   "heading": "Political Science",
-   "heading_printed": "POLITICAL SCIENCE",
-   "rule": "named",
-   "codes": [
-    "POLS"
-   ],
-   "candidate": null,
-   "page": 218,
-   "above": [
-    "Certification Tests Plant lists. Students compare and contrast plants during the",
-    "respective season. Plant materials from local regions will also be examined.",
-    "Laboratory required.",
-    "POLITICAL SCIENCE (POLS)"
-   ],
-   "first_course": "POLS C1000 American Government and Politics (3)"
-  },
-  {
    "code": "POL SCI",
    "heading": "Political Science",
    "heading_printed": "POLITICAL SCIENCE",
@@ -1413,6 +1395,24 @@
     "POLITICAL SCIENCE (POL SCI)"
    ],
    "first_course": "POL SCI 002 Introduction to Comparative Politics (3)"
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "POLITICAL SCIENCE",
+   "rule": "named",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "page": 218,
+   "above": [
+    "Certification Tests Plant lists. Students compare and contrast plants during the",
+    "respective season. Plant materials from local regions will also be examined.",
+    "Laboratory required.",
+    "POLITICAL SCIENCE (POLS)"
+   ],
+   "first_course": "POLS C1000 American Government and Politics (3)"
   },
   {
    "code": "PSYC",

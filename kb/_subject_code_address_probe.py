@@ -184,7 +184,7 @@ def file_log(text, run, write):
         for pg in plan["pages"]:
             code = next(k for k, v in plan["questions"].items() if k == pg["answers"][0])
             code = [c for c in plan["keywords"] if "code_" + slug_of_code(c.replace("\\", "")) == code][0].replace("\\", "")
-            p = by_url.get(pg["url"])
+            p = by_url.get(pg["url"]) or by_url.get(re.sub(r"^https://", "http://", pg["url"]))
             if not p:
                 continue
             ok = str(p.get("status")) == "200"
@@ -199,7 +199,6 @@ def file_log(text, run, write):
                 report.append("%s %s: no heading (status %s%s)" % (slug, code, p.get("status"), ", reads " + seen if seen else ""))
             changed = True
         if changed:
-            d["rows"].sort(key=lambda r: code_key(r.get("code")))
             d["subjects"] = len(d["rows"])
             d["with_heading"] = sum(1 for r in d["rows"] if r.get("heading"))
             if write:

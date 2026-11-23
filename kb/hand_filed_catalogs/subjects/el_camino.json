@@ -335,6 +335,24 @@
    "first_course": "BUS 101 - Introduction to Business"
   },
   {
+   "code": "C H",
+   "heading": "Contemporary Health",
+   "heading_printed": "Contemporary Health",
+   "rule": "fits",
+   "codes": [
+    "C H"
+   ],
+   "candidate": null,
+   "page": 1,
+   "above": [
+    "and health principles. Topics include scope and application of the OSHA construction standards. Special emphasis is placed on those areas that are the",
+    "most hazardous, using OSHA standards as a guide. Upon successful course completion, students will receive an OSHA 30-Hour Construction Outreach",
+    "Training Completion Card.",
+    "Contemporary Health"
+   ],
+   "first_course": "C H 1 - Personal and Community Health Issues"
+  },
+  {
    "code": "CADD",
    "heading": "Computer Aided Design/Drafting",
    "heading_printed": "Computer Aided Design/Drafting",
@@ -369,24 +387,6 @@
     "Child Development"
    ],
    "first_course": "CDEV 103 - Child Growth and Development"
-  },
-  {
-   "code": "C H",
-   "heading": "Contemporary Health",
-   "heading_printed": "Contemporary Health",
-   "rule": "fits",
-   "codes": [
-    "C H"
-   ],
-   "candidate": null,
-   "page": 1,
-   "above": [
-    "and health principles. Topics include scope and application of the OSHA construction standards. Special emphasis is placed on those areas that are the",
-    "most hazardous, using OSHA standards as a guide. Upon successful course completion, students will receive an OSHA 30-Hour Construction Outreach",
-    "Training Completion Card.",
-    "Contemporary Health"
-   ],
-   "first_course": "C H 1 - Personal and Community Health Issues"
   },
   {
    "code": "CHEM",
@@ -1803,7 +1803,7 @@
   },
   {
    "code": "TUTR",
-   "address": "http://catalog.elcamino.edu/preview_course_nopop.php?catoid=2&coid=2370",
+   "address": "https://catalog.elcamino.edu/preview_course_nopop.php?catoid=2&coid=2370",
    "status": "200",
    "first_line": "Select a Catalog",
    "run": "45283003411"
