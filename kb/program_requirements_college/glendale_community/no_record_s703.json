@@ -1,12 +1,13 @@
 {
- "_readme": "S703 (worker glendale; d-glendale-own-pages-filed-as-gaps-s703). Glendale's 11 programs with no record file (f-glendale-28-left-s697), each filed with the page and control number that free page read 45016708970 found (customFields.eL_programControlNumber in each tab's own Coursedog data) and one of three reasons. The state's lists come from coci_program_courses, read by the conductor 2026-11-22; every noncredit course there is at 0 units. No model call, no Supabase write: no row exists for these programs, and the capture holds no text for them, so a read with only= naming them refuses (only_refused). The follow-up lever: a tab whose own data names a listed program is that program's candidate (_ranked/candidates), which the extraction's coverage bar would still stop.",
+ "_readme": "S703 (worker glendale; d-glendale-own-pages-filed-as-gaps-s703). Glendale's 11 programs with no record file (f-glendale-28-left-s697), each filed with the page and control number that free page read 45016708970 found (customFields.eL_programControlNumber in each tab's own Coursedog data) and one of four reasons. The state's lists come from coci_program_courses, read by the conductor 2026-11-22; every noncredit course there is at 0 units. No model call, no Supabase write: no row exists for these programs, and the capture holds no text for them, so a read with only= naming them refuses (only_refused). The follow-up lever: a tab whose own data names a listed program is that program's candidate (_ranked/candidates), which the extraction's coverage bar would still stop. Customer Service 38973 is filed as page_challenged: Glendale's STV-for-OBT alias binds its own tab NCCS at coverage 1.0 (pricing run 45017885023), and the fresh read 45030485543 met the host's bot check on NCCS. The gap stands in place of a reread (Sam's cost rules: gaps noted instead of rereads).",
  "college": "Glendale Community College",
- "written": "2026-11-22T15:02:38Z",
+ "written": "2026-11-23T06:45:37Z",
  "capture": "44915445658",
  "page_read": "45016708970",
  "reasons": {
   "own_page_coverage_low": "Own page found by its program data; the page prints few of the state's listed courses, so the coarse net refused it.",
   "no_own_page": "No page in the catalog is the program's own; the nearest page's data names a sibling.",
+  "page_challenged": "Own page found and bound by its program data, but on the read the host answered that page with its bot check (\"Let's confirm you are human\", HTTP 405), so the capture holds no text for it. The read is never routed around the challenge.",
   "wrong_tab_hold": "A page held by, or near-missed for, a program its data does not name."
  },
  "programs": [
@@ -51,11 +52,17 @@
   {
    "control_number": "38973",
    "title": "Customer Service",
-   "reason": "own_page_coverage_low",
+   "reason": "page_challenged",
    "page": "https://catalog.glendale.edu/programs/NCCS/completion-requirements-zaZdl",
    "page_code": "NCCS",
    "page_data_names": "38973",
    "coarse_net": "0 of 4",
+   "with_alias": {
+    "run": "45017885023",
+    "coarse_net": "4 of 4",
+    "coverage": 1.0,
+    "note": "The pricing run's filed preview (capture_preview.json) lists 38973 to extract from NCCS at coverage 1.0, where capture 44915445658 read 0 of 4 before the alias."
+   },
    "state_lists": [
     "OBT 11",
     "OBT 35",
@@ -78,10 +85,10 @@
     },
     {
      "run": "45030485543",
-     "result": "refused at pricing, no model call: only= refused, 38973 has no text in the capture (page_challenged); the host challenged NCCS on this read"
+     "result": "refused at pricing, no model call. The run says: \"only= refused: 38973 has no text in the capture (page_challenged)\". Its capture lists NCCS among 66 Coursedog pages the host answered with its bot check (\"Let's confirm you are human\", HTTP 405); the host's check, not a reader fault."
     }
    ],
-   "next": "a read with only=38973 when Glendale's host answers NCCS again; never routed around the challenge (the unblocker step)"
+   "next": "none while the gap stands (Sam's cost rules: gaps noted instead of rereads). When a later Glendale read finds NCCS answering, a read with only=38973 takes it; never routed around the challenge (the unblocker step)."
   },
   {
    "control_number": "24327",
