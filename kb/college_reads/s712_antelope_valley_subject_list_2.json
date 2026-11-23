@@ -1,0 +1,33 @@
+{
+ "_readme": "S712 SkyPuffin, 2026-11-23, round 2 of the subject-list probe (round 1: run 45161535251). Round 1 found Antelope Valley's eLumen menu names each subject as a department with its courses; Bakersfield's courses view lists every subject as 'Name - CODE'. This read loads Antelope Valley's courses view to see whether it lists the same. One load, no model call, writes nothing.",
+ "college": "Antelope Valley College",
+ "questions": {
+  "el_courses": "Whether the courses view lists every subject as 'Name - CODE', and which publish call carries it."
+ },
+ "keywords": [
+  "[Cc]ourses?",
+  "[Ss]ubjects?",
+  "[Dd]epartments?",
+  " - [A-Z]{2,6}\\b"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "el_courses"
+   ],
+   "url": "https://avc.elumenapp.com/catalog/2026-27/courses",
+   "network": true,
+   "network_hosts": [
+    "api-prod.elumenapp.com"
+   ],
+   "network_find": [
+    " - ACCT",
+    " - AJ",
+    "Accounting"
+   ]
+  }
+ ],
+ "outside_hosts": {
+  "api-prod.elumenapp.com": "eLumen's own API host: the catalog's scripts fetch every view from it (kb/_program_requirements_college.py, the eLumen note; S380)."
+ }
+}

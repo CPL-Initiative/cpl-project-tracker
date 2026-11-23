@@ -82,15 +82,17 @@ check("(4) a read college missing the course is course not found", st("Alpha Col
 
 # (5)-(7): build() on injected members, courses and compare.
 def run_build(compare_doc, reads_rows, members):
-    saved = (R.load_slugs, R.load_courses, R.load_map, R.newest_compare, R.sd.load, R.SCOPES)
+    saved = (R.load_slugs, R.load_courses, R.load_map, R.newest_compare, R.sd.load, R.SCOPES, R.load_calls, R.load_state)
     R.load_slugs, R.load_courses, R.load_map = (lambda root=ROOT: SLUG_OF), (lambda root=ROOT: COURSES), (lambda root=ROOT: MAP)
+    # The fixture build reads no calls and no state list: test (1) to (9) measure the person-decision path.
+    R.load_calls, R.load_state = (lambda root=ROOT: None), (lambda root=ROOT: {})
     R.newest_compare = lambda root=ROOT: ("fixture", compare_doc)
     R.sd.load = lambda root=ROOT: D
     R.SCOPES = {"t": {"college": "Alpha College", "code": "AED", "why": "fixture"}}
     try:
         return R.build(members=members, members_at="fixture", reads_rows=reads_rows)["scopes"]["t"]
     finally:
-        R.load_slugs, R.load_courses, R.load_map, R.newest_compare, R.sd.load, R.SCOPES = saved
+        R.load_slugs, R.load_courses, R.load_map, R.newest_compare, R.sd.load, R.SCOPES, R.load_calls, R.load_state = saved
 
 
 A = {"college": "Alpha College"}
@@ -117,6 +119,36 @@ check("(6) an M-ID the compare does not name passes test 3", b["VOCE M1"]["ready
 check("(7) two settled codes split along code and pass",
       b["VOCE M2"]["shape"] == "splits along code" and b["VOCE M2"]["ready"] is True, b["VOCE M2"])
 check("(1) an unsettled member holds its M-ID", b["OLAD M1"]["ready"] is False and b["OLAD M1"]["held_members"] == {"no settled code": 1})
+# (10) The confidence gate (r-confidence-not-person-settled-sam-2026-11-23): a Confident call, a noncredit course's
+# category and the state list settle members; a call below Confident holds by name; a person's decision still wins.
+CALLS = {"ART": {"credit": ("ARTS", 0.95), "noncredit": None}, "BIO": {"credit": ("CHEM", 0.99), "noncredit": None},
+         "GEO": {"credit": ("GEOG", 0.6), "noncredit": None}, "AED": {"credit": None, "noncredit": ("VOCE", 0.93)},
+         "ESL": {"credit": None, "noncredit": ("ESLN", 0.5)}}
+STATE = {(sd.college_key("Gamma College"), "ART", "1"): ("C", sd.NO_CATEGORY),
+         (sd.college_key("Gamma College"), "AED", "1"): ("N", "Courses for Older Adults"),
+         (sd.college_key("Gamma College"), "ESL", "1"): ("N", sd.NO_CATEGORY)}
+
+
+def stc(college, code):
+    return R.member_status({"college": college, "code": code}, SLUG_OF, COURSES, D, MAP, NC, CALLS, STATE)
+
+
+check("(10) a Confident credit call settles the member", stc("Alpha College", "ART 1")[:2] == ("settled", "ARTS")
+      and stc("Alpha College", "ART 1")[2].get("by") == "confident call")
+check("(10) a person's save still wins over a Confident call", stc("Alpha College", "BIO 1")[:2] == ("settled", "BIOL"))
+check("(10) a noncredit course settles by its category's common code", stc("Alpha College", "AED 2")[:2] == ("settled", "OLAD"))
+check("(10) Workforce Preparation is still held by name", stc("Alpha College", "AED 3")[0] == "category has no common code")
+check("(10) no category in the export takes the code's Confident noncredit call", stc("Alpha College", "AED 4")[:2] == ("settled", "VOCE"))
+check("(10) a college with no catalog filed reads its course from the state list", stc("Gamma College", "ART 1")[:2] == ("settled", "ARTS")
+      and stc("Gamma College", "AED 1")[:2] == ("settled", "OLAD"))
+check("(10) a noncredit call below Confident leaves an uncategorized course held", stc("Gamma College", "ESL 1")[0] == "no noncredit category")
+s = R.member_status({"college": "Beta College", "code": "GEO 1"}, SLUG_OF, COURSES, D, MAP, NC, CALLS,
+                    {(sd.college_key("Beta College"), "GEO", "1"): ("C", sd.NO_CATEGORY)})
+check("(10) a credit call below Confident holds by name, with its call and confidence",
+      s[0] == "call below Confident" and s[2].get("call") == "GEOG" and s[2].get("confidence") == 0.6, s)
+check("(10) a course in neither the catalog nor the state list is college not read", stc("Delta College", "ART 1")[0] == "college not read")
+check("(10) a read college's missing course is still course not found", stc("Alpha College", "ART 99")[0] == "course not found")
+
 check("(9) fixture counts add up", cur["ready"] + cur["held"] == cur["mids"] == 6 and cur["ready"] == 4, (cur["ready"], cur["held"]))
 
 # (8) the gzipped compare is read, newest by date

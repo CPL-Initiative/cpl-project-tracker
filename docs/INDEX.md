@@ -72,8 +72,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 95 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 109 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 77 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 670 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1559** | |
+| Session handoffs | 671 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1560** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -124,6 +124,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-23 (S712 SkyPuffin, Sam's plain session, light checkpoint): #3702 (the outlines to find by hand open in place; every Commons sidebar resizes with a frozen top), #3711 (every local subject code statewide with a call and a confidence, and its view), #3712 (the re-mint gate reads confidence: AED 75 of 127 ready); Sam's rulings that settled means Confident and that every college counts; the Subjects card mock; the commons lane's Subjects paragraph moved to archive 7; seven memory rows; handoff 715.
 - 2026-11-23 (S713 SkyKittiwake, the CPL Queue routine's collection run, conductor, full checkpoint): S703's four PRs merged (#3686, #3675, #3684 with Peralta's 3,731 outline rows, #3683); #3705 (Santa Rosa Junior's 15: a common course number in parentheses, `section_cut_off`); #3708 (display build `da3198af6b98`, 18,660 rows); #3707's general education steps (8 records) and Glendale's 13 applied; City College of San Francisco's outline read (3 new rows) and its 53 page-finding programs (47 named gaps); the harvest lane's NEXT rebuilt; `docs/program_requirements_harvest_lessons.md` *S713*, S689's two sections to archive 8; `conductor_mode.md` *What went wrong in S713*; 18 memory rows drafted in `kb/migrations/2026-11-23_s713_cpl_memory_rows.sql`; handoff 714 (SkyFulmar).
 - 2026-11-22 (S709 SkyMurrelet, Sam's plain session, light checkpoint): #3697, the re-mint readiness count by the draft gate (`kb/status/mid_readiness.json`, nightly): the AED scope is 127 M-IDs (120 ELEC) on the live members file, 34 ready; the outcomes compare reran on 45,673 rows and gzips past the 5 MB limit; four memory rows; handoff 710.
 - 2026-11-22 (S707 SkyPrion, Sam's plain session, full checkpoint): #3691 (main green again: the Exhibits card's duplicate check reads Sam's CAL FIRE title against the shipped titles after a CER run cleared its proposal), #3687 merged, #3693 (the subject map leaves AED unmapped; it had given 45 shared M-IDs an ELEC prefix); Sam's call to settle subjects before re-mints and the draft M-ID readiness gate; the commons lane compacted; four memory rows; handoff 708.
