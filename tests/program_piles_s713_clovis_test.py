@@ -62,6 +62,15 @@ check(S.program_units(core([{"code": "CHEM 1A", "units": 5}, {"code": "CHEM 1B",
       == (20.0, 21.0), "two courses that are no lecture and lab stay two options")
 check(PAIR[1].get("together") is None, "the record's alternatives are not changed")
 
+# #3708's second reader, finding 2: a pair member with no units anywhere pairs with nothing.
+nounit = core([{"code": "BIO 11", "units": 3}, {"code": "BIO 11L", "units": None}])
+nounit["blocks"][0]["courses"][0].update(code="X 1", units=5)
+check(S.program_units(nounit, {})[0] == (19.0, 21.0) and not any(
+    a.get("together") for a in S.lab_pairs(S.alternatives(nounit["blocks"][0]["courses"][0]))),
+      "X (5) or BIO 11 (3) and BIO 11L with no units: no pair, BIO 11 stays an option")
+check(any(a.get("together") for a in S.lab_pairs([{"code": "BIO 11", "units": 3}, {"code": "BIO 11L"}],
+                                                 {"BIO11L": 1.0})), "a member the state's list prices pairs")
+
 # ── reading 2: an earlier list's unused courses ──
 def lists(note=None, b_name="List B: Select one course", total=21):
     return {"program": {"total_units": {"min": total, "max": 24}, "measure": "units"},
@@ -92,6 +101,19 @@ check(not S.also_from(grouped), "a list inside an option group takes no reading"
 stated = lists(NOTE)
 stated["blocks"][2]["stated"] = {"min": 5, "max": 5}
 check(not S.also_from(stated), "a list with its own printed figure keeps it")
+# Finding 1: a chain (C takes A's or B's leftovers, B takes A's) would count a course twice: C takes no reading.
+chain = {"program": {"total_units": {"min": 11, "max": 11}, "measure": "units"},
+         "notes": ["List B also allows 'Any course from List A not already used'.",
+                   "List C also allows 'Any course from List A or List B not already used'."],
+         "blocks": [{"name": "List A: Select one course", "rule": "choose_courses", "minimum": 1,
+                     "courses": [{"code": "A 1", "units": 3}, {"code": "A 2", "units": 3}]},
+                    {"name": "List B: Select one course", "rule": "choose_courses", "minimum": 1,
+                     "courses": [{"code": "B 1", "units": 5}]},
+                    {"name": "List C: Select one course", "rule": "choose_courses", "minimum": 1,
+                     "courses": [{"code": "C 1", "units": 5}]}]}
+check(S.also_from(chain) == {1: [0]}, "a list whose source is itself a target takes no reading: %r" % S.also_from(chain))
+check(S.program_units(chain, {})[0][0] == 11.0, "the chain reads its true least, 11, not 9: %r"
+      % (S.program_units(chain, {}),))
 a = S.score(lists(NOTE), [], None, "A.A-T Degree")["arithmetic"]
 check(a.get("also_from") and a["pass"], "the check names the reading: %r" % a.get("also_from"))
 same = lists("List B also allows 'Any course from List A not already used'.")
@@ -118,8 +140,10 @@ ep = C.elsewhere_precision(ch)
 check(ep["read"] == 10 and ep["right"] == 10 and ep["wrong"] == 0,
       "every record the readings move elsewhere is hand-read: %r" % ep)
 check(not any(x["college"] == "Clovis Community College" for x in ch["not_exact"]), "no Clovis record is not exact")
-check(sorted(r["control_number"] for r in receipt["changes"]["clovis"]) == sorted(
-    [r["control_number"] for r in rows] + ["36632"]), "at the plan, the readings changed the 6 planned and 36632")
+check(sorted(r["control_number"] for r in receipt["changes"]["clovis"]) == sorted(r["control_number"] for r in rows)
+      and not receipt["rescored_not_planned"], "at the plan, the readings changed the 6 planned records alone")
+check("12 records" in receipt["blast_radius"] and "lab_pairs alone" in receipt["blast_radius"],
+      "the receipt names the 12 passes elsewhere and 33502's lab pair")
 for r in rows:
     with open(os.path.join(ROOT, r["path"]), encoding="utf-8") as fh:
         filed = json.load(fh)

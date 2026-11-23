@@ -76,7 +76,7 @@
    "status": "equal",
    "computed": [
     18.0,
-    21.0
+    20.0
    ],
    "stated": [
     18.0,
@@ -84,15 +84,7 @@
    ],
    "against": "program",
    "why": [],
-   "also_from": [
-    {
-     "block": "List C: Select one course",
-     "from": [
-      "List A: Select one course",
-      "List B: Select one course"
-     ]
-    }
-   ]
+   "short_high": true
   },
   "repeated": {
    "codes": [],

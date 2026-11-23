@@ -350,20 +350,28 @@ def measure(record: dict) -> str:
     return (record.get("program") or {}).get("measure") or "units"
 
 
-def lab_pairs(alts: list[dict]) -> list[dict]:
+def lab_pairs(alts: list[dict], listed: dict | None = None, hours: bool = False) -> list[dict]:
     """The alternatives with each lecture and its own lab taken together (S713, Clovis): an alternative whose code is
     another alternative's with L added (BIOL C1001 and BIOL C1001L, BIOL 13 and BIOL 13L), where neither carries a
     together label, is one option with it. Clovis prints "BIOL C1000 or BIOL C1001 and BIOL C1001L"; the reading
-    kept the pair as two alternatives, so the row's low end took the 1-unit lab alone. Copies; the record is unchanged."""
+    kept the pair as two alternatives, so the row's low end took the 1-unit lab alone. A member with no units of its
+    own or on the state's list (listed; never in hours) pairs with nothing, so the pair never drops out of the row's
+    options (#3708's second reader: "X (5) or BIO 11 (3) and BIO 11L" kept 5-5). Copies; the record is unchanged."""
     # The code as the page printed it: a course-id or alias rename (printed_code) must not split a pair the page
     # prints (Clovis's BIOL C1001 renamed to the file's BIOL 10 beside BIOL C1001L; course_id_route_test).
     keys = [norm_code(a.get("printed_code") or a.get("code")) for a in alts]
     out = [dict(a) for a in alts]
+
+    def units(a):
+        if _num(a.get("units")) is not None or _num(a.get("units_max")) is not None:
+            return True
+        return not hours and (listed or {}).get(listed_key(a.get("code"), listed or {})) is not None
+
     for i, k in enumerate(keys):
-        if not k or out[i].get("together"):
+        if not k or out[i].get("together") or not units(out[i]):
             continue
         for j, kl in enumerate(keys):
-            if j != i and kl == k + "L" and not out[j].get("together"):
+            if j != i and kl == k + "L" and not out[j].get("together") and units(out[j]):
                 out[i]["together"] = out[j]["together"] = "lab pair " + k
                 break
     return out
@@ -379,7 +387,7 @@ def choice_units(course: dict, listed: dict, hours: bool = False) -> tuple[float
     own units added up, or, where a member has none, the group's "together_units" (and "together_units_max")."""
     vals = []
     groups: dict = {}
-    alts = lab_pairs(alternatives(course))
+    alts = lab_pairs(alternatives(course), listed, hours)
     for entry in alts:
         if entry.get("together"):
             groups.setdefault(entry["together"], []).append(entry)
@@ -533,7 +541,10 @@ def also_from(record: dict) -> dict:
         srcs = sorted(letter[x] for x in letters if x in letter and letter[x] < t)
         if srcs and plain(t) and all(plain(j) for j in srcs):
             out[t] = srcs
-    return out
+    # A chain (C takes B's leftovers and B takes A's) would count a course twice, once in each pool (#3708's second
+    # reader: A {3, 3}, B {5} and C {5} read 9 where the least is 11): a list whose source is itself a target takes
+    # no reading.
+    return {t: srcs for t, srcs in out.items() if not any(j in out for j in srcs)}
 
 
 def also_from_span(blocks: list, t: int, srcs: list, listed: dict, hours: bool = False):

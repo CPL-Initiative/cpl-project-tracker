@@ -64,6 +64,7 @@ ALSO = "passes: a list also takes an earlier list's unused courses (also_from)"
 LAB_ALSO = "passes: a lecture and its lab are one option, and the lists take earlier lists' unused courses"
 REN = "passes: the printed code is the file's renumbered course (course_renumbers)"
 HAND_HELD = {
+    # 33502 passes on the lab pair alone; also_from moves only its high end (#3708's second reader).
     "33502": LAB_ALSO, "42235": LAB, "35535": ALSO, "33486": REN, "45957": REN,
     # Outside the census lever: a failing Clovis record the lab pair passes, read by hand (its note: "BIOL C1000 (4)
     # may be replaced by BIOL C1001 (3) AND BIOL C1001L (1) together").
@@ -95,7 +96,7 @@ EXTRA = ("33508",)
 def readings_off():
     """The scorer with readings 1 and 2 off: what the filed run's scorer added."""
     saved = S.lab_pairs, S.also_from
-    S.lab_pairs, S.also_from = (lambda alts: [dict(a) for a in alts]), (lambda record: {})
+    S.lab_pairs, S.also_from = (lambda alts, *a, **k: [dict(x) for x in alts]), (lambda record: {})
     try:
         yield
     finally:
@@ -325,7 +326,9 @@ def every_record() -> list[dict]:
 
 
 # The records elsewhere the lab pair moves, each read by hand from its notes (S713): every note says the lecture and
-# its lab are taken together. They pass on their college's next load; this plan writes none.
+# its lab are taken together. They pass on their college's next load; this plan writes none. With the closed lists
+# rebuilt from kb/reference, #3708's second reader counts 12 passes outside Clovis (College of the Desert 37288, Long
+# Beach City 31223 and MiraCosta 44000 besides these, all "together" in their notes) and Sierra 45624 moving.
 ELSEWHERE_HAND = {
     ("Chabot College", "37428"): "passes: 'GEOS 11 AND GEOS 11L (both together)', 'ENSC 15 AND ENSC 15L'",
     ("Cuesta College", "43775"): "passes: 'BIO 201A OR BIO 211 OR (BIO 212 AND BIO 212L)'",
