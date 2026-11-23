@@ -46,24 +46,18 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 30,
+   "placed": 31,
    "listed": 31,
-   "share": 0.968,
-   "missing": [
-    "PSYCH104"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "PSYC104"
-   ],
-   "flagged": [
-    "PSYC104"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -124,7 +118,14 @@
   "degree": {
    "status": "read"
   },
-  "pass": true
+  "pass": true,
+  "course_renumbers": [
+   {
+    "printed": "PSYC 104",
+    "listed": "PSYCH104",
+    "block": "LIST B - CHOOSE ONE OF THE FOLLOWING"
+   }
+  ]
  },
  "record": {
   "program": {

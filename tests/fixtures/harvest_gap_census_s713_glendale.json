@@ -1,0 +1,45 @@
+{
+ "_what": "S713 (lane 2, Glendale): the reconcile_steps lever of the committed census (written_at 2026-11-22 22:50Z) at Glendale, frozen: kb/_program_piles_s713_glendale.py planned from it, and a later census reads the planned programs collected.",
+ "written_at": "2026-11-22 22:50Z",
+ "levers": [
+  {
+   "lever": "reconcile_steps",
+   "scope": "Glendale Community College",
+   "programs": 28,
+   "kind": "free",
+   "what": "a team session writes correction rules from the catalog's own wording, then rescores the saved record",
+   "estimate_usd": null,
+   "over_college_limit": false,
+   "members": [
+    "11155",
+    "12503",
+    "18639",
+    "18640",
+    "21302",
+    "21303",
+    "24327",
+    "24377",
+    "30813",
+    "32394",
+    "32607",
+    "36416",
+    "36599",
+    "36601",
+    "36667",
+    "36711",
+    "36712",
+    "36713",
+    "36714",
+    "36720",
+    "36726",
+    "36727",
+    "37070",
+    "38973",
+    "40846",
+    "40847",
+    "44488",
+    "45068"
+   ]
+  }
+ ]
+}

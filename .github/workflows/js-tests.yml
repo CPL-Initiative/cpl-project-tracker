@@ -576,6 +576,10 @@ jobs:
       # against the hand reading, boundary readings and claim checks, and the plan's 17 rows at Santa Rosa Junior.
       - name: Cheap piles S713 (common numbers, section_cut_off, the plan)
         run: python3 tests/program_piles_s713_test.py
+      # S713 at Glendale: a list taken in place of a core course, a figure printed in a list's heading, and PSYC 104
+      # renumbered for the file's PSYCH 104; the self-recall against the hand reading and the plan's 13 rows.
+      - name: Cheap piles S713 at Glendale (substitute list, heading figure, renumber, the plan)
+        run: python3 tests/program_piles_s713_glendale_test.py
       # Discontinued programs (S680; Sam, 2026-11-17 on #3480): a program's own catalog section marks it,
       # or a prior year prints it and this year does not; flagged out of the gap, never deleted. Pure stdlib.
       - name: Discontinued programs (own-section mark, out of the gap, the file is current)

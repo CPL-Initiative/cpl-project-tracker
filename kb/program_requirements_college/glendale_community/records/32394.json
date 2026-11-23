@@ -61,26 +61,24 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    23.0,
-    23.0
+    18.0,
+    20.0
    ],
    "stated": [
     18.0,
     20.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 23.0-23.0; the catalog states 18.0-20.0"
-   ],
+   "why": [],
    "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     23.0,
-     23.0
+     18.0,
+     20.0
     ],
     "stated": [
      60.0,
@@ -91,10 +89,11 @@
     "why": [],
     "minimum": true,
     "fill": [
-     37.0,
-     37.0
+     40.0,
+     42.0
     ]
-   }
+   },
+   "substitute_list": "LIST A - SELECT ONE OF THE FOLLOWING IF ANY REQUIRED COURSES WERE SUBSTITUTED"
   },
   "repeated": {
    "codes": [],
@@ -118,7 +117,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

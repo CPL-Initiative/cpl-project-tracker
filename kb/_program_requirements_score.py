@@ -468,6 +468,66 @@ def block_units_summed(block: dict, listed: dict, hours: bool = False
     return None, ["'%s' has no rule the scorer knows (%r)" % (block.get("name"), rule)]
 
 
+# A list the page names by a figure only in words or only in its heading (Glendale, S713). Its Liberal Arts: Science
+# and Mathematics Emphasis 18639 heads its last list "CHOOSE ADDITIONAL UNITS TO COMPLETE A MINIMUM TOTAL OF EIGHTEEN",
+# and its Interdisciplinary Humanities: Creativity 12503 "CHOOSE THREE COURSES FROM THREE DIFFERENT DISCIPLINES FOR A
+# MINIMUM OF NINE UNITS"; the reading kept the heading and left the block's figure unset. heading_figure reads the
+# figure from the heading of a block that carries none of its own. Equal to the program's printed total, the list
+# fills the program to it (fills_to, as the reconcile's fill_to step writes it); any other figure is the list's own
+# floor (Kinesiology 32854's "FOR A MINIMUM OF 3 UNITS", the reconcile's own guard). Only a figure in words: a figure
+# in digits is the reconcile's fill_to step's, set per college with the words it read (Los Angeles Valley, S534), and
+# a record read before that step keeps its own sum (program_requirements_pilot_test, Economics 02984).
+WORD_NUMBERS = {w: float(i) for i, w in enumerate(
+    "zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen "
+    "eighteen nineteen twenty".split())}
+WORD_NUMBERS.update({"thirty": 30.0, "forty": 40.0, "fifty": 50.0, "sixty": 60.0})
+HEADING_FIGURE = re.compile(
+    r"\b(?:for|to\s+(?:complete|reach))\s+a\s+minimum\s+(?:total\s+)?of\s+(?P<n>%s)"
+    r"(?:\s+(?:total\s+)?units?)?\s*\.?\s*$" % "|".join(sorted(WORD_NUMBERS, key=len, reverse=True)), re.I)
+
+
+def heading_figure(block: dict) -> float | None:
+    """The figure a block's heading prints in words at its end ("... FOR A MINIMUM OF NINE UNITS", "... TO COMPLETE A
+    MINIMUM TOTAL OF EIGHTEEN"), where the block carries no figure of its own; else None."""
+    if _span(block.get("stated")) or _num(block.get("fills_to")) is not None:
+        return None
+    if block.get("rule") == "choose_units" and _num(block.get("minimum")) is not None:
+        return None
+    if block.get("rule") not in ("choose_units", "choose_courses"):
+        return None
+    m = HEADING_FIGURE.search(str(block.get("name") or ""))
+    if not m:
+        return None
+    return WORD_NUMBERS[m.group("n").lower()]
+
+
+# A list the page says a student takes only in place of a required course (Glendale's language degrees and
+# certificates, S713: "If 20 units have not been reached in the required core, select one course from the
+# following", and Spanish A.A-T 32394's "LIST A - SELECT ONE OF THE FOLLOWING IF ANY REQUIRED COURSES WERE
+# SUBSTITUTED"). The core prints four 5-unit courses and the page prints 18-20: a student completes the core as
+# printed (20), or, placed past or substituted out of one core course, takes one course from the list in its place
+# (15 + 3 = 18). The list adds nothing to the core as printed, and stands in for one of its courses.
+SUBSTITUTE_HEADING = re.compile(
+    r"\bif\s+(?:\d{1,2}|[a-z]+)\s+units\s+(?:have|has)\s+not\s+been\s+reached\s+in\s+the\s+required\s+core\b"
+    r"|\bif\s+any\s+required\s+courses?\s+(?:were|was|are|is)\s+substituted\b", re.I)
+
+
+def substitute_core(record: dict, listed: dict, hours: bool = False) -> tuple[dict, list] | None:
+    """(the substitute list, the core's course spans) where the record holds exactly one list a student takes only in
+    place of a required course (SUBSTITUTE_HEADING, a choose_courses list outside any option group) and exactly one
+    all-required block (the core) outside any option group whose every course carries units; else None."""
+    blocks = record.get("blocks") or []
+    subs = [b for b in blocks if b.get("rule") == "choose_courses" and not b.get("option_group")
+            and SUBSTITUTE_HEADING.search(str(b.get("name") or ""))]
+    cores = [b for b in blocks if b.get("rule") == "all" and not b.get("option_group")]
+    if len(subs) != 1 or len(cores) != 1:
+        return None
+    spans = [choice_units(c, listed, hours) for c in cores[0].get("courses") or []]
+    if not spans or any(s is None for s in spans):
+        return None
+    return subs[0], spans
+
+
 def program_units(record: dict, listed: dict) -> tuple[tuple[float, float], list[str]]:
     """Every block's units summed; the blocks of one option_group count once,
     from the group's smallest block to its largest."""
@@ -475,8 +535,30 @@ def program_units(record: dict, listed: dict) -> tuple[tuple[float, float], list
     lo = hi = 0.0
     reasons: list[str] = []
     groups: dict[str, list[tuple[float, float]]] = {}
+    sub = substitute_core(record, listed, hours)
+    total = _span((record.get("program") or {}).get("total_units"))
+    heading_fills: list[float] = []
     for b in record.get("blocks") or []:
-        span, why = block_units(b, listed, hours)
+        if sub and b is sub[0]:
+            # In place of one core course: the core as printed, or the core less one course plus the list.
+            span, why = block_units(b, listed, hours)
+            if span is None:
+                reasons += why
+                continue
+            lo += min(0.0, span[0] - max(s[0] for s in sub[1]))
+            hi += max(0.0, span[1] - min(s[1] for s in sub[1]))
+            continue
+        n = heading_figure(b)
+        if n is not None and total and abs(total[0] - n) <= TOL:
+            # The list fills the program to its printed total; with no figure of its own it adds nothing below it.
+            heading_fills.append(n)
+            span, why = block_units(b, listed, hours)
+            if span is None:
+                span, why = (0.0, 0.0), []
+        elif n is not None:
+            span, why = block_units(dict(b, stated={"min": n, "max": n}), listed, hours)
+        else:
+            span, why = block_units(b, listed, hours)
         if span is None:
             reasons += why
             continue
@@ -493,7 +575,7 @@ def program_units(record: dict, listed: dict) -> tuple[tuple[float, float], list
     # A MINIMUM OF 18 UNITS", "COMPLETE 7-14 UNITS FROM THE FOLLOWING COURSES TO COMPLETE 36 TOTAL UNITS",
     # Los Angeles Valley, S534) carries fills_to: a student takes from it until the sum reaches that
     # figure, so neither end falls below it.
-    fills = [_num(b.get("fills_to")) for b in record.get("blocks") or [] if _num(b.get("fills_to"))]
+    fills = [_num(b.get("fills_to")) for b in record.get("blocks") or [] if _num(b.get("fills_to"))] + heading_fills
     if fills and not reasons:
         lo, hi = max(lo, max(fills)), max(hi, max(fills))
     return (lo, hi), reasons
@@ -1212,6 +1294,14 @@ def score(record: dict, closed: list[dict], text: str | None = None, award: str 
             deg = degree_check(prog, degree, lo + de[0], hi + de[1], [], text, award)
             arith = dict(arith, degree=deg) if not ok or deg["pass"] else dict(deg, major=arith)
     arith = dict(arith, **arithmetic_note(record, award, arith))
+    # The readings program_units made from a heading (S713), named so a reader of the check sees them.
+    sub = substitute_core(record, listed, measure(record) == "hours")
+    if sub and arith.get("computed") is not None:
+        arith["substitute_list"] = sub[0].get("name")
+    figs = [{"block": b.get("name"), "figure": heading_figure(b)} for b in record.get("blocks") or []
+            if heading_figure(b) is not None]
+    if figs and arith.get("computed") is not None:
+        arith["heading_figures"] = figs
 
     rep_codes = repeated(record)
     outs = outcomes_check(record, text)
