@@ -12,9 +12,10 @@ and the page its filed record was read from before the S703 reread. Each pinned 
   4. cannot bind on its filed page, which does not print the pin's words;
   5. names its pin's page in the filed record, extracted by S703's paid read.
 
-Two Clovis programs carry no pin, and the test says why, so a pin added without the reader change fails here:
-Entrepreneur 33432's core page does not print the title word, and Social Science 33492's total prints on the page
-after its window, which names no listed course. Pure stdlib.
+Two Clovis programs pin a page and name the last page of their section (through, the S703 follow-up's reader
+change): Entrepreneur 33432's core page does not print the title word, which the next page prints, and Social
+Science 33492's total prints on the page after its own, which names no listed course. The test shows each fails
+without through and reads its pages with it. Pure stdlib.
 """
 import io
 import json
@@ -64,6 +65,9 @@ MUST = {
 S703_RUNS = {"Cosumnes River College": "45018951701", "Clovis Community College": "45018954283"}
 PINNED = {"Cosumnes River College": {"33053": 333, "20227": 367, "20147": 625, "20193": 227},
           "Clovis Community College": {"33433": 106, "33487": 109, "33491": 110}}
+# The pins that name a last page (through, the S703 follow-up): (pinned page, through). No paid read has used them yet,
+# so the filed-record checks above stay with PINNED.
+THROUGH = {"Clovis Community College": {"33432": (106, 107), "33492": (148, 149)}}
 
 
 def prog(cn, p):
@@ -122,24 +126,45 @@ for college, want in PINNED.items():
     check(all((by[cn].get("source") or {}).get("url", "").endswith("#page=%d" % pg)
               and (by[cn].get("source") or {}).get("pinned") is True for cn, pg in want.items()),
           "%s: capture_pdf reads every pinned program from its pin's page, its source marked pinned" % college)
-    unpinned = [cn for cn in col["programs"] if cn not in want]
+    through = THROUGH.get(college) or {}
+    check(all((by[cn].get("source") or {}).get("url", "").endswith("#page=%d" % pg)
+              and (by[cn].get("source") or {}).get("pinned") is True
+              and (by[cn].get("source") or {}).get("pages") == list(range(pg, last + 1))
+              for cn, (pg, last) in through.items()),
+          "%s: capture_pdf reads each through pin's pages, its source marked pinned (%s)" % (college, through))
+    unpinned = [cn for cn in col["programs"] if cn not in want and cn not in through]
     check(all("pinned" not in (by[cn].get("source") or {}) for cn in unpinned if cn in by),
           "%s: a program with no pin carries no pinned mark (%s)" % (college, ", ".join(unpinned) or "none"))
 
-# The two Clovis programs left unpinned, each for a reason a reader change must clear first.
+# The two Clovis programs whose section runs across a page break: each pin names its last page (through, the S703
+# follow-up's reader change, d-clovis-through-pin-to-followup-s703). Without through, each fails as it did before.
 col = FX["colleges"]["Clovis Community College"]
 pages = [col["pages"].get(str(n), "") for n in range(1, col["pages_total"] + 1)]
 cl_pins = (STEPS.get("Clovis Community College") or {}).get("pdf_pages") or {}
 p32 = prog("33432", col["programs"]["33432"])
-check("33432" not in cl_pins and C.pdf_pinned_heading(pages, p32, cl_pins["33433"])
+pin32 = cl_pins.get("33432") or {}
+check(pin32.get("page") == 106 and pin32.get("through") == 107
+      and C.pdf_pinned_heading(pages, p32, {k: v for k, v in pin32.items() if k != "through"})
       == (None, "PDF page 106 does not print every title word"),
-      "33432 carries no pin: its core's page (p.106) does not print 'Entrepreneur', so a pin there is refused")
+      "33432 pins p.106 through 107: without through, its core's page (p.106) lacks 'Entrepreneur' and is refused")
+h32, why32 = C.pdf_pinned_heading(pages, p32, pin32)
+w32 = C.pdf_best(URL, pages, p32, p32["closed_list"], "pypdf", h32) if h32 else None
+check(why32 is None and w32["pages"] == [106, 107] and "Entrepreneur Option:" in flat(w32["text"])
+      and flat(w32["text"]).startswith("[page 106] %s" % flat(pin32["words"])) and w32["coverage"] > 0.9,
+      "33432: through binds pp.106-107, opens on the pin's words and holds the Entrepreneur Option (%s)"
+      % (w32 and w32["pages"]))
 p92 = prog("33492", col["programs"]["33492"])
-h92, _ = C.pdf_pinned_heading(pages, p92, {"page": 148, "words": "SOCIAL SCIENCE (Major #C.7410.AA)"})
+pin92 = cl_pins.get("33492") or {}
+h92, _ = C.pdf_pinned_heading(pages, p92, {k: v for k, v in pin92.items() if k != "through"})
 w92 = C.pdf_best(URL, pages, p92, p92["closed_list"], "pypdf", h92)
-check("33492" not in cl_pins and w92["pages"] == [148] and "Total Units: 21" in flat(col["pages"]["149"])
-      and "Total Units" not in flat(w92["text"]),
-      "33492 carries no pin: its own page p.148 is already read, and its total on p.149 is past the window")
+check(pin92.get("page") == 148 and pin92.get("through") == 149 and w92["pages"] == [148]
+      and "Total Units: 21" in flat(col["pages"]["149"]) and "Total Units" not in flat(w92["text"]),
+      "33492 pins p.148 through 149: without through, the window stops at p.148, before its total on p.149")
+h92, why92 = C.pdf_pinned_heading(pages, p92, pin92)
+t92 = C.pdf_best(URL, pages, p92, p92["closed_list"], "pypdf", h92) if h92 else None
+check(why92 is None and t92["pages"] == [148, 149] and "Total Units: 21" in flat(t92["text"])
+      and flat(t92["text"]).startswith("[page 148] %s" % flat(pin92["words"])),
+      "33492: through reads pp.148-149, its total on p.149 included (%s)" % (t92 and t92["pages"]))
 
 print("\n%d/%d checks passed" % (N[0] - len(FAILS), N[0]))
 sys.exit(1 if FAILS else 0)
