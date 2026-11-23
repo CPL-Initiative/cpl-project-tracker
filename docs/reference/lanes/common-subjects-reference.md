@@ -1,7 +1,7 @@
 ---
 title: "Common Subjects Reference (CSR) — one Common SUBJ per MQ discipline — lane state"
 created: 2026-10-19
-updated: 2026-11-21
+updated: 2026-11-23
 tags: [reference, roadmap-lane, csr, commons, subjects, mq-disciplines]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -26,13 +26,54 @@ mechanics and the M-ID invariants stay in [`mid_lifecycle`](../mid_lifecycle.md)
 holds the reference's state.
 
 **Vocabulary (Sam, 2026-10-19: "MQ Discipline ... will help me remember the difference between SUBJECT and
-DISCIPLINE").** The **MQ discipline** is the handbook's discipline (`kb/reference/mq_disciplines.json`, 248
-titles). The **Common SUBJ** is our four-letter code for it, the M-ID's prefix. The **Local SUBJ** is each
-college's own code, display only. One Common SUBJ belongs to one MQ discipline; one MQ discipline usually has
-one Common SUBJ and an umbrella has several
+DISCIPLINE").** The **MQ discipline** is the handbook's discipline (`kb/reference/mq_handbook_20th.json`, the 20th
+edition of November 2026: 251 disciplines; the 19th-edition read, `kb/reference/mq_disciplines.json`, holds 248). The
+**Common SUBJ** is our four-letter code for it, the M-ID's prefix. The **Local SUBJ** is each college's own code,
+display only. One Common SUBJ belongs to one MQ discipline; one MQ discipline usually has one Common SUBJ and an
+umbrella has several
 ([`reference-common-vs-local-subj-and-discipline-cardinality`](../../kb-notes/reference-common-vs-local-subj-and-discipline-cardinality.md)).
 
 ## Status
+
+**ON #3726 (S717, open; merge it first): a Common SUBJ for every MQ discipline.** The reference was seeded from the
+M-IDs' disciplines, so 95 of the handbook's disciplines had no code and the statewide calls could pick only an
+existing one (`f-csr-seeded-from-mids-left-95-mq-disciplines-uncoded-s717`;
+[`methodology-a-reference-seeded-from-its-consumers-cannot-see-what-they-never-reached`](../../kb-notes/methodology-a-reference-seeded-from-its-consumers-cannot-see-what-they-never-reached.md)).
+`kb/_csr_propose_codes.py` proposes one for each and `kb/_csr_assign_codes.py --apply` wrote all 95 into
+`kb/discipline_canonical_subj4.json` (source `assigned`, reviewer `csr-s717@bot`, confidence, level, basis; receipt
+`kb/receipts/csr_assigned_codes_s717.json`, undone by `git revert`): 2 from C-ID (ACCT, HOSP), 18 from codes colleges
+use (LING at 24 colleges, AERO, FINA from FINANCE, ADST from C-ID's ADS), 75 minted and read for connotation (CRMT,
+DSCS, MDVT, SANI, RSPC). FLTA (Foreign Languages: Filipino) and ESTI (Esthetics' M-IDs) were taken: Flight Attendant
+Training is FLTR (Sam's pick, formerly FATR), Estimating ESTG. Of the 251 disciplines, 156 read a person's pick and 95
+an assigned code (8 Confident, 84 Likely, 3 Leaning: ECOL, HOSP, UASY); no M-ID sits under an assigned code yet.
+`statewide_subject_codes.json` and `local_subject_recommendations.json` were rebuilt, since both read the code list.
+
+**The 20th edition and the MQ view (#3726).** `kb/_mq_handbook_parse.py` writes `kb/reference/mq_handbook_20th.json`
+from the CO's PDF (address and sha256 recorded, the PDF out of the repo): 251 disciplines, 3 new since the 19th
+(Counseling: Mental Health is printed in the master's list and missing from the index), each with its list type per CCR 53407(a)(2)-(4)
+(master's 91, a degree in the discipline plus experience 20, any degree plus experience 146) and the Title 5
+provisions read from printed pages 56-67 (printed page = PDF page - 6: 53410.1 licenses, 53412 to 53417). The
+19th-edition `kb/reference/mq_sections.json` folds the second list into the third (`f-mq-20th-edition-vs-dataset-s717`).
+`kb/_mq_view.py` writes `kb/status/mq_view.json` nightly: each discipline's list type, provisions, code and confidence,
+M-IDs, vocational TOP share, local codes, noncredit categories and *To look at* (46 today: 26 list type against
+vocational share, 15 names, 4 codes on a C-ID or CCN prefix attributed elsewhere, 3 new). Guards
+`tests/mq_view_test.py`, `tests/csr_code_history_test.py`. Mock: https://claude.ai/artifact/SHS5eNN4nb5vLkNCzzWvVE.
+
+**RULED (Sam, 2026-11-23).** `r-csr-codes-settled-on-list-confidence-not-confirmation-sam-2026-11-23`: every MQ
+discipline takes a code without waiting for a course; a code on the list is settled; confidence informs, and a person
+looks only at a low one; Sam changes a code with a note on the CSR tab; a check flags a collision. It supersedes item 6
+of the 2026-09-03 authority sheet (C-ID's ACCT as a chip on Business). The check: `kb/_apply_canonical_subj4.py`
+refuses a save that takes a code in use; `mq_view.json` names a code on two disciplines (none) or on another's C-ID or
+CCN prefix. `f-mq-handbook-revised-yearly-sam-2026-11-23`: the handbook changes yearly and codes rarely, so
+`record_former` keeps `{code, title, until, by, note}` in an entry's `formerly` when a save changes its code.
+`r-top-vocational-flag-sets-mq-type-sam-2026-11-23`: the TOP vocational asterisk sets a course's MQ type (master's or
+experience), never its discipline ([`methodology-top-is-a-last-in-line-signal`](../../kb-notes/methodology-top-is-a-last-in-line-signal.md)).
+`r-mq-view-more-than-codes-sam-2026-11-23`: the MQ view joins disciplines, codes and decisions. **DECIDED**
+`d-next-cip-for-mq-type-sam-2026-11-23`.
+
+**Correction:** commit `8afaa532` says "LING now calls LING"; it does not. The statewide calls still read BUSI for
+ACCT, ACCTG, ACC and ACTG (1,012 courses), ANTH for LING, CULN for HOSP, REAL, HUMA or HIST for the religion codes,
+JOUR for MCOM and AVIA for AERO: the model votes from where the M-IDs sit. They move at the re-point re-mint.
 
 **LIVE: the Progress view (S425, 2026-10-19).** `#canonical-subj4` opens on Progress, the Commons' dash
 for this reference, drawn by the shared `commons_progress.js` from `canonical_subj4.js`'s definitions: the
@@ -45,7 +86,7 @@ step 3). Guard `tests/csr_progress.test.js`; a11y `canonical-subj4-progress-dark
 
 **LIVE: the List view (2026-11-01).** `#canonical-subj4/list`, the third word beside Progress and Reference, is the
 Catalog Commons' shared List (`commons_list.js`, lazy-loaded) with this reference's spec in `canonical_subj4.js` (Sam,
-2026-11-01: *"I want one now for each of our Catalog Commons groups"*): one row per MQ discipline (147), A to Z, with its
+2026-11-01: *"I want one now for each of our Catalog Commons groups"*): one row per MQ discipline (147; 246 once #3726 lands), A to Z, with its
 Common SUBJ, status (confirmed by a person, by the nightly procedure `csr-confirm-authority@bot`, by a session cohort,
 or open), any collision, the Local SUBJs colleges use and how many, local courses, M-IDs, authority and note. Edit, Edit
 every row and the Status drawer's Confirm this pick write through one path (`canonCheck`, `writeCanon`,
@@ -90,26 +131,12 @@ session applies the filings under DR-25 with its ripple check. Guard `tests/csr_
 `canonical-subj4-local`, `-dark`. NEXT: the Commons card's second count (local codes confirmed by a person) needs the
 confirms synced to a committed file.
 
-**The definition of complete (ruled, Sheet 99 card 1, 2026-10-19):** an MQ discipline with courses whose Common
-SUBJ is confirmed (by a person, or by the nightly procedure where the code is the authority's own), that follows
-the authority rule, and that is in no collision with another MQ discipline. Measured 2026-11-04: **147 of 147**,
-every MQ discipline with courses complete (133 confirmed by a person, 14 by the nightly procedure or a session cohort;
-no collision). The Commons card's unconfirmed issue leaves its list at zero, by the builder's rule that an empty issue
-is not an issue.
-
-**The measured state, 2026-10-19 (the rows the 2026-11-04 scan re-measured say so):**
-
-| what | measure |
-|---|---|
-| MQ disciplines in the handbook's index | 248 (19th edition, read 2026-05-20, re-validated 2026-07-10); 147 carry courses on the map, 101 carry none |
-| picks confirmed | 147 of 147 (2026-11-04): 133 by a person, 14 by the nightly procedure or a session cohort; 0 on the data's modal code unconfirmed |
-| on an authority code | 13 CCN, 20 C-ID, 114 minted here, 23 with a chip; 0 missed alignments |
-| C-ID and CCN subject codes | 65 C-ID (495 descriptors), 14 CCN (58 courses), both read 2026-05-20; 11 shared; CCN adds ASTR, PSYC, STAT; CCN wins on Psychology (PSYC over PSY) |
-| identity codes | 282 codes on 75,581 minted identities: 146 canonical, 26 umbrella, 110 strays on 396 identities (101 of the stray codes sit on identities with no discipline); measured 2026-10-19 after the AGAB re-key |
-| collisions | 0 since the AGAB re-key of 2026-10-19 (S427); the AUTB pair was the one: Agricultural Business and Related Services now AGAB, AUTB M1006 re-keyed to AGAB M1006; AUTB M1071 Import Body Customizing returned to Auto Body Technology on Sam's Sheet 101 ruling (22:38Z), so no row sits off its code |
-| by design | 4 umbrellas carrying 26 codes beside their own; 3 fan-in alias families (4 alternate names); the FTVE pair; the five agriculture family codes both agriculture umbrellas carry, one of them (AGAB) now also Agricultural Business's own |
-| the daily scan | 38 findings (2026-11-04): 19 aligned, 13 weak mnemonics, 3 modal choices without a note, 1 anchor key in the dead format, 2 divergences a note records; none unconfirmed, no collision. The Commons card counts 17 to confirm or note and 93 stray identity codes on 305 identities |
-| procedures | 8 written, 6 in force; 2 quarterly routines to build; the cohort confirm on since 2026-10-19 (S427), first run after the merge |
+**The definition of complete (Sam, 2026-11-23, `r-csr-codes-settled-on-list-confidence-not-confirmation-sam-2026-11-23`):**
+every MQ discipline carries a Common SUBJ on the list, the code follows the authority rule, and no code sits on two
+disciplines; a person looks only at a code of low confidence. It replaces the confirmation bar of Sheet 99 card 1
+(2026-10-19). That definition and the measured state of 2026-10-19 and 2026-11-04 moved verbatim to
+[`docs/common_subject_code_tab_lessons.md`](../../common_subject_code_tab_lessons.md), *Moved from the lane (S717)*.
+Measured 2026-11-23 on #3726: 251 of 251 carry a code (164 Confident, 84 Likely, 3 Leaning), none on two disciplines.
 
 **The machine side.** `kb/_csr_trail.py --latest` runs daily from `daily-dashboard.yml` after the picks sync
 and before the Commons build, read-only, and writes `kb/csr_out/latest.json` (the nine canon rules, every
@@ -127,49 +154,24 @@ four known issues with owners, the procedures in force, and deep links into the 
 
 ## Sam's eight steps against the record (S425's check, 2026-10-19)
 
-- **CSR before CCR.** Right for the keys: every M-ID is minted under the discipline's Common SUBJ, so a
-  settled code first makes every later re-mint cheap. The Program Requirements crosswalk runs through the
-  identity layer's memberships (a program's course joins an identity by its COCI control number; the Common
-  SUBJ is the identity's label): 67,991 of 84,475 distinct active courses on active programs (80.5%) sit under
-  an identity, and 21,761 of the 141,738 COCI courses in the July extract (15.4%) have none, because the
-  identities were minted from the 2026-05-22 extract and not re-minted since. The CCR's freshness is the
-  larger crosswalk dependency; the CSR's stability is what makes that re-mint safe.
-- **One process for every common reference.** Ruled on Open Asks Sheet 95 card 1 (2026-10-18): the shared
-  module and the run logs landed; the per-reference Progress views are the open step, in the order Exhibit,
-  Course, CR, Subjects. Sam's ask today moved Subjects first; his call, recorded.
-- **Steps 1 and 2, the quarterly routines.** The three sources were last read in May (the handbook re-validated
-  in July). A check that diffs and opens a card is the right routine; an automatic rewrite would rename
-  disciplines that carry picks. The scope note's handbook link answered 404 and is replaced by the Chancellor's Office's live
-  Minimum Qualifications page, which lists the 19th edition (S431); the C-ID site moved from c-id.net to
-  c-idsystem.org, its data on data-c-idsystem.org (S437), which a runner reads and the sandbox proxy refuses. Eight MQ names carry a Title 5 section number from the PDF read and one is cut short
-  (*Disabled Student Programs and*); Sam's rename ruling of 2026-09-08 has not been applied.
-- **Step 3, the AG example.** The authority recode of 2026-09-03 already adopted every four-letter CCN and C-ID
-  code (0 missed alignments); the five hyphenated agriculture codes became the umbrella codes AGAB, AGAS, AGEH,
-  AGMA, AGPS, and Sam ruled AGRI and AGPR the residuals (cards 4 to 6). The chips on the Agriculture row say the
-  authority splits the discipline finer than the MQ list does; they are sub-subjects, not a competing code. What
-  step 3 can still do is empty the residual: 404 identities sit under AGRI (measured 2026-10-19 by key prefix in
-  `kb/coci_minted_courses.json` and `kb/coci_minted_singletons.json`: 86 clustered, 318 stand-alone; 403 under
-  Agriculture), and a Jev sitting can propose a family for each from the descriptors, Sam confirming, the rest
-  staying residual (a card). The
-  strays are the unnecessary codes: 110 on 396 identities, most on identities with no discipline yet.
-- **Steps 4 and 5.** Every MQ discipline with courses carries a code; the 101 without courses take one when
-  their first course appears. One code sits on two MQ disciplines (AUTB); the identity layer's disagreements
-  (a few rows under a code naming a second discipline; 96 identities with no discipline) are the cross-list
-  and discipline-blank lanes' work. The tab's own check had listed six ruled sharings as collisions.
-- **Step 6, cross-listed.** Three senses, and the procedure names all three: a code on two disciplines (a
-  collision, forbidden except a ruled fan-in), a discipline with several codes (an umbrella, allowed), and a
-  course with two homes (`xdisc`, 9 rows today; 535 candidates wait on the cross-list sheet).
-- **Steps 7 and 8.** Both exist as rulings (2026-09-03, items 1 to 3 and 15) and run at every mint and re-seed;
-  the one live difference is Psychology (PSYC over PSY). What was missing was the measure on a dash.
-- **Forgotten along the way.** The validate stage has never been used (0 of 147 in five months); the scan was
-  never scheduled and asked two settled questions at every run; the tab's C-ID index skipped 17 of the 65
-  subjects; the Jev next step for the CSR (fix AUTB, the 2026-09-29 sheet's card 11) is still open.
+Moved verbatim to [`docs/common_subject_code_tab_lessons.md`](../../common_subject_code_tab_lessons.md), *Moved from
+the lane (S717)*; the 2026-11-23 ruling replaced its steps 4 and 5 (a code waited for a course). Still open from it:
+the AGRI residual (404 identities; a Jev sitting proposes a family each, Sam confirming) and the stray identity codes.
 
 ## Sheet 99's six rulings (Sam, 2026-10-19), all applied
 
 Their record moved verbatim to [`docs/common_subject_code_tab_lessons.md`](../../common_subject_code_tab_lessons.md), *Moved from the lane (S577)*.
 
 ## NEXT
+
+**NEXT (S717), in order:** (1) merge #3726 on a green `test`; (2) the MQ view in COBI, `#commons/subjects/mq`
+([`commons`](commons.md)); (3) re-point the folded local codes, a re-mint under
+[`docs/coursecontrolnumber_remint.md`](../../coursecontrolnumber_remint.md), dry run first: ACCT, ACCTG, ACC and ACTG
+to ACCT under Accounting, LING, HOSP, the religion codes (RLST, RELS, RELG) to RLST, MCOM, AERO (its AFROTC courses
+to MILS); `kb/reference/subject_discipline_map.json` still sends ACC, ACCT and ACCTG to Business; AT and INS are
+homonyms (Automotive, tutoring), read college by college; (4) test CIP in place of TOP for MQ type; (5) collect the
+outline's MQ discipline in the SLO pass ([`data_sources`](../data_sources.md)); (6) `csr-quarterly.yml`'s baseline
+holds the 19th edition's sha256, so re-baseline it on the 20th before its January compare.
 
 **The Subjects card (S694, #3620):** each college's local subject codes and printed names beside the common subject codes, on the Commons front at `#commons/subjects`; where it stands and its NEXT: [`commons`](commons.md).
 

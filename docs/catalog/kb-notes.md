@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-602 document(s).
+603 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -205,6 +205,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A receipt measures a worklist once; a lane recomputes it every build](../kb-notes/methodology-a-receipt-measures-a-worklist-once-a-lane-recomputes-it-live.md) | methodology | published | 2026-09-04 | 2026-09-04 |
 | [A receipt too large for the connector applies from the runner](../kb-notes/methodology-a-receipt-too-large-for-the-connector-applies-from-the-runner.md) | methodology | published | 2026-10-10 | 2026-11-13 |
 | [A red merge ref can be main's, and every open PR inherits it](../kb-notes/methodology-a-red-merge-ref-can-be-mains.md) | methodology | published | 2026-10-14 | 2026-10-14 |
+| [A reference seeded from its consumers cannot see what they never reached](../kb-notes/methodology-a-reference-seeded-from-its-consumers-cannot-see-what-they-never-reached.md) | methodology | published | 2026-11-23 | 2026-11-23 |
 | [A regressed mode must reach the changed code](../kb-notes/methodology-a-regressed-mode-must-reach-the-changed-code.md) | methodology | published | 2026-10-18 | 2026-10-18 |
 | [A remembered toggle hides the default from its author](../kb-notes/methodology-a-remembered-toggle-hides-the-default-from-its-author.md) | methodology | published | 2026-09-02 | 2026-09-02 |
 | [A renamed family is not a correction](../kb-notes/methodology-a-renamed-family-is-not-a-correction.md) | methodology | published | 2026-11-04 | 2026-11-04 |
@@ -506,7 +507,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [The text a reader sees is not the text a test reads](../kb-notes/methodology-the-text-a-reader-sees-is-not-the-text-a-test-reads.md) | methodology | published | 2026-09-02 | 2026-09-02 |
 | [The unit of curation work is the component, not the suggestion](../kb-notes/methodology-the-unit-of-curation-work-is-the-component-not-the-suggestion.md) | methodology | published | 2026-08-24 | 2026-08-24 |
 | [Title-similarity merge candidates — the guard suite and the licensure-spec lesson](../kb-notes/methodology-title-similarity-merge-guards.md) | methodology | published | 2026-06-12 | 2026-06-12 |
-| [TOP is a last-in-line signal, never a gatekeeper](../kb-notes/methodology-top-is-a-last-in-line-signal.md) | methodology | published | 2026-07-16 | 2026-09-25 |
+| [TOP is a last-in-line signal, never a gatekeeper](../kb-notes/methodology-top-is-a-last-in-line-signal.md) | methodology | published | 2026-07-16 | 2026-11-23 |
 | [Trace a data finding to what students received before raising it with a college](../kb-notes/methodology-trace-a-finding-to-what-students-received.md) | methodology | published | 2026-10-05 | 2026-10-05 |
 | [Transitive closure is right for decisions and wrong for similarity](../kb-notes/methodology-transitive-closure-is-right-for-decisions-and-wrong-for-similarity.md) | methodology | published | 2026-08-24 | 2026-08-24 |
 | [Two expressions of one predicate will drift apart, and the drift is silent](../kb-notes/methodology-two-expressions-of-one-predicate-will-drift-apart.md) | methodology | published | 2026-09-09 | 2026-09-09 |
