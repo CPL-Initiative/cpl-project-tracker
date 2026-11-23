@@ -376,6 +376,30 @@ check(cpr.plan_delay({"delay_ms": 12000}, "4000") == 12000,
 check(cpr.plan_delay({"delay_ms": 500}, "4000") == 4000 and cpr.plan_delay({"delay_ms": "x"}, "4000") == 4000,
       "a plan never reads faster than the workflow's delay, and a delay that is no number is ignored")
 
+# ── read_hand_filed_copy (S714): a page "hand_filed": true reads the college's hand-filed copy, and no other address ──
+import _program_requirements_college as _C  # noqa: E402
+_saved = (_C.hand_filed_meta, _C.hand_filed, _C.read_hand_filed)
+_meta = {"url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf",
+         "copy_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf", "sha256": "ab"}
+_asked = []
+try:
+    _C.hand_filed_meta = lambda college: ("x.json", _meta) if college == "American River College" else None
+    _C.hand_filed = lambda college: (_asked.append(college), {"meta": _meta, "data": b"%PDF"})[1]
+    _C.read_hand_filed = lambda hf: {"url": hf["meta"]["url"], "status": None, "access": "hand_filed", "bytes": 4,
+                                     "extractor": "pypdf", "pages": ["Diesel Technology Certificate", "DESL 101 3"]}
+    got = cpr.read_hand_filed_copy("American River College", _meta["url"], cpr.keyword_re(["\\S"]))
+    check(got["kind"] == "pdf" and got["access"] == "hand_filed" and got["pages"] == ["Diesel Technology Certificate",
+          "DESL 101 3"] and got["chars"] == len("Diesel Technology Certificate\n\nDESL 101 3"),
+          "a hand_filed page reads the record's file page for page, as the capture reads it")
+    other = cpr.read_hand_filed_copy("American River College", "https://arc.losrios.edu/catalog", cpr.keyword_re(["x"]))
+    check(other["access"] == "not_the_hand_filed_copy" and not other.get("pages") and _asked == ["American River College"],
+          "a hand_filed page naming another address is refused before any fetch")
+    none = cpr.read_hand_filed_copy("Folsom Lake College", _meta["url"], cpr.keyword_re(["x"]))
+    check(none["access"] == "no_hand_filed_record" and _asked == ["American River College"],
+          "a college with no hand-filed record reads nothing")
+finally:
+    _C.hand_filed_meta, _C.hand_filed, _C.read_hand_filed = _saved
+
 if FAILS:
     print("\n%d FAILED" % len(FAILS))
     sys.exit(1)

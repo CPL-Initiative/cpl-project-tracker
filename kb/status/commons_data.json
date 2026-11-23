@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-23T15:04:46Z",
+ "written_at": "2026-11-23T15:24:16Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17036,
-  "gap": 5299,
+  "passing": 17072,
+  "gap": 5263,
   "with_gap": 118,
-  "cost_usd": 1340.95,
-  "passed_at_read": 16270,
+  "cost_usd": 1340.94,
+  "passed_at_read": 16311,
   "cost_receipts": 118,
   "spent_usd": 1236.15,
   "spent_runs": 194,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16714,
-  "gap": 5299,
+  "passing": 16750,
+  "gap": 5263,
   "collected_with_gaps": 322,
   "discontinued": 0
  },
@@ -3477,12 +3477,12 @@
    "harvested": true,
    "slug": "cosumnes_river",
    "programs": 226,
-   "passing": 160,
-   "gap": 66,
+   "passing": 176,
+   "gap": 50,
    "causes": {
     "no_closed_list": 7,
     "page_not_found": 2,
-    "places_none": 25,
+    "places_none": 9,
     "unknown_without_live": 32
    },
    "census_causes": {
@@ -3508,10 +3508,10 @@
    "outcomes_file": "kb/status/commons_data_programs/cosumnes_river.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-22T11:36:44Z",
+   "read_at": "2026-11-23T13:44:05Z",
    "read_kind": "capture",
-   "cost_usd": 19.09,
-   "passed_at_read": 152,
+   "cost_usd": 19.08,
+   "passed_at_read": 167,
    "slo_queue": null,
    "scout": {
     "recommendation": "page_read",
@@ -3528,15 +3528,15 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 219,
-   "found": 197,
+   "found": 208,
    "extracted": 217,
    "errors": 0,
    "failed_checks": {
-    "coverage": 33,
+    "coverage": 17,
     "invented": 8,
-    "arithmetic": 50,
+    "arithmetic": 34,
     "repeated": 0,
-    "outcomes": 8
+    "outcomes": 9
    },
    "platform": "pdf",
    "catalog_year": "2026-2027",
@@ -3544,12 +3544,12 @@
    "capture_root": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 352.3,
-   "run": "45018951701",
+   "read_seconds": 342.1,
+   "run": "45185759855",
    "levers": {
-    "reader_page_assignment": 25,
     "reconcile_steps": 18,
     "ge_units_steps": 14,
+    "reader_page_assignment": 9,
     "program_course_file_check": 7,
     "reader_page_search": 2
    },
@@ -3559,13 +3559,13 @@
      "models": {
       "claude-opus-5-5": 217
      },
-     "run": "45018951701",
-     "at": "2026-11-22T11:36:44Z",
-     "cost_usd": 19.09,
+     "run": "45185759855",
+     "at": "2026-11-23T13:44:05Z",
+     "cost_usd": 19.08,
      "platform": "pdf"
     },
     "slo_read": null,
-    "plo_programs": 176,
+    "plo_programs": 192,
     "ppm_member": null,
     "maps": {
      "held": 0,
@@ -4648,11 +4648,10 @@
    "harvested": true,
    "slug": "folsom_lake",
    "programs": 108,
-   "passing": 93,
-   "gap": 15,
+   "passing": 96,
+   "gap": 12,
    "causes": {
     "page_not_found": 1,
-    "places_none": 3,
     "unknown_without_live": 11
    },
    "census_causes": {
@@ -4674,10 +4673,10 @@
    "outcomes_file": "kb/status/commons_data_programs/folsom_lake.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-17T15:52:04Z",
+   "read_at": "2026-11-23T13:51:23Z",
    "read_kind": "capture",
-   "cost_usd": 9.43,
-   "passed_at_read": 83,
+   "cost_usd": 9.4,
+   "passed_at_read": 90,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -4690,23 +4689,22 @@
    "extracted": 107,
    "errors": 0,
    "failed_checks": {
-    "coverage": 3,
+    "coverage": 0,
     "invented": 0,
-    "arithmetic": 23,
+    "arithmetic": 16,
     "repeated": 0,
     "outcomes": 1
    },
-   "platform": "custom_html",
+   "platform": "pdf",
    "catalog_year": "2026-2027",
-   "catalog_url": "https://flc.losrios.edu/2026-2027-official-catalog",
-   "capture_root": "https://flc.losrios.edu/2026-2027-official-catalog",
+   "catalog_url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf",
+   "capture_root": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 85.9,
-   "run": "39046850071",
+   "read_seconds": 158.9,
+   "run": "45187906040",
    "levers": {
     "reconcile_steps": 11,
-    "reader_page_assignment": 3,
     "reader_page_search": 1
    },
    "collection": {
@@ -4715,13 +4713,13 @@
      "models": {
       "claude-opus-5-5": 107
      },
-     "run": "39046850071",
-     "at": "2026-10-17T15:52:04Z",
-     "cost_usd": 9.43,
-     "platform": "custom_html"
+     "run": "45187906040",
+     "at": "2026-11-23T13:51:23Z",
+     "cost_usd": 9.4,
+     "platform": "pdf"
     },
     "slo_read": null,
-    "plo_programs": 98,
+    "plo_programs": 101,
     "ppm_member": null,
     "maps": {
      "held": 0,
@@ -9824,13 +9822,13 @@
    "harvested": true,
    "slug": "sacramento_city",
    "programs": 227,
-   "passing": 161,
-   "gap": 66,
+   "passing": 178,
+   "gap": 49,
    "causes": {
     "no_closed_list": 20,
     "page_not_found": 3,
-    "places_none": 22,
-    "unknown_without_live": 21
+    "places_none": 4,
+    "unknown_without_live": 22
    },
    "census_causes": {
     "coverage_fails": 3,
@@ -9854,10 +9852,10 @@
    "outcomes_file": "kb/status/commons_data_programs/sacramento_city.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-17T15:55:20Z",
+   "read_at": "2026-11-23T13:37:43Z",
    "read_kind": "capture",
-   "cost_usd": 18.5,
-   "passed_at_read": 148,
+   "cost_usd": 18.53,
+   "passed_at_read": 167,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -9866,29 +9864,29 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 207,
-   "found": 204,
+   "found": 201,
    "extracted": 204,
    "errors": 0,
    "failed_checks": {
-    "coverage": 25,
+    "coverage": 7,
     "invented": 3,
-    "arithmetic": 54,
+    "arithmetic": 35,
     "repeated": 0,
     "outcomes": 0
    },
-   "platform": "custom_html",
+   "platform": "pdf",
    "catalog_year": "2026-2027",
-   "catalog_url": "https://scc.losrios.edu/2026-2027-official-catalog",
-   "capture_root": "https://scc.losrios.edu/2026-2027-official-catalog",
+   "catalog_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf",
+   "capture_root": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 209.5,
-   "run": "39047070975",
+   "read_seconds": 304.3,
+   "run": "45184748331",
    "levers": {
-    "reader_page_assignment": 22,
     "program_course_file_check": 20,
     "reconcile_steps": 18,
-    "ge_units_steps": 3,
+    "ge_units_steps": 4,
+    "reader_page_assignment": 4,
     "reader_page_search": 3
    },
    "collection": {
@@ -9897,13 +9895,13 @@
      "models": {
       "claude-opus-5-5": 204
      },
-     "run": "39047070975",
-     "at": "2026-10-17T15:55:20Z",
-     "cost_usd": 18.5,
-     "platform": "custom_html"
+     "run": "45184748331",
+     "at": "2026-11-23T13:37:43Z",
+     "cost_usd": 18.53,
+     "platform": "pdf"
     },
     "slo_read": null,
-    "plo_programs": 181,
+    "plo_programs": 197,
     "ppm_member": null,
     "maps": {
      "held": 0,

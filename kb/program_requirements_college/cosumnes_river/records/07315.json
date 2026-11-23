@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "ECE: School Age Child Care and Education",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=301",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=306",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11694,
+  "input_tokens": 6925,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11694,
-    "output_tokens": 723,
+    "input_tokens": 6925,
+    "output_tokens": 1587,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,38 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 723,
+  "output_tokens": 1587,
   "output_tokens_details": {
-   "thinking_tokens": 300
+   "thinking_tokens": 482
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06124,
- "ms": 7282,
- "seconds": 7.5,
+ "cost_usd": 0.05944,
+ "ms": 13103,
+ "seconds": 24.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 8,
    "listed": 8,
-   "share": 0.0,
-   "missing": [
-    "ECE300",
-    "ECE307",
-    "ECE312",
-    "ECE314",
-    "ECE320",
-    "ECE321",
-    "ECE326",
-    "ECE404"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -70,49 +61,50 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    26.0,
+    26.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    26.0,
+    26.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "",
+   "section_heading": "Early Childhood Education, School Age Child Care and Education Certificate",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 26,
+    "max": 26
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -129,46 +121,108 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "(Development and Learning) Analyze and synthesize research and theories to support development and learning. Evaluate and implement developmentally appropriate and culturally relevant approaches to teaching and learning which support the whole child including foundational skills and concepts in language and literacy, math, science, art, health and wellness, and social relationships.",
+    "(Professionalism) Develop competencies, professional skills, and plans for professional growth. Integrate reflective practices to support professional growth as an Early Childhood professional. Understand and integrate the NAEYC Code of Ethics to support children, families, and other educators.",
+    "(Observation, Documentation and Assessment) Utilize authentic assessment strategies based on observation, reflection, documentation, and interpretation of childrenâ€™s development to inform teaching practices.",
+    "(Family Engagement) Incorporate strategies for building respectful and reciprocal relationships with families, children and the community in order to support children's development and learning. Develop knowledge and skills to provide a responsive curriculum and learning environment that reflects the children and the families in the program."
+   ],
+   "careers": [
+    "teacher"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ECE 300",
-    "why": "section for this certificate not in the text; named only in other awards' sections"
-   },
-   {
-    "code": "ECE 307",
-    "why": "section for this certificate not in the text; named only in other awards' sections"
-   },
-   {
-    "code": "ECE 312",
-    "why": "section for this certificate not in the text; named only in other awards' sections"
-   },
-   {
-    "code": "ECE 314",
-    "why": "section for this certificate not in the text; named only in other awards' sections"
-   },
-   {
-    "code": "ECE 320",
-    "why": "section for this certificate not in the text; named only in other awards' sections"
-   },
-   {
-    "code": "ECE 321",
-    "why": "section for this certificate not in the text; named only in other awards' sections"
-   },
-   {
-    "code": "ECE 326",
-    "why": "section for this certificate not in the text; named only in other awards' sections"
-   },
-   {
-    "code": "ECE 404",
-    "why": "section for this certificate not in the text; named only in other awards' sections"
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ECE 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 312",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 314",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 326",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 307",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 404",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 320",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 321",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
-  "notes": []
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The 'PSLO 1:' through 'PSLO 4:' labels were treated as list numbers and omitted from the outcomes; the parenthetical topic names were kept as printed.",
+   "PSLO 3 contains the mojibake 'childrenâ€™s' (likely 'children's') copied as printed in the source text.",
+   "ECE 312, ECE 314 and ECE 307 show an extra '(3)' in the title column; units recorded as 3.",
+   "Career 'teacher' taken from the Career Information text ('employment as a teacher in privately funded before-and-after school child care programs').",
+   "The certificate's printed 'Total Units: 26' is recorded in total_units; the requirement block's stated is left null."
+  ]
  },
- "extracted_run": "39047009824"
+ "extracted_run": "45184653221",
+ "catalog_year": "2026-2027",
+ "source_sha": "ec4f86ff35a21255",
+ "source_codes": [
+  "ECE300",
+  "ECE307",
+  "ECE312",
+  "ECE314",
+  "ECE320",
+  "ECE321",
+  "ECE326",
+  "ECE404"
+ ],
+ "source_coverage": 1.0
 }
