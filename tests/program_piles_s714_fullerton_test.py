@@ -13,7 +13,8 @@ Pinned here:
     reads the printed 0.5-3 units;
   * precision 24 of 24 against the hand reading (11 pass, 13 held); the claim checks: no note against, and the
     printed form found on every program's page by today's capture or the S714 free page read; 33 boundary readings;
-  * the plan: 11 rows named exactly by the receipt and the four SQL files, the confirm guard, a second run plans none.
+  * the plan: 11 rows named exactly by the receipt and the four SQL files, the confirm guard, a second run plans none;
+    the load's image of each committed record is its receipt's after-image (the rows applied by migrate 45191999745).
 
 Run from repo root: python3 tests/program_piles_s714_fullerton_test.py
 """
@@ -27,6 +28,7 @@ CENSUS_AT_PLAN = os.path.join(ROOT, "tests", "fixtures", "harvest_gap_census_s71
 RECEIPT = os.path.join(ROOT, "kb", "receipts", "program_requirement_records_piles_fullerton_2026-11-23_s714f.json")
 MIG = os.path.join(ROOT, "kb", "migrations", "2026-11-23_s714f_prreq_piles_%s.sql")
 sys.path.insert(0, os.path.join(ROOT, "kb"))
+import _program_named_gaps as NG  # noqa: E402
 import _program_piles_s714_fullerton as F  # noqa: E402
 import _program_requirements_reconcile as R  # noqa: E402
 import _program_requirements_score as S  # noqa: E402
@@ -109,6 +111,14 @@ for r in rows:
           % r["control_number"])
     check(r["after_image"]["checks"]["coverage"] is True and r["after_image"]["checks"]["invented"] is True
           and r["before_image"]["checks"] != r["after_image"]["checks"], "%s: the row's checks move" % r["control_number"])
+# The applied rows stand (#3719): the load's image of each committed record is the receipt's after-image, so the next
+# load of the college posts what the apply wrote. A change to load_rows, the renumbers or a record file fails here.
+images = NG._load_images({COLLEGE})
+for r in rows:
+    img = images.get((COLLEGE, r["control_number"]))
+    check(img is not None and img["checks"] == r["after_image"]["checks"] and img["record"] == r["before_image"]["record"]
+          and str(img["extracted_run"]) == str(r["extracted_run"]),
+          "%s: the load's image of the committed record is the receipt's after-image" % r["control_number"])
 for part in ("apply", "preread", "preread_md5", "rollback"):
     with open(MIG % part, encoding="utf-8") as fh:
         text = fh.read()

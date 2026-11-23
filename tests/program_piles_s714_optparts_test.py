@@ -10,7 +10,8 @@ each record's own state list, moved ten verdicts elsewhere from their live verdi
   * the claim checks: the notes stand on all ten; today's capture finds every listed course of the option's blocks
     on nine, and 31 of 33 on Santa Barbara City 05934 (ENVS 112 and ENVS 115 not found);
   * precision 15 of 15, 30 boundary readings with none wrong, the reach's 21 answers right and none from passing;
-  * the plan: 9 rows (05934 held on its capture claim) named exactly by the receipt and the four SQL files, the confirm guard, a second run plans none.
+  * the plan: 9 rows (05934 held on its capture claim) named exactly by the receipt and the four SQL files, the confirm guard, a second run plans none;
+  * the load's image of each committed record is its receipt's after-image (the rows applied by migrate 45188487600).
 
 Run from repo root: python3 tests/program_piles_s714_optparts_test.py
 """
@@ -23,6 +24,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RECEIPT = os.path.join(ROOT, "kb", "receipts", "program_requirement_records_piles_optparts_2026-11-23_s714o.json")
 MIG = os.path.join(ROOT, "kb", "migrations", "2026-11-23_s714o_prreq_piles_%s.sql")
 sys.path.insert(0, os.path.join(ROOT, "kb"))
+import _program_named_gaps as NG  # noqa: E402
 import _program_piles_s714_ccsf as C  # noqa: E402
 import _program_piles_s714_optparts as O  # noqa: E402
 import _program_requirements_score as S  # noqa: E402
@@ -72,6 +74,15 @@ for r in rows:
     check(r["after_image"]["checks"]["arithmetic"] == "equal" and r["after_image"]["checks"]["coverage"] is True
           and r["after_image"]["checks"]["invented"] is True, "%s %s: the row passes after" % key)
     check(r["after_image"]["checks"] != r["before_image"]["checks"], "%s %s: the row's checks move" % key)
+# The applied rows stand (#3719): the load's image of each committed record is the receipt's after-image, so the next
+# load of the college posts what the apply wrote. A change to load_rows, the scorer or a record file fails here.
+images = NG._load_images({r["college"] for r in rows})
+for r in rows:
+    key = (r["college"], r["control_number"])
+    img = images.get(key)
+    check(img is not None and img["checks"] == r["after_image"]["checks"] and img["record"] == r["before_image"]["record"]
+          and str(img["extracted_run"]) == str(r["extracted_run"]),
+          "%s %s: the load's image of the committed record is the receipt's after-image" % key)
 
 # ── the self-recall ──
 pr = O.precision(targets, {(r["college"], r["control_number"]): O.row_passes(r["before_image"]["checks"])
