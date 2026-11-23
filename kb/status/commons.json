@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-23T07:03:20Z",
+ "written_at": "2026-11-23T07:28:25Z",
  "rows": [
   {
    "key": "requirements",
@@ -584,9 +584,9 @@
    ],
    "pair": [
     {
-     "n": 89769,
+     "n": 95379,
      "of": null,
-     "words": "outcomes read from 25,319 courses at 35 colleges",
+     "words": "outcomes read from 27,188 courses at 39 colleges",
      "open": "#coci-lookup"
     }
    ],
@@ -594,14 +594,16 @@
     "read from the public outline"
    ],
    "facts": {
-    "outcomes": 89769,
-    "courses": 25319,
+    "outcomes": 95379,
+    "courses": 27188,
     "colleges": [
      "allan_hancock",
+     "berkeley_city",
      "cabrillo",
      "chabot",
      "city_of_san_francisco",
      "coastline_community",
+     "college_of_alameda",
      "college_of_the_redwoods",
      "college_of_the_siskiyous",
      "columbia",
@@ -613,8 +615,10 @@
      "golden_west",
      "irvine_valley",
      "lake_tahoe_community",
+     "laney",
      "las_positas",
      "los_medanos",
+     "merritt",
      "mission",
      "modesto_junior",
      "moreno_valley",
@@ -633,11 +637,11 @@
      "santiago_canyon",
      "shasta"
     ],
-    "reads": 79
+    "reads": 84
    },
    "machine": {
     "what": "the last outline read",
-    "at": "2026-11-22T12:11:17Z",
+    "at": "2026-11-22T16:26:19Z",
     "every_hours": null
    },
    "sources": [
