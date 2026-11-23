@@ -78,8 +78,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     72.0,
     87.0
@@ -93,9 +93,8 @@
     22.0,
     22.0
    ],
-   "why": [
-    "the blocks and general education sum to 72.0-87.0; the catalog prints 60.0-75.0 for the degree"
-   ]
+   "why": [],
+   "double_count": 12.0
   },
   "repeated": {
    "codes": [],
@@ -119,7 +118,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -156,7 +155,11 @@
     "care provider",
     "managers of care",
     "staff nurse"
-   ]
+   ],
+   "ge_overlap": {
+    "min": 12,
+    "max": 12
+   }
   },
   "blocks": [
    {
@@ -437,5 +440,17 @@
    "Footnote ** requires one of NURS 106, PSYC C1000, or SOC 001 for COS-GE Area 7."
   ]
  },
- "extracted_run": "38748848139"
+ "extracted_run": 45194676517,
+ "reconciled": [
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": {
+    "min": 12,
+    "max": 12
+   },
+   "words": "12 units may double count above in COS-GE"
+  }
+ ],
+ "read_run": "38748848139"
 }

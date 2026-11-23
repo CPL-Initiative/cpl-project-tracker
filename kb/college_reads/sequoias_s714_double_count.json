@@ -1,0 +1,21 @@
+{
+ "_readme": "S714 (lane 2's cheap piles at College of the Sequoias): the census's 22 reconcile_steps records are mostly local degrees whose major, general education and electives add past the printed degree total, and the reader's notes say the page marks courses that meet general education and prints how many units may be double counted. This read prints the words around 'double' on seven of the pages, so a set step can be written from the catalog's own wording. One load per page and robots.txt, no model call, nothing written.",
+ "college": "College of the Sequoias",
+ "questions": {
+  "double_count": "The page's own words on courses that meet general education and the units that may be double counted, and the totals it prints."
+ },
+ "keywords": [
+  "[Dd]ouble",
+  "TOTAL",
+  "[Mm]eets? GE"
+ ],
+ "pages": [
+  {"answers": ["double_count"], "url": "https://catalog.cos.edu//areas-study/plant-science/associate-science-plant-science-not-transfer-as/"},
+  {"answers": ["double_count"], "url": "https://catalog.cos.edu//areas-study/dance/associate-arts-dance-not-for-transfer-aa/"},
+  {"answers": ["double_count"], "url": "https://catalog.cos.edu//areas-study/fashion/associate-science-fashion-merchandising-design-as/"},
+  {"answers": ["double_count"], "url": "https://catalog.cos.edu//areas-study/sports-medicine/associate-science-sports-medicine-athletic-trainer-transfer-as/"},
+  {"answers": ["double_count"], "url": "https://catalog.cos.edu//areas-study/engineering/associate-science-engineering-transfer-as/"},
+  {"answers": ["double_count"], "url": "https://catalog.cos.edu//areas-study/paralegal/associate-science-paralegal-not-for-transfer-as/"},
+  {"answers": ["double_count"], "url": "https://catalog.cos.edu//areas-study/ornamental-horticulture/associate-science-ornamental-horticulture-not-for-transfer-as/"}
+ ]
+}

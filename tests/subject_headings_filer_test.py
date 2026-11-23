@@ -37,6 +37,11 @@ for printed, want in [("ADMINISTRATION OF JUSTICE", "Administration of Justice")
                       ("ANATOMY II", "Anatomy II"), ("English for Multilingual Students", "English for Multilingual Students"),
                       ("COMPUTER AIDED DESIGN/DRAFTING", "Computer Aided Design/Drafting")]:
     check("%s -> %s" % (printed, want), T(printed) == want, T(printed))
+for printed, want in [("Work Experience Education (formerly COTR)", "Work Experience Education (formerly COTR)"),
+                      ("ANTHROPOLOGY (ANTH, Formerly ANTHRO)", "Anthropology (ANTH, Formerly ANTHRO)"),
+                      ("WORK EXPERIENCE (formerly (COTR) cooperative work)", "Work Experience (formerly (COTR) cooperative work)"),
+                      ("ART (I) studio", "Art (I) Studio")]:
+    check("a code in parentheses keeps its capitals (Sam, 2026-11-23): %s -> %s" % (printed, want), T(printed) == want, T(printed))
 check("an empty title stays empty", T("") == "" and T(None) is None)
 check("no title comes back in capitals", not any(T(s).isupper() for s in ["PHYSICAL EDUCATION", "ART", "MATHEMATICS"]))
 

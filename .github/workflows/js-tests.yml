@@ -381,6 +381,11 @@ jobs:
       # code named, a noncredit code by its category, the top confidence band right 95% or more on the labelled codes.
       - name: Statewide subject codes (kb/_statewide_subject_codes.py)
         run: python3 tests/statewide_subject_codes_test.py
+      # A college's subject code history (S715; Sam, 2026-11-23: "it happens all the time"): every file names its source
+      # and recorder, a rename resolves through a chain and never cycles, and the statewide list counts a renamed code's
+      # courses under the new code at that college. Pure stdlib.
+      - name: Subject code history (kb/subject_code_history.py)
+        run: python3 tests/subject_code_history_test.py
       # The Subjects card's two files in the daily build (S695): both builders run after their inputs' steps with
       # --if-changed, each fingerprint ignores its daily stamp, and a rerun on the same inputs writes nothing. Pure stdlib.
       - name: Subjects card in the daily build (--if-changed fingerprints)
@@ -618,6 +623,9 @@ jobs:
       # S714 at Fullerton: the campus letter's place in eight file codes; the self-recall and the plan's 11 rows.
       - name: Cheap piles S714 at Fullerton (campus-letter renumbers, the plan)
         run: python3 tests/program_piles_s714_fullerton_test.py
+      # S714 at College of the Sequoias: the page's double-count figure as a capped overlap; the self-recall and the plan.
+      - name: Cheap piles S714 at College of the Sequoias (double count, the plan)
+        run: python3 tests/program_piles_s714_sequoias_test.py
       # Discontinued programs (S680; Sam, 2026-11-17 on #3480): a program's own catalog section marks it,
       # or a prior year prints it and this year does not; flagged out of the gap, never deleted. Pure stdlib.
       - name: Discontinued programs (own-section mark, out of the gap, the file is current)

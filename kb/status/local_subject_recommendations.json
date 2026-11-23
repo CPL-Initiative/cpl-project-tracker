@@ -4,14 +4,14 @@
  "measured_on_titled_codes": {
   "course_joins": {
    "few or mixed": {
-    "right": 373,
-    "asked": 643,
-    "share": 0.58,
+    "right": 374,
+    "asked": 648,
+    "share": 0.577,
     "level": "Low"
    },
    "most courses agree": {
-    "right": 580,
-    "asked": 657,
+    "right": 583,
+    "asked": 660,
     "share": 0.883,
     "level": "Medium"
    }
@@ -38,29 +38,29 @@
   },
   "other_colleges": {
    "all agree": {
-    "right": 297,
-    "asked": 304,
+    "right": 303,
+    "asked": 310,
     "share": 0.977,
     "level": "High"
    },
    "mixed": {
-    "right": 191,
-    "asked": 218,
-    "share": 0.876,
+    "right": 192,
+    "asked": 219,
+    "share": 0.877,
     "level": "Medium"
    },
    "one college": {
-    "right": 127,
-    "asked": 160,
-    "share": 0.794,
+    "right": 135,
+    "asked": 168,
+    "share": 0.804,
     "level": "Medium"
    }
   },
   "program_titles": {
    "one or mixed": {
     "right": 241,
-    "asked": 437,
-    "share": 0.551,
+    "asked": 438,
+    "share": 0.55,
     "level": "Low"
    },
    "several agree": {
@@ -72,9 +72,9 @@
   },
   "sibling": {
    "one letter apart": {
-    "right": 48,
-    "asked": 73,
-    "share": 0.658,
+    "right": 50,
+    "asked": 75,
+    "share": 0.667,
     "level": "Medium"
    },
    "same letters": {
@@ -105,16 +105,16 @@
    },
    "letters, several titles": {
     "right": 9,
-    "wrong": 24,
-    "asked": 33,
-    "share": 0.273,
+    "wrong": 25,
+    "asked": 34,
+    "share": 0.265,
     "level": "Low",
     "used": false
    },
    "same code": {
-    "right": 13,
+    "right": 14,
     "wrong": 0,
-    "asked": 13,
+    "asked": 14,
     "share": 1.0,
     "level": "Low",
     "used": true
@@ -203,37 +203,37 @@
   },
   "rows_the_subject_map_settles": {
    "own_courses": {
-    "right": 171,
-    "asked": 188
+    "right": 169,
+    "asked": 186
    },
    "same_code_statewide": {
-    "right": 39,
-    "asked": 49
+    "right": 38,
+    "asked": 48
    },
    "title": {
-    "right": 473,
-    "asked": 487
+    "right": 477,
+    "asked": 491
    }
   }
  },
  "web_searches_filed": 108,
  "totals": {
   "common_high": 180,
-  "common_low": 172,
+  "common_low": 171,
   "common_medium": 447,
   "common_no_code_yet": 6,
-  "common_none": 181,
+  "common_none": 182,
   "no_common": 986,
-  "no_title": 317,
+  "no_title": 309,
   "noncredit_common": 142,
   "noncredit_no_common": 174,
-  "noncredit_no_title": 53,
-  "noncredit_title": 4,
-  "noncredit_title_unused_condition": 12,
-  "title_high": 122,
-  "title_low": 92,
+  "noncredit_no_title": 50,
+  "noncredit_title": 3,
+  "noncredit_title_unused_condition": 11,
+  "title_high": 118,
+  "title_low": 90,
   "title_medium": 20,
-  "title_none": 83
+  "title_none": 81
  },
  "colleges": [
   {
@@ -245,7 +245,7 @@
       "title": "English as a Second Language",
       "level": "High",
       "from": "other_colleges",
-      "why": "other colleges: 4 of 4 other colleges (all agree). web search agrees.",
+      "why": "other colleges: 5 of 5 other colleges (all agree). web search agrees.",
       "also": [],
       "search": {
        "query": "Cerritos College ESL pronunciation plus multilingual courses",
@@ -309,23 +309,6 @@
    "slug": "clovis_community",
    "rows": [
     {
-     "code": "ANTHRO",
-     "title": {
-      "title": "Anthropology",
-      "level": "High",
-      "from": "other_colleges",
-      "why": "other colleges: 8 of 8 other colleges (all agree). course joins, web search agrees.",
-      "also": [],
-      "search": {
-       "query": "Clovis Community College ANTHRO biological anthropology courses",
-       "searched_on": "2026-11-21",
-       "result_title": "anthropology aa t 25 26 ada",
-       "result_url": "https://www.cloviscollege.edu/academics/majors/assets/docs/major-sheets/2025-2026/associate-degrees-for-transfer/anthropology-aa-t-25-26-ada.pdf",
-       "where": "college site"
-      }
-     }
-    },
-    {
      "code": "BA",
      "common": {
       "code": "BUSI",
@@ -333,35 +316,6 @@
       "level": "Medium",
       "from": "own_courses",
       "why": "10 of 12 of its courses with an M-ID sit under BUSI."
-     }
-    },
-    {
-     "code": "COTR",
-     "title": {
-      "title": "Law",
-      "level": "Low",
-      "from": "course_joins",
-      "why": "course joins: 1 of 1 joined courses (few or mixed). Another source reads differently.",
-      "also": [
-       {
-        "title": "Cooperative Work Experience",
-        "from": "web_search"
-       }
-      ],
-      "search": {
-       "query": "Clovis Community College COTR cooperative work experience vocational courses",
-       "searched_on": "2026-11-21",
-       "result_title": "Academic Resources",
-       "result_url": "https://www.cloviscollege.edu/academics",
-       "where": "college site"
-      }
-     },
-     "common": {
-      "code": "LEGL",
-      "discipline": "Law",
-      "level": "Low",
-      "from": "title",
-      "why": "The title names the discipline Law."
      }
     },
     {
@@ -412,16 +366,6 @@
       "from": "noncredit_category",
       "category": "Elementary and Secondary Basic Skills",
       "why": "The noncredit MQ discipline of its dominant COCI noncredit category, Elementary and Secondary Basic Skills (7 of 7 noncredit courses, 100%)."
-     }
-    },
-    {
-     "code": "ESL",
-     "title": {
-      "title": "English as a Second Language",
-      "level": "Low",
-      "from": "noncredit_list",
-      "why": "noncredit list: the title under its dominant COCI noncredit category, English as a Second Language (ESL) (3 of 3 noncredit courses, 100%) (same code).",
-      "also": []
      }
     },
     {
@@ -598,40 +542,6 @@
      }
     },
     {
-     "code": "POLS",
-     "title": {
-      "title": "Political Science",
-      "level": "High",
-      "from": "other_colleges",
-      "why": "other colleges: 13 of 13 other colleges (all agree). course joins, web search agrees.",
-      "also": [],
-      "search": {
-       "query": "Clovis Community College POLS American Institutions courses",
-       "searched_on": "2026-11-21",
-       "result_title": "Why study Political Science at CCC?",
-       "result_url": "https://cloviscollege.edu/academics/guided-pathways/social-behavioral-sciences/political-science.html",
-       "where": "college site"
-      }
-     }
-    },
-    {
-     "code": "PSYC",
-     "title": {
-      "title": "Psychology",
-      "level": "High",
-      "from": "course_joins",
-      "why": "course joins: 7 of 8 joined courses (most courses agree). other colleges, web search agrees.",
-      "also": [],
-      "search": {
-       "query": "Clovis Community College Psychology PSYC courses \"Abnormal Psychology\" (cloviscollege.edu, scccd.edu only)",
-       "searched_on": "2026-11-21",
-       "result_title": "Psychology - Clovis Community College",
-       "result_url": "https://www.cloviscollege.edu/academics/guided-pathways/social-behavioral-sciences/psychology.html",
-       "where": "college site"
-      }
-     }
-    },
-    {
      "code": "REHT",
      "title": {
       "title": "Rehabilitation Aide",
@@ -663,23 +573,6 @@
       "level": "Medium",
       "from": "same_code_statewide",
       "why": "2 of 3 courses under this code statewide sit under IDST."
-     }
-    },
-    {
-     "code": "SOC",
-     "title": {
-      "title": "Sociology",
-      "level": "High",
-      "from": "other_colleges",
-      "why": "other colleges: 13 of 13 other colleges (all agree). course joins, web search agrees.",
-      "also": [],
-      "search": {
-       "query": "Clovis Community College SOC introduction to sociology courses",
-       "searched_on": "2026-11-21",
-       "result_title": "American Sociological Association",
-       "result_url": "https://cloviscollege.edu/academics/guided-pathways/social-behavioral-sciences/sociology.html",
-       "where": "college site"
-      }
      }
     },
     {
@@ -1274,7 +1167,7 @@
       "title": "Psychology",
       "level": "High",
       "from": "other_colleges",
-      "why": "other colleges: 8 of 8 other colleges (all agree). course joins, district, sibling, web search agrees.",
+      "why": "other colleges: 9 of 9 other colleges (all agree). course joins, district, sibling, web search agrees.",
       "also": [],
       "search": {
        "query": "East Los Angeles College elac.edu psychology department \"PSYC\" \"Introduction to Psychology\"",
@@ -1667,7 +1560,7 @@
       "title": "English as a Second Language",
       "level": "Low",
       "from": "other_colleges",
-      "why": "other colleges: 4 of 4 other colleges (all agree). Another source reads differently.",
+      "why": "other colleges: 5 of 5 other colleges (all agree). Another source reads differently.",
       "also": [
        {
         "title": "American Language",
@@ -3293,7 +3186,7 @@
       "title": "English as a Second Language",
       "level": "High",
       "from": "other_colleges",
-      "why": "other colleges: 4 of 4 other colleges (all agree). course joins agrees.",
+      "why": "other colleges: 5 of 5 other colleges (all agree). course joins agrees.",
       "also": [],
       "search": {
        "query": "Los Angeles Harbor College English as a Second Language ESL courses (lahc.edu only)",
@@ -7115,7 +7008,7 @@
       "title": "Anthropology",
       "level": "High",
       "from": "district",
-      "why": "district: 8 of 8 colleges in the district (all agree). course joins, program titles agrees.",
+      "why": "district: 8 of 8 colleges in the district (all agree). course joins, other colleges, program titles agrees.",
       "also": []
      }
     },
@@ -7909,7 +7802,7 @@
       "title": "Psychology",
       "level": "High",
       "from": "other_colleges",
-      "why": "other colleges: 8 of 8 other colleges (all agree). course joins, district, web search agrees.",
+      "why": "other colleges: 9 of 9 other colleges (all agree). course joins, district, web search agrees.",
       "also": [],
       "search": {
        "query": "Los Angeles Valley College PSYC Introduction to Psychology courses",

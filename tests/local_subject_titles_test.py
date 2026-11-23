@@ -196,5 +196,25 @@ finally:
 check("(8) the Cerritos list is filed with its address and Sam's words", (lambda d: d["source_url"] == "https://secure.cerritos.edu/schedule/index.cgi"
       and d["_provenance"]["by"] == "Sam" and d["codes"]["AED"] == "Adult Education" and len(d["codes"]) == 92)(
       json.load(open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "kb", "reference", "college_department_lists", "cerritos.json")))))
+# (9) Clovis's catalog index, filed by hand from Sam's reading of the PDF (S715, 2026-11-23), and its code history
+# (kb/reference/subject_code_history/): a listed subject is titled from the index; a renamed code takes its subject's
+# title, names the code it became, and lists the change with its source.
+_R = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+_CL = json.load(open(os.path.join(_R, "kb", "hand_filed_catalogs", "subjects", "clovis_community.json")))
+check("(9) the Clovis index names Sam, the session and the PDF's page 3", "Sam" in _CL["read_by"] and "S715" in _CL["read_by"]
+      and _CL["source"] == ["https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=3"])
+check("(9) the index holds the subjects it prints, and no former code", all(r["rule"] == "index" for r in _CL["rows"]) and len(_CL["rows"]) == 62)
+_T = json.load(open(os.path.join(_R, "kb", "status", "local_subject_titles.json")))
+_C = [c for c in _T["colleges"] if c["slug"] == "clovis_community"][0]
+_CR = {r[0]: dict(zip(_T["columns"], r)) for r in _C["rows"]}
+check("(9) ⭐ a renamed code takes its subject's title from the code history and names the code it became",
+      _CR["ANTHRO"]["printed_name"] == "Anthropology" and _CR["ANTHRO"]["title_source"] == lst.CODE_HISTORY
+      and _CR["ANTHRO"]["renamed_to"] == "ANTH" and _CR["ANTHRO"]["side"] == "state")
+check("(9) ⭐ both codes of a rename list the change with its source", [h["from_code"] for h in _CR["ANTH"]["history"]] == ["ANTHRO"]
+      and _CR["COTR"]["history"][0]["from_title"] == "Cooperative Work Experience" and "page=3" in _CR["COTR"]["history"][0]["source"])
+check("(9) a title change alone is listed on its code", [(h["from_title"], h["to_title"]) for h in _CR["ECE"]["history"]] == [("Child Development", "Early Childhood Education")]
+      and _CR["ECE"]["renamed_to"] is None)
+check("(9) ⭐ a listed code COCI holds is titled from the index", _CR["ESC"]["printed_name"] == "Educational Strategies Courses" and _CR["ESC"]["title_source"] == "index")
+check("(9) a code the contents does not name keeps its reason", _CR["REHT"]["printed_name"] is None and _CR["REHT"]["title_state"] == "not_in_catalog")
 print(("FAILED " + str(len(FAILS))) if FAILS else "all passed")
 sys.exit(1 if FAILS else 0)

@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1576,
-    "bytes": 17211399,
+    "bytes": 17217635,
     "over_budget": 5,
     "handoff_max": 717,
     "always_loaded_files": 1,
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 44,
-        "bytes": 543909,
+        "bytes": 544634,
         "over": 1
       },
       "handoff": {
         "files": 673,
-        "bytes": 5011094,
+        "bytes": 5016605,
         "over": 0
       }
     },
@@ -59,16 +59,17 @@
       "oversized_doc": 5,
       "kb_note_dialect": 1,
       "vault_heavy_path": 158,
+      "checkpoint_overdue": 1,
       "handoff_drops_active_lane": 1
     },
     "vault": {
-      "files": 59496,
-      "bytes": 3179695616,
-      "heavy_bytes": 2442365395,
+      "files": 59513,
+      "bytes": 3180345138,
+      "heavy_bytes": 2442342841,
       "heavy_share": 0.768,
       "ignore_filters": [
-        "cpl-project-tracker/.claude/worktrees/agent-aa9fc975f2fb6a9b5/kb/program_requirements_college",
         "cpl-project-tracker/kb/program_requirements_college",
+        "cpl-project-tracker/.claude/worktrees/agent-aa9fc975f2fb6a9b5/kb/program_requirements_college",
         "cpl-project-tracker/kb/regional_cpl_out",
         "cpl-project-tracker/.claude/worktrees/agent-aa9fc975f2fb6a9b5/kb/regional_cpl_out",
         "cpl-project-tracker/kb/reference",
@@ -83,8 +84,8 @@
         "cpl-project-tracker/.claude/worktrees/agent-aa9fc975f2fb6a9b5/kb/cpl_ai",
         "cpl-project-tracker/library",
         "cpl-project-tracker/.claude/worktrees/agent-aa9fc975f2fb6a9b5/library",
-        "cpl-project-tracker/.claude/worktrees/agent-aa9fc975f2fb6a9b5/tests",
         "cpl-project-tracker/tests",
+        "cpl-project-tracker/.claude/worktrees/agent-aa9fc975f2fb6a9b5/tests",
         "cpl-project-tracker/tmc",
         "cpl-project-tracker/.claude/worktrees/agent-aa9fc975f2fb6a9b5/tmc",
         "cpl-project-tracker/kb/course_outline_index",
@@ -308,7 +309,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aa9fc975f2fb6a9b5/kb/program_requirements_college",
+      "path": "kb/program_requirements_college",
       "detail": {
         "bytes": 158767808,
         "kind": "dir"
@@ -318,12 +319,12 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": "kb/program_requirements_college",
+      "path": ".claude/worktrees/agent-aa9fc975f2fb6a9b5/kb/program_requirements_college",
       "detail": {
-        "bytes": 158767682,
+        "bytes": 158767808,
         "kind": "dir"
       },
-      "message": "directory totals 158,767,682 B inside the vault"
+      "message": "directory totals 158,767,808 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -350,20 +351,20 @@
       "fixable": false,
       "path": "kb/reference",
       "detail": {
-        "bytes": 84563931,
+        "bytes": 84567197,
         "kind": "dir"
       },
-      "message": "directory totals 84,563,931 B inside the vault"
+      "message": "directory totals 84,567,197 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": ".claude/worktrees/agent-aa9fc975f2fb6a9b5/kb/reference",
       "detail": {
-        "bytes": 84563931,
+        "bytes": 84564307,
         "kind": "dir"
       },
-      "message": "directory totals 84,563,931 B inside the vault"
+      "message": "directory totals 84,564,307 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -468,22 +469,22 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aa9fc975f2fb6a9b5/tests",
+      "path": "tests",
       "detail": {
-        "bytes": 16738324,
+        "bytes": 16748149,
         "kind": "dir"
       },
-      "message": "directory totals 16,738,324 B inside the vault"
+      "message": "directory totals 16,748,149 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": "tests",
+      "path": ".claude/worktrees/agent-aa9fc975f2fb6a9b5/tests",
       "detail": {
-        "bytes": 16731632,
+        "bytes": 16740593,
         "kind": "dir"
       },
-      "message": "directory totals 16,731,632 B inside the vault"
+      "message": "directory totals 16,740,593 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -550,20 +551,20 @@
       "fixable": false,
       "path": "kb/status/commons_data_programs",
       "detail": {
-        "bytes": 10294692,
+        "bytes": 10272012,
         "kind": "dir"
       },
-      "message": "directory totals 10,294,692 B inside the vault"
+      "message": "directory totals 10,272,012 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": ".claude/worktrees/agent-aa9fc975f2fb6a9b5/kb/status/commons_data_programs",
       "detail": {
-        "bytes": 10294663,
+        "bytes": 10272012,
         "kind": "dir"
       },
-      "message": "directory totals 10,294,663 B inside the vault"
+      "message": "directory totals 10,272,012 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -1750,10 +1751,10 @@
       "fixable": false,
       "path": "kb/status/statewide_subject_codes.json",
       "detail": {
-        "bytes": 2388964,
+        "bytes": 2389187,
         "kind": "file"
       },
-      "message": "2,388,964 B single file inside the vault"
+      "message": "2,389,187 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -1886,18 +1887,28 @@
       "message": "2,038,305 B single file inside the vault"
     },
     {
+      "rule": "checkpoint_overdue",
+      "fixable": false,
+      "path": "docs/session_717_handoff.md",
+      "detail": {
+        "commits_since": 36,
+        "budget": 6,
+        "handoff": "session_717_handoff.md"
+      },
+      "message": "36 commit(s) have landed since `docs/session_717_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
+    },
+    {
       "rule": "handoff_drops_active_lane",
       "fixable": false,
       "path": "docs/session_717_handoff.md",
       "detail": {
         "lanes": [
-          "cer-procedures",
           "my-college-action-page",
           "program-requirements-harvest"
         ],
         "days": 7
       },
-      "message": "`docs/session_717_handoff.md` never names 3 lane(s) worked in the last 7 days that still carry a NEXT: cer-procedures, my-college-action-page, program-requirements-harvest. Build the open work from each lane's NEXT line, or say in the handoff why the lane waits (name it by slug). Copying the last handoff's list is how five firings found an empty queue (S583)."
+      "message": "`docs/session_717_handoff.md` never names 2 lane(s) worked in the last 7 days that still carry a NEXT: my-college-action-page, program-requirements-harvest. Build the open work from each lane's NEXT line, or say in the handoff why the lane waits (name it by slug). Copying the last handoff's list is how five firings found an empty queue (S583)."
     }
   ]
 }
