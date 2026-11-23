@@ -293,6 +293,23 @@ def _():
         for r in rows:
             assert r["fingerprint"] == load.fingerprint(r["outcomes"]), r["course_code"]
         assert load.LABEL_CLEANED["rows"] == 1 and load.LABEL_CLEANED["placeholder"] == 1, load.LABEL_CLEANED
+    # The full read, pinned after the clean (S713, the second reader on 51bee0ca): a regression in any case fails here.
+    rows, skipped = load.rows_from(LAN_READ, "lan")
+    assert load.LABEL_CLEANED == {"colon": 233, "scans": 284, "part": 26, "placeholder": 8, "note": 12, "rows": 7}, \
+        load.LABEL_CLEANED
+    assert load.DROPPED == {"lines": 9, "rows": 0}, load.DROPPED
+    per = {}
+    for r in rows:
+        per[(r["college"], r["kind"])] = per.get((r["college"], r["kind"]), 0) + 1
+    assert per == {("Laney College", "slo"): 663, ("Laney College", "objective"): 663,
+                   ("Merritt College", "slo"): 463, ("Merritt College", "objective"): 465,
+                   ("College of Alameda", "slo"): 365, ("College of Alameda", "objective"): 368,
+                   ("Berkeley City College", "slo"): 372, ("Berkeley City College", "objective"): 372}, per
+    assert len(skipped) == 7 and all("placeholder" in s["why"] for s in skipped), skipped
+    items = [o.strip() for r in rows for o in r["outcomes"]]
+    assert not [o for o in items if o.startswith(":") or load.SCANS_OPEN.match(o) or load.PLACEHOLDER.match(o)
+                or load.SYSTEM_NOTE.match(o) or re.match(r"^part\s*\d+\s*:*\s*$", o, re.I)]
+    assert not [o for o in items if re.search(r"won['’]?t (allow )?delete|duplicate to be removed", o, re.I)]
 
 
 @check("CONTROL: the same filed lines at a host LABEL_CLEAN_HOSTS does not name load exactly as filed, SCANS, Part "
@@ -310,7 +327,7 @@ def _():
             assert by[(r["code"], "objective")]["fingerprint"] == r["objectives_fingerprint"], r["code"]
             assert by[(r["code"], "slo")]["outcomes"] == r["outcomes"], r["code"]
         assert by[("HIST 056", "slo")]["outcomes"] == ["None"] and not skipped, skipped
-        assert load.LABEL_CLEANED == {"colon": 0, "scans": 0, "part": 0, "placeholder": 0, "rows": 0}
+        assert load.LABEL_CLEANED == {"colon": 0, "scans": 0, "part": 0, "placeholder": 0, "note": 0, "rows": 0}
 
 
 @check("an outcome that opens with a number ('1. Analyze ...') loads whole; '#1', '.', '•' and '123' drop")
