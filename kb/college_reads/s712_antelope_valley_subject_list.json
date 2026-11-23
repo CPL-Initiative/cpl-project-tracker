@@ -30,5 +30,8 @@
    ],
    "links": "course|subject|department"
   }
- ]
+ ],
+ "outside_hosts": {
+  "api-prod.elumenapp.com": "eLumen's own API host: the catalog's scripts fetch every view from it (kb/_program_requirements_college.py, the eLumen note; S380)."
+ }
 }
