@@ -123,6 +123,10 @@ stays off the Los Rios colleges and any college lane 1 takes later.
   false pass, no row here), and the branch needed main's merge. Applied first, fixed forward: pre-read 15 of 15
   before-images, 0 confirms; migrate 45186909162 (13:45Z), 15 of 15 live at their after-images; `.apply` back at
   main's value (`022a3511`). `piles2` bounds the scope, merges main and opens the PR.
+- 13:56Z: the optparts plan's Sonnet reader: APPLY (Postgres 16: writes exactly 9; aborts on a rerun, a confirm or a
+  changed before-image; a checked row is skipped; the rollback alone restores the before state). Pre-read 9 of 9;
+  migrate 45188487600 (13:55Z), 9 of 9 live at Foothill, Glendale, Golden West, MiraCosta, Monterey Peninsula (2)
+  and Reedley (3); `.apply` back at main's value. Its PR waits for a slot under the cap.
 
 ## Conductor settings
 
@@ -141,7 +145,7 @@ by Opus 5.5.
 |---|---|---|
 | #3713 (`claude/awesome-fermat-ka0z4l`) | the declaration | becomes the checkpoint at sign-off |
 | #3714 (`claude/s714-piles-ccsf`, `piles`) | merged `f0d84966`; applied by migrate 45176130201 | none |
-| `claude/s714-piles-optparts` (`piles`) | plan filed, 9 rows (05934 held) | a Sonnet reader on the SQL, the pre-read, the apply, a PR |
+| `claude/s714-piles-optparts` (`piles`) | applied by migrate 45188487600, 9 rows live | its PR when a slot frees, the merge |
 | `claude/s714-piles-fullerton` (`piles`) | started | its plan |
 | `claude/s714-piles-ela` (`piles2`) | applied by migrate 45186909162, 15 rows live | the scope bound, main's merge, its PR, the merge |
 | #3715 (`claude/s714-rios`, `rios`) | three paid reads dispatched | the fixes, the filings, reconcile, the reread, merge |
