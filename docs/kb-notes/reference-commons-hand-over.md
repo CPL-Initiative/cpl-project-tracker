@@ -1,7 +1,7 @@
 ---
 title: "Hand it over in place: the hand-over box, where it writes, and the reader's pickup"
 created: 2026-11-20
-updated: 2026-11-20
+updated: 2026-11-23
 tags: [reference, commons, hand-over, college-data-collection, supabase, privacy]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -49,6 +49,7 @@ paste does.
 | A still-taught course in the Commons' Needs you | `#commons/course/<control number>` | The course's panel beside the front page, with Previous and Next. Close and Escape put the address and the focus back. |
 | A college named there, or on College Data Collection's to-do | `#collect/.../college/<slug>/handover` | College Data Collection's own panel for the college, on the hand-over pane (`d-college-opens-cdc-panel-2026-11-20`: one panel, no duplicate). |
 | *Term Reports Needed* in Needs you | on the front page | The same box under the `term_reports` dataset. |
+| A course of *Course outlines to find by hand* (S712) | `#collect/slos/outline/<college slug>-<course code>` | College Data Collection's panel on that course: why it is on the list, Previous and Next through the 50, and the box under `course_outlines`. Its row shows the public counts (`d-outline-hunt-handover-in-place-s712`). |
 
 Signed out, the box shows the sign-in and nothing else. The public counts (*1 file to be opened by our reader; 2
 links read by our reader*) show beside each college for everyone.

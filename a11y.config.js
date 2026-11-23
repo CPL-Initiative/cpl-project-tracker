@@ -4112,6 +4112,25 @@ module.exports = {
     seed: (page) => seedCommonsDataView(page, "dark", "slos"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
+  /* S712: one course of the outlines to find by hand, its hand-over pane open beside the SLOs view. The route names
+     the list's first course as kb/status/outline_hunt.json stood on 2026-11-23; a nightly rebuild that drops it
+     repairs the address to the view, which is then checked without the pane. */
+  "commons-data-outline": {
+    file: "index.html",
+    title: "CPL Commons: the data dashboard, a course outline to find, its hand-over pane",
+    routes: [{ hash: "collect/slos/outline/antelope-valley-college-aj-207", name: "data-outline" }],
+    widths: [320, 390, 768, 1440],
+    seed: (page) => seedCommonsDataView(page, "light", "slos"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "commons-data-outline-dark": {
+    file: "index.html",
+    title: "CPL Commons: the data dashboard, a course outline to find, its hand-over pane, dark",
+    routes: [{ hash: "collect/slos/outline/antelope-valley-college-aj-207", name: "data-outline-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedCommonsDataView(page, "dark", "slos"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
   "commons-data-catalog": {
     file: "index.html",
     title: "CPL Commons: the data dashboard, a catalog pane with its link split from the capture root",
