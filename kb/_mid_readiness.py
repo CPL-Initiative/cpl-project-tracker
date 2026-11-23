@@ -7,16 +7,22 @@ gate is S707's, his to set (d-remint-ready-gate-draft-s707). This file applies i
 dry run read one answer. It writes kb/status/mid_readiness.json and nothing else: no table, no M-ID.
 
 THE GATE, three tests per M-ID:
-  1. Every member's code has a settled common code. Settled means a person's move of that one course (CRS:, the
-     Subjects panel's Move; it comes first, as the most specific decision), a person's save for that college's code (credit:
-     Decisions.for_course; noncredit: Decisions.for_noncredit_course, under the course's own category) or a person's
-     statewide filing for the code (credit courses only, as subject_decisions.resolve reads it). The subject map alone
-     is a draft and settles nothing (d-readiness-map-is-not-settled-s709): it is the map that gave 45 M-IDs an ELEC
-     prefix from AED. A member is held as one of: college not read (no kb/status/subject_courses/<slug>.json), course
-     not found (the college is read and its state list has no course of that code and number), no settled code (the
-     subject map's code, where it has one, is shown beside it), category has no common code (a noncredit category
-     whose MQ discipline takes a title only, d-noncredit-four-categories-no-code-s701), or no noncredit category (the
-     export names none, so no nc: save can give the course a code: subject_decisions refuses a code there).
+  1. Every member's code has a settled common code. Settled means Confident (Sam, 2026-11-23,
+     r-confidence-not-person-settled-sam-2026-11-23: "Let's work based on levels of confidence. sometimes a person will
+     be needed to boost the confidence, other times, the data will be enough"; it supersedes
+     d-readiness-map-is-not-settled-s709). In order, the first that answers settles a member: a person's move of that
+     one course (CRS:, the Subjects panel's Move), a person's save for that college's code (credit:
+     Decisions.for_course; noncredit: Decisions.for_noncredit_course, under the course's own category), a person's
+     statewide filing for the code (credit courses only), the common code of the course's COCI noncredit category (a
+     noncredit course; the four noncredit codes, r-noncredit-four-mq-codes-sam-2026-11-22), or the code's call in
+     kb/status/statewide_subject_codes.json at Confident, 90% or more (a credit course; kb/_statewide_subject_codes.py,
+     whose top band was right 96.7% of the time on the codes whose peers agree). A college whose catalog is not filed
+     gives its course's band and category from the state course list. A member is held as one of: college not read
+     (neither its catalog nor the state list holds it), course not found (the college is read and its state list has
+     no course of that code and number), call below Confident (the call and its confidence are shown), no settled code
+     (no call at all; the subject map's code, where it has one, is shown beside it), category has no common code (a
+     noncredit category whose MQ discipline takes a title only, d-noncredit-four-categories-no-code-s701), or no
+     noncredit category (the export names none).
   2. The settled codes give the shape: one code, or a split along the codes. Both pass; the shape is what the dry run
      mints.
   3. The outcomes comparison ran on the current reads: the newest kb/status/mid_outcomes_compare_<date>.json counts
@@ -56,6 +62,8 @@ if HERE not in sys.path:
 import subject_decisions as sd  # noqa: E402
 
 OUT = os.path.join("kb", "status", "mid_readiness.json")
+CALLS = os.path.join("kb", "status", "statewide_subject_codes.json")
+CONFIDENT = 0.9   # Confident: the level that settles (r-confidence-not-person-settled-sam-2026-11-23)
 COURSES_DIR = os.path.join("kb", "status", "subject_courses")
 CATALOG_INDEX = os.path.join("kb", "hand_filed_catalogs", "courses", "index.json")
 SUBJECT_MAP = os.path.join("kb", "reference", "subject_discipline_map.json")
@@ -68,8 +76,8 @@ SCOPES = {
                    "(f-aed-electricity-gave-elec-m90-s707); AED is unmapped since #3693."},
 }
 
-HELD_MEMBER = ("college not read", "course not found", "no settled code", "category has no common code",
-               "no noncredit category")
+HELD_MEMBER = ("college not read", "course not found", "call below Confident", "no settled code",
+               "category has no common code", "no noncredit category")
 SPLIT_HOLDS = ("strong", "partial")
 
 
@@ -106,6 +114,50 @@ def load_courses(root=ROOT):
     return out
 
 
+def load_calls(root=ROOT):
+    """{code in map_key form: {"credit": (common, confidence) or None, "noncredit": (common, confidence) or None}} from
+    the statewide list: a credit course reads the code's credit call, and a noncredit course with no category in the
+    export reads the code's noncredit call (its leading category). {} when the file is missing."""
+    path = os.path.join(root, CALLS)
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding="utf-8") as f:
+        doc = json.load(f)
+    out = {}
+    for c in doc.get("codes") or []:
+        rec, cc = c.get("recommend") or {}, c.get("credit_call") or {}
+        credit = (cc.get("common"), cc.get("confidence")) if c.get("class") == "noncredit" else (rec.get("common"), rec.get("confidence"))
+        noncredit = (rec.get("common"), rec.get("confidence")) if c.get("class") == "noncredit" else (None, None)
+        out[c["code"]] = {"credit": credit if credit[0] else None, "noncredit": noncredit if noncredit[0] else None}
+    return out
+
+
+def _fold(name):
+    """A college's name less COCI's " Credit" suffix (North Orange Continuing Education Credit is one college)."""
+    name = (name or "").strip()
+    return name[:-len(" Credit")] if name.endswith(" Credit") else name
+
+
+def load_state(root=ROOT):
+    """{(college key, CODE, NUMBER): (band, category)} for every course in the state course list, so a college whose
+    catalog is not filed still gives its course's band and noncredit category."""
+    import _build_subject_courses as B
+    try:
+        st = B.read_state(root)
+    except (OSError, ValueError):
+        return {}
+    cats = B.read_categories(root)
+    names = [sd.college_key(_fold(n)) for n in st["colleges"]]
+    out = {}
+    for r in st["rows"]:
+        band = r[6] if r[6] in ("C", "N", "E") else ("N" if r[6] else "")
+        if not band:
+            continue
+        cat = (cats.get(str(r[1]).strip()) or sd.NO_CATEGORY) if band in sd.NONCREDIT_MARKS else sd.NO_CATEGORY
+        out.setdefault((names[r[0]], sd.code_key(r[2]), str(r[3]).strip().upper()), (band, cat))
+    return out
+
+
 def load_slugs(root=ROOT):
     with open(os.path.join(root, CATALOG_INDEX), encoding="utf-8") as f:
         idx = json.load(f)
@@ -138,34 +190,48 @@ def compare_rows(doc):
     return sum(v for v in rows.values() if isinstance(v, int))
 
 
-def member_status(m, slugs, courses, decisions, subject_map, nc_codes):
-    """(status, common code or None, detail) for one member."""
-    slug = slugs.get(sd.college_key(sd_clean(m["college"])))
+def member_status(m, slugs, courses, decisions, subject_map, nc_codes, calls=None, state=None):
+    """(status, common code or None, detail) for one member. calls and state are optional: without them a member
+    settles only by a person's decision, as the gate read before r-confidence-not-person-settled-sam-2026-11-23."""
+    ckey = sd.college_key(sd_clean(m["college"]))
+    slug = slugs.get(ckey) or slugs.get(sd.college_key(_fold(sd_clean(m["college"]))))
     subj, num = split_code(m["code"])
     moved = decisions.for_course_move(slug, subj, num)
     if moved:
         return "settled", moved["common_code"], {"by": "course move", "key": moved["key"]}
-    if not slug or slug not in courses:
-        return "college not read", None, {}
-    found = courses[slug].get((subj, num))
+    read = bool(slug) and slug in courses
+    found = courses[slug].get((subj, num)) if read else None
+    if not found and state:
+        found = state.get((sd.college_key(_fold(sd_clean(m["college"]))), subj, num))
     if not found:
-        return "course not found", None, {}
+        return ("course not found" if read else "college not read"), None, {}
     band, category = found
     if band in sd.NONCREDIT_MARKS:
-        r = decisions.for_noncredit_course(slug, subj, band, category)
+        r = decisions.for_noncredit_course(slug, subj, band, category) if read else None
         if r:
             return "settled", r["common_code"], {"by": "person", "key": r["key"]}
         if category == sd.NO_CATEGORY:
+            # No category in the export: the code's leading category stands when its call is Confident.
+            nc = ((calls or {}).get(sd.map_key(subj)) or {}).get("noncredit")
+            if nc and nc[1] >= CONFIDENT:
+                return "settled", nc[0], {"by": "the code's leading category", "confidence": nc[1]}
             return "no noncredit category", None, {"category": category, "map": subject_map.get(sd.map_key(subj))}
         if category in nc_codes and not nc_codes.get(category):
             return "category has no common code", None, {"category": category}
+        if calls is not None and nc_codes.get(category):
+            return "settled", nc_codes[category], {"by": "category", "category": category}
         return "no settled code", None, {"category": category, "map": subject_map.get(sd.map_key(subj))}
-    r = decisions.for_course(slug, subj, band)
+    r = decisions.for_course(slug, subj, band) if read else None
     if r:
         return "settled", r["common_code"], {"by": "person", "key": r["key"]}
     s = decisions.statewide_for(subj)
     if s:
         return "settled", s["common_code"], {"by": "filing", "key": s["key"]}
+    call = ((calls or {}).get(sd.map_key(subj)) or {}).get("credit")
+    if call and call[1] >= CONFIDENT:
+        return "settled", call[0], {"by": "confident call", "confidence": call[1]}
+    if call:
+        return "call below Confident", None, {"call": call[0], "confidence": call[1], "map": subject_map.get(sd.map_key(subj))}
     return "no settled code", None, {"map": subject_map.get(sd.map_key(subj))}
 
 
@@ -186,6 +252,7 @@ def build(root=ROOT, members=None, members_at=None, reads_rows=None):
     if reads_rows is None:
         reads_rows = len(comp.outcome_rows_from_files(root)[0])
     slugs, courses = load_slugs(root), load_courses(root)
+    calls, state = load_calls(root), load_state(root)
     decisions, subject_map, nc_codes = sd.load(root), load_map(root), sd.nc_codes_table()
     cmp_path, cmp_doc = newest_compare(root)
     cmp_rows = compare_rows(cmp_doc)
@@ -204,7 +271,7 @@ def build(root=ROOT, members=None, members_at=None, reads_rows=None):
             codes = Counter()
             held = []
             for x in rows:
-                status, common, detail = member_status(x, slugs, courses, decisions, subject_map, nc_codes)
+                status, common, detail = member_status(x, slugs, courses, decisions, subject_map, nc_codes, calls, state)
                 st[status] += 1
                 if common:
                     codes[common] += 1
@@ -254,15 +321,17 @@ def build(root=ROOT, members=None, members_at=None, reads_rows=None):
         "_what": "Which M-IDs in a re-mint's scope pass the draft readiness gate (d-remint-ready-gate-draft-s707, Sam's "
                  "to set), and why each of the rest is held. Read by the Subjects page and the re-mint dry run. "
                  "Written by kb/_mid_readiness.py; nothing here is a decision.",
-        "_gate": ["every member's code has a settled common code: a person's move of that course, a person's save for "
-                  "that college's code (noncredit "
-                  "under its own category) or a person's statewide filing; the subject map alone settles nothing",
+        "_gate": ["every member's code is Confident (r-confidence-not-person-settled-sam-2026-11-23): a person's move of "
+                  "that course, a person's save for that college's code (noncredit under its own category), a person's "
+                  "statewide filing, a noncredit course's COCI category code, or the code's statewide call at 90% or more",
                   "the settled codes give one code or a split along the codes; both pass",
                   "the outcomes comparison ran on the current reads, and no strong or partial split waits on an answer"],
         "_sources": {"members": "unified_courses_members.js generated %s" % members_at,
                      "courses": COURSES_DIR.replace(os.sep, "/") + "/<slug>.json",
                      "decisions": sd.STATUS.replace(os.sep, "/"),
                      "subject_map": SUBJECT_MAP.replace(os.sep, "/"),
+                     "calls": CALLS.replace(os.sep, "/"), "confident_from": CONFIDENT,
+                     "state_list": "coci_lookup_data.js (band and category where a catalog is not filed)",
                      "outcomes_compare": cmp_path, "outcomes_compare_rows": cmp_rows,
                      "outcomes_reads_rows": reads_rows, "outcomes_current": current},
         "scopes": scopes,

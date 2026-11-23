@@ -95,6 +95,11 @@ check("(5) a code whose titles are another code's numbers takes that code's call
       bool(named) and lawen is not None and lawen["class"] == "named_code" and lawen["recommend"]["common"] == "CRIM",
       lawen and lawen["recommend"])
 
+emls = codes.get("EMLS")
+check("(5) a noncredit code with credit courses carries a credit call beside its category call",
+      emls is not None and (emls["class"] != "noncredit" or (emls["credit"] == 0) or (emls.get("credit_call") or {}).get("common") not in (None, emls["recommend"]["common"])),
+      emls and (emls["class"], emls["recommend"], emls.get("credit_call")))
+
 # (6)
 top = doc["self_recall"][0]
 check("(6) the top confidence band is right 95% or more on the labelled codes",
