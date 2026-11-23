@@ -61,7 +61,7 @@ PROPOSALS = {
     "Engineering Support": ("ENSP", "minted", "Engineering Support; ENGSUP at 1 college"),
     "Estimating": ("ESTI", "minted", "Estimating; ESTM is one college's code for solar and clean energy courses"),
     "Fabric Care": ("FABC", "minted", "Fabric Care"),
-    "Flight Attendant Training": ("FATR", "minted", "Flight Attendant Training; FLAT would read as a word and FLTA is the Foreign Languages code for Filipino"),
+    "Flight Attendant Training": ("FLTR", "minted", "Flight Attendant Training; Sam's pick of 2026-11-23 over FATR (\"flight attendants don't want to be called fatter\"); FLAT reads as a word and FLTA is the Foreign Languages code for Filipino"),
     "Fluid Mechanics Technology": ("FLMT", "minted", "Fluid Mechanics Technology"),
     "Folk Dance": ("FDNC", "minted", "Folk Dance"),
     "Health Services Director/Health Services Coordinator/College Nurse": ("HSDR", "minted", "Health Services Director"),

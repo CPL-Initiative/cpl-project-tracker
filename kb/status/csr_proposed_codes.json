@@ -12,6 +12,11 @@
    "assigned": "ESTI",
    "discipline": "Estimating",
    "now": "ESTG"
+  },
+  {
+   "assigned": "FLTR",
+   "discipline": "Flight Attendant Training",
+   "now": "FATR"
   }
  ],
  "count": 95,
@@ -575,7 +580,7 @@
   {
    "assign": true,
    "basis": "minted",
-   "code": "FATR",
+   "code": "FLTR",
    "confidence": 0.82,
    "discipline": "Flight Attendant Training",
    "key": "Flight Attendant Training",
@@ -585,7 +590,7 @@
    "types": [
     "any"
    ],
-   "words": "Flight Attendant Training; FLAT would read as a word and FLTA is the Foreign Languages code for Filipino"
+   "words": "Flight Attendant Training; Sam's pick of 2026-11-23 over FATR (\"flight attendants don't want to be called fatter\"); FLAT reads as a word and FLTA is the Foreign Languages code for Filipino"
   },
   {
    "assign": true,

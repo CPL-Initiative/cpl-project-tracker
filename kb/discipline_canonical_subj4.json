@@ -6130,12 +6130,12 @@
       "authority_note": "Common SUBJ FIRE is the C-ID subject code."
     },
     "Flight Attendant Training": {
-      "canonical_subj4": "FATR",
+      "canonical_subj4": "FLTR",
       "source": "assigned",
-      "confidence": 0.82,
-      "confidence_level": "Likely",
+      "confidence": 1.0,
+      "confidence_level": "Confident",
       "basis": "minted",
-      "basis_words": "Flight Attendant Training; FLAT would read as a word and FLTA is the Foreign Languages code for Filipino",
+      "basis_words": "Flight Attendant Training; Sam's pick of 2026-11-23 over FATR (\"flight attendants don't want to be called fatter\"); FLAT reads as a word and FLTA is the Foreign Languages code for Filipino",
       "data_modal": null,
       "data_modal_is_4letter": false,
       "data_modal_share": null,
@@ -6159,16 +6159,25 @@
       "cip_code": null,
       "needs_review": false,
       "reviewed_at": "2026-11-23T19:55:10+00:00",
-      "reviewed_by": "csr-s717@bot",
+      "reviewed_by": "Sam (in session, S717)",
       "validated_at": null,
       "validated_by": null,
-      "_notes": "Assigned at Likely (82%): four letters minted from the discipline's name. Flight Attendant Training; FLAT would read as a word and FLTA is the Foreign Languages code for Filipino. No M-ID is minted under it yet.",
+      "_notes": "Sam's pick in session, 2026-11-23 (S717): FLTR, formerly FATR (\"flight attendants don't want to be called fatter\"). No M-ID is minted under it yet.",
       "ccn_subject_code": null,
       "cid_subject_codes": [],
       "canonical_source": "csr",
       "authority_chips": [],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ FLTA is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet."
+      "authority_note": "Common SUBJ FLTA is assigned by the CSR; no C-ID or CCN code names this discipline's courses yet.",
+      "formerly": [
+        {
+          "code": "FATR",
+          "title": "Flight Attendant Training",
+          "until": "2026-11-23T20:10:00Z",
+          "by": "a person",
+          "note": "Sam: FATR reads as fatter; FLTR instead"
+        }
+      ]
     },
     "Fluid Mechanics Technology": {
       "canonical_subj4": "FLMT",
