@@ -43,23 +43,27 @@ Skipped: steps 2, 3, 5, 7 and 9 (no KB structure, nav, re-mint or pipeline chang
   - `levels()` is shared with the statewide view;
   - re-mint readiness comes from `kb/status/mid_readiness.json`, and the platform counts from `commons_data.json`;
   - the card is drawn open (`cmf-checks`).
-- **#3720**, Clovis's subject titles and codes in parentheses (Sam's ask mid-session, 2026-11-23):
+- **#3720**, Clovis's subject titles and a college's subject code history (Sam's asks mid-session, 2026-11-23):
   - Clovis's catalog contents (PDF page 3), from Sam's paste, filed as
-    `kb/hand_filed_catalogs/subjects/clovis_community.json`, which names him, the date and the page. The session could
-    not reach cloviscollege.edu.
-  - A new `former` rule in the headings filer: a code the index names as former (ANTHRO, POLSCI, PSY, SOC, COTR)
-    takes its subject's title and is not counted as a printed code.
-  - Clovis went from 55 to 65 titled codes. Statewide: 1,637 to 1,647 titled, 317 to 309 with no title.
+    `kb/hand_filed_catalogs/subjects/clovis_community.json`, which names him, the date and the page. The session
+    could not reach cloviscollege.edu. Clovis went from 55 to 65 titled codes; statewide, 1,637 to 1,647 titled.
+  - **The code history** (Sam: *"do we have a correct way of documenting the formerly codes and titles? it happens
+    all the time"*, then *"yes, build it"*): `kb/reference/subject_code_history/<slug>.json`, one entry per change of
+    code or title, with the catalog year, the printed line, the source and the recorder. `kb/subject_code_history.py`
+    `load` and `resolve` are the one copy.
+  - Clovis is the first history file: ANTHRO to ANTH, COTR to WKEXP, POLSCI to POLS, PSY to PSYC, SOC to SOCI, and
+    ECE's title. The titles builder titles a renamed code and adds `renamed_to` and `history` to every row. The
+    statewide list counts a renamed code's courses under the new code at that college (10,162 to 10,161 pairs).
   - Title Case, in both copies: a word in capitals inside parentheses keeps them, and a lowercase note word there
-    stays as typed. "Work Experience Education (formerly COTR)" saves.
-  - Sam's own COTR save, made under the old check, still wins over the index title. He may re-save it in the clean
-    form.
+    stays as typed.
+  - Sam's own COTR save, made under the old check, still wins over the history's title. He may re-save it as plain
+    "Work Experience Education", now that the history holds the old code.
 - #3717 and #3718 merged. If #3720 is open when you start, merge it on a green `test`.
 
 ## Decisions and findings (in `cpl_memory`, receipt `kb/migrations/2026-11-23_s715_cpl_memory_rows.sql`)
 
-- `d-clovis-index-hand-filed-former-codes-s715` (Sam's to revise): a catalog index a curator reads can be filed by
-  hand, naming the person and the page; a former code takes its subject's title.
+- `d-subject-code-history-s715` (Sam asked for it): a college's renamed codes and titles live in one code history
+  that every builder reads. It supersedes `d-clovis-index-hand-filed-former-codes-s715`, the one-off `former` rule.
 
 - `d-subjects-figures-live-s715` (Sam's to revise): every Subjects figure counts the rows with the live saves on top,
   by its list's own test, and the Commons card reads `liveFigures`, never a count of its own.
@@ -70,6 +74,11 @@ Skipped: steps 2, 3, 5, 7 and 9 (no KB structure, nav, re-mint or pipeline chang
 
 ## Open work
 
+0. **The code history's next readers:** a "Former code of…" field in the Subjects panel that saves an entry (a new
+   `kb_curation` field, then a sync into the history files; route it through Governance as Rule 10 (a3) asks); the
+   held list and the pile mint resolving a course's code through the history before placing it; mining the course-
+   level "Formerly:" lines `kb/_file_credit_catalogs.py` already keeps. **Also check:** the statewide list calls SOC
+   and SOCI Ethnic Studies (ETHS) at 99 to 100%, before and after this run; Sociology looks like the right call.
 1. **The mock's Colleges artboard:** the Subjects tab's colleges by source.
    - One row per college (118): the catalog platform (`commons_data.json` `platform`), codes (the statewide pairs),
      titled, then a status word per way to look (catalog, catalog system, class schedule, department list) and Next.

@@ -17,3 +17,8 @@ insert into public.cpl_memory (slug,kind,title,summary,tags,status,source,verifi
 ('d-clovis-index-hand-filed-former-codes-s715','decision','A catalog index a curator reads can be filed by hand; a former code takes its subject''s title','S715, Sam''s to revise: Clovis''s catalog contents (PDF page 3), pasted by Sam on 2026-11-23, filed as kb/hand_filed_catalogs/subjects/clovis_community.json naming him and the page. Rule former: a code the index names as former (ANTHRO, COTR) takes the subject''s heading and is not a printed catalog code. Clovis 55 to 65 titled. Title Case keeps a code in parentheses in capitals (COTR). PR #3720.',array['commons','subjects','clovis','title-case'],'proposed','PR #3720','SkyAlbatross (S715)',now(),'SkyAlbatross (S715)','2026-11-23')
 on conflict (slug) do nothing;
 -- (logged 'create' by SkyAlbatross (S715))
+
+-- Applied 2026-11-23 ~15:58Z: d-subject-code-history-s715 (360 chars), and the row above superseded by it:
+--   update public.cpl_memory set status='superseded' where slug='d-clovis-index-hand-filed-former-codes-s715';
+--   (its status before: proposed; logged 'supersede' by SkyAlbatross (S715)). Rollback by author restores both.
+-- The summary check refused a text of about 430 characters; the limit sits near 400.
