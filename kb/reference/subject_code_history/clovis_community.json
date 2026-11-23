@@ -1,0 +1,73 @@
+{
+ "_what": "Clovis Community College's subject code history: the codes and titles its catalog says it used before. kb/subject_code_history.py reads it; its docstring is the schema.",
+ "college": "Clovis Community College",
+ "slug": "clovis_community",
+ "changes": [
+  {
+   "from_code": "ANTHRO",
+   "to_code": "ANTH",
+   "from_title": "Anthropology",
+   "to_title": "Anthropology",
+   "catalog_year": "2026-2027",
+   "printed": "ANTHROPOLOGY (ANTH, Formerly ANTHRO)",
+   "source": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=3",
+   "recorded_by": "Sam (curator), from the catalog's contents; pasted in session S715",
+   "recorded_at": "2026-11-23"
+  },
+  {
+   "from_code": "COTR",
+   "to_code": "WKEXP",
+   "from_title": "Cooperative Work Experience",
+   "to_title": "Work Experience Education",
+   "catalog_year": "2026-2027",
+   "printed": "WORK EXPERIENCE EDUCATION (WKEXP) (Formerly Cooperative Work Experience (COTR)",
+   "source": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=3",
+   "recorded_by": "Sam (curator), from the catalog's contents; pasted in session S715",
+   "recorded_at": "2026-11-23"
+  },
+  {
+   "from_code": "ECE",
+   "to_code": "ECE",
+   "from_title": "Child Development",
+   "to_title": "Early Childhood Education",
+   "catalog_year": "2026-2027",
+   "printed": "EARLY CHILDHOOD EDUCATION (ECE) (Formerly Child Development)",
+   "source": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=3",
+   "recorded_by": "Sam (curator), from the catalog's contents; pasted in session S715",
+   "recorded_at": "2026-11-23"
+  },
+  {
+   "from_code": "POLSCI",
+   "to_code": "POLS",
+   "from_title": "Political Science",
+   "to_title": "Political Science",
+   "catalog_year": "2026-2027",
+   "printed": "POLITICAL SCIENCE (POLS) FORMERLY POLSCI",
+   "source": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=3",
+   "recorded_by": "Sam (curator), from the catalog's contents; pasted in session S715",
+   "recorded_at": "2026-11-23"
+  },
+  {
+   "from_code": "PSY",
+   "to_code": "PSYC",
+   "from_title": "Psychology",
+   "to_title": "Psychology",
+   "catalog_year": "2026-2027",
+   "printed": "PSYCHOLOGY (PSYC) FORMERLY PSY",
+   "source": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=3",
+   "recorded_by": "Sam (curator), from the catalog's contents; pasted in session S715",
+   "recorded_at": "2026-11-23"
+  },
+  {
+   "from_code": "SOC",
+   "to_code": "SOCI",
+   "from_title": "Sociology",
+   "to_title": "Sociology",
+   "catalog_year": "2026-2027",
+   "printed": "SOCIOLOGY (SOCI, Formerly SOC)",
+   "source": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=3",
+   "recorded_by": "Sam (curator), from the catalog's contents; pasted in session S715",
+   "recorded_at": "2026-11-23"
+  }
+ ]
+}

@@ -3,7 +3,7 @@
 
 WHAT THIS GUARDS (each a way the list would send a person to the wrong common code, or hide a code):
   (1) every subject code in the state course list appears once, with every college that files a course under it, and
-      the pairs and courses add up to the state list's own;
+      the pairs and courses add up to the state list's own (a code a college renamed counts under its new code there);
   (2) every code carries a call and a confidence between 0 and 1 (Sam: "always provide a recommendation ... and
       always provide a confidence score, even if it's 5%"), the call a common code of the Common Subjects Reference or
       of a noncredit category, and the runner-up never the call itself;
@@ -46,10 +46,14 @@ doc = ssc.build(ROOT)
 codes = {c["code"]: c for c in doc["codes"]}
 state = B.read_state(ROOT)
 names = [ssc.college_name(n) for n in state["colleges"]]
+# A renamed code counts under the code its college uses now (kb/subject_code_history.py, S715), so the expected
+# pairs go through the same history.
+import subject_code_history as SCH  # noqa: E402
+_hist = SCH.load(ROOT)
 pairs = collections.defaultdict(set)
 for r in state["rows"]:
     if sd.map_key(r[2]):
-        pairs[sd.map_key(r[2])].add(names[r[0]])
+        pairs[sd.map_key(SCH.resolve(_hist, B.college_key(names[r[0]]), r[2], by="by_college"))].add(names[r[0]])
 
 # (1)
 check("(1) every state-list code appears once", set(codes) == set(pairs) and len(codes) == len(doc["codes"]),

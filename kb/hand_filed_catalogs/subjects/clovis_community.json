@@ -1,0 +1,758 @@
+{
+ "_what": "The subjects Clovis Community College's 2026-2027 catalog lists in its table of contents under COURSE DESCRIPTIONS (PDF page 3), each with its code, its former code where the catalog names one, and its catalog page. Filed by hand from Sam's reading of the PDF, pasted in session S715 on 2026-11-23, because the session's network could not reach the college's site. `heading` is saved in Title Case with `heading_printed` and the whole `label` as the contents prints them. Rule index: a subject the contents lists. The former codes the contents names (ANTHRO, POLSCI, PSY, SOC, COTR) and ECE's former title are in the college's code history, kb/reference/subject_code_history/clovis_community.json.",
+ "college": "Clovis Community College",
+ "run": "hand-filed-s715-2026-11-23",
+ "read_by": "Sam (curator), from the catalog PDF's table of contents, page 3; pasted in session S715, 2026-11-23",
+ "source": [
+  "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=3"
+ ],
+ "subjects": 62,
+ "with_heading": 62,
+ "links_without_a_code": [],
+ "rows": [
+  {
+   "code": "ACCTG",
+   "heading": "Accounting",
+   "heading_printed": "ACCOUNTING",
+   "rule": "index",
+   "codes": [
+    "ACCTG"
+   ],
+   "candidate": null,
+   "label": "ACCOUNTING (ACCTG)",
+   "catalog_page": 187
+  },
+  {
+   "code": "AG",
+   "heading": "Agriculture",
+   "heading_printed": "AGRICULTURE",
+   "rule": "index",
+   "codes": [
+    "AG"
+   ],
+   "candidate": null,
+   "label": "AGRICULTURE (AG)",
+   "catalog_page": 188
+  },
+  {
+   "code": "ANTH",
+   "heading": "Anthropology",
+   "heading_printed": "ANTHROPOLOGY",
+   "rule": "index",
+   "codes": [
+    "ANTH"
+   ],
+   "candidate": null,
+   "label": "ANTHROPOLOGY (ANTH, Formerly ANTHRO)",
+   "catalog_page": 194
+  },
+  {
+   "code": "ARM",
+   "heading": "Automation Robotics Mechatronics",
+   "heading_printed": "AUTOMATION ROBOTICS MECHATRONICS",
+   "rule": "index",
+   "codes": [
+    "ARM"
+   ],
+   "candidate": null,
+   "label": "AUTOMATION ROBOTICS MECHATRONICS (ARM)",
+   "catalog_page": 200
+  },
+  {
+   "code": "ART",
+   "heading": "Art",
+   "heading_printed": "ART",
+   "rule": "index",
+   "codes": [
+    "ART"
+   ],
+   "candidate": null,
+   "label": "ART (ART)",
+   "catalog_page": 195
+  },
+  {
+   "code": "ARTH",
+   "heading": "Art History",
+   "heading_printed": "ART HISTORY",
+   "rule": "index",
+   "codes": [
+    "ARTH"
+   ],
+   "candidate": null,
+   "label": "ART HISTORY (ARTH)",
+   "catalog_page": 199
+  },
+  {
+   "code": "ASL",
+   "heading": "American Sign Language",
+   "heading_printed": "AMERICAN SIGN LANGUAGE",
+   "rule": "index",
+   "codes": [
+    "ASL"
+   ],
+   "candidate": null,
+   "label": "AMERICAN SIGN LANGUAGE (ASL)",
+   "catalog_page": 193
+  },
+  {
+   "code": "BA",
+   "heading": "Business Administration",
+   "heading_printed": "BUSINESS ADMINISTRATION",
+   "rule": "index",
+   "codes": [
+    "BA"
+   ],
+   "candidate": null,
+   "label": "BUSINESS ADMINISTRATION (BA)",
+   "catalog_page": 205
+  },
+  {
+   "code": "BIOL",
+   "heading": "Biology",
+   "heading_printed": "BIOLOGY",
+   "rule": "index",
+   "codes": [
+    "BIOL"
+   ],
+   "candidate": null,
+   "label": "BIOLOGY (BIOL)",
+   "catalog_page": 202
+  },
+  {
+   "code": "CHDEV",
+   "heading": "Child Development",
+   "heading_printed": "CHILD DEVELOPMENT",
+   "rule": "index",
+   "codes": [
+    "CHDEV"
+   ],
+   "candidate": null,
+   "label": "CHILD DEVELOPMENT (CHDEV) - also see Early Childhood Education (ECE)",
+   "catalog_page": 209
+  },
+  {
+   "code": "CHEM",
+   "heading": "Chemistry",
+   "heading_printed": "CHEMISTRY",
+   "rule": "index",
+   "codes": [
+    "CHEM"
+   ],
+   "candidate": null,
+   "label": "CHEMISTRY (CHEM)",
+   "catalog_page": 208
+  },
+  {
+   "code": "CHIN",
+   "heading": "Chinese",
+   "heading_printed": "CHINESE",
+   "rule": "index",
+   "codes": [
+    "CHIN"
+   ],
+   "candidate": null,
+   "label": "CHINESE (CHIN)",
+   "catalog_page": 210
+  },
+  {
+   "code": "COMM",
+   "heading": "Communication",
+   "heading_printed": "COMMUNICATION",
+   "rule": "index",
+   "codes": [
+    "COMM"
+   ],
+   "candidate": null,
+   "label": "COMMUNICATION (COMM)",
+   "catalog_page": 210
+  },
+  {
+   "code": "COUN",
+   "heading": "Counseling",
+   "heading_printed": "COUNSELING",
+   "rule": "index",
+   "codes": [
+    "COUN"
+   ],
+   "candidate": null,
+   "label": "COUNSELING (COUN)",
+   "catalog_page": 212
+  },
+  {
+   "code": "CRIM",
+   "heading": "Criminology",
+   "heading_printed": "CRIMINOLOGY",
+   "rule": "index",
+   "codes": [
+    "CRIM"
+   ],
+   "candidate": null,
+   "label": "CRIMINOLOGY (CRIM)",
+   "catalog_page": 213
+  },
+  {
+   "code": "CSCI",
+   "heading": "Computer Science",
+   "heading_printed": "COMPUTER SCIENCE",
+   "rule": "index",
+   "codes": [
+    "CSCI"
+   ],
+   "candidate": null,
+   "label": "COMPUTER SCIENCE (CSCI)",
+   "catalog_page": 212
+  },
+  {
+   "code": "DANCE",
+   "heading": "Dance",
+   "heading_printed": "DANCE",
+   "rule": "index",
+   "codes": [
+    "DANCE"
+   ],
+   "candidate": null,
+   "label": "DANCE (DANCE)",
+   "catalog_page": 215
+  },
+  {
+   "code": "ECE",
+   "heading": "Early Childhood Education",
+   "heading_printed": "EARLY CHILDHOOD EDUCATION",
+   "rule": "index",
+   "codes": [
+    "ECE"
+   ],
+   "candidate": null,
+   "label": "EARLY CHILDHOOD EDUCATION (ECE) (Formerly Child Development)",
+   "catalog_page": 216
+  },
+  {
+   "code": "ECON",
+   "heading": "Economics",
+   "heading_printed": "ECONOMICS",
+   "rule": "index",
+   "codes": [
+    "ECON"
+   ],
+   "candidate": null,
+   "label": "ECONOMICS (ECON)",
+   "catalog_page": 220
+  },
+  {
+   "code": "EDUC",
+   "heading": "Education",
+   "heading_printed": "EDUCATION",
+   "rule": "index",
+   "codes": [
+    "EDUC"
+   ],
+   "candidate": null,
+   "label": "EDUCATION (EDUC)",
+   "catalog_page": 220
+  },
+  {
+   "code": "ENGL",
+   "heading": "English",
+   "heading_printed": "ENGLISH",
+   "rule": "index",
+   "codes": [
+    "ENGL"
+   ],
+   "candidate": null,
+   "label": "ENGLISH (ENGL)",
+   "catalog_page": 223
+  },
+  {
+   "code": "ENGR",
+   "heading": "Engineering",
+   "heading_printed": "ENGINEERING",
+   "rule": "index",
+   "codes": [
+    "ENGR"
+   ],
+   "candidate": null,
+   "label": "ENGINEERING (ENGR)",
+   "catalog_page": 222
+  },
+  {
+   "code": "ESC",
+   "heading": "Educational Strategies Courses",
+   "heading_printed": "EDUCATIONAL STRATEGIES COURSES",
+   "rule": "index",
+   "codes": [
+    "ESC"
+   ],
+   "candidate": null,
+   "label": "EDUCATIONAL STRATEGIES COURSES (ESC)",
+   "catalog_page": 221
+  },
+  {
+   "code": "ESL",
+   "heading": "English as a Second Language",
+   "heading_printed": "ENGLISH AS A SECOND LANGUAGE",
+   "rule": "index",
+   "codes": [
+    "ESL"
+   ],
+   "candidate": null,
+   "label": "ENGLISH AS A SECOND LANGUAGE (ESL)",
+   "catalog_page": 227
+  },
+  {
+   "code": "ETHNST",
+   "heading": "Ethnic Studies",
+   "heading_printed": "ETHNIC STUDIES",
+   "rule": "index",
+   "codes": [
+    "ETHNST"
+   ],
+   "candidate": null,
+   "label": "ETHNIC STUDIES (ETHNST)",
+   "catalog_page": 227
+  },
+  {
+   "code": "FILM",
+   "heading": "Film",
+   "heading_printed": "FILM",
+   "rule": "index",
+   "codes": [
+    "FILM"
+   ],
+   "candidate": null,
+   "label": "FILM (FILM)",
+   "catalog_page": 229
+  },
+  {
+   "code": "FN",
+   "heading": "Foods and Nutrition",
+   "heading_printed": "FOODS AND NUTRITION",
+   "rule": "index",
+   "codes": [
+    "FN"
+   ],
+   "candidate": null,
+   "label": "FOODS AND NUTRITION (FN)",
+   "catalog_page": 230
+  },
+  {
+   "code": "FRENCH",
+   "heading": "French",
+   "heading_printed": "FRENCH",
+   "rule": "index",
+   "codes": [
+    "FRENCH"
+   ],
+   "candidate": null,
+   "label": "FRENCH (FRENCH)",
+   "catalog_page": 230
+  },
+  {
+   "code": "GEOG",
+   "heading": "Geography",
+   "heading_printed": "GEOGRAPHY",
+   "rule": "index",
+   "codes": [
+    "GEOG"
+   ],
+   "candidate": null,
+   "label": "GEOGRAPHY (GEOG)",
+   "catalog_page": 231
+  },
+  {
+   "code": "GEOL",
+   "heading": "Geology",
+   "heading_printed": "GEOLOGY",
+   "rule": "index",
+   "codes": [
+    "GEOL"
+   ],
+   "candidate": null,
+   "label": "GEOLOGY (GEOL)",
+   "catalog_page": 232
+  },
+  {
+   "code": "GERMAN",
+   "heading": "German",
+   "heading_printed": "GERMAN",
+   "rule": "index",
+   "codes": [
+    "GERMAN"
+   ],
+   "candidate": null,
+   "label": "GERMAN (GERMAN)",
+   "catalog_page": 233
+  },
+  {
+   "code": "HCA",
+   "heading": "Health Care Ancillaries",
+   "heading_printed": "HEALTH CARE ANCILLARIES",
+   "rule": "index",
+   "codes": [
+    "HCA"
+   ],
+   "candidate": null,
+   "label": "HEALTH CARE ANCILLARIES (HCA)",
+   "catalog_page": 234
+  },
+  {
+   "code": "HIST",
+   "heading": "History",
+   "heading_printed": "HISTORY",
+   "rule": "index",
+   "codes": [
+    "HIST"
+   ],
+   "candidate": null,
+   "label": "HISTORY (HIST)",
+   "catalog_page": 235
+  },
+  {
+   "code": "HLTH",
+   "heading": "Health Science",
+   "heading_printed": "HEALTH SCIENCE",
+   "rule": "index",
+   "codes": [
+    "HLTH"
+   ],
+   "candidate": null,
+   "label": "HEALTH SCIENCE (HLTH)",
+   "catalog_page": 234
+  },
+  {
+   "code": "HONORS",
+   "heading": "Honors",
+   "heading_printed": "HONORS",
+   "rule": "index",
+   "codes": [
+    "HONORS"
+   ],
+   "candidate": null,
+   "label": "HONORS (HONORS)",
+   "catalog_page": 237
+  },
+  {
+   "code": "HOSP",
+   "heading": "Hospitality Management",
+   "heading_printed": "HOSPITALITY MANAGEMENT",
+   "rule": "index",
+   "codes": [
+    "HOSP"
+   ],
+   "candidate": null,
+   "label": "HOSPITALITY MANAGEMENT (HOSP)",
+   "catalog_page": 238
+  },
+  {
+   "code": "HS",
+   "heading": "Human Services",
+   "heading_printed": "HUMAN SERVICES",
+   "rule": "index",
+   "codes": [
+    "HS"
+   ],
+   "candidate": null,
+   "label": "HUMAN SERVICES (HS)",
+   "catalog_page": 238
+  },
+  {
+   "code": "INTDS",
+   "heading": "Interdisciplinary Studies",
+   "heading_printed": "INTERDISCIPLINARY STUDIES",
+   "rule": "index",
+   "codes": [
+    "INTDS"
+   ],
+   "candidate": null,
+   "label": "INTERDISCIPLINARY STUDIES (INTDS)",
+   "catalog_page": 242
+  },
+  {
+   "code": "IS",
+   "heading": "Information Systems",
+   "heading_printed": "INFORMATION SYSTEMS",
+   "rule": "index",
+   "codes": [
+    "IS"
+   ],
+   "candidate": null,
+   "label": "INFORMATION SYSTEMS (IS)",
+   "catalog_page": 239
+  },
+  {
+   "code": "JOURN",
+   "heading": "Journalism",
+   "heading_printed": "JOURNALISM",
+   "rule": "index",
+   "codes": [
+    "JOURN"
+   ],
+   "candidate": null,
+   "label": "JOURNALISM (JOURN)",
+   "catalog_page": 243
+  },
+  {
+   "code": "KINES",
+   "heading": "Kinesiology",
+   "heading_printed": "KINESIOLOGY",
+   "rule": "index",
+   "codes": [
+    "KINES"
+   ],
+   "candidate": null,
+   "label": "KINESIOLOGY (KINES)",
+   "catalog_page": 243
+  },
+  {
+   "code": "LIBSKL",
+   "heading": "Library Skills",
+   "heading_printed": "LIBRARY SKILLS",
+   "rule": "index",
+   "codes": [
+    "LIBSKL"
+   ],
+   "candidate": null,
+   "label": "LIBRARY SKILLS (LIBSKL)",
+   "catalog_page": 243
+  },
+  {
+   "code": "LING",
+   "heading": "Linguistics",
+   "heading_printed": "LINGUISTICS",
+   "rule": "index",
+   "codes": [
+    "LING"
+   ],
+   "candidate": null,
+   "label": "LINGUISTICS (LING)",
+   "catalog_page": 243
+  },
+  {
+   "code": "MATH",
+   "heading": "Mathematics",
+   "heading_printed": "MATHEMATICS",
+   "rule": "index",
+   "codes": [
+    "MATH"
+   ],
+   "candidate": null,
+   "label": "MATHEMATICS (MATH)",
+   "catalog_page": 244
+  },
+  {
+   "code": "MKTG",
+   "heading": "Marketing",
+   "heading_printed": "MARKETING",
+   "rule": "index",
+   "codes": [
+    "MKTG"
+   ],
+   "candidate": null,
+   "label": "MARKETING (MKTG)",
+   "catalog_page": 244
+  },
+  {
+   "code": "MUS",
+   "heading": "Music",
+   "heading_printed": "MUSIC",
+   "rule": "index",
+   "codes": [
+    "MUS"
+   ],
+   "candidate": null,
+   "label": "MUSIC (MUS)",
+   "catalog_page": 247
+  },
+  {
+   "code": "MUSCO",
+   "heading": "Commercial Music",
+   "heading_printed": "COMMERCIAL MUSIC",
+   "rule": "index",
+   "codes": [
+    "MUSCO"
+   ],
+   "candidate": null,
+   "label": "COMMERCIAL MUSIC (MUSCO)",
+   "catalog_page": 250
+  },
+  {
+   "code": "OT",
+   "heading": "Office Technology",
+   "heading_printed": "OFFICE TECHNOLOGY",
+   "rule": "index",
+   "codes": [
+    "OT"
+   ],
+   "candidate": null,
+   "label": "OFFICE TECHNOLOGY (OT)",
+   "catalog_page": 255
+  },
+  {
+   "code": "OTA",
+   "heading": "Occupational Therapy Assistant",
+   "heading_printed": "OCCUPATIONAL THERAPY ASSISTANT",
+   "rule": "index",
+   "codes": [
+    "OTA"
+   ],
+   "candidate": null,
+   "label": "OCCUPATIONAL THERAPY ASSISTANT (OTA)",
+   "catalog_page": 251
+  },
+  {
+   "code": "PE",
+   "heading": "Physical Education",
+   "heading_printed": "PHYSICAL EDUCATION",
+   "rule": "index",
+   "codes": [
+    "PE"
+   ],
+   "candidate": null,
+   "label": "PHYSICAL EDUCATION (PE)",
+   "catalog_page": 257
+  },
+  {
+   "code": "PHIL",
+   "heading": "Philosophy",
+   "heading_printed": "PHILOSOPHY",
+   "rule": "index",
+   "codes": [
+    "PHIL"
+   ],
+   "candidate": null,
+   "label": "PHILOSOPHY (PHIL)",
+   "catalog_page": 255
+  },
+  {
+   "code": "PHOTO",
+   "heading": "Photography",
+   "heading_printed": "PHOTOGRAPHY",
+   "rule": "index",
+   "codes": [
+    "PHOTO"
+   ],
+   "candidate": null,
+   "label": "PHOTOGRAPHY (PHOTO)",
+   "catalog_page": 256
+  },
+  {
+   "code": "PHYS",
+   "heading": "Physics",
+   "heading_printed": "PHYSICS",
+   "rule": "index",
+   "codes": [
+    "PHYS"
+   ],
+   "candidate": null,
+   "label": "PHYSICS (PHYS)",
+   "catalog_page": 260
+  },
+  {
+   "code": "PLS",
+   "heading": "Plant Science",
+   "heading_printed": "PLANT SCIENCE",
+   "rule": "index",
+   "codes": [
+    "PLS"
+   ],
+   "candidate": null,
+   "label": "PLANT SCIENCE (PLS)",
+   "catalog_page": 261
+  },
+  {
+   "code": "POLS",
+   "heading": "Political Science",
+   "heading_printed": "POLITICAL SCIENCE",
+   "rule": "index",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "label": "POLITICAL SCIENCE (POLS) FORMERLY POLSCI",
+   "catalog_page": 262
+  },
+  {
+   "code": "PSYC",
+   "heading": "Psychology",
+   "heading_printed": "PSYCHOLOGY",
+   "rule": "index",
+   "codes": [
+    "PSYC"
+   ],
+   "candidate": null,
+   "label": "PSYCHOLOGY (PSYC) FORMERLY PSY",
+   "catalog_page": 263
+  },
+  {
+   "code": "SCI",
+   "heading": "Science",
+   "heading_printed": "SCIENCE",
+   "rule": "index",
+   "codes": [
+    "SCI"
+   ],
+   "candidate": null,
+   "label": "SCIENCE (SCI)",
+   "catalog_page": 265
+  },
+  {
+   "code": "SOCI",
+   "heading": "Sociology",
+   "heading_printed": "SOCIOLOGY",
+   "rule": "index",
+   "codes": [
+    "SOCI"
+   ],
+   "candidate": null,
+   "label": "SOCIOLOGY (SOCI, Formerly SOC)",
+   "catalog_page": 265
+  },
+  {
+   "code": "SPAN",
+   "heading": "Spanish",
+   "heading_printed": "SPANISH",
+   "rule": "index",
+   "codes": [
+    "SPAN"
+   ],
+   "candidate": null,
+   "label": "SPANISH (SPAN)",
+   "catalog_page": 266
+  },
+  {
+   "code": "STAT",
+   "heading": "Statistics",
+   "heading_printed": "STATISTICS",
+   "rule": "index",
+   "codes": [
+    "STAT"
+   ],
+   "candidate": null,
+   "label": "STATISTICS (STAT)",
+   "catalog_page": 268
+  },
+  {
+   "code": "WKEXP",
+   "heading": "Work Experience Education",
+   "heading_printed": "WORK EXPERIENCE EDUCATION",
+   "rule": "index",
+   "codes": [
+    "WKEXP"
+   ],
+   "candidate": null,
+   "label": "WORK EXPERIENCE EDUCATION (WKEXP) (Formerly Cooperative Work Experience (COTR)",
+   "catalog_page": 269
+  },
+  {
+   "code": "WTD",
+   "heading": "Water Treatment and Distribution",
+   "heading_printed": "WATER TREATMENT AND DISTRIBUTION",
+   "rule": "index",
+   "codes": [
+    "WTD"
+   ],
+   "candidate": null,
+   "label": "WATER TREATMENT AND DISTRIBUTION (WTD)",
+   "catalog_page": 268
+  }
+ ]
+}

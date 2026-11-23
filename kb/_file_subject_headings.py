@@ -27,6 +27,10 @@ A heading in capitals or mixed case is saved as the title only when the code's l
 A college whose catalog is one page per subject lists them on an index, each label a heading with its code:
 `--index` files those, with each subject's own address.
 
+A former code the index names ("ANTHROPOLOGY (ANTH, Formerly ANTHRO)") belongs to the college's code history
+(kb/subject_code_history.py), never to this file. A curator may file an index by hand from a source the reader cannot reach (Clovis, S715: Sam's reading of the
+catalog PDF's table of contents); the file names the person, the date and the page as its `read_by` and `source`.
+
 Usage: python3 kb/_file_subject_headings.py <job log with timestamps stripped> --run <run id> [--index] [--write]
        python3 kb/_file_subject_headings.py --check      (the committed files parse and name their runs)
 """

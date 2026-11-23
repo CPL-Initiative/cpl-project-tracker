@@ -62,6 +62,7 @@ sys.path.insert(0, HERE)
 import _build_subject_courses as B  # noqa: E402
 import _mid_readiness as R  # noqa: E402
 import subject_decisions as sd  # noqa: E402
+import subject_code_history as SCH  # noqa: E402
 
 OUT = os.path.join("kb", "status", "statewide_subject_codes.json")
 MINTED = os.path.join("kb", "coci_minted_courses.json")
@@ -99,11 +100,13 @@ def local_titles(root):
         doc = json.load(f)
     cols = doc.get("columns") or []
     ic, iname = cols.index("code"), cols.index("printed_name")
+    iren = cols.index("renamed_to") if "renamed_to" in cols else None
     out = collections.defaultdict(lambda: collections.defaultdict(list))
     for c in doc.get("colleges") or []:
         for r in c.get("rows") or []:
             if r[iname]:
-                out[sd.map_key(r[ic])][r[iname]].append(c["college"])
+                # A renamed code's title belongs to the code it became (kb/subject_code_history.py).
+                out[sd.map_key((r[iren] if iren is not None and r[iren] else None) or r[ic])][r[iname]].append(c["college"])
     return out
 
 
@@ -126,6 +129,12 @@ def build(root=ROOT):
         draft_disc = {sd.map_key(k): v for k, v in (json.load(f).get("map") or {}).items() if not k.startswith("_")}
     decisions = sd.load(root)
     titled = local_titles(root)
+    hist = SCH.load(root)
+
+    def now_code(college, code):
+        """The code a college uses now (kb/subject_code_history.py): a renamed code's courses count under its new code
+        at that college, so one subject is one pair (Sam, 2026-11-23)."""
+        return sd.map_key(SCH.resolve(hist, B.college_key(college), code, by="by_college"))
 
     # Each course's voting M-ID discipline, as a common code.
     vote_of, why_no = {}, collections.Counter()
@@ -160,7 +169,8 @@ def build(root=ROOT):
         k = sd.map_key(r[2])
         if not k:
             continue
-        e = codes.setdefault(k, {"spellings": collections.Counter(), "colleges": collections.Counter(), "courses": 0,
+        kn = now_code(names[r[0]], r[2])
+        e = codes.setdefault(kn, {"spellings": collections.Counter(), "colleges": collections.Counter(), "courses": 0,
                                  "credit": 0, "noncredit": 0, "titles": collections.Counter(), "votes": collections.Counter(),
                                  "categories": collections.Counter()})
         if r[6] != "C":
@@ -182,10 +192,11 @@ def build(root=ROOT):
         v = vote_of.get((B.college_key(names[r[0]]), k, B.num_key(r[3])))
         if not v:
             continue
+        kn = now_code(names[r[0]], r[2])
         for w in words(r[4]):
             prof[v][w] += 1
             tot[v] += 1
-            own[k][v][w] += 1
+            own[kn][v][w] += 1
     vocab = len({w for c in prof.values() for w in c})
     classes = sorted(prof)
 
@@ -401,7 +412,8 @@ def build(root=ROOT):
                  "or above the share where its self-recall holds 95%%. A TOP code is never read." % (PEER_COLLEGES, AGREE * 100, MIN_VOTES),
         "_sources": {"state_list": B.STATE, "state_list_built_at": state.get("_built_at"), "members": "unified_courses_members.js",
                      "members_at": members_at, "minted": MINTED, "subject_map": R.SUBJECT_MAP, "canonical_subj": sd.CANONICAL,
-                     "subject_decisions": "kb/status/subject_decisions.json", "local_titles": TITLES},
+                     "subject_decisions": "kb/status/subject_decisions.json", "local_titles": TITLES,
+                     "code_history": SCH.DIR.replace(os.sep, "/")},
         "totals": {"codes": len(out_codes), "colleges": len(set(names)), "pairs": sum(len(c["colleges"]) for c in out_codes),
                    "courses": sum(c["courses"] for c in out_codes), "one_college": sum(1 for c in out_codes if len(c["colleges"]) == 1),
                    "by_class": {k: by_cls[k] for k in ("settled", "noncredit", "confirm", "draft_differs", "draft_broad", "peers", "peers_split", "named_code", "titles", "look")},

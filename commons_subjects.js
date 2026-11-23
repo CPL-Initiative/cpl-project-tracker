@@ -307,12 +307,13 @@
   function isUpperWord(s) { return s !== s.toLowerCase() && s === s.toUpperCase(); }
   function hasUpper(s) { for (var i = 0; i < s.length; i++) { var ch = s.charAt(i); if (ch !== ch.toLowerCase() && ch === ch.toUpperCase()) return true; } return false; }
   var ROMAN = /^(?=[IVX])(X{0,3})(IX|IV|V?I{0,3})$/;
-  function tcWord(w, first) {
+  function tcWord(w, first, coded) {
     var small = (TC && TC.small) || [], kept = (TC && TC.kept) || [];
     var core = w.replace(/^[()\[\],;:.–—]+/, "").replace(/[()\[\],;:.–—]+$/, "");
     if (!core) return w;
     var up = core.toUpperCase(), out;
-    if (kept.indexOf(up) >= 0 || (ROMAN.test(up) && up.length <= 4 && isUpperWord(core))) out = up;
+    if (coded && ((isUpperWord(core) && core.length >= 2) || core === core.toLowerCase() && core !== core.toUpperCase())) out = core;   /* inside parentheses a code and a note word stay as printed */
+    else if (kept.indexOf(up) >= 0 || (ROMAN.test(up) && up.length <= 4 && isUpperWord(core))) out = up;
     else if (small.indexOf(core.toLowerCase()) >= 0 && !first) out = core.toLowerCase();
     else if (/[-\/]/.test(core)) out = core.replace(/[^-\/]+/g, function (m) { return tcWord(m, true); });
     else if (!isUpperWord(core) && hasUpper(core.slice(1))) out = core;
@@ -321,10 +322,12 @@
   }
   function titleCase(s) {
     if (!s || !String(s).trim()) return s;
-    var out = [];
+    var out = [], depth = 0;
     String(s).trim().split(/\s+/).forEach(function (w, i) {
       var prev = out[i - 1] || "";
-      out.push(tcWord(w, i === 0 || /[:–—]$/.test(prev) || prev === "-" || prev === "–" || prev === "—"));
+      /* A word in capitals inside parentheses is a subject code (Sam, 2026-11-23: "(formerly COTR)"); it keeps them. */
+      out.push(tcWord(w, i === 0 || /[:–—]$/.test(prev) || prev === "-" || prev === "–" || prev === "—", depth > 0 || w.charAt(0) === "("));
+      depth = Math.max(0, depth + (w.split("(").length - 1) - (w.split(")").length - 1));
     });
     return out.join(" ");
   }

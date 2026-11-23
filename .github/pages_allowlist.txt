@@ -89,6 +89,9 @@ withhold kb/reference/blocked_catalog_hunt.json
 # A college's own department list of its subject codes (S705, Cerritos's schedule): the title builder reads it; the
 # pages read kb/status/local_subject_titles.json.
 withhold kb/reference/college_department_lists
+# A college's subject code history (S715): the title and statewide builders read it; the pages read
+# kb/status/local_subject_titles.json, whose rows carry renamed_to and history.
+withhold kb/reference/subject_code_history
 # The bulk COCI program and program-course dumps program-course-fetch.yml commits; no page reads them.
 withhold kb/reference/coci_program_*.csv
 withhold kb/reference/subject_code_decisions_cerritos_2026-11-21.json
