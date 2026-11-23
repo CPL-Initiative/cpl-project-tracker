@@ -230,7 +230,7 @@ session.
   Postgres 16, `md5(record::text)` compared live, 2 KB in place of 72 KB, 15 of 15 matched); a `js-tests.yml` dispatch
   on a bot receipt head, whose `test` lands on that head (`p-bot-receipt-head-dispatch-js-tests-s713`: #3708's
   `946b03ea`, run 45148367921); one PR per college, one merge cycle in place of two (`d-ccsf-one-pr-s713`); free rule
-  work first (36 records and 47 named gaps for $0.17 of extraction); a second reader on every plan before its apply; one
+  work first (42 records and 47 named gaps for $0.17 of extraction); a second reader on every plan before its apply; one
   writer per table (#3707's apply waited for the display build); a fix ahead of a wave only where the wave would have
   filed wrong rows (`d-peralta-load-cleans-labels-first-s713`).
 

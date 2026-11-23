@@ -19,9 +19,10 @@ number at its start and writes the handoff one above the highest on `main`.
 From SkyKittiwake (S713), the CPL Queue routine's 06:12Z collection run of 2026-11-23, a conductor run for collection
 only under Sam's routine prompt of 2026-11-17 and the COBIx brief on #3358. A **full checkpoint** (lanes moved; Rule 10
 data writes ran: three guarded UPDATE applies, two outline loads, the display build), written by the checkpoint-docs
-worker from 09:46Z while #3707, Glendale's, City College of San Francisco's and Clovis's work were in flight. The
-conductor applies the memory rows, runs step 12's headline and harvest SQL and `--stamp`, keeps step 11's vault note,
-and fills the census, Spend and final lines. Skipped: steps 2 (no KB structure change), 3 (no user-facing surface
+worker from 09:46Z while #3707, Glendale's, City College of San Francisco's and Clovis's work were in flight, and
+brought to its final state by the conductor after every one of them merged (the last, #3710, at 11:04Z): the memory
+rows applied (migrate 45155155821, 18 rows), step 12 stamped, the vault note merged (samueltlee/CPLBrain#852), and the
+census, Spend and final lines filled. Skipped: steps 2 (no KB structure change), 3 (no user-facing surface
 changed), 7 (no M-ID pipeline move) and 9 (the UI pass is its own queue item).
 
 ## Open with the standing block (COBIx on #3358, 21:20Z 2026-11-18, corrected 21:36Z; Sam's rule for the next two or three sessions)
@@ -42,12 +43,11 @@ changed), 7 (no M-ID pipeline move) and 9 (the UI pass is its own queue item).
 2a. **Sam's work order (2026-11-20):** collection comes first, data waves before fixes, and a fix goes ahead of the next
    wave only when it blocks it or would file wrong rows (`r-collection-first-sam-2026-11-20`). Collection serves the
    M-IDs, so its fixes are ranked by the M-ID cards they unblock (`r-collect-for-mids-work-order-sam-2026-11-20`).
-3. **Merge order** (the conductor works it to sign-off; what it did not reach is yours, in this order): #3707 (general
-   education steps, applied), Glendale's PR (`claude/s713-piles2` `d87880f7`, applied), City College of San Francisco's
-   (`claude/slo-ccsf` `34f7f05a`, loaded), Clovis's (`s713-piles2-clovis` `2f42cdb9`, local, in review, not applied),
-   then `harvest-gap-census.yml` on `main`, then this checkpoint #3704 (`claude/awesome-fermat-0bgzd3`) at sign-off.
-   #3708 merged at 09:56Z. Dependabot's #3383 waits. Each records PR merges `main` once right before its merge, takes
-   `main`'s side of a conflicted Commons file and reruns both builders.
+3. **Merge order:** everything this run opened or inherited has merged: #3686 (06:57Z), #3675 (07:24Z), #3684
+   (07:59Z), #3705 (08:31Z), #3683 (09:00Z), #3708 (09:56Z), #3707 (10:04Z), #3709 (10:35Z, Glendale and Clovis) and
+   #3710 (11:04Z); the census ran on `main` after the last; this checkpoint #3704 merges at sign-off. Dependabot's #3383
+   waits. Each records PR merges `main` once right before its merge, takes `main`'s side of a conflicted Commons file
+   and reruns both builders.
 
 ## The start (06:12Z firing, 2026-11-23)
 
@@ -130,29 +130,36 @@ college until it merges.
   dropped. Its `test` came from a `js-tests.yml` dispatch on the bot receipt head
   (`p-bot-receipt-head-dispatch-js-tests-s713`).
 
-**Applied or loaded and live, its PR still to merge at this writing (10:0xZ):**
-- **#3707** (`claude/s713-piles-ge` `194d3c41`): general education steps, 8 records from failing to passing (Las Positas
+**Applied or loaded and live, then merged:**
+- **#3707** `7a67b1de` (10:04Z): general education steps, 8 records from failing to passing (Las Positas
   01032, 09214, 36235, 38886; Antelope Valley 36852, 40870, 43686, 43722; free reconcile runs 45127792228 and
   45133183717). Migrate 45147953792 (09:34Z), 8 of 8 live. The Antelope Valley fill takes only the degree total less
   the major's total; 18813 took the Las Positas step, places none of its courses and was never loaded; College of
   Marin's run 45135695869 moved nothing.
-- **Glendale** (`claude/s713-piles2` `d87880f7`): 13 records: a list that stands in for one core course, 9 (32394,
+- **Glendale**, in #3709 `9f529482` (10:35Z): 13 records: a list that stands in for one core course, 9 (32394,
   36667, 36711 to 36714, 36720, 36726, 36727); a figure in words, 2 (18639 EIGHTEEN, 12503 NINE); PSYC 104 read as the
   file's PSYCH 104, 2 (18640, 30813). Migrate 45148301846 (09:35Z), 13 of 13 live.
-- **City College of San Francisco** (`claude/slo-ccsf` `34f7f05a`): outline read 45128775065 in four parts (parser
+- **City College of San Francisco**, #3710 `62309028` (11:04Z): outline read 45128775065 in four parts (parser
   2629a09a); load 45148533372 inserted 3 (CS 160B, VMD 192, CS 155P), kept 1,416 that match S690's live rows and
   skipped 1. Its 53 page-finding programs: 47 named gaps in `no_record_s713.json` (18 credit and 27 noncredit not
   printed under their own title, 24263 whose only page is 40432's, and Cal-GETC 45768 under `ge_pattern_certificate`);
   7 own pages pinned (capture 45131492116); 17954 read for $0.17 (45132633405) and held; 5 held for a list or wording
-  rule.
-- **Clovis** (`s713-piles2-clovis` `2f42cdb9`, local): 6 checks-only rows planned, its second reader running; nothing
-  applied.
+  rule. Its lint caught `kb/status/program_discontinued.json` stale: the fresh capture moved 20 programs from "not
+  printed" to named gaps, the 20 that `d-ccsf-20-not-named-s691` had left unnamed because a dropped rule never read
+  them; the fresh capture is the new source evidence, so the gaps stand.
+- **Clovis**, in #3709: 6 records pass on free readings: a lecture and its lab as one option (`lab_pairs`; 42235,
+  33508), a list that also takes an earlier list's unused courses (`also_from`; 35535, 33502) and two renumbers cited
+  by control number (SOC 1B as SOCI 1B, 33486; ANTHRO 2 as ANTH 2, 45957). Its second reader said apply; two latent
+  minors (a chain counted twice, a pair member with no units) were fixed first with the 6 after-images unchanged.
+  Migrate 45152118403 (10:01Z), 6 of 6 live. `lab_pairs` also passes 12 records at other colleges at their next loads,
+  each a pair its notes say is taken together.
 
 **The census on `main`:** CENSUS_LINE
 
-**Tonight's count:** 36 records applied and live (Santa Rosa Junior 15, Las Positas and Antelope Valley 8, Glendale 13),
-6 more in review (Clovis); 47 programs filed as named gaps at City College of San Francisco; 3,734 outline rows (Peralta
-3,731, City College of San Francisco 3); $0.17 of paid extraction.
+**Tonight's count:** 42 records applied and live (Santa Rosa Junior 15, Las Positas 4, Antelope Valley 4, Glendale 13,
+Clovis 6); 47 programs filed as named gaps at City College of San Francisco; 3,734 outline rows (Peralta 3,731, City
+College of San Francisco 3); $0.17 of paid extraction. The headline at 10:21Z: 15,377 of 20,282 active programs pass
+the machine checks, at 118 colleges (15,349 at the brief).
 
 Read in order: this file; the NEXT of [`program-requirements-harvest`](reference/lanes/program-requirements-harvest.md);
 `docs/program_requirements_harvest_lessons.md`, *S713*; `docs/reference/conductor_mode.md`, *What went wrong in S713*;
@@ -162,10 +169,8 @@ Read in order: this file; the NEXT of [`program-requirements-harvest`](reference
 ## Open work, from the lanes' NEXT lines
 
 1. **`program-requirements-harvest`** (outline fills first):
-   - Land what the conductor did not reach, one at a time, in the merge order above; then the census on `main` and the
-     next display build, which carries the 21 records applied after tonight's build (Las Positas and Antelope Valley 8,
-     Glendale 13) and Clovis's 6 once applied.
-   - Clovis: its second reader, then the apply with the confirm guard (lane NEXT (5)).
+   - The next display build carries the 27 records applied after tonight's build (Las Positas and Antelope Valley 8,
+     Glendale 13, Clovis 6), then `harvest-gap-census.yml` on `main` again.
    - The next outline reader: `python3 scripts/next_slo_colleges.py --next` on `main` once City College of San
      Francisco's PR merges (lane NEXT (1)).
    - Lane 2: City College of San Francisco's 28 wording rules, each with a claim check, boundary readings and a
@@ -251,7 +256,7 @@ the conductor applies it with one `execute_sql` call. DECIDED lines: the harvest
 - A second reader on every plan before its apply: three applies, 36 rows; it held 2 at Santa Rosa Junior and 1 at Las
   Positas, caught the Antelope Valley fill taking the first digits it met (wrong on 4 of the 9 lines the reader fed
   it) and 12 system notes in Peralta's load.
-- Free rule work first: 36 records and 47 named gaps for $0.17 of extraction.
+- Free rule work first: 42 records and 47 named gaps for $0.17 of extraction.
 - One writer per table: #3707's apply waited for the display build.
 
 ## Safety patterns to honor
@@ -280,19 +285,22 @@ row; a rollback that undoes over 1% of a day's rows; the $10k checkpoint.
 |---|---|---|
 | #3704 (`claude/awesome-fermat-0bgzd3`) | the declaration and this checkpoint | merges at sign-off |
 | #3686, #3675, #3684, #3705, #3683, #3708 | merged | none |
-| #3707 (`claude/s713-piles-ge`) | open; applied (migrate 45147953792); `.apply` back to `main`'s at `194d3c41` | merge |
-| `claude/s713-piles2` (Glendale) | applied (migrate 45148301846); `.apply` back at `d87880f7`; no PR at this writing | open, merge |
-| `claude/slo-ccsf` (City College of San Francisco, with `claude/ccsf-pages-s713` merged in) | loaded (45148533372); `34f7f05a`; no PR at this writing | open, merge |
-| `s713-piles2-clovis` (Clovis) | local `2f42cdb9`; its second reader running | review, push as `claude/*`, apply, merge |
+| #3707 (`claude/s713-piles-ge`) | merged `7a67b1de`; applied by migrate 45147953792 | none |
+| #3709 (`claude/s713-piles2`, Glendale and Clovis) | merged `9f529482`; applied by migrates 45148301846 and 45152118403 | none |
+| #3710 (`claude/slo-ccsf`, City College of San Francisco, with `claude/ccsf-pages-s713` merged in) | merged `62309028`; loaded by 45148533372 | none |
+| `claude/s713-piles2-clovis` (Clovis) | its content rode #3709 | none |
+| samueltlee/CPLBrain#852 (the vault note) | merged `5e46fcd7` | none |
 | College page read 45128802291 | canceled (redundant) | none |
 | #3383 | dependabot's | waits |
 
 ## Let go
 
 The ledger names no PR subscription, scheduled check-in or artifact watch: the run gated each PR by reads. The COBIx
-watcher stopped at its two-hour limit shortly after 08:10Z; single polls after. Workers end with the session; their
-branches are pushed, except Clovis's, local until its review ends.
+watcher stopped at its two-hour limit shortly after 08:10Z; single polls after. Workers end with the session; every
+branch is pushed and merged. The local Postgres 16 started for the compact pre-reads is stopped at sign-off.
 
-SPEND_LINE
+Spend: about $219 (estimate from the session's and its agents' token counts at Opus 5.5 list prices, `kb/_spend_meter.py`'s table: the conductor $40, five workers $118, five second readers $48, the checkpoint documents $13); collection $206, infrastructure $13; 2026-11-23T06:12Z to 11:40Z. Every message ran on Opus 5.5 (the form names Fable 5.2; this run was served by Opus 5.5). The paid extraction run's own cost, $0.17 (City College of San Francisco 17954, run 45132633405), is listed apart. Stop rules: none fired (42 new records, about $5.21 each; outline rows far under $0.50; no rollback).
 
-FINAL_LINE
+Opening line: *Greetings, you are SkyFulmar (Session 714), see SkyKittiwake's (S713) handoff — `docs/session_714_handoff.md` — let's keep rolling with our queue.* (If a plain session has taken 714 by then, take the next free number and say so.)
+
+This session's cost: about $219 at list prices (no `get_session` in this session; estimated from the session's and its agents' token counts) plus $0.17 of paid reads. Records collected: 42 (applied and live), and 47 more programs filed as named gaps. Outline rows added: 3,734. Substantive PRs merged: 9 (#3686, #3675, #3684, #3705, #3683, #3708, #3707, #3709, #3710).

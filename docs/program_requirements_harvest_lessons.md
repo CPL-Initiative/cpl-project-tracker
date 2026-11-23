@@ -721,8 +721,8 @@ on one college: lane 1 `peralta` (Peralta's load, then City College of San Franc
 PRs, one at a time), then `display`; lane 2 `piles` (Santa Rosa Junior, Santa Monica, three general education steps),
 then `piles2` (Glendale, Clovis). The split changes are in handoff 714. Merged, each on a green `test` after its thread
 was read: #3686 `9b8480e3`, #3675 `706c0154`, #3684 `e0fa378d`, #3705 `1d8b5cfd`, #3683 `0f5b849e`, #3708 `02c44ae4`.
-In flight at the checkpoint: #3707 and the Glendale and City College of San Francisco branches (applied or loaded),
-and Clovis's plan (in review). Nothing waited on Sam; he gave no ruling tonight.
+Then, after the checkpoint's documents: #3707 `7a67b1de`, #3709 `9f529482` (Glendale and Clovis, one PR) and #3710
+`62309028`, each applied or loaded and confirmed live first. Nothing waited on Sam; he gave no ruling tonight.
 
 **The numbers.**
 - **Outlines.**
@@ -761,7 +761,7 @@ and Clovis's plan (in review). Nothing waited on Sam; he gave no ruling tonight.
     program to it (2); Glendale's `course_renumbers` name PSYC 104 for the file's PSYCH 104 (2). The reader's three
     latent minors were fixed first, the 13 after-images unchanged (`d-glendale-minors-before-apply-s713`). Migrate
     45148301846, 13 of 13 live. Held: 32607, 36416, 44488, 45068.
-  - Clovis (`s713-piles2-clovis`, in review): a lecture and its lab as one option (`lab_pairs`: 42235, 33508), a list
+  - Clovis (in #3709; migrate 45152118403, 6 of 6 live): a lecture and its lab as one option (`lab_pairs`: 42235, 33508), a list
     that also takes an earlier list's leftovers (`also_from`: 35535, 33502), two renumbers (33486, 45957). Six rows
     planned, checks only; 11 held. Elsewhere `lab_pairs` moves 10 records, none written: 7 pass at their next load,
     Santa Ana 31887 stays failing, San Diego City 17972 and 17976 are not exact.
@@ -778,8 +778,8 @@ and Clovis's plan (in review). Nothing waited on Sam; he gave no ruling tonight.
 - **Canceled:** the page read #3675's merge push started (45128802291, rereading #3686's 11 plans), as redundant
   (`d-cancel-merge-push-page-read-s713`).
 
-**Stopped or carried over.** #3707, the Glendale and City College of San Francisco PRs and Clovis's review and apply, in
-that order, then the census on `main` and the next display build: handoff 714. The minors: the lane's NEXT (2).
+**Stopped or carried over.** Every PR landed; the census ran on `main` after #3710; the next display build carries the
+27 records applied after tonight's: handoff 714. The minors: the lane's NEXT (2).
 
 **Lessons.**
 - **A compact pre-read** (`p-compact-preread-by-md5-s713`). #3705's committed pre-read carries 72 KB of before-values.
@@ -802,5 +802,5 @@ that order, then the census on `main` and the next display build: handoff 714. T
 - **A plan writes only what changes a verdict** (`d-plan-rows-change-a-verdict-s713`); an existing gap that fits is
   filed (`d-ccsf-45768-existing-gap-s713`); a college whose work spans two branches goes in one PR, one merge cycle in
   place of two (`d-ccsf-one-pr-s713`).
-- **What worked:** free rule work first, 36 records and 47 named gaps for $0.17 of extraction; a second reader on every
+- **What worked:** free rule work first, 42 records and 47 named gaps for $0.17 of extraction; a second reader on every
   plan before its apply; one writer per table (#3707's apply waited for the display build).
