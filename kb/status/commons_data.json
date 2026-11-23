@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-23T07:01:17Z",
+ "written_at": "2026-11-23T07:28:34Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -158,8 +158,8 @@
   "coe": "The regional labor market crosswalk is committed but not yet read per college here.",
   "loaded": "The load time is a column of the live program requirements table, which this file does not carry.",
   "owners": "The gap census names the change that would move each program, not who makes it; an owner joins each ask when the asks are filed with one.",
-  "slo": "Course SLO reads are committed for 26 hosts under kb/course_outcomes/<host>/, not yet read per college here; the SLO queue's state shows where the queue holds a college.",
-  "objectives": "Course objectives are committed for 16 hosts (ccc, cccd, chabot, craftonhills, cuesta, hancockcollege, laspositas, palomar, rccd, redwoods, riohondo, sac, saddleback, sdccd, shasta, siskiyous) under kb/course_outcomes/<host>/, not yet read per college here."
+  "slo": "Course SLO reads are committed for 27 hosts under kb/course_outcomes/<host>/, not yet read per college here; the SLO queue's state shows where the queue holds a college.",
+  "objectives": "Course objectives are committed for 17 hosts (ccc, cccd, chabot, craftonhills, cuesta, hancockcollege, lan, laspositas, palomar, rccd, redwoods, riohondo, sac, saddleback, sdccd, shasta, siskiyous) under kb/course_outcomes/<host>/, not yet read per college here."
  },
  "statewide": {
   "colleges": 118,
@@ -765,7 +765,9 @@
    },
    "programs_file": "kb/status/commons_data_programs/berkeley_city.json",
    "outcomes_file": "kb/status/commons_data_programs/berkeley_city.outcomes.json",
-   "outline_system": null,
+   "outline_system": [
+    "curriqunet"
+   ],
    "objectives_printed": null,
    "read_at": "2026-11-12T02:30:35Z",
    "read_kind": "capture",
@@ -815,7 +817,13 @@
      "cost_usd": 5.81,
      "platform": "curriqunet"
     },
-    "slo_read": null,
+    "slo_read": {
+     "run": "45031089800",
+     "at": "2026-11-22T16:26:19Z",
+     "system": "curriqunet",
+     "source_kind": "course_outline",
+     "file": "kb/course_outcomes/lan/read_45031089800_p5of5.json"
+    },
     "plo_programs": 58,
     "ppm_member": {
      "host": "berkeley-city.programmapper.com",
@@ -2227,7 +2235,9 @@
    },
    "programs_file": "kb/status/commons_data_programs/college_of_alameda.json",
    "outcomes_file": "kb/status/commons_data_programs/college_of_alameda.outcomes.json",
-   "outline_system": null,
+   "outline_system": [
+    "curriqunet"
+   ],
    "objectives_printed": null,
    "read_at": "2026-11-10T20:12:35Z",
    "read_kind": "capture",
@@ -2277,7 +2287,13 @@
      "cost_usd": 4.05,
      "platform": "curriqunet"
     },
-    "slo_read": null,
+    "slo_read": {
+     "run": "45031089800",
+     "at": "2026-11-22T16:26:19Z",
+     "system": "curriqunet",
+     "source_kind": "course_outline",
+     "file": "kb/course_outcomes/lan/read_45031089800_p5of5.json"
+    },
     "plo_programs": 59,
     "ppm_member": null,
     "maps": {
@@ -5904,7 +5920,9 @@
    },
    "programs_file": "kb/status/commons_data_programs/laney.json",
    "outcomes_file": "kb/status/commons_data_programs/laney.outcomes.json",
-   "outline_system": null,
+   "outline_system": [
+    "curriqunet"
+   ],
    "objectives_printed": null,
    "read_at": "2026-11-20T12:38:30Z",
    "read_kind": "capture",
@@ -5952,7 +5970,13 @@
      "cost_usd": 10.5,
      "platform": "curriqunet"
     },
-    "slo_read": null,
+    "slo_read": {
+     "run": "45031089800",
+     "at": "2026-11-22T16:26:19Z",
+     "system": "curriqunet",
+     "source_kind": "course_outline",
+     "file": "kb/course_outcomes/lan/read_45031089800_p5of5.json"
+    },
     "plo_programs": 156,
     "ppm_member": {
      "host": "mapsforsuccess.laney.edu",
@@ -7540,7 +7564,9 @@
    },
    "programs_file": "kb/status/commons_data_programs/merritt.json",
    "outcomes_file": "kb/status/commons_data_programs/merritt.outcomes.json",
-   "outline_system": null,
+   "outline_system": [
+    "curriqunet"
+   ],
    "objectives_printed": null,
    "read_at": "2026-10-16T16:53:10Z",
    "read_kind": "capture",
@@ -7587,7 +7613,13 @@
      "cost_usd": 6.13,
      "platform": "curriqunet"
     },
-    "slo_read": null,
+    "slo_read": {
+     "run": "45031089800",
+     "at": "2026-11-22T16:26:19Z",
+     "system": "curriqunet",
+     "source_kind": "course_outline",
+     "file": "kb/course_outcomes/lan/read_45031089800_p5of5.json"
+    },
     "plo_programs": 11,
     "ppm_member": null,
     "maps": {

@@ -268,8 +268,11 @@ def gate_stale(path):
     trial = os.path.join(read.OUT_DIR, "trial_%s" % want["trial"], "read.json")
     if not os.path.exists(trial):
         return None
-    fp = json.load(open(trial)).get("parser_fingerprint")
-    return None if fp == read.parser_fingerprint() else "trial %s filed by parser %s" % (want["trial"], (fp or "?")[:8])
+    filed = json.load(open(trial))
+    fp = filed.get("parser_fingerprint")
+    # Each host's own fingerprint: Peralta's section parse joins lan.curriqunet.com's alone (S703).
+    return None if fp == read.parser_fingerprint(filed.get("host")) else "trial %s filed by parser %s" % (
+        want["trial"], (fp or "?")[:8])
 
 
 index = os.path.join(ROOT, "kb", "course_outline_index", "index_44696736058.json")
