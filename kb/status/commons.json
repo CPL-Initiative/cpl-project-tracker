@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-23T16:07:49Z",
+ "written_at": "2026-11-23T19:33:22Z",
  "rows": [
   {
    "key": "requirements",
@@ -118,16 +118,8 @@
    ],
    "issues": [
     {
-     "n": 37,
-     "words": "titles held for a person",
-     "owner": "a curator (a merge would join two issuers 20, the classifier is unsure 16, the classifier's title has a course code left in 1)",
-     "carry": "unsure",
-     "open": "#exhibits/held",
-     "error": null
-    },
-    {
-     "n": 584,
-     "words": "credentials with no Common SUBJ (449 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
+     "n": 597,
+     "words": "credentials with no Common SUBJ (450 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
      "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
      "carry": "routine",
      "open": "#exhibits/list/nosubj",
@@ -186,7 +178,7 @@
     "left_map": 812,
     "below_80": 1117,
     "below_60": 235,
-    "no_subject": 584,
+    "no_subject": 597,
     "review_list": 12,
     "returned_unacknowledged": 0
    },
@@ -383,7 +375,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-19T06:22:43+00:00",
+    "at": "2026-11-19T06:22:43Z",
     "every_hours": null
    },
    "facts": {
@@ -712,14 +704,6 @@
     "key": "unsure",
     "items": [
      {
-      "ref": "exhibit",
-      "title": "Common Exhibit Reference",
-      "n": 37,
-      "words": "titles held for a person",
-      "owner": "a curator (a merge would join two issuers 20, the classifier is unsure 16, the classifier's title has a course code left in 1)",
-      "open": "#exhibits/held"
-     },
-     {
       "ref": "course",
       "title": "Common Course Reference",
       "n": 5,
@@ -792,8 +776,8 @@
    {
     "ref": "exhibit",
     "title": "Common Exhibit Reference",
-    "n": 584,
-    "words": "credentials with no Common SUBJ (449 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
+    "n": 597,
+    "words": "credentials with no Common SUBJ (450 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
     "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
     "open": "#exhibits/list/nosubj"
    },
@@ -822,10 +806,10 @@
     "ref": "exhibit",
     "title": "Common Exhibit Reference",
     "kind": "not_shrinking",
-    "n": 584,
+    "n": 597,
     "was": 499,
     "since": "2026-11-16",
-    "words": "credentials with no Common SUBJ (449 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
+    "words": "credentials with no Common SUBJ (450 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
     "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
     "open": "#exhibits/list/nosubj"
    }

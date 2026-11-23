@@ -2,20 +2,20 @@
  "schema": 1,
  "_about": "Credentials with no Common SUBJ after the subject fill (kb/_exhibit_subject_fill.py), each with why, and a suggested subject from its title words where one exists. A suggestion is never a decision: title words were wrong on ASE MIL7 (Sam, 2026-11-11). The Commons' Exhibit card counts `no_subject`.",
  "rule": "A credential with no Common SUBJ takes the subject of the courses colleges credit for it (over half of them, several colleges first, then one), else its issuer family's; title words, TOP and CIP never decide; a family or certification link that names another subject holds it for a person; a subject already on the title always wins.",
- "written_at": "2026-11-22T15:44:11Z",
+ "written_at": "2026-11-23T19:33:07Z",
  "mode": "preview",
  "live_read": true,
  "by_rung": {
   "courses, several colleges": 5,
-  "courses, one college": 211,
+  "courses, one college": 223,
   "issuer family": 0
  },
  "written": 0,
- "not_yet_written": 216,
- "no_subject": 584,
- "left": 368,
- "left_exhibits": 449,
- "suggested": 68,
+ "not_yet_written": 228,
+ "no_subject": 597,
+ "left": 369,
+ "left_exhibits": 450,
+ "suggested": 70,
  "not_held": [
   "Theater Arts"
  ],
@@ -488,6 +488,16 @@
    "exhibits": [
     "MAPCxH-ACEH-1-001"
    ]
+  },
+  {
+   "title": "CAL FIRE Basic Firefighter Training (219-hour)",
+   "why": "no signal",
+   "issuer": "California Department of Forestry and Fire Protection (CAL FIRE)",
+   "exhibits": [
+    "MAPICI-CFBF-1-001"
+   ],
+   "suggested": "BSKL",
+   "suggested_from": "title words (a suggestion, never a decision)"
   },
   {
    "title": "CNC Operation",
@@ -2221,7 +2231,7 @@
    ]
   },
   {
-   "title": "Mechanical Design I",
+   "title": "Mechanical Design 1",
    "why": "no signal",
    "issuer": "California Community Colleges",
    "exhibits": [
@@ -2448,7 +2458,9 @@
    "issuer": "Lake Elsinore Unified School District",
    "exhibits": [
     "MAPCxH-HSAW-1-001"
-   ]
+   ],
+   "suggested": "HLSN",
+   "suggested_from": "title words (a suggestion, never a decision)"
   },
   {
    "title": "Offender Profiling in Criminal Investigations",
