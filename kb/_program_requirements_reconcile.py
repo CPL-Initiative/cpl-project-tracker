@@ -100,6 +100,36 @@ def _heading_end(text, heading):
     return None if at < 0 else pos[at + len(want) - 1] + 1
 
 
+# The plan line East Los Angeles's PDF prints under every program's title, "(Academic Plan E032980G)": the control
+# number with its plan letters, one program's alone (S714). A record whose capture opened on that line (the title on
+# the page or lines above) holds a heading the reader completed from the description, "Associate in Arts in
+# Journalism for Transfer Degree (Academic Plan E032980G)", which the text never prints whole.
+PLAN_LINE = re.compile(r"\(\s*Academic\s+Plan\s+[A-Z]?\d{5,6}[A-Z]{0,2}\s*\)\s*$")
+
+
+def own_heading_end(text, heading):
+    """Where the program's own heading ends on the page (_heading_end), or, where the text does not print it whole
+    and the heading ends in its plan line (PLAN_LINE) after words the reader supplied, where that plan line ends:
+    the line names this program's control number alone, so the words after it are this program's, as after its
+    heading. None where the text prints neither."""
+    end = _heading_end(text, heading)
+    if end is not None:
+        return end
+    m = PLAN_LINE.search(heading or "")
+    if not m or not (heading or "")[:m.start()].strip():
+        return None
+    return _heading_end(text, m.group(0))
+
+
+PLAN_LINE_AT = re.compile(r"\s*\(\s*Academic\s+Plan\s+[A-Z]?\d{5,6}[A-Z]{0,2}\s*\)")
+
+
+def own_plan_line_at(text, start, at):
+    """Whether the words at `at` are the plan line printed right under the heading that ends at `start`: only
+    spacing between them, and the plan line itself at `at` (PLAN_LINE_AT)."""
+    return not text[start:at].strip() and bool(PLAN_LINE_AT.match(text, at))
+
+
 def _span_of(v):
     if isinstance(v, dict):
         return (v.get("min"), v.get("max") if v.get("max") is not None else v.get("min"))
@@ -1231,11 +1261,16 @@ def _college_steps(record: dict, text: str | None, college: str, award: str | No
                 continue
             # And only from the program's own heading (S525): the page's first list belongs to the first
             # program on it, so a program further down took that one's total (Computer Support Technician
-            # read IT Technician II's 32). A heading the page does not print fills nothing.
-            start = _heading_end(text, prog.get("section_heading"))
+            # read IT Technician II's 32). A heading the page does not print fills nothing; one the reader completed
+            # from the description reads from its plan line, which the page prints (own_heading_end, S714).
+            start = own_heading_end(text, prog.get("section_heading"))
             if start is None:
                 continue
             bm = re.compile(st["before"]).search(text, start)
+            if bm and own_plan_line_at(text, start, bm.start()):
+                # The step stops at the next program's plan line, and the page prints this program's own plan line
+                # under its heading (East Los Angeles, S714): the scope runs from there to the next one.
+                bm = re.compile(st["before"]).search(text, bm.end())
             if not bm:
                 continue
             scope = text[start:bm.start()]
@@ -1305,7 +1340,13 @@ def _college_steps(record: dict, text: str | None, college: str, award: str | No
         elif st["kind"] == "set":
             # A figure the catalog prints once for every degree, on its own page (Cerritos's general
             # education pattern): set where the program page's words point to it, citing both.
-            if not _empty(prog.get(field)):
+            # A step with "was" replaces only a field holding exactly that figure, which the page's words say this
+            # program does not take whole (East Los Angeles, S714: a high-unit major's waived general education
+            # areas bring the LACCD plan's 27 units to 21); every other set fills an empty field alone.
+            if "was" in st:
+                if _span_of(prog.get(field)) != _span_of(st["was"]):
+                    continue
+            elif not _empty(prog.get(field)):
                 continue
             # A record the step holds by name (S680, Lassen: 31297, the legacy number of 42300's "2.0" section,
             # and the overlap pair 35106 and 41912), {"<control number>": "<why>"}, as statewide_cal_getc's hold
