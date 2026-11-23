@@ -1,0 +1,290 @@
+{
+ "_readme": "S703 (worker glendale; d-glendale-own-pages-filed-as-gaps-s703). Glendale's 11 programs with no record file (f-glendale-28-left-s697), each filed with the page and control number that free page read 45016708970 found (customFields.eL_programControlNumber in each tab's own Coursedog data) and one of four reasons. The state's lists come from coci_program_courses, read by the conductor 2026-11-22; every noncredit course there is at 0 units. No model call, no Supabase write: no row exists for these programs, and the capture holds no text for them, so a read with only= naming them refuses (only_refused). The follow-up lever: a tab whose own data names a listed program is that program's candidate (_ranked/candidates), which the extraction's coverage bar would still stop. Customer Service 38973 is filed as page_challenged: Glendale's STV-for-OBT alias binds its own tab NCCS at coverage 1.0 (pricing run 45017885023), and the fresh read 45030485543 met the host's bot check on NCCS. The gap stands in place of a reread (Sam's cost rules: gaps noted instead of rereads).",
+ "college": "Glendale Community College",
+ "written": "2026-11-23T06:45:37Z",
+ "capture": "44915445658",
+ "page_read": "45016708970",
+ "reasons": {
+  "own_page_coverage_low": "Own page found by its program data; the page prints few of the state's listed courses, so the coarse net refused it.",
+  "no_own_page": "No page in the catalog is the program's own; the nearest page's data names a sibling.",
+  "page_challenged": "Own page found and bound by its program data, but on the read the host answered that page with its bot check (\"Let's confirm you are human\", HTTP 405), so the capture holds no text for it. The read is never routed around the challenge.",
+  "wrong_tab_hold": "A page held by, or near-missed for, a program its data does not name."
+ },
+ "programs": [
+  {
+   "control_number": "40846",
+   "title": "Administrative Medical Assisting",
+   "reason": "own_page_coverage_low",
+   "page": "https://catalog.glendale.edu/programs/NCAMA/completion-requirements-zaZdl",
+   "page_code": "NCAMA",
+   "page_data_names": "40846",
+   "coarse_net": "0 of 1",
+   "state_lists": [
+    "STV 40"
+   ],
+   "page_prints": [
+    "STV212",
+    "STV213",
+    "STV50",
+    "STV67",
+    "STV60"
+   ],
+   "which_is_stale": "The state's list: the page prints other codes and not STV 40. Coursedog's data dates the program's revision 'Improvement to Program of Study, Change to Content' to curriculum committee 2025-09-24 and board 2025-11-11, so the state's file predates the catalog."
+  },
+  {
+   "control_number": "40847",
+   "title": "Certified Nursing Aide",
+   "reason": "own_page_coverage_low",
+   "page": "https://catalog.glendale.edu/programs/NCCNA/completion-requirements-zaZdl",
+   "page_code": "NCCNA",
+   "page_data_names": "40847",
+   "coarse_net": "0 of 1",
+   "state_lists": [
+    "STV 40"
+   ],
+   "page_prints": [
+    "STV60",
+    "STV220",
+    "STV221"
+   ],
+   "which_is_stale": "The state's list: the page prints other codes and not STV 40. Coursedog's data dates the program's revision 'Improvement to Program of Study, Change to Content' to curriculum committee 2025-09-24 and board 2025-11-11, so the state's file predates the catalog."
+  },
+  {
+   "control_number": "38973",
+   "title": "Customer Service",
+   "reason": "page_challenged",
+   "page": "https://catalog.glendale.edu/programs/NCCS/completion-requirements-zaZdl",
+   "page_code": "NCCS",
+   "page_data_names": "38973",
+   "coarse_net": "0 of 4",
+   "with_alias": {
+    "run": "45017885023",
+    "coarse_net": "4 of 4",
+    "coverage": 1.0,
+    "note": "The pricing run's filed preview (capture_preview.json) lists 38973 to extract from NCCS at coverage 1.0, where capture 44915445658 read 0 of 4 before the alias."
+   },
+   "state_lists": [
+    "OBT 11",
+    "OBT 35",
+    "OBT 40",
+    "OBT 50"
+   ],
+   "page_prints": [
+    "STV11",
+    "STV35",
+    "STV40",
+    "STV50"
+   ],
+   "which_is_stale": "Neither's courses: the page prints the same four numbers under STV, the prefix that replaced OBT. Glendale's reconcile entry now carries the pair STV for OBT (d-glendale-obt-stv-prefix-alias-s703), so a fresh capture names all four on NCCS (pricing run 45017885023 bound 38973 to NCCS at coverage 1.0, estimate $0.10).",
+   "lever": "prefix alias STV for OBT, filed S703",
+   "read_attempts": [
+    {
+     "run": "45030349942",
+     "sources_from": "45017885023",
+     "result": "refused at staging, no model call: the current code reads refused pages differently (02566, 11194, 19580)"
+    },
+    {
+     "run": "45030485543",
+     "result": "refused at pricing, no model call. The run says: \"only= refused: 38973 has no text in the capture (page_challenged)\". Its capture lists NCCS among 66 Coursedog pages the host answered with its bot check (\"Let's confirm you are human\", HTTP 405); the host's check, not a reader fault."
+    }
+   ],
+   "next": "none while the gap stands (Sam's cost rules: gaps noted instead of rereads). When a later Glendale read finds NCCS answering, a read with only=38973 takes it; never routed around the challenge (the unblocker step)."
+  },
+  {
+   "control_number": "24327",
+   "title": "General Office Clerk III",
+   "reason": "own_page_coverage_low",
+   "page": "https://catalog.glendale.edu/programs/NCGOAII/completion-requirements-zaZdl",
+   "page_code": "NCGOAII",
+   "page_data_names": "24327",
+   "coarse_net": "2 of 7",
+   "state_lists": [
+    "STV 101",
+    "STV 111",
+    "STV 113",
+    "STV 13",
+    "STV 150",
+    "STV 22",
+    "STV33"
+   ],
+   "page_prints": [
+    "STV12",
+    "STV21",
+    "STV72",
+    "STV90",
+    "STV111"
+   ],
+   "which_is_stale": "The state's list, or a title the catalog changed: the page is titled General Office Assistant II and its program map link is general-office-clerk-iii. Only STV 111 is on both, and STV 113 and STV 150 print on NCAC3, whose data names 47030."
+  },
+  {
+   "control_number": "11155",
+   "title": "Mass Communications",
+   "reason": "own_page_coverage_low",
+   "page": "https://catalog.glendale.edu/programs/MC-AS/completion-requirements-zaZdl",
+   "page_code": "MC-AS",
+   "page_data_names": "11155",
+   "coarse_net": "3 of 21",
+   "state_lists": [
+    "ENGL 102",
+    "ENGL 105",
+    "ENGL 106",
+    "ENGL 109",
+    "ENGL 110",
+    "ENGL 111",
+    "ENGL 122",
+    "ENGL 123",
+    "ENGL 125",
+    "ENGL 127",
+    "ENGL C1000",
+    "ENGL C1001",
+    "ECON 101",
+    "HIST 140",
+    "HIST 141",
+    "JOURN 102",
+    "JOURN 103",
+    "JOURN 104",
+    "JOURN 107",
+    "MEDIA 101",
+    "POLS C1000"
+   ],
+   "page_prints": [
+    "MCOMM 101",
+    "MCOMM 120",
+    "COMM C1000",
+    "JOURN 102",
+    "JOURN 103",
+    "JOURN 104",
+    "COMM 105",
+    "COMM 108",
+    "COMM 115",
+    "COMM 117",
+    "COMM 120",
+    "BUSAD 163",
+    "BUSAD 165",
+    "BUSAD 166",
+    "FTVM 120",
+    "FTVM 131",
+    "FTVM 135",
+    "FTVM 139",
+    "PHOTO 100",
+    "PHOTO 101"
+   ],
+   "which_is_stale": "The state's list: the page prints 20 codes, and only JOURN 102, 103 and 104 are on the state's list of 21, which is mostly English and history. No code on the page reads as a renumber of a listed one."
+  },
+  {
+   "control_number": "21303",
+   "title": "Mass Communications",
+   "reason": "own_page_coverage_low",
+   "page": "https://catalog.glendale.edu/programs/MC-C/completion-requirements-zaZdl",
+   "page_code": "MC-C",
+   "page_data_names": "21303",
+   "coarse_net": "3 of 21",
+   "state_lists": [
+    "ENGL 102",
+    "ENGL 105",
+    "ENGL 106",
+    "ENGL 109",
+    "ENGL 110",
+    "ENGL 111",
+    "ENGL 122",
+    "ENGL 123",
+    "ENGL 125",
+    "ENGL 127",
+    "ENGL C1000",
+    "ENGL C1001",
+    "ECON 101",
+    "HIST 140",
+    "HIST 141",
+    "JOURN 102",
+    "JOURN 103",
+    "JOURN 104",
+    "JOURN 107",
+    "MEDIA 101",
+    "POLS C1000"
+   ],
+   "page_prints": [
+    "MCOMM 101",
+    "MCOMM 120",
+    "COMM C1000",
+    "JOURN 102",
+    "JOURN 103",
+    "JOURN 104",
+    "COMM 105",
+    "COMM 108",
+    "COMM 115",
+    "COMM 117",
+    "COMM 120",
+    "BUSAD 163",
+    "BUSAD 165",
+    "BUSAD 166",
+    "FTVM 120",
+    "FTVM 131",
+    "FTVM 135",
+    "FTVM 139",
+    "PHOTO 100",
+    "PHOTO 101"
+   ],
+   "which_is_stale": "The state's list: the page prints 20 codes, and only JOURN 102, 103 and 104 are on the state's list of 21, which is mostly English and history. No code on the page reads as a renumber of a listed one."
+  },
+  {
+   "control_number": "36599",
+   "title": "IT Technician II: Help Desk User Support",
+   "reason": "no_own_page",
+   "nearest_page": "https://catalog.glendale.edu/programs/ITTII%20-%20AS/completion-requirements-zaZdl",
+   "nearest_page_data_names": "36598",
+   "sibling": "36598, IT Technician II: Help Desk User Support A.S."
+  },
+  {
+   "control_number": "36601",
+   "title": "IT Technician III",
+   "reason": "no_own_page",
+   "nearest_page": "https://catalog.glendale.edu/programs/ITTIII-%20AS/completion-requirements-zaZdl",
+   "nearest_page_data_names": "36600",
+   "sibling": "36600, IT Technician III A.S."
+  },
+  {
+   "control_number": "37070",
+   "title": "Information Technology",
+   "reason": "no_own_page",
+   "nearest_page": "https://catalog.glendale.edu/programs/ITT-C/completion-requirements-zaZdl",
+   "nearest_page_data_names": "41573",
+   "sibling": "41573, Information Technology Technician certificate"
+  },
+  {
+   "control_number": "21302",
+   "title": "Cinematography and Editing",
+   "reason": "no_own_page",
+   "nearest_page": null,
+   "nearest_page_data_names": null,
+   "sibling": null,
+   "note": "capture 44915445658: no page read names the program."
+  },
+  {
+   "control_number": "24377",
+   "title": "General Office Clerk II",
+   "reason": "no_own_page",
+   "nearest_page": "https://catalog.glendale.edu/programs/NCGOAII/completion-requirements-zaZdl",
+   "nearest_page_data_names": "24327",
+   "sibling": "24327, whose own page NCGOAII is",
+   "note": "NCGOAI was not read."
+  }
+ ],
+ "side_findings": [
+  {
+   "control_number": "02557",
+   "title": "Mass Communications A.A.",
+   "reason": "wrong_tab_hold",
+   "page": "https://catalog.glendale.edu/programs/MC-C/completion-requirements-zaZdl",
+   "page_data_names": "21303",
+   "note": "02557's filed record was read from MC-C, the tab whose data names 21303 (capture 44915445658, coverage 0.5). The tab_owners.json hold would apply once MC-C is listed there; lane 2's."
+  },
+  {
+   "control_number": "47030",
+   "title": "Account Clerk III (Coursedog NCAC3)",
+   "reason": "wrong_tab_hold",
+   "page": "https://catalog.glendale.edu/programs/NCAC3/completion-requirements-zaZdl",
+   "page_data_names": "47030",
+   "note": "NCAC3's data names 47030, so 24327's near miss there in capture 44915445658 was another program's page."
+  }
+ ]
+}

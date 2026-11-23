@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-23T06:28:16Z",
+ "written_at": "2026-11-23T07:01:17Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 16948,
-  "gap": 5387,
+  "passing": 16949,
+  "gap": 5386,
   "with_gap": 118,
   "cost_usd": 1340.28,
-  "passed_at_read": 16217,
+  "passed_at_read": 16226,
   "cost_receipts": 118,
   "spent_usd": 1235.28,
   "spent_runs": 186,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16637,
-  "gap": 5387,
+  "passing": 16638,
+  "gap": 5386,
   "collected_with_gaps": 311,
   "discontinued": 0
  },
@@ -842,12 +842,11 @@
    "harvested": true,
    "slug": "butte",
    "programs": 192,
-   "passing": 147,
-   "gap": 45,
+   "passing": 148,
+   "gap": 44,
    "causes": {
     "no_closed_list": 24,
     "page_not_found": 3,
-    "places_none": 1,
     "unknown_without_live": 17
    },
    "census_causes": {
@@ -869,10 +868,10 @@
    "outcomes_file": "kb/status/commons_data_programs/butte.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-11T08:16:43Z",
+   "read_at": "2026-11-22T11:18:06Z",
    "read_kind": "capture",
    "cost_usd": 10.69,
-   "passed_at_read": 138,
+   "passed_at_read": 147,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -885,25 +884,24 @@
    "extracted": 165,
    "errors": 0,
    "failed_checks": {
-    "coverage": 1,
+    "coverage": 0,
     "invented": 0,
-    "arithmetic": 27,
+    "arithmetic": 18,
     "repeated": 0,
     "outcomes": 0
    },
    "platform": "curriqunet",
    "catalog_year": "2026-2027",
-   "catalog_url": "https://butte.curriqunet.com/Catalog//iq/25371",
-   "capture_root": "https://butte.curriqunet.com/Catalog//iq/25371",
+   "catalog_url": "https://butte.curriqunet.com/Catalog/",
+   "capture_root": "https://butte.curriqunet.com/Catalog/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 5488.0,
-   "run": "42985449223",
+   "read_seconds": 5505.0,
+   "run": "45025068740",
    "levers": {
     "program_course_file_check": 24,
     "reconcile_steps": 17,
-    "reader_page_search": 3,
-    "reader_page_assignment": 1
+    "reader_page_search": 3
    },
    "collection": {
     "program_reader": {
@@ -911,13 +909,13 @@
      "models": {
       "claude-opus-5-5": 165
      },
-     "run": "42985449223",
-     "at": "2026-11-11T08:16:43Z",
+     "run": "45025068740",
+     "at": "2026-11-22T11:18:06Z",
      "cost_usd": 10.69,
      "platform": "curriqunet"
     },
     "slo_read": null,
-    "plo_programs": 163,
+    "plo_programs": 164,
     "ppm_member": null,
     "maps": {
      "held": 0,
