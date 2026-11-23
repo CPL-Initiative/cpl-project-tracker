@@ -265,7 +265,8 @@ Memory rows: `kb/migrations/2026-11-23_s714_cpl_memory_rows.sql` (15 rows, rollb
 **New at the end of S714:** a test must never read the live census for its members: once a plan's records pass, the next census drops them and the test breaks every PR's CI and `main` (`tests/program_piles_s714_ela_test.py` did, fixed in #3721); pin the members in a fixture, as the City College of San Francisco test does (`p-test-pins-census-members-s714`). And a CI run that dies at `npm install` on a 404 may be a package published
 seconds before (`@bramus/specificity` 2.4.4 at 16:21:23Z, fetched at 16:21:42Z): read the version's publish time
 with `npm view <pkg> time` before pinning, and rerun the failed jobs once the release has propagated
-(`p-fresh-release-404-reruns-s714`).
+(`p-fresh-release-404-reruns-s714`). S715's `cd6b6c25` withheld 193 MB of program reads from the Pages deploy
+(the night's filed reads had pushed it past its limit) and fixed the East Los Angeles test the same way #3721 did.
 
 All of handoff 714's. New tonight: one dispatch at a time per branch; a fresh worker per branch; no reconcile at any
 college before the fill is measured and the dropped gaps are fixed; the claim check reads today's capture and can hold
