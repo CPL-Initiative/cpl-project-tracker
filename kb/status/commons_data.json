@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-23T08:03:54Z",
+ "written_at": "2026-11-23T08:33:02Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 16964,
-  "gap": 5371,
+  "passing": 16965,
+  "gap": 5370,
   "with_gap": 118,
   "cost_usd": 1340.28,
-  "passed_at_read": 16226,
+  "passed_at_read": 16227,
   "cost_receipts": 118,
   "spent_usd": 1235.28,
   "spent_runs": 186,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16643,
-  "gap": 5371,
+  "passing": 16644,
+  "gap": 5370,
   "collected_with_gaps": 321,
   "discontinued": 0
  },
@@ -1884,13 +1884,13 @@
    "harvested": true,
    "slug": "clovis_community",
    "programs": 129,
-   "passing": 89,
-   "gap": 40,
+   "passing": 90,
+   "gap": 39,
    "causes": {
     "no_closed_list": 8,
     "page_not_found": 12,
     "places_none": 2,
-    "unknown_without_live": 18
+    "unknown_without_live": 17
    },
    "census_causes": {
     "course_added": 1,
@@ -1915,10 +1915,10 @@
    "outcomes_file": "kb/status/commons_data_programs/clovis_community.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-22T11:43:38Z",
+   "read_at": "2026-11-22T14:32:47Z",
    "read_kind": "capture",
    "cost_usd": 8.22,
-   "passed_at_read": 78,
+   "passed_at_read": 79,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -1933,7 +1933,7 @@
    "failed_checks": {
     "coverage": 4,
     "invented": 3,
-    "arithmetic": 26,
+    "arithmetic": 25,
     "repeated": 0,
     "outcomes": 5
    },
@@ -1943,10 +1943,10 @@
    "capture_root": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 80.8,
-   "run": "45018954283",
+   "read_seconds": 50.2,
+   "run": "45033577888",
    "levers": {
-    "reconcile_steps": 18,
+    "reconcile_steps": 17,
     "reader_page_search": 12,
     "program_course_file_check": 8,
     "reader_page_assignment": 2
@@ -1957,8 +1957,8 @@
      "models": {
       "claude-opus-5-5": 109
      },
-     "run": "45018954283",
-     "at": "2026-11-22T11:43:38Z",
+     "run": "45033577888",
+     "at": "2026-11-22T14:32:47Z",
      "cost_usd": 8.22,
      "platform": "pdf"
     },
