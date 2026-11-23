@@ -27,7 +27,7 @@ def check(ok, what):
 
 SLUGS = {"ohlone": 34, "san_joaquin_delta": 24, "mt_san_antonio": 28, "santa_barbara_city": 28, "orange_coast": 27,
          # S713: City College of San Francisco's lever 4, filed the same way (no_record_s713.json).
-         "city_of_san_francisco": (46, "no_record_s713.json")}
+         "city_of_san_francisco": (47, "no_record_s713.json")}
 for slug, want in SLUGS.items():
     want, name = want if isinstance(want, tuple) else (want, "no_record_s703.json")
     folder = os.path.join(ROOT, "kb", "program_requirements_college", slug)

@@ -1,7 +1,7 @@
 {
- "_readme": "S713 (worker for SkyKittiwake), census lever 4 (City College of San Francisco, page not found, 53). Free page read 45129229734 printed every page up to 480 of the 2026-27 catalog PDF (920 pages; the program pages and the career-pathway index, pp.431-442, sit inside that span) that names one of the 53 titles. Seven have their own heading and are pinned in the college's reconcile entry (pdf_pages: 09178, 17952, 17954, 31602, 36964, 42318, 45768). The other 46 are filed here: 18 credit programs and 27 noncredit programs no page prints under a heading of their own title (the index names none of them), and Microsoft Office Specialist 24263 (noncredit), whose only page is the credit certificate 40432's. No model call, no Supabase write: no row exists for these programs, and the capture holds no text for them. They are the college's to settle in COCI.",
+ "_readme": "S713 (worker for SkyKittiwake), census lever 4 (City College of San Francisco, page not found, 53). Free page read 45129229734 printed every page up to 480 of the 2026-27 catalog PDF (920 pages; the program pages and the career-pathway index, pp.431-442, sit inside that span) that names one of the 53 titles. Seven have their own heading and are pinned in the college's reconcile entry (pdf_pages: 09178, 17952, 17954, 31602, 36964, 42318, 45768). The other 46 are filed here, and Cal-GETC 45768 with them under the census's ge_pattern_certificate gap: 18 credit programs and 27 noncredit programs no page prints under a heading of their own title (the index names none of them), and Microsoft Office Specialist 24263 (noncredit), whose only page is the credit certificate 40432's. No model call, no Supabase write: no row exists for these programs, and the capture holds no text for them. They are the college's to settle in COCI.",
  "college": "City College of San Francisco",
- "written": "2026-11-23T07:17:15Z",
+ "written": "2026-11-23T09:02:01Z",
  "capture": "39046623474",
  "page_reads": [
   "45129229734"
@@ -9,7 +9,8 @@
  "reasons": {
   "credit_not_in_catalog": "A credit program the 2026-27 catalog prints under no heading: no page up to 480 names its title with its award, and the career-pathway index does not list it.",
   "noncredit_not_in_catalog": "A noncredit program the 2026-27 catalog prints under no heading: no page up to 480 names its title as a program, and the index does not list it.",
-  "page_held_by_another_program": "The only page that prints the title is another program's own page."
+  "page_held_by_another_program": "The only page that prints the title is another program's own page.",
+  "ge_pattern_certificate": "General-education pattern certificate. It has no fixed course list by design (the census's named gap, kb/_harvest_gap_census.py NAMED_GAPS)."
  },
  "programs": [
   {
@@ -297,6 +298,13 @@
    "award": "A.S. Degree",
    "reason": "credit_not_in_catalog",
    "note": "'Human Resources Management' prints only as the course MGT 233 (pp.145, 150, 151)."
+  },
+  {
+   "control_number": "45768",
+   "title": "Cal-GETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "reason": "ge_pattern_certificate",
+   "note": "Its own page is PDF p.213 (pinned in the college's reconcile entry); its Area 1A to 6 lists match 0.285 of the state's course list (capture 45131492116), so no record is read. The census already names it under this gap by its title. The gap is a census label on a program with no record, so it carries no record confidence scores."
   }
  ]
 }
