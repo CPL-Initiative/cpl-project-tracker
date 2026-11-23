@@ -105,6 +105,10 @@ stays off the Los Rios colleges and any college lane 1 takes later.
   and 26,000 fuzz calls, 0 windows changed outside S714's pins. The conductor dispatched the three paid reads on
   `claude/s714-rios` in that scope: Sacramento City 18 (about $2.04), Cosumnes River 16 ($1.76), Folsom Lake 3
   ($0.33). `rios` fixes the blocker, the test and the minors, then reconciles each filed read.
+- 13:21Z: #3714 merged on a green `test` (`f0d84966`, confirmed on `origin/main`). `piles` takes the follow-up its
+  reading opened: the 10 records at seven colleges that `option_parts` moves to passing (Foothill, Glendale, Golden
+  West, MiraCosta, Monterey Peninsula, Reedley, Santa Barbara City), on `claude/s714-piles-optparts`, then
+  Fullerton. Those seven colleges join lane 2 for the follow-up.
 
 ## Conductor settings
 
@@ -122,7 +126,8 @@ by Opus 5.5.
 | PR or branch | State | Next |
 |---|---|---|
 | #3713 (`claude/awesome-fermat-ka0z4l`) | the declaration | becomes the checkpoint at sign-off |
-| #3714 (`claude/s714-piles-ccsf`, `piles`) | applied by migrate 45176130201, 8 rows live | the reach-count and test fixes, then the merge |
+| #3714 (`claude/s714-piles-ccsf`, `piles`) | merged `f0d84966`; applied by migrate 45176130201 | none |
+| `claude/s714-piles-optparts` (`piles`) | started | its plan, a light second reader, the apply |
 | `claude/s714-piles-ela` (`piles2`) | plan filed, 15 rows | the second reader, its PR, the pre-read, the apply, the merge |
 | #3715 (`claude/s714-rios`, `rios`) | three paid reads dispatched | the fixes, the filings, reconcile, the reread, merge |
 | #3712 (S712, Sam's plain session) | merged `3cc69ffc` | none |
