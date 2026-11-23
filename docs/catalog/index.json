@@ -1674,7 +1674,8 @@
      "created": "2026-11-14",
      "governs": [
       "kb/_program_requirements_score.py",
-      "kb/_program_requirements_reconcile.py"
+      "kb/_program_requirements_reconcile.py",
+      "tests/reconcile_window_fill_test.py"
      ],
      "path": "docs/kb-notes/methodology-a-fill-must-check-what-it-fills.md",
      "status": "published",
@@ -1686,7 +1687,7 @@
      ],
      "title": "A fill must check the units it fills, not the word that licenses it",
      "type": "methodology",
-     "updated": "2026-11-14"
+     "updated": "2026-11-23"
     },
     {
      "created": "2026-09-09",

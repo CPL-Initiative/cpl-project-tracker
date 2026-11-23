@@ -1,7 +1,7 @@
 ---
 title: A fill must check the units it fills, not the word that licenses it
 created: 2026-11-14
-updated: 2026-11-14
+updated: 2026-11-23
 tags: [methodology, program-requirements-harvest, scorer, guards]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -12,6 +12,7 @@ related:
 artifacts:
   - kb/_program_requirements_score.py
   - kb/_program_requirements_reconcile.py
+  - tests/reconcile_window_fill_test.py
 ---
 
 # A fill must check the units it fills, not the word that licenses it
@@ -39,6 +40,28 @@ program-total fill filled a degree's major total, and 11338 (6 of 24 major units
 missing) would have passed on the rescore alone. The conductor held the seven rescore-only passes for the one dry run of
 the passing-function changes, which carries the fix (`p-degree-electives-fill-false-pass-s650`).
 
+## S714: the same fill over a window the reader cut off
+
+The fill has a second branch: a record with no degree total whose sum falls short of the program total
+(`electives_fill_degree`, `hi <= stated`) passes when *elective* appears anywhere in the text, about line 1478 of
+`kb/_program_requirements_score.py`. On 2026-11-23 three free reconciles at the Los Rios colleges rescored records
+outside the programs they were run for, and nine newly passed. A second reader found eight of them passing only
+through that branch, while each record's own notes said its table opened mid-page with rows cut off: Sacramento City
+04656, 07350 and 21418; Cosumnes River 04602 and 04614; Folsom Lake 15368, 39574 and 42612
+(`f-elective-fill-passes-cut-off-windows-s714`). 04614 was one of S650's seven, so the same record reached a pass through a
+fill twice, nine days apart, and was held both times. All nine went back to `main`'s filings unread (`d-elective-fill-rereads-held-s714`).
+
+S655 had found the class at American River (07206: 20 of 32 courses placed, the window opening mid-table on page 429)
+and pinned it in `tests/reconcile_window_fill_test.py`. That guard did not see the eight. It reads only the six
+colleges of S655's wave, and its note pattern (*start of the table*, *not included*, *likely on page N*) matches none
+of their notes, which say *cut off*, *begins mid-table* and *not supplied*. A guard keyed to one college's wording and
+one wave's colleges is a self-recall test of the case that made it, and it reports nothing about the next one.
+
+So the claim widens. A short sum has two causes the arithmetic cannot tell apart: units the catalog leaves to the
+student, and rows the reader never saw. A fill must rule out the second before it claims the first, from what the
+record says about its own window, and a guard on the fill must read every college, since the next reconcile can land
+anywhere.
+
 ## When this applies (and when it doesn't)
 
 Any rule that lets a named slack (electives, "as needed to reach 60", GE double counting) close an arithmetic gap.
@@ -49,6 +72,8 @@ the case the fill was built for, and the word guard serves it. The fault is the 
 
 - `[[docs/program_requirements_harvest_lessons]]`: S650, the Cosumnes River plan
 - PR `#3288`: the two pinned rows loaded, the seven held
+- `[[docs/program_requirements_harvest_lessons]]`: S714, the reconciles that reached past the pins
+- PR `#3715`: the nine held back to `main`'s filings
 - `[[methodology-a-record-level-join-needs-a-word-guard]]`: a word guard where a word is the right test
 
 ---
