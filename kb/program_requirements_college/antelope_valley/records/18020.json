@@ -46,24 +46,25 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 62,
+   "placed": 63,
    "listed": 63,
-   "share": 0.984,
-   "missing": [
-    "ECON102"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON102",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "ECONC2001"
-   ],
-   "flagged": [
-    "ECONC2001"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -716,5 +717,6 @@
    "The page includes internal curriculum workflow text (Checklist, Workflow Agreement) unrelated to requirements."
   ]
  },
- "extracted_run": "38979725726"
+ "extracted_run": 45133183717,
+ "read_run": "38979725726"
 }

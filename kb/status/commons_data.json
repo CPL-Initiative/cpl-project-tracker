@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-23T08:33:02Z",
+ "written_at": "2026-11-23T09:20:04Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 16965,
-  "gap": 5370,
+  "passing": 16973,
+  "gap": 5362,
   "with_gap": 118,
   "cost_usd": 1340.28,
-  "passed_at_read": 16227,
+  "passed_at_read": 16249,
   "cost_receipts": 118,
   "spent_usd": 1235.28,
   "spent_runs": 186,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16644,
-  "gap": 5370,
+  "passing": 16652,
+  "gap": 5362,
   "collected_with_gaps": 321,
   "discontinued": 0
  },
@@ -432,13 +432,13 @@
    "harvested": true,
    "slug": "antelope_valley",
    "programs": 199,
-   "passing": 158,
-   "gap": 41,
+   "passing": 162,
+   "gap": 37,
    "causes": {
     "no_closed_list": 2,
     "page_not_found": 2,
     "places_none": 13,
-    "unknown_without_live": 24
+    "unknown_without_live": 20
    },
    "census_causes": {
     "no_closed_list": 1,
@@ -462,10 +462,10 @@
    "outcomes_file": "kb/status/commons_data_programs/antelope_valley.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-16T23:09:09Z",
+   "read_at": "2026-11-23T07:44:32Z",
    "read_kind": "capture",
    "cost_usd": 14.18,
-   "passed_at_read": 153,
+   "passed_at_read": 162,
    "slo_queue": {
     "state": "held",
     "why": "the eLumen 2026-27 catalog prints none: 11 of 12 trial pages answered with the description and units only, no SLO or objective heading in the page source, and PSY 101 came back empty. As at College of Marin, the course outline reports on avc.elumenapp.com/public are untried; waits on the same reader for eLumen's public Course Outline Report, then a 12-page trial",
@@ -478,13 +478,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 197,
-   "found": 195,
+   "found": 183,
    "extracted": 195,
    "errors": 0,
    "failed_checks": {
     "coverage": 13,
     "invented": 0,
-    "arithmetic": 42,
+    "arithmetic": 33,
     "repeated": 0,
     "outcomes": 0
    },
@@ -494,12 +494,12 @@
    "capture_root": "https://avc.elumenapp.com/catalog/2026-27/welcome",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 816.2,
-   "run": "38979725726",
+   "read_seconds": 1140.0,
+   "run": "45133183717",
    "levers": {
-    "ge_units_steps": 14,
     "reader_page_assignment": 13,
-    "reconcile_steps": 9,
+    "reconcile_steps": 10,
+    "ge_units_steps": 9,
     "program_course_file_check": 2,
     "reader_page_search": 2,
     "scorer_noncredit_hours": 1
@@ -510,8 +510,8 @@
      "models": {
       "claude-opus-5-5": 195
      },
-     "run": "38979725726",
-     "at": "2026-10-16T23:09:09Z",
+     "run": "45133183717",
+     "at": "2026-11-23T07:44:32Z",
      "cost_usd": 14.18,
      "platform": "elumen"
     },
@@ -2344,10 +2344,10 @@
    "outcomes_file": "kb/status/commons_data_programs/college_of_marin.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-17T00:06:11Z",
+   "read_at": "2026-11-23T08:05:14Z",
    "read_kind": "capture",
    "cost_usd": 6.13,
-   "passed_at_read": 74,
+   "passed_at_read": 82,
    "slo_queue": {
     "state": "held",
     "why": "the eLumen catalog prints none (its course pages print the description only, 0 of 12); course outline reports on marin.elumenapp.com/public are untried (COBIx, #3211; Marin's SLO FAQ places course SLOs in the outline of record there). Waits on a reader for eLumen's public Course Outline Report, then a 12-page trial; Marin moves to Coursedog in mid-Fall 2026, so the eLumen source may not last",
@@ -2366,7 +2366,7 @@
    "failed_checks": {
     "coverage": 1,
     "invented": 0,
-    "arithmetic": 14,
+    "arithmetic": 6,
     "repeated": 0,
     "outcomes": 0
    },
@@ -2376,8 +2376,8 @@
    "capture_root": "https://marin.elumenapp.com/catalog/current/home",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1050.8,
-   "run": "38984695817",
+   "read_seconds": 1132.3,
+   "run": "45135695869",
    "levers": {
     "program_course_file_check": 61,
     "reader_page_search": 5,
@@ -2390,8 +2390,8 @@
      "models": {
       "claude-opus-5-5": 89
      },
-     "run": "38984695817",
-     "at": "2026-10-17T00:06:11Z",
+     "run": "45135695869",
+     "at": "2026-11-23T08:05:14Z",
      "cost_usd": 6.13,
      "platform": "elumen"
     },
@@ -6003,13 +6003,13 @@
    "harvested": true,
    "slug": "las_positas",
    "programs": 204,
-   "passing": 181,
-   "gap": 23,
+   "passing": 185,
+   "gap": 19,
    "causes": {
     "no_closed_list": 3,
     "page_not_found": 6,
     "places_none": 2,
-    "unknown_without_live": 12
+    "unknown_without_live": 8
    },
    "census_causes": {
     "no_closed_list": 3,
@@ -6035,10 +6035,10 @@
     "curriqunet"
    ],
    "objectives_printed": null,
-   "read_at": "2026-11-10T20:10:35Z",
+   "read_at": "2026-11-23T06:59:40Z",
    "read_kind": "capture",
    "cost_usd": 12.09,
-   "passed_at_read": 181,
+   "passed_at_read": 186,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -6053,7 +6053,7 @@
    "failed_checks": {
     "coverage": 2,
     "invented": 0,
-    "arithmetic": 14,
+    "arithmetic": 9,
     "repeated": 0,
     "outcomes": 0
    },
@@ -6063,12 +6063,12 @@
    "capture_root": "https://laspositas.curriqunet.com/catalog/iq/881",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 2650.7,
-   "run": "42892238131",
+   "read_seconds": 2599.9,
+   "run": "45127792228",
    "levers": {
-    "ge_units_steps": 8,
     "reader_page_search": 6,
-    "reconcile_steps": 4,
+    "reconcile_steps": 5,
+    "ge_units_steps": 3,
     "program_course_file_check": 3,
     "reader_page_assignment": 2
    },
@@ -6078,8 +6078,8 @@
      "models": {
       "claude-opus-5-5": 195
      },
-     "run": "42892238131",
-     "at": "2026-11-10T20:10:35Z",
+     "run": "45127792228",
+     "at": "2026-11-23T06:59:40Z",
      "cost_usd": 12.09,
      "platform": "curriqunet"
     },

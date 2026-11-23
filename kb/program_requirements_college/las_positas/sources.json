@@ -5127,7 +5127,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 173 of 193 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "38878",
@@ -6052,7 +6056,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.941,
+  "coverage": 1.0,
   "codes_found": [
    "AUTOA1",
    "AUTOA2",
@@ -6066,6 +6070,7 @@
    "AUTOINT",
    "AUTOINTL",
    "AUTOL1",
+   "AUTOL1L2",
    "AUTOL3",
    "AUTOLABA",
    "AUTOLABB",
@@ -7065,7 +7070,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 173 of 193 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "45027",
@@ -7077,7 +7086,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "title_has_no_words"
+  }
  },
  {
   "control_number": "45080",
@@ -7229,11 +7242,12 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.833,
+  "coverage": 1.0,
   "codes_found": [
    "APAG3",
    "APAG3L",
    "APWX94",
+   "AUTOL1L2",
    "AUTOP1",
    "AUTOSDR"
   ],
