@@ -1,0 +1,45 @@
+{
+ "_what": "S714 (lane 2, City College of San Francisco): the reconcile_steps lever of the committed census (written_at 2026-11-23 11:07Z, run 45161770730) at the college, frozen: kb/_program_piles_s714_ccsf.py planned from it, and a later census reads the planned programs collected.",
+ "written_at": "2026-11-23 11:07Z",
+ "levers": [
+  {
+   "lever": "reconcile_steps",
+   "scope": "City College of San Francisco",
+   "programs": 28,
+   "kind": "free",
+   "what": "a team session writes correction rules from the catalog's own wording, then rescores the saved record",
+   "estimate_usd": null,
+   "over_college_limit": false,
+   "members": [
+    "05482",
+    "16990",
+    "16991",
+    "17614",
+    "17615",
+    "17616",
+    "17617",
+    "17618",
+    "17619",
+    "19037",
+    "30897",
+    "32079",
+    "33208",
+    "35690",
+    "37781",
+    "38267",
+    "38907",
+    "38909",
+    "39727",
+    "40157",
+    "40704",
+    "40876",
+    "41315",
+    "41361",
+    "42228",
+    "46323",
+    "46324",
+    "46326"
+   ]
+  }
+ ]
+}

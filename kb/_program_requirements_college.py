@@ -181,7 +181,10 @@ def with_renumbers(programs: list[dict], renumbers: dict, aliases: dict | None =
         for c in p["closed_list"]:
             k = P.norm_code(c.get("code"))
             if k in renumbers:
-                c["printed"] = renumbers[k]
+                forms = renumbers[k] if isinstance(renumbers[k], list) else [renumbers[k]]
+                c["printed"] = forms[0]
+                if forms[1:]:
+                    c["printed_also"] = forms[1:]
                 continue
             forms = []
             for listed, printed in back:

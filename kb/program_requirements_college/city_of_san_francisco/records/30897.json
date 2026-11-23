@@ -46,31 +46,26 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 29,
+   "placed": 30,
    "listed": 32,
-   "share": 0.906,
+   "share": 0.938,
    "missing": [
     "FASH55",
-    "LALS/LGBT9",
     "MUS27Q"
    ],
-   "unexplained": [
-    "LALS/LGBT9"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 1,
    "codes": [
-    "LALS9",
-    "LGBT70",
-    "LGBT9"
+    "LGBT70"
    ],
    "flagged": [
     "LGBT70"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -111,7 +106,19 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true,
+  "course_renumbers": [
+   {
+    "printed": "LALS 9",
+    "listed": "LALS/LGBT9",
+    "block": "Choose two courses from the following"
+   },
+   {
+    "printed": "LGBT 9",
+    "listed": "LALS/LGBT9",
+    "block": "Choose two courses from the following"
+   }
+  ]
  },
  "record": {
   "program": {

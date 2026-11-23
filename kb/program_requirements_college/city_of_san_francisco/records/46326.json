@@ -46,25 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 29,
+   "placed": 30,
    "listed": 30,
-   "share": 0.967,
-   "missing": [
-    "LALS/LGBT9"
-   ],
-   "unexplained": [
-    "LALS/LGBT9"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "LGBT9"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -102,7 +96,14 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true,
+  "course_renumbers": [
+   {
+    "printed": "LGBT 9",
+    "listed": "LALS/LGBT9",
+    "block": "Choose 1 course from the following"
+   }
+  ]
  },
  "record": {
   "program": {

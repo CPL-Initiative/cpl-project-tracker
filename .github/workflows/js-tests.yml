@@ -603,6 +603,10 @@ jobs:
       # printed codes and one named gap, each on the catalog's own sections; the self-recall and the plan's rows.
       - name: Cheap piles S714 at East Los Angeles (plan line, overlap, waiver, repeat, renumbers, the plan)
         run: python3 tests/program_piles_s714_ela_test.py
+      # S714 at City College of San Francisco: a cross-listed course and a misread code renamed to the file's rows,
+      # one option the reading split over several blocks; the self-recall, the blast radius and the plan's 8 rows.
+      - name: Cheap piles S714 at City College of San Francisco (renumbers, option parts, the plan)
+        run: python3 tests/program_piles_s714_ccsf_test.py
       # Discontinued programs (S680; Sam, 2026-11-17 on #3480): a program's own catalog section marks it,
       # or a prior year prints it and this year does not; flagged out of the gap, never deleted. Pure stdlib.
       - name: Discontinued programs (own-section mark, out of the gap, the file is current)

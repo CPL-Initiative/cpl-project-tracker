@@ -46,31 +46,25 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 53,
+   "placed": 54,
    "listed": 54,
-   "share": 0.981,
-   "missing": [
-    "LALS/LGBT9"
-   ],
-   "unexplained": [
-    "LALS/LGBT9"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 2,
    "codes": [
     "ASAM8",
-    "IDST3",
-    "LALS9",
-    "LGBT9"
+    "IDST3"
    ],
    "flagged": [
     "ASAM8",
     "IDST3"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -111,7 +105,19 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true,
+  "course_renumbers": [
+   {
+    "printed": "LALS 9",
+    "listed": "LALS/LGBT9",
+    "block": "Select 3 courses from at least 2 areas"
+   },
+   {
+    "printed": "LGBT 9",
+    "listed": "LALS/LGBT9",
+    "block": "Select 3 courses from at least 2 areas"
+   }
+  ]
  },
  "record": {
   "program": {

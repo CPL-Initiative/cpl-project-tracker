@@ -46,25 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 23,
+   "placed": 24,
    "listed": 24,
-   "share": 0.958,
-   "missing": [
-    "LALS/LGBT9"
-   ],
-   "unexplained": [
-    "LALS/LGBT9"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "LGBT9"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -105,7 +99,14 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true,
+  "course_renumbers": [
+   {
+    "printed": "LGBT 9",
+    "listed": "LALS/LGBT9",
+    "block": "Choose 3 courses from at least 2 areas"
+   }
+  ]
  },
  "record": {
   "program": {

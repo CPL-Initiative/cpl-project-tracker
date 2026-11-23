@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-23T13:05:11Z",
+ "written_at": "2026-11-23T12:04:34Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17008,
-  "gap": 5327,
+  "passing": 17000,
+  "gap": 5335,
   "with_gap": 118,
   "cost_usd": 1340.95,
-  "passed_at_read": 16270,
+  "passed_at_read": 16256,
   "cost_receipts": 118,
   "spent_usd": 1236.15,
   "spent_runs": 194,
@@ -189,9 +189,9 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16686,
-  "gap": 5327,
-  "collected_with_gaps": 322,
+  "passing": 16679,
+  "gap": 5335,
+  "collected_with_gaps": 321,
   "discontinued": 0
  },
  "census_live": {
@@ -1767,12 +1767,12 @@
    "harvested": true,
    "slug": "city_of_san_francisco",
    "programs": 417,
-   "passing": 284,
-   "gap": 133,
+   "passing": 292,
+   "gap": 125,
    "causes": {
     "no_closed_list": 46,
     "page_not_found": 54,
-    "unknown_without_live": 33
+    "unknown_without_live": 25
    },
    "census_causes": {
     "coverage_fails": 9,
@@ -1841,7 +1841,7 @@
    "levers": {
     "reader_page_search": 54,
     "program_course_file_check": 46,
-    "reconcile_steps": 29,
+    "reconcile_steps": 21,
     "ge_units_steps": 3,
     "scorer_noncredit_hours": 1
    },
@@ -4223,14 +4223,13 @@
    "harvested": true,
    "slug": "east_los_angeles",
    "programs": 234,
-   "passing": 121,
-   "gap": 113,
+   "passing": 105,
+   "gap": 129,
    "causes": {
-    "found_not_extracted": 2,
     "no_closed_list": 87,
-    "page_not_found": 11,
+    "page_not_found": 13,
     "places_none": 1,
-    "unknown_without_live": 12
+    "unknown_without_live": 28
    },
    "census_causes": {
     "coverage_fails": 2,
@@ -4255,10 +4254,10 @@
    "outcomes_file": "kb/status/commons_data_programs/east_los_angeles.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-23T12:40:40Z",
+   "read_at": "2026-11-19T07:44:05Z",
    "read_kind": "capture",
    "cost_usd": 10.49,
-   "passed_at_read": 115,
+   "passed_at_read": 101,
    "slo_queue": null,
    "scout": null,
    "spot_check": {
@@ -4279,15 +4278,15 @@
     "why": "1 agree, 0 differ, 0 unreachable (record 32154 agreed later against the captured text); fewer than 5 records checked at this college"
    },
    "listed_closed": 147,
-   "found": 136,
+   "found": 134,
    "extracted": 134,
    "errors": 0,
    "failed_checks": {
-    "coverage": 1,
-    "invented": 0,
-    "arithmetic": 17,
+    "coverage": 3,
+    "invented": 2,
+    "arithmetic": 30,
     "repeated": 0,
-    "outcomes": 2
+    "outcomes": 1
    },
    "platform": "custom_html",
    "catalog_year": "2026-2027",
@@ -4295,14 +4294,13 @@
    "capture_root": "https://www.elac.edu/academic-resources/catalog",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 203.3,
-   "run": "45176404274",
+   "read_seconds": 157.5,
+   "run": "44475516022",
    "levers": {
     "program_course_file_check": 87,
-    "reader_page_search": 11,
-    "reconcile_steps": 9,
+    "reconcile_steps": 25,
+    "reader_page_search": 13,
     "ge_units_steps": 3,
-    "paid_read": 2,
     "reader_page_assignment": 1
    },
    "collection": {
@@ -4311,8 +4309,8 @@
      "models": {
       "claude-opus-5-5": 134
      },
-     "run": "45176404274",
-     "at": "2026-11-23T12:40:40Z",
+     "run": "44475516022",
+     "at": "2026-11-19T07:44:05Z",
      "cost_usd": 10.49,
      "platform": "custom_html"
     },

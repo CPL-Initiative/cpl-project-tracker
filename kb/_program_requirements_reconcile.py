@@ -184,8 +184,19 @@ def course_renumbers(college: str, steps: dict | None = None, year: str | None =
     conf = (steps if steps is not None else load_steps()).get(college) or {}
     both = dict(conf.get("course_renumbers") or {})
     both.update(year_renumbers(conf, year))
-    return {norm_code(v): re.sub(r"^([A-Z&]+)(?=\d)", r"\1 ", norm_code(k))
-            for k, v in both.items()}
+    out: dict = {}
+    for k, v in both.items():
+        printed = re.sub(r"^([A-Z&]+)(?=\d)", r"\1 ", norm_code(k))
+        listed = norm_code(v)
+        # Two printed codes for one listed row (a cross-listed course, City College of San Francisco's LALS 9 and
+        # LGBT 9 for LALS/LGBT 9, S714): the capture looks for each, the first as "printed", the rest as
+        # "printed_also" (kb/_program_requirements_college.py with_renumbers).
+        if listed in out:
+            have = out[listed] if isinstance(out[listed], list) else [out[listed]]
+            out[listed] = have + [printed]
+        else:
+            out[listed] = printed
+    return out
 
 
 def awards_match(kind: str | None, award: str | None) -> bool:
