@@ -379,6 +379,9 @@ def build(root=ROOT):
             "recommend": {"common": rc, "discipline": disc_of.get(rc), "confidence": round(conf, 3), "why": why,
                           "next": None if cls == "settled" or not second[0] else {"common": second[0], "confidence": round(second[1], 3)}},
             "noncredit_categories": [[c, n] for c, n in e["categories"].most_common(4)],
+            # A noncredit code's credit courses take the evidence's own call, not the category's (S712: Santa Rosa's
+            # EMLS holds credit courses under a code most colleges use for noncredit).
+            "credit_call": {"common": ranked[0][0], "confidence": round(ranked[0][1], 3)} if cls == "noncredit" and e["credit"] else None,
         })
     out_codes.sort(key=lambda c: (-len(c["colleges"]), -c["courses"], c["code"]))
     by_cls = collections.defaultdict(lambda: {"codes": 0, "courses": 0, "one_college": 0})

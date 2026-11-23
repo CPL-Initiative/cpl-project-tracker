@@ -22,3 +22,7 @@ insert into public.cpl_memory (slug,kind,title,summary,tags,status,source,verifi
 on conflict (slug) do nothing;
 update public.cpl_memory set status='superseded' where slug='d-readiness-map-is-not-settled-s709' and status <> 'superseded';
 -- (the cpl_memory_log rows: create for the two rulings, supersede for the S709 row, actor SkyPuffin (S712))
+
+-- Applied 2026-11-23 ~11:20Z, the same shape and the same rollback (by author): d-gate-reads-confidence-s712,
+-- d-subject-title-sources-ladder-s712, f-elumen-courses-view-lists-subjects-s712 (their text is in cpl_memory and the
+-- S715 handoff), each logged 'create' by SkyPuffin (S712).

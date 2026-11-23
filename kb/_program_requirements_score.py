@@ -644,6 +644,72 @@ def also_from_span(blocks: list, t: int, srcs: list, listed: dict, hours: bool =
     return (sum(sorted(lo_pool)[:n]), sum(sorted(hi_pool, reverse=True)[:top]))
 
 
+# One option the reading split over several blocks of its option group (City College of San Francisco, S714). Data
+# Science A.S. 42228 prints "Choose one of the following options Units 5.0-10.0": Option 1 (MATH 108) or Option 2
+# (CS 110A and a statistics course, 9.0-10.0), read as three blocks of one group, "Option 1", "Option 2" and "Option 2:
+# A statistics course", so the scorer took the statistics course as a third alternative. Chinese (Mandarin) 39727
+# reads each of its two options as two blocks ("Option 1 (Chinese language learners) - Required: ..." and "Option 1
+# (Chinese language learners) - Choose at least 11 units ..."). Blocks of one group whose names open with the same
+# "Option N" are one option: their units add up, and the sum is one alternative of the group. Only where two or more
+# blocks of the group open with the same option and every block of the group opens with one; a group of alternatives
+# named otherwise reads as before. OPTION_PARTS_ON lets a rescore measure the scorer with the reading off.
+OPTION_PART = re.compile(r"^\s*option\s+(\d{1,2}|[a-z])\b(?!\s*(?:,|or\b|and\b|-\s*\d|–\s*\d|through\b))", re.I)
+OPTION_ALTERNATIVE_SUFFIX = re.compile(r"\s*\([^()]*\)\s*$")
+OPTION_PARTS_ON = True
+
+
+OPTION_NAME_FIGURE = re.compile(r"\b(\d+(?:\.\d+)?|%s)\s+(?:semester\s+)?units?\b" % "|".join(
+    "zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen "
+    "seventeen eighteen nineteen twenty".split()), re.I)
+
+
+def _same_figure(blocks: list) -> bool:
+    """Whether every block's name prints one unit figure and the figures are all the same."""
+    figs = []
+    for b in blocks:
+        found = OPTION_NAME_FIGURE.findall(str(b.get("name") or ""))
+        if len(found) != 1:
+            return False
+        f = found[0].lower()
+        figs.append(float(f) if f[0].isdigit() else float(
+            "zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen "
+            "seventeen eighteen nineteen twenty".split().index(f)))
+    return len(set(figs)) == 1
+
+
+def option_parts(record: dict) -> dict:
+    """{block index: (option group, option key)} for the blocks of a group the reading split one option over."""
+    if not OPTION_PARTS_ON:
+        return {}
+    blocks = record.get("blocks") or []
+    by: dict[str, dict[int, str | None]] = {}
+    for i, b in enumerate(blocks):
+        g = b.get("option_group")
+        if g:
+            m = OPTION_PART.match(str(b.get("name") or ""))
+            by.setdefault(g, {})[i] = m.group(1).lower() if m else None
+    out = {}
+    for g, ix in by.items():
+        keys = list(ix.values())
+        if None in keys or len(set(keys)) < 2 or len(set(keys)) == len(keys):
+            continue
+        # Blocks of one option that carry the same name, apart from a closing parenthesis, are its alternatives, one
+        # a language or a track (Mt. San Antonio's Language Core 35796: six "Option 1: Choose sixteen units of
+        # sequential courses in one language. (Chinese)", "(French)" and on), never its parts.
+        names = [(k, OPTION_ALTERNATIVE_SUFFIX.sub("", str(blocks[i].get("name") or "")).strip().lower())
+                 for i, k in ix.items()]
+        if len(set(names)) < len(names):
+            continue
+        # Blocks of one option that each print the same unit figure are its alternatives too ("Option 1: Chinese -
+        # 16 units", "Option 1: French - 16 units"; #3714's second reader): a part names its own share, and two
+        # parts printing the whole option's figure each would sum past it.
+        if any(_same_figure([blocks[i] for i, kk in ix.items() if kk == k]) for k in set(keys)
+               if keys.count(k) > 1):
+            continue
+        out.update({i: (g, k) for i, k in ix.items()})
+    return out
+
+
 def program_units(record: dict, listed: dict) -> tuple[tuple[float, float], list[str]]:
     """Every block's units summed; the blocks of one option_group count once,
     from the group's smallest block to its largest."""
@@ -656,6 +722,8 @@ def program_units(record: dict, listed: dict) -> tuple[tuple[float, float], list
     heading_fills: list[float] = []
     also = also_from(record)
     blocks_all = record.get("blocks") or []
+    parts = option_parts(record)
+    part_spans: dict[tuple, list[float]] = {}
     for i, b in enumerate(blocks_all):
         if sub and b is sub[0]:
             # In place of one core course: the core as printed, or the core less one course plus the list.
@@ -688,7 +756,16 @@ def program_units(record: dict, listed: dict) -> tuple[tuple[float, float], list
             reasons += why
             continue
         g = b.get("option_group")
-        if g:
+        part = parts.get(i)
+        if g and part is not None:
+            # One option the reading split over several blocks (option_parts): its blocks add up, and the sum is
+            # one alternative of the group.
+            if part not in part_spans:
+                part_spans[part] = [0.0, 0.0]
+                groups.setdefault(g, []).append(part_spans[part])
+            part_spans[part][0] += span[0]
+            part_spans[part][1] += span[1]
+        elif g:
             groups.setdefault(g, []).append(span)
         else:
             lo += span[0]
@@ -732,7 +809,10 @@ def repeated(record: dict) -> list[str]:
         seen: dict[str, int] = {}
         for c in b.get("courses") or []:
             for entry in [c] + alternatives(c):
-                k = norm_code(entry.get("code"))
+                # A code the aliases renamed counts as printed: a cross-listed course the page prints under each of
+                # its prefixes (City College of San Francisco's LALS 9 and LGBT 9, both the file's LALS/LGBT 9; S714)
+                # is one row of the file, printed twice, never one course placed twice.
+                k = norm_code(entry.get("printed_code") or entry.get("code"))
                 if k:
                     seen[k] = seen.get(k, 0) + 1
         out += ["%s in '%s'" % (k, b.get("name")) for k, n in seen.items() if n > 1]

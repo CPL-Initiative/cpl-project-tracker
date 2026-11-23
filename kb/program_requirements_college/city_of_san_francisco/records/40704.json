@@ -46,25 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 6,
+   "placed": 7,
    "listed": 7,
-   "share": 0.857,
-   "missing": [
-    "CNIT133L"
-   ],
-   "unexplained": [
-    "CNIT133L"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "CNIT133I"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -102,7 +96,14 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true,
+  "course_renumbers": [
+   {
+    "printed": "CNIT 133I",
+    "listed": "CNIT133L",
+    "block": "Required Courses"
+   }
+  ]
  },
  "record": {
   "program": {
