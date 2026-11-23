@@ -29,7 +29,9 @@
 // the code's course panel open, read from kb/status/subject_courses/<slug>.json), #commons/subjects/disagree (the codes only one side prints, the
 // list of codes with no title), #commons/subjects/held (S695: the local subject codes the pile mint holds on, ranked by the held
 // courses a decided common subject code releases; read from kb/status/held_subject_codes.json, built by
-// kb/_held_subject_codes.py, and fetched only when that view opens). The view picked lasts the visit; only the address carries it. Tokens only (the tab's --cmn roles),
+// kb/_held_subject_codes.py, and fetched only when that view opens), #commons/subjects/statewide (S712: every local code at
+// every college with a call and a confidence, read from kb/status/statewide_subject_codes.json when it opens; a confirm
+// is a person's statewide filing, _SUBJ_DISC::<CODE>). The view picked lasts the visit; only the address carries it. Tokens only (the tab's --cmn roles),
 // words for every control, no glyphs.
 (function () {
   "use strict";
@@ -113,6 +115,12 @@
      kb/status/noncredit_subject_titles.json (kb/_build_noncredit_subject_titles.py). The titles stand on Sam's word of
      2026-11-22 (r-noncredit-title-list-go-sam-2026-11-22) and are his to change. */
   var NC = "noncredit";
+  /* Every local code statewide (S712; Sam, 2026-11-23: "what's settled-3019 unique list with the colleges that uses",
+     "all colleges count", "always provide a recommendation based on your best available data and always provide a
+     confidence score"). Read from kb/status/statewide_subject_codes.json (kb/_statewide_subject_codes.py) when the view
+     opens. A save is a person's statewide filing, the Local subjects List's own row (_SUBJ_DISC::<CODE>, field
+     subject_discipline_confirm, the MQ discipline as plain text; DR-25), which the daily sync reads for every college. */
+  var SW = "statewide", SW_FILE = "kb/status/statewide_subject_codes.json", SW_FIELD = "subject_discipline_confirm", SW_PREFIX = "_SUBJ_DISC::";
   var NC_FILE = "kb/status/noncredit_subject_titles.json";
 
   /* ── Edit and Save (S701): a person's decision as one kb_curation row ── */
@@ -701,6 +709,204 @@
       return r.json();
     }).then(heldModel, function (e) { heldCache = null; throw e; });
     return heldCache;
+  }
+
+  /* ── every local code statewide (S712) ── */
+  var SWS = { filter: "top", q: "", shown: 200, saved: null, readErr: "", msg: "", bulk: false, busy: false };
+  var SW_FILTERS = [
+    ["top", "Calls at 90% or better", function (c) { return canFile(c) && !filedOf(c) && c.recommend.confidence >= 0.9; }],
+    ["all", "All", function () { return true; }],
+    ["confirm", "Draft and peers agree", function (c) { return c["class"] === "confirm"; }],
+    ["draft_differs", "Draft differs from peers", function (c) { return c["class"] === "draft_differs"; }],
+    ["draft_broad", "Broad drafts", function (c) { return c["class"] === "draft_broad"; }],
+    ["peers", "Peers agree, no draft", function (c) { return c["class"] === "peers"; }],
+    ["peers_split", "Peers split", function (c) { return c["class"] === "peers_split"; }],
+    ["named_code", "Titles name another code", function (c) { return c["class"] === "named_code"; }],
+    ["titles", "From course titles", function (c) { return c["class"] === "titles"; }],
+    ["look", "No evidence", function (c) { return c["class"] === "look"; }],
+    ["noncredit", "Noncredit, by category", function (c) { return c["class"] === "noncredit"; }],
+    ["one", "One college", function (c) { return (c.colleges || []).length === 1; }],
+    ["settled", "Filed by a person", function (c) { return !!filedOf(c); }]];
+  function swModel(f) {
+    f = f || {};
+    var disc = {};
+    (f.common_codes || []).forEach(function (p) { disc[p[0]] = p[1]; });
+    return { codes: f.codes || [], totals: f.totals || {}, rule: f._rule || "", recall: f.self_recall || [], disc: disc, pairs: f.common_codes || [] };
+  }
+  var swCache = null;
+  function loadStatewide() {
+    swCache = swCache || fetch(SW_FILE, { cache: "no-cache" }).then(function (r) {
+      if (!r || !r.ok) throw new Error(SW_FILE + " answered " + (r ? r.status : "nothing"));
+      return r.json();
+    }).then(swModel, function (e) { swCache = null; throw e; });
+    /* The filings people made since the last nightly: read live, so a save shows at once on the next visit too. */
+    return swCache.then(function (W) {
+      return readRows(SW_FIELD, SW_PREFIX).then(function (rows) {
+        SWS.saved = {};
+        (rows || []).forEach(function (r) {
+          var k = String(r.course_id || "").slice(SW_PREFIX.length);
+          if (k) SWS.saved[k] = { discipline: String(r.value || ""), by: r.reviewer_email || r.reviewer_label || "a reviewer", at: r.reviewed_at };
+        });
+        SWS.readErr = "";
+        return W;
+      }, function (e) { SWS.saved = {}; SWS.readErr = e && e.message ? e.message : String(e); return W; });
+    });
+  }
+  /* A credit call files statewide; a noncredit code is settled by its COCI category at each college. */
+  function canFile(c) { return c["class"] !== "noncredit" && !!(c.recommend && c.recommend.discipline); }
+  function filedOf(c) {
+    var live = SWS.saved && SWS.saved[c.code];
+    if (live) return live;
+    return c.filing ? { discipline: c.filing.discipline, by: c.filing.who || "a reviewer", at: c.filing.at } : null;
+  }
+  /* The four levels Sam's ruling measures by (r-confidence-not-person-settled-sam-2026-11-23): a call is settled when it
+     is Confident, whether the data took it there or a person's confirm did. */
+  function levelOf(v) { return v >= 0.9 ? "Confident" : v >= 0.75 ? "Likely" : v >= 0.5 ? "Leaning" : "Unsure"; }
+  function confWords(v) { var n = Math.round((v || 0) * 100); return (n < 1 ? "under 1" : String(n)) + "% " + levelOf(v || 0); }
+  function swRows(W) {
+    var F = SW_FILTERS.filter(function (f) { return f[0] === SWS.filter; })[0] || SW_FILTERS[0];
+    var q = SWS.q.trim().toLowerCase();
+    return W.codes.filter(F[2]).filter(function (c) {
+      if (!q) return true;
+      return (c.code + " " + (c.spellings || []).join(" ") + " " + (c.titles || []).join(" ") + " " + (c.colleges || []).map(function (x) { return x[0]; }).join(" ")).toLowerCase().indexOf(q) >= 0;
+    });
+  }
+  function fileRows(items) {
+    /* One request a batch of 200: each row a person's statewide filing, merged on its key. */
+    return freshReviewer().then(function (sx) {
+      if (!sx) return { ok: false, lapsed: true, n: 0 };
+      var done = 0;
+      function batch(i) {
+        if (i >= items.length) return Promise.resolve({ ok: true, n: done, email: sx.email });
+        var part = items.slice(i, i + 200).map(function (it) {
+          return { course_id: SW_PREFIX + it.code, field: SW_FIELD, value: it.discipline, reviewer_email: sx.email };
+        });
+        return fetch(REST + "/kb_curation?on_conflict=course_id,field", { method: "POST",
+          headers: window.CPL_SESSION.authHeaders({ "Content-Type": "application/json", Prefer: "resolution=merge-duplicates,return=minimal" }),
+          body: JSON.stringify(part) }).then(function (r) {
+          if (!r.ok) return { ok: false, status: r.status, lapsed: r.status === 401, n: done };
+          part.forEach(function (p) { SWS.saved[p.course_id.slice(SW_PREFIX.length)] = { discipline: p.value, by: sx.email, at: new Date().toISOString() }; });
+          done += part.length;
+          return batch(i + 200);
+        });
+      }
+      return batch(0);
+    });
+  }
+  function swRedraw(focusId) {
+    if (VIEW.root && VIEW.M && S.view === SW) render(VIEW.root, VIEW.M, SW);
+    var f = focusId && VIEW.root && VIEW.root.querySelector("#" + focusId);
+    if (f && f.focus) f.focus();
+  }
+  function swSave(items, focusId) {
+    SWS.busy = true; SWS.msg = "Saving " + fmt(items.length) + (items.length === 1 ? " filing" : " filings") + "…"; swRedraw();
+    return fileRows(items).then(function (res) {
+      SWS.busy = false; SWS.bulk = false;
+      SWS.msg = res.ok ? "Saved " + fmt(res.n) + (res.n === 1 ? " statewide filing" : " statewide filings") + " under your name. The daily build carries them to every college."
+        : res.lapsed ? "Your sign-in lapsed; sign in again to save. " + (res.n ? fmt(res.n) + " were saved before it lapsed." : "Nothing was saved.")
+        : "The save did not reach the table (" + (res.status || "no answer") + "). " + (res.n ? fmt(res.n) + " were saved before it stopped." : "Nothing was saved.");
+      swRedraw(focusId);
+    }, function () { SWS.busy = false; SWS.msg = "The save did not reach the table (network). Nothing more was saved."; swRedraw(focusId); });
+  }
+  function swActions(W, c, signed) {
+    var filed = filedOf(c);
+    var cell = [];
+    if (filed) cell.push(el("span", { cls: "csb-saved", text: "Filed under " + filed.discipline + (filed.at ? ", " + day(filed.at) : "") + "." }));
+    if (!canFile(c)) {
+      var read = (c.colleges || []).map(function (x) { return { name: x[0], slug: slugOfName(x[0]) }; }).filter(function (x) { return VIEW.M && VIEW.M.by[x.slug]; });
+      cell.push(el("span", { cls: "csb-sub", text: c["class"] === "noncredit" ? "Settled by its noncredit category at each college." : "No common code to file." }));
+      if (read.length) cell.push(el("span", { cls: "csb-sub" }, ["Open at "].concat(sep(read.slice(0, 3).map(function (x) { return codeAt(x.slug, (c.spellings || [c.code])[0], x.name); })))));
+      return cell;
+    }
+    if (!signed) return cell;
+    var id = "csw-" + c.code.replace(/[^A-Za-z0-9]/g, "_");
+    if (!filed || filed.discipline !== c.recommend.discipline) {
+      var ok = el("button", { type: "button", cls: "csb-word", id: id + "-ok", disabled: SWS.busy ? "" : null, text: "Confirm " + c.recommend.common });
+      ok.addEventListener("click", function () { swSave([{ code: c.code, discipline: c.recommend.discipline }], id + "-ok"); });
+      cell.push(ok);
+    }
+    var pick = el("select", { id: id + "-pick", "aria-label": "Another common code for " + c.code }, [el("option", { value: "", text: "Another code…" })]
+      .concat(W.pairs.map(function (p) { return el("option", { value: p[1], text: p[0] + ", " + p[1] }); })));
+    var other = el("button", { type: "button", cls: "csb-word", id: id + "-other", disabled: SWS.busy ? "" : null, text: "Save that code" });
+    other.addEventListener("click", function () {
+      if (!pick.value) { pick.focus(); return; }
+      swSave([{ code: c.code, discipline: pick.value }], id + "-other");
+    });
+    cell.push(el("span", { cls: "csw-change" }, [pick, " ", other]));
+    return cell;
+  }
+  function statewideView(W) {
+    var T = W.totals, signed = !!reviewer();
+    var box = el("div", { cls: "csw" });
+    var top = W.recall[0] || {};
+    box.appendChild(el("p", { cls: "csb-note", id: "csw-sum" }, [el("strong", { text: fmt(T.codes) }), " local subject codes at ", el("strong", { text: fmt(T.colleges) }),
+      " colleges (" + fmt(T.pairs) + " college-and-code pairs, " + fmt(T.courses) + " COCI courses); " + fmt(T.one_college) + " are used at one college. "
+      + "Every code carries a call and a confidence from the evidence the list names: the subject map’s draft, the M-IDs its courses joined at three or more colleges, its course titles, and a noncredit code’s COCI category. "
+      + (top.tried ? "On " + fmt(top.tried) + " codes whose peers already agree, calls at 90% or better were right " + Math.round((top.accuracy || 0) * 100) + "% of the time. " : "")
+      + "A confirm is your statewide filing for the code; the daily build carries it to every college that uses it."]));
+    if (SWS.readErr) box.appendChild(el("p", { cls: "csb-note", role: "status", text: "The filings people made could not be read live (" + SWS.readErr + "); the list shows the filings the daily build carried." }));
+    var lv = { Confident: 0, Likely: 0, Leaning: 0, Unsure: 0 };
+    W.codes.forEach(function (c) { lv[filedOf(c) ? "Confident" : levelOf(c.recommend.confidence || 0)] += (c.colleges || []).length; });
+    box.appendChild(el("p", { cls: "csb-note", id: "csw-levels" }, ["College-and-code pairs by level: ",
+      ["Confident", "Likely", "Leaning", "Unsure"].map(function (k) { return k + " " + fmt(lv[k]); }).join(" · "),
+      ". Confident is 90% or more, Likely 75 to 90%, Leaning 50 to 75%, Unsure under 50%. A confirm raises a call to Confident."]));
+    var chips = el("p", { cls: "csw-chips", role: "group", "aria-label": "Show" }, SW_FILTERS.map(function (f) {
+      var n = W.codes.filter(f[2]).length;
+      var b = el("button", { type: "button", cls: "csb-word", "data-csw-filter": f[0], "aria-pressed": SWS.filter === f[0] ? "true" : "false", text: f[1] + " (" + fmt(n) + ")" });
+      b.addEventListener("click", function () { SWS.filter = f[0]; SWS.shown = 200; SWS.bulk = false; swRedraw("csw-f-" + f[0]); });
+      b.id = "csw-f-" + f[0];
+      return b;
+    }));
+    box.appendChild(chips);
+    var search = el("input", { type: "search", id: "csw-q", value: SWS.q, "aria-label": "Find a code, a course title or a college", placeholder: "Find a code, a course title or a college" });
+    search.addEventListener("change", function () { SWS.q = search.value; SWS.shown = 200; swRedraw("csw-q"); });
+    box.appendChild(el("p", null, [el("label", { "for": "csw-q", cls: "csb-sub", text: "Find " }), search]));
+    var rows = swRows(W);
+    var bulkable = rows.filter(function (c) { return canFile(c) && !filedOf(c) && c.recommend.confidence >= 0.9; });
+    if (!signed) box.appendChild(el("p", { cls: "csb-note", text: "Sign in as a reviewer to confirm a call or file another code." }));
+    else if (bulkable.length) {
+      if (!SWS.bulk) {
+        var bulk = el("button", { type: "button", cls: "csb-word", id: "csw-bulk", disabled: SWS.busy ? "" : null, text: "Confirm the " + fmt(bulkable.length) + " calls shown at 90% or better" });
+        bulk.addEventListener("click", function () { SWS.bulk = true; swRedraw("csw-bulk-yes"); });
+        box.appendChild(el("p", null, [bulk]));
+      } else {
+        var yes = el("button", { type: "button", cls: "csb-word", id: "csw-bulk-yes", text: "Save " + fmt(bulkable.length) + " filings" });
+        var no = el("button", { type: "button", cls: "csb-word", id: "csw-bulk-no", text: "Cancel" });
+        yes.addEventListener("click", function () { swSave(bulkable.map(function (c) { return { code: c.code, discipline: c.recommend.discipline }; }), "csw-sum"); });
+        no.addEventListener("click", function () { SWS.bulk = false; swRedraw("csw-bulk"); });
+        box.appendChild(el("p", { cls: "csb-note", id: "csw-bulk-ask", role: "group", "aria-label": "Confirm the calls" }, [
+          "Save " + fmt(bulkable.length) + " statewide filings under your name, each code under its call? Any one can be changed later from its row. ", yes, " ", no]));
+      }
+    }
+    if (SWS.msg) box.appendChild(el("p", { cls: "csb-note", id: "csw-msg", role: "status", text: SWS.msg }));
+    var shown = rows.slice(0, SWS.shown);
+    var tbl = el("table", { cls: "csb-table csw-table" }, [
+      el("colgroup", null, [el("col", { cls: "csb-c-code" }), el("col", { cls: "csb-c-mid" }), el("col", { cls: "csb-c-num" }), el("col", { cls: "csb-c-mid" }),
+        el("col", { cls: "csb-c-num" }), el("col", { cls: "csb-c-num" }), el("col", { cls: "csb-c-ev" }), el("col", { cls: "csb-c-mid" })]),
+      el("thead", null, [el("tr", null, ["Local code", "Colleges", "Courses", "Call", "Confidence", "Runner-up", "Why", "Action"]
+        .map(function (t) { return el("th", { scope: "col", text: t }); }))]),
+      el("tbody", null, shown.length ? shown.map(function (c) {
+        var cols = c.colleges || [], nx = c.recommend.next;
+        return el("tr", { "data-code": c.code, "data-class": c["class"] }, [
+          el("th", { scope: "row" }, [c.code, (c.spellings || []).length > 1 || (c.spellings || [])[0] !== c.code ? el("span", { cls: "csb-sub", text: "Spelled " + (c.spellings || []).join(", ") }) : null,
+            el("span", { cls: "csb-sub", text: (c.titles || []).slice(0, 3).join("; ") }),
+            (c.local_titles || []).length ? el("span", { cls: "csb-sub", text: "Catalog title: " + c.local_titles.map(function (t) { return t[0]; }).join("; ") }) : null]),
+          el("td", null, cols.length <= 3 ? [cols.map(function (x) { return x[0]; }).join("; ")]
+            : [el("details", null, [el("summary", { text: fmt(cols.length) + " colleges" }), el("span", { cls: "csb-sub", text: cols.map(function (x) { return x[0] + " " + fmt(x[1]); }).join("; ") })])]),
+          el("td", { text: fmt(c.courses) }),
+          el("td", null, [c.recommend.common || "", el("span", { cls: "csb-sub", text: c.recommend.discipline || "" })]),
+          el("td", { text: filedOf(c) && filedOf(c).discipline === c.recommend.discipline ? "Filed" : confWords(c.recommend.confidence) }),
+          el("td", { text: nx ? nx.common + " " + Math.max(0, Math.round(nx.confidence * 100)) + "%" : "" }),
+          el("td", { cls: "csb-ev", text: c.recommend.why ? c.recommend.why.charAt(0).toUpperCase() + c.recommend.why.slice(1) + "." : "" }),
+          el("td", null, swActions(W, c, signed))]);
+      }) : [el("tr", null, [el("td", { colspan: "8", text: "No code matches." })])])]);
+    box.appendChild(gridify(el("div", { cls: "csb-wrap", role: "region", "aria-label": "Every local subject code, statewide", tabindex: "0" }, [tbl]), "statewide", [1, 6, 7]));
+    if (rows.length > shown.length) {
+      var more = el("button", { type: "button", cls: "csb-word", id: "csw-more", text: "Show " + fmt(Math.min(200, rows.length - shown.length)) + " more (" + fmt(rows.length - shown.length) + " not shown)" });
+      more.addEventListener("click", function () { SWS.shown += 200; swRedraw("csw-more"); });
+      box.appendChild(el("p", null, [more]));
+    }
+    return box;
   }
 
   /* ── the course panel (S700, #3655 item 3): a local code opens its courses at that college, credit and noncredit
@@ -1333,7 +1539,7 @@
     /* <college slug>/<local code> opens that college with the code's course panel; a code may hold a slash (ES/A). */
     var seg = view.split("/"), code = "", at = "";
     view = seg[0] === ALL && seg.length >= 3 ? "" : seg[0];
-    var special = view === DISAGREE || view === HELD || view === NC;
+    var special = view === DISAGREE || view === HELD || view === NC || view === SW;
     if (seg.length >= 3 && (special || seg[0] === ALL)) { at = seg[1]; code = seg.slice(2).join("/"); }
     else if (seg.length >= 2 && !special && seg[0] !== ALL) code = seg.slice(1).join("/");
     var c = view && !special ? M.by[view] : null;
@@ -1349,9 +1555,9 @@
     var untitled = all.filter(needsTitle).length;
     var nSaved = all.filter(function (r) { return !!savedOf(r); }).length;   /* the rows that show a save, no more */
     var wrap = el("div", { cls: "cmn-wrap csb" });
-    wrap.appendChild(trail(c ? c.college : S.view === DISAGREE ? "Codes with no title" : S.view === HELD ? "Codes the M-ID mint holds on" : S.view === NC ? "Noncredit subject titles" : ""));
+    wrap.appendChild(trail(c ? c.college : S.view === DISAGREE ? "Codes with no title" : S.view === HELD ? "Codes the M-ID mint holds on" : S.view === NC ? "Noncredit subject titles" : S.view === SW ? "Every local code, statewide" : ""));
     wrap.appendChild(el("header", { cls: "cmn-top" }, [
-      el("h2", { cls: "cmn-title", id: "csb-h", text: c ? "Subjects at " + c.college : S.view === DISAGREE ? "Subject codes with no title" : S.view === HELD ? "Local subject codes the M-ID mint holds on" : S.view === NC ? "Noncredit subject titles" : "Subjects" }),
+      el("h2", { cls: "cmn-title", id: "csb-h", text: c ? "Subjects at " + c.college : S.view === DISAGREE ? "Subject codes with no title" : S.view === HELD ? "Local subject codes the M-ID mint holds on" : S.view === NC ? "Noncredit subject titles" : S.view === SW ? "Every local subject code, statewide" : "Subjects" }),
       el("div", { cls: "cmn-rule", "aria-hidden": "true" }),
       el("p", { cls: "cmn-lede", text: "Step a is the common subject code each discipline shares; Step b is each college’s own name for its subject codes, read from its catalog. The Courses bot drafts each local title from the catalog’s subject heading. A curator settles the codes the catalog and the state course list disagree on." })
     ]));
@@ -1374,6 +1580,9 @@
       wrap.appendChild(bandBar(c.rows));
       var pl = pickLine(c.rows); if (pl) wrap.appendChild(pl);
       wrap.appendChild(codeTable(c.rows.filter(inPick).filter(function (r) { return inBand(r, S.band); }), "Subject codes at " + c.college));
+    } else if (S.view === SW) {
+      if (!VIEW.W) wrap.appendChild(el("p", { cls: "csb-note", role: "status", text: VIEW.swError ? "The statewide list could not be read (" + VIEW.swError + "). Reload the tab to try again." : "Reading the statewide list…" }));
+      else wrap.appendChild(statewideView(VIEW.W));
     } else if (S.view === HELD) {
       var H = VIEW.H;
       if (!H) wrap.appendChild(el("p", { cls: "csb-note", role: "status", text: VIEW.heldError ? "The held codes could not be read (" + VIEW.heldError + "). Reload the tab to try again." : "Reading the held codes…" }));
@@ -1412,6 +1621,9 @@
       var pl2 = pickLine(all); if (pl2) wrap.appendChild(pl2);
       wrap.appendChild(codeTable(all.filter(inPick).filter(function (r) { return inBand(r, S.band); }), "Every subject code"));
     }
+    /* Below the tables, so the lists above keep their place (S712). */
+    if (S.view !== SW) wrap.appendChild(el("p", { cls: "csb-note", id: "csb-to-statewide" }, ["Every college’s codes, with a call and a confidence for each: ",
+      go("#commons/subjects/" + SW, "Every local code, statewide"), "."]));
     wrap.appendChild(el("p", { cls: "csb-foot", text: "How codes are compared: " + (S.view === HELD && VIEW.H ? VIEW.H.rule : S.view === NC && VIEW.N ? VIEW.N._rule : M.rule + (M.built ? " The state course list was built " + day(M.built) + "." : "")) }));
     var page = el("div", { cls: "cmn-page" }, [wrap]);
     root.appendChild(page);
@@ -1447,6 +1659,10 @@
   /* A pick: draw it and put it in the address, which is the only place it lives. */
   /* The held view reads its own file the first time it opens, then draws again. */
   function withHeld(view) {
+    if (String(view || "") === SW && !VIEW.W) {
+      return loadStatewide().then(function (W) { VIEW.W = W; VIEW.swError = ""; }, function (e) { VIEW.swError = e && e.message ? e.message : String(e); })
+        .then(function () { if (VIEW.root && VIEW.M && S.view === SW) render(VIEW.root, VIEW.M, SW); });
+    }
     if (String(view || "") === NC && !VIEW.N) {
       return loadNc().then(function (N) { VIEW.N = N; VIEW.ncError = ""; }, function (e) { VIEW.ncError = e && e.message ? e.message : String(e); })
         .then(function () { if (VIEW.root && VIEW.M && S.view === NC) render(VIEW.root, VIEW.M, NC); });
@@ -1542,6 +1758,12 @@
     ".csb-sort { all:unset; box-sizing:border-box; cursor:pointer; min-height:24px; font:inherit; letter-spacing:inherit; text-transform:inherit; color:inherit; text-decoration:underline; text-underline-offset:3px; overflow-wrap:anywhere; }",
     ".csb-sort:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:2px; border-radius:2px; }",
     ".csb-th[aria-sort='ascending'] .csb-sort, .csb-th[aria-sort='descending'] .csb-sort { color:var(--cmn-heading); }",
+    ".csw-chips { display:flex; flex-wrap:wrap; gap:6px 16px; margin:8px 0; }",
+    ".csw-chips button[aria-pressed=\"true\"] { color:var(--cmn-heading); font-weight:700; text-decoration-thickness:2px; }",
+    ".csw input[type=search] { min-height:32px; padding:4px 8px; width:min(420px, 100%); border:1px solid var(--cmn-line); border-radius:8px; font:inherit; color:var(--cmn-ink); background:var(--cmn-surface); }",
+    ".csw select { min-height:28px; max-width:100%; font:inherit; color:var(--cmn-ink); background:var(--cmn-surface); border:1px solid var(--cmn-line); border-radius:6px; }",
+    ".csw-change { display:block; margin-top:4px; }",
+    ".csb-table.csw-table { min-width:56rem; }",
     ".csb-grip { position:absolute; top:0; right:0; width:14px; height:100%; min-height:24px; cursor:col-resize; touch-action:none; z-index:3; }",
     ".csb-grip:hover, .csb-grip:focus-visible { background:var(--cmn-line); }",
     ".csb-grip:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:-2px; }",

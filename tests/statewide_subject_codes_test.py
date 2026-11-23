@@ -1,0 +1,112 @@
+#!/usr/bin/env python3
+"""Every local subject code statewide (kb/_statewide_subject_codes.py, S712; Sam's asks of 2026-11-23).
+
+WHAT THIS GUARDS (each a way the list would send a person to the wrong common code, or hide a code):
+  (1) every subject code in the state course list appears once, with every college that files a course under it, and
+      the pairs and courses add up to the state list's own;
+  (2) every code carries a call and a confidence between 0 and 1 (Sam: "always provide a recommendation ... and
+      always provide a confidence score, even if it's 5%"), the call a common code of the Common Subjects Reference or
+      of a noncredit category, and the runner-up never the call itself;
+  (3) a person's statewide filing is settled at 100% on the code the person filed;
+  (4) no vote comes from an M-ID whose discipline rests on a TOP code alone, and no M-ID votes for the code that named
+      it: Cerritos AED, whose courses gave ELEC M90xx their discipline, is not called ELEC;
+  (5) a code whose courses are mostly noncredit takes its leading COCI category's common code (ESLNC is ESLN), and a
+      code whose titles are another code's numbers ("AJ 359") takes that code's call;
+  (6) the confidence holds where it is highest: on the labelled codes, the top band is right 95% or more;
+  (7) a rerun writes the same bytes as the committed file.
+
+Run from repo root: python3 tests/statewide_subject_codes_test.py
+"""
+import collections
+import importlib.util
+import json
+import os
+import sys
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(HERE)
+sys.path.insert(0, os.path.join(ROOT, "kb"))
+spec = importlib.util.spec_from_file_location("ssc", os.path.join(ROOT, "kb", "_statewide_subject_codes.py"))
+ssc = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(ssc)
+import _build_subject_courses as B  # noqa: E402
+import subject_decisions as sd  # noqa: E402
+
+FAILS, N = [], [0]
+
+
+def check(name, ok, detail=""):
+    N[0] += 1
+    print(("PASS " if ok else "FAIL ") + name + ("" if ok else "  " + str(detail)[:300]))
+    if not ok:
+        FAILS.append(name)
+
+
+doc = ssc.build(ROOT)
+codes = {c["code"]: c for c in doc["codes"]}
+state = B.read_state(ROOT)
+names = [ssc.college_name(n) for n in state["colleges"]]
+pairs = collections.defaultdict(set)
+for r in state["rows"]:
+    if sd.map_key(r[2]):
+        pairs[sd.map_key(r[2])].add(names[r[0]])
+
+# (1)
+check("(1) every state-list code appears once", set(codes) == set(pairs) and len(codes) == len(doc["codes"]),
+      (len(codes), len(pairs)))
+check("(1) each code names every college that files a course under it",
+      all({c for c, _ in codes[k]["colleges"]} == pairs[k] for k in pairs))
+check("(1) pairs and courses add up to the state list's", doc["totals"]["pairs"] == sum(len(v) for v in pairs.values())
+      and doc["totals"]["courses"] == sum(1 for r in state["rows"] if sd.map_key(r[2])))
+
+# (2)
+with open(os.path.join(ROOT, sd.CANONICAL), encoding="utf-8") as f:
+    _bc, by_disc = sd.canonical_codes(json.load(f))
+allowed = set(by_disc.values()) | {v for v in sd.nc_codes_table().values() if v}
+bad = [k for k, c in codes.items() if not c["recommend"]["common"] or c["recommend"]["common"] not in allowed
+       or not (0 < c["recommend"]["confidence"] <= 1)]
+check("(2) every code has a call among the common codes and a confidence in (0, 1]", not bad, bad[:5])
+same = [k for k, c in codes.items() if c["recommend"].get("next") and c["recommend"]["next"]["common"] == c["recommend"]["common"]]
+check("(2) the runner-up is never the call itself", not same, same[:5])
+check("(2) the classes cover every code", sum(v["codes"] for v in doc["totals"]["by_class"].values()) == len(codes))
+
+# (3)
+filings = json.load(open(os.path.join(ROOT, "kb", "status", "subject_decisions.json"), encoding="utf-8")).get("statewide") or []
+settled = [c for c in doc["codes"] if c["class"] == "settled"]
+check("(3) a statewide filing is settled at 100%", len(settled) >= 1 and all(c["recommend"]["confidence"] == 1.0 and c["filing"] for c in settled),
+      len(settled))
+check("(3) every filed code that the state list holds is settled", all(codes[sd.map_key(f["code"])]["class"] == "settled"
+      for f in filings if sd.map_key(f["code"]) in codes))
+
+# (4)
+nv = doc["totals"]["no_vote"]
+check("(4) TOP-only disciplines and an M-ID's own modal subject are kept out of the vote",
+      nv.get("discipline from a TOP code only", 0) > 0 and nv.get("the M-ID's own modal subject", 0) > 0, nv)
+aed = codes.get("AED")
+check("(4) Cerritos AED is not called ELEC", aed is not None and aed["recommend"]["common"] != "ELEC", aed and aed["recommend"])
+
+# (5)
+eslnc = codes.get("ESLNC")
+check("(5) a noncredit code takes its category's common code (ESLNC is ESLN)",
+      eslnc is not None and eslnc["class"] == "noncredit" and eslnc["recommend"]["common"] == "ESLN", eslnc and eslnc["recommend"])
+named = [c for c in doc["codes"] if c["class"] == "named_code"]
+lawen = codes.get("LAWEN")
+check("(5) a code whose titles are another code's numbers takes that code's call (LAWEN's AJ courses are CRIM)",
+      bool(named) and lawen is not None and lawen["class"] == "named_code" and lawen["recommend"]["common"] == "CRIM",
+      lawen and lawen["recommend"])
+
+# (6)
+top = doc["self_recall"][0]
+check("(6) the top confidence band is right 95% or more on the labelled codes",
+      top["tried"] >= 100 and top["accuracy"] >= 0.95, top)
+
+check("(1) a college COCI lists twice (\"... Credit\") is one college: 118 in all",
+      doc["totals"]["colleges"] == len(set(names)) and not any(n.endswith(" Credit") for n in names), doc["totals"]["colleges"])
+
+# (7)
+with open(os.path.join(ROOT, ssc.OUT), encoding="utf-8") as f:
+    committed = f.read()
+check("(7) a rerun writes the committed file's bytes", committed == ssc.dump(doc))
+
+print("\n%d of %d checks passed" % (N[0] - len(FAILS), N[0]))
+sys.exit(1 if FAILS else 0)
