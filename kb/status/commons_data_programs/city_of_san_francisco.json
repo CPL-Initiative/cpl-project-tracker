@@ -1,4 +1,4 @@
-{"schema":1,"college":"City College of San Francisco","slug":"city_of_san_francisco","basis":"live","census_at":"2026-11-22 22:50Z","correction_rules":true,"programs":[
+{"schema":1,"college":"City College of San Francisco","slug":"city_of_san_francisco","basis":"live","census_at":"2026-11-23 11:07Z","correction_rules":true,"programs":[
 {"cn":"41315","title":"Asian American Studies","award":"A.A. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=355"},
 {"cn":"46323","title":"Chicana/o Studies, Latina/o Studies","award":"A.A- T Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=361"},
 {"cn":"46326","title":"Educator Careers II","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"coverage_fails","lever":"reconcile_steps","url":"https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=196"},
@@ -54,6 +54,7 @@
 {"cn":"37993","title":"Unit Coordinator (Hospital)/Ward Clerk","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"24407","title":"VESL - Construction Workers","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"12910","title":"Web Site Administration","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"17954","title":"Liberal Arts and Sciences Emphasis in Science and Mathematics","award":"A.S. Degree","cause":"not_loaded","lever":"reconcile_then_load","url":"https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=206"},
 {"cn":"37561","title":"Accounting Assistant & Core Skills","award":"Noncredit program","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"24120","title":"Administrative Assistant","award":null,"cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"05447","title":"Administrative Support","award":"A.S. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
@@ -94,7 +95,6 @@
 {"cn":"24424","title":"Intermediate VESL for Transit Operators","award":null,"cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"30687","title":"Introduction to Child Development Careers","award":null,"cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"17952","title":"Liberal Arts and Sciences Emphasis in Arts and Humanities","award":"A.A. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
-{"cn":"17954","title":"Liberal Arts and Sciences Emphasis in Science and Mathematics","award":"A.S. Degree","cause":"page_not_found","lever":"reader_page_search","url":"https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=206"},
 {"cn":"37776","title":"Maker Studies","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"36980","title":"Medisoft for Business","award":"Noncredit program","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"24263","title":"Microsoft Office Specialist","award":"Noncredit program","cause":"page_not_found","lever":"reader_page_search","url":null},
