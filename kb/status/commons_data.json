@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-23T06:28:16Z",
+ "written_at": "2026-11-23T09:38:19Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -1849,11 +1849,11 @@
      "platform": "pdf"
     },
     "slo_read": {
-     "run": "44748015052",
-     "at": "2026-11-20T15:50:52Z",
+     "run": "45128775065",
+     "at": "2026-11-23T09:01:50Z",
      "system": "curricunet",
      "source_kind": "course_outline",
-     "file": "kb/course_outcomes/ccsf/read_44748015052_p2of2.json"
+     "file": "kb/course_outcomes/ccsf/read_45128775065_p4of4.json"
     },
     "plo_programs": 268,
     "ppm_member": null,
