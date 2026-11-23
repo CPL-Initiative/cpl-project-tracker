@@ -588,7 +588,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Excel dependency audit — what still touches CPL_Initiative_Project_List_v3.xlsx, and the fix queue](../kb-notes/excel-dependency-audit.md) | reference | published | 2026-06-01 | 2026-06-01 |
 | [Exhibit CRs Catalog — all 27 fields, measured](../kb-notes/reference-exhibit-crs-catalog-field-census.md) | reference | published | 2026-08-14 | 2026-08-14 |
 | [For "which colleges offer X", start at the course file, not the program file](../kb-notes/reference-course-level-mis-beats-program-level-coci.md) | reference | published | 2026-08-12 | 2026-08-12 |
-| [Hand it over in place: the hand-over box, where it writes, and the reader's pickup](../kb-notes/reference-commons-hand-over.md) | reference | internal | 2026-11-20 | 2026-11-20 |
+| [Hand it over in place: the hand-over box, where it writes, and the reader's pickup](../kb-notes/reference-commons-hand-over.md) | reference | internal | 2026-11-20 | 2026-11-23 |
 | [Issuing-agency authority sources for CER exhibit canonicalization](../kb-notes/reference-issuing-agency-authority-sources.md) | reference | published | 2026-07-07 |  |
 | [Postgres full-text search pitfalls on freehand credential titles](../kb-notes/reference-postgres-fts-pitfalls-for-credential-titles.md) | reference | published | 2026-08-06 | 2026-08-06 |
 | [Public-domain art sourcing for the dashboard (Adams, plein air, and the traps)](../kb-notes/reference-public-domain-art-sourcing.md) | reference | published | 2026-06-12 | 2026-06-12 |
