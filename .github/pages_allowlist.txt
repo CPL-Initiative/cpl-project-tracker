@@ -478,6 +478,7 @@ publish kb/status/noncredit_subject_titles.json
 publish kb/status/outline_hunt.json
 publish kb/status/program-requirements-checked.json
 publish kb/status/program-requirements.json
+publish kb/status/statewide_subject_codes.json
 publish kb/status/subject_courses
 publish kb/status/subjects.json
 publish kb/subject_map_audit.json
