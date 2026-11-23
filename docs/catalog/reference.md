@@ -27,7 +27,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [College & district identity — lane state](../reference/lanes/college-district-identity.md) | lanes | `college-district-identity.md` | 2026-08-28 | 2026-11-10 |
 | [College CR evidence ('we approved it, but we have no CR') — lane state](../reference/lanes/college-cr-evidence.md) | lanes | `college-cr-evidence.md` | 2026-08-28 | 2026-08-28 |
 | [Common CR Reference — lane state](../reference/lanes/common-cr-reference.md) | lanes | `common-cr-reference.md` | 2026-08-28 | 2026-11-18 |
-| [Common Subjects Reference (CSR) — one Common SUBJ per MQ discipline — lane state](../reference/lanes/common-subjects-reference.md) | lanes | `common-subjects-reference.md` | 2026-10-19 | 2026-11-21 |
+| [Common Subjects Reference (CSR) — one Common SUBJ per MQ discipline — lane state](../reference/lanes/common-subjects-reference.md) | lanes | `common-subjects-reference.md` | 2026-10-19 | 2026-11-23 |
 | [CPL clean-up worklist — lane state](../reference/lanes/cpl-cleanup-worklist.md) | lanes | `cpl-cleanup-worklist.md` | 2026-08-28 | 2026-08-28 |
 | [CSM Workspace / the team's queue for each college — lane state](../reference/lanes/csm-workspace.md) | lanes | `csm-workspace.md` | 2026-11-02 | 2026-11-13 |
 | [CTDL and the partner exchange (Credential Engine, WestEd) — lane state](../reference/lanes/ctdl-partner-exchange.md) | lanes | `ctdl-partner-exchange.md` | 2026-10-20 | 2026-10-20 |
@@ -72,7 +72,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Conductor mode — how a session runs workers, COBIx and the merge gate](../reference/conductor_mode.md) | — | `conductor_mode.md` | 2026-11-11 | 2026-11-23 |
 | [Context-pressure hook — install and mechanics](../reference/context_pressure_hook.md) | — | `context_pressure_hook.md` | 2026-08-29 |  |
 | [Data dictionary: every Commons data dashboard dataset, its owner, procedure and planned improvement](../reference/data_dictionary.md) | — | `data_dictionary.md` | 2026-11-13 | 2026-11-13 |
-| [Data sources: the register of datasets that could fill a Commons gap](../reference/data_sources.md) | — | `data_sources.md` | 2026-11-04 | 2026-11-13 |
+| [Data sources: the register of datasets that could fill a Commons gap](../reference/data_sources.md) | — | `data_sources.md` | 2026-11-04 | 2026-11-23 |
 | [Data-write rollback — undoing a bulk write to a shared Supabase table](../reference/data_write_rollback.md) | — | `data_write_rollback.md` | 2026-08-30 |  |
 | [Dependency map — dataset to consuming tabs, scripts, workflows and surfaces](../reference/dependency_map.md) | — | `dependency_map.md` | 2026-08-30 |  |
 | [Design principles — every COBI screen (v3)](../reference/design-principles.md) | — | `design-principles.md` | 2026-11-11 | 2026-11-14 |

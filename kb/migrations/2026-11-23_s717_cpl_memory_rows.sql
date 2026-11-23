@@ -1,0 +1,21 @@
+-- cpl_memory rows for SkyGannet (S717), 2026-11-23. Applied with execute_sql (INSERT ... ON CONFLICT DO NOTHING), each
+-- logged in cpl_memory_log (action create, or supersede for d-csr-proposed-codes-95-s717). Full text:
+--   select slug, kind, title, summary, detail, status from public.cpl_memory where author = 'SkyGannet (S717)';
+-- ROLLBACK: delete from public.cpl_memory_log where memory_id in (select id from public.cpl_memory where author = 'SkyGannet (S717)');
+--           delete from public.cpl_memory where author = 'SkyGannet (S717)';
+-- Sam's rulings and words (verified, verified_by Sam):
+--   r-mq-view-more-than-codes-sam-2026-11-23
+--   r-top-vocational-flag-sets-mq-type-sam-2026-11-23
+--   r-csr-codes-settled-on-list-confidence-not-confirmation-sam-2026-11-23  (supersedes, at Sam's word, item 6 of the 2026-09-03 authority sheet)
+--   f-mq-handbook-revised-yearly-sam-2026-11-23
+--   r-sidebar-beside-view-sam-2026-11-23
+--   r-sidebar-tables-sort-resize-and-stack-sam-2026-11-23
+--   d-next-cip-for-mq-type-sam-2026-11-23
+-- The session's own (proposed):
+--   f-mq-20th-edition-vs-dataset-s717
+--   f-csr-seeded-from-mids-left-95-mq-disciplines-uncoded-s717
+--   d-colleges-by-source-view-s717
+--   d-subjects-panel-move-rows-s717
+--   f-cor-discipline-field-data-source-s717
+--   d-csr-proposed-codes-95-s717  (superseded by r-csr-codes-settled-on-list-confidence-not-confirmation-sam-2026-11-23)
+select 1;

@@ -666,3 +666,107 @@ blank-discipline row minted on them later would be edge-filled wrong; none exist
 - **The recode moved minted identities, not anchor-only ids.** Eighteen anchor keys had no pending map; the recode's
   own rule (keep the number on the new code unless it collides) gives 15 unused ids, and three collide with different
   courses (*Power Systems 1*, *Civil Procedures 1*, *Elder Law*) and need fresh numbers.
+
+## 2026-11-23 — S717 SkyGannet: a code for every MQ discipline, the 20th edition, the MQ view
+
+- **A reference seeded from its consumers cannot see what they never reached.** The CSR was seeded per M-ID
+  discipline, so 95 of the handbook's 251 disciplines never had a code, and every model that chose among the CSR's
+  codes sent their courses somewhere else, at full confidence: ACCT, ACCTG, ACC and ACTG (1,012
+  courses) to BUSI at 1.0, LING (24 colleges) to ANTH, HOSP to CULN, the religion codes to REAL, HUMA or HIST, MCOM to
+  JOUR, AERO to AVIA. The distilled form:
+  [`methodology-a-reference-seeded-from-its-consumers-cannot-see-what-they-never-reached`](kb-notes/methodology-a-reference-seeded-from-its-consumers-cannot-see-what-they-never-reached.md).
+- **Read the edition whole, every list.** The 19th-edition file folded the specific-degree list into the any-degree
+  list, so a discipline's MQ type had two values where the regulation has three (CCR 53407(a)(2)-(4)). The 20th
+  edition's Disciplines Index omits Counseling: Mental Health, which the master's list prints. Cite a page by its
+  printed number: printed page = PDF page - 6.
+- **A minted code is read aloud before it is written.** CERT reads as certificate, DSCO as disco, MDIV as Master of
+  Divinity, SANT as saint: Ceramic Technology is CRMT, the DSPS counselor DSCS, Marine Diving Technology MDVT,
+  Sanitation SANI. Sam turned down FATR (*"flight attendants don't want to be called fatter"*); FLTA was Filipino's,
+  so Flight Attendant Training is FLTR. ESTI already prefixes Esthetics M-IDs, so Estimating is ESTG.
+- **Settled is a place on the list, and confidence is the guide (Sam, 2026-11-23):** *"we don't need to make it
+  'proposed', instead it should have a confidence bar indicating how sure we are of it--no human confirmation needed
+  unless confidence is low"*. The 95 went in as `assigned` under `csr-s717@bot`; the CSR tab reads a code as a
+  person's pick unless its reviewer ends `@bot`, so the cohort name carries that difference.
+- **Codes rarely change; the handbook changes every year.** Sam: *"I don't anticipate that we would change the
+  4-character codes year to year...but it could happen so we might need a formerly XXXX and Title"*. `record_former`
+  keeps the old code on the entry, so a code read from an older file still resolves.
+- **A file that reads the code list goes stale when the list grows.** `statewide_subject_codes.json`,
+  `local_subject_recommendations.json`, `mq_view.json` and `csr_proposed_codes.json` each read
+  `kb/discipline_canonical_subj4.json`; #3726 rebuilt the first three after the assign.
+- **Check the output, then write the message.** Commit `8afaa532` says "LING now calls LING". The statewide model
+  votes from where the M-IDs sit, and no M-ID sits under LING, so the call still reads ANTH. A new code moves the calls
+  only at the re-mint that re-points its courses.
+- **The vocational TOP share checks the MQ type (Sam's ruling).** 26 disciplines disagree with it: Business is on the
+  master's list while 98% of its credit M-IDs carry a vocational TOP code; Carpentry is on the experience list at 4%.
+  Each names courses to look at; the share never moves a course's discipline.
+- **A test that reads a line the page draws only on data fails when the data empties it.** `tests/commons_front.test.js`
+  read the held-titles line, which the page leaves out when no title is held; it now reads the line only where it
+  draws.
+
+## Moved from the lane (S717)
+
+The lane's definition of complete and its measured state, as they stood before Sam's ruling of 2026-11-23
+(`r-csr-codes-settled-on-list-confidence-not-confirmation-sam-2026-11-23`), verbatim:
+
+**The definition of complete (ruled, Sheet 99 card 1, 2026-10-19):** an MQ discipline with courses whose Common
+SUBJ is confirmed (by a person, or by the nightly procedure where the code is the authority's own), that follows
+the authority rule, and that is in no collision with another MQ discipline. Measured 2026-11-04: **147 of 147**,
+every MQ discipline with courses complete (133 confirmed by a person, 14 by the nightly procedure or a session cohort;
+no collision). The Commons card's unconfirmed issue leaves its list at zero, by the builder's rule that an empty issue
+is not an issue.
+
+**The measured state, 2026-10-19 (the rows the 2026-11-04 scan re-measured say so):**
+
+| what | measure |
+|---|---|
+| MQ disciplines in the handbook's index | 248 (19th edition, read 2026-05-20, re-validated 2026-07-10); 147 carry courses on the map, 101 carry none |
+| picks confirmed | 147 of 147 (2026-11-04): 133 by a person, 14 by the nightly procedure or a session cohort; 0 on the data's modal code unconfirmed |
+| on an authority code | 13 CCN, 20 C-ID, 114 minted here, 23 with a chip; 0 missed alignments |
+| C-ID and CCN subject codes | 65 C-ID (495 descriptors), 14 CCN (58 courses), both read 2026-05-20; 11 shared; CCN adds ASTR, PSYC, STAT; CCN wins on Psychology (PSYC over PSY) |
+| identity codes | 282 codes on 75,581 minted identities: 146 canonical, 26 umbrella, 110 strays on 396 identities (101 of the stray codes sit on identities with no discipline); measured 2026-10-19 after the AGAB re-key |
+| collisions | 0 since the AGAB re-key of 2026-10-19 (S427); the AUTB pair was the one: Agricultural Business and Related Services now AGAB, AUTB M1006 re-keyed to AGAB M1006; AUTB M1071 Import Body Customizing returned to Auto Body Technology on Sam's Sheet 101 ruling (22:38Z), so no row sits off its code |
+| by design | 4 umbrellas carrying 26 codes beside their own; 3 fan-in alias families (4 alternate names); the FTVE pair; the five agriculture family codes both agriculture umbrellas carry, one of them (AGAB) now also Agricultural Business's own |
+| the daily scan | 38 findings (2026-11-04): 19 aligned, 13 weak mnemonics, 3 modal choices without a note, 1 anchor key in the dead format, 2 divergences a note records; none unconfirmed, no collision. The Commons card counts 17 to confirm or note and 93 stray identity codes on 305 identities |
+| procedures | 8 written, 6 in force; 2 quarterly routines to build; the cohort confirm on since 2026-10-19 (S427), first run after the merge |
+
+The lane's check of Sam's eight steps (S425), verbatim:
+
+## Sam's eight steps against the record (S425's check, 2026-10-19)
+
+- **CSR before CCR.** Right for the keys: every M-ID is minted under the discipline's Common SUBJ, so a
+  settled code first makes every later re-mint cheap. The Program Requirements crosswalk runs through the
+  identity layer's memberships (a program's course joins an identity by its COCI control number; the Common
+  SUBJ is the identity's label): 67,991 of 84,475 distinct active courses on active programs (80.5%) sit under
+  an identity, and 21,761 of the 141,738 COCI courses in the July extract (15.4%) have none, because the
+  identities were minted from the 2026-05-22 extract and not re-minted since. The CCR's freshness is the
+  larger crosswalk dependency; the CSR's stability is what makes that re-mint safe.
+- **One process for every common reference.** Ruled on Open Asks Sheet 95 card 1 (2026-10-18): the shared
+  module and the run logs landed; the per-reference Progress views are the open step, in the order Exhibit,
+  Course, CR, Subjects. Sam's ask today moved Subjects first; his call, recorded.
+- **Steps 1 and 2, the quarterly routines.** The three sources were last read in May (the handbook re-validated
+  in July). A check that diffs and opens a card is the right routine; an automatic rewrite would rename
+  disciplines that carry picks. The scope note's handbook link answered 404 and is replaced by the Chancellor's Office's live
+  Minimum Qualifications page, which lists the 19th edition (S431); the C-ID site moved from c-id.net to
+  c-idsystem.org, its data on data-c-idsystem.org (S437), which a runner reads and the sandbox proxy refuses. Eight MQ names carry a Title 5 section number from the PDF read and one is cut short
+  (*Disabled Student Programs and*); Sam's rename ruling of 2026-09-08 has not been applied.
+- **Step 3, the AG example.** The authority recode of 2026-09-03 already adopted every four-letter CCN and C-ID
+  code (0 missed alignments); the five hyphenated agriculture codes became the umbrella codes AGAB, AGAS, AGEH,
+  AGMA, AGPS, and Sam ruled AGRI and AGPR the residuals (cards 4 to 6). The chips on the Agriculture row say the
+  authority splits the discipline finer than the MQ list does; they are sub-subjects, not a competing code. What
+  step 3 can still do is empty the residual: 404 identities sit under AGRI (measured 2026-10-19 by key prefix in
+  `kb/coci_minted_courses.json` and `kb/coci_minted_singletons.json`: 86 clustered, 318 stand-alone; 403 under
+  Agriculture), and a Jev sitting can propose a family for each from the descriptors, Sam confirming, the rest
+  staying residual (a card). The
+  strays are the unnecessary codes: 110 on 396 identities, most on identities with no discipline yet.
+- **Steps 4 and 5.** Every MQ discipline with courses carries a code; the 101 without courses take one when
+  their first course appears. One code sits on two MQ disciplines (AUTB); the identity layer's disagreements
+  (a few rows under a code naming a second discipline; 96 identities with no discipline) are the cross-list
+  and discipline-blank lanes' work. The tab's own check had listed six ruled sharings as collisions.
+- **Step 6, cross-listed.** Three senses, and the procedure names all three: a code on two disciplines (a
+  collision, forbidden except a ruled fan-in), a discipline with several codes (an umbrella, allowed), and a
+  course with two homes (`xdisc`, 9 rows today; 535 candidates wait on the cross-list sheet).
+- **Steps 7 and 8.** Both exist as rulings (2026-09-03, items 1 to 3 and 15) and run at every mint and re-seed;
+  the one live difference is Psychology (PSYC over PSY). What was missing was the measure on a dash.
+- **Forgotten along the way.** The validate stage has never been used (0 of 147 in five months); the scan was
+  never scheduled and asked two settled questions at every run; the tab's C-ID index skipped 17 of the 65
+  subjects; the Jev next step for the CSR (fix AUTB, the 2026-09-29 sheet's card 11) is still open.

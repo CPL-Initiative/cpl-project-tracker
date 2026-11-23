@@ -695,6 +695,7 @@ _ALL = [
     "- **A FIGURE CARD OPENS WHAT IT COUNTS.**",
     "- **A SCREEN LEADS WITH THE JOB; A TOOL IS BUILT TO SCALE.**",
     "- **EVERY SIDEBAR RESIZES, AND ITS TOP ROW STAYS FROZEN.**",
+    "- **A SIDEBAR OPENS BESIDE THE VIEW, NEVER OVER IT.**",
 ]
 _e = _claude_presentation(_ALL)
 check("presentation doctrine: silent when every rule is stated",

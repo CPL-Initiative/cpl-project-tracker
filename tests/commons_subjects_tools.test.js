@@ -177,6 +177,15 @@ const posts = (x) => x.calls.filter((c) => c.method !== "GET");
   x.d.getElementById("csb-unfold-all").click();
   check("(6) Expand all opens them again", folds().every((d) => d.open));
 
+  /* (8) a sidebar opens beside the view, never over it (Sam, 2026-11-23: "this is a rule for all sidebars") */
+  x = load("#commons/subjects/alpha/AED", { sess: ME });
+  await x.M.boot(); await settle();
+  const croot = x.d.getElementById("commons-root");
+  check("(8) ⭐ with the panel open the view gives up the panel's width beside it", croot.classList.contains("csb-beside") && /^\d+px$/.test(croot.style.getPropertyValue("--csb-panel-w"))
+    && /\.csb-beside > \.cmn-page \{ margin-right:var\(--csb-panel-w/.test(x.d.head.textContent + Array.from(x.d.querySelectorAll("style")).map((st) => st.textContent).join("")));
+  x.d.getElementById("csb-panel-close").click(); await settle();
+  check("(8) closing the panel gives the view its width back", !croot.classList.contains("csb-beside") && !croot.style.getPropertyValue("--csb-panel-w"));
+
   /* (5) an M-ID's prefix never reads as the course's local subject (Sam, 2026-11-22, r-mid-prefix-is-not-the-local-subject-sam-2026-11-22) */
   x = load("#commons/subjects/alpha/AED", { saves: SAVES.concat([{ course_id: "SUBJ:alpha|AED|credit", value: JSON.stringify({ common_code: "AUTO" }), reviewed_at: AT, reviewer_label: "a reviewer" }]) });
   await x.M.boot(); await settle();
