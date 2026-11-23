@@ -109,6 +109,11 @@ stays off the Los Rios colleges and any college lane 1 takes later.
   reading opened: the 10 records at seven colleges that `option_parts` moves to passing (Foothill, Glendale, Golden
   West, MiraCosta, Monterey Peninsula, Reedley, Santa Barbara City), on `claude/s714-piles-optparts`, then
   Fullerton. Those seven colleges join lane 2 for the follow-up.
+- 13:31Z: the three Los Rios dispatches went in at once, and the workflow's concurrency group (one running and one
+  pending run per branch) cancelled Cosumnes River's pending run 45181979022 four seconds after Folsom Lake's
+  dispatch replaced it, before anything was paid (`p-one-pending-run-per-branch-s714`). Sacramento City
+  (45181973475, 18 programs, $2.04) and Folsom Lake (45181983194, 3, $0.33) ran green; Cosumnes River was
+  dispatched again alone (45184653221, 13:30Z). `rios` pushed its fixes at `31b802a3` on #3715.
 
 ## Conductor settings
 
