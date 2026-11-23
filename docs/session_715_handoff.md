@@ -73,6 +73,9 @@ stays off the Los Rios colleges and any college lane 1 takes later.
   before any apply. `piles` took East Los Angeles on `claude/s714-piles-ela`, in a new worktree so the reader's
   checkout stays at the PR head. Four checkouts at about 2 GB each against 55 GB free, over the three-checkout
   ceiling set when a checkout was 4.4 GB (`d-four-checkouts-on-measured-disk-s714`).
+- 12:11Z: the harness keeps a worker inside its own worktree, so `piles` could not open a second one; a fresh worker,
+  `piles2`, took East Los Angeles on `claude/s714-piles-ela` in its own worktree, and `piles` stays on #3714's
+  checkout for the reader's fixes. S712's #3712 merged at 11:52Z (`3cc69ffc`).
 
 ## Conductor settings
 
@@ -91,7 +94,7 @@ by Opus 5.5.
 |---|---|---|
 | #3713 (`claude/awesome-fermat-ka0z4l`) | the declaration | becomes the checkpoint at sign-off |
 | #3714 (`claude/s714-piles-ccsf`, `piles`) | plan filed, 8 rows | the second reader, the pre-read, the apply, the merge |
-| `claude/s714-piles-ela` (`piles`) | started | its plan |
+| `claude/s714-piles-ela` (`piles2`) | started | its plan |
 | `claude/s714-rios` (`rios`) | started | its reader change, a second reader, the conductor's paid reads |
-| #3712 (S712, Sam's plain session) | its own session's | none from this run |
+| #3712 (S712, Sam's plain session) | merged `3cc69ffc` | none |
 | #3383 | dependabot's | waits |
