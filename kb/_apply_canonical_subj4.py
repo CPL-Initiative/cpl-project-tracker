@@ -52,6 +52,22 @@ FIELD_NOTES = "canonical_subj4_notes"
 SUBJ4_RE = re.compile(r"^[A-Z]{4}$")
 
 
+def record_former(entry, discipline, new_code, at, by, note):
+    """Keep the code a save replaces (Sam, 2026-11-23: "I don't anticipate that we would change the 4-character codes
+    year to year...but it could happen so we might need a formerly XXXX and Title"). Appends {code, title, until, by,
+    note} to entry["formerly"] when the new code differs from the one on file; a rerun on the same save records
+    nothing. `by` is "a person" or a cohort's @bot name, never an email. True when a code was recorded."""
+    prev = entry.get("canonical_subj4")
+    if not prev or not new_code or prev == new_code:
+        return False
+    hist = entry.setdefault("formerly", [])
+    if any(h.get("code") == prev and h.get("until") == at for h in hist):
+        return False
+    who = by if (by and str(by).endswith("@bot")) else "a person"
+    hist.append({"code": prev, "title": discipline, "until": at, "by": who, "note": note or None})
+    return True
+
+
 def fetch_rows():
     # PostgREST `like` filter with %-suffix to scope to our namespace.
     # Pull validated_* columns too — they were added in the 2026-05-23 schema
@@ -124,6 +140,7 @@ def main():
             if canon_norm and not SUBJ4_RE.match(canon_norm):
                 invalid.append((d, canon))
                 continue
+            record_former(entry, d, canon_norm, rec.get("_pick_at") or rec.get("reviewed_at"), rec.get("_pick_by"), notes)
             entry["canonical_subj4"] = canon_norm or None
             entry["source"] = "curator_override" if canon_norm else None
             entry["needs_review"] = not bool(canon_norm)

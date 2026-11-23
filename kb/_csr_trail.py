@@ -243,7 +243,7 @@ def mid_subject_codes(disciplines, courses=None, singletons=None):
         "ids": ids, "codes": len(codes),
         "canonical": sum(1 for c in codes if c in canon),
         "umbrella": sum(1 for c in codes if c in umbrella and c not in canon),
-        "stray_codes": len(out), "stray_ids": sum(s["ids"] for s in out),
+        "stray_codes": len(out), "stray_ids": sum(s["ids"] for s in out), "codes_seen": sorted(codes),
         "strays": out,
     }
 

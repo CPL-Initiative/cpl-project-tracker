@@ -375,6 +375,10 @@ python3 kb/_statewide_subject_codes.py || { git checkout -- kb/status/statewide_
 # Every college's subject titles by source (kb/_subject_sources.py, S717): it reads the statewide list and the titles
 # file this build just wrote, so it runs after both.
 python3 kb/_subject_sources.py --if-changed || { git checkout -- kb/status/subject_sources.json 2>/dev/null || true; echo "::warning title=Subject sources not rebuilt::kb/_subject_sources.py failed; #commons/subjects/sources reads yesterday's kb/status/subject_sources.json."; }
+# The MQ view (kb/_mq_view.py, S717): every MQ discipline joined to its common subject code, the M-IDs and the local
+# codes this build just wrote, so it runs after them.
+python3 kb/_mq_view.py || { git checkout -- kb/status/mq_view.json 2>/dev/null || true; echo "::warning title=MQ view not rebuilt::kb/_mq_view.py failed; kb/status/mq_view.json is yesterday's."; }
+python3 kb/_csr_propose_codes.py || { git checkout -- kb/status/csr_proposed_codes.json 2>/dev/null || true; echo "::warning title=Proposed common codes not rebuilt::kb/_csr_propose_codes.py failed or found a problem."; }
 STEP
 
 # ── Step 4b: Re-run row Trust-Card auditor ────────────────────
