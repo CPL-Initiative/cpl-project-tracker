@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 155,
  "with_closed_list": 94,
- "started": "2026-10-17T00:06:11Z",
+ "started": "2026-11-23T08:05:14Z",
  "elumen": {
   "catalog": "current",
   "read": "publish/content",
@@ -19,16 +19,554 @@
    "interdisciplinary-degrees",
    "physical-science-degree"
   ],
-  "hub_programs": 0,
-  "walk_pages": 108,
-  "walk_programs": 143,
+  "hub_programs": 37,
+  "walk_pages": 117,
+  "walk_menus": 9,
+  "walk_programs": 116,
   "walk_stopped_at_cap": false,
+  "program_pages_listed": 153,
+  "listing_failed": 0,
   "program_pages": 143
  },
  "pages_read": 143,
+ "pages_listed": 153,
+ "pages_answered": 143,
+ "listing_failed": 0,
  "banner_h1": null,
- "loads": 256,
- "seconds": 1050.8,
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 87,
+   "hits": 20,
+   "recall": 0.23,
+   "false": 0,
+   "false_off_own": 1,
+   "false_no_claims": 1,
+   "shared": 2,
+   "false_matches": [
+    {
+     "control_number": "45456",
+     "title": "Law Pathway",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "page": "https://marin.elumenapp.com/catalog/current/program,certificate-of-achievement-law-pathway-fall-2025-credit-noncredit",
+     "h1": "Certificate of Achievement, Law Pathway"
+    }
+   ],
+   "no_claims_matches": [
+    {
+     "control_number": "45456",
+     "title": "Law Pathway",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "page": "https://marin.elumenapp.com/catalog/current/program,certificate-of-achievement-law-pathway-fall-2025-credit-noncredit",
+     "h1": "Certificate of Achievement, Law Pathway"
+    }
+   ],
+   "searches": false,
+   "catalog_list": null
+  },
+  "programs": 61,
+  "by_result": {
+   "not_searched": 61
+  },
+  "found": 0,
+  "found_active": 0,
+  "found_pages": 0,
+  "found_programs": [],
+  "other_programs": [
+   {
+    "control_number": "03363",
+    "title": "Architecture",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03364",
+    "title": "Biology",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03367",
+    "title": "Business Management",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03368",
+    "title": "Real Estate",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03371",
+    "title": "Communications, Mass Communications",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03375",
+    "title": "Computer Information Systems: Desktop Publishing Specialty",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03379",
+    "title": "Engineering, Transfer",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03380",
+    "title": "Engineering Technology",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03382",
+    "title": "Automotive Master Repair Technician",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03383",
+    "title": "Master Collision Repair",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03385",
+    "title": "Machine and Metals Technology",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03388",
+    "title": "Drama",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03390",
+    "title": "Applied Design: Two-dimensional",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03392",
+    "title": "Modern Language, General",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03393",
+    "title": "French",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03395",
+    "title": "Spanish",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03396",
+    "title": "Nursing: Registered",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03397",
+    "title": "Medical Assisting: Administrative and Clinical",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03398",
+    "title": "Dental Assisting: Registered",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03399",
+    "title": "English",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03404",
+    "title": "Physics",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03405",
+    "title": "Chemistry",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03406",
+    "title": "Geology",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03408",
+    "title": "Administration of Justice",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03411",
+    "title": "Social Science",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03413",
+    "title": "Ethnic Studies",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03415",
+    "title": "History",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03416",
+    "title": "Geography",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03420",
+    "title": "Natural Science",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03421",
+    "title": "Humanities",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "07633",
+    "title": "Business Administration -- Transfer",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "07635",
+    "title": "Applied Accounting",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "07660",
+    "title": "Design, Applied--Interior",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "07665",
+    "title": "University Transfer",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "12087",
+    "title": "Behavioral Science",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "12469",
+    "title": "Computer Information Systems: Microcomputer Manager Specialt",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "12470",
+    "title": "Computer Information Systems: Microcomputer Programmer",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "12471",
+    "title": "Applied Design: Three-dimensional",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "15422",
+    "title": "Medical Assisting : Administrative",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "15423",
+    "title": "Medical Assisting: Clinical",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "15465",
+    "title": "Automotive Electrical/Performance Technician",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "15466",
+    "title": "Automotive Emissions/Performance Technician",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "15468",
+    "title": "Automotive Chassis Repair Technician",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "15542",
+    "title": "International Studies",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "19787",
+    "title": "Physical Sciences",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "21933",
+    "title": "Business, General",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "21934",
+    "title": "Applied Accounting",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "21937",
+    "title": "Real Estate",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "21939",
+    "title": "Certified Shorthand Reporter",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "21947",
+    "title": "Computer Information Systems: Microcomputer Manager Specialt",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "21948",
+    "title": "Computer Information Systems: Microcomputer Programmer",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "21953",
+    "title": "Automotive Master Repair Technician",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "21954",
+    "title": "Master Collision Repair",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "21955",
+    "title": "Machine and Metals Technology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "21956",
+    "title": "Medical Assisting: Clinical",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "21959",
+    "title": "Medical Assisting: Administrative and Clinical",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "21960",
+    "title": "Dental Assisting: Registered",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "21961",
+    "title": "Early Childhood Education",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "21962",
+    "title": "Administration of Justice",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "35295",
+    "title": "Italian",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "36356",
+    "title": "Film, Television, and Electronic Media",
+    "award": "A.S. T Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 20 of 87 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
+ "loads": 275,
+ "seconds": 1132.3,
  "found": 89,
  "by_method": {
   "no_closed_list": 61,
@@ -49,7 +587,8 @@
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "44299",
@@ -57,7 +596,8 @@
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "45592",
@@ -65,7 +605,8 @@
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   }
  ],
  "page_claimed": [
@@ -74,926 +615,778 @@
    "title": "Court Reporting",
    "award": "A.S. Degree",
    "pages": [
-    "https://marin.elumenapp.com/catalog/current/program/a-s-in-court-reporting-spring-2023-credit-noncredit",
+    "https://marin.elumenapp.com/catalog/current/program,a-s-in-court-reporting-spring-2023-credit-noncredit",
     "https://marin.elumenapp.com/catalog/current/program/stackable-coa-2-certificate-of-achievement-in-court-reporting-scopist-fall-2022-credit-noncredit",
     "https://marin.elumenapp.com/catalog/current/program/stackable-coa-3-certificate-of-achievement-in-court-reporting-communication-access-realtime-translation-c-a-r-t-fall-2022-credit-noncredit",
     "https://marin.elumenapp.com/catalog/current/program/stackable-coa-4-certificate-of-achievement-in-court-reporting-csr-ready-fall-2022-credit-noncredit",
     "https://marin.elumenapp.com/catalog/current/program/stackable-coa-1-certificate-of-achievement-in-court-reporting-proofreading-fall-2022-credit-noncredit"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "46346",
    "title": "Mathematics 2.0",
    "award": "A.S. T Degree",
    "pages": [
-    "https://marin.elumenapp.com/catalog/current/program/as-t-in-mathematics-fall-2025-credit-noncredit",
-    "https://marin.elumenapp.com/catalog/current/program/a-s-in-computer-science-fall-2024-credit-noncredit",
-    "https://marin.elumenapp.com/catalog/current/program/a-a-in-liberal-arts-natural-science-emphasis-fall-2026-credit-noncredit",
-    "https://marin.elumenapp.com/catalog/current/program/aa-t-economics-fall-2026-credit-noncredit"
-   ]
+    "https://marin.elumenapp.com/catalog/current/program,as-t-in-mathematics-fall-2025-credit-noncredit",
+    "https://marin.elumenapp.com/catalog/current/program,a-s-in-computer-science-fall-2024-credit-noncredit",
+    "https://marin.elumenapp.com/catalog/current/program,aa-t-economics-fall-2026-credit-noncredit",
+    "https://marin.elumenapp.com/catalog/current/program,a-a-in-liberal-arts-natural-science-emphasis-fall-2026-credit-noncredit"
+   ],
+   "status": "Approved"
   }
  ],
+ "page_challenged": [],
  "coverage_bands": {
   "0.5-0.8": 3,
   "0.8-1.0": 18,
   "1.0": 68
  },
  "would_extract": {
-  "against": null,
-  "kept": 0,
-  "programs": 89,
+  "against": "kb/program_requirements_college/college_of_marin",
+  "kept": 44,
+  "kept_moved": 0,
+  "programs": 7,
   "list": [
-   {
-    "control_number": "03366",
-    "title": "Business, General",
-    "award": "A.S. Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/a-s-in-business-general-fall-2026-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03370",
-    "title": "Court Reporting",
-    "award": "A.S. Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/a-s-in-court-reporting-spring-2023-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03374",
-    "title": "Computer Science",
-    "award": "A.S. Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/a-s-in-computer-science-fall-2024-credit-noncredit",
-    "coverage": 0.944,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03376",
-    "title": "Kinesiology and Health",
-    "award": "A.A. Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/a-a-in-kinesiology-and-health-fall-2026-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03386",
-    "title": "Art",
-    "award": "A.A. Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/a-a-in-art-fall-2026-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03387",
-    "title": "Music",
-    "award": "A.A. Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/a-a-in-music-fall-2022-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03389",
-    "title": "Dance",
-    "award": "A.A. Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/a-a-in-dance-fall-2026-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07171",
-    "title": "Multimedia Studies, Graphic Design",
-    "award": "A.S. Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/a-s-in-multimedia-studies-graphic-design-fall-2026-credit-noncredit",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07646",
-    "title": "Communications, Filmmaking",
-    "award": "A.A. Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/a-a-in-communication-filmmaking-fall-2026-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07647",
-    "title": "Communications, Screenwriting",
-    "award": "A.A. Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/a-a-in-communication-screenwriting-fall-2026-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11791",
-    "title": "Natural History",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-natural-history-fall-2024-credit-noncredit",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "14769",
-    "title": "Multimedia Studies, Game Design",
-    "award": "A.S. Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/a-s-in-multimedia-studies-game-design-fall-2025-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "14770",
-    "title": "Multimedia Studies, Web Design and Development",
-    "award": "A.S. Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/a-s-in-multimedia-studies-web-design-and-development-fall-2023-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15552",
-    "title": "Computer Information Systems",
-    "award": "A.S. Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/a-s-in-computer-information-systems-summer-2020-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
    {
     "control_number": "19789",
     "title": "Liberal Arts: Language and Communication Emphasis",
     "award": "A.A. Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/a-a-in-liberal-arts-language-and-communication-emphasis-fall-2026-credit-noncredit",
+    "url": "https://marin.elumenapp.com/catalog/current/program,a-a-in-liberal-arts-language-and-communication-emphasis-fall-2026-credit-noncredit",
     "coverage": 0.972,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://marin.elumenapp.com/catalog/current/program/a-a-in-liberal-arts-language-and-communication-emphasis-fall-2026-credit-noncredit",
+    "was_coverage": 0.972,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "19790",
     "title": "Liberal Arts: Natural Science Emphasis",
     "award": "A.A. Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/a-a-in-liberal-arts-natural-science-emphasis-fall-2026-credit-noncredit",
+    "url": "https://marin.elumenapp.com/catalog/current/program,a-a-in-liberal-arts-natural-science-emphasis-fall-2026-credit-noncredit",
     "coverage": 0.98,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://marin.elumenapp.com/catalog/current/program/a-a-in-liberal-arts-natural-science-emphasis-fall-2026-credit-noncredit",
+    "was_coverage": 0.98,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "19791",
     "title": "Liberal Arts: Social and Behavioral Science Emphasis",
     "award": "A.A. Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/a-a-in-liberal-arts-social-and-behavioral-sciences-emphasis-fall-2026-credit-noncredit",
+    "url": "https://marin.elumenapp.com/catalog/current/program,a-a-in-liberal-arts-social-and-behavioral-sciences-emphasis-fall-2026-credit-noncredit",
     "coverage": 0.955,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21935",
-    "title": "Business: Business Administration",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-in-business-general-fall-2026-credit-noncredit",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21943",
-    "title": "Multimedia Studies, Web Design and Development",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-in-multimedia-studies-web-design-and-development-fall-2023-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21944",
-    "title": "Multimedia Studies, Game Design",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-in-multimedia-studies-game-design-fall-2025-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21945",
-    "title": "Multimedia Studies, Graphic Design",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-in-multimedia-studies-graphic-design-fall-2020-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21946",
-    "title": "Computer Information Systems",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-computer-information-systems-fall-2019-credit-noncredit",
-    "coverage": 0.947,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21949",
-    "title": "Automotive Chassis and Drivetrain Specialist (A3, A4, A5)",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-automotive-chassis-and-drivetrain-specialist-a3-a4-a5-fall-2025-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21950",
-    "title": "Automotive Electronics Specialist (A6, A7 & A8)",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-automotive-electronics-specialist-a6-a7-a8-fall-2025-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21952",
-    "title": "Automotive Engine Specialist (A1 & A9)",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-automotive-engine-specialist-a1-a9-fall-2025-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21957",
-    "title": "Medical Assisting, Administrative Option, Occupational",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-in-medical-assisting-administrative-option-occupational-fall-2023-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30893",
-    "title": "Psychology",
-    "award": "A.A- T Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/aa-t-psychology-fall-2026-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31474",
-    "title": "Political Science",
-    "award": "A.A- T Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/aa-t-political-science-fall-2026-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31717",
-    "title": "English",
-    "award": "A.A- T Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/aa-t-english-fall-2026-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32114",
-    "title": "Early Childhood Education",
-    "award": "A.S. T Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/a-s-in-early-childhood-education-fall-2024-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32934",
-    "title": "Theatre Arts",
-    "award": "A.A- T Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/aa-t-theatre-arts-fall-2026-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33056",
-    "title": "Physics",
-    "award": "A.S. T Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/as-t-physics-fall-2025-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33059",
-    "title": "Geology",
-    "award": "A.S. T Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/as-t-geology-fall-2025-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33061",
-    "title": "Administration of Justice",
-    "award": "A.S. T Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/as-t-administration-of-justice-fall-2026-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33069",
-    "title": "Geography",
-    "award": "A.A- T Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/aa-t-geography-fall-2026-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33074",
-    "title": "Economics",
-    "award": "A.A- T Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/aa-t-economics-fall-2026-credit-noncredit",
-    "coverage": 0.947,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://marin.elumenapp.com/catalog/current/program/a-a-in-liberal-arts-social-and-behavioral-sciences-emphasis-fall-2026-credit-noncredit",
+    "was_coverage": 0.955,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "33075",
     "title": "Mathematics",
     "award": "A.S. T Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/as-t-in-mathematics-fall-2025-credit-noncredit",
+    "url": "https://marin.elumenapp.com/catalog/current/program,as-t-in-mathematics-fall-2025-credit-noncredit",
     "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33077",
-    "title": "History",
-    "award": "A.A- T Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/aa-t-history-fall-2026-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33080",
-    "title": "Philosophy",
-    "award": "A.A- T Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/aa-t-philosophy-fall-2026-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33086",
-    "title": "Art History",
-    "award": "A.A- T Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/aa-t-art-history-fall-2026-credit-noncredit",
-    "coverage": 0.969,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33089",
-    "title": "Anthropology",
-    "award": "A.A- T Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/aa-t-anthropology-fall-2026-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33669",
-    "title": "Spanish",
-    "award": "A.A- T Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/aa-t-spanish-fall-2026-credit-noncredit",
-    "coverage": 0.882,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://marin.elumenapp.com/catalog/current/program/as-t-in-mathematics-fall-2025-credit-noncredit",
+    "was_coverage": 0.9,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "33824",
     "title": "Kinesiology",
     "award": "A.A- T Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/aa-t-kinesiology-fall-2026-credit-noncredit",
+    "url": "https://marin.elumenapp.com/catalog/current/program,aa-t-kinesiology-fall-2026-credit-noncredit",
     "coverage": 0.925,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36465",
-    "title": "Associate in Science in Hospitality Management",
-    "award": "A.S. T Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/as-t-hospitality-management-fall-2026-credit-noncredit",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40080",
-    "title": "Sociology",
-    "award": "A.A- T Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/aa-t-sociology-fall-2026-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40719",
-    "title": "Hospitality Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-hospitality-management-spring-2021-credit-noncredit",
-    "coverage": 0.8,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40776",
-    "title": "Graphic Design",
-    "award": "A.A. Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/a-a-in-graphic-design-fall-2026-credit-noncredit",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40777",
-    "title": "Graphic Design",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-in-multimedia-studies-graphic-design-fall-2020-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41032",
-    "title": "Theatrical Technologies",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-theatrical-technologies-fall-2021-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41437",
-    "title": "ESL for Childcare Workers",
-    "award": "Noncredit program",
-    "url": "https://marin.elumenapp.com/catalog/current/program/vocational-1-certificate-of-competency-esl-for-childcare-workers-fall-2020-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41440",
-    "title": "Academic ESL Preparation",
-    "award": "Noncredit program",
-    "url": "https://marin.elumenapp.com/catalog/current/program/5-certificate-of-competency-academic-esl-preparation-fall-2020-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41441",
-    "title": "ESL Beginning",
-    "award": "Noncredit program",
-    "url": "https://marin.elumenapp.com/catalog/current/program/1-certificate-of-competency-esl-beginning-summer-2020-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41442",
-    "title": "ESL High Beginning",
-    "award": "Noncredit program",
-    "url": "https://marin.elumenapp.com/catalog/current/program/2-certificate-of-competency-esl-high-beginning-fall-2020-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41443",
-    "title": "ESL Low Intermediate B",
-    "award": "Noncredit program",
-    "url": "https://marin.elumenapp.com/catalog/current/program/4-certificate-of-competency-esl-low-intermediate-b-fall-2020-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41510",
-    "title": "Global Studies",
-    "award": "A.A- T Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/aa-t-in-global-studies-fall-2026-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41520",
-    "title": "Automotive Collision Repair Technology, Painting and Refinishing",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-in-automotive-collision-repair-technology-painting-and-refinishing-fall-2025-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41530",
-    "title": "Automotive Collision Repair Technology, Structural and Nonstructural Damage Repair",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-automotive-collision-repair-technology-structural-and-nonstructural-damage-repair-fall-2025-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41765",
-    "title": "Business Administration 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/as-t-business-administration-2-0-fall-2026-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41870",
-    "title": "Court Reporting, Proofreading",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://marin.elumenapp.com/catalog/current/program/stackable-coa-1-certificate-of-achievement-in-court-reporting-proofreading-fall-2022-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42114",
-    "title": "Court Reporting, Scopist",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://marin.elumenapp.com/catalog/current/program/stackable-coa-2-certificate-of-achievement-in-court-reporting-scopist-fall-2022-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42125",
-    "title": "Court Reporting, Communication Access Realtime Translation (C.A.R.T.)",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://marin.elumenapp.com/catalog/current/program/stackable-coa-3-certificate-of-achievement-in-court-reporting-communication-access-realtime-translation-c-a-r-t-fall-2022-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42136",
-    "title": "Court Reporting, CSR-Ready",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://marin.elumenapp.com/catalog/current/program/stackable-coa-4-certificate-of-achievement-in-court-reporting-csr-ready-fall-2022-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42189",
-    "title": "ESL Low Intermediate A",
-    "award": "Noncredit program",
-    "url": "https://marin.elumenapp.com/catalog/current/program/3-certificate-of-competency-esl-low-intermediate-a-fall-2020-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42290",
-    "title": "Public Safety",
-    "award": "A.A. Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/a-a-in-public-safety-fall-2025-credit-noncredit",
-    "coverage": 0.968,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42616",
-    "title": "High Intermediate ESL",
-    "award": "Noncredit program",
-    "url": "https://marin.elumenapp.com/catalog/current/program/2-certificate-of-competency-high-intermediate-esl-fall-2020-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42653",
-    "title": "Intermediate ESL",
-    "award": "Noncredit program",
-    "url": "https://marin.elumenapp.com/catalog/current/program/1-certificate-of-competency-intermediate-esl-fall-2020-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42751",
-    "title": "Low Advanced ESL",
-    "award": "Noncredit program",
-    "url": "https://marin.elumenapp.com/catalog/current/program/3-certificate-of-competency-low-advanced-esl-fall-2020-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42782",
-    "title": "Intermediate Pronunciation for ESL Students",
-    "award": "Noncredit program",
-    "url": "https://marin.elumenapp.com/catalog/current/program/4-certificate-of-competency-intermediate-pronunciation-for-esl-students-fall-2020-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42783",
-    "title": "Listening/Speaking Skills A",
-    "award": "Noncredit program",
-    "url": "https://marin.elumenapp.com/catalog/current/program/6-certificate-of-competency-listening-speaking-skills-a-fall-2020-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42784",
-    "title": "Listening/Speaking Skills B",
-    "award": "Noncredit program",
-    "url": "https://marin.elumenapp.com/catalog/current/program/5-certificate-of-competency-listening-speaking-skills-b-fall-2020-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43257",
-    "title": "Communication Studies 2.0",
-    "award": "A.A- T Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/aa-t-communication-studies-2-0-fall-2026-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43473",
-    "title": "Law, Public Policy, and Society",
-    "award": "A.A- T Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/aa-t-in-law-public-policy-and-society-fall-2026-credit-noncredit",
-    "coverage": 0.93,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43581",
-    "title": "ESL for Customer Service",
-    "award": "Noncredit program",
-    "url": "https://marin.elumenapp.com/catalog/current/program/vocational-2-certificate-of-competency-esl-for-customer-service-fall-2020-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43771",
-    "title": "Welding",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-welding-fall-2024-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44172",
-    "title": "Pre-Allied Health",
-    "award": "A.A. Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/a-a-in-pre-allied-health-fall-2026-credit-noncredit",
-    "coverage": 0.923,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44369",
-    "title": "Motorsports",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-motorsports-fall-2025-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44424",
-    "title": "Emergency Medical Services: BLS Provider",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-emergency-medical-services-bls-provider-fall-2024-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44426",
-    "title": "Emergency Response: Emphasis in EMS & Fire Science",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-emergency-response-emphasis-in-ems-fire-science-fall-2024-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44432",
-    "title": "Bus Coach Operator",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-bus-coach-operator-fall-2024-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44455",
-    "title": "Nutrition and Dietetics",
-    "award": "A.S. T Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/as-t-nutrition-and-dietetics-fall-2025-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44754",
-    "title": "Electric Vehicle Technology",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-electric-vehicle-technology-fall-2025-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45251",
-    "title": "Foundations in Early Childhood Education",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-foundations-in-early-childhood-education-fall-2025-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45252",
-    "title": "Infant-Toddler Specialization",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-infant-toddler-specialization-fall-2025-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45456",
-    "title": "Law Pathway",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-law-pathway-fall-2026-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45508",
-    "title": "Social Work and Human Services",
-    "award": "A.A- T Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/aa-t-social-work-and-human-services-fall-2026-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://marin.elumenapp.com/catalog/current/program/aa-t-kinesiology-fall-2026-credit-noncredit",
+    "was_coverage": 0.925,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "46068",
     "title": "Biology",
     "award": "A.S. T Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/a-s-in-biology-fall-2026-credit-noncredit",
+    "url": "https://marin.elumenapp.com/catalog/current/program,as-t-biology-fall-2025-credit-noncredit",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46223",
-    "title": "Elementary Teacher Education: Integrated Programs",
-    "award": "A.A. Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/aa-t-in-elementary-teacher-education-integrated-studies-fall-2026-credit-noncredit",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://marin.elumenapp.com/catalog/current/program/a-s-in-biology-fall-2026-credit-noncredit",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "46242",
     "title": "Studio Arts",
     "award": "A.A- T Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/aa-t-in-studio-arts-fall-2026-credit-noncredit",
+    "url": "https://marin.elumenapp.com/catalog/current/program,aa-t-in-studio-arts-fall-2026-credit-noncredit",
     "coverage": 0.938,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://marin.elumenapp.com/catalog/current/program/aa-t-in-studio-arts-fall-2026-credit-noncredit",
+    "was_coverage": 0.938,
+    "was_method": "sitemap_page"
+   }
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [
+   {
+    "control_number": "03366",
+    "title": "Business, General",
+    "award": "A.S. Degree",
+    "url": "https://marin.elumenapp.com/catalog/current/program,a-s-in-business-general-fall-2026-credit-noncredit",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "03370",
+    "title": "Court Reporting",
+    "award": "A.S. Degree",
+    "url": "https://marin.elumenapp.com/catalog/current/program,a-s-in-court-reporting-spring-2023-credit-noncredit",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "03374",
+    "title": "Computer Science",
+    "award": "A.S. Degree",
+    "url": "https://marin.elumenapp.com/catalog/current/program,a-s-in-computer-science-fall-2024-credit-noncredit",
+    "coverage": 0.944,
+    "was_coverage": 0.944
+   },
+   {
+    "control_number": "03376",
+    "title": "Kinesiology and Health",
+    "award": "A.A. Degree",
+    "url": "https://marin.elumenapp.com/catalog/current/program,a-a-in-kinesiology-and-health-fall-2026-credit-noncredit",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "03387",
+    "title": "Music",
+    "award": "A.A. Degree",
+    "url": "https://marin.elumenapp.com/catalog/current/program,a-a-in-music-fall-2022-credit-noncredit",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "03389",
+    "title": "Dance",
+    "award": "A.A. Degree",
+    "url": "https://marin.elumenapp.com/catalog/current/program,a-a-in-dance-fall-2026-credit-noncredit",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "11791",
+    "title": "Natural History",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://marin.elumenapp.com/catalog/current/program,certificate-of-achievement-natural-history-fall-2024-credit-noncredit",
+    "coverage": 0.833,
+    "was_coverage": 0.833
+   },
+   {
+    "control_number": "15552",
+    "title": "Computer Information Systems",
+    "award": "A.S. Degree",
+    "url": "https://marin.elumenapp.com/catalog/current/program,a-s-in-computer-information-systems-summer-2020-credit-noncredit",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "21946",
+    "title": "Computer Information Systems",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://marin.elumenapp.com/catalog/current/program,certificate-of-achievement-computer-information-systems-fall-2019-credit-noncredit",
+    "coverage": 0.947,
+    "was_coverage": 0.947
+   },
+   {
+    "control_number": "30893",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://marin.elumenapp.com/catalog/current/program,aa-t-psychology-fall-2026-credit-noncredit",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "31474",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://marin.elumenapp.com/catalog/current/program,aa-t-political-science-fall-2026-credit-noncredit",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "31717",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://marin.elumenapp.com/catalog/current/program,aa-t-english-fall-2026-credit-noncredit",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "32114",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://marin.elumenapp.com/catalog/current/program,as-t-early-childhood-education-fall-2025-credit-noncredit",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "32934",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://marin.elumenapp.com/catalog/current/program,aa-t-theatre-arts-fall-2026-credit-noncredit",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "33056",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://marin.elumenapp.com/catalog/current/program,as-t-physics-fall-2025-credit-noncredit",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "33059",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://marin.elumenapp.com/catalog/current/program,as-t-geology-fall-2025-credit-noncredit",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "33061",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://marin.elumenapp.com/catalog/current/program,as-t-administration-of-justice-fall-2026-credit-noncredit",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "33069",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "url": "https://marin.elumenapp.com/catalog/current/program,aa-t-geography-fall-2026-credit-noncredit",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "33074",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://marin.elumenapp.com/catalog/current/program,aa-t-economics-fall-2026-credit-noncredit",
+    "coverage": 0.947,
+    "was_coverage": 0.947
+   },
+   {
+    "control_number": "33077",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://marin.elumenapp.com/catalog/current/program,aa-t-history-fall-2026-credit-noncredit",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "33080",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "https://marin.elumenapp.com/catalog/current/program,aa-t-philosophy-fall-2026-credit-noncredit",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "33086",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://marin.elumenapp.com/catalog/current/program,aa-t-art-history-fall-2026-credit-noncredit",
+    "coverage": 0.969,
+    "was_coverage": 0.969
+   },
+   {
+    "control_number": "33089",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://marin.elumenapp.com/catalog/current/program,aa-t-anthropology-fall-2026-credit-noncredit",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "33669",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://marin.elumenapp.com/catalog/current/program,aa-t-spanish-fall-2026-credit-noncredit",
+    "coverage": 0.882,
+    "was_coverage": 0.882
+   },
+   {
+    "control_number": "36465",
+    "title": "Associate in Science in Hospitality Management",
+    "award": "A.S. T Degree",
+    "url": "https://marin.elumenapp.com/catalog/current/program,as-t-hospitality-management-fall-2026-credit-noncredit",
+    "coverage": 0.9,
+    "was_coverage": 0.9
+   },
+   {
+    "control_number": "40080",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://marin.elumenapp.com/catalog/current/program,aa-t-sociology-fall-2026-credit-noncredit",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "40719",
+    "title": "Hospitality Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://marin.elumenapp.com/catalog/current/program,certificate-of-achievement-hospitality-management-spring-2021-credit-noncredit",
+    "coverage": 0.8,
+    "was_coverage": 0.8
+   },
+   {
+    "control_number": "40776",
+    "title": "Graphic Design",
+    "award": "A.A. Degree",
+    "url": "https://marin.elumenapp.com/catalog/current/program,a-a-in-graphic-design-fall-2026-credit-noncredit",
+    "coverage": 0.667,
+    "was_coverage": 0.667
+   },
+   {
+    "control_number": "41032",
+    "title": "Theatrical Technologies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://marin.elumenapp.com/catalog/current/program,certificate-of-achievement-theatrical-technologies-fall-2021-credit-noncredit",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "41510",
+    "title": "Global Studies",
+    "award": "A.A- T Degree",
+    "url": "https://marin.elumenapp.com/catalog/current/program,aa-t-in-global-studies-fall-2026-credit-noncredit",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "41765",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://marin.elumenapp.com/catalog/current/program,as-t-business-administration-2-0-fall-2026-credit-noncredit",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "42290",
+    "title": "Public Safety",
+    "award": "A.A. Degree",
+    "url": "https://marin.elumenapp.com/catalog/current/program,a-a-in-public-safety-fall-2025-credit-noncredit",
+    "coverage": 0.968,
+    "was_coverage": 0.968
+   },
+   {
+    "control_number": "43473",
+    "title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "url": "https://marin.elumenapp.com/catalog/current/program,aa-t-in-law-public-policy-and-society-fall-2026-credit-noncredit",
+    "coverage": 0.93,
+    "was_coverage": 0.93
+   },
+   {
+    "control_number": "44172",
+    "title": "Pre-Allied Health",
+    "award": "A.A. Degree",
+    "url": "https://marin.elumenapp.com/catalog/current/program,a-a-in-pre-allied-health-fall-2026-credit-noncredit",
+    "coverage": 0.923,
+    "was_coverage": 0.923
+   },
+   {
+    "control_number": "44455",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://marin.elumenapp.com/catalog/current/program,as-t-nutrition-and-dietetics-fall-2025-credit-noncredit",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "45508",
+    "title": "Social Work and Human Services",
+    "award": "A.A- T Degree",
+    "url": "https://marin.elumenapp.com/catalog/current/program,aa-t-social-work-and-human-services-fall-2026-credit-noncredit",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "46223",
+    "title": "Elementary Teacher Education: Integrated Programs",
+    "award": "A.A. Degree",
+    "url": "https://marin.elumenapp.com/catalog/current/program,aa-t-in-elementary-teacher-education-integrated-studies-fall-2026-credit-noncredit",
+    "coverage": 1.0,
+    "was_coverage": 1.0
    },
    {
     "control_number": "46243",
     "title": "Child and Adolescent Development",
     "award": "A.A- T Degree",
-    "url": "https://marin.elumenapp.com/catalog/current/program/aa-t-in-child-and-adolescent-development-fall-2026-credit-noncredit",
+    "url": "https://marin.elumenapp.com/catalog/current/program,aa-t-in-child-and-adolescent-development-fall-2026-credit-noncredit",
     "coverage": 0.963,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.963
    }
-  ]
+  ],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
  },
- "run": "38984695817"
+ "fingerprints": {
+  "03366": {
+   "sha256": "6023ee195f5b3443acfe916dc2955d172d18cd6dbfbd7373e2c9510a04d4c0c6",
+   "url": "https://marin.elumenapp.com/catalog/current/program,a-s-in-business-general-fall-2026-credit-noncredit"
+  },
+  "03370": {
+   "sha256": "ab433e737478d0a89fafa4101c4e6705f58f9903da1cdaa555920c231718ef91",
+   "url": "https://marin.elumenapp.com/catalog/current/program,a-s-in-court-reporting-spring-2023-credit-noncredit"
+  },
+  "03374": {
+   "sha256": "50e2864c9649ed66b1b4f9e07523e03cc2a9376c019e47c0086a517678b1695c",
+   "url": "https://marin.elumenapp.com/catalog/current/program,a-s-in-computer-science-fall-2024-credit-noncredit"
+  },
+  "03376": {
+   "sha256": "c22946d32878b3e7180250e39d8a47a4259c2bd5d2090c580b34cfa5becf9684",
+   "url": "https://marin.elumenapp.com/catalog/current/program,a-a-in-kinesiology-and-health-fall-2026-credit-noncredit"
+  },
+  "03386": {
+   "sha256": "8f28cb83900291994ac5efa437ee5fc0c4bc96b32884e836fbab5513890708ac",
+   "url": "https://marin.elumenapp.com/catalog/current/program/a-a-in-art-fall-2026-credit-noncredit"
+  },
+  "03387": {
+   "sha256": "398f12069153e00a9ec7323268ace687bf9f3e5b3ef018d35e1ce0d321a1e2f4",
+   "url": "https://marin.elumenapp.com/catalog/current/program,a-a-in-music-fall-2022-credit-noncredit"
+  },
+  "03389": {
+   "sha256": "609572bf531073b495d91d3d4993c5050df38f24be834953b0ad44c08fe6ada0",
+   "url": "https://marin.elumenapp.com/catalog/current/program,a-a-in-dance-fall-2026-credit-noncredit"
+  },
+  "07171": {
+   "sha256": "227913415400c5f18246665c9bd36b82c9847b39ba3b84c2c8d04515bbed8f02",
+   "url": "https://marin.elumenapp.com/catalog/current/program/a-s-in-multimedia-studies-graphic-design-fall-2026-credit-noncredit"
+  },
+  "07646": {
+   "sha256": "6cf4f633c732e9b7d12623b9e5187d2e7809ccf5b8912d72243e54a00ee4bafe",
+   "url": "https://marin.elumenapp.com/catalog/current/program/a-a-in-communication-filmmaking-fall-2026-credit-noncredit"
+  },
+  "07647": {
+   "sha256": "b6c206e82b4398fbb2420676304cb109c510d8b5b52040e015b637143e3f38d0",
+   "url": "https://marin.elumenapp.com/catalog/current/program/a-a-in-communication-screenwriting-fall-2026-credit-noncredit"
+  },
+  "11791": {
+   "sha256": "30fe046bc88466362b04365107e03936cb208669618b92329b2066f85a8d5d3b",
+   "url": "https://marin.elumenapp.com/catalog/current/program,certificate-of-achievement-natural-history-fall-2024-credit-noncredit"
+  },
+  "14769": {
+   "sha256": "3c8685e47a4c75b8853771bd87e7824d4eb61e2c8dfaafdc7e8e04f9ab46460e",
+   "url": "https://marin.elumenapp.com/catalog/current/program/a-s-in-multimedia-studies-game-design-fall-2025-credit-noncredit"
+  },
+  "14770": {
+   "sha256": "489b1686504640511f8773ac3362d775c8392c0ea8b18bc6b7e0359b2dbb339d",
+   "url": "https://marin.elumenapp.com/catalog/current/program/a-s-in-multimedia-studies-web-design-and-development-fall-2023-credit-noncredit"
+  },
+  "15552": {
+   "sha256": "861f563e8373b263c46f8df504bcad3e3d4a7584a9998e0c456f5d9c519bea62",
+   "url": "https://marin.elumenapp.com/catalog/current/program,a-s-in-computer-information-systems-summer-2020-credit-noncredit"
+  },
+  "19789": {
+   "sha256": "d64b837d650c46ffb009b96e5533216370e8e63a358ebf6221d7b66c0fc9635e",
+   "url": "https://marin.elumenapp.com/catalog/current/program,a-a-in-liberal-arts-language-and-communication-emphasis-fall-2026-credit-noncredit"
+  },
+  "19790": {
+   "sha256": "68b8e2accd2b61ca3129d66ce3c30da9a6b342ed47df1dfb8a9af2b532ddbf74",
+   "url": "https://marin.elumenapp.com/catalog/current/program,a-a-in-liberal-arts-natural-science-emphasis-fall-2026-credit-noncredit"
+  },
+  "19791": {
+   "sha256": "67f9fb9a7e94c0563c7b6db004c308c09c8cd5151728f541531656bb78c5a3a8",
+   "url": "https://marin.elumenapp.com/catalog/current/program,a-a-in-liberal-arts-social-and-behavioral-sciences-emphasis-fall-2026-credit-noncredit"
+  },
+  "21935": {
+   "sha256": "57df19b280666cd30d2300ea7b6f59877f4874fd5fb03171a4209476dfa6da50",
+   "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-in-business-general-fall-2026-credit-noncredit"
+  },
+  "21943": {
+   "sha256": "7a3688397690811e4810986e850863236ee0345a3e3333552747a71c667aee54",
+   "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-in-multimedia-studies-web-design-and-development-fall-2023-credit-noncredit"
+  },
+  "21944": {
+   "sha256": "f8900e44f3fbae3dda60f45a00892647c4cbe3944a5f16bfa3575867a510197a",
+   "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-in-multimedia-studies-game-design-fall-2025-credit-noncredit"
+  },
+  "21945": {
+   "sha256": "9c1c0042659cead6915f7a7bd7c0b6ed4d4aae4d9beea27ee5463191a994180c",
+   "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-in-multimedia-studies-graphic-design-fall-2020-credit-noncredit"
+  },
+  "21946": {
+   "sha256": "828c1d5f5900a8918ffe1a1b418211c31991ba06450b952c21e62c73df0e1380",
+   "url": "https://marin.elumenapp.com/catalog/current/program,certificate-of-achievement-computer-information-systems-fall-2019-credit-noncredit"
+  },
+  "21949": {
+   "sha256": "f77ff85e5f36166c8713c3b715628c738ee41927d5fe4e76cac52612648c04f3",
+   "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-automotive-chassis-and-drivetrain-specialist-a3-a4-a5-fall-2025-credit-noncredit"
+  },
+  "21950": {
+   "sha256": "5fe8ca39976f90396c06bd498645788d99a5fbbaf01ffc7d183ce013e0847cbb",
+   "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-automotive-electronics-specialist-a6-a7-a8-fall-2025-credit-noncredit"
+  },
+  "21952": {
+   "sha256": "0f02e8778e3c1f74a8a46f5a43edee5d57efc9ba43e4271c8a168f6582369d9d",
+   "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-automotive-engine-specialist-a1-a9-fall-2025-credit-noncredit"
+  },
+  "21957": {
+   "sha256": "7c99adc8412a074d37555da2e506793a1f407bf812a476bcf21a5cd07c2e9c74",
+   "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-in-medical-assisting-administrative-option-occupational-fall-2023-credit-noncredit"
+  },
+  "30893": {
+   "sha256": "98fa947540fbde1245b7dbaa02f6ab27db9d8553da95d4ef4a7491d0257f7875",
+   "url": "https://marin.elumenapp.com/catalog/current/program,aa-t-psychology-fall-2026-credit-noncredit"
+  },
+  "31474": {
+   "sha256": "0c523a55ee116611f5cd95205d9e458d23e14f41f8fefef958a195c4e4fc0aa3",
+   "url": "https://marin.elumenapp.com/catalog/current/program,aa-t-political-science-fall-2026-credit-noncredit"
+  },
+  "31717": {
+   "sha256": "d4230b7319f9771ba59bf25d14ff4766786f8337052cfb4ccbfe9967be1d8586",
+   "url": "https://marin.elumenapp.com/catalog/current/program,aa-t-english-fall-2026-credit-noncredit"
+  },
+  "32114": {
+   "sha256": "e88555c627fc7ecafa6e410b29221427397050ec2c035b15638425fe9235a696",
+   "url": "https://marin.elumenapp.com/catalog/current/program,as-t-early-childhood-education-fall-2025-credit-noncredit"
+  },
+  "32934": {
+   "sha256": "4c3df894090a6627c11a883f02a0f56f77583268a3edf5cbe90ea272c1bf1204",
+   "url": "https://marin.elumenapp.com/catalog/current/program,aa-t-theatre-arts-fall-2026-credit-noncredit"
+  },
+  "33056": {
+   "sha256": "3b58498470e894361b40bf9784aeb755741b2e297ffed923020e9b9d9b03bf47",
+   "url": "https://marin.elumenapp.com/catalog/current/program,as-t-physics-fall-2025-credit-noncredit"
+  },
+  "33059": {
+   "sha256": "458b65a148192987247af351d098db9b989cf68cfab948a7f2f6df4ec119e7f4",
+   "url": "https://marin.elumenapp.com/catalog/current/program,as-t-geology-fall-2025-credit-noncredit"
+  },
+  "33061": {
+   "sha256": "9a325b794c6354c569f90ec123da901c0abb6f93a12345dd1f63f32923f06583",
+   "url": "https://marin.elumenapp.com/catalog/current/program,as-t-administration-of-justice-fall-2026-credit-noncredit"
+  },
+  "33069": {
+   "sha256": "506b5f147c51ea602e50a5a9aa12fbb169526e3148d6a2ff3b700a213f60a37c",
+   "url": "https://marin.elumenapp.com/catalog/current/program,aa-t-geography-fall-2026-credit-noncredit"
+  },
+  "33074": {
+   "sha256": "57d199739528cfd718111eb73f681a75d009c0c215e22b09a5e5aa9d67157cda",
+   "url": "https://marin.elumenapp.com/catalog/current/program,aa-t-economics-fall-2026-credit-noncredit"
+  },
+  "33075": {
+   "sha256": "9059a9066f6619f737155d199962a1a43d40574f4838e607262b06bb0054e640",
+   "url": "https://marin.elumenapp.com/catalog/current/program,as-t-in-mathematics-fall-2025-credit-noncredit"
+  },
+  "33077": {
+   "sha256": "d8d4bd41ab65dfd2ae95fa096f96b6b0e49e8dfb823df9cb637a5b034c5fdb9a",
+   "url": "https://marin.elumenapp.com/catalog/current/program,aa-t-history-fall-2026-credit-noncredit"
+  },
+  "33080": {
+   "sha256": "58b56117db5ee9970c799ea145d063c5512b24d6b72efefc9df6e07968e55490",
+   "url": "https://marin.elumenapp.com/catalog/current/program,aa-t-philosophy-fall-2026-credit-noncredit"
+  },
+  "33086": {
+   "sha256": "30c3825cf08c871b8b7d33e44f012ba92ec066f6074e37b22df06d22f9e1d60e",
+   "url": "https://marin.elumenapp.com/catalog/current/program,aa-t-art-history-fall-2026-credit-noncredit"
+  },
+  "33089": {
+   "sha256": "6a84c10d66ad40a0fad1761ecba3af0d00fd80549d23a32cc2e854502aae9eeb",
+   "url": "https://marin.elumenapp.com/catalog/current/program,aa-t-anthropology-fall-2026-credit-noncredit"
+  },
+  "33669": {
+   "sha256": "1dd953dd42a4b1631a2bc7c3f1b31aa8ffe4e0d78c39210fa6d45f3ddc127fd4",
+   "url": "https://marin.elumenapp.com/catalog/current/program,aa-t-spanish-fall-2026-credit-noncredit"
+  },
+  "33824": {
+   "sha256": "0f14fbea73d98abb621a038f4ef6f38d774bfe861aec073f28eaea52cf45488b",
+   "url": "https://marin.elumenapp.com/catalog/current/program,aa-t-kinesiology-fall-2026-credit-noncredit"
+  },
+  "36465": {
+   "sha256": "d99123c222f151be759193ce568b7a0b4f7496ec16726027952958cd68bd53d7",
+   "url": "https://marin.elumenapp.com/catalog/current/program,as-t-hospitality-management-fall-2026-credit-noncredit"
+  },
+  "40080": {
+   "sha256": "0c2470b078b524f780fbf5e5768373b55341ab07a2708ca0477691866e0aa520",
+   "url": "https://marin.elumenapp.com/catalog/current/program,aa-t-sociology-fall-2026-credit-noncredit"
+  },
+  "40719": {
+   "sha256": "02e5b4b5582e90abe7d34755ce8f7dd8769913f40912ff6a89abf54c010509f2",
+   "url": "https://marin.elumenapp.com/catalog/current/program,certificate-of-achievement-hospitality-management-spring-2021-credit-noncredit"
+  },
+  "40776": {
+   "sha256": "432821f984c6f704ab8269afe22b5e801da8195fe9d3dc45efd071f09e658872",
+   "url": "https://marin.elumenapp.com/catalog/current/program,a-a-in-graphic-design-fall-2026-credit-noncredit"
+  },
+  "40777": {
+   "sha256": "9c1c0042659cead6915f7a7bd7c0b6ed4d4aae4d9beea27ee5463191a994180c",
+   "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-in-multimedia-studies-graphic-design-fall-2020-credit-noncredit"
+  },
+  "41032": {
+   "sha256": "4190d5b7932381f5325304e08f806185cef43b68d53eb187f7dc713a69ac0315",
+   "url": "https://marin.elumenapp.com/catalog/current/program,certificate-of-achievement-theatrical-technologies-fall-2021-credit-noncredit"
+  },
+  "41437": {
+   "sha256": "270efeb48d244a6823c4db41f1331ff8ce89414e6c862609ae0356bd92e5ebea",
+   "url": "https://marin.elumenapp.com/catalog/current/program/vocational-1-certificate-of-competency-esl-for-childcare-workers-fall-2020-credit-noncredit"
+  },
+  "41440": {
+   "sha256": "b61844f65627e304fe4aab72c20f89a8a7a7024c5f00f11cf7a532b318bcd6f2",
+   "url": "https://marin.elumenapp.com/catalog/current/program/5-certificate-of-competency-academic-esl-preparation-fall-2020-credit-noncredit"
+  },
+  "41441": {
+   "sha256": "5a6486c908b4b677654cdadfc6731a4d5b822c1d776d041c883a44d52a78fb96",
+   "url": "https://marin.elumenapp.com/catalog/current/program/1-certificate-of-competency-esl-beginning-summer-2020-credit-noncredit"
+  },
+  "41442": {
+   "sha256": "3290f418ed8f08fe04b57d83153d369f2c956b8f4c3371fce1c1d4d6b4ad1e0b",
+   "url": "https://marin.elumenapp.com/catalog/current/program/2-certificate-of-competency-esl-high-beginning-fall-2020-credit-noncredit"
+  },
+  "41443": {
+   "sha256": "16053e57ff4d4e4ad315a25c20ca69653fb9e8c16b1bf0ed9ff46c4a94cd4f3d",
+   "url": "https://marin.elumenapp.com/catalog/current/program/4-certificate-of-competency-esl-low-intermediate-b-fall-2020-credit-noncredit"
+  },
+  "41510": {
+   "sha256": "8d21eced240362b718f85e4d110e894043f593e588996f08f5528c8a012fbc84",
+   "url": "https://marin.elumenapp.com/catalog/current/program,aa-t-in-global-studies-fall-2026-credit-noncredit"
+  },
+  "41520": {
+   "sha256": "434fa4f3163b153fe7d63eb6a0440110ea4cb43535795b82095d4d7028c8e035",
+   "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-in-automotive-collision-repair-technology-painting-and-refinishing-fall-2025-credit-noncredit"
+  },
+  "41530": {
+   "sha256": "38aa82c16d15e4f140216e54daf4213fd733e126b364b6fde95e0b912ce137ce",
+   "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-automotive-collision-repair-technology-structural-and-nonstructural-damage-repair-fall-2025-credit-noncredit"
+  },
+  "41765": {
+   "sha256": "907741b93054a6ef8e7e68eb93ff1e6ea2550b6620c4354015e112e737f59b3b",
+   "url": "https://marin.elumenapp.com/catalog/current/program,as-t-business-administration-2-0-fall-2026-credit-noncredit"
+  },
+  "41870": {
+   "sha256": "3683f011fed7d914af97c553398f230731d341e471b64556f6836123e6c45c02",
+   "url": "https://marin.elumenapp.com/catalog/current/program/stackable-coa-1-certificate-of-achievement-in-court-reporting-proofreading-fall-2022-credit-noncredit"
+  },
+  "42114": {
+   "sha256": "d52077c03902573c88dddd774e3c990a214f40a17c6d2b749e3425b2c9c21fcf",
+   "url": "https://marin.elumenapp.com/catalog/current/program/stackable-coa-2-certificate-of-achievement-in-court-reporting-scopist-fall-2022-credit-noncredit"
+  },
+  "42125": {
+   "sha256": "0e5cbe65e803fb1945aa561814a044c9b83d8c549250a0d6f11205395b6f0fec",
+   "url": "https://marin.elumenapp.com/catalog/current/program/stackable-coa-3-certificate-of-achievement-in-court-reporting-communication-access-realtime-translation-c-a-r-t-fall-2022-credit-noncredit"
+  },
+  "42136": {
+   "sha256": "c759c5b07202347120d7d62b3503e3466564c06b8966961f6041cb7fa326a9d4",
+   "url": "https://marin.elumenapp.com/catalog/current/program/stackable-coa-4-certificate-of-achievement-in-court-reporting-csr-ready-fall-2022-credit-noncredit"
+  },
+  "42189": {
+   "sha256": "658fef553e4408359d99b133a44c8ee2e8c661aa9d9ba0a06645a94d712c7d98",
+   "url": "https://marin.elumenapp.com/catalog/current/program/3-certificate-of-competency-esl-low-intermediate-a-fall-2020-credit-noncredit"
+  },
+  "42290": {
+   "sha256": "a9629a63f1fe1e665fd7c895f7458fd21122d02703dcd35363f404c056ca6f33",
+   "url": "https://marin.elumenapp.com/catalog/current/program,a-a-in-public-safety-fall-2025-credit-noncredit"
+  },
+  "42616": {
+   "sha256": "8582c89ded1a7036fec734a58e78869d8f6f534f828672cad471154ae903a99f",
+   "url": "https://marin.elumenapp.com/catalog/current/program/2-certificate-of-competency-high-intermediate-esl-fall-2020-credit-noncredit"
+  },
+  "42653": {
+   "sha256": "a5f50799fe9e0f5977bf0b5bf4418cc20503565b15abb9f2eadf72e293961e1e",
+   "url": "https://marin.elumenapp.com/catalog/current/program/1-certificate-of-competency-intermediate-esl-fall-2020-credit-noncredit"
+  },
+  "42751": {
+   "sha256": "abbca86859d429aca525827edc3e635fd61890f65e1adf2c1c02f099a3953388",
+   "url": "https://marin.elumenapp.com/catalog/current/program/3-certificate-of-competency-low-advanced-esl-fall-2020-credit-noncredit"
+  },
+  "42782": {
+   "sha256": "4e148d35d8f52818288e8582dffa16406614a43f619aa46eba3f6acd3192d253",
+   "url": "https://marin.elumenapp.com/catalog/current/program/4-certificate-of-competency-intermediate-pronunciation-for-esl-students-fall-2020-credit-noncredit"
+  },
+  "42783": {
+   "sha256": "1d796be6999fa1dda092348894b878d651bebfef9b546e91c8fa6cba672d7ef6",
+   "url": "https://marin.elumenapp.com/catalog/current/program/6-certificate-of-competency-listening-speaking-skills-a-fall-2020-credit-noncredit"
+  },
+  "42784": {
+   "sha256": "32808b16141be7f51ec92a83ce9688aa0ce60621f9a5635e55ce030ce5fef3f1",
+   "url": "https://marin.elumenapp.com/catalog/current/program/5-certificate-of-competency-listening-speaking-skills-b-fall-2020-credit-noncredit"
+  },
+  "43257": {
+   "sha256": "0f490066fddcabb25373569fecacba080267810b3c1e79bba6734a15f4312b54",
+   "url": "https://marin.elumenapp.com/catalog/current/program/aa-t-communication-studies-2-0-fall-2026-credit-noncredit"
+  },
+  "43473": {
+   "sha256": "68aa90e12ddff996028370f4b99ec41d27b913685d033b9f73c9478e6380fc43",
+   "url": "https://marin.elumenapp.com/catalog/current/program,aa-t-in-law-public-policy-and-society-fall-2026-credit-noncredit"
+  },
+  "43581": {
+   "sha256": "1de2127d897b89ba9a81c2792d841ebf4a97dbfed0d634419b9ec697167bf914",
+   "url": "https://marin.elumenapp.com/catalog/current/program/vocational-2-certificate-of-competency-esl-for-customer-service-fall-2020-credit-noncredit"
+  },
+  "43771": {
+   "sha256": "164b28dca96dd53290545ee6fd279328c9f6ae15b9a0143b6f82fb9e300c8913",
+   "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-welding-fall-2024-credit-noncredit"
+  },
+  "44172": {
+   "sha256": "78ed63329a06e1a105560b1c2ef49bbc4cf4deab8860e005606f913dbd6513c2",
+   "url": "https://marin.elumenapp.com/catalog/current/program,a-a-in-pre-allied-health-fall-2026-credit-noncredit"
+  },
+  "44369": {
+   "sha256": "aea2453b27d4c7a5f0ab4d820578ec4e8be1c4133dea05afa9433d97f6ebec09",
+   "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-motorsports-fall-2025-credit-noncredit"
+  },
+  "44424": {
+   "sha256": "295bf1c265d152a561e902129088e0b78b363e0c58feb7b8f690ef5538070ab6",
+   "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-emergency-medical-services-bls-provider-fall-2024-credit-noncredit"
+  },
+  "44426": {
+   "sha256": "00bd422f7a46227cd7d51bb831fd945f1e8d52d4dd5ef01617ac5501fb792627",
+   "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-emergency-response-emphasis-in-ems-fire-science-fall-2024-credit-noncredit"
+  },
+  "44432": {
+   "sha256": "032e500ff6b0d83283149357ec32a962b2e588abb0f66c757bf39fb2be2a9211",
+   "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-bus-coach-operator-fall-2024-credit-noncredit"
+  },
+  "44455": {
+   "sha256": "452b64a045cff3918e5715536de4ab9d749a10ce0227b8e860b853beb80fcb1d",
+   "url": "https://marin.elumenapp.com/catalog/current/program,as-t-nutrition-and-dietetics-fall-2025-credit-noncredit"
+  },
+  "44754": {
+   "sha256": "e63f027debab1e7c82c93e8b12a2da5c462ece65edc6a5019117d479f7cd473e",
+   "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-electric-vehicle-technology-fall-2025-credit-noncredit"
+  },
+  "45251": {
+   "sha256": "e52dd112275f8a9cf26c81498acc28c9acd31856f91b34d4076ed7099463d956",
+   "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-foundations-in-early-childhood-education-fall-2025-credit-noncredit"
+  },
+  "45252": {
+   "sha256": "0d3c2fc9985e0aacc70f30c45ff66e0b33b0dc00ac2885de785fe9f6a6ed4ff1",
+   "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-infant-toddler-specialization-fall-2025-credit-noncredit"
+  },
+  "45456": {
+   "sha256": "447cff10d81afc5852f5d5db9827fe275171405d5f41a55791eb5271496bd5e9",
+   "url": "https://marin.elumenapp.com/catalog/current/program/certificate-of-achievement-law-pathway-fall-2026-credit-noncredit"
+  },
+  "45508": {
+   "sha256": "813c1ec6b2e3514e1561fa7d459589fb16678e528f71d0638a39e19be4f8c9be",
+   "url": "https://marin.elumenapp.com/catalog/current/program,aa-t-social-work-and-human-services-fall-2026-credit-noncredit"
+  },
+  "46068": {
+   "sha256": "b3cb351bd15a9aa7ce9c2e45e448ff3dde5b71e2cb98656e95499a27a96efd4d",
+   "url": "https://marin.elumenapp.com/catalog/current/program,as-t-biology-fall-2025-credit-noncredit"
+  },
+  "46223": {
+   "sha256": "bb089f174d8156c6895366e93b29308ccb908048161f4b457df33e506df34a04",
+   "url": "https://marin.elumenapp.com/catalog/current/program,aa-t-in-elementary-teacher-education-integrated-studies-fall-2026-credit-noncredit"
+  },
+  "46242": {
+   "sha256": "52b16f3eb524cc310a4f5aa1882772d3c4f6d40f8b2893f5d7eeaa8fe7fa0aa9",
+   "url": "https://marin.elumenapp.com/catalog/current/program,aa-t-in-studio-arts-fall-2026-credit-noncredit"
+  },
+  "46243": {
+   "sha256": "c8c980e4e32b3165e3949d0af64e21648ee732e660bd83886cd1a7af561c2a21",
+   "url": "https://marin.elumenapp.com/catalog/current/program,aa-t-in-child-and-adolescent-development-fall-2026-credit-noncredit"
+  }
+ },
+ "run": "45135695869"
 }

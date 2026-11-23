@@ -66,10 +66,10 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    15.0,
+    18.0,
     19.0
    ],
    "stated": [
@@ -77,14 +77,13 @@
     18.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 15.0-19.0; the catalog states 18.0-18.0"
-   ],
+   "why": [],
+   "meets": true,
    "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     15.0,
+     18.0,
      19.0
     ],
     "stated": [
@@ -97,9 +96,15 @@
     "minimum": true,
     "fill": [
      41.0,
-     45.0
+     42.0
     ]
-   }
+   },
+   "heading_figures": [
+    {
+     "block": "CHOOSE THREE COURSES FROM THREE DIFFERENT DISCIPLINES FOR A MINIMUM OF NINE UNITS",
+     "figure": 9.0
+    }
+   ]
   },
   "repeated": {
    "codes": [],
@@ -123,7 +128,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

@@ -46,27 +46,30 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 71,
+   "placed": 73,
    "listed": 73,
-   "share": 0.973,
-   "missing": [
-    "ART101",
-    "ART102"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ARTHC1100",
+     "listed": "ART101",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTHC1200",
+     "listed": "ART102",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "ARTHC1100",
-    "ARTHC1200"
-   ],
-   "flagged": [
-    "ARTHC1100",
-    "ARTHC1200"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -718,5 +721,6 @@
    "Catalog text ends truncated ('Due to the no')."
   ]
  },
- "extracted_run": "38979725726"
+ "extracted_run": 45133183717,
+ "read_run": "38979725726"
 }
