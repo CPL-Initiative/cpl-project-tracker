@@ -64,34 +64,34 @@
    "pass": true,
    "status": "equal",
    "computed": [
-    100.0,
-    102.0
+    112.0,
+    114.0
    ],
    "stated": [
-    100.0,
-    102.0
+    106.0,
+    108.0
    ],
-   "against": "program",
+   "against": "degree",
+   "ge": [
+    12.0,
+    12.0
+   ],
    "why": [],
-   "degree": {
+   "major": {
     "pass": true,
     "status": "equal",
     "computed": [
-     112.0,
-     114.0
+     100.0,
+     102.0
     ],
     "stated": [
-     106.0,
-     108.0
+     100.0,
+     102.0
     ],
-    "against": "degree",
-    "ge": [
-     12.0,
-     12.0
-    ],
-    "why": [],
-    "overlap": true
+    "against": "program",
+    "why": []
    },
+   "overlap": true,
    "rescored": "Sam's ruling of 2026-11-17, local degree overlap"
   },
   "repeated": {
@@ -479,7 +479,7 @@
    "The page includes internal eLumen workflow/checklist text, ignored."
   ]
  },
- "extracted_run": 45133183717,
+ "extracted_run": "38979725726",
  "reconciled": [
   {
    "field": "ge_overlap",
@@ -488,6 +488,5 @@
    "words": "the major sums to 100-102, the major total the catalog prints; the major and general education sum to 112-114 against the degree's 106-108 (Sam, 2026-11-17, \"Let major courses count toward general education for local degrees too\" (#3461, ruling 1))",
    "statewide": "local_degree_ge_overlap"
   }
- ],
- "read_run": "38979725726"
+ ]
 }

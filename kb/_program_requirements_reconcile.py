@@ -74,6 +74,20 @@ def _empty(v) -> bool:
     return v is None or v == 0
 
 
+def fills_degree_rest(prog: dict, m) -> bool:
+    """A fill match whose figure (min, and max when printed) is the degree total less the major's total: the low end
+    the degree's low less the major's high, the high end the degree's high less the major's low (S713)."""
+    dlo, dhi = (_num(x) for x in _span_of(prog.get("degree_total")))
+    tlo, thi = (_num(x) for x in _span_of(prog.get("total_units")))
+    if None in (dlo, dhi, tlo, thi):
+        return False
+    lo = _num(m.group("min"))
+    hi = _num(m.groupdict().get("max")) if m.groupdict().get("max") else lo
+    if lo is None or hi is None:
+        return False
+    return abs(lo - (dlo - thi)) <= 0.01 and abs(hi - (dhi - tlo)) <= 0.01
+
+
 def _heading_end(text, heading):
     """Where the program's heading ends on the page, or None. Letters and digits only, case kept: the PDF
     prints 'COMPUTER SUPPORT TECHNICIAN · CERTIFICATE NON-DEGREE' and 'ADV ANCED ESL: ... PAT H WAY' for
@@ -1225,7 +1239,14 @@ def _college_steps(record: dict, text: str | None, college: str, award: str | No
             if not bm:
                 continue
             scope = text[start:bm.start()]
-        m = re.search(st["pattern"], scope)
+        if st.get("fills_degree_rest"):
+            # S713 (#3707's second reader): a figure printed beside "general education plus electives" is the rest
+            # of the degree, so the step takes the first match whose span is the degree total less the major's
+            # (Antelope Valley 39295: 30-33 beside a 27-30 major and a 60 degree), never a list number, a footnote
+            # or a catalog year the pattern also reads after the line.
+            m = next((x for x in re.finditer(st["pattern"], scope) if fills_degree_rest(prog, x)), None)
+        else:
+            m = re.search(st["pattern"], scope)
         if not m:
             continue
         if st["kind"] == "pool_lists":

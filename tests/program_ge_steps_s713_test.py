@@ -28,13 +28,14 @@ def check(cond, msg):
         failures.append(msg)
 
 
-def rec(award):
-    return {"program": {"degree_total": {"min": 60, "max": 60}, "ge_pattern": "GE", "ge_units": {"min": None, "max": None}},
+def rec(award, total=(26, 26)):
+    return {"program": {"degree_total": {"min": 60, "max": 60}, "ge_pattern": "GE", "ge_units": {"min": None, "max": None},
+                        "total_units": {"min": total[0], "max": total[1]}},
             "blocks": []}
 
 
-def ge(college, award, text):
-    out, notes = R._college_steps(rec(award), text, college, award)[:2]
+def ge(college, award, text, total=(26, 26)):
+    out, notes = R._college_steps(rec(award, total), text, college, award)[:2]
     return (out.get("program") or {}).get("ge_units")
 
 
@@ -49,7 +50,22 @@ AVC = "Antelope Valley College"
 line = "Completion of General Education requirements, plus electives as needed to reach 60 units. %s units"
 check(ge(AVC, "A.A. Degree", line % "34") == {"min": 34.0, "max": 34.0}, "Antelope Valley reads a single figure")
 check(ge(AVC, "A.A. Degree", "Completion of General Education requirements, plus electives (as needed to reach 60 "
-         "units) 30-33") == {"min": 30.0, "max": 33.0}, "Antelope Valley reads a range")
+         "units) 30-33", total=(27, 30)) == {"min": 30.0, "max": 33.0}, "Antelope Valley reads a range")
+# #3707's second reader fed Commercial Music 36852's record (major 26, degree 60) lines where the first digits after
+# the words are no figure of the degree's rest: a list number, a footnote, a catalog year, and the words in the
+# proposal text above the table. The fill takes only a figure that is 60 less the major's 26.
+NONE = (None, {"min": None, "max": None})
+GE_WORDS = "Completion of General Education requirements, plus electives as needed to reach 60 units"
+for t in (GE_WORDS + "\n1. Select one course from List A",
+          GE_WORDS + " 2 See the footnote below the table",
+          GE_WORDS + " 2026-2027 Catalog",
+          "The proposal adds " + GE_WORDS + " 15 to the program."):
+    check(ge(AVC, "A.A. Degree", t) in NONE, "Antelope Valley takes no wrong figure from %r (%r)" % (
+        t[-40:], ge(AVC, "A.A. Degree", t)))
+check(ge(AVC, "A.A. Degree", "The proposal adds " + GE_WORDS + " 15 to the program.\n" + GE_WORDS + " 34 units")
+      == {"min": 34.0, "max": 34.0}, "Antelope Valley skips the proposal text and reads the table's 34")
+check(ge(AVC, "A.A. Degree", line % "35") in NONE, "a figure past 60 less the major is no fill (35 beside 26)")
+check(ge(AVC, "A.A. Degree", line % "34", total=(None, None)) in NONE, "no major total, no fill")
 check(ge(AVC, "A.A.-T Degree", line % "34") in (None, {"min": None, "max": None}), "never a transfer degree")
 check(ge(AVC, "Certificate of Achievement", line % "34") in (None, {"min": None, "max": None}), "never a certificate")
 MARIN = "College of Marin"
@@ -86,9 +102,22 @@ for r in rows:
     check(str(filed.get("extracted_run")) == str(r["after_image"]["extracted_run"])
           and filed["record"]["program"].get("ge_units", {}).get("min") is not None,
           "%s %s: the committed record carries the run and its units" % k)
-check(len(rows) == 9 and all(r["passes_after"] and not r["passes_before"] for r in rows),
-      "9 rows, each moving a failing record to passing")
-check({k for k, v in predicted.items() if v and k[0] != MARIN} == keys, "every predicted pass has a row")
+check(len(rows) == 8 and all(r["passes_after"] and not r["passes_before"] for r in rows),
+      "8 rows, each moving a failing record to passing")
+held = {(c, cn) for c, cn, _ in receipt["decided_held"]}
+check(held == {(LPC, "01037")}, "01037 is held: it passes only by double counting (d-ge-01037-held-double-count-s713)")
+check({k for k, v in predicted.items() if v and k[0] != MARIN} - held == keys, "every other predicted pass has a row")
+check([x[:2] for x in receipt["never_loaded_took_step"]] == [[LPC, "18813"]] and "18813" in receipt["run_notes"][LPC],
+      "18813 took the step, was never loaded, and is listed")
+for r in rows:
+    if r["college"] == AVC:
+        p = r["after_image"]["record"]["program"]
+        check(p["ge_units"]["min"] == p["degree_total"]["min"] - p["total_units"]["max"]
+              and p["ge_units"]["max"] == p["degree_total"]["max"] - p["total_units"]["min"],
+              "%s: the filed figure is the degree less the major" % r["control_number"])
+with open(os.path.join(ROOT, "kb", "program_requirements_college", "antelope_valley", "records", "17750.json"),
+          encoding="utf-8") as fh:
+    check(json.load(fh)["extracted_run"] != 45133183717, "17750 keeps main's record (its restamp is undone)")
 check(sorted([c, cn] for c, cn, *_ in receipt["record_written_verdict_same_not_planned"])
       == [["Antelope Valley College", "39295"], ["Las Positas College", "09227"]],
       "09227 and 39295 took their units, still fail, and take no row (the plan writes only what changes a verdict)")
@@ -100,7 +129,7 @@ for part in ("apply", "preread", "rollback"):
     check(set(re.findall(r"^\s*\(\d+, '([^']+)', '(\d{5})', \d+,", sql, re.M)) == keys,
           "the %s names exactly the plan's rows" % part)
     if part == "apply":
-        check("e(expect) as (values (9))" in sql and "when f.n > 0" in sql
+        check("e(expect) as (values (8))" in sql and "when f.n > 0" in sql
               and "program_record_fp(v.after_record)" in sql, "the apply's count guard and confirm guard")
     if part == "preread":
         check("'confirm_matches_after'" in sql, "the pre-read counts confirms matching the new record")

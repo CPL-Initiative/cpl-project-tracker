@@ -43,7 +43,9 @@ RUNS = {"Las Positas College": "45127792228", "Antelope Valley College": "451331
         "College of Marin": "45135695869"}
 # What each run's reconcile step printed (its job log).
 RUN_NOTES = {
-    "Las Positas College": "the step set LPC-GE's units on 6 local degrees; 5 pass, 09227 adds to 59-61 against 60",
+    "Las Positas College": ("the step set LPC-GE's units on 7 records: 6 local degrees (01032, 01037, 09214, 36235 "
+                            "and 38886 pass; 09227 adds to 59-61 against 60) and 18813, which places none of its "
+                            "courses and was never loaded, so it takes 28 on disk and no row"),
     "Antelope Valley College": "the fill read the printed figure on 5 local degrees; 4 pass, 39295 adds to 57-63 "
                                "against 60",
     "College of Marin": ("'reconcile: 0 filed records changed, 0 rescored, 45 had no fresh page (45 of them on another "
@@ -51,6 +53,10 @@ RUN_NOTES = {
                          "where the records were read from .../program/a-a-in-...), and the moved-page guard reads no "
                          "text it did not extract from. The step never ran on 19789 or 19791: no row."),
 }
+# The conductor's d-ge-01037-held-double-count-s713 (#3707's second reader): held out of the plan.
+DECIDED_HELD = {("Las Positas College", "01037"): ("passes only by double counting: LPC-GE's 28 against the 26-27 "
+                                                   "the page prints for general education and electives; "
+                                                   "d-ge-01037-held-double-count-s713")}
 KEYS = ("program_title", "award", "catalog_year", "source_url", "measure", "total_min", "total_max", "record",
         "checks", "extracted_run")
 
@@ -77,7 +83,7 @@ def _passes(img: dict) -> bool:
 
 
 def plan(base: str) -> dict:
-    rows, restamped, counts_only, same_verdict = [], [], [], []
+    rows, restamped, counts_only, same_verdict, decided_held = [], [], [], [], []
     for college in RUNS:
         before, after = images_at(base, college), images_now(college)
         for cn in sorted(after):
@@ -92,6 +98,9 @@ def plan(base: str) -> dict:
                 elif b["extracted_run"] != a["extracted_run"]:
                     restamped.append([college, cn])
                 continue
+            if (college, cn) in DECIDED_HELD:
+                decided_held.append([college, cn, DECIDED_HELD[(college, cn)]])
+                continue
             if _passes(b) == _passes(a):
                 # The conductor (S713): the plan writes only what changes a verdict. A step wrote the record (09227
                 # and 39295 took their general education units) and it still fails, so the live row keeps its old
@@ -105,7 +114,7 @@ def plan(base: str) -> dict:
     for i, r in enumerate(rows, 1):
         r["i"] = i
     return {"rows": rows, "restamped_not_planned": restamped, "counts_only_not_planned": counts_only,
-            "record_written_verdict_same_not_planned": same_verdict}
+            "record_written_verdict_same_not_planned": same_verdict, "decided_held": decided_held}
 
 
 def _q(s) -> str:
@@ -139,9 +148,18 @@ def _update(to: str, frm: str) -> str:
 LATEST = ("join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n"
           "                       where pv.college = v.college and pv.control_number = v.control_number\n"
           "                       order by pv.id desc limit 1) lv on true")
+# A confirm that would check a row once it holds the new record: one given on the new record itself, or one given on
+# the old record that the reread function would carry over (Sam, Open Asks Sheet 82 card 1: the latest verdict is a
+# confirm of the record being replaced, and the new record keeps its carry basis,
+# chatbox/supabase_program_requirement_records_college_reread.sql). #3707's second reader, finding 5.
+CONFIRM_AFTER = "lv.requirements_fp = public.program_record_fp(v.after_record)"
+CONFIRM_CARRIED = ("lv.requirements_fp = public.program_record_fp(v.before_record) and "
+                   "public.program_record_carry_basis(v.after_record) = public.program_record_carry_basis(v.before_record)")
 CONFIRM_CTE = ("f as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n"
                "        from v " + LATEST + "\n"
-               "       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(v.after_record))")
+               "       where lv.verdict = 'confirm'\n"
+               "         and (" + CONFIRM_AFTER + "\n"
+               "              or (" + CONFIRM_CARRIED + ")))")
 
 
 def apply_sql(rows: list[dict], tag: str) -> str:
@@ -152,7 +170,7 @@ def apply_sql(rows: list[dict], tag: str) -> str:
     sql = sql.replace(head, CONFIRM_CTE + ",\n" + head)
     sql = sql.replace(tail, "select case when f.n > 0\n"
                             "            then ('%s confirm guard: ' || f.n || ' rows hold a confirm verdict matching "
-                            "the new record ' || f.keys::text)::int::text::json\n"
+                            "the new record or carried from the old ' || f.keys::text)::int::text::json\n"
                             "            when s.n = e.expect - c.n\n" % tag)
     return sql.replace("  from s, c, e;", "  from s, c, e, f;")
 
@@ -171,8 +189,8 @@ def pre_read_sql(rows: list[dict]) -> str:
             "  'already_after', count(*) filter (where r.extracted_run = v.after_run and r.record = v.after_record "
             "and r.checks = v.after_checks),\n"
             "  'checked_now', count(*) filter (where r.checked),\n"
-            "  'confirm_matches_after', count(*) filter (where lv.verdict = 'confirm' "
-            "and lv.requirements_fp = public.program_record_fp(v.after_record)))\n"
+            "  'confirm_matches_after', count(*) filter (where lv.verdict = 'confirm' and " + CONFIRM_AFTER + "),\n"
+            "  'confirm_carried', count(*) filter (where lv.verdict = 'confirm' and " + CONFIRM_CARRIED + "))\n"
             "  from v join public.program_requirement_records r\n"
             "    on r.college = v.college and r.control_number = v.control_number\n"
             "  left " + LATEST + ";")
@@ -212,10 +230,14 @@ def main(argv=None) -> int:
             "restamped_not_planned": res["restamped_not_planned"],
             "counts_only_not_planned": res["counts_only_not_planned"],
             "record_written_verdict_same_not_planned": res["record_written_verdict_same_not_planned"],
+            "decided_held": res["decided_held"],
+            "never_loaded_took_step": [["Las Positas College", "18813", "places none of its courses; never loaded"]],
             "records": rows,
             "follow_verdict": ("The record changes, so a confirm given on the old record no longer matches. The apply "
                                "aborts, writing nothing, if any row's latest verdict is a confirm matching the new "
-                               "record's fingerprint; the pre-read counts them (confirm_matches_after)."),
+                               "record's fingerprint, or one given on the old record the reread would carry over "
+                               "(Sheet 82 card 1); the pre-read counts them (confirm_matches_after, "
+                               "confirm_carried)."),
             "pre_read": pre_read_sql(rows), "apply": apply_sql(rows, a.tag), "rollback": rollback_sql(rows, a.tag)}
     with open(path, "w", encoding="utf-8") as fh:
         json.dump(body, fh, ensure_ascii=False, indent=1)
