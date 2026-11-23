@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-23_s713ge_prreq_ge_steps_apply.sql
-name=s713ge_prreq_ge_steps
+file=kb/migrations/2026-11-22_s703_cpl_memory_rows.sql
+name=s703_cpl_memory_rows
