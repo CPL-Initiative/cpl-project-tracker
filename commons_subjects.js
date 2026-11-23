@@ -1628,7 +1628,22 @@
     panelMem = w || null;
     try { if (panelMem) window.localStorage.setItem(PANEL_KEY, String(panelMem)); else window.localStorage.removeItem(PANEL_KEY); } catch (e) { /* storage blocked */ }
   }
-  function panelSize(panel) { var w = panelW(); panel.style.width = w ? Math.min(w, panelMax()) + "px" : ""; }
+  function panelSize(panel) { var w = panelW(); panel.style.width = w ? Math.min(w, panelMax()) + "px" : ""; beside(panel); }
+  /* A sidebar opens beside the view, never over it (Sam, 2026-11-23: "make sure when side bar is opened that it opens
+     beside the view no over it--this is a rule for all sidebars"): the view gives up the panel's width on its right,
+     and takes it back when the panel closes. Below 900px there is no room beside, so the panel covers the view there. */
+  function beside(panel) {
+    var root = panel && panel.parentNode;
+    if (!root || !root.style) return;
+    var w = Math.round(panel.getBoundingClientRect ? panel.getBoundingClientRect().width : 0) || parseInt(panel.style.width, 10) || 620;
+    root.classList.add("csb-beside");
+    root.style.setProperty("--csb-panel-w", w + "px");
+  }
+  function besideOff(root) {
+    if (!root || !root.classList) return;
+    root.classList.remove("csb-beside");
+    if (root.style && root.style.removeProperty) root.style.removeProperty("--csb-panel-w");
+  }
   function panelGrip(panel) {
     function now() { return panelW() || Math.round(panel.getBoundingClientRect().width) || 620; }
     var g = el("span", { cls: "csb-pgrip", id: "csb-panel-grip", role: "separator", tabindex: "0", "aria-orientation": "vertical",
@@ -1668,6 +1683,7 @@
   function panelDraw(root, M) {
     var old = root.querySelector("#csb-panel");
     if (old) old.parentNode.removeChild(old);
+    besideOff(root);
     var slug = S.at || S.view, back = S.view;
     if (!S.code || !M.by[slug]) return;
     var c = M.by[slug], code = S.code;
@@ -1708,6 +1724,7 @@
     panel.insertBefore(panelGrip(panel), panel.firstChild);
     panelSize(panel);
     root.appendChild(panel);
+    beside(panel);
     loadCourses(slug).then(function (codes) {
       if (S.code !== code || (S.at || S.view) !== slug) return;
       var rows = codes[code] || [];
@@ -2069,6 +2086,8 @@
     ".csb-panel h3:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:3px; border-radius:2px; }",
     ".csb-band { margin:6px 0 0; font-size:1rem; color:var(--cmn-heading); }",
     "#csb-panel-body { display:grid; gap:10px; min-width:0; }",
+    "@media (min-width: 900px) { .csb-beside > .cmn-page { margin-right:var(--csb-panel-w, 620px); transition:margin-right .15s ease; } }",
+    "@media (prefers-reduced-motion: reduce) { .csb-beside > .cmn-page { transition:none; } }",
     ".csb-move-bar.csb-move-live { position:sticky; bottom:0; z-index:2; background:var(--cmn-dialog, var(--cmn-surface)); box-shadow:0 -8px 20px color-mix(in srgb, var(--cmn-heading) 14%, transparent); }",
     ".csb-move-bar.csb-move-live .csb-move-help { display:none; }",
     ".csb-fold-row { margin:2px 0 6px; display:flex; flex-wrap:wrap; gap:4px 18px; }",
