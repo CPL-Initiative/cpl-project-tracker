@@ -1,0 +1,31 @@
+{
+ "_readme": "S712 SkyPuffin, 2026-11-23. The Subjects card's Collect step: each college's local subject codes with the catalog's own subject heading (Sam, 2026-11-21, #3655: a local subject title comes only from the catalog's subject heading). 99 colleges have no course descriptions read; 26 keep their catalog on curriQunet and 15 on eLumen, both of which draw every view from JSON their scripts fetch (kb/_program_requirements_college.py, the curriQunet and eLumen notes). This probe asks where each platform's course section lists its subjects by name and code, so one walk per college can file the headings without reading every course. One page load per plan with \"network\": true, no model call, writes nothing.",
+ "college": "Allan Hancock College",
+ "questions": {
+  "cq_courses": "Which navigation node holds the curriQunet catalog's course descriptions, and whether its children are subjects titled with name and code (\"Accounting (ACCT)\")."
+ },
+ "keywords": [
+  "[Cc]ourse [Dd]escriptions?",
+  "[Cc]ourses",
+  "[Ss]ubjects?",
+  "[Dd]epartments?",
+  "_getNavigation",
+  "_getPage",
+  "publish"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "cq_courses"
+   ],
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28553",
+   "network": true,
+   "network_find": [
+    "Course Descriptions",
+    "Courses",
+    "Subject"
+   ],
+   "links": "course|subject|department"
+  }
+ ]
+}

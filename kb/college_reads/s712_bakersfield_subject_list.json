@@ -1,0 +1,34 @@
+{
+ "_readme": "S712 SkyPuffin, 2026-11-23. The Subjects card's Collect step: each college's local subject codes with the catalog's own subject heading (Sam, 2026-11-21, #3655: a local subject title comes only from the catalog's subject heading). 99 colleges have no course descriptions read; 26 keep their catalog on curriQunet and 15 on eLumen, both of which draw every view from JSON their scripts fetch (kb/_program_requirements_college.py, the curriQunet and eLumen notes). This probe asks where each platform's course section lists its subjects by name and code, so one walk per college can file the headings without reading every course. One page load per plan with \"network\": true, no model call, writes nothing.",
+ "college": "Bakersfield College",
+ "questions": {
+  "el_courses": "Which eLumen view lists the catalog's courses by subject, and which publish call carries the subject names and codes."
+ },
+ "keywords": [
+  "[Cc]ourse [Dd]escriptions?",
+  "[Cc]ourses",
+  "[Ss]ubjects?",
+  "[Dd]epartments?",
+  "_getNavigation",
+  "_getPage",
+  "publish"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "el_courses"
+   ],
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/courses",
+   "network": true,
+   "network_hosts": [
+    "api-prod.elumenapp.com"
+   ],
+   "network_find": [
+    "subject",
+    "Subject",
+    "department"
+   ],
+   "links": "course|subject|department"
+  }
+ ]
+}
