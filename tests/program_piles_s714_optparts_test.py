@@ -10,7 +10,7 @@ each record's own state list, moved ten verdicts elsewhere from their live verdi
   * the claim checks: the notes stand on all ten; today's capture finds every listed course of the option's blocks
     on nine, and 31 of 33 on Santa Barbara City 05934 (ENVS 112 and ENVS 115 not found);
   * precision 15 of 15, 30 boundary readings with none wrong, the reach's 21 answers right and none from passing;
-  * the plan: 10 rows named exactly by the receipt and the four SQL files, the confirm guard, a second run plans none.
+  * the plan: 9 rows (05934 held on its capture claim) named exactly by the receipt and the four SQL files, the confirm guard, a second run plans none.
 
 Run from repo root: python3 tests/program_piles_s714_optparts_test.py
 """
@@ -42,14 +42,17 @@ TEN = {("Foothill College", "06047"), ("Glendale Community College", "24042"), (
        ("Santa Barbara City College", "05934")}
 FIVE = {("Foothill College", "36328"), ("Napa Valley College", "36251"), ("Evergreen Valley College", "45025"),
         ("Santa Monica College", "03272"), ("Solano Community College", "20981")}
-check(set(O.HAND_HELD) == TEN and all(v.startswith("passes") for v in O.HAND_HELD.values()), "the ten, each passing")
+SBCC = ("Santa Barbara City College", "05934")
+NINE = TEN - {SBCC}
+check(set(O.HAND_HELD) == TEN and all(O.HAND_HELD[k].startswith("passes") for k in NINE)
+      and O.HAND_HELD[SBCC].startswith("held"), "the ten: nine pass, 05934 held on its capture claim")
 check(set(O.ARITH_ONLY) == FIVE, "the five whose arithmetic alone moves")
 
 with open(RECEIPT, encoding="utf-8") as fh:
     receipt = json.load(fh)
 rows = receipt["records"]
 keys = {(r["college"], r["control_number"]) for r in rows}
-check(keys == TEN and len(rows) == 10, "10 rows, the ten: %r" % sorted(keys))
+check(keys == NINE and len(rows) == 9, "9 rows, the nine: %r" % sorted(keys))
 
 every = C.every_record()
 targets = O.every_target(every)
@@ -92,8 +95,12 @@ check(receipt["precision"]["right"] == 15 and receipt["boundaries"]["wrong"] == 
       "the receipt's self-recall matches")
 
 # ── the plan ──
-check(sorted((h["college"], h["control_number"]) for h in receipt["held"]) == sorted(FIVE),
-      "the five take no row and are listed as held")
+check(sorted((h["college"], h["control_number"]) for h in receipt["held"]) == sorted(FIVE | {SBCC}),
+      "the five and 05934 take no row and are listed as held")
+why = [h["why"] for h in receipt["held"] if (h["college"], h["control_number"]) == SBCC]
+check(why and "31 of the option's 33" in why[0] and "ENVS112, ENVS115" in why[0],
+      "05934's hold names its capture finding: %r" % why)
+check(not O.plan(write=False, every=every)["rows"] and SBCC not in keys, "05934 stays out on a second run")
 for part in ("apply", "preread", "preread_md5", "rollback"):
     with open(MIG % part, encoding="utf-8") as fh:
         text = fh.read()
@@ -101,11 +108,11 @@ for part in ("apply", "preread", "preread_md5", "rollback"):
     check(sql_keys == keys, "the %s names exactly the plan's rows (%d of %d)" % (part, len(sql_keys), len(keys)))
     if part == "apply":
         check("when f.n > 0" in text and "program_record_fp(r.record)" in text and "from s, c, e, f;" in text
-              and "e(expect) as (values (10))" in text, "the apply expects 10 rows and carries the confirm guard")
+              and "e(expect) as (values (9))" in text, "the apply expects 9 rows and carries the confirm guard")
     if part.startswith("preread"):
         check("'confirm_matches'" in text, "the %s counts matching confirm verdicts" % part)
     if part == "preread_md5":
-        check(len(re.findall(r"'[0-9a-f]{32}'", text)) == 30, "the md5 pre-read carries three hashes a row")
+        check(len(re.findall(r"'[0-9a-f]{32}'", text)) == 27, "the md5 pre-read carries three hashes a row")
 check(not O.plan(write=False, every=every)["rows"], "a second run plans no row")
 
 if failures:

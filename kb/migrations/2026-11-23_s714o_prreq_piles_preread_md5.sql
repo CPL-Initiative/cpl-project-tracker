@@ -1,4 +1,4 @@
--- S714O: the 10 records at other colleges option_parts moves to passing (#3714's reach). Each row's checks
+-- S714O: the 9 records at other colleges option_parts moves to passing (#3714's reach). Each row's checks
 -- become the college load's image of its committed record (load_rows); the record itself is unchanged.
 -- Receipt: kb/receipts/program_requirement_records_piles_optparts_2026-11-23_s714o.json (before_image per row).
 -- Compact pre-read, read-only: one SELECT, one JSON value; md5 of each image's jsonb text
@@ -12,8 +12,7 @@ with v(i, college, control_number, extracted_run, rec_md5, chk_md5, after_md5) a
   (6, 'Monterey Peninsula College', '22098', 41276977991, 'b742af1bff5c32209461b3c5bbd88cd5', '3c81834a38a33a73170c8fc53655fda9', '279c9a68d28e4b814ce5679cf3fb61b5'),
   (7, 'Reedley College', '01773', 39616074283, '89bf81ef036996fb3d044da9a9e1b6ca', 'a0b064d96be523a34ceed3ec24054f2f', '10832ff3698b3d773808ff3f550efca0'),
   (8, 'Reedley College', '18990', 39616074283, '4060176dd1dce7d069fa2439e7f336d1', 'a6167bd981d5703e38a22ea38e0e88e4', '387c8b277ab26486061b8517b7feca82'),
-  (9, 'Reedley College', '46449', 39616074283, 'c6be931b95ccc2569252f4230c933345', '025f5967e09072e40425565d0b8c2cce', 'f0c8a700c3212e0431147df49206ae06'),
-  (10, 'Santa Barbara City College', '05934', 38670933359, 'a27aa5f48f521ecbde47996d8cc542fd', 'f4f07c065875022ef3cbd3d0b40f2650', 'e475b8def47a870e8c33f74ccbcbdec4'))
+  (9, 'Reedley College', '46449', 39616074283, 'c6be931b95ccc2569252f4230c933345', '025f5967e09072e40425565d0b8c2cce', 'f0c8a700c3212e0431147df49206ae06'))
 select json_build_object(
   'listed', (select count(*) from v),
   'on_run', count(*) filter (where r.extracted_run = v.extracted_run),

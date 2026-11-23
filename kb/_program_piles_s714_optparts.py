@@ -68,9 +68,16 @@ HAND_HELD = {
     ("Reedley College", "18990"): "passes: the 2-unit choice is nested inside Option 3; 26-29 as printed",
     ("Reedley College", "46449"): "passes: the 2-unit choice belongs only to Option 3, not a fourth option; 24-27 as "
                                   "printed",
-    ("Santa Barbara City College", "05934"): "passes: Option B is two blocks taken together (6 and 3-5) against "
-                                             "Option A's 9; 20-23 as printed",
+    ("Santa Barbara City College", "05934"): "held: Option B is two blocks taken together (6 and 3-5) against "
+                                             "Option A's 9, 20-23 as printed, but today's capture does not find "
+                                             "ENVS 112 and ENVS 115 (the S714 conductor: the capture claim is the "
+                                             "gate)",
 }
+# Records whose hand reading is the option_parts reading (the claim checks and boundaries read each), passing or held.
+READ_AS_PARTS = tuple(HAND_HELD)
+# The capture claim is the gate (p-claim-check-reads-current-capture-s713; the S714 conductor): a record whose option's
+# listed courses today's capture does not all find takes no row until a read settles the ones it missed.
+CAPTURE_HOLD = "held: today's capture finds %d of the option's %d listed courses (%s not found); a read settles them"
 ARITH_ONLY = (("Foothill College", "36328"), ("Napa Valley College", "36251"), ("Evergreen Valley College", "45025"),
               ("Santa Monica College", "03272"), ("Solano Community College", "20981"))
 
@@ -173,7 +180,8 @@ def precision(targets: dict, was: dict | None = None) -> dict:
         truth = "passes" if HAND_HELD.get(key, "").startswith("passes") else "none"
         rs = rescore(f)
         before = (was or {}).get(key, S.passes_live(f["score"]))
-        moves = rs["exact"] and S.passes_live(rs["score"]) and not before
+        moves = (rs["exact"] and S.passes_live(rs["score"]) and not before
+                 and (key not in HAND_HELD or capture_claim(f)["status"] == "stands"))
         got = "passes" if moves else "none"
         out["read"] += 1
         if got == truth:
@@ -246,6 +254,12 @@ def plan(write: bool, every: list[dict] | None = None) -> dict:
         rs = rescore(f)
         if not rs["exact"] or not S.passes_live(rs["score"]):
             held.append({"college": key[0], "control_number": key[1], "why": rs["why"]})
+            continue
+        cap = capture_claim(f)
+        if cap["status"] != "stands":
+            held.append({"college": key[0], "control_number": key[1], "why": CAPTURE_HOLD % (
+                cap.get("found", 0), cap.get("listed_in_option", 0), ", ".join(cap.get("not_found") or []))
+                if cap["status"] == "partial" else "held: no capture to check the claim against"})
             continue
         img = images.get(key)
         if img is None:
