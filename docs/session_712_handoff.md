@@ -34,16 +34,22 @@ belong to the routine.
   code and ahead of its code's save, so the twelve titles a person moves come out of the dry run where the person put
   them. The nightly mint does not read moves. A live read at 00:23Z found 0 saved moves, so no count changed.
 
+## Decisions Sam made (verbatim in `cpl_memory`)
+
+- `r-fix-twelve-then-one-remint-sam-2026-11-23`, above.
+
 ## Decisions the session made (each Sam's to revise)
 
 - `d-course-move-settles-first-s711`, above.
 
 ## Open work
 
-1. **The readiness gate is still a draft, and the twelve titles are still unread** (handoff 711's item 2, put to Sam in
-   session). Once he sets the gate and the courses are moved, wait for the nightly run (sync, then
-   `kb/_mid_readiness.py`) and rerun `python3 kb/_scope_remint_dryrun.py`, then follow the playbook
-   (`docs/coursecontrolnumber_remint.md`).
+1. **Sam fixes the twelve titles first, then one re-mint** (`r-fix-twelve-then-one-remint-sam-2026-11-23`). He
+   will move them on the Subjects page on 11-23: the six electrical courses to ELEC (their M-IDs then stay) and the six
+   small-business courses to ENTR (Small Business Development). When he says they are done, dispatch
+   `daily-dashboard.yml` (the sync, then `kb/_mid_readiness.py`) and rerun `python3 kb/_scope_remint_dryrun.py`; expect
+   19 to VOCE, 6 to ENTR, 9 staying. He accepted the draft gate on that path ("we're fine"): record it as his ruling
+   when the re-mint starts, then the apply under the playbook (`docs/coursecontrolnumber_remint.md`).
 2. **`commons`, from its NEXT line:** (1) Cerritos AED's saves under Elementary and Secondary Basic Skills and the
    uncategorized band (a person's); (2) statewide defaults by the DR-25 route; (3) a store for answering outcomes
    splits; (5) the apply; (6) the rest of the list. The held-codes list (`kb/_held_subject_codes.py`) does not read
@@ -67,7 +73,7 @@ samueltlee/CPLBrain.
 
 ## Let go
 
-At sign-off: the PR subscription on this PR (after it merges) and on the vault note's PR, and the COBIx watcher. No
+Dropped at sign-off: the subscriptions on #3700 (merged) and on the vault note's PR (samueltlee/CPLBrain#851, a draft), the check-in, and the COBIx watcher. No
 check-in or artifact is held.
 
 Opening line: *Greetings, you are SkyPuffin (Session 712), see SkyRazorbill's handoff — `docs/session_712_handoff.md` — let's keep rolling with our queue.*
