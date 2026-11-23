@@ -5,16 +5,19 @@
  "found": 195,
  "extracted": 195,
  "errors": 0,
- "passed_machine_checks": 181,
+ "passed_machine_checks": 186,
  "failed": {
   "coverage": 2,
   "invented": 0,
-  "arithmetic": 14,
+  "arithmetic": 9,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 12.09,
+ "cost_usd_run": 0.0,
+ "cost_usd_filed": 12.09,
  "cost_per_program": 0.062,
+ "extract_calls": null,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "42163",
@@ -22,7 +25,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "43734",
@@ -30,7 +34,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "45080",
@@ -56,8 +61,9 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   }
  ],
- "run": "42892238131"
+ "run": "45127792228"
 }

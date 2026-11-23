@@ -5,16 +5,19 @@
  "found": 89,
  "extracted": 89,
  "errors": 0,
- "passed_machine_checks": 74,
+ "passed_machine_checks": 82,
  "failed": {
   "coverage": 1,
   "invented": 0,
-  "arithmetic": 14,
+  "arithmetic": 6,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 6.13,
+ "cost_usd_run": 0.0,
+ "cost_usd_filed": 6.13,
  "cost_per_program": 0.0688,
+ "extract_calls": null,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "44296",
@@ -22,7 +25,8 @@
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "44299",
@@ -30,7 +34,8 @@
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "45592",
@@ -38,8 +43,9 @@
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   }
  ],
- "run": "38984695817"
+ "run": "45135695869"
 }
