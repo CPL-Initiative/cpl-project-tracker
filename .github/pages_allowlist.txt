@@ -93,6 +93,7 @@ withhold kb/reference/subject_source_attempts.json
 # COBI page reads them yet.
 withhold kb/reference/mq_handbook_20th.json
 withhold kb/status/mq_view.json
+withhold kb/status/csr_proposed_codes.json
 # A college's own department list of its subject codes (S705, Cerritos's schedule): the title builder reads it; the
 # pages read kb/status/local_subject_titles.json.
 withhold kb/reference/college_department_lists

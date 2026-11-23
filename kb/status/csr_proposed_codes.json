@@ -1,0 +1,1149 @@
+{
+ "_rule": "Basis in order: a C-ID prefix that belongs to the discipline; a local code colleges already use; four letters minted from the name. Each is four capital letters, unused in the Common Subjects Reference, no C-ID prefix belonging elsewhere, and proposed once.",
+ "_what": "Proposed common subject codes for the MQ disciplines with none. Written by kb/_csr_propose_codes.py; nothing here is a decision until a person confirms a code on the Common Subjects Reference.",
+ "by_basis": {
+  "cid": 2,
+  "college": 16,
+  "minted": 77
+ },
+ "count": 95,
+ "problems": [],
+ "rows": [
+  {
+   "basis": "cid",
+   "code": "ACCT",
+   "discipline": "Accounting",
+   "key": "Accounting",
+   "local_code_now": {
+    "called": "BUSI",
+    "colleges": 50,
+    "courses": 639,
+    "filed": false
+   },
+   "types": [
+    "masters"
+   ],
+   "words": "C-ID's ACCT descriptors (ACCT 110, 120); ACCT is the local code at 50 colleges and ACCTG at 18"
+  },
+  {
+   "basis": "minted",
+   "code": "DSAC",
+   "discipline": "Adapted Computer Technology: Disabled Students Programs and Services",
+   "key": "Adapted Computer Technology: Disabled Students Programs and Services",
+   "local_code_now": null,
+   "types": [
+    "masters"
+   ],
+   "words": "DSPS specialty: Adapted Computer"
+  },
+  {
+   "basis": "minted",
+   "code": "ADDC",
+   "discipline": "Addiction Paraprofessional Training",
+   "key": "Addiction Paraprofessional Training",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Addiction"
+  },
+  {
+   "basis": "college",
+   "code": "AERO",
+   "discipline": "Aeronautics",
+   "key": "Aeronautics (Airframe and power plant, aircraft mechanics, aeronautical engineering technician, avionics)",
+   "local_code_now": {
+    "called": "AVIA",
+    "colleges": 7,
+    "courses": 117,
+    "filed": false
+   },
+   "types": [
+    "any"
+   ],
+   "words": "AERO is the local code at 7 colleges"
+  },
+  {
+   "basis": "minted",
+   "code": "AGEN",
+   "discipline": "Agricultural Engineering",
+   "key": "Agricultural Engineering (Equipment and machinery, farm mechanics)",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Agricultural Engineering"
+  },
+  {
+   "basis": "minted",
+   "code": "ANTM",
+   "discipline": "Animal Training and Management",
+   "key": "Animal Training and Management (Exotic Animal Training)",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Animal Training and Management"
+  },
+  {
+   "basis": "minted",
+   "code": "APLR",
+   "discipline": "Appliance Repair",
+   "key": "Appliance Repair (Vending Machines)",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Appliance Repair; APPL is a local code our call reads as CNST"
+  },
+  {
+   "basis": "minted",
+   "code": "ARCT",
+   "discipline": "Archaeological Technology",
+   "key": "Archaeological Technology",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Archaeological Technology"
+  },
+  {
+   "basis": "minted",
+   "code": "ATTR",
+   "discipline": "Athletic Training",
+   "key": "Athletic Training",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Athletic Training"
+  },
+  {
+   "basis": "minted",
+   "code": "FINA",
+   "discipline": "Banking and Finance",
+   "key": "Banking and Finance",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Finance; FIN at 5 colleges and BANK at 2"
+  },
+  {
+   "basis": "minted",
+   "code": "BICY",
+   "discipline": "Bicycle Repair",
+   "key": "Bicycle Repair",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Bicycle"
+  },
+  {
+   "basis": "minted",
+   "code": "BOOK",
+   "discipline": "Bookbinding",
+   "key": "Bookbinding",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Bookbinding"
+  },
+  {
+   "basis": "minted",
+   "code": "BREW",
+   "discipline": "Brewing,Fermentation and Distillery Sciences",
+   "key": "Brewing,Fermentation and Distillery Sciences",
+   "local_code_now": null,
+   "types": [
+    "specific"
+   ],
+   "words": "Brewing"
+  },
+  {
+   "basis": "minted",
+   "code": "BLDM",
+   "discipline": "Building Maintenance",
+   "key": "Building Maintenance",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Building Maintenance"
+  },
+  {
+   "basis": "college",
+   "code": "BUSE",
+   "discipline": "Business Education",
+   "key": "Business Education",
+   "local_code_now": {
+    "called": "BUSI",
+    "colleges": 3,
+    "courses": 64,
+    "filed": false
+   },
+   "types": [
+    "masters"
+   ],
+   "words": "BUSE is the local code at 3 colleges"
+  },
+  {
+   "basis": "minted",
+   "code": "BMTC",
+   "discipline": "Business Machine Technology",
+   "key": "Business Machine Technology",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Business Machine Technology"
+  },
+  {
+   "basis": "minted",
+   "code": "CVTC",
+   "discipline": "Cardiovascular Technology",
+   "key": "Cardiovascular Technology",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Cardiovascular Technology; CVT at 2 colleges"
+  },
+  {
+   "basis": "minted",
+   "code": "CERT",
+   "discipline": "Ceramic Technology",
+   "key": "Ceramic Technology",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Ceramic Technology"
+  },
+  {
+   "basis": "college",
+   "code": "CLAS",
+   "discipline": "Classics",
+   "key": "Classics",
+   "local_code_now": {
+    "called": "ENGL",
+    "colleges": 1,
+    "courses": 1,
+    "filed": false
+   },
+   "types": [
+    "masters"
+   ],
+   "words": "CLAS is the local code at 1 college"
+  },
+  {
+   "basis": "minted",
+   "code": "COAC",
+   "discipline": "Coaching",
+   "key": "Coaching",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Coaching"
+  },
+  {
+   "basis": "minted",
+   "code": "DSCO",
+   "discipline": "Community College Counselor of Students with Disabilities",
+   "key": "Community College Counselor of Students with Disabilities",
+   "local_code_now": null,
+   "types": [
+    "masters"
+   ],
+   "words": "DSPS specialty: Counselor"
+  },
+  {
+   "basis": "minted",
+   "code": "CSRV",
+   "discipline": "Computer Service Technology",
+   "key": "Computer Service Technology",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Computer Service"
+  },
+  {
+   "basis": "college",
+   "code": "EOPS",
+   "discipline": "Counseling: Extended Opportunity Programs and Services",
+   "key": "Counseling: Extended Opportunity Programs and Services (EOPS)",
+   "local_code_now": {
+    "called": "ESOL",
+    "colleges": 1,
+    "courses": 2,
+    "filed": false
+   },
+   "types": [
+    "masters"
+   ],
+   "words": "EOPS is the program's own name, and the local code at 1 college"
+  },
+  {
+   "basis": "minted",
+   "code": "CNMH",
+   "discipline": "Counseling: Mental Health",
+   "key": "Counseling: Mental Health",
+   "local_code_now": null,
+   "types": [
+    "masters"
+   ],
+   "words": "Counseling, Mental Health"
+  },
+  {
+   "basis": "minted",
+   "code": "CINT",
+   "discipline": "Court Interpreting",
+   "key": "Court Interpreting",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Court Interpreting; INTR at 3 colleges"
+  },
+  {
+   "basis": "minted",
+   "code": "DSDH",
+   "discipline": "Deaf and Hearing Impaired: Disabled Students Programs and Services",
+   "key": "Deaf and Hearing Impaired: Disabled Students Programs and Services",
+   "local_code_now": null,
+   "types": [
+    "masters"
+   ],
+   "words": "DSPS specialty: Deaf and Hearing Impaired"
+  },
+  {
+   "basis": "minted",
+   "code": "DSDD",
+   "discipline": "Developmental Disabilities: Disabled Students Programs and Services",
+   "key": "Developmental Disabilities: Disabled Students Programs and Services",
+   "local_code_now": null,
+   "types": [
+    "masters"
+   ],
+   "words": "DSPS specialty: Developmental Disabilities"
+  },
+  {
+   "basis": "college",
+   "code": "DIET",
+   "discipline": "Dietetic Technician",
+   "key": "Dietetic Technician",
+   "local_code_now": {
+    "called": "CULN",
+    "colleges": 1,
+    "courses": 9,
+    "filed": false
+   },
+   "types": [
+    "any"
+   ],
+   "words": "DIET is the local code at 1 college"
+  },
+  {
+   "basis": "college",
+   "code": "ECOL",
+   "discipline": "Ecology",
+   "key": "Ecology",
+   "local_code_now": {
+    "called": "OLAD",
+    "colleges": 6,
+    "courses": 35,
+    "filed": false
+   },
+   "types": [
+    "masters"
+   ],
+   "words": "ECOL is the local code at 6 colleges"
+  },
+  {
+   "basis": "minted",
+   "code": "EMIC",
+   "discipline": "Electromicroscopy",
+   "key": "Electromicroscopy",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Electromicroscopy"
+  },
+  {
+   "basis": "minted",
+   "code": "EPLT",
+   "discipline": "Electroplating",
+   "key": "Electroplating",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Electroplating"
+  },
+  {
+   "basis": "minted",
+   "code": "ENSP",
+   "discipline": "Engineering Support",
+   "key": "Engineering Support (Surveying, engineering aides)",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Engineering Support; ENGSUP at 1 college"
+  },
+  {
+   "basis": "college",
+   "code": "ESTM",
+   "discipline": "Estimating",
+   "key": "Estimating",
+   "local_code_now": {
+    "called": "CNST",
+    "colleges": 1,
+    "courses": 6,
+    "filed": false
+   },
+   "types": [
+    "any"
+   ],
+   "words": "ESTM is the local code at 1 college"
+  },
+  {
+   "basis": "minted",
+   "code": "FABC",
+   "discipline": "Fabric Care",
+   "key": "Fabric Care (Laundry and dry cleaning)",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Fabric Care"
+  },
+  {
+   "basis": "minted",
+   "code": "FLAT",
+   "discipline": "Flight Attendant Training",
+   "key": "Flight Attendant Training",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Flight Attendant"
+  },
+  {
+   "basis": "minted",
+   "code": "FLMT",
+   "discipline": "Fluid Mechanics Technology",
+   "key": "Fluid Mechanics Technology",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Fluid Mechanics Technology"
+  },
+  {
+   "basis": "minted",
+   "code": "FDNC",
+   "discipline": "Folk Dance",
+   "key": "Folk Dance",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Folk Dance"
+  },
+  {
+   "basis": "minted",
+   "code": "HSDR",
+   "discipline": "Health Services Director/Health Services Coordinator/College Nurse",
+   "key": "Health Services Director/Health Services Coordinator/College Nurse",
+   "local_code_now": null,
+   "types": [
+    "masters"
+   ],
+   "words": "Health Services Director"
+  },
+  {
+   "basis": "college",
+   "code": "HSEC",
+   "discipline": "Homeland Security",
+   "key": "Homeland Security",
+   "local_code_now": {
+    "called": "CRIM",
+    "colleges": 2,
+    "courses": 5,
+    "filed": false
+   },
+   "types": [
+    "masters"
+   ],
+   "words": "HSEC is the local code at 2 colleges"
+  },
+  {
+   "basis": "cid",
+   "code": "HOSP",
+   "discipline": "Hotel and Motel Services",
+   "key": "Hotel and Motel Services",
+   "local_code_now": {
+    "called": "CULN",
+    "colleges": 20,
+    "courses": 205,
+    "filed": false
+   },
+   "types": [
+    "any"
+   ],
+   "words": "C-ID's HOSP descriptors; HOSP is the local code at 20 colleges"
+  },
+  {
+   "basis": "minted",
+   "code": "INDD",
+   "discipline": "Industrial Design",
+   "key": "Industrial Design",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Industrial Design"
+  },
+  {
+   "basis": "minted",
+   "code": "INSR",
+   "discipline": "Insurance",
+   "key": "Insurance",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Insurance; INSUR at 1 college"
+  },
+  {
+   "basis": "minted",
+   "code": "JANI",
+   "discipline": "Janitorial Services",
+   "key": "Janitorial Services",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Janitorial"
+  },
+  {
+   "basis": "minted",
+   "code": "JEWL",
+   "discipline": "Jewelry",
+   "key": "Jewelry",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Jewelry"
+  },
+  {
+   "basis": "minted",
+   "code": "LBRL",
+   "discipline": "Labor Relations",
+   "key": "Labor Relations",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Labor Relations; LABR is Industrial Relations' code"
+  },
+  {
+   "basis": "minted",
+   "code": "DSLD",
+   "discipline": "Learning Disabilities: Disabled Student Programs and Services",
+   "key": "Learning Disabilities: Disabled Student Programs and Services",
+   "local_code_now": null,
+   "types": [
+    "masters"
+   ],
+   "words": "DSPS specialty: Learning Disabilities"
+  },
+  {
+   "basis": "minted",
+   "code": "DSLS",
+   "discipline": "Learning Disabilities: Specialist",
+   "key": "Learning Disabilities: Specialist",
+   "local_code_now": null,
+   "types": [
+    "masters"
+   ],
+   "words": "DSPS: Learning Disabilities Specialist"
+  },
+  {
+   "basis": "college",
+   "code": "LING",
+   "discipline": "Linguistics",
+   "key": "Linguistics",
+   "local_code_now": {
+    "called": "ANTH",
+    "colleges": 24,
+    "courses": 70,
+    "filed": false
+   },
+   "types": [
+    "masters"
+   ],
+   "words": "LING is the local code at 24 colleges"
+  },
+  {
+   "basis": "minted",
+   "code": "LOCK",
+   "discipline": "Locksmithing",
+   "key": "Locksmithing",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Locksmithing"
+  },
+  {
+   "basis": "minted",
+   "code": "MDIV",
+   "discipline": "Marine Diving Technology",
+   "key": "Marine Diving Technology",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Marine Diving"
+  },
+  {
+   "basis": "minted",
+   "code": "MENG",
+   "discipline": "Marine Engine Technology",
+   "key": "Marine Engine Technology",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Marine Engine"
+  },
+  {
+   "basis": "minted",
+   "code": "MRTL",
+   "discipline": "Martial Arts/Self-Defense",
+   "key": "Martial Arts/Self-Defense",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Martial Arts; MART is a 47-course local code our call reads as ARTS"
+  },
+  {
+   "basis": "college",
+   "code": "MCOM",
+   "discipline": "Mass Communication",
+   "key": "Mass Communication",
+   "local_code_now": {
+    "called": "JOUR",
+    "colleges": 4,
+    "courses": 69,
+    "filed": false
+   },
+   "types": [
+    "masters"
+   ],
+   "words": "MCOM is the local code at 4 colleges"
+  },
+  {
+   "basis": "minted",
+   "code": "MTST",
+   "discipline": "Materials Testing Technology",
+   "key": "Materials Testing Technology (Destructive testing or nondestructive examination)",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Materials Testing"
+  },
+  {
+   "basis": "minted",
+   "code": "MTHN",
+   "discipline": "Mathematics-Basic Skills: Noncredit",
+   "key": "Mathematics-Basic Skills: Noncredit",
+   "local_code_now": null,
+   "types": [
+    "specific"
+   ],
+   "words": "Mathematics, noncredit (as ESLN, HLSN)"
+  },
+  {
+   "basis": "minted",
+   "code": "MIRP",
+   "discipline": "Medical Instrument Repair",
+   "key": "Medical Instrument Repair",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Medical Instrument Repair"
+  },
+  {
+   "basis": "minted",
+   "code": "MILS",
+   "discipline": "Military Studies",
+   "key": "Military Studies (Military Science)",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Military Studies"
+  },
+  {
+   "basis": "minted",
+   "code": "MINE",
+   "discipline": "Mining and Metallurgy",
+   "key": "Mining and Metallurgy (Oil field operations)",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Mining"
+  },
+  {
+   "basis": "college",
+   "code": "MOTO",
+   "discipline": "Motorcycle Repair",
+   "key": "Motorcycle Repair",
+   "local_code_now": {
+    "called": "AUTO",
+    "colleges": 1,
+    "courses": 7,
+    "filed": false
+   },
+   "types": [
+    "any"
+   ],
+   "words": "MOTO is the local code at 1 college"
+  },
+  {
+   "basis": "college",
+   "code": "MUSM",
+   "discipline": "Music Management",
+   "key": "Music Management",
+   "local_code_now": {
+    "called": "MUSC",
+    "colleges": 4,
+    "courses": 68,
+    "filed": false
+   },
+   "types": [
+    "any"
+   ],
+   "words": "MUSM is the local code at 4 colleges"
+  },
+  {
+   "basis": "minted",
+   "code": "MUSD",
+   "discipline": "Music Merchandising",
+   "key": "Music Merchandising",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Music Merchandising"
+  },
+  {
+   "basis": "minted",
+   "code": "MUIR",
+   "discipline": "Musical Instrument Repair",
+   "key": "Musical Instrument Repair",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Musical Instrument Repair"
+  },
+  {
+   "basis": "minted",
+   "code": "NANO",
+   "discipline": "Nanotechnology",
+   "key": "Nanotechnology",
+   "local_code_now": null,
+   "types": [
+    "masters"
+   ],
+   "words": "Nanotechnology"
+  },
+  {
+   "basis": "minted",
+   "code": "NRSC",
+   "discipline": "Nursing Science/Clinical Practice",
+   "key": "Nursing Science/Clinical Practice",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Nursing Science"
+  },
+  {
+   "basis": "minted",
+   "code": "PCST",
+   "discipline": "Peace Studies",
+   "key": "Peace Studies",
+   "local_code_now": null,
+   "types": [
+    "masters"
+   ],
+   "words": "Peace Studies"
+  },
+  {
+   "basis": "college",
+   "code": "PHTC",
+   "discipline": "Photographic Technology/ Commercial Photography",
+   "key": "Photographic Technology/ Commercial Photography",
+   "local_code_now": {
+    "called": "PHOT",
+    "colleges": 3,
+    "courses": 27,
+    "filed": false
+   },
+   "types": [
+    "any"
+   ],
+   "words": "PHTC is the local code at 3 colleges"
+  },
+  {
+   "basis": "minted",
+   "code": "DSPD",
+   "discipline": "Physical Disabilities: Disabled Student Programs and Services",
+   "key": "Physical Disabilities: Disabled Student Programs and Services",
+   "local_code_now": null,
+   "types": [
+    "masters"
+   ],
+   "words": "DSPS specialty: Physical Disabilities"
+  },
+  {
+   "basis": "minted",
+   "code": "PIAN",
+   "discipline": "Piano Tuning and Repair",
+   "key": "Piano Tuning and Repair",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Piano"
+  },
+  {
+   "basis": "minted",
+   "code": "PLAS",
+   "discipline": "Plastics",
+   "key": "Plastics",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Plastics"
+  },
+  {
+   "basis": "college",
+   "code": "PRNT",
+   "discipline": "Printing Technology",
+   "key": "Printing Technology (Typography, composition, printing)",
+   "local_code_now": {
+    "called": "CDEV",
+    "colleges": 3,
+    "courses": 41,
+    "filed": false
+   },
+   "types": [
+    "any"
+   ],
+   "words": "PRNT is the local code at 3 colleges"
+  },
+  {
+   "basis": "minted",
+   "code": "PSEC",
+   "discipline": "Private Security",
+   "key": "Private Security (Security management, safety/ accident control, hazardous substance management crime prevention)",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Private Security"
+  },
+  {
+   "basis": "minted",
+   "code": "PROS",
+   "discipline": "Prosthetics and Orthotics",
+   "key": "Prosthetics and Orthotics",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Prosthetics"
+  },
+  {
+   "basis": "minted",
+   "code": "PREL",
+   "discipline": "Public Relations",
+   "key": "Public Relations",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Public Relations; PUBREL at 4 colleges"
+  },
+  {
+   "basis": "minted",
+   "code": "RTHR",
+   "discipline": "Radiation Therapy",
+   "key": "Radiation Therapy",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Radiation Therapy"
+  },
+  {
+   "basis": "minted",
+   "code": "RDGN",
+   "discipline": "Reading-Basic Skills: Noncredit",
+   "key": "Reading-Basic Skills: Noncredit",
+   "local_code_now": null,
+   "types": [
+    "specific"
+   ],
+   "words": "Reading, noncredit (as ESLN, HLSN)"
+  },
+  {
+   "basis": "minted",
+   "code": "RBTC",
+   "discipline": "Registered Behavior Technician",
+   "key": "Registered Behavior Technician",
+   "local_code_now": null,
+   "types": [
+    "masters"
+   ],
+   "words": "Registered Behavior Technician"
+  },
+  {
+   "basis": "minted",
+   "code": "REHB",
+   "discipline": "Rehabilitation Technician",
+   "key": "Rehabilitation Technician",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Rehabilitation"
+  },
+  {
+   "basis": "college",
+   "code": "RLST",
+   "discipline": "Religious Studies",
+   "key": "Religious Studies",
+   "local_code_now": {
+    "called": "REAL",
+    "colleges": 5,
+    "courses": 36,
+    "filed": false
+   },
+   "types": [
+    "masters"
+   ],
+   "words": "RLST is the local code at 5 colleges (RELS and RELG at 4 each)"
+  },
+  {
+   "basis": "minted",
+   "code": "RSPN",
+   "discipline": "Respiratory Technician",
+   "key": "Respiratory Technician",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Respiratory Technician"
+  },
+  {
+   "basis": "minted",
+   "code": "RETL",
+   "discipline": "Retailing",
+   "key": "Retailing (Purchasing, merchandising, sales)",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Retailing"
+  },
+  {
+   "basis": "minted",
+   "code": "SANT",
+   "discipline": "Sanitation and Public Health Technology",
+   "key": "Sanitation and Public Health Technology",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Sanitation"
+  },
+  {
+   "basis": "minted",
+   "code": "SRCH",
+   "discipline": "Search and Rescue",
+   "key": "Search and Rescue",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Search and Rescue"
+  },
+  {
+   "basis": "college",
+   "code": "SHME",
+   "discipline": "Sheet Metal",
+   "key": "Sheet Metal",
+   "local_code_now": {
+    "called": "WELD",
+    "colleges": 1,
+    "courses": 14,
+    "filed": false
+   },
+   "types": [
+    "any"
+   ],
+   "words": "SHME is the local code at 1 college"
+  },
+  {
+   "basis": "minted",
+   "code": "SHIP",
+   "discipline": "Ship and Boat Building and Repair",
+   "key": "Ship and Boat Building and Repair",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Ship and Boat Building"
+  },
+  {
+   "basis": "minted",
+   "code": "SHOE",
+   "discipline": "Shoe Rebuilding",
+   "key": "Shoe Rebuilding",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Shoe Rebuilding"
+  },
+  {
+   "basis": "minted",
+   "code": "SENG",
+   "discipline": "Small Engine Mechanics",
+   "key": "Small Engine Mechanics",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Small Engine"
+  },
+  {
+   "basis": "minted",
+   "code": "DSVN",
+   "discipline": "Specialized Instruction (Disabled Student Programs and Services): Vocational Noncredit",
+   "key": "Specialized Instruction (Disabled Student Programs and Services): Vocational Noncredit",
+   "local_code_now": null,
+   "types": [
+    "masters",
+    "specific"
+   ],
+   "words": "DSPS: vocational noncredit (beside DSPN)"
+  },
+  {
+   "basis": "minted",
+   "code": "DSSL",
+   "discipline": "Speech Language Pathology: Disabled Student Programs and Services",
+   "key": "Speech Language Pathology: Disabled Student Programs and Services",
+   "local_code_now": null,
+   "types": [
+    "masters"
+   ],
+   "words": "DSPS specialty: Speech Language Pathology"
+  },
+  {
+   "basis": "minted",
+   "code": "SCMT",
+   "discipline": "Supply Chain Technology",
+   "key": "Supply Chain Technology",
+   "local_code_now": null,
+   "types": [
+    "specific"
+   ],
+   "words": "Supply Chain"
+  },
+  {
+   "basis": "minted",
+   "code": "TELC",
+   "discipline": "Telecommunication Technology",
+   "key": "Telecommunication Technology",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Telecommunication"
+  },
+  {
+   "basis": "minted",
+   "code": "TRVL",
+   "discipline": "Travel Services",
+   "key": "Travel Services (Dispatching)",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Travel"
+  },
+  {
+   "basis": "minted",
+   "code": "UASY",
+   "discipline": "Uncrewed Aircraft System (UAS) Technology",
+   "key": "Uncrewed Aircraft System (UAS) Technology",
+   "local_code_now": null,
+   "types": [
+    "specific"
+   ],
+   "words": "Uncrewed Aircraft Systems; UAS at 1 college"
+  },
+  {
+   "basis": "minted",
+   "code": "VISN",
+   "discipline": "Vision Care Technology",
+   "key": "Vision Care Technology",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Vision Care"
+  },
+  {
+   "basis": "minted",
+   "code": "WTCH",
+   "discipline": "Watch and Clock Repair",
+   "key": "Watch and Clock Repair",
+   "local_code_now": null,
+   "types": [
+    "any"
+   ],
+   "words": "Watch and Clock"
+  },
+  {
+   "basis": "minted",
+   "code": "WRTN",
+   "discipline": "Writing-Basic Skills: Noncredit",
+   "key": "Writing-Basic Skills: Noncredit",
+   "local_code_now": null,
+   "types": [
+    "specific"
+   ],
+   "words": "Writing, noncredit (as ESLN, HLSN)"
+  }
+ ]
+}

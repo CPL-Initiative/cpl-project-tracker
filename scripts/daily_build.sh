@@ -378,6 +378,7 @@ python3 kb/_subject_sources.py --if-changed || { git checkout -- kb/status/subje
 # The MQ view (kb/_mq_view.py, S717): every MQ discipline joined to its common subject code, the M-IDs and the local
 # codes this build just wrote, so it runs after them.
 python3 kb/_mq_view.py || { git checkout -- kb/status/mq_view.json 2>/dev/null || true; echo "::warning title=MQ view not rebuilt::kb/_mq_view.py failed; kb/status/mq_view.json is yesterday's."; }
+python3 kb/_csr_propose_codes.py || { git checkout -- kb/status/csr_proposed_codes.json 2>/dev/null || true; echo "::warning title=Proposed common codes not rebuilt::kb/_csr_propose_codes.py failed or found a problem."; }
 STEP
 
 # ── Step 4b: Re-run row Trust-Card auditor ────────────────────

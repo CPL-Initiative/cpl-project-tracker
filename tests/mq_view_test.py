@@ -49,6 +49,14 @@ check("(4) a discipline printed under two names is no second gap", R["Theater Ar
 voc_flag = [r["name"] for r in V["rows"] if any("vocational TOP code, which takes the experience" in g for g in r["gaps"])]
 check("(4) a master's-list discipline whose credit M-IDs run vocational is flagged", "Business" in voc_flag, voc_flag[:5])
 check("(4) Workforce Preparation is named as the COCI category with no MQ discipline", V["noncredit_categories_without_discipline"] == ["Workforce Preparation"])
+spec2 = importlib.util.spec_from_file_location("pc", os.path.join(ROOT, "kb", "_csr_propose_codes.py"))
+pc = importlib.util.module_from_spec(spec2)
+spec2.loader.exec_module(pc)
+P = pc.build()
+check("(6) every discipline with no common code has one proposal, each four letters, unused, never another discipline's C-ID prefix",
+      P["problems"] == [] and P["count"] == V["totals"]["without_code"], P["problems"][:5])
+check("(6) ACCT is proposed for Accounting from C-ID, and the view shows a proposal beside the gap",
+      R["Accounting"]["proposed"] == {"code": "ACCT", "basis": "cid", "words": pc.PROPOSALS["Accounting"][2]} and any("proposed ACCT" in g for g in R["Accounting"]["gaps"]))
 check("(5) the committed view is what a build writes", mqv.main(["--check"]) == 0)
 print(f"\n{len(fails)} FAILED" if fails else "\nall checks passed")
 sys.exit(1 if fails else 0)
