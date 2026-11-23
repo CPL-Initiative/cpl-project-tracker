@@ -10,14 +10,14 @@
     "other": 150000
   },
   "summary": {
-    "files": 1571,
-    "bytes": 17078678,
-    "over_budget": 5,
-    "handoff_max": 711,
+    "files": 1572,
+    "bytes": 17085047,
+    "over_budget": 6,
+    "handoff_max": 712,
     "always_loaded_files": 1,
     "always_loaded_bytes": 63086,
-    "superseded_files": 0,
-    "superseded_bytes": 0,
+    "superseded_files": 9,
+    "superseded_bytes": 91991,
     "lanes": {
       "always_loaded": {
         "files": 1,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 166,
-        "bytes": 5716763,
+        "bytes": 5716958,
         "over": 1
       },
       "index": {
@@ -41,29 +41,30 @@
       },
       "kb_note": {
         "files": 604,
-        "bytes": 2946478,
+        "bytes": 2946809,
         "over": 0
       },
       "roadmap_lane": {
         "files": 44,
-        "bytes": 545572,
-        "over": 1
+        "bytes": 546091,
+        "over": 2
       },
       "handoff": {
-        "files": 668,
-        "bytes": 4939026,
+        "files": 669,
+        "bytes": 4944350,
         "over": 0
       }
     },
     "by_rule": {
-      "oversized_doc": 5,
+      "oversized_doc": 6,
       "kb_note_dialect": 1,
+      "superseded_handoff": 9,
       "vault_heavy_path": 78
     },
     "vault": {
-      "files": 29459,
-      "bytes": 1569249064,
-      "heavy_bytes": 1216229339,
+      "files": 29465,
+      "bytes": 1569342932,
+      "heavy_bytes": 1216245655,
       "heavy_share": 0.775,
       "ignore_filters": [
         "cpl-project-tracker/kb/program_requirements_college",
@@ -225,6 +226,118 @@
       "path": "docs/reference/lanes/cer-procedures.md"
     },
     {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 20039,
+        "limit": 20000,
+        "lane": "roadmap_lane",
+        "over_by": 39,
+        "ratio": 1.0
+      },
+      "message": "20,039 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/commons.md"
+    },
+    {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 701,
+        "authoritative": 712,
+        "has_frontmatter": true
+      },
+      "message": "handoff 701 is below the authoritative 712 but is not stamped `superseded: true`",
+      "path": "docs/session_701_handoff.md"
+    },
+    {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 702,
+        "authoritative": 712,
+        "has_frontmatter": true
+      },
+      "message": "handoff 702 is below the authoritative 712 but is not stamped `superseded: true`",
+      "path": "docs/session_702_handoff.md"
+    },
+    {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 703,
+        "authoritative": 712,
+        "has_frontmatter": true
+      },
+      "message": "handoff 703 is below the authoritative 712 but is not stamped `superseded: true`",
+      "path": "docs/session_703_handoff.md"
+    },
+    {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 704,
+        "authoritative": 712,
+        "has_frontmatter": true
+      },
+      "message": "handoff 704 is below the authoritative 712 but is not stamped `superseded: true`",
+      "path": "docs/session_704_handoff.md"
+    },
+    {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 706,
+        "authoritative": 712,
+        "has_frontmatter": true
+      },
+      "message": "handoff 706 is below the authoritative 712 but is not stamped `superseded: true`",
+      "path": "docs/session_706_handoff.md"
+    },
+    {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 708,
+        "authoritative": 712,
+        "has_frontmatter": true
+      },
+      "message": "handoff 708 is below the authoritative 712 but is not stamped `superseded: true`",
+      "path": "docs/session_708_handoff.md"
+    },
+    {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 709,
+        "authoritative": 712,
+        "has_frontmatter": true
+      },
+      "message": "handoff 709 is below the authoritative 712 but is not stamped `superseded: true`",
+      "path": "docs/session_709_handoff.md"
+    },
+    {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 710,
+        "authoritative": 712,
+        "has_frontmatter": true
+      },
+      "message": "handoff 710 is below the authoritative 712 but is not stamped `superseded: true`",
+      "path": "docs/session_710_handoff.md"
+    },
+    {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 711,
+        "authoritative": 712,
+        "has_frontmatter": true
+      },
+      "message": "handoff 711 is below the authoritative 712 but is not stamped `superseded: true`",
+      "path": "docs/session_711_handoff.md"
+    },
+    {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "kb/program_requirements_college",
@@ -309,10 +422,10 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 16028866,
+        "bytes": 16045182,
         "kind": "dir"
       },
-      "message": "directory totals 16,028,866 B inside the vault"
+      "message": "directory totals 16,045,182 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

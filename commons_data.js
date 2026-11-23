@@ -467,7 +467,9 @@
      never a URL, since the arrival splits the address on "/". */
   /* handover (Sam, 2026-11-20, "hand it over in place"): the college's own panel at the place to act, with the drop
      box, Try the link and the API procedure boxes (commons_handover.js). */
-  var PANES = { catalog: 0, scout: 0, capture: 0, run: 0, pathways: 0, slos: 0, plos: 0, handover: 0, program: 1, source: 1, entry: 1 };
+  /* outline (S712): one of the course outlines to find by hand, on the SLOs view: its hand-over box, with Previous and
+     Next through the list (#collect/slos/outline/<college slug>-<course code>). */
+  var PANES = { catalog: 0, scout: 0, capture: 0, run: 0, pathways: 0, slos: 0, plos: 0, handover: 0, program: 1, source: 1, entry: 1, outline: 1 };
   function paneRoute(p) { return p ? "/" + p.k + (PANES[p.k] && p.a ? "/" + p.a : "") : ""; }
   function listRoute(filter, platform, district) {
     return (filter && filter !== "all" ? "/" + filter : "") + (platform ? "/platform/" + platform : "") + (district ? "/district/" + district : "");
@@ -1236,6 +1238,9 @@
     if (!p || !own(PANES, p.k)) return false;
     if (p.k === "source") return !!sourceOf(M, c, p.a);
     if (p.k === "entry") return !c && ((M.dictionary || {}).datasets || []).some(function (x) { return x.link && slugOf({ name: x.name }) === p.a; });
+    /* The list loads after the view draws, so an address can name a course before the list is read; once it is read,
+       a course the list no longer holds is repaired out of the address. */
+    if (p.k === "outline") return !c && S.view === "slos" && /^[a-z0-9-]+$/.test(String(p.a || "")) && (HUNT.state !== "ok" || !!huntRow(p.a));
     if (extPane(p.k)) return !c;
     if (!c) return false;
     if (p.k === "catalog") return isHttp(c.catalog_url);
@@ -1269,6 +1274,7 @@
     if (extPane(p.k)) { try { return extPane(p.k)(M, extHost()); } catch (e) { return { title: "Not drawn", kids: [tba("This pane could not be drawn.")] }; } }
     var LW = (M.rule || {}).levers || {};
     var outside = "A college's site usually refuses to be shown inside another page, so this panel shows what we hold about it.";
+    if (p.k === "outline") return outlinePane(M, p.a);
     if (p.k === "source" || p.k === "entry") {
       var src = p.k === "source" ? sourceOf(M, c, p.a) : null, ent = null;
       if (p.k === "entry") ent = ((M.dictionary || {}).datasets || []).filter(function (x) { return slugOf({ name: x.name }) === p.a; })[0];
@@ -1455,6 +1461,11 @@
       .then(function () {
         var old = VIEW.root && VIEW.root.querySelector("#cdd-hunt");
         if (old && old.parentNode) old.parentNode.replaceChild(huntSection(), old);
+        if (S.pane && S.pane.k === "outline" && VIEW.panel) {
+          /* A course the read list does not hold leaves the address, and the panel closes. */
+          if (HUNT.state === "ok" && !huntRow(S.pane.a)) { S.pane = null; setAddress(); }
+          drawPanel();
+        }
       });
   }
   function huntSection() {
@@ -1464,14 +1475,15 @@
     if (HUNT.state !== "ok") { sec.appendChild(el("p", { cls: "cdd-of", text: "Reading the list…" })); return sec; }
     var d = HUNT.d, R = Array.isArray(d.courses) ? d.courses : [], src = d._sources || {};
     sec.appendChild(el("p", { cls: "cdd-sortline", id: "cdd-hunt-sum", text: "The outcomes comparison reads an M-ID once two districts' outlines print its outcomes. " +
-      "These are CTE M-IDs, none a C-ID or CCN course, shared by the most districts and one outline short of that. Find each course's outline of record and drop it into a session, " +
-      "as a PDF or a link; the comparison then reruns on it. The list comes from the comparison of " + (src.compare_date ? dayWords(src.compare_date) : "its last run") +
+      "These are CTE M-IDs, none a C-ID or CCN course, shared by the most districts and one outline short of that. Find each course's outline of record and hand it over on its row: " +
+      "a PDF, a saved page or a link, signed in. A session loads what is handed over, or what you drop into a session, and the comparison then reruns on it. The list comes from the comparison of " + (src.compare_date ? dayWords(src.compare_date) : "its last run") +
       " and rebuilds after the next one, so a found outline drops off." }));
     if (!R.length) { sec.appendChild(el("p", { cls: "cdd-of", text: "No course is waiting on a find." })); return sec; }
     var body = el("tbody", null, R.map(function (r) {
       return el("tr", { "data-hunt-row": r.rank }, [
         el("td", { "data-label": "Rank", cls: "cdd-num", text: String(r.rank) }),
-        el("th", { scope: "row", "data-label": "Course to find" }, [el("span", { text: r.college + " " + r.code }), el("span", { cls: "cdd-dist", text: r.course_title || "" })]),
+        el("th", { scope: "row", "data-label": "Course to find" }, [huntWord(r), el("span", { cls: "cdd-dist", text: r.course_title || "" }),
+          el("span", { cls: "cdd-dist cdd-hunt-have", "data-hunt-have": huntKey(r), text: huntHave(r) })]),
         el("td", { "data-label": "M-ID" }, [el("span", { text: r.mid }), el("span", { cls: "cdd-of", text: r.mid_title || "" })]),
         el("td", { "data-label": "Districts that teach it", cls: "cdd-num", text: fmt(r.districts) }),
         el("td", { "data-label": "Why this one", cls: "cdd-of", text: String(r.why || "").charAt(0).toUpperCase() + String(r.why || "").slice(1) + (r.college_read ? "" : "; the reader has not read this college yet") })]);
@@ -1481,7 +1493,88 @@
       el("colgroup", null, [el("col", { cls: "cdd-c-hr" }), el("col", { cls: "cdd-c-hc" }), el("col", { cls: "cdd-c-hm" }), el("col", { cls: "cdd-c-hd" }), el("col", { cls: "cdd-c-hw" })]),
       el("thead", null, [el("tr", null, ["Rank", "Course to find", "M-ID", "Districts that teach it", "Why this one"].map(function (h) { return el("th", { scope: "col", text: h }); }))]), body]);
     sec.appendChild(el("div", { cls: "cdd-wrap", role: "region", "aria-label": "Course outlines to find by hand", tabindex: "0" }, [table]));
+    huntSummary();
     return sec;
+  }
+  /* ── one course of the list, handed over in place (S712; r-hand-over-in-place-sam-2026-11-20: "need to be able to do
+     this for all our commons datasets"). The course's word opens its pane: why it is on the list, then the hand-over
+     box (commons_handover.js) with Previous and Next, so the 50 can be worked one after another. A save steps to the
+     next course and says what was saved. ── */
+  function huntKey(r) { return slugOf({ name: r.college }) + "-" + String(r.code || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, ""); }
+  function huntRows() { return HUNT.state === "ok" && Array.isArray((HUNT.d || {}).courses) ? HUNT.d.courses : []; }
+  function huntRow(key) { return huntRows().filter(function (r) { return huntKey(r) === String(key); })[0] || null; }
+  function huntSubject(r) {
+    return { subject_kind: "course", dataset: "course_outlines", college: r.college, course_code: r.code, course_title: r.course_title || "", mid_card: r.mid || "" };
+  }
+  function huntWord(r) {
+    var b = paneWord(r.college + " " + r.code, { k: "outline", a: huntKey(r) }, null, "cdd-hunt-open");
+    b.setAttribute("data-hunt-open", huntKey(r));
+    return b;
+  }
+  /* What has been handed over for the course, in words, once the counts are read; nothing before. */
+  function huntHave(r) {
+    var HO = window.CPL_HANDOVER, rows = HO && HO._state && HO._state.summary ? HO._state.summary.rows : null;
+    if (!HO || !rows) return "";
+    var s = HO.standing(rows, huntSubject(r), "course_outlines");
+    return s.length ? "Handed over: " + s.join("; ") + "." : "";
+  }
+  function huntSummary(force) {
+    var HO = window.CPL_HANDOVER;
+    if (!HO) {
+      if (window.CPL_TABS && window.CPL_TABS.loadScript && !huntSummary.asked) {
+        huntSummary.asked = true;
+        window.CPL_TABS.loadScript("commons_handover.js", "CPL_HANDOVER", function () { huntSummary(); if (S.pane && S.pane.k === "outline" && VIEW.panel) drawPanel(); });
+      }
+      return;
+    }
+    Promise.resolve(HO.summary(force)).then(function () {
+      huntRows().forEach(function (r) {
+        var n = VIEW.root && VIEW.root.querySelector('[data-hunt-have="' + huntKey(r) + '"]');
+        if (n) n.textContent = huntHave(r);
+      });
+    }, function () { /* the counts stay as they were */ });
+  }
+  var HUNT_CARRY = { text: "" };
+  function outlinePane(M, key) {
+    var title = "Course outline to find";
+    if (HUNT.state !== "ok") {
+      loadHunt();
+      return { title: title, kids: [el("p", { cls: "cdd-of", role: "status", text: HUNT.state === "error" ? "The list could not be read. Open this view again to retry." : "Reading the list…" })] };
+    }
+    var R = huntRows(), r = huntRow(key), at = R.indexOf(r);
+    if (!r) return { title: title, kids: [el("p", { cls: "cdd-of", text: "The list no longer holds this course: its outline may have been read. The list above holds the courses still to find." })] };
+    function step(d) {
+      var n = R[(at + d + R.length) % R.length];
+      /* Close returns the focus to the row of the course the panel shows. */
+      var word = VIEW.root && VIEW.root.querySelector('[data-hunt-open="' + huntKey(n) + '"]');
+      openPane(null, { k: "outline", a: huntKey(n) }, word || VIEW.fromEl);
+    }
+    var prev = el("button", { type: "button", cls: "cmn-word", id: "cdd-hunt-prev", text: "Previous" }), next = el("button", { type: "button", cls: "cmn-word", id: "cdd-hunt-next", text: "Next" });
+    prev.addEventListener("click", function () { step(-1); });
+    next.addEventListener("click", function () { step(1); });
+    var carry = HUNT_CARRY.text; HUNT_CARRY.text = "";
+    var kids = [
+      el("p", { cls: "cdd-of" }, [el("span", { id: "cdd-hunt-pos", text: "Course " + (at + 1) + " of " + R.length + ". " }), prev, " ", next]),
+      carry ? el("p", { cls: "cdd-of", role: "status", "data-carried": "", text: carry }) : null,
+      dl([["M-ID", r.mid + (r.mid_title ? ", " + r.mid_title : "")], ["Districts that teach it", fmt(r.districts)],
+        ["Districts whose outlines print its outcomes", fmt(r.districts_with_text)],
+        ["Why this one", String(r.why || "").charAt(0).toUpperCase() + String(r.why || "").slice(1) + "."],
+        ["Our reader", r.college_read ? "Read " + r.college + "'s outlines and found no outcome text for this course." : "Has not read " + r.college + "'s outlines yet."]])
+    ].filter(Boolean);
+    var HO = window.CPL_HANDOVER;
+    if (HO && typeof HO.box === "function") {
+      var subject = huntSubject(r);
+      try {
+        kids.push(HO.box(subject, {
+          afterSave: function (saved) { HUNT_CARRY.text = saved || "Saved " + r.code + " under your name."; step(1); },
+          onChange: function () { huntSummary(); }
+        }));
+      } catch (e) { kids.push(tba("The hand-over box could not be drawn.")); }
+    } else {
+      huntSummary();
+      kids.push(el("p", { cls: "cdd-of", role: "status", text: window.CPL_TABS && window.CPL_TABS.loadScript ? "Opening the hand-over." : "The hand-over (commons_handover.js) could not be loaded. Reload the tab to try again." }));
+    }
+    return { title: r.college + " " + r.code + (r.course_title ? ", " + r.course_title : ""), basis: "From " + HUNT_FILE + ", the list the outcomes comparison ranks.", kids: kids };
   }
 
   /* ── the side panel: the same college beside the list (the Funding Follow-up Dashboard's drawer: its heading takes
