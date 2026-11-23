@@ -68,6 +68,11 @@ stays off the Los Rios colleges and any college lane 1 takes later.
 - 11:37Z: workers `piles` (lane 2, `claude/s714-piles-ccsf`, City College of San Francisco first) and `rios`
   (lane 1, `claude/s714-rios`, Sacramento City and Cosumnes River first) started, each at high effort on Opus 5.5.
   The display build waits for a slot and for no apply in flight.
+- 12:09Z: `piles` filed City College of San Francisco's plan, #3714 (`56916660`): 8 records to passing on three
+  `course_renumbers` and a shared scorer reading `option_parts`; 13 others held with reasons. A second reader is on it
+  before any apply. `piles` took East Los Angeles on `claude/s714-piles-ela`, in a new worktree so the reader's
+  checkout stays at the PR head. Four checkouts at about 2 GB each against 55 GB free, over the three-checkout
+  ceiling set when a checkout was 4.4 GB (`d-four-checkouts-on-measured-disk-s714`).
 
 ## Conductor settings
 
@@ -85,7 +90,8 @@ by Opus 5.5.
 | PR or branch | State | Next |
 |---|---|---|
 | #3713 (`claude/awesome-fermat-ka0z4l`) | the declaration | becomes the checkpoint at sign-off |
-| `claude/s714-piles-ccsf` (`piles`) | started | its plan, a second reader, the conductor's apply |
+| #3714 (`claude/s714-piles-ccsf`, `piles`) | plan filed, 8 rows | the second reader, the pre-read, the apply, the merge |
+| `claude/s714-piles-ela` (`piles`) | started | its plan |
 | `claude/s714-rios` (`rios`) | started | its reader change, a second reader, the conductor's paid reads |
 | #3712 (S712, Sam's plain session) | its own session's | none from this run |
 | #3383 | dependabot's | waits |
