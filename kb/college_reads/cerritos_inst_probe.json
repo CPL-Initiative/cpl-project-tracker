@@ -1,0 +1,10 @@
+{
+ "_readme": "S718 (SkyPetrel), 2026-11-23: a probe, not a filing. Sam found Cerritos's INST page (one COCI course, INST 273) by a web search; the S698 index read filed 97 subjects and no INST. This reads the index again for any INST link and reads the INST page at the address CourseLeaf gives it, to learn whether the index omits it or our filer dropped it. No model call.",
+ "college": "Cerritos College",
+ "questions": {"index": "Does the course-descriptions index link INST or Interdisciplinary Studies?", "inst": "What does the INST page print: its heading and its courses?"},
+ "keywords": ["INST", "Interdisciplinary"],
+ "pages": [
+  {"url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/", "answers": ["index"], "links": "/degrees-certificates-courses/course-descriptions/[a-z0-9_-]+/", "links_cap": 300},
+  {"url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/inst/", "answers": ["inst"]}
+ ]
+}
