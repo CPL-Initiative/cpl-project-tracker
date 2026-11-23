@@ -1,0 +1,19 @@
+{
+ "_readme": "S718 (SkyPetrel), 2026-11-23: pages for Los Angeles Mission College read by kb/_subject_code_address_probe.py. A heading is filed only when the page names the code in parentheses. No model call.",
+ "college": "Los Angeles Mission College",
+ "questions": {
+  "code_nrshca": "Does this page name Los Angeles Mission College's NRS HCA, and under what heading?"
+ },
+ "keywords": [
+  "NRS\\ HCA"
+ ],
+ "pages": [
+  {
+   "url": "https://lamission.edu:443/academics/aos/nursing-assitant-hha",
+   "answers": [
+    "code_nrshca"
+   ],
+   "source": "web_search"
+  }
+ ]
+}

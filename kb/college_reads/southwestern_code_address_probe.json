@@ -1,130 +1,37 @@
 {
- "_readme": "S718 (SkyPetrel), 2026-11-23: the codes COCI carries at Southwestern College that its course-descriptions index does not list, each read once at its code's address (kb/_subject_code_address_probe.py). A heading is filed only when the page names the code in parentheses. No model call.",
+ "_readme": "S718 (SkyPetrel), 2026-11-23: pages for Southwestern College read by kb/_subject_code_address_probe.py. A heading is filed only when the page names the code in parentheses. No model call.",
  "college": "Southwestern College",
  "questions": {
-  "code_amr": "Does Southwestern College's catalog print a AMR page, and under what heading?",
-  "code_ct": "Does Southwestern College's catalog print a CT page, and under what heading?",
-  "code_fcs": "Does Southwestern College's catalog print a FCS page, and under what heading?",
-  "code_idnm": "Does Southwestern College's catalog print a IDNM page, and under what heading?",
-  "code_ie": "Does Southwestern College's catalog print a IE page, and under what heading?",
-  "code_met": "Does Southwestern College's catalog print a MET page, and under what heading?",
-  "code_pea": "Does Southwestern College's catalog print a PE/A page, and under what heading?",
-  "code_ped": "Does Southwestern College's catalog print a PE/D page, and under what heading?",
-  "code_pei": "Does Southwestern College's catalog print a PE/I page, and under what heading?",
-  "code_pel": "Does Southwestern College's catalog print a PE/L page, and under what heading?",
-  "code_pet": "Does Southwestern College's catalog print a PE/T page, and under what heading?",
-  "code_pil": "Does Southwestern College's catalog print a PIL page, and under what heading?",
-  "code_qet": "Does Southwestern College's catalog print a QET page, and under what heading?",
-  "code_sla": "Does Southwestern College's catalog print a SLA page, and under what heading?",
-  "code_spch": "Does Southwestern College's catalog print a SPCH page, and under what heading?"
+  "code_pea": "Does this page name Southwestern College's PE/A, and under what heading?",
+  "code_ped": "Does this page name Southwestern College's PE/D, and under what heading?",
+  "code_pei": "Does this page name Southwestern College's PE/I, and under what heading?"
  },
  "keywords": [
-  "AMR",
-  "CT",
-  "FCS",
-  "IDNM",
-  "IE",
-  "MET",
   "PE/A",
   "PE/D",
-  "PE/I",
-  "PE/L",
-  "PE/T",
-  "PIL",
-  "QET",
-  "SLA",
-  "SPCH"
+  "PE/I"
  ],
  "pages": [
   {
-   "url": "https://catalog.swccd.edu/course-descriptions/amr/",
-   "answers": [
-    "code_amr"
-   ]
-  },
-  {
-   "url": "https://catalog.swccd.edu/course-descriptions/ct/",
-   "answers": [
-    "code_ct"
-   ]
-  },
-  {
-   "url": "https://catalog.swccd.edu/course-descriptions/fcs/",
-   "answers": [
-    "code_fcs"
-   ]
-  },
-  {
-   "url": "https://catalog.swccd.edu/course-descriptions/idnm/",
-   "answers": [
-    "code_idnm"
-   ]
-  },
-  {
-   "url": "https://catalog.swccd.edu/course-descriptions/ie/",
-   "answers": [
-    "code_ie"
-   ]
-  },
-  {
-   "url": "https://catalog.swccd.edu/course-descriptions/met/",
-   "answers": [
-    "code_met"
-   ]
-  },
-  {
-   "url": "https://catalog.swccd.edu/course-descriptions/pea/",
+   "url": "https://catalog.swccd.edu/course-descriptions/es_a/",
    "answers": [
     "code_pea"
-   ]
+   ],
+   "source": "web_search"
   },
   {
-   "url": "https://catalog.swccd.edu/course-descriptions/ped/",
+   "url": "https://catalog.swccd.edu/course-descriptions/danc/",
    "answers": [
     "code_ped"
-   ]
+   ],
+   "source": "web_search"
   },
   {
-   "url": "https://catalog.swccd.edu/course-descriptions/pei/",
+   "url": "https://catalog.swccd.edu/course-descriptions/es_i/",
    "answers": [
     "code_pei"
-   ]
-  },
-  {
-   "url": "https://catalog.swccd.edu/course-descriptions/pel/",
-   "answers": [
-    "code_pel"
-   ]
-  },
-  {
-   "url": "https://catalog.swccd.edu/course-descriptions/pet/",
-   "answers": [
-    "code_pet"
-   ]
-  },
-  {
-   "url": "https://catalog.swccd.edu/course-descriptions/pil/",
-   "answers": [
-    "code_pil"
-   ]
-  },
-  {
-   "url": "https://catalog.swccd.edu/course-descriptions/qet/",
-   "answers": [
-    "code_qet"
-   ]
-  },
-  {
-   "url": "https://catalog.swccd.edu/course-descriptions/sla/",
-   "answers": [
-    "code_sla"
-   ]
-  },
-  {
-   "url": "https://catalog.swccd.edu/course-descriptions/spch/",
-   "answers": [
-    "code_spch"
-   ]
+   ],
+   "source": "web_search"
   }
  ]
 }

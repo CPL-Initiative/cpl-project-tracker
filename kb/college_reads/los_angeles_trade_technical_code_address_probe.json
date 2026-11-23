@@ -1,0 +1,28 @@
+{
+ "_readme": "S718 (SkyPetrel), 2026-11-23: pages for Los Angeles Trade-Technical College read by kb/_subject_code_address_probe.py. A heading is filed only when the page names the code in parentheses. No model call.",
+ "college": "Los Angeles Trade-Technical College",
+ "questions": {
+  "code_pub": "Does this page name Los Angeles Trade-Technical College's PUB, and under what heading?",
+  "code_refac": "Does this page name Los Angeles Trade-Technical College's REF A/C, and under what heading?"
+ },
+ "keywords": [
+  "PUB",
+  "REF\\ A/C"
+ ],
+ "pages": [
+  {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2022-08/marketing_and_public_relations.pdf",
+   "answers": [
+    "code_pub"
+   ],
+   "source": "web_search"
+  },
+  {
+   "url": "https://lattc.edu/academics/aos/heating-ventilating-air-conditioning-hvac",
+   "answers": [
+    "code_refac"
+   ],
+   "source": "web_search"
+  }
+ ]
+}

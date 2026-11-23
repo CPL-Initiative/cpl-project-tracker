@@ -41,6 +41,7 @@ check("POL is not filed from the POLS page", P.heading_for(pages["pol"], "POL")[
 check("the 404 keeps its status", pages["esl"]["status"] == "404")
 check("two codes in one heading", P.heading_for({"text": ["Mathematics (MATH & STAT) · x"]}, "STAT")[0] == "Mathematics")
 check("a breadcrumb ahead of the heading", P.heading_for({"text": ["Home\u203a \u00b7 Course Descriptions\u203a \u00b7 Creative Arts (CART) \u00b7 Print Options"]}, "CART")[0] == "Creative Arts")
+check("a dotted code in the heading", P.heading_for({"text": ["English as a Second Language (E.S.L.)"]}, "E.S.L.")[0] == "English as a Second Language")
 check("a slash code reads as one address segment", P.slug_of_code("HVAC/R") == "hvacr")
 sys.path.insert(0, os.path.join(ROOT, "kb"))
 import _file_subject_headings as F  # noqa: E402
