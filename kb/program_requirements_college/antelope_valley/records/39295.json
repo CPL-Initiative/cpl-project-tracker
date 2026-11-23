@@ -66,20 +66,24 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    27.0,
-    30.0
+    57.0,
+    63.0
    ],
    "stated": [
     60.0,
     60.0
    ],
    "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the AVC GE pattern, but no units for it"
+   "ge": [
+    30.0,
+    33.0
    ],
+   "why": [
+    "the blocks and general education come to 57.0-63.0, past the 60.0-60.0 the catalog prints for the degree"
+   ],
+   "fill": null,
    "major": {
     "pass": true,
     "status": "equal",
@@ -138,8 +142,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 30,
+    "max": 33
    },
    "electives_fill_degree": true,
    "outcomes": [
@@ -402,5 +406,20 @@
    "Career 'dance' is read from 'continuing a career in dance' in the program goals; reviewer may confirm."
   ]
  },
- "extracted_run": "38979725726"
+ "extracted_run": 45133183717,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 30,
+    "max": 33
+   },
+   "words": "Completion of General Education requirements, plus electives (as needed to reach 60 units)\n30-33"
+  }
+ ],
+ "read_run": "38979725726"
 }

@@ -46,27 +46,30 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 8,
+   "placed": 10,
    "listed": 10,
-   "share": 0.8,
-   "missing": [
-    "PHIL130",
-    "PHIL140"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "PHIL230",
+     "listed": "PHIL130",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "PHIL240",
+     "listed": "PHIL140",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "PHIL230",
-    "PHIL240"
-   ],
-   "flagged": [
-    "PHIL230",
-    "PHIL240"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -288,5 +291,6 @@
    "The Recommended Pathway lists general electives and Cal-GETC areas per term; these are not recorded as blocks."
   ]
  },
- "extracted_run": "38979725726"
+ "extracted_run": 45133183717,
+ "read_run": "38979725726"
 }
