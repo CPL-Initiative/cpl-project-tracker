@@ -105,7 +105,7 @@ const posts = (x) => x.calls.filter((c) => c.method !== "GET");
   const box = x.d.getElementById("csb-all"), co = x.d.getElementById("csb-all-code");
   check("(2) signed in, the block names the colleges it writes and is filled with this college's code",
     box && co && co.value === "ELEC" && /Alpha College; Beta College; Gamma College; Zeta College\./.test(txt(x.d.getElementById("csb-all-rule"))), txt(box));
-  check("(3) the block names the college a person settled, with its code", /Kept as a person settled them: Delta College \(KINE\)\./.test(txt(x.d.getElementById("csb-all-other"))));
+  check("(3) the block names the college a person settled, with its code", /Kept as a person saved them: Delta College \(KINE\)\./.test(txt(x.d.getElementById("csb-all-other"))));
   check("(4) the block names the noncredit-only college as settled on its own forms", /Epsilon College\./.test(txt(x.d.getElementById("csb-all-nc"))));
   check("(2) the field has its label and Save is a word button", x.d.querySelector('label[for="csb-all-code"]') && x.d.getElementById("csb-all-save").tagName === "BUTTON"
     && x.d.getElementById("csb-all-save").classList.contains("csb-word"));

@@ -837,6 +837,41 @@
   var LEVEL_WORDS = ["Confident", "Likely", "Leaning", "Unsure"];
   function share(n, of) { return of ? Math.round(n / of * 100) : 0; }
   function stage(name) { return el("h4", { cls: "cmf-stage", text: name }); }
+  /* The Subjects card opens on its top section, with Collect, Curate and Connect folded (Sam, 2026-11-23: "With the
+     addition of the top action links, we can default display the cards collapsed all but the tops sections"). A stage
+     opens from its word, or from a quick link that points into it; what is open lasts the visit, across the live
+     redraws, and is never stored (a fold, not a filter). */
+  var SUBJ_OPEN = {};
+  function stageFold(name, kids) {
+    var id = "cmf-subj-stage-" + name.toLowerCase(), open = !!SUBJ_OPEN[name];
+    var box = el("div", { cls: "cmf-stage-x", id: id }, kids.filter(Boolean));
+    var b = el("button", { type: "button", cls: "cmf-stage-b", "aria-expanded": open ? "true" : "false", "aria-controls": id, text: name });
+    function set(v) {
+      SUBJ_OPEN[name] = v;
+      b.setAttribute("aria-expanded", v ? "true" : "false");
+      if (v) box.removeAttribute("hidden"); else box.setAttribute("hidden", "");
+    }
+    set(open);
+    b.addEventListener("click", function () { set(b.getAttribute("aria-expanded") !== "true"); });
+    Array.prototype.forEach.call(box.querySelectorAll(".cmf-check"), function (c) { c._unfold = function () { set(true); }; });
+    return [el("h4", { cls: "cmf-stage" }, [b]), box];
+  }
+  function checkBox(n, kids) { return el("div", { cls: "cmf-check", id: "cmf-subj-check-" + n }, kids.filter(Boolean)); }
+  /* The quick links under the headline (Sam, 2026-11-23: "add a short bulleted set of quick links to prioritized action
+     needed--the links can shoot down to links on the lower sections so user can get oriented and then one more click to
+     the action view"): what most needs action first, each with its live count; each opens its check's stage, scrolls to
+     the check and its Where to act line, and focuses it. A figure not read yet, or at zero, is left out. */
+  function subjQuick(L, LT, HC, R, all) {
+    var items = [];
+    if (L && L.codes && L.codes.Unsure) items.push(["2", fmt(L.codes.Unsure) + " local codes with an Unsure common code"]);
+    if (LT && LT.untitled) items.push(["1", fmt(LT.untitled) + " codes with no title"]);
+    if (HC && HC.held) items.push(["3", fmt(HC.held) + " courses the M-ID mint holds"]);
+    if (LT && all && all - LT.collegesNamed > 0) items.push(["1", fmt(all - LT.collegesNamed) + " colleges with no catalog read yet"]);
+    if (R && R.mids - R.ready > 0) items.push(["4", fmt(R.mids - R.ready) + " " + R.code + " M-IDs not ready to re-mint"]);
+    if (!items.length) return null;
+    return el("div", { cls: "cmf-quick", id: "cmf-subj-quick" }, [el("p", { cls: "cmf-sub", text: "Needs action first:" }),
+      el("ul", { cls: "cmf-list" }, items.slice(0, 5).map(function (i) { return el("li", { "data-check": i[0] }, [onPage("cmf-subj-check-" + i[0], i[1])]); }))]);
+  }
   function checkHead(n, name, fig) { return el("p", { cls: "cmf-check-h" }, [el("strong", { text: n + ". " + name }), el("span", { cls: "cmf-check-fig" }, fig)]); }
   function act(links) {
     var kids = [el("span", { cls: "cmf-act-l", text: "Where to act:" })];
@@ -852,9 +887,9 @@
   }
   function subjTitleKids(LT) {
     return LT ? [a("#commons/subjects", fmt(LT.named) + " local titles"), " at ", a("#commons/subjects", fmt(LT.collegesNamed) + " of " + fmt(LT.colleges) + " colleges"),
-      " with a catalog on file. Owner: the Courses bot takes each title from the catalog’s subject heading; a person settles the ",
+      " with a catalog on file. Owner: the Courses bot takes each title from the catalog’s subject heading. For each of the ",
       a("#commons/subjects/disagree", fmt(LT.untitled) + " codes with no title"),
-      " (" + fmt(LT.notInCatalog) + " not in catalog, " + fmt(LT.notRead) + " not read yet, " + fmt(LT.blocked) + " blocked)."]
+      " (" + fmt(LT.notInCatalog) + " not in catalog, " + fmt(LT.notRead) + " not read yet, " + fmt(LT.blocked) + " blocked), Sky recommends a title, and a person’s save confirms it."]
       : ["Local subject titles: TBA."];
   }
   function subjHeldKids(HC) {
@@ -868,12 +903,11 @@
     var sOf = !!S && S.of != null, all = SW.colleges || M.allColleges || null;
     var big = L ? share(L.courses.Confident, L.totalCourses) + "%" : M.subjLevelsError ? "TBA" : "…";
     var rest = [L || M.subjLevelsError ? " of courses sit under a local code with a Confident common code" : " Reading the confidence levels…"];
-    var body = [
+    var body = [subjQuick(L, LT, HC, R, all),
       ul([lead("Why:", "every M-ID starts with a common subject code (ELEC M9012), and each college’s local code (Cerritos AED) must point to the right one."),
         lead("Finished when:", "every college’s local codes carry the college’s own title and a Confident common code."),
         lead("Confident:", "90% or better, from the data or from a person’s confirm."),
-        SW.codes ? lead("Scale:", fmt(SW.colleges) + " colleges, " + fmt(SW.codes) + " local codes, " + fmt(SW.pairs) + " college-and-code pairs, " + fmt(SW.courses) + " active and approved COCI courses.") : null]),
-      stage("Collect"),
+        SW.codes ? lead("Scale:", fmt(SW.colleges) + " colleges, " + fmt(SW.codes) + " local codes, " + fmt(SW.pairs) + " college-and-code pairs, " + fmt(SW.courses) + " active and approved COCI courses.") : null])].concat(stageFold("Collect", [checkBox(1, [
       checkHead(1, "Each college’s own subject titles", LT && all ? [el("strong", { text: fmt(LT.collegesNamed) }), " of " + fmt(all) + " colleges"] : ["TBA"]),
       LT && all ? meter(share(LT.collegesNamed, all), fmt(LT.collegesNamed) + " of " + fmt(all) + " colleges, " + share(LT.collegesNamed, all) + " percent") : null,
       el("p", { id: "cmf-subj-titles" }, subjTitleKids(LT)),
@@ -885,27 +919,24 @@
         "A person’s hand-over, where a site blocks our reader.",
         "COCI and the MIS reports carry no subject names.",
         "Who: Sky, in the nightly data collection."]),
-      act([["The colleges and their titles", "#commons/subjects"], ["Hand over a file or link", "#collect"]]),
-      stage("Curate"),
+      act([["The colleges and their titles", "#commons/subjects"], ["Hand over a file or link", "#collect"]])])]), stageFold("Curate", [checkBox(2, [
       checkHead(2, "A Confident common code for every local code", L ? [el("strong", { text: fmt(L.pairs.Confident) }), " of " + fmt(L.totalPairs) + " pairs"] : ["TBA"]),
       L ? stack(L) : null,
       L ? el("p", { cls: "cmf-sub", id: "cmf-subj-levels", text: LEVEL_WORDS.map(function (k) { return k + " " + fmt(L.pairs[k]); }).join(" · ") }) : null,
       ul([L ? "Next: Sky raises the " + fmt(L.codes.Unsure) + " Unsure codes with their titles and a web search." : null,
         sOf ? [S.settled === S.of ? "Done: all " : "", a("#canonical-subj4", fmt(S.settled) + " of " + fmt(S.of) + " disciplines settled"),
           " in the Common Subjects Reference" + (S.settled === S.of ? ", each with its common code." : ". Owner: a curator.")] : "Disciplines with a settled common code: TBA."]),
-      act([["Every local code, statewide", "#commons/subjects/statewide"], ["Noncredit subject titles", "#commons/subjects/noncredit"]]),
-      stage("Connect"),
+      act([["Every local code, statewide", "#commons/subjects/statewide"], ["Noncredit subject titles", "#commons/subjects/noncredit"]])])]), stageFold("Connect", [checkBox(3, [
       checkHead(3, "No course held for want of a code", HC ? [el("strong", { text: fmt(HC.held) }), " held"] : ["TBA"]),
       el("p", { id: "cmf-subj-held" }, subjHeldKids(HC)),
       ul(["Next: the mint takes Confident calls, so a course under a Confident code is placed."]),
-      act([["Codes the mint holds on", "#commons/subjects/held"]]),
+      act([["Codes the mint holds on", "#commons/subjects/held"]])]), checkBox(4, [
       checkHead(4, "Re-mint scopes ready", R ? [el("strong", { text: fmt(R.ready) }), " of " + fmt(R.mids) + " M-IDs (" + R.code + ")"] : ["TBA"]),
       R ? meter(share(R.ready, R.mids), fmt(R.ready) + " of " + fmt(R.mids) + " M-IDs ready, " + share(R.ready, R.mids) + " percent") : null,
       R ? ul(["Members still held: " + Object.keys(R.member_status || {}).filter(function (k) { return k !== "settled" && R.member_status[k]; })
           .map(function (k) { return fmt(R.member_status[k]) + " " + k; }).join(", ") + ".",
         "Next: Sam’s twelve " + R.code + " titles, then one re-mint."]) : null,
-      act(R && R.slug ? [[R.college.replace(/ College$/, "") + " " + R.code, "#commons/subjects/" + R.slug + "/" + R.code]] : [["The subjects list", "#commons/subjects"]])
-    ];
+      act(R && R.slug ? [[R.college.replace(/ College$/, "") + " " + R.code, "#commons/subjects/" + R.slug + "/" + R.code]] : [["The subjects list", "#commons/subjects"]])])]));
     return { big: big, rest: rest, body: body.filter(Boolean) };
   }
   /* The re-mint scope the readiness gate measures (kb/_mid_readiness.py), with the slug its college's view opens at. */
@@ -1509,6 +1540,10 @@
     ".cmf-big { font-family:var(--cmn-serif); font-size:1.75rem; font-weight:700; color:var(--cmn-title); letter-spacing:-0.02em; margin-right:4px; }",
     ".cmf-badge { display:inline-block; margin-left:4px; padding:1px 8px; border-radius:999px; background:var(--cmn-ask-bg); color:var(--cmn-ask-fg); font-size:.76rem; font-weight:700; }",
     ".cmf-x { display:flex; flex-direction:column; gap:10px; min-width:0; }",
+    ".cmf-stage-b { font:inherit; letter-spacing:inherit; text-transform:inherit; color:var(--cmn-link); background:none; border:0; padding:0; min-height:24px; line-height:24px; text-decoration:underline; text-underline-offset:3px; cursor:pointer; }",
+    ".cmf-stage-b[aria-expanded='false']::after { content:' (show)'; } .cmf-stage-b[aria-expanded='true']::after { content:' (hide)'; }",
+    ".cmf-stage-b:focus-visible, .cmf-check:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:2px; border-radius:2px; }",
+    ".cmf-check:focus { outline:none; } .cmf-quick { margin:6px 0 2px; } .cmf-quick a { display:inline-block; min-height:24px; line-height:24px; }",
     ".cmf-stage { margin:14px 0 6px; font-size:.75rem; letter-spacing:.06em; text-transform:uppercase; color:var(--cmn-muted); border-bottom:2px solid var(--cmn-gold); padding-bottom:4px; }",
     ".cmf-check-h { margin:6px 0 4px; display:flex; flex-wrap:wrap; justify-content:space-between; gap:4px 12px; align-items:baseline; }",
     ".cmf-check-h > strong { color:var(--cmn-heading); }",
