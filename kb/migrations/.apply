@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-22_s703_cpl_memory_rows.sql
-name=s703_cpl_memory_rows
+file=kb/migrations/2026-11-23_s713c_prreq_piles_apply.sql
+name=s713c_prreq_piles
