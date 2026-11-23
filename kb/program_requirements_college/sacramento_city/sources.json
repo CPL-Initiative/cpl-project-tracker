@@ -564,26 +564,27 @@
    "MET364"
   ],
   "source": {
-   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=529",
-   "title": "associated with this field, and learn the requirements for a certificate in",
-   "h1": "associated with this field, and learn the requirements for a certificate in",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=526",
+   "title": "Mechanical Systems Technician Certificate",
+   "h1": "Mechanical Systems Technician Certificate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    529,
-    530,
-    531
+    526,
+    527
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "2cec3fe3deaa1811167a78312e3d82987f6e7361b7a047816dfa7ba990ae0eaa"
-   }
+   },
+   "text_sha": "458f00bcb4b652a4"
   },
   "listed": 10,
-  "text_chars": 13717
+  "text_chars": 4182
  },
  {
   "control_number": "04671",
@@ -1438,27 +1439,27 @@
    "CISW400"
   ],
   "source": {
-   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=274",
-   "title": "Certificate Requirements",
-   "h1": "Certificate Requirements",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=265",
+   "title": "A.S. in Management Information Science",
+   "h1": "A.S. in Management Information Science",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    274,
-    275,
-    276,
-    277
+    265,
+    266
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "2cec3fe3deaa1811167a78312e3d82987f6e7361b7a047816dfa7ba990ae0eaa"
-   }
+   },
+   "text_sha": "aa32d5727d9d5d33"
   },
   "listed": 30,
-  "text_chars": 16000
+  "text_chars": 4711
  },
  {
   "control_number": "07338",
@@ -1542,8 +1543,13 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.611,
+  "coverage": 0.944,
   "codes_found": [
+   "MET256",
+   "MET257",
+   "MET351",
+   "MET357",
+   "MET360",
    "MET361",
    "MET362",
    "MET363",
@@ -1554,28 +1560,31 @@
    "MET374",
    "MET381",
    "MET383",
-   "MET384"
+   "MET384",
+   "OEHS110"
   ],
   "source": {
-   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=531",
-   "title": "Act, 40 CFR, part 82, subpart F and regulated by the Environmental",
-   "h1": "Act, 40 CFR, part 82, subpart F and regulated by the Environmental",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=525",
+   "title": "A.S. in Mechanical-Electrical Technology",
+   "h1": "A.S. in Mechanical-Electrical Technology",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    531,
-    532
+    525,
+    526
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "2cec3fe3deaa1811167a78312e3d82987f6e7361b7a047816dfa7ba990ae0eaa"
-   }
+   },
+   "text_sha": "ade8462b1d6076c6"
   },
   "listed": 18,
-  "text_chars": 8874
+  "text_chars": 6942
  },
  {
   "control_number": "07350",
@@ -2585,27 +2594,27 @@
    "WGS304"
   ],
   "source": {
-   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=630",
-   "title": "A.A.-T. in Sociology",
-   "h1": "A.A.-T. in Sociology",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=633",
+   "title": "A.A. in Sociology",
+   "h1": "A.A. in Sociology",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    630,
-    631,
-    632,
-    633
+    633,
+    634
    ],
    "extractor": "pypdf",
    "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "2cec3fe3deaa1811167a78312e3d82987f6e7361b7a047816dfa7ba990ae0eaa"
-   }
+   },
+   "text_sha": "b8825a7c2ee303ee"
   },
   "listed": 29,
-  "text_chars": 16000
+  "text_chars": 4501
  },
  {
   "control_number": "15573",
@@ -2627,27 +2636,27 @@
    "CISS360"
   ],
   "source": {
-   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=271",
-   "title": "Career Information",
-   "h1": "Career Information",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=263",
+   "title": "A.S. in Cybersecurity and Information",
+   "h1": "A.S. in Cybersecurity and Information",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    271,
-    272,
-    273,
-    274
+    263,
+    264
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "2cec3fe3deaa1811167a78312e3d82987f6e7361b7a047816dfa7ba990ae0eaa"
-   }
+   },
+   "text_sha": "3c772b4da6961d34"
   },
   "listed": 10,
-  "text_chars": 16000
+  "text_chars": 2914
  },
  {
   "control_number": "16231",
@@ -4058,27 +4067,27 @@
    "CISW306"
   ],
   "source": {
-   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=265",
-   "title": "Specialist) as major fields of study with general education courses in other",
-   "h1": "Specialist) as major fields of study with general education courses in other",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=272",
+   "title": "Information Processing Specialist",
+   "h1": "Information Processing Specialist",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    265,
-    266,
-    267,
-    268
+    272,
+    273
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "2cec3fe3deaa1811167a78312e3d82987f6e7361b7a047816dfa7ba990ae0eaa"
-   }
+   },
+   "text_sha": "45fee6283acfff33"
   },
   "listed": 15,
-  "text_chars": 16000
+  "text_chars": 2910
  },
  {
   "control_number": "23006",
@@ -4411,8 +4420,13 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.579,
+  "coverage": 0.895,
   "codes_found": [
+   "MET256",
+   "MET257",
+   "MET351",
+   "MET357",
+   "MET360",
    "MET361",
    "MET362",
    "MET363",
@@ -4423,28 +4437,31 @@
    "MET374",
    "MET381",
    "MET383",
-   "MET384"
+   "MET384",
+   "OEHS110"
   ],
   "source": {
-   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=531",
-   "title": "Act, 40 CFR, part 82, subpart F and regulated by the Environmental",
-   "h1": "Act, 40 CFR, part 82, subpart F and regulated by the Environmental",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=527",
+   "title": "Mechanical-Electrical Technology",
+   "h1": "Mechanical-Electrical Technology",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    531,
-    532
+    527,
+    528
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "2cec3fe3deaa1811167a78312e3d82987f6e7361b7a047816dfa7ba990ae0eaa"
-   }
+   },
+   "text_sha": "3c09aff0c6d035bc"
   },
   "listed": 19,
-  "text_chars": 8874
+  "text_chars": 6638
  },
  {
   "control_number": "23020",
@@ -4656,27 +4673,27 @@
    "MUSM366"
   ],
   "source": {
-   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=536",
-   "title": "Course Code Course Title Units",
-   "h1": "Course Code Course Title Units",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=543",
+   "title": "Commercial Music, Audio Production",
+   "h1": "Commercial Music, Audio Production",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    536,
-    537,
-    538,
-    539
+    543,
+    544
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "2cec3fe3deaa1811167a78312e3d82987f6e7361b7a047816dfa7ba990ae0eaa"
-   }
+   },
+   "text_sha": "cc7f8ab0e768b716"
   },
   "listed": 20,
-  "text_chars": 15548
+  "text_chars": 2808
  },
  {
   "control_number": "23028",
@@ -4862,7 +4879,7 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.846,
+  "coverage": 1.0,
   "codes_found": [
    "ECE312",
    "ECE314",
@@ -4871,33 +4888,35 @@
    "ECE322",
    "ECE342",
    "ECE343",
+   "ECE350",
    "ECE360",
    "ECE400",
    "ECE415",
+   "ECE419",
    "ECE430"
   ],
   "source": {
-   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=328",
-   "title": "School-Age Care and Education Teacher Certificate",
-   "h1": "School-Age Care and Education Teacher Certificate",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=334",
+   "title": "School-Age Care and Education Teacher",
+   "h1": "School-Age Care and Education Teacher",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    328,
-    329,
-    330,
-    331
+    334,
+    335
    ],
    "extractor": "pypdf",
    "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "2cec3fe3deaa1811167a78312e3d82987f6e7361b7a047816dfa7ba990ae0eaa"
-   }
+   },
+   "text_sha": "ad341dac43a508c6"
   },
   "listed": 13,
-  "text_chars": 16000
+  "text_chars": 4518
  },
  {
   "control_number": "23036",
@@ -5220,24 +5239,27 @@
    "COSM151"
   ],
   "source": {
-   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=200",
-   "title": "students will be placed back on top of priority enrollment list for possible",
-   "h1": "students will be placed back on top of priority enrollment list for possible",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=296",
+   "title": "Art and Science of Nail Technology",
+   "h1": "Art and Science of Nail Technology",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    200
+    296,
+    297
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "2cec3fe3deaa1811167a78312e3d82987f6e7361b7a047816dfa7ba990ae0eaa"
-   }
+   },
+   "text_sha": "e71cf45c3d50db95"
   },
   "listed": 3,
-  "text_chars": 4758
+  "text_chars": 4360
  },
  {
   "control_number": "30395",
@@ -5344,38 +5366,37 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 1.0,
+  "coverage": 0.75,
   "codes_found": [
    "SURVY300",
-   "SURVY310",
    "SURVY320",
-   "SURVY324",
    "SURVY330",
    "SURVY340",
    "SURVY350",
    "SURVY352"
   ],
   "source": {
-   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=647",
-   "title": "The Surveying/Geomatics Associate in Science (A.S.) degree may be",
-   "h1": "The Surveying/Geomatics Associate in Science (A.S.) degree may be",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=646",
+   "title": "A.S. in Surveying/Geomatics",
+   "h1": "A.S. in Surveying/Geomatics",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    647,
-    648,
-    649
+    646,
+    647
    ],
    "extractor": "pypdf",
    "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "2cec3fe3deaa1811167a78312e3d82987f6e7361b7a047816dfa7ba990ae0eaa"
-   }
+   },
+   "text_sha": "791bc6516cf20215"
   },
   "listed": 8,
-  "text_chars": 11275
+  "text_chars": 3089
  },
  {
   "control_number": "30409",
@@ -5402,27 +5423,27 @@
    "SURVY310"
   ],
   "source": {
-   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=363",
-   "title": "The Architectural/Structural Design Associate in Science (A.S.) degree may",
-   "h1": "The Architectural/Structural Design Associate in Science (A.S.) degree may",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=362",
+   "title": "A.S. in Architectural/Structural Design",
+   "h1": "A.S. in Architectural/Structural Design",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    363,
-    364,
-    365,
-    366
+    362,
+    363
    ],
    "extractor": "pypdf",
    "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "2cec3fe3deaa1811167a78312e3d82987f6e7361b7a047816dfa7ba990ae0eaa"
-   }
+   },
+   "text_sha": "764a3fc68a606583"
   },
   "listed": 15,
-  "text_chars": 16000
+  "text_chars": 3846
  },
  {
   "control_number": "30410",
@@ -5543,27 +5564,27 @@
    "SURVY310"
   ],
   "source": {
-   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=363",
-   "title": "Course Code Course Title Units",
-   "h1": "Course Code Course Title Units",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=367",
+   "title": "Electric (Power-Lighting Systems)",
+   "h1": "Electric (Power-Lighting Systems)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    363,
-    364,
-    365,
-    366
+    367,
+    368
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "2cec3fe3deaa1811167a78312e3d82987f6e7361b7a047816dfa7ba990ae0eaa"
-   }
+   },
+   "text_sha": "eaeac83580d1f563"
   },
   "listed": 15,
-  "text_chars": 16000
+  "text_chars": 3623
  },
  {
   "control_number": "30413",
@@ -5820,26 +5841,27 @@
    "FLTEC330"
   ],
   "source": {
-   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=182",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=186",
    "title": "Aircraft Dispatcher Certificate",
    "h1": "Aircraft Dispatcher Certificate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    182,
-    183,
-    184
+    186,
+    187
    ],
    "extractor": "pypdf",
    "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "2cec3fe3deaa1811167a78312e3d82987f6e7361b7a047816dfa7ba990ae0eaa"
-   }
+   },
+   "text_sha": "fe8679682a37fa16"
   },
   "listed": 9,
-  "text_chars": 12957
+  "text_chars": 4681
  },
  {
   "control_number": "30520",
@@ -5859,26 +5881,27 @@
    "FLTEC330"
   ],
   "source": {
-   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=182",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=187",
    "title": "Flight Technology Certificate",
    "h1": "Flight Technology Certificate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    182,
-    183,
-    184
+    187,
+    188
    ],
    "extractor": "pypdf",
    "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "2cec3fe3deaa1811167a78312e3d82987f6e7361b7a047816dfa7ba990ae0eaa"
-   }
+   },
+   "text_sha": "ca2737c16b885630"
   },
   "listed": 8,
-  "text_chars": 12924
+  "text_chars": 3446
  },
  {
   "control_number": "30521",
@@ -7106,30 +7129,31 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.865,
+  "coverage": 0.892,
   "codes_found": [
    "ANTH310",
    "ANTH324",
    "ANTH481",
-   "ECON302",
    "ETHNS300",
    "GEOG320",
    "GLST301",
    "GLST302",
+   "HIST300",
+   "HIST302",
    "HIST307",
    "HIST308",
    "HIST310",
-   "HIST311",
    "HIST320",
    "HIST321",
    "HIST327",
    "HIST344",
    "HIST360",
+   "HIST364",
+   "HIST365",
+   "HIST373",
    "HIST375",
    "HIST380",
    "HIST381",
-   "HIST483",
-   "HIST484",
    "HIST486",
    "HIST487",
    "POLS310",
@@ -7142,24 +7166,27 @@
    "WGS304"
   ],
   "source": {
-   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=95",
-   "title": "4. Social and Behavioral Sciences",
-   "h1": "4. Social and Behavioral Sciences",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=434",
+   "title": "A.A.-T. in History",
+   "h1": "A.A.-T. in History",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    95
+    434,
+    435
    ],
    "extractor": "pypdf",
    "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "2cec3fe3deaa1811167a78312e3d82987f6e7361b7a047816dfa7ba990ae0eaa"
-   }
+   },
+   "text_sha": "7247db03375dc1b0"
   },
   "listed": 37,
-  "text_chars": 4071
+  "text_chars": 5652
  },
  {
   "control_number": "32717",
@@ -8409,24 +8436,27 @@
    "CISS360"
   ],
   "source": {
-   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=267",
-   "title": "Course",
-   "h1": "Course",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=269",
+   "title": "Computer Information Security Essentials",
+   "h1": "Computer Information Security Essentials",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    267
+    269,
+    270
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "2cec3fe3deaa1811167a78312e3d82987f6e7361b7a047816dfa7ba990ae0eaa"
-   }
+   },
+   "text_sha": "2eeb5aa31daf5a9d"
   },
   "listed": 4,
-  "text_chars": 4266
+  "text_chars": 2060
  },
  {
   "control_number": "40346",
@@ -9555,25 +9585,26 @@
    "COMM341"
   ],
   "source": {
-   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=247",
-   "title": "Professional and Workplace Communication Certificate",
-   "h1": "Professional and Workplace Communication Certificate",
+   "url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=254",
+   "title": "Professional and Workplace",
+   "h1": "Professional and Workplace",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    247,
-    248
+    254
    ],
    "extractor": "pypdf",
    "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "2cec3fe3deaa1811167a78312e3d82987f6e7361b7a047816dfa7ba990ae0eaa"
-   }
+   },
+   "text_sha": "cd738dbef5de0077"
   },
   "listed": 4,
-  "text_chars": 8463
+  "text_chars": 2800
  },
  {
   "control_number": "42463",
