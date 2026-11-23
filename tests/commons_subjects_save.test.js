@@ -273,7 +273,10 @@ function typeIn(x, id, v) { const i = x.d.getElementById(id); i.value = v; retur
   const TC = [["ADMINISTRATION OF JUSTICE", "Administration of Justice"], ["anatomy and physiology", "Anatomy and Physiology"], ["ESL for adults", "ESL for Adults"],
     ["HISTORY II", "History II"], ["child development/early childhood", "Child Development/Early Childhood"], ["HiSET prep", "HiSET Prep"],
     ["Women's and Gender Studies", "Women's and Gender Studies"], ["Art: a survey", "Art: A Survey"], ["speech-language pathology", "Speech-Language Pathology"],
-    ["Anatomy And Physiology", "Anatomy and Physiology"], ["(CAD) drafting", "(CAD) Drafting"], ["Speech Pathology", "Speech Pathology"]];
+    ["Anatomy And Physiology", "Anatomy and Physiology"], ["(CAD) drafting", "(CAD) Drafting"], ["Speech Pathology", "Speech Pathology"],
+    /* A code in parentheses keeps its capitals, and a note word there stays as typed (Sam, 2026-11-23, Clovis's COTR). */
+    ["Work Experience Education (formerly COTR)", "Work Experience Education (formerly COTR)"], ["ANTHROPOLOGY (ANTH, Formerly ANTHRO)", "Anthropology (ANTH, Formerly ANTHRO)"],
+    ["WORK EXPERIENCE (formerly (COTR) cooperative work)", "Work Experience (formerly (COTR) cooperative work)"], ["ART (I) studio", "Art (I) Studio"]];
   const bad = TC.filter((p) => x.w.CPL_COMMONS_SUBJECTS.titleCase(p[0]) !== p[1]);
   check("(9) ⭐ the page's Title Case gives what the Python rule gives", bad.length === 0, bad.map((p) => p[0] + " -> " + x.w.CPL_COMMONS_SUBJECTS.titleCase(p[0])).join("; "));
   check("(9) the word lists come from the titles file the builder writes", Array.isArray(LIVE.title_case.kept) && LIVE.title_case.kept.indexOf("ESL") >= 0

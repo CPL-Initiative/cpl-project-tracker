@@ -196,5 +196,20 @@ finally:
 check("(8) the Cerritos list is filed with its address and Sam's words", (lambda d: d["source_url"] == "https://secure.cerritos.edu/schedule/index.cgi"
       and d["_provenance"]["by"] == "Sam" and d["codes"]["AED"] == "Adult Education" and len(d["codes"]) == 92)(
       json.load(open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "kb", "reference", "college_department_lists", "cerritos.json")))))
+# (9) Clovis's catalog index, filed by hand from Sam's reading of the PDF (S715, 2026-11-23): a listed subject is
+# titled from the index, a former code takes its subject's heading without joining the catalog's codes, and the file
+# names the person, the date and the page.
+_R = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+_CL = json.load(open(os.path.join(_R, "kb", "hand_filed_catalogs", "subjects", "clovis_community.json")))
+check("(9) the Clovis index names Sam, the session and the PDF's page 3", "Sam" in _CL["read_by"] and "S715" in _CL["read_by"]
+      and _CL["source"] == ["https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=3"])
+check("(9) its former codes are the five the contents names", sorted(r["code"] for r in _CL["rows"] if r["rule"] == "former") == ["ANTHRO", "COTR", "POLSCI", "PSY", "SOC"])
+_T = json.load(open(os.path.join(_R, "kb", "status", "local_subject_titles.json")))
+_C = [c for c in _T["colleges"] if c["slug"] == "clovis_community"][0]
+_CR = {r[0]: dict(zip(_T["columns"], r)) for r in _C["rows"]}
+check("(9) ⭐ a former code takes its subject's title and stays a COCI-only code",
+      _CR["ANTHRO"]["printed_name"] == "Anthropology" and _CR["ANTHRO"]["title_source"] == "index, former code" and _CR["ANTHRO"]["side"] == "state")
+check("(9) ⭐ a listed code COCI holds is titled from the index", _CR["ESC"]["printed_name"] == "Educational Strategies Courses" and _CR["ESC"]["title_source"] == "index")
+check("(9) a code the contents does not name keeps its reason", _CR["REHT"]["printed_name"] is None and _CR["REHT"]["title_state"] == "not_in_catalog")
 print(("FAILED " + str(len(FAILS))) if FAILS else "all passed")
 sys.exit(1 if FAILS else 0)
