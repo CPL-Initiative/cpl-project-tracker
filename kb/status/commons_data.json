@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-23T12:04:34Z",
+ "written_at": "2026-11-23T14:03:17Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,8 +168,8 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17000,
-  "gap": 5335,
+  "passing": 17011,
+  "gap": 5324,
   "with_gap": 118,
   "cost_usd": 1340.95,
   "passed_at_read": 16256,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16679,
-  "gap": 5335,
+  "passing": 16690,
+  "gap": 5324,
   "collected_with_gaps": 321,
   "discontinued": 0
  },
@@ -4944,13 +4944,13 @@
    "harvested": true,
    "slug": "fullerton",
    "programs": 332,
-   "passing": 290,
-   "gap": 42,
+   "passing": 301,
+   "gap": 31,
    "causes": {
     "no_closed_list": 6,
     "page_not_found": 10,
     "places_none": 2,
-    "unknown_without_live": 24
+    "unknown_without_live": 13
    },
    "census_causes": {
     "coverage_fails": 14,
@@ -5005,7 +5005,7 @@
    "read_seconds": 2095.2,
    "run": "44762380826",
    "levers": {
-    "reconcile_steps": 24,
+    "reconcile_steps": 13,
     "reader_page_search": 10,
     "program_course_file_check": 6,
     "reader_page_assignment": 2

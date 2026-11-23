@@ -24,6 +24,104 @@
   "printed_total": "a heading's range whose low end is a test-out, beside a printed total that is its top (Moreno Valley 38758, S674): pattern's lo, hi and total; the record's total_units becomes the total only where it holds exactly lo-hi, the page prints the step's requires words, total equals hi, and the record's blocks are all rule-all with fixed stated figures summing to the total. The one step that replaces a filled figure"
  },
  "colleges": {
+  "Fullerton College": {
+   "steps": [],
+   "why": "S714 (lane 2's cheap piles, census lever reconcile_steps): the state's Program Course File keeps a few Fullerton rows with the campus letter F before the subject ('F HORT002') or with no letter ('CSTR 42'), where the 2026-2027 catalog prints every course with the letter after its number ('HORT 002 F', 'CSTR 042 F'). Each code the records print and the file lists only in the other form is renamed to the file's row, cited by the file's title and the units both print; never where a program's list carries the printed form. Plan: kb/_program_piles_s714_fullerton.py.",
+   "course_renumbers": {
+    "ANTH 102 F": "F ANTH102",
+    "CRTV 196 F": "F CRTV196",
+    "CSTR 39 F": "F CSTR039",
+    "CSTR 42 F": "CSTR 42",
+    "HORT 185 F": "F HORT185",
+    "HORT 2 F": "F HORT002",
+    "JOUR 140 F": "F JOUR140",
+    "PE 248 F": "F PE248",
+    "THEA 146 F": "F THEA146"
+   },
+   "course_renumbers_cited": [
+    {
+     "printed": "ANTH 102 F",
+     "file": "F ANTH102",
+     "title": "Cultural Anthropology",
+     "units": 3,
+     "session": "S714",
+     "date": "2026-11-23",
+     "evidence": "The state's file lists F ANTH102 Cultural Anthropology (3 units) at Fullerton, and the 2026-2027 catalog prints the course as ANTH 102 F at 3 units in 08438; each record places it under the program's own list."
+    },
+    {
+     "printed": "CRTV 196 F",
+     "file": "F CRTV196",
+     "title": "Communications Seminars",
+     "units": 0.5,
+     "session": "S714",
+     "date": "2026-11-23",
+     "evidence": "The state's file lists F CRTV196 Communications Seminars (0.5 units) at Fullerton, and the 2026-2027 catalog prints the course as CRTV 196 F at 0.5 units in 11690, 21266; each record places it under the program's own list."
+    },
+    {
+     "printed": "CSTR 39 F",
+     "file": "F CSTR039",
+     "title": "Commercial Mechanical Code",
+     "units": 3,
+     "session": "S714",
+     "date": "2026-11-23",
+     "evidence": "The state's file lists F CSTR039 Commercial Mechanical Code (3 units) at Fullerton, and the 2026-2027 catalog prints the course as CSTR 39 F at 3 units in 21271; each record places it under the program's own list."
+    },
+    {
+     "printed": "CSTR 42 F",
+     "file": "CSTR 42",
+     "title": "Residential Steel Frame Construction",
+     "units": 4,
+     "session": "S714",
+     "date": "2026-11-23",
+     "evidence": "The state's file lists CSTR 42 Residential Steel Frame Construction (4 units) at Fullerton, and the 2026-2027 catalog prints the course as CSTR 42 F at 4 units in 03839, 21271; each record places it under the program's own list."
+    },
+    {
+     "printed": "HORT 185 F",
+     "file": "F HORT185",
+     "title": "Arboriculture",
+     "units": 2,
+     "session": "S714",
+     "date": "2026-11-23",
+     "evidence": "The state's file lists F HORT185 Arboriculture (2 units) at Fullerton, and the 2026-2027 catalog prints the course as HORT 185 F at 2 units in 21252, 45320, 45378; each record places it under the program's own list."
+    },
+    {
+     "printed": "HORT 2 F",
+     "file": "F HORT002",
+     "title": "Principles of Horticulture II",
+     "units": 4,
+     "session": "S714",
+     "date": "2026-11-23",
+     "evidence": "The state's file lists F HORT002 Principles of Horticulture II (4 units) at Fullerton, and the 2026-2027 catalog prints the course as HORT 2 F at 4 units in 03816; each record places it under the program's own list."
+    },
+    {
+     "printed": "JOUR 140 F",
+     "file": "F JOUR140",
+     "title": "Public Relations/Publicity",
+     "units": 3,
+     "session": "S714",
+     "date": "2026-11-23",
+     "evidence": "The state's file lists F JOUR140 Public Relations/Publicity (3 units) at Fullerton, and the 2026-2027 catalog prints the course as JOUR 140 F at 3 units in 36790; each record places it under the program's own list."
+    },
+    {
+     "printed": "PE 248 F",
+     "file": "F PE248",
+     "title": "Psychology of Sport",
+     "units": 3,
+     "session": "S714",
+     "date": "2026-11-23",
+     "evidence": "The state's file lists F PE248 Psychology of Sport (3 units) at Fullerton, and the 2026-2027 catalog prints the course as PE 248 F at 3 units in 18166; each record places it under the program's own list."
+    },
+    {
+     "printed": "THEA 146 F",
+     "file": "F THEA146",
+     "title": "Scene Painting",
+     "units": 3,
+     "session": "S714",
+     "date": "2026-11-23",
+     "evidence": "The state's file lists F THEA146 Scene Painting (3 units) at Fullerton, and the 2026-2027 catalog prints the course as THEA 146 F at 3 units in 18747; each record places it under the program's own list."
+    }
+   ]
+  },
   "College of the Canyons": {
    "prefix_aliases": {
     "PSYC": "PSYCH",

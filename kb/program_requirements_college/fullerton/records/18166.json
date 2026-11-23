@@ -45,23 +45,20 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 104,
+   "placed": 105,
    "listed": 108,
-   "share": 0.963,
+   "share": 0.972,
    "missing": [
     "BUS101F",
     "CISG100F",
-    "FPE248",
     "WELL230F"
    ],
-   "unexplained": [
-    "FPE248"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 50,
+   "count": 49,
    "codes": [
     "CIS100F",
     "COUN110F",
@@ -110,7 +107,6 @@
     "PE139AF",
     "PE141F",
     "PE144F",
-    "PE248F",
     "SOSC125F",
     "SOSC130F"
    ],
@@ -165,7 +161,7 @@
     "SOSC125F",
     "SOSC130F"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
@@ -208,7 +204,14 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "course_renumbers": [
+   {
+    "printed": "PE 248 F",
+    "listed": "FPE248",
+    "block": "C) Health and Wellness"
+   }
+  ]
  },
  "record": {
   "program": {

@@ -45,26 +45,21 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 27,
+   "placed": 28,
    "listed": 29,
-   "share": 0.931,
+   "share": 0.966,
    "missing": [
-    "FHORT185",
     "HIST112HF"
    ],
-   "unexplained": [
-    "FHORT185"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "HORT185F"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -102,7 +97,14 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true,
+  "course_renumbers": [
+   {
+    "printed": "HORT 185 F",
+    "listed": "FHORT185",
+    "block": "Restricted electives - Group B (9-12 units)"
+   }
+  ]
  },
  "record": {
   "program": {
