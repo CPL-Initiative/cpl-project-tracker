@@ -156,7 +156,11 @@
     "mental health",
     "social services",
     "Social and Behavioral Science fields"
-   ]
+   ],
+   "ge_overlap": {
+    "min": 0,
+    "max": 9
+   }
   },
   "blocks": [
    {
@@ -395,5 +399,17 @@
    "Breadcrumb places the program under Counseling while the URL path uses liberal-studies."
   ]
  },
- "extracted_run": "38748848139"
+ "extracted_run": 45194676517,
+ "reconciled": [
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": {
+    "min": 0,
+    "max": 9
+   },
+   "words": "0-9 units may double count above in COS-GE"
+  }
+ ],
+ "read_run": "38748848139"
 }

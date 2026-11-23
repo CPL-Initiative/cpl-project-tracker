@@ -142,7 +142,11 @@
     "cheerleading",
     "entertainment parks",
     "semiprofessional or professional theater or dance companies"
-   ]
+   ],
+   "ge_overlap": {
+    "min": 3,
+    "max": 3
+   }
   },
   "blocks": [
    {
@@ -348,5 +352,17 @@
    "Units for the ARTH 001 alternative are not printed beside it."
   ]
  },
- "extracted_run": "38748848139"
+ "extracted_run": 45194676517,
+ "reconciled": [
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": {
+    "min": 3,
+    "max": 3
+   },
+   "words": "3 units may double count above in COS-GE"
+  }
+ ],
+ "read_run": "38748848139"
 }

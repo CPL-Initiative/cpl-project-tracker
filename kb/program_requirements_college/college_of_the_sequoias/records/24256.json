@@ -97,21 +97,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false,
-  "gaps": [
-   {
-    "gap": "no_hours_read",
-    "label": "A required course carries no hours as read, so the program's hours cannot be added.",
-    "words": "the record carries no hours for ESL 420, ESL 421, ESL 430, ESL 431 and 1 more, so the program's hours cannot be added"
-   }
-  ],
-  "confidence": {
-   "unit_arithmetic": 20,
-   "course_list_match": 100,
-   "ge_pattern": null,
-   "catalog_year": 100,
-   "source": 100
-  }
+  "pass": false
  },
  "record": {
   "program": {
@@ -206,5 +192,6 @@
    "'CAREER OPPORTUNITIES' appears only in the site footer menu, not as program careers; careers left empty."
   ]
  },
- "extracted_run": "38748848139"
+ "extracted_run": 45194676517,
+ "read_run": "38748848139"
 }

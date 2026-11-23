@@ -150,7 +150,11 @@
     "expanded learning tutor or site coordinator",
     "speech aide",
     "preschool teacher's assistant"
-   ]
+   ],
+   "ge_overlap": {
+    "min": 15,
+    "max": 18
+   }
   },
   "blocks": [
    {
@@ -737,5 +741,17 @@
    "Concentration heading reads 'Students must select one of the following concentrations'; recorded as option_group 'Concentration'."
   ]
  },
- "extracted_run": "38748848139"
+ "extracted_run": 45194676517,
+ "reconciled": [
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": {
+    "min": 15,
+    "max": 18
+   },
+   "words": "15-18 units may double count above in COS-GE"
+  }
+ ],
+ "read_run": "38748848139"
 }
