@@ -7,11 +7,13 @@ a row for a college the outline does not name, a fingerprint that no longer
 matches the outcomes it stands for, a receipt that cannot roll the load back, and
 any write path but the insert-only function. Pure-stdlib python.
 """
+import glob
 import importlib.util
 import json
 import os
 import re
 import sys
+import tempfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 spec = importlib.util.spec_from_file_location("load", os.path.join(ROOT, "kb", "_course_outcomes_load.py"))
@@ -241,6 +243,91 @@ def _():
     loose = load.no_letterless({"outcomes": ["Legacy Data", "Apply X in 2 ways. 4. Explain Y."], "fingerprint": "x"})
     assert loose["outcomes"] == ["Apply X in 2 ways. 4. Explain Y."] and loose["shape"] == "paragraph", loose
     assert load.no_letterless({"outcomes": ["Legacy Data"]}) is None
+
+
+LAN_READ = sorted(glob.glob(os.path.join(ROOT, "kb", "course_outcomes", "lan", "read_45031089800_p*of5.json")))
+LAN_PICK = {("AMT 058", "College of Alameda"), ("ARTH C1100", "Laney College"), ("HIST 056", "College of Alameda"),
+            ("AFRAM 032", "Laney College"), ("ECT 015", "Laney College"), ("COMM C1004", "Laney College")}
+
+
+def lan_rows():
+    """The six pages of Peralta's full read 45031089800 the label checks read, as filed."""
+    out = []
+    for p in LAN_READ:
+        d = json.load(open(p))
+        out += [r for r in d["rows"] if (r["code"], r.get("college_printed")) in LAN_PICK]
+    return d, out
+
+
+@check("GUARD: Peralta's lan load cleans the four label cases off its filed lines (S713; d-peralta-load-cleans-labels-"
+       "first-s713): Alameda AMT 058's SCANS lines, Laney ARTH C1100's 'Part 2' heading and AFRAM 032's ': ' drop "
+       "or strip, ECT 015 keeps the objectives after its SCANS run, COMM C1004 keeps the text a 'Part 1::' label "
+       "heads, and Alameda HIST 056's None-only SLO block loads nothing and is listed as a skip")
+def _():
+    assert len(LAN_READ) == 5, LAN_READ
+    head, picked = lan_rows()
+    assert len(picked) == 6, sorted(r["code"] for r in picked)
+    with tempfile.TemporaryDirectory() as tmp:
+        path = os.path.join(tmp, "read_45031089800_p1of1.json")
+        json.dump({**head, "part": 1, "of": 1, "rows": picked}, open(path, "w"))
+        rows, skipped = load.rows_from([path], "lan")
+        by = {(r["course_code"], r["kind"]): r for r in rows}
+        amt = [o for o in next(r for r in picked if r["code"] == "AMT 058")["objectives"]]
+        assert ": SCANS Competencies:" in amt and "Competency #3: Information" in amt and "Skill #1: Basic Skills" in amt
+        assert by[("AMT 058", "objective")]["outcomes"] == amt[:9], by[("AMT 058", "objective")]["outcomes"]
+        arth = by[("ARTH C1100", "objective")]["outcomes"]
+        assert "Part 2" in next(r for r in picked if r["code"] == "ARTH C1100")["objectives"]
+        assert len(arth) == 9 and not any(o.lower().startswith("part") for o in arth), arth
+        afram = by[("AFRAM 032", "objective")]["outcomes"]
+        assert afram[0].startswith("The objective of the course is") and not any(o.startswith(":") for o in afram)
+        ect = by[("ECT 015", "objective")]["outcomes"]
+        assert ect[-3:][0] == "Explain how evaporation provides a cooling affect" and len(ect) == 9 and \
+            not any("SCANS" in o or o.startswith(("Information:", "Technology:", "Basic skills:")) for o in ect), ect
+        comm = by[("COMM C1004", "objective")]["outcomes"]
+        assert comm[0].startswith("Evaluate and apply research methods") and \
+            any(o.startswith("Understand and articulate the foundational principles") for o in comm) and \
+            not any(o.lower().startswith("part") for o in comm), comm
+        assert ("HIST 056", "slo") not in by and ("HIST 056", "objective") in by
+        gone = [s for s in skipped if s["course_code"] == "HIST 056"]
+        assert len(gone) == 1 and gone[0]["kind"] == "slo" and "placeholder" in gone[0]["why"], skipped
+        for r in rows:
+            assert r["fingerprint"] == load.fingerprint(r["outcomes"]), r["course_code"]
+        assert load.LABEL_CLEANED["rows"] == 1 and load.LABEL_CLEANED["placeholder"] == 1, load.LABEL_CLEANED
+    # The full read, pinned after the clean (S713, the second reader on 51bee0ca): a regression in any case fails here.
+    rows, skipped = load.rows_from(LAN_READ, "lan")
+    assert load.LABEL_CLEANED == {"colon": 233, "scans": 284, "part": 26, "placeholder": 8, "note": 12, "rows": 7}, \
+        load.LABEL_CLEANED
+    assert load.DROPPED == {"lines": 9, "rows": 0}, load.DROPPED
+    per = {}
+    for r in rows:
+        per[(r["college"], r["kind"])] = per.get((r["college"], r["kind"]), 0) + 1
+    assert per == {("Laney College", "slo"): 663, ("Laney College", "objective"): 663,
+                   ("Merritt College", "slo"): 463, ("Merritt College", "objective"): 465,
+                   ("College of Alameda", "slo"): 365, ("College of Alameda", "objective"): 368,
+                   ("Berkeley City College", "slo"): 372, ("Berkeley City College", "objective"): 372}, per
+    assert len(skipped) == 7 and all("placeholder" in s["why"] for s in skipped), skipped
+    items = [o.strip() for r in rows for o in r["outcomes"]]
+    assert not [o for o in items if o.startswith(":") or load.SCANS_OPEN.match(o) or load.PLACEHOLDER.match(o)
+                or load.SYSTEM_NOTE.match(o) or re.match(r"^part\s*\d+\s*:*\s*$", o, re.I)]
+    assert not [o for o in items if re.search(r"won['’]?t (allow )?delete|duplicate to be removed", o, re.I)]
+
+
+@check("CONTROL: the same filed lines at a host LABEL_CLEAN_HOSTS does not name load exactly as filed, SCANS, Part "
+       "headings, ': ' and None alike, and the filed read's own fingerprints stand (no other host's load moves)")
+def _():
+    assert load.LABEL_CLEAN_HOSTS == {"lan"}
+    head, picked = lan_rows()
+    with tempfile.TemporaryDirectory() as tmp:
+        path = os.path.join(tmp, "read_45031089800_p1of1.json")
+        json.dump({**head, "part": 1, "of": 1, "rows": picked}, open(path, "w"))
+        rows, skipped = load.rows_from([path], "cabrillo")
+        by = {(r["course_code"], r["kind"]): r for r in rows}
+        for r in picked:
+            assert by[(r["code"], "objective")]["outcomes"] == r["objectives"], r["code"]
+            assert by[(r["code"], "objective")]["fingerprint"] == r["objectives_fingerprint"], r["code"]
+            assert by[(r["code"], "slo")]["outcomes"] == r["outcomes"], r["code"]
+        assert by[("HIST 056", "slo")]["outcomes"] == ["None"] and not skipped, skipped
+        assert load.LABEL_CLEANED == {"colon": 0, "scans": 0, "part": 0, "placeholder": 0, "note": 0, "rows": 0}
 
 
 @check("an outcome that opens with a number ('1. Analyze ...') loads whole; '#1', '.', '•' and '123' drop")

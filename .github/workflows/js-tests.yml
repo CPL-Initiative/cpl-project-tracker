@@ -376,6 +376,11 @@ jobs:
       # districts per outline needed; the committed file reruns to the same bytes. Pure stdlib.
       - name: Outline hunt (kb/_outline_hunt.py)
         run: python3 tests/outline_hunt_test.py
+      # Every local subject code statewide (kb/_statewide_subject_codes.py, S712): every code once with its colleges, a
+      # call and a confidence for each, a filing settled at 100%, no vote from a TOP-only discipline or from the M-ID a
+      # code named, a noncredit code by its category, the top confidence band right 95% or more on the labelled codes.
+      - name: Statewide subject codes (kb/_statewide_subject_codes.py)
+        run: python3 tests/statewide_subject_codes_test.py
       # The Subjects card's two files in the daily build (S695): both builders run after their inputs' steps with
       # --if-changed, each fingerprint ignores its daily stamp, and a rerun on the same inputs writes nothing. Pure stdlib.
       - name: Subjects card in the daily build (--if-changed fingerprints)
@@ -453,6 +458,10 @@ jobs:
       # Pure-stdlib python; same non-required check.
       - name: Program requirements pilot (course codes, page finder, scorer)
         run: python3 tests/program_requirements_pilot_test.py
+      # Glendale's STV-for-OBT prefix alias (S703): Glendale's alone, it names 38973's four courses on its own
+      # page, and it renames nothing in a filed record.
+      - name: Glendale's STV prefix alias (S703)
+        run: python3 tests/glendale_stv_alias_s703_test.py
       # The course-id route (S653): the scorer meets a printed code by the Program Course File's
       # own id for the listed course, before the prefix aliases. Rebuilds the proof that each
       # retired alias pair's matches are reproduced, and the self-recall test with its floor,
@@ -501,10 +510,28 @@ jobs:
       # page's source says pinned; an only= filing keeps the earlier kept_passing entries it does not name.
       - name: Program requirements reader follow-up (killed wave, prior read, fragments, editions, pins)
         run: python3 tests/program_requirements_follow_up_s697_test.py
+      # S703 follow-up (S697's four left, f-followup-four-left-s697): the own-run filter with a None run stamp; a
+      # route or named destination keeps two pages apart; v24 and v25 are years; a capture-only prior read with no
+      # PDF page files its preview; a pin's through binds across a page break; the named-gaps rollback's tag.
+      # Needs git for the keep-better fixture repo.
+      - name: Program requirements reader follow-up S703 (own run, fragments, editions, prior preview, through, tag)
+        run: python3 tests/program_requirements_follow_up_s703_test.py
       # S703: Clovis's and Cosumnes River's own-page pins bind on the pages the free reads printed, open on their
       # words, read from the pinned page in capture_pdf, and hold what the filed page lacked. Pure stdlib.
       - name: Program requirements own-page pins (Clovis, Cosumnes River)
         run: python3 tests/program_requirements_pins_s703_test.py
+      # S703 (census lever 6): Ohlone's two own-page pins bind on the pages the free read printed and read from the
+      # pinned page in capture_pdf; the other 34 not_found programs are filed as named gaps, once each. Pure stdlib.
+      - name: Program requirements own-page pins and named gaps (Ohlone)
+        run: python3 tests/program_requirements_ohlone_pins_s703_test.py
+      # S703 (census lever 7): San Joaquin Delta's IND, ELE and MEC pairs let the coarse net read its apprenticeship
+      # pages' hyphenated codes (A-IND 78A), and touch no other prefix. Pure stdlib.
+      - name: Program requirements apprenticeship prefix aliases (San Joaquin Delta)
+        run: python3 tests/program_requirements_sjdelta_aliases_s703_test.py
+      # S703 (census levers 6, 7, 9, 10, 13): the five colleges' named gaps each name a program the filed capture
+      # reads with no page, once, with a defined reason and no record file. Pure stdlib.
+      - name: Program requirements page-not-found named gaps (five colleges)
+        run: python3 tests/program_requirements_named_gaps_s703_test.py
       # S697: the same-page calls over every committed folder, frozen in a fixture: 320 newly kept (Butte 163,
       # Cuyamaca 155, College of the Canyons 2), none one page off, and one edition pair. Pure stdlib.
       - name: Program requirements same-page recall over the committed folders
@@ -556,6 +583,22 @@ jobs:
       # check's precision counts, and tonight's held colleges untouched.
       - name: Named gap lists_past_their_figure (self-recall, claim check, the plan, the held colleges)
         run: python3 tests/program_lists_past_figure_s703_test.py
+      # S713, lane 2's cheap piles: the common number in parentheses, the named gap section_cut_off, their precision
+      # against the hand reading, boundary readings and claim checks, and the plan's 15 rows at Santa Rosa Junior.
+      - name: Cheap piles S713 (common numbers, section_cut_off, the plan)
+        run: python3 tests/program_piles_s713_test.py
+      # S713 at Glendale: a list taken in place of a core course, a figure printed in a list's heading, and PSYC 104
+      # renumbered for the file's PSYCH 104; the self-recall against the hand reading and the plan's 13 rows.
+      - name: Cheap piles S713 at Glendale (substitute list, heading figure, renumber, the plan)
+        run: python3 tests/program_piles_s713_glendale_test.py
+      # S713: the three general education reconcile steps (Las Positas, Antelope Valley, College of Marin), their
+      # mechanics, the measure before the runs, and the 9-row plan against the filed records.
+      - name: GE reconcile steps S713 (mechanics, precision, boundaries, the plan)
+        run: python3 tests/program_ge_steps_s713_test.py
+      # S713 at Clovis: a lecture and its lab as one option, a list taking an earlier list's unused courses, and
+      # two courses renumbered; the self-recall, the blast radius at every college and the plan's 6 rows.
+      - name: Cheap piles S713 at Clovis (lab pairs, earlier lists' courses, renumbers, the plan)
+        run: python3 tests/program_piles_s713_clovis_test.py
       # Discontinued programs (S680; Sam, 2026-11-17 on #3480): a program's own catalog section marks it,
       # or a prior year prints it and this year does not; flagged out of the gap, never deleted. Pure stdlib.
       - name: Discontinued programs (own-section mark, out of the gap, the file is current)

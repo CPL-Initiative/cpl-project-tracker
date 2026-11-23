@@ -2,20 +2,303 @@
  "college": "Antelope Valley College",
  "programs": 199,
  "with_closed_list": 197,
- "found": 195,
+ "found": 183,
  "extracted": 195,
  "errors": 0,
- "passed_machine_checks": 153,
+ "passed_machine_checks": 162,
  "failed": {
   "coverage": 13,
   "invented": 0,
-  "arithmetic": 42,
+  "arithmetic": 33,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 14.18,
+ "cost_usd_run": 0.0,
+ "cost_usd_filed": 14.18,
  "cost_per_program": 0.0727,
+ "extract_calls": null,
+ "extract_failed": [],
  "not_found": [
+  {
+   "control_number": "02145",
+   "title": "Computer Applications",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-applications-cert-fall-2026",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 11,
+    "listed": 11,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 4740,
+     "content": 4740,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "02149",
+   "title": "Electronics Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://avc.elumenapp.com/catalog/2026-27/program/electronics-technology-cert-fall-2026",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 13,
+    "listed": 13,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 4964,
+     "content": 4964,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "02153",
+   "title": "General Aircraft Maintenance",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://avc.elumenapp.com/catalog/2026-27/program/general-aircraft-maintenance-cert-fall-2026",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 9,
+    "listed": 9,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 5080,
+     "content": 5080,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "11647",
+   "title": "Aircraft Airframe",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-airframe-cert-fall-2026",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 2,
+    "listed": 2,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 4294,
+     "content": 4294,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "11648",
+   "title": "Aircraft Powerplant",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-powerplant-cert-fall-2026",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 2,
+    "listed": 2,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 4236,
+     "content": 4236,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "12161",
+   "title": "Computer Animation",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-animation-cert-fall-2025",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 18,
+    "listed": 18,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 4101,
+     "content": 4101,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "14414",
+   "title": "Electrical Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://avc.elumenapp.com/catalog/2026-27/program/electrical-technology-cert-fall-2025",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 9,
+    "listed": 9,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 4756,
+     "content": 4756,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "15404",
+   "title": "Aircraft Fabrication and Assembly Technician",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-fabrication-assembly-technician-cert-fall-2026",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 5,
+    "listed": 5,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 4909,
+     "content": 4909,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "20166",
+   "title": "Air Conditioning & Refrigeration Specialist",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://avc.elumenapp.com/catalog/2026-27/program/air-conditioning-refrigeration-specialist-cert-fall-2026",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 8,
+    "listed": 8,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 10736,
+     "content": 10736,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Approved"
+  },
+  {
+   "control_number": "20186",
+   "title": "Welding",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://avc.elumenapp.com/catalog/2026-27/program/aerospace-welding-cert-fall-2025",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.3,
+    "body": 0.3,
+    "content": 0.3,
+    "net": 3,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 3 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3706,
+     "content": 3706,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Approved"
+  },
   {
    "control_number": "33786",
    "title": "Yoga Instructor",
@@ -40,7 +323,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "35323",
@@ -66,8 +350,65 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "35818",
+   "title": "Chemistry",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://avc.elumenapp.com/catalog/2026-27/program/chemistry-as-fall-2026",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 6,
+    "listed": 6,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 4978,
+     "content": 4978,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "43150",
+   "title": "All Automotive Systems",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://avc.elumenapp.com/catalog/2026-27/program/all-automotive-systems-cert-fall-2025",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 10,
+    "listed": 10,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 4199,
+     "content": 4199,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Approved"
   }
  ],
- "run": "38979725726"
+ "run": "45133183717"
 }

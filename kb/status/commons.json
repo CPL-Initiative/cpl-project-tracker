@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-22T21:52:40Z",
+ "written_at": "2026-11-23T10:36:04Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 15328,
+     "n": 15366,
      "of": 20282,
      "words": "complete at 118 colleges",
      "open": "#program-requirements/list"
@@ -34,14 +34,14 @@
    ],
    "issues": [
     {
-     "n": 2017,
+     "n": 1988,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
      "open": "#program-requirements/list/fail"
     },
     {
-     "n": 2937,
+     "n": 2928,
      "words": "active programs with no record yet",
      "owner": "the harvest",
      "carry": "routine",
@@ -63,15 +63,15 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-11-22T11:43:38Z",
+    "at": "2026-11-23T08:05:14Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 15328,
-    "failing": 2017,
-    "unread": 2937,
-    "records": 18951,
+    "complete": 15366,
+    "failing": 1988,
+    "unread": 2928,
+    "records": 18960,
     "colleges": 118,
     "outside_active": 1606,
     "confirmed": 32,
@@ -98,13 +98,13 @@
    "status_file": "kb/status/exhibit.json",
    "pair": [
     {
-     "n": 3221,
+     "n": 3222,
      "of": 6252,
-     "words": "titles carry a review stamp (1,581 a person's, 1,640 a cohort's), counting 1 titles MAP carries with no entry yet; 2,970 credentials, 2,572 of 3,342 records stamped",
+     "words": "titles carry a review stamp (1,582 a person's, 1,640 a cohort's); 2,970 credentials, 2,574 of 3,344 records stamped",
      "open": "#exhibits/list"
     },
     {
-     "n": 1581,
+     "n": 1582,
      "of": 6252,
      "words": "confirmed by a person",
      "open": "#exhibits/list",
@@ -166,23 +166,23 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-22T21:48:16Z",
+    "at": "2026-11-23T06:19:46Z",
     "every_hours": 24
    },
    "facts": {
-    "titles": 6251,
-    "backlog": 1,
-    "stamped": 3221,
-    "person": 1581,
+    "titles": 6252,
+    "backlog": 0,
+    "stamped": 3222,
+    "person": 1582,
     "cohort": 1640,
     "credentials": 2970,
-    "confirmed": 1581,
-    "records": 3342,
-    "records_stamped": 2572,
+    "confirmed": 1582,
+    "records": 3344,
+    "records_stamped": 2574,
     "saved_at": "2026-11-21T15:42:56Z",
-    "fold_at": "2026-11-22T21:48:16Z",
+    "fold_at": "2026-11-23T06:19:46Z",
     "map_titles": 5440,
-    "unclassified": 1,
+    "unclassified": 0,
     "left_map": 812,
     "below_80": 1117,
     "below_60": 235,
@@ -293,7 +293,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-22T21:51:18+00:00",
+    "at": "2026-11-23T06:22:16+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -383,7 +383,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-19T06:22:43Z",
+    "at": "2026-11-22T00:51:34-08:00",
     "every_hours": null
    },
    "facts": {
@@ -510,7 +510,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-22T21:48:14Z",
+    "at": "2026-11-23T06:19:44Z",
     "every_hours": 24
    },
    "facts": {
@@ -523,7 +523,7 @@
     "modal": 0,
     "shared": [],
     "missed_alignment": 0,
-    "scanned_at": "2026-11-22",
+    "scanned_at": "2026-11-23",
     "procedures_on": 6
    },
    "sources": [
@@ -584,9 +584,9 @@
    ],
    "pair": [
     {
-     "n": 89769,
+     "n": 95390,
      "of": null,
-     "words": "outcomes read from 25,319 courses at 35 colleges",
+     "words": "outcomes read from 27,191 courses at 39 colleges",
      "open": "#coci-lookup"
     }
    ],
@@ -594,14 +594,16 @@
     "read from the public outline"
    ],
    "facts": {
-    "outcomes": 89769,
-    "courses": 25319,
+    "outcomes": 95390,
+    "courses": 27191,
     "colleges": [
      "allan_hancock",
+     "berkeley_city",
      "cabrillo",
      "chabot",
      "city_of_san_francisco",
      "coastline_community",
+     "college_of_alameda",
      "college_of_the_redwoods",
      "college_of_the_siskiyous",
      "columbia",
@@ -613,8 +615,10 @@
      "golden_west",
      "irvine_valley",
      "lake_tahoe_community",
+     "laney",
      "las_positas",
      "los_medanos",
+     "merritt",
      "mission",
      "modesto_junior",
      "moreno_valley",
@@ -633,11 +637,11 @@
      "santiago_canyon",
      "shasta"
     ],
-    "reads": 79
+    "reads": 86
    },
    "machine": {
     "what": "the last outline read",
-    "at": "2026-11-22T12:11:17Z",
+    "at": "2026-11-23T09:01:50Z",
     "every_hours": null
    },
    "sources": [
@@ -772,7 +776,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 2017,
+    "n": 1988,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"
@@ -780,7 +784,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 2937,
+    "n": 2928,
     "words": "active programs with no record yet",
     "owner": "the harvest",
     "open": "#program-requirements/list/unread"
@@ -807,9 +811,9 @@
     "ref": "requirements",
     "title": "Program Requirements",
     "kind": "not_shrinking",
-    "n": 2937,
+    "n": 2928,
     "was": 2820,
-    "since": "2026-11-15",
+    "since": "2026-11-16",
     "words": "active programs with no record yet",
     "owner": "the harvest",
     "open": "#program-requirements/list/unread"
@@ -820,7 +824,7 @@
     "kind": "not_shrinking",
     "n": 584,
     "was": 499,
-    "since": "2026-11-15",
+    "since": "2026-11-16",
     "words": "credentials with no Common SUBJ (449 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
     "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
     "open": "#exhibits/list/nosubj"

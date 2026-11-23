@@ -46,25 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 12,
+   "placed": 13,
    "listed": 13,
-   "share": 0.923,
-   "missing": [
-    "STATC1000"
-   ],
-   "unexplained": [
-    "STATC1000"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "STAT1000(STATC1000)"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -105,7 +99,14 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true,
+  "common_numbers": [
+   {
+    "printed": "STAT 1000 (STAT C1000)",
+    "listed": "STATC1000",
+    "block": "Pre-Veterinary Requirements"
+   }
+  ]
  },
  "record": {
   "program": {

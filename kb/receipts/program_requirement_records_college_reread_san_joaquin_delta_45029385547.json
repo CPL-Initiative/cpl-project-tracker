@@ -1,0 +1,31 @@
+{
+ "college": "San Joaquin Delta College",
+ "reread_run": "45029385547",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "45029248913",
+ "at": "2026-11-22T13:48:41Z",
+ "posted": 6,
+ "batches": 1,
+ "skipped": [],
+ "error": null,
+ "replaced": 0,
+ "absent": 6,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [],
+ "absent_keys": [
+  "14594",
+  "14595",
+  "14597",
+  "14598",
+  "14599",
+  "37611"
+ ],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 6,
+ "rollback": null,
+ "before": []
+}

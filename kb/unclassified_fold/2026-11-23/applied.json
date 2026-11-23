@@ -1,0 +1,39 @@
+{
+  "folded": [
+    {
+      "raw": "Portfolio Review CIS101-Introduction to Computers and Their Uses",
+      "assigned": "Computer Literacy",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-23T00:13:34.866152+00:00"
+    }
+  ],
+  "superseded": [],
+  "revised": [],
+  "credential_moved": [],
+  "credential_retired": [],
+  "held": [],
+  "credential_added": [],
+  "credential_issuer_fills": [],
+  "credential_issuer_adds": [
+    {
+      "title": "Developmental Psychology of Children 2",
+      "issuer": "Livermore High School",
+      "raw": "High School Articulation (Livermore)- Developmental Psychology of Children II",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:26:56.708862+00:00"
+    },
+    {
+      "title": "Orientation to Health Careers",
+      "issuer": "Livermore High School",
+      "raw": "High School Articulation (Livermore)- Introduction to Health Careers",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-22T15:27:32.125278+00:00"
+    }
+  ],
+  "credential_pruned": [],
+  "articulations_repointed": 0,
+  "title_anchors_stamped": 0,
+  "audit_pruned": 1,
+  "unified_titles_count": 6252
+}

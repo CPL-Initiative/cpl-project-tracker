@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 251,
  "with_closed_list": 233,
- "started": "2026-11-21T07:31:06Z",
+ "started": "2026-11-22T13:20:45Z",
  "acalog": {
   "base": "https://catalog.deltacollege.edu",
   "start_status": 200,
@@ -467,9 +467,9 @@
  "banner_h1": null,
  "catalog_lookup": {
   "self_test": {
-   "tested": 201,
-   "hits": 195,
-   "recall": 0.97,
+   "tested": 207,
+   "hits": 201,
+   "recall": 0.971,
    "false": 0,
    "false_off_own": 0,
    "false_no_claims": 0,
@@ -700,13 +700,13 @@
   "yield_refused_passing": 0
  },
  "loads": 252,
- "seconds": 1452.9,
- "found": 203,
+ "seconds": 1422.3,
+ "found": 209,
  "by_method": {
   "no_closed_list": 18,
-  "not_found": 24,
+  "not_found": 18,
   "page_claimed": 6,
-  "sitemap_page": 203
+  "sitemap_page": 209
  },
  "shared_pages": {
   "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3324&print": [
@@ -844,141 +844,6 @@
     "chars": {
      "body": 3447,
      "content": 37336,
-     "tabs": 0
-    },
-    "tab_panels": []
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "14594",
-   "title": "Industrial Technology: Maintenance Apprenticeship Option",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3285&print",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 1.0,
-    "body": 1.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 22,
-    "why": "coarse net: the page's code tokens name 0 of 22 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2623,
-     "content": 36501,
-     "tabs": 0
-    },
-    "tab_panels": []
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "14595",
-   "title": "Electrical Technology: Apprenticeship Option",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3327&print",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 1.0,
-    "body": 1.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 10,
-    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2187,
-     "content": 36078,
-     "tabs": 0
-    },
-    "tab_panels": []
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "14597",
-   "title": "Industrial Technology: Electrical Apprenticeship Option",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3286&print",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 1.0,
-    "body": 1.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 18,
-    "why": "coarse net: the page's code tokens name 0 of 18 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2278,
-     "content": 36160,
-     "tabs": 0
-    },
-    "tab_panels": []
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "14598",
-   "title": "Industrial Technology: Mechanical Apprenticeship Option",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3284&print",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 1.0,
-    "body": 1.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 17,
-    "why": "coarse net: the page's code tokens name 0 of 17 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2281,
-     "content": 36164,
-     "tabs": 0
-    },
-    "tab_panels": []
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "14599",
-   "title": "Industrial Technology: Operations Apprenticeship Option",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3283&print",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.941,
-    "body": 0.941,
-    "content": 0.0,
-    "net": 0,
-    "listed": 17,
-    "why": "coarse net: the page's code tokens name 0 of 17 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2255,
-     "content": 36138,
      "tabs": 0
     },
     "tab_panels": []
@@ -1142,33 +1007,6 @@
     "chars": {
      "body": 3677,
      "content": 37568,
-     "tabs": 0
-    },
-    "tab_panels": []
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "37611",
-   "title": "Electrical Technology: Apprenticeship",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3355&print",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 1.0,
-    "body": 1.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 10,
-    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2888,
-     "content": 36777,
      "tabs": 0
     },
     "tab_panels": []
@@ -1444,209 +1282,88 @@
  "page_challenged": [],
  "coverage_bands": {
   "0.5-0.8": 15,
-  "0.8-1.0": 53,
-  "1.0": 135
+  "0.8-1.0": 54,
+  "1.0": 140
  },
  "would_extract": {
   "against": "kb/program_requirements_college/san_joaquin_delta",
-  "kept": 184,
+  "kept": 203,
   "kept_moved": 0,
-  "programs": 19,
+  "programs": 6,
   "list": [
    {
-    "control_number": "13976",
-    "title": "International Business",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3282&print",
-    "coverage": 1.0,
-    "was_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3282&print",
-    "was_coverage": 0.857,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "17506",
-    "title": "American Sign Language",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3223&print",
-    "coverage": 1.0,
-    "was_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3223&print",
-    "was_coverage": 0.9,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "18586",
-    "title": "Interdisciplinary Studies - Arts, Humanities, and Social Sciences Option",
-    "award": "A.A. Degree",
-    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3346&print",
-    "coverage": 0.848,
-    "was_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3346&print",
-    "was_coverage": 0.761,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "18815",
-    "title": "Interdisciplinary Studies - Mathematics and Science Option",
-    "award": "A.S. Degree",
-    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3168&print",
-    "coverage": 0.962,
-    "was_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3168&print",
-    "was_coverage": 0.904,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "31692",
-    "title": "Studio Arts",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3239&print",
-    "coverage": 1.0,
-    "was_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3239&print",
-    "was_coverage": 0.9,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "32341",
-    "title": "English",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3219&print",
-    "coverage": 1.0,
-    "was_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3219&print",
-    "was_coverage": 0.6,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "32913",
-    "title": "Anthropology",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3197&print",
-    "coverage": 0.909,
-    "was_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3197&print",
-    "was_coverage": 0.818,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "36535",
-    "title": "Pre-Law Studies",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3339&print",
-    "coverage": 0.867,
-    "was_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3339&print",
-    "was_coverage": 0.733,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "36747",
-    "title": "Law, Public Policy, and Society",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3338&print",
-    "coverage": 0.86,
-    "was_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3338&print",
-    "was_coverage": 0.837,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "37638",
-    "title": "Social Justice Studies",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3357&print",
-    "coverage": 0.959,
-    "was_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3357&print",
-    "was_coverage": 0.898,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "40824",
-    "title": "World Languages and Global Studies",
-    "award": "A.A. Degree",
-    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3363&print",
-    "coverage": 0.912,
-    "was_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3363&print",
-    "was_coverage": 0.842,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "40902",
-    "title": "Winery Sales and Marketing",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3372&print",
-    "coverage": 0.867,
-    "was_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3372&print",
-    "was_coverage": 0.8,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "40903",
-    "title": "Winery Event Coordinator",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3370&print",
-    "coverage": 1.0,
-    "was_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3370&print",
-    "was_coverage": 0.917,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "40904",
-    "title": "Winery Tasting Room Associate",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3371&print",
-    "coverage": 1.0,
-    "was_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3371&print",
-    "was_coverage": 0.889,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "44322",
-    "title": "Communication Studies 2.0",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3384&print",
-    "coverage": 1.0,
-    "was_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3384&print",
-    "was_coverage": 0.625,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "44860",
-    "title": "Creative Writing",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3390&print",
-    "coverage": 1.0,
-    "was_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3390&print",
-    "was_coverage": 0.76,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "44912",
-    "title": "Modern Policing",
-    "award": "A.S. Degree",
-    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3386&print",
-    "coverage": 1.0,
-    "was_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3386&print",
-    "was_coverage": 0.909,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "45583",
-    "title": "Public Safety Dispatcher",
-    "award": "Noncredit program",
-    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3402&print",
+    "control_number": "14594",
+    "title": "Industrial Technology: Maintenance Apprenticeship Option",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3285&print",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": 0.0,
     "was_method": "not_found"
    },
    {
-    "control_number": "45621",
-    "title": "California General Education Transfer Curriculum (Cal-GETC)",
+    "control_number": "14595",
+    "title": "Electrical Technology: Apprenticeship Option",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3403&print",
-    "coverage": 0.944,
-    "was_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3403&print",
-    "was_coverage": 0.894,
-    "was_method": "sitemap_page"
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3327&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "14597",
+    "title": "Industrial Technology: Electrical Apprenticeship Option",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3286&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "14598",
+    "title": "Industrial Technology: Mechanical Apprenticeship Option",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3284&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "14599",
+    "title": "Industrial Technology: Operations Apprenticeship Option",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3283&print",
+    "coverage": 0.941,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "37611",
+    "title": "Electrical Technology: Apprenticeship",
+    "award": "A.S. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3355&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    }
   ],
   "held_worse_window": [],
   "held_no_gain": [],
   "held_opens_on_list": [],
+  "only": [
+   "14594",
+   "14595",
+   "14597",
+   "14598",
+   "14599",
+   "37611"
+  ],
+  "not_named": [],
   "refused_passing": [],
   "forced_unbound": []
  },
@@ -1882,6 +1599,26 @@
   "14581": {
    "sha256": "6da3c8ebf74358304847d2fcee961f40061a2e23ba6a85d066b2c6db844e9e59",
    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3227&print"
+  },
+  "14594": {
+   "sha256": "f7fd8931eedcb51e3dbba09d1f10f952c971c671dafb4c7090d061d46585c184",
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3285&print"
+  },
+  "14595": {
+   "sha256": "07d84a4def9758df3ec79afa189094845690047ab2ce3c2cf27a0f25a6ba9416",
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3327&print"
+  },
+  "14597": {
+   "sha256": "daf07c011fe671dbdf35ad96e200f97ec4fc0067f4f6da6cf426554cd286b9b5",
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3286&print"
+  },
+  "14598": {
+   "sha256": "48d4e8e80ec567ce331793179506676d6e99de35ef0c2ed798c46ce0ee8defde",
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3284&print"
+  },
+  "14599": {
+   "sha256": "3641fbab9072888c0e0ce276389e5761877e531664a8bb824bbd5dc3c2832477",
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3283&print"
   },
   "14763": {
    "sha256": "37240f612e2fdaa7dc95e18f105f340f7a1c4230c3add8766a9deef9c36ebf28",
@@ -2235,6 +1972,10 @@
    "sha256": "cd3daf1f540a5e44e63506443d5feab0e59a9396665986e6ef19b60cb0c4055d",
    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3359&print"
   },
+  "37611": {
+   "sha256": "4d8f8e61ef52d329a56d398221e0d99fe5c6053acbd4ee739bf0326ace469750",
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3355&print"
+  },
   "37612": {
    "sha256": "8aee16348baf0e2e014217d4110f6a9a5c9edfe740c16011685052f9d4df6c41",
    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3356&print"
@@ -2465,9 +2206,9 @@
   }
  },
  "staged_from": {
-  "run": "44880533647",
-  "proof": "text sha256 of 203 programs",
+  "run": "45026904552",
+  "proof": "text sha256 of 209 programs",
   "pages_loaded": 0
  },
- "run": "44883860902"
+ "run": "45029248913"
 }

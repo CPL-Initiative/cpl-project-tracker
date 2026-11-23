@@ -1,0 +1,1030 @@
+{
+ "college": "City College of San Francisco",
+ "control_number": "17954",
+ "shape": "degree",
+ "title": "Liberal Arts and Sciences Emphasis in Science and Mathematics",
+ "award": "A.S. Degree",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=206",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10386,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10386,
+    "output_tokens": 6632,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 6632,
+  "output_tokens_details": {
+   "thinking_tokens": 1688
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.17418,
+ "ms": 48240,
+ "seconds": 51.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 55,
+   "listed": 73,
+   "share": 0.753,
+   "missing": [
+    "BIO32L",
+    "ENRG3L",
+    "ENVS31L",
+    "GEOG1L",
+    "GEOL10L",
+    "GEOL11L",
+    "GEOL30L",
+    "OCAN1L",
+    "PHYC10L",
+    "PHYC20",
+    "PHYC2AL",
+    "PHYC2B",
+    "PHYC2BL",
+    "PHYC4AL",
+    "PHYC4BL",
+    "PHYC4CL",
+    "PHYC4DL",
+    "PSC11L"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 35,
+   "codes": [
+    "BIO11",
+    "BIO119",
+    "BIO14",
+    "CHEM101B",
+    "CHEM212A",
+    "CHEM32",
+    "CHEM40",
+    "ECON5",
+    "ET50",
+    "GEOG9",
+    "GEOL111",
+    "HLTH114",
+    "LALS5",
+    "MATH100A",
+    "MATH100B",
+    "MATH101",
+    "MATH108",
+    "MATH110A",
+    "MATH110B",
+    "MATH110C",
+    "MATH115",
+    "MATH120",
+    "MATH125",
+    "MATH130",
+    "MATH65",
+    "MATH70",
+    "MATH75",
+    "MATH90",
+    "MATH98",
+    "PHIL12A",
+    "PHYC4C",
+    "PSYC1B",
+    "PSYC5",
+    "STATC1000",
+    "STATC1000E"
+   ],
+   "flagged": [
+    "BIO11",
+    "BIO119",
+    "BIO14",
+    "CHEM101B",
+    "CHEM212A",
+    "CHEM32",
+    "CHEM40",
+    "ECON5",
+    "ET50",
+    "GEOG9",
+    "GEOL111",
+    "HLTH114",
+    "LALS5",
+    "MATH100A",
+    "MATH100B",
+    "MATH101",
+    "MATH108",
+    "MATH110A",
+    "MATH110B",
+    "MATH110C",
+    "MATH115",
+    "MATH120",
+    "MATH125",
+    "MATH130",
+    "MATH65",
+    "MATH70",
+    "MATH75",
+    "MATH90",
+    "MATH98",
+    "PHIL12A",
+    "PHYC4C",
+    "PSYC1B",
+    "PSYC5",
+    "STATC1000",
+    "STATC1000E"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    4.0,
+    13.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 4.0-13.0; the catalog states 18.0-18.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Liberal Arts and Sciences: Emphasis in Science and Mathematics - AS Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply scientific inquiry and investigation of evidence to critically evaluate scientific arguments.",
+    "Communicate scientific ideas and theories effectively.",
+    "Apply scientific principles, theories, or models to explain the behavior of natural phenomena.",
+    "Apply scientific knowledge and reasoning to human interaction with the natural world and issues impacting society.",
+    "Apply mathematical concepts through numerical, symbolic, graphical, and verbal methods to interpret quantitative information, solve problems, and communicate results"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Complete 18 units from the following courses (at least one each from Science and Math options): Science",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ANTH 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASTR 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASTR 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASTR 16",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASTR 17",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASTR 18",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASTR 19",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 9",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 10",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 11",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIO 12",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 14",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIO 15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 19",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 21M",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 32",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 33",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 51",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 61",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 100A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 100B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 106",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 108",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 111",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 112",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 114",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 118B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 119",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIO 120",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 121",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 130",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 132",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 134",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BTEC 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BTEC 115",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BTEC 120",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 32",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 40",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 101A",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 101B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 212A",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 212B",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENRG 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENVS 31",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOL 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 111",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HLTH 70",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "O H 76",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "O H 77",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OCAN 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "P SC 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYC 2A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYC 4A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYC 4B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYC 4C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYC 4D",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYC 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYC 41",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 1B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "MATH COURSES: CHOOSE AT LEAST ONE",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ECON 5",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ET 50",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HLTH 114",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "LALS 5",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 65",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 70",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 75",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 90",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 98",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 100A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 100B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 108",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 110A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 110B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 110C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 130",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHIL 12A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 5",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "STAT C1000",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "STAT C1000E",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BIO 32L",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENRG 3L",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENVS 31L",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOG 1L",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOL 10L",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOL 11L",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOL 30L",
+    "why": "not in the text"
+   },
+   {
+    "code": "OCAN 1L",
+    "why": "not in the text"
+   },
+   {
+    "code": "P SC 11L",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYC 10L",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYC 20",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYC 2AL",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYC 2B",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYC 2BL",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYC 4AL",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYC 4BL",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYC 4CL",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYC 4DL",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The catalog states one requirement: 'Complete 18 units from the following courses (at least one each from Science and Math options)' with Units 18.0 and Total: 18.0. It is recorded as two choose_courses blocks (at least one Science course, at least one Math course); the combined total across both blocks must reach 18 units. The 18 is recorded in total_units rather than on either block.",
+   "Unit values on pages 207-208 are printed in separate columns from the course codes; they were matched to courses in printed order (counts match). PHYC 4A is printed with 3.0 units under this alignment; reviewer may verify.",
+   "Closed-list codes PHYC4A and CHEM212B match printed PHYC 4A and CHEM 212B and were not flagged as additions.",
+   "Closed list stores 0 units for CHEM 101A, PHYC 2A and PHYC 4B; the catalog prints 6.0, 3.0 and 3.0 respectively.",
+   "BIO 19 is printed with the title 'Ecology' while the closed list calls it 'Introduction to Ecology'.",
+   "Courses in the area of emphasis may also count for a General Education area; no GE pattern or degree total is printed in this section.",
+   "Each course must be completed with a grade of 'C' or 'P' or better."
+  ]
+ },
+ "extracted_run": "45132633405",
+ "catalog_year": "2026-2027",
+ "source_sha": "cb405a1de55521aa",
+ "source_codes": [
+  "ANTH1",
+  "ASTR1",
+  "ASTR16",
+  "ASTR17",
+  "ASTR18",
+  "ASTR19",
+  "ASTR4",
+  "BIO10",
+  "BIO100A",
+  "BIO100B",
+  "BIO106",
+  "BIO108",
+  "BIO111",
+  "BIO112",
+  "BIO114",
+  "BIO118B",
+  "BIO12",
+  "BIO120",
+  "BIO121",
+  "BIO130",
+  "BIO132",
+  "BIO134",
+  "BIO15",
+  "BIO19",
+  "BIO20",
+  "BIO21M",
+  "BIO32",
+  "BIO33",
+  "BIO40",
+  "BIO51",
+  "BIO61",
+  "BIO9",
+  "BTEC115",
+  "BTEC120",
+  "BTEC4",
+  "CHEM101A",
+  "CHEM110",
+  "CHEM212B",
+  "ENRG3",
+  "ENVS31",
+  "GEOG1",
+  "GEOL10",
+  "GEOL11",
+  "GEOL30",
+  "HLTH70",
+  "OCAN1",
+  "OH76",
+  "OH77",
+  "PHYC10",
+  "PHYC2A",
+  "PHYC41",
+  "PHYC4B",
+  "PHYC4D",
+  "PSC11"
+ ],
+ "source_coverage": 0.74
+}

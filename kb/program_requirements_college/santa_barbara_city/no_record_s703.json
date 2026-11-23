@@ -1,0 +1,321 @@
+{
+ "_readme": "S703 (worker levers for SkyDovekie), census lever 10 (Santa Barbara City College, page not found, 28). Capture 44519697720 read these programs as not_found or page_claimed. Free page read 45029864826 printed each near-miss page, each claimed program's first candidate and an index page. Each program is filed here as a named gap with one reason. The state's lists were not read in this session (the coci_program_courses read goes to the conductor). No model call, no Supabase write.",
+ "college": "Santa Barbara City College",
+ "written": "2026-11-22T14:03:40Z",
+ "capture": "44519697720",
+ "page_read": "45029864826",
+ "reasons": {
+  "no_own_page": "No page in the catalog is the program's own.",
+  "own_page_coverage_low": "The program's own page (its title); it prints few of the state's listed courses.",
+  "page_held_by_another_program": "The page the capture reached holds another program the state lists, which the capture placed there; this one is an older or sibling listing."
+ },
+ "programs": [
+  {
+   "control_number": "05914",
+   "title": "Engineering",
+   "award": "A.S. Degree",
+   "capture_method": "page_claimed",
+   "page": "https://catalog.sbcc.edu/academic-departments/engineering/engineering-aa/",
+   "page_title": "Engineering, Associate of Arts or Science (AA/AS) < CourseLeaf",
+   "reason": "page_held_by_another_program",
+   "held_by": "10661",
+   "held_by_title": "Engineering",
+   "why": "The page is 10661 Engineering's, a program the state lists beside this one, which holds it."
+  },
+  {
+   "control_number": "05931",
+   "title": "Physics",
+   "award": "A.S. Degree",
+   "capture_method": "page_claimed",
+   "page": "https://catalog.sbcc.edu/academic-departments/computer-science/computer-science-as/",
+   "page_title": "Computer Science, Associate of Science (AS) < CourseLeaf",
+   "reason": "page_held_by_another_program",
+   "held_by": "05950",
+   "held_by_title": "Computer Science",
+   "why": "The page is 05950 Computer Science's, a program the state lists beside this one, which holds it."
+  },
+  {
+   "control_number": "05935",
+   "title": "Administration of Justice: Law Enforcement",
+   "award": "A.S. Degree",
+   "capture_method": "page_claimed",
+   "page": "https://catalog.sbcc.edu/academic-departments/justice-studies/administration-justice-as-criminology-emphasis/",
+   "page_title": "Administration of Justice, Associate of Science (AS): Criminology Emphasis < CourseLeaf",
+   "reason": "page_held_by_another_program",
+   "held_by": "19678",
+   "held_by_title": "Administration of Justice: Criminology Emphasis",
+   "why": "The page is 19678 Administration of Justice: Criminology Emphasis's, a program the state lists beside this one, which holds it."
+  },
+  {
+   "control_number": "07093",
+   "title": "Accounting",
+   "award": "A.S. Degree",
+   "capture_method": "page_claimed",
+   "page": "https://catalog.sbcc.edu/academic-departments/accounting-education/assistant-bookkeeper-level-IV-certificate-achievement/",
+   "page_title": "Accounting Assistant/Bookkeeper, Level IV, Certificate of Achievement (C) < CourseLeaf",
+   "reason": "page_held_by_another_program",
+   "held_by": "10898",
+   "held_by_title": "Accounting Assistant/Bookkeeper, Level IV",
+   "why": "The page is 10898 Accounting Assistant/Bookkeeper, Level IV's, a program the state lists beside this one, which holds it."
+  },
+  {
+   "control_number": "19677",
+   "title": "Administration of Justice: Criminology Emphasis",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "capture_method": "page_claimed",
+   "page": "https://catalog.sbcc.edu/academic-departments/justice-studies/administration-justice-certificate-achievement-law-enforcement-emphasis/",
+   "page_title": "Administration of Justice, Certificate of Achievement (C): Law Enforcement Emphasis < CourseLeaf",
+   "reason": "page_held_by_another_program",
+   "held_by": "21702",
+   "held_by_title": "Administration of Justice: Law Enforcement",
+   "why": "The page is 21702 Administration of Justice: Law Enforcement's, a program the state lists beside this one, which holds it."
+  },
+  {
+   "control_number": "24154",
+   "title": "Medical Assistant Training Program",
+   "capture_method": "not_found",
+   "page": "https://catalog.sbcc.edu/sel/career-skills/medical-assistant-training-program-certificate-completion/",
+   "page_title": "Medical Assistant Training Program, Certificate of Completion < CourseLeaf",
+   "coarse_net": "0 of 1",
+   "page_coverage": 0.0,
+   "reason": "page_held_by_another_program",
+   "held_by": "35787",
+   "held_by_title": "Medical Assistant Training Program",
+   "why": "The page is 35787 Medical Assistant Training Program's, a program the state lists beside this one, which holds it."
+  },
+  {
+   "control_number": "24266",
+   "title": "Adult Basic Education Advanced Reading and Writing Certificate",
+   "capture_method": "not_found",
+   "reason": "no_own_page",
+   "why": "No page the capture read names the program; the School of Extended Learning index (run 45029864826) links no Adult Basic Education or interpreter page, and /sel/adult-basic-education/ answers 404 (run 45030587012)."
+  },
+  {
+   "control_number": "24270",
+   "title": "Adult Basic Education Intermediate Level 1 Reading and Writing Certificate",
+   "capture_method": "not_found",
+   "reason": "no_own_page",
+   "why": "No page the capture read names the program; the School of Extended Learning index (run 45029864826) links no Adult Basic Education or interpreter page, and /sel/adult-basic-education/ answers 404 (run 45030587012)."
+  },
+  {
+   "control_number": "24271",
+   "title": "Adult Basic Education Math Foundations Certificate",
+   "capture_method": "not_found",
+   "reason": "no_own_page",
+   "why": "No page the capture read names the program; the School of Extended Learning index (run 45029864826) links no Adult Basic Education or interpreter page, and /sel/adult-basic-education/ answers 404 (run 45030587012)."
+  },
+  {
+   "control_number": "24272",
+   "title": "Adult Basic Education Intermediate Level 2 Reading and Writing Certificate",
+   "capture_method": "not_found",
+   "reason": "no_own_page",
+   "why": "No page the capture read names the program; the School of Extended Learning index (run 45029864826) links no Adult Basic Education or interpreter page, and /sel/adult-basic-education/ answers 404 (run 45030587012)."
+  },
+  {
+   "control_number": "24300",
+   "title": "Adult Basic Education Reading and Writing Foundations Certificate",
+   "capture_method": "not_found",
+   "reason": "no_own_page",
+   "why": "No page the capture read names the program; the School of Extended Learning index (run 45029864826) links no Adult Basic Education or interpreter page, and /sel/adult-basic-education/ answers 404 (run 45030587012)."
+  },
+  {
+   "control_number": "24392",
+   "title": "Health Care Interpreter Training Program",
+   "capture_method": "not_found",
+   "reason": "no_own_page",
+   "why": "No page the capture read names the program; the School of Extended Learning index (run 45029864826) links no Adult Basic Education or interpreter page, and /sel/adult-basic-education/ answers 404 (run 45030587012)."
+  },
+  {
+   "control_number": "30368",
+   "title": "ESL Beginning Level",
+   "capture_method": "not_found",
+   "page": "https://catalog.sbcc.edu/sel/career-skills/beginning-mac-skills-certificate-completion/",
+   "page_title": "Beginning MAC Skills, Certificate of Completion < CourseLeaf",
+   "coarse_net": "0 of 4",
+   "page_coverage": 0.0,
+   "reason": "page_held_by_another_program",
+   "held_by": "37250",
+   "held_by_title": "Beginning MAC Skills",
+   "why": "The page is 37250 Beginning MAC Skills's, a program the state lists beside this one, which holds it."
+  },
+  {
+   "control_number": "30380",
+   "title": "ESL Intermediate Level",
+   "capture_method": "not_found",
+   "page": "https://catalog.sbcc.edu/sel/esl-noncredit/esl-intermediate-grammar-composition-certificate-competency/",
+   "page_title": "ESL Intermediate Grammar and Composition, Certificate of Competency < CourseLeaf",
+   "coarse_net": "0 of 7",
+   "page_coverage": 0.0,
+   "reason": "page_held_by_another_program",
+   "held_by": "35785",
+   "held_by_title": "ESL Intermediate Grammar and Composition",
+   "why": "The page is 35785 ESL Intermediate Grammar and Composition's, a program the state lists beside this one, which holds it."
+  },
+  {
+   "control_number": "30381",
+   "title": "ESL Advanced Level",
+   "capture_method": "not_found",
+   "page": "https://catalog.sbcc.edu/sel/esl-noncredit/esl-advanced-grammar-composition-certificate-competency/",
+   "page_title": "ESL Advanced Grammar and Composition, Certificate of Competency < CourseLeaf",
+   "coarse_net": "0 of 7",
+   "page_coverage": 0.0,
+   "reason": "page_held_by_another_program",
+   "held_by": "35791",
+   "held_by_title": "ESL Advanced Grammar and Composition",
+   "why": "The page is 35791 ESL Advanced Grammar and Composition's, a program the state lists beside this one, which holds it."
+  },
+  {
+   "control_number": "31417",
+   "title": "Basic Office Software Skills",
+   "award": "Noncredit program",
+   "capture_method": "not_found",
+   "page": "https://catalog.sbcc.edu/sel/career-skills/basic-mac-software-skills-certificate-completion/",
+   "page_title": "Basic MAC Software Skills, Certificate of Completion < CourseLeaf",
+   "coarse_net": "0 of 4",
+   "page_coverage": 0.0,
+   "reason": "page_held_by_another_program",
+   "held_by": "31464",
+   "held_by_title": "Basic MAC Software Skills",
+   "why": "The page is 31464 Basic MAC Software Skills's, a program the state lists beside this one, which holds it."
+  },
+  {
+   "control_number": "31493",
+   "title": "Computer Hardware Fundamentals",
+   "capture_method": "not_found",
+   "page": "https://catalog.sbcc.edu/sel/career-skills/computer-hardware-fundamentals-certificate-completion/",
+   "page_title": "Computer Hardware Fundamentals, Certificate of Completion < CourseLeaf",
+   "coarse_net": "0 of 3",
+   "page_coverage": 0.0,
+   "reason": "page_held_by_another_program",
+   "held_by": "37542",
+   "held_by_title": "Computer Hardware Fundamentals",
+   "why": "The page is 37542 Computer Hardware Fundamentals's, a program the state lists beside this one, which holds it."
+  },
+  {
+   "control_number": "32513",
+   "title": "ESL 4 Intermediate High",
+   "capture_method": "not_found",
+   "page": "https://catalog.sbcc.edu/sel/esl-noncredit/esl-intermediate-grammar-composition-certificate-competency/",
+   "page_title": "ESL Intermediate Grammar and Composition, Certificate of Competency < CourseLeaf",
+   "coarse_net": "0 of 4",
+   "page_coverage": 1.0,
+   "reason": "page_held_by_another_program",
+   "held_by": "35785",
+   "held_by_title": "ESL Intermediate Grammar and Composition",
+   "why": "The page is 35785 ESL Intermediate Grammar and Composition's, a program the state lists beside this one, which holds it."
+  },
+  {
+   "control_number": "32675",
+   "title": "Philosophy",
+   "award": "A.A- T Degree",
+   "capture_method": "page_claimed",
+   "page": "https://catalog.sbcc.edu/academic-departments/history/history-aat/",
+   "page_title": "History, Associate in Arts for Transfer (AA-T) < CourseLeaf",
+   "reason": "page_held_by_another_program",
+   "held_by": "31787",
+   "held_by_title": "History",
+   "why": "The page is 31787 History's, a program the state lists beside this one, which holds it."
+  },
+  {
+   "control_number": "35508",
+   "title": "Strategic Marketing",
+   "award": "Noncredit program",
+   "capture_method": "not_found",
+   "page": "https://catalog.sbcc.edu/sel/career-skills/strategic-marketing-certificate-completion/",
+   "page_title": "Strategic Marketing, Certificate of Completion < CourseLeaf",
+   "coarse_net": "0 of 4",
+   "page_coverage": 0.0,
+   "reason": "own_page_coverage_low",
+   "page_prints": [],
+   "why": "The page is the program's own (its title), and it prints few of the state's listed courses."
+  },
+  {
+   "control_number": "35643",
+   "title": "Film and Media Studies",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "capture_method": "page_claimed",
+   "page": "https://catalog.sbcc.edu/academic-departments/film-media-studies/film-media-studies-aa/",
+   "page_title": "Film and Media Studies, Associate of Arts (AA) < CourseLeaf",
+   "reason": "page_held_by_another_program",
+   "held_by": "36140",
+   "held_by_title": "Film and Media Studies",
+   "why": "The page is 36140 Film and Media Studies's, a program the state lists beside this one, which holds it."
+  },
+  {
+   "control_number": "36839",
+   "title": "Green Documents: Documents for the Environment",
+   "award": "Noncredit program",
+   "capture_method": "not_found",
+   "page": "https://catalog.sbcc.edu/sel/career-skills/green-documents-documents-for-the-environment-nc-completion/",
+   "page_title": "Green Documents: Documents for the Environment, Certificate of Completion < CourseLeaf",
+   "coarse_net": "0 of 2",
+   "page_coverage": 0.0,
+   "reason": "own_page_coverage_low",
+   "page_prints": [],
+   "why": "The page is the program's own (its title), and it prints few of the state's listed courses."
+  },
+  {
+   "control_number": "36970",
+   "title": "Secondary Education/Bi-lingual/Biliterate GED Preparation",
+   "award": "Noncredit program",
+   "capture_method": "not_found",
+   "reason": "no_own_page",
+   "why": "No page the capture read names the program. The School of Extended Learning's Adult High School and GED/Bilingual GED page (college-page-read run 45030587012) prints an overview of the diploma and GED programs and no course list; its Programs tab was not read.",
+   "page": "https://catalog.sbcc.edu/sel/ahs-ged/"
+  },
+  {
+   "control_number": "36971",
+   "title": "Secondary Education/GED Preparation",
+   "award": "Noncredit program",
+   "capture_method": "not_found",
+   "reason": "no_own_page",
+   "why": "No page the capture read names the program. The School of Extended Learning's Adult High School and GED/Bilingual GED page (college-page-read run 45030587012) prints an overview of the diploma and GED programs and no course list; its Programs tab was not read.",
+   "page": "https://catalog.sbcc.edu/sel/ahs-ged/"
+  },
+  {
+   "control_number": "38145",
+   "title": "Screenwriting",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "capture_method": "page_claimed",
+   "page": "https://catalog.sbcc.edu/academic-departments/film-media-studies/film-media-studies-aa/",
+   "page_title": "Film and Media Studies, Associate of Arts (AA) < CourseLeaf",
+   "reason": "page_held_by_another_program",
+   "held_by": "36140",
+   "held_by_title": "Film and Media Studies",
+   "why": "The page is 36140 Film and Media Studies's, a program the state lists beside this one, which holds it."
+  },
+  {
+   "control_number": "38147",
+   "title": "Middle East Studies",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "capture_method": "page_claimed",
+   "page": "https://catalog.sbcc.edu/academic-departments/communication/global-leadership-certificate-achievement/",
+   "page_title": "Global Leadership, Certificate of Achievement (C) < CourseLeaf",
+   "reason": "page_held_by_another_program",
+   "held_by": "36604",
+   "held_by_title": "Global Leadership",
+   "why": "The page is 36604 Global Leadership's, a program the state lists beside this one, which holds it."
+  },
+  {
+   "control_number": "38315",
+   "title": "ADHS: Adult High School Diploma",
+   "award": "Noncredit program",
+   "capture_method": "not_found",
+   "reason": "no_own_page",
+   "why": "No page the capture read names the program. The School of Extended Learning's Adult High School and GED/Bilingual GED page (college-page-read run 45030587012) prints an overview of the diploma and GED programs and no course list; its Programs tab was not read.",
+   "page": "https://catalog.sbcc.edu/sel/ahs-ged/"
+  },
+  {
+   "control_number": "38583",
+   "title": "Film, Television, and Electronic Media",
+   "award": "A.S. T Degree",
+   "capture_method": "page_claimed",
+   "page": "https://catalog.sbcc.edu/academic-departments/history/history-aat/",
+   "page_title": "History, Associate in Arts for Transfer (AA-T) < CourseLeaf",
+   "reason": "page_held_by_another_program",
+   "held_by": "31787",
+   "held_by_title": "History",
+   "why": "The page is 31787 History's, a program the state lists beside this one, which holds it."
+  }
+ ]
+}

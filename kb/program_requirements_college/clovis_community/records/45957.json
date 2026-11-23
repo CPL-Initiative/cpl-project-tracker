@@ -46,25 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 39,
+   "placed": 40,
    "listed": 40,
-   "share": 0.975,
-   "missing": [
-    "ANTH2"
-   ],
-   "unexplained": [
-    "ANTH2"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "ANTHRO2"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -109,7 +103,14 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true,
+  "course_renumbers": [
+   {
+    "printed": "ANTHRO 2",
+    "listed": "ANTH2",
+    "block": "Select 2 courses from two of the areas listed below"
+   }
+  ]
  },
  "record": {
   "program": {

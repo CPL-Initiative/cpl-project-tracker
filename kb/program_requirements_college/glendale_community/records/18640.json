@@ -46,26 +46,23 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 100,
+   "placed": 101,
    "listed": 107,
-   "share": 0.935,
+   "share": 0.944,
    "missing": [
     "ECON101",
     "ECON102",
     "ECON102H",
     "HIST117",
     "HIST118",
-    "HIST118H",
-    "PSYCH104"
+    "HIST118H"
    ],
-   "unexplained": [
-    "PSYCH104"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 18,
+   "count": 17,
    "codes": [
     "ANTHR115",
     "ECONC2001",
@@ -80,7 +77,6 @@
     "HISTC1002H",
     "MCOMM101",
     "POLSC1000H",
-    "PSYC104",
     "PSYC108",
     "PSYC114",
     "PSYC200",
@@ -105,7 +101,7 @@
     "PSYC200",
     "SOCS110H"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -164,7 +160,14 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true,
+  "course_renumbers": [
+   {
+    "printed": "PSYC 104",
+    "listed": "PSYCH104",
+    "block": "REQUIRED COURSES FOR MAJOR: Select 18 units from at least two different disciplines"
+   }
+  ]
  },
  "record": {
   "program": {

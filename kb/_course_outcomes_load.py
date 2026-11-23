@@ -84,6 +84,86 @@ DROPPED = {"lines": 0, "rows": 0}
 FIELD_END = re.compile(r"^\s*legacy data\s*:?\s*$", re.I)
 POINTER = re.compile(r"^\s*see (the )?(specific |individual )?course outlines?\.?\s*$", re.I)
 NUMBERED = re.compile(r"(?:^|(?<=\s))(\d{1,2})[.)]\s+")
+# Five label cases on Peralta's lan.curriqunet.com, full read 45031089800 (S713; d-peralta-load-cleans-labels-first-
+# s713). The load cleans them at the lan folder only (LABEL_CLEAN_HOSTS), so no other host's load or re-post changes;
+# the filed read stays as read, so no parser change and no recall gate or fingerprint moves (as
+# d-outline-load-strips-letterless-lines-s697). (1) A leading ": " the Exit Skills field prints before an item is
+# stripped (233 lines). (2) The SCANS framework a page appends to its objectives (284 lines in 38 blocks; College
+# of Alameda AMT 058: "SCANS Competencies:", "Competency #3: Information", "Skill #1: Basic Skills"): a SCANS heading,
+# a "Competency #N" or "Skill #N" line, or a "Scans competency No. N" line opens a run; it and every line after it that
+# begins with a SCANS framework term drop, and the run ends at the first line that does not (Laney ECT 015 keeps the
+# three objectives printed after its SCANS lines). A line that only names SCANS inside an objective ("Utilize and
+# incorporate SCANS Competencies into the occupational learning experience:") stays. (3) A line that is only a "Part
+# N" heading (Laney ARTH C1100 "Part 2", the trial's one wrong row) drops; "Part 1:: <text>" (COMM C1004) loses the
+# label and keeps its text, which is the objective (26 lines). (4) A line that is only a placeholder ("None", "N/A",
+# "y") drops (8 lines). (5) A line that is only a curriculum system's note to its editors drops (12 lines: College of
+# Alameda ENGL C1001 "Won't delete", Laney COSM 223 "META won't allow delete.", COSM 220L "duplicate to be removed").
+# A block left with nothing loads nothing and is listed as a skip (7 blocks).
+LABEL_CLEAN_HOSTS = {"lan"}
+LABEL_CLEANED = {"colon": 0, "scans": 0, "part": 0, "placeholder": 0, "note": 0, "rows": 0}
+LEAD_COLON = re.compile(r"^\s*:+\s*")
+SCANS_OPEN = re.compile(r"^(scans\s+competenc\w*\s*:?\s*(competency\s*#\s*\d+.*)?|(competency|skill)\s*#\s*\d+\s*:?.*|"
+                        r"scans\s+(competency\s+)?(no\.?\s*)?\d+\b.*)$", re.I)
+SCANS_TERM = re.compile(
+    r"^(information|interpersonal|technology|resources|systems|basic skills|thinking skills|personal qualities|"
+    r"knowledge of industry|works with|acquires? and|organizes? and|interprets? and|uses? computers|selects? "
+    r"technology|appl(y|ies) technology|maintains? and troubleshoots?|understands? systems|monitors? and corrects?|"
+    r"improves? or designs?|participates? as|teaches? others|serves? clients|exercises? leadership|negotiates?|time|"
+    r"money|materials?|human resources|reading|writing|arithmetic|mathematics|listening|speaking|creative thinking|"
+    r"decision[- ]making|problem solving|seeing things|knowing how to learn|reasoning|responsibility|self-esteem|"
+    r"sociability|self-management|integrity|displays? responsibility)\b", re.I)
+PART_LABEL = re.compile(r"^part\s*\d+\s*:*\s*", re.I)
+PLACEHOLDER = re.compile(r"^(none|n/?a|not applicable|tba|tbd|[a-z])\.?$", re.I)
+SYSTEM_NOTE = re.compile(r"^((meta )?won['’]?t (allow )?delete|duplicate to be removed)\.?$", re.I)
+
+
+def label_clean(block: dict) -> dict | None:
+    """The block with the five lan label cases cleaned (LABEL_CLEAN_HOSTS): a leading ": " stripped, a SCANS run, a
+    bare "Part N" heading, a placeholder line and a system note dropped, a "Part N:" label stripped from the text it heads. Its
+    fingerprint and shape are taken from what is left; the block itself when nothing changes; None when no line is
+    left (counted in LABEL_CLEANED["rows"])."""
+    items = block.get("outcomes") or []
+    maps = block.get("maps_to")
+    aligned = isinstance(maps, list) and len(maps) == len(items)
+    outs, kept_maps, in_scans, changed = [], [], False, False
+    for i, raw in enumerate(items):
+        text = raw or ""
+        if LEAD_COLON.match(text):
+            text = LEAD_COLON.sub("", text)
+            LABEL_CLEANED["colon"] += 1
+        bare = text.strip()
+        if SCANS_OPEN.match(bare) or (in_scans and SCANS_TERM.match(bare)):
+            in_scans = True
+            LABEL_CLEANED["scans"] += 1
+            changed = True
+            continue
+        in_scans = False
+        if PART_LABEL.match(bare):
+            rest = PART_LABEL.sub("", bare)
+            LABEL_CLEANED["part"] += 1
+            changed = True
+            if not rest:
+                continue
+            text = rest
+        if SYSTEM_NOTE.match(bare):
+            LABEL_CLEANED["note"] += 1
+            changed = True
+            continue
+        if PLACEHOLDER.match(bare):
+            LABEL_CLEANED["placeholder"] += 1
+            changed = True
+            continue
+        changed = changed or text != raw
+        outs.append(text)
+        if aligned:
+            kept_maps.append(maps[i])
+    if not changed:
+        return block
+    if not outs:
+        LABEL_CLEANED["rows"] += 1
+        return None
+    return {**block, "outcomes": outs, "maps_to": kept_maps if aligned else maps, "fingerprint": fingerprint(outs),
+            "shape": "list" if len(outs) > 1 else "paragraph"}
 
 
 def numbered_items(text: str) -> list[str] | None:
@@ -249,7 +329,29 @@ def whole_run_problem(host: str, slugs: list[str] | None, paths: list[str]) -> s
     return None
 
 
+# Hosts where one course code holds several colleges' outlines and each page prints its own college (Peralta's four
+# on lan.curriqunet.com, read into kb/course_outcomes/lan; the reader files college_printed). The page decides: a
+# row is kept for the college it prints when that college's records name the code, and for no other; a page that
+# prints no college, or one whose college's records do not name the code, loads nothing (S703).
+PAGE_COLLEGE_HOSTS = {"lan"}
+
+
+def page_college_problem(host: str, row: dict, names: dict) -> str | None:
+    """Why a shared-code host's row loads for no college; None when it loads for the one its page prints."""
+    if host not in PAGE_COLLEGE_HOSTS:
+        return None
+    printed = row.get("college_printed")
+    if not printed:
+        return "the page prints no college"
+    named = [names.setdefault(slug, college_of(slug)) for slug in row.get("named_by") or []]
+    if printed not in named:
+        return "the page prints %s, whose records do not name the code" % printed
+    return None
+
+
 def colleges_for(host: str, row: dict, names: dict) -> list[str]:
+    if host in PAGE_COLLEGE_HOSTS:
+        return [] if page_college_problem(host, row, names) else [row["college_printed"]]
     codes = OFFERED_AT.get(host) or {}
     printed = [codes[c] for c in row.get("offered_at") or [] if c in codes]
     if printed:
@@ -264,8 +366,17 @@ def rows_from(paths: list[str], host: str = "") -> tuple[list[dict], list[dict]]
     names: dict[str, str] = {}
     rows, skipped, seen = [], [], set()
     DROPPED.update(lines=0, rows=0)
+    LABEL_CLEANED.update(colon=0, scans=0, part=0, placeholder=0, note=0, rows=0)
 
     def add(college, r, block, d, kind="slo"):
+        if host in LABEL_CLEAN_HOSTS:
+            cleaned = label_clean(block)
+            if cleaned is None:
+                skipped.append({"course_code": r.get("code"), "status": r.get("status"), "shape": "none", "kind": kind,
+                                "college": college, "why": "every filed line is a placeholder, a system note or a "
+                                                           "label (None, N/A, a Part heading, the SCANS framework)"})
+                return
+            block = cleaned
         filed, block = block, no_letterless(block)
         if block is None:
             # Every line the page filed here holds no letter: nothing to load, and the row says why.
@@ -300,6 +411,11 @@ def rows_from(paths: list[str], host: str = "") -> tuple[list[dict], list[dict]]
     for path in paths:
         d = json.load(open(path))
         for r in d["rows"]:
+            why = page_college_problem(host, r, names) if r.get("status") == 200 else None
+            if why:
+                skipped.append({"course_code": r.get("code"), "status": r.get("status"), "shape": r.get("shape"),
+                                "course_id": r.get("course_id"), "why": why})
+                continue
             if r.get("status") == 200 and r.get("shape") == "groups" and untitled_groups(host, r):
                 for g in r["groups"]:
                     if g.get("outcomes") and g.get("fingerprint") != fingerprint(g["outcomes"]):
@@ -446,6 +562,10 @@ def main(argv=None) -> int:
           % (len(paths), len(rows), ", ".join("%s %d" % kv for kv in sorted(colleges.items())), len(skipped),
              a.kind, held_back))
     print("dropped as holding no letter: %d line(s); %d row(s) left with none" % (DROPPED["lines"], DROPPED["rows"]))
+    if a.host in LABEL_CLEAN_HOSTS:
+        print("labels cleaned: %(colon)d leading colon(s) stripped; %(scans)d SCANS line(s), %(part)d Part heading(s), "
+              "%(placeholder)d placeholder(s) and %(note)d system note(s) dropped; %(rows)d block(s) left with none"
+              % LABEL_CLEANED)
     if a.dry:
         return 0
     key = os.environ.get("SUPABASE_SERVICE_KEY")

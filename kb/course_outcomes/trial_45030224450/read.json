@@ -1,0 +1,819 @@
+{
+ "run": "45030224450",
+ "index": "kb/course_outline_index/index_45025388165.json",
+ "host": "https://lan.curriqunet.com/",
+ "system": "curriqunet",
+ "source_kind": "course_outline",
+ "slugs": "laney,merritt,college_of_alameda,berkeley_city",
+ "part": 1,
+ "of": 1,
+ "wanted": 1869,
+ "slice": 12,
+ "collects": [
+  "slo",
+  "objective"
+ ],
+ "objectives_printed": true,
+ "parser_fingerprint": "27934ff77d07caca6be8ef1034cfd032",
+ "not_read": [
+  {
+   "college": "laney",
+   "code": "ADAM 001",
+   "why": "the index holds this code only under another college's rows"
+  },
+  {
+   "college": "laney",
+   "code": "CIS 025",
+   "why": "the index holds this code only under another college's rows"
+  },
+  {
+   "college": "laney",
+   "code": "ENGL 201A",
+   "why": "the index holds this code only under another college's rows"
+  },
+  {
+   "college": "laney",
+   "code": "KIN 107B",
+   "why": "the index holds this code only under another college's rows"
+  },
+  {
+   "college": "laney",
+   "code": "MATH C2210",
+   "why": "the index holds this code only under another college's rows"
+  },
+  {
+   "college": "laney",
+   "code": "MATH C2220",
+   "why": "the index holds this code only under another college's rows"
+  },
+  {
+   "college": "merritt",
+   "code": "ANTHR 001",
+   "why": "the index holds this code only under another college's rows"
+  },
+  {
+   "college": "merritt",
+   "code": "ANTHR 001L",
+   "why": "the index holds this code only under another college's rows"
+  },
+  {
+   "college": "merritt",
+   "code": "BIOL 010",
+   "why": "the index holds this code only under another college's rows"
+  },
+  {
+   "college": "merritt",
+   "code": "BIOL 027",
+   "why": "the index holds this code only under another college's rows"
+  },
+  {
+   "college": "merritt",
+   "code": "BIOL 201",
+   "why": "the index holds this code only under another college's rows"
+  },
+  {
+   "college": "merritt",
+   "code": "CHDEV 051",
+   "why": "the index holds this code only under another college's rows"
+  },
+  {
+   "college": "merritt",
+   "code": "MATH 003A",
+   "why": "the index holds this code only under another college's rows"
+  },
+  {
+   "college": "merritt",
+   "code": "MATH 003B",
+   "why": "the index holds this code only under another college's rows"
+  },
+  {
+   "college": "merritt",
+   "code": "SOC 001",
+   "why": "the index holds this code only under another college's rows"
+  },
+  {
+   "college": "college_of_alameda",
+   "code": "ESOL 550",
+   "why": "the index holds this code only under another college's rows"
+  },
+  {
+   "college": "college_of_alameda",
+   "code": "POSCI 006",
+   "why": "the index holds this code only under another college's rows"
+  },
+  {
+   "college": "berkeley_city",
+   "code": "CIS 025A",
+   "why": "the index holds this code only under another college's rows"
+  },
+  {
+   "college": "berkeley_city",
+   "code": "M/SVN 060",
+   "why": "the index holds this code only under another college's rows"
+  },
+  {
+   "college": "berkeley_city",
+   "code": "SOCSC 019",
+   "why": "the index holds this code only under another college's rows"
+  },
+  {
+   "college": "berkeley_city",
+   "code": "SOCSC 020",
+   "why": "the index holds this code only under another college's rows"
+  }
+ ],
+ "at": "2026-11-22T14:00:52Z",
+ "complete": true,
+ "summary": {
+  "read": 12,
+  "shapes": {
+   "list": 12
+  },
+  "status_not_200": 0,
+  "outcomes": 38
+ },
+ "rows": [
+  {
+   "code": "ADJUS 021",
+   "title": "Introduction to Administration of Justice",
+   "course_id": 18369,
+   "report": "https://lan.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18369?entityType=Course&reportId=416",
+   "named_by": [
+    "merritt"
+   ],
+   "status": 200,
+   "final_url": "https://lan.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18369?entityType=Course&reportId=416",
+   "access": "public",
+   "chars": 6198,
+   "text_cut": false,
+   "html_chars": 646357,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "STUDENT LEARNING OUTCOMES",
+   "lead": null,
+   "outcomes": [
+    "Analyze criminal laws and procedures in the justice system and apply to current events.",
+    "Identify and discuss ethical considerations for law enforcement professionals.",
+    "Explain and critique the interrelationships among the three core components of the criminal justice system: Courts, Corrections, and Law Enforcement.",
+    "Evaluate the history of the justice system and compare the historical theories to contemporary trends in the criminal justice system."
+   ],
+   "maps_to": null,
+   "parsed_from": "sections",
+   "fingerprint": "2cdf627aa3726b3a1ac093667025ed04",
+   "objectives": [
+    "Identify, explain and discuss the origin of laws in both ancient and modern society.",
+    "Analyze and compare laws and justice institutions of other societies with the American system.",
+    "Convey understanding of the history, structure, and trends of law enforcement, courts and corrections, in order to identify emerging and future patterns in the criminal justice system.",
+    "Identify and discuss ethical considerations for the contemporary law enforcement professional.",
+    "Explain and discuss the education and training of the law enforcement professional in the American justice system.",
+    "Demonstrate an understanding of the roles and functions of the core components on the US criminal justice system: courts, corrections, and law enforcement.",
+    "Critically analyze and discuss issues related to the criminal justice system and crime from various perspectives and scholarly research.",
+    "Demonstrate the ability to describe and critique specific issues in the criminal justice system as it relates to special populations, including juveniles.",
+    "Effectively write a research paper using APA, ASA or a generally accepted writing format.",
+    "Analyze patterns in crime, crime activity, and criminal methods.",
+    "Demonstrates and understanding of crime, criminology, and the problem of crime in America."
+   ],
+   "objectives_heading": "Student Performance Objectives (Exit Skills)",
+   "objectives_lead": null,
+   "objectives_fingerprint": "59410599d97a914ed648d848c43697d2",
+   "section_heads": [
+    "GRADING",
+    "REQUISITES",
+    "COURSE CONTENT",
+    "LECTURE CONTENT",
+    "LAB CONTENT",
+    "TEXTS",
+    "LIBRARY",
+    "METHODS OF INSTRUCTION",
+    "DISTANCE EDUCATION",
+    "ASSIGNMENTS",
+    "STUDENT LEARNING OUTCOMES"
+   ],
+   "row_college": "merritt",
+   "college_printed": "Merritt College"
+  },
+  {
+   "code": "ARTH C1100",
+   "title": " Survey of Art from Prehistory to the Medieval Era",
+   "course_id": 22666,
+   "report": "https://lan.curriqunet.com/DynamicReports/AllFieldsReportByEntity/22666?entityType=Course&reportId=416",
+   "named_by": [
+    "laney"
+   ],
+   "status": 200,
+   "final_url": "https://lan.curriqunet.com/DynamicReports/AllFieldsReportByEntity/22666?entityType=Course&reportId=416",
+   "access": "public",
+   "chars": 8238,
+   "text_cut": false,
+   "html_chars": 650061,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "STUDENT LEARNING OUTCOMES",
+   "lead": null,
+   "outcomes": [
+    "Identify, examine, and assess representative works of art and architecture from prehistory through the medieval period employing appropriate art historical terminology",
+    "Analyze, evaluate, and distinguish materials and techniques used for creating art and architecture from prehistory and medieval period.",
+    "Analyze, discuss, and differentiate the roles of art, architecture, and the artist from prehistory through the medieval period"
+   ],
+   "maps_to": null,
+   "parsed_from": "sections",
+   "fingerprint": "377b1ea0e9713c23d2c623d57117abb8",
+   "objectives": [
+    "Identify, examine, and assess representative works of art and architecture from prehistory to the medieval era employing appropriate art historical terminology.",
+    "Analyze works of art and architecture in terms of aesthetic, socio-political, religious, historical, technological, and cultural contexts in which they were created.",
+    "Develop critical thinking, information literacy, and problem solving through an engagement with art, architecture, artists, and patrons from prehistory to the medieval era.",
+    "Part 2",
+    "Identify, examine, and assess representative works of art and architecture from prehistory through the medieval period employing appropriate art historical terminology",
+    "Analyze, discuss, and differentiate works of art and architecture in terms of historical context and cultural values",
+    "Analyze, discuss, and differentiate the roles of art, architecture, and the artist from prehistory through the medieval period",
+    "Develop strong writing skills as they relate to analysis of visual forms taught in this course.",
+    "Discuss the effect of early art on the gothic era.",
+    "Differentiate between art in the Romanesque era and The Byzantine era"
+   ],
+   "objectives_heading": "Student Performance Objectives (Exit Skills)",
+   "objectives_lead": null,
+   "objectives_fingerprint": "0fc77ebd357e0122a3e5a9747238e5d1",
+   "section_heads": [
+    "GRADING",
+    "REQUISITES",
+    "COURSE CONTENT",
+    "LECTURE CONTENT",
+    "LAB CONTENT",
+    "TEXTS",
+    "METHODS OF INSTRUCTION",
+    "DISTANCE EDUCATION",
+    "ASSIGNMENTS",
+    "STUDENT LEARNING OUTCOMES"
+   ],
+   "row_college": "laney",
+   "college_printed": "Laney College"
+  },
+  {
+   "code": "BIOSC 009",
+   "title": "General Histology",
+   "course_id": 17654,
+   "report": "https://lan.curriqunet.com/DynamicReports/AllFieldsReportByEntity/17654?entityType=Course&reportId=416",
+   "named_by": [
+    "merritt"
+   ],
+   "status": 200,
+   "final_url": "https://lan.curriqunet.com/DynamicReports/AllFieldsReportByEntity/17654?entityType=Course&reportId=416",
+   "access": "public",
+   "chars": 4810,
+   "text_cut": false,
+   "html_chars": 646100,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "STUDENT LEARNING OUTCOMES",
+   "lead": null,
+   "outcomes": [
+    "Compare and contrast four mammalian tissue types.",
+    "Identify and describe tissue structures and layers of all mammalian organs.",
+    "Identify and describe organs based upon tissue arrangement."
+   ],
+   "maps_to": null,
+   "parsed_from": "sections",
+   "fingerprint": "c176763e737475dc43bc0b55c57e99e4",
+   "objectives": [
+    "Identify cellular organelles and explain their basic functions.",
+    "Identify and differentiate cell types.",
+    "Identify and explain the functions of general mammalian tissue types.",
+    "Identify, compare, contrast and explain basic functions of tissues as they relate to organ systems."
+   ],
+   "objectives_heading": "Student Performance Objectives (Exit Skills)",
+   "objectives_lead": null,
+   "objectives_fingerprint": "f2279f14c44d025883742b64bf45edf9",
+   "section_heads": [
+    "GRADING",
+    "REQUISITES",
+    "PREREQUISITE",
+    "COURSE CONTENT",
+    "LECTURE CONTENT",
+    "LAB CONTENT",
+    "TEXTS",
+    "METHODS OF INSTRUCTION",
+    "DISTANCE EDUCATION",
+    "ASSIGNMENTS",
+    "STUDENT LEARNING OUTCOMES"
+   ],
+   "row_college": "merritt",
+   "college_printed": "Merritt College"
+  },
+  {
+   "code": "COMM 001A",
+   "title": "Introduction to Speech",
+   "course_id": 22536,
+   "report": "https://lan.curriqunet.com/DynamicReports/AllFieldsReportByEntity/22536?entityType=Course&reportId=416",
+   "named_by": [
+    "laney"
+   ],
+   "status": 200,
+   "final_url": "https://lan.curriqunet.com/DynamicReports/AllFieldsReportByEntity/22536?entityType=Course&reportId=416",
+   "access": "public",
+   "chars": 9666,
+   "text_cut": false,
+   "html_chars": 650771,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "STUDENT LEARNING OUTCOMES",
+   "lead": null,
+   "outcomes": [
+    "Create multimedia Informative and Persuasive speeches",
+    "Critically evaluate communicated messages in various contexts",
+    "Apply communication theories to various contexts, including one's own experiences"
+   ],
+   "maps_to": null,
+   "parsed_from": "sections",
+   "fingerprint": "7e181f01180051dab4c01c757f1c448a",
+   "objectives": [
+    "Deliver a variety of individual informative and persuasive speeches before an audience, using rhetorical principles to ensure ethical communication and appropriate audience adaptation.",
+    "Develop communication confidence in various contexts, including public speaking.",
+    "Analyze communication theories by applying them to one's own experiences.",
+    "Relate to other individuals using effective verbal messages, nonverbal messages, and active listening skills.",
+    "Formulate effective communication skills in a variety of social contexts for diverse audiences.",
+    "Organize and present a variety of individual faculty-supervised, faculty-evaluated speeches delivered to a live audience (one to many).",
+    "Retreiving, critically examining, and using supporting materials from primary and secondary sources for credibility, accuracy, and relevance in speeches and presentations.",
+    "Demonstrate rheotrical sensitivity to diversity, equity, inclusion, belonging, and accessibility.",
+    "Critically discuss and write about human communication theories and events.",
+    "Explain and apply the basic concepts of the field of communication.",
+    "Discuss the history of the study of human communication.",
+    "Compare and contrast the basic research methods for the evaluation of human communication phenomena.",
+    "Explain the contextual, cultural, and social foundations of human communication.",
+    "Demonstrate a basic knowledge of the specializations comprising the communication discipline.",
+    "Demonstrate an understanding of ethical perspectives in communication.",
+    "Summarize and explain an expanded world perspective that demonstrates an appreciation of the diverse range of individuals, communities, and viewpoints."
+   ],
+   "objectives_heading": "Student Performance Objectives (Exit Skills)",
+   "objectives_lead": null,
+   "objectives_fingerprint": "cae2e9b452bd8e98ccdfe314adddea58",
+   "section_heads": [
+    "GRADING",
+    "REQUISITES",
+    "COURSE CONTENT",
+    "LECTURE CONTENT",
+    "EFFECTIVE",
+    "LAB CONTENT",
+    "TEXTS",
+    "METHODS OF INSTRUCTION",
+    "DISTANCE EDUCATION",
+    "ASSIGNMENTS",
+    "STUDENT LEARNING OUTCOMES"
+   ],
+   "row_college": "laney",
+   "college_printed": "Laney College"
+  },
+  {
+   "code": "DANCE 001",
+   "title": "History of Dance ",
+   "course_id": 22452,
+   "report": "https://lan.curriqunet.com/DynamicReports/AllFieldsReportByEntity/22452?entityType=Course&reportId=416",
+   "named_by": [
+    "laney"
+   ],
+   "status": 200,
+   "final_url": "https://lan.curriqunet.com/DynamicReports/AllFieldsReportByEntity/22452?entityType=Course&reportId=416",
+   "access": "public",
+   "chars": 4821,
+   "text_cut": false,
+   "html_chars": 645079,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "STUDENT LEARNING OUTCOMES",
+   "lead": null,
+   "outcomes": [
+    "Examine dance making from a historical, political, cultural and social context.",
+    "Critically analyze dance as a response to past and present-day social concerns.",
+    "Develop analytical and critical skills required to respond, define and write about dance as an academic subject."
+   ],
+   "maps_to": null,
+   "parsed_from": "sections",
+   "fingerprint": "e472ac7e4379dd438cac6b02298b6e4e",
+   "objectives": [
+    "Compose analytical statements about the development in 21st century America",
+    "Identify select dance genres in America and internationally",
+    "Identify select choreographers in America and internationally",
+    "Identify careers in dance in America and internationally",
+    "Summarize historical events impacting dance in America and internationally",
+    "Discuss Africanisms in American dance",
+    "Discriminate genres in contemporary American dance",
+    "Discriminate genres in traditional/folkloric dance",
+    "Assess form and function in dance",
+    "Critic theories and methodologies of major dance icons"
+   ],
+   "objectives_heading": "Student Performance Objectives (Exit Skills)",
+   "objectives_lead": null,
+   "objectives_fingerprint": "21888eae6ae7efb9578cab9a8f4d499d",
+   "section_heads": [
+    "GRADING",
+    "REQUISITES",
+    "COURSE CONTENT",
+    "LECTURE CONTENT",
+    "LAB CONTENT",
+    "TEXTS",
+    "METHODS OF INSTRUCTION",
+    "DISTANCE EDUCATION",
+    "ASSIGNMENTS",
+    "STUDENT LEARNING OUTCOMES"
+   ],
+   "row_college": "laney",
+   "college_printed": "Laney College"
+  },
+  {
+   "code": "EMT 211",
+   "title": "Emergency Medical Technician–Basic",
+   "course_id": 23260,
+   "report": "https://lan.curriqunet.com/DynamicReports/AllFieldsReportByEntity/23260?entityType=Course&reportId=416",
+   "named_by": [
+    "merritt"
+   ],
+   "status": 200,
+   "final_url": "https://lan.curriqunet.com/DynamicReports/AllFieldsReportByEntity/23260?entityType=Course&reportId=416",
+   "access": "public",
+   "chars": 5922,
+   "text_cut": false,
+   "html_chars": 646387,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "STUDENT LEARNING OUTCOMES",
+   "lead": null,
+   "outcomes": [
+    "Identify and describe the basic anatomy and physiology of the human body.",
+    "Identify and describe the roles/responsibilities of the EMT in the pre-hospital setting.",
+    "Identify the proper sequence for performing a patient assessment on the sick and injured."
+   ],
+   "maps_to": null,
+   "parsed_from": "sections",
+   "fingerprint": "0b575bc17df3a89b6dc500fc254d6708",
+   "objectives": [
+    "State the medical/legal issues of emergency care.",
+    "Demonstrate advanced CPR.",
+    "Assess an injured person for respiratory, neuro, cardiac, renal, skeletal, and tissue injuries.",
+    "Take vital signs and make an initial assessment of injury.",
+    "Perform emergency childbirth.",
+    "Treat shock, burns, and multiple trauma.",
+    "Administer to pediatric emergencies.",
+    "Demonstrate medical response to environmental/hazardous material emergencies.",
+    "Use advanced equipment to rescue trapped victims.",
+    "Demonstrate proper use of the defibrillator.",
+    "Assist with administration of medications.",
+    "Assist with advanced airway management."
+   ],
+   "objectives_heading": "Student Performance Objectives (Exit Skills)",
+   "objectives_lead": null,
+   "objectives_fingerprint": "e1c63326b96f0f9b8993711573cac053",
+   "section_heads": [
+    "GRADING",
+    "REQUISITES",
+    "COURSE CONTENT",
+    "LECTURE CONTENT",
+    "LAB CONTENT",
+    "TEXTS",
+    "METHODS OF INSTRUCTION",
+    "ASSIGNMENTS",
+    "STUDENT LEARNING OUTCOMES"
+   ],
+   "row_college": "merritt",
+   "college_printed": "Merritt College"
+  },
+  {
+   "code": "FREN 001A",
+   "title": "Elementary French",
+   "course_id": 22113,
+   "report": "https://lan.curriqunet.com/DynamicReports/AllFieldsReportByEntity/22113?entityType=Course&reportId=416",
+   "named_by": [
+    "laney"
+   ],
+   "status": 200,
+   "final_url": "https://lan.curriqunet.com/DynamicReports/AllFieldsReportByEntity/22113?entityType=Course&reportId=416",
+   "access": "public",
+   "chars": 5695,
+   "text_cut": false,
+   "html_chars": 648418,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "STUDENT LEARNING OUTCOMES",
+   "lead": null,
+   "outcomes": [
+    "Sustain communicative conversations in French in everyday situations.",
+    "Apply basic vocabulary and grammatical Structures in culturally proper ways.",
+    "Read and write informational texts on everyday topics.",
+    "Apply a basic knowledge of the culture and geography of the French-speaking world."
+   ],
+   "maps_to": null,
+   "parsed_from": "sections",
+   "fingerprint": "c3808138d381167cb01a12885d5f2feb",
+   "objectives": [
+    "Demonstrate comprehension of French through oral and written exercises",
+    "Produce verbal utterances that communicate effectively in French;",
+    "Demonstrate basic written texts;",
+    "Formulate correct written text on everyday topics;",
+    "Demonstrate culturally appropriate use of the French language.",
+    "Demonstrate grammatical structures of language in general;",
+    "Demonstrate knowledge of the culture and geography of French-speaking countries;",
+    "List vocabulary of everyday activities",
+    "List vocabulary of foods",
+    "List vocabulary of clothing",
+    "Differentiate and properly use the affirmative, negative, interrogative, and imperative forms of verbs",
+    "Differentiate and use properly the present, near future, and past tense of verbs",
+    "Differentiate between definite articles, indefinite articles and partitive articles",
+    "Use the formal and informal “you” in social settings",
+    "Discuss the different holidays and leisure activities in Francophone countries",
+    "Celebrate the diverse cultures of the Francophone world through exploring food, clothing, holidays, leisure activities and history through conversation and projects"
+   ],
+   "objectives_heading": "Student Performance Objectives (Exit Skills)",
+   "objectives_lead": null,
+   "objectives_fingerprint": "4f7ad962930ad6e08672c7daeda57fc5",
+   "section_heads": [
+    "GRADING",
+    "REQUISITES",
+    "COURSE CONTENT",
+    "LECTURE CONTENT",
+    "LAB CONTENT",
+    "TEXTS",
+    "METHODS OF INSTRUCTION",
+    "DISTANCE EDUCATION",
+    "ASSIGNMENTS",
+    "STUDENT LEARNING OUTCOMES"
+   ],
+   "row_college": "laney",
+   "college_printed": "Laney College"
+  },
+  {
+   "code": "HUMAN 001",
+   "title": "Introduction to Humanities",
+   "course_id": 22460,
+   "report": "https://lan.curriqunet.com/DynamicReports/AllFieldsReportByEntity/22460?entityType=Course&reportId=416",
+   "named_by": [
+    "berkeley_city"
+   ],
+   "status": 200,
+   "final_url": "https://lan.curriqunet.com/DynamicReports/AllFieldsReportByEntity/22460?entityType=Course&reportId=416",
+   "access": "public",
+   "chars": 6081,
+   "text_cut": false,
+   "html_chars": 646507,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "STUDENT LEARNING OUTCOMES",
+   "lead": null,
+   "outcomes": [
+    "Students will identify and describe the different humanistic disciplines and put them into historical context, keeping in mind their various socio-cultural functions.",
+    "Students will be able to describe the basic elements and principles of the formal analysis of various artistic disciplines, and apply that analysis toward understanding and interpreting various humanistic works (of literature, visual arts, film, music, theater, dance, and philosophy).",
+    "Students will be able to articulate personal sensibilities of taste, and be aware of the diverse cultural responses and approaches that exist between people and the arts."
+   ],
+   "maps_to": null,
+   "parsed_from": "sections",
+   "fingerprint": "6a243d280417c3d8245f93569e523ef6",
+   "objectives": [
+    "Discuss various socio-cultural functions of human expression.",
+    "Interpret various artistic and humanistic “texts” (works of literature, art, film, music, history, philosophy, etc.)",
+    "Describe social movements and historical changes through art.",
+    "Support personal opinions about specific artistic and humanistic texts and identify some of the ways those opinions have been derived subjectively.",
+    "Analyze some of the ways specific artistic and humanistic texts from different eras and national traditions reflect on the governing ideologies of the specific culture(s) from which the texts originally came."
+   ],
+   "objectives_heading": "Student Performance Objectives (Exit Skills)",
+   "objectives_lead": null,
+   "objectives_fingerprint": "2b08db3e119c207514bf514fa06ebaf1",
+   "section_heads": [
+    "GRADING",
+    "REQUISITES",
+    "COURSE CONTENT",
+    "LECTURE CONTENT",
+    "LAB CONTENT",
+    "TEXTS",
+    "METHODS OF INSTRUCTION",
+    "DISTANCE EDUCATION",
+    "ASSIGNMENTS",
+    "STUDENT LEARNING OUTCOMES"
+   ],
+   "row_college": "berkeley_city",
+   "college_printed": "Berkeley City College"
+  },
+  {
+   "code": "LIS 074",
+   "title": "Information Seeking Behavior",
+   "course_id": 23290,
+   "report": "https://lan.curriqunet.com/DynamicReports/AllFieldsReportByEntity/23290?entityType=Course&reportId=416",
+   "named_by": [
+    "college_of_alameda"
+   ],
+   "status": 200,
+   "final_url": "https://lan.curriqunet.com/DynamicReports/AllFieldsReportByEntity/23290?entityType=Course&reportId=416",
+   "access": "public",
+   "chars": 8273,
+   "text_cut": false,
+   "html_chars": 648546,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "STUDENT LEARNING OUTCOMES",
+   "lead": null,
+   "outcomes": [
+    "Synthesize evidence from scholarly research to draw conclusions about the relationships between information, power, and social systems.",
+    "Apply research design and ethical reasoning to investigate how individuals and groups locate, evaluate, and use information in diverse contexts.",
+    "Analyze information-seeking behavior as a social and cultural process using principles and methodologies of the social and behavioral sciences."
+   ],
+   "maps_to": null,
+   "parsed_from": "sections",
+   "fingerprint": "062de6859f43283b1a14cd528fc63586",
+   "objectives": [
+    "Evaluate competing research findings using evidence-based reasoning grounded in behavioral-science methodology.",
+    "Interpret information-seeking patterns in light of systemic inequities, power structures, and social identity factors.",
+    "Analyze value systems and ethical considerations (e.g., bias, privacy, censorship, and intellectual property) within social-scientific inquiry related to information use.",
+    "Apply principles of research design to investigate how individuals and communities seek, evaluate, and use information.",
+    "Explain how social-scientific theories and research methods are used to study information behavior across different populations and contexts."
+   ],
+   "objectives_heading": "Student Performance Objectives (Exit Skills)",
+   "objectives_lead": null,
+   "objectives_fingerprint": "5dc2b21065717733a0da97ed6d61532a",
+   "section_heads": [
+    "GRADING",
+    "REQUISITES",
+    "COURSE CONTENT",
+    "LECTURE CONTENT",
+    "LAB CONTENT",
+    "TEXTS",
+    "METHODS OF INSTRUCTION",
+    "DISTANCE EDUCATION",
+    "ASSIGNMENTS",
+    "STUDENT LEARNING OUTCOMES"
+   ],
+   "row_college": "college_of_alameda",
+   "college_printed": "College of Alameda"
+  },
+  {
+   "code": "MM/AN 001A",
+   "title": "Drawing for Animation",
+   "course_id": 17624,
+   "report": "https://lan.curriqunet.com/DynamicReports/AllFieldsReportByEntity/17624?entityType=Course&reportId=416",
+   "named_by": [
+    "berkeley_city"
+   ],
+   "status": 200,
+   "final_url": "https://lan.curriqunet.com/DynamicReports/AllFieldsReportByEntity/17624?entityType=Course&reportId=416",
+   "access": "public",
+   "chars": 4059,
+   "text_cut": false,
+   "html_chars": 645743,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "STUDENT LEARNING OUTCOMES",
+   "lead": null,
+   "outcomes": [
+    "Create a character bible with model sheets, action poses demonstrating strong silhouettes and line of action.",
+    "Develop drawings demonstrating the use of perspective, composition and rendering techniques with a focus on layouts illustrating various camera shots and angles."
+   ],
+   "maps_to": null,
+   "parsed_from": "sections",
+   "fingerprint": "ca39f0b15aff8eadd0fcb4e016ed7671",
+   "objectives": [
+    "Sketch human and animal figures in action poses.",
+    "Evaluate, clean up and adjust drawings for character and layout.",
+    "Create a portfolio of drawings.",
+    "Design characters based on research.",
+    "Design layouts based on different camera angles and related to story."
+   ],
+   "objectives_heading": "Student Performance Objectives (Exit Skills)",
+   "objectives_lead": null,
+   "objectives_fingerprint": "1a6f7bb585cf8bd08ff9967ece9b9b43",
+   "section_heads": [
+    "GRADING",
+    "REQUISITES",
+    "COURSE CONTENT",
+    "LECTURE CONTENT",
+    "LAB CONTENT",
+    "TEXTS",
+    "METHODS OF INSTRUCTION",
+    "ASSIGNMENTS",
+    "STUDENT LEARNING OUTCOMES"
+   ],
+   "row_college": "berkeley_city",
+   "college_printed": "Berkeley City College"
+  },
+  {
+   "code": "NUTR 001",
+   "title": "Survey of Nutrition and Dietetics",
+   "course_id": 22082,
+   "report": "https://lan.curriqunet.com/DynamicReports/AllFieldsReportByEntity/22082?entityType=Course&reportId=416",
+   "named_by": [
+    "merritt"
+   ],
+   "status": 200,
+   "final_url": "https://lan.curriqunet.com/DynamicReports/AllFieldsReportByEntity/22082?entityType=Course&reportId=416",
+   "access": "public",
+   "chars": 6039,
+   "text_cut": false,
+   "html_chars": 647722,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "STUDENT LEARNING OUTCOMES",
+   "lead": null,
+   "outcomes": [
+    "Identify the legal scope of practice for Nutrition and Dietetic Practitioners, especially in regards to California law",
+    "Research and effectively communicate an area of interest regarding career opportunities, job prospects or trends in the industry",
+    "Demonstrate knowledge of professional expectations on preparing and compiling a cover letter or personal statement, resume, and job interview expectations",
+    "List an overview of the various program/educational requirements, mandatory certification/registration examinations for nutritional professional"
+   ],
+   "maps_to": null,
+   "parsed_from": "sections",
+   "fingerprint": "d896646d7c229cbbc0751b527a83132a",
+   "objectives": [
+    "Describe professional ethics and standards of education and practice.",
+    "Describe the legal requirements of confidentiality and the dietetics scope of practice.",
+    "Describe the scope of practice and credentialing requirements of dietetics professionals at all levels.",
+    "Explain the educational and career opportunities in the field of dietetics, clinical management, food service systems, and community nutrition.",
+    "Identify the basic content and competencies in the various levels of the profession.",
+    "Explain the requirements of the certificate and degrees of the nutrition and dietetics programs.",
+    "Plan an academic program with a timeline for completion, including the schedule of supervised practice.",
+    "List the required competencies as specified by the Dietary Managers Association and the Commission on Accreditation of Dietetics Programs of the American Dietetic Association.",
+    "Develop a career portfolio according to professional guidelines of the American Dietetic Association.",
+    "Identify the various titles, credentials and job responsibilities in the field of nutrition and dietetics"
+   ],
+   "objectives_heading": "Student Performance Objectives (Exit Skills)",
+   "objectives_lead": null,
+   "objectives_fingerprint": "e3372424d102d85733d81400effa8d83",
+   "section_heads": [
+    "GRADING",
+    "REQUISITES",
+    "COURSE CONTENT",
+    "LECTURE CONTENT",
+    "LAB CONTENT",
+    "TEXTS",
+    "METHODS OF INSTRUCTION",
+    "ASSIGNMENTS",
+    "STUDENT LEARNING OUTCOMES"
+   ],
+   "row_college": "merritt",
+   "college_printed": "Merritt College"
+  },
+  {
+   "code": "PSYCH 001B",
+   "title": "Introduction to General Psychology",
+   "course_id": 17806,
+   "report": "https://lan.curriqunet.com/DynamicReports/AllFieldsReportByEntity/17806?entityType=Course&reportId=416",
+   "named_by": [
+    "college_of_alameda"
+   ],
+   "status": 200,
+   "final_url": "https://lan.curriqunet.com/DynamicReports/AllFieldsReportByEntity/17806?entityType=Course&reportId=416",
+   "access": "public",
+   "chars": 6548,
+   "text_cut": false,
+   "html_chars": 646832,
+   "html_cut": false,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "STUDENT LEARNING OUTCOMES",
+   "lead": null,
+   "outcomes": [
+    "Apply multiple schools of psychology to dream interpretation.",
+    "Describe the healthy and unhealthy qualities of your personality type.",
+    "Increase awareness of a self-destructive or unhealthy behavior and implement a behavioral modification plan for healthier and more authentic self-expression."
+   ],
+   "maps_to": null,
+   "parsed_from": "sections",
+   "fingerprint": "b078a4dacceb4fe43b53cdcd78f45f86",
+   "objectives": [
+    "Assess personality type and connect findings to Freud's ego defense mechanisms and how one deal's with feelings of vulnerability, how to transcend one's ego, and express healthier aspects of personality type.",
+    "Explore Carl Jung's archetypes and how they play out in one's life, focusing primarily on the core four archetypes (child, victim, saboteur, and prostitute).",
+    "Articulate how one's Adversive Childhood Experiences (ACE) score impacts one's biology.",
+    "Use quantum physics principles (alignment of thoughts and feelings) to visualize desired life and identify perceptions that may serve as obstacles to realizing goals.",
+    "Apply research methods to specific hypothesis to demonstrate understanding of differences between varying psychological research methods.",
+    "Apply dream theories to personal dream to gain potential insight.",
+    "Practice and demonstrate dream interpretation skills.",
+    "Experiment with mindfulness eating and how it may inform other areas of one's life.",
+    "Practice meditation and how it may inform other areas of one's life.",
+    "Address areas where one may have conformed to society standard and obeyed authority figure and pros and cons of doing so.",
+    "Apply skills and information learned throughout class to stressful life situation to gain a deeper understanding of personal choice and response to situation.",
+    "Identify behavior to modify and make healthier by tracking data and applying principles of operant conditioning."
+   ],
+   "objectives_heading": "Student Performance Objectives (Exit Skills)",
+   "objectives_lead": null,
+   "objectives_fingerprint": "5de1e1751736bbb0b0e64cb5641058c0",
+   "section_heads": [
+    "GRADING",
+    "REQUISITES",
+    "COURSE CONTENT",
+    "LECTURE CONTENT",
+    "LAB CONTENT",
+    "TEXTS",
+    "METHODS OF INSTRUCTION",
+    "DISTANCE EDUCATION",
+    "ASSIGNMENTS",
+    "STUDENT LEARNING OUTCOMES"
+   ],
+   "row_college": "college_of_alameda",
+   "college_printed": "College of Alameda"
+  }
+ ]
+}

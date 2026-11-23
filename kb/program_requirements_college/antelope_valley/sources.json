@@ -88,7 +88,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 26,
@@ -1662,7 +1665,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "the course of study leads to an associate in science degree in radiologic technology.",
+    "section_fit": 0.4
    }
   },
   "listed": 37,
@@ -1674,9 +1680,11 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.973,
+  "coverage": 1.0,
   "codes_found": [
    "ART100",
+   "ART101",
+   "ART102",
    "ART103",
    "ART104",
    "ARTHC1100H",
@@ -1755,7 +1763,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 73,
@@ -1835,7 +1846,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.984,
+  "coverage": 1.0,
   "codes_found": [
    "AJ206",
    "ANTH102",
@@ -1850,6 +1861,7 @@
    "DFST105",
    "DFST106",
    "ECON100",
+   "ECON102",
    "ECON110",
    "ECONC2001H",
    "ECONC2002",
@@ -1907,7 +1919,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 63,
@@ -3020,8 +3035,10 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.938,
+  "coverage": 1.0,
   "codes_found": [
+   "ART101",
+   "ART102",
    "ART103",
    "ART104",
    "ART106",
@@ -3060,7 +3077,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "art history aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 32,
@@ -3108,9 +3128,10 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.941,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH102",
+   "ECON102",
    "ECONC2001H",
    "ECONC2002",
    "ECONC2002H",
@@ -3134,7 +3155,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "political science aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -3146,8 +3170,10 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.917,
+  "coverage": 1.0,
   "codes_found": [
+   "ART101",
+   "ART102",
    "ART103",
    "ART104",
    "ART106",
@@ -3178,7 +3204,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "studio arts aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 24,
@@ -3291,7 +3320,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "anthropology aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -3506,7 +3538,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.8,
+  "coverage": 1.0,
   "codes_found": [
    "PHIL105",
    "PHIL105H",
@@ -3514,6 +3546,8 @@
    "PHIL108",
    "PHIL109",
    "PHIL110",
+   "PHIL130",
+   "PHIL140",
    "PHIL201",
    "PHIL210"
   ],
@@ -3524,7 +3558,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "philosophy aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -3687,7 +3724,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.964,
+  "coverage": 1.0,
   "codes_found": [
    "ACCT201",
    "ACCT205",
@@ -3696,6 +3733,7 @@
    "BUS201H",
    "CA221",
    "ECON100",
+   "ECON102",
    "ECON110",
    "ECONC2001H",
    "ECONC2002",
@@ -3724,7 +3762,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "economics aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 28,
@@ -4026,7 +4067,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 22,
@@ -4300,7 +4344,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 26,
@@ -4378,7 +4425,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -4448,7 +4498,7 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.933,
+  "coverage": 1.0,
   "codes_found": [
    "ACCT201",
    "ACCT205",
@@ -4456,6 +4506,7 @@
    "BUS113",
    "BUS201",
    "BUS201H",
+   "ECON102",
    "ECONC2001H",
    "ECONC2002",
    "ECONC2002H",
@@ -4472,7 +4523,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business administration 2.0 as-t",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -4626,7 +4680,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.98,
+  "coverage": 1.0,
   "codes_found": [
    "AJ101",
    "AJ102",
@@ -4645,6 +4699,7 @@
    "COMM219",
    "COMMC1000",
    "COMMC1000H",
+   "ECON102",
    "ECONC2001H",
    "ECONC2002",
    "ECONC2002H",
@@ -4684,7 +4739,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "law, public policy, and society aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 49,
@@ -5194,7 +5252,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -5226,7 +5287,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -5821,7 +5885,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "title_has_no_words"
+  }
  },
  {
   "control_number": "44647",
@@ -5901,7 +5969,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 87 of 177 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "44808",

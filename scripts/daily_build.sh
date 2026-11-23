@@ -369,6 +369,9 @@ python3 kb/_mid_readiness.py || { git checkout -- kb/status/mid_readiness.json 2
 # The course outlines to find by hand (kb/_outline_hunt.py, S711): it reads the members this build just wrote and the
 # newest outcomes comparison, so it reruns here or the Commons SLOs view lists yesterday's courses.
 python3 kb/_outline_hunt.py || { git checkout -- kb/status/outline_hunt.json 2>/dev/null || true; echo "::warning title=Outline hunt not rebuilt::kb/_outline_hunt.py failed; kb/status/outline_hunt.json is yesterday's."; }
+# Every local subject code statewide, with its colleges and a recommended common code (kb/_statewide_subject_codes.py,
+# S712): it reads the members this build just wrote and the subject decisions synced above.
+python3 kb/_statewide_subject_codes.py || { git checkout -- kb/status/statewide_subject_codes.json 2>/dev/null || true; echo "::warning title=Statewide subject codes not rebuilt::kb/_statewide_subject_codes.py failed; kb/status/statewide_subject_codes.json is yesterday's."; }
 STEP
 
 # ── Step 4b: Re-run row Trust-Card auditor ────────────────────

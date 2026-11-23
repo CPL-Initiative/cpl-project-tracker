@@ -1218,6 +1218,17 @@ async function seedCommonsSubjects(page, theme) {
   await page.waitForSelector("#commons-root .csb-foot", { state: "attached", timeout: 60000 });
   /* The held codes read their own file after the list draws (S695): wait for the table, not the reading note. */
   if (/subjects\/held/.test(await page.evaluate(() => location.hash))) await page.waitForSelector("#commons-root .csb-held", { state: "attached", timeout: 60000 });
+  /* S712: the statewide list reads its own file after the list draws, then opens signed in so each row's Confirm, its
+     list of the common codes and the bulk confirm are measured. Nothing is sent: no control is pressed. */
+  if (/subjects\/statewide/.test(await page.evaluate(() => location.hash))) {
+    await page.waitForSelector("#commons-root .csw-table", { state: "attached", timeout: 60000 });
+    await page.evaluate(() => {
+      const s = { email: "seed@example.org", access_token: "seed.seed.seed", refresh_token: "seed", exp: Date.now() + 3600 * 1000 };
+      if (window.CPL_SESSION) { window.CPL_SESSION.get = () => s; window.CPL_SESSION.isFresh = () => true; }
+      window.dispatchEvent(new Event("cpl-session-changed"));
+    });
+    await page.waitForSelector("#csw-bulk", { state: "attached", timeout: 60000 });
+  }
   await page.evaluate(() => {
     try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
     const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
@@ -3808,7 +3819,9 @@ module.exports = {
       /* #3655: noncredit saves, one form per COCI noncredit category; Cerritos AED spans seven. */
       { hash: "commons/subjects/cerritos/AED", name: "subjects-edit-noncredit" },
       /* Southwestern NC spans ten categories. */
-      { hash: "commons/subjects/southwestern/NC", name: "subjects-edit-noncredit-ten" }],
+      { hash: "commons/subjects/southwestern/NC", name: "subjects-edit-noncredit-ten" },
+      /* S712: every local code statewide, signed in. */
+      { hash: "commons/subjects/statewide", name: "subjects-statewide" }],
     widths: [320, 390, 768, 1440],
     seed: (page) => seedCommonsSubjects(page, "light"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
@@ -3819,7 +3832,8 @@ module.exports = {
     routes: [{ hash: "commons/subjects/cerritos", name: "subjects-cerritos-dark" }, { hash: "commons/subjects/cerritos/MATH", name: "subjects-course-panel-dark" },
       { hash: "commons/subjects/cerritos/ATH", name: "subjects-edit-dark" },
       { hash: "commons/subjects/cerritos/AED", name: "subjects-edit-noncredit-dark" },
-      { hash: "commons/subjects/southwestern/NC", name: "subjects-edit-noncredit-ten-dark" }],
+      { hash: "commons/subjects/southwestern/NC", name: "subjects-edit-noncredit-ten-dark" },
+      { hash: "commons/subjects/statewide", name: "subjects-statewide-dark" }],
     widths: [390, 1440],
     seed: (page) => seedCommonsSubjects(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],

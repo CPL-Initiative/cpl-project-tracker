@@ -67560,5 +67560,13 @@
     "classified_by": "curator (CER unclassified-triage)",
     "reviewed_at": "2026-11-22T21:00:37.330891+00:00",
     "reviewed_by": "slee@cccco.edu"
+  },
+  "Portfolio Review CIS101-Introduction to Computers and Their Uses": {
+    "unified_title": "Computer Literacy",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-23",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-23T00:13:34.866152+00:00",
+    "reviewed_by": "slee@cccco.edu"
   }
 }

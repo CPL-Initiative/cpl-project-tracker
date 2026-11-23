@@ -4291,20 +4291,46 @@ def pdf_pinned_heading(pages: list[str], program: dict, pin: dict | None) -> tup
     """(the heading pdf_best reads the program from, or None; why a pin was refused, or None). pin is the
     college's pdf_pages entry for the program: its PDF page (1-based) and the words the program's text opens
     on there. The window opens at the start of the line carrying the words, read as the page prints them
-    with any run of white space between them; a page missing the words or a title word binds nothing."""
+    with any run of white space between them; a page missing the words or a title word binds nothing.
+
+    A pin may name `through`, the last PDF page (1-based) of the program's section, when the section runs across a
+    page break (S703, d-clovis-through-pin-to-followup-s703): the words still sit on the pinned page, the title
+    words may print anywhere from the pinned page through `through` (Clovis 33432's core page p.106 lacks
+    "Entrepreneur", which p.107 prints), and pdf_best reads the pinned page through `through` and no page after it,
+    even where one names no listed course (Clovis 33492's total prints on p.149). `through` is at most
+    PDF_RUN_PAGES past the pin, never before it and never past the file; outside that the pin binds nothing. A pin
+    without `through` reads as before.
+    Not built yet (second reader on #3683): the window through `through` holds whatever else that page prints
+    (33492's p.149 also holds the Drinking Water Treatment certificate's list), so a later pin may name `until`, the
+    words the next program opens on, and the window would end there."""
     if not pin:
         return None, None
     i = int(pin.get("page") or 0) - 1
     words = (pin.get("words") or "").split()
     if not (0 <= i < len(pages)) or not words:
         return None, "the pinned page is not in the file"
+    last = i
+    if pin.get("through") is not None:
+        try:
+            last = int(pin["through"]) - 1
+        except (TypeError, ValueError):
+            return None, "the pin's through (%r) is not a page number" % (pin["through"],)
+        if not (i <= last <= i + PDF_RUN_PAGES):
+            return None, "the pin's through (p.%d) is not from p.%d to p.%d" % (last + 1, i + 1, i + 1 + PDF_RUN_PAGES)
+        if last >= len(pages):
+            return None, "the pin's through (p.%d) is past the file's last page (p.%d)" % (last + 1, len(pages))
     m = re.search(r"\s+".join(re.escape(w) for w in words), pages[i] or "")
     if not m:
         return None, "the quoted words are not on PDF page %d" % (i + 1)
     pats = [re.compile(r"\b" + re.escape(w) + r"\b") for w in P.title_tokens(program.get("title") or "")]
-    if not pats or not _titled(pages[i], pats):
-        return None, "PDF page %d does not print every title word" % (i + 1)
-    return {"page": i, "at": pages[i].rfind("\n", 0, m.start()) + 1, "pinned": True}, None
+    span = "\n".join(pages[j] or "" for j in range(i, last + 1))
+    if not pats or not _titled(span, pats):
+        return None, ("PDF page %d does not print every title word" % (i + 1) if last == i else
+                      "PDF pages %d through %d do not print every title word" % (i + 1, last + 1))
+    head = {"page": i, "at": pages[i].rfind("\n", 0, m.start()) + 1, "pinned": True}
+    if last > i:
+        head["through"] = last
+    return head, None
 
 
 # ── A catalog that prints the control number AFTER its program (S644; rebuilt S645) ───────────────
@@ -4845,6 +4871,12 @@ def pdf_best(url: str, pages: list[str], program: dict, courses: list[dict], ext
             return unbound_read("low_coverage" if unbound == "block_names_no_listed_course" else unbound)
     if heading:
         run, cn_at, head, titled = _pdf_run(pages, heading["page"], courses), -1, (1.0, True, heading["at"]), True
+        if heading.get("through") is not None:
+            # A pin's through (pdf_pinned_heading) names the section's last page: the window is the pinned page
+            # through it, a page naming no listed course included, and no page after it (Clovis 33432's p.108 and
+            # p.109 print the Management degree), never more than PDF_RUN_PAGES past the pin (S703 follow-up).
+            last = min(int(heading["through"]), heading["page"] + PDF_RUN_PAGES, len(pages) - 1)
+            run = list(range(heading["page"], last + 1))
     else:
         run, cn_at, head, titled = _pdf_pick(pages, program, courses)
     if not run:
@@ -5167,6 +5199,8 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
             pinned[prog["control_number"]] = head
             report["pdf"].setdefault("pinned", {})[prog["control_number"]] = (
                 {"page": pin.get("page"), "bound": True} if head else {"page": pin.get("page"), "bound": False, "why": why})
+            if pin.get("through") is not None:
+                report["pdf"]["pinned"][prog["control_number"]]["through"] = pin["through"]
             if not head:
                 print("::warning::%s %s: the reconcile entry's pdf_pages pin is refused (%s); no page is read for it"
                       % (college, prog["control_number"], why), flush=True)
@@ -7170,18 +7204,37 @@ def same_address(a: str, b: str) -> bool:
 
 
 # An edition named in a catalog file's name: 2026-27-Catalog-v2-508.pdf and 2026-27-Catalog-v3-508.pdf are two
-# editions of one catalog (College of the Canyons, S690). One or two digits: catalog_v2025.pdf and catalog_v2026.pdf
-# name two years' catalogs, never two editions of one (S697 second reader on #3641).
-EDITION_TOKEN = re.compile(r"(?i)(?<![a-z0-9])v(?:er(?:sion)?)?[-_]?\d{1,2}(?![a-z0-9])")
+# editions of one catalog (College of the Canyons, S690). One digit, or two below 20 (v12, v13): catalog_v2025.pdf
+# and catalog_v2026.pdf name two years' catalogs (S697 second reader on #3641), and so do catalog-v24.pdf and
+# catalog-v25.pdf, a two-digit year (S703 follow-up, f-followup-four-left-s697). Every committed edition pair is
+# one digit (Canyons' v2 and v3).
+EDITION_TOKEN = re.compile(r"(?i)(?<![a-z0-9])v(?:er(?:sion)?)?[-_]?(?:1\d|\d)(?![a-z0-9])")
 PDF_PAGE_FRAGMENT = re.compile(r"(?:^|[&;])page=(\d+)")
+# The PDF open parameters a viewer reads from a fragment (#page=12&zoom=100): they say how to show the file and name
+# no part of it. nameddest is left out on purpose: #nameddest=accounting names a destination in the file, a place.
+PDF_VIEWER_PARAMS = frozenset({"page", "zoom", "view", "viewrect", "pagemode", "search", "toolbar", "navpanes",
+                               "scrollbar", "statusbar", "messages", "highlight", "comment", "collab", "fdf"})
 
 
 def named_fragment(url: str | None) -> str:
-    """The name an address's fragment gives, lowercased, or "": a fragment of viewer parameters (#page=107,
-    #page=12&zoom=100) names no part of the page, and one without them (#accounting-aa) names a program on it.
-    Two fragments that name different programs keep two pages apart (S697 second reader on #3641)."""
+    """The name an address's fragment gives, lowercased, or "": a fragment of PDF viewer parameters alone (#page=107,
+    #page=12&zoom=100) names no part of the page, and any other fragment names a place on it: #accounting-aa, a
+    page's route (#/program?id=1), a PDF's named destination (#nameddest=accounting). Viewer parameters beside a
+    name are set aside, so #nameddest=x&zoom=100 names what #nameddest=x does. Two fragments that name different
+    places keep two pages apart (S697 second reader on #3641; S703 follow-up: reading any '=' as viewer parameters
+    made #/program?id=1 and #/program?id=2 one page)."""
     frag = urllib.parse.urlparse(url or "").fragment
-    return "" if not frag or "=" in frag else frag.lower()
+    # A text fragment (#:~:text=..., or #accounting:~:text=...) is a browser's highlight, never a place: everything
+    # from ':~:' on is set aside (second reader on #3683).
+    frag = frag.split(":~:", 1)[0]
+    if not frag:
+        return ""
+    if frag.startswith("/") or "?" in frag:
+        return frag.lower()   # a page's route, its own query included (#/program?id=1&page=2)
+    parts = [x for x in re.split(r"[&;]", frag) if x]
+    # A viewer setting with or without a value (#page=12&zoom) is still a viewer setting (second reader on #3683).
+    named = [x for x in parts if x.split("=", 1)[0].strip().lower() not in PDF_VIEWER_PARAMS]
+    return "&".join(named).lower()
 
 
 def _edition_blind(url: str) -> str:
@@ -7699,6 +7752,24 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
     # A prior-year read is held to the same test (S697 second reader on #3641): a prior read whose PDF timed out
     # took prior_2025-2026.json from filed ['1'] to [], and prior_year_flags then flagged both of its programs.
     short = read_short(out_dir, report)
+    if short and report.get("prior") and not os.path.isdir(os.path.join(out_dir, "records")):
+        # A capture-only prior read files only its preview (prior_<year>_preview.json) and touches no record or
+        # earlier account, so a PDF that gave no page is its finding, never a loss: the preview files and the step
+        # ends green (S703 follow-up; College of the Desert's preview 44711759115, its prior PDF behind robots).
+        # A filed preview whose PDF gave pages is a whole read, and an empty one never replaces it (second reader
+        # on #3683: City College of San Francisco's 528-page preview of run 44777204746): nothing is filed, and red.
+        year = (report.get("prior") or {}).get("catalog_year")
+        try:
+            with open(os.path.join(dest, "prior_%s_preview.json" % year)) as fh:
+                filed_pages = ((json.load(fh) or {}).get("pdf") or {}).get("pages_total")
+        except (OSError, ValueError, AttributeError):
+            filed_pages = None
+        if filed_pages:
+            print("::error::%s: the filed prior_%s_preview.json read %s PDF pages, so this empty read files "
+                  "nothing and it stays as filed. Run the read again." % (short, year, filed_pages))
+            return 1
+        print("::warning::%s: filed as the capture-only prior read's preview; no record is touched." % short)
+        return file_prior(dest, out_dir, report)
     if short:
         # f-timed-out-read-still-files-s691: Santa Monica's read 44883500729 timed out on its catalog PDF, every
         # program read as not found, and this step filed the run: 46 records left the branch (reverted, 6ba61a4c).
@@ -7804,6 +7875,8 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
     if nn:
         # A program only= did not name keeps its filed record as filed, so the earlier filing's kept_passing entry
         # for it still describes that record: it stays, carrying the run that wrote it (S697 second reader on #3641).
+        # The run key is always set on a carried entry, None where the earlier file names no run, so the reader's
+        # own-run count (_program_reread_keep_better.py) never takes it for this run's (S703 follow-up).
         try:
             with open(os.path.join(dest, "kept_passing.json")) as fh:
                 earlier = json.load(fh)

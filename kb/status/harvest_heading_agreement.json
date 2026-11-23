@@ -1,16 +1,16 @@
 {
  "_readme": "A dated snapshot of main at `commit` (as_of: the newest capture it reads), written by kb/_program_requirements_heading_agreement.py from the files the tree commits (git ls-files). Rewritten by a dispatch of harvest-gap-census.yml beside the gap census; nothing gates a PR on its freshness, so it can trail the records. Each record's own heading (program.section_heading) against the program it is filed under (sources.json: COCI title and award). check_would_fail_passing counts the records that pass on the committed files (passes_live) whose heading names another award type (heading_award_check, in no pass rule). award_not_program counts headings that name an award and none of the program's title words, set aside (Pasadena's one page for an A.S. and its certificate).",
  "commit": {
-  "sha": "2552336dbe28d932e6ca977d509b7e8d40e62bfa",
-  "date": "2026-11-22"
+  "sha": "6230902838853880a8d01ef75934ff8817b39837",
+  "date": "2026-11-23"
  },
- "as_of": "2026-11-22",
+ "as_of": "2026-11-23",
  "read_from": [
   "main"
  ],
  "totals": {
-  "records": 18958,
-  "agree": 15413,
+  "records": 18967,
+  "agree": 15422,
   "disagree": 276,
   "cannot_tell": 3269,
   "heading_absent": 278,
@@ -1720,9 +1720,9 @@
    "college": "City College of San Francisco",
    "read_from": "main",
    "platform": "pdf",
-   "records": 316,
-   "pdf_records": 316,
-   "agree": 266,
+   "records": 317,
+   "pdf_records": 317,
+   "agree": 267,
    "disagree": 2,
    "cannot_tell": 48,
    "heading_absent": 17,
@@ -1732,7 +1732,7 @@
    "pdf_disagree_passing": 2,
    "pdf_suspect": 2,
    "pdf_suspect_passing": 2,
-   "pdf_agree": 266,
+   "pdf_agree": 267,
    "pdf_cannot_tell": 48,
    "by_reason": {
     "award": 1,
@@ -1784,7 +1784,7 @@
     }
    ],
    "control_number_print": {
-    "picks": 309,
+    "picks": 317,
     "cn_printed_picks": 0,
     "labels_in_openings": {},
     "positions": {},
@@ -1804,9 +1804,9 @@
    "platform": "pdf",
    "records": 109,
    "pdf_records": 109,
-   "agree": 91,
+   "agree": 92,
    "disagree": 2,
-   "cannot_tell": 16,
+   "cannot_tell": 15,
    "heading_absent": 12,
    "disagree_passing": 1,
    "disagree_loaded": 2,
@@ -1814,8 +1814,8 @@
    "pdf_disagree_passing": 1,
    "pdf_suspect": 2,
    "pdf_suspect_passing": 1,
-   "pdf_agree": 91,
-   "pdf_cannot_tell": 16,
+   "pdf_agree": 92,
+   "pdf_cannot_tell": 15,
    "by_reason": {
     "title": 1,
     "award": 1
@@ -6452,11 +6452,11 @@
    "college": "Ohlone College",
    "read_from": "main",
    "platform": "pdf",
-   "records": 143,
-   "pdf_records": 143,
-   "agree": 121,
+   "records": 145,
+   "pdf_records": 145,
+   "agree": 122,
    "disagree": 2,
-   "cannot_tell": 20,
+   "cannot_tell": 21,
    "heading_absent": 4,
    "disagree_passing": 2,
    "disagree_loaded": 2,
@@ -6464,8 +6464,8 @@
    "pdf_disagree_passing": 2,
    "pdf_suspect": 2,
    "pdf_suspect_passing": 2,
-   "pdf_agree": 121,
-   "pdf_cannot_tell": 20,
+   "pdf_agree": 122,
+   "pdf_cannot_tell": 21,
    "by_reason": {
     "award": 2
    },
@@ -6515,7 +6515,7 @@
     }
    ],
    "control_number_print": {
-    "picks": 143,
+    "picks": 145,
     "cn_printed_picks": 0,
     "labels_in_openings": {},
     "positions": {},
@@ -7770,9 +7770,9 @@
    "college": "San Joaquin Delta College",
    "read_from": "main",
    "platform": "acalog",
-   "records": 203,
+   "records": 209,
    "pdf_records": 0,
-   "agree": 199,
+   "agree": 205,
    "disagree": 0,
    "cannot_tell": 4,
    "heading_absent": 2,

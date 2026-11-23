@@ -1,0 +1,136 @@
+{
+ "_about": "The count for Peralta's Outcome Outline report (416) on lan.curriqunet.com, trial 45030224450 (S703): 12 pages, one a subject, Laney 4, Merritt 4, Berkeley City 2, Alameda 2. lan.curriqunet.com is an outcomes-only host (every page prints an Originator line, d-lan-outcomes-only-host-s703), so the trial filed parsed rows only and each count is read by eye off its excerpt log, apart from the parser. Keyed by code and printed college (recall_key). Every page's printed college is the one whose proposal type its index row carries, 12 of 12. The parser files 11 of 12 right: SLOs 12 of 12, objectives 11 of 12 (ARTH C1100). The shape trial 45026998155's five counts (ART 001 at the four colleges, ART 024 at Berkeley City) stay in tests/course_outcomes_read_test.py as fixtures.",
+ "trial": "45030224450",
+ "slugs": "laney,merritt,college_of_alameda,berkeley_city",
+ "host": "lan.curriqunet.com",
+ "parser_fingerprint": "27934ff77d07caca6be8ef1034cfd032",
+ "pages": {
+  "ADJUS 021 | Merritt College": {
+   "course_id": 18369,
+   "slo": 4,
+   "objective": 11,
+   "by": "S703 peralta worker",
+   "from": "trial 45030224450's job log (read job 137232258281), the page's EXCERPT block (STUDENT LEARNING OUTCOMES: to the first CB data element) read as one outcome a pair of lines, the outcome and then its assessment methods, and its objectives block (Student Performance Objectives (Exit Skills): to Course Content:) one objective a line, a line that heads a part of the list not counted",
+   "at": "2026-11-22T14:04:48Z"
+  },
+  "ARTH C1100 | Laney College": {
+   "course_id": 22666,
+   "slo": 3,
+   "objective": 9,
+   "by": "S703 peralta worker",
+   "from": "trial 45030224450's job log (read job 137232258281), the page's EXCERPT block (STUDENT LEARNING OUTCOMES: to the first CB data element) read as one outcome a pair of lines, the outcome and then its assessment methods, and its objectives block (Student Performance Objectives (Exit Skills): to Course Content:) one objective a line, a line that heads a part of the list not counted",
+   "at": "2026-11-22T14:04:48Z",
+   "note": "the objectives block prints 10 lines; its 4th, 'Part 2', heads the second half of the list, so 9 objectives. The parser files 10, 'Part 2' among them: the one wrong row"
+  },
+  "BIOSC 009 | Merritt College": {
+   "course_id": 17654,
+   "slo": 3,
+   "objective": 4,
+   "by": "S703 peralta worker",
+   "from": "trial 45030224450's job log (read job 137232258281), the page's EXCERPT block (STUDENT LEARNING OUTCOMES: to the first CB data element) read as one outcome a pair of lines, the outcome and then its assessment methods, and its objectives block (Student Performance Objectives (Exit Skills): to Course Content:) one objective a line, a line that heads a part of the list not counted",
+   "at": "2026-11-22T14:04:48Z"
+  },
+  "COMM 001A | Laney College": {
+   "course_id": 22536,
+   "slo": 3,
+   "objective": 16,
+   "by": "S703 peralta worker",
+   "from": "trial 45030224450's job log (read job 137232258281), the page's EXCERPT block (STUDENT LEARNING OUTCOMES: to the first CB data element) read as one outcome a pair of lines, the outcome and then its assessment methods, and its objectives block (Student Performance Objectives (Exit Skills): to Course Content:) one objective a line, a line that heads a part of the list not counted",
+   "at": "2026-11-22T14:04:48Z"
+  },
+  "DANCE 001 | Laney College": {
+   "course_id": 22452,
+   "slo": 3,
+   "objective": 10,
+   "by": "S703 peralta worker",
+   "from": "trial 45030224450's job log (read job 137232258281), the page's EXCERPT block (STUDENT LEARNING OUTCOMES: to the first CB data element) read as one outcome a pair of lines, the outcome and then its assessment methods, and its objectives block (Student Performance Objectives (Exit Skills): to Course Content:) one objective a line, a line that heads a part of the list not counted",
+   "at": "2026-11-22T14:04:48Z"
+  },
+  "EMT 211 | Merritt College": {
+   "course_id": 23260,
+   "slo": 3,
+   "objective": 12,
+   "by": "S703 peralta worker",
+   "from": "trial 45030224450's job log (read job 137232258281), the page's EXCERPT block (STUDENT LEARNING OUTCOMES: to the first CB data element) read as one outcome a pair of lines, the outcome and then its assessment methods, and its objectives block (Student Performance Objectives (Exit Skills): to Course Content:) one objective a line, a line that heads a part of the list not counted",
+   "at": "2026-11-22T14:04:48Z"
+  },
+  "FREN 001A | Laney College": {
+   "course_id": 22113,
+   "slo": 4,
+   "objective": 16,
+   "by": "S703 peralta worker",
+   "from": "trial 45030224450's job log (read job 137232258281), the page's EXCERPT block (STUDENT LEARNING OUTCOMES: to the first CB data element) read as one outcome a pair of lines, the outcome and then its assessment methods, and its objectives block (Student Performance Objectives (Exit Skills): to Course Content:) one objective a line, a line that heads a part of the list not counted",
+   "at": "2026-11-22T14:04:48Z"
+  },
+  "HUMAN 001 | Berkeley City College": {
+   "course_id": 22460,
+   "slo": 3,
+   "objective": 5,
+   "by": "S703 peralta worker",
+   "from": "trial 45030224450's job log (read job 137232258281), the page's EXCERPT block (STUDENT LEARNING OUTCOMES: to the first CB data element) read as one outcome a pair of lines, the outcome and then its assessment methods, and its objectives block (Student Performance Objectives (Exit Skills): to Course Content:) one objective a line, a line that heads a part of the list not counted",
+   "at": "2026-11-22T14:04:48Z"
+  },
+  "LIS 074 | College of Alameda": {
+   "course_id": 23290,
+   "slo": 3,
+   "objective": 5,
+   "by": "S703 peralta worker",
+   "from": "trial 45030224450's job log (read job 137232258281), the page's EXCERPT block (STUDENT LEARNING OUTCOMES: to the first CB data element) read as one outcome a pair of lines, the outcome and then its assessment methods, and its objectives block (Student Performance Objectives (Exit Skills): to Course Content:) one objective a line, a line that heads a part of the list not counted",
+   "at": "2026-11-22T14:04:48Z"
+  },
+  "MM/AN 001A | Berkeley City College": {
+   "course_id": 17624,
+   "slo": 2,
+   "objective": 5,
+   "by": "S703 peralta worker",
+   "from": "trial 45030224450's job log (read job 137232258281), the page's EXCERPT block (STUDENT LEARNING OUTCOMES: to the first CB data element) read as one outcome a pair of lines, the outcome and then its assessment methods, and its objectives block (Student Performance Objectives (Exit Skills): to Course Content:) one objective a line, a line that heads a part of the list not counted",
+   "at": "2026-11-22T14:04:48Z"
+  },
+  "NUTR 001 | Merritt College": {
+   "course_id": 22082,
+   "slo": 4,
+   "objective": 10,
+   "by": "S703 peralta worker",
+   "from": "trial 45030224450's job log (read job 137232258281), the page's EXCERPT block (STUDENT LEARNING OUTCOMES: to the first CB data element) read as one outcome a pair of lines, the outcome and then its assessment methods, and its objectives block (Student Performance Objectives (Exit Skills): to Course Content:) one objective a line, a line that heads a part of the list not counted",
+   "at": "2026-11-22T14:04:48Z"
+  },
+  "PSYCH 001B | College of Alameda": {
+   "course_id": 17806,
+   "slo": 3,
+   "objective": 12,
+   "by": "S703 peralta worker",
+   "from": "trial 45030224450's job log (read job 137232258281), the page's EXCERPT block (STUDENT LEARNING OUTCOMES: to the first CB data element) read as one outcome a pair of lines, the outcome and then its assessment methods, and its objectives block (Student Performance Objectives (Exit Skills): to Course Content:) one objective a line, a line that heads a part of the list not counted",
+   "at": "2026-11-22T14:04:48Z"
+  }
+ },
+ "loaded": {
+  "read": "45031089800",
+  "load_run": "45127831747",
+  "receipt": "kb/receipts/course_outcomes_lan_45127831747.json",
+  "posted": 3731,
+  "inserted": 3731,
+  "kept": 0,
+  "skipped": 7,
+  "inserted_by_college": {
+   "Laney College": {
+    "slo": 663,
+    "objective": 663
+   },
+   "Merritt College": {
+    "slo": 463,
+    "objective": 465
+   },
+   "College of Alameda": {
+    "slo": 365,
+    "objective": 368
+   },
+   "Berkeley City College": {
+    "slo": 372,
+    "objective": 372
+   }
+  },
+  "note": "the load after the lan label clean (d-peralta-load-cleans-labels-first-s713); the 7 skips are blocks that printed only None or N/A",
+  "by": "S713 peralta worker",
+  "at": "2026-11-23T07:02:33Z"
+ }
+}
