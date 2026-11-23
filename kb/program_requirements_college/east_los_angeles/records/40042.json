@@ -92,34 +92,34 @@
    "pass": true,
    "status": "equal",
    "computed": [
-    41.0,
-    41.0
+    68.0,
+    68.0
    ],
    "stated": [
-    41.0,
-    41.0
+    60.0,
+    60.0
    ],
-   "against": "program",
+   "against": "degree",
+   "ge": [
+    27.0,
+    27.0
+   ],
    "why": [],
-   "degree": {
+   "major": {
     "pass": true,
     "status": "equal",
     "computed": [
-     68.0,
-     68.0
+     41.0,
+     41.0
     ],
     "stated": [
-     60.0,
-     60.0
+     41.0,
+     41.0
     ],
-    "against": "degree",
-    "ge": [
-     27.0,
-     27.0
-    ],
-    "why": [],
-    "overlap": true
+    "against": "program",
+    "why": []
    },
+   "overlap": true,
    "rescored": "Sam's ruling of 2026-11-17, local degree overlap"
   },
   "repeated": {
@@ -337,7 +337,7 @@
    "No careers or job titles are named in this section's text."
   ]
  },
- "extracted_run": 45176404274,
+ "extracted_run": 43357061643,
  "reconciled": [
   {
    "field": "electives_fill_words",
@@ -353,5 +353,5 @@
    "statewide": "local_degree_ge_overlap"
   }
  ],
- "read_run": 43357061643
+ "read_run": "39063389278"
 }

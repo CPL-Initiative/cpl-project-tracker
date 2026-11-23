@@ -599,6 +599,10 @@ jobs:
       # two courses renumbered; the self-recall, the blast radius at every college and the plan's 6 rows.
       - name: Cheap piles S713 at Clovis (lab pairs, earlier lists' courses, renumbers, the plan)
         run: python3 tests/program_piles_s713_clovis_test.py
+      # S714 at East Los Angeles: the plan line, double counting, the high-unit waiver, a course taken twice, two
+      # printed codes and one named gap, each on the catalog's own sections; the self-recall and the plan's rows.
+      - name: Cheap piles S714 at East Los Angeles (plan line, overlap, waiver, repeat, renumbers, the plan)
+        run: python3 tests/program_piles_s714_ela_test.py
       # Discontinued programs (S680; Sam, 2026-11-17 on #3480): a program's own catalog section marks it,
       # or a prior year prints it and this year does not; flagged out of the gap, never deleted. Pure stdlib.
       - name: Discontinued programs (own-section mark, out of the gap, the file is current)
