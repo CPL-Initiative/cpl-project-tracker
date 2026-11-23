@@ -1202,10 +1202,20 @@
     Object.keys(COMMON || {}).forEach(function (k) { if (/noncredit/i.test(String(COMMON[k]))) set[k] = true; });
     return set;
   }
+  /* The code box's suggestions, in the picker's order: credit codes, then noncredit, each by discipline name. A
+     noncredit code whose discipline name does not say so (VOCE, Vocational) is labeled noncredit (Sam, 2026-11-23:
+     "VOCE should be nc subj but doesn't have the nc note"). */
+  function ncLabel(k, nc) { var d = String(COMMON[k]); return nc[k] && !/noncredit/i.test(d) ? d + ": Noncredit" : d; }
+  function codeList() {
+    var nc = ncCodeSet(), keys = Object.keys(COMMON || {});
+    var byName = function (a, b) { var x = String(COMMON[a]).toLowerCase(), y = String(COMMON[b]).toLowerCase(); return x < y ? -1 : x > y ? 1 : (a < b ? -1 : 1); };
+    var opt = function (k) { return el("option", { value: k, label: ncLabel(k, nc) }); };
+    return el("datalist", { id: "csb-ed-codes" }, keys.filter(function (k) { return !nc[k]; }).sort(byName).map(opt).concat(keys.filter(function (k) { return nc[k]; }).sort(byName).map(opt)));
+  }
   function codePicker(id, describedBy) {
     var nc = ncCodeSet(), keys = Object.keys(COMMON || {});
     var byName = function (a, b) { var x = String(COMMON[a]).toLowerCase(), y = String(COMMON[b]).toLowerCase(); return x < y ? -1 : x > y ? 1 : (a < b ? -1 : 1); };
-    var opt = function (k) { return el("option", { value: k, text: COMMON[k] + " (" + k + ")" }); };
+    var opt = function (k) { return el("option", { value: k, text: ncLabel(k, nc) + " (" + k + ")" }); };
     return el("select", { id: id, cls: "csb-input csb-move-pick", "aria-describedby": describedBy || null }, [el("option", { value: "", text: "Choose a common subject code" }),
       el("optgroup", { label: "Credit" }, keys.filter(function (k) { return !nc[k]; }).sort(byName).map(opt)),
       el("optgroup", { label: "Noncredit" }, keys.filter(function (k) { return nc[k]; }).sort(byName).map(opt))]);
@@ -1502,7 +1512,7 @@
     }
     if (band !== "noncredit") creditForm(c, row, box, band);
     if ((row.noncredit_courses || 0) > 0 && ncParts(row).length) ncForms(c, row, box);
-    if (COMMON) box.appendChild(el("datalist", { id: "csb-ed-codes" }, Object.keys(COMMON).sort().map(function (k) { return el("option", { value: k, label: COMMON[k] }); })));
+    if (COMMON) box.appendChild(codeList());
     return box;
   }
   /* The same local code at the other colleges with a catalog on file (Sam, 2026-11-22: "all the AEDs that are in ELEC

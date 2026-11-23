@@ -129,7 +129,10 @@ const posts = (x) => x.calls.filter((c) => c.method !== "GET");
   const pick = x.d.getElementById("csb-move-code");
   const groups = Array.from(pick.querySelectorAll("optgroup")).map((g) => g.getAttribute("label") + ": " + Array.from(g.querySelectorAll("option")).map((o) => o.textContent).join(", "));
   check("(6) ⭐ the picker lists credit codes, then noncredit codes, each by discipline name (Sam, 2026-11-23)",
-    JSON.stringify(groups) === JSON.stringify(["Credit: Automotive Technology (AUTO), Electronics (ELEC), Kinesiology (KINE)", "Noncredit: Vocational (VOCE)"]), groups);
+    JSON.stringify(groups) === JSON.stringify(["Credit: Automotive Technology (AUTO), Electronics (ELEC), Kinesiology (KINE)", "Noncredit: Vocational: Noncredit (VOCE)"]), groups);
+  const dl = Array.from(x.d.querySelectorAll("#csb-ed-codes option")).map((o) => o.value + "=" + o.getAttribute("label"));
+  check("(6) ⭐ the code box's suggestions run credit then noncredit, VOCE labeled noncredit (Sam, 2026-11-23)",
+    JSON.stringify(dl) === JSON.stringify(["AUTO=Automotive Technology", "ELEC=Electronics", "KINE=Kinesiology", "VOCE=Vocational: Noncredit"]), dl);
   check("(6) ⭐ each course group carries its own move row at its top, with the same picker",
     x.d.querySelectorAll("#csb-panel .csb-group .csb-move-top select.csb-move-pick").length === x.d.querySelectorAll("#csb-panel .csb-group").length
     && x.d.querySelectorAll("#csb-panel .csb-group").length > 0);
