@@ -1922,6 +1922,40 @@
      }
     }
    ],
+   "course_renumbers": {
+    "LALS 9": "LALS/LGBT 9",
+    "LGBT 9": "LALS/LGBT 9",
+    "CNIT 133I": "CNIT 133l"
+   },
+   "course_renumbers_cited": [
+    {
+     "printed": "LALS 9",
+     "file": "LALS/LGBT 9",
+     "title": "The Latinx LGBTQ+ Experience",
+     "units": 3,
+     "session": "S714",
+     "date": "2026-11-23",
+     "evidence": "The state's file lists one cross-listed row, LALS/LGBT 9 The Latinx LGBTQ+ Experience, 3 units (CCC000626362), on 30897, 33208, 35690, 37513, 45768, 46323, 46324 and 46326, and lists no LALS 9 and no LGBT 9 at the college. The 2026-2027 catalog prints the course under each prefix: LALS 9 or LGBT 9 as one choice in LGBTQ Studies 30897, LALS 9 and LGBT 9 as two rows titled 'The Latinx LGBTQ+ Experience' in Ethnic Studies 35690, LALS 9 in Chicana/o Studies 46323; each record's notes match it to the file's LALS/LGBT 9."
+    },
+    {
+     "printed": "LGBT 9",
+     "file": "LALS/LGBT 9",
+     "title": "The Latinx LGBTQ+ Experience",
+     "units": 3,
+     "session": "S714",
+     "date": "2026-11-23",
+     "evidence": "The same cross-listed row: the catalog prints LGBT 9 in LGBTQ Studies 46324 and Educator Careers II 46326, and beside LALS 9 in 30897 and 35690; each record's notes match it to the file's LALS/LGBT 9."
+    },
+    {
+     "printed": "CNIT 133I",
+     "file": "CNIT 133l",
+     "title": "JavaScript for IoT and XR",
+     "units": 3,
+     "session": "S714",
+     "date": "2026-11-23",
+     "evidence": "The state's file stores the course as 'CNIT 133l', a lower-case L, JavaScript for IoT and XR, 3 units (CCC000620307), on Internet of Things 40704 and JavaScript Specialist 40876, and lists no CNIT 133I. The 2026-2027 catalog prints 'CNIT 133I JavaScript for IoT and XR' in both, and both records' notes match it to the file's row by its title."
+    }
+   ],
    "pdf_pages": {
     "09178": {
      "page": 86,

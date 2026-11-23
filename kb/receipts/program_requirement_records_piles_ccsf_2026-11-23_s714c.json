@@ -1,0 +1,3111 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); S714: a cross-listed course and a misread code renamed, one option over several blocks",
+ "at": "2026-11-23T11:51:32Z",
+ "college": "City College of San Francisco",
+ "census": {
+  "file": "kb/status/harvest_gap_census.json",
+  "lever": "reconcile_steps",
+  "members": [
+   "05482",
+   "16990",
+   "16991",
+   "17614",
+   "17615",
+   "17616",
+   "17617",
+   "17618",
+   "17619",
+   "19037",
+   "30897",
+   "32079",
+   "33208",
+   "35690",
+   "37781",
+   "38267",
+   "38907",
+   "38909",
+   "39727",
+   "40157",
+   "40704",
+   "40876",
+   "41315",
+   "41361",
+   "42228",
+   "46323",
+   "46324",
+   "46326"
+  ],
+  "with_s713_held": [
+   "17954",
+   "09178",
+   "17952",
+   "31602",
+   "36964",
+   "42318"
+  ]
+ },
+ "moved": 8,
+ "by": {
+  "course_renumbers": 7,
+  "option_parts": 1
+ },
+ "precision": {
+  "read": 29,
+  "right": 29,
+  "wrong": 0,
+  "no_record_file": 0,
+  "not_hand_held": 0,
+  "by_answer": {
+   "none": 21,
+   "passes": 8
+  },
+  "wrong_keys": []
+ },
+ "claim_checks": {
+  "course_renumbers": {
+   "stands": 7
+  },
+  "option_parts": {
+   "stands": 3
+  },
+  "against_keys": []
+ },
+ "boundaries": {
+  "counts": {
+   "file lists the printed code right": 7,
+   "file lists neither right": 7,
+   "printed code one letter off right": 7,
+   "total low one short right": 1,
+   "total low one past right": 1,
+   "split block renamed apart right": 1,
+   "split blocks given one name right": 1
+  },
+  "wrong": []
+ },
+ "recall": {
+  "held": 1818,
+  "right": 1818,
+  "wrong": 0,
+  "by_answer": {
+   "ge_units_not_read": 171,
+   "none": 1455,
+   "lists_past_their_figure": 21,
+   "hours_total_differs": 18,
+   "hours_within_printed_range": 12,
+   "hours_total_not_read": 33,
+   "no_hours_read": 56,
+   "no_units_read": 24,
+   "total_not_printed": 7,
+   "total_differs": 11,
+   "section_cut_off": 10
+  }
+ },
+ "changes": {
+  "here": [
+   {
+    "control_number": "30897",
+    "moves": [
+     "course_renumbers"
+    ],
+    "passes_before": false,
+    "passes_after": true,
+    "not_exact": []
+   },
+   {
+    "control_number": "33208",
+    "moves": [
+     "arithmetic"
+    ],
+    "passes_before": false,
+    "passes_after": false,
+    "not_exact": []
+   },
+   {
+    "control_number": "35690",
+    "moves": [
+     "course_renumbers"
+    ],
+    "passes_before": false,
+    "passes_after": true,
+    "not_exact": []
+   },
+   {
+    "control_number": "39727",
+    "moves": [
+     "arithmetic"
+    ],
+    "passes_before": false,
+    "passes_after": false,
+    "not_exact": []
+   },
+   {
+    "control_number": "40704",
+    "moves": [
+     "course_renumbers"
+    ],
+    "passes_before": false,
+    "passes_after": true,
+    "not_exact": []
+   },
+   {
+    "control_number": "40876",
+    "moves": [
+     "course_renumbers"
+    ],
+    "passes_before": false,
+    "passes_after": true,
+    "not_exact": []
+   },
+   {
+    "control_number": "42228",
+    "moves": [
+     "arithmetic"
+    ],
+    "passes_before": false,
+    "passes_after": true,
+    "not_exact": []
+   },
+   {
+    "control_number": "46323",
+    "moves": [
+     "course_renumbers"
+    ],
+    "passes_before": false,
+    "passes_after": true,
+    "not_exact": []
+   },
+   {
+    "control_number": "46324",
+    "moves": [
+     "course_renumbers"
+    ],
+    "passes_before": false,
+    "passes_after": true,
+    "not_exact": []
+   },
+   {
+    "control_number": "46326",
+    "moves": [
+     "course_renumbers"
+    ],
+    "passes_before": false,
+    "passes_after": true,
+    "not_exact": []
+   }
+  ],
+  "elsewhere": [
+   {
+    "college": "Evergreen Valley College",
+    "control_number": "45025",
+    "exact": true,
+    "arith_before": [
+     [
+      37.0,
+      50.0
+     ],
+     false
+    ],
+    "arith_after": [
+     [
+      40.0,
+      50.0
+     ],
+     false
+    ],
+    "verdict_before": false,
+    "verdict_after": false,
+    "stated": null
+   },
+   {
+    "college": "Foothill College",
+    "control_number": "06047",
+    "exact": false,
+    "arith_before": [
+     [
+      4.0,
+      36.0
+     ],
+     true
+    ],
+    "arith_after": [
+     [
+      40.0,
+      48.0
+     ],
+     true
+    ],
+    "verdict_before": true,
+    "verdict_after": true,
+    "stated": [
+     40.0,
+     48.0
+    ]
+   },
+   {
+    "college": "Foothill College",
+    "control_number": "36328",
+    "exact": true,
+    "arith_before": [
+     [
+      4.0,
+      20.0
+     ],
+     false
+    ],
+    "arith_after": [
+     [
+      28.0,
+      33.0
+     ],
+     true
+    ],
+    "verdict_before": false,
+    "verdict_after": false,
+    "stated": [
+     28.0,
+     33.0
+    ]
+   },
+   {
+    "college": "Glendale Community College",
+    "control_number": "24042",
+    "exact": true,
+    "arith_before": [
+     [
+      45.0,
+      336.0
+     ],
+     false
+    ],
+    "arith_after": [
+     [
+      185.0,
+      560.0
+     ],
+     true
+    ],
+    "verdict_before": false,
+    "verdict_after": true,
+    "stated": [
+     185.0,
+     560.0
+    ]
+   },
+   {
+    "college": "Golden West College",
+    "control_number": "18423",
+    "exact": true,
+    "arith_before": [
+     [
+      3.0,
+      18.0
+     ],
+     false
+    ],
+    "arith_after": [
+     [
+      19.0,
+      21.0
+     ],
+     true
+    ],
+    "verdict_before": false,
+    "verdict_after": true,
+    "stated": [
+     19.0,
+     21.0
+    ]
+   },
+   {
+    "college": "MiraCosta College",
+    "control_number": "18345",
+    "exact": true,
+    "arith_before": [
+     [
+      21.0,
+      27.0
+     ],
+     false
+    ],
+    "arith_after": [
+     [
+      27.0,
+      27.0
+     ],
+     true
+    ],
+    "verdict_before": false,
+    "verdict_after": true,
+    "stated": [
+     27.0,
+     27.0
+    ]
+   },
+   {
+    "college": "Monterey Peninsula College",
+    "control_number": "03653",
+    "exact": true,
+    "arith_before": [
+     [
+      2.0,
+      25.5
+     ],
+     false
+    ],
+    "arith_after": [
+     [
+      20.0,
+      25.5
+     ],
+     true
+    ],
+    "verdict_before": false,
+    "verdict_after": true,
+    "stated": [
+     20.0,
+     25.5
+    ]
+   },
+   {
+    "college": "Monterey Peninsula College",
+    "control_number": "22098",
+    "exact": true,
+    "arith_before": [
+     [
+      2.0,
+      25.5
+     ],
+     false
+    ],
+    "arith_after": [
+     [
+      20.0,
+      25.5
+     ],
+     true
+    ],
+    "verdict_before": false,
+    "verdict_after": true,
+    "stated": [
+     20.0,
+     25.5
+    ]
+   },
+   {
+    "college": "Napa Valley College",
+    "control_number": "36251",
+    "exact": true,
+    "arith_before": [
+     [
+      4.0,
+      16.0
+     ],
+     false
+    ],
+    "arith_after": [
+     [
+      16.0,
+      21.0
+     ],
+     false
+    ],
+    "verdict_before": false,
+    "verdict_after": false,
+    "stated": [
+     18.0,
+     21.0
+    ]
+   },
+   {
+    "college": "Reedley College",
+    "control_number": "01773",
+    "exact": true,
+    "arith_before": [
+     [
+      16.0,
+      29.0
+     ],
+     false
+    ],
+    "arith_after": [
+     [
+      26.0,
+      29.0
+     ],
+     true
+    ],
+    "verdict_before": false,
+    "verdict_after": true,
+    "stated": [
+     26.0,
+     29.0
+    ]
+   },
+   {
+    "college": "Reedley College",
+    "control_number": "18990",
+    "exact": true,
+    "arith_before": [
+     [
+      16.0,
+      29.0
+     ],
+     false
+    ],
+    "arith_after": [
+     [
+      26.0,
+      29.0
+     ],
+     true
+    ],
+    "verdict_before": false,
+    "verdict_after": true,
+    "stated": [
+     26.0,
+     29.0
+    ]
+   },
+   {
+    "college": "Reedley College",
+    "control_number": "46449",
+    "exact": true,
+    "arith_before": [
+     [
+      14.0,
+      27.0
+     ],
+     false
+    ],
+    "arith_after": [
+     [
+      24.0,
+      27.0
+     ],
+     true
+    ],
+    "verdict_before": false,
+    "verdict_after": true,
+    "stated": [
+     24.0,
+     27.0
+    ]
+   },
+   {
+    "college": "Santa Barbara City College",
+    "control_number": "05934",
+    "exact": true,
+    "arith_before": [
+     [
+      14.0,
+      21.0
+     ],
+     false
+    ],
+    "arith_after": [
+     [
+      20.0,
+      23.0
+     ],
+     true
+    ],
+    "verdict_before": false,
+    "verdict_after": true,
+    "stated": [
+     20.0,
+     23.0
+    ]
+   },
+   {
+    "college": "Santa Monica College",
+    "control_number": "03272",
+    "exact": true,
+    "arith_before": [
+     [
+      22.0,
+      37.0
+     ],
+     false
+    ],
+    "arith_after": [
+     [
+      27.0,
+      40.0
+     ],
+     false
+    ],
+    "verdict_before": false,
+    "verdict_after": false,
+    "stated": [
+     39.0,
+     39.0
+    ]
+   },
+   {
+    "college": "Solano Community College",
+    "control_number": "20981",
+    "exact": false,
+    "arith_before": [
+     [
+      25.0,
+      28.0
+     ],
+     true
+    ],
+    "arith_after": [
+     [
+      25.0,
+      32.0
+     ],
+     true
+    ],
+    "verdict_before": true,
+    "verdict_after": true,
+    "stated": [
+     25.0,
+     32.0
+    ]
+   }
+  ],
+  "not_exact": [
+   {
+    "control_number": "09191",
+    "moves": [],
+    "passes_before": true,
+    "passes_after": true,
+    "not_exact": [
+     "arithmetic"
+    ]
+   },
+   {
+    "control_number": "09195",
+    "moves": [],
+    "passes_before": true,
+    "passes_after": true,
+    "not_exact": [
+     "arithmetic"
+    ]
+   },
+   {
+    "control_number": "22727",
+    "moves": [],
+    "passes_before": true,
+    "passes_after": true,
+    "not_exact": [
+     "arithmetic"
+    ]
+   }
+  ]
+ },
+ "held": [
+  {
+   "control_number": "05482",
+   "why": "held: the reader's note says the catalog prints no major total (the lists add to 42); total_not_printed takes it once a page read lists it in kb/program_total_not_printed.json"
+  },
+  {
+   "control_number": "16990",
+   "why": "held: the section prints one figure over the third-level option and the electives ('Choose 18 units from the following courses Units 18.0'; the certificate's 'Choose a minimum of 16 units ... 16.0-18.0'), and the record leaves Electives with no figure; a wrapper-fill step (the wrapper's figure is the program total) on the page's words"
+  },
+  {
+   "control_number": "16991",
+   "why": "held: 'Choose 15 units from the following Units 15.0' wraps three option levels that add to 16-18 (the reader's note), with no block for the wrapper; the catalog's figures (15 + 3) make the printed 18"
+  },
+  {
+   "control_number": "17614",
+   "why": "held: the shared CNIT page's record holds all six options of one option group, and the program is the one option its title names (core 9 + network course 3 + option 9.0-10.0 = 21.0-22.0); the scorer reads no title, so an own-option reading waits on a reconcile step that names each program's option"
+  },
+  {
+   "control_number": "17615",
+   "why": "held: the shared CNIT page's record holds all six options of one option group, and the program is the one option its title names (core 9 + network course 3 + option 9.0-10.0 = 21.0-22.0); the scorer reads no title, so an own-option reading waits on a reconcile step that names each program's option"
+  },
+  {
+   "control_number": "17616",
+   "why": "held: the shared CNIT page's record holds all six options of one option group, and the program is the one option its title names (core 9 + network course 3 + option 9.0-10.0 = 21.0-22.0); the scorer reads no title, so an own-option reading waits on a reconcile step that names each program's option"
+  },
+  {
+   "control_number": "17617",
+   "why": "held: the shared CNIT page's record holds all six options of one option group, and the program is the one option its title names (core 9 + network course 3 + option 9.0-10.0 = 21.0-22.0); the scorer reads no title, so an own-option reading waits on a reconcile step that names each program's option"
+  },
+  {
+   "control_number": "17618",
+   "why": "held: the shared CNIT page's record holds all six options of one option group, and the program is the one option its title names (core 9 + network course 3 + option 9.0-10.0 = 21.0-22.0); the scorer reads no title, so an own-option reading waits on a reconcile step that names each program's option"
+  },
+  {
+   "control_number": "17619",
+   "why": "held: the shared CNIT page's record holds all six options of one option group, and the program is the one option its title names (core 9 + network course 3 + option 9.0-10.0 = 21.0-22.0); the scorer reads no title, so an own-option reading waits on a reconcile step that names each program's option; Option 6 also reads garbled (CNIT 416 and CNIT 415, 6 units, against the page's 9.0-10.0), a reread of that option"
+  },
+  {
+   "control_number": "19037",
+   "why": "held: the record's note says its page (p.207) reads as Liberal Arts and Sciences: Emphasis in Science and Mathematics, 17954's own section, not Biological Sciences; whether the 2026-2027 catalog prints Biological Sciences A.S. is a page read (program_discontinued if it does not)"
+  },
+  {
+   "control_number": "32079",
+   "why": "held: coverage: the state's file lists CS 110A, MATH 115 and STAT C1000 for Mathematics AS-T, which the 2026-2027 page does not print (it prints CS 110B, CS 111B and CS 131B); the file's list is older than the page, for a person or the file's refresh"
+  },
+  {
+   "control_number": "33208",
+   "why": "held: the reader's note says the list continues on a page the read did not hold; section_cut_off reads no gap at the college (CUT_OFF_COLLEGES), and its matcher does not read this note's wording ('The text is cut off at the end of page 184': Option 2's List B is on p.185)"
+  },
+  {
+   "control_number": "37781",
+   "why": "held: the reader's note says the list continues on a page the read did not hold; section_cut_off reads no gap at the college (CUT_OFF_COLLEGES), and its matcher does not read this note's wording (the list starts on p.252, about 4 units, HCT 61 and HCT 67 by the note; the read began on p.253)"
+  },
+  {
+   "control_number": "38267",
+   "why": "held: the section prints one figure over the third-level option and the electives ('Choose 18 units from the following courses Units 18.0'; the certificate's 'Choose a minimum of 16 units ... 16.0-18.0'), and the record leaves Electives with no figure; a wrapper-fill step (the wrapper's figure is the program total) on the page's words"
+  },
+  {
+   "control_number": "38907",
+   "why": "held: the read began mid-section, so the intermediate option's other alternative (SPAN 3, 5 units, on p.185) is missing and the low end reads 17 against the printed 16; a cut-off read whose sum is not short"
+  },
+  {
+   "control_number": "38909",
+   "why": "held: 'a total of 12 elective units ... At least 3 units must be selected from each of the three areas' read as three 3-unit areas (9), so the record adds to 24 against 27; a pool_lists with_floors step on the page's words"
+  },
+  {
+   "control_number": "39727",
+   "why": "held: Option 1's third-level choice reads CHIN 3 or CHIN 3A or CHIN 3B singly (3-5) where the page prints CHIN 3 or both CHIN 3A and 3B (5-6); with option_parts it adds to 14-18 against 16-18"
+  },
+  {
+   "control_number": "40157",
+   "why": "held: the two option headings print 'Units 2.0-5.0' over options that add to 1.0-5.0 and 1.5-5.0, so the catalog's own figures differ (17.5 against 19.0), for a person"
+  },
+  {
+   "control_number": "41315",
+   "why": "held: coverage: the state's file lists PSYC 23, which the page does not print; and the reading lists POLS 12 twice in one list (repeated)"
+  },
+  {
+   "control_number": "41361",
+   "why": "held: the required courses print 12.0-12.5 and add to 12.5 (EMT 12 at 0.5), so the low end reads 20.5 against the printed 20.0; total_differs once a page read lists both figures"
+  },
+  {
+   "control_number": "17954",
+   "why": "held: one 18-unit list ('Complete 18 units from the following courses (at least one each from Science and Math options)') read as two at-least-one blocks; a fill_to step reads it, but 19037's record carries the same heading from the same page, so the step waits on 19037's page read; never loaded"
+  },
+  {
+   "control_number": "09178",
+   "why": "S713's hold stands, no record: its list (JOUR 19, 21, 24A or 29A, 35, 36, LI S 10) matches a third of the state's list"
+  },
+  {
+   "control_number": "17952",
+   "why": "S713's hold stands, no record: the pages from its heading name none of the state's listed courses"
+  },
+  {
+   "control_number": "31602",
+   "why": "S713's hold stands, no record: its requirements name none of the state's listed courses"
+  },
+  {
+   "control_number": "36964",
+   "why": "S713's hold stands, no record: its list prints ESLN courses in hours, none on the state's list"
+  },
+  {
+   "control_number": "42318",
+   "why": "S713's hold stands, no record: its list prints ESLN courses in hours, none on the state's list"
+  }
+ ],
+ "records": [
+  {
+   "college": "City College of San Francisco",
+   "control_number": "30897",
+   "award": "A.A. Degree",
+   "extracted_run": "44474797786",
+   "moves_to": "passes",
+   "readings": [
+    "course_renumbers"
+   ],
+   "path": "kb/program_requirements_college/city_of_san_francisco/records/30897.json",
+   "before_image": {
+    "program_title": "LGBTQ Studies",
+    "award": "A.A. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=374",
+    "measure": "units",
+    "total_min": 21,
+    "total_max": 21,
+    "record": {
+     "program": {
+      "section_heading": "LGBTQ Studies – AA Degree",
+      "measure": "units",
+      "total_units": {
+       "min": 21,
+       "max": 21
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Apply an intersectional framework to feminist, queer, trans, ethnic, racial, and/or socio-economic theories.",
+       "Analyze the social, political, and historical contexts of LGBTQ+ Studies.",
+       "Examine gender identities, gender expressions, and sexual orientation across cultures historically and/or in a contemporary context.",
+       "Identify the role of art and creativity in various global cultural contexts in relation to gender and sexuality."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Units",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 6,
+        "max": 6
+       },
+       "courses": [
+        {
+         "code": "LGBT 5",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LGBT 15",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Choose one course from the following",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "LGBT 20",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LGBT 55",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Choose one course from the following",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "LGBT 11",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LGBT 12",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LGBT 18",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LGBT 75",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Choose two courses from the following",
+       "rule": "choose_courses",
+       "minimum": 2,
+       "option_group": null,
+       "stated": {
+        "min": 6,
+        "max": 6
+       },
+       "courses": [
+        {
+         "code": "LALS 9",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "LGBT 9",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "LGBT 10",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LGBT 50",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LGBT 70",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ANTH 20",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECON 20",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 45",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC 24",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Choose three units from the following",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "LGBT 21",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LGBT 24",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 76",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HLTH 67",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "IDST 17",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "IDST 36",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "IDST 80A",
+         "units": 0.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "IDST 80C",
+         "units": 0.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "IDST 80D",
+         "units": 0.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "IDST 80E",
+         "units": 0.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "IDST 80F",
+         "units": 0.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "IDST 80G",
+         "units": 0.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "WGST 10",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "WGST 54",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "WGST 55",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": false,
+     "invented": false,
+     "arithmetic": "equal",
+     "placed": 29,
+     "listed": 32
+    },
+    "extracted_run": "44474797786"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "equal",
+     "placed": 30,
+     "listed": 32
+    }
+   },
+   "i": 1
+  },
+  {
+   "college": "City College of San Francisco",
+   "control_number": "35690",
+   "award": "A.A- T Degree",
+   "extracted_run": "39056434592",
+   "moves_to": "passes",
+   "readings": [
+    "course_renumbers"
+   ],
+   "path": "kb/program_requirements_college/city_of_san_francisco/records/35690.json",
+   "before_image": {
+    "program_title": "Social Justice Studies: Ethnic Studies",
+    "award": "A.A- T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=386",
+    "measure": "units",
+    "total_min": 18,
+    "total_max": 20,
+    "record": {
+     "program": {
+      "section_heading": "Social Justice Studies: Ethnic Studies – AA-T Degree",
+      "measure": "units",
+      "total_units": {
+       "min": 18,
+       "max": 20
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "Cal-GETC",
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Evaluate the social science, behavioral, or historical approaches and theories in the study of racial, ethnic, and cultural formations.",
+       "Analyze how intersections of social class, gender, sexuality, and religion pervade racial and ethnic identity formations.",
+       "Evaluate how changing definitions of race, social class, and ethnicity impact policies, cultures and societies.",
+       "Appraise artistic and cultural representations that speak to race, ethnicity, gender, and sexuality.",
+       "Compare the struggles for social justice of diverse ethnic and racial groups in the United States Diaspora."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Choose one of the following",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "ETHN 37",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "IDST 37",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOC 7",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Choose one of the following",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "LGBT 5",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "WGST 25",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Choose one of the following",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "AFAM 30",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ASAM 20",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LALS 1",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Select 3 courses from at least 2 areas",
+       "rule": "choose_courses",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 9,
+        "max": 11
+       },
+       "courses": [
+        {
+         "code": "ASAM 20",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 9",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 18A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 12B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 20",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 21",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 41A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 41B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LBCS 70A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LBCS 70B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LALS 1",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LALS 11",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LALS 13",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLS 12",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLS 45",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AFAM 30",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AFAM 40",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AFAM 60",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ASAM 6",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ASAM 10",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ASAM 35",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 18B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "IDST 3",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "IDST 14",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "IDST 27B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "IDST 30",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "IDST 31",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "IDST 36",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "IDST 46",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LALS 14",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LGBT 11",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LGBT 20",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LGBT 55",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AFAM 42",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTH 3C",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTH 12",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ASAM 8",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ASAM 22",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ASAM 27",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ASAM 30",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ASAM 40",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ASAM 42",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 53",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 67",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECON 30",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "IDST 45",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LALS 9",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "LGBT 9",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "LALS 10",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LGBT 5",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LGBT 50",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC 23",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "WGST 25",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LALS 5",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": false,
+     "invented": false,
+     "arithmetic": "equal",
+     "placed": 53,
+     "listed": 54
+    },
+    "extracted_run": "39056434592"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "equal",
+     "placed": 54,
+     "listed": 54
+    }
+   },
+   "i": 2
+  },
+  {
+   "college": "City College of San Francisco",
+   "control_number": "40704",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "39047128472",
+   "moves_to": "passes",
+   "readings": [
+    "course_renumbers"
+   ],
+   "path": "kb/program_requirements_college/city_of_san_francisco/records/40704.json",
+   "before_image": {
+    "program_title": "Internet of Things",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=335",
+    "measure": "units",
+    "total_min": 18,
+    "total_max": 18,
+    "record": {
+     "program": {
+      "section_heading": "Internet of Things – Certificate of Achievement",
+      "measure": "units",
+      "total_units": {
+       "min": 18,
+       "max": 18
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Analyze the things and connections that make up the Internet of Things (IoT) in relation to the physical world",
+       "Build IoT systems using computer and networking hardware, sensors, actuators and other physical materials",
+       "Employ IP networks and cloud applications to securely interconnect things and devices on an IoT system",
+       "Create scripts to provide functionality for the Internet of Things",
+       "Develop IoT solutions that address real-world problems"
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 18,
+        "max": 18
+       },
+       "courses": [
+        {
+         "code": "MAKR 100",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNIT 201C",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "CNIT 106",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNIT 133",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNIT 133I",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNIT 214",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNIT 216",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": false,
+     "invented": false,
+     "arithmetic": "equal",
+     "placed": 6,
+     "listed": 7
+    },
+    "extracted_run": "39047128472"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "equal",
+     "placed": 7,
+     "listed": 7
+    }
+   },
+   "i": 3
+  },
+  {
+   "college": "City College of San Francisco",
+   "control_number": "40876",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "39047128472",
+   "moves_to": "passes",
+   "readings": [
+    "course_renumbers"
+   ],
+   "path": "kb/program_requirements_college/city_of_san_francisco/records/40876.json",
+   "before_image": {
+    "program_title": "JavaScript Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=335",
+    "measure": "units",
+    "total_min": 17,
+    "total_max": 18,
+    "record": {
+     "program": {
+      "section_heading": "JavaScript Specialist – Certificate of Achievement",
+      "measure": "units",
+      "total_units": {
+       "min": 17,
+       "max": 18
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Develop and maintain web applications according to industry standards.",
+       "Apply techniques to add interactivity to web applications via scripting programs and/or use of libraries/frameworks.",
+       "Select and apply current JavaScript libraries/frameworks to web application projects maintaining usability and accessibility."
+      ],
+      "careers": [
+       "dynamic front-end web site",
+       "mobile web app development",
+       "IoT projects"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 15,
+        "max": 15
+       },
+       "courses": [
+        {
+         "code": "CNIT 132",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNIT 133",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNIT 133A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNIT 133I",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNIT 133M",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Choose one of the following courses",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 2,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "CNIT 195",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CNIT 198",
+         "units": 2,
+         "units_max": 2.5,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": false,
+     "invented": false,
+     "arithmetic": "equal",
+     "placed": 6,
+     "listed": 7
+    },
+    "extracted_run": "39047128472"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "equal",
+     "placed": 7,
+     "listed": 7
+    }
+   },
+   "i": 4
+  },
+  {
+   "college": "City College of San Francisco",
+   "control_number": "42228",
+   "award": "A.S. Degree",
+   "extracted_run": "39056434592",
+   "moves_to": "passes",
+   "readings": [
+    "option_parts"
+   ],
+   "path": "kb/program_requirements_college/city_of_san_francisco/records/42228.json",
+   "before_image": {
+    "program_title": "Data Science",
+    "award": "A.S. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=318",
+    "measure": "units",
+    "total_min": 26,
+    "total_max": 33,
+    "record": {
+     "program": {
+      "section_heading": "Data Science – AS Degree",
+      "measure": "units",
+      "total_units": {
+       "min": 26,
+       "max": 33
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Apply analytical concepts and techniques from statistics, probability, calculus, and linear algebra to problems in the field of Data Science.",
+       "Create computer programs that use common data structures.",
+       "Analyze data and communicate the analysis using industry-standard applications."
+      ],
+      "careers": [
+       "data analyst",
+       "business intelligence specialist",
+       "research assistant"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required Units",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 10,
+        "max": 10
+       },
+       "courses": [
+        {
+         "code": "MATH 110A",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 110B",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Option 1",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Option",
+       "stated": {
+        "min": 5,
+        "max": 5
+       },
+       "courses": [
+        {
+         "code": "MATH 108",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Option 2",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Option",
+       "stated": {
+        "min": 9,
+        "max": 10
+       },
+       "courses": [
+        {
+         "code": "CS 110A",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Option 2: A statistics course",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": "Option",
+       "stated": {
+        "min": 5,
+        "max": 6
+       },
+       "courses": [
+        {
+         "code": "ECON 5",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LALS 5",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "STAT C1000",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "STAT C1000E",
+         "units": 6,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PSYC 5",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Choose one course from the following",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 5
+       },
+       "courses": [
+        {
+         "code": "MATH 120",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 130",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Choose one course from the following",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 4,
+        "max": 4
+       },
+       "courses": [
+        {
+         "code": "CS 110B",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CS 111B",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Choose one course from the following",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 4,
+        "max": 4
+       },
+       "courses": [
+        {
+         "code": "CS 110C",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CS 111C",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 13,
+     "listed": 13
+    },
+    "extracted_run": "39056434592"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "equal",
+     "placed": 13,
+     "listed": 13
+    }
+   },
+   "i": 5
+  },
+  {
+   "college": "City College of San Francisco",
+   "control_number": "46323",
+   "award": "A.A- T Degree",
+   "extracted_run": 43693267535,
+   "moves_to": "passes",
+   "readings": [
+    "course_renumbers"
+   ],
+   "path": "kb/program_requirements_college/city_of_san_francisco/records/46323.json",
+   "before_image": {
+    "program_title": "Chicana/o Studies, Latina/o Studies",
+    "award": "A.A- T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=361",
+    "measure": "units",
+    "total_min": 18,
+    "total_max": 20,
+    "record": {
+     "program": {
+      "section_heading": "Chicana/o Studies, Latina/o Studies for Transfer – AA-T Degree",
+      "measure": "units",
+      "total_units": {
+       "min": 18,
+       "max": 20
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "Cal-GETC",
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Apply intersectionality to analyze the different power relations that have shaped the lives of Latinas/os in the United States and Latin America",
+       "Apply appropriate methods of inquiry for Latin American and Latino/a/e/x Studies",
+       "Analyze the national and/or transnational experiences of Latinos in the United States and Latin America"
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Units",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 9,
+        "max": 9
+       },
+       "courses": [
+        {
+         "code": "LALS 1",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LALS 10",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 21",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Choose one course from the following",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "HIST 18A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ART 106",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LALS 11",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LALS 13",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LALS 14",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LALS 15",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Choose two courses from the following",
+       "rule": "choose_courses",
+       "minimum": 2,
+       "option_group": null,
+       "stated": {
+        "min": 6,
+        "max": 8
+       },
+       "courses": [
+        {
+         "code": "LALS 2",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LALS 9",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 3",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 3A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 3B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 31",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 31A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 31B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 32",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 32A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN 32B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": false,
+     "invented": false,
+     "arithmetic": "equal",
+     "placed": 19,
+     "listed": 20
+    },
+    "extracted_run": "43693267535"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "equal",
+     "placed": 20,
+     "listed": 20
+    }
+   },
+   "i": 6
+  },
+  {
+   "college": "City College of San Francisco",
+   "control_number": "46324",
+   "award": "A.A- T Degree",
+   "extracted_run": "39056434592",
+   "moves_to": "passes",
+   "readings": [
+    "course_renumbers"
+   ],
+   "path": "kb/program_requirements_college/city_of_san_francisco/records/46324.json",
+   "before_image": {
+    "program_title": "Social Justice Studies: LGBTQ Studies",
+    "award": "A.A- T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=392",
+    "measure": "units",
+    "total_min": 18,
+    "total_max": 18,
+    "record": {
+     "program": {
+      "section_heading": "Social Justice Studies: LGBTQ Studies – AA-T Degree",
+      "measure": "units",
+      "total_units": {
+       "min": 18,
+       "max": 18
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "Cal-GETC",
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Analyze the social, political, and historical contexts of LGBTQ+ Studies.",
+       "Apply an intersectional framework to queer, trans, ethnic, racial, feminist, and socio-economic theories.",
+       "Examine gender identities, gender expressions, and sexual orientations across global cultures in historical and contemporary contexts",
+       "Analyze art, literature, and other forms of creative cultural production that have been or continue to be utilized in various ways by people and communities around the globe in order to call attention to LGBTQ+ social justice issues."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "LGBT 5",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "WGST 25",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "One of the following",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "ETHN 37",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOC 7",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Choose 3 courses from at least 2 areas",
+       "rule": "choose_courses",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 9,
+        "max": 9
+       },
+       "courses": [
+        {
+         "code": "HIST 45",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 12B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LGBT 11",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LGBT 12",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LGBT 15",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LGBT 18",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LGBT 20",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LGBT 55",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LGBT 70",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LGBT 75",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LGBT 9",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LGBT 10",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LGBT 50",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTH 20",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTH 25",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ASAM 30",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECON 20",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "IDST 17",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHST 50",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLS 19",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": false,
+     "invented": false,
+     "arithmetic": "equal",
+     "placed": 23,
+     "listed": 24
+    },
+    "extracted_run": "39056434592"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "equal",
+     "placed": 24,
+     "listed": 24
+    }
+   },
+   "i": 7
+  },
+  {
+   "college": "City College of San Francisco",
+   "control_number": "46326",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "39047128472",
+   "moves_to": "passes",
+   "readings": [
+    "course_renumbers"
+   ],
+   "path": "kb/program_requirements_college/city_of_san_francisco/records/46326.json",
+   "before_image": {
+    "program_title": "Educator Careers II",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=196",
+    "measure": "units",
+    "total_min": 24,
+    "total_max": 24,
+    "record": {
+     "program": {
+      "section_heading": "Educator Careers II – Certificate of Achievement",
+      "measure": "units",
+      "total_units": {
+       "min": 24,
+       "max": 24
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Compare the developmental needs of diverse children and youth when planning curriculum for inclusive classrooms, elementary/middle/high school classrooms or youth programs in the community.",
+       "Examine the role of communities and families in the lives of diverse children and youth.",
+       "Identify the relationships between diverse communities, identity and psychology and plan curriculum that integrates culturally responsive practices."
+      ],
+      "careers": [
+       "PK-12 Teaching",
+       "Special Education",
+       "Youth Work/Extended Care"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required Units",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 12,
+        "max": 12
+       },
+       "courses": [
+        {
+         "code": "CDEV 53",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 67",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 73",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Choose 1 course from the following",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "AFAM 30",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AFAM 60",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ASAM 20",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ASAM 35",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ETHN 37",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LALS 1",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LGBT 9",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Choose 9 units from the following",
+       "rule": "choose_units",
+       "minimum": 9,
+       "option_group": null,
+       "stated": {
+        "min": 9,
+        "max": 9
+       },
+       "courses": [
+        {
+         "code": "AMSL 1A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AMSL 1B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 41T",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 65",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 78A",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 78B",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 95",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 97",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 99",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 100",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 114",
+         "units": 1,
+         "units_max": 3,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 120",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 121",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 122",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 123",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 124",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 125",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CDEV 150",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 65",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": false,
+     "invented": false,
+     "arithmetic": "equal",
+     "placed": 29,
+     "listed": 30
+    },
+    "extracted_run": "39047128472"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "equal",
+     "placed": 30,
+     "listed": 30
+    }
+   },
+   "i": 8
+  }
+ ],
+ "representation": "checks.arithmetic as the scorer reads one option over several blocks; checks.coverage and checks.invented as it reads the college's three renumbers; the record unchanged",
+ "rescored_not_planned": [
+  {
+   "control_number": "33208",
+   "moves": [
+    "arithmetic"
+   ],
+   "passes_after": false,
+   "why": "held: the reader's note says the list continues on a page the read did not hold; section_cut_off reads no gap at the college (CUT_OFF_COLLEGES), and its matcher does not read this note's wording ('The text is cut off at the end of page 184': Option 2's List B is on p.185)"
+  },
+  {
+   "control_number": "39727",
+   "moves": [
+    "arithmetic"
+   ],
+   "passes_after": false,
+   "why": "held: Option 1's third-level choice reads CHIN 3 or CHIN 3A or CHIN 3B singly (3-5) where the page prints CHIN 3 or both CHIN 3A and 3B (5-6); with option_parts it adds to 14-18 against 16-18"
+  }
+ ],
+ "left_as_filed": [
+  {
+   "control_number": "09191",
+   "not_exact": [
+    "arithmetic"
+   ],
+   "passes_filed": true
+  },
+  {
+   "control_number": "09195",
+   "not_exact": [
+    "arithmetic"
+   ],
+   "passes_filed": true
+  },
+  {
+   "control_number": "22727",
+   "not_exact": [
+    "arithmetic"
+   ],
+   "passes_filed": true
+  }
+ ],
+ "claim_check_reads": "The claim checks read the record's notes: the reader's own words from the read behind the record (extracted_run). The page text of that read stays in its run's artifact, which a session cannot read, and sources.json describes the college's latest capture, another read that commits no page text (p-claim-check-reads-current-capture-s713); no claim check here reads it. #3714's second reader read today's capture beside the notes and found it agrees with every claim the checks stand on.",
+ "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'City College of San Francisco', '30897', 44474797786, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 15\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Units\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 55\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Choose one course from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 18\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 75\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Choose one course from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"LGBT 9\",\"units\":3}],\"catalog_addition\":false,\"code\":\"LALS 9\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 50\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"LGBT 70\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 45\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 24\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"Choose two courses from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 21\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 24\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 76\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTH 67\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 17\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 36\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 80A\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 80C\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 80D\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 80E\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 80F\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 80G\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WGST 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WGST 54\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WGST 55\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Choose three units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Apply an intersectional framework to feminist, queer, trans, ethnic, racial, and/or socio-economic theories.\",\"Analyze the social, political, and historical contexts of LGBTQ+ Studies.\",\"Examine gender identities, gender expressions, and sexual orientation across cultures historically and/or in a contemporary context.\",\"Identify the role of art and creativity in various global cultural contexts in relation to gender and sexuality.\"],\"section_heading\":\"LGBTQ Studies – AA Degree\",\"total_units\":{\"max\":21,\"min\":21}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":32,\"placed\":29}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":32,\"placed\":30}'::jsonb),\n  (2, 'City College of San Francisco', '35690', 39056434592, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETHN 37\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 37\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 7\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Choose one of the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WGST 25\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Choose one of the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AFAM 30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 1\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Choose one of the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 9\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 18A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 12B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 21\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 41A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 41B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LBCS 70A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LBCS 70B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 13\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS 12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS 45\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AFAM 30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AFAM 40\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AFAM 60\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 35\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 18B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"IDST 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 27B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 31\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 36\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 46\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 55\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AFAM 42\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 3C\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ASAM 8\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 22\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 27\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 40\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 42\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 53\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 67\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON 30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 45\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"LGBT 9\",\"units\":3}],\"catalog_addition\":false,\"code\":\"LALS 9\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 50\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 23\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WGST 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 5\",\"units\":5,\"units_max\":null}],\"minimum\":3,\"name\":\"Select 3 courses from at least 2 areas\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":11,\"min\":9}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Evaluate the social science, behavioral, or historical approaches and theories in the study of racial, ethnic, and cultural formations.\",\"Analyze how intersections of social class, gender, sexuality, and religion pervade racial and ethnic identity formations.\",\"Evaluate how changing definitions of race, social class, and ethnicity impact policies, cultures and societies.\",\"Appraise artistic and cultural representations that speak to race, ethnicity, gender, and sexuality.\",\"Compare the struggles for social justice of diverse ethnic and racial groups in the United States Diaspora.\"],\"section_heading\":\"Social Justice Studies: Ethnic Studies – AA-T Degree\",\"total_units\":{\"max\":20,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":54,\"placed\":53}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":54,\"placed\":54}'::jsonb),\n  (3, 'City College of San Francisco', '40704', 39047128472, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MAKR 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CNIT 106\",\"units\":null}],\"catalog_addition\":false,\"code\":\"CNIT 201C\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNIT 133\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNIT 133I\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNIT 214\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNIT 216\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":18,\"min\":18}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Analyze the things and connections that make up the Internet of Things (IoT) in relation to the physical world\",\"Build IoT systems using computer and networking hardware, sensors, actuators and other physical materials\",\"Employ IP networks and cloud applications to securely interconnect things and devices on an IoT system\",\"Create scripts to provide functionality for the Internet of Things\",\"Develop IoT solutions that address real-world problems\"],\"section_heading\":\"Internet of Things – Certificate of Achievement\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":7,\"placed\":6}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":7,\"placed\":7}'::jsonb),\n  (4, 'City College of San Francisco', '40876', 39047128472, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNIT 132\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNIT 133\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNIT 133A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNIT 133I\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNIT 133M\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":15,\"min\":15}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNIT 195\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNIT 198\",\"units\":2,\"units_max\":2.5}],\"minimum\":1,\"name\":\"Choose one of the following courses\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":2}}],\"program\":{\"careers\":[\"dynamic front-end web site\",\"mobile web app development\",\"IoT projects\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Develop and maintain web applications according to industry standards.\",\"Apply techniques to add interactivity to web applications via scripting programs and/or use of libraries/frameworks.\",\"Select and apply current JavaScript libraries/frameworks to web application projects maintaining usability and accessibility.\"],\"section_heading\":\"JavaScript Specialist – Certificate of Achievement\",\"total_units\":{\"max\":18,\"min\":17}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":7,\"placed\":6}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":7,\"placed\":7}'::jsonb),\n  (5, 'City College of San Francisco', '42228', 39056434592, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 110A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 110B\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Units\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":10,\"min\":10}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 108\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Option 1\",\"option_group\":\"Option\",\"rule\":\"all\",\"stated\":{\"max\":5,\"min\":5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS 110A\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Option 2\",\"option_group\":\"Option\",\"rule\":\"all\",\"stated\":{\"max\":10,\"min\":9}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON 5\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"LALS 5\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"STAT C1000E\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 5\",\"units\":5,\"units_max\":null}],\"minimum\":1,\"name\":\"Option 2: A statistics course\",\"option_group\":\"Option\",\"rule\":\"choose_courses\",\"stated\":{\"max\":6,\"min\":5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 120\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 130\",\"units\":5,\"units_max\":null}],\"minimum\":1,\"name\":\"Choose one course from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":5,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS 110B\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS 111B\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Choose one course from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS 110C\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS 111C\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Choose one course from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":4,\"min\":4}}],\"program\":{\"careers\":[\"data analyst\",\"business intelligence specialist\",\"research assistant\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Apply analytical concepts and techniques from statistics, probability, calculus, and linear algebra to problems in the field of Data Science.\",\"Create computer programs that use common data structures.\",\"Analyze data and communicate the analysis using industry-standard applications.\"],\"section_heading\":\"Data Science – AS Degree\",\"total_units\":{\"max\":33,\"min\":26}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":13,\"placed\":13}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":13,\"placed\":13}'::jsonb),\n  (6, 'City College of San Francisco', '46323', 43693267535, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 21\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Units\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":9,\"min\":9}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 18A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 106\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 13\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 15\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Choose one course from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 9\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 3\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 3A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 3B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 31\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 31A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 31B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 32\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 32A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 32B\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"Choose two courses from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":8,\"min\":6}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Apply intersectionality to analyze the different power relations that have shaped the lives of Latinas/os in the United States and Latin America\",\"Apply appropriate methods of inquiry for Latin American and Latino/a/e/x Studies\",\"Analyze the national and/or transnational experiences of Latinos in the United States and Latin America\"],\"section_heading\":\"Chicana/o Studies, Latina/o Studies for Transfer – AA-T Degree\",\"total_units\":{\"max\":20,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":20,\"placed\":19}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":20,\"placed\":20}'::jsonb),\n  (7, 'City College of San Francisco', '46324', 39056434592, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WGST 25\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETHN 37\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 7\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"One of the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 45\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 12B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 18\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 55\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 70\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 75\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 9\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 50\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 17\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHST 50\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS 19\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Choose 3 courses from at least 2 areas\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":9,\"min\":9}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Analyze the social, political, and historical contexts of LGBTQ+ Studies.\",\"Apply an intersectional framework to queer, trans, ethnic, racial, feminist, and socio-economic theories.\",\"Examine gender identities, gender expressions, and sexual orientations across global cultures in historical and contemporary contexts\",\"Analyze art, literature, and other forms of creative cultural production that have been or continue to be utilized in various ways by people and communities around the globe in order to call attention to LGBTQ+ social justice issues.\"],\"section_heading\":\"Social Justice Studies: LGBTQ Studies – AA-T Degree\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":24,\"placed\":23}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":24,\"placed\":24}'::jsonb),\n  (8, 'City College of San Francisco', '46326', 39047128472, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 53\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 67\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 73\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Units\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AFAM 30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AFAM 60\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 35\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETHN 37\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 9\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Choose 1 course from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AMSL 1A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AMSL 1B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 41T\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 65\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 78A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 78B\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 95\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 97\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 99\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 114\",\"units\":1,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 120\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 121\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 122\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 123\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 124\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 125\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 150\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 65\",\"units\":3,\"units_max\":null}],\"minimum\":9,\"name\":\"Choose 9 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":9,\"min\":9}}],\"program\":{\"careers\":[\"PK-12 Teaching\",\"Special Education\",\"Youth Work/Extended Care\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Compare the developmental needs of diverse children and youth when planning curriculum for inclusive classrooms, elementary/middle/high school classrooms or youth programs in the community.\",\"Examine the role of communities and families in the lives of diverse children and youth.\",\"Identify the relationships between diverse communities, identity and psychology and plan curriculum that integrates culturally responsive practices.\"],\"section_heading\":\"Educator Careers II – Certificate of Achievement\",\"total_units\":{\"max\":24,\"min\":24}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":30,\"placed\":29}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":30,\"placed\":30}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'City College of San Francisco', '30897', 44474797786, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 15\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Units\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 55\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Choose one course from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 18\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 75\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Choose one course from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"LGBT 9\",\"units\":3}],\"catalog_addition\":false,\"code\":\"LALS 9\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 50\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"LGBT 70\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 45\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 24\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"Choose two courses from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 21\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 24\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 76\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTH 67\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 17\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 36\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 80A\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 80C\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 80D\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 80E\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 80F\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 80G\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WGST 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WGST 54\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WGST 55\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Choose three units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Apply an intersectional framework to feminist, queer, trans, ethnic, racial, and/or socio-economic theories.\",\"Analyze the social, political, and historical contexts of LGBTQ+ Studies.\",\"Examine gender identities, gender expressions, and sexual orientation across cultures historically and/or in a contemporary context.\",\"Identify the role of art and creativity in various global cultural contexts in relation to gender and sexuality.\"],\"section_heading\":\"LGBTQ Studies – AA Degree\",\"total_units\":{\"max\":21,\"min\":21}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":32,\"placed\":29}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":32,\"placed\":30}'::jsonb),\n  (2, 'City College of San Francisco', '35690', 39056434592, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETHN 37\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 37\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 7\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Choose one of the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WGST 25\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Choose one of the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AFAM 30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 1\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Choose one of the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 9\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 18A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 12B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 21\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 41A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 41B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LBCS 70A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LBCS 70B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 13\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS 12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS 45\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AFAM 30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AFAM 40\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AFAM 60\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 35\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 18B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"IDST 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 27B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 31\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 36\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 46\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 55\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AFAM 42\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 3C\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ASAM 8\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 22\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 27\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 40\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 42\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 53\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 67\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON 30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 45\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"LGBT 9\",\"units\":3}],\"catalog_addition\":false,\"code\":\"LALS 9\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 50\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 23\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WGST 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 5\",\"units\":5,\"units_max\":null}],\"minimum\":3,\"name\":\"Select 3 courses from at least 2 areas\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":11,\"min\":9}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Evaluate the social science, behavioral, or historical approaches and theories in the study of racial, ethnic, and cultural formations.\",\"Analyze how intersections of social class, gender, sexuality, and religion pervade racial and ethnic identity formations.\",\"Evaluate how changing definitions of race, social class, and ethnicity impact policies, cultures and societies.\",\"Appraise artistic and cultural representations that speak to race, ethnicity, gender, and sexuality.\",\"Compare the struggles for social justice of diverse ethnic and racial groups in the United States Diaspora.\"],\"section_heading\":\"Social Justice Studies: Ethnic Studies – AA-T Degree\",\"total_units\":{\"max\":20,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":54,\"placed\":53}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":54,\"placed\":54}'::jsonb),\n  (3, 'City College of San Francisco', '40704', 39047128472, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MAKR 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CNIT 106\",\"units\":null}],\"catalog_addition\":false,\"code\":\"CNIT 201C\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNIT 133\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNIT 133I\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNIT 214\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNIT 216\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":18,\"min\":18}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Analyze the things and connections that make up the Internet of Things (IoT) in relation to the physical world\",\"Build IoT systems using computer and networking hardware, sensors, actuators and other physical materials\",\"Employ IP networks and cloud applications to securely interconnect things and devices on an IoT system\",\"Create scripts to provide functionality for the Internet of Things\",\"Develop IoT solutions that address real-world problems\"],\"section_heading\":\"Internet of Things – Certificate of Achievement\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":7,\"placed\":6}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":7,\"placed\":7}'::jsonb),\n  (4, 'City College of San Francisco', '40876', 39047128472, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNIT 132\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNIT 133\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNIT 133A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNIT 133I\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNIT 133M\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":15,\"min\":15}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNIT 195\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNIT 198\",\"units\":2,\"units_max\":2.5}],\"minimum\":1,\"name\":\"Choose one of the following courses\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":2}}],\"program\":{\"careers\":[\"dynamic front-end web site\",\"mobile web app development\",\"IoT projects\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Develop and maintain web applications according to industry standards.\",\"Apply techniques to add interactivity to web applications via scripting programs and/or use of libraries/frameworks.\",\"Select and apply current JavaScript libraries/frameworks to web application projects maintaining usability and accessibility.\"],\"section_heading\":\"JavaScript Specialist – Certificate of Achievement\",\"total_units\":{\"max\":18,\"min\":17}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":7,\"placed\":6}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":7,\"placed\":7}'::jsonb),\n  (5, 'City College of San Francisco', '42228', 39056434592, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 110A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 110B\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Units\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":10,\"min\":10}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 108\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Option 1\",\"option_group\":\"Option\",\"rule\":\"all\",\"stated\":{\"max\":5,\"min\":5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS 110A\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Option 2\",\"option_group\":\"Option\",\"rule\":\"all\",\"stated\":{\"max\":10,\"min\":9}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON 5\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"LALS 5\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"STAT C1000E\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 5\",\"units\":5,\"units_max\":null}],\"minimum\":1,\"name\":\"Option 2: A statistics course\",\"option_group\":\"Option\",\"rule\":\"choose_courses\",\"stated\":{\"max\":6,\"min\":5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 120\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 130\",\"units\":5,\"units_max\":null}],\"minimum\":1,\"name\":\"Choose one course from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":5,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS 110B\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS 111B\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Choose one course from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS 110C\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS 111C\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Choose one course from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":4,\"min\":4}}],\"program\":{\"careers\":[\"data analyst\",\"business intelligence specialist\",\"research assistant\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Apply analytical concepts and techniques from statistics, probability, calculus, and linear algebra to problems in the field of Data Science.\",\"Create computer programs that use common data structures.\",\"Analyze data and communicate the analysis using industry-standard applications.\"],\"section_heading\":\"Data Science – AS Degree\",\"total_units\":{\"max\":33,\"min\":26}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":13,\"placed\":13}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":13,\"placed\":13}'::jsonb),\n  (6, 'City College of San Francisco', '46323', 43693267535, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 21\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Units\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":9,\"min\":9}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 18A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 106\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 13\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 15\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Choose one course from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 9\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 3\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 3A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 3B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 31\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 31A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 31B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 32\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 32A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 32B\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"Choose two courses from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":8,\"min\":6}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Apply intersectionality to analyze the different power relations that have shaped the lives of Latinas/os in the United States and Latin America\",\"Apply appropriate methods of inquiry for Latin American and Latino/a/e/x Studies\",\"Analyze the national and/or transnational experiences of Latinos in the United States and Latin America\"],\"section_heading\":\"Chicana/o Studies, Latina/o Studies for Transfer – AA-T Degree\",\"total_units\":{\"max\":20,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":20,\"placed\":19}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":20,\"placed\":20}'::jsonb),\n  (7, 'City College of San Francisco', '46324', 39056434592, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WGST 25\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETHN 37\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 7\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"One of the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 45\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 12B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 18\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 55\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 70\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 75\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 9\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 50\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 17\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHST 50\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS 19\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Choose 3 courses from at least 2 areas\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":9,\"min\":9}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Analyze the social, political, and historical contexts of LGBTQ+ Studies.\",\"Apply an intersectional framework to queer, trans, ethnic, racial, feminist, and socio-economic theories.\",\"Examine gender identities, gender expressions, and sexual orientations across global cultures in historical and contemporary contexts\",\"Analyze art, literature, and other forms of creative cultural production that have been or continue to be utilized in various ways by people and communities around the globe in order to call attention to LGBTQ+ social justice issues.\"],\"section_heading\":\"Social Justice Studies: LGBTQ Studies – AA-T Degree\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":24,\"placed\":23}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":24,\"placed\":24}'::jsonb),\n  (8, 'City College of San Francisco', '46326', 39047128472, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 53\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 67\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 73\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Units\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AFAM 30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AFAM 60\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 35\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETHN 37\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 9\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Choose 1 course from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AMSL 1A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AMSL 1B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 41T\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 65\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 78A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 78B\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 95\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 97\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 99\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 114\",\"units\":1,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 120\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 121\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 122\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 123\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 124\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 125\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 150\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 65\",\"units\":3,\"units_max\":null}],\"minimum\":9,\"name\":\"Choose 9 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":9,\"min\":9}}],\"program\":{\"careers\":[\"PK-12 Teaching\",\"Special Education\",\"Youth Work/Extended Care\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Compare the developmental needs of diverse children and youth when planning curriculum for inclusive classrooms, elementary/middle/high school classrooms or youth programs in the community.\",\"Examine the role of communities and families in the lives of diverse children and youth.\",\"Identify the relationships between diverse communities, identity and psychology and plan curriculum that integrates culturally responsive practices.\"],\"section_heading\":\"Educator Careers II – Certificate of Achievement\",\"total_units\":{\"max\":24,\"min\":24}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":30,\"placed\":29}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":30,\"placed\":30}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number\n        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),\ne(expect) as (values (8)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s714c piles confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s714c piles guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'City College of San Francisco', '30897', 44474797786, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 15\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Units\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 55\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Choose one course from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 18\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 75\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Choose one course from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"LGBT 9\",\"units\":3}],\"catalog_addition\":false,\"code\":\"LALS 9\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 50\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"LGBT 70\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 45\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 24\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"Choose two courses from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":6,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 21\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 24\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 76\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTH 67\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 17\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 36\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 80A\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 80C\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 80D\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 80E\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 80F\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 80G\",\"units\":0.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WGST 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WGST 54\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WGST 55\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Choose three units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Apply an intersectional framework to feminist, queer, trans, ethnic, racial, and/or socio-economic theories.\",\"Analyze the social, political, and historical contexts of LGBTQ+ Studies.\",\"Examine gender identities, gender expressions, and sexual orientation across cultures historically and/or in a contemporary context.\",\"Identify the role of art and creativity in various global cultural contexts in relation to gender and sexuality.\"],\"section_heading\":\"LGBTQ Studies – AA Degree\",\"total_units\":{\"max\":21,\"min\":21}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":32,\"placed\":29}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":32,\"placed\":30}'::jsonb),\n  (2, 'City College of San Francisco', '35690', 39056434592, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETHN 37\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 37\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 7\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Choose one of the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WGST 25\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Choose one of the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AFAM 30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 1\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Choose one of the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 9\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 18A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 12B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 21\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 41A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 41B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LBCS 70A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LBCS 70B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 13\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS 12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS 45\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AFAM 30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AFAM 40\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AFAM 60\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 35\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 18B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"IDST 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 27B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 31\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 36\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 46\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 55\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AFAM 42\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 3C\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ASAM 8\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 22\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 27\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 40\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 42\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 53\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 67\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON 30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 45\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"LGBT 9\",\"units\":3}],\"catalog_addition\":false,\"code\":\"LALS 9\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 50\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 23\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WGST 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 5\",\"units\":5,\"units_max\":null}],\"minimum\":3,\"name\":\"Select 3 courses from at least 2 areas\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":11,\"min\":9}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Evaluate the social science, behavioral, or historical approaches and theories in the study of racial, ethnic, and cultural formations.\",\"Analyze how intersections of social class, gender, sexuality, and religion pervade racial and ethnic identity formations.\",\"Evaluate how changing definitions of race, social class, and ethnicity impact policies, cultures and societies.\",\"Appraise artistic and cultural representations that speak to race, ethnicity, gender, and sexuality.\",\"Compare the struggles for social justice of diverse ethnic and racial groups in the United States Diaspora.\"],\"section_heading\":\"Social Justice Studies: Ethnic Studies – AA-T Degree\",\"total_units\":{\"max\":20,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":54,\"placed\":53}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":54,\"placed\":54}'::jsonb),\n  (3, 'City College of San Francisco', '40704', 39047128472, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MAKR 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"CNIT 106\",\"units\":null}],\"catalog_addition\":false,\"code\":\"CNIT 201C\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNIT 133\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNIT 133I\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNIT 214\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNIT 216\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":18,\"min\":18}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Analyze the things and connections that make up the Internet of Things (IoT) in relation to the physical world\",\"Build IoT systems using computer and networking hardware, sensors, actuators and other physical materials\",\"Employ IP networks and cloud applications to securely interconnect things and devices on an IoT system\",\"Create scripts to provide functionality for the Internet of Things\",\"Develop IoT solutions that address real-world problems\"],\"section_heading\":\"Internet of Things – Certificate of Achievement\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":7,\"placed\":6}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":7,\"placed\":7}'::jsonb),\n  (4, 'City College of San Francisco', '40876', 39047128472, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNIT 132\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNIT 133\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNIT 133A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNIT 133I\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNIT 133M\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":15,\"min\":15}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNIT 195\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CNIT 198\",\"units\":2,\"units_max\":2.5}],\"minimum\":1,\"name\":\"Choose one of the following courses\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":2}}],\"program\":{\"careers\":[\"dynamic front-end web site\",\"mobile web app development\",\"IoT projects\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Develop and maintain web applications according to industry standards.\",\"Apply techniques to add interactivity to web applications via scripting programs and/or use of libraries/frameworks.\",\"Select and apply current JavaScript libraries/frameworks to web application projects maintaining usability and accessibility.\"],\"section_heading\":\"JavaScript Specialist – Certificate of Achievement\",\"total_units\":{\"max\":18,\"min\":17}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":7,\"placed\":6}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":7,\"placed\":7}'::jsonb),\n  (5, 'City College of San Francisco', '42228', 39056434592, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 110A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 110B\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Units\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":10,\"min\":10}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 108\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Option 1\",\"option_group\":\"Option\",\"rule\":\"all\",\"stated\":{\"max\":5,\"min\":5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS 110A\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Option 2\",\"option_group\":\"Option\",\"rule\":\"all\",\"stated\":{\"max\":10,\"min\":9}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON 5\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"LALS 5\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"STAT C1000E\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 5\",\"units\":5,\"units_max\":null}],\"minimum\":1,\"name\":\"Option 2: A statistics course\",\"option_group\":\"Option\",\"rule\":\"choose_courses\",\"stated\":{\"max\":6,\"min\":5}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 120\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 130\",\"units\":5,\"units_max\":null}],\"minimum\":1,\"name\":\"Choose one course from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":5,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS 110B\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS 111B\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Choose one course from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS 110C\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CS 111C\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Choose one course from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":4,\"min\":4}}],\"program\":{\"careers\":[\"data analyst\",\"business intelligence specialist\",\"research assistant\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Apply analytical concepts and techniques from statistics, probability, calculus, and linear algebra to problems in the field of Data Science.\",\"Create computer programs that use common data structures.\",\"Analyze data and communicate the analysis using industry-standard applications.\"],\"section_heading\":\"Data Science – AS Degree\",\"total_units\":{\"max\":33,\"min\":26}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":13,\"placed\":13}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":13,\"placed\":13}'::jsonb),\n  (6, 'City College of San Francisco', '46323', 43693267535, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 21\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Units\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":9,\"min\":9}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 18A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 106\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 13\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 15\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Choose one course from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 9\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 3\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 3A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 3B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 31\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 31A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 31B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 32\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 32A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN 32B\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"Choose two courses from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":8,\"min\":6}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Apply intersectionality to analyze the different power relations that have shaped the lives of Latinas/os in the United States and Latin America\",\"Apply appropriate methods of inquiry for Latin American and Latino/a/e/x Studies\",\"Analyze the national and/or transnational experiences of Latinos in the United States and Latin America\"],\"section_heading\":\"Chicana/o Studies, Latina/o Studies for Transfer – AA-T Degree\",\"total_units\":{\"max\":20,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":20,\"placed\":19}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":20,\"placed\":20}'::jsonb),\n  (7, 'City College of San Francisco', '46324', 39056434592, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"WGST 25\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETHN 37\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 7\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"One of the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 45\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 12B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 12\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 18\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 55\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 70\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 75\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 9\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 50\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTH 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IDST 17\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHST 50\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS 19\",\"units\":3,\"units_max\":null}],\"minimum\":3,\"name\":\"Choose 3 courses from at least 2 areas\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":9,\"min\":9}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Analyze the social, political, and historical contexts of LGBTQ+ Studies.\",\"Apply an intersectional framework to queer, trans, ethnic, racial, feminist, and socio-economic theories.\",\"Examine gender identities, gender expressions, and sexual orientations across global cultures in historical and contemporary contexts\",\"Analyze art, literature, and other forms of creative cultural production that have been or continue to be utilized in various ways by people and communities around the globe in order to call attention to LGBTQ+ social justice issues.\"],\"section_heading\":\"Social Justice Studies: LGBTQ Studies – AA-T Degree\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":24,\"placed\":23}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":24,\"placed\":24}'::jsonb),\n  (8, 'City College of San Francisco', '46326', 39047128472, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 53\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 67\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 73\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Units\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AFAM 30\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AFAM 60\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ASAM 35\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ETHN 37\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LGBT 9\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Choose 1 course from the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AMSL 1A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"AMSL 1B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 41T\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 65\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 78A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 78B\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 95\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 97\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 99\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 114\",\"units\":1,\"units_max\":3},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 120\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 121\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 122\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 123\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 124\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 125\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CDEV 150\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 65\",\"units\":3,\"units_max\":null}],\"minimum\":9,\"name\":\"Choose 9 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":9,\"min\":9}}],\"program\":{\"careers\":[\"PK-12 Teaching\",\"Special Education\",\"Youth Work/Extended Care\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Compare the developmental needs of diverse children and youth when planning curriculum for inclusive classrooms, elementary/middle/high school classrooms or youth programs in the community.\",\"Examine the role of communities and families in the lives of diverse children and youth.\",\"Identify the relationships between diverse communities, identity and psychology and plan curriculum that integrates culturally responsive practices.\"],\"section_heading\":\"Educator Careers II – Certificate of Achievement\",\"total_units\":{\"max\":24,\"min\":24}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":30,\"placed\":29}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":30,\"placed\":30}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (8)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s714c piles rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;",
+ "option_parts_reach": {
+  "fires": 21,
+  "right": 21,
+  "wrong": [],
+  "not_held": [],
+  "moves": [
+   [
+    "City College of San Francisco",
+    "42228"
+   ],
+   [
+    "Foothill College",
+    "06047"
+   ],
+   [
+    "Glendale Community College",
+    "24042"
+   ],
+   [
+    "Golden West College",
+    "18423"
+   ],
+   [
+    "MiraCosta College",
+    "18345"
+   ],
+   [
+    "Monterey Peninsula College",
+    "03653"
+   ],
+   [
+    "Monterey Peninsula College",
+    "22098"
+   ],
+   [
+    "Reedley College",
+    "01773"
+   ],
+   [
+    "Reedley College",
+    "18990"
+   ],
+   [
+    "Reedley College",
+    "46449"
+   ],
+   [
+    "Santa Barbara City College",
+    "05934"
+   ]
+  ],
+  "from_passing": []
+ },
+ "corrected": {
+  "at": "2026-11-23T12:43:37Z",
+  "by": "#3714's second reader",
+  "what": "changes.elsewhere remeasured against each record's own state list (it was scored with an empty list: 13 records, 9 to a passing arithmetic; it is 15 records, 10 to a passing verdict, none from passing), option_parts_reach added with the held answers for all 21 records the reading fires on, and claim_check_reads states the capture finding. The 8 rows, their images and the SQL are unchanged; the apply landed (migrate 45176130201, 8 of 8)."
+ }
+}

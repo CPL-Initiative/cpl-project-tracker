@@ -80,7 +80,7 @@
    "status": "unequal",
    "computed": [
     3.0,
-    6.0
+    24.0
    ],
    "stated": [
     21.0,
@@ -88,7 +88,7 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 3.0-6.0; the catalog states 21.0-27.0"
+    "the blocks sum to 3.0-24.0; the catalog states 21.0-27.0"
    ]
   },
   "repeated": {
