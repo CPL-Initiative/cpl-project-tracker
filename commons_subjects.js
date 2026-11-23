@@ -445,6 +445,82 @@
     saved: ["settled by a person’s save", function (r) { return !!savedOf(r); }]
   };
   function inPick(r) { return !S.pick || !PICKS[S.pick] || PICKS[S.pick][1](r); }
+  /* ── The figures a save moves at once (Sam, 2026-11-23: "when I make edits or decisions, they are immediately
+     reflected in the numbers (going in the right direction) shown in the links"). Each figure is counted from the rows
+     with the live saves on top, by the same test the list it opens applies, so a figure always equals its list and
+     moves the moment a save lands or is taken back. With no save since the build it equals the file's own totals. ── */
+  function untitledNow(r) { var sv = savedOf(r); return needsTitle(r) && !(sv && sv.title); }
+  function figures(M) {
+    var F = { named: 0, withCommon: 0, untitled: 0, notInCatalog: 0, notRead: 0, blocked: 0, saved: 0, colleges: 0, collegesNamed: 0, by: {} };
+    ((M && M.list) || []).forEach(function (x) {
+      var n = 0;
+      x.rows.forEach(function (r) {
+        if (PICKS.titled[1](r)) n++;
+        if (PICKS.common[1](r)) F.withCommon++;
+        if (savedOf(r)) F.saved++;
+        if (untitledNow(r)) {
+          F.untitled++;
+          if (r.title_state === "not_in_catalog") F.notInCatalog++; else if (r.title_state === "blocked") F.blocked++; else F.notRead++;
+        }
+      });
+      F.by[x.slug] = { named: n };
+      F.named += n; F.colleges++; if (n) F.collegesNamed++;
+    });
+    return F;
+  }
+  /* The common subject codes people saved at each college, "<slug>|<CODE>" -> the save. `fresh` keeps only the saves
+     the daily build has not carried yet (the titles file's decision names another value or none), which is what the
+     held codes subtract: the build already released the courses of a decision it carried. */
+  function commonSaves(M, fresh) {
+    var out = {};
+    ((M && M.list) || []).forEach(function (x) {
+      x.rows.forEach(function (r) {
+        var sv = savedOf(r);
+        if (!sv || !sv.common) return;
+        if (fresh) {
+          if (sv.fromFile) return;
+          var d = r.decision;
+          if (d && d.key === sv.key && d.common && r.common === sv.common) return;
+          if ((r.noncredit_decisions || []).some(function (n) { return n.key === SAVE_PREFIX + sv.mapKey && n.common_code === sv.common; })) return;
+        }
+        out[x.slug + "|" + String(r.code).toUpperCase()] = sv;
+      });
+    });
+    return out;
+  }
+  function savedAt(map, slug, c) {
+    if (!slug) return null;
+    var names = [c.code, c.key].concat(c.spellings || []);
+    for (var i = 0; i < names.length; i++) if (names[i] && map[slug + "|" + String(names[i]).toUpperCase()]) return map[slug + "|" + String(names[i]).toUpperCase()];
+    return null;
+  }
+  /* The held courses a decision saved since the build releases, by the mint's own rule (kb/_pile_mint_dryrun.py route
+     p): a common subject code saved at a college places that college's held credit courses with ordinary titles under
+     the code. A shell title stays held whatever a person decides, and a statewide filing decides no M-ID, so neither
+     moves the count. */
+  var SHELL_HOLD = "shell_title_no_convention";
+  function heldReleased(c, fresh, M) {
+    var n = 0, at = [];
+    (c.colleges || []).forEach(function (x) {
+      if (!savedAt(fresh, slugOfName(x.college, M), c)) return;
+      var k = (x.reasons || []).filter(function (r) { return r !== SHELL_HOLD; }).length;
+      if (k) { n += k; at.push(x.college); }
+    });
+    return { n: n, at: at };
+  }
+  function heldNow(H, M) {
+    M = M || VIEW.M;
+    var fresh = commonSaves(M, true), out = { held: 0, codes: 0, released: 0, releasedCodes: 0, by: {} };
+    ((H && H.codes) || []).forEach(function (c) {
+      var rel = heldReleased(c, fresh, M);
+      out.by[c.key] = rel;
+      out.released += rel.n;
+      var left = (c.held || 0) - rel.n;
+      out.held += left;
+      if (left > 0) out.codes++; else out.releasedCodes++;
+    });
+    return out;
+  }
   /* A figure that opens the rows it counts: the surface (a college slug, or "" for every college) and the filter. */
   function count(n, slug, pick, label) {
     return el("button", { type: "button", cls: "csb-word csb-num", "data-csb-pick": pick, "data-csb-pick-at": slug, "aria-label": label, text: fmt(n) });
@@ -570,14 +646,16 @@
     return wrap;
   }
   function collegeTable(M, list) {
+    var F = figures(M);
     var tbl = el("table", { cls: "csb-table" }, [
       el("colgroup", null, [el("col", { cls: "csb-c-wide" }), el("col"), el("col"), el("col"), el("col"), el("col")]),
       el("thead", null, [el("tr", null, ["College", "Subject codes in the catalog", "Local titles", "Both", "Catalog only", "COCI only"]
         .map(function (t) { return el("th", { scope: "col", text: t }); }))]),
       el("tbody", null, list.map(function (c) {
+        var named = (F.by[c.slug] || {}).named || 0;
         return el("tr", { "data-college": c.slug }, [el("th", { scope: "row" }, [S.view === c.slug ? c.college : go("#commons/subjects/" + c.slug, c.college)]),
           el("td", null, [count(c.codes, c.slug, "incat", fmt(c.codes) + " subject codes in the catalog at " + c.college + ". Show them.")]),
-          c.named ? el("td", null, [count(c.named, c.slug, "titled", fmt(c.named) + " codes with a local title at " + c.college + ". Show them."), " of " + fmt(c.rows.length) + " codes"])
+          named ? el("td", null, [count(named, c.slug, "titled", fmt(named) + " codes with a local title at " + c.college + ". Show them."), " of " + fmt(c.rows.length) + " codes"])
             : el("td", { cls: "csb-tba", text: "TBA" }),
           el("td", null, [count(c.both, c.slug, "both", fmt(c.both) + " codes in both the catalog and COCI at " + c.college + ". Show them.")]),
           el("td", null, [count(c.catalogOnly, c.slug, "catalog", fmt(c.catalogOnly) + " codes in the catalog only at " + c.college + ". Show them.")]),
@@ -648,14 +726,16 @@
     return out;
   }
   function heldTable(H) {
+    var HN = heldNow(H);
     var tbl = el("table", { cls: "csb-table csb-held" }, [
       el("colgroup", null, [el("col", { cls: "csb-c-code" }), el("col", { cls: "csb-c-num" }), el("col", { cls: "csb-c-mid" }), el("col", { cls: "csb-c-mid" }), el("col", { cls: "csb-c-ev" })]),
       el("thead", null, [el("tr", null, ["Local code", "Held courses it releases", "Colleges using it", "Example held courses", "Evidence that fell short"]
         .map(function (t) { return el("th", { scope: "col", text: t }); }))]),
       el("tbody", null, H.codes.length ? H.codes.map(function (c) {
-        return el("tr", { "data-code": c.key, "data-held": String(c.held) }, [
+        var rel = HN.by[c.key] || { n: 0, at: [] }, left = (c.held || 0) - rel.n;
+        return el("tr", { "data-code": c.key, "data-held": String(left) }, [
           el("th", { scope: "row" }, [c.code, (c.printed_names || []).length ? el("span", { cls: "csb-sub", text: c.printed_names.join("; ") }) : null]),
-          el("td", { text: fmt(c.held) }),
+          el("td", null, [fmt(left), rel.n ? el("span", { cls: "csb-sub csb-saved", text: fmt(rel.n) + " released at " + rel.at.join(", ") + " by a save since the build." }) : null]),
           el("td", null, sep((c.colleges || []).map(function (x) { return codeAt(slugOfName(x.college), c.code, x.college + " " + fmt(x.held)); }))),
           el("td", { text: (c.examples || []).map(function (x) { return x.title + " (" + x.college + ")"; }).join("; ") }),
           el("td", { cls: "csb-ev" }, evidence(c))]);
@@ -846,7 +926,13 @@
       + "A confirm is your statewide filing for the code; the daily build carries it to every college that uses it."]));
     if (SWS.readErr) box.appendChild(el("p", { cls: "csb-note", role: "status", text: "The filings people made could not be read live (" + SWS.readErr + "); the list shows the filings the daily build carried." }));
     var lv = { Confident: 0, Likely: 0, Leaning: 0, Unsure: 0 };
-    W.codes.forEach(function (c) { lv[filedOf(c) ? "Confident" : levelOf(c.recommend.confidence || 0)] += (c.colleges || []).length; });
+    /* A pair is Confident when a person filed the code statewide or saved a common subject code at that college; the
+       count reads the live saves, so a Confirm or a college's Save moves it at once. */
+    var saves = commonSaves(VIEW.M, false);
+    W.codes.forEach(function (c) {
+      var base = filedOf(c) ? "Confident" : levelOf(c.recommend.confidence || 0);
+      (c.colleges || []).forEach(function (x) { lv[base === "Confident" || savedAt(saves, slugOfName(x[0]), c) ? "Confident" : base]++; });
+    });
     box.appendChild(el("p", { cls: "csb-note", id: "csw-levels" }, ["College-and-code pairs by level: ",
       ["Confident", "Likely", "Leaning", "Unsure"].map(function (k) { return k + " " + fmt(lv[k]); }).join(" · "),
       ". Confident is 90% or more, Likely 75 to 90%, Leaning 50 to 75%, Unsure under 50%. A confirm raises a call to Confident."]));
@@ -929,8 +1015,8 @@
   }
   /* A college's code named on a list that is not the college's own: a word that opens its panel where the college
      has a catalog on file and the code is in its list, and plain words where it does not. */
-  function slugOfName(name) {
-    var M = VIEW.M, hit = "";
+  function slugOfName(name, M0) {
+    var M = M0 || VIEW.M, hit = "";
     ((M && M.list) || []).forEach(function (x) { if (x.college === name) hit = x.slug; });
     return hit;
   }
@@ -1550,10 +1636,9 @@
     S.at = S.code && at && at !== S.view ? at : "";
     root.removeAttribute("style");
     root.textContent = "";
-    var T = M.totals, all = [];
+    var T = M.totals, all = [], F = figures(M);
     M.list.forEach(function (x) { all = all.concat(x.rows); });
-    var untitled = all.filter(needsTitle).length;
-    var nSaved = all.filter(function (r) { return !!savedOf(r); }).length;   /* the rows that show a save, no more */
+    var untitled = F.untitled, nSaved = F.saved;   /* counted as the lists they open count, the live saves on top */
     var wrap = el("div", { cls: "cmn-wrap csb" });
     wrap.appendChild(trail(c ? c.college : S.view === DISAGREE ? "Codes with no title" : S.view === HELD ? "Codes the M-ID mint holds on" : S.view === NC ? "Noncredit subject titles" : S.view === SW ? "Every local code, statewide" : ""));
     wrap.appendChild(el("header", { cls: "cmn-top" }, [
@@ -1562,11 +1647,11 @@
       el("p", { cls: "cmn-lede", text: "Step a is the common subject code each discipline shares; Step b is each college’s own name for its subject codes, read from its catalog. The Courses bot drafts each local title from the catalog’s subject heading. A curator settles the codes the catalog and the state course list disagree on." })
     ]));
     wrap.appendChild(el("p", { cls: "csb-stamp" }, [
-      count(T.named, "", "titled", fmt(T.named) + " codes with a local title. Show them."), " local titles at ", el("strong", { text: fmt(T.colleges_named) + " of " + fmt(T.colleges) }),
+      count(F.named, "", "titled", fmt(F.named) + " codes with a local title. Show them."), " local titles at ", el("strong", { text: fmt(F.collegesNamed) + " of " + fmt(F.colleges) }),
       " colleges with a catalog on file (" + fmt(T.courses) + " courses, ", count(T.catalog_codes, "", "incat", fmt(T.catalog_codes) + " subject codes in the catalogs. Show them."), " subject codes in the catalogs). ",
       go("#commons/subjects/" + DISAGREE, fmt(untitled) + " codes with no title"),
-      " (" + fmt(T.not_in_catalog || 0) + " not in catalog, " + fmt(T.not_read || 0) + " not read yet, " + fmt(T.blocked || 0) + " blocked). ",
-      count(T.with_common, "", "common", fmt(T.with_common) + " codes with a common subject code. Show them."), " codes have a common subject code from the subject map. ",
+      " (" + fmt(F.notInCatalog) + " not in catalog, " + fmt(F.notRead) + " not read yet, " + fmt(F.blocked) + " blocked). ",
+      count(F.withCommon, "", "common", fmt(F.withCommon) + " codes with a common subject code. Show them."), " codes have a common subject code, from the subject map or a person’s save. ",
       el("a", { href: "#canonical-subj4", text: "Common Subjects Reference" }), ". ",
       go("#commons/subjects/" + HELD, "Codes the M-ID mint holds on"), ". ",
       go("#commons/subjects/" + NC, "Noncredit subject titles"), ".",
@@ -1575,7 +1660,8 @@
     if (SAVE_ERR) wrap.appendChild(el("p", { cls: "csb-note", id: "csb-save-err", role: "status", text: "The saves people made could not be read (" + SAVE_ERR + "). The list below is drawn from the files alone, with the saves the daily build carried." }));
     if (missing) wrap.appendChild(el("p", { cls: "csb-note", role: "status", text: "No college with a catalog on file is named " + missing + ". Every college is below." }));
     if (c) {
-      wrap.appendChild(el("p", { cls: "csb-note", text: c.year + " catalog, read " + day(c.readAt) + ". " + (c.named ? fmt(c.named) + " of " + fmt(c.codes) + " codes have a local title." : "No subject heading is read for this catalog yet.") }));
+      var cn = (F.by[c.slug] || {}).named || 0;
+      wrap.appendChild(el("p", { cls: "csb-note", text: c.year + " catalog, read " + day(c.readAt) + ". " + (cn ? fmt(cn) + " of " + fmt(c.rows.length) + " codes have a local title." : "No subject heading is read for this catalog yet.") }));
       wrap.appendChild(collegeTable(M, [c]));
       wrap.appendChild(bandBar(c.rows));
       var pl = pickLine(c.rows); if (pl) wrap.appendChild(pl);
@@ -1587,10 +1673,11 @@
       var H = VIEW.H;
       if (!H) wrap.appendChild(el("p", { cls: "csb-note", role: "status", text: VIEW.heldError ? "The held codes could not be read (" + VIEW.heldError + "). Reload the tab to try again." : "Reading the held codes…" }));
       else {
-        var HT = H.totals;
-        wrap.appendChild(el("p", { cls: "csb-note" }, [el("strong", { text: fmt(HT.held) }), " courses the M-ID mint holds wait on ", el("strong", { text: fmt(HT.codes) }),
-          " local subject codes (" + fmt(HT.pairs) + " college-and-code pairs) that no route gives a common subject code. The top 20 codes release " + fmt(HT.top_20_release) + " of them. "
-          + "Deciding a code’s common subject code releases every held course under it. Each suggestion is a vote that missed the 98% floor, shown with its votes; it decides nothing."
+        var HT = H.totals, HN = heldNow(H);
+        wrap.appendChild(el("p", { cls: "csb-note", id: "csb-held-note" }, [el("strong", { text: fmt(HN.held) }), " courses the M-ID mint holds wait on ", el("strong", { text: fmt(HN.codes) }),
+          " local subject codes (" + fmt(HT.pairs) + " college-and-code pairs) that no route gives a common subject code. The top 20 codes held " + fmt(HT.top_20_release) + " of them at the last build. "
+          + (HN.released ? fmt(HN.released) + (HN.released === 1 ? " course is" : " courses are") + " released by decisions saved since the build; the next nightly mint places them. " : "")
+          + "A common subject code saved at a college releases that college’s held credit courses with ordinary titles. A shell title stays held whatever a person decides, and a statewide filing decides no M-ID. Each suggestion is a vote that missed the 98% floor, shown with its votes; it decides nothing."
           + (H.plan ? " From the pile mint dry run of " + day(H.plan) + "." : "")]));
         wrap.appendChild(heldTable(H));
       }
@@ -1610,8 +1697,8 @@
       /* Every row with no title, in or out of the catalog (#3655, item 7: a code in both with no title was dropped
          by the old one-sided filter). Sam's rows first: Not in catalog, then Blocked, then Sky's Not read yet. */
       var order = { not_in_catalog: 0, blocked: 1, not_read: 2 };
-      wrap.appendChild(bandBar(all.filter(needsTitle)));
-      wrap.appendChild(codeTable(all.filter(needsTitle).filter(function (r) { return inBand(r, S.band); }).sort(function (a, b) {
+      wrap.appendChild(bandBar(all.filter(untitledNow)));
+      wrap.appendChild(codeTable(all.filter(untitledNow).filter(function (r) { return inBand(r, S.band); }).sort(function (a, b) {
         return (order[a.title_state] == null ? 2 : order[a.title_state]) - (order[b.title_state] == null ? 2 : order[b.title_state])
           || a.college.localeCompare(b.college) || String(a.code).localeCompare(String(b.code));
       }), "Subject codes with no title"));
@@ -1713,6 +1800,17 @@
     });
   } catch (e) { /* the page still draws */ }
   var cache = null;
+  /* The Commons front's Subjects card asks for the same figures (commons_front.js), so the card and the tab never
+     disagree: one read shared with the tab, and where the tab already holds the saves, no read at all. A held list
+     that cannot be read leaves `held` null, and the card keeps the status file's line. */
+  function liveFigures() {
+    cache = cache || load();
+    return cache.then(function (M) {
+      var F = figures(M);
+      return loadHeld().then(function (H) { var N = heldNow(H, M); F.held = N.held; F.heldCodes = N.codes; F.released = N.released; return F; },
+        function () { F.held = null; return F; });
+    }, function (e) { cache = null; throw e; });
+  }
   function boot(root, view, opts) {
     opts = opts || {};
     VIEW.noted = opts.noted || null;
@@ -1823,7 +1921,7 @@
   }
 
   window.CPL_COMMONS_SUBJECTS = {
-    boot: boot, render: render, model: model, heldModel: heldModel, recModel: recModel, REC_FILE: REC_FILE,
+    boot: boot, render: render, model: model, figures: figures, liveFigures: liveFigures, heldNow: heldNow, heldModel: heldModel, recModel: recModel, REC_FILE: REC_FILE,
     _recs: function (f) { REC = recModel(f); }, address: address, open: open, load: load, FILE: FILE, HELD_FILE: HELD_FILE, SIDES: SIDES, CSS: CSS,
     _state: S, COURSE_DIR: COURSE_DIR, bandOf: bandOf, saveKey: saveKey, titleCase: titleCase, savesModel: savesModel,
     SAVE_FIELD: SAVE_FIELD, SAVE_PREFIX: SAVE_PREFIX, dominantOf: dominantOf,

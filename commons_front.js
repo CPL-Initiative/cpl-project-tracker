@@ -827,6 +827,49 @@
   /* One card: title, pill, headline (its number stays when folded), meter, body (clamped to six lines), "...(more)"
      (which un-clamps the body and opens the notes under it) and the reserved link row. Every card has an id, so a
      Needs you link can jump to it (item 1). */
+  /* The Subjects card's two live lines (Sam, 2026-11-23: "when I make edits or decisions, they are immediately
+     reflected in the numbers"): drawn first from the status files, then again from commons_subjects.js's own figures,
+     the live saves on top (subjectsLive), so the card and the Subjects tab show one number. */
+  function subjHeldKids(HC) {
+    return HC ? [a("#commons/subjects/held", fmt(HC.held) + " courses the M-ID mint holds"), " wait on " + fmt(HC.codes) + " local subject codes with no common subject code. "
+      + (HC.released ? fmt(HC.released) + " more are released by decisions saved since the build. " : "")
+      + "A common subject code saved at a college releases its held courses with ordinary titles; a shell title stays held."]
+      : ["The courses the M-ID mint holds for want of a common subject code: TBA."];
+  }
+  function subjTitleKids(LT) {
+    return [el("strong", { text: "Step b, local subject title: " }),
+      LT ? a("#commons/subjects", fmt(LT.named) + " local titles") : "TBA",
+      LT ? " at " : "", LT ? a("#commons/subjects", fmt(LT.collegesNamed) + " of " + fmt(LT.colleges) + " colleges") : "",
+      LT ? " with a catalog on file. Owner: the Courses bot takes each title from the catalog’s subject heading; a person settles the " : "",
+      LT ? a("#commons/subjects/disagree", fmt(LT.untitled) + " codes with no title") : "",
+      LT ? " (" + fmt(LT.notInCatalog) + " not in catalog, " + fmt(LT.notRead) + " not read yet, " + fmt(LT.blocked) + " blocked)." : ""];
+  }
+  function subjectsLive(M) {
+    function draw(X) {
+      return X.liveFigures().then(function (F) {
+        if (M.localTitles) {
+          var LT = {};
+          for (var k in M.localTitles) LT[k] = M.localTitles[k];
+          ["named", "collegesNamed", "colleges", "untitled", "notInCatalog", "notRead", "blocked"].forEach(function (k) { LT[k] = F[k]; });
+          M.localTitles = LT;
+        }
+        if (M.heldCodes && F.held != null) M.heldCodes = { held: F.held, codes: F.heldCodes, pairs: M.heldCodes.pairs, released: F.released };
+        var t = document.getElementById("cmf-subj-titles"), h = document.getElementById("cmf-subj-held");
+        if (t) { t.textContent = ""; subjTitleKids(M.localTitles).forEach(function (c) { t.appendChild(typeof c === "string" ? document.createTextNode(c) : c); }); }
+        if (h) { h.textContent = ""; subjHeldKids(M.heldCodes).forEach(function (c) { h.appendChild(typeof c === "string" ? document.createTextNode(c) : c); }); }
+        return F;
+      });
+    }
+    if (window.CPL_COMMONS_SUBJECTS && window.CPL_COMMONS_SUBJECTS.liveFigures) return draw(window.CPL_COMMONS_SUBJECTS);
+    var T = window.CPL_TABS;
+    if (!T || typeof T.loadScript !== "function") return Promise.resolve(null);
+    return new Promise(function (res) {
+      T.loadScript("commons_subjects.js", "CPL_COMMONS_SUBJECTS", function () {
+        var X = window.CPL_COMMONS_SUBJECTS;
+        res(X && X.liveFigures ? draw(X) : null);
+      });
+    });
+  }
   function card(o) {
     var art = el("article", { cls: "cmf-card" + (o.cls ? " " + o.cls : ""), "data-key": o.key, id: o.id || "cmf-card-" + o.key, "aria-labelledby": "cmf-t-" + o.key });
     var fold = el("button", { type: "button", cls: "cmn-word cmf-fold", "aria-expanded": "true", "aria-controls": "cmf-x-" + o.key, text: "Collapse" });
@@ -972,14 +1015,8 @@
         big: sOf ? fmt(S.settled) + " of " + fmt(S.of) : "TBA", rest: [" common subject codes settled"],
         body: [p([el("strong", { text: "Step a, common subject code: " }), sOf ? a("#canonical-subj4", fmt(S.settled) + " of " + fmt(S.of) + " disciplines settled") : "TBA",
             " in the Common Subjects Reference. Owner: a curator."]),
-          p(HC ? [a("#commons/subjects/held", fmt(HC.held) + " courses the M-ID mint holds"), " wait on " + fmt(HC.codes) + " local subject codes with no common subject code. Deciding one code releases every course under it."]
-            : ["The courses the M-ID mint holds for want of a common subject code: TBA."]),
-          p([el("strong", { text: "Step b, local subject title: " }),
-            LT ? a("#commons/subjects", fmt(LT.named) + " local titles") : "TBA",
-            LT ? " at " : "", LT ? a("#commons/subjects", fmt(LT.collegesNamed) + " of " + fmt(LT.colleges) + " colleges") : "",
-            LT ? " with a catalog on file. Owner: the Courses bot takes each title from the catalog’s subject heading; a person settles the " : "",
-            LT ? a("#commons/subjects/disagree", fmt(LT.untitled) + " codes with no title") : "",
-            LT ? " (" + fmt(LT.notInCatalog) + " not in catalog, " + fmt(LT.notRead) + " not read yet, " + fmt(LT.blocked) + " blocked)." : ""]),
+          el("p", { id: "cmf-subj-held" }, subjHeldKids(HC)),
+          el("p", { id: "cmf-subj-titles" }, subjTitleKids(LT)),
           p(["Step c, the M-ID, is the Courses and M-IDs card."])],
         method: [p([(sOf ? fmt(S.of) + " is the number of disciplines in the Common Subjects Reference; " + fmt(S.settled) + " have a settled common subject code. " : "")
           + (LT ? "The local titles come from the " + fmt(LT.colleges) + " catalogs filed so far (" + fmt(LT.courses) + " courses, " + fmt(LT.codes) + " subject codes). A title is the catalog’s own subject heading, saved in Title Case. A code with no title says why: not in catalog (the catalog was read and gives it no heading, so it waits on a person), not read yet (Sky reads it again), or blocked (the college’s site refused our reader). A noncredit code is recommended a title from the noncredit subject title list, lined up by its own COCI noncredit category. "
@@ -1167,6 +1204,8 @@
     return Promise.all([readJson(FILES.program), readJson(FILES.data), readJson(FILES.skills), titles, heldCodes, history, spend]).then(function (r) {
       var M = model(C, r[0], r[1], r[2], r[3], r[4], r[5], r[6]);
       render(root, M, opts);
+      /* The Subjects card's figures, with the live saves on top; a failed read keeps the status files' lines. */
+      M.subjectsReady = subjectsLive(M).then(null, function (e) { M.subjectsLiveError = String(e && e.message || e); return null; });
       wireHandover(M, opts);
       if (opts.focus === "needs") focusNeeds();
       if (opts.course) openCourse(opts.course);
