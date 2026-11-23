@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 602,
+   "count": 603,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3687,6 +3687,30 @@
      "title": "A red merge ref can be main's, and every open PR inherits it",
      "type": "methodology",
      "updated": "2026-10-14"
+    },
+    {
+     "created": "2026-11-23",
+     "governs": [
+      "kb/discipline_canonical_subj4.json",
+      "kb/reference/mq_handbook_20th.json",
+      "kb/_csr_propose_codes.py",
+      "kb/_csr_assign_codes.py",
+      "kb/_statewide_subject_codes.py",
+      "kb/status/mq_view.json"
+     ],
+     "path": "docs/kb-notes/methodology-a-reference-seeded-from-its-consumers-cannot-see-what-they-never-reached.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "csr",
+      "mq-disciplines",
+      "reference-data",
+      "data-quality",
+      "confidence"
+     ],
+     "title": "A reference seeded from its consumers cannot see what they never reached",
+     "type": "methodology",
+     "updated": "2026-11-23"
     },
     {
      "created": "2026-10-18",
@@ -9632,7 +9656,7 @@
      ],
      "title": "TOP is a last-in-line signal, never a gatekeeper",
      "type": "methodology",
-     "updated": "2026-09-25"
+     "updated": "2026-11-23"
     },
     {
      "created": "2026-10-05",
@@ -14054,7 +14078,7 @@
      ],
      "title": "The Commons \u2014 lessons",
      "type": null,
-     "updated": "2026-11-22"
+     "updated": "2026-11-23"
     },
     {
      "created": "2026-11-14",
@@ -16484,7 +16508,7 @@
      ],
      "title": "Common Subjects Reference (CSR) \u2014 one Common SUBJ per MQ discipline \u2014 lane state",
      "type": null,
-     "updated": "2026-11-21"
+     "updated": "2026-11-23"
     },
     {
      "created": "2026-08-28",
@@ -17122,7 +17146,7 @@
      ],
      "title": "Data sources: the register of datasets that could fill a Commons gap",
      "type": null,
-     "updated": "2026-11-13"
+     "updated": "2026-11-23"
     },
     {
      "created": "2026-08-30",
@@ -17479,8 +17503,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 673,
+   "count": 674,
    "docs": [
+    {
+     "created": "2026-11-23",
+     "governs": [],
+     "n": 718,
+     "path": "docs/session_718_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 718 handoff (from SkyGannet, S717, Sam's plain session of 2026-11-23: a Common SUBJ for every MQ discipline, the 20th edition, Colleges by source, a sidebar beside the view)",
+     "type": null,
+     "updated": "2026-11-23"
+    },
     {
      "created": "2026-11-23",
      "governs": [],
@@ -28675,5 +28713,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1562
+ "total": 1564
 }

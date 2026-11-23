@@ -1,7 +1,7 @@
 ---
 title: "The Commons — lessons"
 date: 2026-10-18
-updated: 2026-11-22
+updated: 2026-11-23
 tags: [lessons, commons, program-requirements, cer-procedures, skyview, common-cr-reference]
 artifacts:
   - commons_progress.js
@@ -636,3 +636,24 @@ Sam's asks: `r-commons-page-clarity-sam-2026-11-21`, `r-commons-cdc-card-sam-202
 - **A form writes only the fields it shows.** In #3671 a noncredit form with no title field re-saved the code's stale
   title, which the reviewer never saw; the second reader caught it. A form with no title field now writes no title,
   and a title saved before the code's dominant category moved shows read-only with where it now lives.
+
+## S717 (SkyGannet, Sam's plain session, 2026-11-23): Colleges by source, the panel's move tools, a sidebar beside the view
+
+- **A status word needs a record of the tries, not only of the reads.** The titles file shows a college once its
+  subject list is read, so a probe sent, a way that is blocked, or a way never tried all looked the same. Colleges by
+  source (#3724) reads a small attempts register, `kb/reference/subject_source_attempts.json`: one list per college and
+  way, where the newest entry is the way's status and nothing is deleted. COCI and the MIS reports carry no subject names (Sam checked),
+  so neither is a way to look.
+- **A tool built while the person uses it gets the shape of the work.** Sam asked for the move tools (#3725) while
+  moving Cerritos AED construction courses: a move row on each course group, so the picker sits beside the checked
+  boxes it acts on; Collapse all for a long panel; credit codes A to Z by discipline name, then noncredit, so a
+  four-letter code is found by the name a person knows; VOCE named *Vocational: Noncredit*.
+- **A sidebar over the view hides what it describes.** Sam's rule (#3727): the view gives up the panel's width and
+  takes it back on Close; below 900px the panel covers it. The guard reads `csb-beside` on `#commons-root` and the
+  `--csb-panel-w` width, then checks Close removes both. The panel still runs the full window height over the right end
+  of COBI's header bar, so the fix left is the panel's top offset.
+- **A sidebar's table is a table (Sam, 2026-11-23, not built):** it sorts and resizes like the main one, and a count in
+  it opens a second sidebar. The MQ view is its first reader: in COBI a code opens the Subjects statewide list filtered
+  to that code, so the view reuses a list rather than drawing a new one.
+- **Two open PRs that both run the docs lint both write `kb/docs_audit/<date>.*`.** #3727 and this checkpoint each
+  carry a copy; the second to merge reruns `python3 kb/_docs_audit.py` after its update from `main`.
