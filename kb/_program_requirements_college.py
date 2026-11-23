@@ -4300,9 +4300,21 @@ def pdf_pinned_heading(pages: list[str], program: dict, pin: dict | None) -> tup
     even where one names no listed course (Clovis 33492's total prints on p.149). `through` is at most
     PDF_RUN_PAGES past the pin, never before it and never past the file; outside that the pin binds nothing. A pin
     without `through` reads as before.
-    Not built yet (second reader on #3683): the window through `through` holds whatever else that page prints
-    (33492's p.149 also holds the Drinking Water Treatment certificate's list), so a later pin may name `until`, the
-    words the next program opens on, and the window would end there."""
+
+    A pin may name `until` (S714, d-rios-until-pin-s714), the words the next section opens on: the window through
+    `through` holds whatever else those pages print (Sacramento City prints its Mechanical Systems Technician
+    certificate on p.526 below the Mechanical-Electrical Technology degree's tail, and the Mechanical-Electrical
+    Technology certificate on p.527 below the Mechanical Systems Technician's outcomes), so the window ends at the
+    start of the line carrying the `until` words, the first place they print after the opening words, on the
+    pinned page through `through` (the pinned page alone without it). The page they print on becomes the window's
+    last page (head["until"] = {"page", "at"}), and the title words must print inside the window. A person named
+    both ends, so pdf_best cuts at both without its kept-codes guard (the S680 guard leaves the window open at the
+    page's top when the lines above the heading name listed codes, Cosumnes River's 04614 and 04602). `until`
+    words that print nowhere in the window bind nothing. A pin without `until` reads as before.
+
+    A pin may name `printed_title` (S714), the title as the catalog prints it where it drops a prefix of the state's
+    (Cosumnes River's "A.S. in Web Developer" for the state's "CIS - Web Developer"): its words stand in for the
+    state title's in the title check, and they must be the state title's words with some dropped, never one added."""
     if not pin:
         return None, None
     i = int(pin.get("page") or 0) - 1
@@ -4322,14 +4334,48 @@ def pdf_pinned_heading(pages: list[str], program: dict, pin: dict | None) -> tup
     m = re.search(r"\s+".join(re.escape(w) for w in words), pages[i] or "")
     if not m:
         return None, "the quoted words are not on PDF page %d" % (i + 1)
-    pats = [re.compile(r"\b" + re.escape(w) + r"\b") for w in P.title_tokens(program.get("title") or "")]
-    span = "\n".join(pages[j] or "" for j in range(i, last + 1))
+    at = pages[i].rfind("\n", 0, m.start()) + 1
+    tokens = P.title_tokens(program.get("title") or "")
+    if pin.get("printed_title") is not None:
+        # The title as the catalog prints it, where it drops the state title's prefix (S714: Cosumnes River prints
+        # "A.S. in Web Developer" for the state's "CIS - Web Developer"). Its words stand in for the state's in the
+        # title check, and they may only drop words of the state's title, never add one.
+        printed = P.title_tokens(str(pin.get("printed_title") or ""))
+        if not printed or not set(printed) <= set(tokens):
+            return None, "the pin's printed_title (%r) is not the state's title with words dropped" % (pin["printed_title"],)
+        tokens = printed
+    pats = [re.compile(r"\b" + re.escape(w) + r"\b") for w in tokens]
+    until = (pin.get("until") or "").split() if isinstance(pin.get("until"), str) else None
+    if pin.get("until") is not None and not until:
+        return None, "the pin's until (%r) names no words" % (pin["until"],)
+    end = None
+    if until:
+        ux = re.compile(r"\s+".join(re.escape(w) for w in until))
+        for j in range(i, last + 1):
+            mu = ux.search(pages[j] or "", m.end() if j == i else 0)
+            if mu:
+                end = (j, (pages[j] or "").rfind("\n", 0, mu.start()) + 1)
+                break
+        if end is None:
+            return None, ("the pin's until words are not on PDF page %d after its words" % (i + 1) if last == i else
+                          "the pin's until words are not on PDF pages %d through %d after its words" % (i + 1, last + 1))
+        last = end[0]
+        if end[0] == i and end[1] <= at:
+            return None, "the pin's until words open on the line its words open on (PDF page %d)" % (i + 1)
+        span = "\n".join(((pages[j] or "")[at if j == i else 0:end[1] if j == end[0] else None])
+                         for j in range(i, last + 1))
+    else:
+        span = "\n".join(pages[j] or "" for j in range(i, last + 1))
     if not pats or not _titled(span, pats):
+        if end is not None:
+            return None, "the window from the pin's words to its until words does not print every title word"
         return None, ("PDF page %d does not print every title word" % (i + 1) if last == i else
                       "PDF pages %d through %d do not print every title word" % (i + 1, last + 1))
-    head = {"page": i, "at": pages[i].rfind("\n", 0, m.start()) + 1, "pinned": True}
-    if last > i:
+    head = {"page": i, "at": at, "pinned": True}
+    if last > i or end is not None:
         head["through"] = last
+    if end is not None:
+        head["until"] = {"page": end[0], "at": end[1]}
     return head, None
 
 
@@ -4882,8 +4928,15 @@ def pdf_best(url: str, pages: list[str], program: dict, courses: list[dict], ext
     if not run:
         return None
     parts = []
+    exact = heading.get("until") if heading else None
     for n, i in enumerate(run):
         txt = pages[i]
+        if exact:
+            # A pin naming until (S714): both ends were named by a person, so the window is cut at the pin's words
+            # and at the until words exactly, whatever listed codes the lines outside them print.
+            txt = txt[heading["at"] if i == heading["page"] else 0:exact["at"] if i == exact["page"] else None]
+            parts.append("[page %d]\n%s" % (i + 1, txt))
+            continue
         cut = txt
         if n == 0 and cn_at >= 0:
             # From the start of the line that prints the control number: the heading.
@@ -5201,6 +5254,9 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
                 {"page": pin.get("page"), "bound": True} if head else {"page": pin.get("page"), "bound": False, "why": why})
             if pin.get("through") is not None:
                 report["pdf"]["pinned"][prog["control_number"]]["through"] = pin["through"]
+            if head and head.get("until"):
+                # The page the until words print on, where the window ends (S714).
+                report["pdf"]["pinned"][prog["control_number"]]["until_page"] = head["until"]["page"] + 1
             if not head:
                 print("::warning::%s %s: the reconcile entry's pdf_pages pin is refused (%s); no page is read for it"
                       % (college, prog["control_number"], why), flush=True)

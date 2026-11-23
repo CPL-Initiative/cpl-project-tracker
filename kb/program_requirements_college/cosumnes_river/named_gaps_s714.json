@@ -1,0 +1,35 @@
+{
+ "_readme": "S714 (rios, lane 1), the gap census's reader_page_assignment lever (run 45161770730): 3 programs of Cosumnes River College whose filed record places none of the state's listed courses and whose own section the 2026-27 catalog does not print. Free page read 45167465999 printed every page of the hand-filed catalog (kb/hand_filed_catalogs/cosumnes_river.json, sha256 pinned); the college's other 16 programs on the lever are pinned in its reconcile entry (kb/program_requirements_reconcile.json, pdf_pages). These are filed as named gaps and are never sent to a paid read: no page holds their requirements. Their filed records stay as filed (the load skips a record that places none, d-load-skips-places-none-s697). No model call, no Supabase write. They are the college's to settle in COCI.",
+ "college": "Cosumnes River College",
+ "written": "2026-11-23T12:02:44Z",
+ "capture": "45018951701",
+ "page_reads": [
+  "45167465999"
+ ],
+ "reasons": {
+  "credit_not_in_catalog": "A credit program the 2026-27 catalog prints under no heading of its own: no page of the hand-filed file names its title with its award, and the department's list of degrees and certificates does not list it."
+ },
+ "programs": [
+  {
+   "control_number": "07320",
+   "title": "School Foodservice Specialist",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "reason": "credit_not_in_catalog",
+   "note": "The Business and Culinary Arts departments' lists of awards (PDF pp.218 and 282) do not name it; 'foodservice' prints only in other programs' outcomes."
+  },
+  {
+   "control_number": "11330",
+   "title": "CIS: Server Administrator",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "reason": "credit_not_in_catalog",
+   "note": "The Computer Information Science department's list of 21 awards (PDF p.245) does not name it, and no page prints 'Server Administrator'."
+  },
+  {
+   "control_number": "35408",
+   "title": "CIS - Linux Systems Administrator",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "reason": "credit_not_in_catalog",
+   "note": "The Computer Information Science department's list of awards (PDF p.245) does not name it, and no page prints 'Linux Systems Administrator'."
+  }
+ ]
+}
