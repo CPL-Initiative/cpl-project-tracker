@@ -1,5 +1,5 @@
 {
- "_what": "S714 (lane 2, East Los Angeles): the reconcile_steps lever of the committed census (written_at 2026-11-23 11:07Z, run 45161770730, commit f164f21e) at the college, frozen: kb/_program_piles_s714_ela.py planned from it, and a later census reads the planned programs collected.",
+ "_what": "The gap census's reconcile_steps lever at East Los Angeles College as it stood when S714's East Los Angeles plan was written and applied (#3716), before census run 45209484531 moved the applied records out of it. tests/program_piles_s714_ela_test.py reads the plan against this, as the CCSF test reads its own (S715).",
  "written_at": "2026-11-23 11:07Z",
  "levers": [
   {

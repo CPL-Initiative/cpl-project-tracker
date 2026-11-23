@@ -26,10 +26,10 @@ def check(cond, msg):
         failures.append(msg)
 
 
-secs = E.sections()
-# The census the plan read (run 45161770730, commit f164f21e), frozen: a later census reads the planned programs
-# collected and lists them no more.
+# The census as it stood at the plan (tests/fixtures/harvest_gap_census_s714_ela.json): the nightly census moves the
+# applied records out of the lever, so the live file reads none of them (S715, as the CCSF test reads its own).
 CENSUS_AT_PLAN = os.path.join(HERE, "fixtures", "harvest_gap_census_s714_ela.json")
+secs = E.sections()
 members = E.census_members(CENSUS_AT_PLAN)
 check(len(members) == 24 and set(members) == set(E.HAND_HELD) and set(members) <= set(secs),
       "the census's 24 East Los Angeles reconcile_steps members are each hand-held and each has its section")
