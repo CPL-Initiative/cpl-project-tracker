@@ -65,7 +65,9 @@ stays off the Los Rios colleges and any college lane 1 takes later.
 
 ## Split changes during the run
 
-(none yet)
+- 11:37Z: workers `piles` (lane 2, `claude/s714-piles-ccsf`, City College of San Francisco first) and `rios`
+  (lane 1, `claude/s714-rios`, Sacramento City and Cosumnes River first) started, each at high effort on Opus 5.5.
+  The display build waits for a slot and for no apply in flight.
 
 ## Conductor settings
 
@@ -82,6 +84,8 @@ by Opus 5.5.
 
 | PR or branch | State | Next |
 |---|---|---|
-| this PR (`claude/awesome-fermat-ka0z4l`) | the declaration | becomes the checkpoint at sign-off |
+| #3713 (`claude/awesome-fermat-ka0z4l`) | the declaration | becomes the checkpoint at sign-off |
+| `claude/s714-piles-ccsf` (`piles`) | started | its plan, a second reader, the conductor's apply |
+| `claude/s714-rios` (`rios`) | started | its reader change, a second reader, the conductor's paid reads |
 | #3712 (S712, Sam's plain session) | its own session's | none from this run |
 | #3383 | dependabot's | waits |
