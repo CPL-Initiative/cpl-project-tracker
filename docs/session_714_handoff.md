@@ -75,3 +75,7 @@ college until it merges.
   72 KB, and matched 15 of 15.
 - 07:38Z: #3684 brought up from `main` and marked ready (`0177b35a`); its `test` is running. #3705 and #3683 follow it,
   one at a time.
+- 07:45Z: City College of San Francisco (`peralta`): outline read 45128775065 on `claude/slo-ccsf`, slice 1 of 4 filed
+  (355 pages, 1,436 SLOs, no objectives printed); of the 53 page-not-found programs, 46 filed as named gaps
+  (`no_record_s713.json`), 7 own pages pinned, 17954 read for $0.17 and held (its lists add to 4.0–13.0 against the
+  printed 18.0), 6 held for a list or wording rule (shares 0 to 0.333). No PR opened while the count is over the cap.
