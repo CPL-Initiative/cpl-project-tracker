@@ -1,0 +1,2070 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30); S713: a lecture and its lab, an earlier list's unused courses, two courses renumbered",
+ "at": "2026-11-23T09:10:33Z",
+ "college": "Clovis Community College",
+ "census": {
+  "file": "kb/status/harvest_gap_census.json",
+  "lever": "reconcile_steps",
+  "members": [
+   "33431",
+   "33432",
+   "33486",
+   "33489",
+   "33501",
+   "33502",
+   "33506",
+   "35535",
+   "36050",
+   "36326",
+   "37227",
+   "39539",
+   "42235",
+   "43015",
+   "45325",
+   "45957"
+  ]
+ },
+ "moved": 6,
+ "by": {
+  "course_renumbers": 2,
+  "lab_pairs+also_from": 1,
+  "also_from": 1,
+  "lab_pairs": 2
+ },
+ "precision": {
+  "read": 17,
+  "right": 17,
+  "wrong": 0,
+  "no_record_file": 0,
+  "not_hand_held": 0,
+  "by_answer": {
+   "none": 11,
+   "passes": 6
+  },
+  "wrong_keys": []
+ },
+ "claim_checks": {
+  "lab_pairs": {
+   "stands": 3
+  },
+  "also_from": {
+   "stands": 2
+  },
+  "course_renumbers": {
+   "stands": 2
+  },
+  "against_keys": []
+ },
+ "boundaries": {
+  "counts": {
+   "file lists the printed code right": 2,
+   "file lists neither right": 2,
+   "total low one short right": 4,
+   "total low one past right": 4,
+   "lab without its lecture right": 3
+  },
+  "wrong": []
+ },
+ "recall": {
+  "held": 1829,
+  "right": 1829,
+  "wrong": 0,
+  "by_answer": {
+   "ge_units_not_read": 171,
+   "none": 1466,
+   "lists_past_their_figure": 21,
+   "hours_total_differs": 18,
+   "hours_within_printed_range": 12,
+   "hours_total_not_read": 33,
+   "no_hours_read": 56,
+   "no_units_read": 24,
+   "total_not_printed": 7,
+   "total_differs": 11,
+   "section_cut_off": 10
+  }
+ },
+ "changes": {
+  "clovis": [
+   {
+    "college": "Clovis Community College",
+    "control_number": "33486",
+    "moves": [
+     "course_renumbers"
+    ],
+    "passes_before": false,
+    "passes_after": true
+   },
+   {
+    "college": "Clovis Community College",
+    "control_number": "33502",
+    "moves": [
+     "arithmetic"
+    ],
+    "passes_before": false,
+    "passes_after": true
+   },
+   {
+    "college": "Clovis Community College",
+    "control_number": "33508",
+    "moves": [
+     "arithmetic"
+    ],
+    "passes_before": false,
+    "passes_after": true
+   },
+   {
+    "college": "Clovis Community College",
+    "control_number": "35535",
+    "moves": [
+     "arithmetic"
+    ],
+    "passes_before": false,
+    "passes_after": true
+   },
+   {
+    "college": "Clovis Community College",
+    "control_number": "36632",
+    "moves": [
+     "arithmetic"
+    ],
+    "passes_before": true,
+    "passes_after": true
+   },
+   {
+    "college": "Clovis Community College",
+    "control_number": "42235",
+    "moves": [
+     "arithmetic"
+    ],
+    "passes_before": false,
+    "passes_after": true
+   },
+   {
+    "college": "Clovis Community College",
+    "control_number": "45957",
+    "moves": [
+     "course_renumbers"
+    ],
+    "passes_before": false,
+    "passes_after": true
+   }
+  ],
+  "elsewhere": [
+   {
+    "college": "Chabot College",
+    "control_number": "37428",
+    "moves": [
+     "arithmetic"
+    ],
+    "passes_before": false,
+    "passes_after": true,
+    "hand": "passes: 'GEOS 11 AND GEOS 11L (both together)', 'ENSC 15 AND ENSC 15L'"
+   },
+   {
+    "college": "Cuesta College",
+    "control_number": "43775",
+    "moves": [
+     "arithmetic"
+    ],
+    "passes_before": false,
+    "passes_after": true,
+    "hand": "passes: 'BIO 201A OR BIO 211 OR (BIO 212 AND BIO 212L)'"
+   },
+   {
+    "college": "Mendocino College",
+    "control_number": "03425",
+    "moves": [
+     "arithmetic"
+    ],
+    "passes_before": false,
+    "passes_after": true,
+    "hand": "passes: 'GEL 201 & GEL 201L taken together'"
+   },
+   {
+    "college": "Mendocino College",
+    "control_number": "16540",
+    "moves": [
+     "arithmetic"
+    ],
+    "passes_before": false,
+    "passes_after": true,
+    "hand": "passes: 'GEL 201 (3) AND GEL 201L (1) together'"
+   },
+   {
+    "college": "Mendocino College",
+    "control_number": "31958",
+    "moves": [
+     "arithmetic"
+    ],
+    "passes_before": false,
+    "passes_after": true,
+    "hand": "passes: 'the pair BIO 202 and BIO 202L together'"
+   },
+   {
+    "college": "Palomar College",
+    "control_number": "19779",
+    "moves": [
+     "arithmetic"
+    ],
+    "passes_before": false,
+    "passes_after": true,
+    "hand": "passes: 'the pair BIOL C1001 (3) AND BIOL C1001L (1)'"
+   },
+   {
+    "college": "Santa Ana College",
+    "control_number": "31887",
+    "moves": [
+     "arithmetic"
+    ],
+    "passes_before": false,
+    "passes_after": false,
+    "hand": "none: BIOL 109 and 109L together, and BIOL 109H at 3 alone keeps the low end at 51"
+   },
+   {
+    "college": "Santa Ana College",
+    "control_number": "31980",
+    "moves": [
+     "arithmetic"
+    ],
+    "passes_before": false,
+    "passes_after": true,
+    "hand": "passes: 'the pair GEOL 101 AND GEOL 101L taken together'"
+   }
+  ],
+  "not_exact": [
+   {
+    "college": "San Diego City College",
+    "control_number": "17972",
+    "moves": [],
+    "passes_before": false,
+    "passes_after": false,
+    "not_exact": [
+     "arithmetic"
+    ]
+   },
+   {
+    "college": "San Diego City College",
+    "control_number": "17976",
+    "moves": [],
+    "passes_before": false,
+    "passes_after": false,
+    "not_exact": [
+     "arithmetic"
+    ]
+   }
+  ]
+ },
+ "elsewhere_precision": {
+  "read": 10,
+  "right": 10,
+  "wrong": 0,
+  "wrong_keys": []
+ },
+ "held": [
+  {
+   "control_number": "33431",
+   "why": "held: two 'Select a minimum' lists add to 11 against 18, and the record keeps no list or line for the other 7; a reread (33489's page prints the fill sentence in the same catalog)"
+  },
+  {
+   "control_number": "33432",
+   "why": "held: #3683 pins it to pp.106-107 (through); it waits on that pinned reread"
+  },
+  {
+   "control_number": "33489",
+   "why": "held: the note quotes 'Select additional units from the above areas to total at least 18 units', a fill to the total no field holds; a Clovis reconcile step on the page text passes it free on the runner (not built here)"
+  },
+  {
+   "control_number": "33501",
+   "why": "held: MATH 17 prints both in the core and as List A's one course, and 'List A and List B courses total a minimum of 6 units' reads with the core at 14; a person reads the page"
+  },
+  {
+   "control_number": "33506",
+   "why": "held: five one-course lists add to 15-17 against 18-20, and the record holds no sixth requirement; a reread (its ANTH 13 for the file's ANTHRO 13 waits on the state file's title)"
+  },
+  {
+   "control_number": "36050",
+   "why": "held: the lists add to 18-19 against a printed 19 with no 4-unit course in its first lists; a reread"
+  },
+  {
+   "control_number": "36326",
+   "why": "held: List A 'Select two to three courses' holds two 1-unit courses (GEOG 1L, GEOG 30), and the printed 18 needs two 3-unit ones; a person reads the page"
+  },
+  {
+   "control_number": "37227",
+   "why": "held: the note says MATH C2210 and the statistics course may be alternatives (42 against 39-42); a reread"
+  },
+  {
+   "control_number": "39539",
+   "why": "held: the prerequisite list adds to 22-23 against its printed 26-27 and Year 1 Fall to 12 against 11; the catalog's own figures, for a person or a reread"
+  },
+  {
+   "control_number": "43015",
+   "why": "held: List A pairs 'CHEM 1A AND CHEM 1B' and 'CHEM 28A AND CHEM 29A' under 'Select one to two courses' (21-26 against 27-31); a reread with the reader's together field"
+  },
+  {
+   "control_number": "45325",
+   "why": "held: the record holds only the elective list (1-4 against 18-21); the required core is unread, a reread"
+  }
+ ],
+ "records": [
+  {
+   "college": "Clovis Community College",
+   "control_number": "33486",
+   "award": "A.A. Degree",
+   "extracted_run": "44522071814",
+   "moves_to": "passes",
+   "readings": [
+    "course_renumbers"
+   ],
+   "also_from": null,
+   "path": "kb/program_requirements_college/clovis_community/records/33486.json",
+   "before_image": {
+    "program_title": "Liberal Studies",
+    "award": "A.A. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=139",
+    "measure": "units",
+    "total_min": 18,
+    "total_max": 19,
+    "record": {
+     "program": {
+      "section_heading": "Liberal Studies Associate in Arts Degree",
+      "measure": "units",
+      "total_units": {
+       "min": 18,
+       "max": 19
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Demonstrate effective written and oral communication skills across the broad categories of intellectual heritage, artistic expression, the natural and physical world, human behavior, and health concepts."
+      ],
+      "careers": [
+       "public services"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "List A",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "COMM 25",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CSCI 1",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL C1001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL C1001H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHIL 2",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHIL 4",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHIL 6",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOC 1B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List B",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "BIOL C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "BIOL C1001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "GEOL 9",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SCI 1A",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List C",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ART 2",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARTH C1100",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ARTH C1200",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ARTH C1200H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 12",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List D",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ENGL C1002",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL C1002H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST C1001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST C1002",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "HIST C1002H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 20",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLS C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "POLS C1000H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List E",
+       "rule": "choose_courses",
+       "minimum": 2,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ECE 2",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "EDUC 10",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOG 6",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HLTH 1",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "IS 15",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LING 11",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "PSYC C1000H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": false,
+     "arithmetic": "equal",
+     "placed": 32,
+     "listed": 33
+    },
+    "extracted_run": "44522071814"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "equal",
+     "placed": 33,
+     "listed": 33
+    }
+   },
+   "i": 1
+  },
+  {
+   "college": "Clovis Community College",
+   "control_number": "33502",
+   "award": "A.A- T Degree",
+   "extracted_run": "44522071814",
+   "moves_to": "passes",
+   "readings": [
+    "lab_pairs",
+    "also_from"
+   ],
+   "also_from": [
+    {
+     "block": "List B: Select one course",
+     "from": [
+      "List A: Select one course, (two if you choose BIOL C1001 and BIOL C1001L)"
+     ]
+    }
+   ],
+   "path": "kb/program_requirements_college/clovis_community/records/33502.json",
+   "before_image": {
+    "program_title": "Psychology",
+    "award": "A.A- T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=182",
+    "measure": "units",
+    "total_min": 19,
+    "total_max": 21,
+    "record": {
+     "program": {
+      "section_heading": "Psychology (AA-T in Psychology) — heading not shown in excerpt",
+      "measure": "units",
+      "total_units": {
+       "min": 19,
+       "max": 21
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "Cal-GETC",
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Core Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "STAT C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "BA 23",
+           "units": 4,
+           "catalog_addition": false
+          },
+          {
+           "code": "PSYC 42",
+           "units": 4,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "PSYC C1000H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC 45",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List A: Select one course, (two if you choose BIOL C1001 and BIOL C1001L)",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "BIOL C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "BIOL C1001",
+           "units": 3,
+           "catalog_addition": true
+          },
+          {
+           "code": "BIOL C1001L",
+           "units": 1,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": true
+        },
+        {
+         "code": "BIOL 11A",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL 5",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC 36",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List B: Select one course",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "PSYC 5",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC 38",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ECE 14",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECE 2",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOCI C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "List C: Select one course (two if you choose MATH C2210 and MATH C2220)",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "PSYC 16",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC 25",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC 33",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CSCI 40",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH C2210",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MATH C2220",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 22,
+     "listed": 23
+    },
+    "extracted_run": "44522071814"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "equal",
+     "placed": 22,
+     "listed": 23
+    }
+   },
+   "i": 2
+  },
+  {
+   "college": "Clovis Community College",
+   "control_number": "35535",
+   "award": "A.A- T Degree",
+   "extracted_run": "44522071814",
+   "moves_to": "passes",
+   "readings": [
+    "also_from"
+   ],
+   "also_from": [
+    {
+     "block": "List B: Select one course",
+     "from": [
+      "List A: Select one course"
+     ]
+    }
+   ],
+   "path": "kb/program_requirements_college/clovis_community/records/35535.json",
+   "before_image": {
+    "program_title": "Economics",
+    "award": "A.A- T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=165",
+    "measure": "units",
+    "total_min": 21,
+    "total_max": 24,
+    "record": {
+     "program": {
+      "section_heading": "ASSOCIATE IN ARTS IN ECONOMICS FOR TRANSFER DEGREE (MAJOR #C.7200.AA-T)",
+      "measure": "units",
+      "total_units": {
+       "min": 21,
+       "max": 24
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "Cal-GETC",
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Extract meaning from basic information using mathematical and graphical analysis.",
+       "Be familiar with the two bodies responsible for conducting macroeconomic policy in the US economy. Understand how the policies that are made impact the economy.",
+       "Identify the characteristics of each of the four market structures.",
+       "Articulate how consumers and producers each handle the problem of scarcity in achieving their specific objective."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Core Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ECON C2002",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "ECON C2001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "STAT C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "BA 23",
+           "units": 4,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH C2210",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "List A: Select one course",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ACCTG 4A",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ACCTG 4B",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BA 5",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BA 39",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "IS 15",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH C2220",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "MATH 17",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List B: Select one course",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "MATH 6",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 11,
+     "listed": 11
+    },
+    "extracted_run": "44522071814"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "equal",
+     "placed": 11,
+     "listed": 11
+    }
+   },
+   "i": 3
+  },
+  {
+   "college": "Clovis Community College",
+   "control_number": "42235",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "44522071814",
+   "moves_to": "passes",
+   "readings": [
+    "lab_pairs"
+   ],
+   "also_from": null,
+   "path": "kb/program_requirements_college/clovis_community/records/42235.json",
+   "before_image": {
+    "program_title": "Elementary Teacher Level 3",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=121",
+    "measure": "units",
+    "total_min": 20,
+    "total_max": 20,
+    "record": {
+     "program": {
+      "section_heading": "ELEMENTARY TEACHER LEVEL 3 (Major #C.589C.CA) CERTIFICATE OF ACHIEVEMENT",
+      "measure": "units",
+      "total_units": {
+       "min": 20,
+       "max": 20
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": null,
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [],
+      "careers": [
+       "teacher assistants",
+       "instructional aides",
+       "afterschool program teachers",
+       "tutors"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required Core Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 20,
+        "max": 20
+       },
+       "courses": [
+        {
+         "code": "BIOL C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "BIOL C1001",
+           "units": 3,
+           "catalog_addition": true
+          },
+          {
+           "code": "BIOL C1001L",
+           "units": 1,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": true
+        },
+        {
+         "code": "SCI 1A",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST C1001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL C1002",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL C1002H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLS C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "POLS C1000H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ART 2",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "MUS 12",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 10,
+     "listed": 11
+    },
+    "extracted_run": "44522071814"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "equal",
+     "placed": 10,
+     "listed": 11
+    }
+   },
+   "i": 4
+  },
+  {
+   "college": "Clovis Community College",
+   "control_number": "45957",
+   "award": "A.A- T Degree",
+   "extracted_run": "39006155986",
+   "moves_to": "passes",
+   "readings": [
+    "course_renumbers"
+   ],
+   "also_from": null,
+   "path": "kb/program_requirements_college/clovis_community/records/45957.json",
+   "before_image": {
+    "program_title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=171",
+    "measure": "units",
+    "total_min": 32,
+    "total_max": 24,
+    "record": {
+     "program": {
+      "section_heading": "LAW, PUBLIC POLICY, AND SOCIETY (Major #C.7381.AA-T)",
+      "measure": "units",
+      "total_units": {
+       "min": 32,
+       "max": 24
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "Cal-GETC",
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Conduct research and effectively write about historical, social, political and economic issues related to law.",
+       "Demonstrate independent and critical thinking regarding important topics in law."
+      ],
+      "careers": []
+     },
+     "blocks": [
+      {
+       "name": "Required Core Courses (Understanding the Law)",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "HIST 10",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRIM 1",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRIM 6",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRIM 14",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BA 18",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Core Courses (Ethics)",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "PHIL 1C",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "PHIL 1CH",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Core Courses (Oral Communication)",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "COMM C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "COMM C1000H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Core Courses (Written Communication)",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ENGL C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL C1000H",
+           "units": 4,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Core Courses (Critical Thinking)",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "COMM 25",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL C1001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL C1001H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Core Courses (Quantitative Reasoning)",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "BA 23",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "STAT C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "PSYC 42",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Core Courses (US History)",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "HIST C1001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST C1002",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "HIST C1002H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Required Core Courses (Introduction to American Government and Politics)",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "POLS C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "POLS C1000H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Select 2 courses from two of the areas listed below",
+       "rule": "choose_courses",
+       "minimum": 2,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "CRIM 1",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRIM 6",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRIM 3",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRIM 20",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CRIM 11",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BA 18",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECON C2001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECON C2002",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLS 3",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLS 5",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLS 24",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOCI 3",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOCI 1B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ANTHRO 2",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COMM 10",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOG 2",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOCI 11",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SOCI 2",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 32",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ETHNST 32",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "COUN 53",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": false,
+     "invented": false,
+     "arithmetic": "equal",
+     "placed": 39,
+     "listed": 40
+    },
+    "extracted_run": "39006155986"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "equal",
+     "placed": 40,
+     "listed": 40
+    }
+   },
+   "i": 5
+  },
+  {
+   "college": "Clovis Community College",
+   "control_number": "33508",
+   "award": "A.A- T Degree",
+   "extracted_run": "39006155986",
+   "moves_to": "passes",
+   "readings": [
+    "lab_pairs"
+   ],
+   "also_from": null,
+   "path": "kb/program_requirements_college/clovis_community/records/33508.json",
+   "before_image": {
+    "program_title": "Elementary Teacher Education",
+    "award": "A.A- T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=166",
+    "measure": "units",
+    "total_min": 49,
+    "total_max": 49,
+    "record": {
+     "program": {
+      "section_heading": "Associate in Arts in Elementary Teacher Education for Transfer Degree",
+      "measure": "units",
+      "total_units": {
+       "min": 49,
+       "max": 49
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "Cal-GETC",
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [],
+      "careers": [
+       "teaching in the kindergarten through sixth (K-6) grades"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required Core Courses",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "EDUC 10",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECE 2",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIOL C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "BIOL C1001",
+           "units": 3,
+           "catalog_addition": true
+          },
+          {
+           "code": "BIOL C1001L",
+           "units": 1,
+           "catalog_addition": true
+          }
+         ],
+         "catalog_addition": true
+        },
+        {
+         "code": "SCI 1A",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOL 9",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MATH 10A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "COMM C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "COMM C1000H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL C1000",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL C1000H",
+           "units": 4,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL C1002",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL C1002H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "GEOG 6",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST C1001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "HIST 20",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "POLS C1000",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "POLS C1000H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List A: Choose one course",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "COMM 25",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ENGL C1001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "ENGL C1001H",
+           "units": 3,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "PHIL 2",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "List B: Choose one course",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "ART 2",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUS 12",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 22,
+     "listed": 25
+    },
+    "extracted_run": "39006155986"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "equal",
+     "placed": 22,
+     "listed": 25
+    }
+   },
+   "i": 6
+  }
+ ],
+ "representation": "checks.arithmetic as the scorer reads a lecture and its lab and an earlier list's unused courses; checks.coverage and checks.invented as it reads Clovis's two renumbers; the record unchanged",
+ "rescored_not_planned": [
+  {
+   "control_number": "36632",
+   "moves": [
+    "arithmetic"
+   ],
+   "passes_before": true,
+   "passes_after": true,
+   "why": "outside the lever"
+  }
+ ],
+ "claim_check_reads": "The claim checks read the record's notes and its lists' names: the reader's own words from the read behind the record (extracted_run). The page text of that read stays in its run's artifact, which a session cannot read, and sources.json describes the latest capture, another read (p-claim-check-reads-current-capture-s713).",
+ "follow_verdict": "The follow_verdict trigger marks a row checked when its latest verdict is a confirm whose fingerprint matches the record and the machine checks pass. The record is unchanged here, so such a confirm on a row this plan moves to passing would check it at the apply, and the rollback would skip it. The pre-read counts those rows (confirm_matches); the apply aborts, writing nothing, unless the count is 0.",
+ "pre_read": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Clovis Community College', '33486', 44522071814, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1001H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ENGL C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 4\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 1B\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List A\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 9\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SCI 1A\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"List B\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARTH C1100\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ARTH C1200H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ARTH C1200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 12\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List C\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1002H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ENGL C1002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST C1002H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST C1002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLS C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"POLS C1000\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List D\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EDUC 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTH 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IS 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LING 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"List E\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"public services\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate effective written and oral communication skills across the broad categories of intellectual heritage, artistic expression, the natural and physical world, human behavior, and health concepts.\"],\"section_heading\":\"Liberal Studies Associate in Arts Degree\",\"total_units\":{\"max\":19,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":false,\"listed\":33,\"placed\":32}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":33,\"placed\":33}'::jsonb),\n  (2, 'Clovis Community College', '33502', 44522071814, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"BA 23\",\"units\":4},{\"catalog_addition\":false,\"code\":\"PSYC 42\",\"units\":4}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 45\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"BIOL C1001\",\"units\":3},{\"catalog_addition\":true,\"code\":\"BIOL C1001L\",\"units\":1}],\"catalog_addition\":true,\"code\":\"BIOL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 11A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 5\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 36\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List A: Select one course, (two if you choose BIOL C1001 and BIOL C1001L)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ECE 14\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC 38\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOCI C1000\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List B: Select one course\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 16\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 33\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI 40\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH C2210\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH C2220\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"List C: Select one course (two if you choose MATH C2210 and MATH C2220)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Psychology (AA-T in Psychology) — heading not shown in excerpt\",\"total_units\":{\"max\":21,\"min\":19}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":23,\"placed\":22}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":23,\"placed\":22}'::jsonb),\n  (3, 'Clovis Community College', '35535', 44522071814, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ECON C2002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ECON C2001\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"BA 23\",\"units\":4}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH C2210\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ACCTG 4A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ACCTG 4B\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BA 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BA 39\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IS 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH C2220\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 17\",\"units\":5,\"units_max\":null}],\"minimum\":1,\"name\":\"List A: Select one course\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 6\",\"units\":5,\"units_max\":null}],\"minimum\":1,\"name\":\"List B: Select one course\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Extract meaning from basic information using mathematical and graphical analysis.\",\"Be familiar with the two bodies responsible for conducting macroeconomic policy in the US economy. Understand how the policies that are made impact the economy.\",\"Identify the characteristics of each of the four market structures.\",\"Articulate how consumers and producers each handle the problem of scarcity in achieving their specific objective.\"],\"section_heading\":\"ASSOCIATE IN ARTS IN ECONOMICS FOR TRANSFER DEGREE (MAJOR #C.7200.AA-T)\",\"total_units\":{\"max\":24,\"min\":21}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":11,\"placed\":11}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":11,\"placed\":11}'::jsonb),\n  (4, 'Clovis Community College', '42235', 44522071814, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"BIOL C1001\",\"units\":3},{\"catalog_addition\":true,\"code\":\"BIOL C1001L\",\"units\":1}],\"catalog_addition\":true,\"code\":\"BIOL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SCI 1A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1002H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ENGL C1002\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLS C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"POLS C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MUS 12\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ART 2\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":20,\"min\":20}}],\"program\":{\"careers\":[\"teacher assistants\",\"instructional aides\",\"afterschool program teachers\",\"tutors\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"ELEMENTARY TEACHER LEVEL 3 (Major #C.589C.CA) CERTIFICATE OF ACHIEVEMENT\",\"total_units\":{\"max\":20,\"min\":20}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":11,\"placed\":10}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":11,\"placed\":10}'::jsonb),\n  (5, 'Clovis Community College', '45957', 39006155986, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRIM 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRIM 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRIM 14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BA 18\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Core Courses (Understanding the Law)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PHIL 1CH\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PHIL 1C\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses (Ethics)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"COMM C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses (Oral Communication)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1000H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL C1000\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses (Written Communication)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1001H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ENGL C1001\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Core Courses (Critical Thinking)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BA 23\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 42\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Core Courses (Quantitative Reasoning)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST C1002H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST C1002\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Core Courses (US History)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLS C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"POLS C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses (Introduction to American Government and Politics)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRIM 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRIM 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRIM 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRIM 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRIM 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BA 18\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON C2001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON C2002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS 24\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 1B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHRO 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ETHNST 32\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST 32\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COUN 53\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"Select 2 courses from two of the areas listed below\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Conduct research and effectively write about historical, social, political and economic issues related to law.\",\"Demonstrate independent and critical thinking regarding important topics in law.\"],\"section_heading\":\"LAW, PUBLIC POLICY, AND SOCIETY (Major #C.7381.AA-T)\",\"total_units\":{\"max\":24,\"min\":32}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":40,\"placed\":39}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":40,\"placed\":40}'::jsonb),\n  (6, 'Clovis Community College', '33508', 39006155986, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EDUC 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"BIOL C1001\",\"units\":3},{\"catalog_addition\":true,\"code\":\"BIOL C1001L\",\"units\":1}],\"catalog_addition\":true,\"code\":\"BIOL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SCI 1A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 9\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 10A\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"COMM C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1000H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1002H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ENGL C1002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLS C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"POLS C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1001H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ENGL C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 2\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List A: Choose one course\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 12\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List B: Choose one course\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"teaching in the kindergarten through sixth (K-6) grades\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Associate in Arts in Elementary Teacher Education for Transfer Degree\",\"total_units\":{\"max\":49,\"min\":49}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":25,\"placed\":22}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":25,\"placed\":22}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'confirm_matches', count(*) filter (where lv.verdict = 'confirm'\n                                       and lv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                      where pv.college = v.college and pv.control_number = v.control_number\n                      order by pv.id desc limit 1) lv on true;",
+ "apply": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Clovis Community College', '33486', 44522071814, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1001H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ENGL C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 4\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 1B\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List A\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 9\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SCI 1A\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"List B\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARTH C1100\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ARTH C1200H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ARTH C1200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 12\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List C\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1002H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ENGL C1002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST C1002H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST C1002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLS C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"POLS C1000\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List D\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EDUC 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTH 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IS 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LING 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"List E\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"public services\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate effective written and oral communication skills across the broad categories of intellectual heritage, artistic expression, the natural and physical world, human behavior, and health concepts.\"],\"section_heading\":\"Liberal Studies Associate in Arts Degree\",\"total_units\":{\"max\":19,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":false,\"listed\":33,\"placed\":32}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":33,\"placed\":33}'::jsonb),\n  (2, 'Clovis Community College', '33502', 44522071814, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"BA 23\",\"units\":4},{\"catalog_addition\":false,\"code\":\"PSYC 42\",\"units\":4}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 45\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"BIOL C1001\",\"units\":3},{\"catalog_addition\":true,\"code\":\"BIOL C1001L\",\"units\":1}],\"catalog_addition\":true,\"code\":\"BIOL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 11A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 5\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 36\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List A: Select one course, (two if you choose BIOL C1001 and BIOL C1001L)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ECE 14\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC 38\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOCI C1000\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List B: Select one course\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 16\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 33\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI 40\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH C2210\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH C2220\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"List C: Select one course (two if you choose MATH C2210 and MATH C2220)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Psychology (AA-T in Psychology) — heading not shown in excerpt\",\"total_units\":{\"max\":21,\"min\":19}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":23,\"placed\":22}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":23,\"placed\":22}'::jsonb),\n  (3, 'Clovis Community College', '35535', 44522071814, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ECON C2002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ECON C2001\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"BA 23\",\"units\":4}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH C2210\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ACCTG 4A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ACCTG 4B\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BA 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BA 39\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IS 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH C2220\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 17\",\"units\":5,\"units_max\":null}],\"minimum\":1,\"name\":\"List A: Select one course\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 6\",\"units\":5,\"units_max\":null}],\"minimum\":1,\"name\":\"List B: Select one course\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Extract meaning from basic information using mathematical and graphical analysis.\",\"Be familiar with the two bodies responsible for conducting macroeconomic policy in the US economy. Understand how the policies that are made impact the economy.\",\"Identify the characteristics of each of the four market structures.\",\"Articulate how consumers and producers each handle the problem of scarcity in achieving their specific objective.\"],\"section_heading\":\"ASSOCIATE IN ARTS IN ECONOMICS FOR TRANSFER DEGREE (MAJOR #C.7200.AA-T)\",\"total_units\":{\"max\":24,\"min\":21}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":11,\"placed\":11}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":11,\"placed\":11}'::jsonb),\n  (4, 'Clovis Community College', '42235', 44522071814, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"BIOL C1001\",\"units\":3},{\"catalog_addition\":true,\"code\":\"BIOL C1001L\",\"units\":1}],\"catalog_addition\":true,\"code\":\"BIOL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SCI 1A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1002H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ENGL C1002\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLS C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"POLS C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MUS 12\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ART 2\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":20,\"min\":20}}],\"program\":{\"careers\":[\"teacher assistants\",\"instructional aides\",\"afterschool program teachers\",\"tutors\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"ELEMENTARY TEACHER LEVEL 3 (Major #C.589C.CA) CERTIFICATE OF ACHIEVEMENT\",\"total_units\":{\"max\":20,\"min\":20}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":11,\"placed\":10}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":11,\"placed\":10}'::jsonb),\n  (5, 'Clovis Community College', '45957', 39006155986, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRIM 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRIM 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRIM 14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BA 18\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Core Courses (Understanding the Law)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PHIL 1CH\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PHIL 1C\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses (Ethics)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"COMM C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses (Oral Communication)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1000H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL C1000\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses (Written Communication)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1001H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ENGL C1001\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Core Courses (Critical Thinking)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BA 23\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 42\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Core Courses (Quantitative Reasoning)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST C1002H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST C1002\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Core Courses (US History)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLS C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"POLS C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses (Introduction to American Government and Politics)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRIM 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRIM 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRIM 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRIM 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRIM 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BA 18\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON C2001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON C2002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS 24\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 1B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHRO 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ETHNST 32\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST 32\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COUN 53\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"Select 2 courses from two of the areas listed below\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Conduct research and effectively write about historical, social, political and economic issues related to law.\",\"Demonstrate independent and critical thinking regarding important topics in law.\"],\"section_heading\":\"LAW, PUBLIC POLICY, AND SOCIETY (Major #C.7381.AA-T)\",\"total_units\":{\"max\":24,\"min\":32}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":40,\"placed\":39}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":40,\"placed\":40}'::jsonb),\n  (6, 'Clovis Community College', '33508', 39006155986, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EDUC 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"BIOL C1001\",\"units\":3},{\"catalog_addition\":true,\"code\":\"BIOL C1001L\",\"units\":1}],\"catalog_addition\":true,\"code\":\"BIOL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SCI 1A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 9\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 10A\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"COMM C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1000H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1002H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ENGL C1002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLS C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"POLS C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1001H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ENGL C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 2\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List A: Choose one course\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 12\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List B: Choose one course\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"teaching in the kindergarten through sixth (K-6) grades\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Associate in Arts in Elementary Teacher Education for Transfer Degree\",\"total_units\":{\"max\":49,\"min\":49}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":25,\"placed\":22}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":25,\"placed\":22}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\nf as (select count(*) as n, coalesce(json_agg(v.i order by v.i), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number\n        join lateral (select pv.verdict, pv.requirements_fp from public.program_record_verdicts pv\n                       where pv.college = v.college and pv.control_number = v.control_number\n                       order by pv.id desc limit 1) lv on true\n       where lv.verdict = 'confirm' and lv.requirements_fp = public.program_record_fp(r.record)),\ne(expect) as (values (6)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when f.n > 0\n            then ('s713c piles confirm guard: ' || f.n || ' rows hold a matching confirm verdict ' || f.keys::text)::int::text::json\n            when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s713c piles guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e, f;",
+ "rollback": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'Clovis Community College', '33486', 44522071814, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1001H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ENGL C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 4\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOC 1B\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List A\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"BIOL C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 9\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SCI 1A\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"List B\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ARTH C1100\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ARTH C1200H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ARTH C1200\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 12\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List C\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1002H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ENGL C1002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST C1002H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST C1002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLS C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"POLS C1000\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List D\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EDUC 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HLTH 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IS 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LING 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"List E\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"public services\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate effective written and oral communication skills across the broad categories of intellectual heritage, artistic expression, the natural and physical world, human behavior, and health concepts.\"],\"section_heading\":\"Liberal Studies Associate in Arts Degree\",\"total_units\":{\"max\":19,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":false,\"listed\":33,\"placed\":32}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":33,\"placed\":33}'::jsonb),\n  (2, 'Clovis Community College', '33502', 44522071814, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"BA 23\",\"units\":4},{\"catalog_addition\":false,\"code\":\"PSYC 42\",\"units\":4}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PSYC C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 45\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"BIOL C1001\",\"units\":3},{\"catalog_addition\":true,\"code\":\"BIOL C1001L\",\"units\":1}],\"catalog_addition\":true,\"code\":\"BIOL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 11A\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIOL 5\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 36\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List A: Select one course, (two if you choose BIOL C1001 and BIOL C1001L)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ECE 14\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PSYC 38\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"SOCI C1000\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List B: Select one course\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 16\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 33\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CSCI 40\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH C2210\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH C2220\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"List C: Select one course (two if you choose MATH C2210 and MATH C2220)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Psychology (AA-T in Psychology) — heading not shown in excerpt\",\"total_units\":{\"max\":21,\"min\":19}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":23,\"placed\":22}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":23,\"placed\":22}'::jsonb),\n  (3, 'Clovis Community College', '35535', 44522071814, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ECON C2002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ECON C2001\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"BA 23\",\"units\":4}],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH C2210\",\"units\":5,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ACCTG 4A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ACCTG 4B\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BA 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BA 39\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"IS 15\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"MATH C2220\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 17\",\"units\":5,\"units_max\":null}],\"minimum\":1,\"name\":\"List A: Select one course\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 6\",\"units\":5,\"units_max\":null}],\"minimum\":1,\"name\":\"List B: Select one course\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Extract meaning from basic information using mathematical and graphical analysis.\",\"Be familiar with the two bodies responsible for conducting macroeconomic policy in the US economy. Understand how the policies that are made impact the economy.\",\"Identify the characteristics of each of the four market structures.\",\"Articulate how consumers and producers each handle the problem of scarcity in achieving their specific objective.\"],\"section_heading\":\"ASSOCIATE IN ARTS IN ECONOMICS FOR TRANSFER DEGREE (MAJOR #C.7200.AA-T)\",\"total_units\":{\"max\":24,\"min\":21}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":11,\"placed\":11}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":11,\"placed\":11}'::jsonb),\n  (4, 'Clovis Community College', '42235', 44522071814, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"BIOL C1001\",\"units\":3},{\"catalog_addition\":true,\"code\":\"BIOL C1001L\",\"units\":1}],\"catalog_addition\":true,\"code\":\"BIOL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SCI 1A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1002H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ENGL C1002\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLS C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"POLS C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"MUS 12\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ART 2\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":20,\"min\":20}}],\"program\":{\"careers\":[\"teacher assistants\",\"instructional aides\",\"afterschool program teachers\",\"tutors\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":null,\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"ELEMENTARY TEACHER LEVEL 3 (Major #C.589C.CA) CERTIFICATE OF ACHIEVEMENT\",\"total_units\":{\"max\":20,\"min\":20}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":11,\"placed\":10}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":11,\"placed\":10}'::jsonb),\n  (5, 'Clovis Community College', '45957', 39006155986, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRIM 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRIM 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRIM 14\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BA 18\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Core Courses (Understanding the Law)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"PHIL 1CH\",\"units\":3}],\"catalog_addition\":false,\"code\":\"PHIL 1C\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses (Ethics)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"COMM C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses (Oral Communication)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1000H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL C1000\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses (Written Communication)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1001H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ENGL C1001\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Core Courses (Critical Thinking)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BA 23\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 42\",\"units\":4,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Core Courses (Quantitative Reasoning)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"HIST C1002H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST C1002\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"Required Core Courses (US History)\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLS C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"POLS C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses (Introduction to American Government and Politics)\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRIM 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRIM 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRIM 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRIM 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CRIM 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BA 18\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON C2001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON C2002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS 5\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"POLS 24\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 3\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 1B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ANTHRO 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 11\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SOCI 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ETHNST 32\",\"units\":3}],\"catalog_addition\":false,\"code\":\"HIST 32\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COUN 53\",\"units\":3,\"units_max\":null}],\"minimum\":2,\"name\":\"Select 2 courses from two of the areas listed below\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Conduct research and effectively write about historical, social, political and economic issues related to law.\",\"Demonstrate independent and critical thinking regarding important topics in law.\"],\"section_heading\":\"LAW, PUBLIC POLICY, AND SOCIETY (Major #C.7381.AA-T)\",\"total_units\":{\"max\":24,\"min\":32}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":false,\"invented\":false,\"listed\":40,\"placed\":39}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":40,\"placed\":40}'::jsonb),\n  (6, 'Clovis Community College', '33508', 39006155986, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"EDUC 10\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECE 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":true,\"code\":\"BIOL C1001\",\"units\":3},{\"catalog_addition\":true,\"code\":\"BIOL C1001L\",\"units\":1}],\"catalog_addition\":true,\"code\":\"BIOL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SCI 1A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOL 9\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MATH 10A\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"COMM C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"COMM C1000\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1000H\",\"units\":4}],\"catalog_addition\":false,\"code\":\"ENGL C1000\",\"units\":4,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1002H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ENGL C1002\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"GEOG 6\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"HIST 20\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"POLS C1000H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"POLS C1000\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core Courses\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"COMM 25\",\"units\":3,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"ENGL C1001H\",\"units\":3}],\"catalog_addition\":false,\"code\":\"ENGL C1001\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PHIL 2\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List A: Choose one course\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ART 2\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUS 12\",\"units\":3,\"units_max\":null}],\"minimum\":1,\"name\":\"List B: Choose one course\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"teaching in the kindergarten through sixth (K-6) grades\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[],\"section_heading\":\"Associate in Arts in Elementary Teacher Education for Transfer Degree\",\"total_units\":{\"max\":49,\"min\":49}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":25,\"placed\":22}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":25,\"placed\":22}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (6)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s713c piles rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}

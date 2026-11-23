@@ -46,12 +46,10 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 32,
+   "placed": 33,
    "listed": 33,
-   "share": 0.97,
-   "missing": [
-    "SOCI1B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "course_id": [
@@ -69,12 +67,10 @@
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "SOC1B"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -115,7 +111,14 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true,
+  "course_renumbers": [
+   {
+    "printed": "SOC 1B",
+    "listed": "SOCI1B",
+    "block": "List A"
+   }
+  ]
  },
  "record": {
   "program": {

@@ -103,6 +103,30 @@
   },
   "Clovis Community College": {
    "why": "S703 (worker pins for SkyDovekie), the harvest lane's NEXT (4), f-clovis-19-left-s697: no reconcile step; the entry names three programs' own pages (pdf_pages).",
+   "course_renumbers": {
+    "SOC1B": "SOCI 1B",
+    "ANTHRO2": "ANTH 2"
+   },
+   "course_renumbers_cited": [
+    {
+     "printed": "SOC1B",
+     "file": "SOCI 1B",
+     "title": "Critical Thinking about Social Problems",
+     "units": 3,
+     "session": "S713",
+     "date": "2026-11-23",
+     "evidence": "The 2026-2027 catalog prints SOC 1B in Liberal Studies 33486, where the state's file lists SOCI 1B Critical Thinking about Social Problems; the college's course record keeps SOC 1B Critical Thinking About Social Problems at control number CCC000563158 (kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json, Clovis's held SOC-for-SOCI entry, one number, so the prefix stays unaliased and the course alone is renumbered). The record's note: 'the closed list stores SOCI1B with the same title'."
+    },
+    {
+     "printed": "ANTHRO2",
+     "file": "ANTH 2",
+     "title": "Cultural Anthropology",
+     "units": 3,
+     "session": "S713",
+     "date": "2026-11-23",
+     "evidence": "The 2026-2027 catalog prints ANTHRO 2 Cultural Anthropology in Law, Public Policy, and Society 45957, where the state's file lists ANTH 2 Cultural Anthropology; the college's course record keeps ANTHRO 2 CULTURAL ANTHROPOLOGY at control number CCC000563415 (the same plan's held ANTHRO-for-ANTH entry, one number). The record's note: 'treated as the closed list's ANTH2 (same title)'."
+    }
+   ],
    "steps": [],
    "pdf_pages": {
     "33433": {
