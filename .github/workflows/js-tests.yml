@@ -524,6 +524,11 @@ jobs:
       # pinned page in capture_pdf; the other 34 not_found programs are filed as named gaps, once each. Pure stdlib.
       - name: Program requirements own-page pins and named gaps (Ohlone)
         run: python3 tests/program_requirements_ohlone_pins_s703_test.py
+      # S714: the Los Rios pins (Sacramento City, Cosumnes River, Folsom Lake) read each program's own section on the
+      # pages the free read printed, cut at their until words; a degree and its certificate keep their own pages;
+      # the named gaps and the HVAC pair. Pure stdlib.
+      - name: Program requirements Los Rios pins and until (S714)
+        run: python3 tests/program_requirements_rios_pins_s714_test.py
       # S703 (census lever 7): San Joaquin Delta's IND, ELE and MEC pairs let the coarse net read its apprenticeship
       # pages' hyphenated codes (A-IND 78A), and touch no other prefix. Pure stdlib.
       - name: Program requirements apprenticeship prefix aliases (San Joaquin Delta)

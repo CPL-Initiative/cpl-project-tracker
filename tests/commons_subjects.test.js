@@ -29,6 +29,7 @@ const FILES = {
   "kb/status/commons_data.json": JSON.parse(fs.readFileSync("kb/status/commons_data.json", "utf8")),
   "kb/reference/industry_credential_skills.json": JSON.parse(fs.readFileSync("kb/reference/industry_credential_skills.json", "utf8")),
   "kb/status/local_subject_titles.json": FIX,
+  "kb/status/mid_readiness.json": JSON.parse(fs.readFileSync("kb/status/mid_readiness.json", "utf8")),
   "kb/status/noncredit_subject_titles.json": { _rule: "Two headings are one title when they are equal after folding.",
     mq: { "Parenting": { mq_discipline: "Parent Education: Noncredit", common_code: "PARN" }, "Citizenship for Immigrants": { mq_discipline: "Citizenship: Noncredit", common_code: null } },
     programs: [{ slug: "p1", college: "Program One" }, { slug: "p2", college: "Program Two" }],
@@ -79,7 +80,14 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
   check("(2) the codes with no title open their list, each reason counted", by("3 codes with no title") && by("3 codes with no title").getAttribute("href") === "#commons/subjects/disagree"
     && /\(1 not in catalog, 2 not read yet, 0 blocked\)/.test(txt(first)) && !/on hold/.test(txt(first)));
   check("(2) Step a's figure opens the Common Subjects Reference", links.some((l) => l.getAttribute("href") === "#canonical-subj4" && /disciplines settled/.test(txt(l))));
-  check("(2) the card names an owner on each step", /Owner: a curator/.test(txt(first)) && /Owner: the Courses bot/.test(txt(first)));
+  check("(2) the card names who does each check", /Owner: the Courses bot/.test(txt(first)) && /Who: Sky/.test(txt(first)) && /(Owner: a curator|Done: all)/.test(txt(first)));
+  /* Sam's mock of 2026-11-23: the share of courses under a Confident code, then four checks under Collect, Curate and
+     Connect, each with a Where to act line. */
+  const stages = Array.from(first.querySelectorAll(".cmf-stage")).map(txt);
+  const checks = Array.from(first.querySelectorAll(".cmf-check-h > strong")).map(txt);
+  check("(2) ⭐ four checks under Collect, Curate and Connect, each with its Where to act line",
+    stages.join(",") === "Collect,Curate,Connect" && checks.join("|") === "1. Each college’s own subject titles|2. A Confident common code for every local code|3. No course held for want of a code|4. Re-mint scopes ready"
+    && first.querySelectorAll(".cmf-act").length === 4 && Array.from(first.querySelectorAll(".cmf-act")).every((p) => /^Where to act:/.test(txt(p)) && p.querySelector("a")), stages + " " + checks);
   check("the card's link row opens the list", Array.from(first.querySelectorAll(".cmf-links a")).some((l) => l.getAttribute("href") === "#commons/subjects"));
   check("the fold key is known", x.w.CPL_COMMONS_FRONT.KEYS.indexOf("subjects") >= 0);
 
@@ -87,7 +95,7 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
   x = load("#commons", { "kb/status/local_subject_titles.json": undefined });
   await x.M.boot(); await settle();
   const sc = x.d.querySelector('.cmf-card[data-key="subjects"]');
-  check("(3) a missing titles file reads TBA and the page still draws", sc && /Step b, local subject title: TBA/.test(txt(sc)) && x.d.querySelectorAll(".cmf-card").length === 11);
+  check("(3) a missing titles file reads TBA and the page still draws", sc && /Local subject titles: TBA/.test(txt(sc)) && x.d.querySelectorAll(".cmf-card").length === 11);
 
   /* (4) the list from its address */
   x = load("#commons/subjects");

@@ -457,7 +457,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
-   }
+   },
+   "text_sha": "7491107955ced54a"
   },
   "listed": 32,
   "text_chars": 13728
@@ -889,7 +890,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
-   }
+   },
+   "text_sha": "6e59c8e0fff6c3b8"
   },
   "listed": 21,
   "text_chars": 2806
@@ -1434,37 +1436,37 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.857,
+  "coverage": 1.0,
   "codes_found": [
    "ACCT301",
    "BUS300",
    "BUS302",
    "BUS330",
+   "BUS350",
    "ECONC2001",
    "MGMT362"
   ],
   "source": {
-   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=175",
-   "title": "Small Business Management/Entrepreneurship Certificate",
-   "h1": "Small Business Management/Entrepreneurship Certificate",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=184",
+   "title": "Small Business Management/Entrepreneurship",
+   "h1": "Small Business Management/Entrepreneurship",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    175,
-    176,
-    177,
-    178
+    184
    ],
    "extractor": "pypdf",
    "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
-   }
+   },
+   "text_sha": "200c6d968f65db5e"
   },
   "listed": 7,
-  "text_chars": 16000
+  "text_chars": 1751
  },
  {
   "control_number": "21196",
@@ -1673,7 +1675,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
-   }
+   },
+   "text_sha": "794c7a572942f8cc"
   },
   "listed": 41,
   "text_chars": 15292
@@ -1766,7 +1769,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
-   }
+   },
+   "text_sha": "8f999264b6fd50cb"
   },
   "listed": 5,
   "text_chars": 16000
@@ -2739,7 +2743,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
-   }
+   },
+   "text_sha": "0cda5a1df7183d2c"
   },
   "listed": 15,
   "text_chars": 3758
@@ -2922,7 +2927,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
-   }
+   },
+   "text_sha": "f33af2a736417b74"
   },
   "listed": 11,
   "text_chars": 9407
@@ -3535,24 +3541,27 @@
    "MEDTEC325"
   ],
   "source": {
-   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=380",
-   "title": "Pre-Clinical Laboratory Scientist Trainee Certificate",
-   "h1": "Pre-Clinical Laboratory Scientist Trainee Certificate",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=382",
+   "title": "Pre-Clinical Laboratory Scientist Trainee",
+   "h1": "Pre-Clinical Laboratory Scientist Trainee",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    380
+    382,
+    383
    ],
    "extractor": "pypdf",
    "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
-   }
+   },
+   "text_sha": "7d66ca63f6e76cb2"
   },
   "listed": 3,
-  "text_chars": 3491
+  "text_chars": 3488
  },
  {
   "control_number": "39117",
@@ -3717,7 +3726,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
-   }
+   },
+   "text_sha": "d3b262f2d810a8af"
   },
   "listed": 27,
   "text_chars": 11579
@@ -4037,7 +4047,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
-   }
+   },
+   "text_sha": "6b2f6f754acdb6d4"
   },
   "listed": 11,
   "text_chars": 13898
@@ -4301,7 +4312,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
-   }
+   },
+   "text_sha": "48965e11f4d1a78a"
   },
   "listed": 23,
   "text_chars": 15529
@@ -4728,7 +4740,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
-   }
+   },
+   "text_sha": "0cda5a1df7183d2c"
   },
   "listed": 20,
   "text_chars": 3758
@@ -4986,34 +4999,36 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.667,
+  "coverage": 1.0,
   "codes_found": [
    "MUFHL400",
    "MUSM306",
    "MUSM334",
-   "MUSM356"
+   "MUSM356",
+   "MUSM498",
+   "TA422"
   ],
   "source": {
-   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=390",
-   "title": "Commercial Music: Live Sound Technician Certificate",
-   "h1": "Commercial Music: Live Sound Technician Certificate",
+   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=395",
+   "title": "Commercial Music: Live Sound Technician",
+   "h1": "Commercial Music: Live Sound Technician",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    390,
-    391,
-    392
+    395
    ],
    "extractor": "pypdf",
    "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
-   }
+   },
+   "text_sha": "fa5ce36d142aadfa"
   },
   "listed": 6,
-  "text_chars": 10299
+  "text_chars": 1508
  },
  {
   "control_number": "45569",
@@ -5131,7 +5146,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c086177b9efed3b9163f0a88e16893c4d892db586dee7159f3ce7127a1c46e76"
-   }
+   },
+   "text_sha": "ba6c05c0e59c0911"
   },
   "listed": 17,
   "text_chars": 14447

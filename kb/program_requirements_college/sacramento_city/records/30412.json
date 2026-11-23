@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Electric (Power-Lighting Systems)",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=363",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=367",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11861,
+  "input_tokens": 7390,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11861,
-    "output_tokens": 1788,
+    "input_tokens": 7390,
+    "output_tokens": 2357,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,45 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1788,
+  "output_tokens": 2357,
   "output_tokens_details": {
-   "thinking_tokens": 695
+   "thinking_tokens": 811
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0832,
- "ms": 16103,
- "seconds": 16.4,
+ "cost_usd": 0.0767,
+ "ms": 18276,
+ "seconds": 18.7,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 15,
    "listed": 15,
-   "share": 0.0,
-   "missing": [
-    "EDT310",
-    "EDT312",
-    "EDT316",
-    "EDT317",
-    "EDT318",
-    "EDT320",
-    "EDT332",
-    "EDT336",
-    "EDT340",
-    "EDT342",
-    "EDT352",
-    "EDT356",
-    "MATH373",
-    "SURVY300",
-    "SURVY310"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -77,49 +61,50 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    27.0,
+    27.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    27.0,
+    27.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 16,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Certificates of Achievement",
+   "section_heading": "Electric (Power-Lighting Systems) Certificate",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 27,
+    "max": 27
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -136,79 +121,190 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "perform design calculations and prepare electrical plans for building electrical systems that conform with current industry and ANSI standards.",
+    "demonstrate the process of building electrical design by applying design principles to building design projects.",
+    "demonstrate proficiency in CAD software programs (AutoCAD, REVIT and CREO) by preparing 3D computer engineering and architectural models.",
+    "demonstrate the processes of rapid prototyping of components represented by 3D computer engineering and architectural models."
+   ],
+   "careers": [
+    "building Electrical power and lighting systems design",
+    "mechanical component design",
+    "Engineering Aide I",
+    "Engineering Aide II",
+    "Drafting Aide I",
+    "Drafting Aide II",
+    "Junior Drafter",
+    "Architectural Drafter",
+    "Mechanical Drafter/Designer Trainee",
+    "Electrical Drafter/Designer Trainee",
+    "Structural Drafter/Designer Trainer",
+    "Topographical Drafter/Designer Trainee",
+    "General Construction Drafter/Designer Trainee",
+    "General Construction Estimator Trainee",
+    "Computer Aided Drafter",
+    "Technical Sales representatives"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "EDT 310",
-    "why": "named only in the A.S. section; certificate section not in the text"
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "EDT 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDT 312",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDT 316",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDT 317",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDT 318",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDT 352",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDT 356",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "EDT 312",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "EDT 316",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "EDT 317",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "EDT 318",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "EDT 320",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "EDT 332",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "EDT 336",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "EDT 340",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "EDT 342",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "EDT 352",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "EDT 356",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "MATH 373",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "SURVY 300",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "SURVY 310",
-    "why": "named only in the A.S. section; certificate section not in the text"
+    "name": "A minimum of 6 units from the following",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "EDT 320",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDT 332",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDT 336",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDT 340",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDT 342",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 373",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SURVY 300",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SURVY 310",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The provided text does not contain the Electric (Power-Lighting Systems) Certificate of Achievement section. The 'Certificates of Achievement' heading begins on page 366, but the text ends partway through the Architectural/Structural Design Certificate description. The Electric certificate likely appears on a later page that was not supplied.",
-   "The text does contain 'A.S. in Electric (Power-Lighting Systems)' (pages 363-364). Its requirements are: EDT 310, 312, 316, 317, 318, 352 and 356 (3 units each) required. Then 'A minimum of 6 units from the following: 6': EDT 320 (4), EDT 332 (3), EDT 336 (3), EDT 340 (3), EDT 342 (3), MATH 373 (4), SURVY 300 (4), SURVY 310 (4). Total Units: 27. That total fits the certificate's 16 to under 30 unit range. The certificate may mirror these requirements, but the text does not show this, so no blocks were recorded.",
-   "The A.S. section prints its own Student Learning Outcomes and Career Information. These were not copied, because they belong to the degree, not to the certificate.",
-   "A reviewer should fetch the following catalog page(s), around page 366-367, to read the Electric (Power-Lighting Systems) Certificate of Achievement."
+   "Catalog titles differ from the state file for EDT 336 ('Building Mechanical Systems Design' vs 'Air Conditioning System Design') and EDT 352 ('Building Electrical Design Documents' vs 'Electrical Design Documents'); codes and units match.",
+   "The Career Information section is printed at the top of page 368, after this certificate's outcomes; it reads as belonging to this certificate but its wording (entry level employment in architectural, electrical and mechanical engineering, manufacturing, or commercial construction fields) is generic to the Engineering Design Technology programs. Reviewer should confirm it applies to this award.",
+   "Careers include the two employment fields named in the program description ('building Electrical power and lighting systems design', 'mechanical component design') plus the job titles listed under Career Information; 'Structural Drafter/Designer Trainer' copied as printed (likely a typo for Trainee).",
+   "Required courses sum to 21 units plus 6 elective units, consistent with the printed total of 27."
   ]
  },
- "extracted_run": "39047070975"
+ "extracted_run": "45181973475",
+ "catalog_year": "2026-2027",
+ "source_sha": "eaeac83580d1f563",
+ "source_codes": [
+  "EDT310",
+  "EDT312",
+  "EDT316",
+  "EDT317",
+  "EDT318",
+  "EDT320",
+  "EDT332",
+  "EDT336",
+  "EDT340",
+  "EDT342",
+  "EDT352",
+  "EDT356",
+  "MATH373",
+  "SURVY300",
+  "SURVY310"
+ ],
+ "source_coverage": 1.0
 }

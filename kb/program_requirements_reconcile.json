@@ -20,7 +20,7 @@
   "semester_sum": "a program laid out by semester with no printed total (Sam, Open Asks Sheet 180 card 2, 2026-11-10: count): where every block named by block_pattern is rule all and its courses add to the subtotal it prints, total_units takes the sum of the subtotals and the record carries total_units_summed; never where the record holds a total, a semester does not add up, or another block asks for units",
   "packed_codes": "true where the college's catalog packs its course codes (De Anza's eLumen feed: C DD010G for C D 10G): the scorer reads a filed record's packed code as the listed course it names, only on the campus letter D and only when the state's file lists that course",
   "heading_above_code": "a PDF catalog that prints a program's heading on the lines above its control number's line (Los Angeles City, S639: title, award and 'Major Units: 39  T otal Units: Minimum of 60' above '(State Code: 02718; ...)'): the capture's cut at the control number's line keeps up to `lines` lines above it, never a line `stop` names (the running header) and never a line naming a listed course, so the reconcile steps see the heading and the codes found stay the same (kb/_program_requirements_college.py heading_above)",
-  "pdf_pages": "a PDF catalog whose picker takes a program to another page than its own (Cosumnes River, S650: Psychology AA-T 30566 to a page naming it as another degree, History AA-T 33072 to the Cal-GETC pattern page): {control number: {page, words, evidence}}, the program's own PDF page (1-based) and the words its filed capture opened on there. The capture reads the program from the start of the line carrying the words (kb/_program_requirements_college.py pdf_pinned_heading), only while the page prints them and every title word; a refused pin is filed in the capture (pdf.pinned), the program gets no fresh text, and its filed record stands. Per program and per college, never a pattern over free catalog text (p-gate-free-text-reading-per-college-s644)",
+  "pdf_pages": "a PDF catalog whose picker takes a program to another page than its own (Cosumnes River, S650: Psychology AA-T 30566 to a page naming it as another degree, History AA-T 33072 to the Cal-GETC pattern page): {control number: {page, words, evidence}}, the program's own PDF page (1-based) and the words its filed capture opened on there. The capture reads the program from the start of the line carrying the words (kb/_program_requirements_college.py pdf_pinned_heading), only while the page prints them and every title word; a refused pin is filed in the capture (pdf.pinned), the program gets no fresh text, and its filed record stands. Per program and per college, never a pattern over free catalog text (p-gate-free-text-reading-per-college-s644). Optional fields: through, the last page of a section that runs across a page break (S703); until, the words the next section opens on, where the window ends, cut exactly at both ends (S714); printed_title, the title as the catalog prints it where it drops words of the state's, for the title check (S714)",
   "printed_total": "a heading's range whose low end is a test-out, beside a printed total that is its top (Moreno Valley 38758, S674): pattern's lo, hi and total; the record's total_units becomes the total only where it holds exactly lo-hi, the page prints the step's requires words, total equals hi, and the record's blocks are all rule-all with fixed stated figures summing to the total. The one step that replaces a filled figure"
  },
  "colleges": {
@@ -159,6 +159,170 @@
    },
    "pdf_pages_why": "S703 (f-clovis-19-left-s697): five Business and Social Science degrees read from the wrong page, or from too few pages, are pinned to the page their section opens on, named with the words it opens on there (college-page-read run 45016537664), never found by a pattern over the catalog's text (S650, Cosumnes River). General Business 33433's core starts on the page before the one the capture took; Management 33487 and Small Business Management 33491 list one course (ACCTG 40), which the Business Administration degree's core prints too, so the picker took that page. Entrepreneur 33432 and Social Science 33492 run across a page break, so each pin names its last page (through, the S703 follow-up's reader change): 33432's core page (p.106) does not print the title word 'Entrepreneur', which p.107 prints, and 33492's total prints on p.149, which names no listed course. A pin binds only while the catalog prints the words on its page and every title word on its pages; otherwise the program gets no fresh text and its filed record stands. Reversible by deleting this entry."
   },
+  "Sacramento City College": {
+   "why": "S714 (rios): the entry holds the 18 programs' own pages and the HVAC pair their tables need; no reconcile step yet.",
+   "steps": [],
+   "prefix_aliases": {"HVAC": "MET"},
+   "prefix_aliases_cited": [
+    {"printed": "HVAC", "file": "MET", "session": "S714", "date": "2026-11-23", "catalog_sources": ["college_page_read"], "evidence": "same number, title and units in the same catalog", "source": "S714 (rios), college-page-read run 45167465999: the 2026-27 catalog moved the Mechanical-Electrical Technology programs to a Heating, Ventilation, and Air Conditioning department (PDF pp.424-430) and prints their requirement tables with HVAC codes (pp.425-428 and pp.525-528), where the state's file lists MET: 'HVAC 351 Basic Mechanical Systems 5' (p.525) against the catalog's own 'MET 351 Basic Mechanical Systems', 'Units: 5' (p.529); 'HVAC 256 Fundamentals of Instruments and Electricity 1.5' against 'MET 256 Fundamentals of Instruments and Electricity', 'Units: 1.5'; 'HVAC 364 Electrical Controls 3' against 'MET 364 Electrical Controls'. Three programs place none of their listed courses without it (04670, 07345, 23019). A code the file lists as HVAC (HVAC 352, HVAC 388) is never renamed. Reversible by deleting the pair."}
+   ],
+   "course_renumbers": {"OEHS110": "MET 350"},
+   "course_renumbers_why": "S714 (rios), college-page-read run 45167465999: the Mechanical Systems Technician certificate's table prints 'OEHS 110 Cal/OSHA 10 General Safety 1' (p.527) where the state's file lists MET 350, which the catalog describes as 'MET 350 Cal/OSHA 10 General Safety', 'Units: 1' (p.529): the same title and units. The pair joins two COCI courses, CCC000661724 and CCC000636587 (the second reader of PR #3715: the same title and 1 unit each). Read only where the file lists MET 350 and not OEHS 110 (04670 alone); 07345 and 23019 list OEHS 110 itself. Reversible by deleting the pair.",
+   "pdf_pages": {
+    "04670": {
+     "page": 526,
+     "words": "Mechanical Systems Technician Certificate The Mechanical Systems Technician Certificate of Achievement provides",
+     "through": 527,
+     "until": "Mechanical-Electrical Technology Certificate",
+     "evidence": "Mechanical Systems Technician 04670: its heading 'Mechanical Systems Technician Certificate' prints on PDF p.526, and its requirements and 'Total Units: 24' on p.527; the window ends where 'Mechanical-Electrical Technology Certificate' opens the next section (college-page-read run 45167465999). The filed record was read from p.529, so it placed none of its 10 listed courses. The page prints its courses under HVAC (and Cal/OSHA 10 as OEHS 110), which the college's prefix_aliases (HVAC for MET) and course_renumbers (OEHS 110 for MET 350) read as the state's listed codes."
+    },
+    "07334": {
+     "page": 265,
+     "words": "A.S. in Management Information Science The Management Information Science degree is designed for students",
+     "through": 266,
+     "until": "A.S. in Network Administration The Network Administration Degree and Certificate of Achievement",
+     "evidence": "Management Information Science 07334: its heading 'A.S. in Management Information Science' prints on PDF p.265, and its requirements and 'Total Units: 35' on p.266; the window ends where 'A.S. in Network Administration The Network Administration Degree and Certificate of Achievement' opens the next section (college-page-read run 45167465999). The filed record was read from p.274 (the extraction: 'The excerpt starts on page 274 with a 'Certificate Requirements' list (Total Units: 35) whose heading is cut off; it appears to be the Management Information Sc'), so it placed none of its 30 listed courses."
+    },
+    "07345": {
+     "page": 525,
+     "words": "A.S. in Mechanical-Electrical Technology MET Program Information",
+     "through": 526,
+     "until": "Certificates of Achievement Mechanical Systems Technician Certificate",
+     "evidence": "Mechanical-Electrical Technology 07345: its heading 'A.S. in Mechanical-Electrical Technology' prints on PDF p.525, and its requirements and 'Total Units: 48' on p.526; the window ends where 'Certificates of Achievement Mechanical Systems Technician Certificate' opens the next section (college-page-read run 45167465999). The filed record was read from p.531 (the extraction: 'The supplied text (catalog pages 531-532) holds only course descriptions for MET 364 through MET 499'), so it placed none of its 18 listed courses. The page prints its courses under HVAC (and Cal/OSHA 10 as OEHS 110), which the college's prefix_aliases (HVAC for MET) and course_renumbers (OEHS 110 for MET 350) read as the state's listed codes."
+    },
+    "15498": {
+     "page": 633,
+     "words": "A.A. in Sociology The sociology program at Sacramento City College offers a number of",
+     "through": 634,
+     "until": "Certificate of Achievement Social Work and Community Studies",
+     "evidence": "Sociology 15498: its heading 'A.A. in Sociology' prints on PDF p.633, and its requirements and 'Total Units: 18' on p.634; the window ends where 'Certificate of Achievement Social Work and Community Studies' opens the next section (college-page-read run 45167465999). The filed record was read from p.630 (the extraction: 'The catalog text ends mid-sentence in the A.A'), so it placed none of its 29 listed courses."
+    },
+    "15573": {
+     "page": 263,
+     "words": "A.S. in Cybersecurity and Information Assurance This program prepares IT professionals to apply knowledge and experience",
+     "through": 264,
+     "until": "A.S. in Data Science This degree program is designed for students who aspire to master the",
+     "evidence": "Cybersecurity and Information Assurance 15573: its heading 'A.S. in Cybersecurity and Information Assurance' prints on PDF p.263, and its requirements and 'Total Units: 31' on p.264; the window ends where 'A.S. in Data Science This degree program is designed for students who aspire to master the' opens the next section (college-page-read run 45167465999). The filed record was read from p.271, so it placed none of its 10 listed courses."
+    },
+    "23005": {
+     "page": 272,
+     "words": "Information Processing Specialist Certificate This certificate builds upon a previous background in the use of",
+     "through": 273,
+     "until": "Information Processing Technician Certificate",
+     "evidence": "Information Processing Specialist 23005: its heading 'Information Processing Specialist Certificate' prints on PDF p.272, and its requirements and 'Total Units: 25 - 29.5' on p.273; the window ends where 'Information Processing Technician Certificate' opens the next section (college-page-read run 45167465999). The filed record was read from p.265 (the extraction: 'The catalog text does not contain the Information Processing Specialist Certificate of Achievement section'), so it placed none of its 15 listed courses."
+    },
+    "23019": {
+     "page": 527,
+     "words": "Mechanical-Electrical Technology Certificate MET Program Information",
+     "through": 528,
+     "until": "(MET) Courses MET 250 Introduction to Mechanical-",
+     "evidence": "Mechanical-Electrical Technology 23019: its heading 'Mechanical-Electrical Technology Certificate' prints on PDF p.527, and its requirements and 'Total Units: 48' on p.528; the window ends where '(MET) Courses MET 250 Introduction to Mechanical-' opens the next section (college-page-read run 45167465999). The filed record was read from p.531 (the extraction: 'The supplied text (catalog pages 531-532) contains only MET course descriptions; the certificate's requirements list, total units, outcomes and career informati'), so it placed none of its 19 listed courses. The page prints its courses under HVAC (and Cal/OSHA 10 as OEHS 110), which the college's prefix_aliases (HVAC for MET) and course_renumbers (OEHS 110 for MET 350) read as the state's listed codes."
+    },
+    "23027": {
+     "page": 543,
+     "words": "Commercial Music, Audio Production Emphasis Certificate This program is designed as introductory preparation for employment in",
+     "through": 544,
+     "until": "Management Emphasis Certificate This program is designed to prepare students for entry level positions in the",
+     "evidence": "Commercial Music, Audio Production Emphasis 23027: its heading 'Commercial Music, Audio Production Emphasis Certificate' prints on PDF p.543, and its requirements and 'Total Units: 37' on p.543; the window ends where 'Management Emphasis Certificate This program is designed to prepare students for entry level positions in the' opens the next section (college-page-read run 45167465999). The filed record was read from p.536 (the extraction: 'The supplied text (pages 536-539) contains only Associate Degree sections; the Certificates of Achievement for Music, including Commercial Music, Audio Producti'), so it placed none of its 20 listed courses."
+    },
+    "23035": {
+     "page": 334,
+     "words": "School-Age Care and Education Teacher Certificate This program provides preparation for employment in school-age care and",
+     "through": 335,
+     "until": "Early Childhood Education (ECE) Courses",
+     "evidence": "School-Age Care and Education Teacher 23035: its heading 'School-Age Care and Education Teacher Certificate' prints on PDF p.334, and its requirements and 'Total Units: 22 - 23' on p.335; the window ends where 'Early Childhood Education (ECE) Courses' opens the next section (college-page-read run 45167465999). The filed record was read from p.328 (the extraction: 'The heading 'School-Age Care and Education Teacher Certificate' appears at the top of page 328, but the text under it is the A.S.-T in Early Childhood Education'), so it placed none of its 13 listed courses."
+    },
+    "30361": {
+     "page": 296,
+     "words": "Art and Science of Nail Technology Certificate This program consists of the following: beginning, intermediate, and",
+     "through": 297,
+     "until": "Barbering Certificate The course of study meets guidelines implemented by the California State",
+     "evidence": "Art and Science of Nail Technology 30361: its heading 'Art and Science of Nail Technology Certificate' prints on PDF p.296, and its requirements and 'Total Units: 14.5' on p.296; the window ends where 'Barbering Certificate The course of study meets guidelines implemented by the California State' opens the next section (college-page-read run 45167465999). The filed record was read from p.200 (the extraction: 'The supplied text (page 200) contains the end of the Cosmetology program: its Degree Requirements for the Cosmetology A.S'), so it placed none of its 3 listed courses."
+    },
+    "30407": {
+     "page": 646,
+     "words": "A.S. in Surveying/Geomatics The Surveying/Geomatics program provides the student with instruction in",
+     "through": 647,
+     "until": "Certificate of Achievement Surveying/Geomatics Certificate",
+     "evidence": "Surveying (Geomatics) 30407: its heading 'A.S. in Surveying/Geomatics' prints on PDF p.646, and its requirements and 'Total Units: 26' on p.647; the window ends where 'Certificate of Achievement Surveying/Geomatics Certificate' opens the next section (college-page-read run 45167465999). The filed record was read from p.647 (the extraction: 'The extract begins at page 647 with the A.S'), so it placed none of its 8 listed courses."
+    },
+    "30409": {
+     "page": 362,
+     "words": "A.S. in Architectural/Structural Design This degree is designed for students pursuing employment or upgrade in",
+     "through": 363,
+     "until": "A.S. in Electric (Power-Lighting Systems) This degree is designed for students pursuing employment or upgrade in",
+     "evidence": "Architectural/Structural Design 30409: its heading 'A.S. in Architectural/Structural Design' prints on PDF p.362, and its requirements and 'Total Units: 25' on p.363; the window ends where 'A.S. in Electric (Power-Lighting Systems) This degree is designed for students pursuing employment or upgrade in' opens the next section (college-page-read run 45167465999). The filed record was read from p.363, so it placed none of its 15 listed courses."
+    },
+    "30412": {
+     "page": 367,
+     "words": "Electric (Power-Lighting Systems) Certificate This Certificate of Achievement is designed for students pursuing",
+     "through": 368,
+     "until": "Engineering Design Technology Certificate This Certificate of Achievement is designed for students pursuing",
+     "evidence": "Electric (Power-Lighting Systems) 30412: its heading 'Electric (Power-Lighting Systems) Certificate' prints on PDF p.367, and its requirements and 'Total Units: 27' on p.367; the window ends where 'Engineering Design Technology Certificate This Certificate of Achievement is designed for students pursuing' opens the next section (college-page-read run 45167465999). The filed record was read from p.363 (the extraction: 'The provided text does not contain the Electric (Power-Lighting Systems) Certificate of Achievement section'), so it placed none of its 15 listed courses."
+    },
+    "30519": {
+     "page": 186,
+     "words": "Aircraft Dispatcher Certificate Sacramento City College maintains a Federal Aviation Administration (FAA)",
+     "through": 187,
+     "until": "Flight Technology Certificate Sacramento City College offers a one-year certificate program organized to",
+     "evidence": "Aircraft Dispatcher 30519: its heading 'Aircraft Dispatcher Certificate' prints on PDF p.186, and its requirements and 'Total Units: 37' on p.186; the window ends where 'Flight Technology Certificate Sacramento City College offers a one-year certificate program organized to' opens the next section (college-page-read run 45167465999). The filed record was read from p.182, so it placed none of its 9 listed courses."
+    },
+    "30520": {
+     "page": 187,
+     "words": "Flight Technology Certificate Sacramento City College offers a one-year certificate program organized to",
+     "through": 188,
+     "until": "Professional Pilot Certificate Sacramento City College offers a two-year (including a summer session)",
+     "evidence": "Flight Technology 30520: its heading 'Flight Technology Certificate' prints on PDF p.187, and its requirements and 'Total Units: 31' on p.187; the window ends where 'Professional Pilot Certificate Sacramento City College offers a two-year (including a summer session)' opens the next section (college-page-read run 45167465999). The filed record was read from p.182, so it placed none of its 8 listed courses."
+    },
+    "32661": {
+     "page": 434,
+     "words": "A.A.-T. in History The history major fosters an understanding of ourselves and our world",
+     "through": 435,
+     "until": "Certificate of Achievement Cultural Resources Management Certificate",
+     "evidence": "History 32661: its heading 'A.A.-T. in History' prints on PDF p.434, and its requirements and 'Total Units: 18' on p.435; the window ends where 'Certificate of Achievement Cultural Resources Management Certificate' opens the next section (college-page-read run 45167465999). The filed record was read from p.95 (the extraction: 'The supplied text (PDF page 95) is the Cal-GETC general education area list (Areas 4, 5, 6) in the 'Graduation and Transfer – Preparing to Transfer' chapter, no'), so it placed none of its 37 listed courses."
+    },
+    "40211": {
+     "page": 269,
+     "words": "Computer Information Security Essentials Certificate This program provides basic cyber operations knowledge of internal and",
+     "through": 270,
+     "until": "Planner Information Security Auditor Computer Science Certificate",
+     "evidence": "Computer Information Security Essentials 40211: its heading 'Computer Information Security Essentials Certificate' prints on PDF p.269, and its requirements and 'Total Units: 12' on p.270; the window ends where 'Planner Information Security Auditor Computer Science Certificate' opens the next section (college-page-read run 45167465999). The filed record was read from p.267 (the extraction: 'The catalog text from page 267 does not contain the Computer Information Security Essentials Certificate of Achievement section'), so it placed none of its 4 listed courses."
+    },
+    "42462": {
+     "page": 254,
+     "words": "Professional and Workplace Communication Certificate The Certificate of Achievement in Professional and Workplace",
+     "until": "Communication (COMM) Courses COMM C1000 Introduction to Public",
+     "evidence": "Professional and Workplace Communication 42462: its heading 'Professional and Workplace Communication Certificate' prints on PDF p.254, and its requirements and 'Total Units: 12' on p.254; the window ends where 'Communication (COMM) Courses COMM C1000 Introduction to Public' opens the next section (college-page-read run 45167465999). The filed record was read from p.247 (the extraction: 'The heading 'Professional and Workplace Communication Certificate' appears only as a line at the top of page 247'), so it placed none of its 4 listed courses."
+    }
+   },
+   "pdf_pages_why": "S714 (rios, lane 1, the gap census's reader_page_assignment lever, run 45161770730): each program's extraction placed none of the state's listed courses, because the picker handed it a sibling award's section, the department's list of awards or the course descriptions. Each is pinned to its own section in the hand-filed 2026-27 catalog (kb/hand_filed_catalogs, sha256 pinned), read page for page by college-page-read run 45167465999: the page and words its heading opens on, `through` the page its section ends on, and `until` the words the next section opens on, so the window holds that section alone (d-rios-until-pin-s714). A pin binds only while the file prints the words, the until words after them and every title word between; otherwise the program gets no fresh text and its filed record stands. Reversible by deleting the entry."
+  },
+  "Folsom Lake College": {
+   "why": "S714 (rios): the entry holds three programs' own pages; no reconcile step yet.",
+   "steps": [],
+   "pdf_pages": {
+    "21193": {
+     "page": 184,
+     "words": "Small Business Management/Entrepreneurship Certificate This certificate is designed for existing and potential entrepreneurs. It",
+     "until": "Certificates Business Information Professional I Certificate",
+     "evidence": "Small Business Management/Entrepreneurship 21193: its heading 'Small Business Management/Entrepreneurship Certificate' prints on PDF p.184, and its requirements and 'Total Units: 19' on p.184; the window ends where 'Certificates Business Information Professional I Certificate' opens the next section (college-page-read run 45167465999). The filed record was read from p.175 (the extraction: 'The excerpt names 'Small Business Management/Entrepreneurship Certificate' only in a list of certificates at the top of page 175; its requirements section is no'), so it placed none of its 7 listed courses."
+    },
+    "38898": {
+     "page": 382,
+     "words": "Pre-Clinical Laboratory Scientist Trainee Certificate The Pre-Clinical Laboratory Scientist Trainee certificate aims to guide",
+     "through": 383,
+     "until": "Medical Technology (MEDTEC) Courses MEDTEC 310 Introduction to Medical",
+     "evidence": "Pre-Clinical Laboratory Scientist Trainee 38898: its heading 'Pre-Clinical Laboratory Scientist Trainee Certificate' prints on PDF p.382, and its requirements and 'Total Units: 26' on p.383; the window ends where 'Medical Technology (MEDTEC) Courses MEDTEC 310 Introduction to Medical' opens the next section (college-page-read run 45167465999). The filed record was read from p.380 (the extraction: 'The text prints the heading 'Pre-Clinical Laboratory Scientist Trainee Certificate' at the top of page 380, but everything that follows belongs to the A.S'), so it placed none of its 3 listed courses."
+    },
+    "45568": {
+     "page": 395,
+     "words": "Commercial Music: Live Sound Technician Certificate This certificate is designed to train students in live sound reinforcement",
+     "until": "Commercial Music: Multimedia Music Composition Certificate",
+     "evidence": "Commercial Music: Live Sound Technician 45568: its heading 'Commercial Music: Live Sound Technician Certificate' prints on PDF p.395, and its requirements and 'Total Units: 16.5' on p.395; the window ends where 'Commercial Music: Multimedia Music Composition Certificate' opens the next section (college-page-read run 45167465999). The filed record was read from p.390 (the extraction: 'The excerpt (pages 390-392) names the Commercial Music: Live Sound Technician Certificate only in the list of program titles at the top of page 390; its require'), so it placed none of its 6 listed courses."
+    }
+   },
+   "pdf_pages_why": "S714 (rios, lane 1, the gap census's reader_page_assignment lever, run 45161770730): each program's extraction placed none of the state's listed courses, because the picker handed it a sibling award's section, the department's list of awards or the course descriptions. Each is pinned to its own section in the hand-filed 2026-27 catalog (kb/hand_filed_catalogs, sha256 pinned), read page for page by college-page-read run 45167465999: the page and words its heading opens on, `through` the page its section ends on, and `until` the words the next section opens on, so the window holds that section alone (d-rios-until-pin-s714). A pin binds only while the file prints the words, the until words after them and every title word between; otherwise the program gets no fresh text and its filed record stands. Reversible by deleting the entry."
+  },
   "Cosumnes River College": {
    "why": "S648, d-calgetc-34-per-college-evidence-s648. Cosumnes River's catalog names Cal-GETC and prints no unit figure for it: its Cal-GETC page (PDF p.95, filed as the Cal-GETC certificate 45203) prints area minimums and no total (the reading: 'No total units for the certificate is printed (Cal-GETC areas give minimums: Area 1 nine units, Area 2 three, Area 3 six, Area 4 six, Area 6 three)', 'Area 5 prints no unit'), and its transfer degrees' readings say no units are printed for Cal-GETC (30566, 33072, 39656). So the statewide 34 applies (Sam, Sheet 187 card 5). S649: the page's own words, read from the hand-filed copy by college-page-read run 43519918667 (plans kb/college_reads/cosumnes_cal_getc_page.json and cosumnes_calgetc_degree_sections.json), are quoted in the evidence. Reversible by deleting this entry.",
    "steps": [],
@@ -217,9 +381,117 @@
      "page": 227,
      "words": "Small Business Management/ Entrepreneurship Certificate The Certificate of Achievement in Small Business Management/",
      "evidence": "Small Business Management/Entrepreneurship Certificate 20193: its heading, above 'The Certificate of Achievement in Small Business Management/ Entrepreneurship', its Certificate Requirements (BUS 215, BUS 300, BUS 350, MKT 300, BUS 340, and a minimum of 3 units from ACCT 301, BUS 310, BUS 320, CISC 310, ECON C2001) and 'Total Units: 18' print on PDF p.227, below the Entrepreneurship Certificate's (college-page-read run 45017083685). The filed record was read from p.218, the Business department page that names the certificate in its list of awards, so it places none of 10."
+    },
+    "07315": {
+     "page": 306,
+     "words": "Early Childhood Education, School Age Child Care and Education Certificate Upon completion of one of the following certificates, and with",
+     "through": 307,
+     "until": "Early Childhood Education (ECE) Courses",
+     "evidence": "ECE: School Age Child Care and Education 07315: its heading 'Early Childhood Education, School Age Child Care and Education Certificate' prints on PDF p.306, and its requirements and 'Total Units: 26' on p.307; the window ends where 'Early Childhood Education (ECE) Courses' opens the next section (college-page-read run 45167465999). The filed record was read from p.301, so it placed none of its 8 listed courses."
+    },
+    "11336": {
+     "page": 186,
+     "words": "Automotive Engine Performance Certificate This curriculum is designed for students who are interested in",
+     "through": 187,
+     "until": "Automotive Engine Performance (Ford ASSET) Certificate",
+     "evidence": "Automotive Engine Performance 11336: its heading 'Automotive Engine Performance Certificate' prints on PDF p.186, and its requirements and 'Total Units: 23 - 25' on p.186; the window ends where 'Automotive Engine Performance (Ford ASSET) Certificate' opens the next section (college-page-read run 45167465999). The filed record was read from p.179, so it placed none of its 8 listed courses."
+    },
+    "35072": {
+     "page": 239,
+     "words": "Applied Communication Skills Certificate This certificate program provides the communication skills",
+     "through": 240,
+     "until": "Communication (COMM) Courses COMM C1000 Introduction to Public",
+     "evidence": "Communication Studies - Applied Communication Skills 35072: its heading 'Applied Communication Skills Certificate' prints on PDF p.239, and its requirements and 'Total Units: 15' on p.240; the window ends where 'Communication (COMM) Courses COMM C1000 Introduction to Public' opens the next section (college-page-read run 45167465999). The filed record was read from p.237 (the extraction: 'The supplied text (page 237) covers only the Communication Studies overview and the A.A.-T'), so it placed none of its 8 listed courses."
+    },
+    "35097": {
+     "page": 249,
+     "words": "A.S. in Web Developer Web Developers are proficient at creating Web site structure and",
+     "through": 250,
+     "until": "Certificates of Achievement Business Information Professional I",
+     "printed_title": "Web Developer",
+     "evidence": "CIS - Web Developer 35097: its heading 'A.S. in Web Developer' prints on PDF p.249, and its requirements and 'Total Units: 28' on p.249; the window ends where 'Certificates of Achievement Business Information Professional I' opens the next section (college-page-read run 45167465999). The filed record was read from p.255 (the extraction: 'The supplied text (catalog pages 255-256) has no section for the CIS - Web Developer A.S'), so it placed none of its 15 listed courses."
+    },
+    "35354": {
+     "page": 182,
+     "words": "Automatic Transmissions/Transaxles (Ford ASSET) Certificate This certificate represents a subset of the Ford Automotive Student",
+     "through": 183,
+     "until": "Automotive Brakes Certificate This curriculum is designed for students interested in seeking",
+     "evidence": "Automatic Transmissions/Transaxles (Ford ASSET) 35354: its heading 'Automatic Transmissions/Transaxles (Ford ASSET) Certificate' prints on PDF p.182, and its requirements and 'Total Units: 14.5' on p.183; the window ends where 'Automotive Brakes Certificate This curriculum is designed for students interested in seeking' opens the next section (college-page-read run 45167465999). The filed record was read from p.181 (the extraction: 'The supplied text (catalog page 181) contains only the Automotive Mechanics Technology (Ford ASSET) Associate in Science degree requirements (Total Units: 59), '), so it placed none of its 4 listed courses."
+    },
+    "35358": {
+     "page": 189,
+     "words": "Automotive Heating and Air Conditioning (Ford ASSET) Certificate This certificate represents a subset of the Ford Automotive Student",
+     "until": "Automotive Mechanics Technology Certificate",
+     "evidence": "Automotive Heating and Air Conditioning (Ford ASSET) 35358: its heading 'Automotive Heating and Air Conditioning (Ford ASSET) Certificate' prints on PDF p.189, and its requirements and 'Total Units: 13' on p.189; the window ends where 'Automotive Mechanics Technology Certificate' opens the next section (college-page-read run 45167465999). The filed record was read from p.181 (the extraction: 'The supplied text (page 181) holds only the Automotive Mechanics Technology (Ford ASSET) A.S'), so it placed none of its 4 listed courses."
+    },
+    "35360": {
+     "page": 187,
+     "words": "Automotive Engine Performance (Ford ASSET) Certificate This certificate represents a subset of the Ford Automotive Student",
+     "until": "Automotive Engine Repair Certificate This curriculum is designed for students interested in seeking",
+     "evidence": "Automotive Engine Performance (Ford ASSET) 35360: its heading 'Automotive Engine Performance (Ford ASSET) Certificate' prints on PDF p.187, and its requirements and 'Total Units: 13' on p.187; the window ends where 'Automotive Engine Repair Certificate This curriculum is designed for students interested in seeking' opens the next section (college-page-read run 45167465999). The filed record was read from p.181 (the extraction: 'The supplied page (181) prints only the Automotive Mechanics Technology (Ford ASSET) A.S'), so it placed none of its 4 listed courses."
+    },
+    "35361": {
+     "page": 192,
+     "words": "Automotive Suspension and Steering (Ford ASSET) Certificate This certificate represents a subset of the Ford Automotive Student",
+     "through": 193,
+     "until": "Manual Drive Train and Axles (Ford ASSET) Certificate",
+     "evidence": "Automotive Suspension and Steering (Ford ASSET) 35361: its heading 'Automotive Suspension and Steering (Ford ASSET) Certificate' prints on PDF p.192, and its requirements and 'Total Units: 13' on p.192; the window ends where 'Manual Drive Train and Axles (Ford ASSET) Certificate' opens the next section (college-page-read run 45167465999). The filed record was read from p.181 (the extraction: 'The excerpt (page 181) holds only the Automotive Mechanics Technology (Ford ASSET) A.S'), so it placed none of its 4 listed courses."
+    },
+    "35362": {
+     "page": 185,
+     "words": "Automotive Electrical Systems (Ford ASSET) Certificate This certificate represents a subset of the Ford Automotive Student",
+     "through": 186,
+     "until": "Automotive Emission Control Certificate This curriculum is designed for students who are interested in",
+     "evidence": "Automotive Electrical Systems (Ford ASSET) 35362: its heading 'Automotive Electrical Systems (Ford ASSET) Certificate' prints on PDF p.185, and its requirements and 'Total Units: 14' on p.185; the window ends where 'Automotive Emission Control Certificate This curriculum is designed for students who are interested in' opens the next section (college-page-read run 45167465999). The filed record was read from p.181 (the extraction: 'The text covers only the Automotive Mechanics Technology (Ford ASSET) A.S'), so it placed none of its 3 listed courses."
+    },
+    "35363": {
+     "page": 188,
+     "words": "Automotive Heating and Air Conditioning Certificate This curriculum is designed for students interested in seeking",
+     "through": 189,
+     "until": "Automotive Heating and Air Conditioning (Ford ASSET) Certificate",
+     "evidence": "Automotive Heating and Air Conditioning 35363: its heading 'Automotive Heating and Air Conditioning Certificate' prints on PDF p.188, and its requirements and 'Total Units: 17' on p.188; the window ends where 'Automotive Heating and Air Conditioning (Ford ASSET) Certificate' opens the next section (college-page-read run 45167465999). The filed record was read from p.179 (the extraction: 'The supplied text (pages 179-180) contains only the department's list of programs, the A.S'), so it placed none of its 5 listed courses."
+    },
+    "35364": {
+     "page": 182,
+     "words": "Automatic Transmissions and Transaxles Certificate The curriculum is designed for students interested in seeking",
+     "until": "Automatic Transmissions/Transaxles (Ford ASSET) Certificate",
+     "evidence": "Automatic Transmissions and Transaxles 35364: its heading 'Automatic Transmissions and Transaxles Certificate' prints on PDF p.182, and its requirements and 'Total Units: 14' on p.182; the window ends where 'Automatic Transmissions/Transaxles (Ford ASSET) Certificate' opens the next section (college-page-read run 45167465999). The filed record was read from p.179 (the extraction: 'The supplied text lists 'Automatic Transmissions and Transaxles Certificate' only in the program index at the top of page 179; its own requirements section is n'), so it placed none of its 4 listed courses."
+    },
+    "35367": {
+     "page": 192,
+     "words": "Automotive Suspension and Steering Certificate This curriculum is designed for students interested in seeking",
+     "until": "Automotive Suspension and Steering (Ford ASSET) Certificate",
+     "evidence": "Automotive Suspension and Steering 35367: its heading 'Automotive Suspension and Steering Certificate' prints on PDF p.192, and its requirements and 'Total Units: 17' on p.192; the window ends where 'Automotive Suspension and Steering (Ford ASSET) Certificate' opens the next section (college-page-read run 45167465999). The filed record was read from p.179 (the extraction: 'The supplied text (pages 179-180) names 'Automotive Suspension and Steering Certificate' only in the department's list of programs at the top of page 179; the c'), so it placed none of its 5 listed courses."
+    },
+    "35374": {
+     "page": 193,
+     "words": "Manual Drive Train and Axles (Ford ASSET) Certificate This certificate represents a subset of the Ford Automotive Student",
+     "through": 194,
+     "until": "Small Engine Repair Certificate This curriculum is designed for students who are interested in",
+     "evidence": "Manual Drive Train and Axles (Ford ASSET) 35374: its heading 'Manual Drive Train and Axles (Ford ASSET) Certificate' prints on PDF p.193, and its requirements and 'Total Units: 11.5' on p.193; the window ends where 'Small Engine Repair Certificate This curriculum is designed for students who are interested in' opens the next section (college-page-read run 45167465999). The filed record was read from p.181 (the extraction: 'The supplied text (catalog page 181) prints only the Automotive Mechanics Technology (Ford ASSET) A.S'), so it placed none of its 3 listed courses."
+    },
+    "37285": {
+     "page": 305,
+     "words": "Early Childhood Education, Associate Teacher Certificate Upon completion of this certificate, and with appropriate",
+     "through": 306,
+     "until": "Early Childhood Education, Infant and Toddler Specialist Certificate",
+     "evidence": "ECE, Associate Teacher 37285: its heading 'Early Childhood Education, Associate Teacher Certificate' prints on PDF p.305, and its requirements and 'Total Units: 16' on p.305; the window ends where 'Early Childhood Education, Infant and Toddler Specialist Certificate' opens the next section (college-page-read run 45167465999). The filed record was read from p.300 (the extraction: 'The excerpt (pages 300-303) covers the AS-T in Early Childhood Education, the A.A'), so it placed none of its 4 listed courses."
+    },
+    "37842": {
+     "page": 284,
+     "words": "Basic Culinary Services Certificate This program provides training in the entry-level skills necessary for",
+     "through": 285,
+     "until": "Cooking and Supervision Certificate This program provides training in the basic skills necessary for a",
+     "evidence": "Culinary Arts Management: Basic Culinary Services 37842: its heading 'Basic Culinary Services Certificate' prints on PDF p.284, and its requirements and 'Total Units: 16' on p.284; the window ends where 'Cooking and Supervision Certificate This program provides training in the basic skills necessary for a' opens the next section (college-page-read run 45167465999). The filed record was read from p.221 (the extraction: 'The provided text (catalog pages 221-222) prints only the Culinary Arts Management A.A'), so it placed none of its 5 listed courses."
+    },
+    "39131": {
+     "page": 227,
+     "words": "Entrepreneurship Certificate This certificate is designed for current and potential entrepreneurs.",
+     "until": "Small Business Management/ Entrepreneurship Certificate",
+     "evidence": "Business: Entrepreneurship 39131: its heading 'Entrepreneurship Certificate' prints on PDF p.227, and its requirements and 'Total Units: 9' on p.227; the window ends where 'Small Business Management/ Entrepreneurship Certificate' opens the next section (college-page-read run 45167465999). The filed record was read from p.282 (the extraction: 'The supplied text (catalog pages 282-283) covers the Culinary Arts Management program: the A.A'), so it placed none of its 3 listed courses."
     }
    },
-   "pdf_pages_why": "S650: the two transfer degrees the statewide 34 waits on (calgetc_apply_plan.json waiting.own_pages) are read from their own pages, named here with the words the filed capture opened on, never found by a pattern over the catalog's text. S680: four local degrees whose requirement list starts at the foot of their heading's page and was read from the next page alone (11338, 04607, 11319, 07305) are pinned to the heading's page, with the words the page prints there. 04614 and 04602 share the cause and are not pinned: on their pages the lines above the heading name listed codes, so the window does not cut at the heading and opens on the program before (Art - Design's tail; Information Technology's whole list, CISC 310 found only there), which waits on a reader fix (the S680 second reader). A pin binds only while the hand-filed file (sha256 pinned in kb/hand_filed_catalogs) prints the words and every title word on that page; otherwise the program gets no fresh text, its filed record stands, and the capture says why. Reversible by deleting this entry."
+   "pdf_pages_why": "S650: the two transfer degrees the statewide 34 waits on (calgetc_apply_plan.json waiting.own_pages) are read from their own pages, named here with the words the filed capture opened on, never found by a pattern over the catalog's text. S680: four local degrees whose requirement list starts at the foot of their heading's page and was read from the next page alone (11338, 04607, 11319, 07305) are pinned to the heading's page, with the words the page prints there. 04614 and 04602 share the cause and are not pinned: on their pages the lines above the heading name listed codes, so the window does not cut at the heading and opens on the program before (Art - Design's tail; Information Technology's whole list, CISC 310 found only there), which waits on a reader fix (the S680 second reader). A pin binds only while the hand-filed file (sha256 pinned in kb/hand_filed_catalogs) prints the words and every title word on that page; otherwise the program gets no fresh text, its filed record stands, and the capture says why. Reversible by deleting this entry. S714 (rios): fifteen certificates and one degree (35097) that placed none of their listed courses, pinned to their own sections with `through` and `until` (d-rios-until-pin-s714); see the same paragraph at Sacramento City."
   },
   "Lassen College": {
    "why": "S651, d-calgetc-34-per-college-evidence-s648. Lassen's catalog prints its own Cal-GETC figure: the pattern page (2026-2027 catalog, PDF p.72, printed p.70), headed 'California General Education Transfer Curriculum (Cal-GETC) Certification', prints 'Cal-GETC General Education Certificate of Achievement requires 34 Units.' and the six areas it counts (Area 1 '9 units', Area 2 '3 units', Area 3 '6 units', Area 4 '6 units', Area 5 '7 units', Area 6 '3 units', 34 in all), read by college-page-read run 43570566375 (plan kb/college_reads/lassen_cal_getc_page.json) from the catalog every Lassen record was extracted from (capture run 39006337658). The transfer degrees name Cal-GETC with no units read. A catalog printing its own figure takes a set step, so a transfer degree naming Cal-GETC with no units read takes 34 from that page, only where the record names its pattern, its degree total and its major's printed total (S651, the conductor: without a printed major total the 34 would pass a record on the electives fill alone, the S650 false-pass class; Kinesiology 33388 so stays empty). S680: the set step holds three records by name (its hold), so the run itself leaves them as main files them and no rebuilt apply plan applies them again: 31297 (42300's legacy number), 35106 and 41912 (overlap). Reversible by deleting this entry.",

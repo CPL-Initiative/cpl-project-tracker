@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Information Processing Specialist",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=265",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=272",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12090,
+  "input_tokens": 7090,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12090,
-    "output_tokens": 2050,
+    "input_tokens": 7090,
+    "output_tokens": 1563,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,45 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 2050,
+  "output_tokens": 1563,
   "output_tokens_details": {
-   "thinking_tokens": 880
+   "thinking_tokens": 371
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08936,
- "ms": 18572,
- "seconds": 18.8,
+ "cost_usd": 0.05962,
+ "ms": 12377,
+ "seconds": 16.7,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 15,
    "listed": 15,
-   "share": 0.0,
-   "missing": [
-    "CISA305",
-    "CISA306",
-    "CISA315",
-    "CISA316",
-    "CISA323",
-    "CISA340",
-    "CISC305",
-    "CISC310",
-    "CISC320",
-    "CISC351",
-    "CISC360",
-    "CISN340",
-    "CISS300",
-    "CISS310",
-    "CISW306"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -77,49 +61,50 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    25.0,
+    29.5
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    25.0,
+    29.5
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 6,
    "courses": 0,
-   "count": 0,
+   "count": 6,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 6,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Not found in the text: the Certificate of Achievement in Information Processing Specialist section is not included; the excerpt begins inside the A.S. in Information Processing section (Degree Requirements)",
+   "section_heading": "Information Processing Specialist Certificate",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 25,
+    "max": 29.5
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -136,79 +121,166 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "design, implement, manage, and evaluate data management systems involving custom macros to solve complex business problems.",
+    "analyze and integrate data from various application programs for individual and group on-the-job projects.",
+    "set up, test, and implement complex macros and scripts for on-the-job usage.",
+    "explain the use of basic hardware components and their organization, installation, and repair of microcomputers.",
+    "evaluate different hardware and software specification standards and implement problem-solving strategies or techniques using various diagnostic tools.",
+    "analyze on-the-job needs, identify software and hardware related problems, and effectively communicate solutions to end users."
+   ],
+   "careers": [
+    "office workers",
+    "secretaries",
+    "first line supervisors",
+    "administrative analysts",
+    "information resource personnel",
+    "lead administrative specialists"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "CISA 305",
-    "why": "named only in the A.S. Information Processing (and MIS) sections; certificate section not in text"
-   },
-   {
-    "code": "CISA 306",
-    "why": "named only in the A.S. Information Processing (and MIS) sections; certificate section not in text"
-   },
-   {
-    "code": "CISA 315",
-    "why": "named only in the A.S. Information Processing (and MIS) sections; certificate section not in text"
-   },
-   {
-    "code": "CISA 316",
-    "why": "named only in the A.S. Information Processing (and MIS) sections; certificate section not in text"
-   },
-   {
-    "code": "CISA 323",
-    "why": "named only in the A.S. Information Processing (and MIS) sections; certificate section not in text"
-   },
-   {
-    "code": "CISA 340",
-    "why": "named only in the A.S. Information Processing (and MIS) sections; certificate section not in text"
-   },
-   {
-    "code": "CISC 305",
-    "why": "named only in the A.S. Information Processing (and MIS) sections; certificate section not in text"
-   },
-   {
-    "code": "CISC 310",
-    "why": "named only in A.S. sections; certificate section not in text"
-   },
-   {
-    "code": "CISC 320",
-    "why": "named only in A.S. sections; certificate section not in text"
-   },
-   {
-    "code": "CISC 351",
-    "why": "named only in A.S. sections; certificate section not in text"
-   },
-   {
-    "code": "CISC360",
-    "why": "printed as CISC 360 only in A.S. sections; certificate section not in text"
-   },
-   {
-    "code": "CISN 340",
-    "why": "named only in A.S. sections; certificate section not in text"
-   },
-   {
-    "code": "CISS 300",
-    "why": "named only in A.S. sections; certificate section not in text"
-   },
-   {
-    "code": "CISS 310",
-    "why": "named only in A.S. sections; certificate section not in text"
-   },
-   {
-    "code": "CISW 306",
-    "why": "named only in the A.S. Web Developer section; certificate section not in text"
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CISA 305",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISA 306",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISA 315",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISA 316",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISA 323",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISA 340",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISC 305",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISC 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISC 320",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISC 351",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CISN 340",
+        "units": 3.5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISC 360",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISS 300",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CISS 310",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISW 306",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The catalog text does not contain the Information Processing Specialist Certificate of Achievement section. It begins mid-description of the A.S. in Information Processing, whose description says the Information Processing Technician and Information Processing Specialist certificates serve as major fields of study for that degree.",
-   "The A.S. in Information Processing requirements (CISA 305, 306, 315, 316, 323, 340; CISC 305, 310, 320; CISC 351 or CISN 340; CISC 360; CISS 300 or CISS 310; Total Units: 23 - 27.5) closely match the closed list. CISW 306 is the exception: it appears only in the A.S. Web Developer section.",
-   "These degree requirements were not recorded as the certificate's, because they belong to a different award and may differ from it. The certificate likely includes CISW 306. A reviewer should fetch the certificate's own section, likely on an adjacent page (around page 264), and complete the record.",
-   "Outcomes and careers printed in the A.S. Information Processing section were not recorded, because they are not printed for this certificate in the supplied text. The careers named there are office supervisors, office managers, computer support specialists and information processing specialists."
+   "The rows 'CISC 351 (1) 1 - 3.5 or CISN 340 (3.5)' and 'CISS 300 (1) 1 - 3 or CISS 310 (3)' print a range that reflects the choice between alternatives; each course's own units were recorded and units_max left null.",
+   "Closed list stores 'CISC360' without a space; the catalog prints 'CISC 360' (4 units). Treated as the same course, not a catalog addition.",
+   "The CISS 300 / CISS 310 'or' row spans the page break between pages 272 and 273."
   ]
  },
- "extracted_run": "39047070975"
+ "extracted_run": "45181973475",
+ "catalog_year": "2026-2027",
+ "source_sha": "45fee6283acfff33",
+ "source_codes": [
+  "CISA305",
+  "CISA306",
+  "CISA315",
+  "CISA316",
+  "CISA323",
+  "CISA340",
+  "CISC305",
+  "CISC310",
+  "CISC320",
+  "CISC351",
+  "CISN340",
+  "CISS300",
+  "CISS310",
+  "CISW306"
+ ],
+ "source_coverage": 0.933
 }

@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 226,
  "with_closed_list": 219,
- "started": "2026-11-22T11:36:44Z",
+ "started": "2026-11-23T13:44:05Z",
  "pdf": {
   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf",
   "access": "hand_filed",
@@ -36,9 +36,21 @@
     "page": 212,
     "bound": true
    },
+   "07315": {
+    "page": 306,
+    "bound": true,
+    "through": 307,
+    "until_page": 307
+   },
    "11319": {
     "page": 205,
     "bound": true
+   },
+   "11336": {
+    "page": 186,
+    "bound": true,
+    "through": 187,
+    "until_page": 187
    },
    "11338": {
     "page": 168,
@@ -67,6 +79,85 @@
    "33072": {
     "page": 404,
     "bound": true
+   },
+   "35072": {
+    "page": 239,
+    "bound": true,
+    "through": 240,
+    "until_page": 240
+   },
+   "35097": {
+    "page": 249,
+    "bound": true,
+    "through": 250,
+    "until_page": 250
+   },
+   "35354": {
+    "page": 182,
+    "bound": true,
+    "through": 183,
+    "until_page": 183
+   },
+   "35358": {
+    "page": 189,
+    "bound": true,
+    "until_page": 189
+   },
+   "35360": {
+    "page": 187,
+    "bound": true,
+    "until_page": 187
+   },
+   "35361": {
+    "page": 192,
+    "bound": true,
+    "through": 193,
+    "until_page": 193
+   },
+   "35362": {
+    "page": 185,
+    "bound": true,
+    "through": 186,
+    "until_page": 186
+   },
+   "35363": {
+    "page": 188,
+    "bound": true,
+    "through": 189,
+    "until_page": 189
+   },
+   "35364": {
+    "page": 182,
+    "bound": true,
+    "until_page": 182
+   },
+   "35367": {
+    "page": 192,
+    "bound": true,
+    "until_page": 192
+   },
+   "35374": {
+    "page": 193,
+    "bound": true,
+    "through": 194,
+    "until_page": 194
+   },
+   "37285": {
+    "page": 305,
+    "bound": true,
+    "through": 306,
+    "until_page": 306
+   },
+   "37842": {
+    "page": 284,
+    "bound": true,
+    "through": 285,
+    "until_page": 285
+   },
+   "39131": {
+    "page": 227,
+    "bound": true,
+    "until_page": 227
    }
   },
   "hand_filed": {
@@ -604,6 +695,20 @@
     "opens": "[page 299] Early Childhood Education - Master Teacher Certificate Early Childhood Education - Teacher Certificate Early Childhood Education, Associate Teacher Certificate Early Childhood Education, Infant and Toddler "
    },
    {
+    "control_number": "07315",
+    "pages": [
+     306,
+     307
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 306] Early Childhood Education, School Age Child Care and Education Certificate Upon completion of one of the following certificates, and with appropriate documented experience, the student meets the minimum re",
+    "pinned": true
+   },
+   {
     "control_number": "07319",
     "pages": [
      281,
@@ -666,15 +771,16 @@
    {
     "control_number": "11336",
     "pages": [
-     179,
-     180
+     186,
+     187
     ],
     "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 179] Automotive Engine Performance Certificate Automotive Engine Performance (Ford ASSET) Certificate Automotive Engine Repair Certificate Automotive Engine Repair (Ford ASSET) Certificate Automotive Heating an"
+    "opens": "[page 186] Automotive Engine Performance Certificate This curriculum is designed for students who are interested in seeking employment in the inspection, maintenance, diagnosis, and repair of automotive engine perfor",
+    "pinned": true
    },
    {
     "control_number": "11338",
@@ -1968,14 +2074,30 @@
    {
     "control_number": "35072",
     "pages": [
-     237
+     239,
+     240
     ],
     "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 237] Applied Communication Skills Certificate Dean: Emilie Mitchell Department Chair: Daniel T. DuBray Phone: (916) 691-7656 Email: mitchee@crc.losrios.edu Associate Degrees for Transfer A.A.-T. in Commun"
+    "opens": "[page 239] Applied Communication Skills Certificate This certificate program provides the communication skills necessary for entry-level positions in business, and helps improve managerial attributes with an emphasis ",
+    "pinned": true
+   },
+   {
+    "control_number": "35097",
+    "pages": [
+     249,
+     250
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.933,
+    "opens": "[page 249] A.S. in Web Developer Web Developers are proficient at creating Web site structure and interactivity. The Web Developer degree requires students to design, code, and modify websites from layout to function,",
+    "pinned": true
    },
    {
     "control_number": "35148",
@@ -2034,6 +2156,20 @@
     "opens": "[page 248] • Implement network perimeter defense (PSLO 6). Career Information Some career opportunities associated with this degree include: security analyst, network systems security administrator, security policy a"
    },
    {
+    "control_number": "35354",
+    "pages": [
+     182,
+     183
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 182] Automatic Transmissions/Transaxles (Ford ASSET) Certificate This certificate represents a subset of the Ford Automotive Student Service Education Training (ASSET) Program and is intended for students wishi",
+    "pinned": true
+   },
+   {
     "control_number": "35357",
     "pages": [
      184,
@@ -2045,6 +2181,19 @@
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 184] • Repair automotive electrical/electronic systems relating to Brake Systems. • Understand theory and operation of automotive brake systems. • Explain the operation of conventional, anti-lock, traction contr"
+   },
+   {
+    "control_number": "35358",
+    "pages": [
+     189
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 189] Automotive Heating and Air Conditioning (Ford ASSET) Certificate This certificate represents a subset of the Ford Automotive Student Service Education Training (ASSET) Program and is intended for students ",
+    "pinned": true
    },
    {
     "control_number": "35359",
@@ -2059,30 +2208,72 @@
     "opens": "[page 181] Courses within the Ford ASSET program allow students to earn Service Technician Specialty Training (STST) certifications from Ford Motor Company in the following areas: • New Ford/Lincoln Technician • Fiel"
    },
    {
-    "control_number": "35363",
+    "control_number": "35360",
     "pages": [
-     179,
-     180
+     187
     ],
     "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 179] Automotive Heating and Air Conditioning Certificate Automotive Heating and Air Conditioning (Ford ASSET) Certificate Automotive Mechanics Technology Certificate Automotive Mechanics Technology (Ford ASSET)"
+    "opens": "[page 187] Automotive Engine Performance (Ford ASSET) Certificate This certificate represents a subset of the Ford Automotive Student Service Education Training (ASSET) Program and is intended for students wishing to",
+    "pinned": true
+   },
+   {
+    "control_number": "35361",
+    "pages": [
+     192,
+     193
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 192] Automotive Suspension and Steering (Ford ASSET) Certificate This certificate represents a subset of the Ford Automotive Student Service Education Training (ASSET) Program and is intended for students wishi",
+    "pinned": true
+   },
+   {
+    "control_number": "35362",
+    "pages": [
+     185,
+     186
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 185] Automotive Electrical Systems (Ford ASSET) Certificate This certificate represents a subset of the Ford Automotive Student Service Education Training (ASSET) Program and is intended for students wishing to",
+    "pinned": true
+   },
+   {
+    "control_number": "35363",
+    "pages": [
+     188,
+     189
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 188] Automotive Heating and Air Conditioning Certificate This curriculum is designed for students interested in seeking employment in the automotive heating and air conditioning repair/ installation field. Cert",
+    "pinned": true
    },
    {
     "control_number": "35364",
     "pages": [
-     179,
-     180
+     182
     ],
     "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 179] Automatic Transmissions and Transaxles Certificate Automatic Transmissions/Transaxles (Ford ASSET) Certificate Automotive Brakes Certificate Automotive Brakes (Ford ASSET) Certificate Automotive Electrical"
+    "opens": "[page 182] Automatic Transmissions and Transaxles Certificate The curriculum is designed for students interested in seeking employment in the diagnosis and repair of automatic transmissions/transaxles. Certificate R",
+    "pinned": true
    },
    {
     "control_number": "35366",
@@ -2099,15 +2290,29 @@
    {
     "control_number": "35367",
     "pages": [
-     179,
-     180
+     192
     ],
     "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 179] Automotive Suspension and Steering Certificate Automotive Suspension and Steering (Ford ASSET) Certificate Manual Drive Train and Axles (Ford ASSET) Certificate Small Engine Repair Certificate Dean: Brian"
+    "opens": "[page 192] Automotive Suspension and Steering Certificate This curriculum is designed for students interested in seeking employment in the automotive suspension, steering, or wheel alignment fields. Certificate Requ",
+    "pinned": true
+   },
+   {
+    "control_number": "35374",
+    "pages": [
+     193,
+     194
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 193] Manual Drive Train and Axles (Ford ASSET) Certificate This certificate represents a subset of the Ford Automotive Student Service Education Training (ASSET) Program and is intended for students wishing to ",
+    "pinned": true
    },
    {
     "control_number": "35375",
@@ -2411,6 +2616,20 @@
     "opens": "[page 516] Nutrition and Foods, Community Nutrition Certificate Regenerative Foodways Certificate Dean: Kris Hubbard Department Chair: Serena Fuller Phone: (916) 691-7296 Email: hubbark@crc.losrios.edu Associat"
    },
    {
+    "control_number": "37285",
+    "pages": [
+     305,
+     306
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 305] Early Childhood Education, Associate Teacher Certificate Upon completion of this certificate, and with appropriate documented experience, the student meets the minimum requirements for employment in a priv",
+    "pinned": true
+   },
+   {
     "control_number": "37337",
     "pages": [
      271,
@@ -2435,6 +2654,20 @@
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 160] Green Buildings Certificate The purpose of this certificate is to develop job skills and an understanding of green strategies for high performance buildings and livable communities. It is focused on student"
+   },
+   {
+    "control_number": "37842",
+    "pages": [
+     284,
+     285
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 284] Basic Culinary Services Certificate This program provides training in the entry-level skills necessary for a career in food service. Courses begin at basic training, culminating in an advanced course focusi",
+    "pinned": true
    },
    {
     "control_number": "37848",
@@ -2543,6 +2776,19 @@
     "titled": true,
     "coverage": 0.875,
     "opens": "[page 502] The Entrepreneurial Arts: Music Composition Certificate prepares students for all aspects of a music career, from performance to thriving as a working artist. We give you the tools to grow and survive as an"
+   },
+   {
+    "control_number": "39131",
+    "pages": [
+     227
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 227] Entrepreneurship Certificate This certificate is designed for current and potential entrepreneurs. It provides an introductory and organized course of study that enables students to develop their entreprene",
+    "pinned": true
    },
    {
     "control_number": "39139",
@@ -2885,9 +3131,9 @@
    }
   ],
   "page_checks": {
-   "read": 25,
-   "own_page": 11,
-   "no_own_page": 14,
+   "read": 9,
+   "own_page": 0,
+   "no_own_page": 9,
    "not_printed": 0
   },
   "unproven": []
@@ -2895,12 +3141,12 @@
  "loads": 0,
  "pages_listed": 1,
  "pages_answered": 1,
- "seconds": 352.3,
- "found": 197,
+ "seconds": 342.1,
+ "found": 208,
  "by_method": {
   "no_closed_list": 7,
-  "not_found": 22,
-  "pdf_pages": 197
+  "not_found": 11,
+  "pdf_pages": 208
  },
  "shared_pages": {
   "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=132": [
@@ -2920,13 +3166,13 @@
    "20197",
    "39139"
   ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=249": [
+   "04602",
+   "35097"
+  ],
   "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=179": [
    "04607",
-   "11336",
    "20206",
-   "35363",
-   "35364",
-   "35367",
    "35410"
   ],
   "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=158": [
@@ -2998,6 +3244,10 @@
    "07305",
    "20222"
   ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=306": [
+   "07312",
+   "07315"
+  ],
   "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=122": [
    "11320",
    "12262"
@@ -3042,6 +3292,10 @@
    "18902",
    "40921"
   ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=227": [
+   "20193",
+   "39131"
+  ],
   "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=581": [
    "20226",
    "31997"
@@ -3056,7 +3310,6 @@
   ],
   "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=237": [
    "30720",
-   "35072",
    "42792"
   ],
   "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=636": [
@@ -3076,9 +3329,21 @@
    "35336",
    "36447"
   ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=182": [
+   "35354",
+   "35364"
+  ],
   "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=184": [
    "35357",
    "35378"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=187": [
+   "35360",
+   "35379"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=192": [
+   "35361",
+   "35367"
   ],
   "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=252": [
    "35375",
@@ -3109,18 +3374,6 @@
     "page_checks": true
    },
    "status": "Active - Teachout Only"
-  },
-  {
-   "control_number": "07315",
-   "title": "ECE: School Age Child Care and Education",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0,
-    "page_checks": true
-   },
-   "status": "Active"
   },
   {
    "control_number": "07320",
@@ -3193,18 +3446,6 @@
    "status": "Active - Teachout Only"
   },
   {
-   "control_number": "35097",
-   "title": "CIS - Web Developer",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0,
-    "page_checks": true
-   },
-   "status": "Active"
-  },
-  {
    "control_number": "35350",
    "title": "Business Information Worker",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
@@ -3215,72 +3456,6 @@
     "page_checks": true
    },
    "status": "Active - Teachout Only"
-  },
-  {
-   "control_number": "35354",
-   "title": "Automatic Transmissions/Transaxles (Ford ASSET)",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=179",
-    "coverage": 0.0,
-    "page_checks": true
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "35358",
-   "title": "Automotive Heating and Air Conditioning (Ford ASSET)",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=179",
-    "coverage": 0.0,
-    "page_checks": true
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "35360",
-   "title": "Automotive Engine Performance (Ford ASSET)",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=179",
-    "coverage": 0.0,
-    "page_checks": true
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "35361",
-   "title": "Automotive Suspension and Steering (Ford ASSET)",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=179",
-    "coverage": 0.0,
-    "page_checks": true
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "35362",
-   "title": "Automotive Electrical Systems (Ford ASSET)",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=179",
-    "coverage": 0.0,
-    "page_checks": true
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "35374",
-   "title": "Manual Drive Train and Axles (Ford ASSET)",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=179",
-    "coverage": 0.0,
-    "page_checks": true
-   },
-   "status": "Active"
   },
   {
    "control_number": "35408",
@@ -3307,43 +3482,6 @@
    "status": "Active - Teachout Only"
   },
   {
-   "control_number": "37285",
-   "title": "ECE, Associate Teacher",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0,
-    "page_checks": true
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "37842",
-   "title": "Culinary Arts Management: Basic Culinary Services",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0,
-    "page_checks": true
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "39131",
-   "title": "Business: Entrepreneurship",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0,
-    "plain_named": true,
-    "page_checks": true
-   },
-   "status": "Active"
-  },
-  {
    "control_number": "39444",
    "title": "Honors",
    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
@@ -3358,52 +3496,152 @@
  "page_challenged": [],
  "coverage_bands": {
   "0.5-0.8": 9,
-  "0.8-1.0": 45,
-  "1.0": 143
+  "0.8-1.0": 46,
+  "1.0": 153
  },
  "would_extract": {
   "against": "kb/program_requirements_college/cosumnes_river",
-  "kept": 161,
+  "kept": 176,
   "kept_moved": 0,
-  "programs": 4,
+  "programs": 14,
   "list": [
    {
-    "control_number": "20147",
-    "title": "Veterinary Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=625",
+    "control_number": "04596",
+    "title": "Marketing",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=473",
     "coverage": 1.0,
-    "was_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=622",
+    "was_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=474",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "20193",
-    "title": "Business: Small Business Management/Entrepreneurship",
+    "control_number": "11346",
+    "title": "American Studies",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=424",
+    "coverage": 0.967,
+    "was_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=425",
+    "was_coverage": 0.967,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "12790",
+    "title": "Chemistry",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=232",
+    "coverage": 1.0,
+    "was_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=233",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "17868",
+    "title": "Liberal Arts - Arts and Humanities",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=464",
+    "coverage": 0.956,
+    "was_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=465",
+    "was_coverage": 0.649,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "20153",
+    "title": "Horticulture, Sustainable Landscape Technology",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=227",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=412",
     "coverage": 1.0,
-    "was_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=218",
+    "was_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=414",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "20227",
-    "title": "Firefighter Suppression Specialist",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=367",
+    "control_number": "30576",
+    "title": "Diagnostic Medical Sonography",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=291",
     "coverage": 1.0,
-    "was_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=365",
+    "was_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=292",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "33053",
-    "title": "English",
+    "control_number": "31053",
+    "title": "Film/Digital Cinema Production",
+    "award": "A.A. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=363",
+    "coverage": 1.0,
+    "was_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=364",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "31055",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=433",
+    "coverage": 1.0,
+    "was_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=540",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "35175",
+    "title": "Information Technology Associate",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=246",
+    "coverage": 1.0,
+    "was_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=248",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "35899",
+    "title": "Marketing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=473",
+    "coverage": 1.0,
+    "was_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=474",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "38017",
+    "title": "Entrepreneurial Arts – Independent Music Instructor",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=498",
+    "coverage": 0.842,
+    "was_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=502",
+    "was_coverage": 0.632,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "39679",
+    "title": "Social Justice Studies: Gender Studies",
     "award": "A.A- T Degree",
-    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=333",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=575",
     "coverage": 1.0,
-    "was_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=334",
+    "was_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=578",
+    "was_coverage": 0.938,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "41992",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=218",
+    "coverage": 1.0,
+    "was_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=219",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "45317",
+    "title": "Surgical Technology",
+    "award": "A.S. Degree",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=599",
+    "coverage": 1.0,
+    "was_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=600",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    }
@@ -3558,154 +3796,6 @@
     "was_coverage": 0.667
    }
   ],
-  "only": [
-   "20147",
-   "20193",
-   "20227",
-   "33053"
-  ],
-  "not_named": [
-   {
-    "control_number": "04596",
-    "title": "Marketing",
-    "award": "A.A. Degree",
-    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=473",
-    "coverage": 1.0,
-    "was_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=474",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "11346",
-    "title": "American Studies",
-    "award": "A.A. Degree",
-    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=424",
-    "coverage": 0.967,
-    "was_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=425",
-    "was_coverage": 0.967,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "12790",
-    "title": "Chemistry",
-    "award": "A.S. Degree",
-    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=232",
-    "coverage": 1.0,
-    "was_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=233",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "17868",
-    "title": "Liberal Arts - Arts and Humanities",
-    "award": "A.A. Degree",
-    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=464",
-    "coverage": 0.956,
-    "was_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=465",
-    "was_coverage": 0.649,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "20153",
-    "title": "Horticulture, Sustainable Landscape Technology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=412",
-    "coverage": 1.0,
-    "was_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=414",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "30576",
-    "title": "Diagnostic Medical Sonography",
-    "award": "A.S. Degree",
-    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=291",
-    "coverage": 1.0,
-    "was_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=292",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "31053",
-    "title": "Film/Digital Cinema Production",
-    "award": "A.A. Degree",
-    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=363",
-    "coverage": 1.0,
-    "was_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=364",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "31055",
-    "title": "Physics",
-    "award": "A.S. T Degree",
-    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=433",
-    "coverage": 1.0,
-    "was_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=540",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "35175",
-    "title": "Information Technology Associate",
-    "award": "A.S. Degree",
-    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=246",
-    "coverage": 1.0,
-    "was_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=248",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "35899",
-    "title": "Marketing",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=473",
-    "coverage": 1.0,
-    "was_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=474",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "38017",
-    "title": "Entrepreneurial Arts – Independent Music Instructor",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=498",
-    "coverage": 0.842,
-    "was_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=502",
-    "was_coverage": 0.632,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "39679",
-    "title": "Social Justice Studies: Gender Studies",
-    "award": "A.A- T Degree",
-    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=575",
-    "coverage": 1.0,
-    "was_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=578",
-    "was_coverage": 0.938,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "41992",
-    "title": "Business Administration 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=218",
-    "coverage": 1.0,
-    "was_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=219",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "45317",
-    "title": "Surgical Technology",
-    "award": "A.S. Degree",
-    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=599",
-    "coverage": 1.0,
-    "was_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=600",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   }
-  ],
   "refused_passing": [],
   "forced_unbound": []
  },
@@ -3854,6 +3944,10 @@
    "sha256": "251b0d405737dda96412a68fac6ceb501992e59d5d361231a78214285cd172ce",
    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=299"
   },
+  "07315": {
+   "sha256": "d6888268ce2d0407d84d18e4f51c36b8da61673b7fc9710dbe23795b64cea81a",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=306"
+  },
   "07319": {
    "sha256": "5c9e7de351a1854d5a54b665ca6da4a7405855c00cefd3ba1c6e8e861aa6a4c5",
    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=281"
@@ -3871,8 +3965,8 @@
    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=254"
   },
   "11336": {
-   "sha256": "9b3e14c82b48271262d9c01ef128a36b04e85b17f7cdebeba36364f58a4f3715",
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=179"
+   "sha256": "fd663004efb90404d7548cbbc980d05cc12cc924b9232224834bca0acf5c6d91",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=186"
   },
   "11338": {
    "sha256": "419fb9df488533ad773b9bd32e33e07b8a5c10db2291e5b7abd4277e3c71ce43",
@@ -4231,8 +4325,12 @@
    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=132"
   },
   "35072": {
-   "sha256": "40d92f7018f425ebacab574c2b91c9997e78637dbe61358e08318eb037353c93",
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=237"
+   "sha256": "10d98ef75745b5a5e85acd67ce8fd2b0f7b835fc52decc47ba54f3dd8c60c4bf",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=239"
+  },
+  "35097": {
+   "sha256": "78f088d2dc3925e2e774b5dacb1cb897d39807d2d3178fa2db730510927ce6d6",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=249"
   },
   "35148": {
    "sha256": "51d3514eafe69404a78e0fbdaf4e248e995a7b5a186561e95bfe8a898574d217",
@@ -4250,29 +4348,53 @@
    "sha256": "b5d1b7d48c828dc5afccf481e6290267b73f058300e9842a255f4e7526625fa9",
    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=248"
   },
+  "35354": {
+   "sha256": "408585786ad64e64704cb92519352b5e127f01cf6c9786eb73373c4b3b5a6f76",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=182"
+  },
   "35357": {
    "sha256": "2b696f80cb92d2996000dc3c430aad54ea221b9dd26daffacecb08206d496dcb",
    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=184"
+  },
+  "35358": {
+   "sha256": "9c84f4ff1357522027f9d877164eb572823c70ac5ff66cd3136f15bce165d269",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=189"
   },
   "35359": {
    "sha256": "98fa8dece6eae67bba7aa86f55feeed820836362836b6be76045f40ce1eaff91",
    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=181"
   },
+  "35360": {
+   "sha256": "160751c61538055663427e54550788352ed08d620a7eaf217da430fad36babdf",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=187"
+  },
+  "35361": {
+   "sha256": "1232dfeb69ad177c70658281131f65998a8aa8fdcd9079d275b8978c68310996",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=192"
+  },
+  "35362": {
+   "sha256": "f94dd1084349612a71db54256050549b0b81be00fa506d7130edfba942158054",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=185"
+  },
   "35363": {
-   "sha256": "be0a6b08056e7734020d75e363f7838c9e0e7aa9d758ae106ac8468a4f890c83",
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=179"
+   "sha256": "99a459666b2a6c96a18cc2d08f5a4c442e502551e962e42ada9543e904482af3",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=188"
   },
   "35364": {
-   "sha256": "5d37334d156814ebc1fa6a23dd8d0c7d9a337c887d8d5a2018ea164e502fa585",
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=179"
+   "sha256": "e44e7ffbd47124ba1fafed52b96feeeb129d25166e65cbeddeef3821452e70b6",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=182"
   },
   "35366": {
    "sha256": "6717ae1b0058d1244887d0732fa71437c3ad328227eecf558d9dcc7c0fa36055",
    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=194"
   },
   "35367": {
-   "sha256": "9b21b3860bcdd778d909e4ab2e6aa09f25e0c4273548fcd964205da061bf5f6f",
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=179"
+   "sha256": "7575f183f5d2b457b4c7f5e837430fb1c758affac7f04a3c14c9cfb6c340af82",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=192"
+  },
+  "35374": {
+   "sha256": "f2ef9ca28ce9c3a9db2749a5dfbcd76bbbfbef0eb0f1d39691866c3f49739161",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=193"
   },
   "35375": {
    "sha256": "e4baa7c529f30713ea1a7347c596110317b10c599a9d0a2cb4f440c11ca57306",
@@ -4358,6 +4480,10 @@
    "sha256": "180d472661e645f58f7c2343923d34c1e1648e352e6bbab540d14136dd7532b6",
    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=516"
   },
+  "37285": {
+   "sha256": "542efa3dc6f4906b87b1daea09ef7352ee6e6a234bffd0822e5872b69f4dfcf5",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=305"
+  },
   "37337": {
    "sha256": "4663403badbc95eded766162d0b0aca7dade2c4db665079f170f70f6845d7a7f",
    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=271"
@@ -4365,6 +4491,10 @@
   "37837": {
    "sha256": "e38e394659c6e89f7a1253528179cc7a1505bd4aa3758df559f2645fc9f7154e",
    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=160"
+  },
+  "37842": {
+   "sha256": "eec25173906858e5988623c6fd5f1b78b0927048e289a8113d6015d32c6afc06",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=284"
   },
   "37848": {
    "sha256": "7efd8944389eb4273ed31968c47062a74b91d9976f407c67bec37a50c468abf6",
@@ -4397,6 +4527,10 @@
   "38750": {
    "sha256": "aa2b5e959cb2f5ad349fcbb6adbdc5c7918d39ef00ea9c4b61db020f77b355de",
    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=502"
+  },
+  "39131": {
+   "sha256": "4b8e4bdbca71379b6944617a186d04eda8c2149d30598b3f591cdfcdcac68d3a",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=227"
   },
   "39139": {
    "sha256": "a206dff6f5b6aab0d7b45e9d83e44f2728c354a9b3567ec5cb8c20da965aac73",
@@ -4499,10 +4633,5 @@
    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=316"
   }
  },
- "staged_from": {
-  "run": "45018060132",
-  "proof": "text sha256 of 197 programs",
-  "pages_loaded": 0
- },
- "run": "45018951701"
+ "run": "45185759855"
 }

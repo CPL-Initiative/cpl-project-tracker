@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Pre-Clinical Laboratory Scientist Trainee",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=380",
+ "source_url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=382",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7213,
+  "input_tokens": 7154,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7213,
-    "output_tokens": 862,
+    "input_tokens": 7154,
+    "output_tokens": 1090,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,84 +30,91 @@
     "model": null
    }
   ],
-  "output_tokens": 862,
+  "output_tokens": 1090,
   "output_tokens_details": {
-   "thinking_tokens": 204
+   "thinking_tokens": 258
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04609,
- "ms": 7577,
- "seconds": 8.1,
+ "cost_usd": 0.05042,
+ "ms": 9140,
+ "seconds": 18.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 3,
    "listed": 3,
-   "share": 0.0,
-   "missing": [
-    "MEDTEC310",
-    "MEDTEC324",
-    "MEDTEC325"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 4,
+   "codes": [
+    "MEDTEC323",
+    "MEDTEC330",
+    "MEDTEC340",
+    "MEDTEC350"
+   ],
+   "flagged": [
+    "MEDTEC323",
+    "MEDTEC330",
+    "MEDTEC340",
+    "MEDTEC350"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    26.0,
+    26.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    26.0,
+    26.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
    "section_heading": "Pre-Clinical Laboratory Scientist Trainee Certificate",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 26,
+    "max": 26
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -124,31 +131,95 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "apply appropriate quality control procedures and recognize and interpret erroneous results in the laboratory testing process.",
+    "describe the principles, the clinical significance, and critical values of clinical laboratory test results.",
+    "demonstrate safe use and disposal of biohazardous materials, and the proper methods of specimen preparation.",
+    "assess sample quality and cite any pre-analytical variables in testing."
+   ],
+   "careers": [
+    "Clinical Laboratory Scientist"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "MEDTEC 310",
-    "why": "named only in the A.S. in Medical Laboratory Technician requirements; certificate requirements not in the text"
-   },
-   {
-    "code": "MEDTEC 324",
-    "why": "named only in the A.S. in Medical Laboratory Technician requirements; certificate requirements not in the text"
-   },
-   {
-    "code": "MEDTEC 325",
-    "why": "named only in the A.S. in Medical Laboratory Technician requirements; certificate requirements not in the text"
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 26,
+     "max": 26
+    },
+    "courses": [
+     {
+      "code": "MEDTEC 310",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MEDTEC 323",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MEDTEC 324",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MEDTEC 325",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MEDTEC 330",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MEDTEC 340",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MEDTEC 350",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The text prints the heading 'Pre-Clinical Laboratory Scientist Trainee Certificate' at the top of page 380, but everything that follows belongs to the A.S. in Medical Laboratory Technician. That includes its description and its Degree Requirements table: MEDTEC 310, 323, 324, 325, 330, 340, 350, 360-363, plus 'A minimum of 0 units' from MEDTEC 311/312.",
-   "The certificate's own requirements, total and outcomes do not appear in the extracted text. The page's running footer reads 'Programs of Study – Medical Laboratory Technician', so the certificate section is likely on an adjacent page. A reviewer should check the next page of the PDF.",
-   "No blocks were recorded, because the A.S. requirements are not the certificate's requirements.",
-   "The careers named (Medical Laboratory Technicians, Laboratory Assistants, Research Technicians; clinical laboratories, industry, biotechnology) appear only in the A.S. description and were not recorded for this certificate."
+   "The requirements table spans pages 382-383; read as one continuous list of required courses totaling 26 units.",
+   "MEDTEC 323, 330, 340 and 350 are printed in the catalog but are not in the closed list; recorded as catalog additions.",
+   "Career 'Clinical Laboratory Scientist' is taken from the description as the goal the certificate guides toward; the text states the certificate itself does not qualify graduates to work in the clinical laboratory.",
+   "The text mentions prerequisite courses for the certificate but does not name them."
   ]
  },
- "extracted_run": "39046850071"
+ "extracted_run": "45181983194",
+ "catalog_year": "2026-2027",
+ "source_sha": "7d66ca63f6e76cb2",
+ "source_codes": [
+  "MEDTEC310",
+  "MEDTEC324",
+  "MEDTEC325"
+ ],
+ "source_coverage": 1.0
 }
