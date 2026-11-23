@@ -114,6 +114,15 @@ stays off the Los Rios colleges and any college lane 1 takes later.
   dispatch replaced it, before anything was paid (`p-one-pending-run-per-branch-s714`). Sacramento City
   (45181973475, 18 programs, $2.04) and Folsom Lake (45181983194, 3, $0.33) ran green; Cosumnes River was
   dispatched again alone (45184653221, 13:30Z). `rios` pushed its fixes at `31b802a3` on #3715.
+- 13:46Z: the optparts plan came back at 10 rows (`58cfb1a2`); Santa Barbara City 05934 was held out because its claim
+  check on today's capture finds 31 of its option's 33 courses (ENVS 112 and ENVS 115 missing), so the plan goes
+  to 9 (`d-optparts-holds-05934-claim-check-s714`). `piles` then takes Fullerton on `claude/s714-piles-fullerton`.
+- 13:46Z: East Los Angeles's second reader: FIX THEN APPLY, the 15 rows and the receipt standing (Postgres 16:
+  writes exactly 15, aborts on a rerun, a confirm or a changed before-image; the rollback restores all 15;
+  statewide only the 15 move). Its majors: the electives scope ran past the next program's plan line (a future
+  false pass, no row here), and the branch needed main's merge. Applied first, fixed forward: pre-read 15 of 15
+  before-images, 0 confirms; migrate 45186909162 (13:45Z), 15 of 15 live at their after-images; `.apply` back at
+  main's value (`022a3511`). `piles2` bounds the scope, merges main and opens the PR.
 
 ## Conductor settings
 
@@ -132,8 +141,9 @@ by Opus 5.5.
 |---|---|---|
 | #3713 (`claude/awesome-fermat-ka0z4l`) | the declaration | becomes the checkpoint at sign-off |
 | #3714 (`claude/s714-piles-ccsf`, `piles`) | merged `f0d84966`; applied by migrate 45176130201 | none |
-| `claude/s714-piles-optparts` (`piles`) | started | its plan, a light second reader, the apply |
-| `claude/s714-piles-ela` (`piles2`) | plan filed, 15 rows | the second reader, its PR, the pre-read, the apply, the merge |
+| `claude/s714-piles-optparts` (`piles`) | plan filed, 9 rows (05934 held) | a Sonnet reader on the SQL, the pre-read, the apply, a PR |
+| `claude/s714-piles-fullerton` (`piles`) | started | its plan |
+| `claude/s714-piles-ela` (`piles2`) | applied by migrate 45186909162, 15 rows live | the scope bound, main's merge, its PR, the merge |
 | #3715 (`claude/s714-rios`, `rios`) | three paid reads dispatched | the fixes, the filings, reconcile, the reread, merge |
 | #3712 (S712, Sam's plain session) | merged `3cc69ffc` | none |
 | #3383 | dependabot's | waits |
