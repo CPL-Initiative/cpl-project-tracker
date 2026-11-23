@@ -1922,6 +1922,43 @@
      }
     }
    ],
+   "pdf_pages": {
+    "09178": {
+     "page": 86,
+     "words": "Data Journalism – Certificate of Achievement",
+     "evidence": "Data Journalism Certificate of Achievement 09178: its heading prints at the foot of PDF p.86 below the dance certificate's Total: 16.0, with its Program Summary and Learning Outcomes; 'Program Requirements and Completion Time' closes the page and its list follows on p.87 (college-page-read run 45129229734, S713). Capture 39046623474 refused it by rule A (no page prints the program's title with its award as the registry names it), so it has no record."
+    },
+    "17952": {
+     "page": 106,
+     "words": "Liberal Arts and Sciences Emphasis in Arts and Humanities – AA Degree",
+     "evidence": "Liberal Arts and Sciences Emphasis in Arts and Humanities AA 17952: its heading and Program Summary print on PDF p.106; the catalog prints the degree again on p.199 under General Education (college-page-read run 45129229734, S713). Capture 39046623474 refused it by rule A (no page prints the program's title with its award as the registry names it), so it has no record."
+    },
+    "17954": {
+     "page": 206,
+     "words": "Liberal Arts and Sciences: Emphasis in Science and Mathematics - AS Degree",
+     "evidence": "Liberal Arts and Sciences Emphasis in Science and Mathematics AS 17954: its heading and Program Summary print on PDF p.206; the catalog prints the degree again on p.336 (college-page-read run 45129229734, S713). Capture 39046623474 refused it by rule A (no page prints the program's title with its award as the registry names it), so it has no record."
+    },
+    "31602": {
+     "page": 224,
+     "words": "CCSF High School Diploma Program",
+     "evidence": "CCSF High School Diploma 31602 (noncredit): its heading prints at the foot of PDF p.224, below the LGBT certificate's Total: 34.0, and its Program Summary and requirements follow on p.225 (college-page-read run 45129229734, S713). Capture 39046623474 refused it by rule A (no page prints the program's title with its award as the registry names it), so it has no record."
+    },
+    "36964": {
+     "page": 162,
+     "words": "ESL Beginning High Oral Communication Skills – Certificate of Competency",
+     "evidence": "ESL Beginning High Oral Communication Skills 36964 (noncredit): its heading 'ESL Beginning High Oral Communication Skills – Certificate of / Competency' and Program Summary print on PDF p.162, below the certificate before it (Total: 131.5-262.5) (college-page-read run 45129229734, S713). Capture 39046623474 refused it by rule A (no page prints the program's title with its award as the registry names it), so it has no record."
+    },
+    "42318": {
+     "page": 167,
+     "words": "ESL Intermediate High Oral Communication Skills – Certificate of Competency",
+     "evidence": "ESL Intermediate High Oral Communication Skills 42318 (noncredit): its heading 'ESL Intermediate High Oral Communication Skills – Certificate of / Competency' and Program Summary print on PDF p.167, below the certificate before it (Total: 131.5-262.5) (college-page-read run 45129229734, S713). Capture 39046623474 refused it by rule A (no page prints the program's title with its award as the registry names it), so it has no record."
+    },
+    "45768": {
+     "page": 213,
+     "words": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
+     "evidence": "Cal-GETC Certificate of Achievement 45768: its heading 'California General Education Transfer Curriculum (Cal-GETC) - / Certificate of Achievement', Program Summary, Learning Outcomes and 'Complete a minimum of 34 units' print on PDF p.213, with Area 1A opening its Required Courses at the page's foot (college-page-read run 45129229734, S713). Capture 39046623474 refused it by rule A (no page prints the program's title with its award as the registry names it), so it has no record."
+    }
+   },
    "steps": [
     {
      "kind": "set",

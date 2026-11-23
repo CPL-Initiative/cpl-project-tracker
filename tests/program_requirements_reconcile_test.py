@@ -1482,9 +1482,10 @@ check("each pinned page is the page the filed record was extracted from",
 # (tests/program_requirements_lassen_calgetc.test.js checks the words on the pages).
 _LS_DIR = os.path.join(ROOT, "kb", "program_requirements_college", "lassen")
 _ls_pins = (R.load_steps().get("Lassen College") or {}).get("pdf_pages") or {}
-check("no college but Clovis, Cosumnes River, Lassen, Ohlone and Santa Monica names pdf_pages",
-      sorted(k for k, v in R.load_steps().items() if v.get("pdf_pages"))
-      == sorted([_CR, "Clovis Community College", "Lassen College", "Ohlone College", "Santa Monica College"]))
+check("no college but City College of San Francisco, Clovis, Cosumnes River, Lassen, Ohlone and Santa Monica names "
+      "pdf_pages", sorted(k for k, v in R.load_steps().items() if v.get("pdf_pages"))
+      == sorted([_CR, "City College of San Francisco", "Clovis Community College", "Lassen College", "Ohlone College",
+                 "Santa Monica College"]))
 # S691: Santa Monica pins eleven programs to the page their heading and 'Area of Emphasis' total print on, the page
 # before the one capture 39567439681 handed them (college-page-read runs 44881390798 and 44883047940). After the
 # re-read the filed record is read from the pin's page, so a pin names the filed page or the one after it.

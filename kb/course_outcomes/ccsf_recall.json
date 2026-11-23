@@ -87,5 +87,22 @@
    "from": "the page's SLO section as printed (STUDENT LEARNING OUTCOMES to CONTENTS) in the log of trial 45018845370, job 137198618413, read by eye line by line, the lead not counted, apart from the parser",
    "at": "2026-11-22T12:05:15Z"
   }
+ },
+ "loaded": {
+  "read": "45128775065",
+  "load_run": "45148533372",
+  "receipt": "kb/receipts/course_outcomes_ccsf_45148533372.json",
+  "posted": 1419,
+  "inserted": 3,
+  "kept": 1416,
+  "skipped": 1,
+  "inserted_courses": [
+   "CS 160B",
+   "VMD 192",
+   "CS 155P"
+  ],
+  "note": "the full read on parser 2629a09a after gate trial 45018845370; 1,416 rows matched S690's live rows (load 44767903173) and were kept; ENGL 1B printed no outcomes",
+  "by": "S713 worker",
+  "at": "2026-11-23T09:38:10Z"
  }
 }
