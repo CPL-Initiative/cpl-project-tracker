@@ -31,6 +31,7 @@
      "kind": "fill",
      "field": "ge_overlap",
      "awards": "local",
+     "from_heading": true,
      "pattern": "(?P<min>\\d+(?:\\.\\d+)?)(?:\\s*-\\s*(?P<max>\\d+(?:\\.\\d+)?))?\\s+units?\\s+may\\s+(?:be\\s+)?double[\\s-]count(?:ed)?\\s+above\\s+in\\s+(?:COS-GE|Cal-GETC)",
      "why": "S714: the page prints the units that may count toward the major and general education both, under its TOTAL (free page read 45191780301, seven pages); the figure is the most a student counts twice"
     }

@@ -56,8 +56,10 @@ RUN = None   # set from the run's filing (main reads it from the records)
 DC = "passes: the page prints the units that may double count, and the printed TOTAL lies between the sum less them " \
      "and the sum"
 HAND_HELD = {cn: DC for cn in ("06715", "06718", "06720", "06728", "06732", "06740", "06742", "06748", "06751",
-                               "06770", "10027", "11572", "19755", "37613")}
+                               "10027", "11572", "19755", "37613")}
 HAND_HELD.update({
+    "06770": "held: its two 'CONCENTRATION A:' blocks are one 10-unit option, and they score as alternatives of 4 "
+             "and 6 (option_parts reads only 'Option N'), so its sum is misread; the S714 second reader",
     "36073": "held: the reader quotes '6 units may double count in COS-GE' with no 'above', and run 45194676517's "
              "fill step did not match the page; the step's pattern widened and a second free run take it",
     "10045": "held: the sum (64) less the 3 units the page lets count twice is 61, past the printed 60; the catalog's "
@@ -70,6 +72,19 @@ HAND_HELD.update({
     "37744": "held: the certificate's lists add to 26-32 against 24; the catalog's figures differ",
     "45030": "held: Cal-GETC's areas add to 35-41 against 34; the pattern's own minimums, for the Cal-GETC lane",
 })
+# Run 45194676517 filed 36 records; the plan keeps 13. The other 23 are put back to main's (a reread posts nothing for
+# them): 9 the step filled whose verdict stays (06770 among them, held above), and 14 the run only rescored or restamped.
+RUN_PUT_BACK = {
+    "refilled_not_planned": ["06721", "06770", "10045", "10062", "18443", "33662", "35415", "41719", "42254"],
+    "rescored_not_planned": ["06717", "06738", "06762", "10022", "18441", "20061", "24184", "24226", "24256", "32443",
+                             "32874", "33396", "36660", "37743"],
+}
+# The fill's self-recall over every record the run filed (S714's second reader, and kb/_program_piles_s714_sequoias.py
+# against commit 151af86d0): 22 filled, each agreeing with the figure the reader's notes quote (or the notes silent),
+# none false; 36073 missed (its page prints no "above"); 06717, 06738, 06762, 36660 and 45498 already carry ge_overlap
+# true (ruling 1), so the fill leaves them.
+FILL_RECALL = {"filled": 22, "agree": 22, "false": 0, "missed": ["36073"],
+               "already_true": ["06717", "06738", "06762", "36660", "45498"], "run_commit": "151af86d0"}
 FIGURE = re.compile(r"(\d+(?:\.\d+)?)(?:\s*-\s*(\d+(?:\.\d+)?))?\s+units?\s+may\s+(?:be\s+)?double[\s-]?count", re.I)
 
 
@@ -229,6 +244,7 @@ def main(argv=None) -> int:
             "precision": pr, "claim_checks": cc, "boundaries": bd,
             "held": [{"control_number": cn, "why": w} for cn, w in sorted(HAND_HELD.items()) if w.startswith("held")],
             "restamped_not_planned": res["restamped_not_planned"],
+            "run_filed_put_back": RUN_PUT_BACK, "fill_recall": FILL_RECALL,
             "counts_only_not_planned": res["counts_only_not_planned"],
             "record_written_verdict_same_not_planned": res["record_written_verdict_same_not_planned"],
             "records": rows,

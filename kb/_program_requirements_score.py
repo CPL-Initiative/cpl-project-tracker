@@ -1048,7 +1048,11 @@ def degree_verdict(prog: dict, degree: tuple[float, float], lo: float, hi: float
     """How a sum of the blocks, open electives and general education (lo-hi)
     meets the degree total the page prints: pass, status, and how it passed."""
     dc = _span(prog.get("ge_overlap")) if isinstance(prog.get("ge_overlap"), dict) else None
-    if dc and not transfer_degree(award, prog):
+    from _program_requirements_reconcile import awards_match
+    # The cap is decided on the state file's award, never the heading (S714's second reader: TRANSFER matches a
+    # heading's "Not for Transfer", so College of the Sequoias's "Fire Technology (Not for Transfer) A.S." would read
+    # as a transfer degree and pass uncapped).
+    if dc and awards_match("local", award):
         # A local degree whose page prints how many units may count toward the major and general education both
         # (College of the Sequoias, S714: courses marked as meeting general education, "3 units may double count
         # above in COS-GE"; the college's fill step files the figure as ge_overlap, a span, where Hartnell's and
@@ -1057,7 +1061,8 @@ def degree_verdict(prog: dict, degree: tuple[float, float], lo: float, hi: float
         # total by more than the figure stays unequal, and no uncapped overlap reads it.
         if dc[1] > 0 and lo > degree[0] + TOL and lo - dc[1] <= degree[0] + TOL and degree[1] <= hi + TOL:
             return {"pass": True, "status": "equal", "double_count": dc[1], "why": []}
-    elif (transfer_degree(award, prog) or prog.get("ge_overlap")) and lo > degree[0] + TOL and hi > degree[1] + TOL:
+    elif (transfer_degree(award, prog) or prog.get("ge_overlap") is True) and lo > degree[0] + TOL \
+            and hi > degree[1] + TOL:
         # Sheet 82 card 2 ("overlap", Sam, 2026-10-14): a course counts toward the major and
         # Cal-GETC both, so a transfer degree's sum runs past the total it prints. A local degree
         # whose page says the same ("Students can double-count required courses and courses for
