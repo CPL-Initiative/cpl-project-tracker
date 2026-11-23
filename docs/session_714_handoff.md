@@ -79,3 +79,12 @@ college until it merges.
   (355 pages, 1,436 SLOs, no objectives printed); of the 53 page-not-found programs, 46 filed as named gaps
   (`no_record_s713.json`), 7 own pages pinned, 17954 read for $0.17 and held (its lists add to 4.0–13.0 against the
   printed 18.0), 6 held for a list or wording rule (shares 0 to 0.333). No PR opened while the count is over the cap.
+- 07:59Z: #3684 merged (`e0fa378d`); the Peralta four leave lane 1. 08:31Z: #3705 merged (`1d8b5cfd`), Santa Rosa
+  Junior's 15 records on `main` and live.
+- Lane 2: #3707 (general education steps, draft): 9 records that fail today and pass after (Las Positas 5, Antelope
+  Valley 4, four of them beyond the targets), free reconcile runs 45127792228 and 45133183717; College of Marin's run
+  moved nothing (its catalog's program URLs changed, so the moved-page guard stopped it). A second reader is on it.
+  Lane 2's worker changed at 08:33Z: `piles` signed off, `piles2` takes Glendale's 17 now and Clovis's 14 once #3683
+  merges.
+- 08:40Z: #3683 up from `main` (`30944f5d`, Clovis 33492's passing record rebuilt); its `test` is running. The display
+  build and the census follow #3683 and #3707.
