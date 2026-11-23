@@ -1,0 +1,39 @@
+{
+ "_what": "S714 (lane 2, College of the Sequoias): the reconcile_steps lever of the committed census (written_at 2026-11-23 11:07Z, run 45161770730) at the college, frozen: kb/_program_piles_s714_sequoias.py planned from it.",
+ "written_at": "2026-11-23 11:07Z",
+ "levers": [
+  {
+   "lever": "reconcile_steps",
+   "scope": "College of the Sequoias",
+   "programs": 22,
+   "kind": "free",
+   "what": "a team session writes correction rules from the catalog's own wording, then rescores the saved record",
+   "estimate_usd": null,
+   "over_college_limit": false,
+   "members": [
+    "06715",
+    "06718",
+    "06720",
+    "06728",
+    "06732",
+    "06740",
+    "06742",
+    "06748",
+    "06751",
+    "06764",
+    "06770",
+    "10027",
+    "10045",
+    "11572",
+    "19755",
+    "32710",
+    "35415",
+    "36073",
+    "37613",
+    "37744",
+    "42254",
+    "45030"
+   ]
+  }
+ ]
+}

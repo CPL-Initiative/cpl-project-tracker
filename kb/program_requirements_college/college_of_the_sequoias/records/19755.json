@@ -60,8 +60,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     73.0,
     73.0
@@ -75,9 +75,8 @@
     22.0,
     22.0
    ],
-   "why": [
-    "the blocks and general education sum to 73.0-73.0; the catalog prints 70.0-70.0 for the degree"
-   ]
+   "why": [],
+   "double_count": 3.0
   },
   "repeated": {
    "codes": [],
@@ -101,7 +100,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -139,7 +138,11 @@
     "outpatient rehabilitation clinics",
     "inpatient rehabilitation centers",
     "school based health care services"
-   ]
+   ],
+   "ge_overlap": {
+    "min": 3,
+    "max": 3
+   }
   },
   "blocks": [
    {
@@ -297,5 +300,17 @@
    "BIOL 030 and BIOL 031 are also admission prerequisites for the program."
   ]
  },
- "extracted_run": "38748848139"
+ "extracted_run": 45194676517,
+ "reconciled": [
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": {
+    "min": 3,
+    "max": 3
+   },
+   "words": "3 units may double count above in COS-GE"
+  }
+ ],
+ "read_run": "38748848139"
 }

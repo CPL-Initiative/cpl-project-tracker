@@ -1302,6 +1302,14 @@ def _college_steps(record: dict, text: str | None, college: str, award: str | No
             continue
         field = st["field"]
         scope = text
+        if st.get("from_heading"):
+            # Only from the program's own heading (S714's second reader): a page holding two programs prints each
+            # one's figure under its own TOTAL, and the second program took the first one's. A heading the page does
+            # not print fills nothing.
+            start = _heading_end(text, prog.get("section_heading"))
+            if start is None:
+                continue
+            scope = text[start:]
         if st.get("before"):
             # Only the words ahead of the program's first list (Glendale's PDF, S524): a page that
             # prints no total of its own runs on into the next program's paragraph, which does.
