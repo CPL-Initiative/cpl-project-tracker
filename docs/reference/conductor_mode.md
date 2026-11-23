@@ -1,7 +1,7 @@
 ---
 title: Conductor mode — how a session runs workers, COBIx and the merge gate
 date: 2026-11-11
-updated: 2026-11-22
+updated: 2026-11-23
 status: retired
 tags: [reference, conductor, retired, governance-team-enablement, scheduled-sessions]
 kb-status: internal
@@ -206,6 +206,33 @@ at the top of each piece of work so Sam can change the dial before it runs.
   at a scheduled check-in instead (S653: context went from 16% to 73% in 100 minutes on notices).
 - A tool trial (a repo, a library, a service) gets one line in [`reference/stack_scouting`](stack_scouting.md): candidate,
   measured cost, result, kept or dropped. COBIx scans every other Monday (#3306).
+
+## What went wrong in S713, and what worked
+
+The CPL Queue routine's 06:12Z collection run of 2026-11-23 (SkyKittiwake). Handoff 704 had named it Session 704, but
+Sam's plain sessions took 705 to 712, so it ran as S713 and wrote handoff 714 (`d-routine-takes-next-free-number-s713`).
+No session was live at the start; it declared on draft #3704 at 06:20Z. No `list_sessions` or `get_trigger` in this
+session.
+
+- **A shared shallow clone reshallows** (`p-shared-shallow-clone-reshallows-s713`): the workers share one object store,
+  and one worker's `--depth` fetch shortened another's history mid-build. Fetch a branch by name with `--shallow-since`
+  or `--deepen`; S691's lock finding (`p-shared-git-shallow-lock-s691`) is the same store.
+- **A prior confirm could have marked an applied row checked** (`p-confirm-verdict-marks-checked-at-apply-s713`): a
+  confirm verdict whose fingerprint matches marks the row checked at apply, and the rollback then skips it. #3705's
+  second reader caught it before the apply; each pre-read now counts matching and carried confirms, and the apply
+  aborts above 0.
+- **The claim check reads today's capture** (`p-claim-check-reads-current-capture-s713`), never the read behind the
+  record, so it cannot fail a one- or two-page read; each receipt says so, and the limit is on COBIx's list
+  (`f-cobix-minors-s713`).
+- **The COBIx watcher stopped at its two-hour limit** shortly after 08:10Z, and the run went on with single polls.
+  Restart it each time it stops, as the standing block says.
+- **What worked:** the compact pre-read (`p-compact-preread-by-md5-s713`: the plan's before-values hashed on a local
+  Postgres 16, `md5(record::text)` compared live, 2 KB in place of 72 KB, 15 of 15 matched); a `js-tests.yml` dispatch
+  on a bot receipt head, whose `test` lands on that head (`p-bot-receipt-head-dispatch-js-tests-s713`: #3708's
+  `946b03ea`, run 45148367921); one PR per college, one merge cycle in place of two (`d-ccsf-one-pr-s713`); free rule
+  work first (42 records and 47 named gaps for $0.17 of extraction); a second reader on every plan before its apply; one
+  writer per table (#3707's apply waited for the display build); a fix ahead of a wave only where the wave would have
+  filed wrong rows (`d-peralta-load-cleans-labels-first-s713`).
 
 ## What went wrong in S703, and what worked
 

@@ -10,8 +10,8 @@
     "other": 150000
   },
   "summary": {
-    "files": 1573,
-    "bytes": 17097482,
+    "files": 1574,
+    "bytes": 17148906,
     "over_budget": 5,
     "handoff_max": 715,
     "always_loaded_files": 1,
@@ -26,17 +26,17 @@
       },
       "other": {
         "files": 166,
-        "bytes": 5723588,
+        "bytes": 5746410,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 12201,
+        "bytes": 12246,
         "over": 0
       },
       "lessons": {
         "files": 87,
-        "bytes": 2856062,
+        "bytes": 2857222,
         "over": 2
       },
       "kb_note": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 44,
-        "bytes": 543022,
+        "bytes": 543098,
         "over": 1
       },
       "handoff": {
-        "files": 670,
-        "bytes": 4952714,
+        "files": 671,
+        "bytes": 4980035,
         "over": 0
       }
     },
@@ -61,8 +61,8 @@
       "vault_heavy_path": 79
     },
     "vault": {
-      "files": 29582,
-      "bytes": 1584410373,
+      "files": 29585,
+      "bytes": 1584488518,
       "heavy_bytes": 1220724319,
       "heavy_share": 0.77,
       "ignore_filters": [
@@ -203,13 +203,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 200949,
+        "bytes": 202260,
         "limit": 150000,
         "lane": "other",
-        "over_by": 50949,
-        "ratio": 1.34
+        "over_by": 52260,
+        "ratio": 1.35
       },
-      "message": "200,949 B is 1.3× the other budget (150,000 B) — candidate for compaction",
+      "message": "202,260 B is 1.3× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/reference/dependency_map.md"
     },
     {
