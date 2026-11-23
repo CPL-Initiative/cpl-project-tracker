@@ -69,36 +69,34 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "incomplete",
    "computed": [
     33.0,
     34.0
    ],
    "stated": [
-    33.0,
-    34.0
+    60.0,
+    60.0
    ],
-   "against": "program",
-   "why": [],
-   "degree": {
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Las Positas College General Education (LPC-GE) or California General Education Transfer Curriculum (Cal-GETC) pattern, but no units for it"
+   ],
+   "major": {
     "pass": true,
     "status": "equal",
     "computed": [
-     61.0,
-     62.0
+     33.0,
+     34.0
     ],
     "stated": [
-     60.0,
-     60.0
+     33.0,
+     34.0
     ],
-    "against": "degree",
-    "ge": [
-     28.0,
-     28.0
-    ],
-    "why": [],
-    "overlap": true
+    "against": "program",
+    "why": []
    }
   },
   "repeated": {
@@ -123,7 +121,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -144,8 +142,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": 28,
-    "max": 28
+    "min": null,
+    "max": null
    },
    "electives_fill_degree": true,
    "outcomes": [
@@ -399,20 +397,20 @@
    "Degree total of 60.0 is printed as this award's total ('Total : 60.0')."
   ]
  },
- "extracted_run": 45127792228,
+ "extracted_run": 42892238131,
  "reconciled": [
   {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
-   "now": {
-    "min": 28,
-    "max": 28
-   },
-   "words": "Additional General Education and Electives (https://www.laspositascollege.edu/lpcarticulation/lpc-ge/lpc-ge-2026-2027.php: SUMMED FROM THE AREAS, no total is printed: the 2026-2027 LPC-GE page prints Area 1 6 units, Areas 2 to 6 3 units each, Area 7 Kinesiology 1 unit, Area 8 Health 3 units and Area 9 American Institutions 3 units; 6 + 15 + 1 + 3 + 3 = 28 for an A.A. (college page read 42827288689; Sam, Open Asks Sheet 180 card 4, 2026-11-10: count))"
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "Double counting courses in GE and the major is permissible"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Elective units must be degree applicable"
   }
  ],
- "read_run": 42892238131
+ "read_run": "38984747530"
 }
