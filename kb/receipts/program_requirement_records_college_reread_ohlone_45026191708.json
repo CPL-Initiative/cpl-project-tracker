@@ -1,0 +1,36 @@
+{
+ "college": "Ohlone College",
+ "reread_run": "45026191708",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "45025966614",
+ "at": "2026-11-22T13:12:15Z",
+ "posted": 2,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "22195",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37693",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 0,
+ "absent": 2,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [],
+ "absent_keys": [
+  "33319",
+  "46035"
+ ],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 2,
+ "rollback": null,
+ "before": []
+}

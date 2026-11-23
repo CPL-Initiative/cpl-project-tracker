@@ -537,8 +537,46 @@
     "ANTH": "ANTHR",
     "ENGL": "ENG",
     "ARTH": "ART",
-    "COMM": "COM ST"
+    "COMM": "COM ST",
+    "IND": "A-IND",
+    "ELE": "A-ELE",
+    "MEC": "A-MEC"
    },
+   "prefix_aliases_cited": [
+    {
+     "session": "S703",
+     "date": "2026-11-22",
+     "catalog_sources": [
+      "college_page_read"
+     ],
+     "printed": "IND",
+     "file": "A-IND",
+     "evidence": "the coarse net's reading of the file's code",
+     "source": "S703 (worker levers, census lever 7), college-page-read run 45026053479: the apprenticeship pages print the state's own codes with a hyphenated prefix (A-IND 75A, A-IND 78A). The capture's exact test names every listed course on each page (body coverage 1.0), but the coarse net's code tokens read 'A-IND 78A' as 'IND 78A', so the net named none and refused the page (f-sjdelta-apprenticeship-coarse-net-s691: 14594, 14595, 14597, 14598, 14599, 37611; capture 44883860902). The pair gives each listed A-IND course the form the net reads, per college, and changes no shared reader. No IND course is listed or printed at the college (its committed records and the read's 30 pages; ELEC is another subject). Reversible by deleting the pair."
+    },
+    {
+     "session": "S703",
+     "date": "2026-11-22",
+     "catalog_sources": [
+      "college_page_read"
+     ],
+     "printed": "ELE",
+     "file": "A-ELE",
+     "evidence": "the coarse net's reading of the file's code",
+     "source": "S703 (worker levers, census lever 7), college-page-read run 45026053479: the apprenticeship pages print the state's own codes with a hyphenated prefix (A-ELE 75A, A-ELE 78A). The capture's exact test names every listed course on each page (body coverage 1.0), but the coarse net's code tokens read 'A-ELE 78A' as 'ELE 78A', so the net named none and refused the page (f-sjdelta-apprenticeship-coarse-net-s691: 14594, 14595, 14597, 14598, 14599, 37611; capture 44883860902). The pair gives each listed A-ELE course the form the net reads, per college, and changes no shared reader. No ELE course is listed or printed at the college (its committed records and the read's 30 pages; ELEC is another subject). Reversible by deleting the pair."
+    },
+    {
+     "session": "S703",
+     "date": "2026-11-22",
+     "catalog_sources": [
+      "college_page_read"
+     ],
+     "printed": "MEC",
+     "file": "A-MEC",
+     "evidence": "the coarse net's reading of the file's code",
+     "source": "S703 (worker levers, census lever 7), college-page-read run 45026053479: the apprenticeship pages print the state's own codes with a hyphenated prefix (A-MEC 75A, A-MEC 78A). The capture's exact test names every listed course on each page (body coverage 1.0), but the coarse net's code tokens read 'A-MEC 78A' as 'MEC 78A', so the net named none and refused the page (f-sjdelta-apprenticeship-coarse-net-s691: 14594, 14595, 14597, 14598, 14599, 37611; capture 44883860902). The pair gives each listed A-MEC course the form the net reads, per college, and changes no shared reader. No MEC course is listed or printed at the college (its committed records and the read's 30 pages; ELEC is another subject). Reversible by deleting the pair."
+    }
+   ],
    "steps": [
     {
      "kind": "fill",
@@ -956,8 +994,22 @@
    "why": "S505 SkyBoysenberry, 2026-10-28. Glendale's 2025-2026 catalog prints its program pages under older subject prefixes and older numbers than its own course descriptions and the state's file keep. The program pages print PSYCH 170 and TART 101 (Sports Coaching, page 88; college-page-read 40690480267); the course descriptions print '170 \u00b7 SPORTS PSYCHOLOGY \u00b7 3.0 Units \u00b7 PSYC 170 is designed...' (page 252) and '101 \u00b7 INTRODUCTION TO THEATRE \u00b7 3.0 Units \u00b7 THTR 101 introduces...' (college-page-read 40692306069), the same numbers and titles the state's file lists as PSYC 170 Sports Psychology and THTR 101 Introduction To Theatre (coci_program_courses, read 2026-10-28). Filed records placing PSYCH codes the file lists as PSYC: 11; TART for THTR: 9. The renumbers are the descriptions' own words: 'C1000 \u00b7 ACADEMIC READING AND WRITING \u00b7 4.0 Units \u00b7 (Previously ENGL 101)' (page 188, read 40690480267), 'C1001 \u00b7 CRITICAL THINKING AND WRITING \u00b7 3.0 Units \u00b7 (Previously ENGL 104)' and 'C1000 \u00b7 AMERICAN GOVERNMENT AND POLITICS \u00b7 3.0 Units \u00b7 (Previously POL S 101)' (read 40692306069). ART for ARTH (5 records) is left out: neither read printed an ARTH description, and ART is a live Glendale prefix of its own.",
    "prefix_aliases": {
     "PSYCH": "PSYC",
-    "TART": "THTR"
+    "TART": "THTR",
+    "STV": "OBT"
    },
+   "prefix_aliases_cited": [
+    {
+     "session": "S703",
+     "date": "2026-11-22",
+     "catalog_sources": ["college_page_read"],
+     "plan": "kb/college_reads/glendale_eleven_pages_s703.json",
+     "printed": "STV",
+     "file": "OBT",
+     "evidence": 4,
+     "source": "S703 (worker glendale), d-glendale-obt-stv-prefix-alias-s703. Customer Service 38973's own Coursedog tab NCCS (its program data names 38973; college page read 45016708970) prints 'STV11 Beginning Keyboarding 50, STV35 On-The-Job Communication 32, STV40 21st Century Employment Strategies 96, STV50 Customer Service Skills 32, Total Required Hours 210', where the state's file lists OBT 11, OBT 35, OBT 40 and OBT 50 (coci_program_courses, read by the conductor 2026-11-22). Four numbers of four, the page's whole list. The scorer renames a placed STV code only where the file lists the OBT code and not the STV one; on the committed records the pair renames nothing (no filed Glendale record places an STV code whose OBT form it lists).",
+     "examples": ["STV11 = OBT 11", "STV35 = OBT 35", "STV40 = OBT 40", "STV50 = OBT 50"]
+    }
+   ],
    "course_renumbers": {
     "ENGL101": "ENGL C1000",
     "ENGL104": "ENGL C1001",
@@ -2126,6 +2178,23 @@
     }
    },
    "pdf_pages_why": "S691: each program is read from the page its section opens on, named here with the words it opens on there (college-page-read runs 44881390798 and 44883047940), never found by a pattern over the catalog's text (S650, Cosumnes River). A pin binds only while the catalog prints the words and every title word on that page; otherwise the program gets no fresh text and its filed record stands."
+  },
+  "Ohlone College": {
+   "why": "S703 (worker levers for SkyDovekie), census lever 6 (Ohlone, page not found, 36): no reconcile step; the entry names two programs' own pages (pdf_pages).",
+   "steps": [],
+   "pdf_pages": {
+    "33319": {
+     "page": 46,
+     "words": "INFORMATION TECHNOLOGY Certificate of Achievement in Information Technology",
+     "evidence": "Information Technology Certificate of Achievement 33319: its heading 'INFORMATION TECHNOLOGY' over 'Certificate of Achievement in Information Technology' prints at the foot of PDF p.46, below the Area 3 to Area 5 lists of the program printed before it; its Major Field (CNET-146, CNET-155A, CNET-162, CNET-170), its Elective Courses (CNET-105 to CNET-175) and 'Total Required Units: 18.0-21.0' print on p.47 (college-page-read run 45024779831). Capture 44515665022 refused it by rule B then A (the page's area lists read as a general-education page), so it has no record."
+    },
+    "46035": {
+     "page": 96,
+     "words": "ESPORTS ENTREPRENEURSHIP AND LIVE PRODUCTION - GAME DESIGN Certificate of Completion",
+     "evidence": "Esports Entrepreneurship and Live Production - Game Design 46035 (noncredit): its heading 'ESPORTS ENTREPRENEURSHIP AND / LIVE PRODUCTION - GAME DESIGN' over 'Certificate of Completion in Esports Entrepreneurship and Live Production - Game Design' prints at the foot of PDF p.96; its Major Field (ESPTS-901, ESPTS-902, ESPTS-903, ESPTS-910A), its Supporting Courses (DAID-922, DAID-923, DAID-925) and 'Total Required Hours: 378.0' print on p.97 (college-page-read run 45024779831). Capture 44515665022 refused it by rule A, so it has no record."
+    }
+   },
+   "pdf_pages_why": "S703 (census lever 6): two programs the page checks refused are pinned to the page their section opens on, named with the words it opens on there (college-page-read run 45024779831), never found by a pattern over the catalog's text (S650, Cosumnes River). Each heading prints at the foot of its page and the list on the next. A pin binds only while the catalog prints the words and every title word on that page; otherwise the program gets no fresh text. The other 34 have no own page in the 2026-2027 guide and are filed as named gaps (kb/program_requirements_college/ohlone/no_record_s703.json). Reversible by deleting this entry."
   }
  }
 }

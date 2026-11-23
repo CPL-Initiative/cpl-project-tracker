@@ -1,0 +1,195 @@
+{
+ "_readme": "S703 (worker levers for SkyDovekie), census lever 7 (San Joaquin Delta, page not found, 30). Capture 44883860902 read 24 programs as not_found, each near-missing a page whose title names it (the coarse net or the coverage bar refused it; the seven apprenticeship programs at body coverage 1.0 and net 0, f-sjdelta-apprenticeship-coarse-net-s691), and 6 as page_claimed. This read prints each near-miss page and each claimed program's first candidate page, so a session can tell whether each is the program's own page, which codes it prints and in what form, and whether a per-college prefix alias or renumber binds it. 30 loads and robots.txt, no model call, nothing written.",
+ "college": "San Joaquin Delta College",
+ "questions": {
+  "own_page": "Whether the page is the program's own (title and award), and the course codes it prints, as printed.",
+  "claimed": "Which program the page is, and the course codes it prints."
+ },
+ "keywords": [
+  "[A-Z]{2,6}[- ]?\\d{1,3}[A-Z]?\\b",
+  "Total",
+  "Units"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3253&print"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3320&print"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3268&print"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3218&print"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3194&print"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3285&print"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3327&print"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3286&print"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3284&print"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3283&print"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3217&print"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3305&print"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3208&print"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3221&print"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3307&print"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3192&print"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3355&print"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3375&print"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3377&print"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3378&print"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3376&print"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3396&print"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3395&print"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3398&print"
+  },
+  {
+   "answers": [
+    "claimed"
+   ],
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3181&print"
+  },
+  {
+   "answers": [
+    "claimed"
+   ],
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3182&print"
+  },
+  {
+   "answers": [
+    "claimed"
+   ],
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3176&print"
+  },
+  {
+   "answers": [
+    "claimed"
+   ],
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3178&print"
+  },
+  {
+   "answers": [
+    "claimed"
+   ],
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3185&print"
+  },
+  {
+   "answers": [
+    "claimed"
+   ],
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3357&print"
+  }
+ ]
+}

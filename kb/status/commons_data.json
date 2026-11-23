@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-22T22:51:25Z",
+ "written_at": "2026-11-23T08:03:54Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -158,8 +158,8 @@
   "coe": "The regional labor market crosswalk is committed but not yet read per college here.",
   "loaded": "The load time is a column of the live program requirements table, which this file does not carry.",
   "owners": "The gap census names the change that would move each program, not who makes it; an owner joins each ask when the asks are filed with one.",
-  "slo": "Course SLO reads are committed for 26 hosts under kb/course_outcomes/<host>/, not yet read per college here; the SLO queue's state shows where the queue holds a college.",
-  "objectives": "Course objectives are committed for 16 hosts (ccc, cccd, chabot, craftonhills, cuesta, hancockcollege, laspositas, palomar, rccd, redwoods, riohondo, sac, saddleback, sdccd, shasta, siskiyous) under kb/course_outcomes/<host>/, not yet read per college here."
+  "slo": "Course SLO reads are committed for 27 hosts under kb/course_outcomes/<host>/, not yet read per college here; the SLO queue's state shows where the queue holds a college.",
+  "objectives": "Course objectives are committed for 17 hosts (ccc, cccd, chabot, craftonhills, cuesta, hancockcollege, lan, laspositas, palomar, rccd, redwoods, riohondo, sac, saddleback, sdccd, shasta, siskiyous) under kb/course_outcomes/<host>/, not yet read per college here."
  },
  "statewide": {
   "colleges": 118,
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 16940,
-  "gap": 5395,
+  "passing": 16964,
+  "gap": 5371,
   "with_gap": 118,
-  "cost_usd": 1339.79,
-  "passed_at_read": 16209,
+  "cost_usd": 1340.28,
+  "passed_at_read": 16226,
   "cost_receipts": 118,
   "spent_usd": 1235.28,
   "spent_runs": 186,
@@ -189,9 +189,9 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16629,
-  "gap": 5395,
-  "collected_with_gaps": 311,
+  "passing": 16643,
+  "gap": 5371,
+  "collected_with_gaps": 321,
   "discontinued": 0
  },
  "census_live": {
@@ -765,7 +765,9 @@
    },
    "programs_file": "kb/status/commons_data_programs/berkeley_city.json",
    "outcomes_file": "kb/status/commons_data_programs/berkeley_city.outcomes.json",
-   "outline_system": null,
+   "outline_system": [
+    "curriqunet"
+   ],
    "objectives_printed": null,
    "read_at": "2026-11-12T02:30:35Z",
    "read_kind": "capture",
@@ -815,7 +817,13 @@
      "cost_usd": 5.81,
      "platform": "curriqunet"
     },
-    "slo_read": null,
+    "slo_read": {
+     "run": "45031089800",
+     "at": "2026-11-22T16:26:19Z",
+     "system": "curriqunet",
+     "source_kind": "course_outline",
+     "file": "kb/course_outcomes/lan/read_45031089800_p5of5.json"
+    },
     "plo_programs": 58,
     "ppm_member": {
      "host": "berkeley-city.programmapper.com",
@@ -842,12 +850,11 @@
    "harvested": true,
    "slug": "butte",
    "programs": 192,
-   "passing": 147,
-   "gap": 45,
+   "passing": 148,
+   "gap": 44,
    "causes": {
     "no_closed_list": 24,
     "page_not_found": 3,
-    "places_none": 1,
     "unknown_without_live": 17
    },
    "census_causes": {
@@ -869,10 +876,10 @@
    "outcomes_file": "kb/status/commons_data_programs/butte.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-11T08:16:43Z",
+   "read_at": "2026-11-22T11:18:06Z",
    "read_kind": "capture",
    "cost_usd": 10.69,
-   "passed_at_read": 138,
+   "passed_at_read": 147,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -885,25 +892,24 @@
    "extracted": 165,
    "errors": 0,
    "failed_checks": {
-    "coverage": 1,
+    "coverage": 0,
     "invented": 0,
-    "arithmetic": 27,
+    "arithmetic": 18,
     "repeated": 0,
     "outcomes": 0
    },
    "platform": "curriqunet",
    "catalog_year": "2026-2027",
-   "catalog_url": "https://butte.curriqunet.com/Catalog//iq/25371",
-   "capture_root": "https://butte.curriqunet.com/Catalog//iq/25371",
+   "catalog_url": "https://butte.curriqunet.com/Catalog/",
+   "capture_root": "https://butte.curriqunet.com/Catalog/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 5488.0,
-   "run": "42985449223",
+   "read_seconds": 5505.0,
+   "run": "45025068740",
    "levers": {
     "program_course_file_check": 24,
     "reconcile_steps": 17,
-    "reader_page_search": 3,
-    "reader_page_assignment": 1
+    "reader_page_search": 3
    },
    "collection": {
     "program_reader": {
@@ -911,13 +917,13 @@
      "models": {
       "claude-opus-5-5": 165
      },
-     "run": "42985449223",
-     "at": "2026-11-11T08:16:43Z",
+     "run": "45025068740",
+     "at": "2026-11-22T11:18:06Z",
      "cost_usd": 10.69,
      "platform": "curriqunet"
     },
     "slo_read": null,
-    "plo_programs": 163,
+    "plo_programs": 164,
     "ppm_member": null,
     "maps": {
      "held": 0,
@@ -2229,7 +2235,9 @@
    },
    "programs_file": "kb/status/commons_data_programs/college_of_alameda.json",
    "outcomes_file": "kb/status/commons_data_programs/college_of_alameda.outcomes.json",
-   "outline_system": null,
+   "outline_system": [
+    "curriqunet"
+   ],
    "objectives_printed": null,
    "read_at": "2026-11-10T20:12:35Z",
    "read_kind": "capture",
@@ -2279,7 +2287,13 @@
      "cost_usd": 4.05,
      "platform": "curriqunet"
     },
-    "slo_read": null,
+    "slo_read": {
+     "run": "45031089800",
+     "at": "2026-11-22T16:26:19Z",
+     "system": "curriqunet",
+     "source_kind": "course_outline",
+     "file": "kb/course_outcomes/lan/read_45031089800_p5of5.json"
+    },
     "plo_programs": 59,
     "ppm_member": null,
     "maps": {
@@ -5906,7 +5920,9 @@
    },
    "programs_file": "kb/status/commons_data_programs/laney.json",
    "outcomes_file": "kb/status/commons_data_programs/laney.outcomes.json",
-   "outline_system": null,
+   "outline_system": [
+    "curriqunet"
+   ],
    "objectives_printed": null,
    "read_at": "2026-11-20T12:38:30Z",
    "read_kind": "capture",
@@ -5954,7 +5970,13 @@
      "cost_usd": 10.5,
      "platform": "curriqunet"
     },
-    "slo_read": null,
+    "slo_read": {
+     "run": "45031089800",
+     "at": "2026-11-22T16:26:19Z",
+     "system": "curriqunet",
+     "source_kind": "course_outline",
+     "file": "kb/course_outcomes/lan/read_45031089800_p5of5.json"
+    },
     "plo_programs": 156,
     "ppm_member": {
      "host": "mapsforsuccess.laney.edu",
@@ -7542,7 +7564,9 @@
    },
    "programs_file": "kb/status/commons_data_programs/merritt.json",
    "outcomes_file": "kb/status/commons_data_programs/merritt.outcomes.json",
-   "outline_system": null,
+   "outline_system": [
+    "curriqunet"
+   ],
    "objectives_printed": null,
    "read_at": "2026-10-16T16:53:10Z",
    "read_kind": "capture",
@@ -7589,7 +7613,13 @@
      "cost_usd": 6.13,
      "platform": "curriqunet"
     },
-    "slo_read": null,
+    "slo_read": {
+     "run": "45031089800",
+     "at": "2026-11-22T16:26:19Z",
+     "system": "curriqunet",
+     "source_kind": "course_outline",
+     "file": "kb/course_outcomes/lan/read_45031089800_p5of5.json"
+    },
     "plo_programs": 11,
     "ppm_member": null,
     "maps": {
@@ -8745,11 +8775,11 @@
    "harvested": true,
    "slug": "ohlone",
    "programs": 204,
-   "passing": 135,
-   "gap": 69,
+   "passing": 137,
+   "gap": 67,
    "causes": {
     "no_closed_list": 25,
-    "page_not_found": 36,
+    "page_not_found": 34,
     "places_none": 2,
     "unknown_without_live": 6
    },
@@ -8774,10 +8804,10 @@
    "outcomes_file": "kb/status/commons_data_programs/ohlone.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-19T11:36:05Z",
+   "read_at": "2026-11-22T13:10:01Z",
    "read_kind": "capture",
-   "cost_usd": 10.02,
-   "passed_at_read": 125,
+   "cost_usd": 10.15,
+   "passed_at_read": 127,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -8786,11 +8816,11 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 179,
-   "found": 143,
-   "extracted": 143,
+   "found": 145,
+   "extracted": 145,
    "errors": 0,
    "failed_checks": {
-    "coverage": 4,
+    "coverage": 3,
     "invented": 1,
     "arithmetic": 9,
     "repeated": 0,
@@ -8802,27 +8832,27 @@
    "capture_root": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 57.1,
-   "run": "44515665022",
+   "read_seconds": 50.8,
+   "run": "45025966614",
    "levers": {
-    "reader_page_search": 36,
+    "reader_page_search": 34,
     "program_course_file_check": 25,
     "reconcile_steps": 6,
     "reader_page_assignment": 2
    },
    "collection": {
     "program_reader": {
-     "records": 143,
+     "records": 145,
      "models": {
-      "claude-opus-5-5": 143
+      "claude-opus-5-5": 145
      },
-     "run": "44515665022",
-     "at": "2026-11-19T11:36:05Z",
-     "cost_usd": 10.02,
+     "run": "45025966614",
+     "at": "2026-11-22T13:10:01Z",
+     "cost_usd": 10.15,
      "platform": "pdf"
     },
     "slo_read": null,
-    "plo_programs": 134,
+    "plo_programs": 136,
     "ppm_member": null,
     "maps": {
      "held": 0,
@@ -10544,11 +10574,11 @@
    "harvested": true,
    "slug": "san_joaquin_delta",
    "programs": 251,
-   "passing": 201,
-   "gap": 50,
+   "passing": 207,
+   "gap": 44,
    "causes": {
     "no_closed_list": 18,
-    "page_not_found": 30,
+    "page_not_found": 24,
     "unknown_without_live": 2
    },
    "census_causes": {
@@ -10570,10 +10600,10 @@
    "outcomes_file": "kb/status/commons_data_programs/san_joaquin_delta.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-21T07:31:06Z",
+   "read_at": "2026-11-22T13:20:45Z",
    "read_kind": "capture",
-   "cost_usd": 13.42,
-   "passed_at_read": 201,
+   "cost_usd": 13.78,
+   "passed_at_read": 207,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -10582,8 +10612,8 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 233,
-   "found": 203,
-   "extracted": 203,
+   "found": 209,
+   "extracted": 209,
    "errors": 0,
    "failed_checks": {
     "coverage": 0,
@@ -10598,26 +10628,26 @@
    "capture_root": "https://catalog.deltacollege.edu/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1452.9,
-   "run": "44883860902",
+   "read_seconds": 1422.3,
+   "run": "45029248913",
    "levers": {
-    "reader_page_search": 30,
+    "reader_page_search": 24,
     "program_course_file_check": 18,
     "reconcile_steps": 2
    },
    "collection": {
     "program_reader": {
-     "records": 203,
+     "records": 209,
      "models": {
-      "claude-opus-5-5": 203
+      "claude-opus-5-5": 209
      },
-     "run": "44883860902",
-     "at": "2026-11-21T07:31:06Z",
-     "cost_usd": 13.42,
+     "run": "45029248913",
+     "at": "2026-11-22T13:20:45Z",
+     "cost_usd": 13.78,
      "platform": "acalog"
     },
     "slo_read": null,
-    "plo_programs": 202,
+    "plo_programs": 208,
     "ppm_member": {
      "host": "programmap.deltacollege.edu",
      "by": "programmapper.org/ppm-schools, copied 2026-10-21"
@@ -11070,14 +11100,14 @@
    "harvested": true,
    "slug": "santa_rosa_junior",
    "programs": 283,
-   "passing": 229,
-   "gap": 54,
+   "passing": 244,
+   "gap": 39,
    "causes": {
     "extraction_error": 1,
     "found_not_extracted": 1,
     "no_closed_list": 4,
     "page_not_found": 20,
-    "unknown_without_live": 28
+    "unknown_without_live": 13
    },
    "census_causes": {
     "coverage_fails": 9,
@@ -11141,8 +11171,8 @@
    "read_seconds": 258.7,
    "run": "44701011374",
    "levers": {
-    "reconcile_steps": 28,
     "reader_page_search": 20,
+    "reconcile_steps": 13,
     "program_course_file_check": 4,
     "paid_read": 2
    },

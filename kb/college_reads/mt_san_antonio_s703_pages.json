@@ -1,0 +1,157 @@
+{
+ "_readme": "S703 (worker levers for SkyDovekie), census lever 9 (Mt. San Antonio College, page not found, 28). Capture 44744647809 read them as not_found or page_claimed. This read prints each not_found program's near-miss page and each page_claimed program's first candidate page, so a session can tell whether each is the program's own page, which codes it prints and in what form, and whether a per-college entry binds it. 21 loads and robots.txt, no model call, nothing written. No page was named for 22151, 24111, 43777, 43999. Two index pages list the links that might name those four.",
+ "college": "Mt. San Antonio College",
+ "questions": {
+  "own_page": "Whether the page is the program's own (title and award), and the course codes it prints, as printed.",
+  "claimed": "Which program the page is, and the course codes it prints.",
+  "index": "Whether the department or program index links a page for Landscape Equipment Technology (22151, 24111), Digital Media Specialist (43777) or Regenerative Communities (43999)."
+ },
+ "keywords": [
+  "[A-Z]{2,6}[- ]?\\d{1,3}[A-Z]?\\b",
+  "Total",
+  "Units",
+  "Hours"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "claimed"
+   ],
+   "url": "https://catalog.mtsac.edu/programs/programsaz/electronics/electronics-computer-engineering-technology-certificate/"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.mtsac.edu/programs/programsaz/architectural-technology-concentration/architectural-technology-concentration-level-ii-certificate/"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.mtsac.edu/programs/programsaz/radio-broadcasting/audio-media-degree/"
+  },
+  {
+   "answers": [
+    "claimed"
+   ],
+   "url": "https://catalog.mtsac.edu/programs/programsaz/music/commercial-music-degree/"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.mtsac.edu/programs/programsaz/radio-broadcasting/audio-media-certificate/"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-health-careers/care-coordinator-level-1/"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/park-sports-turf-management/"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/landscape-irrigation-certificate/"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/landscape-park-maintenance-certificate/"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/tree-care-maintenance-certificate/"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/landscape-construction-certificate/"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-computer-systems-technology/"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/interior-landscaping-certificate/"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/"
+  },
+  {
+   "answers": [
+    "claimed"
+   ],
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-health-careers/certified-nursing-assistant/"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/high-school-programs/secondaryeducationtext/"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-business-management-financial-systems/"
+  },
+  {
+   "answers": [
+    "claimed"
+   ],
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/high-school-programs/"
+  },
+  {
+   "answers": [
+    "claimed"
+   ],
+   "url": "https://catalog.mtsac.edu/programs/programsaz/museum-and-art-gallery-exhibition-design-operation/museum-and-art-gallery-exhibition-design-operation-certificate/"
+  },
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://catalog.mtsac.edu/programs/programsaz/computer-programming/cis-professional-certificate-in-c-programming/"
+  },
+  {
+   "answers": [
+    "claimed"
+   ],
+   "url": "https://catalog.mtsac.edu/programs/programsaz/accounting/accounting-computerized-certificate/"
+  },
+  {
+   "answers": [
+    "index"
+   ],
+   "url": "https://catalog.mtsac.edu/programs/programsaz/landscape-park-management/",
+   "links": "landscape|equipment|park|turf|irrigation|tree"
+  },
+  {
+   "answers": [
+    "index"
+   ],
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/",
+   "links": "digital|media|regenerative|communit|sustainab"
+  }
+ ]
+}

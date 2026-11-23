@@ -453,6 +453,10 @@ jobs:
       # Pure-stdlib python; same non-required check.
       - name: Program requirements pilot (course codes, page finder, scorer)
         run: python3 tests/program_requirements_pilot_test.py
+      # Glendale's STV-for-OBT prefix alias (S703): Glendale's alone, it names 38973's four courses on its own
+      # page, and it renames nothing in a filed record.
+      - name: Glendale's STV prefix alias (S703)
+        run: python3 tests/glendale_stv_alias_s703_test.py
       # The course-id route (S653): the scorer meets a printed code by the Program Course File's
       # own id for the listed course, before the prefix aliases. Rebuilds the proof that each
       # retired alias pair's matches are reproduced, and the self-recall test with its floor,
@@ -505,6 +509,18 @@ jobs:
       # words, read from the pinned page in capture_pdf, and hold what the filed page lacked. Pure stdlib.
       - name: Program requirements own-page pins (Clovis, Cosumnes River)
         run: python3 tests/program_requirements_pins_s703_test.py
+      # S703 (census lever 6): Ohlone's two own-page pins bind on the pages the free read printed and read from the
+      # pinned page in capture_pdf; the other 34 not_found programs are filed as named gaps, once each. Pure stdlib.
+      - name: Program requirements own-page pins and named gaps (Ohlone)
+        run: python3 tests/program_requirements_ohlone_pins_s703_test.py
+      # S703 (census lever 7): San Joaquin Delta's IND, ELE and MEC pairs let the coarse net read its apprenticeship
+      # pages' hyphenated codes (A-IND 78A), and touch no other prefix. Pure stdlib.
+      - name: Program requirements apprenticeship prefix aliases (San Joaquin Delta)
+        run: python3 tests/program_requirements_sjdelta_aliases_s703_test.py
+      # S703 (census levers 6, 7, 9, 10, 13): the five colleges' named gaps each name a program the filed capture
+      # reads with no page, once, with a defined reason and no record file. Pure stdlib.
+      - name: Program requirements page-not-found named gaps (five colleges)
+        run: python3 tests/program_requirements_named_gaps_s703_test.py
       # S697: the same-page calls over every committed folder, frozen in a fixture: 320 newly kept (Butte 163,
       # Cuyamaca 155, College of the Canyons 2), none one page off, and one edition pair. Pure stdlib.
       - name: Program requirements same-page recall over the committed folders
@@ -556,9 +572,13 @@ jobs:
       # check's precision counts, and tonight's held colleges untouched.
       - name: Named gap lists_past_their_figure (self-recall, claim check, the plan, the held colleges)
         run: python3 tests/program_lists_past_figure_s703_test.py
+      # S713, lane 2's cheap piles: the common number in parentheses, the named gap section_cut_off, their precision
+      # against the hand reading, boundary readings and claim checks, and the plan's 15 rows at Santa Rosa Junior.
+      - name: Cheap piles S713 (common numbers, section_cut_off, the plan)
+        run: python3 tests/program_piles_s713_test.py
       # S713: the three general education reconcile steps (Las Positas, Antelope Valley, College of Marin), their
-      # mechanics, and their measure on every committed record at the three colleges.
-      - name: GE reconcile steps S713 (mechanics, precision, boundaries)
+      # mechanics, the measure before the runs, and the 9-row plan against the filed records.
+      - name: GE reconcile steps S713 (mechanics, precision, boundaries, the plan)
         run: python3 tests/program_ge_steps_s713_test.py
       # Discontinued programs (S680; Sam, 2026-11-17 on #3480): a program's own catalog section marks it,
       # or a prior year prints it and this year does not; flagged out of the gap, never deleted. Pure stdlib.

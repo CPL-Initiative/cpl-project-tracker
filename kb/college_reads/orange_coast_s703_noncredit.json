@@ -1,0 +1,21 @@
+{
+ "_readme": "S703 (worker levers for SkyDovekie), census lever 13, second read. The first (run 45029864826) found the pathways index links Adult Education/Noncredit. This read prints that page and its links, so a gap can name whether Speaking about Reading 38181 or Integrative Health Coach 38587 has its own page. One load, no model call, nothing written.",
+ "college": "Orange Coast College",
+ "questions": {
+  "index": "Which programs the page links, and whether any is a named target."
+ },
+ "keywords": [
+  "Certificate",
+  "Diploma",
+  "Program"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "index"
+   ],
+   "url": "https://catalog.cccd.edu/orange-coast/adult-education-noncredit/",
+   "links": "speaking|reading|integrative|health|coach|noncredit"
+  }
+ ]
+}
