@@ -17478,8 +17478,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 670,
+   "count": 671,
    "docs": [
+    {
+     "created": "2026-11-23",
+     "governs": [],
+     "n": 715,
+     "path": "docs/session_715_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 715 handoff (from SkyFulmar, S714, the CPL Queue routine's collection run of 2026-11-23)",
+     "type": null,
+     "updated": "2026-11-23"
+    },
     {
      "created": "2026-11-23",
      "governs": [],
@@ -28632,5 +28646,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1559
+ "total": 1560
 }
