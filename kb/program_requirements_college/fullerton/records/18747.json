@@ -45,22 +45,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 8,
+   "placed": 9,
    "listed": 11,
-   "share": 0.727,
+   "share": 0.818,
    "missing": [
     "FTHEA142",
-    "FTHEA146",
     "FTHEA149"
    ],
-   "unexplained": [
-    "FTHEA146"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 10,
+   "count": 9,
    "codes": [
     "ART118F",
     "ART180F",
@@ -69,7 +66,6 @@
     "ARTH100F",
     "THEA100F",
     "THEA141F",
-    "THEA146F",
     "THEA148F",
     "THEA153F"
    ],
@@ -84,7 +80,7 @@
     "THEA148F",
     "THEA153F"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -122,7 +118,14 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true,
+  "course_renumbers": [
+   {
+    "printed": "THEA 146 F",
+    "listed": "FTHEA146",
+    "block": "Required Courses"
+   }
+  ]
  },
  "record": {
   "program": {

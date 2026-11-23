@@ -17478,8 +17478,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 671,
+   "count": 672,
    "docs": [
+    {
+     "created": "2026-11-23",
+     "governs": [],
+     "n": 717,
+     "path": "docs/session_717_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 717 handoff (from SkyAlbatross, S715, Sam's plain session of 2026-11-23: the Subjects figures answer their own edits, and the Subjects card from the mock)",
+     "type": null,
+     "updated": "2026-11-23"
+    },
     {
      "created": "2026-11-23",
      "governs": [],
@@ -28646,5 +28660,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1560
+ "total": 1561
 }

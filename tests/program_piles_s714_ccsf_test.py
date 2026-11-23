@@ -183,8 +183,13 @@ check(len(HELD_21) == 21 and HELD_21 == C.OPTION_PARTS_HELD, "the script holds t
 reach = C.option_parts_reach(every)
 check(reach["fires"] == 21 and reach["right"] == 21 and not reach["wrong"] and not reach["not_held"],
       "option_parts fires on 21 records and reads each as the reader did: %r" % reach)
-check({tuple(k) for k in reach["moves"]} == TO_PASSING | {("City College of San Francisco", "42228")}
-      and not reach["from_passing"], "it moves 11 verdicts to passing (10 elsewhere and 42228), none from passing")
+# Elsewhere a move is read from the filed verdict; once the S714 follow-up (kb/_program_piles_s714_optparts.py) files a
+# record passing, it no longer moves.
+moved = {tuple(k) for k in reach["moves"]}
+filed_pass = {(f["college"], str(f["control_number"])) for f in every if S.passes_live(f.get("score"))}
+check(moved <= TO_PASSING | {("City College of San Francisco", "42228")}
+      and all(k in moved or k in filed_pass for k in TO_PASSING) and not reach["from_passing"],
+      "it moves 11 verdicts to passing (10 elsewhere and 42228), none from passing, less those filed passing since")
 check(receipt["option_parts_reach"]["right"] == 21 and not receipt["option_parts_reach"]["from_passing"]
       and "agrees" in receipt["claim_check_reads"], "the corrected receipt carries the reach and the capture finding")
 check({r["control_number"] for r in receipt["rescored_not_planned"]} == {"33208", "39727"}

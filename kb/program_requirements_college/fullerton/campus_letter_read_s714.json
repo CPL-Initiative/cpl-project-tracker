@@ -1,0 +1,33 @@
+{
+ "_readme": "S714 (lane 2's cheap piles at Fullerton): the claim check for the campus letter's place. Today's capture (sources.json) looks for the state's file forms ('F HORT002', 'CSTR 42') and so cannot find the courses as the records read them; free page read 45188452002 (kb/college_reads/fullerton_s714_campus_letter.json, job 137740137030) printed each program's own page, and 'found' lists the code as the record read it wherever the page prints it, with the title and units the page prints. No Supabase write.",
+ "college": "Fullerton College",
+ "written": "2026-11-23T14:01:42Z",
+ "page_read": "45188452002",
+ "found": {
+  "03816": ["HORT 002 F"],
+  "08438": ["ANTH 102 F"],
+  "11690": ["CRTV 196 F"],
+  "18747": ["THEA 146 F"],
+  "21252": ["HORT 185 F"],
+  "21266": ["CRTV 196 F"],
+  "21271": ["CSTR 039 F", "CSTR 042 F"],
+  "36790": ["JOUR 140 F"],
+  "45320": ["HORT 185 F"],
+  "45378": ["HORT 185 F"],
+  "03839": ["CSTR 042 F"]
+ },
+ "printed": {
+  "HORT 002 F": "Principles of Horticulture II, 4",
+  "ANTH 102 F": "Cultural Anthropology, 3",
+  "CRTV 196 F": "Communications Seminars, 0.5-3",
+  "THEA 146 F": "Scene Painting 1, 3",
+  "HORT 185 F": "Arboriculture, 2",
+  "CSTR 039 F": "Commercial Mechanical Code, 3",
+  "CSTR 042 F": "Residential Steel Frame Construction, 4",
+  "JOUR 140 F": "Public Relations and Publicity, 3"
+ },
+ "retired_on_the_state_list": [
+  {"control_number": "18747", "file_code": "F THEA142", "page_says": "THEA 148 F Introduction to Theatre Crafts Lab (formerly THEA 142 F), 2"},
+  {"control_number": "18747", "file_code": "F THEA149", "page_says": "THEA 153 F Introduction to Stage Crew Activity (formerly THEA 149 F), 0.5"}
+ ]
+}

@@ -73,16 +73,26 @@ check(not arith(deg([20, 21], (60, 60), None))["pass"], "no figure: unequal")
 check(arith(deg([20, 30], (60, 60), True))["pass"], "a flag of true keeps the uncapped overlap (75 against 60)")
 check(not arith(deg([20, 30], (60, 60), {"min": 3, "max": 3}))["pass"], "a span caps it: 75 less 3 is 72, unequal")
 check(not arith(deg([10, 10], (60, 60), {"min": 6, "max": 6}))["pass"], "a sum short of the total stays unequal")
+# The S714 second reader: the cap is decided on the award, never a heading that says "Not for Transfer".
+nft = deg([25, 25], (60, 60), {"min": 3, "max": 3})
+nft["program"]["section_heading"] = "Fire Technology (Not for Transfer) A.S."
+check(not arith(nft)["pass"], "a local A.S. headed Not for Transfer stays capped: 75 against 60 is unequal")
+check(arith(deg([25, 25], (60, 60), {"min": 3, "max": 3}), "A.S. T Degree")["pass"],
+      "a transfer degree by its award keeps its own overlap")
+check("06770" not in Q.HAND_HELD or Q.HAND_HELD["06770"].startswith("held"), "06770 is held")
+check(Q.FILL_RECALL["filled"] == 22 and Q.FILL_RECALL["agree"] == 22 and Q.FILL_RECALL["false"] == 0
+      and Q.FILL_RECALL["missed"] == ["36073"], "the fill's self-recall: 22 filled, 22 agree, 0 false")
+check(conf["steps"][0].get("from_heading") is True, "the fill reads from the program's own heading")
 
 # ── the self-recall, on the run's filed records ──
 pr = Q.precision(CENSUS_AT_PLAN)
-check(pr["read"] == 22 and pr["right"] == 22 and not pr["wrong"] and pr["by_answer"] == {"passes": 14, "none": 8},
+check(pr["read"] == 22 and pr["right"] == 22 and not pr["wrong"] and pr["by_answer"] == {"passes": 13, "none": 9},
       "precision: %r" % pr)
 cc = Q.claim_checks(CENSUS_AT_PLAN)
-check(not cc["not_standing"] and "against" not in cc["notes"] and cc["capture"] == {"stands": 14},
+check(not cc["not_standing"] and "against" not in cc["notes"] and cc["capture"] == {"stands": 13},
       "the claim checks: %r" % cc)
 bd = Q.boundaries(CENSUS_AT_PLAN)
-check(not bd["wrong"] and bd["counts"].get("total's top one past the sum right") == 14, "boundaries: %r" % bd)
+check(not bd["wrong"] and bd["counts"].get("total's top one past the sum right") == 13, "boundaries: %r" % bd)
 
 # ── the plan ──
 receipts = sorted(glob.glob(os.path.join(ROOT, "kb", "receipts", "program_requirement_records_piles_sequoias_*.json")))

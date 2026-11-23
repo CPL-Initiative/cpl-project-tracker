@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Flight Technology",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=182",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=187",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10867,
+  "input_tokens": 7206,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10867,
-    "output_tokens": 986,
+    "input_tokens": 7206,
+    "output_tokens": 1506,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,89 +30,85 @@
     "model": null
    }
   ],
-  "output_tokens": 986,
+  "output_tokens": 1506,
   "output_tokens_details": {
-   "thinking_tokens": 544
+   "thinking_tokens": 449
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06319,
- "ms": 10031,
- "seconds": 10.4,
+ "cost_usd": 0.05894,
+ "ms": 11940,
+ "seconds": 12.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 8,
    "listed": 8,
-   "share": 0.0,
-   "missing": [
-    "FLTEC302",
-    "FLTEC304",
-    "FLTEC306",
-    "FLTEC310",
-    "FLTEC312",
-    "FLTEC314",
-    "FLTEC321",
-    "FLTEC330"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "FLTEC320"
+   ],
+   "flagged": [
+    "FLTEC320"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    31.0,
+    31.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    31.0,
+    31.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 5,
    "courses": 0,
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 8,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
    "section_heading": "Flight Technology Certificate",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 31,
+    "max": 31
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -129,46 +125,122 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "demonstrate the knowledge and skills to qualify for the written portions of the Federal Aviation Administration examinations for pilot and instructor.",
+    "perform navigational pre-flight planning.",
+    "assemble and analyze terminal and en-route weather data.",
+    "calculate departure, en-route, and arrival performance data.",
+    "assess risk factors to aircraft operations and apply the appropriate safety and communications protocols to mitigate the risks."
+   ],
+   "careers": [
+    "Professional Pilots",
+    "Charter pilots",
+    "Flight Instructors",
+    "Ground Instructors",
+    "Agricultural Pilots",
+    "Helicopter Pilots",
+    "Flight Engineers",
+    "Regional Airline/Major Airline Pilots"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "FLTEC 302",
-    "why": "certificate section not in the text; named only in the A.S. sections"
-   },
-   {
-    "code": "FLTEC 304",
-    "why": "certificate section not in the text; named only in the A.S. sections"
-   },
-   {
-    "code": "FLTEC 306",
-    "why": "certificate section not in the text; named only in the A.S. sections"
-   },
-   {
-    "code": "FLTEC 310",
-    "why": "certificate section not in the text; named only in the A.S. sections"
-   },
-   {
-    "code": "FLTEC 312",
-    "why": "certificate section not in the text; named only in the A.S. sections"
-   },
-   {
-    "code": "FLTEC 314",
-    "why": "certificate section not in the text; named only in the A.S. sections"
-   },
-   {
-    "code": "FLTEC 321",
-    "why": "certificate section not in the text; named only in the A.S. sections"
-   },
-   {
-    "code": "FLTEC 330",
-    "why": "certificate section not in the text; named only in the A.S. sections"
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 31,
+     "max": 31
+    },
+    "courses": [
+     {
+      "code": "FLTEC 320",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FLTEC 302",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLTEC 304",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLTEC 306",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLTEC 330",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLTEC 310",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLTEC 312",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLTEC 314",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FLTEC 321",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
-  "notes": []
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "FLTEC 320 (Private Pilot Ground School, 4 units) is listed under Certificate Requirements but is not in the closed list; recorded as a catalog addition. The Enrollment Eligibility section also names FLTEC 320 as one of three alternative ways to qualify for the program (or a Private Pilot certificate, or documented aviation experience), so a reviewer may wish to check whether it is truly required for every student; the listed courses sum to 31, matching the printed total only when FLTEC 320 is included.",
+   "All required courses must be passed with a grade of C or better.",
+   "The Student Learning Outcomes list continues across the page break from page 187 to page 188; recorded as one list.",
+   "Career Information also mentions working for a Government Agency or the Military; recorded only the named job titles as careers."
+  ]
  },
- "extracted_run": "39047070975"
+ "extracted_run": "45181973475",
+ "catalog_year": "2026-2027",
+ "source_sha": "ca2737c16b885630",
+ "source_codes": [
+  "FLTEC302",
+  "FLTEC304",
+  "FLTEC306",
+  "FLTEC310",
+  "FLTEC312",
+  "FLTEC314",
+  "FLTEC321",
+  "FLTEC330"
+ ],
+ "source_coverage": 1.0
 }

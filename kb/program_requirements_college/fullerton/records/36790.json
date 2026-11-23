@@ -45,28 +45,24 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 20,
+   "placed": 21,
    "listed": 23,
-   "share": 0.87,
+   "share": 0.913,
    "missing": [
-    "FJOUR140",
     "FJOUR219",
     "SPCH135F"
    ],
-   "unexplained": [
-    "FJOUR140"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 11,
+   "count": 10,
    "codes": [
     "COMM135F",
     "ENGLC1000",
     "ENGLC1001H",
     "JOUR101F",
-    "JOUR140F",
     "PHIL172F",
     "PSY161F",
     "PSY161HF",
@@ -86,7 +82,7 @@
     "STATC1000",
     "STATC1000H"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -127,7 +123,14 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true,
+  "course_renumbers": [
+   {
+    "printed": "JOUR 140 F",
+    "listed": "FJOUR140",
+    "block": "List A - Select 3 units"
+   }
+  ]
  },
  "record": {
   "program": {

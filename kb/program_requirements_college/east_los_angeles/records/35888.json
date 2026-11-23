@@ -150,7 +150,8 @@
     "Analyze how women’s diverse experiences are affected by society’s values, beliefs, traditions, and institutions, as well as race, ethnicity, social class, politics, nationality , religion, sexual orientation, and gender identity."
    ],
    "careers": [],
-   "electives_fill_words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS"
+   "electives_fill_words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS",
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -366,14 +367,14 @@
    "Outcome 2 printed 'nationality , religion' with a space before the comma; copied as printed. Outcome 1 'and/ or' line break read as 'and/or'."
   ]
  },
- "extracted_run": 43357061643,
+ "extracted_run": 45176404274,
  "reconciled": [
   {
-   "field": "electives_fill_words",
+   "field": "ge_overlap",
    "was": null,
-   "now": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS",
-   "words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 \nUNITS"
+   "now": true,
+   "words": "double counted in \nLACCD General Education"
   }
  ],
- "read_run": "39063389278"
+ "read_run": 43357061643
 }

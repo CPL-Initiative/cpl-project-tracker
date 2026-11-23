@@ -1467,11 +1467,15 @@ _cr_all_pins = _cr_conf.get("pdf_pages") or {}
 _CR_S680 = {"11338": 168, "04607": 179, "11319": 205, "07305": 212}
 # S703 pins four more to their own pages (tests/program_requirements_pins_s703_test.py checks them).
 _CR_S703 = {"33053": 333, "20227": 367, "20147": 625, "20193": 227}
-_cr_pins = {cn: v for cn, v in _cr_all_pins.items() if cn not in _CR_S680 and cn not in _CR_S703}
+# S714 pins sixteen more to their own sections with through and until (tests/program_requirements_rios_pins_s714_test.py
+# checks them on the pages free read 45167465999 printed).
+_CR_S714 = {cn: v["page"] for cn, v in _cr_all_pins.items() if "45167465999" in (v.get("evidence") or "")}
+_cr_pins = {cn: v for cn, v in _cr_all_pins.items() if cn not in _CR_S680 and cn not in _CR_S703 and cn not in _CR_S714}
 _cr_capture = json.load(open(os.path.join(_CR_DIR, "capture.json")))
 _cr_picks = {p["control_number"]: p for p in _cr_capture["pdf"]["picks"]}
-check("the entry pins 30566 to p.552 and 33072 to p.404, and beside them only the four S680 and four S703 pins",
-      {cn: v["page"] for cn, v in _cr_all_pins.items()} == dict({"30566": 552, "33072": 404}, **_CR_S680, **_CR_S703))
+check("the entry pins 30566 to p.552 and 33072 to p.404, and beside them only the four S680, four S703 and sixteen "
+      "S714 pins", len(_CR_S714) == 16 and {cn: v["page"] for cn, v in _cr_all_pins.items()}
+      == dict({"30566": 552, "33072": 404}, **_CR_S680, **_CR_S703, **_CR_S714))
 check("each pin's words are what the filed capture opened on, on the pinned page, and its evidence names both runs",
       all(" ".join(v["words"].split()) in _cr_picks[cn]["opens"] and _cr_picks[cn]["pages"][0] == v["page"]
           and "43519918667" in v["evidence"] and "43521338550" in v["evidence"] for cn, v in _cr_pins.items()))
@@ -1482,10 +1486,10 @@ check("each pinned page is the page the filed record was extracted from",
 # (tests/program_requirements_lassen_calgetc.test.js checks the words on the pages).
 _LS_DIR = os.path.join(ROOT, "kb", "program_requirements_college", "lassen")
 _ls_pins = (R.load_steps().get("Lassen College") or {}).get("pdf_pages") or {}
-check("no college but City College of San Francisco, Clovis, Cosumnes River, Lassen, Ohlone and Santa Monica names "
-      "pdf_pages", sorted(k for k, v in R.load_steps().items() if v.get("pdf_pages"))
-      == sorted([_CR, "City College of San Francisco", "Clovis Community College", "Lassen College", "Ohlone College",
-                 "Santa Monica College"]))
+check("no college but City College of San Francisco, Clovis, Cosumnes River, Folsom Lake, Lassen, Ohlone, Sacramento "
+      "City and Santa Monica names pdf_pages", sorted(k for k, v in R.load_steps().items() if v.get("pdf_pages"))
+      == sorted([_CR, "City College of San Francisco", "Clovis Community College", "Folsom Lake College",
+                 "Lassen College", "Ohlone College", "Sacramento City College", "Santa Monica College"]))
 # S691: Santa Monica pins eleven programs to the page their heading and 'Area of Emphasis' total print on, the page
 # before the one capture 39567439681 handed them (college-page-read runs 44881390798 and 44883047940). After the
 # re-read the filed record is read from the pin's page, so a pin names the filed page or the one after it.

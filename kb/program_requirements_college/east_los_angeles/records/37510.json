@@ -46,28 +46,23 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 2,
+   "placed": 3,
    "listed": 3,
-   "share": 0.667,
-   "missing": [
-    "ESLNC45CE"
-   ],
-   "unexplained": [
-    "ESLNC45CE"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "ESLNC45",
     "VOCED70CE"
    ],
    "flagged": [
     "VOCED70CE"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -101,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -197,5 +192,6 @@
    "ACAD PR 014CE and ACAD PR 005CE also appear in other noncredit programs on the same pages (Basic Math Success, Basic Reading Success); only the Automotive Fundamentals section was read."
   ]
  },
- "extracted_run": "39063389278"
+ "extracted_run": 45176404274,
+ "read_run": "39063389278"
 }

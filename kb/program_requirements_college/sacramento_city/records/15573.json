@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Cybersecurity and Information Assurance",
  "award": "A.S. Degree",
- "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=271",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=263",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11687,
+  "input_tokens": 7052,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11687,
-    "output_tokens": 1187,
+    "input_tokens": 7052,
+    "output_tokens": 1778,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,40 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1187,
+  "output_tokens": 1778,
   "output_tokens_details": {
-   "thinking_tokens": 627
+   "thinking_tokens": 489
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07049,
- "ms": 11713,
- "seconds": 12.5,
+ "cost_usd": 0.06377,
+ "ms": 15552,
+ "seconds": 16.7,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 10,
    "listed": 10,
-   "share": 0.0,
-   "missing": [
-    "CISN300",
-    "CISN340",
-    "CISN341",
-    "CISS310",
-    "CISS315",
-    "CISS316",
-    "CISS321",
-    "CISS330",
-    "CISS350",
-    "CISS360"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -72,34 +61,35 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    31.0,
+    31.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    31.0,
+    31.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 8,
    "courses": 0,
-   "count": 0,
+   "count": 8,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 10,
    "not_verbatim": [],
    "pass": true
   },
@@ -109,22 +99,22 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Cybersecurity and Information Assurance Certificate (the A.S. Degree section is not in the provided text)",
+   "section_heading": "A.S. in Cybersecurity and Information Assurance",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 31,
+    "max": 31
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
    "degree_total": {
     "min": null,
     "max": null
@@ -133,55 +123,138 @@
     "min": null,
     "max": null
    },
-   "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "electives_fill_degree": true,
+   "outcomes": [
+    "define best practices for configuring cyber defense and countermeasures.",
+    "analyze common threats to and vulnerabilities of computer systems and networks.",
+    "design organizational plans for securing data and while maintaining the Confidentiality, Integrity, and Availability (CIA) of the information transmitted over communication networks.",
+    "analyze security risks mitigation processes to identify, evaluate, prioritize, and prevent potential security threats.",
+    "execute Linux system commands from either a keyboard or a shell script using correct command syntax.",
+    "prioritize and establish a disaster recovery plan for the enterprise.",
+    "explain and configure a network firewall to provide optimum security from external threats and exploits.",
+    "apply cyber defense and countermeasures as appropriate to mitigate potential risks."
+   ],
+   "careers": [
+    "Cybersecurity Engineer",
+    "Cyber Operations Planner",
+    "IT Security Specialist",
+    "Information Security Analyst",
+    "IT Privacy Analyst",
+    "IT Risk Analyst",
+    "Security Operations Center (SOC) Technician",
+    "Information Security Auditor",
+    "Technical Support Staff",
+    "Network Administrators"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "CISN 300",
-    "why": "A.S. Degree section not in the text; named only in the Certificate section"
-   },
-   {
-    "code": "CISN 340",
-    "why": "A.S. Degree section not in the text; named only in the Certificate section"
-   },
-   {
-    "code": "CISN 341",
-    "why": "A.S. Degree section not in the text; named only in the Certificate section"
-   },
-   {
-    "code": "CISS 310",
-    "why": "A.S. Degree section not in the text; named only in the Certificate section"
-   },
-   {
-    "code": "CISS 316",
-    "why": "A.S. Degree section not in the text; named only in the Certificate section"
-   },
-   {
-    "code": "CISS 321",
-    "why": "A.S. Degree section not in the text; named only in the Certificate section"
-   },
-   {
-    "code": "CISS 330",
-    "why": "A.S. Degree section not in the text; named only in the Certificate section"
-   },
-   {
-    "code": "CISS 350",
-    "why": "A.S. Degree section not in the text; named only in the Certificate section"
-   },
-   {
-    "code": "CISS 360",
-    "why": "A.S. Degree section not in the text; named only in the Certificate section"
-   },
-   {
-    "code": "CISS315",
-    "why": "A.S. Degree section not in the text; named only in the Certificate section (printed as CISS 315)"
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 31,
+     "max": 31
+    },
+    "courses": [
+     {
+      "code": "CISN 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISN 340",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISN 341",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISS 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISS 315",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISS 316",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISS 321",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISS 330",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISS 350",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISS 360",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
-  "notes": []
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Closed list stores 'CISS315' without a space; matched to catalog 'CISS 315 Ethical Hacking' (3 units), so catalog_addition is false.",
+   "Course table continues across a page break (pages 263-264); 'Total Units: 31' printed after the continuation.",
+   "Catalog titles differ from closed-list titles for CISN 341 ('Switching, Routing, and Wireless Essentials' vs 'Networking Theory and Routing Technologies') and CISS 316 ('CyberOps Associate' vs 'CCNA Cybersecurity Operations'); codes match.",
+   "The page says the degree requires the program, a GE pattern, 'plus sufficient electives for a total of at least 60 units'; recorded as electives_fill_degree true with degree_total null since no award-specific degree total table is printed.",
+   "Student Learning Outcomes are printed for this A.S. program section."
+  ]
  },
- "extracted_run": "39047070975"
+ "extracted_run": "45181973475",
+ "catalog_year": "2026-2027",
+ "source_sha": "3c772b4da6961d34",
+ "source_codes": [
+  "CISN300",
+  "CISN340",
+  "CISN341",
+  "CISS310",
+  "CISS315",
+  "CISS316",
+  "CISS321",
+  "CISS330",
+  "CISS350",
+  "CISS360"
+ ],
+ "source_coverage": 1.0
 }
