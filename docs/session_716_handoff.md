@@ -89,6 +89,11 @@ stays off the Los Rios colleges and any college lane 1 takes later.
   before-images, 0 checked, 0 matching confirms; `.apply` pushed at 12:37Z (`4dbb40c9`).
 - 12:40Z: City College of San Francisco's 8 records live: migrate 45176130201 (12:39Z), 8 of 8 at their after-images,
   none checked; `.apply` back at main's value (`9b917c3a`). `piles` fixes the reach count and the test on #3714.
+- 12:58Z: S712's #3712 had merged handoff 715 (for Sam's next plain session, SkyAlbatross), so this run's handoff
+  moved to 716 in the merge of main (`194d76ba`). Handoff 715 records Sam at 01:53Z: *"No need for the Cobix check
+  ins for now"*; this run stopped its COBIx watcher at once and reads each PR's thread before a merge.
+  `piles` pushed the six fixes (#3714 head `8e461a7d`, 92 of 92); the second reader has round 2 of 2 on them, because
+  the same-figure guard is new shared scorer code.
 
 ## Conductor settings
 
