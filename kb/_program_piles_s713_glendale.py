@@ -316,7 +316,7 @@ def boundaries(census_path: str = CENSUS) -> dict:
                     n = S.heading_figure(b)
                     if n is not None:
                         word = {v: k for k, v in S.WORD_NUMBERS.items()}[n + d].upper()
-                        b["name"] = S.HEADING_FIGURE.sub(lambda m: m.group(0).replace(m.group("n"), word), b["name"])
+                        b["name"] = S.HEADING_FIGURE.sub(lambda m: m.group(0).replace(m.group("n") or m.group("m"), word), b["name"])
                         if S.heading_figure(b) != n + d:
                             raise SystemExit("the boundary reading did not move the heading's figure")
                 tally(name, not _passes_arith(f), cn)

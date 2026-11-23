@@ -474,16 +474,25 @@ def block_units_summed(block: dict, listed: dict, hours: bool = False
 # MINIMUM OF NINE UNITS"; the reading kept the heading and left the block's figure unset. heading_figure reads the
 # figure from the heading of a block that carries none of its own. Equal to the program's printed total, the list
 # fills the program to it (fills_to, as the reconcile's fill_to step writes it); any other figure is the list's own
-# floor (Kinesiology 32854's "FOR A MINIMUM OF 3 UNITS", the reconcile's own guard). Only a figure in words: a figure
+# floor (Kinesiology 32854's "FOR A MINIMUM OF 3 UNITS", the reconcile's own guard). A "minimum total of" figure names
+# the program's total, so it is read only as a fill, never as a list's floor; any other figure is read only with
+# "units" after it ("FOR A MINIMUM OF TWO" may count courses; #3707's second reader). Only a figure in words: a figure
 # in digits is the reconcile's fill_to step's, set per college with the words it read (Los Angeles Valley, S534), and
 # a record read before that step keeps its own sum (program_requirements_pilot_test, Economics 02984).
 WORD_NUMBERS = {w: float(i) for i, w in enumerate(
     "zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen "
     "eighteen nineteen twenty".split())}
 WORD_NUMBERS.update({"thirty": 30.0, "forty": 40.0, "fifty": 50.0, "sixty": 60.0})
+_WORDS = "|".join(sorted(WORD_NUMBERS, key=len, reverse=True))
 HEADING_FIGURE = re.compile(
-    r"\b(?:for|to\s+(?:complete|reach))\s+a\s+minimum\s+(?:total\s+)?of\s+(?P<n>%s)"
-    r"(?:\s+(?:total\s+)?units?)?\s*\.?\s*$" % "|".join(sorted(WORD_NUMBERS, key=len, reverse=True)), re.I)
+    r"\b(?:for|to\s+(?:complete|reach))\s+a\s+minimum\s+(?:(?P<total>total)\s+of\s+(?P<n>%s)(?:\s+units?)?"
+    r"|of\s+(?P<m>%s)\s+(?:total\s+)?units?)\s*\.?\s*$" % (_WORDS, _WORDS), re.I)
+
+
+def heading_is_total(block: dict) -> bool:
+    """Whether the block's heading figure is a "minimum total of" figure: the program's total, read only as a fill."""
+    m = HEADING_FIGURE.search(str(block.get("name") or ""))
+    return bool(m and m.group("total"))
 
 
 def heading_figure(block: dict) -> float | None:
@@ -498,7 +507,7 @@ def heading_figure(block: dict) -> float | None:
     m = HEADING_FIGURE.search(str(block.get("name") or ""))
     if not m:
         return None
-    return WORD_NUMBERS[m.group("n").lower()]
+    return WORD_NUMBERS[(m.group("n") or m.group("m")).lower()]
 
 
 # A list the page says a student takes only in place of a required course (Glendale's language degrees and
@@ -510,6 +519,9 @@ def heading_figure(block: dict) -> float | None:
 SUBSTITUTE_HEADING = re.compile(
     r"\bif\s+(?:\d{1,2}|[a-z]+)\s+units\s+(?:have|has)\s+not\s+been\s+reached\s+in\s+the\s+required\s+core\b"
     r"|\bif\s+any\s+required\s+courses?\s+(?:were|was|are|is)\s+substituted\b", re.I)
+# A heading that says the list is not for that student ("Do not select from this list if any required courses were
+# substituted"; #3707's second reader) is no substitute list.
+SUBSTITUTE_NEGATED = re.compile(r"\b(?:do\s+not|don[\'\u2019]t|never|not\s+to)\s+(?:select|take|choose|use)\b", re.I)
 
 
 def substitute_core(record: dict, listed: dict, hours: bool = False) -> tuple[dict, list] | None:
@@ -518,7 +530,8 @@ def substitute_core(record: dict, listed: dict, hours: bool = False) -> tuple[di
     all-required block (the core) outside any option group whose every course carries units; else None."""
     blocks = record.get("blocks") or []
     subs = [b for b in blocks if b.get("rule") == "choose_courses" and not b.get("option_group")
-            and SUBSTITUTE_HEADING.search(str(b.get("name") or ""))]
+            and SUBSTITUTE_HEADING.search(str(b.get("name") or ""))
+            and not SUBSTITUTE_NEGATED.search(str(b.get("name") or ""))]
     cores = [b for b in blocks if b.get("rule") == "all" and not b.get("option_group")]
     if len(subs) != 1 or len(cores) != 1:
         return None
@@ -549,11 +562,16 @@ def program_units(record: dict, listed: dict) -> tuple[tuple[float, float], list
             hi += max(0.0, span[1] - min(s[1] for s in sub[1]))
             continue
         n = heading_figure(b)
-        if n is not None and total and abs(total[0] - n) <= TOL:
-            # The list fills the program to its printed total; with no figure of its own it adds nothing below it.
+        fill = n is not None and bool(total) and abs(total[0] - n) <= TOL
+        if n is not None and heading_is_total(b) and not fill:
+            n = None   # a "minimum total of" figure apart from the printed total: no reading
+        if fill:
+            # The list fills the program to its printed total. A units list with no figure of its own adds nothing
+            # below it; any other list that cannot be added keeps its reasons (#3707's second reader: a choose-courses
+            # list whose courses carry no units stays incomplete, as under fills_to).
             heading_fills.append(n)
             span, why = block_units(b, listed, hours)
-            if span is None:
+            if span is None and b.get("rule") == "choose_units" and _num(b.get("minimum")) is None:
                 span, why = (0.0, 0.0), []
         elif n is not None:
             span, why = block_units(dict(b, stated={"min": n, "max": n}), listed, hours)
@@ -1298,8 +1316,10 @@ def score(record: dict, closed: list[dict], text: str | None = None, award: str 
     sub = substitute_core(record, listed, measure(record) == "hours")
     if sub and arith.get("computed") is not None:
         arith["substitute_list"] = sub[0].get("name")
+    tot = _span((record.get("program") or {}).get("total_units"))
     figs = [{"block": b.get("name"), "figure": heading_figure(b)} for b in record.get("blocks") or []
-            if heading_figure(b) is not None]
+            if heading_figure(b) is not None
+            and not (heading_is_total(b) and not (tot and abs(tot[0] - heading_figure(b)) <= TOL))]
     if figs and arith.get("computed") is not None:
         arith["heading_figures"] = figs
 

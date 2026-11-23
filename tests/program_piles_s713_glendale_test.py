@@ -66,6 +66,10 @@ check(S.score(lang(IF20, list_units=4), [], None, "A.A. Degree")["arithmetic"]["
       "a 4-unit list in place of a 5-unit course: 19")
 check(S.score(lang(IF20, list_units=6), [], None, "A.A. Degree")["arithmetic"]["computed"] == [20.0, 21.0],
       "a list larger than the course it replaces carries the high end past the core")
+# Finding 3: a heading that says the list is not for that student is no substitute list.
+check(S.substitute_core(lang("Do not select from this list if any required courses were substituted"), {}) is None
+      and S.score(lang("Do not select from this list if any required courses were substituted"), [], None,
+                  "A.A. Degree")["arithmetic"]["computed"] == [23.0, 23.0], "a negated heading is no substitute list")
 two_cores = lang(IF20, extra=[{"name": "MORE REQUIRED", "rule": "all", "courses": [{"code": "X 1", "units": 3}]}])
 check(S.substitute_core(two_cores, {}) is None, "two all-required blocks: no reading (which core is unknown)")
 check(S.substitute_core(lang(IF20, group="Option A"), {}) is None, "a list inside an option group: no reading")
@@ -104,8 +108,34 @@ check(S.heading_figure({"name": "FOR A MINIMUM OF NINE UNITS, CHOSEN FROM TWO AR
 a = S.score(fig(EIGHTEEN), [], None, "A.A. Degree")["arithmetic"]
 check(a["computed"] == [18.0, 18.0] and a["pass"] and a.get("heading_figures"),
       "a heading figure equal to the program's total fills the program to it: %r" % a)
-a = S.score(fig(EIGHTEEN, total=27), [], None, "A.A. Degree")["arithmetic"]
+a = S.score(fig("CHOOSE ADDITIONAL UNITS FOR A MINIMUM OF EIGHTEEN UNITS", total=27), [], None,
+            "A.A. Degree")["arithmetic"]
 check(a["computed"] == [27.0, 27.0] and a["pass"], "a heading figure apart from the total is the list's floor: %r" % a)
+# #3707's second reader, finding 2: a "minimum total of" figure names the program's total, so against another printed
+# total it is no reading (never the list's floor: the program would read 27 against 21), and a bare word with no
+# "units" after it is no figure.
+a = S.score(fig(EIGHTEEN, total=21), [], None, "A.A. Degree")["arithmetic"]
+check(a["status"] == "incomplete" and not a.get("heading_figures"),
+      "'MINIMUM TOTAL OF EIGHTEEN' against a printed 21 is no reading: %r" % a)
+check(S.heading_figure({"name": "CHOOSE TWO COURSES FOR A MINIMUM OF TWO", "rule": "choose_courses",
+                        "minimum": 2}) is None, "a bare word with no 'units' after it is no figure")
+check(S.heading_figure({"name": "CHOOSE ADDITIONAL UNITS TO COMPLETE A MINIMUM TOTAL OF EIGHTEEN UNITS",
+                        "rule": "choose_units"}) == 18.0 and S.heading_is_total(
+    {"name": "CHOOSE ADDITIONAL UNITS TO COMPLETE A MINIMUM TOTAL OF EIGHTEEN UNITS"}),
+      "'MINIMUM TOTAL OF EIGHTEEN UNITS' reads as a total")
+# Finding 1: a fill list whose courses carry no units keeps its reasons, as under fills_to.
+nounits = fig("CHOOSE TWO COURSES TO COMPLETE A MINIMUM TOTAL OF EIGHTEEN", rule="choose_courses", minimum=2)
+for c in nounits["blocks"][-1]["courses"]:
+    c["units"] = None
+a = S.score(nounits, [], None, "A.A. Degree")["arithmetic"]
+check(a["status"] == "incomplete" and not a["pass"],
+      "a fill list whose courses carry no units stays incomplete: %r" % a)
+under_fills_to = fig("CHOOSE TWO COURSES", rule="choose_courses", minimum=2)
+under_fills_to["blocks"][-1]["fills_to"] = 18
+for c in under_fills_to["blocks"][-1]["courses"]:
+    c["units"] = None
+check(S.score(under_fills_to, [], None, "A.A. Degree")["arithmetic"]["status"] == a["status"],
+      "the heading fill reads as fills_to reads the same list")
 a = S.score(fig("CHOOSE TWO FOR A MINIMUM OF FOUR UNITS", rule="choose_courses", minimum=2, total=14), [], None,
             "A.A. Degree")["arithmetic"]
 check(a["computed"] == [14.0, 14.0], "a choose-courses list's heading floor: max(5, 4) on top of 9: %r" % a)
@@ -176,6 +206,7 @@ check(receipt["claim_checks"] == {"substitute": {"stands": 9}, "heading_figure":
 fake = {"record": {"notes": ["The list is conditional: taken in addition to the required core."]}}
 check(G.claim(fake, "substitute") == "against", "a note saying the list adds to the core reads against")
 bd = G.boundaries(CENSUS_AT_PLAN)
+check(sum(bd["counts"].values()) == 39, "39 boundary readings: %d" % sum(bd["counts"].values()))
 check(not bd["wrong"] and bd["counts"].get("total low one short right") == 11
       and bd["counts"].get("list one unit larger right") == 9 and bd["counts"].get("figure one less right") == 2,
       "the boundary readings: %r" % bd)
