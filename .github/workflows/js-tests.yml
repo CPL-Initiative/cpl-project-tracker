@@ -366,6 +366,11 @@ jobs:
       # refused and listed; the sync accepts credit, whole and nc:<a listed slug>. Pure stdlib.
       - name: Subject decisions, noncredit (kb/subject_decisions.py nc:<category>)
         run: python3 tests/subject_decisions_noncredit_test.py
+      # A person's course moves reach the re-mint's gate (#3655): the sync reads CRS: rows into `courses`, lists an
+      # unreadable one, commits no email; the reader refuses a non-canonical code and the nightly mint never reads a
+      # move; kb/_mid_readiness.py settles the moved course alone, ahead of its code's save. Pure stdlib.
+      - name: Subject course moves (kb/_sync_subject_decisions.py courses, kb/_mid_readiness.py)
+        run: python3 tests/subject_course_moves_test.py
       # The Subjects card's two files in the daily build (S695): both builders run after their inputs' steps with
       # --if-changed, each fingerprint ignores its daily stamp, and a rerun on the same inputs writes nothing. Pure stdlib.
       - name: Subjects card in the daily build (--if-changed fingerprints)

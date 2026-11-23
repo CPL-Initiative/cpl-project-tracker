@@ -7,7 +7,8 @@ gate is S707's, his to set (d-remint-ready-gate-draft-s707). This file applies i
 dry run read one answer. It writes kb/status/mid_readiness.json and nothing else: no table, no M-ID.
 
 THE GATE, three tests per M-ID:
-  1. Every member's code has a settled common code. Settled means a person's save for that college's code (credit:
+  1. Every member's code has a settled common code. Settled means a person's move of that one course (CRS:, the
+     Subjects panel's Move; it comes first, as the most specific decision), a person's save for that college's code (credit:
      Decisions.for_course; noncredit: Decisions.for_noncredit_course, under the course's own category) or a person's
      statewide filing for the code (credit courses only, as subject_decisions.resolve reads it). The subject map alone
      is a draft and settles nothing (d-readiness-map-is-not-settled-s709): it is the map that gave 45 M-IDs an ELEC
@@ -141,6 +142,9 @@ def member_status(m, slugs, courses, decisions, subject_map, nc_codes):
     """(status, common code or None, detail) for one member."""
     slug = slugs.get(sd.college_key(sd_clean(m["college"])))
     subj, num = split_code(m["code"])
+    moved = decisions.for_course_move(slug, subj, num)
+    if moved:
+        return "settled", moved["common_code"], {"by": "course move", "key": moved["key"]}
     if not slug or slug not in courses:
         return "college not read", None, {}
     found = courses[slug].get((subj, num))
@@ -250,7 +254,8 @@ def build(root=ROOT, members=None, members_at=None, reads_rows=None):
         "_what": "Which M-IDs in a re-mint's scope pass the draft readiness gate (d-remint-ready-gate-draft-s707, Sam's "
                  "to set), and why each of the rest is held. Read by the Subjects page and the re-mint dry run. "
                  "Written by kb/_mid_readiness.py; nothing here is a decision.",
-        "_gate": ["every member's code has a settled common code: a person's save for that college's code (noncredit "
+        "_gate": ["every member's code has a settled common code: a person's move of that course, a person's save for "
+                  "that college's code (noncredit "
                   "under its own category) or a person's statewide filing; the subject map alone settles nothing",
                   "the settled codes give one code or a split along the codes; both pass",
                   "the outcomes comparison ran on the current reads, and no strong or partial split waits on an answer"],
