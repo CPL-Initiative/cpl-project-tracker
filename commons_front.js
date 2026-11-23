@@ -38,7 +38,7 @@
   var DETAILS_FOLD_KEY = "cplCommons.detailsFold.v1";
   var FILES = { program: "kb/status/program-requirements.json", data: "kb/status/commons_data.json",
     skills: "kb/reference/industry_credential_skills.json", subjects: "kb/status/local_subject_titles.json",
-    held: "kb/status/held_subject_codes.json", history: "kb/status/commons_history.json", spend: "kb/reference/model_spend_daily.json" };
+    held: "kb/status/held_subject_codes.json", readiness: "kb/status/mid_readiness.json", history: "kb/status/commons_history.json", spend: "kb/reference/model_spend_daily.json" };
   /* Collect / Curate / Connect, then the Plan (Sam, 2026-11-21, item 4: "check every card sits under the right one"):
      Credentials and Credit Recommendations are curated references, so they sit under Curate. */
   var KEYS = ["colleges", "programs", "courses-data", "cdc", "subjects", "courses", "exhibit", "credentials", "cr", "interconnect", "plan"];
@@ -827,26 +827,114 @@
   /* One card: title, pill, headline (its number stays when folded), meter, body (clamped to six lines), "...(more)"
      (which un-clamps the body and opens the notes under it) and the reserved link row. Every card has an id, so a
      Needs you link can jump to it (item 1). */
-  /* The Subjects card's two live lines (Sam, 2026-11-23: "when I make edits or decisions, they are immediately
-     reflected in the numbers"): drawn first from the status files, then again from commons_subjects.js's own figures,
-     the live saves on top (subjectsLive), so the card and the Subjects tab show one number. */
+  /* ── The Subjects card (Sam's mock of 2026-11-23, artboards Main and Colleges): the share of courses under a Confident
+     common code, then four checks under Collect, Curate and Connect, each with a "Where to act" line. Sam's ruling
+     r-confidence-not-person-settled-sam-2026-11-23 sets the measure: a call is settled when it is Confident, whether
+     the data took it there or a person's confirm did. Every figure is drawn first from the status files, then again
+     from commons_subjects.js's own figures with the live saves on top (subjectsLive), so the card answers an edit at
+     once and never disagrees with the Subjects tab ("when I make edits or decisions, they are immediately reflected
+     in the numbers"). ── */
+  var LEVEL_WORDS = ["Confident", "Likely", "Leaning", "Unsure"];
+  function share(n, of) { return of ? Math.round(n / of * 100) : 0; }
+  function stage(name) { return el("h4", { cls: "cmf-stage", text: name }); }
+  function checkHead(n, name, fig) { return el("p", { cls: "cmf-check-h" }, [el("strong", { text: n + ". " + name }), el("span", { cls: "cmf-check-fig" }, fig)]); }
+  function act(links) {
+    var kids = [el("span", { cls: "cmf-act-l", text: "Where to act:" })];
+    links.forEach(function (l) { kids.push(" "); kids.push(a(l[1], l[0])); });
+    return el("p", { cls: "cmf-act" }, kids);
+  }
+  function ul(items) { return el("ul", { cls: "cmf-list" }, items.filter(Boolean).map(function (i) { return el("li", null, typeof i === "string" ? [i] : i); })); }
+  function lead(word, rest) { return [el("strong", { text: word + " " }), rest]; }
+  function stack(L) {
+    var T = L.totalPairs || 0;
+    return el("div", { cls: "cmf-stack", role: "img", "aria-label": "Of " + fmt(T) + " college-and-code pairs: " + LEVEL_WORDS.map(function (k) { return fmt(L.pairs[k]) + " " + k; }).join(", ") },
+      LEVEL_WORDS.slice(0, 3).map(function (k, i) { return el("i", { cls: "cmf-stack-" + i, style: "width:" + (T ? (L.pairs[k] / T * 100) : 0).toFixed(1) + "%" }); }));
+  }
+  function subjTitleKids(LT) {
+    return LT ? [a("#commons/subjects", fmt(LT.named) + " local titles"), " at ", a("#commons/subjects", fmt(LT.collegesNamed) + " of " + fmt(LT.colleges) + " colleges"),
+      " with a catalog on file. Owner: the Courses bot takes each title from the catalog’s subject heading; a person settles the ",
+      a("#commons/subjects/disagree", fmt(LT.untitled) + " codes with no title"),
+      " (" + fmt(LT.notInCatalog) + " not in catalog, " + fmt(LT.notRead) + " not read yet, " + fmt(LT.blocked) + " blocked)."]
+      : ["Local subject titles: TBA."];
+  }
   function subjHeldKids(HC) {
     return HC ? [a("#commons/subjects/held", fmt(HC.held) + " courses the M-ID mint holds"), " wait on " + fmt(HC.codes) + " local subject codes with no common subject code. "
       + (HC.released ? fmt(HC.released) + " more are released by decisions saved since the build. " : "")
       + "A common subject code saved at a college releases its held courses with ordinary titles; a shell title stays held."]
       : ["The courses the M-ID mint holds for want of a common subject code: TBA."];
   }
-  function subjTitleKids(LT) {
-    return [el("strong", { text: "Step b, local subject title: " }),
-      LT ? a("#commons/subjects", fmt(LT.named) + " local titles") : "TBA",
-      LT ? " at " : "", LT ? a("#commons/subjects", fmt(LT.collegesNamed) + " of " + fmt(LT.colleges) + " colleges") : "",
-      LT ? " with a catalog on file. Owner: the Courses bot takes each title from the catalog’s subject heading; a person settles the " : "",
-      LT ? a("#commons/subjects/disagree", fmt(LT.untitled) + " codes with no title") : "",
-      LT ? " (" + fmt(LT.notInCatalog) + " not in catalog, " + fmt(LT.notRead) + " not read yet, " + fmt(LT.blocked) + " blocked)." : ""];
+  function subjectsParts(M) {
+    var S = M.subjects, LT = M.localTitles, HC = M.heldCodes, L = M.subjLevels, SW = M.subjStatewide || {}, R = M.readiness, P = M.platforms || {};
+    var sOf = !!S && S.of != null, all = SW.colleges || M.allColleges || null;
+    var big = L ? share(L.courses.Confident, L.totalCourses) + "%" : M.subjLevelsError ? "TBA" : "…";
+    var rest = [L || M.subjLevelsError ? " of courses sit under a local code with a Confident common code" : " Reading the confidence levels…"];
+    var body = [
+      ul([lead("Why:", "every M-ID starts with a common subject code (ELEC M9012), and each college’s local code (Cerritos AED) must point to the right one."),
+        lead("Finished when:", "every college’s local codes carry the college’s own title and a Confident common code."),
+        lead("Confident:", "90% or better, from the data or from a person’s confirm."),
+        SW.codes ? lead("Scale:", fmt(SW.colleges) + " colleges, " + fmt(SW.codes) + " local codes, " + fmt(SW.pairs) + " college-and-code pairs, " + fmt(SW.courses) + " active and approved COCI courses.") : null]),
+      stage("Collect"),
+      checkHead(1, "Each college’s own subject titles", LT && all ? [el("strong", { text: fmt(LT.collegesNamed) }), " of " + fmt(all) + " colleges"] : ["TBA"]),
+      LT && all ? meter(share(LT.collegesNamed, all), fmt(LT.collegesNamed) + " of " + fmt(all) + " colleges, " + share(LT.collegesNamed, all) + " percent") : null,
+      el("p", { id: "cmf-subj-titles" }, subjTitleKids(LT)),
+      el("p", { cls: "cmf-sub", text: "The ways to look, tried in this order:" }),
+      ul(["The catalog’s course descriptions: read at " + (LT ? fmt(LT.collegesNamed) : "TBA") + " colleges.",
+        "The catalog system’s public data (CurriQunet " + fmt(P.curriqunet || 0) + ", eLumen " + fmt(P.elumen || 0) + "): the first probes are read; the filer is next.",
+        LT && all ? "The class schedule, HTML or PDF: to try at " + fmt(all - LT.collegesNamed) + "." : null,
+        "A department list: read at Cerritos.",
+        "A person’s hand-over, where a site blocks our reader.",
+        "COCI and the MIS reports carry no subject names.",
+        "Who: Sky, in the nightly data collection."]),
+      act([["The colleges and their titles", "#commons/subjects"], ["Hand over a file or link", "#collect"]]),
+      stage("Curate"),
+      checkHead(2, "A Confident common code for every local code", L ? [el("strong", { text: fmt(L.pairs.Confident) }), " of " + fmt(L.totalPairs) + " pairs"] : ["TBA"]),
+      L ? stack(L) : null,
+      L ? el("p", { cls: "cmf-sub", id: "cmf-subj-levels", text: LEVEL_WORDS.map(function (k) { return k + " " + fmt(L.pairs[k]); }).join(" · ") }) : null,
+      ul([L ? "Next: Sky raises the " + fmt(L.codes.Unsure) + " Unsure codes with their titles and a web search." : null,
+        sOf ? [S.settled === S.of ? "Done: all " : "", a("#canonical-subj4", fmt(S.settled) + " of " + fmt(S.of) + " disciplines settled"),
+          " in the Common Subjects Reference" + (S.settled === S.of ? ", each with its common code." : ". Owner: a curator.")] : "Disciplines with a settled common code: TBA."]),
+      act([["Every local code, statewide", "#commons/subjects/statewide"], ["Noncredit subject titles", "#commons/subjects/noncredit"]]),
+      stage("Connect"),
+      checkHead(3, "No course held for want of a code", HC ? [el("strong", { text: fmt(HC.held) }), " held"] : ["TBA"]),
+      el("p", { id: "cmf-subj-held" }, subjHeldKids(HC)),
+      ul(["Next: the mint takes Confident calls, so a course under a Confident code is placed."]),
+      act([["Codes the mint holds on", "#commons/subjects/held"]]),
+      checkHead(4, "Re-mint scopes ready", R ? [el("strong", { text: fmt(R.ready) }), " of " + fmt(R.mids) + " M-IDs (" + R.code + ")"] : ["TBA"]),
+      R ? meter(share(R.ready, R.mids), fmt(R.ready) + " of " + fmt(R.mids) + " M-IDs ready, " + share(R.ready, R.mids) + " percent") : null,
+      R ? ul(["Members still held: " + Object.keys(R.member_status || {}).filter(function (k) { return k !== "settled" && R.member_status[k]; })
+          .map(function (k) { return fmt(R.member_status[k]) + " " + k; }).join(", ") + ".",
+        "Next: Sam’s twelve " + R.code + " titles, then one re-mint."]) : null,
+      act(R && R.slug ? [[R.college.replace(/ College$/, "") + " " + R.code, "#commons/subjects/" + R.slug + "/" + R.code]] : [["The subjects list", "#commons/subjects"]])
+    ];
+    return { big: big, rest: rest, body: body.filter(Boolean) };
+  }
+  /* The re-mint scope the readiness gate measures (kb/_mid_readiness.py), with the slug its college's view opens at. */
+  function subjReadiness(R, LS) {
+    var keys = Object.keys((R && R.scopes) || {}).sort();
+    var x = keys.length ? R.scopes[keys[0]] : null;
+    if (!x || x.mids == null) return null;
+    var slug = "";
+    ((LS && LS.colleges) || []).forEach(function (c) { if (c.college === x.college) slug = c.slug; });
+    return { code: x.code, college: x.college, slug: slug, mids: x.mids, ready: x.ready, member_status: x.member_status || {} };
+  }
+  function subjectsCard(M) {
+    var P = subjectsParts(M);
+    return card({ key: "subjects", title: "Subjects", cls: "cmf-checks cmf-unclamped", pill: "In progress", big: P.big, rest: P.rest, body: P.body,
+      method: [p(["A college-and-code pair is one local code at one college. Its level comes from the statewide list (kb/status/statewide_subject_codes.json): the subject map’s draft, the M-IDs its courses joined at three or more colleges, its course titles, and a noncredit code’s COCI category. A person’s statewide filing, or a common subject code saved at that college, makes the pair Confident at once. "
+        + "The headline counts the active and approved COCI courses under each pair. The local titles come from the catalogs filed so far; a title is the catalog’s own subject heading, saved in Title Case. The common subject code beside a local code comes from the subject map, each discipline’s settled code, or a person’s save, never from a TOP code."])],
+      links: [["Open the subjects list", "#commons/subjects"], ["Codes the mint holds on", "#commons/subjects/held"], ["Common Subjects Reference", "#canonical-subj4"]] });
+  }
+  function redrawSubjects(M) {
+    var art = document.getElementById("cmf-card-subjects");
+    if (!art) return;
+    var P = subjectsParts(M), big = art.querySelector(".cmf-big"), rest = art.querySelector(".cmf-rest"), body = art.querySelector(".cmf-body");
+    if (big) big.textContent = P.big;
+    if (rest) { rest.textContent = ""; P.rest.forEach(function (c) { rest.appendChild(typeof c === "string" ? document.createTextNode(c) : c); }); }
+    if (body) { body.textContent = ""; P.body.forEach(function (c) { body.appendChild(c); }); }
   }
   function subjectsLive(M) {
     function draw(X) {
-      return X.liveFigures().then(function (F) {
+      return X.liveFigures({ statewide: true }).then(function (F) {
         if (M.localTitles) {
           var LT = {};
           for (var k in M.localTitles) LT[k] = M.localTitles[k];
@@ -854,19 +942,20 @@
           M.localTitles = LT;
         }
         if (M.heldCodes && F.held != null) M.heldCodes = { held: F.held, codes: F.heldCodes, pairs: M.heldCodes.pairs, released: F.released };
-        var t = document.getElementById("cmf-subj-titles"), h = document.getElementById("cmf-subj-held");
-        if (t) { t.textContent = ""; subjTitleKids(M.localTitles).forEach(function (c) { t.appendChild(typeof c === "string" ? document.createTextNode(c) : c); }); }
-        if (h) { h.textContent = ""; subjHeldKids(M.heldCodes).forEach(function (c) { h.appendChild(typeof c === "string" ? document.createTextNode(c) : c); }); }
+        if (F.levels) { M.subjLevels = F.levels; M.subjStatewide = F.statewide; } else M.subjLevelsError = "the statewide list could not be read";
+        redrawSubjects(M);
         return F;
       });
     }
-    if (window.CPL_COMMONS_SUBJECTS && window.CPL_COMMONS_SUBJECTS.liveFigures) return draw(window.CPL_COMMONS_SUBJECTS);
+    function fail(e) { M.subjLevelsError = String(e && e.message || e); redrawSubjects(M); throw e; }
+    if (window.CPL_COMMONS_SUBJECTS && window.CPL_COMMONS_SUBJECTS.liveFigures) return draw(window.CPL_COMMONS_SUBJECTS).then(null, fail);
     var T = window.CPL_TABS;
-    if (!T || typeof T.loadScript !== "function") return Promise.resolve(null);
-    return new Promise(function (res) {
+    if (!T || typeof T.loadScript !== "function") { M.subjLevelsError = "the Subjects script is not loaded"; redrawSubjects(M); return Promise.resolve(null); }
+    return new Promise(function (res, rej) {
       T.loadScript("commons_subjects.js", "CPL_COMMONS_SUBJECTS", function () {
         var X = window.CPL_COMMONS_SUBJECTS;
-        res(X && X.liveFigures ? draw(X) : null);
+        if (X && X.liveFigures) draw(X).then(res, function (e) { try { fail(e); } catch (x) { rej(x); } });
+        else { M.subjLevelsError = "the Subjects script is not loaded"; redrawSubjects(M); res(null); }
       });
     });
   }
@@ -880,7 +969,8 @@
     (o.after || []).forEach(function (n) { x.appendChild(n); });
     x.appendChild(el("div", { cls: "cmf-body" }, o.body));
     if (o.method && o.method.length) {
-      var m = more(o.method, function (open) { art.classList.toggle("cmf-unclamped", open); });
+      /* A card of checks (the Subjects card) stays open whatever its method line does. */
+      var m = more(o.method, function (open) { if (!art.classList.contains("cmf-checks")) art.classList.toggle("cmf-unclamped", open); });
       x.appendChild(m.button);
       x.appendChild(m.body);
     }
@@ -1008,22 +1098,7 @@
     var cardPct = pct(Cd.ready, Cd.total), exPct = pct(E.stamped, E.titles);
     var S = M.subjects, LT = M.localTitles, HC = M.heldCodes, sOf = !!S && S.of != null;
     var curate = [
-      /* Subjects (Sam, 2026-11-20: "don't we need a commons card for subjects to house the common subjects and local
-         subject titles we'll be establishing from catalog data?"): Steps a and b of his curation order, before the
-         M-ID (Step c, the next card). Each figure opens what it counts. */
-      card({ key: "subjects", title: "Subjects", pill: "In progress",
-        big: sOf ? fmt(S.settled) + " of " + fmt(S.of) : "TBA", rest: [" common subject codes settled"],
-        body: [p([el("strong", { text: "Step a, common subject code: " }), sOf ? a("#canonical-subj4", fmt(S.settled) + " of " + fmt(S.of) + " disciplines settled") : "TBA",
-            " in the Common Subjects Reference. Owner: a curator."]),
-          el("p", { id: "cmf-subj-held" }, subjHeldKids(HC)),
-          el("p", { id: "cmf-subj-titles" }, subjTitleKids(LT)),
-          p(["Step c, the M-ID, is the Courses and M-IDs card."])],
-        method: [p([(sOf ? fmt(S.of) + " is the number of disciplines in the Common Subjects Reference; " + fmt(S.settled) + " have a settled common subject code. " : "")
-          + (LT ? "The local titles come from the " + fmt(LT.colleges) + " catalogs filed so far (" + fmt(LT.courses) + " courses, " + fmt(LT.codes) + " subject codes). A title is the catalog’s own subject heading, saved in Title Case. A code with no title says why: not in catalog (the catalog was read and gives it no heading, so it waits on a person), not read yet (Sky reads it again), or blocked (the college’s site refused our reader). A noncredit code is recommended a title from the noncredit subject title list, lined up by its own COCI noncredit category. "
-            + "Each catalog’s codes are compared with the state course list’s codes for the same college, exactly, after trimming spaces and setting upper case: " + fmt(LT.catalogOnly) + " codes are in the catalog only and " + fmt(LT.stateOnly) + " in COCI only. "
-            + "The common subject code beside a local code comes from the subject map and each discipline’s settled code, never from a TOP code."
-            : "The local subject titles file has not been read, so Step b reads TBA.")])],
-        links: [["Open the subjects list", "#commons/subjects"], ["Codes the mint holds on", "#commons/subjects/held"], ["Common Subjects Reference", "#canonical-subj4"]] }),
+      subjectsCard(M),
       card({ key: "courses", title: "Courses and M-IDs", pill: "In progress",
         big: fmt(Cd.ready) + " of " + fmt(Cd.total), rest: [" cards the automatic check scores as ready (0.85 or better)"],
         after: [meter(cardPct, fmt(Cd.ready) + " of " + fmt(Cd.total) + " ready, " + Math.round(cardPct) + " percent")],
@@ -1198,11 +1273,15 @@
     /* The local subject titles are their own read: a missing file reads TBA on the Subjects card, never a broken page. */
     var titles = readJson(FILES.subjects).then(null, function () { return null; });
     var heldCodes = readJson(FILES.held).then(null, function () { return null; });
+    var readiness = readJson(FILES.readiness).then(null, function () { return null; });
     /* The curation series and the spend are their own reads too: either missing reads TBA where it is used. */
     var history = readJson(FILES.history).then(null, function () { return null; });
     var spend = readJson(FILES.spend).then(null, function () { return null; });
-    return Promise.all([readJson(FILES.program), readJson(FILES.data), readJson(FILES.skills), titles, heldCodes, history, spend]).then(function (r) {
+    return Promise.all([readJson(FILES.program), readJson(FILES.data), readJson(FILES.skills), titles, heldCodes, history, spend, readiness]).then(function (r) {
       var M = model(C, r[0], r[1], r[2], r[3], r[4], r[5], r[6]);
+      M.readiness = subjReadiness(r[7], r[3]);
+      M.platforms = {}; M.allColleges = ((r[1] && r[1].colleges) || []).length || null;
+      ((r[1] && r[1].colleges) || []).forEach(function (c) { if (c && c.platform) M.platforms[c.platform] = (M.platforms[c.platform] || 0) + 1; });
       render(root, M, opts);
       /* The Subjects card's figures, with the live saves on top; a failed read keeps the status files' lines. */
       M.subjectsReady = subjectsLive(M).then(null, function (e) { M.subjectsLiveError = String(e && e.message || e); return null; });
@@ -1430,6 +1509,15 @@
     ".cmf-big { font-family:var(--cmn-serif); font-size:1.75rem; font-weight:700; color:var(--cmn-title); letter-spacing:-0.02em; margin-right:4px; }",
     ".cmf-badge { display:inline-block; margin-left:4px; padding:1px 8px; border-radius:999px; background:var(--cmn-ask-bg); color:var(--cmn-ask-fg); font-size:.76rem; font-weight:700; }",
     ".cmf-x { display:flex; flex-direction:column; gap:10px; min-width:0; }",
+    ".cmf-stage { margin:14px 0 6px; font-size:.75rem; letter-spacing:.06em; text-transform:uppercase; color:var(--cmn-muted); border-bottom:2px solid var(--cmn-gold); padding-bottom:4px; }",
+    ".cmf-check-h { margin:6px 0 4px; display:flex; flex-wrap:wrap; justify-content:space-between; gap:4px 12px; align-items:baseline; }",
+    ".cmf-check-h > strong { color:var(--cmn-heading); }",
+    ".cmf-check-fig { font-variant-numeric:tabular-nums; }",
+    ".cmf-sub { margin:4px 0; color:var(--cmn-muted); font-size:.85rem; font-variant-numeric:tabular-nums; }",
+    ".cmf-list { margin:4px 0; padding-left:18px; } .cmf-list li { margin:2px 0; } .cmf-list strong { color:var(--cmn-heading); }",
+    ".cmf-act { margin:6px 0 0; display:flex; flex-wrap:wrap; gap:4px 16px; } .cmf-act-l { color:var(--cmn-muted); }",
+    ".cmf-stack { height:10px; border-radius:999px; background:var(--cmn-track); overflow:hidden; display:flex; }",
+    ".cmf-stack i { display:block; height:100%; background:var(--cmn-accent); } .cmf-stack-1 { opacity:.6; } .cmf-stack-2 { opacity:.3; }",
     ".cmf-meter { height:8px; border-radius:999px; background:var(--cmn-track); overflow:hidden; }",
     ".cmf-meter i { display:block; height:100%; border-radius:999px; background:var(--cmn-accent); }",
     ".cmf-stack { display:flex; height:10px; border-radius:999px; overflow:hidden; background:var(--cmn-track); }",
@@ -1458,6 +1546,7 @@
     ".cmf-need-head { display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 10px; }",
     ".cmf-need-body { display:grid; gap:4px; }",
     /* The Plan (item 5) and College Data Collection (item 8). */
+    ".cmf-checks .cmf-body { display:block; -webkit-line-clamp:unset; line-clamp:none; max-height:none; overflow:visible; }",
     ".cmf-plan .cmf-body { display:block; -webkit-line-clamp:unset; line-clamp:none; max-height:none; overflow:visible; }",
     ".cmf-phases { display:grid; grid-template-columns:repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap:12px 24px; }",
     ".cmf-phase { min-width:0; } .cmf-phase h4 { margin:0; font-size:1rem; color:var(--cmn-heading); }",

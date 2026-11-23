@@ -842,6 +842,26 @@
   /* The four levels Sam's ruling measures by (r-confidence-not-person-settled-sam-2026-11-23): a call is settled when it
      is Confident, whether the data took it there or a person's confirm did. */
   function levelOf(v) { return v >= 0.9 ? "Confident" : v >= 0.75 ? "Likely" : v >= 0.5 ? "Leaning" : "Unsure"; }
+  /* The levels by college-and-code pair, by course and by code, with the live filings and saves on top: one count for
+     the statewide view and the Commons card. A pair is Confident when a person filed the code statewide or saved a
+     common subject code at that college, so a Confirm or a college's Save moves it at once. */
+  var LEVELS = ["Confident", "Likely", "Leaning", "Unsure"];
+  function levels(W, M) {
+    M = M || VIEW.M;
+    var L = { pairs: {}, courses: {}, codes: {}, totalPairs: 0, totalCourses: 0 };
+    LEVELS.forEach(function (k) { L.pairs[k] = 0; L.courses[k] = 0; L.codes[k] = 0; });
+    var saves = commonSaves(M, false), slugs = {};
+    ((M && M.list) || []).forEach(function (x) { slugs[x.college] = x.slug; });
+    ((W && W.codes) || []).forEach(function (c) {
+      var base = filedOf(c) ? "Confident" : levelOf((c.recommend || {}).confidence || 0);
+      L.codes[base]++;
+      (c.colleges || []).forEach(function (x) {
+        var k = base === "Confident" || savedAt(saves, slugs[x[0]], c) ? "Confident" : base, n = x[1] || 0;
+        L.pairs[k]++; L.courses[k] += n; L.totalPairs++; L.totalCourses += n;
+      });
+    });
+    return L;
+  }
   function confWords(v) { var n = Math.round((v || 0) * 100); return (n < 1 ? "under 1" : String(n)) + "% " + levelOf(v || 0); }
   function swRows(W) {
     var F = SW_FILTERS.filter(function (f) { return f[0] === SWS.filter; })[0] || SW_FILTERS[0];
@@ -925,14 +945,7 @@
       + (top.tried ? "On " + fmt(top.tried) + " codes whose peers already agree, calls at 90% or better were right " + Math.round((top.accuracy || 0) * 100) + "% of the time. " : "")
       + "A confirm is your statewide filing for the code; the daily build carries it to every college that uses it."]));
     if (SWS.readErr) box.appendChild(el("p", { cls: "csb-note", role: "status", text: "The filings people made could not be read live (" + SWS.readErr + "); the list shows the filings the daily build carried." }));
-    var lv = { Confident: 0, Likely: 0, Leaning: 0, Unsure: 0 };
-    /* A pair is Confident when a person filed the code statewide or saved a common subject code at that college; the
-       count reads the live saves, so a Confirm or a college's Save moves it at once. */
-    var saves = commonSaves(VIEW.M, false);
-    W.codes.forEach(function (c) {
-      var base = filedOf(c) ? "Confident" : levelOf(c.recommend.confidence || 0);
-      (c.colleges || []).forEach(function (x) { lv[base === "Confident" || savedAt(saves, slugOfName(x[0]), c) ? "Confident" : base]++; });
-    });
+    var lv = levels(W).pairs;
     box.appendChild(el("p", { cls: "csb-note", id: "csw-levels" }, ["College-and-code pairs by level: ",
       ["Confident", "Likely", "Leaning", "Unsure"].map(function (k) { return k + " " + fmt(lv[k]); }).join(" · "),
       ". Confident is 90% or more, Likely 75 to 90%, Leaning 50 to 75%, Unsure under 50%. A confirm raises a call to Confident."]));
@@ -1803,12 +1816,17 @@
   /* The Commons front's Subjects card asks for the same figures (commons_front.js), so the card and the tab never
      disagree: one read shared with the tab, and where the tab already holds the saves, no read at all. A held list
      that cannot be read leaves `held` null, and the card keeps the status file's line. */
-  function liveFigures() {
+  function liveFigures(opts) {
+    opts = opts || {};
     cache = cache || load();
     return cache.then(function (M) {
       var F = figures(M);
-      return loadHeld().then(function (H) { var N = heldNow(H, M); F.held = N.held; F.heldCodes = N.codes; F.released = N.released; return F; },
-        function () { F.held = null; return F; });
+      var held = loadHeld().then(function (H) { var N = heldNow(H, M); F.held = N.held; F.heldCodes = N.codes; F.released = N.released; },
+        function () { F.held = null; });
+      /* The statewide list is the larger read (every code at every college), so only a caller that shows its levels asks. */
+      var sw = !opts.statewide ? null : (VIEW.W ? Promise.resolve(VIEW.W) : loadStatewide().then(function (W) { VIEW.W = W; return W; }))
+        .then(function (W) { F.levels = levels(W, M); F.statewide = W.totals || {}; }, function () { F.levels = null; });
+      return Promise.all([held, sw]).then(function () { return F; });
     }, function (e) { cache = null; throw e; });
   }
   function boot(root, view, opts) {
@@ -1921,7 +1939,7 @@
   }
 
   window.CPL_COMMONS_SUBJECTS = {
-    boot: boot, render: render, model: model, figures: figures, liveFigures: liveFigures, heldNow: heldNow, heldModel: heldModel, recModel: recModel, REC_FILE: REC_FILE,
+    boot: boot, render: render, model: model, figures: figures, liveFigures: liveFigures, heldNow: heldNow, levels: levels, heldModel: heldModel, recModel: recModel, REC_FILE: REC_FILE,
     _recs: function (f) { REC = recModel(f); }, address: address, open: open, load: load, FILE: FILE, HELD_FILE: HELD_FILE, SIDES: SIDES, CSS: CSS,
     _state: S, COURSE_DIR: COURSE_DIR, bandOf: bandOf, saveKey: saveKey, titleCase: titleCase, savesModel: savesModel,
     SAVE_FIELD: SAVE_FIELD, SAVE_PREFIX: SAVE_PREFIX, dominantOf: dominantOf,

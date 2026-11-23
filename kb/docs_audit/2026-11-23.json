@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1574,
-    "bytes": 17148906,
+    "files": 1575,
+    "bytes": 17156063,
     "over_budget": 5,
-    "handoff_max": 715,
+    "handoff_max": 717,
     "always_loaded_files": 1,
     "always_loaded_bytes": 63086,
     "superseded_files": 0,
@@ -26,12 +26,12 @@
       },
       "other": {
         "files": 166,
-        "bytes": 5746410,
+        "bytes": 5746625,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 12246,
+        "bytes": 12643,
         "over": 0
       },
       "lessons": {
@@ -46,24 +46,25 @@
       },
       "roadmap_lane": {
         "files": 44,
-        "bytes": 543098,
+        "bytes": 543987,
         "over": 1
       },
       "handoff": {
-        "files": 671,
-        "bytes": 4980035,
+        "files": 672,
+        "bytes": 4985691,
         "over": 0
       }
     },
     "by_rule": {
       "oversized_doc": 5,
       "kb_note_dialect": 1,
-      "vault_heavy_path": 79
+      "vault_heavy_path": 79,
+      "handoff_drops_active_lane": 1
     },
     "vault": {
-      "files": 29585,
-      "bytes": 1584488518,
-      "heavy_bytes": 1220724319,
+      "files": 29608,
+      "bytes": 1586060452,
+      "heavy_bytes": 1221098066,
       "heavy_share": 0.77,
       "ignore_filters": [
         "cpl-project-tracker/kb/program_requirements_college",
@@ -230,10 +231,10 @@
       "fixable": false,
       "path": "kb/program_requirements_college",
       "detail": {
-        "bytes": 158811931,
+        "bytes": 158816392,
         "kind": "dir"
       },
-      "message": "directory totals 158,811,931 B inside the vault"
+      "message": "directory totals 158,816,392 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -310,10 +311,10 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 16265145,
+        "bytes": 16634279,
         "kind": "dir"
       },
-      "message": "directory totals 16,265,145 B inside the vault"
+      "message": "directory totals 16,634,279 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -350,10 +351,10 @@
       "fixable": false,
       "path": "kb/status/commons_data_programs",
       "detail": {
-        "bytes": 10261946,
+        "bytes": 10262098,
         "kind": "dir"
       },
-      "message": "directory totals 10,261,946 B inside the vault"
+      "message": "directory totals 10,262,098 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -1014,6 +1015,20 @@
         "kind": "file"
       },
       "message": "2,038,305 B single file inside the vault"
+    },
+    {
+      "rule": "handoff_drops_active_lane",
+      "fixable": false,
+      "path": "docs/session_717_handoff.md",
+      "detail": {
+        "lanes": [
+          "cer-procedures",
+          "my-college-action-page",
+          "program-requirements-harvest"
+        ],
+        "days": 7
+      },
+      "message": "`docs/session_717_handoff.md` never names 3 lane(s) worked in the last 7 days that still carry a NEXT: cer-procedures, my-college-action-page, program-requirements-harvest. Build the open work from each lane's NEXT line, or say in the handoff why the lane waits (name it by slug). Copying the last handoff's list is how five firings found an empty queue (S583)."
     }
   ]
 }
