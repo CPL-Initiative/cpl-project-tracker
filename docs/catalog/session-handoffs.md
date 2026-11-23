@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-668 document(s).
+669 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 712 | [Session 712 handoff (from SkyRazorbill, S711, Sam's plain session of 2026-11-23: course moves reach the re-mint gate)](../session_712_handoff.md) | 2026-11-23 |
 | 711 | [Session 711 handoff (from SkyGuillemot, S710, Sam's plain session of 2026-11-22: the AED scope's re-mint dry run)](../session_711_handoff.md) | 2026-11-22 |
 | 710 | [Session 710 handoff (from SkyMurrelet, S709, Sam's plain session of 2026-11-22: the re-mint readiness count, AED scope first)](../session_710_handoff.md) | 2026-11-22 |
 | 709 | [Session 709 handoff (from SkyNoddy, S708, Ashley's side session of 2026-11-22: the MAP team worklist of exhibits with no credit recommendation, statewide)](../session_709_handoff.md) | 2026-11-22 |
