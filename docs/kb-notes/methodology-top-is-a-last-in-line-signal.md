@@ -1,7 +1,7 @@
 ---
 title: "TOP is a last-in-line signal, never a gatekeeper"
 created: 2026-07-16
-updated: 2026-09-25
+updated: 2026-11-23
 tags: [methodology, top-code, discipline, subj4, identity, data-quality, cip]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -141,6 +141,10 @@ TOP never determines the identity key.
 ## When TOP *is* the authoritative source (the narrow exceptions)
 
 - **CTE status** — defined by the TOP taxonomy itself.
+- **MQ type (Sam, 2026-11-23, `r-top-vocational-flag-sets-mq-type-sam-2026-11-23`)** — the vocational
+  asterisk on a course's TOP code sets its Minimum Qualifications type (master's, or degree plus experience). It
+  never sets the discipline. `kb/_mq_view.py` reads each discipline's vocational share against its list type and
+  names the 26 that disagree; next, CIP is tested in its place (`d-next-cip-for-mq-type-sam-2026-11-23`).
 - **The CIP↔TOP crosswalk** — TOP is the *subject* of the reference, not a gate.
 - **CCC division labels** — the *label* for a 2-digit division is well-defined;
   what's unreliable is the *code a course was assigned*, not the label's meaning.

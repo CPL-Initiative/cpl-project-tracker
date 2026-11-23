@@ -1,7 +1,7 @@
 ---
 title: "Data sources: the register of datasets that could fill a Commons gap"
 created: 2026-11-04
-updated: 2026-11-13
+updated: 2026-11-23
 tags: [reference, commons, data-sources, wishlist, procedures]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference
@@ -68,6 +68,7 @@ at least once), Scheduled (read on a routine). An entry states its current stage
 | WestEd's environmental scan of datasets and connections | Found | Every reference | The lead shares the scan; each dataset in it gets its own entry |
 | Credit for Being You, the student portal's requests | Found | Credentials (the harvested standing), Exhibits | Ask Malone what the portal records when a student names a credential no exhibit covers, and whether a request can arrive with the credential already named |
 | The state's license lists, the Department of Insurance's license types first | Found | Credentials (the harvested standing), Exhibits | Read the Department of Insurance's published license types; measure how many the Catalog lacks |
+| The course outline of record's MQ discipline | Assessed | Subjects (the CSR and the MQ view), Courses | Keep the field in the SLO pass's reader and file it per course |
 
 ### CPL-AI, the Foundation and ASCCC's certification recommendations
 Faculty-reviewed credit recommendations for 115 industry certifications, each paired with courses colleges could
@@ -229,6 +230,19 @@ the agency as issuer and its lookup page as the link, so a visitor finds it befo
 the route's verified submissions (`credential_submissions`, DR-32) are the measure of what the lists still miss. Plan:
 a public read of each agency's page, scheduled with the harvest, the Department of Insurance first and the Department
 of Consumer Affairs' boards next. Found by SkyHarbor on 2026-11-06, from Sam's ask in SkyLantern's run to record them.
+
+### The course outline of record's MQ discipline
+Each course outline of record names the Minimum Qualifications discipline or disciplines its faculty must meet; the
+college holds it in its curriculum system, and the outline reports the SLO pass already reads print it. San Diego's
+All Fields report prints a *Disciplines* or *Minimum Qualification* section, as *Minimum Qualification Biological
+Sciences (Masters Required)* on BIOL 100 (`kb/course_outcomes/trial_38350787486/BIOL_100.txt`), which carries the
+MQ type too. Plug-in: it is the college's own word on a course's MQ discipline, a second signal beside the M-ID's
+Common SUBJ and the TOP vocational flag in the MQ view (`kb/status/mq_view.json`), and the evidence the re-point
+re-mint of the folded local codes needs (ACCT courses called Business, LING called Anthropology). Today
+`kb/_course_outcomes_read.py` treats the heading as a stop word (`STOP`, `OBJ_STOP`) and keeps nothing under it.
+Plan: a public read, the one the SLO pass makes: keep the field beside the outcomes and objectives, filed per course,
+then measure how many read outlines carry it. Connect and schedule: the SLO pass's schedule, with the MQ view
+reading the filed field. Found by SkyGannet (S717), 2026-11-23, while building the MQ view with Sam.
 
 ### WestEd's environmental scan of datasets and connections
 Sam, 2026-11-04 (S573): *"west ed has a whole environmental scan of datasets and connections I need to feed to you."*
