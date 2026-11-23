@@ -9,24 +9,6 @@
  "with_heading": 82,
  "rows": [
   {
-   "code": "A S L",
-   "heading": "American Sign Language",
-   "heading_printed": "AMERICAN SIGN LANGUAGE",
-   "rule": "caps",
-   "codes": [
-    "A S L"
-   ],
-   "candidate": null,
-   "page": 240,
-   "above": [
-    "spirituals, gospels, concert music, opera, ballet, blues, and jazz underscoring",
-    "styles, characteristics, origin, and contributions by African-American artists.",
-    "(Credit allowed for only one of AFRO AM 060 or MUSIC 135.)",
-    "AMERICAN SIGN LANGUAGE"
-   ],
-   "first_course": "A S L 001 AMERICAN SIGN LANGUAGE I (4) UC/CSU"
-  },
-  {
    "code": "ACAD PR",
    "heading": "Academic Preparation",
    "heading_printed": "ACADEMIC PREPARATION",
@@ -169,6 +151,24 @@
     "course will further consider global interactions involving this region."
    ],
    "first_course": "ART 103 ART APPRECIATION I (3) UC/CSU"
+  },
+  {
+   "code": "A S L",
+   "heading": "American Sign Language",
+   "heading_printed": "AMERICAN SIGN LANGUAGE",
+   "rule": "caps",
+   "codes": [
+    "A S L"
+   ],
+   "candidate": null,
+   "page": 240,
+   "above": [
+    "spirituals, gospels, concert music, opera, ballet, blues, and jazz underscoring",
+    "styles, characteristics, origin, and contributions by African-American artists.",
+    "(Credit allowed for only one of AFRO AM 060 or MUSIC 135.)",
+    "AMERICAN SIGN LANGUAGE"
+   ],
+   "first_course": "A S L 001 AMERICAN SIGN LANGUAGE I (4) UC/CSU"
   },
   {
    "code": "ASTRON",
@@ -891,24 +891,6 @@
    "first_course": "ENV 101 FOUNDATIONS OF DESIGN I (3) UC/CSU"
   },
   {
-   "code": "ESL NC",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
-   "codes": [
-    "ESL NC"
-   ],
-   "candidate": null,
-   "page": 350,
-   "above": [
-    "and reading/writing skills at a literacy level. The focus of the course is on",
-    "meeting adult standards that systematically build language skills around life",
-    "skills topics. The course also emphasizes the development of English sound/",
-    "symbol correspondence and reading and writing of simple English sentences."
-   ],
-   "first_course": "ESL NC 005CE ENGLISH AS A SECOND LANGUAGE (0)"
-  },
-  {
    "code": "ESLCVCS",
    "heading": "ESL Civics",
    "heading_printed": "ESL CIVICS",
@@ -925,6 +907,24 @@
     "Edition)."
    ],
    "first_course": "ESLCVCS 010CE ESL AND CIVICS I (0)"
+  },
+  {
+   "code": "ESL NC",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "ESL NC"
+   ],
+   "candidate": null,
+   "page": 350,
+   "above": [
+    "and reading/writing skills at a literacy level. The focus of the course is on",
+    "meeting adult standards that systematically build language skills around life",
+    "skills topics. The course also emphasizes the development of English sound/",
+    "symbol correspondence and reading and writing of simple English sentences."
+   ],
+   "first_course": "ESL NC 005CE ENGLISH AS A SECOND LANGUAGE (0)"
   },
   {
    "code": "ETNTLGY",
@@ -1629,24 +1629,6 @@
    "first_course": "PLUMBNG 026 PLUMBING LAYOUT AND ESTIMATING I (3)"
   },
   {
-   "code": "POL SCI",
-   "heading": "Political Science",
-   "heading_printed": "POLITICAL SCIENCE",
-   "rule": "section",
-   "codes": [
-    "POL SCI"
-   ],
-   "candidate": null,
-   "page": 327,
-   "above": [
-    "This course is an introduction to government and politics in the United States and",
-    "California. Students examine the constitutions, structure, and operation of governing",
-    "institutions, civil liberties and civil rights, political behaviors, political issues, and public",
-    "policy using political science theory and methodology."
-   ],
-   "first_course": "POL SCI 002 INTRODUCTION TO COMPARATIVE POLITICS (3) UC/"
-  },
-  {
    "code": "POLS",
    "heading": "Political Science",
    "heading_printed": "POLITICAL SCIENCE",
@@ -1663,6 +1645,24 @@
     "POLITICAL SCIENCE"
    ],
    "first_course": "POLS C1000 AMERICAN GOVERNMENT AND POLITICS (3) UC/CSU"
+  },
+  {
+   "code": "POL SCI",
+   "heading": "Political Science",
+   "heading_printed": "POLITICAL SCIENCE",
+   "rule": "section",
+   "codes": [
+    "POL SCI"
+   ],
+   "candidate": null,
+   "page": 327,
+   "above": [
+    "This course is an introduction to government and politics in the United States and",
+    "California. Students examine the constitutions, structure, and operation of governing",
+    "institutions, civil liberties and civil rights, political behaviors, political issues, and public",
+    "policy using political science theory and methodology."
+   ],
+   "first_course": "POL SCI 002 INTRODUCTION TO COMPARATIVE POLITICS (3) UC/"
   },
   {
    "code": "PROFBKG",
@@ -1863,24 +1863,6 @@
    "first_course": "SPANISH 001 ELEMENTARY SPANISH I (5) UC/CSU"
   },
   {
-   "code": "ST MAIN",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
-   "codes": [
-    "ST MAIN"
-   ],
-   "candidate": null,
-   "page": 337,
-   "above": [
-    "PUBLIC WORKS) (3)",
-    "Lecture: 3 hours",
-    "This course is a practical mathematics exploration with an emphasis on application problems",
-    "encountered in ‘Street Maintenance’, ‘Street Services’, and other areas of ‘Public Works’."
-   ],
-   "first_course": "ST MAIN 200 SURVEY OF STREET SERVICES (3)"
-  },
-  {
    "code": "STAT",
    "heading": null,
    "heading_printed": null,
@@ -1897,6 +1879,24 @@
     "various algorithms used in calculations."
    ],
    "first_course": "STAT C1000 INTRODUCTION TO STATISTICS (4) UC/CSU"
+  },
+  {
+   "code": "ST MAIN",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "ST MAIN"
+   ],
+   "candidate": null,
+   "page": 337,
+   "above": [
+    "PUBLIC WORKS) (3)",
+    "Lecture: 3 hours",
+    "This course is a practical mathematics exploration with an emphasis on application problems",
+    "encountered in ‘Street Maintenance’, ‘Street Services’, and other areas of ‘Public Works’."
+   ],
+   "first_course": "ST MAIN 200 SURVEY OF STREET SERVICES (3)"
   },
   {
    "code": "SUPV",
@@ -2041,6 +2041,22 @@
     "WATER SUPPLY TECHNOLOGY"
    ],
    "first_course": "WATER 001 WATER DISTRIBUTION I (3) CSU"
+  }
+ ],
+ "code_address_tried": [
+  {
+   "code": "PUB",
+   "address": "https://www.lattc.edu/sites/lattc.edu/files/2022-08/marketing_and_public_relations.pdf",
+   "status": "200",
+   "first_line": "",
+   "run": "45283003411"
+  },
+  {
+   "code": "REF A/C",
+   "address": "https://lattc.edu/academics/aos/heating-ventilating-air-conditioning-hvac",
+   "status": "200",
+   "first_line": "Home",
+   "run": "45283003411"
   }
  ]
 }

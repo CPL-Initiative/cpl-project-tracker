@@ -9,24 +9,6 @@
  "with_heading": 69,
  "rows": [
   {
-   "code": "A S L",
-   "heading": "American Sign Language",
-   "heading_printed": "AMERICAN SIGN LANGUAGE",
-   "rule": "caps",
-   "codes": [
-    "A S L"
-   ],
-   "candidate": null,
-   "page": 91,
-   "above": [
-    "This course is designed to help students develop the skills",
-    "necessary to gain employment in healthcare industry.",
-    "AMERICAN SIGN LANGUAGE – GLOBAL LANGUAGES",
-    "AND SOCIETY"
-   ],
-   "first_course": "A S L 001 AMERICAN SIGN LANGUAGE I (CSU) – 4 UNITS"
-  },
-  {
    "code": "ACAD PR",
    "heading": "Academic Preparation",
    "heading_printed": "ACADEMIC PREPARATION",
@@ -169,6 +151,24 @@
     "actions involving this region."
    ],
    "first_course": "ARTHIST 103 ART APPRECIATION I – (UC:CSU:C-ID ARTH 100) 3 UNITS"
+  },
+  {
+   "code": "A S L",
+   "heading": "American Sign Language",
+   "heading_printed": "AMERICAN SIGN LANGUAGE",
+   "rule": "caps",
+   "codes": [
+    "A S L"
+   ],
+   "candidate": null,
+   "page": 91,
+   "above": [
+    "This course is designed to help students develop the skills",
+    "necessary to gain employment in healthcare industry.",
+    "AMERICAN SIGN LANGUAGE – GLOBAL LANGUAGES",
+    "AND SOCIETY"
+   ],
+   "first_course": "A S L 001 AMERICAN SIGN LANGUAGE I (CSU) – 4 UNITS"
   },
   {
    "code": "ASTRON",
@@ -638,24 +638,6 @@
    "first_course": "ENG GEN 122 PROGRAMMING AND PROBLEM-SOLVING IN MATLAB –"
   },
   {
-   "code": "ENG SUP",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
-   "codes": [
-    "ENG SUP"
-   ],
-   "candidate": null,
-   "page": 116,
-   "above": [
-    "Professional Land Surveyor. In this course, students review",
-    "math topics as they apply to plane surveying. Some topics",
-    "covered in this course are filed data and image data acquisi-",
-    "tion, development of GIS maps, boundary and cadastral law."
-   ],
-   "first_course": "ENG SUP 225 BOUNDARY CONTROL FOR SURVEYORS"
-  },
-  {
    "code": "ENGL",
    "heading": null,
    "heading_printed": null,
@@ -690,6 +672,24 @@
     "writing course."
    ],
    "first_course": "ENGLISH 021 ENGLISH FUNDAMENTALS – (NDA) 3 UNITS"
+  },
+  {
+   "code": "ENG SUP",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "ENG SUP"
+   ],
+   "candidate": null,
+   "page": 116,
+   "above": [
+    "Professional Land Surveyor. In this course, students review",
+    "math topics as they apply to plane surveying. Some topics",
+    "covered in this course are filed data and image data acquisi-",
+    "tion, development of GIS maps, boundary and cadastral law."
+   ],
+   "first_course": "ENG SUP 225 BOUNDARY CONTROL FOR SURVEYORS"
   },
   {
    "code": "ENV SCI",
@@ -1461,24 +1461,6 @@
    "first_course": "PHRMCTK 021 RETAIL PRODUCTS FOR PHARMACY CLERKS"
   },
   {
-   "code": "PHYS SC",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
-   "codes": [
-    "PHYS SC"
-   ],
-   "candidate": "Physical Education",
-   "page": 149,
-   "above": [
-    "ions and understanding of photographs are an essential part",
-    "of this class.",
-    "PHYSICAL EDUCATION – SEE KINESIOLOGY",
-    "PHYSICAL SCIENCE – PHYSICAL SCIENCES"
-   ],
-   "first_course": "PHYS SC 001 PHYSICAL SCIENCE I – (UC:CSU) 3 UNITS"
-  },
-  {
    "code": "PHYSICS",
    "heading": null,
    "heading_printed": null,
@@ -1515,6 +1497,37 @@
    "first_course": "PHYSIOL 001 INTRODUCTION TO HUMAN PHYSIOLOGY"
   },
   {
+   "code": "PHYS SC",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "PHYS SC"
+   ],
+   "candidate": "Physical Education",
+   "page": 149,
+   "above": [
+    "ions and understanding of photographs are an essential part",
+    "of this class.",
+    "PHYSICAL EDUCATION – SEE KINESIOLOGY",
+    "PHYSICAL SCIENCE – PHYSICAL SCIENCES"
+   ],
+   "first_course": "PHYS SC 001 PHYSICAL SCIENCE I – (UC:CSU) 3 UNITS"
+  },
+  {
+   "code": "POLS",
+   "heading": null,
+   "heading_printed": null,
+   "rule": "none",
+   "codes": [
+    "POLS"
+   ],
+   "candidate": null,
+   "page": 150,
+   "above": [],
+   "first_course": "POLS C1000 AMERICAN GOVERNMENT AND POLITICS"
+  },
+  {
    "code": "POL SCI",
    "heading": null,
    "heading_printed": null,
@@ -1531,19 +1544,6 @@
     "Old Course New Course Title"
    ],
    "first_course": "POL SCI 001 POLS C1000 American Government and Politics"
-  },
-  {
-   "code": "POLS",
-   "heading": null,
-   "heading_printed": null,
-   "rule": "none",
-   "codes": [
-    "POLS"
-   ],
-   "candidate": null,
-   "page": 150,
-   "above": [],
-   "first_course": "POLS C1000 AMERICAN GOVERNMENT AND POLITICS"
   },
   {
    "code": "PROFBKG",
@@ -1755,6 +1755,15 @@
     "CAREER & CONTINUING EDUCATION"
    ],
    "first_course": "VOC ED 002CE IN-HOME SUPPORTIVE SERVICE PROVIDERS – 0 UNITS"
+  }
+ ],
+ "code_address_tried": [
+  {
+   "code": "NRS HCA",
+   "address": "https://lamission.edu:443/academics/aos/nursing-assitant-hha",
+   "status": "200",
+   "first_line": "Home",
+   "run": "45283003411"
   }
  ]
 }
