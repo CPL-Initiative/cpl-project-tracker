@@ -88,3 +88,13 @@ college until it merges.
   merges.
 - 08:40Z: #3683 up from `main` (`30944f5d`, Clovis 33492's passing record rebuilt); its `test` is running. The display
   build and the census follow #3683 and #3707.
+- 09:00Z: #3683 merged (`0f5b849e`): all four of S703's PRs are on `main`; Clovis leaves lane 1.
+- 09:24Z: the display build `da3198af6b98` (#3708) is live: the gate (Cosumnes River 192 at the new build, none
+  elsewhere) then the whole build (run 45146020705), confirmed at 18,628 rows on the new build plus the same 32 at older
+  builds, 18,660 in all; 12 records added (San Joaquin Delta 6, Cosumnes River 3, Ohlone 2, Butte 1), none dropped.
+- 09:34Z and 09:35Z: two more lane-2 plans applied and confirmed live: #3707's 8 (Las Positas 4, Antelope Valley 4;
+  Las Positas 01037 held, since it passed only by double counting) and Glendale's 13 (`claude/s713-piles2`: a list
+  that substitutes for one core course, 9; a figure in words, 2; PSYC 104 as PSYCH 104, 2). City College of San
+  Francisco's outline read loaded 3 new rows (load 45148533372); its other 1,416 match S690's live rows.
+- Next, one at a time: #3708, #3707, Glendale's PR, City College of San Francisco's PR (`claude/slo-ccsf`), Clovis
+  (6 records, in review), then the census on `main`.
