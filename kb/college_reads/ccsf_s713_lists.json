@@ -1,0 +1,29 @@
+{
+ "_readme": "S713 (worker for SkyKittiwake), census lever 4 (City College of San Francisco), second read. Six programs pinned to their own heading (09178 p.86, 17952 p.106, 31602 p.224, 36964 p.162, 42318 p.167, 45768 p.213) bound in pricing run 45129933001 and still read coverage 0.0 against the state's course list. This read prints each heading's page and the page after it, so a session can see the codes each requirement list prints. One load and robots.txt, no model call, nothing written.",
+ "college": "City College of San Francisco",
+ "questions": {
+  "own_page": "The course codes the program's requirement list prints, as printed, on its heading's page and the next."
+ },
+ "keywords": [
+  "Data\\W+Journalism\\W+Certificate\\W+of\\W+Achievement",
+  "Liberal\\W+Arts\\W+and\\W+Sciences\\W+Emphasis\\W+in\\W+Arts\\W+and\\W+Humanities\\W+AA\\W+Degree",
+  "CCSF\\W+High\\W+School\\W+Diploma\\W+Program",
+  "ESL\\W+Beginning\\W+High\\W+Oral\\W+Communication\\W+Skills\\W+Certificate",
+  "ESL\\W+Intermediate\\W+High\\W+Oral\\W+Communication\\W+Skills\\W+Certificate",
+  "California\\W+General\\W+Education\\W+Transfer\\W+Curriculum\\W+\\(Cal-GETC\\)"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf"
+  }
+ ],
+ "pdf_span": [
+  60,
+  480
+ ],
+ "pdf_after": 1,
+ "pdf_page_cap": 30
+}

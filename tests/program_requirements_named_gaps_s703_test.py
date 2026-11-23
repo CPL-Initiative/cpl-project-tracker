@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """S703's named gaps for the census page-not-found levers (Ohlone, San Joaquin Delta, Mt. San Antonio, Santa Barbara
-City, Orange Coast): kb/program_requirements_college/<slug>/no_record_s703.json.
+City, Orange Coast): kb/program_requirements_college/<slug>/no_record_s703.json; and S713's for City College of San
+Francisco (no_record_s713.json).
 
     python3 tests/program_requirements_named_gaps_s703_test.py
 
@@ -24,10 +25,13 @@ def check(ok, what):
         FAILS.append(what)
 
 
-SLUGS = {"ohlone": 34, "san_joaquin_delta": 24, "mt_san_antonio": 28, "santa_barbara_city": 28, "orange_coast": 27}
+SLUGS = {"ohlone": 34, "san_joaquin_delta": 24, "mt_san_antonio": 28, "santa_barbara_city": 28, "orange_coast": 27,
+         # S713: City College of San Francisco's lever 4, filed the same way (no_record_s713.json).
+         "city_of_san_francisco": (47, "no_record_s713.json")}
 for slug, want in SLUGS.items():
+    want, name = want if isinstance(want, tuple) else (want, "no_record_s703.json")
     folder = os.path.join(ROOT, "kb", "program_requirements_college", slug)
-    gaps = json.load(open(os.path.join(folder, "no_record_s703.json")))
+    gaps = json.load(open(os.path.join(folder, name)))
     cap = json.load(open(os.path.join(folder, "capture.json")))
     no_page = {n["control_number"] for n in cap.get("not_found") or []} | \
               {n["control_number"] for n in cap.get("page_claimed") or []}

@@ -1,0 +1,310 @@
+{
+ "_readme": "S713 (worker for SkyKittiwake), census lever 4 (City College of San Francisco, page not found, 53). Free page read 45129229734 printed every page up to 480 of the 2026-27 catalog PDF (920 pages; the program pages and the career-pathway index, pp.431-442, sit inside that span) that names one of the 53 titles. Seven have their own heading and are pinned in the college's reconcile entry (pdf_pages: 09178, 17952, 17954, 31602, 36964, 42318, 45768). The other 46 are filed here, and Cal-GETC 45768 with them under the census's ge_pattern_certificate gap: 18 credit programs and 27 noncredit programs no page prints under a heading of their own title (the index names none of them), and Microsoft Office Specialist 24263 (noncredit), whose only page is the credit certificate 40432's. No model call, no Supabase write: no row exists for these programs, and the capture holds no text for them. They are the college's to settle in COCI.",
+ "college": "City College of San Francisco",
+ "written": "2026-11-23T09:02:01Z",
+ "capture": "39046623474",
+ "page_reads": [
+  "45129229734"
+ ],
+ "reasons": {
+  "credit_not_in_catalog": "A credit program the 2026-27 catalog prints under no heading: no page up to 480 names its title with its award, and the career-pathway index does not list it.",
+  "noncredit_not_in_catalog": "A noncredit program the 2026-27 catalog prints under no heading: no page up to 480 names its title as a program, and the index does not list it.",
+  "page_held_by_another_program": "The only page that prints the title is another program's own page.",
+  "ge_pattern_certificate": "General-education pattern certificate. It has no fixed course list by design (the census's named gap, kb/_harvest_gap_census.py NAMED_GAPS)."
+ },
+ "programs": [
+  {
+   "control_number": "05440",
+   "title": "Finance",
+   "award": "A.S. Degree",
+   "reason": "credit_not_in_catalog",
+   "note": "'Finance' prints only inside other programs' text (Business, Real Estate p.132, Hospitality); the near-miss p.132 is Real Estate's page."
+  },
+  {
+   "control_number": "05447",
+   "title": "Administrative Support",
+   "award": "A.S. Degree",
+   "reason": "credit_not_in_catalog"
+  },
+  {
+   "control_number": "05467",
+   "title": "Avionics-Maintenance Technology",
+   "award": "A.S. Degree",
+   "reason": "credit_not_in_catalog"
+  },
+  {
+   "control_number": "05468",
+   "title": "Airframe Maintenance Technology",
+   "award": "A.S. Degree",
+   "reason": "credit_not_in_catalog"
+  },
+  {
+   "control_number": "05469",
+   "title": "Aircraft Powerplant Maintenance Technology",
+   "award": "A.S. Degree",
+   "reason": "credit_not_in_catalog"
+  },
+  {
+   "control_number": "09175",
+   "title": "Computer Accounting",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "reason": "credit_not_in_catalog"
+  },
+  {
+   "control_number": "11817",
+   "title": "Multimedia Studies: Performance Arts",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "reason": "credit_not_in_catalog"
+  },
+  {
+   "control_number": "17842",
+   "title": "Office Technology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "reason": "credit_not_in_catalog"
+  },
+  {
+   "control_number": "22721",
+   "title": "Finance",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "reason": "credit_not_in_catalog",
+   "note": "'Finance' prints only inside other programs' text (Business, Real Estate p.132, Hospitality); the near-miss p.132 is Real Estate's page."
+  },
+  {
+   "control_number": "22725",
+   "title": "Airframe-Maintenance Technology",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "reason": "credit_not_in_catalog"
+  },
+  {
+   "control_number": "22726",
+   "title": "Aircraft Powerplant Maintenance Technology",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "reason": "credit_not_in_catalog"
+  },
+  {
+   "control_number": "24012",
+   "title": "Intermediate VESL for Printing  Workers",
+   "award": null,
+   "reason": "noncredit_not_in_catalog"
+  },
+  {
+   "control_number": "24120",
+   "title": "Administrative Assistant",
+   "award": null,
+   "reason": "noncredit_not_in_catalog",
+   "note": "'Administrative Assistant' prints only inside other programs' text (p.149 Office Skills for Construction Management, p.263 Medical Administrative Assistant)."
+  },
+  {
+   "control_number": "24252",
+   "title": "Beginning VESL for the Hospitality Industry",
+   "award": null,
+   "reason": "noncredit_not_in_catalog"
+  },
+  {
+   "control_number": "24259",
+   "title": "Construction Administrative Assistant",
+   "award": null,
+   "reason": "noncredit_not_in_catalog",
+   "note": "'construction administrative assistant' prints only in the Program Summary of the credit program on p.149 (Office Skills for Construction Management)."
+  },
+  {
+   "control_number": "24260",
+   "title": "Business Information Worker (BIW)",
+   "award": "Noncredit program",
+   "reason": "noncredit_not_in_catalog"
+  },
+  {
+   "control_number": "24263",
+   "title": "Microsoft Office Specialist",
+   "award": "Noncredit program",
+   "reason": "page_held_by_another_program",
+   "held_by": "40432",
+   "note": "PDF p.148 prints 'Microsoft Office Specialist – Certificate of Achievement', the credit certificate 40432's own page (filed from pp.148-151); no page prints the noncredit program."
+  },
+  {
+   "control_number": "24276",
+   "title": "ESL/ABE for Automotive Technology",
+   "award": null,
+   "reason": "noncredit_not_in_catalog"
+  },
+  {
+   "control_number": "24299",
+   "title": "Clerical Accounting",
+   "award": null,
+   "reason": "noncredit_not_in_catalog"
+  },
+  {
+   "control_number": "24304",
+   "title": "Clerical Support Specialist",
+   "award": null,
+   "reason": "noncredit_not_in_catalog"
+  },
+  {
+   "control_number": "24331",
+   "title": "Beginning VESL for Janitorial Workers",
+   "award": null,
+   "reason": "noncredit_not_in_catalog"
+  },
+  {
+   "control_number": "24338",
+   "title": "Beginning VESL Communication",
+   "award": "Noncredit program",
+   "reason": "noncredit_not_in_catalog"
+  },
+  {
+   "control_number": "24393",
+   "title": "Computerized Accounting",
+   "award": null,
+   "reason": "noncredit_not_in_catalog"
+  },
+  {
+   "control_number": "24424",
+   "title": "Intermediate VESL for Transit Operators",
+   "award": null,
+   "reason": "noncredit_not_in_catalog"
+  },
+  {
+   "control_number": "24449",
+   "title": "Computer Applications for Business",
+   "award": "Noncredit program",
+   "reason": "noncredit_not_in_catalog",
+   "note": "'Computer Applications for Business' prints only as the course MABS 60 (pp.140, 144, 150)."
+  },
+  {
+   "control_number": "24456",
+   "title": "Textile and Fabric Design",
+   "award": null,
+   "reason": "noncredit_not_in_catalog"
+  },
+  {
+   "control_number": "30539",
+   "title": "Business Office Support Skills, Phase II",
+   "award": null,
+   "reason": "noncredit_not_in_catalog"
+  },
+  {
+   "control_number": "30687",
+   "title": "Introduction to Child Development Careers",
+   "award": null,
+   "reason": "noncredit_not_in_catalog"
+  },
+  {
+   "control_number": "30907",
+   "title": "High Intermediate ESL for Health Professionals",
+   "award": "Noncredit program",
+   "reason": "noncredit_not_in_catalog"
+  },
+  {
+   "control_number": "31074",
+   "title": "Digital Literacy and Core Skills",
+   "award": "Noncredit program",
+   "reason": "noncredit_not_in_catalog"
+  },
+  {
+   "control_number": "31413",
+   "title": "PowerPoint Specialist",
+   "award": null,
+   "reason": "noncredit_not_in_catalog"
+  },
+  {
+   "control_number": "31414",
+   "title": "Office Receptionist",
+   "award": null,
+   "reason": "noncredit_not_in_catalog"
+  },
+  {
+   "control_number": "35709",
+   "title": "Broadcast Motion Graphics",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "reason": "credit_not_in_catalog"
+  },
+  {
+   "control_number": "36284",
+   "title": "Cloud-Based Electronic Communication",
+   "award": "Noncredit program",
+   "reason": "noncredit_not_in_catalog"
+  },
+  {
+   "control_number": "36386",
+   "title": "ESL Beginning Low Conversation",
+   "award": "Noncredit program",
+   "reason": "noncredit_not_in_catalog"
+  },
+  {
+   "control_number": "36672",
+   "title": "QuickBooks & Spreadsheets for Accounting",
+   "award": "Noncredit program",
+   "reason": "noncredit_not_in_catalog"
+  },
+  {
+   "control_number": "36821",
+   "title": "Website Development for E-Business",
+   "award": "Noncredit program",
+   "reason": "noncredit_not_in_catalog"
+  },
+  {
+   "control_number": "36980",
+   "title": "Medisoft for Business",
+   "award": "Noncredit program",
+   "reason": "noncredit_not_in_catalog"
+  },
+  {
+   "control_number": "37160",
+   "title": "AV Technologist",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "reason": "credit_not_in_catalog"
+  },
+  {
+   "control_number": "37561",
+   "title": "Accounting Assistant & Core Skills",
+   "award": "Noncredit program",
+   "reason": "noncredit_not_in_catalog"
+  },
+  {
+   "control_number": "37776",
+   "title": "Maker Studies",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "reason": "credit_not_in_catalog",
+   "note": "'Maker Studies' prints only as the course MAKR 100 in the course lists (pp.57, 215)."
+  },
+  {
+   "control_number": "38563",
+   "title": "Cloud-Based Accounting Systems",
+   "award": "Noncredit program",
+   "reason": "noncredit_not_in_catalog"
+  },
+  {
+   "control_number": "40171",
+   "title": "Technical Theater Production - Costume and Makeup",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "reason": "credit_not_in_catalog"
+  },
+  {
+   "control_number": "40407",
+   "title": "Technical Theater Production - Stagecraft",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "reason": "credit_not_in_catalog"
+  },
+  {
+   "control_number": "40435",
+   "title": "Human Resources Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "reason": "credit_not_in_catalog",
+   "note": "'Human Resources Management' prints only as the course MGT 233 (pp.145, 150, 151)."
+  },
+  {
+   "control_number": "40590",
+   "title": "Human Resources Management",
+   "award": "A.S. Degree",
+   "reason": "credit_not_in_catalog",
+   "note": "'Human Resources Management' prints only as the course MGT 233 (pp.145, 150, 151)."
+  },
+  {
+   "control_number": "45768",
+   "title": "Cal-GETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "reason": "ge_pattern_certificate",
+   "note": "Its own page is PDF p.213 (pinned in the college's reconcile entry); its Area 1A to 6 lists match 0.285 of the state's course list (capture 45131492116), so no record is read. The census already names it under this gap by its title. The gap is a census label on a program with no record, so it carries no record confidence scores."
+  }
+ ]
+}
