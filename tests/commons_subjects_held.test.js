@@ -89,7 +89,7 @@ async function settle() { for (let i = 0; i < 40; i++) await tick(); }
   x = load("#commons");
   await x.M.boot(); await settle();
   const card = x.d.querySelector('.cmf-card[data-key="subjects"]');
-  const fig = card && Array.from(card.querySelectorAll(".cmf-body a")).find((a) => /courses the M-ID mint holds/.test(txt(a)));
+  const fig = card && Array.from(card.querySelectorAll(".cmf-body a")).find((a) => /courses the M-ID mint holds/.test(txt(a)) && !a.hasAttribute("data-onpage"));   /* a quick link (S718) jumps within the card */
   check("(3) ⭐ the card's figure opens what it counts", fig && fig.getAttribute("href") === "#commons/subjects/held" && /^9 courses/.test(txt(fig)));
   check("(3) the card names the codes", /wait on 3 local subject codes/.test(txt(card)));
   check("(3) the card's link row opens the held codes", Array.from(card.querySelectorAll(".cmf-links a")).some((a) => a.getAttribute("href") === "#commons/subjects/held"));

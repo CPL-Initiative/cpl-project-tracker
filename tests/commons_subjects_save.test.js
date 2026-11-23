@@ -200,7 +200,7 @@ function typeIn(x, id, v) { const i = x.d.getElementById(id); i.value = v; retur
   check("(6) a filed decision reads Filed for Sam with its decision date, never the cohort id",
     txt(x.d.querySelector('.csb-codes tr[data-code="ZZZ"]').children[3]) === "KINE Kinesiology Filed for Sam, November 21, 2026." && !/@bot/.test(txt(x.d.querySelector(".csb-codes"))));
   check("(6) ⭐ the page counts the rows that show a save: 7 of the 8 saved rows (the noncredit-only code's credit row shows nowhere)",
-    /7 codes are settled by a person’s save\./.test(txt(x.d.querySelector(".csb-stamp"))) && x.d.querySelectorAll('.csb-codes tr[data-saved="yes"]').length === 7);
+    /7 codes carry a person’s save\./.test(txt(x.d.querySelector(".csb-stamp"))) && x.d.querySelectorAll('.csb-codes tr[data-saved="yes"]').length === 7);
   check("(6) a noncredit-only row takes no saved value", !x.d.querySelector('.csb-codes tr[data-code="NCX"]').getAttribute("data-saved"));
   x = load("#commons/subjects/alpha/ZZZ", { sess: ME, saves: SAVES });
   await x.M.boot(); await settle();
@@ -234,7 +234,7 @@ function typeIn(x, id, v) { const i = x.d.getElementById(id); i.value = v; retur
   check("(11) ⭐ a save under the other band still shows, and says the band changed since it was saved",
     apRow.getAttribute("data-saved") === "yes" && /^BIOL Biology Filed for Sam, November 21, 2026\. Saved under the whole band; the code’s band is now credit, so a new Save writes under credit\.$/.test(txt(apRow.children[3]))
     && /saved under the whole band\. COCI’s counts have changed since, and the code’s band is now credit/.test(txt(x.d.getElementById("csb-edit-moved"))));
-  check("(11) the stamp still counts it", /7 codes are settled by a person’s save\./.test(txt(x.d.querySelector(".csb-stamp"))));
+  check("(11) the stamp still counts it", /7 codes carry a person’s save\./.test(txt(x.d.querySelector(".csb-stamp"))));
   x.d.getElementById("csb-ed-save").click(); await settle();
   check("(11) ⭐ a new Save writes under the current band", writesOf(x).length === 1 && JSON.parse(writesOf(x)[0].body).course_id === "SUBJ:alpha|AP|credit");
 
