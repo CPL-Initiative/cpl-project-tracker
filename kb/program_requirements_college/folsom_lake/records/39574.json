@@ -66,8 +66,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     40.0,
     40.0
@@ -77,8 +77,10 @@
     55.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 40.0-40.0; the catalog states 54.0-55.0"
+   "why": [],
+   "fill": [
+    14.0,
+    15.0
    ]
   },
   "repeated": {
@@ -106,7 +108,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -359,5 +361,6 @@
    "No careers are named in the visible A.S. section."
   ]
  },
- "extracted_run": "39046850071"
+ "extracted_run": 45187906040,
+ "read_run": "39046850071"
 }

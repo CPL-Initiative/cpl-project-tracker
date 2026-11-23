@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 108,
  "with_closed_list": 108,
- "started": "2026-11-23T13:27:12Z",
+ "started": "2026-11-23T13:51:23Z",
  "pdf": {
   "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf",
   "access": "hand_filed",
@@ -1603,7 +1603,7 @@
  "loads": 0,
  "pages_listed": 1,
  "pages_answered": 1,
- "seconds": 156.9,
+ "seconds": 158.9,
  "found": 107,
  "by_method": {
   "not_found": 1,
@@ -1723,38 +1723,58 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/folsom_lake",
-  "kept": 92,
+  "kept": 95,
   "kept_moved": 0,
-  "programs": 3,
+  "programs": 5,
   "list": [
    {
-    "control_number": "21193",
-    "title": "Small Business Management/Entrepreneurship",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=184",
-    "coverage": 1.0,
-    "was_url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=175",
-    "was_coverage": 0.857,
+    "control_number": "18934",
+    "title": "Interdisciplinary Studies: Arts and Humanities",
+    "award": "A.A. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=416",
+    "coverage": 0.986,
+    "was_url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=325",
+    "was_coverage": 0.741,
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "38898",
-    "title": "Pre-Clinical Laboratory Scientist Trainee",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=382",
+    "control_number": "18935",
+    "title": "Interdisciplinary Studies: Communication and English",
+    "award": "A.A. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=265",
     "coverage": 1.0,
-    "was_url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=380",
-    "was_coverage": 1.0,
+    "was_url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=203",
+    "was_coverage": 0.917,
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "45568",
-    "title": "Commercial Music: Live Sound Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=395",
+    "control_number": "18936",
+    "title": "Interdisciplinary Studies: Social and Behavioral Sciences",
+    "award": "A.A. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=125",
+    "coverage": 0.972,
+    "was_url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=294",
+    "was_coverage": 0.944,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "36508",
+    "title": "Pre-Health Occupations",
+    "award": "A.S. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=131",
+    "coverage": 0.773,
+    "was_url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=131",
+    "was_coverage": 0.727,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "38736",
+    "title": "Business Analyst/Data Analytics",
+    "award": "A.A. Degree",
+    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=174",
     "coverage": 1.0,
-    "was_url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=390",
-    "was_coverage": 0.667,
+    "was_url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=177",
+    "was_coverage": 0.944,
     "was_method": "pdf_pages"
    }
   ],
@@ -1818,63 +1838,6 @@
     "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=365",
     "coverage": 1.0,
     "was_coverage": 0.798
-   }
-  ],
-  "only": [
-   "21193",
-   "38898",
-   "45568"
-  ],
-  "not_named": [
-   {
-    "control_number": "18934",
-    "title": "Interdisciplinary Studies: Arts and Humanities",
-    "award": "A.A. Degree",
-    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=416",
-    "coverage": 0.986,
-    "was_url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=325",
-    "was_coverage": 0.741,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "18935",
-    "title": "Interdisciplinary Studies: Communication and English",
-    "award": "A.A. Degree",
-    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=265",
-    "coverage": 1.0,
-    "was_url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=203",
-    "was_coverage": 0.917,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "18936",
-    "title": "Interdisciplinary Studies: Social and Behavioral Sciences",
-    "award": "A.A. Degree",
-    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=125",
-    "coverage": 0.972,
-    "was_url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=294",
-    "was_coverage": 0.944,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "36508",
-    "title": "Pre-Health Occupations",
-    "award": "A.S. Degree",
-    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=131",
-    "coverage": 0.773,
-    "was_url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=131",
-    "was_coverage": 0.727,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "38736",
-    "title": "Business Analyst/Data Analytics",
-    "award": "A.A. Degree",
-    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=174",
-    "coverage": 1.0,
-    "was_url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=177",
-    "was_coverage": 0.944,
-    "was_method": "pdf_pages"
    }
   ],
   "refused_passing": [],
@@ -2310,5 +2273,5 @@
    "url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=442"
   }
  },
- "run": "45181983194"
+ "run": "45187906040"
 }
