@@ -9,7 +9,11 @@
 //   (4) the list opens from its address, from a college's address and from the curator's list address, and a college
 //       whose catalog prints no names reads TBA (in its row and in each code's title);
 //   (5) a press on a college moves the address, and the view reports it (every view has an address);
-//   (6) the tables carry th scope, a labeled scrolling region, and the view stores nothing.
+//   (6) the tables carry th scope, a labeled scrolling region, and the view stores nothing;
+//   (12) S718 (Sam, 2026-11-23: "add a short bulleted set of quick links to prioritized action needed ... we can default
+//       display the cards collapsed all but the tops sections"): ⭐ the card's top section carries the quick links, each
+//       with its live count and a target that exists; Collect, Curate and Connect start folded behind a button with
+//       aria-expanded; a quick link opens the folded stage it points into, scrolls there and focuses the check.
 // The fixture (tests/fixtures/local_subject_titles_fixture.json) stands in for the live file, so these hold whatever
 // catalogs are filed later.
 //
@@ -74,7 +78,7 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
   check("(1) ⭐ Subjects is the first card in Curate", first && first.getAttribute("data-key") === "subjects" && txt(first.querySelector(".cmf-card-t")) === "Subjects");
   check("(1) Courses and M-IDs follows it", curate && curate.querySelectorAll(".cmf-card")[1].getAttribute("data-key") === "courses");
   const links = Array.from(first.querySelectorAll(".cmf-body a"));
-  const by = (t) => links.find((l) => txt(l).indexOf(t) >= 0);
+  const by = (t) => links.find((l) => txt(l).indexOf(t) >= 0 && !l.hasAttribute("data-onpage"));
   check("(2) ⭐ the drafted titles open the subjects list", by("3 local titles") && by("3 local titles").getAttribute("href") === "#commons/subjects");
   check("(2) ⭐ the colleges open the subjects list", by("1 of 2 colleges") && by("1 of 2 colleges").getAttribute("href") === "#commons/subjects");
   check("(2) the codes with no title open their list, each reason counted", by("3 codes with no title") && by("3 codes with no title").getAttribute("href") === "#commons/subjects/disagree"
@@ -88,6 +92,23 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
   check("(2) ⭐ four checks under Collect, Curate and Connect, each with its Where to act line",
     stages.join(",") === "Collect,Curate,Connect" && checks.join("|") === "1. Each college’s own subject titles|2. A Confident common code for every local code|3. No course held for want of a code|4. Re-mint scopes ready"
     && first.querySelectorAll(".cmf-act").length === 4 && Array.from(first.querySelectorAll(".cmf-act")).every((p) => /^Where to act:/.test(txt(p)) && p.querySelector("a")), stages + " " + checks);
+  /* (11) the quick links and the folded stages (S718) */
+  const quick = first.querySelector("#cmf-subj-quick");
+  const ql = quick ? Array.from(quick.querySelectorAll("a[data-onpage]")) : [];
+  check("(12) ⭐ the quick links sit at the top of the card, before the Why list and the stages", quick && first.querySelector(".cmf-body").firstElementChild === quick && ql.length >= 2 && ql.length <= 5);
+  check("(12) ⭐ each quick link carries its live count and points to a check that exists", ql.every((l) => /^[\d,]+ /.test(txt(l)) && first.querySelector("#" + l.getAttribute("data-onpage") + ".cmf-check"))
+    && ql.some((l) => txt(l) === "3 codes with no title" && l.getAttribute("data-onpage") === "cmf-subj-check-1"), ql.map(txt).join(" | "));
+  const sb = Array.from(first.querySelectorAll("button.cmf-stage-b"));
+  check("(12) ⭐ Collect, Curate and Connect start folded, each behind a button with aria-expanded", sb.length === 3 && sb.every((b) => b.getAttribute("aria-expanded") === "false"
+    && d.getElementById(b.getAttribute("aria-controls")).hasAttribute("hidden")) && !first.querySelector("#cmf-subj-quick").closest("[hidden]"));
+  x.w.Element.prototype.scrollIntoView = function () { x.w.scrolledTo = this.id; };
+  const toTitles = ql.find((l) => l.getAttribute("data-onpage") === "cmf-subj-check-1");
+  toTitles.dispatchEvent(new x.w.MouseEvent("click", { bubbles: true, cancelable: true, button: 0 }));
+  const collectB = sb.find((b) => txt(b) === "Collect");
+  check("(12) ⭐ a quick link opens its stage, scrolls to its check and focuses it", collectB.getAttribute("aria-expanded") === "true" && !d.getElementById("cmf-subj-stage-collect").hasAttribute("hidden")
+    && x.w.scrolledTo === "cmf-subj-check-1" && d.activeElement && d.activeElement.id === "cmf-subj-check-1" && d.getElementById("cmf-subj-check-1").querySelector(".cmf-act"));
+  collectB.click();
+  check("(12) the stage word folds it again", collectB.getAttribute("aria-expanded") === "false" && d.getElementById("cmf-subj-stage-collect").hasAttribute("hidden"));
   check("the card's link row opens the list", Array.from(first.querySelectorAll(".cmf-links a")).some((l) => l.getAttribute("href") === "#commons/subjects"));
   check("the fold key is known", x.w.CPL_COMMONS_FRONT.KEYS.indexOf("subjects") >= 0);
 
@@ -103,17 +124,17 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
   d = x.d;
   check("(4) ⭐ #commons/subjects opens the list", txt(d.getElementById("csb-h")) === "Subjects" && d.querySelector(".cmf-card") === null);
   const beta = d.querySelector('tr[data-college="beta"]');
-  check("(4) ⭐ a college whose catalog prints no names reads TBA", beta && txt(beta.children[2]) === "TBA");
-  check("(4) a college that prints names reads its count", txt(d.querySelector('tr[data-college="alpha"]').children[2]) === "3 of 4 codes");
+  check("(4) ⭐ a college whose catalog prints no names reads TBA", beta && txt(beta.children[3]) === "TBA");
+  check("(4) a college that prints names reads its count", txt(d.querySelector('tr[data-college="alpha"]').children[3]) === "3 of 4 codes");
   check("(4) every code is listed", d.querySelectorAll(".csb-codes tbody tr").length === 6);
   const zzz = d.querySelector('.csb-codes tr[data-code="ZZZ"]'), math = d.querySelector('.csb-codes tr[data-code="MATH"]');
   check("(4) each code says who prints it", txt(zzz.children[5]) === "Catalog only" && txt(math.children[5]) === "COCI only");
   const heads = Array.from(d.querySelectorAll(".csb-codes thead th")).map(txt);
-  check("(7) the labels: Local Title and Source, and no label says print", heads.join(" | ") === "College | Local code | Local Title | Common subject code | Courses | Source | Settle"
+  check("(7) the labels: Local Title and Source, and no label says print", heads.join(" | ") === "College | Local code | Local Title | Common subject code | Courses | Source | Action"
     && !/print/i.test(Array.from(d.querySelectorAll(".csb-table thead th")).map(txt).join(" ")));
   const chip = math.children[2].querySelector(".csb-chip");
   check("(7) ⭐ a code in COCI and nowhere in the catalog carries the Not in catalog chip, a note a screen reader reads",
-    chip && txt(chip) === "Not in catalog" && chip.getAttribute("role") === "note" && /waits on a title from a person/.test(chip.getAttribute("aria-label")));
+    chip && txt(chip) === "Not in catalog" && chip.getAttribute("role") === "note" && /Sky recommends a title, and a person’s save confirms it/.test(chip.getAttribute("aria-label")));
   check("(7) a titled row carries no chip", !d.querySelector('.csb-codes tr[data-code="ENGL"] .csb-chip'));
   check("(4) the common code shows with its discipline title where the maps give one, blank where not", txt(d.querySelector('.csb-codes tr[data-code="ENGL"]').children[3]) === "ENGL English" && txt(zzz.children[3]) === "");
   /* (8) the recommendations (S700, #3655): a note beside a row with no title or no common code, never a value */

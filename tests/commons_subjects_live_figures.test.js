@@ -96,11 +96,11 @@ function stamp(x) {
   const s = txt(x.d.querySelector(".csb-stamp"));
   const n = (re) => { const m = re.exec(s); return m ? Number(m[1].replace(/,/g, "")) : null; };
   return { named: n(/^([\d,]+) local titles/), untitled: n(/([\d,]+) codes with no title/), nic: n(/\(([\d,]+) not in catalog/),
-    common: n(/([\d,]+) codes have a common subject code/), saved: n(/([\d,]+) codes? (?:is|are) settled by a person’s save/) || 0, text: s };
+    common: n(/([\d,]+) codes have a common subject code/), saved: n(/([\d,]+) codes? carr(?:y|ies) a person’s save/) || 0, text: s };
 }
 function alphaTitled(x) {
   const tr = x.d.querySelector('.csb-table tr[data-college="alpha"]');
-  return tr ? Number(txt(tr.children[2]).split(" ")[0]) : null;
+  return tr ? Number(txt(tr.children[3]).split(" ")[0]) : null;
 }
 /* A figure opens what it counts: press it, then count the rows its list shows. */
 async function listed(x, pick) {
