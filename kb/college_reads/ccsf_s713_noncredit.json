@@ -1,0 +1,53 @@
+{
+ "_readme": "S713 (worker for SkyKittiwake), census lever 4 (City College of San Francisco, page not found, 53): the 31 noncredit programs. Capture 39046623474 read them as not_found against the 2026-27 catalog PDF. This read prints every page from 60 to 480 that names one of their titles, so a session can tell whether each program has its own page (title, award, requirement list) and which codes it prints. One load and robots.txt, no model call, nothing written. Programs: Accounting Assistant & Core Skills 37561; Administrative Assistant 24120; Beginning VESL Communication 24338; Beginning VESL for Janitorial Workers 24331; Beginning VESL for the Hospitality Industry 24252; Business Information Worker (BIW) 24260; Business Office Support Skills, Phase II 30539; CCSF High School Diploma 31602; Clerical Accounting 24299; Clerical Support Specialist 24304; Cloud-Based Accounting Systems 38563; Cloud-Based Electronic Communication 36284; Computer Applications for Business 24449; Computerized Accounting 24393; Construction Administrative Assistant 24259; Digital Literacy and Core Skills 31074; ESL Beginning High Oral Communication Skills 36964; ESL Beginning Low Conversation 36386; ESL Intermediate High Oral Communication Skills 42318; ESL/ABE for Automotive Technology 24276; High Intermediate ESL for Health Professionals 30907; Intermediate VESL for Printing  Workers 24012; Intermediate VESL for Transit Operators 24424; Introduction to Child Development Careers 30687; Medisoft for Business 36980; Microsoft Office Specialist 24263; Office Receptionist 31414; PowerPoint Specialist 31413; QuickBooks & Spreadsheets for Accounting 36672; Textile and Fabric Design 24456; Website Development for E-Business 36821.",
+ "college": "City College of San Francisco",
+ "questions": {
+  "own_page": "Whether the page is the named program's own section (its heading, award and requirement list), and which course codes it prints."
+ },
+ "keywords": [
+  "\\bAccounting\\W+Assistant\\W+Core\\W+Skills\\b",
+  "\\bAdministrative\\W+Assistant\\b",
+  "\\bBeginning\\W+VESL\\W+Communication\\b",
+  "\\bBeginning\\W+VESL\\W+for\\W+Janitorial\\W+Workers\\b",
+  "\\bBeginning\\W+VESL\\W+for\\W+the\\W+Hospitality\\W+Industry\\b",
+  "\\bBusiness\\W+Information\\W+Worker\\W+BIW\\b",
+  "\\bBusiness\\W+Office\\W+Support\\W+Skills\\W+Phase\\W+II\\b",
+  "\\bCCSF\\W+High\\W+School\\W+Diploma\\b",
+  "\\bClerical\\W+Accounting\\b",
+  "\\bClerical\\W+Support\\W+Specialist\\b",
+  "\\bCloud\\W+Based\\W+Accounting\\W+Systems\\b",
+  "\\bCloud\\W+Based\\W+Electronic\\W+Communication\\b",
+  "\\bComputer\\W+Applications\\W+for\\W+Business\\b",
+  "\\bComputerized\\W+Accounting\\b",
+  "\\bConstruction\\W+Administrative\\W+Assistant\\b",
+  "\\bDigital\\W+Literacy\\W+and\\W+Core\\W+Skills\\b",
+  "\\bESL\\W+Beginning\\W+High\\W+Oral\\W+Communication\\W+Skills\\b",
+  "\\bESL\\W+Beginning\\W+Low\\W+Conversation\\b",
+  "\\bESL\\W+Intermediate\\W+High\\W+Oral\\W+Communication\\W+Skills\\b",
+  "\\bESL\\W+ABE\\W+for\\W+Automotive\\W+Technology\\b",
+  "\\bHigh\\W+Intermediate\\W+ESL\\W+for\\W+Health\\W+Professionals\\b",
+  "\\bIntermediate\\W+VESL\\W+for\\W+Printing\\W+Workers\\b",
+  "\\bIntermediate\\W+VESL\\W+for\\W+Transit\\W+Operators\\b",
+  "\\bIntroduction\\W+to\\W+Child\\W+Development\\W+Careers\\b",
+  "\\bMedisoft\\W+for\\W+Business\\b",
+  "\\bMicrosoft\\W+Office\\W+Specialist\\b",
+  "\\bOffice\\W+Receptionist\\b",
+  "\\bPowerPoint\\W+Specialist\\b",
+  "\\bQuickBooks\\W+Spreadsheets\\W+for\\W+Accounting\\b",
+  "\\bTextile\\W+and\\W+Fabric\\W+Design\\b",
+  "\\bWebsite\\W+Development\\W+for\\W+E\\W+Business\\b"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf"
+  }
+ ],
+ "pdf_span": [
+  60,
+  480
+ ],
+ "pdf_page_cap": 150
+}

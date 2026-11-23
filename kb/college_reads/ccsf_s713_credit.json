@@ -1,0 +1,42 @@
+{
+ "_readme": "S713 (worker for SkyKittiwake), census lever 4 (City College of San Francisco, page not found, 53): the 22 credit programs. Capture 39046623474 read them as not_found against the 2026-27 catalog PDF. This read prints every page up to 480 that names one of their titles, so a session can tell whether each program has its own page (title, award, requirement list) and which codes it prints. One load and robots.txt, no model call, nothing written. Programs: AV Technologist 37160; Administrative Support 05447; Aircraft Powerplant Maintenance Technology 05469/22726; Airframe Maintenance Technology 05468; Airframe-Maintenance Technology 22725; Avionics-Maintenance Technology 05467; Broadcast Motion Graphics 35709; Cal-GETC 45768; Computer Accounting 09175; Data Journalism 09178; Finance 05440/22721; Human Resources Management 40435/40590; Liberal Arts and Sciences Emphasis in Arts and Humanities 17952; Liberal Arts and Sciences Emphasis in Science and Mathematics 17954; Maker Studies 37776; Multimedia Studies: Performance Arts 11817; Office Technology 17842; Technical Theater Production - Costume and Makeup 40171; Technical Theater Production - Stagecraft 40407. Cal-GETC 45768 is searched as a certificate title only, so the Cal-GETC pattern every transfer degree names does not spend the page cap.",
+ "college": "City College of San Francisco",
+ "questions": {
+  "own_page": "Whether the page is the named program's own section (its heading, award and requirement list), and which course codes it prints."
+ },
+ "keywords": [
+  "\\bAV\\W+Technologist\\b",
+  "\\bAdministrative\\W+Support\\b",
+  "\\bAircraft\\W+Powerplant\\W+Maintenance\\W+Technology\\b",
+  "\\bAirframe\\W+Maintenance\\W+Technology\\b",
+  "\\bAirframe\\W+Maintenance\\W+Technology\\b",
+  "\\bAvionics\\W+Maintenance\\W+Technology\\b",
+  "\\bBroadcast\\W+Motion\\W+Graphics\\b",
+  "\\bComputer\\W+Accounting\\b",
+  "\\bData\\W+Journalism\\b",
+  "\\bFinance\\b",
+  "\\bHuman\\W+Resources\\W+Management\\b",
+  "\\bLiberal\\W+Arts\\W+and\\W+Sciences\\W+Emphasis\\W+in\\W+Arts\\W+and\\W+Humanities\\b",
+  "\\bLiberal\\W+Arts\\W+and\\W+Sciences\\W+Emphasis\\W+in\\W+Science\\W+and\\W+Mathematics\\b",
+  "\\bMaker\\W+Studies\\b",
+  "\\bMultimedia\\W+Studies\\W+Performance\\W+Arts\\b",
+  "\\bOffice\\W+Technology\\b",
+  "\\bTechnical\\W+Theater\\W+Production\\W+Costume\\W+and\\W+Makeup\\b",
+  "\\bTechnical\\W+Theater\\W+Production\\W+Stagecraft\\b",
+  "Cal\\W?GETC\\W+(Certificate|Certification)\\b",
+  "Certificate\\W+of\\W+Achievement\\W+(in\\W+)?(Cal\\W?GETC|General\\W+Education)"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf"
+  }
+ ],
+ "pdf_span": [
+  1,
+  480
+ ],
+ "pdf_page_cap": 150
+}

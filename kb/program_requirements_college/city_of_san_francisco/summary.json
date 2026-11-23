@@ -2,21 +2,21 @@
  "college": "City College of San Francisco",
  "programs": 417,
  "with_closed_list": 371,
- "found": 309,
- "extracted": 309,
+ "found": 317,
+ "extracted": 317,
  "errors": 0,
- "passed_machine_checks": 276,
+ "passed_machine_checks": 283,
  "failed": {
   "coverage": 9,
   "invented": 7,
-  "arithmetic": 24,
+  "arithmetic": 25,
   "repeated": 1,
   "outcomes": 1
  },
- "cost_usd_run": 5.16,
- "cost_usd_filed": 22.04,
- "cost_per_program": 0.0713,
- "extract_calls": 62,
+ "cost_usd_run": 0.17,
+ "cost_usd_filed": 22.71,
+ "cost_per_program": 0.0716,
+ "extract_calls": 1,
  "extract_failed": [],
  "not_found": [
   {
@@ -67,7 +67,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active - Teachout Only"
   },
@@ -78,7 +79,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -99,7 +101,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active - Teachout Only"
   },
@@ -110,7 +113,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -121,7 +125,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -132,27 +137,6 @@
    "near_miss": {
     "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=106",
     "coverage": 0.0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "17954",
-   "title": "Liberal Arts and Sciences Emphasis in Science and Mathematics",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=208",
-    "coverage": 0.219
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "19445",
-   "title": "Databases for Developers",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
    },
    "status": "Active"
   },
@@ -194,7 +178,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -212,7 +197,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -223,7 +209,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -234,7 +221,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -252,7 +240,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -263,7 +252,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -274,7 +264,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -292,7 +283,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -310,7 +302,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -328,7 +321,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -339,7 +333,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -357,7 +352,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -368,7 +364,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -379,7 +376,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -388,9 +386,9 @@
    "title": "CCSF High School Diploma",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=224",
+    "coverage": 0.0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -401,7 +399,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -412,7 +411,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -423,7 +423,8 @@
    "near_miss": {
     "why": "rule B then A: the pages printing the program's title with its award are course descriptions or general-education pages",
     "rule": "A",
-    "refused_b": 1
+    "refused_b": 1,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -434,7 +435,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -450,9 +452,9 @@
    "title": "ESL Beginning High Oral Communication Skills",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=162",
+    "coverage": 0.0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -463,7 +465,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -474,7 +477,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -485,18 +489,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "37601",
-   "title": "iPhone App Programming",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -518,35 +512,14 @@
    "status": "Active"
   },
   {
-   "control_number": "40168",
-   "title": "Entrepreneurship and Innovation in Broadcast Media",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
    "control_number": "40171",
    "title": "Technical Theater Production - Costume and Makeup",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "40177",
-   "title": "Entrepreneurship in Visual Media Design",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -557,7 +530,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -568,7 +542,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -579,40 +554,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "40705",
-   "title": "Build Automation for DevOps & QA",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "40706",
-   "title": "Database Administration",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "41353",
-   "title": "Entrepreneurship and Innovation in Journalism",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -621,9 +564,9 @@
    "title": "ESL Intermediate High Oral Communication Skills",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=167",
+    "coverage": 0.0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -632,11 +575,11 @@
    "title": "Cal-GETC",
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=390",
-    "coverage": 0.129
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=213",
+    "coverage": 0.285
    },
    "status": "Active"
   }
  ],
- "run": "44474797786"
+ "run": "45132633405"
 }

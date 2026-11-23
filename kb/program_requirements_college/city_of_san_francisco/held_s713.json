@@ -1,0 +1,57 @@
+{
+ "_readme": "S713 (worker for SkyKittiwake), census lever 4 (City College of San Francisco, page not found, 53): the seven programs whose own page the free page reads found (45129229734, 45131273474) and the college's reconcile entry pins (pdf_pages), held for the blocks table. Five bind on their page in capture 45131492116 and read below the 0.5 share against the state's course list, so no extraction is sent: they wait on a list or wording rule (the conductor's call, S713). 17954 was read (run 45132633405, $0.17) and fails on its units; no existing named gap's rule names it (kb/_program_named_gaps.py answer() returns none), so it is held with its reason and its record stays filed, not loaded. Cal-GETC 45768 moved to no_record_s713.json under the census's ge_pattern_certificate gap (the conductor, S713: an existing gap that fits is filed). No Supabase write.",
+ "college": "City College of San Francisco",
+ "written": "2026-11-23T09:02:01Z",
+ "capture": "45131492116",
+ "page_reads": [
+  "45129229734",
+  "45131273474"
+ ],
+ "held": [
+  {
+   "control_number": "09178",
+   "title": "Data Journalism",
+   "page": 86,
+   "share": 0.333,
+   "reason": "Its list on p.87 (JOUR 19, JOUR 21, JOUR 24A or 29A, JOUR 35, JOUR 36, LI S 10) matches a third of the state's course list."
+  },
+  {
+   "control_number": "17952",
+   "title": "Liberal Arts and Sciences Emphasis in Arts and Humanities",
+   "page": 106,
+   "share": 0.0,
+   "reason": "The pages from its heading on p.106 name none of the state's listed courses."
+  },
+  {
+   "control_number": "31602",
+   "title": "CCSF High School Diploma",
+   "page": 224,
+   "share": 0.0,
+   "reason": "Its requirements on p.225 name none of the state's listed courses."
+  },
+  {
+   "control_number": "36964",
+   "title": "ESL Beginning High Oral Communication Skills",
+   "page": 162,
+   "share": 0.0,
+   "reason": "Its list prints ESLN courses in hours, none of them on the state's course list."
+  },
+  {
+   "control_number": "42318",
+   "title": "ESL Intermediate High Oral Communication Skills",
+   "page": 167,
+   "share": 0.0,
+   "reason": "Its list prints ESLN courses in hours, none of them on the state's course list."
+  },
+  {
+   "control_number": "17954",
+   "title": "Liberal Arts and Sciences Emphasis in Science and Mathematics",
+   "page": 206,
+   "share": 0.753,
+   "reason": "Read in run 45132633405: its lists sum to 4.0-13.0 against the printed 18.0 (one 18-unit list read as per-area blocks, 35 codes invented), and no named gap fits.",
+   "extracted_run": "45132633405",
+   "cost_usd": 0.174,
+   "record": "kb/program_requirements_college/city_of_san_francisco/records/17954.json"
+  }
+ ]
+}
