@@ -29056,7 +29056,7 @@ window.CPL_STATEWIDE = {
       "title": "Developmental Psychology of Children 2",
       "unified_title": "Developmental Psychology of Children 2",
       "is_classified": true,
-      "issuing_agency": "Tri-Valley Regional Occupational Program",
+      "issuing_agency": "Livermore High School",
       "training_agency": "",
       "confidence_title": 1.0,
       "confidence_issuer": 1.0,
@@ -141351,7 +141351,7 @@ window.CPL_STATEWIDE = {
       "title": "Orientation to Health Careers",
       "unified_title": "Orientation to Health Careers",
       "is_classified": true,
-      "issuing_agency": "Tri-Valley Regional Occupational Program",
+      "issuing_agency": "Livermore High School",
       "training_agency": "",
       "confidence_title": 1.0,
       "confidence_issuer": 1.0,
@@ -284564,13 +284564,13 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPPRS-PRCT-1-001"
       ],
-      "title": "Portfolio Review CIS101-Introduction to Computers and Their Uses",
-      "unified_title": "Portfolio Review CIS101-Introduction to Computers and Their Uses",
-      "is_classified": false,
-      "issuing_agency": "",
+      "title": "Computer Literacy",
+      "unified_title": "Computer Literacy",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
+      "confidence_title": 1.0,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Portfolio Review CIS101-Introduction to Computers and Their Uses"
@@ -450852,7 +450852,7 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-11-22T21:47:14",
+  "generated_at": "2026-11-23T06:18:44",
   "total_credit_recs": 17552,
   "cip_sectors": {
     "01": "Agricultural/Animal/Plant/Veterinary Science and Related Fields",

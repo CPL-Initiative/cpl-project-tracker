@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-23T06:46:26Z",
+ "written_at": "2026-11-23T06:28:02Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 15333,
+     "n": 15336,
      "of": 20282,
      "words": "complete at 118 colleges",
      "open": "#program-requirements/list"
@@ -34,14 +34,14 @@
    ],
    "issues": [
     {
-     "n": 2012,
+     "n": 2017,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
      "open": "#program-requirements/list/fail"
     },
     {
-     "n": 2937,
+     "n": 2929,
      "words": "active programs with no record yet",
      "owner": "the harvest",
      "carry": "routine",
@@ -63,15 +63,15 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-11-22T11:43:38Z",
+    "at": "2026-11-22T13:20:45Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 15333,
-    "failing": 2012,
-    "unread": 2937,
-    "records": 18951,
+    "complete": 15336,
+    "failing": 2017,
+    "unread": 2929,
+    "records": 18959,
     "colleges": 118,
     "outside_active": 1606,
     "confirmed": 32,
@@ -98,13 +98,13 @@
    "status_file": "kb/status/exhibit.json",
    "pair": [
     {
-     "n": 3221,
+     "n": 3222,
      "of": 6252,
-     "words": "titles carry a review stamp (1,581 a person's, 1,640 a cohort's), counting 1 titles MAP carries with no entry yet; 2,970 credentials, 2,572 of 3,342 records stamped",
+     "words": "titles carry a review stamp (1,582 a person's, 1,640 a cohort's); 2,970 credentials, 2,574 of 3,344 records stamped",
      "open": "#exhibits/list"
     },
     {
-     "n": 1581,
+     "n": 1582,
      "of": 6252,
      "words": "confirmed by a person",
      "open": "#exhibits/list",
@@ -166,23 +166,23 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-22T21:48:16Z",
+    "at": "2026-11-23T06:19:46Z",
     "every_hours": 24
    },
    "facts": {
-    "titles": 6251,
-    "backlog": 1,
-    "stamped": 3221,
-    "person": 1581,
+    "titles": 6252,
+    "backlog": 0,
+    "stamped": 3222,
+    "person": 1582,
     "cohort": 1640,
     "credentials": 2970,
-    "confirmed": 1581,
-    "records": 3342,
-    "records_stamped": 2572,
+    "confirmed": 1582,
+    "records": 3344,
+    "records_stamped": 2574,
     "saved_at": "2026-11-21T15:42:56Z",
-    "fold_at": "2026-11-22T21:48:16Z",
+    "fold_at": "2026-11-23T06:19:46Z",
     "map_titles": 5440,
-    "unclassified": 1,
+    "unclassified": 0,
     "left_map": 812,
     "below_80": 1117,
     "below_60": 235,
@@ -293,7 +293,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-22T21:51:18+00:00",
+    "at": "2026-11-23T06:22:16+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -510,7 +510,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-22T21:48:14Z",
+    "at": "2026-11-23T06:19:44Z",
     "every_hours": 24
    },
    "facts": {
@@ -523,7 +523,7 @@
     "modal": 0,
     "shared": [],
     "missed_alignment": 0,
-    "scanned_at": "2026-11-22",
+    "scanned_at": "2026-11-23",
     "procedures_on": 6
    },
    "sources": [
@@ -772,7 +772,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 2012,
+    "n": 2017,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"
@@ -780,7 +780,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 2937,
+    "n": 2929,
     "words": "active programs with no record yet",
     "owner": "the harvest",
     "open": "#program-requirements/list/unread"
@@ -807,7 +807,7 @@
     "ref": "requirements",
     "title": "Program Requirements",
     "kind": "not_shrinking",
-    "n": 2937,
+    "n": 2929,
     "was": 2820,
     "since": "2026-11-16",
     "words": "active programs with no record yet",

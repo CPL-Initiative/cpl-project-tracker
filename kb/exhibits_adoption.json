@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "_about": "The Exhibits tab's credential panel, \"Who could adopt it?\" (kb/_build_exhibits_review.py): Exhibit Adoption's per-credential view. Per canonical credential: a = college index -> [units, [[course, credit recommendation]]] for each college that articulated it; c = college index -> [[course, \"\", units]] for each college that already teaches a course mapped to its M-ID identity (statewide_prescriptive.js; never the TOP or C-ID program overlap); w = colleges withheld because the identity is over-merged; x = [[exhibit id, MAP title, units]]; s = the CIP sector; p = the median articulating college's units (the peer benchmark).",
- "written_at": "2026-11-22T21:52:00Z",
+ "written_at": "2026-11-23T06:22:41Z",
  "sources": {
-  "statewide": "2026-11-22T21:47:14"
+  "statewide": "2026-11-23T06:18:44"
  },
  "cip_sectors": {
   "01": "Agricultural/Animal/Plant/Veterinary Science and Related Fields",
@@ -899,7 +899,7 @@
   "Computer Integrated Manufacturing": {"a": {"39": [3.0, [["ETEC 16", "3 hours in Computer Integrated Manufacturing"]]], "57": [3.0, [["ELET 004", "3 hours in Computer Integrated Manufacturing"]]], "58": [3.0, [["MTFAB 90", "3 hours in Computer Integrated Manufacturing"]]]}, "x": [["MAPCXH-CBE-10-1-001", "Credit by Exam - Long Beach Unified School District - Computer Integrated Manufacturing", 3.0], ["MAPCXS-E0CI-1-001", "ELET 004: Computer Integrated Manufacturing", 3.0], ["MAPCxS-CIM--1-001", "Computer Integrated Manufacturing - Credit by Exam (ETEC 16 )", 3.0]], "s": "15", "p": 3.0},
   "Computer Keyboarding": {"a": {"13": [3.0, [["BUSTEC 40B", "3 hours in Computer Keyboarding: Speed and Accuracy Development"]]], "44": [1.5, [["BT 106", "1.5 hours in Computer Keyboarding"]]], "67": [1.5, [["BT 106", "1.5 hours in Computer Keyboarding"]]]}, "c": {"103": [["BA 115", "", 0.5]]}, "x": [["MAPCXA-BCK-1-001", "Computer Keyboarding", 1.5], ["MAPCXS-B1CK-1-001", "BT 106: Computer Keyboarding", 1.5], ["MAPCXS-CKSA-1-001", "Computer Keyboarding: Speed and Accuracy Development", 3.0], ["MAPICA-CK-1-001", "Computer Keyboarding", 1.5], ["MAPMM-BCK-1-001", "Computer Keyboarding", 1.5], ["MAPPRA-BCK-1-001", "Computer Keyboarding", 1.5], ["MAPSAI-CK-1-001", "Computer Keyboarding", 1.5]], "s": "52", "p": 1.5},
   "Computer Keyboarding Beginning": {"a": {"13": [3.0, [["BUSTEC 40A", "3 hours in Beginning Computer Keyboarding"]]]}, "c": {"9": [["CBOT 415", "", 1.5]], "76": [["CAT 50", "", 3.0]], "92": [["CAT 50", "", 3.0]], "104": [["COMP 151AB", "", 3.0]]}, "x": [["MAPCXS-BCK-1-001", "Beginning Computer Keyboarding", 3.0]], "s": "52", "p": 3.0},
-  "Computer Literacy": {"a": {"70": [1.0, [["CIS 205", "1 hour in Computer Literacy"]]]}, "x": [["MAPCXS-C2CL2-1-001", "CIS 205 Computer Literacy", 1.0], ["MAPCXS-C2CL3-1-001", "CIS 205 Computer Literacy", 1.0]], "s": "11", "p": 1.0},
+  "Computer Literacy": {"a": {"63": [3.0, [["CIS 101", "3 hours in Introduction to Computers and their Uses"]]], "70": [1.0, [["CIS 205", "1 hour in Computer Literacy"]]]}, "x": [["MAPCXS-C2CL2-1-001", "CIS 205 Computer Literacy", 1.0], ["MAPCXS-C2CL3-1-001", "CIS 205 Computer Literacy", 1.0], ["MAPPRS-PRCT-1-001", "Portfolio Review CIS101-Introduction to Computers and Their Uses", 3.0]], "s": "11", "p": 2.0},
   "Computer Network Fundamentals": {"a": {"13": [3.0, [["ITIS 51", "3 hours in Computer Network Fundamentals"]]], "57": [3.0, [["CIS 005C", "3 hours in Computer Network Fundamentals"]]], "63": [3.0, [["CIS 210", "3 hours in Computer Network Fundamentals"]]], "73": [4.0, [["CSCI 240", "4 hours in Networking Essentials"]]]}, "x": [["MAPCXS-C0CN-1-001", "CIS 005C: Computer Network Fundamentals", 9.0], ["MAPCXS-C2E--1-001", "CSCI 240\tNetworking Essentials - Credit by Exam", 4.0]], "s": "11", "p": 3.0},
   "Computer Networks": {"a": {"77": [4.0, [["CNET 56", "4 hours in Computer Networks"]]]}, "x": [["MAPCXN-CN-1-001", "Computer Networks", 4.0]], "s": "11", "p": 4.0},
   "Computer Simulation and Troubleshooting": {"a": {"77": [2.0, [["ELEC 12", "2 hours in Computer Simulation and Troubleshooting"]]]}, "x": [["MAPCXN-CSAT-1-001", "Computer Simulation and Troubleshooting", 2.0]], "s": "47", "p": 2.0},

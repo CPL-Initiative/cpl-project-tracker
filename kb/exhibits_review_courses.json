@@ -1,14 +1,7 @@
 {
  "schema": 1,
- "colleges": [
-  "East Los Angeles College",
-  "Los Angeles Mission College",
-  "Los Angeles Southwest College",
-  "Los Angeles Trade Technical College",
-  "Los Angeles Valley College",
-  "West Los Angeles College"
- ],
+ "colleges": [],
  "courses": {
-  "teaches:Introduction to Computers and Their Uses": {"0": [["CIS 101", "", 3.0]], "1": [["CIS 101", "", 3.0]], "2": [["CIS 101", "", 3.0]], "3": [["CIS 101", "", 3.0]], "4": [["CIS 101", "", 3.0], ["CO SCI 801", "", 3.0]], "5": [["CIS 101", "", 3.0]]}
+
  }
 }

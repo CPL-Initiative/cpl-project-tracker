@@ -1,5 +1,5 @@
 {
- "_what": "A person's saved subject decisions, synced daily from kb_curation by kb/_sync_subject_decisions.py so the builders honor them (kb/subject_decisions.py). decisions: the Subjects page's saves (SUBJ:<college>|<code>|<band>, subject_decision; band credit, whole or nc:<noncredit category slug>). statewide: the Local subjects List's filings (_SUBJ_DISC::<CODE>, subject_discipline_confirm), the MQ discipline a person filed a code under. who is the person a filing names, a procedure's cohort id, or 'a reviewer'; no email is kept.",
+ "_what": "A person's saved subject decisions, synced daily from kb_curation by kb/_sync_subject_decisions.py so the builders honor them (kb/subject_decisions.py). decisions: the Subjects page's saves (SUBJ:<college>|<code>|<band>, subject_decision; band credit, whole or nc:<noncredit category slug>). statewide: the Local subjects List's filings (_SUBJ_DISC::<CODE>, subject_discipline_confirm), the MQ discipline a person filed a code under. courses: the Subjects panel's course moves (CRS:<college>|<code>|<course number>, course_subject_decision), one person's common code for one course, read by the re-mint's gate (kb/_mid_readiness.py) and never by a nightly mint. who is the person a filing names, a procedure's cohort id, or 'a reviewer'; no email is kept.",
  "_rule": "A person's save wins over the catalog, the subject map and any recommendation (r-subject-save-path-kb-curation-sam-2026-11-22). Precedence for a college's code and band: its decision, then a statewide filing, then the subject map, then a recommendation. A credit decision reads the code's credit courses only; whole reads a code COCI lists no course under; nc:<slug> reads the code's noncredit courses in that COCI noncredit category only.",
  "statewide_read": true,
  "totals": {
@@ -11,6 +11,7 @@
   },
   "colleges": 1,
   "statewide": 9,
+  "courses": 0,
   "unreadable": 0
  },
  "decisions": [
@@ -390,5 +391,6 @@
    "at": "2026-11-04T13:55:26."
   }
  ],
+ "courses": [],
  "unreadable": []
 }

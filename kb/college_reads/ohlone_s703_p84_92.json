@@ -1,0 +1,24 @@
+{
+ "_readme": "S703 (worker levers for SkyDovekie), census lever 6 (Ohlone, page not found, 36), second read. The first (run 45024779831, pp.45-47, 65-67, 93-100) found Information Technology 33319's own heading on p.46 and Esports Entrepreneurship and Live Production - Game Design 46035's on p.96, and no other target in the noncredit section (pp.93-100, A to V). This plan prints pp.84-92 whole, the near-miss pages of Journalism AA-T 36533 (p.87), Kinesiology: Athletic Training 16631 (p.88) and Business Supervision/Management 01245/22193 and Administrative Assistant 22192 (p.89), so each gap says whether the page is the program's own. One load, no model call, nothing written.",
+ "college": "Ohlone College",
+ "questions": {
+  "own_page": "Whether the page is the named program's own section (its heading, award and requirement list), and which course codes it prints."
+ },
+ "keywords": [
+  "\\S"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "own_page"
+   ],
+   "url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf"
+  }
+ ],
+ "pdf_span": [
+  84,
+  92
+ ],
+ "pdf_page_cap": 14,
+ "pdf_unfolded": true
+}

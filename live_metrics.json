@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-11-22T21:48:04.787Z",
+  "scraped_at": "2026-11-23T06:19:35.544Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 116,
@@ -139,16 +139,16 @@
         {
           "college": "Chaffey College",
           "students": 3757,
-          "units": 20795.5,
-          "avgUnits": 5.535134415757253,
+          "units": 20816.5,
+          "avgUnits": 5.540723981900452,
           "transcriptionRate": 2,
           "avgTranscribed": 0.11019430396593026,
           "criteriaMetCount": 3,
           "militaryStudents": 420,
           "nonMilitaryStudents": 3343,
           "apprenticeStudents": 12,
-          "savings": 22860130,
-          "yearImpact": 103823029,
+          "savings": 22896460,
+          "yearImpact": 103950436,
           "transcribedUnits": 414
         },
         {
@@ -1133,13 +1133,13 @@
         },
         {
           "college": "Los Angeles City College",
-          "students": 194,
+          "students": 201,
           "units": 0,
           "avgUnits": 0,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 193,
+          "militaryStudents": 200,
           "nonMilitaryStudents": 2,
           "apprenticeStudents": 0,
           "savings": 0,
@@ -1772,11 +1772,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "61,076",
+      "value": "61,083",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "32,573"
+          "value": "32,580"
         },
         {
           "label": "Workforce/Other",
@@ -1892,15 +1892,15 @@
     }
   ],
   "raw": {
-    "Students": 61076,
-    "Units": 292976.9,
+    "Students": 61083,
+    "Units": 292997.9,
     "TranscribedUnits": 86885.15,
-    "Savings": 418225040.25,
-    "YearImpact": 1688626282.3999999,
-    "MilitaryStudents": 32573,
+    "Savings": 418261370.25,
+    "YearImpact": 1688753689.3999999,
+    "MilitaryStudents": 32580,
     "NonMilitaryStudents": 28615,
     "AprenticeStudents": 965,
-    "AverageUnits": 4.796923505141136,
-    "TranscribedAverage": 1.4225743336171326
+    "AverageUnits": 4.79671758099635,
+    "TranscribedAverage": 1.422411309202233
   }
 }
