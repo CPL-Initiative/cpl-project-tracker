@@ -99,6 +99,12 @@ stays off the Los Rios colleges and any college lane 1 takes later.
   plan on `claude/s714-piles-ela` (`6f5c93ef`, no PR under the cap): 14 to passing and 45602 a named gap
   (`total_differs`), 9 held; it changes shared reconcile and scorer code (`own_heading_end`, `own_plan_line_at`,
   `set` with `was` and `hold`), so a second reader is on it before the apply.
+- 13:15Z: #3715's second reader: FIX THEN DISPATCH. Its blocker: Sacramento City 30620 (Active - Teachout Only in the
+  Program Course File) was pinned to 46304 Mathematics 2.0's section, so it leaves the read and becomes a named gap;
+  the reconcile test failed on KeyError '07315' (a merge blocker only). Claim 1 held: 624 reads on 78 pinned fixtures
+  and 26,000 fuzz calls, 0 windows changed outside S714's pins. The conductor dispatched the three paid reads on
+  `claude/s714-rios` in that scope: Sacramento City 18 (about $2.04), Cosumnes River 16 ($1.76), Folsom Lake 3
+  ($0.33). `rios` fixes the blocker, the test and the minors, then reconciles each filed read.
 
 ## Conductor settings
 
@@ -118,6 +124,6 @@ by Opus 5.5.
 | #3713 (`claude/awesome-fermat-ka0z4l`) | the declaration | becomes the checkpoint at sign-off |
 | #3714 (`claude/s714-piles-ccsf`, `piles`) | applied by migrate 45176130201, 8 rows live | the reach-count and test fixes, then the merge |
 | `claude/s714-piles-ela` (`piles2`) | plan filed, 15 rows | the second reader, its PR, the pre-read, the apply, the merge |
-| #3715 (`claude/s714-rios`, `rios`) | reader change and 38 pins filed | the second reader, three paid reads, reconcile, reread, merge |
+| #3715 (`claude/s714-rios`, `rios`) | three paid reads dispatched | the fixes, the filings, reconcile, the reread, merge |
 | #3712 (S712, Sam's plain session) | merged `3cc69ffc` | none |
 | #3383 | dependabot's | waits |
