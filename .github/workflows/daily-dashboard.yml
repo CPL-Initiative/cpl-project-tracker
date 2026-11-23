@@ -186,6 +186,8 @@ jobs:
             git add kb/status/mid_readiness.json 2>/dev/null || true
             # The course outlines to find by hand (kb/_outline_hunt.py, S711).
             git add kb/status/outline_hunt.json 2>/dev/null || true
+            # Every local subject code statewide (kb/_statewide_subject_codes.py, S712).
+            git add kb/status/statewide_subject_codes.json 2>/dev/null || true
             # CPL Pathways AUTHORITATIVE membership view (StarMora) — the program→
             # course join artifact the cards read; regenerated in Step 4a1b above.
             git add cpl_pathways_membership_data.js 2>/dev/null || true

@@ -376,6 +376,11 @@ jobs:
       # districts per outline needed; the committed file reruns to the same bytes. Pure stdlib.
       - name: Outline hunt (kb/_outline_hunt.py)
         run: python3 tests/outline_hunt_test.py
+      # Every local subject code statewide (kb/_statewide_subject_codes.py, S712): every code once with its colleges, a
+      # call and a confidence for each, a filing settled at 100%, no vote from a TOP-only discipline or from the M-ID a
+      # code named, a noncredit code by its category, the top confidence band right 95% or more on the labelled codes.
+      - name: Statewide subject codes (kb/_statewide_subject_codes.py)
+        run: python3 tests/statewide_subject_codes_test.py
       # The Subjects card's two files in the daily build (S695): both builders run after their inputs' steps with
       # --if-changed, each fingerprint ignores its daily stamp, and a rerun on the same inputs writes nothing. Pure stdlib.
       - name: Subjects card in the daily build (--if-changed fingerprints)
