@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-23T09:38:19Z",
+ "written_at": "2026-11-23T09:40:30Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -171,8 +171,8 @@
   "passing": 16948,
   "gap": 5387,
   "with_gap": 118,
-  "cost_usd": 1340.28,
-  "passed_at_read": 16217,
+  "cost_usd": 1340.95,
+  "passed_at_read": 16224,
   "cost_receipts": 118,
   "spent_usd": 1235.28,
   "spent_runs": 186,
@@ -1765,8 +1765,8 @@
    "gap": 133,
    "causes": {
     "no_closed_list": 46,
-    "page_not_found": 55,
-    "unknown_without_live": 32
+    "page_not_found": 54,
+    "unknown_without_live": 33
    },
    "census_causes": {
     "coverage_fails": 9,
@@ -1792,10 +1792,10 @@
     "curricunet"
    ],
    "objectives_printed": null,
-   "read_at": "2026-11-19T07:34:01Z",
+   "read_at": "2026-11-23T07:39:49Z",
    "read_kind": "capture",
-   "cost_usd": 22.04,
-   "passed_at_read": 276,
+   "cost_usd": 22.71,
+   "passed_at_read": 283,
    "slo_queue": null,
    "scout": {
     "recommendation": "page_read",
@@ -1812,13 +1812,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 371,
-   "found": 309,
-   "extracted": 309,
+   "found": 317,
+   "extracted": 317,
    "errors": 0,
    "failed_checks": {
     "coverage": 9,
     "invented": 7,
-    "arithmetic": 24,
+    "arithmetic": 25,
     "repeated": 1,
     "outcomes": 1
    },
@@ -1828,24 +1828,24 @@
    "capture_root": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 332.5,
-   "run": "44474797786",
+   "read_seconds": 328.0,
+   "run": "45132633405",
    "levers": {
-    "reader_page_search": 55,
+    "reader_page_search": 54,
     "program_course_file_check": 46,
-    "reconcile_steps": 28,
+    "reconcile_steps": 29,
     "ge_units_steps": 3,
     "scorer_noncredit_hours": 1
    },
    "collection": {
     "program_reader": {
-     "records": 316,
+     "records": 317,
      "models": {
-      "claude-opus-5-5": 316
+      "claude-opus-5-5": 317
      },
-     "run": "44474797786",
-     "at": "2026-11-19T07:34:01Z",
-     "cost_usd": 22.04,
+     "run": "45132633405",
+     "at": "2026-11-23T07:39:49Z",
+     "cost_usd": 22.71,
      "platform": "pdf"
     },
     "slo_read": {
@@ -1855,7 +1855,7 @@
      "source_kind": "course_outline",
      "file": "kb/course_outcomes/ccsf/read_45128775065_p4of4.json"
     },
-    "plo_programs": 268,
+    "plo_programs": 269,
     "ppm_member": null,
     "maps": {
      "held": 0,
