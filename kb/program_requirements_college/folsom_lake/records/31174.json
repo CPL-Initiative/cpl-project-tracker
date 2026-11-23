@@ -74,7 +74,7 @@
    "pass": false,
    "status": "unequal",
    "computed": [
-    14.0,
+    13.5,
     17.0
    ],
    "stated": [
@@ -83,7 +83,7 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 14.0-17.0; the catalog states 22.0-22.0"
+    "the blocks sum to 13.5-17.0; the catalog states 22.0-22.0"
    ]
   },
   "repeated": {
@@ -501,6 +501,5 @@
    "Text after page 337 (Public Health AS-T and FITNS course descriptions) belongs to other sections and was not used."
   ]
  },
- "extracted_run": 45187906040,
- "read_run": "39046850071"
+ "extracted_run": "39046850071"
 }

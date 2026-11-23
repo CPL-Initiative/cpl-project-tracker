@@ -9,9 +9,9 @@
  "failed": {
   "coverage": 7,
   "invented": 3,
-  "arithmetic": 31,
+  "arithmetic": 32,
   "repeated": 0,
-  "outcomes": 1
+  "outcomes": 0
  },
  "cost_usd_run": 0.0,
  "cost_usd_filed": 18.53,

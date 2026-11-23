@@ -122,7 +122,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "ge_units_not_read",
+    "label": "The degree names a general education pattern, and no units for it were read, so the degree's units cannot be added. Its major adds up to the printed major total.",
+    "words": "the degree names the Cal-GETC pattern and no units were read for it; its major adds to the printed 21"
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 86,
+   "ge_pattern": 50,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {
@@ -310,6 +324,5 @@
    "The Global Business Economics Certificate section on the same pages was not read for this record."
   ]
  },
- "extracted_run": 45184748331,
- "read_run": "39047070975"
+ "extracted_run": "39047070975"
 }

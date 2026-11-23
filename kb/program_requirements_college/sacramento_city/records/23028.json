@@ -46,25 +46,24 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 19,
+   "placed": 18,
    "listed": 19,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.947,
+   "missing": [
+    "COMM321"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "COMMC1004",
-     "listed": "COMM321",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "COMMC1004"
+   ],
+   "flagged": [
+    "COMMC1004"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -328,6 +327,5 @@
    "MKT 314 appears after a page/table break that repeats the table header; treated as part of the Retail Marketing group."
   ]
  },
- "extracted_run": 45184748331,
- "read_run": "39047070975"
+ "extracted_run": "39047070975"
 }

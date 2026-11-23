@@ -46,25 +46,24 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 9,
+   "placed": 8,
    "listed": 9,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.889,
+   "missing": [
+    "ENGWR488"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "ENGL488",
-     "listed": "ENGWR488",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "ENGL488"
+   ],
+   "flagged": [
+    "ENGL488"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -230,6 +229,5 @@
    "Careers 'computer programmers' and 'software developer' taken from the program description ('entry-level software developer positions'); others from Career Information."
   ]
  },
- "extracted_run": 45184748331,
- "read_run": "39047070975"
+ "extracted_run": "39047070975"
 }

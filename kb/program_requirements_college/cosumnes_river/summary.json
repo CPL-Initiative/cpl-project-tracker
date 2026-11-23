@@ -5,13 +5,13 @@
  "found": 208,
  "extracted": 217,
  "errors": 0,
- "passed_machine_checks": 169,
+ "passed_machine_checks": 170,
  "failed": {
   "coverage": 17,
   "invented": 8,
   "arithmetic": 31,
   "repeated": 0,
-  "outcomes": 12
+  "outcomes": 9
  },
  "cost_usd_run": 0.0,
  "cost_usd_filed": 19.08,

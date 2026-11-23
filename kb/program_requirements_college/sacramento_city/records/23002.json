@@ -46,30 +46,27 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 16,
+   "placed": 14,
    "listed": 16,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.875,
+   "missing": [
+    "ENGWR330",
+    "ENGWR384"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "ENGL330",
-     "listed": "ENGWR330",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "ENGL384",
-     "listed": "ENGWR384",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 2,
+   "codes": [
+    "ENGL330",
+    "ENGL384"
+   ],
+   "flagged": [
+    "ENGL330",
+    "ENGL384"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -299,6 +296,5 @@
    "Career entries taken from the certificate's Career Information section; it also mentions job duties such as business newsletters, company websites, and public relations outreach, not recorded as careers."
   ]
  },
- "extracted_run": 45184748331,
- "read_run": "39047070975"
+ "extracted_run": "39047070975"
 }

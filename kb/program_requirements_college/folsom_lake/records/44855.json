@@ -78,7 +78,9 @@
     23.0
    ],
    "against": "program",
-   "why": [],
+   "why": [
+    "the blocks sum to 23.0-26.0; the catalog states 23.0-23.0"
+   ],
    "meets": true,
    "rescored": "Open Asks Sheet 120 card 1"
   },
@@ -352,6 +354,5 @@
    "Text cuts off at HEED 302 course description; no course outcomes printed."
   ]
  },
- "extracted_run": 45187906040,
- "read_run": "39046850071"
+ "extracted_run": "39046850071"
 }

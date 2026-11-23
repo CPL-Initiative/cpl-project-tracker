@@ -46,35 +46,33 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 13,
+   "placed": 12,
    "listed": 17,
-   "share": 0.765,
+   "share": 0.706,
    "missing": [
     "ANTH310",
     "ANTH481",
     "BIOL430",
+    "ENGWR488",
     "ETHNS300"
    ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "ENGL488",
-     "listed": "ENGWR488",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "ENGL488"
+   ],
+   "flagged": [
+    "ENGL488"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
     66.0,
     67.0
@@ -84,10 +82,8 @@
     75.0
    ],
    "against": "program",
-   "why": [],
-   "fill": [
-    7.0,
-    9.0
+   "why": [
+    "the blocks sum to 66.0-67.0; the catalog states 74.0-75.0"
    ]
   },
   "repeated": {
@@ -98,15 +94,11 @@
    "program": 10,
    "courses": 0,
    "count": 10,
-   "not_verbatim": [
-    "integrate the nursing process with critical reasoning skills, in direct and indirect nursing care to meet the patientâ€™s developmental and basic human needs."
-   ],
-   "why": [
-    "not in the catalog text as printed: integrate the nursing process with critical reasoning skills, in direct and indi"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 2,
@@ -293,6 +285,5 @@
    "The A.S. in Nursing, Vocational section on page 564 was ignored."
   ]
  },
- "extracted_run": 45184748331,
- "read_run": "39047070975"
+ "extracted_run": "39047070975"
 }

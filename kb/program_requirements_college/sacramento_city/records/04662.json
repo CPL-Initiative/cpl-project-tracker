@@ -46,30 +46,27 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 19,
+   "placed": 17,
    "listed": 19,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.895,
+   "missing": [
+    "ENGWR330",
+    "ENGWR384"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "ENGL330",
-     "listed": "ENGWR330",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "ENGL384",
-     "listed": "ENGWR384",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 2,
+   "codes": [
+    "ENGL330",
+    "ENGL384"
+   ],
+   "flagged": [
+    "ENGL330",
+    "ENGL384"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -125,7 +122,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "ge_units_not_read",
+    "label": "The degree names a general education pattern, and no units for it were read, so the degree's units cannot be added. Its major adds up to the printed major total.",
+    "words": "the degree names the Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC) pattern and no units were read for it; its major adds to the printed 18"
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 90,
+   "ge_pattern": 50,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {
@@ -346,6 +357,5 @@
    "Careers 'print', 'broadcast', 'online news media' split from 'careers in print, broadcast, and online news media'; 'journalism' from 'skills to work in journalism'."
   ]
  },
- "extracted_run": 45184748331,
- "read_run": "39047070975"
+ "extracted_run": "39047070975"
 }

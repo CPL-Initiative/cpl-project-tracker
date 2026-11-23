@@ -46,33 +46,30 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 15,
+   "placed": 14,
    "listed": 18,
-   "share": 0.833,
+   "share": 0.778,
    "missing": [
     "CHEM300",
     "CHEM49549300",
-    "CHEMT301"
+    "CHEMT301",
+    "ENGWR488"
    ],
    "unexplained": [
     "CHEM49549300"
    ],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "ENGL488",
-     "listed": "ENGWR488",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": false
   },
   "invented": {
-   "count": 1,
+   "count": 2,
    "codes": [
-    "CHEM495"
+    "CHEM495",
+    "ENGL488"
    ],
-   "flagged": [],
+   "flagged": [
+    "ENGL488"
+   ],
    "pass": false
   },
   "arithmetic": {
@@ -281,6 +278,5 @@
    "Careers drawn from the Career Information paragraph for this award; it also says graduates may work in laboratories supporting manufacturing, agriculture, medical research, the petrochemical industry, or government agencies (industries, not recorded as careers)."
   ]
  },
- "extracted_run": 45184748331,
- "read_run": "39047070975"
+ "extracted_run": "39047070975"
 }

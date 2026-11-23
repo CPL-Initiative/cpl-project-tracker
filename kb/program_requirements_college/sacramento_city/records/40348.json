@@ -46,25 +46,24 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 15,
+   "placed": 14,
    "listed": 15,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.933,
+   "missing": [
+    "ENGWR488"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "ENGL488",
-     "listed": "ENGWR488",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "ENGL488"
+   ],
+   "flagged": [
+    "ENGL488"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -291,6 +290,5 @@
    "Text begins at the section heading; the Advanced certificate's program description is not included in the extract."
   ]
  },
- "extracted_run": 45184748331,
- "read_run": "39047070975"
+ "extracted_run": "39047070975"
 }

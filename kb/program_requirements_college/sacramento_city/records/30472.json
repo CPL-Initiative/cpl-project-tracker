@@ -46,32 +46,27 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 26,
+   "placed": 24,
    "listed": 26,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.923,
+   "missing": [
+    "BIOL308",
+    "BIOL309"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "BIOLC1001",
-     "listed": "BIOL308",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "BIOLC1001L",
-     "listed": "BIOL309",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
+   "count": 3,
    "codes": [
+    "BIOLC1001",
+    "BIOLC1001L",
     "CHEM309"
    ],
    "flagged": [
+    "BIOLC1001",
+    "BIOLC1001L",
     "CHEM309"
    ],
    "pass": true
@@ -452,6 +447,5 @@
    "The page also prints an AS-T in Biology outcome/career section and a Field Ecology Certificate; only the A.S. in Biology section was read. Career list taken from the A.S. section's Career Information and description."
   ]
  },
- "extracted_run": 45184748331,
- "read_run": "39047070975"
+ "extracted_run": "39047070975"
 }

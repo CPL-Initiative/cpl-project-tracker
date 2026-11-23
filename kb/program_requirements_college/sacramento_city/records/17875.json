@@ -46,49 +46,41 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 94,
+   "placed": 91,
    "listed": 99,
-   "share": 0.949,
+   "share": 0.919,
    "missing": [
+    "COMM321",
     "ECON302",
     "ECON304",
+    "ENGWR384",
+    "HIST310",
     "HIST311",
     "HIST483",
     "HIST484"
    ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "COMMC1004",
-     "listed": "COMM321",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "ENGL384",
-     "listed": "ENGWR384",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "HISTC1001",
-     "listed": "HIST310",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 5,
+   "count": 8,
    "codes": [
+    "COMMC1004",
     "ECONC2001",
     "ECONC2002",
+    "ENGL384",
+    "HISTC1001",
     "HISTC1001H",
     "HISTC1002",
     "HISTC1002H"
    ],
    "flagged": [
+    "COMMC1004",
     "ECONC2001",
     "ECONC2002",
+    "ENGL384",
+    "HISTC1001",
     "HISTC1001H",
     "HISTC1002",
     "HISTC1002H"
@@ -148,7 +140,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "ge_units_not_read",
+    "label": "The degree names a general education pattern, and no units for it were read, so the degree's units cannot be added. Its major adds up to the printed major total.",
+    "words": "the degree names the Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC) pattern and no units were read for it; its major adds to the printed 18"
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 92,
+   "ge_pattern": 50,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {
@@ -928,6 +934,5 @@
    "Page footers read 'Programs of Study – Communication'. The certificates that follow (Applied Communication Skills, Professional and Workplace Communication) belong to other awards and were not read."
   ]
  },
- "extracted_run": 45184748331,
- "read_run": "39047070975"
+ "extracted_run": "39047070975"
 }
