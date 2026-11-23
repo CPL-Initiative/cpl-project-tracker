@@ -45,25 +45,17 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 27,
+   "placed": 29,
    "listed": 29,
-   "share": 0.931,
-   "missing": [
-    "CSTR42",
-    "FCSTR39"
-   ],
-   "unexplained": [
-    "CSTR42",
-    "FCSTR39"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 2,
    "codes": [
-    "CSTR39F",
-    "CSTR42F",
     "CSTR5F",
     "CSTR7F"
    ],
@@ -71,7 +63,7 @@
     "CSTR5F",
     "CSTR7F"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -109,7 +101,19 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true,
+  "course_renumbers": [
+   {
+    "printed": "CSTR 039 F",
+    "listed": "FCSTR39",
+    "block": "Restricted Electives"
+   },
+   {
+    "printed": "CSTR 042 F",
+    "listed": "CSTR42",
+    "block": "Restricted Electives"
+   }
+  ]
  },
  "record": {
   "program": {
