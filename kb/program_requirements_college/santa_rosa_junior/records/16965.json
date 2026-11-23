@@ -46,25 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 15,
+   "placed": 16,
    "listed": 16,
-   "share": 0.938,
-   "missing": [
-    "PSYCC1000"
-   ],
-   "unexplained": [
-    "PSYCC1000"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "PSYC1000(PSYCC1000)"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -105,7 +99,14 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true,
+  "common_numbers": [
+   {
+    "printed": "PSYC 1000 (PSYC C1000)",
+    "listed": "PSYCC1000",
+    "block": "Medical Assisting: Administrative and Clinical"
+   }
+  ]
  },
  "record": {
   "program": {

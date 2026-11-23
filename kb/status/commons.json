@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-22T21:52:40Z",
+ "written_at": "2026-11-23T06:46:26Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 15328,
+     "n": 15333,
      "of": 20282,
      "words": "complete at 118 colleges",
      "open": "#program-requirements/list"
@@ -34,7 +34,7 @@
    ],
    "issues": [
     {
-     "n": 2017,
+     "n": 2012,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
@@ -68,8 +68,8 @@
    },
    "facts": {
     "active": 20282,
-    "complete": 15328,
-    "failing": 2017,
+    "complete": 15333,
+    "failing": 2012,
     "unread": 2937,
     "records": 18951,
     "colleges": 118,
@@ -383,7 +383,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-19T06:22:43Z",
+    "at": "2026-11-19T06:22:43+00:00",
     "every_hours": null
    },
    "facts": {
@@ -772,7 +772,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 2017,
+    "n": 2012,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"
@@ -809,7 +809,7 @@
     "kind": "not_shrinking",
     "n": 2937,
     "was": 2820,
-    "since": "2026-11-15",
+    "since": "2026-11-16",
     "words": "active programs with no record yet",
     "owner": "the harvest",
     "open": "#program-requirements/list/unread"
@@ -820,7 +820,7 @@
     "kind": "not_shrinking",
     "n": 584,
     "was": 499,
-    "since": "2026-11-15",
+    "since": "2026-11-16",
     "words": "credentials with no Common SUBJ (449 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
     "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
     "open": "#exhibits/list/nosubj"

@@ -46,9 +46,9 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 72,
+   "placed": 74,
    "listed": 135,
-   "share": 0.533,
+   "share": 0.548,
    "missing": [
     "ANAT1",
     "DANC101",
@@ -110,32 +110,25 @@
     "KINC42",
     "KINC43",
     "PHYZ1",
-    "PSYCC1000",
-    "SOCIC1000",
-    "STATC1000"
+    "SOCIC1000"
    ],
-   "unexplained": [
-    "PSYCC1000",
-    "STATC1000"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 5,
+   "count": 3,
    "codes": [
     "BIO10",
     "KIN53",
-    "PSYC1000(PSYCC1000)",
-    "SOC1",
-    "STAT1000(STATC1000)"
+    "SOC1"
    ],
    "flagged": [
     "BIO10",
     "KIN53",
     "SOC1"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
@@ -180,7 +173,33 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "common_numbers": [
+   {
+    "printed": "STAT 1000 (STAT C1000)",
+    "listed": "STATC1000",
+    "block": "Kinesiology for Transfer List A Requirement"
+   },
+   {
+    "printed": "PSYC 1000 (PSYC C1000)",
+    "listed": "PSYCC1000",
+    "block": "Kinesiology for Transfer List A Requirement"
+   }
+  ],
+  "gaps": [
+   {
+    "gap": "section_cut_off",
+    "label": "The program's section runs onto a page the read did not hold, so part of its requirements is missing from the record and its units cannot be checked against the printed total.",
+    "words": "the reader's note says the section continues past the pages read: \"The text begins mid-section on page 169: the program heading, description, core requirements (likely KIN 1, ANAT 1, PHYZ 1) and movement Areas 1-3 plus the start of the KFIT area are on the previous page and not in the text.\""
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 20,
+   "course_list_match": 50,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

@@ -126,11 +126,16 @@ GAPS = {
     # its printed figure, and its figures add to the printed total, while the list's own courses carry more.
     "lists_past_their_figure": ("The catalog's figures add up to its printed total, counting each list at its "
                                 "printed figure; the courses in a list carry more units than that figure."),
+    # S713 (lane 2's cheap piles at Santa Rosa Junior): the program's section runs onto a page the read did not hold,
+    # so part of its requirements is missing from the record. Collected with the gap named, never reread (Sam,
+    # 2026-11-17: gaps noted instead of rereads).
+    "section_cut_off": ("The program's section runs onto a page the read did not hold, so part of its requirements "
+                        "is missing from the record and its units cannot be checked against the printed total."),
 }
 ARITH_SCORE = {"major_total_differs": 30, "no_units_printed": 40, "no_units_read": 20, "no_hours_read": 20,
                "catalog_figures_differ": 50, "total_not_printed": 40, "total_differs": 50, "ge_units_not_read": 50,
                "hours_total_not_read": 40, "hours_within_printed_range": 50, "hours_total_differs": 30,
-               "lists_past_their_figure": 60}
+               "lists_past_their_figure": 60, "section_cut_off": 20}
 MAJOR_NOT_EXACT = "the major does not match the catalog's major total exactly"
 NO_UNITS_WHY = re.compile(r"^a required course in '.*' has no units$")
 PRINTED_NO_UNITS = re.compile(r"\b(?:no|without)\s+units\b|\bunits?\s+(?:are\s+|is\s+)?not\s+(?:printed|listed|given)\b"
@@ -195,7 +200,8 @@ def confidence(filed: dict, gap: str | None, method: str | None = None, year_ok:
     else:
         ge = 50 if (prog.get("ge_pattern") and S._span(prog.get("ge_units")) is None) else 100
     clm = None if share is None else int(round(float(share) * 100))
-    if clm is not None and may_continue(filed):
+    if clm is not None and (may_continue(filed) or gap == "section_cut_off"):
+        # A record whose section runs past the read (S713) places the courses it read, not the program's list.
         clm = min(clm, MAY_CONTINUE_CAP)
     return {"unit_arithmetic": 100 if a.get("pass") else ARITH_SCORE.get(gap, 0),
             "course_list_match": clm,
@@ -911,13 +917,112 @@ def lists_past_their_figure(filed: dict) -> str | None:
         "their printed figures", S._fig(*comp)))
 
 
+# ── section_cut_off (S713) ─────────────────────────────────────────────────
+# The reader's own words that the program's requirements continue on a page the read did not hold: a sentence (of a
+# note, a block's name or the section heading) whose subject is the requirements (a requirement, the core, a list, a
+# table, the courses) and that says the rest sits on another page not in the text, or that the list or table is cut
+# off at a page break. A description, a heading or a career list read short is not this gap: the requirements are.
+CUT_SUBJECT = re.compile(r"\b(?:requirements?|core|lists?|tables?|courses?|prerequisites?|selection\s+rule)\b", re.I)
+CUT_PAGE = r"(?:previous|preceding|prior|earlier|next|following)\s+page"
+CUT_LOSS = re.compile(
+    r"\b(?:on|from)\s+(?:the\s+|an\s+)?" + CUT_PAGE + r"\b[^.;]{0,120}?\b(?:not\s+(?:in\s+the\s+(?:supplied\s+|provided\s+)?"
+    r"(?:text|excerpt)|provided|included|supplied)|which\s+(?:was|is)\s+not\s+(?:provided|included|in\s+the\s+text))"
+    r"|\bon\s+page\s+\d+,\s+which\s+was\s+not\s+provided"
+    r"|\bcut\s+off\s+(?:at\s+(?:the|a)\s+page\s+break|on\s+the\s+(?:previous|preceding|next)\s+page|before\s+page\s+\d+)"
+    r"|\bcut\s+off\b[^.;]{0,40}\b" + CUT_PAGE +
+    r"|\b(?:text|excerpt)\s+ends\s+at\b[^.;]{0,80}\bpage\s+break\b"
+    r"|\bcontinued\s+from\s+(?:the\s+)?previous\s+page\b"
+    r"|\b(?:likely|probably)\s+on\s+the\s+(?:next|following)\s+page\b", re.I)
+CUT_PAGE_NUMBER = re.compile(r"\bpages?\s+(\d{1,4})\b", re.I)
+# The colleges the rule names a gap at (S713, lane 2): Santa Rosa Junior and Santa Monica, every one of whose failing
+# records is hand-held below. A college joins once its failing records are hand-held and its precision count reads
+# no wrong call; kb/_program_piles_s713.py counts the records the ungated rule would name elsewhere, unwritten.
+CUT_OFF_COLLEGES = ("Santa Rosa Junior College", "Santa Monica College")
+# The S713 second read, by hand, of every failing record at the two colleges: the twelve whose section runs onto a
+# page the read did not hold. Every other failing record there holds no such gap.
+HAND_HELD_CUT_OFF = frozenset(("Santa Rosa Junior College", cn) for cn in (
+    "06566", "06602", "15461", "15463", "30750", "32298", "32300", "32330", "32357", "33166", "45477", "45558"))
+
+
+def _claim_sentences(filed: dict) -> list[str]:
+    """The reader's sentences a cut-off claim is read from: each note's sentences, each block's name, the heading."""
+    rec = filed.get("record") or {}
+    # A sentence ends after a lower-case letter, a digit or a closing mark, never inside "A.S." or "A.A-T".
+    out = [s for n in rec.get("notes") or [] for s in re.split(r"(?<=[a-z0-9)'\"][.!?])\s+(?=[A-Z])", str(n))]
+    out += [str(b.get("name") or "") for b in rec.get("blocks") or []]
+    out.append(str(((rec.get("program") or {}).get("section_heading")) or ""))
+    return [s for s in out if s]
+
+
+def cut_off_claim(filed: dict) -> str | None:
+    """The reader's sentence saying the requirements continue on a page the read did not hold, or None."""
+    for s in _claim_sentences(filed):
+        if CUT_SUBJECT.search(s) and CUT_LOSS.search(s):
+            return s
+    return None
+
+
+def source_pages(filed: dict, src: dict | None) -> list[int]:
+    """The pages the read held (sources.json), apart from the reader's words."""
+    e = (src or {}).get(str(filed.get("control_number"))) or {}
+    return [int(p) for p in ((e.get("source") or {}).get("pages") or []) if str(p).isdigit()]
+
+
+def cut_off_claim_stands(filed: dict, src: dict | None) -> bool | None:
+    """The claim checked against the pages the read held: False where every page the sentence names is a page the
+    read held in its middle (the requirements it says are missing sat in the text); True where it names a page the
+    read did not hold, or only the first or last page held (where the section runs off it); None where it names no
+    page or the sources file lists none."""
+    claim = cut_off_claim(filed)
+    pages = source_pages(filed, src)
+    if not claim or not pages:
+        return None
+    named = [int(m.group(1)) for m in CUT_PAGE_NUMBER.finditer(claim)]
+    if not named:
+        return None
+    if any(p not in pages for p in named):
+        return True
+    return any(p in (min(pages), max(pages)) for p in named)
+
+
+def _short_or_unread(filed: dict) -> bool:
+    """The arithmetic fails short of the printed total, or cannot be added: a section the read lost courses from
+    adds up to less, never more. A sum past the printed total is another gap."""
+    a = (filed.get("score") or {}).get("arithmetic") or {}
+    if a.get("pass") or a.get("status") not in ("incomplete", "unequal"):
+        return False
+    comp, st = _pair(a.get("computed")), _pair(a.get("stated"))
+    if comp and st and comp[0] > st[1] + FIG_EPS:
+        return False
+    return a.get("status") == "incomplete" or bool(comp and st and comp[0] < st[0] - FIG_EPS)
+
+
+def section_cut_off_ungated(filed: dict) -> str | None:
+    """section_cut_off at any college: collectable, the units short of the total or unread, and the reader's note
+    saying the section continues past the pages read."""
+    if not collectable(filed.get("score") or {}) or not _short_or_unread(filed):
+        return None
+    claim = cut_off_claim(filed)
+    if not claim:
+        return None
+    return "the reader's note says the section continues past the pages read: \"%s\"" % claim.strip()[:300]
+
+
+def section_cut_off(filed: dict) -> str | None:
+    if filed.get("college") not in CUT_OFF_COLLEGES:
+        return None
+    return section_cut_off_ungated(filed)
+
+
 RECORD_RULES = (("major_total_differs", major_total_differs), ("total_not_printed", total_not_printed),
                 ("total_differs", total_differs), ("ge_units_not_read", ge_units_not_read),
                 ("hours_total_not_read", hours_total_not_read),
                 ("hours_within_printed_range", hours_within_printed_range),
                 ("hours_total_differs", hours_total_differs),
                 # After the hours gaps (S703): an hours record whose lists pass their figure keeps its hours gap.
-                ("lists_past_their_figure", lists_past_their_figure)) + (
+                ("lists_past_their_figure", lists_past_their_figure),
+                # S713: before no_units_read, so a cut-off read is named as one, never as a course with no units.
+                ("section_cut_off", section_cut_off)) + (
     (("no_units_printed", no_units_printed),) if NO_UNITS_PRINTED_ON else ()) + (("no_units_read", no_units_read),)
 
 
@@ -1070,6 +1175,10 @@ def held_answer(filed: dict) -> str | None:
         # A record whose own words make the claim false is held out of both by one reading (lists_held_out);
         # lists_precision measures that reading against the hand-held answers.
         return "lists_past_their_figure"
+    if filed.get("college") in CUT_OFF_COLLEGES and (filed.get("college"), str(filed.get("control_number"))) \
+            in HAND_HELD_CUT_OFF:
+        # S713: the second read by hand of every failing record at the gated colleges, apart from the rule's matcher.
+        return "section_cut_off"
     why = [w for w in a.get("why") or [] if w != "the record names no total"]
     if (a.get("status") == "incomplete" and why and all(w.endswith(" has no units") for w in why)
             and (filed.get("college"), str(filed.get("control_number"))) not in HELD_INCOMPLETE):

@@ -46,28 +46,23 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 14,
+   "placed": 15,
    "listed": 15,
-   "share": 0.933,
-   "missing": [
-    "PSYCC1000"
-   ],
-   "unexplained": [
-    "PSYCC1000"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "MA164",
-    "PSYC1000(PSYCC1000)"
+    "MA164"
    ],
    "flagged": [
     "MA164"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -105,7 +100,14 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true,
+  "common_numbers": [
+   {
+    "printed": "PSYC 1000 (PSYC C1000)",
+    "listed": "PSYCC1000",
+    "block": "Medical Assisting: Administrative and Clinical"
+   }
+  ]
  },
  "record": {
   "program": {

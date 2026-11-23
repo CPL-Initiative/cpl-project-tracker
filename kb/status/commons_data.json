@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-22T22:51:25Z",
+ "written_at": "2026-11-23T06:45:51Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,8 +168,8 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 16940,
-  "gap": 5395,
+  "passing": 16957,
+  "gap": 5378,
   "with_gap": 118,
   "cost_usd": 1339.79,
   "passed_at_read": 16209,
@@ -189,9 +189,9 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16629,
-  "gap": 5395,
-  "collected_with_gaps": 311,
+  "passing": 16634,
+  "gap": 5378,
+  "collected_with_gaps": 323,
   "discontinued": 0
  },
  "census_live": {
@@ -11070,14 +11070,14 @@
    "harvested": true,
    "slug": "santa_rosa_junior",
    "programs": 283,
-   "passing": 229,
-   "gap": 54,
+   "passing": 246,
+   "gap": 37,
    "causes": {
     "extraction_error": 1,
     "found_not_extracted": 1,
     "no_closed_list": 4,
     "page_not_found": 20,
-    "unknown_without_live": 28
+    "unknown_without_live": 11
    },
    "census_causes": {
     "coverage_fails": 9,
@@ -11141,8 +11141,8 @@
    "read_seconds": 258.7,
    "run": "44701011374",
    "levers": {
-    "reconcile_steps": 28,
     "reader_page_search": 20,
+    "reconcile_steps": 11,
     "program_course_file_check": 4,
     "paid_read": 2
    },
