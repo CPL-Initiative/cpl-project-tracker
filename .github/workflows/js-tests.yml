@@ -396,6 +396,10 @@ jobs:
       # committed view is what a build writes. Pure stdlib.
       - name: MQ view (kb/_mq_view.py, kb/reference/mq_handbook_20th.json)
         run: python3 tests/mq_view_test.py
+      # A Common SUBJ code's history (S717): a save that changes a code keeps the old one with its title, date, who and
+      # note; a rerun records nothing; no email lands in it. Pure stdlib.
+      - name: Common SUBJ code history (kb/_apply_canonical_subj4.py record_former)
+        run: python3 tests/csr_code_history_test.py
       # The Subjects card's two files in the daily build (S695): both builders run after their inputs' steps with
       # --if-changed, each fingerprint ignores its daily stamp, and a rerun on the same inputs writes nothing. Pure stdlib.
       - name: Subjects card in the daily build (--if-changed fingerprints)
