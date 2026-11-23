@@ -81,10 +81,10 @@ RUN_PUT_BACK = {
 }
 # The fill's self-recall over every record the run filed (S714's second reader, and kb/_program_piles_s714_sequoias.py
 # against commit 151af86d0): 22 filled, each agreeing with the figure the reader's notes quote (or the notes silent),
-# none false; 36073 missed (its page prints no "above"); 06717, 06738, 06762, 36660 and 45498 already carry ge_overlap
+# none false; 36073 missed (its page prints no "above"); 06717, 06738, 06762, 18441, 36660 and 45498 already carry ge_overlap
 # true (ruling 1), so the fill leaves them.
 FILL_RECALL = {"filled": 22, "agree": 22, "false": 0, "missed": ["36073"],
-               "already_true": ["06717", "06738", "06762", "36660", "45498"], "run_commit": "151af86d0"}
+               "already_true": ["06717", "06738", "06762", "18441", "36660", "45498"], "run_commit": "151af86d0"}
 FIGURE = re.compile(r"(\d+(?:\.\d+)?)(?:\s*-\s*(\d+(?:\.\d+)?))?\s+units?\s+may\s+(?:be\s+)?double[\s-]?count", re.I)
 
 
