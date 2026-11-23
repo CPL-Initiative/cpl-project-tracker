@@ -58,3 +58,12 @@ college until it merges.
   it before `.load` is pushed.
 - 06:47Z: #3686 brought up from `main` (`9332ac1d`, main's side of four Commons files, both builders rerun); its `test`
   is running.
+- 06:57Z: #3686 merged (`9b8480e3`); Ohlone, San Joaquin Delta, Mt. San Antonio, Santa Barbara City and Orange Coast
+  leave lane 1's landing. #3675 is coming up from `main` next (Glendale 38973 filed as `page_challenged`, the host's
+  bot check in run 45030485543).
+- Peralta's load: the second reader held it for 12 system notes ("Won't delete", "duplicate to be removed") that would
+  have loaded as objectives; fixed on #3684, then load run 45127831747 inserted 3,731 rows, confirmed live (Laney
+  663/663, Merritt 463/465, College of Alameda 365/368, Berkeley City 372/372, SLO/objective). `peralta` moves to City
+  College of San Francisco as its one writer (the outline read, then the 53 page-finding programs).
+- Lane 2: #3705 (draft) moves 17 Santa Rosa Junior records (5 pass, 12 as `section_cut_off`); a second reader is on it.
+  Santa Monica's 26 stay held (6 wait on runner page text, 17 need a reread, 3 a page read or a person).
