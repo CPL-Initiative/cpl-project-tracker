@@ -46,32 +46,25 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 13,
+   "placed": 15,
    "listed": 16,
-   "share": 0.812,
+   "share": 0.938,
    "missing": [
-    "PSYCC1000",
-    "SOCIC1000",
-    "STATC1000"
+    "SOCIC1000"
    ],
-   "unexplained": [
-    "PSYCC1000",
-    "STATC1000"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 1,
    "codes": [
-    "PSYC1000(PSYCC1000)",
-    "SOC1",
-    "STAT1000(STATC1000)"
+    "SOC1"
    ],
    "flagged": [
     "SOC1"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -112,7 +105,19 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true,
+  "common_numbers": [
+   {
+    "printed": "STAT 1000 (STAT C1000)",
+    "listed": "STATC1000",
+    "block": "Sociology for Transfer Required Core: Select any combination totaling at least 3.00 units from the following"
+   },
+   {
+    "printed": "PSYC 1000 (PSYC C1000)",
+    "listed": "PSYCC1000",
+    "block": "Sociology for Transfer List B"
+   }
+  ]
  },
  "record": {
   "program": {

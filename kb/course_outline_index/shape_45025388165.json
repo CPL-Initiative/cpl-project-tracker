@@ -1,0 +1,64 @@
+{
+ "_about": "A shape subset of index 45025388165 (S703): ART 001, whose four rows are the four Peralta colleges, and ART 024, two rows that Berkeley City alone names, so a 5-page shape trial shows what each college's report 416 page prints as its college. Not a read index; the full read takes index_45025388165.json.",
+ "run": "45025388165",
+ "at": "2026-11-22T13:16:41Z",
+ "url": "https://lan.curriqunet.com/",
+ "report_form": "DynamicReports/AllFieldsReportByEntity/{course_id}?entityType=Course&reportId={report_id}",
+ "report_title": "^Outcome Outline$",
+ "status_keep": "Active",
+ "client": null,
+ "index": {
+  "ART 001": [
+   {
+    "course_id": 22154,
+    "title": "Introduction to Art History",
+    "proposal_type": "MC Course Modification",
+    "reports": [
+     "https://lan.curriqunet.com/DynamicReports/AllFieldsReportByEntity/22154?entityType=Course&reportId=416"
+    ]
+   },
+   {
+    "course_id": 22262,
+    "title": "Introduction to Art History",
+    "proposal_type": "BCC Course - Update",
+    "reports": [
+     "https://lan.curriqunet.com/DynamicReports/AllFieldsReportByEntity/22262?entityType=Course&reportId=416"
+    ]
+   },
+   {
+    "course_id": 22279,
+    "title": "Introduction to Art History",
+    "proposal_type": "COA Course Changes in Catalog Info",
+    "reports": [
+     "https://lan.curriqunet.com/DynamicReports/AllFieldsReportByEntity/22279?entityType=Course&reportId=416"
+    ]
+   },
+   {
+    "course_id": 22604,
+    "title": "Introduction to Art History",
+    "proposal_type": "Laney Course Updating",
+    "reports": [
+     "https://lan.curriqunet.com/DynamicReports/AllFieldsReportByEntity/22604?entityType=Course&reportId=416"
+    ]
+   }
+  ],
+  "ART 024": [
+   {
+    "course_id": 22611,
+    "title": "Special Projects:  Drawing  ",
+    "proposal_type": "Laney Course Updating",
+    "reports": [
+     "https://lan.curriqunet.com/DynamicReports/AllFieldsReportByEntity/22611?entityType=Course&reportId=416"
+    ]
+   },
+   {
+    "course_id": 19484,
+    "title": "Special Projects: Drawing",
+    "proposal_type": "BCC Course - Update",
+    "reports": [
+     "https://lan.curriqunet.com/DynamicReports/AllFieldsReportByEntity/19484?entityType=Course&reportId=416"
+    ]
+   }
+  ]
+ }
+}

@@ -430,6 +430,112 @@ def objectives_from_html(page_html: str) -> list[str] | None:
     return out or None
 
 
+# Peralta's Outcome Outline (report 416 on lan.curriqunet.com, shape trial 45026998155, S703) prints each part as a
+# rendered section named in its h4: STUDENT LEARNING OUTCOMES lists each outcome in bold with its assessment method
+# after a line break, Student Performance Objectives (Exit Skills) lists one objective an item, and the CB data
+# elements follow in a section of their own. The text reader filed the methods and the CB lines as outcomes (13 on
+# ART 001, which prints 3) and no objectives, so these hosts read the sections.
+SECTION_HOSTS = {"lan.curriqunet.com"}
+SECTION_OBJ = re.compile(r"\bobjectives\b", re.I)
+
+
+def section_host(report: str | None) -> bool:
+    return urllib.parse.urlparse(report or "").netloc.lower() in SECTION_HOSTS
+
+
+# The elements whose text is its own item where a section prints no list (one objective a paragraph).
+SECTION_BLOCKS = {"p", "div", "li", "tr", "h1", "h2", "h3", "h4", "h5", "h6", "blockquote", "pre"}
+
+
+def _block_texts(node) -> list[str]:
+    """Each innermost block element's text under node, in page order: a field that prints its items as paragraphs
+    gives one item a paragraph, never one run-together item."""
+    def has_block(n):
+        return any(not isinstance(k, str) and (k.tag in SECTION_BLOCKS or has_block(k)) for k in n.kids)
+    leaves = [n for n in node.find(lambda n: n.tag in SECTION_BLOCKS and not has_block(n))]
+    return [x for x in (_ws(n.text()) for n in leaves) if x]
+
+
+def _section_items(section, kind: str = "slo") -> list[str]:
+    """Each top-level item of the section's first list. An SLO item is its bold text where it prints one (the
+    outcome; its assessment methods follow the break), else its text up to its first line break. An objective item is
+    its whole text, a line break read as a space. A section that prints no list gives one item per block element."""
+    lst = next(iter(section.find(lambda n: n.tag in ("ol", "ul"))), None)
+    out = []
+    for li in [k for k in (lst.kids if lst else []) if not isinstance(k, str) and k.tag == "li"]:
+        bold = next((k for k in li.kids if not isinstance(k, str) and k.tag in ("b", "strong") and _ws(k.text())),
+                    None) if kind == "slo" else None
+        if bold is not None:
+            own = _ws(bold.text())
+        elif kind == "slo":
+            head = []
+            for k in li.kids:
+                if not isinstance(k, str) and k.tag == "br":
+                    break
+                head.append(k if isinstance(k, str) else k.text(skip=("ol", "ul")))
+            own = _ws("".join(head))
+        else:
+            own = _ws(li.text(skip=("ol", "ul")))
+        own = MARKER.sub("", own, count=1).strip()
+        if own:
+            out.append(own)
+    if lst is None:
+        val = next(iter(section.find(lambda n: _has_class(n, "field-value"))), None)
+        if val is not None:
+            out = [MARKER.sub("", x, count=1).strip() for x in (_block_texts(val) or [_ws(val.text())])]
+    return [x for x in out if x]
+
+
+def sections_from_html(page_html: str) -> dict:
+    """A section host's outcomes and objectives, each from the first rendered section its h4 names (SLO_TITLE,
+    SECTION_OBJ)."""
+    tree = _Tree()
+    tree.feed(page_html or "")
+    got = {"slo": None, "objective": None}
+    for sec in tree.root.find(lambda n: _has_class(n, "rendered-section")):
+        name_node = next(iter(sec.find(lambda n: _has_class(n, "section-name"))), None)
+        name = _ws(name_node.text()) if name_node else ""
+        kind = "slo" if SLO_TITLE.match(name) else ("objective" if SECTION_OBJ.search(name) else None)
+        if not kind or got[kind] is not None:
+            continue
+        got[kind] = {"heading": name.rstrip(":").strip(), "items": _section_items(sec, kind)}
+    return got
+
+
+def apply_sections(row: dict, page_html: str) -> dict:
+    """A SECTION_HOSTS row as filed: its outcomes and objectives from the page's sections in place of the base
+    parse's, and the college the page prints. Every other host's row is returned unchanged. Applied after read_one
+    (read_courses) and after a reparse, so the base parse, and every other host's fingerprint, stays as it was."""
+    if not section_host(row.get("report")) or row.get("status") != 200:
+        return row
+    got = sections_from_html(page_html)
+    slo, obj = got["slo"], got["objective"]
+    items = slo["items"] if slo else []
+    objs = obj["items"] if obj else []
+    row = {k: v for k, v in row.items() if k not in ("groups", "why_none")}
+    row.update(shape="list" if len(items) > 1 else ("paragraph" if items else "none"),
+               heading=slo["heading"] if slo else None, lead=None, outcomes=items, maps_to=None,
+               parsed_from="sections", fingerprint=fingerprint(items) if items else None,
+               objectives=objs, objectives_heading=obj["heading"] if objs else None, objectives_lead=None,
+               objectives_fingerprint=fingerprint(objs) if objs else None,
+               college_printed=printed_college(page_html))
+    return row
+
+
+def printed_college(page_html: str) -> str | None:
+    """The college a curriQunet report names as its own: the title of its college-logo image (Peralta's four
+    colleges share lan.curriqunet.com; each page prints its own, S703), the class among others and either quote.
+    None when the page prints none."""
+    for tag in re.findall(r"<img\b[^>]*>", page_html or "", re.I):
+        cls = re.search(r"""\bclass\s*=\s*(["'])(.*?)\1""", tag, re.I | re.S)
+        if not cls or "college-logo" not in cls.group(2).split():
+            continue
+        t = re.search(r"""\btitle\s*=\s*(["'])(.*?)\1""", tag, re.I | re.S)
+        name = _ws(html.unescape(t.group(2))) if t else ""
+        return name or None
+    return None
+
+
 def objectives_block(page_html: str, text: str, report: str | None = None) -> dict:
     """The objectives as parse_page files them: the text reader's heading and lead-in, with the All Fields
     report's own fields as the items where it prints them. None from a report whose template prints no
@@ -599,13 +705,64 @@ def folded_pair(entries: list[dict], suffixes: set[str]) -> bool:
     return len(ids) >= 2 and len(suffixes) >= 2
 
 
+# A host holding several colleges' outlines under one course code, one row per college: Peralta's four colleges on
+# lan.curriqunet.com (index 45025388165: 376 of 2,201 codes hold two to four colleges' rows, never two of one
+# college). Each college reads the row whose proposal type its pattern names, so a shared code is read once per
+# college; the page's own college field, never the code or this pattern, decides whose row the load files (S703).
+SHARED_CODE_HOSTS = {"lan.curriqunet.com": {"laney": r"^Laney\b", "merritt": r"^MC\b",
+                                            "college_of_alameda": r"^COA\b", "berkeley_city": r"^BCC\b"}}
+
+
+def shared_code_rows(index: dict, by_code: dict[str, list[str]], pats: dict[str, str]) -> list[dict]:
+    """On a SHARED_CODE_HOSTS host: one course per index row whose proposal type names a college whose records name
+    the code, that college alone in named_by and as row_college. A row no pattern names is not read."""
+    out = []
+    for code in sorted(by_code):
+        for e in index["index"].get(code) or []:
+            if not e.get("reports"):
+                continue
+            for slug in by_code[code]:
+                if re.search(pats.get(slug) or r"(?!)", e.get("proposal_type") or ""):
+                    out.append({"code": code, "title": e.get("title"), "course_id": e.get("course_id"),
+                                "report": e["reports"][0], "named_by": [slug], "row_college": slug})
+    return out
+
+
+def shared_code_unread(index: dict, slugs: list[str]) -> list[dict]:
+    """On a SHARED_CODE_HOSTS host: each (college, code) its records name whose code the index holds, with a report,
+    only under other colleges' rows, so the read takes no page for it (index 45025388165: 21 of Peralta's four
+    colleges' codes). Empty on any other host."""
+    pats = SHARED_CODE_HOSTS.get(urllib.parse.urlparse(index.get("url") or "").netloc.lower())
+    if not pats:
+        return []
+    out = []
+    for slug, codes in index_mod.record_codes(slugs).items():
+        for code in sorted(set(codes)):
+            entries = [e for e in index["index"].get(code) or [] if e.get("reports")]
+            if entries and not any(re.search(pats.get(slug) or r"(?!)", e.get("proposal_type") or "")
+                                   for e in entries):
+                out.append({"college": slug, "code": code,
+                            "why": "the index holds this code only under another college's rows"})
+    return out
+
+
+def page_stem(row: dict) -> str:
+    """A trial's file name for a page: its code, and on a shared-code host its course id too, since one code there
+    is two to four colleges' pages."""
+    stem = re.sub(r"[^A-Za-z0-9]+", "_", row["code"])
+    return "%s_%s" % (stem, row["course_id"]) if row.get("row_college") else stem
+
+
 def wanted_courses(index: dict, slugs: list[str]) -> list[dict]:
     """Each course the loaded records name that has an outline report, once, with the
-    colleges (by slug) whose records name it."""
+    colleges (by slug) whose records name it; on a shared-code host, once per college (shared_code_rows)."""
     by_code: dict[str, list[str]] = {}
     for slug, codes in index_mod.record_codes(slugs).items():
         for c in codes:
             by_code.setdefault(c, []).append(slug)
+    pats = SHARED_CODE_HOSTS.get(urllib.parse.urlparse(index.get("url") or "").netloc.lower())
+    if pats:
+        return shared_code_rows(index, by_code, pats)
     suffixes = index_mod.record_code_suffixes(slugs)
     out = []
     for code in sorted(by_code):
@@ -791,14 +948,20 @@ TEXT_CAP = 80000
 # its curriculum staff (second reader on #3586, S689).
 # Saddleback's and Irvine Valley's host and Rio Hondo's (S691) are read the same way from their first trial: a
 # curriQunet report can name its originator, and no page from either has been filed to show otherwise.
-OUTCOMES_ONLY_HOSTS = {"ccsf.curricunet.com", "saddleback.curriqunet.com", "riohondo.curriqunet.com"}
+# Peralta's lan.curriqunet.com prints an Originator line on every Outcome Outline page (shape trial 45026998155's
+# five pages, S703; d-lan-outcomes-only-host-s703), so it is read the same way.
+OUTCOMES_ONLY_HOSTS = {"ccsf.curricunet.com", "saddleback.curriqunet.com", "riohondo.curriqunet.com",
+                       "lan.curriqunet.com"}
 # The fields a row filed from such a host keeps. Each is the index's, the load's status, or a parsed field; the
 # page's title and any text the parser did not take as an outcome or objective stay out.
 OUTCOMES_ONLY_KEYS = (
     "code", "title", "course_id", "report", "named_by", "status", "final_url", "access", "chars", "text_cut",
     "html_chars", "html_cut", "offered_at", "shape", "heading", "lead", "outcomes", "maps_to", "groups",
     "parsed_from", "why_none", "fingerprint", "objectives", "objectives_heading", "objectives_lead",
-    "objectives_fingerprint", "section_heads")
+    "objectives_fingerprint", "section_heads",
+    # A shared-code host's row: the college whose proposal type the index row carries, and the college its page
+    # prints (the one the load files it for; S703).
+    "row_college", "college_printed")
 # The page files a trial keeps elsewhere, for a person to read the parser against: never from such a host.
 PAGE_FILE_ENDS = (".txt", ".html.gz", ".html")
 
@@ -867,7 +1030,7 @@ def file_trial_page(reader, out_dir: str, course: dict) -> list[str]:
     from an outcomes-only host, whose trial files the parsed row alone. Returns the files written."""
     if outcomes_only(course.get("report") or ""):
         return []
-    stem = re.sub(r"[^A-Za-z0-9]+", "_", course["code"])
+    stem = page_stem(course)
     txt, html_gz = os.path.join(out_dir, stem + ".txt"), os.path.join(out_dir, stem + ".html.gz")
     with open(txt, "w") as f:
         f.write(reader.page.evaluate(FULL_BODY_JS) or "")
@@ -914,9 +1077,12 @@ IRVINE_VALLEY_RECALL = os.path.join(HERE, "course_outcomes", "irvine_valley_reca
 # A host's recall file, or, where one host holds two colleges' outlines, each college's own file by its slug. Irvine
 # Valley's outlines sit on Saddleback's host, printed by another report (198, Official Course Outline of Record, where
 # Saddleback's is 201), so each college's count opens a read for that college alone (S697).
+# Peralta's four colleges read lan.curriqunet.com as one set, the page's own college deciding each row (S703).
+PERALTA_RECALL = os.path.join(HERE, "course_outcomes", "peralta_recall.json")
 RECALL_BY_HOST = {"ccsf.curricunet.com": CCSF_RECALL, "riohondo.curriqunet.com": RIO_HONDO_RECALL,
                   "saddleback.curriqunet.com": {"saddleback": SADDLEBACK_RECALL,
-                                                "irvine_valley": IRVINE_VALLEY_RECALL}}
+                                                "irvine_valley": IRVINE_VALLEY_RECALL},
+                  "lan.curriqunet.com": PERALTA_RECALL}
 
 
 def recall_path(host: str, slugs: str | None = None) -> str | None:
@@ -981,16 +1147,21 @@ EXCERPT_BY_HOST = {"ccsf.curricunet.com": (EXCERPT_FROM, EXCERPT_TO),
                    # Irvine Valley's Official Course Outline of Record (198) on the same host: its STUDENT LEARNING
                    # OUTCOMES section ends at its Required Texts heading (trial 44910471774's section_heads, 12 of 12
                    # pages; S697).
-                   "saddleback.curriqunet.com/198": ("Student Learning Outcomes", "Required Texts*")}
+                   "saddleback.curriqunet.com/198": ("Student Learning Outcomes", "Required Texts*"),
+                   # Peralta's Outcome Outline (416): its SLO section ends where the CB data elements start (shape
+                   # trial 45026998155, 5 of 5 pages; the Originator line sits far above it, S703).
+                   "lan.curriqunet.com": ("STUDENT LEARNING OUTCOMES:", "CB 0*")}
 # The same for a host whose pages print objectives, so the count by eye covers both kinds the gate compares.
 OBJECTIVES_EXCERPT_BY_HOST = {
     "riohondo.curriqunet.com": ("V. Course Objectives", ("VI. Methods of Instruction:", "VI. Methods of Instruction")),
     "saddleback.curriqunet.com": ("Course Content - Learning Objectives", "Student Learning Outcomes"),
     # Irvine Valley's report 198: Learning Objectives, then its Content section (trial 44910471774, 12 of 12; S697).
-    "saddleback.curriqunet.com/198": ("Learning Objectives", "Content*")}
+    "saddleback.curriqunet.com/198": ("Learning Objectives", "Content*"),
+    # Peralta's report 416: the Exit Skills field, then Course Content (shape trial 45026998155, 5 of 5; S703).
+    "lan.curriqunet.com": ("Student Performance Objectives (Exit Skills):", "Course Content:")}
 # A key whose sections run longer than EXCERPT_LINES: report 198 prints each SLO as its own entry with its
 # institutional outcome map under it, and up to 20 objectives a page, a few lines each (trial 44910471774; S697).
-EXCERPT_LINES_BY_KEY = {"saddleback.curriqunet.com/198": 200}
+EXCERPT_LINES_BY_KEY = {"saddleback.curriqunet.com/198": 200, "lan.curriqunet.com": 120}
 # Where one host prints two colleges' outlines through different reports, the report its host-keyed pairs were read
 # from. A page from another report there is keyed "<host>/<reportId>" and logs the probe until its own pair is
 # recorded under that key: Saddleback's pairs are its Course Outline's (201), never Irvine Valley's report (S697).
@@ -1086,10 +1257,18 @@ PARSER_PATTERNS = ("STOP", "SLO_TITLE", "HEAD_NUMBER", "ROMAN_HEAD", "MARKER", "
                    "OBJ_LABEL", "OBJ_INLINE", "OBJ_STOP", "EL_SLO_HEAD", "CCCD_SLO_HEAD", "CCCD_SUBHEAD")
 
 
-def parser_fingerprint() -> str:
+# The parse parts a SECTION_HOSTS page alone reaches: they join that host's fingerprint and no other's, so a change to
+# them stales no other host's recall gate (d-lan-parse-parts-in-lan-fingerprint-only-s703).
+SECTION_PARTS = ("section_host", "_block_texts", "_section_items", "sections_from_html", "printed_college",
+                 "apply_sections", "read_courses")
+SECTION_PATTERNS = ("SLO_TITLE", "MARKER", "SECTION_OBJ")
+
+
+def parser_fingerprint(host: str | None = None) -> str:
     """md5 over the parser's functions' source (_ws among them), its patterns, the census's SLO_HEADING that
     _heads_section reads, the Reader's HTML cap page_html_of reads, and the reports recorded as printing no
-    objectives (#3601's second reader: each reaches a parse, so a change to one is another parser)."""
+    objectives (#3601's second reader: each reaches a parse, so a change to one is another parser). host: a read's
+    host (a URL or a netloc); a SECTION_HOSTS host adds the section parts, every other host's is the base alone."""
     import inspect
     g = globals()
     parts = [inspect.getsource(g[n]) for n in PARSER_PARTS if n in g]
@@ -1097,7 +1276,21 @@ def parser_fingerprint() -> str:
     parts.append("cor.SLO_HEADING=%r/%d" % (cor.SLO_HEADING.pattern, cor.SLO_HEADING.flags))
     parts.append("READER_HTML_CAP=%d" % READER_HTML_CAP)
     parts.append(json.dumps(sorted(_OBJ_RECORD.REPORTS_WITHOUT_OBJECTIVES)))
+    netloc = (urllib.parse.urlparse(host).netloc if "//" in (host or "") else (host or "")).lower()
+    if netloc in SECTION_HOSTS:
+        parts += ["%s:%s" % (netloc, inspect.getsource(g[n])) for n in SECTION_PARTS]
+        parts += ["%s=%r/%d" % (n, g[n].pattern, g[n].flags) for n in SECTION_PATTERNS]
+        parts.append("SECTION_BLOCKS=%r outcomes_only=%r OUTCOMES_ONLY_KEYS=%r" % (
+            sorted(SECTION_BLOCKS), netloc in OUTCOMES_ONLY_HOSTS, OUTCOMES_ONLY_KEYS))
     return hashlib.md5("\n".join(parts).encode()).hexdigest()
+
+
+def recall_key(row: dict) -> str:
+    """The key a trial row is counted under: its code, and on a shared-code host its code and the college its page
+    prints ("ART 001 | Laney College"), since one code there is two to four colleges' pages (S703)."""
+    if row.get("row_college"):
+        return "%s | %s" % (row["code"], row.get("college_printed") or "no college printed")
+    return row["code"]
 
 
 def rows_recall(path: str, out_dir: str = OUT_DIR, host: str | None = None) -> dict:
@@ -1128,10 +1321,10 @@ def rows_recall(path: str, out_dir: str = OUT_DIR, host: str | None = None) -> d
         return refuse("the count names parser %s, and its trial %s was filed by parser %s: point the count at the "
                       "trial it was counted against" % (want.get("parser_fingerprint"), want["trial"],
                                                          filed.get("parser_fingerprint")))
-    if filed.get("parser_fingerprint") != parser_fingerprint():
+    if filed.get("parser_fingerprint") != parser_fingerprint(host):
         return refuse("trial %s was filed by parser %s; the current parser is %s: run the trial again and count it"
-                      % (want["trial"], filed.get("parser_fingerprint"), parser_fingerprint()))
-    rows = {r["code"]: r for r in filed["rows"]}
+                      % (want["trial"], filed.get("parser_fingerprint"), parser_fingerprint(host)))
+    rows = {recall_key(r): r for r in filed["rows"]}
     right, wrong = 0, []
     for code, eye in sorted(want["pages"].items()):
         count = {"slo": eye["slo"], "objective": eye["objective"]}
@@ -1173,6 +1366,9 @@ def read_courses(reader, todo: list[dict], rows: list[dict], after=None) -> list
     into rows as read (SLOs and objectives both, S649); after(n, course, row) runs once a row is filed."""
     for n, course in enumerate(todo, 1):
         row = read_one(reader, course)
+        if section_host(course.get("report")):
+            # The browser's whole page, still open on this course (file_trial_page reads the same copy).
+            row = apply_sections(row, reader.page.content() or "")
         rows.append(row)
         print("%4d %-10s %s %-9s %d" % (n, course["code"], row["status"], row["shape"], len(row["outcomes"])),
               flush=True)
@@ -1209,13 +1405,14 @@ def reparse(folder: str) -> int:
     read them."""
     path = os.path.join(folder, "read.json")
     d = json.load(open(path))
-    for row in d["rows"]:
-        stem = re.sub(r"[^A-Za-z0-9]+", "_", row["code"])
+    for i, row in enumerate(d["rows"]):
+        stem = page_stem(row)
         page_html = gzip.open(os.path.join(folder, stem + ".html.gz"), "rt").read()
         text = open(os.path.join(folder, stem + ".txt")).read()
         row.pop("groups", None)
         row.update(parse_page(page_html, text, page_system(row.get("report") or ""), row.get("report")),
                    offered_at=offered_at(text))
+        d["rows"][i] = apply_sections(row, page_html)
     d["summary"] = summarize(d["rows"])
     d["reparsed_at"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     d["reparsed_note"] = ("The filed pages parsed again by parse_page, the read's own parser at the time of the "
@@ -1286,7 +1483,10 @@ def main(argv=None) -> int:
             "collects": list(COR_COLLECTS),
             "objectives_printed": (OBJECTIVES_BY_SYSTEM.get(page_system(index["url"]) or "") or {}).get("printed"),
             # The parser that filed these rows; a self-recall count passes only for the current one.
-            "parser_fingerprint": parser_fingerprint()}
+            "parser_fingerprint": parser_fingerprint(index["url"]),
+            # On a shared-code host, the codes a college's records name that the index holds only under another
+            # college's rows: named, never read for that college (S703).
+            "not_read": shared_code_unread(index, [s for s in a.slugs.split(",") if s])}
     rows: list[dict] = []
 
     def save(done: bool):

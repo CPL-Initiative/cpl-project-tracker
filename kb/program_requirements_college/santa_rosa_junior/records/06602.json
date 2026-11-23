@@ -46,9 +46,9 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 19,
+   "placed": 20,
    "listed": 30,
-   "share": 0.633,
+   "share": 0.667,
    "missing": [
     "ANAT1",
     "COMMC1000",
@@ -59,27 +59,23 @@
     "MICR5",
     "MICR60",
     "PHYZ1",
-    "PSYCC1000",
     "SOCIC1000"
    ],
-   "unexplained": [
-    "PSYCC1000"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 2,
    "codes": [
     "COMM6",
-    "PSYC1000(PSYCC1000)",
     "SOC1"
    ],
    "flagged": [
     "COMM6",
     "SOC1"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
@@ -122,7 +118,28 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "common_numbers": [
+   {
+    "printed": "PSYC 1000 (PSYC C1000)",
+    "listed": "PSYCC1000",
+    "block": "Select any combination totaling at least 3.00 units from the following (Psychology)"
+   }
+  ],
+  "gaps": [
+   {
+    "gap": "section_cut_off",
+    "label": "The program's section runs onto a page the read did not hold, so part of its requirements is missing from the record and its units cannot be checked against the printed total.",
+    "words": "the reader's note says the section continues past the pages read: \"The text begins mid-section on page 183; the program heading, description, and the start of the requirements (likely prerequisite sciences, English, nutrition and the head of the Communication list) are on page 182, which was not provided. section_heading uses the first Nursing heading visible.\""
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 20,
+   "course_list_match": 50,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

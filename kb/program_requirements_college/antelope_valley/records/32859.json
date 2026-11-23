@@ -61,11 +61,23 @@
    "pass": true
   },
   "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    30.0
+   ],
+   "stated": [
+    24.0,
+    30.0
+   ],
+   "against": "program",
+   "why": [],
    "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     62.0,
+     64.0,
      82.0
     ],
     "stated": [
@@ -80,18 +92,6 @@
     "why": [],
     "overlap": true
    },
-   "pass": true,
-   "status": "equal",
-   "computed": [
-    24.0,
-    30.0
-   ],
-   "stated": [
-    24.0,
-    30.0
-   ],
-   "against": "program",
-   "why": [],
    "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
   },
   "repeated": {
@@ -362,5 +362,6 @@
    "The 'Required Electives List B' block prints 'Choose two courses' but 'Complete the following number of credits: 6-11'; recorded as choose 2 courses with stated 6-11."
   ]
  },
- "extracted_run": "38979725726"
+ "extracted_run": 45133183717,
+ "read_run": "38979725726"
 }

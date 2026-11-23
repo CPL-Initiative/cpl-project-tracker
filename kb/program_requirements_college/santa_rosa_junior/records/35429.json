@@ -46,31 +46,23 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 11,
+   "placed": 13,
    "listed": 13,
-   "share": 0.846,
-   "missing": [
-    "ECONC2001",
-    "STATC1000"
-   ],
-   "unexplained": [
-    "ECONC2001",
-    "STATC1000"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 1,
    "codes": [
-    "AGBU7",
-    "ECON2001(ECONC2001)",
-    "STAT1000(STATC1000)"
+    "AGBU7"
    ],
    "flagged": [
     "AGBU7"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
@@ -113,7 +105,19 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "common_numbers": [
+   {
+    "printed": "ECON 2001 (ECON C2001)",
+    "listed": "ECONC2001",
+    "block": "Agriculture Animal Science for Transfer Required Core: Select any combination totaling at least 3.00 units from the following"
+   },
+   {
+    "printed": "STAT 1000 (STAT C1000)",
+    "listed": "STATC1000",
+    "block": "Agriculture Animal Science for Transfer Required Core"
+   }
+  ]
  },
  "record": {
   "program": {

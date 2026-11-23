@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-23T09:40:30Z",
+ "written_at": "2026-11-23T10:05:12Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -158,8 +158,8 @@
   "coe": "The regional labor market crosswalk is committed but not yet read per college here.",
   "loaded": "The load time is a column of the live program requirements table, which this file does not carry.",
   "owners": "The gap census names the change that would move each program, not who makes it; an owner joins each ask when the asks are filed with one.",
-  "slo": "Course SLO reads are committed for 26 hosts under kb/course_outcomes/<host>/, not yet read per college here; the SLO queue's state shows where the queue holds a college.",
-  "objectives": "Course objectives are committed for 16 hosts (ccc, cccd, chabot, craftonhills, cuesta, hancockcollege, laspositas, palomar, rccd, redwoods, riohondo, sac, saddleback, sdccd, shasta, siskiyous) under kb/course_outcomes/<host>/, not yet read per college here."
+  "slo": "Course SLO reads are committed for 27 hosts under kb/course_outcomes/<host>/, not yet read per college here; the SLO queue's state shows where the queue holds a college.",
+  "objectives": "Course objectives are committed for 17 hosts (ccc, cccd, chabot, craftonhills, cuesta, hancockcollege, lan, laspositas, palomar, rccd, redwoods, riohondo, sac, saddleback, sdccd, shasta, siskiyous) under kb/course_outcomes/<host>/, not yet read per college here."
  },
  "statewide": {
   "colleges": 118,
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 16948,
-  "gap": 5387,
+  "passing": 16973,
+  "gap": 5362,
   "with_gap": 118,
   "cost_usd": 1340.95,
-  "passed_at_read": 16224,
+  "passed_at_read": 16256,
   "cost_receipts": 118,
   "spent_usd": 1235.28,
   "spent_runs": 186,
@@ -189,9 +189,9 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16637,
-  "gap": 5387,
-  "collected_with_gaps": 311,
+  "passing": 16652,
+  "gap": 5362,
+  "collected_with_gaps": 321,
   "discontinued": 0
  },
  "census_live": {
@@ -432,13 +432,13 @@
    "harvested": true,
    "slug": "antelope_valley",
    "programs": 199,
-   "passing": 158,
-   "gap": 41,
+   "passing": 162,
+   "gap": 37,
    "causes": {
     "no_closed_list": 2,
     "page_not_found": 2,
     "places_none": 13,
-    "unknown_without_live": 24
+    "unknown_without_live": 20
    },
    "census_causes": {
     "no_closed_list": 1,
@@ -462,10 +462,10 @@
    "outcomes_file": "kb/status/commons_data_programs/antelope_valley.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-16T23:09:09Z",
+   "read_at": "2026-11-23T07:44:32Z",
    "read_kind": "capture",
    "cost_usd": 14.18,
-   "passed_at_read": 153,
+   "passed_at_read": 162,
    "slo_queue": {
     "state": "held",
     "why": "the eLumen 2026-27 catalog prints none: 11 of 12 trial pages answered with the description and units only, no SLO or objective heading in the page source, and PSY 101 came back empty. As at College of Marin, the course outline reports on avc.elumenapp.com/public are untried; waits on the same reader for eLumen's public Course Outline Report, then a 12-page trial",
@@ -478,13 +478,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 197,
-   "found": 195,
+   "found": 183,
    "extracted": 195,
    "errors": 0,
    "failed_checks": {
     "coverage": 13,
     "invented": 0,
-    "arithmetic": 42,
+    "arithmetic": 33,
     "repeated": 0,
     "outcomes": 0
    },
@@ -494,12 +494,12 @@
    "capture_root": "https://avc.elumenapp.com/catalog/2026-27/welcome",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 816.2,
-   "run": "38979725726",
+   "read_seconds": 1140.0,
+   "run": "45133183717",
    "levers": {
-    "ge_units_steps": 14,
     "reader_page_assignment": 13,
-    "reconcile_steps": 9,
+    "reconcile_steps": 10,
+    "ge_units_steps": 9,
     "program_course_file_check": 2,
     "reader_page_search": 2,
     "scorer_noncredit_hours": 1
@@ -510,8 +510,8 @@
      "models": {
       "claude-opus-5-5": 195
      },
-     "run": "38979725726",
-     "at": "2026-10-16T23:09:09Z",
+     "run": "45133183717",
+     "at": "2026-11-23T07:44:32Z",
      "cost_usd": 14.18,
      "platform": "elumen"
     },
@@ -765,7 +765,9 @@
    },
    "programs_file": "kb/status/commons_data_programs/berkeley_city.json",
    "outcomes_file": "kb/status/commons_data_programs/berkeley_city.outcomes.json",
-   "outline_system": null,
+   "outline_system": [
+    "curriqunet"
+   ],
    "objectives_printed": null,
    "read_at": "2026-11-12T02:30:35Z",
    "read_kind": "capture",
@@ -815,7 +817,13 @@
      "cost_usd": 5.81,
      "platform": "curriqunet"
     },
-    "slo_read": null,
+    "slo_read": {
+     "run": "45031089800",
+     "at": "2026-11-22T16:26:19Z",
+     "system": "curriqunet",
+     "source_kind": "course_outline",
+     "file": "kb/course_outcomes/lan/read_45031089800_p5of5.json"
+    },
     "plo_programs": 58,
     "ppm_member": {
      "host": "berkeley-city.programmapper.com",
@@ -842,12 +850,11 @@
    "harvested": true,
    "slug": "butte",
    "programs": 192,
-   "passing": 147,
-   "gap": 45,
+   "passing": 148,
+   "gap": 44,
    "causes": {
     "no_closed_list": 24,
     "page_not_found": 3,
-    "places_none": 1,
     "unknown_without_live": 17
    },
    "census_causes": {
@@ -869,10 +876,10 @@
    "outcomes_file": "kb/status/commons_data_programs/butte.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-11T08:16:43Z",
+   "read_at": "2026-11-22T11:18:06Z",
    "read_kind": "capture",
    "cost_usd": 10.69,
-   "passed_at_read": 138,
+   "passed_at_read": 147,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -885,25 +892,24 @@
    "extracted": 165,
    "errors": 0,
    "failed_checks": {
-    "coverage": 1,
+    "coverage": 0,
     "invented": 0,
-    "arithmetic": 27,
+    "arithmetic": 18,
     "repeated": 0,
     "outcomes": 0
    },
    "platform": "curriqunet",
    "catalog_year": "2026-2027",
-   "catalog_url": "https://butte.curriqunet.com/Catalog//iq/25371",
-   "capture_root": "https://butte.curriqunet.com/Catalog//iq/25371",
+   "catalog_url": "https://butte.curriqunet.com/Catalog/",
+   "capture_root": "https://butte.curriqunet.com/Catalog/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 5488.0,
-   "run": "42985449223",
+   "read_seconds": 5505.0,
+   "run": "45025068740",
    "levers": {
     "program_course_file_check": 24,
     "reconcile_steps": 17,
-    "reader_page_search": 3,
-    "reader_page_assignment": 1
+    "reader_page_search": 3
    },
    "collection": {
     "program_reader": {
@@ -911,13 +917,13 @@
      "models": {
       "claude-opus-5-5": 165
      },
-     "run": "42985449223",
-     "at": "2026-11-11T08:16:43Z",
+     "run": "45025068740",
+     "at": "2026-11-22T11:18:06Z",
      "cost_usd": 10.69,
      "platform": "curriqunet"
     },
     "slo_read": null,
-    "plo_programs": 163,
+    "plo_programs": 164,
     "ppm_member": null,
     "maps": {
      "held": 0,
@@ -1878,13 +1884,13 @@
    "harvested": true,
    "slug": "clovis_community",
    "programs": 129,
-   "passing": 89,
-   "gap": 40,
+   "passing": 90,
+   "gap": 39,
    "causes": {
     "no_closed_list": 8,
     "page_not_found": 12,
     "places_none": 2,
-    "unknown_without_live": 18
+    "unknown_without_live": 17
    },
    "census_causes": {
     "course_added": 1,
@@ -1909,10 +1915,10 @@
    "outcomes_file": "kb/status/commons_data_programs/clovis_community.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-22T11:43:38Z",
+   "read_at": "2026-11-22T14:32:47Z",
    "read_kind": "capture",
    "cost_usd": 8.22,
-   "passed_at_read": 78,
+   "passed_at_read": 79,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -1927,7 +1933,7 @@
    "failed_checks": {
     "coverage": 4,
     "invented": 3,
-    "arithmetic": 26,
+    "arithmetic": 25,
     "repeated": 0,
     "outcomes": 5
    },
@@ -1937,10 +1943,10 @@
    "capture_root": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 80.8,
-   "run": "45018954283",
+   "read_seconds": 50.2,
+   "run": "45033577888",
    "levers": {
-    "reconcile_steps": 18,
+    "reconcile_steps": 17,
     "reader_page_search": 12,
     "program_course_file_check": 8,
     "reader_page_assignment": 2
@@ -1951,8 +1957,8 @@
      "models": {
       "claude-opus-5-5": 109
      },
-     "run": "45018954283",
-     "at": "2026-11-22T11:43:38Z",
+     "run": "45033577888",
+     "at": "2026-11-22T14:32:47Z",
      "cost_usd": 8.22,
      "platform": "pdf"
     },
@@ -2229,7 +2235,9 @@
    },
    "programs_file": "kb/status/commons_data_programs/college_of_alameda.json",
    "outcomes_file": "kb/status/commons_data_programs/college_of_alameda.outcomes.json",
-   "outline_system": null,
+   "outline_system": [
+    "curriqunet"
+   ],
    "objectives_printed": null,
    "read_at": "2026-11-10T20:12:35Z",
    "read_kind": "capture",
@@ -2279,7 +2287,13 @@
      "cost_usd": 4.05,
      "platform": "curriqunet"
     },
-    "slo_read": null,
+    "slo_read": {
+     "run": "45031089800",
+     "at": "2026-11-22T16:26:19Z",
+     "system": "curriqunet",
+     "source_kind": "course_outline",
+     "file": "kb/course_outcomes/lan/read_45031089800_p5of5.json"
+    },
     "plo_programs": 59,
     "ppm_member": null,
     "maps": {
@@ -2330,10 +2344,10 @@
    "outcomes_file": "kb/status/commons_data_programs/college_of_marin.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-17T00:06:11Z",
+   "read_at": "2026-11-23T08:05:14Z",
    "read_kind": "capture",
    "cost_usd": 6.13,
-   "passed_at_read": 74,
+   "passed_at_read": 82,
    "slo_queue": {
     "state": "held",
     "why": "the eLumen catalog prints none (its course pages print the description only, 0 of 12); course outline reports on marin.elumenapp.com/public are untried (COBIx, #3211; Marin's SLO FAQ places course SLOs in the outline of record there). Waits on a reader for eLumen's public Course Outline Report, then a 12-page trial; Marin moves to Coursedog in mid-Fall 2026, so the eLumen source may not last",
@@ -2352,7 +2366,7 @@
    "failed_checks": {
     "coverage": 1,
     "invented": 0,
-    "arithmetic": 14,
+    "arithmetic": 6,
     "repeated": 0,
     "outcomes": 0
    },
@@ -2362,8 +2376,8 @@
    "capture_root": "https://marin.elumenapp.com/catalog/current/home",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1050.8,
-   "run": "38984695817",
+   "read_seconds": 1132.3,
+   "run": "45135695869",
    "levers": {
     "program_course_file_check": 61,
     "reader_page_search": 5,
@@ -2376,8 +2390,8 @@
      "models": {
       "claude-opus-5-5": 89
      },
-     "run": "38984695817",
-     "at": "2026-10-17T00:06:11Z",
+     "run": "45135695869",
+     "at": "2026-11-23T08:05:14Z",
      "cost_usd": 6.13,
      "platform": "elumen"
     },
@@ -5906,7 +5920,9 @@
    },
    "programs_file": "kb/status/commons_data_programs/laney.json",
    "outcomes_file": "kb/status/commons_data_programs/laney.outcomes.json",
-   "outline_system": null,
+   "outline_system": [
+    "curriqunet"
+   ],
    "objectives_printed": null,
    "read_at": "2026-11-20T12:38:30Z",
    "read_kind": "capture",
@@ -5954,7 +5970,13 @@
      "cost_usd": 10.5,
      "platform": "curriqunet"
     },
-    "slo_read": null,
+    "slo_read": {
+     "run": "45031089800",
+     "at": "2026-11-22T16:26:19Z",
+     "system": "curriqunet",
+     "source_kind": "course_outline",
+     "file": "kb/course_outcomes/lan/read_45031089800_p5of5.json"
+    },
     "plo_programs": 156,
     "ppm_member": {
      "host": "mapsforsuccess.laney.edu",
@@ -5981,13 +6003,13 @@
    "harvested": true,
    "slug": "las_positas",
    "programs": 204,
-   "passing": 181,
-   "gap": 23,
+   "passing": 185,
+   "gap": 19,
    "causes": {
     "no_closed_list": 3,
     "page_not_found": 6,
     "places_none": 2,
-    "unknown_without_live": 12
+    "unknown_without_live": 8
    },
    "census_causes": {
     "no_closed_list": 3,
@@ -6013,10 +6035,10 @@
     "curriqunet"
    ],
    "objectives_printed": null,
-   "read_at": "2026-11-10T20:10:35Z",
+   "read_at": "2026-11-23T06:59:40Z",
    "read_kind": "capture",
    "cost_usd": 12.09,
-   "passed_at_read": 181,
+   "passed_at_read": 186,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -6031,7 +6053,7 @@
    "failed_checks": {
     "coverage": 2,
     "invented": 0,
-    "arithmetic": 14,
+    "arithmetic": 9,
     "repeated": 0,
     "outcomes": 0
    },
@@ -6041,12 +6063,12 @@
    "capture_root": "https://laspositas.curriqunet.com/catalog/iq/881",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 2650.7,
-   "run": "42892238131",
+   "read_seconds": 2599.9,
+   "run": "45127792228",
    "levers": {
-    "ge_units_steps": 8,
     "reader_page_search": 6,
-    "reconcile_steps": 4,
+    "reconcile_steps": 5,
+    "ge_units_steps": 3,
     "program_course_file_check": 3,
     "reader_page_assignment": 2
    },
@@ -6056,8 +6078,8 @@
      "models": {
       "claude-opus-5-5": 195
      },
-     "run": "42892238131",
-     "at": "2026-11-10T20:10:35Z",
+     "run": "45127792228",
+     "at": "2026-11-23T06:59:40Z",
      "cost_usd": 12.09,
      "platform": "curriqunet"
     },
@@ -7542,7 +7564,9 @@
    },
    "programs_file": "kb/status/commons_data_programs/merritt.json",
    "outcomes_file": "kb/status/commons_data_programs/merritt.outcomes.json",
-   "outline_system": null,
+   "outline_system": [
+    "curriqunet"
+   ],
    "objectives_printed": null,
    "read_at": "2026-10-16T16:53:10Z",
    "read_kind": "capture",
@@ -7589,7 +7613,13 @@
      "cost_usd": 6.13,
      "platform": "curriqunet"
     },
-    "slo_read": null,
+    "slo_read": {
+     "run": "45031089800",
+     "at": "2026-11-22T16:26:19Z",
+     "system": "curriqunet",
+     "source_kind": "course_outline",
+     "file": "kb/course_outcomes/lan/read_45031089800_p5of5.json"
+    },
     "plo_programs": 11,
     "ppm_member": null,
     "maps": {
@@ -11070,14 +11100,14 @@
    "harvested": true,
    "slug": "santa_rosa_junior",
    "programs": 283,
-   "passing": 229,
-   "gap": 54,
+   "passing": 244,
+   "gap": 39,
    "causes": {
     "extraction_error": 1,
     "found_not_extracted": 1,
     "no_closed_list": 4,
     "page_not_found": 20,
-    "unknown_without_live": 28
+    "unknown_without_live": 13
    },
    "census_causes": {
     "coverage_fails": 9,
@@ -11141,8 +11171,8 @@
    "read_seconds": 258.7,
    "run": "44701011374",
    "levers": {
-    "reconcile_steps": 28,
     "reader_page_search": 20,
+    "reconcile_steps": 13,
     "program_course_file_check": 4,
     "paid_read": 2
    },

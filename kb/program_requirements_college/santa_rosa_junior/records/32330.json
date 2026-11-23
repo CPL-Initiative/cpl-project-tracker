@@ -105,7 +105,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "section_cut_off",
+    "label": "The program's section runs onto a page the read did not hold, so part of its requirements is missing from the record and its units cannot be checked against the printed total.",
+    "words": "the reader's note says the section continues past the pages read: \"The excerpt begins mid-section: the Mathematics A.S.-T heading, core calculus requirements, the heading and rule over MATH 2 and MATH 5, and the GE/degree statement are on the previous page and not in the text.\""
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 20,
+   "course_list_match": 50,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {

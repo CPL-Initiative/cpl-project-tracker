@@ -46,9 +46,9 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 89,
+   "placed": 91,
    "listed": 106,
-   "share": 0.84,
+   "share": 0.858,
    "missing": [
     "ANTH21",
     "ANTH3",
@@ -59,8 +59,6 @@
     "ARTH16",
     "ARTH17",
     "ARTHC1100",
-    "ARTHC1200",
-    "ENGLC1002",
     "HIST22",
     "HIST26",
     "HIST30",
@@ -69,19 +67,15 @@
     "HIST82"
    ],
    "unexplained": [
-    "ARTHC1100",
-    "ARTHC1200",
-    "ENGLC1002"
+    "ARTHC1100"
    ],
    "none_placed": false,
    "pass": false
   },
   "invented": {
-   "count": 3,
+   "count": 1,
    "codes": [
-    "ARTH1100(ANTHC1100)",
-    "ARTH1200(ARTHC1200)",
-    "ENGL1002(ENGLC1002)"
+    "ARTH1100(ANTHC1100)"
    ],
    "flagged": [],
    "pass": false
@@ -127,7 +121,24 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "common_numbers": [
+   {
+    "printed": "ARTH 1200 (ARTH C1200)",
+    "listed": "ARTHC1200",
+    "block": "Art History for Transfer Core Requirements"
+   },
+   {
+    "printed": "ARTH 1200 (ARTH C1200)",
+    "listed": "ARTHC1200",
+    "block": "Art History for Transfer List C Requirement"
+   },
+   {
+    "printed": "ENGL 1002 (ENGL C1002)",
+    "listed": "ENGLC1002",
+    "block": "Art History for Transfer List C Requirement"
+   }
+  ]
  },
  "record": {
   "program": {

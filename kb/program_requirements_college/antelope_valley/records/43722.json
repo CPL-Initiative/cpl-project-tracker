@@ -61,34 +61,39 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     37.0,
     37.0
    ],
    "stated": [
-    60.0,
-    60.0
+    37.0,
+    37.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the AVC GE pattern, but no units for it"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     37.0,
-     37.0
+     60.0,
+     60.0
     ],
     "stated": [
-     37.0,
-     37.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     23.0,
+     23.0
+    ],
+    "why": [],
+    "fill": [
+     0.0,
+     0.0
+    ]
    }
   },
   "repeated": {
@@ -113,7 +118,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -134,8 +139,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 23,
+    "max": 23
    },
    "electives_fill_degree": true,
    "outcomes": [
@@ -265,5 +270,20 @@
    "General Elective and GE courses in the Recommended Pathway (e.g., ENGLC1000, BIOL110) are not placed in blocks."
   ]
  },
- "extracted_run": "38979725726"
+ "extracted_run": 45133183717,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 23,
+    "max": 23
+   },
+   "words": "Completion of General Education requirements, plus electives as needed to reach 60 units.\n23"
+  }
+ ],
+ "read_run": "38979725726"
 }

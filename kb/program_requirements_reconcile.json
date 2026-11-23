@@ -1,7 +1,7 @@
 {
  "_what": "Each college's reconcile steps: after extraction, the reading procedure searches the page text again for a figure the record lacks and fills it, naming the words it came from (kb/_program_requirements_reconcile.py). Sam, 2026-10-14: \"Seems like our procedure should attempt to close gaps by doing a secondary search of the catalog text to see if we can reconcile after the initial PR harvest\" and \"we are configuring procedures for each catalog, right. So Cabrillo's procedure might require steps that others do not.\" (cpl_memory sam-reconcile-pass-after-harvest-2026-10-14). A step fills a field only where the record leaves it empty, and clears one only where a step says which words the reading took it from.",
  "_kinds": {
-  "fill": "pattern's min (and max) fill program.<field> when it is empty; only_without / only_with name a field that must be empty / set; skip_if_equal names a field that already holds the same figure (no double count)",
+  "fill": "pattern's min (and max) fill program.<field> when it is empty; only_without / only_with name a field that must be empty / set; skip_if_equal names a field that already holds the same figure (no double count); fills_degree_rest takes the first match whose figure is the degree total less the major's total (S713, Antelope Valley)",
   "clear_minimum": "a sentence giving a kind of degree's least units in the major (pattern's n) is no major total: total_units equal to n is cleared, once the record reads a degree total",
   "order": "steps run in order: a clear runs before the fills that depend on it",
   "awards": "'associate': the steps read associate degrees only (a certificate's page prints its own total in the same words); 'transfer': transfer degrees only (AA-T, AS-T), for a figure such as Cal-GETC that a local degree never carries though its captured page may span the sibling transfer section; 'local': an associate degree that is no transfer degree; 'local_aa' / 'local_as': a local A.A. or A.S. only, never a transfer degree, for a local pattern that asks the two a different number of units (Las Positas's LPC-GE); 'noncredit': a noncredit program by the state file's award (S644: the no-colon hours total's flag, San Bernardino Valley and Coalinga)",
@@ -119,9 +119,21 @@
      "page": 110,
      "words": "SMALL BUSINESS MANAGEMENT (Major #C.2030.AS) ASSOCIATE IN SCIENCE DEGREE",
      "evidence": "Small Business Management A.S. 33491: its heading 'SMALL BUSINESS MANAGEMENT (Major #C.2030.AS) ASSOCIATE IN SCIENCE DEGREE', its Required Core Courses and 'Total Units for the Major: 32-35' print on PDF p.110 (college-page-read run 45016537664). The filed record was read from p.107, where its one listed course (ACCTG 40) prints in the Business Administration degree's core, and filed that degree's core and its Accounting and Entrepreneur options with no total."
+    },
+    "33432": {
+     "page": 106,
+     "through": 107,
+     "words": "BUSINESS ADMINISTRATION ASSOCIATE IN SCIENCE DEGREE Catalog Description",
+     "evidence": "Business Administration: Entrepreneur A.S. 33432: the degree's heading and the start of its Business Administration Core (BA 5, BA 10, BA 33, ECON C2002, ECON C2001, IS 15) print on PDF p.106, which does not print the word 'Entrepreneur'; p.107 finishes the core and prints the 'Entrepreneur Option: (Major #C.205B.AS)' (BA 38, BA 52) (college-page-read run 45016537664). The pin reads pp.106-107 (through, S703 follow-up), where 14 of its 15 listed courses print; the filed record was read from p.107 on, which opens mid-core."
+    },
+    "33492": {
+     "page": 148,
+     "through": 149,
+     "words": "SOCIAL SCIENCE (Major #C.7410.AA) ASSOCIATE IN ARTS DEGREE",
+     "evidence": "Social Science A.A. 33492: its heading 'SOCIAL SCIENCE (Major #C.7410.AA) ASSOCIATE IN ARTS DEGREE' prints at the foot of PDF p.148, and its lists run on to p.149, which prints the Sociology list and 'Total Units: 21' and names no listed course (college-page-read run 45016537664). The pin reads pp.148-149 (through, S703 follow-up); the filed record was read from p.148 alone and has no total."
     }
    },
-   "pdf_pages_why": "S703 (f-clovis-19-left-s697): three Business degrees read from the wrong page are pinned to the page their section opens on, named with the words it opens on there (college-page-read run 45016537664), never found by a pattern over the catalog's text (S650, Cosumnes River). General Business 33433's core starts on the page before the one the capture took; Management 33487 and Small Business Management 33491 list one course (ACCTG 40), which the Business Administration degree's core prints too, so the picker took that page. Entrepreneur 33432 and Social Science 33492 are not pinned: 33432's core page (p.106) does not print the title word 'Entrepreneur', so the pin's title check refuses it, and 33492 is read from its own page (p.148) but its list and total run on to p.149, which names no listed course, so the window stops at p.148. Both wait on a reader change. A pin binds only while the catalog prints the words and every title word on that page; otherwise the program gets no fresh text and its filed record stands. Reversible by deleting this entry."
+   "pdf_pages_why": "S703 (f-clovis-19-left-s697): five Business and Social Science degrees read from the wrong page, or from too few pages, are pinned to the page their section opens on, named with the words it opens on there (college-page-read run 45016537664), never found by a pattern over the catalog's text (S650, Cosumnes River). General Business 33433's core starts on the page before the one the capture took; Management 33487 and Small Business Management 33491 list one course (ACCTG 40), which the Business Administration degree's core prints too, so the picker took that page. Entrepreneur 33432 and Social Science 33492 run across a page break, so each pin names its last page (through, the S703 follow-up's reader change): 33432's core page (p.106) does not print the title word 'Entrepreneur', which p.107 prints, and 33492's total prints on p.149, which names no listed course. A pin binds only while the catalog prints the words on its page and every title word on its pages; otherwise the program gets no fresh text and its filed record stands. Reversible by deleting this entry."
   },
   "Cosumnes River College": {
    "why": "S648, d-calgetc-34-per-college-evidence-s648. Cosumnes River's catalog names Cal-GETC and prints no unit figure for it: its Cal-GETC page (PDF p.95, filed as the Cal-GETC certificate 45203) prints area minimums and no total (the reading: 'No total units for the certificate is printed (Cal-GETC areas give minimums: Area 1 nine units, Area 2 three, Area 3 six, Area 4 six, Area 6 three)', 'Area 5 prints no unit'), and its transfer degrees' readings say no units are printed for Cal-GETC (30566, 33072, 39656). So the statewide 34 applies (Sam, Sheet 187 card 5). S649: the page's own words, read from the hand-filed copy by college-page-read run 43519918667 (plans kb/college_reads/cosumnes_cal_getc_page.json and cosumnes_calgetc_degree_sections.json), are quoted in the evidence. Reversible by deleting this entry.",
@@ -994,8 +1006,22 @@
    "why": "S505 SkyBoysenberry, 2026-10-28. Glendale's 2025-2026 catalog prints its program pages under older subject prefixes and older numbers than its own course descriptions and the state's file keep. The program pages print PSYCH 170 and TART 101 (Sports Coaching, page 88; college-page-read 40690480267); the course descriptions print '170 \u00b7 SPORTS PSYCHOLOGY \u00b7 3.0 Units \u00b7 PSYC 170 is designed...' (page 252) and '101 \u00b7 INTRODUCTION TO THEATRE \u00b7 3.0 Units \u00b7 THTR 101 introduces...' (college-page-read 40692306069), the same numbers and titles the state's file lists as PSYC 170 Sports Psychology and THTR 101 Introduction To Theatre (coci_program_courses, read 2026-10-28). Filed records placing PSYCH codes the file lists as PSYC: 11; TART for THTR: 9. The renumbers are the descriptions' own words: 'C1000 \u00b7 ACADEMIC READING AND WRITING \u00b7 4.0 Units \u00b7 (Previously ENGL 101)' (page 188, read 40690480267), 'C1001 \u00b7 CRITICAL THINKING AND WRITING \u00b7 3.0 Units \u00b7 (Previously ENGL 104)' and 'C1000 \u00b7 AMERICAN GOVERNMENT AND POLITICS \u00b7 3.0 Units \u00b7 (Previously POL S 101)' (read 40692306069). ART for ARTH (5 records) is left out: neither read printed an ARTH description, and ART is a live Glendale prefix of its own.",
    "prefix_aliases": {
     "PSYCH": "PSYC",
-    "TART": "THTR"
+    "TART": "THTR",
+    "STV": "OBT"
    },
+   "prefix_aliases_cited": [
+    {
+     "session": "S703",
+     "date": "2026-11-22",
+     "catalog_sources": ["college_page_read"],
+     "plan": "kb/college_reads/glendale_eleven_pages_s703.json",
+     "printed": "STV",
+     "file": "OBT",
+     "evidence": 4,
+     "source": "S703 (worker glendale), d-glendale-obt-stv-prefix-alias-s703. Customer Service 38973's own Coursedog tab NCCS (its program data names 38973; college page read 45016708970) prints 'STV11 Beginning Keyboarding 50, STV35 On-The-Job Communication 32, STV40 21st Century Employment Strategies 96, STV50 Customer Service Skills 32, Total Required Hours 210', where the state's file lists OBT 11, OBT 35, OBT 40 and OBT 50 (coci_program_courses, read by the conductor 2026-11-22). Four numbers of four, the page's whole list. The scorer renames a placed STV code only where the file lists the OBT code and not the STV one; on the committed records the pair renames nothing (no filed Glendale record places an STV code whose OBT form it lists).",
+     "examples": ["STV11 = OBT 11", "STV35 = OBT 35", "STV40 = OBT 40", "STV50 = OBT 50"]
+    }
+   ],
    "course_renumbers": {
     "ENGL101": "ENGL C1000",
     "ENGL104": "ENGL C1001",
@@ -1192,8 +1218,41 @@
     }
    ]
   },
+  "Antelope Valley College": {
+   "why": "S713 (lane 2's cheap piles; the conductor's d-ge-steps-three-colleges-s713). #3678's second reader held Commercial Music A.A. 36852, Dance A.A. 39295 and IT Cybersecurity A.S. 40870 because each page prints a general education figure (d-ge-gap-only-where-no-figure-s703). The figure is printed as one line for general education and electives together: 'Completion of General Education requirements, plus electives as needed to reach 60 units' over 34, '30-33' and '29 Units' (the records' notes, run 38979725726); no figure for the AVC GE pattern alone is printed. This step files that printed figure as the general education units of a local degree that names the degree total, so the degree check adds the major and the line the page prints for the rest; the figure includes the electives, so the record's note names it as GE with electives. The step takes only a figure that is the degree total less the major's total (fills_degree_rest; #3707's second reader fed 36852's record a list number, a footnote, a catalog year and the proposal text above the table, and the first digits after the words were wrong four times in nine). Held for a person: Communication Studies 2.0 AA-T 43028 (CSU GE and IGETC figures on a Cal-GETC degree). Reversible by deleting this entry.",
+   "awards": "associate",
+   "steps": [
+    {
+     "kind": "fill",
+     "field": "ge_units",
+     "awards": "local",
+     "only_with": "degree_total",
+     "fills_degree_rest": true,
+     "pattern": "(?i)Completion\\s+of\\s+General\\s+Education\\s+requirements,?\\s+plus\\s+electives\\s*\\(?\\s*as\\s+needed\\s+to\\s+reach\\s+60\\s+units\\s*\\)?\\.?\\s*:?\\s*(?P<min>\\d+(?:\\.\\d+)?)(?:\\s*(?:-|–|to)\\s*(?P<max>\\d+(?:\\.\\d+)?))?"
+    }
+   ]
+  },
+  "College of Marin": {
+   "why": "S713 (lane 2's cheap piles; the conductor's d-ge-steps-three-colleges-s713). #3678's second reader held Liberal Arts A.A. 19789 (Language and Communication Emphasis) and 19791 (Social and Behavioral Science Emphasis) because each page prints a general education figure: the pattern is a choice, College of Marin GE (minimum 22 units) or Cal-GETC (minimum 34 units), or a prior bachelor's degree (the records' notes, run 38984695817). This step sets the general education units to the range the two printed minimums span, 22 to 34, on a local degree that names the degree total, where the page prints both minimums beside the two patterns' names. Reversible by deleting this entry.",
+   "awards": "associate",
+   "steps": [
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {
+      "min": 22,
+      "max": 34
+     },
+     "awards": "local",
+     "only_with": "degree_total",
+     "pattern": "(?i)College\\s+of\\s+Marin\\s+(?:General\\s+Education|GE)\\b[\\s\\S]{0,200}?\\b22\\s+units\\b[\\s\\S]{0,300}?Cal-?\\s?GETC[\\s\\S]{0,200}?\\b34\\s+units\\b",
+     "source": "the program page itself",
+     "source_words": "College of Marin GE (minimum 22 units), Cal-GETC (minimum 34 units), as Liberal Arts A.A. 19789 and 19791 print them (run 38984695817)"
+    }
+   ]
+  },
   "Las Positas College": {
-   "why": "S630 SkyCartwheel, 2026-11-10. Las Positas College passed 116 of 193; all 77 failures are degrees, and its 25 transfer degrees name the degree's 60 and Cal-GETC with no units, so they read incomplete. A free page read (college-page-read 42815817415, kb/college_reads/las_positas_ge_units.json) gave the words: English AA-T 32182, Sociology AA-T 30815, Biology AS-T 35245 and Business Administration 2.0 AS-T 41984 each print 'Completion of 60 semester units or 90 quarter units that are eligible for transfer to the California State University, including both of the following: The California General Education Transfer Curriculum (Cal-GETC).' and end 'Additional General Education and Elective Units' (27.0 to 42.0) above 'Total: 60.0'. This step sets Cal-GETC's statewide 34 on transfer degrees only, cited from Monterey Peninsula's GE page as Alameda's, Redwoods' and Columbia's steps are; the printed line names electives beside it, so the scorer's transfer fill applies. The local degrees print the same combined line under 'LPC-GE or Cal-GETC' and no LPC-GE units; they wait on the LPC-GE pattern page. Proceeded on the recommendation; reversible by deleting this entry. S634 SkyBackward, 2026-11-10, on Sam's ruling count (Open Asks Sheet 180 card 4, 19:35Z): the local degrees take LPC-GE's units summed from the areas the 2026-2027 LPC-GE page prints (college-page-read 42827288689: Area 1 6, Areas 2 to 6 3 each, Area 7 Kinesiology 1, Areas 8 Health and 9 American Institutions 3 each, 'Not required for AS degrees'), A.A. 28 and A.S. 22; the page prints no total, so each note says the figure is summed. The local pages' own words (read 42815817415, Administration of Justice A.A. 01001 and Chemistry A.S. 01008) carry the other two flags: 'Double counting courses in GE and the major is permissible' (ge_overlap) and 'Elective units must be degree applicable' under 'Additional General Education and Elective Units' (electives fill the total). Simulated: Administration of Justice 24 + 28 leaves 8 of electives to 60; Chemistry 45 + 22 runs past its 61 and reads equal by overlap. Reversible by deleting the four local steps.",
+   "why": "S630 SkyCartwheel, 2026-11-10. Las Positas College passed 116 of 193; all 77 failures are degrees, and its 25 transfer degrees name the degree's 60 and Cal-GETC with no units, so they read incomplete. A free page read (college-page-read 42815817415, kb/college_reads/las_positas_ge_units.json) gave the words: English AA-T 32182, Sociology AA-T 30815, Biology AS-T 35245 and Business Administration 2.0 AS-T 41984 each print 'Completion of 60 semester units or 90 quarter units that are eligible for transfer to the California State University, including both of the following: The California General Education Transfer Curriculum (Cal-GETC).' and end 'Additional General Education and Elective Units' (27.0 to 42.0) above 'Total: 60.0'. This step sets Cal-GETC's statewide 34 on transfer degrees only, cited from Monterey Peninsula's GE page as Alameda's, Redwoods' and Columbia's steps are; the printed line names electives beside it, so the scorer's transfer fill applies. The local degrees print the same combined line under 'LPC-GE or Cal-GETC' and no LPC-GE units; they wait on the LPC-GE pattern page. Proceeded on the recommendation; reversible by deleting this entry. S634 SkyBackward, 2026-11-10, on Sam's ruling count (Open Asks Sheet 180 card 4, 19:35Z): the local degrees take LPC-GE's units summed from the areas the 2026-2027 LPC-GE page prints (college-page-read 42827288689: Area 1 6, Areas 2 to 6 3 each, Area 7 Kinesiology 1, Areas 8 Health and 9 American Institutions 3 each, 'Not required for AS degrees'), A.A. 28 and A.S. 22; the page prints no total, so each note says the figure is summed. The local pages' own words (read 42815817415, Administration of Justice A.A. 01001 and Chemistry A.S. 01008) carry the other two flags: 'Double counting courses in GE and the major is permissible' (ge_overlap) and 'Elective units must be degree applicable' under 'Additional General Education and Elective Units' (electives fill the total). Simulated: Administration of Justice 24 + 28 leaves 8 of electives to 60; Chemistry 45 + 22 runs past its 61 and reads equal by overlap. Reversible by deleting the four local steps. S713 (the conductor's d-ge-steps-three-colleges-s713): reconcile run 42892238131 set the overlap and electives flags on Computer Science A.S. 09214, Early Childhood Development A.A. 09227, Theater Arts A.A. 36235 and Electrical Engineering A.S. 38886 but never their LPC-GE units, and each record's note quotes the line as 'Additional General Education and Electives' with no 'Units'; the two LPC-GE steps' pattern now reads 'Elective' or 'Electives', with or without 'Units'. Reversible by restoring the pattern.",
    "awards": "associate",
    "steps": [
     {
@@ -1216,7 +1275,7 @@
       "max": 28
      },
      "awards": "local_aa",
-     "pattern": "Additional\\s+General\\s+Education\\s+and\\s+Elective\\s+Units",
+     "pattern": "Additional\\s+General\\s+Education\\s+and\\s+Electives?(?:\\s+Units)?",
      "source": "https://www.laspositascollege.edu/lpcarticulation/lpc-ge/lpc-ge-2026-2027.php",
      "source_words": "SUMMED FROM THE AREAS, no total is printed: the 2026-2027 LPC-GE page prints Area 1 6 units, Areas 2 to 6 3 units each, Area 7 Kinesiology 1 unit, Area 8 Health 3 units and Area 9 American Institutions 3 units; 6 + 15 + 1 + 3 + 3 = 28 for an A.A. (college page read 42827288689; Sam, Open Asks Sheet 180 card 4, 2026-11-10: count)"
     },
@@ -1228,7 +1287,7 @@
       "max": 22
      },
      "awards": "local_as",
-     "pattern": "Additional\\s+General\\s+Education\\s+and\\s+Elective\\s+Units",
+     "pattern": "Additional\\s+General\\s+Education\\s+and\\s+Electives?(?:\\s+Units)?",
      "source": "https://www.laspositascollege.edu/lpcarticulation/lpc-ge/lpc-ge-2026-2027.php",
      "source_words": "SUMMED FROM THE AREAS, no total is printed: the 2026-2027 LPC-GE page prints Area 1 6 units, Areas 2 to 6 3 units each, Area 7 Kinesiology 1 unit, and Areas 8 Health and 9 American Institutions 'Not required for AS degrees'; 6 + 15 + 1 = 22 for an A.S. (college page read 42827288689; Sam, Open Asks Sheet 180 card 4, 2026-11-10: count)"
     },
