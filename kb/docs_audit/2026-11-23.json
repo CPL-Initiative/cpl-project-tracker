@@ -11,17 +11,17 @@
   },
   "summary": {
     "files": 1576,
-    "bytes": 17217635,
+    "bytes": 17217966,
     "over_budget": 5,
     "handoff_max": 717,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 63086,
+    "always_loaded_bytes": 63417,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 63086,
+        "bytes": 63417,
         "over": 1
       },
       "other": {
@@ -63,8 +63,8 @@
     },
     "vault": {
       "files": 29659,
-      "bytes": 1587839271,
-      "heavy_bytes": 1221193706,
+      "bytes": 1587811119,
+      "heavy_bytes": 1221198377,
       "heavy_share": 0.769,
       "ignore_filters": [
         "cpl-project-tracker/kb/program_requirements_college",
@@ -154,13 +154,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 63086,
+        "bytes": 63417,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 3086,
-        "ratio": 1.05
+        "over_by": 3417,
+        "ratio": 1.06
       },
-      "message": "63,086 B is 1.1× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "63,417 B is 1.1× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
@@ -311,10 +311,10 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 16762416,
+        "bytes": 16767087,
         "kind": "dir"
       },
-      "message": "directory totals 16,762,416 B inside the vault"
+      "message": "directory totals 16,767,087 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
