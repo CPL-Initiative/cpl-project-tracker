@@ -1433,6 +1433,54 @@
       el("colgroup", null, [el("col", { cls: "cdd-c-sname" }), el("col", { cls: "cdd-c-sn" }), el("col", { cls: "cdd-c-sact" }), el("col", { cls: "cdd-c-sn" }), el("col", { cls: "cdd-c-sat" })]),
       el("thead", null, [el("tr", null, ["College", "Courses with student learning outcomes (SLOs)", "On Active programs", "Courses with objectives", "Loaded"].map(function (h) { return el("th", { scope: "col", text: h }); }))]), body]);
     sec.appendChild(el("div", { cls: "cdd-wrap", role: "region", "aria-label": VIEWS.slos, tabindex: "0" }, [table]));
+    sec.appendChild(huntSection());
+    loadHunt();
+    return sec;
+  }
+  /* ── Course outlines to find by hand (Sam, 2026-11-23, S711): "a prioritized list of 50 course cors to manually find
+     and drop to you later for SLOs and objectives that would strengthen the mid analysis for the top 50 most impactful
+     courses ... not cid or ccn courses ... Probably needing the CTE courses that are common and don't already have
+     cid." kb/_outline_hunt.py ranks them from the outcomes comparison; the page reads its file when this view opens,
+     once a visit (an error retries). ── */
+  var HUNT_FILE = "kb/status/outline_hunt.json", HUNT = { state: null };
+  function loadHunt() {
+    if (HUNT.state === "loading" || HUNT.state === "ok") return;
+    HUNT = { state: "loading" };
+    var p;
+    try { p = fetch(HUNT_FILE, { cache: "no-store" }); } catch (e) { p = Promise.reject(e); }
+    Promise.resolve(p).then(function (r) {
+      if (!r || !r.ok) throw new Error(HUNT_FILE + " answered " + (r ? r.status : "nothing"));
+      return r.json();
+    }).then(function (j) { HUNT = { state: "ok", d: j || {} }; }, function () { HUNT = { state: "error" }; })
+      .then(function () {
+        var old = VIEW.root && VIEW.root.querySelector("#cdd-hunt");
+        if (old && old.parentNode) old.parentNode.replaceChild(huntSection(), old);
+      });
+  }
+  function huntSection() {
+    var sec = el("section", { cls: "cdd-hunt", id: "cdd-hunt", "aria-labelledby": "cdd-hunt-h" });
+    sec.appendChild(el("h3", { id: "cdd-hunt-h", cls: "cdd-h3", text: "Course outlines to find by hand: the 50 that strengthen the M-ID comparison most" }));
+    if (HUNT.state === "error") { sec.appendChild(el("p", { cls: "cdd-of", text: "The list could not be read. Open this view again to retry." })); return sec; }
+    if (HUNT.state !== "ok") { sec.appendChild(el("p", { cls: "cdd-of", text: "Reading the list…" })); return sec; }
+    var d = HUNT.d, R = Array.isArray(d.courses) ? d.courses : [], src = d._sources || {};
+    sec.appendChild(el("p", { cls: "cdd-sortline", id: "cdd-hunt-sum", text: "The outcomes comparison reads an M-ID once two districts' outlines print its outcomes. " +
+      "These are CTE M-IDs, none a C-ID or CCN course, shared by the most districts and one outline short of that. Find each course's outline of record and drop it into a session, " +
+      "as a PDF or a link; the comparison then reruns on it. The list comes from the comparison of " + (src.compare_date ? dayWords(src.compare_date) : "its last run") +
+      " and rebuilds after the next one, so a found outline drops off." }));
+    if (!R.length) { sec.appendChild(el("p", { cls: "cdd-of", text: "No course is waiting on a find." })); return sec; }
+    var body = el("tbody", null, R.map(function (r) {
+      return el("tr", { "data-hunt-row": r.rank }, [
+        el("td", { "data-label": "Rank", cls: "cdd-num", text: String(r.rank) }),
+        el("th", { scope: "row", "data-label": "Course to find" }, [el("span", { text: r.college + " " + r.code }), el("span", { cls: "cdd-dist", text: r.course_title || "" })]),
+        el("td", { "data-label": "M-ID" }, [el("span", { text: r.mid }), el("span", { cls: "cdd-of", text: r.mid_title || "" })]),
+        el("td", { "data-label": "Districts that teach it", cls: "cdd-num", text: fmt(r.districts) }),
+        el("td", { "data-label": "Why this one", cls: "cdd-of", text: String(r.why || "").charAt(0).toUpperCase() + String(r.why || "").slice(1) + (r.college_read ? "" : "; the reader has not read this college yet") })]);
+    }));
+    var table = el("table", { cls: "cdd-table", id: "cdd-hunt-table" }, [
+      el("caption", { cls: "cdd-sr", text: "The course outlines to find by hand, most useful first: the course, its M-ID, the districts that teach it, and why it is on the list" }),
+      el("colgroup", null, [el("col", { cls: "cdd-c-hr" }), el("col", { cls: "cdd-c-hc" }), el("col", { cls: "cdd-c-hm" }), el("col", { cls: "cdd-c-hd" }), el("col", { cls: "cdd-c-hw" })]),
+      el("thead", null, [el("tr", null, ["Rank", "Course to find", "M-ID", "Districts that teach it", "Why this one"].map(function (h) { return el("th", { scope: "col", text: h }); }))]), body]);
+    sec.appendChild(el("div", { cls: "cdd-wrap", role: "region", "aria-label": "Course outlines to find by hand", tabindex: "0" }, [table]));
     return sec;
   }
 
@@ -2350,6 +2398,8 @@
     ".cmn-wrap.cdd { max-width:none; }",
     "td.cdd-outs { } td.cdd-outs .cdd-pr + .cdd-pr { margin-top:4px; }",
     ".cdd-c-sname { width:30%; } .cdd-c-sn { width:15%; } .cdd-c-sact { width:24%; } .cdd-c-sat { width:16%; }",
+    ".cdd-c-hr { width:7%; } .cdd-c-hc { width:30%; } .cdd-c-hm { width:24%; } .cdd-c-hd { width:12%; } .cdd-c-hw { width:27%; }",
+    ".cdd-hunt { margin-top:24px; }",
     ".cdd-paneacts { display:flex; flex-wrap:wrap; gap:8px 18px; align-items:center; margin:0; }",
     ".cdd-paneacts a.cdd-newtab { color:var(--cmn-link); text-decoration:underline; text-underline-offset:3px; min-height:24px; display:inline-flex; align-items:center; }",
     ".cdd-panel h3 { margin:12px 0 4px; font-size:1rem; color:var(--cmn-heading); }",

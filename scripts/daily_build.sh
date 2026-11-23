@@ -366,6 +366,9 @@ STEP
 # on test 3 until a session reruns kb/_mid_outcomes_compare.py. Display only, so a failure warns.
 step "Build the re-mint readiness count" <<'STEP'
 python3 kb/_mid_readiness.py || { git checkout -- kb/status/mid_readiness.json 2>/dev/null || true; echo "::warning title=Re-mint readiness not rebuilt::kb/_mid_readiness.py failed; kb/status/mid_readiness.json is yesterday's."; }
+# The course outlines to find by hand (kb/_outline_hunt.py, S711): it reads the members this build just wrote and the
+# newest outcomes comparison, so it reruns here or the Commons SLOs view lists yesterday's courses.
+python3 kb/_outline_hunt.py || { git checkout -- kb/status/outline_hunt.json 2>/dev/null || true; echo "::warning title=Outline hunt not rebuilt::kb/_outline_hunt.py failed; kb/status/outline_hunt.json is yesterday's."; }
 STEP
 
 # ── Step 4b: Re-run row Trust-Card auditor ────────────────────
