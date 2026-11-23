@@ -43,9 +43,23 @@ Skipped: steps 2, 3, 5, 7 and 9 (no KB structure, nav, re-mint or pipeline chang
   - `levels()` is shared with the statewide view;
   - re-mint readiness comes from `kb/status/mid_readiness.json`, and the platform counts from `commons_data.json`;
   - the card is drawn open (`cmf-checks`).
-- If either PR is still open when you start, merge it on a green `test`: #3717 first, then update #3718 from `main`.
+- **#3720**, Clovis's subject titles and codes in parentheses (Sam's ask mid-session, 2026-11-23):
+  - Clovis's catalog contents (PDF page 3), from Sam's paste, filed as
+    `kb/hand_filed_catalogs/subjects/clovis_community.json`, which names him, the date and the page. The session could
+    not reach cloviscollege.edu.
+  - A new `former` rule in the headings filer: a code the index names as former (ANTHRO, POLSCI, PSY, SOC, COTR)
+    takes its subject's title and is not counted as a printed code.
+  - Clovis went from 55 to 65 titled codes. Statewide: 1,637 to 1,647 titled, 317 to 309 with no title.
+  - Title Case, in both copies: a word in capitals inside parentheses keeps them, and a lowercase note word there
+    stays as typed. "Work Experience Education (formerly COTR)" saves.
+  - Sam's own COTR save, made under the old check, still wins over the index title. He may re-save it in the clean
+    form.
+- #3717 and #3718 merged. If #3720 is open when you start, merge it on a green `test`.
 
 ## Decisions and findings (in `cpl_memory`, receipt `kb/migrations/2026-11-23_s715_cpl_memory_rows.sql`)
+
+- `d-clovis-index-hand-filed-former-codes-s715` (Sam's to revise): a catalog index a curator reads can be filed by
+  hand, naming the person and the page; a former code takes its subject's title.
 
 - `d-subjects-figures-live-s715` (Sam's to revise): every Subjects figure counts the rows with the live saves on top,
   by its list's own test, and the Commons card reads `liveFigures`, never a count of its own.
@@ -81,6 +95,6 @@ Skipped: steps 2, 3, 5, 7 and 9 (no KB structure, nav, re-mint or pipeline chang
 
 ## Let go
 
-At sign-off: the watches on #3717 and #3718, and the vault PR's. No COBIx watcher ran.
+At sign-off: the watches on #3718, #3720 and the vault PR (CPLBrain#854), and the backup check-ins. No COBIx watcher ran.
 
 Opening line: *Greetings, you are SkyGannet (Session 717), see SkyAlbatross's handoff — `docs/session_717_handoff.md` — let's keep rolling with our queue.*

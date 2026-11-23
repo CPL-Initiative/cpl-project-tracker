@@ -11,3 +11,9 @@ from public.cpl_memory m where m.author = 'SkyAlbatross (S715)'
   and not exists (select 1 from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create');
 -- Applied 2026-11-23 14:42Z: d-subjects-figures-live-s715 (398 chars), f-decision-releases-ordinary-titles-only-s715 (365).
 -- A first try failed cpl_memory_summary_check: a summary of about 600 characters is refused; keep it near 400.
+
+-- Applied 2026-11-23 ~15:40Z, the same shape and rollback (by author):
+insert into public.cpl_memory (slug,kind,title,summary,tags,status,source,verified_by,verified_at,author,event_date) values
+('d-clovis-index-hand-filed-former-codes-s715','decision','A catalog index a curator reads can be filed by hand; a former code takes its subject''s title','S715, Sam''s to revise: Clovis''s catalog contents (PDF page 3), pasted by Sam on 2026-11-23, filed as kb/hand_filed_catalogs/subjects/clovis_community.json naming him and the page. Rule former: a code the index names as former (ANTHRO, COTR) takes the subject''s heading and is not a printed catalog code. Clovis 55 to 65 titled. Title Case keeps a code in parentheses in capitals (COTR). PR #3720.',array['commons','subjects','clovis','title-case'],'proposed','PR #3720','SkyAlbatross (S715)',now(),'SkyAlbatross (S715)','2026-11-23')
+on conflict (slug) do nothing;
+-- (logged 'create' by SkyAlbatross (S715))

@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1575,
-    "bytes": 17156063,
+    "bytes": 17157490,
     "over_budget": 5,
     "handoff_max": 717,
     "always_loaded_files": 1,
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 44,
-        "bytes": 543987,
+        "bytes": 544295,
         "over": 1
       },
       "handoff": {
         "files": 672,
-        "bytes": 4985691,
+        "bytes": 4986810,
         "over": 0
       }
     },
@@ -62,9 +62,9 @@
       "handoff_drops_active_lane": 1
     },
     "vault": {
-      "files": 29608,
-      "bytes": 1586060452,
-      "heavy_bytes": 1221098066,
+      "files": 29619,
+      "bytes": 1586197479,
+      "heavy_bytes": 1221161813,
       "heavy_share": 0.77,
       "ignore_filters": [
         "cpl-project-tracker/kb/program_requirements_college",
@@ -231,10 +231,10 @@
       "fixable": false,
       "path": "kb/program_requirements_college",
       "detail": {
-        "bytes": 158816392,
+        "bytes": 158765669,
         "kind": "dir"
       },
-      "message": "directory totals 158,816,392 B inside the vault"
+      "message": "directory totals 158,765,669 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -311,10 +311,10 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 16634279,
+        "bytes": 16715808,
         "kind": "dir"
       },
-      "message": "directory totals 16,634,279 B inside the vault"
+      "message": "directory totals 16,715,808 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -351,10 +351,10 @@
       "fixable": false,
       "path": "kb/status/commons_data_programs",
       "detail": {
-        "bytes": 10262098,
+        "bytes": 10294702,
         "kind": "dir"
       },
-      "message": "directory totals 10,262,098 B inside the vault"
+      "message": "directory totals 10,294,702 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -951,10 +951,10 @@
       "fixable": false,
       "path": "kb/status/statewide_subject_codes.json",
       "detail": {
-        "bytes": 2388964,
+        "bytes": 2389301,
         "kind": "file"
       },
-      "message": "2,388,964 B single file inside the vault"
+      "message": "2,389,301 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
