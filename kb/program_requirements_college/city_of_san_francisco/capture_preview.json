@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 417,
  "with_closed_list": 371,
- "started": "2026-11-20T08:06:11Z",
+ "started": "2026-11-23T07:31:03Z",
  "pdf": {
   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf",
   "access": "hand_filed",
@@ -26,6 +26,36 @@
    "after_mode": false,
    "gated": false,
    "read": "heading"
+  },
+  "pinned": {
+   "09178": {
+    "page": 86,
+    "bound": true
+   },
+   "17952": {
+    "page": 106,
+    "bound": true
+   },
+   "17954": {
+    "page": 206,
+    "bound": true
+   },
+   "31602": {
+    "page": 224,
+    "bound": true
+   },
+   "36964": {
+    "page": 162,
+    "bound": true
+   },
+   "42318": {
+    "page": 167,
+    "bound": true
+   },
+   "45768": {
+    "page": 213,
+    "bound": true
+   }
   },
   "hand_filed": {
    "college": "City College of San Francisco",
@@ -424,20 +454,6 @@
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 404] Commercial Cut-Flower and Greenhouse Production – AS Degree Page 404 [page 405] CCSF Catalog - 2026/27 Program Summary Students who satisfactorily complete the curr"
-   },
-   {
-    "control_number": "09178",
-    "pages": [
-     104,
-     105,
-     106
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": true,
-    "coverage": 0.75,
-    "opens": "[page 104] VMD 153 Adobe InDesign: Publication Design 2.0 Total: 42.0 Journalism – AA Degree Program Summary The Associate of Arts in Journalism is a program of study with co"
    },
    {
     "control_number": "09179",
@@ -972,19 +988,6 @@
     "opens": "[page 303] Biotechnology – AS Degree Program Summary The Associate of Science Degree in Biotechnology offers students specialized training for employment as biotechnicians engaged in research and development, as well "
    },
    {
-    "control_number": "17952",
-    "pages": [
-     475,
-     476
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": false,
-    "coverage": 0.5,
-    "opens": "[page 475] CCSF Catalog - 2026/27 ART 140A - Beginning Painting (3.0) Credit (Degree Applicable) Hours: Lecture - 35; Lab - 70 Grading: Only Letter Field Trips: Optional Recommended Prep: ART 125A and ART "
-   },
-   {
     "control_number": "17953",
     "pages": [
      180,
@@ -996,6 +999,21 @@
     "titled": true,
     "coverage": 0.929,
     "opens": "[page 180] Liberal Arts and Sciences Emphasis in Communication – AA Degree Program Summary The Liberal Arts and Sciences degree is designed for students who wish to have a broad knowledge of arts and sciences plus add"
+   },
+   {
+    "control_number": "17954",
+    "pages": [
+     206,
+     207,
+     208
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.74,
+    "opens": "[page 206] Liberal Arts and Sciences: Emphasis in Science and Mathematics - AS Degree Program Summary The Liberal Arts and Sciences degree is designed for students who wish to have a broad knowledge of arts and scien",
+    "pinned": true
    },
    {
     "control_number": "19037",
@@ -1033,6 +1051,18 @@
     "titled": false,
     "coverage": 1.0,
     "opens": "[page 237] CCSF Catalog - 2026/27 Program Requirements and Completion Time Admission Requirements 1) Completion of HLTH 59 \"Introduction to Community Health Work\" "
+   },
+   {
+    "control_number": "19445",
+    "pages": [
+     352
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.727,
+    "opens": "[page 352] CCSF Catalog - 2026/27 4. Write multiple table database queries in SQL. 5. Create, build, and publish interactive Web pages using HTML and JavaScript. 6. Write object-orient"
    },
    {
     "control_number": "19583",
@@ -2425,6 +2455,20 @@
     "opens": "[page 297] CCSF Catalog - 2026/27 CNIT 124 Advanced Ethical Hacking 3.0 CNIT 125 Information Security Professional Practices 3.0 CNIT 126 Practical Malware Analysis 3.0 CNIT 1"
    },
    {
+    "control_number": "37601",
+    "pages": [
+     314,
+     315,
+     316
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.875,
+    "opens": "[page 314] CCSF Catalog - 2026/27 The minimum time for completion of this certificate is 2 semesters. Completion time will vary based on student preparation and number of units comp"
+   },
+   {
     "control_number": "37602",
     "pages": [
      329,
@@ -3249,6 +3293,19 @@
     "opens": "[page 343] CCSF Catalog - 2026/27 CNIT 401 Windows Technical Support 3.0 CNIT 416 Installing and Configuring Windows Server 2016 3.0 CNIT 417 Administering Windows Server 201"
    },
    {
+    "control_number": "40168",
+    "pages": [
+     113,
+     114
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.667,
+    "opens": "[page 113] PHOT 80 Outdoor & Ambient Lighting 3.0 PHOT 85A Beginning Lighting Techniques 4.0 Choose 1 course from the following Units 3.0 BCST 140 Studio Video Production 3.0 B"
+   },
+   {
     "control_number": "40169",
     "pages": [
      140,
@@ -3300,6 +3357,18 @@
     "titled": true,
     "coverage": 0.867,
     "opens": "[page 307] The Biotechnology Work Experience certificate may be a stand-alone program for the more advanced students or a capstone program for the students who have completed the Biotechnology or the introductory Biotec"
+   },
+   {
+    "control_number": "40177",
+    "pages": [
+     131
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.7,
+    "opens": "[page 131] Required Courses Course TITLE UNITS Required Units 22.0 VMD 100 Orientation to Visual Media Design 1.0 VMD 105 Visual Media Digital Skills 3.0 VMD 120 Graphic De"
    },
    {
     "control_number": "40205",
@@ -3465,6 +3534,34 @@
     "titled": true,
     "coverage": 0.857,
     "opens": "[page 335] Internet of Things – Certificate of Achievement Program Summary The Internet of Things, also referred to as IoT, describes the exponential increase in connected devices, embedded computing, and edge and clo"
+   },
+   {
+    "control_number": "40705",
+    "pages": [
+     578,
+     579,
+     580
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.833,
+    "opens": "[page 578] CCSF Catalog - 2026/27 CS 131B - Programming Fundamentals: Python (4.0) Credit (Degree Applicable) Hours: Lecture - 70 Grading: Letter or Pass/No Pass Recommended Prep: CS 10 or CS 110A or MATH"
+   },
+   {
+    "control_number": "40706",
+    "pages": [
+     578,
+     579,
+     580
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 578] CCSF Catalog - 2026/27 CS 131B - Programming Fundamentals: Python (4.0) Credit (Degree Applicable) Hours: Lecture - 70 Grading: Letter or Pass/No Pass Recommended Prep: CS 10 or CS 110A or MATH"
    },
    {
     "control_number": "40750",
@@ -3709,6 +3806,18 @@
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 355] CCSF Catalog - 2026/27 Note that the program description below outlines only how students fulfill the major requirement for an associate degree"
+   },
+   {
+    "control_number": "41353",
+    "pages": [
+     91
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 91] JOUR 21 News Reporting and Writing 3.0 One of the following: 3.0 JOUR 24A News Production and Publication I 3.0 OR JOUR 29A Introduction to Magazine Editing a"
    },
    {
     "control_number": "41354",
@@ -4233,22 +4342,22 @@
    }
   ],
   "page_checks": {
-   "read": 40,
+   "read": 30,
    "own_page": 0,
-   "no_own_page": 13,
-   "not_printed": 27
+   "no_own_page": 30,
+   "not_printed": 0
   },
   "unproven": []
  },
  "loads": 0,
  "pages_listed": 1,
  "pages_answered": 1,
- "seconds": 518.0,
- "found": 311,
+ "seconds": 437.6,
+ "found": 317,
  "by_method": {
   "no_closed_list": 46,
-  "not_found": 60,
-  "pdf_pages": 311
+  "not_found": 54,
+  "pdf_pages": 317
  },
  "shared_pages": {
   "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=333": [
@@ -4259,12 +4368,9 @@
    "05441",
    "38443"
   ],
-  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=104": [
-   "05449",
-   "09178"
-  ],
   "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=314": [
    "05453",
+   "37601",
    "44944"
   ],
   "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=313": [
@@ -4325,7 +4431,8 @@
   ],
   "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=91": [
    "21325",
-   "40170"
+   "40170",
+   "41353"
   ],
   "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=148": [
    "22722",
@@ -4369,6 +4476,7 @@
   ],
   "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=131": [
    "32868",
+   "40177",
    "41638"
   ],
   "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=386": [
@@ -4391,6 +4499,10 @@
   "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=164": [
    "36402",
    "36827"
+  ],
+  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=113": [
+   "36715",
+   "40168"
   ],
   "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=137": [
    "37038",
@@ -4464,6 +4576,10 @@
    "40704",
    "40876"
   ],
+  "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=578": [
+   "40705",
+   "40706"
+  ],
   "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=355": [
    "41315",
    "46308"
@@ -4528,10 +4644,20 @@
    "title": "Computer Accounting",
    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
    "near_miss": {
-    "why": "rule D: no line of the catalog prints the program's title",
-    "rule": "D",
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
     "refused_b": 0,
     "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "09178",
+   "title": "Data Journalism",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=86",
+    "coverage": 0.333
    },
    "status": "Active"
   },
@@ -4552,8 +4678,8 @@
    "title": "Multimedia Studies: Performance Arts",
    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
    "near_miss": {
-    "why": "rule D: no line of the catalog prints the program's title",
-    "rule": "D",
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
     "refused_b": 0,
     "page_checks": true
    },
@@ -4572,24 +4698,12 @@
    "status": "Active"
   },
   {
-   "control_number": "17954",
-   "title": "Liberal Arts and Sciences Emphasis in Science and Mathematics",
-   "award": "A.S. Degree",
+   "control_number": "17952",
+   "title": "Liberal Arts and Sciences Emphasis in Arts and Humanities",
+   "award": "A.A. Degree",
    "near_miss": {
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=208",
-    "coverage": 0.219
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "19445",
-   "title": "Databases for Developers",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule D: no line of the catalog prints the program's title",
-    "rule": "D",
-    "refused_b": 0,
-    "page_checks": true
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=106",
+    "coverage": 0.0
    },
    "status": "Active"
   },
@@ -4648,8 +4762,8 @@
    "title": "Construction Administrative Assistant",
    "award": null,
    "near_miss": {
-    "why": "rule D: no line of the catalog prints the program's title",
-    "rule": "D",
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
     "refused_b": 0,
     "page_checks": true
    },
@@ -4660,8 +4774,8 @@
    "title": "Business Information Worker (BIW)",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "rule D: no line of the catalog prints the program's title",
-    "rule": "D",
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
     "refused_b": 0,
     "page_checks": true
    },
@@ -4691,8 +4805,8 @@
    "title": "Clerical Accounting",
    "award": null,
    "near_miss": {
-    "why": "rule D: no line of the catalog prints the program's title",
-    "rule": "D",
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
     "refused_b": 0,
     "page_checks": true
    },
@@ -4703,8 +4817,8 @@
    "title": "Clerical Support Specialist",
    "award": null,
    "near_miss": {
-    "why": "rule D: no line of the catalog prints the program's title",
-    "rule": "D",
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
     "refused_b": 0,
     "page_checks": true
    },
@@ -4715,8 +4829,8 @@
    "title": "Beginning VESL for Janitorial Workers",
    "award": null,
    "near_miss": {
-    "why": "rule D: no line of the catalog prints the program's title",
-    "rule": "D",
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
     "refused_b": 0,
     "page_checks": true
    },
@@ -4734,8 +4848,8 @@
    "title": "Computerized Accounting",
    "award": null,
    "near_miss": {
-    "why": "rule D: no line of the catalog prints the program's title",
-    "rule": "D",
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
     "refused_b": 0,
     "page_checks": true
    },
@@ -4772,8 +4886,8 @@
    "title": "Business Office Support Skills, Phase II",
    "award": null,
    "near_miss": {
-    "why": "rule D: no line of the catalog prints the program's title",
-    "rule": "D",
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
     "refused_b": 0,
     "page_checks": true
    },
@@ -4784,8 +4898,8 @@
    "title": "Introduction to Child Development Careers",
    "award": null,
    "near_miss": {
-    "why": "rule D: no line of the catalog prints the program's title",
-    "rule": "D",
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
     "refused_b": 0,
     "page_checks": true
    },
@@ -4803,8 +4917,8 @@
    "title": "Digital Literacy and Core Skills",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "rule D: no line of the catalog prints the program's title",
-    "rule": "D",
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
     "refused_b": 0,
     "page_checks": true
    },
@@ -4815,8 +4929,8 @@
    "title": "PowerPoint Specialist",
    "award": null,
    "near_miss": {
-    "why": "rule D: no line of the catalog prints the program's title",
-    "rule": "D",
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
     "refused_b": 0,
     "page_checks": true
    },
@@ -4827,8 +4941,8 @@
    "title": "Office Receptionist",
    "award": null,
    "near_miss": {
-    "why": "rule D: no line of the catalog prints the program's title",
-    "rule": "D",
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
     "refused_b": 0,
     "page_checks": true
    },
@@ -4839,9 +4953,8 @@
    "title": "CCSF High School Diploma",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0,
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=224",
+    "coverage": 0.0,
     "page_checks": true
    },
    "status": "Active"
@@ -4851,8 +4964,8 @@
    "title": "Broadcast Motion Graphics",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
-    "why": "rule D: no line of the catalog prints the program's title",
-    "rule": "D",
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
     "refused_b": 0,
     "page_checks": true
    },
@@ -4863,8 +4976,8 @@
    "title": "Cloud-Based Electronic Communication",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "rule D: no line of the catalog prints the program's title",
-    "rule": "D",
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
     "refused_b": 0,
     "page_checks": true
    },
@@ -4887,8 +5000,8 @@
    "title": "QuickBooks & Spreadsheets for Accounting",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "rule D: no line of the catalog prints the program's title",
-    "rule": "D",
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
     "refused_b": 0,
     "page_checks": true
    },
@@ -4906,9 +5019,8 @@
    "title": "ESL Beginning High Oral Communication Skills",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0,
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=162",
+    "coverage": 0.0,
     "page_checks": true
    },
    "status": "Active"
@@ -4918,8 +5030,8 @@
    "title": "Medisoft for Business",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "rule D: no line of the catalog prints the program's title",
-    "rule": "D",
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
     "refused_b": 0,
     "page_checks": true
    },
@@ -4942,20 +5054,8 @@
    "title": "Accounting Assistant & Core Skills",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "rule D: no line of the catalog prints the program's title",
-    "rule": "D",
-    "refused_b": 0,
-    "page_checks": true
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "37601",
-   "title": "iPhone App Programming",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "rule D: no line of the catalog prints the program's title",
-    "rule": "D",
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
     "refused_b": 0,
     "page_checks": true
    },
@@ -4979,36 +5079,12 @@
    "status": "Active"
   },
   {
-   "control_number": "40168",
-   "title": "Entrepreneurship and Innovation in Broadcast Media",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule D: no line of the catalog prints the program's title",
-    "rule": "D",
-    "refused_b": 0,
-    "page_checks": true
-   },
-   "status": "Active"
-  },
-  {
    "control_number": "40171",
    "title": "Technical Theater Production - Costume and Makeup",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
-    "why": "rule D: no line of the catalog prints the program's title",
-    "rule": "D",
-    "refused_b": 0,
-    "page_checks": true
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "40177",
-   "title": "Entrepreneurship in Visual Media Design",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule D: no line of the catalog prints the program's title",
-    "rule": "D",
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
     "refused_b": 0,
     "page_checks": true
    },
@@ -5019,8 +5095,8 @@
    "title": "Technical Theater Production - Stagecraft",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
-    "why": "rule D: no line of the catalog prints the program's title",
-    "rule": "D",
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
     "refused_b": 0,
     "page_checks": true
    },
@@ -5051,49 +5127,12 @@
    "status": "Active"
   },
   {
-   "control_number": "40705",
-   "title": "Build Automation for DevOps & QA",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "rule D: no line of the catalog prints the program's title",
-    "rule": "D",
-    "refused_b": 0,
-    "page_checks": true
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "40706",
-   "title": "Database Administration",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "rule D: no line of the catalog prints the program's title",
-    "rule": "D",
-    "refused_b": 0,
-    "page_checks": true
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "41353",
-   "title": "Entrepreneurship and Innovation in Journalism",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule D: no line of the catalog prints the program's title",
-    "rule": "D",
-    "refused_b": 0,
-    "page_checks": true
-   },
-   "status": "Active"
-  },
-  {
    "control_number": "42318",
    "title": "ESL Intermediate High Oral Communication Skills",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0,
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=167",
+    "coverage": 0.0,
     "page_checks": true
    },
    "status": "Active"
@@ -5103,8 +5142,8 @@
    "title": "Cal-GETC",
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=390",
-    "coverage": 0.129
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=213",
+    "coverage": 0.285
    },
    "status": "Active"
   }
@@ -5112,15 +5151,15 @@
  "page_claimed": [],
  "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 10,
-  "0.8-1.0": 57,
+  "0.5-0.8": 14,
+  "0.8-1.0": 59,
   "1.0": 244
  },
  "would_extract": {
   "against": "kb/program_requirements_college/city_of_san_francisco",
   "kept": 253,
   "kept_moved": 0,
-  "programs": 56,
+  "programs": 55,
   "list": [
    {
     "control_number": "05430",
@@ -5173,16 +5212,6 @@
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "09178",
-    "title": "Data Journalism",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=104",
-    "coverage": 0.75,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
     "control_number": "09189",
     "title": "Vocational Nursing",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
@@ -5233,11 +5262,11 @@
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "17952",
-    "title": "Liberal Arts and Sciences Emphasis in Arts and Humanities",
-    "award": "A.A. Degree",
-    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=475",
-    "coverage": 0.5,
+    "control_number": "17954",
+    "title": "Liberal Arts and Sciences Emphasis in Science and Mathematics",
+    "award": "A.S. Degree",
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=206",
+    "coverage": 0.74,
     "was_url": null,
     "was_coverage": 0.0,
     "was_method": "not_found"
@@ -5685,11 +5714,67 @@
   ],
   "held_worse_window": [
    {
+    "control_number": "19445",
+    "title": "Databases for Developers",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=352",
+    "coverage": 0.727,
+    "was_coverage": 1.0
+   },
+   {
     "control_number": "37479",
     "title": "Critical Middle East /South West Asia and North Africa Studies",
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
     "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=367",
     "coverage": 0.8,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "37601",
+    "title": "iPhone App Programming",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=314",
+    "coverage": 0.875,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "40168",
+    "title": "Entrepreneurship and Innovation in Broadcast Media",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=113",
+    "coverage": 0.667,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "40177",
+    "title": "Entrepreneurship in Visual Media Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=131",
+    "coverage": 0.7,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "40705",
+    "title": "Build Automation for DevOps & QA",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=578",
+    "coverage": 0.833,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "40706",
+    "title": "Database Administration",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=578",
+    "coverage": 0.667,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "41353",
+    "title": "Entrepreneurship and Innovation in Journalism",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=91",
+    "coverage": 0.5,
     "was_coverage": 1.0
    }
   ],
@@ -5819,10 +5904,6 @@
   "09174": {
    "sha256": "e96982c91af042534dd96d08e5662b04689ee31000d3d91593d82d893261993f",
    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=404"
-  },
-  "09178": {
-   "sha256": "e1729e2b6ef9312093f36948984e76c3822e6b0b7308685d5fdf090808db89d1",
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=104"
   },
   "09179": {
    "sha256": "5a5e4a100e81e1d8235c35f021fbcd98a14f89f8913ac0002654e73685c127ac",
@@ -5980,13 +6061,13 @@
    "sha256": "f895f036c7da47167e06ff511b4361fc0ded7e82fd771fcd64424f4373029509",
    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=303"
   },
-  "17952": {
-   "sha256": "1070ef66576e1dd8697240c1479bae9910ca7d41c3eba4834d1a4965036f16d6",
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=475"
-  },
   "17953": {
    "sha256": "1666d3729cf56462b0783468507b0b4c8f1d1b59b64d1d0e4590f6e18c9fcd94",
    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=180"
+  },
+  "17954": {
+   "sha256": "665a119b5fe456335ad7434a8ffd72b1ace2af8350c9a4c91fbabfd3da6f9874",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=206"
   },
   "19037": {
    "sha256": "10e3341d3875c750d764051f658c866663cf1096d45f9b58f694aa52bfa6f37b",
@@ -5999,6 +6080,10 @@
   "19040": {
    "sha256": "1749ac7161eee5ae9502750e898edb1a683601b1381c41e667a863bed7fa2a8e",
    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=237"
+  },
+  "19445": {
+   "sha256": "25d3b966c64c3d14be65ae3dcc89913b0468dba26c7a8855b34a4d226fa5b216",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=352"
   },
   "19583": {
    "sha256": "6409c7d5ccd69eaab9afc39f824dbdce4164564ff5487ff6c8a052922441f08f",
@@ -6412,6 +6497,10 @@
    "sha256": "9cc4c20abd9caf166eec94eff4f8e3745a315f6fa690f649803394926815d71e",
    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=297"
   },
+  "37601": {
+   "sha256": "45505cc8d4ee0131317870b257160deb5cceab17cca6f8a1a3c59bb78c672089",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=314"
+  },
   "37602": {
    "sha256": "99673b07c496e0a0a3226fc7a3b3def4a8efb38785ff2325c303bb866886a289",
    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=329"
@@ -6660,6 +6749,10 @@
    "sha256": "a714f534e0a90099884766d7d53040264206e4f7abe87b97405f6bd8070f7a06",
    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=343"
   },
+  "40168": {
+   "sha256": "3fdb21450f2c2b18280f7be2aab6d676459a3ca9fc7ed81b5b850963d6959d31",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=113"
+  },
   "40169": {
    "sha256": "0af55fd96ec91287debea984de2663ae880cf5ef0fcbda644caf71148ae7e509",
    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=140"
@@ -6675,6 +6768,10 @@
   "40175": {
    "sha256": "4f88300657da3e85c25370691e2d46a45da94f1cc41c6c2b7735a74643567e1c",
    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=307"
+  },
+  "40177": {
+   "sha256": "a810c149d82de73d901acceaf63e4d65886718974fd32194fee2320e84e6db24",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=131"
   },
   "40205": {
    "sha256": "79190193f5c30770c534420a8894ddca6d5ed2f1d7cffcf48f20ad47cc92451f",
@@ -6723,6 +6820,14 @@
   "40704": {
    "sha256": "3bc9173ac914a131bba8ded597de596198f1c535983b97432e8543a0b92dd3ac",
    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=335"
+  },
+  "40705": {
+   "sha256": "19463be92136c79ba3f2f51d35859741c0c2e1cd631cede37e091d102265e03e",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=578"
+  },
+  "40706": {
+   "sha256": "19463be92136c79ba3f2f51d35859741c0c2e1cd631cede37e091d102265e03e",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=578"
   },
   "40750": {
    "sha256": "34e762a115f508903d72ec8c11f094303d020ffb901f9dc723df7abab5226d45",
@@ -6795,6 +6900,10 @@
   "41315": {
    "sha256": "1e8661ed0c40314892ec68daec45db998e522b1b2e2c0cdb6bb769239ed98a06",
    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=355"
+  },
+  "41353": {
+   "sha256": "df1b15428a75e92a9f458700bc8d736ce86bab01c6a8176e12986ee182263b80",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=91"
   },
   "41354": {
    "sha256": "22d306c9a0fd8c7ba59bbe4891c8efe98cffbae8812de2927d12b30e1e4c34ab",
@@ -6953,5 +7062,5 @@
    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=139"
   }
  },
- "run": "44699726074"
+ "run": "45131492116"
 }
