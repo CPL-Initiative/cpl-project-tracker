@@ -684,6 +684,31 @@ def read_one(reader, url: str, pattern: re.Pattern, cache: dict, expand: bool = 
     return finish(out, pattern)
 
 
+def read_hand_filed_copy(college: str, url: str, pattern: re.Pattern) -> dict:
+    """The college's hand-filed catalog, read as the harvest's capture reads it (S714): the file its provenance record
+    (kb/hand_filed_catalogs/<slug>.json) names, fetched from its copy_url with the hand-filed-copy user agent and
+    refused unless its sha256 is the record's (hand_filed in kb/_program_requirements_college.py), then pypdf's text
+    (read_hand_filed). American River's catalog answers the census and page-read user agent 404 and the hand-filed
+    copy agent 200 (COBIx, #3096; Sam's ruling 1 there, 2026-11-11), so a page "hand_filed": true reads the very
+    bytes every American River record was extracted from, page for page, and no other address: the plan's page must
+    name the record's url or copy_url."""
+    import _program_requirements_college as C
+    found = C.hand_filed_meta(college)
+    if not found:
+        return finish({"url": url, "kind": "pdf", "access": "no_hand_filed_record",
+                       "error": "%s has no record under kb/hand_filed_catalogs" % college}, pattern)
+    if url not in (found[1].get("url"), found[1].get("copy_url")):
+        return finish({"url": url, "kind": "pdf", "access": "not_the_hand_filed_copy",
+                       "error": "the page names neither the hand-filed record's url nor its copy_url"}, pattern)
+    hf = C.hand_filed(college)
+    pdf = C.read_hand_filed(hf)
+    pages = pdf.get("pages") or []
+    out = {"url": pdf.get("url"), "kind": "pdf", "status": pdf.get("status"), "access": pdf.get("access"),
+           "error": pdf.get("error"), "bytes": pdf.get("bytes"), "extractor": pdf.get("extractor"),
+           "pages": pages, "text": "\n\n".join(pages)}
+    return finish(out, pattern)
+
+
 def finish(out: dict, pattern: re.Pattern) -> dict:
     text = out.get("text") or ""
     out["chars"] = len(text)
@@ -839,7 +864,11 @@ def main(argv: list[str] | None = None) -> int:
                     continue
                 seen.add(url)
                 host = (urllib.parse.urlparse(url).hostname or "").lower()
-                if host in skip and not target.get("retry"):
+                if target.get("hand_filed") and not parent:
+                    # The provenance record names the file and its address (read_hand_filed_copy), so the
+                    # procedure's skip, which is about this reader's own user agent, does not apply.
+                    rec = read_hand_filed_copy(plan.get("college") or "", url, pattern)
+                elif host in skip and not target.get("retry"):
                     rec = {"url": url, "access": "skipped_by_procedure",
                            "error": "the procedure record marks %s: %s" % (host, skip[host])}
                 else:

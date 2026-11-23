@@ -1,5 +1,5 @@
 {
- "_readme": "S714 rios (lane 1, the gap census's reader_page_assignment lever): American River College's 5 programs whose extraction placed none of the state's listed courses were handed a sibling award's section or the course descriptions. This plan prints every page of the hand-filed 2026-27 catalog (kb/hand_filed_catalogs/american_river.json, the file every record was extracted from), line for line, so a session downloads the whole log (gh run view --log), finds each program's own section and names its pdf_pages pin. One load, no model call, nothing written.",
+ "_readme": "S714 rios (lane 1, the gap census's reader_page_assignment lever): American River College's 5 programs whose extraction placed none of the state's listed courses were handed a sibling award's section or the course descriptions. This plan prints every page of the hand-filed 2026-27 catalog (kb/hand_filed_catalogs/american_river.json, the file every record was extracted from; the host answers this reader's user agent 404 and the hand-filed copy agent 200, so the page reads through the hand-filed record, sha256 checked), line for line, so a session downloads the whole log (gh run view --log), finds each program's own section and names its pdf_pages pin. One load, no model call, nothing written.",
  "college": "American River College",
  "questions": {
   "own_page": "Where each program's own section opens (its heading and the first line of its requirement list) and where its list ends (its total), so a pdf_pages pin can name the page, the words it opens on and the page it runs through."
@@ -12,7 +12,8 @@
    "answers": [
     "own_page"
    ],
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf"
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf",
+   "hand_filed": true
   }
  ],
  "pdf_span": [
