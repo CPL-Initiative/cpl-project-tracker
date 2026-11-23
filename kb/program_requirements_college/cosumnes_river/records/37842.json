@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Culinary Arts Management: Basic Culinary Services",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=221",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=284",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9007,
+  "input_tokens": 6656,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9007,
-    "output_tokens": 1224,
+    "input_tokens": 6656,
+    "output_tokens": 985,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,35 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1224,
+  "output_tokens": 985,
   "output_tokens_details": {
-   "thinking_tokens": 448
+   "thinking_tokens": 180
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06051,
- "ms": 10941,
- "seconds": 11.2,
+ "cost_usd": 0.04632,
+ "ms": 8515,
+ "seconds": 8.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 5,
    "listed": 5,
-   "share": 0.0,
-   "missing": [
-    "CAM300",
-    "CAM301",
-    "CAM306",
-    "CAM310",
-    "CAM321"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -67,49 +61,50 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    16.0,
+    16.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    16.0,
+    16.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 5,
    "courses": 0,
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Basic Culinary Services Certificate section not present in provided text",
+   "section_heading": "Basic Culinary Services Certificate",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 16,
+    "max": 16
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -126,39 +121,83 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "demonstrate the ability to use professional written and oral communication skills necessary to communicate to a variety of audiences.",
+    "demonstrate basic mathematical principles for foodservice record keeping, baking procedures, and recipe conversions.",
+    "understand and practice proper sanitation and safety procedures critical to the foodservice industry.",
+    "demonstrate basic knowledge of cooking techniques and procedures.",
+    "demonstrate critical thinking skills needed to assess and correct problems within food preparation and production."
+   ],
+   "careers": [
+    "food service"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "CAM 300",
-    "why": "named only in the A.A. degree sections; certificate section not in the text"
-   },
-   {
-    "code": "CAM 301",
-    "why": "named only in the A.A. degree sections; certificate section not in the text"
-   },
-   {
-    "code": "CAM 306",
-    "why": "named only in the A.A. degree sections; certificate section not in the text"
-   },
-   {
-    "code": "CAM 310",
-    "why": "named only in the A.A. degree sections; certificate section not in the text"
-   },
-   {
-    "code": "CAM 321",
-    "why": "named only in the A.A. degree sections; certificate section not in the text"
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "CAM 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAM 306",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAM 301",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAM 321",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAM 310",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The provided text (catalog pages 221-222) prints only the Culinary Arts Management A.A. degree requirements and the Restaurant and Food Service Entrepreneurship A.A. requirements. It says the Basic Culinary Services Certificate is embedded in both, but it does not print the certificate's own requirements, total, or outcomes. The certificate section is likely on another page and should be checked.",
-   "No blocks were recorded because the degree course lists belong to other awards.",
-   "The A.A. sections list all five closed-list courses: CAM 300 at 3 units, CAM 306 at 2, CAM 301 at 4 (printed '41' with footnote 1), CAM 321 at 3, and CAM 310 at 4. The closed list stores CAM 300 at 2 units and CAM 310 at 3 units. The catalog also titles CAM 300 'Survey of Food Service Careers and Career Skills', while the closed list titles it 'Introduction to Culinary Arts Management'.",
-   "The Culinary Arts Management A.A. section prints its own Student Learning Outcomes and Career Information (Culinary Manager; Culinary Supervisor; Cook; Kitchen Manager; Restaurant Manager; Caterer; Food Service Worker). These were not recorded for the certificate because they are printed under the A.A. degree."
+   "CAM 301 is printed as '41'; read as 4 units with footnote marker 1 (footnote: CAM 300, 306, and 301 serve as prerequisite courses for many higher level department courses). The printed course units sum to the stated total of 16.",
+   "Catalog units differ from the state file: CAM 300 printed 3 units (state file 2) and CAM 310 printed 4 units (state file 3). The catalog titles CAM 300 'Survey of Food Service Careers and Career Skills' while the state file titles it 'Introduction to Culinary Arts Management'.",
+   "Career taken from the description ('a career in food service'); the Career Information on page 285 refers to 'entry level employment in a food service operation'."
   ]
  },
- "extracted_run": "39047009824"
+ "extracted_run": "45184653221",
+ "catalog_year": "2026-2027",
+ "source_sha": "b70c9d0140da377e",
+ "source_codes": [
+  "CAM300",
+  "CAM301",
+  "CAM306",
+  "CAM310",
+  "CAM321"
+ ],
+ "source_coverage": 1.0
 }

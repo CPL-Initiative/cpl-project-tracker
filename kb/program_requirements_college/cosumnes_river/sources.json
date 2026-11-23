@@ -1767,27 +1767,27 @@
    "ECE404"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=301",
-   "title": "Note to Transfer Students:",
-   "h1": "Note to Transfer Students:",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=306",
+   "title": "Early Childhood Education, School Age",
+   "h1": "Early Childhood Education, School Age",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    301,
-    302,
-    303,
-    304
+    306,
+    307
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "ec4f86ff35a21255"
   },
   "listed": 8,
-  "text_chars": 16000
+  "text_chars": 2950
  },
  {
   "control_number": "07319",
@@ -2079,25 +2079,27 @@
    "AMT340"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=179",
-   "title": "Automotive Engine Performance Certificate",
-   "h1": "Automotive Engine Performance Certificate",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=186",
+   "title": "Automotive Engine Performance",
+   "h1": "Automotive Engine Performance",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    179,
-    180
+    186,
+    187
    ],
    "extractor": "pypdf",
    "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "52b908d8dfcc1e25"
   },
   "listed": 8,
-  "text_chars": 6988
+  "text_chars": 1830
  },
  {
   "control_number": "11338",
@@ -6483,24 +6485,27 @@
    "COMMC1004"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=237",
-   "title": "CHEM 499 Experimental Offering in",
-   "h1": "CHEM 499 Experimental Offering in",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=239",
+   "title": "Applied Communication Skills Certificate",
+   "h1": "Applied Communication Skills Certificate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    237
+    239,
+    240
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "e6c0a437062aec1c"
   },
   "listed": 8,
-  "text_chars": 3808
+  "text_chars": 2684
  },
  {
   "control_number": "35097",
@@ -6513,11 +6518,11 @@
    "CISC323",
    "CISC324",
    "CISP350",
+   "CISP353",
    "CISW300",
    "CISW304",
    "CISW308",
    "CISW310",
-   "CISW321",
    "CISW350",
    "CISW355",
    "CISW400",
@@ -6526,25 +6531,27 @@
    "CISW440"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=255",
-   "title": "Career Information",
-   "h1": "Career Information",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=249",
+   "title": "A.S. in Web Developer",
+   "h1": "A.S. in Web Developer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    255,
-    256
+    249,
+    250
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "d50839452c0fc31f"
   },
   "listed": 15,
-  "text_chars": 7296
+  "text_chars": 3345
  },
  {
   "control_number": "35148",
@@ -6785,24 +6792,27 @@
    "AMT378"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=181",
-   "title": "Courses within the Ford ASSET program allow students to earn",
-   "h1": "Courses within the Ford ASSET program allow students to earn",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=182",
+   "title": "Automatic Transmissions/Transaxles",
+   "h1": "Automatic Transmissions/Transaxles",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    181
+    182,
+    183
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "c3459675ce352142"
   },
   "listed": 4,
-  "text_chars": 4030
+  "text_chars": 2959
  },
  {
   "control_number": "35357",
@@ -6851,24 +6861,26 @@
    "AMT379"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=181",
-   "title": "Courses within the Ford ASSET program allow students to earn",
-   "h1": "Courses within the Ford ASSET program allow students to earn",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=189",
+   "title": "Automotive Heating and Air Conditioning",
+   "h1": "Automotive Heating and Air Conditioning",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    181
+    189
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "008a6605451d66d8"
   },
   "listed": 4,
-  "text_chars": 4030
+  "text_chars": 2755
  },
  {
   "control_number": "35359",
@@ -6923,24 +6935,26 @@
    "AMT383"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=181",
-   "title": "Courses within the Ford ASSET program allow students to earn",
-   "h1": "Courses within the Ford ASSET program allow students to earn",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=187",
+   "title": "Automotive Engine Performance (Ford",
+   "h1": "Automotive Engine Performance (Ford",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    181
+    187
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "17df53691f7b64b9"
   },
   "listed": 4,
-  "text_chars": 4030
+  "text_chars": 2684
  },
  {
   "control_number": "35361",
@@ -6956,24 +6970,27 @@
    "AMT375"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=181",
-   "title": "Courses within the Ford ASSET program allow students to earn",
-   "h1": "Courses within the Ford ASSET program allow students to earn",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=192",
+   "title": "Automotive Suspension and Steering",
+   "h1": "Automotive Suspension and Steering",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    181
+    192,
+    193
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "e8df15b422acd279"
   },
   "listed": 4,
-  "text_chars": 4030
+  "text_chars": 2796
  },
  {
   "control_number": "35362",
@@ -6988,24 +7005,27 @@
    "AMT381"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=181",
-   "title": "Courses within the Ford ASSET program allow students to earn",
-   "h1": "Courses within the Ford ASSET program allow students to earn",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=185",
+   "title": "Automotive Electrical Systems (Ford",
+   "h1": "Automotive Electrical Systems (Ford",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    181
+    185,
+    186
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "b6adca8ed25af69e"
   },
   "listed": 3,
-  "text_chars": 4030
+  "text_chars": 2859
  },
  {
   "control_number": "35363",
@@ -7022,25 +7042,27 @@
    "AMT332"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=179",
-   "title": "Automotive Heating and Air Conditioning Certificate",
-   "h1": "Automotive Heating and Air Conditioning Certificate",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=188",
+   "title": "Automotive Heating and Air Conditioning",
+   "h1": "Automotive Heating and Air Conditioning",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    179,
-    180
+    188,
+    189
    ],
    "extractor": "pypdf",
    "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "0599e6f801cc1f67"
   },
   "listed": 5,
-  "text_chars": 6800
+  "text_chars": 1239
  },
  {
   "control_number": "35364",
@@ -7056,25 +7078,26 @@
    "AMT330"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=179",
-   "title": "Automatic Transmissions and Transaxles Certificate",
-   "h1": "Automatic Transmissions and Transaxles Certificate",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=182",
+   "title": "Automatic Transmissions and Transaxles",
+   "h1": "Automatic Transmissions and Transaxles",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    179,
-    180
+    182
    ],
    "extractor": "pypdf",
    "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "0e362ae410336bd8"
   },
   "listed": 4,
-  "text_chars": 7316
+  "text_chars": 1301
  },
  {
   "control_number": "35365",
@@ -7136,25 +7159,26 @@
    "AMT332"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=179",
-   "title": "Automotive Suspension and Steering Certificate",
-   "h1": "Automotive Suspension and Steering Certificate",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=192",
+   "title": "Automotive Suspension and Steering",
+   "h1": "Automotive Suspension and Steering",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    179,
-    180
+    192
    ],
    "extractor": "pypdf",
    "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "e59199dbe8773121"
   },
   "listed": 5,
-  "text_chars": 6577
+  "text_chars": 900
  },
  {
   "control_number": "35374",
@@ -7169,24 +7193,27 @@
    "AMT385"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=181",
-   "title": "Courses within the Ford ASSET program allow students to earn",
-   "h1": "Courses within the Ford ASSET program allow students to earn",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=193",
+   "title": "Manual Drive Train and Axles (Ford",
+   "h1": "Manual Drive Train and Axles (Ford",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    181
+    193,
+    194
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "7ea98958f79f7aa0"
   },
   "listed": 3,
-  "text_chars": 4030
+  "text_chars": 2940
  },
  {
   "control_number": "35375",
@@ -8148,27 +8175,27 @@
    "ECE326"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=300",
-   "title": "Degree Requirements",
-   "h1": "Degree Requirements",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=305",
+   "title": "Early Childhood Education, Associate",
+   "h1": "Early Childhood Education, Associate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    300,
-    301,
-    302,
-    303
+    305,
+    306
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "9542934c5ca4d588"
   },
   "listed": 4,
-  "text_chars": 16000
+  "text_chars": 3277
  },
  {
   "control_number": "37337",
@@ -8263,25 +8290,27 @@
    "CAM321"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=221",
-   "title": "requisite courses.",
-   "h1": "requisite courses.",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=284",
+   "title": "Basic Culinary Services Certificate",
+   "h1": "Basic Culinary Services Certificate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    221,
-    222
+    284,
+    285
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "b70c9d0140da377e"
   },
   "listed": 5,
-  "text_chars": 7858
+  "text_chars": 2387
  },
  {
   "control_number": "37848",
@@ -8625,25 +8654,26 @@
    "BUS350"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=282",
-   "title": "Certificate, and the Small Business Management/Entrepreneurship",
-   "h1": "Certificate, and the Small Business Management/Entrepreneurship",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=227",
+   "title": "Entrepreneurship Certificate",
+   "h1": "Entrepreneurship Certificate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    282,
-    283
+    227
    ],
    "extractor": "pypdf",
    "heading_named": true,
+   "pinned": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "18f3a4d06d338090"
   },
   "listed": 3,
-  "text_chars": 7770
+  "text_chars": 853
  },
  {
   "control_number": "39139",
