@@ -5,9 +5,9 @@
 
 WHY. The census (run 45161770730) filed 22 Sacramento City, 19 Cosumnes River and 3 Folsom Lake programs (and 5 at
 American River) whose extraction placed none of the state's listed courses: the picker handed each a sibling award's
-section, the department's list of awards or the course descriptions. S714 pins 38 of them to their own sections in
-kb/program_requirements_reconcile.json (pdf_pages: page, words, through, until; printed_title once) and files 6 as
-named gaps (named_gaps_s714.json). The pages are the hand-filed 2026-27 catalogs as college-page-read run 45167465999
+section, the department's list of awards or the course descriptions. S714 pins 37 of them to their own sections in
+kb/program_requirements_reconcile.json (pdf_pages: page, words, through, until; printed_title once) and files 7 as
+named gaps (named_gaps_s714.json; 30620 among them, its pin dropped on PR #3715's second reader). The pages are the hand-filed 2026-27 catalogs as college-page-read run 45167465999
 printed them (tests/fixtures/program_requirements_rios_pins_s714.json.gz).
 
   1. Every pin binds on the filed pages, and the window the capture reads (pdf_best, with the college's printed forms
@@ -23,7 +23,10 @@ printed them (tests/fixtures/program_requirements_rios_pins_s714.json.gz).
      state title's words and never add one. A pin without until reads exactly as before.
   4. The named gaps: each program once, a defined reason, never pinned, and with the pins it covers the lever's list.
   5. Sacramento City's HVAC pair: the capture looks for HVAC 351 where the file lists MET 351, and the scorer reads a
-     placed HVAC code as the listed MET course, never one the file lists as HVAC.
+     placed HVAC code as the listed MET course, never one the file lists as HVAC. Its self-recall: every table row in
+     the three MET windows that the scorer renames is checked against the catalog's own MET course description
+     (pp.528-533), a field the pair never reads: the same number (or, for OEHS 110, the renumber's MET 350), the same
+     title and the same units. 42 rows, 0 wrong.
 Pure stdlib.
 """
 import gzip
@@ -207,6 +210,42 @@ renamed = [c["code"] for c in S.with_prefix_aliases(rec, listed, aliases)["block
 check(renamed == ["MET351", "HVAC 388", "MET350"] or [S.norm_code(c) for c in renamed] == ["MET351", "HVAC388", "MET350"],
       "the scorer reads HVAC 351 as MET 351 and OEHS 110 as MET 350, and keeps HVAC 388, which the file lists (%s)"
       % renamed)
+# The self-recall: each renamed row against the catalog's own MET description, which the pair never reads.
+desc = {}
+dl = [ln.strip() for q in sorted(FIX["colleges"][SCC]["description_pages"], key=int)
+      for ln in FIX["colleges"][SCC]["description_pages"][q].split("\n")]
+for k, ln in enumerate(dl):
+    m = re.match(r"^MET (\d+) (.+)$", ln)
+    if not m or re.search(r"\s\d+(\.\d+)?$", ln):
+        continue
+    title, j = [m.group(2)], k + 1
+    while j < len(dl) and j < k + 4 and not dl[j].startswith(("Units:", "Same As:")):
+        title.append(dl[j])
+        j += 1
+    while j < len(dl) and not dl[j].startswith("Units:"):
+        j += 1
+    if j < len(dl):
+        desc["MET" + m.group(1)] = ("".join(title).replace("-", "").replace(" ", "").lower(),
+                                    dl[j].split(":", 1)[1].strip())
+right, wrong = 0, []
+for cn in ("04670", "07345", "23019"):
+    listed = {S.norm_code(c): 1 for c in FIX["colleges"][SCC]["programs"][cn]["codes"]}
+    for ln in windows[(SCC, cn)][1].split("\n"):
+        m = re.match(r"^((?:HVAC|OEHS) \d+) (.+?) (\d+(?:\.\d+)?)$", ln.strip())
+        if not m:
+            continue
+        r = {"blocks": [{"courses": [{"code": m.group(1)}]}]}
+        to = S.norm_code(S.with_prefix_aliases(r, listed, aliases)["blocks"][0]["courses"][0]["code"])
+        if to == S.norm_code(m.group(1)):
+            continue          # the file lists the printed code; nothing is renamed
+        d = desc.get(to)
+        if d and d[0] == m.group(2).replace("-", "").replace(" ", "").lower() and d[1] == m.group(3):
+            right += 1
+        else:
+            wrong.append("%s %s -> %s (%s)" % (cn, m.group(1), to, d))
+check(right == 42 and not wrong,
+      "the HVAC pair's self-recall: %d renamed rows match the catalog's own MET number, title and units, %d do not %s"
+      % (right, len(wrong), wrong[:3]))
 check(any(c.get("printed") == "HVAC" and c.get("file") == "MET" and c.get("session") == "S714"
           for c in (STEPS.get(SCC) or {}).get("prefix_aliases_cited") or []),
       "the HVAC pair carries its citation")
