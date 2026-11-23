@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 234,
  "with_closed_list": 147,
- "started": "2026-11-19T07:44:05Z",
+ "started": "2026-11-23T12:40:40Z",
  "catalog_year_from": "the procedure record's catalog step",
  "procedure_step": {
   "start": "https://www.elac.edu/academic-resources/catalog",
@@ -814,6 +814,19 @@
     "opens": "[page 390] Career and Continuing Education Department 386 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 SUBJECT & NO. COURSE UNITS VOC ED 429CE Technical Skills Training for Patient Transporters .............."
    },
    {
+    "control_number": "38332",
+    "pages": [
+     198,
+     199
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 198] Engineering and Technologies Department 194 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 ENG GEN 225* Digital Circuit Analysis ..........................3 ENG GEN 231* Dynamics ......................"
+   },
+   {
     "control_number": "38333",
     "pages": [
      127,
@@ -1537,7 +1550,7 @@
     "code": null,
     "cn_printed": true,
     "titled": true,
-    "coverage": 0.941,
+    "coverage": 1.0,
     "opens": "[page 275] (Academic Plan E044624D) Students earning the Certificate of Achievement in Digital Film Production gain hands-on experience for entry-level positions across the spectrum of film, television, video, broadca"
    },
    {
@@ -1650,6 +1663,20 @@
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 274] (Academic Plan E045491D) This is a program certificate that serves as a continua- tion for Animation Level I, providing an emphasis in both 2D and 3D character animation. This program is recom- mended for stu"
+   },
+   {
+    "control_number": "45540",
+    "pages": [
+     343,
+     344,
+     345
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.625,
+    "opens": "[page 343] In addition, the department now offers a Bachelor of Sci- ence in Respiratory Therapy at ELAC. Faculty Haines, Michael, Chair, Clinical Director, Professor, Respiratory Therapy Chhun, Bunnarith, Professor, Re"
    },
    {
     "control_number": "45587",
@@ -1909,8 +1936,8 @@
    }
   ],
   "page_checks": {
-   "read": 3,
-   "own_page": 2,
+   "read": 1,
+   "own_page": 0,
    "no_own_page": 1,
    "not_printed": 0
   },
@@ -1926,12 +1953,12 @@
  "loads": 2,
  "pages_listed": 1,
  "pages_answered": 1,
- "seconds": 157.5,
- "found": 134,
+ "seconds": 203.3,
+ "found": 136,
  "by_method": {
   "no_closed_list": 87,
-  "not_found": 13,
-  "pdf_pages": 134
+  "not_found": 11,
+  "pdf_pages": 136
  },
  "shared_pages": {
   "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=102": [
@@ -2033,6 +2060,11 @@
    "38170",
    "44541"
   ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=198": [
+   "38332",
+   "38337",
+   "40042"
+  ],
   "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=127": [
    "38333",
    "44375"
@@ -2041,10 +2073,6 @@
    "38334",
    "39523",
    "44840"
-  ],
-  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=198": [
-   "38337",
-   "40042"
   ],
   "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=320": [
    "38427",
@@ -2152,16 +2180,6 @@
    "status": "Active"
   },
   {
-   "control_number": "38332",
-   "title": "Geo-Spatial Engineering and Technologies",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=25",
-    "coverage": 0.0
-   },
-   "status": "Active"
-  },
-  {
    "control_number": "38340",
    "title": "Custodial Technician Training",
    "award": "Noncredit program",
@@ -2175,7 +2193,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active - Teachout Only"
   },
@@ -2228,50 +2247,50 @@
     "coverage": 0.333
    },
    "status": "Active"
-  },
-  {
-   "control_number": "45540",
-   "title": "Respiratory Therapy",
-   "award": "Baccalaureate of Science (B.S.) Degree.",
-   "near_miss": {
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=346",
-    "coverage": 0.375
-   },
-   "status": "Active"
   }
  ],
  "page_claimed": [],
  "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 9,
-  "0.8-1.0": 15,
-  "1.0": 110
+  "0.5-0.8": 10,
+  "0.8-1.0": 14,
+  "1.0": 112
  },
  "would_extract": {
   "against": "kb/program_requirements_college/east_los_angeles",
-  "kept": 132,
+  "kept": 133,
   "kept_moved": 0,
-  "programs": 2,
+  "programs": 3,
   "list": [
    {
-    "control_number": "33681",
-    "title": "Mathematics",
-    "award": "A.S. T Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=263",
+    "control_number": "38332",
+    "title": "Geo-Spatial Engineering and Technologies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=198",
     "coverage": 1.0,
-    "was_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=263",
-    "was_coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "44624",
+    "title": "Digital Film Production",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=275",
+    "coverage": 1.0,
+    "was_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=275",
+    "was_coverage": 0.941,
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "45051",
-    "title": "Japanese",
-    "award": "A.A. Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=219",
-    "coverage": 1.0,
-    "was_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=219",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
+    "control_number": "45540",
+    "title": "Respiratory Therapy",
+    "award": "Baccalaureate of Science (B.S.) Degree.",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=343",
+    "coverage": 0.625,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    }
   ],
   "held_worse_window": [],
@@ -2500,6 +2519,10 @@
   "38234": {
    "sha256": "2eea9d4bcf89446b431b5d8f8b6aac3822f177e11f67fdf168a58968f14b79be",
    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=173"
+  },
+  "38332": {
+   "sha256": "4f3fd54b144c2d72d207f38d75d5931a03df6e2b2834542ca8c248a44938ef98",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=198"
   },
   "38333": {
    "sha256": "f583260b57bc0b400ef0241dc23dd2f965eefa5337ccef9d1028b3069777277e",
@@ -2741,6 +2764,10 @@
    "sha256": "cfc0a62f37f6078ff49de2f00d1e629a3e6945a0549e36b36a7b581164694e6e",
    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=274"
   },
+  "45540": {
+   "sha256": "2646604bf59e8d20278f47ec1cc73ee16fff36f5eab1c6d41b739a863beea5dd",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=343"
+  },
   "45587": {
    "sha256": "5667c793cc7570293c3b0344aec08a5b6c086f54565bafa5c0d0c7fa2d0e2908",
    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=275"
@@ -2818,5 +2845,5 @@
    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=277"
   }
  },
- "run": "44475516022"
+ "run": "45176404274"
 }

@@ -83,20 +83,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    21.0,
-    21.0
+    23.0,
+    23.0
    ],
    "stated": [
     23.0,
     23.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 21.0-21.0; the catalog states 23.0-23.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -120,7 +118,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -211,7 +209,8 @@
       "units": 2,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": false,
+      "times": 2
      }
     ]
    },
@@ -317,5 +316,16 @@
    "The printed total of 23 matches 11 + 4 + 3 + 2 + 3."
   ]
  },
- "extracted_run": "39063389278"
+ "extracted_run": 45176404274,
+ "reconciled": [
+  {
+   "field": "times",
+   "was": null,
+   "now": {
+    "TECTHTR 348": 2
+   },
+   "words": "COMPLETE THE FOLLOWING COURSE TWICE"
+  }
+ ],
+ "read_run": "39063389278"
 }

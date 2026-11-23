@@ -71,8 +71,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     52.0,
     52.0
@@ -86,8 +86,10 @@
     34.0,
     34.0
    ],
-   "why": [
-    "the record says electives fill the degree total, but the catalog text names no electives"
+   "why": [],
+   "fill": [
+    8.0,
+    8.0
    ]
   },
   "repeated": {
@@ -112,7 +114,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -142,7 +144,8 @@
     "Apply critical thinking skills to solve a criminal justice problem.",
     "Describe individual functions and components of the criminal justice system."
    ],
-   "careers": []
+   "careers": [],
+   "electives_fill_words": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS"
   },
   "blocks": [
    {
@@ -304,5 +307,14 @@
    "Additional CSU transferable units to reach 60 are required as needed; no units printed, so electives_fill_degree is true."
   ]
  },
- "extracted_run": "39063389278"
+ "extracted_run": 45176404274,
+ "reconciled": [
+  {
+   "field": "electives_fill_words",
+   "was": null,
+   "now": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS",
+   "words": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE \nUNITS"
+  }
+ ],
+ "read_run": "39063389278"
 }

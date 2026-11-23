@@ -46,22 +46,17 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 16,
+   "placed": 17,
    "listed": 17,
-   "share": 0.941,
-   "missing": [
-    "BRDCSTG15"
-   ],
-   "unexplained": [
-    "BRDCSTG15"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 6,
+   "count": 5,
    "codes": [
-    "BRDSCTG15",
     "CAOT1",
     "CAOT32",
     "CAOT82",
@@ -75,7 +70,7 @@
     "MEDIART101",
     "MEDIART211"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -113,7 +108,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -353,5 +348,6 @@
    "The careers are read from 'entry-level positions across the spectrum of film, television, video, broadcasting, commercials, streaming, and other new media'; a reviewer may check whether these should count as career fields."
   ]
  },
- "extracted_run": "39063389278"
+ "extracted_run": 45176404274,
+ "read_run": "39063389278"
 }
