@@ -1,0 +1,45 @@
+{
+ "_readme": "S714 (rios, lane 1), the gap census's reader_page_assignment lever (run 45161770730): 4 programs of Sacramento City College whose filed record places none of the state's listed courses and whose own section the 2026-27 catalog does not print. Free page read 45167465999 printed every page of the hand-filed catalog (kb/hand_filed_catalogs/sacramento_city.json, sha256 pinned); the college's other 18 programs on the lever are pinned in its reconcile entry (kb/program_requirements_reconcile.json, pdf_pages). These are filed as named gaps and are never sent to a paid read: no page holds their requirements. Their filed records stay as filed (the load skips a record that places none, d-load-skips-places-none-s697). No model call, no Supabase write. They are the college's to settle in COCI. 30620 was pinned at first and dropped on the second reader's finding (PR #3715): the section its pin read is Mathematics 2.0 46304's.",
+ "college": "Sacramento City College",
+ "written": "2026-11-23T13:16:39Z",
+ "capture": "39047070975",
+ "page_reads": [
+  "45167465999"
+ ],
+ "reasons": {
+  "credit_not_in_catalog": "A credit program the 2026-27 catalog prints under no heading of its own: no page of the hand-filed file names its title with its award, and the department's list of degrees and certificates does not list it.",
+  "ge_pattern_certificate": "General-education pattern certificate. It has no fixed course list by design (the census's named gap, kb/_harvest_gap_census.py NAMED_GAPS).",
+  "teach_out_successor_printed": "A program the state's file marks Active - Teachout Only, whose 2026-27 catalog prints only its successor's section: the department's list of degrees names the successor and not it."
+ },
+ "programs": [
+  {
+   "control_number": "40117",
+   "title": "iOS App Developer",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "reason": "credit_not_in_catalog",
+   "note": "No page prints 'iOS'; the Computer Information Science department's list of awards (PDF p.262) does not name it, and the record was read from p.277."
+  },
+  {
+   "control_number": "46086",
+   "title": "Cardiovascular Technologist",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "reason": "credit_not_in_catalog",
+   "note": "The Cardiovascular Technologist department (PDF p.231) prints its overview and then 'Cardiovascular Technologist (CVT) Courses' with no list of degrees and certificates and no certificate section; pp.231-234 are course descriptions."
+  },
+  {
+   "control_number": "42373",
+   "title": "Intersegmental GE Transfer Curriculum (IGETC)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "reason": "ge_pattern_certificate",
+   "note": "The state lists 342 courses; the catalog prints IGETC only as a transfer pattern in its graduation and transfer pages (PDF pp.81-99). The census names this gap by its title."
+  },
+  {
+   "control_number": "30620",
+   "title": "Mathematics",
+   "award": "A.S. T Degree",
+   "reason": "teach_out_successor_printed",
+   "successor": "46304",
+   "note": "The Program Course File marks 30620 Active - Teachout Only. The Mathematics and Statistics department's Degrees and Certificates Offered (PDF p.515) lists only 'A.S.-T. in Mathematics 2.0' and 'A.S. in Mathematics', and the A.S.-T. section on pp.515-516 is Mathematics 2.0 46304's; free capture 45171431387 shared #page=515 among 30479, 30620 and 46304."
+  }
+ ]
+}

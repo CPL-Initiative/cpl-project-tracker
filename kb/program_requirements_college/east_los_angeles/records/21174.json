@@ -75,11 +75,11 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    66.0,
-    66.0
+    60.0,
+    60.0
    ],
    "stated": [
     60.0,
@@ -87,12 +87,10 @@
    ],
    "against": "degree",
    "ge": [
-    27.0,
-    27.0
+    21.0,
+    21.0
    ],
-   "why": [
-    "the blocks and general education sum to 66.0-66.0; the catalog prints 60.0-60.0 for the degree"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -116,7 +114,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -137,8 +135,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": 27,
-    "max": 27
+    "min": 21,
+    "max": 21
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -494,14 +492,20 @@
    "The description states the degree builds on the Computer-Aided Drafting (CAD) Certificate of Achievement with at least 2.0 GPA."
   ]
  },
- "extracted_run": 43357061643,
+ "extracted_run": 45176404274,
  "reconciled": [
   {
-   "field": "electives_fill_words",
-   "was": null,
-   "now": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS",
-   "words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 \nUNITS"
+   "field": "ge_units",
+   "was": {
+    "min": 27,
+    "max": 27
+   },
+   "now": {
+    "min": 21,
+    "max": 21
+   },
+   "words": "following LACCD GE Area 4a (3 units) and Area 7 (3 units) \nare waived for this degree"
   }
  ],
- "read_run": "39063389278"
+ "read_run": 43357061643
 }

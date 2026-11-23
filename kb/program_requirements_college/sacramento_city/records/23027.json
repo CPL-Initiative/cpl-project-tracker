@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Commercial Music, Audio Production Emphasis",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=536",
+ "source_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=543",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12818,
+  "input_tokens": 7423,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12818,
-    "output_tokens": 1971,
+    "input_tokens": 7423,
+    "output_tokens": 2337,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,101 +30,89 @@
     "model": null
    }
   ],
-  "output_tokens": 1971,
+  "output_tokens": 2337,
   "output_tokens_details": {
-   "thinking_tokens": 675
+   "thinking_tokens": 729
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09069,
- "ms": 16912,
- "seconds": 17.3,
+ "cost_usd": 0.07643,
+ "ms": 17588,
+ "seconds": 18.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 20,
    "listed": 20,
-   "share": 0.0,
-   "missing": [
-    "MUFHL305",
-    "MUFHL309",
-    "MUFHL310",
-    "MUFHL311",
-    "MUFHL315",
-    "MUFHL320",
-    "MUFHL481",
-    "MUFHL482",
-    "MUIVI345",
-    "MUSM110",
-    "MUSM115",
-    "MUSM330",
-    "MUSM331",
-    "MUSM342",
-    "MUSM344",
-    "MUSM350",
-    "MUSM356",
-    "MUSM361",
-    "MUSM362",
-    "MUSM366"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 3,
+   "codes": [
+    "MUSM306",
+    "MUSM357",
+    "MUSM367"
+   ],
+   "flagged": [
+    "MUSM306",
+    "MUSM357",
+    "MUSM367"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    37.0,
+    37.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    37.0,
+    37.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 5,
    "courses": 0,
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Not found: the text holds no Certificate of Achievement section for Commercial Music, Audio Production Emphasis",
+   "section_heading": "Commercial Music, Audio Production Emphasis Certificate",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 37,
+    "max": 37
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -141,98 +129,239 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "operate music recording equipment using various music recording workflows.",
+    "describe the processes involved in recording music groups in the semi-professional or home recording studio.",
+    "display skills needed to conduct a professional music recording session.",
+    "properly use the equipment found in recording studios to achieve successful outcomes to a variety of activities common to the music recording workflow.",
+    "successfully complete projects in music mixing and audio post-production using both analog and digital platforms."
+   ],
+   "careers": [
+    "audio engineering",
+    "audio engineers",
+    "multi-media",
+    "post-production audio specialists",
+    "owner/engineers"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "MUFHL 305",
-    "why": "named only in the A.A. section; certificate section not in the text"
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MUFHL 309",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUFHL 320",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSM 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSM 306",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSM 342",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSM 344",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSM 350",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSM 356",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSM 357",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSM 362",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSM 366",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSM 367",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
    },
    {
-    "code": "MUFHL 309",
-    "why": "named only in the A.A. section; certificate section not in the text"
-   },
-   {
-    "code": "MUFHL 310",
-    "why": "named only in the A.A. section; certificate section not in the text"
-   },
-   {
-    "code": "MUFHL 311",
-    "why": "named only in the A.A. section; certificate section not in the text"
-   },
-   {
-    "code": "MUFHL 315",
-    "why": "named only in the A.A. section; certificate section not in the text"
-   },
-   {
-    "code": "MUFHL 320",
-    "why": "named only in the A.A. section; certificate section not in the text"
-   },
-   {
-    "code": "MUFHL 481",
-    "why": "named only in the A.A. section; certificate section not in the text"
-   },
-   {
-    "code": "MUFHL 482",
-    "why": "named only in the A.A. section; certificate section not in the text"
-   },
-   {
-    "code": "MUIVI 345",
-    "why": "named only in the A.A. section; certificate section not in the text"
-   },
-   {
-    "code": "MUSM 110",
-    "why": "named only in the A.A. section; certificate section not in the text"
-   },
-   {
-    "code": "MUSM 115",
-    "why": "named only in the A.A. section; certificate section not in the text"
-   },
-   {
-    "code": "MUSM 330",
-    "why": "named only in the A.A. section; certificate section not in the text"
-   },
-   {
-    "code": "MUSM 331",
-    "why": "named only in the A.A. section; certificate section not in the text"
-   },
-   {
-    "code": "MUSM 342",
-    "why": "named only in the A.A. section; certificate section not in the text"
-   },
-   {
-    "code": "MUSM 344",
-    "why": "named only in the A.A. section; certificate section not in the text"
-   },
-   {
-    "code": "MUSM 350",
-    "why": "named only in the A.A. section; certificate section not in the text"
-   },
-   {
-    "code": "MUSM 356",
-    "why": "named only in the A.A. section; certificate section not in the text"
-   },
-   {
-    "code": "MUSM 361",
-    "why": "named only in the A.A. section; certificate section not in the text"
-   },
-   {
-    "code": "MUSM 362",
-    "why": "named only in the A.A. section; certificate section not in the text"
-   },
-   {
-    "code": "MUSM 366",
-    "why": "named only in the A.A. section; certificate section not in the text"
+    "name": "A minimum of 5.5 units from the following",
+    "rule": "choose_units",
+    "minimum": 5.5,
+    "option_group": null,
+    "stated": {
+     "min": 5.5,
+     "max": 5.5
+    },
+    "courses": [
+     {
+      "code": "MUFHL 305",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUFHL 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MUFHL 481",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUFHL 311",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MUFHL 482",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUFHL 315",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUIVI 345",
+      "units": 1,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSM 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSM 330",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSM 331",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSM 361",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text (pages 536-539) contains only Associate Degree sections; the Certificates of Achievement for Music, including Commercial Music, Audio Production Emphasis, likely appear on later pages not included. No certificate requirements were recorded.",
-   "The 'A.A. in Commercial Music, Audio Production Emphasis' section (Total Units: 37) lists every closed-list course: required MUFHL 309, MUFHL 320, MUSM 110, MUSM 306, MUSM 342, MUSM 344, MUSM 350, MUSM 356, MUSM 357, MUSM 362, MUSM 366, MUSM 367, plus a minimum of 5.5 units from MUFHL 305, MUFHL 310 or 481, MUFHL 311 or 482, MUFHL 315, MUIVI 345 (1-2), MUSM 115, MUSM 330, MUSM 331, MUSM 361. MUSM 306, MUSM 357 and MUSM 367 are not on the closed list. A reviewer should fetch the certificate section to confirm whether its requirements match the A.A.",
-   "The A.A. section's Student Learning Outcomes and Career Information were not copied because they are printed for the A.A. degree, not the certificate."
+   "Required courses sum to 31.5 units; plus the 5.5-unit elective block this matches the printed total of 37 units.",
+   "MUSM 306, MUSM 357 and MUSM 367 are printed as required but are not in the closed list; recorded as catalog additions.",
+   "MUIVI 345 is printed with 1 - 2 units in the catalog while the state file stores 1.",
+   "Career Information appears at the top of page 544 and refers to 'The Commercial Music, Audio Production Certificate program'; read as belonging to this award. 'multi-media' parsed as a career field from 'audio engineers in professional recording studios, multi-media, and post-production audio specialists'; reviewer may check this parsing."
   ]
  },
- "extracted_run": "39047070975"
+ "extracted_run": "45181973475",
+ "catalog_year": "2026-2027",
+ "source_sha": "cc7f8ab0e768b716",
+ "source_codes": [
+  "MUFHL305",
+  "MUFHL309",
+  "MUFHL310",
+  "MUFHL311",
+  "MUFHL315",
+  "MUFHL320",
+  "MUFHL481",
+  "MUFHL482",
+  "MUIVI345",
+  "MUSM110",
+  "MUSM115",
+  "MUSM330",
+  "MUSM331",
+  "MUSM342",
+  "MUSM344",
+  "MUSM350",
+  "MUSM356",
+  "MUSM361",
+  "MUSM362",
+  "MUSM366"
+ ],
+ "source_coverage": 1.0
 }

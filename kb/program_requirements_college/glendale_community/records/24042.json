@@ -61,20 +61,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    45.0,
-    336.0
+    185.0,
+    560.0
    ],
    "stated": [
     185.0,
     560.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 45.0-336.0; the catalog states 185.0-560.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -98,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

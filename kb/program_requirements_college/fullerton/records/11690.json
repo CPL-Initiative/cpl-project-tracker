@@ -45,25 +45,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 16,
+   "placed": 17,
    "listed": 17,
-   "share": 0.941,
-   "missing": [
-    "FCRTV196"
-   ],
-   "unexplained": [
-    "FCRTV196"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "CRTV196F"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -101,7 +95,14 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true,
+  "course_renumbers": [
+   {
+    "printed": "CRTV 196 F",
+    "listed": "FCRTV196",
+    "block": "Select 5-6 units from the following:"
+   }
+  ]
  },
  "record": {
   "program": {

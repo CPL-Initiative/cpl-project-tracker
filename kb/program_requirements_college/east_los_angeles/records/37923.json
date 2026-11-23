@@ -61,8 +61,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     67.0,
     69.0
@@ -76,9 +76,8 @@
     34.0,
     34.0
    ],
-   "why": [
-    "the record says electives fill the degree total, but the catalog text names no electives"
-   ]
+   "why": [],
+   "overlap": true
   },
   "repeated": {
    "codes": [],
@@ -102,7 +101,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -131,7 +130,8 @@
     "Distinguish fundamental concepts related to biology.",
     "Relate supporting STEM concepts in math, chemistry, and physics."
    ],
-   "careers": []
+   "careers": [],
+   "electives_fill_words": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS"
   },
   "blocks": [
    {
@@ -282,5 +282,14 @@
    "'COMPLETE ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS' read as electives filling the degree."
   ]
  },
- "extracted_run": "39063389278"
+ "extracted_run": 45176404274,
+ "reconciled": [
+  {
+   "field": "electives_fill_words",
+   "was": null,
+   "now": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS",
+   "words": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE \nUNITS"
+  }
+ ],
+ "read_run": "39063389278"
 }

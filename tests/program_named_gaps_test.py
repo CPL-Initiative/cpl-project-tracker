@@ -603,7 +603,8 @@ check(NG.total_differs(dict(_td_rec, score=dict(_td_sc, coverage={"pass": False}
 check(NG.ARITH_SCORE["total_differs"] == 50 and "total_differs" in NG.GAPS, "the gap has its sentence and score")
 for (_c, _cn), _e in _td.items():
     _p = os.path.join(NG.COLLEGE_DIR, {"Clovis Community College": "clovis_community",
-                                       "Glendale Community College": "glendale_community"}[_c], "records", _cn + ".json")
+                                       "Glendale Community College": "glendale_community",
+                                       "East Los Angeles College": "east_los_angeles"}[_c], "records", _cn + ".json")
     with open(_p, encoding="utf-8") as _fh:
         _f = _json.load(_fh)
     _bare = dict(_f, score={k: v for k, v in _f["score"].items() if k not in ("gaps", "confidence")})
@@ -617,8 +618,15 @@ with open(os.path.join(ROOT, "kb", "receipts", "program_requirement_records_name
     _p2 = _json.load(_fh)
 _p2_keys = {(r["college"], str(r["control_number"])) for r in _p2["records"]}
 _s703_td = [r for r in _s703["records"] if r["gap"] == "total_differs"]
+# S714 at East Los Angeles: Recording and Sound Design 45602 (kb/_program_piles_s714_ela.py), a full-row plan.
+with open(os.path.join(ROOT, "kb", "receipts", "program_requirement_records_piles_ela_2026-11-23_s714e.json"),
+          encoding="utf-8") as _fh:
+    _s714e_td = {(r["college"], str(r["control_number"])) for r in _json.load(_fh)["records"]
+                 if r["reading"] == "total_differs" and r["after_image"]["checks"].get("gaps") == ["total_differs"]
+                 and not (r["before_image"]["checks"] or {}).get("gaps")}
+check(_s714e_td == {("East Los Angeles College", "45602")}, "the S714 plan moves 45602 to total_differs")
 check(_p2["only_gaps"] == ["total_differs"] and not _p2["recall"]["wrong"]
-      and _p2_keys | {(r["college"], str(r["control_number"])) for r in _s703_td} == set(_td)
+      and _p2_keys | {(r["college"], str(r["control_number"])) for r in _s703_td} | _s714e_td == set(_td)
       and {(r["college"], str(r["control_number"])) for r in _s703_td} == {("Clovis Community College", "33491")}
       and all(r["after_image"]["checks"].get("gaps") == ["total_differs"]
               and not (r["before_image"]["checks"] or {}).get("gaps") for r in _p2["records"] + _s703_td),
