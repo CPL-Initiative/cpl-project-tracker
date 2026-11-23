@@ -222,7 +222,8 @@ def build(root=ROOT):
         ens = enhanced_by_college.get(si, {}) if si is not None else {}
         subj = read_subjects(root, c["slug"])
         filed = (subj or {}).get("by") or {}
-        listed = {k for k, r in filed.items() if r.get("rule") == "index"}     # the codes the catalog's index lists
+        listed = {k for k, r in filed.items() if r.get("rule") in ("index", "code_address")}   # the codes the catalog prints a page for:
+        # its index lists them, or a read at the code's address found a page naming the code (kb/_subject_code_address_probe.py, S718)
         depts = read_departments(root, c["slug"]) or {}
         dept_titles = {title_case(v) for v in depts.values()}
         out = []
@@ -236,7 +237,7 @@ def build(root=ROOT):
                 name, source = sorted(e["names"].items(), key=lambda kv: (-kv[1], kv[0]))[0][0], "course pages"
             h = filed.get(k)
             if not name and h and h.get("heading"):
-                name, source = h["heading"], "index" if h.get("rule") == "index" else "heading above the first course"
+                name, source = h["heading"], {"index": "index", "code_address": "the code's own catalog page"}.get(h.get("rule"), "heading above the first course")
             name = title_case(without_code(name, college_codes))
             if not name:
                 source = None

@@ -1,0 +1,58 @@
+{
+ "_readme": "S718 (SkyPetrel), 2026-11-23: the codes COCI carries at Long Beach City College that its course-descriptions index does not list, each read once at its code's address (kb/_subject_code_address_probe.py). A heading is filed only when the page names the code in parentheses. No model call.",
+ "college": "Long Beach City College",
+ "questions": {
+  "code_barb": "Does Long Beach City College's catalog print a BARB page, and under what heading?",
+  "code_cart": "Does Long Beach City College's catalog print a CART page, and under what heading?",
+  "code_draft": "Does Long Beach City College's catalog print a DRAFT page, and under what heading?",
+  "code_hs": "Does Long Beach City College's catalog print a HS page, and under what heading?",
+  "code_hvacr": "Does Long Beach City College's catalog print a HVAC/R page, and under what heading?",
+  "code_showb": "Does Long Beach City College's catalog print a SHOWB page, and under what heading?"
+ },
+ "keywords": [
+  "BARB",
+  "CART",
+  "DRAFT",
+  "HS",
+  "HVAC/R",
+  "SHOWB"
+ ],
+ "pages": [
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/barb/",
+   "answers": [
+    "code_barb"
+   ]
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/cart/",
+   "answers": [
+    "code_cart"
+   ]
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/draft/",
+   "answers": [
+    "code_draft"
+   ]
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/hs/",
+   "answers": [
+    "code_hs"
+   ]
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/hvacr/",
+   "answers": [
+    "code_hvacr"
+   ]
+  },
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/showb/",
+   "answers": [
+    "code_showb"
+   ]
+  }
+ ]
+}
