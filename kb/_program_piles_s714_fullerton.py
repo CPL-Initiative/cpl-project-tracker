@@ -56,8 +56,10 @@ REN = "passes: the file keeps the course with its campus letter elsewhere (cours
 HAND_HELD = {cn: REN for cn in ("03816", "03839", "08438", "11690", "18747", "21252", "21266", "21271", "36790",
                                 "45320", "45378")}
 HAND_HELD.update({
-    "18166": "held: the renumber places PE 248 F, and the arithmetic still fails (4-10 against 18): the record's "
-             "Category C list is cut off after PE 144 F (MAY_CONTINUE_REVIEWED, kb/_program_named_gaps.py), a reread",
+    "18166": "held: the arithmetic fails (4-10 against 18): the record's Category C list is cut off after PE 144 F "
+             "(MAY_CONTINUE_REVIEWED, kb/_program_named_gaps.py), a reread. The printed PE 248 F is the file's own "
+             "PE248F (Foundations of Sport and Exercise Psychology); the program's list names F PE248 (Psychology of "
+             "Sport), so the course takes no renumber",
     "18749": "held: coverage: the state's file lists THEA 231 F, which the page does not print",
     "36863": "held: coverage: the state's file lists PE 108 F, which the page does not print",
     "03853": "held: 'Restricted Electives or Substitution Courses' fill the program from 18 to 22 with no figure of "

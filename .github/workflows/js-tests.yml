@@ -607,7 +607,7 @@ jobs:
       # one option the reading split over several blocks; the self-recall, the blast radius and the plan's 8 rows.
       - name: Cheap piles S714 at City College of San Francisco (renumbers, option parts, the plan)
         run: python3 tests/program_piles_s714_ccsf_test.py
-      # S714 at Fullerton: the campus letter's place in nine file codes; the self-recall and the plan's 11 rows.
+      # S714 at Fullerton: the campus letter's place in eight file codes; the self-recall and the plan's 11 rows.
       - name: Cheap piles S714 at Fullerton (campus-letter renumbers, the plan)
         run: python3 tests/program_piles_s714_fullerton_test.py
       # Discontinued programs (S680; Sam, 2026-11-17 on #3480): a program's own catalog section marks it,

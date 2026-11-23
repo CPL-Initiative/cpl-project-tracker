@@ -6,8 +6,11 @@ WHY. The S714 conductor's brief: Fullerton's 24 reconcile_steps records into pas
 rule work, each rule with a claim check (the notes and today's capture), boundary readings and a precision count.
 Pinned here:
 
-  * the college's nine course_renumbers ("HORT 2 F" for the file's "F HORT002", "CSTR 42 F" for "CSTR 42"), each with
+  * the college's eight course_renumbers ("HORT 2 F" for the file's "F HORT002", "CSTR 42 F" for "CSTR 42"), each with
     its citation; the scorer reads them, and never where the program's list carries the printed form;
+  * the second reader's fixes: PE 248 F takes no renumber (the file lists it as printed, PE248F "Foundations of Sport
+    and Exercise Psychology", beside F PE248 "Psychology of Sport"), so 18166 keeps main's score; CRTV 196 F's cite
+    reads the printed 0.5-3 units;
   * precision 24 of 24 against the hand reading (11 pass, 13 held); the claim checks: no note against, and the
     printed form found on every program's page by today's capture or the S714 free page read; 33 boundary readings;
   * the plan: 11 rows named exactly by the receipt and the four SQL files, the confirm guard, a second run plans none.
@@ -42,10 +45,22 @@ def check(cond, msg):
 # ── the reading ──
 with open(os.path.join(ROOT, "kb", "program_requirements_reconcile.json"), encoding="utf-8") as fh:
     conf = json.load(fh)["colleges"][COLLEGE]
-check(len(conf["course_renumbers"]) == 9 and conf["course_renumbers"]["HORT 2 F"] == "F HORT002"
-      and conf["course_renumbers"]["CSTR 42 F"] == "CSTR 42", "the nine renumbers")
-check(len(conf["course_renumbers_cited"]) == 9 and all(c["title"] and c["units"] and c["session"] == "S714"
+check(len(conf["course_renumbers"]) == 8 and conf["course_renumbers"]["HORT 2 F"] == "F HORT002"
+      and conf["course_renumbers"]["CSTR 42 F"] == "CSTR 42", "the eight renumbers")
+check(len(conf["course_renumbers_cited"]) == 8 and all(c["title"] and c["units"] and c["session"] == "S714"
                                                        for c in conf["course_renumbers_cited"]), "each is cited")
+check({c["printed"]: c["file"] for c in conf["course_renumbers_cited"]} == conf["course_renumbers"],
+      "each citation names its renumber's pair, and no other")
+# The second reader: the file lists PE248F "Foundations of Sport and Exercise Psychology" beside F PE248 "Psychology
+# of Sport", and the printed PE 248 F is the first, so it takes no renumber and 18166 keeps main's score.
+check("PE 248 F" not in conf["course_renumbers"], "PE 248 F takes no renumber")
+f18166 = F._load("18166")
+check(F.rescore(f18166) is None and "course_renumbers" not in f18166["score"]
+      and "FPE248" in f18166["score"]["coverage"]["unexplained"] and F.outcome(f18166) == "none"
+      and F.HAND_HELD["18166"].startswith("held"), "18166 keeps main's score: no renumber reaches it, and it is held")
+crtv = next(c for c in conf["course_renumbers_cited"] if c["printed"] == "CRTV 196 F")
+check(crtv["units"] == 0.5 and crtv["units_max"] == 3 and "at 0.5-3 units" in crtv["evidence"],
+      "CRTV 196 F's cite reads the printed 0.5-3 units: %r" % crtv)
 rec = {"program": {"total_units": {"min": 8, "max": 8}},
        "blocks": [{"name": "R", "rule": "all", "courses": [{"code": "HORT 002 F", "units": 4},
                                                            {"code": "CSTR 042 F", "units": 4}]}]}

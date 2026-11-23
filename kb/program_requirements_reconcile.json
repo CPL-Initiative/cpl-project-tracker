@@ -35,7 +35,6 @@
     "HORT 185 F": "F HORT185",
     "HORT 2 F": "F HORT002",
     "JOUR 140 F": "F JOUR140",
-    "PE 248 F": "F PE248",
     "THEA 146 F": "F THEA146"
    },
    "course_renumbers_cited": [
@@ -53,9 +52,10 @@
      "file": "F CRTV196",
      "title": "Communications Seminars",
      "units": 0.5,
+     "units_max": 3,
      "session": "S714",
      "date": "2026-11-23",
-     "evidence": "The state's file lists F CRTV196 Communications Seminars (0.5 units) at Fullerton, and the 2026-2027 catalog prints the course as CRTV 196 F at 0.5 units in 11690, 21266; each record places it under the program's own list."
+     "evidence": "The state's file lists F CRTV196 Communications Seminars (0.5 units) at Fullerton, and the 2026-2027 catalog prints the course as CRTV 196 F at 0.5-3 units in 11690, 21266; each record places it under the program's own list."
     },
     {
      "printed": "CSTR 39 F",
@@ -101,15 +101,6 @@
      "session": "S714",
      "date": "2026-11-23",
      "evidence": "The state's file lists F JOUR140 Public Relations/Publicity (3 units) at Fullerton, and the 2026-2027 catalog prints the course as JOUR 140 F at 3 units in 36790; each record places it under the program's own list."
-    },
-    {
-     "printed": "PE 248 F",
-     "file": "F PE248",
-     "title": "Psychology of Sport",
-     "units": 3,
-     "session": "S714",
-     "date": "2026-11-23",
-     "evidence": "The state's file lists F PE248 Psychology of Sport (3 units) at Fullerton, and the 2026-2027 catalog prints the course as PE 248 F at 3 units in 18166; each record places it under the program's own list."
     },
     {
      "printed": "THEA 146 F",
