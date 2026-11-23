@@ -32,11 +32,13 @@ MINTED = "kb/coci_minted_courses.json"
 STATEWIDE = "kb/status/statewide_subject_codes.json"
 TITLES = "kb/status/local_subject_titles.json"
 SECTIONS_19 = "kb/reference/mq_sections.json"
+ALIASES = "kb/discipline_aliases.json"   # our discipline -> the other MQ names it answers to (Kinesiology <- Physical Education)
 
 # Our discipline names that differ from the 20th edition's (the handbook name -> ours).
 CANON_ALIAS = {
     "Specialized Instruction (Disabled Student Programs and Services): Noncredit": "Disabled Student Programs and Services: Noncredit",
-    "Drafting/CADD": "Drafting/CADD", "English as a Second Language (ESL)": "English as a Second Language",
+    "Drafting/CADD (Computer Aided Drafting/Design), CAD (Computer Aided Design), CAD (Computer Aided Drafting)": "Drafting/CADD",
+    "English as a Second Language (ESL)": "English as a Second Language",
     "Learning Assistance or Learning Skills Coordinators or Instructors, and Tutoring Coordinators": "Learning Assistance or Learning Skills",
     "Physical Education (Adapted): Disabled Student Programs and Services": "Physical Education Disabled Students",
     "Vocational (short-term): Noncredit": "Vocational", "Work Experience Instructors or Coordinators": "Work Experience Instructors",
@@ -56,9 +58,13 @@ def norm(s):
     return re.sub(r"[^a-z0-9]", "", str(s or "").lower().replace("’", "'"))
 
 
-def build(hb, canon, minted, sw, titles, sec19):
+def build(hb, canon, minted, sw, titles, sec19, aliases=None):
     cd = canon.get("disciplines") or {}
     cby = {norm(k): k for k in cd}
+    for ours, others in ((aliases or {}).get("aliases") or {}).items():
+        if ours in cd:
+            for o in others or []:
+                cby.setdefault(norm(o), ours)
     hd = hb["disciplines"]
     by_name = {norm(v["name"]): k for k, v in hd.items()}
     old19 = {norm(re.sub(r"\s*\([^)]*\)\s*$", "", k)) for k in (sec19.get("disciplines") or {})} | {norm(k) for k in (sec19.get("disciplines") or {})}
@@ -152,7 +158,7 @@ def main(argv=None):
     ap.add_argument("--out", default=os.path.join(ROOT, OUT))
     ap.add_argument("--check", action="store_true")
     a = ap.parse_args(argv)
-    doc = build(load(HANDBOOK), load(CANON), load(MINTED), load(STATEWIDE), load(TITLES), load(SECTIONS_19))
+    doc = build(load(HANDBOOK), load(CANON), load(MINTED), load(STATEWIDE), load(TITLES), load(SECTIONS_19), load(ALIASES))
     text = json.dumps(doc, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n"
     old = open(a.out, encoding="utf-8").read() if os.path.exists(a.out) else None
     if a.check:
