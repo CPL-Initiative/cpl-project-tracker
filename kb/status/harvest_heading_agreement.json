@@ -1,7 +1,7 @@
 {
  "_readme": "A dated snapshot of main at `commit` (as_of: the newest capture it reads), written by kb/_program_requirements_heading_agreement.py from the files the tree commits (git ls-files). Rewritten by a dispatch of harvest-gap-census.yml beside the gap census; nothing gates a PR on its freshness, so it can trail the records. Each record's own heading (program.section_heading) against the program it is filed under (sources.json: COCI title and award). check_would_fail_passing counts the records that pass on the committed files (passes_live) whose heading names another award type (heading_award_check, in no pass rule). award_not_program counts headings that name an award and none of the program's title words, set aside (Pasadena's one page for an A.S. and its certificate).",
  "commit": {
-  "sha": "6230902838853880a8d01ef75934ff8817b39837",
+  "sha": "5b4c057a4f291525a860f4cbd6eb367e187f4964",
   "date": "2026-11-23"
  },
  "as_of": "2026-11-23",
@@ -10,10 +10,10 @@
  ],
  "totals": {
   "records": 18967,
-  "agree": 15422,
+  "agree": 15443,
   "disagree": 276,
-  "cannot_tell": 3269,
-  "heading_absent": 278,
+  "cannot_tell": 3248,
+  "heading_absent": 267,
   "disagree_passing": 168,
   "disagree_loaded": 206,
   "check_would_fail_passing": 136,
@@ -23,7 +23,7 @@
   "suspect": 284,
   "suspect_passing": 175,
   "check_would_fail_passing_generic_heading": 0,
-  "award_not_program": 76,
+  "award_not_program": 74,
   "award_not_program_passing": 70
  },
  "pdf_ranked_by_disagree": [
@@ -2920,18 +2920,18 @@
    "platform": "pdf",
    "records": 217,
    "pdf_records": 217,
-   "agree": 189,
+   "agree": 200,
    "disagree": 1,
-   "cannot_tell": 27,
-   "heading_absent": 13,
+   "cannot_tell": 16,
+   "heading_absent": 8,
    "disagree_passing": 0,
    "disagree_loaded": 0,
    "pdf_disagree": 1,
    "pdf_disagree_passing": 0,
    "pdf_suspect": 1,
    "pdf_suspect_passing": 0,
-   "pdf_agree": 189,
-   "pdf_cannot_tell": 27,
+   "pdf_agree": 200,
+   "pdf_cannot_tell": 16,
    "by_reason": {
     "title": 1
    },
@@ -2939,7 +2939,7 @@
    "check_would_fail_passing_transfer_local": 0,
    "check_kinds_passing": {},
    "check_would_fail_passing_generic_heading": 0,
-   "award_not_program": 2,
+   "award_not_program": 0,
    "award_not_program_passing": 0,
    "window_after": 0,
    "window_after_passing": 0,
@@ -2964,7 +2964,7 @@
     }
    ],
    "control_number_print": {
-    "picks": 197,
+    "picks": 208,
     "cn_printed_picks": 0,
     "labels_in_openings": {},
     "positions": {},
@@ -3326,7 +3326,7 @@
     }
    ],
    "control_number_print": {
-    "picks": 140,
+    "picks": 142,
     "cn_printed_picks": 124,
     "labels_in_openings": {
      "Academic Plan": 103
@@ -3650,7 +3650,7 @@
    "slug": "folsom_lake",
    "college": "Folsom Lake College",
    "read_from": "main",
-   "platform": "custom_html",
+   "platform": "pdf",
    "records": 107,
    "pdf_records": 107,
    "agree": 98,
@@ -7020,21 +7020,21 @@
    "slug": "sacramento_city",
    "college": "Sacramento City College",
    "read_from": "main",
-   "platform": "custom_html",
+   "platform": "pdf",
    "records": 204,
    "pdf_records": 204,
-   "agree": 178,
+   "agree": 188,
    "disagree": 4,
-   "cannot_tell": 22,
-   "heading_absent": 13,
+   "cannot_tell": 12,
+   "heading_absent": 7,
    "disagree_passing": 3,
    "disagree_loaded": 4,
    "pdf_disagree": 4,
    "pdf_disagree_passing": 3,
    "pdf_suspect": 4,
    "pdf_suspect_passing": 3,
-   "pdf_agree": 178,
-   "pdf_cannot_tell": 22,
+   "pdf_agree": 188,
+   "pdf_cannot_tell": 12,
    "by_reason": {
     "award": 4
    },
@@ -7115,7 +7115,7 @@
     }
    ],
    "control_number_print": {
-    "picks": 204,
+    "picks": 201,
     "cn_printed_picks": 0,
     "labels_in_openings": {},
     "positions": {},

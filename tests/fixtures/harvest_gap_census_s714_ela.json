@@ -1,0 +1,41 @@
+{
+ "_what": "The gap census's reconcile_steps lever at East Los Angeles College as it stood when S714's East Los Angeles plan was written and applied (#3716), before census run 45209484531 moved the applied records out of it. tests/program_piles_s714_ela_test.py reads the plan against this, as the CCSF test reads its own (S715).",
+ "written_at": "2026-11-23 11:07Z",
+ "levers": [
+  {
+   "lever": "reconcile_steps",
+   "scope": "East Los Angeles College",
+   "programs": 24,
+   "kind": "free",
+   "what": "a team session writes correction rules from the catalog's own wording, then rescores the saved record",
+   "estimate_usd": null,
+   "over_college_limit": false,
+   "members": [
+    "02430",
+    "02456",
+    "08252",
+    "14869",
+    "21157",
+    "21174",
+    "31017",
+    "32193",
+    "32902",
+    "32980",
+    "33013",
+    "33382",
+    "35309",
+    "37510",
+    "37923",
+    "37956",
+    "37965",
+    "37969",
+    "38168",
+    "41231",
+    "42672",
+    "44624",
+    "45602",
+    "46461"
+   ]
+  }
+ ]
+}
