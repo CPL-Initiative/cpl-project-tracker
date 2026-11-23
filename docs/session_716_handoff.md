@@ -127,6 +127,11 @@ stays off the Los Rios colleges and any college lane 1 takes later.
   changed before-image; a checked row is skipped; the rollback alone restores the before state). Pre-read 9 of 9;
   migrate 45188487600 (13:55Z), 9 of 9 live at Foothill, Glendale, Golden West, MiraCosta, Monterey Peninsula (2)
   and Reedley (3); `.apply` back at main's value. Its PR waits for a slot under the cap.
+- 14:03Z: `piles2` opened #3716 (`0e9ec64f`) with the six fixes, the 15 after-images unchanged. Its reader's round 2:
+  MERGE (the bound holds; rescoring 18,960 filed records gives 0 differences against main). Its minor, for COBIx and
+  the next run: the bound is not yet measured on capture text, and a free reconcile at East Los Angeles
+  (`extract=0`) should run before its next text run; 41097 (a department-name heading) may lose its pass, and
+  36345, 37924, 43632 and 45935 might.
 
 ## Conductor settings
 
@@ -147,7 +152,7 @@ by Opus 5.5.
 | #3714 (`claude/s714-piles-ccsf`, `piles`) | merged `f0d84966`; applied by migrate 45176130201 | none |
 | `claude/s714-piles-optparts` (`piles`) | applied by migrate 45188487600, 9 rows live | its PR when a slot frees, the merge |
 | `claude/s714-piles-fullerton` (`piles`) | started | its plan |
-| `claude/s714-piles-ela` (`piles2`) | applied by migrate 45186909162, 15 rows live | the scope bound, main's merge, its PR, the merge |
+| #3716 (`claude/s714-piles-ela`, `piles2`) | applied by migrate 45186909162; round 2 MERGE | `test`, the merge |
 | #3715 (`claude/s714-rios`, `rios`) | three paid reads dispatched | the fixes, the filings, reconcile, the reread, merge |
 | #3712 (S712, Sam's plain session) | merged `3cc69ffc` | none |
 | #3383 | dependabot's | waits |
