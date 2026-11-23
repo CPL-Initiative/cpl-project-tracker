@@ -127,7 +127,7 @@ outline fills first, program records second. The outline queue was empty, so bot
 **Pending:** College of the Sequoias' 14 (`claude/s714-piles-sequoias` `51528086`; the page's own double-count
 figure), under its second reader.
 
-CENSUS_LINE
+**The census on `main`:** run 45209484531 (15:53Z, `f0ffa503`, after #3719): of 20,282 active programs, 15,454 pass and 4,508 have no passing record (4,586 at S713's census, 78 fewer); 320 are collected with a named gap (319). Largest causes: no closed list 1,747; page not found 1,097; units unequal 903 (918); units incomplete 288; places none 196 (233); coverage fails 156 (175). At about 215 a day, the 4,508 take about 21 days.
 
 **Tonight's count:** 80 records applied or loaded and live: 77 passing, 1 named gap, 2 failing new records; $4.13 of
 paid reads; 7 named gaps filed at Los Rios; 0 outline rows.
