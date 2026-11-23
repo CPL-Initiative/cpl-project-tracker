@@ -1193,21 +1193,45 @@
       + "Move a course one at a time only where it belongs under a different code than the rest."]);
   }
   /* The move bar under the panel's course tables: one common subject code for the checked courses, and one Save. */
-  function moveBar(slug, code, body) {
-    var pre = "csb-move", said = MOVE_SAID[slug + "|" + code] || "";
-    var co = el("input", { type: "text", id: pre + "-code", cls: "csb-input csb-input-code", maxlength: "4", autocomplete: "off", spellcheck: "false",
-      autocapitalize: "characters", list: COMMON ? "csb-ed-codes" : null, "aria-describedby": pre + "-code-msg" });
+  /* The common subject code picker for a move (Sam, 2026-11-23: "List the subjects in selector grouped by cr first alpha
+     then nc alpha"): credit codes, then noncredit codes, each by discipline name. A code is noncredit where its MQ
+     discipline says Noncredit or a COCI noncredit category names it (VOCE, Vocational). */
+  function ncCodeSet() {
+    var set = {};
+    Object.keys(NC_MQ || {}).forEach(function (k) { var c = (NC_MQ[k] || {}).common_code; if (c) set[c] = true; });
+    Object.keys(COMMON || {}).forEach(function (k) { if (/noncredit/i.test(String(COMMON[k]))) set[k] = true; });
+    return set;
+  }
+  /* The code box's suggestions, in the picker's order: credit codes, then noncredit, each by discipline name. A
+     noncredit code whose discipline name does not say so (VOCE, Vocational) is labeled noncredit (Sam, 2026-11-23:
+     "VOCE should be nc subj but doesn't have the nc note"). */
+  function ncLabel(k, nc) { var d = String(COMMON[k]); return nc[k] && !/noncredit/i.test(d) ? d + ": Noncredit" : d; }
+  function codeList() {
+    var nc = ncCodeSet(), keys = Object.keys(COMMON || {});
+    var byName = function (a, b) { var x = String(COMMON[a]).toLowerCase(), y = String(COMMON[b]).toLowerCase(); return x < y ? -1 : x > y ? 1 : (a < b ? -1 : 1); };
+    var opt = function (k) { return el("option", { value: k, label: ncLabel(k, nc) }); };
+    return el("datalist", { id: "csb-ed-codes" }, keys.filter(function (k) { return !nc[k]; }).sort(byName).map(opt).concat(keys.filter(function (k) { return nc[k]; }).sort(byName).map(opt)));
+  }
+  function codePicker(id, describedBy) {
+    var nc = ncCodeSet(), keys = Object.keys(COMMON || {});
+    var byName = function (a, b) { var x = String(COMMON[a]).toLowerCase(), y = String(COMMON[b]).toLowerCase(); return x < y ? -1 : x > y ? 1 : (a < b ? -1 : 1); };
+    var opt = function (k) { return el("option", { value: k, text: ncLabel(k, nc) + " (" + k + ")" }); };
+    return el("select", { id: id, cls: "csb-input csb-move-pick", "aria-describedby": describedBy || null }, [el("option", { value: "", text: "Choose a common subject code" }),
+      el("optgroup", { label: "Credit" }, keys.filter(function (k) { return !nc[k]; }).sort(byName).map(opt)),
+      el("optgroup", { label: "Noncredit" }, keys.filter(function (k) { return nc[k]; }).sort(byName).map(opt))]);
+  }
+  /* One move: the checked boxes inside scope, one kb_curation row each, under the reviewer's sign-in. */
+  function moveControls(slug, code, scope, pre, label) {
+    var co = codePicker(pre + "-code", pre + "-code-msg");
     var cmsg = el("p", { cls: "csb-ed-msg", id: pre + "-code-msg" });
-    var n = el("p", { cls: "csb-note", id: pre + "-n", role: "status", text: "No course is checked." });
-    var status = el("p", { cls: "csb-ed-msg", id: pre + "-status", role: "status", tabindex: "-1", text: said });
+    var status = el("p", { cls: "csb-ed-msg", id: pre + "-status", role: "status", tabindex: "-1" });
     var save = el("button", { type: "button", cls: "csb-word", id: pre + "-save", text: "Move the checked courses" });
-    function checked() { return Array.prototype.slice.call(body.querySelectorAll("input.csb-move:checked:not([disabled])")); }
-    function count() { var k = checked().length; n.textContent = k ? fmt(k) + (k === 1 ? " course is checked." : " courses are checked.") : "No course is checked."; }
+    function checked() { return Array.prototype.slice.call(scope.querySelectorAll("input.csb-move:checked:not([disabled])")); }
     save.addEventListener("click", function () {
       var k = String(co.value || "").trim().toUpperCase(), boxes = checked();
       cmsg.textContent = ""; status.textContent = "";
       if (!boxes.length) { status.textContent = "Check one course or more first."; return; }
-      if (!k) { status.textContent = "Type the common subject code they belong under, then save."; return; }
+      if (!k) { status.textContent = "Choose the common subject code they belong under, then move them."; return; }
       if (!COMMON) { cmsg.textContent = "The list of common subject codes could not be read, so no code can be checked. Nothing was saved."; return; }
       if (!COMMON[k]) { cmsg.textContent = k + " is not a common subject code on the Common Subjects Reference. Nothing was saved."; return; }
       save.disabled = true;
@@ -1232,11 +1256,38 @@
         if (VIEW.root && VIEW.M) render(VIEW.root, VIEW.M, viewPath());
       });
     });
-    return { node: el("section", { cls: "csb-edit", id: pre, "aria-labelledby": pre + "-h" }, [
+    var row = el("div", { cls: "csb-move-row" }, [el("label", { "for": pre + "-code", text: label || "Move the checked courses to" }), co, save]);
+    return { row: row, cmsg: cmsg, status: status, checked: checked };
+  }
+  /* The move bar under the panel's course tables: one common subject code for every checked course, and one Save. */
+  function moveBar(slug, code, body) {
+    var pre = "csb-move";
+    var mc = moveControls(slug, code, body, pre, "Common subject code for the checked courses");
+    var n = el("p", { cls: "csb-note", id: pre + "-n", role: "status", text: "No course is checked." });
+    /* Once a course is checked the bar pins to the panel's foot, so the save is in reach however far down the course is
+       (Sam, 2026-11-23, on Cerritos AED's construction courses: "I don't see a way to fix them from here"). */
+    function count() {
+      var k = mc.checked().length;
+      n.textContent = k ? fmt(k) + (k === 1 ? " course is checked." : " courses are checked.") : "No course is checked.";
+      if (node.classList) node.classList.toggle("csb-move-live", k > 0);
+    }
+    var node = el("section", { cls: "csb-edit csb-move-bar", id: pre, "aria-labelledby": pre + "-h" }, [
       el("h4", { cls: "csb-edit-head", id: pre + "-h", text: "Move courses to another common subject code" }),
-      el("p", { cls: "csb-note", text: "For the course that belongs under a different code than the rest of " + code + ": check it, or a group, type the common subject code it belongs under, and save. The code’s own common subject code, settled above, moves the rest at the next re-mint. Each move is saved under your sign-in and shows on its course. A course another person moved keeps that move." }),
-      n, el("div", { cls: "csb-ed-field" }, [el("label", { "for": pre + "-code", text: "Common subject code for the checked courses" }), co, cmsg]),
-      el("p", { cls: "csb-ed-row" }, [save]), status]), count: count };
+      el("p", { cls: "csb-note csb-move-help", text: "For the course that belongs under a different code than the rest of " + code + ": check it, or a group, choose the common subject code it belongs under, and move it. The code’s own common subject code, settled above, moves the rest at the next re-mint. Each move is saved under your sign-in and shows on its course. A course another person moved keeps that move." }),
+      n, mc.row, mc.cmsg, mc.status]);
+    return { node: node, count: count };
+  }
+  /* A panel section that folds under its own heading; Collapse all and Expand all reach every one (Sam, 2026-11-23:
+     "a collapse all for the sidebar--it's a lot to scroll"). The heading stays the section's first element's text. */
+  function fold(node, head, kids) {
+    var det = el("details", { cls: "csb-fold", open: "" }, [el("summary", { cls: "csb-fold-sum" }, [head])].concat(kids || []));
+    if (node) {
+      if (head && head.parentNode === node) node.removeChild(head);
+      while (node.firstChild) det.appendChild(node.firstChild);
+      node.appendChild(det);
+      return node;
+    }
+    return det;
   }
   /* Edit and Save, above the course tables: the local title and the common subject code a person settles. A code's
      credit courses take one form (band credit, or whole where COCI lists no course); its noncredit courses take one
@@ -1461,7 +1512,7 @@
     }
     if (band !== "noncredit") creditForm(c, row, box, band);
     if ((row.noncredit_courses || 0) > 0 && ncParts(row).length) ncForms(c, row, box);
-    if (COMMON) box.appendChild(el("datalist", { id: "csb-ed-codes" }, Object.keys(COMMON).sort().map(function (k) { return el("option", { value: k, label: COMMON[k] }); })));
+    if (COMMON) box.appendChild(codeList());
     return box;
   }
   /* The same local code at the other colleges with a catalog on file (Sam, 2026-11-22: "all the AEDs that are in ELEC
@@ -1610,6 +1661,10 @@
     });
     return g;
   }
+  function foldEdit(sec) {
+    if (!sec || !sec.firstChild || sec.firstChild.tagName !== "H4") return sec;
+    return fold(sec, sec.firstChild);
+  }
   function panelDraw(root, M) {
     var old = root.querySelector("#csb-panel");
     if (old) old.parentNode.removeChild(old);
@@ -1635,10 +1690,17 @@
           el("h3", { id: "csb-panel-h", tabindex: "-1", text: code + (name ? ", " + name : "") })]),
         el("p", { cls: "csb-note", text: c.college + ". " + (name ? "" : "No local title yet. ")
           + (common ? "Common subject code " + common + "." : "No common subject code yet.") }),
-        row ? editBlock(c, row) : null,
+        foldEdit(row ? editBlock(c, row) : null),
         elsewhere(M, slug, code),
-        everyCollege(M, slug, code, row),
+        foldEdit(everyCollege(M, slug, code, row)),
         body])]);
+    var head = panel.querySelector("#csb-panel-head");
+    var foldAll = function (open) { Array.prototype.forEach.call(panel.querySelectorAll("details.csb-fold"), function (d) { d.open = open; }); };
+    var shut = el("button", { type: "button", cls: "csb-word", id: "csb-fold-all", text: "Collapse all" });
+    var opn = el("button", { type: "button", cls: "csb-word", id: "csb-unfold-all", text: "Expand all" });
+    shut.addEventListener("click", function () { foldAll(false); });
+    opn.addEventListener("click", function () { foldAll(true); });
+    head.appendChild(el("p", { cls: "csb-fold-row" }, [shut, opn]));
     Array.prototype.forEach.call(panel.querySelectorAll("button[data-csb-code]"), function (b) {
       b.addEventListener("click", function () { open(panelPath(b.getAttribute("data-csb-slug"), b.getAttribute("data-csb-code"))); });
     });
@@ -1657,13 +1719,28 @@
       var mn = mintNote(row, rows, code, c.college);
       if (mn) body.appendChild(mn);
       var can = !!reviewer() && String(code).indexOf("|") < 0, bar = can ? moveBar(slug, code, body) : null, nT = 0;
+      if (bar) body.appendChild(el("p", { cls: "csb-note", id: "csb-move-how", text: "To move a course that sits under the wrong code: check its box, choose the common subject code it belongs under from the list at the top of its group, and move it. The move box at the foot of this panel moves every checked course at once, and stays in view once a course is checked." }));
       var ctxOf = function (common) { return { slug: slug, code: code, can: can, n: nT++, onCheck: bar ? bar.count : null, common: common }; };
       var rowCommon = (row && savedOf(row) && savedOf(row).common) || (row && row.common) || "";
+      var said = MOVE_SAID[slug + "|" + code];
+      if (said) body.appendChild(el("p", { cls: "csb-ed-msg", id: "csb-move-said", role: "status", text: said }));
+      /* A course group folds under its heading, and carries its own move row at its top (Sam, 2026-11-23: "add a subj
+         selector and change to function to the top of each set of courses so I don't have to scroll to the bottom"). */
+      var nG = 0;
+      function group(head, note, table) {
+        var kids = [];
+        if (can) {
+          var mc = moveControls(slug, code, table, "csb-move-g" + (nG++), "Move the checked courses in this group to");
+          kids.push(el("div", { cls: "csb-move-top" }, [mc.row, mc.cmsg, mc.status]));
+        }
+        if (note) kids.push(note);
+        kids.push(table);
+        body.appendChild(el("section", { cls: "csb-group", "data-band": head.getAttribute("data-band") || "" }, [fold(null, head, kids)]));
+      }
       function bandTable(b) {
         var part = rows.filter(function (x) { return (x.band || "") === b[0]; });
         if (!part.length) return;
-        body.appendChild(el("h4", { cls: "csb-band", "data-band": b[0], text: b[1] + " (" + fmt(part.length) + ")" }));
-        body.appendChild(courseTable(part, b[1] + " under " + code, ctxOf(rowCommon)));
+        group(el("h4", { cls: "csb-band", "data-band": b[0], text: b[1] + " (" + fmt(part.length) + ")" }), null, courseTable(part, b[1] + " under " + code, ctxOf(rowCommon)));
       }
       bandTable(BANDS[0]);
       /* Noncredit courses by COCI noncredit category (Sam, 2026-11-22: "the appearance makes it seem like I am changing
@@ -1674,13 +1751,13 @@
       nc.forEach(function (x) { var k = x.category || ""; (groups[k] = groups[k] || []).push(x); });
       Object.keys(groups).sort(function (a, b) { return (a === "") - (b === "") || groups[b].length - groups[a].length || (a < b ? -1 : 1); }).forEach(function (cat) {
         var part = groups[cat], cc = row && cat ? catCode(row, cat) : null, them = part.length === 1 ? "this course" : "these " + fmt(part.length) + " courses", their = part.length === 1 ? "its" : "their";
-        body.appendChild(el("h4", { cls: "csb-band", "data-band": "N", "data-category": cat || "none", text: (cat ? "Noncredit, " + catWords(cat) : "Noncredit, no category in COCI’s export") + " (" + fmt(part.length) + ")" }));
-        body.appendChild(el("p", { cls: "csb-note csb-cat-code", "data-category": cat || "none", text: !cat
+        var head = el("h4", { cls: "csb-band", "data-band": "N", "data-category": cat || "none", text: (cat ? "Noncredit, " + catWords(cat) : "Noncredit, no category in COCI’s export") + " (" + fmt(part.length) + ")" });
+        var note = el("p", { cls: "csb-note csb-cat-code", "data-category": cat || "none", text: !cat
           ? "COCI’s export gives " + them + " no credit type and no noncredit category, so no category’s save reaches " + (part.length === 1 ? "it. Move it" : "them. Move one") + " where it belongs under a code."
           : cc && cc.saved ? "Common subject code " + cc.code + ", from a person’s save on the " + catWords(cat) + " form. It applies to " + them + " only: " + their + " local subject stays " + code + ", and " + their + " M-IDs move to " + cc.code + " at the next re-mint."
           : cc ? "Not settled yet. " + catWords(cat) + "’s noncredit MQ discipline, " + cc.mq + ", has the common subject code " + cc.code + "; a Save on that form above applies it to " + them + " only. The local subject stays " + code + "."
-          : "No common subject code yet: " + (cc === null && NC_MQ[cat] && NC_MQ[cat].mq_discipline ? "the noncredit MQ discipline " + NC_MQ[cat].mq_discipline + " has none" : "no noncredit MQ discipline is named for this category") + ". " + (part.length === 1 ? "This course keeps its M-ID" : "These " + fmt(part.length) + " courses keep their M-IDs") + " until one is set." }));
-        body.appendChild(courseTable(part, (cat ? catWords(cat) : "Noncredit courses with no category") + " under " + code, ctxOf(cc ? cc.code : "")));
+          : "No common subject code yet: " + (cc === null && NC_MQ[cat] && NC_MQ[cat].mq_discipline ? "the noncredit MQ discipline " + NC_MQ[cat].mq_discipline + " has none" : "no noncredit MQ discipline is named for this category") + ". " + (part.length === 1 ? "This course keeps its M-ID" : "These " + fmt(part.length) + " courses keep their M-IDs") + " until one is set." });
+        group(head, note, courseTable(part, (cat ? catWords(cat) : "Noncredit courses with no category") + " under " + code, ctxOf(cc ? cc.code : "")));
       });
       bandTable(BANDS[3]);
       if (bar) body.appendChild(bar.node);
@@ -1992,6 +2069,17 @@
     ".csb-panel h3:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:3px; border-radius:2px; }",
     ".csb-band { margin:6px 0 0; font-size:1rem; color:var(--cmn-heading); }",
     "#csb-panel-body { display:grid; gap:10px; min-width:0; }",
+    ".csb-move-bar.csb-move-live { position:sticky; bottom:0; z-index:2; background:var(--cmn-dialog, var(--cmn-surface)); box-shadow:0 -8px 20px color-mix(in srgb, var(--cmn-heading) 14%, transparent); }",
+    ".csb-move-bar.csb-move-live .csb-move-help { display:none; }",
+    ".csb-fold-row { margin:2px 0 6px; display:flex; flex-wrap:wrap; gap:4px 18px; }",
+    ".csb-fold > summary { cursor:pointer; list-style-position:outside; margin-left:1.1em; min-height:24px; }",
+    ".csb-fold > summary > h4 { display:inline; margin:0; }",
+    ".csb-fold[open] > summary { margin-bottom:8px; }",
+    ".csb-group { display:grid; gap:8px; min-width:0; }",
+    ".csb-move-top { display:grid; gap:4px; padding:8px 10px; border:1px solid var(--cmn-line-soft); border-radius:10px; margin-bottom:8px; }",
+    ".csb-move-row { display:flex; flex-wrap:wrap; align-items:center; gap:6px 10px; }",
+    ".csb-move-row label { font-weight:600; color:var(--cmn-heading); }",
+    ".csb-move-pick { max-width:100%; min-height:32px; }",
     ".csb-wrap-in { max-height:none; }",
     ".csb-courses { font-size:.88rem; } .csb-courses .csb-c-num { width:16%; } .csb-courses .csb-c-code { width:16%; } .csb-courses .csb-c-mid { width:30%; }",
     ".csb-nc-cat th { background:var(--cmn-surface-2, var(--cmn-surface)); color:var(--cmn-heading); font-weight:700; }",

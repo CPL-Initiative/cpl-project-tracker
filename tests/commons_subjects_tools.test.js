@@ -87,7 +87,7 @@ function load(hash, opt) {
         return Promise.resolve({ ok: st < 300, status: st, json: () => Promise.resolve(null) });
       }
     }
-    const hit = FILES[url];
+    const hit = Object.assign({}, FILES, (opt && opt.files) || {})[url];
     if (!hit) return Promise.resolve({ ok: false, status: 404, json: () => Promise.reject(new Error("404")) });
     return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve(JSON.parse(JSON.stringify(hit))) });
   };
@@ -117,14 +117,28 @@ const posts = (x) => x.calls.filter((c) => c.method !== "GET");
   const boxes = Array.from(x.d.querySelectorAll("#csb-panel input.csb-move"));
   check("(3) signed in, each course carries a labelled checkbox and the table one for all", boxes.length === 4 && boxes.every((b) => /^Move /.test(b.getAttribute("aria-label")))
     && !!x.d.querySelector("#csb-panel input.csb-move-all") && !!x.d.getElementById("csb-move-save"));
+  check("(3) ⭐ the panel says how to move a course before its tables, and the move box rests unpinned while nothing is checked",
+    /check its box, choose the common subject code it belongs under from the list at the top of its group/.test(txt(x.d.getElementById("csb-move-how"))) && !x.d.getElementById("csb-move").classList.contains("csb-move-live"));
   const held = boxes.find((b) => b.getAttribute("data-move-number") === "30");
   check("(3) ⭐ a course another person moved is held, and says so", held && held.disabled && /Moved to KINE Kinesiology by a person/.test(txt(held.closest("tr"))), held && (held.disabled + " " + txt(held.closest("tr"))));
   x.d.querySelector("#csb-panel input.csb-move-all").checked = true;
   x.d.querySelector("#csb-panel input.csb-move-all").dispatchEvent(new x.w.Event("change", { bubbles: true }));
+  check("(3) ⭐ once a course is checked the move box pins to the panel's foot (Sam, 2026-11-23: \"I don't see a way to fix them from here\")",
+    x.d.getElementById("csb-move").classList.contains("csb-move-live"));
   check("(3) the all box checks every course it may move", boxes.filter((b) => b.checked).length === 3 && !held.checked && /3 courses are checked/.test(txt(x.d.getElementById("csb-move-n"))));
-  x.d.getElementById("csb-move-code").value = "zz"; x.d.getElementById("csb-move-save").click(); await settle();
-  check("(3) an unknown code makes no request", posts(x).length === 0 && /ZZ is not a common subject code/.test(txt(x.d.getElementById("csb-move-code-msg"))));
-  x.d.getElementById("csb-move-code").value = "kine"; x.d.getElementById("csb-move-save").click(); await settle();
+  const pick = x.d.getElementById("csb-move-code");
+  const groups = Array.from(pick.querySelectorAll("optgroup")).map((g) => g.getAttribute("label") + ": " + Array.from(g.querySelectorAll("option")).map((o) => o.textContent).join(", "));
+  check("(6) ⭐ the picker lists credit codes, then noncredit codes, each by discipline name (Sam, 2026-11-23)",
+    JSON.stringify(groups) === JSON.stringify(["Credit: Automotive Technology (AUTO), Electronics (ELEC), Kinesiology (KINE)", "Noncredit: Vocational: Noncredit (VOCE)"]), groups);
+  const dl = Array.from(x.d.querySelectorAll("#csb-ed-codes option")).map((o) => o.value + "=" + o.getAttribute("label"));
+  check("(6) ⭐ the code box's suggestions run credit then noncredit, VOCE labeled noncredit (Sam, 2026-11-23)",
+    JSON.stringify(dl) === JSON.stringify(["AUTO=Automotive Technology", "ELEC=Electronics", "KINE=Kinesiology", "VOCE=Vocational: Noncredit"]), dl);
+  check("(6) ⭐ each course group carries its own move row at its top, with the same picker",
+    x.d.querySelectorAll("#csb-panel .csb-group .csb-move-top select.csb-move-pick").length === x.d.querySelectorAll("#csb-panel .csb-group").length
+    && x.d.querySelectorAll("#csb-panel .csb-group").length > 0);
+  pick.value = ""; x.d.getElementById("csb-move-save").click(); await settle();
+  check("(3) no code chosen makes no request", posts(x).length === 0 && /Choose the common subject code/.test(txt(x.d.getElementById("csb-move-status"))));
+  pick.value = "KINE"; x.d.getElementById("csb-move-save").click(); await settle();
   const P = posts(x), B = P.map((p) => JSON.parse(p.body));
   check("(3) ⭐ one row per checked course, keyed by college, code and number, field course_subject_decision, under the reviewer's email",
     JSON.stringify(B.map((b) => b.course_id)) === JSON.stringify(["CRS:alpha|AED|10.07", "CRS:alpha|AED|14.11", "CRS:alpha|AED|2"])
@@ -132,7 +146,7 @@ const posts = (x) => x.calls.filter((c) => c.method !== "GET");
   const v0 = JSON.parse(B[0].value);
   check("(3) the value names the code, the M-ID it moves from, the title and the band", v0.common_code === "KINE" && v0.from_mid === "ELEC M9008" && v0.title === "Fitness for Older Adults" && v0.band === "C");
   await settle();
-  check("(3) ⭐ the moved courses show the move, and the status counts them", /Moved 3 courses to KINE/.test(txt(x.d.getElementById("csb-move-status")))
+  check("(3) ⭐ the moved courses show the move, and the status counts them", /Moved 3 courses to KINE/.test(txt(x.d.getElementById("csb-move-said")))
     && x.d.querySelectorAll('#csb-panel tr[data-moved="KINE"]').length === 4);
   const undo = x.d.querySelector('#csb-panel button[data-move-undo="CRS:alpha|AED|10.07"]');
   check("(3) the reviewer's own move shows Take it back; another's does not", !!undo && !x.d.querySelector('#csb-panel button[data-move-undo="CRS:alpha|AED|30"]'));
@@ -140,6 +154,28 @@ const posts = (x) => x.calls.filter((c) => c.method !== "GET");
   const del = x.calls.filter((c) => c.method === "DELETE")[0];
   check("(3) ⭐ Take it back deletes by key, field and the reviewer's email", del && /course_id=eq\.CRS%3Aalpha%7CAED%7C10\.07/.test(del.url) && /field=eq\.course_subject_decision/.test(del.url)
     && /reviewer_email=eq\.a%40rccd\.edu/.test(del.url), del && del.url);
+
+  /* (6) a group's own move row moves that group's checked courses only; Collapse all and Expand all fold every section */
+  const TWO = JSON.parse(JSON.stringify(FILES["kb/status/subject_courses/alpha.json"]));
+  TWO.columns = TWO.columns.concat(["category"]);
+  TWO.codes.AED.push(["40.07", "Ironworker Orientation", "N", "COCI", 0, "", "", "ELEC M90AA", "Short-term Vocational"]);
+  x = load("#commons/subjects/alpha/AED", { sess: ME, files: { "kb/status/subject_courses/alpha.json": TWO } });
+  await x.M.boot(); await settle();
+  const firstGroup = x.d.querySelector("#csb-panel .csb-group");
+  const allBoxes = Array.from(x.d.querySelectorAll("#csb-panel input.csb-move:not([disabled])"));
+  allBoxes.forEach((b) => { b.checked = true; });
+  const mine0 = Array.from(firstGroup.querySelectorAll("input.csb-move:not([disabled])")).map((b) => b.getAttribute("data-move-number"));
+  firstGroup.querySelector("select.csb-move-pick").value = "AUTO";
+  firstGroup.querySelector(".csb-move-top button").click(); await settle();
+  const G = posts(x).map((p) => JSON.parse(p.body));
+  check("(6) ⭐ a group's move row moves that group's checked courses only", G.length === mine0.length && G.length < allBoxes.length
+    && G.every((b) => b.field === "course_subject_decision" && JSON.parse(b.value).common_code === "AUTO" && mine0.indexOf(b.course_id.split("|")[2]) >= 0), [G.length, mine0, allBoxes.length]);
+  const folds = () => Array.from(x.d.querySelectorAll("#csb-panel details.csb-fold"));
+  check("(6) the course groups and the edit section each fold, open at first", folds().length >= x.d.querySelectorAll("#csb-panel .csb-group").length + 1 && folds().every((d) => d.open));
+  x.d.getElementById("csb-fold-all").click();
+  check("(6) ⭐ Collapse all folds every section, from the panel's frozen top row (Sam, 2026-11-23)", folds().every((d) => !d.open) && !!x.d.querySelector("#csb-panel-head #csb-fold-all"));
+  x.d.getElementById("csb-unfold-all").click();
+  check("(6) Expand all opens them again", folds().every((d) => d.open));
 
   /* (5) an M-ID's prefix never reads as the course's local subject (Sam, 2026-11-22, r-mid-prefix-is-not-the-local-subject-sam-2026-11-22) */
   x = load("#commons/subjects/alpha/AED", { saves: SAVES.concat([{ course_id: "SUBJ:alpha|AED|credit", value: JSON.stringify({ common_code: "AUTO" }), reviewed_at: AT, reviewer_label: "a reviewer" }]) });
