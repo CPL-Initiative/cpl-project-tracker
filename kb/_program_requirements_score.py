@@ -350,6 +350,33 @@ def measure(record: dict) -> str:
     return (record.get("program") or {}).get("measure") or "units"
 
 
+def lab_pairs(alts: list[dict], listed: dict | None = None, hours: bool = False) -> list[dict]:
+    """The alternatives with each lecture and its own lab taken together (S713, Clovis): an alternative whose code is
+    another alternative's with L added (BIOL C1001 and BIOL C1001L, BIOL 13 and BIOL 13L), where neither carries a
+    together label, is one option with it. Clovis prints "BIOL C1000 or BIOL C1001 and BIOL C1001L"; the reading
+    kept the pair as two alternatives, so the row's low end took the 1-unit lab alone. A member with no units of its
+    own or on the state's list (listed; never in hours) pairs with nothing, so the pair never drops out of the row's
+    options (#3708's second reader: "X (5) or BIO 11 (3) and BIO 11L" kept 5-5). Copies; the record is unchanged."""
+    # The code as the page printed it: a course-id or alias rename (printed_code) must not split a pair the page
+    # prints (Clovis's BIOL C1001 renamed to the file's BIOL 10 beside BIOL C1001L; course_id_route_test).
+    keys = [norm_code(a.get("printed_code") or a.get("code")) for a in alts]
+    out = [dict(a) for a in alts]
+
+    def units(a):
+        if _num(a.get("units")) is not None or _num(a.get("units_max")) is not None:
+            return True
+        return not hours and (listed or {}).get(listed_key(a.get("code"), listed or {})) is not None
+
+    for i, k in enumerate(keys):
+        if not k or out[i].get("together") or not units(out[i]):
+            continue
+        for j, kl in enumerate(keys):
+            if j != i and kl == k + "L" and not out[j].get("together") and units(out[j]):
+                out[i]["together"] = out[j]["together"] = "lab pair " + k
+                break
+    return out
+
+
 def choice_units(course: dict, listed: dict, hours: bool = False) -> tuple[float, float] | None:
     """The units one choice carries: the record's own number (and the top of a
     printed range), else the closed list's; an alternatives group runs from its
@@ -360,7 +387,8 @@ def choice_units(course: dict, listed: dict, hours: bool = False) -> tuple[float
     own units added up, or, where a member has none, the group's "together_units" (and "together_units_max")."""
     vals = []
     groups: dict = {}
-    for entry in alternatives(course):
+    alts = lab_pairs(alternatives(course), listed, hours)
+    for entry in alts:
         if entry.get("together"):
             groups.setdefault(entry["together"], []).append(entry)
     for members in groups.values():
@@ -380,7 +408,7 @@ def choice_units(course: dict, listed: dict, hours: bool = False) -> tuple[float
             vals += [lo, hi]
         elif g:
             vals += [min(g), max(g)]
-    for entry in [course] + [a for a in alternatives(course) if not a.get("together")]:
+    for entry in [course] + [a for a in alts if not a.get("together")]:
         # A course the page says is taken more than once ("If MUS 11 is chosen, it must be taken
         # for 2 semesters", Hartnell's Music 43887, S497) carries times: its units count that often.
         times = _num(entry.get("times")) or 1
@@ -541,6 +569,81 @@ def substitute_core(record: dict, listed: dict, hours: bool = False) -> tuple[di
     return subs[0], spans
 
 
+# A list that also takes the courses an earlier list did not use (Clovis, S713): "List B: Select one course" over MATH 6
+# and the row "Any course from List A not already used", which the reading kept in its note or in the list's name
+# ("List C: Select one course or any course not selected from List A or List B"), never as courses. The list's least
+# then runs over its own courses and the earlier list's courses that list left, and so does its most.
+ALSO_FROM_NAME = re.compile(
+    r"\bany\s+(?:course\s+)?(?:not\s+(?:selected|already\s+used)\s+)?from\s+List\s+([A-Z])\b(?:\s+or\s+(?:List\s+)?([A-Z])\b)?",
+    re.I)
+ALSO_FROM_NOTE = re.compile(
+    r"\bList\s+([A-Z])\s+(?:also\s+)?allows\s+'?Any\s+(?:course\s+from\s+List\s+([A-Z])(?:\s+or\s+List\s+([A-Z]))?"
+    r"|List\s+([A-Z])(?:\s+or\s+([A-Z]))?\s+course)\s+not\s+already\s+used", re.I)
+LIST_LETTER = re.compile(r"^\s*List\s+([A-Z])\b", re.I)
+
+
+def also_from(record: dict) -> dict:
+    """{a list's index: [the earlier lists' indexes]} for each choose-courses list the reading names as also taking an
+    earlier list's unused courses, from its name or the reader's note; only lists named "List X" once each, outside
+    any option group, with a count, no printed figure and no repeats."""
+    blocks = record.get("blocks") or []
+    letter: dict = {}
+    for i, b in enumerate(blocks):
+        m = LIST_LETTER.match(str(b.get("name") or ""))
+        if m:
+            letter.setdefault(m.group(1).upper(), []).append(i)
+    letter = {k: v[0] for k, v in letter.items() if len(v) == 1}
+
+    def plain(i):
+        b = blocks[i]
+        return bool(b.get("rule") == "choose_courses" and _num(b.get("minimum")) and not b.get("option_group")
+                    and not _span(b.get("stated")) and not b.get("repeats"))
+
+    found: dict = {}
+    for i, b in enumerate(blocks):
+        m = ALSO_FROM_NAME.search(str(b.get("name") or ""))
+        if m:
+            found.setdefault(i, set()).update(x.upper() for x in m.groups() if x)
+    for n in (record.get("notes") or []):
+        for m in ALSO_FROM_NOTE.finditer(str(n)):
+            t = letter.get(m.group(1).upper())
+            if t is not None:
+                found.setdefault(t, set()).update(x.upper() for x in m.groups()[1:] if x)
+    out = {}
+    for t, letters in found.items():
+        srcs = sorted(letter[x] for x in letters if x in letter and letter[x] < t)
+        if srcs and plain(t) and all(plain(j) for j in srcs):
+            out[t] = srcs
+    # A chain (C takes B's leftovers and B takes A's) would count a course twice, once in each pool (#3708's second
+    # reader: A {3, 3}, B {5} and C {5} read 9 where the least is 11): a list whose source is itself a target takes
+    # no reading.
+    return {t: srcs for t, srcs in out.items() if not any(j in out for j in srcs)}
+
+
+def also_from_span(blocks: list, t: int, srcs: list, listed: dict, hours: bool = False):
+    """The list's units with the earlier lists' unused courses in its pool, or None where a course carries none."""
+    def spans(b):
+        out = [choice_units(c, listed, hours) for c in b.get("courses") or []]
+        return None if any(x is None for x in out) else out
+    own = spans(blocks[t])
+    if own is None:
+        return None
+    lo_pool, hi_pool = [x[0] for x in own], [x[1] for x in own]
+    for j in srcs:
+        sp = spans(blocks[j])
+        if sp is None:
+            return None
+        n = int(_num(blocks[j].get("minimum")))
+        top = max(n, int(_num(blocks[j].get("maximum")) or n))
+        lo_pool += sorted(x[0] for x in sp)[n:]
+        hi_pool += sorted((x[1] for x in sp), reverse=True)[top:]
+    n = int(_num(blocks[t].get("minimum")))
+    top = max(n, int(_num(blocks[t].get("maximum")) or n))
+    if len(lo_pool) < n:
+        return None
+    return (sum(sorted(lo_pool)[:n]), sum(sorted(hi_pool, reverse=True)[:top]))
+
+
 def program_units(record: dict, listed: dict) -> tuple[tuple[float, float], list[str]]:
     """Every block's units summed; the blocks of one option_group count once,
     from the group's smallest block to its largest."""
@@ -551,7 +654,9 @@ def program_units(record: dict, listed: dict) -> tuple[tuple[float, float], list
     sub = substitute_core(record, listed, hours)
     total = _span((record.get("program") or {}).get("total_units"))
     heading_fills: list[float] = []
-    for b in record.get("blocks") or []:
+    also = also_from(record)
+    blocks_all = record.get("blocks") or []
+    for i, b in enumerate(blocks_all):
         if sub and b is sub[0]:
             # In place of one core course: the core as printed, or the core less one course plus the list.
             span, why = block_units(b, listed, hours)
@@ -576,7 +681,9 @@ def program_units(record: dict, listed: dict) -> tuple[tuple[float, float], list
         elif n is not None:
             span, why = block_units(dict(b, stated={"min": n, "max": n}), listed, hours)
         else:
-            span, why = block_units(b, listed, hours)
+            # A list taking an earlier list's unused courses (Clovis, S713), where no heading figure is read.
+            span = also_from_span(blocks_all, i, also[i], listed, hours) if i in also else None
+            span, why = (span, []) if span is not None else block_units(b, listed, hours)
         if span is None:
             reasons += why
             continue
@@ -1322,6 +1429,14 @@ def score(record: dict, closed: list[dict], text: str | None = None, award: str 
             and not (heading_is_total(b) and not (tot and abs(tot[0] - heading_figure(b)) <= TOL))]
     if figs and arith.get("computed") is not None:
         arith["heading_figures"] = figs
+    # The reading program_units made from the reader's words (S713), named so a reader of the check sees it.
+    bl = record.get("blocks") or []
+    hrs = measure(record) == "hours"
+    also = {t: js for t, js in also_from(record).items()
+            if also_from_span(bl, t, js, listed, hrs) not in (None, block_units(bl[t], listed, hrs)[0])}
+    if also and arith.get("computed") is not None:
+        arith["also_from"] = [{"block": bl[t].get("name"), "from": [bl[j].get("name") for j in js]}
+                              for t, js in sorted(also.items())]
 
     rep_codes = repeated(record)
     outs = outcomes_check(record, text)

@@ -590,6 +590,10 @@ jobs:
       # mechanics, the measure before the runs, and the 9-row plan against the filed records.
       - name: GE reconcile steps S713 (mechanics, precision, boundaries, the plan)
         run: python3 tests/program_ge_steps_s713_test.py
+      # S713 at Clovis: a lecture and its lab as one option, a list taking an earlier list's unused courses, and
+      # two courses renumbered; the self-recall, the blast radius at every college and the plan's 6 rows.
+      - name: Cheap piles S713 at Clovis (lab pairs, earlier lists' courses, renumbers, the plan)
+        run: python3 tests/program_piles_s713_clovis_test.py
       # Discontinued programs (S680; Sam, 2026-11-17 on #3480): a program's own catalog section marks it,
       # or a prior year prints it and this year does not; flagged out of the gap, never deleted. Pure stdlib.
       - name: Discontinued programs (own-section mark, out of the gap, the file is current)
