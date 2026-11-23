@@ -70,8 +70,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
     21.0,
     21.0
@@ -81,10 +81,8 @@
     36.0
    ],
    "against": "program",
-   "why": [],
-   "fill": [
-    14.0,
-    15.0
+   "why": [
+    "the blocks sum to 21.0-21.0; the catalog states 35.0-36.0"
    ]
   },
   "repeated": {
@@ -112,7 +110,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -273,6 +271,5 @@
    "The Marketing Certificate section (page 224) mentions 'the A.A. degree in Marketing'; this record reads the A.S. degree section only."
   ]
  },
- "extracted_run": 45184748331,
- "read_run": "39047070975"
+ "extracted_run": "39047070975"
 }

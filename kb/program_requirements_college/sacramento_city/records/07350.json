@@ -75,8 +75,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
     29.0,
     30.0
@@ -86,10 +86,8 @@
     36.0
    ],
    "against": "program",
-   "why": [],
-   "fill": [
-    5.0,
-    7.0
+   "why": [
+    "the blocks sum to 29.0-30.0; the catalog states 35.0-36.0"
    ]
   },
   "repeated": {
@@ -117,7 +115,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -453,6 +451,5 @@
    "Career Information names only 'a performer of various styles of popular music'; recorded 'performer'."
   ]
  },
- "extracted_run": 45184748331,
- "read_run": "39047070975"
+ "extracted_run": "39047070975"
 }

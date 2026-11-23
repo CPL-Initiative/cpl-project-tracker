@@ -67,8 +67,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
     24.0,
     28.0
@@ -78,10 +78,8 @@
     48.0
    ],
    "against": "program",
-   "why": [],
-   "fill": [
-    16.0,
-    24.0
+   "why": [
+    "the blocks sum to 24.0-28.0; the catalog states 44.0-48.0"
    ]
   },
   "repeated": {
@@ -109,7 +107,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -328,6 +326,5 @@
    "Certificates (CAD/CAM Programming, Manufacturing and Industrial Technology Certificate, Production Planning, Quality Technician) were not recorded."
   ]
  },
- "extracted_run": 45187906040,
- "read_run": "39046850071"
+ "extracted_run": "39046850071"
 }

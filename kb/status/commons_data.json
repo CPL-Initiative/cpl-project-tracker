@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-23T14:31:08Z",
+ "written_at": "2026-11-23T14:56:03Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 17061,
-  "gap": 5274,
+  "passing": 17052,
+  "gap": 5283,
   "with_gap": 118,
   "cost_usd": 1340.94,
-  "passed_at_read": 16320,
+  "passed_at_read": 16311,
   "cost_receipts": 118,
   "spent_usd": 1236.15,
   "spent_runs": 194,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16739,
-  "gap": 5274,
+  "passing": 16730,
+  "gap": 5283,
   "collected_with_gaps": 322,
   "discontinued": 0
  },
@@ -3477,13 +3477,13 @@
    "harvested": true,
    "slug": "cosumnes_river",
    "programs": 226,
-   "passing": 179,
-   "gap": 47,
+   "passing": 176,
+   "gap": 50,
    "causes": {
     "no_closed_list": 7,
     "page_not_found": 2,
     "places_none": 9,
-    "unknown_without_live": 29
+    "unknown_without_live": 32
    },
    "census_causes": {
     "coverage_fails": 8,
@@ -3511,7 +3511,7 @@
    "read_at": "2026-11-23T13:44:05Z",
    "read_kind": "capture",
    "cost_usd": 19.08,
-   "passed_at_read": 170,
+   "passed_at_read": 167,
    "slo_queue": null,
    "scout": {
     "recommendation": "page_read",
@@ -3534,7 +3534,7 @@
    "failed_checks": {
     "coverage": 17,
     "invented": 8,
-    "arithmetic": 31,
+    "arithmetic": 34,
     "repeated": 0,
     "outcomes": 9
    },
@@ -3547,7 +3547,7 @@
    "read_seconds": 342.1,
    "run": "45185759855",
    "levers": {
-    "reconcile_steps": 15,
+    "reconcile_steps": 18,
     "ge_units_steps": 14,
     "reader_page_assignment": 9,
     "program_course_file_check": 7,
@@ -4648,11 +4648,11 @@
    "harvested": true,
    "slug": "folsom_lake",
    "programs": 108,
-   "passing": 99,
-   "gap": 9,
+   "passing": 96,
+   "gap": 12,
    "causes": {
     "page_not_found": 1,
-    "unknown_without_live": 8
+    "unknown_without_live": 11
    },
    "census_causes": {
     "page_not_found": 1,
@@ -4676,7 +4676,7 @@
    "read_at": "2026-11-23T13:51:23Z",
    "read_kind": "capture",
    "cost_usd": 9.4,
-   "passed_at_read": 93,
+   "passed_at_read": 90,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -4691,7 +4691,7 @@
    "failed_checks": {
     "coverage": 0,
     "invented": 0,
-    "arithmetic": 13,
+    "arithmetic": 16,
     "repeated": 0,
     "outcomes": 1
    },
@@ -4704,7 +4704,7 @@
    "read_seconds": 158.9,
    "run": "45187906040",
    "levers": {
-    "reconcile_steps": 8,
+    "reconcile_steps": 11,
     "reader_page_search": 1
    },
    "collection": {
@@ -9822,13 +9822,13 @@
    "harvested": true,
    "slug": "sacramento_city",
    "programs": 227,
-   "passing": 181,
-   "gap": 46,
+   "passing": 178,
+   "gap": 49,
    "causes": {
     "no_closed_list": 20,
     "page_not_found": 3,
     "places_none": 4,
-    "unknown_without_live": 19
+    "unknown_without_live": 22
    },
    "census_causes": {
     "coverage_fails": 3,
@@ -9855,7 +9855,7 @@
    "read_at": "2026-11-23T13:37:43Z",
    "read_kind": "capture",
    "cost_usd": 18.53,
-   "passed_at_read": 170,
+   "passed_at_read": 167,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -9870,7 +9870,7 @@
    "failed_checks": {
     "coverage": 7,
     "invented": 3,
-    "arithmetic": 32,
+    "arithmetic": 35,
     "repeated": 0,
     "outcomes": 0
    },
@@ -9884,7 +9884,7 @@
    "run": "45184748331",
    "levers": {
     "program_course_file_check": 20,
-    "reconcile_steps": 15,
+    "reconcile_steps": 18,
     "ge_units_steps": 4,
     "reader_page_assignment": 4,
     "reader_page_search": 3

@@ -71,8 +71,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
     9.0,
     9.0
@@ -82,10 +82,8 @@
     30.0
    ],
    "against": "program",
-   "why": [],
-   "fill": [
-    21.0,
-    21.0
+   "why": [
+    "the blocks sum to 9.0-9.0; the catalog states 30.0-30.0"
    ]
   },
   "repeated": {
@@ -113,7 +111,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -386,6 +384,5 @@
   ],
   "notes": []
  },
- "extracted_run": 45187906040,
- "read_run": "39046850071"
+ "extracted_run": "39046850071"
 }
